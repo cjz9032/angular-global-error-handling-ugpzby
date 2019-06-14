@@ -119,7 +119,7 @@ export class ConfigService {
 		subitems: [{
 			id: 'device',
 			label: 'common.menu.device.sub1',
-			path: 'Device',
+			path: '',
 			icon: '',
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',

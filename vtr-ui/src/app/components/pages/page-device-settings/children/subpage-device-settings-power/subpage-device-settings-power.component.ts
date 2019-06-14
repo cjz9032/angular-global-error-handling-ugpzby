@@ -59,12 +59,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	showBatteryThreshold = false;
 	value = 1;
 	headerMenuItems = [
-		// start of MVP1.5 release hot-fix
-		// {
-		// 	title: 'device.deviceSettings.power.jumpto.cooling',
-		// 	path: 'cooling'
-		// },
-		// end of MVP1.5 release hot-fix
+		{
+			title: 'device.deviceSettings.power.jumpto.cooling',
+			path: 'cooling'
+		},
 		{
 			title: 'device.deviceSettings.power.jumpto.battery',
 			path: 'battery',

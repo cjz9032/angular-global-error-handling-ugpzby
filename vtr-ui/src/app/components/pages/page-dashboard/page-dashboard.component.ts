@@ -82,12 +82,10 @@ export class PageDashboardComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		// start of MVP1.5 release hot-fix
 		// reroute default application's default URL if gaming device
-		// if (this.deviceService.isGaming) {
-		// 	this.router.release/MVP1.5(this.configService.getMenuItems(this.deviceService.isGaming)[0].path);
-		// }
-		// end of MVP1.5 release hot-fix
+		if (this.deviceService.isGaming) {
+			this.router.navigateByUrl(this.configService.getMenuItems(this.deviceService.isGaming)[0].path);
+		}
 
 		const self = this;
 		this.translate.stream('lenovoId.user').subscribe((value) => {

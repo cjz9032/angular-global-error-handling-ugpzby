@@ -42,16 +42,14 @@ export class DeviceService {
 	}
 
 	private loadGamingDashboard() {
-		// start of MVP1.5 release hot-fix
-		// if (!this.isGamingDashboardLoaded) {
-		// 	this.isGamingDashboardLoaded = true;
-		// 	if (this.isGaming) {
-		// 		this.router.navigateByUrl('/device-gaming');
-		// 	} else {
-		// 		this.router.navigateByUrl('/dashboard');
-		// 	}
-		// }
-		// end of MVP1.5 release hot-fix
+		if (!this.isGamingDashboardLoaded) {
+			this.isGamingDashboardLoaded = true;
+			if (this.isGaming) {
+				this.router.navigateByUrl('/device-gaming');
+			} else {
+				this.router.navigateByUrl('/dashboard');
+			}
+		}
 	}
 
 	// private initIsGaming() {
@@ -116,12 +114,10 @@ export class DeviceService {
 			return this.sysInfo.getMachineInfo()
 				.then((info) => {
 					this.machineInfo = info;
-					// start of MVP1.5 release hot-fix
-					// if (info && info.isGaming) {
-					// 	this.isGaming = info.isGaming;
-					// 	this.loadGamingDashboard();
-					// }
-					// end of MVP1.5 release hot-fix
+					if (info && info.isGaming) {
+						this.isGaming = info.isGaming;
+						this.loadGamingDashboard();
+					}
 
 					if (info && info.cpuArchitecture) {
 						if (info.cpuArchitecture.indexOf('64') === -1) {

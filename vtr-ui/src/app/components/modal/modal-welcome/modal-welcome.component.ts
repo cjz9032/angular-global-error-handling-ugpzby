@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
@@ -9,7 +9,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 	templateUrl: './modal-welcome.component.html',
 	styleUrls: ['./modal-welcome.component.scss']
 })
-export class ModalWelcomeComponent implements OnInit, AfterViewInit {
+export class ModalWelcomeComponent implements OnInit {
 	progress = 49;
 	isInterestProgressChanged = false;
 	page = 1;
@@ -18,10 +18,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit {
 	startTime: number;
 	endTime: number;
 	metrics: any;
-	image1 = new Image();
-	image2 = new Image();
-	image3 = new Image();
-	isDivVisible = false;
 	data: any = {
 		page2: {
 			title: 'How will you use it?',
@@ -42,7 +38,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit {
 		public commonService: CommonService) {
 		this.startTime = new Date().getTime();
 		this.metrics = shellService.getMetrics();
-		this.preLoadImage();
 	}
 
 	ngOnInit() {
@@ -116,9 +111,8 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit {
 	}
 
 	saveUsageType($event, value) {
-		// console.log("Selected MOD",$event);
 		if ($event.target.checked) {
-			// console.log(value);
+			console.log(value);
 		}
 		if (this.data.page2.radioValue == null) {
 			this.progress += 16;
@@ -137,14 +131,5 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit {
 	moreInterestClicked() {
 		this.interestCopy = this.interests;
 		this.hideMoreInterestBtn = true;
-	}
-	ngAfterViewInit(): void {
-		this.isDivVisible = true;
-	}
-	preLoadImage() {
-		this.image1.src = './../../../../assets/images/welcome/custom-use.jpg';
-		this.image2.src = "./../../../../assets/images/welcome/personal-use.jpg";
-		this.image3.src = "./../../../../assets/images/welcome/business-use.jpg";
-
 	}
 }
