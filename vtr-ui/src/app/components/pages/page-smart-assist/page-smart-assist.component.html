@@ -340,54 +340,7 @@
 								[allowCollapse]="true"
 								[theme]="'white'"
 								(toggle)="onCardCollapse($event)">
-
 								<vtr-active-protection-system></vtr-active-protection-system>
-
-								<!-- to be deleted once checked -->
-								<!-- <ul class="list-group list-group-flush">
-									<li class="auto-screen-off-block">
-										<vtr-ui-row-switch
-											[title]="'device.smartAssist.activeProtectionSystem.activeProtection.title' | translate"
-											[caption]=" 'device.smartAssist.activeProtectionSystem.activeProtection.caption' | translate"
-											[isSwitchVisible]="true"
-											[leftIcon]="['fal', 'gem']"
-											[theme]="'white'">
-										</vtr-ui-row-switch>
-										<div class="container">
-											<div class="row">
-												<div class="col">
-													<div class="pl-5 ml-5 pt-4">
-														<div class="display-dim-title">
-															{{'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.title' | translate}}
-														</div>
-														<vtr-ui-range-slider
-															[minValueLegend]="'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.startTime' | translate"
-															[minValue]="0"
-															[maxValueLegend]="'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.endTime' | translate"
-															[maxValue]="100"
-															[enableSlider]="!keepMyDisplay">
-														</vtr-ui-range-slider>
-													</div>
-												</div>
-											</div>
-										</div>
-									</li>
-									<li class="pt-3 keep-my-display-block">
-										<vtr-ui-row-switch
-											[title]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.title' | translate"
-											[caption]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.caption' | translate"
-											[leftIcon]="['fal', 'gem']"
-											[theme]="'white'"
-											[isSwitchVisible]="true"
-											[showChildContent]="true"
-											(toggleOnOff)="displayDim($event)"
-											[isSwitchChecked]="keepMyDisplay">
-
-										</vtr-ui-row-switch>
-									</li>
-								</ul> -->
-								<!-- end of deletable content -->
-
 							</vtr-container-collapsible>
 						</div>
 					</div>
