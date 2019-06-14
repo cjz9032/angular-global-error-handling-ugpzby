@@ -3,7 +3,7 @@
 		[options]="options"
 		(valueChange)="onValueChange($event)"
 		(userChange)="onChange($event)"
-		[manualRefresh]="manualRefresh" [(value)]="lightingData.brightness"></ng5-slider>
+		[manualRefresh]="manualRefresh" [(value)]="lightingData"></ng5-slider>
 
 	<div class="row label"
 		*ngIf="minValueLegend.length > 0 || maxValueLegend.length > 0">

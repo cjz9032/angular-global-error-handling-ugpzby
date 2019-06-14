@@ -1,9 +1,9 @@
 <div class="ui-lighting-profile">
 	<div class="d-flex justify-content-around">
-		<vtr-ui-lighting-profile-toggle (setDefaultProfile)="setDefaultProfile($event)"
+		<vtr-ui-lighting-profile-toggle (setLightingProfileId)="setLightingProfileId($event)"
 			[currentProfile]="currentProfile"></vtr-ui-lighting-profile-toggle>
 		<vtr-ui-brightness-slider *ngIf="!isProfileOff && lightingCapabilities.BrightAdjustLevel!==0"
-			[lightingData]="setProfile"
+			[lightingData]="profileBrightness"
 			(setLightingBrightness)="setLightingBrightness($event)" ></vtr-ui-brightness-slider>
 	</div>
 	<div class="lighting-area">
