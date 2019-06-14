@@ -225,6 +225,7 @@ import { UiApsSliderComponent } from './components/ui/ui-aps-slider/ui-aps-slide
 import { UiCheckboxComponent } from './components/ui/ui-checkbox/ui-checkbox.component';
 import { UiCircleRadioWithCheckboxComponent } from './components/ui/ui-circle-radio-with-checkbox/ui-circle-radio-with-checkbox.component';
 import { UiChsStatusbarComponent } from './components/ui/ui-chs-statusbar/ui-chs-statusbar.component';
+import { UiColorWheelComponent } from './components/ui/ui-color-wheel/ui-color-wheel.component';
 import { SubpageDeviceSettingsInputAccessoryComponent } from './components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
 import { ModalIntelligentCoolingModesComponent } from './components/modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
 
@@ -407,6 +408,7 @@ library.add(fal);
 		UiCheckboxComponent,
 		UiCircleRadioWithCheckboxComponent,
 		UiChsStatusbarComponent,
+		UiColorWheelComponent,
 		SubpageDeviceSettingsInputAccessoryComponent,
 		ModalIntelligentCoolingModesComponent,
 		DaysIntervalPipe
