@@ -7,6 +7,10 @@
                 <vtr-nav-tabs *ngIf="showNavigationBlock"></vtr-nav-tabs>
                 <router-outlet></router-outlet>
             </div>
+			<vtr-stat
+				*ngIf="(isFigleafReadyForCommunication$ | async)"
+				[dashboardData]="dashboardData$ | async">
+			</vtr-stat>
             <vtr-support-banner *ngIf="showSupportBanner"></vtr-support-banner>
         </div>
         <div class="privacy-wrapper__side-col">

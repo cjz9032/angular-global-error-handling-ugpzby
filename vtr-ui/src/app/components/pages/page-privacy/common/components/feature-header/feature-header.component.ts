@@ -7,7 +7,13 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FeatureHeaderComponent {
-	@Input() isShowCountIssues = false;
-	@Input() isFigleafInstalled = false;
-	@Input() texts: { title: string, figleafInstalled: string, figleafUninstalled: string };
+	@Input() isFeatureWasScanned = false;
+	@Input() isFigleafReadyToCommunication = false;
+	@Input() countOfIssue = 0;
+	@Input() texts: {
+		title: string,
+		figleafTitle: string,
+		figleafInstalled: string,
+		figleafUninstalled: string
+	};
 }

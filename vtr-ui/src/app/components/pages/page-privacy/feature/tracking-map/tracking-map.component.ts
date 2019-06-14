@@ -46,8 +46,9 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 
 	getText() {
 		return {
-			chartLabel: this.isUserData ? 'Companies that track you' : 'Companies using information',
-			cloudLabel: this.isUserData ? 'Websites you visit' : 'The most popular websites with tracking tools',
+			chartLabel: this.isUserData ? 'Companies using your information' : 'Companies using information',
+			cloudLabel: this.isUserData ? 'Websites you visit with tracking tools' : 'The most popular websites with tracking tools',
+			circleLabel: 'TRACKING TOOLS'
 		};
 	}
 

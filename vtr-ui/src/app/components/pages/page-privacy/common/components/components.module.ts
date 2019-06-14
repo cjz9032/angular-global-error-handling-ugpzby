@@ -21,6 +21,7 @@ import { SupportWidgetComponent } from './support-widget/support-widget.componen
 import { SupportPopupComponent } from './support-popup/support-popup.component';
 import { NavTabsComponent } from './nav-tabs/nav-tabs.component';
 import { FeatureHeaderComponent } from './feature-header/feature-header.component';
+import { StatComponent } from './privacy-dashboard-list/stat.component';
 
 @NgModule({
 	declarations: [
@@ -40,7 +41,8 @@ import { FeatureHeaderComponent } from './feature-header/feature-header.componen
 		SupportPopupComponent,
 		NavTabsComponent,
 		PermitTrackersAndPasswordsComponent,
-		FeatureHeaderComponent
+		FeatureHeaderComponent,
+		StatComponent
 	],
 	exports: [
 		SimpleLoaderComponent,
@@ -59,7 +61,8 @@ import { FeatureHeaderComponent } from './feature-header/feature-header.componen
 		NavTabsComponent,
 		PermitTrackersAndPasswordsComponent,
 		SupportWidgetComponent,
-		FeatureHeaderComponent
+		FeatureHeaderComponent,
+		StatComponent
 	],
 	imports: [
 		CommonModule,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { distinctUntilChanged, filter, map, startWith } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, startWith, tap } from 'rxjs/operators';
 import { BreachedAccountsService } from '../../common/services/breached-accounts.service';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
@@ -9,6 +9,7 @@ import { CountNumberOfIssuesService } from '../../common/services/count-number-o
 import { SafeStorageService } from '../../common/services/safe-storage.service';
 import { FeaturesStatuses } from '../../userDataStatuses';
 import { UserDataGetStateService } from '../../common/services/user-data-get-state.service';
+import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -39,6 +40,13 @@ export class BreachedAccountsComponent implements OnInit {
 		distinctUntilChanged(),
 	);
 
+	textForFeatureHeader = {
+		title: 'Check email for breaches',
+		figleafTitle: 'Lenovo Privacy monitors your accounts',
+		figleafInstalled: 'If there is a data leak, we will immediately notify you.',
+		figleafUninstalled: 'Find out if your private information is being exposed. We will check the dark web and every known data breach.',
+	};
+
 	constructor(
 		private breachedAccountsService: BreachedAccountsService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
@@ -47,7 +55,8 @@ export class BreachedAccountsComponent implements OnInit {
 		private accessTokenService: AccessTokenService,
 		private countNumberOfIssuesService: CountNumberOfIssuesService,
 		private safeStorageService: SafeStorageService,
-		private userDataGetStateService: UserDataGetStateService
+		private userDataGetStateService: UserDataGetStateService,
+		private vantageCommunicationService: VantageCommunicationService
 	) {
 	}
 
@@ -58,5 +67,9 @@ export class BreachedAccountsComponent implements OnInit {
 	startVerify() {
 		this.commonPopupService.open(this.confirmationPopupName);
 		this.emailScannerService.sendConfirmationCode().subscribe();
+	}
+
+	openFigleafApp() {
+		this.vantageCommunicationService.openFigleafByUrl('lenovoprivacy:');
 	}
 }

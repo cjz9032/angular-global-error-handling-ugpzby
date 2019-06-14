@@ -19,7 +19,7 @@
                      class="check-breaches__lenovo-id lenovo-id"
                      (mousedown)="preventFireBlur($event)"
                      (click)="setLenovoId()">
-                    <p class="lenovo-id__text">Use my lenovo id:
+                    <p class="lenovo-id__text">Use my LENOVO ID:
                         <span class="lenovo-id__id">{{lenovoId}}</span>
                     </p>
                 </div>
@@ -33,7 +33,7 @@
                     [metricsEvent]="'ItemClick'"
                     [metricsItem]="'BreachedAccountsRunCheckupButton'"
                     type='submit'>
-                {{(emailWasScanned$ | async) ? "Scan My Email" : "Checkup"}}
+                Checkup
             </button>
         </div>
 

@@ -25,7 +25,7 @@ import { PrivacyRoutingModule } from './privacy-routing.module';
 // Common UI components
 import { FaqComponent } from './main-layout/sidebar/faq/faq.component';
 import { SidebarInstallWidgetComponent } from './main-layout/sidebar/sidebar-benefits-widget/sidebar-install-widget.component';
-import { PrivacyDashboardListComponent } from './pages/result/privacy-dashboard-list/privacy-dashboard-list.component';
+import { StatComponent } from './common/components/privacy-dashboard-list/stat.component';
 import { PRIVACY_BASE_URL, PRIVACY_ENVIRONMENT } from './utils/injection-tokens';
 import { getPrivacyEnvironment } from './environment';
 import { DataKnowledgeService } from './common/services/data-knowledge.service';
@@ -75,7 +75,6 @@ library.add(fal);
 		SidebarComponent,
 		FaqComponent,
 		SidebarInstallWidgetComponent,
-		PrivacyDashboardListComponent,
 		PrivacyScoreComponent,
 		LandingComponent,
 		ArticlesComponent,

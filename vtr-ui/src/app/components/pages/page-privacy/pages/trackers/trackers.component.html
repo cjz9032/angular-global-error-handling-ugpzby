@@ -3,8 +3,8 @@
 	 [metricsEvent]="'PageView'">
 	<vtr-feature-header
 		[texts]="textForFeatureHeader"
-		[isShowCountIssues]="isWebsiteTrackersWasScanned$ | async"
-		[isFigleafInstalled]="isFigleafInstalled$ | async">
+		[isFeatureWasScanned]="isWebsiteTrackersWasScanned$ | async"
+		[isFigleafReadyToCommunication]="isFigleafInstalled$ | async">
 		<span class="trackers-page__title--red">{{websiteTrackersCount$ | async}}</span> tracking tools found
 	</vtr-feature-header>
 	<div class="trackers-concent"

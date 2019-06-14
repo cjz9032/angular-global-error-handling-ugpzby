@@ -58,11 +58,11 @@
 		&--disabled {
 			@extend %button-link--disabled;
 			text-transform: initial;
-			color: #667481;
+			color: #C2C9CF;
 			cursor: default;
 
 			&:hover{
-				color: #667481;
+				color: #C2C9CF;
 			}
 		}
   }
