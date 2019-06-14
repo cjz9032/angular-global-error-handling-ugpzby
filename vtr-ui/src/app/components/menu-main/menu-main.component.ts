@@ -281,6 +281,31 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 					/**
 					* check if HPD related features are supported or not. If yes show Smart Assist tab else hide. Default is hidden
 					*/
+					// this.smartAssist.getHPDVisibilityInIdeaPad()
+					// 	.then((isAvailable: boolean) => {
+					// 		console.log('getSmartAssistVisibility()', isAvailable);
+					// 		isAvailable = true;
+					// 		console.log('getHPDVisibilityInIdeaPad()', isAvailable);
+					// 		// isAvailable = true;
+					// 		this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
+					// 		if (isAvailable) {
+					// 			myDeviceItem.subitems.splice(4, 0, {
+					// 				id: 'smart-assist',
+					// 				label: 'common.menu.device.sub4',
+					// 				path: 'smart-assist',
+					// 				metricsEvent: 'itemClick',
+					// 				metricsParent: 'navbar',
+					// 				metricsItem: 'link.smartassist',
+					// 				routerLinkActiveOptions: { exact: true },
+					// 				icon: '',
+					// 				subitems: []
+					// 			});
+					// 		}
+					// 	})
+					// 	.catch(error => {
+					// 		console.log('error in getHPDVisibilityInIdeaPad()', error);
+					// 	});
+
 					Promise.all([
 						this.smartAssist.getHPDVisibilityInIdeaPad(),
 						this.smartAssist.getHPDVisibilityInThinkPad()

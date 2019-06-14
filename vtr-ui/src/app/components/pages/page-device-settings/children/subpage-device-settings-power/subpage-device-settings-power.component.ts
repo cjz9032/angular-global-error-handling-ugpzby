@@ -847,4 +847,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 
 	}
+
+	showPowerSettings() {
+		//return !this.isDesktopMachine || this.showEasyResumeSection || this.usbChargingInBatteryModeStatus;
+		//return false;
+		return !this.isDesktopMachine || this.showEasyResumeSection;
+	}
 }
