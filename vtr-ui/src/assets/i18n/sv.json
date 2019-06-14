@@ -1376,7 +1376,7 @@
             "whyWindowsHelloDescription1": "Windows Hello gör det både enklare och säkrare att logga in på datorn och kan även användas för dina Microsoft-appar online. Följ anvisningarna nedan för att börja använda Windows Hello.",
             "startUsingToday": "Börja använda Windows Hello i dag",
             "visitAndRegister": "Besök Windows Hello-sidan och registrera ditt fingeravtryck.",
-            "visitInSettings": "<tag> Öppna Windows Hello</tag> i systeminställningarna",
+            "visitInSettings": "<tag> Öppna Windows Hello</tag> i systeminställningarna.",
             "unlock": "Använd Windows Hello för att logga in och låsa upp din dator genom att trycka med fingret på sensorn.",
             "startUsingWindowsHello": "Börja använda Windows Hello för att logga in på Microsoft-appar som Outlook, OneDrive, Office 365 och Xbox Live.",
             "visitMicrosoft": "Besök Microsoft",
