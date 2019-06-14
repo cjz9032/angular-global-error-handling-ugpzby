@@ -42,9 +42,13 @@ export class MacrokeyService {
 		return undefined;
 	}
 
-	public setStopRecording(selectedNumber: String, isSuccess: Boolean, message: String) {
+	public setStopRecording(selectedNumber: String, isSuccess: Boolean, stopType: Boolean) {
 		if (this.isMacroKeyAvailable) {
-			return this.shellService.macroKeySetStopRecording(selectedNumber, isSuccess, message);
+			return this.shellService.macroKeySetStopRecording(
+				selectedNumber,
+				isSuccess,
+				stopType ? 'abnormal' : 'normal'
+			);
 		}
 		return undefined;
 	}

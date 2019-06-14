@@ -64,7 +64,7 @@ export class PageSmartAssistComponent implements OnInit {
 		private commonService: CommonService
 	) {
 		if (this.smartAssist.isShellAvailable) {
-			this.initSmartAssist();
+			this.initSmartAssist(true);
 		}
 		this.fetchCMSArticles();
 	}
@@ -92,7 +92,7 @@ export class PageSmartAssistComponent implements OnInit {
 	}
 
 	// invoke HPD related JS bridge calls
-	private initSmartAssist() {
+	private initSmartAssist(isFirstTimeLoad: boolean) {
 		// ZeroTouchLock
 		Promise.all([
 			this.smartAssist.getZeroTouchLockVisibility(),
@@ -112,7 +112,7 @@ export class PageSmartAssistComponent implements OnInit {
 				this.intelligentSecurity.isIntelligentSecuritySupported = responses[5];
 			}
 
-			if (this.intelligentSecurity.isIntelligentSecuritySupported) {
+			if (this.intelligentSecurity.isIntelligentSecuritySupported && isFirstTimeLoad) {
 				this.headerMenuItems.unshift({
 					title: 'device.smartAssist.jumpTo.security',
 					path: 'security'
@@ -279,7 +279,7 @@ export class PageSmartAssistComponent implements OnInit {
 		this.smartAssist.resetHPDSetting()
 			.then((isSuccess: boolean) => {
 				if (this.smartAssist.isShellAvailable) {
-					this.initSmartAssist();
+					this.initSmartAssist(false);
 				}
 				console.log('onResetDefaultSettings.resetHPDSetting', isSuccess);
 			});
