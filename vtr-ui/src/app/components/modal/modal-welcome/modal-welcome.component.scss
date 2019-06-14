@@ -1,5 +1,10 @@
 @import "../../../app.theme.scss";
 
+::ng-deep span.more-interests:hover, ::ng-deep .content-page-2 .privacy-check .linktext:hover{
+	color: $main_gstart !important;
+	cursor: pointer;
+}
+
 .vtr-modal-welcome {
 	border: none;
 	// scroll-behavior: auto;
@@ -85,7 +90,7 @@
 	}
 
 	.content-page-2 {
-		overflow-y: scroll;
+		overflow-y: auto;
 		overflow-x: hidden;
 		color: $dark;
 		padding: 0px 37px 0px 72px;

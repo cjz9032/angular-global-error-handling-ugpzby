@@ -1267,7 +1267,7 @@
                 "homeSecurityAffect3": "A Segurança doméstica conectada garante que outros dispositivos conectados a sua rede doméstica sejam seguros.",
                 "describe": "Os dispositivos e redes não seguros podem apresentar malware, resultar em roubo de identidade e vazamento de informações privadas e financeiras. Ative este recurso para reduzir o risco de ter seu dispositivo e sua rede doméstica expostos a hackers",
                 "subtitle": "Fique tranquilo",
-                "subtitleDescribe": "A Segurança doméstica conectada enviará para você um alerta se uma vulnerabilidade no seu dispositivo ou rede doméstica for detectada, ou se você estiver conectado a uma rede possivelmente perigosa. Saiba ainda mais sobre a Segurança doméstica conectada em Dicas e Sugestões.",
+                "subtitleDescribe": "A Segurança doméstica conectada enviará para você um alerta se uma vulnerabilidade no seu dispositivo ou rede doméstica for detectada, ou se você estiver conectado a uma rede possivelmente perigosa. Saiba ainda mais sobre a Segurança doméstica conectada em <tag>aqui</tag>.",
                 "tryNow": "Experimentar agora"
             },
             "invitationcode": {

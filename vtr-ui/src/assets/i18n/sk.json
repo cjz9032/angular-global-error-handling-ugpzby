@@ -1267,7 +1267,7 @@
                 "homeSecurityAffect3": "Služba Zabezpečenie prepojenej domácnosti zaistí bezpečnosť ostatných zariadení pripojených do vašej domácej siete.",
                 "describe": "Nebezpečné zariadenia a siete môžu zavádzať malvér, zapríčiniť krádež identity a únik súkromných a finančných informácií. Povolením tejto služby znížite riziko ohrozenia svojho zariadenia a domácej siete útokmi iných osôb",
                 "subtitle": "Pokoj v duši",
-                "subtitleDescribe": "Služba Zabezpečenie prepojenej domácnosti vám odošle varovanie, ak odhalí zraniteľnosť zariadenia alebo domácej siete, prípadne ak ste pripojení k potenciálne škodlivej sieti. Ďalšie informácie o službe Zabezpečenie prepojenej domácnosti nájdete v časti Tipy a triky.",
+                "subtitleDescribe": "Služba Zabezpečenie prepojenej domácnosti vám odošle varovanie, ak odhalí zraniteľnosť zariadenia alebo domácej siete, prípadne ak ste pripojení k potenciálne škodlivej sieti. Ďalšie informácie o službe Zabezpečenie prepojenej domácnosti nájdete v <tag>tu</tag>.",
                 "tryNow": "Vyskúšať teraz"
             },
             "invitationcode": {

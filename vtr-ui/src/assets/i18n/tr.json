@@ -1267,7 +1267,7 @@
                 "homeSecurityAffect3": "Bağlı Ev Güvenliği, ev ağınıza bağlanan diğer cihazların güvende olmasını sağlar.",
                 "describe": "Güvenilmez cihazlar ve ağlar kötü amaçlı yazılımları bulaştırabilir, kimlik hırsızlığına yol açabilir, özel ve finansal bilgileri sızdırabilir. Saldırganların cihazınıza ve ev ağınıza erişme riskini azaltmak için bu özelliği etkinleştirin",
                 "subtitle": "İçiniz Rahat Olsun",
-                "subtitleDescribe": "Bağlı Ev Güvenliği, cihazınızda veya ev ağınızda bir güvenlik açığı algılarsa ya da kötü amaçlı olabilecek bir ağa bağlanırsanız size bir uyarı gönderir. İpuçları ve Püf Noktaları bölümünde Bağlı Ev Güvenliği hakkında daha fazla bilgi edinebilirsiniz.",
+                "subtitleDescribe": "Bağlı Ev Güvenliği, cihazınızda veya ev ağınızda bir güvenlik açığı algılarsa ya da kötü amaçlı olabilecek bir ağa bağlanırsanız size bir uyarı gönderir. <tag>burada</tag> bölümünde Bağlı Ev Güvenliği hakkında daha fazla bilgi edinebilirsiniz.",
                 "tryNow": "Şimdi Deneyin"
             },
             "invitationcode": {

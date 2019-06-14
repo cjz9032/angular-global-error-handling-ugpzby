@@ -1267,7 +1267,7 @@
                 "homeSecurityAffect3": "Zabezpečení připojené domácnosti chrání ostatní zařízení v domácí síti před nebezpečnými sítěmi.",
                 "describe": "Do nezabezpečených zařízení a sítí může proniknout malware a způsobit krádež identity nebo únik soukromých a finančních informací. Zapnutím této funkce snížíte riziko vystavení vašeho zařízení a domácí sítě útočníkům.",
                 "subtitle": "Mír v duši",
-                "subtitleDescribe": "Pokud zabezpečení připojené domácnosti zjistí chybu v zabezpečení zařízení nebo domácí síti nebo rozpozná připojení k potenciálně škodlivé síti, odešle vám výstrahu. Další informace o zabezpečení připojené domácnosti najdete v části Tipy a triky.",
+                "subtitleDescribe": "Pokud zabezpečení připojené domácnosti zjistí chybu v zabezpečení zařízení nebo domácí síti nebo rozpozná připojení k potenciálně škodlivé síti, odešle vám výstrahu. Další informace o zabezpečení připojené domácnosti najdete v části <tag>získáte zde</tag>.",
                 "tryNow": "Chci to vyzkoušet"
             },
             "invitationcode": {

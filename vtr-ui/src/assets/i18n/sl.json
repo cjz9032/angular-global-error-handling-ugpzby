@@ -1267,7 +1267,7 @@
                 "homeSecurityAffect3": "Povezana domača varnost zagotavlja, da so omrežja, s katerimi ste povezani, varna.",
                 "describe": "Nevarne naprave in omrežja lahko uvedejo zlonamerno programsko opremo, vodijo do kraje identitete in puščajo zasebne in finančne informacije. Omogočite to funkcijo, da zmanjšate nevarnost izpostavljanja naprave in podatkov v njem napadalcem",
                 "subtitle": "Miren spanec",
-                "subtitleDescribe": "Povezana domača varnost vam bo poslala opozorilo, če zazna ranljivost v vaši napravi ali domačem omrežju ali če ste povezani z morebitno zlonamerno mrežo. Več o programu Connected Home Security lahko preberete v nasvetih in zvijačah.",
+                "subtitleDescribe": "Povezana domača varnost vam bo poslala opozorilo, če zazna ranljivost v vaši napravi ali domačem omrežju ali če ste povezani z morebitno zlonamerno mrežo. Več o programu Connected Home Security lahko preberete v <tag>tukaj</tag>.",
                 "tryNow": "Preskusite zdaj"
             },
             "invitationcode": {

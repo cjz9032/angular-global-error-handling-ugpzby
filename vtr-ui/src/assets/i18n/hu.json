@@ -1267,7 +1267,7 @@
                 "homeSecurityAffect3": "A Biztonsági rendszer csatlakoztatott otthonhoz ellenőrzi, hogy az otthoni hálózathoz csatlakozó további eszközök biztonságosak-e.",
                 "describe": "A nem biztonságos eszközök és hálózatok rosszindulatú programokat terjeszthetnek, lehetővé tehetik a személyi adatokkal való visszaélést, illetve a magánjellegű és pénzügyi adatok illetéktelen személyek kezébe kerülését. A funkció aktiválásával csökken annak a kockázata, hogy támadók hozzáférhetnek az eszközhöz és az Ön otthoni hálózatához",
                 "subtitle": "Nyugodt lehet",
-                "subtitleDescribe": "A Biztonsági rendszer csatlakoztatott otthonhoz riasztást küld, ha biztonsági rést észlel az eszköz vagy az otthoni hálózat esetében, illetve ha Ön esetlegesen rosszindulatú hálózathoz próbál csatlakozni. A Tippek és trükkök részben részletesebben olvashat a Biztonsági rendszer csatlakoztatott otthonhoz szolgáltatásról.",
+                "subtitleDescribe": "A Biztonsági rendszer csatlakoztatott otthonhoz riasztást küld, ha biztonsági rést észlel az eszköz vagy az otthoni hálózat esetében, illetve ha Ön esetlegesen rosszindulatú hálózathoz próbál csatlakozni. A <tag>itt</tag> részben részletesebben olvashat a Biztonsági rendszer csatlakoztatott otthonhoz szolgáltatásról.",
                 "tryNow": "Próbálja ki"
             },
             "invitationcode": {

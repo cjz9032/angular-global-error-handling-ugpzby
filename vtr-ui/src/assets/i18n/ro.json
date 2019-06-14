@@ -1267,7 +1267,7 @@
                 "homeSecurityAffect3": "Securitatea conectată, la domiciliu, asigură faptul că alte dispozitive conectate la rețeaua casei dvs. sunt sigure.",
                 "describe": "Dispozitivele și rețelele nesigure pot introduce programe rău-intenționate, pot conduce la furtul de identitate și la scurgeri de date private și financiare. Activați această funcție pentru a reduce riscul de expunere a dispozitivului și rețelei dvs. la atacuri",
                 "subtitle": "Liniştea minţii",
-                "subtitleDescribe": "Securitatea conectată, la domiciliu, vă va trimite o alertă dacă detectează o vulnerabilitate în dispozitivul sau în rețeaua dvs., sau dacă sunteți conectat la o rețea potențial rău-intenționată. Aflați și mai multe despre securitatea conectată, la domiciliu, în „Sfaturi și trucuri”.",
+                "subtitleDescribe": "Securitatea conectată, la domiciliu, vă va trimite o alertă dacă detectează o vulnerabilitate în dispozitivul sau în rețeaua dvs., sau dacă sunteți conectat la o rețea potențial rău-intenționată. Aflați și mai multe despre securitatea conectată, la domiciliu, în <tag>aici</tag>.",
                 "tryNow": "Încercați acum"
             },
             "invitationcode": {

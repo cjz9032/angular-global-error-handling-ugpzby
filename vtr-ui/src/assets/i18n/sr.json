@@ -1267,7 +1267,7 @@
                 "homeSecurityAffect3": "Povezana kućna bezbednost osigurava da drugi uređaji sa kojima ste povezani budu bezbedni.",
                 "describe": "Uređaji i mreže koji nisu bezbedni mogu uvesti malver, dovesti do krađe identiteta i curenja privatnih i finansijskih informacija. Omogućite ovu funkciju da biste umanjili rizik od izlaganja računara i kućne mreže napadačima",
                 "subtitle": "Postizanje sigurnosti",
-                "subtitleDescribe": "Povezana kućna bezbednost će vam poslati obaveštenje ako otkrije ranjivost u uređaju ili kućnoj mreži ili ako ste povezani sa potencijalno zlonamernom mrežom. Saznajte još više o povezanoj kućnoj bezbednosti u odeljku Saveti i trikovi.",
+                "subtitleDescribe": "Povezana kućna bezbednost će vam poslati obaveštenje ako otkrije ranjivost u uređaju ili kućnoj mreži ili ako ste povezani sa potencijalno zlonamernom mrežom. Saznajte još više o povezanoj kućnoj bezbednosti u <tag>ovde</tag>.",
                 "tryNow": "Isprobajte odmah"
             },
             "invitationcode": {

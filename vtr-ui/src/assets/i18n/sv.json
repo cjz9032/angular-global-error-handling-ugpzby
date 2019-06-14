@@ -1267,7 +1267,7 @@
                 "homeSecurityAffect3": "Det ser till att andra enheter som är anslutna till hemnätverket är säkra.",
                 "describe": "Osäkra enheter och nätverk kan introducera skadlig programvara, leda till identitetsstöld och avslöja privat och ekonomisk information. Aktivera funktionen för att minska risken för att enheten och hemnätverket exponeras för angripare.",
                 "subtitle": "Sinnesro",
-                "subtitleDescribe": "Säkerhet för uppkopplat hem skickar ett meddelande om det upptäcker en sårbarhet på enheten eller i hemnätverket eller om du ansluter till ett skadligt nätverk. Läs mer om Säkerhet för uppkopplat hem i Tips och trick.",
+                "subtitleDescribe": "Säkerhet för uppkopplat hem skickar ett meddelande om det upptäcker en sårbarhet på enheten eller i hemnätverket eller om du ansluter till ett skadligt nätverk. Läs mer om Säkerhet för uppkopplat hem i <tag>här</tag>.",
                 "tryNow": "Prova nu"
             },
             "invitationcode": {

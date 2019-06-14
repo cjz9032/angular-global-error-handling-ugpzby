@@ -1267,7 +1267,7 @@
                 "homeSecurityAffect3": "La Seguridad de hogar conectado asegura que los otros dispositivos que están conectado a la red de su hogar sean seguros.",
                 "describe": "Las redes y los dispositivos no seguros pueden introducir malware, llevar a la suplantación de identidad y producir la pérdida de información privada y financiera. Active esta característica para reducir el riesgo de exponer su dispositivo y la red de su hogar a los atacantes",
                 "subtitle": "Serenidad",
-                "subtitleDescribe": "La Seguridad de hogar conectado enviará un aviso si detecta una vulnerabilidad en su dispositivo o red doméstica o si está conectado a una red posiblemente malintencionada. Obtenga aún más información sobre la Seguridad de hogar conectado en Consejos y trucos.",
+                "subtitleDescribe": "La Seguridad de hogar conectado enviará un aviso si detecta una vulnerabilidad en su dispositivo o red doméstica o si está conectado a una red posiblemente malintencionada. Obtenga aún más información sobre la Seguridad de hogar conectado en <tag>aquí</tag>.",
                 "tryNow": "Probar ahora"
             },
             "invitationcode": {

@@ -1267,7 +1267,7 @@
                 "homeSecurityAffect3": "Connected Home -suojaus varmistaa, että muut kotiverkkoosi yhdistyneet laitteet ovat turvallisia.",
                 "describe": "Laitteet ja verkot, jotka eivät ole turvallisia, voivat tuoda laitteisiin haittaohjelmia, johtaa identiteettivarkauksiin ja paljastaa yksityisiä ja taloustietoja. Ottamalla tämän ominaisuuden käyttöön voit pienentää riskiä, että laitteesi ja kotiverkkosi joutuvat hyökkäyksen kohteeksi",
                 "subtitle": "Mielenrauhaa",
-                "subtitleDescribe": "Connected Home -suojaus lähettää sinulle hälytyksen havaitessaan haavoittuvuuden laitteessasi tai kotiverkossasi tai, jos olet yhdistynyt mahdollisesti vahingolliseen verkkoon. Lue lisää Lenovo Wi-Fi -suojauksesta kohdassa Vihjeet ja vinkit.",
+                "subtitleDescribe": "Connected Home -suojaus lähettää sinulle hälytyksen havaitessaan haavoittuvuuden laitteessasi tai kotiverkossasi tai, jos olet yhdistynyt mahdollisesti vahingolliseen verkkoon. Lue lisää Lenovo Wi-Fi -suojauksesta kohdassa <tag>tästä</tag>.",
                 "tryNow": "Kokeile nyt"
             },
             "invitationcode": {

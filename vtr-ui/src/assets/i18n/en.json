@@ -556,17 +556,11 @@
 					"NotGood": {
 						"title": "The battery is not in a good Condition"
 					},
-					"LimitedACAdapterSupport": {
-						"title": "Limited Support AC Adapter"
-					},
 					"NotSupportACAdapter": {
-						"title": "Not support AC Adapter"
-					},
-					"ACAdapterNotSupported": {
 						"title": "AC adapter not supported.",
 						"description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
 					},
-					"EnoughPowerACAdapter": {
+					"LimitedACAdapterSupport": {
 						"title": "AC adapter cannot provide enough power",
 						"description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
 					},
@@ -636,7 +630,16 @@
 							"mode3": "Performance mode",
 							"line1": "Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
 							"line2": "Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
-							"line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+							"line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance.",
+							"line4": "More info"
+						},
+						"intelligentCoolingModesModal": {
+							"title": "Change intelligent cooling modes",
+							"close": "close",
+							"coolingModesList": {
+								"list1": "Click on the windows battery-icon in the toolbar",
+								"list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+							}
 						}
 					},
 					"nonintelligentCooling": {
@@ -867,13 +870,13 @@
 					}
 				}
 			},
-				"inputAccessories": {
+			"inputAccessories": {
 				"title": "Input & Accessories",
 				"subtitle": "Input & Accessories Settings",
 				"description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
 				"inputAccessory": {
 					"title": "Intelligent Keyboard",
-						"hiddenKeyboardFunctions": {
+					"hiddenKeyboardFunctions": {
 						"title": "Hidden keyboard functions",
 						"description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
 					}
@@ -956,6 +959,18 @@
 						"startTime": "0 minutes",
 						"endTime": "60 minutes"
 					}
+				}
+			},
+			"activeProtectionSystem": {
+				"title": "Active Protection System",
+				"description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+				"activeProtection": {
+					"title": "Active Protection",
+					"caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection"
+				},
+				"manualActiveProtectionSuspension": {
+					"title": "Manual Active Protection Suspension",
+					"caption": "Allow me to manually suspend the Active Protection System"
 				}
 			},
 			"intelligentMedia": {
@@ -1089,7 +1104,16 @@
 		"upgrade": "upgrade",
 		"freeTrial": "Free 30 day trial",
 		"protectAllDevices": "Protect all of your devices",
-		"startTrial": "Start Trial",
+		"inEcosystem":"In Ecosystem",
+		"ecosystemEnable":"Ecosystem Enabled",
+		"inTrial":"In trial",
+		"addEcosystem":"Add to Ecosystem",
+		"enableEcosystem":"Enable Ecosystem",
+		"startTrial":"Start Trial",
+		"fullAccess":"Full Access",
+		"recent":"Recent security notifications",
+		"notification":"Notifications",
+		"renew":"Renew",
 		"tour": {
 			"back": "Back",
 			"skip": "Skip",
@@ -1200,9 +1224,7 @@
 			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
 			"good": "GOOD",
 			"malicious": "MALICIOUS",
-			"suspicious": "SUSPICIOUS",
-			"titleOffline": "No internet connection detected",
-			"subTitleOffline": "Learn more on how to solve connection issues in our"
+			"suspicious": "SUSPICIOUS"
 		},
 		"antivirus": {
 			"common": {
@@ -1306,7 +1328,7 @@
 				"homeSecurityAffect3": "Connected Home Security ensures that other devices connected to your home network are safe.",
 				"describe": "Unsafe devices and networks can introduce malware, lead to identity theft, and leak private and financial information. Enable this feature to reduce the risk of having your device, and your home network exposed to attackers",
 				"subtitle": "Peace of Mind",
-				"subtitleDescribe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more in about Connected Home Security in Tips and Tricks.",
+				"subtitleDescribe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more about Connected Home Security <tag>here</tag>.",
 				"tryNow": "Try Now"
 			},
 			"invitationcode": {

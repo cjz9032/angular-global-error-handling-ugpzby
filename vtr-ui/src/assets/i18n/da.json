@@ -1267,7 +1267,7 @@
                 "homeSecurityAffect3": "Tilsluttet Home Security sørger for, at andre enheder, som er knyttet til dit hjemmenetværk, er sikre.",
                 "describe": "Usikre enheder og netværk kan introducere skadelig software, føre til identitetstyveri og lække personlige og økonomiske oplysninger. Aktivér denne indstilling for at reducere risikoen for, at din enhed og dit hjemmenetværk bliver udsat for angreb",
                 "subtitle": "Få ro i sindet",
-                "subtitleDescribe": "Tilsluttet Home Security sender en advarsel, hvis systemet registrerer et sikkerhedsproblem i din enhed eller dit hjemmenetværk, eller hvis du er tilsluttet et potentielt skadeligt netværk. Få mere at vide om Tilsluttet Home Security under Tips og tricks.",
+                "subtitleDescribe": "Tilsluttet Home Security sender en advarsel, hvis systemet registrerer et sikkerhedsproblem i din enhed eller dit hjemmenetværk, eller hvis du er tilsluttet et potentielt skadeligt netværk. Få mere at vide om Tilsluttet Home Security under <tag>her</tag>.",
                 "tryNow": "Prøv nu"
             },
             "invitationcode": {
