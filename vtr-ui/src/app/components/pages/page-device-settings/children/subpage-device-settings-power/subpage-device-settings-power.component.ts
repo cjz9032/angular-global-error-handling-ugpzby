@@ -796,7 +796,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					stopValue: batteryDetails.stopChargeValue,
 					checkBoxValue: batteryDetails.autoChecked
 				};
-				 console.log('set values -->', batteryInfo);
+				console.log('set values -->', batteryInfo);
 				this.powerService
 					.setChargeThresholdValue(batteryInfo)
 					.then((value: any) => {
@@ -849,8 +849,13 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	showPowerSettings() {
+
+		if (!(false)) {
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
+		}
+
 		//return !this.isDesktopMachine || this.showEasyResumeSection || this.usbChargingInBatteryModeStatus;
-		//return false;
 		return !this.isDesktopMachine || this.showEasyResumeSection;
+		//return !this.isDesktopMachine || this.showEasyResumeSection;
 	}
 }
