@@ -314,16 +314,12 @@ export class UiLightingProfileComponent implements OnInit {
 						console.log('getLightingProfileById------------ ---------------->', JSON.stringify(response.lightInfo));
 						this.currentProfile = response.profileId;
 						this.profileBrightness = response.brightness;
-						this.lightInfo = this.response.lightInfo[0];
-
-						console.log('getLightingProfileById------------ ---------------->', this.lightInfo);
-						if (this.response.lightInfo.length > 0) {
-							this.lightingEffectData.drop[0].curSelected = this.response.lightInfo[0].lightEffectType;
-							if (this.response.lightInfo.length > 1) {
-								this.lightingEffectData.drop[1].curSelected = this.response.lightInfo[1].lightEffectType;
+						if (response.lightInfo.length > 0) {
+							this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
+							if (response.lightInfo.length > 1) {
+								this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
 							}
 						}
-
 					}
 				});
 			}
@@ -365,10 +361,10 @@ export class UiLightingProfileComponent implements OnInit {
 					console.log('setLightingProfileId------------response---------------->',
 						JSON.stringify(response));
 					if (response.didSuccess) {
-						if (this.response.lightInfo.length > 0) {
-							this.lightingEffectData.drop[0].curSelected = this.response.lightInfo[0].lightEffectType;
-							if (this.response.lightInfo.length > 1) {
-								this.lightingEffectData.drop[1].curSelected = this.response.lightInfo[1].lightEffectType;
+						if (response.lightInfo.length > 0) {
+							this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
+							if (response.lightInfo.length > 1) {
+								this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
 							}
 						}
 						this.profileBrightness = response.brightness;
