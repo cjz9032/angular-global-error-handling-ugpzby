@@ -8,7 +8,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 	selector: '[vtrTranslate]'
 })
 export class TranslateDirective {
-	private isOnline:boolean=this.commonService.isOnline;
+	private isOnline = this.commonService.isOnline;
 	constructor(
 		private containerRef: ViewContainerRef,
 		private template: TemplateRef<any>,
@@ -26,25 +26,25 @@ export class TranslateDirective {
 
 			childNodes.forEach((childNode, index) => {
 				const childElement: HTMLElement = (<HTMLElement>childNode);
-				childElement.insertAdjacentElement('afterend',document.createElement('span'))
-				if (index < contentTextList.length){
+				childElement.insertAdjacentElement('afterend', document.createElement('span'));
+				if (index < contentTextList.length) {
 					childElement.insertAdjacentText('beforebegin', contentTextList[index]);
 				}
 				this.commonService.notification.subscribe((notification: AppNotification) => {
 					this.onNotification(notification);
-					if(this.isOnline){
+					if (this.isOnline || !childElement.attributes['href'].value.startsWith('http')) {
 						if (index < tagTextList.length) {
 							childElement.innerText = tagTextList[index];
-							childElement.nextElementSibling.innerHTML=""
+							childElement.nextElementSibling.innerHTML = '';
 						}
-					}else{
-						if(index<tagTextList.length){
-							childElement.innerText=""
-							childElement.nextElementSibling.innerHTML=tagTextList[index];
+					} else {
+						if (index < tagTextList.length) {
+							childElement.innerText = '';
+							childElement.nextElementSibling.innerHTML = tagTextList[index];
 						}
 					}
 
-				})
+				});
 				if (index === childNodes.length - 1 && index + 1 < contentTextList.length) {
 					element.insertAdjacentText('beforeend', contentTextList[index + 1]);
 				}
