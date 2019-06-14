@@ -25,7 +25,6 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 	containerPage: number;
 	switchPage: number;
 	isLenovoIdLogin: boolean;
-	indicatorList: Array<any>;
 	url = 'ms-settings:privacy-location';
 	showPageFour = false;
 	hasSystemPermissionShowed: boolean;
@@ -62,7 +61,6 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 		} else {
 			this.showPageFour = this.isLocationServiceOn ? false : true;
 		}
-		this.indicatorList = new Array(this.containerPage);
 	}
 
 	closeModal() {

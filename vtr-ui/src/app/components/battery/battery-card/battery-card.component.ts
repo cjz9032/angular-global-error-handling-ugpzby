@@ -41,12 +41,20 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	// percentageLimitation: Store Limitation Percentage
 	percentageLimitation = 60;
 
+	private powerSupplyStatusEventRef: any;
+	private remainingPercentageEventRef: any;
+	private remainingTimeEventRef: any;
+
 	ngOnInit() {
 		this.getBatteryDetailOnCard();
 
-		this.shellServices.registerEvent(EventTypes.pwrPowerSupplyStatusEvent, this.onPowerSupplyStatusEvent.bind(this));
-		this.shellServices.registerEvent(EventTypes.pwrRemainingPercentageEvent, this.onRemainingPercentageEvent.bind(this));
-		this.shellServices.registerEvent(EventTypes.pwrRemainingTimeEvent, this.onRemainingTimeEvent.bind(this));
+		this.powerSupplyStatusEventRef = this.onPowerSupplyStatusEvent.bind(this);
+		this.remainingPercentageEventRef = this.onRemainingPercentageEvent.bind(this);
+		this.remainingTimeEventRef = this.onRemainingTimeEvent.bind(this);
+
+		this.shellServices.registerEvent(EventTypes.pwrPowerSupplyStatusEvent, this.powerSupplyStatusEventRef);
+		this.shellServices.registerEvent(EventTypes.pwrRemainingPercentageEvent, this.remainingPercentageEventRef);
+		this.shellServices.registerEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
 	}
 
 	onPowerSupplyStatusEvent(info: any) {
@@ -208,10 +216,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.flag = false;
 		// this.getBatteryDetailOnCard();
 	}
+
 	ngOnDestroy() {
 		clearTimeout(this.batteryCardTimer);
-		this.shellServices.unRegisterEvent(EventTypes.pwrPowerSupplyStatusEvent, this.onPowerSupplyStatusEvent);
-		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingPercentageEvent, this.onRemainingPercentageEvent);
-		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent, this.onRemainingPercentageEvent);
+		this.shellServices.unRegisterEvent(EventTypes.pwrPowerSupplyStatusEvent, this.powerSupplyStatusEventRef);
+		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingPercentageEvent, this.remainingPercentageEventRef);
+		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
 	}
 }

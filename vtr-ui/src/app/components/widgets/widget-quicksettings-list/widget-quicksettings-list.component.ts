@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GamingQuickSettingsService } from 'src/app/services/gaming/gaming-quick-settings/gaming-quick-settings.service';
 import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+
 @Component({
 	selector: 'vtr-widget-quicksettings-list',
 	templateUrl: './widget-quicksettings-list.component.html',
@@ -139,6 +141,7 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
+		this.getGamingQuickSettings();
 		if (!this.gamingSettings.smartFanFeature) {
 			this.quickSettings[0].isVisible = false;
 		}
@@ -183,5 +186,10 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 				this.drop.curSelected = this.thermalModeStatusObj.thermalModeStatus;
 			}
 		}
+	}
+
+	public getGamingQuickSettings() {
+		const status: any = this.gamingQuickSettingsService.GetThermalModeStatus() || new ThermalModeStatus();
+		this.drop.curSelected = status.thermalModeStatus;
 	}
 }
