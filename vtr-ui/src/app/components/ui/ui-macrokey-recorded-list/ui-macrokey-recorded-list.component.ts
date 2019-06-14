@@ -161,7 +161,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 	}
 
 	ngDoCheck() {
-		if (this.recordsList !== this.recordsData.inputs) {
+		if (!isUndefined(this.recordsData) && this.recordsList !== this.recordsData.inputs) {
 			this.recordsList = this.recordsData.inputs;
 		}
 	}
