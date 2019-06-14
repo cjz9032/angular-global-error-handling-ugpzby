@@ -119,6 +119,37 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		}
 	}
 
+	onToggleChange($event: any) {
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage) === 'true') {
+			this.switchDisabled = true;
+			if (this.data.isLWSEnabled) {
+				this.data.wifiSecurity.disableWifiSecurity().then((res) => {
+					if (res === true) {
+						this.data.isLWSEnabled = false;
+					} else {
+						this.data.isLWSEnabled = true;
+					}
+					this.switchDisabled = false;
+				});
+			} else {
+				this.data.wifiSecurity.enableWifiSecurity().then((res) => {
+						if (res === true) {
+							this.data.isLWSEnabled = true;
+						} else {
+							this.data.isLWSEnabled = false;
+						}
+						this.switchDisabled = false;
+					},
+					(error) => {
+						this.data.isLWSEnabled = false;
+						this.securityService.wifiSecurityLocationDialog(this.data.wifiSecurity);
+						this.switchDisabled = false;
+					}
+				);
+			}
+		}
+	}
+
 	clickShowMore(): boolean {
 		const length = this.data.historys.length;
 		const all_length = this.data.allHistorys.length;

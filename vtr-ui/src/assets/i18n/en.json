@@ -1087,7 +1087,6 @@
 		"protected": "Protected",
 		"notProtected": "Not Protected",
 		"myDevice": "My Device",
-		"allDevice": "All Devices",
 		"secure": "SECURE",
 		"needAttention": "NEEDS ATTENTION",
 		"manageAccount": "Manage Account",
@@ -1095,11 +1094,20 @@
 		"seeProtectedDevices": "See protected devices",
 		"addDevice": "add device",
 		"trialExpired": "Trial Expired",
-		"trialExpiredSubtext": "Upgrate to protect all of your devices",
+		"trialExpiredSubtext": "Upgrade to protect all of your devices",
 		"upgrade": "upgrade",
 		"freeTrial": "Free 30 day trial",
 		"protectAllDevices": "Protect all of your devices",
-		"startTrial": "Start Trial",
+		"inEcosystem":"In Ecosystem",
+		"ecosystemEnable":"Ecosystem Enabled",
+		"inTrial":"In trial",
+		"addEcosystem":"Add to Ecosystem",
+		"enableEcosystem":"Enable Ecosystem",
+		"startTrial":"Start Trial",
+		"fullAccess":"Full Access",
+		"recent":"Recent security notifications",
+		"notification":"Notifications",
+		"renew":"Renew",
 		"tour": {
 			"back": "Back",
 			"skip": "Skip",
@@ -1138,7 +1146,7 @@
 			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
 			"alreadyHaveAccount": "Already have an activation code?"
 		}
-	},
+	}, 
 	"support": {
 		"common": {
 			"getSupport": "Get Support"
@@ -1210,9 +1218,7 @@
 			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
 			"good": "GOOD",
 			"malicious": "MALICIOUS",
-			"suspicious": "SUSPICIOUS",
-			"titleOffline": "No internet connection detected",
-			"subTitleOffline": "Learn more on how to solve connection issues in our"
+			"suspicious": "SUSPICIOUS"
 		},
 		"antivirus": {
 			"common": {
@@ -1301,6 +1307,10 @@
 				"describe2": "To use Connected Home Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?",
 				"agree": "AGREE",
 				"cancel": "CANCEL"
+			},
+			"errorMessage": {
+				"headerText": "Error",
+				"bodyText": "We've detected that you are missing critical pieces of Vantage. These pieces will download in the background. Please try again later."
 			}
 		},
 		"homeprotection": {
