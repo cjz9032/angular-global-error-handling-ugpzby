@@ -13,6 +13,8 @@ import { WelcomeTutorial } from './data-models/common/welcome-tutorial.model';
 import { NetworkStatus } from './enums/network-status.enum';
 import { KeyPress } from './data-models/common/key-press.model';
 import { VantageShellService } from './services/vantage-shell/vantage-shell.service';
+import { SettingsService } from './services/settings.service';
+import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 
 @Component({
 	selector: 'vtr-root',
@@ -22,19 +24,23 @@ import { VantageShellService } from './services/vantage-shell/vantage-shell.serv
 export class AppComponent implements OnInit {
 
 	title = 'vtr-ui';
+	private allCapablitiyFlag: Boolean = false;
 
 	constructor(
 		private devService: DevService,
 		private displayService: DisplayService,
 		private router: Router,
-		// private modalService: NgbModal,
+		private modalService: NgbModal,
 		public deviceService: DeviceService,
 		private commonService: CommonService,
 		private translate: TranslateService,
 		private userService: UserService,
-		private vantageShellService: VantageShellService
+		private settingsService: SettingsService,
+		private gamingAllCapabilitiesService: GamingAllCapabilitiesService,
+		vantageShellService: VantageShellService
 	) {
-		translate.addLangs(['en', 'zh-Hans']);
+		translate.addLangs(['en', 'zh-Hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it',
+			'ja', 'ko', 'nb', 'nl', 'pl', 'pt-BR', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-Latn', 'sv', 'tr', 'uk', 'zh-Hant']);
 		this.translate.setDefaultLang('en');
 		const hadRunApp: boolean = commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
 		const appFirstRun = !hadRunApp;
@@ -53,27 +59,12 @@ export class AppComponent implements OnInit {
 
 		//#region VAN-2779 this is moved in MVP 2
 
-		// const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
-
-		// if (tutorial === undefined && navigator.onLine) {
-		// 	const modalRef = this.modalService.open(ModalWelcomeComponent,
-		// 		{
-		// 			backdrop: 'static'
-		// 			, windowClass: 'welcome-modal-size'
-		// 		});
-		// 	modalRef.result.then(
-		// 		(result: WelcomeTutorial) => {
-		// 			// on open
-		// 			console.log('welcome-modal-size', result);
-		// 			commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, result);
-		// 		},
-		// 		(reason: WelcomeTutorial) => {
-		// 			// on close
-		// 			console.log('welcome-modal-size', reason);
-		// 			commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
-		// 		}
-		// 	);
-		// }
+		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+		if (tutorial === undefined && navigator.onLine) {
+			this.openWelcomeModal(1);
+		} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
+			this.openWelcomeModal(2);
+		}
 
 		//#endregion
 
@@ -89,7 +80,42 @@ export class AppComponent implements OnInit {
 		this.notifyNetworkState();
 	}
 
+	openWelcomeModal(page: number) {
+		const modalRef = this.modalService.open(ModalWelcomeComponent,
+			{
+				backdrop: 'static',
+				centered: true,
+				windowClass: 'welcome-modal-size'
+			});
+		modalRef.componentInstance.page = page;
+		modalRef.result.then(
+			(result: WelcomeTutorial) => {
+				// on open
+				console.log('welcome-modal-size', result);
+				this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, result);
+			},
+			(reason: WelcomeTutorial) => {
+				// on close
+				console.log('welcome-modal-size', reason);
+				if (reason instanceof WelcomeTutorial) {
+					this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
+				}
+			}
+		);
+	}
+
 	ngOnInit() {
+		// session storage is not getting clear after vantage is close.
+		// forcefully clearing session storage
+		sessionStorage.clear();
+
+		if (!this.allCapablitiyFlag) {
+			this.gamingAllCapabilitiesService.getCapabilities().then((response) => {
+				this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
+			});
+			this.allCapablitiyFlag = true;
+		}
+
 		this.devService.writeLog('APP INIT', window.location.href, window.devicePixelRatio);
 
 		// use when deviceService.isArm is set to true
@@ -107,18 +133,9 @@ export class AppComponent implements OnInit {
 
 		// When startup try to login Lenovo ID silently (in background),
 		//  if user has already logged in before, this call will login automatically and update UI
-		this.deviceService.getMachineInfo().then((machineInfo) => {
-			if (machineInfo.country != 'cn' && machineInfo.cpuArchitecture.toLowerCase().indexOf('arm') != 0) {
-				self.userService.isLenovoIdSupported = true;
-				self.userService.loginSilently();
-			} else {
-				self.devService.writeLog('Do not login silently for China or ARM');
-			}
-		}, error => {
-			self.userService.isLenovoIdSupported = true;
-			self.devService.writeLog('getMachineInfo() failed ' + error);
-			self.userService.loginSilently();
-		});
+		if (!this.deviceService.isArm && this.userService.isLenovoIdSupported()) {
+			this.userService.loginSilently();
+		}
 
 		/********* add this for navigation within a page **************/
 		this.router.events.subscribe(s => {
@@ -134,7 +151,8 @@ export class AppComponent implements OnInit {
 			}
 		});
 		this.getMachineInfo();
-		this.checkIsDesktopMachine();
+		this.checkIsDesktopOrAllInOneMachine();
+		this.settingsService.getPreferenceSettingsValue();
 	}
 
 	private getMachineInfo() {
@@ -142,23 +160,34 @@ export class AppComponent implements OnInit {
 			this.deviceService.getMachineInfo()
 				.then((value: any) => {
 					console.log('getMachineInfo.then', value);
-					if (value.locale.toLowerCase() === 'zh-hans') {
-						this.translate.use('zh-Hans');
+					if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
+						this.translate.use(value.locale.substring(0, 2));
+					} else {
+						if (value && value.locale.substring(0, 2).toLowerCase() === 'pt') {
+							value.locale.toLowerCase() === 'pt-br' ? this.translate.use('pt-BR') : this.translate.use('pt');
+						}
+						if (value && value.locale.toLowerCase() === 'zh-hans') {
+							this.translate.use('zh-Hans');
+						}
+						if (value && value.locale.toLowerCase() === 'zh-hant') {
+							this.translate.use('zh-Hant');
+						}
 					}
-					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
+
 				}).catch(error => {
 					console.error('getMachineInfo', error);
 				});
 		}
 	}
 
-	private checkIsDesktopMachine() {
+	private checkIsDesktopOrAllInOneMachine() {
 		try {
 			if (this.deviceService.isShellAvailable) {
 				this.deviceService.getMachineType()
 					.then((value: any) => {
 						console.log('checkIsDesktopMachine.then', value);
-						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, value == 4);
+						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, (value === 4));
+						this.commonService.setLocalStorageValue(LocalStorageKey.MachineType, value);
 					}).catch(error => {
 						console.error('checkIsDesktopMachine', error);
 					});
@@ -209,15 +238,15 @@ export class AppComponent implements OnInit {
 	disbleCtrlACV($event: KeyboardEvent) {
 		console.log('$event.keyCode ' + $event.keyCode);
 		if (($event.ctrlKey || $event.metaKey) && ($event.keyCode === 65 || $event.keyCode === 67 || $event.keyCode === 86)) {
-			if ($event.keyCode === 65) {
-				console.log('Disable CTRL + A');
-			}
-			if ($event.keyCode === 67) {
-				console.log('Disable CTRL + C');
-			}
-			if ($event.keyCode === 86) {
-				console.log('Disable CTRL +  V');
-			}
+			// if ($event.keyCode === 65) {
+			// 	console.log('Disable CTRL + A');
+			// }
+			// if ($event.keyCode === 67) {
+			// 	console.log('Disable CTRL + C');
+			// }
+			// if ($event.keyCode === 86) {
+			// 	console.log('Disable CTRL +  V');
+			// }
 			$event.stopPropagation();
 			$event.preventDefault();
 		}

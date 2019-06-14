@@ -1,0 +1,45 @@
+@import '../../../app.theme.scss';
+
+.vtr-widget-home-security-account-status {
+	border-radius: $border_radius;
+	background-color: $light;
+	box-shadow: $drop_shadow;
+	padding: 4rem;
+	@media #{$mediaquery_X7} {
+		padding: 2rem;
+	}
+
+	.title {
+		color: $main_darker;
+		font-size: 2.5rem;
+		font-weight: $weight_medium;
+	}
+
+	.description {
+		color: $main_shade;
+		font-size: 1.5rem;
+		font-weight: $weight_medium;
+
+		.trial-description {
+			color: $warning_dark;
+		}
+
+		.trial-expired-description {
+			color: $danger_dark;
+		}
+
+		.upgraded-description {
+			color: $good_dark;
+		}
+
+	}
+
+    .already-account {
+        font-size: 1.5rem;
+        font-weight: $weight_bold;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}

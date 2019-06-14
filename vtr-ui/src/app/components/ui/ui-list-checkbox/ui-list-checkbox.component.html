@@ -10,6 +10,7 @@
 						<div class="custom-control custom-checkbox update-checkbox">
 							<input id="{{ 'updateCheckbox' + randomNumber + i }}"
 								type="checkbox"
+								[disabled]="item.isDependency"
 								class="custom-control-input"
 								[checked]="item.isSelected"
 								[name]="item.packageName"
@@ -23,7 +24,25 @@
 							<div class="button-box pl-1"
 								*ngIf="item.packageRebootType === 'RebootForced'">
 								<div class="btn-round-sm">
-									<fa-icon [icon]="['fas', 'undo']"></fa-icon> Reboot required
+									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.rebootRequiredTag' | translate}}
+								</div>
+							</div>
+							<div class="button-box pl-1"
+								*ngIf="item.packageRebootType === 'RebootDelayed'">
+								<div class="btn-round-sm">
+									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.rebootDelayTag' | translate}}
+								</div>
+							</div>
+							<div class="button-box pl-1"
+								*ngIf="item.packageRebootType === 'PowerOffForced'">
+								<div class="btn-round-sm">
+									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.shutdownRequiredTag' | translate}}
+								</div>
+							</div>
+							<div class="button-box pl-1"
+								*ngIf="item.isDependency">
+								<div class="btn-round-sm">
+									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.dependedPackage' | translate}}
 								</div>
 							</div>
 						</div>
@@ -49,73 +68,100 @@
 		<li class="list-group-item"
 			*ngFor="let item of items">
 			<div class="media pl-3 align-items-center">
-				<div *ngIf="item.installationStatus.toLocaleLowerCase() === 'success'; else elseBlock">
-					<div class="icon-check">
-						<div class="icon-bg text-center">
-							<fa-icon [icon]="['fas', 'check']"></fa-icon>
+					<div *ngIf="item.installationStatus.toLocaleLowerCase() === 'success'; else elseBlock">
+						<div class="icon-check">
+							<div class="icon-bg text-center">
+								<fa-icon [icon]="['fas', 'check']"></fa-icon>
+							</div>
 						</div>
 					</div>
-				</div>
-				<ng-template #elseBlock>
-					<div class="icon-times">
-						<div class="icon-bg text-center">
-							<fa-icon [icon]="['fas', 'times']"></fa-icon>
+					<ng-template #elseBlock>
+						<div class="icon-times">
+							<div class="icon-bg text-center">
+								<fa-icon [icon]="['fas', 'times']"></fa-icon>
+							</div>
+						</div>
+					</ng-template>
+					<div class="media-body pb-0 mb-0 small pl-3">
+							<!---div class="d-flex justify-content-between align-items-center w-100"-->
+						<div class="row">
+							<div class="col col-11 item-text">
+								<div class="row">
+									<div class="d-flex justify-content-between align-items-center w-100">
+										<div class="update-title">{{item.packageDesc}}</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col">
+										<div class="d-flex justify-content-between align-items-center w-100">
+											<div class="fail-reason" *ngIf="item.installationStatus.toLocaleLowerCase() === 'installfailed' && item.packageRebootType.toLocaleLowerCase() === 'rebootdelayed'">{{'systemUpdates.updateCheckbox.failReason' | translate}}</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+								<!-- VAN-3348 hide question mark -->
+								<!-- <a href="javascript:void();">
+									<fa-icon class="question"
+										triggers="click:blur"
+										placement="auto"
+										[ngbTooltip]="systemUpdateTooltip"
+										[icon]="['far', 'question-circle']"
+										container="body"
+										tooltipClass="tooltip-click"
+										#tooltip="ngbTooltip"
+										(click)="onTooltipClick(item, tooltip)"></fa-icon>
+								</a> -->
 						</div>
 					</div>
-				</ng-template>
-				<div class="media-body pb-0 mb-0 small pl-3">
-					<div class="d-flex justify-content-between align-items-center w-100">
-						<div class="update-title">{{item.packageDesc}}</div>
-						<a href="javascript:void();">
-							<fa-icon class="question"
-								triggers="click:blur"
-								placement="auto"
-								[ngbTooltip]="systemUpdateTooltip"
-								[icon]="['far', 'question-circle']"
-								container="body"
-								tooltipClass="tooltip-click"
-								#tooltip="ngbTooltip"
-								(click)="onTooltipClick(item, tooltip)"></fa-icon>
-						</a>
-					</div>
-				</div>
 			</div>
 		</li>
 	</ul>
 </div>
 <ng-template #systemUpdateTooltip>
 	<div class="tooltip-container">
-		<div href="#"
-			*ngIf="packageRebootType === 'RebootForced'"
-			class="reboot-text">
-			<div class="row">
-				<div class="col-auto pl-0 pr-0">
-					<fa-icon [icon]="['fas', 'undo']"></fa-icon>
-				</div>
-				<div class="col">Reboot required</div>
-			</div>
-		</div>
 		<ul>
-			<li>Manufacturer: <span>{{ manufacturer }}</span></li>
-			<li>Version: <span>{{ version }}</span></li>
-			<li>Installed version: <span>{{ installedVersion | translate }}</span></li>
-			<li>Download size: <span>{{ downloadSize }}</span> </li>
-			<li>Disk space needed: <span>{{ diskSpaceNeeded }}</span></li>
+			<li>{{'systemUpdates.updateCheckbox.manufacturer' | translate}}<span>{{ manufacturer }}</span></li>
+			<li>{{'systemUpdates.updateCheckbox.version' | translate}}<span>{{ version }}</span></li>
+			<li>{{'systemUpdates.updateCheckbox.installVersion' | translate}}<span>{{ installedVersion | translate }}</span></li>
+			<li>{{'systemUpdates.updateCheckbox.downloadSize' | translate}}<span>{{ downloadSize }}</span> </li>
+			<li>{{'systemUpdates.updateCheckbox.diskSpaceNeeded' | translate}}<span>{{ diskSpaceNeeded }}</span></li>
 		</ul>
 		<div class="row"
+			*ngIf="isReadMeAvailable || severity !== 'Critical'">
+			<div class="col-6 pl-0 pr-0 text-left"
 			*ngIf="isReadMeAvailable">
-			<div class="col-6 pl-0 pr-0 text-left">
 				<a href="javascript:void(0)"
 					class="read"
-					(click)="onReadMoreClick($event)">Read more</a>
+				   vtrMetrics
+				   metricsItem="readme"
+				   metricsEvent="featureClick"
+				   (click)="onReadMoreClick($event)">{{'systemUpdates.readMore' | translate}}</a>
 			</div>
 			<!-- required in MVP 2 -->
-			<!-- <div class="col-6 pl-0 pr-0 text-right">
+			<div class="col-6 pl-0 pr-0 text-left"
+				*ngIf="severity !== 'Critical' && isIgnored === false">
 				<a href="javascript:void(0)"
 					class="ignore"
-					(click)="onIgnoreUpdateClick($event)"
-					>Ignore update</a>
-			</div> -->
+					vtrMetrics
+				    metricsItem="ignore"
+					metricsEvent="featureClick"
+					metricsParam="{{ 'packageID=' + packageID }}"
+					(click)="onIgnoreUpdateClick(packageName, true)"
+					>{{'systemUpdates.updateCheckbox.ignore' | translate}}</a>
+			</div>
+			<div class="col-6 pl-0 pr-0 text-left"
+				*ngIf="severity !== 'Critical' && isIgnored === true">
+				<a href="javascript:void(0)"
+					class="ignore"
+					vtrMetrics
+				    metricsItem="attend"
+					metricsEvent="featureClick"
+					metricsParam="{{ 'packageID=' + packageID }}"
+					(click)="onIgnoreUpdateClick(packageName, false)"
+					>{{'systemUpdates.updateCheckbox.attend' | translate}}</a>
+			</div>
 		</div>
 	</div>
 </ng-template>

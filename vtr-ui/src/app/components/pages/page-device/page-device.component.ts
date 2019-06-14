@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DeviceService } from '../../../services/device/device.service';
 import { QaService } from '../../../services/qa/qa.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-page-device',
@@ -18,9 +19,13 @@ export class PageDeviceComponent implements OnInit {
 	constructor(
 		public deviceService: DeviceService,
 		public qaService: QaService,
-		private cmsService: CMSService
+		private cmsService: CMSService,
+		private translate: TranslateService,
 	) {
 		this.fetchCMSArticles();
+		// Evaluate the translations for QA on language Change
+		this.qaService.setTranslationService(this.translate);
+		this.qaService.setCurrentLangTranslations();
 	}
 
 	ngOnInit() {

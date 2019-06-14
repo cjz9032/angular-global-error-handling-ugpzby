@@ -34,8 +34,6 @@ export class DisplayService {
 		if (this.cameraSettings) {
 			this.isShellAvailable = true;
 		}
-		this.startMonitorForEyeCarePermission();
-		this.startMonitorForCameraPermission();
 	}
 
 	startLoading() {
@@ -83,6 +81,30 @@ export class DisplayService {
 		}
 		return undefined;
 	}
+
+	public startCameraPrivacyMonitor(callback: any): Promise<FeatureStatus> {
+		try {
+			if (this.cameraPrivacyStatus) {
+				return this.cameraPrivacyStatus.startMonitor(callback);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public stopCameraPrivacyMonitor(): Promise<FeatureStatus> {
+		try {
+			if (this.cameraPrivacyStatus) {
+				return this.cameraPrivacyStatus.stopMonitor();
+			}
+
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
 	public setEyeCareModeState(value: boolean): Promise<any> {
 		try {
 			if (this.displayEyeCareMode) {
@@ -117,7 +139,7 @@ export class DisplayService {
 		}
 		return undefined;
 	}
-	public setCameraContrst(value: number): Promise<boolean> {
+	public setCameraContrast(value: number): Promise<boolean> {
 		if (this.cameraSettings) {
 			return this.cameraSettings.setCameraContrast(value);
 		}
@@ -181,11 +203,36 @@ export class DisplayService {
 		}
 		return undefined;
 	}
-	public statusChangedLocationPermission(handler: any): Promise<any> {
+
+	public getDaytimeColorTemperature(): Promise<FeatureStatus> {
+		if (this.displayEyeCareMode) {
+			return this.displayEyeCareMode.getDaytimeColorTemperature();
+		}
+		return undefined;
+	}
+
+	public setDaytimeColorTemperature(value: number): Promise<boolean> {
+		if (this.displayEyeCareMode) {
+			return this.displayEyeCareMode.setDaytimeColorTemperature(value);
+		}
+		return undefined;
+	}
+
+	public resetDaytimeColorTemperature(): Promise<any> {
+		if (this.displayEyeCareMode) {
+			return this.displayEyeCareMode.resetDaytimeColorTemperature();
+		}
+		return undefined;
+	}
+
+
+
+
+	public statusChangedLocationPermission(handler: any) {
 		try {
 			if (this.isShellAvailable) {
 				console.log(JSON.stringify(this.displayEyeCareMode));
-				return this.displayEyeCareMode.statusChangedLocationPermission((handler));
+				this.displayEyeCareMode.statusChangedLocationPermission((handler));
 			}
 			return undefined;
 		} catch (error) {
@@ -202,12 +249,15 @@ export class DisplayService {
 			throw new Error(error.message);
 		}
 	}
-	public startMonitorForEyeCarePermission() {
+
+	public startMonitorForCameraPermission() {
 		try {
 			if (this.isShellAvailable) {
-				return this.displayEyeCareMode.statusChangedLocationPermission((response: any) => {
-					console.log("startMonitorForEyeCarePermission", response);
-					this.commonService.sendNotification(DeviceMonitorStatus.EyeCareModeStatus, response.status);
+				return this.cameraSettings.startMonitor((response: any) => {
+					console.log('startMonitorForCameraPermission', response);
+					if (response.permission !== undefined) {
+						this.commonService.sendNotification(DeviceMonitorStatus.CameraStatus, response.permission);
+					}
 				});
 			}
 			return undefined;
@@ -216,14 +266,11 @@ export class DisplayService {
 		}
 	}
 
-	public startMonitorForCameraPermission() {
+	public stopMonitorForCameraPermission() {
 		try {
 			if (this.isShellAvailable) {
-				return this.cameraSettings.startMonitor((response: any) => {
-					console.log("startMonitorForCameraPermission", response);
-					if (response.permission != undefined) {
-						this.commonService.sendNotification(DeviceMonitorStatus.CameraStatus, response.permission);
-					}
+				return this.cameraSettings.stopMonitor((response: boolean) => {
+					console.log('stopMonitorForCameraPermission', response);
 				});
 			}
 			return undefined;
@@ -235,7 +282,7 @@ export class DisplayService {
 	public stopEyeCareMonitor() {
 		if (this.isShellAvailable) {
 			this.displayEyeCareMode.stopMonitor((response: boolean) => {
-				//this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
+				// this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
 			});
 		}
 	}

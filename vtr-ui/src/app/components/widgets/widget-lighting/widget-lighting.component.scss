@@ -1,0 +1,149 @@
+@import '../../../app.theme.scss';
+
+.vtr-widget-lighting {
+	.widget-title {
+		color: $gaming_lightest;
+		font-size: 5rem;
+		margin-bottom: 1rem;
+		font-weight: $weight-light;
+	}
+	.widget-container {
+		border-radius: $border_radius;
+		box-shadow: $drop_shadow_gaming;
+		padding: 4rem;
+		background: url(./../../../../assets/images/gaming/lightingImage@2x.png) center top no-repeat $gaming_dark;
+		background-size: 100% auto;
+		padding-top:18rem;
+	}
+	.lighting-porfile {
+		padding: 3rem;
+		background: $gaming_darkest;
+		border-radius: 0.8rem;
+		.card-title {
+			color: $gaming_switch_light;
+			font-size: 1.6rem;
+			margin-bottom: 3rem;
+		}
+		.multi-state-toggle {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			height: 5rem;
+			width: 100%;
+			border-radius: 5rem;
+			margin: auto;
+			background: $gaming_darkest;
+			position: relative;
+			z-index: 0;
+			box-sizing: border-box;
+			background-clip: padding-box;
+			border: solid 0.2rem transparent;
+			&::after {
+				content: ' ';
+				position: absolute;
+				border-radius: 5rem;
+				top: 0rem;
+				left: 0rem;
+				bottom: 0rem;
+				right: 0rem;
+				margin: 0rem;
+				background: $gaming_darkest;
+				z-index: -1;
+			}
+			&::before {
+				content: ' ';
+				position: absolute;
+				border-radius: 5rem;
+				top: 0rem;
+				left: 0rem;
+				bottom: 0rem;
+				right: 0rem;
+				margin: -0.2rem;
+				background-image: $gaming_lighting_gradient;
+				z-index: -1;
+			}
+
+			input {
+				opacity: 0;
+				position: absolute;
+				left: 0;
+				margin: 0;
+				padding: 0;
+				& ~ label {
+					color: $gaming;
+					font-size: 1.8rem;
+					width: 25%;
+					height: 4.2rem;
+					border-radius: 4.2rem;
+					margin: 0.4rem 0.2rem;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					position: relative;
+					z-index: 1;
+					cursor: pointer;
+				}
+			}
+
+			.toggle {
+				position: absolute;
+				background: $gaming_lighting_gradient;
+				width: 25%;
+				height: 4.2rem;
+				border-radius: 4.2rem;
+				margin: 0.4rem 0.2rem;
+				transition: all .3s ease-in-out;
+				left: 0;
+			}
+			#off_radio:checked {
+				& ~ #off {
+					color: $gaming_lightest;
+				}
+				& ~ .toggle {
+					left: 0%;
+				}
+			}
+			#first_radio:checked {
+				& ~ #first_lbl {
+					color: $gaming_lightest;
+				}
+				& ~ .toggle {
+					left: 25%;
+				}
+			}
+			#second_radio:checked {
+				& ~ #second_lbl {
+					color: $gaming_lightest;
+				}
+				& ~ .toggle {
+					left: 50%;
+				}
+			}
+			#third_radio:checked {
+				& ~ #third_lbl {
+					color: $gaming_lightest;
+				}
+				& ~ .toggle {
+					left: 74%;
+				}
+			}
+		}
+	}
+	.list-group {
+		.list-group-item{
+			background: transparent;
+			border: none;
+			a {
+				font-size: 1.6rem;
+				color: $gaming_lightest;
+				text-decoration: none;
+				padding-left: 0.4rem;
+				display: flex;
+				align-items: center;
+				.icon {
+					margin-right: 0.5rem;
+				}
+			}
+		}
+	}
+}

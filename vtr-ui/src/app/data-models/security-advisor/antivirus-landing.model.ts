@@ -18,28 +18,45 @@ export class AntiVirusLandingViewModel {
 	type = 'security';
 	imgUrl = '';
 	currentPage: string;
-	constructor(avModel: phoenix.Antivirus, commonService: CommonService, translate: TranslateService) {
+	constructor(translate: TranslateService, avModel: phoenix.Antivirus, commonService: CommonService, ) {
 		const avStatus = {
-			status: 2,
+			status: 4,
 			detail: 'common.securityAdvisor.loading',
 			path: 'security/anti-virus',
 			title: 'common.securityAdvisor.antiVirus',
 			type: 'security',
+			id: 'sa-ov-link-antivirus'
 		};
 		const fwStatus = {
-			status: 2,
+			status: 4,
 			detail: 'common.securityAdvisor.loading',
 			path: 'security/anti-virus',
 			title: 'security.landing.firewall',
 			type: 'security',
+			id: 'sa-ov-link-firewall'
 		};
 		const subjectStatus = {
 			status: 2,
 			title: 'common.securityAdvisor.antiVirus',
 			type: 'security',
 		};
+		translate.stream(avStatus.detail).subscribe((res) => {
+			avStatus.detail = res;
+		});
+		translate.stream(avStatus.title).subscribe((res) => {
+			avStatus.title = res;
+		});
+		translate.stream(fwStatus.detail).subscribe((res) => {
+			fwStatus.detail = res;
+		});
+		translate.stream(fwStatus.title).subscribe((res) => {
+			fwStatus.title = res;
+		});
+		translate.stream(subjectStatus.title).subscribe((res) => {
+			subjectStatus.title = res;
+		});
 		const setAntivirusStatus = (av: boolean, fw: boolean, currentPage: string) => {
-			if (av !== null && av !== undefined && fw !== null && fw !== undefined) {
+			if (typeof av === 'boolean' && typeof fw === 'boolean') {
 				avStatus.status = av === true ? 0 : 1;
 				avStatus.detail = av === true ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
 				fwStatus.status = fw === true ? 0 : 1;
@@ -51,7 +68,7 @@ export class AntiVirusLandingViewModel {
 				} else {
 					subjectStatus.status = 1;
 				}
-			} else if ((fw === null || fw === undefined) && (av !== null && av !== undefined)) {
+			} else if (typeof fw !== 'boolean' && typeof av === 'boolean') {
 				avStatus.status = av === true ? 0 : 1;
 				avStatus.detail = av === true ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
 				fwStatus.status = null;
@@ -61,7 +78,7 @@ export class AntiVirusLandingViewModel {
 					fwStatus.detail = 'common.securityAdvisor.loading';
 					subjectStatus.status = av === true ? 3 : 1;
 				}
-			} else if ((av === null || av === undefined) && (fw !== null && fw !== undefined)) {
+			} else if (typeof av !== 'boolean' && typeof fw === 'boolean') {
 				fwStatus.status = fw === true ? 0 : 1;
 				fwStatus.detail = fw === true ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
 				avStatus.status = null;
@@ -91,19 +108,19 @@ export class AntiVirusLandingViewModel {
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fw !== undefined ? fw : null);
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, av !== undefined ? av : null);
 
-			translate.get(avStatus.detail).subscribe((res) => {
+			translate.stream(avStatus.detail).subscribe((res) => {
 				avStatus.detail = res;
 			});
-			translate.get(avStatus.title).subscribe((res) => {
+			translate.stream(avStatus.title).subscribe((res) => {
 				avStatus.title = res;
 			});
-			translate.get(fwStatus.detail).subscribe((res) => {
+			translate.stream(fwStatus.detail).subscribe((res) => {
 				fwStatus.detail = res;
 			});
-			translate.get(fwStatus.title).subscribe((res) => {
+			translate.stream(fwStatus.title).subscribe((res) => {
 				fwStatus.title = res;
 			});
-			translate.get(subjectStatus.title).subscribe((res) => {
+			translate.stream(subjectStatus.title).subscribe((res) => {
 				subjectStatus.title = res;
 			});
 		};
@@ -140,7 +157,9 @@ export class AntiVirusLandingViewModel {
 		if (cacheCurrentPage) {
 			this.currentPage = cacheCurrentPage;
 		}
-		setAntivirusStatus(cacheAvStatus, cacheFwStatus, cacheCurrentPage);
+		if (cacheAvStatus || cacheFwStatus) {
+			setAntivirusStatus(cacheAvStatus, cacheFwStatus, cacheCurrentPage);
+		}
 
 		avModel.on(EventTypes.avRefreshedEvent, (av) => {
 			setPage(av);

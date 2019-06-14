@@ -1,7 +1,7 @@
 <div class="vtr-widget-device">
 	<div class="container-fluid p-40">
-		<!-- <div class="circleimage"><img class="img-fluid"
-				src="../../../../assets/images/circle.png" /> </div> -->
+		<div class="circleimage"><img class="img-fluid"
+				src="assets/images/device.png" /> </div>
 		<div class="row mt-20">
 			<div class="col">
 				<div class="family">{{myDevice.family}}</div>
@@ -66,6 +66,7 @@
 										vtrMetrics
 										[metricsItem]="item.title"
 										metricsEvent="itemClick"
+										[metricsValue]="'link.'+item.id"
 										*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false)">
 										<div class="detail"
 											[ngClass]="{'highlight':item.asLink}">
@@ -77,6 +78,7 @@
 										vtrMetrics
 										[metricsItem]="item.title"
 										metricsEvent="itemClick"
+										[metricsValue]="'link.'+item.id"
 										href="javascript:void(0);"
 										(click)="deviceService.launchUri(item.path)">
 										<div class="detail"

@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class VPNWidgetItem extends WidgetItem {
 	constructor(vpn: Vpn, commonService: CommonService, private translateService: TranslateService) {
 		super({
-			id: 'vpn',
+			id: 'sa-widget-lnk-vpn',
 			path: 'security/internet-protection',
 			type: 'security'
 		}, translateService);
@@ -30,11 +30,21 @@ export class VPNWidgetItem extends WidgetItem {
 	}
 
 	updateStatus(status: string) {
-		this.status = status === 'installed' ? 2 : 1;
-		this.detail = status;
-
-		const translateKey = status === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
-		this.translateService.stream(translateKey).subscribe((value) => {
+		let translateKey: string;
+		switch (status) {
+			case 'installed':
+				translateKey = 'common.securityAdvisor.installed';
+				this.status = 5;
+				break;
+			case 'installing':
+				translateKey = 'common.securityAdvisor.installing';
+				this.status = 4;
+				break;
+			default:
+				translateKey = 'common.securityAdvisor.notInstalled';
+				this.status = 5;
+		}
+		this.translateService.stream(translateKey).subscribe((value: string) => {
 			this.detail = value;
 		});
 	}

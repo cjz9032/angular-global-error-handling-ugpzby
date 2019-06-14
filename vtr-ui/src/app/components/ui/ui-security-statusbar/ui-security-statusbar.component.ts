@@ -12,7 +12,7 @@ export class UiSecurityStatusbarComponent implements OnInit {
 
 	constructor() { }
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
 
 }

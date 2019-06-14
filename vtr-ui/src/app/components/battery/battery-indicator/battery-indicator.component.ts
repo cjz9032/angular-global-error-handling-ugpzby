@@ -6,8 +6,9 @@ import {
 	Input,
 	HostListener,
 	SimpleChanges,
-	OnChanges
+	OnChanges,
 } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-battery-indicator',
@@ -20,28 +21,34 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	public fillWidth = 0;
 	public fillStartColor = '#ff0000';
 	public fillEndColor = '#00ff00';
+	hideRemainingTimeTxt = false;
 
 	@ViewChild('battery') battery: ElementRef;
 	@ViewChild('batteryIndicator') batteryIndicator: ElementRef;
 
+	@Input() batteryHealth;
 	@Input() isVoltageError = false; // boolean indicator if its changing or not
 	@Input() isCharging = true; // boolean indicator if its changing or not
 	@Input() isExpressCharging = true; // boolean indicator if its express changing or not
 	@Input() percentage = 50; // number without % symbol
 	@Input() remainingHour = 0; // number of hours remaining
 	@Input() remainingMinutes = 0; // number of minutes remaining
+	@Input() timeText = '';
 
-	constructor() { }
+	constructor(public translate: TranslateService) {
+	}
 
 	ngOnInit() {
 		this.getCssDeclaration();
 		this.refreshLevel();
+		this.checkRemainingTimeIsZero();
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
 		if (changes['percentage'] && !changes['percentage'].firstChange) {
 			this.refreshLevel();
 		}
+		this.checkRemainingTimeIsZero();
 	}
 
 	// Note : when page is resized, battery fill is not showing correctly.
@@ -106,7 +113,6 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 
 		switch (true) {
 			case level >= 0 && level < 15: // red status
-				borderColor = this.getCssPropertyValue('--border-color-0-14');
 				backgroundColor = this.getCssPropertyValue(
 					'--background-color-0-14'
 				);
@@ -115,7 +121,6 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				);
 				break;
 			case level >= 15 && level < 25: // Yellow
-				borderColor = this.getCssPropertyValue('--border-color-15-24');
 				backgroundColor = this.getCssPropertyValue(
 					'--background-color-15-24'
 				);
@@ -124,7 +129,6 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				);
 				break;
 			case level >= 25: // green
-				borderColor = this.getCssPropertyValue('--border-color-25-100');
 				backgroundColor = this.getCssPropertyValue(
 					'--background-color-25-100'
 				);
@@ -134,7 +138,6 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				break;
 			default:
 				// -1 for battery error
-				borderColor = this.getCssPropertyValue('--border-color-error');
 				backgroundColor = this.getCssPropertyValue(
 					'--background-color-error'
 				);
@@ -144,20 +147,32 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				break;
 		}
 
+		switch (this.batteryHealth) {
+			case 'Good':
+				borderColor = this.getCssPropertyValue('--border-color-25-100');
+				break;
+			case 'Fair':
+				borderColor = this.getCssPropertyValue('--border-color-15-24');
+				break;
+			case 'Poor':
+				borderColor = this.getCssPropertyValue('--border-color-0-14');
+				break;
+		}
 		return { borderColor, backgroundColor, fillColor };
 	}
 
 	public getTimeRemaining(): string {
+		this.checkRemainingTimeIsZero();
 		if (Number.isNaN(this.remainingMinutes)) {
-			return "0 minutes";
+			return '';
 		}
 		const hours =
-			this.remainingHour > 0 && this.remainingHour < 2 ? 'hour' : 'hours';
+			this.remainingHour > 0 && this.remainingHour < 2 ? this.translate.instant('device.deviceSettings.batteryGauge.hour') : this.translate.instant('device.deviceSettings.batteryGauge.hours');
 		const minutes =
 			this.remainingMinutes > 0 && this.remainingMinutes < 2
-				? 'minute'
-				: 'minutes';
-		if(this.remainingHour == 0) {
+				? this.translate.instant('device.deviceSettings.batteryGauge.minute')
+				: this.translate.instant('device.deviceSettings.batteryGauge.minutes');
+		if (this.remainingHour === 0) {
 			return `${this.remainingMinutes} ${minutes}`;
 		}
 		return `${this.remainingHour} ${hours} ${
@@ -165,6 +180,22 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 			} ${minutes}`;
 	}
 
+	checkRemainingTimeIsZero() {
+		let isZero = false;
+		if (Number.isNaN(this.remainingMinutes)) {
+			this.hideRemainingTimeTxt = true;
+			return;
+		}
+		if (this.remainingHour === 0) {
+			if (this.remainingMinutes === 0) {
+				this.hideRemainingTimeTxt = true;
+			} else {
+				this.hideRemainingTimeTxt = false;
+			}
+			return;
+		}
+		this.hideRemainingTimeTxt = false;
+	}
 	// returns windows object
 	private getCssPropertyValue(propertyName: string): string {
 		if (this.cssStyleDeclaration) {

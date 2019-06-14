@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
+import { CMSService } from '../../../services/cms/cms.service';
 
 @Component({
 	selector: 'vtr-widget-security',
@@ -9,6 +10,9 @@ import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/mo
 })
 export class WidgetSecurityComponent implements OnInit {
 	@Input() percentValue: number = this.percentValue || 100;
+	articleId = '1C95D1D5D20D4888AC043821E7355D35';
+	articleCategory: string;
+
 	security = {
 		title: [
 			'security.landing.fully',
@@ -24,10 +28,21 @@ export class WidgetSecurityComponent implements OnInit {
 		]
 	};
 	constructor(
-		public modalService: NgbModal
-	) { }
+		public modalService: NgbModal,
+		private cmsService: CMSService
+	) {
+		this.fetchCMSArticleCategory();
+	}
 
-	ngOnInit() { }
+	ngOnInit() {}
+
+	fetchCMSArticleCategory() {
+		this.cmsService.fetchCMSArticle(this.articleId, {'Lang': 'EN'}).then((response: any) => {
+			if (response && response.Results && response.Results.Category) {
+				this.articleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
+			}
+		});
+	}
 
 	buttonClick() {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
@@ -36,6 +51,6 @@ export class WidgetSecurityComponent implements OnInit {
 			windowClass: 'Article-Detail-Modal'
 		});
 
-		articleDetailModal.componentInstance.articleId = '1C95D1D5D20D4888AC043821E7355D35';
+		articleDetailModal.componentInstance.articleId = this.articleId;
 	}
 }

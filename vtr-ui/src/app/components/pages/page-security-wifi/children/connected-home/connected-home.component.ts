@@ -1,65 +1,49 @@
-import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { Component, Input, EventEmitter } from '@angular/core';
 import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
-import { WinRT } from '@lenovo/tan-client-bridge';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalWifiSecurityInvitationComponent } from '../../../../modal/modal-wifi-security-invitation/modal-wifi-security-invitation.component';
 import { SecurityService } from 'src/app/services/security/security.service';
+import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-article-detail/modal-article-detail.component';
+import { CMSService } from 'src/app/services/cms/cms.service';
 
 @Component({
 	selector: 'vtr-connected-home',
 	templateUrl: './connected-home.component.html',
 	styleUrls: ['./connected-home.component.scss']
 })
-export class ConnectedHomeComponent implements OnInit {
+export class ConnectedHomeComponent {
 
 	@Input() data: WifiHomeViewModel;
 	@Input() isShowInvitationCode: boolean;
 	emitter = new EventEmitter();
 	showDescribe = false;
+	peaceOfMindArticleId = '988BE19B75554E09B5A914D5F803C3F3';
+	peaceOfMindArticleCategory: string;
 
 
 	constructor(
-		private modalService: NgbModal,
-		public securityService: SecurityService
-	) { }
-
-	ngOnInit() {
+		public securityService: SecurityService,
+		public modalService: NgbModal,
+		private cmsService: CMSService
+	) {
+		this.fetchCMSArticles();
 	}
 
-	tryNow(event) {
-		console.log('tryNow', event);
-		WinRT.launchUri(this.data.tryNowUrl);
+	fetchCMSArticles() {
+		this.cmsService.fetchCMSArticle(this.peaceOfMindArticleId, {'Lang': 'EN', 'GEO': 'US'}).then((response: any) => {
+			if (response && response.Results && response.Results.Category) {
+				this.peaceOfMindArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
+			}
+		});
 	}
 
-	//  to popup invitation modal dialog
-	OpenInvitationModal() {
-		const invitationmodal = this.modalService.open(ModalWifiSecurityInvitationComponent, {
+	openPeaceOfMindArticle(): void {
+		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
 			backdrop: 'static',
-			windowClass: 'wifi-security-invitation-modal',
+			size: 'lg',
+			centered: true,
+			windowClass: 'Article-Detail-Modal'
 		});
-		invitationmodal.componentInstance.emitter = this.emitter;
-	}
 
-	enterActivationCode(event) {
-		console.log('enterActivationCode', event);
-		this.emitter.subscribe((name: string) => {
-			if (name === 'invitationsuccess') {
-				this.data.homeStatus = 'joined';
-			}
-		});
-		if (this.data.homeStatus !== 'joined') {
-			this.showDescribe = false;
-			if (this.data.wifiSecurity.isLocationServiceOn !== undefined) {
-				if (this.data.wifiSecurity.isLocationServiceOn) {
-					this.OpenInvitationModal();
-				} else {
-					this.securityService.homeProtectionOpenLocationDialog(this.data.wifiSecurity);
-				}
-			} else {
-				console.log('this.data.wifiSecurity.isLocationServiceOn is undefined!');
-			}
-		} else {
-			this.showDescribe = true;
-		}
+		articleDetailModal.componentInstance.articleId = this.peaceOfMindArticleId;
 	}
 }

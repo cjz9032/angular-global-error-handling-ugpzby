@@ -1,0 +1,58 @@
+<div class="vtr-widget-home-security-account-status">
+	<div class="title mb-4">{{'homeSecurity.accountStatus.title' | translate}}</div>
+	<div class="description mb-5" *ngIf="status === 'local'">
+		<div>{{'homeSecurity.accountStatus.localAccountDetail2' | translate}}</div>
+	</div>
+	<div class="description mb-5" *ngIf="status === 'trial'">
+		<div *ngIf="expiredDate" class="trial-description mb-2">{{'homeSecurity.accountStatus.inTrialDetail1' | translate: {remainingDays: expiredDate | daysInterval: standardTime } }}</div>
+		<div>{{'homeSecurity.accountStatus.inTrialDetail2' | translate}}</div>
+	</div>
+	<div class="description mb-5" *ngIf="status === 'trialExpired'">
+		<div class="trial-expired-description mb-2">{{'homeSecurity.accountStatus.trialExpiredDetail1' | translate}}</div>
+		<div>{{'homeSecurity.accountStatus.trialExpiredDetail2' | translate}}</div>
+	</div>
+	<div class="description mb-5" *ngIf="status === 'standard'">
+		<div *ngIf="expiredDate" class="upgraded-description mb-2">{{'homeSecurity.accountStatus.upgradedDetail1' | translate: { expiredDate: expiredDate | date:'dd/MM/yyyy' } }}</div>
+		<div>{{'homeSecurity.accountStatus.upgradedDetail2' | translate}}</div>
+	</div>
+	<div class="mb-5">
+		<vtr-ui-button *ngIf="status === 'local'"
+			id="chs-account-btn-startTrial" aria-label="chs-account-btn-startTrial"
+			(click)="emitStartTrial()"
+			[isFullWidth]="true"
+			metricsEvent="FeatureClick"
+			metricsItem="startTrial"
+			[label]="'homeSecurity.accountStatus.startTrial' | translate"
+			[title]="'homeSecurity.accountStatus.startTrial' | translate">
+		</vtr-ui-button>
+		<vtr-ui-button *ngIf="status === 'trial' || status === 'trialExpired'"
+			id="chs-account-btn-upgradeAccount" aria-label="chs-account-btn-upgradeAccount"
+			(click)="emitUpgradeAccount()"
+			[isFullWidth]="true"
+			metricsEvent="FeatureClick"
+			metricsItem="upgradeAccount"
+			[label]="'homeSecurity.accountStatus.upgradeAccount' | translate"
+			[title]="'homeSecurity.accountStatus.upgradeAccount' | translate">
+		</vtr-ui-button>
+		<vtr-ui-button *ngIf="status === 'standard'"
+			id="chs-account-btn-manageAccount" aria-label="chs-account-btn-manageAccount"
+			(click)="emitManageAccount()"
+			[isFullWidth]="true"
+			metricsEvent="FeatureClick"
+			metricsItem="manageAccount"
+			[label]="'homeSecurity.accountStatus.manageAccount' | translate"
+			[title]="'homeSecurity.accountStatus.manageAccount' | translate">
+		</vtr-ui-button>
+	</div>
+	<a class="already-account text-uppercase"
+		*ngIf="status === 'trial' || status === 'trialExpired'"
+		href="javascript:void(0)" target="_blank"
+		(click)="emitVisitProfile()"
+		id="chs-account-alreadyHaveAccount"
+		aria-label="chs-account-alreadyHaveAccount"
+		vtrMetrics
+		metricsEvent="featureClick"
+		metricsItem="alreadyHaveAccount">
+		{{'homeSecurity.accountStatus.alreadyHaveAccount' | translate}}
+	</a>
+</div>

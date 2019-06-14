@@ -69,7 +69,7 @@
 
 	ul.list-group {
 		list-style-type: none;
-		padding-bottom: 3rem;
+		padding-bottom: 1rem;
 	}
 
 	.slider-item-text {
@@ -89,5 +89,56 @@
 
 	.inline-item {
 		display: -webkit-inline-box;
+	}
+	.disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+	.privacy-guard-caption {
+		font-size: 1.5rem;
+		color: $main_darker;
+		max-width: 60rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	.feature-note {
+		background-color: $shade_lightest;
+		border: 1px solid $shade_lighter;
+		p {
+			font-size: 1.5rem;
+			color: $main_darker;
+		}
+	}
+
+	.custom-control-label {
+		padding-left: 0.5rem;
+		line-height: 1.35;
+		span {
+			font-size: 1.4rem;
+		}
+		// rounded square-box background
+		&::before {
+			top: 0.2rem;
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+
+		// tick mark
+		&::after {
+			top: 0rem;
+			width: 2rem;
+			height: 2rem;
+			left: -1.7rem;
+		}
+	}
+
+	.privacy-checkbox {
+		margin: 1rem 0rem 1rem 0rem;
+		font-size: 1.4rem;
+	}
+
+	.img-privacy-guard {
+		width: 7.5rem;
 	}
 }

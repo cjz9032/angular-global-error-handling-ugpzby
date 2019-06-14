@@ -1,45 +1,25 @@
-import {
-	Component,
-	OnInit,
-	Input,
-	Output,
-	EventEmitter,
-	OnDestroy
-} from '@angular/core';
-import {
-	TranslationService
-} from 'src/app/services/translation/translation.service';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { TranslationService } from 'src/app/services/translation/translation.service';
 import Translation from 'src/app/data-models/translation/translation';
-import {
-	Subscription
-} from 'rxjs/internal/Subscription';
-import {
-	TranslationSection
-} from 'src/app/enums/translation-section.enum';
-import {
-	WifiHomeViewModel
-} from 'src/app/data-models/security-advisor/wifisecurity.model';
-import {
-	CommonService
-} from '../../../services/common/common.service';
-import {
-	NgbModal
-} from '@ng-bootstrap/ng-bootstrap';
-import {
-	SecurityService
-} from 'src/app/services/security/security.service';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { TranslationSection } from 'src/app/enums/translation-section.enum';
+import { CommonService } from '../../../services/common/common.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 	selector: 'vtr-ui-switch-onoff',
 	templateUrl: './ui-switch-onoff.component.html',
-	styleUrls: ['./ui-switch-onoff.component.scss']
+	styleUrls: [ './ui-switch-onoff.component.scss' ]
 })
 export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
-	@Output() toggle: EventEmitter < any > = new EventEmitter();
+	@Output() toggle: EventEmitter<any> = new EventEmitter();
 	@Input() value: boolean;
-	@Input() data: WifiHomeViewModel;
 	@Input() name: string;
 	@Input() disabled = false;
+	@Input() showLoader = false;
+	@Input() theme = 'white';
+
+	@Input() isSwitchDisable = false;
 
 	uiSubscription: Subscription;
 
@@ -47,14 +27,23 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	offLabel = 'off';
 	size = 'switch-xs';
 
-	constructor(public translationService: TranslationService, public commonService: CommonService, public modalService: NgbModal, private securityService: SecurityService, ) {
-		this.uiSubscription = this.translationService.subscription
-			.subscribe((translation: Translation) => {
-				this.onLanguageChange(translation);
-			});
+	constructor(
+		public translationService: TranslationService,
+		public commonService: CommonService,
+		public modalService: NgbModal
+	) {
+		this.uiSubscription = this.translationService.subscription.subscribe((translation: Translation) => {
+			this.onLanguageChange(translation);
+		});
 	}
 
-	ngOnInit() {}
+	ngOnInit() {
+		this.commonService.notification.subscribe((response) => {
+			if (response.type === this.name) {
+				this.value = response.payload;
+			}
+		});
+	}
 
 	ngOnDestroy() {
 		if (this.uiSubscription) {
@@ -62,49 +51,17 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 		}
 	}
 
-
-	onChange(event) {
+	onChange($event) {
 		this.disabled = true;
-		try {
-			if (this.data) {
-				if (this.value) {
-					// this.data.isLWSEnabled = false;
-					// this.value = false; // 让switch尽快change
-					this.data.wifiSecurity.disableWifiSecurity().then((res) => {
-						if (res === true) {
-							this.data.isLWSEnabled = false;
-							this.value = false;
-						} else {
-							this.data.isLWSEnabled = true;
-							this.value = true;
-						}
-					});
-				} else {
-					// this.data.isLWSEnabled = true;
-					// this.value = true; // 让switch尽快change
-					this.data.wifiSecurity.enableWifiSecurity().then((res) => {
-						if (res === true) {
-							this.data.isLWSEnabled = true;
-							this.value = true;
-						} else {
-							this.data.isLWSEnabled = false;
-							this.value = false;
-						}
-					}, (error) => {
-						this.securityService.wifiSecurityLocationDialog(this.data.wifiSecurity);
-					});
-				}
-			} else {
-				this.value = !this.value;
-			}
-		} catch (err) {
-			throw new Error('wifiSecurity is null');
-		} finally {
+		if (this.name === 'recommended-updates') {
+			this.disabled = this.isSwitchDisable;
+			this.value = !this.value;
+		} else if (this.name !== 'wifiSecurity') {
 			this.disabled = false;
+			this.value = !this.value;
 		}
-
-		event.switchValue = this.value;
-		this.toggle.emit(event);
+		$event.switchValue = this.value;
+		this.toggle.emit($event);
 	}
 
 	onLanguageChange(translation: Translation) {
@@ -112,5 +69,9 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 			this.onLabel = translation.payload.on;
 			this.offLabel = translation.payload.off;
 		}
+	}
+
+	stopPropagation(event){
+		event.stopPropagation();
 	}
 }

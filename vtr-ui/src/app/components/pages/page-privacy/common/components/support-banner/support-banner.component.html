@@ -1,0 +1,19 @@
+<div class="support-banner" data-analyticsName="GotPrivacyQuestionsBlock">
+    <div class="support-banner__col">
+        <h3 class="support-banner__title">Got privacy questions?</h3>
+        <p class="support-banner__text">We’re standing by to help, whenever you need it.</p>
+    </div>
+    <div class="support-banner__col">
+        <p class="support-banner__support-time">
+            <strong>24/7</strong> Live Chat
+        </p>
+        <button class="support-banner__button"
+                vtrSendAnalytics
+                [metricsEvent]="'ItemClick'"
+                [metricsItem]="'ChatNowButton'"
+                (click)="openPopup('support-popup')">
+            Chat now
+        </button>
+    </div>
+</div>
+<vtr-support-popup></vtr-support-popup>

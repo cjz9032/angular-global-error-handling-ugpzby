@@ -5,6 +5,8 @@ import { UpdateHistory } from 'src/app/data-models/system-update/update-history.
 import { Subscription } from 'rxjs/internal/Subscription';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
+import { TranslateService } from '@ngx-translate/core';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-installation-history',
@@ -22,8 +24,14 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 
 	constructor(
 		public systemUpdateService: SystemUpdateService,
-		public commonService: CommonService
-	) { }
+		public commonService: CommonService,
+		private translate: TranslateService
+	) {
+		const cashData = this.commonService.getLocalStorageValue(LocalStorageKey.SystemUpdateInstallationHistoryList);
+		if (typeof(cashData) !== 'undefined' && cashData.length > 0) {
+			this.installationHistory = cashData;
+		}
+	}
 
 	ngOnInit() {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
@@ -75,9 +83,9 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 			const date = this.commonService.formatDate(item.utcInstallDate);
 			const time = this.commonService.formatTime(item.utcInstallDate);
 			if (item.status.toLocaleLowerCase() === 'installed') {
-				item.message = `Successfully installed on ${date} at ${time}`;
+				item.message = this.translate.instant('systemUpdates.successInstall') + ' ' + date + ' ' + this.translate.instant('systemUpdates.at') + ' ' + time;
 			} else {
-				item.message = `Failed installed on ${date} at ${time}`;
+				item.message = this.translate.instant('systemUpdates.failedInstall') + ' ' + date + ' ' + this.translate.instant('systemUpdates.at') + ' ' + time;
 			}
 		});
 		return historyList;
@@ -99,6 +107,7 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 
 	private sortInstallationHistory(history: Array<UpdateHistory>) {
 		this.installationHistory = this.mapMessage(history);
+		this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateInstallationHistoryList, this.installationHistory);
 		this.systemUpdateService.sortInstallationHistory(this.installationHistory, this.sortAsc);
 		if (this.installationHistory.length > 5 && !this.showAll) {
 			this.installationHistory = this.installationHistory.slice(0, 5);

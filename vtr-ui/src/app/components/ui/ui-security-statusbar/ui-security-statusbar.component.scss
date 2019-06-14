@@ -13,6 +13,15 @@
 		font-size: 1.4rem;
 		font-weight: $weight_bold;
 	}
+
+	.installing-text {
+		color: $main_lightest;
+		background-color: $main_gstart;
+	}
+
+	span:hover {
+		cursor: default;
+	}
 }
 
 .bullet-icon {
@@ -38,6 +47,10 @@
 		border-color: $go_dark;
 	}
 
+	.icon-check:before {
+		content: '';
+	}
+
 	.icon-times {
 		background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
 		background-color: $stop_dark;
@@ -47,5 +60,24 @@
 	.icon-dot {
 		border-width: 1rem;
 		border-color: $main;
+	}
+
+}
+
+
+
+.badge-item{
+	a:hover{
+		cursor: default;
+	}
+}
+
+.badge-item-click{
+	a:hover{
+		cursor: pointer;
+	}
+
+	span:hover{
+		cursor: pointer;
 	}
 }

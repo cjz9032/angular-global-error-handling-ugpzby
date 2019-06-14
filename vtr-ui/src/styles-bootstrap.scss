@@ -8,7 +8,7 @@
 	padding: 0;
 }
 
-.dropdown:hover > .dropdown-menu {
+.dropdown:hover>.dropdown-menu {
 	display: block;
 }
 
@@ -39,8 +39,16 @@
 	margin-bottom: 4rem !important;
 }
 
+.mb-60 {
+	margin-bottom: 6rem !important;
+}
+
 .mb-80 {
 	margin-bottom: 8rem !important;
+}
+
+.mb-100 {
+	margin-bottom: 10rem !important;
 }
 
 .px-20 {
@@ -107,8 +115,16 @@
 		padding: 3.5rem !important;
 	}
 
+	.mb-60 {
+		margin-bottom: 5.5rem !important;
+	}
+
 	.mb-80 {
 		margin-bottom: 7rem !important;
+	}
+
+	.mb-100 {
+		margin-bottom: 9rem !important;
 	}
 }
 
@@ -131,8 +147,16 @@
 		padding: 3rem !important;
 	}
 
+	.mb-60 {
+		margin-bottom: 5rem !important;
+	}
+
 	.mb-80 {
 		margin-bottom: 6rem !important;
+	}
+
+	.mb-100 {
+		margin-bottom: 8rem !important;
 	}
 }
 
@@ -155,8 +179,16 @@
 		padding: 2.5rem !important;
 	}
 
+	.mb-60 {
+		margin-bottom: 4.5rem !important;
+	}
+
 	.mb-80 {
 		margin-bottom: 5rem !important;
+	}
+
+	.mb-100 {
+		margin-bottom: 7.5rem !important;
 	}
 }
 
@@ -179,10 +211,19 @@
 		padding: 2rem !important;
 	}
 
+	.mb-60 {
+		margin-bottom: 3rem !important;
+	}
+
 	.mb-80 {
 		margin-bottom: 4rem !important;
 	}
+
+	.mb-100 {
+		margin-bottom: 7rem !important;
+	}
 }
+
 //Added new media query for max-width:800 where vtr-page-right-column margin-left , margin-top css are added to fix VAN-1049 issue.
 @media #{$mediaquery_10} {
 	.vtr-page-right-column {
@@ -205,15 +246,27 @@
 		font-size: 2rem;
 		height: 4.2rem;
 	}
+
 	.user-comment {
 		font-size: 2rem;
 		height: 16.2rem;
 	}
+
 	.user-submit {
 		font-size: 2rem;
 		padding: 1.5rem 5rem;
 		border-radius: 5rem;
+		margin: 0 1.5rem;
+
+		@media #{$mediaquery_X20} {
+			.user-submit {
+				border-top: 0px solid white;
+
+			}
+		}
+
 	}
+
 	.border {
 		border: 0.1rem solid $dark;
 	}
@@ -223,18 +276,34 @@
 	z-index: 10001;
 }
 
+.modal-content {
+	user-select: none;
+}
+
 .battery-detail-modal-title {
 	color: $main_dark;
 	font-size: 2.5rem;
 }
+
 // feedback modal end
 
-.welcome-modal-size .modal-dialog {
-	top: $modal_top_margin;
-	max-width: 70rem !important;
-	margin: 0 auto;
-	overflow: hidden;
-	min-height: 60rem;
+.welcome-modal-size {
+	.modal-dialog {
+		max-width: 60rem !important;
+		margin: 1.75rem auto;
+		overflow-y: initial !important;
+	}
+
+	.modal-content {
+		border-radius: 1rem;
+		background: none;
+		border: none;
+	}
+}
+
+// added to hide the unwanted border in overlay welcome tutorial and Feedabck page
+.modal-content {
+	border: 0;
 }
 
 // override for bootstrap modal size
@@ -261,6 +330,7 @@
 	font-size: 1.4rem;
 	font-weight: 500;
 	max-width: 70rem !important;
+
 	.close-button {
 		font-size: 3rem;
 		opacity: 0.8;

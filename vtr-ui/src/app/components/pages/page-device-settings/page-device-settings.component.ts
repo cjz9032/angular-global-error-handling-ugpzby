@@ -7,6 +7,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AudioService } from 'src/app/services/audio/audio.service';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -19,7 +20,7 @@ export class PageDeviceSettingsComponent implements OnInit {
 	back = 'BACK';
 	backarrow = '< ';
 	parentPath = 'device';
-	menuItems = [
+	public menuItems = [
 		{
 			id: 'power',
 			label: 'Power',
@@ -41,6 +42,13 @@ export class PageDeviceSettingsComponent implements OnInit {
 			icon: 'display-camera',
 			subitems: [],
 			active: false
+		}, {
+			id: 'input-accessories',
+			label: 'Input & Accessories',
+			path: 'device-settings/input-accessories',
+			icon: 'input-accessories',
+			subitems: [],
+			active: false
 		}
 	];
 	cardContentPositionA: any = {};
@@ -51,15 +59,19 @@ export class PageDeviceSettingsComponent implements OnInit {
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		public deviceService: DeviceService,
-		public audioService: AudioService
+		public audioService: AudioService,
+		private translate: TranslateService
 	) {
 		this.fetchCMSArticles();
 		this.getMicrophoneSettings();
+		// Evaluate the translations for QA on language Change
+		this.qaService.setTranslationService(this.translate);
+		this.qaService.setCurrentLangTranslations();
 	}
 
 	ngOnInit() {
 		this.devService.writeLog('DEVICE SETTINGS INIT', this.menuItems);
-		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine)
+		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 	}
 
 	getMicrophoneSettings() {
@@ -68,9 +80,9 @@ export class PageDeviceSettingsComponent implements OnInit {
 				this.audioService.getMicrophoneSettings()
 					.then((microphone: Microphone) => {
 						console.log('getMicrophoneSettings', microphone);
-						 if (!microphone.available) {
+						if (!microphone.available) {
 							this.menuItems.splice(1, 1);
-						 }
+						}
 					}).catch(error => {
 						console.error('getMicrophoneSettings', error);
 					});
@@ -105,6 +117,22 @@ export class PageDeviceSettingsComponent implements OnInit {
 				console.log('fetchCMSContent error', error);
 			}
 		);
+		this.cardContentPositionA = {
+			Title: '',
+			ShortTitle: '',
+			Description: '',
+			FeatureImage: './../../../../assets/cms-cache/Alexa4x3-zone1.png',
+			Action: '',
+			ActionType: 'External',
+			ActionLink: null,
+			BrandName: '',
+			BrandImage: '',
+			Priority: 'P1',
+			Page: 'dashboard',
+			Template: 'half-width-title-description-link-image',
+			Position: 'position-B',
+			ExpirationDate: null,
+			Filters: null
+		};
 	}
-
 }

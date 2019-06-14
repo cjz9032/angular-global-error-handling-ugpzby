@@ -1,9 +1,10 @@
 <div class="vtr-ui-list-chevron">
-	<ul class="chevron-list" [ngClass]="items | wifiClass">
+	<ul class="chevron-list" [ngClass]="{'wifiStatus-no-border-bottom': items.length > 0 && items[0].path === 'security/wifi-security' && items[0].status === 0}">
 		<li *ngFor="let item of items" [ngClass]="getItemStatusClass(item)">
 			<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false then user routerLink to naviagate within Lenovo Vantage Application -->
-			<a routerLink="/{{item.path}}" [queryParams]="item.pathParams" vtrMetrics [metricsItem]="item.title" metricsEvent="itemClick"
-				[ngClass]="clickable?'':'disabled'"
+
+			<a routerLink="/{{item.path}}" id="{{item.id}}" attr.aria-label="{{item.id}}" [queryParams]="item.pathParams" vtrMetrics [metricsItem]="item.title" [metricsEvent]="metricsEvent"
+		[ngClass]="clickable?'':'disabled'"
 				*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false)">
 				<div class="container-fluid">
 					<div class="row align-items-center">
@@ -13,7 +14,7 @@
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
-							<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-primary progress-spinner" role="status"></div></div>
+							<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-secondary progress-spinner" role="status"></div></div>
 							<fa-icon *ngIf="item.circle === 'questionCircle'" class="question-icon" placement="auto" [icon]="['far', 'question-circle']" container="body"></fa-icon>
 							<div class="item-icon" *ngIf="item.icon">
 								<div class="icon-bkg">
@@ -21,12 +22,13 @@
 								</div>
 							</div>
 							<div class="item-icon-image" *ngIf="item.iconPath">
-								<img [src]="item.iconPath" />
+								<img [src]="item.iconPath|svgInline|async" />
 							</div>
 						</div>
 						<div class="col item-text"
 							[ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility}">
-							<div class="row no-gutters">
+							<div class="row no-gutters"
+								[ngClass]="{'flex-column': item.notificationDetail}">
 								<div title="{{item.title}}"
 									class="title text-break"
 									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-8': item.detail}">
@@ -38,6 +40,9 @@
 									[ngClass]="getItemDetailClasses(item)">
 									{{item.detail}}
 								</div>
+								<div *ngIf="item.notificationDetail"> 
+									{{item.notificationDetail}}
+								</div>
 							</div>
 						</div>
 						<div class="col col-1 text-center" *ngIf="iconPlacement==='right'">
@@ -46,7 +51,7 @@
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
-							<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-primary progress-spinner" role="status"></div></div>
+							<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-secondary progress-spinner" role="status"></div></div>
 							<fa-icon *ngIf="item.circle === 'questionCircle'" class="question-icon" placement="auto" [icon]="['far', 'question-circle']" container="body"></fa-icon>
 							<div class="item-icon" *ngIf="item.icon">
 								<div class="icon-bkg">
@@ -54,7 +59,7 @@
 								</div>
 							</div>
 							<div class="item-icon-image" *ngIf="item.iconPath">
-								<img [src]="item.iconPath" />
+								<img [src]="item.iconPath|svgInline|async" />
 							</div>
 						</div>
 						<div *ngIf="chevronVisibility" class="col col-1 text-center">
@@ -66,7 +71,7 @@
 				</div>
 			</a>
 			<!--Open Windows Settings /subapges if isSystemLink is not undefined and  true or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
-			<a href="#!" id="{{item.title+item.id}}"  vtrMetrics [metricsItem]="item.title" metricsEvent="itemClick" (click)="launchSystemUri(item.path)" [ngClass]="clickable?'':'disabled'"
+			<a href="#!" id="{{item.id}}" attr.aria-label="{{item.id}}"  vtrMetrics [metricsItem]="item.title" [metricsEvent]="metricsEvent" (click)="launchSystemUri(item.path)" [ngClass]="clickable?'':'disabled'"
 				*ngIf="item.isSystemLink!==undefined &&  item.isSystemLink===true">
 				<div class="container-fluid">
 					<div class="row align-items-center">
@@ -76,7 +81,7 @@
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
-							<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-primary progress-spinner" role="status"></div></div>
+							<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-secondary progress-spinner" role="status"></div></div>
 							<fa-icon *ngIf="item.circle === 'questionCircle'" class="question-icon" placement="auto" [icon]="['far', 'question-circle']" container="body"></fa-icon>
 							<div class="item-icon" *ngIf="item.icon">
 								<div class="icon-bkg">
@@ -84,7 +89,7 @@
 								</div>
 							</div>
 							<div class="item-icon-image" *ngIf="item.iconPath">
-								<img [src]="item.iconPath" />
+								<img [src]="item.iconPath|svgInline|async" />
 							</div>
 						</div>
 						<div class="col item-text"
@@ -110,7 +115,7 @@
 								</div>
 
 							</div>
-							<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-primary progress-spinner" role="status"></div></div>
+							<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-secondary progress-spinner" role="status"></div></div>
 							<fa-icon *ngIf="item.circle === 'questionCircle'" class="question-icon" placement="auto" [icon]="['far', 'question-circle']" container="body"></fa-icon>
 							<div class="item-icon" *ngIf="item.icon">
 								<div class="icon-bkg">
@@ -118,7 +123,7 @@
 								</div>
 							</div>
 							<div class="item-icon-image" *ngIf="item.iconPath">
-								<img [src]="item.iconPath" />
+								<img [src]="item.iconPath|svgInline|async" />
 							</div>
 						</div>
 						<div *ngIf="chevronVisibility" class="col col-1 text-center">

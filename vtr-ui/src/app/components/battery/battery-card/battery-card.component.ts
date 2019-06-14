@@ -8,6 +8,13 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { BatteryInformation } from 'src/app/enums/battery-information.enum';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { ViewRef_ } from '@angular/core/src/view';
+import BatteryGaugeDetail from 'src/app/data-models/battery/battery-gauge-detail-model';
+import { BatteryConditionsEnum, BatteryQuality } from 'src/app/enums/battery-conditions.enum';
+import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
+import { BatteryConditionNote } from 'src/app/data-models/battery/battery-condition-translations.model';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+
 @Component({
 	selector: 'vtr-battery-card',
 	templateUrl: './battery-card.component.html',
@@ -15,95 +22,122 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 })
 export class BatteryCardComponent implements OnInit, OnDestroy {
 	constructor(
-		private modalService: NgbModal, 
+		private modalService: NgbModal,
 		private batteryService: BatteryDetailService,
 		public shellServices: VantageShellService,
 		private commonService: CommonService,
 		private cd: ChangeDetectorRef) {
-			this.getBatteryDetailOnCard();
-		}
+	}
 	batteryInfo: BatteryDetail[];
+	batteryGauge: BatteryGaugeDetail;
 	batteryCardTimer: any;
 	batteryIndicator = new BatteryIndicator();
 	flag = true;
-	
+	batteryConditions: BatteryConditionModel[];
+	batteryConditionsEnum = BatteryConditionsEnum;
+	batteryConditionNotes: BatteryConditionNote[];
+	batteryQuality = BatteryQuality;
+	isBatteryDetailsBtnDisabled = true;
+	// percentageLimitation: Store Limitation Percentage
+	percentageLimitation = 60;
+
+	private powerSupplyStatusEventRef: any;
+	private remainingPercentageEventRef: any;
+	private remainingTimeEventRef: any;
+
 	ngOnInit() {
-		this.shellServices.registerEvent(EventTypes.pwrPowerSupplyStatusEvent, this.onPowerSupplyStatusEvent.bind(this));
-		this.shellServices.registerEvent(EventTypes.pwrRemainingPercentageEvent, this.onRemainingPercentageEvent.bind(this));
-		this.shellServices.registerEvent(EventTypes.pwrBatteryStatusEvent, this.onBatteryStatusEvent.bind(this));
-		this.shellServices.registerEvent(EventTypes.pwrRemainingTimeEvent, this.onRemainingTimeEvent.bind(this));
+		this.getBatteryDetailOnCard();
+
+		this.powerSupplyStatusEventRef = this.onPowerSupplyStatusEvent.bind(this);
+		this.remainingPercentageEventRef = this.onRemainingPercentageEvent.bind(this);
+		this.remainingTimeEventRef = this.onRemainingTimeEvent.bind(this);
+
+		this.shellServices.registerEvent(EventTypes.pwrPowerSupplyStatusEvent, this.powerSupplyStatusEventRef);
+		this.shellServices.registerEvent(EventTypes.pwrRemainingPercentageEvent, this.remainingPercentageEventRef);
+		this.shellServices.registerEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
 	}
 
-	onPowerSupplyStatusEvent(status: any) {
-		console.log("onPowerSupplyStatusEvent: ", status);
-		if(status) {
-			this.batteryInfo[0].isAcAttached = status.isAcAttached;//status.isAcAttached ? BatteryChargeStatus.CHARGING.id : BatteryChargeStatus.DISCHARGING.id;
+	onPowerSupplyStatusEvent(info: any) {
+		console.log('onPowerSupplyStatusEvent: ', info);
+		if (info) {
+			this.batteryInfo = info.batteryInformation;
+			this.batteryGauge = info.batteryIndicatorInfo;
 			this.updateBatteryDetails();
 		}
 	}
 
-	onRemainingPercentageEvent(info: BatteryDetail[]) {
-		console.log("onRemainingPercentageEvent: ", info);
-		if(info) {
-			this.batteryInfo = info
+	onRemainingPercentageEvent(info: any) {
+		console.log('onRemainingPercentageEvent: ', info);
+		if (info) {
+			this.batteryInfo = info.batteryInformation;
+			this.batteryGauge = info.batteryIndicatorInfo;
 			this.updateBatteryDetails();
 		}
 	}
 
-	onBatteryStatusEvent(info: BatteryDetail[]) {
-		console.log("onBatteryStatusEvent: ", info);
-		if(info) {
-			this.batteryInfo = info
-			this.updateBatteryDetails();
-		}
-	}
-
-	onRemainingTimeEvent(mainBatteryTime: number) {
-		console.log("onRemainingTimeEvent: ", mainBatteryTime);
-		if(mainBatteryTime) {
-			this.batteryInfo[0].mainBatteryRemainingTime = mainBatteryTime
+	onRemainingTimeEvent(info: any) {
+		console.log('onRemainingTimeEvent: ', info);
+		if (info) {
+			this.batteryInfo = info.batteryInformation;
+			this.batteryGauge = info.batteryIndicatorInfo;
 			this.updateBatteryDetails();
 		}
 	}
 
 	public getBatteryDetailOnCard() {
-		console.log('In getBatteryDetail');
 		try {
 			if (this.batteryService.isShellAvailable) {
-				this.batteryService.getBatteryDetail()
-					.then((response: BatteryDetail[]) => {
-						console.log('getBatteryDetailOnCard', response);
-						this.batteryInfo = response;
-						this.updateBatteryDetails();
-						this.batteryCardTimer = setTimeout(() => {
-							console.log('Trying after 30 seconds');
-							this.getBatteryDetailOnCard();
-						}, 30000);
-					}).catch(error => {
-						console.error('getBatteryDetailOnCard', error);
-					});
+				this.getBatteryDetails();
+
+				this.batteryCardTimer = setInterval(() => {
+					console.log('Trying after 30 seconds');
+					this.getBatteryDetails();
+				}, 30000);
 			}
 		} catch (error) {
-			console.error("getBatteryDetailOnCard: " + error.message)
+			console.error('getBatteryDetailOnCard: ' + error.message);
 		}
 	}
 
-	public updateBatteryDetails() {
-		this.batteryInfo[0].mainBatteryPercent = this.batteryService.getMainBatteryPercentage();
-		this.batteryIndicator.percent = this.batteryService.getMainBatteryPercentage();
-		this.batteryIndicator.charging = this.batteryService.getAcIsAttached(); //this.batteryInfo[0].chargeStatus == BatteryChargeStatus.CHARGING.id;
-		this.batteryInfo[0].isAcAttached = this.batteryIndicator.charging;
-		this.batteryIndicator.expressCharging = this.batteryInfo[0].isExpressCharging;
-		this.batteryIndicator.voltageError = this.batteryInfo[0].isVoltageError;
-		this.batteryInfo[0].mainBatteryRemainingTime = this.batteryService.getMainBatteryTime();
-		this.batteryIndicator.convertMin(this.batteryInfo[0].mainBatteryRemainingTime);
-		this.commonService.sendNotification(BatteryInformation.BatteryInfo,this.batteryInfo);
-		this.cd.detectChanges();
+	private getBatteryDetails() {
+		this.batteryService.getBatteryDetail()
+			.then((response: any) => {
+				console.log('getBatteryDetails', response);
+				this.batteryInfo = response;
+				this.batteryInfo = response.batteryInformation;
+				this.batteryGauge = response.batteryIndicatorInfo;
+				this.isBatteryDetailsBtnDisabled =
+					this.batteryGauge.isPowerDriverMissing || this.batteryInfo.length === 0;
+				this.updateBatteryDetails();
+				this.getBatteryCondition();
+			}).catch(error => {
+				console.error('getBatteryDetails error', error);
+			});
 	}
-	
+
+	public updateBatteryDetails() {
+		let batteryHealth = 0;
+		if (this.batteryInfo !== undefined && this.batteryInfo.length !== 0
+			&& this.batteryInfo[0].batteryHealth !== undefined) {
+			batteryHealth = this.batteryInfo[0].batteryHealth;
+		}
+		this.batteryIndicator.batteryHealth = this.batteryIndicator.getBatteryHealth(batteryHealth);
+		this.batteryIndicator.percent = this.batteryGauge.percentage;
+		this.batteryIndicator.charging = this.batteryGauge.isAttached;
+		this.batteryIndicator.convertMin(this.batteryGauge.time);
+		this.batteryIndicator.timeText = this.batteryGauge.timeType;
+		this.batteryIndicator.expressCharging = this.batteryGauge.isExpressCharging;
+		this.commonService.sendNotification(BatteryInformation.BatteryInfo, { detail: this.batteryInfo, gauge: this.batteryGauge });
+		if (this.cd !== null && this.cd !== undefined &&
+			!(this.cd as ViewRef_).destroyed) {
+			this.cd.detectChanges();
+		}
+	}
+
 	public showDetailModal(content: any): void {
 		this.modalService
 			.open(content, {
+				backdrop: 'static',
 				size: 'lg',
 				windowClass: 'battery-modal-size'
 			})
@@ -117,15 +151,75 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			);
 	}
 
+	public getBatteryCondition() {
+		// server api call to fetch battery conditions
+		const batteryConditions = [];
+		let batteryHealth = 0;
+		if (this.batteryInfo !== undefined && this.batteryInfo.length !== 0
+			&& this.batteryInfo[0].batteryHealth !== undefined) {
+			batteryHealth = this.batteryInfo[0].batteryHealth;
+		}
+		const isThinkpad = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType) === 1;
+		if (isThinkpad && batteryHealth === 1 || batteryHealth === 2) {
+			batteryHealth = BatteryConditionsEnum.StoreLimitation;
+		}
+		batteryConditions.push(new BatteryConditionModel(batteryHealth,
+			this.batteryQuality[this.batteryIndicator.batteryHealth]));
+		this.batteryInfo[0].batteryCondition.forEach((condition) => {
+			switch (condition.toLocaleLowerCase()) {
+				case 'normal':
+					batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.Normal,
+						BatteryQuality.Fair));
+					break;
+				case 'hightemperature':
+					batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.HighTemperature, BatteryQuality.Fair));
+					break;
+				case 'tricklecharge':
+					batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.TrickleCharge, BatteryQuality.Fair));
+					break;
+				case 'overheatedbattery':
+					batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.OverheatedBattery, BatteryQuality.Fair));
+					break;
+				case 'permanenterror':
+					batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.PermanentError, BatteryQuality.Fair));
+					break;
+				case 'hardwareauthenticationerror':
+					batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.HardwareAuthenticationError, BatteryQuality.Fair));
+					break;
+			}
+		});
+		if (this.batteryGauge.isPowerDriverMissing) {
+			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryQuality.Poor));
+		}
+		if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
+			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryQuality.Fair));
+		}
+		if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'notsupported') {
+			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryQuality.Poor));
+		}
+
+		this.batteryConditions = batteryConditions;
+		console.log('Battery conditions length', this.batteryConditions.length);
+		this.batteryConditionNotes = [];
+		this.batteryConditions.forEach((batteryCondition) => {
+			console.log('Condition', batteryCondition.condition);
+			const translation = batteryCondition.getBatteryCondition(batteryCondition.condition);
+			console.log('Translation==>', translation);
+			if (translation !== undefined) {
+				this.batteryConditionNotes.push(translation);
+			}
+		});
+	}
+
 	reInitValue() {
 		this.flag = false;
-		this.getBatteryDetailOnCard();
+		// this.getBatteryDetailOnCard();
 	}
+
 	ngOnDestroy() {
 		clearTimeout(this.batteryCardTimer);
-		this.shellServices.unRegisterEvent(EventTypes.pwrPowerSupplyStatusEvent);
-		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingPercentageEvent);
-		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent);
-		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent);
+		this.shellServices.unRegisterEvent(EventTypes.pwrPowerSupplyStatusEvent, this.powerSupplyStatusEventRef);
+		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingPercentageEvent, this.remainingPercentageEventRef);
+		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
 	}
 }

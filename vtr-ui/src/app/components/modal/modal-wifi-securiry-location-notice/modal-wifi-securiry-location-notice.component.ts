@@ -17,6 +17,9 @@ export class ModalWifiSecuriryLocationNoticeComponent implements OnInit {
 	@Input() url: string;
 	@Input() wifiSecurity: WifiSecurity;
 	// @Input() okHandler: Function;
+	@Input() closeButtonId: string;
+	@Input() agreeButtonId: string;
+	@Input() cancelButtonId: string;
 	@Input() packages: string[];
 	@Input() OkText = 'security.wifisecurity.locationmodal.agree';
 	@Input() CancelText = 'security.wifisecurity.locationmodal.cancel';
@@ -43,7 +46,10 @@ export class ModalWifiSecuriryLocationNoticeComponent implements OnInit {
 	public onCancelClick($event: any) {
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');
 		if (this.wifiSecurity.state === 'enabled') {
-			this.wifiSecurity.disableWifiSecurity();
+			this.wifiSecurity.mitt.emit('cancelClick', true);
+			this.wifiSecurity.disableWifiSecurity().then(() => {
+				this.wifiSecurity.mitt.emit('cancelClickFinish', true);
+			});
 		}
 		this.activeModal.close(false);
 	}

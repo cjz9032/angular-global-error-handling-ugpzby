@@ -1,0 +1,79 @@
+<div class="vtr-widget-system-tools">
+	<div class="widget-title">
+		{{title}}
+	</div>
+	<div class="widget-container">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col">
+					<ul class="system-tool-icons d-flex justify-content-around">
+						<li>
+							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.systemUpdate' | translate"
+								metricsEvent="featureClick" routerLink="/device/system-updates">
+								<figure>
+									<div class="system-icon">
+										<i class="icon icon-systemupdate"></i>
+									</div>
+									<figcaption>{{'gaming.dashboard.device.systemTools.systemUpdate' | translate}}
+									</figcaption>
+								</figure>
+							</a>
+						</li>
+						<li *ngIf="gamingProperties.macroKeyFeature">
+							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.macroKey' | translate"
+								metricsEvent="featureClick" routerLink="/macrokey">
+								<figure>
+									<div class="system-icon">
+										<i class="icon icon-macrokey"></i>
+									</div>
+									<figcaption>{{'gaming.dashboard.device.systemTools.macroKey' | translate}}
+									</figcaption>
+								</figure>
+							</a>
+						</li>
+
+						<li>
+							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.power' | translate"
+								metricsEvent="featureClick" routerLink="/device/device-settings/power">
+								<figure>
+
+									<div class="system-icon">
+										<i class="icon icon-power"></i>
+									</div>
+
+									<figcaption>{{'gaming.dashboard.device.systemTools.power' | translate}}</figcaption>
+								</figure>
+							</a>
+						</li>
+						<li>
+							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.media' | translate"
+								metricsEvent="featureClick" routerLink="/device/device-settings/display-camera">
+								<figure>
+
+									<div class="system-icon">
+										<i class="icon icon-media"></i>
+									</div>
+
+									<figcaption>{{'gaming.dashboard.device.systemTools.media' | translate}}</figcaption>
+								</figure>
+							</a>
+						</li>
+
+						<!-- <li>
+							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.media' | translate"
+								metricsEvent="featureClick" routerLink="/hardwarescan">
+								<figure>
+									<div class="system-icon">
+										<i class="icon icon-hardwarescan"></i>
+									</div>
+									<figcaption>{{'gaming.dashboard.device.systemTools.hardwareScan' | translate}}
+									</figcaption>
+								</figure>
+							</a>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

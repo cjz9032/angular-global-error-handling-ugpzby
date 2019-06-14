@@ -1,0 +1,7 @@
+<vtr-installed-browser
+		*ngFor="let browser of (installedBrowsers$ | async).browserData; trackBy: trackByBrowser; let i = index"
+		[installedBrowser]="browser"
+		[showDetailAction]="inputData.showDetailAction"
+		[index]="i"
+		[isDetailsExpanded]="i === openPasswordId">
+</vtr-installed-browser>

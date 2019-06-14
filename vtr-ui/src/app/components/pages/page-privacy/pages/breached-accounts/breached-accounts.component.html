@@ -1,0 +1,42 @@
+<section class="breaches-page"
+		 vtrSendAnalytics
+		 [metricsEvent]="'PageView'">
+
+	<div class="breached-accounts" data-analyticsName="BreachedAccountsBlock">
+		<div *ngIf="!(isFigleafReadyForCommunication$ | async) && !(breachedAccounts$ | async)?.length"
+			 class="email-scanner">
+			<vtr-email-scanner
+				[userEmail]="userEmail$ | async"
+				[emailWasScanned]="emailWasScanned$ | async"></vtr-email-scanner>
+		</div>
+
+		<div *ngIf="(breachedAccounts$ | async)?.length"
+			 class="breaches-wrapper">
+			<div class="breached-accounts__header">
+				<p class="breached-accounts__title">
+					Found
+					<span class="breached-accounts__title--red">
+						{{(breachedAccountsCount$ | async)}} </span>
+					breaches
+				</p>
+				<button class="breached-accounts__verify-button"
+						*ngIf="!(isUserAuthorized$ | async)"
+						(click)="startVerify()">
+					Verify email
+				</button>
+			</div>
+			<vtr-breached-account
+				[breachedAccounts]="(breachedAccounts$ | async)"
+				[isUserAuthorized]="isUserAuthorized$ | async"
+				(verifyClick)="startVerify()">
+			</vtr-breached-account>
+		</div>
+
+	</div>
+</section>
+
+<vtr-common-popup [popUpId]="confirmationPopupName">
+	<ng-template>
+		<vtr-confirmation-popup [popupId]="confirmationPopupName"></vtr-confirmation-popup>
+	</ng-template>
+</vtr-common-popup>

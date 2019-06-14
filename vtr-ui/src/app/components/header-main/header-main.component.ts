@@ -1,9 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'vtr-header-main',
 	templateUrl: './header-main.component.html',
-	styleUrls: ['./header-main.component.scss']
+	styleUrls: [
+		'./header-main.component.scss',
+		'./header-main.component.gaming.scss'
+	]
 })
 export class HeaderMainComponent implements OnInit {
 
@@ -13,8 +17,8 @@ export class HeaderMainComponent implements OnInit {
 	@Input() forwardLink: { path: string, label: string };
 	@Input() menuItems: any[];
 	@Input() parentPath: string;
-
-	constructor() { }
+	@Input() backId: string;
+	constructor(private router: Router) { }
 
 	ngOnInit() {
 		const self = this;
@@ -28,6 +32,7 @@ export class HeaderMainComponent implements OnInit {
 	}
 
 	goBack() {
-		window.history.back();
+		if (window.history.length > 1) { return window.history.back(); }
+		this.router.navigate(['dashboard']);
 	}
 }

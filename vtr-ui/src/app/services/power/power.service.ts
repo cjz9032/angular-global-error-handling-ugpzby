@@ -11,6 +11,7 @@ export class PowerService {
 	private devicePowerSmartSettings: any;
 	private devicePowerItsIntelligentCooling: any;
 	public isShellAvailable = false;
+	public intelligentCoolingForIdeaPad: any;
 	constructor(shellService: VantageShellService) {
 		this.devicePower = shellService.getVantageToolBar();
 		if (this.devicePower) {
@@ -23,9 +24,13 @@ export class PowerService {
 		this.devicePowerThinkPad = shellService.getPowerThinkPad();
 		if (this.devicePowerThinkPad) {
 			this.isShellAvailable = true;
-		}
+		}	
 		this.devicePowerItsIntelligentCooling = shellService.getPowerItsIntelligentCooling();
 		if (this.devicePowerItsIntelligentCooling) {
+			this.isShellAvailable = true;
+		}
+		this.intelligentCoolingForIdeaPad = shellService.getIntelligentCoolingForIdeaPad();
+		if(this.intelligentCoolingForIdeaPad) {
 			this.isShellAvailable = true;
 		}
 	}
@@ -210,7 +215,9 @@ export class PowerService {
 		}
 	}
 	// End Vantage ToolBar
+
 	// Power smart settings
+	// ----------start ITC Capable
 	public getDYTCRevision(): Promise<number> {
 		try {
 			if (this.devicePowerItsIntelligentCooling) {
@@ -271,5 +278,183 @@ export class PowerService {
 			throw new Error(error.message);
 		}
 	}
+	// ----------End ITC Capable
+	// ----------Start Legacy Capable
+	public getAPSState(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getAPSState();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getLegacyCQLCapability(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getLegacyCQLCapability();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getLegacyTIOCapability(): Promise<number> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getLegacyTIOCapability();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getLegacyManualModeCapability(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getLegacyManualModeCapability();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getLegacyAutoModeState(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getLegacyAutoModeState();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getLegacyManualModeState(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getLegacyManualModeState();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public setLegacyAutoModeState(value: boolean) {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.setLegacyAutoModeState(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public setLegacyManualModeState(value: boolean) {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.setLegacyManualModeState(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	// ---------- End Legacy Capable
+
+	//-------------Start IdeaPad
+	public getITSModeForICIdeapad() {
+		try {
+			if (this.intelligentCoolingForIdeaPad) {
+				return this.intelligentCoolingForIdeaPad.getITSSettings();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public setITSModeForICIdeapad(mode: string) {
+		try {
+			if (this.intelligentCoolingForIdeaPad) {
+				return this.intelligentCoolingForIdeaPad.setITSSettings(mode);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	public startMonitorForICIdeapad() {
+		try {
+			if (this.intelligentCoolingForIdeaPad) {
+				return this.intelligentCoolingForIdeaPad.startMonitor();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public stopMonitorForICIdeapad() {
+		try {
+			if (this.intelligentCoolingForIdeaPad) {
+				return this.intelligentCoolingForIdeaPad.stopMonitor();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	//-------------End IdeaPad
+
 	// End Power smart settings
+
+		// ---------- start battery threshold settings
+
+		public getChargeThresholdInfo(): Promise<any> {
+			try {
+				if (this.devicePowerThinkPad) {
+					return this.devicePowerThinkPad.sectionChargeThreshold.getChargeThresholdInfo();
+				}
+				return undefined;
+			} catch (error) {
+				throw new Error(error.message);
+			}
+		}
+
+		public setChargeThresholdValue(value: any): Promise<any> {
+			//console.log('Battery threshold value here ----->', value);
+			try {
+				if (this.devicePowerThinkPad) {
+					return this.devicePowerThinkPad.sectionChargeThreshold.setChargeThresholdValue(value);
+				}
+				return undefined;
+			} catch (error) {
+				throw new Error(error.message);
+			}
+		}
+
+		public setCtAutoCheckbox(value: any): Promise<any> {
+		//console.log('auto check value here ----->', value);
+			try {
+				if (this.devicePowerThinkPad) {
+					return this.devicePowerThinkPad.sectionChargeThreshold.setCtAutoCheckbox(value);
+				}
+				return undefined;
+			} catch (error) {
+				throw new Error(error.message);
+			}
+		}
+	
+		
+		// End end battery threshold settings
+	
 }

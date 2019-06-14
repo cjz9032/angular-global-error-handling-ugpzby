@@ -5,6 +5,8 @@ import { VantageShellService } from '../../../services/vantage-shell/vantage-she
 import { CMSService } from '../../../services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
+import {AppNotification} from 'src/app/data-models/common/app-notification.model';
+import {NetworkStatus} from 'src/app/enums/network-status.enum';
 
 @Component({
 	selector: 'vtr-page-security-windows-hello',
@@ -17,6 +19,8 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 	statusItem: any;
 	cardContentPositionA: any = {};
 	securityAdvisor: SecurityAdvisor;
+	backId = 'sa-wh-btn-back';
+	isOnline = this.commonService.isOnline;
 
 	constructor(
 		public mockService: MockService,
@@ -27,19 +31,21 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		this.statusItem = {
 			title: 'security.windowsHello.statusTitle',
-			status: 'common.securityAdvisor.loading'
+			status: 'loading'
 		};
 		this.windowsHello = vantageShellService.getSecurityAdvisor().windowsHello;
 		this.updateStatus();
 		this.windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
 			this.updateStatus();
-		}).on(EventTypes.helloFacialIdStatusEvent, () => {
-			this.updateStatus();
 		});
 		this.fetchCMSArticles();
 	}
 
-	ngOnInit() { }
+	ngOnInit() {
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+	}
 
 	setUpWindowsHello(): void {
 		this.windowsHello.launch();
@@ -55,9 +61,8 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 		if (cacheStatus) {
 			this.statusItem.status = cacheStatus;
 		}
-		if (this.windowsHello && (this.windowsHello.fingerPrintStatus || this.windowsHello.facialIdStatus)) {
-			if (this.windowsHello.fingerPrintStatus === 'active' ||
-				this.windowsHello.facialIdStatus === 'active') {
+		if (this.windowsHello && (this.windowsHello.fingerPrintStatus)) {
+			if (this.windowsHello.fingerPrintStatus === 'active') {
 				this.statusItem.status = 'enabled';
 			} else {
 				this.statusItem.status = 'disabled';
@@ -91,5 +96,18 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 				console.log('fetchCMSContent error', error);
 			}
 		);
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
+		}
 	}
 }

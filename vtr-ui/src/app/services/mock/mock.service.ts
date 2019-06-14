@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Antivirus } from '@lenovo/tan-client-bridge';
 
 @Injectable()
-
 export class MockService {
 
 	carousel: any = [{
@@ -74,7 +72,7 @@ export class MockService {
 			'title': 'System Update',
 			'detail': 'Update',
 			'path': 'device/system-updates',
-			'asLink': true,
+			'asLink': false,
 			'type': 'system'
 		}
 	];

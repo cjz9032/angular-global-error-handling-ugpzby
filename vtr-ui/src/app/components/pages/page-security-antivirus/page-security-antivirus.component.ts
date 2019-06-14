@@ -8,6 +8,8 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',
@@ -15,9 +17,6 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 	styleUrls: ['./page-security-antivirus.component.scss']
 })
 export class PageSecurityAntivirusComponent implements OnInit {
-
-	title = 'security.antivirus.common.title' ;
-	back = 'security.antivirus.common.back';
 	backarrow = '< ';
 	antiVirus: Antivirus;
 	viewModel: any;
@@ -30,6 +29,9 @@ export class PageSecurityAntivirusComponent implements OnInit {
 	fireWall = 'security.antivirus.common.firewall';
 	enablevirus = 'security.antivirus.common.enableVirusScan';
 	enableFirewall = 'security.antivirus.common.enableFirewall';
+	backId = 'sa-av-btn-back';
+	mcafeeArticleCategory: string;
+	isOnline = true;
 
 	@HostListener('window:focus')
 	onFocus(): void {
@@ -49,6 +51,10 @@ export class PageSecurityAntivirusComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		this.isOnline = this.commonService.isOnline;
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
 		if (this.antiVirus.mcafee) {
 			this.viewModel.mcafee = this.antiVirus.mcafee;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfee, this.viewModel.mcafee);
@@ -218,15 +224,35 @@ export class PageSecurityAntivirusComponent implements OnInit {
 				console.log('fetchCMSContent error', error);
 			}
 		);
+
+		this.cmsService.fetchCMSArticle(this.urlGetMcAfee, {'Lang': 'EN'}).then((response: any) => {
+			if (response && response.Results && response.Results.Category) {
+				this.mcafeeArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
+			}
+		});
 	}
 
 	openArticle() {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
+			backdrop: 'static',
 			size: 'lg',
 			centered: true,
 			windowClass: 'Article-Detail-Modal'
 		});
 
 		articleDetailModal.componentInstance.articleId = this.urlGetMcAfee;
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
+		}
 	}
 }

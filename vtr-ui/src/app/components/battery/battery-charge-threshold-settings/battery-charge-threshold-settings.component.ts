@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ElementRef,Output, EventEmitter} from '@angular/core';
 
 @Component({
 	selector: 'vtr-battery-charge-threshold-settings',
@@ -7,16 +7,20 @@ import { Component, OnInit, Input, ElementRef } from '@angular/core';
 })
 export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	@Input() title = '';
+	@Input() start = '';
+	@Input() stop = '';
+	@Input() checkboxText = '';
 	@Input() type = 'primary';
 	@Input() displayNoteOnly: boolean = this.displayNoteOnly || false;
+	@Input() startAtChargeOptions: any;
+	@Input() stopAtChargeOptions: any;
+	@Input() selectedStartAtCharge: any;
+	@Input() selectedStopAtCharge: any;
+	@Input() isCheckedAuto: any;
+	@Output() sendBatteryDetails = new EventEmitter();
+	@Output() autoChecked = new EventEmitter<boolean>();
 
-	isCheckedAuto: boolean = this.isCheckedAuto || false;
-	selectedStopAtCharge: number = this.selectedStopAtCharge || 75;
-	selectedStartAtCharge: number = this.selectedStartAtCharge || 40;
-
-	chargeOptions: number[] = [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
-	startAtChargeOptions: number[] = this.chargeOptions.slice(0, this.chargeOptions.length - 1);
-	stopAtChargeOptions: number[] = this.chargeOptions.slice(1, this.chargeOptions.length);
+	
 
 	// Random number is used to have unique id of each input field
 	randomNumber: number = Math.floor(new Date().valueOf() * Math.random());
@@ -25,14 +29,16 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	startChargeInput = 'startAtCharge';
 	stopAtChargeInput = 'stopAtCharge';
 	isCheckedAutoInput = 'isCheckedAuto';
+	public selectedOptionsData: any = {};
 
 	constructor() { }
 
-	ngOnInit() {
-	}
+	ngOnInit() {	}
 
 	onChargeChange(id: string, newCharge: number, event: Event) {
-		// console.log('onChargeChange' + event + '\n' + id + '\n' + newCharge);
+		 //console.log('onChargeChange' + event.target + '\n' + id + '\n' + newCharge);
+		 //console.log(event)
+		 
 
 		if (id === this.startChargeInput) {
 			if (this.selectedStartAtCharge !== newCharge) {
@@ -48,17 +54,42 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 					this.autoStartStopAtCharge();
 				}
 			}
+			
 		}
+		//console.log('###############################', this.isCheckedAuto);
+		if(!this.isCheckedAuto){
+		this.selectedOptionsData = {
+			startChargeValue : this.selectedStartAtCharge,
+			stopChargeValue : this.selectedStopAtCharge,
+			autoChecked: this.isCheckedAuto
+		}
+		this.sendBatteryDetails.emit(this.selectedOptionsData)
+	}else {
+		this.toggleAutoChargeSettings(true);
+	}
+		
 	}
 
 	autoStartStopAtCharge() {
-		this.selectedStartAtCharge = this.selectedStopAtCharge - 5;
-	}
+	this.selectedStartAtCharge = this.selectedStopAtCharge - 5;
+		// this.selectedStartAtCharge =  5;	
+}
 
-	toggleAutoChargeSettings(event: Event) {
-		// console.log('toggleAutoSettings');
+	public toggleAutoChargeSettings(event: any) {
+		console.log('toggleAutoSettings------>', event);
 		if (event) {
 			this.autoStartStopAtCharge();
+			this.selectedOptionsData = {
+				startChargeValue : 5,
+				stopChargeValue : this.selectedStopAtCharge,
+				autoChecked: this.isCheckedAuto
+			}
+			//console.log('****************************', this.selectedOptionsData);
+			this.autoChecked.emit(this.selectedOptionsData)
 		}
+		// else{
+		// 	this.selectedStartAtCharge = this.selectedStopAtCharge - 5;
+		// }
+		
 	}
 }

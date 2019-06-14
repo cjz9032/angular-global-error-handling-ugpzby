@@ -3,8 +3,8 @@
 	<button type="button"
 		vtrMetrics
 		metricsItem="btn.close"
-		metricsEvent="itemClick"
-		metricsParent="modalwelcome"
+		metricsEvent="featureClick"
+		metricsParent="Dialog.Feedback"
 		class="close close-button"
 		data-dismiss="modal"
 		(click)="activeModal.dismiss('Cross click')"
@@ -21,21 +21,24 @@
 		<div class="row">
 			<div class="col">
 				<input autocomplete="off"
-					placeholder="Email (optional)"
+					placeholder="{{'dashboard.feedback.form.email' | translate}}"
 					type="email"
 					class="form-control user-email text-center"
 					formControlName="userEmail"
-					email />
+					pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+					email
+					ngbAutofocus />
 			</div>
 		</div>
 		<br />
 		<div class="row">
 			<div class="col">
-				<textarea placeholder="Comments..."
+				<textarea placeholder="{{'dashboard.feedback.form.comments' | translate}}"
 					class="form-control user-comment text-center"
 					cols="30"
 					rows="10"
 					formControlName="userComment"
+					pattern="^(?!\s*$).+"
 					required></textarea>
 			</div>
 		</div>
@@ -43,10 +46,23 @@
 		<div class="row">
 			<div class="col text-center">
 				<button type="submit"
+						vtrMetrics
+				       itemtype= "UserFeedback"
+						metricsItem="Submit"
+						ItemParent="Dialog.Feadback"
+						UserEmail= "sample@lenovo.com"
+				Content="Vantage is a very good product(sample)"
+						name="{{'dashboard.feedback.form.button' | translate}}"
 					class="btn btn-primary btn-lg user-submit"
 					[disabled]="feedbackForm.invalid">
 					{{ feedbackButtonText }}
 				</button>
+				<!-- <button type="button" 
+					name="{{'dashboard.feedback.form.addScreenshot' | translate}}"
+					class="btn btn-primary btn-lg user-submit"
+					(click)="goToMailUtility()">
+					{{'dashboard.feedback.form.addScreenshot' | translate}}
+				</button> -->
 			</div>
 		</div>
 	</form>

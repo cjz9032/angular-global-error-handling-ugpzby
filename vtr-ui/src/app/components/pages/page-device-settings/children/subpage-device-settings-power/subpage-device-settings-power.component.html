@@ -36,302 +36,8 @@
 				[menuTitle]="'device.deviceSettings.power.jumpto.title' | translate"></vtr-ui-header-subpage>
 		</div>
 	</div>
-	<!-- <div *ngIf="value===1">
-		<div class="row py-5 smartsettings-card"
-			id="cooling">
-			<div class="col-10 mx-auto ">
-				<vtr-container-collapsible cardTitle="Power Smartsettings"
-					[isCollapsed]="false"
-					[allowCollapse]="false"
-					[theme]="'blue'">
-					<div class="row">
-						<div class="col-auto text-wrap subtitle">
-							<h3>Intelligent Cooling</h3>
-							<p>This feature dynamically adjusts thermal settings to your needs. When on, it adjusts
-								settings to keep the device cooler or quiet, while being held or idle. Otherwise, it
-								optimizes performance while the device is on a stable surface. When off, you can
-								manually set thermal priority.</p>
-						</div>
-					</div>
-					<ul class="list-group list-group-flush">
-						<li class="">
-							<vtr-ui-row-switch [title]="'Intelligent cooling'"
-								[caption]="''"
-								[isSwitchVisible]=true
-								[leftIcon]="['fas', 'search']"
-								[readMoreText]="''"
-								[showChildContent]="true"
-								[theme]="'blue'"
-								(toggleOnOff)="onIntelligentCoolingToggle($event)">
-								<div class="my-3"
-									*ngIf="!intelligentCooling">
-									 <vtr-ui-rectangle-radio [radioId]="'radio2'"
-											[group]="'radio'"
-											[label]="'PERFORMANCE'"
-											[value]="'PERFORMANCE'"></vtr-ui-rectangle-radio>
-										<vtr-ui-rectangle-radio [radioId]="'radio1'"
-											[group]="'radio'"
-											[label]="'QUIET & COOL'"
-											[value]="'QUIET & COOL'"></vtr-ui-rectangle-radio>
-
-								</div>
-							</vtr-ui-row-switch>
-						</li>
-					</ul>
-				</vtr-container-collapsible>
-			</div>
-		</div>
-	</div> -->
-	<!-- <div *ngIf="value===2">
-		<div class="row py-5 smartsettings-card"
-			id="cooling">
-			<div class="col-10 mx-auto ">
-				<vtr-container-collapsible cardTitle="Power Smartsettings"
-					[isCollapsed]="false"
-					[allowCollapse]="false"
-					[theme]="'blue'">
-					<div class="row">
-						<div class="col-auto text-wrap subtitle">
-							<h3>Intelligent Cooling</h3>
-							<p>This feature dynamically adjusts thermal settings to your needs. When on, it adjusts
-								settings to keep the device cooler or quiet, while being held or idle. Otherwise, it
-								optimizes performance while the device is on a stable surface. When off, you can
-								manually set thermal priority.</p>
-						</div>
-					</div>
-					<ul class="list-group list-group-flush">
-						<li class="">
-							<vtr-ui-row-switch [title]="'Intelligent cooling'"
-								[caption]="''"
-								[isSwitchVisible]=true
-								[leftIcon]="['fas', 'search']"
-								[readMoreText]="''"
-								[showChildContent]="true"
-								[theme]="'blue'"
-								(toggleOnOff)="onIntelligentCoolingToggle($event)">
-								<div class="my-3"
-									*ngIf="!intelligentCooling">
-									  <vtr-ui-rectangle-radio [radioId]="'radio2'"
-											[group]="'radio'"
-											[label]="'PERFORMANCE'"
-											[value]="'PERFORMANCE'"></vtr-ui-rectangle-radio>
-										<vtr-ui-rectangle-radio [radioId]="'radio1'"
-											[group]="'radio'"
-											[label]="'QUIET & COOL'"
-											[value]="'QUIET & COOL'"></vtr-ui-rectangle-radio>
-
-								</div>
-							</vtr-ui-row-switch>
-						</li>
-					</ul>
-				</vtr-container-collapsible>
-			</div>
-		</div>
-	</div> -->
-
-	<div *ngIf="showIntelligentCooling===2">
-		<div class="row py-5 smartsettings-card"
-			id="cooling">
-			<div class="col-10 mx-auto ">
-				<vtr-container-collapsible
-					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate | lowercase"
-					[isCollapsed]="false"
-					[allowCollapse]="false"
-					[theme]="'blue'">
-					<div class="row">
-						<div class="col-auto text-wrap subtitle">
-							<h3>
-								{{'device.deviceSettings.power.powerSmartSettings.subtitle' | translate |  lowercase }}
-							</h3>
-							<p> {{'device.deviceSettings.power.powerSmartSettings.description1' | translate}}</p>
-						</div>
-					</div>
-					<ul class=" list-group
-								list-group-flush">
-						<li class="">
-							<vtr-ui-row-switch
-								[title]="'device.deviceSettings.power.powerSmartSettings.subtitle' | translate | lowercase"
-								[caption]="''"
-								[isSwitchVisible]="toggleIntelligentCooling"
-								[isSwitchChecked]="toggleIntelligentCoolingStatus"
-								[leftIcon]="['fas', 'search']"
-								[readMoreText]="''"
-								[showChildContent]="true"
-								[theme]="'blue'"
-								(toggleOnOff)="onIntelligentCoolingToggle($event)">
-								<div class="row no-gutters"
-									*ngIf="intelligentCooling">
-									<vtr-ui-circle-radio [radioId]="'radio1'"
-										[group]="'radio'"
-										[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' | translate"
-										[value]="'PERFORMANCE'"
-										[checked]="radioPerformance"
-										(change)="changePerformance($event)"></vtr-ui-circle-radio>
-									<vtr-ui-circle-radio [radioId]="'radio2'"
-										[group]="'radio'"
-										[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool' | translate"
-										[value]="'QUIET & COOL'"
-										[checked]="radioQuietCool"
-										(change)="changeQuietCool($event)"></vtr-ui-circle-radio>
-								</div>
-							</vtr-ui-row-switch>
-						</li>
-					</ul>
-				</vtr-container-collapsible>
-			</div>
-		</div>
-	</div>
-
-	<div *ngIf="showIntelligentCooling===3">
-		<div class="row py-5 smartsettings-card"
-			id="cooling">
-			<div class="col-10 mx-auto ">
-				<vtr-container-collapsible
-					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate | lowercase"
-					[isCollapsed]="false"
-					[allowCollapse]="false"
-					[theme]="'blue'">
-					<div class="row">
-						<div class="col-auto text-wrap subtitle">
-							<h3>Intelligent Cooling</h3>
-							<p>{{'device.deviceSettings.power.powerSmartSettings.description2' | translate}}
-								<!-- <a class="read-more-link"
-									(click)="">Read more.</a> -->
-							</p>
-							<p> {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line1' | translate}}
-							</p>
-							<p>{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line2' | translate}}
-							</p>
-							<p>{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line3' | translate}}
-							</p>
-						</div>
-					</div>
-					<div class="row subtitle-its">
-						<div class="col-auto">
-							<div class="search-icon">
-								<fa-icon [icon]="['fas', 'search']"></fa-icon>
-							</div>
-						</div>
-						<div class="col col-7">
-							<div class="int-cool-text">
-								{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate}}
-							</div>
-						</div>
-						<div class="col-auto"><a class="settings-link"
-								(click)="openContextModal(template)">{{'device.deviceSettings.power.powerSmartSettings.gotoWindows' | translate}}</a>
-							<ng-template #template>
-								<div class="justify-content-end">
-									<button type="button"
-										class="close pull-right"
-										aria-label="Close"
-										(click)="closeContextModal()">
-										<span aria-hidden="true">&times;</span>
-									</button>
-								</div>
-								<div class="modal-body">
-									<p>Click on Windows battery icon on System tray to access Windows performance power slider</p>
-									<!-- <span>Performance mode: </span>Slider is far right. Fan speed and
-												performance. -->
-								</div>
-							</ng-template>
-						</div>
-						<!-- <div class="col">
-							<fa-icon class="question"
-								[icon]="['far', 'question-circle']"></fa-icon>
-						</div> -->
-					</div>
-				</vtr-container-collapsible>
-			</div>
-		</div>
-	</div>
-
-	<div *ngIf="showIntelligentCooling===4">
-		<div class="row py-5 smartsettings-card"
-			id="cooling">
-			<div class="col-10 mx-auto ">
-				<vtr-container-collapsible cardTitle="Power Smartsettings"
-					[isCollapsed]="false"
-					[allowCollapse]="false"
-					[theme]="'blue'">
-					<div class="row">
-						<div class="col-auto text-wrap subtitle">
-							<h3>Battery & Quiet</h3>
-							<p>Battery & Quiet lorem ipsum is a long established fact that a reader will be distracted
-								by the readable content of a page when looking at its layout. <a class="read-more-link"
-									href="#">Read more.</a></p>
-						</div>
-					</div>
-					<ul class="list-group list-group-flush">
-						<li class="">
-							<vtr-ui-row-switch [showChildContent]="true"
-								[theme]="'blue'">
-								<div class="my-3"
-									*ngIf="!intelligentCooling">
-									<vtr-ui-rectangle-radio [radioId]="'radio1'"
-										[group]="'radio'"
-										[label]="'INTELLIGENT COOLING'"
-										[value]="'INTELLIGENT COOLING'"></vtr-ui-rectangle-radio>
-									<vtr-ui-rectangle-radio [radioId]="'radio2'"
-										[group]="'radio'"
-										[label]="'EXTREME PERFORMANCE'"
-										[value]="'EXTREME PERFORMANCE'"></vtr-ui-rectangle-radio>
-									<vtr-ui-rectangle-radio [radioId]="'radio3'"
-										[group]="'radio'"
-										[label]="'BATTERY & QUIET'"
-										[value]="'BATTERY & QUIET'"></vtr-ui-rectangle-radio>
-
-								</div>
-							</vtr-ui-row-switch>
-						</li>
-					</ul>
-				</vtr-container-collapsible>
-			</div>
-		</div>
-	</div>
-	<!-- <div class="row py-5 smartsettings-card"
-		id="cooling">
-		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible cardTitle="Power Smartsettings"
-				[isCollapsed]="false"
-				[allowCollapse]="false"
-				[theme]="'blue'">
-				<div class="row">
-					<div class="col-auto text-wrap subtitle">
-						<h3>Intelligent Cooling</h3>
-						<p>This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings
-							to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes
-							performance while the device is on a stable surface. When off, you can manually set thermal
-							priority.</p>
-					</div>
-				</div>
-				<ul class="list-group list-group-flush">
-					<li class="">
-						<vtr-ui-row-switch [title]="'Intelligent cooling'"
-							[caption]="''"
-							[isSwitchVisible]=true
-							[leftIcon]="['fas', 'search']"
-							[readMoreText]="''"
-							[showChildContent]="true"
-							[theme]="'blue'"
-							(toggleOnOff)="onIntelligentCoolingToggle($event)">
-							<div class="my-3"
-								*ngIf="!intelligentCooling">
-								<vtr-ui-rectangle-radio [radioId]="'radio1'"
-									[group]="'radio'"
-									[label]="'QUIET'"
-									[value]="'QUIET'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio2'"
-									[group]="'radio'"
-									[label]="'PERFORMANCE'"
-									[value]="'PERFORMANCE'"></vtr-ui-rectangle-radio>
-							</div>
-						</vtr-ui-row-switch>
-					</li>
-				</ul>
-			</vtr-container-collapsible>
-		</div>
-	</div> -->
-
+	<vtr-power-smart-settings (isPowerSmartSettingHidden)=hidePowerSmartSetting(value)
+		*ngIf="!isDesktopMachine"></vtr-power-smart-settings>
 	<div class="row py-5"
 		id="battery">
 		<div class="col-10 mx-auto ">
@@ -344,6 +50,7 @@
 						*ngIf="showAirplanePowerModeSection">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
+							[name]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.airPlanePower.description' | translate"
 							[isSwitchVisible]=true
 							[leftIcon]="batterySettings.items[0].leftImageSource"
@@ -352,31 +59,59 @@
 							(toggleOnOff)="onToggleOfAirplanePowerMode($event)">
 						</vtr-ui-row-switch>
 					</li>
+
 					<!-- MVP 2 feature -->
-					<!-- <li class="">
-						<vtr-ui-row-switch [title]="batterySettings.items[1].header"
-							[caption]="batterySettings.items[1].subHeader"
+					<li class=""
+						*ngIf="machineType == 1">
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.title' | translate"
+							[caption]="'device.deviceSettings.power.batterySettings.batteryThreshold.description' | translate "
 							[isSwitchVisible]=true
+							[isLastChild]="!conservationModeStatus.available && !expressChargingStatus.available"
 							[leftIcon]="batterySettings.items[1].leftImageSource"
 							[rightIcon]="batterySettings.items[1].rightImageSource"
-							[readMoreText]="batterySettings.items[1].readMoreText"
 							[showChildContent]="true"
 							(toggleOnOff)="showBatteryThreshold=$event.switchValue;"
-							[tooltipText]="batterySettings.items[1].tooltipText">
+							[tooltipText]="'device.deviceSettings.power.batterySettings.batteryThreshold.tooltip' | translate">
 							<div *ngIf="showBatteryThreshold">
-								<vtr-battery-charge-threshold-settings [title]="'Threshold for Built in battery'"
-								 [type]="'primary'">
+								<vtr-battery-charge-threshold-settings
+									[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.settings.title1' | translate"
+									[type]="'primary'"
+									[start]="'device.deviceSettings.power.batterySettings.batteryThreshold.options.start' | translate"
+									[stop]="'device.deviceSettings.power.batterySettings.batteryThreshold.options.stop' | translate"
+									[checkboxText]="'device.deviceSettings.power.batterySettings.batteryThreshold.options.checkboxText' | translate "
+									[noteInfo]="'device.deviceSettings.power.batterySettings.batteryThreshold.noteInfo' | translate"
+									[startAtChargeOptions]="startAtChargeOptions"
+									[stopAtChargeOptions]="stopAtChargeOptions"
+									[selectedStopAtCharge]="selectedStopAtChargeVal"
+									[selectedStartAtCharge]="selectedStartAtChargeVal"
+									[isCheckedAuto]="primaryCheckBox"
+									(sendBatteryDetails)="setChargeThresholdValues($event, 1)"
+									(autoChecked)="autoCheckSelected($event, 1)">
 								</vtr-battery-charge-threshold-settings>
 
-								<vtr-battery-charge-threshold-settings [title]="'Threshold for Removable battery'"
-								 [type]="'secondary'">
+								<vtr-battery-charge-threshold-settings *ngIf="responseData && responseData.length > 1"
+									[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.settings.title2' | translate"
+									[type]="'secondary'"
+									[start]="'device.deviceSettings.power.batterySettings.batteryThreshold.options.start' | translate"
+									[stop]="'device.deviceSettings.power.batterySettings.batteryThreshold.options.stop' | translate"
+									[checkboxText]="'device.deviceSettings.power.batterySettings.batteryThreshold.options.checkboxText' | translate "
+									[startAtChargeOptions]="startAtChargeOptions"
+									[stopAtChargeOptions]="stopAtChargeOptions"
+									[selectedStopAtCharge]="selectedStopAtChargeVal1"
+									[selectedStartAtCharge]="selectedStartAtChargeVal1"
+									[isCheckedAuto]="secondaryCheckBox"
+									(sendBatteryDetails)="setChargeThresholdValues($event, 2)"
+									(autoChecked)="autoCheckSelected($event, 2)">
 								</vtr-battery-charge-threshold-settings>
 
 								<vtr-battery-charge-threshold-settings [displayNoteOnly]="true">
+
 								</vtr-battery-charge-threshold-settings>
 							</div>
 						</vtr-ui-row-switch>
-					</li> -->
+					</li>
+
 					<li class=""
 						*ngIf="expressChargingStatus.available">
 						<!--
@@ -384,11 +119,15 @@
 						-->
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"
+							[name]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.expressCharging.description' | translate"
 							[isSwitchVisible]=true
+							[isLastChild]="!conservationModeStatus.available"
 							[leftIcon]="batterySettings.items[2].leftImageSource"
 							[tooltipText]="'device.deviceSettings.power.batterySettings.expressCharging.tooltip' | translate"
 							[isSwitchChecked]="expressChargingStatus.status"
+							[disabled]="expressChargingLock"
+							[showLoaderState]="conservationModeLock"
 							(toggleOnOff)="changeBatteryMode($event,'expressCharging')">
 						</vtr-ui-row-switch>
 					</li>
@@ -397,11 +136,15 @@
 						<!-- *ngIf="batterySettings.status.conservationMode"* -->
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.conservationMode.title' | translate"
+							[name]="'device.deviceSettings.power.batterySettings.conservationMode.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.conservationMode.description' | translate"
 							[isSwitchVisible]=true
+							[isLastChild]=true
 							[leftIcon]="batterySettings.items[3].leftImageSource"
 							[tooltipText]="'device.deviceSettings.power.batterySettings.conservationMode.tooltip.line1' | translate"
 							[isSwitchChecked]="conservationModeStatus.status"
+							[disabled]="conservationModeLock"
+							[showLoaderState]="expressChargingLock"
 							(toggleOnOff)="changeBatteryMode($event,'conservationMode')">
 						</vtr-ui-row-switch>
 					</li>
@@ -412,17 +155,21 @@
 	</div>
 
 	<div class="row py-5"
-		id="power">
+		id="power"
+		*ngIf="showPowerSettings()">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible
 				[cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate | lowercase"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
-					<li class="">
+					<li class=""
+						*ngIf="!isDesktopMachine">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
+							[name]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
 							[caption]="'device.deviceSettings.power.powerSettings.alwaysUSB.description' | translate"
 							[isSwitchVisible]=true
+							[isLastChild]="!showEasyResumeSection"
 							[isSwitchChecked]="alwaysOnUSBStatus.status"
 							[leftIcon]="powerSettings[0].leftImageSource"
 							[rightIcon]="powerSettings[0].rightImageSource"
@@ -451,7 +198,8 @@
 							</div>
 							<div class="row">
 								<div class="col-12">
-									<div class="custom-control custom-checkbox always-on-usb-checkbox" *ngIf="usbChargingInBatteryModeStatus">
+									<div class="custom-control custom-checkbox always-on-usb-checkbox"
+										*ngIf="usbChargingInBatteryModeStatus">
 										<input id="cb-always-on-usb"
 											type="checkbox"
 											name="always-on-usb-checkbox-id"
@@ -460,7 +208,7 @@
 											(ngModelChange)='onUsbChargingStatusChange()'
 											class="custom-control-input"
 											checked="" />
-											<!-- [disabled]="!toggleAlwaysOnUsbFlag" -->
+										<!-- [disabled]="!toggleAlwaysOnUsbFlag" -->
 										<label class="custom-control-label "
 											for="cb-always-on-usb">
 											{{ 'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate }}
@@ -474,8 +222,10 @@
 						*ngIf="showEasyResumeSection">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"
+							[name]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"
 							[caption]="'device.deviceSettings.power.powerSettings.easyResume.description' | translate"
 							[isSwitchVisible]=true
+							[isLastChild]=true
 							[isSwitchChecked]='toggleEasyResumeStatus'
 							[leftIcon]="['icomoon','icomoon-LE-Easy-resume2x']"
 							[rightIcon]="powerSettings[1].rightImageSource"
@@ -493,7 +243,7 @@
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible
 				componentName="'device.deviceSettings.power.otherSettings.title' | translate | lowercase"
-				cardTitle="Other Settings"
+				[cardTitle]="'device.deviceSettings.power.otherSettings.title' | translate | lowercase"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class=""
@@ -504,6 +254,7 @@
 							[title]="'device.deviceSettings.power.otherSettings.vantageToolbar.title' | translate"
 							[caption]="'device.deviceSettings.power.otherSettings.vantageToolbar.description' | translate"
 							[isSwitchVisible]=true
+							[isLastChild]=true
 							[leftIcon]="item.leftImageSource"
 							[isSwitchChecked]="vantageToolbarStatus.status"
 							(toggleOnOff)="onVantageToolBarStatusToggle($event)">

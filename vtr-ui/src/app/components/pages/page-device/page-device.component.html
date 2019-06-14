@@ -9,23 +9,26 @@
 	<div class="row vtr-page-content">
 		<div class="col vtr-col">
 			<div class="row">
-				<div class="col-sm-12 col-md-7 col-lg-8 col-xl-8 vtr-page-left-column">
+				<div class="col-sm-12 col-lg-8 col-xl-8 vtr-page-left-column">
 					<div class="vtr-subpage">
 						<div class="vtr-page-shift-up">
 							<vtr-widget-device></vtr-widget-device>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-12 col-md-5 col-lg-4 col-xl-4 vtr-page-right-column">
+				<div class="col-sm-12 col-lg-4 col-xl-4 vtr-page-right-column">
 					<div class="vtr-page-shift-up">
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col col-12">
-									<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+									<vtr-container-card order="r1"
+														[img]="cardContentPositionA.FeatureImage"
+														[itemID]="cardContentPositionA.Id"
 										[caption]="cardContentPositionA.Description"
 										[title]="cardContentPositionA.Title"
 										[logoText]="cardContentPositionA.BrandName"
 										[action]="cardContentPositionA.Action"
+										[actionType]="cardContentPositionA.ActionType"
 										[actionLink]="cardContentPositionA.ActionLink"
 										[type]="'corner-article'"
 										[ratioX]="4"

@@ -1,0 +1,69 @@
+<div class="trackers" data-analyticsName="WebsiteTrackersBlock">
+	<div class="trackers__header-row" *ngIf="!animate">
+		<h3 class="trackers__title" *ngIf="!(isFigleafInstalled$ | async)">Check for website trackers</h3>
+		<h3 class="trackers__title" *ngIf="isFigleafInstalled$ | async">Trackers you should know about</h3>
+		<a class="trackers__popup-btn"
+		   vtrSendAnalytics
+		   [metricsEvent]="'ItemClick'"
+		   [metricsItem]="'WebsiteTrackersWhoTrackingMeButton'"
+		   *ngIf="!(isFigleafInstalled$ | async)"
+		   routerLink="./trackers">
+			Who’s tracking me?
+		</a>
+	</div>
+	<p class="trackers__text" *ngIf="!animate && !(isFigleafInstalled$ | async)">
+		Some sites use trackers to improve and personalize your experience. Other sites use trackers to collect info
+		about you — things like what device you use, where you shop, and what you buy — and then sell what they
+		learn to advertisers. Lenovo Privacy by FigLeaf gives you a say in when to allow trackers and when to block
+		them.
+	</p>
+	<p class="trackers__text" *ngIf="!animate && (isFigleafInstalled$ | async)">
+		Lenovo Privacy by FigLeaf has blocked trackers on sites within the green bubble below, keeping you private while you do the things you love online.
+	</p>
+	<p class="trackers__text" *ngIf="animate">
+		Tracking companies make money by following you online, collecting info about you, and selling these details to
+		advertisers.
+		What kind of info? Things like what device you use, where you shop, and what you buy.
+	</p>
+	<div class="trackers__wrapper" *ngIf="(trackingData$ | async) as trackingData; else loader">
+		<ng-container *ngIf="trackingData?.sites.length > 0">
+			<fl-tracking-map [trackers]="trackingData"
+							 [labels]="getText()"
+							 [positive]="isTrackersBlocked$ | async"
+							 [animate]="animate"
+							 [defaultSiteIcon]="defaultIcon.site"
+							 [defaultTrackerIcon]="defaultIcon.tracker"
+							 (showDetails)="showDetails($event, trackingData); sendAnalytics()">
+			</fl-tracking-map>
+		</ng-container>
+
+		<div class="history-clean"
+			 *ngIf="isUserData && trackingData?.sites.length <= 0">
+			<img src="/assets/images/privacy-tab/privacy-search-completed.png"
+				 srcset="/assets/images/privacy-tab/privacy-search-completed@2x.png 2x"
+				 alt="search completed"
+				 class="history-clean__img">
+			<span class="history-clean__bold-text">Your browser history is clean.</span>
+			<span class="history-clean__text">We cannot compile a tracking map, as there is no data. You could clear the browser history, or you had a new PC.
+Use your browser to view websites, and come back here later, then we can show who’s tracking you...</span>
+		</div>
+	</div>
+
+	<vtr-try-product-block
+		*ngIf="animate && !(isFigleafInstalled$ | async)"
+		[texts]="tryProductText">
+	</vtr-try-product-block>
+
+	<ng-template #loader>
+		<vtr-big-loader [text]="textForLoader"></vtr-big-loader>
+	</ng-template>
+
+	<vtr-common-popup [popUpId]="trackingMapSinglePopupId" size="large">
+		<ng-template>
+			<vtr-single-tracker-detail
+				[percentOfTrack]="percentOfTrack"
+				[popUpId]="trackingMapSinglePopupId">
+			</vtr-single-tracker-detail>
+		</ng-template>
+	</vtr-common-popup>
+</div>

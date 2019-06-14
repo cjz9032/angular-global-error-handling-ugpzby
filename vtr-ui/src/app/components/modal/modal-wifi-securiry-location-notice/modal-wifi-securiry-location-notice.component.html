@@ -1,7 +1,7 @@
 <div class="wifi-security-location-modal">
 	<h1>{{ header | translate }} </h1>
-	<div role="button" class="close-btn" (click)="onCancelClick($event)">
-		<img src="assets/icons/Close.svg" alt="" srcset="">
+	<div role="button" class="close-btn" id="{{closeButtonId}}" attr.aria-label="{{closeButtonId}}" (click)="onCancelClick($event)">
+		<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
 	</div>
 	<p class="description">
 		{{ description | translate }}
@@ -11,16 +11,24 @@
 	</ul>
 	<div class="d-flex">
 		<div class="ml-0 mr-4 pl-0">
-			<button type="button"
+			<button id="{{agreeButtonId}}" attr.aria-label="{{agreeButtonId}}" type="button"
 				class="btn btn-default modal-button"
-				(click)="onOkClick($event)">
+				(click)="onOkClick($event)"
+				vtrMetrics
+				metricsParent="Security.WifiSecurity"
+				metricsItem="agreeOpenLocation"
+				metricsEvent="featureClick">
 				{{OkText | translate}}
 			</button>
 		</div>
 		<div class="ml-0 mr-4 pl-0">
-			<div role="button"
+			<div id="{{cancelButtonId}}" attr.aria-label="{{cancelButtonId}}" role="button"
 				class="btn btn-default modal-button-cancel"
-				(click)="onCancelClick($event)">
+				(click)="onCancelClick($event)"
+				vtrMetrics
+				metricsParent="Security.WifiSecurity"
+				metricsItem="cancelOpenLocation"
+				metricsEvent="featureClick">
 				{{CancelText | translate}}
 			</div>
 		</div>

@@ -10,6 +10,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalBatteryChargeThresholdComponent } from '../../modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
 import { BaseComponent } from '../../base/base.component';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -37,13 +38,19 @@ export class UiRowSwitchComponent extends BaseComponent {
 	@Input() tooltipText = '';
 	@Input() name = '';
 	@Input() disabled = false;
+	@Input() disabledAll = false;
 	@Input() type = undefined;
 	@Input() resetTextAsButton = false;
+	@Input() isLastChild = false;
+	@Input() showLoaderState = false;
+
 
 	@Output() toggleOnOff = new EventEmitter<boolean>();
 	@Output() readMoreClick = new EventEmitter<boolean>();
 	@Output() tooltipClick = new EventEmitter<boolean>();
 	@Output() resetClick = new EventEmitter<Event>();
+
+	public contentExpand = false;
 
 
 	// private tooltip: NgbTooltip;
@@ -51,6 +58,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 	constructor(
 		public modalService: NgbModal
 		, private deviceService: DeviceService
+		, private translate: TranslateService,
 	) { super(); }
 
 
@@ -64,7 +72,8 @@ export class UiRowSwitchComponent extends BaseComponent {
 	}
 
 	public onOnOffChange($event) {
-		if (this.title === 'Battery Charge Threshold') {
+		//if (this.title === 'Battery Charge Threshold') {
+		if (this.title === this.translate.instant('device.deviceSettings.power.batterySettings.batteryThreshold.title') ){
 			this.isSwitchChecked = !this.isSwitchChecked;
 			if (this.isSwitchChecked) {
 				this.modalService.open(ModalBatteryChargeThresholdComponent, {
@@ -93,6 +102,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 
 	public onReadMoreClick($event) {
 		this.readMoreClick.emit($event);
+		this.contentExpand = true;
 	}
 
 	public onRightIconClick($event) {

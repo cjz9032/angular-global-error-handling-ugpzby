@@ -1,0 +1,35 @@
+@import '../../../app.theme.scss';
+.gaming-help-popup{
+	background: $gaming_slate_blue;
+	color: $gaming_lightest;
+	.modal-header{
+		height: 7rem;
+		padding: 3rem 4rem;
+		border-bottom:none;
+		.modal-title {
+			img {
+				height: 3rem;
+			}
+		}
+		.close {
+			color: $gaming_lightest;
+			opacity: 1;
+			font-size: 1.8rem;
+			position: relative;
+			top: -2rem;
+			right: -3rem;
+		}
+	}
+	.modal-body {
+		padding: 0 4rem 3rem 4rem;
+		.innerContent{
+			background: $gaming_Darkslate_blue;
+			padding: 2rem;
+			max-height: 40rem;
+			overflow-y: auto;
+			p {
+				font-size: 1.4rem;
+			}
+		}
+	}
+}

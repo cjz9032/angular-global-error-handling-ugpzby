@@ -130,6 +130,19 @@
 		}
 	}
 
+	::ng-deep vtr-ui-switch-onoff {
+		.checkbox {
+			> label {
+				.switch-label {
+					cursor: pointer;
+				}
+			}
+			.switch {
+				margin-right: 0rem;
+			}
+		}
+	}
+
 	.button-box {
 		padding: 1rem;
 		margin: 1.2rem;
@@ -180,6 +193,7 @@
 
 			.col-check-location {
 				padding-right: 0rem;
+				margin: auto;
 			}
 
 			.button-box {
@@ -189,6 +203,9 @@
 				text-align: right;
 			}
 		}
+	}
+	.col-check-use-state{
+		margin: auto
 	}
 
 	.content {
@@ -218,32 +235,6 @@
 			border: 0.1rem solid $shade_lighter;
 			border-radius: 0.8rem;
 			background: $light;
-
-			// ul.openNetworks {
-			// 	padding-left: 0rem;
-			// 	display: flex;
-			// 	flex-wrap: wrap;
-			// 	margin-bottom: 0rem;
-
-			// 	li {
-			// 		list-style: none;
-			// 		width: 50%;
-			// 		border-right: 0.1rem solid $shade_lighter;
-			// 		border-bottom: 0.1rem solid $shade_lighter;
-			// 		flex-wrap: wrap;
-			// 		align-items: center;
-
-			// 		&:nth-child(even) {
-			// 			border-right: none;
-			// 		}
-
-			// &:last-child {
-			// 	border-bottom: none;
-			// }
-
-			// &:nth-last-child(2) {
-			// 	border-bottom: none;
-			// }
 
 			.status-icon {
 				position: relative;
@@ -287,6 +278,9 @@
 				h5 {
 					font-size: 1.6rem;
 					font-weight: $weight_bold;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
 				}
 
 				.connection-status {
@@ -322,24 +316,48 @@
 				border-bottom-right-radius: 0.8rem;
 				// border: 0.1rem solid rgba(0, 0, 0, 0.125);
 			}
+
+			.no-gutters {
+				height: 2.7rem;
+				width: 100%;
+				display: flex;
+				.wifisecurity-container-name,
+				.wifisecurity-container-enable span{
+					display: inline-blockl;
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+
+				}
+				.wifisecurity-container-name{
+					min-width: 20%
+				}
+				.wifisecurity-container-enable{
+					max-width: 50%;
+					margin-top: auto;
+					margin-bottom: auto;
+					span{
+						width: 100%
+					}
+				}
+			}
 		}
 
 		.card-header {
 			padding: 2.5rem;
-			// height: 7.8rem;
 			background: $shade_lightest;
+			border: 0rem;
 
 			.collapse-control {
-				cursor: pointer;
 				margin-top: -0.4rem;
 				display: inline-block;
-				width: 15rem;
-
+				// width: 15rem;
+				max-width: 70%;
+				margin-left: 1rem;
 				.collapse-text {
 					display: inline-block;
 					color: $main;
 					font-size: 1.6rem;
-					margin-right: 1rem;
 					vertical-align: middle;
 					text-decoration: underline;
 					font-weight: 500;
@@ -349,6 +367,13 @@
 					font-size: 2.4rem;
 					color: $main;
 					vertical-align: middle;
+					cursor: pointer;
+					padding-left: 0.8rem !important;
+				}
+				button{
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
 				}
 			}
 		}
@@ -376,12 +401,17 @@
 				.switch vtr-ui-switch-onoff .checkbox {
 					margin-bottom: 0rem;
 				}
+
 			}
 		}
 
 		.subHeading {
 			display: flex;
-
+			.loading {
+				margin-right: 1rem;
+			}
+			width: 50%;
+			justify-content: flex-start;
 			.circle {
 				background-color: $go;
 				background-image: linear-gradient(313deg, $go_light 25%, $go 100%);
@@ -392,6 +422,7 @@
 				text-align: center;
 				display: inline-block;
 				margin-right: 1rem;
+				flex-shrink: 0;
 
 				fa-icon {
 					font-size: 1.5rem;
@@ -418,6 +449,13 @@
 	}
 
 	.wifi-card {
+		div.wifi {
+			padding-right: 1rem;
+			.media {
+				justify-content: center;
+				align-items: center;
+			}
+		}
 		div.wifi:nth-child(odd) {
 			border-bottom: 0.1rem solid $shade_lighter;
 			border-right: 0.1rem solid $shade_lighter;
@@ -434,6 +472,60 @@
 		div.wifi:nth-last-child(1):nth-child(even) {
 			border-bottom-right-radius: 0.8rem;
 			border-bottom: 0;
+		}
+		div.wifi:nth-child(odd) {
+			@media #{$mediaquery_X5, $mediaquery_10} {
+				border-right: 0;
+			}
+		}
+		div.wifi:nth-last-child(2):nth-child(odd) {
+			@media #{$mediaquery_X5, $mediaquery_10} {
+				border-bottom-left-radius: 0;
+				border-bottom: 0.1rem solid $shade_lighter;
+			}
+		}
+		.connection-name {
+			h5 {
+				line-height: 2.2rem;
+			}
+		}
+
+	}
+	.sm-device-responsive{
+		width: 50%;
+		display: flex;
+		justify-content: flex-end;
+
+		vtr-ui-switch-onoff {
+			display: inline-block;
+		}
+		@media #{$mediaquery_12} {
+			// position: relative;
+			// top: -3rem;
+		}
+		.switch-disable {
+			opacity: 0.3;
+			cursor: auto;
+			::ng-deep .checkbox {
+				opacity: 0.3;
+				cursor: default;
+
+				.switch {
+					cursor: default;
+				}
+
+				.switch-label {
+					cursor: default;
+				}
+			}
+		}
+	}
+	vtr-ui-button {
+		::ng-deep .vtr-ui-button{
+			max-width: 100% !important;
+			.button-box .button{
+				max-width: 100% !important;
+			}
 		}
 	}
 }

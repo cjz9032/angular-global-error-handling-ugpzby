@@ -9,14 +9,18 @@
 				class="close"
 				aria-label="Close"
 				(click)="modal.dismiss('Cross click')">
-				<img src="assets/icons/Close.svg" />
+				<img [src]=" 'assets/icons/Close.svg' | svgInline | async" />
 			</button>
 		</div>
 		<div class="modal-body">
-			<vtr-battery-detail [data]="batteryInfo"> </vtr-battery-detail>
+			<vtr-battery-detail [data]="batteryInfo"
+				[dataGauge]="batteryGauge"> </vtr-battery-detail>
 		</div>
 	</ng-template>
-	<div class="container p-5">
+	<div class="container p-5"
+		[ngClass]="{'background-green':batteryIndicator.batteryHealth== 'Good',
+					'background-orange': batteryIndicator.batteryHealth== 'Fair',
+					'background-red':batteryIndicator.batteryHealth== 'Poor'}">
 		<div class="battery-gauge-label text-uppercase">
 			{{'device.deviceSettings.batteryGauge.title' | translate}}
 		</div>
@@ -25,18 +29,76 @@
 		</div>
 		{{batteryIndicator.percent == 0 && flag ? reInitValue(): ""}}
 		<div class="pt-4 battery-frame pr-3">
-			<vtr-battery-indicator [remainingHour]="batteryIndicator.hours"
+			<vtr-battery-indicator [batteryHealth]="batteryIndicator.batteryHealth"
+				[remainingHour]="batteryIndicator.hours"
 				[remainingMinutes]="batteryIndicator.minutes"
 				[percentage]="batteryIndicator.percent"
 				[isCharging]="batteryIndicator.charging"
 				[isExpressCharging]="batteryIndicator.expressCharging"
-				[isVoltageError]="batteryIndicator.voltageError">
+				[isVoltageError]="batteryIndicator.voltageError"
+				[timeText]="batteryIndicator.timeText">
 			</vtr-battery-indicator>
 		</div>
+
+		<!-- <div class="p-3 row"
+			*ngFor="let batteryConditionNote of batteryConditionNotes; let i = index">
+			<div class="p-0 pr-2 col-auto battery-conditions-icon">
+				<fa-icon *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Good"
+					[icon]="['fas', 'check-circle']"
+					class="good">
+				</fa-icon>
+				<fa-icon *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Poor"
+					[icon]="['fas', 'times-circle']"
+					class="poor">
+				</fa-icon>
+				<fa-layers *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Fair"
+					[fixedWidth]="true">
+					<fa-icon [icon]="['fas', 'circle']"
+						class="fair"></fa-icon>
+					<fa-icon [icon]="['fas', 'exclamation-triangle']"
+						transform="shrink-6"
+						class="fair-inner-icon">
+					</fa-icon>
+				</fa-layers>
+			</div>
+
+			<div class="col">
+				<span class="battery-conditions-title"
+					*ngIf="batteryConditionNote?.title">
+					{{batteryConditionNote.title | translate}}
+				</span>&nbsp;
+				<span class="battery-conditions-description"
+					*ngIf="batteryConditionNote?.description.length > 0">
+					{{batteryConditionNote.description | translate}}
+				</span>
+				<span class="battery-conditions-title"
+					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation">
+					{{percentageLimitation}}%
+				</span>
+				<span class="battery-conditions-title"
+					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.Illegal">
+					<br>
+				</span>
+				<span class="battery-conditions-title"
+					*ngIf="batteryConditionNote?.description1.length > 0">
+					{{batteryConditionNote.description1 | translate}}
+				</span>
+				<span class="battery-conditions-description"
+					*ngIf="batteryConditionNote?.description2.length > 0">
+					{{batteryConditionNote.description2 | translate}}
+				</span>
+
+			</div>
+		</div> -->
 		<div class="pt-4 text-center">
-			<button type="button" vtrMetrics metricsItem="see battery details" metricsParent="battery-gauge" metricsEvent="itemClick"
-				class="btn btn-primary btn-lg battery-detail-button text-uppercase"
-				(click)="showDetailModal(batteryDetail)">
+			<button type="button"
+				vtrMetrics
+				metricsItem="see battery details"
+				metricsParent="battery-gauge"
+				metricsEvent="itemClick"
+				class="btn btn-primary btn-block btn-lg battery-detail-button text-uppercase"
+				(click)="showDetailModal(batteryDetail)"
+				[disabled]="isBatteryDetailsBtnDisabled">
 				{{'device.deviceSettings.batteryGauge.button' | translate }}
 			</button>
 		</div>

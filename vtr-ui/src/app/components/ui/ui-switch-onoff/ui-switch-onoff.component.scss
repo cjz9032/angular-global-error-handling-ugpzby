@@ -4,6 +4,21 @@
 	display: inline-block;
 	position: relative;
 	cursor: pointer;
+	label {
+		cursor: pointer;
+	}
+	&.switch-disable {
+		opacity: 0.3;
+		cursor: pointer;
+		
+		.switch {
+			cursor: pointer;
+		}
+
+		.switch-label {
+			cursor: pointer;
+		}
+	}
 }
 
 .checkbox input {
@@ -142,7 +157,7 @@ input.wifi-checked + .switch.switch-xs > small {
 	font-size: 1.1rem;
 	text-transform: uppercase;
 	color: $light;
-	font-weight: $weight_bold;
+	font-weight: $weight_medium;
 	position: absolute;
 	top: 0.6rem;
 	left: 1.5rem;
@@ -151,4 +166,19 @@ input.wifi-checked + .switch.switch-xs > small {
 		left: 2.2rem;
 		color: $shade_darkest;
 	}
+}
+
+.spinner-text {
+	padding-left: 5px;
+	height: 100%;
+	margin: auto;
+}
+.spinner-row.white-theme {
+	margin-top: -5px;
+	color: $main;
+}
+
+.spinner-row.blue-theme {
+	margin-top: -5px;
+	color: $light;
 }

@@ -16,14 +16,14 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	@Input() cameraSettings: ICameraSettingsResponse;
 	@Input() cameraFeatureAccess: CameraFeatureAccess;
 	@Input() manualRefresh: any;
-
+	@Input() disabledAll: boolean;
 	@Output() brightnessChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() contrastChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() exposureChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() exposureToggle: EventEmitter<any> = new EventEmitter();
-	public cameraDetail: CameraDetail;
+	@Output() cameraAvailable: EventEmitter<boolean> = new EventEmitter();
 
-
+	public cameraDetail = new CameraDetail();
 	private cameraPreview: ElementRef;
 	private _video: HTMLVideoElement;
 	private cameraDetailSubscription: Subscription;
@@ -100,39 +100,52 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 					deviceInfo = devices.getAt(0);
 				}
 				return deviceInfo;
+			}, (error) => {
+				this.disabledAll = true;
+				console.log('findCameraDeviceByPanelAsync error ', error.message);
 			});
 	}
 
 	initializeCameraAsync() {
 		console.log('InitializeCameraAsync');
 		const self = this;
-		// Get available devices for capturing pictures
-		return this.findCameraDeviceByPanelAsync(this.Windows.Devices.Enumeration.Panel.back)
-			.then(function (camera) {
-				if (!camera) {
-					console.log('No camera device found!');
-					return;
-				}
-				self.oMediaCapture = new self.Windows.Media.Capture.MediaCapture();
+		try {
+			// Get available devices for capturing pictures
+			return this.findCameraDeviceByPanelAsync(this.Windows.Devices.Enumeration.Panel.front)
+				.then((camera) => {
+					if (!camera) {
+						this.cameraAvailable.emit(false);
+						return;
+					}
 
-				// Register for a notification when something goes wrong
-				// TODO: define the fail handle callback and show error message maybe... there's a chance another app is previewing camera, that's when failed happen.
-				self.oMediaCapture.addEventListener('failed', () => {
-					console.log('failed to capture camera');
-					self.cleanupCameraAsync();
-				});
+					this.cameraAvailable.emit(true);
+					self.oMediaCapture = new self.Windows.Media.Capture.MediaCapture();
 
-				const settings = new self.Capture.MediaCaptureInitializationSettings();
-				settings.videoDeviceId = camera.id;
+					// Register for a notification when something goes wrong
+					// TODO: define the fail handle callback and show error message maybe... there's a chance another app is previewing camera, that's when failed happen.
+					self.oMediaCapture.addEventListener('failed', (error) => {
+						console.log('failed to capture camera', error);
+						self.cleanupCameraAsync();
+					});
 
-				// Initialize media capture and start the preview
-				return self.oMediaCapture.initializeAsync(settings);
+					const settings = new self.Capture.MediaCaptureInitializationSettings();
+					settings.videoDeviceId = camera.id;
+					settings.streamingCaptureMode = 2; // video
+					settings.photoCaptureSource = 0; // auto
 
-			}, function (error) {
-				console.log(error.message);
-			}).then(function () {
-				return self.startPreviewAsync();
-			}).done();
+					// Initialize media capture and start the preview
+					return self.oMediaCapture.initializeAsync(settings);
+
+				}, (error) => {
+					this.disabledAll = true;
+					console.log('findCameraDeviceByPanelAsync error', error.message);
+				}).then(function () {
+					return self.startPreviewAsync();
+				}).done();
+		} catch (error) {
+			this.disabledAll = true;
+			console.log('initializeCameraAsync catch', error);
+		}
 	}
 
 	startPreviewAsync() {
@@ -170,13 +183,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 	public onAutoExposureChange($event: any) {
 		try {
-			console.log('onAutoExposureChange', this.cameraSettings.exposure.supported);
-			if (this.cameraSettings.exposure.supported === true) {
-
-				this.cameraFeatureAccess.showAutoExposureSlider = !$event.switchValue;
-				this.cameraFeatureAccess.exposureAutoValue = $event.switchValue;
-			}
-			// this.baseCameraDetail.toggleAutoExposure($event.switchValue);
+			console.log('onAutoExposureChange', this.cameraSettings.exposure);
 			this.exposureToggle.emit($event);
 		} catch (error) {
 			console.error(error.message);
