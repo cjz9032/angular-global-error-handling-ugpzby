@@ -25,8 +25,14 @@ html {
 	font-size: 62.5%;
 	letter-spacing: 0;
 }
-*:not(a), input:not([type=radio]):not([type=checkbox]){
+div{
+	//cursor: default;
+}
+*:not(a), *:not(a > *), input:not([type=radio]):not([type=checkbox]), p, h1, h2, h3, h4, h5, h6, li{
 	cursor: default;
+}
+body a > *, .no-pointer > *, .no-pointer > div, a > div {
+	cursor: pointer !important;
 }
 @media #{$dpiquery_0} {
 }
