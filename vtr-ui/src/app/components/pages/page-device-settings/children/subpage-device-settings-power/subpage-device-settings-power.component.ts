@@ -5,6 +5,7 @@ import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 
 enum PowerMode {
 	Sleep = 'ChargeFromSleep',
@@ -28,6 +29,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public expressChargingStatus = new FeatureStatus(false, true);
 	public conservationModeLock = false;
 	public expressChargingLock = false;
+	public batteryGauge: any;
+	public showWarningMsg: boolean;
 
 	primaryCheckBox = false;
 	secondaryCheckBox = false;
@@ -233,7 +236,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	constructor(public powerService: PowerService,
 		private deviceService: DeviceService,
 		private commonService: CommonService,
-		public modalService: NgbModal) { }
+		public modalService: NgbModal,
+		private batteryService: BatteryDetailService) { }
 
 	ngOnInit() {
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
@@ -788,14 +792,32 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 							this.selectedStopAtChargeVal1 = this.responseData[1].stopValue;
 						}
 					}
+					this.getBatteryDetails()
 				})
 				.catch(error => {
 					console.error('', error);
 				});
 		}
 	}
+	private getBatteryDetails() {
+		this.batteryService.getBatteryDetail()
+			.then((response: any) => {
+				console.log('getBatteryDetails', response);			
+				this.batteryGauge = response.batteryIndicatorInfo;
+				if(this.batteryGauge.percentage > this.selectedStopAtChargeVal || this.selectedStopAtChargeVal1  ){
+					this.showWarningMsg = true;
+				} 			
+			}).catch(error => {
+				console.error('getBatteryDetails error', error);
+			});
+	}
 	public setChargeThresholdValues(batteryDetails: any, batteryNum: number) {
 		let batteryInfo: any = {};
+				if(this.batteryGauge.percentage > batteryDetails.stopChargeValue){
+					this.showWarningMsg = true;
+				}else {
+					this.showWarningMsg = false;
+				}
 		try {
 			if (this.powerService.isShellAvailable) {
 				batteryInfo = {
@@ -804,7 +826,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					stopValue: batteryDetails.stopChargeValue,
 					checkBoxValue: batteryDetails.autoChecked
 				};
-				console.log('set values -->', batteryInfo);
+				console.log('set values -->', batteryInfo);				
+
 				this.powerService
 					.setChargeThresholdValue(batteryInfo)
 					.then((value: any) => {
