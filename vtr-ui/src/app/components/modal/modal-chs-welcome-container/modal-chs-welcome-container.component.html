@@ -9,7 +9,7 @@
 	<div class="page page-one" *ngIf="switchPage === 1">
 		<div class="text-center">
 			<div class="page-img">
-				<img src="assets//images/connected-home-security/welcome-page-one.png" alt="">
+				<img src="assets/images/connected-home-security/welcome-page-one.png" alt="">
 			</div>
 			<p class="page-title mb-3">{{'homeSecurity.tour.welcome1' | translate}}</p>
 			<p class="page-desc">{{'homeSecurity.tour.welcomeDesc1' | translate}}</p>
@@ -109,7 +109,7 @@
 		<div class="d-flex sub-desc">
 			<div class="ml-0 mr-4 pl-0">
 				<vtr-ui-button *ngIf="!isLocationServiceOn" id="chs-tour-btn-start"
-					(click)="onOkClick($event)" [label]="'homeSecurity.tour.locationTitle' | translate" [title]="'homeSecurity.tour.locationTitle' | translate"></vtr-ui-button>
+					(click)="onOkClick($event)" [upperCaseLabel]=false [label]="'homeSecurity.tour.locationTitle' | translate" [title]="'homeSecurity.tour.locationTitle' | translate"></vtr-ui-button>
 				<!-- show done button -->
 				<vtr-ui-button *ngIf="isLocationServiceOn === true" id="chs-tour-location-done-btn"
 					(click)="closeModal()" [label]="'homeSecurity.tour.done' | translate" [title]="'homeSecurity.tour.done' | translate"></vtr-ui-button>

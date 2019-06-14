@@ -38,6 +38,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	onChargeChange(id: string, newCharge: number, event: Event) {
 		 //console.log('onChargeChange' + event.target + '\n' + id + '\n' + newCharge);
 		 //console.log(event)
+		 
 
 		if (id === this.startChargeInput) {
 			if (this.selectedStartAtCharge !== newCharge) {
@@ -53,32 +54,42 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 					this.autoStartStopAtCharge();
 				}
 			}
+			
 		}
+		//console.log('###############################', this.isCheckedAuto);
+		if(!this.isCheckedAuto){
 		this.selectedOptionsData = {
 			startChargeValue : this.selectedStartAtCharge,
 			stopChargeValue : this.selectedStopAtCharge,
 			autoChecked: this.isCheckedAuto
 		}
 		this.sendBatteryDetails.emit(this.selectedOptionsData)
+	}else {
+		this.toggleAutoChargeSettings(true);
+	}
+		
 	}
 
 	autoStartStopAtCharge() {
-		// this.selectedStartAtCharge = this.selectedStopAtCharge - 5;
-		this.selectedStartAtCharge =  5;
+	this.selectedStartAtCharge = this.selectedStopAtCharge - 5;
+		// this.selectedStartAtCharge =  5;	
+}
 
-	}
-
-	toggleAutoChargeSettings(event: Event) {
-		// console.log('toggleAutoSettings');
+	public toggleAutoChargeSettings(event: any) {
+		console.log('toggleAutoSettings------>', event);
 		if (event) {
 			this.autoStartStopAtCharge();
 			this.selectedOptionsData = {
-				startChargeValue : this.selectedStartAtCharge,
+				startChargeValue : 5,
 				stopChargeValue : this.selectedStopAtCharge,
 				autoChecked: this.isCheckedAuto
 			}
 			//console.log('****************************', this.selectedOptionsData);
 			this.autoChecked.emit(this.selectedOptionsData)
 		}
+		// else{
+		// 	this.selectedStartAtCharge = this.selectedStopAtCharge - 5;
+		// }
+		
 	}
 }

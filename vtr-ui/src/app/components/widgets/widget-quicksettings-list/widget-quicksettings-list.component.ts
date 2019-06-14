@@ -162,6 +162,7 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			LocalStorageKey.PrevThermalModeStatus
 		);
 
+		this.getGamingQuickSettings();
 		if (!this.gamingSettings.smartFanFeature) {
 			this.quickSettings[0].isVisible = false;
 		}
@@ -275,4 +276,8 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 	 * 
 	 */
 
+	public getGamingQuickSettings() {
+		const status: any = this.gamingQuickSettingsService.GetThermalModeStatus() || new ThermalModeStatus();
+		this.drop.curSelected = status.thermalModeStatus;
+	}
 }

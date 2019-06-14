@@ -22,26 +22,12 @@ export class DeviceService {
 	public showPrivacy = true;
 	public isGaming = false;
 	private isGamingDashboardLoaded = false;
+	private machineInfo: any;
 
 	constructor(
 		shellService: VantageShellService
 		, private commonService: CommonService
 		, private router: Router) {
-
-		const machineInfo = this.commonService.getLocalStorageValue(LocalStorageKey.MachineInfo);
-		if (machineInfo && machineInfo.isGaming) {
-			this.isGaming = machineInfo.isGaming;
-			this.loadGamingDashboard();
-		}
-
-		if (machineInfo && machineInfo.cpuArchitecture) {
-			if (machineInfo.cpuArchitecture.indexOf('64') === -1) {
-				this.is64bit = false;
-			} else {
-				this.is64bit = true;
-			}
-		}
-
 		this.device = shellService.getDevice();
 		this.sysInfo = shellService.getSysinfo();
 		this.microphone = shellService.getMicrophoneSettings();
@@ -49,13 +35,10 @@ export class DeviceService {
 		if (this.device && this.sysInfo) {
 			this.isShellAvailable = true;
 		}
-		if (this.microphone) {
-			this.startDeviceMonitor();
-		}
+		// if (this.microphone) {
+		// 	this.startDeviceMonitor();
+		// }
 		this.initIsArm();
-		this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
 	}
 
 	private loadGamingDashboard() {
@@ -128,10 +111,32 @@ export class DeviceService {
 
 	getMachineInfo(): Promise<any> {
 		if (this.sysInfo) {
-			return this.sysInfo.getMachineInfo();
+			return this.sysInfo.getMachineInfo()
+				.then((info) => {
+					this.machineInfo = info;
+					if (info && info.isGaming) {
+						this.isGaming = info.isGaming;
+						this.loadGamingDashboard();
+					}
+
+					if (info && info.cpuArchitecture) {
+						if (info.cpuArchitecture.indexOf('64') === -1) {
+							this.is64bit = false;
+						} else {
+							this.is64bit = true;
+						}
+					}
+					this.commonService.sendNotification('MachineInfo', this.machineInfo);
+					return info;
+				});
 		}
 		return Promise.resolve(undefined);
 	}
+
+	getMachineInfoSync(): any {
+		return this.machineInfo;
+	}
+
 	getHardwareInfo(): Promise<any> {
 		if (this.sysInfo) {
 			return this.sysInfo.getHardwareInfo();
@@ -152,35 +157,26 @@ export class DeviceService {
 		}
 	}
 
-	private startDeviceMonitor() {
+	public startMicrophoneMonitor() {
 		if (this.microphone) {
 			this.microphone.startMonitor((response: Microphone) => {
 				this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
 			});
 		}
 	}
+
+	public stopMicrophoneMonitor() {
+		if (this.microphone) {
+			// this.microphone.stopMonitor((response) => {
+			// 	console.log('stopMicrophoneMonitor', response);
+			// });
+		}
+	}
+
 	getMachineType(): Promise<number> {
 		if (this.sysInfo) {
 			return this.sysInfo.getMachineType();
 		}
 		return undefined;
-	}
-
-	private onNotification(notification: AppNotification) {
-		if (notification) {
-			switch (notification.type) {
-				case LocalStorageKey.MachineInfo:
-					// for non gaming device its coming undefined, don't assign undefined
-					if (notification.payload.isGaming) {
-						this.isGaming = notification.payload.isGaming;
-						this.loadGamingDashboard();
-					} else {
-						this.isGaming = false;
-					}
-					break;
-				default:
-					break;
-			}
-		}
 	}
 }

@@ -15,6 +15,7 @@ import { KeyPress } from './data-models/common/key-press.model';
 import { VantageShellService } from './services/vantage-shell/vantage-shell.service';
 import { SettingsService } from './services/settings.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
+
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',
@@ -36,7 +37,7 @@ export class AppComponent implements OnInit {
 		private userService: UserService,
 		private settingsService: SettingsService,
 		private gamingAllCapabilitiesService: GamingAllCapabilitiesService,
-		private vantageShellService: VantageShellService
+		vantageShellService: VantageShellService
 	) {
 		translate.addLangs(['en', 'zh-Hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it',
 			'ja', 'ko', 'nb', 'nl', 'pl', 'pt-BR', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-Latn', 'sv', 'tr', 'uk', 'zh-Hant']);
@@ -61,10 +62,10 @@ export class AppComponent implements OnInit {
 		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
 		if (tutorial === undefined && navigator.onLine) {
 			this.openWelcomeModal(1);
-		} else if(tutorial && tutorial.page == 1 && navigator.onLine) {
+		} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
 			this.openWelcomeModal(2);
 		}
-		
+
 		//#endregion
 
 		window.addEventListener('online', (e) => {
@@ -82,8 +83,9 @@ export class AppComponent implements OnInit {
 	openWelcomeModal(page: number) {
 		const modalRef = this.modalService.open(ModalWelcomeComponent,
 			{
-				backdrop: 'static'
-				, windowClass: 'welcome-modal-size'
+				backdrop: 'static',
+				centered: true,
+				windowClass: 'welcome-modal-size'
 			});
 		modalRef.componentInstance.page = page;
 		modalRef.result.then(
@@ -95,7 +97,7 @@ export class AppComponent implements OnInit {
 			(reason: WelcomeTutorial) => {
 				// on close
 				console.log('welcome-modal-size', reason);
-				if(reason instanceof WelcomeTutorial) {
+				if (reason instanceof WelcomeTutorial) {
 					this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
 				}
 			}
@@ -103,6 +105,10 @@ export class AppComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		// session storage is not getting clear after vantage is close.
+		// forcefully clearing session storage
+		sessionStorage.clear();
+
 		if (!this.allCapablitiyFlag) {
 			this.gamingAllCapabilitiesService.getCapabilities().then((response) => {
 				this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
@@ -127,7 +133,7 @@ export class AppComponent implements OnInit {
 
 		// When startup try to login Lenovo ID silently (in background),
 		//  if user has already logged in before, this call will login automatically and update UI
-		if (!this.deviceService.isArm) {
+		if (!this.deviceService.isArm && this.userService.isLenovoIdSupported()) {
 			this.userService.loginSilently();
 		}
 
@@ -167,7 +173,7 @@ export class AppComponent implements OnInit {
 							this.translate.use('zh-Hant');
 						}
 					}
-					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
+
 				}).catch(error => {
 					console.error('getMachineInfo', error);
 				});
@@ -232,15 +238,15 @@ export class AppComponent implements OnInit {
 	disbleCtrlACV($event: KeyboardEvent) {
 		console.log('$event.keyCode ' + $event.keyCode);
 		if (($event.ctrlKey || $event.metaKey) && ($event.keyCode === 65 || $event.keyCode === 67 || $event.keyCode === 86)) {
-			if ($event.keyCode === 65) {
-				console.log('Disable CTRL + A');
-			}
-			if ($event.keyCode === 67) {
-				console.log('Disable CTRL + C');
-			}
-			if ($event.keyCode === 86) {
-				console.log('Disable CTRL +  V');
-			}
+			// if ($event.keyCode === 65) {
+			// 	console.log('Disable CTRL + A');
+			// }
+			// if ($event.keyCode === 67) {
+			// 	console.log('Disable CTRL + C');
+			// }
+			// if ($event.keyCode === 86) {
+			// 	console.log('Disable CTRL +  V');
+			// }
 			$event.stopPropagation();
 			$event.preventDefault();
 		}

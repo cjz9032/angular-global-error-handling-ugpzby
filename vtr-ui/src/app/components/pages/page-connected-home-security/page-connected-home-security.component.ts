@@ -48,8 +48,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	connectedHomeSecurity: ConnectedHomeSecurity;
 	permission: any;
 
-
-
 	testStatus = ['lessDevices-secure', 'moreDevices-needAttention', 'noneDevices', 'trialExpired', 'lessDevices-needAttention', 'moreDevices-secure', 'localAccount'];
 
 	constructor(
@@ -58,10 +56,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 		private translateService: TranslateService,
 		private modalService: NgbModal,
 		private commonService: CommonService,
-		private userService: UserService,
 		private ngZone: NgZone
 	) {
-		this.connectedHomeSecurity = vantageShellService.getConnectedHomeSecurity();
+		this.connectedHomeSecurity = homeSecurityMockService.getConnectedHomeSecurity();
 		this.permission = vantageShellService.getPermission();
 		this.createMockData();
 		this.welcomeModel = new HomeSecurityWelcome();
@@ -69,33 +66,44 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 
 	private createMockData() {
 		this.notifications = {items: []};
-		this.notifications.items.push(new WidgetItem({id: '1', status: 0, title: 'placeholder1', detail: 'placeholder1'}, this.translateService));
-		this.notifications.items.push(new WidgetItem({id: '1', status: 0, title: 'placeholder2', detail: 'placeholder2'}, this.translateService));
-		this.notifications.items.push(new WidgetItem({id: '1', status: 0, title: 'placeholder3', detail: 'placeholder3'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '2', title: '5 minutes disconnect', iconPath: 'assets/images/qa/svg_icon_qa_backup.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '3', title: '10 minutes disconnect', iconPath: 'assets/images/qa/svg_icon_qa_pcbit.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '1', title: 'Antivirus was disabled', iconPath: 'assets/images/qa/svg_icon_qa_battery.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '1', title: 'Passcode lock disabled 3 hours', iconPath: 'assets/images/qa/svg_icon_qa_tablet.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '1', title: '3 hours disconnect', iconPath: 'assets/images/qa/svg_icon_qa_cortana.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '1', title: '8 minutes disconnect', iconPath: 'assets/images/qa/svg_icon_qa_battery.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '1', title: 'Antivirus was disabled', iconPath: 'assets/images/qa/svg_icon_qa_pcbit.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '1', title: 'Passcode lock disabled 3 hours', iconPath: 'assets/images/qa/svg_icon_qa_refresh.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
 		this.account = this.homeSecurityMockService.account;
-		this.connectedHomeSecurity.account = {
-			id: '',
-			name: '',
-			state: 'localAccount',
-			lenovoIdEmail: '',
-			enabledEmail: true,
-			trialRemaining: new Date(),
-			ExpirationDate: new Date('apr 15, 2020')
-		};
-		this.connectedHomeSecurity.consoleUrl = 'https://homesecurity.coro.net/login';
-		this.connectedHomeSecurity.upgradeUrl = 'https://vantagestore.lenovo.com/en/shop/product/connectedhomesecurityoneyearlicense-windows';
 	}
 
 	ngOnInit() {
 		this.welcomeModel.isLenovoIdLogin = false; // mock data;
 		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, true);
-		this.welcomeModel.hasSystemPermissionShowed = this.connectedHomeSecurity.hasSystemPermissionShowed;
-		if (typeof this.connectedHomeSecurity.hasSystemPermissionShowed === 'boolean') {
+		const cacheSystemLocationShow = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed);
+		if (typeof cacheSystemLocationShow === 'boolean') {
+			this.welcomeModel.hasSystemPermissionShowed = cacheSystemLocationShow;
 			this.openModal();
+		} else {
+			this.permission.getSystemPermissionShowed().then((response) =>  {
+				this.welcomeModel.hasSystemPermissionShowed = response;
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed, response);
+				if (typeof this.welcomeModel.hasSystemPermissionShowed === 'boolean') {
+					this.openModal();
+				}
+			});
 		}
 		this.connectedHomeSecurity.on(EventTypes.chsHasSystemPermissionShowedEvent, (data) => {
 			this.welcomeModel.hasSystemPermissionShowed = data;
-			this.openModal();
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed, data);
 		});
 	}
 
@@ -105,8 +113,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		this.connectedHomeSecurity.refresh();
-		this.welcomeModel.hasSystemPermissionShowed = this.connectedHomeSecurity.hasSystemPermissionShowed;
+		this.permission.getSystemPermissionShowed().then(response =>  {
+			this.welcomeModel.hasSystemPermissionShowed = response;
+		});
 		this.welcomeModel.isLenovoIdLogin = false; // mock data;
 	}
 
@@ -186,8 +195,8 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	}
 
 	onStartTrial() {
-		if (this.userService.auth) {
-			// connectedHomeSecurity.startTrial()
+		if (this.connectedHomeSecurity.account.lenovoId.loggedIn) {
+			this.connectedHomeSecurity.account.createAccount();
 		} else {
 			this.modalService.open(ModalLenovoIdComponent, {
 				backdrop: 'static',
@@ -196,18 +205,18 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 			});
 			this.commonService.notification.subscribe((notification: AppNotification) => {
 				if (notification && notification.type === LenovoIdStatus.SignedIn) {
-					// connectedHomeSecurity.startTrial()
+					this.connectedHomeSecurity.account.createAccount();
 				}
 			});
 		}
 	}
 
-	onManageAccount() {
-		WinRT.launchUri(this.connectedHomeSecurity.consoleUrl);
+	onManageAccount(feature: string) {
+		this.connectedHomeSecurity.account.visitWebConsole(feature);
 	}
 
 	onUpgradeAccount() {
-		WinRT.launchUri(this.connectedHomeSecurity.upgradeUrl);
+		this.connectedHomeSecurity.account.purchase();
 	}
 
 	public switchStatus() {
