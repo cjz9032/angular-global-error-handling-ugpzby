@@ -744,6 +744,7 @@ export class QaService {
 			return element.id === id;
 		});
 	}
+
 	setCurrentLangTranslations() {
 		//Evaluate the translations for QA on language Change
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {

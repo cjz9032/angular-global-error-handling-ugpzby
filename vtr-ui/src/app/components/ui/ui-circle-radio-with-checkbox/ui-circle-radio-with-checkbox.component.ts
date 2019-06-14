@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'vtr-ui-circle-radio-with-checkbox',
-  templateUrl: './ui-circle-radio-with-checkbox.component.html',
-  styleUrls: ['./ui-circle-radio-with-checkbox.component.scss']
+	selector: 'vtr-ui-circle-radio-with-checkbox',
+	templateUrl: './ui-circle-radio-with-checkbox.component.html',
+	styleUrls: ['./ui-circle-radio-with-checkbox.component.scss']
 })
 export class UiCircleRadioWithCheckboxComponent implements OnInit {
 
@@ -19,27 +19,27 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	@Output() change: EventEmitter<any> = new EventEmitter();
 	hideIcon: boolean = false;
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
 
-  onChange(event) {
-	this.change.emit(event);
-}
+	onChange(event) {
+		this.change.emit(event);
+	}
 
-// getIconName(name: string) {
-// 	if (name) {
-// 		var arr = name.split(' ');
-// 		var index = arr.indexOf("&");
-// 		if (index !== -1) {
-// 			arr.splice(index, 1);
-// 		}
-// 		return arr.join("").toLowerCase();
-// 	}
-// 	else {
-// 		return "";
-// 	}
-// }
+	// getIconName(name: string) {
+	// 	if (name) {
+	// 		var arr = name.split(' ');
+	// 		var index = arr.indexOf("&");
+	// 		if (index !== -1) {
+	// 			arr.splice(index, 1);
+	// 		}
+	// 		return arr.join("").toLowerCase();
+	// 	}
+	// 	else {
+	// 		return "";
+	// 	}
+	// }
 
 }
