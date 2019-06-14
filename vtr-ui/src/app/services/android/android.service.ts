@@ -5,19 +5,32 @@ import { Injectable } from '@angular/core';
 })
 export class AndroidService {
 
-  private android = (<any> window).Android;
+  public android = (<any> window).Android;
+  isAndroid = false;
 
-  constructor() { }
+  constructor() {
+	let version = this.getAndroidVersion();
+	if (version.length > 0) {
+		this.isAndroid = true;
+	}
+  }
 
   private showToast(message: string) {
     this.android.showToast(message);
   }
 
   public getAndroidDeviceLanguage(): string {
-    return this.android.getDeviceLanguage();
+	if (this.android != null || this.android != undefined) {
+		return this.android.getDeviceLanguage();
+	}
+	return "";
   }
 
   public getAndroidVersion(): string {
-    return this.android.getVersion();
+	//this.showToast(this.android.getVersion());
+	if (this.android != null || this.android != undefined) {
+		return this.android.getVersion();
+	}
+	return "";
   }
 }

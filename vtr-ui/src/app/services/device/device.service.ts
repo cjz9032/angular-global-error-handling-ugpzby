@@ -8,6 +8,7 @@ import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Router } from '@angular/router';
+import { AndroidService } from '../android/android.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -26,7 +27,8 @@ export class DeviceService {
 
 	constructor(
 		shellService: VantageShellService
-		, private commonService: CommonService
+		, private commonService: CommonService,
+		public androidService: AndroidService
 		, private router: Router) {
 		this.device = shellService.getDevice();
 		this.sysInfo = shellService.getSysinfo();
@@ -72,11 +74,10 @@ export class DeviceService {
 
 	private initIsArm() {
 		try {
-			// this.isArm = true;
 			if (this.isShellAvailable) {
 				this.getMachineInfo()
 					.then((machineInfo: any) => {
-						this.isArm = machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
+						this.isArm = this.androidService.isAndroid || machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
 					}).catch(error => {
 						console.error('initArm', error);
 					});
