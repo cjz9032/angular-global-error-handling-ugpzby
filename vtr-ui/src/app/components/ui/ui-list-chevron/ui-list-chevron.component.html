@@ -27,7 +27,8 @@
 						</div>
 						<div class="col item-text"
 							[ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility}">
-							<div class="row no-gutters">
+							<div class="row no-gutters"
+								[ngClass]="{'flex-column': item.notificationDetail}">
 								<div title="{{item.title}}"
 									class="title text-break"
 									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-8': item.detail}">
@@ -38,6 +39,9 @@
 									*ngIf="item.detail"
 									[ngClass]="getItemDetailClasses(item)">
 									{{item.detail}}
+								</div>
+								<div *ngIf="item.notificationDetail"> 
+									{{item.notificationDetail}}
 								</div>
 							</div>
 						</div>

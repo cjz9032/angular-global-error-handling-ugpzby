@@ -44,10 +44,11 @@
 												<div class="col-12">
 													<vtr-ui-button id="sa-vpn-btn-getsufeasy"
 														aria-label="sa-vpn-btn-getsufeasy"
-														*ngIf="statusItem.status === 'not-installed'"
+														*ngIf="statusItem.status === 'not-installed' || statusItem.status === 'installing'"
 														(click)="getSurfEasy()"
 														metricsEvent="FeatureClick"
 														metricsItem="getSurfEasy"
+														[isDisabled]="statusItem.status === 'installing'"
 														[label]="'security.vpn.getSufEasy' | translate"
 														[title]="'security.vpn.getSufEasy' | translate">
 													</vtr-ui-button>
@@ -67,7 +68,7 @@
 								</div>
 							</div>
 							<div class="row vtr-page-security-internet"
-								*ngIf="statusItem.status === 'not-installed'">
+								*ngIf="statusItem.status === 'not-installed' || statusItem.status === 'installing'">
 								<div class="row">
 									<div class="col col-12 col-sm-12 mt-40">
 										<div>

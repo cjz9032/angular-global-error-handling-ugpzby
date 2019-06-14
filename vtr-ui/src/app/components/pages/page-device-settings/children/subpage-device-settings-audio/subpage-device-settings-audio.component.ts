@@ -33,6 +33,21 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		private commonService: CommonService) {
 	}
 
+	ngOnInit() {
+		this.initMockData();
+		this.getMicrophoneSettings();
+		this.getDolbyFeatureStatus();
+		this.getDolbyModesStatus();
+		this.getSupportedModes();
+		this.startMonitor();
+		this.startMonitorForDolby();
+	}
+
+	ngOnDestroy() {
+		this.stopMonitor();
+		this.stopMonitorForDolby();
+	}
+
 	getSupportedModes() {
 		try {
 			if (this.audioService.isShellAvailable) {
@@ -203,17 +218,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
-
-	ngOnInit() {
-		this.initMockData();
-		this.getMicrophoneSettings();
-		this.getDolbyFeatureStatus();
-		this.getDolbyModesStatus();
-		this.getSupportedModes();
-		this.startMonitor();
-		this.startMonitorForDolby();
-	}
-
 	public setVolume(event) {
 		const volume = event.value;
 		try {
@@ -282,7 +286,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	startMonitor() {
 		try {
 			if (this.audioService.isShellAvailable) {
-				this.audioService.startMonitor(this.startMonitorHandler.bind(this))
+				this.audioService.startMicrophoneMonitor(this.startMonitorHandler.bind(this))
 					.then((value: boolean) => {
 						console.log('startMonitor', value);
 					}).catch(error => {
@@ -297,7 +301,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	stopMonitor() {
 		try {
 			if (this.audioService.isShellAvailable) {
-				this.audioService.stopMonitor()
+				this.audioService.stopMicrophoneMonitor()
 					.then((value: boolean) => {
 						console.log('stopMonitor', value);
 					}).catch(error => {
@@ -334,11 +338,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			'device.deviceSettings.audio.microphone.optimize.options.MultipleVoices',
 			'device.deviceSettings.audio.microphone.optimize.options.VoiceRecognition'];
 		this.microOptimizeModeResponse = new MicrophoneOptimizeModes(optimizeMode, '');
-	}
-
-	ngOnDestroy() {
-		this.stopMonitor();
-		this.stopMonitorForDolby();
 	}
 
 	public onCardCollapse(isCollapsed: boolean) {

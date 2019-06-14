@@ -2,30 +2,31 @@
 	<div class="d-flex justify-content-around">
 		<vtr-ui-lighting-profile-toggle (setDefaultProfile)="setDefaultProfile($event)"
 			[currentProfile]="currentProfile"></vtr-ui-lighting-profile-toggle>
-	<vtr-ui-brightness-slider *ngIf="!isProfileOff" [lightingData]="lightingData"  (setLightingBrightness)="setLightingBrightness($event)" [cacheval]="cacheval"></vtr-ui-brightness-slider>
+		<vtr-ui-brightness-slider *ngIf="!isProfileOff && lightingCapabilities.BrightAdjustLevel!==0"
+			[lightingData]="setProfile"
+			(setLightingBrightness)="setLightingBrightness($event)" ></vtr-ui-brightness-slider>
 	</div>
-
-
 	<div class="lighting-area">
 		<div class="d-flex">
 			<div class="gaming-device-image d-flex align-items-center">
-				<img src="./../../../../assets/images/gaming/lighting/T730Front@2x.png"
+				<img src='{{panelImage1}}'
 					class="img-responsive" />
 			</div>
 			<div class="gaming-light-options">
-				<!-- <div class="light-option one-light only-blink">
-          <vtr-ui-lighting-single-color></vtr-ui-lighting-single-color>
-		</div> -->
+				<div *ngIf="!isProfileOff && lightingCapabilities.RGBfeature===1"
+					class="light-option one-light only-blink">
+					<vtr-ui-lighting-single-color></vtr-ui-lighting-single-color>
+				</div>
 				<div *ngIf="isProfileOff"
 					 class="light-option lighting-off d-flex justify-content-center align-items-center">
 					<p>Lighting are currently off. Select the profile tab above to turn it on and customize it.</p>>
 				</div>
-				<div *ngIf="!isProfileOff"
+				<div *ngIf="!isProfileOff && lightingCapabilities.RGBfeature!==1"
 					class="light-option rgb-color one-light">
 					<h2 class="main-title">Front Light</h2>
 					<h3 class="content-title">Effect </h3>
 
-					<vtr-ui-lighting-effect [options]="options.drop[0]"
+					<vtr-ui-lighting-effect [options]="lightingEffectData.drop[0]"
 						(change)="optionChanged($event,item)"></vtr-ui-lighting-effect>
 					<h3 class="content-title">Color</h3>
 					<vtr-ui-lighting-color-wheel></vtr-ui-lighting-color-wheel>
@@ -34,10 +35,11 @@
 		</div>
 	</div>
 
-	<div class="lighting-area">
+	<div class="lighting-area"
+		*ngIf="lightingCapabilities.RGBfeature!==1">
 		<div class="d-flex">
 			<div class="gaming-device-image d-flex align-items-center">
-				<img src="./../../../../assets/images/gaming/lighting/T730Side@2x.png"
+				<img src='{{panelImage2}}'
 					class="img-responsive" />
 			</div>
 			<div class="gaming-light-options">
@@ -49,7 +51,7 @@
 					class="light-option rgb-color one-light">
 					<h2 class="main-title">Side Light</h2>
 					<h3 class="content-title">Effect</h3>
-					<vtr-ui-lighting-effect [options]="options.drop[1]"
+					<vtr-ui-lighting-effect [options]="lightingEffectData.drop[1]"
 						(change)="optionChanged($event,item)"></vtr-ui-lighting-effect>
 					<h3 class="content-title">Color</h3>
 					<vtr-ui-lighting-color-wheel></vtr-ui-lighting-color-wheel>
@@ -57,10 +59,11 @@
 			</div>
 		</div>
 	</div>
-	<div *ngIf="!isProfileOff" class="footer-part d-flex flex-row-reverse">
+	<div *ngIf="!isProfileOff && lightingCapabilities.RGBfeature!==1"
+		class="footer-part d-flex flex-row-reverse">
 		<a href="javascript:void(0);"
 			class="link"
-			(click)="setDeafultLightingSettings($event)">Set to default</a>
+			(click)="setDefaultProfile($event)">Set to default</a>
 	</div>
 
 </div>
