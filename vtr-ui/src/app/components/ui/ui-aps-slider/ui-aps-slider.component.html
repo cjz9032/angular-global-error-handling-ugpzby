@@ -1,0 +1,13 @@
+<div class="vtr-ui-aps-slider" [ngClass]="{'diable-slider-pointer': enableSlider, 'on-hover-slider-icon':onHoverSliderIcon}">
+    <ng5-slider [(value)]="value"
+      [options]="options"
+      (valueChange)="onValueChange($event)"
+      (userChange)="onChange($event)"
+      [manualRefresh]="manualRefresh"
+      (userChangeEnd)="dragEnd()">
+    </ng5-slider>
+    <div class="row label">
+      <div *ngFor="let legend of legends">{{ legend }}</div>
+    </div>
+  </div>
+  
