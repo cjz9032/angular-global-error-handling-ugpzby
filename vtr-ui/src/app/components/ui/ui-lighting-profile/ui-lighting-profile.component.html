@@ -9,8 +9,7 @@
 	<div class="lighting-area">
 		<div class="d-flex">
 			<div class="gaming-device-image d-flex align-items-center">
-				<img src='{{panelImage1}}'
-					class="img-responsive" />
+				<img src='{{panelImage1}}' class="img-responsive" />
 			</div>
 			<div class="gaming-light-options">
 				<div *ngIf="!isProfileOff && lightingCapabilities.RGBfeature===1"
@@ -41,16 +40,14 @@
 		*ngIf="lightingCapabilities.RGBfeature===255">
 		<div class="d-flex">
 			<div class="gaming-device-image d-flex align-items-center">
-				<img src='{{panelImage2}}'
-					class="img-responsive" />
+				<img src='{{panelImage2}}' class="img-responsive" />
 			</div>
 			<div class="gaming-light-options">
 				<div *ngIf="isProfileOff"
 					 class="light-option lighting-off d-flex justify-content-center align-items-center">
 					<p>Lighting are currently off. Select the profile tab above to turn it on and customize it.</p>>
 				</div>
-				<div *ngIf="!isProfileOff"
-					class="light-option rgb-color one-light">
+				<div *ngIf="!isProfileOff" class="light-option rgb-color one-light">
 					<h2 class="main-title">Side Light</h2>
 					<h3 class="content-title">Effect</h3>
 					<vtr-ui-lighting-effect [options]="lightingEffectData.drop[1]"

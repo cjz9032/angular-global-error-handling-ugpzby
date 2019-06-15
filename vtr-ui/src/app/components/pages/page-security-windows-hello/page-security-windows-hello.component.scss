@@ -198,6 +198,16 @@
 					}
 				}
 			}
+
+			@media #{$mediaquery_X8} {
+				margin-bottom: 5rem;
+			}
+		}
+	}
+
+	.vtr-page-right-column {
+		@media #{$mediaquery_X8} {
+			padding: 0 4rem 4rem 8.5rem;
 		}
 	}
 }

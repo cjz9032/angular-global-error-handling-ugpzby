@@ -13,11 +13,11 @@ export class ConfigService {
 	appBrand = 'Lenovo';
 	appName = 'Vantage';
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
-	constructor(private deviceService: DeviceService) {}
+	constructor(private deviceService: DeviceService) { }
 
-	menuItemsGaming: Array < any > = [{
+	menuItemsGaming: Array<any> = [{
 		id: 'device',
-		label: 'common.menu.device.title',
+		label: 'Device',
 		path: 'device-gaming',
 		icon: ['fas', 'desktop'],
 		metricsEvent: 'itemClick',
@@ -30,7 +30,7 @@ export class ConfigService {
 		subitems: []
 	}, {
 		id: 'support',
-		label: 'gaming.common.menu.support.title',
+		label: 'Support',
 		path: 'support',
 		icon: ['fal', 'wrench'],
 		metricsEvent: 'featureClick',
@@ -94,9 +94,9 @@ export class ConfigService {
 		forArm: true,
 		subitems: []
 	}];
-	menuItems: Array < any > = [{
+	menuItems: Array<any> = [{
 		id: 'dashboard',
-		label: 'common.menu.dashboard',
+		label: 'Dashboard',
 		path: 'dashboard',
 		icon: ['fal', 'columns'],
 		metricsEvent: 'itemClick',
@@ -109,7 +109,7 @@ export class ConfigService {
 		subitems: []
 	}, {
 		id: 'device',
-		label: 'common.menu.device.title',
+		label: 'Device',
 		path: 'device',
 		icon: ['fal', 'laptop'],
 		metricsEvent: 'itemClick',
@@ -119,7 +119,7 @@ export class ConfigService {
 		subitems: [{
 			id: 'device',
 			label: 'common.menu.device.sub1',
-			path: 'Device',
+			path: '',
 			icon: '',
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
@@ -155,7 +155,7 @@ export class ConfigService {
 		}]
 	}, {
 		id: 'security',
-		label: 'common.menu.security.title',
+		label: 'Security',
 		path: 'security',
 		icon: ['fal', 'lock'],
 		metricsEvent: 'itemClick',
@@ -213,7 +213,7 @@ export class ConfigService {
 		}]
 	}, {
 		id: 'support',
-		label: 'common.menu.support',
+		label: 'Support',
 		path: 'support',
 		icon: ['fal', 'wrench'],
 		metricsEvent: 'itemClick',
@@ -226,7 +226,7 @@ export class ConfigService {
 		subitems: []
 	}, {
 		id: 'home-security',
-		label: 'common.menu.homeSecurity',
+		label: 'Connected Home',
 		path: 'home-security',
 		metricsEvent: 'itemClick',
 		metricsParent: 'navbar',
@@ -251,9 +251,9 @@ export class ConfigService {
 		forArm: true,
 		subitems: []
 	}];
-	menuItemsPrivacy: Array < any > = [{
+	menuItemsPrivacy: Array<any> = [{
 		id: 'dashboard',
-		label: 'common.menu.dashboard',
+		label: 'Dashboard',
 		path: 'dashboard',
 		icon: ['fal', 'columns'],
 		metricsEvent: 'itemClick',
@@ -266,7 +266,7 @@ export class ConfigService {
 		subitems: []
 	}, {
 		id: 'device',
-		label: 'common.menu.device.title',
+		label: 'Device',
 		path: 'device',
 		icon: ['fal', 'laptop'],
 		metricsEvent: 'itemClick',
@@ -312,7 +312,7 @@ export class ConfigService {
 		}]
 	}, {
 		id: 'security',
-		label: 'common.menu.security.title',
+		label: 'Security',
 		path: 'security',
 		icon: ['fal', 'lock'],
 		metricsEvent: 'itemClick',
@@ -368,9 +368,9 @@ export class ConfigService {
 			icon: '',
 			subitems: []
 		}]
-	},  {
+	}, {
 		id: 'privacy',
-		label: 'common.menu.privacy',
+		label: 'Privacy',
 		path: 'privacy/breaches',
 		icon: ['fal', 'user-shield'],
 		metricsEvent: 'itemClick',
@@ -381,9 +381,9 @@ export class ConfigService {
 		},
 		forArm: false,
 		subitems: []
-	},  {
+	}, {
 		id: 'support',
-		label: 'common.menu.support',
+		label: 'Support',
 		path: 'support',
 		icon: ['fal', 'wrench'],
 		metricsEvent: 'itemClick',
@@ -396,7 +396,7 @@ export class ConfigService {
 		subitems: []
 	}, {
 		id: 'home-security',
-		label: 'common.menu.homeSecurity',
+		label: 'Connected Home',
 		path: 'home-security',
 		metricsEvent: 'itemClick',
 		metricsParent: 'navbar',
@@ -420,7 +420,7 @@ export class ConfigService {
 		},
 		forArm: true,
 		subitems: []
-	}, ];
+	},];
 	getMenuItems(isGaming) {
 		if (isGaming) {
 			return this.menuItemsGaming;

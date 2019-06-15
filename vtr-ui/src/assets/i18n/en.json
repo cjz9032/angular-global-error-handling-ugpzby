@@ -714,6 +714,10 @@
 						"title": "Airplane Power Mode",
 						"description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
 					}
+				},
+				"energyStar":{
+					"title":"Energy Star",
+					"description":"AN ENERGY STAR CERTIFIED PRODUCT"
 				}
 			},
 			"audio": {
@@ -879,8 +883,14 @@
 					"hiddenKeyboardFunctions": {
 						"title": "Hidden keyboard functions",
 						"description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
-					}
+					},
+					"firstKeyObj": {"tittle":  "Fn + Tab" , "description": "enable zoom feature on high resolution displays", "image": ""},						
+					"secondKeyObj": {"tittle":  "Fn + 4" , "description": "enter sleep mode", "image": ""},
+					"thirdKeyObj": {"tittle":  "Fn + D" , "description": "turn on and off Privacy Guard", "image": ""},
+					"fourthKeyObj": {"tittle":  "Fn + Q" , "description": "change between Performance mode and Quiet mode", "image": ""},
+					"fifthKeyObj": {"tittle":  "Fn + Space" , "description": "change keyboard backlight states", "image": ""}
 				}
+		
 			}
 		},
 		"smartAssist": {
@@ -970,7 +980,24 @@
 				},
 				"manualActiveProtectionSuspension": {
 					"title": "Manual Active Protection Suspension",
-					"caption": "Allow me to manually suspend the Active Protection System"
+					"caption": "Allow me to manually suspend the Active Protection System",
+					"dropdown-title": "Suspend for",
+					"button": "Suspend Now"
+				},
+				"advanced":{
+					"description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+					"pen":{
+						"title": "Pen Input",
+						"description": "When pen input is used, Enable APS when pen input is out of range"
+					},
+					"touch":{
+						"title": "Touch Input",
+						"description": "When Touch input is used, Enable APS when touch input is not detected"
+					},
+					"hand":{
+						"title": "Hand proximity sensing on computer edges",
+						"description": "When tablet mode is enabled, Enable APS when hand is not detected"
+					}
 				}
 			},
 			"intelligentMedia": {
@@ -1099,7 +1126,7 @@
 		"devices": "Devices",
 		"seeProtectedDevices": "See protected devices",
 		"addDevice": "add device",
-		"trialExpired": "Trial Expired",
+		"trialExpired": "Trial expired",
 		"trialExpiredSubtext": "Upgrade to protect all of your devices",
 		"upgrade": "upgrade",
 		"freeTrial": "Free 30 day trial",
@@ -1202,7 +1229,7 @@
 		},
 		"quickAccess": {
 			"categories": "Categories",
-			"categoriesDesc": "Find helpful information in our articles",
+			"categoriesDesc": "Find helpful information in our articles.",
 			"seeArticles": "SEE ARTICLES"
 		}
 	},
@@ -1437,13 +1464,13 @@
 			"whyWindowsHelloDescription1": "Windows Hello makes logging into your PC easier and more secure, and can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello.",
 			"startUsingToday": "Start using Windows Hello Today",
 			"visitAndRegister": "Visit the Windows Hello page and register your fingerprint.",
-			"visitInSettings": "<tag> Visit Windows Hello</tag> in system settings",
+			"visitInSettings": "<tag> Visit Windows Hello</tag> in system settings.",
 			"unlock": "Use Windows Hello to log into and unlock your PC with a touch of a finger on the sensor.",
 			"startUsingWindowsHello": "Start using Windows Hello to log into Microsoft Apps such as Outlook, OneDrive, Office 365 and Xbox Live.",
 			"visitMicrosoft": "Visit Microsoft",
 			"poweredByWindowsHello": "Powered By Windows Hello",
 			"privacyPolicy": "Read more on the <tag>Privacy Policy</tag>",
-			"whyWindowsHelloDescription2": "Windows Hello makes logging into your PC easier and more secure. And you can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello",
+			"whyWindowsHelloDescription2": "Windows Hello makes logging into your PC easier and more secure. And you can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello.",
 			"authentication": "Windows Hello Authentication",
 			"traditional": "Traditional passwords can be stolen and used to access your account from anywhere in the world. More secure and convenient. Windows Hello is the next generation of a password. Use your fingerprint reader instead of insecure passwords to log in.",
 			"howToStart": "How do I start using Windows Hello?"

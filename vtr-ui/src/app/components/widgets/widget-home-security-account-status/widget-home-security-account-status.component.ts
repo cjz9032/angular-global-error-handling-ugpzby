@@ -14,9 +14,9 @@ import { BaseComponent } from '../../base/base.component';
 })
 export class WidgetHomeSecurityAccountStatusComponent extends BaseComponent implements OnInit {
 	@Input() status: string;
-	@Input() remainingDays: number;
+	@Input() standardTime = new Date();
 	@Input() expiredDate: Date = new Date();
-	@Output() manageAccount = new EventEmitter<boolean>();
+	@Output() manageAccount = new EventEmitter<string>();
 	@Output() upgradeAccount = new EventEmitter<boolean>();
 	@Output() startTrial = new EventEmitter<boolean>();
 
@@ -27,17 +27,18 @@ export class WidgetHomeSecurityAccountStatusComponent extends BaseComponent impl
 	ngOnInit() { }
 
 	emitManageAccount() {
-		this.manageAccount.emit();
-		this.status = 'localAccount';
+		this.manageAccount.emit('login');
 	}
 
 	emitUpgradeAccount() {
 		this.upgradeAccount.emit();
-		this.status = this.status === 'trial' ? 'trialExpired' : 'upgraded';
 	}
 
 	emitStartTrial() {
 		this.startTrial.emit();
-		this.status = 'trial';
+	}
+
+	emitVisitProfile() {
+		this.manageAccount.emit('profile');
 	}
 }

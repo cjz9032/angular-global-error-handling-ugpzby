@@ -253,7 +253,7 @@ const routes: Routes = [
 		path: 'settings',
 		component: PageSettingsComponent,
 		data: {
-			pageName: 'Settings'
+			pageName: 'Page.Settings'
 		}
 	}
 ];

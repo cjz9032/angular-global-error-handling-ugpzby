@@ -2,6 +2,58 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.0.94](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v0.0.93...v0.0.94) (2019-06-15)
+
+
+
+## [0.0.93](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v0.0.92...v0.0.93) (2019-06-14)
+
+
+
+## [0.0.91](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v0.0.90...v0.0.91) (2019-06-12)
+
+
+
+## [0.0.90](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v0.0.89...v0.0.90) (2019-06-11)
+
+
+
+## [0.0.89](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v0.0.88...v0.0.89) (2019-06-11)
+
+
+
+## [0.0.88](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v0.0.87...v0.0.88) (2019-06-10)
+
+
+
+## [0.0.86](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v0.0.85...v0.0.86) (2019-06-10)
+
+
+
+## [0.0.84](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v0.0.83...v0.0.84) (2019-06-07)
+
+
+
+## [0.0.83](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v0.0.82...v0.0.83) (2019-06-07)
+
+
+
+## [0.0.82](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v0.0.81...v0.0.82) (2019-06-07)
+
+
+
+## [0.0.81](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v0.0.80...v0.0.81) (2019-06-06)
+
+
+
+## [0.0.79](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v0.0.78...v0.0.79) (2019-06-05)
+
+
+
+## [0.0.76](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v0.0.75...v0.0.76) (2019-06-05)
+
+
+
 ## [0.0.92](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v0.0.87...v0.0.92) (2019-06-13)
 
 

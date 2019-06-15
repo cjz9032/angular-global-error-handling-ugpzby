@@ -12,6 +12,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	@Input() checkboxText = '';
 	@Input() type = 'primary';
 	@Input() displayNoteOnly: boolean = this.displayNoteOnly || false;
+	@Input() showWarningMsg: any;
 	@Input() startAtChargeOptions: any;
 	@Input() stopAtChargeOptions: any;
 	@Input() selectedStartAtCharge: any;
@@ -30,10 +31,10 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	stopAtChargeInput = 'stopAtCharge';
 	isCheckedAutoInput = 'isCheckedAuto';
 	public selectedOptionsData: any = {};
-
+	
 	constructor() { }
 
-	ngOnInit() {	}
+	ngOnInit() {}
 
 	onChargeChange(id: string, newCharge: number, event: Event) {
 		 //console.log('onChargeChange' + event.target + '\n' + id + '\n' + newCharge);

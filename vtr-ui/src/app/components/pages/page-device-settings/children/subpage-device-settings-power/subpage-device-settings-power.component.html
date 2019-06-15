@@ -104,13 +104,13 @@
 									(sendBatteryDetails)="setChargeThresholdValues($event, 2)"
 									(autoChecked)="autoCheckSelected($event, 2)">
 								</vtr-battery-charge-threshold-settings>
-
-								<vtr-battery-charge-threshold-settings [displayNoteOnly]="true">
+								<vtr-battery-charge-threshold-settings *ngIf ="showWarningMsg" [displayNoteOnly]="true" [showWarningMsg]= "showWarningMsg">
 
 								</vtr-battery-charge-threshold-settings>
 							</div>
 						</vtr-ui-row-switch>
 					</li>
+
 					<li class=""
 						*ngIf="expressChargingStatus.available">
 						<!--
@@ -125,6 +125,8 @@
 							[leftIcon]="batterySettings.items[2].leftImageSource"
 							[tooltipText]="'device.deviceSettings.power.batterySettings.expressCharging.tooltip' | translate"
 							[isSwitchChecked]="expressChargingStatus.status"
+							[disabled]="expressChargingLock"
+							[showLoaderState]="conservationModeLock"
 							(toggleOnOff)="changeBatteryMode($event,'expressCharging')">
 						</vtr-ui-row-switch>
 					</li>
@@ -140,6 +142,8 @@
 							[leftIcon]="batterySettings.items[3].leftImageSource"
 							[tooltipText]="'device.deviceSettings.power.batterySettings.conservationMode.tooltip.line1' | translate"
 							[isSwitchChecked]="conservationModeStatus.status"
+							[disabled]="conservationModeLock"
+							[showLoaderState]="expressChargingLock"
 							(toggleOnOff)="changeBatteryMode($event,'conservationMode')">
 						</vtr-ui-row-switch>
 					</li>
@@ -260,4 +264,24 @@
 		</div>
 	</div>
 
+	<div class="row py-5" *ngIf = "machineType == 1">
+		<div class="col-10 mx-auto ">
+			<vtr-container-collapsible
+				componentName="'device.deviceSettings.power.energyStar.title' | translate | lowercase"
+				[cardTitle]="'device.deviceSettings.power.energyStar.title' | translate"
+				[isCollapsed]="false">
+				
+					<div class="row energystar-container">
+						<div class="col-lg-2 col-md-2 col-sm-12">
+							<img class="img-fluid mx-auto d-block" src="/assets/images/energystar.png">
+						</div>
+						<div class="col-lg-10 col-md-10 col-sm-12 align-self-center">
+							<p class="energystar-text">{{'device.deviceSettings.power.energyStar.description' | translate}}</p>
+						</div>
+					</div>
+				
+			</vtr-container-collapsible>
+		</div>
+	</div>
+	
 </div>
