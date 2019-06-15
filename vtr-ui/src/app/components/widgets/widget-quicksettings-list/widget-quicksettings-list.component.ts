@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { GamingQuickSettingsService } from 'src/app/services/gaming/gaming-quick-settings/gaming-quick-settings.service';
 import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
 import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -8,6 +7,7 @@ import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-cap
 import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
 import { Gaming } from 'src/app/enums/gaming.enum';
 import { EventTypes } from '@lenovo/tan-client-bridge';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-widget-quicksettings-list',
@@ -146,10 +146,10 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 	};
 
 	constructor(
-		private gamingQuickSettingsService: GamingQuickSettingsService,
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private gamingThermalModeService: GamingThermalModeService,
-		private commonService: CommonService
+		private commonService: CommonService,
+		private shellServices: VantageShellService
 	) { }
 
 	ngOnInit() {
@@ -162,7 +162,6 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			LocalStorageKey.PrevThermalModeStatus
 		);
 
-		this.getGamingQuickSettings();
 		if (!this.gamingSettings.smartFanFeature) {
 			this.quickSettings[0].isVisible = false;
 		}
@@ -188,7 +187,25 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			}
 		});
 
+		//Binding regThermalMode event
+		if (this.gamingSettings.smartFanFeature) {
+			this.gamingThermalModeService.regThermalModeEvent();
+			this.shellServices.registerEvent(
+				EventTypes.gamingThermalModeChangeEvent,
+				this.onRegThermalModeEvent.bind(this)
+			);
+		}
+
 	}
+
+	public onRegThermalModeEvent(status: any) {
+		if (status) {
+			this.commonService.setLocalStorageValue(
+				LocalStorageKey.CurrentThermalModeStatus,
+				status
+			);
+		}
+	} 
 
 	public quicksettingListInit() {
 		const gamingStatus = this.gamingCapabilities;
@@ -270,19 +287,5 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 					console.error('setThermalModeStatusError', error);
 				});
 		}
-	}
-
-    /**
-	 * 
-	 */
-
-	public getGamingQuickSettings() {
-		const thermalModeCacheStatus = this.gamingQuickSettingsService.getThermalModeCacheStatus(LocalStorageKey.CurrentThermalModeStatus);
-		if (thermalModeCacheStatus) {
-		this.drop.curSelected = thermalModeCacheStatus.thermalModeStatus;
-		}
-		this.gamingQuickSettingsService.GetThermalModeStatus().then((res: any) => {
-			// this.drop.curSelected = res;
-		});
 	}
 }
