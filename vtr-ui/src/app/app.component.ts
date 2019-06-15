@@ -60,6 +60,7 @@ export class AppComponent implements OnInit {
 		//#region VAN-2779 this is moved in MVP 2
 
 		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+
 		if (tutorial === undefined && navigator.onLine) {
 			this.openWelcomeModal(1);
 		} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
@@ -83,8 +84,9 @@ export class AppComponent implements OnInit {
 	openWelcomeModal(page: number) {
 		const modalRef = this.modalService.open(ModalWelcomeComponent,
 			{
-				backdrop: 'static'
-				, windowClass: 'welcome-modal-size'
+				backdrop: 'static',
+				centered: true,
+				windowClass: 'welcome-modal-size'
 			});
 		modalRef.componentInstance.page = page;
 		modalRef.result.then(
@@ -132,7 +134,7 @@ export class AppComponent implements OnInit {
 
 		// When startup try to login Lenovo ID silently (in background),
 		//  if user has already logged in before, this call will login automatically and update UI
-		if (!this.deviceService.isArm) {
+		if (!this.deviceService.isArm && this.userService.isLenovoIdSupported()) {
 			this.userService.loginSilently();
 		}
 
@@ -172,7 +174,7 @@ export class AppComponent implements OnInit {
 							this.translate.use('zh-Hant');
 						}
 					}
-					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
+
 				}).catch(error => {
 					console.error('getMachineInfo', error);
 				});

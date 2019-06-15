@@ -42,7 +42,7 @@ export class PageDeviceSettingsComponent implements OnInit {
 			icon: 'display-camera',
 			subitems: [],
 			active: false
-		},{
+		}, {
 			id: 'input-accessories',
 			label: 'Input & Accessories',
 			path: 'device-settings/input-accessories',
@@ -60,12 +60,11 @@ export class PageDeviceSettingsComponent implements OnInit {
 		private commonService: CommonService,
 		public deviceService: DeviceService,
 		public audioService: AudioService,
-		private translate: TranslateService,
-
+		private translate: TranslateService
 	) {
 		this.fetchCMSArticles();
 		this.getMicrophoneSettings();
-		//Evaluate the translations for QA on language Change
+		// Evaluate the translations for QA on language Change
 		this.qaService.setTranslationService(this.translate);
 		this.qaService.setCurrentLangTranslations();
 	}
