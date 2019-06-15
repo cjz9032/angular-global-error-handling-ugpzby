@@ -393,6 +393,13 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public getQuickSettings() {
+		if (this.phoenix) {
+			return this.phoenix.gaming.gamingThermalmode;
+		}
+		return undefined;
+	}
+
 	public setThermalModeStatus(ThermalModeStatusObj: ThermalModeStatus): Boolean {
 		if (this.phoenix) {
 			// TODO Un comment below line when JSBridge is ready for integration.
@@ -567,5 +574,11 @@ export class VantageShellService {
 			return this.phoenix.gaming.gamingMacroKey.setMacroKey(key, inputs);
 		}
 		return undefined;
+	}
+
+	public getGamingThermalMode() {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingThermalmode;
+		}
 	}
 }
