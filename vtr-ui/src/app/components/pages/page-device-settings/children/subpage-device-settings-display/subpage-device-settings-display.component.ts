@@ -335,7 +335,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				});
 		}
 	}
-	public onEyeCareTemparatureChange($event: ChangeContext) {
+	public onEyeCareTemparatureChange($event: any) {
 		try {
 			console.log('temparature changed in display', $event);
 			if (this.displayService.isShellAvailable) {
@@ -444,7 +444,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		try {
 			console.log('temparature changed in display ----->', $event);
 			if (this.displayService.isShellAvailable) {				
-					this.displayService.setDaytimeColorTemperature($event.value).then((res) => {});
+					this.displayService.setDaytimeColorTemperature($event.value);
 			}
 		} catch (error) {
 			console.error(error.message);
@@ -453,13 +453,15 @@ export class SubpageDeviceSettingsDisplayComponent
 	public setToEyeCareMode() {
 		if(this.isEyeCareMode){
 			//this.displayColorTempDataSource.current = this.eyeCareDataSource.current;
-			this.onSetChangeDisplayColorTemp({value: this.eyeCareDataSource.current})			
+			//this.onSetChangeDisplayColorTemp({value: this.eyeCareDataSource.current})	
+			this.onEyeCareTemparatureChange({value: this.eyeCareDataSource.current} );
+						
 		}
 	}
 
 	public resetDaytimeColorTemp($event: any) {
 		try {
-			if (this.displayService.isShellAvailable && !this.isEyeCareMode) {
+			if (this.displayService.isShellAvailable) {
 				console.log('temparature reset in display', $event);
 				this.displayService
 					.resetDaytimeColorTemperature().then((resetData: any) => {

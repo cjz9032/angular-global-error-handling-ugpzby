@@ -8,20 +8,22 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 	providedIn: 'root'
 })
 export class GamingQuickSettingsService {
-
+	public quickSettingsAvailable: Boolean = false;
+	public quickSettings: any;
 	constructor(
 		private shellService: VantageShellService,
-		private commonService: CommonService
-	) { }
-
-	public GetThermalModeStatus(): any  {
-		const shellThermalModeStatus = this.shellService.getThermalModeStatus();
-		if (shellThermalModeStatus !== undefined) {
-			const ThermalModeStatusObj = new ThermalModeStatus();
-			ThermalModeStatusObj.thermalModeStatus = shellThermalModeStatus;
-			return ThermalModeStatusObj;
+		private commonService: CommonService) {
+		this.quickSettings = shellService.getQuickSettings();
+		if (this.quickSettings) {
+			this.quickSettingsAvailable = true;
 		}
-		return this.commonService.getLocalStorageValue(LocalStorageKey.CurrentThermalModeStatus);
+	}
+
+	public GetThermalModeStatus(): any {
+		if (this.quickSettingsAvailable) {
+			return this.shellService.getThermalModeStatus();
+		}
+		return undefined;
 	}
 
 	public setThermalModeStatus(newThermalModeStatus: ThermalModeStatus, oldThermalModeStatus: ThermalModeStatus) {
@@ -37,6 +39,9 @@ export class GamingQuickSettingsService {
 		}
 	}
 
+	public getThermalModeCacheStatus(key: any) {
+			return this.commonService.getLocalStorageValue(key, 0);
+	}
 	public UpdateThermalModeCacheStatus(newThermalModeStatus: ThermalModeStatus, oldThermalModeStatus: ThermalModeStatus) {
 		this.commonService.setLocalStorageValue(LocalStorageKey.PrevThermalModeStatus, oldThermalModeStatus);
 		this.commonService.setLocalStorageValue(LocalStorageKey.CurrentThermalModeStatus, newThermalModeStatus);
