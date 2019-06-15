@@ -88,7 +88,7 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 					this.modalContent.headerTitle = 'gaming.macroKey.popupContent.maximumInput.title';
 					this.modalContent.bodyText = 'gaming.macroKey.popupContent.maximumInput.body';
 					this.showModal = !this.showModal;
-					this.toggleRecording(true);
+					this.toggleRecording();
 				}
 			}
 		}

@@ -883,8 +883,14 @@
 					"hiddenKeyboardFunctions": {
 						"title": "Hidden keyboard functions",
 						"description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
-					}
+					},
+					"firstKeyObj": {"tittle":  "Fn + Tab" , "description": "enable zoom feature on high resolution displays", "image": ""},						
+					"secondKeyObj": {"tittle":  "Fn + 4" , "description": "enter sleep mode", "image": ""},
+					"thirdKeyObj": {"tittle":  "Fn + D" , "description": "turn on and off Privacy Guard", "image": ""},
+					"fourthKeyObj": {"tittle":  "Fn + Q" , "description": "change between Performance mode and Quiet mode", "image": ""},
+					"fifthKeyObj": {"tittle":  "Fn + Space" , "description": "change keyboard backlight states", "image": ""}
 				}
+		
 			}
 		},
 		"smartAssist": {
@@ -974,7 +980,24 @@
 				},
 				"manualActiveProtectionSuspension": {
 					"title": "Manual Active Protection Suspension",
-					"caption": "Allow me to manually suspend the Active Protection System"
+					"caption": "Allow me to manually suspend the Active Protection System",
+					"dropdown-title": "Suspend for",
+					"button": "Suspend Now"
+				},
+				"advanced":{
+					"description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+					"pen":{
+						"title": "Pen Input",
+						"description": "When pen input is used, Enable APS when pen input is out of range"
+					},
+					"touch":{
+						"title": "Touch Input",
+						"description": "When Touch input is used, Enable APS when touch input is not detected"
+					},
+					"hand":{
+						"title": "Hand proximity sensing on computer edges",
+						"description": "When tablet mode is enabled, Enable APS when hand is not detected"
+					}
 				}
 			},
 			"intelligentMedia": {
