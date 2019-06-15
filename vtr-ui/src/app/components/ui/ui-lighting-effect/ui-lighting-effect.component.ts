@@ -9,6 +9,7 @@ import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@ang
 	},
 })
 export class UiLightingEffectComponent implements OnInit {
+	@Input() effectOptionId: number;
 	@Input() public options;
 	@Input() lightingData: any;
 	@Output() public change = new EventEmitter<any>();
@@ -20,7 +21,7 @@ export class UiLightingEffectComponent implements OnInit {
 	public currentDescription: string;
 	public selectedDescription: string;
 
-	constructor(private elementRef: ElementRef) {}
+	constructor(private elementRef: ElementRef) { }
 
 	ngOnInit() {
 		this.currentOption = this.options.dropOptions[this.options.curSelected].name;

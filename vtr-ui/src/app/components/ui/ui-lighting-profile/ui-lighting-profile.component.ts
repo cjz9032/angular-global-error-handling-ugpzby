@@ -18,7 +18,7 @@ export class UiLightingProfileComponent implements OnInit {
 	public options: any;
 	public effectData: any;
 	public isProfileOff: boolean = true;
-	public currentProfile: number = 3;
+	public currentProfile: number = 0;
 	public lightingData: any;
 	public isOff: number;
 	public brightness: any;
@@ -29,7 +29,7 @@ export class UiLightingProfileComponent implements OnInit {
 	public didSuccess: boolean;
 	public lightingProfile: LightingProfile;
 	public lightInfo: any;
-
+	public dropOptions: any;
 	public lightingEffectData = {
 		drop: [
 			{
@@ -49,47 +49,47 @@ export class UiLightingProfileComponent implements OnInit {
 					{
 						header: 'gaming.lightingProfile.effect.option3.title',
 						name: 'gaming.lightingProfile.effect.option3.title',
-						value: 3
+						value: 4
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option4.title',
 						name: 'gaming.lightingProfile.effect.option4.title',
-						value: 4
+						value: 8
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option5.title',
 						name: 'gaming.lightingProfile.effect.option5.title',
-						value: 5
+						value: 16
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option6.title',
 						name: 'gaming.lightingProfile.effect.option6.title',
-						value: 6
+						value: 32
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option7.title',
 						name: 'gaming.lightingProfile.effect.option7.title',
-						value: 7
+						value: 64
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option8.title',
 						name: 'gaming.lightingProfile.effect.option8.title',
-						value: 8
+						value: 128
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option9.title',
 						name: 'gaming.lightingProfile.effect.option9.title',
-						value: 9
+						value: 256
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option10.title',
 						name: 'gaming.lightingProfile.effect.option10.title',
-						value: 10
+						value: 512
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option11.title',
 						name: 'gaming.lightingProfile.effect.option11.title',
-						value: 11
+						value: 268435456
 					}
 				]
 			},
@@ -110,47 +110,47 @@ export class UiLightingProfileComponent implements OnInit {
 					{
 						header: 'gaming.lightingProfile.effect.option3.title',
 						name: 'gaming.lightingProfile.effect.option3.title',
-						value: 3
+						value: 4
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option4.title',
 						name: 'gaming.lightingProfile.effect.option4.title',
-						value: 4
+						value: 8
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option5.title',
 						name: 'gaming.lightingProfile.effect.option5.title',
-						value: 5
+						value: 16
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option6.title',
 						name: 'gaming.lightingProfile.effect.option6.title',
-						value: 6
+						value: 32
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option7.title',
 						name: 'gaming.lightingProfile.effect.option7.title',
-						value: 7
+						value: 64
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option8.title',
 						name: 'gaming.lightingProfile.effect.option8.title',
-						value: 8
+						value: 128
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option9.title',
 						name: 'gaming.lightingProfile.effect.option9.title',
-						value: 9
+						value: 256
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option10.title',
 						name: 'gaming.lightingProfile.effect.option10.title',
-						value: 10
+						value: 512
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option11.title',
 						name: 'gaming.lightingProfile.effect.option11.title',
-						value: 11
+						value: 268435456
 					}
 				]
 			}
@@ -194,6 +194,8 @@ export class UiLightingProfileComponent implements OnInit {
 		}
 
 	];
+
+
 	public imagePath = './../../../../assets/images/gaming/lighting/';
 	public panelImage1: string;
 	public panelImage2: string;
@@ -206,16 +208,25 @@ export class UiLightingProfileComponent implements OnInit {
 		console.log('id----------------------------------', this.currentProfileId);
 		this.isProfileOff = false;
 		this.getGamingLightingCapabilities();
-		this.getLightingProfileById(this.currentProfileId);
-		this.getLightingBrightness();
+		if (this.currentProfileId !== 0) {
+
+			this.getLightingProfileById(this.currentProfileId);
+			this.getLightingBrightness();
+		}
+		else {
+			this.isProfileOff = true;
+		}
 	}
-	public optionChanged($event, item) { };
+	public optionChanged($event, item) {
+		console.log("event raised for color effect-------------------", $event);
+
+	};
 
 	setDefaultProfile(event) {
 		try {
 			this.isOff = Number(event.target.value);
 			console.log('in profile click event....................................', this.isOff);
-			if (this.isOff === 1) {
+			if (this.isOff === 0) {
 				this.isProfileOff = true;
 			}
 			else {
@@ -236,6 +247,15 @@ export class UiLightingProfileComponent implements OnInit {
 				this.gamingLightingService.getLightingCapabilities().then((response: any) => {
 					this.lightingCapabilities = response;
 					console.log('gaming Lighting Capabilities js bridge ------------------------>', JSON.stringify(this.lightingCapabilities));
+					this.dropOptions = response.LedType_Complex;
+
+					this.lightingEffectData.drop[0].dropOptions = this.lightingEffectData.drop[0].dropOptions.filter(i => this.dropOptions.includes(i.value));
+					this.lightingEffectData.drop[1].dropOptions = this.lightingEffectData.drop[1].dropOptions.filter(i => this.dropOptions.includes(i.value));
+
+					console.log('after drop options filter--------------------------------------------------------------------' +
+						JSON.stringify(this.lightingEffectData.drop[0].dropOptions));
+
+
 					console.log('led panel type ------------------------------------------', this.lightingCapabilities.RGBfeature);
 
 					const ledRGB = this.lightingCapabilities.RGBfeature;
@@ -244,7 +264,6 @@ export class UiLightingProfileComponent implements OnInit {
 						const resultImg = this.panelImageData.filter(function (v, i) {
 							return ((v['PanelType'] === ledPanel && v['RGB'] === ledRGB));
 						})
-						console.log('panel image-------------------------------------------', + JSON.stringify(resultImg[0]));
 						if (resultImg.length > 0) {
 							this.panelImage1 = this.imagePath + '/' + resultImg[0].PanelImage;
 						}
@@ -254,7 +273,6 @@ export class UiLightingProfileComponent implements OnInit {
 							const resultImg2 = this.panelImageData.filter(function (v, i) {
 								return ((v['PanelType'] === ledPanel2 && v['RGB'] === ledRGB));
 							})
-							console.log('panel image 2-------------------------------------------', + JSON.stringify(resultImg2[0]));
 							if (resultImg2.length > 0) {
 								this.panelImage2 = this.imagePath + '/' + resultImg2[0].PanelImage;
 							}
@@ -321,6 +339,9 @@ export class UiLightingProfileComponent implements OnInit {
 							}
 						}
 					}
+					else {
+						this.isProfileOff = false;
+					}
 				});
 			}
 		} catch (error) {
@@ -332,10 +353,8 @@ export class UiLightingProfileComponent implements OnInit {
 		try {
 			if (this.gamingLightingService.isShellAvailable) {
 				this.gamingLightingService.getLightingProfileId().then((response: any) => {
-					console.log('getLightingProfileId------------response---------------->',
-						JSON.stringify(response));
+					console.log('getLightingProfileId------------response---------------->', JSON.stringify(response));
 					if (response.didSuccess) {
-
 
 					}
 				});
@@ -375,6 +394,21 @@ export class UiLightingProfileComponent implements OnInit {
 			console.error(error.message);
 		}
 
+	}
+	public color = {
+		profileId: 1,
+		lightPanelType: 32,
+		lightColor: 'FF0000'
+	};
+	public setLightingProfileEffectColor() {
+		if (this.gamingLightingService.isShellAvailable) {
+			this.gamingLightingService.setLightingProfileEffectColor(this.color).then((response: any) => {
+				console.log(
+					'setLightingProfileEffectColor ------------------------>',
+					JSON.stringify(response)
+				);
+			});
+		}
 	}
 }
 
