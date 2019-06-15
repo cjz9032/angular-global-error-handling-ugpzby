@@ -4,7 +4,8 @@ import {
 	ICModes,
 	IntelligentCoolingMode,
 	IntelligentCoolingModes,
-	IntelligentCoolingHardware } from 'src/app/enums/intelligent-cooling.enum';
+	IntelligentCoolingHardware
+} from 'src/app/enums/intelligent-cooling.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -48,10 +49,10 @@ export class PowerSmartSettingsComponent implements OnInit {
 		let machineInfo = this.commonService.getLocalStorageValue(LocalStorageKey.MachineInfo);
 		this.machineType = machineInfo.subBrand.toLocaleLowerCase();
 		console.log("Machine Type: " + this.machineType)
-		if(thinkpad == this.machineType) {
+		if (thinkpad == this.machineType) {
 			this.add = 0;//thinkpad
 			this.initPowerSmartSettingsForThinkPad();
-		} else if(ideapad == this.machineType) {
+		} else if (ideapad == this.machineType) {
 			this.add = 10;//Ideapad
 			this.initPowerSmartSettingsForIdeaPad();
 		}
@@ -89,14 +90,14 @@ export class PowerSmartSettingsComponent implements OnInit {
 		try {
 			let response = await this.powerService.getITSModeForICIdeapad();
 			console.log("getITSModeForICIdeapad: " + response);
-			if(response && response.available) {
-				if(response.itsVersion == 3) {
+			if (response && response.available) {
+				if (response.itsVersion == 3) {
 					this.intelligentCoolingModes = IntelligentCoolingHardware.ITS13;
 					this.showIntelligentCoolingToggle = true;
 					this.showIC = response.itsVersion + this.add;
 					this.captionText = this.translate.instant("device.deviceSettings.power.powerSmartSettings.description13");
 					let currentMode = IntelligentCoolingModes.getModeForIdeaPadITS3(response.currentMode);
-					if(currentMode == IntelligentCoolingModes.Error) {
+					if (currentMode == IntelligentCoolingModes.Error) {
 						// need to make toggle button on
 						let customEvent = { switchValue: true }
 						this.onIntelligentCoolingToggle(customEvent, false);
@@ -104,7 +105,7 @@ export class PowerSmartSettingsComponent implements OnInit {
 						// need to make toggle button off
 						this.setPerformanceAndCool(currentMode);
 					}
-				} else if(response.itsVersion == 4) {
+				} else if (response.itsVersion == 4) {
 					this.intelligentCoolingModes = IntelligentCoolingHardware.ITS14;
 					this.showIntelligentCoolingToggle = false;
 					this.showIC = response.itsVersion + this.add;
@@ -120,16 +121,16 @@ export class PowerSmartSettingsComponent implements OnInit {
 	}
 
 	updateSelectedModeText(mode: IntelligentCoolingModes) {
-		switch(mode) {
+		switch (mode) {
 			case IntelligentCoolingModes.Cool:
 				this.selectedModeText = this.translate.instant("device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.quiteCool");
 				break;
 			case IntelligentCoolingModes.Performance:
-					this.selectedModeText = this.translate.instant("device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.performance");
-					break;
+				this.selectedModeText = this.translate.instant("device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.performance");
+				break;
 			case IntelligentCoolingModes.BatterySaving:
-					this.selectedModeText = this.translate.instant("device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.batterySaving");
-					break;
+				this.selectedModeText = this.translate.instant("device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.batterySaving");
+				break;
 		}
 	}
 
@@ -276,7 +277,7 @@ export class PowerSmartSettingsComponent implements OnInit {
 	private async setAutoModeSetting(event: any) {
 		try {
 			if (this.intelligentCoolingModes == IntelligentCoolingHardware.ITS13) {
-				if(event.switchValue) {
+				if (event.switchValue) {
 					await this.setPowerSmartSettingsForIdeaPad(IntelligentCoolingModes.Error.ideapadType3)
 				} else {
 					await this.setPowerSmartSettingsForIdeaPad(IntelligentCoolingModes.Performance.ideapadType3)
@@ -304,17 +305,14 @@ export class PowerSmartSettingsComponent implements OnInit {
 			if (this.intelligentCoolingModes == IntelligentCoolingHardware.ITS13) {
 				await this.powerService.setITSModeForICIdeapad(mode.ideapadType3);
 				this.setPerformanceAndCool(mode)
-			}
-			if (this.intelligentCoolingModes == IntelligentCoolingHardware.ITS14) {
+			} else if (this.intelligentCoolingModes == IntelligentCoolingHardware.ITS14) {
 				this.updateSelectedModeText(mode);
 				await this.powerService.setITSModeForICIdeapad(mode.ideapadType4);
 				this.setPerformanceAndCool(mode)
-			}
-			if (this.intelligentCoolingModes == IntelligentCoolingHardware.Legacy) {
+			} else if (this.intelligentCoolingModes == IntelligentCoolingHardware.Legacy) {
 				await this.setLegacyManualModeState(mode.status);
 				this.setPerformanceAndCool(mode)
-			}
-			else if (this.powerService.isShellAvailable) {
+			} else if (this.powerService.isShellAvailable) {
 				this.powerService
 					.setManualModeSetting(mode.type)
 					.then((value: boolean) => {
@@ -421,7 +419,7 @@ export class PowerSmartSettingsComponent implements OnInit {
 
 	coolingModesPopUp() {
 		console.log("modal open");
-		this.modalService.open(ModalIntelligentCoolingModesComponent,  {
+		this.modalService.open(ModalIntelligentCoolingModesComponent, {
 			backdrop: 'static',
 			size: 'sm',
 			centered: true,

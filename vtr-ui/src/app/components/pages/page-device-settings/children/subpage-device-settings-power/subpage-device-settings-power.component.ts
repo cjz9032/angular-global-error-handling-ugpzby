@@ -856,8 +856,13 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	showPowerSettings() {
-		// return !this.isDesktopMachine || this.showEasyResumeSection || this.usbChargingInBatteryModeStatus;
-		// return false;
+
+		if (!(!this.isDesktopMachine || this.showEasyResumeSection)) {
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
+		}
+
+		//return !this.isDesktopMachine || this.showEasyResumeSection || this.usbChargingInBatteryModeStatus;
 		return !this.isDesktopMachine || this.showEasyResumeSection;
+		//return !this.isDesktopMachine || this.showEasyResumeSection;
 	}
 }
