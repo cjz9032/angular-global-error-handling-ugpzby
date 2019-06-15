@@ -17,7 +17,7 @@ import { MacroKeyInputChange } from 'src/app/data-models/gaming/macrokey/macroke
 @Component({
 	selector: 'vtr-widget-macrokey-settings',
 	templateUrl: './widget-macrokey-settings.component.html',
-	styleUrls: [ './widget-macrokey-settings.component.scss' ]
+	styleUrls: ['./widget-macrokey-settings.component.scss']
 })
 export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	macroKeyOptions: any = [
@@ -49,20 +49,18 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	macroKeyTypeStatus: MacroKeyTypeStatus = new MacroKeyTypeStatus();
 	macroKeyRecordedStatus: MacroKeyRecordedChange[];
 	macroKeyInputData: MacroKeyInputChange = new MacroKeyInputChange();
-
 	constructor(
 		private macroKeyService: MacrokeyService,
 		private shellService: VantageShellService,
 		private router: Router,
 		private commonService: CommonService,
 		private gamingCapabilityService: GamingAllCapabilitiesService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.gamingProperties.macroKeyFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.macroKeyFeature
 		);
-
 		this.initMacroKeySubpage();
 		this.commonService.notification.subscribe((response) => {
 			if (response.type === Gaming.GamingCapablities) {
@@ -70,6 +68,10 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 				this.initMacroKeySubpage();
 			}
 		});
+		// Load all the cache status for Macrokey
+		this.macroKeyTypeStatus = this.macroKeyService.getMacrokeyTypeStatusCache();
+		this.macroKeyRecordedStatus = this.macroKeyService.getMacrokeyRecordedStatusCache();
+		this.macroKeyInputData = this.macroKeyService.getMacrokeyInputChangeCache();
 	}
 
 	initMacroKeySubpage() {
@@ -122,7 +124,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	}
 
 	redirectBack() {
-		this.router.navigate([ 'dashboard' ]);
+		this.router.navigate(['dashboard']);
 	}
 
 	onGamingMacroKeyInitializeEvent(macroKeyTypeEventResponse: any) {
@@ -132,8 +134,9 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	}
 
 	updateMacroKeyTypeStatusDetails(macroKeyTypeEventStatus) {
-		// TODO: Update cache for macrokeytypestatus
+		// TODO: Update cache for macrokey type
 		this.macroKeyTypeStatus = macroKeyTypeEventStatus;
+		this.macroKeyService.setMacrokeyTypeStatusCache(this.macroKeyTypeStatus);
 		if (this.macroKeyTypeStatus.MacroKeyType === 1) {
 			this.isNumpad = false;
 		} else {
@@ -149,6 +152,8 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 
 	updateMacroKeyRecordedStatusDetails(macroKeyRecordedChangeEventStatus) {
 		this.macroKeyRecordedStatus = macroKeyRecordedChangeEventStatus;
+		// TODO: Update cache for macrokey
+		this.macroKeyService.setMacrokeyRecordedStatusCache(this.macroKeyRecordedStatus);
 		if (!isUndefined(this.numberSelected)) {
 			this.numberSelected = this.macroKeyRecordedStatus.filter(
 				(number) => number.key === this.numberSelected.key
@@ -165,6 +170,8 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	updateMacroKeyKeyChangeDetails(macroKeyKeyChangeEventData) {
 		if (macroKeyKeyChangeEventData) {
 			this.macroKeyInputData = macroKeyKeyChangeEventData;
+			// Setting the value from cache
+			this.macroKeyService.setMacrokeyInputChangeCache(this.macroKeyInputData);
 			this.numberSelected = this.macroKeyRecordedStatus.filter(
 				(number) => number.key === macroKeyKeyChangeEventData.key
 			)[0];
@@ -174,8 +181,9 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	optionChanged(option: any) {
 		this.macroKeyService.setMacroKeyApplyStatus(option.value).then((responseStatus) => {
 			if (responseStatus) {
-				// TODO: Set macroKey Type Status to cache
+				// // Setting the value of macrokey status dropdown
 				this.macroKeyTypeStatus.MacroKeyStatus = option.value;
+				this.macroKeyService.setMacrokeyChangeStatusCache(this.macroKeyTypeStatus);
 			}
 		});
 	}
@@ -214,6 +222,8 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 
 	updateMacroKeyInputDetails(macroKeyInputChangeData) {
 		if (macroKeyInputChangeData) {
+			// TODO: Update cache for macrokey type
+			this.macroKeyService.setMacrokeyInputChangeCache(this.macroKeyInputData);
 			this.macroKeyInputData.macro.inputs = macroKeyInputChangeData;
 		}
 	}
