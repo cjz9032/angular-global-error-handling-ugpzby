@@ -5,6 +5,10 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { LightingCapabilities } from 'src/app/data-models/gaming/lighting-capabilities';
 import { LightingProfile } from 'src/app/data-models/gaming/lighting-profile';
+import { Color } from '../../pages/page-privacy/utils/fl-tracking-map/tracking-map-base/Color';
+import { LightingProfileEffectColorNUmber, LightingProfileEffectColorString } from 'src/app/data-models/gaming/lighting-profile-effect-color';
+import { isUndefined } from 'util';
+
 
 @Component({
 	selector: 'vtr-ui-lighting-profile',
@@ -30,6 +34,10 @@ export class UiLightingProfileComponent implements OnInit {
 	public lightingProfile: LightingProfile;
 	public lightInfo: any;
 	public dropOptions: any;
+	public dropDataChanges: any;
+	public lightingProfileEffectColorNUmber: LightingProfileEffectColorNUmber;
+	public frontSelectedValue: any;
+	public sideSelectedValue: any;
 	public lightingEffectData = {
 		drop: [
 			{
@@ -217,11 +225,72 @@ export class UiLightingProfileComponent implements OnInit {
 			this.isProfileOff = true;
 		}
 	}
-	public optionChanged($event, item) {
-		console.log("event raised for color effect-------------------", $event);
 
-	};
+	// ngOnChanges(changes) {
+	// 	if (!isUndefined(changes)) {
+	// 		if (!isUndefined(changes.dropDataChanges)) {
+	// 			console.log('sat**********************************', this.dropDataChanges.topdata);
+	// 			this.frontSelectedValue = this.dropDataChanges.topdata;
+	// 			//this.delaySelectedValue = recordsData.interval;
 
+	// 		}
+	// 	}
+	// }
+	public optionChangedRGBTop($event, item) {
+		console.log('event raised for color effect top RGB-------------------', $event);
+		if (this.lightingProfileEffectColorNUmber === undefined) {
+			this.lightingProfileEffectColorNUmber = new LightingProfileEffectColorNUmber();
+		}
+		this.lightingProfileEffectColorNUmber.profileId = this.currentProfileId;
+		this.lightingProfileEffectColorNUmber.lightingPanelType = this.lightingCapabilities.LightPanelType[0];
+		this.lightingProfileEffectColorNUmber.lightingEffectType = $event.value;
+
+		if (this.gamingLightingService.isShellAvailable) {
+			this.gamingLightingService.setLightingProfileEffectColor(this.lightingProfileEffectColorNUmber).then((response: any) => {
+				console.log(
+					'setLightingProfileEffectColor top------------------------>',
+					JSON.stringify(response)
+				);
+			});
+		}
+
+	}
+	public optionChangedRGBSide($event, item) {
+		console.log('event raised for color effect side RGB-------------------', $event);
+		if (this.lightingProfileEffectColorNUmber === undefined) {
+			this.lightingProfileEffectColorNUmber = new LightingProfileEffectColorNUmber();
+		}
+		this.lightingProfileEffectColorNUmber.profileId = this.currentProfileId;
+		this.lightingProfileEffectColorNUmber.lightingPanelType = this.lightingCapabilities.LightPanelType[1];
+		this.lightingProfileEffectColorNUmber.lightingEffectType = $event.value;
+
+		if (this.gamingLightingService.isShellAvailable) {
+			this.gamingLightingService.setLightingProfileEffectColor(this.lightingProfileEffectColorNUmber).then((response: any) => {
+				console.log(
+					'setLightingProfileEffectColor side------------------------>',
+					JSON.stringify(response)
+				);
+			});
+		}
+	}
+	changeSingleCoorEffect($event) {
+		console.log('single color option change fired------------------------------', $event);
+		if (this.lightingProfileEffectColorNUmber === undefined) {
+			this.lightingProfileEffectColorNUmber = new LightingProfileEffectColorNUmber();
+		}
+		this.lightingProfileEffectColorNUmber.profileId = this.currentProfileId;
+		this.lightingProfileEffectColorNUmber.lightingPanelType = this.lightingCapabilities.LightPanelType[1];
+		this.lightingProfileEffectColorNUmber.lightingEffectType = $event;
+
+		if (this.gamingLightingService.isShellAvailable) {
+			this.gamingLightingService.setLightingProfileEffectColor(this.lightingProfileEffectColorNUmber).then((response: any) => {
+				console.log(
+					'setLightingProfileEffectColor side------------------------>',
+					JSON.stringify(response)
+				);
+			});
+		}
+	}
 	setDefaultProfile(event) {
 		try {
 			this.isOff = Number(event.target.value);
@@ -231,6 +300,31 @@ export class UiLightingProfileComponent implements OnInit {
 			}
 			else {
 				this.isProfileOff = false;
+
+				if (this.gamingLightingService.isShellAvailable) {
+					this.gamingLightingService.setLightingDefaultProfileById(this.currentProfileId).then((response: any) => {
+						console.log('setLightingDefaultProfileById------------response---------------->', JSON.stringify(response));
+						if (response.didSuccess) {
+
+							this.currentProfileId = response.profileId;
+							this.currentProfile = response.profileId;
+							this.profileBrightness = response.brightness;
+							if (response.lightInfo.length > 0) {
+								console.log('setLightingDefaultProfileById------------ --------------------------------------------------------->', JSON.stringify(response.lightInfo[0].lightEffectType));
+								this.frontSelectedValue = response.lightInfo[0].lightEffectType;
+								this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
+								if (response.lightInfo.length > 1) {
+									this.sideSelectedValue = response.lightInfo[1].lightEffectType;
+									this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
+								}
+							}
+						}
+						else {
+							this.isProfileOff = false;
+						}
+					});
+				}
+
 			}
 			console.log('fired.....');
 		} catch (error) {
@@ -239,6 +333,7 @@ export class UiLightingProfileComponent implements OnInit {
 	}
 	setDefaultProfileFromLighting($event) {
 		console.log('profile button clicked------------------------');
+		const name = $event.name;
 	}
 
 	public getGamingLightingCapabilities() {
@@ -329,12 +424,19 @@ export class UiLightingProfileComponent implements OnInit {
 				this.gamingLightingService.getLightingProfileById(currProfileId).then((response: any) => {
 					console.log('getLightingProfileById------------response---------------->', JSON.stringify(response));
 					if (response.didSuccess) {
-						console.log('getLightingProfileById------------ ---------------->', JSON.stringify(response.lightInfo));
+
+
+						this.currentProfileId = response.profileId;
 						this.currentProfile = response.profileId;
 						this.profileBrightness = response.brightness;
 						if (response.lightInfo.length > 0) {
+						//	this.dropDataChanges.topdata = response.lightInfo[0].lightEffectType;
+							this.frontSelectedValue = response.lightInfo[0].lightEffectType;
+							console.log('sateesh------------------------------------------- ---------------->', this.frontSelectedValue);
 							this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
+
 							if (response.lightInfo.length > 1) {
+								this.sideSelectedValue = response.lightInfo[1].lightEffectType;
 								this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
 							}
 						}
@@ -382,7 +484,9 @@ export class UiLightingProfileComponent implements OnInit {
 					if (response.didSuccess) {
 						if (response.lightInfo.length > 0) {
 							this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
+							this.frontSelectedValue = response.lightInfo[0].lightEffectType;
 							if (response.lightInfo.length > 1) {
+								this.sideSelectedValue = response.lightInfo[1].lightEffectType;
 								this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
 							}
 						}
@@ -395,14 +499,14 @@ export class UiLightingProfileComponent implements OnInit {
 		}
 
 	}
-	public color = {
-		profileId: 1,
-		lightPanelType: 32,
-		lightColor: 'FF0000'
-	};
+	// public color = {
+	// 	profileId: 1,
+	// 	lightPanelType: 32,
+	// 	lightColor: 'FF0000'
+	// };
 	public setLightingProfileEffectColor() {
 		if (this.gamingLightingService.isShellAvailable) {
-			this.gamingLightingService.setLightingProfileEffectColor(this.color).then((response: any) => {
+			this.gamingLightingService.setLightingProfileEffectColor(this.lightingProfileEffectColorNUmber).then((response: any) => {
 				console.log(
 					'setLightingProfileEffectColor ------------------------>',
 					JSON.stringify(response)
