@@ -63,7 +63,7 @@ const routes: Routes = [
 			pageName: 'Hardwarescan'
 		}
 	}, {
-		path: 'lightingcustomize',
+		path: 'lightingcustomize/:id',
 		component: PageLightingcustomizeComponent,
 		canDeactivate: [GuardService],
 		canActivate: [GuardService],
@@ -130,7 +130,7 @@ const routes: Routes = [
 				canActivate: [GuardService],
 				data: {
 					pageName: 'Device.MyDeviceSettings'
-				}	
+				}
 			}
 		]
 	},
