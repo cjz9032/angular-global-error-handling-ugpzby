@@ -430,7 +430,7 @@ export class UiLightingProfileComponent implements OnInit {
 						this.currentProfile = response.profileId;
 						this.profileBrightness = response.brightness;
 						if (response.lightInfo.length > 0) {
-						//	this.dropDataChanges.topdata = response.lightInfo[0].lightEffectType;
+							//	this.dropDataChanges.topdata = response.lightInfo[0].lightEffectType;
 							this.frontSelectedValue = response.lightInfo[0].lightEffectType;
 							console.log('sateesh------------------------------------------- ---------------->', this.frontSelectedValue);
 							this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
