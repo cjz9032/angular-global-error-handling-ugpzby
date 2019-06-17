@@ -50,6 +50,7 @@
 		font-weight: 500;
 		line-height: 2.3rem;
 		letter-spacing: 0.5px;
+		text-transform: initial;
 
 		&--expanded {
 			@extend %button-link--open;
@@ -63,6 +64,16 @@
 
 			&:hover{
 				color: #C2C9CF;
+			}
+		}
+
+		&--action {
+			text-transform: uppercase;
+			border-bottom: 1px solid #2D62D8;
+			padding: 0;
+			&:before {
+				display: none;
+				background-image: none;
 			}
 		}
   }

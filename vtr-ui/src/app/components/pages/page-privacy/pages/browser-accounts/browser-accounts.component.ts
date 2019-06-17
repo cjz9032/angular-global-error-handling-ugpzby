@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
-import { distinctUntilChanged, map, startWith } from 'rxjs/operators';
+import { distinctUntilChanged, map } from 'rxjs/operators';
 import { FeaturesStatuses } from '../../userDataStatuses';
 import { UserDataGetStateService } from '../../common/services/user-data-get-state.service';
 import { BrowserAccountsService } from '../../common/services/browser-accounts.service';
@@ -13,7 +13,7 @@ import { CountNumberOfIssuesService } from '../../common/services/count-number-o
 })
 export class BrowserAccountsComponent {
 	browserStoredAccountsData = {showDetailAction: 'expand'};
-	isFigleafInstalled$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
+	isFigleafReadyForCommunication$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
 	isNonPrivatePasswordWasScanned$ = this.userDataGetStateService.userDataStatus$.pipe(
 		map((userDataStatus) =>
 			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.undefined &&

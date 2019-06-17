@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { InstalledBrowser } from '../../../../common/services/browser-accounts.service';
-import { CommunicationWithFigleafService } from '../../../../utils/communication-with-figleaf/communication-with-figleaf.service';
 
 @Component({
 	selector: 'vtr-installed-browser',
@@ -13,6 +12,7 @@ export class InstalledBrowserComponent {
 	@Input() installedBrowser: InstalledBrowser;
 	@Input() index: number;
 	@Input() isDetailsExpanded = false;
+	@Input() isFigleafInstalled = false;
 
 	@Output() openAccordion = new EventEmitter<number>();
 
@@ -21,13 +21,12 @@ export class InstalledBrowserComponent {
 		howToFix: 'Avoid reusing and storing your passwords in your browsers. Create strong, unique passwords for every account with Lenovo Privacy by FigLeaf and store them in encrypted form on your PC.'
 	};
 
-	isFigleafInstalled$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
-
-	constructor(private communicationWithFigleafService: CommunicationWithFigleafService) {
-	}
-
 	trackAccountsById(index) {
 		return index;
+	}
+
+	openPopup() {
+		console.log(123);
 	}
 
 }
