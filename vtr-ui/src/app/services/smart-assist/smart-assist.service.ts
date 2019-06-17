@@ -47,6 +47,15 @@ export class SmartAssistService {
 		return this.intelligentSensing.GetHPDGlobalSetting();
 	}
 
+	/**
+	 * set value for global HPD setting
+	 */
+	public setHPDStatus(value: boolean): Promise<boolean> {
+		// HPD global switch status. true means enable, false means disable
+		const option = value ? 'True' : 'False';
+		return this.intelligentSensing.SetHPDGlobalSetting(option);
+	}
+
 	public getZeroTouchLockVisibility(): Promise<boolean> {
 		// Get Auto Screen Lock section visibility
 		return this.intelligentSensing.GetHPDLeaveCapability();

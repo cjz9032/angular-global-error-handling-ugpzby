@@ -171,10 +171,10 @@ export class PageSmartAssistComponent implements OnInit {
 		}
 	}
 
-	public onHumanPresenceDetectStatusToggle($event) {
-		this.intelligentSecurity.isHPDEnabled = !this.intelligentSecurity.isHPDEnabled;
+	public onHumanPresenceDetectStatusToggle($event: any) {
+		this.intelligentSecurity.isHPDEnabled = $event.switchValue;
+		this.intelligentSecurityCopy = { ...this.intelligentSecurity };
 		if (!this.intelligentSecurity.isHPDEnabled) {
-			this.intelligentSecurityCopy = { ...this.intelligentSecurity };
 			this.intelligentSecurity.isZeroTouchLoginEnabled = false;
 			this.intelligentSecurity.isZeroTouchLockEnabled = false;
 			this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = false;
@@ -183,6 +183,11 @@ export class PageSmartAssistComponent implements OnInit {
 			this.intelligentSecurity.isZeroTouchLockEnabled = this.intelligentSecurityCopy.isZeroTouchLockEnabled;
 			this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = this.intelligentSecurityCopy.isZeroTouchLoginAdjustEnabled;
 		}
+
+		this.smartAssist.setHPDStatus(this.intelligentSecurity.isHPDEnabled)
+			.then((isSuccess: boolean) => {
+				console.log('onHumanPresenceDetectStatusToggle.setHPDStatus', isSuccess, this.intelligentSecurity.isHPDEnabled);
+			});
 	}
 
 	public onZeroTouchLoginStatusToggle(event: any) {
