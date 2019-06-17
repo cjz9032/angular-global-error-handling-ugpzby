@@ -1,8 +1,9 @@
-import { Component, OnInit, Input, HostListener } from '@angular/core';
+import { Component, OnInit, Input, HostListener, Output, EventEmitter } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalLenovoIdComponent } from '../../modal/modal-lenovo-id/modal-lenovo-id.component';
 import { UserService } from 'src/app/services/user/user.service';
 import { HomeSecurityMockService } from 'src/app/services/home-security/home-security.service';
+import { CHSAccountState, ConnectedHomeSecurity, EventTypes } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'vtr-widget-home-security-device',
@@ -11,9 +12,13 @@ import { HomeSecurityMockService } from 'src/app/services/home-security/home-sec
 })
 
 export class WidgetHomeSecurityDeviceComponent implements OnInit {
-	@Input() subscription;
-	url = 'https://vantagestore.lenovo.com/en/shop/product/connectedhomesecurityoneyearlicense-windows';
-	device = [{
+	@Input() state;
+	@Input() login: Boolean;
+	@Output() upgradeAccount = new EventEmitter<boolean>();
+	@Output() startTrial = new EventEmitter<boolean>();
+
+	connectedHomeSecurity: ConnectedHomeSecurity;
+	device = {
 		title: 'homeSecurity.thisDevice',
 		status: 'protected',
 		badge: [
@@ -21,8 +26,7 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 				type: 'lidBadge',
 				status: 'loading',
 				text: 'common.securityAdvisor.loading',
-				clickEvent() { },
-				expiredUrl: 'javascript:void(0);'
+				onClick() { },
 			},
 			{
 				type: 'accountBadge',
@@ -33,8 +37,8 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 				status: undefined
 			}
 		],
-	}];
-	allDevice = [{
+	};
+	allDevice = {
 		title: 'homeSecurity.allDevices',
 		status: 'not-protected',
 		badge: [
@@ -42,43 +46,45 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 				type: 'lidBadge',
 				status: 'loading',
 				text: 'common.securityAdvisor.loading',
-				clickEvent() { },
-				expiredUrl: 'javascript:void(0);'
+				onClick() { },
 			},
 			{
 				type: 'accountBadge',
 				status: 'loading',
 				text: 'common.securityAdvisor.loading',
-				clickEvent() { },
-				expiredUrl: 'javascript:void(0);'
+				onClick() { },
 			},
 			{
 				type: 'trialBadge',
 				status: 'loading',
 				text: 'common.securityAdvisor.loading',
-				clickEvent() { },
-				expiredUrl: 'javascript:void(0);'
+				onClick() { },
 			}
 		],
-	}];
+	};
 	constructor(public modalService: NgbModal,
 		public userService: UserService,
 		public homeSecurityMockService: HomeSecurityMockService) {
+		this.connectedHomeSecurity = homeSecurityMockService.getConnectedHomeSecurity();
 	}
 
-	// @HostListener('window:focus')
-	// onFocus(): void {
-	// 	this.creatViewModel();
-	// }
-
-	ngOnInit() {
+	@HostListener('window:focus')
+	onFocus(): void {
 		this.creatViewModel();
 	}
 
+	ngOnInit() {
+		this.creatViewModel();
+		this.connectedHomeSecurity.on(EventTypes.chsEvent, (data) => {
+			this.state = data.account.state;
+			this.creatViewModel();
+		});
+	}
+
 	creatViewModel() {
-		const deviceBadge = this.device[0];
-		const allDevice = this.allDevice[0];
-		switch (this.subscription) {
+		const deviceBadge = this.device;
+		const allDevice = this.allDevice;
+		switch (this.state) {
 			case 'trial':
 				Object.assign(deviceBadge, {
 					badge: [
@@ -86,8 +92,7 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 							type: 'lidBadge',
 							status: 'enabled',
 							text: 'homeSecurity.inEcosystem',
-							clickEvent() { },
-							expiredUrl: 'javascript:void(0);'
+							onClick() { },
 						},
 						{
 							type: 'accountBadge',
@@ -106,22 +111,19 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 							type: 'lidBadge',
 							status: 'enabled',
 							text: 'homeSecurity.ecosystemEnable',
-							clickEvent() { },
-							expiredUrl: 'javascript:void(0);'
+							onClick() { },
 						},
 						{
 							type: 'accountBadge',
 							status: 'disabled',
 							text: 'homeSecurity.upgrade',
-							clickEvent() { },
-							expiredUrl: this.url
+							onClick: this.emitUpgradeAccount.bind(this),
 						},
 						{
 							type: 'trialBadge',
 							status: 'enabled',
 							text: 'homeSecurity.inTrial',
-							clickEvent() { },
-							expiredUrl: this.url
+							onClick: this.emitUpgradeAccount.bind(this),
 						}
 					],
 				});
@@ -133,8 +135,7 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 							type: 'lidBadge',
 							status: 'enabled',
 							text: 'homeSecurity.inEcosystem',
-							clickEvent() { },
-							expiredUrl: 'javascript:void(0);'
+							onClick() { },
 						},
 						{
 							type: 'accountBadge',
@@ -153,35 +154,31 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 							type: 'lidBadge',
 							status: 'enabled',
 							text: 'homeSecurity.ecosystemEnable',
-							clickEvent() { },
-							expiredUrl: 'javascript:void(0);'
+							onClick() { },
 						},
 						{
 							type: 'accountBadge',
 							status: 'disabled',
 							text: 'homeSecurity.upgrade',
-							clickEvent() { },
-							expiredUrl: this.url
+							onClick: this.emitUpgradeAccount.bind(this),
 						},
 						{
 							type: 'trialBadge',
 							status: 'disabled',
 							text: 'homeSecurity.trialExpired',
-							clickEvent() { },
-							expiredUrl: this.url
+							onClick: this.emitUpgradeAccount.bind(this),
 						}
 					],
 				});
 				break;
-			case 'upgraded':
+			case 'standard':
 				Object.assign(deviceBadge, {
 					badge: [
 						{
 							type: 'lidBadge',
 							status: 'enabled',
 							text: 'homeSecurity.inEcosystem',
-							clickEvent() { },
-							expiredUrl: 'javascript:void(0);'
+							onClick() { },
 						},
 						{
 							type: 'accountBadge',
@@ -200,15 +197,13 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 							type: 'lidBadge',
 							status: 'enabled',
 							text: 'homeSecurity.ecosystemEnable',
-							clickEvent() { },
-							expiredUrl: 'javascript:void(0);',
+							onClick() { },
 						},
 						{
 							type: 'accountBadge',
 							status: 'enabled',
 							text: 'homeSecurity.fullAccess',
-							clickEvent() { },
-							expiredUrl: 'javascript:void(0);',
+							onClick() { },
 						},
 						{
 							type: 'trialBadge',
@@ -217,15 +212,14 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 					],
 				});
 				break;
-			case 'upgradedExpired':
+			case 'standardExpired':
 				Object.assign(deviceBadge, {
 					badge: [
 						{
 							type: 'lidBadge',
 							status: 'enabled',
 							text: 'homeSecurity.inEcosystem',
-							clickEvent() { },
-							expiredUrl: 'javascript:void(0);'
+							onClick() { },
 						},
 						{
 							type: 'accountBadge',
@@ -244,15 +238,13 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 							type: 'lidBadge',
 							status: 'enabled',
 							text: 'homeSecurity.ecosystemEnable',
-							expiredUrl: 'javascript:void(0);',
-							clickEvent() { },
+							onClick() { },
 						},
 						{
 							type: 'accountBadge',
 							status: 'disabled',
 							text: 'homeSecurity.renew',
-							expiredUrl: this.url,
-							clickEvent() { },
+							onClick: this.emitUpgradeAccount.bind(this),
 						},
 						{
 							type: 'trialBadge',
@@ -261,87 +253,108 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 					],
 				});
 				break;
-			case 'localAccount':
-				Object.assign(deviceBadge, {
-					badge: [
-						{
-							type: 'lidBadge',
-							status: 'disabled',
-							text: 'homeSecurity.addEcosystem',
-							clickEvent: this.launchLenovoId.bind(this),
-							expiredUrl: 'javascript:void(0);'
-						},
-						{
-							type: 'accountBadge',
-							status: undefined,
-						},
-						{
-							type: 'trialBadge',
-							status: undefined,
-						}
-					],
-				});
-				Object.assign(allDevice, {
-					status: 'not-protected',
-					badge: [
-						{
-							type: 'lidBadge',
-							status: 'disabled',
-							text: 'homeSecurity.enableEcosystem',
-							clickEvent: this.launchLenovoId.bind(this),
-							expiredUrl: 'javascript:void(0);'
-						},
-						{
-							type: 'accountBadge',
-							status: undefined,
-						},
-						{
-							type: 'trialBadge',
-							status: undefined,
-						}
-					],
-				});
+			case 'local':
+				if (this.login) {
+					Object.assign(deviceBadge, {
+						badge: [
+							{
+								type: 'lidBadge',
+								status: 'enabled',
+								text: 'homeSecurity.inEcosystem',
+								onClick() { },
+							},
+							{
+								type: 'accountBadge',
+								status: undefined,
+							},
+							{
+								type: 'trialBadge',
+								status: undefined,
+							}
+						],
+					});
+					Object.assign(allDevice, {
+						status: 'not-protected',
+						badge: [
+							{
+								type: 'lidBadge',
+								status: 'enabled',
+								text: 'homeSecurity.ecosystemEnable',
+								onClick() { },
+							},
+							{
+								type: 'accountBadge',
+								status: undefined,
+							},
+							{
+								type: 'trialBadge',
+								status: 'disabled',
+								text: 'homeSecurity.startTrial',
+								onClick: this.emitStartTrial.bind(this),
+							}
+						],
+					});
+				} else {
+					Object.assign(deviceBadge, {
+						badge: [
+							{
+								type: 'lidBadge',
+								status: 'disabled',
+								text: 'homeSecurity.addEcosystem',
+								onClick: this.launchLenovoId.bind(this),
+							},
+							{
+								type: 'accountBadge',
+								status: undefined,
+							},
+							{
+								type: 'trialBadge',
+								status: undefined,
+							}
+						],
+					});
+					Object.assign(allDevice, {
+						status: 'not-protected',
+						badge: [
+							{
+								type: 'lidBadge',
+								status: 'disabled',
+								text: 'homeSecurity.enableEcosystem',
+								onClick: this.launchLenovoId.bind(this),
+							},
+							{
+								type: 'accountBadge',
+								status: undefined,
+							},
+							{
+								type: 'trialBadge',
+								status: undefined,
+							}
+						],
+					});
+				}
 				break;
-			case 'localWithLid':
-				Object.assign(deviceBadge, {
-					badge: [
-						{
-							type: 'lidBadge',
-							status: 'enabled',
-							text: 'homeSecurity.inEcosystem',
-							clickEvent() { },
-							expiredUrl: 'javascript:void(0);'
-						},
-						{
-							type: 'accountBadge',
-							status: undefined,
-						},
-						{
-							type: 'trialBadge',
-							status: undefined,
-						}
-					],
-				});
+			default:
 				Object.assign(allDevice, {
-					status: 'not-protected',
+					status: 'protected',
 					badge: [
 						{
 							type: 'lidBadge',
 							status: 'enabled',
-							text: 'homeSecurity.ecosystemEnable',
-							clickEvent() { },
-							expiredUrl: 'javascript:void(0);'
+							text: 'just use to tests',
+							onClick() { },
 						},
 						{
 							type: 'accountBadge',
-							status: undefined,
+							status: 'enabled',
+							text: 'just use to test for',
+							onClick() { },
 						},
 						{
 							type: 'trialBadge',
-							status: 'disabled',
-							text: 'homeSecurity.startTrial',
-							clickEvent: this.startTrial.bind(this),
-							expiredUrl: 'javascript:void(0);'
+							status: 'enabled',
+							text: 'just use to test for character',
+							onClick() { },
 						}
 					],
 				});
@@ -356,19 +369,28 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 		});
 	}
 
+	emitUpgradeAccount() {
+		this.upgradeAccount.emit();
+	}
+
+	emitStartTrial() {
+		this.startTrial.emit();
+	}
+
 	switchMock() {
-		const subscription = ['upgraded', 'upgradedExpired', 'trial', 'trialExpired', 'localAccount', 'localWithLid'];
+		const state = [CHSAccountState.standard, CHSAccountState.standardExpired, CHSAccountState.trial, CHSAccountState.trialExpired, CHSAccountState.local, 'character'];
 		const i = this.homeSecurityMockService.id;
-		console.log(this.homeSecurityMockService.id);
 		if (this.homeSecurityMockService.id < 5) {
 			this.homeSecurityMockService.id++;
 		} else { this.homeSecurityMockService.id = 0; }
-		this.homeSecurityMockService.account.subscription = subscription[i];
+		this.homeSecurityMockService.getConnectedHomeSecurity().account.state = <CHSAccountState>state[i];
 		this.creatViewModel();
 	}
 
-	startTrial() {
-		this.subscription = 'trial';
+	logout() {
+		this.login ? this.login = false : this.login = true;
 		this.creatViewModel();
 	}
+
+
 }

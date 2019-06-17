@@ -116,22 +116,6 @@ export class SystemUpdateService {
 		}
 	}
 
-	private mapStatusToMessage(status: number) {
-		let errorMessage = 'failure';
-		for (const errorkey of Object.getOwnPropertyNames(SystemUpdateStatusMessage)) {
-			const errorStatus = SystemUpdateStatusMessage[errorkey];
-			if (errorStatus.code === status) {
-				errorMessage = errorStatus.message;
-				break;
-			}
-		}
-		return errorMessage;
-	}
-
-	public mapPackageListToIdString(updateList: Array<AvailableUpdateDetail>) {
-		return updateList.map(item => item.packageID).join(',');
-	}
-
 	public checkForUpdates() {
 		// checkForUpdates requires callback
 		const timeStartSearch = new Date();
@@ -153,21 +137,11 @@ export class SystemUpdateService {
 					this.isUpdatesAvailable = true;
 					this.updateInfo = { status: status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
 					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
-					this.metricHelper.sendSystemUpdateMetric(
-						this.updateInfo.updateList.length,
-						this.mapPackageListToIdString(this.updateInfo.updateList),
-						'success',
-						MetricHelper.timeSpan(new Date(), timeStartSearch));
 				} else {
 					this.percentCompleted = 0;
 					const payload = { ...response, status };
 					this.isInstallationSuccess = this.getInstallationSuccess(payload);
 					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, payload);
-					this.metricHelper.sendSystemUpdateMetric(
-						0,
-						'',
-						this.mapStatusToMessage(status),
-						MetricHelper.timeSpan(new Date(), timeStartSearch));
 				}
 			}).catch((error) => {
 				this.metricHelper.sendSystemUpdateMetric(
@@ -612,6 +586,7 @@ export class SystemUpdateService {
 	}
 
 	private mapScheduleInstallResponse(updateTaskList: Array<any>): AvailableUpdate {
+		this.installedUpdates = [];
 		const updates: Array<AvailableUpdateDetail> = [];
 		const availableUpdate = new AvailableUpdate();
 		let installedCount = 0;
@@ -633,6 +608,7 @@ export class SystemUpdateService {
 			}
 			update.isInstalled = (update.installationStatus === UpdateActionResult.Success);
 			updates.push(update);
+			this.installedUpdates.push(update);
 		});
 		availableUpdate.status = (updateTaskList.length === installedCount) ? SystemUpdateStatusMessage.SUCCESS.code : SystemUpdateStatusMessage.FAILURE.code;
 		availableUpdate.updateList = updates;

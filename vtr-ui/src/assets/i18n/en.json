@@ -372,9 +372,17 @@
 			"button": "Give feedback",
 			"form": {
 				"email": "Email (optional)",
+				"question1": "Do you like the new style of Vantage?",
+				"question2": "Do you think the performance is acceptable?",
+				"question3": "Would you use the application more often in the future?",
+				"yes": "Yes",
+				"no": "No",
+				"tips1": "Please leave any additional comments",
 				"comments": "Comments...",
 				"button": "Submit",
 				"addScreenshot": "Add ScreenShot",
+				"sendFeedback": "Send Feedback",
+				"submitScreenShot": "Submit Screen Shot",
 				"messages": {
 					"feedbackSuccess": "Thank you for your feedback !"
 				}
@@ -714,6 +722,10 @@
 						"title": "Airplane Power Mode",
 						"description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
 					}
+				},
+				"energyStar": {
+					"title": "Energy Star",
+					"description": "AN ENERGY STAR CERTIFIED PRODUCT"
 				}
 			},
 			"audio": {
@@ -867,6 +879,12 @@
 						"blurMode": "Blur mode",
 						"comicMode": "Comic mode",
 						"sketchMode": "Sketch mode"
+					},
+					"cameraLoadingFailed": {
+						"inUseTitle": "CAMERA IS IN USE",
+						"inUseDescription": "Another app is using the camera. Close the app and try again.",
+						"loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
+						"loadingFailedDescription": "Close the app and try again."
 					}
 				}
 			},
@@ -879,6 +897,31 @@
 					"hiddenKeyboardFunctions": {
 						"title": "Hidden keyboard functions",
 						"description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+					},
+					"firstKeyObj": {
+						"tittle": "Fn + Tab",
+						"description": "enable zoom feature on high resolution displays",
+						"image": ""
+					},
+					"secondKeyObj": {
+						"tittle": "Fn + 4",
+						"description": "enter sleep mode",
+						"image": ""
+					},
+					"thirdKeyObj": {
+						"tittle": "Fn + D",
+						"description": "turn on and off Privacy Guard",
+						"image": ""
+					},
+					"fourthKeyObj": {
+						"tittle": "Fn + Q",
+						"description": "change between Performance mode and Quiet mode",
+						"image": ""
+					},
+					"fifthKeyObj": {
+						"tittle": "Fn + Space",
+						"description": "change keyboard backlight states",
+						"image": ""
 					}
 				}
 			}
@@ -970,7 +1013,24 @@
 				},
 				"manualActiveProtectionSuspension": {
 					"title": "Manual Active Protection Suspension",
-					"caption": "Allow me to manually suspend the Active Protection System"
+					"caption": "Allow me to manually suspend the Active Protection System",
+					"dropdown-title": "Suspend for",
+					"button": "Suspend Now"
+				},
+				"advanced": {
+					"description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+					"pen": {
+						"title": "Pen Input",
+						"description": "When pen input is used, Enable APS when pen input is out of range"
+					},
+					"touch": {
+						"title": "Touch Input",
+						"description": "When Touch input is used, Enable APS when touch input is not detected"
+					},
+					"hand": {
+						"title": "Hand proximity sensing on computer edges",
+						"description": "When tablet mode is enabled, Enable APS when hand is not detected"
+					}
 				}
 			},
 			"intelligentMedia": {
@@ -1082,6 +1142,27 @@
 			"releaseDate": "Release Date:",
 			"showAll": "Show All",
 			"noInstallationHistory": "No installation history available"
+		},
+		"statusCodeMessage": {
+			"commonFailure": "There is a problem in retrieving new Updates. Please try again later.",
+			"upToDate": "No updates are available. Your system is up to date.",
+			"egatherException": "An error occurred while gathering user information.",
+			"gatheringUserInfoException": "An error occurred while gathering user information.",
+			"certificateValidationException": "The Update Content Server is invalid. Please try again later.",
+			"downloadException": "An error occurred while downloading updates.",
+			"connectException": "Unable to connect to the Update Content Server.",
+			"notEnoughDiskSpace": "There is not enough disk space to perform the current task.",
+			"proxyAuthenticationException": "Incorrect Proxy user name or password.",
+			"proxyConnectionException": "Unable to connect to the proxy server.",
+			"autoScriptEvaluationException": "There was an error evaluating the auto configuration script.",
+			"localRepositoryConnectionFailureException": "Unable to connect to the Local Repository.",
+			"localRepositoryDatabaseException": "The local repository database could not be found or is corrupted.",
+			"networkInterruptedException": "The System Update Server is currently unavailable. Please try again later.",
+			"helpCenterInvalidServerException": "The System Update Server is invalid. Please try again later.",
+			"catalogNotFoundException": "There are no applicable updates found for your system.",
+			"catalogCrcErrorException": "The catalog for your system is currently being updated. Please try again later.",
+			"catalogErrorException": "An error was detected with the update catalog for your system on the System Update Server. Please try again later.",
+			"fileNotFoundException": "File not found."
 		}
 	},
 	"homeSecurity": {
@@ -1095,7 +1176,7 @@
 		"myDevice": "My Device",
 		"secure": "SECURE",
 		"needAttention": "NEEDS ATTENTION",
-		"manageAccount": "Manage Account",
+		"manageAccount": "Manage account",
 		"devices": "Devices",
 		"seeProtectedDevices": "See protected devices",
 		"addDevice": "add device",
@@ -1104,16 +1185,16 @@
 		"upgrade": "upgrade",
 		"freeTrial": "Free 30 day trial",
 		"protectAllDevices": "Protect all of your devices",
-		"inEcosystem":"In Ecosystem",
-		"ecosystemEnable":"Ecosystem Enabled",
-		"inTrial":"In trial",
-		"addEcosystem":"Add to Ecosystem",
-		"enableEcosystem":"Enable Ecosystem",
-		"startTrial":"Start Trial",
-		"fullAccess":"Full Access",
-		"recent":"Recent security notifications",
-		"notification":"Notifications",
-		"renew":"Renew",
+		"inEcosystem": "In Ecosystem",
+		"ecosystemEnable": "Ecosystem Enabled",
+		"inTrial": "In trial",
+		"addEcosystem": "Add to Ecosystem",
+		"enableEcosystem": "Enable Ecosystem",
+		"startTrial": "Start Trial",
+		"fullAccess": "Full Access",
+		"recent": "Recent security notifications",
+		"notification": "Notifications",
+		"renew": "Renew",
 		"tour": {
 			"back": "Back",
 			"skip": "Skip",
@@ -1870,6 +1951,6 @@
 		"usageStatistics": "Usage Statistics",
 		"usageStatisticsDescription": "Send anonymous usage statistics to Lenovo.",
 		"Note": "Note: ",
-		"settingsNotes": "all the settings in this page will need users to restart to take effect."
+		"settingsNotes": "all the settings in this page will need users to relaunch this application to take effect."
 	}
 }

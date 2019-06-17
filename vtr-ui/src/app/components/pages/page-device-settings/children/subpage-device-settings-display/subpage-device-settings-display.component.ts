@@ -42,7 +42,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	private notificationSubscription: Subscription;
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	public shouldCameraSectionDisabled = true;
-	public isCameraAvailable = true;
+	public isCameraHidden = false;
 
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
@@ -257,17 +257,17 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.error('onEyeCareModeStatusToggle', error);
 					});
 
-					if(!this.isEyeCareMode){
-						this.onSetChangeDisplayColorTemp({value: this.displayColorTempDataSource.current})
-					}
+				if (!this.isEyeCareMode) {
+					this.onSetChangeDisplayColorTemp({ value: this.displayColorTempDataSource.current });
+				}
 
-					// if(this.isEyeCareMode){
-					// 	this.setToEyeCareMode();
-					// }else {
-					// 	this.displayColorTempDataSource.current = this.displayColorTempDataSource.maximum;
-					// 	//this.onSetChangeDisplayColorTemp({value: this.displayColorTempDataSource.current})			
+				// if(this.isEyeCareMode){
+				// 	this.setToEyeCareMode();
+				// }else {
+				// 	this.displayColorTempDataSource.current = this.displayColorTempDataSource.maximum;
+				// 	//this.onSetChangeDisplayColorTemp({value: this.displayColorTempDataSource.current})
 
-					// }
+				// }
 			}
 		} catch (error) {
 			console.error(error.message);
@@ -335,7 +335,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				});
 		}
 	}
-	public onEyeCareTemparatureChange($event: ChangeContext) {
+	public onEyeCareTemparatureChange($event: any) {
 		try {
 			console.log('temparature changed in display', $event);
 			if (this.displayService.isShellAvailable) {
@@ -443,23 +443,25 @@ export class SubpageDeviceSettingsDisplayComponent
 	public onSetChangeDisplayColorTemp($event: any) {
 		try {
 			console.log('temparature changed in display ----->', $event);
-			if (this.displayService.isShellAvailable) {				
-					this.displayService.setDaytimeColorTemperature($event.value).then((res) => {});
+			if (this.displayService.isShellAvailable) {
+				this.displayService.setDaytimeColorTemperature($event.value);
 			}
 		} catch (error) {
 			console.error(error.message);
 		}
 	}
 	public setToEyeCareMode() {
-		if(this.isEyeCareMode){
-			//this.displayColorTempDataSource.current = this.eyeCareDataSource.current;
-			this.onSetChangeDisplayColorTemp({value: this.eyeCareDataSource.current})			
+		if (this.isEyeCareMode) {
+			// this.displayColorTempDataSource.current = this.eyeCareDataSource.current;
+			// this.onSetChangeDisplayColorTemp({value: this.eyeCareDataSource.current})
+			this.onEyeCareTemparatureChange({ value: this.eyeCareDataSource.current });
+
 		}
 	}
 
 	public resetDaytimeColorTemp($event: any) {
 		try {
-			if (this.displayService.isShellAvailable && !this.isEyeCareMode) {
+			if (this.displayService.isShellAvailable) {
 				console.log('temparature reset in display', $event);
 				this.displayService
 					.resetDaytimeColorTemperature().then((resetData: any) => {
@@ -685,7 +687,7 @@ export class SubpageDeviceSettingsDisplayComponent
 
 	public onCameraAvailable(isCameraAvailable: boolean) {
 		console.log('Camera isAvailable', isCameraAvailable);
-		this.isCameraAvailable = isCameraAvailable;
+		this.isCameraHidden = !isCameraAvailable;
 		if (isCameraAvailable) {
 			this.initCameraBlurMethods();
 		}

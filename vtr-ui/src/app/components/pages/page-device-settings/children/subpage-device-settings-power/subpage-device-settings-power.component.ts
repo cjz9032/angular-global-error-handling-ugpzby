@@ -5,6 +5,7 @@ import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 
 enum PowerMode {
 	Sleep = 'ChargeFromSleep',
@@ -28,6 +29,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public expressChargingStatus = new FeatureStatus(false, true);
 	public conservationModeLock = false;
 	public expressChargingLock = false;
+	public batteryGauge: any;
+	public showWarningMsg: boolean;
+	public isEnergyStarProduct = false;
 
 	primaryCheckBox = false;
 	secondaryCheckBox = false;
@@ -233,7 +237,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	constructor(public powerService: PowerService,
 		private deviceService: DeviceService,
 		private commonService: CommonService,
-		public modalService: NgbModal) { }
+		public modalService: NgbModal,
+		private batteryService: BatteryDetailService) { }
 
 	ngOnInit() {
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
@@ -246,9 +251,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.getMachineInfo();
 		this.startMonitor();
 		this.getVantageToolBarStatus();
-		if (this.machineType == 1) {
+		if (this.machineType === 1) {
 			this.getBatteryThresholdInformation();
 		}
+		this.getEnergyStarCapability();
 	}
 
 	ngOnDestroy() {
@@ -788,14 +794,32 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 							this.selectedStopAtChargeVal1 = this.responseData[1].stopValue;
 						}
 					}
+					this.getBatteryDetails();
 				})
 				.catch(error => {
 					console.error('', error);
 				});
 		}
 	}
+	private getBatteryDetails() {
+		this.batteryService.getBatteryDetail()
+			.then((response: any) => {
+				console.log('getBatteryDetails', response);
+				this.batteryGauge = response.batteryIndicatorInfo;
+				if (this.batteryGauge.percentage > this.selectedStopAtChargeVal || this.selectedStopAtChargeVal1) {
+					this.showWarningMsg = true;
+				}
+			}).catch(error => {
+				console.error('getBatteryDetails error', error);
+			});
+	}
 	public setChargeThresholdValues(batteryDetails: any, batteryNum: number) {
 		let batteryInfo: any = {};
+		if (this.batteryGauge.percentage > batteryDetails.stopChargeValue) {
+			this.showWarningMsg = true;
+		} else {
+			this.showWarningMsg = false;
+		}
 		try {
 			if (this.powerService.isShellAvailable) {
 				batteryInfo = {
@@ -805,6 +829,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					checkBoxValue: batteryDetails.autoChecked
 				};
 				console.log('set values -->', batteryInfo);
+
 				this.powerService
 					.setChargeThresholdValue(batteryInfo)
 					.then((value: any) => {
@@ -856,8 +881,26 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	showPowerSettings() {
+
+		if (!(!this.isDesktopMachine || this.showEasyResumeSection)) {
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
+		}
+
 		// return !this.isDesktopMachine || this.showEasyResumeSection || this.usbChargingInBatteryModeStatus;
-		// return false;
 		return !this.isDesktopMachine || this.showEasyResumeSection;
+		// return !this.isDesktopMachine || this.showEasyResumeSection;
 	}
+
+	private getEnergyStarCapability() {
+		this.powerService.getEnergyStarCapability()
+			.then((response: boolean) => {
+				console.log('getEnergyStarCapability.then', response);
+
+				this.isEnergyStarProduct = response;
+			})
+			.catch(error => {
+				console.log('getEnergyStarCapability.error', error);
+			});
+	}
+
 }

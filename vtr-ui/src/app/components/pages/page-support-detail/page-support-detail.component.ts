@@ -12,6 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class PageSupportDetailComponent implements OnInit {
 
 	title = 'Support Detail';
+	backarrow = '< ';
 
 	qa: QA;
 	qAndA = {

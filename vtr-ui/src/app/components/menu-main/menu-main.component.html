@@ -51,8 +51,8 @@
 								[icon]="item.icon"
 								class="fa-icon"></fa-icon>
 							<span *ngIf="item.icon[0]==='icomoon'"
-								[ngClass]="['navbar-icon',item.icon[0],item.icon[1]]"></span>
-							{{item.label | translate}}
+							 [ngClass]="['navbar-icon',item.icon[0],item.icon[1]]"></span>
+							{{item.label}}
 						</a>
 					</li>
 					<li *ngIf="item.subitems.length>0&&item.id!=='user'&&showItem(item)"
@@ -72,8 +72,8 @@
 							aria-expanded="false"
 							(click)="showMenu = false">
 							<fa-icon [icon]="item.icon"
-								class="fa-icon"></fa-icon>
-							{{item.label | translate}}
+							 class="fa-icon"></fa-icon>
+							{{item.label}}
 						</a>
 						<div class="dropdown-menu"
 							aria-labelledby="navbarDropdown">

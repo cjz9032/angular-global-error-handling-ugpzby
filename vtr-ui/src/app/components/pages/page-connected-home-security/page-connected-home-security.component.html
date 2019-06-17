@@ -15,7 +15,12 @@
                             <div class="container-fluid">
                                 <div class="row mb-40 content-container p-40">
                                     <div class="container-fluid">
-                                        <vtr-widget-home-security-device [subscription]="account.subscription"></vtr-widget-home-security-device>
+                                        <vtr-widget-home-security-device 
+                                            [login]="connectedHomeSecurity.account.lenovoId.loggedIn"
+                                            [state]="connectedHomeSecurity.account.state"
+                                            (upgradeAccount)="onUpgradeAccount()"
+                                            (startTrial)="onStartTrial()"
+                                          ></vtr-widget-home-security-device>
                                     </div>
                                 </div>
                                 <div class="row content-container p-40">
@@ -47,12 +52,12 @@
                             <div class="row mb-40">
                                 <div class="col col-12">
 									<vtr-widget-home-security-account-status
-									[status]="connectedHomeSecurity.account.state"
-									[remainingDays]="27"
-									[expiredDate]="connectedHomeSecurity.account.ExpirationDate"
-									(startTrial)="onStartTrial()"
-									(manageAccount)="onManageAccount()"
-									(upgradeAccount)="onUpgradeAccount()">
+										[status]="connectedHomeSecurity.account.state"
+										[standardTime]="connectedHomeSecurity.account.serverTimeUTC"
+										[expiredDate]="connectedHomeSecurity.account.expiration"
+										(startTrial)="onStartTrial()"
+										(manageAccount)="onManageAccount($event)"
+										(upgradeAccount)="onUpgradeAccount()">
                                     </vtr-widget-home-security-account-status>
                                 </div>
                             </div>

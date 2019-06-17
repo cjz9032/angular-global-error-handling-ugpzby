@@ -19,6 +19,7 @@ import { VantageShellService } from '../../../services/vantage-shell/vantage-she
 import { UserService } from '../../../services/user/user.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { QA } from 'src/app/data-models/qa/qa.model';
+import { AndroidService } from 'src/app/services/android/android.service';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -62,7 +63,8 @@ export class PageDashboardComponent implements OnInit {
 		private systemUpdateService: SystemUpdateService,
 		public userService: UserService,
 		private translate: TranslateService,
-		vantageShellService: VantageShellService
+		vantageShellService: VantageShellService,
+		public androidService: AndroidService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -170,34 +172,16 @@ export class PageDashboardComponent implements OnInit {
 			this.onNotification(notification);
 		});
 
-
 	}
 
 	onFeedbackModal() {
-		this.modalService
-			.open(FeedbackFormComponent, {
-				backdrop: 'static',
-				size: 'lg',
-				centered: true,
-				windowClass: 'feedback-form-modal-size'
-			})
-			.result.then(
-				result => {
-					// on open
-				},
-				reason => {
-					// on close
-				}
-			);
+		this.modalService.open(FeedbackFormComponent, {
+			backdrop: 'static',
+			size: 'lg',
+			centered: true,
+			windowClass: 'feedback-modal'
+		});
 	}
-
-	// public onFeedbackClick() {
-	// 	this.feedbackButtonText = 'Thank you for your feedback !';
-	// 	setTimeout(() => {
-	// 		this.modalService.dismissAll();
-	// 		this.feedbackButtonText = this.submit;
-	// 	}, 3000);
-	// }
 
 	public onConnectivityClick($event: any) {
 	}

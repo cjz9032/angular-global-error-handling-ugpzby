@@ -9,22 +9,44 @@
 					<div class="lighting-porfile">
 						<h5 class="card-title">Select Profile:</h5>
 						<div class="multi-state-toggle">
-							<input type="radio" value="" name="lighting-porfile" id="off_radio">
-							<label for="off_radio" id="off">Off</label>
-							<input type="radio" value="" name="lighting-porfile" id="first_radio" checked>
-							<label for="first_radio" id="first_lbl">1</label>
-							<input type="radio" value="" name="lighting-porfile" id="second_radio">
-							<label for="second_radio" id="second_lbl">2</label>
-							<input type="radio" value="" name="lighting-porfile" id="third_radio">
-							<label for="third_radio" id="third_lbl">3</label>
+							<input type="radio"	value="0" name="lighting-porfile" id="off_radio" [checked]="setprofId===0"
+							(change)="SetProfile($event)">
+							<label for="off_radio"
+								id="off"> Off </label>
+							<input type="radio"
+								value="1"
+								name="lighting-porfile"
+								id="first_radio"
+								[checked]="setprofId===1"
+								(change)="SetProfile($event)">
+							<label for="first_radio"
+								id="first_lbl">1</label>
+							<input type="radio"
+								value="2"
+								name="lighting-porfile"
+								id="second_radio"
+								[checked]="setprofId===2"
+								(change)="SetProfile($event)">
+							<label for="second_radio"
+								id="second_lbl">2</label>
+							<input type="radio"
+								value="3"
+								name="lighting-porfile"
+								id="third_radio"
+								[checked]="setprofId===3"
+								(change)="SetProfile($event)">
+							<label for="third_radio"
+								id="third_lbl">3</label>
 							<div class="toggle"></div>
+
 						</div>
 						<hr class="dark-dashline" />
 						<ul class="list-group">
 							<li class="list-group-item"><a vtrMetrics
 									[metricsItem]="'gaming.dashboard.device.lighting.title' | translate"
-									metricsEvent="featureClick" routerLink="/lightingcustomize"><i
-										class="icon icon-gear"></i> Customize</a></li>
+									metricsEvent="featureClick"
+									[routerLink]="['/lightingcustomize', setprofId]"><i class="icon icon-gear"></i>
+									Customize</a></li>
 						</ul>
 					</div>
 
