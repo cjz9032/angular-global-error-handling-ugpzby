@@ -40,7 +40,6 @@ import { UserService } from '../../../services/user/user.service';
 })
 export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	notifications: HomeSecurityNotification;
-	account: HomeSecurityAccount;
 	pageStatus: HomeSecurityPageStatus;
 	eventEmitter = new EventEmitter();
 
@@ -82,7 +81,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 		notificationDetail: 'Antivirus was disabled'}, this.translateService));
 		this.notifications.items.push(new WidgetItem({id: '1', title: 'Passcode lock disabled 3 hours', iconPath: 'assets/images/qa/svg_icon_qa_refresh.svg',
 		notificationDetail: 'Antivirus was disabled'}, this.translateService));
-		this.account = this.homeSecurityMockService.account;
 	}
 
 	ngOnInit() {
