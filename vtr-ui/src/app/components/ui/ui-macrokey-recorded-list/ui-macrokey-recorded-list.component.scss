@@ -11,12 +11,12 @@
 }
 
 .col-6 {
-	min-width: 26rem;
+	min-width: 30rem;
 }
 
 .select-wrapper {
-	@media #{$mediaquery_X3} {
-		width: 30rem;
+	@media #{$mediaquery_sm} {
+		width: 27.4rem;
 	}
 }
 
