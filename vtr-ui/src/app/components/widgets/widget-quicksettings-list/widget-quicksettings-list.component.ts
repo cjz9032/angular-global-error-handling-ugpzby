@@ -199,13 +199,34 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 	}
 
 	public onRegThermalModeEvent(status: any) {
-		if (status) {
+		if (status !== undefined) {
+			const regThermalModeStatusObj = new ThermalModeStatus();
+			//setting previous value to localstorage 
+			const regThermalModePreValue = this.GetThermalModeCacheStatus();
+			this.commonService.setLocalStorageValue(
+				LocalStorageKey.PrevThermalModeStatus,
+				regThermalModePreValue
+			);
+			//setting current value to local storage
 			this.commonService.setLocalStorageValue(
 				LocalStorageKey.CurrentThermalModeStatus,
 				status
 			);
+			//updating model with current value
+			this.thermalModeStatusObj.thermalModeStatus = status;
+			//UI binding with current value
+			this.drop.curSelected = status;
+
+		} else {
+			const regThermalModeObj = new ThermalModeStatus();
+			//getting previous value from localstorage 
+			const thermalModePreValue = this.GetThermalModePrevCacheStatus();
+			//updating model with previous value
+			regThermalModeObj.thermalModeStatus = thermalModePreValue;
+			//UI binding with previous value
+			this.drop.curSelected = regThermalModeObj.thermalModeStatus;
 		}
-	} 
+	}
 
 	public quicksettingListInit() {
 		const gamingStatus = this.gamingCapabilities;
