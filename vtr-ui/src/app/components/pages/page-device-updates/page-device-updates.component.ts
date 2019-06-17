@@ -308,7 +308,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	public getLastUpdatedText() {
 		if (this.lastInstallTime && this.lastInstallTime.length > 0) {
-			const installDate = this.commonService.formatDate(this.lastInstallTime);
+			const installDate = this.commonService.formatLocalDate(this.lastInstallTime);
 			const installTime = this.commonService.formatTime(this.lastInstallTime);
 			return `${this.lastUpdatedText} ${installDate} at ${installTime}`;
 		}
@@ -319,7 +319,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		if (!this.isScheduleScanEnabled) {
 			return '';
 		} else if (this.nextScheduleScanTime && this.nextScheduleScanTime.length > 0) {
-			const scanDate = this.commonService.formatDate(this.nextScheduleScanTime);
+			const scanDate = this.commonService.formatLocalDate(this.nextScheduleScanTime);
 			const scanTime = this.commonService.formatTime(this.nextScheduleScanTime);
 			return `${this.nextScanText} ${scanDate} at ${scanTime}`;
 		}
