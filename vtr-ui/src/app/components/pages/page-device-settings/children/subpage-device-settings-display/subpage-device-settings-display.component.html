@@ -209,7 +209,7 @@
 	<!-- Camera -->
 	<div class="row py-5 smartsettings-card"
 		id="camera"
-		*ngIf="isCameraAvailable">
+		[hidden]="isCameraAvailable">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.displayCamera.camera.title' | translate"
 				componentName="Camera"
