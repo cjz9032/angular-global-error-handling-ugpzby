@@ -16,12 +16,12 @@ export class HomeSecurityMockService {
 				loggedIn: true
 			},
 			createAccount() {
-				this.state = this.state === CHSAccountState.local ? CHSAccountState.trial : CHSAccountState.trialExpired;
+				this.state =  CHSAccountState.trial;
 				return Promise.resolve(true);
 			},
 			purchase() {
 				WinRT.launchUri('https://vantagestore.lenovo.com/en/shop/product/connectedhomesecurityoneyearlicense-windows');
-				this.state = CHSAccountState.standard;
+				this.state = this.state === CHSAccountState.trial ? CHSAccountState.trialExpired : CHSAccountState.standard;
 			},
 			visitWebConsole(feature: string) {
 				WinRT.launchUri(`https://homesecurity.coro.net/${feature}`);
@@ -51,13 +51,6 @@ export class HomeSecurityMockService {
 			return Promise.resolve(true);
 		}
 	};
-
-	public account: HomeSecurityAccount = {
-		id: '0',
-		name : 'all',
-		subscription: 'localWithLid',
-	};
-
 	public id = 0;
 
 	public getConnectedHomeSecurity(): ConnectedHomeSecurity {
