@@ -4,6 +4,15 @@
 	@extend %common-block-wrapper;
 	border-radius: 0 0 1rem 1rem;
 
+	&__header {
+		display: flex;
+		flex-flow: row;
+		align-content: center;
+		align-items: center;
+		margin-bottom: 3rem;
+		justify-content: space-between;
+	}
+
 	&__title {
 		@extend %subtitle;
 		margin-bottom: 2rem;

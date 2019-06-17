@@ -6,6 +6,7 @@ import { CommunicationWithFigleafService } from '../../utils/communication-with-
 import { FeaturesStatuses } from '../../userDataStatuses';
 import { UserDataGetStateService } from '../../common/services/user-data-get-state.service';
 import { getDisplayedCountValueOfIssues } from '../../utils/helpers';
+import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -52,11 +53,16 @@ export class TrackersComponent {
 		private userAllowService: UserAllowService,
 		private countNumberOfIssuesService: CountNumberOfIssuesService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
-		private userDataGetStateService: UserDataGetStateService
+		private userDataGetStateService: UserDataGetStateService,
+		private vantageCommunicationService: VantageCommunicationService
 	) {	}
 
 	giveConcent() {
 		this.userAllowService.setShowTrackingMap(true);
+	}
+
+	openFigleafApp() {
+		this.vantageCommunicationService.openFigleafByUrl('lenovoprivacy:');
 	}
 }
 
