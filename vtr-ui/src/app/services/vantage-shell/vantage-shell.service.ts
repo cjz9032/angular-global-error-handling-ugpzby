@@ -384,7 +384,7 @@ export class VantageShellService {
 		}
 		return false;
 	}
-	
+
 	public getGamingAllCapabilities(): any {
 		if (this.phoenix && this.phoenix.gaming) {
 			return this.phoenix.gaming.gamingAllCapabilities;
@@ -543,5 +543,12 @@ export class VantageShellService {
 		if (this.phoenix && this.phoenix.gaming) {
 			return this.phoenix.gaming.gamingThermalmode;
 		}
+	}
+
+	public getImcHelper(): any {
+		if (this.phoenix && this.phoenix.hwsettings.power.thinkpad.sectionImcHelper) {
+			return this.phoenix.hwsettings.power.thinkpad.sectionImcHelper;
+		}
+		return undefined;
 	}
 }
