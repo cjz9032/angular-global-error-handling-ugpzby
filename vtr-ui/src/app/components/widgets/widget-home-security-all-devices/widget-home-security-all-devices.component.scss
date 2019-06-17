@@ -93,8 +93,11 @@
 					font-weight: $weight_bold;
                 }
                 .status {
-                    > .h3 {
-                        margin-bottom: 0rem;
+                    > h3 {
+						margin-bottom: 0rem;
+						.badge-danger {
+							cursor: pointer;
+						}
                     }
                     .button-red {
                         cursor: pointer;
@@ -121,7 +124,7 @@
         .place-holder {
             border-radius: $border_radius;
             background: $shade_lightest;
-            opacity: 0.8;
+            opacity: 0.9;
         }
         .content-container {
             display: flex;

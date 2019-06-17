@@ -56,6 +56,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	private isComponentInitialized = false;
 	public updateTitle = '';
 	private isUserCancelledUpdateCheck = false;
+	private timeStartSearch;
 
 	public isInstallationSuccess = false;
 	public isInstallationCompleted = false;
@@ -230,6 +231,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		if (this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isInstallationCompleted) {
 			this.systemUpdateService.isUpdatesAvailable = true;
 			this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
+		} else if (this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.installedUpdates) {
+			this.setUpdateByCategory(this.systemUpdateService.installedUpdates);
 		}
 
 		this.getLastUpdateScanDetail();
@@ -368,7 +371,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public onCheckForUpdates() {
 		if (this.systemUpdateService.isShellAvailable) {
 			this.setUpdateTitle();
-			this.isUserCancelledUpdateCheck = true;
+			this.isUserCancelledUpdateCheck = false;
 			this.isUpdateCheckInProgress = true;
 			this.isUpdatesAvailable = false;
 			this.systemUpdateService.isUpdatesAvailable = false;
@@ -376,6 +379,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			this.systemUpdateService.isInstallingAllUpdates = true;
 			this.resetState();
 			this.systemUpdateService.checkForUpdates();
+			this.timeStartSearch = new Date();
 		}
 	}
 
@@ -487,7 +491,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				centered: true,
 				windowClass: 'common-confirmation-modal'
 			});
-		modalRef.componentInstance.metricsParent = 'Pages.SystemUpdate.RebootRequiredControl';
 		const { rebootType, packages } = this.systemUpdateService.getRebootType(this.systemUpdateService.updateInfo.updateList, source);
 		let removeDelayedUpdates = false;
 		if (rebootType === UpdateRebootType.RebootDelayed) {
@@ -505,6 +508,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		modalRef.componentInstance.packages = packages;
 		modalRef.componentInstance.OkText = 'systemUpdates.popup.okayButton';
 		modalRef.componentInstance.CancelText = 'systemUpdates.popup.cancelButton';
+		modalRef.componentInstance.metricsParent = 'Pages.SystemUpdate.RebootRequiredControl';
+
 		modalRef.result.then(
 			result => {
 				// on open
@@ -598,6 +603,34 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		return updates;
 	}
 
+	public mapPackageListToIdString(updateList: Array<AvailableUpdateDetail>) {
+		return updateList.map(item => item.packageID).join(',');
+	}
+
+	private mapStatusToMessage(status: number, defaultValue = 'unknown') {
+		let message = defaultValue;
+		for (const key in SystemUpdateStatusMessage) {
+			if (SystemUpdateStatusMessage.hasOwnProperty(key)) {
+				if (SystemUpdateStatusMessage[key].code === status) {
+					message = SystemUpdateStatusMessage[key].message;
+				}
+			}
+		}
+		return message;
+	}
+
+	private mapStatusToMessageKey(status: number, defaultValue = 'unknown') {
+		let messageKey = defaultValue;
+		for (const key in SystemUpdateStatusMessage) {
+			if (SystemUpdateStatusMessage.hasOwnProperty(key)) {
+				if (SystemUpdateStatusMessage[key].code === status) {
+					messageKey = key;
+				}
+			}
+		}
+		return messageKey;
+	}
+
 	private sendInstallUpdateMetrics(updateList: Array<AvailableUpdateDetail>, ignoredUpdates: Array<AvailableUpdateDetail>) {
 		const successUpdates = this.filterUpdateByResult(updateList, [UpdateActionResult.Success]);
 		let failedUpdates = this.filterUpdateByResult(updateList,
@@ -613,17 +646,17 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				return true;
 			});
 
-			const packageIds = this.systemUpdateService.mapPackageListToIdString(ignoredUpdates);
+			const packageIds = this.mapPackageListToIdString(ignoredUpdates);
 			this.metricHelper.sendInstallUpdateMetric(ignoredUpdates.length, packageIds, 'Ignored-NotInstallDueToACAdapterNotPluggedIn');
 		}
 
 		if (successUpdates.length > 0) {
-			const packageIds = this.systemUpdateService.mapPackageListToIdString(successUpdates);
+			const packageIds = this.mapPackageListToIdString(successUpdates);
 			this.metricHelper.sendInstallUpdateMetric(successUpdates.length, packageIds, 'success');
 		}
 
 		if (failedUpdates.length > 0) {
-			const packageIds = this.systemUpdateService.mapPackageListToIdString(failedUpdates);
+			const packageIds = this.mapPackageListToIdString(failedUpdates);
 			this.metricHelper.sendInstallUpdateMetric(failedUpdates.length, packageIds, 'failure');
 		}
 	}
@@ -643,17 +676,20 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isUpdateCheckInProgress = false;
 					this.percentCompleted = this.systemUpdateService.percentCompleted;
 
-					for (const key in SystemUpdateStatusMessage) {
-						if (SystemUpdateStatusMessage.hasOwnProperty(key)) {
-							if (SystemUpdateStatusMessage[key].code === payload.status) {
-								if (this.isUserCancelledUpdateCheck) {
-									// when user cancels update check its throwing unknown exception
-								} else {
-									this.setUpdateTitle(SystemUpdateStatusMessage[key].message);
-								}
-							}
-						}
+					let messageKey = 'unknown';
+					if (this.isUserCancelledUpdateCheck) {
+						// when user cancels update check its throwing unknown exception
+						messageKey = 'user cancel';
+					} else {
+						let metricMessage;
+						metricMessage = this.mapStatusToMessage(payload.status);
+						messageKey = this.mapStatusToMessageKey(payload.status);
+						this.setUpdateTitle(metricMessage);
 					}
+
+					this.metricHelper.sendSystemUpdateMetric(
+						0, '', messageKey,
+						MetricHelper.timeSpan(new Date(), this.timeStartSearch));
 					break;
 				case UpdateProgress.UpdatesAvailable:
 					this.isUpdateCheckInProgress = false;
@@ -662,6 +698,11 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.setUpdateByCategory(payload.updateList);
 					this.systemUpdateService.getIgnoredUpdates();
+					this.metricHelper.sendSystemUpdateMetric(
+						payload.updateList.length,
+						this.mapPackageListToIdString(payload.updateList),
+						'success',
+						MetricHelper.timeSpan(new Date(), this.timeStartSearch));
 					break;
 				case UpdateProgress.InstallationStarted:
 					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
@@ -756,7 +797,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isUpdateCheckInProgress = false;
 					this.isCheckingPluginStatus = false;
 					this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
-					this.resetState();
 					break;
 				case UpdateProgress.ScheduleUpdateCheckComplete:
 					this.isCheckingPluginStatus = false;
@@ -800,6 +840,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			modalRef.componentInstance.description = description;
 			modalRef.componentInstance.OkText = 'systemUpdates.popup.rebootButton';
 			modalRef.componentInstance.CancelText = 'systemUpdates.popup.dismissButton';
+			modalRef.componentInstance.metricsParent = 'Pages.SystemUpdate.RebootRequiredControl';
 			modalRef.result.then(
 				(result) => {
 					if (result) {

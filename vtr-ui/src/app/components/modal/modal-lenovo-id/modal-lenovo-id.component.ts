@@ -194,6 +194,12 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			this.activeModal.dismiss();
 			return;
 		}
+		
+		if (!navigator.onLine) {
+			this.popupErrorMessage(ssoErroType.SSO_ErrorType_DisConnect);
+			this.activeModal.dismiss();
+			return;
+		}
 
 		this.webView.create("<div style='display: block;position: fixed;z-index: 1;padding-top: 30px;left: 0;top: 0;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgba(0,0,0,0.4);'>  <div style='position: relative;background-color: #fefefe;margin: auto;padding: 0;border: 1px solid #888;width: 520px;height: 600px;'>  <style>.close {  color: black;  float: right;  font-size: 28px;  font-weight: bold;}.close:hover,.close:focus {  color: black;  text-decoration: none;  cursor: pointer;} @keyframes spinner {  to {transform: rotate(360deg);}} .spinner:before {  content: '';  box-sizing: border-box;  position: absolute;  top: 50%;  left: 50%;  width: 60px;  height: 60px;  margin-top: -15px;  margin-left: -30px;  border-radius: 50%;  border: 3px solid #ccc;  border-top-color: #07d;  animation: spinner .6s linear infinite;} </style>  <div id='btnClose' style='padding: 2px 16px;background-color: white;color: black;'>  <span class='close'>&times;</span>    </div>    <div style='height: 100%;' id='webviewBorder'> <div id='spinnerCtrl' class='spinner'></div> <div id='webviewPlaceHolder'></div>    </div>  </div></div>");
 		this.webView.show();
@@ -236,14 +242,14 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		if (!e.target) {
 			return;
 		}
-		const eventData = JSON.parse(e.target);
-		if (eventData.url.indexOf("facebook.com/r.php") != -1 ||
-			eventData.url.indexOf("facebook.com/reg/") != -1) {
+		const url = e.target;
+		if (url.indexOf("facebook.com/r.php") != -1 ||
+			url.indexOf("facebook.com/reg/") != -1) {
 			// Open new window to launch default browser to create facebook account
 			if (window) {
-				window.open(eventData.url);
+				window.open(url);
 			}
-			// BUGBUG: no such function
+			// BUGBUG: shell does not provide similar function
 			// Prevent navigations to create facebook account
 			//EventArgs.preventDefault();
 			return;

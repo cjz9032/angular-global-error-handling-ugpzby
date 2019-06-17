@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
 		private userService: UserService,
 		private settingsService: SettingsService,
 		private gamingAllCapabilitiesService: GamingAllCapabilitiesService,
-		vantageShellService: VantageShellService
+		private vantageShellService: VantageShellService
 	) {
 		translate.addLangs(['en', 'zh-Hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it',
 			'ja', 'ko', 'nb', 'nl', 'pl', 'pt-BR', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-Latn', 'sv', 'tr', 'uk', 'zh-Hant']);
@@ -46,15 +46,6 @@ export class AppComponent implements OnInit {
 		const appFirstRun = !hadRunApp;
 		if (appFirstRun && deviceService.isShellAvailable) {
 			commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
-			const metricsClient = vantageShellService.getMetrics();
-			if (!metricsClient.sendAsyncEx) {
-				metricsClient.sendAsyncEx = metricsClient.sendAsync;
-			}
-			metricsClient.sendAsyncEx({
-				ItemType: 'FirstRun'
-			}, {
-					forced: true
-				});
 		}
 
 		//#region VAN-2779 this is moved in MVP 2
@@ -151,14 +142,35 @@ export class AppComponent implements OnInit {
 				}
 			}
 		});
-		this.getMachineInfo();
+
+		const result = this.getMachineInfo();
+		if (result != null) {
+			result.then((machineInfo) => {
+				this.sendFirstRunEvent(machineInfo);
+			});
+		}
+
 		this.checkIsDesktopOrAllInOneMachine();
 		this.settingsService.getPreferenceSettingsValue();
 	}
 
+	private sendFirstRunEvent(machineInfo) {
+		let isGaming = null;
+		if (machineInfo) {
+			isGaming = machineInfo.isGaming;
+		}
+		const metricsClient = this.vantageShellService.getMetrics();
+		metricsClient.sendAsyncEx({
+			ItemType: 'FirstRun',
+			IsGaming: isGaming
+		}, {
+				forced: true
+			});
+	}
+
 	private getMachineInfo() {
 		if (this.deviceService.isShellAvailable) {
-			this.deviceService.getMachineInfo()
+			return this.deviceService.getMachineInfo()
 				.then((value: any) => {
 					console.log('getMachineInfo.then', value);
 					if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
@@ -175,10 +187,14 @@ export class AppComponent implements OnInit {
 						}
 					}
 
+					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
+					return value;
 				}).catch(error => {
 					console.error('getMachineInfo', error);
 				});
 		}
+
+		return null;
 	}
 
 	private checkIsDesktopOrAllInOneMachine() {
