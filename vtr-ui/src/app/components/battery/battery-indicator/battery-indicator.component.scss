@@ -110,6 +110,24 @@
 					font-size: 6rem;
 					font-weight: bold;
 				}
+				.updating-text {
+					position: absolute;
+					z-index: 5;
+					top: 25%;
+					left: 10%;
+					font-size: 2rem;
+					font-weight: normal;
+					span {
+						display: block;
+					}
+					.loading-dots {
+						font-weight: bold;
+						font-size: 4rem;
+						color: #0062cc;
+						position: relative;
+						bottom: 3.5rem !important;
+					}
+				}
 
 				.battery-error {
 					@extend .base-percentage-text;
@@ -179,12 +197,12 @@
 				color: transparent;
 			}
 		}
-		.icomoon:before{
-			font-size:28px;
+		.icomoon:before {
+			font-size: 28px;
 			position: absolute;
-			top:10px;
-			height:28px;
-			width:20.25px;
+			top: 10px;
+			height: 28px;
+			width: 20.25px;
 		}
 	}
 }
