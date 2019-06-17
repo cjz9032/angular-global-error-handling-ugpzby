@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -377,7 +377,15 @@
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
-                }
+                },
+                "question1": "Do you like the new style of Vantage?",
+                "question2": "Do you think the performance is acceptable?",
+                "question3": "Would you use the application more often in the future?",
+                "yes": "Yes",
+                "no": "No",
+                "tips1": "Please leave any additional comments",
+                "sendFeedback": "Send Feedback",
+                "submitScreenShot": "Submit Screen Shot"
             }
         },
         "quickSettings": {
@@ -557,20 +565,12 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter",
+                        "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "ACAdapterNotSupported": {
                         "title": "AC adapter not supported.",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
@@ -731,7 +731,7 @@
             "audio": {
                 "title": "Ljud",
                 "subtitle": "Ljudinställningar",
-                "description": "I detta avsnitt kan du automatiskt optimera eller",
+                "description": "I detta avsnitt kan du automatiskt optimera ellermanuellt konfigurera ljudinställningarna, som Dolby, mikrofon och annat.",
                 "audioSmartsettings": {
                     "title": "Smarta ljudinställningar",
                     "subtitle": "APPLIKATIONSBASERADE INSTÄLLNINGAR",
@@ -955,7 +955,7 @@
                             "medium": "Mellan",
                             "slow": "Långsam"
                         },
-                        "toolTipContent": "Välj önskat alternativ för att låsa skärmen snabbt/medelsnabbt/långsamt när din närvaro inte identifieras."
+                        "toolTipContent": "Välj önskat alternativ för att låsa skärmen snabbt/medelsnabbt/långsamt när din närvaro inte identifieras.Tiden när skärmen låses påverkas också av den faktiska användarsituationen, sensorkapaciteten och inställningarna för skärmtidsgräns i Windows. Vi rekommenderar därför att du låser datorn omedelbart innan du lämnar den."
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -968,7 +968,7 @@
                 },
                 "note": {
                     "description1": "Funktionen bygger på Windows Hello.Kontrollera att ansiktsigenkänning är aktiverat i Windows-inställningarna.",
-                    "description2": "Funktionen använder sensorer och kamera för att identifiera din närvaro.",
+                    "description2": "Funktionen använder sensorer och kamera för att identifiera din närvaro.Den samlar INTE in, sparar eller läcker personliga uppgifter eller bilder.",
                     "description3": "1. Dessa funktioner kanske inte fungerar korrektom datorn är i tält- eller pekplatteläge eller stående läge.",
                     "description4": "2. Om datorn är i viloläge eller avstängd.Automatisk inloggning med IR-kamera fungerar inte.",
                     "description5": "3. Justera datorskärmen i rätt vinkel så att IR-kamerankan identifiera ditt ansikte för automatisk inloggning."
@@ -1052,10 +1052,10 @@
         "popup": {
             "reboot": "Starta om",
             "shutdown": "Stäng av",
-            "rebootForceMsg": "Uppdateringarna du har valt medför att systemet automatiskt startar om efter installationen.",
-            "shutdownForceMsg": "Uppdateringarna du har valt medför att systemet automatiskt stängs av efter installationen.",
+            "rebootForceMsg": "Uppdateringarna du har valt medför att systemet automatiskt startar omefter installationen.",
+            "shutdownForceMsg": "Uppdateringarna du har valt medför att systemet automatiskt stängs avefter installationen.",
             "rebootDelayedMsg": "Uppdateringarna du har valt medför att datorn startas om efter installationen. Stäng inte av systemet och koppla inte bort strömkällan eller tillbehören under installationen av uppdateringarna. Vi rekommenderar att du sparar ditt arbete innan systemet startas om.",
-            "rebootRequiredMsg": "För att uppdateringarna ska installeras korrekt måste datorn startas om så att allt fungerar säkert och smidigt.",
+            "rebootRequiredMsg": "För att uppdateringarna ska installeras korrekt måste datornstartas om så att allt fungerar säkert och smidigt.",
             "okayButton": "OK",
             "cancelButton": "Avbryt",
             "rebootButton": "STARTA OM NU",
@@ -1071,7 +1071,7 @@
             },
             "recommended": {
                 "title": "Rekommenderade uppdateringar",
-                "tooltip": "Rekommenderade drivrutinsuppdateringar håller din dator igång med optimal prestanda."
+                "tooltip": "Rekommenderade drivrutinsuppdateringar gör att datorn körs med optimal prestanda."
             },
             "windows": {
                 "title": "Windows-uppdateringar",
@@ -1086,21 +1086,21 @@
             "title": "Ett uppdaterat system är ett friskt system.",
             "last": "Senast uppdaterat den",
             "next": "Nästa sökning efter uppdateringar är planerad den",
-            "checkButton": "SÖK EFTER UPPDATERINGAR ",
+            "checkButton": "SÖK EFTER UPPDATERINGAR",
             "checking": "Söker efter uppdateringar",
-            "downloading": "Hämtar uppdateringar",
+            "downloading": "Uppdateringar har hämtats",
             "installing": "Installerar uppdateringar",
             "percent": "% klart",
             "cancelCheck": "Avbryt sökning",
             "cancelUpdates": "AVBRYT UPPDATERINGAR",
             "available": "Tillgängliga uppdateringar",
-            "description": "Dessa paket innehåller uppdateringar av maskinvara och andra systemverktyg som är viktiga för att datorn ska fungera på rätt sätt. Kritiska uppdateringar är också viktiga för att skydda data på datorn och bör installeras så fort de blir tillgängliga. Om paketen inte installeras finns det risk för att data går förlorade, att datorn fungerar dåligt eller att det inträffar maskinvaruproblem.",
+            "description": "Dessa paket innehåller uppdateringar av maskinvara ochandra systemverktyg som är viktiga för att datorn ska fungera på rätt sätt. Kritiska uppdateringar är också viktiga för att skydda data på datorn och bör installeras så fort de blir tillgängliga. Om paketen inte installeras finns det risk för att data går förlorade, att datorn fungerar dåligt eller att det inträffar maskinvaruproblem.",
             "installButton": "INSTALLERA ALLA UPPDATERINGAR",
             "result": {
                 "success": "Alla uppdateringar har installerats",
                 "fail": {
                     "title": "Vissa uppdateringar installerades inte korrekt.",
-                    "description": "Ett problem inträffade under hämtningen eller installationen av uppdateringarna. Kontrollera att du är ansluten och stäng inte av datorn medan uppdateringarna installeras."
+                    "description": "Ett problem inträffade under hämtningen eller installationen av uppdateringarna.Kontrollera att du är ansluten och stäng inte av datorn medan uppdateringarna installeras."
                 }
             }
         },
@@ -1168,15 +1168,14 @@
         "protected": "Protected",
         "notProtected": "Not Protected",
         "myDevice": "My Device",
-        "allDevice": "All Devices",
         "secure": "SECURE",
         "needAttention": "NEEDS ATTENTION",
         "manageAccount": "Manage Account",
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrate to protect all of your devices",
+        "trialExpired": "Trial Expired",
+        "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
         "protectAllDevices": "Protect all of your devices",
@@ -1300,9 +1299,7 @@
             "maliciousNetwork": "Förhindrade att datorn gick med i {{maliciousWifi}} skadliga nätverk denna månad.",
             "good": "BRA",
             "malicious": "SKADLIGT",
-            "suspicious": "MISSTÄNKT",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "MISSTÄNKT"
         },
         "antivirus": {
             "common": {

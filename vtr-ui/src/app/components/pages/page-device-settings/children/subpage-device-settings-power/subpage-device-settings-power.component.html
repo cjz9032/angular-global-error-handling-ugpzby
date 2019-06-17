@@ -62,7 +62,7 @@
 
 					<!-- MVP 2 feature -->
 					<li class=""
-						*ngIf="machineType == 1">
+						*ngIf="machineType == 1 && responseData[0].isCapable">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.batteryThreshold.description' | translate "
@@ -71,7 +71,8 @@
 							[leftIcon]="batterySettings.items[1].leftImageSource"
 							[rightIcon]="batterySettings.items[1].rightImageSource"
 							[showChildContent]="true"
-							(toggleOnOff)="showBatteryThreshold=$event.switchValue;"
+							[isSwitchChecked] = "showBatteryThreshold"
+							(toggleOnOff)="showBatteryThresholdsettings($event.switchValue);"
 							[tooltipText]="'device.deviceSettings.power.batterySettings.batteryThreshold.tooltip' | translate">
 							<div *ngIf="showBatteryThreshold">
 								<vtr-battery-charge-threshold-settings

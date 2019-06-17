@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -377,7 +377,15 @@
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
-                }
+                },
+                "question1": "Do you like the new style of Vantage?",
+                "question2": "Do you think the performance is acceptable?",
+                "question3": "Would you use the application more often in the future?",
+                "yes": "Yes",
+                "no": "No",
+                "tips1": "Please leave any additional comments",
+                "sendFeedback": "Send Feedback",
+                "submitScreenShot": "Submit Screen Shot"
             }
         },
         "quickSettings": {
@@ -557,20 +565,12 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter",
+                        "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "ACAdapterNotSupported": {
                         "title": "AC adapter not supported.",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
@@ -598,9 +598,9 @@
                     "title": "Configurações inteligentes de energia",
                     "subtitle": "RESFRIAMENTO INTELIGENTE",
                     "subtitle1": "Bateria e silêncio",
-                    "description1": "Este recurso ajusta dinamicamente as configurações térmicas aos seus requisitos.",
+                    "description1": "Este recurso ajusta dinamicamente as configurações térmicas aos seus requisitos.Quando ligado, ajusta as configurações para manter o dispositivo frio e silencioso, quando estiver seguro nas mãos ou inativo. Caso contrário, otimiza o desempenho quando o equipamento estiver sobre uma superfície estável. Quando desligado, você pode ajustar manualmente a prioridade térmica.",
                     "description2": "O Resfriamento inteligente ajusta a velocidade do ventilador, a temperatura máxima da superfície e o desempenho.Esse recurso tem os modos listados abaixo e agora é acessível pelo controle deslizante de energia de desempenho do Windows.",
-                    "description3": "O Resfriamento Inteligente equilibra automaticamente o desempenho térmico de acordo com suas necessidades.O recurso de Resfriamento Inteligente ajusta as configurações de desempenho para proporcionar uma superfície mais fria para seu maior conforto quando o notebook é segurado com as mãos. ",
+                    "description3": "O Resfriamento Inteligente equilibra automaticamente o desempenho térmico de acordo com suas necessidades.O recurso de Resfriamento Inteligente ajusta as configurações de desempenho para proporcionar uma superfície mais fria para seu maior conforto quando o notebook é segurado com as mãos. Quando o dispositivo está sobre a superfície de uma mesa de trabalho, o recurso otimiza o desempenho.",
                     "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
                     "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
                     "readMore": "Leia mais.",
@@ -683,7 +683,7 @@
                     "batteryThreshold": {
                         "title": "Limite de Carga da Bateria",
                         "description": "Se você usa seu computador conectado ao adaptador de energia CA na maioria das vezes, e só usa a energia da bateria ocasionalmente,poderá aumentar a vida útil da bateria configurando o valor de carga máximo para abaixo de 100%. Isso é útil porque as baterias que são usadas com pouca frequência possuem uma vida útil maior quando são mantidas com carga inferior à máxima.",
-                        "tooltip": "Se a bateria estiver carregada acima do limite de interrupção de carga, desconecte a energia para que a bateria descarregue até o limite de interrupção de carga ou abaixo dele.",
+                        "tooltip": "Se a bateria estiver carregada acima do limite de interrupção de carga, desconecte a energia para que a bateria descarregue até o limite de interrupção de carga ou abaixo dele.Dependendo do status da bateria (nova ou velha), o ponto exato em que o carregamento será iniciado ou interrompido pode variar em até 2 pontos percentuais. Se você ativar o recurso, recomenda-se executar uma Redefinição do medidor da bateria ocasionalmente para garantir a detecção de integridade precisa da bateria.",
                         "note": "Note",
                         "readMoreText": "Read more.",
                         "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
@@ -693,7 +693,7 @@
                         },
                         "popup": {
                             "title": "Ativar Limite de Carga da Bateria",
-                            "description1": "Ativar uma carga de bateria personalizada permitirá que a integridade geral da bateria dure mais conforme você usar este dispositivo.",
+                            "description1": "Ativar uma carga de bateria personalizada permitirá que a integridade geral da bateria dure mais conforme você usar este dispositivo.No entanto, não ter uma carga máxima permitirá menos tempo de execução da vida útil da bateria.",
                             "description2": "Para ativar completamente esse recurso, desconecte sua máquina epermita que a bateria descarregue até ou abaixo do limite de interrupção de carga.",
                             "enable": "ATIVAR",
                             "cancel": "CANCELAR"
@@ -711,16 +711,16 @@
                     },
                     "conservationMode": {
                         "title": "Modo de conservação",
-                        "description": "Essa função é útil para estender a vida útil da bateria quando conectada.",
+                        "description": "Essa função é útil para estender a vida útil da bateria quando conectada. <br>Quando esse modo é ativado, a bateria será carregada apenas até 55-60% da capacidade e a duração da bateria poderá ser maximizada. No entanto, isso reduzirá o tempo de uso do computador depois que ele for desconectado da fonte CA.",
                         "tooltip": {
                             "line1": "Essa função é útil para estender a vida útil da bateria quando conectada.",
-                            "line2": "Quando esse modo é ativado, a bateria será carregada apenas até 55-60% da capacidade e a duração da bateria poderá ser maximizada.",
-                            "line3": "Nota: o modo de Carregamento expresso e o modo de Conservação não podem funcionar ao mesmo tempo."
+                            "line2": "Quando esse modo é ativado, a bateria será carregada apenas até 55-60% da capacidade e a duração da bateria poderá ser maximizada. No entanto, isso reduzirá o tempo de uso do computador depois que ele for desconectado da fonte CA.",
+                            "line3": "Nota: o modo de Carregamento expresso e o modo de Conservação não podem funcionar ao mesmo tempo.SE um dos modos for ativado, o outro será desativado automaticamente."
                         }
                     },
                     "airPlanePower": {
                         "title": "Modo de Energia de Avião",
-                        "description": "Proteja a tomada elétrica CA dos aviões ao controlar o consumo de energia do seu sistema."
+                        "description": "Proteja a tomada elétrica CA dos aviões ao controlar o consumo de energia do seu sistema.Quando o Modo de Energia de Voo estiver ativado, o computador reduzirá o consumo de energia ao limitar a taxa de carregamento da bateria e o desempenho do sistema."
                     }
                 },
                 "energyStar": {
@@ -731,7 +731,7 @@
             "audio": {
                 "title": "Áudio",
                 "subtitle": "Configurações de áudio",
-                "description": "Esta seção permite otimizar automaticamente ou",
+                "description": "Esta seção permite otimizar automaticamente ouconfigurar totalmente suas configurações de áudio manualmente, como configurações de Dolby, microfone etc.",
                 "audioSmartsettings": {
                     "title": "Configurações inteligentes de áudio",
                     "subtitle": "CONFIGURAÇÕES BASEADAS NO APLICATIVO",
@@ -947,7 +947,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Bloqueio sem toques",
-                    "caption": "Este recurso esmaecerá a tela e bloqueará o computador quando a presença do usuário não for detectada.Ele pode reduzir as chances de acesso não autorizado ao computador quando você deixar o computador sem supervisão e desbloqueado. ",
+                    "caption": "Este recurso esmaecerá a tela e bloqueará o computador quando a presença do usuário não for detectada.Ele pode reduzir as chances de acesso não autorizado ao computador quando você deixar o computador sem supervisão e desbloqueado. Também reduz o consumo de energia, colocando o sistema em Suspensão moderna quando sua presença não for detectada.",
                     "autoScreenLockTimer": {
                         "title": "TEMPORIZADOR DE BLOQUEIO AUTOMÁTICO DE TELA",
                         "radioButton": {
@@ -955,7 +955,7 @@
                             "medium": "Médio",
                             "slow": "Lento"
                         },
-                        "toolTipContent": "Selecione a opção desejada para bloquear a tela em uma velocidade rápida/média/lenta quando sua presença não for detectada."
+                        "toolTipContent": "Selecione a opção desejada para bloquear a tela em uma velocidade rápida/média/lenta quando sua presença não for detectada.No entanto, o momento em que a tela será bloqueada também é afetado pelo cenário real do usuário, a capacidade do sensor e as configurações de tempo limite da tela do Windows. Portanto, sugerimos que você bloqueie imediatamente o sistema antes de sair."
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -968,7 +968,7 @@
                 },
                 "note": {
                     "description1": "Esse recurso depende do Windows Hello.Verifique se o reconhecimento facial está ativado nas configurações do Windows.",
-                    "description2": "O recurso usa sensores e câmera para detectar sua presença.",
+                    "description2": "O recurso usa sensores e câmera para detectar sua presença.No entanto, o recurso NÃO coleta, salva nem vaza qualquer dado pessoal ou imagem.",
                     "description3": "1. Se o computador estiver no modo de tenda, de tablet ou de base,esses recursos podem não funcionar devidamente.",
                     "description4": "2. Se o computador estiver no modo de hibernação ou tiver sido desligado.O login automático da câmera IR não funcionará.",
                     "description5": "3. Ajuste a tela do computador em um ângulo adequadopara que a câmara IR possa reconhecer o seu rosto para fazer login automático."
@@ -1052,10 +1052,10 @@
         "popup": {
             "reboot": "Reinicializar",
             "shutdown": "Desligar",
-            "rebootForceMsg": "O sistema será reiniciado automaticamente após a instalação da(s) atualização(ões) selecionada(s).",
-            "shutdownForceMsg": "O sistema será desligado automaticamente após a instalação da(s) atualização(ões) selecionada(s).",
-            "rebootDelayedMsg": "O sistema será reiniciado após a instalação das atualizações selecionadas, durante a instalação das atualizações, não desligue o sistema, não remova a fonte de alimentação nem os acessórios. Recomendamos que você salve o seu trabalho em preparação para a reinicialização do sistema.",
-            "rebootRequiredMsg": "Para instalar as atualizações com êxito, o computador precisa de uma reinicialização para garantir que tudo esteja funcionando de forma segura e correta.",
+            "rebootForceMsg": "O sistema será reiniciado automaticamente após a instalação das atualizaçõesselecionadas.",
+            "shutdownForceMsg": "O sistema será desligado automaticamente após a instalação das atualizaçõesselecionadas.",
+            "rebootDelayedMsg": "O sistema será reiniciado após a instalação das atualizações selecionadas,durante a instalação das atualizações, não desligue o sistema, não remova a fonte de alimentação nem os acessórios. Recomendamos que você salve o seu trabalho em preparação para a reinicialização do sistema.",
+            "rebootRequiredMsg": "Para instalar as atualizações com êxito, o computador precisa de umareinicialização para garantir que tudo esteja funcionando de forma segura e correta.",
             "okayButton": "OK",
             "cancelButton": "Cancelar",
             "rebootButton": "REINICIALIZAR AGORA",
@@ -1071,7 +1071,7 @@
             },
             "recommended": {
                 "title": "Atualizações Recomendadas",
-                "tooltip": "As atualizações de driver recomendadas mantêm seu computador funcionando com desempenho ideal."
+                "tooltip": "As atualizações de driver recomendadas mantêm o seu computador funcionando com desempenho ideal."
             },
             "windows": {
                 "title": "Atualizações do Windows",
@@ -1086,21 +1086,21 @@
             "title": "Um sistema atualizado é um sistema saudável.",
             "last": "Atualizado pela última vez em",
             "next": "Próxima verificação de atualização agendada em",
-            "checkButton": "VERIFICAR SE HÁ ATUALIZAÇÕES ",
-            "checking": "Verificando se há atualizações",
-            "downloading": "Fazendo download de atualizações",
+            "checkButton": "VERIFICAR ATUALIZAÇÕES",
+            "checking": "Verificando atualizações",
+            "downloading": "Download de atualizações concluído",
             "installing": "Instalando atualizações",
             "percent": "% concluído",
             "cancelCheck": "Cancelar verificação",
             "cancelUpdates": "CANCELAR ATUALIZAÇÕES",
             "available": "Atualizações disponíveis",
-            "description": "Esses pacotes incluem atualizações para drivers de hardware e outros utilitários do sistema que são fundamentais para o funcionamento correto do computador. As atualizações críticas também são importantes para a proteção dos dados no computador e devem ser instaladas assim que forem disponibilizadas. Não instalar esses pacotes pode resultar em perda de dados, mau funcionamento do sistema ou falha de hardware.",
+            "description": "Esses pacotes incluem atualizações para drivers de hardware eoutros utilitários do sistema que são fundamentais para o funcionamento correto do computador. As atualizações críticas também são importantes para a proteção dos dados no computador e devem ser instaladas assim que forem disponibilizadas. Não instalar esses pacotes pode resultar em perda de dados, mau funcionamento do sistema ou falha de hardware.",
             "installButton": "INSTALAR TODAS AS ATUALIZAÇÕES",
             "result": {
                 "success": "Todas as atualizações foram instaladas corretamente",
                 "fail": {
                     "title": "Algumas atualizações não foram instaladas corretamente.",
-                    "description": "Ocorreu um erro durante o download ou a instalação dessas atualizações. Verifique se você está online e não desligue o computador ao instalar as atualizações."
+                    "description": "Ocorreu um erro durante o download ou a instalação dessas atualizações.Verifique se você está online e não desligue o computador ao instalar as atualizações."
                 }
             }
         },
@@ -1168,15 +1168,14 @@
         "protected": "Protected",
         "notProtected": "Not Protected",
         "myDevice": "My Device",
-        "allDevice": "All Devices",
         "secure": "SECURE",
         "needAttention": "NEEDS ATTENTION",
         "manageAccount": "Manage Account",
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrate to protect all of your devices",
+        "trialExpired": "Trial Expired",
+        "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
         "protectAllDevices": "Protect all of your devices",
@@ -1300,9 +1299,7 @@
             "maliciousNetwork": "Impediu que seu computador associa-se {{maliciousWifi}}redes perigosas este mês.",
             "good": "BOA",
             "malicious": "PERIGOSA",
-            "suspicious": "SUSPEITA",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "SUSPEITA"
         },
         "antivirus": {
             "common": {

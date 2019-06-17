@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -377,7 +377,15 @@
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
-                }
+                },
+                "question1": "Do you like the new style of Vantage?",
+                "question2": "Do you think the performance is acceptable?",
+                "question3": "Would you use the application more often in the future?",
+                "yes": "Yes",
+                "no": "No",
+                "tips1": "Please leave any additional comments",
+                "sendFeedback": "Send Feedback",
+                "submitScreenShot": "Submit Screen Shot"
             }
         },
         "quickSettings": {
@@ -557,20 +565,12 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter",
+                        "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "ACAdapterNotSupported": {
                         "title": "AC adapter not supported.",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
@@ -586,7 +586,7 @@
             "power": {
                 "title": "Tápellátás",
                 "subtitle": "Energiagazdálkodási beállítások",
-                "description": "Ezen a részen dinamikusan állíthatja be a hőmérséklettel és a teljesítménnyel kapcsolatos részleteket, és maximalizálhatja az akkumulátor élettartamát.",
+                "description": "Ezen a részen dinamikusan állíthatja be a hőmérséklettel és a teljesítménnyel kapcsolatos részleteket, és maximalizálhatja az akkumulátor élettartamát.Ezenkívül több népszerű, energiaellátással kapcsolatos funkció is található itt. Az alapértelmezett beállítások ezen a részen ellenőrizhetők, és itt szabható személyre az igényeknek megfelelően a rendszer.",
                 "jumpto": {
                     "title": "UGRÁS A BEÁLLÍTÁSOKHOZ",
                     "battery": "Akkumulátor",
@@ -598,9 +598,9 @@
                     "title": "Intelligens energiagazdálkodási beállítások",
                     "subtitle": "INTELLIGENS HŰTÉS",
                     "subtitle1": "Akkumulátor és csendes működés",
-                    "description1": "Ez a funkció dinamikusan az Ön igényeihez igazítja a hőbeállításokat.",
-                    "description2": "Az Intelligens hűtés korrigálja a ventilátor sebességét, a számítógép maximális hőmérsékletét és teljesítményét.",
-                    "description3": "Az Intelligens hűtés automatikusan, az Ön igényeinek megfelelően igazítja a hőteljesítményt.",
+                    "description1": "Ez a funkció dinamikusan az Ön igényeihez igazítja a hőbeállításokat.Ha be van kapcsolva, úgy módosítja a rendszer a beállításokat, hogy a készülék hűvösebb vagy csendesebb legyen, miközben tétlen vagy Ön kézben tartja. Ellenkező esetben, ha a készülék stabil felületen van, a teljesítményt optimalizálja a rendszer. Ha kikapcsolja a funkciót, manuálisan állíthatja be a kívánt hőmérsékletet.",
+                    "description2": "Az Intelligens hűtés korrigálja a ventilátor sebességét, a számítógép maximális hőmérsékletét és teljesítményét.A funkció az alábbi módokban használható, és már a Windows teljesítmény beállítására szolgáló csúszkájával is elérhető.",
+                    "description3": "Az Intelligens hűtés automatikusan, az Ön igényeinek megfelelően igazítja a hőteljesítményt.Az Intelligens hűtés a kényelmes használat érdekében módosítja a teljesítménnyel kapcsolatos beállításokat, amikor a notebook az Ön kezében van. Ha az eszköz asztalon van, a szolgáltatás a teljesítményt optimalizálja.",
                     "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
                     "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
                     "readMore": "További információ.",
@@ -631,8 +631,8 @@
                             "mode1": "Csendes mód",
                             "mode2": "Kiegyensúlyozott mód",
                             "mode3": "Teljesítményközpontú mód",
-                            "line1": "A csúszka a bal oldalon van.",
-                            "line2": "A csúszka középen van.",
+                            "line1": "A csúszka a bal oldalon van.A ventilátor sebessége és a teljesítmény kisebb, így a számítógép kevésbé melegszik és csendesebb. Az akkumulátor élettartama ilyenkor a leghosszabb.",
+                            "line2": "A csúszka középen van.A ventilátor sebességét és a teljesítményt a rendszer dinamikusan kiegyensúlyozza, hogy a felhasználói élmény a legjobb legyen.",
                             "line3": "A csúszka a jobb oldalon van. A ventilátor sebessége és a gép hőmérséklete a megengedett legnagyobb, hogy a gép a legjobb teljesítményt nyújtsa.",
                             "line4": "More info"
                         },
@@ -662,7 +662,7 @@
                     "title": "Energiagazdálkodási beállítások",
                     "alwaysUSB": {
                         "title": "Always on USB",
-                        "description": "USB-eszközök töltése a számítógép folyamatosan működő USB-csatlakozójával a számítógép alvó vagy hibernált, illetve kikapcsolt állapotában.",
+                        "description": "USB-eszközök töltése a számítógép folyamatosan működő USB-csatlakozójával a számítógép alvó vagy hibernált, illetve kikapcsolt állapotában.A sárga vagy szitanyomott, alábbi ikonokkal jelzett USB-csatlakozóval gyorsan feltölthetők az okostelefonok vagy táblagépek.",
                         "checkbox": "Ha a számítógép ki van kapcsolva, engedélyezze az USB-csatlakozón keresztül történő töltést a laptop akkumulátoráról."
                     },
                     "easyResume": {
@@ -682,8 +682,8 @@
                     "title": "Akkumulátorbeállítások",
                     "batteryThreshold": {
                         "title": "Akkumulátortöltési küszöbérték",
-                        "description": "Ha a számítógépet elsősorban csatlakoztatott hálózati adapterrel használja, akkumulátorral viszont csak ritkán,",
-                        "tooltip": "Ha az akkumulátor jelenleg a leállítási küszöbértéken túl lett töltve, akkor le kell választani az elektromos hálózatról, amíg az akkumulátor töltöttsége a küszöbértékig nem csökken.Az akkumulátor állapotától (új vagy régi) függően a töltés indulásának vagy leállásának pontos pontja legfeljebb 2%-kal eltérhet. ",
+                        "description": "Ha a számítógépet elsősorban csatlakoztatott hálózati adapterrel használja, akkumulátorral viszont csak ritkán,akkor meghosszabbíthatja az akkumulátor élettartamát, ha maximális töltési értékként 100%-nál kisebb beállítást használ. Ez azért hasznos, mert a ritkán használt akkumulátorok élettartama hosszabb, ha nem teljesen feltöltve tárolja őket.",
+                        "tooltip": "Ha az akkumulátor jelenleg a leállítási küszöbértéken túl lett töltve, akkor le kell választani az elektromos hálózatról, amíg az akkumulátor töltöttsége a küszöbértékig nem csökken.Az akkumulátor állapotától (új vagy régi) függően a töltés indulásának vagy leállásának pontos pontja legfeljebb 2%-kal eltérhet. Ha engedélyezi a funkciót, akkor időnként célszerű alaphelyzetbe állítani az akkumulátormérőt, hogy az akkumulátor állapotára vonatkozó jelentés pontos legyen.",
                         "note": "Note",
                         "readMoreText": "Read more.",
                         "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
@@ -693,8 +693,8 @@
                         },
                         "popup": {
                             "title": "Akkumulátortöltési küszöbérték engedélyezése",
-                            "description1": "Az egyéni akkumulátortöltés használatával megnövelhető az akkumulátor eszközhasználat közbeni élettartama.",
-                            "description2": "A funkció teljes kihasználásához válassza le a gépet az elektromos hálózatról,",
+                            "description1": "Az egyéni akkumulátortöltés használatával megnövelhető az akkumulátor eszközhasználat közbeni élettartama.Ha azonban nem tölti fel teljesen az akkumulátort, az üzemidő rövidebb lesz.",
+                            "description2": "A funkció teljes kihasználásához válassza le a gépet az elektromos hálózatról,és hagyja, hogy az akkumulátor teljesen vagy a töltésleállítási küszöbérték alá merüljön le.",
                             "enable": "ENGEDÉLYEZÉS",
                             "cancel": "MÉGSE"
                         },
@@ -711,11 +711,11 @@
                     },
                     "conservationMode": {
                         "title": "Tárolási mód",
-                        "description": "A funkcióval megnövelhető az akkumulátor élettartama, ha csatlakozik a hálózathoz.",
+                        "description": "A funkcióval megnövelhető az akkumulátor élettartama, ha csatlakozik a hálózathoz. <br>Ha engedélyezi ezt az üzemmódot, az akkumulátor csak a kapacitása 55-60%-áig töltődik, és az akkumulátor élettartama maximális lesz. Ebben az esetben azonban a számítógép rövidebb ideig használható az elektromos hálózatról való leválasztás után.",
                         "tooltip": {
                             "line1": "A funkcióval megnövelhető az akkumulátor élettartama, ha csatlakozik a hálózathoz.",
                             "line2": "Ha engedélyezi ezt az üzemmódot, az akkumulátor csak a kapacitása 55-60%-áig töltődik, és az akkumulátor élettartama maximális lesz. Ebben az esetben azonban a számítógép rövidebb ideig használható az elektromos hálózatról való leválasztás után.",
-                            "line3": "Megjegyzés: A Gyorstöltés és a Tárolási mód nem működhet egyszerre."
+                            "line3": "Megjegyzés: A Gyorstöltés és a Tárolási mód nem működhet egyszerre.Ha az egyik üzemmód be van kapcsolva, akkor a rendszer automatikusan kikapcsolja a másikat."
                         }
                     },
                     "airPlanePower": {
@@ -861,7 +861,7 @@
                     "url": "Ugrás a Windows adatvédelmi beállításaihoz",
                     "cameraPrivacy": {
                         "title": "Kamera privát üzemmódja",
-                        "tooltip": "Ha az adatvédelmi beállítás engedélyezve van, a kamera nem küld élő képeket."
+                        "tooltip": "Ha az adatvédelmi beállítás engedélyezve van, a kamera nem küld élő képeket. Akkor használja a beállítást, ha nem szeretne képeket megosztani másokkal videohívás közben."
                     },
                     "camera": {
                         "title": "Kamera",
@@ -922,7 +922,7 @@
         },
         "smartAssist": {
             "title": "Smart Assist",
-            "description": "A Lenovo intelligens észlelési funkciója a számítógép különböző érzékelőivel észleli a felhasználói tevékenységeket,",
+            "description": "A Lenovo intelligens észlelési funkciója a számítógép különböző érzékelőivel észleli a felhasználói tevékenységeket,és úgy módosítja a beállításokat, hogy védje az Ön adatait, és az energiagazdálkodás optimális legyen.",
             "jumpTo": {
                 "title": "UGRÁS A BEÁLLÍTÁSOKHOZ",
                 "security": "Biztonság",
@@ -947,7 +947,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Érintés nélküli zárolás",
-                    "caption": "Ez a funkció elsötétíti a képernyőt, valamint lezárja a számítógépet, amikor nem érzékeli a felhasználó jelenlétét.",
+                    "caption": "Ez a funkció elsötétíti a képernyőt, valamint lezárja a számítógépet, amikor nem érzékeli a felhasználó jelenlétét.Csökkentheti annak az esélyét, hogy valaki jogosulatlanul használja a gépet, amikor Ön zárolás nélkül hagyja magára. Az energiafelhasználást is csökkenti azáltal, hogy a rendszert modern készenléti állapotba helyezi, amikor a gép nem érzékeli az Ön jelenlétét.",
                     "autoScreenLockTimer": {
                         "title": "AUTOMATIKUS KÉPERNYŐZÁR IDŐZÍTŐJE",
                         "radioButton": {
@@ -955,7 +955,7 @@
                             "medium": "Közepes",
                             "slow": "Lassú"
                         },
-                        "toolTipContent": "Válassza ki, hogyan szeretné zárolni a képernyőt (Gyorsan/Közepes sebességgel/Lassan), ha Ön nincs a közelben."
+                        "toolTipContent": "Válassza ki, hogyan szeretné zárolni a képernyőt (Gyorsan/Közepes sebességgel/Lassan), ha Ön nincs a közelben.A képernyő zárolási sebességére a tényleges felhasználói alkalmazás, a szenzor tulajdonságai és a Windows képernyőre vonatkozó időtúllépési beállításai is hatással vannak. Ezért határozottan azt javasoljuk, hogy azonnal zárolja a rendszert, amikor magára hagyja az eszközt."
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -967,9 +967,9 @@
                     }
                 },
                 "note": {
-                    "description1": "A funkcióhoz a Windows Hello szükséges.",
-                    "description2": "A funkció érzékelőkkel és kamerával észleli az Ön jelenlétét.",
-                    "description3": "1. Ha a számítógép sátor, táblagép vagy álló üzemmódban van,",
+                    "description1": "A funkcióhoz a Windows Hello szükséges.Ellenőrizze, hogy az arcfelismerés be van-e kapcsolva a Windows beállításai között.",
+                    "description2": "A funkció érzékelőkkel és kamerával észleli az Ön jelenlétét.A funkció azonban NEM gyűjt, tárol vagy biztosít másoknak személyes adatokat vagy képeket.",
+                    "description3": "1. Ha a számítógép sátor, táblagép vagy álló üzemmódban van,előfordulhat, hogy ezek a funkciók nem működnek megfelelően.",
                     "description4": "2. Ha a számítógép hibernált módban van vagy ki van kapcsolva,az infravörös kamerával való automatikus bejelentkezés nem használható.",
                     "description5": "3. Állítsa megfelelő szögbe a számítógép képernyőjét,hogy az infravörös kamera felismerhesse az arcot az automatikus bejelentkeztetéshez."
                 },
@@ -1052,10 +1052,10 @@
         "popup": {
             "reboot": "Újraindítás",
             "shutdown": "Leállítás",
-            "rebootForceMsg": "A kijelölt frissítés(ek) aktiválásához a rendszer a telepítés után automatikusan újraindul.",
-            "shutdownForceMsg": "A kijelölt frissítés(ek) aktiválásához a rendszer a telepítés után automatikusan leáll.",
-            "rebootDelayedMsg": "A kiválasztott frissítések telepítése után a rendszer újraindul. A frissítések telepítése során ne kapcsolja ki a gépet, és ne távolítsa el az áramforrást vagy a tartozékokat. Javasoljuk, hogy készüljön fel a rendszer leállására, és mentse a munkáját.",
-            "rebootRequiredMsg": "A frissítések sikeres telepítéséhez újra kell indítani a számítógépet; így meggyőződhet róla, hogy minden biztonságosan és megfelelően működik.",
+            "rebootForceMsg": "A kijelölt frissítés(ek) aktiválásához a rendszer a telepítés utánautomatikusan újraindul.",
+            "shutdownForceMsg": "A kijelölt frissítés(ek) aktiválásához a rendszer a telepítés utánautomatikusan leáll.",
+            "rebootDelayedMsg": "A kiválasztott frissítések telepítése után a rendszer újraindul.A frissítések telepítése során ne kapcsolja ki a gépet, és ne távolítsa el az áramforrást vagy a tartozékokat. Javasoljuk, hogy készüljön fel a rendszer leállására, és mentse a munkáját.",
+            "rebootRequiredMsg": "A frissítések sikeres telepítéséhezújra kell indítani a számítógépet; így meggyőződhet róla, hogy minden biztonságosan és megfelelően működik.",
             "okayButton": "OK",
             "cancelButton": "Mégse",
             "rebootButton": "ÚJRAINDÍTÁS MOST",
@@ -1067,11 +1067,11 @@
             "subtitle": "FRISSÍTÉSEK AUTOMATIKUS TELEPÍTÉSE",
             "critical": {
                 "title": "Kritikus frissítések",
-                "tooltip": "A kritikus frissítések megakadályozhatják a jelentős problémákat, a hibás működést, a hardverhibákat és az adatvesztést."
+                "tooltip": "A kritikus frissítések megakadályozzák a jelentős problémákat, a hibás működést, a hardverhibákat és az adatvesztést."
             },
             "recommended": {
                 "title": "Ajánlott frissítések",
-                "tooltip": "Az ajánlott illesztőprogram-frissítések segítenek a számítógép optimális teljesítményének fenntartásában."
+                "tooltip": "Az ajánlott illesztőprogram-frissítések optimális teljesítményt biztosítanak a számítógépen."
             },
             "windows": {
                 "title": "Windows-frissítések",
@@ -1084,72 +1084,23 @@
         "banner": {
             "neverChecked": "Üdvözöljük a System Update szolgáltatásban.",
             "title": "A naprakész rendszer megfelelően működik.",
-            "last": "Utolsó frissítés dátuma:",
+            "last": "Utolsó frissítés dátuma",
             "next": "A frissítések következő ellenőrzésének ideje",
-            "checkButton": "FRISSÍTÉSEK KERESÉSE ",
+            "checkButton": "FRISSÍTÉSEK KERESÉSE",
             "checking": "Frissítések keresése",
-            "downloading": "Frissítések letöltése",
+            "downloading": "A frissítések letöltve",
             "installing": "Frissítések telepítése",
             "percent": "% kész",
             "cancelCheck": "Ellenőrzés leállítása",
             "cancelUpdates": "FRISSÍTÉSEK LEÁLLÍTÁSA",
             "available": "Elérhető frissítések",
-            "description": "Ezek a csomagok olyan hardverillesztőkhöz és egyéb rendszereszközökhöz tartozó frissítéseket tartalmaznak, amelyek kritikus fontosságúak a számítógép megfelelő működéséhez. A kritikus frissítések fontos szerepet játszanak a számítógépen tárolt adatok védelmében is, és a megjelenést követően javasolt a telepítésük. A csomagok telepítésének elmulasztása adatvesztést, a rendszer hibás működését vagy hardverhibát okozhat.",
+            "description": "Ezek a csomagok olyan hardverillesztőkhözés egyéb rendszereszközökhöz tartozó frissítéseket tartalmaznak, amelyek kritikus fontosságúak a számítógép megfelelő működéséhez. A kritikus frissítések fontos szerepet játszanak a számítógépen tárolt adatok védelmében is, és a megjelenést követően javasolt a telepítésük. A csomagok telepítésének elmulasztása az adatok elvesztését, a rendszer hibás működését vagy a hardverek hibáját okozhatja.",
             "installButton": "MINDEN FRISSÍTÉS TELEPÍTÉSE",
             "result": {
                 "success": "Minden frissítés megfelelően települt",
                 "fail": {
-                    "title": "Egyes frissítések nem települtek megfelelően.",
-                    "description": "Hiba történt a frissítések letöltése vagy telepítése során. Ellenőrizze az internetkapcsolatot, és a frissítések telepítése alatt ne kapcsolja ki a számítógépet."
-                }
-            },
-            "smartAssist": {
-                "title": "Smart Assist",
-                "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
-                "jumpTo": {
-                    "title": "JUMP TO SETTINGS",
-                    "security": "Security",
-                    "screen": "Screen",
-                    "media": "Media",
-                    "voice": "Voice"
-                },
-                "intelligentSecurity": {
-                    "title": "Intelligent Security",
-                    "readMore": "Read more",
-                    "HumanPresenceDetection": {
-                        "title": "Human Presence Detection"
-                    },
-                    "autoIrCameraLogin": {
-                        "title": "Zero Touch Login",
-                        "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it. Auto IR camera login"
-                    },
-                    "autoScreenLock": {
-                        "title": "Auto screen lock",
-                        "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
-                        "autoScreenLockTimer": {
-                            "title": "AUTO SCREEN LOCK TIMER",
-                            "radioButton": {
-                                "fast": "Fast",
-                                "medium": "Medium",
-                                "slow": "Slow"
-                            },
-                            "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
-                        }
-                    },
-                    "distanceSensitivityAdjusting": {
-                        "title": "Distance sensitivity adjusting"
-                    },
-                    "note": {
-                        "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-                        "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect, save, of leak any personal data or image.",
-                        "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-                        "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
-                        "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
-                    },
-                    "WindowsLink": {
-                        "goToWindowsHello": "Go to Windows Hello Settings",
-                        "screenTimeoutSettings": "Go to Screen timeout settings"
-                    }
+                    "title": "Egyes frissítések telepítése nem lett megfelelő.",
+                    "description": "Hiba történt a frissítések letöltése vagy telepítése során.Ellenőrizze az internetkapcsolatot, és a frissítések telepítése alatt ne kapcsolja ki a számítógépet."
                 }
             }
         },
@@ -1217,15 +1168,14 @@
         "protected": "Protected",
         "notProtected": "Not Protected",
         "myDevice": "My Device",
-        "allDevice": "All Devices",
         "secure": "SECURE",
         "needAttention": "NEEDS ATTENTION",
         "manageAccount": "Manage Account",
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrate to protect all of your devices",
+        "trialExpired": "Trial Expired",
+        "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
         "protectAllDevices": "Protect all of your devices",
@@ -1349,9 +1299,7 @@
             "maliciousNetwork": "Ebben a hónapban {{maliciousWifi}} rosszindulatú hálózathoz való csatlakozást akadályozott meg.",
             "good": "JÓ",
             "malicious": "ROSSZINDULATÚ",
-            "suspicious": "GYANÚS",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "GYANÚS"
         },
         "antivirus": {
             "common": {

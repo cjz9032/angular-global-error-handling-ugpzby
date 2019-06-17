@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -377,7 +377,15 @@
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
-                }
+                },
+                "question1": "Do you like the new style of Vantage?",
+                "question2": "Do you think the performance is acceptable?",
+                "question3": "Would you use the application more often in the future?",
+                "yes": "Yes",
+                "no": "No",
+                "tips1": "Please leave any additional comments",
+                "sendFeedback": "Send Feedback",
+                "submitScreenShot": "Submit Screen Shot"
             }
         },
         "quickSettings": {
@@ -557,20 +565,12 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter",
+                        "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "ACAdapterNotSupported": {
                         "title": "AC adapter not supported.",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
@@ -598,9 +598,9 @@
                     "title": "Pametne postavke napajanja",
                     "subtitle": "INTELIGENTNO HLAĐENJE",
                     "subtitle1": "Baterija i tišina",
-                    "description1": "Ova funkcija dinamički podešava toplotne postavke vašim potrebama.",
+                    "description1": "Ova funkcija dinamički podešava toplotne postavke vašim potrebama.Kada je uključena, podešava postavke kako bi uređaj bio hladniji ili tiši dok ga držite ili dok je u stanju mirovanja. U suprotnom optimizuje performanse dok je uređaj na stabilnoj površini. Kad je isključena, možete ručno da podesite termalni prioritet.",
                     "description2": "Pametno hlađenje prilagođava brzinu ventilatora, maksimalnu temperaturu površine računara i performanse.Ova funkcija ima režime navedene u nastavku i sada je dostupna na klizaču za performanse napajanja operativnog sistema Windows.",
-                    "description3": "Pametno hlađenje automatski usklađuje toplotne performanse da se prilagode vašim potrebama.Funkcija pametnog hlađenja prilagođava postavke performansi da bi pružila hladniju površinu radi prijatnog korišćenja kada držite prenosivi računar. ",
+                    "description3": "Pametno hlađenje automatski usklađuje toplotne performanse da se prilagode vašim potrebama.Funkcija pametnog hlađenja prilagođava postavke performansi da bi pružila hladniju površinu radi prijatnog korišćenja kada držite prenosivi računar. Kada je uređaj na radnoj površini, ova funkcija optimizuje performanse.",
                     "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
                     "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
                     "readMore": "Pročitajte više.",
@@ -631,7 +631,7 @@
                             "mode1": "Tihi režim",
                             "mode2": "Ujednačeni režim",
                             "mode3": "Režim učinka",
-                            "line1": "Klizač je sasvim levo.",
+                            "line1": "Klizač je sasvim levo.Brzina i performanse ventilatora su smanjene za hladniji, tiši računar i najduže trajanje baterije.",
                             "line2": "Klizač je na sredini.Brzina i performanse ventilatora su dinamički izbalansirane radi najboljeg doživljaja.",
                             "line3": "Klizač je sasvim desno. Brzina ventilatora i dozvoljena temperatura površine više su radi najviših performansi.",
                             "line4": "More info"
@@ -683,7 +683,7 @@
                     "batteryThreshold": {
                         "title": "Prag punjenja baterije",
                         "description": "Ako prvenstveno koristite računar sa prikačenim adapterom za naizmeničnu struju i samo povremeno koristite napajanje iz baterije,možete da produžite životni vek baterije podešavanjem maksimalne vrednosti napunjenosti ispod 100%. Ovo je korisno zato što baterije koje se samo povremeno koriste imaju duži životni vek kada se održavaju na manjoj vrednosti od potpunog punjenja.",
-                        "tooltip": "Ako je baterija trenutno napunjena iznad praga zaustavljanja punjenja, odvojite napajanje dok baterija se ne isprazni do ili ispod praga zaustavljanja punjenja.",
+                        "tooltip": "Ako je baterija trenutno napunjena iznad praga zaustavljanja punjenja, odvojite napajanje dok baterija se ne isprazni do ili ispod praga zaustavljanja punjenja.U zavisnosti od statusa baterije (da li je stara ili nova), tačna tačka pri kojoj punjenje započinje ili se zaustavlja može da se razlikuje i do 2%. Ako omogućite funkciju, treba da povremeno obavite resetovanje pokazivača napunjenosti baterije da biste obezbedili precizno izveštavanje o ispravnosti baterije.",
                         "note": "Note",
                         "readMoreText": "Read more.",
                         "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
@@ -693,7 +693,7 @@
                         },
                         "popup": {
                             "title": "Omogući prag punjenja baterije",
-                            "description1": "Omogućavanje prilagođenoj punjenja baterija omogućiće da opšte zdravlje baterije duže traje dok koristite ovaj uređaj.",
+                            "description1": "Omogućavanje prilagođenoj punjenja baterija omogućiće da opšte zdravlje baterije duže traje dok koristite ovaj uređaj.Međutim, ako baterija ne bude napunjena u potpunosti, trajanje baterije pri izvršavanju će biti kraće.",
                             "description2": "Da biste u potpunosti omogućili ovu funkciju, isključite mašinu iomogućite da se baterija isprazni ili da bude ispod praga za prestanak punjenja.",
                             "enable": "OMOGUĆI",
                             "cancel": "OTKAŽI"
@@ -711,16 +711,16 @@
                     },
                     "conservationMode": {
                         "title": "Režim uštede",
-                        "description": "Ova funkcija je korisna za produžavanje trajanja baterije kada je priključena na struju.",
+                        "description": "Ova funkcija je korisna za produžavanje trajanja baterije kada je priključena na struju. <br>Kada je ovaj režim omogućen, baterija će se puniti samo do kapaciteta od 55-60% a životni vek baterije se može maksimalno povećati. Međutim, time će se skratiti vreme korišćenja računara nakon što ga isključite iz izvora napajanja naizmeničnom strujom.",
                         "tooltip": {
                             "line1": "Ova funkcija je korisna za produžavanje trajanja baterije kada je priključena na struju.",
-                            "line2": "Kada je ovaj režim omogućen, baterija će se puniti samo do kapaciteta od 55-60% a životni vek baterije se može maksimalno povećati.",
-                            "line3": "Napomena: Ekspresno punjenje i konzervacija ne mogu da rade istovremeno."
+                            "line2": "Kada je ovaj režim omogućen, baterija će se puniti samo do kapaciteta od 55-60% a životni vek baterije se može maksimalno povećati. Međutim, time će se skratiti vreme korišćenja računara nakon što ga isključite iz izvora napajanja naizmeničnom strujom.",
+                            "line3": "Napomena: Ekspresno punjenje i konzervacija ne mogu da rade istovremeno.Ako se jedan od režima uključi, drugi će se automatski isključiti."
                         }
                     },
                     "airPlanePower": {
                         "title": "Režim korišćenja u avionu",
-                        "description": "Zaštitite utičnicu za napajanje naizmeničnom strujom u avionu kontrolom potrošnje vašeg sistema."
+                        "description": "Zaštitite utičnicu za napajanje naizmeničnom strujom u avionu kontrolom potrošnje vašeg sistema.Kada je omogućen režim korišćenja u avionu, računar smanjuje potrošnju napajanja ograničavanjem brzine punjenja i performansi sistema."
                     }
                 },
                 "energyStar": {
@@ -731,7 +731,7 @@
             "audio": {
                 "title": "Audio",
                 "subtitle": "Audio postavke",
-                "description": "Ovaj odeljak vam omogućava da ručno optimizujete ili potpuno",
+                "description": "Ovaj odeljak vam omogućava da ručno optimizujete ili potpunokonfigurišete zvučne postavke, kao što su Dolby postavke, mikrofon itd.",
                 "audioSmartsettings": {
                     "title": "Pametne audio postavke",
                     "subtitle": "POSTAVKE ZASNOVANE NA APLIKACIJI",
@@ -947,7 +947,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Zero Touch zaključavanje",
-                    "caption": "Ova funkcija zatamnjuje ekran i zaključava računar kada se ne otkrije prisustvo korisnika.To može smanjiti šanse neovlašćenog pristupa računaru kada ostavite računar otključan i bez nadzora. ",
+                    "caption": "Ova funkcija zatamnjuje ekran i zaključava računar kada se ne otkrije prisustvo korisnika.To može smanjiti šanse neovlašćenog pristupa računaru kada ostavite računar otključan i bez nadzora. Takođe, umanjuje potrošnju struje tako što stavlja sistem u moderno stanje pripravnosti kada vaše prisustvo nije otkriveno.",
                     "autoScreenLockTimer": {
                         "title": "TAJMER AUTOMATSKOG ZAKLJUČAVANJA EKRANA",
                         "radioButton": {
@@ -955,7 +955,7 @@
                             "medium": "Srednje",
                             "slow": "Sporo"
                         },
-                        "toolTipContent": "Izaberite željenu opciju da biste zaključali ekran Brzom/Srednjom/Sporom brzinom kada vaše prisustvo nije otkriveno."
+                        "toolTipContent": "Izaberite željenu opciju da biste zaključali ekran Brzom/Srednjom/Sporom brzinom kada vaše prisustvo nije otkriveno.Međutim, na vreme kada će ekran biti zaključan utiče i stvarni korisnički scenario, mogućnosti senzora i postavke vremenskog ograničenja ekrana operativnog sistema Windows. Zato vam preporučujemo da smesta zaključate sistem pred odlazak."
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -968,7 +968,7 @@
                 },
                 "note": {
                     "description1": "Ova funkcija se oslanja na sistem Windows Hello.Uverite se da je prepoznavanje lica uključeno u postavkama operativnog sistema Windows.",
-                    "description2": "Funkcija koristi senzore i kameru da bi otkrila vaše prisustvo.",
+                    "description2": "Funkcija koristi senzore i kameru da bi otkrila vaše prisustvo.Međutim, funkcija NE prikuplja, ne čuva, ne propušta nikakve lične podatke ili slike.",
                     "description3": "1. Ako je računar u režimima šatora, tableta ili postolja,ove funkcije možda neće raditi ispravno.",
                     "description4": "2. Ako je računar u režimu hibernacije ili je isključen.Automatsko prijavljivanje putem IC kamere neće funkcionisati.",
                     "description5": "3. Podesite ekran računara na odgovarajući ugaokako bi IC kamera mogla da prepozna vaše lice za automatsko prijavljivanje."
@@ -1040,7 +1040,7 @@
         "back": "NAZAD",
         "history": "PUNA ISTORIJA",
         "notAvailable": "Nije dostupno",
-        "notInstalled": "Nije instaliran",
+        "notInstalled": "Nije instalirano",
         "criticalUpdates": "Kritična ažuriranja",
         "recommendedUpdates": "Preporučena ažuriranja",
         "optionalUpdates": "Opcionalna ažuriranja",
@@ -1052,9 +1052,9 @@
         "popup": {
             "reboot": "Ponovo pokreni",
             "shutdown": "Isključi",
-            "rebootForceMsg": "Ažuriranja koje ste izabrali će dovesti do automatskog ponovnog pokretanja sistema nakon instalacije.",
-            "shutdownForceMsg": "Ažuriranja koje ste izabrali će dovesti do automatskog isključivanja nakon instalacije.",
-            "rebootDelayedMsg": "Zbog ažuriranja koja ste izabrali, sistem će ponovo da se pokrene nakon instalacije. Tokom instalacije ažuriranja, nemojte da isključujete sistem, vadite izvor napajanja ili pribor. Preporučujemo vam da kao pripremu za ponovno pokretanje sistema sačuvate posao.",
+            "rebootForceMsg": "Ažuriranja koja ste izabrali će dovesti do automatskog ponovnog pokretanja sistemanakon instalacije.",
+            "shutdownForceMsg": "Ažuriranja koja ste izabrali će dovesti do automatskog isključivanjanakon instalacije.",
+            "rebootDelayedMsg": "Zbog ažuriranja koja ste izabrali, sistem će se ponovo pokrenuti nakon instalacije.Tokom instalacije ažuriranja, nemojte da isključujete sistem, uklanjate izvor napajanja ili pribor. Preporučujemo vam da kao pripremu za ponovno pokretanje sistema sačuvate posao.",
             "rebootRequiredMsg": "Da biste uspešno instalirali ažuriranja, potrebno je ponovo pokrenuti računar kako biste osigurali da sve radi besprekorno i bezbedno.",
             "okayButton": "U redu",
             "cancelButton": "Otkaži",
@@ -1064,14 +1064,14 @@
         },
         "autoUpdateSettings": {
             "title": "Postavke automatskog ažuriranja",
-            "subtitle": "AUTOMATSKO INSTALIRANJE AŽURIRANJA",
+            "subtitle": "AUTOMATSKI INSTALIRAJ AŽURIRANJA",
             "critical": {
                 "title": "Kritična ažuriranja",
                 "tooltip": "Kritična ažuriranja mogu da spreče značajan problem, velike kvarove, greške u hardveru ili oštećenje podataka."
             },
             "recommended": {
                 "title": "Preporučena ažuriranja",
-                "tooltip": "Preporučena ažuriranja upravljačkog programa održavaju rad računara sa optimalnim performansama."
+                "tooltip": "Preporučena ažuriranja upravljačkih programa omogućavaju da vaš računar radi pod optimalnim performansama."
             },
             "windows": {
                 "title": "Windows ažuriranja",
@@ -1086,21 +1086,21 @@
             "title": "Ažuran sistem je zdrav sistem.",
             "last": "Poslednje ažuriranje je obavljeno",
             "next": "Sledeće ažurirano skeniranje je planirano",
-            "checkButton": "POTRAŽITE AŽURIRANJA ",
-            "checking": "Provera ažuriranja",
-            "downloading": "Preuzimanje ažuriranja",
+            "checkButton": "PROVERI DA LI POSTOJE ISPRAVKE",
+            "checking": "Traženje ažuriranja",
+            "downloading": "Preuzimanje ažuriranja je završeno",
             "installing": "Instaliranje ažuriranja",
             "percent": "% završeno",
             "cancelCheck": "Otkaži proveru",
             "cancelUpdates": "OTKAŽI AŽURIRANJA",
             "available": "Dostupna ažuriranja",
-            "description": "Ovi paketi obuhvataju ispravke za upravljačke programe hardvera i druge sistemske uslužne programe koji su od kritične važnosti za pravilan rad računara. Ispravke od kritične važnosti su važne i za zaštitu podataka na računaru i moraju se instalirati čim postanu dostupne. Ako ne instalirate ove pakete, može doći do gubitka podataka, poremećaja u funkcionisanju sistema ili do kvara hardvera.",
+            "description": "Ovi paketi obuhvataju ispravke za upravljačke programe hardverai druge sistemske uslužne programe koji su od kritične važnosti za pravilan rad računara. Kritična ažuriranja su važna i za zaštitu podataka na računaru i moraju se instalirati čim postanu dostupna. Ako ne instalirate ove pakete, može doći do gubitka podataka, poremećaja u funkcionisanju sistema ili do kvara hardvera.",
             "installButton": "INSTALIRAJ SVA AŽURIRANJA",
             "result": {
                 "success": "Sva ažuriranja su ispravno instalirana",
                 "fail": {
                     "title": "Neka ažuriranja nisu ispravno instalirana.",
-                    "description": "Nešto je krenulo naopako tokom preuzimanja ili instalacije ovih ažuriranja. Uverite se da ste na mreži i ne isključujte računar tokom instaliranja ažuriranja."
+                    "description": "Nešto je krenulo naopako tokom preuzimanja ili instalacije ovih ažuriranja.Uverite se da ste na mreži i ne isključujte računar kada instalirate ažuriranja."
                 }
             }
         },
@@ -1168,15 +1168,14 @@
         "protected": "Protected",
         "notProtected": "Not Protected",
         "myDevice": "My Device",
-        "allDevice": "All Devices",
         "secure": "SECURE",
         "needAttention": "NEEDS ATTENTION",
         "manageAccount": "Manage Account",
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrate to protect all of your devices",
+        "trialExpired": "Trial Expired",
+        "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
         "protectAllDevices": "Protect all of your devices",
@@ -1300,9 +1299,7 @@
             "maliciousNetwork": "Vaš računar je ovog meseca sprečen pri priključivanju {{maliciousWifi}} zlonamernim mrežama.",
             "good": "DOBRO",
             "malicious": "ZLONAMERNO",
-            "suspicious": "SUMNJIVO",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "SUMNJIVO"
         },
         "antivirus": {
             "common": {

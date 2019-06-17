@@ -18,6 +18,24 @@
 				cursor: not-allowed;
 			}
 		}
+
+		.error {
+			@extend .base-preview;
+			background-color: $shade_extralight;
+			cursor: not-allowed;
+			padding-top: 8rem;
+			.error-title {
+				color: $stop_dark;
+				font-size: 2rem;
+				font-weight: 600;
+			}
+
+			.error-description {
+				color: $shade_dark;
+				font-size: 1.9rem;
+				font-weight: 600;
+			}
+		}
 	}
 
 	.hidden {
