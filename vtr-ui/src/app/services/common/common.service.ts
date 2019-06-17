@@ -83,7 +83,7 @@ export class CommonService {
 	 * @param value value to store in local storage
 	 */
 	public setLocalStorageValue(key: LocalStorageKey, value: any) {
-		console.log(`Setting the value for ${key}, Value => ${value}`);
+		//console.log(`Setting the value for ${key}, Value => ${value}`);
 		window.localStorage.setItem(key, JSON.stringify(value));
 		// notify component that local storage value updated.
 		this.sendNotification(key, value);

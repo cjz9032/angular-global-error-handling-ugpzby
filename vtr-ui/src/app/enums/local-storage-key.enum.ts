@@ -86,6 +86,26 @@ export enum LocalStorageKey {
 	fbNetFilter = '[LocalStorageKey] FbNetFilter',
 	ledDriver = '[LocalStorageKey] LedDriver',
 	winKeyLockFeature = '[LocalStorageKey] WinKeyLockFeature',
+	cpuUsage = '[LocalStorageKey] cpuUsage',
+	cpuCapacity = '[LocalStorageKey] cpuCapacity',
+	gpuUsage = '[LocalStorageKey] gpuUsage',
+	gpuCapacity = '[LocalStorageKey] gpuCapacity',
+	ramUsage = '[LocalStorageKey] ramUsage',
+	ramCapacity = '[LocalStorageKey] ramCapaity',
+	cpuBaseFrequency = '[LocalStorageKey] cpuBaseFrequency',
+	gpuModulename = '[LocalStorageKey] gpuModulename',
+	gpuMaxFrequency = '[LocalStorageKey] gpuMaxFrequency',
+	memorySize = '[LocalStorageKey] ramMemorySize',
+	hddList = '[LocalStorageKey] hddList',
+	ramOver = '[LocalStorageKey] ramModuleName',
+	gpuOver = '[LocalStorageKey] gpuModuleName ',
+	cpuOver = '[LocalStorageKey] cpuModuleName',
+	type = '[LocalStorageKey] type',
+	capacity = '[LocalStorageKey] capacity',
+	diskUsage = '[LocalStorageKey] diskUsage',
+	hddName = '[LocalStorageKey] hddName',
+	isSystemDisk = '[LocalStorageKey] isSystemDisk',
+	usedDisk = '[LocalStorageKey] usedDisk',
 
 	// this enum is for macrokey local storage key
 	MacroKeyType = '[LocalStorageKey] MacroKeyType',
@@ -99,6 +119,7 @@ export enum LocalStorageKey {
 	PrevMacroKeyInterval = '[LocalStorageKey] PrevMacroKeyInterval',
 	CurrentMacroKeyRepeat = '[LocalStorageKey] CurrentMacroKeyRepeat',
 	CurrentMacroKeyInterval = '[LocalStorageKey] CurrentMacroKeyInterval'
+
 
 
 }
