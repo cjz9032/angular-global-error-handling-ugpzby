@@ -1100,7 +1100,7 @@
                 "success": "כל העדכונים הותקנו כראוי",
                 "fail": {
                     "title": "עדכונים מסוימים לא הותקנו כראוי.",
-                    "description": "משהו השתבש במהלך ההורדה או ההתקנה של עדכונים אלה.ודאו שאתם נמצאים במצב מקוון ואל תכבו את המחשב בעת התקנת העדכונים."
+                    "description": "משהו השתבש במהלך ההורדה או ההתקנה של עדכונים אלה. ודאו שאתם נמצאים במצב מקוון ואל תכבו את המחשב בעת התקנת העדכונים."
                 }
             }
         },
@@ -1116,7 +1116,7 @@
             "attend": "השתתפו",
             "rebootRequiredTag": "נדרשת הפעלה מחדש",
             "rebootDelayTag": "נדרש אתחול מחדש, יש צורך במקור מתח",
-            "shutdownRequiredTag": "נדרש כיבו‬‏‫",
+            "shutdownRequiredTag": "נדרש כיבוי‬‏‫",
             "dependedPackage": "Depended Package"
         },
         "availableUpdates": {
@@ -1136,6 +1136,27 @@
             "releaseDate": "תאריך הפצה:",
             "showAll": "הצגת הכל",
             "noInstallationHistory": "היסטוריית ההתקנות אינה זמינה"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "קיימת בעיה באחזור עדכונים חדשים. נסו שוב מאוחר יותר.",
+            "upToDate": "אין עדכונים זמינים. המערכת שלכם מעודכנת.",
+            "egatherException": "אירעה שגיאה במהלך איסוף פרטי המשתמש.",
+            "gatheringUserInfoException": "אירעה שגיאה במהלך איסוף פרטי המשתמש.",
+            "certificateValidationException": "שרת תוכן העדכונים אינו חוקי. נסו שוב מאוחר יותר.",
+            "downloadException": "אירעה שגיאה במהלך הורדת העדכונים.",
+            "connectException": "אין אפשרות להתחבר לשרת תוכן העדכונים.",
+            "notEnoughDiskSpace": "אין די שטח בדיסק לביצוע המשימה הנוכחית.",
+            "proxyAuthenticationException": "שם משתמש או סיסמת Proxy שגויים.",
+            "proxyConnectionException": "אין אפשרות להתחבר לשרת ה-Proxy.",
+            "autoScriptEvaluationException": "אירעה שגיאה במהלך הערכת קובץ ה-Script של קביעת התצורה באופן אוטומטי.",
+            "localRepositoryConnectionFailureException": "אין אפשרות להתחבר למאגר המקומי.",
+            "localRepositoryDatabaseException": "לא ניתן לאתר את מסד הנתונים של המאגר המקומי או שהוא פגום.",
+            "networkInterruptedException": "השרת עדכוני המערכת אינו זמין כעת. נסו שוב מאוחר יותר.",
+            "helpCenterInvalidServerException": "השרת עדכוני המערכת אינו חוקי. נסו שוב מאוחר יותר.",
+            "catalogNotFoundException": "לא נמצאו עדכונים עבור המערכת שלכם.",
+            "catalogCrcErrorException": "קטלוג העדכונים של המערכת שלכם מתעדכן כעת בשרת עדכוני המערכת. נסו שוב מאוחר יותר.",
+            "catalogErrorException": "זוהתה שגיאה בקטלוג העדכונים של המערכת שלכם בשרת עדכוני המערכת. נסו שוב מאוחר יותר.",
+            "fileNotFoundException": "הקובץ לא נמצא."
         }
     },
     "homeSecurity": {

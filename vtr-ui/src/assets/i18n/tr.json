@@ -1094,13 +1094,13 @@
             "cancelCheck": "Denetlemeyi iptal et",
             "cancelUpdates": "GÜNCELLEMELERİ İPTAL ET",
             "available": "Mevcut güncellemeler",
-            "description": "Bu paketler, bilgisayarınızın doğru şekilde çalışması içinkritik önem taşıyan donanım sürücülerine ve diğer sistem yardımcı programlarına ilişkin güncellemeleri içerir. Kritik güncellemeler aynı zamanda bilgisayarınızdaki verileri korumak için de önemlidir ve yayınlandıklarında yüklenmelidir. ",
+            "description": "Bu paketler, bilgisayarınızın doğru şekilde çalışması için kritik önem taşıyan donanım sürücülerine ve diğer sistem yardımcı programlarına ilişkin güncellemeleri içerir. Kritik güncellemeler aynı zamanda bilgisayarınızdaki verileri korumak için de önemlidir ve yayınlandıklarında yüklenmelidir. Bu paketlerin yüklenmemesi veri kaybına, sistem hatasına ya da donanım arızasına neden olabilir.",
             "installButton": "TÜM GÜNCELLEMELERİ YÜKLE",
             "result": {
-                "success": "Tüm güncellemeler doğru bir şekilde yüklendi",
+                "success": "Tüm Güncellemeler doğru bir şekilde yüklendi",
                 "fail": {
                     "title": "Bazı güncellemeler doğru bir şekilde yüklenmedi.",
-                    "description": "Bu güncellemeleri indirme veya yükleme işlemi sırasında bir sorun oluştu.Lütfen güncellemeleri yüklerken çevrimiçi olduğunuzdan emin olun ve bilgisayarınızı kapatmayın."
+                    "description": "Bu güncellemeleri indirme veya yükleme işlemi sırasında bir sorun oluştu. Lütfen güncellemeleri yüklerken çevrimiçi olduğunuzdan emin olun ve bilgisayarınızı kapatmayın."
                 }
             }
         },
@@ -1136,6 +1136,27 @@
             "releaseDate": "Yayınlama Tarihi:",
             "showAll": "Tümünü Göster",
             "noInstallationHistory": "Kurulum geçmişi yok"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Yeni Güncellemeler alınırken sorun yaşandı. Lütfen daha sonra yeniden deneyin.",
+            "upToDate": "Mevcut güncelleme yok. Sisteminiz güncel.",
+            "egatherException": "Kullanıcı bilgisi toplanırken hata oluştu.",
+            "gatheringUserInfoException": "Kullanıcı bilgisi toplanırken hata oluştu.",
+            "certificateValidationException": "İçerik Güncelleme Sunucusu geçersiz. Lütfen daha sonra yeniden deneyin.",
+            "downloadException": "Güncellemeler indirilirken hata oluştu.",
+            "connectException": "İçerik Güncelleme Sunucusu ile bağlantı kurulamıyor.",
+            "notEnoughDiskSpace": "Sürmekte olan görevi gerçekleştirmek için yeterli disk alanı yok.",
+            "proxyAuthenticationException": "Hatalı Yetkili Sunucu kullanıcı adı veya parolası.",
+            "proxyConnectionException": "Yetkili sunucu ile bağlantı kurulamıyor.",
+            "autoScriptEvaluationException": "Otomatik yapılandırma komutunu değerlendirme hatası oluştu.",
+            "localRepositoryConnectionFailureException": "Yerel Depo'ya bağlanılamıyor.",
+            "localRepositoryDatabaseException": "Yerel depo veri tabanı bulunmadı veya bozuldu.",
+            "networkInterruptedException": "Sistem Güncelleme Sunucusu şu anda kullanılamıyor. Lütfen daha sonra yeniden deneyin.",
+            "helpCenterInvalidServerException": "Sistem Güncelleme Sunucusu geçersiz. Lütfen daha sonra yeniden deneyin.",
+            "catalogNotFoundException": "Sisteminiz için geçerli bir güncelleme yok.",
+            "catalogCrcErrorException": "Sisteminiz için olan güncelleme kataloğu şu anda Sistem Güncelleme Sunucusu'nda güncelleniyor. Lütfen daha sonra yeniden deneyin.",
+            "catalogErrorException": "Sistem Güncelleme Sunucusu'ndaki sisteminiz için olan güncelleme kataloğunda bir hata saptandı. Lütfen daha sonra yeniden deneyin.",
+            "fileNotFoundException": "Dosya bulunamadı."
         }
     },
     "homeSecurity": {

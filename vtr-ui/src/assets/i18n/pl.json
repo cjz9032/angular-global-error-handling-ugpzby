@@ -1099,8 +1099,8 @@
             "result": {
                 "success": "Wszystkie aktualizacje zostały poprawnie zainstalowane",
                 "fail": {
-                    "title": "Niektóre aktualizacje nie zostały poprawnie zainstalowane.",
-                    "description": "Wystąpił błąd podczas pobierania lub instalowania aktualizacji."
+                    "title": "Niektóre aktualizacje nie zostały zainstalowane poprawnie.",
+                    "description": "Wystąpił błąd podczas pobierania lub instalowania aktualizacji. Upewnij się, że masz dostęp do internetu i nie wyłączaj komputera podczas instalowania aktualizacji."
                 }
             }
         },
@@ -1136,6 +1136,27 @@
             "releaseDate": "Data wydania:",
             "showAll": "Pokaż wszystko",
             "noInstallationHistory": "Historia aktualizacji niedostępna"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Wystąpił problem z pobraniem nowych aktualizacji. Spróbuj ponownie później.",
+            "upToDate": "Brak dostępnych aktualizacji. System jest aktualny.",
+            "egatherException": "Podczas zbierania informacji o użytkowniku wystąpił błąd.",
+            "gatheringUserInfoException": "Podczas zbierania informacji o użytkowniku wystąpił błąd.",
+            "certificateValidationException": "Serwer zawartości aktualizacji jest nieprawidłowy. Spróbuj ponownie później.",
+            "downloadException": "Podczas pobierania aktualizacji wystąpił błąd.",
+            "connectException": "Nie można nawiązać połączenia z serwerem zawartości aktualizacji.",
+            "notEnoughDiskSpace": "Za mało miejsca na dysku na wykonanie bieżącego zadania.",
+            "proxyAuthenticationException": "Nieprawidłowe hasło lub nazwa użytkownika serwera proxy.",
+            "proxyConnectionException": "Nie można nawiązać połączenia z serwerem proxy.",
+            "autoScriptEvaluationException": "Podczas oceny skryptu automatycznej konfiguracji wystąpił błąd.",
+            "localRepositoryConnectionFailureException": "Nie można nawiązać połączenia z lokalnym repozytorium.",
+            "localRepositoryDatabaseException": "Nie można znaleźć bazy danych lokalnego repozytorium albo jest ona uszkodzona.",
+            "networkInterruptedException": "Serwer aktualizacji systemu jest obecnie niedostępny. Spróbuj ponownie później.",
+            "helpCenterInvalidServerException": "Serwer aktualizacji systemu jest nieprawidłowy. Spróbuj ponownie później.",
+            "catalogNotFoundException": "Nie znaleziono odpowiednich aktualizacji do Twojego systemu.",
+            "catalogCrcErrorException": "Katalog aktualizacji dla danego systemu jest aktualizowany na serwerze aktualizacji systemu. Spróbuj ponownie później.",
+            "catalogErrorException": "Na serwerze aktualizacji systemu wykryto błąd związany z katalogiem aktualizacji Twojego systemu. Spróbuj ponownie później.",
+            "fileNotFoundException": "Nie znaleziono pliku."
         }
     },
     "homeSecurity": {

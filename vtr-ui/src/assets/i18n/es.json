@@ -1185,6 +1185,27 @@
             "releaseDate": "Fecha de publicación:",
             "showAll": "Mostrar todos",
             "noInstallationHistory": "No hay historial de instalación disponible"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Hubo un problema al recuperar las nuevas actualizaciones. Vuelva a intentarlo más tarde.",
+            "upToDate": "No hay actualizaciones disponibles. El sistema está actualizado.",
+            "egatherException": "Se ha producido un error al recopilar información del usuario.",
+            "gatheringUserInfoException": "Se ha producido un error al recopilar información del usuario.",
+            "certificateValidationException": "El servidor de contenido de actualización no es válido. Vuelva a intentarlo más tarde.",
+            "downloadException": "Se ha producido un error al descargar las actualizaciones.",
+            "connectException": "No se puede conectar con el servidor de contenido de actualización.",
+            "notEnoughDiskSpace": "No hay suficiente espacio de disco para realizar la tarea actual.",
+            "proxyAuthenticationException": "Nombre de usuario o contraseña de proxy incorrectos.",
+            "proxyConnectionException": "No se puede conectar con el servidor proxy.",
+            "autoScriptEvaluationException": "Se ha producido un error al evaluar el script de configuración automática.",
+            "localRepositoryConnectionFailureException": "No se puede conectar con el depósito local.",
+            "localRepositoryDatabaseException": "No se ha podido encontrar la base de datos del depósito local o está dañada.",
+            "networkInterruptedException": "El servidor de actualización de sistema no está disponible en este momento. Vuelva a intentarlo más tarde.",
+            "helpCenterInvalidServerException": "El servidor de actualización de sistema no es válido. Vuelva a intentarlo más tarde.",
+            "catalogNotFoundException": "No se encontraron actualizaciones aplicables para el sistema.",
+            "catalogCrcErrorException": "El catálogo de actualizaciones para su sistema se está actualizando en el servidor de actualización de sistema. Vuelva a intentarlo más tarde.",
+            "catalogErrorException": "Se detectó un error con el catálogo de actualizaciones para el sistema en el servidor de actualización de sistema. Vuelva a intentarlo más tarde.",
+            "fileNotFoundException": "No se ha encontrado el archivo."
         }
     },
     "homeSecurity": {

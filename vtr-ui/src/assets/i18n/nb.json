@@ -1046,7 +1046,7 @@
         "optionalUpdates": "Valgfri(e) oppdatering(er)",
         "ignoredUpdates": "Ignorert(e) oppdatering(er)",
         "successInstall": "Oppdateringen ble installert",
-        "failedInstall": "Installasjon mislyktes",
+        "failedInstall": "Installasjonen mislyktes",
         "at": "klokken",
         "readMore": "Les mer",
         "popup": {
@@ -1099,8 +1099,8 @@
             "result": {
                 "success": "Alle oppdateringer ble installert på riktig måte",
                 "fail": {
-                    "title": "Noen oppdateringer ble ikke installert på riktig måte.",
-                    "description": "Noe gikk galt under nedlastingen eller installasjonen av disse oppdateringene."
+                    "title": "Noen oppdateringer ble ikke installert korrekt.",
+                    "description": "Noe gikk galt under nedlastingen eller installasjonen av disse oppdateringene. Kontroller at du er tilkoblet, og ikke slå av maskinen når du installerer oppdateringer."
                 }
             }
         },
@@ -1136,6 +1136,27 @@
             "releaseDate": "Utgavedato:",
             "showAll": "Vis alle",
             "noInstallationHistory": "Det er ingen installeringslogg tilgjengelig"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Det oppstod et problem med henting av nye oppdateringer. Prøv igjen senere.",
+            "upToDate": "Ingen oppdateringer er tilgjengelige. Systemet ditt er oppdatert.",
+            "egatherException": "Det oppstod en feil ved innsamling av brukerinformasjon.",
+            "gatheringUserInfoException": "Det oppstod en feil ved innsamling av brukerinformasjon.",
+            "certificateValidationException": "Oppdateringsinnholdsserveren er ugyldig. Prøv igjen senere.",
+            "downloadException": "Det oppstod en feil under nedlastingen av oppdateringer.",
+            "connectException": "Ikke mulig å koble seg til serveren med oppdateringsinnhold.",
+            "notEnoughDiskSpace": "Det er ikke nok lagerplass til å utføre den aktuelle oppgaven.",
+            "proxyAuthenticationException": "Feil brukernavn eller passord for Proxy.",
+            "proxyConnectionException": "Ikke mulig å koble seg til proxy-serveren.",
+            "autoScriptEvaluationException": "Det oppstod en feil ved evaluering av autokonfigureringsskriptet.",
+            "localRepositoryConnectionFailureException": "Ikke mulig å koble seg til det lokale datalageret.",
+            "localRepositoryDatabaseException": "Databasen i det lokale datalageret ble ikke funnet eller er ødelagt.",
+            "networkInterruptedException": "Systemoppdateringsserveren er ikke tilgjengelig for øyeblikket. Prøv igjen senere.",
+            "helpCenterInvalidServerException": "Systemoppdateringsserveren er ugyldig. Prøv igjen senere.",
+            "catalogNotFoundException": "Det ble ikke funnet noen oppdateringer som er aktuelle for systemet ditt.",
+            "catalogCrcErrorException": "Oppdateringskatalogen for ditt system oppdateres for øyeblikket på systemoppdateringsserveren. Prøv igjen senere.",
+            "catalogErrorException": "Det ble oppdaget en feil med oppdateringskatalogen for ditt system på systemoppdateringsserveren. Prøv igjen senere.",
+            "fileNotFoundException": "Fant ikke fil."
         }
     },
     "homeSecurity": {

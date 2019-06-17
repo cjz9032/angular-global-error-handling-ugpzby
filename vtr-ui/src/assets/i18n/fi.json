@@ -1185,6 +1185,27 @@
             "releaseDate": "Julkaisupäivämäärä:",
             "showAll": "Näytä kaikki",
             "noInstallationHistory": "Asennushistoriaa ei ole saatavana"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Uusien päivitysten noudossa ilmeni ongelma. Yritä myöhemmin uudelleen.",
+            "upToDate": "Päivityksiä ei ole saatavana. Järjestelmä on ajan tasalla.",
+            "egatherException": "Käyttäjätietojen keruun aikana on ilmennyt virhe.",
+            "gatheringUserInfoException": "Käyttäjätietojen keruun aikana on ilmennyt virhe.",
+            "certificateValidationException": "Päivityksen sisältöpalvelin on virheellinen. Yritä myöhemmin uudelleen.",
+            "downloadException": "Päivitysten lataamisen aikana on ilmennyt virhe.",
+            "connectException": "Yhteyden muodostus päivityksen sisältöpalvelimeen ei onnistu.",
+            "notEnoughDiskSpace": "Levytilaa ei ole riittävästi valitun toiminnon toteutukseen.",
+            "proxyAuthenticationException": "Virheellinen välityspalvelimen käyttäjätunnus tai salasana.",
+            "proxyConnectionException": "Yhteyden muodostus välityspalvelimeen ei onnistu.",
+            "autoScriptEvaluationException": "Automaattisen kokoonpanon määrityksen komentotiedoston arvioinnissa on ilmennyt virhe.",
+            "localRepositoryConnectionFailureException": "Yhteyden muodostus paikalliseen säilöön ei onnistu.",
+            "localRepositoryDatabaseException": "Paikallisen säilön tietokantaa ei ole löytynyt tai se on viallinen.",
+            "networkInterruptedException": "Järjestelmän päivityspalvelin ei ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen.",
+            "helpCenterInvalidServerException": "Järjestelmän päivityspalvelin on virheellinen. Yritä myöhemmin uudelleen.",
+            "catalogNotFoundException": "Järjestelmään soveltuvia päivityksiä ei löydy.",
+            "catalogCrcErrorException": "Järjestelmän päivitysluetteloa päivitetään parhaillaan järjestelmän päivityspalvelimessa. Yritä myöhemmin uudelleen.",
+            "catalogErrorException": "Järjestelmän päivitysluettelossa havaittiin virhe järjestelmän päivityspalvelimessa. Yritä myöhemmin uudelleen.",
+            "fileNotFoundException": "Tiedostoa ei löydy."
         }
     },
     "homeSecurity": {

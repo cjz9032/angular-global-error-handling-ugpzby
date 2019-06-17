@@ -1041,12 +1041,12 @@
         "history": "FULD HISTORIK",
         "notAvailable": "Ikke tilgængelig",
         "notInstalled": "Ikke installeret",
-        "criticalUpdates": "Vigtig(e) opdatering(er)",
-        "recommendedUpdates": "Anbefalede opdateringer",
-        "optionalUpdates": "Valgfri(e) opdatering(er)",
-        "ignoredUpdates": "Ignorerede opdateringer",
-        "successInstall": "Installeret på",
-        "failedInstall": "Installationen mislykkedes på",
+        "criticalUpdates": "Vigtige opdateringer",
+		"recommendedUpdates": "Anbefalede opdateringer",
+		"optionalUpdates": "Valgfrie opdateringer",
+		"ignoredUpdates": "Ignorerede opdateringer",
+        "successInstall": "Installation fuldført på",
+        "failedInstall": "Installation mislykkedes på",
         "at": "kl.",
         "readMore": "Læs mere",
         "popup": {
@@ -1060,7 +1060,7 @@
             "cancelButton": "Annuller",
             "rebootButton": "GENSTART NU",
             "dismissButton": "AFVIS",
-            "rebootPending": "Afventer genstart"
+            "rebootPending": "Genstart afventes"
         },
         "autoUpdateSettings": {
             "title": "Indstillinger for automatisk opdatering",
@@ -1136,6 +1136,27 @@
             "releaseDate": "Releasedato:",
             "showAll": "Vis alle",
             "noInstallationHistory": "Der er ingen installationshistorik tilgængelig"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Der er et problem med hentning af nye opdateringer. Prøv igen senere.",
+            "upToDate": "Der er ingen opdateringer tilgængelige. Dit system er opdateret.",
+            "egatherException": "Der er opstået en fejl under indsamling af brugeroplysninger.",
+            "gatheringUserInfoException": "Der er opstået en fejl under indsamling af brugeroplysninger.",
+            "certificateValidationException": "Opdateringsindholdsserveren er ugyldig. Prøv igen senere.",
+            "downloadException": "Der er opstået en fejl under overførslen af opdateringer.",
+            "connectException": "Der kan ikke oprettes forbindelse til opdateringsindholdsserveren.",
+            "notEnoughDiskSpace": "Der er ikke tilstrækkelig diskplads til at udføre den aktuelle opgave.",
+            "proxyAuthenticationException": "Forkert proxybrugernavn eller -kodeord.",
+            "proxyConnectionException": "Der kan ikke oprettes forbindelse til proxyserveren.",
+            "autoScriptEvaluationException": "Der er opstået en fejl under evaluering af kommandofilen til automatisk konfiguration.",
+            "localRepositoryConnectionFailureException": "Kan ikke oprette forbindelse til lokalt opbevaringssted.",
+            "localRepositoryDatabaseException": "Databasen til det lokale opbevaringssted findes ikke eller er ødelagt.",
+            "networkInterruptedException": "Systemopdateringsserveren er i øjeblikket ikke tilgængelig. Prøv igen senere.",
+            "helpCenterInvalidServerException": "Systemopdateringsserveren er ugyldig. Prøv igen senere.",
+            "catalogNotFoundException": "Der er ikke fundet nogen tilgængelige opdateringer til systemet.",
+            "catalogCrcErrorException": "Opdateringskataloget til systemet bliver i øjeblikket opdateret på systemopdateringsserveren. Prøv igen senere.",
+            "catalogErrorException": "Der opstod en fejl med opdateringskataloget til systemet på systemopdateringsserveren. Prøv igen senere.",
+            "fileNotFoundException": "Filen blev ikke fundet."
         }
     },
     "homeSecurity": {

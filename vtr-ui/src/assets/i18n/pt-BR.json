@@ -1100,7 +1100,7 @@
                 "success": "Todas as atualizações foram instaladas corretamente",
                 "fail": {
                     "title": "Algumas atualizações não foram instaladas corretamente.",
-                    "description": "Ocorreu um erro durante o download ou a instalação dessas atualizações.Verifique se você está online e não desligue o computador ao instalar as atualizações."
+                    "description": "Ocorreu um erro durante o download ou a instalação dessas atualizações. Verifique se você está online e não desligue o computador ao instalar as atualizações."
                 }
             }
         },
@@ -1136,6 +1136,27 @@
             "releaseDate": "Data do Release:",
             "showAll": "Mostrar Tudo",
             "noInstallationHistory": "Nenhum histórico de instalação disponível"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Problema ao recuperar as novas atualizações. Tente novamente mais tarde.",
+            "upToDate": "Nenhuma atualização está disponível. Seu sistema está atualizado.",
+            "egatherException": "Ocorreu um erro ao reunir informações do usuário.",
+            "gatheringUserInfoException": "Ocorreu um erro ao reunir informações do usuário.",
+            "certificateValidationException": "O Servidor de Conteúdo da Atualização é inválido. Tente novamente mais tarde.",
+            "downloadException": "Ocorreu um erro ao fazer download das atualizações.",
+            "connectException": "Não foi possível conectar-se ao Servidor de Conteúdo da Atualização.",
+            "notEnoughDiskSpace": "Não há espaço no disco suficiente para executar a tarefa atual.",
+            "proxyAuthenticationException": "Nome do usuário ou senha do Proxy incorreto.",
+            "proxyConnectionException": "Não foi possível conectar-se ao servidor proxy.",
+            "autoScriptEvaluationException": "Houve um erro ao avaliar o script de configuração automático.",
+            "localRepositoryConnectionFailureException": "Impossível conectar-se ao Repositório Local.",
+            "localRepositoryDatabaseException": "O banco de dados do repositório local não pôde ser localizado ou está corrompido.",
+            "networkInterruptedException": "O Servidor de Atualização do Sistema está indisponível atualmente. Tente novamente mais tarde.",
+            "helpCenterInvalidServerException": "O Servidor de Atualização do Sistema é inválido. Tente novamente mais tarde.",
+            "catalogNotFoundException": "Nenhuma atualização aplicável encontrada para seu sistema.",
+            "catalogCrcErrorException": "O catálogo de atualizações para seu sistema está sendo atualizado no Servidor de Atualização do Sistema. Tente novamente mais tarde.",
+            "catalogErrorException": "Erro detectado no catálogo de atualizações para seu sistema no Servidor de Atualização do Sistema. Tente novamente mais tarde.",
+            "fileNotFoundException": "Arquivo não encontrado."
         }
     },
     "homeSecurity": {

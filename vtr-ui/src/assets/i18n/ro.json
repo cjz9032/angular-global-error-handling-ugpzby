@@ -1100,7 +1100,7 @@
                 "success": "Toate actualizările s-au instalat corect",
                 "fail": {
                     "title": "Unele actualizări nu au fost instalate corect.",
-                    "description": "A apărut o problemă în timpul descărcării sau instalării acestor actualizări.Asigurați-vă că sunteți online și nu opriți computerul când instalați actualizările."
+                    "description": "A apărut o problemă în timpul descărcării sau instalării acestor actualizări. Asigurați-vă că sunteți online și nu opriți computerul când instalați actualizările."
                 }
             }
         },
@@ -1136,6 +1136,27 @@
             "releaseDate": "Data lansării:",
             "showAll": "Afişare totală",
             "noInstallationHistory": "Istoricul instalărilor nu este disponibil"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "A apărut o problemă la preluarea noilor actualizări. Încercaţi din nou mai târziu.",
+            "upToDate": "Nicio actualizare nu este disponibilă. Sistemul este actualizat.",
+            "egatherException": "A apărut o eroare la adunarea informaţiilor utilizatorului.",
+            "gatheringUserInfoException": "A apărut o eroare la adunarea informaţiilor utilizatorului.",
+            "certificateValidationException": "Serverul pentru conţinutul actualizării nu este valid. Încercaţi din nou mai târziu.",
+            "downloadException": "A apărut o eroare la descărcarea actualizărilor.",
+            "connectException": "Imposibil de conectat la serverul pentru conţinutul actualizării.",
+            "notEnoughDiskSpace": "Nu există spaţiu suficient pe disc pentru a efectua activitatea curentă.",
+            "proxyAuthenticationException": "Nume utilizator sau parolă proxy incorectă.",
+            "proxyConnectionException": "Imposibil de conectat la serverul proxy.",
+            "autoScriptEvaluationException": "A apărut o eroare la evaluarea scriptului de configurare automată.",
+            "localRepositoryConnectionFailureException": "Imposibil de conectat la depozitul local.",
+            "localRepositoryDatabaseException": "Baza de date din depozitul local nu a putut fi găsită sau este deteriorată.",
+            "networkInterruptedException": "Serverul de actualizări ale sistemului este momentan indisponibil. Încercaţi din nou mai târziu.",
+            "helpCenterInvalidServerException": "Serverul de actualizări ale sistemului nu este valid. Încercaţi din nou mai târziu.",
+            "catalogNotFoundException": "Nu s-au găsit actualizări aplicabile pentru sistemul dumneavoastră.",
+            "catalogCrcErrorException": "Catalogul de actualizări pentru sistemul dumneavoastră este actualizat în prezent pe serverul de actualizări ale sistemului. Încercaţi din nou mai târziu.",
+            "catalogErrorException": "S-a detectat o eroare la catalogul de actualizări pentru sistemul dumneavoastră pe serverul de actualizări ale sistemului. Încercaţi din nou mai târziu.",
+            "fileNotFoundException": "Fişierul nu a fost găsit."
         }
     },
     "homeSecurity": {

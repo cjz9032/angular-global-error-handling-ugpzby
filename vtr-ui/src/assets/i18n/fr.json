@@ -1100,7 +1100,7 @@
                 "success": "Toutes les mises à jour ont été installées correctement",
                 "fail": {
                     "title": "Certaines mises à jour n'ont pas été correctement installées.",
-                    "description": "Une erreur s'est produite lors du téléchargement ou de l'installation de ces mises à jour.Vérifiez que vous êtes en ligne et que vous n'éteignez pas votre ordinateur lors de l'installation des mises à jour."
+                    "description": "Une erreur s'est produite lors du téléchargement ou de l'installation de ces mises à jour. Vérifiez que vous êtes en ligne et que vous n'éteignez pas votre ordinateur lors de l'installation des mises à jour."
                 }
             }
         },
@@ -1136,6 +1136,27 @@
             "releaseDate": "Date d'édition :",
             "showAll": "Afficher tout",
             "noInstallationHistory": "Aucun historique d'installation disponible"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Un incident s'est produit lors de la récupération des nouvelles mises à jour. Réessayez plus tard.",
+            "upToDate": "Aucune mise à jour n'est disponible. Votre système est à jour.",
+            "egatherException": "Erreur lors de la collecte des informations utilisateur.",
+            "gatheringUserInfoException": "Erreur lors de la collecte des informations utilisateur.",
+            "certificateValidationException": "Le serveur de contenu des mises à jour n'est pas valide. Réessayez plus tard.",
+            "downloadException": "Erreur lors du téléchargement des mises à jour.",
+            "connectException": "Impossible de se connecter au serveur de contenu des mises à jour.",
+            "notEnoughDiskSpace": "Espace disque insuffisant pour exécuter la tâche en cours.",
+            "proxyAuthenticationException": "Nom d'utilisateur ou mot de passe Proxy incorrect.",
+            "proxyConnectionException": "Impossible de se connecter au serveur Proxy.",
+            "autoScriptEvaluationException": "Erreur lors de l'évaluation du script d'auto-configuration.",
+            "localRepositoryConnectionFailureException": "Impossible de se connecter au référentiel local.",
+            "localRepositoryDatabaseException": "La base de données de référentiel local est introuvable ou endommagée.",
+            "networkInterruptedException": "Le serveur de mise à jour du système est actuellement indisponible. Réessayez plus tard.",
+            "helpCenterInvalidServerException": "Le serveur de mise à jour du système n'est pas valide. Réessayez plus tard.",
+            "catalogNotFoundException": "Il n'existe pas de mise à jour correspondante à votre système.",
+            "catalogCrcErrorException": "Le catalogue des mises à jour pour votre système est en cours de mise à jour sur le serveur de mise à jour du système. Réessayez plus tard.",
+            "catalogErrorException": "Une erreur s'est produite avec le catalogue des mises à jour de votre système sur le serveur de mise à jour du système. Réessayez plus tard.",
+            "fileNotFoundException": "Fichier introuvable."
         }
     },
     "homeSecurity": {

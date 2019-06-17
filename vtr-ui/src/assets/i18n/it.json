@@ -1185,6 +1185,27 @@
             "releaseDate": "Data di release:",
             "showAll": "Mostra tutto",
             "noInstallationHistory": "Nessuna cronologia di installazione disponibile"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Si è verificato un problema durante il recupero di nuovi aggiornamenti. Si prega di riprovare più tardi.",
+            "upToDate": "Nessun aggiornamento disponibile. Il sistema è aggiornato.",
+            "egatherException": "Si è verificato un errore durante la raccolta delle informazioni utente.",
+            "gatheringUserInfoException": "Si è verificato un errore durante la raccolta delle informazioni utente.",
+            "certificateValidationException": "Il server del contenuto di aggiornamento non è valido. Si prega di riprovare più tardi.",
+            "downloadException": "Si è verificato un errore durante il download degli aggiornamenti.",
+            "connectException": "Impossibile collegarsi al server del contenuto di aggiornamento.",
+            "notEnoughDiskSpace": "Non si dispone di spazio su disco sufficiente per eseguire l'attività corrente.",
+            "proxyAuthenticationException": "Nome utente o password del proxy non valido.",
+            "proxyConnectionException": "Impossibile connettersi al server proxy.",
+            "autoScriptEvaluationException": "Si è verificato un errore durante l'analisi dello script di configurazione automatica.",
+            "localRepositoryConnectionFailureException": "Impossibile connettersi al repository locale.",
+            "localRepositoryDatabaseException": "Impossibile trovare il database del repository locale oppure è danneggiato.",
+            "networkInterruptedException": "Il server di aggiornamento del sistema non è attualmente disponibile. Si prega di riprovare più tardi.",
+            "helpCenterInvalidServerException": "Il server di aggiornamento del sistema non è valido. Si prega di riprovare più tardi.",
+            "catalogNotFoundException": "Non è stato trovato alcun aggiornamento applicabile per il sistema.",
+            "catalogCrcErrorException": "È attualmente in corso l'aggiornamento del catalogo degli aggiornamenti per il sistema sul server di aggiornamento del sistema. Si prega di riprovare più tardi.",
+            "catalogErrorException": "È stato rilevato un errore con il catalogo degli aggiornamenti per il sistema sul server di aggiornamento del sistema. Si prega di riprovare più tardi.",
+            "fileNotFoundException": "File non trovato."
         }
     },
     "homeSecurity": {

@@ -1052,10 +1052,10 @@
         "popup": {
             "reboot": "Restart",
             "shutdown": "Vypnout",
-            "rebootForceMsg": "Po instalaci vybraných aktualizací bude systém automatickyrestartován.",
-            "shutdownForceMsg": "Po instalaci vybraných aktualizací se systém automatickyvypne.",
-            "rebootDelayedMsg": "Po instalaci vybraných aktualizací se restartuje systém. Během instalaceaktualizací systém nevypínejte ani neodpojujte zdroj napájení ani příslušenství.Během přípravy na restartování systému doporučujeme uložit si rozpracovanou práci.",
-            "rebootRequiredMsg": "Aby bylo možné ve vašem počítači úspěšně nainstalovat aktualizace, počítač",
+            "rebootForceMsg": "Po instalaci vybraných aktualizací bude systém automaticky restartován.",
+            "shutdownForceMsg": "Po instalaci vybraných aktualizací se systém automaticky vypne.",
+            "rebootDelayedMsg": "Po instalaci vybraných aktualizací se restartuje systém. Během instalace aktualizací systém nevypínejte, ani neodpojujte zdroj napájení ani příslušenství. Během přípravy na restartování systému doporučujeme uložit si rozpracovanou práci.",
+            "rebootRequiredMsg": "Aby bylo možné ve vašem počítači úspěšně nainstalovat aktualizace, počítač je třeba restartovat, aby byl zajištěn jeho bezpečný a hladký chod.",
             "okayButton": "OK",
             "cancelButton": "Storno",
             "rebootButton": "RESTARTOVAT NYNÍ",
@@ -1136,6 +1136,27 @@
             "releaseDate": "Datum vydání:",
             "showAll": "Zobrazit vše",
             "noInstallationHistory": "Není k dispozici žádná historie instalace"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Při stahování nových aktualizací došlo k problému. Zkuste to prosím později.",
+            "upToDate": "Žádné aktualizace nejsou dostupné. Váš systém je aktualizovaný.",
+            "egatherException": "Při shromažďování informací o uživateli došlo k chybě.",
+            "gatheringUserInfoException": "Při shromažďování informací o uživateli došlo k chybě.",
+            "certificateValidationException": "Chybný server služby aktualizace obsahu. Zkuste to prosím později.",
+            "downloadException": "Při stahování aktualizací došlo k chybě.",
+            "connectException": "Nelze navázat spojení se serverem služby aktualizace obsahu.",
+            "notEnoughDiskSpace": "Na disku není dostatek prostoru k provedení aktuální úlohy.",
+            "proxyAuthenticationException": "Chybné jméno nebo heslo uživatele serveru Proxy.",
+            "proxyConnectionException": "Nelze navázat spojení se serverem proxy.",
+            "autoScriptEvaluationException": "Při vyhodnocování skriptu automatické konfigurace došlo k chybě.",
+            "localRepositoryConnectionFailureException": "Nelze navázat spojení s lokálním archivem.",
+            "localRepositoryDatabaseException": "Databázi lokálního archivu nebylo možné najít nebo je poškozená.",
+            "networkInterruptedException": "Server služby aktualizace systému je momentálně nedostupný. Zkuste to prosím později.",
+            "helpCenterInvalidServerException": "Chybný server služby aktualizace systému. Zkuste to prosím později.",
+            "catalogNotFoundException": "Pro váš systém nebyla nalezena žádná vhodná aktualizace.",
+            "catalogCrcErrorException": "Probíhá aktualizace katalogu aktualizací pro váš systém na serveru služby aktualizace systému. Zkuste to prosím později.",
+            "catalogErrorException": "V katalogu aktualizací pro váš systém na serveru služby aktualizace systému byla zjištěna chyba. Zkuste to prosím později.",
+            "fileNotFoundException": "Soubor nebyl nalezen."
         }
     },
     "homeSecurity": {

@@ -1100,7 +1100,7 @@
                 "success": "Vse posodobitve so bile pravilno nameščene",
                 "fail": {
                     "title": "Nekatere posodobitve niso bile pravilno nameščene.",
-                    "description": "Med prenosom ali namestitvijo teh posodobitev je prišlo do napake."
+                    "description": "Med prenosom ali namestitvijo teh posodobitev je prišlo do napake. Poskrbite, da imate vzpostavljeno povezavo in ne izklopite računalnika med nameščanjem posodobitev."
                 }
             }
         },
@@ -1136,6 +1136,27 @@
             "releaseDate": "Datum izdaje:",
             "showAll": "Pokaži vse",
             "noInstallationHistory": "Zgodovina namestitev ni na voljo"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Težava pri prenosu novih namestitev. Poskusite znova pozneje.",
+            "upToDate": "Na voljo ni nobenih posodobitev. Sistem je posodobljen.",
+            "egatherException": "Napaka pri zbiranju podatkov uporabnika.",
+            "gatheringUserInfoException": "Napaka pri zbiranju podatkov uporabnika.",
+            "certificateValidationException": "Strežnik za posodobitev vsebine je neveljaven. Poskusite znova pozneje.",
+            "downloadException": "Napaka pri prenosu posodobitev.",
+            "connectException": "Strežnik za posodobitev vsebine je neveljaven.",
+            "notEnoughDiskSpace": "Za izvedbo trenutnega opravila ni dovolj prostora.",
+            "proxyAuthenticationException": "Napačno uporabniško ime ali geslo za proxy.",
+            "proxyConnectionException": "S strežnikom proxy se ni bilo mogoče povezati.",
+            "autoScriptEvaluationException": "Napaka med preverjanjem skripta za samodejno konfiguracijo.",
+            "localRepositoryConnectionFailureException": "Z lokalno shrambo se ni bilo mogoče povezati.",
+            "localRepositoryDatabaseException": "Zbirke podatkov lokalne shrambe ni bilo mogoče najti ali pa je poškodovana.",
+            "networkInterruptedException": "Strežnik za posodobitev sistema trenutno ni na voljo. Poskusite znova pozneje.",
+            "helpCenterInvalidServerException": "Strežnik za posodobitev sistema je neveljaven. Poskusite znova pozneje.",
+            "catalogNotFoundException": "Za sistem ni bilo najdenih nobenih posodobitev.",
+            "catalogCrcErrorException": "Katalog posodobitev za vaš sistem se trenutno posodablja iz strežnika za posodobitev sistema. Poskusite znova pozneje.",
+            "catalogErrorException": "V strežniku za posodobitev sistema je bila zaznana napaka v katalogu posodobitev za vaš sistem. Poskusite znova pozneje.",
+            "fileNotFoundException": "Datoteka ni bila najdena."
         }
     },
     "homeSecurity": {

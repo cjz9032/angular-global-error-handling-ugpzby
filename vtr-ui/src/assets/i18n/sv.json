@@ -1100,7 +1100,7 @@
                 "success": "Alla uppdateringar har installerats",
                 "fail": {
                     "title": "Vissa uppdateringar installerades inte korrekt.",
-                    "description": "Ett problem inträffade under hämtningen eller installationen av uppdateringarna.Kontrollera att du är ansluten och stäng inte av datorn medan uppdateringarna installeras."
+                    "description": "Ett problem inträffade under hämtningen eller installationen av uppdateringarna. Kontrollera att du är ansluten och stäng inte av datorn medan uppdateringarna installeras."
                 }
             }
         },
@@ -1136,6 +1136,27 @@
             "releaseDate": "Utgivningsdatum:",
             "showAll": "Visa alla",
             "noInstallationHistory": "Ingen installationshistorik finns tillgänglig"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Det finns ett problem med att hämta nya uppdateringar. Försök igen litet senare.",
+            "upToDate": "Inga tillgängliga uppdateringar. Ditt system är uppdaterat.",
+            "egatherException": "Ett fel inträffade under insamlingen av användarinformation.",
+            "gatheringUserInfoException": "Ett fel inträffade under insamlingen av användarinformation.",
+            "certificateValidationException": "Uppdateringsinnehållsservern är ogiltig. Försök igen litet senare.",
+            "downloadException": "Ett fel inträffade när uppdateringarna hämtades.",
+            "connectException": "Det går inte att ansluta till uppdateringsinnehållsservern.",
+            "notEnoughDiskSpace": "Utrymmet på hårddisken räcker inte för att utföra den här uppgiften.",
+            "proxyAuthenticationException": "Ogiltigt proxyanvändarnamn eller -lösenord.",
+            "proxyConnectionException": "Det går inte att ansluta till proxyservern.",
+            "autoScriptEvaluationException": "Det inträffade ett fel under utvärderingen av autokonfigureringsskriptet.",
+            "localRepositoryConnectionFailureException": "Det går inte att ansluta till det lokala uppdateringslagret.",
+            "localRepositoryDatabaseException": "Den lokala uppdateringsdatabasen kan inte hittas eller är skadad.",
+            "networkInterruptedException": "Systemuppdateringsservern är inte tillgänglig just nu. Försök igen litet senare.",
+            "helpCenterInvalidServerException": "System Update-servern är ogiltig. Försök igen litet senare.",
+            "catalogNotFoundException": "Det gick inte att hitta några uppdateringar för ditt system.",
+            "catalogCrcErrorException": "Uppdateringskatalogen för ditt system uppdateras just nu på systemuppdateringsservern. Försök igen litet senare.",
+            "catalogErrorException": "Ett fel inträffade med systemets uppdateringskatalog på systemuppdateringsservern. Försök igen litet senare.",
+            "fileNotFoundException": "Filen hittades inte."
         }
     },
     "homeSecurity": {

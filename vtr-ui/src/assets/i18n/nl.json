@@ -1052,22 +1052,22 @@
         "popup": {
             "reboot": "Opnieuw opstarten",
             "shutdown": "Afsluiten",
-            "rebootForceMsg": "Het systeem wordt automatisch opnieuw opgestart nadat degeselecteerde update(s) zijn geïnstalleerd.",
-            "shutdownForceMsg": "Het systeem wordt automatisch afgesloten nadat degeselecteerde update(s) zijn geïnstalleerd.",
-            "rebootDelayedMsg": "De update(s) die u hebt geselecteerd, zorgen dat het systeem opnieuw opgestart wordt na de installatie.Schakel tijdens de installatie van updates uw systeem niet uit en verwijder de voedingsbron of accessoires niet. We raden u aan uw werk op te slaan voordat u het systeem opnieuw opstart.",
-            "rebootRequiredMsg": "Om de updates te kunnen installeren, moet de computeropnieuw worden opgestart om te zorgen dat alles veilig en probleemloos werkt.",
+            "rebootForceMsg": "Het systeem wordt automatisch opnieuw opgestart nadat de geselecteerde updates zijn geïnstalleerd.",
+            "shutdownForceMsg": "Het systeem wordt automatisch afgesloten nadat de geselecteerde updates zijn geïnstalleerd.",
+            "rebootDelayedMsg": "De update(s) die u hebt geselecteerd, zorgen dat het systeem opnieuw opgestart wordt na de installatie. Schakel tijdens de installatie van updates uw systeem niet uit en verwijder de voedingsbron of accessoires niet. We raden u aan uw werk op te slaan voordat u het systeem opnieuw opstart.",
+            "rebootRequiredMsg": "Om de updates te kunnen installeren, moet de computer opnieuw worden opgestart om te zorgen dat alles veilig en probleemloos werkt.",
             "okayButton": "OK",
             "cancelButton": "Annuleren",
             "rebootButton": "NU OPNIEUW OPSTARTEN",
-            "dismissButton": "NEGEREN",
+            "dismissButton": "SLUITEN",
             "rebootPending": "Opnieuw opstarten in behandeling"
         },
         "autoUpdateSettings": {
-            "title": "Instellingen automatisch bijwerken",
+            "title": "Instellingen voor automatisch bijwerken",
             "subtitle": "UPDATES AUTOMATISCH INSTALLEREN",
             "critical": {
                 "title": "Essentiële updates",
-                "tooltip": "Met de essentiële updates worden aanzienlijke problemen,"
+                "tooltip": "Met de essentiële updates worden aanzienlijke problemen, ernstige storingen in het systeem, storingen in de hardware en beschadiging van gegevens voorkomen."
             },
             "recommended": {
                 "title": "Aanbevolen updates",
@@ -1099,8 +1099,8 @@
             "result": {
                 "success": "Alle updates juist zijn geïnstalleerd",
                 "fail": {
-                    "title": "Sommige updates zijn niet juist geïnstalleerd.",
-                    "description": "Er is iets misgegaan tijdens het downloaden of installeren van deze updates.Zorg dat u online bent en zet de computer niet uit wanneer u updates installeert."
+                    "title": "Enkele updates zijn niet juist geïnstalleerd.",
+                    "description": "Er is iets misgegaan tijdens het downloaden of installeren van deze updates. Zorg dat u online bent en zet de computer niet uit wanneer u updates installeert."
                 }
             }
         },
@@ -1136,6 +1136,27 @@
             "releaseDate": "Releasedatum:",
             "showAll": "Alles weergeven",
             "noInstallationHistory": "Er is geen installatiegeschiedenis beschikbaar"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Er is een probleem bij het ophalen van nieuwe updates. Probeer het later alstublieft opnieuw.",
+            "upToDate": "Er zijn geen updates beschikbaar. Het systeem is up-to-date.",
+            "egatherException": "Fout bij het verzamelen van gebruikersgegevens.",
+            "gatheringUserInfoException": "Fout bij het verzamelen van gebruikersgegevens.",
+            "certificateValidationException": "De inhoudupdateserver is ongeldig. Probeer het later alstublieft opnieuw.",
+            "downloadException": "Fout bij het downloaden van updates.",
+            "connectException": "Er kan geen verbinding worden gemaakt met de inhoudupdateserver.",
+            "notEnoughDiskSpace": "Er is niet genoeg schijfruimte om de actieve taak te kunnen uitvoeren.",
+            "proxyAuthenticationException": "Gebruikersnaam of wachtwoord voor proxy is onjuist.",
+            "proxyConnectionException": "Er kan geen verbinding worden gemaakt met de proxyserver.",
+            "autoScriptEvaluationException": "Er is een fout opgetreden bij het evalueren van het autoconfiguratiescript.",
+            "localRepositoryConnectionFailureException": "Er kan geen verbinding worden gemaakt met de lokale repository.",
+            "localRepositoryDatabaseException": "De lokale repositorydatabase is niet gevonden of is beschadigd.",
+            "networkInterruptedException": "De systeemupdateserver is momenteel niet beschikbaar. Probeer het later alstublieft opnieuw.",
+            "helpCenterInvalidServerException": "De systeemupdateserver is ongeldig. Probeer het later alstublieft opnieuw.",
+            "catalogNotFoundException": "Er zijn geen updates gevonden die op uw systeem van toepassing zijn.",
+            "catalogCrcErrorException": "De updatecatalogus voor uw systeem wordt momenteel bijgewerkt op de systeemupdateserver. Probeer het later alstublieft opnieuw.",
+            "catalogErrorException": "Er is een fout opgetreden met de updatecatalogus voor uw systeem op de systeemupdateserver. Probeer het later alstublieft opnieuw.",
+            "fileNotFoundException": "Bestand niet gevonden."
         }
     },
     "homeSecurity": {

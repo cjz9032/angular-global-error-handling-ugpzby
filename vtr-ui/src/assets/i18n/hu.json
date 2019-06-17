@@ -1185,6 +1185,27 @@
             "releaseDate": "Kiadás dátuma:",
             "showAll": "Az összes megjelenítése",
             "noInstallationHistory": "Nem állnak rendelkezésre telepítési előzmények"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Probléma adódott az új frissítések lekérésével. Kérjük, később próbálja meg újra.",
+            "upToDate": "Nincs elérhető frissítés. A számítógépe naprakész.",
+            "egatherException": "Hiba történt a felhasználói adatok összegyűjtése során.",
+            "gatheringUserInfoException": "Hiba történt a felhasználói adatok összegyűjtése során.",
+            "certificateValidationException": "A frissítési tartalomkiszolgáló érvénytelen. Kérjük, később próbálja meg újra.",
+            "downloadException": "Hiba történt a frissítések letöltése közben.",
+            "connectException": "Nem sikerült kapcsolódni a frissítési tartalomkiszolgálóhoz.",
+            "notEnoughDiskSpace": "Nincs elegendő lemezterület az aktuális feladat végrehajtásához.",
+            "proxyAuthenticationException": "Hibás felhasználói név vagy jelszó a proxyhoz.",
+            "proxyConnectionException": "Nem sikerült kapcsolódni a proxykiszolgálóhoz.",
+            "autoScriptEvaluationException": "Az automatikus konfigurációs parancsfájl értékelése során hiba történt.",
+            "localRepositoryConnectionFailureException": "Nem sikerült kapcsolódni a helyi gyűjteményhez.",
+            "localRepositoryDatabaseException": "A helyi gyűjtemény adatbázisa nem található vagy sérült.",
+            "networkInterruptedException": "A rendszerfrissítési kiszolgáló jelenleg nem érhető el. Kérjük, később próbálja meg újra.",
+            "helpCenterInvalidServerException": "A rendszerfrissítési kiszolgáló érvénytelen. Kérjük, később próbálja meg újra.",
+            "catalogNotFoundException": "Nem érhetők el frissítések a rendszerhez.",
+            "catalogCrcErrorException": "A rendszer frissítési katalógusa jelenleg frissül a rendszerfrissítési kiszolgálón Kérjük, később próbálja meg újra.",
+            "catalogErrorException": "Hibát találtunk a rendszer frissítési katalógusával a rendszerfrissítési kiszolgálón. Kérjük, később próbálja meg újra.",
+            "fileNotFoundException": "A fájl nem található."
         }
     },
     "homeSecurity": {

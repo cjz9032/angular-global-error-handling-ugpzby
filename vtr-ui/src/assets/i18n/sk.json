@@ -1100,7 +1100,7 @@
                 "success": "Všetky aktualizácie sa nainštalovali správne",
                 "fail": {
                     "title": "Niektoré aktualizácie sa nenainštalovali správne.",
-                    "description": "Počas preberania alebo inštalácie týchto aktualizácií došlo k chybe."
+                    "description": "Počas sťahovania alebo inštalácie týchto aktualizácií došlo k chybe. Pri inštalácii aktualizácií sa uistite, že ste online a nevypínajte počítač."
                 }
             }
         },
@@ -1136,6 +1136,27 @@
             "releaseDate": "Dátum vydania:",
             "showAll": "Zobraziť všetko",
             "noInstallationHistory": "Žiadna história inštalácie nie je k dispozícii"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Vyskytol sa problém pri načítavaní nových aktualizácií. Skúste to znova neskôr.",
+            "upToDate": "Žiadne dostupné aktualizácie. Systém je aktualizovaný.",
+            "egatherException": "Pri zhromažďovaní informácií o používateľovi sa vyskytla chyba.",
+            "gatheringUserInfoException": "Pri zhromažďovaní informácií o používateľovi sa vyskytla chyba.",
+            "certificateValidationException": "Server na aktualizáciu obsahu je neplatný. Skúste to znova neskôr.",
+            "downloadException": "Pri preberaní aktualizácií sa vyskytla chyba.",
+            "connectException": "Nemožno sa pripojiť na server na aktualizáciu obsahu.",
+            "notEnoughDiskSpace": "Nedostatok miesta na disku na vykonanie aktuálnej úlohy.",
+            "proxyAuthenticationException": "Nesprávne meno používateľa alebo heslo pre server proxy.",
+            "proxyConnectionException": "Nemožno sa pripojiť na server proxy.",
+            "autoScriptEvaluationException": "Počas vyhodnocovania skriptu automatickej konfigurácie sa vyskytla chyba.",
+            "localRepositoryConnectionFailureException": "Nemožno sa pripojiť k lokálnemu odkladaciemu priestoru.",
+            "localRepositoryDatabaseException": "Databáza lokálneho odkladacieho priestoru sa nenašla alebo je poškodená.",
+            "networkInterruptedException": "Server systémových aktualizácií je momentálne nedostupný. Skúste to znova neskôr.",
+            "helpCenterInvalidServerException": "Server systémových aktualizácií je neplatný. Skúste to znova neskôr.",
+            "catalogNotFoundException": "Pre váš systém sa nenašli žiadne použiteľné aktualizácie.",
+            "catalogCrcErrorException": "Katalóg aktualizácií pre váš systém sa práve aktualizuje na serveri systémových aktualizácií. Skúste to znova neskôr.",
+            "catalogErrorException": "Zistila sa chyba katalógu aktualizácií pre váš systém na serveri systémových aktualizácií. Skúste to znova neskôr.",
+            "fileNotFoundException": "Súbor sa nenašiel."
         }
     },
     "homeSecurity": {

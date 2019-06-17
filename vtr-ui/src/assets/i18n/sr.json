@@ -1100,7 +1100,7 @@
                 "success": "Sva ažuriranja su ispravno instalirana",
                 "fail": {
                     "title": "Neka ažuriranja nisu ispravno instalirana.",
-                    "description": "Nešto je krenulo naopako tokom preuzimanja ili instalacije ovih ažuriranja.Uverite se da ste na mreži i ne isključujte računar kada instalirate ažuriranja."
+                    "description": "Nešto je krenulo naopako tokom preuzimanja ili instalacije ovih ažuriranja. Uverite se da ste na mreži i ne isključujte računar tokom instaliranja ažuriranja."
                 }
             }
         },
@@ -1136,6 +1136,27 @@
             "releaseDate": "Datum izdavanja:",
             "showAll": "Prikaži sve",
             "noInstallationHistory": "Nije dostupna istorija instalacije"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Postoji problem u preuzimanju novih ažuriranja. Pokušajte ponovo kasnije.",
+            "upToDate": "Ažuriranja nisu dostupna. Sistem je ažuriran.",
+            "egatherException": "Došlo je do greške prilikom prikupljanja informacija o korisniku.",
+            "gatheringUserInfoException": "Došlo je do greške prilikom prikupljanja informacija o korisniku.",
+            "certificateValidationException": "Server za ažuriranje sadržaja je neispravan. Pokušajte ponovo kasnije.",
+            "downloadException": "Došlo je do greške prilikom preuzimanja ažuriranja.",
+            "connectException": "Povezivanje na Server za ažuriranje sadržaja nije moguće.",
+            "notEnoughDiskSpace": "Nema dovoljno prostora na disku za obavljanje trenutnog zadatka.",
+            "proxyAuthenticationException": "Pogrešno korisničko ime ili lozinka za Proxy server.",
+            "proxyConnectionException": "Povezivanje na proxy server nije moguće.",
+            "autoScriptEvaluationException": "Došlo je do greške u proceni skripte za automatsku konfiguraciju.",
+            "localRepositoryConnectionFailureException": "Povezivanje na Lokalno spremište nije moguće.",
+            "localRepositoryDatabaseException": "Baza podataka lokalnog spremišta nije pronađena ili je oštećena.",
+            "networkInterruptedException": "Server za ažuriranje sistema trenutno nije dostupan. Pokušajte ponovo kasnije.",
+            "helpCenterInvalidServerException": "Server za ažuriranje sistema je neispravan. Pokušajte ponovo kasnije.",
+            "catalogNotFoundException": "Nema pronađenih primenljivih ažuriranja za vaš sistem.",
+            "catalogCrcErrorException": "Katalog ažuriranja za vaš sistem se trenutno ažurira na serveru za ažuriranje sistema. Pokušajte ponovo kasnije.",
+            "catalogErrorException": "Otkrivena je greška u katalogu ažuriranja za vaš sistem na serveru za ažuriranje sistema. Pokušajte ponovo kasnije.",
+            "fileNotFoundException": "Datoteka nije pronađena."
         }
     },
     "homeSecurity": {

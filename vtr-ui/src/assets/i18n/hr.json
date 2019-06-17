@@ -1094,13 +1094,13 @@
             "cancelCheck": "Otkaži traženje",
             "cancelUpdates": "OTKAŽI AŽURIRANJA",
             "available": "Dostupna ažuriranja",
-            "description": "Ti paketi sadržavaju ažuriranja za upravljačke programe za hardver iostale uslužne programe sustava koji su ključni za ispravan rad računala. Kritička ažuriranja važna su i za zaštitu podataka na računalu i trebala bi se instalirati čim postanu dostupna. ",
+            "description": "Ti paketi sadrže ažuriranja za upravljačke programe za hardver i ostale uslužne programe sustava ključne za ispravan rad računala. Kritična ažuriranja također su važna i za zaštitu podataka na računalu te se moraju instalirati čim postanu dostupna. Ako se ti paketi ne instaliraju, može doći do gubitka podataka, neispravnog rada sustava ili kvara hardvera.",
             "installButton": "INSTALIRAJ SVA AŽURIRANJA",
             "result": {
-                "success": "Sva ažuriranja ispravno su instalirana",
+                "success": "Sva su ažuriranja instalirana ispravno",
                 "fail": {
                     "title": "Neka ažuriranja nisu ispravno instalirana.",
-                    "description": "Došlo je do problema tijekom preuzimanja ili instalacije tih ažuriranja.Pobrinite se da ste na mreži i ne isključujte računalo tijekom instaliranja ažuriranja."
+                    "description": "Došlo je do problema tijekom preuzimanja ili instalacije tih ažuriranja. Pobrinite se da ste na mreži i ne gasite računalo tijekom instaliranja ažuriranja."
                 }
             }
         },
@@ -1136,6 +1136,27 @@
             "releaseDate": "Datum izdanja:",
             "showAll": "Pokaži sve",
             "noInstallationHistory": "Povijest instalacije nije dostupna"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Došlo je do problema s preuzimanjem novih ažuriranja. Pokušajte ponovno kasnije.",
+            "upToDate": "Nema dostupnih ažuriranja. Vaš je sustav ažuriran.",
+            "egatherException": "Došlo je do pogreške prilikom dohvaćanja korisničkih podataka.",
+            "gatheringUserInfoException": "Došlo je do pogreške prilikom dohvaćanja korisničkih podataka.",
+            "certificateValidationException": "Poslužitelj sadržaja ažuriranja nije valjan. Pokušajte ponovno kasnije.",
+            "downloadException": "Došlo je do pogreške prilikom preuzimanja ažuriranja.",
+            "connectException": "Povezivanje s poslužiteljem sadržaja ažuriranja nije moguće.",
+            "notEnoughDiskSpace": "Na disku nema dovoljno prostora da bi se obavio trenutni zadatak.",
+            "proxyAuthenticationException": "Netočno korisničko ime ili lozinka proxy poslužitelja.",
+            "proxyConnectionException": "Povezivanje s proxy poslužiteljem nije moguće.",
+            "autoScriptEvaluationException": "Došlo je do pogreške prilikom procjene skripte za automatsku konfiguraciju.",
+            "localRepositoryConnectionFailureException": "Povezivanje s lokalnim spremištem nije moguće.",
+            "localRepositoryDatabaseException": "Baza podataka lokalnog spremišta nije pronađena ili je oštećena.",
+            "networkInterruptedException": "Poslužitelj za ažuriranje sustava trenutno nije dostupan. Pokušajte ponovno kasnije.",
+            "helpCenterInvalidServerException": "Poslužitelj za ažuriranje sustava nije valjan. Pokušajte ponovno kasnije.",
+            "catalogNotFoundException": "Za sustav nisu pronađena primjenjiva ažuriranja.",
+            "catalogCrcErrorException": "Poslužitelj za ažuriranje sustava trenutno ažurira katalog ažuriranja vašeg sustava. Pokušajte ponovno kasnije.",
+            "catalogErrorException": "Otkrivena je pogreška s katalogom ažuriranja vašeg sustava na poslužitelju za ažuriranje sustava. Pokušajte ponovno kasnije.",
+            "fileNotFoundException": "Datoteka nije pronađena."
         }
     },
     "homeSecurity": {

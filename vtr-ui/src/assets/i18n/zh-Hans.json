@@ -1050,17 +1050,17 @@
         "at": "在",
         "readMore": "阅读更多信息",
         "popup": {
-            "reboot": "重新引导",
+			"reboot": "重启",
             "shutdown": "关机",
-            "rebootForceMsg": "安装所选更新后，系统将自动重新引导。",
-            "shutdownForceMsg": "安装所选更新后，系统将自动关机。",
-            "rebootDelayedMsg": "安装所选更新后，系统将重新引导，在安装更新的过程中，请勿关闭系统、断开电源或移除附件。我们建议保存您的工作，以便为系统重新引导做好准备。",
-            "rebootRequiredMsg": "要成功安装更新，您的计算机需要重新引导以确保所有内容运行得更快、更顺畅。",
+			"rebootForceMsg": "所选更新将导致系统在安装后自动重启。",
+            "shutdownForceMsg": "所选更新将导致系统在安装后自动关机。",
+			"rebootDelayedMsg": "安装所选更新后，系统将重启，在安装更新的过程中，请勿关闭系统、断开电源或移除附件。我们建议保存您的工作以便为系统重启做好准备。",
+			"rebootRequiredMsg": "要成功安装更新，您的计算机需要重启以确保所有内容运行得更快、更顺畅。",
             "okayButton": "确定",
             "cancelButton": "取消",
-            "rebootButton": "立即重新引导",
+			"rebootButton": "立即重启",
             "dismissButton": "取消",
-            "rebootPending": "重新引导暂挂"
+			"rebootPending": "重启"
         },
         "autoUpdateSettings": {
             "title": "自动更新设置",
@@ -1079,63 +1079,83 @@
             }
         },
         "support": {
-            "title": "Lenovo 支持网站"
+			"title": "联想支持网站"
         },
         "banner": {
             "neverChecked": "欢迎使用 System Update。",
             "title": "保持最新状态的系统才是健康的系统。",
             "last": "上次更新时间为",
-            "next": "下次更新扫描计划时间：",
+			"next": "下次更新扫描计划时间",
             "checkButton": "检查更新",
             "checking": "正在检查更新",
             "downloading": "正在下载更新",
             "installing": "正在安装更新",
             "percent": "% 已完成",
-            "cancelCheck": "取消检查",
+			"cancelCheck": "取消",
             "cancelUpdates": "取消更新",
             "available": "可用更新",
-            "description": "这些软件包包含对计算机的正常运行至关重要的硬件驱动程序更新和其他系统实用程序更新。关键更新对保护计算机上的数据来说也很重要，一旦可用就应该尽快安装。未能安装这些软件包可能会导致数据丢失、系统故障或硬件故障。",
+			"description": "这些软件包包含对计算机的正常运行至关重要的硬件驱动程序更新和其他系统实用程序更新。关键更新对保护计算机上的数据来说也很重要，请尽快安装。安装这些软件包失败可能会导致数据丢失、系统故障或硬件故障。",
             "installButton": "安装所有更新",
             "result": {
-                "success": "已正确安装所有更新",
+				"success": "已成功安装所有更新",
                 "fail": {
-                    "title": "某些更新未正确安装。",
-                    "description": "下载或安装这些更新的过程中发生了问题。请确保您处于在线状态，且安装更新的过程中不要关闭计算机。"
+					"title": "某些更新未成功安装。",
+					"description": "下载或安装这些更新的过程中发生了问题。请确保您处于联网状态，且安装更新的过程中不要关闭计算机。"
                 }
             }
         },
         "updateCheckbox": {
             "rebootRequired": "需要重启",
-            "failReason": "失败原因：交流电源适配器未连接到您的计算机。",
+			"failReason": "失败原因：您的计算机未连接电源适配器。",
             "manufacturer": "制造商：",
             "version": "版本：",
             "installVersion": "已安装的版本：",
             "downloadSize": "下载大小：",
             "diskSpaceNeeded": "需要的磁盘空间：",
             "ignore": "忽略",
-            "attend": "处理",
-            "rebootRequiredTag": "需要重新引导",
-            "rebootDelayTag": "需要重新引导，需要电源",
-            "shutdownRequiredTag": "需要关机",
-            "dependedPackage": "Depended Package"
+			"attend": "停止忽略",
+			"rebootRequiredTag": "需要重启",
+			"rebootDelayTag": "需要重启，需要连接电源",
+			"shutdownRequiredTag": "需要关机"
         },
         "availableUpdates": {
             "title": "可用更新",
-            "description": "这些软件包包含对计算机的正常运行至关重要的更新。关键更新有助于使您的计算机更安全、更可靠，一旦可用就应该尽快安装。推荐更新和可选更新有助于使您的软件保持最新，以及使您的计算机保持最佳运行状态。",
+			"description": "这些软件包包含对计算机的正常运行至关重要的更新。关键更新有助于使您的计算机更安全、更可靠，请尽快安装。推荐更新和可选更新有助于使您的软件保持最新，以及使您的计算机保持最佳运行状态。",
             "installAllUpdates": "安装所有更新",
-            "installSuccessHeader": "已正确安装所有更新",
-            "installFailHeader": "某些更新未正确安装",
-            "installFailDescription": "下载和安装这些更新的过程中发生了问题。请确保您处于在线状态，且安装更新的过程中不要关闭计算机。",
+			"installSuccessHeader": "已成功安装所有更新",
+			"installFailHeader": "某些更新未成功安装",
+			"installFailDescription": "下载和安装这些更新的过程中发生了问题。请确保您处于联网状态，且安装更新的过程中不要关闭计算机。",
             "optionalUpdates": "可选更新",
             "installSelectedUpdates": "安装所选更新"
         },
         "installationHistory": {
             "name": "名称",
             "sortByDate": "按日期排序",
-            "packageSize": "包大小：",
+			"packageSize": "大小：",
             "releaseDate": "发布日期：",
             "showAll": "显示所有",
-            "noInstallationHistory": "无安装历史记录"
+			"noInstallationHistory": "无历史安装记录"
+        },
+        "statusCodeMessage": {
+			"commonFailure": "检索更新时遇到问题。请稍后重试。",
+			"upToDate": "无可用更新。系统处于最新状态。",
+            "egatherException": "收集用户信息时出错。",
+            "gatheringUserInfoException": "收集用户信息时出错。",
+			"certificateValidationException": "服务器验证失败。请稍后重试。",
+            "downloadException": "下载更新时发生错误。",
+			"connectException": "无法连接到服务器。",
+            "notEnoughDiskSpace": "磁盘空间不足，无法执行当前任务。",
+            "proxyAuthenticationException": "代理服务器用户名或密码不正确。",
+            "proxyConnectionException": "无法连接到代理服务器。",
+			"autoScriptEvaluationException": "校验配置脚本时发生错误。",
+            "localRepositoryConnectionFailureException": "无法连接到本地存储库。",
+            "localRepositoryDatabaseException": "未能找到本地存储库或者该存储库已损坏。",
+            "networkInterruptedException": "系统更新服务器当前不可用。请稍后重试。",
+            "helpCenterInvalidServerException": "系统更新服务器无效。请稍后重试。",
+            "catalogNotFoundException": "没有找到适用于您的系统的更新。",
+			"catalogCrcErrorException": "服务器的配置文件正在更新。请稍后重试。",
+			"catalogErrorException": "在系统更新服务器上检测到您的更新配置有错。请稍后重试。",
+            "fileNotFoundException": "未找到文件。"
         }
     },
     "homeSecurity": {
