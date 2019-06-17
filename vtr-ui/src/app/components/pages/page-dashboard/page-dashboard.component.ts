@@ -19,6 +19,7 @@ import { VantageShellService } from '../../../services/vantage-shell/vantage-she
 import { UserService } from '../../../services/user/user.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { QA } from 'src/app/data-models/qa/qa.model';
+import { AndroidService } from 'src/app/services/android/android.service';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -62,7 +63,8 @@ export class PageDashboardComponent implements OnInit {
 		private systemUpdateService: SystemUpdateService,
 		public userService: UserService,
 		private translate: TranslateService,
-		vantageShellService: VantageShellService
+		vantageShellService: VantageShellService,
+		public androidService: AndroidService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;

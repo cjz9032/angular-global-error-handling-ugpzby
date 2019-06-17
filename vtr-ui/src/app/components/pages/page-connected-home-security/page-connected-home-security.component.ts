@@ -45,10 +45,8 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	eventEmitter = new EventEmitter();
 
 	welcomeModel: HomeSecurityWelcome;
-	connectedHomeSecurity: any;
+	connectedHomeSecurity: ConnectedHomeSecurity;
 	permission: any;
-
-
 
 	testStatus = ['lessDevices-secure', 'moreDevices-needAttention', 'noneDevices', 'trialExpired', 'lessDevices-needAttention', 'moreDevices-secure', 'localAccount'];
 
@@ -58,10 +56,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 		private translateService: TranslateService,
 		private modalService: NgbModal,
 		private commonService: CommonService,
-		private userService: UserService,
 		private ngZone: NgZone
 	) {
-		this.connectedHomeSecurity = vantageShellService.getConnectedHomeSecurity();
+		this.connectedHomeSecurity = homeSecurityMockService.getConnectedHomeSecurity();
 		this.permission = vantageShellService.getPermission();
 		this.createMockData();
 		this.welcomeModel = new HomeSecurityWelcome();
@@ -86,17 +83,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 		this.notifications.items.push(new WidgetItem({id: '1', title: 'Passcode lock disabled 3 hours', iconPath: 'assets/images/qa/svg_icon_qa_refresh.svg',
 		notificationDetail: 'Antivirus was disabled'}, this.translateService));
 		this.account = this.homeSecurityMockService.account;
-		this.connectedHomeSecurity.account = {
-			id: '',
-			name: '',
-			state: 'localAccount',
-			lenovoIdEmail: '',
-			enabledEmail: true,
-			trialRemaining: new Date(),
-			ExpirationDate: new Date('apr 15, 2020')
-		};
-		this.connectedHomeSecurity.consoleUrl = 'https://homesecurity.coro.net/login';
-		this.connectedHomeSecurity.upgradeUrl = 'https://vantagestore.lenovo.com/en/shop/product/connectedhomesecurityoneyearlicense-windows';
 	}
 
 	ngOnInit() {
@@ -209,8 +195,8 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	}
 
 	onStartTrial() {
-		if (this.userService.auth) {
-			// connectedHomeSecurity.startTrial()
+		if (this.connectedHomeSecurity.account.lenovoId.loggedIn) {
+			this.connectedHomeSecurity.account.createAccount();
 		} else {
 			this.modalService.open(ModalLenovoIdComponent, {
 				backdrop: 'static',
@@ -219,18 +205,18 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 			});
 			this.commonService.notification.subscribe((notification: AppNotification) => {
 				if (notification && notification.type === LenovoIdStatus.SignedIn) {
-					// connectedHomeSecurity.startTrial()
+					this.connectedHomeSecurity.account.createAccount();
 				}
 			});
 		}
 	}
 
-	onManageAccount() {
-		WinRT.launchUri(this.connectedHomeSecurity.consoleUrl);
+	onManageAccount(feature: string) {
+		this.connectedHomeSecurity.account.visitWebConsole(feature);
 	}
 
 	onUpgradeAccount() {
-		WinRT.launchUri(this.connectedHomeSecurity.upgradeUrl);
+		this.connectedHomeSecurity.account.purchase();
 	}
 
 	public switchStatus() {

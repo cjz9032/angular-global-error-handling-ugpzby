@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
+import { isUndefined } from 'util';
 
 @Component({
 	selector: 'vtr-ui-lighting-effect',
@@ -10,6 +11,8 @@ import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@ang
 })
 export class UiLightingEffectComponent implements OnInit {
 	@Input() public options;
+	@Input() public selectedValue;
+
 	@Input() lightingData: any;
 	@Output() public change = new EventEmitter<any>();
 
@@ -20,13 +23,19 @@ export class UiLightingEffectComponent implements OnInit {
 	public currentDescription: string;
 	public selectedDescription: string;
 
-	constructor(private elementRef: ElementRef) {}
+	public selectedOption: string;
+
+
+	constructor(private elementRef: ElementRef) { }
 
 	ngOnInit() {
-		this.currentOption = this.options.dropOptions[this.options.curSelected].name;
+		console.log('selected value in drop ng on it',this.selectedValue);
+		this.selectedOption = this.options.dropOptions.filter(
+			(option) => option.value === this.selectedValue
+			)[0];
 	}
 
-	public toggleOptions(optSelected) {
+	public toggleOptions() {
 		this.showOptions = !this.showOptions;
 		// CHANGE THE NAME OF THE BUTTON.
 		if (this.showOptions) {
@@ -37,23 +46,22 @@ export class UiLightingEffectComponent implements OnInit {
 	}
 
 	public setDefaultOption(option) {
-		this.currentOption = option.name;
+		this.selectedOption = option;
 		this.showOptions = false;
 	}
 
 	public optionSelected(option) {
-		this.currentOption = option.name;
-		this.options.curSelected = option.value;
+		this.selectedOption = option;
 		this.showOptions = false;
 		this.change.emit(option);
 	}
 
 	public changeDescription(option) {
-		this.options.curSelected = option.value;
+		this.currentDescription = option.description;
 	}
 
 	public resetDescription(option) {
-		this.options.curSelected = option.value;
+		this.currentDescription = this.selectedDescription;
 	}
 
 	public generalClick(event: Event) {
@@ -61,6 +69,20 @@ export class UiLightingEffectComponent implements OnInit {
 			if (!this.elementRef.nativeElement.contains(event.target)) {
 				if (this.showOptions) {
 					this.showOptions = false;
+				}
+			}
+		}
+	}
+	ngOnChanges(changes) {
+		if (!isUndefined(this.options)) {
+			if (!isUndefined(this.options)) {
+				console.log('in ui-lighting-effect-component.ts iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii', changes.selectedValue);
+				if (!isUndefined(changes.selectedValue)) {
+					console.log('in ui-lighting-effect-component.ts iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii', this.selectedValue);
+					this.selectedOption = this.options.dropOptions.filter(
+
+					(option) => option.value === changes.selectedValue.currentValue
+					)[0];
 				}
 			}
 		}

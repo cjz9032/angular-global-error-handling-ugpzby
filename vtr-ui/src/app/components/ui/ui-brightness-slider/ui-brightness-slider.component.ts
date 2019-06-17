@@ -30,7 +30,7 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	@Input() stepsArray: Array<any>; // array with legend value for Eye care
 	@Input() manualRefresh = new EventEmitter<void>();
 	@Output() change: EventEmitter<ChangeContext> = new EventEmitter();
-	@Output() valueChange: EventEmitter<ChangeContext> = new EventEmitter();
+//	@Output() valueChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() setLightingBrightness: EventEmitter<ChangeContext> = new EventEmitter();
 
 	constructor() { }
@@ -60,7 +60,7 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	 * @param $event event data from ng5-slider component
 	 */
 	public onValueChange($event: ChangeContext) {
-		this.valueChange.emit($event);
+	//	this.valueChange.emit($event);
 		this.setLightingBrightness.emit($event);
 
 	}

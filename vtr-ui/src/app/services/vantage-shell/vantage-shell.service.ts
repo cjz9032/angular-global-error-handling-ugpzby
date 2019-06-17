@@ -384,37 +384,7 @@ export class VantageShellService {
 		}
 		return false;
 	}
-
-	public getThermalModeStatus(): any {
-		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			return this.phoenix.gaming.gamingThermalmode.getThermalModeStatus();
-		}
-		return undefined;
-	}
-
-	public setThermalModeStatus(ThermalModeStatusObj: ThermalModeStatus): Boolean {
-		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			return this.phoenix.gaming.gamingThermalmode.setThermalModeStatus(ThermalModeStatusObj.thermalModeStatus);
-		}
-		return undefined;
-	}
-
-	// public getRAMOCStatus(): any {
-	// 	if (this.phoenix) {
-	// 		return this.phoenix.gaming.gamingOverclock.getRamOCStatus();
-	// 	}
-	// 	return undefined;
-	// }
-
-	// public setRAMOCStatus(ramOCStausObj: RamOCSatus): any {
-	// 	if (this.phoenix) {
-	// 		return this.phoenix.gaming.gamingOverclock.setRamOCStatus(ramOCStausObj.ramOcStatus);
-	// 	}
-	// 	return false;
-	// }
-
+	
 	public getGamingAllCapabilities(): any {
 		if (this.phoenix && this.phoenix.gaming) {
 			return this.phoenix.gaming.gamingAllCapabilities;
@@ -567,5 +537,11 @@ export class VantageShellService {
 			return this.phoenix.gaming.gamingMacroKey.setMacroKey(key, inputs);
 		}
 		return undefined;
+	}
+
+	public getGamingThermalMode() {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingThermalmode;
+		}
 	}
 }

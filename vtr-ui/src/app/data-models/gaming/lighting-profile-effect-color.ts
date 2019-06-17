@@ -1,15 +1,10 @@
-export class LightingProfileEffectColor {
-	public effect: {
-		profileId?: number,
-		lightingPanelType?: number,
-		lightingEffectType?: number,
-	}
-	public color: {
-		profileId?: number,
-		lightingPanelType?: number,
-		lightColor?: string
-	}
-
-
-
+export class LightingProfileEffectColorNUmber {
+	profileId?: number;
+	lightingPanelType?: number;
+	lightingEffectType?: number;
+}
+export class LightingProfileEffectColorString {
+	profileId?: number;
+	lightingPanelType?: number;
+	lightColor?: String
 }
