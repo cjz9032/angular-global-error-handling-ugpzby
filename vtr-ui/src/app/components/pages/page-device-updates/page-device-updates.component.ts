@@ -617,6 +617,18 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		return message;
 	}
 
+	private mapStatusToMessageKey(status: number, defaultValue = 'unknown') {
+		let messageKey = defaultValue;
+		for (const key in SystemUpdateStatusMessage) {
+			if (SystemUpdateStatusMessage.hasOwnProperty(key)) {
+				if (SystemUpdateStatusMessage[key].code === status) {
+					messageKey = key;
+				}
+			}
+		}
+		return messageKey;
+	}
+
 	private sendInstallUpdateMetrics(updateList: Array<AvailableUpdateDetail>, ignoredUpdates: Array<AvailableUpdateDetail>) {
 		const successUpdates = this.filterUpdateByResult(updateList, [UpdateActionResult.Success]);
 		let failedUpdates = this.filterUpdateByResult(updateList,
@@ -662,17 +674,19 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isUpdateCheckInProgress = false;
 					this.percentCompleted = this.systemUpdateService.percentCompleted;
 
-					let metricMessage = 'unknown';
+					let messageKey = 'unknown';
 					if (this.isUserCancelledUpdateCheck) {
 						// when user cancels update check its throwing unknown exception
-						metricMessage = 'user cancel';
+						messageKey = 'user cancel';
 					} else {
+						let metricMessage;
 						metricMessage = this.mapStatusToMessage(payload.status);
+						messageKey = this.mapStatusToMessageKey(payload.status);
 						this.setUpdateTitle(metricMessage);
 					}
 
 					this.metricHelper.sendSystemUpdateMetric(
-						0, '', metricMessage,
+						0, '', messageKey,
 						MetricHelper.timeSpan(new Date(), this.timeStartSearch));
 					break;
 				case UpdateProgress.UpdatesAvailable:
