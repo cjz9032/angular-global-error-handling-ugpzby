@@ -242,8 +242,8 @@ export class UiLightingProfileComponent implements OnInit {
 			this.lightingProfileEffectColorNUmber = new LightingProfileEffectColorNUmber();
 		}
 		this.lightingProfileEffectColorNUmber.profileId = this.currentProfileId;
-		this.lightingProfileEffectColorNUmber.lightingPanelType = this.lightingCapabilities.LightPanelType[0];
-		this.lightingProfileEffectColorNUmber.lightingEffectType = $event.value;
+		this.lightingProfileEffectColorNUmber.lightPanelType = this.lightingCapabilities.LightPanelType[0];
+		this.lightingProfileEffectColorNUmber.lightEffectType = $event.value;
 
 		if (this.gamingLightingService.isShellAvailable) {
 			this.gamingLightingService.setLightingProfileEffectColor(this.lightingProfileEffectColorNUmber).then((response: any) => {
@@ -261,8 +261,8 @@ export class UiLightingProfileComponent implements OnInit {
 			this.lightingProfileEffectColorNUmber = new LightingProfileEffectColorNUmber();
 		}
 		this.lightingProfileEffectColorNUmber.profileId = this.currentProfileId;
-		this.lightingProfileEffectColorNUmber.lightingPanelType = this.lightingCapabilities.LightPanelType[1];
-		this.lightingProfileEffectColorNUmber.lightingEffectType = $event.value;
+		this.lightingProfileEffectColorNUmber.lightPanelType = this.lightingCapabilities.LightPanelType[1];
+		this.lightingProfileEffectColorNUmber.lightEffectType = $event.value;
 
 		if (this.gamingLightingService.isShellAvailable) {
 			this.gamingLightingService.setLightingProfileEffectColor(this.lightingProfileEffectColorNUmber).then((response: any) => {
