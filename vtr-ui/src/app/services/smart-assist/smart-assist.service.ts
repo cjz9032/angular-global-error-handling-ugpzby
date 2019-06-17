@@ -202,7 +202,7 @@ export class SmartAssistService {
 
 	public getIntelligentScreenVisibility(): Promise<boolean> {
 		if (this.isShellAvailable) {
-			return this.intelligentSensing.GetSmartSenseCapability();
+			return this.intelligentSensing.GetSmartSensecapability();
 		}
 		return undefined;
 	}
@@ -263,7 +263,7 @@ export class SmartAssistService {
 	public setReadingOrBrowsingTime(value: number): Promise<boolean> {
 		if (this.isShellAvailable) {
 			const option = value * 60;
-			return this.intelligentSensing.SetBrowsingTime(option);
+			return this.intelligentSensing.setBrowsingTime(option);
 		}
 		return undefined;
 	}
