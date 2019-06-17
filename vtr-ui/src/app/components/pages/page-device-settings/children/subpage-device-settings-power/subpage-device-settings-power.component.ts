@@ -31,6 +31,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public expressChargingLock = false;
 	public batteryGauge: any;
 	public showWarningMsg: boolean;
+	public isEnergyStarProduct = false;
 
 	primaryCheckBox = false;
 	secondaryCheckBox = false;
@@ -250,9 +251,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.getMachineInfo();
 		this.startMonitor();
 		this.getVantageToolBarStatus();
-		if (this.machineType == 1) {
+		if (this.machineType === 1) {
 			this.getBatteryThresholdInformation();
 		}
+		this.getEnergyStarCapability();
 	}
 
 	ngOnDestroy() {
@@ -792,7 +794,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 							this.selectedStopAtChargeVal1 = this.responseData[1].stopValue;
 						}
 					}
-					this.getBatteryDetails()
+					this.getBatteryDetails();
 				})
 				.catch(error => {
 					console.error('', error);
@@ -802,22 +804,22 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	private getBatteryDetails() {
 		this.batteryService.getBatteryDetail()
 			.then((response: any) => {
-				console.log('getBatteryDetails', response);			
+				console.log('getBatteryDetails', response);
 				this.batteryGauge = response.batteryIndicatorInfo;
-				if(this.batteryGauge.percentage > this.selectedStopAtChargeVal || this.selectedStopAtChargeVal1  ){
+				if (this.batteryGauge.percentage > this.selectedStopAtChargeVal || this.selectedStopAtChargeVal1) {
 					this.showWarningMsg = true;
-				} 			
+				}
 			}).catch(error => {
 				console.error('getBatteryDetails error', error);
 			});
 	}
 	public setChargeThresholdValues(batteryDetails: any, batteryNum: number) {
 		let batteryInfo: any = {};
-				if(this.batteryGauge.percentage > batteryDetails.stopChargeValue){
-					this.showWarningMsg = true;
-				}else {
-					this.showWarningMsg = false;
-				}
+		if (this.batteryGauge.percentage > batteryDetails.stopChargeValue) {
+			this.showWarningMsg = true;
+		} else {
+			this.showWarningMsg = false;
+		}
 		try {
 			if (this.powerService.isShellAvailable) {
 				batteryInfo = {
@@ -826,7 +828,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					stopValue: batteryDetails.stopChargeValue,
 					checkBoxValue: batteryDetails.autoChecked
 				};
-				console.log('set values -->', batteryInfo);				
+				console.log('set values -->', batteryInfo);
 
 				this.powerService
 					.setChargeThresholdValue(batteryInfo)
@@ -884,8 +886,21 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
 		}
 
-		//return !this.isDesktopMachine || this.showEasyResumeSection || this.usbChargingInBatteryModeStatus;
+		// return !this.isDesktopMachine || this.showEasyResumeSection || this.usbChargingInBatteryModeStatus;
 		return !this.isDesktopMachine || this.showEasyResumeSection;
-		//return !this.isDesktopMachine || this.showEasyResumeSection;
+		// return !this.isDesktopMachine || this.showEasyResumeSection;
 	}
+
+	private getEnergyStarCapability() {
+		this.powerService.getEnergyStarCapability()
+			.then((response: boolean) => {
+				console.log('getEnergyStarCapability.then', response);
+
+				this.isEnergyStarProduct = response;
+			})
+			.catch(error => {
+				console.log('getEnergyStarCapability.error', error);
+			});
+	}
+
 }
