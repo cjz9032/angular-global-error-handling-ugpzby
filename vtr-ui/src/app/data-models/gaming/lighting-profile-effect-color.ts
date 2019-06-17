@@ -1,10 +1,10 @@
 export class LightingProfileEffectColorNUmber {
 	profileId?: number;
-	lightingPanelType?: number;
-	lightingEffectType?: number;
+	lightPanelType?: number;
+	lightEffectType?: number;
 }
 export class LightingProfileEffectColorString {
 	profileId?: number;
-	lightingPanelType?: number;
+	lightPanelType?: number;
 	lightColor?: String
 }
