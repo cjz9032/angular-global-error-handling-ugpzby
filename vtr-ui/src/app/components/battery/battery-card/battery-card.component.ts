@@ -14,6 +14,7 @@ import { BatteryConditionsEnum, BatteryQuality } from 'src/app/enums/battery-con
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
 import { BatteryConditionNote } from 'src/app/data-models/battery/battery-condition-translations.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { PowerService } from 'src/app/services/power/power.service';
 
 @Component({
 	selector: 'vtr-battery-card',
@@ -24,6 +25,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	constructor(
 		private modalService: NgbModal,
 		private batteryService: BatteryDetailService,
+		private powerService: PowerService,
 		public shellServices: VantageShellService,
 		private commonService: CommonService,
 		private cd: ChangeDetectorRef) {
@@ -42,6 +44,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	percentageLimitation = 60;
 	batteryHealth = 0;
 	batteryIndex = 0;
+	chargeThresholdInfo: any; // ChargeThresholdInfo
 
 	private powerSupplyStatusEventRef: any;
 	private remainingPercentageEventRef: any;
@@ -49,7 +52,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.getBatteryDetailOnCard();
-
+		this.getChargeThresholdInfo();
 		this.powerSupplyStatusEventRef = this.onPowerSupplyStatusEvent.bind(this);
 		this.remainingPercentageEventRef = this.onRemainingPercentageEvent.bind(this);
 		this.remainingTimeEventRef = this.onRemainingTimeEvent.bind(this);
@@ -116,7 +119,12 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				console.error('getBatteryDetails error', error);
 			});
 	}
-
+	getChargeThresholdInfo() {
+		this.powerService.getChargeThresholdInfo().then((response: any) => {
+			this.chargeThresholdInfo = response[0];
+			console.log('Charge Threshold Info: ', this.chargeThresholdInfo);
+		});
+	}
 	public updateBatteryDetails() {
 		if (this.batteryInfo !== undefined && this.batteryInfo.length !== 0) {
 			let batteryIndex = -1;
