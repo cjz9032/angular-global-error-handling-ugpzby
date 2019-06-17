@@ -279,8 +279,8 @@ export class UiLightingProfileComponent implements OnInit {
 			this.lightingProfileEffectColorNUmber = new LightingProfileEffectColorNUmber();
 		}
 		this.lightingProfileEffectColorNUmber.profileId = this.currentProfileId;
-		this.lightingProfileEffectColorNUmber.lightingPanelType = this.lightingCapabilities.LightPanelType[1];
-		this.lightingProfileEffectColorNUmber.lightingEffectType = $event;
+		this.lightingProfileEffectColorNUmber.lightPanelType = this.lightingCapabilities.LightPanelType[1];
+		this.lightingProfileEffectColorNUmber.lightEffectType = $event;
 
 		if (this.gamingLightingService.isShellAvailable) {
 			this.gamingLightingService.setLightingProfileEffectColor(this.lightingProfileEffectColorNUmber).then((response: any) => {
