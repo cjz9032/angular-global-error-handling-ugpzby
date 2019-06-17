@@ -372,9 +372,17 @@
 			"button": "Give feedback",
 			"form": {
 				"email": "Email (optional)",
+				"question1": "Do you like the new style of Vantage?",
+				"question2": "Do you think the performance is acceptable?",
+				"question3": "Would you use the application more often in the future?",
+				"yes": "Yes",
+				"no": "No",
+				"tips1": "Please leave any additional comments",
 				"comments": "Comments...",
 				"button": "Submit",
 				"addScreenshot": "Add ScreenShot",
+				"sendFeedback": "Send Feedback",
+				"submitScreenShot": "Submit Screen Shot",
 				"messages": {
 					"feedbackSuccess": "Thank you for your feedback !"
 				}
@@ -1918,6 +1926,6 @@
 		"usageStatistics": "Usage Statistics",
 		"usageStatisticsDescription": "Send anonymous usage statistics to Lenovo.",
 		"Note": "Note: ",
-		"settingsNotes": "all the settings in this page will need users to restart to take effect."
+		"settingsNotes": "all the settings in this page will need users to relaunch this application to take effect."
 	}
 }
