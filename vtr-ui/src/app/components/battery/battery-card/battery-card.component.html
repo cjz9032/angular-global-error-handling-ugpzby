@@ -90,18 +90,18 @@
 				</span>
 			</div>
 		</div>
-		<div class="feature-note p-4"
-			*ngIf="!chargeThresholdInfo?.isOn">
+		<div class="feature-note p-4 mt-2"
+			*ngIf="chargeThresholdInfo?.isOn">
 			<div class="row">
 				<p>
 					<span style="font-weight: bold">Note: </span>
 					<span>
-						To spread the battery lifespan you have set your battery to stop charging at
-						{{chargeThresholdInfo.stopValue}}.
+						{{'device.deviceSettings.batteryGauge.thresholdNote'  | translate}}
+						{{chargeThresholdInfo.stopValue}}%
 					</span>
-					<a href="javascript:void()">
-						{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
-					</a>
+					<!-- <a href="javascript:void()">
+						{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
+					</a> -->
 			</div>
 		</div>
 		<div class="pt-4 text-center">

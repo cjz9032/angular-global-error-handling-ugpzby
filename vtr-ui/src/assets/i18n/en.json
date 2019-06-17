@@ -483,6 +483,7 @@
 				"minute": "minute",
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
+				"thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
 				"details": {
 					"title": "Battery Details",
 					"primary": "Primary Battery",
@@ -533,10 +534,13 @@
 				},
 				"condition": {
 					"Illegal": {
-						"title": "This system may not support battery that is not genuine Lenovo-made or authorized."
+						"title": "This system may not support battery that",
+						"description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
+						"description1": "Attention:",
+						"description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
 					},
 					"Good": {
-						"title": "The battery is in good Condition"
+						"title": "The battery is in good condition."
 					},
 					"Exhaustion": {
 						"title": "The battery has failed due to normal",
@@ -547,21 +551,23 @@
 						"description": "The battery cannot be charged/discharged . Replace the battery."
 					},
 					"NotDetected": {
-						"title": "No battery detected or",
-						"description": "not plugged in battery."
+						"title": "No battery detected or not",
+						"description": "plugged in battery."
 					},
 					"NotGood": {
 						"title": "The battery is not in a good Condition"
 					},
 					"NotSupportACAdapter": {
-						"title": "AC adapter not supported"
+						"title": "AC adapter not supported.",
+						"description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
 					},
 					"LimitedACAdapterSupport": {
-						"title": "AC adapter cannot provide enough power"
+						"title": "AC adapter cannot provide enough power",
+						"description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
 					},
 					"MissingDriver": {
-						"title": "The Lenovo Power Manager Driver",
-						"description": "is not installed or not working properly."
+						"title": "The Lenovo Power Manager driver",
+						"description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
 					},
 					"StoreLimitation": {
 						"title": "The battery can only store",
@@ -574,9 +580,9 @@
 						"description1": "battery temperature is too high"
 					},
 					"TrickleCharge": {
-						"description": "The battery was ",
+						"description": "The battery was",
 						"description1": "completely discharged",
-						"description2": "and needs to be recharged."
+						"description2": "and needs to be recharged. This might take ten hours or more."
 					},
 					"OverheatedBattery": {
 						"description": "The battery is",
@@ -586,12 +592,12 @@
 					"PermanentError": {
 						"description": "The battery has",
 						"description1": "failed due to normal wear.",
-						"description2": "The battery cannot be charged."
+						"description2": "The battery cannot be charged. Replace the battery."
 					},
 					"HardwareAuthenticationError": {
 						"description": "The battery installed is",
-						"description1": "not supported",
-						"description2": "by the system and will not charge."
+						"description1": "is not supported",
+						"description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
 					}
 				}
 			},
