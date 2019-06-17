@@ -70,7 +70,7 @@
 										</vtr-ui-security-statusbar>
 
 									</div>
-									<vtr-widget-mcafee [install]="false"
+									<vtr-widget-mcafee [install]="false" [isOnline]="isOnline"
 										[name]="'Windows Defender'"></vtr-widget-mcafee>
 								</div>
 							</div>
@@ -422,6 +422,7 @@
 
 									</div>
 									<vtr-widget-mcafee [install]="viewModel.mcafeeInstall"
+										[isOnline]="isOnline"
 										[name]="viewModel.otherAntiVirus.name"
 										[mcafee]="viewModel.mcafee"></vtr-widget-mcafee>
 								</div>

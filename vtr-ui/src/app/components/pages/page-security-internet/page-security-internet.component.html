@@ -48,7 +48,7 @@
 														(click)="getSurfEasy()"
 														metricsEvent="FeatureClick"
 														metricsItem="getSurfEasy"
-														[isDisabled]="statusItem.status === 'installing'"
+														[isDisabled]="statusItem.status === 'installing' || isOnline === false"
 														[label]="'security.vpn.getSufEasy' | translate"
 														[title]="'security.vpn.getSufEasy' | translate">
 													</vtr-ui-button>
