@@ -175,6 +175,7 @@ export class AppComponent implements OnInit {
 					console.log('getMachineInfo.then', value);
 					if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
 						this.translate.use(value.locale.substring(0, 2));
+						this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
 					} else {
 						if (value && value.locale.substring(0, 2).toLowerCase() === 'pt') {
 							value.locale.toLowerCase() === 'pt-br' ? this.translate.use('pt-BR') : this.translate.use('pt');
@@ -186,7 +187,6 @@ export class AppComponent implements OnInit {
 							this.translate.use('zh-Hant');
 						}
 					}
-
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
 					return value;
 				}).catch(error => {

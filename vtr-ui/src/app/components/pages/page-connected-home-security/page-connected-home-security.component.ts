@@ -31,7 +31,6 @@ import { HomeSecurityWelcome } from 'src/app/data-models/home-security/home-secu
 import { ModalLenovoIdComponent } from 'src/app/components/modal/modal-lenovo-id/modal-lenovo-id.component';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
-import { UserService } from '../../../services/user/user.service';
 
 @Component({
 	selector: 'vtr-page-connected-home-security',

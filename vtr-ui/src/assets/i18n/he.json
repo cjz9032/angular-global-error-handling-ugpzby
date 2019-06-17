@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -377,7 +377,15 @@
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
-                }
+                },
+                "question1": "Do you like the new style of Vantage?",
+                "question2": "Do you think the performance is acceptable?",
+                "question3": "Would you use the application more often in the future?",
+                "yes": "Yes",
+                "no": "No",
+                "tips1": "Please leave any additional comments",
+                "sendFeedback": "Send Feedback",
+                "submitScreenShot": "Submit Screen Shot"
             }
         },
         "quickSettings": {
@@ -557,20 +565,12 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter",
+                        "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "ACAdapterNotSupported": {
                         "title": "AC adapter not supported.",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
@@ -598,9 +598,9 @@
                     "title": "הגדרות חכמות של צריכת חשמל",
                     "subtitle": "קירור חכם",
                     "subtitle1": "סוללה ושקט",
-                    "description1": "תכונה זו מכווננת את ההגדרות התרמיות באופן דינמי בהתאם לצורך.",
-                    "description2": "הקירור החכם מתאים את מהירות המאוורר, את טמפרטורת המשטח המרבית ואת הביצועים.",
-                    "description3": "הקירור החכם מאזן באופן אוטומטי את ביצועי החום ומתאים אותם לצרכים שלכם.",
+                    "description1": "תכונה זו מכווננת את ההגדרות התרמיות באופן דינמי בהתאם לצורך.כאשר מופעלת, היא מתאימה את ההגדרות כך שההתקן יהיה קריר או שקט יותר, במצב המתנה או במצב של חוסר פעילות. אחרת, היא משפרת ביצועים בזמן שההתקן נמצא על משטח יציב. כשהיא כבויה, ניתן להגדיר באופן ידני עדיפות מבחינה תרמית.",
+                    "description2": "הקירור החכם מתאים את מהירות המאוורר, את טמפרטורת המשטח המרבית ואת הביצועים.תכונה זו כוללת את המצבים הבאים, והם נגישים כעת דרך מחוון צריכת החשמל של ביצועי Windows.",
+                    "description3": "הקירור החכם מאזן באופן אוטומטי את ביצועי החום ומתאים אותם לצרכים שלכם.תכונת הקירור החכם מכווננת את הגדרות הביצועים כדי לספק לכם משטח קריר ונעים יותר למגע, כשאתם מחזיקים את המחשב הנייד. כשההתקן מונח על משטח עבודה, תכונה זו ממטבת את הביצועים.",
                     "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
                     "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
                     "readMore": "פרטים נוספים.",
@@ -683,7 +683,7 @@
                     "batteryThreshold": {
                         "title": "סף טעינת הסוללה",
                         "description": "אם אתם משתמשים במחשב בעיקר כאשר הוא מחובר למתאם AC ומפעילים אותו באמצעות הסוללה לעתים רחוקות בלבד,תוכלו להאריך את משך חיי הסוללה על-ידי הגדרת הטעינה המרבית לערך הנמוך מ-100%. זוהי אפשרות שימושית משום שמשך החיים של סוללות שנמצאות בשימוש לעתים רחוקות יותר מתארך כאשר הן אינן טעונות במלואן.",
-                        "tooltip": "אם הסוללה נטענת כרגע מעל סף עצירת הטעינה, יש לנתק את מקור החשמל עד שהסוללה תתרוקן עד רמת סף עצירת הטעינה או מתחתיו.",
+                        "tooltip": "אם הסוללה נטענת כרגע מעל סף עצירת הטעינה, יש לנתק את מקור החשמל עד שהסוללה תתרוקן עד רמת סף עצירת הטעינה או מתחתיו.בהתאם למצב הסוללה (ישנה או חדשה), הנקודה המדויקת שבה הטעינה תתחיל או תעצור עשויה להשתנות בעד שני אחוזים. אם תפעילו תכונה זו, מומלץ לבצע איפוס של מד הסוללה מדי פעם כדי להבטיח דוח מדויק לגבי תקינות הסוללה.",
                         "note": "Note",
                         "readMoreText": "Read more.",
                         "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
@@ -693,8 +693,8 @@
                         },
                         "popup": {
                             "title": "הפעלת סף טעינת הסוללה",
-                            "description1": "הפעלה של טעינת סוללה מותאמת אישית תשפר את רמת התקינות הכללית של הסוללה ותאפשר לה לפעול זמן רב יותר, בעת השימוש בהתקן זה.",
-                            "description2": "כדי להפעיל תכונה זו באופן מלא, נתקו את המחשב מהחשמל",
+                            "description1": "הפעלה של טעינת סוללה מותאמת אישית תשפר את רמת התקינות הכללית של הסוללה ותאפשר לה לפעול זמן רב יותר, בעת השימוש בהתקן זה.עם זאת, הימנעות מטעינה מלאה תקצר את משך הפעילות הרציפה של הסוללה.",
+                            "description2": "כדי להפעיל תכונה זו באופן מלא, נתקו את המחשב מהחשמלואפשרו לסוללה להתרוקן עד לסף עצירת הטעינה, או מתחתיו.",
                             "enable": "הפעלה",
                             "cancel": "ביטול"
                         },
@@ -711,16 +711,16 @@
                     },
                     "conservationMode": {
                         "title": "מצב חיסכון",
-                        "description": "פונקציה זו שימושית להארכת משך חיי הסוללה בעת חיבור לחשמל.",
+                        "description": "פונקציה זו שימושית להארכת משך חיי הסוללה בעת חיבור לחשמל. ‏‎<br>‎‏‎‏‎‎‏‎כאשר מצב זה פעיל, הסוללה תוטען רק ל-55-60% מהקיבולת וכך ניתן להאריך את חיי הסוללה. יחד עם זאת, מצב זה יקצר את משך זמן השימוש במחשב לאחר שהוא מנותק ממקור מתח ה-AC.",
                         "tooltip": {
                             "line1": "פונקציה זו שימושית להארכת משך חיי הסוללה בעת חיבור לחשמל.",
-                            "line2": "כאשר מצב זה פעיל, הסוללה תוטען רק ל-55-60% מהקיבולת וכך ניתן להאריך את חיי הסוללה.",
-                            "line3": "הערה: מצב טעינה מהירה ומצב שימור אינם יכולים לפעול באותו הזמן."
+                            "line2": "כאשר מצב זה פעיל, הסוללה תוטען רק ל-55-60% מהקיבולת וכך ניתן להאריך את חיי הסוללה. יחד עם זאת, מצב זה יקצר את משך זמן השימוש במחשב לאחר שהוא מנותק ממקור מתח ה-AC.",
+                            "line3": "הערה: מצב טעינה מהירה ומצב שימור אינם יכולים לפעול באותו הזמן.אם מפעילים אחד מהמצבים, השני יושבת אוטומטית."
                         }
                     },
                     "airPlanePower": {
                         "title": "מצב צריכת חשמל בטיסה",
-                        "description": "הגנה על שקע החשמל לשימוש במטוס באמצעות שליטה בצריכת החשמל של המערכת שלכם."
+                        "description": "הגנה על שקע החשמל לשימוש במטוס באמצעות שליטה בצריכת החשמל של המערכת שלכם.כאשר מצב צריכת החשמל בטיסה מופעל, המחשב מצמצם את צריכת החשמל על-ידי הגבלת קצב טעינת הסוללה וביצועי המערכת."
                     }
                 },
                 "energyStar": {
@@ -731,7 +731,7 @@
             "audio": {
                 "title": "שמע",
                 "subtitle": "הגדרות שמע",
-                "description": "סעיף זה מאפשר לכם לבצע אופטימיזציה אוטומטית או להגדיר",
+                "description": "סעיף זה מאפשר לכם לבצע אופטימיזציה אוטומטית או להגדירבמלואן את הגדרות השמע באופן ידני, כגון הגדרות Dolby, מיקרופון ועוד.",
                 "audioSmartsettings": {
                     "title": "הגדרות שמע חכמות",
                     "subtitle": "הגדרות המבוססות על יישומים",
@@ -955,7 +955,7 @@
                             "medium": "בינוני",
                             "slow": "ברירת מחדל"
                         },
-                        "toolTipContent": "בחרו את האפשרות הרצויה לנעילת המסך בקצב מהיר/בינוני/איטי כאשר הנוכחות שלכם אינה מזוהה."
+                        "toolTipContent": "בחרו את האפשרות הרצויה לנעילת המסך בקצב מהיר/בינוני/איטי כאשר הנוכחות שלכם אינה מזוהה.עם זאת, הזמן שבמהלכו המסך יהיה נעול מושפע גם מתרחיש המשתמש בפועל, מיכולת החיישן ומהגדרות הגבלת זמן פעילות המסך של Windows. לכן, אנו ממליצים בחום לנעול את המערכת באופן מיידי לפני שעוזבים."
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -968,7 +968,7 @@
                 },
                 "note": {
                     "description1": "תכונה זו מסתמכת על Windows Hello.ודאו שזיהוי פנים מופעל בהגדרות Windows.",
-                    "description2": "התכונה משתמשת בחיישנים ובמצלמה כדי לזהות את נוכחותכם.",
+                    "description2": "התכונה משתמשת בחיישנים ובמצלמה כדי לזהות את נוכחותכם.עם זאת, התכונה אינה אוספת, שומרת או מבצעת דליפה של נתונים אישיים או תמונות.",
                     "description3": "‏1. אם המחשב במצב אוהל, לוח או מעמד,ייתכן שתכונות אלה לא יפעלו כראוי.",
                     "description4": "‏2. אם המחשב במצב שינה או כבוי.כניסה אוטומטית למצלמת IR לא תפעל.",
                     "description5": "‏3. כווננו את מסך המחשב לזווית מתאימהכך שמצלמת ה-IR תוכל לזהות את הפנים שלכם לכניסה אוטומטית."
@@ -1036,7 +1036,7 @@
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
+        "title": "‏System Updates",
         "back": "חזרה",
         "history": "ההיסטוריה המלאה",
         "notAvailable": "לא זמין",
@@ -1052,10 +1052,10 @@
         "popup": {
             "reboot": "הפעלה מחדש",
             "shutdown": "כיבוי",
-            "rebootForceMsg": "העדכון (או העדכונים) שנבחר יגרום להפעלה מחדש של המערכת באופן אוטומטי לאחר ההתקנה.",
-            "shutdownForceMsg": "העדכון (או העדכונים) שנבחר יגרום לכיבוי המערכת באופן אוטומטי לאחר ההתקנה.",
-            "rebootDelayedMsg": "העדכונים שבחרתם יגרמו לאתחול מחדש של המערכת לאחר ההתקנה, במהלך התקנת העדכונים, נא לא לכבות את המערכת ולא להסיר את מקור המתח או עזרים אחרים. אנו ממליצים לשמור על העבודה שלכם לפני אתחול המערכת.",
-            "rebootRequiredMsg": "כדי להתקין בהצלחה את העדכונים, נדרשת הפעלה מחדש של המחשב כדי לוודא שהכל פועל בצורה בטוחה וחלקה.",
+            "rebootForceMsg": "העדכונים שנבחרו יגרמו להפעלה מחדש של המערכת באופן אוטומטילאחר ההתקנה.",
+            "shutdownForceMsg": "העדכונים שנבחרו יגרמו לכיבוי המערכתבאופן אוטומטי לאחר ההתקנה.",
+            "rebootDelayedMsg": "העדכונים שבחרתם יגרמו לאתחול מחדש של המערכת לאחר ההתקנה,במהלך התקנת העדכונים, נא לא לכבות את המערכת ולא להסיר את מקור המתח או עזרים אחרים. אנו ממליצים לשמור על העבודה שלכם לפני אתחול המערכת.",
+            "rebootRequiredMsg": "כדי להתקין בהצלחה את העדכונים, נדרשתהפעלה מחדש של המחשב כדי לוודא שהכל פועל בצורה בטוחה וחלקה.",
             "okayButton": "אישור",
             "cancelButton": "ביטול",
             "rebootButton": "הפעל מחדש כעת",
@@ -1070,8 +1070,8 @@
                 "tooltip": "עדכונים קריטיים יכולים למנוע בעיות מהותיות, תקלות רציניות, כשלים בחומרה או פגיעה בנתונים."
             },
             "recommended": {
-                "title": "עדכונים מומלצים",
-                "tooltip": "עדכונים מומלצים למנהלי התקנים שומרים על ביצועים אופטימליים של המחשב."
+                "title": "‏עדכונים מומלצים",
+                "tooltip": "‏עדכוני מנהלי התקן מומלצים שומרים על הפעלת המחשב שלך בביצועים אופטימליים."
             },
             "windows": {
                 "title": "עדכוני Windows",
@@ -1086,21 +1086,21 @@
             "title": "מערכת עדכנית היא מערכת תקינה.",
             "last": "העדכון האחרון נעשה ב-",
             "next": "חיפוש העדכונים הבא נקבע לתאריך",
-            "checkButton": "חיפוש עדכונים ",
+            "checkButton": "חיפוש עדכונים",
             "checking": "חיפוש עדכונים",
-            "downloading": "הורדת עדכונים",
+            "downloading": "הורדת העדכונים הושלמה",
             "installing": "מתקין עדכונים",
-            "percent": "% הושלם",
+            "percent": "‏% הושלם",
             "cancelCheck": "ביטול חיפוש",
             "cancelUpdates": "ביטול עדכונים",
             "available": "עדכונים זמינים",
-            "description": "חבילות אלו כוללות עדכוני מנהלי התקנים של חומרה וכלי מערכת אחרים החיוניים לפעולתו התקינה של המחשב. לעדכונים חיוניים יש חשיבות גם מבחינת שמירה על הגנת המידע במחשב, ומומלץ להתקינם מיד לאחר שהם נעשים זמינים. אם לא מתקינים את העדכונים הקריטיים האלה, יש סכנה גדולה יותר של אובדן נתונים, תקלה משמעותית במערכת או כשל חומרה.",
+            "description": "חבילות אלו כוללות עדכוני מנהלי התקנים של חומרהוכלי מערכת אחרים החיוניים לפעולתו התקינה של המחשב. לעדכונים חיוניים יש חשיבות גם מבחינת הגנת הנתונים במחשב ומומלץ להתקינם מיד לאחר שהם נעשים זמינים. אם לא מתקינים את העדכונים הקריטיים האלה, יש סכנה גדולה יותר של אובדן נתונים, תקלה משמעותית במערכת או כשל חומרה.",
             "installButton": "התקנת כל העדכונים",
             "result": {
                 "success": "כל העדכונים הותקנו כראוי",
                 "fail": {
                     "title": "עדכונים מסוימים לא הותקנו כראוי.",
-                    "description": "משהו השתבש במהלך ההורדה או ההתקנה של עדכונים אלה. ודאו שאתם נמצאים במצב מקוון ואל תכבו את המחשב בעת התקנת העדכונים."
+                    "description": "משהו השתבש במהלך ההורדה או ההתקנה של עדכונים אלה.ודאו שאתם נמצאים במצב מקוון ואל תכבו את המחשב בעת התקנת העדכונים."
                 }
             }
         },
@@ -1168,15 +1168,14 @@
         "protected": "Protected",
         "notProtected": "Not Protected",
         "myDevice": "My Device",
-        "allDevice": "All Devices",
         "secure": "SECURE",
         "needAttention": "NEEDS ATTENTION",
         "manageAccount": "Manage Account",
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrate to protect all of your devices",
+        "trialExpired": "Trial Expired",
+        "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
         "protectAllDevices": "Protect all of your devices",
@@ -1300,9 +1299,7 @@
             "maliciousNetwork": "מנעו מהמחשב שלכם מלהצטרף אל {{maliciousWifi}} רשתות זדוניות החודש.",
             "good": "טוב",
             "malicious": "זדוני",
-            "suspicious": "חשוד",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "חשוד"
         },
         "antivirus": {
             "common": {

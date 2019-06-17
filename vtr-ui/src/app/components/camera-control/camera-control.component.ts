@@ -35,6 +35,10 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	private oMediaCapture: any;
 	private visibilityChange: any;
 
+	public cameraErrorTitle: string;
+	public cameraErrorDescription: string;
+	public isCameraInErrorState = false;
+
 	@ViewChild('cameraPreview') set content(content: ElementRef) {
 		// when camera preview video element is visible then start camera feed
 		this.cameraPreview = content;
@@ -124,8 +128,16 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 					// Register for a notification when something goes wrong
 					// TODO: define the fail handle callback and show error message maybe... there's a chance another app is previewing camera, that's when failed happen.
 					self.oMediaCapture.addEventListener('failed', (error) => {
+						this.isCameraInErrorState = true;
 						console.log('failed to capture camera', error);
 						self.cleanupCameraAsync();
+						if (error.Code === 3222091524) {
+							this.cameraErrorTitle = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.inUseTitle';
+							this.cameraErrorDescription = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.inUseDescription';
+						} else {
+							this.cameraErrorTitle = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.loadingFailedTitle';
+							this.cameraErrorDescription = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.loadingFailedDescription';
+						}
 					});
 
 					const settings = new self.Capture.MediaCaptureInitializationSettings();
@@ -201,5 +213,11 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	public onExposureSliderChange($event: ChangeContext) {
 		console.log('exposure changed', $event);
 		this.exposureChange.emit($event);
+	}
+
+	public getCameraPreviewVisibility() {
+		if (this.isCameraInErrorState) {
+			return true;
+		}
 	}
 }
