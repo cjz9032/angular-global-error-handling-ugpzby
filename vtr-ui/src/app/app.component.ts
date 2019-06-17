@@ -186,12 +186,9 @@ export class AppComponent implements OnInit {
 							this.translate.use('zh-Hant');
 						}
 					}
-<<<<<<< HEAD
 
-=======
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
 					return value;
->>>>>>> 904e73123... VAN-5190 metrics with Gaming or normal
 				}).catch(error => {
 					console.error('getMachineInfo', error);
 				});
