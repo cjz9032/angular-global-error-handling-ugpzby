@@ -43,6 +43,16 @@ export class CommonService {
 	}
 
 	/**
+	 * Returns the formatted date in local date format
+	 * Example: return M/DD/YYYY for English
+	 * @param dateString date string to format
+	 */
+	public formatLocalDate(dateString: string): string {
+		const date = new Date(dateString);
+		return date.toLocaleDateString();
+	}
+
+	/**
 	 * Returns date formatted in YYYY/MM/DD format
 	 * @param date date object to format
 	 */

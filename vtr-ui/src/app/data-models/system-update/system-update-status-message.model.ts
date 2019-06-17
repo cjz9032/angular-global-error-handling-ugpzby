@@ -5,86 +5,86 @@ export class SystemUpdateStatusMessage {
 	};
 	public static readonly FAILURE = {
 		code: 1,
-		message: 'There is a problem in retrieving new Updates. Please try again later.'
+		message: 'systemUpdates.statusCodeMessage.commonFailure'
 	};
 	public static UP_TO_DATE = {
 		code: 2,
-		message: 'No updates are available. Your system is up to date.'
+		message: 'systemUpdates.statusCodeMessage.upToDate'
 	};
 	public static EGATER_EXCEPTION = {
 		code: 3,
-		message: 'An error occurred while gathering user information.'
+		message: 'systemUpdates.statusCodeMessage.egatherException'
 	};
 	public static GATHERING_USERINFO_EXCEPTION = {
 		code: 4,
-		message: 'An error occurred while gathering user information.'
+		message: 'systemUpdates.statusCodeMessage.gatheringUserInfoException'
 	};
 	public static CERTIFICATE_VALIDATION_EXCEPTION = {
 		code: 5,
-		message: 'The Update Content Server is invalid. Please try again later.'
+		message: 'systemUpdates.statusCodeMessage.certificateValidationException'
 	};
 	public static DOWNLOAD_EXCEPTION = {
 		code: 6,
-		message: 'An error occurred while downloading updates.'
+		message: 'systemUpdates.statusCodeMessage.downloadException'
 	};
 	public static CONNECT_EXCEPTION = {
 		code: 7,
-		message: 'Unable to connect to the Update Content Server.'
+		message: 'systemUpdates.statusCodeMessage.connectException'
 	};
 	public static NOT_ENOUGHDISKSPACE = {
 		code: 8,
-		message: 'There is not enough disk space to perform the current task.'
+		message: 'systemUpdates.statusCodeMessage.notEnoughDiskSpace'
 	};
 	public static PROXY_AUTHENTICATION_EXCEPTION = {
 		code: 9,
-		message: 'Incorrect Proxy user name or password.'
+		message: 'systemUpdates.statusCodeMessage.proxyAuthenticationException'
 	};
 	public static PROXY_CONNECTION_EXCEPTION = {
 		code: 10,
-		message: 'Unable to connect to the proxy server.'
+		message: 'systemUpdates.statusCodeMessage.proxyConnectionException'
 	};
 	public static AUTOSCRIPT_EVALUATION_EXCEPTION = {
 		code: 11,
-		message: 'There was an error evaluating the auto configuration script.'
+		message: 'systemUpdates.statusCodeMessage.autoScriptEvaluationException'
 	};
 	public static LOCALREPOSITORY_CONNECTION_FAILURE_EXCEPTION = {
 		code: 12,
-		message: 'Unable to connect to the Local Repository.'
+		message: 'systemUpdates.statusCodeMessage.localRepositoryConnectionFailureException.'
 	};
 	public static LOCALREPOSITORY_DATABASE_EXCEPTION = {
 		code: 13,
-		message: 'The local repository database could not be found or is corrupted.'
+		message: 'systemUpdates.statusCodeMessage.localRepositoryDatabaseException'
 	};
 	public static NETWORK_INTERRUPTED_EXCEPTION = {
 		code: 14,
-		message: 'The System Update Server is currently unavailable. Please try again later.'
+		message: 'systemUpdates.statusCodeMessage.networkInterruptedException'
 	};
 	public static HELPCENTER_INVALID_SERVER_EXCEPTION = {
 		code: 15,
-		message: 'The System Update Server is invalid. Please try again later.'
+		message: 'systemUpdates.statusCodeMessage.helpCenterInvalidServerException'
 	};
 	public static CATALOG_NOT_FOUND_EXCEPTION = {
 		code: 16,
-		message: 'There are no applicable updates found for your system.'
+		message: 'systemUpdates.statusCodeMessage.catalogNotFoundException'
 	};
 	public static CATALOG_CRC_ERROR_EXCEPTION = {
 		code: 17,
-		message: 'The update catalog for your system is currently being updated on the System Update Server. Please try again later.'
+		message: 'systemUpdates.statusCodeMessage.catalogCrcErrorException'
 	};
 	public static CATALOG_ERROR_EXCEPTION = {
 		code: 18,
-		message: 'An error was detected with the update catalog for your system on the System Update Server. Please try again later.'
+		message: 'systemUpdates.statusCodeMessage.catalogErrorException'
 	};
 	public static FILE_NOT_FOUND_EXCEPTION = {
 		code: 19,
-		message: 'File not found.'
+		message: 'systemUpdates.statusCodeMessage.fileNotFoundException'
 	};
 	public static UNKNOWN_EXCEPTION = {
 		code: 20,
-		message: 'There is a problem in retrieving new Updates. Please try again later.'
+		message: 'systemUpdates.statusCodeMessage.commonFailure'
 	};
 	public static INSTANCE_ISRUNNING = {
 		code: 21,
-		message: 'There is a problem in retrieving new Updates. Please try again later.'
+		message: 'systemUpdates.statusCodeMessage.commonFailure'
 	};
 }
