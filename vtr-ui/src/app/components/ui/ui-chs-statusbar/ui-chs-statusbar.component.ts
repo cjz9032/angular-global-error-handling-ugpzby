@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
 	styleUrls: ['./ui-chs-statusbar.component.scss']
 })
 export class UiChsStatusbarComponent implements OnInit {
-	@Input() statusList: Array<any>;
+	@Input() ecoSystem;
 	@Input() regular: false;
 	isShowMore = true;
 	constructor() { }
