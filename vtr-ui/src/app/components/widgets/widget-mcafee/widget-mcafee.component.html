@@ -36,6 +36,7 @@
 					[label]="'security.antivirus.mcafee.getMacfee' | translate"
 					[title]="'security.antivirus.mcafee.getMacfee' | translate"
 					[upperCaseLabel]="false"
+					[isDisabled]="!isOnline"
 					*ngIf="!install"></vtr-ui-button>
 			</a>
 		</div>

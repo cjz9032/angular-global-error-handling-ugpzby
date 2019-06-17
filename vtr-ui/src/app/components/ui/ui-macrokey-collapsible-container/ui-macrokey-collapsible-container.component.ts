@@ -4,7 +4,7 @@ import { isUndefined } from 'util';
 @Component({
 	selector: 'vtr-ui-macrokey-collapsible-container',
 	templateUrl: './ui-macrokey-collapsible-container.component.html',
-	styleUrls: [ './ui-macrokey-collapsible-container.component.scss' ],
+	styleUrls: ['./ui-macrokey-collapsible-container.component.scss'],
 	host: {
 		'(document:click)': 'generalClick($event)'
 	}
@@ -22,9 +22,9 @@ export class UiMacrokeyCollapsibleContainerComponent implements OnInit, OnChange
 	public currentDescription: string;
 	public selectedDescription: string;
 
-	constructor(private elementRef: ElementRef) {}
+	constructor(private elementRef: ElementRef) { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	public toggleOptions() {
 		this.showOptions = !this.showOptions;

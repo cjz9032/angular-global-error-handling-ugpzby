@@ -7,25 +7,33 @@
 			<div class="acid-container">
 				<div class="fill"></div>
 				<div class="percentage"
-					*ngIf="!isVoltageError && !batteryNotDetected">
+					*ngIf="!isVoltageError && !batteryNotDetected  && percentage!=0">
 					{{ percentage }}
 					<span class="percentage-symbol">
 						%
 					</span>
 				</div>
 				<div class="battery-error"
-					*ngIf="isVoltageError">
+					*ngIf="isVoltageError && !batteryNotDetected">
 					<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon>
-					<span class="voltage-incorrect"> Battery voltage incorrect</span>
+					<span class="voltage-incorrect">
+						{{'device.deviceSettings.batteryGauge.voltageError'| translate}}
+					</span>
 				</div>
 				<div class="battery-error"
 					*ngIf="batteryNotDetected">
 					<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon>
-					<span class="voltage-incorrect"> No Battery Detected</span>
+					<span class="voltage-incorrect">
+						{{'device.deviceSettings.batteryGauge.batteryNotDetected'| translate}}
+					</span>
+				</div>
+				<div class="updating-text"
+					*ngIf="percentage==0 && !batteryNotDetected && !isVoltageError">
+					<span>{{'device.deviceSettings.batteryGauge.updating'| translate}}</span>
+					<span class="loading-dots">. . . . . .</span>
 				</div>
 			</div>
-
-			<div *ngIf="!isVoltageError && !batteryNotDetected && !hideRemainingTimeTxt">
+			<div *ngIf="!isVoltageError && !batteryNotDetected && !hideRemainingTimeTxt && percentage!=0">
 				<div class="remaining-time">
 					{{ getTimeRemaining() }}
 				</div>
@@ -39,7 +47,7 @@
 				</div>
 			</div>
 			<div class="battery-charging"
-				*ngIf="!isVoltageError && !batteryNotDetected">
+				*ngIf="!isVoltageError && !batteryNotDetected && percentage!=0">
 				<span *ngIf="(isCharging && !isExpressCharging)"
 					class="icomoon icomoon-FA-Plug2x"></span>
 				<span *ngIf="(isCharging && isExpressCharging)"

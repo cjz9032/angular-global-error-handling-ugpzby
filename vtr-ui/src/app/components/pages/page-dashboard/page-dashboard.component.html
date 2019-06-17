@@ -161,7 +161,7 @@
 								</div>
 
 								<div class="row mb-40"
-									*ngIf="deviceService.isArm">
+									*ngIf="!androidService.isAndroid && deviceService.isArm">
 									<div class="col col-12 cont">
 										<vtr-widget-questions [title]="'common.qAndA.title' | translate"
 											[description]="'common.qAndA.subtitle' | translate"

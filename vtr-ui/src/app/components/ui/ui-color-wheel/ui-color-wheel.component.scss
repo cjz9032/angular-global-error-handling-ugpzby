@@ -1,0 +1,87 @@
+@import "../../../app.theme.scss";
+
+.picker-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	.color-display {
+		width: 0;
+		height: 0;
+		border: 0;
+	}
+	.rgb-values {
+		.form-group {
+			margin-left: 2rem;
+			label {
+				width: 2.4rem;
+				font-size: 1.6rem;
+				color: $gaming_lightest;
+			}
+			input {
+				height: 3rem;
+				width: 6rem;
+				background: $gaming_shade;
+				font-size: 1.6rem;
+				color: $gaming_lightest;
+				border: none;
+				box-sizing: border-box;
+				padding: 0.6rem;
+			}
+		}
+	}
+	#color-wheel {
+		position: relative;
+		::ng-deep {
+			.reinvented-color-wheel,
+			.reinvented-color-wheel--hue-wheel,
+			.reinvented-color-wheel--hue-handle,
+			.reinvented-color-wheel--sv-space,
+			.reinvented-color-wheel--sv-handle {
+				touch-action: manipulation;
+				touch-action: none;
+				-webkit-touch-callout: none;
+				-webkit-tap-highlight-color: transparent;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+
+			.reinvented-color-wheel {
+				position: relative;
+				display: inline-block;
+				line-height: 0;
+				border-radius: 50%;
+			}
+
+			.reinvented-color-wheel--hue-wheel {
+				border-radius: 50%;
+			}
+
+			.reinvented-color-wheel--sv-space {
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				clip-path: circle(50% at 50% 50%);
+				//border-radius: 50%;
+			}
+
+			.reinvented-color-wheel--hue-handle,
+			.reinvented-color-wheel--sv-handle {
+				position: absolute;
+				box-sizing: border-box;
+				pointer-events: none;
+				border-radius: 50%;
+				border: 2px solid white;
+				box-shadow: 0 0 0 1px black inset;
+			}
+
+			.reinvented-color-wheel--sv-space {
+				clip-path: circle(50% at 50% 50%);
+			}
+		}
+	}
+}

@@ -4,10 +4,10 @@
 	@media #{$mediaquery_11} {
 		padding-top: 8.5rem;
 	}
-	@media #{$mediaquery_X5} {
-		padding-left: 8.5rem;
-		padding-top: 12.5rem;
-	}
+	// @media #{$mediaquery_X5} {
+	// 	padding-left: 8.5rem;
+	// 	padding-top: 12.5rem;
+	// }
 	.background-red {
 		background-image: url(../../../../assets/images/battery/Red--Top.png),
 			url(../../../../assets/images/battery/Red--Bottom.png);

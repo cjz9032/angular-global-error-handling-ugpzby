@@ -1,6 +1,5 @@
 import { Component, OnInit} from '@angular/core';
 
-
 @Component({
   selector: 'vtr-subpage-device-settings-input-accessory',
   templateUrl: './subpage-device-settings-input-accessory.component.html',
@@ -9,21 +8,15 @@ import { Component, OnInit} from '@angular/core';
 export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 
   title = 'device.deviceSettings.inputAccessories.title';
- public keyboardShortcuts: any []= [
-   {tittle:  'Fn + Tab' , description: 'enable zoom feature on high resolution displays'},
-   {tittle:  'Fn + 4' , description: 'enter sleep mode'},
-   {tittle:  'Fn + D' , description: 'turn on and off Privacy Guard'},
-   {tittle:  'Fn + Q' , description: 'change between Performance mode and Quiet mode'},
-   {tittle:  'Fn + Space' , description: 'change keyboard backlight states'}
-  ];
-
+  public shortcutKeys: any[] = ['device.deviceSettings.inputAccessories.inputAccessory.firstKeyObj',
+  'device.deviceSettings.inputAccessories.inputAccessory.secondKeyObj',
+  'device.deviceSettings.inputAccessories.inputAccessory.thirdKeyObj',
+  'device.deviceSettings.inputAccessories.inputAccessory.fourthKeyObj',
+  'device.deviceSettings.inputAccessories.inputAccessory.fifthKeyObj',];
+  
 
 	constructor() {	}
 
-	ngOnInit() {}
-
-
-
-	
-
+	ngOnInit() {
+  }
 }

@@ -117,6 +117,9 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				backgroundColor = this.getCssPropertyValue(
 					'--background-color-0-14'
 				);
+				borderColor = this.getCssPropertyValue(
+					'--border-color-0-14'
+				);
 				fillColor = this.getCssPropertyValue(
 					'--acid-fill-gradient-0-14'
 				);
@@ -125,6 +128,9 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				backgroundColor = this.getCssPropertyValue(
 					'--background-color-15-24'
 				);
+				// borderColor = this.getCssPropertyValue(
+				// 	'--border-color-15-24'
+				// );
 				fillColor = this.getCssPropertyValue(
 					'--acid-fill-gradient-15-24'
 				);
@@ -133,6 +139,9 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				backgroundColor = this.getCssPropertyValue(
 					'--background-color-25-100'
 				);
+				// borderColor = this.getCssPropertyValue(
+				// 	'--border-color-25-100'
+				// );
 				fillColor = this.getCssPropertyValue(
 					'--acid-fill-gradient-25-100'
 				);
@@ -142,12 +151,14 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				backgroundColor = this.getCssPropertyValue(
 					'--background-color-error'
 				);
+				// borderColor = this.getCssPropertyValue(
+				// 	'--border-color-error'
+				// );
 				fillColor = this.getCssPropertyValue(
 					'--acid-fill-gradient-error'
 				);
 				break;
 		}
-
 		switch (this.batteryHealth) {
 			case 'Good':
 				borderColor = this.getCssPropertyValue('--border-color-25-100');

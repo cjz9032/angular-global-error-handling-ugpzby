@@ -42,7 +42,6 @@ export enum LocalStorageKey {
 	PrevThermalModeStatus = '[LocalStorageKey] PrevThermalModeStatus',
 	IsHPDSupported = '[LocalStorageKey] IsHPDSupported',
 	ConnectedHomeSecurityShowWelcome = '[LocalStorageKey] ConnectedHomeSecurityShowWelcome',
-	ConnectedHomeSecuritySystemLocationPermissionShowed = '[LocalStorageKey] ConnectedHomeSecuritySystemLocationPermissionShowed',
 	/**
 	 * 0  means "ideaPad",
 	 * 1  means "thinkPad",
@@ -85,5 +84,20 @@ export enum LocalStorageKey {
 	xtuService = '[LocalStorageKey] XtuService',
 	fbNetFilter = '[LocalStorageKey] FbNetFilter',
 	ledDriver = '[LocalStorageKey] LedDriver',
-	winKeyLockFeature = '[LocalStorageKey] WinKeyLockFeature'
+	winKeyLockFeature = '[LocalStorageKey] WinKeyLockFeature',
+
+	// this enum is for macrokey local storage key
+	MacroKeyType = '[LocalStorageKey] MacroKeyType',
+	MacroKeyStatus = '[LocalStorageKey] MacroKeyStatus',
+	MacroKey = '[LocalStorageKey] MacroKey',
+	MacroKeyRecordedStatus = '[LocalStorageKey] MacroKeyRecordedStatus',
+	MacroKeyChangeStatus = '[LocalStorageKey] MacroKeyChangeStatus',
+	PrevMacroKeyStatus = '[LocalStorageKey] PrevMacroKeyStatus',
+	PrevMacroKey = '[LocalStorageKey] PrevMacroKey',
+	PrevMacroKeyRepeat = '[LocalStorageKey] PrevMacroKeyRepeat',
+	PrevMacroKeyInterval = '[LocalStorageKey] PrevMacroKeyInterval',
+	CurrentMacroKeyRepeat = '[LocalStorageKey] CurrentMacroKeyRepeat',
+	CurrentMacroKeyInterval = '[LocalStorageKey] CurrentMacroKeyInterval'
+
+
 }

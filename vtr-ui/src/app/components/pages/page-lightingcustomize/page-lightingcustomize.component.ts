@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -8,7 +9,7 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 	styleUrls: ['./page-lightingcustomize.component.scss']
 })
 export class PageLightingcustomizeComponent implements OnInit {
-	public currentProfileData: any;
+	public currentProfileId: any;
 	[x: string]: any;
 	public homePage = {
 		didSuccess: [
@@ -35,7 +36,12 @@ export class PageLightingcustomizeComponent implements OnInit {
 		]
 	};
 
-	constructor(private cmsService: CMSService) {}
+	constructor(private cmsService: CMSService, private route: ActivatedRoute) {
+		this.route.params.subscribe(params => {
+			this.currentProfileId = +params['id']; // (+) converts string 'id' to a number
+		});
+		//console.log('id----------------------------------', this.currentProfileId);
+	}
 
 	ngOnInit() {
 
