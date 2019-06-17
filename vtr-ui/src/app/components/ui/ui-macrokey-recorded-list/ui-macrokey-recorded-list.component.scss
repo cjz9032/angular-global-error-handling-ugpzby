@@ -24,14 +24,15 @@
 	position: relative;
 	height: 70rem;
 	.top-fix {
-		max-height: 64rem;
+		height: 64.4rem;
 		padding: 3rem;
 		overflow: auto;
+		align-content: flex-start;
 	}
 
 	&.recording {
 		.top-fix {
-			max-height: 50rem;
+			height: 50rem;
 		}
 	}
 
