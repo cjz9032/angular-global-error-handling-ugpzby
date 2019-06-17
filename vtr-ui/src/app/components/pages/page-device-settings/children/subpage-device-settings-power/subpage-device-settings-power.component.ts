@@ -788,6 +788,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						this.selectedStartAtChargeVal = this.responseData[0].startValue;
 						this.selectedStopAtChargeVal = this.responseData[0].stopValue;
 						this.primaryCheckBox = this.responseData[0].checkBoxValue;
+						this.showBatteryThreshold = this.responseData[0].isOn;						
 						if (this.responseData.length === 2) {
 							this.secondaryCheckBox = this.responseData[1].checkBoxValue;
 							this.selectedStartAtChargeVal1 = this.responseData[1].startValue;
@@ -843,6 +844,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		} catch (error) {
 			console.error(error.message);
 		}
+	}
+	public showBatteryThresholdsettings(event){
+		this.showBatteryThreshold = event;
 	}
 
 	public autoCheckSelected(batteryDetails: any, batteryNum: any) {
