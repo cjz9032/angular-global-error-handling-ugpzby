@@ -46,22 +46,6 @@ export class AppComponent implements OnInit {
 		const appFirstRun = !hadRunApp;
 		if (appFirstRun && deviceService.isShellAvailable) {
 			commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
-
-			let isGaming = 'unknown';
-			this.deviceService.getMachineInfo()
-				.then((value: any) => {
-					isGaming = value.isGaming;
-				}).catch(error => {
-					console.error('getMachineInfo', error);
-				}).then(() => {
-					const metricsClient = vantageShellService.getMetrics();
-					metricsClient.sendAsyncEx({
-						ItemType: 'FirstRun',
-						IsGaming: isGaming
-					}, {
-							forced: true
-						});
-				});
 		}
 
 		//#region VAN-2779 this is moved in MVP 2
@@ -158,9 +142,30 @@ export class AppComponent implements OnInit {
 				}
 			}
 		});
-		this.getMachineInfo();
+
+		const result = this.getMachineInfo();
+		if (result != null) {
+			result.then((machineInfo) => {
+				this.sendFirstRunEvent(machineInfo);
+			});
+		}
+
 		this.checkIsDesktopOrAllInOneMachine();
 		this.settingsService.getPreferenceSettingsValue();
+	}
+
+	private sendFirstRunEvent(machineInfo) {
+		let isGaming = null;
+		if (machineInfo) {
+			isGaming = machineInfo.isGaming;
+		}
+		const metricsClient = this.vantageShellService.getMetrics();
+		metricsClient.sendAsyncEx({
+			ItemType: 'FirstRun',
+			IsGaming: isGaming
+		}, {
+				forced: true
+			});
 	}
 
 	private getMachineInfo() {
@@ -181,7 +186,12 @@ export class AppComponent implements OnInit {
 							this.translate.use('zh-Hant');
 						}
 					}
+<<<<<<< HEAD
 
+=======
+					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
+					return value;
+>>>>>>> 904e73123... VAN-5190 metrics with Gaming or normal
 				}).catch(error => {
 					console.error('getMachineInfo', error);
 				});
