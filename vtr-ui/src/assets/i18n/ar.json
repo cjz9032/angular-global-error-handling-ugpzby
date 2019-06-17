@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -377,7 +377,15 @@
                 "addScreenshot": "إضافة لقطة شاشة",
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
-                }
+                },
+                "question1": "Do you like the new style of Vantage?",
+                "question2": "Do you think the performance is acceptable?",
+                "question3": "Would you use the application more often in the future?",
+                "yes": "Yes",
+                "no": "No",
+                "tips1": "Please leave any additional comments",
+                "sendFeedback": "Send Feedback",
+                "submitScreenShot": "Submit Screen Shot"
             }
         },
         "quickSettings": {
@@ -557,20 +565,12 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter",
+                        "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "ACAdapterNotSupported": {
                         "title": "AC adapter not supported.",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
@@ -934,8 +934,8 @@
                 "title": "الأمان الذكي",
                 "readMore": "اقرأ أكثر",
                 "HumanPresenceDetection": {
-                    "title": "Human presence detection",
-                    "tooltip": "Click here to reset the human presence detection settings."
+                    "title": "الكشف عن الوجود البشري",
+                    "tooltip": "انقر هنا لإعادة تعيين إعدادات الكشف عن الوجود البشري."
                 },
                 "humanPresenceDetection": {
                     "title": "الكشف عن الوجود البشري",
@@ -1052,10 +1052,10 @@
         "popup": {
             "reboot": "إعادة التمهيد",
             "shutdown": "إيقاف التشغيل",
-            "rebootForceMsg": "سيتسبب التحديث (التحديثات) الذي حددته في إعادة تمهيد النظام بشكل تلقائي بعد التثبيت.",
-            "shutdownForceMsg": "سيتسبب التحديث (التحديثات) الذي حددته في إيقاف تشغيل النظام بشكل تلقائي بعد التثبيت.",
-            "rebootDelayedMsg": "سيؤدي التحديث (التحديثات) الذي حددته إلى إعادة تمهيد النظام بعد التثبيت، وأثناء تثبيت التحديثات، الرجاء عدم إيقاف تشغيل النظام أو إزالة مصدر الطاقة أو الملحقات. ننصحك بحفظ عملك استعدادًا لإيقاف تشغيل النظام.",
-            "rebootRequiredMsg": "من أجل تثبيت التحديثات بنجاح يحتاج جهاز الكمبيوتر إلى عملية إعادة تمهيد لضمان تشغيل كل شيء بشكل آمن وسلس.",
+            "rebootForceMsg": "سيتسبب التحديث (التحديثات) الذي حددته في إعادة تمهيد النظام بشكل تلقائيبعد التثبيت.",
+            "shutdownForceMsg": "سيتسبب التحديث (التحديثات) الذي حددته في إيقاف تشغيل النظامبشكل تلقائي بعد التثبيت.",
+            "rebootDelayedMsg": "سيؤدي التحديث (التحديثات) الذي حددته إلى إعادة تمهيد النظام بعد التثبيت،وأثناء تثبيت التحديثات، الرجاء عدم إيقاف تشغيل النظام أو إزالة مصدر الطاقة أو الملحقات. ننصحك بحفظ عملك استعدادًا لإيقاف تشغيل النظام.",
+            "rebootRequiredMsg": "من أجل تثبيت التحديثات بنجاح يحتاج جهاز الكمبيوتر إلىعملية إعادة تمهيد لضمان تشغيل كل شيء بشكل آمن وسلس.",
             "okayButton": "موافق",
             "cancelButton": "إلغاء",
             "rebootButton": "إعادة التمهيد الآن",
@@ -1070,8 +1070,8 @@
                 "tooltip": "بإمكان التحديثات المهمة منع حدوث مشاكل مهمة، أو خلل رئيسي أو تعطل الأجهزة أو تلف البيانات."
             },
             "recommended": {
-                "title": "تحديثات مستحسنة",
-                "tooltip": "تساعد تحديثات برامج التشغيل المستحسنة على تشغيل الكمبيوتر بشكل دائم وفق الأداء الأمثل."
+                "title": "‏التحديثات الموصى بها",
+                "tooltip": "تعمل تحديثات برنامج التشغيل الموصى بها على إبقاء الكمبيوتر قيد التشغيل في أفضل أداء."
             },
             "windows": {
                 "title": "تحديثات Windows",
@@ -1086,21 +1086,21 @@
             "title": "النظام المحدّث هو نظام سليم.",
             "last": "تاريخ التحديث الأخير",
             "next": "تمت جدولة الفحص المحدّث التالي في",
-            "checkButton": "التحقق من وجود تحديثات ",
+            "checkButton": "التحقق من وجود تحديثات",
             "checking": "التحقق من وجود تحديثات",
-            "downloading": "تنزيل التحديثات",
+            "downloading": "تم تنزيل التحديثات",
             "installing": "تثبيت التحديثات",
-            "percent": "% مكتمل",
+            "percent": "‏% مكتمل",
             "cancelCheck": "إلغاء التحقق",
             "cancelUpdates": "إلغاء التحديثات",
             "available": "التحديثات المتوفرة",
-            "description": "تتضمن هذه الحزم تحديثات لبرامج تشغيل الأجهزة وأدوات مساعدة أخرى للنظام تعتبر ضرورية لعمل الكمبيوتر بشكل صحيح. وتعتبر التحديثات المهمة ضرورية أيضًا لحماية البيانات على الكمبيوتر وينبغي تثبيتها عندما تصبح متاحة. قد يؤدي عدم تثبيت هذه الحزم إلى فقد البيانات أو حدوث خلل في النظام أو تلف الأجهزة.",
+            "description": "تتضمن هذه الحزم تحديثات لبرامج تشغيل الأجهزةوأدوات مساعدة أخرى للنظام تعتبر ضرورية لعمل الكمبيوتر بشكل صحيح. كما أن التحديثات الحساسة تعتبر هامة أيضًا لحماية البيانات على الكمبيوتر وينبغي تثبيتها عندما تصبح متاحة. قد يؤدي عدم تثبيت هذه الحزم إلى فقد البيانات أو حدوث خلل في النظام أو تلف الأجهزة.",
             "installButton": "تثبيت جميع التحديثات",
             "result": {
                 "success": "تم تثبيت جميع التحديثات بشكل صحيح",
                 "fail": {
                     "title": "لم يتم تثبيت بعض التحديثات بشكل صحيح.",
-                    "description": "حدث خطأ ما أثناء تنزيل هذه التحديثات أو تثبيتها. يرجى التأكد من اتصالك بالإنترنت ولا توقف تشغيل الكمبيوتر عند تثبيت التحديثات."
+                    "description": "حدث خطأ ما أثناء تنزيل هذه التحديثات أو تثبيتها.يرجى التأكد من اتصالك بالإنترنت ولا توقف تشغيل الكمبيوتر عند تثبيت التحديثات."
                 }
             }
         },
@@ -1168,16 +1168,13 @@
         "protected": "Protected",
         "notProtected": "Not Protected",
         "myDevice": "My Device",
-        "allDevice": "All Devices",
         "secure": "SECURE",
         "needAttention": "NEEDS ATTENTION",
         "manageAccount": "Manage Account",
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trailExpired": "Trail expired",
-        "trailExpiredSubtext": "Upgrate to protect all of your devices",
-        "trialExpired": "Trial expired",
+        "trialExpired": "Trial Expired",
         "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
@@ -1201,12 +1198,6 @@
             "welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
             "welcome2": "Exclusive for Vantage",
             "welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
-            "device": "Why CHS for your devices",
-            "deviceDesc": "Protect your devices, and your home network from malicious hackers. Get a warning any time we detect suspicious behaviors br one of your devices, or if we detect an attempt to compromise your home network.",
-            "ensure": "CHS ensures that:",
-            "ensureOne": "your devices is safe, and have not been compromised",
-            "ensureTwo": "It ensures that the networks you are connected to are safe",
-            "ensureThree": "It ensures that other devices connected to your home network are safe.",
             "create": "Create your account",
             "lenovoId": "with Lenovo ID",
             "notifications": "Receive <b>notifications</b> about your home's status",
@@ -1308,9 +1299,7 @@
             "maliciousNetwork": "منع الكمبيوتر من الانضمام {{maliciousWifi}}إلى الشبكات الضارة هذا الشهر.",
             "good": "جيد",
             "malicious": "ضار",
-            "suspicious": "مشبوه",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "مشبوه"
         },
         "antivirus": {
             "common": {

@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -377,7 +377,15 @@
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
-                }
+                },
+                "question1": "Do you like the new style of Vantage?",
+                "question2": "Do you think the performance is acceptable?",
+                "question3": "Would you use the application more often in the future?",
+                "yes": "Yes",
+                "no": "No",
+                "tips1": "Please leave any additional comments",
+                "sendFeedback": "Send Feedback",
+                "submitScreenShot": "Submit Screen Shot"
             }
         },
         "quickSettings": {
@@ -557,20 +565,12 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter",
+                        "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "ACAdapterNotSupported": {
                         "title": "AC adapter not supported.",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
@@ -1055,7 +1055,7 @@
             "rebootForceMsg": "選択した更新は、インストール後にシステムを自動的に再起動します。",
             "shutdownForceMsg": "選択した更新は、インストール後にシステムを自動的にシャットダウンします。",
             "rebootDelayedMsg": "選択した更新によって、インストール後、更新のインストール中にシステムが再起動されます。システムの電源を切ったり、電源やアクセサリを取り外したりしないでください。システムの再起動に備えて作業を保存しておくことをお勧めします。",
-            "rebootRequiredMsg": "更新を正常にインストールするために、コンピューターはすべてが安全かつ円滑に実行されていることを確認するために再起動します。",
+            "rebootRequiredMsg": "更新を正常にインストールするために、ココンピューターはすべてが安全かつ円滑に実行されていることを確認するために再起動します。",
             "okayButton": "OK",
             "cancelButton": "キャンセル",
             "rebootButton": "今すぐリブート",
@@ -1070,8 +1070,8 @@
                 "tooltip": "重要な更新は、重大な問題、深刻なシステム誤動作、ハードウェア障害、またはデータの破損を防止します。"
             },
             "recommended": {
-                "title": "推奨更新",
-                "tooltip": "推奨されるドライバーの更新は、ご使用のコンピューターの円滑な稼働を維持します。"
+                "title": "推奨アップデート",
+                "tooltip": "推奨されるドライバの更新により、コンピュータは最適なパフォーマンスで動作し続けます。"
             },
             "windows": {
                 "title": "Windows の更新",
@@ -1088,13 +1088,13 @@
             "next": "次回の更新スキャン予定",
             "checkButton": "更新の確認",
             "checking": "更新を確認しています",
-            "downloading": "更新のダウンロード中",
+            "downloading": "更新のダウンロードが完了しました",
             "installing": "更新をインストールしています",
             "percent": "% 完了",
             "cancelCheck": "チェックをキャンセル",
             "cancelUpdates": "更新をキャンセル",
             "available": "利用できる更新",
-            "description": "これらのパッケージには、コンピューターが正常に動作するために必須のハードウェア・ドライバーおよびその他のシステム・ユーティリティーの更新プログラムが含まれています。重要な更新は、ご使用のコンピューターにおけるデータ保護という観点でも重要であり、適用可能になった場合にはインストールする必要があります。これらのパッケージをインストールしない場合は、データ損失、システムの誤動作、またはハードウェア障害が起こる可能性があります。",
+            "description": "これらのパッケージには、コンピューターが正常に動作するために必須のハードウェア・ドライバーおよびその他のシステム・ユーティリティーの更新プログラムが含まれています。重要な更新はまた、ご使用のコンピューターにおけるデータ保護という観点でも重要であり、適用可能になった場合にはインストールする必要があります。これらのパッケージをインストールしない場合は、データ損失、システムの誤動作、またはハードウェア障害が発生する可能性があります。",
             "installButton": "すべての更新をインストール",
             "result": {
                 "success": "すべての更新は正しくインストールされました",
@@ -1168,15 +1168,14 @@
         "protected": "Protected",
         "notProtected": "Not Protected",
         "myDevice": "My Device",
-        "allDevice": "All Devices",
         "secure": "SECURE",
         "needAttention": "NEEDS ATTENTION",
         "manageAccount": "Manage Account",
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrate to protect all of your devices",
+        "trialExpired": "Trial Expired",
+        "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
         "protectAllDevices": "Protect all of your devices",
@@ -1300,9 +1299,7 @@
             "maliciousNetwork": "今月、{{maliciousWifi}}の悪意のあるネットワークへのコンピューターの参加を防止しました。",
             "good": "良好",
             "malicious": "悪意",
-            "suspicious": "疑わしい",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "疑わしい"
         },
         "antivirus": {
             "common": {
