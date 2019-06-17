@@ -5,6 +5,8 @@ import { VantageShellService } from '../../../services/vantage-shell/vantage-she
 import { CMSService } from '../../../services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 
 @Component({
 	selector: 'vtr-page-security-internet',
@@ -18,6 +20,7 @@ export class PageSecurityInternetComponent implements OnInit {
 	cardContentPositionA: any = {};
 	securityAdvisor: SecurityAdvisor;
 	backId = 'sa-vpn-btn-back';
+	isOnline = true;
 
 	constructor(
 		public mockService: MockService,
@@ -46,7 +49,12 @@ export class PageSecurityInternetComponent implements OnInit {
 		this.fetchCMSArticles();
 	}
 
-	ngOnInit() { }
+	ngOnInit() {
+		this.isOnline = this.commonService.isOnline;
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+	}
 
 	getSurfEasy(): void {
 		this.vpn.download();
@@ -86,5 +94,18 @@ export class PageSecurityInternetComponent implements OnInit {
 				console.log('fetchCMSContent error', error);
 			}
 		);
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
+		}
 	}
 }

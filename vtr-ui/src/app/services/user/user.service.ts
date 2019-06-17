@@ -278,8 +278,8 @@ export class UserService {
 	}
 
 	isLenovoIdSupported() {
-		// VAN-4798 Disable LID feature temporarily due to design change impact
-		return false;
+		// VAN-5280 Enable LID feature after fix design change impact
+		return true;
 	}
 
 }

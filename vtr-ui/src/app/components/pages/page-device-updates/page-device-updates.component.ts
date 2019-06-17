@@ -171,48 +171,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.getCashValue();
 	}
 
-	private translateStrings() {
-		this.translate.stream(this.title).subscribe((res) => {
-			this.title = res;
-		});
-		this.translate.stream(this.back).subscribe((res) => {
-			this.back = res;
-		});
-		this.translate.stream(this.lastUpdatedText).subscribe((res) => {
-			this.lastUpdatedText = res;
-		});
-		this.translate.stream(this.nextScanText).subscribe((res) => {
-			this.nextScanText = res;
-		});
-		this.translate.stream(this.installationHistory).subscribe((res) => {
-			this.installationHistory = res;
-		});
-		this.translate.stream(this.autoUpdateOptions[0].header).subscribe((res) => {
-			this.autoUpdateOptions[0].header = res;
-		});
-		this.translate.stream(this.autoUpdateOptions[0].tooltipText).subscribe((res) => {
-			this.autoUpdateOptions[0].tooltipText = res;
-		});
-		this.translate.stream(this.autoUpdateOptions[1].header).subscribe((res) => {
-			this.autoUpdateOptions[1].header = res;
-		});
-		this.translate.stream(this.autoUpdateOptions[1].tooltipText).subscribe((res) => {
-			this.autoUpdateOptions[1].tooltipText = res;
-		});
-		this.translate.stream(this.autoUpdateOptions[2].header).subscribe((res) => {
-			this.autoUpdateOptions[2].header = res;
-		});
-		this.translate.stream(this.autoUpdateOptions[2].linkText).subscribe((res) => {
-			this.autoUpdateOptions[2].linkText = res;
-		});
-		this.translate.stream(this.updateToDateTitle).subscribe((res) => {
-			this.updateToDateTitle = res;
-		});
-		this.translate.stream(this.neverCheckedText).subscribe((res) => {
-			this.neverCheckedText = res;
-		});
-	}
-
 	ngOnInit() {
 		const action = this.activatedRoute.snapshot.queryParams['action'];
 		this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
@@ -350,7 +308,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	public getLastUpdatedText() {
 		if (this.lastInstallTime && this.lastInstallTime.length > 0) {
-			const installDate = this.commonService.formatDate(this.lastInstallTime);
+			const installDate = this.commonService.formatLocalDate(this.lastInstallTime);
 			const installTime = this.commonService.formatTime(this.lastInstallTime);
 			return `${this.lastUpdatedText} ${installDate} at ${installTime}`;
 		}
@@ -361,7 +319,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		if (!this.isScheduleScanEnabled) {
 			return '';
 		} else if (this.nextScheduleScanTime && this.nextScheduleScanTime.length > 0) {
-			const scanDate = this.commonService.formatDate(this.nextScheduleScanTime);
+			const scanDate = this.commonService.formatLocalDate(this.nextScheduleScanTime);
 			const scanTime = this.commonService.formatTime(this.nextScheduleScanTime);
 			return `${this.nextScanText} ${scanDate} at ${scanTime}`;
 		}
@@ -856,5 +814,47 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	public onCancelUpdateDownload() {
 		this.systemUpdateService.cancelUpdateDownload();
+	}
+
+	private translateStrings() {
+		this.translate.stream(this.title).subscribe((res) => {
+			this.title = res;
+		});
+		this.translate.stream(this.back).subscribe((res) => {
+			this.back = res;
+		});
+		this.translate.stream(this.lastUpdatedText).subscribe((res) => {
+			this.lastUpdatedText = res;
+		});
+		this.translate.stream(this.nextScanText).subscribe((res) => {
+			this.nextScanText = res;
+		});
+		this.translate.stream(this.installationHistory).subscribe((res) => {
+			this.installationHistory = res;
+		});
+		this.translate.stream(this.autoUpdateOptions[0].header).subscribe((res) => {
+			this.autoUpdateOptions[0].header = res;
+		});
+		this.translate.stream(this.autoUpdateOptions[0].tooltipText).subscribe((res) => {
+			this.autoUpdateOptions[0].tooltipText = res;
+		});
+		this.translate.stream(this.autoUpdateOptions[1].header).subscribe((res) => {
+			this.autoUpdateOptions[1].header = res;
+		});
+		this.translate.stream(this.autoUpdateOptions[1].tooltipText).subscribe((res) => {
+			this.autoUpdateOptions[1].tooltipText = res;
+		});
+		this.translate.stream(this.autoUpdateOptions[2].header).subscribe((res) => {
+			this.autoUpdateOptions[2].header = res;
+		});
+		this.translate.stream(this.autoUpdateOptions[2].linkText).subscribe((res) => {
+			this.autoUpdateOptions[2].linkText = res;
+		});
+		this.translate.stream(this.updateToDateTitle).subscribe((res) => {
+			this.updateToDateTitle = res;
+		});
+		this.translate.stream(this.neverCheckedText).subscribe((res) => {
+			this.neverCheckedText = res;
+		});
 	}
 }

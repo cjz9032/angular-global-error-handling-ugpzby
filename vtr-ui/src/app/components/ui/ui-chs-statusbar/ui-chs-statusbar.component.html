@@ -12,10 +12,10 @@
             </span></h3>
           <div *ngIf="list.badge && isShowMore===false">
             <h3 *ngFor="let badgeItem of list.badge" [ngClass]="badgeItem | cursorType">
-              <a *ngIf="badgeItem.status" [href]="badgeItem.expiredUrl | sanitizeUrl" target="_blank">
+              <a *ngIf="badgeItem.status" href="javascript:void(0)">
                 <span class="badge badge-pill text-uppercase" [ngClass]="badgeItem.status | textClass"
-                  (click)="badgeItem.clickEvent()" title="{{badgeItem.text | translate | uppercase}}">
-                  {{badgeItem.text | translate}}
+                  (click)="badgeItem.onClick()" title="{{badgeItem.text | translate | uppercase}}">
+                  {{badgeItem.text | translate | characterLimit:20}}
                 </span>
               </a>
             </h3>
