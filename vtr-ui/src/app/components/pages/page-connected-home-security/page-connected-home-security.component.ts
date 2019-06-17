@@ -86,22 +86,14 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.welcomeModel.isLenovoIdLogin = false; // mock data;
 		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, true);
-		const cacheSystemLocationShow = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed);
-		if (typeof cacheSystemLocationShow === 'boolean') {
-			this.welcomeModel.hasSystemPermissionShowed = cacheSystemLocationShow;
-			this.openModal();
-		} else {
 			this.permission.getSystemPermissionShowed().then((response) =>  {
 				this.welcomeModel.hasSystemPermissionShowed = response;
-				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed, response);
 				if (typeof this.welcomeModel.hasSystemPermissionShowed === 'boolean') {
 					this.openModal();
 				}
 			});
-		}
 		this.connectedHomeSecurity.on(EventTypes.chsHasSystemPermissionShowedEvent, (data) => {
 			this.welcomeModel.hasSystemPermissionShowed = data;
-			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed, data);
 		});
 	}
 
