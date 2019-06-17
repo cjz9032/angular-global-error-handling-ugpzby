@@ -24,15 +24,10 @@ export class ContainerCardComponent implements OnInit, AfterViewInit, OnChanges 
 	@Input() ratioX = 1;
 	@Input() ratioY = 1;
 	@Input() cornerShift: String = '';
-<<<<<<< HEAD
 	@Input() order: number;
 	@Input() itemID: string;
 
 	isLoading = true;
-=======
-	@Input() order:number;
-	@Input() itemID:string;
->>>>>>> ffdfeb8bd... VAN-4961 docreadposition not correct if close the article in my security page
 
 	ratio = 1;
 	containerHeight = 100;
