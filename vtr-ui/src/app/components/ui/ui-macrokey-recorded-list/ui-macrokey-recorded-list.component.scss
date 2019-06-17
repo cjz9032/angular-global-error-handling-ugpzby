@@ -20,11 +20,28 @@
 	}
 }
 
-.bottom-fix {
-	position: absolute;
-	width: 100%;
-	right: 1.4rem;
-	bottom: 4rem;
+.record-list-wrapper {
+	position: relative;
+	height: 70rem;
+	.top-fix {
+		max-height: 64rem;
+		padding: 3rem;
+		overflow: auto;
+	}
+
+	&.recording {
+		.top-fix {
+			max-height: 50rem;
+		}
+	}
+
+	.bottom-fix {
+		padding-bottom: 2rem;
+		padding-right: 4rem;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+	}
 }
 
 .record-table {
@@ -51,16 +68,15 @@
 		color: $gaming_hover;
 	}
 	&.recording {
+		.record-list {
+			height: 40rem;
+			overflow: auto;
+		}
 		.record-footer {
 			display: block;
 		}
 	}
 	.record-list {
-		overflow: auto;
-		height: 40rem;
-		@media #{$mediaquery_X3} {
-			height: 38rem;
-		}
 		.record-item {
 			cursor: pointer;
 			position: relative;

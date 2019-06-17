@@ -1,84 +1,91 @@
-<div class="row">
-	<div class="col-sm-12" *ngIf="!recordingStatus">
-		<div class="title-main">
-			{{ 'gaming.macroKey.details.recorded.title' | translate }}<span><span *ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span> {{ number.key | translate }}</span>
-		</div>
-	</div>
-	<div class="col-6" *ngIf="!recordingStatus">
-		<div class="select-wrapper">
-			<vtr-ui-macrokey-collapsible-container
-				[selectedValue]="repeatSelectedValue"
-				[options]="repeatOptions"
-				[enableDescription]="false"
-				(change)="onRepeatChanged($event)">
-			</vtr-ui-macrokey-collapsible-container>
-		</div>
-	</div>
-	<div class="col-6" *ngIf="!recordingStatus">
-		<div class="select-wrapper">
-			<vtr-ui-macrokey-collapsible-container
-				[selectedValue]="delaySelectedValue"
-				[options]="intervalOptions"
-				(change)="onIntervalChanged($event)">
-			</vtr-ui-macrokey-collapsible-container>
-		</div>
-	</div>
-	<div class="col-sm-12">
-		<div class="record-table"  [ngClass]="{'recording': recordingStatus}">
-			<div class="record-header">
-				<div>{{ 'gaming.macroKey.details.recorded.list.header.col1' | translate }}</div>
-				<div class="interval" [ngClass]="{'hide': ignoreInterval}">{{ 'gaming.macroKey.details.recorded.list.header.col2' | translate }}</div>
-			</div>
-			<div class="record-list">
-				<ng-container *ngFor="let record of recordsList; let i = index;">
-					<div class="record-item" *ngIf="i%2==0">
-						<div class="pressing">
-							<div class="key">
-								<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1">
-									<g id="10.Subpages/macroKey/press" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-										<path d="M4,15 L4,12 L16,12 L16,15 L19,15 L19,17 L1,17 L1,15 L4,15 Z M5,4 L15,4 L10,9 L5,4 Z" id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
-									</g>
-								</svg>
-								{{ record.key | translate }}
-							</div>
-							<div class="interval" [ngClass]="{'hide': ignoreInterval}">
-								{{ record.interval + ' ms' | translate}}
-							</div>
-						</div>
-						<div class="releasing" *ngIf="recordsList[i+1]">
-							<div class="key">
-								<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1">
-									<g id="10.Subpages/macroKey/release" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-										<path d="M4,15 L4,12 L16,12 L16,15 L19,15 L19,17 L1,17 L1,15 L4,15 Z M5,9 L10,4 L15,9 L5,9 Z" id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
-									</g>
-								</svg>
-								{{ recordsList[i+1].key | translate }}
-							</div>
-							<div class="interval" [ngClass]="{'hide': ignoreInterval}">
-								{{ recordsList[i+1].interval + ' ms' | translate }}
-							</div>
-						</div>
-						<div class="delete-button" *ngIf="!recordingStatus" (click)="recordDelete(record, i)">
-							<img src="../../../../assets/gaming-icons/bin.svg" class="icon"/> {{ 'gaming.macroKey.details.recorded.deleteKey' | translate }}
-						</div>
-					</div>
-				</ng-container>
-			</div>
-			<div class="record-footer">
-				{{ 'gaming.macroKey.details.recorded.list.footer.title' | translate }}
+<div class="record-list-wrapper" [ngClass]="{'recording': recordingStatus}">
+	<div class="row top-fix">
+		<div class="col-sm-12" *ngIf="!recordingStatus">
+			<div class="title-main">
+				{{ 'gaming.macroKey.details.recorded.title' | translate }}<span><span
+						*ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>
+					{{ number.key | translate }}</span>
 			</div>
 		</div>
+		<div class="col-6" *ngIf="!recordingStatus">
+			<div class="select-wrapper">
+				<vtr-ui-macrokey-collapsible-container [selectedValue]="repeatSelectedValue" [options]="repeatOptions"
+					[enableDescription]="false" (change)="onRepeatChanged($event)">
+				</vtr-ui-macrokey-collapsible-container>
+			</div>
+		</div>
+		<div class="col-6" *ngIf="!recordingStatus">
+			<div class="select-wrapper">
+				<vtr-ui-macrokey-collapsible-container [selectedValue]="delaySelectedValue" [options]="intervalOptions"
+					(change)="onIntervalChanged($event)">
+				</vtr-ui-macrokey-collapsible-container>
+			</div>
+		</div>
+		<div class="col-sm-12">
+			<div class="record-table" [ngClass]="{'recording': recordingStatus}">
+				<div class="record-header">
+					<div>{{ 'gaming.macroKey.details.recorded.list.header.col1' | translate }}</div>
+					<div class="interval" [ngClass]="{'hide': ignoreInterval}">
+						{{ 'gaming.macroKey.details.recorded.list.header.col2' | translate }}</div>
+				</div>
+				<div class="record-list">
+					<ng-container *ngFor="let record of recordsList; let i = index;">
+						<div class="record-item" *ngIf="i%2==0">
+							<div class="pressing">
+								<div class="key">
+									<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1">
+										<g id="10.Subpages/macroKey/press" stroke="none" stroke-width="1" fill="none"
+											fill-rule="evenodd">
+											<path
+												d="M4,15 L4,12 L16,12 L16,15 L19,15 L19,17 L1,17 L1,15 L4,15 Z M5,4 L15,4 L10,9 L5,4 Z"
+												id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+										</g>
+									</svg>
+									{{ record.key | translate }}
+								</div>
+								<div class="interval" [ngClass]="{'hide': ignoreInterval}">
+									{{ record.interval + ' ms' | translate}}
+								</div>
+							</div>
+							<div class="releasing" *ngIf="recordsList[i+1]">
+								<div class="key">
+									<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1">
+										<g id="10.Subpages/macroKey/release" stroke="none" stroke-width="1" fill="none"
+											fill-rule="evenodd">
+											<path
+												d="M4,15 L4,12 L16,12 L16,15 L19,15 L19,17 L1,17 L1,15 L4,15 Z M5,9 L10,4 L15,9 L5,9 Z"
+												id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+										</g>
+									</svg>
+									{{ recordsList[i+1].key | translate }}
+								</div>
+								<div class="interval" [ngClass]="{'hide': ignoreInterval}">
+									{{ recordsList[i+1].interval + ' ms' | translate }}
+								</div>
+							</div>
+							<div class="delete-button" *ngIf="!recordingStatus" (click)="recordDelete(record, i)">
+								<img src="../../../../assets/gaming-icons/bin.svg" class="icon" />
+								{{ 'gaming.macroKey.details.recorded.deleteKey' | translate }}
+							</div>
+						</div>
+					</ng-container>
+				</div>
+				<div class="record-footer">
+					{{ 'gaming.macroKey.details.recorded.list.footer.title' | translate }}
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="col-sm-12 bottom-fix" *ngIf="!recordingStatus">
+	<div class="bottom-fix" *ngIf="!recordingStatus">
 		<div class="text-right">
 			<div class="delete-btn" (click)="clearRecords()">
-				<img src="../../../../assets/gaming-icons/bin.svg" class="icon"/>{{ 'gaming.macroKey.details.recorded.clear' | translate }}
+				<img src="../../../../assets/gaming-icons/bin.svg"
+					class="icon" />{{ 'gaming.macroKey.details.recorded.clear' | translate }}
 			</div>
 		</div>
 	</div>
 </div>
 
-<vtr-ui-macrokey-popup *ngIf="showModal"
-	[modalContent]="modalContent"
+<vtr-ui-macrokey-popup *ngIf="showModal" [modalContent]="modalContent"
 	(action)="showModal=false; deleteAllMacros($event)">
 </vtr-ui-macrokey-popup>
