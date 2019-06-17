@@ -47,6 +47,15 @@ export class SmartAssistService {
 		return this.intelligentSensing.GetHPDGlobalSetting();
 	}
 
+	/**
+	 * set value for global HPD setting
+	 */
+	public setHPDStatus(value: boolean): Promise<boolean> {
+		// HPD global switch status. true means enable, false means disable
+		const option = value ? 'True' : 'False';
+		return this.intelligentSensing.SetHPDGlobalSetting(option);
+	}
+
 	public getZeroTouchLockVisibility(): Promise<boolean> {
 		// Get Auto Screen Lock section visibility
 		return this.intelligentSensing.GetHPDLeaveCapability();
@@ -193,7 +202,7 @@ export class SmartAssistService {
 
 	public getIntelligentScreenVisibility(): Promise<boolean> {
 		if (this.isShellAvailable) {
-			return this.intelligentSensing.GetSmartSenseCapability();
+			return this.intelligentSensing.GetSmartSensecapability();
 		}
 		return undefined;
 	}
@@ -254,7 +263,7 @@ export class SmartAssistService {
 	public setReadingOrBrowsingTime(value: number): Promise<boolean> {
 		if (this.isShellAvailable) {
 			const option = value * 60;
-			return this.intelligentSensing.SetBrowsingTime(option);
+			return this.intelligentSensing.setBrowsingTime(option);
 		}
 		return undefined;
 	}

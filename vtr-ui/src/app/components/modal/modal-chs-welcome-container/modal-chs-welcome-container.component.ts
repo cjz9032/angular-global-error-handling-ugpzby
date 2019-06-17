@@ -48,6 +48,19 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 
 	ngOnInit() {
 		this.refreshPage();
+		this.chs.on(EventTypes.chsHasSystemPermissionShowedEvent, (data) => {
+			this.hasSystemPermissionShowed = data;
+		});
+
+		this.chs.on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
+			this.isLocationServiceOn = data;
+			this.getContainerPage(data, this.isLenovoIdLogin);
+			if (this.switchPage === 4) {
+				this.showPageFour = true;
+			} else {
+				this.showPageFour = !this.isLocationServiceOn;
+			}
+		});
 	}
 
 	refreshPage() {
@@ -59,18 +72,8 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 		if (this.switchPage === 4) {
 			this.showPageFour = true;
 		} else {
-			this.showPageFour = this.isLocationServiceOn ? false : true;
+			this.showPageFour = !this.isLocationServiceOn;
 		}
-
-		this.chs.on(EventTypes.chsHasSystemPermissionShowedEvent, (data) => {
-			this.hasSystemPermissionShowed = data;
-		});
-
-		this.chs.on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
-			this.isLocationServiceOn = data;
-			this.getContainerPage(data, this.isLenovoIdLogin);
-			this.showPageFour = data ? false : true;
-		});
 	}
 
 	closeModal() {

@@ -31,7 +31,6 @@ import { HomeSecurityWelcome } from 'src/app/data-models/home-security/home-secu
 import { ModalLenovoIdComponent } from 'src/app/components/modal/modal-lenovo-id/modal-lenovo-id.component';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
-import { UserService } from '../../../services/user/user.service';
 
 @Component({
 	selector: 'vtr-page-connected-home-security',
@@ -40,7 +39,6 @@ import { UserService } from '../../../services/user/user.service';
 })
 export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	notifications: HomeSecurityNotification;
-	account: HomeSecurityAccount;
 	pageStatus: HomeSecurityPageStatus;
 	eventEmitter = new EventEmitter();
 
@@ -82,28 +80,19 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 		notificationDetail: 'Antivirus was disabled'}, this.translateService));
 		this.notifications.items.push(new WidgetItem({id: '1', title: 'Passcode lock disabled 3 hours', iconPath: 'assets/images/qa/svg_icon_qa_refresh.svg',
 		notificationDetail: 'Antivirus was disabled'}, this.translateService));
-		this.account = this.homeSecurityMockService.account;
 	}
 
 	ngOnInit() {
 		this.welcomeModel.isLenovoIdLogin = false; // mock data;
 		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, true);
-		const cacheSystemLocationShow = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed);
-		if (typeof cacheSystemLocationShow === 'boolean') {
-			this.welcomeModel.hasSystemPermissionShowed = cacheSystemLocationShow;
-			this.openModal();
-		} else {
 			this.permission.getSystemPermissionShowed().then((response) =>  {
 				this.welcomeModel.hasSystemPermissionShowed = response;
-				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed, response);
 				if (typeof this.welcomeModel.hasSystemPermissionShowed === 'boolean') {
 					this.openModal();
 				}
 			});
-		}
 		this.connectedHomeSecurity.on(EventTypes.chsHasSystemPermissionShowedEvent, (data) => {
 			this.welcomeModel.hasSystemPermissionShowed = data;
-			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed, data);
 		});
 	}
 
