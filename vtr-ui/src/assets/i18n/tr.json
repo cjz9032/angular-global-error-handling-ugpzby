@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -377,7 +377,15 @@
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
-                }
+                },
+                "question1": "Do you like the new style of Vantage?",
+                "question2": "Do you think the performance is acceptable?",
+                "question3": "Would you use the application more often in the future?",
+                "yes": "Yes",
+                "no": "No",
+                "tips1": "Please leave any additional comments",
+                "sendFeedback": "Send Feedback",
+                "submitScreenShot": "Submit Screen Shot"
             }
         },
         "quickSettings": {
@@ -557,20 +565,12 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter",
+                        "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "ACAdapterNotSupported": {
                         "title": "AC adapter not supported.",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
@@ -586,7 +586,7 @@
             "power": {
                 "title": "Güç",
                 "subtitle": "Güç Ayarları",
-                "description": "Bu bölüm, termal performansı dinamik olarak ayarlamanızı ve pil ömrünü en üst düzeye çıkarmanızı sağlar.",
+                "description": "Bu bölüm, termal performansı dinamik olarak ayarlamanızı ve pil ömrünü en üst düzeye çıkarmanızı sağlar.Aynı zamanda, güç ile ilgili diğer popüler özelliklere de sahiptir. Bu bölümdeki varsayılan ayarları kontrol edebilir ve sisteminizi ihtiyaçlarınıza göre özelleştirebilirsiniz.",
                 "jumpto": {
                     "title": "AYARLARA GİT",
                     "battery": "Pil",
@@ -598,7 +598,7 @@
                     "title": "Güç Akıllı Ayarları",
                     "subtitle": "AKILLI SOĞUTMA",
                     "subtitle1": "Pil ve Sessiz",
-                    "description1": "Bu özellik, termal ayarları ihtiyaçlarınıza göre dinamik olarak belirler.",
+                    "description1": "Bu özellik, termal ayarları ihtiyaçlarınıza göre dinamik olarak belirler.Açık olduğunda ayarları, elde tutulurken veya boşta çalışırken cihazın daha soğuk veya sessiz olmasını sağlayacak şekilde düzenler. Aksi takdirde, cihaz sabit bir yüzeydeyken performansı en iyi duruma getirir. Bu seçenek kapalı olduğunda, termal önceliği manuel olarak ayarlayabilirsiniz.",
                     "description2": "Akıllı Soğutma fan hızını, maksimum yüzey sıcaklığını ve performansı ayarlar.Bu özellik aşağıdaki kiplere sahiptir ve bu özelliğe artık Windows performans güç kaydırıcısından erişilebilmektedir.",
                     "description3": "Akıllı Soğutma termal performansı ihtiyaçlarınıza göre ayarlamak üzere otomatik olarak dengeler.Akıllı Soğutma özelliği performans ayarlarını yaparak dizüstü bilgisayarınız elinizde olduğunda daha az ısınan bir yüzey sunar. Cihazınız bir masanın üstündeyken bu özellik performansı en iyi düzeye getirir.",
                     "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
@@ -631,7 +631,7 @@
                             "mode1": "Sessiz kipi",
                             "mode2": "Dengeli kipi",
                             "mode3": "Performans kipi",
-                            "line1": "Kaydırıcı en solda.",
+                            "line1": "Kaydırıcı en solda.Daha serin, daha sessiz bir bilgisayar ve en iyi pil ömrü için fan hızı ve performans düşürülür.",
                             "line2": "Kaydırıcı ortada.En iyi deneyim için fan hızı ve performans dinamik olarak dengelenir.",
                             "line3": "Kaydırıcı en sağda. Maksimum performans için fan hızı ve izin verilen yüzey sıcaklığı daha yüksektir.",
                             "line4": "More info"
@@ -662,7 +662,7 @@
                     "title": "Güç Ayarları",
                     "alwaysUSB": {
                         "title": "Always on USB",
-                        "description": "Bilgisayar uyku, sabit disk askıda uyku veya kapalı kipinde olduğunda USB cihazlarını bilgisayardaki Always on USB bağlacı aracılığıyla doldurun.",
+                        "description": "Bilgisayar uyku, sabit disk askıda uyku veya kapalı kipinde olduğunda USB cihazlarını bilgisayardaki Always on USB bağlacı aracılığıyla doldurun.Bir akıllı telefon veya tablet, sarı kodlu veya şu simgelere sahip ipek baskılı USB bağlacından hızlı bir şeklide doldurulabilir:",
                         "checkbox": "Bilgisayar kapalıyken dizüstü bilgisayar pilinden USB dolumunu etkinleştirin."
                     },
                     "easyResume": {
@@ -683,7 +683,7 @@
                     "batteryThreshold": {
                         "title": "Pil Şarj Eşiği",
                         "description": "Genel olarak bilgisayarınızı AC bağdaştırıcısına takılı bir şekilde çalıştırıyorsanız ve pil gücünü nadirenkullanıyorsanız maksimum şarj değerini %100'ün altına ayarlayarak pil ömrünü uzatabilirsiniz. Nadiren kullanılan piller tamamen dolmadan tutulduğunda daha uzun bir pil ömrüne sahip olduğu için bu özellik faydalıdır.",
-                        "tooltip": "Piliniz şu anda doldurmayı durdurma eşiğinin üzerindeki bir doluluktaysa pil düzeyi, doldurmayı durdurma eşiğine veya eşiğin altındaki bir değere gelene kadar güç bağdaştırıcısını çıkarın.",
+                        "tooltip": "Piliniz şu anda doldurmayı durdurma eşiğinin üzerindeki bir doluluktaysa pil düzeyi, doldurmayı durdurma eşiğine veya eşiğin altındaki bir değere gelene kadar güç bağdaştırıcısını çıkarın.Pilin durumuna (eski veya yeni) bağlı olarak, şarj başlangıç veya bitiş noktaları %2'ye kadar değişiklik gösterebilir. Bu özelliği etkinleştirirseniz pil durumunun doğru şekilde raporlanmasını sağlamak için ara sıra Pil Göstergesi Sıfırlama işlemi gerçekleştirmeniz önerilir.",
                         "note": "Note",
                         "readMoreText": "Read more.",
                         "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
@@ -693,7 +693,7 @@
                         },
                         "popup": {
                             "title": "Pil Şarj Eşiğini Etkinleştirme",
-                            "description1": "Özel bir pil şarjının etkinleştirilmesi, bu cihazı kullanırken genel pil durumunun daha uzun süre dayanmasını sağlar.",
+                            "description1": "Özel bir pil şarjının etkinleştirilmesi, bu cihazı kullanırken genel pil durumunun daha uzun süre dayanmasını sağlar.Ancak, şarjın tam dolu olmaması çalışma zamanı pil ömrünün daha az olmasına neden olur.",
                             "description2": "Bu özelliği tamamen etkinleştirmek için lütfen makinenizi fişten çekin vepilinizin tam olarak boşalmasını veya doldurmayı durdurma eşiğinin altına düşmesini bekleyin.",
                             "enable": "ETKİNLEŞTİR",
                             "cancel": "İPTAL"
@@ -711,16 +711,16 @@
                     },
                     "conservationMode": {
                         "title": "Tasarruf Kipi",
-                        "description": "Bu işlev, cihazınız fişe takılıyken pilinizin ömrünü uzatmak için yararlıdır.",
+                        "description": "Bu işlev, cihazınız fişe takılıyken pilinizin ömrünü uzatmak için yararlıdır. <br>Bu kip etkinleştirildiğinde, pil yalnızca kapasitesinin %55-60'ı kadar doldurulur ve pil ömrü en üst düzeye çıkarılabilir. Ancak, bu işlem AC güç kaynağı ile bağlantısını kesmenizden sonra bilgisayarınızı kullanma sürenizi kısaltacaktır.",
                         "tooltip": {
                             "line1": "Bu işlev, cihazınız fişe takılıyken pilinizin ömrünü uzatmak için yararlıdır.",
-                            "line2": "Bu kip etkinleştirildiğinde, pil yalnızca kapasitesinin %55-60'ı kadar doldurulur ve pil ömrü en üst düzeye çıkarılabilir.",
+                            "line2": "Bu kip etkinleştirildiğinde, pil yalnızca kapasitesinin %55-60'ı kadar doldurulur ve pil ömrü en üst düzeye çıkarılabilir. Ancak, bu işlem AC güç kaynağı ile bağlantısını kesmenizden sonra bilgisayarınızı kullanma sürenizi kısaltacaktır.",
                             "line3": "Not: Hızlı Şarj ve Tasarruf kipi aynı anda çalışamaz.Bu kiplerden biri açıksa diğeri otomatik olarak kapatılır."
                         }
                     },
                     "airPlanePower": {
                         "title": "Uçak Güç Kipi",
-                        "description": "Sisteminizin güç tüketimini denetleyerek uçak AC güç çıkışını koruyun."
+                        "description": "Sisteminizin güç tüketimini denetleyerek uçak AC güç çıkışını koruyun.Uçak Güç Kipi etkinleştirildiğinde bilgisayar, pil şarj oranını ve sistem performansını sınırlayarak güç tüketimini azaltır."
                     }
                 },
                 "energyStar": {
@@ -731,7 +731,7 @@
             "audio": {
                 "title": "Ses",
                 "subtitle": "Ses Ayarları",
-                "description": "Bu bölüm, ses ayarlarınızı otomatik olarak en iyi duruma",
+                "description": "Bu bölüm, ses ayarlarınızı otomatik olarak en iyi durumagetirmenizi veya Dolby ayarları, mikrofon gibi ayarları tamamıyla manuel olarak ayarlamanızı sağlar.",
                 "audioSmartsettings": {
                     "title": "Ses Akıllı ayarları",
                     "subtitle": "UYGULAMA TABANLI AYARLAR",
@@ -947,7 +947,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Sıfır Dokunma ile kilitleme",
-                    "caption": "Bu özellik, kullanıcı varlığı algılanmadığında ekranı karartır ve bilgisayarı kilitler.Bu özellik sayesinde bilgisayarı gözetimsiz ve açık bıraktığınızda bilgisayara yetkisiz erişim olasılığı azalabilir. ",
+                    "caption": "Bu özellik, kullanıcı varlığı algılanmadığında ekranı karartır ve bilgisayarı kilitler.Bu özellik sayesinde bilgisayarı gözetimsiz ve açık bıraktığınızda bilgisayara yetkisiz erişim olasılığı azalabilir. Ayrıca, varlığınız algılanmadığında sistemi Modern Bekleme Durumu kipine geçirerek güç tüketimini de azaltır.",
                     "autoScreenLockTimer": {
                         "title": "OTOMATİK EKRAN KİLİDİ ZAMANLAYICISI",
                         "radioButton": {
@@ -955,7 +955,7 @@
                             "medium": "Orta",
                             "slow": "Yavaş"
                         },
-                        "toolTipContent": "Varlığınız algılanmadığında ekranınızı Hızlı/Orta/Yavaş hızda kilitlemek için istediğiniz seçeneği belirleyin."
+                        "toolTipContent": "Varlığınız algılanmadığında ekranınızı Hızlı/Orta/Yavaş hızda kilitlemek için istediğiniz seçeneği belirleyin.Ancak, ekranın kilitlenme süresi gerçek kullanıcı senaryosu, sensör kapasitesi ve Windows ekranı zaman aşımı ayarlarından da etkilenir. Bu yüzden, bilgisayarınızın başından ayrılmadan önce sisteminizi hemen kilitlemenizi önemle tavsiye ederiz."
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -968,7 +968,7 @@
                 },
                 "note": {
                     "description1": "Bu özellik için Windows Hello gereklidir.Windows ayarlarında yüz tanımanın açık olduğundan emin olun.",
-                    "description2": "Bu özellik, varlığınızı algılamak için sensörler ve kamera kullanır.",
+                    "description2": "Bu özellik, varlığınızı algılamak için sensörler ve kamera kullanır.Ancak, özellik hiçbir kişisel veri veya görüntüyü TOPLAMAZ, KAYDETMEZ veya SIZDIRMAZ.",
                     "description3": "1. Bilgisayarınız Çadır, Tablet veya Stant kipindeysebu özellikler düzgün çalışmayabilir.",
                     "description4": "2. Bilgisayarınız uyku kipindeyse veya kapalıysa.Kızılötesi kamerayla otomatik oturum açma çalışmaz.",
                     "description5": "3. Lütfen bilgisayarınızın ekranını, kızılötesi kameranın otomatikoturum açma için yüzünüzü tanıyabileceği uygun bir açıya ayarlayın."
@@ -1052,10 +1052,10 @@
         "popup": {
             "reboot": "Yn Ykl",
             "shutdown": "Kapat",
-            "rebootForceMsg": "Seçtiğiniz güncellemelerin kurulumundan sonra sistem otomatik olarak yeniden yüklenecektir.",
-            "shutdownForceMsg": "Seçtiğiniz güncellemelerin kurulumundan sonra sistem otomatik olarak kapanacaktır.",
-            "rebootDelayedMsg": "Seçtiğiniz güncellemelerin kurulumundan sonra sistem yeniden yüklenecektir. Güncellemelerin kurulumu sırasında lütfen sisteminizi kapatmayın, güç kaynağını veya aksesuarları çıkarmayın. Sisteminizi yeniden yüklemeye hazırlanmak için çalışmanızı kaydetmenizi öneririz.",
-            "rebootRequiredMsg": "Güncellemelerin başarıyla yüklenmesi için sistemin yeniden yüklenip her şeyin güvenli ve sorunsuz bir şekilde çalıştığından emin olunması gerekir.",
+            "rebootForceMsg": "Seçtiğiniz güncellemelerin kurulumundan sonra sistem otomatik olarak yenidenyüklenecektir.",
+            "shutdownForceMsg": "Seçtiğiniz güncellemelerin kurulumundan sonra sistem otomatikolarak kapanacaktır.",
+            "rebootDelayedMsg": "Seçtiğiniz güncellemelerin kurulumundan sonra sistem yeniden yüklenecektir.Güncellemelerin kurulumu sırasında lütfen sisteminizi kapatmayın, güç kaynağını veya aksesuarları çıkarmayın. Sisteminizi yeniden yüklemeye hazırlanmak için çalışmanızı kaydetmenizi öneririz.",
+            "rebootRequiredMsg": "Güncellemelerin başarıyla yüklenmesi için sistemin yeniden yüklenipher şeyin güvenli ve sorunsuz bir şekilde çalıştığından emin olunması gerekir.",
             "okayButton": "TAMAM",
             "cancelButton": "İptal",
             "rebootButton": "ŞİMDİ YENİDEN YÜKLE",
@@ -1066,12 +1066,12 @@
             "title": "Otomatik güncelleme ayarları",
             "subtitle": "GÜNCELLEMELERİ OTOMATİK OLARAK YÜKLE",
             "critical": {
-                "title": "Kritik Güncellemeler",
+                "title": "Kritik Güncelleştirmeler",
                 "tooltip": "Kritik güncellemeler önemli sorunları, ciddi hataları, donanım arızalarını veya veri bozulmasını önler."
             },
             "recommended": {
                 "title": "Önerilen Güncellemeler",
-                "tooltip": "Önerilen sürücü güncellemeleri bilgisayarınızın en iyi performansla çalışmasını sağlar."
+                "tooltip": "Önerilen sürücü güncellemeleri"
             },
             "windows": {
                 "title": "Windows Güncellemeleri",
@@ -1084,23 +1084,23 @@
         "banner": {
             "neverChecked": "System Update'i kullanmaya hoş geldiniz.",
             "title": "Güncel bir sistem, sağlıklı sistemdir.",
-            "last": "Son güncelleme tarihi:",
+            "last": "Son güncelleme tarihi",
             "next": "Zamanlanan bir sonraki güncellenmiş tarama",
-            "checkButton": "GÜNCELLEMELERİ DENETLE ",
+            "checkButton": "GÜNCELLEMELERİ DENETLE",
             "checking": "Güncellemeler denetleniyor",
-            "downloading": "Güncellemeler indiriliyor",
+            "downloading": "Güncellemelerin indirilmesi tamamlandı",
             "installing": "Güncellemeler yükleniyor",
             "percent": "% tamamlandı",
             "cancelCheck": "Denetlemeyi iptal et",
             "cancelUpdates": "GÜNCELLEMELERİ İPTAL ET",
             "available": "Mevcut güncellemeler",
-            "description": "Bu paketler, bilgisayarınızın doğru şekilde çalışması için kritik önem taşıyan donanım sürücülerine ve diğer sistem yardımcı programlarına ilişkin güncellemeleri içerir. Kritik güncellemeler aynı zamanda bilgisayarınızdaki verileri korumak için de önemlidir ve yayınlandıklarında yüklenmelidir. Bu paketlerin yüklenmemesi veri kaybına, sistem hatasına ya da donanım arızasına neden olabilir.",
+            "description": "Bu paketler, bilgisayarınızın doğru şekilde çalışması içinkritik önem taşıyan donanım sürücülerine ve diğer sistem yardımcı programlarına ilişkin güncellemeleri içerir. Kritik güncellemeler aynı zamanda bilgisayarınızdaki verileri korumak için de önemlidir ve yayınlandıklarında yüklenmelidir. Bu paketlerin yüklenmemesi veri kaybına, sistem hatasına ya da donanım arızasına neden olabilir.",
             "installButton": "TÜM GÜNCELLEMELERİ YÜKLE",
             "result": {
-                "success": "Tüm Güncellemeler doğru bir şekilde yüklendi",
+                "success": "Tüm güncellemeler doğru bir şekilde yüklendi",
                 "fail": {
                     "title": "Bazı güncellemeler doğru bir şekilde yüklenmedi.",
-                    "description": "Bu güncellemeleri indirme veya yükleme işlemi sırasında bir sorun oluştu. Lütfen güncellemeleri yüklerken çevrimiçi olduğunuzdan emin olun ve bilgisayarınızı kapatmayın."
+                    "description": "Bu güncellemeleri indirme veya yükleme işlemi sırasında bir sorun oluştu.Lütfen güncellemeleri yüklerken çevrimiçi olduğunuzdan emin olun ve bilgisayarınızı kapatmayın."
                 }
             }
         },
@@ -1168,15 +1168,14 @@
         "protected": "Protected",
         "notProtected": "Not Protected",
         "myDevice": "My Device",
-        "allDevice": "All Devices",
         "secure": "SECURE",
         "needAttention": "NEEDS ATTENTION",
         "manageAccount": "Manage Account",
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrate to protect all of your devices",
+        "trialExpired": "Trial Expired",
+        "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
         "protectAllDevices": "Protect all of your devices",
@@ -1300,9 +1299,7 @@
             "maliciousNetwork": "Bu ay bilgisayarınızın {{maliciousWifi}} kötü amaçlı ağa katılması önlendi.",
             "good": "İYİ",
             "malicious": "KÖTÜ AMAÇLI",
-            "suspicious": "ŞÜPHELİ",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "ŞÜPHELİ"
         },
         "antivirus": {
             "common": {

@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -377,7 +377,15 @@
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
-                }
+                },
+                "question1": "Do you like the new style of Vantage?",
+                "question2": "Do you think the performance is acceptable?",
+                "question3": "Would you use the application more often in the future?",
+                "yes": "Yes",
+                "no": "No",
+                "tips1": "Please leave any additional comments",
+                "sendFeedback": "Send Feedback",
+                "submitScreenShot": "Submit Screen Shot"
             }
         },
         "quickSettings": {
@@ -557,20 +565,12 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter",
+                        "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "ACAdapterNotSupported": {
                         "title": "AC adapter not supported.",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
@@ -598,9 +598,9 @@
                     "title": "Paramètres d'alimentation intelligents",
                     "subtitle": "REFROIDISSEMENT INTELLIGENT",
                     "subtitle1": "Batterie et silence",
-                    "description1": "Cette fonction ajuste dynamiquement les paramètres thermiques en fonction de vos besoins.",
+                    "description1": "Cette fonction ajuste dynamiquement les paramètres thermiques en fonction de vos besoins.Lorsque cette fonction est activée, elle ajuste les paramètres pour que le périphérique reste plus froid ou silencieux, lorsqu'il est porté ou en veille. Sinon, elle optimise les performances lorsque le périphérique est sur une surface stable. Lorsque cette fonction est désactivée, vous pouvez définir manuellement la priorité du mode thermique.",
                     "description2": "Le refroidissement intelligent Lenovo règle la vitesse du ventilateur, la température maximum de la surface et les performances.Cette fonction a des sous-modes et se règle maintenant avec le curseur de l'alimentation de performances Windows.",
-                    "description3": "La fonction de Refroidissement intelligent règle automatiquement les performances thermiques selon vos besoins.La fonction de refroidissement intelligent règle les paramètres de performance pour réduire la chaleur de surface pour votre confort lorsque vous portez l'ordinateur. ",
+                    "description3": "La fonction de Refroidissement intelligent règle automatiquement les performances thermiques selon vos besoins.La fonction de refroidissement intelligent règle les paramètres de performance pour réduire la chaleur de surface pour votre confort lorsque vous portez l'ordinateur. Lorsque le périphérique est posé sur un bureau, cette fonction optimise les performances.",
                     "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
                     "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
                     "readMore": "En savoir plus.",
@@ -631,7 +631,7 @@
                             "mode1": "Mode silencieux",
                             "mode2": "Mode équilibré",
                             "mode3": "Mode de performance",
-                            "line1": "Le curseur se trouve à l'extrême gauche.",
+                            "line1": "Le curseur se trouve à l'extrême gauche.La vitesse du ventilateur et les performances sont réduites pour permettre à l'ordinateur d'être plus froid, plus silencieux et pour une meilleure durée de vie de la batterie.",
                             "line2": "Le curseur se trouve au centre.La vitesse du ventilateur et les performances sont réglées de manière dynamique pour optimiser les performances.",
                             "line3": "Le curseur se trouve à l'extrême droite. La vitesse du ventilateur et la température de la surface autorisée sont plus élevées pour des performances maximales.",
                             "line4": "More info"
@@ -682,8 +682,8 @@
                     "title": "Paramètres de la batterie",
                     "batteryThreshold": {
                         "title": "Seuil de chargement de la batterie",
-                        "description": "Si vous utilisez votre ordinateur principalement avec son bloc d'alimentation et rarement sur batterie,vous pouvez augmenter la durée de vie de la batterie en définissant une valeur inférieure à 100 % pour la charge maximale.",
-                        "tooltip": "Si votre batterie se charge actuellement au-delà du seuil d'arrêt de chargement, débranchez l'alimentation pour décharger la batterie jusqu'à ce qu'elle atteigne le seuil d'arrêt de chargement ou un niveau inférieur à celui-ci.",
+                        "description": "Si vous utilisez votre ordinateur principalement avec son bloc d'alimentation et rarement sur batterie,vous pouvez augmenter la durée de vie de la batterie en définissant une valeur inférieure à 100 % pour la charge maximale. Une telle manipulation est utile car en stockant les batteries qui sont utilisées rarement à une valeur inférieure à la charge maximale, vous augmentez leur durée de vie.",
+                        "tooltip": "Si votre batterie se charge actuellement au-delà du seuil d'arrêt de chargement, débranchez l'alimentation pour décharger la batterie jusqu'à ce qu'elle atteigne le seuil d'arrêt de chargement ou un niveau inférieur à celui-ci.Selon l'état de votre batterie (ancienne ou neuve), il est normal que le point exact de lancement ou d'arrêt du chargement diffère de 2 points de pourcentage maximum. Si vous activez cette fonctionnalité, il est recommandé de procéder périodiquement à une réinitialisation de la jauge de la batterie afin d'assurer l'exactitude du rapport de l'état de la batterie.",
                         "note": "Note",
                         "readMoreText": "Read more.",
                         "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
@@ -693,7 +693,7 @@
                         },
                         "popup": {
                             "title": "Activer le seuil de chargement de la batterie",
-                            "description1": "Le fait d'activer la charge de batterie personnalisée optimise l'état de santé général de la batterie lorsque vous utilisez ce périphérique.",
+                            "description1": "Le fait d'activer la charge de batterie personnalisée optimise l'état de santé général de la batterie lorsque vous utilisez ce périphérique.Toutefois, si la batterie n'est pas entièrement chargée, son autonomie sera réduite.",
                             "description2": "Afin d'activer pleinement cette fonctionnalité, veuillez débrancher votre appareil et laisser votre batterie se vider jusqu'au seuil d'arrêt de chargement ou en dessous de celui-ci.",
                             "enable": "ACTIVER",
                             "cancel": "ANNULER"
@@ -711,16 +711,16 @@
                     },
                     "conservationMode": {
                         "title": "Mode conservation",
-                        "description": "Cette fonction est utile pour prolonger la durée de vie de la batterie lorsque vous êtes connecté.",
+                        "description": "Cette fonction est utile pour prolonger la durée de vie de la batterie lorsque vous êtes connecté. <br>Lorsque ce mode est activé, la batterie sera uniquement chargée à 55-60 % de sa capacité et la durée de vie de la batterie sera maximisée. Cependant, cela réduira la durée d'utilisation de votre ordinateur après la déconnexion de la source d'alimentation secteur.",
                         "tooltip": {
                             "line1": "Cette fonction est utile pour prolonger la durée de vie de la batterie lorsque vous êtes connecté.",
-                            "line2": "Lorsque ce mode est activé, la batterie sera uniquement chargée à 55-60 % de sa capacité et la durée de vie de la batterie sera maximisée.",
-                            "line3": "Remarque : La charge rapide et le mode conservation ne peuvent pas fonctionner en même temps."
+                            "line2": "Lorsque ce mode est activé, la batterie sera uniquement chargée à 55-60 % de sa capacité et la durée de vie de la batterie sera maximisée. Cependant, cela réduira la durée d'utilisation de votre ordinateur après la déconnexion de la source d'alimentation secteur.",
+                            "line3": "Remarque : La charge rapide et le mode conservation ne peuvent pas fonctionner en même temps.SI un des modes est activé, l'autre sera automatiquement désactivé."
                         }
                     },
                     "airPlanePower": {
                         "title": "Mode d'alimentation pour avion",
-                        "description": "Protégez la prise avion en contrôlant la consommation d'énergie de votre système."
+                        "description": "Protégez la prise avion en contrôlant la consommation d'énergie de votre système.Lorsque le mode d'alimentation pour avion est activé, l'ordinateur réduit la consommation d'énergie en limitant la vitesse de chargement de la batterie et les performances du système."
                     }
                 },
                 "energyStar": {
@@ -731,7 +731,7 @@
             "audio": {
                 "title": "Audio",
                 "subtitle": "Paramètres audio",
-                "description": "Cette section vous permet d'optimiser automatiquement ou de configurer",
+                "description": "Cette section vous permet d'optimiser automatiquement ou de configurercomplètement vos paramètres audio manuellement, tels que les paramètres Dolby, le micro, etc.",
                 "audioSmartsettings": {
                     "title": "Paramètres audio intelligents",
                     "subtitle": "PARAMÈTRES BASÉS SUR LES APPLICATIONS",
@@ -955,7 +955,7 @@
                             "medium": "Moyen",
                             "slow": "Lent"
                         },
-                        "toolTipContent": "Sélectionnez l'option de votre choix pour verrouiller votre écran à une vitesse rapide/moyenne/lente lorsque votre présence n'est pas détectée."
+                        "toolTipContent": "Sélectionnez l'option de votre choix pour verrouiller votre écran à une vitesse rapide/moyenne/lente lorsque votre présence n'est pas détectée.Cependant, l'heure à laquelle l'écran sera verrouillé est également influencée par le scénario utilisateur réel, la fonction de capteur et les paramètres de délai d'attente de l'écran Windows. Par conséquent, nous vous recommandons vivement de verrouiller votre système au moment où vous le quittez."
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -968,7 +968,7 @@
                 },
                 "note": {
                     "description1": "Cette fonction dépend de Windows Hello.Assurez-vous que la reconnaissance faciale est activée dans les paramètres Windows.",
-                    "description2": "Cette fonction utilise les capteurs et l'appareil photo pour détecter votre présence.",
+                    "description2": "Cette fonction utilise les capteurs et l'appareil photo pour détecter votre présence.Cependant, la fonction ne recueille, ne sauvegarde et ne divulgue PAS de données ou images personnelles.",
                     "description3": "1. Si votre ordinateur est en mode chevalet, tablette ou sur support,il se peut que ces fonctions ne fonctionnent pas correctement.",
                     "description4": "2. Si l'ordinateur est en mode hibernation ou a été éteint.La connexion à la caméra automatique IR ne fonctionnera pas.",
                     "description5": "3. Veuillez ajuster l'écran de votre ordinateur à un angle appropriépour que la caméra infrarouge reconnaisse votre visage pour vous connecter automatiquement."
@@ -1045,17 +1045,17 @@
         "recommendedUpdates": "Mise(s) à jour recommandée(s)",
         "optionalUpdates": "Mise(s) à jour facultative(s)",
         "ignoredUpdates": "Mise(s) à jour ignorée(s)",
-        "successInstall": "Installé avec succès sur",
-        "failedInstall": "Échec de l'installation sur",
+        "successInstall": "Installé avec succès le",
+        "failedInstall": "Échec de l'installation le",
         "at": "au",
-        "readMore": "Afficher plus",
+        "readMore": "En savoir plus",
         "popup": {
             "reboot": "Redém.",
             "shutdown": "Arrêter",
-            "rebootForceMsg": "La(les) mise(s) à jour sélectionnée(s) entraînera(ont) le redémarrage automatique du système après l'installation.",
-            "shutdownForceMsg": "La(les) mise(s) à jour sélectionnée(s) entraînera(ont) l'arrêt automatique du système après l'installation.",
-            "rebootDelayedMsg": "La(les) mise(s) à jour sélectionnée(s) entraînera(ont) le redémarrage du système, pendant l'installation des mises à jour, veuillez ne pas arrêter votre système, retirer la source d'alimentation ou les accessoires. Nous vous recommandons d'enregistrer votre travail en cours en vue du redémarrage du système.",
-            "rebootRequiredMsg": "Pour réussir l'installation des mises à jour, votre ordinateur doit être redémarrer pour que tout fonctionne correctement et en toute sécurité.",
+            "rebootForceMsg": "La(les) mise(s) à jour sélectionnée(s) entraînera(ont) le redémarrage automatique du systèmeaprès l'installation.",
+            "shutdownForceMsg": "La(les) mise(s) à jour sélectionnée(s) entraînera(ont) l'arrêtautomatique du système après l'installation.",
+            "rebootDelayedMsg": "La(les) mise(s) à jour sélectionnée(s) entraînera(ont) le redémarrage du système,pendant l'installation des mises à jour, veuillez ne pas arrêter votre système, retirer la source d'alimentation ou les accessoires. Nous vous recommandons d'enregistrer votre travail en cours en vue du redémarrage du système.",
+            "rebootRequiredMsg": "Pour réussir l'installation des mises à jour, votre ordinateur doit êtreredémarrer pour que tout fonctionne correctement et en toute sécurité.",
             "okayButton": "OK",
             "cancelButton": "Annuler",
             "rebootButton": "REDÉMARRER MAINTENANT",
@@ -1071,7 +1071,7 @@
             },
             "recommended": {
                 "title": "Mises à jour recommandées",
-                "tooltip": "Les mises à jour du pilote recommandées garantissent un fonctionnement optimal de votre ordinateur."
+                "tooltip": "Les mises à jour de pilotes recommandées permettent à votre ordinateur de fonctionner à des performances optimales."
             },
             "windows": {
                 "title": "Mises à jour Windows",
@@ -1086,21 +1086,21 @@
             "title": "Un système à jour est un système sain.",
             "last": "Dernière mise à jour effectuée le",
             "next": "La prochaine analyse est prévue le",
-            "checkButton": "RECHERCHER DES MISES À JOUR ",
+            "checkButton": "RECHERCHER DES MISES À JOUR",
             "checking": "Recherche de mises à jour",
-            "downloading": "Téléchargement des mises à jour",
-            "installing": "Installation de mises à jour",
-            "percent": "% effectué",
+            "downloading": "Téléchargement des mises à jour effectué",
+            "installing": "Installation des mises à jour",
+            "percent": "% effectué",
             "cancelCheck": "Annuler la vérification",
             "cancelUpdates": "ANNULER LES MISES À JOUR",
             "available": "Mises à jour disponibles",
-            "description": "Ces modules incluent les mises à jour des pilotes du matériel ainsi que d'autres utilitaires système essentiels au bon fonctionnement de l'ordinateur. Ces mises à jour peuvent également jouer un rôle important pour la protection des données sur votre ordinateur et devraient être installées dès qu'elles sont disponibles. L'échec de l'installation de ces modules peut conduire à la perte de données, au dysfonctionnement du système ou à des pannes matérielles.",
+            "description": "Ces modules incluent les mises à jour de pilotes du matérielainsi que d'autres utilitaires système essentiels au bon fonctionnement de l'ordinateur. Ces mises à jour peuvent également jouer un rôle important pour la protection des données sur votre ordinateur et devraient être installées dès qu'elles sont disponibles. L'échec de l'installation de ces modules peut conduire à la perte de données, au dysfonctionnement du système ou à des pannes matérielles.",
             "installButton": "INSTALLER TOUTES LES MISES À JOUR",
             "result": {
                 "success": "Toutes les mises à jour ont été installées correctement",
                 "fail": {
                     "title": "Certaines mises à jour n'ont pas été correctement installées.",
-                    "description": "Une erreur s'est produite lors du téléchargement ou de l'installation de ces mises à jour. Vérifiez que vous êtes en ligne et que vous n'éteignez pas votre ordinateur lors de l'installation des mises à jour."
+                    "description": "Une erreur s'est produite lors du téléchargement ou de l'installation de ces mises à jour.Vérifiez que vous êtes en ligne et que vous n'éteignez pas votre ordinateur lors de l'installation des mises à jour."
                 }
             }
         },
@@ -1168,15 +1168,14 @@
         "protected": "Protected",
         "notProtected": "Not Protected",
         "myDevice": "My Device",
-        "allDevice": "All Devices",
         "secure": "SECURE",
         "needAttention": "NEEDS ATTENTION",
         "manageAccount": "Manage Account",
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrate to protect all of your devices",
+        "trialExpired": "Trial Expired",
+        "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
         "protectAllDevices": "Protect all of your devices",
@@ -1300,9 +1299,7 @@
             "maliciousNetwork": "Empêchez votre ordinateur, durant ce mois, de se connecter à des {{maliciousWifi}}réseaux malveillants.",
             "good": "BON",
             "malicious": "MALVEILLANT",
-            "suspicious": "SUSPECT",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "SUSPECT"
         },
         "antivirus": {
             "common": {
