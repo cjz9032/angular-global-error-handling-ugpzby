@@ -46,14 +46,21 @@ export class AppComponent implements OnInit {
 		const appFirstRun = !hadRunApp;
 		if (appFirstRun && deviceService.isShellAvailable) {
 			commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
-			const metricsClient = vantageShellService.getMetrics();
-			if (!metricsClient.sendAsyncEx) {
-				metricsClient.sendAsyncEx = metricsClient.sendAsync;
-			}
-			metricsClient.sendAsyncEx({
-				ItemType: 'FirstRun'
-			}, {
-					forced: true
+
+			let isGaming = 'unknown';
+			this.deviceService.getMachineInfo()
+				.then((value: any) => {
+					isGaming = value.isGaming;
+				}).catch(error => {
+					console.error('getMachineInfo', error);
+				}).then(() => {
+					const metricsClient = vantageShellService.getMetrics();
+					metricsClient.sendAsyncEx({
+						ItemType: 'FirstRun',
+						IsGaming: isGaming
+					}, {
+							forced: true
+						});
 				});
 		}
 
@@ -158,7 +165,7 @@ export class AppComponent implements OnInit {
 
 	private getMachineInfo() {
 		if (this.deviceService.isShellAvailable) {
-			this.deviceService.getMachineInfo()
+			return this.deviceService.getMachineInfo()
 				.then((value: any) => {
 					console.log('getMachineInfo.then', value);
 					if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
@@ -179,6 +186,8 @@ export class AppComponent implements OnInit {
 					console.error('getMachineInfo', error);
 				});
 		}
+
+		return null;
 	}
 
 	private checkIsDesktopOrAllInOneMachine() {
