@@ -8,12 +8,12 @@
 	</div>
 	<div class="row mt-20">
 		<div class="col">
-			<vtr-ui-chs-statusbar [statusList]="device"></vtr-ui-chs-statusbar>
+			<vtr-ui-chs-statusbar [ecoSystem]="device"></vtr-ui-chs-statusbar>
 		</div>
 	</div>
 	<div class="row mt-20 mb-3">
 		<div class="col">
-			<vtr-ui-chs-statusbar [statusList]="allDevice"></vtr-ui-chs-statusbar>
+			<vtr-ui-chs-statusbar [ecoSystem]="allDevice"></vtr-ui-chs-statusbar>
 		</div>
 	</div>
 	<vtr-ui-button (click)="switchMock()" [label]="'switch'"></vtr-ui-button>

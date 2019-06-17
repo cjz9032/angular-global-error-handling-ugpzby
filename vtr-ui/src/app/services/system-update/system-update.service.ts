@@ -586,6 +586,7 @@ export class SystemUpdateService {
 	}
 
 	private mapScheduleInstallResponse(updateTaskList: Array<any>): AvailableUpdate {
+		this.installedUpdates = [];
 		const updates: Array<AvailableUpdateDetail> = [];
 		const availableUpdate = new AvailableUpdate();
 		let installedCount = 0;
@@ -607,6 +608,7 @@ export class SystemUpdateService {
 			}
 			update.isInstalled = (update.installationStatus === UpdateActionResult.Success);
 			updates.push(update);
+			this.installedUpdates.push(update);
 		});
 		availableUpdate.status = (updateTaskList.length === installedCount) ? SystemUpdateStatusMessage.SUCCESS.code : SystemUpdateStatusMessage.FAILURE.code;
 		availableUpdate.updateList = updates;

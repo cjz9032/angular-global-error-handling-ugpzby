@@ -17,26 +17,6 @@ export class CameraFeedService {
 		}
 	}
 
-	public activateCamera(): Promise<MediaStream> {
-		return window.navigator.mediaDevices.getUserMedia({
-			video: true
-		});
-	}
-
-	public deactivateCamera(): void {
-		if (this._stream) {
-			this._stream.getTracks()[0].stop();
-		}
-	}
-
-	public getStream(): MediaStream {
-		return this._stream;
-	}
-
-	public setStream(stream: MediaStream): void {
-		this._stream = stream;
-	}
-
 	public getCameraBlurSettings(): Promise<any> {
 		if (this.cameraBlur) {
 			return this.cameraBlur.getCameraBlurSettings();
@@ -45,9 +25,9 @@ export class CameraFeedService {
 	}
 
 	public setCameraBlurSettings(isEnabling: boolean, mode: string): Promise<any> {
-		console.log("setCameraBlurSettings: " + isEnabling + ", " + mode );
+		console.log('setCameraBlurSettings: ' + isEnabling + ', ' + mode);
 		if (this.cameraBlur) {
-			if (mode == "") {
+			if (mode === '') {
 				const enable = isEnabling ? '1' : '0';
 				return this.cameraBlur.setCameraBlurSettings(true, enable);
 			} else {
