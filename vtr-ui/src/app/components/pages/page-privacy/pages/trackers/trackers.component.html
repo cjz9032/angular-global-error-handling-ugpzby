@@ -4,11 +4,12 @@
 	<vtr-feature-header
 		[texts]="textForFeatureHeader"
 		[isFeatureWasScanned]="isWebsiteTrackersWasScanned$ | async"
-		[isFigleafReadyToCommunication]="isFigleafInstalled$ | async">
+		[countOfIssue]="websiteTrackersCount$ | async"
+		[isFigleafReadyToCommunication]="isFigleafReadyForCommunication$ | async">
 		<span class="trackers-page__title--red">{{websiteTrackersCount$ | async}}</span> tracking tools found
 	</vtr-feature-header>
 	<div class="trackers-concent"
-		 *ngIf="!(isConsentGiven$ | async)">
+		 *ngIf="!(isConsentGiven$ | async) && !(isFigleafReadyForCommunication$ | async)">
 		<div class="trackers-concent__text-wrapper">
 			<p class="trackers-concent__text">
 				Show me what tracking tools are collecting information about me.
@@ -27,7 +28,8 @@
 
 	<vtr-tracking-map [animate]="true"></vtr-tracking-map>
 	<vtr-try-product-block
-		*ngIf="(websiteTrackersCount$ | async) && !(isFigleafInstalled$ | async)"
+		*ngIf="(websiteTrackersCount$ | async)"
+		[isFigleafReadyToCommunication]="isFigleafReadyForCommunication$ | async"
 		[texts]="tryProductText">
 	</vtr-try-product-block>
 </div>
