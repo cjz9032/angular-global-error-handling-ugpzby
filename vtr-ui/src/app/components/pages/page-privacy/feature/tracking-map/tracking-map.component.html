@@ -2,7 +2,7 @@
 	<div class="trackers__wrapper" *ngIf="(trackingData$ | async) as trackingData; else loader">
 		<ng-container *ngIf="trackingData?.sites.length > 0">
 			<fl-tracking-map [trackers]="trackingData"
-							 [labels]="getText()"
+							 [labels]="getText((isTrackersBlocked$ | async), isUserData)"
 							 [positive]="isTrackersBlocked$ | async"
 							 [animate]="animate"
 							 [defaultSiteIcon]="defaultIcon.site"

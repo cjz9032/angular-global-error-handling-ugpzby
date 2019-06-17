@@ -4,7 +4,7 @@
 	<div class="trackers-page__header">
 		<vtr-feature-header
 			[texts]="textForFeatureHeader"
-			[isFeatureWasScanned]="isWebsiteTrackersWasScanned$ | async"
+			[isFeatureWasScanned]="(isWebsiteTrackersWasScanned$ | async) && (isConsentGiven$ | async)"
 			[countOfIssue]="websiteTrackersCount$ | async"
 			[isFigleafReadyToCommunication]="isFigleafReadyForCommunication$ | async">
 			<span class="trackers-page__title--red">{{websiteTrackersCount$ | async}}</span> tracking tools found
@@ -16,7 +16,7 @@
 		</button>
 	</div>
 	<div class="trackers-concent"
-		 *ngIf="!(isConsentGiven$ | async)">
+		 *ngIf="!(isConsentGiven$ | async) && !(isTrackersBlocked$ | async)">
 		<div class="trackers-concent__text-wrapper">
 			<p class="trackers-concent__text">
 				Show me what tracking tools are collecting information about me.

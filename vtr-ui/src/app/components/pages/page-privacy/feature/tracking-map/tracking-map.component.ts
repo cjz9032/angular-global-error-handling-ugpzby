@@ -44,11 +44,11 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 	ngOnDestroy() {
 	}
 
-	getText() {
+	getText(isTrackersBlocked, isUserData) {
 		return {
-			chartLabel: this.isUserData ? 'Companies using your information' : 'Companies using information',
-			cloudLabel: this.isUserData ? 'Websites you visit with tracking tools' : 'The most popular websites with tracking tools',
-			circleLabel: 'TRACKING TOOLS'
+			chartLabel: isUserData ? 'Companies using your information' : 'Companies using information',
+			cloudLabel: isUserData ? 'Websites you visit with tracking tools' : 'The most popular websites with tracking tools',
+			circleLabel: isTrackersBlocked ? 'TRACKING IS BLOCKED' : 'TRACKING TOOLS'
 		};
 	}
 

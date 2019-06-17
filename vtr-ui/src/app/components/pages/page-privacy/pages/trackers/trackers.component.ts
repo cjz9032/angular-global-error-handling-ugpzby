@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { distinctUntilChanged, map, startWith, withLatestFrom } from 'rxjs/operators';
+import { distinctUntilChanged, map, startWith, tap, withLatestFrom } from 'rxjs/operators';
 import { UserAllowService } from '../../common/services/user-allow.service';
 import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
@@ -7,6 +7,7 @@ import { FeaturesStatuses } from '../../userDataStatuses';
 import { UserDataGetStateService } from '../../common/services/user-data-get-state.service';
 import { getDisplayedCountValueOfIssues } from '../../utils/helpers';
 import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
+import { TrackingMapService } from '../../feature/tracking-map/services/tracking-map.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -16,8 +17,9 @@ import { VantageCommunicationService } from '../../common/services/vantage-commu
 export class TrackersComponent {
 	isConsentGiven$ = this.userAllowService.allowToShow.pipe(map((value) => value['trackingMap']));
 	websiteTrackersCount$ = this.countNumberOfIssuesService.websiteTrackersCount.pipe(
-		map((issueCount) => getDisplayedCountValueOfIssues(this.userDataGetStateService.websiteTrackersResult, issueCount)),
-		startWith(0)
+		map((issueCount) => (getDisplayedCountValueOfIssues(this.userDataGetStateService.websiteTrackersResult, issueCount)) || 0),
+		startWith(0),
+		distinctUntilChanged()
 	);
 	isFigleafReadyForCommunication$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
 	isWebsiteTrackersWasScanned$ = this.userDataGetStateService.userDataStatus$.pipe(
@@ -26,6 +28,7 @@ export class TrackersComponent {
 			userDataStatus.websiteTrackersResult !== FeaturesStatuses.error),
 		distinctUntilChanged(),
 	);
+	isTrackersBlocked$ = this.trackingMapService.isTrackersBlocked$;
 
 	textForFeatureHeader = {
 		title: 'Check for tracking tools',
@@ -54,7 +57,8 @@ export class TrackersComponent {
 		private countNumberOfIssuesService: CountNumberOfIssuesService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private userDataGetStateService: UserDataGetStateService,
-		private vantageCommunicationService: VantageCommunicationService
+		private vantageCommunicationService: VantageCommunicationService,
+		private trackingMapService: TrackingMapService
 	) {	}
 
 	giveConcent() {
