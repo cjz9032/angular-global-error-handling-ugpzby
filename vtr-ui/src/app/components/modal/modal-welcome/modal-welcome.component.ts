@@ -81,10 +81,11 @@ export class ModalWelcomeComponent implements OnInit {
 
 			this.endTime = new Date().getTime();
 			const data = {
+				ItemType: 'PageView',
 				PageName: 'WelcomePage',
 				PageDuration: (this.endTime - this.startTime)
 			};
-			console.log('metrics data', JSON.stringify(data));
+			console.log('PageView Event', JSON.stringify(data));
 			this.metrics.sendAsync(data);
 
 			tutorialData = new WelcomeTutorial(2, this.data.page2.radioValue, this.checkedArray);

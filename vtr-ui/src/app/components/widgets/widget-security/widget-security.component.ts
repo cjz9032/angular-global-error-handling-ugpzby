@@ -48,7 +48,9 @@ export class WidgetSecurityComponent implements OnInit {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
 			size: 'lg',
 			centered: true,
-			windowClass: 'Article-Detail-Modal'
+			windowClass: 'Article-Detail-Modal',
+			keyboard : false,
+			backdrop: 'static'
 		});
 
 		articleDetailModal.componentInstance.articleId = this.articleId;

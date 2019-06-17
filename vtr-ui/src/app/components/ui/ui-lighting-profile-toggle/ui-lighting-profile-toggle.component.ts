@@ -7,7 +7,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class UiLightingProfileToggleComponent implements OnInit {
 	@Input() currentProfile: any;
-	@Output() public setDefaultProfile = new EventEmitter<any>();
+	@Output() public setLightingProfileId = new EventEmitter<any>();
 	public p1Checked: boolean;
 	public p2Checked: boolean;
 	public p3Checked: boolean;
@@ -19,15 +19,11 @@ export class UiLightingProfileToggleComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.currentProfile=2;
-		if (this.currentProfile === 3) {
-			this.p3Checked = true;
-			this.p2Checked = false;
-		}
+
 	}
 	SetProfile(event) {
 		let val1:number = event.target.value;
 
-		this.setDefaultProfile.emit(event);
+		this.setLightingProfileId.emit(event);
 	}
 }

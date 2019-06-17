@@ -7,6 +7,8 @@ import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 
 @Component({
 	selector: 'vtr-page-security-password',
@@ -22,6 +24,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 	backId = 'sa-pm-btn-back';
 	dashlaneArticleId = '0EEB43BE718446C6B49F2C83FC190758';
 	dashlaneArticleCategory: string;
+	isOnline = true;
 
 	constructor(
 		public mockService: MockService,
@@ -51,7 +54,12 @@ export class PageSecurityPasswordComponent implements OnInit {
 		this.fetchCMSArticles();
 	}
 
-	ngOnInit() { }
+	ngOnInit() {
+		this.isOnline = this.commonService.isOnline;
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+	}
 
 	getDashLane(): void {
 		this.passwordManager.download();
@@ -104,8 +112,22 @@ export class PageSecurityPasswordComponent implements OnInit {
 			backdrop: 'static',
 			size: 'lg',
 			centered: true,
-			windowClass: 'Article-Detail-Modal'
+			windowClass: 'Article-Detail-Modal',
+			keyboard : false
 		});
 		articleDetailModal.componentInstance.articleId = this.dashlaneArticleId;
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
+		}
 	}
 }
