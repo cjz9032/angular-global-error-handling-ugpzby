@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
 		private userService: UserService,
 		private settingsService: SettingsService,
 		private gamingAllCapabilitiesService: GamingAllCapabilitiesService,
-		vantageShellService: VantageShellService
+		private vantageShellService: VantageShellService
 	) {
 		translate.addLangs(['en', 'zh-Hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it',
 			'ja', 'ko', 'nb', 'nl', 'pl', 'pt-BR', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-Latn', 'sv', 'tr', 'uk', 'zh-Hant']);
