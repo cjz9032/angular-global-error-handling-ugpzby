@@ -62,7 +62,7 @@
 
 					<!-- MVP 2 feature -->
 					<li class=""
-						*ngIf="machineType == 1">
+						*ngIf="machineType == 1 && responseData[0].isCapable">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.batteryThreshold.description' | translate "
@@ -71,7 +71,8 @@
 							[leftIcon]="batterySettings.items[1].leftImageSource"
 							[rightIcon]="batterySettings.items[1].rightImageSource"
 							[showChildContent]="true"
-							(toggleOnOff)="showBatteryThreshold=$event.switchValue;"
+							[isSwitchChecked] = "showBatteryThreshold"
+							(toggleOnOff)="showBatteryThresholdsettings($event.switchValue);"
 							[tooltipText]="'device.deviceSettings.power.batterySettings.batteryThreshold.tooltip' | translate">
 							<div *ngIf="showBatteryThreshold">
 								<vtr-battery-charge-threshold-settings
@@ -154,6 +155,236 @@
 			</vtr-container-collapsible>
 		</div>
 	</div>
+
+
+	<div class="row py-5"
+	id="smart-standby">
+	<div class="col-10 mx-auto ">
+		<vtr-container-collapsible
+			[cardTitle]="'device.deviceSettings.power.smartStandby.title' | translate"
+			[isCollapsed]="false">
+			<ul class="list-group list-group-flush">
+				<li class="">
+					<vtr-ui-row-switch
+						[caption]="'device.deviceSettings.power.smartStandby.description' | translate"
+						[isSwitchVisible]=true
+						[isLastChild]=true
+						[showChildContent]="true"
+						[rightIcon]="['far', 'question-circle']"
+						[tooltipText]="'device.deviceSettings.power.smartStandby.tooltip' | translate"
+						(toggleOnOff)="onSmartStandbyToggle($event)">
+					</vtr-ui-row-switch>
+						<section class="smart-standby-timer" *ngIf="smartStandbyTimer">
+							<h5>{{ 'device.deviceSettings.power.smartStandby.timer.heading' | translate | uppercase }}</h5>
+							<p class="sub-heading">
+								{{ 'device.deviceSettings.power.smartStandby.timer.subHeading1' | translate | uppercase }}</p>
+							<div class="row">
+								<div class="col-md-10 col-sm-12 pl-0">
+									<vtr-ui-time-picker>
+										<div class="main-block">
+											<div class="timer-block">
+												<div class="row align-items-center d-flex justify-content-between">
+													<div class="hours-block pl-5 ml-4 mx-5">
+														<div class="toggle-icon">
+															<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
+														</div>
+														<span>8</span><br>
+														<span>9</span><br>
+														<span>10</span>
+														<div class="toggle-icon">
+															<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
+														</div>
+													</div>
+													<div class="minutes-block">
+														<div class="toggle-icon">
+															<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
+														</div>
+														<span>8</span><br>
+														<span>9</span><br>
+														<span>10</span>
+														<div class="toggle-icon">
+															<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
+														</div>
+													</div>
+													<div class="am-pm ml-5">
+														<div class="toggle-icon">
+															<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
+														</div>
+														<span>AM</span><br>
+														<span>PM</span>
+														<div class="toggle-icon">
+															<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="d-flex justify-content-end py-3">
+											<div class="select-close">
+												<fa-icon [icon]="['fal', 'check']"></fa-icon>
+												<fa-icon [icon]="['fal', 'times']"></fa-icon>
+											</div>
+										</div>
+									</vtr-ui-time-picker>
+								</div>
+							</div>
+
+							<p class="sub-heading">
+								{{ 'device.deviceSettings.power.smartStandby.timer.subHeading2' | translate | uppercase }}</p>
+							<div class="row">
+								<div class="col-md-10 col-sm-12 pl-0">
+									<vtr-ui-time-picker>
+										<div class="main-block">
+											<div class="timer-block">
+												<div class="row align-items-center d-flex justify-content-between">
+													<div class="hours-block pl-5 ml-4 mx-5">
+														<div class="toggle-icon">
+															<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
+														</div>
+														<span>8</span><br>
+														<span>9</span><br>
+														<span>10</span>
+														<div class="toggle-icon">
+															<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
+														</div>
+													</div>
+													<div class="minutes-block">
+														<div class="toggle-icon">
+															<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
+														</div>
+														<span>15</span><br>
+														<span>30</span><br>
+														<span>45</span>
+														<div class="toggle-icon">
+															<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
+														</div>
+													</div>
+													<div class="am-pm ml-5">
+														<div class="toggle-icon">
+															<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
+														</div>
+														<span>AM</span><br>
+														<span>PM</span>
+														<div class="toggle-icon">
+															<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="d-flex justify-content-end py-3">
+											<div class="select-close">
+												<fa-icon [icon]="['fal', 'check']"></fa-icon>
+												<fa-icon [icon]="['fal', 'times']"></fa-icon>
+											</div>
+										</div>
+
+									</vtr-ui-time-picker>
+								</div>
+							</div>
+
+							<p class="sub-heading">
+								{{ 'device.deviceSettings.power.smartStandby.timer.subHeading3' | translate | uppercase }}</p>
+							<div class="row">
+								<div class="col-md-10 col-sm-12 pl-0">
+									<section class="weekdays-block">
+										<div class="row">
+											<div class="col">
+												<div class="card">
+													<div class="card-header">
+														<div class="container-fluid">
+															<div class="row align-items-center d-flex justify-content-between py-3 pl-5">
+																<h5>Weekdays</h5>
+
+																<div class="col-auto px-3" *ngIf="allowCollapse">
+																	<div class="collapse-control" (click)="onToggle()">
+																		<div class="toggle-icon">
+																			<fa-icon *ngIf="isCollapsed" [icon]="['fal', 'chevron-down']">
+																			</fa-icon>
+																			<fa-icon *ngIf="!isCollapsed" [icon]="['fal', 'chevron-up']">
+																			</fa-icon>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="card-body" [ngbCollapse]="isCollapsed">
+														<div class="main-block pl-5 py-3">
+															<div class="custom-control custom-checkbox mb-3 ml-3">
+																<input class="custom-control-input" type="checkbox" value=""
+																	id="customCheck1">
+																<label class="custom-control-label" for="customCheck1">
+																	Sunday
+																</label>
+															</div>
+															<div class="custom-control custom-checkbox mb-3 ml-3">
+																<input class="custom-control-input" type="checkbox" value=""
+																	id="customCheck2">
+																<label class="custom-control-label" for="customCheck2">
+																	Monday
+																</label>
+															</div>
+															<div class="custom-control custom-checkbox mb-3 ml-3">
+																<input class="custom-control-input" type="checkbox" value=""
+																	id="customCheck3">
+																<label class="custom-control-label" for="customCheck3">
+																	Tuesday
+																</label>
+															</div>
+															<div class="custom-control custom-checkbox mb-3 ml-3">
+																<input class="custom-control-input" type="checkbox" value=""
+																	id="customCheck4">
+																<label class="custom-control-label" for="customCheck4">
+																	Wednesday
+																</label>
+															</div>
+															<div class="custom-control custom-checkbox mb-3 ml-3">
+																<input class="custom-control-input" type="checkbox" value=""
+																	id="customCheck5">
+																<label class="custom-control-label" for="customCheck5">
+																	Thursday
+																</label>
+															</div>
+															<div class="custom-control custom-checkbox mb-3 ml-3">
+																<input class="custom-control-input" type="checkbox" value=""
+																	id="customCheck6">
+																<label class="custom-control-label" for="customCheck6">
+																	Friday
+																</label>
+															</div>
+															<div class="custom-control custom-checkbox mb-3 ml-3">
+																<input class="custom-control-input" type="checkbox" value=""
+																	id="customCheck7">
+																<label class="custom-control-label" for="customCheck7">
+																	Saturday
+																</label>
+															</div>
+
+														</div>
+														<div class="d-flex justify-content-end py-3 mt-3">
+															<div class="select-close">
+																<fa-icon [icon]="['fal', 'check']"></fa-icon>
+																<fa-icon [icon]="['fal', 'times']"></fa-icon>
+															</div>
+														</div>
+														<ng-content></ng-content>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+							</div>
+
+						</section>
+
+				</li>
+			</ul>
+		</vtr-container-collapsible>
+	</div>
+</div>
 
 	<div class="row py-5"
 		id="power"

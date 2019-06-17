@@ -46,8 +46,7 @@ export class PowerSmartSettingsComponent implements OnInit {
 
 	ngOnInit() {
 
-		let machineInfo = this.commonService.getLocalStorageValue(LocalStorageKey.MachineInfo);
-		this.machineType = machineInfo.subBrand.toLocaleLowerCase();
+		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.SubBrand);
 		console.log("Machine Type: " + this.machineType)
 		if (thinkpad == this.machineType) {
 			this.add = 0;//thinkpad

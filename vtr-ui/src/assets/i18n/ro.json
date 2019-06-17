@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -377,7 +377,15 @@
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
-                }
+                },
+                "question1": "Do you like the new style of Vantage?",
+                "question2": "Do you think the performance is acceptable?",
+                "question3": "Would you use the application more often in the future?",
+                "yes": "Yes",
+                "no": "No",
+                "tips1": "Please leave any additional comments",
+                "sendFeedback": "Send Feedback",
+                "submitScreenShot": "Submit Screen Shot"
             }
         },
         "quickSettings": {
@@ -557,20 +565,12 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter",
+                        "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "ACAdapterNotSupported": {
                         "title": "AC adapter not supported.",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
@@ -598,9 +598,9 @@
                     "title": "Setări inteligente de alimentare",
                     "subtitle": "RĂCIRE INTELIGENTĂ",
                     "subtitle1": "Modul baterie și silențios",
-                    "description1": "Această caracteristică adaptează dinamic setările termice nevoilor dumneavoastră.",
+                    "description1": "Această caracteristică adaptează dinamic setările termice nevoilor dumneavoastră.Când este activată, ajustează setările pentru a menține dispozitivul rece și silențios, când acesta este asupra dvs. sau inactiv. În caz contrar, optimizează performanța în timp ce dispozitivul se află pe o suprafață stabilă. Când este dezactivat, puteți să setați în mod manual prioritatea termală.",
                     "description2": "Răcirea inteligentă ajustează viteza ventilatorului, temperatura maximă a suprafeței și performanța.Această caracteristică are modurile de mai jos și poate fi accesată acum prin glisorul pentru performanța de alimentare Windows.",
-                    "description3": "Funcţia Răcire inteligentă adaptează automat performanţa termică nevoilor dumneavoastră.Caracteristica Răcire inteligentă ajustează setările performanței pentru a oferi o suprafață mai rece pentru confort când notebookul este asupra dvs. ",
+                    "description3": "Funcţia Răcire inteligentă adaptează automat performanţa termică nevoilor dumneavoastră.Caracteristica Răcire inteligentă ajustează setările performanței pentru a oferi o suprafață mai rece pentru confort când notebookul este asupra dvs. Când dispozitivul este pe un birou, această caracteristică optimizează performanța sistemului.",
                     "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
                     "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
                     "readMore": "Citiți mai multe.",
@@ -631,7 +631,7 @@
                             "mode1": "Mod silențios",
                             "mode2": "Mod echilibrat",
                             "mode3": "Mod performanță",
-                            "line1": "Glisorul este în stânga.",
+                            "line1": "Glisorul este în stânga.Viteza și performanța ventilatorului sunt mai reduse pentru un computer mai silențios, cu o răcire mai bună și cu cea mai bună durată de viață a bateriei.",
                             "line2": "Cursorul este în centru.Viteza și performanța ventilatorului sunt echilibrate dinamic pentru cea mai bună experiență.",
                             "line3": "Glisorul este în dreapta. Viteza ventilatorului și temperatura permisă a suprafeței sunt mai ridicate pentru cea mai mare performanță.",
                             "line4": "More info"
@@ -682,8 +682,8 @@
                     "title": "Setări baterie",
                     "batteryThreshold": {
                         "title": "Prag încărcare baterie",
-                        "description": "Dacă utilizați în principal calculatorul cu adaptorul c.a. conectat și utilizați doar rar energia bateriei,puteți prelungi durata de viață a bateriei prin setarea valorii maxime de încărcare sub 100%.",
-                        "tooltip": "Dacă bateria este în prezent încărcată peste pragul de oprire a încărcării, deconectați alimentarea până când bateria se descarcă la sau sub pragul de oprire a încărcării.",
+                        "description": "Dacă utilizați în principal calculatorul cu adaptorul c.a. conectat și utilizați doar rar energia bateriei,puteți prelungi durata de viață a bateriei prin setarea valorii maxime de încărcare sub 100%. Acest lucru este util, deoarece bateriile care sunt utilizate rar au o durată de viaţă mai lungă când sunt păstrate neîncărcate complet.",
+                        "tooltip": "Dacă bateria este în prezent încărcată peste pragul de oprire a încărcării, deconectați alimentarea până când bateria se descarcă la sau sub pragul de oprire a încărcării.În funcție de starea bateriei (veche sau nouă), punctul exact la care încărcarea va începe sau se va opri poate să difere cu până la 2 procente. Dacă activați caracteristica, se recomandă să efectuați ocazional resetarea indicatorului bateriei pentru a asigura o raportare exactă a funcționării bateriei.",
                         "note": "Note",
                         "readMoreText": "Read more.",
                         "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
@@ -693,7 +693,7 @@
                         },
                         "popup": {
                             "title": "Activați pragul pentru încărcarea bateriei",
-                            "description1": "Activarea unei taxe particularizate pentru baterie va permite ca timpul general de utilizare a bateriei să dureze mai mult pe măsură ce utilizaţi acest dispozitiv.",
+                            "description1": "Activarea unei taxe particularizate pentru baterie va permite ca timpul general de utilizare a bateriei să dureze mai mult pe măsură ce utilizaţi acest dispozitiv.Cu toate acestea, fără o încărcare completă, bateria va avea o durată de utilizare mai mică.",
                             "description2": "Pentru a activa pe deplin această caracteristică, deconectați aparatul și lăsați bateria să se descarce până la sau sub pragul de oprire a încărcării.",
                             "enable": "ACTIVARE",
                             "cancel": "ANULARE"
@@ -711,16 +711,16 @@
                     },
                     "conservationMode": {
                         "title": "Mod economisire",
-                        "description": "Caracteristica este utilă pentru a prelungi durata de viață a bateriei, atunci când este conectată.",
+                        "description": "Caracteristica este utilă pentru a prelungi durata de viață a bateriei, atunci când este conectată. <br>Când acest mod este activat, bateria va fi încărcată doar până la 55-60% din capacitate și durata de viață a acesteia poate fi maximizată. Cu toate acestea, acest lucru va duce la reducerea timpului utilizării computerului, după ce va fi deconectat de la sursa de alimentare c.a.",
                         "tooltip": {
                             "line1": "Caracteristica este utilă pentru a prelungi durata de viață a bateriei, atunci când este conectată.",
-                            "line2": "Când acest mod este activat, bateria va fi încărcată doar până la 55-60% din capacitate și durata de viață a acesteia poate fi maximizată.",
-                            "line3": "Notă: modul de încărcare rapidă și modul de conservare nu pot funcționa în același timp."
+                            "line2": "Când acest mod este activat, bateria va fi încărcată doar până la 55-60% din capacitate și durata de viață a acesteia poate fi maximizată. Cu toate acestea, acest lucru va duce la reducerea timpului utilizării computerului, după ce va fi deconectat de la sursa de alimentare c.a.",
+                            "line3": "Notă: modul de încărcare rapidă și modul de conservare nu pot funcționa în același timp.DACĂ unul dintre moduri este pornit, celălalt va fi oprit automat."
                         }
                     },
                     "airPlanePower": {
                         "title": "Mod alimentare avion",
-                        "description": "Protejaţi priza de c.a. din avion controlând consumul de energie al sistemului."
+                        "description": "Protejaţi priza de c.a. din avion controlând consumul de energie al sistemului.Când modul de alimentare avion este activat, calculatorul reduce consumul de energie prin limitarea ratei de încărcare a bateriei și a performanței sistemului."
                     }
                 },
                 "energyStar": {
@@ -731,7 +731,7 @@
             "audio": {
                 "title": "Audio",
                 "subtitle": "Setări audio",
-                "description": "Această secțiune vă oferă posibilitatea de a optimiza în mod automat sau de a configura",
+                "description": "Această secțiune vă oferă posibilitatea de a optimiza în mod automat sau de a configuracomplet setările audio manual, cum ar fi setările Dolby, microfonul etc.",
                 "audioSmartsettings": {
                     "title": "Setări audio inteligente",
                     "subtitle": "SETĂRI ÎN FUNCŢIE DE APLICAŢII",
@@ -947,7 +947,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Blocare fără atingere",
-                    "caption": "Această caracteristică va estompa ecranul și va bloca computerul atunci când nu este detectată prezența utilizatorului.Poate reduce posibilitățile de acces neautorizat la calculator atunci când lăsați computerul nesupravegheat și deblocat. ",
+                    "caption": "Această caracteristică va estompa ecranul și va bloca computerul atunci când nu este detectată prezența utilizatorului.Poate reduce posibilitățile de acces neautorizat la calculator atunci când lăsați computerul nesupravegheat și deblocat. Reduce și consumul de energie prin punerea sistemului într-un mod de veghe modern, atunci când nu este detectată prezența dvs.",
                     "autoScreenLockTimer": {
                         "title": "CRONOMETRU AUTOMAT DE BLOCARE ECRAN",
                         "radioButton": {
@@ -955,7 +955,7 @@
                             "medium": "Mediu",
                             "slow": "Lent"
                         },
-                        "toolTipContent": "Selectați opțiunea dorită pentru a bloca ecranul la o viteză mică/medie/mare, atunci când nu vi se detectează prezența."
+                        "toolTipContent": "Selectați opțiunea dorită pentru a bloca ecranul la o viteză mică/medie/mare, atunci când nu vi se detectează prezența.Cu toate acestea, timpul în care ecranul va fi blocat este influențat și de scenariul actual al utilizatorului, de abilitatea senzorului și setările Windows de expirare a ecranului. Vă recomandăm să vă blocați imediat sistemul înainte de a pleca."
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -968,7 +968,7 @@
                 },
                 "note": {
                     "description1": "Această caracteristică se bazează pe Windows Hello.Asigurați-vă că recunoașterea feței este activată în setările Windows.",
-                    "description2": "Această caracteristică folosește senzorii și camera pentru a vă detecta prezența.",
+                    "description2": "Această caracteristică folosește senzorii și camera pentru a vă detecta prezența.Cu toate acestea, caracteristica NU colectează, nu salvează și nu prezintă scurgeri ale datelor sau fotografiilor personale.",
                     "description3": "1. Dacă computerul dvs. se află în modul „Tent”, „Tablet” sau „Stand”,este posibil ca aceste funcții să nu funcționeze corect.",
                     "description4": "2. În cazul în care computerul dvs. se află în modul hibernare sau a fost oprit.Conectarea automată a camerei IR nu va funcționa.",
                     "description5": "3. Vă rugăm să reglați ecranul computerului la un unghi corespunzător,astfel încât camera IR să vă poată recunoaște fața pentru autentificare automată."
@@ -1052,10 +1052,10 @@
         "popup": {
             "reboot": "Repornire",
             "shutdown": "Oprire",
-            "rebootForceMsg": "După instalare, actualizările selectate vor duce la repornirea automată a sistemului.",
-            "shutdownForceMsg": "După instalare, actualizările selectate vor duce la oprirea automată a sistemului.",
-            "rebootDelayedMsg": "După instalare, actualizările selectate vor duce la repornirea automată a sistemului. În timpul instalării actualizărilor, nu opriți sistemul și nu îndepărtați sursa de alimentare sau accesoriile. Pentru repornirea sistemului, vă recomandăm salvarea lucrărilor în curs.",
-            "rebootRequiredMsg": "Pentru a instala cu succes actualizările, computerul dvs. trebuie repornit pentru a se asigura că totul funcționează fără probleme.",
+            "rebootForceMsg": "Actualizările pe are le-ați selectat vor duce la repornirea automată a sistemuluidupă finalizarea instalării.",
+            "shutdownForceMsg": "Actualizările pe care le-ați selectat vor duce la oprirea automată a sistemului,după finalizarea instalării.",
+            "rebootDelayedMsg": "După instalare, actualizările selectate vor duce la repornirea automată a sistemului.În timpul instalării actualizărilor, nu opriți sistemul și nu îndepărtați sursa de alimentare sau accesoriile. Vă recomandăm să vă salvați lucrările în curs înainte de repornirea sistemului.",
+            "rebootRequiredMsg": "Pentru a instala cu succes actualizările, computerul dvs. trebuierepornit pentru a se asigura că totul funcționează fără probleme.",
             "okayButton": "OK",
             "cancelButton": "Anulare",
             "rebootButton": "REPORNIȚI ACUM",
@@ -1071,7 +1071,7 @@
             },
             "recommended": {
                 "title": "Actualizări recomandate",
-                "tooltip": "Actualizările recomandate pentru drivere permit computerului să funcționeze cu performanțe optime."
+                "tooltip": "Actualizările de drivere recomandate vă mențin calculatorul la o performanță optimă."
             },
             "windows": {
                 "title": "Actualizări Windows",
@@ -1086,21 +1086,21 @@
             "title": "Un sistem actualizat este un sistem sănătos.",
             "last": "Ultima actualizare în",
             "next": "Scanarea următoarei actualizări este programată pe",
-            "checkButton": "CĂUTAȚI ACTUALIZĂRI ",
+            "checkButton": "CĂUTAȚI ACTUALIZĂRI",
             "checking": "Se caută actualizări",
-            "downloading": "Se descarcă actualizările",
+            "downloading": "S-a finalizat descărcarea actualizărilor",
             "installing": "Se instalează actualizările",
             "percent": "% finalizat",
             "cancelCheck": "Anulați căutarea",
             "cancelUpdates": "ANULAȚI ACTUALIZĂRILE",
             "available": "Actualizări disponibile",
-            "description": "Aceste pachete includ actualizări ale driverelor hardware și ale altor instrumente de sistem foarte importante pentru funcționarea corespunzătoare a computerului dvs. Actualizările critice sunt importante și pentru protejarea datelor de pe computerul dvs. și trebuie instalate în momentul în care devin disponibile. În cazul în care nu reușiți să instalați aceste pachete, se poate ajunge la pierderea datelor, la o defecțiune majoră a sistemului sau la o defecțiune de hardware.",
+            "description": "Aceste pachete includ actualizări ale driverelor hardware șiale altor instrumente de sistem foarte importante pentru funcționarea corespunzătoare a computerului dvs. Actualizările critice sunt importante și pentru protejarea datelor de pe computerul dvs. și trebuie instalate în momentul în care devin disponibile. În cazul în care nu reușiți să instalați aceste pachete, se poate ajunge la pierderea datelor, la o defecțiune majoră a sistemului sau la o defecțiune de hardware.",
             "installButton": "INSTALAȚI TOATE ACTUALIZĂRILE",
             "result": {
                 "success": "Toate actualizările s-au instalat corect",
                 "fail": {
                     "title": "Unele actualizări nu au fost instalate corect.",
-                    "description": "A apărut o problemă în timpul descărcării sau instalării acestor actualizări. Asigurați-vă că sunteți online și nu opriți computerul când instalați actualizările."
+                    "description": "A apărut o problemă în timpul descărcării sau instalării acestor actualizări.Asigurați-vă că sunteți online și nu opriți computerul când instalați actualizările."
                 }
             }
         },
@@ -1168,15 +1168,14 @@
         "protected": "Protected",
         "notProtected": "Not Protected",
         "myDevice": "My Device",
-        "allDevice": "All Devices",
         "secure": "SECURE",
         "needAttention": "NEEDS ATTENTION",
         "manageAccount": "Manage Account",
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrate to protect all of your devices",
+        "trialExpired": "Trial Expired",
+        "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
         "protectAllDevices": "Protect all of your devices",
@@ -1300,9 +1299,7 @@
             "maliciousNetwork": "Computerul dvs. a fost împiedicat să se alăture {{maliciousWifi}} rețele rău-intenționate, în această lună.",
             "good": "BUN",
             "malicious": "RĂU-INTENȚIONAT",
-            "suspicious": "SUSPECTED",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "SUSPECTED"
         },
         "antivirus": {
             "common": {

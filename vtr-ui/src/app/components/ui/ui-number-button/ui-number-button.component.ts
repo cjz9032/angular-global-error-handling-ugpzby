@@ -27,8 +27,8 @@ export class UiNumberButtonComponent implements OnInit {
 	}
 
 	numberClicked(number) {
+		this.isShowingPopup = false;
 		if (this.recordingStatus) {
-			alert('Stop recording to change');
 			return;
 		}
 
