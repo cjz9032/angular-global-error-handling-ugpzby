@@ -111,13 +111,9 @@ export class VantageShellService {
 				metricClient.sendAsync = async function sendAsync(data) {
 					try {
 						// automatically fill the OnlineStatus for page view event
-						const eventType = data.ItemType.toLowerCase();
-						if (eventType === 'pageview') {
-							if (!data.OnlineStatus) {
-								data.OnlineStatus = this.commonService.isOnline ? 1 : 0;
-							}
+						if (!data.OnlineStatus) {
+							data.OnlineStatus = this.commonService.isOnline ? 1 : 0;
 						}
-
 						return await this.sendAsyncOrignally(data);
 					} catch (ex) {
 						console.log('an error ocurr when sending metrics event', ex);
@@ -384,44 +380,7 @@ export class VantageShellService {
 		}
 		return false;
 	}
-
-	public getThermalModeStatus(): any {
-		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			return this.phoenix.gaming.gamingThermalmode.getThermalModeStatus();
-		}
-		return undefined;
-	}
-
-	public getQuickSettings() {
-		if (this.phoenix) {
-			return this.phoenix.gaming.gamingThermalmode;
-		}
-		return undefined;
-	}
-
-	public setThermalModeStatus(ThermalModeStatusObj: ThermalModeStatus): Boolean {
-		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			return this.phoenix.gaming.gamingThermalmode.setThermalModeStatus(ThermalModeStatusObj.thermalModeStatus);
-		}
-		return undefined;
-	}
-
-	// public getRAMOCStatus(): any {
-	// 	if (this.phoenix) {
-	// 		return this.phoenix.gaming.gamingOverclock.getRamOCStatus();
-	// 	}
-	// 	return undefined;
-	// }
-
-	// public setRAMOCStatus(ramOCStausObj: RamOCSatus): any {
-	// 	if (this.phoenix) {
-	// 		return this.phoenix.gaming.gamingOverclock.setRamOCStatus(ramOCStausObj.ramOcStatus);
-	// 	}
-	// 	return false;
-	// }
-
+	
 	public getGamingAllCapabilities(): any {
 		if (this.phoenix && this.phoenix.gaming) {
 			return this.phoenix.gaming.gamingAllCapabilities;

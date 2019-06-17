@@ -5,7 +5,8 @@
 		.base-preview {
 			border: 0.1rem solid #ecf0f1;
 			height: 25.8rem;
-			width: 35rem;
+			width: 100%;
+			max-width: 35rem;
 			object-fit: contain;
 			border-radius: 0.4rem;
 		}

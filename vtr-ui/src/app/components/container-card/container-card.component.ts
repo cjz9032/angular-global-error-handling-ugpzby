@@ -100,7 +100,8 @@ export class ContainerCardComponent implements OnInit, AfterViewInit, OnChanges 
 			backdrop: 'static',
 			size: 'lg',
 			centered: true,
-			windowClass: 'Article-Detail-Modal'
+			windowClass: 'Article-Detail-Modal',
+			keyboard : false
 		});
 
 		articleDetailModal.componentInstance.articleId = articleId;
