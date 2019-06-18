@@ -31,8 +31,19 @@
 	}
 
 	&.recording {
+		position: relative;
+		&::after {
+			content: 'Next input';
+			padding-top: 1rem;
+			position: absolute;
+			bottom: 19rem;
+			width: 100%;
+			font-size: 1.6rem;
+			color: #545f76;
+			left: 0px;
+		}
 		.top-fix {
-			height: 50rem;
+			height: 48rem;
 		}
 	}
 
@@ -69,10 +80,6 @@
 		color: $gaming_hover;
 	}
 	&.recording {
-		.record-list {
-			height: 40rem;
-			overflow: auto;
-		}
 		.record-footer {
 			display: block;
 		}

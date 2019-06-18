@@ -6,7 +6,6 @@ export enum BatteryConditionsEnum {
 	NotDetected,
 	Error,
 
-	Normal,
 	HighTemperature,
 	TrickleCharge,
 	OverheatedBattery,
