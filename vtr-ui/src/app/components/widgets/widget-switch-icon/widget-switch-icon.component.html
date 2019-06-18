@@ -4,9 +4,8 @@
 	[title]="tooltipText"
 	vtrMetrics
 	metricsEvent="featureClick"
-	metricsParent="quicksettings"
 	[metricsValue]="!value"
-	[metricsItem]="'chk.'+title">
+	[metricsItem]="metricsItem">
 	<div class="switch-container"
 		[ngClass]="[value ? 'checked' : 'unchecked']">
 		<div class="title">{{ title }}</div>
