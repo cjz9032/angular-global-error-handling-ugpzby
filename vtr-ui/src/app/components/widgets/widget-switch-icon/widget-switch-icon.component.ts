@@ -14,6 +14,7 @@ export class WidgetSwitchIconComponent implements OnInit {
 	@Input() isBlocked = false;
 	@Input() tooltipText = '';
 	@Input() disable = false;
+	@Input() metricsItem = '';
 
 	@Output() toggle = new EventEmitter<boolean>();
 

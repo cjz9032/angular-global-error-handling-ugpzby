@@ -1,5 +1,15 @@
 import { Validators } from '@angular/forms';
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges, DoCheck } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	Input,
+	Output,
+	EventEmitter,
+	OnChanges,
+	DoCheck,
+	ViewChild,
+	ViewChildren
+} from '@angular/core';
 import { isUndefined } from 'util';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { MacrokeyService } from 'src/app/services/gaming/macrokey/macrokey.service';
@@ -21,7 +31,9 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 	public clearRecordPopup: Boolean = false;
 	public showModal: Boolean = false;
 	public ignoreInterval: Boolean = false;
-	public recordsList;
+	public recordsList: any = [];
+	public pairCounter = {};
+	public hoveredPair = '';
 
 	repeatOptions = [
 		{
@@ -123,10 +135,9 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 	ngOnInit() {}
 
 	recordDelete(record, i) {
-		// console.log(this.recordsData.inputs);
-		// const remainingInputs = this.recordsData.inputs.filter((records: any) => records.key !== record.key);
-		this.recordsData.inputs.splice(i, 2);
-		const remainingInputs = this.recordsData.inputs;
+		const remainingInputs = this.recordsData.inputs.filter(
+			(recordItem: any) => recordItem.pairName !== record.pairName
+		);
 		this.macrokeyService.setMacroKey(this.number.key, remainingInputs).then((responseStatus) => {
 			if (responseStatus) {
 				this.recordsData.inputs = remainingInputs;
@@ -149,7 +160,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 		if (!isUndefined(changes)) {
 			if (!isUndefined(changes.recordsData)) {
 				const recordsData = changes.recordsData.currentValue;
-				this.recordsList = recordsData.inputs;
+				this.recordsList = this.pairRecordingData(recordsData.inputs);
 				this.repeatSelectedValue = recordsData.repeat;
 				this.delaySelectedValue = recordsData.interval;
 				if (this.delaySelectedValue === 2) {
@@ -164,7 +175,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 	ngDoCheck() {
 		if (!isUndefined(this.recordsData)) {
 			if (this.recordsList !== this.recordsData.inputs) {
-				this.recordsList = this.recordsData.inputs;
+				this.recordsList = this.pairRecordingData(this.recordsData.inputs);
 			}
 			if (this.repeatSelectedValue !== this.recordsData.repeat) {
 				this.repeatSelectedValue = this.recordsData.repeat;
@@ -201,5 +212,24 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 			return;
 		}
 		this.ignoreInterval = false;
+	}
+
+	pairRecordingData(recordingData: any = []) {
+		recordingData.forEach((record) => {
+			record.pairName = this.getPairName(record.key, record.status);
+		});
+		console.log(recordingData);
+		return recordingData;
+	}
+
+	getPairName(key, status) {
+		if (key in this.pairCounter) {
+			if (status === 1) {
+				this.pairCounter[key] += 1;
+			}
+		} else {
+			this.pairCounter[key] = 0;
+		}
+		return 'pair-' + key + '-' + this.pairCounter[key];
 	}
 }

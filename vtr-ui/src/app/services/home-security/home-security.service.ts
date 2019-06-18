@@ -1,6 +1,8 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { ConnectedHomeSecurity, CHSAccountState, WinRT, EventTypes } from '@lenovo/tan-client-bridge';
+import { ConnectedHomeSecurity, CHSAccountState, WinRT, EventTypes, CHSNotificationType } from '@lenovo/tan-client-bridge';
 import mitt from 'mitt';
+import { HomeSecurityAccount } from 'src/app/data-models/home-security/home-security-account.model';
+import { NotificationItem } from '../../data-models/home-security/home-security-notification-item.model'
 
 @Injectable({
 	providedIn: 'root',
@@ -27,7 +29,11 @@ export class HomeSecurityMockService {
 				this.mitt.emit(EventTypes.chsEvent, this.chs);
 			},
 			visitWebConsole(feature: string) {
-				WinRT.launchUri(`https://homesecurity.coro.net/${feature}`);
+				if (feature) {
+					WinRT.launchUri(`https://homesecurity.coro.net/${feature}`);
+				} else {
+					WinRT.launchUri(`https://homesecurity.coro.net/`);
+				}
 				if (feature === 'login') {
 					this.state = CHSAccountState.local;
 					this.mitt.emit(EventTypes.chsEvent, this.chs);
@@ -60,11 +66,21 @@ export class HomeSecurityMockService {
 				{name: 'ddd', protected: true},
 				{name: 'eee', protected: true},
 				{name: 'fff', protected: true},
+				{name: 'fff', protected: true},
+				{name: 'fff', protected: true},
+				{name: 'fff', protected: true},
 				{name: 'ggg', protected: false}
 			]
 		},
-		notifications: {
-			value: []
+		notifications:  {
+			value:[
+			{type: CHSNotificationType.connectedUnsafeNetwork, time: new Date(), content: new Map([['connectedUnsafeNetwork','ThinkPad T490s']])},
+			{type: CHSNotificationType.unknownDeviceConnected, time: new Date('2019-6-18 6:33:00'), content: new Map([['unknownDeviceConnected','ThinkPad T490s']])},
+			{type: CHSNotificationType.applianceDisconnected, time: new Date('2017-12-18 13:33:00'), content: new Map([['applianceDisconnected','ThinkPad T490s']])},
+			{type: CHSNotificationType.vulnerableDeviceDetected, time: new Date('2018-6-18 13:33:00'), content: new Map([['vulnerableDeviceDetected','ThinkPad T490s']])},
+			{type: CHSNotificationType.homeNetworkUnsafe, time: new Date('2019-6-17 13:33:00'), content: new Map([['homeNetworkUnsafe','ThinkPad T490s']])},
+
+		]
 		},
 		on(type, handler) {
 			this.mitt.on(type, handler);
@@ -91,4 +107,5 @@ export class HomeSecurityMockService {
 		}
 		return <ConnectedHomeSecurity>this.connectedHomeSecurity;
 	}
+
 }

@@ -39,6 +39,7 @@ export class PageSmartAssistComponent implements OnInit {
 	public options: any;
 	public keepMyDisplay: boolean;
 	public intelligentScreen: IntelligentScreen;
+	public intelligentMedia = new FeatureStatus(false, true);
 
 	headerMenuItems: PageAnchorLink[] = [
 		// {
@@ -51,15 +52,20 @@ export class PageSmartAssistComponent implements OnInit {
 		// 	path: 'screen',
 		// 	sortOrder: 2
 		// },
+		// {
+		// 	title: 'device.smartAssist.jumpTo.media',
+		// 	path: 'media',
+		// 	sortOrder: 3
+		// },
 		{
-			title: 'device.smartAssist.jumpTo.media',
-			path: 'media',
-			sortOrder: 3
+			title: 'device.smartAssist.jumpTo.APS',
+			path: 'aps',
+			sortOrder: 4
 		},
 		// {
 		// 	title: 'device.smartAssist.jumpTo.voice',
 		// 	path: 'voice',
-		// 	sortOrder: 4
+		// 	sortOrder: 5
 		// }
 	];
 
@@ -85,6 +91,7 @@ export class PageSmartAssistComponent implements OnInit {
 		this.setIsThinkPad(this.machineType === 1);
 		this.setIntelligentSecurity();
 		this.setIntelligentScreen();
+		this.getVideoPauseResumeStatus();
 	}
 
 	private setIntelligentSecurity() {
@@ -306,20 +313,12 @@ export class PageSmartAssistComponent implements OnInit {
 		this.isThinkPad = isThinkPad;
 	}
 
-	// public launchPowerAndSleep() {
-	// 	this.deviceService.launchUri('ms-settings:powersleep');
-	// }
-
 	public launchFaceEnrollment() {
 		this.deviceService.launchUri('ms-settings:signinoptions-launchfaceenrollment');
 	}
 
 	public displayDim(event) {
 		this.keepMyDisplay = !this.keepMyDisplay;
-	}
-
-	hideMediaSetting($event) {
-		this.headerMenuItems.splice(2, 1);
 	}
 
 	fetchCMSArticles() {
@@ -357,5 +356,31 @@ export class PageSmartAssistComponent implements OnInit {
 				}
 				console.log('onResetDefaultSettings.resetHPDSetting', isSuccess);
 			});
+	}
+
+	private getVideoPauseResumeStatus() {
+		console.log('getVideoPauseResumeStatus');
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.getVideoPauseResumeStatus()
+					.then((response: FeatureStatus) => {
+						this.intelligentMedia = response;
+						console.log('getVideoPauseResumeStatus.then:', response);
+
+						if (response.available) {
+							this.headerMenuItems.push({
+								title: 'device.smartAssist.jumpTo.media',
+								path: 'media',
+								sortOrder: 3
+							});
+							this.headerMenuItems = this.sortMenuItems(this.headerMenuItems);
+						}
+					}).catch(error => {
+						console.error('getVideoPauseResumeStatus.error', error);
+					});
+			}
+		} catch (error) {
+			console.error('getVideoPauseResumeStatus' + error.message);
+		}
 	}
 }
