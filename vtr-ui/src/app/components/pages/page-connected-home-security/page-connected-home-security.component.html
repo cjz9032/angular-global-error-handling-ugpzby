@@ -69,7 +69,9 @@
                                 <div class="col col-12">
                                     <vtr-widget-questions [title]="'homeSecurity.notification' | translate"
                                         [description]="'homeSecurity.recent' | translate "
-                                        [items]="notifications.items">
+										[items]="notificationItems?.notificationItem"
+										[clickable]="false"
+										[chevronVisibility]=false>
                                     </vtr-widget-questions>
                                 </div>
                             </div>

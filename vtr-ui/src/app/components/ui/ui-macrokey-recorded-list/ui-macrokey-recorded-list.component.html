@@ -30,8 +30,9 @@
 				</div>
 				<div class="record-list">
 					<ng-container *ngFor="let record of recordsList; let i = index;">
-						<div class="record-item" *ngIf="i%2==0">
-							<div class="pressing">
+						<div class="record-item" (mouseover)="hoveredPair = record.pairName"
+							(mouseleave)="hoveredPair = ''" [ngClass]="{paired: record.pairName === hoveredPair}">
+							<div class="pressing" *ngIf="record.status === 1">
 								<div class="key">
 									<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1">
 										<g id="10.Subpages/macroKey/press" stroke="none" stroke-width="1" fill="none"
@@ -47,7 +48,7 @@
 									{{ record.interval + ' ms' | translate}}
 								</div>
 							</div>
-							<div class="releasing" *ngIf="recordsList[i+1]">
+							<div class="releasing" *ngIf="record.status === 0">
 								<div class="key">
 									<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1">
 										<g id="10.Subpages/macroKey/release" stroke="none" stroke-width="1" fill="none"
@@ -57,10 +58,10 @@
 												id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
 										</g>
 									</svg>
-									{{ recordsList[i+1].key | translate }}
+									{{ record.key | translate }}
 								</div>
 								<div class="interval" [ngClass]="{'hide': ignoreInterval}">
-									{{ recordsList[i+1].interval + ' ms' | translate }}
+									{{ record.interval + ' ms' | translate }}
 								</div>
 							</div>
 							<div class="delete-button" *ngIf="!recordingStatus" (click)="recordDelete(record, i)">
@@ -70,9 +71,9 @@
 						</div>
 					</ng-container>
 				</div>
-				<div class="record-footer">
+				<!-- <div class="record-footer">
 					{{ 'gaming.macroKey.details.recorded.list.footer.title' | translate }}
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>

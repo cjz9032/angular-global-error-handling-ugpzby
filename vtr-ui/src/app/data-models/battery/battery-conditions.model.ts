@@ -39,16 +39,47 @@ export class BatteryConditionModel {
 			case BatteryConditionsEnum.NotSupportACAdapter:
 				return new BatteryConditionNote(
 					'device.deviceSettings.batteryGauge.condition.NotSupportACAdapter.title',
-					'', '', '');
+					'device.deviceSettings.batteryGauge.condition.NotSupportACAdapter.description', '', '');
 			case BatteryConditionsEnum.LimitedACAdapterSupport:
 				return new BatteryConditionNote(
 					'device.deviceSettings.batteryGauge.condition.LimitedACAdapterSupport.title',
-					'', '', '');
+					'device.deviceSettings.batteryGauge.condition.LimitedACAdapterSupport.description', '', '');
 			case BatteryConditionsEnum.StoreLimitation:
 				return new BatteryConditionNote(
 					'device.deviceSettings.batteryGauge.condition.StoreLimitation.title', '',
 					'device.deviceSettings.batteryGauge.condition.StoreLimitation.description1',
 					'device.deviceSettings.batteryGauge.condition.StoreLimitation.description2');
+			case BatteryConditionsEnum.HighTemperature:
+				return new BatteryConditionNote(
+					'device.deviceSettings.batteryGauge.condition.HighTemperature.title',
+					'device.deviceSettings.batteryGauge.condition.HighTemperature.description',
+					'device.deviceSettings.batteryGauge.condition.HighTemperature.description1', ''
+				);
+			case BatteryConditionsEnum.OverheatedBattery:
+				return new BatteryConditionNote('',
+					'device.deviceSettings.batteryGauge.condition.OverheatedBattery.description',
+					'device.deviceSettings.batteryGauge.condition.OverheatedBattery.description1',
+					'device.deviceSettings.batteryGauge.condition.OverheatedBattery.description2'
+				);
+			case BatteryConditionsEnum.TrickleCharge:
+				return new BatteryConditionNote('',
+					'device.deviceSettings.batteryGauge.condition.TrickleCharge.description',
+					'device.deviceSettings.batteryGauge.condition.TrickleCharge.description1',
+					'device.deviceSettings.batteryGauge.condition.TrickleCharge.description2'
+				);
+			case BatteryConditionsEnum.PermanentError:
+				return new BatteryConditionNote('',
+					'device.deviceSettings.batteryGauge.condition.PermanentError.description',
+					'device.deviceSettings.batteryGauge.condition.PermanentError.description1',
+					'device.deviceSettings.batteryGauge.condition.PermanentError.description2'
+				);
+			case BatteryConditionsEnum.HardwareAuthenticationError:
+				return new BatteryConditionNote('',
+					'device.deviceSettings.batteryGauge.condition.HardwareAuthenticationError.description',
+					'device.deviceSettings.batteryGauge.condition.HardwareAuthenticationError.description1',
+					'device.deviceSettings.batteryGauge.condition.HardwareAuthenticationError.description2'
+				);
+
 		}
 	}
 }
