@@ -45,6 +45,7 @@ export enum LocalStorageKey {
 	ConnectedHomeSecurityAllDevices= '[LocalStorageKey] ConnectedHomeSecurityAllDevices',
 	ConnectedHomeSecurityAccount = '[LocalStorageKey] ConnectedHomeSecurityAccount',
 	ConnectedHomeSecurityMyDevice = '[LocalStorageKey] ConnectedHomeSecurityMyDevice',
+	ConnectedHomeSecurityNotifications = '[LocalStorageKey] ConnectedHomeSecurityNotifications',
 	/**
 	 * 0  means "ideaPad",
 	 * 1  means "thinkPad",
