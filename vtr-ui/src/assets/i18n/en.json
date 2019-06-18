@@ -945,7 +945,8 @@
 				"security": "Security",
 				"screen": "Screen",
 				"media": "Media",
-				"voice": "Voice"
+				"voice": "Voice",
+				"APS": "APS"
 			},
 			"intelligentSecurity": {
 				"title": "Intelligent Security",
