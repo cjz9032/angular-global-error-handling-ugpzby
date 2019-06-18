@@ -329,7 +329,7 @@ public getLocalSystemCache()
 				this.memoryUsage = this.getStackHeight(hwInfo.memoryUsage);
 			}
 			if (hwInfo.cpuUseFrequency !== '') {
-				this.cpuCurrent = hwInfo.cpuUseFrequency;
+				this.cpuCurrent = hwInfo.cpuUseFrequency.split('GHz')[0];
 				// this.cpuUseFrequency = hwInfo.cpuUseFrequency.split('GHz')[0];
 			}
 			// this.cpuCurrent = parseFloat(this.cpuUseFrequency);
@@ -338,7 +338,7 @@ public getLocalSystemCache()
 			this.SystemStatusObj.cpuUsage = hwInfo.cpuUsage;
 			this.commonService.setLocalStorageValue(LocalStorageKey.cpuUsage, hwInfo.cpuUsage);
 			if (hwInfo.gpuUsedMemory !== '') {
-				this.gpuCurrent = hwInfo.gpuUsedMemory;
+				this.gpuCurrent = hwInfo.gpuUsedMemory.split('GB')[0];
 				// this.gpuUsedMemory = hwInfo.gpuUsedMemory.split('GB')[0];
 			}
 			// this.gpuCurrent = parseFloat(this.gpuUsedMemory);
@@ -347,7 +347,7 @@ public getLocalSystemCache()
 			this.SystemStatusObj.gpuUsage = hwInfo.gpuUsage;
 			this.commonService.setLocalStorageValue(LocalStorageKey.gpuUsage, hwInfo.gpuUsage);
 			if (hwInfo.memoryUsed !== '') {
-				this.ramCurrent = hwInfo.memoryUsed;
+				this.ramCurrent = hwInfo.memoryUsed.split('GB')[0];
 				// this.memoryUsed = hwInfo.memoryUsed.split('GB')[0];
 			}
 			// this.ramCurrent = parseFloat(this.memoryUsed);
