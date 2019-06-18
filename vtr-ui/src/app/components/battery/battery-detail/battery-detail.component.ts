@@ -56,10 +56,10 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 			this.translate.instant('device.deviceSettings.batteryGauge.details.tertiary')];
 		this.batteryIndicators.percent = response.gauge.percentage;
 		this.batteryIndicators.charging = response.gauge.isAttached;
+		this.batteryIndicators.expressCharging = response.gauge.isExpressCharging;
 		this.batteryIndicators.convertMin(response.gauge.time);
 
 		this.batteryIndicators.timeText = response.gauge.timeType;
-		this.batteryIndicators.expressCharging = response.detail[0].isExpressCharging;
 		this.batteryIndicators.voltageError = response.detail[0].isVoltageError;
 		if (response.detail[0].batteryHealth === null || response.detail[0].batteryHealth === undefined) {
 			response.detail[0].batteryHealth = 0;
