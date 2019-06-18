@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, EMPTY, of, Subject } from 'rxjs';
-import { catchError, map, switchMap, take } from 'rxjs/operators';
+import { catchError, map, switchMap, take, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { StorageService } from './storage.service';
 import { MaskedPasswordsInfo, VantageCommunicationService } from './vantage-communication.service';
@@ -68,7 +68,7 @@ export class BrowserAccountsService {
 			return this.vantageCommunicationService.getMaskedPasswords(browsersNamesArray)
 				.pipe(
 					map((accountsPassword) => browserData.map((browser) => (
-							{...browser, accounts: 0}
+							{...browser, accounts: accountsPassword['chrome']}
 						))
 					),
 					take(1),
@@ -90,7 +90,7 @@ export class BrowserAccountsService {
 			const browsersNamesArray = browserData.map((browser) => browser.name);
 			return this.vantageCommunicationService.getAccessiblePasswords(browsersNamesArray).pipe(
 				map((accessiblePasswords) =>
-					browserData.map((browser) => ({...browser, accountsCount: 0}))
+					browserData.map((browser) => ({...browser, accountsCount: accessiblePasswords[browser.name]}))
 				),
 				catchError((error) => {
 					this.installedBrowsersData$.next({browserData: [], error: error});

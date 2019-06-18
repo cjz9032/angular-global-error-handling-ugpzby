@@ -13,7 +13,8 @@
 			passwords found
 		</vtr-feature-header>
 
-		<p class="browser-accounts-page__title-block">
+		<p class="browser-accounts-page__title-block"
+		   *ngIf="(isFigleafReadyForCommunication$ | async) && (nonPrivatePasswordCount$ | async) === 0">
 			<span class="browser-accounts-page__title">
 				{{(dashboardData$ | async)?.totalAccounts}} accounts stored in Lenovo Privacy
 			</span>
