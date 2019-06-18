@@ -377,7 +377,15 @@
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
                     "feedbackSuccess": "感谢您的反馈意见 ！"
-                }
+                },
+                "question1": "Do you like the new style of Vantage?",
+                "question2": "Do you think the performance is acceptable?",
+                "question3": "Would you use the application more often in the future?",
+                "yes": "Yes",
+                "no": "No",
+                "tips1": "Please leave any additional comments",
+                "sendFeedback": "Send Feedback",
+                "submitScreenShot": "Submit Screen Shot"
             }
         },
         "quickSettings": {
@@ -563,14 +571,6 @@
                     "NotSupportACAdapter": {
                         "title": "不支持AC适配器",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "ACAdapterNotSupported": {
-                        "title": "不支持AC适配器。",
-                        "description": "您的Lenovo计算机不支持此AC适配器。它可能会导致突然关机。请连接正确的AC适配器"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC适配器无法提供足够的电量",
-                        "description": "您的Lenovo计算机将影响系统性能和充电速度。请重新连接正确的AC适配器。"
                     },
                     "MissingDriver": {
                         "title": "Lenovo Power Manager驱动程序未安装或无法正常工作。请运行Windows Update以安装最新的驱动程序",
@@ -1053,7 +1053,7 @@
 			"reboot": "重启",
             "shutdown": "关机",
 			"rebootForceMsg": "所选更新将导致系统在安装后自动重启。",
-            "shutdownForceMsg": "所选更新将导致系统在安装后自动关机。",
+			"shutdownForceMsg": "所选更新将导致系统在安装后自动关机。",
 			"rebootDelayedMsg": "安装所选更新后，系统将重启，在安装更新的过程中，请勿关闭系统、断开电源或移除附件。我们建议保存您的工作以便为系统重启做好准备。",
 			"rebootRequiredMsg": "要成功安装更新，您的计算机需要重启以确保所有内容运行得更快、更顺畅。",
             "okayButton": "确定",
@@ -1071,7 +1071,7 @@
             },
             "recommended": {
                 "title": "推荐更新",
-                "tooltip": "推荐的驱动程序更新使计算机运行保持最佳性能。"
+                "tooltip": "推荐的驱动程序更新可使计算机以最佳性能运行。"
             },
             "windows": {
                 "title": "Windows 更新",
@@ -1079,7 +1079,7 @@
             }
         },
         "support": {
-			"title": "联想支持网站"
+            "title": "联想支持网站"
         },
         "banner": {
             "neverChecked": "欢迎使用 System Update。",
@@ -1088,7 +1088,7 @@
 			"next": "下次更新扫描计划时间",
             "checkButton": "检查更新",
             "checking": "正在检查更新",
-            "downloading": "正在下载更新",
+			"downloading": "正在下载更新",
             "installing": "正在安装更新",
             "percent": "% 已完成",
 			"cancelCheck": "取消",
@@ -1106,55 +1106,56 @@
         },
         "updateCheckbox": {
             "rebootRequired": "需要重启",
-			"failReason": "失败原因：您的计算机未连接电源适配器。",
+            "failReason": "失败原因：您的计算机未连接电源适配器。",
             "manufacturer": "制造商：",
             "version": "版本：",
             "installVersion": "已安装的版本：",
             "downloadSize": "下载大小：",
             "diskSpaceNeeded": "需要的磁盘空间：",
             "ignore": "忽略",
-			"attend": "停止忽略",
-			"rebootRequiredTag": "需要重启",
-			"rebootDelayTag": "需要重启，需要连接电源",
-			"shutdownRequiredTag": "需要关机"
+            "attend": "停止忽略",
+            "rebootRequiredTag": "需要重启",
+            "rebootDelayTag": "需要重启，需要连接电源",
+            "shutdownRequiredTag": "需要关机",
+            "dependedPackage": "Depended Package"
         },
         "availableUpdates": {
             "title": "可用更新",
-			"description": "这些软件包包含对计算机的正常运行至关重要的更新。关键更新有助于使您的计算机更安全、更可靠，请尽快安装。推荐更新和可选更新有助于使您的软件保持最新，以及使您的计算机保持最佳运行状态。",
+            "description": "这些软件包包含对计算机的正常运行至关重要的更新。关键更新有助于使您的计算机更安全、更可靠，请尽快安装。推荐更新和可选更新有助于使您的软件保持最新，以及使您的计算机保持最佳运行状态。",
             "installAllUpdates": "安装所有更新",
-			"installSuccessHeader": "已成功安装所有更新",
-			"installFailHeader": "某些更新未成功安装",
-			"installFailDescription": "下载和安装这些更新的过程中发生了问题。请确保您处于联网状态，且安装更新的过程中不要关闭计算机。",
+            "installSuccessHeader": "已成功安装所有更新",
+            "installFailHeader": "某些更新未成功安装",
+            "installFailDescription": "下载和安装这些更新的过程中发生了问题。请确保您处于联网状态，且安装更新的过程中不要关闭计算机。",
             "optionalUpdates": "可选更新",
             "installSelectedUpdates": "安装所选更新"
         },
         "installationHistory": {
             "name": "名称",
             "sortByDate": "按日期排序",
-			"packageSize": "大小：",
+            "packageSize": "大小：",
             "releaseDate": "发布日期：",
             "showAll": "显示所有",
-			"noInstallationHistory": "无历史安装记录"
+            "noInstallationHistory": "无历史安装记录"
         },
         "statusCodeMessage": {
-			"commonFailure": "检索更新时遇到问题。请稍后重试。",
-			"upToDate": "无可用更新。系统处于最新状态。",
+            "commonFailure": "检索更新时遇到问题。请稍后重试。",
+            "upToDate": "无可用更新。系统处于最新状态。",
             "egatherException": "收集用户信息时出错。",
             "gatheringUserInfoException": "收集用户信息时出错。",
-			"certificateValidationException": "服务器验证失败。请稍后重试。",
+            "certificateValidationException": "服务器验证失败。请稍后重试。",
             "downloadException": "下载更新时发生错误。",
-			"connectException": "无法连接到服务器。",
+            "connectException": "无法连接到服务器。",
             "notEnoughDiskSpace": "磁盘空间不足，无法执行当前任务。",
             "proxyAuthenticationException": "代理服务器用户名或密码不正确。",
             "proxyConnectionException": "无法连接到代理服务器。",
-			"autoScriptEvaluationException": "校验配置脚本时发生错误。",
+            "autoScriptEvaluationException": "校验配置脚本时发生错误。",
             "localRepositoryConnectionFailureException": "无法连接到本地存储库。",
             "localRepositoryDatabaseException": "未能找到本地存储库或者该存储库已损坏。",
             "networkInterruptedException": "系统更新服务器当前不可用。请稍后重试。",
             "helpCenterInvalidServerException": "系统更新服务器无效。请稍后重试。",
             "catalogNotFoundException": "没有找到适用于您的系统的更新。",
-			"catalogCrcErrorException": "服务器的配置文件正在更新。请稍后重试。",
-			"catalogErrorException": "在系统更新服务器上检测到您的更新配置有错。请稍后重试。",
+            "catalogCrcErrorException": "服务器的配置文件正在更新。请稍后重试。",
+            "catalogErrorException": "在系统更新服务器上检测到您的更新配置有错。请稍后重试。",
             "fileNotFoundException": "未找到文件。"
         }
     },
@@ -1167,15 +1168,14 @@
         "protected": "受保护",
         "notProtected": "不受保护",
         "myDevice": "My Device",
-        "allDevice": "All Devices",
         "secure": "SECURE",
         "needAttention": "NEEDS ATTENTION",
         "manageAccount": "Manage Account",
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrate to protect all of your devices",
+        "trialExpired": "Trial Expired",
+        "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
         "protectAllDevices": "Protect all of your devices",
@@ -1299,9 +1299,7 @@
             "maliciousNetwork": "本月阻止了您的计算机加入 {{maliciousWifi}} 个恶意网络。",
             "good": "良好",
             "malicious": "恶意",
-            "suspicious": "可疑",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "可疑"
         },
         "antivirus": {
             "common": {
@@ -1739,7 +1737,7 @@
                 },
                 "span10": {
                     "line1": "如果运行的是 ",
-                    "line2": "Windows 8 64",
+                    "line2": 64,
                     "line3": " 位版本，",
                     "line4": "“项目”标题下的",
                     "line5": "“系统类型”",
@@ -1904,7 +1902,7 @@
     "welcometutorial": {
         "description": "Vantage使您可以轻松更新驱动程序，运行诊断程序，请求支持以及了解您的设备。快速定制您的体验，并根据您的需求找到有用的信息。",
         "bullets1": "使用Vantage仪表板查看系统的状态。",
-        "bullets2": "安全顾问使您的安全管理变得简单 (在选定系统上可用)。",
+        "bullets2": "安全顾问使您的安全管理变得简单（在选定系统上可用)。",
         "bullets3": "自动更新可使您的设备保持最佳状态 (在选定系统上可用)。",
         "subtitle1": "你将如何使用你的设备？",
         "subtitle2": "告诉我们您的兴趣",

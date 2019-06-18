@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, OnDestroy, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, OnDestroy, ElementRef, Output, EventEmitter, NgZone } from '@angular/core';
 import { CameraDetail, ICameraSettingsResponse, CameraFeatureAccess } from 'src/app/data-models/camera/camera-detail.model';
 import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
@@ -35,6 +35,10 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	private oMediaCapture: any;
 	private visibilityChange: any;
 
+	public cameraErrorTitle: string;
+	public cameraErrorDescription: string;
+	public isCameraInErrorState = false;
+
 	@ViewChild('cameraPreview') set content(content: ElementRef) {
 		// when camera preview video element is visible then start camera feed
 		this.cameraPreview = content;
@@ -48,7 +52,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	constructor(
 		public cameraFeedService: CameraFeedService,
 		public baseCameraDetail: BaseCameraDetail,
-		private vantageShellService: VantageShellService
+		private vantageShellService: VantageShellService,
+		private ngZone: NgZone
 	) {
 		this.Windows = vantageShellService.getWindows();
 		this.Capture = this.Windows.Media.Capture;
@@ -126,6 +131,18 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 					self.oMediaCapture.addEventListener('failed', (error) => {
 						console.log('failed to capture camera', error);
 						self.cleanupCameraAsync();
+
+						this.ngZone.run(() => {
+							this.isCameraInErrorState = true;
+							// Camera is in Use
+							if (error.code === 3222091524) {
+								this.cameraErrorTitle = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.inUseTitle';
+								this.cameraErrorDescription = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.inUseDescription';
+							} else {
+								this.cameraErrorTitle = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.loadingFailedTitle';
+								this.cameraErrorDescription = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.loadingFailedDescription';
+							}
+						});
 					});
 
 					const settings = new self.Capture.MediaCaptureInitializationSettings();
@@ -149,10 +166,12 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	}
 
 	startPreviewAsync() {
-		const previewUrl = URL.createObjectURL(this.oMediaCapture);
-		this._video = this.cameraPreview.nativeElement;
-		this._video.src = previewUrl;
-		this._video.play();
+		this.ngZone.run(() => {
+			const previewUrl = URL.createObjectURL(this.oMediaCapture);
+			this._video = this.cameraPreview.nativeElement;
+			this._video.src = previewUrl;
+			this._video.play();
+		});
 	}
 
 	stopPreview() {

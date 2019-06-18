@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -377,7 +377,15 @@
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
-                }
+                },
+                "question1": "Do you like the new style of Vantage?",
+                "question2": "Do you think the performance is acceptable?",
+                "question3": "Would you use the application more often in the future?",
+                "yes": "Yes",
+                "no": "No",
+                "tips1": "Please leave any additional comments",
+                "sendFeedback": "Send Feedback",
+                "submitScreenShot": "Submit Screen Shot"
             }
         },
         "quickSettings": {
@@ -557,20 +565,12 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter",
+                        "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "ACAdapterNotSupported": {
                         "title": "AC adapter not supported.",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
@@ -598,9 +598,9 @@
                     "title": "Valores de energía inteligente",
                     "subtitle": "ENFRIADO INTELIGENTE",
                     "subtitle1": "Batería y silenciosa",
-                    "description1": "Esta característica ajusta en forma dinámica los valores térmicos a sus necesidades.",
+                    "description1": "Esta característica ajusta en forma dinámica los valores térmicos a sus necesidades.Cuando está activado, ajusta los valores para mantener el dispositivo más fresco o silencioso mientras está en espera o en reposo. De lo contrario, optimiza el rendimiento mientras el dispositivo se encuentre en una superficie estable. Cuando se desactiva, puede configurar manualmente la prioridad térmica.",
                     "description2": "El Enfriado inteligente ajusta la velocidad del ventilador, la máxima temperatura de la superficie y el rendimiento.Esta característica tiene los siguientes modos y ahora está accesible mediante el control de rendimiento de Windows.",
-                    "description3": "El Enfriado inteligente equilibra automáticamente el rendimiento térmico a sus necesidades.",
+                    "description3": "El Enfriado inteligente equilibra automáticamente el rendimiento térmico a sus necesidades.La característica de Enfriado inteligente ajusta la configuración de rendimiento para proporcionar una superficie más fría, para su comodidad, cuando el sistema portátil está siendo sostenido. Cuando el dispositivo se encuentra sobre la superficie de un sistema de sobremesa, el Enfriado inteligente optimiza el rendimiento.",
                     "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
                     "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
                     "readMore": "Leer más.",
@@ -683,7 +683,7 @@
                     "batteryThreshold": {
                         "title": "Umbral de carga de la batería",
                         "description": "Si utiliza principalmente el sistema con el adaptador de alimentación de CA conectado y solo utiliza la batería esporádicamente,puede aumentar la duración de la batería al configurar el valor máximo de carga a un valor inferior a 100 %. Esto resulta útil porque las baterías que se usan esporádicamente poseen una vida útil mayor cuando se mantienen con una carga inferior a la carga total.",
-                        "tooltip": "Si la batería se carga actualmente por sobre el umbral de detención de carga, desconecte la alimentación hasta que la batería se descargue o esté bajo el umbral de detención de carga.",
+                        "tooltip": "Si la batería se carga actualmente por sobre el umbral de detención de carga, desconecte la alimentación hasta que la batería se descargue o esté bajo el umbral de detención de carga.Según el estado de la batería (antigua o nueva), el punto exacto de inicio o detención de la carga podría variar en hasta 2 puntos porcentuales. Si habilita la característica, se recomienda realizar ocasionalmente un Restablecimiento del indicador de batería para asegurar la realización de un informe exacto del estado de la batería.",
                         "note": "Note",
                         "readMoreText": "Read more.",
                         "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
@@ -693,7 +693,7 @@
                         },
                         "popup": {
                             "title": "Habilitar umbral de carga de batería",
-                            "description1": "Activar una carga de batería personalizada permitirá que la duración general de la batería sea más prolongada mientras utiliza este dispositivo.",
+                            "description1": "Activar una carga de batería personalizada permitirá que la duración general de la batería sea más prolongada mientras utiliza este dispositivo.Sin embargo, si la batería no está cargada completamente, el tiempo de duración de esta en funcionamiento será menor.",
                             "description2": "Para activar completamente esta característica, desconecte la máquina ydeje que la batería se agote o quede bajo el umbral de detención de carga.",
                             "enable": "HABILITAR",
                             "cancel": "CANCELAR"
@@ -711,16 +711,16 @@
                     },
                     "conservationMode": {
                         "title": "Modalidad de conservación",
-                        "description": "Esta función es útil para extender la duración de la batería cuando está enchufada.",
+                        "description": "Esta función es útil para extender la duración de la batería cuando está enchufada. <br>Cuando esta modalidad está habilitada, la batería solo se cargará al 55-60 % de la capacidad y la duración de la batería se puede maximizar. Sin embargo, esto reducirá el tiempo que podrá utilizar el sistema después de haberlo desconectado de la fuente de alimentación de CA.",
                         "tooltip": {
                             "line1": "Esta función es útil para extender la duración de la batería cuando está enchufada.",
-                            "line2": "Cuando esta modalidad está habilitada, la batería solo se cargará al 55-60 % de la capacidad y la duración de la batería se puede maximizar.",
-                            "line3": "Nota: las modalidades de Carga express y de Conservación no pueden funcionar al mismo tiempo."
+                            "line2": "Cuando esta modalidad está habilitada, la batería solo se cargará al 55-60 % de la capacidad y la duración de la batería se puede maximizar. Sin embargo, esto reducirá el tiempo que podrá utilizar el sistema después de haberlo desconectado de la fuente de alimentación de CA.",
+                            "line3": "Nota: las modalidades de Carga express y de Conservación no pueden funcionar al mismo tiempo.SI una de las modalidades está encendida, la otra se apagará automáticamente."
                         }
                     },
                     "airPlanePower": {
                         "title": "Modo de energía avión",
-                        "description": "Proteja la toma de aliment. de CA del avión controlando el consumo de energía de su sist."
+                        "description": "Proteja la toma de aliment. de CA del avión controlando el consumo de energía de su sist.Cuando está habilitada la modalidad de energía Avión, el sistema reduce el consumo de energía limitando la frecuencia de carga de la batería y el rendimiento del sistema."
                     }
                 },
                 "energyStar": {
@@ -731,7 +731,7 @@
             "audio": {
                 "title": "Audio",
                 "subtitle": "Valores de audio",
-                "description": "Esta sección le permite optimizar automáticamente o configurar",
+                "description": "Esta sección le permite optimizar automáticamente o configurarcompletamente los valores de audio de forma manual, como por ejemplo los valores Dolby, de micrófono, etc.",
                 "audioSmartsettings": {
                     "title": "Valores de audio inteligente",
                     "subtitle": "CONFIGURACIÓN BASADA EN LA APLICACIÓN",
@@ -955,7 +955,7 @@
                             "medium": "Medio",
                             "slow": "Lento"
                         },
-                        "toolTipContent": "Seleccione la opción que desee para bloquear la pantalla a una velocidad rápida/intermedia/lenta cuando detecte su presencia."
+                        "toolTipContent": "Seleccione la opción que desee para bloquear la pantalla a una velocidad rápida/intermedia/lenta cuando detecte su presencia.Sin embargo, el tiempo en el que se bloqueará la pantalla también se ve afectado por la situación real del usuario, la capacidad del sensor y los valores de tiempo de espera de pantalla de Windows. Por lo tanto, recomendamos encarecidamente que bloquee el sistema inmediatamente antes de salir."
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -968,7 +968,7 @@
                 },
                 "note": {
                     "description1": "Esta característica se basa en Windows Hello.Asegúrese de que el reconocimiento facial esté activado en los valores de Windows.",
-                    "description2": "La característica utiliza sensores y la cámara para detectar su presencia.",
+                    "description2": "La característica utiliza sensores y la cámara para detectar su presencia.Sin embargo, la característica NO recopila, guarda o divulga datos personales o de imagen.",
                     "description3": "1. Si el equipo está en modalidad de lienzo, tableta o pedestal,estas características podrían no funcionar correctamente.",
                     "description4": "2. Si el sistema se encuentra en hibernación o se apagó.El inicio de sesión de con cámara IR automático no funcionará.",
                     "description5": "3. Ajuste la pantalla del sistema en un ángulo adecuadode forma que la cámara IR pueda reconocer su rostro para el inicio de sesión automático."
@@ -1052,10 +1052,10 @@
         "popup": {
             "reboot": "Rearr.",
             "shutdown": "Apagar",
-            "rebootForceMsg": "Las actualizaciones seleccionadas causarán que el sistema rearranque automáticamente después de la instalación.",
-            "shutdownForceMsg": "Las actualizaciones seleccionadas causarán que el sistema se apague automáticamente después de la instalación.",
-            "rebootDelayedMsg": "Las actualizaciones seleccionadas causarán que el sistema se reinicie después de la instalación. No apague el sistema ni extraiga la fuente de alimentación o los accesorios durante la instalación de las actualizaciones. Le recomendamos guardar su trabajo para prepararse para el reinicio del sistema.",
-            "rebootRequiredMsg": "Para poder instalar satisfactoriamente las actualizaciones, es necesario reiniciar el sistema para garantizar que todo funcione correctamente.",
+            "rebootForceMsg": "Las actualizaciones seleccionadas causarán que el sistema rearranque automáticamentedespués de la instalación.",
+            "shutdownForceMsg": "Las actualizaciones seleccionadas causarán que el sistema se apagueautomáticamente después de la instalación.",
+            "rebootDelayedMsg": "Las actualizaciones seleccionadas causarán que el sistema se reinicie después de la instalación. No apague el sistema ni extraiga la fuente de alimentación o los accesoriosdurante la instalación de las actualizaciones. Le recomendamos guardar su trabajo para prepararse para el reinicio del sistema.",
+            "rebootRequiredMsg": "Para poder instalar satisfactoriamente las actualizaciones, es necesarioreiniciar el sistema para garantizar que todo funcione correctamente.",
             "okayButton": "Aceptar",
             "cancelButton": "Cancelar",
             "rebootButton": "REINICIAR AHORA",
@@ -1071,7 +1071,7 @@
             },
             "recommended": {
                 "title": "Actualizaciones recomendadas",
-                "tooltip": "Las actualizaciones del controlador recomendadas mantienen el equipo funcionando con un rendimiento óptimo."
+                "tooltip": "Las actualizaciones de controladores recomendadas hacen que su computadora funcione con un rendimiento óptimo."
             },
             "windows": {
                 "title": "Actualizaciones de Windows",
@@ -1086,70 +1086,21 @@
             "title": "Un sistema actualizado es un sistema en buen estado.",
             "last": "La última actualización fue",
             "next": "El siguiente escaneo de actualización está programado en",
-            "checkButton": "COMPROBAR ACTUALIZACIONES ",
+            "checkButton": "COMPROBAR ACTUALIZACIONES",
             "checking": "Comprobando si hay actualizaciones",
-            "downloading": "Descargando actualizaciones",
+            "downloading": "Descarga de actualizaciones completa",
             "installing": "Instalación de actualizaciones",
             "percent": "% completado",
             "cancelCheck": "Cancelar comprobación",
             "cancelUpdates": "CANCELAR ACTUALIZACIONES",
             "available": "Actualizaciones disponibles",
-            "description": "Estos paquetes incluyen actualizaciones de controladores de hardware y otros programas de utilidad del sistema que son críticas para el correcto funcionamiento del equipo. Las actualizaciones críticas también son importantes para proteger datos del sistema y se deben instalar tan pronto como estén disponibles. Si no se instalan estos paquetes, se podría producir la pérdida de datos, un funcionamiento incorrecto del sistema o una anomalía de hardware.",
+            "description": "Estos paquetes incluyen actualizaciones de controladores de hardware yotros programas de utilidad del sistema que son críticas para el correcto funcionamiento del equipo. Las actualizaciones críticas también son importantes para proteger datos del sistema y se deben instalar tan pronto como estén disponibles. Si no se instalan estos paquetes, se podría producir la pérdida de datos, un funcionamiento incorrecto del sistema o una anomalía de hardware.",
             "installButton": "INSTALAR TODAS LAS ACTUALIZACIONES",
             "result": {
                 "success": "Todas las actualizaciones se instalaron correctamente",
                 "fail": {
                     "title": "Algunas actualizaciones no se instalaron correctamente.",
-                    "description": "Algo salió mal durante la descarga o instalación de estas actualizaciones. Asegúrese de que el sistema esté en línea y no apague el sistema cuando instale actualizaciones."
-                }
-            },
-            "smartAssist": {
-                "title": "Smart Assist",
-                "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
-                "jumpTo": {
-                    "title": "JUMP TO SETTINGS",
-                    "security": "Security",
-                    "screen": "Screen",
-                    "media": "Media",
-                    "voice": "Voice"
-                },
-                "intelligentSecurity": {
-                    "title": "Intelligent Security",
-                    "readMore": "Read more",
-                    "HumanPresenceDetection": {
-                        "title": "Human Presence Detection"
-                    },
-                    "autoIrCameraLogin": {
-                        "title": "Zero Touch Login",
-                        "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it. Auto IR camera login"
-                    },
-                    "autoScreenLock": {
-                        "title": "Auto screen lock",
-                        "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
-                        "autoScreenLockTimer": {
-                            "title": "AUTO SCREEN LOCK TIMER",
-                            "radioButton": {
-                                "fast": "Fast",
-                                "medium": "Medium",
-                                "slow": "Slow"
-                            },
-                            "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
-                        }
-                    },
-                    "distanceSensitivityAdjusting": {
-                        "title": "Distance sensitivity adjusting"
-                    },
-                    "note": {
-                        "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-                        "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect, save, of leak any personal data or image.",
-                        "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-                        "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
-                        "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
-                    },
-                    "WindowsLink": {
-                        "goToWindowsHello": "Go to Windows Hello Settings",
-                        "screenTimeoutSettings": "Go to Screen timeout settings"
-                    }
+                    "description": "Algo salió mal durante la descarga o instalación de estas actualizaciones.Asegúrese de que el sistema esté en línea y no apague el sistema cuando instale actualizaciones."
                 }
             }
         },
@@ -1217,15 +1168,14 @@
         "protected": "Protected",
         "notProtected": "Not Protected",
         "myDevice": "My Device",
-        "allDevice": "All Devices",
         "secure": "SECURE",
         "needAttention": "NEEDS ATTENTION",
         "manageAccount": "Manage Account",
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrate to protect all of your devices",
+        "trialExpired": "Trial Expired",
+        "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
         "protectAllDevices": "Protect all of your devices",
@@ -1349,9 +1299,7 @@
             "maliciousNetwork": "Impidió que su equipo se uniera a {{maliciousWifi}} redes malintencionadas este mes.",
             "good": "BIEN",
             "malicious": "MALINTENCIONADO",
-            "suspicious": "SOSPECHOSO",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "SOSPECHOSO"
         },
         "antivirus": {
             "common": {

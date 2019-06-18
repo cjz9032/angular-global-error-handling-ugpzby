@@ -284,7 +284,9 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 							},
 							{
 								type: 'accountBadge',
-								status: undefined,
+								status: 'disabled',
+								text: 'homeSecurity.upgrade',
+								onClick: this.emitUpgradeAccount.bind(this),
 							},
 							{
 								type: 'trialBadge',
@@ -383,12 +385,16 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 		if (this.homeSecurityMockService.id < 5) {
 			this.homeSecurityMockService.id++;
 		} else { this.homeSecurityMockService.id = 0; }
-		this.homeSecurityMockService.getConnectedHomeSecurity().account.state = <CHSAccountState>state[i];
+		const connectedHomeSecurity: any = this.homeSecurityMockService.getConnectedHomeSecurity();
+		connectedHomeSecurity.account.state = <CHSAccountState>state[i];
+		connectedHomeSecurity.mitt.emit(EventTypes.chsEvent, connectedHomeSecurity);
 		this.creatViewModel();
 	}
 
 	logout() {
-		this.login ? this.login = false : this.login = true;
+		const connectedHomeSecurity: any = this.homeSecurityMockService.getConnectedHomeSecurity();
+		connectedHomeSecurity.account.lenovoId.loggedIn = !connectedHomeSecurity.account.lenovoId.loggedIn;
+		connectedHomeSecurity.mitt.emit(EventTypes.chsEvent, connectedHomeSecurity);
 		this.creatViewModel();
 	}
 

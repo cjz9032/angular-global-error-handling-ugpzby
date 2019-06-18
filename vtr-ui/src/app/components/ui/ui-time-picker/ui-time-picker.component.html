@@ -1,0 +1,46 @@
+<div class="vtr-ui-time-picker">
+	<div class="row">
+		<div class="col">
+			<div class="card">
+				<div class="card-header">
+					<div class="container-fluid">
+						<div class="row align-items-center d-flex justify-content-between py-3 pl-5">
+							<div class="time-headings">
+								<p>Hours</p>
+								<span>4</span>
+
+
+							</div>
+							<div class="time-headings">
+									<p>Minutes</p>
+									<span>15</span>
+								</div>
+								<div class="time-headings">
+										<p>AM/PM</p>
+										<span>PM</span>
+									</div>
+
+							<div class="col-auto px-3"
+								*ngIf="allowCollapse">
+								<div class="collapse-control"
+
+									(click)="onToggle()">
+									<div class="toggle-icon">
+											<fa-icon  *ngIf="isCollapsed"
+											[icon]="['fal', 'chevron-down']"></fa-icon>
+										<fa-icon *ngIf="!isCollapsed"
+											[icon]="['fal', 'chevron-up']"></fa-icon>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-body"
+					[ngbCollapse]="isCollapsed">
+					<ng-content></ng-content>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -377,7 +377,15 @@
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
-                }
+                },
+                "question1": "Do you like the new style of Vantage?",
+                "question2": "Do you think the performance is acceptable?",
+                "question3": "Would you use the application more often in the future?",
+                "yes": "Yes",
+                "no": "No",
+                "tips1": "Please leave any additional comments",
+                "sendFeedback": "Send Feedback",
+                "submitScreenShot": "Submit Screen Shot"
             }
         },
         "quickSettings": {
@@ -557,20 +565,12 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter",
+                        "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "ACAdapterNotSupported": {
                         "title": "AC adapter not supported.",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
@@ -598,9 +598,9 @@
                     "title": "Virrankulutuksen älykkäät asetukset",
                     "subtitle": "ÄLYKÄS JÄÄHDYTYS",
                     "subtitle1": "Akku ja hiljainen",
-                    "description1": "Tämä ominaisuus muuttaa lämpöasetuksia dynaamisesti käyttäjän tarpeisiin sopiviksi.",
-                    "description2": "Älykäs jäähdytys säätää tuulettimen kierrosnopeutta, tietokoneen pinnan enimmäislämpötilaa ja suorituskykyä.",
-                    "description3": "Älykäs jäähdytys tasapainottaa automaattisesti lämpösuorituskyvyn käyttäjän tarpeisiin sopivaksi.",
+                    "description1": "Tämä ominaisuus muuttaa lämpöasetuksia dynaamisesti käyttäjän tarpeisiin sopiviksi.Kun ominaisuus on käytössä, laite pysyy viileänä esimerkiksi käyttäjän pidellessä sitä tai laitteen ollessa joutoajalla. Muulloin se optimoi suorituskyvyn, kun laite on vakaalla alustalla. Kun ominaisuus ei ole käytössä, käyttäjä voi määrittää lämpöprioriteetin itse.",
+                    "description2": "Älykäs jäähdytys säätää tuulettimen kierrosnopeutta, tietokoneen pinnan enimmäislämpötilaa ja suorituskykyä.Tämän ominaisuuden kolme toimintatilaa on lueteltu jäljempänä. Sitä käytetään Windowsissa näkyvällä liukusäätimellä, jolla ohjataan suorituskykyä.",
+                    "description3": "Älykäs jäähdytys tasapainottaa automaattisesti lämpösuorituskyvyn käyttäjän tarpeisiin sopivaksi.Älykäs jäähdytys viilentää kannettavan tietokoneen pintaa muuttamalla suorituskyvyn asetuksia, jotta käyttäjän on miellyttävä pidellä laitetta. Kun laite on asetettu työpöydälle, toiminto optimoi suorituskyvyn.",
                     "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
                     "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
                     "readMore": "Lue lisää.",
@@ -631,7 +631,7 @@
                             "mode1": "Hiljainen tila",
                             "mode2": "Tasapainotettu tila",
                             "mode3": "Suorituskykytila",
-                            "line1": "Liukusäädin on ääriasennossa vasemmalla.",
+                            "line1": "Liukusäädin on ääriasennossa vasemmalla.Tuulettimen kierrosnopeutta hidastetaan ja tietokoneen suorituskykyä vähennetään, joten se pysyy viileämpänä ja toimii hiljaisemmin. Samalla akku kestää pidempään.",
                             "line2": "Liukusäädin on keskellä.Tuulettimen kierrosnopeus ja tietokoneen suorituskyky tasapainotetaan dynaamisesti parhaan käyttökokemuksen varmistamiseksi.",
                             "line3": "Liukusäädin on ääriasennossa oikealla. Tuulettimen kierrosnopeus ja sallittu pinnan lämpötila ovat suurempia parhaan suorituskyvyn turvaamiseksi.",
                             "line4": "More info"
@@ -682,8 +682,8 @@
                     "title": "Akun asetukset",
                     "batteryThreshold": {
                         "title": "Akun varauksen kynnysarvo",
-                        "description": "Jos käytät tietokonetta yleensä verkkovirralla verkkolaite kytkettynä ja vain satunnaisesti akkuvirralla,voit pidentää akun käyttöikää määrittämällä varauksen enimmäisarvoksi alle 100 prosenttia.",
-                        "tooltip": "Jos akkua ladataan niin, että sen varaus ylittää latauksen lopettamisen kynnysarvon, pura akun varaus vähintään latauksen lopettamisen kynnysarvoon asti irrottamalla tietokone verkkovirrasta.Akun tilan (vanha tai uusi) mukaan latauksen tarkat aloitus- ja lopetuspisteet saattavat vaihdella jopa kaksi prosenttiyksikköä. ",
+                        "description": "Jos käytät tietokonetta yleensä verkkovirralla verkkolaite kytkettynä ja vain satunnaisesti akkuvirralla,voit pidentää akun käyttöikää määrittämällä varauksen enimmäisarvoksi alle 100 prosenttia. Tästä on hyötyä, koska harvoin käytetyt akut kestävät pidempään, kun akkuja säilytetään niin, että niiden varaus on alle 100 prosenttia.",
+                        "tooltip": "Jos akkua ladataan niin, että sen varaus ylittää latauksen lopettamisen kynnysarvon, pura akun varaus vähintään latauksen lopettamisen kynnysarvoon asti irrottamalla tietokone verkkovirrasta.Akun tilan (vanha tai uusi) mukaan latauksen tarkat aloitus- ja lopetuspisteet saattavat vaihdella jopa kaksi prosenttiyksikköä. Jos otat tämän toiminnon käyttöön, akkumittari on suositeltavaa nollata säännöllisesti akun toimintakunnon tarkan raportoinnin varmistamiseksi.",
                         "note": "Note",
                         "readMoreText": "Read more.",
                         "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
@@ -693,7 +693,7 @@
                         },
                         "popup": {
                             "title": "Ota akun varauksen kynnysarvo käyttöön",
-                            "description1": "Kun otat mukautetun akun varauksen käyttöön, tämän laitteen akku pysyy toimintakunnossa pitempään.",
+                            "description1": "Kun otat mukautetun akun varauksen käyttöön, tämän laitteen akku pysyy toimintakunnossa pitempään.Akun varauksen kesto käytön aikana kuitenkin lyhenee, koska akku ei lataudu täyteen.",
                             "description2": "Jotta voit ottaa tämän toiminnon täysin käyttöön, irrota laite jaanna akun tyhjentyä latauksen lopettamisen kynnysarvoon asti tai sen alle.",
                             "enable": "OTA KÄYTTÖÖN",
                             "cancel": "PERUUTA"
@@ -711,16 +711,16 @@
                     },
                     "conservationMode": {
                         "title": "Säästötila",
-                        "description": "Tämä toiminto on hyödyllinen akun käyttöiän pidentämiseen, kun tietokone on verkkovirrassa.",
+                        "description": "Tämä toiminto on hyödyllinen akun käyttöiän pidentämiseen, kun tietokone on verkkovirrassa. <br>Kun tämä tila on käytössä, akku ladataan vain 55 - 60 %:iin kapasiteetista, ja akun käyttöikää voidaan pidentää. Tämä lyhentää kuitenkin tietokoneen käyttöikää sen jälkeen, kun se on irrotettu verkkovirtalähteestä.",
                         "tooltip": {
                             "line1": "Tämä toiminto on hyödyllinen akun käyttöiän pidentämiseen, kun tietokone on verkkovirrassa.",
-                            "line2": "Kun tämä tila on käytössä, akku ladataan vain 55 - 60 %:iin kapasiteetista, ja akun käyttöikää voidaan pidentää.",
-                            "line3": "Huomautus: Pikalataus ja säästötila eivät toimi samanaikaisesti."
+                            "line2": "Kun tämä tila on käytössä, akku ladataan vain 55 - 60 %:iin kapasiteetista, ja akun käyttöikää voidaan pidentää. Tämä lyhentää kuitenkin tietokoneen käyttöikää sen jälkeen, kun se on irrotettu verkkovirtalähteestä.",
+                            "line3": "Huomautus: Pikalataus ja säästötila eivät toimi samanaikaisesti.Jos toinen tila otetaan käyttöön, toinen tila poistetaan käytöstä automaattisesti."
                         }
                     },
                     "airPlanePower": {
                         "title": "Lentokonevirtatila",
-                        "description": "Suojaa lentokoneen pistorasiaa rajoittamalla tietokoneesi virrankulutusta."
+                        "description": "Suojaa lentokoneen pistorasiaa rajoittamalla tietokoneesi virrankulutusta.Kun lentokonevirtatila on käytössä, tietokone vähentää virrankulutusta rajoittamalla akun latausta ja järjestelmän suorituskykyä."
                     }
                 },
                 "energyStar": {
@@ -731,7 +731,7 @@
             "audio": {
                 "title": "Äänitoiminnot",
                 "subtitle": "Ääniasetukset",
-                "description": "Tämän osan avulla voit automaattisesti optimoida tai",
+                "description": "Tämän osan avulla voit automaattisesti optimoida taimäärittää ääniasetukset manuaalisesti (esimerkiksi Dolby-asetukset, mikrofoni jne.).",
                 "audioSmartsettings": {
                     "title": "Älykkäät ääniasetukset",
                     "subtitle": "SOVELLUSPOHJAISET ASETUKSET",
@@ -861,7 +861,7 @@
                     "url": "Siirry Windowsin yksityisyysasetuksiin",
                     "cameraPrivacy": {
                         "title": "Kameran yksityisyystila",
-                        "tooltip": "Kamera ei lähetä videokuvaa, kun yksityisyysasetus on käytössä."
+                        "tooltip": "Kamera ei lähetä videokuvaa, kun yksityisyysasetus on käytössä. Ota tämä asetus käyttöön vain silloin, kun et haluat jakaa kuvia muiden kanssa videopuhelun aikana."
                     },
                     "camera": {
                         "title": "Kamera",
@@ -922,7 +922,7 @@
         },
         "smartAssist": {
             "title": "Smart Assist",
-            "description": "Lenovon älykäs tunnistustoiminto yhdistää tietokoneen tunnistimia toimintojen tunnistamista",
+            "description": "Lenovon älykäs tunnistustoiminto yhdistää tietokoneen tunnistimia toimintojen tunnistamista ja optimaalisen virranhallinnan asetusten muokkaamista varten, sekä yksityissuojasi parantamiseksi.",
             "jumpTo": {
                 "title": "SIIRRY ASETUKSIIN",
                 "security": "Suojaus",
@@ -947,7 +947,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Zero Touch -lukitus",
-                    "caption": "Tämä toiminto himmentää näytön ja lukitsee tietokoneen, kun käyttäjää ei havaita.",
+                    "caption": "Tämä toiminto himmentää näytön ja lukitsee tietokoneen, kun käyttäjää ei havaita.Se voi myös pienentää tietokoneen luvattoman käytön mahdollisuuksia, kun käyttäjä jättää tietokoneen valvomatta tai lukitsematta. Se pienentää myös virrankulutusta asettamalla järjestelmän nykyaikaiseen valmiustilaan, kun käyttäjää ei havaita.",
                     "autoScreenLockTimer": {
                         "title": "AUTOMAATTISEN NÄYTÖN LUKITUKSEN AJASTIN",
                         "radioButton": {
@@ -955,7 +955,7 @@
                             "medium": "Keskikokoinen",
                             "slow": "Hidas"
                         },
-                        "toolTipContent": "Valitse haluamasi vaihtoehto, jos haluat lukita näytön nopeasti, keskinopeasti tai hitaasti, kun läsnäoloasi ei havaita."
+                        "toolTipContent": "Valitse haluamasi vaihtoehto, jos haluat lukita näytön nopeasti, keskinopeasti tai hitaasti, kun läsnäoloasi ei havaita.Aikaan, jolloin näyttö on lukittuna, vaikuttaa myös todellinen käyttäjäskenaario, tunnistimen toimintakyky ja Windowsin näytön aikakatkaisuasetukset. Suosittelemme näin ollen, että lukitset järjestelmän ennen, kuin lähdet tietokoneen luota."
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -967,11 +967,11 @@
                     }
                 },
                 "note": {
-                    "description1": "Tämä ominaisuus hyödyntää Windows Hellota.",
-                    "description2": "Tämä ominaisuus käyttää tunnistimia ja kameraa läsnäolon havaitsemiseksi.",
+                    "description1": "Tämä ominaisuus hyödyntää Windows Hellota.Varmista, että kasvojentunnistus on käytössä Windowsin asetuksissa.",
+                    "description2": "Tämä ominaisuus käyttää tunnistimia ja kameraa läsnäolon havaitsemiseksi.Toiminto EI kuitenkaan kerää, tallenna tai paljasta mitään henkilökohtaisia tietoja tai kuvia.",
                     "description3": "1. Jos tietokone on kolmio-, taitos- tai tauluasennossa,nämä ominaisuudet eivät ehkä toimi oikein.",
                     "description4": "2. Jos tietokone on horrostilassa tai siitä on katkaistu virta.Automaattinen infrapunakameran sisäänkirjaus ei toimi.",
-                    "description5": "3. Muuta tietokoneen näytön kulmaa"
+                    "description5": "3. Muuta tietokoneen näytön kulmaaniin, että infrapunakamera voi tunnistaa kasvosi automaattista sisäänkirjautumista varten."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Siirry Windows Hello -asetuksiin",
@@ -1052,10 +1052,10 @@
         "popup": {
             "reboot": "Käynnistä uudelleen",
             "shutdown": "Sammutus",
-            "rebootForceMsg": "Valitsemasi päivitykset aiheuttavat sen, että asennuksen jälkeen järjestelmä käynnistetään uudelleen automaattisesti.",
-            "shutdownForceMsg": "Valitsemasi päivitykset aiheuttavat sen, että asennuksen jälkeen järjestelmä sammutetaan automaattisesti.",
-            "rebootDelayedMsg": "Valitsemasi päivitykset aiheuttavat sen, että järjestelmä käynnistetään uudelleen asennuksen jälkeen. Älä katkaise järjestelmän virtaa tai poista virtalähdettä tai lisävarusteita päivitysten asennuksen aikana. Suosittelemme tallentamaan työt, jotta järjestelmä voidaan valmistella uudelleenkäynnistymistä varten.",
-            "rebootRequiredMsg": "Jotta päivitysten asennus onnistuisi, tietokone on käynnistettävä uudelleen, jotta kaikki toimii turvallisesti ja sujuvasti.",
+            "rebootForceMsg": "Valitsemasi päivitykset aiheuttavat sen, että asennuksen jälkeen järjestelmä käynnistetäänuudelleen automaattisesti.",
+            "shutdownForceMsg": "Valitsemasi päivitykset aiheuttavat sen, että asennuksen jälkeen järjestelmäsammutetaan automaattisesti.",
+            "rebootDelayedMsg": "Valitsemasi päivitykset aiheuttavat sen, että järjestelmä käynnistetään uudelleen asennuksen jälkeen.Älä katkaise järjestelmän virtaa tai poista virtalähdettä tai lisävarusteita päivitysten asennuksen aikana. Suosittelemme tallentamaan työt, jotta järjestelmä voidaan valmistella uudelleenkäynnistymistä varten.",
+            "rebootRequiredMsg": "Jotta päivitysten asennus onnistuisi, tietokone onkäynnistettävä uudelleen, jotta kaikki toimii turvallisesti ja sujuvasti.",
             "okayButton": "OK",
             "cancelButton": "Peruuta",
             "rebootButton": "KÄYNNISTÄ UUDELLEEN NYT",
@@ -1070,8 +1070,8 @@
                 "tooltip": "Välttämättömät päivitykset estävät merkittävien ongelmien, vakavien toimintahäiriöiden ja laitteistohäiriöiden syntymisen sekä tietojen vahingoittumisen."
             },
             "recommended": {
-                "title": "Suositeltavat päivitykset",
-                "tooltip": "Suositeltavat ohjainpäivitykset varmistavat, että tietokone toimii optimaalisella tavalla."
+                "title": "Suositellut päivitykset",
+                "tooltip": "Suositellut ohjainpäivitykset pitävät tietokoneen käynnissä optimaalisesti."
             },
             "windows": {
                 "title": "Windows-päivitykset",
@@ -1086,70 +1086,21 @@
             "title": "Ajan tasalla oleva järjestelmä on terve järjestelmä.",
             "last": "Edellisen kerran päivitetty",
             "next": "Seuraava päivitysten tarkistusajankohta on",
-            "checkButton": "TARKISTA PÄIVITYKSET ",
+            "checkButton": "TARKISTA PÄIVITYKSET",
             "checking": "Tarkistetaan päivityksiä",
-            "downloading": "Päivitysten nouto on meneillään",
+            "downloading": "Päivitysten nouto on valmis",
             "installing": "Päivityksiä asennetaan",
             "percent": "% valmiina",
             "cancelCheck": "Peruuta tarkistus",
             "cancelUpdates": "PERUUTA PÄIVITYKSET",
             "available": "Saatavilla olevat päivitykset",
-            "description": "Näissä paketeissa on päivityksiä laitteisto-ohjaimiin ja järjestelmätoimintoihin, jotka ovat välttämättömiä tietokoneesi toiminnan kannalta. Välttämättömät päivitykset ovat tärkeitä myös tietokoneen tietojen suojauksessa, ja välttämättömät päivitykset pitäisi asentaa heti, kun ne ovat käytettävissä. Näiden pakettien asentamatta jättäminen saattaa johtaa tietojen menetykseen, järjestelmän toimintahäiriöön tai laitteistohäiriöön.",
+            "description": "Näissä paketeissa on päivityksiä laitteisto-ohjaimiin jajärjestelmätoimintoihin, jotka ovat välttämättömiä tietokoneesi toiminnan kannalta. Välttämättömät päivitykset ovat tärkeitä myös tietokoneen tietojen suojauksessa, ja välttämättömät päivitykset pitäisi asentaa heti, kun ne ovat käytettävissä. Pakettien asentamatta jättäminen saattaa johtaa tietojen menetykseen, järjestelmän toimintahäiriöön tai laitteistohäiriöön.",
             "installButton": "ASENNA KAIKKI PÄIVITYKSET",
             "result": {
-                "success": "Kaikki päivitykset asennettiin oikein",
+                "success": "Kaikki päivitykset on asennettu oikein",
                 "fail": {
                     "title": "Joidenkin päivitysten asennus ei onnistunut.",
-                    "description": "Jokin meni vikaan näiden päivitysten latauksen tai asennuksen aikana. Varmista, että laite on verkkoyhteydessä äläkä katkaise tietokoneesta virtaa, kun asennat päivityksiä."
-                }
-            },
-            "smartAssist": {
-                "title": "Smart Assist",
-                "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
-                "jumpTo": {
-                    "title": "JUMP TO SETTINGS",
-                    "security": "Security",
-                    "screen": "Screen",
-                    "media": "Media",
-                    "voice": "Voice"
-                },
-                "intelligentSecurity": {
-                    "title": "Intelligent Security",
-                    "readMore": "Read more",
-                    "HumanPresenceDetection": {
-                        "title": "Human Presence Detection"
-                    },
-                    "autoIrCameraLogin": {
-                        "title": "Zero Touch Login",
-                        "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it. Auto IR camera login"
-                    },
-                    "autoScreenLock": {
-                        "title": "Auto screen lock",
-                        "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
-                        "autoScreenLockTimer": {
-                            "title": "AUTO SCREEN LOCK TIMER",
-                            "radioButton": {
-                                "fast": "Fast",
-                                "medium": "Medium",
-                                "slow": "Slow"
-                            },
-                            "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
-                        }
-                    },
-                    "distanceSensitivityAdjusting": {
-                        "title": "Distance sensitivity adjusting"
-                    },
-                    "note": {
-                        "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-                        "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect, save, of leak any personal data or image.",
-                        "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-                        "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
-                        "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
-                    },
-                    "WindowsLink": {
-                        "goToWindowsHello": "Go to Windows Hello Settings",
-                        "screenTimeoutSettings": "Go to Screen timeout settings"
-                    }
+                    "description": "Jokin meni vikaan näiden päivitysten latauksen tai asennuksen aikana.Varmista, että laite on verkkoyhteydessä äläkä katkaise tietokoneesta virtaa, kun asennat päivityksiä."
                 }
             }
         },
@@ -1217,15 +1168,14 @@
         "protected": "Protected",
         "notProtected": "Not Protected",
         "myDevice": "My Device",
-        "allDevice": "All Devices",
         "secure": "SECURE",
         "needAttention": "NEEDS ATTENTION",
         "manageAccount": "Manage Account",
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrate to protect all of your devices",
+        "trialExpired": "Trial Expired",
+        "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
         "protectAllDevices": "Protect all of your devices",
@@ -1349,9 +1299,7 @@
             "maliciousNetwork": "Tietokonettasi on estetty liittymästä {{maliciousWifi}} haitalliseen verkkoon tässä kuussa.",
             "good": "HYVÄ",
             "malicious": "HAITALLINEN",
-            "suspicious": "EPÄILYTTÄVIÄ",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "EPÄILYTTÄVIÄ"
         },
         "antivirus": {
             "common": {

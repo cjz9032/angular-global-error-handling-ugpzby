@@ -1,0 +1,42 @@
+@import "../../../app.theme.scss";
+
+.vtr-ui-time-picker {
+	box-shadow: 0px 0px 1.5rem 0px rgba(0, 0, 0, 0.15);
+	border-radius: 0.5rem;
+	border: 0.1rem solid rgba(0, 0, 0, 0.1);
+
+	.time-headings {
+		margin: 0 1rem;
+
+		p {
+			color: rgba(66, 78, 123, 0.4);
+			font-size: 1.4rem;
+			font-weight: 500;
+			line-height: 13px;
+		}
+
+		span {
+			color: $shade_blue;
+			font-size: 1.6rem;
+			font-weight: 500;
+			line-height: 13px;
+			text-align: center;
+			display: block;
+		}
+	}
+
+	.toggle-icon {
+		fa-icon {
+			color: #4579f0;
+			font-size: 2rem;
+		}
+	}
+
+	.card-body {
+		padding: 0;
+	}
+
+	.card-header {
+		background-color: $light;
+	}
+}

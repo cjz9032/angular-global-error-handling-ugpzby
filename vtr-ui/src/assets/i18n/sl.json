@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -377,7 +377,15 @@
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
-                }
+                },
+                "question1": "Do you like the new style of Vantage?",
+                "question2": "Do you think the performance is acceptable?",
+                "question3": "Would you use the application more often in the future?",
+                "yes": "Yes",
+                "no": "No",
+                "tips1": "Please leave any additional comments",
+                "sendFeedback": "Send Feedback",
+                "submitScreenShot": "Submit Screen Shot"
             }
         },
         "quickSettings": {
@@ -557,20 +565,12 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter",
+                        "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "ACAdapterNotSupported": {
                         "title": "AC adapter not supported.",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
@@ -586,7 +586,7 @@
             "power": {
                 "title": "Napajanje",
                 "subtitle": "Nastavitve napajanja",
-                "description": "Ta razdelek vam omogoča dinamično prilagoditev toplotne zmogljivosti in maksimalne življenjske dobe baterije.",
+                "description": "Ta razdelek vam omogoča dinamično prilagoditev toplotne zmogljivosti in maksimalne življenjske dobe baterije.Ima tudi druge priljubljene funkcije, povezane z napajanjem. Privzete nastavitve v tem razdelku lahko preverite in prilagodite sistem glede na vaše potrebe.",
                 "jumpto": {
                     "title": "SKOK NA NASTAVITVE",
                     "battery": "Baterija",
@@ -598,9 +598,9 @@
                     "title": "Pametne nastavitve napajanja",
                     "subtitle": "PAMETNO HLAJENJE",
                     "subtitle1": "Baterija in tišina",
-                    "description1": "Ta funkcija toplotne nastavitve dinamično prilagaja vašim potrebam.",
-                    "description2": "Pametno hlajenje prilagodi hitrost ventilatorja, najvišjo površinsko temperaturo in učinkovitost delovanja.",
-                    "description3": "Pametno hlajenje samodejno prilagaja toplotno učinkovitost ustrezno vašim potrebam.",
+                    "description1": "Ta funkcija toplotne nastavitve dinamično prilagaja vašim potrebam.Ko je funkcija vklopljena, prilagodi nastavitve, da ohranja napravo hladnejšo ali tiho, medtem ko jo držite ali je v mirovanju. V nasprotnem primeru optimizira delovanje, ko je naprava na stabilni površini. Ko je izklopljena, lahko ročno nastavite toplotno prednost.",
+                    "description2": "Pametno hlajenje prilagodi hitrost ventilatorja, najvišjo površinsko temperaturo in učinkovitost delovanja.Ta funkcija ima načine, navedene spodaj, do katerih lahko zdaj dostopate prek drsnika za učinkovitosti delovanja/porabo sistema Windows.",
+                    "description3": "Pametno hlajenje samodejno prilagaja toplotno učinkovitost ustrezno vašim potrebam.Pametno hlajenje prilagodi nastavitve učinkovitosti delovanja, tako da je površina prenosnega računalnika hladnejša in zato udobnejša za uporabo, ko ga držite v roki. Ko je naprava na mizi, ta funkcija optimizira učinkovitost delovanja.",
                     "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
                     "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
                     "readMore": "Preberite več.",
@@ -631,7 +631,7 @@
                             "mode1": "Tihi način",
                             "mode2": "Uravnoteženi način",
                             "mode3": "Zmogljivi način",
-                            "line1": "Drsnik je skrajno levo.",
+                            "line1": "Drsnik je skrajno levo.Hitrost ventilatorja in učinkovitost delovanja se zmanjšata, tako da računalnik deluje hladneje in tišje ter ga lahko dalj časa uporabljate pri akumulatorskem napajanju.",
                             "line2": "Drsnik je na sredini.Hitrost ventilatorja in učinkovitost delovanja se dinamično uravnotežita za najboljšo izkušnjo.",
                             "line3": "Drsnik je skrajno desno. Hitrost ventilatorja in dopustna površinska temperatura sta višja za največjo učinkovitost delovanja.",
                             "line4": "More info"
@@ -662,7 +662,7 @@
                     "title": "Nastavitve napajanja",
                     "alwaysUSB": {
                         "title": "Always on USB",
-                        "description": "Z vedno vklopljenim priključkom USB lahko polnite naprave USB, ko je računalnik v načinu spanja ali mirovanja oziroma izklopljen.",
+                        "description": "Z vedno vklopljenim priključkom USB lahko polnite naprave USB, ko je računalnik v načinu spanja ali mirovanja oziroma izklopljen.Pametni telefon ali tablični računalnik lahko hitro napolnite na priključku USB, označenem z rumeno barvo ali temi ikonami:",
                         "checkbox": "Omogočite polnjenje prek priključka USB iz baterije prenosnega računalnika, ko je računalnik izklopljen."
                     },
                     "easyResume": {
@@ -682,8 +682,8 @@
                     "title": "Nastavitve baterije",
                     "batteryThreshold": {
                         "title": "Prag polnjenja baterije",
-                        "description": "Če računalnik uporabljate predvsem tako, da je priključen na napajanje, baterijsko napajanje pa le poredko,",
-                        "tooltip": "Če je baterija trenutno napolnjena tako, da je nad pragom za ustavitev polnjenja, odklopite napajalnik in počakajte, da se baterija izprazni do praga za ustavitev polnjenja ali pod njega.",
+                        "description": "Če računalnik uporabljate predvsem tako, da je priključen na napajanje, baterijsko napajanje pa le poredko,lahko življenjsko dobo baterije podaljšate z izbiro nastavitve polnjenja, nižje od 100 %. To je uporabno, ker imajo baterije, ki se ne uporabljajo pogosto, daljšo življenjsko dobo, če jih hranite tako, da niso povsem napolnjene.",
+                        "tooltip": "Če je baterija trenutno napolnjena tako, da je nad pragom za ustavitev polnjenja, odklopite napajalnik in počakajte, da se baterija izprazni do praga za ustavitev polnjenja ali pod njega.Točka, na kateri se začne ali konča polnjenje se lahko razlikuje za največ dve odstotni točki, kar je odvisno od stanja baterije (ali je nova ali stara). Če omogočite to funkcijo, priporočamo, da občasno izvedete ponastavitev merilnika za baterijo, s čimer zagotovite natančno poročanje o stanju baterije.",
                         "note": "Note",
                         "readMoreText": "Read more.",
                         "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
@@ -693,8 +693,8 @@
                         },
                         "popup": {
                             "title": "Omogoči prag polnjenja baterije",
-                            "description1": "Če omogočite polnjenje baterije po meri, bo pri uporabi te naprave splošno zdravje baterije trajalo dlje.",
-                            "description2": "Če želite to funkcijo omogočiti v celoti, odklopite računalnik in",
+                            "description1": "Če omogočite polnjenje baterije po meri, bo pri uporabi te naprave splošno zdravje baterije trajalo dlje.Toda če baterija ni napolnjena v celoti, je tudi njen čas delovanja krajši.",
+                            "description2": "Če želite to funkcijo omogočiti v celoti, odklopite računalnik inpustite, da se baterija izprazni do praga za ustavitev polnjenja ali pod njega.",
                             "enable": "OMOGOČI",
                             "cancel": "PREKLIČI"
                         },
@@ -711,16 +711,16 @@
                     },
                     "conservationMode": {
                         "title": "Varčevalni način",
-                        "description": "Ta funkcija je uporabna za podaljšanje življenjske dobe baterije, ko je priključena.",
+                        "description": "Ta funkcija je uporabna za podaljšanje življenjske dobe baterije, ko je priključena. <br>Ko je omogočen ta način, se bo baterija napolnila samo do 55–60 % zmogljivosti, kar podaljša njeno življenjsko dobo. Vendar pa se s tem skrajša čas uporabe računalnika, potem ko ga odklopite iz napajanja.",
                         "tooltip": {
                             "line1": "Ta funkcija je uporabna za podaljšanje življenjske dobe baterije, ko je priključena.",
-                            "line2": "Ko je omogočen ta način, se bo baterija napolnila samo do 55–60 % zmogljivosti, kar podaljša njeno življenjsko dobo.",
-                            "line3": "Opomba: način hitrega polnjenja in ohranitveni način ne moreta delovati hkrati."
+                            "line2": "Ko je omogočen ta način, se bo baterija napolnila samo do 55–60 % zmogljivosti, kar podaljša njeno življenjsko dobo. Vendar pa se s tem skrajša čas uporabe računalnika, potem ko ga odklopite iz napajanja.",
+                            "line3": "Opomba: način hitrega polnjenja in ohranitveni način ne moreta delovati hkrati.Če je vklopljen eden od načinov, bo drug samodejno izklopljen."
                         }
                     },
                     "airPlanePower": {
                         "title": "Način porabe za letalo",
-                        "description": "Zaščitite letalski napajalni priključek za izmenični tok z nadzorom porabe sistema."
+                        "description": "Zaščitite letalski napajalni priključek za izmenični tok z nadzorom porabe sistema.Če je omogočen način porabe za letalo, računalnik zmanjša porabo energije z omejevanjem hitrosti polnjenja baterije in učinkovitosti delovanja sistema."
                     }
                 },
                 "energyStar": {
@@ -731,14 +731,14 @@
             "audio": {
                 "title": "Zvok",
                 "subtitle": "Nastavitve zvoka",
-                "description": "Ta razdelek vam omogoča, da samodejno optimizirate ali v celoti",
+                "description": "Ta razdelek vam omogoča, da samodejno optimizirate ali v celotiročno konfigurirate nastavitve zvoka, kot so nastavitve za Dolby, mikrofon itd.",
                 "audioSmartsettings": {
                     "title": "Pametne nastavitve zvoka",
                     "subtitle": "NASTAVITVE, PRILAGOJENE PROGRAMOM",
                     "description": "Samodejno prilagajanje nastavitev zvoka glede na različne aplikacije, ki jih uporabljate.",
                     "dolby": {
                         "title": "Samodejne nastavitve zvoka za Dolby",
-                        "tooltip": "Samodejne nastavitve zvoka za Dolby konfigurirajo nastavitve zvoka za Dolby tako, da so",
+                        "tooltip": "Samodejne nastavitve zvoka za Dolby konfigurirajo nastavitve zvoka za Dolby tako, da soustrezne za različne programe, ki jih uporabljate, za izboljšanje vaše izkušnje z zvokom.",
                         "options": {
                             "dynamic": "DINAMIČNO",
                             "movie": "FILM",
@@ -861,7 +861,7 @@
                     "url": "Odprite nastavitve zasebnosti sistema Windows",
                     "cameraPrivacy": {
                         "title": "Zasebnostni način za kamero",
-                        "tooltip": "Če je omogočena nastavitev zasebnosti, kamera preneha pošiljati slike v živo."
+                        "tooltip": "Če je omogočena nastavitev zasebnosti, kamera preneha pošiljati slike v živo. To nastavitev vklopite, samo če med videoklici svoje slike ne želite prikazati drugim."
                     },
                     "camera": {
                         "title": "Kamera",
@@ -947,7 +947,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Zaklepanje brez dotika",
-                    "caption": "Ta funkcija bo zatemnila zaslon in zaklenila računalnik, ko ne zazna prisotnosti uporabnika.",
+                    "caption": "Ta funkcija bo zatemnila zaslon in zaklenila računalnik, ko ne zazna prisotnosti uporabnika.Zmanjša lahko možnost nepooblaščenega dostopa do računalnika, ko pustite računalnik brez nadzora in odklenjen. Zmanjša tudi porabo energije, ker sistem preklopi v stanje pripravljenosti, ko ne zazna vaše prisotnosti.",
                     "autoScreenLockTimer": {
                         "title": "ČASOVNIK SAMODEJNEGA ZAKLEPANJA ZASLONA",
                         "radioButton": {
@@ -955,7 +955,7 @@
                             "medium": "Srednje",
                             "slow": "Počasi"
                         },
-                        "toolTipContent": "Izberite želeno možnost, da zaklenete zaslon pri hitro/srednje/počasni hitrosti, ko vaša prisotnost ni zaznana."
+                        "toolTipContent": "Izberite želeno možnost, da zaklenete zaslon pri hitro/srednje/počasni hitrosti, ko vaša prisotnost ni zaznana.Na čas, ko bo zaslon zaklenjen, vpliva tudi dejanska situacija uporabnika, zmožnost senzorja in nastavitve časa za izklop zaslona Windows. Zato priporočamo, da sistem takoj zaklenete, preden odidete."
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -967,8 +967,8 @@
                     }
                 },
                 "note": {
-                    "description1": "Ta funkcija uporablja Windows Hello.",
-                    "description2": "Funkcija uporablja senzorje in kamero za zaznavanje vaše prisotnosti.",
+                    "description1": "Ta funkcija uporablja Windows Hello.Poskrbite, da je funkcija prepoznavanja obraza vklopljena v nastavitvah sistema Windows.",
+                    "description2": "Funkcija uporablja senzorje in kamero za zaznavanje vaše prisotnosti.Vendar pa funkcija NE zbira, shranjuje ali posreduje kakršnih koli osebnih podatkov ali slik.",
                     "description3": "1. Če je računalnik v načinu šotora, tabličnega računalnika ali stojala,te funkcije morda ne bodo pravilno delovale.",
                     "description4": "2. Če je računalnik v načinu mirovanja ali je izklopljen.Samodejna prijava z IR-kamero ne bo delovala.",
                     "description5": "3. Prilagodite zaslon računalnika na primeren kot,tako da bo lahko IR-kamera prepoznala vaš obraz za samodejno prijavo."
@@ -1046,16 +1046,16 @@
         "optionalUpdates": "Izbirne posodobitve",
         "ignoredUpdates": "Prezrte posodobitve",
         "successInstall": "Uspešna namestitev v",
-        "failedInstall": "Neuspešna namestitev v",
+        "failedInstall": "Nespešna namestitev v",
         "at": "na",
         "readMore": "Preberite več",
         "popup": {
             "reboot": "Znova zaženi",
             "shutdown": "Zaustavitev",
-            "rebootForceMsg": "Posodobitve, ki ste jih izbrali, bodo povzročile samodejni ponovni zagon sistema po namestitvi.",
-            "shutdownForceMsg": "Posodobitve, ki ste jih izbrali, bodo povzročile samodejno zaustavitev sistema po namestitvi.",
-            "rebootDelayedMsg": "Izbrane posodobitve bodo povzročile ponovni zagon sistema po namestitvi, zato med nastavitvijo posodobitev ne izklapljajte sistema in ne odstranjujte vira napajanja ali dodatne opreme. Priporočamo, da shranite delo v pripravi na ponovni zagon sistema.",
-            "rebootRequiredMsg": "Če želite uspešno namestiti posodobitve, morate znova zagnati računalnik, da zagotovite, da se vse deluje varno in brez težav.",
+            "rebootForceMsg": "Posodobitve, ki ste jih izbrali, bodo povzročile samodejni ponovni zagon sistemapo namestitvi.",
+            "shutdownForceMsg": "Posodobitve, ki ste jih izbrali, bodo povzročilesamodejno zaustavitev sistema po namestitvi.",
+            "rebootDelayedMsg": "Izbrane posodobitve bodo povzročile ponovni zagon sistema po namestitvi,zato med nastavitvijo posodobitev ne izklapljajte sistema in ne odstranjujte vira napajanja ali dodatne opreme. Priporočamo, da shranite delo v pripravi na ponovni zagon sistema:",
+            "rebootRequiredMsg": "Če želite uspešno namestiti posodobitve, morate znova zagnatiračunalnik, da zagotovite, da se vse deluje varno in brez težav.",
             "okayButton": "V redu",
             "cancelButton": "Prekliči",
             "rebootButton": "ZNOVA ZAŽENI ZDAJ",
@@ -1071,7 +1071,7 @@
             },
             "recommended": {
                 "title": "Priporočene posodobitve",
-                "tooltip": "Priporočene posodobitve gonilnikov zagotavljajo, da računalnik deluje optimalno."
+                "tooltip": "Priporočene posodobitve gonilnikov omogočajo"
             },
             "windows": {
                 "title": "Posodobitve za Windows",
@@ -1086,21 +1086,21 @@
             "title": "Posodobljen sistem je zdrav sistem.",
             "last": "Zadnja posodobitev je bila dne",
             "next": "Naslednje načrtovano iskanje posodobitev",
-            "checkButton": "ISKANJE POSODOBITEV ",
+            "checkButton": "ISKANJE POSODOBITEV",
             "checking": "Preverite, ali so na voljo posodobitve",
-            "downloading": "Prenos posodobitev",
+            "downloading": "Prenos posodobitev je končan",
             "installing": "Nameščanje posodobitev",
             "percent": "% končano",
             "cancelCheck": "Prekliči iskanje",
             "cancelUpdates": "PREKLIC POSODOBITEV",
             "available": "Razpoložljive posodobitve",
-            "description": "Ti paketi vključujejo posodobitve gonilnikov strojne opreme in druge sistemske pripomočke, ki so ključnega pomena za pravilno delovanje računalnika. Kritične posodobitve so prav tako pomembne tudi za zaščito podatkov v vašem računalniku in jih je treba namestiti, ko so na voljo. Če ne namestite teh posodobitev, lahko pride do izgube podatkov, hujše okvare sistema ali okvare strojne opreme.",
+            "description": "Ti paketi vključujejo posodobitve gonilnikov strojne opreme indruge sistemske pripomočke, ki so ključnega pomena za pravilno delovanje računalnika. Kritične posodobitve so pomembne tudi za zaščito podatkov v vašem računalniku in jih je treba namestiti, ko so na voljo. Če ne namestite teh posodobitev, lahko pride do izgube podatkov, hujše okvare sistema ali okvare strojne opreme.",
             "installButton": "NAMESTITEV VSEH POSODOBITEV",
             "result": {
                 "success": "Vse posodobitve so bile pravilno nameščene",
                 "fail": {
                     "title": "Nekatere posodobitve niso bile pravilno nameščene.",
-                    "description": "Med prenosom ali namestitvijo teh posodobitev je prišlo do napake. Poskrbite, da imate vzpostavljeno povezavo in ne izklopite računalnika med nameščanjem posodobitev."
+                    "description": "Med prenosom ali namestitvijo teh posodobitev je prišlo do napake.Poskrbite, da imate vzpostavljeno povezavo in ne izklopite računalnika med nameščanjem posodobitev."
                 }
             }
         },
@@ -1168,15 +1168,14 @@
         "protected": "Protected",
         "notProtected": "Not Protected",
         "myDevice": "My Device",
-        "allDevice": "All Devices",
         "secure": "SECURE",
         "needAttention": "NEEDS ATTENTION",
         "manageAccount": "Manage Account",
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrate to protect all of your devices",
+        "trialExpired": "Trial Expired",
+        "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
         "protectAllDevices": "Protect all of your devices",
@@ -1300,9 +1299,7 @@
             "maliciousNetwork": "Preprečiti, da bi se {{maliciousWifi}}računalnik pridružil zlonamernim omrežjem ta mesec.",
             "good": "DOBRA",
             "malicious": "ZLONAMERNA",
-            "suspicious": "SUMLJIVA",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "SUMLJIVA"
         },
         "antivirus": {
             "common": {

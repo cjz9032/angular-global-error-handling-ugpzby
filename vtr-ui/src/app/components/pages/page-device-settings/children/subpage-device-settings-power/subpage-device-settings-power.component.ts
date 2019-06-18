@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef, OnDestroy } from '@angular/core';
+import { Component, OnInit, TemplateRef, OnDestroy, EventEmitter, Output, Input } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PowerService } from 'src/app/services/power/power.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
@@ -32,6 +32,13 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public batteryGauge: any;
 	public showWarningMsg: boolean;
 	public isEnergyStarProduct = false;
+	public smartStandbyTimer = false;
+
+	@Input() isCollapsed = true;
+	@Input() allowCollapse = true;
+	@Input() theme = 'white';
+
+	@Output() toggle = new EventEmitter();
 
 	primaryCheckBox = false;
 	secondaryCheckBox = false;
@@ -788,6 +795,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						this.selectedStartAtChargeVal = this.responseData[0].startValue;
 						this.selectedStopAtChargeVal = this.responseData[0].stopValue;
 						this.primaryCheckBox = this.responseData[0].checkBoxValue;
+						this.showBatteryThreshold = this.responseData[0].isOn;						
 						if (this.responseData.length === 2) {
 							this.secondaryCheckBox = this.responseData[1].checkBoxValue;
 							this.selectedStartAtChargeVal1 = this.responseData[1].startValue;
@@ -843,6 +851,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		} catch (error) {
 			console.error(error.message);
 		}
+	}
+	public showBatteryThresholdsettings(event){
+		this.showBatteryThreshold = event;
 	}
 
 	public autoCheckSelected(batteryDetails: any, batteryNum: any) {
@@ -901,6 +912,16 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			.catch(error => {
 				console.log('getEnergyStarCapability.error', error);
 			});
+	}
+
+	public onSmartStandbyToggle (event: any) {
+		this.smartStandbyTimer = event.switchValue;
+
+	}
+
+	public onToggle() {
+		this.isCollapsed = !this.isCollapsed;
+		this.toggle.emit(this.isCollapsed);
 	}
 
 }

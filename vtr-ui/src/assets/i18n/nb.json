@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -377,7 +377,15 @@
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
-                }
+                },
+                "question1": "Do you like the new style of Vantage?",
+                "question2": "Do you think the performance is acceptable?",
+                "question3": "Would you use the application more often in the future?",
+                "yes": "Yes",
+                "no": "No",
+                "tips1": "Please leave any additional comments",
+                "sendFeedback": "Send Feedback",
+                "submitScreenShot": "Submit Screen Shot"
             }
         },
         "quickSettings": {
@@ -557,20 +565,12 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter",
+                        "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "ACAdapterNotSupported": {
                         "title": "AC adapter not supported.",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
@@ -598,9 +598,9 @@
                     "title": "Innstillinger for smart strømforbruk",
                     "subtitle": "INTELLIGENT KJØLING",
                     "subtitle1": "Batteri og stillegående",
-                    "description1": "Denne funksjonen endrer de termiske innstillingene etter behov.",
+                    "description1": "Denne funksjonen endrer de termiske innstillingene etter behov.Når den er aktivert, justerer den innstillingene for å holde enheten kjøligere eller stillegående, når den holdes eller er inaktiv. Ellers optimaliserer den ytelsen når enheten er på en stabil overflate. Når funksjonen er deaktivert, kan du angi termisk prioritet manuelt.",
                     "description2": "Intelligent kjøling justerer viftehastighet, maksimal overflatetemperatur og ytelse.Denne funksjonen har modusene nedenfor og er nå tilgjengelig via strømglidebryteren for Windows-ytelse.",
-                    "description3": "Intelligent kjøling balanserer automatisk den termiske ytelsen etter dine behov.Funksjonen Intelligent kjøling justerer ytelsesinnstillingene for å gjøre overflaten kjølig og behagelig når den bærbare datamaskinen holdes. ",
+                    "description3": "Intelligent kjøling balanserer automatisk den termiske ytelsen etter dine behov.Funksjonen Intelligent kjøling justerer ytelsesinnstillingene for å gjøre overflaten kjølig og behagelig når den bærbare datamaskinen holdes. Hvis enheten er på en skrivebordsoverflate, optimaliserer denne funksjonen ytelsen.",
                     "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
                     "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
                     "readMore": "Les mer.",
@@ -682,8 +682,8 @@
                     "title": "Batteriinnstillinger",
                     "batteryThreshold": {
                         "title": "Batteriladeterskel",
-                        "description": "Hvis du vanligvis bruker datamaskinen med strømadapteren tilkoblet og bare en sjelden gang benytter batteridrift,kan du forlenge batteriets levetid ved å sette maksimal ladeverdi til under 100 %.",
-                        "tooltip": "Hvis batteriet er ladet opp til et nivå over terskelen for å stoppe lading, må du koble fra strømmen frem til batteriet lades ut til under eller på nivå med terskelen.",
+                        "description": "Hvis du vanligvis bruker datamaskinen med strømadapteren tilkoblet og bare en sjelden gang benytter batteridrift,kan du forlenge batteriets levetid ved å sette maksimal ladeverdi til under 100 %. Dette er nyttig fordi batterier som brukes av og til, har lengre levetid hvis de holdes på et nivå som er under fullt oppladet.",
+                        "tooltip": "Hvis batteriet er ladet opp til et nivå over terskelen for å stoppe lading, må du koble fra strømmen frem til batteriet lades ut til under eller på nivå med terskelen.Avhengig av batteristatusen (gammelt eller nytt) kan det nøyaktige punktet der ladingen starter eller stopper, variere med opptil 2 prosentpoeng. Hvis du aktiverer funksjonen, anbefales det at du utfører Tilbakestilling av batterimåler av og til for å sikre nøyaktig rapportering av batteritilstanden.",
                         "note": "Note",
                         "readMoreText": "Read more.",
                         "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
@@ -693,7 +693,7 @@
                         },
                         "popup": {
                             "title": "Aktiver batteriladeterskel",
-                            "description1": "Hvis du aktiverer en tilpasset batterilading, er det mulig at batteriet varer lenger når du bruker denne enheten.",
+                            "description1": "Hvis du aktiverer en tilpasset batterilading, er det mulig at batteriet varer lenger når du bruker denne enheten.Hvis du ikke har fulladet batteri, får du imidlertid mindre batteritid under kjøretid.",
                             "description2": "For fullstendig aktivering av denne funksjonen må du koble fra maskinen din ogla batterinivået gå ned til eller under terskelen for ladestopp.",
                             "enable": "AKTIVER",
                             "cancel": "AVBRYT"
@@ -711,16 +711,16 @@
                     },
                     "conservationMode": {
                         "title": "Sparemodus",
-                        "description": "Denne funksjonen er nyttig for å forlenge batteriets levetid når enheten koblet til strøm.",
+                        "description": "Denne funksjonen er nyttig for å forlenge batteriets levetid når enheten koblet til strøm. <br>Når denne modusen er aktivert, blir batteriet bare ladet til 55–60 % kapasitet, og batterilevetiden kan maksimeres. Dette vil imidlertid forkorte tiden du bruker datamaskinen etter at den har blitt koblet fra strømkilden.",
                         "tooltip": {
                             "line1": "Denne funksjonen er nyttig for å forlenge batteriets levetid når enheten koblet til strøm.",
                             "line2": "Når denne modusen er aktivert, blir batteriet bare ladet til 55–60 % kapasitet, og batterilevetiden kan maksimeres. Dette vil imidlertid forkorte tiden du bruker datamaskinen etter at den har blitt koblet fra strømkilden.",
-                            "line3": "Merk: Ekspresslademodus og Sparemodus kan ikke fungere samtidig."
+                            "line3": "Merk: Ekspresslademodus og Sparemodus kan ikke fungere samtidig.HVIS én av modusene aktiveres, blir den andre automatisk deaktivert."
                         }
                     },
                     "airPlanePower": {
                         "title": "Strømmodus for fly",
-                        "description": "Beskytt flyets strømuttak ved å kontrollere systemets strømforbruk."
+                        "description": "Beskytt flyets strømuttak ved å kontrollere systemets strømforbruk.Når Strømmodus for fly er aktivert, reduserer datamaskinen strømforbruket ved å begrense batteriladehastigheten og systemytelsen."
                     }
                 },
                 "energyStar": {
@@ -731,7 +731,7 @@
             "audio": {
                 "title": "Lyd",
                 "subtitle": "Lydinnstillinger",
-                "description": "I denne delen kan du optimalisere eller fullt ut automatisk",
+                "description": "I denne delen kan du optimalisere eller fullt ut automatiskkonfigurere lydinnstillingene manuelt, for eksempel Dolby-innstillinger, mikrofon, osv.",
                 "audioSmartsettings": {
                     "title": "Smarte lydinnstillinger",
                     "subtitle": "APPBASERTE INNSTILLINGER",
@@ -955,7 +955,7 @@
                             "medium": "Middels",
                             "slow": "Langsom"
                         },
-                        "toolTipContent": "Velg ønsket alternativ for å låse skjermen på en rask/middels/langsom hastighet når tilstedeværelsen din ikke oppdages."
+                        "toolTipContent": "Velg ønsket alternativ for å låse skjermen på en rask/middels/langsom hastighet når tilstedeværelsen din ikke oppdages.Tidspunktet skjermen låses på, påvirkes også av det faktiske brukerscenarioet, sensorfunksjonaliteten og innstillingene for tidsavbrudd for Windows-skjermen. Vi anbefaler derfor sterkt at du umiddelbart låser systemet før du forlater det."
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -968,8 +968,8 @@
                 },
                 "note": {
                     "description1": "Denne funksjonen er avhengig av Windows Hello.Sørg for at ansiktsgjenkjenning er aktivert i Windows-innstillinger.",
-                    "description2": "Funksjonen bruker sensorer og kamera til å oppdage din tilstedeværelse.",
-                    "description3": "1. Disse funksjonene fungerer kanskje ikke som de skal",
+                    "description2": "Funksjonen bruker sensorer og kamera til å oppdage din tilstedeværelse.Funksjonen vil imidlertid IKKE samle inn, lagre, eller lekke personlige data eller bilder.",
+                    "description3": "1. Disse funksjonene fungerer kanskje ikke som de skalhvis datamaskinen er i telt-, nettbrett- eller stativmodus.",
                     "description4": "2. Hvis datamaskinen er i dvalemodus eller er slått av.Automatisk IR-kamerapålogging fungerer ikke.",
                     "description5": "3. Juster dataskjermens vinkel slik at det infrarøde kameraetkan gjenkjenne ansiktet ditt og logge deg på automatisk."
                 },
@@ -1046,16 +1046,16 @@
         "optionalUpdates": "Valgfri(e) oppdatering(er)",
         "ignoredUpdates": "Ignorert(e) oppdatering(er)",
         "successInstall": "Oppdateringen ble installert",
-        "failedInstall": "Installasjonen mislyktes",
+        "failedInstall": "Installasjon mislyktes",
         "at": "klokken",
         "readMore": "Les mer",
         "popup": {
             "reboot": "Start på nytt",
             "shutdown": "Avslutt",
-            "rebootForceMsg": "Oppdateringen(e) du har valgt, fører til at systemet starter på nytt automatisk når installeringen er fullført.",
-            "shutdownForceMsg": "Oppdateringen(e) du har valgt, fører til at systemet avsluttes automatisk når installeringen er fullført.",
-            "rebootDelayedMsg": "Oppdateringen(e) du valgte, vil få systemet til å starte på nytt etter installasjon. Under installeringen av oppdateringene må du ikke slå av systemet, fjerne strømkilden eller tilbehør. Vi anbefaler at du lagrer arbeidet ditt før omstart av systemet.",
-            "rebootRequiredMsg": "Hvis du vil installere oppdateringene, trenger datamaskinen en omstart for å sikre at alt kjører trygt og greit.",
+            "rebootForceMsg": "Oppdateringen(e) du har valgt, fører til at systemet starterpå nytt automatisk etter installasjonen.",
+            "shutdownForceMsg": "Oppdateringen(e) du har valgt, fører til at systemet avsluttesautomatisk etter installasjonen.",
+            "rebootDelayedMsg": "Oppdateringen(e) du har valgt, vil få systemet til å starte på nytt etter installasjonen.Under installasjonen av oppdateringene må du ikke slå av systemet, fjerne strømkilden eller tilbehør. Vi anbefaler at du lagrer arbeidet ditt før omstart av systemet.",
+            "rebootRequiredMsg": "For at installasjonen av oppdateringene skal bli vellykket, trenger datamaskinenen omstart for å sikre at alt kjører trygt og knirkefritt.",
             "okayButton": "OK",
             "cancelButton": "Avbryt",
             "rebootButton": "START PÅ NYTT NÅ",
@@ -1067,11 +1067,11 @@
             "subtitle": "INSTALLER OPPDATERINGER AUTOMATISK",
             "critical": {
                 "title": "Kritiske oppdateringer",
-                "tooltip": "Kritiske oppdateringer kan hindre vesentlige problemer, store systemfeil, maskinvarefeil eller ødelagte data."
+                "tooltip": "Kritiske oppdateringer kan forhindre vesentlige problemer, store funksjonssvikt, maskinvarefeil eller ødelagte data."
             },
             "recommended": {
                 "title": "Anbefalte oppdateringer",
-                "tooltip": "De anbefalte driveroppdateringene sikrer at datamaskinen fortsetter å yte best mulig."
+                "tooltip": "Anbefalte driveroppdateringer gjør at datamaskinen kjører på optimal ytelse."
             },
             "windows": {
                 "title": "Oppdateringer fra Windows",
@@ -1086,21 +1086,21 @@
             "title": "Et oppdatert system er et velfungerende system.",
             "last": "Forrige oppdatering:",
             "next": "Neste oppdateringssøk er planlagt",
-            "checkButton": "SE ETTER OPPDATERINGER ",
+            "checkButton": "SE ETTER OPPDATERINGER",
             "checking": "Ser etter oppdateringer",
-            "downloading": "Laster ned oppdateringer",
+            "downloading": "Nedlasting av oppdateringer er ferdig",
             "installing": "Installerer oppdateringer",
             "percent": "% fullført",
             "cancelCheck": "Avbryt sjekk",
             "cancelUpdates": "AVBRYT OPPDATERINGER",
             "available": "Tilgjengelige oppdateringer",
-            "description": "Disse pakkene inkluderer oppdateringer av maskinvaredrivere og andre systemverktøy som er kritiske for at datamaskinen skal fungere som den skal. Kritiske oppdateringer er også viktige for å beskytte data på datamaskinen din og bør installeres etter hvert som de blir tilgjengelige. Hvis disse pakkene ikke blir installert, kan det føre til tap av data, systemfeil eller maskinvarefeil.",
+            "description": "Disse pakkene inkluderer oppdateringer av maskinvaredrivere ogandre systemverktøy som er kritiske for at datamaskinen skal fungere som den skal. Kritiske oppdateringer er også viktige for å beskytte data på datamaskinen og må installeres etter som de blir tilgjengelige. Hvis disse pakkene ikke installeres, kan det føre til tap av data, systemsvikt eller maskinvarefeil.",
             "installButton": "INSTALLER ALLE OPPDATERINGER",
             "result": {
                 "success": "Alle oppdateringer ble installert på riktig måte",
                 "fail": {
-                    "title": "Noen oppdateringer ble ikke installert korrekt.",
-                    "description": "Noe gikk galt under nedlastingen eller installasjonen av disse oppdateringene. Kontroller at du er tilkoblet, og ikke slå av maskinen når du installerer oppdateringer."
+                    "title": "Noen oppdateringer ble ikke installert på riktig måte.",
+                    "description": "Noe gikk galt under nedlastingen eller installasjonen av disse oppdateringene.Kontroller at du er tilkoblet, og ikke slå av datamaskinen under installasjon av oppdateringer."
                 }
             }
         },
@@ -1168,15 +1168,14 @@
         "protected": "Protected",
         "notProtected": "Not Protected",
         "myDevice": "My Device",
-        "allDevice": "All Devices",
         "secure": "SECURE",
         "needAttention": "NEEDS ATTENTION",
         "manageAccount": "Manage Account",
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrate to protect all of your devices",
+        "trialExpired": "Trial Expired",
+        "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
         "protectAllDevices": "Protect all of your devices",
@@ -1300,9 +1299,7 @@
             "maliciousNetwork": "Hindret at datamaskinen ble med i {{maliciousWifi}}skadelig nettverk denne måneden.",
             "good": "GOD",
             "malicious": "SKADELIG",
-            "suspicious": "MISTENKELIG",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "MISTENKELIG"
         },
         "antivirus": {
             "common": {
