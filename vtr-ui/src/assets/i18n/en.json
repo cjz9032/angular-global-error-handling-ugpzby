@@ -230,7 +230,7 @@
 			"title": "Lighting",
 			"effect": {
 				"option1": {
-					"title": "Static"
+					"title": "On"
 				},
 				"option2": {
 					"title": "Flicker"
@@ -242,25 +242,22 @@
 					"title": "Wave"
 				},
 				"option5": {
-					"title": "Music"
-				},
-				"option6": {
 					"title": "Smooth"
 				},
-				"option7": {
+				"option6": {
 					"title": "CPU Temperature"
 				},
-				"option8": {
+				"option7": {
 					"title": "CPU Utilization"
 				},
-				"option9": {
-					"title": "Response"
+				"option8": {
+					"title": "Off"
 				},
-				"option10": {
-					"title": "Ripple"
+				"apply": {
+					"title": "APPLY"
 				},
-				"option11": {
-					"title": "No Light"
+				"applied": {
+					"title": "APPLIED"
 				}
 			}
 		}

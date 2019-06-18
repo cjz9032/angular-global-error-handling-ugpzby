@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, EventEmitter, Output, Input } from '@angular/core';
 import ReinventedColorWheel from 'reinvented-color-wheel';
 import 'reinvented-color-wheel/css/reinvented-color-wheel.css';
 
@@ -10,8 +10,12 @@ import 'reinvented-color-wheel/css/reinvented-color-wheel.css';
 export class UiColorWheelComponent implements OnInit {
 	@ViewChild('colorWheel') canvasElement: ElementRef;
 	color: any = [];
+	backColor: string = '#FFFFFF';
 	@Output() colorChanged = new EventEmitter<any>();
-
+	@Output() colorEffectChanged = new EventEmitter<any>();
+	@Input() inRGB:any;
+	@Input() inHEX:any;
+	@Input() showApply:boolean;
 	constructor() { }
 
 	ngOnInit() {
@@ -43,6 +47,8 @@ export class UiColorWheelComponent implements OnInit {
 			// handler
 			onChange: function (color) {
 				// the only argument is the ReinventedColorWheel instance itself.
+				that.backColor = color.hex;
+			//	console.log('color changed in squaere ########################################', JSON.stringify(that.backColor));
 				that.color = color.rgb;
 				that.colorChanged.emit(this.color);
 			}
@@ -52,7 +58,7 @@ export class UiColorWheelComponent implements OnInit {
 		colorWheel.rgb = [255, 128, 64];
 		colorWheel.hsl = [120, 100, 50];
 		colorWheel.hsv = [240, 100, 100];
-		colorWheel.hex = '#888888';
+		colorWheel.hex =this.inHEX ;//'#888888';
 
 		// get color in HSV / HSL / RGB / HEX
 		console.log('hsv:', colorWheel.hsv[0], colorWheel.hsv[1], colorWheel.hsv[2]);
@@ -64,5 +70,9 @@ export class UiColorWheelComponent implements OnInit {
 		colorWheel.wheelDiameter = 240;
 		colorWheel.wheelThickness = 30;
 		colorWheel.redraw();
+	}
+	onApplyColorEffect() {
+		console.log('apply button clicked......................................');
+		this.colorEffectChanged.emit(this.backColor);
 	}
 }

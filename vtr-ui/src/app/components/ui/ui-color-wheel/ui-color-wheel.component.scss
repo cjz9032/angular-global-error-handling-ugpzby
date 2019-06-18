@@ -16,6 +16,8 @@
 				width: 2.4rem;
 				font-size: 1.6rem;
 				color: $gaming_lightest;
+				padding-right: 1rem;
+				padding-top: 0.5rem;
 			}
 			input {
 				height: 3rem;
@@ -27,7 +29,33 @@
 				box-sizing: border-box;
 				padding: 0.6rem;
 			}
+			.input-color{
+				border-radius: 0.5rem;
+			}
 		}
+	}
+	.color-codes{
+		margin-top: 10rem;
+		margin-left: 4rem;
+	}
+	.enable-button {
+		background: $gradient_main;
+		border-radius: 0.5rem;
+		color: $light;
+		font-size: 1.8rem;
+		padding: 1rem 1.8rem;
+		font-weight: 500;
+		margin-top: 1rem;
+
+		font-weight: $weight_bold;
+	}
+	.disable-button
+	{
+		background: gray;
+	}
+	.backColorDpiv{
+		height: 3rem;
+		width: 4rem;
 	}
 	#color-wheel {
 		position: relative;
@@ -82,6 +110,12 @@
 			.reinvented-color-wheel--sv-space {
 				clip-path: circle(50% at 50% 50%);
 			}
+		}
+	}
+	::ng-deep .vtr-spinner {
+		.spinner {
+			font-size: 2rem !important;
+			padding: 0rem 2.2rem;
 		}
 	}
 }
