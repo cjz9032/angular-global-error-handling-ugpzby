@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -319,8 +319,8 @@
         },
         "ui": {
             "back": "ZPĚT",
-            "on": "NA",
-            "off": "VYPNUTO",
+            "on": "On",
+            "off": "Off",
             "collapse": "Kolaps",
             "expand": "Rozšířit",
             "loader": {
@@ -377,7 +377,15 @@
                 "addScreenshot": "Přidat ScreenShot",
                 "messages": {
                     "feedbackSuccess": "Děkujeme vám za vaši reakci !"
-                }
+                },
+                "question1": "Do you like the new style of Vantage?",
+                "question2": "Do you think the performance is acceptable?",
+                "question3": "Would you use the application more often in the future?",
+                "yes": "Yes",
+                "no": "No",
+                "tips1": "Please leave any additional comments",
+                "sendFeedback": "Send Feedback",
+                "submitScreenShot": "Submit Screen Shot"
             }
         },
         "quickSettings": {
@@ -557,20 +565,12 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter",
+                        "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "ACAdapterNotSupported": {
                         "title": "AC adapter not supported.",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
@@ -598,9 +598,9 @@
                     "title": "Inteligentní nastavení napájení",
                     "subtitle": "INTELIGENTNÍ CHLAZENÍ",
                     "subtitle1": "Baterie a ticho",
-                    "description1": "Tato funkce dynamicky upraví tepelná nastavení dle vašich potřeb.",
+                    "description1": "Tato funkce dynamicky upraví tepelná nastavení dle vašich potřeb.Když je tato funkce zapnutá, upravuje nastavení tak, aby zařízení při držení v rukou nebo při nečinnosti bylo co nejchladnější a nejtišší.V opačném případě optimalizuje výkon v době, kdy je zařízení zapnuté a na stabilním povrchu.Když je vypnutá, tepelnou prioritu můžete nastavit ručně.",
                     "description2": "Funkce Inteligentní chlazení upravuje rychlost ventilátoru, maximální teplotu povrchu a výkon.Tato funkce má následující režimy a nyní je přístupná pomocí posuvníku výkonu systému Windows.",
-                    "description3": "Inteligentní chlazení automaticky přizpůsobuje množství tepla produkované počítačem vašim potřebám.",
+                    "description3": "Inteligentní chlazení automaticky přizpůsobuje množství tepla produkované počítačem vašim potřebám.Funkce Inteligentní chlazení přizpůsobuje nastavení výkonu počítače tak, aby byl jeho povrch chladnější, pokud ho držíte v rukou.Leží-li zařízení na stole, přizpůsobí funkce jeho nastavení tak, aby mělo co největší výkon.",
                     "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
                     "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
                     "readMore": "Další informace.",
@@ -631,7 +631,7 @@
                             "mode1": "Tichý režim",
                             "mode2": "Vyvážený režim",
                             "mode3": "Režim výkonu",
-                            "line1": "Posuvník je v levé části.",
+                            "line1": "Posuvník je v levé části.Rychlost a výkon ventilátoru jsou nižší, takže je počítač chladnější a tišší a baterie má nejdelší výdrž.",
                             "line2": "Posuvník je uprostřed.Dynamická vyváženost rychlosti a výkonu ventilátoru zajišťuje nejvyrovnanější výkon.",
                             "line3": "Posuvník je v pravé části.Rychlost ventilátoru a přípustná teplota povrchu jsou vyšší a počítač pracuje na maximální výkon.",
                             "line4": "More info"
@@ -682,8 +682,8 @@
                     "title": "Nastavení baterie",
                     "batteryThreshold": {
                         "title": "Limit nabíjení baterie",
-                        "description": "Pokud k napájení počítače používáte zejména napájecí adaptér a baterii používáte jen zřídka,můžete její životnost prodloužit nastavením maximální úrovně nabití na méně než 100 %.",
-                        "tooltip": "Je-li baterie momentálně nabita nad nastavený horní limit, je třeba odpojit napájení a ponechat ho odpojený, dokud nabití baterie neklesne minimálně na limit.",
+                        "description": "Pokud k napájení počítače používáte zejména napájecí adaptér a baterii používáte jen zřídka,můžete její životnost prodloužit nastavením maximální úrovně nabití na méně než 100 %.Málo používané baterie totiž mají delší životnost, pokud nejsou udržovány plně nabité.",
+                        "tooltip": "Je-li baterie momentálně nabita nad nastavený horní limit, je třeba odpojit napájení a ponechat ho odpojený, dokud nabití baterie neklesne minimálně na limit.Přesný stav, při kterém se nabíjení zapne nebo zastaví, se může podle stáří baterie lišit až o 2 procenta.Pokud tuto funkci zapnete, doporučujeme čas od času resetovat ukazatel stavu baterie. Tím zajistíte přesnost údaje o stavu baterie.",
                         "note": "Note",
                         "readMoreText": "Read more.",
                         "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
@@ -711,16 +711,16 @@
                     },
                     "conservationMode": {
                         "title": "Režim ochrany baterie",
-                        "description": "Tato funkce je užitečná pro prodloužení životnosti baterie při zapojení.",
+                        "description": "Tato funkce je užitečná pro prodloužení životnosti baterie při zapojení.<br>V tomto režimu se baterie bude nabíjet pouze na 55–60 % své kapacity, což může prodloužit její životnost.Zkrátí se však doba, po kterou budete moci počítač používat, je-li odpojen od zdroje napájení.",
                         "tooltip": {
                             "line1": "Tato funkce je užitečná pro prodloužení životnosti baterie při zapojení.",
-                            "line2": "V tomto režimu se baterie bude nabíjet pouze na 55–60 % své kapacity, což může prodloužit její životnost.",
-                            "line3": "Poznámka: režim expresního nabíjení a režim ochrany baterie nemohou fungovat současně."
+                            "line2": "V tomto režimu se baterie bude nabíjet pouze na 55–60 % své kapacity, což může prodloužit její životnost.Zkrátí se však doba, po kterou budete moci počítač používat, je-li odpojen od zdroje napájení.",
+                            "line3": "Poznámka: režim expresního nabíjení a režim ochrany baterie nemohou fungovat současně.Pokud je jeden z režimů zapnutý, druhý se automaticky vypne."
                         }
                     },
                     "airPlanePower": {
                         "title": "Napájecí schéma Letadlo",
-                        "description": "Chrání elektrickou zásuvku v letadle řízením spotřeby vašeho počítače."
+                        "description": "Chrání elektrickou zásuvku v letadle řízením spotřeby vašeho počítače.Je-li aktivní napájecí režim Letadlo, omezí počítač spotřebu elektrické energie zpomalením nabíjení baterie a snížením výkonu systému."
                     }
                 },
                 "energyStar": {
@@ -731,14 +731,14 @@
             "audio": {
                 "title": "Zvuk",
                 "subtitle": "Nastavení zvuku",
-                "description": "Tato část umožňuje automaticky optimalizovat nebo plně",
+                "description": "Tato část umožňuje automaticky optimalizovat nebo plněkonfigurovat nastavení zvuku, například nastavení Dolby, mikrofon atd.",
                 "audioSmartsettings": {
                     "title": "Inteligentní nastavení zvuku",
                     "subtitle": "NASTAVENÍ PŘIZPŮSOBENÉ APLIKACI",
                     "description": "Automaticky přizpůsobuje nastavení zvuku a zobrazení podle vámi používaných aplikací.",
                     "dolby": {
                         "title": "Automatické nastavení zvuku Dolby",
-                        "tooltip": "Automatické nastavení zvuku Dolby konfiguruje nastavení zvuku Dolby na vhodný",
+                        "tooltip": "Automatické nastavení zvuku Dolby konfiguruje nastavení zvuku Dolby na vhodnýrežim pro různé aplikace, které používáte, abyste měli co nejlepší zážitek z hudby.",
                         "options": {
                             "dynamic": "DYNAMICKÉ",
                             "movie": "FILM",
@@ -861,7 +861,7 @@
                     "url": "Přejít na nastavení ochrany soukromí systému Windows",
                     "cameraPrivacy": {
                         "title": "Režim soukromí kamery",
-                        "tooltip": "Je-li aktivní nastavení soukromí, přestane kamera odesílat živý obraz."
+                        "tooltip": "Je-li aktivní nastavení soukromí, přestane kamera odesílat živý obraz.Tuto volbu tedy zapněte pouze v případě, když během videohovoru nechcete sdílet svůj obraz."
                     },
                     "camera": {
                         "title": "Fotoaparát",
@@ -947,7 +947,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Bezkontaktní uzamčení",
-                    "caption": "Tato funkce zhasne displej a uzamkne počítač, když není rozpoznána přítomnost uživatele.",
+                    "caption": "Tato funkce zhasne displej a uzamkne počítač, když není rozpoznána přítomnost uživatele.Může snížit riziko, že přístup k vašemu počítači získají neautorizované osoby, když počítač necháte bez dozoru a neuzamčený.Současně klesá spotřeba energie tím, že přepne systém do moderního úsporného režimu, když není rozpoznána vaše přítomnost.",
                     "autoScreenLockTimer": {
                         "title": "ČASOVAČ AUTOMATICKÉHO UZAMČENÍ OBRAZOVKY",
                         "radioButton": {
@@ -955,7 +955,7 @@
                             "medium": "Střední",
                             "slow": "Pomalá"
                         },
-                        "toolTipContent": "Výběrem požadované možnosti uzamkněte obrazovku rychle/středně/pomalu, pokud není zjištěna přítomnost."
+                        "toolTipContent": "Výběrem požadované možnosti uzamkněte obrazovku rychle/středně/pomalu, pokud není zjištěna přítomnost.Čas, kdy bude obrazovka uzamčena, však bude ovlivněn také skutečným scénářem uživatele, možnostmi snímače a nastavením časového limitu obrazovky systému Windows.Proto důrazně doporučujeme, abyste svůj systém okamžitě uzamkli, než jej opustíte."
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -967,9 +967,9 @@
                     }
                 },
                 "note": {
-                    "description1": "Tato funkce závisí na Windows Hello.",
+                    "description1": "Tato funkce závisí na Windows Hello.Ujistěte se, že je v nastavení systému Windows zapnuto rozpoznávání obličeje.",
                     "description2": "Tato funkce využívá ke zjištění vaší přítomnosti snímače a fotoaparát.Tato funkce však neshromažďuje žádné osobní údaje a snímky ani je neukládá.",
-                    "description3": "1.Tyto funkce nemusí pracovat správně, pokud je počítač",
+                    "description3": "1.Tyto funkce nemusí pracovat správně, pokud je počítačv režimu Stan, Tablet nebo Stojan.",
                     "description4": "2.Když je počítač v režimu hibernace nebo vypnutý.Automatické přihlášení pomocí infračervené kamery nebude funkční.",
                     "description5": "3.Nastavte obrazovku počítače do odpovídajícího úhlu, aby infračervenákamera mohla rozpoznat váš obličej pro automatické přihlášení."
                 },
@@ -1052,10 +1052,10 @@
         "popup": {
             "reboot": "Restart",
             "shutdown": "Vypnout",
-            "rebootForceMsg": "Po instalaci vybraných aktualizací bude systém automaticky restartován.",
-            "shutdownForceMsg": "Po instalaci vybraných aktualizací se systém automaticky vypne.",
-            "rebootDelayedMsg": "Po instalaci vybraných aktualizací se restartuje systém. Během instalace aktualizací systém nevypínejte, ani neodpojujte zdroj napájení ani příslušenství. Během přípravy na restartování systému doporučujeme uložit si rozpracovanou práci.",
-            "rebootRequiredMsg": "Aby bylo možné ve vašem počítači úspěšně nainstalovat aktualizace, počítač je třeba restartovat, aby byl zajištěn jeho bezpečný a hladký chod.",
+            "rebootForceMsg": "Po instalaci vybraných aktualizací bude systém automatickyrestartován.",
+            "shutdownForceMsg": "Po instalaci vybraných aktualizací se systém automatickyvypne.",
+            "rebootDelayedMsg": "Po instalaci vybraných aktualizací se restartuje systém. Během instalaceaktualizací systém nevypínejte ani neodpojujte zdroj napájení ani příslušenství.Během přípravy na restartování systému doporučujeme uložit si rozpracovanou práci.",
+            "rebootRequiredMsg": "Aby bylo možné ve vašem počítači úspěšně nainstalovat aktualizace, počítačje třeba restartovat, aby byl zajištěn jeho bezpečný a hladký chod.",
             "okayButton": "OK",
             "cancelButton": "Storno",
             "rebootButton": "RESTARTOVAT NYNÍ",
@@ -1067,11 +1067,11 @@
             "subtitle": "AUTOMATICKY INSTALOVAT AKTUALIZACE",
             "critical": {
                 "title": "Kriticky důležité aktualizace",
-                "tooltip": "Kriticky důležité aktualizace předcházejí vážným problémům, podstatným poruchám funkce, selhání hardwaru nebo poškození dat."
+                "tooltip": "Kriticky důležité aktualizace předcházejí vážným problémům,podstatným poruchám funkce, selhání hardwaru nebo poškození dat."
             },
             "recommended": {
                 "title": "Doporučené aktualizace",
-                "tooltip": "Doporučené aktualizace ovladačů zajistí optimální výkon vašeho počítače."
+                "tooltip": "Doporučené aktualizace ovladačů udržují počítač v chodu při optimálním výkonu."
             },
             "windows": {
                 "title": "Aktualizace systému Windows",
@@ -1086,21 +1086,21 @@
             "title": "Aktualizovaný systém je zdravým systémem.",
             "last": "Poslední aktualizace proběhla dne",
             "next": "Příští kontrola aktualizace je naplánována na",
-            "checkButton": "ZKONTROLOVAT AKTUALIZACE ",
+            "checkButton": "ZKONTROLOVAT AKTUALIZACE",
             "checking": "Kontrola aktualizací",
-            "downloading": "Stahování aktualizací",
+            "downloading": "Stahování aktualizací je dokončeno",
             "installing": "Probíhá instalace aktualizací",
             "percent": "% dokončeno",
             "cancelCheck": "Zrušit kontrolu",
             "cancelUpdates": "ZRUŠIT AKTUALIZACE",
             "available": "Dostupné aktualizace",
-            "description": "Tyto balíčky obsahují aktualizace ovladačů hardwaru a ostatních systémových nástrojů, které jsou nezbytné pro správné fungování vašeho počítače. Kriticky důležité aktualizace jsou rovněž zásadní pro ochranu dat ve vašem počítači a měli byste je nainstalovat ihned, jakmile jsou k dispozici. Pokud nebudou tyto balíčky nainstalovány, může dojít ke ztrátě dat, chybnému fungování systému nebo selhání hardwaru.",
+            "description": "Tyto balíčky obsahují aktualizace ovladačů hardwaru a ostatních systémovýchnástrojů, které jsou nezbytné pro správné fungování vašeho počítače.Kriticky důležité aktualizace jsou rovněž zásadní pro ochranu dat ve vašem počítači a měli byste je nainstalovat ihned, jakmile jsou k dispozici.Pokud nebudou tyto balíčky nainstalovány, může dojít ke ztrátě dat, chybnému fungování systému nebo selhání hardwaru.",
             "installButton": "NAINSTALOVAT VŠECHNY AKTUALIZACE",
             "result": {
                 "success": "Všechny aktualizace byly nainstalovány správně",
                 "fail": {
                     "title": "Některé aktualizace nebyly nainstalovány správně.",
-                    "description": "Během stahování nebo instalace těchto aktualizací se něco pokazilo. Ujistěte se, že jste online, a při instalaci aktualizací nevypínejte počítač."
+                    "description": "Během stahování nebo instalace těchto aktualizací se něco pokazilo.Ujistěte se, že jste online, a při instalaci aktualizací nevypínejte počítač."
                 }
             }
         },
@@ -1168,15 +1168,14 @@
         "protected": "Protected",
         "notProtected": "Not Protected",
         "myDevice": "My Device",
-        "allDevice": "All Devices",
         "secure": "SECURE",
         "needAttention": "NEEDS ATTENTION",
         "manageAccount": "Manage Account",
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrate to protect all of your devices",
+        "trialExpired": "Trial Expired",
+        "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
         "protectAllDevices": "Protect all of your devices",
@@ -1300,9 +1299,7 @@
             "maliciousNetwork": "Tento měsíc byl váš počítač ochráněn před {{maliciousWifi}} škodlivými sítěmi.",
             "good": "V POŘÁDKU",
             "malicious": "ŠKODLIVÝ KÓD",
-            "suspicious": "PODEZŘELÝ KÓD",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "PODEZŘELÝ KÓD"
         },
         "antivirus": {
             "common": {

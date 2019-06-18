@@ -42,17 +42,20 @@ export enum LocalStorageKey {
 	PrevThermalModeStatus = '[LocalStorageKey] PrevThermalModeStatus',
 	IsHPDSupported = '[LocalStorageKey] IsHPDSupported',
 	ConnectedHomeSecurityShowWelcome = '[LocalStorageKey] ConnectedHomeSecurityShowWelcome',
-	ConnectedHomeSecuritySystemLocationPermissionShowed = '[LocalStorageKey] ConnectedHomeSecuritySystemLocationPermissionShowed',
+	ConnectedHomeSecurityAllDevices= '[LocalStorageKey] ConnectedHomeSecurityAllDevices',
+	ConnectedHomeSecurityAccount = '[LocalStorageKey] ConnectedHomeSecurityAccount',
+	ConnectedHomeSecurityMyDevice = '[LocalStorageKey] ConnectedHomeSecurityMyDevice',
+	ConnectedHomeSecurityNotifications = '[LocalStorageKey] ConnectedHomeSecurityNotifications',
 	/**
 	 * 0  means "ideaPad",
 	 * 1  means "thinkPad",
 	 * 2 means "ideaCenter",
 	 * 3 means "thinkCenter"
 	 */
-	ConnectedHomeSecurityDeviceName = '[LocalStorageKey] ConnectedHomeSecurityDeviceName',
 	MachineType = '[LocalStorageKey] MachineType',
 	HybridModeStatus = '[LocalStorageKey] HybridModeStatus',
 	TouchpadLockStatus = '[LocalStorageKey] TouchpadLockStatus',
+	DolbyModeCache = '[LocalStorageKey] DolbyModeCache',
 	LightingProfileById = '[LocalStorageKey] LightingProfileById',
 	LightingProfileBrightness = '[LocalStorageKey] LightingProfileBrightness',
 	LightingProfileEffectColor = '[LocalStorageKey] LightingProfileEffectColor',
@@ -86,6 +89,26 @@ export enum LocalStorageKey {
 	fbNetFilter = '[LocalStorageKey] FbNetFilter',
 	ledDriver = '[LocalStorageKey] LedDriver',
 	winKeyLockFeature = '[LocalStorageKey] WinKeyLockFeature',
+	cpuUsage = '[LocalStorageKey] cpuUsage',
+	cpuCapacity = '[LocalStorageKey] cpuCapacity',
+	gpuUsage = '[LocalStorageKey] gpuUsage',
+	gpuCapacity = '[LocalStorageKey] gpuCapacity',
+	ramUsage = '[LocalStorageKey] ramUsage',
+	ramCapacity = '[LocalStorageKey] ramCapaity',
+	cpuBaseFrequency = '[LocalStorageKey] cpuBaseFrequency',
+	gpuModulename = '[LocalStorageKey] gpuModulename',
+	gpuMaxFrequency = '[LocalStorageKey] gpuMaxFrequency',
+	memorySize = '[LocalStorageKey] ramMemorySize',
+	hddList = '[LocalStorageKey] hddList',
+	ramOver = '[LocalStorageKey] ramModuleName',
+	gpuOver = '[LocalStorageKey] gpuModuleName ',
+	cpuOver = '[LocalStorageKey] cpuModuleName',
+	type = '[LocalStorageKey] type',
+	capacity = '[LocalStorageKey] capacity',
+	diskUsage = '[LocalStorageKey] diskUsage',
+	hddName = '[LocalStorageKey] hddName',
+	isSystemDisk = '[LocalStorageKey] isSystemDisk',
+	usedDisk = '[LocalStorageKey] usedDisk',
 
 	// this enum is for macrokey local storage key
 	MacroKeyType = '[LocalStorageKey] MacroKeyType',
@@ -98,7 +121,6 @@ export enum LocalStorageKey {
 	PrevMacroKeyRepeat = '[LocalStorageKey] PrevMacroKeyRepeat',
 	PrevMacroKeyInterval = '[LocalStorageKey] PrevMacroKeyInterval',
 	CurrentMacroKeyRepeat = '[LocalStorageKey] CurrentMacroKeyRepeat',
-	CurrentMacroKeyInterval = '[LocalStorageKey] CurrentMacroKeyInterval'
-
-
+	CurrentMacroKeyInterval = '[LocalStorageKey] CurrentMacroKeyInterval',
+	SubBrand = '[LocalStorageKey] SubBrand',
 }

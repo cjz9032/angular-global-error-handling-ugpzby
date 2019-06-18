@@ -394,7 +394,7 @@ export class UiLightingProfileComponent implements OnInit {
 
 	setLightingBrightness(event) {
 		try {
-			event = event + 1;
+			//event = event + 1;
 			console.log('in eventval--------------------------------' + event);
 			if (this.gamingLightingService.isShellAvailable) {
 				this.gamingLightingService.setLightingProfileBrightness(event).then((response: any) => {
@@ -409,7 +409,7 @@ export class UiLightingProfileComponent implements OnInit {
 
 					} else {
 						this.commonService.setLocalStorageValue(LocalStorageKey.ProfileBrightness, this.brightness);
-						//this.getLightingBrightness();
+						this.getLightingBrightness();
 					}
 				});
 			}
@@ -420,9 +420,9 @@ export class UiLightingProfileComponent implements OnInit {
 
 	public getLightingBrightness() {
 		try {
-			this.tempval = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileBrightness) || 0;
-			this.profileBrightness = (this.tempval) - 1;
-			console.log('cache value  ----------------', this.profileBrightness);
+			this.profileBrightness = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileBrightness) || 0;
+			//this.profileBrightness = (this.tempval) - 1;
+			console.log('brightness cache value  ----------------', this.profileBrightness);
 		} catch (error) {
 			console.error(error.message);
 		}

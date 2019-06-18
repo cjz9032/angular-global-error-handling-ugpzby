@@ -488,6 +488,10 @@
 				"minute": "minute",
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
+				"updating": "Updating",
+				"thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+				"voltageError": "Battery voltage incorrect",
+				"batteryNotDetected": "No Battery Detected",
 				"details": {
 					"title": "Battery Details",
 					"primary": "Primary Battery",
@@ -544,7 +548,7 @@
 						"description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
 					},
 					"Good": {
-						"title": "The battery is in good Condition"
+						"title": "The battery is in good condition."
 					},
 					"Exhaustion": {
 						"title": "The battery has failed due to normal",
@@ -563,20 +567,45 @@
 					},
 					"NotSupportACAdapter": {
 						"title": "AC adapter not supported.",
-						"description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
+						"description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
 					},
 					"LimitedACAdapterSupport": {
 						"title": "AC adapter cannot provide enough power",
 						"description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
 					},
 					"MissingDriver": {
-						"title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
+						"title": "The Lenovo Power Manager driver",
 						"description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
 					},
 					"StoreLimitation": {
 						"title": "The battery can only store",
 						"description1": "of",
 						"description2": "it's original full charge capacity"
+					},
+					"HighTemperature": {
+						"title": "Discharging",
+						"description": "has been stopped because the",
+						"description1": "battery temperature is too high"
+					},
+					"TrickleCharge": {
+						"description": "The battery was",
+						"description1": "completely discharged",
+						"description2": "and needs to be recharged. This might take ten hours or more."
+					},
+					"OverheatedBattery": {
+						"description": "The battery is",
+						"description1": "too hot.",
+						"description2": "Remove it from the computer and cool it to room temperature."
+					},
+					"PermanentError": {
+						"description": "The battery has",
+						"description1": "failed due to normal wear.",
+						"description2": "The battery cannot be charged. Replace the battery."
+					},
+					"HardwareAuthenticationError": {
+						"description": "The battery installed is",
+						"description1": "is not supported",
+						"description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
 					}
 				}
 			},
@@ -675,6 +704,17 @@
 						"description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
 					}
 				},
+				"smartStandby": {
+					"title": "Smart Standby",
+					"description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
+					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+					"timer": {
+						"heading": "Set time when you typically use this computer",
+						"subHeading1": "start",
+						"subHeading2": "end",
+						"subHeading3": "use this schedule for"
+					}
+				},
 				"batterySettings": {
 					"title": "Battery Settings",
 					"batteryThreshold": {
@@ -720,9 +760,9 @@
 						"description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
 					}
 				},
-				"energyStar":{
-					"title":"Energy Star",
-					"description":"AN ENERGY STAR CERTIFIED PRODUCT"
+				"energyStar": {
+					"title": "Energy Star",
+					"description": "AN ENERGY STAR CERTIFIED PRODUCT"
 				}
 			},
 			"audio": {
@@ -805,7 +845,7 @@
 				"display": {
 					"title": "Display",
 					"eyeCareMode": {
-						"title": "Eye Care Mode",
+						"title": "Color Temperature in Eye Care Mode",
 						"checkbox": "Schedule eye care mode from sunset to sunrise",
 						"options": {
 							"warm": "Warm (Better for eyes)",
@@ -839,7 +879,7 @@
 						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
 						"note": {
 							"title": "Note",
-							"description": "When the Eye care mode is enabled. this color temperature does not take effect. However,  you can drag the slide to get a preview of it. To make it effective. turn off the Eye care mode"
+							"description": "When the Eye care mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye care mode."
 						}
 					},
 					"privacyGuard": {
@@ -876,6 +916,12 @@
 						"blurMode": "Blur mode",
 						"comicMode": "Comic mode",
 						"sketchMode": "Sketch mode"
+					},
+					"cameraLoadingFailed": {
+						"inUseTitle": "CAMERA IS IN USE",
+						"inUseDescription": "Another app is using the camera. Close the app and try again.",
+						"loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
+						"loadingFailedDescription": "Close the app and try again."
 					}
 				}
 			},
@@ -889,13 +935,32 @@
 						"title": "Hidden keyboard functions",
 						"description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
 					},
-					"firstKeyObj": {"tittle":  "Fn + Tab" , "description": "enable zoom feature on high resolution displays", "image": ""},
-					"secondKeyObj": {"tittle":  "Fn + 4" , "description": "enter sleep mode", "image": ""},
-					"thirdKeyObj": {"tittle":  "Fn + D" , "description": "turn on and off Privacy Guard", "image": ""},
-					"fourthKeyObj": {"tittle":  "Fn + Q" , "description": "change between Performance mode and Quiet mode", "image": ""},
-					"fifthKeyObj": {"tittle":  "Fn + Space" , "description": "change keyboard backlight states", "image": ""}
+					"firstKeyObj": {
+						"tittle": "Fn + Tab",
+						"description": "enable zoom feature on high resolution displays",
+						"image": ""
+					},
+					"secondKeyObj": {
+						"tittle": "Fn + 4",
+						"description": "enter sleep mode",
+						"image": ""
+					},
+					"thirdKeyObj": {
+						"tittle": "Fn + D",
+						"description": "turn on and off Privacy Guard",
+						"image": ""
+					},
+					"fourthKeyObj": {
+						"tittle": "Fn + Q",
+						"description": "change between Performance mode and Quiet mode",
+						"image": ""
+					},
+					"fifthKeyObj": {
+						"tittle": "Fn + Space",
+						"description": "change keyboard backlight states",
+						"image": ""
+					}
 				}
-
 			}
 		},
 		"smartAssist": {
@@ -906,7 +971,8 @@
 				"security": "Security",
 				"screen": "Screen",
 				"media": "Media",
-				"voice": "Voice"
+				"voice": "Voice",
+				"APS": "APS"
 			},
 			"intelligentSecurity": {
 				"title": "Intelligent Security",
@@ -948,7 +1014,7 @@
 					"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
 					"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
 					"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-					"description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
+					"description4": "2. If your computer is in hibernation mode or has been turned off. Zero Touch Lock will not work.",
 					"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
 				},
 				"WindowsLink": {
@@ -989,17 +1055,17 @@
 					"dropdown-title": "Suspend for",
 					"button": "Suspend Now"
 				},
-				"advanced":{
+				"advanced": {
 					"description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
-					"pen":{
+					"pen": {
 						"title": "Pen Input",
 						"description": "When pen input is used, Enable APS when pen input is out of range"
 					},
-					"touch":{
+					"touch": {
 						"title": "Touch Input",
 						"description": "When Touch input is used, Enable APS when touch input is not detected"
 					},
-					"hand":{
+					"hand": {
 						"title": "Hand proximity sensing on computer edges",
 						"description": "When tablet mode is enabled, Enable APS when hand is not detected"
 					}
@@ -1157,16 +1223,16 @@
 		"upgrade": "upgrade",
 		"freeTrial": "Free 30 day trial",
 		"protectAllDevices": "Protect all of your devices",
-		"inEcosystem":"In Ecosystem",
-		"ecosystemEnable":"Ecosystem Enabled",
-		"inTrial":"In trial",
-		"addEcosystem":"Add to Ecosystem",
-		"enableEcosystem":"Enable Ecosystem",
-		"startTrial":"Start Trial",
-		"fullAccess":"Full Access",
-		"recent":"Recent security notifications",
-		"notification":"Notifications",
-		"renew":"Renew",
+		"inEcosystem": "In Ecosystem",
+		"ecosystemEnable": "Ecosystem Enabled",
+		"inTrial": "In trial",
+		"addEcosystem": "Add to Ecosystem",
+		"enableEcosystem": "Enable Ecosystem",
+		"startTrial": "Start Trial",
+		"fullAccess": "Full Access",
+		"recent": "Recent security notifications",
+		"notification": "Notifications",
+		"renew": "Renew",
 		"tour": {
 			"back": "Back",
 			"skip": "Skip",

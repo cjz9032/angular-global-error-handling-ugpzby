@@ -19,6 +19,7 @@
 						</vtr-ui-header-subpage>
 					</div>
 
+					<!-- Start of Intelligent Security -->
 					<div class="row py-5 smart-assist-card"
 						id="security"
 						*ngIf="intelligentSecurity.isIntelligentSecuritySupported">
@@ -59,7 +60,7 @@
 												[disabled]="!intelligentSecurity.isZeroTouchLoginEnabled">
 											</vtr-ui-row-switch>
 											<div class="slider-note">
-												<vtr-ui-range-slider
+												<vtr-ui-range-slider [manualRefresh]="manualRefresh"
 													*ngIf="!intelligentSecurity.isZeroTouchLoginAdjustEnabled"
 													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
 													[minValue]="1"
@@ -134,7 +135,7 @@
 											<!-- Add appropriate [enableSlider]="!intelligentSecurity.isZeroTouchLoginAdjustEnabled" -->
 											<div class="slider-note"
 												[class.disabled]="!intelligentSecurity.isZeroTouchLoginEnabled">
-												<vtr-ui-range-slider
+												<vtr-ui-range-slider [manualRefresh]="manualRefresh"
 													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
 													[minValue]="1"
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
@@ -258,9 +259,12 @@
 							</vtr-container-collapsible>
 						</div>
 					</div>
+					<!-- End of Intelligent Security -->
 
+					<!-- Start of Intelligent Screen -->
 					<div class="row py-5 smart-assist-card"
-						id="screen">
+						id="screen"
+						*ngIf="intelligentScreen.isIntelligentScreenVisible">
 						<div class="col-10 mx-auto">
 							<vtr-container-collapsible
 								[cardTitle]="'device.smartAssist.intelligentScreen.title' | translate"
@@ -280,15 +284,18 @@
 								</div>
 
 								<ul class="list-group list-group-flush">
-									<li class="auto-screen-off-block">
+									<li class="auto-screen-off-block"
+										*ngIf="intelligentScreen.isAutoScreenOffVisible">
 										<vtr-ui-row-switch
 											[title]="'device.smartAssist.intelligentScreen.autoScreenOff.title' | translate"
 											[caption]=" 'device.smartAssist.intelligentScreen.autoScreenOff.caption' | translate"
 											[isSwitchVisible]="true"
 											[leftIcon]="['fal', 'gem']"
-											[theme]="'white'">
+											[theme]="'white'"
+											[isSwitchChecked]="intelligentScreen.isAutoScreenOffEnabled">
 										</vtr-ui-row-switch>
-										<div class="row">
+										<div class="row"
+											*ngIf="intelligentScreen.isAutoScreenOffNoteVisible">
 											<div class="feature-note auto-screen-off-note p-4 m-4">
 												<p>{{'device.smartAssist.intelligentScreen.autoScreenOff.note' | translate}}
 												</p>
@@ -297,7 +304,8 @@
 											</div>
 										</div>
 									</li>
-									<li class="pt-3 keep-my-display-block">
+									<li class="pt-3 keep-my-display-block"
+										*ngIf="intelligentScreen.isReadingOrBrowsingVisible">
 										<vtr-ui-row-switch
 											[title]="'device.smartAssist.intelligentScreen.keepMyDisplay.title' | translate"
 											[caption]="'device.smartAssist.intelligentScreen.keepMyDisplay.caption' | translate"
@@ -306,17 +314,19 @@
 											[isSwitchVisible]="true"
 											[showChildContent]="true"
 											(toggleOnOff)="displayDim($event)"
-											[isSwitchChecked]="keepMyDisplay">
+											[isSwitchChecked]="intelligentScreen.isReadingOrBrowsingEnabled">
 											<div class="pl-5 ml-5 pt-4">
 												<div class="display-dim-title">
 													{{'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.title' | translate}}
 												</div>
-												<vtr-ui-range-slider
+												<vtr-ui-range-slider [manualRefresh]="manualRefresh"
 													[minValueLegend]="'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.startTime' | translate"
 													[minValue]="0"
 													[maxValueLegend]="'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.endTime' | translate"
-													[maxValue]="100"
-													[enableSlider]="!keepMyDisplay">
+													[maxValue]="60"
+													[value]="intelligentScreen.readingOrBrowsingTime"
+													[enableSlider]="!intelligentScreen.isReadingOrBrowsingEnabled"
+													(change)="onDisplayDimTimeChange($event)">
 												</vtr-ui-range-slider>
 											</div>
 										</vtr-ui-row-switch>
@@ -326,12 +336,21 @@
 						</div>
 					</div>
 
+					<!-- End of Intelligent Screen -->
+
+
+					<!-- Start of Intelligent Media -->
+
 					<vtr-intelligent-media id="media"
-						(isMediaSettingHidden)="hideMediaSetting($event)">
+						*ngIf="intelligentMedia.available"
+						[isChecked]="intelligentMedia.status">
 					</vtr-intelligent-media>
 
+					<!-- End of Intelligent Media -->
+
+					<!-- Start of Active Protection System -->
 					<div class="row py-5 smart-assist-card"
-						id="screen">
+						id="aps">
 						<div class="col-10 mx-auto">
 							<vtr-container-collapsible
 								[cardTitle]="'device.smartAssist.activeProtectionSystem.title' | translate"
@@ -344,6 +363,7 @@
 							</vtr-container-collapsible>
 						</div>
 					</div>
+					<!-- End of Active Protection System -->
 
 				</div>
 

@@ -42,11 +42,7 @@ export class AppComponent implements OnInit {
 		translate.addLangs(['en', 'zh-Hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it',
 			'ja', 'ko', 'nb', 'nl', 'pl', 'pt-BR', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-Latn', 'sv', 'tr', 'uk', 'zh-Hant']);
 		this.translate.setDefaultLang('en');
-		const hadRunApp: boolean = commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
-		const appFirstRun = !hadRunApp;
-		if (appFirstRun && deviceService.isShellAvailable) {
-			commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
-		}
+
 
 		//#region VAN-2779 this is moved in MVP 2
 
@@ -144,10 +140,15 @@ export class AppComponent implements OnInit {
 		});
 
 		const result = this.getMachineInfo();
-		if (result != null) {
-			result.then((machineInfo) => {
-				this.sendFirstRunEvent(machineInfo);
-			});
+		const hadRunApp: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
+		const appFirstRun = !hadRunApp;
+		if (appFirstRun && this.deviceService.isShellAvailable) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
+			if (result) {
+				result.then((machineInfo) => {
+					this.sendFirstRunEvent(machineInfo);
+				});
+			}
 		}
 
 		this.checkIsDesktopOrAllInOneMachine();
@@ -175,6 +176,7 @@ export class AppComponent implements OnInit {
 					console.log('getMachineInfo.then', value);
 					if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
 						this.translate.use(value.locale.substring(0, 2));
+						this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
 					} else {
 						if (value && value.locale.substring(0, 2).toLowerCase() === 'pt') {
 							value.locale.toLowerCase() === 'pt-br' ? this.translate.use('pt-BR') : this.translate.use('pt');
@@ -186,7 +188,6 @@ export class AppComponent implements OnInit {
 							this.translate.use('zh-Hant');
 						}
 					}
-
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
 					return value;
 				}).catch(error => {

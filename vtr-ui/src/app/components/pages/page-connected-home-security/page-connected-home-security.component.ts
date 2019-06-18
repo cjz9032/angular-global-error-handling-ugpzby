@@ -7,7 +7,7 @@ import {
 	EventEmitter
 } from '@angular/core';
 import {
-	EventTypes, ConnectedHomeSecurity, WinRT
+	EventTypes, ConnectedHomeSecurity, CHSDeviceOverview, CHSNotifications
 } from '@lenovo/tan-client-bridge';
 import {
 	VantageShellService
@@ -18,8 +18,6 @@ import {
 import {
 	HomeSecurityPageStatus
 } from 'src/app/data-models/home-security/home-security-page-status.model';
-import { HomeSecurityNotification } from 'src/app/data-models/home-security/home-security-notification.model';
-import { WidgetItem } from 'src/app/data-models/security-advisor/widget-security-status/widget-item.model';
 import { TranslateService } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalChsWelcomeContainerComponent } from '../../modal/modal-chs-welcome-container/modal-chs-welcome-container.component';
@@ -31,7 +29,9 @@ import { HomeSecurityWelcome } from 'src/app/data-models/home-security/home-secu
 import { ModalLenovoIdComponent } from 'src/app/components/modal/modal-lenovo-id/modal-lenovo-id.component';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
-import { UserService } from '../../../services/user/user.service';
+import { HomeSecurityAllDevice } from 'src/app/data-models/home-security/home-security-overview-allDevice.model';
+import { HomeSecurityOverviewMyDevice } from 'src/app/data-models/home-security/home-security-overview-my-device.model';
+import { HomeSecurityNotifications } from 'src/app/data-models/home-security/home-security-notifications.model';
 
 @Component({
 	selector: 'vtr-page-connected-home-security',
@@ -39,70 +39,97 @@ import { UserService } from '../../../services/user/user.service';
 	styleUrls: ['./page-connected-home-security.component.scss']
 })
 export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
-	notifications: HomeSecurityNotification;
 	pageStatus: HomeSecurityPageStatus;
 	eventEmitter = new EventEmitter();
 
-	welcomeModel: HomeSecurityWelcome;
 	connectedHomeSecurity: ConnectedHomeSecurity;
 	permission: any;
+	welcomeModel: HomeSecurityWelcome;
+	allDevicesInfo: HomeSecurityAllDevice;
+	homeSecurityOverviewMyDevice: HomeSecurityOverviewMyDevice;
+	notificationItems: HomeSecurityNotifications;
+	account: HomeSecurityAccount;
 
 	testStatus = ['lessDevices-secure', 'moreDevices-needAttention', 'noneDevices', 'trialExpired', 'lessDevices-needAttention', 'moreDevices-secure', 'localAccount'];
 
 	constructor(
 		vantageShellService: VantageShellService,
-		public  homeSecurityMockService: HomeSecurityMockService,
+		public homeSecurityMockService: HomeSecurityMockService,
 		private translateService: TranslateService,
 		private modalService: NgbModal,
 		private commonService: CommonService,
-		private ngZone: NgZone
+		private ngZone: NgZone,
 	) {
 		this.connectedHomeSecurity = homeSecurityMockService.getConnectedHomeSecurity();
 		this.permission = vantageShellService.getPermission();
-		this.createMockData();
 		this.welcomeModel = new HomeSecurityWelcome();
-	}
-
-	private createMockData() {
-		this.notifications = {items: []};
-		this.notifications.items.push(new WidgetItem({id: '2', title: '5 minutes disconnect', iconPath: 'assets/images/qa/svg_icon_qa_backup.svg',
-		notificationDetail: 'Antivirus was disabled'}, this.translateService));
-		this.notifications.items.push(new WidgetItem({id: '3', title: '10 minutes disconnect', iconPath: 'assets/images/qa/svg_icon_qa_pcbit.svg',
-		notificationDetail: 'Antivirus was disabled'}, this.translateService));
-		this.notifications.items.push(new WidgetItem({id: '1', title: 'Antivirus was disabled', iconPath: 'assets/images/qa/svg_icon_qa_battery.svg',
-		notificationDetail: 'Antivirus was disabled'}, this.translateService));
-		this.notifications.items.push(new WidgetItem({id: '1', title: 'Passcode lock disabled 3 hours', iconPath: 'assets/images/qa/svg_icon_qa_tablet.svg',
-		notificationDetail: 'Antivirus was disabled'}, this.translateService));
-		this.notifications.items.push(new WidgetItem({id: '1', title: '3 hours disconnect', iconPath: 'assets/images/qa/svg_icon_qa_cortana.svg',
-		notificationDetail: 'Antivirus was disabled'}, this.translateService));
-		this.notifications.items.push(new WidgetItem({id: '1', title: '8 minutes disconnect', iconPath: 'assets/images/qa/svg_icon_qa_battery.svg',
-		notificationDetail: 'Antivirus was disabled'}, this.translateService));
-		this.notifications.items.push(new WidgetItem({id: '1', title: 'Antivirus was disabled', iconPath: 'assets/images/qa/svg_icon_qa_pcbit.svg',
-		notificationDetail: 'Antivirus was disabled'}, this.translateService));
-		this.notifications.items.push(new WidgetItem({id: '1', title: 'Passcode lock disabled 3 hours', iconPath: 'assets/images/qa/svg_icon_qa_refresh.svg',
-		notificationDetail: 'Antivirus was disabled'}, this.translateService));
 	}
 
 	ngOnInit() {
 		this.welcomeModel.isLenovoIdLogin = false; // mock data;
 		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, true);
-		const cacheSystemLocationShow = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed);
-		if (typeof cacheSystemLocationShow === 'boolean') {
-			this.welcomeModel.hasSystemPermissionShowed = cacheSystemLocationShow;
-			this.openModal();
-		} else {
-			this.permission.getSystemPermissionShowed().then((response) =>  {
-				this.welcomeModel.hasSystemPermissionShowed = response;
-				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed, response);
-				if (typeof this.welcomeModel.hasSystemPermissionShowed === 'boolean') {
-					this.openModal();
-				}
-			});
-		}
+		this.permission.getSystemPermissionShowed().then((response) => {
+			this.welcomeModel.hasSystemPermissionShowed = response;
+			if (typeof this.welcomeModel.hasSystemPermissionShowed === 'boolean') {
+				this.openModal();
+			}
+		});
 		this.connectedHomeSecurity.on(EventTypes.chsHasSystemPermissionShowedEvent, (data) => {
 			this.welcomeModel.hasSystemPermissionShowed = data;
-			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed, data);
 		});
+
+		const cacheMyDevice = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityMyDevice);
+		const cacheAllDevices = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices);
+		if (cacheAllDevices) {
+			this.allDevicesInfo = cacheAllDevices;
+		}
+		if (this.connectedHomeSecurity && this.connectedHomeSecurity.overview) {
+			this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice(this.translateService, this.connectedHomeSecurity.overview);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityMyDevice, this.homeSecurityOverviewMyDevice);
+		} else if (cacheMyDevice) {
+			this.homeSecurityOverviewMyDevice = cacheMyDevice;
+		}
+		if (this.connectedHomeSecurity && this.connectedHomeSecurity.overview && this.connectedHomeSecurity.overview.allDevices && this.connectedHomeSecurity.overview.allDevices.length > 0) {
+			this.allDevicesInfo = new HomeSecurityAllDevice(this.connectedHomeSecurity.overview);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
+		}
+		const cacheAccount = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount);
+		if (cacheAccount) {
+			this.account = cacheAccount;
+		}
+		if (this.connectedHomeSecurity.account) {
+			this.account = new HomeSecurityAccount(this.connectedHomeSecurity.account);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, this.account);
+		}
+		const cacheNotifications = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityNotifications);
+		if (cacheNotifications) {
+			this.notificationItems = cacheNotifications;
+		}
+
+		if(this.connectedHomeSecurity.notifications){
+			this.notificationItems = new HomeSecurityNotifications(this.connectedHomeSecurity.notifications);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityNotifications, this.notificationItems)
+		}
+
+		this.connectedHomeSecurity.on(EventTypes.chsEvent, (chs: ConnectedHomeSecurity) => {
+			if (chs && chs.overview) {
+				this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice(this.translateService, chs.overview);
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityMyDevice, this.homeSecurityOverviewMyDevice);
+			}
+			if (chs.account) {
+				this.account = new HomeSecurityAccount(chs.account);
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, this.account);
+			}
+			if (chs.overview.allDevices && chs.overview.allDevices.length > 0) {
+				this.allDevicesInfo = new HomeSecurityAllDevice(chs.overview);
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
+			}
+			if (chs.notifications) {
+				this.notificationItems = new HomeSecurityNotifications(chs.notifications);
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityNotifications, this.notificationItems);
+			}
+		});
+
 	}
 
 	ngOnDestroy() {
@@ -111,7 +138,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		this.permission.getSystemPermissionShowed().then(response =>  {
+		this.permission.getSystemPermissionShowed().then(response => {
 			this.welcomeModel.hasSystemPermissionShowed = response;
 		});
 		this.welcomeModel.isLenovoIdLogin = false; // mock data;
@@ -209,12 +236,22 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	onManageAccount(feature: string) {
+	onManageAccount(feature?: string) {
 		this.connectedHomeSecurity.account.visitWebConsole(feature);
 	}
 
 	onUpgradeAccount() {
 		this.connectedHomeSecurity.account.purchase();
+	}
+
+	haddleChange($event) {
+		if ($event === 'visitCornet') {
+			this.onManageAccount();
+		} else if ($event === 'upgrade') {
+			this.onUpgradeAccount();
+		} else if ($event === 'startTrial') {
+			this.onStartTrial();
+		}
 	}
 
 	public switchStatus() {

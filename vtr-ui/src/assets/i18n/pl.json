@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -377,7 +377,15 @@
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
-                }
+                },
+                "question1": "Do you like the new style of Vantage?",
+                "question2": "Do you think the performance is acceptable?",
+                "question3": "Would you use the application more often in the future?",
+                "yes": "Yes",
+                "no": "No",
+                "tips1": "Please leave any additional comments",
+                "sendFeedback": "Send Feedback",
+                "submitScreenShot": "Submit Screen Shot"
             }
         },
         "quickSettings": {
@@ -557,20 +565,12 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter",
+                        "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "ACAdapterNotSupported": {
                         "title": "AC adapter not supported.",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
@@ -598,9 +598,9 @@
                     "title": "Inteligentne ustawienia zasilania",
                     "subtitle": "INTELIGENTNE CHŁODZENIE",
                     "subtitle1": "Akumulator i cicha praca",
-                    "description1": "Ta funkcja dynamicznie dostosowuje ustawienia ciepła do Twoich potrzeb.",
+                    "description1": "Ta funkcja dynamicznie dostosowuje ustawienia ciepła do Twoich potrzeb.Po włączeniu dostosowuje ustawienia, aby urządzenie było chłodniejsze lub pracowało ciszej, gdy jest trzymane na kolanach lub bezczynne. W przeciwnym razie optymalizuje wydajność, gdy urządzenie znajduje się na stabilnej powierzchni. Gdy jest wyłączone, można ręcznie ustawić priorytet chłodzenia.",
                     "description2": "Funkcja Inteligentne chłodzenie dostosowuje szybkość wentylatora, maksymalną temperaturę powierzchni komputera oraz jego wydajność.Ta funkcja ma poniższe tryby i jest teraz dostępna za pomocą suwaka wydajności systemu Windows.",
-                    "description3": "Funkcja Inteligentne chłodzenie automatycznie równoważy sprawność cieplną, dostosowując ją do Twoich potrzeb.",
+                    "description3": "Funkcja Inteligentne chłodzenie automatycznie równoważy sprawność cieplną, dostosowując ją do Twoich potrzeb.Gdy notebook jest trzymany na kolanach, funkcja Inteligentne chłodzenie dostosowuje wydajność, aby dla komfortu użytkownika zapewnić chłodniejszą powierzchnię. Gdy urządzenie jest umieszczone na biurku, ta funkcja optymalizuje wydajność systemu.",
                     "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
                     "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
                     "readMore": "Dowiedz się więcej.",
@@ -631,8 +631,8 @@
                             "mode1": "Tryb cichy",
                             "mode2": "Tryb zrównoważony",
                             "mode3": "Tryb wydajności",
-                            "line1": "Suwak znajduje się po lewej stronie.",
-                            "line2": "Suwak znajduje się po środku.",
+                            "line1": "Suwak znajduje się po lewej stronie.Szybkość wentylatora i wydajność są obniżone, w wyniku czego komputer staje się chłodniejszy i cichszy a czas pracy akumulatora najdłuższy.",
+                            "line2": "Suwak znajduje się po środku.Szybkość wentylatora i wydajność są równoważone według aktualnych potrzeb, aby zapewnić efektywne działanie komputera.",
                             "line3": "Suwak znajduje się po prawej stronie. Szybkość wentylatora i dopuszczalna temperatura powierzchni są wyższe dla uzyskania najlepszej wydajności.",
                             "line4": "More info"
                         },
@@ -682,8 +682,8 @@
                     "title": "Ustawienia akumulatora",
                     "batteryThreshold": {
                         "title": "Próg ładowania akumulatora",
-                        "description": "Jeśli komputer jest używany głównie z podłączonym zasilaczem sieciowym i jest rzadko zasilany akumulatorem,",
-                        "tooltip": "Jeśli akumulator jest obecnie naładowany powyżej ustalonego progu zatrzymania ładowania, odłącz źródło zasilania i rozładuj akumulator do poziomu progowego lub niższego.",
+                        "description": "Jeśli komputer jest używany głównie z podłączonym zasilaczem sieciowym i jest rzadko zasilany akumulatorem,można wydłużyć czas pracy akumulatora, wybierając maksymalną wartość ładowania poniżej 100%. Jest to przydatna funkcja, ponieważ czas eksploatacji akumulatorów, które są rzadko, jest dłuższy, gdy nie ładuje się ich do końca.",
+                        "tooltip": "Jeśli akumulator jest obecnie naładowany powyżej ustalonego progu zatrzymania ładowania, odłącz źródło zasilania i rozładuj akumulator do poziomu progowego lub niższego.W zależności od stanu akumulatora (stary lub nowy) dokładny punkt, w którym rozpoczyna się lub kończy ładowanie, może różnić się o dwa punkty procentowe. Jeśli ta funkcja jest włączona, zalecamy od czasu do czasu zresetować miernik poziomu akumulatora, aby zapewnić dokładne raportowanie stanu akumulatora.",
                         "note": "Note",
                         "readMoreText": "Read more.",
                         "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
@@ -694,7 +694,7 @@
                         "popup": {
                             "title": "Włącz próg ładowania akumulatora",
                             "description1": "Włączenie niestandardowego progu ładowania akumulatora umożliwi dłuższe utrzymywanie akumulatora w dobrym stanie podczas korzystania z tego urządzenia.Niepełne ładowanie akumulatora skróci jednak czas pracy na nim.",
-                            "description2": "W celu pełnego włączenia tej funkcji należy odłączyć komputer od zasilania z sieci elektrycznej i",
+                            "description2": "W celu pełnego włączenia tej funkcji należy odłączyć komputer od zasilania z sieci elektrycznej ipoczekać, aż stopień naładowania akumulatora spadnie co najmniej do wartości progu zatrzymania ładowania.",
                             "enable": "WŁĄCZ",
                             "cancel": "ANULUJ"
                         },
@@ -711,16 +711,16 @@
                     },
                     "conservationMode": {
                         "title": "Tryb oszczędzania energii",
-                        "description": "Ta funkcja jest przydatna do przedłużenia żywotności akumulatora, gdy komputer jest podłączony do źródła zasilania.",
+                        "description": "Ta funkcja jest przydatna do przedłużenia żywotności akumulatora, gdy komputer jest podłączony do źródła zasilania. <br>Gdy ten tryb jest włączony, akumulator będzie ładowany tylko do 55–60% pojemności, co może wydłużyć jego żywotność. Skróci to jednak czas korzystania z komputera po odłączeniu go od źródła zasilania.",
                         "tooltip": {
                             "line1": "Ta funkcja jest przydatna do przedłużenia żywotności akumulatora, gdy komputer jest podłączony do źródła zasilania.",
                             "line2": "Gdy ten tryb jest włączony, akumulator będzie ładowany tylko do 55–60% pojemności, co może wydłużyć jego żywotność. Skróci to jednak czas korzystania z komputera po odłączeniu go od źródła zasilania.",
-                            "line3": "Uwaga: ładowanie ekspresowe i tryb konserwacji nie mogą być uruchomione w tym samym czasie."
+                            "line3": "Uwaga: ładowanie ekspresowe i tryb konserwacji nie mogą być uruchomione w tym samym czasie.Jeśli jeden z trybów jest włączony, drugi z nich zostanie automatycznie wyłączony."
                         }
                     },
                     "airPlanePower": {
                         "title": "Tryb samolotowy",
-                        "description": "Chroń samolotowe gniazdko elektryczne, kontrolując ilość energii zużywanej przez system."
+                        "description": "Chroń samolotowe gniazdko elektryczne, kontrolując ilość energii zużywanej przez system.Gdy Tryb samolotowy jest włączony, komputer zmniejsza zużycie energii, ograniczając szybkość ładowania akumulatora i wydajność systemu."
                     }
                 },
                 "energyStar": {
@@ -731,14 +731,14 @@
             "audio": {
                 "title": "Dźwięk",
                 "subtitle": "Ustawienia dźwięku",
-                "description": "Ta sekcja umożliwia automatyczną optymalizację lub pełną,",
+                "description": "Ta sekcja umożliwia automatyczną optymalizację lub pełną,ręczną konfigurację ustawień dźwięku, takich jak ustawienia trybu Dolby, mikrofonu itp.",
                 "audioSmartsettings": {
                     "title": "Inteligentne ustawienia dźwięku",
                     "subtitle": "USTAWIENIA APLIKACJI",
                     "description": "Automatycznie dostosuj ustawienia dźwięku do używanych aplikacji.",
                     "dolby": {
                         "title": "Automatyczne ustawienia dźwięku Dolby",
-                        "tooltip": "Automatyczne ustawienia dźwięku Dolby konfigurują ustawienia dźwięku Dolby na",
+                        "tooltip": "Automatyczne ustawienia dźwięku Dolby konfigurują ustawienia dźwięku Dolby naodpowiedni tryb dla różnych aplikacji, których używasz, aby poprawić jakość dźwięku.",
                         "options": {
                             "dynamic": "DYNAMICZNE",
                             "movie": "FILM",
@@ -861,7 +861,7 @@
                     "url": "Przejdź do ustawień prywatności systemu Windows",
                     "cameraPrivacy": {
                         "title": "Tryb prywatności kamery",
-                        "tooltip": "Gdy włączone jest ustawienie prywatności, kamera przestaje wysyłać obrazy na żywo."
+                        "tooltip": "Gdy włączone jest ustawienie prywatności, kamera przestaje wysyłać obrazy na żywo. Włącz to ustawienie tylko, jeśli nie chcesz wysyłać swoich zdjęć do innych podczas rozmów wideo."
                     },
                     "camera": {
                         "title": "Aparat",
@@ -947,7 +947,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Blokada bez dotyku",
-                    "caption": "Ta funkcja przyciemni ekran i zablokuje komputer, gdy nieobecność użytkownika zostanie wykryta.",
+                    "caption": "Ta funkcja przyciemni ekran i zablokuje komputer, gdy nieobecność użytkownika zostanie wykryta.Zmniejsza możliwość nieuprawnionego dostępu do komputera, gdy zostawisz niezablokowany komputer bez nadzoru. Zmniejsza również zużycie energii, przełączając system w tryb wstrzymania, gdy zostanie wykryta Twoja nieobecność.",
                     "autoScreenLockTimer": {
                         "title": "LICZNIK AUTOMATYCZNEJ BLOKADY EKRANU",
                         "radioButton": {
@@ -955,7 +955,7 @@
                             "medium": "Średnia",
                             "slow": "Wolno"
                         },
-                        "toolTipContent": "Wybierz żądaną opcję, aby szybko/umiarkowanie/wolno zablokować ekran, gdy Twoja obecność nie zostanie wykryta."
+                        "toolTipContent": "Wybierz żądaną opcję, aby szybko/umiarkowanie/wolno zablokować ekran, gdy Twoja obecność nie zostanie wykryta.W rzeczywistości czas, w którym ekran zostanie zablokowany, zależy również od danego przypadku, możliwości czujnika i ustawienia limitu czasu ekranu systemu Windows. Dlatego przed odejściem od komputera zdecydowanie zalecamy natychmiastowe zablokowanie systemu."
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -967,9 +967,9 @@
                     }
                 },
                 "note": {
-                    "description1": "Ta funkcja zależy od funkcji Windows Hello.",
-                    "description2": "Funkcja wykorzystuje czujniki i kamerę do wykrywania Twojej obecności.",
-                    "description3": 1,
+                    "description1": "Ta funkcja zależy od funkcji Windows Hello.Upewnij się, że funkcja rozpoznawania twarzy jest włączona w ustawieniach systemu Windows.",
+                    "description2": "Funkcja wykorzystuje czujniki i kamerę do wykrywania Twojej obecności.Jednak ta funkcja NIE zbiera, nie zapisuje oraz nie ujawnia żadnych danych osobowych ani obrazów.",
+                    "description3": "1.Te funkcje mogą nie działać prawidłowo, gdy komputer jest w trybie namiotu, tabletu lub podstawki.",
                     "description4": "2. Gdy komputer jest w trybie hibernacji lub został wyłączony.Automatyczne logowanie kamery na podczerwień nie będzie działać.",
                     "description5": "3. Dostosuj ekran komputera do odpowiedniego kąta,tak aby kamera IR mogła rozpoznać Twoją twarz w celu automatycznego logowania."
                 },
@@ -1054,8 +1054,8 @@
             "shutdown": "Zamknij",
             "rebootForceMsg": "Po zainstalowaniu wybranych aktualizacji nastąpi automatyczne ponowne uruchomienie systemu.",
             "shutdownForceMsg": "Po zainstalowaniu wybranych aktualizacji nastąpi automatyczne zamknięcie systemu.",
-            "rebootDelayedMsg": "Po zainstalowaniu wybranych aktualizacji nastąpi ponowne uruchomienie systemu, podczas instalowania aktualizacji nie wyłączaj systemu, nie odłączaj zasilania ani akcesoriów. Zalecamy zapisanie pracy przed ponownym uruchomieniem systemu.",
-            "rebootRequiredMsg": "Aby pomyślnie zainstalować aktualizacje, komputer wymaga ponownego uruchomienia, aby zapewnić prawidłowe i płynne działanie systemu.",
+            "rebootDelayedMsg": "Po zainstalowaniu wybranych aktualizacji nastąpi ponowne uruchomienie systemu,podczas instalowania aktualizacji nie wyłączaj systemu, nie odłączaj źródła zasilania ani akcesoriów. Zalecamy zapisanie pracy przed ponownym uruchomieniem systemu.",
+            "rebootRequiredMsg": "Aby pomyślnie zainstalować aktualizacje, komputer wymagaponownego uruchomienia, aby zapewnić prawidłowe i płynne działanie systemu.",
             "okayButton": "OK",
             "cancelButton": "Anuluj",
             "rebootButton": "URUCHOM PONOWNIE TERAZ",
@@ -1071,7 +1071,7 @@
             },
             "recommended": {
                 "title": "Zalecane aktualizacje",
-                "tooltip": "Zalecane aktualizacje sterowników zapewniają optymalną wydajność działania komputera."
+                "tooltip": "Zalecane aktualizacje sterowników zapewniają optymalną wydajność komputera."
             },
             "windows": {
                 "title": "Aktualizacje systemu Windows",
@@ -1086,21 +1086,21 @@
             "title": "Zaktualizowany system to wydajny system.",
             "last": "Ostatnio aktualizowano",
             "next": "Kolejne wyszukiwanie aktualizacji zaplanowano na",
-            "checkButton": "SPRAWDŹ AKTUALIZACJE ",
-            "checking": "Wyszukiwanie aktualizacji",
-            "downloading": "Pobieranie aktualizacji",
+            "checkButton": "SPRAWDŹ AKTUALIZACJE",
+            "checking": "Sprawdzanie aktualizacji",
+            "downloading": "Ukończono pobieranie aktualizacji",
             "installing": "Instalowanie aktualizacji",
             "percent": "% ukończono",
             "cancelCheck": "Anuluj sprawdzanie",
             "cancelUpdates": "ANULUJ AKTUALIZACJE",
             "available": "Dostępne aktualizacje",
-            "description": "Te pakiety zawierają aktualizacje sterowników sprzętowych oraz innych narzędzi systemu, które są niezbędne dla prawidłowego działania komputera. Aktualizacje krytyczne zapewniają również ochronę danych przechowywanych na komputerze i powinny być instalowane, gdy tylko są dostępne. Niezainstalowanie tych pakietów może prowadzić do utraty danych, usterek systemu lub awarii sprzętu.",
+            "description": "Te pakiety zawierają aktualizacje sterowników sprzętowych orazinnych narzędzi systemu, które są krytyczne dla prawidłowego działania komputera. Aktualizacje krytyczne zapewniają również ochronę danych przechowywanych na komputerze i powinny być instalowane, gdy tylko są dostępne. Niezainstalowanie tych pakietów może prowadzić do utraty danych, usterek systemu lub awarii sprzętu.",
             "installButton": "ZAINSTALUJ WSZYSTKIE AKTUALIZACJE",
             "result": {
                 "success": "Wszystkie aktualizacje zostały poprawnie zainstalowane",
                 "fail": {
-                    "title": "Niektóre aktualizacje nie zostały zainstalowane poprawnie.",
-                    "description": "Wystąpił błąd podczas pobierania lub instalowania aktualizacji. Upewnij się, że masz dostęp do internetu i nie wyłączaj komputera podczas instalowania aktualizacji."
+                    "title": "Niektóre aktualizacje nie zostały poprawnie zainstalowane.",
+                    "description": "Wystąpił błąd podczas pobierania lub instalowania aktualizacji.Upewnij się, że masz dostęp do internetu i nie wyłączaj komputera podczas instalowania aktualizacji."
                 }
             }
         },
@@ -1168,15 +1168,14 @@
         "protected": "Protected",
         "notProtected": "Not Protected",
         "myDevice": "My Device",
-        "allDevice": "All Devices",
         "secure": "SECURE",
         "needAttention": "NEEDS ATTENTION",
         "manageAccount": "Manage Account",
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrate to protect all of your devices",
+        "trialExpired": "Trial Expired",
+        "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
         "protectAllDevices": "Protect all of your devices",
@@ -1300,9 +1299,7 @@
             "maliciousNetwork": "Uniemożliwił komputerowi połączenie {{maliciousWifi}}ze złośliwymi sieciami w tym miesiącu.",
             "good": "DOBRY",
             "malicious": "ZŁOŚLIWY",
-            "suspicious": "PODEJRZANY",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "PODEJRZANY"
         },
         "antivirus": {
             "common": {

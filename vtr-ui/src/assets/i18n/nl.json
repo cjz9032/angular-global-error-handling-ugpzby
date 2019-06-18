@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -377,7 +377,15 @@
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
-                }
+                },
+                "question1": "Do you like the new style of Vantage?",
+                "question2": "Do you think the performance is acceptable?",
+                "question3": "Would you use the application more often in the future?",
+                "yes": "Yes",
+                "no": "No",
+                "tips1": "Please leave any additional comments",
+                "sendFeedback": "Send Feedback",
+                "submitScreenShot": "Submit Screen Shot"
             }
         },
         "quickSettings": {
@@ -557,20 +565,12 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter",
+                        "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "ACAdapterNotSupported": {
                         "title": "AC adapter not supported.",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
@@ -598,9 +598,9 @@
                     "title": "Slimme energiebeheerinstellingen",
                     "subtitle": "INTELLIGENT KOELEN",
                     "subtitle1": "Batterij en stille modus",
-                    "description1": "Deze functie past de thermische instellingen dynamisch aan uw behoeften aan.",
+                    "description1": "Deze functie past de thermische instellingen dynamisch aan uw behoeften aan.Als u deze functie inschakelt, worden de instellingen aangepast zodat het apparaat koeler of stil blijft, als u het in de hand houdt of als het inactief is. Anders worden de prestaties geoptimaliseerd wanneer het apparaat op een stabiel oppervlak staat. Als de functie is uitgeschakeld, kunt u de thermische prioriteit handmatig instellen.",
                     "description2": "Intelligent koelen regelt de ventilatorsnelheid, maximale temperatuur van de buitenkant van de computer en de prestaties.Deze functie biedt onderstaande modi en is nu toegankelijk via de prestatieschuif in Windows.",
-                    "description3": "Met Intelligent koelen worden de thermische prestaties automatisch afgestemd op uw behoeften.De functie Intelligent koelen past de prestatie-instellingen zodanig aan dat de notebookcomputer een koeler oppervlak krijgt wanneer u deze vasthoudt. Dit verhoogt uw comfort. ",
+                    "description3": "Met Intelligent koelen worden de thermische prestaties automatisch afgestemd op uw behoeften.De functie Intelligent koelen past de prestatie-instellingen zodanig aan dat de notebookcomputer een koeler oppervlak krijgt wanneer u deze vasthoudt. Dit verhoogt uw comfort. Als het apparaat op een bureau staat, optimaliseert deze functie de prestaties.",
                     "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
                     "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
                     "readMore": "Meer weergeven.",
@@ -631,7 +631,7 @@
                             "mode1": "Stille modus",
                             "mode2": "Gebalanceerde modus",
                             "mode3": "Prestatiemodus",
-                            "line1": "De schuifregelaar is uiterst links.",
+                            "line1": "De schuifregelaar is uiterst links.Ventilatorsnelheid en prestaties worden verlaagd voor een koelere, stillere computer en een langere batterijduur.",
                             "line2": "De schuifregelaar is in het midden.De ventilatorsnelheid en prestaties worden dynamisch gebalanceerd voor een optimale beleving.",
                             "line3": "De schuifregelaar is uiterst rechts. Er worden een hogere ventilatorsnelheid en een hogere temperatuur van de buitenkant van de computer toegelaten voor maximale prestaties.",
                             "line4": "More info"
@@ -682,8 +682,8 @@
                     "title": "Batterij-instellingen",
                     "batteryThreshold": {
                         "title": "Drempelwaarde voor batterijlading",
-                        "description": "Als u de computer meestal gebruikt met stroom van het lichtnet en slechts zelden op stroom van de batterij,kunt u de levensduur van de batterij verlengen door de maximale oplaadwaarde in te stellen op minder dan 100%.",
-                        "tooltip": "Als de batterij meer is opgeladen dan de bovenste drempelwaarde, koppelt u de netvoeding los totdat de batterij tot aan de onderste drempelwaarde is ontladen.",
+                        "description": "Als u de computer meestal gebruikt met stroom van het lichtnet en slechts zelden op stroom van de batterij,kunt u de levensduur van de batterij verlengen door de maximale oplaadwaarde in te stellen op minder dan 100%. Dit is handig omdat batterijen die niet vaak worden gebruikt, langer meegaan als ze worden opgeborgen terwijl ze minder dan volledig zijn opgeladen.",
+                        "tooltip": "Als de batterij meer is opgeladen dan de bovenste drempelwaarde, koppelt u de netvoeding los totdat de batterij tot aan de onderste drempelwaarde is ontladen.Afhankelijk van de conditie van de batterij (oud of nieuw) kan het exacte punt waarop het opladen start of stopt, tot twee procentpunten variëren. Als u deze functie inschakelt, raden we u aan af en toe Batterijmeter opnieuw instellen uit te voeren, zodat u nauwkeurige meldingen over de conditie van de batterij ontvangt.",
                         "note": "Note",
                         "readMoreText": "Read more.",
                         "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
@@ -693,7 +693,7 @@
                         },
                         "popup": {
                             "title": "Drempelwaarde voor batterijlading inschakelen",
-                            "description1": "Als u opladen tot een aangepast niveau inschakelt, blijft de batterij tijdens het gebruik van het apparaat langer in goede conditie.",
+                            "description1": "Als u opladen tot een aangepast niveau inschakelt, blijft de batterij tijdens het gebruik van het apparaat langer in goede conditie.Maar als u de batterij niet volledig oplaadt, kunt u het apparaat minder lang gebruiken alvorens de batterij leeg is.",
                             "description2": "Haal de stekker uit het stopcontact en ontlaad de batterij tot onder het niveauwaarop het opladen wordt gestopt om deze functie volledig te activeren.",
                             "enable": "INSCHAKELEN",
                             "cancel": "ANNULEREN"
@@ -711,16 +711,16 @@
                     },
                     "conservationMode": {
                         "title": "Behoudmodus",
-                        "description": "Deze functie is handig om de levensduur van de batterij te verlengen bij aansluiting.",
+                        "description": "Deze functie is handig om de levensduur van de batterij te verlengen bij aansluiting. <br>Als u deze modus inschakelt, wordt de batterij slechts opgeladen tot 55-60% van de capaciteit en kan de levensduur van de batterij worden gemaximaliseerd. Hiermee verkort u echter de tijd dat de computer kan worden gebruikt, nadat deze is losgekoppeld van de netvoeding.",
                         "tooltip": {
                             "line1": "Deze functie is handig om de levensduur van de batterij te verlengen bij aansluiting.",
-                            "line2": "Als u deze modus inschakelt, wordt de batterij slechts opgeladen tot 55-60% van de capaciteit en kan de levensduur van de batterij worden gemaximaliseerd.",
-                            "line3": "Opmerking: Snel opladen en de Behoudmodus kunnen niet tegelijkertijd actief zijn."
+                            "line2": "Als u deze modus inschakelt, wordt de batterij slechts opgeladen tot 55-60% van de capaciteit en kan de levensduur van de batterij worden gemaximaliseerd. Hiermee verkort u echter de tijd dat de computer kan worden gebruikt, nadat deze is losgekoppeld van de netvoeding.",
+                            "line3": "Opmerking: Snel opladen en de Behoudmodus kunnen niet tegelijkertijd actief zijn.Als een van de modi wordt ingeschakeld, wordt de andere automatisch uitgeschakeld."
                         }
                     },
                     "airPlanePower": {
                         "title": "Energiemodus aan boord van een vliegtuig",
-                        "description": "Bescherm het stopcontact aan boord door het energieverbruik van uw systeem te beheren."
+                        "description": "Bescherm het stopcontact aan boord door het energieverbruik van uw systeem te beheren.Als het energieschema voor voeding aan boord van een vliegtuig is ingeschakeld, reduceert de computer het energieverbruik door de batterijlaadsnelheid en de systeemprestaties te verlagen."
                     }
                 },
                 "energyStar": {
@@ -731,7 +731,7 @@
             "audio": {
                 "title": "Audio",
                 "subtitle": "Audio-instellingen",
-                "description": "In dit gedeelte kunt u uw audio-instellingen automatisch optimaliseren of",
+                "description": "In dit gedeelte kunt u uw audio-instellingen automatisch optimaliseren ofvolledig configureren, zoals Dolby-instellingen, microfoons, enzovoort.",
                 "audioSmartsettings": {
                     "title": "Slimme audio-instellingen",
                     "subtitle": "OP TOEPASSINGEN GEBASEERDE INSTELLINGEN",
@@ -749,7 +749,7 @@
                     },
                     "voip": {
                         "title": "Automatische audio-optimalisatie voor VoIP",
-                        "tooltip": "Automatisch overschakelen naar de Dolby-spraakmodus tijdens VoIP-aanroepen"
+                        "tooltip": "Automatisch overschakelen naar de Dolby-spraakmodus tijdens VoIP-aanroepenom duidelijke, consistente spraakkwaliteit te bieden."
                     }
                 },
                 "microphone": {
@@ -922,7 +922,7 @@
         },
         "smartAssist": {
             "title": "Smart Assist",
-            "description": "Lenovo Intelligente detectie combineert verschillende sensoren van uw computer",
+            "description": "Lenovo Intelligente detectie combineert verschillende sensoren van uw computerom uw activiteiten te volgen, instellingen voor optimaal energiebeheer aan te passen en uw privacy te beschermen.",
             "jumpTo": {
                 "title": "NAAR INSTELLINGEN GAAN",
                 "security": "Beveiliging",
@@ -947,7 +947,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Vergrendeling bij nul aanraken",
-                    "caption": "Deze functie dimt het beeldscherm en vergrendelt de computer wanneer wordt gedetecteerd dat de gebruiker niet aanwezig is.",
+                    "caption": "Deze functie dimt het beeldscherm en vergrendelt de computer wanneer wordt gedetecteerd dat de gebruiker niet aanwezig is.Dit kan de kans dat onbevoegden toegang tot de computer verkrijgen wanneer u de computer onbeheerd en niet-vergrendeld achterlaat, verkleinen. Het verlaagt ook het energieverbruik, doordat het systeem in Modern stand-by wordt gezet wanneer uw aanwezigheid niet wordt gedetecteerd.",
                     "autoScreenLockTimer": {
                         "title": "TIMER AUTOMATISCHE SCHERMVERGRENDELING",
                         "radioButton": {
@@ -955,7 +955,7 @@
                             "medium": "Gemiddeld",
                             "slow": "Traag"
                         },
-                        "toolTipContent": "Selecteer de gewenste optie om het scherm te vergrendelen met een hoge/gemiddelde/lage snelheid als uw aanwezigheid niet wordt gedetecteerd."
+                        "toolTipContent": "Selecteer de gewenste optie om het scherm te vergrendelen met een hoge/gemiddelde/lage snelheid als uw aanwezigheid niet wordt gedetecteerd.Het moment waarop het scherm wordt vergrendeld, wordt echter ook beïnvloed door het feitelijke gebruikersscenario, het sensorvermogen en de Windows-instellingen voor time-out voor het scherm. Het is dus raadzaam om het systeem meteen te vergrendelen voordat u weggaat."
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -968,7 +968,7 @@
                 },
                 "note": {
                     "description1": "Deze functie maakt gebruik van Windows Hello.Zorg dat gezichtsherkenning is ingeschakeld in Windows-instellingen.",
-                    "description2": "De functie gebruikt sensoren en de camera om uw aanwezigheid te detecteren.",
+                    "description2": "De functie gebruikt sensoren en de camera om uw aanwezigheid te detecteren.Persoonlijke gegevens of afbeeldingen worden echter niet door deze functie verzameld, opgeslagen of gelekt.",
                     "description3": "1. Als uw computer in Tent-, Tablet- of Standaardmodus staat,werken deze functies mogelijk niet helemaal naar wens.",
                     "description4": "2. Als uw computer in de sluimerstand staat of is uitgeschakeld.Automatische aanmelding via IR-camera werkt niet.",
                     "description5": "3. Zet uw computerscherm in een hoek waarin de IR-camerauw gezicht kan herkennen voor automatisch aanmelden."
@@ -1052,18 +1052,18 @@
         "popup": {
             "reboot": "Opnieuw opstarten",
             "shutdown": "Afsluiten",
-            "rebootForceMsg": "Het systeem wordt automatisch opnieuw opgestart nadat de geselecteerde updates zijn geïnstalleerd.",
-            "shutdownForceMsg": "Het systeem wordt automatisch afgesloten nadat de geselecteerde updates zijn geïnstalleerd.",
-            "rebootDelayedMsg": "De update(s) die u hebt geselecteerd, zorgen dat het systeem opnieuw opgestart wordt na de installatie. Schakel tijdens de installatie van updates uw systeem niet uit en verwijder de voedingsbron of accessoires niet. We raden u aan uw werk op te slaan voordat u het systeem opnieuw opstart.",
-            "rebootRequiredMsg": "Om de updates te kunnen installeren, moet de computer opnieuw worden opgestart om te zorgen dat alles veilig en probleemloos werkt.",
+            "rebootForceMsg": "Het systeem wordt automatisch opnieuw opgestart nadat degeselecteerde update(s) zijn geïnstalleerd.",
+            "shutdownForceMsg": "Het systeem wordt automatisch afgesloten nadat degeselecteerde update(s) zijn geïnstalleerd.",
+            "rebootDelayedMsg": "De update(s) die u hebt geselecteerd, zorgen dat het systeem opnieuw opgestart wordt na de installatie.Schakel tijdens de installatie van updates uw systeem niet uit en verwijder de voedingsbron of accessoires niet. We raden u aan uw werk op te slaan voordat u het systeem opnieuw opstart.",
+            "rebootRequiredMsg": "Om de updates te kunnen installeren, moet de computeropnieuw worden opgestart om te zorgen dat alles veilig en probleemloos werkt.",
             "okayButton": "OK",
             "cancelButton": "Annuleren",
             "rebootButton": "NU OPNIEUW OPSTARTEN",
-            "dismissButton": "SLUITEN",
+            "dismissButton": "NEGEREN",
             "rebootPending": "Opnieuw opstarten in behandeling"
         },
         "autoUpdateSettings": {
-            "title": "Instellingen voor automatisch bijwerken",
+            "title": "Instellingen automatisch bijwerken",
             "subtitle": "UPDATES AUTOMATISCH INSTALLEREN",
             "critical": {
                 "title": "Essentiële updates",
@@ -1071,7 +1071,7 @@
             },
             "recommended": {
                 "title": "Aanbevolen updates",
-                "tooltip": "Aanbevolen stuurprogramma-updates zorgen ervoor dat uw computer optimaal blijft werken."
+                "tooltip": "Door de aanbevolen updates voor stuurprogramma's blijft uw computer optimaal presteren."
             },
             "windows": {
                 "title": "Windows-updates",
@@ -1086,21 +1086,21 @@
             "title": "Een bijgewerkt systeem is een gezond systeem.",
             "last": "Laatst bijgewerkt op",
             "next": "Volgende bijgewerkte scan is gepland op",
-            "checkButton": "CONTROLEREN OP UPDATES ",
+            "checkButton": "CONTROLEREN OP UPDATES",
             "checking": "Zoeken naar updates",
-            "downloading": "Updates downloaden",
+            "downloading": "Updates downloaden voltooid",
             "installing": "Updates installeren",
             "percent": "% voltooid",
             "cancelCheck": "Controle annuleren",
             "cancelUpdates": "UPDATES ANNULEREN",
             "available": "Beschikbare updates",
-            "description": "Dit zijn pakketten met updates van stuurprogramma's en andere systeemprogramma's die onmisbaar zijn voor een juiste werking van uw computer. Essentiële updates zijn tevens belangrijk voor de bescherming van de gegevens die op uw computer zijn opgeslagen; ze moeten worden geïnstalleerd zodra ze beschikbaar zijn. Het niet installeren van deze pakketten kan leiden tot verlies van gegevens, een onjuiste werking van het systeem of storingen in de hardware.",
+            "description": "Dit zijn pakketten met updates van stuurprogramma's enandere systeemprogramma's die onmisbaar zijn voor een juiste werking van uw computer. Cruciale updates zijn tevens belangrijk voor de bescherming van de gegevens die op uw computer zijn opgeslagen, en dienen te worden geïnstalleerd zodra ze beschikbaar zijn. Gebeurt dit niet, dan kan dit leiden tot verlies van gegevens, een onjuiste werking van het systeem of storingen in de hardware.",
             "installButton": "ALLE UPDATES INSTALLEREN",
             "result": {
                 "success": "Alle updates juist zijn geïnstalleerd",
                 "fail": {
-                    "title": "Enkele updates zijn niet juist geïnstalleerd.",
-                    "description": "Er is iets misgegaan tijdens het downloaden of installeren van deze updates. Zorg dat u online bent en zet de computer niet uit wanneer u updates installeert."
+                    "title": "Sommige updates zijn niet juist geïnstalleerd.",
+                    "description": "Er is iets misgegaan tijdens het downloaden of installeren van deze updates.Zorg dat u online bent en zet de computer niet uit wanneer u updates installeert."
                 }
             }
         },
@@ -1168,15 +1168,14 @@
         "protected": "Protected",
         "notProtected": "Not Protected",
         "myDevice": "My Device",
-        "allDevice": "All Devices",
         "secure": "SECURE",
         "needAttention": "NEEDS ATTENTION",
         "manageAccount": "Manage Account",
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrate to protect all of your devices",
+        "trialExpired": "Trial Expired",
+        "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
         "protectAllDevices": "Protect all of your devices",
@@ -1300,9 +1299,7 @@
             "maliciousNetwork": "Aantal keer dat deze maand is voorkomen dat de computer verbinding maakt met een {{maliciousWifi}}schadelijk netwerk.",
             "good": "GOED",
             "malicious": "SCHADELIJK",
-            "suspicious": "VERDACHT",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "VERDACHT"
         },
         "antivirus": {
             "common": {

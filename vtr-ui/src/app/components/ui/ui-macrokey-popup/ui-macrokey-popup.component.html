@@ -1,28 +1,29 @@
 <div class="modal-main-wrapper">
 	<ui-popover>
-		<div class="ui-popover-head">
-			<button class="close" type="button" (click)="submitAction(false)">
-				<i class="icon icon-close"></i>
-			</button>
-		</div>
-		<div class="ui-popover-content">
-			<div>
-				<p>{{modalContent.headerTitle | translate}}</p>
+		<div class="modal-body vtr-ui-macrokey-popup">
+			<div class="row justify-content-end">
+				<div class="btn-close">
+					<button type="button" class="close" aria-hidden="true" (click)="submitAction(false)">
+						<fa-icon [icon]="['fal', 'times']"></fa-icon>
+					</button>
+				</div>
 			</div>
-			<div class="body-content">
+			<div class="content-body">
+				<h1>{{modalContent.headerTitle | translate}}</h1>
 				<p>{{modalContent.bodyText | translate}}</p>
 			</div>
-		</div>
-		<div class="ui-popover-footer">
-			<div *ngIf="modalContent.btnConfirm">
-				<button class="btn btn-rounded"
-					(click)="submitAction(true)">{{'gaming.macroKey.popupContent.confirmButton.btnClear' | translate}}</button>
-				<button class="btn btn-default"
-					(click)="submitAction(false)">{{'gaming.macroKey.popupContent.confirmButton.btnCancel' | translate}}</button>
-			</div>
-			<div *ngIf="!modalContent.btnConfirm">
-				<button class="btn btn-rounded"
-					(click)="submitAction(true)">{{'gaming.macroKey.popupContent.btnOk' | translate}}</button>
+			<hr>
+			<div class="row">
+				<div *ngIf="modalContent.btnConfirm">
+					<button class="btn enable-button"
+						(click)="submitAction(true)">{{'gaming.macroKey.popupContent.confirmButton.btnClear' | translate}}</button>
+					<a (click)="submitAction(false)"
+						class="cancel-link active">{{'gaming.macroKey.popupContent.confirmButton.btnCancel' | translate}}</a>
+				</div>
+				<div *ngIf="!modalContent.btnConfirm">
+					<button class="btn enable-button"
+						(click)="submitAction(true)">{{'gaming.macroKey.popupContent.btnOk' | translate}}</button>
+				</div>
 			</div>
 		</div>
 	</ui-popover>
