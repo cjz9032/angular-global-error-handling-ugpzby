@@ -10,6 +10,7 @@
 						componentName="Quick Setting"
 						[items]="quickSettings"
 						[options]="drop"
+						(toggleOnOff)="onToggleStateChanged($event)"
 						(optionSelected)="onOptionSelected($event)">
 					</vtr-widget-device-update-settings>
 				</div>
