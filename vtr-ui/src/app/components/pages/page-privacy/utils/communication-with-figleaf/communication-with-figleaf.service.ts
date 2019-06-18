@@ -60,6 +60,10 @@ export class CommunicationWithFigleafService {
 		});
 	}
 
+	connect() {
+		FigleafConnector.connect();
+	}
+
 	disconnect() {
 		FigleafConnector.disconnect();
 	}

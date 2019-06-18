@@ -4,10 +4,8 @@
 		[showDetailAction]="inputData.showDetailAction"
 		[index]="i"
 		[isDetailsExpanded]="i === openPasswordId"
+		[isFigleafInstalled]="isFigleafInstalled$ | async"
+		(howToFixClick)="howToFixClick.emit($event)"
 		(openAccordion)="openAccordion($event)">
 	</vtr-installed-browser>
 </div>
-<vtr-try-product-block
-	*ngIf="openPasswordId === null && (isShowTryBlock$ | async)"
-	[texts]="tryProductText">
-</vtr-try-product-block>
