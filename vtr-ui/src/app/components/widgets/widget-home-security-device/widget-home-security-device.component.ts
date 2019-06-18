@@ -18,7 +18,7 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 	@Output() startTrial = new EventEmitter<boolean>();
 
 	connectedHomeSecurity: ConnectedHomeSecurity;
-	device = [{
+	device = {
 		title: 'homeSecurity.thisDevice',
 		status: 'protected',
 		badge: [
@@ -37,8 +37,8 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 				status: undefined
 			}
 		],
-	}];
-	allDevice = [{
+	};
+	allDevice = {
 		title: 'homeSecurity.allDevices',
 		status: 'not-protected',
 		badge: [
@@ -61,7 +61,7 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 				onClick() { },
 			}
 		],
-	}];
+	};
 	constructor(public modalService: NgbModal,
 		public userService: UserService,
 		public homeSecurityMockService: HomeSecurityMockService) {
@@ -82,8 +82,8 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 	}
 
 	creatViewModel() {
-		const deviceBadge = this.device[0];
-		const allDevice = this.allDevice[0];
+		const deviceBadge = this.device;
+		const allDevice = this.allDevice;
 		switch (this.state) {
 			case 'trial':
 				Object.assign(deviceBadge, {
@@ -284,7 +284,9 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 							},
 							{
 								type: 'accountBadge',
-								status: undefined,
+								status: 'disabled',
+								text: 'homeSecurity.upgrade',
+								onClick: this.emitUpgradeAccount.bind(this),
 							},
 							{
 								type: 'trialBadge',
@@ -383,12 +385,16 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 		if (this.homeSecurityMockService.id < 5) {
 			this.homeSecurityMockService.id++;
 		} else { this.homeSecurityMockService.id = 0; }
-		this.homeSecurityMockService.getConnectedHomeSecurity().account.state = <CHSAccountState>state[i];
+		const connectedHomeSecurity: any = this.homeSecurityMockService.getConnectedHomeSecurity();
+		connectedHomeSecurity.account.state = <CHSAccountState>state[i];
+		connectedHomeSecurity.mitt.emit(EventTypes.chsEvent, connectedHomeSecurity);
 		this.creatViewModel();
 	}
 
 	logout() {
-		this.login ? this.login = false : this.login = true;
+		const connectedHomeSecurity: any = this.homeSecurityMockService.getConnectedHomeSecurity();
+		connectedHomeSecurity.account.lenovoId.loggedIn = !connectedHomeSecurity.account.lenovoId.loggedIn;
+		connectedHomeSecurity.mitt.emit(EventTypes.chsEvent, connectedHomeSecurity);
 		this.creatViewModel();
 	}
 

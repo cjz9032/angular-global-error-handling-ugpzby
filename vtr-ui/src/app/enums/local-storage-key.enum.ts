@@ -42,14 +42,16 @@ export enum LocalStorageKey {
 	PrevThermalModeStatus = '[LocalStorageKey] PrevThermalModeStatus',
 	IsHPDSupported = '[LocalStorageKey] IsHPDSupported',
 	ConnectedHomeSecurityShowWelcome = '[LocalStorageKey] ConnectedHomeSecurityShowWelcome',
-	ConnectedHomeSecuritySystemLocationPermissionShowed = '[LocalStorageKey] ConnectedHomeSecuritySystemLocationPermissionShowed',
+	ConnectedHomeSecurityAccount = '[LocalStorageKey] ConnectedHomeSecurityAccount',
+	ConnectedHomeSecurityDeviceName = '[LocalStorageKey] ConnectedHomeSecurityDeviceName',
+	ConnectedHomeSecurityDevicePostures = '[LocalStorageKey] ConnectedHomeSecurityDevicePostures',
+	ConnectedHomeSecurityDeviceStatus = '[LocalStorageKey] ConnectedHomeSecurityDeviceStatus',
 	/**
 	 * 0  means "ideaPad",
 	 * 1  means "thinkPad",
 	 * 2 means "ideaCenter",
 	 * 3 means "thinkCenter"
 	 */
-	ConnectedHomeSecurityDeviceName = '[LocalStorageKey] ConnectedHomeSecurityDeviceName',
 	MachineType = '[LocalStorageKey] MachineType',
 	HybridModeStatus = '[LocalStorageKey] HybridModeStatus',
 	TouchpadLockStatus = '[LocalStorageKey] TouchpadLockStatus',
@@ -98,7 +100,6 @@ export enum LocalStorageKey {
 	PrevMacroKeyRepeat = '[LocalStorageKey] PrevMacroKeyRepeat',
 	PrevMacroKeyInterval = '[LocalStorageKey] PrevMacroKeyInterval',
 	CurrentMacroKeyRepeat = '[LocalStorageKey] CurrentMacroKeyRepeat',
-	CurrentMacroKeyInterval = '[LocalStorageKey] CurrentMacroKeyInterval'
-
-
+	CurrentMacroKeyInterval = '[LocalStorageKey] CurrentMacroKeyInterval',
+	SubBrand = '[LocalStorageKey] SubBrand',
 }

@@ -31,7 +31,7 @@ export class DisplayColorTempComponent implements OnInit {
 		this.resetTemparature.emit($event);
 	}
 
-	public dragChangeValue($event: any){
+	public dragChangeValue($event: any) {
 		this.colorPreviewValue.emit($event);
 	}
 }

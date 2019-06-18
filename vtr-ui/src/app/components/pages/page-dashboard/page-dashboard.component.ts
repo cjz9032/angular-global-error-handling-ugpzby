@@ -172,34 +172,16 @@ export class PageDashboardComponent implements OnInit {
 			this.onNotification(notification);
 		});
 
-
 	}
 
 	onFeedbackModal() {
-		this.modalService
-			.open(FeedbackFormComponent, {
-				backdrop: 'static',
-				size: 'lg',
-				centered: true,
-				windowClass: 'feedback-form-modal-size'
-			})
-			.result.then(
-				result => {
-					// on open
-				},
-				reason => {
-					// on close
-				}
-			);
+		this.modalService.open(FeedbackFormComponent, {
+			backdrop: 'static',
+			size: 'lg',
+			centered: true,
+			windowClass: 'feedback-modal'
+		});
 	}
-
-	// public onFeedbackClick() {
-	// 	this.feedbackButtonText = 'Thank you for your feedback !';
-	// 	setTimeout(() => {
-	// 		this.modalService.dismissAll();
-	// 		this.feedbackButtonText = this.submit;
-	// 	}, 3000);
-	// }
 
 	public onConnectivityClick($event: any) {
 	}
