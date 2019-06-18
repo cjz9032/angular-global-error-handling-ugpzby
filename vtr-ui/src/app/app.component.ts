@@ -42,11 +42,7 @@ export class AppComponent implements OnInit {
 		translate.addLangs(['en', 'zh-Hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it',
 			'ja', 'ko', 'nb', 'nl', 'pl', 'pt-BR', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-Latn', 'sv', 'tr', 'uk', 'zh-Hant']);
 		this.translate.setDefaultLang('en');
-		const hadRunApp: boolean = commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
-		const appFirstRun = !hadRunApp;
-		if (appFirstRun && deviceService.isShellAvailable) {
-			commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
-		}
+
 
 		//#region VAN-2779 this is moved in MVP 2
 
@@ -144,10 +140,15 @@ export class AppComponent implements OnInit {
 		});
 
 		const result = this.getMachineInfo();
-		if (result != null) {
-			result.then((machineInfo) => {
-				this.sendFirstRunEvent(machineInfo);
-			});
+		const hadRunApp: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
+		const appFirstRun = !hadRunApp;
+		if (appFirstRun && this.deviceService.isShellAvailable) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
+			if (result) {
+				result.then((machineInfo) => {
+					this.sendFirstRunEvent(machineInfo);
+				});
+			}
 		}
 
 		this.checkIsDesktopOrAllInOneMachine();
