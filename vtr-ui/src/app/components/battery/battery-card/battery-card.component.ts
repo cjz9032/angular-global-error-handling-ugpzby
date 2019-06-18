@@ -44,8 +44,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	private powerSupplyStatusEventRef: any;
 	private remainingPercentageEventRef: any;
 	private remainingTimeEventRef: any;
+	public isLoading = true;
 
 	ngOnInit() {
+		this.isLoading = true;
+
 		this.getBatteryDetailOnCard();
 
 		this.powerSupplyStatusEventRef = this.onPowerSupplyStatusEvent.bind(this);
@@ -106,6 +109,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryInfo = response;
 				this.batteryInfo = response.batteryInformation;
 				this.batteryGauge = response.batteryIndicatorInfo;
+
+				this.isLoading = false;
+
 				this.isBatteryDetailsBtnDisabled =
 					this.batteryGauge.isPowerDriverMissing || this.batteryInfo.length === 0;
 				this.updateBatteryDetails();
