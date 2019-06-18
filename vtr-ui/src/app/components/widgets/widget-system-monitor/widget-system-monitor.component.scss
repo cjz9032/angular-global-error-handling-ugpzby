@@ -63,6 +63,13 @@
 					margin-left: 0.8rem;
 					font-size: 2rem;
 				}
+				.info-link {
+					border-bottom: 0.2rem solid $gaming_info_link;
+				&:hover{
+					border-color:$gaming_info_link_hover;
+					text-decoration: none;
+				}
+			}
 			}
 			.monitor-section {
 				border-radius: $border_radius_sm;
@@ -646,9 +653,5 @@
 				}
 			}
 		}
-	}
-	.info-link {
-		padding-bottom: 0.1rem;
-		border-bottom: 0.2rem solid #4579f0;
 	}
 }

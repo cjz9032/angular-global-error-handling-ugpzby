@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 
@@ -8,40 +8,20 @@ import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 	styleUrls: ['./intelligent-media.component.scss']
 })
 export class IntelligentMediaComponent implements OnInit {
-
 	playbackStatus = new FeatureStatus(true, true);
 	showPlaybackLoader = true;
 
-	@Output() isMediaSettingHidden: EventEmitter<any> = new EventEmitter();
+	@Input() isChecked = false;
+	@Output() videoPlaybackToggle: EventEmitter<any> = new EventEmitter();
 
 	constructor(private smartAssist: SmartAssistService) { }
 
 	ngOnInit() {
-		this.getVideoPauseResumeStatus();
-	}
-
-	getVideoPauseResumeStatus() {
-		console.log('getVideoPauseResumeStatus');
-		try {
-			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.getVideoPauseResumeStatus()
-					.then((response: FeatureStatus) => {
-						this.playbackStatus = response;
-						this.showPlaybackLoader = false;
-						this.playbackStatus.available = true;
-						this.remoteMediaLink();
-						console.log('getVideoPauseResumeStatus.then:', response);
-					}).catch(error => {
-						console.error('getVideoPauseResumeStatus.error', error);
-					});
-			}
-		} catch (error) {
-			console.error('getVideoPauseResumeStatus' + error.message);
-		}
 	}
 
 	public setVideoPauseResumeStatus(event) {
-		this.playbackStatus.status = event.switchValue;
+		this.videoPlaybackToggle.emit(event.value);
+		// this.playbackStatus.status = event.switchValue;
 		console.log('setVideoPauseResumeStatus');
 		try {
 			if (this.smartAssist.isShellAvailable) {
@@ -56,11 +36,4 @@ export class IntelligentMediaComponent implements OnInit {
 			console.error('setVideoPauseResumeStatus' + error.message);
 		}
 	}
-
-	remoteMediaLink() {
-		if (!this.playbackStatus.available) {
-			this.isMediaSettingHidden.emit(true);
-		}
-	}
-
 }

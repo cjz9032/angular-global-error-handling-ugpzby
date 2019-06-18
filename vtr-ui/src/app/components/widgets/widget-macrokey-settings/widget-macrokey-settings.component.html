@@ -22,8 +22,8 @@
 						</div>
 						<div class="details-wrapper">
 							<vtr-ui-macrokey-details [number]="numberSelected" [isNumberpad]="isNumpad"
-								(isRecording)="onRecordingChanged($event)" [keyData]="macroKeyInputData.macro"
-								[recordingData]="macroKeyInputData.macro.inputs">
+								[messageData]="macroKeyMessageData" (isRecording)="onRecordingChanged($event)"
+								[keyData]="macroKeyInputData.macro" [recordingData]="macroKeyInputData.macro.inputs">
 							</vtr-ui-macrokey-details>
 						</div>
 					</div>
