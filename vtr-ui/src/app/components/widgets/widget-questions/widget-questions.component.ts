@@ -11,6 +11,8 @@ export class WidgetQuestionsComponent extends BaseComponent implements OnInit {
 	@Input() title: string;
 	@Input() description: string;
 	@Input() items: any[];
+	@Input() chevronVisibility = true;
+	@Input() clickable = true;
 
 	constructor() {
 		super();

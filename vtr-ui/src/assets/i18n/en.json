@@ -491,6 +491,10 @@
 				"minute": "minute",
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
+				"updating": "Updating",
+				"thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+				"voltageError": "Battery voltage incorrect",
+				"batteryNotDetected": "No Battery Detected",
 				"details": {
 					"title": "Battery Details",
 					"primary": "Primary Battery",
@@ -547,7 +551,7 @@
 						"description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
 					},
 					"Good": {
-						"title": "The battery is in good Condition"
+						"title": "The battery is in good condition."
 					},
 					"Exhaustion": {
 						"title": "The battery has failed due to normal",
@@ -566,20 +570,45 @@
 					},
 					"NotSupportACAdapter": {
 						"title": "AC adapter not supported.",
-						"description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
+						"description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
 					},
 					"LimitedACAdapterSupport": {
 						"title": "AC adapter cannot provide enough power",
 						"description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
 					},
 					"MissingDriver": {
-						"title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
+						"title": "The Lenovo Power Manager driver",
 						"description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
 					},
 					"StoreLimitation": {
 						"title": "The battery can only store",
 						"description1": "of",
 						"description2": "it's original full charge capacity"
+					},
+					"HighTemperature": {
+						"title": "Discharging",
+						"description": "has been stopped because the",
+						"description1": "battery temperature is too high"
+					},
+					"TrickleCharge": {
+						"description": "The battery was",
+						"description1": "completely discharged",
+						"description2": "and needs to be recharged. This might take ten hours or more."
+					},
+					"OverheatedBattery": {
+						"description": "The battery is",
+						"description1": "too hot.",
+						"description2": "Remove it from the computer and cool it to room temperature."
+					},
+					"PermanentError": {
+						"description": "The battery has",
+						"description1": "failed due to normal wear.",
+						"description2": "The battery cannot be charged. Replace the battery."
+					},
+					"HardwareAuthenticationError": {
+						"description": "The battery installed is",
+						"description1": "is not supported",
+						"description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
 					}
 				}
 			},
@@ -688,7 +717,6 @@
 						"subHeading2": "end",
 						"subHeading3": "use this schedule for"
 					}
-
 				},
 				"batterySettings": {
 					"title": "Battery Settings",
@@ -820,7 +848,7 @@
 				"display": {
 					"title": "Display",
 					"eyeCareMode": {
-						"title": "Eye Care Mode",
+						"title": "Color Temperature in Eye Care Mode",
 						"checkbox": "Schedule eye care mode from sunset to sunrise",
 						"options": {
 							"warm": "Warm (Better for eyes)",
@@ -854,7 +882,7 @@
 						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
 						"note": {
 							"title": "Note",
-							"description": "When the Eye care mode is enabled. this color temperature does not take effect. However,  you can drag the slide to get a preview of it. To make it effective. turn off the Eye care mode"
+							"description": "When the Eye care mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye care mode."
 						}
 					},
 					"privacyGuard": {
@@ -946,7 +974,8 @@
 				"security": "Security",
 				"screen": "Screen",
 				"media": "Media",
-				"voice": "Voice"
+				"voice": "Voice",
+				"APS": "APS"
 			},
 			"intelligentSecurity": {
 				"title": "Intelligent Security",
@@ -988,7 +1017,7 @@
 					"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
 					"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
 					"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-					"description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
+					"description4": "2. If your computer is in hibernation mode or has been turned off. Zero Touch Lock will not work.",
 					"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
 				},
 				"WindowsLink": {

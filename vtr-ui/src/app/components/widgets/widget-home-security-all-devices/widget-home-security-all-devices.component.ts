@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { ModalLenovoIdComponent } from '../../modal/modal-lenovo-id/modal-lenovo-id.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from 'src/app/services/user/user.service';
 import { CommonService } from 'src/app/services/common/common.service';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
+import { HomeSecurityAccount } from 'src/app/data-models/home-security/home-security-account.model';
+import { CHSAccountState } from '@lenovo/tan-client-bridge';
+import { HomeSecurityAllDevice } from 'src/app/data-models/home-security/home-security-overview-allDevice.model';
 
 @Component({
 	selector: 'vtr-widget-home-security-all-devices',
@@ -13,16 +13,12 @@ import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
 	styleUrls: ['./widget-home-security-all-devices.component.scss']
 })
 export class WidgetHomeSecurityAllDevicesComponent implements OnInit {
-	@Input() allDevicesPageStatus: boolean;
-	@Input() devicesNumber = 7;
-	@Input() homeSecurityUrl = 'https://homesecurity.coro.net/';
-	@Input() upgradeUrl = 'https://vantagestore.lenovo.com/en/shop/product/connectedhomesecurityoneyearlicense-windows';
-	@Input() devicesStatus: string; // secure, needs attention
-	@Input() logonStatus: string; // trial, trial expired, upgrate, upgrate expired, local account
+	@Input() account: HomeSecurityAccount;
+	@Input() allDevicesInfo: HomeSecurityAllDevice;
 	@Input() eventEmitter: EventEmitter<string>;
-	deviceMoreThanTen: boolean;
-	pluginAvailable = false;
-	isShowBadge = true;
+	@Output() emitter = new EventEmitter();
+
+	pluginAvailable = true;
 
 
 	testStatus: string;
@@ -32,70 +28,49 @@ export class WidgetHomeSecurityAllDevicesComponent implements OnInit {
 		public modalService: NgbModal,
 		public userService: UserService,
 		public commonService: CommonService,
-	) {
-		this.judgeDeviceNumber();
-	}
+	) {	}
 
 	ngOnInit() {
 		this.eventEmitter.subscribe((testStatus) => {
 			this.testStatus = testStatus;
 			this.switchStatus();
 		});
+		if (this.allDevicesInfo) {
+			this.judgeDeviceNumber();
+		}
 	}
 
 	judgeDeviceNumber() {
-		if (this.devicesNumber > 9) {
-			this.deviceMoreThanTen = true;
-			if (this.devicesNumber > 99) {
-				this.devicesNumber = 99;
+		if (this.allDevicesInfo.allDevicesNumber > 9) {
+			if (this.allDevicesInfo.allDevicesNumber > 99) {
+				this.allDevicesInfo.allDevicesNumber = 99;
 			}
+			return true;
 		} else {
-			this.deviceMoreThanTen = false;
+			return false;
 		}
 	}
 
 	showBadge() {
-		if (this.devicesNumber === 0 && this.logonStatus !== 'trial expired' && this.logonStatus !== 'local account') {
-			this.isShowBadge = false;
+		if (!this.account || !this.allDevicesInfo) {
+			return false;
+		} else if (this.allDevicesInfo.allDevicesNumber === 0 && this.account.state !== CHSAccountState.trialExpired && this.account.state !== CHSAccountState.local) {
+			return false;
 		} else {
-			this.isShowBadge = true;
+			return true;
 		}
 	}
 
 	openCornet() {
-		window.open(this.homeSecurityUrl, '_blank');
+		this.emitter.emit('visitCornet');
 	}
 
 	openUpgrade() {
-		window.open(this.upgradeUrl, '_blank');
+		this.emitter.emit('upgrade');
 	}
 
 	startTrial() {
-		if (this.userService.auth) {
-			this.cornetStartTrial();
-		} else {
-			this.launchLenovoId();
-		}
-	}
-
-	cornetStartTrial() {
-		this.pluginAvailable = true;
-		this.logonStatus = 'trial';
-		this.devicesNumber = 0;
-		this.devicesStatus = 'secure';
-	}
-
-	launchLenovoId() {
-		this.modalService.open(ModalLenovoIdComponent, {
-			backdrop: 'static',
-			centered: true,
-			windowClass: 'lenovo-id-modal-size'
-		});
-		this.commonService.notification.subscribe((notification: AppNotification) => {
-			if (notification && notification.type === LenovoIdStatus.SignedIn) {
-				this.cornetStartTrial();
-			}
-		});
+		this.emitter.emit('startTrial');
 	}
 
 	switchStatus() {
@@ -103,37 +78,35 @@ export class WidgetHomeSecurityAllDevicesComponent implements OnInit {
 			this.pluginAvailable = false;
 		} else {
 			if (this.testStatus === 'lessDevices-secure') {
-				this.logonStatus = 'trial';
-				this.devicesNumber = 7;
-				this.devicesStatus = 'secure';
+				this.account.state = CHSAccountState.trial;
+				this.allDevicesInfo.allDevicesNumber = 7;
+				this.allDevicesInfo.allDevicesStatus = true;
 			} else if (this.testStatus === 'moreDevices-needAttention') {
-				this.logonStatus = 'trial';
-				this.devicesNumber = 99;
-				this.devicesStatus = 'needs attention';
+				this.account.state = CHSAccountState.trial;
+				this.allDevicesInfo.allDevicesNumber = 99;
+				this.allDevicesInfo.allDevicesStatus = false;
 			} else if (this.testStatus === 'noneDevices') {
-				this.logonStatus = 'trial';
-				this.devicesNumber = 0;
-				this.devicesStatus = 'secure';
+				this.account.state = CHSAccountState.trial;
+				this.allDevicesInfo.allDevicesNumber = 0;
+				this.allDevicesInfo.allDevicesStatus = true;
 			} else if (this.testStatus === 'trialExpired') {
-				this.logonStatus = 'trial expired';
-				this.devicesNumber = 0;
-				this.devicesStatus = 'needs attention';
+				this.account.state = CHSAccountState.trialExpired;
+				this.allDevicesInfo.allDevicesNumber = 0;
+				this.allDevicesInfo.allDevicesStatus = false;
 			} else if (this.testStatus === 'lessDevices-needAttention') {
-				this.logonStatus = 'trial';
-				this.devicesNumber = 7;
-				this.devicesStatus = 'needs attention';
+				this.account.state = CHSAccountState.trial;
+				this.allDevicesInfo.allDevicesNumber = 7;
+				this.allDevicesInfo.allDevicesStatus = false;
 			} else if (this.testStatus === 'moreDevices-secure') {
-				this.logonStatus = 'trial';
-				this.devicesNumber = 100;
-				this.devicesStatus = 'secure';
+				this.account.state = CHSAccountState.trial;
+				this.allDevicesInfo.allDevicesNumber = 100;
+				this.allDevicesInfo.allDevicesStatus = true;
 			} else {
-				this.logonStatus = 'local account';
-				this.devicesNumber = 0;
-				this.devicesStatus = 'needs attention';
+				this.account.state = CHSAccountState.local;
+				this.allDevicesInfo.allDevicesNumber = 0;
+				this.allDevicesInfo.allDevicesStatus = false;
 			}
 			this.pluginAvailable = true;
-			this.judgeDeviceNumber();
-			this.showBadge();
 		}
 	}
 }

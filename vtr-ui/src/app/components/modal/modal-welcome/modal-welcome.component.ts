@@ -47,6 +47,15 @@ export class ModalWelcomeComponent implements OnInit {
 		this.metrics.metricsEnabled = (this.privacyPolicy === true);
 		let tutorialData;
 		if (page < 2) {
+			this.endTime=new Date().getTime();
+			const data = {
+				ItemType: 'PageView',
+				PageName: 'WelcomePage',
+				PageDuration: (this.endTime - this.startTime)
+			};
+			console.log('PageView Event', JSON.stringify(data));
+			this.metrics.sendAsync(data);
+			this.startTime=new Date().getTime();
 			this.page = page;
 			this.progress = 49;
 			tutorialData = new WelcomeTutorial(1, null, null);
