@@ -47,6 +47,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	connectedHomeSecurity: ConnectedHomeSecurity;
 	permission: any;
 	homeSecurityOverviewMyDevice: HomeSecurityOverviewMyDevice;
+	account: HomeSecurityAccount;
 
 	testStatus = ['lessDevices-secure', 'moreDevices-needAttention', 'noneDevices', 'trialExpired', 'lessDevices-needAttention', 'moreDevices-secure', 'localAccount'];
 
@@ -122,19 +123,30 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 				this.homeSecurityOverviewMyDevice.deviceName = cacheHomeDeviceName;
 			}
 		}
-		this.connectedHomeSecurity.on(EventTypes.chsEvent, (value) => {
-			if (value && value.overview) {
-				if (value.overview.devicePostures && value.overview.devicePostures.value.length > 0) {
-					this.homeSecurityOverviewMyDevice.createHomeDevicePosture(value.overview.devicePostures.value);
-					this.homeSecurityOverviewMyDevice.creatDeviceStatus(value.overview.devicePostures.value);
+		const cacheAccount = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount);
+		if (cacheAccount) {
+			this.account = cacheAccount;
+		}
+		this.account = new HomeSecurityAccount(this.connectedHomeSecurity.account);
+		if (this.connectedHomeSecurity.account) {
+			this.account = new HomeSecurityAccount(this.connectedHomeSecurity.account);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, this.account);
+		}
+		this.connectedHomeSecurity.on(EventTypes.chsEvent, (chs) => {
+			if (chs && chs.overview) {
+				if (chs.overview.devicePostures && chs.overview.devicePostures.value.length > 0) {
+					this.homeSecurityOverviewMyDevice.createHomeDevicePosture(chs.overview.devicePostures.value);
+					this.homeSecurityOverviewMyDevice.creatDeviceStatus(chs.overview.devicePostures.value);
 					this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePostures, this.homeSecurityOverviewMyDevice.devicePostures);
 					this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDeviceStatus, this.homeSecurityOverviewMyDevice.deviceStatus);
 				}
-				if (value.overview.myDevice && value.overview.myDevice.name) {
-					this.homeSecurityOverviewMyDevice.deviceName = value.overview.myDevice.name;
+				if (chs.overview.myDevice && chs.overview.myDevice.name) {
+					this.homeSecurityOverviewMyDevice.deviceName = chs.overview.myDevice.name;
 					this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDeviceName, this.homeSecurityOverviewMyDevice.deviceName);
 				}
 			}
+			this.account = new HomeSecurityAccount(chs.account);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, this.account);
 		});
 	}
 

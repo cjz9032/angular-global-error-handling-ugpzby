@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
-import { HomeSecurityAccount } from 'src/app/data-models/home-security/home-security-account.model';
-import { ConnectedHomeSecurity, CHSAccountState, WinRT } from '@lenovo/tan-client-bridge';
+import { Injectable, EventEmitter } from '@angular/core';
+import { ConnectedHomeSecurity, CHSAccountState, WinRT, EventTypes } from '@lenovo/tan-client-bridge';
+import mitt from 'mitt';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class HomeSecurityMockService {
-	private connectedHomeSecurity: ConnectedHomeSecurity = {
+
+	private connectedHomeSecurity: any = {
 		account: {
 			state: CHSAccountState.local,
 			serverTimeUTC: new Date(),
@@ -17,18 +18,22 @@ export class HomeSecurityMockService {
 			},
 			createAccount() {
 				this.state =  CHSAccountState.trial;
+				this.mitt.emit(EventTypes.chsEvent, this.chs);
 				return Promise.resolve(true);
 			},
 			purchase() {
 				WinRT.launchUri('https://vantagestore.lenovo.com/en/shop/product/connectedhomesecurityoneyearlicense-windows');
 				this.state = this.state === CHSAccountState.trial ? CHSAccountState.trialExpired : CHSAccountState.standard;
+				this.mitt.emit(EventTypes.chsEvent, this.chs);
 			},
 			visitWebConsole(feature: string) {
 				WinRT.launchUri(`https://homesecurity.coro.net/${feature}`);
 				if (feature === 'login') {
 					this.state = CHSAccountState.local;
+					this.mitt.emit(EventTypes.chsEvent, this.chs);
 				} else if (feature === 'profile') {
 					this.state = CHSAccountState.standard;
+					this.mitt.emit(EventTypes.chsEvent, this.chs);
 				}
 			}
 		},
@@ -61,15 +66,29 @@ export class HomeSecurityMockService {
 		notifications: {
 			value: []
 		},
-		on() { return this; },
+		on(type, handler) {
+			this.mitt.on(type, handler);
+			return this;
+		},
 		off() { return this; },
 		refresh() {
 			return Promise.resolve(true);
 		}
 	};
+
 	public id = 0;
 
 	public getConnectedHomeSecurity(): ConnectedHomeSecurity {
-		return this.connectedHomeSecurity;
+		if (!this.connectedHomeSecurity.mitt) {
+			const emitter = new mitt();
+			this.connectedHomeSecurity.mitt = emitter;
+			this.connectedHomeSecurity.account.mitt = emitter;
+			this.connectedHomeSecurity.account.chs = this.connectedHomeSecurity;
+			this.connectedHomeSecurity.overview.mitt = emitter;
+			this.connectedHomeSecurity.overview.chs = this.connectedHomeSecurity;
+			this.connectedHomeSecurity.notifications.mitt = emitter;
+			this.connectedHomeSecurity.notifications.chs = this.connectedHomeSecurity;
+		}
+		return <ConnectedHomeSecurity>this.connectedHomeSecurity;
 	}
 }
