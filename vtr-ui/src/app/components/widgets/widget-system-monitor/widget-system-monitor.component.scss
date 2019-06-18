@@ -73,7 +73,7 @@
 					height: 22rem;
 				}
 				&.hds {
-					overflow: hidden;
+					//overflow: hidden;
 					position: absolute;
 					width: 100%;
 					border: 1px solid $gaming_darkest;
@@ -107,6 +107,10 @@
 					.gaming-tooltip{
 						position: absolute;
 						display: none;
+						left:0;
+						right: 0;
+						margin: auto;
+						margin-top:-2rem;
 					}
 				}
 				ngb-tooltip-window.tooltip {
