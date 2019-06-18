@@ -1,4 +1,15 @@
-<div class="vtr-battery-card">
+<div class="vtr-battery-card"
+	*ngIf="isLoading">
+	<div class="container p-5"
+		[style.height.px]="292">
+		<div class="loader center-block">
+			<div class="spinner-border text-secondary progress-spinner"
+				role="status"></div>
+		</div>
+	</div>
+</div>
+<div class="vtr-battery-card"
+	*ngIf="!isLoading">
 	<ng-template #batteryDetail
 		let-modal>
 		<div class="modal-header">
@@ -36,11 +47,12 @@
 				[isCharging]="batteryIndicator.charging"
 				[isExpressCharging]="batteryIndicator.expressCharging"
 				[isVoltageError]="batteryIndicator.voltageError"
+				[batteryNotDetected]="batteryIndicator.batteryNotDetected"
 				[timeText]="batteryIndicator.timeText">
 			</vtr-battery-indicator>
 		</div>
 
-		<!-- <div class="p-3 row"
+		<div class="p-3 row"
 			*ngFor="let batteryConditionNote of batteryConditionNotes; let i = index">
 			<div class="p-0 pr-2 col-auto battery-conditions-icon">
 				<fa-icon *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Good"
@@ -87,9 +99,22 @@
 					*ngIf="batteryConditionNote?.description2.length > 0">
 					{{batteryConditionNote.description2 | translate}}
 				</span>
-
 			</div>
-		</div> -->
+		</div>
+		<div class="feature-note p-4 mt-2"
+			*ngIf="chargeThresholdInfo?.isOn">
+			<div class="row">
+				<p>
+					<span style="font-weight: bold">Note: </span>
+					<span>
+						{{'device.deviceSettings.batteryGauge.thresholdNote'  | translate}}
+						{{chargeThresholdInfo.stopValue}}%
+					</span>
+					<!-- <a href="javascript:void()">
+						{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
+					</a> -->
+			</div>
+		</div>
 		<div class="pt-4 text-center">
 			<button type="button"
 				vtrMetrics
