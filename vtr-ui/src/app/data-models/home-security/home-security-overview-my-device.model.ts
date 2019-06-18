@@ -1,4 +1,4 @@
-import { CHSDevicePosture } from '@lenovo/tan-client-bridge';
+import { CHSDevicePosture, CHSDeviceOverview } from '@lenovo/tan-client-bridge';
 import { TranslateService } from '@ngx-translate/core';
 
 export class HomeSecurityOverviewMyDevice {
@@ -6,19 +6,26 @@ export class HomeSecurityOverviewMyDevice {
 	devicePostures: CHSDevicePosture[];
 	deviceStatus: string;
 
-	constructor (public translate: TranslateService) {
+	constructor (translate: TranslateService, overview: CHSDeviceOverview) {
+		if (overview.myDevice && overview.myDevice.name) {
+			this.deviceName = overview.myDevice.name;
+		}
+		if (overview.devicePostures && overview.devicePostures.value.length > 0) {
+			this.createHomeDevicePosture(overview.devicePostures.value, translate);
+			this.creatDeviceStatus(overview.devicePostures.value);
+		}
 	}
 
-	createHomeDevicePosture(chsDevicePostures: CHSDevicePosture[]) {
+	createHomeDevicePosture(chsDevicePostures: CHSDevicePosture[], translate: TranslateService) {
 		this.devicePostures = chsDevicePostures.map((devicePosture) => {
 			return {
-				name: this.mappingDevicePosture(devicePosture.name),
+				name: this.mappingDevicePosture(devicePosture.name, translate),
 				vulnerable: devicePosture.vulnerable
 			};
 		});
 	}
 
-	mappingDevicePosture(config: string): string {
+	mappingDevicePosture(config: string, translate: TranslateService): string {
 		let title: string;
 		config = config.toLowerCase();
 		if (config.includes('apps')) {
@@ -44,7 +51,7 @@ export class HomeSecurityOverviewMyDevice {
 		} else {
 			title = 'other';
 		}
-		this.translate.stream(title).subscribe((res) => {
+		translate.stream(title).subscribe((res) => {
 			title = res;
 		});
 		return title;
