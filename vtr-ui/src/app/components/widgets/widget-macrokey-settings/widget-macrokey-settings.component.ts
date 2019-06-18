@@ -49,6 +49,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	macroKeyTypeStatus: MacroKeyTypeStatus = new MacroKeyTypeStatus();
 	macroKeyRecordedStatus: MacroKeyRecordedChange[];
 	macroKeyInputData: MacroKeyInputChange = new MacroKeyInputChange();
+	macroKeyMessageData: any;
 	constructor(
 		private macroKeyService: MacrokeyService,
 		private shellService: VantageShellService,
@@ -202,6 +203,10 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 				EventTypes.gamingMacroKeyInputChageEvent,
 				this.onGamingMacroKeyInputChangeEvent.bind(this)
 			);
+			this.shellService.registerEvent(
+				EventTypes.gamingMacroKeyInputMessageEvent,
+				this.onGamingMacroKeyInputMessageEvent.bind(this)
+			);
 		} else {
 			this.macroKeyService.setStopRecording(
 				this.numberSelected.key,
@@ -211,6 +216,10 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			this.shellService.unRegisterEvent(
 				EventTypes.gamingMacroKeyKeyChangeEvent,
 				this.onGamingMacroKeyInputChangeEvent
+			);
+			this.shellService.unRegisterEvent(
+				EventTypes.gamingMacroKeyInputMessageEvent,
+				this.onGamingMacroKeyInputMessageEvent
 			);
 		}
 	}
@@ -228,5 +237,15 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			// this.macroKeyService.setMacrokeyInputChangeCache(this.macroKeyInputData);
 			this.macroKeyInputData.macro.inputs = macroKeyInputChangeData;
 		}
+	}
+
+	onGamingMacroKeyInputMessageEvent(macroKeyInputMessageEventResponse: any) {
+		if (macroKeyInputMessageEventResponse) {
+			this.updateMacroKeyInputMessageEvent(macroKeyInputMessageEventResponse);
+		}
+	}
+
+	updateMacroKeyInputMessageEvent(macroKeyInputMessageData) {
+		this.macroKeyMessageData = macroKeyInputMessageData;
 	}
 }
