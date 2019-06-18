@@ -42,13 +42,16 @@ export enum LocalStorageKey {
 	PrevThermalModeStatus = '[LocalStorageKey] PrevThermalModeStatus',
 	IsHPDSupported = '[LocalStorageKey] IsHPDSupported',
 	ConnectedHomeSecurityShowWelcome = '[LocalStorageKey] ConnectedHomeSecurityShowWelcome',
+	ConnectedHomeSecurityAccount = '[LocalStorageKey] ConnectedHomeSecurityAccount',
+	ConnectedHomeSecurityDeviceName = '[LocalStorageKey] ConnectedHomeSecurityDeviceName',
+	ConnectedHomeSecurityDevicePostures = '[LocalStorageKey] ConnectedHomeSecurityDevicePostures',
+	ConnectedHomeSecurityDeviceStatus = '[LocalStorageKey] ConnectedHomeSecurityDeviceStatus',
 	/**
 	 * 0  means "ideaPad",
 	 * 1  means "thinkPad",
 	 * 2 means "ideaCenter",
 	 * 3 means "thinkCenter"
 	 */
-	ConnectedHomeSecurityDeviceName = '[LocalStorageKey] ConnectedHomeSecurityDeviceName',
 	MachineType = '[LocalStorageKey] MachineType',
 	HybridModeStatus = '[LocalStorageKey] HybridModeStatus',
 	TouchpadLockStatus = '[LocalStorageKey] TouchpadLockStatus',
