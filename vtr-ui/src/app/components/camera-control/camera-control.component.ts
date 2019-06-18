@@ -166,10 +166,12 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	}
 
 	startPreviewAsync() {
-		const previewUrl = URL.createObjectURL(this.oMediaCapture);
-		this._video = this.cameraPreview.nativeElement;
-		this._video.src = previewUrl;
-		this._video.play();
+		this.ngZone.run(() => {
+			const previewUrl = URL.createObjectURL(this.oMediaCapture);
+			this._video = this.cameraPreview.nativeElement;
+			this._video.src = previewUrl;
+			this._video.play();
+		});
 	}
 
 	stopPreview() {
