@@ -214,10 +214,4 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		console.log('exposure changed', $event);
 		this.exposureChange.emit($event);
 	}
-
-	public getCameraPreviewVisibility() {
-		if (this.isCameraInErrorState) {
-			return true;
-		}
-	}
 }
