@@ -20,9 +20,9 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 
 	@Input() enableSlider;
 
-	@Input() value = 0; // initial slider value
-	@Input() minValue = 0; // slider minimum end value
-	@Input() maxValue = 3; // slider maximum end value
+	@Input() value = 1; // initial slider value
+	@Input() minValue = 1; // slider minimum end value
+	@Input() maxValue = 4; // slider maximum end value
 	@Input() step = 1; // ticks or steps to change on each slide
 	@Input() minValueLegend = ''; // label to display at the start of slider
 	@Input() maxValueLegend = ''; // label to display at the end of slider
