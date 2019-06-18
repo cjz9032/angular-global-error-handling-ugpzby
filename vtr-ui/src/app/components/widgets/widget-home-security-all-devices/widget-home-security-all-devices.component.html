@@ -30,16 +30,16 @@
 							<img class="img-fluid circle" src="assets/images/connected-home-security/ecosystem-circle-green.svg" *ngIf="devicesStatus==='secure'"/>
 							<img class="img-fluid circle" src="assets/images/connected-home-security/ecosystem-circle-red.svg" *ngIf="devicesStatus==='needs attention'"/>
 						</div>
-						<div class="device-number" [ngClass]="{'sizeChange': deviceMoreThanTen}" *ngIf="devicesNumber!==0">{{devicesNumber}}</div>
+						<div class="device-number" [ngClass]="{'sizeChange': deviceMoreThanTen}" *ngIf="allDevicesInfo.allDevicesNumber!==0">{{allDevicesInfo.allDevicesNumber}}</div>
 					</div>
 					<div class="col-7 text" >
 						<div class="device-text text-uppercase">{{'homeSecurity.devices' | translate}}</div>
 						<div class="status">
 							<h3 style="margin-bottom: 0rem" *ngIf="isShowBadge">
-								<span class="badge badge-pill badge-success" *ngIf="devicesStatus==='secure'">
+								<span class="badge badge-pill badge-success" *ngIf="allDevicesInfo.allDevicesStatus">
 									{{'homeSecurity.secure' | translate}}
 								</span>
-								<span class="badge badge-pill badge-danger" (click)="openCornet()" *ngIf="devicesStatus==='needs attention'"
+								<span class="badge badge-pill badge-danger" (click)="openCornet()" *ngIf="!allDevicesInfo.allDevicesStatus"
 									id="chs-btn-ad-needAttention"
 									aria-label="chs-btn-ad-needAttention"
 									vtrMetrics

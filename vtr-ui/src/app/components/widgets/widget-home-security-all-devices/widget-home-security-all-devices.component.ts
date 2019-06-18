@@ -6,6 +6,7 @@ import { UserService } from 'src/app/services/user/user.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
+import { HomeSecurityAllDevice } from 'src/app/data-models/home-security/home-security-overview-allDevice.model';
 
 @Component({
 	selector: 'vtr-widget-home-security-all-devices',
@@ -20,6 +21,7 @@ export class WidgetHomeSecurityAllDevicesComponent implements OnInit {
 	@Input() devicesStatus: string; // secure, needs attention
 	@Input() logonStatus: string; // trial, trial expired, upgrate, upgrate expired, local account
 	@Input() eventEmitter: EventEmitter<string>;
+	@Input() allDevicesInfo: HomeSecurityAllDevice;
 	deviceMoreThanTen: boolean;
 	pluginAvailable = false;
 	isShowBadge = true;
@@ -32,22 +34,23 @@ export class WidgetHomeSecurityAllDevicesComponent implements OnInit {
 		public modalService: NgbModal,
 		public userService: UserService,
 		public commonService: CommonService,
-	) {
-		this.judgeDeviceNumber();
-	}
+	) {	}
 
 	ngOnInit() {
 		this.eventEmitter.subscribe((testStatus) => {
 			this.testStatus = testStatus;
 			this.switchStatus();
 		});
+		if (this.allDevicesInfo) {
+			this.judgeDeviceNumber();
+		}
 	}
 
 	judgeDeviceNumber() {
-		if (this.devicesNumber > 9) {
+		if (this.allDevicesInfo.allDevicesNumber > 9) {
 			this.deviceMoreThanTen = true;
-			if (this.devicesNumber > 99) {
-				this.devicesNumber = 99;
+			if (this.allDevicesInfo.allDevicesNumber > 99) {
+				this.allDevicesInfo.allDevicesNumber = 99;
 			}
 		} else {
 			this.deviceMoreThanTen = false;
@@ -55,7 +58,7 @@ export class WidgetHomeSecurityAllDevicesComponent implements OnInit {
 	}
 
 	showBadge() {
-		if (this.devicesNumber === 0 && this.logonStatus !== 'trial expired' && this.logonStatus !== 'local account') {
+		if (this.allDevicesInfo.allDevicesNumber === 0 && this.logonStatus !== 'trial expired' && this.logonStatus !== 'local account') {
 			this.isShowBadge = false;
 		} else {
 			this.isShowBadge = true;
@@ -81,7 +84,7 @@ export class WidgetHomeSecurityAllDevicesComponent implements OnInit {
 	cornetStartTrial() {
 		this.pluginAvailable = true;
 		this.logonStatus = 'trial';
-		this.devicesNumber = 0;
+		this.allDevicesInfo.allDevicesNumber = 0;
 		this.devicesStatus = 'secure';
 	}
 

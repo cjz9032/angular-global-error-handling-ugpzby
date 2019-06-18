@@ -60,6 +60,9 @@ export class HomeSecurityMockService {
 				{name: 'ddd', protected: true},
 				{name: 'eee', protected: true},
 				{name: 'fff', protected: true},
+				{name: 'fff', protected: true},
+				{name: 'fff', protected: true},
+				{name: 'fff', protected: true},
 				{name: 'ggg', protected: false}
 			]
 		},

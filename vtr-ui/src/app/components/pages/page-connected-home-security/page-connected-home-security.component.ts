@@ -31,6 +31,7 @@ import { HomeSecurityWelcome } from 'src/app/data-models/home-security/home-secu
 import { ModalLenovoIdComponent } from 'src/app/components/modal/modal-lenovo-id/modal-lenovo-id.component';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
+import { HomeSecurityAllDevice } from 'src/app/data-models/home-security/home-security-overview-allDevice.model';
 import { HomeSecurityOverviewMyDevice } from 'src/app/data-models/home-security/home-security-overview-my-device.model';
 
 @Component({
@@ -46,6 +47,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	welcomeModel: HomeSecurityWelcome;
 	connectedHomeSecurity: ConnectedHomeSecurity;
 	permission: any;
+	allDevicesInfo: HomeSecurityAllDevice;
 	homeSecurityOverviewMyDevice: HomeSecurityOverviewMyDevice;
 	account: HomeSecurityAccount;
 
@@ -102,6 +104,10 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 		const cacheHomeDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePostures);
 		const cacheHomeDeviceName = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDeviceName);
 		const cacheHomeDeviceStatus = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDeviceStatus);
+		const cacheAllDevices = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices);
+		if (cacheAllDevices) {
+			this.allDevicesInfo = cacheAllDevices;
+		}
 		if (this.connectedHomeSecurity && this.connectedHomeSecurity.overview) {
 			if (this.connectedHomeSecurity.overview.devicePostures && this.connectedHomeSecurity.overview.devicePostures.value.length > 0) {
 				this.homeSecurityOverviewMyDevice.createHomeDevicePosture(this.connectedHomeSecurity.overview.devicePostures.value);
@@ -122,6 +128,10 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 			} else if (cacheHomeDeviceName) {
 				this.homeSecurityOverviewMyDevice.deviceName = cacheHomeDeviceName;
 			}
+			if (this.connectedHomeSecurity.overview.allDevices && this.connectedHomeSecurity.overview.allDevices.length > 0) {
+				this.allDevicesInfo = new HomeSecurityAllDevice(this.connectedHomeSecurity.overview);
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
+			}
 		}
 		const cacheAccount = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount);
 		if (cacheAccount) {
@@ -131,6 +141,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 			this.account = new HomeSecurityAccount(this.connectedHomeSecurity.account);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, this.account);
 		}
+
 		this.connectedHomeSecurity.on(EventTypes.chsEvent, (chs: ConnectedHomeSecurity) => {
 			if (chs && chs.overview) {
 				if (chs.overview.devicePostures && chs.overview.devicePostures.value.length > 0) {
@@ -147,6 +158,10 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 			if (chs.account) {
 				this.account = new HomeSecurityAccount(chs.account);
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, this.account);
+			}
+			if (chs.overview.allDevices && chs.overview.allDevices.length > 0) {
+				this.allDevicesInfo = new HomeSecurityAllDevice(chs.overview);
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
 			}
 		});
 	}
