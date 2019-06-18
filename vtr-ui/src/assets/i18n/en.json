@@ -820,7 +820,7 @@
 				"display": {
 					"title": "Display",
 					"eyeCareMode": {
-						"title": "Eye Care Mode",
+						"title": "Color Temperature in Eye Care Mode",
 						"checkbox": "Schedule eye care mode from sunset to sunrise",
 						"options": {
 							"warm": "Warm (Better for eyes)",
