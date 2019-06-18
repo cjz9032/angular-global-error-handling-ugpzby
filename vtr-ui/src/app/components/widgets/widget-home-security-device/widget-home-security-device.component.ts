@@ -284,7 +284,9 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 							},
 							{
 								type: 'accountBadge',
-								status: undefined,
+								status: 'disabled',
+								text: 'homeSecurity.upgrade',
+								onClick: this.emitUpgradeAccount.bind(this),
 							},
 							{
 								type: 'trialBadge',

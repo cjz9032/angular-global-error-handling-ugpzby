@@ -106,7 +106,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	onClick(targetElement) {
 		const clickedInside = this.menuTarget.nativeElement.contains(targetElement);
 		if (!clickedInside) {
-			this.showMenu=false;
+			this.showMenu = false;
 		}
 	}
 	ngOnInit() {
@@ -285,34 +285,6 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			if (myDeviceItem !== undefined) {
 				const smartAssistItem = myDeviceItem.subitems.find(item => item.id === 'smart-assist');
 				if (!smartAssistItem) {
-					/**
-					* check if HPD related features are supported or not. If yes show Smart Assist tab else hide. Default is hidden
-					*/
-					// this.smartAssist.getHPDVisibilityInIdeaPad()
-					// 	.then((isAvailable: boolean) => {
-					// 		console.log('getSmartAssistVisibility()', isAvailable);
-					// 		isAvailable = true;
-					// 		console.log('getHPDVisibilityInIdeaPad()', isAvailable);
-					// 		// isAvailable = true;
-					// 		this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
-					// 		if (isAvailable) {
-					// 			myDeviceItem.subitems.splice(4, 0, {
-					// 				id: 'smart-assist',
-					// 				label: 'common.menu.device.sub4',
-					// 				path: 'smart-assist',
-					// 				metricsEvent: 'itemClick',
-					// 				metricsParent: 'navbar',
-					// 				metricsItem: 'link.smartassist',
-					// 				routerLinkActiveOptions: { exact: true },
-					// 				icon: '',
-					// 				subitems: []
-					// 			});
-					// 		}
-					// 	})
-					// 	.catch(error => {
-					// 		console.log('error in getHPDVisibilityInIdeaPad()', error);
-					// 	});
-
 					Promise.all([
 						this.smartAssist.getHPDVisibilityInIdeaPad(),
 						this.smartAssist.getHPDVisibilityInThinkPad()

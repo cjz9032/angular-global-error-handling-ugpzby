@@ -27,7 +27,11 @@ export class HomeSecurityMockService {
 				this.mitt.emit(EventTypes.chsEvent, this.chs);
 			},
 			visitWebConsole(feature: string) {
-				WinRT.launchUri(`https://homesecurity.coro.net/${feature}`);
+				if (feature) {
+					WinRT.launchUri(`https://homesecurity.coro.net/${feature}`);
+				} else {
+					WinRT.launchUri(`https://homesecurity.coro.net/`);
+				}
 				if (feature === 'login') {
 					this.state = CHSAccountState.local;
 					this.mitt.emit(EventTypes.chsEvent, this.chs);
@@ -59,6 +63,9 @@ export class HomeSecurityMockService {
 				{name: 'ccc', protected: true},
 				{name: 'ddd', protected: true},
 				{name: 'eee', protected: true},
+				{name: 'fff', protected: true},
+				{name: 'fff', protected: true},
+				{name: 'fff', protected: true},
 				{name: 'fff', protected: true},
 				{name: 'ggg', protected: false}
 			]
