@@ -29,10 +29,10 @@ export class UiLightingEffectComponent implements OnInit {
 	constructor(private elementRef: ElementRef) { }
 
 	ngOnInit() {
-		console.log('selected value in drop ng on it',this.selectedValue);
+		console.log('selected value in drop ng on it', this.selectedValue);
 		this.selectedOption = this.options.dropOptions.filter(
 			(option) => option.value === this.selectedValue
-			)[0];
+		)[0];
 	}
 
 	public toggleOptions() {
@@ -80,8 +80,7 @@ export class UiLightingEffectComponent implements OnInit {
 				if (!isUndefined(changes.selectedValue)) {
 					console.log('in ui-lighting-effect-component.ts iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii', this.selectedValue);
 					this.selectedOption = this.options.dropOptions.filter(
-
-					(option) => option.value === changes.selectedValue.currentValue
+						(option) => option.value === changes.selectedValue.currentValue
 					)[0];
 				}
 			}

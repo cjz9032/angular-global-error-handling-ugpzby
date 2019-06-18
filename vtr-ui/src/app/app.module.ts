@@ -229,6 +229,8 @@ import { ActiveProtectionSystemAdvancedComponent } from './components/pages/page
 import { UiColorWheelComponent } from './components/ui/ui-color-wheel/ui-color-wheel.component';
 import { SubpageDeviceSettingsInputAccessoryComponent } from './components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
 import { ModalIntelligentCoolingModesComponent } from './components/modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
+import { CharacterLimitPipe } from './pipe/ui-chs-statusbar/character-limit.pipe';
+import { UiTimePickerComponent } from './components/ui/ui-time-picker/ui-time-picker.component';
 
 library.add(fas);
 library.add(fab);
@@ -413,7 +415,9 @@ library.add(fal);
 		UiColorWheelComponent,
 		SubpageDeviceSettingsInputAccessoryComponent,
 		ModalIntelligentCoolingModesComponent,
-		DaysIntervalPipe
+		DaysIntervalPipe,
+		CharacterLimitPipe,
+		UiTimePickerComponent
 	],
 	imports: [
 		BrowserModule,

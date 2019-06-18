@@ -7,7 +7,7 @@ import {
 	EventEmitter
 } from '@angular/core';
 import {
-	EventTypes, ConnectedHomeSecurity, WinRT
+	EventTypes, ConnectedHomeSecurity, CHSDeviceOverview
 } from '@lenovo/tan-client-bridge';
 import {
 	VantageShellService
@@ -31,7 +31,8 @@ import { HomeSecurityWelcome } from 'src/app/data-models/home-security/home-secu
 import { ModalLenovoIdComponent } from 'src/app/components/modal/modal-lenovo-id/modal-lenovo-id.component';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
-import { UserService } from '../../../services/user/user.service';
+import { HomeSecurityAllDevice } from 'src/app/data-models/home-security/home-security-overview-allDevice.model';
+import { HomeSecurityOverviewMyDevice } from 'src/app/data-models/home-security/home-security-overview-my-device.model';
 
 @Component({
 	selector: 'vtr-page-connected-home-security',
@@ -40,13 +41,15 @@ import { UserService } from '../../../services/user/user.service';
 })
 export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	notifications: HomeSecurityNotification;
-	account: HomeSecurityAccount;
 	pageStatus: HomeSecurityPageStatus;
 	eventEmitter = new EventEmitter();
 
 	welcomeModel: HomeSecurityWelcome;
 	connectedHomeSecurity: ConnectedHomeSecurity;
 	permission: any;
+	allDevicesInfo: HomeSecurityAllDevice;
+	homeSecurityOverviewMyDevice: HomeSecurityOverviewMyDevice;
+	account: HomeSecurityAccount;
 
 	testStatus = ['lessDevices-secure', 'moreDevices-needAttention', 'noneDevices', 'trialExpired', 'lessDevices-needAttention', 'moreDevices-secure', 'localAccount'];
 
@@ -82,28 +85,58 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 		notificationDetail: 'Antivirus was disabled'}, this.translateService));
 		this.notifications.items.push(new WidgetItem({id: '1', title: 'Passcode lock disabled 3 hours', iconPath: 'assets/images/qa/svg_icon_qa_refresh.svg',
 		notificationDetail: 'Antivirus was disabled'}, this.translateService));
-		this.account = this.homeSecurityMockService.account;
 	}
 
 	ngOnInit() {
 		this.welcomeModel.isLenovoIdLogin = false; // mock data;
 		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, true);
-		const cacheSystemLocationShow = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed);
-		if (typeof cacheSystemLocationShow === 'boolean') {
-			this.welcomeModel.hasSystemPermissionShowed = cacheSystemLocationShow;
-			this.openModal();
-		} else {
-			this.permission.getSystemPermissionShowed().then((response) =>  {
-				this.welcomeModel.hasSystemPermissionShowed = response;
-				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed, response);
-				if (typeof this.welcomeModel.hasSystemPermissionShowed === 'boolean') {
-					this.openModal();
-				}
-			});
-		}
+		this.permission.getSystemPermissionShowed().then((response) =>  {
+			this.welcomeModel.hasSystemPermissionShowed = response;
+			if (typeof this.welcomeModel.hasSystemPermissionShowed === 'boolean') {
+				this.openModal();
+			}
+		});
 		this.connectedHomeSecurity.on(EventTypes.chsHasSystemPermissionShowedEvent, (data) => {
 			this.welcomeModel.hasSystemPermissionShowed = data;
-			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed, data);
+		});
+
+		const cacheMyDevice = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityMyDevice);
+		const cacheAllDevices = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices);
+		if (cacheAllDevices) {
+			this.allDevicesInfo = cacheAllDevices;
+		}
+		if (this.connectedHomeSecurity && this.connectedHomeSecurity.overview) {
+			this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice(this.translateService, this.connectedHomeSecurity.overview);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityMyDevice, this.homeSecurityOverviewMyDevice);
+		} else if (cacheMyDevice) {
+			this.homeSecurityOverviewMyDevice = cacheMyDevice;
+		}
+		if (this.connectedHomeSecurity && this.connectedHomeSecurity.overview && this.connectedHomeSecurity.overview.allDevices && this.connectedHomeSecurity.overview.allDevices.length > 0) {
+			this.allDevicesInfo = new HomeSecurityAllDevice(this.connectedHomeSecurity.overview);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
+		}
+		const cacheAccount = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount);
+		if (cacheAccount) {
+			this.account = cacheAccount;
+		}
+		if (this.connectedHomeSecurity.account) {
+			this.account = new HomeSecurityAccount(this.connectedHomeSecurity.account);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, this.account);
+		}
+
+		this.connectedHomeSecurity.on(EventTypes.chsEvent, (chs: ConnectedHomeSecurity) => {
+			if (chs && chs.overview) {
+				this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice(this.translateService, chs.overview);
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityMyDevice, this.homeSecurityOverviewMyDevice);
+			}
+			if (chs.account) {
+				this.account = new HomeSecurityAccount(chs.account);
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, this.account);
+			}
+			if (chs.overview.allDevices && chs.overview.allDevices.length > 0) {
+				this.allDevicesInfo = new HomeSecurityAllDevice(chs.overview);
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
+			}
 		});
 	}
 
@@ -211,12 +244,22 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	onManageAccount(feature: string) {
+	onManageAccount(feature?: string) {
 		this.connectedHomeSecurity.account.visitWebConsole(feature);
 	}
 
 	onUpgradeAccount() {
 		this.connectedHomeSecurity.account.purchase();
+	}
+
+	haddleChange($event) {
+		if ($event === 'visitCornet') {
+			this.onManageAccount();
+		} else if ($event === 'upgrade') {
+			this.onUpgradeAccount();
+		} else if ($event === 'startTrial') {
+			this.onStartTrial();
+		}
 	}
 
 	public switchStatus() {

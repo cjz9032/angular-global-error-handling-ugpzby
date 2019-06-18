@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { AudioService } from 'src/app/services/audio/audio.service';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
 import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -14,7 +15,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 	templateUrl: './widget-quicksettings-list.component.html',
 	styleUrls: ['./widget-quicksettings-list.component.scss']
 })
-export class WidgetQuicksettingsListComponent implements OnInit {
+export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit {
 
 	@Input() title = '';
 
@@ -87,7 +88,7 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			isSwitchVisible: true,
 			isChecked: false,
 			tooltipText: '',
-			type: 'auto-updates'
+			type: 'gaming.dashboard.device.quickSettings.dolby'
 		}
 	];
 
@@ -149,18 +150,19 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private gamingThermalModeService: GamingThermalModeService,
 		private commonService: CommonService,
-		private shellServices: VantageShellService
+		private shellServices: VantageShellService,
+		private audioService: AudioService
 	) { }
 
 	ngOnInit() {
+		this.initialiseDolbyCache();
+		this.getDolbySettings();
 
 		this.gamingCapabilities.smartFanFeature = this.gamingCapabilityService.getCapabilityFromCache(
-			LocalStorageKey.CurrentThermalModeStatus
-		);
+			LocalStorageKey.CurrentThermalModeStatus);
 
 		this.gamingCapabilities.smartFanFeature = this.gamingCapabilityService.getCapabilityFromCache(
-			LocalStorageKey.PrevThermalModeStatus
-		);
+			LocalStorageKey.PrevThermalModeStatus);
 
 		if (!this.gamingSettings.smartFanFeature) {
 			this.quickSettings[0].isVisible = false;
@@ -187,7 +189,7 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			}
 		});
 
-		//Binding regThermalMode event
+		// Binding regThermalMode event
 		if (this.gamingSettings.smartFanFeature) {
 			this.gamingThermalModeService.regThermalModeEvent();
 			this.shellServices.registerEvent(
@@ -198,25 +200,46 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 
 	}
 
+	ngAfterViewInit() {
+	}
+
 	public onRegThermalModeEvent(status: any) {
-		if (status) {
+		if (status !== undefined) {
+			const regThermalModeStatusObj = new ThermalModeStatus();
+			// setting previous value to localstorage 
+			const regThermalModePreValue = this.GetThermalModeCacheStatus();
+			this.commonService.setLocalStorageValue(
+				LocalStorageKey.PrevThermalModeStatus,
+				regThermalModePreValue
+			);
+			// setting current value to local storage
 			this.commonService.setLocalStorageValue(
 				LocalStorageKey.CurrentThermalModeStatus,
 				status
 			);
+			// updating model with current value
+			this.thermalModeStatusObj.thermalModeStatus = status;
+			// UI binding with current value
+			this.drop.curSelected = status;
+
+		} else {
+			const regThermalModeObj = new ThermalModeStatus();
+			// getting previous value from localstorage 
+			const thermalModePreValue = this.GetThermalModePrevCacheStatus();
+			// updating model with previous value
+			regThermalModeObj.thermalModeStatus = thermalModePreValue;
+			// UI binding with previous value
+			this.drop.curSelected = regThermalModeObj.thermalModeStatus;
 		}
-	} 
+	}
 
 	public quicksettingListInit() {
 		const gamingStatus = this.gamingCapabilities;
 		this.quickSettings[0].isVisible = gamingStatus.smartFanFeature;
-		//console.log('thermal mode smart feature', gamingStatus.smartFanFeature);
+		// console.log('thermal mode smart feature', gamingStatus.smartFanFeature);
 		if (gamingStatus.smartFanFeature) {
 			this.renderThermalModeStatus();
 		}
-	}
-
-	ngAfterViewInit() {
 	}
 
 	public GetThermalModeCacheStatus(): any {
@@ -255,15 +278,15 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			this.gamingThermalModeService
 				.setThermalModeStatus(this.setThermalModeStatus.thermalModeStatus)
 				.then((statusValue: boolean) => {
-					//console.log('value for setThermalModeStatus value then', value);
+					// console.log('value for setThermalModeStatus value then', value);
 					if (!statusValue) {
 						this.drop.curSelected = this.GetThermalModeCacheStatus();
 
-					} else if (statusValue){
-						//binding to UI
+					} else if (statusValue) {
+						// binding to UI
 						this.drop.curSelected = this.setThermalModeStatus.thermalModeStatus;
 
-						//updating the previous local cache value with last value of current local cache value
+						// updating the previous local cache value with last value of current local cache value
 						const previousValue = this.GetThermalModeCacheStatus();
 						this.commonService.setLocalStorageValue(
 							LocalStorageKey.PrevThermalModeStatus,
@@ -271,13 +294,13 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 						);
 
 						try {
-							//updating the current local cache value
+							// updating the current local cache value
 							this.commonService.setLocalStorageValue(
 								LocalStorageKey.CurrentThermalModeStatus,
 								this.drop.curSelected
 							);
 						} catch (error) {
-							//fail update loading previous cache value
+							// fail update loading previous cache value
 							this.drop.curSelected = this.GetThermalModePrevCacheStatus();
 							console.error('setThermalCurrentLocalCache', error);
 						}
@@ -287,5 +310,40 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 					console.error('setThermalModeStatusError', error);
 				});
 		}
+	}
+
+	public onToggleStateChanged(event: any) {
+		const { name } = event.target;
+		if (name === 'gaming.dashboard.device.quickSettings.dolby') {
+			this.setDolbySettings(event.switchValue);
+		}
+	}
+	public async getDolbySettings() {
+		try {
+			const dolbySettings = await this.audioService.getDolbyFeatureStatus();
+			this.quickSettings[3].isVisible = dolbySettings.available;
+			this.quickSettings[3].isChecked = dolbySettings.status;
+		} catch (err) {
+			console.log(`ERROR in getDolbySettings()`, err);
+		}
+	}
+
+	public async setDolbySettings(value: any) {
+		try {
+			const isDolbyUpdated = await this.audioService.setDolbyOnOff(value);
+			if (isDolbyUpdated) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.DolbyModeCache, { available: true, status: value });
+			} else {
+				this.quickSettings[3].isChecked = !value;
+			}
+		} catch (err) {
+			console.log(`ERROR in setDolbySettings()`, err);
+		}
+	}
+
+	public initialiseDolbyCache() {
+		const { available, status } = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyModeCache);
+		this.quickSettings[3].isVisible = available;
+		this.quickSettings[3].isChecked = status;
 	}
 }
