@@ -79,10 +79,7 @@ export class MetricsDirective {
 			case 'articleclick':
 			case 'docclick': {
 				data.ItemType = 'ArticleClick';
-				this.metricsParent = this.metricsParent.toLowerCase();
-				if (this.metricsItem) {
-					data.ItemName = this.metricsItem;
-				}
+				data.ItemParent = this.metricsParent;
 				if (typeof this.viewOrderService[this.metricsParent] === 'undefined') {
 
 					this.viewOrderService[this.metricsParent] = 0;
