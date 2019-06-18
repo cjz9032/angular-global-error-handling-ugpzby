@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -377,7 +377,15 @@
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
-                }
+                },
+                "question1": "Do you like the new style of Vantage?",
+                "question2": "Do you think the performance is acceptable?",
+                "question3": "Would you use the application more often in the future?",
+                "yes": "Yes",
+                "no": "No",
+                "tips1": "Please leave any additional comments",
+                "sendFeedback": "Send Feedback",
+                "submitScreenShot": "Submit Screen Shot"
             }
         },
         "quickSettings": {
@@ -557,20 +565,12 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter",
+                        "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "ACAdapterNotSupported": {
                         "title": "AC adapter not supported.",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
@@ -1045,8 +1045,8 @@
         "recommendedUpdates": "建議更新",
         "optionalUpdates": "選用更新項目",
         "ignoredUpdates": "已忽略的更新",
-        "successInstall": "已成功地安裝在",
-        "failedInstall": "安裝失敗",
+        "successInstall": "成功安裝在",
+        "failedInstall": "無法安裝在",
         "at": "在",
         "readMore": "較多內容",
         "popup": {
@@ -1070,8 +1070,8 @@
                 "tooltip": "重要更新可防止出現重大問題、嚴重故障、硬體故障或資料毀損。"
             },
             "recommended": {
-                "title": "建議更新",
-                "tooltip": "建議的驅動程式更新可以讓您的電腦以最佳效能運作。"
+                "title": "推薦的更新",
+                "tooltip": "推薦的驅動程序更新可使計算機以最佳性能運行。"
             },
             "windows": {
                 "title": "Windows Updates",
@@ -1087,8 +1087,8 @@
             "last": "上次更新：",
             "next": "下次掃描更新排程於",
             "checkButton": "檢查更新",
-            "checking": "正在檢查更新",
-            "downloading": "正在下載更新",
+            "checking": "檢查更新項目",
+            "downloading": "下載更新完成",
             "installing": "正在安裝更新",
             "percent": "% 已完成",
             "cancelCheck": "取消檢查",
@@ -1168,15 +1168,14 @@
         "protected": "Protected",
         "notProtected": "Not Protected",
         "myDevice": "My Device",
-        "allDevice": "All Devices",
         "secure": "SECURE",
         "needAttention": "NEEDS ATTENTION",
         "manageAccount": "Manage Account",
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrate to protect all of your devices",
+        "trialExpired": "Trial Expired",
+        "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
         "protectAllDevices": "Protect all of your devices",
@@ -1300,9 +1299,7 @@
             "maliciousNetwork": "本月已阻止您的電腦加入 {{maliciousWifi}} 個惡意網路。",
             "good": "良好",
             "malicious": "惡意",
-            "suspicious": "可疑",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "可疑"
         },
         "antivirus": {
             "common": {

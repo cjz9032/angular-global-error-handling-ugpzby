@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, DoCheck, HostListener, SimpleChanges, SimpleChange } from '@angular/core';
+import { Component, OnInit, OnDestroy, DoCheck, HostListener, SimpleChanges, SimpleChange, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -27,7 +27,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	styleUrls: ['./menu-main.component.scss']
 })
 export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
-
+	@ViewChild('menuTarget') menuTarget;
 	public deviceModel: string;
 	public country: string;
 	public firstName: 'User';
@@ -102,7 +102,13 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	onFocus(): void {
 		this.showVpn();
 	}
-
+	@HostListener('document:click', ['$event.target'])
+	onClick(targetElement) {
+		const clickedInside = this.menuTarget.nativeElement.contains(targetElement);
+		if (!clickedInside) {
+			this.showMenu=false;
+		}
+	}
 	ngOnInit() {
 
 		const self = this;

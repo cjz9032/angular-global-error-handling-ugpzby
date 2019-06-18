@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -377,7 +377,15 @@
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
-                }
+                },
+                "question1": "Do you like the new style of Vantage?",
+                "question2": "Do you think the performance is acceptable?",
+                "question3": "Would you use the application more often in the future?",
+                "yes": "Yes",
+                "no": "No",
+                "tips1": "Please leave any additional comments",
+                "sendFeedback": "Send Feedback",
+                "submitScreenShot": "Submit Screen Shot"
             }
         },
         "quickSettings": {
@@ -557,20 +565,12 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter",
+                        "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "ACAdapterNotSupported": {
                         "title": "AC adapter not supported.",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
@@ -586,7 +586,7 @@
             "power": {
                 "title": "전원",
                 "subtitle": "전원 설정",
-                "description": "이 섹션에서는 동적으로 열 성능을 조정하고, 배터리 수명을 극대화할 수 있습니다.기타 인기 있는 전원 관련 기능도 있습니다. ",
+                "description": "이 섹션에서는 동적으로 열 성능을 조정하고, 배터리 수명을 극대화할 수 있습니다.기타 인기 있는 전원 관련 기능도 있습니다. 이 섹션에서 기본 설정을 확인하고, 필요에 따라 시스템을 사용자 정의할 수 있습니다.",
                 "jumpto": {
                     "title": "설정으로 건너뛰기",
                     "battery": "배터리",
@@ -598,9 +598,9 @@
                     "title": "전원 스마트 설정",
                     "subtitle": "지능형 냉각",
                     "subtitle1": "배터리 및 저소음",
-                    "description1": "이 기능은 사용자의 요구에 맞게 열 설정을 동적으로 조정합니다.",
-                    "description2": "지능형 냉각 기능은 팬 속도, 최대 표면 온도 및 성능을 조절합니다.",
-                    "description3": "지능형 냉각 기능이 필요에 따라 자동으로 열효율을 조절합니다.",
+                    "description1": "이 기능은 사용자의 요구에 맞게 열 설정을 동적으로 조정합니다.설정 시, 들고 있는 동안이나 유휴 상태인 경우에 장치를 더욱 시원하거나 조용하게 유지합니다. 그렇지 않으면 장치가 안정된 표면에 있는 동안 성능이 최적화됩니다. 설정 해제 시 수동으로 열 우선순위를 설정할 수 있습니다.",
+                    "description2": "지능형 냉각 기능은 팬 속도, 최대 표면 온도 및 성능을 조절합니다.이 기능의 모드는 다음과 같으며, 현재 Windows 성능 전원 켜기 슬라이더를 사용하여 액세스할 수 있습니다.",
+                    "description3": "지능형 냉각 기능이 필요에 따라 자동으로 열효율을 조절합니다.노트북의 경우, 액세서리에서 분리하면 지능형 냉각 기능이 성능 설정을 조정하여 사용 편의를 위해 표면을 더 식혀줍니다. 장치가 데스크탑에 연결되어 있는 경우에는 이 기능이 성능을 최적화합니다.",
                     "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
                     "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
                     "readMore": "자세히 읽으십시오.",
@@ -631,7 +631,7 @@
                             "mode1": "저소음 모드",
                             "mode2": "균형 조정 모드",
                             "mode3": "성능 모드",
-                            "line1": "슬라이더가 왼쪽 끝에 있습니다.",
+                            "line1": "슬라이더가 왼쪽 끝에 있습니다.팬 속도와 성능을 낮춰 컴퓨터의 온도를 더욱 낮추고 조용하게 하며, 배터리 수명을 최상 상태로 제공합니다.",
                             "line2": "슬라이더가 가운데 있습니다.최상의 환경을 위해 팬 속도와 성능이 동적으로 균형을 이룹니다.",
                             "line3": "슬라이더가 오른쪽 끝에 있습니다. 팬 속도와 허용 표면 온도가 더 높아져 성능을 극대화할 수 있습니다.",
                             "line4": "More info"
@@ -683,7 +683,7 @@
                     "batteryThreshold": {
                         "title": "배터리 충전 임계값",
                         "description": "컴퓨터 사용 시 주로 AC 어댑터를 연결하고 가끔씩만 배터리 전원을 사용하는 경우,최대 충전 값을 100% 미만으로 설정하여 배터리 수명을 연장시킬 수 있습니다. 가끔씩 사용하는 배터리는 완전 충전 용량보다 적게 충전될 때 수명이 길어지므로 이 방법이 유용합니다.",
-                        "tooltip": "현재 배터리가 충전 중지 임계값보다 높게 충전된 경우 배터리가 충전 중지 임계값 이하로 방전될 때까지 전원을 분리하십시오.",
+                        "tooltip": "현재 배터리가 충전 중지 임계값보다 높게 충전된 경우 배터리가 충전 중지 임계값 이하로 방전될 때까지 전원을 분리하십시오.배터리 상태(낡거나 낡지 않은 상태)에 따라, 충전이 시작되거나 중지되는 바로 그 지점에서 최대 2퍼센트의 차이가 생길 수도 있습니다. 해당 기능을 사용하는 경우 배터리 상태에 관한 어김없는 정확한 보고를 위해서 가끔 배터리 게이지 리셋을 수행하는 것이 바람직합니다.",
                         "note": "Note",
                         "readMoreText": "Read more.",
                         "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
@@ -693,7 +693,7 @@
                         },
                         "popup": {
                             "title": "배터리 충전 임계값 사용",
-                            "description1": "사용자 지정 배터리 충전을 사용하면 이 장치를 사용할 때 전체 배터리 상태가 더 오래 지속될 수 있습니다.",
+                            "description1": "사용자 지정 배터리 충전을 사용하면 이 장치를 사용할 때 전체 배터리 상태가 더 오래 지속될 수 있습니다.그러나 완전 충전을 하지 않으면, 런타임 배터리 수명이 줄어듭니다.",
                             "description2": "이 기능을 완벽하게 사용하려면, 컴퓨터 플러그를 뽑고충전 중지 임계값 이하로 배터리를 방전하십시오.",
                             "enable": "사용",
                             "cancel": "취소"
@@ -715,12 +715,12 @@
                         "tooltip": {
                             "line1": "이 기능은 전원을 연결할 때 배터리 수명을 연장하는 데 유용합니다.",
                             "line2": "이 모드를 사용하면 배터리는 용량의 55-60%까지만 충전되어 배터리의 수명을 극대화할 수 있습니다. 그러나 이렇게 하면 AC 전원에서 분리한 후 컴퓨터를 사용하는 시간이 줄어듭니다.",
-                            "line3": "참고: 빠른 충전과 보존 모드를 동시에 사용할 수 없습니다."
+                            "line3": "참고: 빠른 충전과 보존 모드를 동시에 사용할 수 없습니다.모드 중 하나가 켜져 있으면, 다른 모드는 자동으로 꺼집니다."
                         }
                     },
                     "airPlanePower": {
                         "title": "비행기 전원 모드",
-                        "description": "시스템의 전력 소모를 제어하여 비행기의 AC 전원 콘센트를 보호하십시오."
+                        "description": "시스템의 전력 소모를 제어하여 비행기의 AC 전원 콘센트를 보호하십시오.비행기 전원 모드를 사용하면, 컴퓨터가 배터리 충전율과 시스템 성능을 제한하여 전력 소모를 줄입니다."
                     }
                 },
                 "energyStar": {
@@ -955,7 +955,7 @@
                             "medium": "보통",
                             "slow": "느리게"
                         },
-                        "toolTipContent": "사용자의 존재를 감지하지 못하면, 원하는 옵션을 선택하여 빠른/중간/느린 속도로 화면을 잠그십시오."
+                        "toolTipContent": "사용자의 존재를 감지하지 못하면, 원하는 옵션을 선택하여 빠른/중간/느린 속도로 화면을 잠그십시오.그러나 화면이 잠기는 시간도 실제 사용자 시나리오, 센서 용량 및 Windows 화면 시간 제한 설정의 영향을 받습니다. 따라서 시스템을 떠나기 전에 즉시 잠그는 것이 좋습니다."
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -968,7 +968,7 @@
                 },
                 "note": {
                     "description1": "이 기능은 Windows Hello를 이용합니다.Windows 설정에서 얼굴 인식이 켜졌는지 확인하십시오.",
-                    "description2": "이 기능은 센서 및 카메라를 사용하여 사용자의 존재를 감지합니다.",
+                    "description2": "이 기능은 센서 및 카메라를 사용하여 사용자의 존재를 감지합니다.그러나 이 기능이 모든 개인 데이터 또는 이미지를 수집, 저장 및 손실하는 것은 아닙니다.",
                     "description3": "1. 컴퓨터가 텐트, 태블릿 또는 대기 모드에 있을 경우,이러한 기능이 적절하게 작동하지 않을 수 있습니다.",
                     "description4": "2. 컴퓨터가 최대 절전 모드이거나 꺼져 있었던 경우.자동 IR 카메라 로그인이 작동하지 않습니다.",
                     "description5": "3. IR 카메라에서 얼굴을 인식하여 자동 로그인을 할 수 있도록컴퓨터 화면을 적절한 각도로 조정하십시오."
@@ -1052,10 +1052,10 @@
         "popup": {
             "reboot": "다시 시작",
             "shutdown": "시스템 종료",
-            "rebootForceMsg": "선택한 업데이트로 인해 설치 후 시스템이 다시 부팅됩니다.",
-            "shutdownForceMsg": "선택한 업데이트로 인해 설치 후 시스템이 종료됩니다.",
-            "rebootDelayedMsg": "선택한 업데이트로 인해 설치 후 시스템이 재부팅됩니다. 업데이트를 설치하는 동안 시스템을 끄거나 전원 또는 액세서리를 제거하지 마십시오. 시스템 재부팅에 대비하여 현재의 작업을 저장하는 것이 바람직합니다.",
-            "rebootRequiredMsg": "업데이트를 성공적으로 설치하려면 컴퓨터를 다시 부팅하여 모든 것이 안전하고 원활하게 실행되어야 합니다.",
+            "rebootForceMsg": "선택한 업데이트로 인해, 시스템이 설치 후다시 부팅됩니다.",
+            "shutdownForceMsg": "선택한 업데이트로 인해 시스템이 설치 후자동으로 종료됩니다.",
+            "rebootDelayedMsg": "선택한 업데이트로 인해 설치 후 시스템이 재부팅되며,업데이트를 설치하는 동안 시스템을 끄거나 전원 또는 액세서리를 제거하지 마십시오. 시스템 재부팅에 대비하여 현재의 작업을 저장하는 것이 바람직합니다.",
+            "rebootRequiredMsg": "업데이트를 성공적으로 설치하려면 컴퓨터를 다시 부팅하여모든 것이 안전하고 원활하게 실행되어야 합니다.",
             "okayButton": "확인",
             "cancelButton": "취소",
             "rebootButton": "지금 다시 부팅",
@@ -1071,7 +1071,7 @@
             },
             "recommended": {
                 "title": "권장 업데이트",
-                "tooltip": "권장 드라이버 업데이트를 통해 컴퓨터를 최적의 성능으로 실행할 수 있습니다."
+                "tooltip": "권장 드라이버 업데이트로 인해 컴퓨터가 최적의 성능으로 작동합니다."
             },
             "windows": {
                 "title": "Windows 업데이트",
@@ -1085,22 +1085,22 @@
             "neverChecked": "System Update를 시작합니다.",
             "title": "최신 시스템은 정상적인 시스템입니다.",
             "last": "최종 업데이트 날짜",
-            "next": "다음 업데이트 검사가 다음 시간에 예약되었습니다",
-            "checkButton": "업데이트 검사 ",
+            "next": "다음 업데이트 검사가 다음 시간에 예약됨",
+            "checkButton": "업데이트 검사",
             "checking": "업데이트 검사",
-            "downloading": "업데이트를 다운로드하는 중입니다",
-            "installing": "업데이트를 설치 중입니다",
+            "downloading": "업데이트 다운로드 완료",
+            "installing": "업데이트를 설치하는 중",
             "percent": "% 완료",
             "cancelCheck": "검사 취소",
             "cancelUpdates": "업데이트 취소",
             "available": "사용 가능한 업데이트",
-            "description": "이 패키지에는 컴퓨터의 올바른 작동에 필요한 하드웨어 드라이버 및 기타 시스템 유틸리티 관련 업데이트가 포함되어 있습니다. 또한 중요 업데이트는 사용자 컴퓨터의 데이터를 보호하기 위해 중요하며 사용 가능한 중요 업데이트가 있으면 설치해야 합니다. 이러한 패키지 설치에 실패하면 데이터 손실, 시스템 결함 또는 하드웨어 실패가 발생할 수 있습니다.",
+            "description": "이 패키지에는 컴퓨터의 올바른 작동에 필요한 하드웨어드라이버 및 기타 시스템 유틸리티 관련 업데이트가 포함되어 있습니다. 또한 중요 업데이트는 사용자 컴퓨터의 데이터를 보호하기 위해 중요하며 사용 가능한 중요 업데이트가 있으면 설치해야 합니다. 이러한 패키지 설치에 실패하면 데이터 손실, 시스템 결함 또는 하드웨어 실패가 발생할 수 있습니다.",
             "installButton": "모든 업데이트 설치",
             "result": {
                 "success": "모든 업데이트가 올바르게 설치됨",
                 "fail": {
                     "title": "일부 업데이트가 올바르게 설치되지 않았습니다.",
-                    "description": "이러한 업데이트의 다운로드 또는 설치 중에 문제가 발생했습니다. 온라인 상태인지 확인하고 업데이트를 설치할 때 컴퓨터를 끄지 마십시오."
+                    "description": "이러한 업데이트의 다운로드 또는 설치 중에 문제가 발생했습니다.온라인 상태인지 확인하고 업데이트를 설치할 때 컴퓨터를 끄지 마십시오."
                 }
             }
         },
@@ -1168,15 +1168,14 @@
         "protected": "Protected",
         "notProtected": "Not Protected",
         "myDevice": "My Device",
-        "allDevice": "All Devices",
         "secure": "SECURE",
         "needAttention": "NEEDS ATTENTION",
         "manageAccount": "Manage Account",
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrate to protect all of your devices",
+        "trialExpired": "Trial Expired",
+        "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
         "protectAllDevices": "Protect all of your devices",
@@ -1300,9 +1299,7 @@
             "maliciousNetwork": "이 달에 컴퓨터를 {{maliciousWifi}} 악성 테트워크와 연결할 수 없습니다.",
             "good": "좋음",
             "malicious": "악성",
-            "suspicious": "의심스러움",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "의심스러움"
         },
         "antivirus": {
             "common": {
