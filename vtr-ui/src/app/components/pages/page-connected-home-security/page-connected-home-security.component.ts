@@ -127,12 +127,11 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 		if (cacheAccount) {
 			this.account = cacheAccount;
 		}
-		this.account = new HomeSecurityAccount(this.connectedHomeSecurity.account);
 		if (this.connectedHomeSecurity.account) {
 			this.account = new HomeSecurityAccount(this.connectedHomeSecurity.account);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, this.account);
 		}
-		this.connectedHomeSecurity.on(EventTypes.chsEvent, (chs) => {
+		this.connectedHomeSecurity.on(EventTypes.chsEvent, (chs: ConnectedHomeSecurity) => {
 			if (chs && chs.overview) {
 				if (chs.overview.devicePostures && chs.overview.devicePostures.value.length > 0) {
 					this.homeSecurityOverviewMyDevice.createHomeDevicePosture(chs.overview.devicePostures.value);
@@ -145,8 +144,10 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 					this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDeviceName, this.homeSecurityOverviewMyDevice.deviceName);
 				}
 			}
-			this.account = new HomeSecurityAccount(chs.account);
-			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, this.account);
+			if (chs.account) {
+				this.account = new HomeSecurityAccount(chs.account);
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, this.account);
+			}
 		});
 	}
 
