@@ -11,20 +11,38 @@
 }
 
 .col-6 {
-	min-width: 26rem;
+	min-width: 30rem;
 }
 
 .select-wrapper {
-	@media #{$mediaquery_X3} {
-		width: 30rem;
+	@media #{$mediaquery_sm} {
+		width: 27.4rem;
 	}
 }
 
-.bottom-fix {
-	position: absolute;
-	width: 100%;
-	right: 1.4rem;
-	bottom: 4rem;
+.record-list-wrapper {
+	position: relative;
+	height: 70rem;
+	.top-fix {
+		height: 64.4rem;
+		padding: 3rem;
+		overflow: auto;
+		align-content: flex-start;
+	}
+
+	&.recording {
+		.top-fix {
+			height: 50rem;
+		}
+	}
+
+	.bottom-fix {
+		padding-bottom: 2rem;
+		padding-right: 4rem;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+	}
 }
 
 .record-table {
@@ -51,16 +69,15 @@
 		color: $gaming_hover;
 	}
 	&.recording {
+		.record-list {
+			height: 40rem;
+			overflow: auto;
+		}
 		.record-footer {
 			display: block;
 		}
 	}
 	.record-list {
-		overflow: auto;
-		height: 40rem;
-		@media #{$mediaquery_X3} {
-			height: 38rem;
-		}
 		.record-item {
 			cursor: pointer;
 			position: relative;

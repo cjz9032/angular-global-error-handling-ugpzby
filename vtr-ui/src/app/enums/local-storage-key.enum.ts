@@ -97,7 +97,6 @@ export enum LocalStorageKey {
 	PrevMacroKeyRepeat = '[LocalStorageKey] PrevMacroKeyRepeat',
 	PrevMacroKeyInterval = '[LocalStorageKey] PrevMacroKeyInterval',
 	CurrentMacroKeyRepeat = '[LocalStorageKey] CurrentMacroKeyRepeat',
-	CurrentMacroKeyInterval = '[LocalStorageKey] CurrentMacroKeyInterval'
-
-
+	CurrentMacroKeyInterval = '[LocalStorageKey] CurrentMacroKeyInterval',
+	SubBrand = '[LocalStorageKey] SubBrand',
 }
