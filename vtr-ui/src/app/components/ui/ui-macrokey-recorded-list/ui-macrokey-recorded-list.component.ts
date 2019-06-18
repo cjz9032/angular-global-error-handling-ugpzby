@@ -135,10 +135,9 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 	ngOnInit() {}
 
 	recordDelete(record, i) {
-		// console.log(this.recordsData.inputs);
-		// const remainingInputs = this.recordsData.inputs.filter((records: any) => records.key !== record.key);
-		this.recordsData.inputs.splice(i, 2);
-		const remainingInputs = this.recordsData.inputs;
+		const remainingInputs = this.recordsData.inputs.filter(
+			(recordItem: any) => recordItem.pairName !== record.pairName
+		);
 		this.macrokeyService.setMacroKey(this.number.key, remainingInputs).then((responseStatus) => {
 			if (responseStatus) {
 				this.recordsData.inputs = remainingInputs;
