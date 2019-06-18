@@ -71,8 +71,8 @@ export class UiColorWheelComponent implements OnInit {
 		colorWheel.wheelThickness = 30;
 		colorWheel.redraw();
 	}
-	onApplyColorEffect() {
+	onApplyColorEffect(backColor) {
 		console.log('apply button clicked......................................');
-		this.colorEffectChanged.emit(this.backColor);
+		this.colorEffectChanged.emit(backColor);
 	}
 }
