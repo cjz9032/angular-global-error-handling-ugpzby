@@ -280,6 +280,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	private showSmartAssist() {
+
 		this.getMenuItems().then((items) => {
 			const myDeviceItem = items.find(item => item.id === this.constantDevice);
 			if (myDeviceItem !== undefined) {
@@ -287,10 +288,12 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 				if (!smartAssistItem) {
 					Promise.all([
 						this.smartAssist.getHPDVisibilityInIdeaPad(),
-						this.smartAssist.getHPDVisibilityInThinkPad()
+						this.smartAssist.getHPDVisibilityInThinkPad(),
+						this.smartAssist.getVideoPauseResumeStatus(), // returns object
+						this.smartAssist.getIntelligentScreenVisibility()
 					]).then((responses: any[]) => {
 						console.log('showSmartAssist.Promise.all()', responses);
-						const isAvailable = (responses[0] || responses[1]);
+						const isAvailable = (responses[0] || responses[1] || responses[2].available || responses[3]);
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
 						if (isAvailable) {
 							myDeviceItem.subitems.splice(4, 0, {
