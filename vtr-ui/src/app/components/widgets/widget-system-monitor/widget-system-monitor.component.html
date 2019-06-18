@@ -19,18 +19,18 @@
 									</div>
 									<div class="monitor-stack">
 										<div class="stack-container">
-												<div class="stack-border">
-											<div class="stack-content gpu"></div>
-											<div class="stack-mask"
-												[ngStyle]="{'height':gpuUsage+'%'}"></div>
-												</div>
+											<div class="stack-border">
+												<div class="stack-content gpu"></div>
+												<div class="stack-mask"
+													[ngStyle]="{'height':gpuUsage+'%'}"></div>
+											</div>
 										</div>
 										<div class="stack-label">
 											<div class="stack-title">
 												GPU
 											</div>
 											<div class="stack-status">
-												{{gpuCurrent}}/{{gpuMax}}GB
+												{{gpuCurrent}}/{{gpuMax}}
 											</div>
 										</div>
 									</div>
@@ -43,13 +43,13 @@
 									<div class="cpu-ring"></div>
 									<div class="cpu-mask left">
 										<div class="mask-obj"
-											[ngStyle]="{'transform':'rotate('+cpuUsage+'deg)'}">
+											[ngStyle]="{'transform':'rotate('+getLeftDeg(cpuUsage)+'deg)'}">
 											<div class="mask-ring"></div>
 										</div>
 									</div>
 									<div class="cpu-mask right" [ngClass]="{'hidden':cpuUsage>.5}">
 										<div class="mask-obj"
-											[ngStyle]="{'transform':'rotate('+cpuUsage+'deg)'}">
+											[ngStyle]="{'transform':'rotate('+getRightDeg(cpuUsage)+'deg)'}">
 											<div class="mask-ring"></div>
 										</div>
 									</div>
@@ -60,7 +60,7 @@
 													CPU
 												</div>
 												<div class="cpu-status">
-													{{cpuCurrent}}/{{cpuMax}}GHz
+													{{cpuCurrent}}/{{cpuMax}}
 												</div>
 											</div>
 										</div>
@@ -73,18 +73,18 @@
 									</div>
 									<div class="monitor-stack">
 										<div class="stack-container">
-												<div class="stack-border">
-											<div class="stack-content ram"></div>
-											<div class="stack-mask"
-												[ngStyle]="{'height':memoryUsage+'%'}"></div>
-												</div>
+											<div class="stack-border">
+												<div class="stack-content ram"></div>
+												<div class="stack-mask"
+													[ngStyle]="{'height':memoryUsage+'%'}"></div>
+											</div>
 										</div>
 										<div class="stack-label">
 											<div class="stack-title">
 												RAM
 											</div>
 											<div class="stack-status">
-												{{ramCurrent}}/{{ramMax}}GB
+												{{ramCurrent}}/{{ramMax}}
 											</div>
 										</div>
 									</div>
@@ -96,7 +96,7 @@
 							<div class="monitor-section hds" [ngClass]="{'expanded':showAllHDs}"
 								(click)="toggleHDs($event)">
 								<div class="hd-list" [ngClass]="{'single':hds.length===1}">
-									<div class="hd-item" [ngClass]="{'danger':hd.usedDisk/hd.capacity>.75}"
+									<div class="hd-item" [ngClass]="{'danger':hd.diskUsage/100>.75}"
 										*ngFor="let hd of hds; let i=index;">
 										<div class="gaming-tooltip">
 											<p>{{hd.hddName}}</p>
@@ -105,14 +105,14 @@
 											<div class="hd-ring"></div>
 											<div class="hd-mask left">
 												<div class="mask-obj"
-													[ngStyle]="{'transform':'rotate('+getLeftDeg(diskUsage)+'deg)'}">
+													[ngStyle]="{'transform':'rotate('+getLeftDeg(hd.diskUsage/100)+'deg)'}">
 													<div class="mask-ring"></div>
 												</div>
 											</div>
 											<div class="hd-mask right"
-												[ngClass]="{'hidden':hd.usedDisk/hd.capacity>.5}">
+												[ngClass]="{'hidden':hd.diskUsage/100>.5}">
 												<div class="mask-obj"
-													[ngStyle]="{'transform':'rotate('+getRightDeg(diskUsage)+'deg)'}">
+													[ngStyle]="{'transform':'rotate('+getRightDeg(hd.diskUsage/100)+'deg)'}">
 													<div class="mask-ring"></div>
 												</div>
 											</div>

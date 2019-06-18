@@ -318,37 +318,39 @@ public getLocalSystemCache()
 }
 	public getDynamicInfoService() {
 		this.hwInfoService.getDynamicInformation().then((hwInfo: any) => {
-			//console.log('getDynamicInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
+			console.log('getDynamicInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
 			if (hwInfo.gpuUsage !== null) {
-				this.gpuUsage = 100 - hwInfo.gpuUsage;
+				this.gpuUsage = this.getStackHeight(hwInfo.gpuUsage);
 			}
-
 			if (hwInfo.cpuUsage !== null) {
-				this.cpuUsage = 100 - hwInfo.cpuUsage;
+				this.cpuUsage = hwInfo.cpuUsage/100;
 			}
-			if (hwInfo.diskUsage !== null) {
-				this.memoryUsage = 100 - hwInfo.memoryUsage;
+			if (hwInfo.memoryUsage !== null) {
+				this.memoryUsage = this.getStackHeight(hwInfo.memoryUsage);
 			}
 			if (hwInfo.cpuUseFrequency !== '') {
-				this.cpuUseFrequency = hwInfo.cpuUseFrequency.split('GHz')[0];
+				this.cpuCurrent = hwInfo.cpuUseFrequency;
+				// this.cpuUseFrequency = hwInfo.cpuUseFrequency.split('GHz')[0];
 			}
-			this.cpuCurrent = parseFloat(this.cpuUseFrequency);
+			// this.cpuCurrent = parseFloat(this.cpuUseFrequency);
 			this.SystemStatusObj.cpuBaseFrequency = this.cpuCurrent;
 			this.commonService.setLocalStorageValue(LocalStorageKey.cpuBaseFrequency, this.cpuCurrent);
 			this.SystemStatusObj.cpuUsage = hwInfo.cpuUsage;
 			this.commonService.setLocalStorageValue(LocalStorageKey.cpuUsage, hwInfo.cpuUsage);
 			if (hwInfo.gpuUsedMemory !== '') {
-				this.gpuUsedMemory = hwInfo.gpuUsedMemory.split('GB')[0];
+				this.gpuCurrent = hwInfo.gpuUsedMemory;
+				// this.gpuUsedMemory = hwInfo.gpuUsedMemory.split('GB')[0];
 			}
-			this.gpuCurrent = parseFloat(this.gpuUsedMemory);
+			// this.gpuCurrent = parseFloat(this.gpuUsedMemory);
 			this.SystemStatusObj.gpuCapacity = this.gpuCurrent;
 			this.commonService.setLocalStorageValue(LocalStorageKey.gpuCapacity, this.gpuCurrent);
 			this.SystemStatusObj.gpuUsage = hwInfo.gpuUsage;
 			this.commonService.setLocalStorageValue(LocalStorageKey.gpuUsage, hwInfo.gpuUsage);
 			if (hwInfo.memoryUsed !== '') {
-				this.memoryUsed = hwInfo.memoryUsed.split('GB')[0];
+				this.ramCurrent = hwInfo.memoryUsed;
+				// this.memoryUsed = hwInfo.memoryUsed.split('GB')[0];
 			}
-			this.ramCurrent = parseFloat(this.memoryUsed);
+			// this.ramCurrent = parseFloat(this.memoryUsed);
 			this.SystemStatusObj.memorySize = this.ramCurrent;
 			this.commonService.setLocalStorageValue(LocalStorageKey.memorySize, this.ramCurrent);
 			this.SystemStatusObj.ramUsage =  hwInfo.memoryUsage;
@@ -383,23 +385,26 @@ public getLocalSystemCache()
 	public getMachineInfoService() {
 		try {
 			this.hwInfoService.getMachineInfomation().then((hwInfo: any) => {
-				//console.log('getMachineInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
+				console.log('getMachineInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
 				if (hwInfo.cpuBaseFrequence !== '') {
-					this.cpuBaseFrequence = hwInfo.cpuBaseFrequence.split('GHz')[0];
+					this.cpuMax = hwInfo.cpuBaseFrequence;
+					// this.cpuBaseFrequence = hwInfo.cpuBaseFrequence.split('GHz')[0];
 				}
-				this.cpuMax = parseFloat(this.cpuBaseFrequence);
+				// this.cpuMax = parseFloat(this.cpuBaseFrequence);
 				this.SystemStatusObj.cpuCapacity = this.cpuMax;
 				this.commonService.setLocalStorageValue(LocalStorageKey.cpuCapacity, this.cpuMax);
 				if (hwInfo.gpuMemorySize !== '') {
-					this.gpuMemorySize = hwInfo.gpuMemorySize.split('GB')[0];
+					this.gpuMax = hwInfo.gpuMemorySize;
+					// this.gpuMemorySize = hwInfo.gpuMemorySize.split('GB')[0];
 				}
-				this.gpuMax = parseFloat(this.gpuMemorySize);
+				// this.gpuMax = parseFloat(this.gpuMemorySize);
 				this.SystemStatusObj.gpuMaxFrequency = this.gpuMax;
 				this.commonService.setLocalStorageValue(LocalStorageKey.gpuMaxFrequency, this.gpuMax);
 				if (hwInfo.memorySize !== '') {
-					this.memorySize = hwInfo.memorySize.split('GB')[0];
+					this.ramMax = hwInfo.memorySize;
+					// this.memorySize = hwInfo.memorySize.split('GB')[0];
 				}
-				this.ramMax = parseFloat(this.memorySize);
+				// this.ramMax = parseFloat(this.memorySize);
 				this.SystemStatusObj.ramCapacity = this.ramMax;
 				this.commonService.setLocalStorageValue(LocalStorageKey.ramCapacity, this.ramMax);
 				this.cpuModuleName = hwInfo.cpuModuleName;
@@ -492,12 +497,9 @@ public getLocalSystemCache()
 	}
 
 	getStackHeight(pct) {
-		//let pct = (current / max);
-		if (pct > 1) {
-			pct = 1;
-		}
-		const mask = 1 - pct;
-		const height = 100 * mask;
+		if(pct > 100) pct = 100;
+		if(pct < 0) pct = 0;
+		const height = 100 - pct;
 		return height;
 	}
 
