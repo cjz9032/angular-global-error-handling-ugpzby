@@ -1050,17 +1050,17 @@
         "at": "在",
         "readMore": "阅读更多信息",
         "popup": {
-            "reboot": "重新引导",
+			"reboot": "重启",
             "shutdown": "关机",
-            "rebootForceMsg": "安装所选更新后，系统将自动重新引导。",
-            "shutdownForceMsg": "安装所选更新后，系统将自动关机。",
-            "rebootDelayedMsg": "安装所选更新后，系统将重新引导，在安装更新的过程中，请勿关闭系统、断开电源或移除附件。我们建议保存您的工作，以便为系统重新引导做好准备。",
-            "rebootRequiredMsg": "要成功安装更新，您的计算机需要重新引导以确保所有内容运行得更快、更顺畅。",
+			"rebootForceMsg": "所选更新将导致系统在安装后自动重启。",
+			"shutdownForceMsg": "所选更新将导致系统在安装后自动关机。",
+			"rebootDelayedMsg": "安装所选更新后，系统将重启，在安装更新的过程中，请勿关闭系统、断开电源或移除附件。我们建议保存您的工作以便为系统重启做好准备。",
+			"rebootRequiredMsg": "要成功安装更新，您的计算机需要重启以确保所有内容运行得更快、更顺畅。",
             "okayButton": "确定",
             "cancelButton": "取消",
-            "rebootButton": "立即重新引导",
+			"rebootButton": "立即重启",
             "dismissButton": "取消",
-            "rebootPending": "重新引导暂挂"
+			"rebootPending": "重启"
         },
         "autoUpdateSettings": {
             "title": "自动更新设置",
@@ -1070,7 +1070,7 @@
                 "tooltip": "关键更新可防止发生重大问题、严重故障、硬件故障或数据损坏。"
             },
             "recommended": {
-                "title": "推荐的更新",
+                "title": "推荐更新",
                 "tooltip": "推荐的驱动程序更新可使计算机以最佳性能运行。"
             },
             "windows": {
@@ -1085,22 +1085,22 @@
             "neverChecked": "欢迎使用 System Update。",
             "title": "保持最新状态的系统才是健康的系统。",
             "last": "上次更新时间为",
-            "next": "下次更新扫描计划时间：",
+			"next": "下次更新扫描计划时间",
             "checkButton": "检查更新",
             "checking": "正在检查更新",
-            "downloading": "下载更新完成",
+			"downloading": "正在下载更新",
             "installing": "正在安装更新",
             "percent": "% 已完成",
-            "cancelCheck": "取消检查",
+			"cancelCheck": "取消",
             "cancelUpdates": "取消更新",
             "available": "可用更新",
-            "description": "这些软件包包含对计算机的正常运行至关重要的硬件驱动程序更新和其他系统实用程序更新。关键更新对保护计算机上的数据来说也很重要，一旦可用就应该尽快安装。未能安装这些软件包可能会导致数据丢失、系统故障或硬件故障。",
+			"description": "这些软件包包含对计算机的正常运行至关重要的硬件驱动程序更新和其他系统实用程序更新。关键更新对保护计算机上的数据来说也很重要，请尽快安装。安装这些软件包失败可能会导致数据丢失、系统故障或硬件故障。",
             "installButton": "安装所有更新",
             "result": {
-                "success": "已正确安装所有更新",
+				"success": "已成功安装所有更新",
                 "fail": {
-                    "title": "某些更新未正确安装。",
-                    "description": "下载或安装这些更新的过程中发生了问题。请确保您处于在线状态，且安装更新的过程中不要关闭计算机。"
+					"title": "某些更新未成功安装。",
+					"description": "下载或安装这些更新的过程中发生了问题。请确保您处于联网状态，且安装更新的过程中不要关闭计算机。"
                 }
             }
         },

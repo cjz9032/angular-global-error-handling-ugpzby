@@ -79,7 +79,7 @@
 		color: $dark;
 		padding: 0 3.7rem 0 7.2rem;
 		margin-right: 2rem;
-		height: 38rem;
+		height: 47rem;
 
 		img {
 			width: 100%;
@@ -179,7 +179,7 @@
 
 			// tick mark
 			&::after {
-				top: 0;
+				top: 0.1rem;
 				width: 2rem;
 				height: 2rem;
 				left: -1.6rem;

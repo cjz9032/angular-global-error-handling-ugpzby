@@ -42,6 +42,7 @@ export enum LocalStorageKey {
 	PrevThermalModeStatus = '[LocalStorageKey] PrevThermalModeStatus',
 	IsHPDSupported = '[LocalStorageKey] IsHPDSupported',
 	ConnectedHomeSecurityShowWelcome = '[LocalStorageKey] ConnectedHomeSecurityShowWelcome',
+	ConnectedHomeSecurityAllDevices= '[LocalStorageKey] ConnectedHomeSecurityAllDevices',
 	ConnectedHomeSecurityAccount = '[LocalStorageKey] ConnectedHomeSecurityAccount',
 	ConnectedHomeSecurityDeviceName = '[LocalStorageKey] ConnectedHomeSecurityDeviceName',
 	ConnectedHomeSecurityDevicePostures = '[LocalStorageKey] ConnectedHomeSecurityDevicePostures',
