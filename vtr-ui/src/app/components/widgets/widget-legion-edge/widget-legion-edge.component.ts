@@ -27,6 +27,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public touchpadLockStatus: any;
 	public TouchpadLockStatusObj = new TouchpadLockStatus();
 	public gamingCapabilities: any = new GamingAllCapabilities();
+	public disableButtons = false;
 	public legionUpdate = [
 		{
 			readMoreText: '',
@@ -385,9 +386,11 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public onPopupClosed($event) {
 		const name = $event.name;
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
+			this.disableButtons = false;
 			this.commonService.sendNotification(name, this.legionUpdate[1].isChecked);
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
+			this.disableButtons = false;
 			this.commonService.sendNotification(name, this.legionUpdate[4].isChecked);
 		}
 	}
@@ -397,8 +400,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			if (this.gamingCapabilities.xtuService === false) {
 				this.legionUpdate[1].isDriverPopup = $event;
+				this.disableButtons = true;
 			} else {
 				this.legionUpdate[1].isPopup = $event;
+				this.disableButtons = true;
 			}
 			this.gamingSystemUpdateService
 				.setRamOCStatus($event.switchValue)
@@ -417,9 +422,11 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		} else {
 			// to hide the existing popup which is open(hybridmode, ramoc)
 			this.legionUpdate[1].isPopup = false;
+			this.disableButtons = false;
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
 			this.legionUpdate[4].isPopup = $event;
+			this.disableButtons = true;
 			this.gamingHybridModeService
 				.setHybridModeStatus($event.switchValue)
 				.then((value: boolean) => {
@@ -435,6 +442,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		} else {
 			// to hide the existing popup which is open(hybridmode, ramoc)
 			this.legionUpdate[4].isPopup = false;
+			this.disableButtons = false;
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.touchpadLock') {
 			this.TouchpadLockStatusObj.touchpadLockStatus = $event.switchValue;
