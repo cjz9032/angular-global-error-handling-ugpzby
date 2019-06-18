@@ -9,8 +9,27 @@
 		margin-bottom: 3rem;
 	}
 
+	&__title-block {
+		display: flex;
+		flex-flow: row;
+		justify-content: space-between;
+		align-items: center;
+		align-content: center;
+	}
+
+	&__title {
+		@extend %subtitle;
+	}
+
+	&__btn {
+		@extend %theme-btn;
+		min-width: 20rem;
+		font-size: 1.3rem;
+	}
+
 	&__text {
 		@extend %text-common;
+		font-size: 1.6rem;
 		margin: 0 0 2rem 0;
 	}
 

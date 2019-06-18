@@ -5,6 +5,8 @@ import { FeaturesStatuses } from '../../userDataStatuses';
 import { UserDataGetStateService } from '../../common/services/user-data-get-state.service';
 import { BrowserAccountsService } from '../../common/services/browser-accounts.service';
 import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
+import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
+import { FigleafOverviewService } from '../../common/services/figleaf-overview.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -21,7 +23,7 @@ export class BrowserAccountsComponent {
 		distinctUntilChanged(),
 	);
 	nonPrivatePasswordCount$ = this.countNumberOfIssuesService.nonPrivatePasswordCount;
-
+	dashboardData$ = this.figleafOverviewService.figleafDashboard$;
 	isConsentToGetBrowsersAccountsGiven$ = this.browserAccountsService.isConsentGiven$;
 
 	textForFeatureHeader = {
@@ -36,11 +38,17 @@ export class BrowserAccountsComponent {
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private userDataGetStateService: UserDataGetStateService,
 		private browserAccountsService: BrowserAccountsService,
-		private countNumberOfIssuesService: CountNumberOfIssuesService
+		private countNumberOfIssuesService: CountNumberOfIssuesService,
+		private vantageCommunicationService: VantageCommunicationService,
+		private figleafOverviewService: FigleafOverviewService
 	) {
 	}
 
 	giveConcentToGetBrowserAccounts() {
 		this.browserAccountsService.giveConcent();
+	}
+
+	openFigleafApp() {
+		this.vantageCommunicationService.openFigleafByUrl('lenovoprivacy:');
 	}
 }

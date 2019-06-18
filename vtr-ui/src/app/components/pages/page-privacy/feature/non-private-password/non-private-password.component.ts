@@ -8,6 +8,7 @@ import { FeaturesStatuses } from '../../userDataStatuses';
 import { UserDataGetStateService } from '../../common/services/user-data-get-state.service';
 import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
 import { CommonPopupService } from '../../common/services/popups/common-popup.service';
+import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
 
 @Component({
 	selector: 'vtr-non-private-password',
@@ -24,6 +25,8 @@ export class NonPrivatePasswordComponent implements OnInit {
 		map((val) => Number(val)),
 	);
 
+	nonPrivatePasswordCount$ = this.countNumberOfIssuesService.nonPrivatePasswordCount;
+
 	removePasswordPopupId = 'removePassword';
 	browserName: string;
 
@@ -32,7 +35,7 @@ export class NonPrivatePasswordComponent implements OnInit {
 		howToFix: 'Avoid reusing and storing your passwords in your browsers. Create strong, unique passwords for every account with Lenovo Privacy by FigLeaf and store them in encrypted form on your PC.',
 		riskAfterInstallFigleaf: 'People often reuse the same password for many websites. This leads to multiple account breaches if the password exposed.',
 		howToFixAfterInstallFigleaf: 'Avoid reusing and storing your passwords in browsers. ' +
-			'If you need a strong one, create it with Lenovo Privacy Essentials by FigLeaf and store it on your PC, completely encrypted.'
+			'If you need a strong one, create it with Lenovo Privacy by FigLeaf and store it on your PC, completely encrypted.'
 	};
 
 	isShowTryBlock$ = this.userDataGetStateService.userDataStatus$.pipe(
@@ -51,6 +54,7 @@ export class NonPrivatePasswordComponent implements OnInit {
 		private vantageCommunicationService: VantageCommunicationService,
 		private userDataGetStateService: UserDataGetStateService,
 		private commonPopupService: CommonPopupService,
+		private countNumberOfIssuesService: CountNumberOfIssuesService,
 		private route: ActivatedRoute,
 	) {
 	}
