@@ -9,7 +9,7 @@ import { MacroKeyInterval } from 'src/app/enums/macrokey-interval.enum.1';
 @Component({
 	selector: 'vtr-ui-macrokey-recorded-list',
 	templateUrl: './ui-macrokey-recorded-list.component.html',
-	styleUrls: ['./ui-macrokey-recorded-list.component.scss']
+	styleUrls: [ './ui-macrokey-recorded-list.component.scss' ]
 })
 export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoCheck {
 	@Input() number: any;
@@ -118,15 +118,15 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 		btnConfirm: true
 	};
 
-	constructor(private macrokeyService: MacrokeyService) { }
+	constructor(private macrokeyService: MacrokeyService) {}
 
-	ngOnInit() { }
+	ngOnInit() {}
 
 	recordDelete(record, i) {
 		// console.log(this.recordsData.inputs);
 		// const remainingInputs = this.recordsData.inputs.filter((records: any) => records.key !== record.key);
 		this.recordsData.inputs.splice(i, 2);
-		const remainingInputs = this.recordsData.inputs
+		const remainingInputs = this.recordsData.inputs;
 		this.macrokeyService.setMacroKey(this.number.key, remainingInputs).then((responseStatus) => {
 			if (responseStatus) {
 				this.recordsData.inputs = remainingInputs;
@@ -162,8 +162,16 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 	}
 
 	ngDoCheck() {
-		if (!isUndefined(this.recordsData) && this.recordsList !== this.recordsData.inputs) {
-			this.recordsList = this.recordsData.inputs;
+		if (!isUndefined(this.recordsData)) {
+			if (this.recordsList !== this.recordsData.inputs) {
+				this.recordsList = this.recordsData.inputs;
+			}
+			if (this.repeatSelectedValue !== this.recordsData.repeat) {
+				this.repeatSelectedValue = this.recordsData.repeat;
+			}
+			if (this.delaySelectedValue !== this.recordsData.interval) {
+				this.delaySelectedValue = this.recordsData.interval;
+			}
 		}
 	}
 

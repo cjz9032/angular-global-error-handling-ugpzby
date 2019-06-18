@@ -7,7 +7,7 @@ import {
 	EventEmitter
 } from '@angular/core';
 import {
-	EventTypes, ConnectedHomeSecurity, WinRT
+	EventTypes, ConnectedHomeSecurity, CHSDeviceOverview
 } from '@lenovo/tan-client-bridge';
 import {
 	VantageShellService
@@ -31,7 +31,7 @@ import { HomeSecurityWelcome } from 'src/app/data-models/home-security/home-secu
 import { ModalLenovoIdComponent } from 'src/app/components/modal/modal-lenovo-id/modal-lenovo-id.component';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
-import { UserService } from '../../../services/user/user.service';
+import { HomeSecurityOverviewMyDevice } from 'src/app/data-models/home-security/home-security-overview-my-device.model';
 
 @Component({
 	selector: 'vtr-page-connected-home-security',
@@ -40,13 +40,14 @@ import { UserService } from '../../../services/user/user.service';
 })
 export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	notifications: HomeSecurityNotification;
-	account: HomeSecurityAccount;
 	pageStatus: HomeSecurityPageStatus;
 	eventEmitter = new EventEmitter();
 
 	welcomeModel: HomeSecurityWelcome;
 	connectedHomeSecurity: ConnectedHomeSecurity;
 	permission: any;
+	homeSecurityOverviewMyDevice: HomeSecurityOverviewMyDevice;
+	account: HomeSecurityAccount;
 
 	testStatus = ['lessDevices-secure', 'moreDevices-needAttention', 'noneDevices', 'trialExpired', 'lessDevices-needAttention', 'moreDevices-secure', 'localAccount'];
 
@@ -82,28 +83,70 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 		notificationDetail: 'Antivirus was disabled'}, this.translateService));
 		this.notifications.items.push(new WidgetItem({id: '1', title: 'Passcode lock disabled 3 hours', iconPath: 'assets/images/qa/svg_icon_qa_refresh.svg',
 		notificationDetail: 'Antivirus was disabled'}, this.translateService));
-		this.account = this.homeSecurityMockService.account;
 	}
 
 	ngOnInit() {
 		this.welcomeModel.isLenovoIdLogin = false; // mock data;
 		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, true);
-		const cacheSystemLocationShow = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed);
-		if (typeof cacheSystemLocationShow === 'boolean') {
-			this.welcomeModel.hasSystemPermissionShowed = cacheSystemLocationShow;
-			this.openModal();
-		} else {
-			this.permission.getSystemPermissionShowed().then((response) =>  {
-				this.welcomeModel.hasSystemPermissionShowed = response;
-				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed, response);
-				if (typeof this.welcomeModel.hasSystemPermissionShowed === 'boolean') {
-					this.openModal();
-				}
-			});
-		}
+		this.permission.getSystemPermissionShowed().then((response) =>  {
+			this.welcomeModel.hasSystemPermissionShowed = response;
+			if (typeof this.welcomeModel.hasSystemPermissionShowed === 'boolean') {
+				this.openModal();
+			}
+		});
 		this.connectedHomeSecurity.on(EventTypes.chsHasSystemPermissionShowedEvent, (data) => {
 			this.welcomeModel.hasSystemPermissionShowed = data;
-			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed, data);
+		});
+
+		this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice(this.translateService);
+		const cacheHomeDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePostures);
+		const cacheHomeDeviceName = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDeviceName);
+		const cacheHomeDeviceStatus = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDeviceStatus);
+		if (this.connectedHomeSecurity && this.connectedHomeSecurity.overview) {
+			if (this.connectedHomeSecurity.overview.devicePostures && this.connectedHomeSecurity.overview.devicePostures.value.length > 0) {
+				this.homeSecurityOverviewMyDevice.createHomeDevicePosture(this.connectedHomeSecurity.overview.devicePostures.value);
+				this.homeSecurityOverviewMyDevice.creatDeviceStatus(this.connectedHomeSecurity.overview.devicePostures.value);
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePostures, this.homeSecurityOverviewMyDevice.devicePostures);
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDeviceStatus, this.homeSecurityOverviewMyDevice.deviceStatus);
+			} else {
+				if (cacheHomeDevicePosture) {
+					this.homeSecurityOverviewMyDevice.devicePostures = cacheHomeDevicePosture;
+				}
+				if (cacheHomeDeviceStatus) {
+					this.homeSecurityOverviewMyDevice.deviceStatus = cacheHomeDeviceStatus;
+				}
+			}
+			if (this.connectedHomeSecurity.overview.myDevice && this.connectedHomeSecurity.overview.myDevice.name) {
+				this.homeSecurityOverviewMyDevice.deviceName = this.connectedHomeSecurity.overview.myDevice.name;
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDeviceName, this.homeSecurityOverviewMyDevice.deviceName);
+			} else if (cacheHomeDeviceName) {
+				this.homeSecurityOverviewMyDevice.deviceName = cacheHomeDeviceName;
+			}
+		}
+		const cacheAccount = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount);
+		if (cacheAccount) {
+			this.account = cacheAccount;
+		}
+		this.account = new HomeSecurityAccount(this.connectedHomeSecurity.account);
+		if (this.connectedHomeSecurity.account) {
+			this.account = new HomeSecurityAccount(this.connectedHomeSecurity.account);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, this.account);
+		}
+		this.connectedHomeSecurity.on(EventTypes.chsEvent, (chs) => {
+			if (chs && chs.overview) {
+				if (chs.overview.devicePostures && chs.overview.devicePostures.value.length > 0) {
+					this.homeSecurityOverviewMyDevice.createHomeDevicePosture(chs.overview.devicePostures.value);
+					this.homeSecurityOverviewMyDevice.creatDeviceStatus(chs.overview.devicePostures.value);
+					this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePostures, this.homeSecurityOverviewMyDevice.devicePostures);
+					this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDeviceStatus, this.homeSecurityOverviewMyDevice.deviceStatus);
+				}
+				if (chs.overview.myDevice && chs.overview.myDevice.name) {
+					this.homeSecurityOverviewMyDevice.deviceName = chs.overview.myDevice.name;
+					this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDeviceName, this.homeSecurityOverviewMyDevice.deviceName);
+				}
+			}
+			this.account = new HomeSecurityAccount(chs.account);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, this.account);
 		});
 	}
 

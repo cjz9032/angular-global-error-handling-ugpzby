@@ -15,7 +15,12 @@
                             <div class="container-fluid">
                                 <div class="row mb-40 content-container p-40">
                                     <div class="container-fluid">
-                                        <vtr-widget-home-security-device [subscription]="account.subscription"></vtr-widget-home-security-device>
+                                        <vtr-widget-home-security-device
+                                            [login]="account.lenovoIdLoggedIn"
+                                            [state]="account.state"
+                                            (upgradeAccount)="onUpgradeAccount()"
+                                            (startTrial)="onStartTrial()"
+                                          ></vtr-widget-home-security-device>
                                     </div>
                                 </div>
                                 <div class="row content-container p-40">
@@ -24,7 +29,7 @@
                                         <div class="container-fluid sub-container">
                                             <div class="row sub-title">{{'homeSecurity.myDevice' | translate}}</div>
                                             <div class="row container-fluid h-50 device-card">
-                                                <vtr-widget-home-security-my-device class="container-fluid"></vtr-widget-home-security-my-device>
+                                                <vtr-widget-home-security-my-device class="container-fluid" [homeSecurityOverviewMyDevice]="homeSecurityOverviewMyDevice"></vtr-widget-home-security-my-device>
                                             </div>
                                             <div class="row sub-title">{{'homeSecurity.allDevices' | translate}}
                                                 <vtr-ui-button
@@ -47,9 +52,9 @@
                             <div class="row mb-40">
                                 <div class="col col-12">
 									<vtr-widget-home-security-account-status
-										[status]="connectedHomeSecurity.account.state"
-										[standardTime]="connectedHomeSecurity.account.serverTimeUTC"
-										[expiredDate]="connectedHomeSecurity.account.expiration"
+										[status]="account.state"
+										[standardTime]="account.standardTime"
+										[expiredDate]="account.expiration"
 										(startTrial)="onStartTrial()"
 										(manageAccount)="onManageAccount($event)"
 										(upgradeAccount)="onUpgradeAccount()">
