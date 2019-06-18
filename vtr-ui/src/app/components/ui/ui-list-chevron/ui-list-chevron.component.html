@@ -24,6 +24,10 @@
 							<div class="item-icon-image" *ngIf="item.iconPath">
 								<img [src]="item.iconPath|svgInline|async" />
 							</div>
+							<div  class="item-icon-class" *ngIf="item.iconName && item.color">
+									<fa-icon [icon]="['fal', item.iconName]"
+									class="icon" [ngStyle]="{ 'color': item.color}"></fa-icon>
+							</div>
 						</div>
 						<div class="col item-text"
 							[ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility}">
@@ -40,8 +44,8 @@
 									[ngClass]="getItemDetailClasses(item)">
 									{{item.detail}}
 								</div>
-								<div *ngIf="item.notificationDetail"> 
-									{{item.notificationDetail}}
+								<div *ngIf="item.subText" class="sub-text">
+									{{item.subText}} &nbsp;{{item.date}}
 								</div>
 							</div>
 						</div>
@@ -91,6 +95,10 @@
 							<div class="item-icon-image" *ngIf="item.iconPath">
 								<img [src]="item.iconPath|svgInline|async" />
 							</div>
+							<!-- <div class="item-icon-image" *ngIf="item.iconIClass">
+									<fa-icon [icon]=item.iconIClass></fa-icon>
+									{{item.iconIClass}}
+								</div> -->
 						</div>
 						<div class="col item-text"
 							[ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility}">

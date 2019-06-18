@@ -124,6 +124,14 @@
 				height: 3rem;
 				width: 3rem;
 			}
+			.item-icon-class{
+				display: flex;
+				height: 3rem;
+				width: 3rem;
+				align-items: center;
+				.icon{
+					font-size: 2rem;				}
+			}
 
 			.item-text {
 				overflow: hidden;
@@ -194,6 +202,11 @@
 							text-decoration: none;
 						}
 					}
+				}
+
+				.sub-text{
+					font-size: 1.2rem;
+					margin-top: 2px;
 				}
 			}
 
