@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FeaturesStatuses } from '../../userDataStatuses';
 import { UserDataGetStateService } from '../../common/services/user-data-get-state.service';
 import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
+import { CommonPopupService } from '../../common/services/popups/common-popup.service';
 
 @Component({
 	selector: 'vtr-non-private-password',
@@ -22,6 +23,9 @@ export class NonPrivatePasswordComponent implements OnInit {
 	openPasswordId$ = this.getParamFromUrl('openId').pipe(
 		map((val) => Number(val)),
 	);
+
+	removePasswordPopupId = 'removePassword';
+	browserName: string;
 
 	tryProductText = {
 		risk: 'People often reuse the same password for many websites. This leads to multiple account breaches if the password exposed.',
@@ -46,6 +50,7 @@ export class NonPrivatePasswordComponent implements OnInit {
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private vantageCommunicationService: VantageCommunicationService,
 		private userDataGetStateService: UserDataGetStateService,
+		private commonPopupService: CommonPopupService,
 		private route: ActivatedRoute,
 	) {
 	}
@@ -56,6 +61,15 @@ export class NonPrivatePasswordComponent implements OnInit {
 
 	openFigleaf() {
 		this.vantageCommunicationService.openFigleafByUrl('lenovoprivacy:');
+	}
+
+	openPopup(browserName) {
+		this.browserName = browserName;
+		this.commonPopupService.open(this.removePasswordPopupId);
+	}
+
+	closePopup(removePasswordPopupId) {
+		this.commonPopupService.close(removePasswordPopupId);
 	}
 
 	private getParamFromUrl(paramName) {

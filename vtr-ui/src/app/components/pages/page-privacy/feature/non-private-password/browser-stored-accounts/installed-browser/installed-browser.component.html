@@ -40,7 +40,7 @@
 			<div *ngIf="installedBrowser.accountsCount === 0" class="accounts-safe"></div>
 			<button class="installed-browser__btn installed-browser__btn--action"
 					*ngIf="installedBrowser.accountsCount > 0"
-					(click)="openPopup()">
+					(click)="howToFixClick.emit(installedBrowser.name)">
 				How to fix
 			</button>
 		</ng-container>

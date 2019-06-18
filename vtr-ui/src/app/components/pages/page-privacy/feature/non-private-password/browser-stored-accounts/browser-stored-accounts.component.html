@@ -5,6 +5,7 @@
 		[index]="i"
 		[isDetailsExpanded]="i === openPasswordId"
 		[isFigleafInstalled]="isFigleafInstalled$ | async"
+		(howToFixClick)="howToFixClick.emit($event)"
 		(openAccordion)="openAccordion($event)">
 	</vtr-installed-browser>
 </div>

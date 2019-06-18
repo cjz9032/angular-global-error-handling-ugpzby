@@ -15,6 +15,7 @@ export class InstalledBrowserComponent {
 	@Input() isFigleafInstalled = false;
 
 	@Output() openAccordion = new EventEmitter<number>();
+	@Output() howToFixClick = new EventEmitter<string>();
 
 	tryProductText = {
 		risk: 'People often reuse the same password for many websites. This leads to multiple account breaches if the password exposed.',
@@ -23,10 +24,6 @@ export class InstalledBrowserComponent {
 
 	trackAccountsById(index) {
 		return index;
-	}
-
-	openPopup() {
-		console.log(123);
 	}
 
 }
