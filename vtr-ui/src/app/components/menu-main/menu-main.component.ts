@@ -312,7 +312,8 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 						this.smartAssist.getHPDVisibilityInThinkPad()
 					]).then((responses: any[]) => {
 						console.log('showSmartAssist.Promise.all()', responses);
-						const isAvailable = (responses[0] || responses[1]);
+						// const isAvailable = (responses[0] || responses[1]);
+						const isAvailable = true;
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
 						if (isAvailable) {
 							myDeviceItem.subitems.splice(4, 0, {
