@@ -60,6 +60,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.communicationWithFigleafService.connect();
 		this.routerChangeHandler.onChange$
 			.pipe(
 				takeUntil(instanceDestroyed(this)),
