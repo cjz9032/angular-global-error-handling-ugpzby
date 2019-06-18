@@ -8,11 +8,11 @@
 		<div>{{'homeSecurity.accountStatus.inTrialDetail2' | translate}}</div>
 	</div>
 	<div class="description mb-5" *ngIf="status === 'trialExpired'">
-		<div class="trial-expired-description mb-2">{{'homeSecurity.accountStatus.trialExpiredDetail1' | translate}}</div>
+		<div class="text-danger mb-2">{{'homeSecurity.accountStatus.trialExpiredDetail1' | translate}}</div>
 		<div>{{'homeSecurity.accountStatus.trialExpiredDetail2' | translate}}</div>
 	</div>
 	<div class="description mb-5" *ngIf="status === 'standard'">
-		<div *ngIf="expiredDate" class="upgraded-description mb-2">{{'homeSecurity.accountStatus.upgradedDetail1' | translate: { expiredDate: expiredDate | date:'dd/MM/yyyy' } }}</div>
+		<div *ngIf="expiredDate" class="text-success mb-2">{{'homeSecurity.accountStatus.upgradedDetail1' | translate: { expiredDate: expiredDate | date:'dd/MM/yyyy' } }}</div>
 		<div>{{'homeSecurity.accountStatus.upgradedDetail2' | translate}}</div>
 	</div>
 	<div class="mb-5">
