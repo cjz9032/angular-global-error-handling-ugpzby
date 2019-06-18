@@ -37,7 +37,7 @@
                                                 [label]="'switch'"></vtr-ui-button>
                                             </div>
                                             <div class="row container-fluid home-card">
-                                                <vtr-widget-home-security-all-devices class="container-fluid" [eventEmitter]="eventEmitter"></vtr-widget-home-security-all-devices>
+                                                <vtr-widget-home-security-all-devices *ngIf="allDevicesInfo" [allDevicesInfo]="allDevicesInfo" class="container-fluid" [eventEmitter]="eventEmitter"></vtr-widget-home-security-all-devices>
                                             </div>
                                         </div>
                                     </div>
