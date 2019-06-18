@@ -22,6 +22,9 @@
 		</p>
 	</ng-container>
 	<ng-container *ngIf="!isFigleafReadyToCommunication && countOfIssue === 0">
-		No issues state
+		<p class="feature-header__title">{{texts.noIssuesTitle}}</p>
+		<p class="feature-header__text">
+			{{texts.noIssuesDescription}}
+		</p>
 	</ng-container>
 </ng-container>

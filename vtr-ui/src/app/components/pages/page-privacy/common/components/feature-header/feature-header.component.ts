@@ -14,6 +14,8 @@ export class FeatureHeaderComponent {
 		title: string,
 		figleafTitle: string,
 		figleafInstalled: string,
-		figleafUninstalled: string
+		figleafUninstalled: string,
+		noIssuesTitle: string,
+		noIssuesDescription: string
 	};
 }

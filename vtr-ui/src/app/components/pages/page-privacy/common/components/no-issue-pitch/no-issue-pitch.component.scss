@@ -1,0 +1,10 @@
+@import "../../../styles/common-blocks";
+
+.no-issue {
+	@extend %common-block-wrapper;
+	margin-top: 5rem;
+
+	&__title {
+		@extend %subtitle;
+	}
+}

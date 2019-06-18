@@ -25,7 +25,6 @@ import { PrivacyRoutingModule } from './privacy-routing.module';
 // Common UI components
 import { FaqComponent } from './main-layout/sidebar/faq/faq.component';
 import { SidebarInstallWidgetComponent } from './main-layout/sidebar/sidebar-benefits-widget/sidebar-install-widget.component';
-import { StatComponent } from './common/components/privacy-dashboard-list/stat.component';
 import { PRIVACY_BASE_URL, PRIVACY_ENVIRONMENT } from './utils/injection-tokens';
 import { getPrivacyEnvironment } from './environment';
 import { DataKnowledgeService } from './common/services/data-knowledge.service';
@@ -44,7 +43,6 @@ import { ArticlePreviewComponent } from './pages/articles/article-preview/articl
 import { ArticleSidebarComponent } from './pages/articles/article-sidebar/article-sidebar.component';
 import { OneClickScanModule } from './feature/one-click-scan/one-click-scan.module';
 import { PrivacyScoreComponent } from './pages/result/privacy-score/privacy-score.component';
-import { ArticlePitchComponent } from './pages/articles/article-pitch/article-pitch.component';
 
 library.add(fal);
 
@@ -81,7 +79,6 @@ library.add(fal);
 		ArticleSingleComponent,
 		ArticlePreviewComponent,
 		ArticleSidebarComponent,
-		ArticlePitchComponent,
 	],
 	providers: [
 		TrackersPopupService,

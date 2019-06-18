@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { distinctUntilChanged, filter, map, startWith, tap } from 'rxjs/operators';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { distinctUntilChanged, filter, map, startWith, takeUntil, tap } from 'rxjs/operators';
 import { BreachedAccountsService } from '../../common/services/breached-accounts.service';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
@@ -10,13 +10,14 @@ import { SafeStorageService } from '../../common/services/safe-storage.service';
 import { FeaturesStatuses } from '../../userDataStatuses';
 import { UserDataGetStateService } from '../../common/services/user-data-get-state.service';
 import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
+import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
 
 @Component({
 	// selector: 'app-admin',
 	templateUrl: './breached-accounts.component.html',
 	styleUrls: ['./breached-accounts.component.scss']
 })
-export class BreachedAccountsComponent implements OnInit {
+export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	breachedAccounts$ = this.breachedAccountsService.onGetBreachedAccounts$
 		.pipe(
 			filter((breachedAccounts) => breachedAccounts.error === null),
@@ -39,12 +40,15 @@ export class BreachedAccountsComponent implements OnInit {
 			userDataStatus.breachedAccountsResult !== FeaturesStatuses.error),
 		distinctUntilChanged(),
 	);
+	isShowEmailScanner = true;
 
 	textForFeatureHeader = {
 		title: 'Check email for breaches',
 		figleafTitle: 'Lenovo Privacy monitors your accounts',
 		figleafInstalled: 'If there is a data leak, we will immediately notify you.',
 		figleafUninstalled: 'Find out if your private information is being exposed. We will check the dark web and every known data breach.',
+		noIssuesTitle: 'No breaches found for your email',
+		noIssuesDescription: 'Your private information associated with this email address is safe so far.'
 	};
 
 	constructor(
@@ -62,6 +66,23 @@ export class BreachedAccountsComponent implements OnInit {
 
 	ngOnInit() {
 		this.breachedAccountsService.getBreachedAccounts();
+
+		this.userEmail$.pipe(
+			takeUntil(instanceDestroyed(this)),
+		).subscribe((userEmail) => {
+			this.updateTextForHeader(userEmail);
+		});
+
+		this.emailWasScanned$.pipe(
+			filter(Boolean),
+			takeUntil(instanceDestroyed(this)),
+		).subscribe(() => {
+			this.isShowEmailScanner = false;
+		});
+
+	}
+
+	ngOnDestroy() {
 	}
 
 	startVerify() {
@@ -71,5 +92,16 @@ export class BreachedAccountsComponent implements OnInit {
 
 	openFigleafApp() {
 		this.vantageCommunicationService.openFigleafByUrl('lenovoprivacy:');
+	}
+
+	showEmailScanner() {
+		this.isShowEmailScanner = true;
+	}
+
+	private updateTextForHeader(userEmail: string) {
+		this.textForFeatureHeader = {
+			...this.textForFeatureHeader,
+			noIssuesTitle: `No breaches found for ${userEmail}`
+		};
 	}
 }

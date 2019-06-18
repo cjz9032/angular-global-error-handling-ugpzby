@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ArticlePitchComponent } from './article-pitch.component';
+import { BigPitchComponent } from './big-pitch.component';
 
-describe('ArticlePitchComponent', () => {
-  let component: ArticlePitchComponent;
-  let fixture: ComponentFixture<ArticlePitchComponent>;
+describe('BigPitchComponent', () => {
+  let component: BigPitchComponent;
+  let fixture: ComponentFixture<BigPitchComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ArticlePitchComponent ]
+      declarations: [ BigPitchComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ArticlePitchComponent);
+    fixture = TestBed.createComponent(BigPitchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
