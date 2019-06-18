@@ -7,7 +7,7 @@
 			<div class="acid-container">
 				<div class="fill"></div>
 				<div class="percentage"
-					*ngIf="!isVoltageError && !batteryNotDetected  && percentage!=0">
+					*ngIf="!isVoltageError && !batteryNotDetected">
 					{{ percentage }}
 					<span class="percentage-symbol">
 						%
@@ -27,13 +27,8 @@
 						{{'device.deviceSettings.batteryGauge.batteryNotDetected'| translate}}
 					</span>
 				</div>
-				<div class="updating-text"
-					*ngIf="percentage==0 && !batteryNotDetected && !isVoltageError">
-					<span>{{'device.deviceSettings.batteryGauge.updating'| translate}}</span>
-					<span class="loading-dots">. . . . . .</span>
-				</div>
 			</div>
-			<div *ngIf="!isVoltageError && !batteryNotDetected && !hideRemainingTimeTxt && percentage!=0">
+			<div *ngIf="!isVoltageError && !batteryNotDetected && !hideRemainingTimeTxt">
 				<div class="remaining-time">
 					{{ getTimeRemaining() }}
 				</div>

@@ -117,9 +117,9 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				backgroundColor = this.getCssPropertyValue(
 					'--background-color-0-14'
 				);
-				borderColor = this.getCssPropertyValue(
-					'--border-color-0-14'
-				);
+				// borderColor = this.getCssPropertyValue(
+				// 	'--border-color-0-14'
+				// );
 				fillColor = this.getCssPropertyValue(
 					'--acid-fill-gradient-0-14'
 				);
