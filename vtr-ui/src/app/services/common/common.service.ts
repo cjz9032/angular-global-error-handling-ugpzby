@@ -164,4 +164,9 @@ export class CommonService {
 	public removeObjFrom(array: any[], path: string) {
 		return array.filter(e => e.path !== path);
 	}
+
+	public logDate(message: string, ...param) {
+		const date = new Date();
+		console.log(`${date.toISOString()} | ${message}`, param);
+	}
 }
