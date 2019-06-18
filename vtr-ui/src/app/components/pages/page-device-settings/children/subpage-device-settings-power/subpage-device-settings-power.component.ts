@@ -42,10 +42,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	primaryCheckBox = false;
 	secondaryCheckBox = false;
-	selectedStopAtChargeVal = 70;
-	selectedStartAtChargeVal = 45;
-	selectedStopAtChargeVal1 = 70;
-	selectedStartAtChargeVal1 = 45;
+	selectedStopAtChargeVal;
+	selectedStartAtChargeVal;
+	selectedStopAtChargeVal1;
+	selectedStartAtChargeVal1;
 
 	public responseData: any[] = [];
 	machineType: any;
