@@ -49,6 +49,8 @@ export enum LocalStorageKey {
 	 * 3 means "thinkCenter"
 	 */
 	ConnectedHomeSecurityDeviceName = '[LocalStorageKey] ConnectedHomeSecurityDeviceName',
+	ConnectedHomeSecurityDevicePostures = '[LocalStorageKey] ConnectedHomeSecurityDevicePostures',
+	ConnectedHomeSecurityDeviceStatus = '[LocalStorageKey] ConnectedHomeSecurityDeviceStatus',
 	MachineType = '[LocalStorageKey] MachineType',
 	HybridModeStatus = '[LocalStorageKey] HybridModeStatus',
 	TouchpadLockStatus = '[LocalStorageKey] TouchpadLockStatus',

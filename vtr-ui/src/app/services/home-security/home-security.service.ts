@@ -34,13 +34,29 @@ export class HomeSecurityMockService {
 		},
 		overview: {
 			devicePostures: {
-				value: []
+				value: [
+					{name: 'PasswordProtection', vulnerable: false},
+					{name: 'HardDriveEncryption', vulnerable: true},
+					{name: 'AntiVirusAvailability', vulnerable: false},
+					{name: 'FirewallAvailability', vulnerable: false},
+					{name: 'AppsFromUnknownSources', vulnerable: true},
+					{name: 'DeveloperMode', vulnerable: true},
+					{name: 'NotActivatedWindows', vulnerable: false},
+					{name: 'UacNotification', vulnerable: false}]
 			},
 			myDevice: {
-				name: '',
+				name: 'ThinkPad T470',
 				protected: true,
 			},
-			allDevices: []
+			allDevices: [
+				{name: 'aaa', protected: true},
+				{name: 'bbb', protected: true},
+				{name: 'ccc', protected: true},
+				{name: 'ddd', protected: true},
+				{name: 'eee', protected: true},
+				{name: 'fff', protected: true},
+				{name: 'ggg', protected: false}
+			]
 		},
 		notifications: {
 			value: []
