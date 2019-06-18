@@ -23,16 +23,17 @@
 			@extend .base-preview;
 			background-color: $shade_extralight;
 			cursor: not-allowed;
-			padding-top: 8rem;
+			padding: 9rem 2rem 0 2rem;
+
 			.error-title {
 				color: $stop_dark;
-				font-size: 2rem;
+				font-size: 1.9rem;
 				font-weight: 600;
 			}
 
 			.error-description {
 				color: $shade_dark;
-				font-size: 1.9rem;
+				font-size: 1.7rem;
 				font-weight: 600;
 			}
 		}
