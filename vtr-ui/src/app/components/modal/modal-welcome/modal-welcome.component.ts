@@ -4,6 +4,8 @@ import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.mod
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
+import { HttpClient } from '@angular/common/http';
+
 @Component({
 	selector: 'vtr-modal-welcome',
 	templateUrl: './modal-welcome.component.html',
@@ -13,7 +15,7 @@ export class ModalWelcomeComponent implements OnInit {
 	progress = 49;
 	isInterestProgressChanged = false;
 	page = 1;
-	privacyPolicy: boolean;
+	privacyPolicy: boolean = true;
 	checkedArray: string[] = [];
 	startTime: number;
 	endTime: number;
@@ -35,9 +37,22 @@ export class ModalWelcomeComponent implements OnInit {
 	hideMoreInterestBtn = false;
 	constructor(public activeModal: NgbActiveModal,
 		shellService: VantageShellService,
+		private http:HttpClient,
 		public commonService: CommonService) {
 		this.startTime = new Date().getTime();
 		this.metrics = shellService.getMetrics();
+		this.privacyPolicy = this.metrics.metricsEnabled;
+		const self = this;
+		this.downloadMetricsPolicy().subscribe((response)=>{		
+			shellService.deviceFilter(JSON.stringify(response)).then((result)=>{
+				const userDeterminePrivacy = commonService.getLocalStorageValue(LocalStorageKey.userDeterminePrivacy);
+				if(!userDeterminePrivacy){
+					self.privacyPolicy = result;
+					self.metrics.metricsEnabled =  (self.privacyPolicy === true);
+				}
+			});	
+		});
+		
 	}
 
 	ngOnInit() {
@@ -47,6 +62,15 @@ export class ModalWelcomeComponent implements OnInit {
 		this.metrics.metricsEnabled = (this.privacyPolicy === true);
 		let tutorialData;
 		if (page < 2) {
+			this.endTime=new Date().getTime();
+			const data = {
+				ItemType: 'PageView',
+				PageName: 'WelcomePage',
+				PageDuration: (this.endTime - this.startTime)
+			};
+			console.log('PageView Event', JSON.stringify(data));
+			this.metrics.sendAsync(data);
+			this.startTime=new Date().getTime();
 			this.page = page;
 			this.progress = 49;
 			tutorialData = new WelcomeTutorial(1, null, null);
@@ -128,9 +152,14 @@ export class ModalWelcomeComponent implements OnInit {
 		} else {
 			this.progress -= 17;
 		}
+		this.commonService.setLocalStorageValue(LocalStorageKey.userDeterminePrivacy, true);
 	}
 	moreInterestClicked() {
 		this.interestCopy = this.interests;
 		this.hideMoreInterestBtn = true;
+	}
+
+	private downloadMetricsPolicy() {		
+		return this.http.get<string>('/assets/privacy-json/metrics.json');	
 	}
 }

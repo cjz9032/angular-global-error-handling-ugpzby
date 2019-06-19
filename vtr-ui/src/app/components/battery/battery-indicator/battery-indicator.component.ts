@@ -34,6 +34,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	@Input() remainingHour = 0; // number of hours remaining
 	@Input() remainingMinutes = 0; // number of minutes remaining
 	@Input() timeText = '';
+	@Input() batteryNotDetected = false;
 
 	constructor(public translate: TranslateService) {
 	}
@@ -67,7 +68,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 			fillWidth = 0;
 		let percentage = this.percentage;
 
-		if (this.isVoltageError) {
+		if (this.isVoltageError || this.batteryNotDetected) {
 			percentage = 0;
 		}
 
@@ -116,6 +117,9 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				backgroundColor = this.getCssPropertyValue(
 					'--background-color-0-14'
 				);
+				// borderColor = this.getCssPropertyValue(
+				// 	'--border-color-0-14'
+				// );
 				fillColor = this.getCssPropertyValue(
 					'--acid-fill-gradient-0-14'
 				);
@@ -124,6 +128,9 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				backgroundColor = this.getCssPropertyValue(
 					'--background-color-15-24'
 				);
+				// borderColor = this.getCssPropertyValue(
+				// 	'--border-color-15-24'
+				// );
 				fillColor = this.getCssPropertyValue(
 					'--acid-fill-gradient-15-24'
 				);
@@ -132,6 +139,9 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				backgroundColor = this.getCssPropertyValue(
 					'--background-color-25-100'
 				);
+				// borderColor = this.getCssPropertyValue(
+				// 	'--border-color-25-100'
+				// );
 				fillColor = this.getCssPropertyValue(
 					'--acid-fill-gradient-25-100'
 				);
@@ -141,12 +151,14 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				backgroundColor = this.getCssPropertyValue(
 					'--background-color-error'
 				);
+				// borderColor = this.getCssPropertyValue(
+				// 	'--border-color-error'
+				// );
 				fillColor = this.getCssPropertyValue(
 					'--acid-fill-gradient-error'
 				);
 				break;
 		}
-
 		switch (this.batteryHealth) {
 			case 'Good':
 				borderColor = this.getCssPropertyValue('--border-color-25-100');

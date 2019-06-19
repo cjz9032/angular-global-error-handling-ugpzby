@@ -56,15 +56,23 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 			this.translate.instant('device.deviceSettings.batteryGauge.details.tertiary')];
 		this.batteryIndicators.percent = response.gauge.percentage;
 		this.batteryIndicators.charging = response.gauge.isAttached;
+		this.batteryIndicators.expressCharging = response.gauge.isExpressCharging;
 		this.batteryIndicators.convertMin(response.gauge.time);
 
 		this.batteryIndicators.timeText = response.gauge.timeType;
-		this.batteryIndicators.expressCharging = response.detail[0].isExpressCharging;
 		this.batteryIndicators.voltageError = response.detail[0].isVoltageError;
-		if (response.detail[0].batteryHealth === null || response.detail[0].batteryHealth === undefined) {
-			response.detail[0].batteryHealth = 0;
+		let batteryIndex = -1;
+		let batteryHealth = 0;
+		if (response.detail !== undefined && response.detail.length !== 0) {
+			response.detail.forEach((info) => {
+				if (info.batteryHealth >= batteryHealth) {
+					batteryHealth = info.batteryHealth;
+					batteryIndex += 1;
+				}
+			});
 		}
-		this.batteryIndicators.batteryHealth = this.batteryIndicators.getBatteryHealth(response.detail[0].batteryHealth);
+		this.batteryIndicators.batteryHealth = this.batteryIndicators.getBatteryHealth(batteryHealth);
+		this.batteryIndicators.batteryNotDetected = batteryHealth === 4;
 		for (let i = 0; i < response.detail.length; i++) {
 			response.detail[i].remainingCapacity = Math.round(response.detail[i].remainingCapacity * 100) / 100;
 			response.detail[i].fullChargeCapacity = Math.round(response.detail[i].fullChargeCapacity * 100) / 100;

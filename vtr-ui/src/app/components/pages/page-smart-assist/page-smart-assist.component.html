@@ -338,12 +338,19 @@
 
 					<!-- End of Intelligent Screen -->
 
+
+					<!-- Start of Intelligent Media -->
+
 					<vtr-intelligent-media id="media"
-						(isMediaSettingHidden)="hideMediaSetting($event)">
+						*ngIf="intelligentMedia.available"
+						[isChecked]="intelligentMedia.status">
 					</vtr-intelligent-media>
 
+					<!-- End of Intelligent Media -->
+
+					<!-- Start of Active Protection System -->
 					<div class="row py-5 smart-assist-card"
-						id="screen">
+						id="aps">
 						<div class="col-10 mx-auto">
 							<vtr-container-collapsible
 								[cardTitle]="'device.smartAssist.activeProtectionSystem.title' | translate"
@@ -356,6 +363,7 @@
 							</vtr-container-collapsible>
 						</div>
 					</div>
+					<!-- End of Active Protection System -->
 
 				</div>
 

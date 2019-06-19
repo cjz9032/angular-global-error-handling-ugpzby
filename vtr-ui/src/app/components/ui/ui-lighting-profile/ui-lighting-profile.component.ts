@@ -36,8 +36,16 @@ export class UiLightingProfileComponent implements OnInit {
 	public dropOptions: any;
 	public dropDataChanges: any;
 	public lightingProfileEffectColorNUmber: LightingProfileEffectColorNUmber;
+	public lightingProfileEffectColorString: LightingProfileEffectColorString;
 	public frontSelectedValue: any;
 	public sideSelectedValue: any;
+
+	public inHex1: any;
+	public inHex2: any;
+	public showHideApply1: boolean = true;
+	public showHideApply2: boolean = true;
+	public apply: 'gaming.lightingProfile.effect.apply.title | translate';
+
 	public lightingEffectData = {
 		drop: [
 			{
@@ -45,6 +53,11 @@ export class UiLightingProfileComponent implements OnInit {
 				modeType: 1,
 				dropOptions: [
 					{
+						header: 'gaming.lightingProfile.effect.option8.title',
+						name: 'gaming.lightingProfile.effect.option8.title',
+						value: 268435456
+					},
+					{
 						header: 'gaming.lightingProfile.effect.option1.title',
 						name: 'gaming.lightingProfile.effect.option1.title',
 						value: 1
@@ -64,41 +77,27 @@ export class UiLightingProfileComponent implements OnInit {
 						name: 'gaming.lightingProfile.effect.option4.title',
 						value: 8
 					},
+					// {
+					// 	header: 'gaming.lightingProfile.effect.option5.title',
+					// 	name: 'gaming.lightingProfile.effect.option5.title',
+					// 	value: 16
+					// },
 					{
 						header: 'gaming.lightingProfile.effect.option5.title',
 						name: 'gaming.lightingProfile.effect.option5.title',
-						value: 16
+						value: 32
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option6.title',
 						name: 'gaming.lightingProfile.effect.option6.title',
-						value: 32
+						value: 64
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option7.title',
 						name: 'gaming.lightingProfile.effect.option7.title',
-						value: 64
-					},
-					{
-						header: 'gaming.lightingProfile.effect.option8.title',
-						name: 'gaming.lightingProfile.effect.option8.title',
 						value: 128
-					},
-					{
-						header: 'gaming.lightingProfile.effect.option9.title',
-						name: 'gaming.lightingProfile.effect.option9.title',
-						value: 256
-					},
-					{
-						header: 'gaming.lightingProfile.effect.option10.title',
-						name: 'gaming.lightingProfile.effect.option10.title',
-						value: 512
-					},
-					{
-						header: 'gaming.lightingProfile.effect.option11.title',
-						name: 'gaming.lightingProfile.effect.option11.title',
-						value: 268435456
 					}
+
 				]
 			},
 			{
@@ -106,6 +105,11 @@ export class UiLightingProfileComponent implements OnInit {
 				modeType: 1,
 				dropOptions: [
 					{
+						header: 'gaming.lightingProfile.effect.option8.title',
+						name: 'gaming.lightingProfile.effect.option8.title',
+						value: 268435456
+					},
+					{
 						header: 'gaming.lightingProfile.effect.option1.title',
 						name: 'gaming.lightingProfile.effect.option1.title',
 						value: 1
@@ -125,44 +129,36 @@ export class UiLightingProfileComponent implements OnInit {
 						name: 'gaming.lightingProfile.effect.option4.title',
 						value: 8
 					},
+					// {
+					// 	header: 'gaming.lightingProfile.effect.option5.title',
+					// 	name: 'gaming.lightingProfile.effect.option5.title',
+					// 	value: 16
+					// },
 					{
 						header: 'gaming.lightingProfile.effect.option5.title',
 						name: 'gaming.lightingProfile.effect.option5.title',
-						value: 16
+						value: 32
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option6.title',
 						name: 'gaming.lightingProfile.effect.option6.title',
-						value: 32
+						value: 64
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option7.title',
 						name: 'gaming.lightingProfile.effect.option7.title',
-						value: 64
-					},
-					{
-						header: 'gaming.lightingProfile.effect.option8.title',
-						name: 'gaming.lightingProfile.effect.option8.title',
 						value: 128
-					},
-					{
-						header: 'gaming.lightingProfile.effect.option9.title',
-						name: 'gaming.lightingProfile.effect.option9.title',
-						value: 256
-					},
-					{
-						header: 'gaming.lightingProfile.effect.option10.title',
-						name: 'gaming.lightingProfile.effect.option10.title',
-						value: 512
-					},
-					{
-						header: 'gaming.lightingProfile.effect.option11.title',
-						name: 'gaming.lightingProfile.effect.option11.title',
-						value: 268435456
 					}
+
 				]
 			}
 
+		],
+		btnOpt: [
+			{
+				apply: 'gaming.lightingProfile.effect.apply.title ',
+				applied: 'gaming.lightingProfile.effect.applied.title '
+			}
 		]
 	};
 
@@ -217,7 +213,6 @@ export class UiLightingProfileComponent implements OnInit {
 		this.isProfileOff = false;
 		this.getGamingLightingCapabilities();
 		if (this.currentProfileId !== 0) {
-
 			this.getLightingProfileById(this.currentProfileId);
 			this.getLightingBrightness();
 		}
@@ -251,6 +246,16 @@ export class UiLightingProfileComponent implements OnInit {
 					'setLightingProfileEffectColor top------------------------>',
 					JSON.stringify(response)
 				);
+				if (response.lightInfo.length > 0) {
+					this.frontSelectedValue = response.lightInfo[0].lightEffectType;
+					this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
+					//this.inHex1 = response.lightInfo[0].lightColor;
+					if (response.lightInfo.length > 1) {
+						this.sideSelectedValue = response.lightInfo[1].lightEffectType;
+						this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
+						//this.inHex2 = response.lightInfo[1].lightColor;
+					}
+				}
 			});
 		}
 
@@ -266,10 +271,17 @@ export class UiLightingProfileComponent implements OnInit {
 
 		if (this.gamingLightingService.isShellAvailable) {
 			this.gamingLightingService.setLightingProfileEffectColor(this.lightingProfileEffectColorNUmber).then((response: any) => {
-				console.log(
-					'setLightingProfileEffectColor side------------------------>',
-					JSON.stringify(response)
-				);
+				console.log('setLightingProfileEffectColor side------------------------>', JSON.stringify(response));
+				if (response.lightInfo.length > 0) {
+					this.frontSelectedValue = response.lightInfo[0].lightEffectType;
+					this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
+					//this.inHex1 = response.lightInfo[0].lightColor;
+					if (response.lightInfo.length > 1) {
+						this.sideSelectedValue = response.lightInfo[1].lightEffectType;
+						this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
+						//this.inHex2 = response.lightInfo[1].lightColor;
+					}
+				}
 			});
 		}
 	}
@@ -284,16 +296,17 @@ export class UiLightingProfileComponent implements OnInit {
 
 		if (this.gamingLightingService.isShellAvailable) {
 			this.gamingLightingService.setLightingProfileEffectColor(this.lightingProfileEffectColorNUmber).then((response: any) => {
-				console.log(
-					'setLightingProfileEffectColor side------------------------>',
-					JSON.stringify(response)
-				);
+				console.log('setLightingProfileEffectColor side------------------------>', JSON.stringify(response));
+
 			});
 		}
 	}
 	setDefaultProfile(event) {
 		try {
-			this.isOff = Number(event.target.value);
+			if (event.target.value !== undefined) {
+				this.isOff = Number(event.target.value);
+			}
+
 			console.log('in profile click event....................................', this.isOff);
 			if (this.isOff === 0) {
 				this.isProfileOff = true;
@@ -349,8 +362,6 @@ export class UiLightingProfileComponent implements OnInit {
 
 					console.log('after drop options filter--------------------------------------------------------------------' +
 						JSON.stringify(this.lightingEffectData.drop[0].dropOptions));
-
-
 					console.log('led panel type ------------------------------------------', this.lightingCapabilities.RGBfeature);
 
 					const ledRGB = this.lightingCapabilities.RGBfeature;
@@ -383,7 +394,7 @@ export class UiLightingProfileComponent implements OnInit {
 
 	setLightingBrightness(event) {
 		try {
-			event = event + 1;
+			//event = event + 1;
 			console.log('in eventval--------------------------------' + event);
 			if (this.gamingLightingService.isShellAvailable) {
 				this.gamingLightingService.setLightingProfileBrightness(event).then((response: any) => {
@@ -398,7 +409,7 @@ export class UiLightingProfileComponent implements OnInit {
 
 					} else {
 						this.commonService.setLocalStorageValue(LocalStorageKey.ProfileBrightness, this.brightness);
-						//this.getLightingBrightness();
+						this.getLightingBrightness();
 					}
 				});
 			}
@@ -409,9 +420,9 @@ export class UiLightingProfileComponent implements OnInit {
 
 	public getLightingBrightness() {
 		try {
-			this.tempval = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileBrightness) || 0;
-			this.profileBrightness = (this.tempval) - 1;
-			console.log('cache value  ----------------', this.profileBrightness);
+			this.profileBrightness = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileBrightness) || 0;
+			//this.profileBrightness = (this.tempval) - 1;
+			console.log('brightness cache value  ----------------', this.profileBrightness);
 		} catch (error) {
 			console.error(error.message);
 		}
@@ -424,8 +435,6 @@ export class UiLightingProfileComponent implements OnInit {
 				this.gamingLightingService.getLightingProfileById(currProfileId).then((response: any) => {
 					console.log('getLightingProfileById------------response---------------->', JSON.stringify(response));
 					if (response.didSuccess) {
-
-
 						this.currentProfileId = response.profileId;
 						this.currentProfile = response.profileId;
 						this.profileBrightness = response.brightness;
@@ -434,10 +443,12 @@ export class UiLightingProfileComponent implements OnInit {
 							this.frontSelectedValue = response.lightInfo[0].lightEffectType;
 							console.log('sateesh------------------------------------------- ---------------->', this.frontSelectedValue);
 							this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
+							this.inHex1 = response.lightInfo[0].lightColor;
 
 							if (response.lightInfo.length > 1) {
 								this.sideSelectedValue = response.lightInfo[1].lightEffectType;
 								this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
+								this.inHex2 = response.lightInfo[1].lightColor;
 							}
 						}
 					}
@@ -499,11 +510,7 @@ export class UiLightingProfileComponent implements OnInit {
 		}
 
 	}
-	// public color = {
-	// 	profileId: 1,
-	// 	lightPanelType: 32,
-	// 	lightColor: 'FF0000'
-	// };
+
 	public setLightingProfileEffectColor() {
 		if (this.gamingLightingService.isShellAvailable) {
 			this.gamingLightingService.setLightingProfileEffectColor(this.lightingProfileEffectColorNUmber).then((response: any) => {
@@ -511,6 +518,44 @@ export class UiLightingProfileComponent implements OnInit {
 					'setLightingProfileEffectColor ------------------------>',
 					JSON.stringify(response)
 				);
+			});
+		}
+	}
+	colorEffectChangedFront($event) {
+		this.showHideApply1 = false;
+		console.log('set color pallet color effect front------------------------>', JSON.stringify($event));
+
+		if (this.lightingProfileEffectColorString === undefined) {
+			this.lightingProfileEffectColorString = new LightingProfileEffectColorString();
+		}
+		this.lightingProfileEffectColorString.profileId = this.currentProfileId;
+		this.lightingProfileEffectColorString.lightPanelType = this.lightingCapabilities.LightPanelType[1];
+		this.lightingProfileEffectColorString.lightColor = $event;
+
+		if (this.gamingLightingService.isShellAvailable) {
+			this.gamingLightingService.setLightingProfileEffectColor(this.lightingProfileEffectColorString).then((response: any) => {
+				console.log(
+					'set color pallet color effect front response------------------------>',
+					JSON.stringify(response)
+				);
+				this.showHideApply1 = true;
+			});
+		}
+	}
+	colorEffectChangedSide($event) {
+		this.showHideApply2 = false;
+		console.log('set color pallet color effect side ------------------------>', JSON.stringify($event));
+		if (this.lightingProfileEffectColorString === undefined) {
+			this.lightingProfileEffectColorString = new LightingProfileEffectColorString();
+		}
+		this.lightingProfileEffectColorString.profileId = this.currentProfileId;
+		this.lightingProfileEffectColorString.lightPanelType = this.lightingCapabilities.LightPanelType[1];
+		this.lightingProfileEffectColorString.lightColor = $event;
+
+		if (this.gamingLightingService.isShellAvailable) {
+			this.gamingLightingService.setLightingProfileEffectColor(this.lightingProfileEffectColorString).then((response: any) => {
+				console.log('set color pallet color effect side response------------------------>', JSON.stringify(response));
+				this.showHideApply2 = true;
 			});
 		}
 	}

@@ -6,6 +6,7 @@ class BatteryIndicator {
 	public percent = 0;
 	public charging: boolean;
 	public voltageError = false;
+	public batteryNotDetected = false;
 	public expressCharging = false;
 	public hours = 0;
 	public minutes = 0;

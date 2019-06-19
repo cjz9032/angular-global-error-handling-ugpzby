@@ -4,14 +4,14 @@
 			<div class="row">
 				<div class="col">
 					<div class="battery-indicator pb-5">
-						<vtr-battery-indicator
-							[batteryHealth] = "batteryIndicators?.batteryHealth"
+						<vtr-battery-indicator [batteryHealth]="batteryIndicators?.batteryHealth"
 							[remainingHour]="batteryIndicators.hours"
 							[remainingMinutes]="batteryIndicators.minutes"
 							[percentage]="batteryIndicators.percent"
 							[isCharging]="batteryIndicators.charging"
 							[isExpressCharging]="batteryIndicators.expressCharging"
 							[isVoltageError]="batteryIndicators.voltageError"
+							[batteryNotDetected]="batteryIndicators.batteryNotDetected"
 							[timeText]="batteryIndicators.timeText">
 						</vtr-battery-indicator>
 					</div>
