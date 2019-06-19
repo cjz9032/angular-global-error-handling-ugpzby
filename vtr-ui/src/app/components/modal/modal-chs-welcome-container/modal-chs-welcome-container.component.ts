@@ -103,16 +103,18 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 	}
 
 	public onOkClick($event: any) {
-		if (!this.hasSystemPermissionShowed) {
-			this.permission.requestPermission('geoLocatorStatus').then((status) => {
-				this.isLocationServiceOn = status;
-			});
-		} else {
-			WinRT.launchUri(this.url);
-			this.permission.requestPermission('geoLocatorStatus').then((status) => {
-				this.isLocationServiceOn = status;
-			});
-		}
+		this.permission.getIsDevicePermissionOn().then((response) => {
+			if (response && !this.hasSystemPermissionShowed) {
+				this.permission.requestPermission('geoLocatorStatus').then((status) => {
+					this.isLocationServiceOn = status;
+				});
+			} else {
+				WinRT.launchUri(this.url);
+				this.permission.requestPermission('geoLocatorStatus').then((status) => {
+					this.isLocationServiceOn = status;
+				});
+			}
+		});
 	}
 
 	openLenovoId() {
