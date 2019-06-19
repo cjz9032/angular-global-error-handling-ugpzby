@@ -5,7 +5,6 @@ import { SupportService } from '../../../services/support/support.service';
 import { DevService } from '../../../services/dev/dev.service';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { CommonService } from 'src/app/services/common/common.service';
-import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalCommonConfirmationComponent } from '../../modal/modal-common-confirmation/modal-common-confirmation.component';
@@ -185,18 +184,8 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	}
 
 	ngOnInit() {
-		this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
-
 		if (!this.webView) {
 			this.devService.writeLog('ModalLenovoIdComponent constructor: webView object is undefined, critical error exit!');
-			this.activeModal.dismiss();
-			return;
-		}
-		
-		if (!navigator.onLine) {
-			this.popupErrorMessage(ssoErroType.SSO_ErrorType_DisConnect);
 			this.activeModal.dismiss();
 			return;
 		}
@@ -438,20 +427,9 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 
 	}
 
-	private onNotification(notification: AppNotification) {
-		if (notification) {
-			switch (notification.type) {
-				case NetworkStatus.Online:
-				case NetworkStatus.Offline:
-					this.isOnline = notification.payload.isOnline;
-					break;
-				default:
-					break;
-			}
-		}
-	}
-
 	ngOnDestroy(): void {
-		this.webView.close();
+		if (this.webView) {
+			this.webView.close();
+		}
 	}
 }
