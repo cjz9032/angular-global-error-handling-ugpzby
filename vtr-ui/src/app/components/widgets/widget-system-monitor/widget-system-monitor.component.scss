@@ -114,7 +114,7 @@
 					.gaming-tooltip{
 						position: absolute;
 						display: none;
-						left:0;
+						left: 0;
 						right: 0;
 						margin: auto;
 						margin-top:-2rem;
@@ -146,9 +146,12 @@
 					display: inline-block;
 					z-index: 99;
 					top:-6rem;
-					left: calc(50% - 45%);
+					min-width: 24rem;
+					left: 50%;
+					transform: translate(-50%);
 					opacity: 0;
 					transition: all .5s ease-in-out;
+					word-break: break-all;
 					&::after{
 						content: '';
 						position: absolute;
@@ -178,8 +181,9 @@
 							}
 						}
 						.gaming-tooltip {
-							width: 15rem;
-							left: calc(50% - 7.5rem);
+							min-width: 15rem;
+							left: 50%;
+							transform: translate(-50%);
 						}
 						&:hover {
 							.gaming-tooltip {
@@ -190,8 +194,9 @@
 					}
 					&.gpu {
 						.gaming-tooltip {
-							width: 15rem;
-							left: calc(50% - 7.5rem);
+							min-width: 15rem;
+							left: 50%;
+							transform: translate(-50%);
 						}
 						&:hover {
 							.gaming-tooltip {
@@ -439,6 +444,8 @@
 							text-align: center;
 							.gaming-tooltip {
 								top: -3rem;
+								left: 50%;
+								transform: translate(-50%);
 							}
 							&:hover {
 								.gaming-tooltip {

@@ -780,7 +780,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	hidePowerSmartSetting(hide: boolean) {
-		hide ? this.headerMenuItems.splice(0, 1) : '';
+		this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'cooling');
 	}
 
 	// start battery threshold settings
@@ -797,7 +797,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					// 	this.selectedStartAtChargeVal = this.responseData[0].startValue;
 					// 	this.selectedStopAtChargeVal = this.responseData[0].stopValue;
 					// 	this.primaryCheckBox = this.responseData[0].checkBoxValue;
-					// 	this.showBatteryThreshold = this.responseData[0].isOn;						
+					// 	this.showBatteryThreshold = this.responseData[0].isOn;
 					// 	if (this.responseData.length === 2) {
 					// 		this.secondaryCheckBox = this.responseData[1].checkBoxValue;
 					// 		this.selectedStartAtChargeVal1 = this.responseData[1].startValue;
@@ -812,13 +812,13 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						this.showBatteryThreshold = this.responseData[0].isOn;
 						if (this.selectedStartAtChargeVal !== this.responseData[0].startValue ||
 							this.selectedStopAtChargeVal !== this.responseData[0].stopValue) {
-								this.powerService.setChargeThresholdValue(									
+								this.powerService.setChargeThresholdValue(
 									 {
 										batteryNumber: this.responseData[0].batteryNumber,
 										startValue: this.selectedStartAtChargeVal,
 										stopValue: this.selectedStopAtChargeVal,
 										checkBoxValue: this.primaryCheckBox
-									 }			
+									 }
 									);
 						}
 						if (this.responseData.length === 2) {
@@ -827,13 +827,13 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 							this.selectedStopAtChargeVal1 = this.responseData[1].stopValue - (this.responseData[1].stopValue % 5);
 							if (this.selectedStartAtChargeVal1 !== this.responseData[1].startValue ||
 								this.selectedStopAtChargeVal1 !== this.responseData[1].stopValue) {
-									this.powerService.setChargeThresholdValue(										
+									this.powerService.setChargeThresholdValue(
 										{
 											batteryNumber: this.responseData[1].batteryNumber,
 											startValue: this.selectedStartAtChargeVal1,
 											stopValue: this.selectedStopAtChargeVal1,
 											checkBoxValue: this.secondaryCheckBox
-										 }			
+										 }
 									);
 							}
 						}
