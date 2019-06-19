@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { distinctUntilChanged, map, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { RouterChangeHandlerService } from '../../services/router-change-handler.service';
@@ -12,10 +12,35 @@ import { UserDataGetStateService } from '../../services/user-data-get-state.serv
 @Component({
 	selector: 'vtr-no-issue-pitch',
 	templateUrl: './no-issue-pitch.component.html',
-	styleUrls: ['./no-issue-pitch.component.scss']
+	styleUrls: ['./no-issue-pitch.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NoIssuePitchComponent implements OnInit, OnDestroy {
 	isShowPitch$ = of(false);
+	currentPath: RoutersName;
+
+	@ViewChild('breachAccount') private breachAccount: ElementRef;
+	@ViewChild('trackers') private trackers: ElementRef;
+	@ViewChild('nonPrivatePassword') private nonPrivatePassword: ElementRef;
+
+	private templateForPitch: {[path in RoutersName]?: ElementRef};
+
+	private textForPitch = {
+		[RoutersName.BREACHES]: {
+			title: 'How do I prevent this?',
+			text: 'Lenovo Privacy Essentials by FigLeaf monitors online accounts in real time and notifies you when your private information is at risk.'
+		},
+		[RoutersName.TRACKERS]: {
+			title: 'How do I prevent this?',
+			text: 'Lenovo Privacy Essentials by FigLeaf lets you visit your favorite websites without sharing your private information.'
+		},
+		[RoutersName.BROWSERACCOUNTS]: {
+			title: 'How do I prevent this?',
+			text: 'Avoid reusing and storing your passwords in your browsers. ' +
+				'Create strong, unique passwords for every account with Lenovo Privacy Essentials by FigLeaf and store them in encrypted form on your PC.'
+		}
+	};
+
 	private isFigleafReadyForCommunication$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
 	private breachedAccountsCount$ = this.countNumberOfIssuesService.breachedAccountsCount;
 	private breachedAccountsWasScanned$ = this.getState('breachedAccountsResult');
@@ -59,14 +84,31 @@ export class NoIssuePitchComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.templateForPitch = {
+			[RoutersName.BREACHES]: this.breachAccount,
+			[RoutersName.TRACKERS]: this.trackers,
+			[RoutersName.BROWSERACCOUNTS]: this.nonPrivatePassword
+		};
+
 		this.routerChangeHandlerService.onChange$
 			.pipe(takeUntil(instanceDestroyed(this)))
 			.subscribe(
-				(currentPath) => this.isShowPitch$ = this.noIssues[currentPath]
+				(currentPath: RoutersName) => {
+					this.isShowPitch$ = this.noIssues[currentPath];
+					this.currentPath = currentPath;
+				}
 			);
 	}
 
 	ngOnDestroy() {}
+
+	getText() {
+		return this.textForPitch[this.currentPath];
+	}
+
+	getTemplate() {
+		return this.templateForPitch[this.currentPath];
+	}
 
 	private getState(userStatuses: string) {
 		return this.userDataGetStateService.userDataStatus$.pipe(
@@ -88,7 +130,8 @@ export class NoIssuePitchComponent implements OnInit, OnDestroy {
 			wasScanned$
 		]).pipe(
 			map(([isFigleafReadyForCommunication, countOfIssue, wasScanned]) =>
-				!isFigleafReadyForCommunication && countOfIssue === 0 && wasScanned)
+				!isFigleafReadyForCommunication && countOfIssue === 0 && wasScanned),
+			distinctUntilChanged(),
 		);
 	}
 }
