@@ -547,4 +547,14 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	// Active Protection System
+	public getActiveProtectionSystem(): any {
+		if (this.phoenix) {
+			console.log('PHOENIX AVAILABLE - vantage shell');
+			return this.phoenix.hwsettings.lis.ActiveProtectionSystem; // returning APS Object with methods
+		}
+		console.log('NO PHOENIX AVAILABLE - vantage shell');
+		return undefined;
+	}
 }

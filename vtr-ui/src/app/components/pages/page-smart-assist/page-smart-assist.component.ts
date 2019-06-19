@@ -119,8 +119,18 @@ export class PageSmartAssistComponent implements OnInit {
 		this.initZeroTouchLock(isFirstTimeLoad);
 		this.initZeroTouchLogin();
 		this.initIntelligentScreen();
+		this.apsAvailability();
 	}
 
+	private apsAvailability() {
+		console.log('APS', this.smartAssist);
+		// Promise
+		// 	.all([this.smartAssist.getAPSCapability(), this.smartAssist.getSensorStatus(), this.smartAssist.getHDDStatus()])
+		// 	.then((response: any[]) => {
+		// 		console.log('APS RESPONSE-----------------------', response);
+		// 	})
+		// 	.catch((error) => { console.log('APS ERROR------------------', error); });
+	}
 	private initIntelligentScreen() {
 		Promise.all([
 			this.smartAssist.getIntelligentScreenVisibility(),
@@ -358,4 +368,7 @@ export class PageSmartAssistComponent implements OnInit {
 				console.log('onResetDefaultSettings.resetHPDSetting', isSuccess);
 			});
 	}
+
+
+
 }

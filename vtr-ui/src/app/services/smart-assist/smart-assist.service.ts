@@ -9,12 +9,14 @@ export class SmartAssistService {
 
 	private intelligentSensing;
 	private intelligentMedia;
+	private activeProtectionSystem;
 	public isShellAvailable = false;
 
 	constructor(shellService: VantageShellService) {
-		console.log('Shell Service--------------', shellService);
+		console.log('SHELL SERVICE----------------------------------', shellService);
 		this.intelligentSensing = shellService.getIntelligentSensing();
 		this.intelligentMedia = shellService.getIntelligentMedia();
+		this.activeProtectionSystem = shellService.getActiveProtectionSystem(); // getting APS Object from vantage-shell.service
 
 		if (this.intelligentSensing && this.intelligentMedia) {
 			this.isShellAvailable = true;
@@ -272,8 +274,26 @@ export class SmartAssistService {
 
 
 	//#region Active Protection System APS
-	// public getAPSCapability(): Promise<boolean>{
-		
-	// }
+	//  APS Capability
+	public getAPSCapability(): Promise<boolean> {
+		if (this.isShellAvailable) {
+			return this.activeProtectionSystem.getAPSCapability();
+		}
+		return undefined;
+	}
+	// APS Sensor(G-Sensor) Capability
+	public getSensorStatus(): Promise<boolean> {
+		if (this.isShellAvailable) {
+			return this.activeProtectionSystem.getSensorStatus();
+		}
+		return undefined;
+	}
+	// HDD Status
+	public getHDDStatus(): Promise<boolean> {
+		if (this.isShellAvailable) {
+			return this.activeProtectionSystem.getHDDStatus();
+		}
+		return undefined;
+	}
 	//#endregion
 }
