@@ -49,7 +49,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	homeSecurityOverviewMyDevice: HomeSecurityOverviewMyDevice;
 	notificationItems: HomeSecurityNotifications;
 	account: HomeSecurityAccount;
-
+	isOnline = true;
 	testStatus = ['lessDevices-secure', 'moreDevices-needAttention', 'noneDevices', 'trialExpired', 'lessDevices-needAttention', 'moreDevices-secure', 'localAccount'];
 
 	constructor(
@@ -253,6 +253,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	}
 
 	onUpgradeAccount() {
+		this.isOnline = !this.isOnline;
 		this.connectedHomeSecurity.account.purchase();
 	}
 
