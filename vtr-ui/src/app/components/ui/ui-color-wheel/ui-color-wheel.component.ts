@@ -16,6 +16,7 @@ export class UiColorWheelComponent implements OnInit {
 	@Input() inRGB:any;
 	@Input() inHEX:any;
 	@Input() showApply:boolean;
+	@Input() showOverlay:boolean;
 	constructor() { }
 
 	ngOnInit() {
