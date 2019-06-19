@@ -1,3 +1,5 @@
+import { LocalStorageKey } from './../../../enums/local-storage-key.enum';
+import { CommonService } from 'src/app/services/common/common.service';
 import { GamingAllCapabilitiesService } from './../../../services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingLightingService } from './../../../services/gaming/lighting/gaming-lighting.service';
 import { Component, OnInit, Input } from '@angular/core';
@@ -14,22 +16,40 @@ export class WidgetLightingComponent implements OnInit {
 	public didSuccess: any;
 	public profileId: any;
 	public setprofId: any;
+	public ledSetFeature: any;
+	public ledDriver: any;
+	public isLightingVisible: any;
 	constructor(
 		private gamingLightingService: GamingLightingService,
-		private gamingAllCapabilities: GamingAllCapabilitiesService
+		private commonService: CommonService,
+		private gamingCapabilityService: GamingAllCapabilitiesService,
 	) { }
 
 	ngOnInit() {
-		this.getGaminagLightingCapabilities();
+		this.getGaminagAllCapabilities();
 		this.getLightingProfileId();
 	}
-	public getGaminagLightingCapabilities() {
-		if (this.gamingLightingService.isShellAvailable) {
-			this.gamingLightingService.getLightingCapabilities().then((response: any) => {
+	public getGaminagAllCapabilities() {
+		if (this.gamingCapabilityService.isShellAvailable) {
+			this.gamingCapabilityService.getCapabilities().then((response: any) => {
 				console.log(
-					'gaming Lighting Capabilities js bridge ------------------------>',
+					'getCapabilities  response from homee ------------------------>',
 					JSON.stringify(response)
 				);
+					this.ledSetFeature=response.ledSetFeature;
+					this.ledSetFeature=response.ledDriver;
+					//this.ledSetFeature = false;
+					//this.ledDriver = false;
+
+				if (this.ledSetFeature && this.ledDriver) {
+					this.isLightingVisible = true;
+				} else if (!this.ledSetFeature && this.ledDriver) {
+					this.isLightingVisible = false;
+				} else if (this.ledSetFeature && !this.ledDriver) {
+					this.isLightingVisible = true;
+				} else {
+					this.isLightingVisible = false;
+				}
 			});
 		}
 	}
@@ -42,11 +62,12 @@ export class WidgetLightingComponent implements OnInit {
 					console.log('getLightingProfileId------------response---------------->',
 						JSON.stringify(response));
 					if (!this.didSuccess) {
-						this.setprofId = 0;
+						this.setprofId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId) || 0;
 						console.log('status---false: ' + this.setprofId);
 					} else {
+						this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, this.profileId);
 						this.setprofId = this.profileId;
-						console.log('status---true: ' + this.setprofId);
+						console.log('getLightingProfileId---cache----------true: ', JSON.stringify(this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId)));
 					}
 				});
 			}
@@ -69,12 +90,13 @@ export class WidgetLightingComponent implements OnInit {
 					this.didSuccess = response.didSuccess;
 
 					if (!this.didSuccess) {
-						this.setprofId = 0;
+						this.setprofId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId) || 0;
 						console.log('setLightingProfileId------------false---------------->');
 						//this.setprofId = eventval;
 					} else {
+						this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId,  response.profileId);
 						this.setprofId = response.profileId;
-						console.log('setLightingProfileId------------True---------------->');
+						console.log('setLightingProfileId------------True---------------->',this.setprofId);
 					}
 				});
 			}
