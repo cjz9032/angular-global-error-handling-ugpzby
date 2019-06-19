@@ -64,7 +64,7 @@
 							<div *ngIf="title"
 								 class="title">{{title}}</div>
 							<div *ngIf="caption"
-								 class="caption">{{caption}}</div>
+								 class="caption">{{caption | safeDom : 'html'}}</div>
 							<div *ngIf="logo || logoText"
 								 class="logo">
 							<span class="logo-img">
