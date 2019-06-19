@@ -16,10 +16,8 @@
                                 <div class="row mb-40 content-container p-40">
                                     <div class="container-fluid">
                                         <vtr-widget-home-security-device
-                                            [login]="account.lenovoIdLoggedIn"
-                                            [state]="account.state"
-                                            (upgradeAccount)="onUpgradeAccount()"
-                                            (startTrial)="onStartTrial()"
+                                            [device]="account.device"
+                                            [allDevice]="account.allDevice"
                                           ></vtr-widget-home-security-device>
                                     </div>
                                 </div>
