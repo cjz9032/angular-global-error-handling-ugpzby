@@ -8,7 +8,7 @@
 			[isFeatureWasScanned]="emailWasScanned$ | async"
 			[countOfIssue]="breachedAccountsCount$ | async"
 			[isFigleafReadyToCommunication]="isFigleafReadyForCommunication$ | async">
-			Found <span class="breaches-page__title--red">{{breachedAccountsCount$ | async}}</span> breaches
+			<span class="breaches-page__title--red">{{breachedAccountsCount$ | async}}</span> breached accounts found
 		</vtr-feature-header>
 
 		<button class="breaches-page__button"
