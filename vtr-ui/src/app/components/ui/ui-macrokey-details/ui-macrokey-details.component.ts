@@ -4,7 +4,6 @@ import {
 	Input,
 	Output,
 	EventEmitter,
-	DoCheck,
 	OnChanges,
 	SimpleChange,
 	SimpleChanges
@@ -16,7 +15,7 @@ import { MacroKeyMessageData } from 'src/app/enums/macrokey-message-data.enum';
 @Component({
 	selector: 'vtr-ui-macrokey-details',
 	templateUrl: './ui-macrokey-details.component.html',
-	styleUrls: [ './ui-macrokey-details.component.scss' ]
+	styleUrls: ['./ui-macrokey-details.component.scss']
 })
 export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 	@Input() number;
@@ -34,9 +33,9 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 		btnConfirm: false
 	};
 
-	constructor(private macroKeyService: MacrokeyService) {}
+	constructor(private macroKeyService: MacrokeyService) { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	onStartClicked(event) {
 		this.toggleRecording();

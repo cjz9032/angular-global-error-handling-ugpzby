@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { NgbActiveModal, NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 
@@ -41,11 +41,9 @@ export class FeedbackFormComponent implements OnInit {
 
 	constructor(
 		public activeModal: NgbActiveModal,
-		private dropdownConfig: NgbDropdownConfig,
 		private shellService: VantageShellService,
 		private deviceService: DeviceService,
 	) {
-		this.dropdownConfig.autoClose = false;
 		this.metrics = this.shellService.getMetrics();
 	}
 
