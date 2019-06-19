@@ -230,7 +230,7 @@
             "title": "Lighting",
             "effect": {
                 "option1": {
-                    "title": "Static"
+                    "title": "On"
                 },
                 "option2": {
                     "title": "Flicker"
@@ -242,25 +242,22 @@
                     "title": "Wave"
                 },
                 "option5": {
-                    "title": "Music"
-                },
-                "option6": {
                     "title": "Smooth"
                 },
-                "option7": {
+                "option6": {
                     "title": "CPU Temperature"
                 },
-                "option8": {
+                "option7": {
                     "title": "CPU Utilization"
                 },
-                "option9": {
-                    "title": "Response"
+                "option8": {
+                    "title": "Off"
                 },
-                "option10": {
-                    "title": "Ripple"
+                "apply": {
+                    "title": "APPLY"
                 },
-                "option11": {
-                    "title": "No Light"
+                "applied": {
+                    "title": "APPLIED"
                 }
             }
         }
@@ -544,7 +541,7 @@
                         "description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
                     },
                     "Good": {
-                        "title": "The battery is in good Condition"
+                        "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
                         "title": "The battery has failed due to normal",
@@ -567,18 +564,47 @@
                     },
                     "NotSupportACAdapter": {
                         "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
+                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
                     },
                     "MissingDriver": {
-                        "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
+                        "title": "The Lenovo Power Manager driver",
                         "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
                     },
                     "StoreLimitation": {
                         "title": "The battery can only store",
                         "description1": "of",
                         "description2": "it's original full charge capacity"
+                    },
+                    "HighTemperature": {
+                        "title": "Discharging",
+                        "description": "has been stopped because the",
+                        "description1": "battery temperature is too high"
+                    },
+                    "TrickleCharge": {
+                        "description": "The battery was",
+                        "description1": "completely discharged",
+                        "description2": "and needs to be recharged. This might take ten hours or more."
+                    },
+                    "OverheatedBattery": {
+                        "description": "The battery is",
+                        "description1": "too hot.",
+                        "description2": "Remove it from the computer and cool it to room temperature."
+                    },
+                    "PermanentError": {
+                        "description": "The battery has",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
+                    },
+                    "HardwareAuthenticationError": {
+                        "description": "The battery installed is",
+                        "description1": "is not supported",
+                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
                     }
-                }
+                },
+                "updating": "Updating",
+                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "voltageError": "Battery voltage incorrect",
+                "batteryNotDetected": "No Battery Detected"
             },
             "power": {
                 "title": "Живлення",
@@ -723,6 +749,17 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                },
+                "smartStandby": {
+                    "title": "Smart Standby",
+                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
+                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "timer": {
+                        "heading": "Set time when you typically use this computer",
+                        "subHeading1": "start",
+                        "subHeading2": "end",
+                        "subHeading3": "use this schedule for"
+                    }
                 }
             },
             "audio": {
@@ -830,7 +867,7 @@
                         "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
                         "note": {
                             "title": "Note",
-                            "description": "When the Eye care mode is enabled. this color temperature does not take effect. However,  you can drag the slide to get a preview of it. To make it effective. turn off the Eye care mode"
+                            "description": "When the Eye care mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye care mode."
                         }
                     },
                     "privacyGuard": {
@@ -876,6 +913,12 @@
                         "blurMode": "Blur mode",
                         "comicMode": "Comic mode",
                         "sketchMode": "Sketch mode"
+                    },
+                    "cameraLoadingFailed": {
+                        "inUseTitle": "CAMERA IS IN USE",
+                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
+                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
+                        "loadingFailedDescription": "Close the app and try again."
                     }
                 }
             },
@@ -918,14 +961,15 @@
             }
         },
         "smartAssist": {
-            "title": "Smart Assist",
+            "title": "Розумний помічник",
             "description": "Функція \"Інтелектуальне зчитування\" Lenovo використовує різноманітні датчики комп'ютера, щоб розпізнавати вашу активність,налаштовувати оптимальне керування живленням і захищати конфіденційність.",
             "jumpTo": {
                 "title": "ПЕРЕЙТИ ДО НАСТРОЙОК",
                 "security": "Безпека",
                 "screen": "Екран",
                 "media": "Мультимедіа",
-                "voice": "Голос"
+                "voice": "Голос",
+                "APS": "APS"
             },
             "intelligentSecurity": {
                 "title": "Інтелектуальний захист",
@@ -1171,7 +1215,7 @@
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial Expired",
+        "trialExpired": "Trial expired",
         "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
