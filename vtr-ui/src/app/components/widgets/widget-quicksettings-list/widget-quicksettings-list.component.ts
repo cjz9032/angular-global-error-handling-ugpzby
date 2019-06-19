@@ -1,5 +1,5 @@
 import { AudioService } from 'src/app/services/audio/audio.service';
-import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, OnDestroy } from '@angular/core';
 import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
 import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -15,7 +15,8 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 	templateUrl: './widget-quicksettings-list.component.html',
 	styleUrls: ['./widget-quicksettings-list.component.scss']
 })
-export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit {
+export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, OnDestroy {
+
 
 	@Input() title = '';
 
@@ -103,7 +104,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit {
 					description: 'gaming.dashboard.device.quickSettings.statusText.perText',
 					//selectedOption: false,
 					//defaultOption: false,
-					value: 1
+					value: 3
 				},
 				{
 					header: 'gaming.dashboard.device.quickSettings.status.balance',
@@ -119,7 +120,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit {
 					description: 'gaming.dashboard.device.quickSettings.statusText.quietText',
 					//selectedOption: false,
 					//defaultOption: false,
-					value: 3
+					value: 1
 				}
 			]
 	}
@@ -202,7 +203,9 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit {
 
 	ngAfterViewInit() {
 	}
-
+	public unRegisterThermalModeEvent() {
+		this.shellServices.unRegisterEvent(EventTypes.gamingThermalModeChangeEvent, this.onRegThermalModeEvent.bind(this));
+	}
 	public onRegThermalModeEvent(status: any) {
 		if (status !== undefined) {
 			const regThermalModeStatusObj = new ThermalModeStatus();
@@ -345,5 +348,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit {
 		const { available, status } = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyModeCache);
 		this.quickSettings[3].isVisible = available;
 		this.quickSettings[3].isChecked = status;
+	}
+	ngOnDestroy(): void {
+		this.unRegisterThermalModeEvent();
 	}
 }
