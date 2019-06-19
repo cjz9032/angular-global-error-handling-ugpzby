@@ -460,6 +460,20 @@ export class PowerService {
 		}
 	}
 
+	public setToggleOff(value: any): Promise<any> {
+		console.log('auto check value here ----->', value);
+			try {
+				if (this.devicePowerThinkPad) {
+					return this.devicePowerThinkPad.sectionChargeThreshold.setToggleOff(value);
+				}
+				return undefined;
+			} catch (error) {
+				throw new Error(error.message);
+			}
+		}
+
+	
+
 	
 	// End battery threshold settings
 

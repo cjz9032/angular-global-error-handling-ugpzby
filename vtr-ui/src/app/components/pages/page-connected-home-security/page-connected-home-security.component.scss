@@ -222,4 +222,26 @@
 		}
 	}
 
+	.offline{
+		::ng-deep .vtr-widget-questions{
+			.filter{
+				position: relative;
+				.chevron{
+					.vtr-ui-list-chevron{
+						border-radius: $border_radius;
+						background-color: $light;
+						box-shadow: $drop_shadow;
+						filter: blur(4px);
+					}
+				}
+				.cover{
+					position: absolute;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+	
+
 }

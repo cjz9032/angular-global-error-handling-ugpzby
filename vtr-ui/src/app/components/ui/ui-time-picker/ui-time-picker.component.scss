@@ -41,6 +41,9 @@
 			  text-align: center;
 			  display: block;
 		  }
+		  .highlight{
+			  color: $shade_blue;
+		  }
 		}
 		.minutes-block{
 			border-left: 1px solid $shade_light;
@@ -175,6 +178,16 @@
 				font-size: 2rem;
 			}
 		}
+		.note {
+			border: 1px solid #ECF0F1;
+			border-radius: 0.5rem;
+			background-color: #F5F7F8;
+			padding: 2rem;
+			width: 80.9%;
+			margin-top: 1.5rem;
+			line-height: 23px;
+			font-size: 1.6rem;
+			color: $shade_blue;
+		}
 	}
-
 }

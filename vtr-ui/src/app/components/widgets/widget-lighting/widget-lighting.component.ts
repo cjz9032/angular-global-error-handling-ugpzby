@@ -69,9 +69,11 @@ export class WidgetLightingComponent implements OnInit {
 					this.didSuccess = response.didSuccess;
 
 					if (!this.didSuccess) {
+						this.setprofId = 0;
 						console.log('setLightingProfileId------------false---------------->');
 						//this.setprofId = eventval;
 					} else {
+						this.setprofId = response.profileId;
 						console.log('setLightingProfileId------------True---------------->');
 					}
 				});

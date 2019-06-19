@@ -19,10 +19,11 @@
 			<div class="col col-4 text-center"
 				*ngIf="cameraStatus.available">
 				<vtr-widget-switch-icon [iconDefinition]="['fal', 'camera']"
-					[value]="cameraStatus.status"
+					[value]="!cameraStatus.status"
 					[title]="'dashboard.quickSettings.cameraPrivacy' | translate"
 					metricsItem="camera"
 					[isBlocked]="cameraStatus.status"
+					[isCamera]="true"
 					(toggle)="onCameraStatusToggle($event)"
 					[disable]="!(cameraStatus.available && quickSettingsWidget[1].state)"></vtr-widget-switch-icon>
 			</div>
