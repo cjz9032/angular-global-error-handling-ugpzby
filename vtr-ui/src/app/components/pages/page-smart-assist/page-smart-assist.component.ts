@@ -62,11 +62,11 @@ export class PageSmartAssistComponent implements OnInit {
 			path: 'aps',
 			sortOrder: 4
 		},
-		// {
-		// 	title: 'device.smartAssist.jumpTo.voice',
-		// 	path: 'voice',
-		// 	sortOrder: 5
-		// }
+		{
+			title: 'device.smartAssist.jumpTo.voice',
+			path: 'voice',
+			sortOrder: 5
+		}
 	];
 
 	cardContentPositionA: any = {};
