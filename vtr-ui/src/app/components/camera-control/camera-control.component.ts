@@ -119,13 +119,17 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			return this.findCameraDeviceByPanelAsync(this.Windows.Devices.Enumeration.Panel.front)
 				.then((camera) => {
 					if (!camera) {
-						this.cameraAvailable.emit(false);
+						this.ngZone.run(() => {
+							this.cameraAvailable.emit(false);
+						});
 						return;
 					}
 
-					this.cameraAvailable.emit(true);
-					self.oMediaCapture = new self.Windows.Media.Capture.MediaCapture();
+					this.ngZone.run(() => {
+						this.cameraAvailable.emit(true);
+					});
 
+					self.oMediaCapture = new self.Windows.Media.Capture.MediaCapture();
 					// Register for a notification when something goes wrong
 					// TODO: define the fail handle callback and show error message maybe... there's a chance another app is previewing camera, that's when failed happen.
 					self.oMediaCapture.addEventListener('failed', (error) => {
@@ -154,8 +158,10 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 					return self.oMediaCapture.initializeAsync(settings);
 
 				}, (error) => {
-					this.disabledAll = true;
 					console.log('findCameraDeviceByPanelAsync error', error.message);
+					this.ngZone.run(() => {
+						this.disabledAll = true;
+					});
 				}).then(function () {
 					return self.startPreviewAsync();
 				}).done();
@@ -175,11 +181,13 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	}
 
 	stopPreview() {
-		// Cleanup the UI
-		if (this._video) {
-			this._video.pause();
-			this._video.src = '';
-		}
+		this.ngZone.run(() => {
+			// Cleanup the UI
+			if (this._video) {
+				this._video.pause();
+				this._video.src = '';
+			}
+		});
 	}
 
 	cleanupCameraAsync() {
