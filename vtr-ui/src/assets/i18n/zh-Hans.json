@@ -319,7 +319,7 @@
             "on": "开",
             "off": "关",
             "collapse": "折叠",
-            "expand": "扩大",
+            "expand": "展开",
             "loader": {
                 "text1": "取",
                 "text2": "状态"
