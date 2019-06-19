@@ -103,7 +103,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit {
 					description: 'gaming.dashboard.device.quickSettings.statusText.perText',
 					//selectedOption: false,
 					//defaultOption: false,
-					value: 1
+					value: 3
 				},
 				{
 					header: 'gaming.dashboard.device.quickSettings.status.balance',
@@ -119,7 +119,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit {
 					description: 'gaming.dashboard.device.quickSettings.statusText.quietText',
 					//selectedOption: false,
 					//defaultOption: false,
-					value: 3
+					value: 1
 				}
 			]
 	}
