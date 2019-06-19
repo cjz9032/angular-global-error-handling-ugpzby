@@ -712,7 +712,8 @@
 						"heading": "Set time when you typically use this computer",
 						"subHeading1": "start",
 						"subHeading2": "end",
-						"subHeading3": "use this schedule for"
+						"subHeading3": "use this schedule for",
+						"toaster": "End time must be within 20 hours from start time"
 					}
 				},
 				"batterySettings": {

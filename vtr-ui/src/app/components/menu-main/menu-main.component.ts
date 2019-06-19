@@ -293,12 +293,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 						this.smartAssist.getIntelligentScreenVisibility()
 					]).then((responses: any[]) => {
 						console.log('showSmartAssist.Promise.all()', responses);
-<<<<<<< HEAD
-						// const isAvailable = (responses[0] || responses[1]);
-						const isAvailable = true;
-=======
 						const isAvailable = (responses[0] || responses[1] || responses[2].available || responses[3]);
->>>>>>> 695c9fa80f326ae21dcae2f5cb3966a1848dec0e
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
 						if (isAvailable) {
 							myDeviceItem.subitems.splice(4, 0, {
