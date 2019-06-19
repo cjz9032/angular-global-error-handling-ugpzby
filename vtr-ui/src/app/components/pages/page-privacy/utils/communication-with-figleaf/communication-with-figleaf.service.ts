@@ -44,7 +44,6 @@ export class CommunicationWithFigleafService {
 				return this.sendTestMessage().pipe(
 					catchError((err) => {
 						console.error('send test message error: ', err);
-						figleafConnectSubscription.unsubscribe();
 						return EMPTY;
 					}),
 				);
