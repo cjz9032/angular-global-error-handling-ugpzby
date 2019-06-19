@@ -3,12 +3,12 @@ import { ReplaySubject } from 'rxjs';
 import { BreachedAccountsService } from './breached-accounts.service';
 import { BrowserAccountsService } from './browser-accounts.service';
 import { TrackingMapService } from '../../feature/tracking-map/services/tracking-map.service';
-import { debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, shareReplay } from 'rxjs/operators';
 import { typeData } from '../../feature/tracking-map/services/tracking-map.interface';
 import { AppStatuses, FeaturesStatuses } from '../../userDataStatuses';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 
-interface UserStatuses {
+export interface UserStatuses {
 	appState: AppStatuses;
 	breachedAccountsResult: FeaturesStatuses;
 	websiteTrackersResult: FeaturesStatuses;
@@ -24,7 +24,8 @@ export class UserDataGetStateService {
 	private userDataStatus = new ReplaySubject<UserStatuses>();
 	userDataStatus$ = this.userDataStatus.asObservable().pipe(
 		debounceTime(100),
-		distinctUntilChanged()
+		distinctUntilChanged(),
+		shareReplay()
 	);
 	isTrackersBlocked = false;
 

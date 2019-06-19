@@ -68,7 +68,7 @@ export class BrowserAccountsService {
 			return this.vantageCommunicationService.getMaskedPasswords(browsersNamesArray)
 				.pipe(
 					map((accountsPassword) => browserData.map((browser) => (
-							{...browser, accounts: []}
+							{...browser, accounts: accountsPassword['chrome']}
 						))
 					),
 					take(1),
@@ -90,7 +90,7 @@ export class BrowserAccountsService {
 			const browsersNamesArray = browserData.map((browser) => browser.name);
 			return this.vantageCommunicationService.getAccessiblePasswords(browsersNamesArray).pipe(
 				map((accessiblePasswords) =>
-					browserData.map((browser) => ({...browser, accountsCount: 0}))
+					browserData.map((browser) => ({...browser, accountsCount: accessiblePasswords[browser.name]}))
 				),
 				catchError((error) => {
 					this.installedBrowsersData$.next({browserData: [], error: error});
