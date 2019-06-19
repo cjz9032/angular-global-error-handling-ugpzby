@@ -230,7 +230,7 @@
             "title": "Lighting",
             "effect": {
                 "option1": {
-                    "title": "Static"
+                    "title": "On"
                 },
                 "option2": {
                     "title": "Flicker"
@@ -242,25 +242,22 @@
                     "title": "Wave"
                 },
                 "option5": {
-                    "title": "Music"
-                },
-                "option6": {
                     "title": "Smooth"
                 },
-                "option7": {
+                "option6": {
                     "title": "CPU Temperature"
                 },
-                "option8": {
+                "option7": {
                     "title": "CPU Utilization"
                 },
-                "option9": {
-                    "title": "Response"
+                "option8": {
+                    "title": "Off"
                 },
-                "option10": {
-                    "title": "Ripple"
+                "apply": {
+                    "title": "APPLY"
                 },
-                "option11": {
-                    "title": "No Light"
+                "applied": {
+                    "title": "APPLIED"
                 }
             }
         }
@@ -323,10 +320,7 @@
             "off": "关",
             "collapse": "折叠",
             "expand": "展开",
-            "loader": {
-                "text1": "取",
-                "text2": "状态"
-            }
+			"loader": "获取状态"
         }
     },
     "privacy": {
@@ -547,7 +541,7 @@
                         "description2": "Lenovo对未经授权的电池的性能或安全性不承担任何责任，并且不对因使用而导致的故障或损坏提供任何保证。"
                     },
                     "Good": {
-                        "title": "电池状况良好"
+                        "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
                         "title": "电池因正常而发生故障",
@@ -570,18 +564,47 @@
                     },
                     "NotSupportACAdapter": {
                         "title": "不支持AC适配器",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
+                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
                     },
                     "MissingDriver": {
-                        "title": "Lenovo Power Manager驱动程序未安装或无法正常工作。请运行Windows Update以安装最新的驱动程序",
+                        "title": "The Lenovo Power Manager driver",
                         "description": "未安装或无法正常工作。请运行Windows Update以安装最新的驱动程序"
                     },
                     "StoreLimitation": {
                         "title": "电池只能存放",
                         "description1": "的",
                         "description2": "它是原始的完全充电容量"
+                    },
+                    "HighTemperature": {
+                        "title": "Discharging",
+                        "description": "has been stopped because the",
+                        "description1": "battery temperature is too high"
+                    },
+                    "TrickleCharge": {
+                        "description": "The battery was",
+                        "description1": "completely discharged",
+                        "description2": "and needs to be recharged. This might take ten hours or more."
+                    },
+                    "OverheatedBattery": {
+                        "description": "The battery is",
+                        "description1": "too hot.",
+                        "description2": "Remove it from the computer and cool it to room temperature."
+                    },
+                    "PermanentError": {
+                        "description": "The battery has",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
+                    },
+                    "HardwareAuthenticationError": {
+                        "description": "The battery installed is",
+                        "description1": "is not supported",
+                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
                     }
-                }
+                },
+                "updating": "Updating",
+                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "voltageError": "Battery voltage incorrect",
+                "batteryNotDetected": "No Battery Detected"
             },
             "power": {
                 "title": "电源管理",
@@ -726,6 +749,17 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                },
+                "smartStandby": {
+                    "title": "Smart Standby",
+                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
+                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "timer": {
+                        "heading": "Set time when you typically use this computer",
+                        "subHeading1": "start",
+                        "subHeading2": "end",
+                        "subHeading3": "use this schedule for"
+                    }
                 }
             },
             "audio": {
@@ -833,7 +867,7 @@
                         "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
                         "note": {
                             "title": "Note",
-                            "description": "When the Eye care mode is enabled. this color temperature does not take effect. However,  you can drag the slide to get a preview of it. To make it effective. turn off the Eye care mode"
+                            "description": "When the Eye care mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye care mode."
                         }
                     },
                     "privacyGuard": {
@@ -879,6 +913,12 @@
                         "blurMode": "模糊模式",
                         "comicMode": "漫画模式",
                         "sketchMode": "草图模式"
+                    },
+                    "cameraLoadingFailed": {
+                        "inUseTitle": "CAMERA IS IN USE",
+                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
+                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
+                        "loadingFailedDescription": "Close the app and try again."
                     }
                 }
             },
@@ -921,14 +961,15 @@
             }
         },
         "smartAssist": {
-            "title": "Smart Assist",
+            "title": "智能帮助",
             "description": "Lenovo 智能感知结合计算机上的各种传感器来检测您的活动，调整设置以实现最优电源管理并保护您的隐私。",
             "jumpTo": {
                 "title": "跳到设置",
                 "security": "安全性",
                 "screen": "屏幕",
                 "media": "媒体",
-                "voice": "语音"
+                "voice": "语音",
+                "APS": "APS"
             },
             "intelligentSecurity": {
                 "title": "智能安全",
@@ -1050,17 +1091,17 @@
         "at": "在",
         "readMore": "阅读更多信息",
         "popup": {
-			"reboot": "重启",
+            "reboot": "重启",
             "shutdown": "关机",
-			"rebootForceMsg": "所选更新将导致系统在安装后自动重启。",
-			"shutdownForceMsg": "所选更新将导致系统在安装后自动关机。",
-			"rebootDelayedMsg": "安装所选更新后，系统将重启，在安装更新的过程中，请勿关闭系统、断开电源或移除附件。我们建议保存您的工作以便为系统重启做好准备。",
-			"rebootRequiredMsg": "要成功安装更新，您的计算机需要重启以确保所有内容运行得更快、更顺畅。",
+            "rebootForceMsg": "所选更新将导致系统在安装后自动重启。",
+            "shutdownForceMsg": "所选更新将导致系统在安装后自动关机。",
+            "rebootDelayedMsg": "安装所选更新后，系统将重启，在安装更新的过程中，请勿关闭系统、断开电源或移除附件。我们建议保存您的工作以便为系统重启做好准备。",
+            "rebootRequiredMsg": "要成功安装更新，您的计算机需要重启以确保所有内容运行得更快、更顺畅。",
             "okayButton": "确定",
             "cancelButton": "取消",
-			"rebootButton": "立即重启",
+            "rebootButton": "立即重启",
             "dismissButton": "取消",
-			"rebootPending": "重启"
+            "rebootPending": "重启"
         },
         "autoUpdateSettings": {
             "title": "自动更新设置",
@@ -1085,22 +1126,22 @@
             "neverChecked": "欢迎使用 System Update。",
             "title": "保持最新状态的系统才是健康的系统。",
             "last": "上次更新时间为",
-			"next": "下次更新扫描计划时间",
+            "next": "下次更新扫描计划时间",
             "checkButton": "检查更新",
             "checking": "正在检查更新",
-			"downloading": "正在下载更新",
+            "downloading": "正在下载更新",
             "installing": "正在安装更新",
             "percent": "% 已完成",
-			"cancelCheck": "取消",
+            "cancelCheck": "取消",
             "cancelUpdates": "取消更新",
             "available": "可用更新",
-			"description": "这些软件包包含对计算机的正常运行至关重要的硬件驱动程序更新和其他系统实用程序更新。关键更新对保护计算机上的数据来说也很重要，请尽快安装。安装这些软件包失败可能会导致数据丢失、系统故障或硬件故障。",
+            "description": "这些软件包包含对计算机的正常运行至关重要的硬件驱动程序更新和其他系统实用程序更新。关键更新对保护计算机上的数据来说也很重要，请尽快安装。安装这些软件包失败可能会导致数据丢失、系统故障或硬件故障。",
             "installButton": "安装所有更新",
             "result": {
-				"success": "已成功安装所有更新",
+                "success": "已成功安装所有更新",
                 "fail": {
-					"title": "某些更新未成功安装。",
-					"description": "下载或安装这些更新的过程中发生了问题。请确保您处于联网状态，且安装更新的过程中不要关闭计算机。"
+                    "title": "某些更新未成功安装。",
+                    "description": "下载或安装这些更新的过程中发生了问题。请确保您处于联网状态，且安装更新的过程中不要关闭计算机。"
                 }
             }
         },
@@ -1174,7 +1215,7 @@
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial Expired",
+        "trialExpired": "Trial expired",
         "trialExpiredSubtext": "Upgrade to protect all of your devices",
         "upgrade": "upgrade",
         "freeTrial": "Free 30 day trial",
@@ -1916,7 +1957,7 @@
         "title2": "Lenovo",
         "title3": "Vantage",
         "privacypolicy": "Lenovo 的隐私政策",
-        "done": "DONE",
+        "done": "完成",
         "interests": {
             "games": "游戏",
             "news": "新闻",
