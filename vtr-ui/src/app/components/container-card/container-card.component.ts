@@ -97,7 +97,7 @@ export class ContainerCardComponent implements OnInit, AfterViewInit, OnChanges 
 
 	articleClicked(articleId) {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
-			backdrop: 'static',
+			backdrop: true,/*'static',*/
 			size: 'lg',
 			centered: true,
 			windowClass: 'Article-Detail-Modal',
