@@ -43,7 +43,10 @@
 
 		<button class="breached-accounts__preview-link"
 				(click)="showEmailScanner()"
-				*ngIf="!(isFigleafReadyForCommunication$ | async) && (emailWasScanned$ | async) && !isShowEmailScanner">
+				*ngIf="!(isFigleafReadyForCommunication$ | async) &&
+						(emailWasScanned$ | async) &&
+						!isShowEmailScanner &&
+						!(breachedAccounts$ | async)?.length">
 			<span>Check another email</span>
 		</button>
 
