@@ -123,6 +123,7 @@
 			background-color: #FFFFFF;
 			box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
 			margin-bottom: 2rem;
+			height: 16.2rem;
 			padding: 1rem;
 			cursor: text;
 			font-size: 1.6rem;
@@ -130,6 +131,12 @@
 			user-select: all;
 			overflow-y: auto;
 		}
+
+		@media screen and (max-height: 600px) {
+				.user-comment {
+					height: 11rem;
+				}
+			}
 
 		.button {
 			text-transform: uppercase;
@@ -166,8 +173,9 @@
 
 			.dropdown-list {
 				position: absolute;
-				top: 5rem;
-				left: 0;
+				top: 5rem !important;
+				left: 0 !important;
+				transform: translate(0px, 0px) !important;
 				z-index: 1000;
 				text-align: left;
 				list-style: none;
@@ -213,8 +221,8 @@
 
 			@media screen and (max-height: 600px) {
 				.dropdown-list {
-					top: 4rem;
-					padding: 1rem 1rem;
+					top: 4rem !important;
+					padding: 1rem;
 					max-width: 24rem;
 
 					.menu-pointer {
@@ -236,7 +244,7 @@
 			line-height: 5rem;
 			margin-left: 1rem;
 			color: $shade_darkest;
-			cursor: default;
+			cursor: pointer;
 
 			&:hover {
 				opacity: .7;
