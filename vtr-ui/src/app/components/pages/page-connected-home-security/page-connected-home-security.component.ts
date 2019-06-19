@@ -49,7 +49,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	homeSecurityOverviewMyDevice: HomeSecurityOverviewMyDevice;
 	notificationItems: HomeSecurityNotifications;
 	account: HomeSecurityAccount;
-
+	isOnline = true;
 	testStatus = ['lessDevices-secure', 'moreDevices-needAttention', 'noneDevices', 'trialExpired', 'lessDevices-needAttention', 'moreDevices-secure', 'localAccount'];
 
 	constructor(
@@ -98,15 +98,21 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 			this.account = cacheAccount;
 		}
 		if (this.connectedHomeSecurity.account) {
-			this.account = new HomeSecurityAccount(this.connectedHomeSecurity.account);
-			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, this.account);
+			this.account = new HomeSecurityAccount(this.connectedHomeSecurity.account, this.modalService);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, {
+				state: this.account.state,
+				expiration: this.account.expiration,
+				standardTime: this.account.standardTime,
+				device: this.account.device,
+				allDevice: this.account.allDevice,
+			});
 		}
 		const cacheNotifications = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityNotifications);
 		if (cacheNotifications) {
 			this.notificationItems = cacheNotifications;
 		}
 
-		if(this.connectedHomeSecurity.notifications){
+		if (this.connectedHomeSecurity.notifications) {
 			this.notificationItems = new HomeSecurityNotifications(this.connectedHomeSecurity.notifications);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityNotifications, this.notificationItems)
 		}
@@ -117,8 +123,14 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityMyDevice, this.homeSecurityOverviewMyDevice);
 			}
 			if (chs.account) {
-				this.account = new HomeSecurityAccount(chs.account);
-				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, this.account);
+				this.account = new HomeSecurityAccount(chs.account, this.modalService);
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, {
+					state: this.account.state,
+					expiration: this.account.expiration,
+					standardTime: this.account.standardTime,
+					device: this.account.device,
+					allDevice: this.account.allDevice,
+				});
 			}
 			if (chs.overview.allDevices && chs.overview.allDevices.length > 0) {
 				this.allDevicesInfo = new HomeSecurityAllDevice(chs.overview);
@@ -241,6 +253,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	}
 
 	onUpgradeAccount() {
+		this.isOnline = !this.isOnline;
 		this.connectedHomeSecurity.account.purchase();
 	}
 

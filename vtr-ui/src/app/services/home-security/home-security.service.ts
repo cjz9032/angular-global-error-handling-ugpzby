@@ -73,13 +73,15 @@ export class HomeSecurityMockService {
 			]
 		},
 		notifications:  {
-			value:[
-			{type: CHSNotificationType.connectedUnsafeNetwork, time: new Date(), content: new Map([['connectedUnsafeNetwork','ThinkPad T490s']])},
-			{type: CHSNotificationType.unknownDeviceConnected, time: new Date('2019-6-18 6:33:00'), content: new Map([['unknownDeviceConnected','ThinkPad T490s']])},
-			{type: CHSNotificationType.applianceDisconnected, time: new Date('2017-12-18 13:33:00'), content: new Map([['applianceDisconnected','ThinkPad T490s']])},
-			{type: CHSNotificationType.vulnerableDeviceDetected, time: new Date('2018-6-18 13:33:00'), content: new Map([['vulnerableDeviceDetected','ThinkPad T490s']])},
-			{type: CHSNotificationType.homeNetworkUnsafe, time: new Date('2019-6-17 13:33:00'), content: new Map([['homeNetworkUnsafe','ThinkPad T490s']])},
-
+			value: [
+			{type: CHSNotificationType.connectedUnsafeNetwork, time: new Date(), content: new Map([['Unsafe network connection', 'ThinkPad T490s']])},
+			{type: CHSNotificationType.unknownDeviceConnected, time: new Date('2019-6-18 6:33:00'), content: new Map([['Device disconnected', 'ThinkPad T490s']])},
+			{type: CHSNotificationType.applianceDisconnected, time: new Date('2017-12-18 13:33:00'), content: new Map([['Unsafe device detected', 'ThinkPad T490s']])},
+			{type: CHSNotificationType.vulnerableDeviceDetected, time: new Date('2018-6-18 13:33:00'), content: new Map([['New device detected', 'ThinkPad T490s']])},
+			{type: CHSNotificationType.homeNetworkUnsafe, time: new Date('2019-6-17 13:33:00'), content: new Map([['Network unsafe', 'ThinkPad T490s']])},
+			{type: CHSNotificationType.applianceDisconnected, time: new Date('2017-12-18 13:33:00'), content: new Map([['Unsafe network connection', 'ThinkPad T490s']])},
+			{type: CHSNotificationType.vulnerableDeviceDetected, time: new Date('2018-6-18 13:33:00'), content: new Map([['Device disconnected', 'ThinkPad T490s']])},
+			{type: CHSNotificationType.homeNetworkUnsafe, time: new Date('2019-6-17 13:33:00'), content: new Map([['Unsafe device detected', 'ThinkPad T490s']])},
 		]
 		},
 		on(type, handler) {
