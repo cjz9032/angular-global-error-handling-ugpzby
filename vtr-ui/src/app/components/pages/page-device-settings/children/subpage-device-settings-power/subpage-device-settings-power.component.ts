@@ -49,7 +49,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	public responseData: any[] = [];
 	machineType: any;
-	chargeOptions: number[] = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
+	chargeOptions: number[] = [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
 	startAtChargeOptions: number[] = this.chargeOptions.slice(0, this.chargeOptions.length - 1);
 	stopAtChargeOptions: number[] = this.chargeOptions.slice(1, this.chargeOptions.length);
 
@@ -790,9 +790,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.powerService
 				.getChargeThresholdInfo()
 				.then((res) => {
+					console.log('*************response here', res);
 					this.responseData = res || [];
-
-					//this.responseData = [{startValue: 37, stopValue: 88, checkBoxValue : true, isOn: true}];
+					// this.responseData = [{batteryNum: 1, startValue: 25, stopValue: 35, checkBoxValue : true, isOn: true, isCapable: true},
+					// 	{batteryNum:2, startValue: 57, stopValue: 78, checkBoxValue : false, isOn: true}];
 					// if (this.responseData && this.responseData.length > 0) {
 					// 	this.selectedStartAtChargeVal = this.responseData[0].startValue;
 					// 	this.selectedStopAtChargeVal = this.responseData[0].stopValue;
@@ -804,7 +805,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					// 		this.selectedStopAtChargeVal1 = this.responseData[1].stopValue;
 					// 	}
 					// }
-
 					if (this.responseData && this.responseData.length > 0) {
 						this.selectedStartAtChargeVal = this.responseData[0].startValue - (this.responseData[0].startValue % 5);
 						this.selectedStopAtChargeVal = this.responseData[0].stopValue - (this.responseData[0].stopValue % 5);
@@ -850,35 +850,64 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			.then((response: any) => {
 				console.log('getBatteryDetails', response);
 				this.batteryGauge = response.batteryIndicatorInfo;
-				if (this.batteryGauge.percentage > this.selectedStopAtChargeVal || this.selectedStopAtChargeVal1) {
+				// if (this.batteryGauge.percentage > this.selectedStopAtChargeVal || this.selectedStopAtChargeVal1) {
+				// 	this.showWarningMsg = true;
+				// }
+				if (this.batteryGauge.percentage > this.selectedStopAtChargeVal1 || this.batteryGauge.percentage > this.selectedStopAtChargeVal) {
 					this.showWarningMsg = true;
-				}
+		   } else{
+			   this.showWarningMsg = false;	
+		   }
+
 			}).catch(error => {
 				console.error('getBatteryDetails error', error);
 			});
 	}
+	public showBatteryThresholdsettings(event){
+		this.showBatteryThreshold = event;
+		console.log(this.showBatteryThreshold);
+		if(this.showBatteryThreshold){
+		this.responseData.forEach(batteryInfo =>{
+			this.setChargeThresholdValues(batteryInfo, batteryInfo.batteryNum);
+		})
+	} else{
+			this.powerService.setToggleOff(this.responseData.length).then((value: any) => {
+				console.log('change threshold value------------------->>>>>>>>>', value);
+			})
+			.catch(error => {
+				console.error('change threshold value', error);
+			});
+		}
+	
+	}
+
 	public setChargeThresholdValues(batteryDetails: any, batteryNum: number) {
 		let batteryInfo: any = {};
-		if (this.batteryGauge.percentage > batteryDetails.stopChargeValue) {
-			this.showWarningMsg = true;
-		} else {
-			this.showWarningMsg = false;
+		if(batteryNum ==1){
+			this.selectedStopAtChargeVal = batteryDetails.stopValue;
 		}
-		try {
+		if(batteryNum ==2){
+			this.selectedStopAtChargeVal1 = batteryDetails.stopValue;
+		}
+		if (this.batteryGauge.percentage > this.selectedStopAtChargeVal1 || this.batteryGauge.percentage > this.selectedStopAtChargeVal) {
+			 		this.showWarningMsg = true;
+			} else{
+				this.showWarningMsg = false;	
+			}
+			try {
 			if (this.powerService.isShellAvailable) {
 				batteryInfo = {
 					batteryNumber: batteryNum,
-					startValue: batteryDetails.startChargeValue,
-					stopValue: batteryDetails.stopChargeValue,
-					checkBoxValue: batteryDetails.autoChecked
+					startValue: batteryDetails.startValue,
+					stopValue: batteryDetails.stopValue,
+					checkBoxValue: batteryDetails.checkBoxValue
 				};
-				console.log('set values -->', batteryInfo);
+				 console.log('set values@@@@@@@@@@@@@@@@@ -->', batteryInfo);
 
 				this.powerService
 					.setChargeThresholdValue(batteryInfo)
 					.then((value: any) => {
-						console.log('change threshold value------------------->>>>>>>>>', value);
-						// this.getBatteryThresholdInformation();
+						// console.log('change threshold value------------------->>>>>>>>>', value);
 					})
 					.catch(error => {
 						console.error('change threshold value', error);
@@ -888,30 +917,34 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.error(error.message);
 		}
 	}
-	public showBatteryThresholdsettings(event){
-		this.showBatteryThreshold = event;
-	}
+	
 
 	public autoCheckSelected(batteryDetails: any, batteryNum: any) {
 		let batteryInfo: any = {};
+		if(batteryNum ==1){
+			this.selectedStopAtChargeVal = batteryDetails.stopValue;
+		}
+		if(batteryNum ==2){
+			this.selectedStopAtChargeVal1 = batteryDetails.stopValue;
+		}
+		if (this.batteryGauge.percentage > this.selectedStopAtChargeVal1 || this.batteryGauge.percentage > this.selectedStopAtChargeVal) {
+			 		this.showWarningMsg = true;
+			} else{
+				this.showWarningMsg = false;	
+			}		
+	
 		if (this.powerService.isShellAvailable) {
 			try {
 				if (batteryDetails && batteryNum) {
 					batteryInfo = {
 						batteryNumber: batteryNum,
-						startValue: batteryDetails.startChargeValue,
-						stopValue: batteryDetails.stopChargeValue,
-						checkBoxValue: batteryDetails.autoChecked
+						startValue: batteryDetails.startValue,
+						stopValue: batteryDetails.stopValue,
+						checkBoxValue: batteryDetails.checkBoxValue
 					};
 					console.log('selected battery information here ------>', batteryInfo);
 					this.powerService
 						.setCtAutoCheckbox(batteryInfo);
-					// .then((value: any) => {
-					// 	console.log(value);
-					// })
-					// .catch(error => {
-					// 	console.error(error);
-					// });
 				}
 			} catch (error) {
 				console.error(error.message);
