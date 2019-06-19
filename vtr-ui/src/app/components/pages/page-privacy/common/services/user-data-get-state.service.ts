@@ -25,7 +25,7 @@ export class UserDataGetStateService {
 	userDataStatus$ = this.userDataStatus.asObservable().pipe(
 		debounceTime(100),
 		distinctUntilChanged(),
-		shareReplay()
+		shareReplay(1)
 	);
 	isTrackersBlocked = false;
 
