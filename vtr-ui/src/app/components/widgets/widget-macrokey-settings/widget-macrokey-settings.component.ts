@@ -17,7 +17,7 @@ import { MacroKeyInputChange } from 'src/app/data-models/gaming/macrokey/macroke
 @Component({
 	selector: 'vtr-widget-macrokey-settings',
 	templateUrl: './widget-macrokey-settings.component.html',
-	styleUrls: ['./widget-macrokey-settings.component.scss']
+	styleUrls: [ './widget-macrokey-settings.component.scss' ]
 })
 export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	macroKeyOptions: any = [
@@ -56,7 +56,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		private router: Router,
 		private commonService: CommonService,
 		private gamingCapabilityService: GamingAllCapabilitiesService
-	) { }
+	) {}
 
 	ngOnInit() {
 		this.gamingProperties.macroKeyFeature = this.gamingCapabilityService.getCapabilityFromCache(
@@ -125,7 +125,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	}
 
 	redirectBack() {
-		this.router.navigate(['dashboard']);
+		this.router.navigate([ 'dashboard' ]);
 	}
 
 	onGamingMacroKeyInitializeEvent(macroKeyTypeEventResponse: any) {
@@ -198,6 +198,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	onRecordingChanged(recordingChangeData) {
 		this.isRecording = recordingChangeData.recordingStatus;
 		if (this.isRecording) {
+			this.macroKeyInputData.macro.inputs = [];
 			this.macroKeyMessageData = '';
 			this.macroKeyService.setStartRecording(this.numberSelected.key);
 			this.shellService.registerEvent(
