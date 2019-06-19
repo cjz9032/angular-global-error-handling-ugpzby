@@ -323,10 +323,7 @@
             "off": "إيقاف",
             "collapse": "انهدام",
             "expand": "وسعت",
-            "loader": {
-                "text1": "جلب",
-                "text2": "الحالة"
-            }
+            "loader": "Fetching <br> Status"
         }
     },
     "privacy": {
