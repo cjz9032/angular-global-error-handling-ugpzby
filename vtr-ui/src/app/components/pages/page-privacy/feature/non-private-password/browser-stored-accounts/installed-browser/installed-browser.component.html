@@ -37,6 +37,10 @@
 			</button>
 		</ng-container>
 		<ng-container *ngIf="isFigleafInstalled">
+			<button disabled *ngIf="installedBrowser.accountsCount === null"
+					class="installed-browser__btn installed-browser__btn--disabled">
+				Details
+			</button>
 			<div *ngIf="installedBrowser.accountsCount === 0" class="accounts-safe"></div>
 			<button class="installed-browser__btn installed-browser__btn--action"
 					*ngIf="installedBrowser.accountsCount > 0"

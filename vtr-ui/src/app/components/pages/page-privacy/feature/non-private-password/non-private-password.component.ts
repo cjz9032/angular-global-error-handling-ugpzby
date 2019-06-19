@@ -38,10 +38,16 @@ export class NonPrivatePasswordComponent implements OnInit {
 			'If you need a strong one, create it with Lenovo Privacy by FigLeaf and store it on your PC, completely encrypted.'
 	};
 
-	isShowTryBlock$ = this.userDataGetStateService.userDataStatus$.pipe(
+	isNonPrivatePasswordWasScanned$ = this.userDataGetStateService.userDataStatus$.pipe(
 		map((userDataStatus) =>
 			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.undefined &&
 			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.error),
+		distinctUntilChanged(),
+	);
+
+	isShowAccountsStored$ = this.userDataGetStateService.userDataStatus$.pipe(
+		map((userDataStatus) =>
+			userDataStatus.nonPrivatePasswordResult === FeaturesStatuses.undefined),
 		distinctUntilChanged(),
 	);
 
