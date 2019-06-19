@@ -319,14 +319,11 @@
         },
         "ui": {
             "back": "ZPĚT",
-            "on": "On",
-            "off": "Off",
+            "on": "ON",
+            "off": "OFF",
             "collapse": "Kolaps",
             "expand": "Rozšířit",
-            "loader": {
-                "text1": "Okouzlující",
-                "text2": "Postavení"
-            }
+            "loader": "Fetching <br> Status"
         }
     },
     "privacy": {
