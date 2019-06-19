@@ -1,10 +1,9 @@
 <div class="vtr-page-connected-home-security vtr-page">
     <div class="row vtr-page-header">
-		<div class="col vtr-col">
-			<vtr-header-main [backarrow]="'&lt; '"
-				[back]="'common.ui.back' | translate"
-				[title]="'homeSecurity.title' | translate"></vtr-header-main>
-		</div>
+        <div class="col vtr-col">
+            <vtr-header-main [backarrow]="'&lt; '" [back]="'common.ui.back' | translate"
+                [title]="'homeSecurity.title' | translate"></vtr-header-main>
+        </div>
     </div>
     <div class="row vtr-page-content">
         <div class="col vtr-col">
@@ -18,6 +17,7 @@
                                         <vtr-widget-home-security-device
                                             [device]="account.device"
                                             [allDevice]="account.allDevice"
+                                            (upgradeAccount)="onUpgradeAccount()"
                                           ></vtr-widget-home-security-device>
                                     </div>
                                 </div>
@@ -27,19 +27,19 @@
                                         <div class="container-fluid sub-container">
                                             <div class="row sub-title">{{'homeSecurity.myDevice' | translate}}</div>
                                             <div class="row container-fluid h-50 device-card">
-                                                <vtr-widget-home-security-my-device class="container-fluid" [homeSecurityOverviewMyDevice]="homeSecurityOverviewMyDevice"></vtr-widget-home-security-my-device>
+                                                <vtr-widget-home-security-my-device class="container-fluid"
+                                                    [homeSecurityOverviewMyDevice]="homeSecurityOverviewMyDevice">
+                                                </vtr-widget-home-security-my-device>
                                             </div>
                                             <div class="row sub-title">{{'homeSecurity.allDevices' | translate}}
-                                                <vtr-ui-button
-                                                (click)="switchStatus()"
-                                                [label]="'switch'"></vtr-ui-button>
+                                                <vtr-ui-button (click)="switchStatus()" [label]="'switch'">
+                                                </vtr-ui-button>
                                             </div>
                                             <div class="row container-fluid home-card">
-												<vtr-widget-home-security-all-devices class="container-fluid"
-												[eventEmitter]="eventEmitter"
-												[allDevicesInfo]="allDevicesInfo"
-												[account]="account"
-												(emitter)="haddleChange($event)"></vtr-widget-home-security-all-devices>
+                                                <vtr-widget-home-security-all-devices class="container-fluid"
+                                                    [eventEmitter]="eventEmitter" [allDevicesInfo]="allDevicesInfo"
+                                                    [account]="account" (emitter)="haddleChange($event)">
+                                                </vtr-widget-home-security-all-devices>
                                             </div>
                                         </div>
                                     </div>
@@ -53,23 +53,19 @@
                         <div class="container-fluid">
                             <div class="row mb-40">
                                 <div class="col col-12">
-									<vtr-widget-home-security-account-status
-										[status]="account.state"
-										[standardTime]="account.standardTime"
-										[expiredDate]="account.expiration"
-										(startTrial)="onStartTrial()"
-										(manageAccount)="onManageAccount($event)"
-										(upgradeAccount)="onUpgradeAccount()">
+                                    <vtr-widget-home-security-account-status [status]="account.state"
+                                        [standardTime]="account.standardTime" [expiredDate]="account.expiration"
+                                        (startTrial)="onStartTrial()" (manageAccount)="onManageAccount($event)"
+                                        (upgradeAccount)="onUpgradeAccount()">
                                     </vtr-widget-home-security-account-status>
                                 </div>
                             </div>
                             <div class="row mb-40">
-                                <div class="col col-12">
+                                <div class="col col-12" [ngClass]="{'offline':isOnline}">
                                     <vtr-widget-questions [title]="'homeSecurity.notification' | translate"
                                         [description]="'homeSecurity.recent' | translate "
-										[items]="notificationItems?.notificationItem"
-										[clickable]="false"
-										[chevronVisibility]=false>
+                                        [items]="notificationItems?.notificationItem" [clickable]="false"
+                                        [chevronVisibility]=false>
                                     </vtr-widget-questions>
                                 </div>
                             </div>

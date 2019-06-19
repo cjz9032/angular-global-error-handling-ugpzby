@@ -58,19 +58,17 @@
 					[disabled]="!feedbackForm.value.userComment && feedbackForm.value.qaNewStyle === null && feedbackForm.value.qaPerformance === null && feedbackForm.value.qaUseFrequency === null">
 					{{'dashboard.feedback.form.sendFeedback' | translate}}
 				</button>
-				<div ngbDropdown
+				<div ngbDropdown 
 					class="d-inline-block dropdown-content">
-					<a href="javascript:;"
-						class="dropdown-btn"
-						id="dropdownBasic1"
-						ngbDropdownToggle>
+					<div class="dropdown-btn"
+						id="feedback-dropdown" ngbDropdownToggle>
 						<fa-icon [icon]="['fal', 'angle-down']"></fa-icon>
-					</a>
+					</div>
 					<div class="dropdown-list"
 						ngbDropdownMenu
-						aria-labelledby="dropdownBasic1">
+						aria-labelledby="feedback-dropdown">
 						<div class="menu-pointer"></div>
-						<div class="dropdown-item"
+						<div class="dropdown-item" ngbDropdownItem
 							vtrMetrics
 							metricsItem="btn.SubmitScreenShot"
 							metricsEvent="FeatureClick"

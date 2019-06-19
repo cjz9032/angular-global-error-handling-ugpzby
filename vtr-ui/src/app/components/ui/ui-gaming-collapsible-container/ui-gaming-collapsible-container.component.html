@@ -2,9 +2,9 @@
 	<div class="dropdown">
 		<a class="dropdown-toggle" id="gaming-drop" (click)="toggleOptions(options.curSelected)">
 			<!-- <span>{{ currentOption | translate }}</span> -->
-			<span *ngIf="options.curSelected==1" > {{options.dropOptions[0].name  | translate}}</span>
-			<span *ngIf="options.curSelected==2" > {{options.dropOptions[1].name  | translate}}</span>
-			<span *ngIf="options.curSelected==3" > {{options.dropOptions[2].name  | translate}}</span>
+			<span> {{currentOption  | translate}}</span>
+			<!-- <span *ngIf="options.curSelected==2" > {{options.dropOptions[1].name  | translate}}</span>
+			<span *ngIf="options.curSelected==3" > {{options.dropOptions[2].name  | translate}}</span> -->
 			<i class="icon icon-arrowdown"></i>
 		</a>
 		<ng-container *ngIf="showOptions">

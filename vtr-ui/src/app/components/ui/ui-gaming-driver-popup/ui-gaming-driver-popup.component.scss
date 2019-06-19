@@ -3,7 +3,7 @@
 ui-gaming-driver-popup {
   position: absolute;
   width: 55rem;
-  padding: 3rem 5rem;
+  padding: 3rem 2rem 3rem 4rem;
   background: $gaming_lightest;
   z-index: 9;
   border-radius: 1rem;
@@ -29,41 +29,63 @@ ui-gaming-driver-popup {
     right: -1.5rem;
     transform: rotate(-45deg);
   }
-  .ui-gaming-driver-popup-head {
-    position: relative;
-    height: 3.2rem;
-    .close {
-      color: $gaming_gstart;
-      position: absolute;
-      right: -2rem;
-      font-size: 3rem;
-    }
+  &.modal-body {
+    padding: 0;
   }
-  .ui-gaming-driver-popup-content {
-    min-height: 12rem;
-    p {
-      color: $main_darkest;
-      font-size: 2.5rem;
-      line-height: 3.6rem;
-    }
+
+  .content-body {
+    min-height: 10rem;
   }
-  .ui-gaming-driver-popup-footer {
+
+  button.close i {
+    font-size: 3rem;
+    color: $main_gstart;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: $main_darkest;
+  }
+
+  hr {
     border-top: 1px solid $screen_dark_30;
-    padding-top: 2.4rem;
-    .btn-rounded {
-      height: 4rem;
-      border-radius: 3rem;
-      min-width: 15rem;
-      border: none;
-      background: $gaming_lighting_gradient;
-      color: $gaming_lightest;
-      font-size: 2rem;
-      text-transform: uppercase;
-      letter-spacing: -0.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+    color: $light-grey;
+    padding: 0.5rem 0;
+  }
+
+  .enable-button {
+    height: 4rem;
+    border-radius: 3rem;
+    min-width: 15rem;
+    border: none;
+    background: $gaming_lighting_gradient;
+    color: $gaming_lightest;
+    font-weight: $weight_600;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: -0.1rem;
+    margin-top: 1rem;
+  }
+
+  .cancel-link {
+    color: $main;
+    font-size: 1.8rem;
+    text-decoration: underline;
+    vertical-align: middle;
+    padding: 0rem 3rem;
+    font-weight: $weight_600;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &:hover {
+      text-decoration: underline;
     }
   }
-  .pop-link{
-		padding-bottom: 0.1rem;
-		border-bottom: 0.2rem solid #4579f0;
-	}
 }
