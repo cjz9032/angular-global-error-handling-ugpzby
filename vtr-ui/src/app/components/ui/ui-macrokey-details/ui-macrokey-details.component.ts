@@ -36,16 +36,27 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 
 	constructor(private macroKeyService: MacrokeyService) {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		const that = this;
+		window.addEventListener(
+			'blur',
+			function() {
+				that.recording = false;
+				const recordingChangeData = {
+					recordingStatus: that.recording,
+					stopType: false
+				};
+				that.isRecording.emit(recordingChangeData);
+			},
+			false
+		);
+	}
 
 	onStartClicked(event) {
 		this.toggleRecording();
 	}
 
 	onStopClicked(event) {
-		if (this.keyData.inputs.length > 0) {
-			this.number.status = true;
-		}
 		this.toggleRecording();
 	}
 
