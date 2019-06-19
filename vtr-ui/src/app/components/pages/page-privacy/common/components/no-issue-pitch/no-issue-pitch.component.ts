@@ -1,4 +1,12 @@
-import { ChangeDetectionStrategy, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import {
+	ChangeDetectionStrategy,
+	ChangeDetectorRef,
+	Component,
+	ElementRef,
+	OnDestroy,
+	OnInit,
+	ViewChild
+} from '@angular/core';
 import { distinctUntilChanged, map, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { RouterChangeHandlerService } from '../../services/router-change-handler.service';
@@ -79,7 +87,8 @@ export class NoIssuePitchComponent implements OnInit, OnDestroy {
 		private routerChangeHandlerService: RouterChangeHandlerService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private countNumberOfIssuesService: CountNumberOfIssuesService,
-		private userDataGetStateService: UserDataGetStateService
+		private userDataGetStateService: UserDataGetStateService,
+		private cdr: ChangeDetectorRef
 	) {
 	}
 
@@ -96,6 +105,7 @@ export class NoIssuePitchComponent implements OnInit, OnDestroy {
 				(currentPath: RoutersName) => {
 					this.isShowPitch$ = this.noIssues[currentPath];
 					this.currentPath = currentPath;
+					this.cdr.detectChanges();
 				}
 			);
 	}

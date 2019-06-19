@@ -6,6 +6,7 @@ import { InstallWidgetPageSettings, SidebarInstallWidgetService } from './sideba
 import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
 import { AppStatuses } from '../../../userDataStatuses';
 import { merge } from 'rxjs';
+import { RoutersName } from '../../../privacy-routing-name';
 
 @Component({
 	selector: 'vtr-sidebar-install-widget',
@@ -26,6 +27,7 @@ export class SidebarInstallWidgetComponent implements OnInit, OnDestroy {
 	isFigleafInstalled = false;
 	isFirstTimeVisitor = false;
 	currentPath = '';
+	routersName = RoutersName;
 
 	constructor(
 		private routerChangeHandler: RouterChangeHandlerService,
