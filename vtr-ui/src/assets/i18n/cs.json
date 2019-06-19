@@ -319,8 +319,8 @@
         },
         "ui": {
             "back": "ZPĚT",
-            "on": "NA",
-            "off": "VYPNUTO",
+            "on": "ON",
+            "off": "OFF",
             "collapse": "Kolaps",
             "expand": "Rozšířit",
             "loader": {

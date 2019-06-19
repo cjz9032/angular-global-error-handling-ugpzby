@@ -42,10 +42,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	primaryCheckBox = false;
 	secondaryCheckBox = false;
-	selectedStopAtChargeVal = 70;
-	selectedStartAtChargeVal = 45;
-	selectedStopAtChargeVal1 = 70;
-	selectedStartAtChargeVal1 = 45;
+	selectedStopAtChargeVal;
+	selectedStartAtChargeVal;
+	selectedStopAtChargeVal1;
+	selectedStartAtChargeVal1;
 
 	public responseData: any[] = [];
 	machineType: any;
@@ -791,15 +791,51 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				.getChargeThresholdInfo()
 				.then((res) => {
 					this.responseData = res || [];
+
+					//this.responseData = [{startValue: 37, stopValue: 88, checkBoxValue : true, isOn: true}];
+					// if (this.responseData && this.responseData.length > 0) {
+					// 	this.selectedStartAtChargeVal = this.responseData[0].startValue;
+					// 	this.selectedStopAtChargeVal = this.responseData[0].stopValue;
+					// 	this.primaryCheckBox = this.responseData[0].checkBoxValue;
+					// 	this.showBatteryThreshold = this.responseData[0].isOn;						
+					// 	if (this.responseData.length === 2) {
+					// 		this.secondaryCheckBox = this.responseData[1].checkBoxValue;
+					// 		this.selectedStartAtChargeVal1 = this.responseData[1].startValue;
+					// 		this.selectedStopAtChargeVal1 = this.responseData[1].stopValue;
+					// 	}
+					// }
+
 					if (this.responseData && this.responseData.length > 0) {
-						this.selectedStartAtChargeVal = this.responseData[0].startValue;
-						this.selectedStopAtChargeVal = this.responseData[0].stopValue;
+						this.selectedStartAtChargeVal = this.responseData[0].startValue - (this.responseData[0].startValue % 5);
+						this.selectedStopAtChargeVal = this.responseData[0].stopValue - (this.responseData[0].stopValue % 5);
 						this.primaryCheckBox = this.responseData[0].checkBoxValue;
-						this.showBatteryThreshold = this.responseData[0].isOn;						
+						this.showBatteryThreshold = this.responseData[0].isOn;
+						if (this.selectedStartAtChargeVal !== this.responseData[0].startValue ||
+							this.selectedStopAtChargeVal !== this.responseData[0].stopValue) {
+								this.powerService.setChargeThresholdValue(									
+									 {
+										batteryNumber: this.responseData[0].batteryNumber,
+										startValue: this.selectedStartAtChargeVal,
+										stopValue: this.selectedStopAtChargeVal,
+										checkBoxValue: this.primaryCheckBox
+									 }			
+									);
+						}
 						if (this.responseData.length === 2) {
 							this.secondaryCheckBox = this.responseData[1].checkBoxValue;
-							this.selectedStartAtChargeVal1 = this.responseData[1].startValue;
-							this.selectedStopAtChargeVal1 = this.responseData[1].stopValue;
+							this.selectedStartAtChargeVal1 = this.responseData[1].startValue - (this.responseData[1].startValue % 5);
+							this.selectedStopAtChargeVal1 = this.responseData[1].stopValue - (this.responseData[1].stopValue % 5);
+							if (this.selectedStartAtChargeVal1 !== this.responseData[1].startValue ||
+								this.selectedStopAtChargeVal1 !== this.responseData[1].stopValue) {
+									this.powerService.setChargeThresholdValue(										
+										{
+											batteryNumber: this.responseData[1].batteryNumber,
+											startValue: this.selectedStartAtChargeVal1,
+											stopValue: this.selectedStopAtChargeVal1,
+											checkBoxValue: this.secondaryCheckBox
+										 }			
+									);
+							}
 						}
 					}
 					this.getBatteryDetails();
@@ -917,11 +953,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public onSmartStandbyToggle (event: any) {
 		this.smartStandbyTimer = event.switchValue;
 
-	}
-
-	public onToggle() {
-		this.isCollapsed = !this.isCollapsed;
-		this.toggle.emit(this.isCollapsed);
 	}
 
 }

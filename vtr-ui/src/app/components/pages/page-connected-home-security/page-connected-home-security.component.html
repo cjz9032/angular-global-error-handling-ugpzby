@@ -16,10 +16,8 @@
                                 <div class="row mb-40 content-container p-40">
                                     <div class="container-fluid">
                                         <vtr-widget-home-security-device
-                                            [login]="account.lenovoIdLoggedIn"
-                                            [state]="account.state"
-                                            (upgradeAccount)="onUpgradeAccount()"
-                                            (startTrial)="onStartTrial()"
+                                            [device]="account.device"
+                                            [allDevice]="account.allDevice"
                                           ></vtr-widget-home-security-device>
                                     </div>
                                 </div>
@@ -37,7 +35,11 @@
                                                 [label]="'switch'"></vtr-ui-button>
                                             </div>
                                             <div class="row container-fluid home-card">
-                                                <vtr-widget-home-security-all-devices class="container-fluid" [eventEmitter]="eventEmitter"></vtr-widget-home-security-all-devices>
+												<vtr-widget-home-security-all-devices class="container-fluid"
+												[eventEmitter]="eventEmitter"
+												[allDevicesInfo]="allDevicesInfo"
+												[account]="account"
+												(emitter)="haddleChange($event)"></vtr-widget-home-security-all-devices>
                                             </div>
                                         </div>
                                     </div>
@@ -65,7 +67,9 @@
                                 <div class="col col-12">
                                     <vtr-widget-questions [title]="'homeSecurity.notification' | translate"
                                         [description]="'homeSecurity.recent' | translate "
-                                        [items]="notifications.items">
+										[items]="notificationItems?.notificationItem"
+										[clickable]="false"
+										[chevronVisibility]=false>
                                     </vtr-widget-questions>
                                 </div>
                             </div>
