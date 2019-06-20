@@ -37,10 +37,10 @@
     font-size: 1.4rem;
   }
 
-  /*  .custom-control-input:disabled ~ .custom-control-label::before {
-    background-color: $light-grey;
-    border-color: $shade;
-  } */
+  .custom-control-input:disabled ~ .custom-control-label::before {
+    // background-color: $light-grey;
+    //border-color: $shade;
+  }
 
   .custom-control-input:disabled ~ .custom-control-label {
     cursor: not-allowed;
