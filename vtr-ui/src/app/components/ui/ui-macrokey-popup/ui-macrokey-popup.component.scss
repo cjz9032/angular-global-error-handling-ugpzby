@@ -56,7 +56,9 @@ ui-popover {
 
   .btn-close {
     button.close {
-      opacity: 0.75;
+      &:hover {
+        opacity: 0.75;
+      }
     }
   }
   .enable-button {

@@ -100,6 +100,8 @@ export class AppComponent implements OnInit {
 		if (!this.allCapablitiyFlag) {
 			this.gamingAllCapabilitiesService.getCapabilities().then((response) => {
 				this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
+			}).catch(err => {
+				console.log(`ERROR in appComponent getCapabilities()`, err);
 			});
 			this.allCapablitiyFlag = true;
 		}
