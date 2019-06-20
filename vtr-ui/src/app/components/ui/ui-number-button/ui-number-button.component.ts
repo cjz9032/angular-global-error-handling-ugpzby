@@ -1,5 +1,5 @@
 import { isUndefined } from 'util';
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, ChangeDetectorRef } from '@angular/core';
 
 @Component({
 	selector: 'vtr-ui-number-button',
@@ -22,16 +22,10 @@ export class UiNumberButtonComponent implements OnInit {
 
 	constructor() {}
 
-	ngOnInit() {
-		console.log(this.selectedNumber);
-	}
+	ngOnInit() {}
 
 	numberClicked(number) {
 		this.isShowingPopup = false;
-		if (this.recordingStatus) {
-			return;
-		}
-
 		if (isUndefined(this.selectedNumber) || this.selectedNumber.key !== number.key) {
 			this.numberSelected.emit(number);
 			this.selectedNumber = number;

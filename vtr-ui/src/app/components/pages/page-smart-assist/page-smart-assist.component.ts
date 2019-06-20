@@ -40,6 +40,7 @@ export class PageSmartAssistComponent implements OnInit {
 	public keepMyDisplay: boolean;
 	public intelligentScreen: IntelligentScreen;
 	public intelligentMedia = new FeatureStatus(false, true);
+	public isIntelligentMediaLoading = true;
 
 	headerMenuItems: PageAnchorLink[] = [
 		// {
@@ -62,11 +63,11 @@ export class PageSmartAssistComponent implements OnInit {
 			path: 'aps',
 			sortOrder: 4
 		},
-		// {
-		// 	title: 'device.smartAssist.jumpTo.voice',
-		// 	path: 'voice',
-		// 	sortOrder: 5
-		// }
+		{
+			title: 'device.smartAssist.jumpTo.voice',
+			path: 'voice',
+			sortOrder: 5
+		}
 	];
 
 	cardContentPositionA: any = {};
@@ -364,6 +365,7 @@ export class PageSmartAssistComponent implements OnInit {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.getVideoPauseResumeStatus()
 					.then((response: FeatureStatus) => {
+						this.isIntelligentMediaLoading = false;
 						this.intelligentMedia = response;
 						console.log('getVideoPauseResumeStatus.then:', response);
 
