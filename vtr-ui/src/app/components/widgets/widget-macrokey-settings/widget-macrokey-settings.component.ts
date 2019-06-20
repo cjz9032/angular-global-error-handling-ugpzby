@@ -17,7 +17,7 @@ import { MacroKeyInputChange } from 'src/app/data-models/gaming/macrokey/macroke
 @Component({
 	selector: 'vtr-widget-macrokey-settings',
 	templateUrl: './widget-macrokey-settings.component.html',
-	styleUrls: [ './widget-macrokey-settings.component.scss' ]
+	styleUrls: ['./widget-macrokey-settings.component.scss']
 })
 export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	macroKeyOptions: any = [
@@ -56,7 +56,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		private router: Router,
 		private commonService: CommonService,
 		private gamingCapabilityService: GamingAllCapabilitiesService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.gamingProperties.macroKeyFeature = this.gamingCapabilityService.getCapabilityFromCache(
@@ -72,7 +72,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		// Load all the cache status for Macrokey
 		this.macroKeyTypeStatus = this.macroKeyService.getMacrokeyTypeStatusCache();
 		this.macroKeyRecordedStatus = this.macroKeyService.getMacrokeyRecordedStatusCache();
-		// this.macroKeyInputData = this.macroKeyService.getMacrokeyInputChangeCache();
+		this.macroKeyInputData = this.macroKeyService.getMacrokeyInputChangeCache();
 	}
 
 	initMacroKeySubpage() {
@@ -125,7 +125,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	}
 
 	redirectBack() {
-		this.router.navigate([ 'dashboard' ]);
+		this.router.navigate(['dashboard']);
 	}
 
 	onGamingMacroKeyInitializeEvent(macroKeyTypeEventResponse: any) {
@@ -172,7 +172,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		if (macroKeyKeyChangeEventData) {
 			this.macroKeyInputData = macroKeyKeyChangeEventData;
 			// Setting the value from cache
-			// this.macroKeyService.setMacrokeyInputChangeCache(this.macroKeyInputData);
+			this.macroKeyService.setMacrokeyInputChangeCache(this.macroKeyInputData);
 			this.numberSelected = this.macroKeyRecordedStatus.filter(
 				(number) => number.key === macroKeyKeyChangeEventData.key
 			)[0];
@@ -236,7 +236,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		if (macroKeyInputChangeData) {
 			console.log(macroKeyInputChangeData);
 			// TODO: Update cache for macrokey type
-			// this.macroKeyService.setMacrokeyInputChangeCache(this.macroKeyInputData);
+			this.macroKeyService.setMacrokeyInputChangeCache(this.macroKeyInputData);
 			this.macroKeyInputData.macro.inputs = macroKeyInputChangeData;
 		}
 	}
