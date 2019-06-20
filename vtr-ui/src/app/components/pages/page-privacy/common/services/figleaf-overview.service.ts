@@ -20,7 +20,7 @@ interface FigleafDashboardMessageResponse {
 	payload: FigleafDashboard;
 }
 
-interface FigleafDashboard {
+export interface FigleafDashboard {
 	totalAccounts: number;
 	maskedAccounts: number;
 	blockedTrackers: number;

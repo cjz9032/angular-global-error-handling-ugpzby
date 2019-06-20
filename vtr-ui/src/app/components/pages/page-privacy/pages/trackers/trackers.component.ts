@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { distinctUntilChanged, map, startWith, tap, withLatestFrom } from 'rxjs/operators';
+import { distinctUntilChanged, map, startWith } from 'rxjs/operators';
 import { UserAllowService } from '../../common/services/user-allow.service';
 import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
