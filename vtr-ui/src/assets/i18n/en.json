@@ -849,14 +849,14 @@
 					"title": "Display",
 					"eyeCareMode": {
 						"title": "Color Temperature in Eye Care Mode",
-						"checkbox": "Schedule eye care mode from sunset to sunrise",
+						"checkbox": "Schedule Eye Care Mode from sunset to sunrise",
 						"options": {
 							"warm": "Warm (Better for eyes)",
 							"cold": "Cold"
 						},
 						"reset": "Reset temperature",
 						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+						"onSunsetToSunriseScheduleDescription": "Schedule Eye Care Mode from sunset to sunrise",
 						"note": {
 							"title": "Note",
 							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
