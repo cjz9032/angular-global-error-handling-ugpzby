@@ -309,7 +309,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	public getLastUpdatedText() {
 		if (this.lastInstallTime && this.lastInstallTime.length > 0) {
-			const installDate = this.commonService.formatLocalDate(this.nextScheduleScanTime);
+			const installDate = this.commonService.formatLocalDate(this.lastInstallTime);
 			const installTime = this.commonService.formatTime(this.lastInstallTime);
 			return `${this.lastUpdatedText} ${installDate} ${this.at} ${installTime}`;
 		}
