@@ -3,7 +3,7 @@ import { BreachedAccount } from '../../../common/services/breached-accounts.serv
 
 @Injectable()
 export class BreachedAccountService {
-	createBreachedAccountsForShow(breachedAccounts: BreachedAccount[]) {
+	getBreachedAccountsForDisplay(breachedAccounts: BreachedAccount[]) {
 		const breachedAccountsForShow = breachedAccounts.filter(x => x.domain !== 'n/a');
 		const otherBreaches = breachedAccounts.filter(x => x.domain === 'n/a');
 

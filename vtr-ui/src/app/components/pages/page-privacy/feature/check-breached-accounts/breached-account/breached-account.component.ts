@@ -18,12 +18,12 @@ export class BreachedAccountComponent implements OnInit, AfterViewInit {
 	@Input() mode: BreachedAccountMode = BreachedAccountMode.FULL;
 	@Input() set breachedAccounts(breachedAccounts: BreachedAccount[]) {
 		const {breachedAccountsForShow, otherBreaches} =
-			this.breachedAccountService.createBreachedAccountsForShow(breachedAccounts);
+			this.breachedAccountService.getBreachedAccountsForDisplay(breachedAccounts);
 		this.breachedAccountsForShow = breachedAccountsForShow;
 		this.otherBreaches = otherBreaches;
 	}
 	@Input() openId = null;
-	@Input() isUserAuthorized: boolean;
+	@Input() isUserAuthorized = false;
 	@Output() verifyClick = new EventEmitter<boolean>();
 
 	breachedAccountsForShow: BreachedAccount[] = [];

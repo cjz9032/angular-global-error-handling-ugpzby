@@ -1,39 +1,9 @@
-<div class="check-breaches">
-	<div *ngIf="(emailWasScanned | async)"
-		class="check-breaches__text-content">
-		<p class="check-breaches__text">
-			Good news —
-			<strong>{{userEmail || 'your email'}}</strong> didn’t come up in our privacy checkup.
-			If you use another email, make sure it’s private too.</p>
-	</div>
-
+<div class="check-breaches" *ngIf="!emailWasScanned">
 	<vtr-check-breaches-form></vtr-check-breaches-form>
-
-	<div *ngIf="(emailWasScanned | async)"
-		class="check-breaches__description check-breaches__description--next-scan">
-		<div class="check-breaches-risks">
-			<div class="check-breaches-risks__text-col">
-				<div class="check-breaches-risks__description">
-					<p class="check-breaches-risks__title">What's the risk?</p>
-					<p class="check-breaches-risks__text">
-						If a site you have an account with gets hacked, your personal info could be available for
-						anyone to see. Lenovo Privacy by FigLeaf lets you know when that happens.
-					</p>
-				</div>
-				<a class="check-breaches-risks__link"
-					routerLink="/privacy/landing">learn more</a>
-			</div>
-			<div class="check-breaches-risks__img-col">
-				<picture class="check-breaches-risks__img">
-					<source
-						srcset="/assets/images/privacy-tab/gray-safe.webp 1x, /assets/images/privacy-tab/gray-safe@2x.webp 2x">
-					<source
-						srcset="/assets/images/privacy-tab/gray-safe.png 1x, /assets/images/privacy-tab/gray-safe@2x.png 2x">
-					<img class="check-breaches-risks__img"
-						src="/assets/images/privacy-tab/gray-safe.png"
-						alt="">
-				</picture>
-			</div>
-		</div>
-	</div>
 </div>
+
+<button class="check-breaches__preview-link"
+		(click)="showEmailScanner()"
+		*ngIf="emailWasScanned">
+	<span>Check another email</span>
+</button>

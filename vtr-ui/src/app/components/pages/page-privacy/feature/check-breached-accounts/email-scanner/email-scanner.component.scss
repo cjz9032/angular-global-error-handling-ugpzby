@@ -23,6 +23,16 @@
 			margin: 5rem 0 0 0;
 		}
 	}
+
+	&__preview-link {
+		@extend %button-link;
+		padding: 0;
+		border-bottom: 1px solid #2D62D8;
+
+		&:before {
+			display: none;
+		}
+	}
 }
 
 .check-breaches-description {

@@ -1,7 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import { FigleafConnectorInstance as FigleafConnector, MessageToFigleaf } from './figleaf-connector';
 import { EMPTY, from, ReplaySubject, timer } from 'rxjs';
-import { catchError, filter, switchMap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
 
 export interface MessageFromFigleaf {
 	type: string;
@@ -16,7 +16,7 @@ export interface MessageFromFigleaf {
 export class CommunicationWithFigleafService {
 	isFigleafInstalled$ = new ReplaySubject(1);
 	private isFigleafReadyForCommunication = new ReplaySubject<boolean>(1);
-	isFigleafReadyForCommunication$ = this.isFigleafReadyForCommunication.asObservable();
+	isFigleafReadyForCommunication$ = this.isFigleafReadyForCommunication.pipe(distinctUntilChanged());
 
 	constructor(private ngZone: NgZone) {
 		FigleafConnector.onConnect(() => {
