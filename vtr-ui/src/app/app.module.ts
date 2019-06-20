@@ -119,6 +119,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
 import { MetricsDirective } from './directives/metrics.directive';
 import { TranslateDirective } from './directives/translate.directive';
+import { LinkStatusDirective } from './directives/link-status.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
 import { ModalCommonConfirmationComponent } from './components/modal/modal-common-confirmation/modal-common-confirmation.component';
@@ -324,6 +325,7 @@ library.add(fal);
 		ModalBatteryChargeThresholdComponent,
 		MetricsDirective,
 		TranslateDirective,
+		LinkStatusDirective,
 		InstallationHistoryComponent,
 		SeparatePascalCasePipe,
 		ModalCommonConfirmationComponent,
