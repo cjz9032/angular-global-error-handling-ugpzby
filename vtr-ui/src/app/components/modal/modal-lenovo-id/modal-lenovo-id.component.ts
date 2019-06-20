@@ -123,27 +123,6 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		}
 	}
 
-	// Capture the html content in webView
-	captureWebViewContent(msWebView) {
-		const promise = new Promise(function (resolve, reject) {
-			const op = msWebView.invokeScriptAsync('eval', 'document.documentElement.outerHTML');
-			op.oncomplete = function (args) {
-				resolve(args.target.result);
-			};
-			op.onerror = function (e) { reject(e); };
-			op.start();
-		});
-
-		promise.then(function (result) {
-			// For result
-			//console.log(result);
-		}).catch(function (error) {
-			// Error
-			console.log(error);
-		});
-		return promise;
-	}
-
 	// error is come from response status of LID contact request
 	popupErrorMessage(error: number) {
 		const modalRef = this.modalService
@@ -208,10 +187,10 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	}
 
 	onEvent(e) {
-		if (!e.target) {
+		if (!e) {
 			return;
 		}
-		const eventData = JSON.parse(e.target);
+		const eventData = JSON.parse(e);
 		if (eventData && eventData.event === 'click' && eventData.id === 'btnClose') {
 			this.userService.sendSigninMetrics('failure(rc=UserCancelled)', this.starterStatus, this.everSignIn, this.appFeature);
 			this.activeModal.dismiss();
@@ -228,10 +207,10 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	//
 	onNavigationStart(e) {
 		const self = this;
-		if (!e.target) {
+		if (!e) {
 			return;
 		}
-		const url = e.target;
+		const url = e;
 		if (url.indexOf("facebook.com/r.php") != -1 ||
 			url.indexOf("facebook.com/reg/") != -1) {
 			// Open new window to launch default browser to create facebook account
@@ -249,10 +228,10 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 
 	onNavigationCompleted(e) {
 		const self = this;
-		if (!e.target) {
+		if (!e) {
 			return;
 		}
-		const eventData = JSON.parse(e.target);
+		const eventData = JSON.parse(e);
 		if (eventData.isSuccess) {
 			if (eventData.url.startsWith('https://passport.lenovo.com/wauthen5/userLogout?')) {
 				return;
