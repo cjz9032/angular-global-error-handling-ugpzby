@@ -539,10 +539,10 @@
 				},
 				"condition": {
 					"Illegal": {
-						"title": "This system may not support battery that",
-						"description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
-						"description1": "Attention:",
-						"description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
+						"title": "Battery 1",
+						"description": "you cannot use the attached battery with this computer.",
+						"description1": "Replace",
+						"description2": "it with a battery of correct model."
 					},
 					"Good": {
 						"title": "The battery is in good condition."
