@@ -1,5 +1,4 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
-import { BreachedAccountMode } from '../../feature/check-breached-accounts/breached-account/breached-account.component';
 import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
@@ -14,7 +13,6 @@ import { EmailScannerService } from '../../feature/check-breached-accounts/servi
 	styleUrls: ['./result.component.scss']
 })
 export class ResultComponent implements OnInit, OnDestroy {
-	readonly breachedAccountMode = BreachedAccountMode;
 	browserStoredAccountsData = {showDetailAction: 'link'};
 
 	isFigleafReadyForCommunication$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;

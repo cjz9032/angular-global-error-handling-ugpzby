@@ -61,7 +61,11 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	}
 
 	openFigleafApp() {
-		this.vantageCommunicationService.openFigleafByUrl('lenovoprivacy:');
+		this.openFigleafByUrl('lenovoprivacy:');
+	}
+
+	openFigleafByUrl(link) {
+		this.vantageCommunicationService.openFigleafByUrl(link);
 	}
 
 	private updateTextForHeader(userEmail: string) {

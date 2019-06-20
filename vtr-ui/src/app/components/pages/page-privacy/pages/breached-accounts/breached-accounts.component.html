@@ -42,6 +42,8 @@
 			*ngIf="(breachedAccounts$ | async)?.length"
 			[breachedAccounts]="(breachedAccounts$ | async)"
 			[isUserAuthorized]="isUserAuthorized$ | async"
+			[isFigleafReadyForCommunication]="isFigleafReadyForCommunication$ | async"
+			(openFigleaf)="openFigleafByUrl($event)"
 			(verifyClick)="startVerify()">
 		</vtr-breached-account>
 	</div>
