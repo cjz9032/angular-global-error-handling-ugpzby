@@ -1,5 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { filter, map, takeUntil } from 'rxjs/operators';
+import { SecureMath } from '@lenovo/tan-client-bridge';
+
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { RouterChangeHandlerService } from '../../../common/services/router-change-handler.service';
 import { Article, ArticlesService } from '../articles.service';
@@ -28,7 +30,7 @@ export class ArticleSidebarComponent implements OnInit, OnDestroy {
 			.subscribe((currentPageSettings) => {
 					if (currentPageSettings.visible) {
 						const articlesForCurrentPage = this.articlesService.getFilteredArticlesByUserStatus();
-						const randomIndex = Math.floor(Math.random() * articlesForCurrentPage.length);
+						const randomIndex = Math.floor(SecureMath.random() * articlesForCurrentPage.length);
 						this.showedArticle = articlesForCurrentPage[randomIndex];
 					} else {
 						this.showedArticle = null;
