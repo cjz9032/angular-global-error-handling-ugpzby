@@ -6,3 +6,13 @@
 	margin-bottom: 5rem;
 	font-weight: $weight-medium;
 }
+.widget-icon{
+	display: flex;
+	justify-content: space-between;
+	@media screen and (max-width:991px){
+		justify-content: flex-start
+	}
+	>div{
+		margin-right: 5rem;
+	}
+}

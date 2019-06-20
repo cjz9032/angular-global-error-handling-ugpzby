@@ -86,20 +86,20 @@
 							</div>
 							<div class="row">
 								<div class="col-12 pr-0">
-									<!--
+									
 									<vtr-widget-permission-note
 										[noteTitle]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.title' | translate"
 										[description]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.description' | translate"
 										[path]="'ms-settings:privacy-location'"
 										*ngIf="enableSunsetToSunrise"></vtr-widget-permission-note>
-										-->
-									<span *ngIf="!enableSunsetToSunrise; else vtrwidgetpermissionnote"></span>
+										
+									<!-- <span *ngIf="!enableSunsetToSunrise; else vtrwidgetpermissionnote"></span>
 									<ng-template #vtrwidgetpermissionnote>
 										<vtr-widget-permission-note
 											[noteTitle]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.title' | translate"
 											[description]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.description' | translate"
 											[path]="'ms-settings:privacy-location'"></vtr-widget-permission-note>
-									</ng-template>
+									</ng-template> -->
 								</div>
 							</div>
 						</vtr-ui-row-switch>

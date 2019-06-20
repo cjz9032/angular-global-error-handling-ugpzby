@@ -10,7 +10,7 @@
 			<div class="col-12">
 				<ul class="list-group list-group-flush">
 					<!-- APS Slider -->
-					<li class="auto-screen-off-block bb">
+					<li class="auto-screen-off-block">
 						<div class="switch">
 							<vtr-ui-row-switch
 								[title]="'device.smartAssist.activeProtectionSystem.activeProtection.title' | translate"
@@ -30,7 +30,7 @@
 							</vtr-ui-aps-slider>
 						</div>
 						<div class="checkbox">
-							<vtr-ui-checkbox [label]="'Ignore repetative shocks, such as that of train or cars'">
+							<vtr-ui-checkbox [label]="'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate">
 							</vtr-ui-checkbox>
 						</div>
 					</li>
@@ -50,9 +50,7 @@
 								<p class="text-uppercase">
 									{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.dropdown-title' | translate }}
 								</p>
-								<vtr-ui-dropdown [list]="intervals"
-									[value]="10">
-								</vtr-ui-dropdown>
+								<vtr-ui-dropdown [list]="intervals" [value]="10"></vtr-ui-dropdown>
 							</section>
 							<section class="col-sm-5">
 								<div class="pt-4 text-center">
