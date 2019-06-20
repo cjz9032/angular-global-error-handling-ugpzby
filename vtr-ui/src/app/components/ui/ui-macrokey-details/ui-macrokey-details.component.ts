@@ -1,22 +1,11 @@
-import {
-	Component,
-	OnInit,
-	Input,
-	Output,
-	EventEmitter,
-	DoCheck,
-	OnChanges,
-	SimpleChange,
-	SimpleChanges
-} from '@angular/core';
-import { MacrokeyService } from './../../../services/gaming/macrokey/macrokey.service';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { isUndefined } from 'util';
 import { MacroKeyMessageData } from 'src/app/enums/macrokey-message-data.enum';
 
 @Component({
 	selector: 'vtr-ui-macrokey-details',
 	templateUrl: './ui-macrokey-details.component.html',
-	styleUrls: [ './ui-macrokey-details.component.scss' ]
+	styleUrls: ['./ui-macrokey-details.component.scss']
 })
 export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 	@Input() number;
@@ -28,24 +17,33 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 	public recording: Boolean = false;
 	public recordsList: any = [];
 	showModal: Boolean = false;
+
 	modalContent = {
 		headerTitle: 'gaming.macroKey.popupContent.timeoutRecording.title',
 		bodyText: 'gaming.macroKey.popupContent.timeoutRecording.body',
 		btnConfirm: false
 	};
 
-	constructor(private macroKeyService: MacrokeyService) {}
+	constructor() {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		const that = this;
+		document.addEventListener(
+			'visibilitychange',
+			function() {
+				if (document.hidden) {
+					that.toggleRecording(true);
+				}
+			},
+			false
+		);
+	}
 
 	onStartClicked(event) {
 		this.toggleRecording();
 	}
 
 	onStopClicked(event) {
-		if (this.keyData.inputs.length > 0) {
-			this.number.status = true;
-		}
 		this.toggleRecording();
 	}
 

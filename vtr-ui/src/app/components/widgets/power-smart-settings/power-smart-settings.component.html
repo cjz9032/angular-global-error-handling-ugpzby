@@ -65,7 +65,6 @@
                 (toggleOnOff)="onIntelligentCoolingToggle($event)">
                 <div class="alignment">
                     <div class="well" *ngIf="showIC===3 && !apsStatus"> {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.apsHint' | translate }} </div>
-                    <div class="well" *ngIf="showIC===14"> {{ selectedModeText }} </div>
                     <div *ngIf="showIC===3 && showIntelligentCoolingModes" class="optimize">
                       {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.optimize' | translate | uppercase }} </div>
                     <div class="row no-gutters" *ngIf="showIntelligentCoolingModes">
@@ -104,7 +103,8 @@
                         [checked]="radioBatterySaving"
                         (change)="changeBatterySaving($event)">
                       </vtr-ui-circle-radio-with-checkbox>
-                    </div>
+					</div>
+					<div class="well" *ngIf="showIC===14"> {{ selectedModeText }} </div>
                 </div>
 
               </vtr-ui-row-switch>

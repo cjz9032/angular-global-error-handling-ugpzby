@@ -320,10 +320,7 @@
 			"off": "OFF",
 			"collapse": "Collapse",
 			"expand": "Expand",
-			"loader": {
-				"text1": "Fetching",
-				"text2": "Status"
-			}
+			"loader": "Fetching <br> Status"
 		}
 	},
 	"privacy": {
@@ -713,7 +710,12 @@
 						"subHeading1": "start",
 						"subHeading2": "end",
 						"subHeading3": "use this schedule for",
-						"toaster": "End time must be within 20 hours from start time"
+						"endTimeNote": "End time must be within 20 hours from Start time",
+						"timeUnits": {
+							"unit1": "Hours",
+							"unit2": "Minutes",
+							"unit3": "AM/PM"
+						}
 					}
 				},
 				"batterySettings": {
@@ -880,7 +882,7 @@
 						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
 						"note": {
 							"title": "Note",
-							"description": "When the Eye care mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye care mode."
+							"description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
 						}
 					},
 					"privacyGuard": {
@@ -1077,6 +1079,34 @@
 				"title": "Zero Touch Video Playback",
 				"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
 				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+			},
+			"voice":{
+				"title": "Voice",
+				"description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
+				"installBtnText": "Install",
+				"launchBtnText": "Launch",
+				"learnMoreText": "Learn More",
+				"voiceToText": {
+					"title": "Voice to text",
+					"caption": "This feature helps to convert your voice into texts."
+				},
+				"translation": {
+					"title": "Translation",
+					"caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+				},
+				"modalPopUp": {
+					"heading": "Get started:",
+					"point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
+					"point2": "Open the file where you want to record the converted text.",
+					"point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
+					"point4": "Select your desired language and click the microphone icon to start.",
+					"point5": "Put the cursor to where you want to edit and begin to speak.",
+					"point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
+					"point7": "Select your desired source language and target language.",
+					"point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
+					"point9": "Click the microphone icon to start speaking",
+					"closeText": "close"
+				}
 			}
 		}
 	},

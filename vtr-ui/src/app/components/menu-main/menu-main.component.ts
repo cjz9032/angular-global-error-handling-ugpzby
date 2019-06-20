@@ -20,6 +20,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { RegionService } from 'src/app/services/region/region.service';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { ModalCommonConfirmationComponent } from '../modal/modal-common-confirmation/modal-common-confirmation.component';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -174,6 +175,20 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 
 	//  to popup Lenovo ID modal dialog
 	OpenLenovoId(appFeature = null) {
+		if (!navigator.onLine) {
+			const modalRef = this.modalService.open(ModalCommonConfirmationComponent, {
+				backdrop: 'static',
+				size: 'lg',
+				centered: true,
+				windowClass: 'common-confirmation-modal'
+			});
+
+			var header = 'lenovoId.ssoErrorTitle';
+			modalRef.componentInstance.CancelText = "";
+			modalRef.componentInstance.header = header;
+			modalRef.componentInstance.description = 'lenovoId.ssoErrorNetworkDisconnected';
+			return;
+		}
 		const modal: NgbModalRef = this.modalService.open(ModalLenovoIdComponent, {
 			backdrop: 'static',
 			centered: true,

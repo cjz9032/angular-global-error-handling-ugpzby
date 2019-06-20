@@ -49,7 +49,7 @@
 					<div class="recorded-data" *ngIf="keyData.inputs.length > 0">
 						<vtr-ui-macrokey-recorded-list [number]="number" [isNumberpad]="isNumberpad"
 							[recordingStatus]="recording" [recordsData]="keyData"
-							(deleteRecords)="recordsDelete($event)" (onClearAll)="clearRecords($event)">
+							(deleteRecords)="recordsDelete($event)" (clearAll)="clearRecords($event)">
 						</vtr-ui-macrokey-recorded-list>
 					</div>
 				</div>
@@ -57,7 +57,7 @@
 			<div *ngIf="number && number.status && keyData.inputs.length > 0">
 				<vtr-ui-macrokey-recorded-list [number]="number" [isNumberpad]="isNumberpad"
 					[recordingStatus]="recording" [recordsData]="keyData" (deleteRecords)="recordsDelete($event)"
-					(onClearAll)="clearRecords($event)">
+					(clearAll)="clearRecords($event)">
 				</vtr-ui-macrokey-recorded-list>
 			</div>
 		</div>
