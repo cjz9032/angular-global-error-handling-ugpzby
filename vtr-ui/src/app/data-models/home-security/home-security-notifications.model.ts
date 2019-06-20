@@ -73,7 +73,7 @@ export class HomeSecurityNotifications {
 			if (notificationMinutes < 10) {
 				notificationMinutes = '0' + notificationMinutes;
 			}
-			if (notificationHours > 10) {
+			if (notificationHours >= 10) {
 				return `${notificationHours} : ${notificationMinutes} ${ampm}`
 			} else {
 				return `0${notificationHours} : ${notificationMinutes} ${ampm}`

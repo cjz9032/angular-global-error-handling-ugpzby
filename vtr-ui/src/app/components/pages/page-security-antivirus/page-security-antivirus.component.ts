@@ -45,7 +45,6 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		public modalService: NgbModal) {
 		this.securityAdvisor = this.VantageShell.getSecurityAdvisor();
 		this.antiVirus = this.VantageShell.getSecurityAdvisor().antivirus;
-		console.log(this.antiVirus);
 		this.viewModel = new AntiVirusviewModel(this.antiVirus, commonService);
 		this.fetchCMSArticles();
 	}
@@ -108,7 +107,6 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		if (this.antiVirus.mcafee || this.antiVirus.others || this.antiVirus.windowsDefender) {
 			this.viewModel.antiVirusPage(this.antiVirus);
 		}
-		console.log(this.viewModel.otherFirewall);
 		this.antiVirus.on(EventTypes.avMcafeeStatusEvent, (data) => {
 			this.viewModel.mcafee.launch = this.antiVirus.mcafee.launch.bind(this.antiVirus.mcafee);
 			this.viewModel.mcafee.status = data;

@@ -1,6 +1,15 @@
 @import "../../../app.theme";
 
 .vtr-page-security-antivirus {
+	::ng-deep .vtr-widget-offline-info {
+		margin-top: $shift_up_small;
+	}
+
+	.unClickable {
+		pointer-events: none;
+		color: inherit;
+	}
+
 	.mt-minus {
 		margin-top: $shift_up_small;
 	}
@@ -87,7 +96,7 @@
 				font-size: 1.6rem;
 				font-weight: $weight_medium;
 				line-height: 3rem;
-      }
+      		}
 		}
 	}
 
