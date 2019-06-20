@@ -6,6 +6,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
+import { SmartStandby } from 'src/app/data-models/device/smart-standby.model';
 
 enum PowerMode {
 	Sleep = 'ChargeFromSleep',
@@ -32,7 +33,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public batteryGauge: any;
 	public showWarningMsg: boolean;
 	public isEnergyStarProduct = false;
-	public smartStandbyTimer = false;
+	public smartStandby = new SmartStandby();
 
 	@Input() isCollapsed = true;
 	@Input() allowCollapse = true;
@@ -262,6 +263,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.getBatteryThresholdInformation();
 		}
 		this.getEnergyStarCapability();
+		this.setSmartStandbySection();
 	}
 
 	ngOnDestroy() {
@@ -812,14 +814,14 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						this.showBatteryThreshold = this.responseData[0].isOn;
 						if (this.selectedStartAtChargeVal !== this.responseData[0].startValue ||
 							this.selectedStopAtChargeVal !== this.responseData[0].stopValue) {
-								this.powerService.setChargeThresholdValue(
-									 {
-										batteryNumber: this.responseData[0].batteryNumber,
-										startValue: this.selectedStartAtChargeVal,
-										stopValue: this.selectedStopAtChargeVal,
-										checkBoxValue: this.primaryCheckBox
-									 }
-									);
+							this.powerService.setChargeThresholdValue(
+								{
+									batteryNumber: this.responseData[0].batteryNumber,
+									startValue: this.selectedStartAtChargeVal,
+									stopValue: this.selectedStopAtChargeVal,
+									checkBoxValue: this.primaryCheckBox
+								}
+							);
 						}
 						if (this.responseData.length === 2) {
 							this.secondaryCheckBox = this.responseData[1].checkBoxValue;
@@ -827,14 +829,14 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 							this.selectedStopAtChargeVal1 = this.responseData[1].stopValue - (this.responseData[1].stopValue % 5);
 							if (this.selectedStartAtChargeVal1 !== this.responseData[1].startValue ||
 								this.selectedStopAtChargeVal1 !== this.responseData[1].stopValue) {
-									this.powerService.setChargeThresholdValue(
-										{
-											batteryNumber: this.responseData[1].batteryNumber,
-											startValue: this.selectedStartAtChargeVal1,
-											stopValue: this.selectedStopAtChargeVal1,
-											checkBoxValue: this.secondaryCheckBox
-										 }
-									);
+								this.powerService.setChargeThresholdValue(
+									{
+										batteryNumber: this.responseData[1].batteryNumber,
+										startValue: this.selectedStartAtChargeVal1,
+										stopValue: this.selectedStopAtChargeVal1,
+										checkBoxValue: this.secondaryCheckBox
+									}
+								);
 							}
 						}
 					}
@@ -855,46 +857,46 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				// }
 				if (this.batteryGauge.percentage > this.selectedStopAtChargeVal1 || this.batteryGauge.percentage > this.selectedStopAtChargeVal) {
 					this.showWarningMsg = true;
-		   } else{
-			   this.showWarningMsg = false;	
-		   }
+				} else {
+					this.showWarningMsg = false;
+				}
 
 			}).catch(error => {
 				console.error('getBatteryDetails error', error);
 			});
 	}
-	public showBatteryThresholdsettings(event){
+	public showBatteryThresholdsettings(event) {
 		this.showBatteryThreshold = event;
 		console.log(this.showBatteryThreshold);
-		if(this.showBatteryThreshold){
-		this.responseData.forEach(batteryInfo =>{
-			this.setChargeThresholdValues(batteryInfo, batteryInfo.batteryNum);
-		})
-	} else{
+		if (this.showBatteryThreshold) {
+			this.responseData.forEach(batteryInfo => {
+				this.setChargeThresholdValues(batteryInfo, batteryInfo.batteryNum);
+			})
+		} else {
 			this.powerService.setToggleOff(this.responseData.length).then((value: any) => {
 				console.log('change threshold value------------------->>>>>>>>>', value);
 			})
-			.catch(error => {
-				console.error('change threshold value', error);
-			});
+				.catch(error => {
+					console.error('change threshold value', error);
+				});
 		}
-	
+
 	}
 
 	public setChargeThresholdValues(batteryDetails: any, batteryNum: number) {
 		let batteryInfo: any = {};
-		if(batteryNum ==1){
+		if (batteryNum == 1) {
 			this.selectedStopAtChargeVal = batteryDetails.stopValue;
 		}
-		if(batteryNum ==2){
+		if (batteryNum == 2) {
 			this.selectedStopAtChargeVal1 = batteryDetails.stopValue;
 		}
 		if (this.batteryGauge.percentage > this.selectedStopAtChargeVal1 || this.batteryGauge.percentage > this.selectedStopAtChargeVal) {
-			 		this.showWarningMsg = true;
-			} else{
-				this.showWarningMsg = false;	
-			}
-			try {
+			this.showWarningMsg = true;
+		} else {
+			this.showWarningMsg = false;
+		}
+		try {
 			if (this.powerService.isShellAvailable) {
 				batteryInfo = {
 					batteryNumber: batteryNum,
@@ -902,7 +904,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					stopValue: batteryDetails.stopValue,
 					checkBoxValue: batteryDetails.checkBoxValue
 				};
-				 console.log('set values@@@@@@@@@@@@@@@@@ -->', batteryInfo);
+				console.log('set values@@@@@@@@@@@@@@@@@ -->', batteryInfo);
 
 				this.powerService
 					.setChargeThresholdValue(batteryInfo)
@@ -917,22 +919,22 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.error(error.message);
 		}
 	}
-	
+
 
 	public autoCheckSelected(batteryDetails: any, batteryNum: any) {
 		let batteryInfo: any = {};
-		if(batteryNum ==1){
+		if (batteryNum == 1) {
 			this.selectedStopAtChargeVal = batteryDetails.stopValue;
 		}
-		if(batteryNum ==2){
+		if (batteryNum == 2) {
 			this.selectedStopAtChargeVal1 = batteryDetails.stopValue;
 		}
 		if (this.batteryGauge.percentage > this.selectedStopAtChargeVal1 || this.batteryGauge.percentage > this.selectedStopAtChargeVal) {
-			 		this.showWarningMsg = true;
-			} else{
-				this.showWarningMsg = false;	
-			}		
-	
+			this.showWarningMsg = true;
+		} else {
+			this.showWarningMsg = false;
+		}
+
 		if (this.powerService.isShellAvailable) {
 			try {
 				if (batteryDetails && batteryNum) {
@@ -982,10 +984,55 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				console.log('getEnergyStarCapability.error', error);
 			});
 	}
+	public setSmartStandbySection() {
+		this.initSmartStandby();
+		if (this.powerService.isShellAvailable) {
+			this.powerService.getSmartStandbyCapability()
+				.then((response: boolean) => {
+					this.smartStandby.isCapable = response;
+					if (this.smartStandby.isCapable) {
+						Promise.all([
+							this.powerService.getSmartStandbyEnabled(),
+							this.powerService.getSmartStandbyActiveStartEnd(),
+							this.powerService.getSmartStandbyDaysOfWeekOff()
+						]).then((responses: any[]) => {
+							this.smartStandby.isEnabled = responses[0];
+							this.smartStandby.activeStartEnd = responses[1];
+							this.smartStandby.daysOfWeekOff = responses[2];
+						});
+					}
+				}).catch((error) => {
+					console.log('In setSmartStandbySection Error', error);
+				});
+		}
+	}
 
-	public onSmartStandbyToggle (event: any) {
-		this.smartStandbyTimer = event.switchValue;
+	initSmartStandby() {
+		this.smartStandby.isCapable = false;
+		this.smartStandby.isEnabled = false;
+		this.smartStandby.activeStartEnd = '9:00-18:00';
+		this.smartStandby.daysOfWeekOff = '';
+	}
 
+	public onSmartStandbyToggle(event: any) {
+		this.smartStandby.isEnabled = event.switchValue;
+		this.powerService.setSmartStandbyEnabled(event)
+
+		try {
+			console.log('setSmartStandbyEnabled entered', event);
+			if (this.powerService.isShellAvailable) {
+				this.powerService.setSmartStandbyEnabled(event.switchValue)
+					.then((value: boolean) => {
+						console.log('setSmartStandbyEnabled.then', value);
+						// this.setSmartStandbySection();
+					})
+					.catch(error => {
+						console.error('setSmartStandbyEnabled', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
 	}
 
 }

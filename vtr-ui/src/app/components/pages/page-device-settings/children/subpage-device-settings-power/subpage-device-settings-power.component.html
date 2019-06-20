@@ -71,7 +71,7 @@
 							[leftIcon]="batterySettings.items[1].leftImageSource"
 							[rightIcon]="batterySettings.items[1].rightImageSource"
 							[showChildContent]="true"
-							[isSwitchChecked] = "showBatteryThreshold"
+							[isSwitchChecked]="showBatteryThreshold"
 							(toggleOnOff)="showBatteryThresholdsettings($event.switchValue);"
 							[tooltipText]="'device.deviceSettings.power.batterySettings.batteryThreshold.tooltip' | translate">
 							<div *ngIf="showBatteryThreshold">
@@ -158,30 +158,32 @@
 
 
 	<div class="row py-5"
-	id="smart-standby">
-	<div class="col-10 mx-auto ">
-		<vtr-container-collapsible
-			[cardTitle]="'device.deviceSettings.power.smartStandby.title' | translate"
-			[isCollapsed]="false">
-			<ul class="list-group list-group-flush">
-				<li class="">
-					<vtr-ui-row-switch
-						[caption]="'device.deviceSettings.power.smartStandby.description' | translate"
-						[isSwitchVisible]=true
-						[isLastChild]=true
-						[showChildContent]="true"
-						[rightIcon]="['far', 'question-circle']"
-						[tooltipText]="'device.deviceSettings.power.smartStandby.tooltip' | translate"
-						(toggleOnOff)="onSmartStandbyToggle($event)">
-					</vtr-ui-row-switch>
-						<section class="smart-standby-timer" *ngIf="smartStandbyTimer">
+		id="smart-standby"
+		*ngIf="smartStandby?.isCapable">
+		<div class="col-10 mx-auto ">
+			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.smartStandby.title' | translate"
+				[isCollapsed]="false">
+				<ul class="list-group list-group-flush">
+					<li class="">
+						<vtr-ui-row-switch
+							[caption]="'device.deviceSettings.power.smartStandby.description' | translate"
+							[isSwitchVisible]=true
+							[isLastChild]=true
+							[showChildContent]="true"
+							[rightIcon]="['far', 'question-circle']"
+							[tooltipText]="'device.deviceSettings.power.smartStandby.tooltip' | translate"
+							[isSwitchChecked]="smartStandby.isEnabled"
+							(toggleOnOff)="onSmartStandbyToggle($event)">
+						</vtr-ui-row-switch>
+						<section class="smart-standby-timer"
+							*ngIf="smartStandby.isEnabled">
 							<vtr-ui-time-picker></vtr-ui-time-picker>
 						</section>
-				</li>
-			</ul>
-		</vtr-container-collapsible>
+					</li>
+				</ul>
+			</vtr-container-collapsible>
+		</div>
 	</div>
-</div>
 
 	<div class="row py-5"
 		id="power"
