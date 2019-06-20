@@ -22,7 +22,7 @@
 				<li class="pt-3">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.title' | translate"
-							componentName="Privacy guard"
+							componentName="Input Accessories"
 							[caption]=""
 							[isSwitchVisible]="false"
 							[leftIcon]="['fal', 'gem']"
@@ -30,24 +30,24 @@
 							[showChildContent]="true"
 							[theme]="'white'">
 							<div class="row">
-								<div class="col d-flex justify-content-between">
+								<div class="col d-flex justify-content-between col-sm-12 col-md-12 col-lg-12 col-xl-12">
 									<p class="hidden-keyboard-text">
 										{{'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.description' | translate}}	
 										<!-- <span class="ml-2 text-primary"><u>read more</u></span> -->
 									</p>									
 								</div>
-							</div>
+							</div>						
 							<div class="row">
-									<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 pl-0 pr-0">
+									<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 											<div class="img-preview">
 												<img 
-													src="assets/images/keyboard-images/KeyboardMap_Images/Belgium.png" />							
+													src="assets/images/keyboard-images/KeyboardMap_Images/Belgium.png" />						
 													
 											</div>
 								</div>
 							</div>
 							<div class="row keys-row">
-									<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 pl-0 pr-0 d-flex" *ngFor = "let key of shortcutKeys">
+									<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex" *ngFor = "let key of shortcutKeys">
 											<!-- <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1">
 													<img [src]='key.image' />				
 												</div> -->
