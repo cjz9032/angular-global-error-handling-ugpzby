@@ -88,7 +88,11 @@ export class PowerSmartSettingsComponent implements OnInit {
 	async initPowerSmartSettingsForIdeaPad() {
 		try {
 			let response = await this.powerService.getITSModeForICIdeapad();
-			console.log("getITSModeForICIdeapad: " + response);
+			console.log("getITSModeForICIdeapad: ", response);
+			if (response && !response.available) {
+				this.showIC = 0;
+				this.isPowerSmartSettingHidden.emit(true);
+			}
 			if (response && response.available) {
 				if (response.itsVersion == 3) {
 					this.intelligentCoolingModes = IntelligentCoolingHardware.ITS13;
@@ -388,7 +392,7 @@ export class PowerSmartSettingsComponent implements OnInit {
 		try {
 			if (this.powerService.isShellAvailable) {
 				let mode1 = await this.powerService.getLegacyManualModeState();
-				console.log("getLegacyManualModeState: " + mode1)
+				console.log("getLegacyManualModeState: ", mode1)
 				return mode1;
 			}
 		} catch (error) {

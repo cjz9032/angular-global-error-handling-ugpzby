@@ -298,8 +298,12 @@
 		}
 
 		.navbar-toggler {
+			display: none;
 			font-size: 5rem;
 			color: $shade_light;
+			@media only screen and (max-width: 1120px){
+				display: block;
+			}
 			&:hover {
 				color: $shade_extralight;
 			}
