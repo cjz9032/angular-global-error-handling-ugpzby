@@ -30,7 +30,6 @@ export class GamingAllCapabilitiesService {
 	}
 
 	setCapabilityValuesGlobally(capabilities: any) {
-		// console.log('capabilities ------<>', capabilities);
 		this.commonService.sendNotification(Gaming.GamingCapablities, capabilities);
 		this.commonService.setLocalStorageValue(LocalStorageKey.macroKeyFeature, capabilities.macroKeyFeature);
 		this.commonService.setLocalStorageValue(LocalStorageKey.cpuOCFeature, capabilities.cpuOCFeature);
@@ -39,7 +38,7 @@ export class GamingAllCapabilitiesService {
 		this.commonService.setLocalStorageValue(LocalStorageKey.hybridModeFeature, capabilities.hybridModeFeature);
 		this.commonService.setLocalStorageValue(LocalStorageKey.touchpadLockFeature, capabilities.touchpadLockFeature);
 		this.commonService.setLocalStorageValue(LocalStorageKey.xtuService, capabilities.xtuService);
-
+		this.commonService.setLocalStorageValue(LocalStorageKey.smartFanFeature, capabilities.smartFanFeature);
 	}
 
 	getCapabilityFromCache(storageKey: any) {
