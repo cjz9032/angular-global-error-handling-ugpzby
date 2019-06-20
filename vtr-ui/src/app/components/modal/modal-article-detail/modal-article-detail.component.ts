@@ -75,9 +75,12 @@ export class ModalArticleDetailComponent implements OnInit {
 				ItemParent: this.metricsParent,
 				ItemCategory: this.articleCategory,
 				Duration: (new Date().getTime() - this.enterTime) / 1000,
-				DocReadPosition: Math.round((modalElement.scrollTop + window.innerHeight) / (modalElement.scrollHeight * 100)),
+				DocReadPosition: Math.round(((modalElement.scrollTop + window.innerHeight)/modalElement.scrollHeight) *20),
 				MediaReadPosition: 0
 			};
+			console.log(window.innerHeight,"hellokanchan");
+			console.log(modalElement.scrollTop);
+			console.log(modalElement.scrollHeight,"helloneha");
 			console.log('------reporting metrics------\n'.concat(JSON.stringify(metricsData)));
 			this.metricClient.sendAsync(metricsData);
 		}
