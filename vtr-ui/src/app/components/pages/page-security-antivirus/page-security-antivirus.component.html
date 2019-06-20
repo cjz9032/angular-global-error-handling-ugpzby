@@ -14,7 +14,7 @@
 				<div class="row">
 					<div class="col-12 col-sm-12 col-lg-8 vtr-page-left-column">
 						<div *ngIf="viewModel?.currentPage ==='windows'">
-							<div class="header mt-minus">
+							<div *ngIf="isOnline" class="header mt-minus">
 								<div class="rounded-card-with-shadow p-5">
 									<div class="row">
 										<div class="col-auto align-self-center">
@@ -48,6 +48,9 @@
 									</div>
 								</div>
 							</div>
+							<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
+								[isSubtitleVisible]="false"
+								[isButtonVisible]="false"></vtr-widget-offline-info>
 							<div class="subheader antivirus-block">
 								<div class="rounded-card-with-shadow p-5 bg-white">
 									<div>
@@ -182,10 +185,11 @@
 						</div>
 
 						<div *ngIf="viewModel?.currentPage ==='mcafee'">
-							<div class="subheader mt-minus">
+							<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
+								[isSubtitleVisible]="false"
+								[isButtonVisible]="false"></vtr-widget-offline-info>
+							<div class="subheader" [ngClass]="{'mt-minus': isOnline}">
 								<div class="rounded-card-with-shadow p-5 bg-white">
-
-
 									<div class="row">
 										<div class="col-auto px-0 mr-auto">
 											<div class="title pb-3">{{'security.antivirus.mcafee.title' | translate}}
@@ -221,6 +225,7 @@
 														metricsEvent="featureClick"
 														target="_blank"
 														href="{{viewModel.mcafee?.trialUrl}}"
+														[ngClass]="{'unClickable': !isOnline}"
 														class="text">{{'security.antivirus.mcafee.upgrade' | translate}}</a>
 												</span>
 											</div>
@@ -381,8 +386,10 @@
 						</div>
 
 						<div *ngIf="viewModel?.currentPage ==='others'">
-
-							<div class="subheader mt-minus">
+							<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
+								[isSubtitleVisible]="false"
+								[isButtonVisible]="false"></vtr-widget-offline-info>
+							<div class="subheader" [ngClass]="{'mt-minus': isOnline}">
 								<div class="rounded-card-with-shadow p-5 bg-white">
 									<div *ngIf="viewModel.otherAntiVirus && viewModel.otherAntiVirus.name">
 										<div class="row">
