@@ -118,10 +118,14 @@ export class PowerService {
 	// End Conservation mode for IdeaNoteBook
 	// Express/Rapid Charging mode for IdeaNotebook
 	public getRapidChargeModeStatusIdeaNoteBook(): Promise<FeatureStatus> {
-		if (this.devicePowerIdeaNoteBook) {
-			return this.devicePowerIdeaNoteBook.rapidChargeMode.getRapidChargeModeStatus();
+		try {
+			if (this.devicePowerIdeaNoteBook) {
+				return this.devicePowerIdeaNoteBook.rapidChargeMode.getRapidChargeModeStatus();
+			}
+			return undefined;
+		} catch (err) {
+			throw err;
 		}
-		return undefined;
 	}
 	public setRapidChargeModeStatusIdeaNoteBook(value: boolean): Promise<boolean> {
 		try {
@@ -130,9 +134,10 @@ export class PowerService {
 			}
 			return undefined;
 		} catch (error) {
-			throw new Error(error.message);
+			throw error;
 		}
 	}
+
 	// End Express/Rapid Charging mode for IdeaNoteBook
 	// Start Easy Resume for ThinkPad
 	public getEasyResumeCapabilityThinkPad(): Promise<boolean> {
@@ -433,12 +438,12 @@ export class PowerService {
 	}
 	public setChargeThresholdValue(value: any): Promise<any> {
 		console.log('Battery threshold value here ----->', value);
-	
+
 		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionChargeThreshold.setChargeThresholdValue(
-					value.batteryNumber,value.startValue,value.stopValue,value.checkBoxValue
-					);
+					value.batteryNumber, value.startValue, value.stopValue, value.checkBoxValue
+				);
 			}
 			return undefined;
 		} catch (error) {
@@ -447,11 +452,11 @@ export class PowerService {
 	}
 
 	public setCtAutoCheckbox(value: any): Promise<any> {
-	//console.log('auto check value here ----->', value);
+		//console.log('auto check value here ----->', value);
 		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionChargeThreshold.setCtAutoCheckbox(
-					value.batteryNumber,value.startValue,value.stopValue,value.checkBoxValue
+					value.batteryNumber, value.startValue, value.stopValue, value.checkBoxValue
 				);
 			}
 			return undefined;
@@ -462,19 +467,19 @@ export class PowerService {
 
 	public setToggleOff(value: any): Promise<any> {
 		console.log('auto check value here ----->', value);
-			try {
-				if (this.devicePowerThinkPad) {
-					return this.devicePowerThinkPad.sectionChargeThreshold.setToggleOff(value);
-				}
-				return undefined;
-			} catch (error) {
-				throw new Error(error.message);
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionChargeThreshold.setToggleOff(value);
 			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
 		}
+	}
 
-	
 
-	
+
+
 	// End battery threshold settings
 
 	public getEnergyStarCapability(): Promise<any> {
