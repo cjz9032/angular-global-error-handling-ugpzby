@@ -242,6 +242,12 @@
 			}
 		}
 	}
+
+	::ng-deep .vtr-widget-questions {
+		.description{
+			text-transform: none !important;
+		}
+	}
 	
 
 }
