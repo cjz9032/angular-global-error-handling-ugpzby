@@ -422,9 +422,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		} else {
 			// to hide the existing popup which is open(hybridmode, ramoc)
 			this.legionUpdate[1].isPopup = false;
-			this.disableButtons = false;
 		}
-		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
+		 if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
 			this.legionUpdate[4].isPopup = $event;
 			this.disableButtons = true;
 			this.gamingHybridModeService
@@ -442,7 +441,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		} else {
 			// to hide the existing popup which is open(hybridmode, ramoc)
 			this.legionUpdate[4].isPopup = false;
-			this.disableButtons = false;
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.touchpadLock') {
 			this.TouchpadLockStatusObj.touchpadLockStatus = $event.switchValue;

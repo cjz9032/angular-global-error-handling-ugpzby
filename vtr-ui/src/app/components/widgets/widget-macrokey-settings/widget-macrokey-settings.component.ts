@@ -198,6 +198,8 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	onRecordingChanged(recordingChangeData) {
 		this.isRecording = recordingChangeData.recordingStatus;
 		if (this.isRecording) {
+			this.macroKeyInputData.macro.inputs = [];
+			this.macroKeyMessageData = '';
 			this.macroKeyService.setStartRecording(this.numberSelected.key);
 			this.shellService.registerEvent(
 				EventTypes.gamingMacroKeyInputChageEvent,

@@ -57,6 +57,7 @@
 		font-size: 1.2rem;
 		color: $shade_light;
 		top: 75px;
+		white-space: nowrap;
 	}
 
 	.checkbox-custom:checked+.checkbox-custom-label {

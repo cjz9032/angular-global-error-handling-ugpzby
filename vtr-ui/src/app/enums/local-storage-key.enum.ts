@@ -59,9 +59,16 @@ export enum LocalStorageKey {
 	LightingProfileById = '[LocalStorageKey] LightingProfileById',
 	LightingProfileBrightness = '[LocalStorageKey] LightingProfileBrightness',
 	LightingProfileEffectColor = '[LocalStorageKey] LightingProfileEffectColor',
+	LightingProfileEffectColorTop = '[LocalStorageKey] LightingProfileEffectColorTop',
+	LightingProfileEffectColorSide = '[LocalStorageKey] LightingProfileEffectColorSide',
 	LedDriver = '[LocalStorageKey] LedDriver',
 	ProfileBrightness = '[LocalStorageKey] ProfileBrightness',
 	LightingCapabilities = '[LocalStorageKey] LightingCapabilities',
+	ProfileId= '[LocalStorageKey] ProfileId',
+	LightingRGBTop= '[LocalStorageKey] LightingRGBTop',
+	LightingRGBSide= '[LocalStorageKey] LightingRGBSide',
+
+
 
 	SystemUpdateCriticalUpdateStatus = '[LocalStorageKey] SystemUpdateCriticalUpdateStatus',
 	SystemUpdateRecommendUpdateStatus = '[LocalStorageKey] SystemUpdateRecommendUpdateStatus',
