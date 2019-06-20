@@ -40,9 +40,9 @@ export enum LocalStorageKey {
 	RamOcStatus = '[LocalStorageKey] RamOcStatus',
 	CurrentThermalModeStatus = '[LocalStorageKey] CurrentThermalModeStatus',
 	PrevThermalModeStatus = '[LocalStorageKey] PrevThermalModeStatus',
-	IsHPDSupported = '[LocalStorageKey] IsHPDSupported',
+	IsSmartAssistSupported = '[LocalStorageKey] IsSmartAssistSupported',
 	ConnectedHomeSecurityShowWelcome = '[LocalStorageKey] ConnectedHomeSecurityShowWelcome',
-	ConnectedHomeSecurityAllDevices= '[LocalStorageKey] ConnectedHomeSecurityAllDevices',
+	ConnectedHomeSecurityAllDevices = '[LocalStorageKey] ConnectedHomeSecurityAllDevices',
 	ConnectedHomeSecurityAccount = '[LocalStorageKey] ConnectedHomeSecurityAccount',
 	ConnectedHomeSecurityMyDevice = '[LocalStorageKey] ConnectedHomeSecurityMyDevice',
 	ConnectedHomeSecurityNotifications = '[LocalStorageKey] ConnectedHomeSecurityNotifications',
@@ -64,9 +64,9 @@ export enum LocalStorageKey {
 	LedDriver = '[LocalStorageKey] LedDriver',
 	ProfileBrightness = '[LocalStorageKey] ProfileBrightness',
 	LightingCapabilities = '[LocalStorageKey] LightingCapabilities',
-	ProfileId= '[LocalStorageKey] ProfileId',
-	LightingRGBTop= '[LocalStorageKey] LightingRGBTop',
-	LightingRGBSide= '[LocalStorageKey] LightingRGBSide',
+	ProfileId = '[LocalStorageKey] ProfileId',
+	LightingRGBTop = '[LocalStorageKey] LightingRGBTop',
+	LightingRGBSide = '[LocalStorageKey] LightingRGBSide',
 
 
 
@@ -130,6 +130,6 @@ export enum LocalStorageKey {
 	CurrentMacroKeyRepeat = '[LocalStorageKey] CurrentMacroKeyRepeat',
 	CurrentMacroKeyInterval = '[LocalStorageKey] CurrentMacroKeyInterval',
 	SubBrand = '[LocalStorageKey] SubBrand',
-	
+
 	userDeterminePrivacy = '[LocalStorageKey] userDeterminePrivacy',
 }
