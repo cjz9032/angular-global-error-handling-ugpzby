@@ -134,12 +134,15 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	public updateBatteryDetails() {
 		if (this.batteryInfo !== undefined && this.batteryInfo.length !== 0) {
 			let batteryIndex = -1;
+			const batteriesHealths = [];
 			this.batteryInfo.forEach((info) => {
+				batteriesHealths.push(info.batteryHealth);
 				if (info.batteryHealth >= this.batteryHealth) {
 					this.batteryHealth = info.batteryHealth;
 					batteryIndex += 1;
 				}
 			});
+			this.commonService.setLocalStorageValue(LocalStorageKey.BatteriesHealths, batteriesHealths);
 			this.batteryIndex = batteryIndex;
 		}
 		this.batteryIndicator.batteryHealth = this.batteryIndicator.getBatteryHealth(this.batteryHealth);
