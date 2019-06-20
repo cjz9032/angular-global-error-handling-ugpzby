@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Output, EventEmitter, OnChanges } from '@angular/core';
 
 @Component({
 	selector: 'vtr-ui-gaming-collapsible-container',
@@ -9,6 +9,7 @@ import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@ang
 	},
 })
 export class UiGamingCollapsibleContainerComponent implements OnInit {
+	
 	@Input() public options;
 	@Output() public change = new EventEmitter<any>();
 	public showOptions = false;
@@ -31,7 +32,7 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 			}
 		});
 	}
-
+	
 	public toggleOptions(optSelected) {
 		this.showOptions = !this.showOptions;
 		// CHANGE THE NAME OF THE BUTTON.
@@ -51,7 +52,7 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 
 	public optionSelected(option) {
 		this.currentOption = option.name;
-		//this.options.curSelected = option.value;
+		// this.options.curSelected = option.value;
 		this.selectedDescription = option.description;
 		this.currentDescription = this.selectedDescription;
 		this.showOptions = false;
