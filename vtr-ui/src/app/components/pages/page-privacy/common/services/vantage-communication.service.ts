@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
-import { catchError, map, shareReplay, switchMap } from 'rxjs/operators';
+import { catchError, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { EMPTY, from, Observable, throwError } from 'rxjs';
 
 export enum BrowserListType {
@@ -92,6 +92,7 @@ export class VantageCommunicationService {
 		);
 
 		return this.sendContractToPrivacyCore<MaskedPasswords>(contract).pipe(
+			tap((val) => console.log('MaskedPasswords', val)),
 			catchError((err) => {
 				console.error('MaskedPasswords err', err);
 				return EMPTY;

@@ -13,7 +13,7 @@ export interface InstalledBrowser {
 	accountsCount: number;
 }
 
-interface InstalledBrowserDataState {
+export interface InstalledBrowserDataState {
 	browserData: InstalledBrowser[];
 	error: string | null;
 }
@@ -68,7 +68,7 @@ export class BrowserAccountsService {
 			return this.vantageCommunicationService.getMaskedPasswords(browsersNamesArray)
 				.pipe(
 					map((accountsPassword) => browserData.map((browser) => (
-							{...browser, accounts: accountsPassword['chrome']}
+							{...browser, accounts: accountsPassword[browser.name]}
 						))
 					),
 					take(1),
