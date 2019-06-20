@@ -1,4 +1,4 @@
-<div *ngIf="isLoading"  >
+<div *ngIf="isLoading && isOnline"  >
 	<div class="container-card" [style.height.px]="containerHeight">
 		<div class="container-fluid position-relative">
 			<div class="loader center-block">
@@ -8,7 +8,7 @@
 	</div>
 </div>
 
-<div *ngIf="!isLoading">
+<div *ngIf="!isLoading || !isOnline">
 	<div class="container-card card-{{type}}"
 		 *ngIf="type === 'corner'"
 		 [style.height.px]="containerHeight">
@@ -64,7 +64,7 @@
 							<div *ngIf="title"
 								 class="title">{{title}}</div>
 							<div *ngIf="caption"
-								 class="caption">{{caption}}</div>
+								 class="caption"><div [innerHTML]="caption|sanitize:'html'"></div></div>
 							<div *ngIf="logo || logoText"
 								 class="logo">
 							<span class="logo-img">

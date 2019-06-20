@@ -5,8 +5,8 @@
 				<div class="heading">{{'dashboard.quickSettings.title' | translate}}</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col col-4 text-left">
+		<div class="widget-icon">
+			<div class="text-left">
 				<vtr-widget-switch-icon [iconDefinition]="['fal', 'microphone']"
 					[value]="microphoneStatus.status && microphoneStatus.permission"
 					[title]="'dashboard.quickSettings.microphone' | translate"
@@ -16,17 +16,18 @@
 					[disable]="!(microphoneStatus.permission && microphoneStatus.available && quickSettingsWidget[0].state)">
 				</vtr-widget-switch-icon>
 			</div>
-			<div class="col col-4 text-center"
+			<div class="text-center"
 				*ngIf="cameraStatus.available">
 				<vtr-widget-switch-icon [iconDefinition]="['fal', 'camera']"
-					[value]="cameraStatus.status"
+					[value]="!cameraStatus.status && cameraStatus.permission"
 					[title]="'dashboard.quickSettings.cameraPrivacy' | translate"
 					metricsItem="camera"
-					[isBlocked]="cameraStatus.status"
+					[isBlocked]="cameraStatus.status || !cameraStatus.permission"
+					[isCamera]="true"
 					(toggle)="onCameraStatusToggle($event)"
-					[disable]="!(cameraStatus.available && quickSettingsWidget[1].state)"></vtr-widget-switch-icon>
+					[disable]="!(cameraStatus.permission && cameraStatus.available && quickSettingsWidget[1].state)"></vtr-widget-switch-icon>
 			</div>
-			<div class="col col-4 text-right">
+			<div class="text-right">
 				<vtr-widget-switch-icon [iconDefinition]="['fal', 'eye']"
 					[title]="'dashboard.quickSettings.eyeCareMode' | translate"
 					metricsItem="eyeCareMode"

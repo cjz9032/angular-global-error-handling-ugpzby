@@ -218,7 +218,6 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 		recordingData.forEach((record) => {
 			record.pairName = this.getPairName(record.key, record.status);
 		});
-		console.log(recordingData);
 		return recordingData;
 	}
 

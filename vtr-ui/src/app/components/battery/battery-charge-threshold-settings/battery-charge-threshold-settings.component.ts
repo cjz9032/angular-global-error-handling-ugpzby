@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, ElementRef,Output, EventEmitter} from '@angular/core';
+import { SecureMath } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'vtr-battery-charge-threshold-settings',
@@ -21,17 +22,17 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	@Output() sendBatteryDetails = new EventEmitter();
 	@Output() autoChecked = new EventEmitter<boolean>();
 
-	
+
 
 	// Random number is used to have unique id of each input field
-	randomNumber: number = Math.floor(new Date().valueOf() * Math.random());
+	randomNumber: number = Math.floor(new Date().valueOf() * SecureMath.random());
 
 	/** Input fields names */
 	startChargeInput = 'startAtCharge';
 	stopAtChargeInput = 'stopAtCharge';
 	isCheckedAutoInput = 'isCheckedAuto';
 	public selectedOptionsData: any = {};
-	
+
 	constructor() { }
 
 	ngOnInit() {}
@@ -39,7 +40,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	onChargeChange(id: string, newCharge: number, event: Event) {
 		 //console.log('onChargeChange' + event.target + '\n' + id + '\n' + newCharge);
 		 //console.log(event)
-		 
+
 
 		if (id === this.startChargeInput) {
 			if (this.selectedStartAtCharge !== newCharge) {
@@ -55,42 +56,38 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 					this.autoStartStopAtCharge();
 				}
 			}
-			
+
 		}
 		//console.log('###############################', this.isCheckedAuto);
 		if(!this.isCheckedAuto){
 		this.selectedOptionsData = {
-			startChargeValue : this.selectedStartAtCharge,
-			stopChargeValue : this.selectedStopAtCharge,
-			autoChecked: this.isCheckedAuto
+			startValue : this.selectedStartAtCharge,
+			stopValue : this.selectedStopAtCharge,
+			checkBoxValue: this.isCheckedAuto
 		}
 		this.sendBatteryDetails.emit(this.selectedOptionsData)
 	}else {
 		this.toggleAutoChargeSettings(true);
 	}
-		
+
 	}
 
 	autoStartStopAtCharge() {
 	this.selectedStartAtCharge = this.selectedStopAtCharge - 5;
-		// this.selectedStartAtCharge =  5;	
+		// this.selectedStartAtCharge =  5;
 }
 
 	public toggleAutoChargeSettings(event: any) {
 		console.log('toggleAutoSettings------>', event);
-		if (event) {
+		if(event){
 			this.autoStartStopAtCharge();
 			this.selectedOptionsData = {
-				startChargeValue : 5,
-				stopChargeValue : this.selectedStopAtCharge,
-				autoChecked: this.isCheckedAuto
+				startValue : this.selectedStartAtCharge,
+				stopValue : this.selectedStopAtCharge,
+				checkBoxValue: this.isCheckedAuto
 			}
-			//console.log('****************************', this.selectedOptionsData);
 			this.autoChecked.emit(this.selectedOptionsData)
-		}
-		// else{
-		// 	this.selectedStartAtCharge = this.selectedStopAtCharge - 5;
-		// }
-		
+		}	
+
 	}
 }
