@@ -517,7 +517,8 @@ export class SystemUpdateService {
 				const pkg = new InstallUpdate();
 				pkg.packageID = update.packageID;
 				pkg.severity = update.packageSeverity;
-				if(removeDelayedUpdates && update.packageRebootType === 'RebootDelayed'){
+				if (removeDelayedUpdates && update.packageRebootType === 'RebootDelayed') {
+					update.isACAttached = false;
 					update.installationStatus = UpdateActionResult.InstallFailed;
 					this.ignoredRebootDelayUpdates.push(update);
 				} else {
