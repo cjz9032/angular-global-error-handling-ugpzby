@@ -1,6 +1,12 @@
 @import "../../../app.theme";
 
 .vtr-page-security-windows-hello {
+	.vtr-subpage {
+		::ng-deep .vtr-widget-offline-info {
+			margin-top: $shift_up_small;
+		}
+	}
+
 	.security-card {
 		box-shadow: $drop_shadow;
 		border-radius: $border_radius;

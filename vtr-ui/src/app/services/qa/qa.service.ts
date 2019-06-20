@@ -26,7 +26,7 @@ export class QaService {
 				'faq.question1.para5.span7', 'faq.question1.para5.span8', 'faq.question1.para5.span9',
 				'faq.question1.para5.span10', 'faq.question1.para5.span11', 'faq.question1.para5.span12'
 			],
-			description: `${this.translate.instant('faq.question1.title')}`,
+			description: `faq.question1.description`,
 			getDescription: function () {
 				return `<div>
 				<div style='font-size:4rem;font-weight:bold;'>
@@ -755,28 +755,38 @@ export class QaService {
 					this.translate.stream(qa.title).subscribe((value) => {
 						qa.title = value;
 					});
+
 				} catch (e) {
-					console.log('qa title already translated');
-				}
-				finally {
-					console.log('qa title already translated');
+					console.log('QA title translation : already translated');
 				}
 
 
 				try {
-
+					//console.log(qa.description);
 					qa.description = this.translate.instant(qa.description);
 					this.translate.stream(qa.description).subscribe((value) => {
 						qa.description = value;
-					});	
+					});
+
+					//console.log(qa.description);
+
+				}
+				catch (e) {
+					console.log('QA description by HTML MAP : already translated');
 				}
 
+
+				try {
+					this.translate.get(qa.keys).subscribe((translation: [string]) => {
+						// console.log(JSON.stringify(translation));
+						qa.keys = translation;
+						// console.log(JSON.stringify(qa.keys));
+					});
+				}
 				catch (e) {
-					console.log('qa description already translated');
+					console.log('QA description by KEY_VALUE MAP : already translated');
 				}
-				finally {
-					console.log('qa description already translated');
-				}
+
 
 			});
 
@@ -786,35 +796,46 @@ export class QaService {
 
 		this.qas.forEach(qa => {
 			try {
+				//console.log(qa.title);
 				qa.title = this.translate.instant(qa.title);
+				//console.log(qa.title);
 				this.translate.stream(qa.title).subscribe((value) => {
 					qa.title = value;
 				});
+
 			} catch (e) {
-				console.log('qa title already translated');
-			}
-			finally {
-				console.log('qa title already translated');
+				console.log('QA title translation : already translated');
 			}
 
 
 			try {
-
+				console.log(qa.description);
 				qa.description = this.translate.instant(qa.description);
 				this.translate.stream(qa.description).subscribe((value) => {
 					qa.description = value;
-				});	
+				});
+
+				console.log(qa.description);
+
+			}
+			catch (e) {
+				console.log('QA description by HTML MAP : already translated');
 			}
 
+
+			try {
+				this.translate.get(qa.keys).subscribe((translation: [string]) => {
+					// console.log(JSON.stringify(translation));
+					qa.keys = translation;
+					// console.log(JSON.stringify(qa.keys));
+				});
+			}
 			catch (e) {
-				console.log('qa description already translated');
+				console.log('QA description by KEY_VALUE MAP : already translated');
 			}
-			finally {
-				console.log('qa description already translated');
-			}
+
 
 		});
 
-		//return this.qas;
 	}
 }
