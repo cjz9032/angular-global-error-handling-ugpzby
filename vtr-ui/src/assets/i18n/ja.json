@@ -270,7 +270,7 @@
                 "sub1": "My Device",
                 "sub2": "My Device Settings",
                 "sub3": "System Updates",
-                "sub4": "Smart Assist"
+                "sub4": "‏\"スマート・アシスト\""
             },
             "security": {
                 "title": "セキュリティー",
@@ -305,14 +305,14 @@
             "notRegistered": "未登録"
         },
         "qAndA": {
-            "title": "Q&A for your machine",
-            "subtitle": "FIND SOME HELPFUL TIPS FOR YOUR DEVICE.",
-            "question1": "Backup and Restore your files",
-            "question2": "How to refresh your PC",
-            "question3": "How to know your machine's CPU",
-            "question4": "Check your machine's battery use",
-            "question5": "Use your PC like a tablet",
-            "question6": "Get to know Cortana, your personal assistant"
+            "title": "あなたの機械のQ&A",
+            "subtitle": "あなたのデバイスのためのいくつかの役に立つヒントを見つけてください。",
+            "question1": "ファイルをバックアップし、復元する",
+            "question2": "PC を更新する方法",
+            "question3": "ご使用のマシンの CPU を知る方法",
+            "question4": "マシンのバッテリーの使用を確認する",
+            "question5": "PC をタブレットのように使用する",
+            "question6": "パーソナル・アシスタントの Cortana についてもっと知る"
         },
         "ui": {
             "back": "戻る",
@@ -372,14 +372,14 @@
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
                 },
-                "question1": "Do you like the new style of Vantage?",
-                "question2": "Do you think the performance is acceptable?",
-                "question3": "Would you use the application more often in the future?",
-                "yes": "Yes",
-                "no": "No",
-                "tips1": "Please leave any additional comments",
-                "sendFeedback": "Send Feedback",
-                "submitScreenShot": "Submit Screen Shot"
+                "question1": "Vantage の新しいスタイルを気に入っていますか？",
+                "question2": "パフォーマンスは許容できると思いますか？",
+                "question3": "今後もっと頻繁にアプリケーションを使いますか？",
+                "yes": "はい",
+                "no": "いいえ",
+                "tips1": "追加のコメントを残してください",
+                "sendFeedback": "フィードバックを送る",
+                "submitScreenShot": "スクリーンショットを送信する"
             }
         },
         "quickSettings": {
@@ -758,7 +758,13 @@
                         "heading": "Set time when you typically use this computer",
                         "subHeading1": "start",
                         "subHeading2": "end",
-                        "subHeading3": "use this schedule for"
+                        "subHeading3": "use this schedule for",
+                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "timeUnits": {
+                            "unit1": "Hours",
+                            "unit2": "Minutes",
+                            "unit3": "AM/PM"
+                        }
                     }
                 }
             },
@@ -867,7 +873,7 @@
                         "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
                         "note": {
                             "title": "Note",
-                            "description": "When the Eye care mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye care mode."
+                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
                         }
                     },
                     "privacyGuard": {
@@ -1073,6 +1079,34 @@
                 "title": "Zero Touch Video Playback",
                 "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
                 "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+            },
+            "voice": {
+                "title": "Voice",
+                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
+                "installBtnText": "Install",
+                "launchBtnText": "Launch",
+                "learnMoreText": "Learn More",
+                "voiceToText": {
+                    "title": "Voice to text",
+                    "caption": "This feature helps to convert your voice into texts."
+                },
+                "translation": {
+                    "title": "Translation",
+                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                },
+                "modalPopUp": {
+                    "heading": "Get started:",
+                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
+                    "point2": "Open the file where you want to record the converted text.",
+                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
+                    "point4": "Select your desired language and click the microphone icon to start.",
+                    "point5": "Put the cursor to where you want to edit and begin to speak.",
+                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
+                    "point7": "Select your desired source language and target language.",
+                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
+                    "point9": "Click the microphone icon to start speaking",
+                    "closeText": "close"
+                }
             }
         }
     },
@@ -1158,7 +1192,7 @@
             "rebootRequiredTag": "再起動が必要です",
             "rebootDelayTag": "再起動が必要、電源が必要",
             "shutdownRequiredTag": "シャットダウンが必要です",
-            "dependedPackage": "Depended Package"
+            "dependedPackage": "依存パッケージ"
         },
         "availableUpdates": {
             "title": "利用できる更新",
@@ -1201,72 +1235,70 @@
         }
     },
     "homeSecurity": {
-        "title": "Connected Home Security",
-        "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Ecosystem Security Overview",
-        "thisDevice": "This device",
-        "allDevices": "All Devices",
-        "protected": "Protected",
-        "notProtected": "Not Protected",
-        "myDevice": "My Device",
-        "secure": "SECURE",
-        "needAttention": "NEEDS ATTENTION",
-        "manageAccount": "Manage Account",
-        "devices": "Devices",
-        "seeProtectedDevices": "See protected devices",
-        "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrade to protect all of your devices",
-        "upgrade": "upgrade",
-        "freeTrial": "Free 30 day trial",
-        "protectAllDevices": "Protect all of your devices",
-        "inEcosystem": "In Ecosystem",
-        "ecosystemEnable": "Ecosystem Enabled",
-        "inTrial": "In trial",
-        "addEcosystem": "Add to Ecosystem",
-        "enableEcosystem": "Enable Ecosystem",
-        "startTrial": "Start Trial",
-        "fullAccess": "Full Access",
-        "recent": "Recent security notifications",
-        "notification": "Notifications",
-        "renew": "Renew",
+        "title": "接続ホーム・セキュリティー",
+        "ecosystemBlockTitle": "デバイスのエコシステムを保護する",
+        "overviewBlockTitle": "エコシステム・セキュリティーの概要",
+        "thisDevice": "このデバイス",
+        "allDevices": "すべてのデバイス",
+        "protected": "保護",
+        "notProtected": "未保護",
+        "myDevice": "デバイス",
+        "secure": "安全",
+        "needAttention": "注意が必要",
+        "manageAccount": "アカウントの管理",
+        "devices": "デバイス",
+        "seeProtectedDevices": "保護されたデバイスを見る",
+        "addDevice": "デバイスの追加",
+        "trialExpired": "試用期限切れ - アップグレードして、すべてのデバイスを保護する",
+        "upgrade": "アップグレード",
+        "freeTrial": "すべてのデバイスを保護する - 30 日間無料トライアル",
+        "inEcosystem": "エコシステムで",
+        "ecosystemEnable": "エコシステムが有効",
+        "inTrial": "トライアルで",
+        "addEcosystem": "エコシステムに追加",
+        "enableEcosystem": "エコシステムを有効にする",
+        "startTrial": "トライアルを開始する",
+        "fullAccess": "完全アクセス",
+        "recent": "最近のセキュリティー通知",
+        "notification": "通知",
+        "renew": "更新",
         "tour": {
-            "back": "Back",
-            "skip": "Skip",
-            "start": "START TOUR",
-            "done": "DONE",
-            "welcome1": "Welcome",
-            "welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
-            "welcome2": "Exclusive for Vantage",
-            "welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
-            "create": "Create your account",
-            "lenovoId": "with Lenovo ID",
-            "notifications": "Receive <b>notifications</b> about your home's status",
-            "monitor": "<b>Monitor</b> the safety of your family's devices",
-            "peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
-            "signInLenovoId": "SIGH-UP WITH LENOVO ID",
-            "haveLenovo": "I don't have a <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Create a Lenovo ID",
-            "without": "Proceed <b>without an account</b>",
-            "skipAndTrial": "SKIP AND START TRIAL",
-            "alreadyHave": "I already have a <b>Connected Home Security Account</b>",
-            "loginCHS": "Login to existing CHS account",
-            "locationTitle": "Enable location tracking",
-            "locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+            "back": "戻る",
+            "skip": "スキップ",
+            "start": "ツアーを開始する",
+            "done": "完了",
+            "welcome1": "ようこそ",
+            "welcomeDesc1": "数回のクリックで、ご自身とご家族のために、PC、モバイル・デバイス、および接続中のデバイスを保護することができます。今すぐ 30 日間無料トライアルを始めましょう。",
+            "welcome2": "Vantage 専用",
+            "welcomeDesc2": "接続ホーム・セキュリティーは、Vantage に直接組み込まれており、これにより、エコシステムの保護ステータスとセキュリティーのアラートにすばやくアクセスできます。",
+            "create": "アカウントの作成",
+            "lenovoId": "Lenovo ID で",
+            "notifications": "家の状況に関する<b>通知</b>を受け取る",
+            "monitor": "ご家族のデバイスの安全性を<b>モニタリングする</b>",
+            "peaceOfMind": "常に保護されていることによる<b>心の平安</b>を得てください！",
+            "signInLenovoId": "Lenovo ID で登録する",
+            "haveLenovo": "<b>Lenovo ID</b> を持っていません",
+            "createLenovo": "&nbsp;Lenovo ID の作成",
+            "without": "<b>アカウントなし</b>で進む",
+            "skipAndTrial": "スキップして、トライアルを開始する",
+            "alreadyHave": "<b>接続ホーム・セキュリティー・アカウント</b>をすでに持っています",
+            "loginCHS": "既存の CHS アカウントにログインする",
+            "locationTitle": "位置追跡を有効にする",
+            "locationPermission": "この機能が正しく動作するには、このデバイスの位置追跡を有効にする必要があります"
         },
         "accountStatus": {
-            "title": "My Connected Home Security",
-            "startTrial": "Start Trial",
-            "manageAccount": "Manage Account",
-            "upgradeAccount": "Upgrade Account",
-            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
-            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
-            "trialExpiredDetail1": "Your trial has expired.",
-            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
-            "upgradedDetail1": "You account is active until {{expiredDate}}.",
-            "upgradedDetail2": "Your device ecosystem is currently being protected.",
-            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
-            "alreadyHaveAccount": "Already have an activation code?"
+            "title": "接続ホーム・セキュリティー",
+            "startTrial": "トライアルを開始する",
+            "manageAccount": "アカウントの管理",
+            "upgradeAccount": "アカウントのアップグレード",
+            "inTrialDetail1": "{{remainingDays}}トライアルが終了するまでの日数。",
+            "inTrialDetail2": "現在トライアル期間内です。すべての機能に無制限にアクセスできます。",
+            "trialExpiredDetail1": "トライアルの期限が切れています。",
+            "trialExpiredDetail2": "トライアルの期限が切れているため、デバイスのエコシステムは保護されていません。",
+            "upgradedDetail1": "アカウントは{{expiredDate}}まで有効です。",
+            "upgradedDetail2": "デバイス・エコシステムは現在保護されています。",
+            "localAccountDetail2": "下のボタンをクリックして 30 日間の無料トライアルを開始する。",
+            "alreadyHaveAccount": "アクティベーション・コードをすでにお持ちですか？"
         }
     },
     "support": {
@@ -1431,8 +1463,8 @@
                 "cancel": "キャンセル"
             },
             "errorMessage": {
-                "headerText": "Error",
-                "bodyText": "We've detected that you are missing critical pieces of Vantage. These pieces will download in the background. Please try again later."
+                "headerText": "エラー",
+                "bodyText": "Vantage の重要なピースを見逃していることがわかりました。これらのピースはバックグラウンドでダウンロードされます。後から再試行してください。"
             }
         },
         "homeprotection": {
@@ -1444,7 +1476,7 @@
                 "homeSecurityAffect3": "ホーム・ネットワークに接続しているその他のデバイスが安全であることを確認します。",
                 "describe": "安全でないデバイスやネットワークでは、マルウェアが侵入し、個人情報の盗難、プライベート情報や財務情報の漏えいが生じる可能性があります。この機能を有効にして、デバイスとホーム・ネットワークを攻撃者に晒してしまうリスクを軽減してください",
                 "subtitle": "安心を手に入れる",
-                "subtitleDescribe": "接続ホーム・セキュリティーは、デバイスまたはホーム・ネットワークで脆弱性が検出された場合、または悪意がある可能性のネットワークに接続している場合に警告を送信します。接続ホーム・セキュリティーの詳細については、<tag>こちら</tag>を参照してください。",
+                "subtitleDescribe": "接続ホーム・セキュリティーは、デバイスまたはホーム・ネットワークで脆弱性が検出された場合、または悪意がある可能性のネットワークに接続している場合に警告を送信します。接続ホーム・セキュリティーについての詳細は、<tag>ここで</tag>ご確認ください。",
                 "tryNow": "今すぐ試してみる"
             },
             "invitationcode": {
@@ -1590,8 +1622,8 @@
             "button": "GO TO FORUM"
         },
         "question1": {
-            "title": "Back up and restore your files",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        Back up and restore your files\n    </div>\n    <hr />\n    <div style='margin-bottom:7rem;'>\n        It's always good to have a backup. Keep copies of your files on another drive in case something happens to the\n        originals.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Set up your backup\n    </div>\n    <hr />\n    <div class='mb-5'>\n        Select the <span style='font-weight:bold'>Start</span> button, select\n        <span style='font-weight:bold'>Settings</span> >\n        <span style='font-weight:bold'>Update & security</span> >\n        <span style='font-weight:bold'>Backup</span> > <span style='font-weight:bold'>Add a drive</span> , and then\n        choose an external drive or network location for your backups.\n    </div>\n    <div class='mb-5'>\n        <img src='./../../../../assets/images/qa/1.1.png' />\n    </div>\n    <div class='mb-5'>\n        All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files\n        get backed up or how often backups happen, go to\n        <span style='font-weight:bold;'>More options</span>.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Restore your files\n    </div>\n    <div class='mb-5'>\n        If you're missing an important file or folder, here's how to get it back:\n    </div>\n    <div>\n\n        <div class='mb-3'>1. Type <span style='font-weight:bold;'>Restore files</span>\n            in the search box on the taskbar, and then select\n            <span class='font-weight:bold'> Restore your files with File History</span>.</div>\n        <div class='mb-3'>2. Look for the file you need, then use the arrows to see all its versions</div>\n        <div class='mb-3'>3. When you find the version you want, select\n            <span style='font-weight:bold'>Restore</span>\n            to save it in its original location. To save it in a different place, press and hold (or right-click)\n            <span style='font-weight:bold'>Restore</span>, select <span style='font-weight:bold'>Restore to</span>, and\n            then choose a new location.</div>\n\n    </div>\n</div>",
+            "title": "ファイルをバックアップし、復元する",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        ファイルをバックアップし、復元する    </div>    <hr />    <div style='margin-bottom:7rem;'>        どんな場合でもバックアップを取っておくのは良いことです。オリジナルに問題が発生した場合に備えて、ファイルのコピーを別のドライブに保存してください。    </div>    <div style='font-size:3rem;font-weight:bold;'>        バックアップの設定    </div>    <hr />    <div class='mb-5'>        <span style='font-weight:bold'>「スタート」</span>ボタンを選択し、<span style='font-weight:bold'>「設定」</span> > <span style='font-weight:bold'>「更新とセキュリティ」</span> > <span style='font-weight:bold'>「バックアップ」</span> > <span style='font-weight:bold'>「ドライブの追加」</span>の順に選択して、次にバックアップ用の外付けドライブまたはネットワークの場所を選択します。    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        設定完了。毎時間、ユーザー・フォルダー (C:\\\\Users\\\\username) 内の全ファイルをバックアップします。バックアップするファイル、バックアップの頻度を変更するには、<span style='font-weight:bold;'>「その他のオプション」</span>に進みます。    </div>    <div style='font-size:3rem;font-weight:bold;'>        ファイルの復元    </div>    <div class='mb-5'>        重要なファイルやフォルダーが見つからない場合は、以下の手順で元に戻すことができます。    </div>    <div>        <div class='mb-3'>1.タスク バーの検索ボックスに<span style='font-weight:bold;'>「ファイルを復元」</span>と入力して、次に<span class='font-weight:bold'>「ファイル履歴をファイルを復元」</span>を選択します。</div>        <div class='mb-3'>2.必要なファイルを探し、次に矢印を使って、そのすべてのバージョンを表示します</div>        <div class='mb-3'>3.必要なバージョンが見つかったら、<span style='font-weight:bold'>「復元」</span>を選択して、元の場所にそれを保存します。別の場所に保存するには、<span style='font-weight:bold'>「復元」</span>を長押し（または右クリック）し、<span style='font-weight:bold'>「復元先」</span>を選択して、次に新しい場所を選択します。</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1631,8 +1663,8 @@
             }
         },
         "question2": {
-            "title": "How to refresh your PC",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        How to refresh your PC\n    </div>\n    <hr>\n    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>\n        Symptom\n    </div>\n    <div style='padding:5px 0;'>\n        If your PC isn't performing as well as it once did, and you don't know why,\n        you can refresh your PC without deleting any of your personal files or\n        changing your settings. Windows can “refresh” your PC so it’s more like a\n        fresh install without deleting your personal files.\n    </div>\n    <div style='padding:5px 0;'>\n        Refresh your PC, Here is what will happen: your files and personalized\n        settings won’t change\n    </div>\n    <div style='padding:5px 0;'>\n        <ul>\n            <li>Your PC settings will be changed back to its defaults</li>\n            <li>Apps from windows store will be kept</li>\n            <li>Apps you installed from disc or website will be removed</li>\n            <li>A list of removed files will be saved on your desktop</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Affected Brands\n    </div>\n\n    <div>\n        <ul>\n            <li>All Desktop and Laptops</li>\n\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Operation System\n    </div>\n\n    <div>\n        <ul>\n            <li>Windows 8, 8.1 & 10</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Solution\n    </div>\n\n    <div>\n        <ul class='list-unstyled'>\n            <li>\n                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>\n                <ol>\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Settings </span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Update and recovery</span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <div>Tap or click <span style='font-weight:bold;'> Recovery</span></div>\n                        <div style='padding:5px 0'>Under Refresh your PC without affecting your files, tap or click\n                            <span style='font-weight:bold;'> Get started.</span></div>\n                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>\n\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Next'</span>.\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Refresh' </span>to start the refresh process.\n                    </li>\n                    <li style='padding:5px 0;'>\n                        Once the refresh process is done, you can find a Removed Apps list on the desktop\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        You can find the removed apps while refreshing your system\n                    </li>\n                </ol>\n            </li>\n            <li style='padding:10px 0;'>\n                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>\n                <ol>\n                    <li style='padding:5px 0;'> Search for <span style='font-weight:bold;'> refresh </span>in the search\n                        tool available in the Start menu,</li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on <span style='font-weight:bold;'> 'Refresh your PC without affecting your\n                                files'</span> in the search results as shown below.</div>\n                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on the\n                            <span style='font-weight:bold;'> Get started </span>\n                            button just below the heading<span style='font-weight:bold;'> 'Refresh your PC without\n                                affecting your files'</span> to start refreshing your Windows 10 PC.</div>\n                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>\n                    </li>\n                </ol>\n            </li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;'>\n        Additional Information\n    </div>\n\n    <div>\n        In most cases, once you start to refresh your PC, it’ll finish on its own.\n        However, if Windows needs missing files, you’ll be asked to insert recovery\n        media, which is typically a DVD disc or thumb drive. If that happens, what\n        you’ll need depends on your PC.\n    </div>\n    <div style='padding:10px 0'>\n        If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use\n        that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact\n        Microsoft Support.\n    </div>\n\n</div>",
+            "title": "PC を更新する方法",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        PC を更新する方法    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        症状    </div>    <div style='padding:5px 0;'>        お使いの PC が以前のように機能しておらず、その理由が分からない場合は、個人用ファイルを削除したり、設定を変更したりせずに PC をリフレッシュできます。Windows では PC を「リフレッシュ」できます。PC のリフレッシュは、個人用ファイルを削除せずに、新たにインストールするのに似ています。    </div>    <div style='padding:5px 0;'>        PC のリフレッシュにより、ファイルとカスタマイズした設定は変更されません    </div>    <div style='padding:5px 0;'>        <ul>            <li>PC の設定はデフォルトに戻ります</li>            <li>Windows ストアからのアプリは維持されます</li>            <li>ディスクまたは Web サイトからインストールしたアプリは削除されます</li>            <li>削除したファイルのリストはデスクトップに保存されます</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        影響を受けるブランド    </div>    <div>        <ul>            <li>すべてのデスクトップとラップトップ</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        オペレーション・システム    </div>    <div>        <ul>            <li>Windows 8、8.1、および 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        解決法    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        <span style='font-weight:bold;'>「設定」</span>をタップまたはクリックします                    </li>                    <li style='padding:5px 0;'>                        <span style='font-weight:bold;'>「更新と回復」</span>をタップまたはクリックします                    </li>                    <li style='padding:5px 0;'>                        <div><span style='font-weight:bold;'>「回復」</span>タップまたはクリックします</div>                        <div style='padding:5px 0'>「ファイルに影響を与えないように PC をリフレッシュする」から<span style='font-weight:bold;'>「開始する」</span>をタップまたはクリックします。</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        <span style='font-weight:bold;'>「次へ」</span>をクリックします。                    </li>                    <li style='padding:5px 0;'>                        <span style='font-weight:bold;'>「リフレッシュ」</span>をクリックし、リフレッシュ・プロセスを開始します。                    </li>                    <li style='padding:5px 0;'>                        リフレッシュ・プロセスが完了すると、デスクトップに「削除されたアプリ」の一覧が表示されます                    </li>                    <li style='padding:5px 0;'>                        システムをリフレッシュしている間に、削除されたアプリを見つけることができます                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> 「スタート」メニューにある検索ツールで、<span style='font-weight:bold;'>「リフレッシュ」</span>を検索します。</li>                    <li style='padding:5px 0;'>                        <div>以下に示す検索結果の<span style='font-weight:bold;'>「ファイルに影響を与えないように PC をリフレッシュする」</span>をクリックします。</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div><span style='font-weight:bold;'>「ファイルに影響を与えないように PC をリフレッシュする」</span>の見出しのすぐ下にある<span style='font-weight:bold;'>「開始する」</span>ボタンをクリックして、Windows 10 PCのリフレッシュを開始します。</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        追加情報    </div>    <div>        ほとんどの場合、PC のリフレッシュを開始したら、プロセスは自動的に終了します。ただし、Windows にファイルが見つからない場合は、リカバリー・メディア (通常は DVD ディスクまたは USB フラッシュ・ドライブ) を挿入するように求められます。その場合、必要なことは、ご使用の PC により異なります。    </div>    <div style='padding:10px 0'>        DVD を使用して、ご使用の PC を Windows 8.1 または Windows RT 8.1 にアップグレードした場合は、そのディスクを使用します。Windows 8.1 または Windows RT 8.1 のメディアがない場合は、Microsoft サポートにご連絡ください。    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -1705,8 +1737,8 @@
             "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
         },
         "question3": {
-            "title": "How to know your machine's CPU",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    How to know your machine's CPU\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.\n    The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit\n    system.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n    <li>All Desktop and Laptops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operating System</h3>\n<ul>\n    <li>Windows 7 , 8 , 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n    <li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button,</strong>\n        right-clicking Computer, and then clicking Properties  </li>\n    <li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then click\n        <strong>Search.</strong></li>\n    <li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n    <li>Tap or click <strong>System</strong></li>\n    <li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong>\n        is displayed in the System type field under the System heading.\n        If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong>\n        <strong>32-bit Operating </strong>System is displayed in the System type field under the System heading.<br />\n         </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then\n        click <strong>Search.</strong></li>\n    <li>In the search box, type <strong>system information</strong></li>\n    <li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and then\n        click <strong>System Summary.</strong></li>\n    <li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>\n        x64-based PC is displayed in the <strong>System type</strong> field under the \n        Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong>\n        version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> field\n        under the Item heading.  </li>\n</ol>\n<p> </p>",
+            "title": "ご使用のマシンの CPU を知る方法",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    ご使用のマシンの CPU を知る方法</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>症状</h3><p>32 ビットと 64 ビットという用語は、コンピューターのプロセッサー (CPUとも呼ばれる) が情報を処理する方法を表します。64 ビット版の Windows は、32 ビットのシステムよりも効率的に大量のランダム・アクセス・メモリー (RAM) を処理します。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>影響を受けるブランド</h3><p>上記の症状は、以下のシステムに関連しますが、これらに限定されません。</p><ul>    <li>すべてのデスクトップとラップトップ</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>オペレーティング・システム</h3><ul>    <li>Windows 7、8、10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>解決法</h3><p><strong><u>Windows 7 または Vista の場合</u></strong></p><ol>    <li><strong>「スタート」ボタン</strong>の<strong>「スタート」ボタン</strong>の画像をクリックして、システムを開き、「コンピューター」を右クリックし、「プロパティ」をクリックします  </li>    <li>「システム」から、システムのタイプを表示できます。</li></ol><p><strong><u>Windows 8 および Windows 10 の場合</u></strong></p><p><strong>方法 1:</strong> コントロール パネルの「システム」ウィンドウを表示します</p><ol>    <li>画面の右端から内側にスワイプして、次に<strong>「検索」</strong>をタップします。または、マウスを使用している場合は、画面の右下隅をポイントしてから、<strong>「検索」</strong>をクリックします。</li>    <li>検索ボックスに<strong>「システム」</strong>と入力してから、<strong>「設定」</strong>をタップまたはクリックします。</li>    <li><strong>「システム」</strong>をタップまたはクリックします</li>    <li>64 ビット版の Windows 8 を実行している場合は、「システム」の見出しの「システムのタイプ」フィールドに<strong>「64 ビット オペレーティング システム」</strong>と表示されます。32 <strong>ビット版の Windows</strong> <strong>8</strong> を実行している場合は、「システム」の見出しの「システムのタイプ」フィールドに<strong>「32 ビット オペレーティング システム」</strong>と表示されます。<br /> </li></ol><p><strong>方法 2</strong>: システム情報ウィンドウの表示</p><ol>    <li>画面の右端から内側にスワイプして、次に<strong>「検索」</strong>をタップします。または、マウスを使用している場合は、画面の右下隅をポイントしてから、<strong>「検索」</strong>をクリックします。</li>    <li>検索ボックスに<strong>「システム情報」</strong>と入力します</li>    <li><strong>「システム」</strong>をタップまたはクリックし、<strong>「システム情報」</strong>をタップまたはクリックして、次に<strong>「システムの要約」</strong>をタップまたはクリックします。</li>    <li><strong>64 ビット</strong>版の Windows 8 を実行している場合<strong>、</strong>「項目」の見出し下の <strong>「システムの種類」</strong>に「x64 ベース PC」が表示されます。<br /><br /><strong>32 ビット</strong>版の Windows 8 を実行している場合、「項目」の見出しの下の<strong>「システムの種類」</strong>に「x86 ベース PC」が表示されます。 </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -1794,8 +1826,8 @@
             }
         },
         "question4": {
-            "title": "Check your machine's battery use",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Check your machine's battery use\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> \n    screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.\n    That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;\n    apps&ndash;are using too much power.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n\n<ul>\n    <li>Lenovo laptops, desktops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Systems</h3>\n<ul>\n    <li>All</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operationg System</h3>\n<ul>\n    <li>Window 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your\n    traditional <strong>control panel </strong>view, this feature is located in the\n    new <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>\n    select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br />\n        <br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last\n    from last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;\n    <strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,\n    the display,</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong>\n     options show how much power is used by applications while you&rsquo;re using them, compared to applications\n    running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>\n        &ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.\n    This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of this\n    feature.\n    It will display a list of the apps have used battery power in that period, and show you what percentage of your\n    battery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
+            "title": "マシンのバッテリーの使用を確認する",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    マシンのバッテリーの使用を確認する</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>症状</h3><p>Windows 10 には、ラップトップのバッテリー残量を表示する、新しい<strong>「バッテリーの使用」</strong>画面が含まれます。この画面では、どのアプリ (デスクトップと Windows 10 の両方の「ユニバーサル」アプリ) が電力を消費しすぎているのかを正確に知ることができます。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>影響を受けるブランド</h3><ul>    <li>Lenovo のラップトップ、デスクトップ</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>影響を受けるシステム</h3><ul>    <li>すべて</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>オペレーティング・システム</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>解決法</h3><p>この機能は Windows 10で新しく追加されました。従来の<strong>「コントロール パネル」</strong>の表示には格納されていないため、この機能を最初に見つける必要があります。この機能は新しい<strong>「設定」</strong>アプリにあります</p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. バッテリー使用画面を見つける</h3></p><p>1.「スタート」メニューから<strong>「設定」</strong>のオプションをクリックまたはタップします</p><p>2.<strong>「設定」</strong>で、<strong>「システム」</strong><strong>「バッテリー節約機能」の順に選択します。 <br /><br /></strong><strong><br /><br /></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3.この見出しの下の<strong>「バッテリーの使用」</strong>リンクをクリックまたはタップして、詳細を表示します。</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. 電力使用率を分析する</h3><p>4 バッテリー使用画面を変更して、過去 24 時間、48 時間、または先週からのバッテリー使用量を表示することができます</p><p>5 <strong>「システム」</strong>、<strong>「ディスプレイ」、</strong><strong>「Wi-Fi」</strong>の割合がわかります。これは、システムの処理、ディスプレイで消費された電力を表示します。</p><p>6 <strong>「使用中」</strong>および<strong>「バックグラウンド」</strong>オプションは、バックグラウンドで実行中のアプリと比較して、アプリ使用中の消費電力を示します。</p><p>7 バックグラウンドで電力を消費するアプリがある場合、<strong>「バックグラウンド アプリの設定を変更する」</strong>リンクをクリックまたはタップして、アプリがバックグラウンドで起動しないように設定します。これは、ユニバーサル Windows 10 アプリにのみ有効です。</p><p>8 下にスクロールすると、アプリの一覧が表示されます。これは、この機能の最も便利なセクションです。一定期間にバッテリーを消費したアプリの一覧を表示します。また、各アプリが使用した電力の割合を示します</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -1862,8 +1894,8 @@
             }
         },
         "question5": {
-            "title": "Use your PC like a tablet",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Use your PC like a tablet\n</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet\n        mode</strong> .</p>\n<p> </p>\n<p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device \n    on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and\n    how the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the\n    screen.</p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.\n    Select the <strong>Start </strong>button, select <strong>Settings </strong>>\n    <strong>System </strong>> <strong>\n        Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.\n    To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and\n    you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n    <li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n    <li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then\n        drag it to one side to snap it into your divided screen.</li>\n    <li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
+            "title": "PC をタブレットのように使用する",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    PC をタブレットのように使用する</div><hr><p>タブレット モードを使用すると、タッチスクリーン・デバイスを使用しているときに Windows がより直感的で使いやすくなります。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>タブレット モードの使用</h3><p>タブレット モードをオンにするには、タスク バーの<strong>「アクション センター」</strong>を選択してから、 <strong>「タブレット モード」</strong>を選択します。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>お願い</h3><p>デバイスでタブレット モードが自動的にオンになるかどうかを調べるには、製造元の Web サイトでデバイスを検索してください。この機能のサポート状況は、ハードウェア、インストールされているドライバー、および製造元によるデバイスの設定方法によって異なります。 </p><p> </p><p>タブレット モードでは、アプリは全画面表示になり、作業スペースが広がります。アプリを閉じるには、画面の一番下までドラッグします。</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>ヒント</h3><p>タスク バーは、PC がタブレット モードのときに使用できますが、画面に追加のスペースが必要な場合は非表示にすることができます。<strong>「スタート」</strong>ボタンを選択し、<strong>「設定」</strong> > <strong>「システム」</strong> > <strong>「タブレット モード」</strong>の順に選択したら、<strong>「タブレット モードでタスク バーを自動的に非表示にする」</strong>をオンにします。非表示のタスクバーを確認するには、画面の下から上にスワイプするか、そこにマウス・カーソルを合わせます。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>2 つのアプリを同時に使う</h3><p>タブレット モードで 2 つのアプリを並べて使用するには、開いているアプリを下に、また横にドラッグします。アプリのスナップ先の位置と、その横にスナップできる、開いているアプリが表示されます。</p><p>このビューでは、次のこともできます。</p><ul>    <li>スナップされている 2 つのアプリの間で共有エッジを使い、同時に両方のアプリのサイズを変更します。</li>    <li>タスク バーの<strong>「タスク ビュー」</strong>を選び、アプリを選択してから端までドラッグして、分割された画面にスナップさせます。</li>    <li>タスク バーの「戻る」ボタンを使用して、現在のアプリに戻ったり、その前に使っていたアプリを開いたりすることができます。</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -1902,8 +1934,8 @@
             }
         },
         "question6": {
-            "title": "Get to know Cortona, your personal assistant",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Get to know Cortana, your personal assistant\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>What is Cortana?</h3>\n<hr />\n<p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing\n    works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you\n    select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n    <li>Give you reminders based on time, places, or people.</li>\n    <li>Track packages, teams, interests, and flights.</li>\n    <li>Send emails and texts.</li>\n    <li>Manage your calendar and keep you up to date.</li>\n    <li>Create and manage lists.</li>\n    <li>Chit chat and play games.</li>\n    <li>Find facts, files, places, and info.</li>\n    <li>Open any app on your system.</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Try this: Set a reminder</h3>\n<hr />\n\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or\n    even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync\n    notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hey Cortana?</h3>\n<hr />\n<p>Set Cortana to hear you anytime you say\n    'Hey Cortana.' Select the search box on the taskbar to open Cortana home.\n    Then select <strong>Settings</strong>  and turn on <strong>Let Cortana respond to 'Hey\n        Cortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.\n</p>\n<p> </p>",
+            "title": "パーソナル・アシスタントの Cortana についてもっと知る",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    パーソナル・アシスタントの Cortana についてもっと知る</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Cortana とは?</h3><hr /><p>Cortana は、デジタル・エージェントです。Cortana は、ユーザーの作業を支援します。</p><p>Cortana を使用すればするほど、ユーザーの体験はよりパーソナライズされたものになります。</p><p>開始するには、検索ボックスに質問を入力するか、マイクを選択して Cortana に話しかけてください。(すべてのタイプの PC で入力できますが、通話するにはマイクが必要です。)</p><p>何を言うべきかわからない場合は、ロック画面に、またタスク バーの検索ボックスを選択すると、Cortana ホームに候補が表示されます。</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>ホーム 2. ノートブック 3. 設定 4. フィードバック</li></ol><p>以下は、Cortana がユーザーのためにできることの例です。</p><ul>    <li>時間、場所、または人に基づいてリマインダーを提供する。</li>    <li>荷物、チーム、興味、およびフライトを追跡する。</li>    <li>メールとテキストを送信する。</li>    <li>カレンダーを管理して、最新の状態に保つ。</li>    <li>リストを作成および管理する。</li>    <li>チャットをしたり、ゲームをしたりする。</li>    <li>ファクト、ファイル、場所、および情報を見つける。</li>    <li>システム上の任意のアプリを開く。</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>これを試してください: リマインダーのセット</h3><hr /><p>Cortana ができることの 1 つは、リマインダーをセットすることです。Cortana は、時間、場所、または人に基づき、ユーザーに行うべきことを教えることができます。</p><p>たとえば、「次回 Tanya から電話があったら、彼女におめでとうを言うのを思い出させてください」と入力するか、または言います。</p><p>Tanya から電話を受けると、リマインダーが表示されます。</p><p>追加のボーナス &mdash; Windows Phone または iPhone または Android 用の Cortana を使用している場合は、Cortana を設定して、PC とスマートフォンの間で通知を同期することができます。</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>コルタナさん</h3><hr /><p>「コルタナさん」と言うとき常にユーザーの声を聞くように Cortana を設定します。タスク バーの検索ボックスを選択して、Cortana ホームを開きます。次に<strong>「設定」</strong>を選択して、<strong>「「コルタナさん」と言ったら Cortana が応答するようにする」</strong>をオンにします。</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>お願い</p><p>Cortana は、特定の国/地域でしか利用できません。また、Cortana の機能の一部はどこでも利用できるわけではありません。</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -1943,8 +1975,8 @@
     "welcometutorial": {
         "description": "Vantage を使用すると、ドライバーの更新、診断の実行、サポートの要求、ご使用のデバイスの詳細確認が簡単になります。すばやく操作性をカスタマイズしたり、必要に合わせた有用な情報を見つけたりできます",
         "bullets1": "Vantageダッシュボードでシステムのステータスを確認してください。",
-        "bullets2": "セキュリティー・アドバイザーでセキュリティ管理が容易に",
-        "bullets3": "自動更新でデバイスはいつでも最新の状態",
+        "bullets2": "セキュリティー・アドバイザーは、セキュリティーの管理を容易にします (一部のシステムで利用可能)。",
+        "bullets3": "自動更新により、デバイスはいつでも最新の状態に維持されます (一部のシステムで利用可能)。",
         "subtitle1": "デバイスをどのように使用しますか?",
         "subtitle2": "興味のあることを教えてください",
         "personal": "個人用",
@@ -1986,6 +2018,6 @@
         "usageStatistics": "利用統計",
         "usageStatisticsDescription": "Lenovo に使用状況の統計を匿名で送信する。",
         "Note": "注:",
-        "settingsNotes": "このページの設定をすべて有効にするには、ユーザーが再起動する必要があります。"
+        "settingsNotes": "このページのすべての設定で、有効にするために、このアプリを再起動する必要があります。"
     }
 }

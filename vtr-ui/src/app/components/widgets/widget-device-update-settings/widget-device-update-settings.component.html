@@ -19,7 +19,7 @@
 										<div class="d-flex justify-content-between align-items-center w-100"
 											[ngClass]="{collapsible: item.isCollapsible}">
 											<div class="update-title"
-												[innerHTML]="item.header | translate | safeDom : 'html' "></div>
+												[innerHTML]="item.header | translate | sanitize : 'html' "></div>
 											<vtr-ui-gaming-collapsible-container [options]="options"
 												*ngIf="item.isCollapsible"
 												(change)="optionChanged($event,item)">

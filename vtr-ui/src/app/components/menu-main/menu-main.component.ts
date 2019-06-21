@@ -183,8 +183,8 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 				windowClass: 'common-confirmation-modal'
 			});
 
-			var header = 'lenovoId.ssoErrorTitle';
-			modalRef.componentInstance.CancelText = "";
+			const header = 'lenovoId.ssoErrorTitle';
+			modalRef.componentInstance.CancelText = '';
 			modalRef.componentInstance.header = header;
 			modalRef.componentInstance.description = 'lenovoId.ssoErrorNetworkDisconnected';
 			return;
@@ -301,6 +301,13 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			if (myDeviceItem !== undefined) {
 				const smartAssistItem = myDeviceItem.subitems.find(item => item.id === 'smart-assist');
 				if (!smartAssistItem) {
+					// if cache has value true for IsSmartAssistSupported, add menu item
+					const isSmartAssistSupported = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, false);
+					if (isSmartAssistSupported) {
+						this.addSmartAssistMenu(myDeviceItem);
+					}
+
+					// still check if any of the feature supported. if yes then add menu
 					Promise.all([
 						this.smartAssist.getHPDVisibilityInIdeaPad(),
 						this.smartAssist.getHPDVisibilityInThinkPad(),
@@ -309,26 +316,31 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 					]).then((responses: any[]) => {
 						console.log('showSmartAssist.Promise.all()', responses);
 						const isAvailable = (responses[0] || responses[1] || responses[2].available || responses[3]);
-						this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
-
-						if (isAvailable) {
-							myDeviceItem.subitems.splice(4, 0, {
-								id: 'smart-assist',
-								label: 'common.menu.device.sub4',
-								path: 'smart-assist',
-								metricsEvent: 'itemClick',
-								metricsParent: 'navbar',
-								metricsItem: 'link.smartassist',
-								routerLinkActiveOptions: { exact: true },
-								icon: '',
-								subitems: []
-							});
+						// const isAvailable = true;
+						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, isAvailable);
+						// avoid duplicate entry. if not added earlier then add menu
+						if (isAvailable && !isSmartAssistSupported) {
+							this.addSmartAssistMenu(myDeviceItem);
 						}
 					}).catch(error => {
 						this.logger.error('error in initSmartAssist.Promise.all()', error);
 					});
 				}
 			}
+		});
+	}
+
+	private addSmartAssistMenu(myDeviceItem: any) {
+		myDeviceItem.subitems.splice(4, 0, {
+			id: 'smart-assist',
+			label: 'common.menu.device.sub4',
+			path: 'smart-assist',
+			metricsEvent: 'itemClick',
+			metricsParent: 'navbar',
+			metricsItem: 'link.smartassist',
+			routerLinkActiveOptions: { exact: true },
+			icon: '',
+			subitems: []
 		});
 	}
 
