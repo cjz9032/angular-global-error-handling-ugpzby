@@ -35,7 +35,7 @@
 						<!-- </ng-container> -->
 						<!-- <vtr-ui-lighting-color-wheel></vtr-ui-lighting-color-wheel> -->
 						<vtr-ui-color-wheel [showOverlay]="showHideOverlay" [inHEX]="inHex1"
-							[showApply]="showHideApply1" (colorEffectChanged)="colorEffectChangedFront($event)">
+							[btnStatus]="applyBtnStatus1" (colorEffectChanged)="colorEffectChangedFront($event)">
 						</vtr-ui-color-wheel>
 					</div>
 				</div>
@@ -63,7 +63,7 @@
 					<!-- <h3 class="content-title">Color</h3> -->
 					<!-- <vtr-ui-lighting-color-wheel></vtr-ui-lighting-color-wheel> -->
 					<vtr-ui-color-wheel [showOverlay]="showHideOverlaySide" [inHEX]="inHex2"
-						[showApply]="showHideApply2" (colorEffectChanged)="colorEffectChangedSide($event)">
+						[btnStatus]="applyBtnStatus2" (colorEffectChanged)="colorEffectChangedSide($event)">
 					</vtr-ui-color-wheel>
 				</div>
 			</div>
