@@ -35,9 +35,9 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public eyeCareModeStatus = new FeatureStatus(true, true);
 	private notificationSubscription: Subscription;
 	@ViewChild('camera')
-	cameraEl: WidgetSwitchIconComponent;
+	camera: WidgetSwitchIconComponent;
 	@ViewChild('microphone')
-	microphoneEl: WidgetSwitchIconComponent;
+	microphone: WidgetSwitchIconComponent;
 	@ViewChild('eyecare')
 	eyecare: WidgetSwitchIconComponent;
 	public quickSettingsWidget = [
@@ -263,42 +263,50 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	//#endregion
 
 	public onCameraStatusToggle($event: boolean) {
+		this.camera.isLoading = true;
 		this.quickSettingsWidget[1].state = false;
 		try {
 			if (this.dashboardService.isShellAvailable) {
 				this.dashboardService.setCameraStatus($event)
 					.then((value: boolean) => {
 						console.log('getCameraStatus.then', value, $event);
+						this.camera.isLoading = false;
 						this.cameraStatus.status = $event;
 						this.quickSettingsWidget[1].state = true;
 						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraStatus);
 					}).catch(error => {
+						this.camera.isLoading = false;
 					this.quickSettingsWidget[1].state = true;
 					console.error('getCameraStatus', error);
 				});
 			}
 		} catch (error) {
+			this.camera.isLoading = false;
 			this.quickSettingsWidget[1].state = true;
 			console.log('onCameraStatusToggle', error);
 		}
 	}
 
 	public onMicrophoneStatusToggle($event: boolean) {
+		this.microphone.isLoading = true;
 		this.quickSettingsWidget[0].state = false;
 		try {
 			if (this.dashboardService.isShellAvailable) {
 				this.dashboardService.setMicrophoneStatus($event)
 					.then((value: boolean) => {
+						this.microphone.isLoading = false;
 						console.log('setMicrophoneStatus.then', value, $event);
 						this.microphoneStatus.status = $event;
 						this.quickSettingsWidget[0].state = true;
 						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardMicrophone, this.microphoneStatus);
 					}).catch(error => {
+					this.microphone.isLoading = false;
 					this.quickSettingsWidget[0].state = true;
 					console.error('setMicrophoneStatus', error);
 				});
 			}
 		} catch (error) {
+			this.microphone.isLoading = false;
 			this.quickSettingsWidget[0].state = true;
 			console.log('onMicrophoneStatusToggle', error);
 		}
@@ -330,6 +338,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			console.log('onEyeCareModeToggle', error);
 		}
 	}
+
 
 
 }
