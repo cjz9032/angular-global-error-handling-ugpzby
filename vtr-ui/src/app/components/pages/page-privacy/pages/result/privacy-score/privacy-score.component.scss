@@ -95,8 +95,7 @@
     margin: 0 0 0.8rem 0;
   }
   &__text {
+	@extend %text-common;
     color: #FFFFFF;
-    font-size: 1.4rem;
-    line-height: 2.1rem;
   }
 }
