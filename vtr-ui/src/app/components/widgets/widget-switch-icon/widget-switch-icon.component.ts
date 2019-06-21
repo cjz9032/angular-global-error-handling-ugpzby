@@ -9,19 +9,20 @@ import { DeviceService } from '../../../services/device/device.service';
 })
 export class WidgetSwitchIconComponent implements OnInit {
 	@Input() title: string;
-	@Input() iconDefinition: string[];
+	@Input() iconDefinition: string;
+	@Input() offIconDefinition: string; // when feature is off
 	@Input() value = false;
 	@Input() isBlocked = false;
 	@Input() tooltipText = '';
 	@Input() disable = false;
 	@Input() metricsItem = '';
-	@Input() isCamera=false;
+	@Input() isCamera = false;
 	@Output() toggle = new EventEmitter<boolean>();
 
 	constructor(public deviceService: DeviceService) { }
 
 	ngOnInit() {
-		console.log(this.title, this.iconDefinition);
+		// console.log(this.title, this.iconDefinition);
 	}
 
 	onChange(event: Event) {
@@ -30,15 +31,14 @@ export class WidgetSwitchIconComponent implements OnInit {
 			event.stopPropagation();
 			return;
 		}
-		if(this.isCamera){
+		if (this.isCamera) {
 			console.log('WIDGET SWITCH ICON VALUE', this.value);
-				this.toggle.emit(this.value);
-		}
-		else{
+			this.toggle.emit(this.value);
+		} else {
 			this.value = !this.value;
 			console.log('WIDGET SWITCH ICON VALUE', this.value);
 			this.toggle.emit(this.value);
-		
+
 		}
 	}
 }
