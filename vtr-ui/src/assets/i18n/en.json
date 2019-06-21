@@ -41,6 +41,14 @@
 						"button": "Install",
 						"link": "cancel"
 					},
+
+					"lightingDriverPopup": {
+						"headerText": "Driver Install Required",
+						"text": "Please install driver",
+						"button": "Install",
+						"link": "cancel"
+					},
+
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",
@@ -230,7 +238,7 @@
 			"title": "Lighting",
 			"effect": {
 				"option1": {
-					"title": "Static"
+					"title": "On"
 				},
 				"option2": {
 					"title": "Flicker"
@@ -242,25 +250,44 @@
 					"title": "Wave"
 				},
 				"option5": {
-					"title": "Music"
-				},
-				"option6": {
 					"title": "Smooth"
 				},
-				"option7": {
+				"option6": {
 					"title": "CPU Temperature"
 				},
-				"option8": {
+				"option7": {
 					"title": "CPU Utilization"
 				},
-				"option9": {
-					"title": "Response"
+				"option8": {
+					"title": "Off"
 				},
-				"option10": {
-					"title": "Ripple"
+				"apply": {
+					"title": "APPLY"
 				},
-				"option11": {
-					"title": "No Light"
+				"applied": {
+					"title": "APPLIED"
+				}
+			},
+			"brightness": {
+				"text1": {
+					"title": "*Brightness setting doesn't apply on "
+				},
+				"text2": {
+					"title": " effect"
+				}
+			},
+			"lightingSingleLightingOption": {
+				"option1": {
+					"title": "Always On"
+				},
+				"option2": {
+					"title": "Fast Blink"
+				},
+				"option3": {
+					"title": "Medium Blink"
+				},
+				"option4": {
+					"title": "Slow Blink"
 				}
 			}
 		}
@@ -323,10 +350,7 @@
 			"off": "OFF",
 			"collapse": "Collapse",
 			"expand": "Expand",
-			"loader": {
-				"text1": "Fetching",
-				"text2": "Status"
-			}
+			"loader": "Fetching <br> Status"
 		}
 	},
 	"privacy": {
@@ -491,6 +515,10 @@
 				"minute": "minute",
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
+				"updating": "Updating",
+				"thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+				"voltageError": "Battery voltage incorrect",
+				"batteryNotDetected": "No Battery Detected",
 				"details": {
 					"title": "Battery Details",
 					"primary": "Primary Battery",
@@ -541,13 +569,13 @@
 				},
 				"condition": {
 					"Illegal": {
-						"title": "This system may not support battery that",
-						"description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
-						"description1": "Attention:",
-						"description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
+						"title": "Battery 1",
+						"description": "you cannot use the attached battery with this computer.",
+						"description1": "Replace",
+						"description2": "it with a battery of correct model."
 					},
 					"Good": {
-						"title": "The battery is in good Condition"
+						"title": "The battery is in good condition."
 					},
 					"Exhaustion": {
 						"title": "The battery has failed due to normal",
@@ -566,20 +594,45 @@
 					},
 					"NotSupportACAdapter": {
 						"title": "AC adapter not supported.",
-						"description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
+						"description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
 					},
 					"LimitedACAdapterSupport": {
 						"title": "AC adapter cannot provide enough power",
 						"description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
 					},
 					"MissingDriver": {
-						"title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
+						"title": "The Lenovo Power Manager driver",
 						"description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
 					},
 					"StoreLimitation": {
 						"title": "The battery can only store",
 						"description1": "of",
 						"description2": "it's original full charge capacity"
+					},
+					"HighTemperature": {
+						"title": "Discharging",
+						"description": "has been stopped because the",
+						"description1": "battery temperature is too high"
+					},
+					"TrickleCharge": {
+						"description": "The battery was",
+						"description1": "completely discharged",
+						"description2": "and needs to be recharged. This might take ten hours or more."
+					},
+					"OverheatedBattery": {
+						"description": "The battery is",
+						"description1": "too hot.",
+						"description2": "Remove it from the computer and cool it to room temperature."
+					},
+					"PermanentError": {
+						"description": "The battery has",
+						"description1": "failed due to normal wear.",
+						"description2": "The battery cannot be charged. Replace the battery."
+					},
+					"HardwareAuthenticationError": {
+						"description": "The battery installed is",
+						"description1": "is not supported",
+						"description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
 					}
 				}
 			},
@@ -603,6 +656,7 @@
 					"description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
 					"description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
 					"description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+					"description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider",
 					"readMore": "Read more.",
 					"gotoWindows": {
 						"title": "Go to windows settings",
@@ -686,9 +740,14 @@
 						"heading": "Set time when you typically use this computer",
 						"subHeading1": "start",
 						"subHeading2": "end",
-						"subHeading3": "use this schedule for"
+						"subHeading3": "use this schedule for",
+						"endTimeNote": "End time must be within 20 hours from Start time",
+						"timeUnits": {
+							"unit1": "Hours",
+							"unit2": "Minutes",
+							"unit3": "AM/PM"
+						}
 					}
-
 				},
 				"batterySettings": {
 					"title": "Battery Settings",
@@ -820,15 +879,15 @@
 				"display": {
 					"title": "Display",
 					"eyeCareMode": {
-						"title": "Eye Care Mode",
-						"checkbox": "Schedule eye care mode from sunset to sunrise",
+						"title": "Color Temperature in Eye Care Mode",
+						"checkbox": "Schedule Eye Care Mode from sunset to sunrise",
 						"options": {
 							"warm": "Warm (Better for eyes)",
 							"cold": "Cold"
 						},
 						"reset": "Reset temperature",
 						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+						"onSunsetToSunriseScheduleDescription": "Schedule Eye Care Mode from sunset to sunrise",
 						"note": {
 							"title": "Note",
 							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
@@ -854,7 +913,7 @@
 						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
 						"note": {
 							"title": "Note",
-							"description": "When the Eye care mode is enabled. this color temperature does not take effect. However,  you can drag the slide to get a preview of it. To make it effective. turn off the Eye care mode"
+							"description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
 						}
 					},
 					"privacyGuard": {
@@ -946,7 +1005,8 @@
 				"security": "Security",
 				"screen": "Screen",
 				"media": "Media",
-				"voice": "Voice"
+				"voice": "Voice",
+				"APS": "APS"
 			},
 			"intelligentSecurity": {
 				"title": "Intelligent Security",
@@ -988,7 +1048,7 @@
 					"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
 					"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
 					"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-					"description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
+					"description4": "2. If your computer is in hibernation mode or has been turned off. Zero Touch Lock will not work.",
 					"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
 				},
 				"WindowsLink": {
@@ -1021,7 +1081,8 @@
 				"description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
 				"activeProtection": {
 					"title": "Active Protection",
-					"caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection"
+					"caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
+					"checkbox": "Ignore repetative shocks such as those of a train or a car"
 				},
 				"manualActiveProtectionSuspension": {
 					"title": "Manual Active Protection Suspension",
@@ -1050,6 +1111,34 @@
 				"title": "Zero Touch Video Playback",
 				"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
 				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+			},
+			"voice":{
+				"title": "Voice",
+				"description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
+				"installBtnText": "Install",
+				"launchBtnText": "Launch",
+				"learnMoreText": "Learn More",
+				"voiceToText": {
+					"title": "Voice to text",
+					"caption": "This feature helps to convert your voice into texts."
+				},
+				"translation": {
+					"title": "Translation",
+					"caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+				},
+				"modalPopUp": {
+					"heading": "Get started:",
+					"point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
+					"point2": "Open the file where you want to record the converted text.",
+					"point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
+					"point4": "Select your desired language and click the microphone icon to start.",
+					"point5": "Put the cursor to where you want to edit and begin to speak.",
+					"point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
+					"point7": "Select your desired source language and target language.",
+					"point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
+					"point9": "Click the microphone icon to start speaking",
+					"closeText": "close"
+				}
 			}
 		}
 	},
@@ -1192,11 +1281,9 @@
 		"devices": "Devices",
 		"seeProtectedDevices": "See protected devices",
 		"addDevice": "add device",
-		"trialExpired": "Trial expired",
-		"trialExpiredSubtext": "Upgrade to protect all of your devices",
+		"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
 		"upgrade": "upgrade",
-		"freeTrial": "Free 30 day trial",
-		"protectAllDevices": "Protect all of your devices",
+		"freeTrial": "Protect all of your devices - Free 30 day trial",
 		"inEcosystem": "In Ecosystem",
 		"ecosystemEnable": "Ecosystem Enabled",
 		"inTrial": "In trial",

@@ -1,10 +1,8 @@
 <div class="subpage-device-settings-input-accessories vtr-subpage">
 	<div class="row">
 		<div class="col">
-			<vtr-ui-header-subpage 
-				[title]="title | translate"
-				[caption]="'device.deviceSettings.inputAccessories.description' | translate"
-				>
+			<vtr-ui-header-subpage [title]="title | translate"
+				[caption]="'device.deviceSettings.inputAccessories.description' | translate">
 			</vtr-ui-header-subpage>
 		</div>
 	</div>
@@ -13,16 +11,17 @@
 		id="Input & Accessories">
 		<div class="col-10 mx-auto ">
 			<!-- Input & Accessories -->
-			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.inputAccessories.inputAccessory.title' | translate"
+			<vtr-container-collapsible
+				[cardTitle]="'device.deviceSettings.inputAccessories.inputAccessory.title' | translate"
 				componentName="Input & Accessories"
 				[isCollapsed]="false"
 				[allowCollapse]="true"
 				[theme]="'white'">
 				<ul class="list-group list-group-flush">
-				<li class="pt-3">
+					<li class="pt-3">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.title' | translate"
-							componentName="Privacy guard"
+							componentName="Input Accessories"
 							[caption]=""
 							[isSwitchVisible]="false"
 							[leftIcon]="['fal', 'gem']"
@@ -30,46 +29,42 @@
 							[showChildContent]="true"
 							[theme]="'white'">
 							<div class="row">
-								<div class="col d-flex justify-content-between">
+								<div class="col d-flex justify-content-between col-sm-12 col-md-12 col-lg-12 col-xl-12">
 									<p class="hidden-keyboard-text">
-										{{'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.description' | translate}}	
-										<span class="ml-2 text-primary"><u>read more</u></span>
-									</p>									
+										{{'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.description' | translate}}
+										<!-- <span class="ml-2 text-primary"><u>read more</u></span> -->
+									</p>
 								</div>
 							</div>
 							<div class="row">
-									<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 pl-0 pr-0">
-											<div class="img-preview">
-												<img 
-													src="assets/images/keyboard-images/KeyboardMap_Images/Belgium.png" />							
-													
-											</div>
+								<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+									<div class="img-preview">
+										<img src="assets/images/keyboard-images/KeyboardMap_Images/Belgium.png" />
+
+									</div>
 								</div>
 							</div>
 							<div class="row keys-row">
-									<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 pl-0 pr-0 d-flex" *ngFor = "let key of shortcutKeys">
-											<!-- <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1">
-													<img [src]='key.image' />				
+								<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex"
+									*ngFor="let key of shortcutKeys">
+									<!-- <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1">
+													<img [src]='key.image' />
 												</div> -->
-										<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 pl-1">
-														<h4 class="mb-0 caption-tittle">
-															{{key + '.tittle' | translate}}
-														</h4>	
-											</div>
-											<div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
-													<p class="hidden-keyboard-text mb-0">
-													{{key + '.description' | translate}}	
-													</p>									
-											</div>
+									<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 pl-1">
+										<h4 class="mb-0 caption-tittle">
+											{{key + '.tittle' | translate}}
+										</h4>
+									</div>
+									<div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
+										<p class="hidden-keyboard-text mb-0">
+											{{key + '.description' | translate}}
+										</p>
+									</div>
 								</div>
 							</div>
 						</vtr-ui-row-switch>
-					</li>			
-				
-
+					</li>
 				</ul>
-
-
 			</vtr-container-collapsible>
 		</div>
 	</div>

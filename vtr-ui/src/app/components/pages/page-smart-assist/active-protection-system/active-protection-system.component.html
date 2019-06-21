@@ -10,21 +10,28 @@
 			<div class="col-12">
 				<ul class="list-group list-group-flush">
 					<!-- APS Slider -->
-					<li class="auto-screen-off-block bb">
+					<li class="auto-screen-off-block">
 						<div class="switch">
 							<vtr-ui-row-switch
 								[title]="'device.smartAssist.activeProtectionSystem.activeProtection.title' | translate"
 								[caption]=" 'device.smartAssist.activeProtectionSystem.activeProtection.caption' | translate"
-								[isSwitchVisible]="true" [leftIcon]="['fal', 'gem']" [theme]="'white'">
+								[isSwitchVisible]="true"
+								[leftIcon]="['fal', 'gem']"
+								[theme]="'white'">
 							</vtr-ui-row-switch>
 						</div>
 						<div class="slider">
 							<vtr-ui-aps-slider [legends]="['Low Sensitivity', 'Medium Sensitivity', 'High Sensitivity']"
-								[minValue]="0" [maxValue]="100" [enableSlider]="" [theme]="'white'">
+								[minValue]="0"
+								[maxValue]="100"
+								[enableSlider]="false"
+								[value]="50"
+								[theme]="'white'">
 							</vtr-ui-aps-slider>
 						</div>
 						<div class="checkbox">
-							<vtr-ui-checkbox [label]="'Ignore repetative shocks, such as that of train or cars'">
+							<vtr-ui-checkbox
+								[label]="'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate">
 							</vtr-ui-checkbox>
 						</div>
 					</li>
@@ -34,18 +41,23 @@
 						<vtr-ui-row-switch
 							[title]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.title' | translate"
 							[caption]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.caption' | translate"
-							[leftIcon]="['fal', 'gem']" [theme]="'white'" [isSwitchVisible]="true"
+							[leftIcon]="['fal', 'gem']"
+							[theme]="'white'"
+							[isSwitchVisible]="true"
 							[showChildContent]="true">
 						</vtr-ui-row-switch>
 						<div class="dropdown row">
 							<section class="col-sm-6">
-								<p class="text-uppercase">{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.dropdown-title' | translate }}</p>
-								<vtr-ui-dropdown [list]="intervals" [value]="10">
-								</vtr-ui-dropdown>
+								<p class="text-uppercase">
+									{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.dropdown-title' | translate }}
+								</p>
+								<vtr-ui-dropdown [list]="intervals"
+									[value]="10"></vtr-ui-dropdown>
 							</section>
 							<section class="col-sm-5">
 								<div class="pt-4 text-center">
-									<button type="button" class="btn btn-primary btn-block btn-lg battery-detail-button text-uppercase">
+									<button type="button"
+										class="btn btn-primary btn-block btn-lg battery-detail-button text-uppercase">
 										{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.button' | translate }}
 									</button>
 								</div>
@@ -56,12 +68,17 @@
 					<!-- Advanced section -->
 					<li class="advanced pt-3 keep-my-display-block auto-screen-off-block">
 						<h4 *ngIf="!advanced">MORE</h4>
-						<a *ngIf="!advanced" (click)="toggleAdvanced()"><p>ADVANCED SETTINGS</p></a>
-						
+						<a *ngIf="!advanced"
+							(click)="toggleAdvanced()">
+							<p>ADVANCED SETTINGS</p>
+						</a>
+
 						<section *ngIf="advanced">
 							<h4>ADVANCED SETTINGS</h4>
 							<vtr-active-protection-system-advanced></vtr-active-protection-system-advanced>
-							<a (click)="toggleAdvanced()"><p>HIDE ADVANCED SETTINGS</p></a>
+							<a (click)="toggleAdvanced()">
+								<p>HIDE ADVANCED SETTINGS</p>
+							</a>
 						</section>
 					</li>
 				</ul>

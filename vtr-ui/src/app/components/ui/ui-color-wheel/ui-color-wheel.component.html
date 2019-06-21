@@ -1,17 +1,49 @@
 <div class="vtr-ui-color-wheel picker-container">
-	<div id="color-wheel" #colorWheel></div>
-	<div class="rgb-values">
-		<div class="form-group d-flex">
-			<label>R:</label>
-			<input id="rgb-r" type="text" min="0" max="255" class="input-color" [(ngModel)]="color[0]" readonly>
+	<div class="overlay" *ngIf="showOverlay">
+		Selecting colour not available to this effect.
+	</div>
+
+	<div class="row">
+		<div class="col-8">
+			<h3 class="content-title">Color</h3>
+			<div id="color-wheel" #colorWheel></div>
 		</div>
-		<div class="form-group d-flex">
-			<label>G:</label>
-			<input id="rgb-g" type="text" min="0" max="255" class="input-color" [(ngModel)]="color[1]" readonly>
-		</div>
-		<div class="form-group d-flex">
-			<label>B:</label>
-			<input id="rgb-b" type="text" min="0" max="255" class="input-color" [(ngModel)]="color[2]" readonly>
+		<div class="col-4 mt-5 pt-3 ">
+			<div class="rgb-values">
+
+
+				<div class="form-group d-flex">
+					<label></label>
+					<button class="btn enable-button" [class.disable-button]="!showApply"
+						(click)="onApplyColorEffect(backColor)"><span *ngIf="showApply">APPLY</span>
+						<vtr-spinner *ngIf="!showApply"></vtr-spinner>
+					</button>
+				</div>
+				<div class="color-codes">
+
+					<div class="form-group d-flex">
+						<label></label>
+						<!-- <div id="rgb-rgb" class="backColorDpiv"  [ngStyle]="{'background-color':  backColor }"></div> -->
+						<input id="rgb-rgb" type="text" min="0" max="255" class="input-color"
+							[ngStyle]="{'background-color':  backColor }" readonly>
+					</div>
+					<div class="form-group d-flex">
+						<label>R: </label>
+						<input id="rgb-r" type="number" maxlength="3" min="0" max="255" class="input-color"
+							[(ngModel)]="color[0]" (ngModelChange)='rgbChanged()'>
+					</div>
+					<div class="form-group d-flex">
+						<label>G: </label>
+						<input id="rgb-g" type="number" maxlength="3" min="0" max="255" class="input-color"
+							[(ngModel)]="color[1]" (ngModelChange)='rgbChanged()'>
+					</div>
+					<div class="form-group d-flex">
+						<label>B: </label>
+						<input id="rgb-b" type="number" maxlength="3" min="0" max="255" class="input-color"
+							[(ngModel)]="color[2]" (ngModelChange)='rgbChanged()'>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

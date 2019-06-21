@@ -39,6 +39,9 @@ export class PageSmartAssistComponent implements OnInit {
 	public options: any;
 	public keepMyDisplay: boolean;
 	public intelligentScreen: IntelligentScreen;
+	public intelligentMedia = new FeatureStatus(false, true);
+	public isIntelligentMediaLoading = true;
+	public isAPSavailable = false;
 
 	headerMenuItems: PageAnchorLink[] = [
 		// {
@@ -51,16 +54,21 @@ export class PageSmartAssistComponent implements OnInit {
 		// 	path: 'screen',
 		// 	sortOrder: 2
 		// },
-		{
-			title: 'device.smartAssist.jumpTo.media',
-			path: 'media',
-			sortOrder: 3
-		},
 		// {
-		// 	title: 'device.smartAssist.jumpTo.voice',
-		// 	path: 'voice',
-		// 	sortOrder: 4
-		// }
+		// 	title: 'device.smartAssist.jumpTo.media',
+		// 	path: 'media',
+		// 	sortOrder: 3
+		// },
+		{
+			title: 'device.smartAssist.jumpTo.APS',
+			path: 'aps',
+			sortOrder: 4
+		},
+		{
+			title: 'device.smartAssist.jumpTo.voice',
+			path: 'voice',
+			sortOrder: 5
+		}
 	];
 
 	cardContentPositionA: any = {};
@@ -85,6 +93,7 @@ export class PageSmartAssistComponent implements OnInit {
 		this.setIsThinkPad(this.machineType === 1);
 		this.setIntelligentSecurity();
 		this.setIntelligentScreen();
+		this.getVideoPauseResumeStatus();
 	}
 
 	private setIntelligentSecurity() {
@@ -124,12 +133,17 @@ export class PageSmartAssistComponent implements OnInit {
 
 	private apsAvailability() {
 		console.log('APS', this.smartAssist);
-		// Promise
-		// 	.all([this.smartAssist.getAPSCapability(), this.smartAssist.getSensorStatus(), this.smartAssist.getHDDStatus()])
-		// 	.then((response: any[]) => {
-		// 		console.log('APS RESPONSE-----------------------', response);
-		// 	})
-		// 	.catch((error) => { console.log('APS ERROR------------------', error); });
+		Promise
+			.all([this.smartAssist.getAPSCapability(), this.smartAssist.getSensorStatus(), this.smartAssist.getHDDStatus()])
+			.then((response: any[]) => {
+				console.log('APS RESPONSE-----------------------', response);
+				// tslint:disable-next-line: no-unused-expression
+				if (response[0], response[1], response[2] >= 0) {
+					this.isAPSavailable = true;
+					this.smartAssist.getAPSMode().then((res) => { console.log('APS MODE-----------', res); res ? this.isAPSavailable = true : this.isAPSavailable = false; });
+				}
+			})
+			.catch((error) => { console.log('APS ERROR------------------', error); });
 	}
 	private initIntelligentScreen() {
 		Promise.all([
@@ -316,20 +330,12 @@ export class PageSmartAssistComponent implements OnInit {
 		this.isThinkPad = isThinkPad;
 	}
 
-	// public launchPowerAndSleep() {
-	// 	this.deviceService.launchUri('ms-settings:powersleep');
-	// }
-
 	public launchFaceEnrollment() {
 		this.deviceService.launchUri('ms-settings:signinoptions-launchfaceenrollment');
 	}
 
 	public displayDim(event) {
 		this.keepMyDisplay = !this.keepMyDisplay;
-	}
-
-	hideMediaSetting($event) {
-		this.headerMenuItems.splice(2, 1);
 	}
 
 	fetchCMSArticles() {
@@ -369,6 +375,30 @@ export class PageSmartAssistComponent implements OnInit {
 			});
 	}
 
+	private getVideoPauseResumeStatus() {
+		console.log('getVideoPauseResumeStatus');
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.getVideoPauseResumeStatus()
+					.then((response: FeatureStatus) => {
+						this.isIntelligentMediaLoading = false;
+						this.intelligentMedia = response;
+						console.log('getVideoPauseResumeStatus.then:', response);
 
-
+						if (response.available) {
+							this.headerMenuItems.push({
+								title: 'device.smartAssist.jumpTo.media',
+								path: 'media',
+								sortOrder: 3
+							});
+							this.headerMenuItems = this.sortMenuItems(this.headerMenuItems);
+						}
+					}).catch(error => {
+						console.error('getVideoPauseResumeStatus.error', error);
+					});
+			}
+		} catch (error) {
+			console.error('getVideoPauseResumeStatus' + error.message);
+		}
+	}
 }

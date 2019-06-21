@@ -14,7 +14,8 @@ export class WidgetSwitchIconComponent implements OnInit {
 	@Input() isBlocked = false;
 	@Input() tooltipText = '';
 	@Input() disable = false;
-
+	@Input() metricsItem = '';
+	@Input() isCamera=false;
 	@Output() toggle = new EventEmitter<boolean>();
 
 	constructor(public deviceService: DeviceService) { }
@@ -29,8 +30,15 @@ export class WidgetSwitchIconComponent implements OnInit {
 			event.stopPropagation();
 			return;
 		}
-		this.value = !this.value;
-		console.log('WIDGET SWITCH ICON VALUE', this.value);
-		this.toggle.emit(this.value);
+		if(this.isCamera){
+			console.log('WIDGET SWITCH ICON VALUE', this.value);
+				this.toggle.emit(this.value);
+		}
+		else{
+			this.value = !this.value;
+			console.log('WIDGET SWITCH ICON VALUE', this.value);
+			this.toggle.emit(this.value);
+		
+		}
 	}
 }

@@ -1,6 +1,25 @@
 @import "../../../app.theme.scss";
 
 .picker-container {
+	position: relative;
+	.overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(41,60,79,.8);
+		z-index: 2;
+		color: $gaming_lightest;
+		font-size: 2rem;
+		font-weight: $weight_bold;
+		text-align: center;
+		padding: 4rem;
+		padding-top: 35%;
+		box-sizing: border-box;
+     }
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
@@ -10,12 +29,15 @@
 		border: 0;
 	}
 	.rgb-values {
+		margin-left: 0.9rem;
 		.form-group {
-			margin-left: 2rem;
+			margin-left: 0.5rem;
 			label {
 				width: 2.4rem;
 				font-size: 1.6rem;
 				color: $gaming_lightest;
+				padding-right: 1rem;
+				padding-top: 0.5rem;
 			}
 			input {
 				height: 3rem;
@@ -27,7 +49,36 @@
 				box-sizing: border-box;
 				padding: 0.6rem;
 			}
+			.input-color{
+				border-radius: 0.5rem;
+				&#rgb-rgb{
+					margin-left: 1.2rem;
+				}
+			}
 		}
+	}
+	.color-codes{
+		margin-top: 10rem;
+		margin-left: 4rem;
+	}
+	.enable-button {
+		background: $gradient_main;
+		border-radius: 0.5rem;
+		color: $light;
+		font-size: 1.8rem;
+		padding: 1rem 1.8rem;
+		font-weight: 500;
+		margin-left: 1.2rem;
+
+		font-weight: $weight_bold;
+	}
+	.disable-button
+	{
+		background: gray;
+	}
+	.backColorDpiv{
+		height: 3rem;
+		width: 4rem;
 	}
 	#color-wheel {
 		position: relative;
@@ -82,6 +133,12 @@
 			.reinvented-color-wheel--sv-space {
 				clip-path: circle(50% at 50% 50%);
 			}
+		}
+	}
+	::ng-deep .vtr-spinner {
+		.spinner {
+			font-size: 2rem !important;
+			padding: 0rem 2.2rem;
 		}
 	}
 }

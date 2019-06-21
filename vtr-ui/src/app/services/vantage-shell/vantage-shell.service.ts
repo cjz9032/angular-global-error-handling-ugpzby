@@ -127,7 +127,20 @@ export class VantageShellService {
 
 			return metricClient;
 		}
-		return undefined;
+
+		const defaultMetricsClient = {
+			sendAsync() { return Promise.resolve({
+				status: 0,
+				desc: 'ok'
+			});},
+			sendAsyncEx() {return Promise.resolve({
+				status: 0,
+				desc: 'ok'
+			});},
+			metricsEnabled : false
+		}
+
+		return defaultMetricsClient;
 	}
 
 	/**
@@ -552,7 +565,7 @@ export class VantageShellService {
 	public getActiveProtectionSystem(): any {
 		if (this.phoenix) {
 			console.log('PHOENIX AVAILABLE - vantage shell');
-			return this.phoenix.hwsettings.lis.ActiveProtectionSystem; // returning APS Object with methods
+			return this.phoenix.hwsettings.aps.ActiveProtectionSystem; // returning APS Object with methods
 		}
 		console.log('NO PHOENIX AVAILABLE - vantage shell');
 		return undefined;

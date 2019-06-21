@@ -1,7 +1,7 @@
 @import './../../../app.theme';
 
 .vtr-ui-circle-radio-with-checkbox {
-
+	margin-right: 1.5rem;
 	.checkbox {
 
 		position: relative;
@@ -57,6 +57,7 @@
 		font-size: 1.2rem;
 		color: $shade_light;
 		top: 75px;
+		white-space: nowrap;
 	}
 
 	.checkbox-custom:checked+.checkbox-custom-label {

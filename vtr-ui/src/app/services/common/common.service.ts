@@ -49,7 +49,19 @@ export class CommonService {
 	 */
 	public formatLocalDate(dateString: string): string {
 		const date = new Date(dateString);
-		return date.toLocaleDateString();
+		return date.toLocaleDateString(navigator.language);
+	}
+
+	/**
+	 * Returns the formatted time in local time format
+	 * Example: return HH:MM AM for English
+	 * Example: return 上午9：00 for Chinese
+	 * @param dateString date string to format
+	 */
+	public formatLocalTime(dateString: string): string {
+		const date = new Date(dateString);
+		const option = {hour: 'numeric', minute:'numeric'};
+		return date.toLocaleTimeString(navigator.language, option);
 	}
 
 	/**
@@ -93,7 +105,7 @@ export class CommonService {
 	 * @param value value to store in local storage
 	 */
 	public setLocalStorageValue(key: LocalStorageKey, value: any) {
-		console.log(`Setting the value for ${key}, Value => ${value}`);
+		// console.log(`Setting the value for ${key}, Value => ${value}`);
 		window.localStorage.setItem(key, JSON.stringify(value));
 		// notify component that local storage value updated.
 		this.sendNotification(key, value);

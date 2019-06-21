@@ -1,6 +1,5 @@
 <div class="row py-5 smart-assist-card"
-	id="intelligentMedia"
-	*ngIf="playbackStatus.available">
+	id="intelligentMedia">
 	<div class="col-10 mx-auto"
 		id="media">
 		<vtr-container-collapsible [cardTitle]="'device.smartAssist.intelligentMedia.heading' | translate"
@@ -15,13 +14,13 @@
 						[isSwitchVisible]="true"
 						[leftIcon]="['fal', 'gem']"
 						[rightIcon]="['far', 'question-circle']"
-						[showChildContent]="true"
-						[isSwitchChecked]="playbackStatus.status"
+						[showChildContent]="false"
+						[isSwitchChecked]="isChecked"
 						[tooltipText]="'device.smartAssist.intelligentMedia.tooltip' | translate"
 						(toggleOnOff)="setVideoPauseResumeStatus($event)"
 						[caption]="'device.smartAssist.intelligentMedia.desc' | translate"
 						[theme]="'white'"
-						[showLoaderState]="showPlaybackLoader">
+						[showLoaderState]="isLoading">
 					</vtr-ui-row-switch>
 				</li>
 			</ul>

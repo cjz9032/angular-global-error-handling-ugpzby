@@ -14,6 +14,7 @@ import { BatteryConditionsEnum, BatteryQuality } from 'src/app/enums/battery-con
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
 import { BatteryConditionNote } from 'src/app/data-models/battery/battery-condition-translations.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { PowerService } from 'src/app/services/power/power.service';
 
 @Component({
 	selector: 'vtr-battery-card',
@@ -24,6 +25,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	constructor(
 		private modalService: NgbModal,
 		private batteryService: BatteryDetailService,
+		private powerService: PowerService,
 		public shellServices: VantageShellService,
 		private commonService: CommonService,
 		private cd: ChangeDetectorRef) {
@@ -40,14 +42,20 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	isBatteryDetailsBtnDisabled = true;
 	// percentageLimitation: Store Limitation Percentage
 	percentageLimitation = 60;
+	batteryHealth = 0;
+	batteryIndex = 0;
+	chargeThresholdInfo: any; // ChargeThresholdInfo
 
 	private powerSupplyStatusEventRef: any;
 	private remainingPercentageEventRef: any;
 	private remainingTimeEventRef: any;
+	public isLoading = true;
 
 	ngOnInit() {
-		this.getBatteryDetailOnCard();
+		this.isLoading = true;
 
+		this.getBatteryDetailOnCard();
+		this.getChargeThresholdInfo();
 		this.powerSupplyStatusEventRef = this.onPowerSupplyStatusEvent.bind(this);
 		this.remainingPercentageEventRef = this.onRemainingPercentageEvent.bind(this);
 		this.remainingTimeEventRef = this.onRemainingTimeEvent.bind(this);
@@ -106,6 +114,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryInfo = response;
 				this.batteryInfo = response.batteryInformation;
 				this.batteryGauge = response.batteryIndicatorInfo;
+
+				this.isLoading = false;
+
 				this.isBatteryDetailsBtnDisabled =
 					this.batteryGauge.isPowerDriverMissing || this.batteryInfo.length === 0;
 				this.updateBatteryDetails();
@@ -114,19 +125,34 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				console.error('getBatteryDetails error', error);
 			});
 	}
-
+	getChargeThresholdInfo() {
+		this.powerService.getChargeThresholdInfo().then((response: any) => {
+			this.chargeThresholdInfo = response[0];
+			console.log('Charge Threshold Info: ', this.chargeThresholdInfo);
+		});
+	}
 	public updateBatteryDetails() {
-		let batteryHealth = 0;
-		if (this.batteryInfo !== undefined && this.batteryInfo.length !== 0
-			&& this.batteryInfo[0].batteryHealth !== undefined) {
-			batteryHealth = this.batteryInfo[0].batteryHealth;
+		if (this.batteryInfo !== undefined && this.batteryInfo.length !== 0) {
+			let batteryIndex = -1;
+			const batteriesHealths = [];
+			this.batteryInfo.forEach((info) => {
+				batteriesHealths.push(info.batteryHealth);
+				if (info.batteryHealth >= this.batteryHealth) {
+					this.batteryHealth = info.batteryHealth;
+					batteryIndex += 1;
+				}
+			});
+			this.commonService.setLocalStorageValue(LocalStorageKey.BatteriesHealths, batteriesHealths);
+			this.batteryIndex = batteryIndex;
 		}
-		this.batteryIndicator.batteryHealth = this.batteryIndicator.getBatteryHealth(batteryHealth);
+		this.batteryIndicator.batteryHealth = this.batteryIndicator.getBatteryHealth(this.batteryHealth);
 		this.batteryIndicator.percent = this.batteryGauge.percentage;
 		this.batteryIndicator.charging = this.batteryGauge.isAttached;
 		this.batteryIndicator.convertMin(this.batteryGauge.time);
 		this.batteryIndicator.timeText = this.batteryGauge.timeType;
 		this.batteryIndicator.expressCharging = this.batteryGauge.isExpressCharging;
+		this.batteryIndicator.voltageError = this.batteryInfo[this.batteryIndex].isVoltageError;
+		this.batteryIndicator.batteryNotDetected = this.batteryHealth === 4;
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo, { detail: this.batteryInfo, gauge: this.batteryGauge });
 		if (this.cd !== null && this.cd !== undefined &&
 			!(this.cd as ViewRef_).destroyed) {
@@ -154,22 +180,21 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	public getBatteryCondition() {
 		// server api call to fetch battery conditions
 		const batteryConditions = [];
-		let batteryHealth = 0;
-		if (this.batteryInfo !== undefined && this.batteryInfo.length !== 0
-			&& this.batteryInfo[0].batteryHealth !== undefined) {
-			batteryHealth = this.batteryInfo[0].batteryHealth;
-		}
 		const isThinkpad = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType) === 1;
-		if (isThinkpad && batteryHealth === 1 || batteryHealth === 2) {
-			batteryHealth = BatteryConditionsEnum.StoreLimitation;
+		if (isThinkpad && this.batteryHealth === 1 || this.batteryHealth === 2) {
+			this.batteryHealth = BatteryConditionsEnum.StoreLimitation;
 		}
-		batteryConditions.push(new BatteryConditionModel(batteryHealth,
-			this.batteryQuality[this.batteryIndicator.batteryHealth]));
-		this.batteryInfo[0].batteryCondition.forEach((condition) => {
+		if (this.batteryHealth !== 0) {
+			batteryConditions.push(new BatteryConditionModel(this.batteryHealth,
+				this.batteryQuality[this.batteryIndicator.batteryHealth]));
+		}
+		this.batteryInfo[this.batteryIndex].batteryCondition.forEach((condition) => {
 			switch (condition.toLocaleLowerCase()) {
 				case 'normal':
-					batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.Normal,
-						BatteryQuality.Fair));
+					if (this.batteryHealth === 0) {
+						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.Good,
+							BatteryQuality.Good));
+					}
 					break;
 				case 'hightemperature':
 					batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.HighTemperature, BatteryQuality.Fair));
@@ -197,17 +222,12 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'notsupported') {
 			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryQuality.Poor));
 		}
-
 		this.batteryConditions = batteryConditions;
 		console.log('Battery conditions length', this.batteryConditions.length);
 		this.batteryConditionNotes = [];
 		this.batteryConditions.forEach((batteryCondition) => {
-			console.log('Condition', batteryCondition.condition);
 			const translation = batteryCondition.getBatteryCondition(batteryCondition.condition);
-			console.log('Translation==>', translation);
-			if (translation !== undefined) {
-				this.batteryConditionNotes.push(translation);
-			}
+			this.batteryConditionNotes.push(translation);
 		});
 	}
 

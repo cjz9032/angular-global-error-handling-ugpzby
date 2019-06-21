@@ -5,7 +5,6 @@ import { SupportService } from '../../../services/support/support.service';
 import { DevService } from '../../../services/dev/dev.service';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { CommonService } from 'src/app/services/common/common.service';
-import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalCommonConfirmationComponent } from '../../modal/modal-common-confirmation/modal-common-confirmation.component';
@@ -124,27 +123,6 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		}
 	}
 
-	// Capture the html content in webView
-	captureWebViewContent(msWebView) {
-		const promise = new Promise(function (resolve, reject) {
-			const op = msWebView.invokeScriptAsync('eval', 'document.documentElement.outerHTML');
-			op.oncomplete = function (args) {
-				resolve(args.target.result);
-			};
-			op.onerror = function (e) { reject(e); };
-			op.start();
-		});
-
-		promise.then(function (result) {
-			// For result
-			//console.log(result);
-		}).catch(function (error) {
-			// Error
-			console.log(error);
-		});
-		return promise;
-	}
-
 	// error is come from response status of LID contact request
 	popupErrorMessage(error: number) {
 		const modalRef = this.modalService
@@ -185,23 +163,13 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	}
 
 	ngOnInit() {
-		this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
-
 		if (!this.webView) {
 			this.devService.writeLog('ModalLenovoIdComponent constructor: webView object is undefined, critical error exit!');
 			this.activeModal.dismiss();
 			return;
 		}
-		
-		if (!navigator.onLine) {
-			this.popupErrorMessage(ssoErroType.SSO_ErrorType_DisConnect);
-			this.activeModal.dismiss();
-			return;
-		}
 
-		this.webView.create("<div style='display: block;position: fixed;z-index: 1;padding-top: 30px;left: 0;top: 0;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgba(0,0,0,0.4);'>  <div style='position: relative;background-color: #fefefe;margin: auto;padding: 0;border: 1px solid #888;width: 520px;height: 600px;'>  <style>.close {  color: black;  float: right;  font-size: 28px;  font-weight: bold;}.close:hover,.close:focus {  color: black;  text-decoration: none;  cursor: pointer;} @keyframes spinner {  to {transform: rotate(360deg);}} .spinner:before {  content: '';  box-sizing: border-box;  position: absolute;  top: 50%;  left: 50%;  width: 60px;  height: 60px;  margin-top: -15px;  margin-left: -30px;  border-radius: 50%;  border: 3px solid #ccc;  border-top-color: #07d;  animation: spinner .6s linear infinite;} </style>  <div id='btnClose' style='padding: 2px 16px;background-color: white;color: black;'>  <span class='close'>&times;</span>    </div>    <div style='height: 100%;' id='webviewBorder'> <div id='spinnerCtrl' class='spinner'></div> <div id='webviewPlaceHolder'></div>    </div>  </div></div>");
+		this.webView.create("<div style='display: block;position: fixed;z-index: 1;padding-top:5%;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgba(0,0,0,0.4);'>  <div style='position: relative;background-color: #fefefe;margin: auto;padding: auto;border: 1px solid #888;max-width: 460px;height: 80%;'>  <style>.close {  color: black;  float: right;  font-size: 28px;  font-weight: bold;}.close:hover,.close:focus {  color: black;  text-decoration: none;  cursor: pointer;} @keyframes spinner {  to {transform: rotate(360deg);}} .spinner:before {  content: '';  box-sizing: border-box;  position: absolute;  top: 50%;  left: 50%;  width: 60px;  height: 60px;  margin-top: -15px;  margin-left: -30px;  border-radius: 50%;  border: 3px solid #ccc;  border-top-color: #07d;  animation: spinner .6s linear infinite;} </style>  <div id='btnClose' style='padding: 2px 16px;background-color: white;color: black;border-bottom: 1px solid #e5e5e5;'>  <span class='close'>&times;</span> <div style='height:45px;'></div>  </div>    <div style='height: 100%;' id='webviewBorder'> <div id='spinnerCtrl' class='spinner'></div> <div id='webviewPlaceHolder'></div>    </div>  </div></div>");
 		this.webView.show();
 		this.webView.addEventListener("eventtriggered", this.onEvent.bind(this));
 		this.webView.addEventListener("navigationstarting", this.onNavigationStart.bind(this));
@@ -219,10 +187,10 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	}
 
 	onEvent(e) {
-		if (!e.target) {
+		if (!e) {
 			return;
 		}
-		const eventData = JSON.parse(e.target);
+		const eventData = JSON.parse(e);
 		if (eventData && eventData.event === 'click' && eventData.id === 'btnClose') {
 			this.userService.sendSigninMetrics('failure(rc=UserCancelled)', this.starterStatus, this.everSignIn, this.appFeature);
 			this.activeModal.dismiss();
@@ -239,10 +207,10 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	//
 	onNavigationStart(e) {
 		const self = this;
-		if (!e.target) {
+		if (!e) {
 			return;
 		}
-		const url = e.target;
+		const url = e;
 		if (url.indexOf("facebook.com/r.php") != -1 ||
 			url.indexOf("facebook.com/reg/") != -1) {
 			// Open new window to launch default browser to create facebook account
@@ -260,10 +228,10 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 
 	onNavigationCompleted(e) {
 		const self = this;
-		if (!e.target) {
+		if (!e) {
 			return;
 		}
-		const eventData = JSON.parse(e.target);
+		const eventData = JSON.parse(e);
 		if (eventData.isSuccess) {
 			if (eventData.url.startsWith('https://passport.lenovo.com/wauthen5/userLogout?')) {
 				return;
@@ -438,20 +406,9 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 
 	}
 
-	private onNotification(notification: AppNotification) {
-		if (notification) {
-			switch (notification.type) {
-				case NetworkStatus.Online:
-				case NetworkStatus.Offline:
-					this.isOnline = notification.payload.isOnline;
-					break;
-				default:
-					break;
-			}
-		}
-	}
-
 	ngOnDestroy(): void {
-		this.webView.close();
+		if (this.webView) {
+			this.webView.close();
+		}
 	}
 }

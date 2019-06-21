@@ -42,16 +42,11 @@ export class AppComponent implements OnInit {
 		translate.addLangs(['en', 'zh-Hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it',
 			'ja', 'ko', 'nb', 'nl', 'pl', 'pt-BR', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-Latn', 'sv', 'tr', 'uk', 'zh-Hant']);
 		this.translate.setDefaultLang('en');
-		const hadRunApp: boolean = commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
-		const appFirstRun = !hadRunApp;
-		if (appFirstRun && deviceService.isShellAvailable) {
-			commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
-		}
+
 
 		//#region VAN-2779 this is moved in MVP 2
 
 		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
-
 		if (tutorial === undefined && navigator.onLine) {
 			this.openWelcomeModal(1);
 		} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
@@ -104,6 +99,8 @@ export class AppComponent implements OnInit {
 		if (!this.allCapablitiyFlag) {
 			this.gamingAllCapabilitiesService.getCapabilities().then((response) => {
 				this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
+			}).catch(err => {
+				console.log(`ERROR in appComponent getCapabilities()`, err);
 			});
 			this.allCapablitiyFlag = true;
 		}
@@ -144,10 +141,15 @@ export class AppComponent implements OnInit {
 		});
 
 		const result = this.getMachineInfo();
-		if (result != null) {
-			result.then((machineInfo) => {
-				this.sendFirstRunEvent(machineInfo);
-			});
+		const hadRunApp: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
+		const appFirstRun = !hadRunApp;
+		if (appFirstRun && this.deviceService.isShellAvailable) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
+			if (result) {
+				result.then((machineInfo) => {
+					this.sendFirstRunEvent(machineInfo);
+				});
+			}
 		}
 
 		this.checkIsDesktopOrAllInOneMachine();

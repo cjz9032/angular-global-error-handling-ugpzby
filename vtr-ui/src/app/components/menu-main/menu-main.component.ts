@@ -20,6 +20,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { RegionService } from 'src/app/services/region/region.service';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { ModalCommonConfirmationComponent } from '../modal/modal-common-confirmation/modal-common-confirmation.component';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -174,6 +175,20 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 
 	//  to popup Lenovo ID modal dialog
 	OpenLenovoId(appFeature = null) {
+		if (!navigator.onLine) {
+			const modalRef = this.modalService.open(ModalCommonConfirmationComponent, {
+				backdrop: 'static',
+				size: 'lg',
+				centered: true,
+				windowClass: 'common-confirmation-modal'
+			});
+
+			const header = 'lenovoId.ssoErrorTitle';
+			modalRef.componentInstance.CancelText = '';
+			modalRef.componentInstance.header = header;
+			modalRef.componentInstance.description = 'lenovoId.ssoErrorNetworkDisconnected';
+			return;
+		}
 		const modal: NgbModalRef = this.modalService.open(ModalLenovoIdComponent, {
 			backdrop: 'static',
 			centered: true,
@@ -280,37 +295,52 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	private showSmartAssist() {
+
 		this.getMenuItems().then((items) => {
 			const myDeviceItem = items.find(item => item.id === this.constantDevice);
 			if (myDeviceItem !== undefined) {
 				const smartAssistItem = myDeviceItem.subitems.find(item => item.id === 'smart-assist');
 				if (!smartAssistItem) {
+					// if cache has value true for IsSmartAssistSupported, add menu item
+					const isSmartAssistSupported = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, false);
+					if (isSmartAssistSupported) {
+						this.addSmartAssistMenu(myDeviceItem);
+					}
+
+					// still check if any of the feature supported. if yes then add menu
 					Promise.all([
 						this.smartAssist.getHPDVisibilityInIdeaPad(),
-						this.smartAssist.getHPDVisibilityInThinkPad()
+						this.smartAssist.getHPDVisibilityInThinkPad(),
+						this.smartAssist.getVideoPauseResumeStatus(), // returns object
+						this.smartAssist.getIntelligentScreenVisibility()
 					]).then((responses: any[]) => {
 						console.log('showSmartAssist.Promise.all()', responses);
-						// const isAvailable = (responses[0] || responses[1]);
+						// const isAvailable = (responses[0] || responses[1] || responses[2].available || responses[3]);
 						const isAvailable = true;
-						this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
-						if (isAvailable) {
-							myDeviceItem.subitems.splice(4, 0, {
-								id: 'smart-assist',
-								label: 'common.menu.device.sub4',
-								path: 'smart-assist',
-								metricsEvent: 'itemClick',
-								metricsParent: 'navbar',
-								metricsItem: 'link.smartassist',
-								routerLinkActiveOptions: { exact: true },
-								icon: '',
-								subitems: []
-							});
+						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, isAvailable);
+						// avoid duplicate entry. if not added earlier then add menu
+						if (isAvailable && !isSmartAssistSupported) {
+							this.addSmartAssistMenu(myDeviceItem);
 						}
 					}).catch(error => {
 						this.logger.error('error in initSmartAssist.Promise.all()', error);
 					});
 				}
 			}
+		});
+	}
+
+	private addSmartAssistMenu(myDeviceItem: any) {
+		myDeviceItem.subitems.splice(4, 0, {
+			id: 'smart-assist',
+			label: 'common.menu.device.sub4',
+			path: 'smart-assist',
+			metricsEvent: 'itemClick',
+			metricsParent: 'navbar',
+			metricsItem: 'link.smartassist',
+			routerLinkActiveOptions: { exact: true },
+			icon: '',
+			subitems: []
 		});
 	}
 

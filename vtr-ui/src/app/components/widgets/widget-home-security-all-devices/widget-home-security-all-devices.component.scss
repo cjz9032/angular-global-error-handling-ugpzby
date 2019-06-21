@@ -26,10 +26,15 @@
     .content {
         height: 100%;
         width: 100%;
-        z-index: 1;
+        z-index: 3;
         position: absolute;
         border-radius: $border_radius;
-        background: $shade_lightest;
+		background: $shade_lightest;
+		&.show-overlay {
+			z-index: 1;
+			opacity: 0.6;
+			filter: blur(3px);
+        }
         .icon-container {
             border-right: 0.1rem solid $shade_lighter;
             > .row {
@@ -117,27 +122,20 @@
         top: 0px;
         height: 100%;
         width: 100%;
-        z-index: 0;
-        &.show-overlay {
-            z-index: 2;
-        }
-        .place-holder {
-            border-radius: $border_radius;
-            background: $shade_lightest;
-            opacity: 0.9;
-        }
+		z-index: 2;
+		justify-content: center;
         .content-container {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background: $shade_lightest;
-            border-radius: $border_radius;
+			border-radius: $border_radius;
+			opacity: 0.9;
             .text {
                 display: flex;
                 justify-content: center;
-                font-size: 1.5rem;
+                font-size: 1.8rem;
                 font-weight: $weight_600;
-                color: red;
+                color: black;
             }
             .text-description {
                 display: flex;

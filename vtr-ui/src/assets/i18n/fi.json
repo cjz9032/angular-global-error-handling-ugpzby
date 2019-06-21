@@ -230,7 +230,7 @@
             "title": "Lighting",
             "effect": {
                 "option1": {
-                    "title": "Static"
+                    "title": "On"
                 },
                 "option2": {
                     "title": "Flicker"
@@ -242,25 +242,22 @@
                     "title": "Wave"
                 },
                 "option5": {
-                    "title": "Music"
-                },
-                "option6": {
                     "title": "Smooth"
                 },
-                "option7": {
+                "option6": {
                     "title": "CPU Temperature"
                 },
-                "option8": {
+                "option7": {
                     "title": "CPU Utilization"
                 },
-                "option9": {
-                    "title": "Response"
+                "option8": {
+                    "title": "Off"
                 },
-                "option10": {
-                    "title": "Ripple"
+                "apply": {
+                    "title": "APPLY"
                 },
-                "option11": {
-                    "title": "No Light"
+                "applied": {
+                    "title": "APPLIED"
                 }
             }
         }
@@ -273,7 +270,7 @@
                 "sub1": "My Device",
                 "sub2": "My Device Settings",
                 "sub3": "System Updates",
-                "sub4": "Smart Assist"
+                "sub4": "‏\"Älykäs apu\""
             },
             "security": {
                 "title": "Suojaus",
@@ -308,14 +305,14 @@
             "notRegistered": "EI REKISTERÖITY"
         },
         "qAndA": {
-            "title": "Q&A for your machine",
-            "subtitle": "FIND SOME HELPFUL TIPS FOR YOUR DEVICE.",
-            "question1": "Backup and Restore your files",
-            "question2": "How to refresh your PC",
-            "question3": "How to know your machine's CPU",
-            "question4": "Check your machine's battery use",
-            "question5": "Use your PC like a tablet",
-            "question6": "Get to know Cortana, your personal assistant"
+            "title": "Kysymyksiä ja vastauksia koneellesi",
+            "subtitle": "TARKISTA, ETTÄ KOSKEVAT OHJELMAT LAITTEESTA.",
+            "question1": "Tiedostojen varmuuskopiointi ja palauttaminen",
+            "question2": "Tietokoneen siivoaminen",
+            "question3": "Koneen suorittimen tunnistaminen",
+            "question4": "Tarkista koneen akun käyttö",
+            "question5": "Tietokoneen käyttö taulutietokoneen tavoin",
+            "question6": "Tutustu Cortanaan, henkilökohtaiseen avustajaasi"
         },
         "ui": {
             "back": "EDELLINEN",
@@ -323,10 +320,7 @@
             "off": "OFF",
             "collapse": "Collapse",
             "expand": "Expand",
-            "loader": {
-                "text1": "Fetching",
-                "text2": "Status"
-            }
+            "loader": "Fetching <br> Status"
         }
     },
     "privacy": {
@@ -378,14 +372,14 @@
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
                 },
-                "question1": "Do you like the new style of Vantage?",
-                "question2": "Do you think the performance is acceptable?",
-                "question3": "Would you use the application more often in the future?",
-                "yes": "Yes",
-                "no": "No",
-                "tips1": "Please leave any additional comments",
-                "sendFeedback": "Send Feedback",
-                "submitScreenShot": "Submit Screen Shot"
+                "question1": "Pidätkö Vantagen uudesta tyylistä?",
+                "question2": "Onko sen suorituskyky mielestäsi hyväksyttävä?",
+                "question3": "Käyttäisitkö sovellusta useammin tulevaisuudessa?",
+                "yes": "Kyllä",
+                "no": "Ei",
+                "tips1": "Anna lisäkommentteja",
+                "sendFeedback": "Lähetä palautetta",
+                "submitScreenShot": "Lähetä näyttökuva"
             }
         },
         "quickSettings": {
@@ -547,7 +541,7 @@
                         "description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
                     },
                     "Good": {
-                        "title": "The battery is in good Condition"
+                        "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
                         "title": "The battery has failed due to normal",
@@ -570,18 +564,47 @@
                     },
                     "NotSupportACAdapter": {
                         "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
+                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
                     },
                     "MissingDriver": {
-                        "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
+                        "title": "The Lenovo Power Manager driver",
                         "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
                     },
                     "StoreLimitation": {
                         "title": "The battery can only store",
                         "description1": "of",
                         "description2": "it's original full charge capacity"
+                    },
+                    "HighTemperature": {
+                        "title": "Discharging",
+                        "description": "has been stopped because the",
+                        "description1": "battery temperature is too high"
+                    },
+                    "TrickleCharge": {
+                        "description": "The battery was",
+                        "description1": "completely discharged",
+                        "description2": "and needs to be recharged. This might take ten hours or more."
+                    },
+                    "OverheatedBattery": {
+                        "description": "The battery is",
+                        "description1": "too hot.",
+                        "description2": "Remove it from the computer and cool it to room temperature."
+                    },
+                    "PermanentError": {
+                        "description": "The battery has",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
+                    },
+                    "HardwareAuthenticationError": {
+                        "description": "The battery installed is",
+                        "description1": "is not supported",
+                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
                     }
-                }
+                },
+                "updating": "Updating",
+                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "voltageError": "Battery voltage incorrect",
+                "batteryNotDetected": "No Battery Detected"
             },
             "power": {
                 "title": "Virta",
@@ -726,6 +749,23 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                },
+                "smartStandby": {
+                    "title": "Smart Standby",
+                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
+                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "timer": {
+                        "heading": "Set time when you typically use this computer",
+                        "subHeading1": "start",
+                        "subHeading2": "end",
+                        "subHeading3": "use this schedule for",
+                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "timeUnits": {
+                            "unit1": "Hours",
+                            "unit2": "Minutes",
+                            "unit3": "AM/PM"
+                        }
+                    }
                 }
             },
             "audio": {
@@ -833,7 +873,7 @@
                         "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
                         "note": {
                             "title": "Note",
-                            "description": "When the Eye care mode is enabled. this color temperature does not take effect. However,  you can drag the slide to get a preview of it. To make it effective. turn off the Eye care mode"
+                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
                         }
                     },
                     "privacyGuard": {
@@ -879,6 +919,12 @@
                         "blurMode": "Blur mode",
                         "comicMode": "Comic mode",
                         "sketchMode": "Sketch mode"
+                    },
+                    "cameraLoadingFailed": {
+                        "inUseTitle": "CAMERA IS IN USE",
+                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
+                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
+                        "loadingFailedDescription": "Close the app and try again."
                     }
                 }
             },
@@ -921,14 +967,15 @@
             }
         },
         "smartAssist": {
-            "title": "Smart Assist",
+            "title": "Älykäs apu",
             "description": "Lenovon älykäs tunnistustoiminto yhdistää tietokoneen tunnistimia toimintojen tunnistamista ja optimaalisen virranhallinnan asetusten muokkaamista varten, sekä yksityissuojasi parantamiseksi.",
             "jumpTo": {
                 "title": "SIIRRY ASETUKSIIN",
                 "security": "Suojaus",
                 "screen": "Kuvaruutu",
                 "media": "Media",
-                "voice": "Ääni"
+                "voice": "Ääni",
+                "APS": "APS"
             },
             "intelligentSecurity": {
                 "title": "Älykäs suojaus",
@@ -1032,6 +1079,34 @@
                 "title": "Zero Touch Video Playback",
                 "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
                 "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+            },
+            "voice": {
+                "title": "Voice",
+                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
+                "installBtnText": "Install",
+                "launchBtnText": "Launch",
+                "learnMoreText": "Learn More",
+                "voiceToText": {
+                    "title": "Voice to text",
+                    "caption": "This feature helps to convert your voice into texts."
+                },
+                "translation": {
+                    "title": "Translation",
+                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                },
+                "modalPopUp": {
+                    "heading": "Get started:",
+                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
+                    "point2": "Open the file where you want to record the converted text.",
+                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
+                    "point4": "Select your desired language and click the microphone icon to start.",
+                    "point5": "Put the cursor to where you want to edit and begin to speak.",
+                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
+                    "point7": "Select your desired source language and target language.",
+                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
+                    "point9": "Click the microphone icon to start speaking",
+                    "closeText": "close"
+                }
             }
         }
     },
@@ -1117,7 +1192,7 @@
             "rebootRequiredTag": "Tietokone on käynnistettävä uudelleen",
             "rebootDelayTag": "Uudelleenkäynnistys vaaditaan, virtalähde vaaditaan",
             "shutdownRequiredTag": "Laite on sammutettava",
-            "dependedPackage": "Depended Package"
+            "dependedPackage": "Riippuvuuspaketti"
         },
         "availableUpdates": {
             "title": "Saatavilla olevat päivitykset",
@@ -1160,72 +1235,70 @@
         }
     },
     "homeSecurity": {
-        "title": "Connected Home Security",
-        "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Ecosystem Security Overview",
-        "thisDevice": "This device",
-        "allDevices": "All Devices",
-        "protected": "Protected",
-        "notProtected": "Not Protected",
-        "myDevice": "My Device",
-        "secure": "SECURE",
-        "needAttention": "NEEDS ATTENTION",
-        "manageAccount": "Manage Account",
-        "devices": "Devices",
-        "seeProtectedDevices": "See protected devices",
-        "addDevice": "add device",
-        "trialExpired": "Trial Expired",
-        "trialExpiredSubtext": "Upgrade to protect all of your devices",
-        "upgrade": "upgrade",
-        "freeTrial": "Free 30 day trial",
-        "protectAllDevices": "Protect all of your devices",
-        "inEcosystem": "In Ecosystem",
-        "ecosystemEnable": "Ecosystem Enabled",
-        "inTrial": "In trial",
-        "addEcosystem": "Add to Ecosystem",
-        "enableEcosystem": "Enable Ecosystem",
-        "startTrial": "Start Trial",
-        "fullAccess": "Full Access",
-        "recent": "Recent security notifications",
-        "notification": "Notifications",
-        "renew": "Renew",
+        "title": "Connected Home -suojaus",
+        "ecosystemBlockTitle": "Suojaa laitteesi ekosysteemi",
+        "overviewBlockTitle": "Yleistä ekosysteemin suojauksesta",
+        "thisDevice": "Tämä laite",
+        "allDevices": "Kaikki laitteet",
+        "protected": "Suojattu",
+        "notProtected": "Ei suojausta",
+        "myDevice": "Oma laite",
+        "secure": "TURVALLINEN",
+        "needAttention": "TOIMENPITEITÄ TARVITAAN",
+        "manageAccount": "Hallitse tiliä",
+        "devices": "Laitteet",
+        "seeProtectedDevices": "Katso suojatut laitteet",
+        "addDevice": "lisää laite",
+        "trialExpired": "Kokeiluversio vanhentunut - Päivitä kaikki laitteesi suojatuiksi",
+        "upgrade": "päivitä",
+        "freeTrial": "Suojaa kaikki laitteesi - Maksuton 30 päivän kokeiluversio",
+        "inEcosystem": "Ekosysteemissä",
+        "ecosystemEnable": "Ekosysteemi käytössä",
+        "inTrial": "Kokeiluversio käytössä",
+        "addEcosystem": "Lisää ekosysteemiin",
+        "enableEcosystem": "Ota Ekosysteemi käyttöön",
+        "startTrial": "Aloita kokeilu",
+        "fullAccess": "Täydet käyttöoikeudet",
+        "recent": "Viimeaikaiset suojausilmoitukset",
+        "notification": "Ilmoitukset",
+        "renew": "Uusiminen",
         "tour": {
-            "back": "Back",
-            "skip": "Skip",
-            "start": "START TOUR",
-            "done": "DONE",
-            "welcome1": "Welcome",
-            "welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
-            "welcome2": "Exclusive for Vantage",
-            "welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
-            "create": "Create your account",
-            "lenovoId": "with Lenovo ID",
-            "notifications": "Receive <b>notifications</b> about your home's status",
-            "monitor": "<b>Monitor</b> the safety of your family's devices",
-            "peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
-            "signInLenovoId": "SIGH-UP WITH LENOVO ID",
-            "haveLenovo": "I don't have a <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Create a Lenovo ID",
-            "without": "Proceed <b>without an account</b>",
-            "skipAndTrial": "SKIP AND START TRIAL",
-            "alreadyHave": "I already have a <b>Connected Home Security Account</b>",
-            "loginCHS": "Login to existing CHS account",
-            "locationTitle": "Enable location tracking",
-            "locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+            "back": "Edellinen",
+            "skip": "Ohita",
+            "start": "ALOITA TUTUSTUMINEN",
+            "done": "VALMIS",
+            "welcome1": "Tervetuloa",
+            "welcomeDesc1": "Vain muutamalla napsautuksella voit suojata sinun ja perheesi tietokoneet, mobiililaitteet ja liitetyt laitteet. Aloita ilmainen 30 päivän kokeilujakso nyt.",
+            "welcome2": "Saatavilla vain Vantagessa",
+            "welcomeDesc2": "Connected Home -suojaus on rakennettu suoraan Vantageen, ja sen avulla voit nopeasti tarkastella ekosysteemisi ja suojausvaroitusten suojaustilaa.",
+            "create": "Luo käyttäjätili",
+            "lenovoId": "Lenovo ID:llä",
+            "notifications": "Vastaanota <b>ilmoituksia</b> kotisi tilasta",
+            "monitor": "<b>Valvo</b> perheesi laitteiden turvallisuutta",
+            "peaceOfMind": "Saat <b>mielenrauhan</b>, että laitteesi ovat aina suojattuja!",
+            "signInLenovoId": "Rekisteröidy Lenovo ID:llä",
+            "haveLenovo": "Minulla ei ole <b>Lenovo ID</b>:tä",
+            "createLenovo": "&nbsp;Luo Lenovo ID",
+            "without": "Jatka <b>ilman tiliä</b>",
+            "skipAndTrial": "OHITA JA ALOITA KOKEILU",
+            "alreadyHave": "Minulla on jo <b>Connected Home -suojauksen tili</b>",
+            "loginCHS": "Kirjaudu sisään olemassa olevaan CHS-tiliin",
+            "locationTitle": "Ota sijainnin seuranta käyttöön",
+            "locationPermission": "Jotta tämä toiminto toimisi oikein, sinun on otettava käyttöön sijainnin seuranta tässä laitteessa"
         },
         "accountStatus": {
-            "title": "My Connected Home Security",
-            "startTrial": "Start Trial",
-            "manageAccount": "Manage Account",
-            "upgradeAccount": "Upgrade Account",
-            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
-            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
-            "trialExpiredDetail1": "Your trial has expired.",
-            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
-            "upgradedDetail1": "You account is active until {{expiredDate}}.",
-            "upgradedDetail2": "Your device ecosystem is currently being protected.",
-            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
-            "alreadyHaveAccount": "Already have an activation code?"
+            "title": "Oma Connected Home -suojaukseni",
+            "startTrial": "Aloita kokeilu",
+            "manageAccount": "Hallitse tiliä",
+            "upgradeAccount": "Päivitä tili",
+            "inTrialDetail1": "{{remainingDays}} päivää jäljellä kokeilujakson päättymiseen.",
+            "inTrialDetail2": "Sinulla on tällä hetkellä meneillään kokeilujakso. Sinulla on rajoittamaton pääsy kaikkiin toimintoihin.",
+            "trialExpiredDetail1": "Kokeilujaksosi on päättynyt.",
+            "trialExpiredDetail2": "Kokeilujaksosi on päättynyt ja laitteesi ekosysteemi ei ole enää suojattu.",
+            "upgradedDetail1": "Käyttäjätilisi on aktiivinen {{expiredDate}} asti.",
+            "upgradedDetail2": "Laitteesi ekosysteemi on tällä hetkellä suojattu.",
+            "localAccountDetail2": "Aloita ilmainen 30 päivän kokeilujakso napsauttamalla alla olevaa painiketta.",
+            "alreadyHaveAccount": "Onko sinulla jo aktivointikoodi?"
         }
     },
     "support": {
@@ -1390,8 +1463,8 @@
                 "cancel": "PERUUTA"
             },
             "errorMessage": {
-                "headerText": "Error",
-                "bodyText": "We've detected that you are missing critical pieces of Vantage. These pieces will download in the background. Please try again later."
+                "headerText": "Virhe",
+                "bodyText": "Olemme havainneet, että sinulta puuttuu tärkeitä Vantagen osia. Nämä osat ladataan taustalla. Yritä myöhemmin uudelleen."
             }
         },
         "homeprotection": {
@@ -1403,7 +1476,7 @@
                 "homeSecurityAffect3": "Connected Home -suojaus varmistaa, että muut kotiverkkoosi yhdistyneet laitteet ovat turvallisia.",
                 "describe": "Laitteet ja verkot, jotka eivät ole turvallisia, voivat tuoda laitteisiin haittaohjelmia, johtaa identiteettivarkauksiin ja paljastaa yksityisiä ja taloustietoja. Ottamalla tämän ominaisuuden käyttöön voit pienentää riskiä, että laitteesi ja kotiverkkosi joutuvat hyökkäyksen kohteeksi",
                 "subtitle": "Mielenrauhaa",
-                "subtitleDescribe": "Connected Home -suojaus lähettää sinulle hälytyksen havaitessaan haavoittuvuuden laitteessasi tai kotiverkossasi tai, jos olet yhdistynyt mahdollisesti vahingolliseen verkkoon. Lue lisää Lenovo Wi-Fi -suojauksesta kohdassa <tag>tästä</tag>.",
+                "subtitleDescribe": "Connected Home -suojaus lähettää sinulle hälytyksen havaitessaan haavoittuvuuden laitteessasi tai kotiverkossasi tai, jos olet yhdistynyt mahdollisesti vahingolliseen verkkoon. Lue lisää Connected Home -suojauksesta <tag>tästä</tag>.",
                 "tryNow": "Kokeile nyt"
             },
             "invitationcode": {
@@ -1549,8 +1622,8 @@
             "button": "GO TO FORUM"
         },
         "question1": {
-            "title": "Back up and restore your files",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        Back up and restore your files\n    </div>\n    <hr />\n    <div style='margin-bottom:7rem;'>\n        It's always good to have a backup. Keep copies of your files on another drive in case something happens to the\n        originals.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Set up your backup\n    </div>\n    <hr />\n    <div class='mb-5'>\n        Select the <span style='font-weight:bold'>Start</span> button, select\n        <span style='font-weight:bold'>Settings</span> >\n        <span style='font-weight:bold'>Update & security</span> >\n        <span style='font-weight:bold'>Backup</span> > <span style='font-weight:bold'>Add a drive</span> , and then\n        choose an external drive or network location for your backups.\n    </div>\n    <div class='mb-5'>\n        <img src='./../../../../assets/images/qa/1.1.png' />\n    </div>\n    <div class='mb-5'>\n        All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files\n        get backed up or how often backups happen, go to\n        <span style='font-weight:bold;'>More options</span>.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Restore your files\n    </div>\n    <div class='mb-5'>\n        If you're missing an important file or folder, here's how to get it back:\n    </div>\n    <div>\n\n        <div class='mb-3'>1. Type <span style='font-weight:bold;'>Restore files</span>\n            in the search box on the taskbar, and then select\n            <span class='font-weight:bold'> Restore your files with File History</span>.</div>\n        <div class='mb-3'>2. Look for the file you need, then use the arrows to see all its versions</div>\n        <div class='mb-3'>3. When you find the version you want, select\n            <span style='font-weight:bold'>Restore</span>\n            to save it in its original location. To save it in a different place, press and hold (or right-click)\n            <span style='font-weight:bold'>Restore</span>, select <span style='font-weight:bold'>Restore to</span>, and\n            then choose a new location.</div>\n\n    </div>\n</div>",
+            "title": "Tiedostojen varmuuskopiointi ja palauttaminen",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Tiedostojen varmuuskopiointi ja palauttaminen    </div>    <hr />    <div style='margin-bottom:7rem;'>        Varmuuskopiointi on aina hyvä asia. Säilytä tiedostojen kopioita toisella asemalla siltä varalta, että alkuperäisille tapahtuu jotain.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Varmuuskopioinnin määritys    </div>    <hr />    <div class='mb-5'>        Valitse <span style='font-weight:bold'>Käynnistä</span>-painike ja sitten <span style='font-weight:bold'>Asetukset</span> > <span style='font-weight:bold'>Päivittäminen ja suojaus</span> > <span style='font-weight:bold'>Varmuuskopiointi</span> > <span style='font-weight:bold'>Lisää asema</span>, ja valitse sitten ulkoinen asema tai verkkosijainti.varmuuskopiointia varten.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Valmista. Varmuuskopioimme kaikki käyttäjän kansiossa olevat tiedostot (C:\\\\Users\\\\username) tunnin väliajoin. Jos haluat määrittää, mitkä tiedostot varmuuskopioidaan tai kuinka usein varmuuskopiointi tapahtuu, siirry kohtaan <span style='font-weight:bold;'>Lisää vaihtoehtoja</span>.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Tiedostojen palauttaminen    </div>    <div class='mb-5'>        Jos sinulta puuttuu tärkeä tiedosto tai kansio, voit palauttaa sen seuraavasti:    </div>    <div>        <div class='mb-3'>1. Kirjoita <span style='font-weight:bold;'>Tiedostojen palautus</span> tehtäväpalkin hakuruutuun ja valitse sitten <span class='font-weight:bold'> Palauta tiedostot ja tiedostohistoria</span>.</div>        <div class='mb-3'>2. Etsi tarvitsemasi tiedosto ja tarkastele kaikkia sen versioita nuolien avulla</div>        <div class='mb-3'>3. Kun löydät haluamasi version, valitse <span style='font-weight:bold'>Palauta</span>, jos haluat tallentaa tiedoston sen alkuperäiseen sijaintipaikkaan. Jos haluat tallentaa sen eri paikkaan, paina pitkään (tai napsauta hiiren kakkospainikkeella) <span style='font-weight:bold'>Palauta</span>-painiketta, valitse <span style='font-weight:bold'>Palauta sijaintiin</span> -vaihtoehto ja valitse sitten uusi sijainti.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1590,8 +1663,8 @@
             }
         },
         "question2": {
-            "title": "How to refresh your PC",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        How to refresh your PC\n    </div>\n    <hr>\n    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>\n        Symptom\n    </div>\n    <div style='padding:5px 0;'>\n        If your PC isn't performing as well as it once did, and you don't know why,\n        you can refresh your PC without deleting any of your personal files or\n        changing your settings. Windows can “refresh” your PC so it’s more like a\n        fresh install without deleting your personal files.\n    </div>\n    <div style='padding:5px 0;'>\n        Refresh your PC, Here is what will happen: your files and personalized\n        settings won’t change\n    </div>\n    <div style='padding:5px 0;'>\n        <ul>\n            <li>Your PC settings will be changed back to its defaults</li>\n            <li>Apps from windows store will be kept</li>\n            <li>Apps you installed from disc or website will be removed</li>\n            <li>A list of removed files will be saved on your desktop</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Affected Brands\n    </div>\n\n    <div>\n        <ul>\n            <li>All Desktop and Laptops</li>\n\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Operation System\n    </div>\n\n    <div>\n        <ul>\n            <li>Windows 8, 8.1 & 10</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Solution\n    </div>\n\n    <div>\n        <ul class='list-unstyled'>\n            <li>\n                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>\n                <ol>\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Settings </span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Update and recovery</span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <div>Tap or click <span style='font-weight:bold;'> Recovery</span></div>\n                        <div style='padding:5px 0'>Under Refresh your PC without affecting your files, tap or click\n                            <span style='font-weight:bold;'> Get started.</span></div>\n                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>\n\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Next'</span>.\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Refresh' </span>to start the refresh process.\n                    </li>\n                    <li style='padding:5px 0;'>\n                        Once the refresh process is done, you can find a Removed Apps list on the desktop\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        You can find the removed apps while refreshing your system\n                    </li>\n                </ol>\n            </li>\n            <li style='padding:10px 0;'>\n                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>\n                <ol>\n                    <li style='padding:5px 0;'> Search for <span style='font-weight:bold;'> refresh </span>in the search\n                        tool available in the Start menu,</li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on <span style='font-weight:bold;'> 'Refresh your PC without affecting your\n                                files'</span> in the search results as shown below.</div>\n                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on the\n                            <span style='font-weight:bold;'> Get started </span>\n                            button just below the heading<span style='font-weight:bold;'> 'Refresh your PC without\n                                affecting your files'</span> to start refreshing your Windows 10 PC.</div>\n                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>\n                    </li>\n                </ol>\n            </li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;'>\n        Additional Information\n    </div>\n\n    <div>\n        In most cases, once you start to refresh your PC, it’ll finish on its own.\n        However, if Windows needs missing files, you’ll be asked to insert recovery\n        media, which is typically a DVD disc or thumb drive. If that happens, what\n        you’ll need depends on your PC.\n    </div>\n    <div style='padding:10px 0'>\n        If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use\n        that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact\n        Microsoft Support.\n    </div>\n\n</div>",
+            "title": "Tietokoneen siivoaminen",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Tietokoneen siivoaminen    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        Tilanne    </div>    <div style='padding:5px 0;'>        Jos tietokoneesi ei toimi yhtä hyvin kuin aiemmin etkä tiedä miksi, voit päivittää tietokoneen poistamatta henkilökohtaisia tiedostoja tai muuttamatta asetuksia. Windows voi ”päivittää” tietokoneen niin, että se on kuin vasta asennettu ilman, että henkilökohtaisia tiedostojasi poistetaan.    </div>    <div style='padding:5px 0;'>        Siivoa tietokone -toiminnossa tapahtuu seuraava: tiedostot ja mukautetut asetukset eivät muutu    </div>    <div style='padding:5px 0;'>        <ul>            <li>Tietokoneen asetukset muutetaan takaisin oletusasetuksiksi</li>            <li>Windows-kaupan sovellukset säilyvät</li>            <li>Ohjelmat, jotka on asennettu levyltä tai verkkosivustosta, poistetaan</li>            <li>Luettelo poistetuista tiedostoista tallennetaan työpöydälle</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Tuotemerkit, joita tämä koskee    </div>    <div>        <ul>            <li>Kaikki pöytätietokoneet ja kannettavat</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Käyttöjärjestelmä    </div>    <div>        <ul>            <li>Windows 8, 8.1 ja 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Ratkaisu    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        Valitse <span style='font-weight:bold;'> Asetukset </span>                    </li>                    <li style='padding:5px 0;'>                        Valitse <span style='font-weight:bold;'> Päivitys ja palautus</span>                    </li>                    <li style='padding:5px 0;'>                        <div>Valitse <span style='font-weight:bold;'> Palautus</span></div>                        <div style='padding:5px 0'>Valitse Siivoa tietokone vaikuttamatta tiedostoihisi -kohdassa <span style='font-weight:bold;'> Aloittaminen.</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        Napauta <span style='font-weight:bold;'> 'Seuraava'</span>.                    </li>                    <li style='padding:5px 0;'>                        Aloita päivitysprosessi valitsemalla <span style='font-weight:bold;'> 'Päivitä'</span>.                    </li>                    <li style='padding:5px 0;'>                        Kun päivitysprosessi on valmis, voit etsiä Poistetut sovellukset -luettelon työpöydältä                    </li>                    <li style='padding:5px 0;'>                        Voit etsiä poistetut sovellukset samalla, kun päivität järjestelmän                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> Etsi <span style='font-weight:bold;'> Päivitys </span>aloitusvalikon hakutyökalussa.</li>                    <li style='padding:5px 0;'>                        <div>Valitse <span style='font-weight:bold;'> 'Siivoa tietokoneesi vaikuttamatta tiedostoihin'</span> alla näkyvistä hakutuloksista.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div>Aloita Windows 10 -tietokoneesi päivitys valitsemalla <span style='font-weight:bold;'> Aloitus </span>-painike heti otsikon <span style='font-weight:bold;'> 'Siivoa tietokone vaikuttamatta tiedostoihisi'</span> alla.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        Lisätietoja    </div>    <div>        Useimmiten, kun aloitat tietokoneen siivoamisen, se suorittaa toiminnon loppuun itse. Jos Windows kuitenkin tarvitsee puuttuvia tiedostoja, ohjelma pyytää asettamaan tietokoneeseen elvytystietovälineen, joka on yleensä DVD-levy tai muistitikku. Jos näin käy, tarvittavat toimenpiteet riippuvat tietokoneestasi.    </div>    <div style='padding:10px 0'>        Jos olet päivittänyt tietokoneesi Windows 8.1- tai Windows RT 8.1 -versioon DVD-levyn avulla, käytä kyseistä levyä. Jos sinulla ei ole Windows 8.1 tai Windows RT 8.1 -tietovälinettä, ota yhteys Microsoftin tukipalveluun.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -1664,8 +1737,8 @@
             "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
         },
         "question3": {
-            "title": "How to know your machine's CPU",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    How to know your machine's CPU\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.\n    The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit\n    system.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n    <li>All Desktop and Laptops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operating System</h3>\n<ul>\n    <li>Windows 7 , 8 , 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n    <li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button,</strong>\n        right-clicking Computer, and then clicking Properties  </li>\n    <li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then click\n        <strong>Search.</strong></li>\n    <li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n    <li>Tap or click <strong>System</strong></li>\n    <li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong>\n        is displayed in the System type field under the System heading.\n        If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong>\n        <strong>32-bit Operating </strong>System is displayed in the System type field under the System heading.<br />\n         </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then\n        click <strong>Search.</strong></li>\n    <li>In the search box, type <strong>system information</strong></li>\n    <li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and then\n        click <strong>System Summary.</strong></li>\n    <li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>\n        x64-based PC is displayed in the <strong>System type</strong> field under the \n        Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong>\n        version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> field\n        under the Item heading.  </li>\n</ol>\n<p> </p>",
+            "title": "Koneen suorittimen tunnistaminen",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Koneen suorittimen tunnistaminen</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tilanne</h3><p>Termit 32-bittinen ja 64-bittinen viittaavat tapaan, jolla tietokoneen suoritin (kutsutaan myös keskusyksiköksi tai CPU:ksi) käsittelee tietoja. 64-bittinen Windows-versio käsittelee suuria määriä RAM (Random Access Memory) -muistia tehokkaammin kuin 32-bittinen järjestelmä.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tuotemerkit, joita tämä koskee</h3><p>Yllä mainittu tilanne liittyy seuraaviin järjestelmiin, näihin kuitenkaan rajoittumatta:</p><ul>    <li>Kaikki pöytätietokoneet ja kannettavat</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Käyttöjärjestelmä</h3><ul>    <li>Windows 7, 8, 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Ratkaisu</h3><p><strong><u>Windows 7 tai Vista</u></strong></p><ol>    <li>Avaa järjestelmä napsauttamalla <strong>Käynnistä-painiketta </strong>Kuva <strong>Käynnistä-painikkeesta,</strong> napsauta hiiren oikealla painikkeella Tietokone ja valitse sitten Ominaisuudet  </li>    <li>Järjestelmä-kohdassa voit tarkastella järjestelmän lajia.</li></ol><p><strong><u>Windows 8 ja Windows 10</u></strong></p><p><strong>Tapa 1:</strong> Tarkastele järjestelmäikkunaa Ohjauspaneelissa</p><ol>    <li>Sipaise kuvaruudun oikeasta reunasta sisäänpäin ja napauta sitten <strong>Hae</strong>. Jos käytät hiirtä, osoita näytön oikeaa alakulmaa ja napsauta sitten <strong>Haku-painiketta.</strong></li>    <li>Kirjoita hakukenttään <strong>järjestelmä</strong> ja valitse sitten <strong>Asetukset.</strong></li>    <li>Valitse <strong>Järjestelmä</strong></li>    <li>Jos käytät Windows 8 -käyttöjärjestelmän 64-bittistä versiota <strong>64-bittinen käyttöjärjestelmä</strong> näkyy Järjestelmän tyyppi -kentässä Järjestelmä-otsikon alla. Jos käytät Windows 8 <strong>-käyttöjärjestelmän</strong> <strong>32</strong>-bittistä versiota, <strong>32-bittinen </strong>käyttöjärjestelmä näkyy Järjestelmän tyyppi -kentässä Järjestelmä-otsikon alla.<br />  </li></ol><p><strong>Tapa 2</strong>: Tarkastele Järjestelmätiedot-ikkunaa</p><ol>    <li>Sipaise kuvaruudun oikeasta reunasta sisäänpäin ja napauta sitten <strong>Hae</strong>. Jos käytät hiirtä, osoita näytön oikeaa alakulmaa ja napsauta sitten <strong>Haku-painiketta.</strong></li>    <li>Kirjoita hakukenttään <strong>järjestelmän tiedot</strong></li>    <li>Valitse<strong> Järjestelmä</strong>, napsauta <strong>Järjestelmän tiedot,</strong> ja valitse sitten <strong>Järjestelmän yhteenveto.</strong></li>    <li>Jos käytät Windows 8 -käyttöjärjestelmän <strong>64-bittistä </strong>versiota<strong>, </strong> x64-pohjainen tietokone näkyy <strong>Järjestelmän tyyppi</strong> -kohdassa nimikkeen otsikon alla. <br /> <br /> Jos käytät Windows 8 -käyttöjärjestelmän<strong> 32-bittistä</strong> versiota, x86-pohjainen tietokone näkyy <strong>Järjestelmän tyyppi</strong> -kentässä nimikkeen otsikon alla.  </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -1753,8 +1826,8 @@
             }
         },
         "question4": {
-            "title": "Check your machine's battery use",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Check your machine's battery use\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> \n    screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.\n    That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;\n    apps&ndash;are using too much power.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n\n<ul>\n    <li>Lenovo laptops, desktops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Systems</h3>\n<ul>\n    <li>All</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operationg System</h3>\n<ul>\n    <li>Window 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your\n    traditional <strong>control panel </strong>view, this feature is located in the\n    new <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>\n    select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br />\n        <br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last\n    from last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;\n    <strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,\n    the display,</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong>\n     options show how much power is used by applications while you&rsquo;re using them, compared to applications\n    running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>\n        &ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.\n    This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of this\n    feature.\n    It will display a list of the apps have used battery power in that period, and show you what percentage of your\n    battery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
+            "title": "Tarkista koneen akun käyttö",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Tarkista koneen akun käyttö</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tilanne</h3><p>Windows 10 -käyttöjärjestelmään kuuluu uusi ”<strong>Akun käyttö”</strong> -näyttö, josta näet mikä tyhjentää kannettavasi akkua. Tämä tarkoittaa, että se kertoo tarkalleen, mitkä sovellukset – sekä työpöytäversiot että Windows 10 -käyttöjärjestelmän yleissovellukset – käyttävät liikaa virtaa.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tuotemerkit, joita tämä koskee</h3><ul>    <li>Lenovon kannettavat tietokoneet, pöytätietokoneet</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Järjestelmät</h3><ul>    <li>Kaikki</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Käyttöjärjestelmä</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Ratkaisu</h3><p>Tämä ominaisuus on uusi Windows 10:ssä, joten se on löydettävä ensin, koska sitä ei ole tallennettu perinteiseen <strong>ohjauspaneeli</strong>-näkymään. Tämä ominaisuus sijaitsee uudessa <strong>”Asetukset”</strong>-sovelluksessa</p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Hae Akun käyttö -näyttö</h3></p><p>1. Valitse <strong>Käynnistysvalikon </strong>” Asetukset”-vaihtoehto</p><p>2. Valitse <strong>Asetukset</strong>-kohdassa <strong>”Järjestelmä”</strong>ja valitse sitten <strong>”Akun säästö”.<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Lisätietoja saat napauttamalla <strong>”Akun käyttö”</strong>-linkkiä tämän otsikon alla. </p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analysoi virran käyttöäsi</h3><p>4 Voit muuttaa akun käyttönäytön näyttämään akun käytön viimeisten 24 – 48 tunnin aikana tai edellisen viikon aikana</p><p>5 <strong>”Järjestelmä”,</strong> ”<strong>Näyttö,</strong>” ja ”<strong>Wi-Fi”</strong> prosentit. Tämä näyttää, paljonko akkuvirtaa järjestelmän prosessit ja näyttö ovat käyttäneet.</p><p>6 Vaihtoehdot <strong>”Käytössä”</strong> ja <strong>”Taustalla”</strong> näyttävät, kuinka paljon sovellukset käyttävät virtaa niiden käytön aikana verrattuna taustalla käynnissä oleviin sovelluksiin.</p><p>7 Jos sovellukset käyttävät virtaa taustalla, voit napauttaa <strong>”Muuta taustasovellusten asetuksia” </strong>-linkkiä ja estää sovelluksia olemasta käynnissä taustalla. Tämä toimii vain Windows 10:n yleissovelluksissa.</p><p>8 Vieritä pidemmälle alaspäin ja näet luettelon sovelluksista. Tätä pidetään tämän toiminnon hyödyllisimpänä osiona. Se tuo näkyviin luettelon sovelluksista, jotka ovat käyttäneet akkuvirtaa kyseisenä ajanjaksona ja näyttää, kuinka monta prosenttia akkuvirtaa kukin sovellus on käyttänyt</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -1821,8 +1894,8 @@
             }
         },
         "question5": {
-            "title": "Use your PC like a tablet",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Use your PC like a tablet\n</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet\n        mode</strong> .</p>\n<p> </p>\n<p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device \n    on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and\n    how the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the\n    screen.</p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.\n    Select the <strong>Start </strong>button, select <strong>Settings </strong>>\n    <strong>System </strong>> <strong>\n        Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.\n    To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and\n    you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n    <li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n    <li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then\n        drag it to one side to snap it into your divided screen.</li>\n    <li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
+            "title": "Tietokoneen käyttö taulutietokoneen tavoin",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Tietokoneen käyttö taulutietokoneen tavoin</div><hr><p>Muistiotila tekee Windows-käyttöjärjestelmästä entistä intuitiivisemman ja helppokäyttöisemmän, kun käytössä on kosketusnäytöllinen laite.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Muistiotila</h3><p>Voit ottaa muistiotilan käyttöön napsauttamalla tehtäväpalkissa <strong>toimintokeskus</strong> ja valitsemalla sitten <strong>Muistiotila</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Huomautus</h3><p>Saat lisätietoja siitä, miten laite ottaa muistiotilan automaattisesti käyttöön etsimällä laitteesi valmistajan verkkosivulta. Tämän toiminnon tuki riippuu laitteistosta, asennetusta ohjaimesta ja siitä, miten valmistaja on määrittänyt laitteen asetukset. </p><p> </p><p>Muistiotilassa sovellukset avautuvat koko näytön kokoisiksi, mikä tuo työskentelylle lisätilaa. Jos haluat sulkea sovelluksen, vedä se näytön alareunaan.</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Vinkki</h3><p>Tehtäväpalkki on käytettävissä, kun tietokone on muistiotilassa. Voit kuitenkin piilottaa sen, jos haluat lisää tilaa näyttöön. Valitse <strong>Käynnistä</strong>-painike ja sitten <strong>Asetukset </strong>> <strong>Järjestelmä </strong>> <strong> Muistiotila</strong> ja ota <strong>Piilota tehtäväpalkki automaattisesti muistiotilassa</strong>. Voit tuoda piilotetun tehtäväpalkin näkyviin sipaisemalla näytön alareunasta ylöspäin tai viemällä hiiren osoittimen tämän kohdan päälle.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Kahden sovelluksen käyttö samanaikaisesti</h3><p>Jos haluat käyttää kahta sovellusta rinnakkain muistiotilassa, vedä avoin sovellus alaspäin ja sivulle. Näet, mihin se loksahtaa paikalleen ja näet avoinna olevat sovellukset sen vieressä.</p><p>Tässä näkymässä voit myös:</p><ul>    <li>Muuttaa molempien sovellusten kokoa samanaikaisesti käyttämällä kahden näytöllä olevan sovelluksen välistä jaettua reunaa.</li>    <li>Avaa uusi sovellus tehtävänäkymästä, valitse tehtäväpalkissa <strong>Tehtävänäkymä</strong>, valitse sovellus ja vedä se sitten toiseen laitaan, kun haluat sijoittaa sen jaetulle näytölle.</li>    <li>Voit siirtyä takaisin sovellukseen tai avata aiemmin käyttämäsi sovelluksen napsauttamalla tehtäväpalkin Edellinen-painiketta.</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -1861,8 +1934,8 @@
             }
         },
         "question6": {
-            "title": "Get to know Cortona, your personal assistant",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Get to know Cortana, your personal assistant\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>What is Cortana?</h3>\n<hr />\n<p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing\n    works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you\n    select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n    <li>Give you reminders based on time, places, or people.</li>\n    <li>Track packages, teams, interests, and flights.</li>\n    <li>Send emails and texts.</li>\n    <li>Manage your calendar and keep you up to date.</li>\n    <li>Create and manage lists.</li>\n    <li>Chit chat and play games.</li>\n    <li>Find facts, files, places, and info.</li>\n    <li>Open any app on your system.</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Try this: Set a reminder</h3>\n<hr />\n\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or\n    even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync\n    notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hey Cortana?</h3>\n<hr />\n<p>Set Cortana to hear you anytime you say\n    'Hey Cortana.' Select the search box on the taskbar to open Cortana home.\n    Then select <strong>Settings</strong>  and turn on <strong>Let Cortana respond to 'Hey\n        Cortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.\n</p>\n<p> </p>",
+            "title": "Tutustu Cortanaan, henkilökohtaiseen avustajaasi",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Tutustu Cortanaan, henkilökohtaiseen avustajaasi</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Mikä Cortana on?</h3><hr /><p>Cortana on digitaalinen agenttisi. Hän auttaa sinua saamaan asioita aikaan.</p><p>Mitä enemmän käytät Cortanaa, sitä räätälöidympi kokemuksesi tulee olemaan.</p><p>Aloita kirjoittamalla kysymys hakukenttään, tai valitse mikrofoni ja puhu Cortanalle. (Kirjoitus toimii kaikentyyppisissä tietokoneissa, mutta sinulla on oltava mikrofoni, jotta voit ohjata sovellusta puheella.)</p><p>Jos et ole varma siitä, mitä haluat sanoa, näet ehdotukset lukitusnäytössä ja Cortanan aloitusnäytöllä, kun olet valinnut tehtäväpalkin hakuruudun.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Koti 2. Kannettava tietokone 3. Asetukset 4. Palaute</li></ol><p>Seuraavassa on joitakin tapoja, joilla Cortana voi auttaa sinua:</p><ul>    <li>Saat aikaan, paikkoihin tai henkilöihin perustuvia muistutuksia.</li>    <li>Seuraa paketteja, tiimejä, kiinnostuksen kohteita ja lentoja.</li>    <li>Lähetä sähköposteja ja tekstiviestejä.</li>    <li>Hallitse kalenteriasi ja pidä itsesi ajan tasalla.</li>    <li>Luo ja hallinnoi luetteloja.</li>    <li>Jutustele ja pelata pelejä.</li>    <li>Hae faktoja, tiedostoja, paikkoja ja tietoja.</li>    <li>Avaa mikä tahansa järjestelmän sovellus.</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Kokeile tätä: muistutuksen asetus</h3><hr /><p>Yksi asioista, jotka Cortana voi tehdä, on antaa sinulle muistutuksia. Hän voi muistuttaa sinua tekemään asioita perustuen aikaan, paikkoihin tai jopa ihmisiin.</p><p>Voit esimerkiksi kirjoittaa tai sanoa: \\\"Muistuta minua onnittelemaan Tarjaa, kun hän soittaa seuraavan kerran\\\".</p><p>Muistutus tulee näkyviin, kun Tarja soittaa sinulle.</p><p>Lisäbonus: Jos sinulla on Windows-puhelin tai Cortana for iPhone tai Android -sovellus, voit määrittää Cortanan synkronoimaan ilmoitukset tietokoneen ja puhelimen välillä.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hei Cortana?</h3><hr /><p>Voit asettaa Cortanan kuuntelemaan aina, kun sanot: \\\"Hei Cortana\\\". Avaa Cortanan aloitusnäyttö valitsemalla tehtäväpalkista hakuruutu. Valitse sitten <strong>Asetukset</strong> ja ota käyttöön <strong>Anna Cortanan vastata \\\"Hei Cortana\\\" -komentoon.</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Huomautus</p><p>Cortana on käytettävissä vain tietyissä maissa tai joillakin alueilla, ja jotkin Cortanan ominaisuudet eivät ehkä ole käytettävissä kaikkialla.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -1902,8 +1975,8 @@
     "welcometutorial": {
         "description": "Vantagen avulla voit helposti päivittää ajureita, suorittaa vianmäärityksen, jättää tukipyyntöjä ja saada lisätietoja laitteesta. Voit nopeasti mukauttaa käyttökokemusta ja etsiä hyödyllisiä, tarpeisiisi räätälöityjä tietoja",
         "bullets1": "Tarkastele järjestelmän tilaa Vantage-kojelaudalla.",
-        "bullets2": "Security Advisor helpottaa suojauksen hallintaa ",
-        "bullets3": "Automaattiset päivitykset pitävät laitteen moitteettomassa kunnossa",
+        "bullets2": "Security Advisor -ohjelman avulla voit hallita tietoturvaa helposti (saatavilla tietyissä järjestelmissä).",
+        "bullets3": "Automaattiset päivitykset pitävät laitteen moitteettomassa kunnossa (saatavilla tietyissä järjestelmissä).",
         "subtitle1": "Miten aiot käyttää laitetta?",
         "subtitle2": "Kerro meille kiinnostuksen kohteistasi",
         "personal": "Henkilökohtainen käyttö",
@@ -1945,6 +2018,6 @@
         "usageStatistics": "Käyttötilastot",
         "usageStatisticsDescription": "Lähetä nimettömiä käyttötilastoja Lenovolle.",
         "Note": "Huomautus: ",
-        "settingsNotes": "Kaikki tämän sivun asetukset tulevat voimaan vasta, kun käyttäjä on käynnistänyt tietokoneen uudelleen."
+        "settingsNotes": "Kaikki tämän sivun asetukset tulevat voimaan vasta, kun käyttäjä on käynnistänyt sovelluksen uudelleen."
     }
 }
