@@ -1117,7 +1117,6 @@
 				"description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
 				"installBtnText": "Install",
 				"launchBtnText": "Launch",
-				"learnMoreText": "Learn More",
 				"voiceToText": {
 					"title": "Voice to text",
 					"caption": "This feature helps to convert your voice into texts."

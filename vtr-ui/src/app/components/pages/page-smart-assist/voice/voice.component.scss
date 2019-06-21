@@ -17,12 +17,8 @@ ul{
 	border: none;
 	margin-top: 0.5rem;
 }
-.learn-more{
-	a{
-		font-size: 1.5rem;
-		cursor: pointer;
-		color: $main;
-		text-decoration: underline;
-	}
+
+::ng-deep .vtr-ui-switch-row .white-theme {
+	border-bottom: none !important;
 }
 
