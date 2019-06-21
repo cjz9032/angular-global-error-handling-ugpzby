@@ -64,6 +64,74 @@
 							</div>
 						</vtr-ui-row-switch>
 					</li>
+
+					<li class="pt-3 user-defined-key-block">
+						<vtr-ui-row-switch [title]="'device.deviceSettings.inputAccessories.userDefinedKey.title' | translate"
+							componentName="User defined key"
+							[caption]="'device.deviceSettings.inputAccessories.userDefinedKey.caption' | translate"
+							[leftIcon]="['fal', 'gem']" [rightIcon]="['far', 'question-circle']" [showChildContent]="true"
+							[theme]="'white'">
+							<div class="row">
+								<div class="col-md-10 col-sm-12 col-lg-10 pt-5">
+									<div class="row">
+										<div class="col-auto pl-0">
+											<img class="img-fluid" src="../../../../../../assets/images/F12-key.PNG">
+										</div>
+											<div class="inputSection">
+													<div class="col">
+														<div class="btn-group btn-block dropdown-left" ngbDropdown
+															[ngClass]="['disabled',isCheckedAuto === true ?'disabled':'']"
+															placement="bottom-right">
+															<button
+																[ngClass]="['btn','btn-outline-shadow',isCheckedAuto?'disabled':'']"
+																ngbDropdownToggle [disabled]="isCheckedAuto?true:false" type="button">
+																<div class="row d-flex justify-content-between">
+																	<div class="col-auto pl-1 pr-1">
+																		<div class="select-title">
+																			{{'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.title' | translate}}
+																		</div>
+
+																		<div class="select-text text-left">
+																			{{selectedValue.title}}
+																		</div>
+																	</div>
+																	<div class="col-auto pl-0 pr-1">
+																		<div class="dropdown-icon">
+																			<fa-icon [icon]="['fas', 'chevron-down']"></fa-icon>
+																		</div>
+																	</div>
+																</div>
+															</button>
+															<div ngbDropdownMenu aria-labelledby="">
+																<a [ngClass]="['dropdown-item']"
+																	*ngFor="let item of userDefinedKeyOptions"
+																	(click)="onChange(item)"
+																	 >{{item.title}}</a>
+															</div>
+														</div>
+													</div>
+
+															<div class="col" *ngIf = "selectedValue.value == 2">
+																<textarea placeholder="WEBSITE URL"></textarea>
+															</div>
+
+																<div class="col" *ngIf = "selectedValue.value == 3">
+																		<div class="note align-items-center">
+																				{{'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.note' | translate}}
+																		</div>
+																</div>
+
+
+															<div class="col" *ngIf = "selectedValue.value == 3">
+																<textarea placeholder="TEXT TO BE ENETERED"></textarea>
+															</div>
+
+											</div>
+										</div>
+								</div>
+							</div>
+						</vtr-ui-row-switch>
+					</li>
 				</ul>
 			</vtr-container-collapsible>
 		</div>
