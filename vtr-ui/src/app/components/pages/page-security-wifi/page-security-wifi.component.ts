@@ -12,6 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { SecurityService } from 'src/app/services/security/security.service';
+import { RegionService } from 'src/app/services/region/region.service';
 
 interface DevicePostureDetail {
 	status: number; // 1,2
@@ -52,6 +53,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	securityHealthArticleId = '9CEBB4794F534648A64C5B376FBC2E39';
 	securityHealthArticleCategory: string;
 	cancelClick = false;
+	region: string;
+	language: string;
 
 	@HostListener('window:focus')
 	onFocus(): void {
@@ -66,7 +69,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		public shellService: VantageShellService,
 		private cmsService: CMSService,
 		public translate: TranslateService,
-		private ngZone: NgZone
+		private ngZone: NgZone,
+		public regionService: RegionService
 	) {
 		this.securityAdvisor = shellService.getSecurityAdvisor();
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
@@ -84,6 +88,24 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			this.cancelClick = true;
 		}).on('cancelClickFinish', () => {
 			this.cancelClick = false;
+		});
+		this.regionService.getRegion().subscribe({
+			next: x => {
+				this.region = x;
+			},
+			error: err => {
+				console.error(err);
+				this.region = 'US';
+			}
+		});
+		this.regionService.getLanguage().subscribe({
+			next: x => {
+				this.language = x;
+			},
+			error: err => {
+				console.error(err);
+				this.language = 'EN';
+			}
 		});
 		this.fetchCMSArticles();
 	}
@@ -146,17 +168,18 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	fetchCMSArticles() {
 		const queryOptions = {
 			'Page': 'wifi-security',
-			'Lang': 'EN',
-			'GEO': 'US',
+			'Lang': this.language,
+			'GEO': this.region,
 			'OEM': 'Lenovo',
 			'OS': 'Windows',
 			'Segment': 'SMB',
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).then(
+		this.cmsService.fetchCMSContents(queryOptions).then(
 			(response: any) => {
-				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				const content = Array.isArray(response) ? response[0] ? response[0] : response[1] : response;
+				const cardContentPositionA = this.cmsService.getOneCMSContent(content, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {
 					this.cardContentPositionA = cardContentPositionA;
 					if (this.cardContentPositionA.BrandName) {
