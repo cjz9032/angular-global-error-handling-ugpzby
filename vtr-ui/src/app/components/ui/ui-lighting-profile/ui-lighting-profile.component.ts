@@ -563,7 +563,7 @@ export class UiLightingProfileComponent implements OnInit {
 				this.isProfileOff = true;
 			} else {
 				this.isProfileOff = false;
-
+				this.currentProfileId=this.isOff;
 				if (this.gamingLightingService.isShellAvailable) {
 					this.gamingLightingService
 						.setLightingDefaultProfileById(this.currentProfileId)
