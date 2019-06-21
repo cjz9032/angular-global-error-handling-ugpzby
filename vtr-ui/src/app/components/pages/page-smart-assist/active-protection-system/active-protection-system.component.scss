@@ -2,7 +2,7 @@
 .auto-screen-block,
 .auto-screen-off-block {
 	::ng-deep .vtr-ui-switch-row {
-		border-bottom: none;
+		border-bottom: none !important;
 	}
 }
 .aps {

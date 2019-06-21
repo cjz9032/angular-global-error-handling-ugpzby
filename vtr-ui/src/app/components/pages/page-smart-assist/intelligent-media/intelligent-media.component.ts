@@ -8,10 +8,8 @@ import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 	styleUrls: ['./intelligent-media.component.scss']
 })
 export class IntelligentMediaComponent implements OnInit {
-	playbackStatus = new FeatureStatus(true, true);
-	showPlaybackLoader = true;
-
 	@Input() isChecked = false;
+	@Input() isLoading = true;
 	@Output() videoPlaybackToggle: EventEmitter<any> = new EventEmitter();
 
 	constructor(private smartAssist: SmartAssistService) { }
@@ -21,7 +19,6 @@ export class IntelligentMediaComponent implements OnInit {
 
 	public setVideoPauseResumeStatus(event) {
 		this.videoPlaybackToggle.emit(event.value);
-		// this.playbackStatus.status = event.switchValue;
 		console.log('setVideoPauseResumeStatus');
 		try {
 			if (this.smartAssist.isShellAvailable) {

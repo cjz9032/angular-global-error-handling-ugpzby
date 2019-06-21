@@ -30,14 +30,17 @@ but not to any other element on the page. using ::ng-deep
 				background: linear-gradient($gradient_angle_reverse, $main_light 0%, $main 100%),
 					linear-gradient($gradient_angle, $light 0%, $light 100%);
 				&::after {
+					display: block;
+					text-align: center;
 					background: transparent;
-					font-family: FontAwesome;
-					font-size: 1.6rem;
-					top: calc(100% - 2.3rem);
-					left: calc(100% - 2.5rem);
-					font-weight: normal;
-					color: $light;
-					content: url('../../../../assets/images/arrow-icon.PNG'); // unicode for font awesome two sided arrow
+					height: $thumb-size;
+					width: $thumb-size;
+					top: 0;
+					left: 0;
+					line-height: calc(2.8rem + 55%);
+					// top: calc(100% - 2.3rem);
+					// left: calc(100% - 2.5rem);
+					content: url("../../../../assets/images/arrow-icon.PNG"); // unicode for font awesome two sided arrow
 				}
 				&:focus {
 					outline: none;
@@ -98,20 +101,20 @@ but not to any other element on the page. using ::ng-deep
 	.diable-slider-pointer {
 		.ng5-slider {
 			.ng5-slider-pointer {
-				background: #8b91a2!important;
+				background: #8b91a2 !important;
 			}
-	 	}
+		}
 	}
 
 	[disabled].ng5-slider .ng5-slider-pointer {
 		background-color: initial;
 	}
 
-	.on-hover-slider-icon{
-		.ng5-slider{
-			.ng5-slider-pointer{
-				&:hover{
-					background: #8b91a2!important;
+	.on-hover-slider-icon {
+		.ng5-slider {
+			.ng5-slider-pointer {
+				&:hover {
+					background: #8b91a2 !important;
 				}
 			}
 		}
