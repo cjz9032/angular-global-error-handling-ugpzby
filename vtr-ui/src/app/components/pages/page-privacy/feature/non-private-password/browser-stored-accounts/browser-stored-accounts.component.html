@@ -9,3 +9,10 @@
 		(openAccordion)="openAccordion($event)">
 	</vtr-installed-browser>
 </div>
+<vtr-try-product-block
+	*ngIf="(openPasswordId === null) &&
+			isNonPrivatePasswordWasScanned &&
+			nonPrivatePasswordCount > 0"
+	[isFigleafReadyToCommunication]="isFigleafInstalled"
+	[texts]="tryProductText">
+</vtr-try-product-block>

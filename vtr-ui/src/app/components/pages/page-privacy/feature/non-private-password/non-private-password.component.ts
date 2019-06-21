@@ -31,14 +31,6 @@ export class NonPrivatePasswordComponent implements OnInit {
 	removePasswordPopupId = 'removePassword';
 	browserName: string;
 
-	tryProductText = {
-		risk: 'People often reuse the same password for many websites. This leads to multiple account breaches if the password exposed.',
-		howToFix: 'Avoid reusing and storing your passwords in your browsers. Create strong, unique passwords for every account with Lenovo Privacy by FigLeaf and store them in encrypted form on your PC.',
-		riskAfterInstallFigleaf: 'People often reuse the same password for many websites. This leads to multiple account breaches if the password exposed.',
-		howToFixAfterInstallFigleaf: 'Avoid reusing and storing your passwords in browsers. ' +
-			'If you need a strong one, create it with Lenovo Privacy by FigLeaf and store it on your PC, completely encrypted.'
-	};
-
 	isNonPrivatePasswordWasScanned$ = this.userDataGetStateService.userDataStatus$.pipe(
 		map((userDataStatus) =>
 			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.undefined &&
