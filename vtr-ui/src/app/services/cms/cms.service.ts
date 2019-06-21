@@ -80,6 +80,15 @@ export class CMSService {
 		});
 	}
 
+	fetchCMSContents(queryParams, defaultLangReg = { 'Lang': 'EN', 'GEO': 'US' }) {
+		const defaultQueryParams = Object.assign({}, queryParams);
+		Object.assign(defaultQueryParams, defaultLangReg);
+		return Promise.all([
+			this.fetchCMSContent(queryParams),
+			this.fetchCMSContent(defaultQueryParams)
+		]);
+	}
+
 	fetchCMSArticleCategories(queryParams) {
 		return new Promise((resolve, reject) => {
 			this.commsService.endpointGetCall('/api/v1/articlecategories', queryParams, {}).subscribe(
