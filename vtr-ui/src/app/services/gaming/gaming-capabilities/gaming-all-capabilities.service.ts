@@ -39,6 +39,8 @@ export class GamingAllCapabilitiesService {
 		this.commonService.setLocalStorageValue(LocalStorageKey.touchpadLockFeature, capabilities.touchpadLockFeature);
 		this.commonService.setLocalStorageValue(LocalStorageKey.xtuService, capabilities.xtuService);
 		this.commonService.setLocalStorageValue(LocalStorageKey.smartFanFeature, capabilities.smartFanFeature);
+		this.commonService.setLocalStorageValue(LocalStorageKey.ledSetFeature, capabilities.ledSetFeature);
+		this.commonService.setLocalStorageValue(LocalStorageKey.ledDriver, capabilities.ledDriver);
 	}
 
 	getCapabilityFromCache(storageKey: any) {
