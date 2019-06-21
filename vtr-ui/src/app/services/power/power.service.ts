@@ -479,7 +479,6 @@ export class PowerService {
 
 
 
-
 	// End battery threshold settings
 
 	public getEnergyStarCapability(): Promise<any> {
@@ -489,4 +488,66 @@ export class PowerService {
 		return undefined;
 	}
 
+	public getSmartStandbyCapability(): Promise<boolean> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyCapability();
+		}
+		return undefined;
+	}
+	public getSmartStandbyEnabled(): Promise<boolean> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyEnabled();
+		}
+		return undefined;
+	}
+
+	public getSmartStandbyActiveStartEnd(): Promise<boolean> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyActiveStartEnd();
+		}
+		return undefined;
+	}
+
+	public getSmartStandbyDaysOfWeekOff(): Promise<boolean> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyDaysOfWeekOff();
+		}
+		return undefined;
+	}
+
+	public setSmartStandbyEnabled(value: boolean): Promise<any> {
+		console.log('smart standby enabled value=>', value);
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyEnabled(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public setSmartStandbyActiveStartEnd(value: string): Promise<any> {
+		console.log('smart standby enabled value=>', value);
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyActiveStartEnd(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public setSmartStandbyDaysOfWeekOff(value: string): Promise<any> {
+		console.log('smart standby enabled value=>', value);
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyDaysOfWeekOff(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 }

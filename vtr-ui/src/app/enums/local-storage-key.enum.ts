@@ -134,4 +134,6 @@ export enum LocalStorageKey {
 	SubBrand = '[LocalStorageKey] SubBrand',
 	
 	userDeterminePrivacy = '[LocalStorageKey] userDeterminePrivacy',
+
+	BatteriesHealths = '[LocalStorageKey] BatteriesHealths'
 }

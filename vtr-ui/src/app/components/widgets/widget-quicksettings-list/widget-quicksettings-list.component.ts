@@ -126,29 +126,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 				}
 			]
 	}
-
-	public gamingSettings: any = {
-		cpuInfoFeature: true,
-		gpuInfoFeature: true,
-		memoryInfoFeature: true,
-		hddInfoFeature: true,
-		winKeyLockFeature: true,
-		rapidChargeFeature: true,
-		dolbySoundFeature: true,
-		touchpadLockFeature: true,
-		networkBoostFeature: true,
-		cpuOCFeature: true,
-		ledSetFeature: true,
-		memOCFeature: true,
-		macroKeyFeature: true,
-		hybridModeFeature: true,
-		optimizationFeature: true,
-		smartFanFeature: true,
-		xtuService: true,
-		fbnetFilter: true,
-		ledDriver: true
-	};
-
+	public gamingSettings: any = { };
 	constructor(
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private gamingThermalModeService: GamingThermalModeService,

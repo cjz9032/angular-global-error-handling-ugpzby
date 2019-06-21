@@ -49,6 +49,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
+		
 	}
 
 	ngOnDestroy() {
@@ -71,9 +72,12 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 						this.microphoneStatus.status = payload.muteDisabled;
 						this.microphoneStatus.permission = payload.permission;
 					});
-					break;
+					break;				
+				case DeviceMonitorStatus.CameraStatus:
+					this.cameraStatus.permission=payload;
+					break;		
 				default:
-					break;
+					break;			
 			}
 		}
 	}
@@ -90,8 +94,9 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		}
 
 		const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
-		if (privacy) {
+		if (privacy) {			
 			this.cameraStatus = privacy;
+			this.getCameraPermission()
 		} else {
 			this.getCameraStatus();
 		}
@@ -99,24 +104,24 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		this.initEyecaremodeSettings();
 	}
 
-	// public getCameraPermission() {
-	// 	try {
-	// 		if (this.displayService.isShellAvailable) {
-	// 			this.displayService.getCameraSettingsInfo()
-	// 				.then((result) => {
-	// 					console.log('getCameraPermission.then', result);
-	// 					if (result) {
-	// 						this.cameraStatus.permission = result.permission
-	// 						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraStatus);
-	// 					}
-	// 				}).catch(error => {
-	// 					console.error('getCameraPermission', error);
-	// 				});
-	// 		}
-	// 	} catch (error) {
-	// 		console.error(error.message);
-	// 	}
-	// }
+	public getCameraPermission() {
+		try {
+			if (this.displayService.isShellAvailable) {
+				this.displayService.getCameraSettingsInfo()
+					.then((result) => {
+						console.log('getCameraPermission.then', result);
+						if (result) {
+							this.cameraStatus.permission = result.permission
+							this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraStatus);
+						}
+					}).catch(error => {
+						console.error('getCameraPermission', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
 
 	public initEyecaremodeSettings() {
 		try {
@@ -151,6 +156,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 					// if privacy available then start monitoring
 					if (featureStatus.available) {
 						this.startMonitorForCamera();
+						this.getCameraPermission()
+						this.displayService.startMonitorForCameraPermission();
 					}
 				})
 				.catch(error => {

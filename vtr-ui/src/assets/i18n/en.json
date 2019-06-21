@@ -259,6 +259,28 @@
 				"applied": {
 					"title": "APPLIED"
 				}
+			},
+			"brightness": {
+				"text1": {
+					"title": "*Brightness setting doesn't apply on "
+				},
+				"text2": {
+					"title": " effect"
+				}
+			},
+			"lightingSingleLightingOption": {
+				"option1": {
+					"title": "Always On"
+				},
+				"option2": {
+					"title": "Fast Blink"
+				},
+				"option3": {
+					"title": "Medium Blink"
+				},
+				"option4": {
+					"title": "Slow Blink"
+				}
 			}
 		}
 	},
@@ -539,10 +561,10 @@
 				},
 				"condition": {
 					"Illegal": {
-						"title": "This system may not support battery that",
-						"description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
-						"description1": "Attention:",
-						"description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
+						"title": "Battery 1",
+						"description": "you cannot use the attached battery with this computer.",
+						"description1": "Replace",
+						"description2": "it with a battery of correct model."
 					},
 					"Good": {
 						"title": "The battery is in good condition."
@@ -626,6 +648,7 @@
 					"description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
 					"description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
 					"description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+					"description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider",
 					"readMore": "Read more.",
 					"gotoWindows": {
 						"title": "Go to windows settings",
@@ -849,14 +872,14 @@
 					"title": "Display",
 					"eyeCareMode": {
 						"title": "Color Temperature in Eye Care Mode",
-						"checkbox": "Schedule eye care mode from sunset to sunrise",
+						"checkbox": "Schedule Eye Care Mode from sunset to sunrise",
 						"options": {
 							"warm": "Warm (Better for eyes)",
 							"cold": "Cold"
 						},
 						"reset": "Reset temperature",
 						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+						"onSunsetToSunriseScheduleDescription": "Schedule Eye Care Mode from sunset to sunrise",
 						"note": {
 							"title": "Note",
 							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
@@ -1050,7 +1073,8 @@
 				"description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
 				"activeProtection": {
 					"title": "Active Protection",
-					"caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection"
+					"caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
+					"checkbox": "Ignore repetative shocks such as those of a train or a car"
 				},
 				"manualActiveProtectionSuspension": {
 					"title": "Manual Active Protection Suspension",
