@@ -270,7 +270,7 @@
                 "sub1": "My Device",
                 "sub2": "My Device Settings",
                 "sub3": "System Updates",
-                "sub4": "Smart Assist"
+                "sub4": "‏\"Pametna pomoč\""
             },
             "security": {
                 "title": "Zaščita",
@@ -305,14 +305,14 @@
             "notRegistered": "REGISTRIRANO"
         },
         "qAndA": {
-            "title": "Q&A for your machine",
-            "subtitle": "FIND SOME HELPFUL TIPS FOR YOUR DEVICE.",
-            "question1": "Backup and Restore your files",
-            "question2": "How to refresh your PC",
-            "question3": "How to know your machine's CPU",
-            "question4": "Check your machine's battery use",
-            "question5": "Use your PC like a tablet",
-            "question6": "Get to know Cortana, your personal assistant"
+            "title": "Vprašanja in odgovori za vaš računalnik",
+            "subtitle": "Poišči nekaj koristnih nasvetov za napravo.",
+            "question1": "Varnostno kopiranje in obnovitev datotek",
+            "question2": "Osveževanje računalnika",
+            "question3": "Ugotavljanje, kateri CPE ima računalnik",
+            "question4": "Preverjanje uporabe baterije računalnika",
+            "question5": "Uporaba računalnika kot tabličnega računalnika",
+            "question6": "Spoznavanje osebne pomočnice Cortane"
         },
         "ui": {
             "back": "NAZAJ",
@@ -372,14 +372,14 @@
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
                 },
-                "question1": "Do you like the new style of Vantage?",
-                "question2": "Do you think the performance is acceptable?",
-                "question3": "Would you use the application more often in the future?",
-                "yes": "Yes",
-                "no": "No",
-                "tips1": "Please leave any additional comments",
-                "sendFeedback": "Send Feedback",
-                "submitScreenShot": "Submit Screen Shot"
+                "question1": "Ali vam je novi slog programa Vantage všeč?",
+                "question2": "Ali menite, da je učinkovitost delovanja sprejemljiva?",
+                "question3": "Ali bi v prihodnje pogosteje uporabljali aplikacijo?",
+                "yes": "Da",
+                "no": "Ne",
+                "tips1": "Napišite morebitne dodatne komentarje",
+                "sendFeedback": "Pošljite povratne informacije",
+                "submitScreenShot": "Posnetek zaslona pošiljanja"
             }
         },
         "quickSettings": {
@@ -758,7 +758,13 @@
                         "heading": "Set time when you typically use this computer",
                         "subHeading1": "start",
                         "subHeading2": "end",
-                        "subHeading3": "use this schedule for"
+                        "subHeading3": "use this schedule for",
+                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "timeUnits": {
+                            "unit1": "Hours",
+                            "unit2": "Minutes",
+                            "unit3": "AM/PM"
+                        }
                     }
                 }
             },
@@ -867,7 +873,7 @@
                         "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
                         "note": {
                             "title": "Note",
-                            "description": "When the Eye care mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye care mode."
+                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
                         }
                     },
                     "privacyGuard": {
@@ -1073,6 +1079,34 @@
                 "title": "Zero Touch Video Playback",
                 "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
                 "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+            },
+            "voice": {
+                "title": "Voice",
+                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
+                "installBtnText": "Install",
+                "launchBtnText": "Launch",
+                "learnMoreText": "Learn More",
+                "voiceToText": {
+                    "title": "Voice to text",
+                    "caption": "This feature helps to convert your voice into texts."
+                },
+                "translation": {
+                    "title": "Translation",
+                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                },
+                "modalPopUp": {
+                    "heading": "Get started:",
+                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
+                    "point2": "Open the file where you want to record the converted text.",
+                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
+                    "point4": "Select your desired language and click the microphone icon to start.",
+                    "point5": "Put the cursor to where you want to edit and begin to speak.",
+                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
+                    "point7": "Select your desired source language and target language.",
+                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
+                    "point9": "Click the microphone icon to start speaking",
+                    "closeText": "close"
+                }
             }
         }
     },
@@ -1158,7 +1192,7 @@
             "rebootRequiredTag": "Potreben je vnovični zagon",
             "rebootDelayTag": "Zahtevan ponovni zagon, zahtevan vir napajanja",
             "shutdownRequiredTag": "Potrebna je zaustavitev",
-            "dependedPackage": "Depended Package"
+            "dependedPackage": "Odvisen paket"
         },
         "availableUpdates": {
             "title": "Razpoložljive posodobitve",
@@ -1201,72 +1235,70 @@
         }
     },
     "homeSecurity": {
-        "title": "Connected Home Security",
-        "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Ecosystem Security Overview",
-        "thisDevice": "This device",
-        "allDevices": "All Devices",
-        "protected": "Protected",
-        "notProtected": "Not Protected",
-        "myDevice": "My Device",
-        "secure": "SECURE",
-        "needAttention": "NEEDS ATTENTION",
-        "manageAccount": "Manage Account",
-        "devices": "Devices",
-        "seeProtectedDevices": "See protected devices",
-        "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrade to protect all of your devices",
-        "upgrade": "upgrade",
-        "freeTrial": "Free 30 day trial",
-        "protectAllDevices": "Protect all of your devices",
-        "inEcosystem": "In Ecosystem",
-        "ecosystemEnable": "Ecosystem Enabled",
-        "inTrial": "In trial",
-        "addEcosystem": "Add to Ecosystem",
-        "enableEcosystem": "Enable Ecosystem",
-        "startTrial": "Start Trial",
-        "fullAccess": "Full Access",
-        "recent": "Recent security notifications",
-        "notification": "Notifications",
-        "renew": "Renew",
+        "title": "Povezana domača varnost",
+        "ecosystemBlockTitle": "Zaščita ekosistema naprave",
+        "overviewBlockTitle": "Pregled varnosti ekosistema",
+        "thisDevice": "Ta naprava",
+        "allDevices": "Vse naprave",
+        "protected": "Zaščiteno",
+        "notProtected": "Nezaščiteno",
+        "myDevice": "Moja naprava",
+        "secure": "VARNO",
+        "needAttention": "POTREBEN JE UKREP",
+        "manageAccount": "Upravljanje računa",
+        "devices": "Naprave",
+        "seeProtectedDevices": "Ogled zaščitenih naprav",
+        "addDevice": "dodajanje naprave",
+        "trialExpired": "Preskus potekel - Nadgradite, da zaščitite vse svoje naprave",
+        "upgrade": "nadgradnja",
+        "freeTrial": "Zaščitite vse svoje naprave - Brezplačen 30-dnevni preskus",
+        "inEcosystem": "V ekosistemu",
+        "ecosystemEnable": "Ekosistem je omogočen",
+        "inTrial": "Preskusna različica",
+        "addEcosystem": "Dodajte v ekosistem",
+        "enableEcosystem": "Omogočite ekosistem",
+        "startTrial": "Začnite preskus",
+        "fullAccess": "Poln dostop",
+        "recent": "Nedavna varnostna obvestila",
+        "notification": "Obvestila",
+        "renew": "Obnovi",
         "tour": {
-            "back": "Back",
-            "skip": "Skip",
-            "start": "START TOUR",
-            "done": "DONE",
-            "welcome1": "Welcome",
-            "welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
-            "welcome2": "Exclusive for Vantage",
-            "welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
-            "create": "Create your account",
-            "lenovoId": "with Lenovo ID",
-            "notifications": "Receive <b>notifications</b> about your home's status",
-            "monitor": "<b>Monitor</b> the safety of your family's devices",
-            "peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
-            "signInLenovoId": "SIGH-UP WITH LENOVO ID",
-            "haveLenovo": "I don't have a <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Create a Lenovo ID",
-            "without": "Proceed <b>without an account</b>",
-            "skipAndTrial": "SKIP AND START TRIAL",
-            "alreadyHave": "I already have a <b>Connected Home Security Account</b>",
-            "loginCHS": "Login to existing CHS account",
-            "locationTitle": "Enable location tracking",
-            "locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+            "back": "Nazaj",
+            "skip": "Preskoči",
+            "start": "ZAČNITE PREDSTAVITEV",
+            "done": "KONČANO",
+            "welcome1": "Dobrodošli",
+            "welcomeDesc1": "Z le nekaj kliki boste lahko zaščitili svoje in družinske osebne računalnike, mobilne naprave ter povezane naprave. Začnite brezplačni 30-dnevni preskus že zdaj.",
+            "welcome2": "Ekskluzivno za Vantage",
+            "welcomeDesc2": "Povezana domača varnost je vgrajena neposredno v Vantage, da vam zagotovi hiter dostop do stanja zaščite vašega ekosistema in varnostnih opozoril.",
+            "create": "Ustvarite račun",
+            "lenovoId": "z Lenovo ID-jem",
+            "notifications": "Prejemajte <b>obvestila</b> o stanju doma",
+            "monitor": "<b>Nadzirajte</b> varnost družinskih naprav",
+            "peaceOfMind": "Poskrbite za <b>brezskrbnost</b> z neprekinjeno zaščito!",
+            "signInLenovoId": "PRIJAVA Z LENOVO ID-JEM",
+            "haveLenovo": "Nimam <b>Lenovo ID-ja</b>",
+            "createLenovo": "&nbsp;Ustvarite Lenovo ID",
+            "without": "Nadaljujte <b>brez računa</b>",
+            "skipAndTrial": "PRESKOČI IN ZAČNI PRESKUS",
+            "alreadyHave": "<b>Račun za povezano domačo varnost</b> že imam",
+            "loginCHS": "Prijava v obstoječi račun povezane domače varnosti (CHS)",
+            "locationTitle": "Omogočite sledenje lokacije",
+            "locationPermission": "Da bi ta funkcija pravilno delovala, boste morali za to napravo omogočiti sledenje lokacije"
         },
         "accountStatus": {
-            "title": "My Connected Home Security",
-            "startTrial": "Start Trial",
-            "manageAccount": "Manage Account",
-            "upgradeAccount": "Upgrade Account",
-            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
-            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
-            "trialExpiredDetail1": "Your trial has expired.",
-            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
-            "upgradedDetail1": "You account is active until {{expiredDate}}.",
-            "upgradedDetail2": "Your device ecosystem is currently being protected.",
-            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
-            "alreadyHaveAccount": "Already have an activation code?"
+            "title": "Moja povezana domača varnost",
+            "startTrial": "Začnite preskus",
+            "manageAccount": "Upravljanje računa",
+            "upgradeAccount": "Nadgradnja računa",
+            "inTrialDetail1": "Do konca preskusnega obdobja vam je ostalo še toliko dni: {{remainingDays}}.",
+            "inTrialDetail2": "Trenutno ste v preskusnem obdobju. Imate neomejen dostop do vseh funkcij.",
+            "trialExpiredDetail1": "Preskusno obdobje je poteklo.",
+            "trialExpiredDetail2": "Preskusno obdobje je poteklo in ekosistem vaših naprav ni več zaščiten.",
+            "upgradedDetail1": "Vaš račun je aktiven do {{expiredDate}}.",
+            "upgradedDetail2": "Ekosistem vaših naprav je trenutno zaščiten.",
+            "localAccountDetail2": "Kliknite spodnji gumb, da začnete brezplačni 30-dnevni preskus.",
+            "alreadyHaveAccount": "Ali že imate aktivacijsko kodo?"
         }
     },
     "support": {
@@ -1431,8 +1463,8 @@
                 "cancel": "PREKLIČI"
             },
             "errorMessage": {
-                "headerText": "Error",
-                "bodyText": "We've detected that you are missing critical pieces of Vantage. These pieces will download in the background. Please try again later."
+                "headerText": "Napaka",
+                "bodyText": "Zaznali smo, da vam manjkajo ključni deli programa Vantage. Ti deli se bodo prenesli v ozadju. Poskusite znova pozneje."
             }
         },
         "homeprotection": {
@@ -1444,7 +1476,7 @@
                 "homeSecurityAffect3": "Povezana domača varnost zagotavlja, da so omrežja, s katerimi ste povezani, varna.",
                 "describe": "Nevarne naprave in omrežja lahko uvedejo zlonamerno programsko opremo, vodijo do kraje identitete in puščajo zasebne in finančne informacije. Omogočite to funkcijo, da zmanjšate nevarnost izpostavljanja naprave in podatkov v njem napadalcem",
                 "subtitle": "Miren spanec",
-                "subtitleDescribe": "Povezana domača varnost vam bo poslala opozorilo, če zazna ranljivost v vaši napravi ali domačem omrežju ali če ste povezani z morebitno zlonamerno mrežo. Več o programu Connected Home Security lahko preberete v <tag>tukaj</tag>.",
+                "subtitleDescribe": "Povezana domača varnost vam bo poslala opozorilo, če zazna ranljivost v vaši napravi ali domačem omrežju ali če ste povezani z morebitno zlonamerno mrežo. Še več o povezani domači varnosti preberite <tag>tukaj</tag>.",
                 "tryNow": "Preskusite zdaj"
             },
             "invitationcode": {
@@ -1590,8 +1622,8 @@
             "button": "GO TO FORUM"
         },
         "question1": {
-            "title": "Back up and restore your files",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        Back up and restore your files\n    </div>\n    <hr />\n    <div style='margin-bottom:7rem;'>\n        It's always good to have a backup. Keep copies of your files on another drive in case something happens to the\n        originals.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Set up your backup\n    </div>\n    <hr />\n    <div class='mb-5'>\n        Select the <span style='font-weight:bold'>Start</span> button, select\n        <span style='font-weight:bold'>Settings</span> >\n        <span style='font-weight:bold'>Update & security</span> >\n        <span style='font-weight:bold'>Backup</span> > <span style='font-weight:bold'>Add a drive</span> , and then\n        choose an external drive or network location for your backups.\n    </div>\n    <div class='mb-5'>\n        <img src='./../../../../assets/images/qa/1.1.png' />\n    </div>\n    <div class='mb-5'>\n        All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files\n        get backed up or how often backups happen, go to\n        <span style='font-weight:bold;'>More options</span>.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Restore your files\n    </div>\n    <div class='mb-5'>\n        If you're missing an important file or folder, here's how to get it back:\n    </div>\n    <div>\n\n        <div class='mb-3'>1. Type <span style='font-weight:bold;'>Restore files</span>\n            in the search box on the taskbar, and then select\n            <span class='font-weight:bold'> Restore your files with File History</span>.</div>\n        <div class='mb-3'>2. Look for the file you need, then use the arrows to see all its versions</div>\n        <div class='mb-3'>3. When you find the version you want, select\n            <span style='font-weight:bold'>Restore</span>\n            to save it in its original location. To save it in a different place, press and hold (or right-click)\n            <span style='font-weight:bold'>Restore</span>, select <span style='font-weight:bold'>Restore to</span>, and\n            then choose a new location.</div>\n\n    </div>\n</div>",
+            "title": "Varnostno kopiranje in obnovitev datotek",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Varnostno kopiranje in obnovitev datotek    </div>    <hr />    <div style='margin-bottom:7rem;'>        Vedno je dobro imeti varnostno kopijo datotek. Kopije datotek hranite na drugem pogonu za vsak primer, če se kaj nepredvidenega zgodi z izvirniki.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Nastavitev varnostnega kopiranja    </div>    <hr />    <div class='mb-5'>        Izberite gumb <span style='font-weight:bold'>Start</span>, odprite <span style='font-weight:bold'>Nastavitve</span> > <span style='font-weight:bold'>Posodabljanje in varnost</span> > <span style='font-weight:bold'>Varnostno kopiranje</span> > <span style='font-weight:bold'>Dodaj pogon</span> in nato izberite zunanji pogon ali omrežno mesto za shranjevanje varnostnih kopij.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Postopek je končan. Varnostna kopija vsebine uporabniške mape (C:\\\\Users\\\\username) bo izdelana vsako uro. Če želite spremeniti, katere datoteke se varnostno kopirajo ali kako pogosto se izdelujejo varnostne kopije, odprite <span style='font-weight:bold;'>Več možnosti</span>.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Obnovite datoteke    </div>    <div class='mb-5'>        Če ne najdete pomembne datoteke ali mape, jo lahko obnovite tako:    </div>    <div>        <div class='mb-3'>1. V iskalno polje v opravilni vrstici vnesite <span style='font-weight:bold;'>Obnovitev datotek</span> in nato izberite <span class='font-weight:bold'>Obnovite datoteke z Zgodovino datoteke</span>.</div>        <div class='mb-3'>2. Poiščite želeno datoteko in nato uporabite puščice, da si ogledate vse njene različice</div>        <div class='mb-3'>3. Ko najdete želeno različico, izberite <span style='font-weight:bold'>Obnovi</span>, če želite datoteko shraniti na prvotno mesto. Če jo želite shraniti na drugo mesto, pridržite (ali z desno tipko miške kliknite) <span style='font-weight:bold'>Obnovi</span>, izberite <span style='font-weight:bold'>Obnovi v</span> in nato izberite novo mesto.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1631,8 +1663,8 @@
             }
         },
         "question2": {
-            "title": "How to refresh your PC",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        How to refresh your PC\n    </div>\n    <hr>\n    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>\n        Symptom\n    </div>\n    <div style='padding:5px 0;'>\n        If your PC isn't performing as well as it once did, and you don't know why,\n        you can refresh your PC without deleting any of your personal files or\n        changing your settings. Windows can “refresh” your PC so it’s more like a\n        fresh install without deleting your personal files.\n    </div>\n    <div style='padding:5px 0;'>\n        Refresh your PC, Here is what will happen: your files and personalized\n        settings won’t change\n    </div>\n    <div style='padding:5px 0;'>\n        <ul>\n            <li>Your PC settings will be changed back to its defaults</li>\n            <li>Apps from windows store will be kept</li>\n            <li>Apps you installed from disc or website will be removed</li>\n            <li>A list of removed files will be saved on your desktop</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Affected Brands\n    </div>\n\n    <div>\n        <ul>\n            <li>All Desktop and Laptops</li>\n\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Operation System\n    </div>\n\n    <div>\n        <ul>\n            <li>Windows 8, 8.1 & 10</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Solution\n    </div>\n\n    <div>\n        <ul class='list-unstyled'>\n            <li>\n                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>\n                <ol>\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Settings </span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Update and recovery</span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <div>Tap or click <span style='font-weight:bold;'> Recovery</span></div>\n                        <div style='padding:5px 0'>Under Refresh your PC without affecting your files, tap or click\n                            <span style='font-weight:bold;'> Get started.</span></div>\n                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>\n\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Next'</span>.\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Refresh' </span>to start the refresh process.\n                    </li>\n                    <li style='padding:5px 0;'>\n                        Once the refresh process is done, you can find a Removed Apps list on the desktop\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        You can find the removed apps while refreshing your system\n                    </li>\n                </ol>\n            </li>\n            <li style='padding:10px 0;'>\n                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>\n                <ol>\n                    <li style='padding:5px 0;'> Search for <span style='font-weight:bold;'> refresh </span>in the search\n                        tool available in the Start menu,</li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on <span style='font-weight:bold;'> 'Refresh your PC without affecting your\n                                files'</span> in the search results as shown below.</div>\n                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on the\n                            <span style='font-weight:bold;'> Get started </span>\n                            button just below the heading<span style='font-weight:bold;'> 'Refresh your PC without\n                                affecting your files'</span> to start refreshing your Windows 10 PC.</div>\n                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>\n                    </li>\n                </ol>\n            </li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;'>\n        Additional Information\n    </div>\n\n    <div>\n        In most cases, once you start to refresh your PC, it’ll finish on its own.\n        However, if Windows needs missing files, you’ll be asked to insert recovery\n        media, which is typically a DVD disc or thumb drive. If that happens, what\n        you’ll need depends on your PC.\n    </div>\n    <div style='padding:10px 0'>\n        If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use\n        that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact\n        Microsoft Support.\n    </div>\n\n</div>",
+            "title": "Osveževanje računalnika",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Osveževanje računalnika    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        Znamenje težav    </div>    <div style='padding:5px 0;'>        Če računalnik iz vam neznanih razlogov ne deluje več tako dobro kot nekoč, lahko računalnik osvežite brez brisanja osebnih datotek ali spreminjanja nastavitev. Sistem Windows lahko »osveži« računalnik brez brisanja osebnih datotek, da bo deloval kot ob novi namestitvi operacijskega sistema.    </div>    <div style='padding:5px 0;'>        Ob osvežitvi računalnika se zgodi to: datoteke in prilagojene nastavitve ostanejo nespremenjene    </div>    <div style='padding:5px 0;'>        <ul>            <li>Nastavitve računalnika se ponastavijo na privzete vrednosti</li>            <li>Programi iz Trgovine Windows se ohranijo</li>            <li>Programi, ki ste jih namestili z diska ali spletnega mesta, se odstranijo</li>            <li>Seznam odstranjenih datotek se shrani na namizju</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Blagovne znamke, na katere to vpliva    </div>    <div>        <ul>            <li>Vsi namizni in prenosni računalniki</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Operacijski sistem    </div>    <div>        <ul>            <li>Windows 8, 8.1 in 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Rešitev    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        Tapnite ali kliknite <span style='font-weight:bold;'>Nastavitve</span>                    </li>                    <li style='padding:5px 0;'>                        Tapnite ali kliknite <span style='font-weight:bold;'>Posodobitev in obnovitev</span>                    </li>                    <li style='padding:5px 0;'>                        <div>Tapnite ali kliknite <span style='font-weight:bold;'>Obnovitev</span></div>                        <div style='padding:5px 0'>V razdelku »Osvežitev računalnika brez vpliva na datoteke« tapnite ali kliknite <span style='font-weight:bold;'>Začetek</span>.</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        Kliknite <span style='font-weight:bold;'>Naprej</span>.                    </li>                    <li style='padding:5px 0;'>                        Kliknite <span style='font-weight:bold;'>Osveži</span>, da zaženete postopek osveževanja.                    </li>                    <li style='padding:5px 0;'>                        Po končanem postopku osveževanja bo na namizju prikazan seznam odstranjenih programov                    </li>                    <li style='padding:5px 0;'>                        Odstranjene programe si lahko ogledate med osveževanjem sistema                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> Z orodjem za iskanje v meniju Start poiščite izraz <span style='font-weight:bold;'>osvežitev</span>.</li>                    <li style='padding:5px 0;'>                        <div>V rezultatih iskanja kliknite <span style='font-weight:bold;'>Osvežitev računalnika brez vpliva na datoteke</span>, kot je prikazano spodaj.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div>Kliknite gumb <span style='font-weight:bold;'>Začetek</span> tik pod naslovom <span style='font-weight:bold;'>Osvežitev računalnika brez vpliva na datoteke</span>, da zaženete osveževanje računalnika s sistemom Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        Dodatne informacije    </div>    <div>        V večini primerov se osveževanje računalnika dokonča samodejno. Če pa sistem Windows potrebuje manjkajoče datoteke, boste morali ob pozivu vstaviti medij za obnovitev namestitve, ki je običajno na DVD-disku ali pogonu USB. V tem primeru je od računalnika odvisno, kaj vse boste potrebovali.    </div>    <div style='padding:10px 0'>        Če ste sistem nadgradili na različico Windows 8.1 ali Windows RT 8.1 z uporabo DVD-diska, uporabite isti disk. Če nimate medija s sistemom Windows 8.1 ali Windows RT 8.1, se obrnite na Microsoftovo podporo.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -1705,8 +1737,8 @@
             "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
         },
         "question3": {
-            "title": "How to know your machine's CPU",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    How to know your machine's CPU\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.\n    The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit\n    system.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n    <li>All Desktop and Laptops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operating System</h3>\n<ul>\n    <li>Windows 7 , 8 , 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n    <li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button,</strong>\n        right-clicking Computer, and then clicking Properties  </li>\n    <li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then click\n        <strong>Search.</strong></li>\n    <li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n    <li>Tap or click <strong>System</strong></li>\n    <li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong>\n        is displayed in the System type field under the System heading.\n        If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong>\n        <strong>32-bit Operating </strong>System is displayed in the System type field under the System heading.<br />\n         </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then\n        click <strong>Search.</strong></li>\n    <li>In the search box, type <strong>system information</strong></li>\n    <li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and then\n        click <strong>System Summary.</strong></li>\n    <li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>\n        x64-based PC is displayed in the <strong>System type</strong> field under the \n        Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong>\n        version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> field\n        under the Item heading.  </li>\n</ol>\n<p> </p>",
+            "title": "Ugotavljanje, kateri CPE ima računalnik",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Ugotavljanje, kateri CPE ima računalnik</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Znamenje težav</h3><p>Izraza 32-bitni in 64-bitni označujeta način, na katerega procesor računalnika (CPE) obdeluje podatke. 64-bitna različica sistema Windows obdeluje večje količine podatkov v delovnem pomnilniku (pomnilniku RAM) učinkoviteje kot 32-bitna različica.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Blagovne znamke, na katere to vpliva</h3><p>Navedeno znamenje težav se med drugim pojavlja v teh sistemih:</p><ul>    <li>Vsi namizni in prenosni računalniki</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operacijski sistem</h3><ul>    <li>Windows 7, 8, 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Rešitev</h3><p><strong><u>Windows 7 ali Vista</u></strong></p><ol>    <li>Odprite sistem tako, da kliknete <strong>gumb Start</strong>, pod sliko <strong>v meniju Start</strong> z desno tipko miške kliknete »Računalnik« in nato izberete »Lastnosti«  </li>    <li>V razdelku »Sistem« si lahko ogledate vrsto sistema.</li></ol><p><strong><u>Windows 8 in Windows 10</u></strong></p><p><strong>1. način:</strong> Ogled okna »Sistem« na nadzorni plošči</p><ol>    <li>S prstom povlecite od desnega roba zaslona proti sredini in nato tapnite <strong>Iskanje</strong>. Če uporabljate miško, kazalec premaknite v spodnji desni kot zaslona in nato kliknite <strong>Iskanje</strong>.</li>    <li>V iskalno polje vnesite izraz <strong>sistem</strong> in nato tapnite ali kliknite <strong>Nastavitve</strong>.</li>    <li>Tapnite ali kliknite <strong>Sistem</strong></li>    <li>Če uporabljate 64-bitno različico sistema Windows 8, je v polju »Vrsta sistema« pod naslovom »Sistem« navedeno <strong>64-bitni operacijski sistem</strong>. Če uporabljate <strong>32-bitno različico sistema Windows</strong> <strong>8</strong>, je v polju »Vrsta sistema« pod naslovom »Sistem« navedeno <strong>32-bitni operacijski sistem</strong>.<br />  </li></ol><p><strong>2. način</strong>: Ogled okna »Informacije o sistemu«</p><ol>    <li>S prstom povlecite od desnega roba zaslona proti sredini in nato tapnite <strong>Iskanje</strong>. Če uporabljate miško, kazalec premaknite v spodnji desni kot zaslona in nato kliknite <strong>Iskanje</strong>.</li>    <li>V iskalno polje vnesite izraz <strong>informacije o sistemu</strong></li>    <li>Tapnite ali kliknite <strong>Sistem</strong>, <strong>Informacije o sistemu</strong> in nato kliknite <strong>Pregled sistema</strong>.</li>    <li>Če uporabljate <strong>64-bitno</strong> <strong>različico sistema Windows 8</strong>, je v polju <strong>Vrsta sistema</strong> pod naslovom elementa navedeno »Računalnik, ki uporablja x64«.<br /> <br /> Če uporabljate <strong>32-bitno različico sistema Windows 8</strong>, je v polju <strong>Vrsta sistema</strong> pod naslovom elementa navedeno »Računalnik, ki uporablja x86«.  </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -1794,8 +1826,8 @@
             }
         },
         "question4": {
-            "title": "Check your machine's battery use",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Check your machine's battery use\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> \n    screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.\n    That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;\n    apps&ndash;are using too much power.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n\n<ul>\n    <li>Lenovo laptops, desktops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Systems</h3>\n<ul>\n    <li>All</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operationg System</h3>\n<ul>\n    <li>Window 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your\n    traditional <strong>control panel </strong>view, this feature is located in the\n    new <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>\n    select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br />\n        <br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last\n    from last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;\n    <strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,\n    the display,</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong>\n     options show how much power is used by applications while you&rsquo;re using them, compared to applications\n    running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>\n        &ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.\n    This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of this\n    feature.\n    It will display a list of the apps have used battery power in that period, and show you what percentage of your\n    battery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
+            "title": "Preverjanje uporabe baterije računalnika",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Preverjanje uporabe baterije računalnika</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Znamenje težav</h3><p>Sistem Windows 10 vključuje nov zaslon <strong>Poraba energije baterije</strong>, na katerem so prikazani največji porabniki energije baterije prenosnega računalnika. To pomeni, da si lahko natančno ogledate, kateri programi – t.i. univerzalni programi tako za namizne računalnike kot sistema Windows 10 – porabljajo preveč energije.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Blagovne znamke, na katere to vpliva</h3><ul>    <li>Prenosni in namizni računalniki Lenovo</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Sistemi, na katere to vpliva</h3><ul>    <li>Vse</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operacijski sistem</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Rešitev</h3><p>Ta funkcija je novost v sistemu Windows 10 in jo je treba najprej poiskati, saj ni vključena v običajnem pogledu <strong>nadzorne plošče</strong>. Funkcijo najdete v novem programu <strong>Nastavitve</strong></p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Poiščite zaslon »Poraba energije baterije«</h3></p><p>1. V meniju Start kliknite ali tapnite možnost <strong>Nastavitve</strong></p><p>2. V oknu <strong>Nastavitve</strong> izberite <strong>Sistem</strong> in nato še <strong>Ohranjevalnik baterije</strong>.<br /> <br /> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Če si želite ogledati več podrobnosti, pod naslovom kliknite ali tapnite povezavo <strong>Poraba energije baterije</strong>. </p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analizirajte porabo energije</h3><p>4. Na zaslonu »Poraba energije baterije« lahko izbirate med prikazom porabe energije baterije v zadnjih 24 ali 48 urah ali v zadnjem tednu</p><p>5. Poraba je izražena v odstotkih za razdelke <strong>Sistem</strong>, <strong>Zaslon</strong> in <strong>Wi-Fi</strong>. Prikazano je, koliko energije baterije so porabili sistemski procesi in zaslon.</p><p>6. Možnosti <strong>V uporabi</strong> in <strong>V ozadju</strong> prikazujeta primerjavo med porabo energije programov, ki jih uporabljate, in programov, ki se izvajajo v ozadju.</p><p>7. Če programi porabljajo energijo v ozadju, lahko kliknete ali tapnete povezavo <strong>Spremenite nastavitve izvajanja programov v ozadju</strong> in nastavite, naj se posamezni programi ne izvajajo v ozadju. To velja samo za univerzalne programe sistema Windows 10.</p><p>8. Če se pomaknete navzdol, si lahko ogledate seznam programov, ki je najuporabnejši del te funkcije. Prikaže se seznam programov, ki so v izbranem obdobju porabljale energijo baterije, ob vsakem od njih pa je naveden odstotek porabe</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -1862,8 +1894,8 @@
             }
         },
         "question5": {
-            "title": "Use your PC like a tablet",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Use your PC like a tablet\n</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet\n        mode</strong> .</p>\n<p> </p>\n<p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device \n    on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and\n    how the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the\n    screen.</p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.\n    Select the <strong>Start </strong>button, select <strong>Settings </strong>>\n    <strong>System </strong>> <strong>\n        Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.\n    To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and\n    you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n    <li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n    <li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then\n        drag it to one side to snap it into your divided screen.</li>\n    <li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
+            "title": "Uporaba računalnika kot tabličnega računalnika",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Uporaba računalnika kot tabličnega računalnika</div><hr><p>S tabličnim načinom lahko naredite sistem Windows intuitivnejši in preprostejši za uporabo, če ima naprava vgrajen zaslon na dotik.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Uporaba tabličnega načina</h3><p>Če želite vklopiti tablični način, v opravilni vrstici izberite <strong>Središče za opravila</strong> in nato še <strong>Tablični način</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Opomba</h3><p>Če želite izvedeti, ali lahko vaša naprava samodejno vklopi tablični način, jo poiščite na spletnem mestu proizvajalca. Možnost uporabe te funkcije je odvisna od strojne opreme, nameščenega gonilnika in proizvajalčeve nastavitve naprave. </p><p> </p><p>V tabličnem načinu se programi odpirajo v celozaslonskem pogledu, da imate na voljo večjo delovno površino. Program zaprete tako, da ga povlečete na dno zaslona.</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Namig</h3><p>Ko je računalnik v tabličnem načinu, je opravilna vrstica prikazana. Če pa želite imeti večjo delovno površino, jo lahko po želji skrijete. Izberite gumb <strong>Start</strong>, odprite <strong>Nastavitve</strong> > <strong>Sistem</strong> > <strong>Tablični način</strong> in vklopite možnost <strong>Samodejno skrij opravilno vrstico v tabličnem načinu</strong>. Če želite prikazati skrito opravilno vrstico, s prstom povlecite z dna zaslona navzgor ali pa miško zadržite na dnu zaslona.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hkratna uporaba dveh aplikacij</h3><p>Če želite v tabličnem načinu dva programa uporabljati enega ob drugem, povlecite odprti program navzdol in na stran. S tem program zataknete za rob, ob njem pa se prikažejo morebitni preostali odprti programi.</p><p>V tem pogledu lahko storite tudi to:</p><ul>    <li>Z vlečenjem skupne stranice lahko spreminjate velikost obeh za rob zataknjenih programov hkrati.</li>    <li>V pogledu opravil lahko odprete nov program: v opravilni vrstici izberite <strong>Pogled opravil</strong> in želeni program, ki ga nato povlečete na eno stran, da se zatakne ob rob razdeljenega zaslona.</li>    <li>Gumb za vračanje nazaj v opravilni vrstici lahko uporabite za pomik nazaj v programu ali odpiranje predhodno uporabljenega programa.</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -1902,8 +1934,8 @@
             }
         },
         "question6": {
-            "title": "Get to know Cortona, your personal assistant",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Get to know Cortana, your personal assistant\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>What is Cortana?</h3>\n<hr />\n<p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing\n    works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you\n    select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n    <li>Give you reminders based on time, places, or people.</li>\n    <li>Track packages, teams, interests, and flights.</li>\n    <li>Send emails and texts.</li>\n    <li>Manage your calendar and keep you up to date.</li>\n    <li>Create and manage lists.</li>\n    <li>Chit chat and play games.</li>\n    <li>Find facts, files, places, and info.</li>\n    <li>Open any app on your system.</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Try this: Set a reminder</h3>\n<hr />\n\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or\n    even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync\n    notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hey Cortana?</h3>\n<hr />\n<p>Set Cortana to hear you anytime you say\n    'Hey Cortana.' Select the search box on the taskbar to open Cortana home.\n    Then select <strong>Settings</strong>  and turn on <strong>Let Cortana respond to 'Hey\n        Cortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.\n</p>\n<p> </p>",
+            "title": "Spoznavanje osebne pomočnice Cortane",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Spoznavanje osebne pomočnice Cortane</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Kaj je Cortana?</h3><hr /><p>Cortana je vaša digitalna pomočnica. Pomagala vam bo pri izvajanju opravil.</p><p>Čim več jo boste uporabljali, tem bolje se boste z njo razumeli in tem boljša bo vaša uporabniška izkušnja.</p><p>Če želite začeti, vnesite vprašanje v iskalno polje ali izberite mikrofon in se pogovorite s Cortano. (Vnašanje s tipkovnico deluje v vseh vrstah računalnikov, medtem ko boste za pogovor potrebovali mikrofon.)</p><p>Če ne veste, kaj reči, si lahko pomagate s predlogi, ki se prikažejo na zaklenjenem zaslonu in na začetnem zaslonu aplikacije Cortana, ko v opravilni vrstici izberete iskalno polje.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Začetni zaslon 2. Beležnica 3. Nastavitve 4. Povratne informacije</li></ol><p>Cortana lahko za vas med drugim izvaja ta opravila:</p><ul>    <li>Prikazuje opomnike na podlagi ure, krajev ali ljudi.</li>    <li>Sledi pošiljkam, spremlja zaposlene in letalske polete ter beleži, kaj vas zanima.</li>    <li>Pošilja elektronsko pošto in sporočila SMS.</li>    <li>Upravlja koledar in vas sproti obvešča o dogodkih v koledarju.</li>    <li>Ustvarja in upravlja sezname.</li>    <li>Klepeta in igra igre.</li>    <li>Išče verodostojne podatke, datoteke, kraje in informacije.</li>    <li>Odpira poljubne programe, nameščene v sistemu.</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Preizkusite jo tako, da nastavite opomnik</h3><hr /><p>Prikazovanje opomnikov je ena od reči, ki jih Cortana obvlada. Na podlagi ure, krajev in celo ljudi vas lahko opomni na opravila, ki vas čakajo.</p><p>Vnesite ali izgovorite na primer: »Opomni me, naj čestitam Tanji, ko me naslednjič pokliče«.</p><p>Ko vas bo Tanja naslednjič poklicala, se bo opomnik prikazal samodejno.</p><p>In še posladek: če uporabljate telefon Windows Phone ali aplikacijo Cortana za iPhone ali Android, lahko Cortana ob ustreznih nastavitvah poskrbi za sinhroniziranje obvestil med računalnikom in telefonom.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Živijo, Cortana</h3><hr /><p>Cortano lahko nastavite, da se odzove vsakič, ko rečete »Živijo, Cortana«. Izberite iskalno polje v opravilni vrstici, da odprete začetni zaslon aplikacije Cortana. Nato izberite <strong>Nastavitve</strong> in vklopite možnost <strong>Cortana naj se odzove na »Živijo, Cortana«</strong>.</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Opomba</p><p>Cortana je na voljo le v nekaterih državah/regijah in nekatere njene funkcije morda niso povsod na voljo.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -1943,8 +1975,8 @@
     "welcometutorial": {
         "description": "Lenovo Vantage poenostavlja posodabljanje gonilnikov, izvajanje diagnostičnih pregledov, pošiljanje zahtev za podporo in pridobivanje informacij o napravi.Hitro prilagodite izkušnjo z napravo in poiščite koristne informacije, prilagojene vašim potrebam",
         "bullets1": "Oglejte si stanje vašega sistema z nadzorno ploščo Vantage.",
-        "bullets2": "Varnostni svetovalec olajša upravljanje varnosti ",
-        "bullets3": "Samodejne posodobitve zagotovijo, da je vaša naprava vedno v optimalnem stanju",
+        "bullets2": "Varnostni svetovalec poenostavi upravljanje varnosti (na voljo v izbranih sistemih).",
+        "bullets3": "Samodejne posodobitve zagotovijo, da je vaša naprava vedno v optimalnem stanju (na voljo v izbranih sistemih).",
         "subtitle1": "Kako boste uporabljali napravo?",
         "subtitle2": "Povejte nam, kaj vas zanima",
         "personal": "Osebna uporaba",
@@ -1986,6 +2018,6 @@
         "usageStatistics": "Statistični podatki o uporabi",
         "usageStatisticsDescription": "Pošiljanje anonimnih statističnih podatkov o uporabi podjetju Lenovo.",
         "Note": "Opomba: ",
-        "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati sistem."
+        "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati to aplikacijo."
     }
 }

@@ -37,7 +37,7 @@ export class WidgetLightingComponent implements OnInit {
 					JSON.stringify(response)
 				);
 					this.ledSetFeature=response.ledSetFeature;
-					this.ledSetFeature=response.ledDriver;
+					this.ledDriver=response.ledDriver;
 					//this.ledSetFeature = false;
 					//this.ledDriver = false;
 

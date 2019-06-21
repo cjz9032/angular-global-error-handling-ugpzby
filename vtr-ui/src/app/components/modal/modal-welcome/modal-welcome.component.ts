@@ -66,7 +66,7 @@ export class ModalWelcomeComponent implements OnInit {
 			const data = {
 				ItemType: 'PageView',
 				PageName: 'WelcomePage',
-				PageDuration: (this.endTime - this.startTime)
+				PageDuration: Math.floor((this.endTime - this.startTime)/1000)
 			};
 			console.log('PageView Event', JSON.stringify(data));
 			this.metrics.sendAsync(data);
@@ -107,7 +107,7 @@ export class ModalWelcomeComponent implements OnInit {
 			const data = {
 				ItemType: 'PageView',
 				PageName: 'WelcomePage',
-				PageDuration: (this.endTime - this.startTime)
+				PageDuration: Math.floor((this.endTime - this.startTime)/1000)
 			};
 			console.log('PageView Event', JSON.stringify(data));
 			this.metrics.sendAsync(data);

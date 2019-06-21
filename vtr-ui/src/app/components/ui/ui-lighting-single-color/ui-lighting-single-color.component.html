@@ -1,14 +1,16 @@
 <h3 class="content-title">Blink Level</h3>
 <ul class="lighting-list-option">
 	<li *ngFor="let option of options">
-			<label class="gaming-radio">{{option.name}}
+			<label class="gaming-radio">{{option.name | translate}}
 	   <input type="radio" name="price" (click)="getValue(option.id)"
-		 [checked]="option.id == selectedOption.id"
+		 [checked]="option.id === selectedOptionId"
 		  value= {{option.id}}>
 		  <span class="checkmark"></span>
 		</label>
 	</li>
   </ul>
+  <!-- {{selectedOptionId}} -->
+  <!-- {{option.name | translate}}  -->
 <!-- <ul class="lighting-list-option">
   <li>
     <label class="gaming-radio">Always On
