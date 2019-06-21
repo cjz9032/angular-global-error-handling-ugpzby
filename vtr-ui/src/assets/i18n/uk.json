@@ -270,7 +270,7 @@
                 "sub1": "My Device",
                 "sub2": "My Device Settings",
                 "sub3": "System Updates",
-                "sub4": "Smart Assist"
+                "sub4": "‏\"Розумний помічник\""
             },
             "security": {
                 "title": "Безпека",
@@ -305,14 +305,14 @@
             "notRegistered": "НЕ ЗАРЕЄСТРОВАНО"
         },
         "qAndA": {
-            "title": "Q&A for your machine",
-            "subtitle": "FIND SOME HELPFUL TIPS FOR YOUR DEVICE.",
-            "question1": "Backup and Restore your files",
-            "question2": "How to refresh your PC",
-            "question3": "How to know your machine's CPU",
-            "question4": "Check your machine's battery use",
-            "question5": "Use your PC like a tablet",
-            "question6": "Get to know Cortana, your personal assistant"
+            "title": "Питання та відповіді для вашої машини",
+            "subtitle": "Знайдіть деякі корисні поради для вашого пристрою.",
+            "question1": "Резервне копіювання та відновлення файлів",
+            "question2": "Оновлення комп'ютера",
+            "question3": "Як дізнатися модель процесора комп'ютера",
+            "question4": "Перевірка використання акумулятора вашого пристрою",
+            "question5": "Використання комп'ютера як планшета",
+            "question6": "Ознайомтеся з Cortana, вашим особистим помічником"
         },
         "ui": {
             "back": "НАЗАД",
@@ -372,14 +372,14 @@
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
                 },
-                "question1": "Do you like the new style of Vantage?",
-                "question2": "Do you think the performance is acceptable?",
-                "question3": "Would you use the application more often in the future?",
-                "yes": "Yes",
-                "no": "No",
-                "tips1": "Please leave any additional comments",
-                "sendFeedback": "Send Feedback",
-                "submitScreenShot": "Submit Screen Shot"
+                "question1": "Чи подобається вам новий стиль Vantage?",
+                "question2": "Чи вистачає вам продуктивності?",
+                "question3": "Чи збираєтеся ви користуватися програмою частіше?",
+                "yes": "Так",
+                "no": "Ні",
+                "tips1": "Маєте додаткові коментарі?",
+                "sendFeedback": "Надіслати відгук",
+                "submitScreenShot": "Надіслати знімок екрана"
             }
         },
         "quickSettings": {
@@ -758,7 +758,13 @@
                         "heading": "Set time when you typically use this computer",
                         "subHeading1": "start",
                         "subHeading2": "end",
-                        "subHeading3": "use this schedule for"
+                        "subHeading3": "use this schedule for",
+                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "timeUnits": {
+                            "unit1": "Hours",
+                            "unit2": "Minutes",
+                            "unit3": "AM/PM"
+                        }
                     }
                 }
             },
@@ -867,7 +873,7 @@
                         "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
                         "note": {
                             "title": "Note",
-                            "description": "When the Eye care mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye care mode."
+                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
                         }
                     },
                     "privacyGuard": {
@@ -1073,6 +1079,34 @@
                 "title": "Zero Touch Video Playback",
                 "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
                 "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+            },
+            "voice": {
+                "title": "Voice",
+                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
+                "installBtnText": "Install",
+                "launchBtnText": "Launch",
+                "learnMoreText": "Learn More",
+                "voiceToText": {
+                    "title": "Voice to text",
+                    "caption": "This feature helps to convert your voice into texts."
+                },
+                "translation": {
+                    "title": "Translation",
+                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                },
+                "modalPopUp": {
+                    "heading": "Get started:",
+                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
+                    "point2": "Open the file where you want to record the converted text.",
+                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
+                    "point4": "Select your desired language and click the microphone icon to start.",
+                    "point5": "Put the cursor to where you want to edit and begin to speak.",
+                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
+                    "point7": "Select your desired source language and target language.",
+                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
+                    "point9": "Click the microphone icon to start speaking",
+                    "closeText": "close"
+                }
             }
         }
     },
@@ -1158,7 +1192,7 @@
             "rebootRequiredTag": "Необхідне перезавантаження",
             "rebootDelayTag": "Потрібне перезавантаження, підключіть систему до джерела живлення",
             "shutdownRequiredTag": "Потрібне вимкнення",
-            "dependedPackage": "Depended Package"
+            "dependedPackage": "Пакет залежності"
         },
         "availableUpdates": {
             "title": "Доступні оновлення",
@@ -1201,72 +1235,70 @@
         }
     },
     "homeSecurity": {
-        "title": "Connected Home Security",
-        "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Ecosystem Security Overview",
-        "thisDevice": "This device",
-        "allDevices": "All Devices",
-        "protected": "Protected",
-        "notProtected": "Not Protected",
-        "myDevice": "My Device",
-        "secure": "SECURE",
-        "needAttention": "NEEDS ATTENTION",
-        "manageAccount": "Manage Account",
-        "devices": "Devices",
-        "seeProtectedDevices": "See protected devices",
-        "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrade to protect all of your devices",
-        "upgrade": "upgrade",
-        "freeTrial": "Free 30 day trial",
-        "protectAllDevices": "Protect all of your devices",
-        "inEcosystem": "In Ecosystem",
-        "ecosystemEnable": "Ecosystem Enabled",
-        "inTrial": "In trial",
-        "addEcosystem": "Add to Ecosystem",
-        "enableEcosystem": "Enable Ecosystem",
-        "startTrial": "Start Trial",
-        "fullAccess": "Full Access",
-        "recent": "Recent security notifications",
-        "notification": "Notifications",
-        "renew": "Renew",
+        "title": "Безпека підключеного дому",
+        "ecosystemBlockTitle": "Захистіть свою екосистему",
+        "overviewBlockTitle": "Огляд безпеки вашої екосистеми",
+        "thisDevice": "Цей пристрій",
+        "allDevices": "Усі пристрої",
+        "protected": "Захищено",
+        "notProtected": "Не захищено",
+        "myDevice": "Мій пристрій",
+        "secure": "У БЕЗПЕЦІ",
+        "needAttention": "ПОТРЕБУЄ УВАГИ",
+        "manageAccount": "Керування обліковим записом",
+        "devices": "Пристрої",
+        "seeProtectedDevices": "Переглянути захищені пристрої",
+        "addDevice": "додати пристрій",
+        "trialExpired": "Термін дії пробної версії закінчився - Передплатіть, щоб захистити всі свої пристрої",
+        "upgrade": "передплатити",
+        "freeTrial": "Захистіть всі свої пристрої - Безкоштовна 30-денна ознайомлювальна версія",
+        "inEcosystem": "В екосистемі",
+        "ecosystemEnable": "Екосистему ввімкнуто",
+        "inTrial": "На ознайомленні",
+        "addEcosystem": "Додати до екосистеми",
+        "enableEcosystem": "Увімкнути екосистему",
+        "startTrial": "Почати ознайомлення",
+        "fullAccess": "Повний доступ",
+        "recent": "Останні сповіщення про безпеку",
+        "notification": "Сповіщення",
+        "renew": "Подовжити",
         "tour": {
-            "back": "Back",
-            "skip": "Skip",
-            "start": "START TOUR",
-            "done": "DONE",
-            "welcome1": "Welcome",
-            "welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
-            "welcome2": "Exclusive for Vantage",
-            "welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
-            "create": "Create your account",
-            "lenovoId": "with Lenovo ID",
-            "notifications": "Receive <b>notifications</b> about your home's status",
-            "monitor": "<b>Monitor</b> the safety of your family's devices",
-            "peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
-            "signInLenovoId": "SIGH-UP WITH LENOVO ID",
-            "haveLenovo": "I don't have a <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Create a Lenovo ID",
-            "without": "Proceed <b>without an account</b>",
-            "skipAndTrial": "SKIP AND START TRIAL",
-            "alreadyHave": "I already have a <b>Connected Home Security Account</b>",
-            "loginCHS": "Login to existing CHS account",
-            "locationTitle": "Enable location tracking",
-            "locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+            "back": "Назад",
+            "skip": "Пропустити",
+            "start": "ПОЧАТИ ОГЛЯД",
+            "done": "ГОТОВО",
+            "welcome1": "Вітаємо",
+            "welcomeDesc1": "Усього за кілька кліків ви зможете захистити ПК, мобільні та підключені пристрої, які належать вам і вашій родині. Почніть 30 днів безкоштовного ознайомлення зараз.",
+            "welcome2": "Ексклюзивно для Vantage",
+            "welcomeDesc2": "Програму \"Безпека підключеного дому\" вбудовано прямо у Vantage для швидкого доступу до стану захисту екосистеми та сповіщень про безпеку.",
+            "create": "Створіть обліковий запис",
+            "lenovoId": "з Lenovo ID",
+            "notifications": "Отримуйте <b>сповіщення</b> про стан свого дому",
+            "monitor": "<b>Відстежуйте</b> безпеку пристроїв сім’ї",
+            "peaceOfMind": "<b>Будьте завжди впевнені</b> у своєму захисті!",
+            "signInLenovoId": "ЗАРЕЄСТРУЙТЕСЯ З LENOVO ID",
+            "haveLenovo": "У мене немає <b>Lenovo ID</b>",
+            "createLenovo": "&nbsp;Створіть Lenovo ID",
+            "without": "Продовжити <b>без облікового запису</b>",
+            "skipAndTrial": "ПРОПУСТИТИ ТА ПОЧАТИ ОЗНАЙОМЛЕННЯ",
+            "alreadyHave": "Я вже маю <b>обліковий запис Безпеки підключеного дому</b>",
+            "loginCHS": "Увійти в наявний обліковий запис БПД",
+            "locationTitle": "Увімкнути геолокацію",
+            "locationPermission": "Щоб ця функція працювала правильно, необхідно ввімкнути геолокацію для цього пристрою"
         },
         "accountStatus": {
-            "title": "My Connected Home Security",
-            "startTrial": "Start Trial",
-            "manageAccount": "Manage Account",
-            "upgradeAccount": "Upgrade Account",
-            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
-            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
-            "trialExpiredDetail1": "Your trial has expired.",
-            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
-            "upgradedDetail1": "You account is active until {{expiredDate}}.",
-            "upgradedDetail2": "Your device ecosystem is currently being protected.",
-            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
-            "alreadyHaveAccount": "Already have an activation code?"
+            "title": "Моя Безпека підключеного дому",
+            "startTrial": "Почати ознайомлення",
+            "manageAccount": "Керування обліковим записом",
+            "upgradeAccount": "Передплатити",
+            "inTrialDetail1": "{{remainingDays}} дн. до завершення ознайомлювального періоду.",
+            "inTrialDetail2": "Триває ознайомлювальний період. Ви маєте необмежений доступ до всіх функцій.",
+            "trialExpiredDetail1": "Ознайомлювальний період скінчився.",
+            "trialExpiredDetail2": "Ознайомлювальний період скінчився, і ваша екосистема пристроїв більше не захищена.",
+            "upgradedDetail1": "Ваш обліковий запис активний до {{expiredDate}}.",
+            "upgradedDetail2": "Ваша екосистема пристроїв захищена.",
+            "localAccountDetail2": "Натисніть кнопку нижче, щоб розпочати 30 днів безкоштовного ознайомлення.",
+            "alreadyHaveAccount": "Уже маєте код активації?"
         }
     },
     "support": {
@@ -1431,8 +1463,8 @@
                 "cancel": "СКАСУВАТИ"
             },
             "errorMessage": {
-                "headerText": "Error",
-                "bodyText": "We've detected that you are missing critical pieces of Vantage. These pieces will download in the background. Please try again later."
+                "headerText": "Помилка",
+                "bodyText": "Ми виявили, що вам бракує критично важливих компонентів Vantage. Ці компоненти буде завантажено у фоновому режимі. Спробуйте пізніше."
             }
         },
         "homeprotection": {
@@ -1444,7 +1476,7 @@
                 "homeSecurityAffect3": "Безпека підключеного дому перевіряє безпечність інших пристроїв, підключених до вашої домашньої мережі.",
                 "describe": "Небезпечні пристрої та мережі можуть розповсюджувати шкідливі програми, призводити до крадіжок ідентифікаційних даних, а також витоків приватної та фінансової інформації. Увімкніть цю функцію, щоб зменшити ризик зламу комп'ютера та домашньої мережі зловмисниками",
                 "subtitle": "Повний спокій",
-                "subtitleDescribe": "Функція \"Безпека підключеного дому\" надішле вам сповіщення, якщо буде виявлено вразливість пристрою або домашньої мережі, або якщо пристрій буде підключено до потенційно шкідливої мережі. Дізнайтеся більше про функцію \"Безпека підключеного дому\" в <tag>тут</tag>.",
+                "subtitleDescribe": "Функція \"Безпека підключеного дому\" надішле вам сповіщення, якщо буде виявлено вразливість пристрою або домашньої мережі, або якщо пристрій буде підключено до потенційно шкідливої мережі. Дізнайтеся більше про Безпеку підключеного дому <tag>тут</tag>.",
                 "tryNow": "Спробувати зараз"
             },
             "invitationcode": {
@@ -1590,8 +1622,8 @@
             "button": "GO TO FORUM"
         },
         "question1": {
-            "title": "Back up and restore your files",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        Back up and restore your files\n    </div>\n    <hr />\n    <div style='margin-bottom:7rem;'>\n        It's always good to have a backup. Keep copies of your files on another drive in case something happens to the\n        originals.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Set up your backup\n    </div>\n    <hr />\n    <div class='mb-5'>\n        Select the <span style='font-weight:bold'>Start</span> button, select\n        <span style='font-weight:bold'>Settings</span> >\n        <span style='font-weight:bold'>Update & security</span> >\n        <span style='font-weight:bold'>Backup</span> > <span style='font-weight:bold'>Add a drive</span> , and then\n        choose an external drive or network location for your backups.\n    </div>\n    <div class='mb-5'>\n        <img src='./../../../../assets/images/qa/1.1.png' />\n    </div>\n    <div class='mb-5'>\n        All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files\n        get backed up or how often backups happen, go to\n        <span style='font-weight:bold;'>More options</span>.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Restore your files\n    </div>\n    <div class='mb-5'>\n        If you're missing an important file or folder, here's how to get it back:\n    </div>\n    <div>\n\n        <div class='mb-3'>1. Type <span style='font-weight:bold;'>Restore files</span>\n            in the search box on the taskbar, and then select\n            <span class='font-weight:bold'> Restore your files with File History</span>.</div>\n        <div class='mb-3'>2. Look for the file you need, then use the arrows to see all its versions</div>\n        <div class='mb-3'>3. When you find the version you want, select\n            <span style='font-weight:bold'>Restore</span>\n            to save it in its original location. To save it in a different place, press and hold (or right-click)\n            <span style='font-weight:bold'>Restore</span>, select <span style='font-weight:bold'>Restore to</span>, and\n            then choose a new location.</div>\n\n    </div>\n</div>",
+            "title": "Резервне копіювання та відновлення файлів",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Резервне копіювання та відновлення файлів    </div>    <hr />    <div style='margin-bottom:7rem;'>        Радимо завжди мати резервну копію. Зберігайте копії файлів на іншому диску, на випадок якщо з оригіналами щось трапиться.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Налаштування резервного копіювання    </div>    <hr />    <div class='mb-5'>        Натисніть кнопку <span style='font-weight:bold'>Пуск</span>, виберіть <span style='font-weight:bold'>Настройки</span> > <span style='font-weight:bold'>Оновлення та безпека</span> > <span style='font-weight:bold'>Резервне копіювання</span> > <span style='font-weight:bold'>Додати диск</span>, а потім виберіть зовнішній диск або мережеве розташування для резервних копій.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Готово! Щогодини буде створюватися резервна копія всіх даних у вашій папці користувача (C:\\\\Users\\\\username). Щоб змінити файли або частоту резервного копіювання, перейдіть до розділу <span style='font-weight:bold;'>Додаткові параметри</span>.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Відновлення файлів    </div>    <div class='mb-5'>        Якщо втрачено важливий файл або папку, їх можна відновити.    </div>    <div>        <div class='mb-3'>1. Введіть <span style='font-weight:bold;'>Відновлення файлів</span> у вікні пошуку на панелі завдань, а потім виберіть <span class='font-weight:bold'>Відновити файли за допомогою Банку файлів</span>.</div>        <div class='mb-3'>2. Знайдіть потрібний файл, а потім використовуйте стрілки, щоб переглянути всі його версії</div>        <div class='mb-3'>3. Знайшовши потрібну версію, виберіть <span style='font-weight:bold'>Відновити</span>, щоб зберегти її у початковому розташуванні. Щоб зберегти файл в іншому місці, натисніть і утримуйте (або клацніть правою кнопкою миші) <span style='font-weight:bold'>Відновити</span>, виберіть <span style='font-weight:bold'>Відновити в</span>, а потім виберіть нове розташування.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1631,8 +1663,8 @@
             }
         },
         "question2": {
-            "title": "How to refresh your PC",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        How to refresh your PC\n    </div>\n    <hr>\n    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>\n        Symptom\n    </div>\n    <div style='padding:5px 0;'>\n        If your PC isn't performing as well as it once did, and you don't know why,\n        you can refresh your PC without deleting any of your personal files or\n        changing your settings. Windows can “refresh” your PC so it’s more like a\n        fresh install without deleting your personal files.\n    </div>\n    <div style='padding:5px 0;'>\n        Refresh your PC, Here is what will happen: your files and personalized\n        settings won’t change\n    </div>\n    <div style='padding:5px 0;'>\n        <ul>\n            <li>Your PC settings will be changed back to its defaults</li>\n            <li>Apps from windows store will be kept</li>\n            <li>Apps you installed from disc or website will be removed</li>\n            <li>A list of removed files will be saved on your desktop</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Affected Brands\n    </div>\n\n    <div>\n        <ul>\n            <li>All Desktop and Laptops</li>\n\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Operation System\n    </div>\n\n    <div>\n        <ul>\n            <li>Windows 8, 8.1 & 10</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Solution\n    </div>\n\n    <div>\n        <ul class='list-unstyled'>\n            <li>\n                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>\n                <ol>\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Settings </span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Update and recovery</span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <div>Tap or click <span style='font-weight:bold;'> Recovery</span></div>\n                        <div style='padding:5px 0'>Under Refresh your PC without affecting your files, tap or click\n                            <span style='font-weight:bold;'> Get started.</span></div>\n                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>\n\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Next'</span>.\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Refresh' </span>to start the refresh process.\n                    </li>\n                    <li style='padding:5px 0;'>\n                        Once the refresh process is done, you can find a Removed Apps list on the desktop\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        You can find the removed apps while refreshing your system\n                    </li>\n                </ol>\n            </li>\n            <li style='padding:10px 0;'>\n                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>\n                <ol>\n                    <li style='padding:5px 0;'> Search for <span style='font-weight:bold;'> refresh </span>in the search\n                        tool available in the Start menu,</li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on <span style='font-weight:bold;'> 'Refresh your PC without affecting your\n                                files'</span> in the search results as shown below.</div>\n                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on the\n                            <span style='font-weight:bold;'> Get started </span>\n                            button just below the heading<span style='font-weight:bold;'> 'Refresh your PC without\n                                affecting your files'</span> to start refreshing your Windows 10 PC.</div>\n                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>\n                    </li>\n                </ol>\n            </li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;'>\n        Additional Information\n    </div>\n\n    <div>\n        In most cases, once you start to refresh your PC, it’ll finish on its own.\n        However, if Windows needs missing files, you’ll be asked to insert recovery\n        media, which is typically a DVD disc or thumb drive. If that happens, what\n        you’ll need depends on your PC.\n    </div>\n    <div style='padding:10px 0'>\n        If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use\n        that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact\n        Microsoft Support.\n    </div>\n\n</div>",
+            "title": "Оновлення комп'ютера",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Оновлення комп'ютера    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        Ознака    </div>    <div style='padding:5px 0;'>        Якщо з невідомої причини знизилася продуктивність вашого комп'ютера, можна оновити систему, не видаляючи жодних особистих файлів і не змінюючи настройки. Windows може \\\"оновити\\\" ваш комп'ютер, що схоже на нову інсталяцію без видалення ваших особистих файлів.    </div>    <div style='padding:5px 0;'>        Оновіть свій комп'ютер, після чого: ваші файли та персоналізовані настройки не зміняться    </div>    <div style='padding:5px 0;'>        <ul>            <li>Параметри комп'ютера буде змінено на значення за замовчуванням</li>            <li>Програми з Магазину Windows будуть збережені</li>            <li>Програми, встановлені з диска чи веб-сайту, буде видалено</li>            <li>Список видалених файлів буде збережено на робочому столі</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Моделі, яких це стосується    </div>    <div>        <ul>            <li>Усі комп'ютери та ноутбуки</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Операційна система    </div>    <div>        <ul>            <li>Windows 8, 8.1 і 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Вирішення    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        Натисніть <span style='font-weight:bold;'>Настройки</span>                    </li>                    <li style='padding:5px 0;'>                        Натисніть <span style='font-weight:bold;'>Оновлення та відновлення</span>                    </li>                    <li style='padding:5px 0;'>                        <div>Натисніть <span style='font-weight:bold;'>Відновити</span></div>                        <div style='padding:5px 0'>У розділі \\\"Скидання параметрів ПК зі збереженням файлів\\\", натисніть <span style='font-weight:bold;'>Почати</span>.</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        Натисніть <span style='font-weight:bold;'>Далі</span>.                    </li>                    <li style='padding:5px 0;'>                        Натисніть <span style='font-weight:bold;'>Оновити</span>, щоб почати оновлення.                    </li>                    <li style='padding:5px 0;'>                        Після завершення оновлення на робочому столі можна переглянути список видалених програм                    </li>                    <li style='padding:5px 0;'>                        Видалені програми можна переглядати під час оновлення системи                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> Введіть <span style='font-weight:bold;'>оновлення</span> в засобі пошуку, доступному в меню \\\"Пуск\\\".</li>                    <li style='padding:5px 0;'>                        <div>Клацніть <span style='font-weight:bold;'>Скидання параметрів ПК зі збереженням файлів</span> у результатах пошуку, як показано нижче.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div>Натисніть кнопку <span style='font-weight:bold;'>Почати</span> під заголовком <span style='font-weight:bold;'>Скидання параметрів ПК зі збереженням файлів</span>, щоб почати оновлення комп'ютера з Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        Додаткова інформація    </div>    <div>        У більшості випадків комп'ютер виконує оновлення самостійно. Однак, якщо Windows потребує відсутніх файлів, буде запропоновано вставити носій для відновлення, зазвичай це DVD-диск або флеш-накопичувач. Якщо це станеться, потрібне рішення буде залежати від параметрів вашого комп'ютера.    </div>    <div style='padding:10px 0'>        Якщо ви оновили комп'ютер до Windows 8.1 або Windows RT 8.1 з DVD-диска, використовуйте цей диск. Якщо у вас немає носія Windows 8.1 або Windows RT 8.1, зверніться до служби підтримки Microsoft.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -1705,8 +1737,8 @@
             "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
         },
         "question3": {
-            "title": "How to know your machine's CPU",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    How to know your machine's CPU\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.\n    The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit\n    system.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n    <li>All Desktop and Laptops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operating System</h3>\n<ul>\n    <li>Windows 7 , 8 , 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n    <li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button,</strong>\n        right-clicking Computer, and then clicking Properties  </li>\n    <li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then click\n        <strong>Search.</strong></li>\n    <li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n    <li>Tap or click <strong>System</strong></li>\n    <li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong>\n        is displayed in the System type field under the System heading.\n        If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong>\n        <strong>32-bit Operating </strong>System is displayed in the System type field under the System heading.<br />\n         </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then\n        click <strong>Search.</strong></li>\n    <li>In the search box, type <strong>system information</strong></li>\n    <li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and then\n        click <strong>System Summary.</strong></li>\n    <li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>\n        x64-based PC is displayed in the <strong>System type</strong> field under the \n        Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong>\n        version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> field\n        under the Item heading.  </li>\n</ol>\n<p> </p>",
+            "title": "Як дізнатися модель процесора комп'ютера",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Як дізнатися модель процесора комп'ютера</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Ознака</h3><p>Терміни \\\"32-розрядний\\\" і \\\"64-розрядний\\\" стосуються способу, у який процесор комп'ютера (також називається ЦП) обробляє інформацію. 64-розрядна версія Windows використовує великі обсяги оперативної пам'яті (ОЗП) ефективніше, ніж 32-розрядна система.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Моделі, яких це стосується</h3><p>Наведена вище ознака стосується зокрема наступних систем:</p><ul>    <li>Усі комп'ютери та ноутбуки</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Операційна система</h3><ul>    <li>Windows 7, 8, 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Вирішення</h3><p><strong><u>Windows 7 або Vista</u></strong></p><ol>    <li>Відкрийте вікно \\\"Система\\\", натиснувши кнопку <strong>Пуск</strong> Зображення <strong>кнопка \\\"Пуск\\\"</strong>, клацніть правою кнопкою миші \\\"Комп'ютер\\\" і виберіть пункт \\\"Властивості\\\"  </li>    <li>У розділі \\\"Система\\\" можна переглянути тип системи.</li></ol><p><strong><u>Windows 8 і Windows 10</u></strong></p><p><strong>Спосіб 1.</strong> Перегляд вікна \\\"Система\\\" на панелі керування</p><ol>    <li>Проведіть пальцем із правого краю екрана, а потім торкніться елемента <strong>Пошук</strong>. Або, якщо ви використовуєте мишу, наведіть вказівник на нижній правий кут екрана, а потім клацніть <strong>Пошук</strong>.</li>    <li>Введіть <strong>система</strong> у полі пошуку, а потім натисніть <strong>Настройки</strong>.</li>    <li>Натисніть <strong>Система</strong></li>    <li>Якщо використовується 64-розрядна версія Windows 8, в полі \\\"Тип системи\\\" під заголовком \\\"Система\\\" відобразиться <strong>64-розрядна операційна система</strong>. Якщо використовується 32<strong>-розрядна версія Windows</strong> <strong>8,</strong> у полі \\\"Тип системи\\\" під заголовком \\\"Система\\\" відображається <strong>32-розрядна операційна </strong>система.<br />  </li></ol><p><strong>Спосіб 2</strong>. Перегляд вікна \\\"Відомості про систему\\\"</p><ol>    <li>Проведіть пальцем із правого краю екрана, а потім торкніться елемента <strong>Пошук</strong>. Або, якщо ви використовуєте мишу, наведіть вказівник на нижній правий кут екрана, а потім клацніть <strong>Пошук</strong>.</li>    <li>У полі пошуку введіть <strong>відомості про систему</strong></li>    <li>Виберіть <strong>Система</strong>, потім <strong>Відомості про систему</strong>, а потім клацніть <strong>Відомості про систему</strong>.</li>    <li>Якщо ви використовуєте <strong>64-розрядну </strong>версію Windows 8<strong>, </strong>у полі <strong>Тип системи </strong> під заголовком \\\"Елемент\\\" відображається ПК на базі x64-процесорів. <br /> <br /> Якщо ви використовуєте <strong>32-розрядну</strong> версію Windows 8, у полі <strong>Тип системи</strong> під заголовком \\\"Елемент\\\" відображається \\\"ПК на базі x64-процесорів\\\".  </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -1794,8 +1826,8 @@
             }
         },
         "question4": {
-            "title": "Check your machine's battery use",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Check your machine's battery use\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> \n    screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.\n    That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;\n    apps&ndash;are using too much power.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n\n<ul>\n    <li>Lenovo laptops, desktops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Systems</h3>\n<ul>\n    <li>All</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operationg System</h3>\n<ul>\n    <li>Window 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your\n    traditional <strong>control panel </strong>view, this feature is located in the\n    new <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>\n    select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br />\n        <br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last\n    from last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;\n    <strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,\n    the display,</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong>\n     options show how much power is used by applications while you&rsquo;re using them, compared to applications\n    running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>\n        &ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.\n    This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of this\n    feature.\n    It will display a list of the apps have used battery power in that period, and show you what percentage of your\n    battery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
+            "title": "Перевірка використання акумулятора вашого пристрою",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Перевірка використання акумулятора вашого пристрою</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Ознака</h3><p>Windows 10 містить новий екран <strong>Використання акумулятора</strong>, який показує основні навантаження вашого ноутбука. Це означає, що ви будете точно знати, які програми – класичні та програми для Windows 10 – використовують забагато енергії.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Моделі, яких це стосується</h3><ul>    <li>Ноутбуки, настільні комп'ютери Lenovo</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Системи, яких це стосується</h3><ul>    <li>Усі</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Операційна система</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Вирішення</h3><p>Це нова функція Windows 10. ЇЇ необхідно спочатку знайти, оскільки вона не зберігається на традиційній <strong>панелі керування</strong>. Ця функція знаходиться в новій програмі <strong>Настройки</strong></p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Знайдіть екран \\\"Використання акумулятора\\\"</h3></p><p>1. Натисніть <strong>Настройки</strong> у меню \\\"Пуск\\\"</p><p>2. У розділі <strong>Настройки</strong> виберіть <strong>Система</strong>, а потім виберіть <strong>Економія заряду. <br /><br /></strong><strong><br /><br /></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Клацніть посилання <strong>Використання акумулятора</strong> під цим заголовком, щоб переглянути додаткову інформацію. </p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Проаналізуйте енергоспоживання</h3><p>4 Можна вибрати перегляд на екрані використання акумулятора: від останніх 24 годин до 48 годин або з минулого тижня</p><p>5 <strong>Система</strong>, <strong>Екран</strong> і <strong>Wi-Fi</strong> у відсотках. Показує, скільки заряду акумулятора було використано системними процесами, екраном.</p><p>6 Параметри <strong>Використовується</strong> та <strong>Фон</strong> показують, скільки заряду використовують програми під час їх використання у порівнянні з програмами, що працюють у фоновому режимі.</p><p>7 Якщо програми використовують живлення у фоновому режимі, можна клацнути посилання <strong>Змінити параметри програм, що працюють у фоновому режимі</strong> та налаштувати програми, щоб вони не працювали у фоновому режимі. Це стосується лише універсальних програм Windows 10.</p><p>8 Прокрутіть далі, щоб переглянути список програм. Він вважається найбільш корисним розділом цієї функції. У ньому можна переглянути список програм, які використовували заряд батареї в цей період, а також, який відсоток заряду акумулятора використала кожна програма</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -1862,8 +1894,8 @@
             }
         },
         "question5": {
-            "title": "Use your PC like a tablet",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Use your PC like a tablet\n</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet\n        mode</strong> .</p>\n<p> </p>\n<p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device \n    on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and\n    how the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the\n    screen.</p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.\n    Select the <strong>Start </strong>button, select <strong>Settings </strong>>\n    <strong>System </strong>> <strong>\n        Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.\n    To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and\n    you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n    <li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n    <li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then\n        drag it to one side to snap it into your divided screen.</li>\n    <li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
+            "title": "Використання комп'ютера як планшета",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Використання комп'ютера як планшета</div><hr><p>Режим планшета робить Windows більш інтуїтивною та зручнішою у використанні для пристроїв з сенсорним екраном.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Використання режиму планшета</h3><p>Щоб увімкнути режим планшета, виберіть <strong>Центр підтримки</strong> на панелі завдань, а потім – <strong>Режим планшета</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Примітка</h3><p>Щоб дізнатися, чи може ваш пристрій автоматично вмикати режим планшета, знайдіть свій пристрій на веб-сайті виробника. Підтримка цієї функції залежить від обладнання, встановленого драйвера та способу налаштування пристрою виробником. </p><p> </p><p>У режимі планшета програми відкриваються на весь екран, що дає більше місця для роботи. Щоб закрити програму, перетягніть її в нижню частину екрана.</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Порада</h3><p>Панель завдань доступна, коли комп'ютер перебуває в режимі планшета, але її можна приховати, якщо потрібно більше місця на екрані. Натисніть кнопку <strong>Пуск</strong>, виберіть <strong>Настройки</strong> > <strong>Система</strong> > <strong>Режим планшета</strong>, потім увімкніть параметр <strong>Автоматично приховувати панель завдань у режимі планшета</strong>. Щоб переглянути приховану панель завдань, проведіть пальцем знизу вгору екрана або наведіть курсор миші на неї.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Використання двох програм одночасно</h3><p>Щоб використовувати одночасно дві програми в режимі планшета, перетягніть відкриту програму вниз та в бік. Ви побачите, де вона зафіксується, і поруч з нею відображатимуться відкриті програми.</p><p>У цьому поданні також можна:</p><ul>    <li>Використовувати спільний край двох зафіксованих програм, щоб змінити розмір обох програм одночасно.</li>    <li>Відкривати нову програму з подання завдань: виберіть <strong>Перегляд завдань</strong> на панелі завдань виберіть програму, а потім перетягніть її на одну сторону, щоб зафіксувати її на розділеному екрані.</li>    <li>Натисніть кнопку \\\"Назад\\\" на панелі завдань, щоб повернутися до програми або відкрити програму, яку використовували раніше.</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -1902,8 +1934,8 @@
             }
         },
         "question6": {
-            "title": "Get to know Cortona, your personal assistant",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Get to know Cortana, your personal assistant\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>What is Cortana?</h3>\n<hr />\n<p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing\n    works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you\n    select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n    <li>Give you reminders based on time, places, or people.</li>\n    <li>Track packages, teams, interests, and flights.</li>\n    <li>Send emails and texts.</li>\n    <li>Manage your calendar and keep you up to date.</li>\n    <li>Create and manage lists.</li>\n    <li>Chit chat and play games.</li>\n    <li>Find facts, files, places, and info.</li>\n    <li>Open any app on your system.</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Try this: Set a reminder</h3>\n<hr />\n\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or\n    even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync\n    notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hey Cortana?</h3>\n<hr />\n<p>Set Cortana to hear you anytime you say\n    'Hey Cortana.' Select the search box on the taskbar to open Cortana home.\n    Then select <strong>Settings</strong>  and turn on <strong>Let Cortana respond to 'Hey\n        Cortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.\n</p>\n<p> </p>",
+            "title": "Ознайомтеся з Cortana, вашим особистим помічником",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Ознайомтеся з Cortana, вашим особистим помічником</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Що таке Cortana?</h3><hr /><p>Cortana – це ваш цифровий помічник. Вона завжди допоможе вам.</p><p>Чим частіше ви використовуєте Cortana, тим точніше вона будет допомагати вам.</p><p>Щоб почати, введіть питання в поле пошуку або виберіть мікрофон і зверніться до Cortana. (Слова можна вводити на всіх типах комп'ютерів, але для розмови потрібен мікрофон.)</p><p>Якщо ви не впевнені, що сказати, на екрані блокування відображатимуться пропозиції, а також у вікні Cortana, якщо вибрати поле пошуку на панелі завдань.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Головна 2. Ноутбук 3. Настройки 4. Зворотний зв'язок</li></ol><p>Нижче наведені дії, які Cortana може виконати для вас.</p><ul>    <li>Нагадування на основі часу, місця або людей.</li>    <li>Відстеження пакетів, груп, інтересів і рейсів.</li>    <li>Надсилання повідомлень електронної пошти та текстів.</li>    <li>Керування вашим календарем і його оновлення.</li>    <li>Створення списків і керування ними.</li>    <li>Прості розмови та ігри.</li>    <li>Пошук фактів, файлів, місць та інформації.</li>    <li>Відкриття будь-якої програми у вашій системі.</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Спробуйте: встановіть нагадування</h3><hr /><p>Одне з завдань, яке може виконати Cortana, – надати вам нагадування. Вона може надавати нагадування на основі часу, місця або навіть людей.</p><p>Наприклад, введіть або скажіть: \\\"Нагадати про привітання Тані під час її наступного виклику\\\".</p><p>Під час наступного дзвінка від Тані ви отримаєте нагадування.</p><p>Додаткова можливість: якщо у вас є телефон з Windows або Cortana для iPhone або Android, ви можете настроїти Cortana для синхронізації сповіщень між комп'ютером і телефоном.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Привіт, Cortana!</h3><hr /><p>Налаштуйте Cortana, щоб вона слухала вас щоразу, коли ви кажете \\\"Привіт, Cortana!\\\" Виберіть поле пошуку на панелі завдань, щоб відкрити головну сторінку Cortana. Потім виберіть <strong>Настройки</strong> й увімкніть параметр <strong>Дозволити Cortana відповідати на фразу \\\"Привіт, Cortana!\\\"</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Примітка</p><p>Cortana доступна лише в певних країнах і регіонах, а також її певні функції можуть бути недоступні всюди.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -1943,8 +1975,8 @@
     "welcometutorial": {
         "description": "Vantage дає вам змогу легко оновлювати драйвери, проводити діагностику, отримувати підтримку та дізнаватися більше про свій пристрій. Швидко налаштуйте програму та отримуйте корисну інформацію, підібрану саме для ваших потреб",
         "bullets1": "Перегляньте стан системи з інформаційної панелі Vantage.",
-        "bullets2": "Порадник з безпеки дає змогу легко керувати безпекою пристрою ",
-        "bullets3": "Автоматичні оновлення підтримують пристрій у відмінному стані",
+        "bullets2": "Порадник з безпеки спрощує керування безпекою (доступний лише на окремих системах).",
+        "bullets3": "Автоматичні оновлення підтримують пристрій у відмінному стані (доступні лише на окремих системах).",
         "subtitle1": "Як ви будете використовувати пристрій?",
         "subtitle2": "Розкажіть нам про свої вподобання",
         "personal": "Для особистих потреб",
@@ -1986,6 +2018,6 @@
         "usageStatistics": "Статистика використання",
         "usageStatisticsDescription": "Надсилання статистики щодо анонімного використання до компанії Lenovo.",
         "Note": "Примітка. ",
-        "settingsNotes": "Щоб застосувати зміни, внесені на цій сторінці, необхідно перезавантажити комп'ютер."
+        "settingsNotes": "всі зміни, внесені на цій сторінці, необхідно перезавантажити програму."
     }
 }

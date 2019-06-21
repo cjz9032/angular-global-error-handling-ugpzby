@@ -33,6 +33,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	title = 'systemUpdates.title';
 	back = 'systemUpdates.back';
 	backarrow = '< ';
+	at = 'systemUpdates.at';
 	updateToDateTitle = 'systemUpdates.banner.title';
 
 	cardContentPositionA: any = {};
@@ -310,7 +311,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		if (this.lastInstallTime && this.lastInstallTime.length > 0) {
 			const installDate = this.commonService.formatLocalDate(this.lastInstallTime);
 			const installTime = this.commonService.formatTime(this.lastInstallTime);
-			return `${this.lastUpdatedText} ${installDate} at ${installTime}`;
+			return `${this.lastUpdatedText} ${installDate} ${this.at} ${installTime}`;
 		}
 		return this.neverCheckedText;
 	}
@@ -321,7 +322,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		} else if (this.nextScheduleScanTime && this.nextScheduleScanTime.length > 0) {
 			const scanDate = this.commonService.formatLocalDate(this.nextScheduleScanTime);
 			const scanTime = this.commonService.formatTime(this.nextScheduleScanTime);
-			return `${this.nextScanText} ${scanDate} at ${scanTime}`;
+			return `${this.nextScanText} ${scanDate} ${this.at} ${scanTime}`;
 		}
 		return '';
 	}
@@ -862,5 +863,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.translate.stream(this.neverCheckedText).subscribe((res) => {
 			this.neverCheckedText = res;
 		});
+		this.translate.stream(this.at).subscribe((res) => {
+			this.at = res;
+		})
 	}
 }
