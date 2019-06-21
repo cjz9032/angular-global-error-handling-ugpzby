@@ -80,14 +80,14 @@ export class CMSService {
 		});
 	}
 
-	fetchCMSContents(queryParams, defaultParams = { 'Lang': 'ja', 'GEO': 'JP' }) {
+	fetchCMSContents(queryParams, defaultParams = { 'Lang': 'EN', 'GEO': 'US' }) {
 		const defaultQueryParams = Object.assign({}, queryParams);
 		Object.assign(defaultQueryParams, defaultParams);
 		if (isEqual(queryParams, defaultQueryParams)) {
 			return this.fetchCMSContent(queryParams);
 		}
 		return Promise.all([
-			this.fetchCMSContent(queryParams),
+			this.fetchCMSContent(queryParams).catch(() => Promise.resolve()),
 			this.fetchCMSContent(defaultQueryParams)
 		]);
 	}
