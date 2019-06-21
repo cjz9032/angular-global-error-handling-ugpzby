@@ -10,15 +10,13 @@
 		[ngClass]="[value ? 'checked' : 'unchecked']">
 		<div class="title">{{ title }}</div>
 		<div class="icon-container d-block">
-			<div class="feature-off"
-				*ngIf="isBlocked">
-				<fa-icon [icon]="['fal', 'slash']"></fa-icon>
-			</div>
-			<fa-icon [icon]="iconDefinition"></fa-icon>
+			<i [class]="iconDefinition"
+				[ngClass]="{'enabled' : !isBlocked}"
+				*ngIf="!isBlocked"></i>
+			<i [class]="offIconDefinition"
+				[ngClass]="{'disabled' : isBlocked}"
+				*ngIf="isBlocked"></i>
 		</div>
-		<!-- <div class="switch">
-			<vtr-ui-switch-onoff [name]="title" [value]="value"></vtr-ui-switch-onoff>
-		</div> -->
 		<div class="row">
 			<div class="col">
 				<div class="switch-on-off">
