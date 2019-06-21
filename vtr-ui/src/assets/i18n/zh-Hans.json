@@ -1213,11 +1213,11 @@
             "noInstallationHistory": "无历史安装记录"
         },
         "statusCodeMessage": {
-            "commonFailure": "检索更新时遇到问题。请稍后重试。",
-            "upToDate": "无可用更新。系统处于最新状态。",
+            "commonFailure": "检索更新时遇到问题，请稍后重试。",
+            "upToDate": "无可用更新，系统处于最新状态。",
             "egatherException": "收集用户信息时出错。",
             "gatheringUserInfoException": "收集用户信息时出错。",
-            "certificateValidationException": "服务器验证失败。请稍后重试。",
+            "certificateValidationException": "服务器验证失败，请稍后重试。",
             "downloadException": "下载更新时发生错误。",
             "connectException": "无法连接到服务器。",
             "notEnoughDiskSpace": "磁盘空间不足，无法执行当前任务。",
@@ -1226,11 +1226,11 @@
             "autoScriptEvaluationException": "校验配置脚本时发生错误。",
             "localRepositoryConnectionFailureException": "无法连接到本地存储库。",
             "localRepositoryDatabaseException": "未能找到本地存储库或者该存储库已损坏。",
-            "networkInterruptedException": "系统更新服务器当前不可用。请稍后重试。",
-            "helpCenterInvalidServerException": "系统更新服务器无效。请稍后重试。",
+            "networkInterruptedException": "系统更新服务器当前不可用，请稍后重试。",
+            "helpCenterInvalidServerException": "系统更新服务器无效，请稍后重试。",
             "catalogNotFoundException": "没有找到适用于您的系统的更新。",
-            "catalogCrcErrorException": "服务器的配置文件正在更新。请稍后重试。",
-            "catalogErrorException": "在系统更新服务器上检测到您的更新配置有错。请稍后重试。",
+            "catalogCrcErrorException": "服务器的配置文件正在更新，请稍后重试。",
+            "catalogErrorException": "在系统更新服务器上检测到您的更新配置有错，请稍后重试。",
             "fileNotFoundException": "未找到文件。"
         }
     },
