@@ -63,6 +63,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isDriverPopup: false,
 			isChecked: false,
 			tooltipText: '',
+			readonly: true,
 			type: 'gaming.dashboard.device.legionEdge.ramOverlock'
 		},
 		{
@@ -119,6 +120,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isDriverPopup: false,
 			isChecked: false,
 			tooltipText: '',
+			readonly: true,
 			type: 'gaming.dashboard.device.legionEdge.hybridMode'
 		},
 		{
@@ -171,7 +173,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			}
 		]
 	};
-	public cpuOCStatus: CPUOCStatus;
+	public cpuOCStatus: CPUOCStatus = new CPUOCStatus();
 	public setCpuOCStatus: any;
 
 	constructor(
@@ -254,18 +256,12 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 
 	public GetCPUOverClockCacheStatus(): any {
-		if (this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus) === undefined) {
-			return this.cpuOCStatus.cpuOCStatus;
-		} else {
-			this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus);
-		}
+		const status = this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus) || this.cpuOCStatus.cpuOCStatus;
+		return status;
 	}
 	public renderCPUOverClockStatus() {
 		try {
-			this.cpuOCStatus = this.GetCPUOverClockCacheStatus();
-			if (this.cpuOCStatus !== undefined) {
-				this.drop.curSelected = this.cpuOCStatus.cpuOCStatus;
-			}
+			this.drop.curSelected = this.GetCPUOverClockCacheStatus();
 			this.gamingSystemUpdateService.getCpuOCStatus().then((cpuOCStatus) => {
 				if (cpuOCStatus !== undefined) {
 					const CpuOCStatusObj = new CPUOCStatus();
@@ -291,10 +287,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 					if (!value) {
 						this.drop.curSelected = this.GetCPUOverClockCacheStatus();
 					} else {
-						console.log(
-							//' got true from  ----- cpu oc status js bridge ->',
-							this.setCpuOCStatus.cpuOCStatus
-						);
 						this.drop.curSelected = this.setCpuOCStatus.cpuOCStatus;
 						this.commonService.setLocalStorageValue(
 							LocalStorageKey.CpuOCStatus,
@@ -312,8 +304,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.modalService.open(ModalGamingLegionedgeComponent, { windowClass: 'gaming-help-modal' });
 	}
 	public renderRamOverClockStatus() {
-		this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
-			// console.log('xtu--->' + this.gamingCapabilities.xtuService);
+	//	this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
 			if (this.gamingCapabilities.xtuService === true) {
 			this.gamingSystemUpdateService.getRamOCStatus().then((ramOcStatus) => {
 					if (ramOcStatus !== undefined) {
@@ -323,7 +314,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 					}
 				});
 			}
-		});
+		// });
 	}
 	public GetRAMOverClockCacheStatus() {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.RamOcStatus);
@@ -386,11 +377,11 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public onPopupClosed($event) {
 		const name = $event.name;
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
-			this.disableButtons = false;
+		//	this.disableButtons = false;
 			this.commonService.sendNotification(name, this.legionUpdate[1].isChecked);
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
-			this.disableButtons = false;
+		//	this.disableButtons = false;
 			this.commonService.sendNotification(name, this.legionUpdate[4].isChecked);
 		}
 	}
@@ -400,10 +391,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			if (this.gamingCapabilities.xtuService === false) {
 				this.legionUpdate[1].isDriverPopup = $event;
-				this.disableButtons = true;
+			//	this.disableButtons = true;
 			} else {
 				this.legionUpdate[1].isPopup = $event;
-				this.disableButtons = true;
+			//	this.disableButtons = true;
 			}
 			this.gamingSystemUpdateService
 				.setRamOCStatus($event.switchValue)
@@ -425,7 +416,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		}
 		 if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
 			this.legionUpdate[4].isPopup = $event;
-			this.disableButtons = true;
+		//	this.disableButtons = true;
 			this.gamingHybridModeService
 				.setHybridModeStatus($event.switchValue)
 				.then((value: boolean) => {

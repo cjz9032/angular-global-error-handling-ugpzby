@@ -21,7 +21,9 @@
 				[value]="value"
 				[checked]="value"
 				[disabled]="disabled"
-				(change)="onChange($event)" />
+				[readonly]="readonly"
+				(change)="onChange($event)"
+				(click)="sendChangeEvent($event)"/>
 
 			<span class="switch {{ size }}"
 				(click)="stopPropagation($event);"> <small></small> </span>

@@ -1,19 +1,19 @@
 <ui-gaming-driver-popup *ngIf="showMePartially">
-	<div class="modal-body">
+	<div class="modal-body vtr-ui-gaming-driver-popup">
 		<div class="row justify-content-end">
 			<div class="btn-close">
-				<button class="close" type="button" (click)="close()">
-					<i class="icon icon-close"></i>
+				<button type="button" class="close" aria-hidden="true" (click)="close()">
+					<fa-icon [icon]="['fal', 'times']"></fa-icon>
 				</button>
 			</div>
 		</div>
 		<div class="content-body">
 			<h1>{{'gaming.dashboard.device.legionEdge.driverPopup.headerText' | translate}}</h1>
-			<p>{{'gaming.dashboard.device.legionEdge.driverPopup.text' | translate}}</p>
+			<p *ngIf="!isLightingText">{{'gaming.dashboard.device.legionEdge.driverPopup.text' | translate}}</p>
+			<p *ngIf="isLightingText">{{'gaming.dashboard.device.legionEdge.lightingDriverPopup.text' | translate}}</p>
 		</div>
 		<hr>
 		<div class="row">
-
 			<button class="btn enable-button"
 				(click)="systemUpdatePage()">{{'gaming.dashboard.device.legionEdge.driverPopup.button' | translate}}</button>
 			<a (click)="close()"

@@ -15,14 +15,14 @@ export class UiLightingEffectComponent implements OnInit {
 
 	@Input() lightingData: any;
 	@Output() public change = new EventEmitter<any>();
-
+	@Input() enableBrightCondition1: boolean;
 	public showOptions = false;
 	public buttonName: any = 'Show';
 	public selected = false;
 	public currentOption: string;
 	public currentDescription: string;
 	public selectedDescription: string;
-
+	@Input() effectOptionName: string;
 	public selectedOption: string;
 
 
@@ -52,6 +52,7 @@ export class UiLightingEffectComponent implements OnInit {
 
 	public optionSelected(option) {
 		this.selectedOption = option;
+		this.effectOptionName = option.name;
 		this.showOptions = false;
 		this.change.emit(option);
 	}

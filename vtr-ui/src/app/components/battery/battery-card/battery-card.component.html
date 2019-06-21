@@ -63,6 +63,10 @@
 					[icon]="['fas', 'times-circle']"
 					class="poor">
 				</fa-icon>
+				<!-- <fa-icon *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Fair"
+					[icon]="['fas', 'exclamation-circle']"
+					class="fair">
+				</fa-icon> -->
 				<fa-layers *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Fair"
 					[fixedWidth]="true">
 					<fa-icon [icon]="['fas', 'circle']"
@@ -79,6 +83,9 @@
 					*ngIf="batteryConditionNote?.title">
 					{{batteryConditionNote.title | translate}}
 				</span>&nbsp;
+				<span *ngIf="batteryConditions[i].condition==batteryConditionsEnum.Illegal">
+					<br>
+				</span>
 				<span class="battery-conditions-description"
 					*ngIf="batteryConditionNote?.description.length > 0">
 					{{batteryConditionNote.description | translate}}
@@ -86,10 +93,6 @@
 				<span class="battery-conditions-title"
 					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation">
 					{{percentageLimitation}}%
-				</span>
-				<span class="battery-conditions-title"
-					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.Illegal">
-					<br>
 				</span>
 				<span class="battery-conditions-title"
 					*ngIf="batteryConditionNote?.description1.length > 0">
