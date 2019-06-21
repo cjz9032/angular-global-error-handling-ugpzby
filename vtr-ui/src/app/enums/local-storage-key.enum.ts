@@ -39,6 +39,7 @@ export enum LocalStorageKey {
 	CpuOCStatus = '[LocalStorageKey] CpuOCStatus',
 	RamOcStatus = '[LocalStorageKey] RamOcStatus',
 	CurrentThermalModeStatus = '[LocalStorageKey] CurrentThermalModeStatus',
+	CurrentThermalModeFeature = '[LocalStorageKey] CurrentThermalModeFeature',
 	PrevThermalModeStatus = '[LocalStorageKey] PrevThermalModeStatus',
 	IsSmartAssistSupported = '[LocalStorageKey] IsSmartAssistSupported',
 	ConnectedHomeSecurityShowWelcome = '[LocalStorageKey] ConnectedHomeSecurityShowWelcome',
@@ -56,6 +57,7 @@ export enum LocalStorageKey {
 	HybridModeStatus = '[LocalStorageKey] HybridModeStatus',
 	TouchpadLockStatus = '[LocalStorageKey] TouchpadLockStatus',
 	DolbyModeCache = '[LocalStorageKey] DolbyModeCache',
+	RapidChargeCache = '[LocalStorageKey] RapidChargeCache',
 	LightingProfileById = '[LocalStorageKey] LightingProfileById',
 	LightingProfileBrightness = '[LocalStorageKey] LightingProfileBrightness',
 	LightingProfileEffectColor = '[LocalStorageKey] LightingProfileEffectColor',
@@ -130,6 +132,8 @@ export enum LocalStorageKey {
 	CurrentMacroKeyRepeat = '[LocalStorageKey] CurrentMacroKeyRepeat',
 	CurrentMacroKeyInterval = '[LocalStorageKey] CurrentMacroKeyInterval',
 	SubBrand = '[LocalStorageKey] SubBrand',
-
+	
 	userDeterminePrivacy = '[LocalStorageKey] userDeterminePrivacy',
+
+	BatteriesHealths = '[LocalStorageKey] BatteriesHealths'
 }

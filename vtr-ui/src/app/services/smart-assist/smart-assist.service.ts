@@ -12,9 +12,9 @@ export class SmartAssistService {
 	public isShellAvailable = false;
 
 	constructor(shellService: VantageShellService) {
+		console.log('Shell Service--------------', shellService);
 		this.intelligentSensing = shellService.getIntelligentSensing();
 		this.intelligentMedia = shellService.getIntelligentMedia();
-
 
 		if (this.intelligentSensing && this.intelligentMedia) {
 			this.isShellAvailable = true;
@@ -268,5 +268,12 @@ export class SmartAssistService {
 		return undefined;
 	}
 
+	//#endregion
+
+
+	//#region Active Protection System APS
+	// public getAPSCapability(): Promise<boolean>{
+		
+	// }
 	//#endregion
 }
