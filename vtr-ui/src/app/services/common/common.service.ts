@@ -49,7 +49,7 @@ export class CommonService {
 	 */
 	public formatLocalDate(dateString: string): string {
 		const date = new Date(dateString);
-		return date.toLocaleDateString();
+		return date.toLocaleDateString(navigator.language);
 	}
 
 	/**

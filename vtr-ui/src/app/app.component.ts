@@ -47,12 +47,12 @@ export class AppComponent implements OnInit {
 		//#region VAN-2779 this is moved in MVP 2
 
 		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
-
-		if (tutorial === undefined && navigator.onLine) {
+		this.openWelcomeModal(1);
+		/*if (tutorial === undefined && navigator.onLine) {
 			this.openWelcomeModal(1);
 		} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
 			this.openWelcomeModal(2);
-		}
+		}*/
 
 		//#endregion
 
@@ -100,6 +100,8 @@ export class AppComponent implements OnInit {
 		if (!this.allCapablitiyFlag) {
 			this.gamingAllCapabilitiesService.getCapabilities().then((response) => {
 				this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
+			}).catch(err => {
+				console.log(`ERROR in appComponent getCapabilities()`, err);
 			});
 			this.allCapablitiyFlag = true;
 		}
