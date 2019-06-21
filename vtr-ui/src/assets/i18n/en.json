@@ -41,6 +41,14 @@
 						"button": "Install",
 						"link": "cancel"
 					},
+
+					"lightingDriverPopup": {
+						"headerText": "Driver Install Required",
+						"text": "Please install driver",
+						"button": "Install",
+						"link": "cancel"
+					},
+
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",
