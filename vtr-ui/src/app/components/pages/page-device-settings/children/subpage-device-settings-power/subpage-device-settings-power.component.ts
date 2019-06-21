@@ -33,7 +33,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public batteryGauge: any;
 	public showWarningMsg: boolean;
 	public isEnergyStarProduct = false;
-	public smartStandby = new SmartStandby();
 
 	@Input() isCollapsed = true;
 	@Input() allowCollapse = true;
@@ -263,7 +262,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.getBatteryThresholdInformation();
 		}
 		this.getEnergyStarCapability();
-		this.setSmartStandbySection();
 	}
 
 	ngOnDestroy() {
@@ -984,55 +982,4 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				console.log('getEnergyStarCapability.error', error);
 			});
 	}
-	public setSmartStandbySection() {
-		this.initSmartStandby();
-		if (this.powerService.isShellAvailable) {
-			this.powerService.getSmartStandbyCapability()
-				.then((response: boolean) => {
-					this.smartStandby.isCapable = response;
-					if (this.smartStandby.isCapable) {
-						Promise.all([
-							this.powerService.getSmartStandbyEnabled(),
-							this.powerService.getSmartStandbyActiveStartEnd(),
-							this.powerService.getSmartStandbyDaysOfWeekOff()
-						]).then((responses: any[]) => {
-							this.smartStandby.isEnabled = responses[0];
-							this.smartStandby.activeStartEnd = responses[1];
-							this.smartStandby.daysOfWeekOff = responses[2];
-						});
-					}
-				}).catch((error) => {
-					console.log('In setSmartStandbySection Error', error);
-				});
-		}
-	}
-
-	initSmartStandby() {
-		this.smartStandby.isCapable = false;
-		this.smartStandby.isEnabled = false;
-		this.smartStandby.activeStartEnd = '9:00-18:00';
-		this.smartStandby.daysOfWeekOff = '';
-	}
-
-	public onSmartStandbyToggle(event: any) {
-		this.smartStandby.isEnabled = event.switchValue;
-		this.powerService.setSmartStandbyEnabled(event)
-
-		try {
-			console.log('setSmartStandbyEnabled entered', event);
-			if (this.powerService.isShellAvailable) {
-				this.powerService.setSmartStandbyEnabled(event.switchValue)
-					.then((value: boolean) => {
-						console.log('setSmartStandbyEnabled.then', value);
-						// this.setSmartStandbySection();
-					})
-					.catch(error => {
-						console.error('setSmartStandbyEnabled', error);
-					});
-			}
-		} catch (error) {
-			console.error(error.message);
-		}
-	}
-
 }

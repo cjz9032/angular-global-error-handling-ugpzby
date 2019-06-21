@@ -232,6 +232,7 @@ import { UiTimePickerComponent } from './components/ui/ui-time-picker/ui-time-pi
 import { VoiceComponent } from './components/pages/page-smart-assist/voice/voice.component';
 import { ModalVoiceComponent } from './components/modal/modal-voice/modal-voice.component';
 import { SanitizePipe } from './pipe/sanitize.pipe';
+import { SmartStandbyComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/smart-standby/smart-standby.component';
 
 library.add(fas);
 library.add(fab);
@@ -419,7 +420,8 @@ library.add(fal);
 		UiTimePickerComponent,
 		VoiceComponent,
 		ModalVoiceComponent,
-		SanitizePipe
+		SanitizePipe,
+		SmartStandbyComponent
 	],
 	imports: [
 		BrowserModule,

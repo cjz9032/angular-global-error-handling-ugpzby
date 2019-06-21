@@ -1,0 +1,15 @@
+@import "../../../../../../app.theme.scss";
+ul.list-group {
+	list-style-type: none;
+	padding-bottom: 1rem;
+}
+.smart-standby-timer {
+	h5 {
+		margin-left: 2rem;
+		font-size: 1.4rem;
+		color: $shade_blue;
+		font-weight: $weight_bold;
+		letter-spacing: 0.89px;
+		line-height: 23px;
+	}
+}
