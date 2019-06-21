@@ -79,7 +79,7 @@ export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 	public onSliderChanged(event: any) {
 		console.log('slider changed');
 	}
-	public dragEnd(){
+	public dragEnd() {
 		this.valueChangeEnd.emit();
 	}
 }

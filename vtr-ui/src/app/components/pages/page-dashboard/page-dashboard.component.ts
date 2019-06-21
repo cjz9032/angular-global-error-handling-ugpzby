@@ -1,9 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SecurityContext } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
+
 import { MockService } from '../../../services/mock/mock.service';
 import { QaService } from '../../../services/qa/qa.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
-import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Status } from 'src/app/data-models/widgets/status.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { ConfigService } from 'src/app/services/config/config.service';
@@ -14,10 +18,8 @@ import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
-import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { UserService } from '../../../services/user/user.service';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { QA } from 'src/app/data-models/qa/qa.model';
 import { AndroidService } from 'src/app/services/android/android.service';
 
@@ -64,7 +66,8 @@ export class PageDashboardComponent implements OnInit {
 		public userService: UserService,
 		private translate: TranslateService,
 		vantageShellService: VantageShellService,
-		public androidService: AndroidService
+		public androidService: AndroidService,
+		private sanitizer: DomSanitizer
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -122,8 +125,8 @@ export class PageDashboardComponent implements OnInit {
 					return {
 						'albumId': 1,
 						'id': record.Id,
-						'source': record.Title,
-						'title': record.Description,
+						'source': this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
+						'title': this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
 						'url': record.FeatureImage,
 						'ActionLink': record.ActionLink
 					};

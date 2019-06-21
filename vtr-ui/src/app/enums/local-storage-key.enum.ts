@@ -39,10 +39,11 @@ export enum LocalStorageKey {
 	CpuOCStatus = '[LocalStorageKey] CpuOCStatus',
 	RamOcStatus = '[LocalStorageKey] RamOcStatus',
 	CurrentThermalModeStatus = '[LocalStorageKey] CurrentThermalModeStatus',
+	CurrentThermalModeFeature = '[LocalStorageKey] CurrentThermalModeFeature',
 	PrevThermalModeStatus = '[LocalStorageKey] PrevThermalModeStatus',
-	IsHPDSupported = '[LocalStorageKey] IsHPDSupported',
+	IsSmartAssistSupported = '[LocalStorageKey] IsSmartAssistSupported',
 	ConnectedHomeSecurityShowWelcome = '[LocalStorageKey] ConnectedHomeSecurityShowWelcome',
-	ConnectedHomeSecurityAllDevices= '[LocalStorageKey] ConnectedHomeSecurityAllDevices',
+	ConnectedHomeSecurityAllDevices = '[LocalStorageKey] ConnectedHomeSecurityAllDevices',
 	ConnectedHomeSecurityAccount = '[LocalStorageKey] ConnectedHomeSecurityAccount',
 	ConnectedHomeSecurityMyDevice = '[LocalStorageKey] ConnectedHomeSecurityMyDevice',
 	ConnectedHomeSecurityNotifications = '[LocalStorageKey] ConnectedHomeSecurityNotifications',
@@ -56,12 +57,20 @@ export enum LocalStorageKey {
 	HybridModeStatus = '[LocalStorageKey] HybridModeStatus',
 	TouchpadLockStatus = '[LocalStorageKey] TouchpadLockStatus',
 	DolbyModeCache = '[LocalStorageKey] DolbyModeCache',
+	RapidChargeCache = '[LocalStorageKey] RapidChargeCache',
 	LightingProfileById = '[LocalStorageKey] LightingProfileById',
 	LightingProfileBrightness = '[LocalStorageKey] LightingProfileBrightness',
 	LightingProfileEffectColor = '[LocalStorageKey] LightingProfileEffectColor',
+	LightingProfileEffectColorTop = '[LocalStorageKey] LightingProfileEffectColorTop',
+	LightingProfileEffectColorSide = '[LocalStorageKey] LightingProfileEffectColorSide',
 	LedDriver = '[LocalStorageKey] LedDriver',
 	ProfileBrightness = '[LocalStorageKey] ProfileBrightness',
 	LightingCapabilities = '[LocalStorageKey] LightingCapabilities',
+	ProfileId = '[LocalStorageKey] ProfileId',
+	LightingRGBTop = '[LocalStorageKey] LightingRGBTop',
+	LightingRGBSide = '[LocalStorageKey] LightingRGBSide',
+
+
 
 	SystemUpdateCriticalUpdateStatus = '[LocalStorageKey] SystemUpdateCriticalUpdateStatus',
 	SystemUpdateRecommendUpdateStatus = '[LocalStorageKey] SystemUpdateRecommendUpdateStatus',
@@ -125,4 +134,6 @@ export enum LocalStorageKey {
 	SubBrand = '[LocalStorageKey] SubBrand',
 	
 	userDeterminePrivacy = '[LocalStorageKey] userDeterminePrivacy',
+
+	BatteriesHealths = '[LocalStorageKey] BatteriesHealths'
 }

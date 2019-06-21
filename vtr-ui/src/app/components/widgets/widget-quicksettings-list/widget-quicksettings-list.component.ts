@@ -1,5 +1,7 @@
+import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import { PowerService } from './../../../services/power/power.service';
 import { AudioService } from 'src/app/services/audio/audio.service';
-import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, OnDestroy } from '@angular/core';
 import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
 import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -15,7 +17,8 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 	templateUrl: './widget-quicksettings-list.component.html',
 	styleUrls: ['./widget-quicksettings-list.component.scss']
 })
-export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit {
+export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, OnDestroy {
+
 
 	@Input() title = '';
 
@@ -54,7 +57,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit {
 			isSwitchVisible: true,
 			isChecked: false,
 			tooltipText: '',
-			type: 'auto-updates'
+			type: 'gaming.dashboard.device.quickSettings.rapidCharge'
 		},
 		{
 			readMoreText: '',
@@ -103,7 +106,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit {
 					description: 'gaming.dashboard.device.quickSettings.statusText.perText',
 					//selectedOption: false,
 					//defaultOption: false,
-					value: 1
+					value: 3
 				},
 				{
 					header: 'gaming.dashboard.device.quickSettings.status.balance',
@@ -119,49 +122,30 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit {
 					description: 'gaming.dashboard.device.quickSettings.statusText.quietText',
 					//selectedOption: false,
 					//defaultOption: false,
-					value: 3
+					value: 1
 				}
 			]
 	}
-
-	public gamingSettings: any = {
-		cpuInfoFeature: true,
-		gpuInfoFeature: true,
-		memoryInfoFeature: true,
-		hddInfoFeature: true,
-		winKeyLockFeature: true,
-		rapidChargeFeature: true,
-		dolbySoundFeature: true,
-		touchpadLockFeature: true,
-		networkBoostFeature: true,
-		cpuOCFeature: true,
-		ledSetFeature: true,
-		memOCFeature: true,
-		macroKeyFeature: true,
-		hybridModeFeature: true,
-		optimizationFeature: true,
-		smartFanFeature: true,
-		xtuService: true,
-		fbnetFilter: true,
-		ledDriver: true
-	};
-
+	public gamingSettings: any = { };
 	constructor(
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private gamingThermalModeService: GamingThermalModeService,
 		private commonService: CommonService,
 		private shellServices: VantageShellService,
-		private audioService: AudioService
+		private audioService: AudioService,
+		private powerService: PowerService
 	) { }
 
 	ngOnInit() {
 		this.initialiseDolbyCache();
+		this.initialiseRapidChargeCache();
 		this.getDolbySettings();
+		this.initialiseRapidChargeSettings();
 
 		this.gamingCapabilities.smartFanFeature = this.gamingCapabilityService.getCapabilityFromCache(
-			LocalStorageKey.CurrentThermalModeStatus);
+			LocalStorageKey.smartFanFeature);
 
-		this.gamingCapabilities.smartFanFeature = this.gamingCapabilityService.getCapabilityFromCache(
+		this.gamingCapabilities.smartFanStatus = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.PrevThermalModeStatus);
 
 		if (!this.gamingSettings.smartFanFeature) {
@@ -202,7 +186,9 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit {
 
 	ngAfterViewInit() {
 	}
-
+	public unRegisterThermalModeEvent() {
+		this.shellServices.unRegisterEvent(EventTypes.gamingThermalModeChangeEvent, this.onRegThermalModeEvent.bind(this));
+	}
 	public onRegThermalModeEvent(status: any) {
 		if (status !== undefined) {
 			const regThermalModeStatusObj = new ThermalModeStatus();
@@ -258,7 +244,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit {
 				this.gamingThermalModeService.getThermalModeStatus().then((thermalModeStatus) => {
 					if (thermalModeStatus !== undefined) {
 						const ThermalModeStatusObj = new thermalModeStatus();
-						//updating model
+						// updating model
 						ThermalModeStatusObj.thermalModeStatus = thermalModeStatus;
 						this.drop.curSelected = ThermalModeStatusObj.thermalModeStatus;
 					}
@@ -316,6 +302,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit {
 		const { name } = event.target;
 		if (name === 'gaming.dashboard.device.quickSettings.dolby') {
 			this.setDolbySettings(event.switchValue);
+		} else if (name === 'gaming.dashboard.device.quickSettings.rapidCharge') {
+			this.setRapidChargeSettings(event.switchValue);
 		}
 	}
 	public async getDolbySettings() {
@@ -332,7 +320,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit {
 		try {
 			const isDolbyUpdated = await this.audioService.setDolbyOnOff(value);
 			if (isDolbyUpdated) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.DolbyModeCache, { available: true, status: value });
+				this.commonService.setLocalStorageValue(LocalStorageKey.DolbyModeCache, { available: this.quickSettings[3].isVisible, status: value });
 			} else {
 				this.quickSettings[3].isChecked = !value;
 			}
@@ -342,8 +330,44 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit {
 	}
 
 	public initialiseDolbyCache() {
-		const { available, status } = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyModeCache);
-		this.quickSettings[3].isVisible = available;
-		this.quickSettings[3].isChecked = status;
+		try {
+			const { available, status } = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyModeCache, { available: false, status: false });
+			this.quickSettings[3].isVisible = available;
+			this.quickSettings[3].isChecked = status;
+		} catch (err) {
+			console.log(`ERROR in initialiseDolbyCache()`, err);
+		}
+	}
+
+	public async initialiseRapidChargeSettings() {
+		try {
+			const rapidChargeSettings: FeatureStatus = await this.powerService.getRapidChargeModeStatusIdeaNoteBook();
+			this.commonService.setLocalStorageValue(LocalStorageKey.RapidChargeCache, rapidChargeSettings);
+			this.quickSettings[1].isVisible = rapidChargeSettings.available || false;
+			this.quickSettings[1].isChecked = rapidChargeSettings.status || false;
+		} catch (err) {
+			console.log(`ERROR in getRapidChargeSettings() of quickSettings`, err);
+		}
+	}
+
+	public async setRapidChargeSettings(status: any) {
+		try {
+			const isRapidChargeStatusUpdated = await this.powerService.setRapidChargeModeStatusIdeaNoteBook(status);
+			if (isRapidChargeStatusUpdated) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.RapidChargeCache, { available: this.quickSettings[1].isVisible, status: status });
+			}
+		} catch (err) {
+			console.log(`ERROR in setRapidChargeSettings() of quickSettings`, err);
+		}
+	}
+
+	public initialiseRapidChargeCache() {
+		const { available, status } = this.commonService.getLocalStorageValue(LocalStorageKey.RapidChargeCache, { available: false, status: false });
+		this.quickSettings[1].isVisible = available;
+		this.quickSettings[1].isChecked = status;
+	}
+
+	ngOnDestroy(): void {
+		this.unRegisterThermalModeEvent();
 	}
 }

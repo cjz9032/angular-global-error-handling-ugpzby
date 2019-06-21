@@ -3,7 +3,7 @@
 		<div class="spinner-border text-primary progress-spinner" role="status">
 		</div>
 	</div>
-	<div class="row content" *ngIf="pluginAvailable">
+	<div class="row content" [ngClass]="{'show-overlay':account.state === 'trialExpired' || account.state === 'local'}" *ngIf="pluginAvailable">
 			<div class="col-4 icon-container">
 				<div class="row">
 					<div class="icon col-4">
@@ -74,11 +74,9 @@
 				</vtr-ui-button>
 			</div>
 	</div>
-	<div class="row overlay" [ngClass]="{'show-overlay':account.state === 'trialExpired' || account.state === 'local'}" *ngIf="pluginAvailable && account">
-		<div class="col-8 place-holder"></div>
-		<div class="col-4 content-container" *ngIf="account.state === 'trialExpired'">
+	<div class="row overlay" *ngIf="pluginAvailable && account">
+		<div class="col content-container" *ngIf="account.state === 'trialExpired'">
 			<div class="text">{{'homeSecurity.trialExpired' | translate}}</div>
-			<div class="text-description">{{'homeSecurity.trialExpiredSubtext' | translate}}</div>
 			<vtr-ui-button
 				id="chs-btn-ad-upgrade"
 				aria-label="chs-btn-ad-upgrade"
@@ -90,9 +88,8 @@
 				[label]="'homeSecurity.upgrade' | translate">
 			</vtr-ui-button>
 		</div>
-		<div class="col-4 content-container" *ngIf="account.state === 'local'">
+		<div class="col content-container" *ngIf="account.state === 'local'">
 			<div class="text">{{'homeSecurity.freeTrial' | translate}}</div>
-			<div class="text-description">{{'homeSecurity.protectAllDevices' | translate}}</div>
 			<vtr-ui-button
 				id="chs-btn-ad-startTrial"
 				aria-label="chs-btn-ad-startTrial"

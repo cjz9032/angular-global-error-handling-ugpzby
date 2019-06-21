@@ -109,22 +109,20 @@ import { PageSupportDetailComponent } from './components/pages/page-support-deta
 import { WidgetSupportComponent } from './components/widgets/widget-support/widget-support.component';
 import { UiListSupportComponent } from './components/ui/ui-list-support/ui-list-support.component';
 import { WidgetWarrantyComponent } from './components/widgets/widget-warranty/widget-warranty.component';
-import { SanitizeHtmlPipe } from './pipe/sanitizehtml.pipe';
 import { WidgetRebootComponent } from './components/widgets/widget-reboot/widget-reboot.component';
 import { ContainerArticleComponent } from './components/container-article/container-article.component';
 import { ArticleItemComponent } from './components/article-item/article-item.component';
-import { SanitizeUrlPipe } from './pipe/sanitise-url.pipe';
 import { UniqueIdPipe } from './pipe/unique-id.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
 import { MetricsDirective } from './directives/metrics.directive';
 import { TranslateDirective } from './directives/translate.directive';
+import { LinkStatusDirective } from './directives/link-status.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
 import { ModalCommonConfirmationComponent } from './components/modal/modal-common-confirmation/modal-common-confirmation.component';
 import { BaseComponent } from './components/base/base.component';
 import { AppEventDirective } from './directives/app-event.directive';
-import { SafeDomPipe } from './pipe/safe-dom/safe-dom.pipe';
 import { ModalUpdateChangeLogComponent } from './components/modal/modal-update-change-log.component/modal-update-change-log.component';
 import { ModalArticleDetailComponent } from './components/modal/modal-article-detail/modal-article-detail.component';
 import { ModalThreatLocatorComponent } from './components/modal/modal-threat-locator/modal-threat-locator.component';
@@ -231,6 +229,9 @@ import { SubpageDeviceSettingsInputAccessoryComponent } from './components/pages
 import { ModalIntelligentCoolingModesComponent } from './components/modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
 import { CharacterLimitPipe } from './pipe/ui-chs-statusbar/character-limit.pipe';
 import { UiTimePickerComponent } from './components/ui/ui-time-picker/ui-time-picker.component';
+import { VoiceComponent } from './components/pages/page-smart-assist/voice/voice.component';
+import { ModalVoiceComponent } from './components/modal/modal-voice/modal-voice.component';
+import { SanitizePipe } from './pipe/sanitize.pipe';
 
 library.add(fas);
 library.add(fab);
@@ -305,12 +306,10 @@ library.add(fal);
 		UiListSupportComponent,
 		WidgetWarrantyComponent,
 		ModalLenovoIdComponent,
-		SanitizeHtmlPipe,
 		WidgetRebootComponent,
 		FeedbackFormComponent,
 		ContainerArticleComponent,
 		ArticleItemComponent,
-		SanitizeUrlPipe,
 		UniqueIdPipe,
 		ModalBatteryChargeThresholdComponent,
 		WidgetMcafeeComponent,
@@ -322,6 +321,7 @@ library.add(fal);
 		ModalBatteryChargeThresholdComponent,
 		MetricsDirective,
 		TranslateDirective,
+		LinkStatusDirective,
 		InstallationHistoryComponent,
 		SeparatePascalCasePipe,
 		ModalCommonConfirmationComponent,
@@ -329,7 +329,6 @@ library.add(fal);
 		ModalCommonConfirmationComponent,
 		AppEventDirective,
 		ModalUpdateChangeLogComponent,
-		SafeDomPipe,
 		ModalCommonConfirmationComponent,
 		ModalArticleDetailComponent,
 		DolbyModesTranslationPipe,
@@ -417,7 +416,10 @@ library.add(fal);
 		ModalIntelligentCoolingModesComponent,
 		DaysIntervalPipe,
 		CharacterLimitPipe,
-		UiTimePickerComponent
+		UiTimePickerComponent,
+		VoiceComponent,
+		ModalVoiceComponent,
+		SanitizePipe
 	],
 	imports: [
 		BrowserModule,
@@ -468,7 +470,8 @@ library.add(fal);
 		ModalLicenseComponent,
 		ModalGamingLegionedgeComponent,
 		ModalChsWelcomeContainerComponent,
-		ModalIntelligentCoolingModesComponent
+		ModalIntelligentCoolingModesComponent,
+		ModalVoiceComponent
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

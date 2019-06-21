@@ -71,7 +71,7 @@
 							[leftIcon]="batterySettings.items[1].leftImageSource"
 							[rightIcon]="batterySettings.items[1].rightImageSource"
 							[showChildContent]="true"
-							[isSwitchChecked] = "showBatteryThreshold"
+							[isSwitchChecked]="showBatteryThreshold"
 							(toggleOnOff)="showBatteryThresholdsettings($event.switchValue);"
 							[tooltipText]="'device.deviceSettings.power.batterySettings.batteryThreshold.tooltip' | translate">
 							<div *ngIf="showBatteryThreshold">
@@ -87,8 +87,8 @@
 									[selectedStopAtCharge]="selectedStopAtChargeVal"
 									[selectedStartAtCharge]="selectedStartAtChargeVal"
 									[isCheckedAuto]="primaryCheckBox"
-									(sendBatteryDetails)="setChargeThresholdValues($event, 1)"
-									(autoChecked)="autoCheckSelected($event, 1)">
+									(sendBatteryDetails)="setChargeThresholdValues($event, 1, 'changedValues')"
+									(autoChecked)="setChargeThresholdValues($event, 1, 'autoChecked')">
 								</vtr-battery-charge-threshold-settings>
 
 								<vtr-battery-charge-threshold-settings *ngIf="responseData && responseData.length > 1"
@@ -102,8 +102,8 @@
 									[selectedStopAtCharge]="selectedStopAtChargeVal1"
 									[selectedStartAtCharge]="selectedStartAtChargeVal1"
 									[isCheckedAuto]="secondaryCheckBox"
-									(sendBatteryDetails)="setChargeThresholdValues($event, 2)"
-									(autoChecked)="autoCheckSelected($event, 2)">
+									(sendBatteryDetails)="setChargeThresholdValues($event, 2, 'changedValues')"
+									(autoChecked)="setChargeThresholdValues($event, 2, 'autoChecked')">
 								</vtr-battery-charge-threshold-settings>
 								<vtr-battery-charge-threshold-settings *ngIf="showWarningMsg"
 									[displayNoteOnly]="true"
@@ -158,30 +158,32 @@
 
 
 	<div class="row py-5"
-	id="smart-standby">
-	<div class="col-10 mx-auto ">
-		<vtr-container-collapsible
-			[cardTitle]="'device.deviceSettings.power.smartStandby.title' | translate"
-			[isCollapsed]="false">
-			<ul class="list-group list-group-flush">
-				<li class="">
-					<vtr-ui-row-switch
-						[caption]="'device.deviceSettings.power.smartStandby.description' | translate"
-						[isSwitchVisible]=true
-						[isLastChild]=true
-						[showChildContent]="true"
-						[rightIcon]="['far', 'question-circle']"
-						[tooltipText]="'device.deviceSettings.power.smartStandby.tooltip' | translate"
-						(toggleOnOff)="onSmartStandbyToggle($event)">
-					</vtr-ui-row-switch>
-						<section class="smart-standby-timer" *ngIf="smartStandbyTimer">
+		id="smart-standby"
+		*ngIf="smartStandby?.isCapable">
+		<div class="col-10 mx-auto ">
+			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.smartStandby.title' | translate"
+				[isCollapsed]="false">
+				<ul class="list-group list-group-flush">
+					<li class="">
+						<vtr-ui-row-switch
+							[caption]="'device.deviceSettings.power.smartStandby.description' | translate"
+							[isSwitchVisible]=true
+							[isLastChild]=true
+							[showChildContent]="true"
+							[rightIcon]="['far', 'question-circle']"
+							[tooltipText]="'device.deviceSettings.power.smartStandby.tooltip' | translate"
+							[isSwitchChecked]="smartStandby.isEnabled"
+							(toggleOnOff)="onSmartStandbyToggle($event)">
+						</vtr-ui-row-switch>
+						<section class="smart-standby-timer"
+							*ngIf="smartStandby.isEnabled">
 							<vtr-ui-time-picker></vtr-ui-time-picker>
 						</section>
-				</li>
-			</ul>
-		</vtr-container-collapsible>
+					</li>
+				</ul>
+			</vtr-container-collapsible>
+		</div>
 	</div>
-</div>
 
 	<div class="row py-5"
 		id="power"
@@ -301,7 +303,6 @@
 				componentName="'device.deviceSettings.power.energyStar.title' | translate | lowercase"
 				[cardTitle]="'device.deviceSettings.power.energyStar.title' | translate"
 				[isCollapsed]="false">
-
 				<div class="row energystar-container">
 					<div class="col-lg-2 col-md-2 col-sm-12">
 						<img class="img-fluid mx-auto d-block"

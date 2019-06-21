@@ -142,7 +142,7 @@
 													[maxValue]="3"
 													(change)="setZeroTouchLoginSensitivity($event)"
 													[value]="intelligentSecurity.zeroTouchLoginDistance"
-													[enableSlider]="false">
+													[enableSlider]="!intelligentSecurity.isHPDEnabled || !intelligentSecurity.isZeroTouchLoginEnabled">
 												</vtr-ui-range-slider>
 												<div class="pt-3"
 													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled"
@@ -207,7 +207,7 @@
 														[value]="'1'"
 														[checked]="intelligentSecurity.autoScreenLockTimer === '1'"
 														(change)="onZeroTouchLockTimerChange($event, '1')"
-														[disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
+														[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled">
 													</vtr-ui-rounded-rectangle-radio>
 													<vtr-ui-rounded-rectangle-radio [radioId]="'radio2'"
 														[group]="'radio'"
@@ -216,7 +216,7 @@
 														[value]="'2'"
 														[checked]="intelligentSecurity.autoScreenLockTimer === '2'"
 														(change)="onZeroTouchLockTimerChange($event, '2')"
-														[disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
+														[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled">
 													</vtr-ui-rounded-rectangle-radio>
 													<vtr-ui-rounded-rectangle-radio [radioId]="'radio3'"
 														[group]="'radio'"
@@ -225,7 +225,7 @@
 														[value]="'3'"
 														[checked]="intelligentSecurity.autoScreenLockTimer === '3'"
 														(change)="onZeroTouchLockTimerChange($event, '3')"
-														[disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
+														[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled">
 													</vtr-ui-rounded-rectangle-radio>
 												</div>
 												<div class="feature-note screen-lock-note p-4 ml-4 mt-2 mb-2 mr-2">
@@ -343,6 +343,7 @@
 
 					<vtr-intelligent-media id="media"
 						*ngIf="intelligentMedia.available"
+						[isLoading]="isIntelligentMediaLoading"
 						[isChecked]="intelligentMedia.status">
 					</vtr-intelligent-media>
 
@@ -364,6 +365,21 @@
 						</div>
 					</div>
 					<!-- End of Active Protection System -->
+
+					<!-- Start of voice -->
+					<div class="row py-5 smart-assist-card"
+						id="voice">
+						<div class="col-10 mx-auto">
+							<vtr-container-collapsible [cardTitle]="'device.smartAssist.voice.title' | translate"
+								[isCollapsed]="false"
+								[allowCollapse]="true"
+								[theme]="'white'"
+								(toggle)="onCardCollapse($event)">
+								<vtr-voice></vtr-voice>
+							</vtr-container-collapsible>
+						</div>
+					</div>
+					<!-- End of voice -->
 
 				</div>
 

@@ -1,9 +1,10 @@
 {
 	"name": "vtr-ui",
-	"version": "0.0.97",
+	"version": "0.0.99",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
+		"build-serve": "node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng serve --prod",
 		"build": "ng build",
 		"test": "ng test",
 		"lint": "ng lint",

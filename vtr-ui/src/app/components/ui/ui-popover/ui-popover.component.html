@@ -1,13 +1,20 @@
 <ui-popover *ngIf="showMePartially">
-  <div class="ui-popover-head">
-    <button class="close" type="button" (click)="close()">
-		<i class="icon icon-close"></i>
-	</button>
-  </div>
-  <div class="ui-popover-content">
-      <p>{{'gaming.dashboard.device.legionEdge.popup.text' | translate}}</p>
-  </div>
-  <div class="ui-popover-footer">
-    <button class="btn btn-rounded" (click)="close()">{{'gaming.dashboard.device.legionEdge.popup.button' | translate}}</button>
+  <div class="modal-body vtr-ui-popover">
+    <div class="row justify-content-end">
+      <div class="btn-close">
+        <button type="button" class="close" aria-hidden="true" (click)="close()">
+          <fa-icon [icon]="['fal', 'times']"></fa-icon>
+        </button>
+      </div>
+    </div>
+    <div class="content-body">
+      <h1>{{'gaming.dashboard.device.legionEdge.popup.text' | translate}}</h1>
+      <p></p>
+    </div>
+    <hr>
+    <div class="row">
+      <button class="btn enable-button"
+        (click)="close()">{{'gaming.dashboard.device.legionEdge.popup.button' | translate}}</button>
+    </div>
   </div>
 </ui-popover>

@@ -14,15 +14,15 @@
 								<div class="col align-items-center d-flex justify-content-between">
 
 									<div class="time-headings">
-										<p class="ml-5">Hours</p>
+										<p class="ml-5">{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit1' | translate | uppercase }}</p>
 										<span class="ml-5">4</span>
 									</div>
 									<div class="time-headings">
-										<p class="mr-2">Minutes</p>
+										<p class="mr-2">{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit2' | translate | uppercase }}</p>
 										<span class="mr-2">15</span>
 									</div>
 									<div class="time-headings">
-										<p class="mr-5">AM/PM</p>
+										<p class="mr-5">{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit3' | translate }}</p>
 										<span class="mr-5">PM</span>
 									</div>
 
@@ -43,7 +43,7 @@
 												<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
 											</div>
 											<span>8</span><br>
-											<span>9</span><br>
+											<span class="highlight">9</span><br>
 											<span>10</span>
 											<div class="toggle-icon">
 												<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
@@ -54,7 +54,7 @@
 												<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
 											</div>
 											<span>15</span><br>
-											<span>30</span><br>
+											<span class="highlight">30</span><br>
 											<span>45</span>
 											<div class="toggle-icon">
 												<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
@@ -65,7 +65,7 @@
 												<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
 											</div>
 											<span>AM</span><br>
-											<span>PM</span>
+											<span class="highlight">PM</span>
 											<div class="toggle-icon">
 												<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
 											</div>
@@ -101,13 +101,13 @@
 								<div class="col align-items-center d-flex justify-content-between">
 
 									<div class="time-headings">
-										<p class="ml-5">Hours</p>
+										<p class="ml-5">{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit1' | translate | uppercase }}</p>
 										<span class="ml-5">4</span>
 
 
 									</div>
 									<div class="time-headings">
-										<p class="mr-2">Minutes</p>
+										<p class="mr-2">{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit2' | translate | uppercase }}</p>
 										<span class="mr-2">15</span>
 									</div>
 									<div class="time-headings">
@@ -133,7 +133,7 @@
 												<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
 											</div>
 											<span>8</span><br>
-											<span>9</span><br>
+											<span class="highlight">9</span><br>
 											<span>10</span>
 											<div class="toggle-icon">
 												<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
@@ -144,7 +144,7 @@
 												<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
 											</div>
 											<span>15</span><br>
-											<span>30</span><br>
+											<span class="highlight">30</span><br>
 											<span>45</span>
 											<div class="toggle-icon">
 												<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
@@ -155,7 +155,7 @@
 												<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
 											</div>
 											<span>AM</span><br>
-											<span>PM</span>
+											<span class="highlight">PM</span>
 											<div class="toggle-icon">
 												<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
 											</div>
@@ -175,6 +175,14 @@
 						</div>
 					</div>
 				</div>
+				<!-- <section class="toaster">{{ 'device.deviceSettings.power.smartStandby.timer.toaster' | translate}}</section> -->
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+					<div class="note align-items-center">
+							{{ 'device.deviceSettings.power.smartStandby.timer.endTimeNote' | translate }}
+					</div>
 			</div>
 		</div>
 

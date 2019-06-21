@@ -171,7 +171,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			}
 		]
 	};
-	public cpuOCStatus: CPUOCStatus;
+	public cpuOCStatus: CPUOCStatus = new CPUOCStatus();
 	public setCpuOCStatus: any;
 
 	constructor(
@@ -254,18 +254,12 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 
 	public GetCPUOverClockCacheStatus(): any {
-		if (this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus) === undefined) {
-			return this.cpuOCStatus.cpuOCStatus;
-		} else {
-			this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus);
-		}
+		const status = this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus) || this.cpuOCStatus.cpuOCStatus;
+		return status;
 	}
 	public renderCPUOverClockStatus() {
 		try {
-			this.cpuOCStatus = this.GetCPUOverClockCacheStatus();
-			if (this.cpuOCStatus !== undefined) {
-				this.drop.curSelected = this.cpuOCStatus.cpuOCStatus;
-			}
+			this.drop.curSelected = this.GetCPUOverClockCacheStatus();
 			this.gamingSystemUpdateService.getCpuOCStatus().then((cpuOCStatus) => {
 				if (cpuOCStatus !== undefined) {
 					const CpuOCStatusObj = new CPUOCStatus();
@@ -291,10 +285,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 					if (!value) {
 						this.drop.curSelected = this.GetCPUOverClockCacheStatus();
 					} else {
-						console.log(
-							//' got true from  ----- cpu oc status js bridge ->',
-							this.setCpuOCStatus.cpuOCStatus
-						);
 						this.drop.curSelected = this.setCpuOCStatus.cpuOCStatus;
 						this.commonService.setLocalStorageValue(
 							LocalStorageKey.CpuOCStatus,
@@ -312,8 +302,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.modalService.open(ModalGamingLegionedgeComponent, { windowClass: 'gaming-help-modal' });
 	}
 	public renderRamOverClockStatus() {
-		this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
+	//	this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
 			// console.log('xtu--->' + this.gamingCapabilities.xtuService);
+		//	this.gamingCapabilities = gamingCapabilities;
 			if (this.gamingCapabilities.xtuService === true) {
 			this.gamingSystemUpdateService.getRamOCStatus().then((ramOcStatus) => {
 					if (ramOcStatus !== undefined) {
@@ -323,7 +314,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 					}
 				});
 			}
-		});
+		// });
 	}
 	public GetRAMOverClockCacheStatus() {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.RamOcStatus);
@@ -422,9 +413,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		} else {
 			// to hide the existing popup which is open(hybridmode, ramoc)
 			this.legionUpdate[1].isPopup = false;
-			this.disableButtons = false;
 		}
-		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
+		 if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
 			this.legionUpdate[4].isPopup = $event;
 			this.disableButtons = true;
 			this.gamingHybridModeService
@@ -442,7 +432,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		} else {
 			// to hide the existing popup which is open(hybridmode, ramoc)
 			this.legionUpdate[4].isPopup = false;
-			this.disableButtons = false;
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.touchpadLock') {
 			this.TouchpadLockStatusObj.touchpadLockStatus = $event.switchValue;

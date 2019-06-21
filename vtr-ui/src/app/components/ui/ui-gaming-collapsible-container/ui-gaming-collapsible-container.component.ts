@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Output, EventEmitter, OnChanges } from '@angular/core';
 
 @Component({
 	selector: 'vtr-ui-gaming-collapsible-container',
@@ -9,6 +9,7 @@ import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@ang
 	},
 })
 export class UiGamingCollapsibleContainerComponent implements OnInit {
+	
 	@Input() public options;
 	@Output() public change = new EventEmitter<any>();
 	public showOptions = false;
@@ -24,24 +25,14 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
-		//this.options.forEach(option => {
-		//	if (option.selectedOption && this.currentOption === undefined) {
-		//		console.log('optionSelected', option);
-		//		this.setDefaultOption(option);
-		//	}
-		//});
-
-		//if (this.currentOption === undefined) {
-		//	this.options.forEach(option => {
-		//		if (option.defaultOption) {
-		//			this.setDefaultOption(option);
-		//		}
-		//	});
-		//}
-		this.currentOption = this.options.dropOptions[this.options.curSelected - 1].name;
-		this.currentDescription = this.options.dropOptions[this.options.curSelected - 1].description;
+		this.options.dropOptions.forEach((option: any) => {
+			if (option.value === this.options.curSelected) {
+				this.currentOption = option.name;
+				this.currentDescription = option.description;
+			}
+		});
 	}
-
+	
 	public toggleOptions(optSelected) {
 		this.showOptions = !this.showOptions;
 		// CHANGE THE NAME OF THE BUTTON.
@@ -61,7 +52,7 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 
 	public optionSelected(option) {
 		this.currentOption = option.name;
-		//this.options.curSelected = option.value;
+		// this.options.curSelected = option.value;
 		this.selectedDescription = option.description;
 		this.currentDescription = this.selectedDescription;
 		this.showOptions = false;
