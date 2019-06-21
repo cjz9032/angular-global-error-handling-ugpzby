@@ -53,6 +53,17 @@ export class CommonService {
 	}
 
 	/**
+	 * Returns the formatted time in local time format
+	 * Example: return HH:MM AM for English
+	 * Example: return 上午 9：00 for Chinese
+	 * @param dateString date string to format
+	 */
+	public formatLocalTime(dateString: string): string {
+		const date = new Date(dateString);
+		return date.toLocaleTimeString(navigator.language);
+	}
+
+	/**
 	 * Returns date formatted in YYYY/MM/DD format
 	 * @param date date object to format
 	 */
