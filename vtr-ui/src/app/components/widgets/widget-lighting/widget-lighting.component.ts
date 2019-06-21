@@ -3,6 +3,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { GamingAllCapabilitiesService } from './../../../services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingLightingService } from './../../../services/gaming/lighting/gaming-lighting.service';
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'vtr-widget-lighting',
@@ -12,47 +13,50 @@ import { Component, OnInit, Input } from '@angular/core';
 export class WidgetLightingComponent implements OnInit {
 	public response: any;
 	@Input() title = '';
-
 	public didSuccess: any;
 	public profileId: any;
 	public setprofId: any;
 	public ledSetFeature: any;
 	public ledDriver: any;
 	public isLightingVisible: any;
+	public isdriverpopup = false;
+	public isPopupVisible: any;
 	constructor(
 		private gamingLightingService: GamingLightingService,
 		private commonService: CommonService,
 		private gamingCapabilityService: GamingAllCapabilitiesService,
+		private router: Router
 	) { }
 
 	ngOnInit() {
-		this.getGaminagAllCapabilities();
-		this.getLightingProfileId();
+		this.getcapabilities();
 	}
-	public getGaminagAllCapabilities() {
-		if (this.gamingCapabilityService.isShellAvailable) {
-			this.gamingCapabilityService.getCapabilities().then((response: any) => {
-				console.log(
-					'getCapabilities  response from homee ------------------------>',
-					JSON.stringify(response)
-				);
-					this.ledSetFeature=response.ledSetFeature;
-					this.ledDriver=response.ledDriver;
-					//this.ledSetFeature = false;
-					//this.ledDriver = false;
 
-				if (this.ledSetFeature && this.ledDriver) {
-					this.isLightingVisible = true;
-				} else if (!this.ledSetFeature && this.ledDriver) {
-					this.isLightingVisible = false;
-				} else if (this.ledSetFeature && !this.ledDriver) {
-					this.isLightingVisible = true;
-				} else {
-					this.isLightingVisible = false;
-				}
-			});
+	public getcapabilities() {
+		//console.log('capabilities global valuesir');
+
+		this.ledSetFeature = this.commonService.getLocalStorageValue(LocalStorageKey.ledSetFeature);
+		this.ledDriver = this.commonService.getLocalStorageValue(LocalStorageKey.ledDriver);
+
+		//this.ledSetFeature = true;
+		//this.ledDriver = false;
+
+		if (this.ledSetFeature) {
+			this.getLightingProfileId();
+		}
+
+		if (this.ledSetFeature && this.ledDriver) {
+			this.isLightingVisible = true;
+		} else if (!this.ledSetFeature && this.ledDriver) {
+			this.isLightingVisible = false;
+		} else if (this.ledSetFeature && !this.ledDriver) {
+			this.isLightingVisible = true;
+			this.isPopupVisible = true;
+		} else {
+			this.isLightingVisible = false;
 		}
 	}
+
 	public getLightingProfileId() {
 		try {
 			if (this.gamingLightingService.isShellAvailable) {
@@ -94,9 +98,14 @@ export class WidgetLightingComponent implements OnInit {
 						console.log('setLightingProfileId------------false---------------->');
 						//this.setprofId = eventval;
 					} else {
-						this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId,  response.profileId);
+						if (this.isPopupVisible) {
+							this.isdriverpopup = true;
+							console.log('checkstatus resp in if--------', this.isdriverpopup);
+
+						}
+						this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, response.profileId);
 						this.setprofId = response.profileId;
-						console.log('setLightingProfileId------------True---------------->',this.setprofId);
+						console.log('setLightingProfileId------------True---------------->', this.setprofId);
 					}
 				});
 			}
@@ -104,4 +113,20 @@ export class WidgetLightingComponent implements OnInit {
 			console.error('setLightingProfileId: ' + error.message);
 		}
 	}
+
+	public checkStatus(id) {
+		console.log('checkstatus resp--------', id);
+		if (id) {
+			this.isdriverpopup = true;
+			console.log('checkstatus resp in if--------', this.isdriverpopup);
+
+		} else {
+			console.log('checkstatus resp in else--------', id);
+
+			this.router.navigate(['/lightingcustomize', this.setprofId])
+		}
+	}
+
+
+
 }
