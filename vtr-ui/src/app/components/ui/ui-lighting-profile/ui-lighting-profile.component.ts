@@ -374,7 +374,7 @@ export class UiLightingProfileComponent implements OnInit {
 						if (response.lightInfo.length > 1) {
 							this.sideSelectedValue = response.lightInfo[1].lightEffectType;
 							this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
-							//this.inHex2 = response.lightInfo[1].lightColor;
+							this.inHex2 = response.lightInfo[1].lightColor;
 						}
 					}
 
@@ -523,6 +523,7 @@ export class UiLightingProfileComponent implements OnInit {
 										const lightEffectRGBOptionNameA = this.getLightEffectOptionName(response.lightInfo[0].lightEffectType);
 										this.lightEffectRGBOptionName = lightEffectRGBOptionNameA[0].name;
 										this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
+										this.inHex1 = response.lightInfo[0].lightColor;
 										if (response.lightInfo.length > 1) {
 											this.sideSelectedValue = response.lightInfo[1].lightEffectType;
 											if (this.sideSelectedValue === 8 || this.sideSelectedValue === 32 || this.sideSelectedValue === 64 || this.sideSelectedValue === 128) {
@@ -538,6 +539,7 @@ export class UiLightingProfileComponent implements OnInit {
 											}
 											const lightEffectRGBOptionNameB = this.getLightEffectOptionName(response.lightInfo[1].lightEffectType);
 											this.lightEffectRGBOptionNameSide = lightEffectRGBOptionNameB[0].name;
+											this.inHex2 = response.lightInfo[1].lightColor;
 											this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
 										}
 									}
@@ -669,6 +671,7 @@ export class UiLightingProfileComponent implements OnInit {
 									}
 									this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
 									this.inHex2 = response.lightInfo[1].lightColor;
+									console.log('in hex2-------------------------------------',this.inHex2);
 								}
 							}
 						}
@@ -713,6 +716,7 @@ export class UiLightingProfileComponent implements OnInit {
 			console.error(error.message);
 		}
 	}
+
 	public getLightEffectOptionName(optionValue: any) {
 		const result = this.lightingEffectData.drop[0].dropOptions.filter(obj => {
 			return obj.value === optionValue
@@ -757,6 +761,7 @@ export class UiLightingProfileComponent implements OnInit {
 									}
 									const lightEffectRGBOptionNameA = this.getLightEffectOptionName(response.lightInfo[0].lightEffectType);
 									this.lightEffectRGBOptionName = lightEffectRGBOptionNameA[0].name;
+									this.inHex1 = response.lightInfo[0].lightColor;
 									if (response.lightInfo.length > 1) {
 										this.sideSelectedValue = response.lightInfo[1].lightEffectType;
 										const lightEffectRGBOptionNameB = this.getLightEffectOptionName(response.lightInfo[1].lightEffectType);
@@ -772,6 +777,7 @@ export class UiLightingProfileComponent implements OnInit {
 										else {
 											this.enableBrightConditionside = false;
 										}
+										this.inHex2 = response.lightInfo[1].lightColor;
 										this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
 									}
 								}
