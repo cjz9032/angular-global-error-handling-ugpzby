@@ -259,6 +259,28 @@
 				"applied": {
 					"title": "APPLIED"
 				}
+			},
+			"brightness": {
+				"text1": {
+					"title": "*Brightness setting doesn't apply on "
+				},
+				"text2": {
+					"title": " effect"
+				}
+			},
+			"lightingSingleLightingOption": {
+				"option1": {
+					"title": "Always On"
+				},
+				"option2": {
+					"title": "Fast Blink"
+				},
+				"option3": {
+					"title": "Medium Blink"
+				},
+				"option4": {
+					"title": "Slow Blink"
+				}
 			}
 		}
 	},
