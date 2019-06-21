@@ -1,14 +1,15 @@
-import { Component, OnInit, ViewChild, ElementRef, EventEmitter, Output, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, EventEmitter, Output, Input, OnChanges } from '@angular/core';
 import ReinventedColorWheel from 'reinvented-color-wheel';
 import 'reinvented-color-wheel/css/reinvented-color-wheel.css';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { isUndefined } from 'util';
 
 @Component({
 	selector: 'vtr-ui-color-wheel',
 	templateUrl: './ui-color-wheel.component.html',
 	styleUrls: [ './ui-color-wheel.component.scss' ]
 })
-export class UiColorWheelComponent implements OnInit {
+export class UiColorWheelComponent implements OnInit, OnChanges {
 	@ViewChild('colorWheel') canvasElement: ElementRef;
 	color: any = [ 255, 0, 0 ];
 	backColor: String = '#ff0000';
@@ -20,7 +21,7 @@ export class UiColorWheelComponent implements OnInit {
 	@Input() showOverlay: boolean;
 	colorWheel: any;
 
-	constructor(private _fb: FormBuilder) {}
+	constructor() {}
 
 	ngOnInit() {
 		const that = this;
@@ -42,6 +43,21 @@ export class UiColorWheelComponent implements OnInit {
 
 		this.colorWheel.rgb = this.color;
 		this.colorWheel.redraw();
+		this.colorWheel.hex = '#' + this.inHEX;
+		this.colorWheel.redraw();
+	}
+
+	ngOnChanges(changes) {
+		if (!isUndefined(changes.inHEX)) {
+			if (changes.inHEX.previousValue !== changes.inHEX.currentValue) {
+				this.inHEX = changes.inHEX.currentValue;
+				if (!isUndefined(this.colorWheel)) {
+					this.colorWheel.hex = '#' + this.inHEX;
+					// this.colorWheel.rgb = this.color;
+					this.colorWheel.redraw();
+				}
+			}
+		}
 	}
 
 	onApplyColorEffect(backColor) {
