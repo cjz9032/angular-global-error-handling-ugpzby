@@ -118,10 +118,14 @@ export class PowerService {
 	// End Conservation mode for IdeaNoteBook
 	// Express/Rapid Charging mode for IdeaNotebook
 	public getRapidChargeModeStatusIdeaNoteBook(): Promise<FeatureStatus> {
-		if (this.devicePowerIdeaNoteBook) {
-			return this.devicePowerIdeaNoteBook.rapidChargeMode.getRapidChargeModeStatus();
+		try {
+			if (this.devicePowerIdeaNoteBook) {
+				return this.devicePowerIdeaNoteBook.rapidChargeMode.getRapidChargeModeStatus();
+			}
+			return undefined;
+		} catch (err) {
+			throw err;
 		}
-		return undefined;
 	}
 	public setRapidChargeModeStatusIdeaNoteBook(value: boolean): Promise<boolean> {
 		try {
@@ -130,9 +134,10 @@ export class PowerService {
 			}
 			return undefined;
 		} catch (error) {
-			throw new Error(error.message);
+			throw error;
 		}
 	}
+
 	// End Express/Rapid Charging mode for IdeaNoteBook
 	// Start Easy Resume for ThinkPad
 	public getEasyResumeCapabilityThinkPad(): Promise<boolean> {

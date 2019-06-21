@@ -7,6 +7,9 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 import { SmartStandby } from 'src/app/data-models/device/smart-standby.model';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { EventTypes } from '@lenovo/tan-client-bridge';
+
 
 enum PowerMode {
 	Sleep = 'ChargeFromSleep',
@@ -48,7 +51,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	selectedStartAtChargeVal1;
 
 	public responseData: any[] = [];
-	machineType: any;
+	public machineType: any;
+	private batteryCountStatusEventRef: any;
+
 	chargeOptions: number[] = [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
 	startAtChargeOptions: number[] = this.chargeOptions.slice(0, this.chargeOptions.length - 1);
 	stopAtChargeOptions: number[] = this.chargeOptions.slice(1, this.chargeOptions.length);
@@ -245,12 +250,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		private deviceService: DeviceService,
 		private commonService: CommonService,
 		public modalService: NgbModal,
-		private batteryService: BatteryDetailService) { }
+		private batteryService: BatteryDetailService,
+		public shellServices: VantageShellService) { }
 
 	ngOnInit() {
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
-
 		if (this.isDesktopMachine) {
 			this.headerMenuItems.splice(0, 1);
 		}
@@ -259,13 +264,18 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.startMonitor();
 		this.getVantageToolBarStatus();
 		if (this.machineType === 1) {
+			this.batteryCountStatusEventRef = this.getBatterStatusEvent.bind(this);
 			this.getBatteryThresholdInformation();
 		}
 		this.getEnergyStarCapability();
+
+		this.shellServices.registerEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
 	}
 
 	ngOnDestroy() {
 		this.stopMonitor();
+		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
+
 	}
 
 	openContextModal(template: TemplateRef<any>) {
@@ -784,27 +794,18 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	// start battery threshold settings
-
+	private getBatterStatusEvent(response) {
+		//console.log('Event response here---------------....>%%%%%%%%%%%?>', response)
+	}
 	public getBatteryThresholdInformation() {
 		if (this.powerService.isShellAvailable) {
 			this.powerService
 				.getChargeThresholdInfo()
 				.then((res) => {
-					console.log('*************response here', res);
 					this.responseData = res || [];
-					// this.responseData = [{batteryNum: 1, startValue: 25, stopValue: 35, checkBoxValue : true, isOn: true, isCapable: true},
-					// 	{batteryNum:2, startValue: 57, stopValue: 78, checkBoxValue : false, isOn: true}];
-					// if (this.responseData && this.responseData.length > 0) {
-					// 	this.selectedStartAtChargeVal = this.responseData[0].startValue;
-					// 	this.selectedStopAtChargeVal = this.responseData[0].stopValue;
-					// 	this.primaryCheckBox = this.responseData[0].checkBoxValue;
-					// 	this.showBatteryThreshold = this.responseData[0].isOn;
-					// 	if (this.responseData.length === 2) {
-					// 		this.secondaryCheckBox = this.responseData[1].checkBoxValue;
-					// 		this.selectedStartAtChargeVal1 = this.responseData[1].startValue;
-					// 		this.selectedStopAtChargeVal1 = this.responseData[1].stopValue;
-					// 	}
-					// }
+					// this.responseData = [{batteryNum: 1, startValue: 25, stopValue: 95, checkBoxValue : true, isOn: true, isCapable: true},
+					// {batteryNum:2, startValue: 57, stopValue: 78, checkBoxValue : false, isOn: true}];
+
 					if (this.responseData && this.responseData.length > 0) {
 						this.selectedStartAtChargeVal = this.responseData[0].startValue - (this.responseData[0].startValue % 5);
 						this.selectedStopAtChargeVal = this.responseData[0].stopValue - (this.responseData[0].stopValue % 5);
@@ -850,9 +851,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			.then((response: any) => {
 				console.log('getBatteryDetails', response);
 				this.batteryGauge = response.batteryIndicatorInfo;
-				// if (this.batteryGauge.percentage > this.selectedStopAtChargeVal || this.selectedStopAtChargeVal1) {
-				// 	this.showWarningMsg = true;
-				// }
 				if (this.batteryGauge.percentage > this.selectedStopAtChargeVal1 || this.batteryGauge.percentage > this.selectedStopAtChargeVal) {
 					this.showWarningMsg = true;
 				} else {
@@ -865,23 +863,24 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 	public showBatteryThresholdsettings(event) {
 		this.showBatteryThreshold = event;
-		console.log(this.showBatteryThreshold);
+		// console.log(this.showBatteryThreshold);
 		if (this.showBatteryThreshold) {
 			this.responseData.forEach(batteryInfo => {
-				this.setChargeThresholdValues(batteryInfo, batteryInfo.batteryNum);
+				this.setChargeThresholdValues(batteryInfo, batteryInfo.batteryNum, 'changedValues');
 			})
 		} else {
 			this.powerService.setToggleOff(this.responseData.length).then((value: any) => {
-				console.log('change threshold value------------------->>>>>>>>>', value);
+				// console.log('change threshold value------------------->>>>>>>>>', value);
 			})
 				.catch(error => {
 					console.error('change threshold value', error);
 				});
+			this.getBatteryThresholdInformation();
 		}
 
 	}
 
-	public setChargeThresholdValues(batteryDetails: any, batteryNum: number) {
+	public setChargeThresholdValues(batteryDetails: any, batteryNum: number, inputString: string) {
 		let batteryInfo: any = {};
 		if (batteryNum == 1) {
 			this.selectedStopAtChargeVal = batteryDetails.stopValue;
@@ -902,16 +901,22 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					stopValue: batteryDetails.stopValue,
 					checkBoxValue: batteryDetails.checkBoxValue
 				};
-				console.log('set values@@@@@@@@@@@@@@@@@ -->', batteryInfo);
-
-				this.powerService
-					.setChargeThresholdValue(batteryInfo)
-					.then((value: any) => {
-						// console.log('change threshold value------------------->>>>>>>>>', value);
-					})
-					.catch(error => {
-						console.error('change threshold value', error);
-					});
+				if (inputString == 'changedValues') {
+					// console.log('chnaged values here------------>');
+					this.powerService
+						.setChargeThresholdValue(batteryInfo)
+						.then((value: any) => {
+							// console.log('change threshold value------------------->>>>>>>>>', value);
+						})
+						.catch(error => {
+							console.error('change threshold value', error);
+						});
+				} else {
+					if (inputString == 'autoChecked') {
+						// console.log('auto checked values here------------>');
+						this.powerService.setCtAutoCheckbox(batteryInfo);
+					}
+				}
 			}
 		} catch (error) {
 			console.error(error.message);
