@@ -1,6 +1,7 @@
 import {
 	Component,
-	OnInit
+	OnInit,
+	Input
 } from '@angular/core';
 import {
 	DropDownInterval
@@ -14,6 +15,7 @@ import {
 export class ActiveProtectionSystemComponent implements OnInit {
 	// title: string;
 	advanced: boolean;
+	@Input() status = false;
 	public intervals: DropDownInterval[];
 	// public taskBarDimmerValue: number;
 

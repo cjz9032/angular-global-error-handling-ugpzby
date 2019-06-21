@@ -359,7 +359,9 @@
 								[allowCollapse]="true"
 								[theme]="'white'"
 								(toggle)="onCardCollapse($event)">
-								<vtr-active-protection-system></vtr-active-protection-system>
+								<vtr-active-protection-system 
+									[status]="apsStatus">
+								</vtr-active-protection-system>
 							</vtr-container-collapsible>
 						</div>
 					</div>

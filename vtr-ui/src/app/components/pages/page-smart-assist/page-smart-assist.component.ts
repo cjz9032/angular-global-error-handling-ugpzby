@@ -42,6 +42,7 @@ export class PageSmartAssistComponent implements OnInit {
 	public intelligentMedia = new FeatureStatus(false, true);
 	public isIntelligentMediaLoading = true;
 	public isAPSavailable = false;
+	public apsStatus: boolean;
 
 	headerMenuItems: PageAnchorLink[] = [
 		// {
@@ -140,7 +141,7 @@ export class PageSmartAssistComponent implements OnInit {
 				// tslint:disable-next-line: no-unused-expression
 				if (response[0], response[1], response[2] >= 0) {
 					this.isAPSavailable = true;
-					this.smartAssist.getAPSMode().then((res) => { console.log('APS MODE-----------', res); res ? this.isAPSavailable = true : this.isAPSavailable = false; });
+					this.smartAssist.getAPSMode().then((res) => { res ? this.apsStatus = true : this.apsStatus = false; });
 				}
 			})
 			.catch((error) => { console.log('APS ERROR------------------', error); });

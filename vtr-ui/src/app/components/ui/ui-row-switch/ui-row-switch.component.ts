@@ -34,7 +34,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 	@Input() isSwitchVisible = false;
 	@Input() theme = 'white';
 	@Input() resetText = '';
-	@Input() isSwitchChecked = false;
+	@Input() isSwitchChecked = true;
 	@Input() tooltipText = '';
 	@Input() name = '';
 	@Input() disabled = false;
