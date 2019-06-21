@@ -5,6 +5,7 @@
 		<vtr-ui-brightness-slider *ngIf="!isProfileOff && lightingCapabilities.BrightAdjustLevel!==0"
 			[lightingData]="profileBrightness" (setLightingBrightness)="setLightingBrightness($event)">
 		</vtr-ui-brightness-slider>
+
 	</div>
 	<div class="lighting-area">
 		<div class="d-flex">
@@ -21,7 +22,7 @@
 				</div>
 				<div *ngIf="isProfileOff"
 					 class="light-option lighting-off d-flex justify-content-center align-items-center">
-					<p>Lighting are currently off. Select the profile tab above to turn it on and customize it.</p>>
+					<p>Lighting is currently off. Select the profile tab above to turn it on and customize it.</p>>
 				</div>
 				<div *ngIf="!isProfileOff" class="light-option rgb-color one-light">
 					<div *ngIf="lightingCapabilities.RGBfeature!==1">
@@ -35,7 +36,8 @@
 						<!-- </ng-container> -->
 						<!-- <vtr-ui-lighting-color-wheel></vtr-ui-lighting-color-wheel> -->
 						<vtr-ui-color-wheel [showOverlay]="showHideOverlay" [inHEX]="inHex1"
-							[btnStatus]="applyBtnStatus1" (colorEffectChanged)="colorEffectChangedFront($event)">
+							[btnStatus]="applyBtnStatus1" (colorEffectChanged)="colorEffectChangedFront($event)"
+							[showApply]="showHideApply1" (colorEffectChanged)="colorEffectChangedFront($event)">
 						</vtr-ui-color-wheel>
 					</div>
 				</div>
@@ -51,7 +53,7 @@
 			<div class="gaming-light-options">
 				<div *ngIf="isProfileOff"
 					 class="light-option lighting-off d-flex justify-content-center align-items-center">
-					<p>Lighting are currently off. Select the profile tab above to turn it on and customize it.</p>>
+					<p>Lighting is currently off. Select the profile tab above to turn it on and customize it.</p>>
 				</div>
 				<div *ngIf="!isProfileOff" class="light-option rgb-color one-light">
 					<h2 class="main-title">Side Light</h2>
@@ -63,7 +65,8 @@
 					<!-- <h3 class="content-title">Color</h3> -->
 					<!-- <vtr-ui-lighting-color-wheel></vtr-ui-lighting-color-wheel> -->
 					<vtr-ui-color-wheel [showOverlay]="showHideOverlaySide" [inHEX]="inHex2"
-						[btnStatus]="applyBtnStatus2" (colorEffectChanged)="colorEffectChangedSide($event)">
+						[btnStatus]="applyBtnStatus2" (colorEffectChanged)="colorEffectChangedSide($event)"
+						[showApply]="showHideApply2" (colorEffectChanged)="colorEffectChangedSide($event)">
 					</vtr-ui-color-wheel>
 				</div>
 			</div>
