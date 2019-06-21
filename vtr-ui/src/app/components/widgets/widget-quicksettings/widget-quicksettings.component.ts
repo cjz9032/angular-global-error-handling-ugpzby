@@ -1,14 +1,28 @@
-import { Component, OnInit, Output, EventEmitter, OnDestroy, NgZone } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	Output,
+	EventEmitter,
+	OnDestroy,
+	NgZone,
+	ViewChild,
+	ElementRef,
+	AfterViewInit
+} from '@angular/core';
 
-import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
-import { CommonService } from 'src/app/services/common/common.service';
-import { Subscription } from 'rxjs/internal/Subscription';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
-import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
-import { DisplayService } from 'src/app/services/display/display.service';
-import { DeviceService } from 'src/app/services/device/device.service';
+
+
+
+import {FeatureStatus} from 'src/app/data-models/common/feature-status.model';
+import {DashboardService} from 'src/app/services/dashboard/dashboard.service';
+import {CommonService} from 'src/app/services/common/common.service';
+import {Subscription} from 'rxjs/internal/Subscription';
+import {AppNotification} from 'src/app/data-models/common/app-notification.model';
+import {DeviceMonitorStatus} from 'src/app/enums/device-monitor-status.enum';
+import {SessionStorageKey} from 'src/app/enums/session-storage-key-enum';
+import {DisplayService} from 'src/app/services/display/display.service';
+import {DeviceService} from 'src/app/services/device/device.service';
+import {WidgetSwitchIconComponent} from '../widget-switch-icon/widget-switch-icon.component';
 
 @Component({
 	selector: 'vtr-widget-quicksettings',
@@ -20,6 +34,12 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public microphoneStatus = new FeatureStatus(false, true);
 	public eyeCareModeStatus = new FeatureStatus(true, true);
 	private notificationSubscription: Subscription;
+	@ViewChild('camera')
+	cameraEl: WidgetSwitchIconComponent;
+	@ViewChild('microphone')
+	microphoneEl: WidgetSwitchIconComponent;
+	@ViewChild('eyecare')
+	eyecare: WidgetSwitchIconComponent;
 	public quickSettingsWidget = [
 		{
 			tooltipText: 'MICROPHONE',
@@ -42,14 +62,15 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		public displayService: DisplayService,
 		private commonService: CommonService,
 		private deviceService: DeviceService,
-		private ngZone: NgZone) { }
+		private ngZone: NgZone) {
+	}
 
 	ngOnInit() {
 		this.getQuickSettingStatus();
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
-		
+
 	}
 
 	ngOnDestroy() {
@@ -64,7 +85,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	// DeviceMonitorStatus
 	private onNotification(notification: AppNotification) {
 		if (notification) {
-			const { type, payload } = notification;
+			const {type, payload} = notification;
 			switch (type) {
 				case DeviceMonitorStatus.MicrophoneStatus:
 					console.log('DeviceMonitorStatus.MicrophoneStatus', payload);
@@ -72,12 +93,12 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 						this.microphoneStatus.status = payload.muteDisabled;
 						this.microphoneStatus.permission = payload.permission;
 					});
-					break;				
+					break;
 				case DeviceMonitorStatus.CameraStatus:
-					this.cameraStatus.permission=payload;
-					break;		
+					this.cameraStatus.permission = payload;
+					break;
 				default:
-					break;			
+					break;
 			}
 		}
 	}
@@ -94,9 +115,9 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		}
 
 		const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
-		if (privacy) {			
+		if (privacy) {
 			this.cameraStatus = privacy;
-			this.getCameraPermission()
+			this.getCameraPermission();
 		} else {
 			this.getCameraStatus();
 		}
@@ -111,12 +132,12 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 					.then((result) => {
 						console.log('getCameraPermission.then', result);
 						if (result) {
-							this.cameraStatus.permission = result.permission
+							this.cameraStatus.permission = result.permission;
 							this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraStatus);
 						}
 					}).catch(error => {
-						console.error('getCameraPermission', error);
-					});
+					console.error('getCameraPermission', error);
+				});
 			}
 		} catch (error) {
 			console.error(error.message);
@@ -138,13 +159,14 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 							}
 						}
 					}).catch(error => {
-						console.error('initEyecaremodeSettings', error);
-					});
+					console.error('initEyecaremodeSettings', error);
+				});
 			}
 		} catch (error) {
 			console.error(error.message);
 		}
 	}
+
 	private getCameraStatus() {
 		if (this.dashboardService.isShellAvailable) {
 			this.dashboardService
@@ -156,7 +178,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 					// if privacy available then start monitoring
 					if (featureStatus.available) {
 						this.startMonitorForCamera();
-						this.getCameraPermission()
+						this.getCameraPermission();
 						this.displayService.startMonitorForCameraPermission();
 					}
 				})
@@ -181,8 +203,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 						console.log('startMonitorForCamera.then', val);
 
 					}).catch(error => {
-						console.error('startMonitorForCamera', error);
-					});
+					console.error('startMonitorForCamera', error);
+				});
 			}
 		} catch (error) {
 			console.log('startMonitorForCamera', error);
@@ -196,8 +218,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 					.then((value: any) => {
 						console.log('stopMonitorForCamera.then', value);
 					}).catch(error => {
-						console.error('stopMonitorForCamera', error);
-					});
+					console.error('stopMonitorForCamera', error);
+				});
 			}
 		} catch (error) {
 			console.log('stopMonitorForCamera', error);
@@ -251,9 +273,9 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 						this.quickSettingsWidget[1].state = true;
 						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraStatus);
 					}).catch(error => {
-						this.quickSettingsWidget[1].state = true;
-						console.error('getCameraStatus', error);
-					});
+					this.quickSettingsWidget[1].state = true;
+					console.error('getCameraStatus', error);
+				});
 			}
 		} catch (error) {
 			this.quickSettingsWidget[1].state = true;
@@ -272,9 +294,9 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 						this.quickSettingsWidget[0].state = true;
 						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardMicrophone, this.microphoneStatus);
 					}).catch(error => {
-						this.quickSettingsWidget[0].state = true;
-						console.error('setMicrophoneStatus', error);
-					});
+					this.quickSettingsWidget[0].state = true;
+					console.error('setMicrophoneStatus', error);
+				});
 			}
 		} catch (error) {
 			this.quickSettingsWidget[0].state = true;
@@ -283,23 +305,31 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	}
 
 	public onEyeCareModeToggle($event: boolean) {
+		this.eyecare.isLoading = true;
 		this.quickSettingsWidget[2].state = false;
 		try {
 			if (this.dashboardService.isShellAvailable) {
 				this.dashboardService.setEyeCareMode($event)
 					.then((value: boolean) => {
+
 						console.log('setEyeCareMode.then', value, $event);
+						this.eyecare.isLoading = false;
 						this.eyeCareModeStatus.status = $event;
 						this.quickSettingsWidget[2].state = true;
 						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, this.eyeCareModeStatus);
 					}).catch(error => {
-						this.quickSettingsWidget[2].state = true;
-						console.error('setEyeCareMode', error);
-					});
+
+					this.eyecare.isLoading = false;
+					this.quickSettingsWidget[2].state = true;
+					console.error('setEyeCareMode', error);
+				});
 			}
 		} catch (error) {
+			this.eyecare.isLoading = false;
 			this.quickSettingsWidget[2].state = true;
 			console.log('onEyeCareModeToggle', error);
 		}
 	}
+
+
 }
