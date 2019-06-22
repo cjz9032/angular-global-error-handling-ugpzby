@@ -11,8 +11,8 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalIntelligentCoolingModesComponent } from '../../modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
-const thinkpad = "thinkpad";
-const ideapad = "ideapad";
+const thinkpad = 1;
+const ideapad = 0;
 @Component({
 	selector: 'vtr-power-smart-settings',
 	templateUrl: './power-smart-settings.component.html',
@@ -33,7 +33,7 @@ export class PowerSmartSettingsComponent implements OnInit {
 	apsStatus = false;
 	showIntelligentCoolingModes = true;
 	captionText = ""
-	machineType = "";
+	machineType: number;
 	add = 0;
 	onReadMoreClick: boolean;
 	@Output() isPowerSmartSettingHidden = new EventEmitter<any>();
@@ -46,7 +46,7 @@ export class PowerSmartSettingsComponent implements OnInit {
 
 	ngOnInit() {
 
-		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.SubBrand);
+		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		console.log("Machine Type: " + this.machineType)
 		if (thinkpad == this.machineType) {
 			this.add = 0;//thinkpad
@@ -54,6 +54,9 @@ export class PowerSmartSettingsComponent implements OnInit {
 		} else if (ideapad == this.machineType) {
 			this.add = 10;//Ideapad
 			this.initPowerSmartSettingsForIdeaPad();
+		} else {
+			this.showIC = 0;
+			this.isPowerSmartSettingHidden.emit(true);
 		}
 	}
 

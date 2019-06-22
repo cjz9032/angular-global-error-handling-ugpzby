@@ -14,7 +14,7 @@
 							<li class="list-group-item"
 								*ngIf="item.isVisible">
 								<div class="media pl-3 align-items-center">
-									<fa-icon [icon]="item.leftImageSource"></fa-icon>
+									<fa-icon [icon]="item.leftImageSource"></fa-icon> 
 									<div class="media-body pb-0 mb-0 small pl-3">
 										<div class="d-flex justify-content-between align-items-center w-100"
 											[ngClass]="{collapsible: item.isCollapsible}">
@@ -40,7 +40,8 @@
 													[name]="item.name"
 													(toggle)="onToggleOnOff($event)"
 													[value]="item.isChecked"
-													[disabled]="disableButtons">
+													[disabled]="disableButtons"
+													[readonly]="item.readonly">
 												</vtr-ui-switch-onoff>
 												<vtr-ui-popover
 													[item]="item"
