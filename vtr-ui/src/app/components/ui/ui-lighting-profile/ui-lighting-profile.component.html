@@ -1,5 +1,5 @@
 <div class="ui-lighting-profile">
-	<div class="d-flex justify-content-around">
+	<div class="d-flex justify-content-between">
 
 		<vtr-ui-lighting-profile-toggle (setLightingProfileId)="setLightingProfileId($event)"
 			[currentProfile]="currentProfile"></vtr-ui-lighting-profile-toggle>
@@ -34,11 +34,10 @@
 							[effectOptionName]="lightEffectRGBOptionName"
 							[enableBrightCondition1] = "enableBrightCondition" [selectedValue]="frontSelectedValue"
 							(change)="optionChangedRGBTop($event,item)"></vtr-ui-lighting-effect>
-
 						<!-- </ng-container> -->
-
 						<!-- <vtr-ui-lighting-color-wheel></vtr-ui-lighting-color-wheel> -->
 						<vtr-ui-color-wheel [showOverlay]="showHideOverlay" [inHEX]="inHex1"
+							[btnStatus]="applyBtnStatus1" (colorEffectChanged)="colorEffectChangedFront($event)"
 							[showApply]="showHideApply1" (colorEffectChanged)="colorEffectChangedFront($event)">
 						</vtr-ui-color-wheel>
 					</div>
@@ -67,6 +66,7 @@
 					<!-- <h3 class="content-title">Color</h3> -->
 					<!-- <vtr-ui-lighting-color-wheel></vtr-ui-lighting-color-wheel> -->
 					<vtr-ui-color-wheel [showOverlay]="showHideOverlaySide" [inHEX]="inHex2"
+						[btnStatus]="applyBtnStatus2" (colorEffectChanged)="colorEffectChangedSide($event)"
 						[showApply]="showHideApply2" (colorEffectChanged)="colorEffectChangedSide($event)">
 					</vtr-ui-color-wheel>
 				</div>
