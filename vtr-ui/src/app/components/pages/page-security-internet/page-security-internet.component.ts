@@ -7,6 +7,7 @@ import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { RegionService } from 'src/app/services/region/region.service';
 
 @Component({
 	selector: 'vtr-page-security-internet',
@@ -21,11 +22,14 @@ export class PageSecurityInternetComponent implements OnInit {
 	securityAdvisor: SecurityAdvisor;
 	backId = 'sa-vpn-btn-back';
 	isOnline = true;
+	region: string;
+	language: string;
 
 	constructor(
 		public mockService: MockService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
+		public regionService: RegionService,
 		vantageShellService: VantageShellService
 	) {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
@@ -45,6 +49,22 @@ export class PageSecurityInternetComponent implements OnInit {
 		this.vpn.on(EventTypes.vpnStatusEvent, (status: string) => {
 			this.statusItem.status = status;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, this.statusItem.status);
+		});
+		this.regionService.getRegion().subscribe({
+			next: x => {
+				this.region = x;
+			},
+			error: err => {
+				this.region = 'US';
+			}
+		});
+		this.regionService.getLanguage().subscribe({
+			next: x => {
+				this.language = x;
+			},
+			error: err => {
+				this.language = 'EN';
+			}
 		});
 		this.fetchCMSArticles();
 	}
@@ -72,17 +92,18 @@ export class PageSecurityInternetComponent implements OnInit {
 	fetchCMSArticles() {
 		const queryOptions = {
 			'Page': 'internet-protection',
-			'Lang': 'EN',
-			'GEO': 'US',
+			'Lang': this.language,
+			'GEO': this.region,
 			'OEM': 'Lenovo',
 			'OS': 'Windows',
 			'Segment': 'SMB',
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).then(
+		this.cmsService.fetchCMSContents(queryOptions).then(
 			(response: any) => {
-				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				const content = Array.isArray(response) ? response[0] ? response[0] : response[1] : response;
+				const cardContentPositionA = this.cmsService.getOneCMSContent(content, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {
 					this.cardContentPositionA = cardContentPositionA;
 					if (this.cardContentPositionA.BrandName) {

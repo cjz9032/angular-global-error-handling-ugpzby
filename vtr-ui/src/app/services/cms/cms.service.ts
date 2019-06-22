@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import isEqual from 'lodash/isEqual';
 
 import { CommsService } from '../comms/comms.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
@@ -78,6 +78,18 @@ export class CMSService {
 				}
 			);
 		});
+	}
+
+	fetchCMSContents(queryParams, defaultParams = { 'Lang': 'EN', 'GEO': 'US' }) {
+		const defaultQueryParams = Object.assign({}, queryParams);
+		Object.assign(defaultQueryParams, defaultParams);
+		if (isEqual(queryParams, defaultQueryParams)) {
+			return this.fetchCMSContent(queryParams);
+		}
+		return Promise.all([
+			this.fetchCMSContent(queryParams).catch(() => Promise.resolve()),
+			this.fetchCMSContent(defaultQueryParams)
+		]);
 	}
 
 	fetchCMSArticleCategories(queryParams) {
