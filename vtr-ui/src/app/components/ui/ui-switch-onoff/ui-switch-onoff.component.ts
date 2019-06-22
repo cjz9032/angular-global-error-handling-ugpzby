@@ -9,7 +9,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
 	selector: 'vtr-ui-switch-onoff',
 	templateUrl: './ui-switch-onoff.component.html',
-	styleUrls: [ './ui-switch-onoff.component.scss' ]
+	styleUrls: ['./ui-switch-onoff.component.scss']
 })
 export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	@Output() toggle: EventEmitter<any> = new EventEmitter();
@@ -18,7 +18,7 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	@Input() disabled = false;
 	@Input() showLoader = false;
 	@Input() theme = 'white';
-
+	@Input() readonly = false;
 	@Input() isSwitchDisable = false;
 
 	uiSubscription: Subscription;
@@ -38,6 +38,7 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.readonly = this.readonly || false;
 		this.commonService.notification.subscribe((response) => {
 			if (response.type === this.name) {
 				this.value = response.payload;
@@ -51,19 +52,37 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	/**
+	 * 
+	 * @param $event the toggle button info.
+	 * this function is to send the change event for readonly = false types.
+	 */
 	onChange($event) {
-		this.disabled = true;
-		if (this.name === 'recommended-updates') {
-			this.disabled = this.isSwitchDisable;
-			this.value = !this.value;
-		} else if (this.name !== 'wifiSecurity') {
-			this.disabled = false;
-			this.value = !this.value;
+		if (!this.readonly) {
+			this.disabled = true;
+			if (this.name === 'recommended-updates') {
+				this.disabled = this.isSwitchDisable;
+				this.value = !this.value;
+			} else if (this.name !== 'wifiSecurity') {
+				this.disabled = false;
+				this.value = !this.value;
+			}
+			$event.switchValue = this.value;
+			this.toggle.emit($event);
 		}
-		$event.switchValue = this.value;
-		this.toggle.emit($event);
 	}
 
+	/**
+	 * 
+	 * @param $event the toggle button info.
+	 * this function is to send the change event for the readonly = true types.
+	 */
+	sendChangeEvent($event) {
+		if (this.readonly) {
+			$event.switchValue = !this.value;
+			this.toggle.emit($event);
+		}
+	}
 	onLanguageChange(translation: Translation) {
 		if (translation && translation.type === TranslationSection.CommonUi) {
 			this.onLabel = translation.payload.on;
@@ -71,7 +90,7 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	stopPropagation(event){
+	stopPropagation(event) {
 		event.stopPropagation();
 	}
 }
