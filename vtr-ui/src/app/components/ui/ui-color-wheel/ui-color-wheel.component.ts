@@ -17,8 +17,9 @@ export class UiColorWheelComponent implements OnInit, OnChanges {
 	@Output() colorEffectChanged = new EventEmitter<any>();
 	@Input() inRGB: any;
 	@Input() inHEX: any;
-	@Input() showApply: boolean;
-	@Input() showOverlay: boolean;
+	@Input() btnStatus: String = 'apply';
+	@Input() showOverlay: Boolean;
+
 	colorWheel: any;
 
 	constructor() {}
@@ -38,6 +39,7 @@ export class UiColorWheelComponent implements OnInit, OnChanges {
 				that.backColor = color.hex;
 				that.color = color.rgb;
 				that.colorChanged.emit(this.color);
+				that.btnStatus = 'apply';
 			}
 		});
 
@@ -61,7 +63,6 @@ export class UiColorWheelComponent implements OnInit, OnChanges {
 	}
 
 	onApplyColorEffect(backColor) {
-		console.log('apply button clicked......................................');
 		this.colorEffectChanged.emit(backColor);
 	}
 
