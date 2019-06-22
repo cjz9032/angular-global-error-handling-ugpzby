@@ -5,8 +5,9 @@ import { VantageShellService } from '../../../services/vantage-shell/vantage-she
 import { CMSService } from '../../../services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
-import {AppNotification} from 'src/app/data-models/common/app-notification.model';
-import {NetworkStatus} from 'src/app/enums/network-status.enum';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { RegionService } from 'src/app/services/region/region.service';
 
 @Component({
 	selector: 'vtr-page-security-windows-hello',
@@ -21,11 +22,15 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 	securityAdvisor: SecurityAdvisor;
 	backId = 'sa-wh-btn-back';
 	isOnline = this.commonService.isOnline;
+	region: string;
+	language: string;
 
 	constructor(
 		public mockService: MockService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
+		public regionService: RegionService,
+
 		vantageShellService: VantageShellService
 	) {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
@@ -38,6 +43,24 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 		this.windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
 			this.updateStatus();
 		});
+		this.regionService.getRegion().subscribe({
+			next: x => {
+				this.region = x;
+			},
+			error: err => {
+				console.error(err);
+				this.region = 'US';
+			}
+		});
+		this.regionService.getLanguage().subscribe({
+			next: x => {
+				this.language = x;
+			},
+			error: err => {
+				console.error(err);
+				this.language = 'EN';
+			}
+		});
 		this.fetchCMSArticles();
 	}
 
@@ -45,6 +68,7 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+
 	}
 
 	setUpWindowsHello(): void {
@@ -71,20 +95,23 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 		}
 	}
 
+
+
 	fetchCMSArticles() {
 		const queryOptions = {
 			'Page': 'windows-hello',
-			'Lang': 'EN',
-			'GEO': 'US',
+			'Lang': this.language,
+			'GEO': this.region,
 			'OEM': 'Lenovo',
 			'OS': 'Windows',
 			'Segment': 'SMB',
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).then(
+		this.cmsService.fetchCMSContents(queryOptions).then(
 			(response: any) => {
-				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				const content = Array.isArray(response) ? response[0] ? response[0] : response[1] : response;
+				const cardContentPositionA = this.cmsService.getOneCMSContent(content, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {
 					this.cardContentPositionA = cardContentPositionA;
 					if (this.cardContentPositionA.BrandName) {
