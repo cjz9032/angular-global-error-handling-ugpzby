@@ -81,7 +81,7 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 	private mapMessage(historyList: Array<UpdateHistory>): Array<UpdateHistory> {
 		historyList.forEach((item: UpdateHistory) => {
 			const date = this.commonService.formatLocalDate(item.utcInstallDate);
-			const time = this.commonService.formatTime(item.utcInstallDate);
+			const time = this.commonService.formatLocalTime(item.utcInstallDate);
 			if (item.status.toLocaleLowerCase() === 'installed') {
 				item.message = this.translate.instant('systemUpdates.successInstall') + ' ' + date + ' ' + this.translate.instant('systemUpdates.at') + ' ' + time;
 			} else {

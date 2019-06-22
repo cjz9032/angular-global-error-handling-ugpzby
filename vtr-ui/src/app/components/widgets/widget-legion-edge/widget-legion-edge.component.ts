@@ -63,6 +63,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isDriverPopup: false,
 			isChecked: false,
 			tooltipText: '',
+			readonly: true,
 			type: 'gaming.dashboard.device.legionEdge.ramOverlock'
 		},
 		{
@@ -119,6 +120,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isDriverPopup: false,
 			isChecked: false,
 			tooltipText: '',
+			readonly: true,
 			type: 'gaming.dashboard.device.legionEdge.hybridMode'
 		},
 		{
@@ -303,8 +305,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 	public renderRamOverClockStatus() {
 	//	this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
-			// console.log('xtu--->' + this.gamingCapabilities.xtuService);
-		//	this.gamingCapabilities = gamingCapabilities;
 			if (this.gamingCapabilities.xtuService === true) {
 			this.gamingSystemUpdateService.getRamOCStatus().then((ramOcStatus) => {
 					if (ramOcStatus !== undefined) {
@@ -377,11 +377,11 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public onPopupClosed($event) {
 		const name = $event.name;
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
-			this.disableButtons = false;
+		//	this.disableButtons = false;
 			this.commonService.sendNotification(name, this.legionUpdate[1].isChecked);
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
-			this.disableButtons = false;
+		//	this.disableButtons = false;
 			this.commonService.sendNotification(name, this.legionUpdate[4].isChecked);
 		}
 	}
@@ -391,10 +391,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			if (this.gamingCapabilities.xtuService === false) {
 				this.legionUpdate[1].isDriverPopup = $event;
-				this.disableButtons = true;
+			//	this.disableButtons = true;
 			} else {
 				this.legionUpdate[1].isPopup = $event;
-				this.disableButtons = true;
+			//	this.disableButtons = true;
 			}
 			this.gamingSystemUpdateService
 				.setRamOCStatus($event.switchValue)
@@ -416,7 +416,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		}
 		 if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
 			this.legionUpdate[4].isPopup = $event;
-			this.disableButtons = true;
+		//	this.disableButtons = true;
 			this.gamingHybridModeService
 				.setHybridModeStatus($event.switchValue)
 				.then((value: boolean) => {

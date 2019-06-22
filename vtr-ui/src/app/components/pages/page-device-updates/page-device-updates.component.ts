@@ -310,7 +310,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public getLastUpdatedText() {
 		if (this.lastInstallTime && this.lastInstallTime.length > 0) {
 			const installDate = this.commonService.formatLocalDate(this.lastInstallTime);
-			const installTime = this.commonService.formatTime(this.lastInstallTime);
+			const installTime = this.commonService.formatLocalTime(this.lastInstallTime);
 			return `${this.lastUpdatedText} ${installDate} ${this.at} ${installTime}`;
 		}
 		return this.neverCheckedText;
@@ -321,7 +321,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			return '';
 		} else if (this.nextScheduleScanTime && this.nextScheduleScanTime.length > 0) {
 			const scanDate = this.commonService.formatLocalDate(this.nextScheduleScanTime);
-			const scanTime = this.commonService.formatTime(this.nextScheduleScanTime);
+			const scanTime = this.commonService.formatLocalTime(this.nextScheduleScanTime);
 			return `${this.nextScanText} ${scanDate} ${this.at} ${scanTime}`;
 		}
 		return '';

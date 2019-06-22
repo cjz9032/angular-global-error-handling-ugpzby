@@ -14,9 +14,11 @@
 
 				<div class="form-group d-flex">
 					<label></label>
-					<button class="btn enable-button" [class.disable-button]="!showApply"
-						(click)="onApplyColorEffect(backColor)"><span *ngIf="showApply">APPLY</span>
-						<vtr-spinner *ngIf="!showApply"></vtr-spinner>
+					<button class="btn enable-button" [ngClass]="{'disable-button': btnStatus !== 'apply'}"
+						[disabled]="btnStatus !== 'apply'" (click)="onApplyColorEffect(backColor)">
+						<span *ngIf="btnStatus === 'apply'">APPLY</span>
+						<span *ngIf="btnStatus === 'applied'">APPLIED</span>
+						<vtr-spinner *ngIf="btnStatus === 'loading'"></vtr-spinner>
 					</button>
 				</div>
 				<div class="color-codes">

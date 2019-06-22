@@ -24,18 +24,18 @@
 				padding: 3rem 0;
 			}
 			&.left {
-				padding-right: 3rem;
+				padding-right: 4rem;
 				@media #{$mediaquery_5} {
-					padding-right: 2rem;
+					padding-right: 4rem;
 				}
 				@media #{$mediaquery_sm} {
 					padding-right: 0rem;
 				}
 			}
 			&.right {
-				padding-left: 3rem;
+				padding-left: 0rem;
 				@media #{$mediaquery_5} {
-					padding-left: 2rem;
+					padding-left: 0rem;
 				}
 				@media #{$mediaquery_sm} {
 					padding-left: 0rem;
@@ -43,6 +43,7 @@
 			}
 			&.link-wrapper {
 				padding: 0.5rem;
+				z-index: 9;
 			}
 			.link-container {
 				position: absolute;
@@ -64,8 +65,10 @@
 					font-size: 2rem;
 				}
 				.info-link {
+					color: $gaming_info_link;
 					border-bottom: 0.2rem solid $gaming_info_link;
 				&:hover{
+					color: $gaming_info_link_hover;
 					border-color:$gaming_info_link_hover;
 					text-decoration: none;
 				}
@@ -80,7 +83,7 @@
 					height: 22rem;
 				}
 				&.hds {
-					//overflow: hidden;
+					overflow: hidden;
 					position: absolute;
 					width: 100%;
 					border: 1px solid $gaming_darkest;
@@ -104,6 +107,8 @@
 						width: 100%;
 						font-size: 2rem;
 						text-align: center;
+						display: block;
+						z-index: 99;
 						fa-icon {
 							color: $shade;
 						}
@@ -508,6 +513,21 @@
 					}
 					.hd-item {
 						margin-bottom: 3.5rem;
+						position: relative;
+						&:nth-child(odd){
+							z-index: 9;
+						}
+						.gaming-tooltip {
+							top: -6rem;
+							left: 50%;
+							transform: translate(-50%);
+						}
+						&:hover {
+							.gaming-tooltip {
+								display: inline-block;
+								opacity: 1;
+							}
+						}
 						&.danger {
 							.monitor-hd {
 								.hd-ring {
