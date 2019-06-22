@@ -101,8 +101,8 @@ export class PageSecurityInternetComponent implements OnInit {
 		};
 
 		this.cmsService.fetchCMSContents(queryOptions).then(
-			(response: [any, any]) => {
-				const content = response[0] ? response[0] : response[1];
+			(response: any) => {
+				const content = Array.isArray(response) ? response[0] ? response[0] : response[1] : response;
 				const cardContentPositionA = this.cmsService.getOneCMSContent(content, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {
 					this.cardContentPositionA = cardContentPositionA;

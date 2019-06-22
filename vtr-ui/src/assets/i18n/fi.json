@@ -259,6 +259,28 @@
                 "applied": {
                     "title": "APPLIED"
                 }
+            },
+            "brightness": {
+                "text1": {
+                    "title": "*Brightness setting doesn't apply on "
+                },
+                "text2": {
+                    "title": " effect"
+                }
+            },
+            "lightingSingleLightingOption": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                }
             }
         }
     },
@@ -339,7 +361,7 @@
         "personal": "PERSONAL",
         "custom": "CUSTOM",
         "skip": "SKIP",
-        "next": "NEXT",
+        "next": "SEURAAVA",
         "interests": "What are your interests?",
         "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
         "games": "GAMES",
@@ -535,10 +557,10 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "This system may not support battery that",
-                        "description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
-                        "description1": "Attention:",
-                        "description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
+                        "title": "Battery 1",
+                        "description": "you cannot use the attached battery with this computer.",
+                        "description1": "Replace",
+                        "description2": "it with a battery of correct model."
                     },
                     "Good": {
                         "title": "The battery is in good condition."
@@ -679,7 +701,8 @@
                             "extremeCooling": "ERINOMAINEN SUORITUSKYKY",
                             "battery&Quite": "AKKU JA HILJAINEN"
                         }
-                    }
+                    },
+                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
                 },
                 "powerSettings": {
                     "title": "Virta-asetukset",
@@ -1050,7 +1073,8 @@
                 "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection"
+                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
+                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
                 },
                 "manualActiveProtectionSuspension": {
                     "title": "Manual Active Protection Suspension",
@@ -1616,10 +1640,10 @@
     },
     "faq": {
         "footer": {
-            "title": "Not finding what you are looking for?",
-            "description": "NEED ADDITIONAL SUPPORT? DON’T HESITATE TO CONTACT US VIA:",
-            "body": "Lenovo Community",
-            "button": "GO TO FORUM"
+            "title": "Etkö löydä mitä etsit?",
+            "description": "LISÄTIETOJA? ÄLÄ KYSY YHTEYTTÄ VIA:",
+            "body": "Lenovo-yhteisö",
+            "button": "Siirry FORUMiin"
         },
         "question1": {
             "title": "Tiedostojen varmuuskopiointi ja palauttaminen",
