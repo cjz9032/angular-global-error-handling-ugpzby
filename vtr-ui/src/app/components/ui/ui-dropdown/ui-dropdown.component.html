@@ -4,8 +4,7 @@
 	<div class="input"
 		(click)="toggle()">
 		<div class="time">
-			<p>{{placeholder | uppercase}}</p>
-			<span>{{name}}</span>
+			<span>{{name}} {{placeholder}} </span>
 		</div>
 		<p class="chevron">
 			<fa-icon *ngIf="!isDropDownOpen"
