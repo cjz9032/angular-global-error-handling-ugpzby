@@ -1,6 +1,6 @@
 // ANGULAR MODULES
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {NgModule, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler} from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -93,6 +93,7 @@ import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-de
 import { CameraDetailMockService } from './services/camera/camera-detail/camera-detail.mock.service';
 import { AudioService } from './services/audio/audio.service';
 import { RegionService } from './services/region/region.service';
+import {GlobalErrorHandler} from './services/error-handler/global.service';
 
 // FONT AWESOME
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -450,7 +451,8 @@ library.add(fal);
 		UserService,
 		AudioService,
 		RegionService,
-		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
+		{ provide: BaseCameraDetail, useClass: CameraDetailMockService },
+		{ provide: ErrorHandler, useClass: GlobalErrorHandler }
 	],
 	bootstrap: [AppComponent],
 	entryComponents: [

@@ -16,6 +16,7 @@
 								[title]="'device.smartAssist.activeProtectionSystem.activeProtection.title' | translate"
 								[caption]=" 'device.smartAssist.activeProtectionSystem.activeProtection.caption' | translate"
 								[isSwitchVisible]="true"
+								[isSwitchChecked]="status"
 								[leftIcon]="['fal', 'gem']"
 								[theme]="'white'">
 							</vtr-ui-row-switch>
@@ -24,13 +25,14 @@
 							<vtr-ui-aps-slider [legends]="['Low Sensitivity', 'Medium Sensitivity', 'High Sensitivity']"
 								[minValue]="0"
 								[maxValue]="100"
-								[enableSlider]="true"
+								[enableSlider]="false"
 								[value]="50"
 								[theme]="'white'">
 							</vtr-ui-aps-slider>
 						</div>
 						<div class="checkbox">
-							<vtr-ui-checkbox [label]="'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate">
+							<vtr-ui-checkbox
+								[label]="'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate">
 							</vtr-ui-checkbox>
 						</div>
 					</li>
@@ -43,6 +45,7 @@
 							[leftIcon]="['fal', 'gem']"
 							[theme]="'white'"
 							[isSwitchVisible]="true"
+							[isSwitchChecked]="false"
 							[showChildContent]="true">
 						</vtr-ui-row-switch>
 						<div class="dropdown row">
@@ -50,7 +53,8 @@
 								<p class="text-uppercase">
 									{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.dropdown-title' | translate }}
 								</p>
-								<vtr-ui-dropdown [list]="intervals" [value]="10"></vtr-ui-dropdown>
+								<vtr-ui-dropdown [list]="intervals"
+									[value]="10"></vtr-ui-dropdown>
 							</section>
 							<section class="col-sm-5">
 								<div class="pt-4 text-center">
