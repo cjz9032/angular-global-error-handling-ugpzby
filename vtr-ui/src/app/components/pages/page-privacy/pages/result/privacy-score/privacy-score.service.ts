@@ -104,10 +104,11 @@ export class PrivacyScoreService {
 		return this.breachedAccountsService.onGetBreachedAccounts$.pipe(
 			filter((breachedAccounts) => breachedAccounts.error === null),
 			map((figleafBreaches) => {
-				const fixedBreachesAmount = figleafBreaches.breaches.filter(breach => !!breach.isFixed).length;
+				const allBreaches = figleafBreaches.breaches || [];
+				const fixedBreachesAmount = allBreaches.filter(breach => !!breach.isFixed).length;
 				return {
 					fixedBreaches: fixedBreachesAmount,
-					unfixedBreaches: figleafBreaches.breaches.length - fixedBreachesAmount,
+					unfixedBreaches: allBreaches.length - fixedBreachesAmount,
 				};
 			}),
 			startWith({fixedBreaches: 0, unfixedBreaches: 0})

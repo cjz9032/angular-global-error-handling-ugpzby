@@ -77,6 +77,7 @@ export class ConfirmationComponent implements OnInit, OnDestroy, AfterViewInit {
 	}
 
 	confirmCode() {
+		this.confirmationForm.markAsDirty();
 		if (this.confirmationForm.valid) {
 			this.emailScannerService.validateVerificationCode(this.confirmationForm.value.confirmationCode).pipe(
 			).subscribe(() => {

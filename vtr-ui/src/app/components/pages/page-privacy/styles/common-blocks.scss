@@ -33,7 +33,7 @@ $topIndent: -5.6rem;
 	display: inline-block;
 	vertical-align: middle;
 	padding: 1.5rem 4rem;
-	min-width: 15rem;
+	min-width: 18rem;
 	max-width: 100%;
 	background: transparent linear-gradient(-270deg, #4980FC 0%, #2E62D9 100%) 0 0 no-repeat;
 	background-size: 100% auto;
@@ -147,6 +147,13 @@ $topIndent: -5.6rem;
 
 	&--open {
 		&:before {
+			transform: translateY(-50%) rotate(0deg);
+		}
+	}
+
+	&--disabled {
+		&:before {
+			background-image: url("/assets/icons/privacy-tab/icon-grey-arrow.svg");
 			transform: translateY(-50%) rotate(0deg);
 		}
 	}
