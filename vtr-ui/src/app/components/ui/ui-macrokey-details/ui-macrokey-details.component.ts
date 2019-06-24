@@ -69,11 +69,13 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 	ngOnChanges(changes) {
 		if (!isUndefined(changes.messageData)) {
 			if (changes.messageData.currentValue === MacroKeyMessageData.timeout10) {
+				this.modalContent.headerTitle = 'gaming.macroKey.popupContent.timeoutRecording.title';
 				this.modalContent.bodyText = 'gaming.macroKey.popupContent.inputStopped.body';
 				this.showModal = !this.showModal;
 				this.toggleRecording(true);
 			}
 			if (changes.messageData.currentValue === MacroKeyMessageData.timeout20) {
+				this.modalContent.headerTitle = 'gaming.macroKey.popupContent.timeoutRecording.title';
 				this.modalContent.bodyText = 'gaming.macroKey.popupContent.timeoutRecording.body';
 				this.showModal = !this.showModal;
 				this.toggleRecording(true);
