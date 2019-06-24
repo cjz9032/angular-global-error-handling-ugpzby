@@ -77,8 +77,6 @@ export class PageSecurityComponent implements OnInit {
 	score: number;
 	maliciousWifi: number;
 	cardContentPositionA: any = {};
-	region: string;
-	language: string;
 	isOnline: boolean;
 	backId = 'sa-ov-btn-back';
 	itemStatusClass = {
@@ -233,43 +231,14 @@ export class PageSecurityComponent implements OnInit {
 		this.securityAdvisor.setScoreRegistry(this.score);
 	}
 
-	getLangRegion() {
-		this.regionService.getRegion().subscribe({
-			next: x => {
-				this.region = x;
-			},
-			error: err => {
-				console.error(err);
-				this.region = 'US';
-			}
-		});
-		this.regionService.getLanguage().subscribe({
-			next: x => {
-				this.language = x;
-			},
-			error: err => {
-				console.error(err);
-				this.language = 'EN';
-			}
-		});
-	}
-
 	fetchCMSArticles() {
-		this.getLangRegion();
 		const queryOptions = {
-			'Page': 'security',
-			'Lang': this.language,
-			'GEO': this.region,
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			'Page': 'security'
 		};
 
-		this.cmsService.fetchCMSContents(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				const content = Array.isArray(response) ? response[0] ? response[0] : response[1] : response;
-				const cardContentPositionA = this.cmsService.getOneCMSContent(content, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {
 					this.cardContentPositionA = cardContentPositionA;
 					if (this.cardContentPositionA.BrandName) {
