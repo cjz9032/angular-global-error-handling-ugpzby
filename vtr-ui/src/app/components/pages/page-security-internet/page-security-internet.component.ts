@@ -22,8 +22,6 @@ export class PageSecurityInternetComponent implements OnInit {
 	securityAdvisor: SecurityAdvisor;
 	backId = 'sa-vpn-btn-back';
 	isOnline = true;
-	region: string;
-	language: string;
 
 	constructor(
 		public mockService: MockService,
@@ -50,22 +48,6 @@ export class PageSecurityInternetComponent implements OnInit {
 			this.statusItem.status = status;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, this.statusItem.status);
 		});
-		this.regionService.getRegion().subscribe({
-			next: x => {
-				this.region = x;
-			},
-			error: err => {
-				this.region = 'US';
-			}
-		});
-		this.regionService.getLanguage().subscribe({
-			next: x => {
-				this.language = x;
-			},
-			error: err => {
-				this.language = 'EN';
-			}
-		});
 		this.fetchCMSArticles();
 	}
 
@@ -91,19 +73,12 @@ export class PageSecurityInternetComponent implements OnInit {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'internet-protection',
-			'Lang': this.language,
-			'GEO': this.region,
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			'Page': 'internet-protection'
 		};
 
-		this.cmsService.fetchCMSContents(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				const content = Array.isArray(response) ? response[0] ? response[0] : response[1] : response;
-				const cardContentPositionA = this.cmsService.getOneCMSContent(content, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {
 					this.cardContentPositionA = cardContentPositionA;
 					if (this.cardContentPositionA.BrandName) {
