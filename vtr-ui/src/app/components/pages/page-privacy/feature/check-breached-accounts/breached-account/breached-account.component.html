@@ -15,12 +15,11 @@
 		</div>
         <div class="breached-account__text">
             <div class="breached-account__social">
-
                 <div class="breached-account__social-description">
                     <h4 class="breached-account__title">{{transformDomain(account.domain)}}</h4>
                     <p class="breached-account__date"
 					   *ngIf="openId !== i && account.domain !== 'n/a'"
-                       title="{{account.date}}">Breached on {{account.date | date:'MMM d, y'}}</p>
+                       title="{{account.date}}">Breached on {{(account.date | date:'MMM d, y') || account.date}}</p>
                 </div>
             </div>
 
@@ -33,12 +32,12 @@
 
             <div class="breached-account__details">
 				<span class="breached-account__details-text"
-					  *ngIf="!isUserAuthorized">
+					  *ngIf="!isUserAuthorized && !isFigleafReadyForCommunication">
 					Verify your email for details
 				</span>
                 <button class="breached-account__preview-link"
                         (click)="verifyClickEmit()"
-                        *ngIf="!isUserAuthorized"
+                        *ngIf="!isUserAuthorized && !isFigleafReadyForCommunication"
                         vtrSendAnalytics
                         [metricsEvent]="'ItemClick'"
                         [metricsItem]="'BreachedAccountsDetailItem'">
@@ -46,11 +45,14 @@
                 </button>
 
                 <button class="breached-account__accordion-button"
-                        *ngIf="isUserAuthorized"
+                        *ngIf="isUserAuthorized || isFigleafReadyForCommunication"
                         vtrSendAnalytics
                         [metricsEvent]="'ItemClick'"
                         [metricsItem]="'BreachedAccountsDetailItem'"
-                        [ngClass]="{'breached-account__accordion-button--open': openId === i}"
+                        [ngClass]="{
+                        	'breached-account__accordion-button--open': openId === i,
+                        	'breached-account__accordion-button--to-right': isFigleafReadyForCommunication
+                        }"
                         (click)="isFigleafReadyForCommunication ? openFigleaf(account.link) : openAccordion(i)">
                     <span>Details</span>
                 </button>
@@ -75,6 +77,7 @@
 </div>
 <div *ngIf="openId === null">
 	<vtr-try-product-block
+		[isFigleafReadyToCommunication]="isFigleafReadyForCommunication"
 		[texts]="tryProductText">
 	</vtr-try-product-block>
 </div>

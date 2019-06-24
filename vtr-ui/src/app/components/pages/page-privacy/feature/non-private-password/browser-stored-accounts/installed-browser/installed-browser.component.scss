@@ -42,20 +42,40 @@
     line-height: 2.3rem;
     margin: 0;
   }
-  &__btn {
-    @extend %theme-btn;
-	min-width: 20rem;
-    text-transform: uppercase;
-    font-weight: 500;
-    transition: all 0.2s ease-in-out;
-    &--disabled {
-      background: linear-gradient(270deg, #E2E2E2 0%, #C2C6CF 100%);
-    }
-    &--expanded {
-      background: #fff;
-      color: #4A81FD;
-      border-color: transparent;
-    }
+
+	&__btn {
+		@extend %button-link;
+		color: #4A81FD;
+		font-size: 1.6rem;
+		font-weight: 500;
+		line-height: 2.3rem;
+		letter-spacing: 0.5px;
+		text-transform: initial;
+
+		&--expanded {
+			@extend %button-link--open;
+		}
+
+		&--disabled {
+			@extend %button-link--disabled;
+			text-transform: initial;
+			color: #C2C9CF;
+			cursor: default;
+
+			&:hover{
+				color: #C2C9CF;
+			}
+		}
+
+		&--action {
+			text-transform: uppercase;
+			border-bottom: 1px solid #2D62D8;
+			padding: 0;
+			&:before {
+				display: none;
+				background-image: none;
+			}
+		}
   }
   &__content {
     margin-top: 2rem;

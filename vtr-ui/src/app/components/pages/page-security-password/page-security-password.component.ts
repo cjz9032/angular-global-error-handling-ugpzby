@@ -26,8 +26,6 @@ export class PageSecurityPasswordComponent implements OnInit {
 	dashlaneArticleId = '0EEB43BE718446C6B49F2C83FC190758';
 	dashlaneArticleCategory: string;
 	isOnline = true;
-	region: string;
-	language: string;
 
 	constructor(
 		public mockService: MockService,
@@ -55,24 +53,6 @@ export class PageSecurityPasswordComponent implements OnInit {
 			this.statusItem.status = status;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus, this.statusItem.status);
 		});
-		this.regionService.getRegion().subscribe({
-			next: x => {
-				this.region = x;
-			},
-			error: err => {
-				console.error(err);
-				this.region = 'US';
-			}
-		});
-		this.regionService.getLanguage().subscribe({
-			next: x => {
-				this.language = x;
-			},
-			error: err => {
-				console.error(err);
-				this.language = 'EN';
-			}
-		});
 		this.fetchCMSArticles();
 	}
 
@@ -98,19 +78,12 @@ export class PageSecurityPasswordComponent implements OnInit {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'password-protection',
-			'Lang': this.language,
-			'GEO': this.region,
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			'Page': 'password-protection'
 		};
 
-		this.cmsService.fetchCMSContents(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				const content = Array.isArray(response) ? response[0] ? response[0] : response[1] : response;
-				const cardContentPositionA = this.cmsService.getOneCMSContent(content, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {
 					this.cardContentPositionA = cardContentPositionA;
 					if (this.cardContentPositionA.BrandName) {
