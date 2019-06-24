@@ -52,6 +52,7 @@ import {
 	NetworkStatus
 } from 'src/app/enums/network-status.enum';
 
+
 @Component({
 	selector: 'vtr-page-security',
 	templateUrl: './page-security.component.html',
@@ -77,6 +78,7 @@ export class PageSecurityComponent implements OnInit {
 	maliciousWifi: number;
 	cardContentPositionA: any = {};
 	region: string;
+	language: string;
 	isOnline: boolean;
 	backId = 'sa-ov-btn-back';
 	itemStatusClass = {
@@ -231,20 +233,43 @@ export class PageSecurityComponent implements OnInit {
 		this.securityAdvisor.setScoreRegistry(this.score);
 	}
 
+	getLangRegion() {
+		this.regionService.getRegion().subscribe({
+			next: x => {
+				this.region = x;
+			},
+			error: err => {
+				console.error(err);
+				this.region = 'US';
+			}
+		});
+		this.regionService.getLanguage().subscribe({
+			next: x => {
+				this.language = x;
+			},
+			error: err => {
+				console.error(err);
+				this.language = 'EN';
+			}
+		});
+	}
+
 	fetchCMSArticles() {
+		this.getLangRegion();
 		const queryOptions = {
 			'Page': 'security',
-			'Lang': 'EN',
-			'GEO': 'US',
+			'Lang': this.language,
+			'GEO': this.region,
 			'OEM': 'Lenovo',
 			'OS': 'Windows',
 			'Segment': 'SMB',
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).then(
+		this.cmsService.fetchCMSContents(queryOptions).then(
 			(response: any) => {
-				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				const content = Array.isArray(response) ? response[0] ? response[0] : response[1] : response;
+				const cardContentPositionA = this.cmsService.getOneCMSContent(content, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {
 					this.cardContentPositionA = cardContentPositionA;
 					if (this.cardContentPositionA.BrandName) {

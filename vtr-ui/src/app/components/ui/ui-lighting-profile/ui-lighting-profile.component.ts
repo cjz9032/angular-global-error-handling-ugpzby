@@ -45,8 +45,8 @@ export class UiLightingProfileComponent implements OnInit {
 
 	public inHex1: any;
 	public inHex2: any;
-	public showHideApply1: boolean = true;
-	public showHideApply2: boolean = true;
+	public applyBtnStatus1: String = 'apply';
+	public applyBtnStatus2: String = 'apply';
 	public showHideOverlay: boolean = false;
 	public showHideOverlaySide: boolean = false;
 	public selectedSingleColorOptionId: number;
@@ -563,7 +563,7 @@ export class UiLightingProfileComponent implements OnInit {
 				this.isProfileOff = true;
 			} else {
 				this.isProfileOff = false;
-				this.currentProfileId=this.isOff;
+				this.currentProfileId = this.isOff;
 				if (this.gamingLightingService.isShellAvailable) {
 					this.gamingLightingService
 						.setLightingDefaultProfileById(this.currentProfileId)
@@ -989,7 +989,7 @@ export class UiLightingProfileComponent implements OnInit {
 		}
 	}
 	colorEffectChangedFront($event) {
-		this.showHideApply1 = false;
+		this.applyBtnStatus1 = 'loading';
 		$event = $event.substring(1);
 		console.log('set color pallet color effect front------------------------>', JSON.stringify($event));
 
@@ -1011,7 +1011,7 @@ export class UiLightingProfileComponent implements OnInit {
 					);
 
 					if (response.didSuccess) {
-						this.showHideApply1 = true;
+						this.applyBtnStatus1 = 'applied';
 						this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileEffectColor, response);
 						console.log(
 							'set color pallet color effect front response----------cache---------->',
@@ -1026,7 +1026,7 @@ export class UiLightingProfileComponent implements OnInit {
 		}
 	}
 	colorEffectChangedSide($event) {
-		this.showHideApply2 = false;
+		this.applyBtnStatus2 = 'loading';
 		$event = $event.substring(1);
 		console.log('set color pallet color effect side ------------------------>', JSON.stringify($event));
 		if (this.lightingProfileEffectColorString === undefined) {
@@ -1047,8 +1047,7 @@ export class UiLightingProfileComponent implements OnInit {
 					);
 
 					if (response.didSuccess) {
-						this.showHideApply2 = true;
-					} else {
+						this.applyBtnStatus2 = 'applied';
 					}
 				});
 		}

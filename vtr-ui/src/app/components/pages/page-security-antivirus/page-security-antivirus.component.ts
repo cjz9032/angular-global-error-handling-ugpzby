@@ -10,6 +10,7 @@ import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/mo
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { RegionService } from 'src/app/services/region/region.service';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',
@@ -32,6 +33,8 @@ export class PageSecurityAntivirusComponent implements OnInit {
 	backId = 'sa-av-btn-back';
 	mcafeeArticleCategory: string;
 	isOnline = true;
+	region: string;
+	language: string;
 
 	@HostListener('window:focus')
 	onFocus(): void {
@@ -42,7 +45,8 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		public VantageShell: VantageShellService,
 		public cmsService: CMSService,
 		public commonService: CommonService,
-		public modalService: NgbModal) {
+		public modalService: NgbModal,
+		public regionService: RegionService,) {
 		this.securityAdvisor = this.VantageShell.getSecurityAdvisor();
 		this.antiVirus = this.VantageShell.getSecurityAdvisor().antivirus;
 		this.viewModel = new AntiVirusviewModel(this.antiVirus, commonService);
@@ -197,20 +201,23 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		});
 	}
 
+
 	fetchCMSArticles() {
+		this.getLangRegion();
 		const queryOptions = {
 			'Page': 'anti-virus',
-			'Lang': 'EN',
-			'GEO': 'US',
+			'Lang': this.language,
+			'GEO': this.region,
 			'OEM': 'Lenovo',
 			'OS': 'Windows',
 			'Segment': 'SMB',
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).then(
+		this.cmsService.fetchCMSContents(queryOptions).then(
 			(response: any) => {
-				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				const content = Array.isArray(response) ? response[0] ? response[0] : response[1] : response;
+				const cardContentPositionA = this.cmsService.getOneCMSContent(content, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {
 					this.cardContentPositionA = cardContentPositionA;
 					if (this.cardContentPositionA.BrandName) {
@@ -226,6 +233,27 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		this.cmsService.fetchCMSArticle(this.urlGetMcAfee, {'Lang': 'EN'}).then((response: any) => {
 			if (response && response.Results && response.Results.Category) {
 				this.mcafeeArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
+			}
+		});
+	}
+
+	getLangRegion() {
+		this.regionService.getRegion().subscribe({
+			next: x => {
+				this.region = x;
+			},
+			error: err => {
+				console.error(err);
+				this.region = 'US';
+			}
+		});
+		this.regionService.getLanguage().subscribe({
+			next: x => {
+				this.language = x;
+			},
+			error: err => {
+				console.error(err);
+				this.language = 'EN';
 			}
 		});
 	}
