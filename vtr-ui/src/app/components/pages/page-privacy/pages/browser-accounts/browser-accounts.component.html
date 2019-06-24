@@ -2,6 +2,53 @@
 		 vtrSendAnalytics
 		 [metricsEvent]="'PageView'">
 
-	<vtr-non-private-password [browserStoredAccountsData]="browserStoredAccountsData"></vtr-non-private-password>
+	<div class="browser-accounts-page__header">
+		<ng-container *ngIf="(isNonPrivatePasswordWasScanned$ | async) &&
+							 (isFigleafReadyForCommunication$ | async) &&
+							 (nonPrivatePasswordCount$ | async) === 0;
+							  else defaultHeader">
+			<p class="browser-accounts-page__title-block">
+			<span class="browser-accounts-page__title">
+				{{(dashboardData$ | async)?.totalAccounts}} accounts stored in Lenovo Privacy
+			</span>
+				<button class="browser-accounts-page__btn"
+						(click)="openFigleafApp()">
+					View in Lenovo Privacy
+				</button>
+			</p>
+			<p class="browser-accounts-page__text">
+				You can log in to your favorite websites automatically with your passwords stored in Lenovo Privacy by
+				Figleaf.
+			</p>
+		</ng-container>
+		<ng-template #defaultHeader>
+			<vtr-feature-header
+				[texts]="textForFeatureHeader"
+				[countOfIssue]="nonPrivatePasswordCount$ | async"
+				[isFeatureWasScanned]="isNonPrivatePasswordWasScanned$ | async"
+				[isFigleafReadyToCommunication]="isFigleafReadyForCommunication$ | async">
+				<span class="browser-accounts-page__title--red">{{nonPrivatePasswordCount$ | async}}</span> Non-private
+				passwords found
+			</vtr-feature-header>
+		</ng-template>
+	</div>
 
+	<div *ngIf="!(isConsentToGetBrowsersAccountsGiven$ | async)" class="browser-accounts-concent">
+		<div class="browser-accounts-concent__text-wrapper">
+			<p class="browser-accounts-concent__text">
+				Show me what private information can be collected by third-party apps.
+			</p>
+		</div>
+		<div class="browser-accounts-concent__btn-wrapper">
+			<button class="browser-accounts-concent__btn"
+					vtrSendAnalytics
+					[metricsEvent]="'ItemClick'"
+					[metricsItem]="'NonPrivatePasswordsPermissionToAccessButton'"
+					(click)="giveConcentToGetBrowserAccounts()">
+				ACCEPT & SHOW
+			</button>
+		</div>
+	</div>
+
+	<vtr-non-private-password [browserStoredAccountsData]="browserStoredAccountsData"></vtr-non-private-password>
 </section>
