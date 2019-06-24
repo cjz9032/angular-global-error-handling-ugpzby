@@ -350,8 +350,7 @@
 					<!-- End of Intelligent Media -->
 
 					<!-- Start of Active Protection System -->
-					<div class="row py-5 smart-assist-card"
-						id="aps">
+					<div class="row py-5 smart-assist-card"	id="aps" *ngIf='isAPSavailable'>
 						<div class="col-10 mx-auto">
 							<vtr-container-collapsible
 								[cardTitle]="'device.smartAssist.activeProtectionSystem.title' | translate"
@@ -360,7 +359,9 @@
 								[allowCollapse]="true"
 								[theme]="'white'"
 								(toggle)="onCardCollapse($event)">
-								<vtr-active-protection-system></vtr-active-protection-system>
+								<vtr-active-protection-system 
+									[status]="apsStatus">
+								</vtr-active-protection-system>
 							</vtr-container-collapsible>
 						</div>
 					</div>

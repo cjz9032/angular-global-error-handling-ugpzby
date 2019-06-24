@@ -6,6 +6,8 @@
 					<p class="context">{{'device.smartAssist.voice.description' | translate}}</p>
 					<button type="button"
 						class="btn btn-primary btn-block install-btn">{{'device.smartAssist.voice.installBtnText' | translate | uppercase }}</button>
+						<!-- <button type="button"
+						class="btn btn-primary btn-block install-btn">{{'device.smartAssist.voice.launchBtnText' | translate | uppercase }}</button> -->
 				</div>
 			</div>
 		</div>
@@ -16,14 +18,9 @@
 					[caption]="'device.smartAssist.voice.voiceToText.caption' | translate"
 					[leftIcon]="['fal', 'gem']"
 					[rightIcon]="['far', 'question-circle']"
+					[voice]="true"
+					[voiceValue]="voiceToText"
 					[showChildContent]="true">
-					<div class="row">
-						<div class="col pl-2">
-								<div class="learn-more d-flex justify-content-end">
-										<a alt="" (click)="voicePopUp('voiceToText')">{{'device.smartAssist.voice.learnMoreText' | translate}}</a>
-								</div>
-						</div>
-					</div>
 				</vtr-ui-row-switch>
 			</li>
 			<li class="">
@@ -32,14 +29,9 @@
 						[caption]="'device.smartAssist.voice.translation.caption' | translate"
 						[leftIcon]="['fal', 'gem']"
 						[rightIcon]="['far', 'question-circle']"
+						[voice]="true"
+						[voiceValue]="translation"
 						[showChildContent]="true">
-						<div class="row">
-								<div class="col pl-2">
-										<div class="learn-more d-flex justify-content-end">
-												<a alt="" (click)="voicePopUp('translation')">{{'device.smartAssist.voice.learnMoreText' | translate}}</a>
-										</div>
-								</div>
-							</div>
 					</vtr-ui-row-switch>
 			</li>
 		</ul>

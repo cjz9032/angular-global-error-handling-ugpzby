@@ -994,6 +994,14 @@
 						"description": "change keyboard backlight states",
 						"image": ""
 					}
+				},
+				"userDefinedKey": {
+					"title": "User-defined Key",
+					"caption": "The key represented by the star icon allows you to set user defined function",
+					"dropDown": {
+						"title": "Action User Defined key",
+						"note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+					}
 				}
 			}
 		},
@@ -1117,7 +1125,6 @@
 				"description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
 				"installBtnText": "Install",
 				"launchBtnText": "Launch",
-				"learnMoreText": "Learn More",
 				"voiceToText": {
 					"title": "Voice to text",
 					"caption": "This feature helps to convert your voice into texts."
