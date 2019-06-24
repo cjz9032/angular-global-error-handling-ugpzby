@@ -44,7 +44,13 @@
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
                     "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock"
+                    "touchpadLock": "Touchpad Lock",
+                    "lightingDriverPopup": {
+                        "headerText": "Driver Install Required",
+                        "text": "Please install driver",
+                        "button": "Install",
+                        "link": "cancel"
+                    }
                 },
                 "systemTools": {
                     "power": "Power",
@@ -986,6 +992,14 @@
                         "description": "change keyboard backlight states",
                         "image": ""
                     }
+                },
+                "userDefinedKey": {
+                    "title": "User-defined Key",
+                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "dropDown": {
+                        "title": "Action User Defined key",
+                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                    }
                 }
             }
         },
@@ -1109,7 +1123,6 @@
                 "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
                 "installBtnText": "Install",
                 "launchBtnText": "Launch",
-                "learnMoreText": "Learn More",
                 "voiceToText": {
                     "title": "Voice to text",
                     "caption": "This feature helps to convert your voice into texts."
@@ -1292,7 +1305,8 @@
             "start": "開始導覽",
             "done": "完成",
             "welcome1": "歡迎使用",
-            "welcomeDesc1": "只需按幾下滑鼠，您和家人的 PC、行動裝置和所有連線裝置就能獲得保護。立即開始 30 天免費試用。",
+			"welcomeDesc1": "只需按幾下滑鼠，您和家人的 PC、行動裝置和所有連線裝置就能獲得保護。",
+			"welcomeDescStart": "立即開始 30 天免費試用。",
             "welcome2": "Vantage 獨家",
             "welcomeDesc2": "連線家庭安全性直接內建於 Vantage，可供快速存取生態系統和安全警報的保護狀態。",
             "create": "建立您的帳戶",
@@ -1994,7 +2008,8 @@
             },
             "para12": "Note",
             "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        }
+        },
+        "pageTitle": "支持細節"
     },
     "welcometutorial": {
         "description": "Vantage 讓您更容易更新驅動程式、執行診斷、要求支援並瞭解裝置。快速自訂您的體驗，並找到針對您的需要量身提供的實用資訊",

@@ -1,48 +1,43 @@
 @import "../../styles/common-blocks";
 
-.email-scanner {
+.breaches-page {
 	@extend %common-block-wrapper;
 	border-radius: 0 0 1rem 1rem;
 	padding: 3.5rem 4rem 4rem 4rem;
-}
 
-.breaches-wrapper {
-	@extend %common-block-wrapper;
-	border-radius: 0 0 1rem 1rem;
-	padding: 3.5rem 4rem 4rem 4rem;
-}
-
-.breached-accounts {
-	&__header {
-		padding: 0 0 2.5rem 0;
-		display: flex;
-		flex-flow: row;
-		justify-content: space-between;
-		align-items: center;
-	}
-	&__text {
-		@extend %text-common;
-	}
 	&__title {
 		@extend %subtitle;
 		font-weight: 400;
 
 		&--red {
 			color: red;
+			font-weight: bold;
 		}
 	}
-	&__acc-container {
+
+	&__header {
 		display: flex;
-		flex-wrap: wrap;
-		margin: -1rem -1.5rem;
+		flex-flow: row;
+		justify-content: space-between;
+		align-content: center;
+		align-items: flex-start;
 	}
 
-	&__account {
-		width: 100%;
-		margin: 1rem 1.5rem;
-	}
-
-	&__verify-button {
+	&__button {
 		@extend %theme-btn;
+	}
+}
+
+.breached-accounts {
+	margin-top: 3rem;
+
+	&__preview-link {
+		@extend %button-link;
+		padding: 0;
+		border-bottom: 1px solid #2D62D8;
+
+		&:before {
+			display: none;
+		}
 	}
 }
