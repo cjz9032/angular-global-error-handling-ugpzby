@@ -33,8 +33,6 @@ export class PageSecurityAntivirusComponent implements OnInit {
 	backId = 'sa-av-btn-back';
 	mcafeeArticleCategory: string;
 	isOnline = true;
-	region: string;
-	language: string;
 
 	@HostListener('window:focus')
 	onFocus(): void {
@@ -203,21 +201,13 @@ export class PageSecurityAntivirusComponent implements OnInit {
 
 
 	fetchCMSArticles() {
-		this.getLangRegion();
 		const queryOptions = {
-			'Page': 'anti-virus',
-			'Lang': this.language,
-			'GEO': this.region,
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			'Page': 'anti-virus'
 		};
 
-		this.cmsService.fetchCMSContents(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				const content = Array.isArray(response) ? response[0] ? response[0] : response[1] : response;
-				const cardContentPositionA = this.cmsService.getOneCMSContent(content, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {
 					this.cardContentPositionA = cardContentPositionA;
 					if (this.cardContentPositionA.BrandName) {
@@ -233,27 +223,6 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		this.cmsService.fetchCMSArticle(this.urlGetMcAfee, {'Lang': 'EN'}).then((response: any) => {
 			if (response && response.Results && response.Results.Category) {
 				this.mcafeeArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
-			}
-		});
-	}
-
-	getLangRegion() {
-		this.regionService.getRegion().subscribe({
-			next: x => {
-				this.region = x;
-			},
-			error: err => {
-				console.error(err);
-				this.region = 'US';
-			}
-		});
-		this.regionService.getLanguage().subscribe({
-			next: x => {
-				this.language = x;
-			},
-			error: err => {
-				console.error(err);
-				this.language = 'EN';
 			}
 		});
 	}

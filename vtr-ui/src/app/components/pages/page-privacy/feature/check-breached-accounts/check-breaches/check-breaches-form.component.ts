@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, filter, map, mapTo, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
@@ -37,7 +37,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	emailWasSubmitted = false;
 	serverError$ = this.listenError();
 	isLoading$ = this.emailScannerService.loadingStatusChanged$;
-	lenovoId: string;
+	lenovoId = '';
 	islenovoIdOpen = false;
 	isFormFocused = false;
 
@@ -46,7 +46,8 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 		private emailScannerService: EmailScannerService,
 		private commonPopupService: CommonPopupService,
 		private userService: UserService,
-		private breachedAccountsService: BreachedAccountsService
+		private breachedAccountsService: BreachedAccountsService,
+		private cdr: ChangeDetectorRef
 	) {
 	}
 
@@ -59,6 +60,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 
 	handleFocus() {
 		this.isFormFocused = true;
+		this.updateLenovoId();
 		this.openLenovoId();
 	}
 
@@ -71,16 +73,11 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 		event.preventDefault();
 	}
 
-	openLenovoId() {
-		from(this.userService.getUserProfile())
-			.subscribe((result: UserProfile) => {
-				this.lenovoId = validateEmail(result.userName) ? result.userName : '';
-			});
-
+	private openLenovoId() {
 		this.islenovoIdOpen = true;
 	}
 
-	closeLenovoId() {
+	private closeLenovoId() {
 		this.islenovoIdOpen = false;
 	}
 
@@ -132,5 +129,15 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 				map((breachedAccounts) => breachedAccounts.error !== null)
 			)
 		).pipe(distinctUntilChanged());
+	}
+
+	private updateLenovoId() {
+		if (!this.lenovoId) {
+			from(this.userService.getUserProfile())
+				.subscribe((result: UserProfile) => {
+					this.lenovoId = validateEmail(result.userName) ? result.userName : '';
+					this.cdr.detectChanges();
+				});
+		}
 	}
 }
