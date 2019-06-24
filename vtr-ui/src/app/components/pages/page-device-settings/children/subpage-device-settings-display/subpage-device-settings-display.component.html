@@ -267,7 +267,8 @@
 										(exposureChange)="onCameraExposureValueChange($event)"
 										(exposureToggle)="onCameraAutoExposureToggle($event)"
 										(cameraAvailable)="onCameraAvailable($event)"
-										[disabledAll]="shouldCameraSectionDisabled">
+										[disabledAll]="shouldCameraSectionDisabled"
+										[isCameraInErrorState]="isCameraInErrorState">
 									</vtr-camera-control>
 								</div>
 							</div>
