@@ -41,14 +41,12 @@
 						"button": "Install",
 						"link": "cancel"
 					},
-
 					"lightingDriverPopup": {
 						"headerText": "Driver Install Required",
 						"text": "Please install driver",
 						"button": "Install",
 						"link": "cancel"
 					},
-
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",
@@ -59,10 +57,12 @@
 					"media": "Media",
 					"macroKey": "Marco Key",
 					"hardwareScan": "Hardware Scan",
-					"systemUpdate": "System Update"
+					"systemUpdate": "System Update",
+					"header":"System Tools"
 				},
 				"lighting": {
-					"title": "Lighting Customize"
+					"title": "Lighting Customize",
+					"header": "Lighting"
 				},
 				"legionEdgeModal": {
 					"line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -1120,7 +1120,7 @@
 				"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
 				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
 			},
-			"voice":{
+			"voice": {
 				"title": "Voice",
 				"description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
 				"installBtnText": "Install",
@@ -1160,7 +1160,7 @@
 		"optionalUpdates": "Optional Update(s)",
 		"ignoredUpdates": "Ignored Update(s)",
 		"successInstall": "Successfully installed on",
-		"failedInstall": "Failed to installed on",
+		"failedInstall": "Failed to install on",
 		"at": "at",
 		"readMore": "Read more",
 		"popup": {
@@ -1275,13 +1275,9 @@
 	},
 	"homeSecurity": {
 		"title": "Connected Home Security",
-		"ecosystemBlockTitle": "Protect your device ecosystem",
 		"overviewBlockTitle": "Your Ecosystem Security Overview",
-		"thisDevice": "This device",
-		"allDevices": "All Devices",
-		"protected": "Protected",
-		"notProtected": "Not Protected",
 		"myDevice": "My Device",
+		"allDevices": "All Devices",
 		"secure": "SECURE",
 		"needAttention": "NEEDS ATTENTION",
 		"manageAccount": "Manage account",
@@ -1291,16 +1287,28 @@
 		"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
 		"upgrade": "upgrade",
 		"freeTrial": "Protect all of your devices - Free 30 day trial",
-		"inEcosystem": "In Ecosystem",
-		"ecosystemEnable": "Ecosystem Enabled",
-		"inTrial": "In trial",
-		"addEcosystem": "Add to Ecosystem",
-		"enableEcosystem": "Enable Ecosystem",
 		"startTrial": "Start Trial",
-		"fullAccess": "Full Access",
-		"recent": "Recent security notifications",
-		"notification": "Notifications",
-		"renew": "Renew",
+		"notification":{
+			"recent": "Recent security notifications",
+			"notifications": "Notifications"
+		},
+		"ecosystem": {
+			"ecosystemBlockTitle": "Protect your device ecosystem",
+			"thisDevice": "This device",
+			"allDevices": "All Devices",
+			"protected": "Protected",
+			"notProtected": "Not Protected",
+			"trialExpired": "Trial expired",
+			"upgrade": "upgrade",
+			"inEcosystem": "In Ecosystem",
+			"ecosystemEnable": "Ecosystem Enabled",
+			"inTrial": "In trial",
+			"addEcosystem": "Add to Ecosystem",
+			"enableEcosystem": "Enable Ecosystem",
+			"startTrial": "Start Trial",
+			"fullAccess": "Full Access",
+			"renew": "Renew"
+		},
 		"tour": {
 			"back": "Back",
 			"skip": "Skip",
@@ -1316,7 +1324,7 @@
 			"notifications": "Receive <b>notifications</b> about your home's status",
 			"monitor": "<b>Monitor</b> the safety of your family's devices",
 			"peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
-			"signInLenovoId": "SIGH-UP WITH LENOVO ID",
+			"signInLenovoId": "SIGN-UP WITH LENOVO ID",
 			"haveLenovo": "I don't have a <b>Lenovo ID</b>",
 			"createLenovo": "&nbsp;Create a Lenovo ID",
 			"without": "Proceed <b>without an account</b>",
