@@ -570,4 +570,15 @@ export class VantageShellService {
 		console.log('NO PHOENIX AVAILABLE - vantage shell');
 		return undefined;
 	}
+
+	// =================== Start Lenovo Voice
+	public getLenovoVoice(): any {
+		if (this.phoenix) {
+			console.log('PHOENIX AVAILABLE - vantage shell');
+			return this.phoenix.lenovovoice;
+		}
+		console.log('NO PHOENIX AVAILABLE - vantage shell');
+		return undefined;
+	}
+	// ==================== End Lenovo Voice
 }
