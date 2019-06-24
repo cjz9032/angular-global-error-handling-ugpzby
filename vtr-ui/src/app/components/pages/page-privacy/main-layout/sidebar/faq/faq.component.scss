@@ -55,11 +55,13 @@
 
 	&__item-title {
 		color: #34495E;
-		font-size: 1.3rem;
+		font-size: 1.4rem;
+		font-weight: 600;
 		line-height: 1.6;
 		padding: 1.8rem 4.2rem 1.5rem 2rem;
 		position: relative;
 		width: 100%;
+		cursor: pointer;
 
 		&:after {
 			content: "";
@@ -91,7 +93,7 @@
 	&__item-description {
 		background-color: #FEFEFE;
 		padding: 1.8rem 4.2rem 1.8rem 2rem;
-		font-size: 1.2rem;
+		font-size: 1.4rem;
 		line-height: 2rem;
 		cursor: default;
 	}

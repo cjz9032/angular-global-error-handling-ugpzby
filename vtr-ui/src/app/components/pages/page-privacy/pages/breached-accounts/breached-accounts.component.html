@@ -2,36 +2,60 @@
 		 vtrSendAnalytics
 		 [metricsEvent]="'PageView'">
 
+	<div class="breaches-page__header">
+		<vtr-feature-header
+			[texts]="textForFeatureHeader"
+			[isFeatureWasScanned]="emailWasScanned$ | async"
+			[countOfIssue]="breachedAccountsCount$ | async"
+			[isFigleafReadyToCommunication]="isFigleafReadyForCommunication$ | async">
+			<span class="breaches-page__title--red">{{breachedAccountsCount$ | async}}</span> breached accounts found
+		</vtr-feature-header>
+
+		<button class="breaches-page__button"
+				*ngIf="(emailWasScanned$ | async) &&
+				(breachedAccounts$ | async)?.length &&
+				!(isUserAuthorized$ | async) &&
+				!(isFigleafReadyForCommunication$ | async)"
+				(click)="startVerify()">
+			Verify email
+		</button>
+
+		<button class="breaches-page__button"
+				*ngIf="(isFigleafReadyForCommunication$ | async) && !(breachedAccounts$ | async)?.length"
+				(click)="openFigleafApp()">
+			View in Lenovo Privacy
+		</button>
+
+		<button class="breaches-page__button"
+				*ngIf="(isFigleafReadyForCommunication$ | async) && (breachedAccounts$ | async)?.length"
+				(click)="openFigleafApp()">
+			Fix in Lenovo Privacy
+		</button>
+	</div>
+
 	<div class="breached-accounts" data-analyticsName="BreachedAccountsBlock">
-		<div *ngIf="!(isFigleafReadyForCommunication$ | async) && !(breachedAccounts$ | async)?.length"
-			 class="email-scanner">
-			<vtr-email-scanner
-				[userEmail]="userEmail$ | async"
-				[emailWasScanned]="emailWasScanned$ | async"></vtr-email-scanner>
-		</div>
 
-		<div *ngIf="(breachedAccounts$ | async)?.length"
-			 class="breaches-wrapper">
-			<div class="breached-accounts__header">
-				<p class="breached-accounts__title">
-					Found
-					<span class="breached-accounts__title--red">
-						{{(breachedAccountsCount$ | async)}} </span>
-					breaches
-				</p>
-				<button class="breached-accounts__verify-button"
-						*ngIf="!(isUserAuthorized$ | async)"
-						(click)="startVerify()">
-					Verify email
-				</button>
-			</div>
-			<vtr-breached-account
-				[breachedAccounts]="(breachedAccounts$ | async)"
-				[isUserAuthorized]="isUserAuthorized$ | async"
-				(verifyClick)="startVerify()">
-			</vtr-breached-account>
-		</div>
+		<vtr-email-scanner
+			*ngIf="!(isFigleafReadyForCommunication$ | async) && !(breachedAccounts$ | async)?.length && isShowEmailScanner"
+			[userEmail]="userEmail$ | async"
+			[emailWasScanned]="emailWasScanned$ | async">
+		</vtr-email-scanner>
 
+		<button class="breached-accounts__preview-link"
+				(click)="showEmailScanner()"
+				*ngIf="!(isFigleafReadyForCommunication$ | async) &&
+						(emailWasScanned$ | async) &&
+						!isShowEmailScanner &&
+						!(breachedAccounts$ | async)?.length">
+			<span>Check another email</span>
+		</button>
+
+		<vtr-breached-account
+			*ngIf="(breachedAccounts$ | async)?.length"
+			[breachedAccounts]="(breachedAccounts$ | async)"
+			[isUserAuthorized]="isUserAuthorized$ | async"
+			(verifyClick)="startVerify()">
+		</vtr-breached-account>
 	</div>
 </section>
 

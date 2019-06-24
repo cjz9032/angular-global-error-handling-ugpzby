@@ -1,15 +1,4 @@
 <div class="check-breaches">
-	<p class="check-breaches__title">{{(emailWasScanned | async) ? nextEmailScanData.title : firstEmailScanData.title}}
-	</p>
-
-	<div *ngIf="!(emailWasScanned | async)"
-		class="check-breaches__text-content">
-		<p class="check-breaches__text">
-			Find out if your private information is being exposed. We will check the dark web and every known data
-			breach.
-		</p>
-	</div>
-
 	<div *ngIf="(emailWasScanned | async)"
 		class="check-breaches__text-content">
 		<p class="check-breaches__text">

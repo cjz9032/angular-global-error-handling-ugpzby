@@ -1,11 +1,9 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CommonPopupService } from '../../common/services/popups/common-popup.service';
-import { filter, map, takeUntil, tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { UserAllowService } from '../../common/services/user-allow.service';
-import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
 import { TrackingMapService } from './services/tracking-map.service';
 import { SingleTrackersInfo, TrackersInfo, typeData } from './services/tracking-map.interface';
-import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { AnalyticsService } from '../../common/services/analytics.service';
 import { GetParentForAnalyticsService } from '../../common/services/get-parent-for-analytics.service';
 
@@ -21,7 +19,6 @@ export const DEFAULT_ICON = {
 })
 export class TrackingMapComponent implements OnInit, OnDestroy {
 	@Input() animate = false;
-	isFigleafInstalled$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
 
 	percentOfTrack = 0;
 	readonly trackingMapSinglePopupId = 'trackingMapSingle';
@@ -29,16 +26,6 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 	trackingData$ = this.getTrackingData();
 	isTrackersBlocked$ = this.trackingMapService.isTrackersBlocked$;
 	defaultIcon = DEFAULT_ICON;
-
-	tryProductText = {
-		title: 'Block online trackers with lenovo privacy by figleaf',
-		text: 'Do what you love online without being tracked by advertisers and others. Start your 14-day free trial. No credit card required.',
-		buttonText: 'Try Lenovo Privacy',
-		link: {
-			text: 'Learn more',
-			url: '/#/privacy/landing'
-		},
-	};
 
 	textForLoader = 'Creating tracker map for the most popular websitess';
 
@@ -48,21 +35,20 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 		private userAllowService: UserAllowService,
 		private analyticsService: AnalyticsService,
 		private getParentForAnalyticsService: GetParentForAnalyticsService,
-		private communicationWithFigleafService: CommunicationWithFigleafService,
 	) {
 	}
 
 	ngOnInit() {
-		this.listenPermit();
 	}
 
 	ngOnDestroy() {
 	}
 
-	getText() {
+	getText(isTrackersBlocked, isUserData) {
 		return {
-			chartLabel: this.isUserData ? 'Companies that track you' : 'Companies who\'s track websites',
-			cloudLabel: this.isUserData ? 'Websites you visit' : 'The most popular websites',
+			chartLabel: isUserData ? 'Companies using your information' : 'Companies using information',
+			cloudLabel: isUserData ? 'Websites you visit with tracking tools' : 'The most popular websites with tracking tools',
+			circleLabel: isTrackersBlocked ? 'TRACKING IS BLOCKED' : 'TRACKING TOOLS'
 		};
 	}
 
@@ -88,12 +74,5 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 			tap((val) => this.isUserData = val.typeData === typeData.Users),
 			map((val) => val.trackingData)
 		);
-	}
-
-	private listenPermit() {
-		this.userAllowService.allowToShow.pipe(
-			filter((value) => value.hasOwnProperty('trackingMap')),
-			takeUntil(instanceDestroyed(this)),
-		).subscribe(() => this.trackingMapService.updateTrackingData());
 	}
 }

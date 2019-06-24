@@ -11,8 +11,9 @@
 	}
 
 	&__title {
-		margin-top: 1rem;
 		@extend %subtitle;
+		margin-top: 1rem;
+		text-align: center;
 	}
 
 	&__text-block {
@@ -22,6 +23,7 @@
 	&__text {
 		@extend %text-common;
 		text-align: center;
+		font-size: 1.6rem;
 
 		&--block {
 			display: block;
