@@ -259,6 +259,28 @@
                 "applied": {
                     "title": "APPLIED"
                 }
+            },
+            "brightness": {
+                "text1": {
+                    "title": "*Brightness setting doesn't apply on "
+                },
+                "text2": {
+                    "title": " effect"
+                }
+            },
+            "lightingSingleLightingOption": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                }
             }
         }
     },
@@ -339,7 +361,7 @@
         "personal": "PERSONAL",
         "custom": "CUSTOM",
         "skip": "SKIP",
-        "next": "NEXT",
+        "next": "הבא",
         "interests": "What are your interests?",
         "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
         "games": "GAMES",
@@ -535,10 +557,10 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "This system may not support battery that",
-                        "description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
-                        "description1": "Attention:",
-                        "description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
+                        "title": "Battery 1",
+                        "description": "you cannot use the attached battery with this computer.",
+                        "description1": "Replace",
+                        "description2": "it with a battery of correct model."
                     },
                     "Good": {
                         "title": "The battery is in good condition."
@@ -679,7 +701,8 @@
                             "extremeCooling": "ביצועים מעולים",
                             "battery&Quite": "סוללה ושקט"
                         }
-                    }
+                    },
+                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
                 },
                 "powerSettings": {
                     "title": "הגדרות צריכת חשמל",
@@ -1050,7 +1073,8 @@
                 "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection"
+                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
+                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
                 },
                 "manualActiveProtectionSuspension": {
                     "title": "Manual Active Protection Suspension",
@@ -1268,7 +1292,8 @@
             "start": "התחלת סיור",
             "done": "סיום",
             "welcome1": "ברוכים הבאים",
-            "welcomeDesc1": "במספר קליקים בלבד תוכלו להגן על המחשבים, המכשירים הניידים וההתקנים המחוברים שלכם ושל בני המשפחה שלכם. התחלת תקופת הניסיון בחינם למשך 30 יום.",
+			"welcomeDesc1": "עם כמה לחיצות בלבד, תוכל להגן על מחשבים מחוברים, התקנים ניידים והתקנים, והמשפחה שלך.",
+			"welcomeDescStart": "התחל משפט בחינם ל -30 יום.",
             "welcome2": "בלעדי ל-Vantage",
             "welcomeDesc2": "'אבטחת הבית המחובר' מותקנת ישירות ב-Vantage לגישה מהירה למצב ההגנה של המערכת האקולוגית ושל התראות האבטחה שלכם.",
             "create": "יצירת חשבון משלכם",
@@ -1616,10 +1641,10 @@
     },
     "faq": {
         "footer": {
-            "title": "Not finding what you are looking for?",
-            "description": "NEED ADDITIONAL SUPPORT? DON’T HESITATE TO CONTACT US VIA:",
-            "body": "Lenovo Community",
-            "button": "GO TO FORUM"
+            "title": "לא למצוא את מה שאתה מחפש?",
+            "description": "זקוק לתמיכה נוספת? אל תהסס לפנות אלינו באמצעות:",
+            "body": "קהילת Lenovo",
+            "button": "עבור אל פורום"
         },
         "question1": {
             "title": "גיבוי ושחזור הקבצים",
@@ -1975,7 +2000,7 @@
     "welcometutorial": {
         "description": "‏Vantage מאפשר לעדכן מנהלי התקנים, להפעיל אבחון, לבקש תמיכה ולקבל מידע נוסף על המכשיר בקלות. ‏בצעו במהירות התאמה אישית של חוויית השימוש שלכם וגלו מידע שימושי המותאם במיוחד עבור הצרכים שלכם",
         "bullets1": "הצג את מצב המערכת שלך באמצעות מרכז השליטה Vantage.",
-        "bullets2": "'יועץ האבטחה' הופך את ניהול האבטחה לקל ופשוט (זמין במערכות נבחרות).",
+        "bullets2": "יועץ האבטחה הופך את ניהול האבטחה שלך לקל (זמין במערכות נבחרות)",
         "bullets3": "עדכונים אוטומטיים שומרים על המכשיר שלכם במצב מעולה (זמינים במערכות נבחרות).",
         "subtitle1": "כיצד תשתמשו במכשירכם?",
         "subtitle2": "ספרו לנו על תחומי העניין שלכם",

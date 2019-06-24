@@ -565,7 +565,7 @@ export class VantageShellService {
 	public getActiveProtectionSystem(): any {
 		if (this.phoenix) {
 			console.log('PHOENIX AVAILABLE - vantage shell');
-			return this.phoenix.hwsettings.ActiveProtectionSystem; // returning APS Object with methods
+			return this.phoenix.hwsettings.aps.ActiveProtectionSystem; // returning APS Object with methods
 		}
 		console.log('NO PHOENIX AVAILABLE - vantage shell');
 		return undefined;

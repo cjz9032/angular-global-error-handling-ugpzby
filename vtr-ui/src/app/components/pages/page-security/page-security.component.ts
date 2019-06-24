@@ -52,6 +52,7 @@ import {
 	NetworkStatus
 } from 'src/app/enums/network-status.enum';
 
+
 @Component({
 	selector: 'vtr-page-security',
 	templateUrl: './page-security.component.html',
@@ -76,8 +77,8 @@ export class PageSecurityComponent implements OnInit {
 	score: number;
 	maliciousWifi: number;
 	cardContentPositionA: any = {};
-	region: string;
 	isOnline: boolean;
+	region: string;
 	backId = 'sa-ov-btn-back';
 	itemStatusClass = {
 		0: 'good',
@@ -233,13 +234,7 @@ export class PageSecurityComponent implements OnInit {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'security',
-			'Lang': 'EN',
-			'GEO': 'US',
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			'Page': 'security'
 		};
 
 		this.cmsService.fetchCMSContent(queryOptions).then(

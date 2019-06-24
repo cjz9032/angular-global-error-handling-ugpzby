@@ -259,6 +259,28 @@
                 "applied": {
                     "title": "APPLIED"
                 }
+            },
+            "brightness": {
+                "text1": {
+                    "title": "*Brightness setting doesn't apply on "
+                },
+                "text2": {
+                    "title": " effect"
+                }
+            },
+            "lightingSingleLightingOption": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                }
             }
         }
     },
@@ -679,7 +701,8 @@
                             "extremeCooling": "极致性能",
                             "battery&Quite": "电池和安静状态"
                         }
-                    }
+                    },
+                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
                 },
                 "powerSettings": {
                     "title": "电源设置",
@@ -1050,7 +1073,8 @@
                 "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection"
+                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
+                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
                 },
                 "manualActiveProtectionSuspension": {
                     "title": "Manual Active Protection Suspension",
@@ -1268,7 +1292,8 @@
             "start": "开始体验",
             "done": "完成",
             "welcome1": "欢迎",
-            "welcomeDesc1": "只需点击几下，您就可以保护您和您家人的电脑、移动设备和已连接设备。立即开始 30 天的免费试用。",
+			"welcomeDesc1": "只需点击几下，您就可以保护您和您家人的电脑、移动设备和已连接设备。",
+			"welcomeDescStart": "立即开始 30 天的免费试用。",
             "welcome2": "Vantage 特有功能",
             "welcomeDesc2": "Vantage 内置有互联家庭网络安全性功能，可快速访问生态系统保护状态和安全警报。",
             "create": "使用 Lenovo ID",

@@ -5,12 +5,14 @@ import { BrowserStoredAccountsComponent } from './browser-stored-accounts/browse
 import { InstalledBrowserComponent } from './browser-stored-accounts/installed-browser/installed-browser.component';
 import { RouterModule } from '@angular/router';
 import { VtrCommonModule } from '../../common/vtr-common.module';
+import { RemovePasswordComponent } from './browser-stored-accounts/remove-password/remove-password.component';
 
 @NgModule({
 	declarations: [
 		NonPrivatePasswordComponent,
 		BrowserStoredAccountsComponent,
 		InstalledBrowserComponent,
+		RemovePasswordComponent,
 	],
 	exports: [
 		NonPrivatePasswordComponent,

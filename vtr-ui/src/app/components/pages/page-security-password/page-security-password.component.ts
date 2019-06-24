@@ -9,6 +9,7 @@ import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { RegionService } from 'src/app/services/region/region.service';
 
 @Component({
 	selector: 'vtr-page-security-password',
@@ -31,6 +32,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 		private commonService: CommonService,
 		private cmsService: CMSService,
 		private modalService: NgbModal,
+		public regionService: RegionService,
 		vantageShellService: VantageShellService
 	) {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
@@ -76,13 +78,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'password-protection',
-			'Lang': 'EN',
-			'GEO': 'US',
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			'Page': 'password-protection'
 		};
 
 		this.cmsService.fetchCMSContent(queryOptions).then(

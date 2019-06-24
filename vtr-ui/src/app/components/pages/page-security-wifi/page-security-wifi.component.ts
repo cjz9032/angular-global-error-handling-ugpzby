@@ -12,6 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { SecurityService } from 'src/app/services/security/security.service';
+import { RegionService } from 'src/app/services/region/region.service';
 
 interface DevicePostureDetail {
 	status: number; // 1,2
@@ -66,7 +67,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		public shellService: VantageShellService,
 		private cmsService: CMSService,
 		public translate: TranslateService,
-		private ngZone: NgZone
+		private ngZone: NgZone,
+		public regionService: RegionService
 	) {
 		this.securityAdvisor = shellService.getSecurityAdvisor();
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
@@ -145,13 +147,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'wifi-security',
-			'Lang': 'EN',
-			'GEO': 'US',
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			'Page': 'wifi-security'
 		};
 
 		this.cmsService.fetchCMSContent(queryOptions).then(

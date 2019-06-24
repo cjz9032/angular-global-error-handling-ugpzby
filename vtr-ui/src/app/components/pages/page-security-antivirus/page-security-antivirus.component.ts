@@ -10,6 +10,7 @@ import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/mo
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { RegionService } from 'src/app/services/region/region.service';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',
@@ -42,7 +43,8 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		public VantageShell: VantageShellService,
 		public cmsService: CMSService,
 		public commonService: CommonService,
-		public modalService: NgbModal) {
+		public modalService: NgbModal,
+		public regionService: RegionService,) {
 		this.securityAdvisor = this.VantageShell.getSecurityAdvisor();
 		this.antiVirus = this.VantageShell.getSecurityAdvisor().antivirus;
 		this.viewModel = new AntiVirusviewModel(this.antiVirus, commonService);
@@ -197,15 +199,10 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		});
 	}
 
+
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'anti-virus',
-			'Lang': 'EN',
-			'GEO': 'US',
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			'Page': 'anti-virus'
 		};
 
 		this.cmsService.fetchCMSContent(queryOptions).then(

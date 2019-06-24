@@ -259,6 +259,28 @@
                 "applied": {
                     "title": "APPLIED"
                 }
+            },
+            "brightness": {
+                "text1": {
+                    "title": "*Brightness setting doesn't apply on "
+                },
+                "text2": {
+                    "title": " effect"
+                }
+            },
+            "lightingSingleLightingOption": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                }
             }
         }
     },
@@ -339,7 +361,7 @@
         "personal": "PERSONAL",
         "custom": "CUSTOM",
         "skip": "SKIP",
-        "next": "NEXT",
+        "next": "下一步",
         "interests": "What are your interests?",
         "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
         "games": "GAMES",
@@ -535,10 +557,10 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "This system may not support battery that",
-                        "description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
-                        "description1": "Attention:",
-                        "description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
+                        "title": "Battery 1",
+                        "description": "you cannot use the attached battery with this computer.",
+                        "description1": "Replace",
+                        "description2": "it with a battery of correct model."
                     },
                     "Good": {
                         "title": "The battery is in good condition."
@@ -679,7 +701,8 @@
                             "extremeCooling": "極致效能",
                             "battery&Quite": "電池與安靜"
                         }
-                    }
+                    },
+                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
                 },
                 "powerSettings": {
                     "title": "電源設定",
@@ -1050,7 +1073,8 @@
                 "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection"
+                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
+                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
                 },
                 "manualActiveProtectionSuspension": {
                     "title": "Manual Active Protection Suspension",
@@ -1268,7 +1292,8 @@
             "start": "開始導覽",
             "done": "完成",
             "welcome1": "歡迎使用",
-            "welcomeDesc1": "只需按幾下滑鼠，您和家人的 PC、行動裝置和所有連線裝置就能獲得保護。立即開始 30 天免費試用。",
+			"welcomeDesc1": "只需按幾下滑鼠，您和家人的 PC、行動裝置和所有連線裝置就能獲得保護。",
+			"welcomeDescStart": "立即開始 30 天免費試用。",
             "welcome2": "Vantage 獨家",
             "welcomeDesc2": "連線家庭安全性直接內建於 Vantage，可供快速存取生態系統和安全警報的保護狀態。",
             "create": "建立您的帳戶",
@@ -1616,10 +1641,10 @@
     },
     "faq": {
         "footer": {
-            "title": "Not finding what you are looking for?",
-            "description": "NEED ADDITIONAL SUPPORT? DON’T HESITATE TO CONTACT US VIA:",
-            "body": "Lenovo Community",
-            "button": "GO TO FORUM"
+            "title": "找不到你要找的東西？",
+            "description": "需要額外的支持嗎？ 不要猶豫與VIA聯繫：",
+            "body": "聯想社區",
+            "button": "去論壇"
         },
         "question1": {
             "title": "備份及還原檔案",

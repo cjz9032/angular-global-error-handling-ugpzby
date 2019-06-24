@@ -5,8 +5,9 @@ import { VantageShellService } from '../../../services/vantage-shell/vantage-she
 import { CMSService } from '../../../services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
-import {AppNotification} from 'src/app/data-models/common/app-notification.model';
-import {NetworkStatus} from 'src/app/enums/network-status.enum';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { RegionService } from 'src/app/services/region/region.service';
 
 @Component({
 	selector: 'vtr-page-security-windows-hello',
@@ -26,6 +27,8 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 		public mockService: MockService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
+		public regionService: RegionService,
+
 		vantageShellService: VantageShellService
 	) {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
@@ -45,6 +48,7 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+
 	}
 
 	setUpWindowsHello(): void {
@@ -73,13 +77,7 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'windows-hello',
-			'Lang': 'EN',
-			'GEO': 'US',
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			'Page': 'windows-hello'
 		};
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
