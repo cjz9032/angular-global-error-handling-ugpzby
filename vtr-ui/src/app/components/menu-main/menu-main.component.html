@@ -1,4 +1,4 @@
-<div class="vtr-menu-main" #menuTarget>
+<div class="vtr-menu-main">
 	<nav class="navbar navbar-expand-xl pr-0">
 		<div *ngIf="!deviceService.isGaming"
 			class="navbar-brand pt-0">
@@ -33,7 +33,7 @@
 			<!-- <fa-icon [icon]="['fas', 'bars']">
 			</fa-icon> -->
 		</button>
-		<div class="collapse navbar-collapse"
+		<div class="collapse navbar-collapse" #menuTarget
 			[ngClass]="{'show':showMenu}">
 			<ul class="navbar-nav ml-auto">
 				<ng-container *ngFor="let item of items; let i=index">

@@ -7,6 +7,7 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 })
 export class QaService {
 
+	title = `${this.translate.instant('faq.pageTitle')}`; //sahinul, 24June2019 VAN-5534
 	imagePath = 'assets/images/qa';
 	qas: QA[] = [
 		{
@@ -791,6 +792,16 @@ export class QaService {
 			});
 
 			// this.qas = this.qaService.qas;
+
+			//sahinul, 24June2019 VAN-5534
+			try {
+				this.title = this.translate.instant(this.title);
+				this.translate.stream(this.title).subscribe((value) => {
+					this.title = value;
+				});
+			} catch (e) {
+				console.log('QA Page title translation : already translated'); 
+			}
 		});
 
 
@@ -809,13 +820,13 @@ export class QaService {
 
 
 			try {
-				console.log(qa.description);
+				//console.log(qa.description);
 				qa.description = this.translate.instant(qa.description);
 				this.translate.stream(qa.description).subscribe((value) => {
 					qa.description = value;
 				});
 
-				console.log(qa.description);
+				//console.log(qa.description);
 
 			}
 			catch (e) {
@@ -836,6 +847,16 @@ export class QaService {
 
 
 		});
+
+		//sahinul, 24June2019 VAN-5534
+		try {
+			this.title = this.translate.instant(this.title);
+			this.translate.stream(this.title).subscribe((value) => {
+				this.title = value;
+			});
+		} catch (e) {
+			console.log('QA Page title translation : already translated');
+		}
 
 	}
 }
