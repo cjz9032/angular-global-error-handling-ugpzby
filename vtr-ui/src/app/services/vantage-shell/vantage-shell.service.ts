@@ -570,4 +570,15 @@ export class VantageShellService {
 		console.log('NO PHOENIX AVAILABLE - vantage shell');
 		return undefined;
 	}
+
+	
+	/**
+	 * returns Keyboard manager object  from VantageShellService of JS Bridge
+	 */
+	public getKeyboardManagerObject(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.input.kbdManager;
+		}
+		return undefined;
+	}
 }
