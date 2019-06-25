@@ -235,7 +235,6 @@ import { VoiceComponent } from './components/pages/page-smart-assist/voice/voice
 import { ModalVoiceComponent } from './components/modal/modal-voice/modal-voice.component';
 import { CapitalizeFirstPipe } from './pipe/capitalize-pipe/capitalize-first.pipe';
 import { SanitizeModule } from './modules/sanitize.module';
-import { SanitizePipe } from './pipe/sanitize.pipe';
 import { SmartStandbyComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/smart-standby/smart-standby.component';
 import { UiDaysPickerComponent } from './components/ui/ui-days-picker/ui-days-picker.component';
 
@@ -426,7 +425,6 @@ library.add(fal);
 		VoiceComponent,
 		ModalVoiceComponent,
 		CapitalizeFirstPipe,
-		SanitizePipe,
 		SmartStandbyComponent,
 		UiDaysPickerComponent
 	],
