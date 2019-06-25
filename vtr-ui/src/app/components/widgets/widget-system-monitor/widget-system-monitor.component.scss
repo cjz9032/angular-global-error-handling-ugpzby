@@ -92,7 +92,7 @@
 					}
 					&.expanded {
 						height: auto;
-						border: 1px solid $gaming_dark;
+						//border: 1px solid $gaming_dark;
 					}
 					&:hover {
 						.expand-icon {
@@ -283,6 +283,17 @@
 						height: 29rem;
 						margin-left: -14.5rem;
 					}
+					.gaming-tooltip {
+						top: -2.5rem;
+						left: 50%;
+						transform: translate(-50%);
+					}
+					&:hover {
+						.gaming-tooltip {
+							display: inline-block;
+							opacity: 1;
+						}
+					}
 					.cpu-ring {
 						// background-color: $highlight;
 						background-image:url('/assets/images/gaming/gaming-cpu-ring.svg');
@@ -440,8 +451,10 @@
 				}
 				.hd-list {
 					padding: 2rem 3rem;
+					padding-bottom: 0;
 					@media #{$mediaquery_6} {
 						padding: 3rem;
+						padding-bottom: 0;
 					}
 					&.single {
 						padding: 3rem;
@@ -512,7 +525,7 @@
 						}
 					}
 					.hd-item {
-						margin-bottom: 3.5rem;
+						margin-bottom: 3.4rem;
 						position: relative;
 						&:nth-child(odd){
 							z-index: 9;
