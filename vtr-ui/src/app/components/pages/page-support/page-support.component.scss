@@ -245,6 +245,7 @@
 					align-items: center;
 					justify-content: center;
 					letter-spacing: 0;
+					cursor: pointer;
 				}
 
 				.item-button {
@@ -264,6 +265,7 @@
 					overflow: hidden;
 					white-space: nowrap;
 					text-overflow: ellipsis;
+					cursor: pointer;
 				}
 
 				&:hover {
@@ -284,6 +286,7 @@
 						box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 						// border: 1px solid #ECF0F1;
 						color: $main_dark;
+						cursor: pointer;
 
 					}
 				}
