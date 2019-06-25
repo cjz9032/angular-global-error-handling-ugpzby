@@ -25,7 +25,7 @@
 					<span class="app-version">{{'(v'+appVersion+')'}}</span>
 				</div>
 			</span>
-			<vtr-spinner *ngIf="!(deviceModel)"> </vtr-spinner>
+			<vtr-spinner *ngIf="!(appVersion || deviceModel)"> </vtr-spinner>
 			<span *ngIf="deviceModel">
 				<div class="device-type">{{deviceModel}}</div>
 			</span>
