@@ -11,6 +11,7 @@ import { InlineSvgComponent } from './inline-svg/inline-svg.component';
 import { LowPrivacyComponent } from './low-privacy/low-privacy.component';
 import { SupportBannerComponent } from './support-banner/support-banner.component';
 import { PipesModule } from '../pipes/pipes.module';
+import { SanitizeModule } from 'src/app/modules/sanitize.module';
 import { RouterModule } from '@angular/router';
 import { DirectivesModule } from '../directives/directives.module';
 import { BigLoaderComponent } from './big-loader/big-loader.component';
@@ -78,6 +79,7 @@ import { BigPitchComponent } from './big-pitch/big-pitch.component';
 		ReactiveFormsModule,
 		FormsModule,
 		PipesModule,
+		SanitizeModule,
 		RouterModule,
 		DirectivesModule
 	]
