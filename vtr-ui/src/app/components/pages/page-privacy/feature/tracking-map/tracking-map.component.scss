@@ -1,38 +1,24 @@
 @import "../../styles/common-blocks";
 
 .trackers {
-	@extend %common-block-wrapper;
-	border-radius: 0 0 1rem 1rem;
-
 	&__header-row {
 		display: flex;
 		justify-content: space-between;
 		margin: 0 0 1.6rem 0;
 	}
 
-	&__title {
-		@extend %subtitle;
-	}
-
 	&__text {
 		@extend %text-common;
+		font-size: 1.6rem;
 	}
 
 	&__popup-btn {
 		@extend %theme-btn;
 	}
 
-	//&__wrapper {
-	//	border: 1px solid #ECF0F1;
-	//	padding: 1.3rem 2.6rem;
-	//	border-radius: 5px;
-	//	overflow: hidden;
-	//	display: flex;
-	//	justify-content: center;
-	//}
 	&__wrapper {
 		width: 100%;
-		margin-top: 2rem;
+		margin-top: 3rem;
 		border: 1px solid #ECF0F1;
 		border-radius: 5px;
 		overflow: hidden;

@@ -53,8 +53,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	securityHealthArticleId = '9CEBB4794F534648A64C5B376FBC2E39';
 	securityHealthArticleCategory: string;
 	cancelClick = false;
-	region: string;
-	language: string;
 
 	@HostListener('window:focus')
 	onFocus(): void {
@@ -88,24 +86,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			this.cancelClick = true;
 		}).on('cancelClickFinish', () => {
 			this.cancelClick = false;
-		});
-		this.regionService.getRegion().subscribe({
-			next: x => {
-				this.region = x;
-			},
-			error: err => {
-				console.error(err);
-				this.region = 'US';
-			}
-		});
-		this.regionService.getLanguage().subscribe({
-			next: x => {
-				this.language = x;
-			},
-			error: err => {
-				console.error(err);
-				this.language = 'EN';
-			}
 		});
 		this.fetchCMSArticles();
 	}
@@ -167,19 +147,12 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'wifi-security',
-			'Lang': this.language,
-			'GEO': this.region,
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			'Page': 'wifi-security'
 		};
 
-		this.cmsService.fetchCMSContents(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				const content = Array.isArray(response) ? response[0] ? response[0] : response[1] : response;
-				const cardContentPositionA = this.cmsService.getOneCMSContent(content, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {
 					this.cardContentPositionA = cardContentPositionA;
 					if (this.cardContentPositionA.BrandName) {

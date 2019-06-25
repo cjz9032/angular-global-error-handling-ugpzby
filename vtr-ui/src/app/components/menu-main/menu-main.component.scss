@@ -183,8 +183,6 @@
 
 					&:last-child {
 						.dropdown-menu {
-							right: 0;
-							left: auto;
 							min-width: 20rem;
 							max-width: 50rem;
 						}
@@ -301,8 +299,9 @@
 			display: none;
 			font-size: 5rem;
 			color: $shade_light;
-			@media only screen and (max-width: 1120px){
+			@media #{$mediaquery_xl}{
 				display: block;
+
 			}
 			&:hover {
 				color: $shade_extralight;
@@ -325,6 +324,13 @@
 			position: relative;
 			top: 0.3rem;
 		}
+	}
+}
+
+@media  #{$mediaquery_xl}{
+	.dropdown-menu{
+		top:0 !important;
+		position:relative;
 	}
 }
 /*

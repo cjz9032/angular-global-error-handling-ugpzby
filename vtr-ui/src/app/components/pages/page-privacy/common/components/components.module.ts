@@ -11,6 +11,7 @@ import { InlineSvgComponent } from './inline-svg/inline-svg.component';
 import { LowPrivacyComponent } from './low-privacy/low-privacy.component';
 import { SupportBannerComponent } from './support-banner/support-banner.component';
 import { PipesModule } from '../pipes/pipes.module';
+import { SanitizeModule } from 'src/app/modules/sanitize.module';
 import { RouterModule } from '@angular/router';
 import { DirectivesModule } from '../directives/directives.module';
 import { BigLoaderComponent } from './big-loader/big-loader.component';
@@ -20,6 +21,11 @@ import { PermitTrackersAndPasswordsComponent } from './permit-trackers-and-passw
 import { SupportWidgetComponent } from './support-widget/support-widget.component';
 import { SupportPopupComponent } from './support-popup/support-popup.component';
 import { NavTabsComponent } from './nav-tabs/nav-tabs.component';
+import { FeatureHeaderComponent } from './feature-header/feature-header.component';
+import { StatComponent } from './privacy-dashboard-list/stat.component';
+import { AccountsStoredComponent } from './accounts-stored/accounts-stored.component';
+import { NoIssuePitchComponent } from './no-issue-pitch/no-issue-pitch.component';
+import { BigPitchComponent } from './big-pitch/big-pitch.component';
 
 @NgModule({
 	declarations: [
@@ -38,7 +44,12 @@ import { NavTabsComponent } from './nav-tabs/nav-tabs.component';
 		SupportWidgetComponent,
 		SupportPopupComponent,
 		NavTabsComponent,
-		PermitTrackersAndPasswordsComponent
+		PermitTrackersAndPasswordsComponent,
+		FeatureHeaderComponent,
+		StatComponent,
+		AccountsStoredComponent,
+		NoIssuePitchComponent,
+		BigPitchComponent
 	],
 	exports: [
 		SimpleLoaderComponent,
@@ -56,13 +67,19 @@ import { NavTabsComponent } from './nav-tabs/nav-tabs.component';
 		SupportWidgetComponent,
 		NavTabsComponent,
 		PermitTrackersAndPasswordsComponent,
-		SupportWidgetComponent
+		SupportWidgetComponent,
+		FeatureHeaderComponent,
+		StatComponent,
+		AccountsStoredComponent,
+		NoIssuePitchComponent,
+		BigPitchComponent
 	],
 	imports: [
 		CommonModule,
 		ReactiveFormsModule,
 		FormsModule,
 		PipesModule,
+		SanitizeModule,
 		RouterModule,
 		DirectivesModule
 	]

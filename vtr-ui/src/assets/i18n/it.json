@@ -44,7 +44,13 @@
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
                     "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock"
+                    "touchpadLock": "Touchpad Lock",
+                    "lightingDriverPopup": {
+                        "headerText": "Driver Install Required",
+                        "text": "Please install driver",
+                        "button": "Install",
+                        "link": "cancel"
+                    }
                 },
                 "systemTools": {
                     "power": "Power",
@@ -986,6 +992,14 @@
                         "description": "change keyboard backlight states",
                         "image": ""
                     }
+                },
+                "userDefinedKey": {
+                    "title": "User-defined Key",
+                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "dropDown": {
+                        "title": "Action User Defined key",
+                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                    }
                 }
             }
         },
@@ -1109,7 +1123,6 @@
                 "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
                 "installBtnText": "Install",
                 "launchBtnText": "Launch",
-                "learnMoreText": "Learn More",
                 "voiceToText": {
                     "title": "Voice to text",
                     "caption": "This feature helps to convert your voice into texts."
@@ -1292,7 +1305,8 @@
             "start": "AVVIA TOUR",
             "done": "FINE",
             "welcome1": "Benvenuti",
-            "welcomeDesc1": "In pochi clic potrai proteggere PC, dispositivi mobili e dispositivi collegati per te e la tua famiglia. Inizia subito la prova gratuita per 30 giorni.",
+			"welcomeDesc1": "In pochi clic potrai proteggere PC, dispositivi mobili e dispositivi collegati per te e la tua famiglia.",
+			"welcomeDescStart": "Inizia subito la prova gratuita per 30 giorni.",
             "welcome2": "Esclusivo per Vantage",
             "welcomeDesc2": "Protezione abitazione connessa è integrato direttamente in Vantage per accedere rapidamente allo stato della protezione dell'ecosistema e agli avvisi di sicurezza.",
             "create": "Crea il tuo account",
@@ -1994,7 +2008,8 @@
             },
             "para12": "Note",
             "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        }
+        },
+        "pageTitle": "Dettagli di supporto"
     },
     "welcometutorial": {
         "description": "Vantage semplifica l'aggiornamento dei driver, l'esecuzione della diagnostica, la richiesta di supporto e il reperimento di informazioni sul dispositivo. Personalizza rapidamente l'esperienza e identifica le informazioni utili in base alle tue esigenze",

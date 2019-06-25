@@ -27,8 +27,8 @@ export class RegionService {
 			if (Windows) {
 				const language = Windows.System.UserProfile.GlobalizationPreferences.languages[0];
 				observer.next(
-					language.indexOf('-') > 0 ?
-						language.substring(0, language.indexOf('-')) : language
+					language.lastIndexOf('-') > 0 ?
+						language.substring(0, language.lastIndexOf('-')) : language
 				);
 			} else {
 				observer.error('Windows is undefined');

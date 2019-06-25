@@ -49,6 +49,9 @@ export class TrackingMapService {
 		private figleafOverviewService: FigleafOverviewService,
 	) {
 		this.updateTrackingData();
+		this.userAllowService.allowToShow.subscribe(() => {
+			this.updateTrackingData();
+		});
 	}
 
 	updateTrackingData() {
