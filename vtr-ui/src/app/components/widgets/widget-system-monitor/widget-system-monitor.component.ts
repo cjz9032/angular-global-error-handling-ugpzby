@@ -53,7 +53,15 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	@Input() ramMax = 32;
 	//@Input() cpuover = 'Intel';
 
-	 public hds: any = [];
+	public hds: any = [];
+	public defaultHds = [{
+		capacity: 476,
+		diskUsage: '14',
+		hddName: 'LENSE30512GMSP34MEAT3TA',
+		isSystemDisk: 'true',
+		type: 'SSD',
+		usedDisk: 71
+	}];
 
 	// @Input() hds = [
 	// 	{
@@ -297,11 +305,13 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 
 
 	}
-	public getDynamicInfoService() {
-		this.hwInfoService.getDynamicInformation().then((hwInfo: any) => {
-			console.log('getDynamicInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
+	public async getDynamicInfoService() {
+		try {
+			const hwInfo = await this.hwInfoService.getDynamicInformation();
 			this.formDynamicInformation(hwInfo);
-		});
+		} catch (err) {
+			console.log(`ERROR in getDynamicInfoService() of  widget-system-monitor.component`, err);
+		}
 	}
 
 	public formDynamicInformation(hwInfo: any) {
@@ -443,7 +453,8 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		this.gamingCapabilities.hddInfoFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.hddInfoFeature
 		);
-		this.initialiseDisksList(this.commonService.getLocalStorageValue(LocalStorageKey.disksList, []));
+		this.hds = this.defaultHds;
+		this.initialiseDisksList(this.commonService.getLocalStorageValue(LocalStorageKey.disksList, this.defaultHds));
 		this.getLocalSystemCache();
 		this.getDynamicInfoService();
 		this.getMachineInfoService();
