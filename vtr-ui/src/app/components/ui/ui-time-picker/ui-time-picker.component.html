@@ -7,7 +7,9 @@
 				<div class="dropdown">
 					<input [id]="id"
 						class="dropcheck"
-						type="checkbox">
+						type="checkbox"
+						[checked]="showTimerDropDown"
+						(click)="onToggleDropDown()">
 					<label [for]="id"
 						class="dropbtn">
 						<div class="row">
@@ -103,7 +105,7 @@
 								<fa-icon [icon]="['fal', 'check']"
 									(click)="setTimer()"></fa-icon>
 								<fa-icon [icon]="['fal', 'times']"
-									(click)="resetTimer()"></fa-icon>
+									(click)="clearSettings()"></fa-icon>
 							</div>
 						</div>
 					</div>

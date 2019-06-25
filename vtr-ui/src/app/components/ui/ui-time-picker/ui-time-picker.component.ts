@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
 	selector: 'vtr-ui-time-picker',
@@ -11,10 +11,13 @@ export class UiTimePickerComponent implements OnInit {
 	@Input() subHeadingText: string;
 	@Input() id: string;
 
+	@Output() setTime = new EventEmitter<string>();
+
+	// @Output() setTime = new EventEmitter<string>();
 	hour: number;
 	minute: number;
 	amPm: number;
-
+	showTimerDropDown: boolean;
 	copyHour: number;
 	copyMinute: number;
 	copyAmPm: number;
@@ -25,6 +28,7 @@ export class UiTimePickerComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
+		this.showTimerDropDown = false;
 		this.splitTime();
 	}
 	splitTime() {
@@ -70,17 +74,18 @@ export class UiTimePickerComponent implements OnInit {
 	}
 
 	setTimer() {
-		let hour;
-		this.hour = this.copyHour;
-		this.minute = this.copyMinute;
-		this.amPm = this.copyAmPm;
+		const hour = this.copyAmPm ? this.copyHour + 12 : this.copyHour;
 
-		hour = this.amPm ? this.hour + 12 : this.hour;
-
-		const time = hour + ':' + this.minutes[this.minute];
+		const time = hour + ':' + this.minutes[this.copyMinute];
+		this.showTimerDropDown = false;
+		this.setTime.emit(time);
 	}
 
-	resetTimer() {
+	clearSettings() {
+		this.showTimerDropDown = false;
 		this.initiateBlock();
+	}
+	onToggleDropDown() {
+		this.showTimerDropDown = !this.showTimerDropDown;
 	}
 }
