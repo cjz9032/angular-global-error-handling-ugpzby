@@ -344,10 +344,10 @@
         },
         "ui": {
             "back": "НАЗАД",
-            "on": "ON",
-            "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
+            "on": "УВІМК.",
+            "off": "ВИМК.",
+            "collapse": "Згорнути",
+            "expand": "Розгорнути",
             "loader": "Fetching <br> Status"
         }
     },
@@ -1305,8 +1305,8 @@
             "start": "ПОЧАТИ ОГЛЯД",
             "done": "ГОТОВО",
             "welcome1": "Вітаємо",
-			"welcomeDesc1": "Усього за кілька кліків ви зможете захистити ПК, мобільні та підключені пристрої, які належать вам і вашій родині.",
-			"welcomeDescStart": "Почніть 30 днів безкоштовного ознайомлення зараз.",
+            "welcomeDesc1": "Усього за кілька кліків ви зможете захистити ПК, мобільні та підключені пристрої, які належать вам і вашій родині.",
+            "welcomeDescStart": "Почніть 30 днів безкоштовного ознайомлення зараз.",
             "welcome2": "Ексклюзивно для Vantage",
             "welcomeDesc2": "Програму \"Безпека підключеного дому\" вбудовано прямо у Vantage для швидкого доступу до стану захисту екосистеми та сповіщень про безпеку.",
             "create": "Створіть обліковий запис",
@@ -1636,21 +1636,21 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "Вхід",
+        "logout": "Вихід",
+        "unlockExclusives": "Ексклюзивний вміст",
+        "user": "Користувач",
+        "welcomeText": "Сьогодні ви енергійні, {{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "Сьогодні ви енергійні!",
+        "helloUser": "Вітаємо, {{firstName}}!",
+        "ssoErrorTitle": "Помилка",
+        "ssoErrorCommon": "Сталася помилка. Спробуйте ще раз.",
+        "ssoErrorCommonEx": "Непередбачена помилка. Спробуйте ще раз.",
+        "ssoErrorTimeStampIncorrect": "Схоже, час на вашому ПК неправильний. Задайте на ПК правильний час і повторіть спробу.",
+        "ssoErrorNetworkDisconnected": "Схоже, Помилка підключення. Перевірте підключення до Інтернету та повторіть спробу.",
+        "ssoErrorCommunicating": "Помилка мережі. Перевірте підключення та повторіть спробу.",
+        "ssoErrorAccountPluginNotExist": "Відсутній плагін. Ми автоматично відновимо плагін у фоновому режимі, якщо ви підключені до Інтернету. Це може зайняти деякий час, повторіть спробу пізніше."
     },
     "faq": {
         "footer": {

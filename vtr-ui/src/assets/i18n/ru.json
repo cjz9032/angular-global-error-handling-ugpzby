@@ -344,10 +344,10 @@
         },
         "ui": {
             "back": "НАЗАД",
-            "on": "ON",
-            "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
+            "on": "ВКЛ.",
+            "off": "ВЫКЛ.",
+            "collapse": "Свернуть",
+            "expand": "Развернуть",
             "loader": "Fetching <br> Status"
         }
     },
@@ -1305,8 +1305,8 @@
             "start": "НАЧАТЬ ТУР",
             "done": "ГОТОВО",
             "welcome1": "Добро пожаловать",
-			"welcomeDesc1": "Выполнив всего несколько простых действий, вы сможете защитить компьютеры, мобильные устройства и подключенные устройства, принадлежащие вам и членам вашей семьи.",
-			"welcomeDescStart": "Запустите бесплатную 30-дневную пробную версию прямо сейчас.",
+            "welcomeDesc1": "Выполнив всего несколько простых действий, вы сможете защитить компьютеры, мобильные устройства и подключенные устройства, принадлежащие вам и членам вашей семьи.",
+            "welcomeDescStart": "Запустите бесплатную 30-дневную пробную версию прямо сейчас.",
             "welcome2": "Эксклюзивно для Vantage",
             "welcomeDesc2": "Безопасность устройств в домашней сети встроена непосредственно в Vantage для быстрого доступа к состоянию защиты экосистемы и оповещениям системы безопасности.",
             "create": "Создайте учетную запись",
@@ -1636,21 +1636,21 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "Регистрация",
+        "logout": "Выход",
+        "unlockExclusives": "Разблокирование эксклюзивного содержимого",
+        "user": "Пользователь",
+        "welcomeText": "У вас сегодня бодрый вид, {{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "У вас сегодня бодрый вид!",
+        "helloUser": "Здравствуйте, {{firstName}}!",
+        "ssoErrorTitle": "Ошибка",
+        "ssoErrorCommon": "Произошла ошибка. Повторите попытку.",
+        "ssoErrorCommonEx": "Непредвиденная ошибка. Повторите попытку.",
+        "ssoErrorTimeStampIncorrect": "Время вашего компьютера неверно. Исправьте время на своем компьютере и повторите попытку.",
+        "ssoErrorNetworkDisconnected": "Ой! Не удалось установить подключение. Проверьте подключение к Интернету и повторите попытку.",
+        "ssoErrorCommunicating": "Сетевая ошибка. Проверьте подключение и повторите попытку.",
+        "ssoErrorAccountPluginNotExist": "Отсутствует подключаемый модуль. Подключаемый модуль будет восстановлен автоматически в фоновом режиме при наличии подключения к Интернету. Это может занять некоторое время, повторите попытку позже."
     },
     "faq": {
         "footer": {
