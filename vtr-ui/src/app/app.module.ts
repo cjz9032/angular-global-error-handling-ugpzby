@@ -400,7 +400,6 @@ library.add(fal);
 		DisplayColorTempComponent,
 		UiLightingProfileToggleComponent,
 		UiBrightnessSliderComponent,
-		SvgInlinePipe,
 		UiLightingEffectComponent,
 		UiLightingSingleColorComponent,
 		UiLightingColorWheelComponent,
