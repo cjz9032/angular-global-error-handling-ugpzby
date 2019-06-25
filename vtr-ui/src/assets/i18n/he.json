@@ -344,10 +344,10 @@
         },
         "ui": {
             "back": "חזרה",
-            "on": "ON",
-            "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
+            "on": "מופעל",
+            "off": "כבוי",
+            "collapse": "כיווץ",
+            "expand": "הרחבה",
             "loader": "Fetching <br> Status"
         }
     },
@@ -1305,8 +1305,8 @@
             "start": "התחלת סיור",
             "done": "סיום",
             "welcome1": "ברוכים הבאים",
-			"welcomeDesc1": "עם כמה לחיצות בלבד, תוכל להגן על מחשבים מחוברים, התקנים ניידים והתקנים, והמשפחה שלך.",
-			"welcomeDescStart": "התחל משפט בחינם ל -30 יום.",
+            "welcomeDesc1": "עם כמה לחיצות בלבד, תוכל להגן על מחשבים מחוברים, התקנים ניידים והתקנים, והמשפחה שלך.",
+            "welcomeDescStart": "התחל משפט בחינם ל -30 יום.",
             "welcome2": "בלעדי ל-Vantage",
             "welcomeDesc2": "'אבטחת הבית המחובר' מותקנת ישירות ב-Vantage לגישה מהירה למצב ההגנה של המערכת האקולוגית ושל התראות האבטחה שלכם.",
             "create": "יצירת חשבון משלכם",
@@ -1636,21 +1636,21 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "כניסה",
+        "logout": "יציאה",
+        "unlockExclusives": "פתחו את ה\"בלעדיים\"",
+        "user": "משתמש",
+        "welcomeText": "אתה נראה רענן היום, {{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "אתה נראה רענן היום!",
+        "helloUser": "שלום, {{firstName}}!",
+        "ssoErrorTitle": "שגיאה",
+        "ssoErrorCommon": "אופס, נתקלנו בשגיאה. נסו שוב.",
+        "ssoErrorCommonEx": "שגיאה לא צפויה. נסו שוב.",
+        "ssoErrorTimeStampIncorrect": "אופס, נראה שהשעה המוצגת במחשב שגויה. כוונו את השעה במחשב ונסו שוב.",
+        "ssoErrorNetworkDisconnected": "אופס! החיבור נכשל! בדקו את החיבור לאינטרנט ונסו שוב.",
+        "ssoErrorCommunicating": "שגיאת רשת. בדקו את החיבור שלכם ונסו שוב.",
+        "ssoErrorAccountPluginNotExist": "התוסף חסר. אם יש לך חיבור לאינטרנט, נשחזר את התוסף ברקע באופן אוטומטי. ייתכן שהפעולה תיקח זמן מה, כדאי לנסות שוב מאוחר יותר."
     },
     "faq": {
         "footer": {

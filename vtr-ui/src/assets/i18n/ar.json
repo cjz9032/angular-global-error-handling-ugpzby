@@ -346,8 +346,8 @@
             "back": "السابق",
             "on": "على",
             "off": "إيقاف",
-            "collapse": "انهدام",
-            "expand": "وسعت",
+            "collapse": "طي",
+            "expand": "توسيع",
             "loader": "Fetching <br> Status"
         }
     },
@@ -1305,8 +1305,8 @@
             "start": "بدء الجولة",
             "done": "تم",
             "welcome1": "مرحبًا",
-			"welcomeDesc1": "بمجرد نقرات قليلة ، يمكنك حماية الكمبيوتر الشخصي والأجهزة المحمولة والأجهزة المتصلة لك ولعائلتك.",
-			"welcomeDescStart": "ابدأ نسخة تجريبية مجانية لمدة 30 يومًا الآن.",
+            "welcomeDesc1": "بمجرد نقرات قليلة ، يمكنك حماية الكمبيوتر الشخصي والأجهزة المحمولة والأجهزة المتصلة لك ولعائلتك.",
+            "welcomeDescStart": "ابدأ نسخة تجريبية مجانية لمدة 30 يومًا الآن.",
             "welcome2": "حصري لـ Vantage",
             "welcomeDesc2": "تم بناء أمان المنزل المتصل مباشرةً في Vantage لتمكين الوصول السريع إلى حالة حماية النظام البيئي وتنبيهات الأمان.",
             "create": "إنشاء حسابك",
@@ -1636,21 +1636,21 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "تسجيل الدخول",
+        "logout": "تسجيل الخروج",
+        "unlockExclusives": "استفد من العروض الخاصة",
+        "user": "المستخدم",
+        "welcomeText": "تبدو نشيطًا اليوم {{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "تبدو نشيطًا اليوم!",
+        "helloUser": "مرحبًا، {{firstName}}!",
+        "ssoErrorTitle": "خطأ",
+        "ssoErrorCommon": "عذرًا، لقد صادفنا خطأ. حاول من جديد.",
+        "ssoErrorCommonEx": "خطأ غير متوقع. حاول من جديد.",
+        "ssoErrorTimeStampIncorrect": "عذرًا، يبدو أن وقت الكمبيوتر غير صحيح. يُرجى التحقق من الوقت على الكمبيوتر وحاول مرة أخرى.",
+        "ssoErrorNetworkDisconnected": "عذرا! فشل الاتصال. يُرجى التحقق من اتصالك بالإنترنت وإعادة المحاولة.",
+        "ssoErrorCommunicating": "خطأ في الشبكة. يُرجى التحقق من اتصالك وإعادة المحاولة.",
+        "ssoErrorAccountPluginNotExist": "المكون الإضافي مفقود. سنقوم باستعادة المكون الإضافي في الخلفية تلقائيًا إذا كنت متصلاً بالإنترنت. قد يستغرق هذا بعض الوقت، الرجاء المحاولة مره أخرى لاحقًا."
     },
     "faq": {
         "footer": {

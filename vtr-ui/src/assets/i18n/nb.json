@@ -344,10 +344,10 @@
         },
         "ui": {
             "back": "TILBAKE",
-            "on": "ON",
-            "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
+            "on": "PÅ",
+            "off": "AV",
+            "collapse": "Komprimer",
+            "expand": "Utvid",
             "loader": "Fetching <br> Status"
         }
     },
@@ -1305,8 +1305,8 @@
             "start": "START OMVISNING",
             "done": "FERDIG",
             "welcome1": "Velkommen",
-			"welcomeDesc1": "Med bare noen få klikk kan du beskytte PC-er, mobilenheter og tilkoblede enheter tilhørende deg og familien din.",
-			"welcomeDescStart": "Start en 30-dagers gratis prøveperiode nå.",
+            "welcomeDesc1": "Med bare noen få klikk kan du beskytte PC-er, mobilenheter og tilkoblede enheter tilhørende deg og familien din.",
+            "welcomeDescStart": "Start en 30-dagers gratis prøveperiode nå.",
             "welcome2": "Eksklusivt for Vantage",
             "welcomeDesc2": "Sikkerhet for tilkoblede hjem er innebygd i Vantage for rask tilgang til beskyttelsesstatusen for økosystemet og sikkerhetsvarsler.",
             "create": "Opprett en konto",
@@ -1636,21 +1636,21 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "Logg på",
+        "logout": "Logg av",
+        "unlockExclusives": "Få eksklusive tilbud",
+        "user": "Bruker",
+        "welcomeText": "Ser frisk ut i dag {{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "Ser frisk ut i dag!",
+        "helloUser": "Hei, {{firstName}}.",
+        "ssoErrorTitle": "Feil",
+        "ssoErrorCommon": "Huff, det har oppstått et problem. Prøv igjen.",
+        "ssoErrorCommonEx": "Uventet feil. Prøv igjen.",
+        "ssoErrorTimeStampIncorrect": "Huff, det ser ut til at klokkeslettet på PC-en ikke er riktig. Rett klokkeslettet på PC-en og prøv på nytt.",
+        "ssoErrorNetworkDisconnected": "Ops! Tilkoblingen mislyktes! Kontroller Internett-forbindelsen og prøv igjen.",
+        "ssoErrorCommunicating": "Nettverksfeil. Kontroller forbindelsen og prøv igjen.",
+        "ssoErrorAccountPluginNotExist": "Plug-in-modul mangler. Vi vil gjenopprette plug-in-modulen automatisk i bakgrunnen hvis du er koblet til Internett. Dette kan ta litt tid, prøv igjen senere."
     },
     "faq": {
         "footer": {

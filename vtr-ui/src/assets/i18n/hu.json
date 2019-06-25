@@ -344,10 +344,10 @@
         },
         "ui": {
             "back": "VISSZA",
-            "on": "ON",
-            "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
+            "on": "BE",
+            "off": "KI",
+            "collapse": "Összecsukás",
+            "expand": "Kibontás",
             "loader": "Fetching <br> Status"
         }
     },
@@ -1305,8 +1305,8 @@
             "start": "ÁTTEKINTÉS MEGKEZDÉSE",
             "done": "KÉSZ",
             "welcome1": "Üdvözöljük",
-			"welcomeDesc1": "Néhány kattintással megvédheti a saját és a családja számítógépeit, mobileszközeit és csatlakoztatott eszközeit.",
-			"welcomeDescStart": "Kezdje meg az ingyenes 30 napos próbaidőszakot.",
+            "welcomeDesc1": "Néhány kattintással megvédheti a saját és a családja számítógépeit, mobileszközeit és csatlakoztatott eszközeit.",
+            "welcomeDescStart": "Kezdje meg az ingyenes 30 napos próbaidőszakot.",
             "welcome2": "Exkluzív Vantage-funkció",
             "welcomeDesc2": "A Biztonsági rendszer csatlakoztatott otthonhoz a Vantage beépített része, amellyel gyorsan megtekinthetők az ökoszisztéma védettségére vonatkozó adatok és a biztonsági riasztások.",
             "create": "Fiók létrehozása",
@@ -1636,21 +1636,21 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "Bejelentkezés",
+        "logout": "Kijelentkezés",
+        "unlockExclusives": "Exkluzív ajánlatok",
+        "user": "Felhasználó",
+        "welcomeText": "Ma energikusnak látszik, {{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "Ma energikusnak látszik!",
+        "helloUser": "Üdvözöljük, {{firstName}}!",
+        "ssoErrorTitle": "Hiba",
+        "ssoErrorCommon": "Hiba történt. Kérjük, próbálja meg újra!",
+        "ssoErrorCommonEx": "Váratlan hiba. Kérjük, próbálja meg újra!",
+        "ssoErrorTimeStampIncorrect": "Úgy tűnik, a számítógépen megadott idő helytelen. Állítsa be a helyes időt a gépen, és próbálkozzon újra.",
+        "ssoErrorNetworkDisconnected": "Ajaj! A csatlakozás sikertelen. Ellenőrizze az internetkapcsolatot, és próbálkozzon újra.",
+        "ssoErrorCommunicating": "Hálózati hiba. Ellenőrizze a kapcsolatot, és próbálkozzon újra.",
+        "ssoErrorAccountPluginNotExist": "A beépülő modul hiányzik. Ha csatlakozik az internethez, a háttérben automatikusan visszaállítjuk a beépülő modult. Ez eltarthat egy ideig, próbálkozzon később."
     },
     "faq": {
         "footer": {

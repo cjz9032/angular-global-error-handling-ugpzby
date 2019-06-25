@@ -44,7 +44,7 @@
 				<div class="logo-text">
 					<span *ngIf="item.BrandName && !item.FeatureImage">{{item.BrandName}}</span>
 				</div>
-				<div *ngIf="item.ActionLink && item.FeatureImage"
+				<div *ngIf="item.ActionLink && item.FeatureImage && item.Action"
 					class="read-more">
 					<a href="javascript:;"
 						vtrMetrics

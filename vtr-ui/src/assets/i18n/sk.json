@@ -346,8 +346,8 @@
             "back": "SPÄŤ",
             "on": "ON",
             "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
+            "collapse": "Zbaliť",
+            "expand": "Rozbaliť",
             "loader": "Fetching <br> Status"
         }
     },
@@ -1305,8 +1305,8 @@
             "start": "SPUSTIŤ PREHLIADKU",
             "done": "HOTOVO",
             "welcome1": "Vitajte",
-			"welcomeDesc1": "Stačí pár kliknutí a môžete ochrániť vaše súkromné a rodinné počítače, mobilné zariadenia a pripojené zariadenia.",
-			"welcomeDescStart": "Začnite využívať bezplatnú 30-dňovú skúšobnú verziu ešte dnes.",
+            "welcomeDesc1": "Stačí pár kliknutí a môžete ochrániť vaše súkromné a rodinné počítače, mobilné zariadenia a pripojené zariadenia.",
+            "welcomeDescStart": "Začnite využívať bezplatnú 30-dňovú skúšobnú verziu ešte dnes.",
             "welcome2": "Exkluzívne pre aplikáciu Vantage",
             "welcomeDesc2": "Priamo v aplikácii Vantage je zabudované zabezpečenie prepojenej domácnosti na rýchly prístup k stavu ochrany vášho ekosystému a bezpečnostných upozornení.",
             "create": "Vytvorte si konto",
@@ -1636,21 +1636,21 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "Prihlásenie",
+        "logout": "Odhlásenie",
+        "unlockExclusives": "Odomknúť exkluzívne možnosti od spoločnosti Lenovo",
+        "user": "Používateľ",
+        "welcomeText": "Dnes máte veľa energie, {{firstName}}.",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "Dnes máte veľa energie.",
+        "helloUser": "Dobrý deň, {{firstName}}!",
+        "ssoErrorTitle": "Chyba",
+        "ssoErrorCommon": "Pozor, vyskytla sa chyba. Skúste znova.",
+        "ssoErrorCommonEx": "Neočakávaná chyba. Skúste znova.",
+        "ssoErrorTimeStampIncorrect": "Zdá sa, že údaj o čase vo vašom počítači nie je správny. Opravte si čas v počítači a skúste to znova.",
+        "ssoErrorNetworkDisconnected": "Pozor! Pripojenie zlyhalo. Skontrolujte internetové pripojenie a skúste to znova.",
+        "ssoErrorCommunicating": "Chyba siete. Skontrolujte pripojenie a skúste to znova.",
+        "ssoErrorAccountPluginNotExist": "Chýbajúci doplnok. Ak ste pripojení na internet, obnoví sa doplnok na pozadí automaticky. Môže to nejaký čas trvať. Skúste to znova neskôr."
     },
     "faq": {
         "footer": {

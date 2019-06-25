@@ -41,10 +41,8 @@ export class WidgetHomeSecurityAllDevicesComponent implements OnInit {
 	}
 
 	judgeDeviceNumber() {
-		if (this.account && this.account.state) {
-			if (this.account.state === CHSAccountState.trialExpired || this.account.state === CHSAccountState.local) {
-				this.allDevicesInfo.allDevicesNumber = 0;
-			}
+		if (this.account && this.account.state && (this.account.state === CHSAccountState.trialExpired || this.account.state === CHSAccountState.local)) {
+			this.allDevicesInfo.allDevicesNumber = 0;
 		}
 		if (this.allDevicesInfo.allDevicesNumber > 9) {
 			if (this.allDevicesInfo.allDevicesNumber > 99) {
