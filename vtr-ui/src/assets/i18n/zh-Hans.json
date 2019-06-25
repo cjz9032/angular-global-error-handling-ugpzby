@@ -404,7 +404,7 @@
                 "question2": "您认为性能是否可以接受？",
                 "question3": "您将来会更频繁地使用该应用程序吗？",
                 "yes": "是",
-                "no": "不可以",
+                "no": "否",
                 "tips1": "如有任何其他意见，请提出",
                 "sendFeedback": "发送反馈",
                 "submitScreenShot": "提交屏幕截图"
