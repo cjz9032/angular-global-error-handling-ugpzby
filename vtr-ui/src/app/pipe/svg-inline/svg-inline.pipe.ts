@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform, SecurityContext } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 
@@ -28,7 +28,7 @@ export class SvgInlinePipe implements PipeTransform {
 				if (value.substring(value.lastIndexOf('.')) === '.svg') {
 					this.getContent(value).then(val => {
 						val = `data:image/svg+xml;base64,${btoa(val + '')}`;
-						val = this.sanitizer.sanitize(SecurityContext.RESOURCE_URL, val + '');
+						val = this.sanitizer.bypassSecurityTrustResourceUrl(val + '');
 						observer.next(val);
 						observer.complete();
 					});

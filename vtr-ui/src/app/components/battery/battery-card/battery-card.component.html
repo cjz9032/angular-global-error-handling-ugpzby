@@ -29,9 +29,9 @@
 		</div>
 	</ng-template>
 	<div class="container p-5"
-		[ngClass]="{'background-green':batteryIndicator.batteryHealth== 'Good',
-					'background-orange': batteryIndicator.batteryHealth== 'Fair',
-					'background-red':batteryIndicator.batteryHealth== 'Poor'}">
+		[ngClass]="{'background-green':batteryConditionStatus=='Good',
+					'background-orange': batteryConditionStatus=='Fair',
+					'background-red':batteryConditionStatus=='Poor'}">
 		<div class="battery-gauge-label text-uppercase">
 			{{'device.deviceSettings.batteryGauge.title' | translate}}
 		</div>
@@ -40,8 +40,7 @@
 		</div>
 		{{batteryIndicator.percent == 0 && flag ? reInitValue(): ""}}
 		<div class="pt-4 battery-frame pr-3">
-			<vtr-battery-indicator [batteryHealth]="batteryIndicator.batteryHealth"
-				[remainingHour]="batteryIndicator.hours"
+			<vtr-battery-indicator [remainingHour]="batteryIndicator.hours"
 				[remainingMinutes]="batteryIndicator.minutes"
 				[percentage]="batteryIndicator.percent"
 				[isCharging]="batteryIndicator.charging"
@@ -63,19 +62,10 @@
 					[icon]="['fas', 'times-circle']"
 					class="poor">
 				</fa-icon>
-				<!-- <fa-icon *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Fair"
+				<fa-icon *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Fair"
 					[icon]="['fas', 'exclamation-circle']"
 					class="fair">
-				</fa-icon> -->
-				<fa-layers *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Fair"
-					[fixedWidth]="true">
-					<fa-icon [icon]="['fas', 'circle']"
-						class="fair"></fa-icon>
-					<fa-icon [icon]="['fas', 'exclamation-triangle']"
-						transform="shrink-6"
-						class="fair-inner-icon">
-					</fa-icon>
-				</fa-layers>
+				</fa-icon>
 			</div>
 
 			<div class="col">
