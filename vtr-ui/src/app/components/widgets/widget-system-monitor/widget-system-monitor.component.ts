@@ -443,7 +443,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		this.gamingCapabilities.hddInfoFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.hddInfoFeature
 		);
-		 this.initialiseDisksList(this.commonService.getLocalStorageValue(LocalStorageKey.disksList, []));
+		this.initialiseDisksList(this.commonService.getLocalStorageValue(LocalStorageKey.disksList, []));
 		this.getLocalSystemCache();
 		this.getDynamicInfoService();
 		this.getMachineInfoService();
