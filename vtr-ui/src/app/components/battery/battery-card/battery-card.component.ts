@@ -115,6 +115,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryInfo = response.batteryInformation;
 				this.batteryGauge = response.batteryIndicatorInfo;
 
+				this.commonService.setLocalStorageValue(LocalStorageKey.BatteryPercentage,
+					this.batteryGauge.percentage);
+
 				this.isLoading = false;
 
 				this.isBatteryDetailsBtnDisabled =
@@ -142,7 +145,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 					batteryIndex += 1;
 				}
 			});
-			this.commonService.setLocalStorageValue(LocalStorageKey.BatteriesHealths, batteriesHealths);
+			// this.commonService.setLocalStorageValue(LocalStorageKey.BatteryPercentage, batteriesHealths);
 			this.batteryIndex = batteryIndex;
 		}
 		this.batteryIndicator.batteryHealth = this.batteryIndicator.getBatteryHealth(this.batteryHealth);

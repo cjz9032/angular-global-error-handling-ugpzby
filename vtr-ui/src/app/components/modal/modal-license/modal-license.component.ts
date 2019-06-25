@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, SecurityContext } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
@@ -30,12 +30,11 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.http.get(this.url, { responseType: 'text' }).subscribe((results: any) => {
-			// console.log(this.sanitizer.bypassSecurityTrustHtml(results));
 			if (this.type === 'txt') {
 				const openSource = results.replace(/\< /g, '<').replace(/ \>/g, '>').replace(/\</g, '< ').replace(/\>/g, ' >');
 				this.articleBody = `<pre>${openSource}</pre>`;
 			} else {
-				this.articleBody = this.sanitizer.bypassSecurityTrustHtml(results);
+				this.articleBody = this.sanitizer.sanitize(SecurityContext.HTML, results);
 			}
 		});
 		this.pageDuration = 0;
