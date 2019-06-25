@@ -103,12 +103,16 @@ export class HomeSecurityAccount {
 							status: 'disabled',
 							text: 'homeSecurity.ecosystem.upgrade',
 							onClick: this.purchase.bind(this),
+							id: 'chs-ecosystem-btn-upgradeAccount',
+							metricsItem: 'upgradeAccount',
 						},
 						{
 							type: 'trialBadge',
 							status: 'enabled',
 							text: 'homeSecurity.ecosystem.inTrial',
 							onClick: this.purchase.bind(this),
+							id: 'chs-ecosystem-btn-upgradeAccount',
+							metricsItem: 'upgradeAccount',
 						}
 					],
 				});
@@ -146,12 +150,16 @@ export class HomeSecurityAccount {
 							status: 'disabled',
 							text: 'homeSecurity.ecosystem.upgrade',
 							onClick: this.purchase.bind(this),
+							id: 'chs-ecosystem-btn-upgradeAccount',
+							metricsItem: 'upgradeAccount',
 						},
 						{
 							type: 'trialBadge',
 							status: 'disabled',
 							text: 'homeSecurity.ecosystem.trialExpired',
 							onClick: this.purchase.bind(this),
+							id: 'chs-ecosystem-btn-upgradeAccount',
+							metricsItem: 'upgradeAccount',
 						}
 					],
 				});
@@ -230,6 +238,8 @@ export class HomeSecurityAccount {
 							status: 'disabled',
 							text: 'homeSecurity.ecosystem.renew',
 							onClick: this.purchase.bind(this),
+							id: 'chs-ecosystem-btn-upgradeAccount',
+							metricsItem: 'upgradeAccount',
 						},
 						{
 							type: 'trialBadge',
@@ -272,12 +282,16 @@ export class HomeSecurityAccount {
 								status: 'disabled',
 								text: 'homeSecurity.ecosystem.upgrade',
 								onClick: this.purchase.bind(this),
+								id: 'chs-ecosystem-btn-upgradeAccount',
+								metricsItem: 'upgradeAccount',
 							},
 							{
 								type: 'trialBadge',
 								status: 'disabled',
 								text: 'homeSecurity.ecosystem.startTrial',
 								onClick: this.createAccount.bind(this),
+								id: 'chs-ecosystem-btn-createAccount',
+								metricsItem: 'createAccount',
 							}
 						],
 					});
@@ -289,6 +303,8 @@ export class HomeSecurityAccount {
 								status: 'disabled',
 								text: 'homeSecurity.ecosystem.addEcosystem',
 								onClick: this.launchLenovoId.bind(this),
+								id: 'chs-ecosystem-btn-loginLenovoId',
+								metricsItem: 'loginLenovoId',
 							},
 							{
 								type: 'accountBadge',
@@ -308,6 +324,8 @@ export class HomeSecurityAccount {
 								status: 'disabled',
 								text: 'homeSecurity.ecosystem.enableEcosystem',
 								onClick: this.launchLenovoId.bind(this),
+								id: 'chs-ecosystem-btn-loginLenovoId',
+								metricsItem: 'loginLenovoId',
 							},
 							{
 								type: 'accountBadge',
