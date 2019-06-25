@@ -1153,10 +1153,10 @@
         "history": "完整历史记录",
         "notAvailable": "不可用",
         "notInstalled": "未安装",
-        "criticalUpdates": "关键更新",
-        "recommendedUpdates": "推荐更新",
-        "optionalUpdates": "可选更新",
-        "ignoredUpdates": "已忽略的更新",
+        "criticalUpdates": "个关键更新",
+        "recommendedUpdates": "个推荐更新",
+        "optionalUpdates": "个可选更新",
+        "ignoredUpdates": "个已忽略的更新",
         "successInstall": "安装成功",
         "failedInstall": "安装失败",
         "at": "在",
@@ -1194,7 +1194,7 @@
             "title": "联想支持网站"
         },
         "banner": {
-            "neverChecked": "欢迎使用 System Update。",
+            "neverChecked": "欢迎使用系统更新。",
             "title": "保持最新状态的系统才是健康的系统。",
             "last": "上次更新时间为",
             "next": "下次更新扫描计划时间",
