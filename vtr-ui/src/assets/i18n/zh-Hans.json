@@ -466,7 +466,7 @@
                     "uptoDate": "软件为最新",
                     "updatedOn": "更新时间",
                     "outdated": "软件已过时",
-                    "neverRanUpdate": "从不运行更新"
+                    "neverRanUpdate": "从未运行更新"
                 }
             },
             "extendedWarranty": "延长保修",
@@ -496,7 +496,7 @@
                     "daysRemaining": "剩余天数",
                     "outOfWarranty": "保修期已过",
                     "expiredOn": "到期时间：",
-                    "notAvailable": "保修不可用",
+                    "notAvailable": "未发现保修信息",
                     "support": "支持服务"
                 }
             },
