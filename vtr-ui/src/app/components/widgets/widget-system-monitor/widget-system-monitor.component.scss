@@ -469,6 +469,7 @@
 								width: $gaming_hd_diameter_lg;
 								height: $gaming_hd_diameter_lg;
 								margin-bottom: calc(0.1 * #{$gaming_hd_diameter_lg});
+								box-shadow: 0 0 0 0.5rem $gaming_hdd_border_clr;
 								@media #{$mediaquery_6} {
 									width: $gaming_hd_diameter_md;
 									height: $gaming_hd_diameter_md;
@@ -573,13 +574,13 @@
 							}
 							.hd-ring {
 								background: linear-gradient(125deg, $main_gstart 50%, $highlight_bright 100%);
-								width: 95%;
-								height: 95%;
+								width: 93.5%;
+								height: 93.5%;
 								position: relative;
-								top: 2.5%;
-								left: 2.5%;
+								top: 3%;
+								left: 3%;
 								border-radius: 50%;
-								border: 1px solid $gaming_dark;
+								//border: 1px solid $gaming_dark;
 							}
 
 							.hd-mask {
@@ -612,13 +613,13 @@
 										position: absolute;
 										left: 0;
 										// border-radius: 50%;
-										background-color: $gaming_dark;
+										background-color: $gaming_hdd_ring;
 									}
 								}
 								&.right {
 									left: 50%;
 									.mask-obj {
-										background-color: $gaming_dark;
+										background-color: $gaming_hdd_ring;
 										content: "";
 										position: absolute;
 										width: 100%;
@@ -645,6 +646,7 @@
 								width: 75%;
 								height: 75%;
 								border-radius: 50%;
+								box-shadow: inset 0 0 0 0.5rem $gaming_hdd_border_clr;
 								.hd-inner-circle {
 									position: relative;
 									top: 3.33%;
