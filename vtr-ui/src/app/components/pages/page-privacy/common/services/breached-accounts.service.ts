@@ -52,9 +52,7 @@ export class BreachedAccountsService {
 			)
 		).pipe(
 			switchMapTo(this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(take(1))),
-			tap(() => {
-				this.onGetBreachedAccountsCompleted$.next(false);
-			}),
+			tap(() => this.onGetBreachedAccountsCompleted$.next(false)),
 			switchMap((isFigleafInstalled) => {
 				this.taskStartedTime = Date.now();
 				return isFigleafInstalled ? this.getBreachedAccountsFromApp() : this.getBreachedAccountsFromBackend();

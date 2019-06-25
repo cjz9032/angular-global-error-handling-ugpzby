@@ -20,6 +20,8 @@ export class ArticlesComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.articlesService.getListOfArticles().subscribe((articles) => console.log('getListOfArticles', articles));
+
 		const getFilteredArticlesByCategory = (category) => {
 			return this.articlesService.filterArticlesByCategory(category).filter((article) => article.id !== this.openArticleId);
 		};

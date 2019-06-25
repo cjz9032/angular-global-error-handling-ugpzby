@@ -8,6 +8,7 @@ import * as page6 from './pages/article3a.html';
 import * as page7 from './pages/article3b.html';
 import { RoutersName } from '../../privacy-routing-name';
 import { UserDataGetStateService } from '../../common/services/user-data-get-state.service';
+import { HttpClient } from '@angular/common/http';
 
 export interface Article {
 	id: string;
@@ -30,7 +31,10 @@ interface ArticlesByPathSettings {
 })
 export class ArticlesService {
 
-	constructor(private userDataGetStateService: UserDataGetStateService) {
+	constructor(
+		private userDataGetStateService: UserDataGetStateService,
+		private httpClient: HttpClient
+	) {
 	}
 
 	articles: Articles = {
@@ -127,5 +131,24 @@ export class ArticlesService {
 			}
 			return acc;
 		}, []);
+	}
+
+	getListOfArticles() {
+		const queryOptions = {
+			'Page': 'privacy',
+			'Lang': 'en',
+			'GEO': 'US',
+			'OEM': 'Lenovo',
+			'OS': 'Windows',
+			'Segment': 'SMB',
+			'Brand': 'idea',
+		};
+
+		return this.httpClient.get(
+			'/api/v1/features',
+			{
+				params: queryOptions
+			}
+		);
 	}
 }
