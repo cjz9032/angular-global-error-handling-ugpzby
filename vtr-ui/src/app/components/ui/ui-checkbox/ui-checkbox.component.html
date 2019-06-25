@@ -1,5 +1,11 @@
 <p>
-	<input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" [value]="value" [checked]="checked"
-		[disabled]="disabled">
+	<input 
+		class="styled-checkbox"
+		id="styled-checkbox-1"
+		type="checkbox"
+		[value]="value"
+		[checked]="checked"
+		[disabled]="disabled"
+		(change)="onChange($event)">
 	<label for="styled-checkbox-1">{{ label }}</label>
 </p>

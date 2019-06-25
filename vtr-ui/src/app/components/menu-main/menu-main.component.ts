@@ -316,8 +316,8 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 					]).then((responses: any[]) => {
 						console.log('showSmartAssist.Promise.all()', responses);
 						// const isAvailable = (responses[0] || responses[1] || responses[2].available || responses[3]);
-						const isAvailable = (responses[0] || responses[1]);
-						// const isAvailable = true;
+						// const isAvailable = (responses[0] || responses[1]);
+						const isAvailable = true;
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, isAvailable);
 						// avoid duplicate entry. if not added earlier then add menu
 						if (isAvailable && !isSmartAssistSupported) {

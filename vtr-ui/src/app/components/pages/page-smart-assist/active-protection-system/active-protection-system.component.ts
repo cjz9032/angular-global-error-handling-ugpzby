@@ -3,9 +3,13 @@ import {
 	OnInit,
 	Input
 } from '@angular/core';
+
 import {
 	DropDownInterval
 } from '../../../../data-models/common/drop-down-interval.model';
+
+import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
+
 
 @Component({
 	selector: 'vtr-active-protection-system',
@@ -13,9 +17,10 @@ import {
 	styleUrls: ['./active-protection-system.component.scss']
 })
 export class ActiveProtectionSystemComponent implements OnInit {
-	// title: string;
-	advanced: boolean;
-	@Input() status = false;
+	advanced: boolean; // for advanced section
+	apsStatus: boolean;
+	apsSensitivity: number;
+	repeatShock = true;
 	public intervals: DropDownInterval[];
 	// public taskBarDimmerValue: number;
 
@@ -54,11 +59,60 @@ export class ActiveProtectionSystemComponent implements OnInit {
 	toggleAdvanced() {
 		this.advanced = !this.advanced;
 	}
-	constructor() {}
+	constructor(private smartAssist: SmartAssistService) {}
 
 	ngOnInit() {
 		this.advanced = false;
 		this.populateIntervals();
+		this.initAPS(); // get Default or set APS values
 	}
 
+	initAPS() {
+		this.smartAssist
+			.getAPSMode()
+			.then(res => res ? this.apsStatus = true : this.apsStatus = false);
+		this.smartAssist
+			.getAPSSensitivityLevel()
+			.then(res => {
+				switch (res) {
+					case 0: {
+						this.apsSensitivity = 100;
+						break;
+					}
+					case 1: {
+						this.apsSensitivity = 50;
+						break;
+					}
+					case 2: {
+						this.apsSensitivity = 0;
+						break;
+					}
+				}
+			});
+	}
+
+	setAPSSensitivityLevel(event) {
+		let value;
+		switch (event.value) {
+			case 0: {
+				value = 2;
+				break;
+			}
+			case 50: {
+				value = 1;
+				break;
+			}
+			case 100: {
+				value = 0;
+				break;
+			}
+		}
+		this.smartAssist
+			.setAPSSensitivityLevel(value)
+			.then(res => console.log('APS SET', res));
+	}
+
+	setRepetitiveShock(event) {
+		console.log(event);
+	}
 }

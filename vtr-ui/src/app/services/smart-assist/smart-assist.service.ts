@@ -305,6 +305,21 @@ export class SmartAssistService {
 		}
 		return undefined;
 	}
+	// Get Sensitivity Level
+	public getAPSSensitivityLevel(): Promise<number> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.getAPSSensitivityLevel();
+		}
+		return undefined;
+	}
+	// Get Sensitivity Level
+	public setAPSSensitivityLevel(value: number): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setAPSSensitivityLevel(value);
+		}
+		return undefined;
+	}
+
 
 	//#endregion
 }

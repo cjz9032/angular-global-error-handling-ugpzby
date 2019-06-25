@@ -16,7 +16,7 @@
 								[title]="'device.smartAssist.activeProtectionSystem.activeProtection.title' | translate"
 								[caption]=" 'device.smartAssist.activeProtectionSystem.activeProtection.caption' | translate"
 								[isSwitchVisible]="true"
-								[isSwitchChecked]="status"
+								[isSwitchChecked]="apsStatus"
 								[leftIcon]="['fal', 'gem']"
 								[theme]="'white'">
 							</vtr-ui-row-switch>
@@ -26,13 +26,17 @@
 								[minValue]="0"
 								[maxValue]="100"
 								[enableSlider]="false"
-								[value]="50"
-								[theme]="'white'">
+								[value]="apsSensitivity"
+								[theme]="'white'"
+								[step]='50'
+								(change)='setAPSSensitivityLevel($event)'>
 							</vtr-ui-aps-slider>
 						</div>
 						<div class="checkbox">
 							<vtr-ui-checkbox
-								[label]="'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate">
+								[label]="'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate"
+								[checked]="repeatShock"
+								(change)="setRepetitiveShock($event)">
 							</vtr-ui-checkbox>
 						</div>
 					</li>
