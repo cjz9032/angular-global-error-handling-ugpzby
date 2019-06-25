@@ -22,7 +22,7 @@ export class UiTimePickerComponent implements OnInit {
 	copyMinute: number;
 	copyAmPm: number;
 	hours = ['12', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11'];
-	minutes = ['00', '15', '30', '45', '60'];
+	minutes = ['00', '15', '30', '45'];
 	amPms = ['AM', 'PM'];
 
 	constructor() { }
@@ -40,7 +40,7 @@ export class UiTimePickerComponent implements OnInit {
 	}
 
 	incrementMinutes() {
-		if (this.copyMinute < 4) {
+		if (this.copyMinute < 3) {
 			this.copyMinute = this.copyMinute + 1;
 		}
 	}
