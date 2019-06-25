@@ -1273,19 +1273,6 @@
     },
     "homeSecurity": {
         "title": "Sécurité domestique connectée",
-        "overviewBlockTitle": "Présentation de la sécurité de l'écosystème",
-        "allDevices": "Tous les périphériques",
-        "myDevice": "Mon périphérique",
-        "secure": "SÉCURISER",
-        "needAttention": "NÉCESSITE VOTRE ATTENTION",
-        "manageAccount": "Gérer le compte",
-        "devices": "Périphériques",
-        "seeProtectedDevices": "Afficher les périphériques protégés",
-        "addDevice": "ajouter un périphérique",
-        "trialExpired": "Version d'évaluation expirée - Mettre à niveau pour protéger tous vos périphériques",
-        "upgrade": "mettre à jour",
-        "freeTrial": "Protéger tous vos périphériques - Version d'évaluation gratuite de 30 jours",
-        "startTrial": "Lancer la version d'évaluation",
         "notification":{
             "recent": "Notifications de sécurité récentes",
             "notifications": "Notifications"
@@ -1306,7 +1293,22 @@
             "startTrial": "Lancer la version d'évaluation",
             "fullAccess": "Accès complet",
             "renew": "Renouveler"
-        },
+		},
+		"overview": {
+			"overviewBlockTitle": "Présentation de la sécurité de l'écosystème",
+			"allDevices": "Tous les périphériques",
+			"myDevice": "Mon périphérique",
+			"secure": "SÉCURISER",
+			"needAttention": "NÉCESSITE VOTRE ATTENTION",
+			"manageAccount": "Gérer le compte",
+			"devices": "Périphériques",
+			"seeProtectedDevices": "Afficher les périphériques protégés",
+			"addDevice": "ajouter un périphérique",
+			"trialExpired": "Version d'évaluation expirée - Mettre à niveau pour protéger tous vos périphériques",
+			"upgrade": "mettre à jour",
+			"freeTrial": "Protéger tous vos périphériques - Version d'évaluation gratuite de 30 jours",
+			"startTrial": "Lancer la version d'évaluation"
+		},
         "tour": {
             "back": "Retour",
             "skip": "Passer",

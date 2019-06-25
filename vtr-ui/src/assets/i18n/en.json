@@ -1275,19 +1275,6 @@
 	},
 	"homeSecurity": {
 		"title": "Connected Home Security",
-		"overviewBlockTitle": "Your Ecosystem Security Overview",
-		"myDevice": "My Device",
-		"allDevices": "All Devices",
-		"secure": "SECURE",
-		"needAttention": "NEEDS ATTENTION",
-		"manageAccount": "Manage account",
-		"devices": "Devices",
-		"seeProtectedDevices": "See protected devices",
-		"addDevice": "add device",
-		"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
-		"upgrade": "upgrade",
-		"freeTrial": "Protect all of your devices - Free 30 day trial",
-		"startTrial": "Start Trial",
 		"notification":{
 			"recent": "Recent security notifications",
 			"notifications": "Notifications"
@@ -1308,6 +1295,21 @@
 			"startTrial": "Start Trial",
 			"fullAccess": "Full Access",
 			"renew": "Renew"
+		},
+		"overview": {
+			"overviewBlockTitle": "Your Ecosystem Security Overview",
+			"allDevices": "All Devices",
+			"myDevice": "My Device",
+			"secure": "SECURE",
+			"needAttention": "NEEDS ATTENTION",
+			"manageAccount": "Manage account",
+			"devices": "Devices",
+			"seeProtectedDevices": "See protected devices",
+			"addDevice": "add device",
+			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+			"upgrade": "upgrade",
+			"freeTrial": "Protect all of your devices - Free 30 day trial",
+			"startTrial": "Start Trial"
 		},
 		"tour": {
 			"back": "Back",

@@ -10,7 +10,7 @@
 						<fa-icon [icon]="['fal', 'home-lg-alt']"></fa-icon>
 					</div>
 					<div class="col-8 text">
-						<div class="all-device-name text-uppercase">{{'homeSecurity.allDevices' | translate}}</div>
+						<div class="all-device-name text-uppercase">{{'homeSecurity.overview.allDevices' | translate}}</div>
 						<div class="manage">
 							<a target="_blank" href="javascript:void(0)"
 								id="chs-lnk-ad-manageAccount"
@@ -19,7 +19,7 @@
 								metricsItem="manageAccountAllDevice"
 								metricsEvent="featureClick"
 								(click)="openCornet()">
-								{{'homeSecurity.manageAccount' | translate}}</a>
+								{{'homeSecurity.overview.manageAccount' | translate}}</a>
 						</div>
 					</div>
 				</div>
@@ -34,11 +34,11 @@
 						<div class="device-number" [ngClass]="{'sizeChange': judgeDeviceNumber()}" *ngIf="allDevicesInfo.allDevicesNumber!==0">{{allDevicesInfo.allDevicesNumber}}</div>
 					</div>
 					<div class="col-7 text" >
-						<div class="device-text text-uppercase">{{'homeSecurity.devices' | translate}}</div>
+						<div class="device-text text-uppercase">{{'homeSecurity.overview.devices' | translate}}</div>
 						<div class="status">
 							<h3 style="margin-bottom: 0rem" *ngIf="showBadge()">
 								<span class="badge badge-pill badge-success" *ngIf="allDevicesInfo.allDevicesStatus">
-									{{'homeSecurity.secure' | translate}}
+									{{'homeSecurity.overview.secure' | translate}}
 								</span>
 								<span class="badge badge-pill badge-danger" (click)="openCornet()" *ngIf="!allDevicesInfo.allDevicesStatus"
 									id="chs-btn-ad-needAttention"
@@ -46,7 +46,7 @@
 									vtrMetrics
 									metricsItem="needAttentionAllDevice"
 									metricsEvent="featureClick">
-									{{'homeSecurity.needAttention' | translate}}</span>
+									{{'homeSecurity.overview.needAttention' | translate}}</span>
 							</h3>
 						</div>
 						<div class="protected-device">
@@ -56,7 +56,7 @@
 								vtrMetrics
 								metricsItem="seeProtectedDevicesAllDevice"
 								metricsEvent="featureClick"
-								(click)="openCornet()">{{'homeSecurity.seeProtectedDevices' | translate}}</a>
+								(click)="openCornet()">{{'homeSecurity.overview.seeProtectedDevices' | translate}}</a>
 						</div>
 					</div>
 				</div>
@@ -69,14 +69,14 @@
 					metricsItem="addDeviceAllDevice"
 					metricsEvent="featureClick"
 					(click)="openCornet()"
-					[title]="'homeSecurity.addDevice' | translate"
-					[label]="'homeSecurity.addDevice' | translate">
+					[title]="'homeSecurity.overview.addDevice' | translate"
+					[label]="'homeSecurity.overview.addDevice' | translate">
 				</vtr-ui-button>
 			</div>
 	</div>
 	<div class="row overlay" *ngIf="pluginAvailable && account">
 		<div class="col content-container" *ngIf="account.state === 'trialExpired'">
-			<div class="text">{{'homeSecurity.trialExpired' | translate}}</div>
+			<div class="text">{{'homeSecurity.overview.trialExpired' | translate}}</div>
 			<vtr-ui-button
 				id="chs-btn-ad-upgrade"
 				aria-label="chs-btn-ad-upgrade"
@@ -84,12 +84,12 @@
 				metricsItem="upgradeAllDevice"
 				metricsEvent="featureClick"
 				(click)="openUpgrade()"
-				[title]="'homeSecurity.upgrade' | translate"
-				[label]="'homeSecurity.upgrade' | translate">
+				[title]="'homeSecurity.overview.upgrade' | translate"
+				[label]="'homeSecurity.overview.upgrade' | translate">
 			</vtr-ui-button>
 		</div>
 		<div class="col content-container" *ngIf="account.state === 'local'">
-			<div class="text">{{'homeSecurity.freeTrial' | translate}}</div>
+			<div class="text">{{'homeSecurity.overview.freeTrial' | translate}}</div>
 			<vtr-ui-button
 				id="chs-btn-ad-startTrial"
 				aria-label="chs-btn-ad-startTrial"
@@ -97,7 +97,7 @@
 				metricsItem="startTrialAllDevice"
 				metricsEvent="featureClick"
 				(click)="startTrial()"
-				[label]="'homeSecurity.startTrial' | translate">
+				[label]="'homeSecurity.overview.startTrial' | translate">
 			</vtr-ui-button>
 		</div>
 	</div>

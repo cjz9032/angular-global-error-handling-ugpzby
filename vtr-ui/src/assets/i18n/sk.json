@@ -1273,19 +1273,6 @@
     },
     "homeSecurity": {
         "title": "Zabezpečenie prepojenej domácnosti",
-        "overviewBlockTitle": "Zabezpečenie vášho ekosystému: prehľad",
-        "allDevices": "Všetky zariadenia",
-        "myDevice": "Moje zariadenie",
-        "secure": "ZABEZPEČENÉ",
-        "needAttention": "VYŽADUJE POZORNOSŤ",
-        "manageAccount": "Spravovať konto",
-        "devices": "Zariadenia",
-        "seeProtectedDevices": "Zobraziť chránené zariadenia",
-        "addDevice": "pridať zariadenie",
-        "trialExpired": "Platnosť skúšobnej verzie uplynula - Inovujte na ochranu všetkých zariadení",
-        "upgrade": "inovovať",
-        "freeTrial": "Chráňte všetky svoje zariadenia - Bezplatná 30-dňová skúšobná verzia",
-        "startTrial": "Spustiť skúšobnú verziu",
         "notification":{
             "recent": "Posledné bezpečnostné oznámenia",
             "notifications": "Oznámenia"
@@ -1306,6 +1293,21 @@
             "startTrial": "Spustiť skúšobnú verziu",
             "fullAccess": "Úplný prístup",
             "renew": "Obnoviť"
+		},
+		"overview": {
+			"overviewBlockTitle": "Zabezpečenie vášho ekosystému: prehľad",
+			"allDevices": "Všetky zariadenia",
+			"myDevice": "Moje zariadenie",
+			"secure": "ZABEZPEČENÉ",
+			"needAttention": "VYŽADUJE POZORNOSŤ",
+			"manageAccount": "Spravovať konto",
+			"devices": "Zariadenia",
+			"seeProtectedDevices": "Zobraziť chránené zariadenia",
+			"addDevice": "pridať zariadenie",
+			"trialExpired": "Platnosť skúšobnej verzie uplynula - Inovujte na ochranu všetkých zariadení",
+			"upgrade": "inovovať",
+			"freeTrial": "Chráňte všetky svoje zariadenia - Bezplatná 30-dňová skúšobná verzia",
+			"startTrial": "Spustiť skúšobnú verziu"
 		},
         "tour": {
             "back": "Naspäť",
