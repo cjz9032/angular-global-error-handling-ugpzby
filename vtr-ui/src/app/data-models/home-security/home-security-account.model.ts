@@ -9,7 +9,7 @@ export class HomeSecurityAccount {
 	standardTime: Date;
 	lenovoIdLoggedIn: boolean;
 	device = {
-		title: 'homeSecurity.thisDevice',
+		title: 'homeSecurity.ecosystem.thisDevice',
 		status: 'protected',
 		badge: [
 			{
@@ -29,7 +29,7 @@ export class HomeSecurityAccount {
 		],
 	};
 	allDevice = {
-		title: 'homeSecurity.allDevices',
+		title: 'homeSecurity.ecosystem.allDevices',
 		status: 'not-protected',
 		badge: [
 			{
@@ -76,7 +76,7 @@ export class HomeSecurityAccount {
 						{
 							type: 'lidBadge',
 							status: 'enabled',
-							text: 'homeSecurity.inEcosystem',
+							text: 'homeSecurity.ecosystem.inEcosystem',
 							onClick() { },
 						},
 						{
@@ -95,19 +95,19 @@ export class HomeSecurityAccount {
 						{
 							type: 'lidBadge',
 							status: 'enabled',
-							text: 'homeSecurity.ecosystemEnable',
+							text: 'homeSecurity.ecosystem.ecosystemEnable',
 							onClick() { },
 						},
 						{
 							type: 'accountBadge',
 							status: 'disabled',
-							text: 'homeSecurity.upgrade',
+							text: 'homeSecurity.ecosystem.upgrade',
 							onClick: this.purchase.bind(this),
 						},
 						{
 							type: 'trialBadge',
 							status: 'enabled',
-							text: 'homeSecurity.inTrial',
+							text: 'homeSecurity.ecosystem.inTrial',
 							onClick: this.purchase.bind(this),
 						}
 					],
@@ -119,7 +119,7 @@ export class HomeSecurityAccount {
 						{
 							type: 'lidBadge',
 							status: 'enabled',
-							text: 'homeSecurity.inEcosystem',
+							text: 'homeSecurity.ecosystem.inEcosystem',
 							onClick() { },
 						},
 						{
@@ -138,19 +138,19 @@ export class HomeSecurityAccount {
 						{
 							type: 'lidBadge',
 							status: 'enabled',
-							text: 'homeSecurity.ecosystemEnable',
+							text: 'homeSecurity.ecosystem.ecosystemEnable',
 							onClick() { },
 						},
 						{
 							type: 'accountBadge',
 							status: 'disabled',
-							text: 'homeSecurity.upgrade',
+							text: 'homeSecurity.ecosystem.upgrade',
 							onClick: this.purchase.bind(this),
 						},
 						{
 							type: 'trialBadge',
 							status: 'disabled',
-							text: 'homeSecurity.trialExpired',
+							text: 'homeSecurity.ecosystem.trialExpired',
 							onClick: this.purchase.bind(this),
 						}
 					],
@@ -162,7 +162,7 @@ export class HomeSecurityAccount {
 						{
 							type: 'lidBadge',
 							status: 'enabled',
-							text: 'homeSecurity.inEcosystem',
+							text: 'homeSecurity.ecosystem.inEcosystem',
 							onClick() { },
 						},
 						{
@@ -181,13 +181,13 @@ export class HomeSecurityAccount {
 						{
 							type: 'lidBadge',
 							status: 'enabled',
-							text: 'homeSecurity.ecosystemEnable',
+							text: 'homeSecurity.ecosystem.ecosystemEnable',
 							onClick() { },
 						},
 						{
 							type: 'accountBadge',
 							status: 'enabled',
-							text: 'homeSecurity.fullAccess',
+							text: 'homeSecurity.ecosystem.fullAccess',
 							onClick() { },
 						},
 						{
@@ -203,7 +203,7 @@ export class HomeSecurityAccount {
 						{
 							type: 'lidBadge',
 							status: 'enabled',
-							text: 'homeSecurity.inEcosystem',
+							text: 'homeSecurity.ecosystem.inEcosystem',
 							onClick() { },
 						},
 						{
@@ -222,13 +222,13 @@ export class HomeSecurityAccount {
 						{
 							type: 'lidBadge',
 							status: 'enabled',
-							text: 'homeSecurity.ecosystemEnable',
+							text: 'homeSecurity.ecosystem.ecosystemEnable',
 							onClick() { },
 						},
 						{
 							type: 'accountBadge',
 							status: 'disabled',
-							text: 'homeSecurity.renew',
+							text: 'homeSecurity.ecosystem.renew',
 							onClick: this.purchase.bind(this),
 						},
 						{
@@ -245,7 +245,7 @@ export class HomeSecurityAccount {
 							{
 								type: 'lidBadge',
 								status: 'enabled',
-								text: 'homeSecurity.inEcosystem',
+								text: 'homeSecurity.ecosystem.inEcosystem',
 								onClick() { },
 							},
 							{
@@ -264,19 +264,19 @@ export class HomeSecurityAccount {
 							{
 								type: 'lidBadge',
 								status: 'enabled',
-								text: 'homeSecurity.ecosystemEnable',
+								text: 'homeSecurity.ecosystem.ecosystemEnable',
 								onClick() { },
 							},
 							{
 								type: 'accountBadge',
 								status: 'disabled',
-								text: 'homeSecurity.upgrade',
+								text: 'homeSecurity.ecosystem.upgrade',
 								onClick: this.purchase.bind(this),
 							},
 							{
 								type: 'trialBadge',
 								status: 'disabled',
-								text: 'homeSecurity.startTrial',
+								text: 'homeSecurity.ecosystem.startTrial',
 								onClick: this.createAccount.bind(this),
 							}
 						],
@@ -287,7 +287,7 @@ export class HomeSecurityAccount {
 							{
 								type: 'lidBadge',
 								status: 'disabled',
-								text: 'homeSecurity.addEcosystem',
+								text: 'homeSecurity.ecosystem.addEcosystem',
 								onClick: this.launchLenovoId.bind(this),
 							},
 							{
@@ -306,7 +306,7 @@ export class HomeSecurityAccount {
 							{
 								type: 'lidBadge',
 								status: 'disabled',
-								text: 'homeSecurity.enableEcosystem',
+								text: 'homeSecurity.ecosystem.enableEcosystem',
 								onClick: this.launchLenovoId.bind(this),
 							},
 							{
@@ -321,30 +321,6 @@ export class HomeSecurityAccount {
 					});
 				}
 				break;
-			default:
-				Object.assign(allDevice, {
-					status: 'protected',
-					badge: [
-						{
-							type: 'lidBadge',
-							status: 'enabled',
-							text: 'just use to tests',
-							onClick() { },
-						},
-						{
-							type: 'accountBadge',
-							status: 'enabled',
-							text: 'just use to test for',
-							onClick() { },
-						},
-						{
-							type: 'trialBadge',
-							status: 'enabled',
-							text: 'just use to test for character',
-							onClick() { },
-						}
-					],
-				});
 		}
 	}
 

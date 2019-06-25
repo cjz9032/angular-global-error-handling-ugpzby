@@ -7,9 +7,9 @@ export class CursorTypePipe implements PipeTransform {
 
 	transform(value): any {
 		if (value.text === 'homeSecurity.inTrial') {
-			return 'badge-item-click';
+			return '';
 		} else {
-			return  value.status === 'disabled' ? 'badge-item-click' : 'badge-item';
+			return  value.status === 'disabled' ? '' : 'badge-item';
 		}
 	}
 
