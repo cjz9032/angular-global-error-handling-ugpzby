@@ -101,13 +101,12 @@
         .item-icon {
             &.status {
                 .icon-bkg {
-                    display: inline-block;
+					display: flex;
+					justify-content: center;
+					align-items: center;
                     border-radius: 50%;
                     height: 2rem;
                     width: 2rem;
-                    border-width: 0.2rem;
-                    border-style: solid;
-                    text-align: center;
 
                     fa-icon {
                         font-size: 1.2rem;

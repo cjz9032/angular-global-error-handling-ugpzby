@@ -346,8 +346,8 @@
             "back": "ΠΙΣΩ",
             "on": "ON",
             "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
+            "collapse": "Σύμπτυξη",
+            "expand": "Επέκταση",
             "loader": "Fetching <br> Status"
         }
     },
@@ -1305,8 +1305,8 @@
             "start": "ΕΝΑΡΞΗ ΠΕΡΙΗΓΗΣΗΣ",
             "done": "ΟΛΟΚΛΗΡΩΘΗΚΕ",
             "welcome1": "Καλωσορίσατε",
-			"welcomeDesc1": "Με λίγα μόλις κλικ, θα μπορείτε να προστατεύσετε υπολογιστές, φορητές συσκευές και συνδεδεμένες συσκευές για εσάς και την οικογένειά σας.",
-			"welcomeDescStart": "Ξεκινήστε τη δωρεάν δοκιμή 30 ημερών τώρα.",
+            "welcomeDesc1": "Με λίγα μόλις κλικ, θα μπορείτε να προστατεύσετε υπολογιστές, φορητές συσκευές και συνδεδεμένες συσκευές για εσάς και την οικογένειά σας.",
+            "welcomeDescStart": "Ξεκινήστε τη δωρεάν δοκιμή 30 ημερών τώρα.",
             "welcome2": "Αποκλειστικά για το Vantage",
             "welcomeDesc2": "Η ασφάλεια οικιακής σύνδεσης είναι απευθείας ενσωματωμένη στο Vantage για γρήγορη πρόσβαση στην κατάσταση προστασίας του οικοσυστήματός σας και για προειδοποιήσεις ασφάλειας.",
             "create": "Δημιουργία του λογαριασμού σας",
@@ -1636,21 +1636,21 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "Σύνδεση",
+        "logout": "Αποσύνδεση",
+        "unlockExclusives": "Ξεκλείδωμα αποκλειστικοτήτων",
+        "user": "Χρήστης",
+        "welcomeText": "Φαίνεστε γεμάτος/η ενέργεια σήμερα, {{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "Φαίνεστε γεμάτος/η ενέργεια σήμερα!",
+        "helloUser": "Γεια σας, {{firstName}}!",
+        "ssoErrorTitle": "Σφάλμα",
+        "ssoErrorCommon": "Ουπς, αντιμετωπίσαμε σφάλμα. Προσπαθήστε ξανά.",
+        "ssoErrorCommonEx": "Μη αναμενόμενο σφάλμα. Προσπαθήστε ξανά.",
+        "ssoErrorTimeStampIncorrect": "Ουπς, φαίνεται ότι η ώρα του υπολογιστή σας είναι εσφαλμένη. Διορθώστε την ώρα στον υπολογιστή σας και δοκιμάστε ξανά.",
+        "ssoErrorNetworkDisconnected": "Ουπς! Η σύνδεση απέτυχε! Ελέγξτε τη σύνδεση στο Internet και προσπαθήστε ξανά.",
+        "ssoErrorCommunicating": "Σφάλμα δικτύου. Ελέγξτε τη σύνδεσή σας και προσπαθήστε ξανά.",
+        "ssoErrorAccountPluginNotExist": "Η προσθήκη λείπει. Θα αποκαταστήσουμε την προσθήκη στο παρασκήνιο αυτόματα, εάν είστε συνδεδεμένοι στο Internet. Αυτό μπορεί να πάρει κάποιο χρόνο, παρακαλώ δοκιμάστε ξανά αργότερα."
     },
     "faq": {
         "footer": {

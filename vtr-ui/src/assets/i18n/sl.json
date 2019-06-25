@@ -346,8 +346,8 @@
             "back": "NAZAJ",
             "on": "ON",
             "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
+            "collapse": "Strni",
+            "expand": "Razširi",
             "loader": "Fetching <br> Status"
         }
     },
@@ -1305,8 +1305,8 @@
             "start": "ZAČNITE PREDSTAVITEV",
             "done": "KONČANO",
             "welcome1": "Dobrodošli",
-			"welcomeDesc1": "Z le nekaj kliki boste lahko zaščitili svoje in družinske osebne računalnike, mobilne naprave ter povezane naprave.",
-			"welcomeDescStart": "Začnite brezplačni 30-dnevni preskus že zdaj.",
+            "welcomeDesc1": "Z le nekaj kliki boste lahko zaščitili svoje in družinske osebne računalnike, mobilne naprave ter povezane naprave.",
+            "welcomeDescStart": "Začnite brezplačni 30-dnevni preskus že zdaj.",
             "welcome2": "Ekskluzivno za Vantage",
             "welcomeDesc2": "Povezana domača varnost je vgrajena neposredno v Vantage, da vam zagotovi hiter dostop do stanja zaščite vašega ekosistema in varnostnih opozoril.",
             "create": "Ustvarite račun",
@@ -1636,21 +1636,21 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "Prijava",
+        "logout": "Odjava",
+        "unlockExclusives": "Odklenite ekskluzivne ponudbe",
+        "user": "Uporabnik",
+        "welcomeText": "Danes ste videti polni energije, {{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "Danes ste videti polni energije!",
+        "helloUser": "Pozdravljeni, {{firstName}}!",
+        "ssoErrorTitle": "Napaka",
+        "ssoErrorCommon": "Naleteli smo na težavo. Prosimo, poskusite znova.",
+        "ssoErrorCommonEx": "Nepričakovana napaka. Prosimo, poskusite znova.",
+        "ssoErrorTimeStampIncorrect": "Videti je, da je ura v računalniku napačna. Popravite uro v računalniku in poskusite znova.",
+        "ssoErrorNetworkDisconnected": "Ojoj! Povezava ni uspela. Preverite internetno povezavo in poskusite znova.",
+        "ssoErrorCommunicating": "Omrežna napaka. Preverite povezavo in poskusite znova.",
+        "ssoErrorAccountPluginNotExist": "Vtičnik manjka. Ko boste povezani v internet, bomo vtičnik samodejno obnovili v ozadju. To lahko traja nekaj časa, poskusite znova pozneje."
     },
     "faq": {
         "footer": {

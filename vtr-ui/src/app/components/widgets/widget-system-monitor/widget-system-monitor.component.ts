@@ -32,7 +32,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public memoryModuleName: string;
 	public ramOver: string;
 	public ramUsage: number;
-	public memoryUsage:number;
+	public memoryUsage: number;
 	public showIcon: boolean = false;
 	public showAllHDs = false;
 	public gpuUsage: number;
@@ -53,7 +53,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	@Input() ramMax = 32;
 	//@Input() cpuover = 'Intel';
 
-	public hds: any = [];
+	 public hds: any = [];
 
 	// @Input() hds = [
 	// 	{
@@ -66,7 +66,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	// 	}
 	// ];
 
-	// @Input() hds = [
+	//  hds = [
 	// 	{
 	// 		capacity: 476,
 	// 		diskUsage: "14",
@@ -117,7 +117,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 
 	) { }
 
-	//CPU Panel Data
+	// CPU Panel Data
 	GetcpuBaseFrequencyCache(): any {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.cpuBaseFrequency);
 	}
@@ -143,7 +143,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.cpuOver, cpuOverCache);
 	}
 
-	//GPU Panel Data
+	// GPU Panel Data
 	GetgpuCapacityCache(): any {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.gpuCapacity);
 	}
@@ -151,7 +151,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.gpuCapacity, gpuCapacityCache);
 	}
 
-	GetgpuMaxFrequencyCache(): any{
+	GetgpuMaxFrequencyCache(): any {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.gpuMaxFrequency);
 	}
 	SetgpuMaxFrequencyCache(gpuMaxFrequenceyCache) {
@@ -170,7 +170,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.gpuModulename, gpuModulenameCache);
 	}
 
-	//Ram Panel Data
+	// Ram Panel Data
 	GetmemorySizeCache(): any {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.memorySize);
 	}
@@ -178,7 +178,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.memorySize, memorySizeCache);
 	}
 	GetramCapacityCache(): any {
-	 	return this.commonService.getLocalStorageValue(LocalStorageKey.ramCapacity);
+		return this.commonService.getLocalStorageValue(LocalStorageKey.ramCapacity);
 	}
 	SetramCapacityCache(ramCapacityCache) {
 		this.commonService.setLocalStorageValue(LocalStorageKey.ramCapacity, ramCapacityCache);
@@ -196,7 +196,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.ramOver, ramOverCache);
 	}
 
-	//SSD & HDD Panel
+	// SSD & HDD Panel
 	GetTypeCache(): any {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.type);
 	}
@@ -238,92 +238,79 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 
 
 
-public getLocalSystemCache()
-{
+	public getLocalSystemCache() {
 
-	if(this.GetcpuBaseFrequencyCache() !== undefined)
-	{
-		this.cpuCurrent = this.GetcpuBaseFrequencyCache();
-	}
-	if(this.GetcpuCapacityCache() !== undefined)
-	{
-		this.cpuMax = this.GetcpuCapacityCache();
-	}
-	if(this.GetcpuUsageCache() !== undefined)
-	{
-		this.cpuUsage = this.GetcpuUsageCache();
-	}
-	if(this.GetcpuoverCache() !== undefined)
-	{
-		this.cpuover = this.GetcpuoverCache();
-	}
-	if(this.GetgpuCapacityCache() !== undefined)
-	{
-		this.gpuCurrent = this.GetgpuCapacityCache();
-	}
-	if(this.GetgpuMaxFrequencyCache() !== undefined)
-	{
-		this.gpuMax = this.GetgpuMaxFrequencyCache();
-	}
-	if(this.GetgpuUsageCache() !== undefined)
-	{
-		this.gpuUsage = this.GetgpuUsageCache();
-	}
-	if(this.GetgpuModulenameCache() !== undefined)
-	{
-		this.gpuModuleName = this.GetgpuModulenameCache();
-	}
-	if(this.GetmemorySizeCache() !== undefined)
-	{
-		this.ramCurrent = this.GetmemorySizeCache();
-	}
-	if(this.GetramCapacityCache() !== undefined)
-	{
-		this.ramMax = this.GetramCapacityCache();
-	}
-	if(this.GetramUsageCache() !== undefined)
-	{
-		this.ramUsage = this.GetramUsageCache();
-	}
-	if(this.GetramaOverCache() !== undefined)
-	{
-		this.ramOver = this.GetramaOverCache();
-	}
-	if(this.GetTypeCache() !== undefined)
-	{
-		this.type = this.GetTypeCache();
-	}
-	if(this.GetCapacityCache() !== undefined)
-	{
-		this.capacity = this.GetCapacityCache();
-	}
-	if(this.GethddNameCache() !== undefined)
-	{
-		this.hddName = this.GethddNameCache();
-	}
-	if(this.GetusedDiskkCache() !== undefined)
-	{
-		this.usedDisk = this.GetusedDiskkCache();
-	}
-	if(this.GetDiskUsageCache() !== undefined)
-	{
-		this.diskUsage = this.GetDiskUsageCache();
-	}
-	if(this.GethddNameCache() !== undefined)
-	{
-		this.hddName = this.GethddNameCache();
-	}
+		if (this.GetcpuBaseFrequencyCache() !== undefined) {
+			this.cpuCurrent = this.GetcpuBaseFrequencyCache();
+		}
+		if (this.GetcpuCapacityCache() !== undefined) {
+			this.cpuMax = this.GetcpuCapacityCache();
+		}
+		if (this.GetcpuUsageCache() !== undefined) {
+			this.cpuUsage = this.GetcpuUsageCache();
+		}
+		if (this.GetcpuoverCache() !== undefined) {
+			this.cpuover = this.GetcpuoverCache();
+		}
+		if (this.GetgpuCapacityCache() !== undefined) {
+			this.gpuCurrent = this.GetgpuCapacityCache();
+		}
+		if (this.GetgpuMaxFrequencyCache() !== undefined) {
+			this.gpuMax = this.GetgpuMaxFrequencyCache();
+		}
+		if (this.GetgpuUsageCache() !== undefined) {
+			this.gpuUsage = this.GetgpuUsageCache();
+		}
+		if (this.GetgpuModulenameCache() !== undefined) {
+			this.gpuModuleName = this.GetgpuModulenameCache();
+		}
+		if (this.GetmemorySizeCache() !== undefined) {
+			this.ramCurrent = this.GetmemorySizeCache();
+		}
+		if (this.GetramCapacityCache() !== undefined) {
+			this.ramMax = this.GetramCapacityCache();
+		}
+		if (this.GetramUsageCache() !== undefined) {
+			this.ramUsage = this.GetramUsageCache();
+		}
+		if (this.GetramaOverCache() !== undefined) {
+			this.ramOver = this.GetramaOverCache();
+		}
+		if (this.GetTypeCache() !== undefined) {
+			this.type = this.GetTypeCache();
+		}
+		if (this.GetCapacityCache() !== undefined) {
+			this.capacity = this.GetCapacityCache();
+		}
+		if (this.GethddNameCache() !== undefined) {
+			this.hddName = this.GethddNameCache();
+		}
+		if (this.GetusedDiskkCache() !== undefined) {
+			this.usedDisk = this.GetusedDiskkCache();
+		}
+		if (this.GetDiskUsageCache() !== undefined) {
+			this.diskUsage = this.GetDiskUsageCache();
+		}
+		if (this.GethddNameCache() !== undefined) {
+			this.hddName = this.GethddNameCache();
+		}
 
 
-}
+	}
 	public getDynamicInfoService() {
 		this.hwInfoService.getDynamicInformation().then((hwInfo: any) => {
 			console.log('getDynamicInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
+			this.formDynamicInformation(hwInfo);
+		});
+	}
+
+	public formDynamicInformation(hwInfo: any) {
+		try {
 			if (hwInfo.gpuUsage !== null) {
 				this.gpuUsage = this.getStackHeight(hwInfo.gpuUsage);
 			}
 			if (hwInfo.cpuUsage !== null) {
-				this.cpuUsage = hwInfo.cpuUsage/100;
+				this.cpuUsage = hwInfo.cpuUsage / 100;
 			}
 			if (hwInfo.memoryUsage !== null) {
 				this.memoryUsage = this.getStackHeight(hwInfo.memoryUsage);
@@ -334,52 +321,59 @@ public getLocalSystemCache()
 			}
 			// this.cpuCurrent = parseFloat(this.cpuUseFrequency);
 			this.SystemStatusObj.cpuBaseFrequency = this.cpuCurrent;
-			this.commonService.setLocalStorageValue(LocalStorageKey.cpuBaseFrequency, this.cpuCurrent);
 			this.SystemStatusObj.cpuUsage = hwInfo.cpuUsage;
-			this.commonService.setLocalStorageValue(LocalStorageKey.cpuUsage, hwInfo.cpuUsage);
 			if (hwInfo.gpuUsedMemory !== '') {
 				this.gpuCurrent = hwInfo.gpuUsedMemory.split('GB')[0];
 				// this.gpuUsedMemory = hwInfo.gpuUsedMemory.split('GB')[0];
 			}
 			// this.gpuCurrent = parseFloat(this.gpuUsedMemory);
 			this.SystemStatusObj.gpuCapacity = this.gpuCurrent;
-			this.commonService.setLocalStorageValue(LocalStorageKey.gpuCapacity, this.gpuCurrent);
 			this.SystemStatusObj.gpuUsage = hwInfo.gpuUsage;
-			this.commonService.setLocalStorageValue(LocalStorageKey.gpuUsage, hwInfo.gpuUsage);
 			if (hwInfo.memoryUsed !== '') {
 				this.ramCurrent = hwInfo.memoryUsed.split('GB')[0];
 				// this.memoryUsed = hwInfo.memoryUsed.split('GB')[0];
 			}
 			// this.ramCurrent = parseFloat(this.memoryUsed);
 			this.SystemStatusObj.memorySize = this.ramCurrent;
-			this.commonService.setLocalStorageValue(LocalStorageKey.memorySize, this.ramCurrent);
-			this.SystemStatusObj.ramUsage =  hwInfo.memoryUsage;
-			this.commonService.setLocalStorageValue(LocalStorageKey.ramUsage, hwInfo.memoryUsage);
-			this.hds = hwInfo.diskList;
-			this.hds.forEach((hd) => {
-				this.SetisSystemDiskCache(hd.isSystemDisk);
-				this.SetCapacityCache(hd.capacity);
-				this.SetTypeCache(hd.type);
-				this.SethddNameCache(hd.hddName);
-				this.SetusedDiskCache(hd.usedDisk);
-				this.SetDiskUsageCache(hd.diskUsage);
-			});
-			this.hds.forEach((hd) => {
-				if (this.convertToBoolean(hd.isSystemDisk) === true) {
-					this.showIcon = true;
-				}
-			});
-			for (var _i = 0; _i < hwInfo.diskList.length; _i++) {
-				var hd = JSON.stringify(hwInfo.diskList[_i]);
-				if (_i === 0 && this.showIcon === true) {
-					hwInfo.diskList[0].isSystemDisk = true;
-				}
-				else {
-					hwInfo.diskList[_i].isSystemDisk = false;
-				}
-			}
+			this.SystemStatusObj.ramUsage = hwInfo.memoryUsage;
+			this.initialiseDisksList(hwInfo.diskList);
+			this.setFormDynamicInformationCache(hwInfo);
+		} catch (err) {
+			console.log(`ERROR in formDynamicInformation() of widget-system-monitor.component`, err);
+		}
+	}
 
+	public initialiseDisksList(diskList: any[] = []) {
+		this.hds = diskList;
+		this.hds.forEach((hd: any) => {
+			this.SetisSystemDiskCache(hd.isSystemDisk);
+			this.SetCapacityCache(hd.capacity);
+			this.SetTypeCache(hd.type);
+			this.SethddNameCache(hd.hddName);
+			this.SetusedDiskCache(hd.usedDisk);
+			this.SetDiskUsageCache(hd.diskUsage);
+			if (this.convertToBoolean(hd.isSystemDisk) === true) {
+				this.showIcon = true;
+			}
 		});
+		for (var _i = 0; _i < diskList.length; _i++) {
+			var hd = JSON.stringify(diskList[_i]);
+			if (_i === 0 && this.showIcon === true) {
+				diskList[0].isSystemDisk = true;
+			} else {
+				diskList[_i].isSystemDisk = false;
+			}
+		}
+	}
+
+	public setFormDynamicInformationCache(hwInfo: any) {
+		this.commonService.setLocalStorageValue(LocalStorageKey.cpuBaseFrequency, this.cpuCurrent);
+		this.commonService.setLocalStorageValue(LocalStorageKey.cpuUsage, hwInfo.cpuUsage);
+		this.commonService.setLocalStorageValue(LocalStorageKey.gpuCapacity, this.gpuCurrent);
+		this.commonService.setLocalStorageValue(LocalStorageKey.gpuUsage, hwInfo.gpuUsage);
+		this.commonService.setLocalStorageValue(LocalStorageKey.memorySize, this.ramCurrent);
+		this.commonService.setLocalStorageValue(LocalStorageKey.ramUsage, hwInfo.memoryUsage);
+		this.commonService.setLocalStorageValue(LocalStorageKey.disksList, hwInfo.diskList);
 	}
 
 	public getMachineInfoService() {
@@ -429,8 +423,7 @@ public getLocalSystemCache()
 	convertToBoolean(input: string): boolean | undefined {
 		try {
 			return JSON.parse(input);
-		}
-		catch (e) {
+		} catch (e) {
 			return undefined;
 		}
 	}
@@ -450,10 +443,10 @@ public getLocalSystemCache()
 		this.gamingCapabilities.hddInfoFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.hddInfoFeature
 		);
+		 this.initialiseDisksList(this.commonService.getLocalStorageValue(LocalStorageKey.disksList, []));
 		this.getLocalSystemCache();
 		this.getDynamicInfoService();
 		this.getMachineInfoService();
-		let int = 0;
 		this.loop = setInterval(() => {
 			this.getDynamicInfoService();
 		}, 5000);
@@ -463,8 +456,11 @@ public getLocalSystemCache()
 		clearInterval(this.loop);
 	}
 
-	toggleHDs(event) {
-		if (this.hds.length > 1) {
+	toggleHDs(canClose = false) {
+		console.log(canClose, '--------------CANCLOSE')
+		if (canClose) {
+			this.showAllHDs = false
+		} else if (this.hds.length > 1) {
 			this.showAllHDs = !this.showAllHDs;
 		}
 	}
@@ -497,8 +493,8 @@ public getLocalSystemCache()
 	}
 
 	getStackHeight(pct) {
-		if(pct > 100) pct = 100;
-		if(pct < 0) pct = 0;
+		if (pct > 100) pct = 100;
+		if (pct < 0) pct = 0;
 		const height = 100 - pct;
 		return height;
 	}

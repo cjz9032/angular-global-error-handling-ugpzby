@@ -346,8 +346,8 @@
             "back": "ATRÁS",
             "on": "ON",
             "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
+            "collapse": "Contraer",
+            "expand": "Expandir",
             "loader": "Fetching <br> Status"
         }
     },
@@ -1305,8 +1305,8 @@
             "start": "INICIAR RECORRIDO",
             "done": "LISTO",
             "welcome1": "Bienvenido",
-			"welcomeDesc1": "En solo unos cuantos clics, podrá proteger los equipos, los dispositivos móviles y los dispositivos conectados a usted y a su familia.",
-			"welcomeDescStart": "Empiece ahora su versión de prueba gratuita de 30 días.",
+            "welcomeDesc1": "En solo unos cuantos clics, podrá proteger los equipos, los dispositivos móviles y los dispositivos conectados a usted y a su familia.",
+            "welcomeDescStart": "Empiece ahora su versión de prueba gratuita de 30 días.",
             "welcome2": "Exclusivo para Vantage",
             "welcomeDesc2": "La Seguridad de hogar conectado se incorpora directamente en Vantage para acceder de forma rápida al estado de protección del ecosistema y las alertas de seguridad.",
             "create": "Cree su cuenta",
@@ -1636,21 +1636,21 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "Inicio de sesión",
+        "logout": "Cerrar sesión",
+        "unlockExclusives": "Desbloquear contenido exclusivo",
+        "user": "Usuario",
+        "welcomeText": "¡Energícese hoy, {{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
+        "welcomeTextWithoutUserName": "¡Energícese hoy!",
+        "helloUser": "¡Hola, {{firstName}}!",
         "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "ssoErrorCommon": "¡Ups! Hemos encontrado un error. Inténtelo de nuevo.",
+        "ssoErrorCommonEx": "Error inesperado. Inténtelo de nuevo.",
+        "ssoErrorTimeStampIncorrect": "Ups, al parecer la hora en el PC es incorrecta. Corrija la hora en su PC e intente de nuevo.",
+        "ssoErrorNetworkDisconnected": "Lo sentimos. La conexión ha fallado. Compruebe su conexión a Internet y vuelva a intentarlo.",
+        "ssoErrorCommunicating": "Error de red. Compruebe su conexión y vuelva a intentarlo.",
+        "ssoErrorAccountPluginNotExist": "Falta el plugin. Restauraremos el plugin en segundo plano automáticamente si está conectado a Internet. Esto podría tardar un poco, intente de nuevo más tarde."
     },
     "faq": {
         "footer": {

@@ -344,10 +344,10 @@
         },
         "ui": {
             "back": "上一步",
-            "on": "ON",
-            "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
+            "on": "開",
+            "off": "關",
+            "collapse": "收合",
+            "expand": "展開",
             "loader": "Fetching <br> Status"
         }
     },
@@ -1305,8 +1305,8 @@
             "start": "開始導覽",
             "done": "完成",
             "welcome1": "歡迎使用",
-			"welcomeDesc1": "只需按幾下滑鼠，您和家人的 PC、行動裝置和所有連線裝置就能獲得保護。",
-			"welcomeDescStart": "立即開始 30 天免費試用。",
+            "welcomeDesc1": "只需按幾下滑鼠，您和家人的 PC、行動裝置和所有連線裝置就能獲得保護。",
+            "welcomeDescStart": "立即開始 30 天免費試用。",
             "welcome2": "Vantage 獨家",
             "welcomeDesc2": "連線家庭安全性直接內建於 Vantage，可供快速存取生態系統和安全警報的保護狀態。",
             "create": "建立您的帳戶",
@@ -1636,21 +1636,21 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "登入",
+        "logout": "登出",
+        "unlockExclusives": "解除鎖定獨家功能",
+        "user": "使用者",
+        "welcomeText": "{{firstName}}，今天看起來充滿活力！",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "今天看起來充滿活力！",
+        "helloUser": "{{firstName}}，您好！",
+        "ssoErrorTitle": "錯誤",
+        "ssoErrorCommon": "糟糕，我們遇到了錯誤。請再試一次。",
+        "ssoErrorCommonEx": "非預期的錯誤。請再試一次。",
+        "ssoErrorTimeStampIncorrect": "糟糕，您 PC 的時間似乎不正確。請更正您 PC 上的時間，然後再試一次。",
+        "ssoErrorNetworkDisconnected": "糟糕！連線失敗！請檢查您的網際網路連線，然後再試一次。",
+        "ssoErrorCommunicating": "網路錯誤。請檢查您的連線，然後再試一次。",
+        "ssoErrorAccountPluginNotExist": "遺漏外掛程式。如果您已連線至網際網路，我們將會在背景自動還原外掛程式。這可能需要一點時間，請稍後重試。"
     },
     "faq": {
         "footer": {
