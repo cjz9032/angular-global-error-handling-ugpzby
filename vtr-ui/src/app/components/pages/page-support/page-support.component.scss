@@ -196,7 +196,7 @@
 	.quick-access-title {
 		font-size: 2.5rem;
 		color: $main_dark;
-		font-weight: $weight_600;
+		font-weight: $weight_medium;
 	}
 
 	.quick-access-desc {
@@ -230,6 +230,7 @@
 					font-size: 3.6rem;
 					color: $main;
 					margin-bottom: 0;
+					cursor: pointer;
 				}
 
 				.item-title {
@@ -245,6 +246,7 @@
 					align-items: center;
 					justify-content: center;
 					letter-spacing: 0;
+					cursor: pointer;
 				}
 
 				.item-button {
@@ -264,6 +266,7 @@
 					overflow: hidden;
 					white-space: nowrap;
 					text-overflow: ellipsis;
+					cursor: pointer;
 				}
 
 				&:hover {
