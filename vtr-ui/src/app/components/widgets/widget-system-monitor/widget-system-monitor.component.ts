@@ -468,16 +468,15 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	}
 
 	toggleHDs(canClose = false) {
-		console.log(canClose, '--------------CANCLOSE')
 		if (canClose) {
-			this.showAllHDs = false
+			this.showAllHDs = false;
 		} else if (this.hds.length > 1) {
 			this.showAllHDs = !this.showAllHDs;
 		}
 	}
 
 	getLeftDeg(pct) {
-		//let pct = (current / max);
+		// let pct = (current / max);
 		// console.log('LEFT DEG', current, max, pct);
 		if (pct > 1) {
 			pct = 1;
@@ -491,7 +490,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	}
 
 	getRightDeg(pct) {
-		//let pct = (current / max);
+		// let pct = (current / max);
 		// console.log('RIGHT DEG', current, max, pct);
 		if (pct > 1) {
 			pct = 1;
@@ -504,8 +503,8 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	}
 
 	getStackHeight(pct) {
-		if (pct > 100) pct = 100;
-		if (pct < 0) pct = 0;
+		if (pct > 100) { pct = 100; }
+		if (pct < 0) { pct = 0; }
 		const height = 100 - pct;
 		return height;
 	}
