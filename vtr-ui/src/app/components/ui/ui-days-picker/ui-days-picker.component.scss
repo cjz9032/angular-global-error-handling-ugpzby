@@ -1,6 +1,6 @@
 @import "../../../app.theme.scss";
 
-.vtr-ui-time-picker {
+.vtr-ui-days-picker {
 	.sub-heading {
 		font-size: 1.2rem;
 		color: rgba(66, 78, 123, 0.4);
@@ -169,12 +169,10 @@
 		fa-icon {
 			color: #4579f0;
 			font-size: 2rem;
-			cursor: pointer;
 		}
 	}
 
 	.disabled {
 		opacity: 0.5;
-		pointer-events: none;
 	}
 }

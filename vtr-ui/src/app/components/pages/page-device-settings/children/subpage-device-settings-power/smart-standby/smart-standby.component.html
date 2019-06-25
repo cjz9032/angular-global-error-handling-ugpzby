@@ -1,0 +1,50 @@
+<div class="row py-5"
+	id="smart-standby"
+	*ngIf="smartStandby?.isCapable">
+	<div class="col-10 mx-auto ">
+		<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.smartStandby.title' | translate"
+			[isCollapsed]="false">
+			<ul class="list-group list-group-flush">
+				<li class="">
+					<vtr-ui-row-switch [caption]="'device.deviceSettings.power.smartStandby.description' | translate"
+						[isSwitchVisible]=true
+						[isLastChild]=true
+						[showChildContent]="true"
+						[rightIcon]="['far', 'question-circle']"
+						[tooltipText]="'device.deviceSettings.power.smartStandby.tooltip' | translate"
+						[isSwitchChecked]="smartStandby.isEnabled"
+						(toggleOnOff)="onSmartStandbyToggle($event)">
+					</vtr-ui-row-switch>
+					<section *ngIf="smartStandby.isEnabled">
+						<div class="smart-standby-timer">
+							<h5>
+								{{ 'device.deviceSettings.power.smartStandby.timer.heading' | translate | uppercase }}
+							</h5>
+							<vtr-ui-time-picker [time]="smartStandbyStartTime"
+								[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading1'"
+								[id]="'dropcheck1'"
+								(setTime)="onSetStartTime($event)">
+							</vtr-ui-time-picker>
+							<vtr-ui-time-picker [time]="smartStandbyEndTime"
+								[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading2'"
+								[id]="'dropcheck2'"
+								(setTime)="onSetEndTime($event)">
+							</vtr-ui-time-picker>
+							<div class="row">
+								<div class="col">
+									<div class="note align-items-center">
+										{{ 'device.deviceSettings.power.smartStandby.timer.endTimeNote' | translate }}
+									</div>
+								</div>
+							</div>
+							<vtr-ui-days-picker [days]="smartStandby.daysOfWeekOff"
+								[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading3'"
+								[daysId]="'dropcheck3'"
+								(setDays)="onSetDaysOfWeekOff($event)"></vtr-ui-days-picker>
+						</div>
+					</section>
+				</li>
+			</ul>
+		</vtr-container-collapsible>
+	</div>
+</div>
