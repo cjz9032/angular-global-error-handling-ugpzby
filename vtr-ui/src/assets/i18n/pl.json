@@ -44,7 +44,13 @@
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
                     "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock"
+                    "touchpadLock": "Touchpad Lock",
+                    "lightingDriverPopup": {
+                        "headerText": "Driver Install Required",
+                        "text": "Please install driver",
+                        "button": "Install",
+                        "link": "cancel"
+                    }
                 },
                 "systemTools": {
                     "power": "Power",
@@ -338,10 +344,10 @@
         },
         "ui": {
             "back": "WSTECZ",
-            "on": "ON",
-            "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
+            "on": "WŁ.",
+            "off": "WYŁ.",
+            "collapse": "Zwiń",
+            "expand": "Rozwiń",
             "loader": "Fetching <br> Status"
         }
     },
@@ -986,6 +992,14 @@
                         "description": "change keyboard backlight states",
                         "image": ""
                     }
+                },
+                "userDefinedKey": {
+                    "title": "User-defined Key",
+                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "dropDown": {
+                        "title": "Action User Defined key",
+                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                    }
                 }
             }
         },
@@ -1109,7 +1123,6 @@
                 "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
                 "installBtnText": "Install",
                 "launchBtnText": "Launch",
-                "learnMoreText": "Learn More",
                 "voiceToText": {
                     "title": "Voice to text",
                     "caption": "This feature helps to convert your voice into texts."
@@ -1292,7 +1305,8 @@
             "start": "ROZPOCZNIJ",
             "done": "GOTOWE",
             "welcome1": "Witamy",
-            "welcomeDesc1": "Za pomocą kilku kliknięć możesz chronić komputery, urządzenia mobilne i połączone urządzenia należące do Ciebie i Twojej rodziny. Rozpocznij bezpłatną 30-dniową wersję próbną.",
+            "welcomeDesc1": "Za pomocą kilku kliknięć możesz chronić komputery, urządzenia mobilne i połączone urządzenia należące do Ciebie i Twojej rodziny.",
+            "welcomeDescStart": "Rozpocznij bezpłatną 30-dniową wersję próbną.",
             "welcome2": "Wyłącznie dla aplikacji Vantage",
             "welcomeDesc2": "Funkcja Bezpieczny Dom jest wbudowana bezpośrednio w aplikację Vantage, aby umożliwić szybki dostęp do stanu ochrony Twojego ekosystemu oraz alertów zabezpieczeń.",
             "create": "Utwórz konto",
@@ -1622,21 +1636,21 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "Logowanie",
+        "logout": "Wyloguj",
+        "unlockExclusives": "Odblokuj dodatki specjalne",
+        "user": "Użytkownik",
+        "welcomeText": "Wygląda na pełnego energii {{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "Wygląda na pełnego energii!",
+        "helloUser": "Witaj, {{firstName}}!",
+        "ssoErrorTitle": "Błąd",
+        "ssoErrorCommon": "Niestety, wystąpił błąd. Spróbuj ponownie.",
+        "ssoErrorCommonEx": "Nieoczekiwany błąd. Spróbuj ponownie.",
+        "ssoErrorTimeStampIncorrect": "Ojej, wygląda na to, że godzina na Twoim komputerze jest nieprawidłowa. Popraw godzinę na Twoim komputerze i spróbuj ponownie.",
+        "ssoErrorNetworkDisconnected": "Oj! Niepowodzenie połączenia! Sprawdź połączenie z Internetem i spróbuj ponownie.",
+        "ssoErrorCommunicating": "Błąd sieciowy. Sprawdź połączenie i spróbuj ponownie.",
+        "ssoErrorAccountPluginNotExist": "Brak wtyczki. Wtyczka zostanie automatycznie przywrócona w tle, jeśli użytkownik jest połączony z Internetem. Może to zająć trochę czasu, spróbuj ponownie później."
     },
     "faq": {
         "footer": {
@@ -1994,7 +2008,8 @@
             },
             "para12": "Note",
             "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        }
+        },
+        "pageTitle": "Szczegóły wsparcia"
     },
     "welcometutorial": {
         "description": "Aplikacja Lenovo Vantage ułatwia aktualizację sterowników, diagnostykę, wysyłanie zgłoszeń do pomocy technicznej i uzyskiwanie informacji o urządzeniu.W kilka chwil znajdziesz przydatne informacje i dostosujesz aplikację do swoich potrzeb",

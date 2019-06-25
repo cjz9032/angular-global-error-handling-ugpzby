@@ -12,6 +12,8 @@ export class UiButtonComponent implements OnInit {
 	@Input() upperCaseLabel = true;
 	@Output() onClick = new EventEmitter<any>();
 
+	@Input() tooltip =true;
+
 	@Input() metricsItem: string;
 	@Input() metricsParent: string;
 	@Input() metricsValue: string;
@@ -34,5 +36,6 @@ export class UiButtonComponent implements OnInit {
 		this.onClick.emit(event);
 	}
 
-	ngOnInit() {}
+	ngOnInit() {
+	}
 }

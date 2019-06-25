@@ -1,3 +1,4 @@
+import { OutsideclickDirective } from './directives/outsideclick.directive';
 // ANGULAR MODULES
 import { BrowserModule } from '@angular/platform-browser';
 import {NgModule, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler} from '@angular/core';
@@ -232,7 +233,8 @@ import { CharacterLimitPipe } from './pipe/ui-chs-statusbar/character-limit.pipe
 import { UiTimePickerComponent } from './components/ui/ui-time-picker/ui-time-picker.component';
 import { VoiceComponent } from './components/pages/page-smart-assist/voice/voice.component';
 import { ModalVoiceComponent } from './components/modal/modal-voice/modal-voice.component';
-import { SanitizePipe } from './pipe/sanitize.pipe';
+import { CapitalizeFirstPipe } from './pipe/capitalize-pipe/capitalize-first.pipe';
+import { SanitizeModule } from './modules/sanitize.module';
 
 library.add(fas);
 library.add(fab);
@@ -329,6 +331,7 @@ library.add(fal);
 		BaseComponent,
 		ModalCommonConfirmationComponent,
 		AppEventDirective,
+		OutsideclickDirective,
 		ModalUpdateChangeLogComponent,
 		ModalCommonConfirmationComponent,
 		ModalArticleDetailComponent,
@@ -397,7 +400,6 @@ library.add(fal);
 		DisplayColorTempComponent,
 		UiLightingProfileToggleComponent,
 		UiBrightnessSliderComponent,
-		SvgInlinePipe,
 		UiLightingEffectComponent,
 		UiLightingSingleColorComponent,
 		UiLightingColorWheelComponent,
@@ -420,7 +422,7 @@ library.add(fal);
 		UiTimePickerComponent,
 		VoiceComponent,
 		ModalVoiceComponent,
-		SanitizePipe
+		CapitalizeFirstPipe
 	],
 	imports: [
 		BrowserModule,
@@ -437,7 +439,8 @@ library.add(fal);
 		TranslationModule,
 		BrowserAnimationsModule,
 		PrivacyModule,
-		ColorPickerModule
+		ColorPickerModule,
+		SanitizeModule
 	],
 	providers: [
 		CookieService,

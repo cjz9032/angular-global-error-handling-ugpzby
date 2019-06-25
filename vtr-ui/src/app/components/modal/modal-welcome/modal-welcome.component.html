@@ -49,6 +49,7 @@
 					<div class="col-auto ">
 						<vtr-ui-button metricsParent="WelcomePage"
 							metricsEvent="featureClick"
+									   [tooltip]="false"
 							[metricsItem]="'NEXT'"
 							[label]="'tutorial.next' | translate"
 							[btnHeight]=true
@@ -211,6 +212,7 @@
 							metricsParent="WelcomePage"
 
 							metricsEvent="featureClick"
+							[tooltip]="false"
 							[metricsItem]="'DONE'"
 							[label]="'welcometutorial.done' | translate"
 							[btnHeight]=true

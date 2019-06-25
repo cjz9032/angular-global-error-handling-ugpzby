@@ -1307,7 +1307,8 @@
 			"start": "START TOUR",
 			"done": "DONE",
 			"welcome1": "Welcome",
-			"welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
+			"welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family.",
+			"welcomeDescStart": "Start your free 30 day trial now.",
 			"welcome2": "Exclusive for Vantage",
 			"welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
 			"create": "Create your account",
@@ -1654,6 +1655,7 @@
 		"ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
 	},
 	"faq": {
+		"pageTitle": "Support Detail",
 		"footer": {
 			"title": "Not finding what you are looking for?",
 			"description": "NEED ADDITIONAL SUPPORT? DON’T HESITATE TO CONTACT US VIA:",

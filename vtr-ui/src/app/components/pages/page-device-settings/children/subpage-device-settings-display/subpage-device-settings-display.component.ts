@@ -43,7 +43,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	public shouldCameraSectionDisabled = true;
 	public isCameraHidden = false;
-
+public isCameraInErrorState =false;
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 	headerMenuItems = [
@@ -149,6 +149,30 @@ export class SubpageDeviceSettingsDisplayComponent
 				case DeviceMonitorStatus.CameraStatus:
 					console.log('DeviceMonitorStatus.CameraStatus', payload);
 					this.dataSource.permission = payload;
+					
+					
+if(payload){
+	this.shouldCameraSectionDisabled=false;
+	this.isCameraInErrorState=false;
+	this.cameraFeatureAccess.showAutoExposureSlider = false;
+	if (this.dataSource.exposure.autoValue === true) {
+		this.cameraFeatureAccess.exposureAutoValue = true;
+	} else {
+		this.cameraFeatureAccess.exposureAutoValue = false;
+	}
+	if (this.dataSource.exposure.supported === true && this.dataSource.exposure.autoValue === false) {
+		this.cameraFeatureAccess.showAutoExposureSlider = true;
+	}
+	
+}
+else{
+	this.shouldCameraSectionDisabled=true;
+	this.isCameraInErrorState=false;
+	this.cameraFeatureAccess.exposureAutoValue = false;
+	if (this.dataSource.exposure.supported === true && this.cameraFeatureAccess.exposureAutoValue === false) {
+		this.cameraFeatureAccess.showAutoExposureSlider = true;
+	}
+}
 					break;
 				default:
 					break;
@@ -204,14 +228,17 @@ export class SubpageDeviceSettingsDisplayComponent
 					// 	response.exposure.autoValue = true;
 					this.dataSource = this.emptyCameraDetails[0];
 					this.shouldCameraSectionDisabled = true;
+					this.cameraFeatureAccess.showAutoExposureSlider = true;
 					console.log('no camera permission .then', this.emptyCameraDetails[0]);
 					const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
 					privacy.status = false;
 					this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
+					this.dataSource.exposure.autoValue = false
 				}
 				this.cameraFeatureAccess.showAutoExposureSlider = false;
-				if (this.dataSource.exposure.autoValue === true) {
+				if (this.dataSource.exposure.autoValue === true && !this.shouldCameraSectionDisabled) {
 					this.cameraFeatureAccess.exposureAutoValue = true;
+
 				} else {
 					this.cameraFeatureAccess.exposureAutoValue = false;
 				}
