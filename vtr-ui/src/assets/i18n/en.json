@@ -1160,7 +1160,7 @@
 		"optionalUpdates": "Optional Update(s)",
 		"ignoredUpdates": "Ignored Update(s)",
 		"successInstall": "Successfully installed on",
-		"failedInstall": "Failed to installed on",
+		"failedInstall": "Failed to install on",
 		"at": "at",
 		"readMore": "Read more",
 		"popup": {
