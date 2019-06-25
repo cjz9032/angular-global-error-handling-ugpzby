@@ -105,6 +105,7 @@ export enum LocalStorageKey {
 	ramUsage = '[LocalStorageKey] ramUsage',
 	ramCapacity = '[LocalStorageKey] ramCapaity',
 	cpuBaseFrequency = '[LocalStorageKey] cpuBaseFrequency',
+	disksList = '[LocalStorageKey] disksList',
 	gpuModulename = '[LocalStorageKey] gpuModulename',
 	gpuMaxFrequency = '[LocalStorageKey] gpuMaxFrequency',
 	memorySize = '[LocalStorageKey] ramMemorySize',

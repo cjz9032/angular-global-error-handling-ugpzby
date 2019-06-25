@@ -1,3 +1,4 @@
+import { OutsideclickDirective } from './directives/outsideclick.directive';
 // ANGULAR MODULES
 import { BrowserModule } from '@angular/platform-browser';
 import {NgModule, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler} from '@angular/core';
@@ -330,6 +331,7 @@ library.add(fal);
 		BaseComponent,
 		ModalCommonConfirmationComponent,
 		AppEventDirective,
+		OutsideclickDirective,
 		ModalUpdateChangeLogComponent,
 		ModalCommonConfirmationComponent,
 		ModalArticleDetailComponent,
