@@ -10,7 +10,8 @@ export class SmartAssistService {
 	private intelligentSensing;
 	private intelligentMedia;
 	private activeProtectionSystem;
-	
+	private lenovoVoice;
+
 	public isShellAvailable = false;
 	public isAPSavailable = false;
 
@@ -18,10 +19,11 @@ export class SmartAssistService {
 		console.log('SHELL SERVICE----------------------------------', shellService);
 		this.intelligentSensing = shellService.getIntelligentSensing();
 		this.intelligentMedia = shellService.getIntelligentMedia();
-		this.activeProtectionSystem = shellService.getActiveProtectionSystem(); // getting APS Object from vantage-shell.service
+		this.activeProtectionSystem = shellService.getActiveProtectionSystem(); // getting APS Object from //vantage-shell.service
+		this.lenovoVoice = shellService.getLenovoVoice();
 
 		this.activeProtectionSystem ? this.isAPSavailable = true : this.isAPSavailable = false;
-		if (this.intelligentSensing && this.intelligentMedia) {
+		if (this.intelligentSensing && this.intelligentMedia && this.lenovoVoice) {
 			this.isShellAvailable = true;
 		}
 	}
@@ -320,6 +322,16 @@ export class SmartAssistService {
 		return undefined;
 	}
 
+
+	// Start Lenovo Voice
+	public isLenovoVoiceAvailable():  Promise<boolean> {
+		if (this.lenovoVoice) {
+			return this.lenovoVoice.getCapability();
+		}
+		return undefined;
+	}
+
+	// End Lenovo Voice
 
 	//#endregion
 }

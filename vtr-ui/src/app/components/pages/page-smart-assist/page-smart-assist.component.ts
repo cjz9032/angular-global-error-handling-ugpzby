@@ -40,6 +40,7 @@ export class PageSmartAssistComponent implements OnInit {
 	public keepMyDisplay: boolean;
 	public intelligentScreen: IntelligentScreen;
 	public intelligentMedia = new FeatureStatus(false, true);
+	public lenovoVoice = new FeatureStatus(false, true);
 	public isIntelligentMediaLoading = true;
 	public isAPSavailable = false;
 
@@ -90,10 +91,18 @@ export class PageSmartAssistComponent implements OnInit {
 
 	ngOnInit() {
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		this.initLenovoVoice();
 		this.setIsThinkPad(this.machineType === 1);
 		this.setIntelligentSecurity();
 		this.setIntelligentScreen();
 		this.getVideoPauseResumeStatus();
+	}
+
+	private initLenovoVoice() {
+		this.lenovoVoice.available = this.commonService.getLocalStorageValue(LocalStorageKey.IsLenovoVoiceSupported);
+		if (!this.lenovoVoice.available) {
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, "voice");
+		}
 	}
 
 	private setIntelligentSecurity() {
@@ -129,6 +138,7 @@ export class PageSmartAssistComponent implements OnInit {
 		this.initZeroTouchLogin();
 		this.initIntelligentScreen();
 		this.apsAvailability();
+
 	}
 
 	private apsAvailability() {
