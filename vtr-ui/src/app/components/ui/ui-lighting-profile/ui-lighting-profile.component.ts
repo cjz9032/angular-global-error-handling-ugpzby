@@ -598,17 +598,17 @@ export class UiLightingProfileComponent implements OnInit {
 						'setLightingProfileEffectColor side------------------------>',
 						JSON.stringify(response)
 					);
-					if (response.didSuccess) {
-						this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileEffectColor, response);
-						console.log(
-							'single EffectColor------cache: ',
-							JSON.stringify(
-								this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileEffectColorTop)
-							)
-						);
-					} else {
-						response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileEffectColor);
-					}
+					// if (response.didSuccess) {
+					// 	this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileEffectColor, response);
+					// 	console.log(
+					// 		'single EffectColor------cache: ',
+					// 		JSON.stringify(
+					// 			this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileEffectColorTop)
+					// 		)
+					// 	);
+					// } else {
+					// 	response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileEffectColor);
+					// }
 				});
 		}
 	}
