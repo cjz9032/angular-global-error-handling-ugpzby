@@ -1157,9 +1157,9 @@
         "recommendedUpdates": "推奨更新",
         "optionalUpdates": "任意の更新",
         "ignoredUpdates": "無視された更新",
-        "successInstall": "次の場所に正常にインストールされました",
-        "failedInstall": "次の場所にインストールできませんでした",
-        "at": "場所",
+        "successInstall": "次の日時に正常にインストールされました",
+        "failedInstall": "次の日時にインストールに失敗しました",
+        "at": "の",
         "readMore": "表示を多くする",
         "popup": {
             "reboot": "リブート",
