@@ -44,7 +44,13 @@
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
                     "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock"
+                    "touchpadLock": "Touchpad Lock",
+                    "lightingDriverPopup": {
+                        "headerText": "Driver Install Required",
+                        "text": "Please install driver",
+                        "button": "Install",
+                        "link": "cancel"
+                    }
                 },
                 "systemTools": {
                     "power": "Power",
@@ -338,10 +344,10 @@
         },
         "ui": {
             "back": "ZURÜCK",
-            "on": "ON",
-            "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
+            "on": "EIN",
+            "off": "AUS",
+            "collapse": "Ausblenden",
+            "expand": "Erweitern",
             "loader": "Fetching <br> Status"
         }
     },
@@ -986,6 +992,14 @@
                         "description": "change keyboard backlight states",
                         "image": ""
                     }
+                },
+                "userDefinedKey": {
+                    "title": "User-defined Key",
+                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "dropDown": {
+                        "title": "Action User Defined key",
+                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                    }
                 }
             }
         },
@@ -1109,7 +1123,6 @@
                 "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
                 "installBtnText": "Install",
                 "launchBtnText": "Launch",
-                "learnMoreText": "Learn More",
                 "voiceToText": {
                     "title": "Voice to text",
                     "caption": "This feature helps to convert your voice into texts."
@@ -1141,9 +1154,9 @@
         "notAvailable": "Nicht verfügbar",
         "notInstalled": "Nicht installiert",
         "criticalUpdates": "Kritische Aktualisierungen",
-		"recommendedUpdates": "Empfohlene Aktualisierungen",
-		"optionalUpdates": "Optionale Aktualisierungen",
-		"ignoredUpdates": "Ignorierte Aktualisierungen",
+        "recommendedUpdates": "Empfohlene Aktualisierungen",
+        "optionalUpdates": "Optionale Aktualisierungen",
+        "ignoredUpdates": "Ignorierte Aktualisierungen",
         "successInstall": "Erfolgreiche Installation am",
         "failedInstall": "Installation fehlgeschlagen am",
         "at": "unter",
@@ -1260,12 +1273,8 @@
     },
     "homeSecurity": {
         "title": "Sicherheit für das verbundene Zuhause",
-        "ecosystemBlockTitle": "Schützen Sie Ihr Geräte-Ökosystem",
         "overviewBlockTitle": "Übersicht über Ihre Ökosystem-Sicherheit",
-        "thisDevice": "Dieses Gerät",
         "allDevices": "Alle Geräte",
-        "protected": "Geschützt",
-        "notProtected": "Nicht geschützt",
         "myDevice": "Meine Einheit",
         "secure": "SICHER",
         "needAttention": "MUSS GEPRÜFT WERDEN",
@@ -1276,24 +1285,36 @@
         "trialExpired": "Testversion abgelaufen - Upgrade zum Schutz all Ihrer Geräte",
         "upgrade": "Upgrade",
         "freeTrial": "Schützen Sie all Ihre Geräte - Kostenlos für 30 Tage testen",
-        "inEcosystem": "Im Ökosystem",
-        "ecosystemEnable": "Ökosystem aktiviert",
-        "inTrial": "In Testversion",
-        "addEcosystem": "Zum Ökosystem hinzufügen",
-        "enableEcosystem": "Ökosystem aktivieren",
         "startTrial": "Testversion starten",
-        "fullAccess": "Uneingeschränkter Zugriff",
-        "recent": "Aktuelle Sicherheitsbenachrichtigungen",
-        "notification": "Benachrichtigungen",
-        "renew": "Verlängern",
+        "notification":{
+            "recent": "Aktuelle Sicherheitsbenachrichtigungen",
+            "notifications": "Benachrichtigungen"
+		},
+        "ecosystem": {
+            "ecosystemBlockTitle": "Schützen Sie Ihr Geräte-Ökosystem",
+            "thisDevice": "Dieses Gerät",
+            "allDevices": "Alle Geräte",
+            "protected": "Geschützt",
+            "notProtected": "Nicht geschützt",
+            "trialExpired": "Testversion abgelaufen",
+            "upgrade": "upgrade",
+            "inEcosystem": "Im Ökosystem",
+            "ecosystemEnable": "Ökosystem aktiviert",
+            "inTrial": "In Testversion",
+            "addEcosystem": "Zum Ökosystem hinzufügen",
+            "enableEcosystem": "Ökosystem aktivieren",
+            "startTrial": "Testversion starten",
+            "fullAccess": "Uneingeschränkter Zugriff",
+            "renew": "Verlängern"
+        },
         "tour": {
             "back": "Zurück",
             "skip": "Überspringen",
             "start": "TOUR STARTEN",
             "done": "FERTIG",
             "welcome1": "Willkommen",
-			"welcomeDesc1": "Mit nur wenigen Klicks können Sie PCs, Mobilgeräte und verbundene Geräte für Sie und Ihre Familie schützen.",
-			"welcomeDescStart": "Starten Sie jetzt Ihre kostenlose 30-Tage-Testversion.",
+            "welcomeDesc1": "Mit nur wenigen Klicks können Sie PCs, Mobilgeräte und verbundene Geräte für Sie und Ihre Familie schützen.",
+            "welcomeDescStart": "Starten Sie jetzt Ihre kostenlose 30-Tage-Testversion.",
             "welcome2": "Exklusiv für Vantage",
             "welcomeDesc2": "Connected Home Security ist direkt in Vantage integriert, um schnellen Zugriff auf den Schutzstatus Ihres Ökosystems und Sicherheitswarnungen zu erhalten.",
             "create": "Erstellen Sie Ihr Konto",
@@ -1623,21 +1644,21 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "Anmeldung",
+        "logout": "Abmelden",
+        "unlockExclusives": "Exklusivinhalte freischalten",
+        "user": "Benutzer",
+        "welcomeText": "Sie sehen heute energiegeladen aus {{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "Sie sehen heute energiegeladen aus!",
+        "helloUser": "Hallo, {{firstName}}!",
+        "ssoErrorTitle": "Fehler",
+        "ssoErrorCommon": "Es ist ein Fehler aufgetreten. Versuchen Sie es erneut.",
+        "ssoErrorCommonEx": "Unerwarteter Fehler. Versuchen Sie es erneut.",
+        "ssoErrorTimeStampIncorrect": "Die Systemzeit des Computers ist falsch. Korrigieren Sie die Systemzeit und versuchen Sie es erneut.",
+        "ssoErrorNetworkDisconnected": "Ups! Verbindungsfehler! Prüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
+        "ssoErrorCommunicating": "Netzwerkfehler. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+        "ssoErrorAccountPluginNotExist": "Plug-in fehlt. Wir stellen das Plug-in im Hintergrund automatisch wieder her, wenn Sie mit dem Internet verbunden sind. Dies kann eine Weile dauern. Versuchen Sie es später erneut."
     },
     "faq": {
         "footer": {
@@ -1995,7 +2016,8 @@
             },
             "para12": "Note",
             "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        }
+        },
+        "pageTitle": "Unterstützung Detail"
     },
     "welcometutorial": {
         "description": "Mit Lenovo Vantage können Sie ganz einfach Ihre Treiber aktualisieren, Diagnoseprogramme ausführen, Unterstützung anfordern und mehr über Ihre Einheit erfahren. Passen Sie im Handumdrehen Einstellungen an und erhalten Sie nützliche Informationen, die auf Sie zugeschnitten sind",

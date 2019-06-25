@@ -44,7 +44,13 @@
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
                     "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock"
+                    "touchpadLock": "Touchpad Lock",
+                    "lightingDriverPopup": {
+                        "headerText": "Driver Install Required",
+                        "text": "Please install driver",
+                        "button": "Install",
+                        "link": "cancel"
+                    }
                 },
                 "systemTools": {
                     "power": "Power",
@@ -340,8 +346,8 @@
             "back": "ΠΙΣΩ",
             "on": "ON",
             "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
+            "collapse": "Σύμπτυξη",
+            "expand": "Επέκταση",
             "loader": "Fetching <br> Status"
         }
     },
@@ -986,6 +992,14 @@
                         "description": "change keyboard backlight states",
                         "image": ""
                     }
+                },
+                "userDefinedKey": {
+                    "title": "User-defined Key",
+                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "dropDown": {
+                        "title": "Action User Defined key",
+                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                    }
                 }
             }
         },
@@ -1109,7 +1123,6 @@
                 "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
                 "installBtnText": "Install",
                 "launchBtnText": "Launch",
-                "learnMoreText": "Learn More",
                 "voiceToText": {
                     "title": "Voice to text",
                     "caption": "This feature helps to convert your voice into texts."
@@ -1260,12 +1273,8 @@
     },
     "homeSecurity": {
         "title": "Ασφάλεια οικιακής σύνδεσης",
-        "ecosystemBlockTitle": "Προστατεύστε το περιβάλλον της συσκευής σας",
         "overviewBlockTitle": "Επισκόπηση ασφάλειας του περιβάλλοντός σας",
-        "thisDevice": "Αυτή η συσκευή",
         "allDevices": "Όλες οι συσκευές",
-        "protected": "Προστατεύεται",
-        "notProtected": "Δεν προστατεύεται",
         "myDevice": "Η συσκευή μου",
         "secure": "ΑΣΦΑΛΗΣ",
         "needAttention": "ΑΠΑΙΤΕΙΤΑΙ ΠΡΟΣΟΧΗ",
@@ -1276,24 +1285,36 @@
         "trialExpired": "Η δοκιμαστική έκδοση έληξε - Πραγματοποιήστε αναβάθμιση για να προστατεύσετε όλες τις συσκευές σας",
         "upgrade": "αναβάθμιση",
         "freeTrial": "Προστατεύστε όλες τις συσκευές σας - Δωρεάν περίοδος δοκιμής 30 ημερών",
-        "inEcosystem": "Στο περιβάλλον",
-        "ecosystemEnable": "Περιβάλλον ενεργοποιημένο",
-        "inTrial": "Σε δοκιμή",
-        "addEcosystem": "Προσθήκη στο περιβάλλον",
-        "enableEcosystem": "Ενεργοποίηση περιβάλλοντος",
         "startTrial": "Έναρξη δοκιμής",
-        "fullAccess": "Πλήρης πρόσβαση",
-        "recent": "Πρόσφατες ειδοποιήσεις ασφάλειας",
-        "notification": "Ειδοποιήσεις",
-        "renew": "Ανανέωση",
+        "notification":{
+            "recent": "Πρόσφατες ειδοποιήσεις ασφάλειας",
+            "notifications": "Ειδοποιήσεις"
+		},
+        "ecosystem": {
+            "ecosystemBlockTitle": "Προστατεύστε το περιβάλλον της συσκευής σας",
+            "thisDevice": "Αυτή η συσκευή",
+            "allDevices": "Όλες οι συσκευές",
+            "protected": "Προστατεύεται",
+            "notProtected": "Δεν προστατεύεται",
+            "trialExpired": "Η δοκιμαστική έκδοση έληξε",
+            "upgrade": "αναβάθμιση",
+            "inEcosystem": "Στο περιβάλλον",
+            "ecosystemEnable": "Περιβάλλον ενεργοποιημένο",
+            "inTrial": "Σε δοκιμή",
+            "addEcosystem": "Προσθήκη στο περιβάλλον",
+            "enableEcosystem": "Ενεργοποίηση περιβάλλοντος",
+            "startTrial": "Έναρξη δοκιμής",
+            "fullAccess": "Πλήρης πρόσβαση",
+            "renew": "Ανανέωση"
+        },
         "tour": {
             "back": "Πίσω",
             "skip": "Παράλειψη",
             "start": "ΕΝΑΡΞΗ ΠΕΡΙΗΓΗΣΗΣ",
             "done": "ΟΛΟΚΛΗΡΩΘΗΚΕ",
             "welcome1": "Καλωσορίσατε",
-			"welcomeDesc1": "Με λίγα μόλις κλικ, θα μπορείτε να προστατεύσετε υπολογιστές, φορητές συσκευές και συνδεδεμένες συσκευές για εσάς και την οικογένειά σας.",
-			"welcomeDescStart": "Ξεκινήστε τη δωρεάν δοκιμή 30 ημερών τώρα.",
+            "welcomeDesc1": "Με λίγα μόλις κλικ, θα μπορείτε να προστατεύσετε υπολογιστές, φορητές συσκευές και συνδεδεμένες συσκευές για εσάς και την οικογένειά σας.",
+            "welcomeDescStart": "Ξεκινήστε τη δωρεάν δοκιμή 30 ημερών τώρα.",
             "welcome2": "Αποκλειστικά για το Vantage",
             "welcomeDesc2": "Η ασφάλεια οικιακής σύνδεσης είναι απευθείας ενσωματωμένη στο Vantage για γρήγορη πρόσβαση στην κατάσταση προστασίας του οικοσυστήματός σας και για προειδοποιήσεις ασφάλειας.",
             "create": "Δημιουργία του λογαριασμού σας",
@@ -1623,21 +1644,21 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "Σύνδεση",
+        "logout": "Αποσύνδεση",
+        "unlockExclusives": "Ξεκλείδωμα αποκλειστικοτήτων",
+        "user": "Χρήστης",
+        "welcomeText": "Φαίνεστε γεμάτος/η ενέργεια σήμερα, {{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "Φαίνεστε γεμάτος/η ενέργεια σήμερα!",
+        "helloUser": "Γεια σας, {{firstName}}!",
+        "ssoErrorTitle": "Σφάλμα",
+        "ssoErrorCommon": "Ουπς, αντιμετωπίσαμε σφάλμα. Προσπαθήστε ξανά.",
+        "ssoErrorCommonEx": "Μη αναμενόμενο σφάλμα. Προσπαθήστε ξανά.",
+        "ssoErrorTimeStampIncorrect": "Ουπς, φαίνεται ότι η ώρα του υπολογιστή σας είναι εσφαλμένη. Διορθώστε την ώρα στον υπολογιστή σας και δοκιμάστε ξανά.",
+        "ssoErrorNetworkDisconnected": "Ουπς! Η σύνδεση απέτυχε! Ελέγξτε τη σύνδεση στο Internet και προσπαθήστε ξανά.",
+        "ssoErrorCommunicating": "Σφάλμα δικτύου. Ελέγξτε τη σύνδεσή σας και προσπαθήστε ξανά.",
+        "ssoErrorAccountPluginNotExist": "Η προσθήκη λείπει. Θα αποκαταστήσουμε την προσθήκη στο παρασκήνιο αυτόματα, εάν είστε συνδεδεμένοι στο Internet. Αυτό μπορεί να πάρει κάποιο χρόνο, παρακαλώ δοκιμάστε ξανά αργότερα."
     },
     "faq": {
         "footer": {
@@ -1995,7 +2016,8 @@
             },
             "para12": "Note",
             "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        }
+        },
+        "pageTitle": "Λεπτομέρειες Υποστήριξης"
     },
     "welcometutorial": {
         "description": "To Vantage σάς διευκολύνει να ενημερώνετε τα προγράμματα οδήγησής σας, να εκτελείτε διαγνωστικά, να ζητάτε υποστήριξη και να μαθαίνετε για τη συσκευή σας. Προσαρμόστε γρήγορα την εμπειρία σας και βρείτε χρήσιμες πληροφορίες προσαρμοσμένες στις ανάγκες σας",

@@ -44,7 +44,13 @@
                     "autoClose": "自动关闭",
                     "networkBoost": "网络提升",
                     "hybridMode": "混合模式",
-                    "touchpadLock": "触摸板锁定"
+                    "touchpadLock": "触摸板锁定",
+                    "lightingDriverPopup": {
+                        "headerText": "Driver Install Required",
+                        "text": "Please install driver",
+                        "button": "Install",
+                        "link": "cancel"
+                    }
                 },
                 "systemTools": {
                     "power": "功率",
@@ -398,7 +404,7 @@
                 "question2": "您认为性能是否可以接受？",
                 "question3": "您将来会更频繁地使用该应用程序吗？",
                 "yes": "是",
-                "no": "不可以",
+                "no": "否",
                 "tips1": "如有任何其他意见，请提出",
                 "sendFeedback": "发送反馈",
                 "submitScreenShot": "提交屏幕截图"
@@ -986,6 +992,14 @@
                         "description": "change keyboard backlight states",
                         "image": ""
                     }
+                },
+                "userDefinedKey": {
+                    "title": "User-defined Key",
+                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "dropDown": {
+                        "title": "Action User Defined key",
+                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                    }
                 }
             }
         },
@@ -1109,7 +1123,6 @@
                 "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
                 "installBtnText": "Install",
                 "launchBtnText": "Launch",
-                "learnMoreText": "Learn More",
                 "voiceToText": {
                     "title": "Voice to text",
                     "caption": "This feature helps to convert your voice into texts."
@@ -1140,10 +1153,10 @@
         "history": "完整历史记录",
         "notAvailable": "不可用",
         "notInstalled": "未安装",
-        "criticalUpdates": "关键更新",
-        "recommendedUpdates": "推荐更新",
-        "optionalUpdates": "可选更新",
-        "ignoredUpdates": "已忽略的更新",
+        "criticalUpdates": "个关键更新",
+        "recommendedUpdates": "个推荐更新",
+        "optionalUpdates": "个可选更新",
+        "ignoredUpdates": "个已忽略的更新",
         "successInstall": "安装成功",
         "failedInstall": "安装失败",
         "at": "在",
@@ -1181,7 +1194,7 @@
             "title": "联想支持网站"
         },
         "banner": {
-            "neverChecked": "欢迎使用 System Update。",
+            "neverChecked": "欢迎使用系统更新。",
             "title": "保持最新状态的系统才是健康的系统。",
             "last": "上次更新时间为",
             "next": "下次更新扫描计划时间",
@@ -1260,12 +1273,8 @@
     },
     "homeSecurity": {
         "title": "互联家庭网络安全性",
-        "ecosystemBlockTitle": "保护您的设备生态系统",
         "overviewBlockTitle": "您的生态系统安全概述",
-        "thisDevice": "此设备",
         "allDevices": "所有设备",
-        "protected": "受保护",
-        "notProtected": "不受保护",
         "myDevice": "我的设备",
         "secure": "安全",
         "needAttention": "需要注意",
@@ -1276,24 +1285,36 @@
         "trialExpired": "试用已到期 - 升级以保护您的所有设备",
         "upgrade": "升级",
         "freeTrial": "保护您的所有设备 - 30 天的免费试用期",
-        "inEcosystem": "在生态系统中",
-        "ecosystemEnable": "生态系统已启用",
-        "inTrial": "在试用中",
-        "addEcosystem": "添加到生态系统",
-        "enableEcosystem": "启用生态系统",
         "startTrial": "开始试用",
-        "fullAccess": "完全访问权限",
-        "recent": "最近的安全通知",
-        "notification": "通知",
-        "renew": "更新",
+        "notification":{
+            "recent": "最近的安全通知",
+            "notifications": "通知"
+		},
+        "ecosystem": {
+            "ecosystemBlockTitle": "保护您的设备生态系统",
+            "thisDevice": "此设备",
+            "allDevices": "所有设备",
+            "protected": "受保护",
+            "notProtected": "不受保护",
+            "trialExpired": "试用已到期",
+            "upgrade": "升级",
+            "inEcosystem": "在生态系统中",
+            "ecosystemEnable": "生态系统已启用",
+            "inTrial": "在试用中",
+            "addEcosystem": "添加到生态系统",
+            "enableEcosystem": "启用生态系统",
+            "startTrial": "开始试用",
+            "fullAccess": "完全访问权限",
+            "renew": "更新"
+		},
         "tour": {
             "back": "上一步",
             "skip": "跳过",
             "start": "开始体验",
             "done": "完成",
             "welcome1": "欢迎",
-			"welcomeDesc1": "只需点击几下，您就可以保护您和您家人的电脑、移动设备和已连接设备。",
-			"welcomeDescStart": "立即开始 30 天的免费试用。",
+            "welcomeDesc1": "只需点击几下，您就可以保护您和您家人的电脑、移动设备和已连接设备。",
+            "welcomeDescStart": "立即开始 30 天的免费试用。",
             "welcome2": "Vantage 特有功能",
             "welcomeDesc2": "Vantage 内置有互联家庭网络安全性功能，可快速访问生态系统保护状态和安全警报。",
             "create": "使用 Lenovo ID",
@@ -1625,17 +1646,17 @@
     "lenovoId": {
         "login": "登录",
         "logout": "注销",
-        "unlockExclusives": "解锁独家",
+        "unlockExclusives": "解锁专享功能",
         "user": "用户",
-        "welcomeText": "元气满满的一天 {{firstName}}！",
+        "welcomeText": "今天也是活力满满的一天 {{firstName}}！",
         "welcomeTextWithouUserName": "元气满满的一天！",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "{{firstName}}，你好！",
+        "welcomeTextWithoutUserName": "今天也是活力满满的一天！",
+        "helloUser": "您好，{{firstName}}！",
         "ssoErrorTitle": "错误",
         "ssoErrorCommon": "糟糕，出现了错误。请重试。",
-        "ssoErrorCommonEx": "意外错误。请重试",
+        "ssoErrorCommonEx": "意外错误。请重试。",
         "ssoErrorTimeStampIncorrect": "糟糕，似乎您的电脑时间不正确。请更正您的电脑时间，然后重试。",
-        "ssoErrorNetworkDisconnected": "糟糕！连接失败了！请检查您的因特网连接并重试。",
+        "ssoErrorNetworkDisconnected": "糟糕！连接失败！请检查因特网连接，然后重试。",
         "ssoErrorCommunicating": "网络错误。请检查连接，然后重试。",
         "ssoErrorAccountPluginNotExist": "缺少插件。如果您已连接因特网，我们将在后台自动恢复插件。这可能需要花费一些时间，请稍后重试。"
     },
@@ -1995,7 +2016,8 @@
             },
             "para12": "注",
             "para13": "Cortana 仅在某些国家/地区可用，且部分 Cortana 功能并非在所有国家/地区可用。"
-        }
+        },
+        "pageTitle": "支持细节"
     },
     "welcometutorial": {
         "description": "Vantage使您可以轻松更新驱动程序，运行诊断程序，请求支持以及了解您的设备。快速定制您的体验，并根据您的需求找到有用的信息。",

@@ -19,9 +19,9 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 	}
 
 	switchMock() {
-		const state = [CHSAccountState.standard, CHSAccountState.standardExpired, CHSAccountState.trial, CHSAccountState.trialExpired, CHSAccountState.local, 'character'];
+		const state = [CHSAccountState.standard, CHSAccountState.standardExpired, CHSAccountState.trial, CHSAccountState.trialExpired, CHSAccountState.local];
 		const i = this.homeSecurityMockService.id;
-		if (this.homeSecurityMockService.id < 5) {
+		if (this.homeSecurityMockService.id < 4) {
 			this.homeSecurityMockService.id++;
 		} else { this.homeSecurityMockService.id = 0; }
 		const connectedHomeSecurity: any = this.homeSecurityMockService.getConnectedHomeSecurity();

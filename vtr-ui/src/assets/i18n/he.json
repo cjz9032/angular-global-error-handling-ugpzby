@@ -44,7 +44,13 @@
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
                     "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock"
+                    "touchpadLock": "Touchpad Lock",
+                    "lightingDriverPopup": {
+                        "headerText": "Driver Install Required",
+                        "text": "Please install driver",
+                        "button": "Install",
+                        "link": "cancel"
+                    }
                 },
                 "systemTools": {
                     "power": "Power",
@@ -338,10 +344,10 @@
         },
         "ui": {
             "back": "חזרה",
-            "on": "ON",
-            "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
+            "on": "מופעל",
+            "off": "כבוי",
+            "collapse": "כיווץ",
+            "expand": "הרחבה",
             "loader": "Fetching <br> Status"
         }
     },
@@ -986,6 +992,14 @@
                         "description": "change keyboard backlight states",
                         "image": ""
                     }
+                },
+                "userDefinedKey": {
+                    "title": "User-defined Key",
+                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "dropDown": {
+                        "title": "Action User Defined key",
+                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                    }
                 }
             }
         },
@@ -1109,7 +1123,6 @@
                 "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
                 "installBtnText": "Install",
                 "launchBtnText": "Launch",
-                "learnMoreText": "Learn More",
                 "voiceToText": {
                     "title": "Voice to text",
                     "caption": "This feature helps to convert your voice into texts."
@@ -1260,12 +1273,8 @@
     },
     "homeSecurity": {
         "title": "אבטחת הבית המחובר",
-        "ecosystemBlockTitle": "הגנו על המערכת האקולוגית של המכשיר",
         "overviewBlockTitle": "סקירה של אבטחת המערכת האקולוגית",
-        "thisDevice": "מכשיר זה",
         "allDevices": "כל המכשירים",
-        "protected": "מוגן",
-        "notProtected": "ללא הגנה",
         "myDevice": "ההתקן שלי",
         "secure": "מאובטח",
         "needAttention": "נדרשת תשומת לב",
@@ -1283,17 +1292,35 @@
         "enableEcosystem": "הפעלת המערכת האקולוגית",
         "startTrial": "התחלת תקופת ניסיון",
         "fullAccess": "גישה מלאה",
-        "recent": "הודעות אבטחה אחרונות",
-        "notification": "הודעות",
-        "renew": "חידוש",
+        "notification":{
+            "recent": "הודעות אבטחה אחרונות",
+            "notifications": "הודעות"
+		},
+        "ecosystem": {
+            "ecosystemBlockTitle": "הגנו על המערכת האקולוגית של המכשיר",
+            "thisDevice": "מכשיר זה",
+            "allDevices": "כל המכשירים",
+            "protected": "מוגן",
+            "notProtected": "ללא הגנה",
+            "trialExpired": "פג תוקפה של גרסת הניסיון",
+            "upgrade": "שדרוג",
+            "inEcosystem": "במערכת האקולוגית",
+            "ecosystemEnable": "המערכת האקולוגית מופעלת",
+            "inTrial": "במהלך תקופת ניסיון",
+            "addEcosystem": "הוספה למערכת האקולוגית",
+            "enableEcosystem": "הפעלת המערכת האקולוגית",
+            "startTrial": "התחלת תקופת ניסיון",
+            "fullAccess": "גישה מלאה",
+			"renew": "חידוש"
+		},
         "tour": {
             "back": "אחורית",
             "skip": "דילוג",
             "start": "התחלת סיור",
             "done": "סיום",
             "welcome1": "ברוכים הבאים",
-			"welcomeDesc1": "עם כמה לחיצות בלבד, תוכל להגן על מחשבים מחוברים, התקנים ניידים והתקנים, והמשפחה שלך.",
-			"welcomeDescStart": "התחל משפט בחינם ל -30 יום.",
+            "welcomeDesc1": "עם כמה לחיצות בלבד, תוכל להגן על מחשבים מחוברים, התקנים ניידים והתקנים, והמשפחה שלך.",
+            "welcomeDescStart": "התחל משפט בחינם ל -30 יום.",
             "welcome2": "בלעדי ל-Vantage",
             "welcomeDesc2": "'אבטחת הבית המחובר' מותקנת ישירות ב-Vantage לגישה מהירה למצב ההגנה של המערכת האקולוגית ושל התראות האבטחה שלכם.",
             "create": "יצירת חשבון משלכם",
@@ -1623,21 +1650,21 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "כניסה",
+        "logout": "יציאה",
+        "unlockExclusives": "פתחו את ה\"בלעדיים\"",
+        "user": "משתמש",
+        "welcomeText": "אתה נראה רענן היום, {{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "אתה נראה רענן היום!",
+        "helloUser": "שלום, {{firstName}}!",
+        "ssoErrorTitle": "שגיאה",
+        "ssoErrorCommon": "אופס, נתקלנו בשגיאה. נסו שוב.",
+        "ssoErrorCommonEx": "שגיאה לא צפויה. נסו שוב.",
+        "ssoErrorTimeStampIncorrect": "אופס, נראה שהשעה המוצגת במחשב שגויה. כוונו את השעה במחשב ונסו שוב.",
+        "ssoErrorNetworkDisconnected": "אופס! החיבור נכשל! בדקו את החיבור לאינטרנט ונסו שוב.",
+        "ssoErrorCommunicating": "שגיאת רשת. בדקו את החיבור שלכם ונסו שוב.",
+        "ssoErrorAccountPluginNotExist": "התוסף חסר. אם יש לך חיבור לאינטרנט, נשחזר את התוסף ברקע באופן אוטומטי. ייתכן שהפעולה תיקח זמן מה, כדאי לנסות שוב מאוחר יותר."
     },
     "faq": {
         "footer": {
@@ -1995,7 +2022,8 @@
             },
             "para12": "Note",
             "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        }
+        },
+        "pageTitle": "פרטי תמיכה"
     },
     "welcometutorial": {
         "description": "‏Vantage מאפשר לעדכן מנהלי התקנים, להפעיל אבחון, לבקש תמיכה ולקבל מידע נוסף על המכשיר בקלות. ‏בצעו במהירות התאמה אישית של חוויית השימוש שלכם וגלו מידע שימושי המותאם במיוחד עבור הצרכים שלכם",

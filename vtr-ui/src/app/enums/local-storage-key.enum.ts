@@ -105,6 +105,7 @@ export enum LocalStorageKey {
 	ramUsage = '[LocalStorageKey] ramUsage',
 	ramCapacity = '[LocalStorageKey] ramCapaity',
 	cpuBaseFrequency = '[LocalStorageKey] cpuBaseFrequency',
+	disksList = '[LocalStorageKey] disksList',
 	gpuModulename = '[LocalStorageKey] gpuModulename',
 	gpuMaxFrequency = '[LocalStorageKey] gpuMaxFrequency',
 	memorySize = '[LocalStorageKey] ramMemorySize',
@@ -132,8 +133,12 @@ export enum LocalStorageKey {
 	CurrentMacroKeyRepeat = '[LocalStorageKey] CurrentMacroKeyRepeat',
 	CurrentMacroKeyInterval = '[LocalStorageKey] CurrentMacroKeyInterval',
 	SubBrand = '[LocalStorageKey] SubBrand',
-	
+
 	userDeterminePrivacy = '[LocalStorageKey] userDeterminePrivacy',
 
-	BatteriesHealths = '[LocalStorageKey] BatteriesHealths'
+	BatteriesHealths = '[LocalStorageKey] BatteriesHealths',
+	IsLenovoVoiceSupported = '[LocalStorageKey] IsLenovoVoiceSupported',
+
+	BatteryPercentage = '[LocalStorageKey] BatteryPercentage'
+	// BatteriesHealths = '[LocalStorageKey] BatteriesHealths'
 }

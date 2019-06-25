@@ -44,7 +44,13 @@
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
                     "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock"
+                    "touchpadLock": "Touchpad Lock",
+                    "lightingDriverPopup": {
+                        "headerText": "Driver Install Required",
+                        "text": "Please install driver",
+                        "button": "Install",
+                        "link": "cancel"
+                    }
                 },
                 "systemTools": {
                     "power": "Power",
@@ -338,10 +344,10 @@
         },
         "ui": {
             "back": "上一步",
-            "on": "ON",
-            "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
+            "on": "開",
+            "off": "關",
+            "collapse": "收合",
+            "expand": "展開",
             "loader": "Fetching <br> Status"
         }
     },
@@ -986,6 +992,14 @@
                         "description": "change keyboard backlight states",
                         "image": ""
                     }
+                },
+                "userDefinedKey": {
+                    "title": "User-defined Key",
+                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "dropDown": {
+                        "title": "Action User Defined key",
+                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                    }
                 }
             }
         },
@@ -1109,7 +1123,6 @@
                 "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
                 "installBtnText": "Install",
                 "launchBtnText": "Launch",
-                "learnMoreText": "Learn More",
                 "voiceToText": {
                     "title": "Voice to text",
                     "caption": "This feature helps to convert your voice into texts."
@@ -1153,7 +1166,7 @@
             "shutdown": "關機",
             "rebootForceMsg": "您選取的更新將在安裝後使系統自動重新開機。",
             "shutdownForceMsg": "您選取的更新將在安裝後使系統自動關機。",
-            "rebootDelayedMsg": "更新安裝時，您選取的更新將會在安裝後使系統重新開機。請勿關閉系統您的系統、卸下電源或配件。我們建議您儲存工作，為您的系統重新開機預作準備。",
+            "rebootDelayedMsg": "更新安裝時，您選取的更新將會在安裝後使系統重新開機。請勿關閉您的系統、卸下電源或配件。我們建議您儲存工作，為您的系統重新開機預作準備。",
             "rebootRequiredMsg": "為了成功安裝更新，您的電腦需要重新開機以確保一切運作安全、順暢。",
             "okayButton": "確定",
             "cancelButton": "取消",
@@ -1260,12 +1273,8 @@
     },
     "homeSecurity": {
         "title": "連線家庭安全性",
-        "ecosystemBlockTitle": "保護您的裝置生態系統",
         "overviewBlockTitle": "您的生態系統安全概要",
-        "thisDevice": "這部裝置",
         "allDevices": "全部裝置",
-        "protected": "受到保護",
-        "notProtected": "未受到保護",
         "myDevice": "我的裝置",
         "secure": "安全",
         "needAttention": "需要關注",
@@ -1276,24 +1285,36 @@
         "trialExpired": "試用已過期 - 升級以保護您的全部裝置",
         "upgrade": "升級",
         "freeTrial": "保護您的全部裝置 - 30 天免費試用版",
-        "inEcosystem": "生態系統模式中",
-        "ecosystemEnable": "生態系統已啟用",
-        "inTrial": "試用模式中",
-        "addEcosystem": "新增到生態系統",
-        "enableEcosystem": "啟用生態系統",
         "startTrial": "開始試用",
-        "fullAccess": "完整存取權",
-        "recent": "最近的安全通知",
-        "notification": "通知",
-        "renew": "更新",
+        "notification":{
+            "recent": "最近的安全通知",
+            "notifications": "通知"
+		},
+        "ecosystem": {
+            "ecosystemBlockTitle": "保護您的裝置生態系統",
+            "thisDevice": "這部裝置",
+            "allDevices": "全部裝置",
+            "protected": "受到保護",
+            "notProtected": "未受到保護",
+            "trialExpired": "試用已過期",
+            "upgrade": "升級",
+            "inEcosystem": "生態系統模式中",
+            "ecosystemEnable": "生態系統已啟用",
+            "inTrial": "試用模式中",
+            "addEcosystem": "新增到生態系統",
+            "enableEcosystem": "啟用生態系統",
+            "startTrial": "開始試用",
+            "fullAccess": "完整存取權",
+            "renew": "更新"
+        },
         "tour": {
             "back": "上一頁",
             "skip": "跳過",
             "start": "開始導覽",
             "done": "完成",
             "welcome1": "歡迎使用",
-			"welcomeDesc1": "只需按幾下滑鼠，您和家人的 PC、行動裝置和所有連線裝置就能獲得保護。",
-			"welcomeDescStart": "立即開始 30 天免費試用。",
+            "welcomeDesc1": "只需按幾下滑鼠，您和家人的 PC、行動裝置和所有連線裝置就能獲得保護。",
+            "welcomeDescStart": "立即開始 30 天免費試用。",
             "welcome2": "Vantage 獨家",
             "welcomeDesc2": "連線家庭安全性直接內建於 Vantage，可供快速存取生態系統和安全警報的保護狀態。",
             "create": "建立您的帳戶",
@@ -1623,21 +1644,21 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "登入",
+        "logout": "登出",
+        "unlockExclusives": "解除鎖定獨家功能",
+        "user": "使用者",
+        "welcomeText": "{{firstName}}，今天看起來充滿活力！",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "今天看起來充滿活力！",
+        "helloUser": "{{firstName}}，您好！",
+        "ssoErrorTitle": "錯誤",
+        "ssoErrorCommon": "糟糕，我們遇到了錯誤。請再試一次。",
+        "ssoErrorCommonEx": "非預期的錯誤。請再試一次。",
+        "ssoErrorTimeStampIncorrect": "糟糕，您 PC 的時間似乎不正確。請更正您 PC 上的時間，然後再試一次。",
+        "ssoErrorNetworkDisconnected": "糟糕！連線失敗！請檢查您的網際網路連線，然後再試一次。",
+        "ssoErrorCommunicating": "網路錯誤。請檢查您的連線，然後再試一次。",
+        "ssoErrorAccountPluginNotExist": "遺漏外掛程式。如果您已連線至網際網路，我們將會在背景自動還原外掛程式。這可能需要一點時間，請稍後重試。"
     },
     "faq": {
         "footer": {
@@ -1995,7 +2016,8 @@
             },
             "para12": "Note",
             "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        }
+        },
+        "pageTitle": "支持細節"
     },
     "welcometutorial": {
         "description": "Vantage 讓您更容易更新驅動程式、執行診斷、要求支援並瞭解裝置。快速自訂您的體驗，並找到針對您的需要量身提供的實用資訊",
