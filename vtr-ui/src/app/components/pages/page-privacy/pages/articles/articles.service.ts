@@ -166,7 +166,6 @@ export class ArticlesService {
 		};
 
 		return this.commsService.endpointGetCall(`/api/v1/articles/${id}`, queryOptions).pipe(
-			tap((val) => console.log('getArticle', val)),
 			map((response) => response['Results'])
 		);
 	}
