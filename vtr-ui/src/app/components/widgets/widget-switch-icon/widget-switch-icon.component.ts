@@ -18,7 +18,8 @@ import { DeviceService } from '../../../services/device/device.service';
 })
 export class WidgetSwitchIconComponent implements OnInit {
 	@Input() title: string;
-	@Input() iconDefinition: string[];
+	@Input() iconDefinition: string;
+	@Input() offIconDefinition: string; // when feature is off
 	@Input() value = false;
 	@Input() isBlocked = false;
 	@Input() tooltipText = '';
@@ -45,7 +46,7 @@ export class WidgetSwitchIconComponent implements OnInit {
 
 		if (this.isCamera) {
 			console.log('WIDGET SWITCH ICON VALUE', this.value);
-				this.toggle.emit(this.value);
+			this.toggle.emit(this.value);
 		} else {
 			this.value = !this.value;
 			console.log('WIDGET SWITCH ICON VALUE', this.value);

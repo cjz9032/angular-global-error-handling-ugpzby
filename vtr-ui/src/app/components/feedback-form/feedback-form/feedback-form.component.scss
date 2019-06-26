@@ -203,13 +203,14 @@
 				.dropdown-item {
 					text-transform: uppercase;
 					color: $shade_darkest;
-					padding: 1rem;
+					padding: 0.5 1rem;
 					font-size: 1.6rem;
 					overflow: hidden;
 					width: 100%;
 					white-space: nowrap;
 					text-overflow: ellipsis;
 					text-decoration: underline;
+					background: #ffffff;
 					cursor: pointer;
 
 					&:hover {
@@ -239,7 +240,8 @@
 			display: block;
 			font-size: 3.6rem;
 			height: 5rem;
-			width: 4rem;
+			width: 6rem;
+			padding-right: 2rem;
 			text-align: center;
 			line-height: 5rem;
 			margin-left: 1rem;

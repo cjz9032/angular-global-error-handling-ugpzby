@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Segurança doméstica conectada",
-        "notification":{
+        "notification": {
             "recent": "Notificações de segurança recentes",
             "notifications": "Notificações"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Proteger o ecossistema do dispositivo",
             "thisDevice": "Esse dispositivo",
@@ -1293,22 +1295,22 @@
             "startTrial": "Iniciar avaliação",
             "fullAccess": "Acesso total",
             "renew": "Renew"
-		},
-		"overview": {
-			"overviewBlockTitle": "Visão geral da segurança do ecossistema",
-			"allDevices": "Todos os dispositivos",
-			"myDevice": "Meu Dispositivo",
-			"secure": "SEGURO",
-			"needAttention": "PRECISA DE ATENÇÃO",
-			"manageAccount": "Gerenciar conta",
-			"devices": "Dispositivos",
-			"seeProtectedDevices": "Ver dispositivos protegidos",
-			"addDevice": "adicionar dispositivo",
-			"trialExpired": "Avaliação expirada - Atualizar para proteger todos os dispositivos",
-			"upgrade": "atualizar",
-			"freeTrial": "Proteger todos os dispositivos - Avaliação gratuita de 30 dias",
-			"startTrial": "Iniciar avaliação"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Visão geral da segurança do ecossistema",
+            "allDevices": "Todos os dispositivos",
+            "myDevice": "Meu Dispositivo",
+            "secure": "SEGURO",
+            "needAttention": "PRECISA DE ATENÇÃO",
+            "manageAccount": "Gerenciar conta",
+            "devices": "Dispositivos",
+            "seeProtectedDevices": "Ver dispositivos protegidos",
+            "addDevice": "adicionar dispositivo",
+            "trialExpired": "Avaliação expirada - Atualizar para proteger todos os dispositivos",
+            "upgrade": "atualizar",
+            "freeTrial": "Proteger todos os dispositivos - Avaliação gratuita de 30 dias",
+            "startTrial": "Iniciar avaliação"
+        },
         "tour": {
             "back": "Voltar",
             "skip": "Ignorar",

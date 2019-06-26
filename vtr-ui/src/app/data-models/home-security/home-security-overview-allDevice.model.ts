@@ -14,6 +14,9 @@ export class HomeSecurityAllDevice {
 				this.allDevicesStatus = allDevices.filter(device => {
 					return !device.protected;
 				}).length <= 0;
+			} else {
+				this.allDevicesNumber = 0;
+				this.allDevicesStatus = undefined;
 			}
 		}
 	}

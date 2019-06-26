@@ -12,7 +12,7 @@
 					<div class="row mn-6 card mx-5 mb-5">
 						<div class="col p-5">
 							<div class="row py-5 description-container">
-								<div class="col" [innerHTML]="qa.description | sanitize : 'html'">
+								<div class="col" [innerHTML]="qa.description | sanitize : 'bypasshtml'"> <!-- sahinul25Jun2019 VAN-5719-->
 								</div>
 							</div>
 							<div class="row inset-content align-items-center justify-content-center py-3 invisible"
@@ -40,7 +40,7 @@
 						<div class="col">
 							<div class="row p-5">
 								<div class="col title smaller">
-									<!-- Not finding what you are looking for?  --> 
+									<!-- Not finding what you are looking for?  -->
 									{{'faq.footer.title' | translate}}
 								</div>
 								<div class="w-100"></div>
@@ -98,7 +98,8 @@
 							<vtr-widget-questions componentName="qa"
 								[title]="'common.qAndA.title' | translate"
 								[description]="'common.qAndA.subtitle' | translate"
-								[items]="qaService.qas"></vtr-widget-questions>
+								[items]="qaService.qas"
+								blockPosition="r1"></vtr-widget-questions>
 						</div>
 					</div>
 				</div>

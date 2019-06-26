@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Povezana domača varnost",
-        "notification":{
+        "notification": {
             "recent": "Nedavna varnostna obvestila",
             "notifications": "Obvestila"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Zaščita ekosistema naprave",
             "thisDevice": "Ta naprava",
@@ -1293,22 +1295,22 @@
             "startTrial": "Začnite preskus",
             "fullAccess": "Poln dostop",
             "renew": "Obnovi"
-		},
-		"overview": {
-			"overviewBlockTitle": "Pregled varnosti ekosistema",
-			"allDevices": "Vse naprave",
-			"myDevice": "Moja naprava",
-			"secure": "VARNO",
-			"needAttention": "POTREBEN JE UKREP",
-			"manageAccount": "Upravljanje računa",
-			"devices": "Naprave",
-			"seeProtectedDevices": "Ogled zaščitenih naprav",
-			"addDevice": "dodajanje naprave",
-			"trialExpired": "Preskus potekel - Nadgradite, da zaščitite vse svoje naprave",
-			"upgrade": "nadgradnja",
-			"freeTrial": "Zaščitite vse svoje naprave - Brezplačen 30-dnevni preskus",
-			"startTrial": "Začnite preskus"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Pregled varnosti ekosistema",
+            "allDevices": "Vse naprave",
+            "myDevice": "Moja naprava",
+            "secure": "VARNO",
+            "needAttention": "POTREBEN JE UKREP",
+            "manageAccount": "Upravljanje računa",
+            "devices": "Naprave",
+            "seeProtectedDevices": "Ogled zaščitenih naprav",
+            "addDevice": "dodajanje naprave",
+            "trialExpired": "Preskus potekel - Nadgradite, da zaščitite vse svoje naprave",
+            "upgrade": "nadgradnja",
+            "freeTrial": "Zaščitite vse svoje naprave - Brezplačen 30-dnevni preskus",
+            "startTrial": "Začnite preskus"
+        },
         "tour": {
             "back": "Nazaj",
             "skip": "Preskoči",
