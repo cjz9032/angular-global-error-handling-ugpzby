@@ -1,6 +1,12 @@
-import { Injectable } from '@angular/core';
-import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import {
+	Injectable
+} from '@angular/core';
+import {
+	VantageShellService
+} from '../vantage-shell/vantage-shell.service';
+import {
+	FeatureStatus
+} from 'src/app/data-models/common/feature-status.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -33,7 +39,7 @@ export class SmartAssistService {
 	/**
 	 * IdeaPad Only : User Presence Sensing global toggle can be shown on UI
 	 */
-	public getHPDVisibilityInIdeaPad(): Promise<boolean> {
+	public getHPDVisibilityInIdeaPad(): Promise < boolean > {
 		// HPD global switch status. true means show, false means hide
 		return this.intelligentSensing.GetHPDCapability();
 	}
@@ -41,7 +47,7 @@ export class SmartAssistService {
 	/**
 	 * ThinkPad Only : User Presence Sensing global toggle can be shown on UI
 	 */
-	public getHPDVisibilityInThinkPad(): Promise<boolean> {
+	public getHPDVisibilityInThinkPad(): Promise < boolean > {
 		// HPD global switch status. true means show, false means hide
 		return this.intelligentSensing.GetHPDGlobalCapability();
 	}
@@ -49,7 +55,7 @@ export class SmartAssistService {
 	/**
 	 * User Presence Sensing global toggle enable/disable state on UI,
 	 */
-	public getHPDStatus(): Promise<boolean> {
+	public getHPDStatus(): Promise < boolean > {
 		// HPD global switch status. true means enable, false means disable
 		return this.intelligentSensing.GetHPDGlobalSetting();
 	}
@@ -57,40 +63,40 @@ export class SmartAssistService {
 	/**
 	 * set value for global HPD setting
 	 */
-	public setHPDStatus(value: boolean): Promise<boolean> {
+	public setHPDStatus(value: boolean): Promise < boolean > {
 		// HPD global switch status. true means enable, false means disable
 		const option = value ? 'True' : 'False';
 		return this.intelligentSensing.SetHPDGlobalSetting(option);
 	}
 
-	public getZeroTouchLockVisibility(): Promise<boolean> {
+	public getZeroTouchLockVisibility(): Promise < boolean > {
 		// Get Auto Screen Lock section visibility
 		return this.intelligentSensing.GetHPDLeaveCapability();
 	}
 
-	public getZeroTouchLockStatus(): Promise<boolean> {
+	public getZeroTouchLockStatus(): Promise < boolean > {
 		// Get Auto Screen Lock setting
 		return this.intelligentSensing.GetHPDPresentLeaveSetting();
 	}
 
 	// set auto adjust for IdeaPad models
-	public setZeroTouchLockStatus(value: boolean): Promise<boolean> {
+	public setZeroTouchLockStatus(value: boolean): Promise < boolean > {
 		const option = value ? 'True' : 'False';
 		return this.intelligentSensing.SetHPDPresentLeaveSetting(option);
 	}
 
-	public getZeroTouchLoginVisibility(): Promise<boolean> {
+	public getZeroTouchLoginVisibility(): Promise < boolean > {
 		// Get Auto Screen Lock section visibility
 		return this.intelligentSensing.GetHPDApproachCapability();
 	}
 
 
-	public getZeroTouchLoginStatus(): Promise<boolean> {
+	public getZeroTouchLoginStatus(): Promise < boolean > {
 		// Get Auto Screen Login setting
 		return this.intelligentSensing.GetHPDApproachSetting();
 	}
 
-	public getZeroTouchLoginDistance(): Promise<number> {
+	public getZeroTouchLoginDistance(): Promise < number > {
 		// Get Auto Screen Login setting
 		return this.intelligentSensing.GetHPDApproachDistance();
 	}
@@ -98,18 +104,18 @@ export class SmartAssistService {
 	/**
 	 * Set Zero Touch Login toggle button status,
 	 */
-	public setZeroTouchLoginStatus(value: boolean): Promise<boolean> {
+	public setZeroTouchLoginStatus(value: boolean): Promise < boolean > {
 		// HPD global switch status. true means enable, false means disable
 		const option = value ? 'True' : 'False';
 		return this.intelligentSensing.SetHPDApproachSetting(option);
 	}
 
-	public getZeroTouchLoginAdjustVisibility(): Promise<number> {
+	public getZeroTouchLoginAdjustVisibility(): Promise < number > {
 		// Get Auto Screen Login setting
 		return this.intelligentSensing.GetHPDAutoAdjustCapability();
 	}
 
-	public getZeroTouchLoginAdjustStatus(): Promise<number> {
+	public getZeroTouchLoginAdjustStatus(): Promise < number > {
 		// Get Auto Screen Login setting
 		return this.intelligentSensing.GetHPDAutoAdjustSetting();
 	}
@@ -117,7 +123,7 @@ export class SmartAssistService {
 	/**
 	 * Set Zero Touch Login toggle button status,
 	 */
-	public setZeroTouchLoginAdjustStatus(value: boolean): Promise<boolean> {
+	public setZeroTouchLoginAdjustStatus(value: boolean): Promise < boolean > {
 		// HPD global switch status. true means enable, false means disable
 		const option = value ? 'True' : 'False';
 		return this.intelligentSensing.SetHPDAutoAdjustSetting(option);
@@ -129,7 +135,7 @@ export class SmartAssistService {
 	 * 2 = Middle/Medium,
 	 * 3 = Far
 	 */
-	public setZeroTouchLoginDistance(value: number): Promise<boolean> {
+	public setZeroTouchLoginDistance(value: number): Promise < boolean > {
 		// HPD global switch status. true means enable, false means disable
 		const option = value.toString();
 		return this.intelligentSensing.SetHPDApproachDistanceSetting(option);
@@ -141,7 +147,7 @@ export class SmartAssistService {
 	 * 2 = Medium,
 	 * 3 = Slow
 	 */
-	public getSelectedLockTimer(): Promise<number> {
+	public getSelectedLockTimer(): Promise < number > {
 		// Get Auto Screen Lock setting
 		return this.intelligentSensing.GetHPDLeaveWait();
 	}
@@ -152,20 +158,20 @@ export class SmartAssistService {
 	 * '2' = Medium
 	 * '3' = Slow
 	 */
-	public setSelectedLockTimer(value: string): Promise<boolean> {
+	public setSelectedLockTimer(value: string): Promise < boolean > {
 		return this.intelligentSensing.SetHPDLeaveWaitSetting(value);
 	}
 
 
 
-	public resetHPDSetting(): Promise<boolean> {
+	public resetHPDSetting(): Promise < boolean > {
 		if (this.isShellAvailable) {
 			return this.intelligentSensing.HPDSettingReset();
 		}
 		return undefined;
 	}
 
-	public getWindowsHelloStatus(): Promise<boolean> {
+	public getWindowsHelloStatus(): Promise < boolean > {
 		if (this.isShellAvailable) {
 			return this.intelligentSensing.GetFacialFeatureRegistered();
 		}
@@ -180,7 +186,7 @@ export class SmartAssistService {
 	/**
 	 * HDP auto video pause
 	 */
-	public getVideoPauseResumeStatus(): Promise<FeatureStatus> {
+	public getVideoPauseResumeStatus(): Promise < FeatureStatus > {
 		try {
 			if (this.isShellAvailable) {
 				return this.intelligentMedia.getVideoPauseResumeStatus();
@@ -191,7 +197,7 @@ export class SmartAssistService {
 		}
 	}
 
-	public setVideoPauseResumeStatus(value: boolean): Promise<boolean> {
+	public setVideoPauseResumeStatus(value: boolean): Promise < boolean > {
 		try {
 			if (this.isShellAvailable) {
 				return this.intelligentMedia.setVideoPauseResumeStatus(value);
@@ -207,21 +213,21 @@ export class SmartAssistService {
 
 	//#region Intelligent Sensing (Intelligent screen) section
 
-	public getIntelligentScreenVisibility(): Promise<boolean> {
+	public getIntelligentScreenVisibility(): Promise < boolean > {
 		if (this.isShellAvailable) {
 			return this.intelligentSensing.GetSmartSensecapability();
 		}
 		return undefined;
 	}
 
-	public getAutoScreenOffVisibility(): Promise<boolean> {
+	public getAutoScreenOffVisibility(): Promise < boolean > {
 		if (this.isShellAvailable) {
 			return this.intelligentSensing.GetWalkingCapability();
 		}
 		return undefined;
 	}
 
-	public getAutoScreenOffStatus(): Promise<boolean> {
+	public getAutoScreenOffStatus(): Promise < boolean > {
 		if (this.isShellAvailable) {
 			return this.intelligentSensing.GetWalkingSetting();
 		}
@@ -231,28 +237,28 @@ export class SmartAssistService {
 	/**
 	 * if value returned is true then show note
 	 */
-	public getAutoScreenOffNoteStatus(): Promise<boolean> {
+	public getAutoScreenOffNoteStatus(): Promise < boolean > {
 		if (this.isShellAvailable) {
 			return this.intelligentSensing.GetWalkingCautionVisibility();
 		}
 		return undefined;
 	}
 
-	public getReadingOrBrowsingVisibility(): Promise<boolean> {
+	public getReadingOrBrowsingVisibility(): Promise < boolean > {
 		if (this.isShellAvailable) {
 			return this.intelligentSensing.GetBrowsingCapability();
 		}
 		return undefined;
 	}
 
-	public getReadingOrBrowsingStatus(): Promise<boolean> {
+	public getReadingOrBrowsingStatus(): Promise < boolean > {
 		if (this.isShellAvailable) {
 			return this.intelligentSensing.GetBrowsingSetting();
 		}
 		return undefined;
 	}
 
-	public setReadingOrBrowsingStatus(value: boolean): Promise<boolean> {
+	public setReadingOrBrowsingStatus(value: boolean): Promise < boolean > {
 		if (this.isShellAvailable) {
 			const option = value ? 'True' : 'False';
 			return this.intelligentSensing.SetBrowsingMode(option);
@@ -260,14 +266,14 @@ export class SmartAssistService {
 		return undefined;
 	}
 
-	public getReadingOrBrowsingTime(): Promise<boolean> {
+	public getReadingOrBrowsingTime(): Promise < boolean > {
 		if (this.isShellAvailable) {
 			return this.intelligentSensing.GetBrowsingTime();
 		}
 		return undefined;
 	}
 
-	public setReadingOrBrowsingTime(value: number): Promise<boolean> {
+	public setReadingOrBrowsingTime(value: number): Promise < boolean > {
 		if (this.isShellAvailable) {
 			const option = value * 60;
 			return this.intelligentSensing.setBrowsingTime(option);
@@ -280,58 +286,110 @@ export class SmartAssistService {
 
 	//#region Active Protection System APS
 	//  APS Capability
-	public getAPSCapability(): Promise<boolean> {
+	public getAPSCapability(): Promise < boolean > {
 		if (this.isAPSavailable) {
 			return this.activeProtectionSystem.getAPSCapability();
 		}
 		return undefined;
 	}
 	// APS Sensor(G-Sensor) Capability
-	public getSensorStatus(): Promise<boolean> {
+	public getSensorStatus(): Promise < boolean > {
 		if (this.isAPSavailable) {
 			return this.activeProtectionSystem.getSensorStatus();
 		}
 		return undefined;
 	}
 	// HDD Status
-	public getHDDStatus(): Promise<boolean> {
+	public getHDDStatus(): Promise < boolean > {
 		if (this.isAPSavailable) {
 			return this.activeProtectionSystem.getHDDStatus();
 		}
 		return undefined;
 	}
 	// APS Mode
-	public getAPSMode(): Promise<boolean> {
+	public getAPSMode(): Promise < boolean > {
 		if (this.isAPSavailable) {
 			return this.activeProtectionSystem.getAPSMode();
 		}
 		return undefined;
 	}
+	// SET APS MODE
+	public setAPSMode(value: boolean): Promise < boolean > {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setAPSMode(value);
+		}
+		return undefined;
+	}
 	// Get Sensitivity Level
-	public getAPSSensitivityLevel(): Promise<number> {
+	public getAPSSensitivityLevel(): Promise < number > {
 		if (this.isAPSavailable) {
 			return this.activeProtectionSystem.getAPSSensitivityLevel();
 		}
 		return undefined;
 	}
 	// Get Sensitivity Level
-	public setAPSSensitivityLevel(value: number): Promise<boolean> {
+	public setAPSSensitivityLevel(value: number): Promise < boolean > {
 		if (this.isAPSavailable) {
 			return this.activeProtectionSystem.setAPSSensitivityLevel(value);
 		}
 		return undefined;
 	}
-
+	// Get Repetitive Shock
+	public getAutoDisableSetting(): Promise < boolean > {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.getAutoDisableSetting();
+		}
+		return undefined;
+	}
+	// Set Repetitive Shock
+	public setAutoDisableSetting(value: boolean): Promise < boolean > {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setAutoDisableSetting(value);
+		}
+		return undefined;
+	}
+	// GET Manual suspention of APS
+	public getSnoozeSetting(): Promise < boolean > {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.getSnoozeSetting();
+		}
+		return undefined;
+	}
+	// SET Manual Suspension of APS
+	public setSnoozeSetting(value: boolean): Promise < boolean > {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setSnoozeSetting(value);
+		}
+		return undefined;
+	}
+	// GET Snooze value
+	public getSnoozeTime(): Promise < number > {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.getSnoozeTime();
+		}
+		return undefined;
+	}
+	// SET Snooze time
+	public setSnoozeTime(value: number): Promise < boolean > {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setSnoozeTime(value.toString());
+		}
+		return undefined;
+	}
+	// Suspend APS
+	public sendSnoozeCommand(value: number): Promise < boolean > {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.sendSnoozeCommand(value.toString());
+		}
+	}
+	//#endregion
 
 	// Start Lenovo Voice
-	public isLenovoVoiceAvailable():  Promise<boolean> {
+	public isLenovoVoiceAvailable(): Promise < boolean > {
 		if (this.lenovoVoice) {
 			return this.lenovoVoice.getCapability();
 		}
 		return undefined;
 	}
-
 	// End Lenovo Voice
-
-	//#endregion
 }
