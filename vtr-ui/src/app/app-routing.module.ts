@@ -77,7 +77,8 @@ const routes: Routes = [
 		canDeactivate: [GuardService],
 		canActivate: [GuardService],
 		data: {
-			pageName: 'Device.MyDevice'
+			pageName: 'Device.MyDevice',
+			pageContent:'My Device Status'
 		}
 	}, {
 		path: 'device-gaming',
@@ -85,13 +86,15 @@ const routes: Routes = [
 		canDeactivate: [GuardService],
 		canActivate: [GuardService],
 		data: {
-			pageName: 'Device.MyDevice'
+			pageName: 'Device.MyDevice',
+			pageContent:'My Device Status'
 		}
 	}, {
 		path: 'device/device-settings',
 		component: PageDeviceSettingsComponent,
 		data: {
-			pageName: 'Device.MyDeviceSettings'
+			pageName: 'Device.MyDeviceSettings',
+			pageContent:'My Device Status'
 		},
 		children: [
 			{
@@ -142,8 +145,10 @@ const routes: Routes = [
 		component: PageSmartAssistComponent,
 		canDeactivate: [GuardService],
 		canActivate: [GuardService],
+
 		data: {
-			pageName: 'Device.MyDeviceSettings'
+			pageName: 'Device.MyDeviceSettings',
+			pageContent:'My Device Status'
 		}
 	},
 	{
@@ -152,7 +157,8 @@ const routes: Routes = [
 		canDeactivate: [GuardService],
 		canActivate: [GuardService],
 		data: {
-			pageName: 'Device.SystemUpdate'
+			pageName: 'Device.SystemUpdate',
+			pageContent:'My Device Status'
 		}
 	}, {
 		path: 'security',
@@ -160,7 +166,8 @@ const routes: Routes = [
 		canDeactivate: [GuardService],
 		canActivate: [GuardService],
 		data: {
-			pageName: 'Security.MySecurity'
+			pageName: 'Security.MySecurity',
+			pageContent:'My Device Status'
 		}
 
 	}, {

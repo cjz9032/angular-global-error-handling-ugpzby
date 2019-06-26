@@ -92,7 +92,7 @@
 					}
 					&.expanded {
 						height: auto;
-						border: 1px solid $gaming_dark;
+						//border: 1px solid $gaming_dark;
 					}
 					&:hover {
 						.expand-icon {
@@ -189,6 +189,7 @@
 							min-width: 15rem;
 							left: 50%;
 							transform: translate(-50%);
+							top:-4rem;
 						}
 						&:hover {
 							.gaming-tooltip {
@@ -282,6 +283,17 @@
 						width: 29rem;
 						height: 29rem;
 						margin-left: -14.5rem;
+					}
+					.gaming-tooltip {
+						top: -2.5rem;
+						left: 50%;
+						transform: translate(-50%);
+					}
+					&:hover {
+						.gaming-tooltip {
+							display: inline-block;
+							opacity: 1;
+						}
 					}
 					.cpu-ring {
 						// background-color: $highlight;
@@ -440,15 +452,18 @@
 				}
 				.hd-list {
 					padding: 2rem 3rem;
+					padding-bottom: 0;
 					@media #{$mediaquery_6} {
 						padding: 3rem;
+						padding-bottom: 0;
 					}
 					&.single {
 						padding: 3rem;
 						.hd-item {
 							text-align: center;
 							.gaming-tooltip {
-								top: -3rem;
+								min-width: 30rem;
+								top: -5rem;
 								left: 50%;
 								transform: translate(-50%);
 							}
@@ -513,7 +528,7 @@
 						}
 					}
 					.hd-item {
-						margin-bottom: 3.5rem;
+						margin-bottom: 3.4rem;
 						position: relative;
 						&:nth-child(odd){
 							z-index: 9;
