@@ -1228,7 +1228,7 @@
             "attend": "Zúčastnit se",
             "rebootRequiredTag": "Je nutno restartovat počítač",
             "rebootDelayTag": "Je vyžadováno restart počítače, zdroj napájení je nutný",
-            "shutdownRequiredTag": "Je nutno provést restart",
+            "shutdownRequiredTag": "Je vyžadováno vypnutí",
             "dependedPackage": "Závislý balíček"
         },
         "availableUpdates": {
