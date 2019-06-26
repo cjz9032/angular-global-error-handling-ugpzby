@@ -424,7 +424,7 @@
             "memory": {
                 "title": "Memory",
                 "detail": {
-                    "notFound": "Memory not found",
+                    "notFound": "找不到内存",
                     "of": "of"
                 }
             },
