@@ -22,8 +22,8 @@
 										[isSubtitleVisible]="false"
 										[title]="'dashboard.offlineInfo.title' | translate"
 										[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
-										[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
-										(buttonClick)="onGetSupportClick($event)"></vtr-widget-offline-info>
+										[buttonText]="'dashboard.offlineInfo.buttonText' | translate">
+									</vtr-widget-offline-info>
 								</div>
 							</div>
 							<div class="row pb-40"
@@ -134,9 +134,10 @@
 							<div class="container-fluid">
 
 								<div class="row"
-									*ngIf="warranty && isOnline">
+									*ngIf="warrantyData && warrantyData.info && warrantyData.info.status >= 0">
 									<div class="col col-12 pb-60">
-										<vtr-widget-warranty [item]="warranty"></vtr-widget-warranty>
+										<vtr-widget-warranty [item]="warrantyData"
+											[online]="isOnline"></vtr-widget-warranty>
 									</div>
 								</div>
 

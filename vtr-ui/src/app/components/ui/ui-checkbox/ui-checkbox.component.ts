@@ -1,26 +1,29 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+	Component,
+	EventEmitter,
+	Input,
+	OnInit,
+	Output
+} from '@angular/core';
 
 @Component({
-  selector: 'vtr-ui-checkbox',
-  templateUrl: './ui-checkbox.component.html',
-  styleUrls: ['./ui-checkbox.component.scss']
+	selector: 'vtr-ui-checkbox',
+	templateUrl: './ui-checkbox.component.html',
+	styleUrls: ['./ui-checkbox.component.scss']
 })
 export class UiCheckboxComponent implements OnInit {
 
-  @Input() radioId: string;
-	@Input() group: string;
 	@Input() label: string;
 	@Input() tooltip: string;
-	@Input() value: string;
 	@Input() checked: boolean;
 	@Input() disabled: boolean;
+	@Input() value: any;
 
-	@Output() change: EventEmitter<any> = new EventEmitter();
+	@Output() change: EventEmitter < any > = new EventEmitter();
 
-  constructor() { }
+	constructor() {}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	onChange(event) {
 		this.change.emit(event);

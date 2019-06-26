@@ -1,6 +1,12 @@
-import { Injectable } from '@angular/core';
-import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import {
+	Injectable
+} from '@angular/core';
+import {
+	VantageShellService
+} from '../vantage-shell/vantage-shell.service';
+import {
+	FeatureStatus
+} from 'src/app/data-models/common/feature-status.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -315,6 +321,77 @@ export class SmartAssistService {
 		}
 		return undefined;
 	}
+	// SET APS MODE
+	public setAPSMode(value: boolean): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setAPSMode(value);
+		}
+		return undefined;
+	}
+	// Get Sensitivity Level
+	public getAPSSensitivityLevel(): Promise<number> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.getAPSSensitivityLevel();
+		}
+		return undefined;
+	}
+	// Get Sensitivity Level
+	public setAPSSensitivityLevel(value: number): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setAPSSensitivityLevel(value);
+		}
+		return undefined;
+	}
+	// Get Repetitive Shock
+	public getAutoDisableSetting(): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.getAutoDisableSetting();
+		}
+		return undefined;
+	}
+	// Set Repetitive Shock
+	public setAutoDisableSetting(value: boolean): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setAutoDisableSetting(value);
+		}
+		return undefined;
+	}
+	// GET Manual suspention of APS
+	public getSnoozeSetting(): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.getSnoozeSetting();
+		}
+		return undefined;
+	}
+	// SET Manual Suspension of APS
+	public setSnoozeSetting(value: boolean): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setSnoozeSetting(value);
+		}
+		return undefined;
+	}
+	// GET Snooze value
+	public getSnoozeTime(): Promise<number> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.getSnoozeTime();
+		}
+		return undefined;
+	}
+	// SET Snooze time
+	public setSnoozeTime(value: string): Promise<boolean> {
+		console.log('SNOOZE VALUE', typeof value);
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setSnoozeTime(value);
+		}
+		return undefined;
+	}
+	// Suspend APS
+	public sendSnoozeCommand(value: string): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.sendSnoozeCommand(value);
+		}
+	}
+	//#endregion
 
 	// Start Lenovo Voice
 	public isLenovoVoiceAvailable(): Promise<boolean> {
@@ -323,8 +400,5 @@ export class SmartAssistService {
 		}
 		return undefined;
 	}
-
 	// End Lenovo Voice
-
-	//#endregion
 }

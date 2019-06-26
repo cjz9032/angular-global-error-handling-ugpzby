@@ -44,15 +44,16 @@ public selectedValue: any;
 public image = '';
 public additionalCapabilitiesObj: any = {};
 public machineType: number;
+public keyboardCompatability: boolean;
 
 	constructor(private keyboardService: InputAccessoriesService,private commonService: CommonService,) {	}
 
 	ngOnInit() {
     this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
     console.log('machine type here ---->', this.machineType);
-
+    if (this.machineType === 1) {
     this.getKeyboardCompatability();
-
+    }
 		this.selectedValue = this.userDefinedKeyOptions[0];
   }
   public onChange(item){
@@ -66,6 +67,7 @@ public machineType: number;
           this.keyboardService.GetKeyboardMapCapability().then((value: any) => {
               console.log('keyboard compatability here -------------.>', value);
               if(value){
+                this.keyboardCompatability = value;
                   this.getKBDLayoutName();
               }
             })
@@ -82,7 +84,6 @@ public machineType: number;
       try {
         if (this.keyboardService.isShellAvailable) {
           this.keyboardService.GetKBDLayoutName().then((value: any) => {
-              //console.log('keyboard Layout name here @@@@@@@@@@@@@@.>', value);  
               if(value){
                 this.getKBDMachineType(value);
             }            
@@ -101,7 +102,6 @@ public machineType: number;
       try {
         if (this.keyboardService.isShellAvailable) {
           this.keyboardService.GetKBDMachineType().then((value: any) => {
-              //console.log('keyboard Layout name here ************.>', value); 
                     this.getKeyboardMap(layOutName, value);
                     this.getAdditionalCapabilities();
             })

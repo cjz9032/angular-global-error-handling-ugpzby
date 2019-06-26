@@ -43,7 +43,6 @@ export class PageSmartAssistComponent implements OnInit {
 	public lenovoVoice = new FeatureStatus(false, true);
 	public isIntelligentMediaLoading = true;
 	public isAPSavailable = false;
-	public apsStatus: boolean;
 
 	headerMenuItems: PageAnchorLink[] = [
 		// {
@@ -143,15 +142,11 @@ export class PageSmartAssistComponent implements OnInit {
 	}
 
 	private apsAvailability() {
-		console.log('APS', this.smartAssist);
 		Promise
 			.all([this.smartAssist.getAPSCapability(), this.smartAssist.getSensorStatus(), this.smartAssist.getHDDStatus()])
 			.then((response: any[]) => {
-				console.log('APS RESPONSE-----------------------', response);
-				// tslint:disable-next-line: no-unused-expression
 				if (response[0], response[1], response[2] >= 0) {
 					this.isAPSavailable = true;
-					this.smartAssist.getAPSMode().then((res) => { res ? this.apsStatus = true : this.apsStatus = false; });
 				}
 			})
 			.catch((error) => { console.log('APS ERROR------------------', error); });

@@ -9,5 +9,5 @@ export enum LightEffectComplexType {
 	CPU_frequency = 128,
 	Response = 256,
 	Ripple = 512,
-	No_Light = 268435456 ///same Off
+	Off = 268435456 ///same Off
 }
