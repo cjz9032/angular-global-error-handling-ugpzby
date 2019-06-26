@@ -34,7 +34,7 @@ const adminRoutes: Routes = [
 				path: RoutersName.ARTICLES,
 				component: ArticlesComponent
 			}, {
-				path: `${RoutersName.ARTICLEDETAILS}/:id`,
+				path: `${RoutersName.ARTICLEDETAILS}`,
 				component: ArticleSingleComponent
 			}
 		]

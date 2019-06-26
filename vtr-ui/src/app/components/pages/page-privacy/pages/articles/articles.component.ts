@@ -37,7 +37,7 @@ export class ArticlesComponent implements OnInit, OnDestroy {
 	ngOnDestroy() {
 	}
 
-	openArticle(id: string) {
-		this.router.navigateByUrl(`/${RoutersName.PRIVACY}/${RoutersName.ARTICLEDETAILS}/${id}`);
+	openArticle(articleId: string) {
+		this.router.navigate([`/${RoutersName.PRIVACY}/${RoutersName.ARTICLEDETAILS}`], {queryParams: {articleId}});
 	}
 }

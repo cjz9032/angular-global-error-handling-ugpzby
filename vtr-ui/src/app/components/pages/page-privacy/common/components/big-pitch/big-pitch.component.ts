@@ -10,6 +10,6 @@ export class BigPitchComponent {
 		title: 'The choice to be private is here',
 		text: 'Get the app that lets you decide when to share and when to be private, wherever you go online. ' +
 			'Trial duration 14-day. No credit card required.'
-	}
+	};
 	@Output() clickMore = new EventEmitter();
 }

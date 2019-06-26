@@ -11,7 +11,7 @@ import { RoutersName } from '../../../privacy-routing-name';
 	styleUrls: ['./support-widget.component.scss']
 })
 export class SupportWidgetComponent implements OnInit, OnDestroy {
-	showOnPages = [RoutersName.ARTICLES, RoutersName.LANDING];
+	showOnPages = [RoutersName.ARTICLES, RoutersName.ARTICLEDETAILS, RoutersName.LANDING];
 	wasSupportWidgetDisplayed = false;
 
 	constructor(

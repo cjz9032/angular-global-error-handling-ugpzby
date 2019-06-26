@@ -1,5 +1,4 @@
 <div class="article-preview" (click)="openArticle.emit(article.ActionLink)">
-	<!--<pre>{{article | json}}</pre>-->
   <img class="article-preview__image" [src]="article.FeatureImage" alt="{{article.Title}}">
   <div class="article-preview__description">
     <h2 class="article-preview__title" vtrCutMultilineTextWithDots [textToAppend]="article.Title" title="{{article.Title}}"></h2>
