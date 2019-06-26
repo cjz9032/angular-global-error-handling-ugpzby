@@ -1273,19 +1273,6 @@
     },
     "homeSecurity": {
         "title": "Tilsluttet Home Security",
-        "overviewBlockTitle": "Oversigt over dit økosystems sikkerhed",
-        "allDevices": "Alle enheder",
-        "myDevice": "Min enhed",
-        "secure": "SIKKER",
-        "needAttention": "KRÆVER OPMÆRKSOMHED",
-        "manageAccount": "Administrer konto",
-        "devices": "Enheder",
-        "seeProtectedDevices": "Se beskyttede enheder",
-        "addDevice": "tilføj enhed",
-        "trialExpired": "Prøveversion er udløbet - Opgrader for at beskytte alle dine enheder",
-        "upgrade": "opgrader",
-        "freeTrial": "Beskyt alle dine enheder - Gratis 30-dages prøveperiode",
-        "startTrial": "Start prøveperiode",
         "notification":{
             "recent": "Seneste sikkerhedsmeddelelser",
             "notifications": "Meddelelser"
@@ -1306,7 +1293,22 @@
             "startTrial": "Start prøveperiode",
             "fullAccess": "Fuld adgang",
             "renew": "Forny"
-        },
+		},
+		"overview": {
+			"overviewBlockTitle": "Oversigt over dit økosystems sikkerhed",
+			"allDevices": "Alle enheder",
+			"myDevice": "Min enhed",
+			"secure": "SIKKER",
+			"needAttention": "KRÆVER OPMÆRKSOMHED",
+			"manageAccount": "Administrer konto",
+			"devices": "Enheder",
+			"seeProtectedDevices": "Se beskyttede enheder",
+			"addDevice": "tilføj enhed",
+			"trialExpired": "Prøveversion er udløbet - Opgrader for at beskytte alle dine enheder",
+			"upgrade": "opgrader",
+			"freeTrial": "Beskyt alle dine enheder - Gratis 30-dages prøveperiode",
+			"startTrial": "Start prøveperiode"
+		},
         "tour": {
             "back": "Tilbage",
             "skip": "Ignorér",

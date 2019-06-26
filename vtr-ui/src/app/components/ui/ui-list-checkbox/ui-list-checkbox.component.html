@@ -130,7 +130,7 @@
 		</ul>
 		<div class="row"
 			*ngIf="isReadMeAvailable || severity !== 'Critical'">
-			<div class="col-6 pl-0 pr-0 text-left"
+			<div class="col-8 pl-0 pr-0 text-left"
 			*ngIf="isReadMeAvailable">
 				<a href="javascript:void(0)"
 					class="read"
@@ -140,7 +140,7 @@
 				   (click)="onReadMoreClick($event)">{{'systemUpdates.readMore' | translate}}</a>
 			</div>
 			<!-- required in MVP 2 -->
-			<div class="col-6 pl-0 pr-0 text-left"
+			<div class="col-4 pl-0 pr-0 text-left"
 				*ngIf="severity !== 'Critical' && isIgnored === false">
 				<a href="javascript:void(0)"
 					class="ignore"
@@ -151,7 +151,7 @@
 					(click)="onIgnoreUpdateClick(packageName, true)"
 					>{{'systemUpdates.updateCheckbox.ignore' | translate}}</a>
 			</div>
-			<div class="col-6 pl-0 pr-0 text-left"
+			<div class="col-4 pl-0 pr-0 text-left"
 				*ngIf="severity !== 'Critical' && isIgnored === true">
 				<a href="javascript:void(0)"
 					class="ignore"

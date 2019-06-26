@@ -5,13 +5,12 @@
 				<video #cameraPreview
 					*ngIf="!disabledAll && !isCameraInErrorState"
 					class="feed"></video>
-				<!-- {{disabledAll}} and {{isCameraInErrorState}} -->
 				<img class="feed disable"
 					*ngIf="disabledAll && !isCameraInErrorState"
 					src="../../../assets/images/camera-disable.png"
 					title="{{'device.deviceSettings.displayCamera.camera.notAvailable' | translate}}" />
-				<div class="error"
-					*ngIf="isCameraInErrorState && !disabledAll">
+					<div class="error"
+					*ngIf="isCameraInErrorState">
 					<div class="error-title">
 						{{ cameraErrorTitle | translate }}
 					</div>

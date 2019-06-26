@@ -77,9 +77,7 @@ export class UiLightingEffectComponent implements OnInit {
 	ngOnChanges(changes) {
 		if (!isUndefined(this.options)) {
 			if (!isUndefined(this.options)) {
-				console.log('in ui-lighting-effect-component.ts iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii', changes.selectedValue);
 				if (!isUndefined(changes.selectedValue)) {
-					console.log('in ui-lighting-effect-component.ts iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii', this.selectedValue);
 					this.selectedOption = this.options.dropOptions.filter(
 						(option) => option.value === changes.selectedValue.currentValue
 					)[0];

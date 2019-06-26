@@ -1273,19 +1273,6 @@
     },
     "homeSecurity": {
         "title": "Bezpieczny Dom",
-        "overviewBlockTitle": "Przegląd zabezpieczeń Twojego ekosystemu",
-        "allDevices": "Wszystkie urządzenia",
-        "myDevice": "Moje urządzenie",
-        "secure": "ZABEZPIECZ",
-        "needAttention": "WYMAGA UWAGI",
-        "manageAccount": "Zarządzaj kontem",
-        "devices": "Urządzenia",
-        "seeProtectedDevices": "Zobacz chronione urządzenia",
-        "addDevice": "dodaj urządzenie",
-        "trialExpired": "Wersja próbna wygasła - Uaktualnij, aby chronić wszystkie urządzenia",
-        "upgrade": "uaktualnij",
-        "freeTrial": "Chroń wszystkie urządzenia - Bezpłatna 30-dniowa wersja próbna",
-        "startTrial": "Rozpocznij okres próbny",
         "notification":{
             "recent": "Ostatnie powiadomienia dotyczące zabezpieczeń",
             "notifications": "Powiadomienia"
@@ -1305,7 +1292,22 @@
             "startTrial": "Rozpocznij okres próbny",
             "fullAccess": "Pełny dostęp",
             "renew": "Odnów"
-        },
+		},
+		"overview": {
+			"overviewBlockTitle": "Przegląd zabezpieczeń Twojego ekosystemu",
+			"allDevices": "Wszystkie urządzenia",
+			"myDevice": "Moje urządzenie",
+			"secure": "ZABEZPIECZ",
+			"needAttention": "WYMAGA UWAGI",
+			"manageAccount": "Zarządzaj kontem",
+			"devices": "Urządzenia",
+			"seeProtectedDevices": "Zobacz chronione urządzenia",
+			"addDevice": "dodaj urządzenie",
+			"trialExpired": "Wersja próbna wygasła - Uaktualnij, aby chronić wszystkie urządzenia",
+			"upgrade": "uaktualnij",
+			"freeTrial": "Chroń wszystkie urządzenia - Bezpłatna 30-dniowa wersja próbna",
+			"startTrial": "Rozpocznij okres próbny"
+		},
         "tour": {
             "back": "Wstecz",
             "skip": "Pomiń",

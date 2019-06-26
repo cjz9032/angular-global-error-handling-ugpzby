@@ -1273,18 +1273,6 @@
     },
     "homeSecurity": {
         "title": "Seguridad de hogar conectado",
-        "overviewBlockTitle": "Descripción de la seguridad del ecosistema",
-        "allDevices": "Todos los dispositivos",
-        "myDevice": "Mi dispositivo",
-        "secure": "SEGURO",
-        "needAttention": "REQUIERE ATENCIÓN",
-        "manageAccount": "Administrar cuenta",
-        "devices": "Dispositivos",
-        "seeProtectedDevices": "Ver dispositivos protegidos",
-        "addDevice": "agregar dispositivo",
-        "trialExpired": "Prueba caducada - Actualice para proteger todos sus dispositivos",
-        "upgrade": "actualizar",
-        "freeTrial": "Proteger todos sus dispositivos - Prueba gratuita durante 30 días",
         "notification":{
             "recent": "Notificaciones de seguridad recientes",
             "notifications": "Notificaciones"
@@ -1305,7 +1293,22 @@
             "startTrial": "Iniciar prueba",
             "fullAccess": "Acceso completo",
             "renew": "Renovar"
-        },
+		},
+		"overview": {
+			"overviewBlockTitle": "Descripción de la seguridad del ecosistema",
+			"allDevices": "Todos los dispositivos",
+			"myDevice": "Mi dispositivo",
+			"secure": "SEGURO",
+			"needAttention": "REQUIERE ATENCIÓN",
+			"manageAccount": "Administrar cuenta",
+			"devices": "Dispositivos",
+			"seeProtectedDevices": "Ver dispositivos protegidos",
+			"addDevice": "agregar dispositivo",
+			"trialExpired": "Prueba caducada - Actualice para proteger todos sus dispositivos",
+			"upgrade": "actualizar",
+			"freeTrial": "Proteger todos sus dispositivos - Prueba gratuita durante 30 días",
+			"startTrial": "Iniciar prueba"
+		},
         "tour": {
             "back": "Anterior",
             "skip": "Omitir",

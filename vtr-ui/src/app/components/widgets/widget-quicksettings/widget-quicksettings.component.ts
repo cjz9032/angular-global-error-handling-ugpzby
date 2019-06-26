@@ -120,6 +120,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			this.getCameraPermission();
 		} else {
 			this.getCameraStatus();
+			this.displayService.startMonitorForCameraPermission();
 		}
 
 		this.initEyecaremodeSettings();

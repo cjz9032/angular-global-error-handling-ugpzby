@@ -1273,19 +1273,6 @@
     },
     "homeSecurity": {
         "title": "Sicherheit für das verbundene Zuhause",
-        "overviewBlockTitle": "Übersicht über Ihre Ökosystem-Sicherheit",
-        "allDevices": "Alle Geräte",
-        "myDevice": "Meine Einheit",
-        "secure": "SICHER",
-        "needAttention": "MUSS GEPRÜFT WERDEN",
-        "manageAccount": "Konto verwalten",
-        "devices": "Geräte",
-        "seeProtectedDevices": "Siehe \"geschützte Geräte\"",
-        "addDevice": "Gerät hinzufügen",
-        "trialExpired": "Testversion abgelaufen - Upgrade zum Schutz all Ihrer Geräte",
-        "upgrade": "Upgrade",
-        "freeTrial": "Schützen Sie all Ihre Geräte - Kostenlos für 30 Tage testen",
-        "startTrial": "Testversion starten",
         "notification":{
             "recent": "Aktuelle Sicherheitsbenachrichtigungen",
             "notifications": "Benachrichtigungen"
@@ -1306,7 +1293,22 @@
             "startTrial": "Testversion starten",
             "fullAccess": "Uneingeschränkter Zugriff",
             "renew": "Verlängern"
-        },
+		},
+		"overview": {
+			"overviewBlockTitle": "Übersicht über Ihre Ökosystem-Sicherheit",
+			"allDevices": "Alle Geräte",
+			"myDevice": "Meine Einheit",
+			"secure": "SICHER",
+			"needAttention": "MUSS GEPRÜFT WERDEN",
+			"manageAccount": "Konto verwalten",
+			"devices": "Geräte",
+			"seeProtectedDevices": "Siehe \"geschützte Geräte\"",
+			"addDevice": "Gerät hinzufügen",
+			"trialExpired": "Testversion abgelaufen - Upgrade zum Schutz all Ihrer Geräte",
+			"upgrade": "Upgrade",
+			"freeTrial": "Schützen Sie all Ihre Geräte - Kostenlos für 30 Tage testen",
+			"startTrial": "Testversion starten"
+		},
         "tour": {
             "back": "Zurück",
             "skip": "Überspringen",

@@ -54,13 +54,14 @@
 							[metricsItem]="item.metricsItem"
 							routerLink="/{{item.path}}"
 							routerLinkActive="active"
-							(click)="showMenu = false">
+							(click)="showMenu = false"
+							*ngIf="item.label | translate">
 							<fa-icon *ngIf="item.icon[0]!=='icomoon'"
 								[icon]="item.icon"
 								class="fa-icon"></fa-icon>
 							<span *ngIf="item.icon[0]==='icomoon'"
-								[ngClass]="['navbar-icon',item.icon[0],item.icon[1]]"></span>
-							{{item.label}}
+							 [ngClass]="['navbar-icon',item.icon[0],item.icon[1]]"></span>
+							{{item.label | translate}}
 						</a>
 					</li>
 					<li *ngIf="item.subitems.length>0&&item.id!=='user'&&showItem(item)"
@@ -78,10 +79,11 @@
 							data-toggle="dropdown"
 							aria-haspopup="true"
 							aria-expanded="false"
-							(click)="showMenu = false">
+							(click)="showMenu = false"
+							*ngIf="item.label | translate">
 							<fa-icon [icon]="item.icon"
-								class="fa-icon"></fa-icon>
-							{{item.label}}
+							 class="fa-icon"></fa-icon>
+							{{item.label | translate}}
 						</a>
 						<div class="dropdown-menu"
 							aria-labelledby="navbarDropdown">

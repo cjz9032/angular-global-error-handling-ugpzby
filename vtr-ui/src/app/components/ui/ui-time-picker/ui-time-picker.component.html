@@ -1,279 +1,115 @@
 <div class="vtr-ui-time-picker">
-	<div class="smart-standby-timer">
-		<h5>{{ 'device.deviceSettings.power.smartStandby.timer.heading' | translate | uppercase }}</h5>
-		<p class="sub-heading">
-			{{ 'device.deviceSettings.power.smartStandby.timer.subHeading1' | translate | uppercase }}</p>
-		<div class="row">
-			<div class="col-md-10 col-sm-12 pl-0">
-
-				<div class="row">
-					<div class="dropdown">
-						<input id="dropcheck1" class="dropcheck" type="checkbox">
-						<label for="dropcheck1" class="dropbtn">
-							<div class="row">
-								<div class="col align-items-center d-flex justify-content-between">
-
-									<div class="time-headings">
-										<p class="ml-5">{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit1' | translate | uppercase }}</p>
-										<span class="ml-5">4</span>
-									</div>
-									<div class="time-headings">
-										<p class="mr-2">{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit2' | translate | uppercase }}</p>
-										<span class="mr-2">15</span>
-									</div>
-									<div class="time-headings">
-										<p class="mr-5">{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit3' | translate }}</p>
-										<span class="mr-5">PM</span>
-									</div>
-
-									<div class="toggle-icon">
-										<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
-									</div>
-								</div>
-							</div>
-						</label>
-
-						<div class="dropdown-content">
-
-							<div class="main-block">
-								<div class="timer-block">
-									<div class="row align-items-center d-flex justify-content-between">
-										<div class="hours-block pl-5 ml-4 mx-5">
-											<div class="toggle-icon">
-												<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
-											</div>
-											<span>8</span><br>
-											<span class="highlight">9</span><br>
-											<span>10</span>
-											<div class="toggle-icon">
-												<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
-											</div>
-										</div>
-										<div class="minutes-block">
-											<div class="toggle-icon">
-												<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
-											</div>
-											<span>15</span><br>
-											<span class="highlight">30</span><br>
-											<span>45</span>
-											<div class="toggle-icon">
-												<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
-											</div>
-										</div>
-										<div class="am-pm ml-5">
-											<div class="toggle-icon">
-												<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
-											</div>
-											<span>AM</span><br>
-											<span class="highlight">PM</span>
-											<div class="toggle-icon">
-												<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="d-flex justify-content-end py-3">
-								<div class="select-close">
-									<fa-icon [icon]="['fal', 'check']"></fa-icon>
-									<fa-icon [icon]="['fal', 'times']"></fa-icon>
-								</div>
-							</div>
-
-
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<p class="sub-heading">
-			{{ 'device.deviceSettings.power.smartStandby.timer.subHeading2' | translate | uppercase }}</p>
-		<div class="row">
-			<div class="col-md-10 col-sm-12 pl-0">
-
-				<div class="row">
-					<div class="dropdown">
-						<input id="dropcheck2" class="dropcheck" type="checkbox">
-						<label for="dropcheck2" class="dropbtn">
-							<div class="row">
-								<div class="col align-items-center d-flex justify-content-between">
-
-									<div class="time-headings">
-										<p class="ml-5">{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit1' | translate | uppercase }}</p>
-										<span class="ml-5">4</span>
-
-
-									</div>
-									<div class="time-headings">
-										<p class="mr-2">{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit2' | translate | uppercase }}</p>
-										<span class="mr-2">15</span>
-									</div>
-									<div class="time-headings">
-										<p class="mr-5">AM/PM</p>
-										<span class="mr-5">PM</span>
-									</div>
-
-
-									<div class="toggle-icon">
-										<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
-									</div>
-								</div>
-							</div>
-						</label>
-
-						<div class="dropdown-content">
-
-							<div class="main-block">
-								<div class="timer-block">
-									<div class="row align-items-center d-flex justify-content-between">
-										<div class="hours-block pl-5 ml-4 mx-5">
-											<div class="toggle-icon">
-												<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
-											</div>
-											<span>8</span><br>
-											<span class="highlight">9</span><br>
-											<span>10</span>
-											<div class="toggle-icon">
-												<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
-											</div>
-										</div>
-										<div class="minutes-block">
-											<div class="toggle-icon">
-												<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
-											</div>
-											<span>15</span><br>
-											<span class="highlight">30</span><br>
-											<span>45</span>
-											<div class="toggle-icon">
-												<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
-											</div>
-										</div>
-										<div class="am-pm ml-5">
-											<div class="toggle-icon">
-												<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
-											</div>
-											<span>AM</span><br>
-											<span class="highlight">PM</span>
-											<div class="toggle-icon">
-												<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="d-flex justify-content-end py-3">
-								<div class="select-close">
-									<fa-icon [icon]="['fal', 'check']"></fa-icon>
-									<fa-icon [icon]="['fal', 'times']"></fa-icon>
-								</div>
-							</div>
-
-
-						</div>
-					</div>
-				</div>
-				<!-- <section class="toaster">{{ 'device.deviceSettings.power.smartStandby.timer.toaster' | translate}}</section> -->
-			</div>
-		</div>
-		<div class="row">
-			<div class="col">
-					<div class="note align-items-center">
-							{{ 'device.deviceSettings.power.smartStandby.timer.endTimeNote' | translate }}
-					</div>
-			</div>
-		</div>
-
-		<p class="sub-heading">
-			{{ 'device.deviceSettings.power.smartStandby.timer.subHeading3' | translate | uppercase }}</p>
-		<div class="row">
-			<div class="col-md-10 col-sm-12 pl-0">
-
+	<p class="sub-heading">
+		{{ subHeadingText | translate | uppercase }}</p>
+	<div class="row">
+		<div class="col-md-10 col-sm-12 pl-0">
+			<div class="row">
 				<div class="dropdown">
-					<input id="dropcheck3" class="dropcheck" type="checkbox">
-					<label for="dropcheck3" class="dropbtn">
-						<div class="row align-items-center d-flex justify-content-between pl-5">
-							<h5>Weekdays</h5>
-							<div class="toggle-icon">
-								<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
+					<input [id]="id"
+						class="dropcheck"
+						type="checkbox"
+						[checked]="showTimerDropDown"
+						(click)="onToggleDropDown()">
+					<label [for]="id"
+						class="dropbtn">
+						<div class="row">
+							<div class="col align-items-center d-flex justify-content-between">
+
+								<div class="time-headings">
+									<p class="ml-5">
+										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit1' | translate | uppercase }}
+									</p>
+									<span class="ml-5">{{hours[hour]}}</span>
+								</div>
+								<div class="time-headings">
+									<p class="mr-2">
+										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit2' | translate | uppercase }}
+									</p>
+									<span class="mr-2">{{minutes[minute]}}</span>
+								</div>
+								<div class="time-headings">
+									<p class="mr-5">
+										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit3' | translate }}
+									</p>
+									<span class="mr-5">{{amPms[amPm]}}</span>
+								</div>
+
+								<div class="toggle-icon">
+									<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
+								</div>
 							</div>
-
-
 						</div>
 					</label>
 
 					<div class="dropdown-content">
-						<section class="weekdays-block">
-							<div class="row">
-								<div class="col">
-									<div class="main-block pl-5 pt-5 pb-3">
-										<div class="custom-control custom-checkbox mb-3 ml-3">
-											<input class="custom-control-input" type="checkbox" value=""
-												id="customCheck1">
-											<label class="custom-control-label" for="customCheck1">
-												Sunday
-											</label>
+
+						<div class="main-block">
+							<div class="timer-block">
+								<div class="row align-items-center d-flex justify-content-between">
+									<div class="hours-block pl-5 ml-4 mx-5">
+
+										<div class="toggle-icon"
+											[class.disabled]="copyHour==0"
+											(click)="decrementHours()">
+											<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
 										</div>
-										<div class="custom-control custom-checkbox mb-3 ml-3">
-											<input class="custom-control-input" type="checkbox" value=""
-												id="customCheck2">
-											<label class="custom-control-label" for="customCheck2">
-												Monday
-											</label>
-										</div>
-										<div class="custom-control custom-checkbox mb-3 ml-3">
-											<input class="custom-control-input" type="checkbox" value=""
-												id="customCheck3">
-											<label class="custom-control-label" for="customCheck3">
-												Tuesday
-											</label>
-										</div>
-										<div class="custom-control custom-checkbox mb-3 ml-3">
-											<input class="custom-control-input" type="checkbox" value=""
-												id="customCheck4">
-											<label class="custom-control-label" for="customCheck4">
-												Wednesday
-											</label>
-										</div>
-										<div class="custom-control custom-checkbox mb-3 ml-3">
-											<input class="custom-control-input" type="checkbox" value=""
-												id="customCheck5">
-											<label class="custom-control-label" for="customCheck5">
-												Thursday
-											</label>
-										</div>
-										<div class="custom-control custom-checkbox mb-3 ml-3">
-											<input class="custom-control-input" type="checkbox" value=""
-												id="customCheck6">
-											<label class="custom-control-label" for="customCheck6">
-												Friday
-											</label>
-										</div>
-										<div class="custom-control custom-checkbox mb-3 ml-3">
-											<input class="custom-control-input" type="checkbox" value=""
-												id="customCheck7">
-											<label class="custom-control-label" for="customCheck7">
-												Saturday
-											</label>
+
+										<span>{{hours[copyHour-1]}}</span><br>
+										<span class="highlight">{{hours[copyHour]}}</span><br>
+										<span>{{hours[copyHour+1]}}</span>
+
+										<div class="toggle-icon"
+											[class.disabled]="copyHour==11"
+											(click)="incrementHours()">
+											<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
 										</div>
 
 									</div>
-									<div class="d-flex justify-content-end py-3">
-										<div class="select-close">
-											<fa-icon [icon]="['fal', 'check']"></fa-icon>
-											<fa-icon [icon]="['fal', 'times']"></fa-icon>
+
+									<div class="minutes-block">
+
+										<div class="toggle-icon"
+											[class.disabled]="copyMinute==0"
+											(click)="decrementMinutes()">
+											<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
+										</div>
+
+										<span>{{minutes[copyMinute - 1]}}</span><br>
+										<span class="highlight">{{minutes[copyMinute]}}</span><br>
+										<span>{{minutes[copyMinute+1]}}</span>
+
+										<div class="toggle-icon"
+											[class.disabled]="copyMinute==3"
+											(click)="incrementMinutes()">
+											<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
+										</div>
+
+									</div>
+									<div class="am-pm ml-5">
+										<div class="toggle-icon">
+											<!-- <fa-icon [icon]="['fal', 'chevron-up']"></fa-icon> -->
+										</div>
+										<span (click)="setAmPm(0)"
+											[class.highlight]="copyAmPm==0">{{amPms[0]}}</span><br>
+										<span (click)="setAmPm(1)"
+											[class.highlight]="copyAmPm==1">{{amPms[1]}}</span>
+										<div class="toggle-icon">
+											<!-- <fa-icon [icon]="['fal', 'chevron-down']"></fa-icon> -->
 										</div>
 									</div>
-
-
 								</div>
 							</div>
-						</section>
+						</div>
+						<div class="d-flex justify-content-end py-3">
+							<div class="select-close">
+								<fa-icon [icon]="['fal', 'check']"
+									(click)="setTimer()"></fa-icon>
+								<fa-icon [icon]="['fal', 'times']"
+									(click)="clearSettings()"></fa-icon>
+							</div>
+						</div>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>

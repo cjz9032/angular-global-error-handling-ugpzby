@@ -1,0 +1,26 @@
+@import "../../../../../../app.theme.scss";
+ul.list-group {
+	list-style-type: none;
+	padding-bottom: 1rem;
+}
+.smart-standby-timer {
+	margin-left: 2rem;
+	h5 {
+		font-size: 1.4rem;
+		color: $shade_blue;
+		font-weight: $weight_bold;
+		letter-spacing: 0.89px;
+		line-height: 23px;
+	}
+	.note {
+		border: 1px solid #ecf0f1;
+		border-radius: 0.5rem;
+		background-color: #f5f7f8;
+		padding: 2rem;
+		width: 80.9%;
+		margin-top: 1.5rem;
+		line-height: 23px;
+		font-size: 1.6rem;
+		color: $shade_blue;
+	}
+}

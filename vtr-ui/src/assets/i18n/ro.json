@@ -1273,19 +1273,6 @@
     },
     "homeSecurity": {
         "title": "Securitate conectată, la domiciliu",
-        "overviewBlockTitle": "Prezentarea generală a securității ecosistemului",
-        "allDevices": "Toate dispozitivele",
-        "myDevice": "Dispozitivul meu",
-        "secure": "SIGUR",
-        "needAttention": "ARE NEVOIE DE ATENȚIE",
-        "manageAccount": "Gestionare cont",
-        "devices": "Dispozitive",
-        "seeProtectedDevices": "Vedeți dispozitivele protejate",
-        "addDevice": "adăugați dispozitiv",
-        "trialExpired": "Perioadă de încercare expirată - Faceți upgrade la protecția tuturor dispozitivelor dvs.",
-        "upgrade": "upgrade",
-        "freeTrial": "Protejați-vă toate dispozitivele - Perioadă de probă gratuită de 30 de zile",
-        "startTrial": "Începeți perioada de probă",
         "notification":{
             "recent": "Notificări recente de securitate",
             "notifications": "Notificări"
@@ -1306,7 +1293,22 @@
             "startTrial": "Începeți perioada de probă",
             "fullAccess": "Acces complet",
             "renew": "Reînnoiți"
-        },
+		},
+		"overview": {
+			"overviewBlockTitle": "Prezentarea generală a securității ecosistemului",
+			"allDevices": "Toate dispozitivele",
+			"myDevice": "Dispozitivul meu",
+			"secure": "SIGUR",
+			"needAttention": "ARE NEVOIE DE ATENȚIE",
+			"manageAccount": "Gestionare cont",
+			"devices": "Dispozitive",
+			"seeProtectedDevices": "Vedeți dispozitivele protejate",
+			"addDevice": "adăugați dispozitiv",
+			"trialExpired": "Perioadă de încercare expirată - Faceți upgrade la protecția tuturor dispozitivelor dvs.",
+			"upgrade": "upgrade",
+			"freeTrial": "Protejați-vă toate dispozitivele - Perioadă de probă gratuită de 30 de zile",
+			"startTrial": "Începeți perioada de probă"
+		},
         "tour": {
             "back": "Înapoi",
             "skip": "Ignorare",

@@ -1273,19 +1273,6 @@
     },
     "homeSecurity": {
         "title": "Povezana domača varnost",
-        "overviewBlockTitle": "Pregled varnosti ekosistema",
-        "allDevices": "Vse naprave",
-        "myDevice": "Moja naprava",
-        "secure": "VARNO",
-        "needAttention": "POTREBEN JE UKREP",
-        "manageAccount": "Upravljanje računa",
-        "devices": "Naprave",
-        "seeProtectedDevices": "Ogled zaščitenih naprav",
-        "addDevice": "dodajanje naprave",
-        "trialExpired": "Preskus potekel - Nadgradite, da zaščitite vse svoje naprave",
-        "upgrade": "nadgradnja",
-        "freeTrial": "Zaščitite vse svoje naprave - Brezplačen 30-dnevni preskus",
-        "startTrial": "Začnite preskus",
         "notification":{
             "recent": "Nedavna varnostna obvestila",
             "notifications": "Obvestila"
@@ -1306,6 +1293,21 @@
             "startTrial": "Začnite preskus",
             "fullAccess": "Poln dostop",
             "renew": "Obnovi"
+		},
+		"overview": {
+			"overviewBlockTitle": "Pregled varnosti ekosistema",
+			"allDevices": "Vse naprave",
+			"myDevice": "Moja naprava",
+			"secure": "VARNO",
+			"needAttention": "POTREBEN JE UKREP",
+			"manageAccount": "Upravljanje računa",
+			"devices": "Naprave",
+			"seeProtectedDevices": "Ogled zaščitenih naprav",
+			"addDevice": "dodajanje naprave",
+			"trialExpired": "Preskus potekel - Nadgradite, da zaščitite vse svoje naprave",
+			"upgrade": "nadgradnja",
+			"freeTrial": "Zaščitite vse svoje naprave - Brezplačen 30-dnevni preskus",
+			"startTrial": "Začnite preskus"
 		},
         "tour": {
             "back": "Nazaj",

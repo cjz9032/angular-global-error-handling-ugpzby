@@ -1273,19 +1273,6 @@
     },
     "homeSecurity": {
         "title": "Biztonsági rendszer csatlakoztatott otthonhoz",
-        "overviewBlockTitle": "Az ökoszisztéma biztonságának áttekintése",
-        "allDevices": "Minden eszköz",
-        "myDevice": "Saját készülékem",
-        "secure": "BIZTONSÁGOS",
-        "needAttention": "ELLENŐRIZNI KELL",
-        "manageAccount": "Fiók kezelése",
-        "devices": "Eszközök",
-        "seeProtectedDevices": "A védett eszközök megtekintése",
-        "addDevice": "eszköz hozzáadása",
-        "trialExpired": "Próbaverzió lejárt - Bővítés az összes eszköz védelmére",
-        "upgrade": "frissítés",
-        "freeTrial": "Az összes eszköz védelme - Ingyenes 30 napos próbaváltozat",
-        "startTrial": "Próbaidőszak megkezdése",
         "notification":{
             "recent": "Legutóbbi biztonsági értesítések",
             "notifications": "Értesítések"
@@ -1306,6 +1293,21 @@
             "startTrial": "Próbaidőszak megkezdése",
             "fullAccess": "Teljes hozzáférés",
             "renew": "Megújítás"
+		},
+		"overview": {
+			"overviewBlockTitle": "Az ökoszisztéma biztonságának áttekintése",
+			"allDevices": "Minden eszköz",
+			"myDevice": "Saját készülékem",
+			"secure": "BIZTONSÁGOS",
+			"needAttention": "ELLENŐRIZNI KELL",
+			"manageAccount": "Fiók kezelése",
+			"devices": "Eszközök",
+			"seeProtectedDevices": "A védett eszközök megtekintése",
+			"addDevice": "eszköz hozzáadása",
+			"trialExpired": "Próbaverzió lejárt - Bővítés az összes eszköz védelmére",
+			"upgrade": "frissítés",
+			"freeTrial": "Az összes eszköz védelme - Ingyenes 30 napos próbaváltozat",
+			"startTrial": "Próbaidőszak megkezdése"
 		},
         "tour": {
             "back": "Vissza",

@@ -61,16 +61,19 @@
 					.title {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+						cursor: pointer;
 					}
 
 					.description {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+						cursor: pointer;
 					}
 
 					.caption {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+						cursor: pointer;
 					}
 
 					.logo {
@@ -127,16 +130,19 @@
 					.title {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+						cursor: pointer;
 					}
 
 					.description {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+						cursor: pointer;
 					}
 
 					.caption {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+						cursor: pointer;
 					}
 
 					.logo {
@@ -186,6 +192,7 @@
 						padding: 0 15%;
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+						cursor: pointer;
 						@media #{$mediaquery_X9} {
 							font-size: 3rem;
 							top: 15%;
@@ -232,6 +239,7 @@
 			.content {
 				padding: 3rem 4rem;
 				height: 40%;
+				cursor: pointer;
 				@media #{$mediaquery_10} {
 					padding: 1.5rem 2rem;
 				}
@@ -239,6 +247,7 @@
 				.title {
 					font-weight: $weight_light;
 					text-decoration: none;
+					cursor: pointer;
 					&:hover {
 						text-decoration: none;
 					}
@@ -293,13 +302,14 @@
 
 		.content {
 			padding: 3rem 4rem;
-
+			cursor: pointer;
 			.title {
 				font-weight: $weight_light;
 				color: $light;
 				text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 				font-size: 4rem;
 				line-height: 4.6rem;
+				cursor: pointer;
 			}
 
 			.read-more {

@@ -69,7 +69,7 @@ export class UiFeatureItemComponent implements OnInit, AfterViewInit {
 		this.metricsDatas.viewOrder++;
 
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
-			backdrop: 'static',
+			backdrop: true, /* sahinul25Jun2019 for VAN-5751*/
 			size: 'lg',
 			centered: true,
 			windowClass: 'Article-Detail-Modal',

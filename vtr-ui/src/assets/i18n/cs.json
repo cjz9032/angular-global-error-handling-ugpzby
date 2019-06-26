@@ -1228,7 +1228,7 @@
             "attend": "Zúčastnit se",
             "rebootRequiredTag": "Je nutno restartovat počítač",
             "rebootDelayTag": "Je vyžadováno restart počítače, zdroj napájení je nutný",
-            "shutdownRequiredTag": "Je nutno provést restart",
+            "shutdownRequiredTag": "Je vyžadováno vypnutí",
             "dependedPackage": "Závislý balíček"
         },
         "availableUpdates": {
@@ -1273,19 +1273,6 @@
     },
     "homeSecurity": {
         "title": "Zabezpečení připojené domácnosti",
-        "overviewBlockTitle": "Přehled zabezpečení ekosystému",
-        "allDevices": "Všechna zařízení",
-        "myDevice": "Mé zařízení",
-        "secure": "ZABEZPEČIT",
-        "needAttention": "VYŽADUJE POZORNOST",
-        "manageAccount": "Správa účtu",
-        "devices": "Zařízení",
-        "seeProtectedDevices": "Zobrazit chráněná zařízení",
-        "addDevice": "přidat zařízení",
-        "trialExpired": "Platnost zkušební verze vypršela - Upgrade na ochranu všech zařízení",
-        "upgrade": "upgrade",
-        "freeTrial": "Ochrana všech zařízení - Bezplatná 30denní zkušební verze",
-        "startTrial": "Spustit zkušební verzi",
         "notification":{
             "recent": "Nedávná bezpečnostní oznámení",
             "notifications": "Upozornění"
@@ -1306,6 +1293,21 @@
             "startTrial": "Spustit zkušební verzi",
             "fullAccess": "Plný přístup",
 			"renew": "Obnovit"
+		},
+		"overview": {
+			"overviewBlockTitle": "Přehled zabezpečení ekosystému",
+			"allDevices": "Všechna zařízení",
+			"myDevice": "Mé zařízení",
+			"secure": "ZABEZPEČIT",
+			"needAttention": "VYŽADUJE POZORNOST",
+			"manageAccount": "Správa účtu",
+			"devices": "Zařízení",
+			"seeProtectedDevices": "Zobrazit chráněná zařízení",
+			"addDevice": "přidat zařízení",
+			"trialExpired": "Platnost zkušební verze vypršela - Upgrade na ochranu všech zařízení",
+			"upgrade": "upgrade",
+			"freeTrial": "Ochrana všech zařízení - Bezplatná 30denní zkušební verze",
+			"startTrial": "Spustit zkušební verzi"
 		},
         "tour": {
             "back": "Zpět",

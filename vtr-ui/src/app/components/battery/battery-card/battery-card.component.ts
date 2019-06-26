@@ -45,6 +45,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	batteryHealth = 0;
 	batteryIndex = 0;
 	chargeThresholdInfo: any; // ChargeThresholdInfo
+	batteryConditionStatus: string;
 
 	private powerSupplyStatusEventRef: any;
 	private remainingPercentageEventRef: any;
@@ -148,7 +149,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			// this.commonService.setLocalStorageValue(LocalStorageKey.BatteryPercentage, batteriesHealths);
 			this.batteryIndex = batteryIndex;
 		}
-		this.batteryIndicator.batteryHealth = this.batteryIndicator.getBatteryHealth(this.batteryHealth);
+
+		this.batteryConditionStatus = this.batteryIndicator.getBatteryHealth(this.batteryHealth);
 		this.batteryIndicator.percent = this.batteryGauge.percentage;
 		this.batteryIndicator.charging = this.batteryGauge.isAttached;
 		this.batteryIndicator.convertMin(this.batteryGauge.time);

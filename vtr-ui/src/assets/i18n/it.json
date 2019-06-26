@@ -1273,19 +1273,6 @@
     },
     "homeSecurity": {
         "title": "Protezione abitazione connessa",
-        "overviewBlockTitle": "Panoramica sulla protezione dell'ecosistema",
-        "allDevices": "Tutti i dispositivi",
-        "myDevice": "Il mio dispositivo",
-        "secure": "SICURO",
-        "needAttention": "RICHIEDE ATTENZIONE",
-        "manageAccount": "Gestisci account",
-        "devices": "Dispositivi",
-        "seeProtectedDevices": "Visualizza dispositivi protetti",
-        "addDevice": "aggiungi dispositivo",
-        "trialExpired": "Versione di valutazione scaduta - Aggiorna per proteggere tutti i dispositivi",
-        "upgrade": "aggiorna",
-        "freeTrial": "Proteggi tutti i dispositivi - Versione di prova gratuita per 30 giorni",
-        "startTrial": "Avvia versione di prova",
         "notification":{
             "recent": "Notifiche di sicurezza recenti",
             "notifications": "Notifiche"
@@ -1306,7 +1293,22 @@
             "startTrial": "Avvia versione di prova",
             "fullAccess": "Accesso completo",
             "renew": "Rinnova"
-        },
+		},
+		"overview": {
+			"overviewBlockTitle": "Panoramica sulla protezione dell'ecosistema",
+			"allDevices": "Tutti i dispositivi",
+			"myDevice": "Il mio dispositivo",
+			"secure": "SICURO",
+			"needAttention": "RICHIEDE ATTENZIONE",
+			"manageAccount": "Gestisci account",
+			"devices": "Dispositivi",
+			"seeProtectedDevices": "Visualizza dispositivi protetti",
+			"addDevice": "aggiungi dispositivo",
+			"trialExpired": "Versione di valutazione scaduta - Aggiorna per proteggere tutti i dispositivi",
+			"upgrade": "aggiorna",
+			"freeTrial": "Proteggi tutti i dispositivi - Versione di prova gratuita per 30 giorni",
+			"startTrial": "Avvia versione di prova"
+		},
         "tour": {
             "back": "Indietro",
             "skip": "Ignora",

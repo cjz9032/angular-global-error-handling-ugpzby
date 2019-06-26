@@ -40,7 +40,6 @@ import { HomeSecurityNotifications } from 'src/app/data-models/home-security/hom
 })
 export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	pageStatus: HomeSecurityPageStatus;
-	eventEmitter = new EventEmitter();
 
 	connectedHomeSecurity: ConnectedHomeSecurity;
 	permission: any;
@@ -49,8 +48,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	homeSecurityOverviewMyDevice: HomeSecurityOverviewMyDevice;
 	notificationItems: HomeSecurityNotifications;
 	account: HomeSecurityAccount;
-	isOnline = true;
-	testStatus = ['lessDevices-secure', 'moreDevices-needAttention', 'noneDevices', 'trialExpired', 'lessDevices-needAttention', 'moreDevices-secure', 'localAccount'];
+	backId = 'chs-btn-back';
 
 	constructor(
 		vantageShellService: VantageShellService,
@@ -60,23 +58,31 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private ngZone: NgZone,
 	) {
-		this.connectedHomeSecurity = homeSecurityMockService.getConnectedHomeSecurity();
+		this.connectedHomeSecurity = vantageShellService.getConnectedHomeSecurity();
 		this.permission = vantageShellService.getPermission();
 		this.welcomeModel = new HomeSecurityWelcome();
 	}
 
 	ngOnInit() {
-		this.welcomeModel.isLenovoIdLogin = false; // mock data;
 		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, true);
-		this.permission.getSystemPermissionShowed().then((response) => {
-			this.welcomeModel.hasSystemPermissionShowed = response;
-			if (typeof this.welcomeModel.hasSystemPermissionShowed === 'boolean') {
-				this.openModal();
-			}
-		});
-		this.connectedHomeSecurity.on(EventTypes.chsHasSystemPermissionShowedEvent, (data) => {
-			this.welcomeModel.hasSystemPermissionShowed = data;
-		});
+		const welcomeComplete = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, false);
+		const showWelcome = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, 0);
+		if (welcomeComplete || showWelcome === 2) {
+			this.permission.getSystemPermissionShowed().then((response: boolean) => {
+				if (response) {
+					this.permission.requestPermission('geoLocatorStatus').then((location: boolean) => {
+						if (location) {
+							return;
+						}
+						this.openPermissionModal();
+					});
+				} else {
+					this.openPermissionModal();
+				}
+			});
+		} else {
+			this.openWelcomeModal(showWelcome);
+		}
 
 		const cacheMyDevice = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityMyDevice);
 		const cacheAllDevices = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices);
@@ -89,7 +95,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 		} else if (cacheMyDevice) {
 			this.homeSecurityOverviewMyDevice = cacheMyDevice;
 		}
-		if (this.connectedHomeSecurity && this.connectedHomeSecurity.overview && this.connectedHomeSecurity.overview.allDevices && this.connectedHomeSecurity.overview.allDevices.length > 0) {
+		if (this.connectedHomeSecurity && this.connectedHomeSecurity.overview && this.connectedHomeSecurity.overview.allDevices) {
 			this.allDevicesInfo = new HomeSecurityAllDevice(this.connectedHomeSecurity.overview);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
 		}
@@ -114,7 +120,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 
 		if (this.connectedHomeSecurity.notifications) {
 			this.notificationItems = new HomeSecurityNotifications(this.connectedHomeSecurity.notifications);
-			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityNotifications, this.notificationItems)
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityNotifications, this.notificationItems);
 		}
 
 		this.connectedHomeSecurity.on(EventTypes.chsEvent, (chs: ConnectedHomeSecurity) => {
@@ -132,7 +138,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 					allDevice: this.account.allDevice,
 				});
 			}
-			if (chs.overview.allDevices && chs.overview.allDevices.length > 0) {
+			if (chs.overview.allDevices) {
 				this.allDevicesInfo = new HomeSecurityAllDevice(chs.overview);
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
 			}
@@ -153,50 +159,31 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 		this.permission.getSystemPermissionShowed().then(response => {
 			this.welcomeModel.hasSystemPermissionShowed = response;
 		});
-		this.welcomeModel.isLenovoIdLogin = false; // mock data;
 	}
 
-	openModal() {
+
+	openWelcomeModal(showWelcome) {
+		if (this.modalService.hasOpenModals()) {
+			return;
+		}
+
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, true)) {
-			if (this.modalService.hasOpenModals()) {
-				return;
-			}
-			if (this.welcomeModel.hasSystemPermissionShowed) {
-				this.requireLocationModal();
-			} else if (this.welcomeModel.hasSystemPermissionShowed === false) {
-				this.notRequireLocationModal();
-			}
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, showWelcome + 1);
+			this.ngZone.run(() => {
+				const welcomeModal = this.modalService.open(ModalChsWelcomeContainerComponent, {
+					backdrop: 'static',
+					size: 'lg',
+					centered: true,
+					windowClass: 'Welcome-container-Modal'
+				});
+			});
 		}
 	}
 
-	requireLocationModal() {
-		const showW = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, 1);
-		this.permission.requestPermission('geoLocatorStatus').then((status) => {
-			this.welcomeModel.isLocationServiceOn = status;
-			this.getSwitchAndContainerPage(status, this.welcomeModel.isLenovoIdLogin);
-			if (showW < 3 || status === false) {
-				this.ngZone.run(() => {
-					const welcomeModal = this.modalService.open(ModalChsWelcomeContainerComponent, {
-						backdrop: 'static',
-						size: 'lg',
-						centered: true,
-						windowClass: 'Welcome-container-Modal'
-					});
-					welcomeModal.componentInstance.hasSystemPermissionShowed = this.welcomeModel.hasSystemPermissionShowed;
-					welcomeModal.componentInstance.isLocationServiceOn = this.welcomeModel.isLocationServiceOn;
-					welcomeModal.componentInstance.isLenovoIdLogin = this.welcomeModel.isLenovoIdLogin;
-					welcomeModal.componentInstance.containerPage = this.welcomeModel.containerPage;
-					welcomeModal.componentInstance.switchPage = this.welcomeModel.switchPage;
-					this.welcomeModel.showWelcome = showW + 1;
-					this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, this.welcomeModel.showWelcome);
-				});
-			}
-		});
-	}
-
-	notRequireLocationModal() {
-		const showW = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, 1);
-		this.getSwitchAndContainerPage(false, this.welcomeModel.isLenovoIdLogin);
+	openPermissionModal() {
+		if (this.modalService.hasOpenModals()) {
+			return;
+		}
 		this.ngZone.run(() => {
 			const welcomeModal = this.modalService.open(ModalChsWelcomeContainerComponent, {
 				backdrop: 'static',
@@ -204,31 +191,8 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 				centered: true,
 				windowClass: 'Welcome-container-Modal'
 			});
-			welcomeModal.componentInstance.hasSystemPermissionShowed = this.welcomeModel.hasSystemPermissionShowed;
-			welcomeModal.componentInstance.isLenovoIdLogin = this.welcomeModel.isLenovoIdLogin;
-			welcomeModal.componentInstance.containerPage = this.welcomeModel.containerPage;
-			welcomeModal.componentInstance.switchPage = this.welcomeModel.switchPage;
-			this.welcomeModel.showWelcome = showW + 1;
-			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, this.welcomeModel.showWelcome);
+			welcomeModal.componentInstance.switchPage = 4;
 		});
-	}
-
-	getSwitchAndContainerPage(isLocationServiceOn, isLenovoIdLogin) {
-		const showW = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, 1);
-		if (isLocationServiceOn === false && isLenovoIdLogin === false) {
-			this.welcomeModel.containerPage = 4;
-		} else if (isLocationServiceOn && isLenovoIdLogin) {
-			this.welcomeModel.containerPage = 2;
-		} else {
-			this.welcomeModel.containerPage = 3;
-		}
-		if (showW < 3) {
-			this.welcomeModel.switchPage = 1;
-		} else {
-			if (isLocationServiceOn === false) {
-				this.welcomeModel.switchPage = 4;
-			}
-		}
 	}
 
 	onStartTrial() {
@@ -253,24 +217,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	}
 
 	onUpgradeAccount() {
-		this.isOnline = !this.isOnline;
 		this.connectedHomeSecurity.account.purchase();
-	}
-
-	haddleChange($event) {
-		if ($event === 'visitCornet') {
-			this.onManageAccount();
-		} else if ($event === 'upgrade') {
-			this.onUpgradeAccount();
-		} else if ($event === 'startTrial') {
-			this.onStartTrial();
-		}
-	}
-
-	public switchStatus() {
-		if (this.testStatus.length === 0) {
-			this.testStatus = ['loading', 'lessDevices-secure', 'moreDevices-needAttention', 'noneDevices', 'trialExpired', 'lessDevices-needAttention', 'moreDevices-secure', 'localAccount'];
-		}
-		this.eventEmitter.emit(this.testStatus.shift());
 	}
 }

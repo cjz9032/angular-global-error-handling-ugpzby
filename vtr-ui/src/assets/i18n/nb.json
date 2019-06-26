@@ -1273,18 +1273,6 @@
     },
     "homeSecurity": {
         "title": "Sikkerhet for tilkoblede hjem",
-        "overviewBlockTitle": "Vis sikkerhetsoversikt for økosystemet",
-        "allDevices": "Alle enheter",
-        "myDevice": "Min enhet",
-        "secure": "SIKKER",
-        "needAttention": "TRENGER OPPMERKSOMHET",
-        "manageAccount": "Administrer konto",
-        "devices": "Enheter",
-        "seeProtectedDevices": "Se beskyttede enheter",
-        "addDevice": "legg til enhet",
-        "trialExpired": "Prøveversjonen er utløpt - Oppgrader for å beskytte alle enhetene dine",
-        "upgrade": "oppgrader",
-        "freeTrial": "Beskytt alle enhetene dine - Gratis 30-dagers prøveperiode",
         "notification":{
             "recent": "Nylige sikkerhetsvarsler",
             "notifications": "Varsler"
@@ -1305,7 +1293,22 @@
             "startTrial": "Start prøveperiode",
             "fullAccess": "Full tilgang",
             "renew": "Forny"
-        },
+		},
+		"overview": {
+			"overviewBlockTitle": "Vis sikkerhetsoversikt for økosystemet",
+			"allDevices": "Alle enheter",
+			"myDevice": "Min enhet",
+			"secure": "SIKKER",
+			"needAttention": "TRENGER OPPMERKSOMHET",
+			"manageAccount": "Administrer konto",
+			"devices": "Enheter",
+			"seeProtectedDevices": "Se beskyttede enheter",
+			"addDevice": "legg til enhet",
+			"trialExpired": "Prøveversjonen er utløpt - Oppgrader for å beskytte alle enhetene dine",
+			"upgrade": "oppgrader",
+			"freeTrial": "Beskytt alle enhetene dine - Gratis 30-dagers prøveperiode",
+			"startTrial": "Start prøveperiode"
+		},
         "tour": {
             "back": "Tilbake",
             "skip": "Hopp over",

@@ -460,7 +460,7 @@
             "learnMore": "למדו עוד",
             "freeMemory": "זיכרון פנוי",
             "systemUpdate": {
-                "title": "‏System Update (עדכון מערכת)",
+                "title": "עדכון מערכת",
                 "notFound": "לא נמצא עדכון מערכת",
                 "detail": {
                     "uptoDate": "התוכנה מעודכנת",
@@ -1273,25 +1273,7 @@
     },
     "homeSecurity": {
         "title": "אבטחת הבית המחובר",
-        "overviewBlockTitle": "סקירה של אבטחת המערכת האקולוגית",
-        "allDevices": "כל המכשירים",
-        "myDevice": "ההתקן שלי",
-        "secure": "מאובטח",
-        "needAttention": "נדרשת תשומת לב",
-        "manageAccount": "ניהול חשבון",
-        "devices": "מכשירים",
-        "seeProtectedDevices": "ראו מכשירים מוגנים",
-        "addDevice": "הוספת מכשיר",
-        "trialExpired": "פג תוקפה של גרסת הניסיון - שדרגו כדי להגן על כל המכשירים",
-        "upgrade": "שדרוג",
-        "freeTrial": "הגנו על כל המכשירים - יסיון חינם למשך 30 יוםנ",
-        "inEcosystem": "במערכת האקולוגית",
-        "ecosystemEnable": "המערכת האקולוגית מופעלת",
-        "inTrial": "במהלך תקופת ניסיון",
-        "addEcosystem": "הוספה למערכת האקולוגית",
-        "enableEcosystem": "הפעלת המערכת האקולוגית",
         "startTrial": "התחלת תקופת ניסיון",
-        "fullAccess": "גישה מלאה",
         "notification":{
             "recent": "הודעות אבטחה אחרונות",
             "notifications": "הודעות"
@@ -1312,6 +1294,20 @@
             "startTrial": "התחלת תקופת ניסיון",
             "fullAccess": "גישה מלאה",
 			"renew": "חידוש"
+		},
+		"overview": {
+			"overviewBlockTitle": "סקירה של אבטחת המערכת האקולוגית",
+			"allDevices": "כל המכשירים",
+			"myDevice": "ההתקן שלי",
+			"secure": "מאובטח",
+			"needAttention": "נדרשת תשומת לב",
+			"manageAccount": "ניהול חשבון",
+			"devices": "מכשירים",
+			"seeProtectedDevices": "ראו מכשירים מוגנים",
+			"addDevice": "הוספת מכשיר",
+			"trialExpired": "פג תוקפה של גרסת הניסיון - שדרגו כדי להגן על כל המכשירים",
+			"upgrade": "שדרוג",
+			"freeTrial": "הגנו על כל המכשירים - יסיון חינם למשך 30 יוםנ"
 		},
         "tour": {
             "back": "אחורית",

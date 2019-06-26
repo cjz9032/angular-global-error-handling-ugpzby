@@ -1273,18 +1273,6 @@
     },
     "homeSecurity": {
         "title": "أمان المنزل المتصل",
-        "overviewBlockTitle": "نظرة عامة على أمان النظام البيئي",
-        "allDevices": "جميع الأجهزة",
-        "myDevice": "جهازي",
-        "secure": "آمن",
-        "needAttention": "يحتاج إلى الانتباه",
-        "manageAccount": "إدارة الحساب",
-        "devices": "الأجهزة",
-        "seeProtectedDevices": "راجع الأجهزة المحمية",
-        "addDevice": "إضافة جهاز",
-        "trialExpired": "الترقية لحماية جميع أجهزتك - الترقية لحماية جميع أجهزت",
-        "freeTrial": "إصدار تجريبي مجاني لمدة 30 يومًا - حماية جميع أجهزتك",
-        "startTrial": "بدء الإصدار التجريبي",
         "notification":{
             "recent": "إعلامات الأمان الأخيرة",
             "notifications": "الإعلامات"
@@ -1305,6 +1293,21 @@
             "startTrial": "بدء الإصدار التجريبي",
             "fullAccess": "الوصول الكامل",
             "renew": "تجديد"
+		},
+		"overview": {
+			"overviewBlockTitle": "نظرة عامة على أمان النظام البيئي",
+			"allDevices": "جميع الأجهزة",
+			"myDevice": "جهازي",
+			"secure": "آمن",
+			"needAttention": "يحتاج إلى الانتباه",
+			"manageAccount": "إدارة الحساب",
+			"devices": "الأجهزة",
+			"seeProtectedDevices": "راجع الأجهزة المحمية",
+			"addDevice": "إضافة جهاز",
+			"trialExpired": "الترقية لحماية جميع أجهزتك - الترقية لحماية جميع أجهزت",
+			"upgrade": "ترقية",
+			"freeTrial": "إصدار تجريبي مجاني لمدة 30 يومًا - حماية جميع أجهزتك",
+			"startTrial": "بدء الإصدار التجريبي"
 		},
         "tour": {
             "back": "السابق‬",

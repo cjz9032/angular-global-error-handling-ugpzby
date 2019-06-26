@@ -1273,19 +1273,6 @@
     },
     "homeSecurity": {
         "title": "Povezana kućna bezbednost",
-        "overviewBlockTitle": "Pregled bezbednosti ekosistema",
-        "allDevices": "Svi uređaji",
-        "myDevice": "Moj uređaj",
-        "secure": "BEZBEDNO",
-        "needAttention": "POTREBNA JE PAŽNJA",
-        "manageAccount": "Upravljanje nalogom",
-        "devices": "Uređaji",
-        "seeProtectedDevices": "Pogledajte zaštićene uređaje",
-        "addDevice": "dodajte uređaj",
-        "trialExpired": "Probna verzija je istekla - Nadogradite da biste zaštitili sve uređaje",
-        "upgrade": "nadogradnja",
-        "freeTrial": "Zaštitite sve uređaje - Besplatni tridesetodnevni probni period",
-        "startTrial": "Započnite probni period",
         "notification":{
             "recent": "Nedavna bezbednosna obaveštenja",
             "notifications": "Obaveštenja"
@@ -1306,6 +1293,21 @@
             "startTrial": "Započnite probni period",
             "fullAccess": "Pun pristup",
             "renew": "Obnova"
+		},
+		"overview": {
+			"overviewBlockTitle": "Pregled bezbednosti ekosistema",
+			"allDevices": "Svi uređaji",
+			"myDevice": "Moj uređaj",
+			"secure": "BEZBEDNO",
+			"needAttention": "POTREBNA JE PAŽNJA",
+			"manageAccount": "Upravljanje nalogom",
+			"devices": "Uređaji",
+			"seeProtectedDevices": "Pogledajte zaštićene uređaje",
+			"addDevice": "dodajte uređaj",
+			"trialExpired": "Probna verzija je istekla - Nadogradite da biste zaštitili sve uređaje",
+			"upgrade": "nadogradnja",
+			"freeTrial": "Zaštitite sve uređaje - Besplatni tridesetodnevni probni period",
+			"startTrial": "Započnite probni period"
 		},
         "tour": {
             "back": "Nazad",

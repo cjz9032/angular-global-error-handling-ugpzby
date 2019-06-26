@@ -1273,19 +1273,6 @@
     },
     "homeSecurity": {
         "title": "Segurança doméstica conectada",
-        "overviewBlockTitle": "Visão geral da segurança do ecossistema",
-        "allDevices": "Todos os dispositivos",
-        "myDevice": "Meu Dispositivo",
-        "secure": "SEGURO",
-        "needAttention": "PRECISA DE ATENÇÃO",
-        "manageAccount": "Gerenciar conta",
-        "devices": "Dispositivos",
-        "seeProtectedDevices": "Ver dispositivos protegidos",
-        "addDevice": "adicionar dispositivo",
-        "trialExpired": "Avaliação expirada - Atualizar para proteger todos os dispositivos",
-        "upgrade": "atualizar",
-        "freeTrial": "Proteger todos os dispositivos - Avaliação gratuita de 30 dias",
-        "startTrial": "Iniciar avaliação",
         "notification":{
             "recent": "Notificações de segurança recentes",
             "notifications": "Notificações"
@@ -1306,7 +1293,22 @@
             "startTrial": "Iniciar avaliação",
             "fullAccess": "Acesso total",
             "renew": "Renew"
-        },
+		},
+		"overview": {
+			"overviewBlockTitle": "Visão geral da segurança do ecossistema",
+			"allDevices": "Todos os dispositivos",
+			"myDevice": "Meu Dispositivo",
+			"secure": "SEGURO",
+			"needAttention": "PRECISA DE ATENÇÃO",
+			"manageAccount": "Gerenciar conta",
+			"devices": "Dispositivos",
+			"seeProtectedDevices": "Ver dispositivos protegidos",
+			"addDevice": "adicionar dispositivo",
+			"trialExpired": "Avaliação expirada - Atualizar para proteger todos os dispositivos",
+			"upgrade": "atualizar",
+			"freeTrial": "Proteger todos os dispositivos - Avaliação gratuita de 30 dias",
+			"startTrial": "Iniciar avaliação"
+		},
         "tour": {
             "back": "Voltar",
             "skip": "Ignorar",

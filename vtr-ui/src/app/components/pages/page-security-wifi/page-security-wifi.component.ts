@@ -197,7 +197,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			centered: true,
 			windowClass: 'Article-Detail-Modal',
 			keyboard : false,
-			backdrop: 'static'
+			backdrop: true /* sahinul25Jun2019 for VAN-5751*/
 		});
 
 		articleDetailModal.componentInstance.articleId = this.securityHealthArticleId;

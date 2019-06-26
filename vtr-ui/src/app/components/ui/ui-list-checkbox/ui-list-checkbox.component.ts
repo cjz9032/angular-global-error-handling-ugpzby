@@ -89,7 +89,7 @@ export class UiListCheckboxComponent implements OnInit {
 		// const readMeUrl = 'https://download.lenovo.com/consumer/desktop/lnvusbss.txt';
 		const modalRef = this.modalService.open(ModalUpdateChangeLogComponent,
 			{
-				backdrop: 'static',
+				backdrop: true, /* sahinul25Jun2019 for VAN-5751*/
 				size: 'lg',
 				windowClass: 'update-read-more-modal-size',
 				centered: true

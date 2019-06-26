@@ -1273,19 +1273,6 @@
     },
     "homeSecurity": {
         "title": "Segurança de Casa Conectada",
-        "overviewBlockTitle": "Descrição geral da segurança do ecossistema",
-        "allDevices": "Todos os dispositivos",
-        "myDevice": "O Meu Dispositivo",
-        "secure": "SEGURO",
-        "needAttention": "PRECISA DE ATENÇÃO",
-        "manageAccount": "Gerir Conta",
-        "devices": "Dispositivos",
-        "seeProtectedDevices": "Ver dispositivos protegidos",
-        "addDevice": "adicionar dispositivo",
-        "trialExpired": "Versão de avaliação expirada - Atualizar para proteger todos os dispositivos",
-        "upgrade": "atualizar",
-        "freeTrial": "Proteger todos os dispositivos - Versão de avaliação gratuita de 30 dias",
-        "startTrial": "Iniciar versão de avaliação",
         "notification":{
 	        "recent": "Notificações de segurança recentes",
             "notifications": "Notificações"
@@ -1306,7 +1293,22 @@
             "startTrial": "Iniciar versão de avaliação",
             "fullAccess": "Acesso total",
             "renew": "Renovar"
-        },
+		},
+		"overview": {
+			"overviewBlockTitle": "Descrição geral da segurança do ecossistema",
+			"allDevices": "Todos os dispositivos",
+			"myDevice": "O Meu Dispositivo",
+			"secure": "SEGURO",
+			"needAttention": "PRECISA DE ATENÇÃO",
+			"manageAccount": "Gerir Conta",
+			"devices": "Dispositivos",
+			"seeProtectedDevices": "Ver dispositivos protegidos",
+			"addDevice": "adicionar dispositivo",
+			"trialExpired": "Versão de avaliação expirada - Atualizar para proteger todos os dispositivos",
+			"upgrade": "atualizar",
+			"freeTrial": "Proteger todos os dispositivos - Versão de avaliação gratuita de 30 dias",
+			"startTrial": "Iniciar versão de avaliação"
+		},
         "tour": {
             "back": "Retroceder",
             "skip": "Ignorar",

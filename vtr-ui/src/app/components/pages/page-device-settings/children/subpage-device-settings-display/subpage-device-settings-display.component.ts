@@ -43,7 +43,6 @@ export class SubpageDeviceSettingsDisplayComponent
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	public shouldCameraSectionDisabled = true;
 	public isCameraHidden = false;
-public isCameraInErrorState =false;
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 	headerMenuItems = [
@@ -149,30 +148,28 @@ public isCameraInErrorState =false;
 				case DeviceMonitorStatus.CameraStatus:
 					console.log('DeviceMonitorStatus.CameraStatus', payload);
 					this.dataSource.permission = payload;
-					
-					
-if(payload){
-	this.shouldCameraSectionDisabled=false;
-	this.isCameraInErrorState=false;
-	this.cameraFeatureAccess.showAutoExposureSlider = false;
-	if (this.dataSource.exposure.autoValue === true) {
-		this.cameraFeatureAccess.exposureAutoValue = true;
-	} else {
-		this.cameraFeatureAccess.exposureAutoValue = false;
-	}
-	if (this.dataSource.exposure.supported === true && this.dataSource.exposure.autoValue === false) {
-		this.cameraFeatureAccess.showAutoExposureSlider = true;
-	}
-	
-}
-else{
-	this.shouldCameraSectionDisabled=true;
-	this.isCameraInErrorState=false;
-	this.cameraFeatureAccess.exposureAutoValue = false;
-	if (this.dataSource.exposure.supported === true && this.cameraFeatureAccess.exposureAutoValue === false) {
-		this.cameraFeatureAccess.showAutoExposureSlider = true;
-	}
-}
+
+
+					if (payload) {
+						this.shouldCameraSectionDisabled = false;
+						this.cameraFeatureAccess.showAutoExposureSlider = false;
+						if (this.dataSource.exposure.autoValue === true) {
+							this.cameraFeatureAccess.exposureAutoValue = true;
+						} else {
+							this.cameraFeatureAccess.exposureAutoValue = false;
+						}
+						if (this.dataSource.exposure.supported === true && this.dataSource.exposure.autoValue === false) {
+							this.cameraFeatureAccess.showAutoExposureSlider = true;
+						}
+
+					}
+					else {
+						this.shouldCameraSectionDisabled = true;
+						this.cameraFeatureAccess.exposureAutoValue = false;
+						if (this.dataSource.exposure.supported === true && this.cameraFeatureAccess.exposureAutoValue === false) {
+							this.cameraFeatureAccess.showAutoExposureSlider = true;
+						}
+					}
 					break;
 				default:
 					break;

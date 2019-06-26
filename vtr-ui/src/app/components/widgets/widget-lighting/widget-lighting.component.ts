@@ -1,3 +1,4 @@
+import { Gaming } from './../../../enums/gaming.enum';
 import { LocalStorageKey } from './../../../enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { GamingAllCapabilitiesService } from './../../../services/gaming/gaming-capabilities/gaming-all-capabilities.service';
@@ -29,15 +30,20 @@ export class WidgetLightingComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
-		this.getcapabilities();
+		this.getCapabilities();
+		this.commonService.notification.subscribe((response) => {
+			if (response.type === Gaming.GamingCapablities) {
+				this.getCapabilities();
+			}
+		});
 	}
 
-	public getcapabilities() {
-		//console.log('capabilities global valuesir');
+	public getCapabilities() {
+		console.log('capabilities global valuesir');
 
 		this.ledSetFeature = this.commonService.getLocalStorageValue(LocalStorageKey.ledSetFeature);
 		this.ledDriver = this.commonService.getLocalStorageValue(LocalStorageKey.ledDriver);
-
+        console.log('ledSetFeature-----'+this.ledSetFeature +'--------ledDriver--------'+ this.ledDriver );
 		//this.ledSetFeature = true;
 		//this.ledDriver = false;
 
@@ -52,7 +58,7 @@ export class WidgetLightingComponent implements OnInit {
 		} else if (this.ledSetFeature && !this.ledDriver) {
 			this.isLightingVisible = true;
 			this.isPopupVisible = true;
-		} else {
+		} else if(!this.ledSetFeature && !this.ledDriver) {
 			this.isLightingVisible = false;
 		}
 	}

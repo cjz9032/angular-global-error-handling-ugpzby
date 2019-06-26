@@ -16,7 +16,7 @@ export class HomeSecurityMockService {
 			expiration: new Date('apr 15, 2020'),
 			lenovoId: {
 				email: 'email',
-				loggedIn: true
+				loggedIn: false
 			},
 			createAccount() {
 				this.state =  CHSAccountState.trial;

@@ -1273,19 +1273,6 @@
     },
     "homeSecurity": {
         "title": "Bağlı Ev Güvenliği",
-        "overviewBlockTitle": "Ekosisteminizin Güvenliğine Genel Bakış",
-        "allDevices": "Tüm Cihazlar",
-        "myDevice": "Cihazım",
-        "secure": "GÜVENLİ",
-        "needAttention": "İLGİLENMENİZ GEREKİYOR",
-        "manageAccount": "Hesabı Yönet",
-        "devices": "Cihazlar",
-        "seeProtectedDevices": "Korunan cihazları görün",
-        "addDevice": "cihaz ekle",
-        "trialExpired": "Deneme Süresi Doldu - Tüm cihazlarınızı korumak için yükseltin",
-        "upgrade": "yükselt",
-        "freeTrial": "Tüm cihazlarınızı koruyun - Ücretsiz 30 günlük deneme süresi",
-        "startTrial": "Deneme Süresini Başlat",
         "notification":{
 	        "recent": "En son güvenlik bildirimleri",
             "notifications": "Bildirimler"
@@ -1306,6 +1293,21 @@
             "startTrial": "Deneme Süresini Başlat",
             "fullAccess": "Tam Erişim",
             "renew": "Yenile"
+		},
+		"overview": {
+			"overviewBlockTitle": "Ekosisteminizin Güvenliğine Genel Bakış",
+			"allDevices": "Tüm Cihazlar",
+			"myDevice": "Cihazım",
+			"secure": "GÜVENLİ",
+			"needAttention": "İLGİLENMENİZ GEREKİYOR",
+			"manageAccount": "Hesabı Yönet",
+			"devices": "Cihazlar",
+			"seeProtectedDevices": "Korunan cihazları görün",
+			"addDevice": "cihaz ekle",
+			"trialExpired": "Deneme Süresi Doldu - Tüm cihazlarınızı korumak için yükseltin",
+			"upgrade": "yükselt",
+			"freeTrial": "Tüm cihazlarınızı koruyun - Ücretsiz 30 günlük deneme süresi",
+			"startTrial": "Deneme Süresini Başlat"
 		},
         "tour": {
             "back": "Geri",
