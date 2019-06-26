@@ -129,16 +129,20 @@ export class VantageShellService {
 		}
 
 		const defaultMetricsClient = {
-			sendAsync() { return Promise.resolve({
-				status: 0,
-				desc: 'ok'
-			});},
-			sendAsyncEx() {return Promise.resolve({
-				status: 0,
-				desc: 'ok'
-			});},
-			metricsEnabled : false
-		}
+			sendAsync() {
+				return Promise.resolve({
+					status: 0,
+					desc: 'ok'
+				});
+			},
+			sendAsyncEx() {
+				return Promise.resolve({
+					status: 0,
+					desc: 'ok'
+				});
+			},
+			metricsEnabled: false
+		};
 
 		return defaultMetricsClient;
 	}
@@ -460,7 +464,13 @@ export class VantageShellService {
 			return this.phoenix.preferenceSettings;
 		}
 	}
-
+	public getNetworkBoost() {
+		if (this.phoenix && this.phoenix.gaming) {
+			console.log('aparna network boost service call' + this.phoenix.gaming.gamingNetworkBoost);
+			return this.phoenix.gaming.gamingNetworkBoost;
+		}
+		return undefined;
+	}
 	/**
      * returns macroKeyClearInfo object from VantageShellService of JS Bridge
      */
@@ -571,7 +581,6 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	
 	/**
 	 * returns Keyboard manager object  from VantageShellService of JS Bridge
 	 */

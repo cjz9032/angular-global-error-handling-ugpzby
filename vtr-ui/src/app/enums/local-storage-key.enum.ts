@@ -47,6 +47,7 @@ export enum LocalStorageKey {
 	ConnectedHomeSecurityAccount = '[LocalStorageKey] ConnectedHomeSecurityAccount',
 	ConnectedHomeSecurityMyDevice = '[LocalStorageKey] ConnectedHomeSecurityMyDevice',
 	ConnectedHomeSecurityNotifications = '[LocalStorageKey] ConnectedHomeSecurityNotifications',
+	NetworkBoostStatus = '[LocalStorageKey] NetworkBoostStatus',
 	/**
 	 * 0  means "ideaPad",
 	 * 1  means "thinkPad",
@@ -69,8 +70,6 @@ export enum LocalStorageKey {
 	ProfileId = '[LocalStorageKey] ProfileId',
 	LightingRGBTop = '[LocalStorageKey] LightingRGBTop',
 	LightingRGBSide = '[LocalStorageKey] LightingRGBSide',
-
-
 
 	SystemUpdateCriticalUpdateStatus = '[LocalStorageKey] SystemUpdateCriticalUpdateStatus',
 	SystemUpdateRecommendUpdateStatus = '[LocalStorageKey] SystemUpdateRecommendUpdateStatus',
