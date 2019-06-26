@@ -17,7 +17,6 @@
                                         <vtr-widget-home-security-device
                                             [device]="account.device"
                                             [allDevice]="account.allDevice"
-                                            (upgradeAccount)="onUpgradeAccount()"
                                           ></vtr-widget-home-security-device>
                                     </div>
                                 </div>
@@ -61,7 +60,7 @@
                                 </div>
                             </div>
                             <div class="row mb-40">
-                                <div class="col col-12" [ngClass]="{'offline':isOnline}">
+                                <div class="col col-12">
                                     <vtr-widget-questions [title]="'homeSecurity.notification.notifications' | translate"
                                         [description]="'homeSecurity.notification.recent' | translate "
                                         [items]="notificationItems?.notificationItem" [clickable]="false"

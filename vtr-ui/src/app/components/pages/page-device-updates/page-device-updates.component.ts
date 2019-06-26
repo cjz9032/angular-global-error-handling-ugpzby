@@ -194,6 +194,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			this.setUpdateByCategory(this.systemUpdateService.installedUpdates);
 		}
 
+		this.getScheduleUpdateStatus(false);
+		this.isComponentInitialized = true;
+
 		this.getLastUpdateScanDetail();
 		if (action && action.toLowerCase() === 'enable') {
 			this.systemUpdateService.setUpdateSchedule(true, false);
@@ -201,8 +204,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			this.systemUpdateService.getUpdateSchedule();
 		}
 		this.systemUpdateService.getUpdateHistory();
-		this.getScheduleUpdateStatus(false);
-		this.isComponentInitialized = true;
+		
 		this.setUpdateTitle();
 	}
 
