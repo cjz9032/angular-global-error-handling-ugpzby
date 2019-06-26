@@ -90,6 +90,9 @@ const routes: Routes = [
 	}, {
 		path: 'device/device-settings',
 		component: PageDeviceSettingsComponent,
+		data: {
+			pageName: 'Device.MyDeviceSettings'
+		},
 		children: [
 			{
 				path: '',

@@ -1,4 +1,5 @@
-<div class="vtr-widget-switch-icon" *ngIf="!isLoading"
+<div class="vtr-widget-switch-icon"
+	*ngIf="!isLoading"
 	[ngClass]="{'disable-state': disable}"
 	(click)="onChange($event)"
 	[title]="tooltipText"
@@ -10,15 +11,13 @@
 		[ngClass]="[value ? 'checked' : 'unchecked']">
 		<div class="title">{{ title }}</div>
 		<div class="icon-container d-block">
-			<div class="feature-off"
-				*ngIf="isBlocked">
-				<fa-icon [icon]="['fal', 'slash']"></fa-icon>
-			</div>
-			<fa-icon [icon]="iconDefinition"></fa-icon>
+			<i [class]="iconDefinition"
+				[ngClass]="{'enabled' : !isBlocked}"
+				*ngIf="!isBlocked"></i>
+			<i [class]="offIconDefinition"
+				[ngClass]="{'disabled' : isBlocked}"
+				*ngIf="isBlocked"></i>
 		</div>
-		<!-- <div class="switch">
-			<vtr-ui-switch-onoff [name]="title" [value]="value"></vtr-ui-switch-onoff>
-		</div> -->
 		<div class="row">
 			<div class="col">
 				<div class="switch-on-off">
@@ -35,14 +34,17 @@
 	</div>
 </div>
 
-<div class="vtr-widget-switch-icon" *ngIf="isLoading"
-	 [ngClass]="['disable-state']"
-	 [title]="tooltipText">
-	<div class="switch-container" [ngClass]="['unchecked']">
+<div class="vtr-widget-switch-icon"
+	*ngIf="isLoading"
+	[ngClass]="['disable-state']"
+	[title]="tooltipText">
+	<div class="switch-container"
+		[ngClass]="['unchecked']">
 		<div class="title">{{ title }}</div>
 		<div class="icon-container d-block position-relative">
 			<div class="loader center-block">
-				<div class="spinner-border text-secondary progress-spinner" role="status"></div>
+				<div class="spinner-border text-secondary progress-spinner"
+					role="status"></div>
 			</div>
 		</div>
 		<div class="row">

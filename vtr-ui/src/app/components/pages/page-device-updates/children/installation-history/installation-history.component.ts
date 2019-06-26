@@ -122,4 +122,8 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 			this.sortInstallationHistory(this.systemUpdateService.installationHistory);
 		}
 	}
+
+	public convertReleaseDate(datestr: string) {
+		return this.commonService.formatLocalDate(`${datestr}T00:00:00`);
+	}
 }

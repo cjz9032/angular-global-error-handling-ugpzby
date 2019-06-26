@@ -16,12 +16,10 @@ interface DevicePostureDetail {
 export class WidgetHomeSecurityMyDeviceComponent implements OnInit {
 	@Input() homeSecurityOverviewMyDevice: HomeSecurityOverviewMyDevice;
 
-	event = new EventEmitter();
 
 	constructor() {}
 
 	ngOnInit() {
-		this.event = new EventEmitter();
 	}
 
 }
