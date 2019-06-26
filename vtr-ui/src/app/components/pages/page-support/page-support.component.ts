@@ -23,10 +23,9 @@ export class PageSupportComponent implements OnInit {
 	/** content | articles */
 	articlesType = 'loading';
 	articleCategories: any = [];
-	warranty: any;
+	warrantyData: { info: any, cache: boolean };
 	isOnline: boolean;
 	notificationSubscription: Subscription;
-	warrantyNormalUrl = 'https://pcsupport.lenovo.com/us/en/warrantylookup';
 	langText = 'en';
 	// langText = 'zh-hans';
 	backId = 'support-page-btn-back';
@@ -110,6 +109,7 @@ export class PageSupportComponent implements OnInit {
 		private commonService: CommonService,
 	) {
 		this.isOnline = this.commonService.isOnline;
+		this.warrantyData = this.supportService.warrantyData;
 	}
 
 	ngOnInit() {
@@ -117,7 +117,7 @@ export class PageSupportComponent implements OnInit {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
-		this.getMachineInfo();
+		this.getWarrantyInfo(this.isOnline);
 		this.fetchCMSContents(this.langText);
 		this.fetchCMSArticleCategory(this.langText);
 	}
@@ -129,12 +129,13 @@ export class PageSupportComponent implements OnInit {
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
-
-					const retryInterval = setInterval(() => {
-						if (this.isOnline) {
+					if (this.isOnline) {
+						this.supportService.warrantyData.cache = false;
+						sessionStorage.removeItem('warrantyCache');
+						const retryInterval = setInterval(() => {
 							if (this.articleCategories.length > 0 &&
 								this.articles.length > 0 &&
-								this.warranty
+								this.supportService.warrantyData.cache
 							) {
 								clearInterval(retryInterval);
 								return;
@@ -145,13 +146,11 @@ export class PageSupportComponent implements OnInit {
 							if (this.articles.length === 0) {
 								this.fetchCMSContents(this.langText);
 							}
-							if (!this.warranty) {
-								this.getMachineInfo();
+							if (!this.supportService.warrantyData.cache) {
+								this.getWarrantyInfo(this.isOnline);
 							}
-						} else {
-							clearInterval(retryInterval);
-						}
-					}, 2000);
+						}, 2500);
+					}
 					break;
 				default:
 					break;
@@ -159,38 +158,8 @@ export class PageSupportComponent implements OnInit {
 		}
 	}
 
-	onGetSupportClick($event: any) {
-	}
-
-	getMachineInfo() {
-		const defaultWarranty = {
-			status: 2,
-			url: this.warrantyNormalUrl
-		};
-		try {
-			this.supportService.getMachineInfo().then((machineInfo) => {
-				this.supportService
-					// .getWarranty('PC0G9X77')
-					// .getWarranty('R9T6M3E')
-					// .getWarranty('R90HTPEU')
-					.getWarranty(machineInfo.serialnumber)
-					.then((warranty) => {
-						if (warranty) {
-							this.warranty = warranty;
-							if (machineInfo.serialnumber) {
-								this.warranty.url = `https://www.lenovo.com/us/en/warrantyApos?serialNumber=${machineInfo.serialnumber}&cid=ww:apps:pikjhe&utm_source=Companion&utm_medium=Native&utm_campaign=Warranty`;
-							} else {
-								this.warranty.url = this.warrantyNormalUrl;
-							}
-						} else {
-							this.warranty = defaultWarranty;
-						}
-					});
-			});
-		} catch (error) {
-			console.log(error);
-			this.warranty = defaultWarranty;
-		}
+	getWarrantyInfo(online: boolean) {
+		this.supportService.getWarrantyInfo(online);
 	}
 
 	fetchCMSContents(lang: string) {
