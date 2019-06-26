@@ -1,6 +1,8 @@
-import { Component, Input, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
-import { Article } from '../articles.service';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ArticlesService } from '../articles.service';
 import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
+import { ActivatedRoute } from '@angular/router';
+import { map, switchMap, tap } from 'rxjs/operators';
 
 @Component({
 	selector: 'vtr-article-single',
@@ -9,9 +11,16 @@ import { VantageCommunicationService } from '../../../common/services/vantage-co
 })
 export class ArticleSingleComponent implements OnInit, AfterViewInit {
 	@ViewChild('innerHTML') articleInner: ElementRef;
-	@Input() articleData: Article;
 
-	constructor(private vantageCommunicationService: VantageCommunicationService) {
+	article$ = this.route.params.pipe(
+		switchMap((params) => this.articlesService.getArticle(params.id)),
+	);
+
+	constructor(
+		private vantageCommunicationService: VantageCommunicationService,
+		private route: ActivatedRoute,
+		private articlesService: ArticlesService
+	) {
 	}
 
 	ngOnInit() {

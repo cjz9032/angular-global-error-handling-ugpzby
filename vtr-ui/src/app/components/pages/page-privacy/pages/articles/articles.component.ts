@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ArticlesService } from './articles.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RoutersName } from '../../privacy-routing-name';
 
 @Component({
 	selector: 'vtr-articles',
@@ -10,17 +11,18 @@ import { ActivatedRoute } from '@angular/router';
 export class ArticlesComponent implements OnInit, OnDestroy {
 
 	articles = this.articlesService.articles;
+	articles$ = this.articlesService.getListOfArticles();
 	openArticleId = null;
 	recommendationsArticles = null;
 
 	constructor(
 		private activatedRoute: ActivatedRoute,
 		private articlesService: ArticlesService,
+		private router: Router
 	) {
 	}
 
 	ngOnInit() {
-		this.articlesService.getListOfArticles().subscribe((articles) => console.log('getListOfArticles', articles));
 
 		const getFilteredArticlesByCategory = (category) => {
 			return this.articlesService.filterArticlesByCategory(category).filter((article) => article.id !== this.openArticleId);
@@ -33,5 +35,9 @@ export class ArticlesComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
+	}
+
+	openArticle(id: string) {
+		this.router.navigateByUrl(`/${RoutersName.PRIVACY}/${RoutersName.ARTICLEDETAILS}/${id}`);
 	}
 }
