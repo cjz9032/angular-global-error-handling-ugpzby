@@ -36,7 +36,7 @@
 					<div class="col-7 text" >
 						<div class="device-text text-uppercase">{{'homeSecurity.overview.devices' | translate}}</div>
 						<div class="status">
-							<h3 style="margin-bottom: 0rem" *ngIf="showBadge()">
+							<h3 *ngIf="account && allDevicesInfo && (allDevicesInfo.allDevicesNumber !== 0 || this.account.state === 'trialExpired' || this.account.state === 'local')">
 								<span class="badge badge-pill badge-success" *ngIf="allDevicesInfo.allDevicesStatus">
 									{{'homeSecurity.overview.secure' | translate}}
 								</span>
