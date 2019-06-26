@@ -218,7 +218,6 @@ import { UiLightingColorWheelComponent } from './components/ui/ui-lighting-color
 import { DisplayColorTempComponent } from './components/display/display-color-temp/display-color-temp.component';
 import { IntelligentMediaComponent } from './components/pages/page-smart-assist/intelligent-media/intelligent-media.component';
 import { UiMacrokeyCollapsibleContainerComponent } from './components/ui/ui-macrokey-collapsible-container/ui-macrokey-collapsible-container.component';
-import { CursorTypePipe } from './pipe/ui-security-statusbar/cursor-type.pipe';
 import { UiGamingDriverPopupComponent } from './components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
 import { ActiveProtectionSystemComponent } from './components/pages/page-smart-assist/active-protection-system/active-protection-system.component';
 import { UiApsSliderComponent } from './components/ui/ui-aps-slider/ui-aps-slider.component';
@@ -408,7 +407,6 @@ library.add(fal);
 		WidgetHomeSecurityMyDeviceComponent,
 		WidgetHomeSecurityAllDevicesComponent,
 		UiMacrokeyCollapsibleContainerComponent,
-		CursorTypePipe,
 		UiGamingDriverPopupComponent,
 		ActiveProtectionSystemComponent,
 		UiApsSliderComponent,
