@@ -53,7 +53,13 @@ export class SidebarInstallWidgetService {
 			image: 'pitch-block/Img_Pith_Passwords',
 		},
 		[RoutersName.ARTICLES]: {
-			visible: false,
+			visible: true,
+			title: 'The choice to be private is here',
+			text: 'Trial duration 14-day. No credit card required.',
+			image: 'pitch-block/Img_Pith_Main',
+		},
+		[RoutersName.ARTICLEDETAILS]: {
+			visible: true,
 			title: 'The choice to be private is here',
 			text: 'Trial duration 14-day. No credit card required.',
 			image: 'pitch-block/Img_Pith_Main',

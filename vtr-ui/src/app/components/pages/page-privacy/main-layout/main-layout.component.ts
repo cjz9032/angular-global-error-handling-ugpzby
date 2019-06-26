@@ -41,6 +41,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 	pagesSettings: { [path in RoutersName]: PageSettings } = {
 		[RoutersName.LANDING]: defaultPageSettings,
 		[RoutersName.ARTICLES]: defaultPageSettings,
+		[RoutersName.ARTICLEDETAILS]: defaultPageSettings,
 		[RoutersName.TRACKERS]: featurePageSettings,
 		[RoutersName.BREACHES]: featurePageSettings,
 		[RoutersName.PRIVACY]: featurePageSettings,

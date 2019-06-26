@@ -1,6 +1,6 @@
 import { Injectable, NgZone } from '@angular/core';
 import { FigleafConnectorInstance as FigleafConnector, MessageToFigleaf } from './figleaf-connector';
-import { EMPTY, from, ReplaySubject, timer } from 'rxjs';
+import { EMPTY, from, ReplaySubject, Subscription, timer } from 'rxjs';
 import { catchError, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
 
 export interface MessageFromFigleaf {
@@ -9,14 +9,14 @@ export interface MessageFromFigleaf {
 	payload?: string;
 }
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable()
 
 export class CommunicationWithFigleafService {
 	isFigleafInstalled$ = new ReplaySubject(1);
 	private isFigleafReadyForCommunication = new ReplaySubject<boolean>(1);
 	isFigleafReadyForCommunication$ = this.isFigleafReadyForCommunication.pipe(distinctUntilChanged());
+
+	subscription: Subscription[] = [];
 
 	constructor(private ngZone: NgZone) {
 		FigleafConnector.onConnect(() => {
@@ -30,11 +30,12 @@ export class CommunicationWithFigleafService {
 			});
 		});
 
-		this.isFigleafInstalled$.pipe(
-			filter((isFigleafInstalled) => !!isFigleafInstalled)
+		this.subscription.push(this.isFigleafInstalled$.pipe(
+			filter((isFigleafInstalled) => !!isFigleafInstalled),
 		).subscribe(() => {
 			this.receiveFigleafReadyForCommunicationState();
-		});
+		}));
+
 		FigleafConnector.connect();
 	}
 
@@ -57,6 +58,8 @@ export class CommunicationWithFigleafService {
 		}, (error) => {
 			console.error('error', error);
 		});
+
+		this.subscription.push(figleafConnectSubscription);
 	}
 
 	connect() {
@@ -65,6 +68,7 @@ export class CommunicationWithFigleafService {
 
 	disconnect() {
 		FigleafConnector.disconnect();
+		this.subscription.forEach((subs) => subs.unsubscribe());
 	}
 
 	sendTestMessage() {

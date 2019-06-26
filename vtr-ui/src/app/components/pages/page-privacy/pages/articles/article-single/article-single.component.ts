@@ -1,6 +1,9 @@
-import { Component, Input, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
-import { Article } from '../articles.service';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ArticlesService } from '../articles.service';
 import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { map, switchMap, withLatestFrom } from 'rxjs/operators';
+import { RoutersName } from '../../../privacy-routing-name';
 
 @Component({
 	selector: 'vtr-article-single',
@@ -9,9 +12,22 @@ import { VantageCommunicationService } from '../../../common/services/vantage-co
 })
 export class ArticleSingleComponent implements OnInit, AfterViewInit {
 	@ViewChild('innerHTML') articleInner: ElementRef;
-	@Input() articleData: Article;
 
-	constructor(private vantageCommunicationService: VantageCommunicationService) {
+	article$ = this.route.queryParams.pipe(
+		switchMap((params) => this.articlesService.getArticle(params.articleId)),
+	);
+	otherArticles$ = this.articlesService.getListOfArticles().pipe(
+		withLatestFrom(this.route.queryParams),
+		map(([articles, params]) => articles.filter((article) => article.id !== params.articleId)),
+		map((articles) => articles.slice(0, 2))
+	);
+
+	constructor(
+		private vantageCommunicationService: VantageCommunicationService,
+		private route: ActivatedRoute,
+		private articlesService: ArticlesService,
+		private router: Router
+	) {
 	}
 
 	ngOnInit() {
@@ -25,6 +41,10 @@ export class ArticleSingleComponent implements OnInit, AfterViewInit {
 			}
 			event.preventDefault();
 		});
+	}
+
+	openArticle(articleId) {
+		this.router.navigate([`/${RoutersName.PRIVACY}/${RoutersName.ARTICLEDETAILS}`], {queryParams: {articleId}});
 	}
 
 }

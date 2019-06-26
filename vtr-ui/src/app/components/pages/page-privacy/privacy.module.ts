@@ -16,9 +16,6 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { MainHeaderComponent } from './main-layout/main-header/main-header.component';
 import { SidebarComponent } from './main-layout/sidebar/sidebar.component';
-// Services
-import { VideoPopupService } from './common/services/popups/video-popup.service';
-import { TrackersPopupService } from './common/services/popups/trackers-popup.service';
 // Modules
 import { PrivacyRoutingModule } from './privacy-routing.module';
 // Directives
@@ -44,6 +41,7 @@ import { ArticleSidebarComponent } from './pages/articles/article-sidebar/articl
 import { OneClickScanModule } from './feature/one-click-scan/one-click-scan.module';
 import { PrivacyScoreComponent } from './pages/result/privacy-score/privacy-score.component';
 import { BrowserAccountHeaderComponent } from './pages/browser-accounts/browser-account-header/browser-account-header.component';
+import { CommunicationWithFigleafService } from './utils/communication-with-figleaf/communication-with-figleaf.service';
 
 library.add(fal);
 
@@ -83,8 +81,6 @@ library.add(fal);
 		BrowserAccountHeaderComponent,
 	],
 	providers: [
-		TrackersPopupService,
-		VideoPopupService,
 		{
 			provide: PRIVACY_BASE_URL,
 			useValue: 'privacy'
@@ -99,6 +95,7 @@ library.add(fal);
 		UserDataGetStateService,
 		AnalyticsService,
 		TaskActionService,
+		CommunicationWithFigleafService,
 	],
 })
 export class PrivacyModule {

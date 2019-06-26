@@ -8,6 +8,9 @@ import * as page6 from './pages/article3a.html';
 import * as page7 from './pages/article3b.html';
 import { RoutersName } from '../../privacy-routing-name';
 import { UserDataGetStateService } from '../../common/services/user-data-get-state.service';
+import { HttpClient } from '@angular/common/http';
+import { CommsService } from '../../../../../services/comms/comms.service';
+import { map, tap } from 'rxjs/operators';
 
 export interface Article {
 	id: string;
@@ -30,7 +33,10 @@ interface ArticlesByPathSettings {
 })
 export class ArticlesService {
 
-	constructor(private userDataGetStateService: UserDataGetStateService) {
+	constructor(
+		private userDataGetStateService: UserDataGetStateService,
+		private commsService: CommsService,
+	) {
 	}
 
 	articles: Articles = {
@@ -108,6 +114,9 @@ export class ArticlesService {
 		},
 		[RoutersName.ARTICLES]: {
 			visible: false,
+		},
+		[RoutersName.ARTICLEDETAILS]: {
+			visible: false,
 		}
 	};
 
@@ -127,5 +136,37 @@ export class ArticlesService {
 			}
 			return acc;
 		}, []);
+	}
+
+	getListOfArticles() {
+		const queryOptions = {
+			'Page': 'privacy',
+			'Lang': 'en',
+			'GEO': 'US',
+			'OEM': 'Lenovo',
+			'OS': 'Windows',
+			'Segment': 'SMB',
+			'Brand': 'idea',
+		};
+
+		return this.commsService.endpointGetCall('/api/v1/features', queryOptions).pipe(
+			map((response) => response['Results'])
+		);
+	}
+
+	getArticle(id) {
+		const queryOptions = {
+			'Page': 'privacy',
+			'Lang': 'en',
+			'GEO': 'US',
+			'OEM': 'Lenovo',
+			'OS': 'Windows',
+			'Segment': 'SMB',
+			'Brand': 'idea',
+		};
+
+		return this.commsService.endpointGetCall(`/api/v1/articles/${id}`, queryOptions).pipe(
+			map((response) => response['Results'])
+		);
 	}
 }

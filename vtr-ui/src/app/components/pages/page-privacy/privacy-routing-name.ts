@@ -5,5 +5,6 @@ export enum RoutersName {
 	TRACKERS = 'trackers',
 	BROWSERACCOUNTS = 'browser-accounts',
 	LANDING = 'landing',
-	ARTICLES = 'articles'
+	ARTICLES = 'articles',
+	ARTICLEDETAILS = 'article-details'
 }
