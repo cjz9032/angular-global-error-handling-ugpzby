@@ -148,7 +148,6 @@ export class ActiveProtectionSystemComponent implements OnInit {
 	}
 
 	setSnoozeTime(event: DropDownInterval) {
-		
 		this.selectedSnoozeTime = event.value;
 		this.smartAssist
 			.setSnoozeTime(event.value.toString())
