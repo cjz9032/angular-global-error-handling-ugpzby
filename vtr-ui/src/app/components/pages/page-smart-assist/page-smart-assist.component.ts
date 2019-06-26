@@ -37,7 +37,7 @@ export class PageSmartAssistComponent implements OnInit {
 	public zeroTouchLoginStatus = new FeatureStatus(false, true);
 	public zeroTouchLockTitle: string;
 	public options: any;
-	public keepMyDisplay: boolean;
+	// public keepMyDisplay: boolean;
 	public intelligentScreen: IntelligentScreen;
 	public intelligentMedia = new FeatureStatus(false, true);
 	public lenovoVoice = new FeatureStatus(false, true);
@@ -102,7 +102,7 @@ export class PageSmartAssistComponent implements OnInit {
 	private initLenovoVoice() {
 		this.lenovoVoice.available = this.commonService.getLocalStorageValue(LocalStorageKey.IsLenovoVoiceSupported);
 		if (!this.lenovoVoice.available) {
-			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, "voice");
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'voice');
 		}
 	}
 
@@ -173,7 +173,7 @@ export class PageSmartAssistComponent implements OnInit {
 			this.intelligentScreen.isReadingOrBrowsingVisible = responses[4];
 			this.intelligentScreen.isReadingOrBrowsingEnabled = responses[5];
 			this.intelligentScreen.readingOrBrowsingTime = responses[6] / 60;
-			console.log('initSmartAssist.Promise.IntelligentScreen()', responses, this.intelligentScreen);
+			console.log('PageSmartAssistComponent.Promise.IntelligentScreen()', responses, this.intelligentScreen);
 
 			if (this.intelligentScreen.isIntelligentScreenVisible) {
 				if (this.intelligentSecurity.isIntelligentSecuritySupported) {
@@ -187,7 +187,7 @@ export class PageSmartAssistComponent implements OnInit {
 				}
 			}
 		}).catch(error => {
-			this.logger.error('error in initSmartAssist.Promise.all()', error);
+			this.logger.error('error in PageSmartAssistComponent.Promise.IntelligentScreen()', error);
 		});
 	}
 
@@ -206,9 +206,9 @@ export class PageSmartAssistComponent implements OnInit {
 			this.intelligentSecurity.isDistanceSensitivityVisible = responses[3];
 			this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = responses[4];
 			this.intelligentSecurity.isWindowsHelloRegistered = responses[5];
-			console.log('initSmartAssist.Promise.ZeroTouchLogin()', responses, this.intelligentSecurity);
+			console.log('PageSmartAssistComponent.Promise.ZeroTouchLogin()', responses, this.intelligentSecurity);
 		}).catch(error => {
-			this.logger.error('error in initSmartAssist.Promise.all()', error);
+			this.logger.error('error in PageSmartAssistComponent.Promise.ZeroTouchLogin()', error);
 		});
 	}
 
@@ -240,9 +240,9 @@ export class PageSmartAssistComponent implements OnInit {
 
 				this.headerMenuItems = this.sortMenuItems(this.headerMenuItems);
 			}
-			console.log('initSmartAssist.Promise.all()', responses, this.intelligentSecurity);
+			console.log('PageSmartAssistComponent.Promise.initZeroTouchLock()', responses, this.intelligentSecurity);
 		}).catch(error => {
-			this.logger.error('error in initSmartAssist.Promise.all()', error);
+			this.logger.error('error in PageSmartAssistComponent.Promise.initZeroTouchLock()', error);
 		});
 	}
 
@@ -345,8 +345,20 @@ export class PageSmartAssistComponent implements OnInit {
 		this.deviceService.launchUri('ms-settings:signinoptions-launchfaceenrollment');
 	}
 
-	public displayDim(event) {
-		this.keepMyDisplay = !this.keepMyDisplay;
+	public onAutoScreenOffToggle(event) {
+		this.intelligentScreen.isAutoScreenOffEnabled = event.switchValue;
+		this.smartAssist.setAutoScreenOffStatus(event.switchValue)
+			.then((isSuccess: boolean) => {
+				console.log('onAutoScreenOffToggle.setAutoScreenOffStatus', isSuccess, event.switchValue);
+			});
+	}
+
+	public onKeepMyDisplayToggle(event) {
+		this.intelligentScreen.isReadingOrBrowsingEnabled = event.switchValue;
+		this.smartAssist.setReadingOrBrowsingStatus(event.switchValue)
+			.then((isSuccess: boolean) => {
+				console.log('onKeepMyDisplayToggle.setReadingOrBrowsingStatus', isSuccess, event.switchValue);
+			});
 	}
 
 	fetchCMSArticles() {

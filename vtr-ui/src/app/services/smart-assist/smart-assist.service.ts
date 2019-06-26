@@ -228,6 +228,14 @@ export class SmartAssistService {
 		return undefined;
 	}
 
+	public setAutoScreenOffStatus(value: boolean): Promise<boolean> {
+		if (this.isShellAvailable) {
+			const option = value ? 'True' : 'False';
+			return this.intelligentSensing.SetWalkingMode(option);
+		}
+		return undefined;
+	}
+
 	/**
 	 * if value returned is true then show note
 	 */
@@ -255,7 +263,7 @@ export class SmartAssistService {
 	public setReadingOrBrowsingStatus(value: boolean): Promise<boolean> {
 		if (this.isShellAvailable) {
 			const option = value ? 'True' : 'False';
-			return this.intelligentSensing.SetBrowsingMode(option);
+			return this.intelligentSensing.setBrowsingMode(option);
 		}
 		return undefined;
 	}
@@ -270,7 +278,7 @@ export class SmartAssistService {
 	public setReadingOrBrowsingTime(value: number): Promise<boolean> {
 		if (this.isShellAvailable) {
 			const option = value * 60;
-			return this.intelligentSensing.setBrowsingTime(option);
+			return this.intelligentSensing.SetBrowsingTime(option);
 		}
 		return undefined;
 	}
@@ -309,7 +317,7 @@ export class SmartAssistService {
 	}
 
 	// Start Lenovo Voice
-	public isLenovoVoiceAvailable():  Promise<boolean> {
+	public isLenovoVoiceAvailable(): Promise<boolean> {
 		if (this.lenovoVoice) {
 			return this.lenovoVoice.getCapability();
 		}
