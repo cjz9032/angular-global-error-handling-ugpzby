@@ -12,6 +12,7 @@ export class QaService {
 	qas: QA[] = [
 		{
 			id: 1,
+			category: 'q&a',
 			path: 'support-detail/1',
 			iconPath: `${this.imagePath}/svg_icon_qa_backup.svg`,
 			title: `${this.translate.instant('faq.question1.title')}`,
@@ -89,6 +90,7 @@ export class QaService {
 		},
 		{
 			id: 2,
+			category: 'q&a',
 			path: 'support-detail/2',
 			iconPath: `${this.imagePath}/svg_icon_qa_refresh.svg`,
 			title: `${this.translate.instant('faq.question2.title')}`,
@@ -251,6 +253,7 @@ export class QaService {
 		},
 		{
 			id: 3,
+			category: 'q&a',
 			path: 'support-detail/3',
 			iconPath: `${this.imagePath}/svg_icon_qa_pcbit.svg`,
 			title: `${this.translate.instant('faq.question3.title')}`,
@@ -399,6 +402,7 @@ export class QaService {
 		},
 		{
 			id: 4,
+			category: 'q&a',
 			path: 'support-detail/4',
 			iconPath: `${this.imagePath}/svg_icon_qa_battery.svg`,
 			title: `${this.translate.instant('faq.question4.title')}`,
@@ -545,6 +549,7 @@ export class QaService {
 		},
 		{
 			id: 5,
+			category: 'q&a',
 			path: 'support-detail/5',
 			iconPath: `${this.imagePath}/svg_icon_qa_tablet.svg`,
 			title: `${this.translate.instant('faq.question5.title')}`,
@@ -633,6 +638,7 @@ export class QaService {
 		},
 		{
 			id: 6,
+			category: 'q&a',
 			path: 'support-detail/6',
 			iconPath: `${this.imagePath}/svg_icon_qa_cortana.svg`,
 			title: `${this.translate.instant('faq.question6.title')}`,
@@ -800,7 +806,7 @@ export class QaService {
 					this.title = value;
 				});
 			} catch (e) {
-				console.log('QA Page title translation : already translated'); 
+				console.log('QA Page title translation : already translated');
 			}
 		});
 

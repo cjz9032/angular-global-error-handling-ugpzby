@@ -232,7 +232,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 			backdrop: true,
 			size: 'lg',
 			centered: true,
-			windowClass: 'Article-Detail-Modal',
+			windowClass: 'Article-Detail-Modal', 
 			keyboard : false
 		});
 

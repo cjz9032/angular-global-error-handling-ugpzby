@@ -14,22 +14,20 @@
 				<img src='{{panelImage1}}' class="img-responsive" />
 			</div>
 			<div class="gaming-light-options">
-				<div *ngIf="!isProfileOff && simpleOrComplex===1"
-					class="light-option one-light only-blink">
-					<vtr-ui-lighting-single-color  (changeSingleColorOption)="changeSingleCoorEffect($event)"
+				<div *ngIf="!isProfileOff && simpleOrComplex===1" class="light-option one-light only-blink">
+					<vtr-ui-lighting-single-color (changeSingleColorOption)="changeSingleCoorEffect($event)"
 						[enableBrightCondition1] = "enableBrightCondition" [options]="optionsSingleColor"
 						[selectedOptionId]="selectedSingleColorOptionId">
 					</vtr-ui-lighting-single-color>
 				</div>
 				<div *ngIf="isProfileOff"
 					 class="light-option lighting-off d-flex justify-content-center align-items-center">
-					<p>Lighting is currently off. Select the profile tab above to turn it on and customize it.</p>>
+					<p>{{'gaming.lightingProfile.profile.text1.title' | translate}}</p>>
 				</div>
-				<div *ngIf="!isProfileOff"
-					class="light-option rgb-color one-light">
+				<div *ngIf="!isProfileOff" class="light-option rgb-color one-light">
 					<div *ngIf="lightingCapabilities.RGBfeature===255 || simpleOrComplex===2">
-						<h2 class="main-title">Front Light</h2>
-						<h3 class="content-title">Effect </h3>
+						<!-- <h2 class="main-title">Front Light</h2> -->
+						<h3 class="content-title">{{'gaming.lightingProfile.profile.text3.title' | translate}} </h3>
 						<!-- <ng-container *ngIf="frontSelectedValue"> -->
 						<vtr-ui-lighting-effect [options]="lightingEffectData.drop[0]"
 							[effectOptionName]="lightEffectRGBOptionName"
@@ -37,9 +35,10 @@
 							(change)="optionChangedRGBTop($event,item)"></vtr-ui-lighting-effect>
 						<!-- </ng-container> -->
 						<!-- <vtr-ui-lighting-color-wheel></vtr-ui-lighting-color-wheel> -->
-						<vtr-ui-color-wheel  *ngIf="lightingCapabilities.RGBfeature===255" [showOverlay]="showHideOverlay" [inHEX]="inHex1"
-							[btnStatus]="applyBtnStatus1" (colorEffectChanged)="colorEffectChangedFront($event)"
-							[showApply]="showHideApply1" (colorEffectChanged)="colorEffectChangedFront($event)">
+						<vtr-ui-color-wheel *ngIf="lightingCapabilities.RGBfeature===255"
+							[showOverlay]="showHideOverlay" [inHEX]="inHex1" [btnStatus]="applyBtnStatus1"
+							(colorEffectChanged)="colorEffectChangedFront($event)" [showApply]="showHideApply1"
+							(colorEffectChanged)="colorEffectChangedFront($event)">
 						</vtr-ui-color-wheel>
 					</div>
 				</div>
@@ -47,8 +46,7 @@
 		</div>
 	</div>
 
-	<div class="lighting-area"
-		*ngIf="lightingCapabilities.RGBfeature===255 || simpleOrComplex===2">
+	<div class="lighting-area" *ngIf="lightingCapabilities.RGBfeature===255 || simpleOrComplex===2">
 		<div class="d-flex">
 			<div class="gaming-device-image d-flex align-items-center">
 				<img src='{{panelImage2}}' class="img-responsive" />
@@ -56,27 +54,29 @@
 			<div class="gaming-light-options">
 				<div *ngIf="isProfileOff"
 					 class="light-option lighting-off d-flex justify-content-center align-items-center">
-					<p>Lighting is currently off. Select the profile tab above to turn it on and customize it.</p>>
+					<p>{{'gaming.lightingProfile.profile.text1.title' | translate}}</p>>
 				</div>
 				<div *ngIf="!isProfileOff" class="light-option rgb-color one-light">
 					<!---<h2 class="main-title">Side Light</h2>-->
-					<h3 class="content-title">Effect</h3>
+					<h3 class="content-title">{{'gaming.lightingProfile.profile.text3.title' | translate}}</h3>
 					<vtr-ui-lighting-effect [options]="lightingEffectData.drop[1]"
 						[enableBrightCondition1] = "enableBrightConditionside" [selectedValue]="sideSelectedValue"
 						[effectOptionName]="lightEffectRGBOptionNameSide" (change)="optionChangedRGBSide($event,item)">
 					</vtr-ui-lighting-effect>
 					<!-- <h3 class="content-title">Color</h3> -->
 					<!-- <vtr-ui-lighting-color-wheel></vtr-ui-lighting-color-wheel> -->
-					<vtr-ui-color-wheel *ngIf="lightingCapabilities.RGBfeature===255" [showOverlay]="showHideOverlaySide" [inHEX]="inHex2"
-						[btnStatus]="applyBtnStatus2" (colorEffectChanged)="colorEffectChangedSide($event)"
-						[showApply]="showHideApply2" (colorEffectChanged)="colorEffectChangedSide($event)">
+					<vtr-ui-color-wheel *ngIf="lightingCapabilities.RGBfeature===255"
+						[showOverlay]="showHideOverlaySide" [inHEX]="inHex2" [btnStatus]="applyBtnStatus2"
+						(colorEffectChanged)="colorEffectChangedSide($event)" [showApply]="showHideApply2"
+						(colorEffectChanged)="colorEffectChangedSide($event)">
 					</vtr-ui-color-wheel>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div *ngIf="!isProfileOff && lightingCapabilities.RGBfeature===255" class="footer-part d-flex flex-row-reverse">
-		<a href="javascript:void(0);" class="link" (click)="setDefaultProfile(currentProfileId)">Set to default</a>
+		<a href="javascript:void(0);" class="link"
+			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
 
 	</div>
 

@@ -8,6 +8,9 @@
 	@media #{$mediaquery_X7} {
 		padding: 2rem;
 	}
+	@media #{$mediaquery_lg} {
+		padding: 2rem;
+	}
 
 	.title {
 		color: $main_darker;
@@ -33,5 +36,5 @@
 
     a {
         text-decoration: underline;
-    }
+	}
 }
