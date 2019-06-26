@@ -296,6 +296,9 @@
 				},
 				"text2": {
 					"title": "effect"
+				},
+				"text3": {
+					"title": "Effect"
 				}
 			},
 			"button": {
@@ -332,6 +335,9 @@
 				},
 				"Customize": {
 					"title": "Customize"
+				},
+				"heading": {
+					"title": "Select Profile:"
 				}
 			}
 		}
