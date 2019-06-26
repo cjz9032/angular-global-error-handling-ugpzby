@@ -17,7 +17,7 @@ export class ConfigService {
 
 	menuItemsGaming: Array<any> = [{
 		id: 'device',
-		label: 'Device',
+		label: 'common.menu.device.title',
 		path: 'device-gaming',
 		icon: ['fas', 'desktop'],
 		metricsEvent: 'itemClick',
@@ -30,7 +30,7 @@ export class ConfigService {
 		subitems: []
 	}, {
 		id: 'support',
-		label: 'Support',
+		label: 'gaming.common.menu.support.title',
 		path: 'support',
 		icon: ['fal', 'wrench'],
 		metricsEvent: 'featureClick',
@@ -96,7 +96,7 @@ export class ConfigService {
 	}];
 	menuItems: Array<any> = [{
 		id: 'dashboard',
-		label: 'Dashboard',
+		label: 'common.menu.dashboard',
 		path: 'dashboard',
 		icon: ['fal', 'columns'],
 		metricsEvent: 'itemClick',
@@ -109,7 +109,7 @@ export class ConfigService {
 		subitems: []
 	}, {
 		id: 'device',
-		label: 'Device',
+		label: 'common.menu.device.title',
 		path: 'device',
 		icon: ['fal', 'laptop'],
 		metricsEvent: 'itemClick',
@@ -155,7 +155,7 @@ export class ConfigService {
 		}]
 	}, {
 		id: 'security',
-		label: 'Security',
+		label: 'common.menu.security.title',
 		path: 'security',
 		icon: ['fal', 'lock'],
 		metricsEvent: 'itemClick',
@@ -213,7 +213,7 @@ export class ConfigService {
 		}]
 	}, {
 		id: 'support',
-		label: 'Support',
+		label: 'common.menu.support',
 		path: 'support',
 		icon: ['fal', 'wrench'],
 		metricsEvent: 'itemClick',
@@ -226,7 +226,7 @@ export class ConfigService {
 		subitems: []
 	}, {
 		id: 'home-security',
-		label: 'Connected Home',
+		label: 'common.menu.homeSecurity',
 		path: 'home-security',
 		metricsEvent: 'itemClick',
 		metricsParent: 'navbar',
@@ -253,7 +253,7 @@ export class ConfigService {
 	}];
 	menuItemsPrivacy: Array<any> = [{
 		id: 'dashboard',
-		label: 'Dashboard',
+		label: 'common.menu.dashboard',
 		path: 'dashboard',
 		icon: ['fal', 'columns'],
 		metricsEvent: 'itemClick',
@@ -266,7 +266,7 @@ export class ConfigService {
 		subitems: []
 	}, {
 		id: 'device',
-		label: 'Device',
+		label: 'common.menu.device.title',
 		path: 'device',
 		icon: ['fal', 'laptop'],
 		metricsEvent: 'itemClick',
@@ -312,7 +312,7 @@ export class ConfigService {
 		}]
 	}, {
 		id: 'security',
-		label: 'Security',
+		label: 'common.menu.security.title',
 		path: 'security',
 		icon: ['fal', 'lock'],
 		metricsEvent: 'itemClick',
@@ -370,7 +370,7 @@ export class ConfigService {
 		}]
 	}, {
 		id: 'privacy',
-		label: 'Privacy',
+		label: 'common.menu.privacy',
 		path: 'privacy/breaches',
 		icon: ['fal', 'user-shield'],
 		metricsEvent: 'itemClick',
@@ -383,7 +383,7 @@ export class ConfigService {
 		subitems: []
 	}, {
 		id: 'support',
-		label: 'Support',
+		label: 'common.menu.support',
 		path: 'support',
 		icon: ['fal', 'wrench'],
 		metricsEvent: 'itemClick',
@@ -396,7 +396,7 @@ export class ConfigService {
 		subitems: []
 	}, {
 		id: 'home-security',
-		label: 'Connected Home',
+		label: 'common.menu.homeSecurity',
 		path: 'home-security',
 		metricsEvent: 'itemClick',
 		metricsParent: 'navbar',
