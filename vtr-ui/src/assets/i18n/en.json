@@ -41,14 +41,12 @@
 						"button": "Install",
 						"link": "cancel"
 					},
-
 					"lightingDriverPopup": {
 						"headerText": "Driver Install Required",
 						"text": "Please install driver",
 						"button": "Install",
 						"link": "cancel"
 					},
-
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",
@@ -290,6 +288,50 @@
 				},
 				"option4": {
 					"title": "Slow Blink"
+				}
+			},
+			"profile": {
+				"text1": {
+					"title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+				},
+				"text2": {
+					"title": "effect"
+				}
+			},
+			"button": {
+				"default": {
+					"title": "Set to default"
+				}
+			},
+			"profileheading": {
+				"text1": {
+					"title": "Off"
+				},
+				"text2": {
+					"title": "Profile 1"
+				},
+				"text3": {
+					"title": "Profile 2"
+				},
+				"text4": {
+					"title": "Profile 3"
+				}
+			},
+			"lightingProfileHeading": {
+				"text1": {
+					"title": "Off"
+				},
+				"text2": {
+					"title": "1"
+				},
+				"text3": {
+					"title": "2"
+				},
+				"text4": {
+					"title": "3"
+				},
+				"Customize": {
+					"title": "Customize"
 				}
 			}
 		}
@@ -1122,7 +1164,7 @@
 				"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
 				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
 			},
-			"voice":{
+			"voice": {
 				"title": "Voice",
 				"description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
 				"installBtnText": "Install",
@@ -1277,32 +1319,42 @@
 	},
 	"homeSecurity": {
 		"title": "Connected Home Security",
-		"ecosystemBlockTitle": "Protect your device ecosystem",
-		"overviewBlockTitle": "Your Ecosystem Security Overview",
-		"thisDevice": "This device",
-		"allDevices": "All Devices",
-		"protected": "Protected",
-		"notProtected": "Not Protected",
-		"myDevice": "My Device",
-		"secure": "SECURE",
-		"needAttention": "NEEDS ATTENTION",
-		"manageAccount": "Manage account",
-		"devices": "Devices",
-		"seeProtectedDevices": "See protected devices",
-		"addDevice": "add device",
-		"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
-		"upgrade": "upgrade",
-		"freeTrial": "Protect all of your devices - Free 30 day trial",
-		"inEcosystem": "In Ecosystem",
-		"ecosystemEnable": "Ecosystem Enabled",
-		"inTrial": "In trial",
-		"addEcosystem": "Add to Ecosystem",
-		"enableEcosystem": "Enable Ecosystem",
-		"startTrial": "Start Trial",
-		"fullAccess": "Full Access",
-		"recent": "Recent security notifications",
-		"notification": "Notifications",
-		"renew": "Renew",
+		"notification":{
+			"recent": "Recent security notifications",
+			"notifications": "Notifications"
+		},
+		"ecosystem": {
+			"ecosystemBlockTitle": "Protect your device ecosystem",
+			"thisDevice": "This device",
+			"allDevices": "All Devices",
+			"protected": "Protected",
+			"notProtected": "Not Protected",
+			"trialExpired": "Trial expired",
+			"upgrade": "upgrade",
+			"inEcosystem": "In Ecosystem",
+			"ecosystemEnable": "Ecosystem Enabled",
+			"inTrial": "In trial",
+			"addEcosystem": "Add to Ecosystem",
+			"enableEcosystem": "Enable Ecosystem",
+			"startTrial": "Start Trial",
+			"fullAccess": "Full Access",
+			"renew": "Renew"
+		},
+		"overview": {
+			"overviewBlockTitle": "Your Ecosystem Security Overview",
+			"allDevices": "All Devices",
+			"myDevice": "My Device",
+			"secure": "SECURE",
+			"needAttention": "NEEDS ATTENTION",
+			"manageAccount": "Manage account",
+			"devices": "Devices",
+			"seeProtectedDevices": "See protected devices",
+			"addDevice": "add device",
+			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+			"upgrade": "upgrade",
+			"freeTrial": "Protect all of your devices - Free 30 day trial",
+			"startTrial": "Start Trial"
+		},
 		"tour": {
 			"back": "Back",
 			"skip": "Skip",
@@ -1318,7 +1370,7 @@
 			"notifications": "Receive <b>notifications</b> about your home's status",
 			"monitor": "<b>Monitor</b> the safety of your family's devices",
 			"peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
-			"signInLenovoId": "SIGH-UP WITH LENOVO ID",
+			"signInLenovoId": "SIGN-UP WITH LENOVO ID",
 			"haveLenovo": "I don't have a <b>Lenovo ID</b>",
 			"createLenovo": "&nbsp;Create a Lenovo ID",
 			"without": "Proceed <b>without an account</b>",
@@ -1361,7 +1413,9 @@
 			"status": "Status: ",
 			"subDescription1": "This product has years limited warranty and it entitled to depot repair service. Customers may call their local service center for more information. Dealers may provide carry-in repair for this product.",
 			"subDescription2": "We were unable to locate warranty details for your device, to have more warranty options, please visit our support website.",
-			"viewWarrantyOptions": "VIEW WARRANTY OPTIONS"
+			"viewWarrantyOptions": "VIEW WARRANTY OPTIONS",
+			"offlineTips1": "Please connect to internet for latest warranty info.",
+			"offlineTips2": "Please connect internet to update warranty information."
 		},
 		"documentation": {
 			"title": "Documentation",
@@ -2018,8 +2072,8 @@
 	"welcometutorial": {
 		"description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs.",
 		"bullets1": "View your system's status with the Vantage dashboard.",
-		"bullets2": "Security Advisor makes managing your security easy (Available on selected systems).",
-		"bullets3": "Automatic updates keep your device in tip top shape (Available on selected systems).",
+		"bullets2": "Security Advisor makes managing your security easy. (Available on selected systems)",
+		"bullets3": "Automatic updates keep your device in tip top shape. (Available on selected systems)",
 		"subtitle1": "How will you be using your device?",
 		"subtitle2": "Tell us about your interests",
 		"personal": "Personal Use",

@@ -26,7 +26,6 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	@ViewChild('battery') battery: ElementRef;
 	@ViewChild('batteryIndicator') batteryIndicator: ElementRef;
 
-	@Input() batteryHealth;
 	@Input() isVoltageError = false; // boolean indicator if its changing or not
 	@Input() isCharging = true; // boolean indicator if its changing or not
 	@Input() isExpressCharging = true; // boolean indicator if its express changing or not
@@ -117,9 +116,9 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				backgroundColor = this.getCssPropertyValue(
 					'--background-color-0-14'
 				);
-				// borderColor = this.getCssPropertyValue(
-				// 	'--border-color-0-14'
-				// );
+				borderColor = this.getCssPropertyValue(
+					'--border-color-0-14'
+				);
 				fillColor = this.getCssPropertyValue(
 					'--acid-fill-gradient-0-14'
 				);
@@ -128,9 +127,9 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				backgroundColor = this.getCssPropertyValue(
 					'--background-color-15-24'
 				);
-				// borderColor = this.getCssPropertyValue(
-				// 	'--border-color-15-24'
-				// );
+				borderColor = this.getCssPropertyValue(
+					'--border-color-15-24'
+				);
 				fillColor = this.getCssPropertyValue(
 					'--acid-fill-gradient-15-24'
 				);
@@ -139,9 +138,9 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				backgroundColor = this.getCssPropertyValue(
 					'--background-color-25-100'
 				);
-				// borderColor = this.getCssPropertyValue(
-				// 	'--border-color-25-100'
-				// );
+				borderColor = this.getCssPropertyValue(
+					'--border-color-25-100'
+				);
 				fillColor = this.getCssPropertyValue(
 					'--acid-fill-gradient-25-100'
 				);
@@ -151,25 +150,25 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				backgroundColor = this.getCssPropertyValue(
 					'--background-color-error'
 				);
-				// borderColor = this.getCssPropertyValue(
-				// 	'--border-color-error'
-				// );
+				borderColor = this.getCssPropertyValue(
+					'--border-color-error'
+				);
 				fillColor = this.getCssPropertyValue(
 					'--acid-fill-gradient-error'
 				);
 				break;
 		}
-		switch (this.batteryHealth) {
-			case 'Good':
-				borderColor = this.getCssPropertyValue('--border-color-25-100');
-				break;
-			case 'Fair':
-				borderColor = this.getCssPropertyValue('--border-color-15-24');
-				break;
-			case 'Poor':
-				borderColor = this.getCssPropertyValue('--border-color-0-14');
-				break;
-		}
+		// switch (this.batteryHealth) {
+		// 	case 'Good':
+		// 		borderColor = this.getCssPropertyValue('--border-color-25-100');
+		// 		break;
+		// 	case 'Fair':
+		// 		borderColor = this.getCssPropertyValue('--border-color-15-24');
+		// 		break;
+		// 	case 'Poor':
+		// 		borderColor = this.getCssPropertyValue('--border-color-0-14');
+		// 		break;
+		// }
 		return { borderColor, backgroundColor, fillColor };
 	}
 
