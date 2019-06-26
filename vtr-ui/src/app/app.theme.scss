@@ -36,9 +36,10 @@ $gaming_light_08: rgba(255, 255, 255, 0.8);
 $gaming_light_09: rgba(255, 255, 255, 0.9);
 $gaming_info_link: #2776b5;
 $gaming_info_link_hover: #3089c3;
-
 $gaming_lighting_profile_bg: rgba(20, 29, 49, 0.45);
 $gaming_light_blue: #047aff;
+$gaming_hdd_border_clr: rgba(35,38,53, .8);
+$gaming_hdd_ring: #6a7080;
 
 $highlight: #2ec5eb;
 $highlight_bright: #53f9ff;
@@ -146,12 +147,10 @@ $mediaquery_16: "only screen and (min-width: 531px) and (max-width : 585px)";
 $mediaquery_17: "only screen and (min-width: 1196px) and (max-width : 1346px)";
 $mediaquery_18: "only screen and (min-width: 1258px) and (max-width : 1271px)";
 $mediaquery_19: "only screen and (min-width: 2160px) and (max-width : 3840px) and (max-resolution: 300dpi)";
-
-$mediaquery_xl: "only screen and (max-width : 1200px)";
+$mediaquery_xl: "only screen and (max-width : 1199px)";
 $mediaquery_lg: "only screen and (max-width : 992px)";
 $mediaquery_md: "only screen and (max-width : 768px)";
 $mediaquery_sm: "only screen and (max-width : 576px)";
-
 $mediaquery_X1: "only screen and (min-width: 800px) and (max-width : 1200px)";
 $mediaquery_X2: "only screen and (min-width: 769px) and (max-width : 966px)";
 $mediaquery_X3: "only screen and (max-width: 530px)";

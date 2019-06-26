@@ -359,9 +359,7 @@
 								[allowCollapse]="true"
 								[theme]="'white'"
 								(toggle)="onCardCollapse($event)">
-								<vtr-active-protection-system
-									[status]="apsStatus">
-								</vtr-active-protection-system>
+								<vtr-active-protection-system></vtr-active-protection-system>
 							</vtr-container-collapsible>
 						</div>
 					</div>
@@ -410,7 +408,8 @@
 									</div>
 									<vtr-widget-questions [title]="'common.qAndA.title' | translate"
 										[description]="'common.qAndA.subtitle' | translate"
-										[items]="qaService.qas">
+										[items]="qaService.qas"
+										blockPosition="r2">
 									</vtr-widget-questions>
 								</div>
 							</div>

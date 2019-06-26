@@ -149,7 +149,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 				if (updateStatus === 1) {
 					systemUpdate.title = this.translate.instant('device.myDevice.systemUpdate.detail.uptoDate');
 					// `Software up to date `;
-					systemUpdate.systemDetails = `${this.translate.instant('device.myDevice.systemUpdate.detail.updatedOn')} ${this.commonService.formatDate(lastUpdate)}`;
+					systemUpdate.systemDetails = `${this.translate.instant('device.myDevice.systemUpdate.detail.updatedOn')} ${this.commonService.formatLocalDate(lastUpdate)}`;
 					if (diffInDays > 30) {
 						systemUpdate.title = this.translate.instant('device.myDevice.systemUpdate.detail.outdated');
 						// `Software outdated `;

@@ -15,7 +15,7 @@
 		<div *ngIf="expiredDate" class="text-success mb-2">{{'homeSecurity.accountStatus.upgradedDetail1' | translate: { expiredDate: expiredDate | date:'dd/MM/yyyy' } }}</div>
 		<div>{{'homeSecurity.accountStatus.upgradedDetail2' | translate}}</div>
 	</div>
-	<div class="mb-5">
+	<div class="startTrial-btn mb-5">
 		<vtr-ui-button *ngIf="status === 'local'"
 			id="chs-account-btn-startTrial" aria-label="chs-account-btn-startTrial"
 			(click)="emitStartTrial()"
@@ -49,7 +49,7 @@
 		href="javascript:void(0)" target="_blank"
 		(click)="emitVisitProfile()"
 		id="chs-account-alreadyHaveAccount"
-		aria-label="chs-account-alreadyHaveAccount"
+		attr.aria-label="chs-account-alreadyHaveAccount"
 		vtrMetrics
 		metricsEvent="featureClick"
 		metricsItem="alreadyHaveAccount">

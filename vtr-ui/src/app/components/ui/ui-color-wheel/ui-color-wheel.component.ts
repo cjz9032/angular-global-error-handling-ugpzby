@@ -7,11 +7,11 @@ import { isUndefined } from 'util';
 @Component({
 	selector: 'vtr-ui-color-wheel',
 	templateUrl: './ui-color-wheel.component.html',
-	styleUrls: [ './ui-color-wheel.component.scss' ]
+	styleUrls: ['./ui-color-wheel.component.scss']
 })
 export class UiColorWheelComponent implements OnInit, OnChanges {
 	@ViewChild('colorWheel') canvasElement: ElementRef;
-	color: any = [ 255, 0, 0 ];
+	color: any = [255, 0, 0];
 	backColor: String = '#ff0000';
 	@Output() colorChanged = new EventEmitter<any>();
 	@Output() colorEffectChanged = new EventEmitter<any>();
@@ -22,20 +22,20 @@ export class UiColorWheelComponent implements OnInit, OnChanges {
 
 	colorWheel: any;
 
-	constructor() {}
+	constructor() { }
 
 	ngOnInit() {
 		const that = this;
 		this.colorWheel = new ReinventedColorWheel({
 			appendTo: this.canvasElement.nativeElement,
-			rgb: [ 255, 0, 0 ],
+			rgb: [255, 0, 0],
 
 			wheelDiameter: 200,
 			wheelThickness: 20,
 			handleDiameter: 16,
 			wheelReflectsSaturation: false,
 
-			onChange: function(color) {
+			onChange: function (color) {
 				that.backColor = color.hex;
 				that.color = color.rgb;
 				that.colorChanged.emit(this.color);
@@ -69,5 +69,13 @@ export class UiColorWheelComponent implements OnInit, OnChanges {
 	rgbChanged() {
 		this.colorWheel.rgb = this.color;
 		this.colorWheel.redraw();
+	}
+
+	validateInput(event: any) {
+		const charCode = (event.which) ? event.which : event.keyCode;
+		if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+			return false;
+		}
+		return true;
 	}
 }
