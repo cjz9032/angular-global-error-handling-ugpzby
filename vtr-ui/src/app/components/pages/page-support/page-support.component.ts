@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MockService } from '../../../services/mock/mock.service';
 import { SupportService } from '../../../services/support/support.service';
 import { DeviceService } from '../../../services/device/device.service';
@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs';
 	templateUrl: './page-support.component.html',
 	styleUrls: ['./page-support.component.scss']
 })
-export class PageSupportComponent implements OnInit, OnDestroy {
+export class PageSupportComponent implements OnInit {
 
 	title = 'support.common.getSupport';
 	searchWords = '';
@@ -24,8 +24,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	articlesType = 'loading';
 	articleCategories: any = [];
 	warranty: any;
-	pageDuration: number;
-	location: any;
 	isOnline: boolean;
 	notificationSubscription: Subscription;
 	warrantyNormalUrl = 'https://pcsupport.lenovo.com/us/en/warrantylookup';
@@ -122,24 +120,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		this.getMachineInfo();
 		this.fetchCMSContents(this.langText);
 		this.fetchCMSArticleCategory(this.langText);
-		// console.log('Open support page.');
-		this.location = window.location.href.substring(window.location.href.indexOf('#') + 2).split('/').join('.');
-		this.pageDuration = 0;
-		setInterval(() => {
-			this.pageDuration += 1;
-		}, 1000);
-	}
-
-	ngOnDestroy() {
-		const pageViewMetrics = {
-			ItemType: 'PageView',
-			PageName: this.location,
-			PageContext: 'Get support page',
-			PageDuration: this.pageDuration,
-			OnlineStatus: ''
-		};
-		this.supportService.sendMetricsAsync(pageViewMetrics);
-		// console.log(pageViewMetrics);
 	}
 
 	onNotification(notification: AppNotification) {

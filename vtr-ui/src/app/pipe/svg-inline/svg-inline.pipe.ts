@@ -28,7 +28,7 @@ export class SvgInlinePipe implements PipeTransform {
 				if (value.substring(value.lastIndexOf('.')) === '.svg') {
 					this.getContent(value).then(val => {
 						val = `data:image/svg+xml;base64,${btoa(val + '')}`;
-						val= this.sanitizer.bypassSecurityTrustResourceUrl(val+"");
+						val = this.sanitizer.bypassSecurityTrustResourceUrl(val + '');
 						observer.next(val);
 						observer.complete();
 					});
