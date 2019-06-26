@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Connected Home-beveiliging",
-        "notification":{
+        "notification": {
             "recent": "Recente beveiligingsmeldingen",
             "notifications": "Berichten"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Bescherm het ecosysteem van uw apparaat",
             "thisDevice": "Dit apparaat",
@@ -1293,22 +1295,22 @@
             "startTrial": "Proefperiode starten",
             "fullAccess": "Volledige toegang",
             "renew": "Verlengen"
-		},
-		"overview": {
-			"overviewBlockTitle": "Uw ecosysteem beveiligingsoverzicht",
-			"allDevices": "Alle apparaten",
-			"myDevice": "Mijn apparaat",
-			"secure": "Beveiligen",
-			"needAttention": "HEEFT AANDACHT NODIG",
-			"manageAccount": "Account beheren",
-			"devices": "Apparaten",
-			"seeProtectedDevices": "Zie beveiligde apparaten",
-			"addDevice": "Apparaat toevoegen",
-			"trialExpired": "Proefperiode verlopen - Upgrade uitvoeren om al uw apparaten te beschermen",
-			"upgrade": "Upgraden",
-			"freeTrial": "Bescherm al uw apparaten - Gratis proefperiode van 30 dagen",
-			"startTrial": "Proefperiode starten"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Uw ecosysteem beveiligingsoverzicht",
+            "allDevices": "Alle apparaten",
+            "myDevice": "Mijn apparaat",
+            "secure": "Beveiligen",
+            "needAttention": "HEEFT AANDACHT NODIG",
+            "manageAccount": "Account beheren",
+            "devices": "Apparaten",
+            "seeProtectedDevices": "Zie beveiligde apparaten",
+            "addDevice": "Apparaat toevoegen",
+            "trialExpired": "Proefperiode verlopen - Upgrade uitvoeren om al uw apparaten te beschermen",
+            "upgrade": "Upgraden",
+            "freeTrial": "Bescherm al uw apparaten - Gratis proefperiode van 30 dagen",
+            "startTrial": "Proefperiode starten"
+        },
         "tour": {
             "back": "Terug",
             "skip": "Overslaan",

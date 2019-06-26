@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Безопасность устройств в домашней сети",
-        "notification":{
+        "notification": {
             "recent": "Последние уведомления о безопасности",
             "notifications": "Уведомления"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Защитите экосистему устройства",
             "thisDevice": "Это устройство",
@@ -1293,22 +1295,22 @@
             "startTrial": "Начать пробный период",
             "fullAccess": "Полный доступ",
             "renew": "Обновить"
-		},
-		"overview": {
-			"overviewBlockTitle": "Обзор безопасности экосистемы",
-			"allDevices": "Все устройства",
-			"myDevice": "Мое устройство",
-			"secure": "БЕЗОПАСНО",
-			"needAttention": "ТРЕБУЕТ ВНИМАНИЯ",
-			"manageAccount": "Управление учетной записью",
-			"devices": "Устройства",
-			"seeProtectedDevices": "См. защищенные устройства",
-			"addDevice": "добавить устройство",
-			"trialExpired": "Срок действия пробной подписки истек - Выполните обновление для защиты всех устройств",
-			"upgrade": "обновить",
-			"freeTrial": "Защитите все устройства - Бесплатная 30-дневная пробная версия",
-			"startTrial": "Начать пробный период"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Обзор безопасности экосистемы",
+            "allDevices": "Все устройства",
+            "myDevice": "Мое устройство",
+            "secure": "БЕЗОПАСНО",
+            "needAttention": "ТРЕБУЕТ ВНИМАНИЯ",
+            "manageAccount": "Управление учетной записью",
+            "devices": "Устройства",
+            "seeProtectedDevices": "См. защищенные устройства",
+            "addDevice": "добавить устройство",
+            "trialExpired": "Срок действия пробной подписки истек - Выполните обновление для защиты всех устройств",
+            "upgrade": "обновить",
+            "freeTrial": "Защитите все устройства - Бесплатная 30-дневная пробная версия",
+            "startTrial": "Начать пробный период"
+        },
         "tour": {
             "back": "Задняя",
             "skip": "Пропустить",

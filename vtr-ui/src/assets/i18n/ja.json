@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "接続ホーム・セキュリティー",
-        "notification":{
+        "notification": {
             "recent": "最近のセキュリティー通知",
             "notifications": "通知"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "デバイスのエコシステムを保護する",
             "thisDevice": "このデバイス",
@@ -1292,23 +1294,23 @@
             "enableEcosystem": "エコシステムを有効にする",
             "startTrial": "トライアルを開始する",
             "fullAccess": "完全アクセス",
-			"renew": "更新"
-		},
-		"overview": {
-			"overviewBlockTitle": "エコシステム・セキュリティーの概要",
-			"allDevices": "すべてのデバイス",
-			"myDevice": "デバイス",
-			"secure": "安全",
-			"needAttention": "注意が必要",
-			"manageAccount": "アカウントの管理",
-			"devices": "デバイス",
-			"seeProtectedDevices": "保護されたデバイスを見る",
-			"addDevice": "デバイスの追加",
-			"trialExpired": "試用期限切れ - アップグレードして、すべてのデバイスを保護する",
-			"upgrade": "アップグレード",
-			"freeTrial": "すべてのデバイスを保護する - 30 日間無料トライアル",
-			"startTrial": "トライアルを開始する"
-		},
+            "renew": "更新"
+        },
+        "overview": {
+            "overviewBlockTitle": "エコシステム・セキュリティーの概要",
+            "allDevices": "すべてのデバイス",
+            "myDevice": "デバイス",
+            "secure": "安全",
+            "needAttention": "注意が必要",
+            "manageAccount": "アカウントの管理",
+            "devices": "デバイス",
+            "seeProtectedDevices": "保護されたデバイスを見る",
+            "addDevice": "デバイスの追加",
+            "trialExpired": "試用期限切れ - アップグレードして、すべてのデバイスを保護する",
+            "upgrade": "アップグレード",
+            "freeTrial": "すべてのデバイスを保護する - 30 日間無料トライアル",
+            "startTrial": "トライアルを開始する"
+        },
         "tour": {
             "back": "戻る",
             "skip": "スキップ",

@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Securitate conectată, la domiciliu",
-        "notification":{
+        "notification": {
             "recent": "Notificări recente de securitate",
             "notifications": "Notificări"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Protejați-vă ecosistemul dispozitivului",
             "thisDevice": "Acest dispozitiv",
@@ -1293,22 +1295,22 @@
             "startTrial": "Începeți perioada de probă",
             "fullAccess": "Acces complet",
             "renew": "Reînnoiți"
-		},
-		"overview": {
-			"overviewBlockTitle": "Prezentarea generală a securității ecosistemului",
-			"allDevices": "Toate dispozitivele",
-			"myDevice": "Dispozitivul meu",
-			"secure": "SIGUR",
-			"needAttention": "ARE NEVOIE DE ATENȚIE",
-			"manageAccount": "Gestionare cont",
-			"devices": "Dispozitive",
-			"seeProtectedDevices": "Vedeți dispozitivele protejate",
-			"addDevice": "adăugați dispozitiv",
-			"trialExpired": "Perioadă de încercare expirată - Faceți upgrade la protecția tuturor dispozitivelor dvs.",
-			"upgrade": "upgrade",
-			"freeTrial": "Protejați-vă toate dispozitivele - Perioadă de probă gratuită de 30 de zile",
-			"startTrial": "Începeți perioada de probă"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Prezentarea generală a securității ecosistemului",
+            "allDevices": "Toate dispozitivele",
+            "myDevice": "Dispozitivul meu",
+            "secure": "SIGUR",
+            "needAttention": "ARE NEVOIE DE ATENȚIE",
+            "manageAccount": "Gestionare cont",
+            "devices": "Dispozitive",
+            "seeProtectedDevices": "Vedeți dispozitivele protejate",
+            "addDevice": "adăugați dispozitiv",
+            "trialExpired": "Perioadă de încercare expirată - Faceți upgrade la protecția tuturor dispozitivelor dvs.",
+            "upgrade": "upgrade",
+            "freeTrial": "Protejați-vă toate dispozitivele - Perioadă de probă gratuită de 30 de zile",
+            "startTrial": "Începeți perioada de probă"
+        },
         "tour": {
             "back": "Înapoi",
             "skip": "Ignorare",

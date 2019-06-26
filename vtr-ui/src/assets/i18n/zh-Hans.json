@@ -57,10 +57,12 @@
                     "media": "媒体",
                     "macroKey": "Marco Key",
                     "hardwareScan": "硬件扫描",
-                    "systemUpdate": "系统更新"
+                    "systemUpdate": "系统更新",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "照明定制"
+                    "title": "照明定制",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "使用Vantage Edge，您的设置将根据使用情况自动调整。游戏时的最佳性能，更长的电池续航时间。",
@@ -422,7 +424,7 @@
             "memory": {
                 "title": "内存",
                 "detail": {
-                    "notFound": "找不到记忆",
+                    "notFound": "找不到内存",
                     "of": "/"
                 }
             },
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "互联家庭网络安全性",
-        "notification":{
+        "notification": {
             "recent": "最近的安全通知",
             "notifications": "通知"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "保护您的设备生态系统",
             "thisDevice": "此设备",
@@ -1293,22 +1295,22 @@
             "startTrial": "开始试用",
             "fullAccess": "完全访问权限",
             "renew": "更新"
-		},
-		"overview": {
-			"overviewBlockTitle": "您的生态系统安全概述",
-			"allDevices": "所有设备",
-			"myDevice": "我的设备",
-			"secure": "安全",
-			"needAttention": "需要注意",
-			"manageAccount": "管理帐户",
-			"devices": "设备",
-			"seeProtectedDevices": "查看受保护的设备",
-			"addDevice": "添加设备",
-			"trialExpired": "试用已到期 - 升级以保护您的所有设备",
-			"upgrade": "升级",
-			"freeTrial": "保护您的所有设备 - 30 天的免费试用期",
-			"startTrial": "开始试用"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "您的生态系统安全概述",
+            "allDevices": "所有设备",
+            "myDevice": "我的设备",
+            "secure": "安全",
+            "needAttention": "需要注意",
+            "manageAccount": "管理帐户",
+            "devices": "设备",
+            "seeProtectedDevices": "查看受保护的设备",
+            "addDevice": "添加设备",
+            "trialExpired": "试用已到期 - 升级以保护您的所有设备",
+            "upgrade": "升级",
+            "freeTrial": "保护您的所有设备 - 30 天的免费试用期",
+            "startTrial": "开始试用"
+        },
         "tour": {
             "back": "上一步",
             "skip": "跳过",

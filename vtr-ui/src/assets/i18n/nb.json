@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Sikkerhet for tilkoblede hjem",
-        "notification":{
+        "notification": {
             "recent": "Nylige sikkerhetsvarsler",
             "notifications": "Varsler"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Beskytt enhetens økosystem",
             "thisDevice": "Denne enheten",
@@ -1293,22 +1295,22 @@
             "startTrial": "Start prøveperiode",
             "fullAccess": "Full tilgang",
             "renew": "Forny"
-		},
-		"overview": {
-			"overviewBlockTitle": "Vis sikkerhetsoversikt for økosystemet",
-			"allDevices": "Alle enheter",
-			"myDevice": "Min enhet",
-			"secure": "SIKKER",
-			"needAttention": "TRENGER OPPMERKSOMHET",
-			"manageAccount": "Administrer konto",
-			"devices": "Enheter",
-			"seeProtectedDevices": "Se beskyttede enheter",
-			"addDevice": "legg til enhet",
-			"trialExpired": "Prøveversjonen er utløpt - Oppgrader for å beskytte alle enhetene dine",
-			"upgrade": "oppgrader",
-			"freeTrial": "Beskytt alle enhetene dine - Gratis 30-dagers prøveperiode",
-			"startTrial": "Start prøveperiode"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Vis sikkerhetsoversikt for økosystemet",
+            "allDevices": "Alle enheter",
+            "myDevice": "Min enhet",
+            "secure": "SIKKER",
+            "needAttention": "TRENGER OPPMERKSOMHET",
+            "manageAccount": "Administrer konto",
+            "devices": "Enheter",
+            "seeProtectedDevices": "Se beskyttede enheter",
+            "addDevice": "legg til enhet",
+            "trialExpired": "Prøveversjonen er utløpt - Oppgrader for å beskytte alle enhetene dine",
+            "upgrade": "oppgrader",
+            "freeTrial": "Beskytt alle enhetene dine - Gratis 30-dagers prøveperiode",
+            "startTrial": "Start prøveperiode"
+        },
         "tour": {
             "back": "Tilbake",
             "skip": "Hopp over",

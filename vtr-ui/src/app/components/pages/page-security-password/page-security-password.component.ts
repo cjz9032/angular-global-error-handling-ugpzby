@@ -105,7 +105,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 
 	openDashLaneArticle(): void {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
-			backdrop: 'static',
+			backdrop: true,
 			size: 'lg',
 			centered: true,
 			windowClass: 'Article-Detail-Modal',

@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Bezpieczny Dom",
-        "notification":{
+        "notification": {
             "recent": "Ostatnie powiadomienia dotyczące zabezpieczeń",
             "notifications": "Powiadomienia"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Chroń ekosystem swojego urządzenia",
             "thisDevice": "To urządzenie",
@@ -1291,23 +1293,24 @@
             "enableEcosystem": "Włącz ekosystem",
             "startTrial": "Rozpocznij okres próbny",
             "fullAccess": "Pełny dostęp",
-            "renew": "Odnów"
-		},
-		"overview": {
-			"overviewBlockTitle": "Przegląd zabezpieczeń Twojego ekosystemu",
-			"allDevices": "Wszystkie urządzenia",
-			"myDevice": "Moje urządzenie",
-			"secure": "ZABEZPIECZ",
-			"needAttention": "WYMAGA UWAGI",
-			"manageAccount": "Zarządzaj kontem",
-			"devices": "Urządzenia",
-			"seeProtectedDevices": "Zobacz chronione urządzenia",
-			"addDevice": "dodaj urządzenie",
-			"trialExpired": "Wersja próbna wygasła - Uaktualnij, aby chronić wszystkie urządzenia",
-			"upgrade": "uaktualnij",
-			"freeTrial": "Chroń wszystkie urządzenia - Bezpłatna 30-dniowa wersja próbna",
-			"startTrial": "Rozpocznij okres próbny"
-		},
+            "renew": "Odnów",
+            "inEcosystem": "In Ecosystem"
+        },
+        "overview": {
+            "overviewBlockTitle": "Przegląd zabezpieczeń Twojego ekosystemu",
+            "allDevices": "Wszystkie urządzenia",
+            "myDevice": "Moje urządzenie",
+            "secure": "ZABEZPIECZ",
+            "needAttention": "WYMAGA UWAGI",
+            "manageAccount": "Zarządzaj kontem",
+            "devices": "Urządzenia",
+            "seeProtectedDevices": "Zobacz chronione urządzenia",
+            "addDevice": "dodaj urządzenie",
+            "trialExpired": "Wersja próbna wygasła - Uaktualnij, aby chronić wszystkie urządzenia",
+            "upgrade": "uaktualnij",
+            "freeTrial": "Chroń wszystkie urządzenia - Bezpłatna 30-dniowa wersja próbna",
+            "startTrial": "Rozpocznij okres próbny"
+        },
         "tour": {
             "back": "Wstecz",
             "skip": "Pomiń",

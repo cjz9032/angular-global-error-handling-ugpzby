@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "홈 보안 연결",
-        "notification":{
+        "notification": {
             "recent": "최근 보안 알림",
             "notifications": "알림"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "장치 생태계 보호",
             "thisDevice": "이 장치",
@@ -1293,22 +1295,22 @@
             "startTrial": "평가판 시작",
             "fullAccess": "전체 액세스",
             "renew": "갱신"
-		},
-		"overview": {
-			"overviewBlockTitle": "생태계 보안 개요",
-			"allDevices": "모든 장치",
-			"myDevice": "내 장치",
-			"secure": "보안",
-			"needAttention": "주의 필요",
-			"manageAccount": "계정 관리",
-			"devices": "장치",
-			"seeProtectedDevices": "보호 장치 참고",
-			"addDevice": "장치 추가",
-			"trialExpired": "평가판 만료됨 - 모든 장치를 보호하도록 업그레이드",
-			"upgrade": "업그레이드",
-			"freeTrial": "모든 장치 보호 - 30일 무료 평가판",
-			"startTrial": "평가판 시작"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "생태계 보안 개요",
+            "allDevices": "모든 장치",
+            "myDevice": "내 장치",
+            "secure": "보안",
+            "needAttention": "주의 필요",
+            "manageAccount": "계정 관리",
+            "devices": "장치",
+            "seeProtectedDevices": "보호 장치 참고",
+            "addDevice": "장치 추가",
+            "trialExpired": "평가판 만료됨 - 모든 장치를 보호하도록 업그레이드",
+            "upgrade": "업그레이드",
+            "freeTrial": "모든 장치 보호 - 30일 무료 평가판",
+            "startTrial": "평가판 시작"
+        },
         "tour": {
             "back": "뒤로",
             "skip": "건너뛰기",
