@@ -1273,19 +1273,6 @@
     },
     "homeSecurity": {
         "title": "Connected Home -suojaus",
-        "overviewBlockTitle": "Yleistä ekosysteemin suojauksesta",
-        "allDevices": "Kaikki laitteet",
-        "myDevice": "Oma laite",
-        "secure": "TURVALLINEN",
-        "needAttention": "TOIMENPITEITÄ TARVITAAN",
-        "manageAccount": "Hallitse tiliä",
-        "devices": "Laitteet",
-        "seeProtectedDevices": "Katso suojatut laitteet",
-        "addDevice": "lisää laite",
-        "trialExpired": "Kokeiluversio vanhentunut - Päivitä kaikki laitteesi suojatuiksi",
-        "upgrade": "päivitä",
-        "freeTrial": "Suojaa kaikki laitteesi - Maksuton 30 päivän kokeiluversio",
-        "startTrial": "Aloita kokeilu",
         "notification":{
             "recent": "Viimeaikaiset suojausilmoitukset",
             "notifications": "Ilmoitukset"
@@ -1306,6 +1293,21 @@
             "startTrial": "Aloita kokeilu",
             "fullAccess": "Täydet käyttöoikeudet",
             "renew": "Uusiminen"
+		},
+		"overview": {
+			"overviewBlockTitle": "Yleistä ekosysteemin suojauksesta",
+			"allDevices": "Kaikki laitteet",
+			"myDevice": "Oma laite",
+			"secure": "TURVALLINEN",
+			"needAttention": "TOIMENPITEITÄ TARVITAAN",
+			"manageAccount": "Hallitse tiliä",
+			"devices": "Laitteet",
+			"seeProtectedDevices": "Katso suojatut laitteet",
+			"addDevice": "lisää laite",
+			"trialExpired": "Kokeiluversio vanhentunut - Päivitä kaikki laitteesi suojatuiksi",
+			"upgrade": "päivitä",
+			"freeTrial": "Suojaa kaikki laitteesi - Maksuton 30 päivän kokeiluversio",
+			"startTrial": "Aloita kokeilu"
 		},
         "tour": {
             "back": "Edellinen",
