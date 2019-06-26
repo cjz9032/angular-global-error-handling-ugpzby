@@ -6,7 +6,7 @@
 		[checked]="currentProfile===0"
 		(change)="SetProfile($event)">
 	<label for="off_radio"
-		id="off">Off</label>
+		id="off">{{'gaming.lightingProfile.profileheading.text1.title' | translate}}</label>
 	<input type="radio"
 		value="1"
 		name="lighting-porfile"
@@ -14,7 +14,7 @@
 		[checked]="currentProfile===1"
 		(change)="SetProfile($event)">
 	<label for="first_radio"
-		id="first_lbl">Profile 1</label>
+		id="first_lbl">{{'gaming.lightingProfile.profileheading.text2.title' | translate}}</label>
 	<input type="radio"
 		value="2"
 		name="lighting-porfile"
@@ -22,7 +22,7 @@
 		[checked]="currentProfile===2"
 		(change)="SetProfile($event)">
 	<label for="second_radio"
-		id="second_lbl">Profile 2</label>
+		id="second_lbl">{{'gaming.lightingProfile.profileheading.text3.title' | translate}}</label>
 	<input type="radio"
 		value="3"
 		name="lighting-porfile"
@@ -30,6 +30,6 @@
 		[checked]="currentProfile===3"
 		(change)="SetProfile($event)">
 	<label for="third_radio"
-		id="third_lbl">Profile 3</label>
+		id="third_lbl">{{'gaming.lightingProfile.profileheading.text4.title' | translate}}</label>
 	<div class="toggle"></div>
 </div>

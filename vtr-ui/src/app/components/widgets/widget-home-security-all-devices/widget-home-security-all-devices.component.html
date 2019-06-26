@@ -14,7 +14,7 @@
 						<div class="manage">
 							<a target="_blank" href="javascript:void(0)"
 								id="chs-lnk-ad-manageAccount"
-								aria-label="chs-lnk-ad-manageAccount"
+								attr.aria-label="chs-lnk-ad-manageAccount"
 								vtrMetrics
 								metricsItem="manageAccountAllDevice"
 								metricsEvent="featureClick"
@@ -36,13 +36,13 @@
 					<div class="col-7 text" >
 						<div class="device-text text-uppercase">{{'homeSecurity.overview.devices' | translate}}</div>
 						<div class="status">
-							<h3 style="margin-bottom: 0rem" *ngIf="showBadge()">
+							<h3 *ngIf="account && allDevicesInfo && (allDevicesInfo.allDevicesNumber !== 0 || this.account.state === 'trialExpired' || this.account.state === 'local')">
 								<span class="badge badge-pill badge-success" *ngIf="allDevicesInfo.allDevicesStatus">
 									{{'homeSecurity.overview.secure' | translate}}
 								</span>
 								<span class="badge badge-pill badge-danger" (click)="openCornet()" *ngIf="!allDevicesInfo.allDevicesStatus"
 									id="chs-btn-ad-needAttention"
-									aria-label="chs-btn-ad-needAttention"
+									attr.aria-label="chs-btn-ad-needAttention"
 									vtrMetrics
 									metricsItem="needAttentionAllDevice"
 									metricsEvent="featureClick">
@@ -52,7 +52,7 @@
 						<div class="protected-device">
 							<a  target="_blank" href="javascript:void(0)"
 								id="chs-lnk-ad-seeProtectedDevices"
-								aria-label="chs-lnk-ad-seeProtectedDevices"
+								attr.aria-label="chs-lnk-ad-seeProtectedDevices"
 								vtrMetrics
 								metricsItem="seeProtectedDevicesAllDevice"
 								metricsEvent="featureClick"

@@ -7,6 +7,7 @@ export class QA {
 	description: string;
 	like: boolean;
 	dislike: boolean;
+	category: string;
 
 	constructor(id: number,
 		iconPath: string,
