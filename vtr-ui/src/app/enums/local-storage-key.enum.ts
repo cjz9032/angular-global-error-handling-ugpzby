@@ -47,6 +47,7 @@ export enum LocalStorageKey {
 	ConnectedHomeSecurityAccount = '[LocalStorageKey] ConnectedHomeSecurityAccount',
 	ConnectedHomeSecurityMyDevice = '[LocalStorageKey] ConnectedHomeSecurityMyDevice',
 	ConnectedHomeSecurityNotifications = '[LocalStorageKey] ConnectedHomeSecurityNotifications',
+	ConnectedHomeSecurityWelcomeComplete = '[LocalStorageKey] ConnectedHomeSecurityWelcomeComplete',
 	/**
 	 * 0  means "ideaPad",
 	 * 1  means "thinkPad",
@@ -105,6 +106,7 @@ export enum LocalStorageKey {
 	ramUsage = '[LocalStorageKey] ramUsage',
 	ramCapacity = '[LocalStorageKey] ramCapaity',
 	cpuBaseFrequency = '[LocalStorageKey] cpuBaseFrequency',
+	disksList = '[LocalStorageKey] disksList',
 	gpuModulename = '[LocalStorageKey] gpuModulename',
 	gpuMaxFrequency = '[LocalStorageKey] gpuMaxFrequency',
 	memorySize = '[LocalStorageKey] ramMemorySize',

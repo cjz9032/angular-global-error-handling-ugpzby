@@ -209,12 +209,12 @@ export class UiLightingProfileComponent implements OnInit {
 		{
 			PanelType: 32,
 			RGB: 255,
-			PanelImage: 'C730Right@2x.png'
+			PanelImage: 'C730Left@2x.png'
 		},
 		{
 			PanelType: 64,
 			RGB: 255,
-			PanelImage: 'C730Left@2x.png'
+			PanelImage: 'C730Right@2x.png'
 		},
 		{
 			PanelType: 128,
@@ -225,6 +225,16 @@ export class UiLightingProfileComponent implements OnInit {
 			PanelType: 256,
 			RGB: 1,
 			PanelImage: 'T530Perspective@2x.png'
+		},
+		{
+			PanelType: 32,
+			RGB: 1,
+			PanelImage: 'C530Left@2x.png'
+		},
+		{
+			PanelType: 64,
+			RGB: 1,
+			PanelImage: 'C530Right@2x.png'
 		}
 	];
 	// optionsSingleColor = [
@@ -424,36 +434,34 @@ export class UiLightingProfileComponent implements OnInit {
 						// 	response
 						// );
 						if (response.lightInfo.length > 0) {
-							this.frontSelectedValue = response.lightInfo[0].lightEffectType;
-							this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
-							//this.inHex1 = response.lightInfo[0].lightColor;
-							if (response.lightInfo.length > 1) {
-								this.sideSelectedValue = response.lightInfo[1].lightEffectType;
-								this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
-								this.inHex2 = response.lightInfo[1].lightColor;
-
-
-								if (
-									this.sideSelectedValue === 8 ||
-									this.sideSelectedValue === 32 ||
-									this.sideSelectedValue === 64 ||
-									this.sideSelectedValue === 128
-								) {
-									this.showHideOverlaySide = true;
-								} else {
-									this.showHideOverlaySide = false;
+							if (this.lightingCapabilities.LedType_Complex.length > 0 && this.simpleOrComplex==2) {
+								this.frontSelectedValue = response.lightInfo[0].lightEffectType;
+								this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
+								//this.inHex1 = response.lightInfo[0].lightColor;
+								if (response.lightInfo.length > 1) {
+									this.sideSelectedValue = response.lightInfo[1].lightEffectType;
+									this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
+									this.inHex2 = response.lightInfo[1].lightColor;
+									if (
+										this.sideSelectedValue === 8 ||
+										this.sideSelectedValue === 32 ||
+										this.sideSelectedValue === 64 ||
+										this.sideSelectedValue === 128
+									) {
+										this.showHideOverlaySide = true;
+									} else {
+										this.showHideOverlaySide = false;
+									}
+									if (this.sideSelectedValue === 4 || this.sideSelectedValue === 8) {
+										this.enableBrightConditionside = true;
+									} else {
+										this.enableBrightConditionside = false;
+									}
+									const lightEffectRGBOptionNameB = this.getLightEffectOptionName(
+										response.lightInfo[1].lightEffectType
+									);
+									this.lightEffectRGBOptionNameSide = lightEffectRGBOptionNameB[0].name;
 								}
-								if (this.sideSelectedValue === 4 || this.sideSelectedValue === 8) {
-									this.enableBrightConditionside = true;
-								} else {
-									this.enableBrightConditionside = false;
-								}
-								const lightEffectRGBOptionNameB = this.getLightEffectOptionName(
-									response.lightInfo[1].lightEffectType
-								);
-								this.lightEffectRGBOptionNameSide = lightEffectRGBOptionNameB[0].name;
-
-
 							}
 						}
 
@@ -590,24 +598,24 @@ export class UiLightingProfileComponent implements OnInit {
 						'setLightingProfileEffectColor side------------------------>',
 						JSON.stringify(response)
 					);
-					if (response.didSuccess) {
-						this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileEffectColor, response);
-						console.log(
-							'single EffectColor------cache: ',
-							JSON.stringify(
-								this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileEffectColorTop)
-							)
-						);
-					} else {
-						response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileEffectColor);
-					}
+					// if (response.didSuccess) {
+					// 	this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileEffectColor, response);
+					// 	console.log(
+					// 		'single EffectColor------cache: ',
+					// 		JSON.stringify(
+					// 			this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileEffectColorTop)
+					// 		)
+					// 	);
+					// } else {
+					// 	response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileEffectColor);
+					// }
 				});
 		}
 	}
 	setDefaultProfile(event) {
 		try {
-			if (event.target.value !== undefined) {
-				this.isOff = Number(event.target.value);
+			if (event !== undefined) {
+				this.isOff = Number(event);
 			}
 
 			console.log('in profile click event....................................', this.isOff);
@@ -616,6 +624,7 @@ export class UiLightingProfileComponent implements OnInit {
 			} else {
 				this.isProfileOff = false;
 				this.currentProfileId = this.isOff;
+				console.log('in profile click event....................................', this.isOff,this.currentProfileId);
 				if (this.gamingLightingService.isShellAvailable) {
 					this.gamingLightingService
 						.setLightingDefaultProfileById(this.currentProfileId)
@@ -796,7 +805,15 @@ export class UiLightingProfileComponent implements OnInit {
 									'selectedSingleColorOptionId------------single color---------------->',
 									JSON.stringify(response.lightInfo[0].lightEffectType)
 								);
-								this.selectedSingleColorOptionId = response.lightInfo[0].lightEffectType;
+
+								if (this.lightingCapabilities.LedType_Complex.length > 1) {
+									this.simpleOrComplex = 2;
+									this.frontSelectedValue = response.lightInfo[0].lightEffectType;
+									this.sideSelectedValue = response.lightInfo[1].lightEffectType;
+								} else if (this.lightingCapabilities.LedType_simple.length > 1) {
+									this.selectedSingleColorOptionId = response.lightInfo[0].lightEffectType;
+								}
+
 							} else {
 								//	this.dropDataChanges.topdata = response.lightInfo[0].lightEffectType;
 								this.frontSelectedValue = response.lightInfo[0].lightEffectType;
@@ -936,7 +953,14 @@ export class UiLightingProfileComponent implements OnInit {
 									'selectedSingleColorOptionId------------single color---------------->',
 									JSON.stringify(response.lightInfo[0].lightEffectType)
 								);
-								this.selectedSingleColorOptionId = response.lightInfo[0].lightEffectType;
+							//	this.selectedSingleColorOptionId = response.lightInfo[0].lightEffectType;
+								if (this.lightingCapabilities.LedType_Complex.length > 1) {
+									this.simpleOrComplex = 2;
+									this.frontSelectedValue = response.lightInfo[0].lightEffectType;
+									this.sideSelectedValue = response.lightInfo[1].lightEffectType;
+								} else if (this.lightingCapabilities.LedType_simple.length > 1) {
+									this.selectedSingleColorOptionId = response.lightInfo[0].lightEffectType;
+								}
 							} else {
 								if (response.lightInfo.length > 0) {
 									this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;

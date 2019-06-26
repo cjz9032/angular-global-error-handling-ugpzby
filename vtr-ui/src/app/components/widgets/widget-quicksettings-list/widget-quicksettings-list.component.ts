@@ -229,29 +229,28 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	}
 
 	public GetThermalModeCacheStatus(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.CurrentThermalModeStatus);
+		return this.commonService.getLocalStorageValue(LocalStorageKey.CurrentThermalModeStatus, 2);
 	}
 
 	public GetThermalModePrevCacheStatus(): any {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.PrevThermalModeStatus);
 	}
 
-	public renderThermalModeStatus() {
+	public async renderThermalModeStatus() {
 		try {
-			if (this.commonService) {
-				this.drop.curSelected = this.GetThermalModeCacheStatus();
-			} else if (this.gamingThermalModeService) {
-				this.gamingThermalModeService.getThermalModeStatus().then((thermalModeStatus) => {
+			this.drop.curSelected = this.GetThermalModeCacheStatus();
+			if (this.gamingThermalModeService) {
+				const thermalModeStatus = await this.gamingThermalModeService.getThermalModeStatus();
+					console.log(`SUCCESSFULLY got thermal mode status`, thermalModeStatus);
 					if (thermalModeStatus !== undefined) {
+						this.drop.curSelected = thermalModeStatus;
 						const ThermalModeStatusObj = new thermalModeStatus();
-						// updating model
 						ThermalModeStatusObj.thermalModeStatus = thermalModeStatus;
-						this.drop.curSelected = ThermalModeStatusObj.thermalModeStatus;
+						this.commonService.setLocalStorageValue(LocalStorageKey.CurrentThermalModeStatus, this.drop.curSelected);
 					}
-				});
 			}
 		} catch (error) {
-			console.error(error.message);
+			console.error(`ERROR in renderThermalModeStatus() of widget.quicksettings-list.component`, error);
 		}
 	}
 
