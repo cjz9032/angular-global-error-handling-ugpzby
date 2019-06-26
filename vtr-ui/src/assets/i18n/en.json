@@ -289,6 +289,50 @@
 				"option4": {
 					"title": "Slow Blink"
 				}
+			},
+			"profile": {
+				"text1": {
+					"title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+				},
+				"text2": {
+					"title": "effect"
+				}
+			},
+			"button": {
+				"default": {
+					"title": "Set to default"
+				}
+			},
+			"profileheading": {
+				"text1": {
+					"title": "Off"
+				},
+				"text2": {
+					"title": "Profile 1"
+				},
+				"text3": {
+					"title": "Profile 2"
+				},
+				"text4": {
+					"title": "Profile 3"
+				}
+			},
+			"lightingProfileHeading": {
+				"text1": {
+					"title": "Off"
+				},
+				"text2": {
+					"title": "1"
+				},
+				"text3": {
+					"title": "2"
+				},
+				"text4": {
+					"title": "3"
+				},
+				"Customize": {
+					"title": "Customize"
+				}
 			}
 		}
 	},
