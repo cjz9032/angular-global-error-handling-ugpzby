@@ -51,6 +51,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	account: HomeSecurityAccount;
 	isOnline = true;
 	testStatus = ['lessDevices-secure', 'moreDevices-needAttention', 'noneDevices', 'trialExpired', 'lessDevices-needAttention', 'moreDevices-secure', 'localAccount'];
+	backId = 'chs-btn-back';
 
 	constructor(
 		vantageShellService: VantageShellService,
