@@ -105,6 +105,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isDriverPopup: false,
 			isChecked: false,
 			tooltipText: '',
+			readonly: true,
 			type: 'gaming.dashboard.device.legionEdge.networkBoost',
 			routerLink: '/networkboost'
 		},
@@ -422,10 +423,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			if (this.gamingCapabilities.xtuService === false) {
 				this.legionUpdate[1].isDriverPopup = $event;
-				//	this.disableButtons = true;
 			} else {
 				this.legionUpdate[1].isPopup = $event;
-				//	this.disableButtons = true;
 			}
 			this.gamingSystemUpdateService
 				.setRamOCStatus($event.switchValue)
@@ -477,6 +476,16 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				.catch((error) => {
 					console.error('setKeyLockStatus', error);
 				});
+		}
+		if (name === 'gaming.dashboard.device.legionEdge.networkBoost') {
+			if (true) {
+				this.legionUpdate[3].isDriverPopup = $event;
+			} else {
+				this.legionUpdate[3].isPopup = $event;
+			}
+		} else {
+			// to hide the existing popup which is open(hybridmode, ramoc)
+			this.legionUpdate[3].isPopup = false;
 		}
 	}
 }
