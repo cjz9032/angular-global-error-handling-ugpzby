@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter} from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, HostListener } from '@angular/core';
 import { HomeSecurityOverviewMyDevice } from 'src/app/data-models/home-security/home-security-overview-my-device.model';
 
 
@@ -16,8 +16,9 @@ interface DevicePostureDetail {
 export class WidgetHomeSecurityMyDeviceComponent implements OnInit {
 	@Input() homeSecurityOverviewMyDevice: HomeSecurityOverviewMyDevice;
 
+	isShowPosture = false;
 
-	constructor() {}
+	constructor() { }
 
 	ngOnInit() {
 	}
