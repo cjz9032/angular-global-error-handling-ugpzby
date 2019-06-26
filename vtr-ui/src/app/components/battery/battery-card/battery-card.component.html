@@ -94,18 +94,20 @@
 				</span>
 			</div>
 		</div>
-		<div class="feature-note p-4 mt-2"
-			*ngIf="chargeThresholdInfo?.isOn">
-			<div class="row">
-				<p>
-					<span style="font-weight: bold">Note: </span>
-					<span>
-						{{'device.deviceSettings.batteryGauge.thresholdNote'  | translate}}
-						{{chargeThresholdInfo.stopValue}}%
-					</span>
-					<!-- <a href="javascript:void()">
+		<div *ngFor="let chargeThreshold of chargeThresholdInfo">
+			<div class="feature-note p-2 mt-2"
+				*ngIf="chargeThreshold?.isOn">
+				<div class="row">
+					<p>
+						<span style="font-weight: bold">Note: </span>
+						<span>
+							{{'device.deviceSettings.batteryGauge.thresholdNote'  | translate}}
+							{{chargeThreshold.stopValue}}%
+						</span>
+						<!-- <a href="javascript:void()">
 						{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
 					</a> -->
+				</div>
 			</div>
 		</div>
 		<div class="pt-4 text-center">
