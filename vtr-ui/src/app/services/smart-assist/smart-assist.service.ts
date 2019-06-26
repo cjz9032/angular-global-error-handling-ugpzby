@@ -370,16 +370,17 @@ export class SmartAssistService {
 		return undefined;
 	}
 	// SET Snooze time
-	public setSnoozeTime(value: number): Promise < boolean > {
+	public setSnoozeTime(value: string): Promise < boolean > {
+		console.log('SNOOZE VALUE', typeof value);
 		if (this.isAPSavailable) {
-			return this.activeProtectionSystem.setSnoozeTime(value.toString());
+			return this.activeProtectionSystem.setSnoozeTime(value);
 		}
 		return undefined;
 	}
 	// Suspend APS
-	public sendSnoozeCommand(value: number): Promise < boolean > {
+	public sendSnoozeCommand(value: string): Promise < boolean > {
 		if (this.isAPSavailable) {
-			return this.activeProtectionSystem.sendSnoozeCommand(value.toString());
+			return this.activeProtectionSystem.sendSnoozeCommand(value);
 		}
 	}
 	//#endregion
