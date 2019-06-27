@@ -10,7 +10,9 @@ import { RoutersName } from '../../privacy-routing-name';
 import { UserDataGetStateService } from '../../common/services/user-data-get-state.service';
 import { HttpClient } from '@angular/common/http';
 import { CommsService } from '../../../../../services/comms/comms.service';
-import { map, tap } from 'rxjs/operators';
+import { map, shareReplay, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { TrackersInfo } from '../../feature/tracking-map/services/tracking-map.interface';
 
 export interface Article {
 	id: string;
@@ -33,63 +35,12 @@ interface ArticlesByPathSettings {
 })
 export class ArticlesService {
 
+	private articlesCache$: Observable<any>;
+
 	constructor(
 		private userDataGetStateService: UserDataGetStateService,
 		private commsService: CommsService,
-	) {
-	}
-
-	articles: Articles = {
-		'information-exposed': {
-			id: 'information-exposed',
-			category: 'FigLeafInstalled',
-			title: 'Why finding out if your information is exposed changes everything',
-			image: '/assets/images/privacy-tab/tips-bg.png',
-			content: page1, // https://markdowntohtml.com/ // https://stackedit.io/app#
-		},
-		'myths-about-privacy': {
-			id: 'myths-about-privacy',
-			category: 'FigLeafInstalled',
-			title: '5 myths about the definition of privacy you probably believe',
-			image: '/assets/images/privacy-tab/tips-bg.png',
-			content: page2,
-		},
-		'tweak-your-internet-privacy': {
-			id: 'tweak-your-internet-privacy',
-			category: 'FigLeafInstalled',
-			title: 'How to tweak your internet privacy settings in 5 easy steps',
-			image: '/assets/images/privacy-tab/tips-bg.png',
-			content: page3,
-		},
-		'everything-about-trackers': {
-			id: 'everything-about-trackers',
-			category: 'ScanPerformed',
-			title: 'Everything you need to know about trackers is 20 seconds',
-			image: '/assets/images/privacy-tab/tips-bg.png',
-			content: page4,
-		},
-		'what-cookies-reveal': {
-			id: 'what-cookies-reveal',
-			category: 'ScanPerformed',
-			title: 'What cookies reveal about you',
-			image: '/assets/images/privacy-tab/tips-bg.png',
-			content: page5,
-		},
-		'guide-to-private-browsing': {
-			id: 'guide-to-private-browsing',
-			category: 'FirstTimeVisitor',
-			title: 'The Ultimate Guide to Private Browsing',
-			image: '/assets/images/privacy-tab/tips-bg.png',
-			content: page6,
-		},
-		'companies-hit-by-data-breaches': {
-			id: 'companies-hit-by-data-breaches',
-			category: 'FirstTimeVisitor',
-			title: 'These companies were all hit by data breaches. Do you have accounts with them?',
-			image: '/assets/images/privacy-tab/tips-bg.png',
-			content: page7,
-		},
-	};
+	) {}
 
 	pagesSettings: {
 		[path in RoutersName]: ArticlesByPathSettings
@@ -120,38 +71,26 @@ export class ArticlesService {
 		}
 	};
 
-	private getUserCategory() {
-		return this.userDataGetStateService.getUserDataStatus().appState;
-	}
-
-	getFilteredArticlesByUserStatus() {
-		return this.filterArticlesByCategory(this.getUserCategory());
-	}
-
-	filterArticlesByCategory(category) {
-		return Object.keys(this.articles).reduce((acc, articleKey) => {
-			const currArticle = this.articles[articleKey];
-			if (currArticle.category === category) {
-				acc.push(currArticle);
-			}
-			return acc;
-		}, []);
-	}
-
 	getListOfArticles() {
-		const queryOptions = {
-			'Page': 'privacy',
-			'Lang': 'en',
-			'GEO': 'US',
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'idea',
-		};
+		if (!this.articlesCache$) {
+			const queryOptions = {
+				'Page': 'privacy',
+				'Lang': 'en',
+				'GEO': 'US',
+				'OEM': 'Lenovo',
+				'OS': 'Windows',
+				'Segment': 'SMB',
+				'Brand': 'idea',
+			};
 
-		return this.commsService.endpointGetCall('/api/v1/features', queryOptions).pipe(
-			map((response) => response['Results'])
-		);
+			this.articlesCache$ = this.commsService.endpointGetCall('/api/v1/features', queryOptions).pipe(
+				map((response) => response['Results']),
+				shareReplay(1)
+			);
+		}
+
+		return this.articlesCache$;
+
 	}
 
 	getArticle(id) {

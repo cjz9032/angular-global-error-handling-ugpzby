@@ -1,54 +1,5 @@
 @import "../../../styles/common-blocks";
 
-.article {
-	@extend %common-block-wrapper;
-	margin-top: -5.6rem;
-
-	&__title {
-		color: #34495E;
-		font-size: 3.5rem;
-		line-height: 4.2rem;
-	}
-
-	&__img {
-		margin: 4rem 0;
-	}
-
-	&__pitch {
-		margin-top: 4rem;
-	}
-}
-
-::ng-deep .article {
-	width: 100%;
-
-	p {
-		color: #647683;
-		font-size: 1.8rem;
-		font-weight: 300;
-		line-height: 2.2rem;
-		padding: 1rem 0;
-	}
-
-	h2 {
-		color: #647683;
-		font-size: 1.8rem;
-		font-weight: 500;
-		line-height: 2.2rem;
-		padding: 4rem 0 0 0;
-	}
-
-	img {
-		width: 100%;
-	}
-
-	li {
-		p {
-			padding: 0.4rem 0;
-		}
-	}
-}
-
 .article-recommendations {
 	margin-top: 5rem;
 	&__top {

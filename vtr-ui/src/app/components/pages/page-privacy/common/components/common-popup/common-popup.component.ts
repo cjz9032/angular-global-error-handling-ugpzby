@@ -63,6 +63,7 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
+		this.closePopup();
 	}
 
 	openPopup() { // not work now
