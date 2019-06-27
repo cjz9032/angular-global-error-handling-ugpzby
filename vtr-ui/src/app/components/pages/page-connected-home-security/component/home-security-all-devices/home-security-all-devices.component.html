@@ -1,4 +1,4 @@
-<div class="vtr-widget-home-security-all-devices container-fluid">
+<div class="vtr-home-security-all-devices container-fluid">
 	<div class="loading" *ngIf="!pluginAvailable || !account || !allDevicesInfo">
 		<div class="spinner-border text-primary progress-spinner" role="status">
 		</div>
@@ -18,7 +18,7 @@
 								vtrMetrics
 								metricsItem="manageAccountAllDevice"
 								metricsEvent="featureClick"
-								(click)="openCornet()">
+								(click)="common.openCornet()">
 								{{'homeSecurity.overview.manageAccount' | translate}}</a>
 						</div>
 					</div>
@@ -30,7 +30,7 @@
 								<img class="img-fluid circle" src="assets/images/connected-home-security/ecosystem-circle-red.svg" *ngIf="!allDevicesInfo.allDevicesStatus"/>
 								<img class="img-fluid circle" src="assets/images/connected-home-security/ecosystem-circle-green.svg" *ngIf="allDevicesInfo.allDevicesStatus"/>
 							</div>
-							<div class="device-number" [ngClass]="{'sizeChange': judgeDeviceNumber()}" *ngIf="allDevicesInfo.allDevicesNumber!==0">{{allDevicesInfo.allDevicesNumber}}</div>
+							<div class="device-number" [ngClass]="{'sizeChange': allDevicesInfo.allDevicesNumber > 9}" *ngIf="allDevicesInfo.allDevicesNumber!==0 && account && account.state">{{account.state | getDeviceNumber:allDevicesInfo.allDevicesNumber}}</div>
 						</div>
 
 						<div class="device-text-add-device col-md-8 col-8 row">
@@ -41,7 +41,7 @@
 									<span class="badge badge-pill badge-success" *ngIf="allDevicesInfo.allDevicesStatus">
 										{{'homeSecurity.overview.secure' | translate}}
 									</span>
-									<span class="badge badge-pill badge-danger" (click)="openCornet()" *ngIf="!allDevicesInfo.allDevicesStatus"
+									<span class="badge badge-pill badge-danger" (click)="common.openCornet()" *ngIf="!allDevicesInfo.allDevicesStatus"
 										id="chs-btn-ad-needAttention"
 										attr.aria-label="chs-btn-ad-needAttention"
 										vtrMetrics
@@ -57,7 +57,7 @@
 									vtrMetrics
 									metricsItem="seeProtectedDevicesAllDevice"
 									metricsEvent="featureClick"
-									(click)="openCornet()">{{'homeSecurity.overview.seeProtectedDevices' | translate}}</a>
+									(click)="common.openCornet()">{{'homeSecurity.overview.seeProtectedDevices' | translate}}</a>
 							</div>
 						</div>
 
@@ -68,7 +68,7 @@
 								vtrMetrics
 								metricsItem="addDeviceAllDevice"
 								metricsEvent="featureClick"
-								(click)="openCornet()"
+								(click)="common.openCornet()"
 								[title]="'homeSecurity.overview.addDevice' | translate"
 								[label]="'homeSecurity.overview.addDevice' | translate">
 							</vtr-ui-button>
@@ -87,7 +87,7 @@
 				vtrMetrics
 				metricsItem="upgradeAllDevice"
 				metricsEvent="featureClick"
-				(click)="openUpgrade()"
+				(click)="common.upgrade()"
 				[title]="'homeSecurity.overview.upgrade' | translate"
 				[label]="'homeSecurity.overview.upgrade' | translate">
 			</vtr-ui-button>
@@ -100,7 +100,7 @@
 				vtrMetrics
 				metricsItem="startTrialAllDevice"
 				metricsEvent="featureClick"
-				(click)="startTrial()"
+				(click)="common.startTrial()"
 				[label]="'homeSecurity.overview.startTrial' | translate">
 			</vtr-ui-button>
 		</div>
