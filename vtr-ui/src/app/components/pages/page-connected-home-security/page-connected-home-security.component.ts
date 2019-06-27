@@ -40,7 +40,6 @@ import { HomeSecurityNotifications } from 'src/app/data-models/home-security/hom
 })
 export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	pageStatus: HomeSecurityPageStatus;
-	eventEmitter = new EventEmitter();
 
 	connectedHomeSecurity: ConnectedHomeSecurity;
 	permission: any;
@@ -49,7 +48,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	homeSecurityOverviewMyDevice: HomeSecurityOverviewMyDevice;
 	notificationItems: HomeSecurityNotifications;
 	account: HomeSecurityAccount;
-	testStatus = ['lessDevices-secure', 'moreDevices-needAttention', 'noneDevices', 'trialExpired', 'lessDevices-needAttention', 'moreDevices-secure', 'localAccount'];
 	backId = 'chs-btn-back';
 
 	constructor(
@@ -60,7 +58,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private ngZone: NgZone,
 	) {
-		this.connectedHomeSecurity = homeSecurityMockService.getConnectedHomeSecurity();
+		this.connectedHomeSecurity = vantageShellService.getConnectedHomeSecurity();
 		this.permission = vantageShellService.getPermission();
 		this.welcomeModel = new HomeSecurityWelcome();
 	}
@@ -97,7 +95,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 		} else if (cacheMyDevice) {
 			this.homeSecurityOverviewMyDevice = cacheMyDevice;
 		}
-		if (this.connectedHomeSecurity && this.connectedHomeSecurity.overview && this.connectedHomeSecurity.overview.allDevices && this.connectedHomeSecurity.overview.allDevices.length > 0) {
+		if (this.connectedHomeSecurity && this.connectedHomeSecurity.overview && this.connectedHomeSecurity.overview.allDevices) {
 			this.allDevicesInfo = new HomeSecurityAllDevice(this.connectedHomeSecurity.overview);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
 		}
@@ -140,7 +138,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 					allDevice: this.account.allDevice,
 				});
 			}
-			if (chs.overview.allDevices && chs.overview.allDevices.length > 0) {
+			if (chs.overview.allDevices) {
 				this.allDevicesInfo = new HomeSecurityAllDevice(chs.overview);
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
 			}
@@ -220,22 +218,5 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 
 	onUpgradeAccount() {
 		this.connectedHomeSecurity.account.purchase();
-	}
-
-	haddleChange($event) {
-		if ($event === 'visitCornet') {
-			this.onManageAccount();
-		} else if ($event === 'upgrade') {
-			this.onUpgradeAccount();
-		} else if ($event === 'startTrial') {
-			this.onStartTrial();
-		}
-	}
-
-	public switchStatus() {
-		if (this.testStatus.length === 0) {
-			this.testStatus = ['loading', 'lessDevices-secure', 'moreDevices-needAttention', 'noneDevices', 'trialExpired', 'lessDevices-needAttention', 'moreDevices-secure', 'localAccount'];
-		}
-		this.eventEmitter.emit(this.testStatus.shift());
 	}
 }

@@ -34,14 +34,10 @@ export class ModalArticleDetailComponent implements OnInit {
 
 	ngOnInit() {
 		this.enterTime = new Date().getTime();
-		const queryOptions = {
-			'Lang': 'EN'
-		};
-
 		this.articleTitle = '';
 		this.articleImage = '';
 
-		this.cmsService.fetchCMSArticle(this.articleId, queryOptions).then(
+		this.cmsService.fetchCMSArticle(this.articleId).then(
 			(response: any) => {
 				if ('Results' in response) {
 					this.articleTitle = response.Results.Title;

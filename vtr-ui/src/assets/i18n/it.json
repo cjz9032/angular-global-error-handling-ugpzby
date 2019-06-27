@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Protezione abitazione connessa",
-        "notification":{
+        "notification": {
             "recent": "Notifiche di sicurezza recenti",
             "notifications": "Notifiche"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Proteggi l'ecosistema del dispositivo",
             "thisDevice": "Questo dispositivo",
@@ -1293,22 +1295,22 @@
             "startTrial": "Avvia versione di prova",
             "fullAccess": "Accesso completo",
             "renew": "Rinnova"
-		},
-		"overview": {
-			"overviewBlockTitle": "Panoramica sulla protezione dell'ecosistema",
-			"allDevices": "Tutti i dispositivi",
-			"myDevice": "Il mio dispositivo",
-			"secure": "SICURO",
-			"needAttention": "RICHIEDE ATTENZIONE",
-			"manageAccount": "Gestisci account",
-			"devices": "Dispositivi",
-			"seeProtectedDevices": "Visualizza dispositivi protetti",
-			"addDevice": "aggiungi dispositivo",
-			"trialExpired": "Versione di valutazione scaduta - Aggiorna per proteggere tutti i dispositivi",
-			"upgrade": "aggiorna",
-			"freeTrial": "Proteggi tutti i dispositivi - Versione di prova gratuita per 30 giorni",
-			"startTrial": "Avvia versione di prova"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Panoramica sulla protezione dell'ecosistema",
+            "allDevices": "Tutti i dispositivi",
+            "myDevice": "Il mio dispositivo",
+            "secure": "SICURO",
+            "needAttention": "RICHIEDE ATTENZIONE",
+            "manageAccount": "Gestisci account",
+            "devices": "Dispositivi",
+            "seeProtectedDevices": "Visualizza dispositivi protetti",
+            "addDevice": "aggiungi dispositivo",
+            "trialExpired": "Versione di valutazione scaduta - Aggiorna per proteggere tutti i dispositivi",
+            "upgrade": "aggiorna",
+            "freeTrial": "Proteggi tutti i dispositivi - Versione di prova gratuita per 30 giorni",
+            "startTrial": "Avvia versione di prova"
+        },
         "tour": {
             "back": "Indietro",
             "skip": "Ignora",

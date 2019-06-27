@@ -79,7 +79,7 @@
 		color: $dark;
 		padding: 0 3.7rem 0 7.2rem;
 		margin-right: 2rem;
-		height: 49rem;
+		height: 47rem;
 
 		img {
 			width: 100%;
@@ -207,7 +207,7 @@
 	}
 
 	.next-btn {
-		height: 5rem;
+		height: 9rem;
 	}
 
 	.vtr-progress-bar {
@@ -302,7 +302,7 @@
 		border: 2pt solid $go_dark;
 		//opacity: 0.7 !important;
 	}
-	div.radio-is-selected input[type="radio"]:not(:checked)+img{
+	div.radio-is-selected input[type="radio"]:not(:checked) + img {
 		opacity: 0.5 !important;
 	}
 

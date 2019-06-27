@@ -58,7 +58,7 @@
 					"macroKey": "Marco Key",
 					"hardwareScan": "Hardware Scan",
 					"systemUpdate": "System Update",
-					"header":"System Tools"
+					"header": "System Tools"
 				},
 				"lighting": {
 					"title": "Lighting Customize",
@@ -296,6 +296,9 @@
 				},
 				"text2": {
 					"title": "effect"
+				},
+				"text3": {
+					"title": "Effect"
 				}
 			},
 			"button": {
@@ -332,6 +335,9 @@
 				},
 				"Customize": {
 					"title": "Customize"
+				},
+				"heading": {
+					"title": "Select Profile:"
 				}
 			}
 		}
@@ -560,7 +566,7 @@
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
 				"updating": "Updating",
-				"thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+				"thresholdNote": "To extend the battery lifespan, you have set your battery to stop charging at",
 				"voltageError": "Battery voltage incorrect",
 				"batteryNotDetected": "No Battery Detected",
 				"details": {
@@ -1319,7 +1325,7 @@
 	},
 	"homeSecurity": {
 		"title": "Connected Home Security",
-		"notification":{
+		"notification": {
 			"recent": "Recent security notifications",
 			"notifications": "Notifications"
 		},

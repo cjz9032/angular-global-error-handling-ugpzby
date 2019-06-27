@@ -8,7 +8,9 @@ import {
 	DropDownInterval
 } from '../../../../data-models/common/drop-down-interval.model';
 
-import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
+import {
+	SmartAssistService
+} from 'src/app/services/smart-assist/smart-assist.service';
 
 
 @Component({
@@ -20,7 +22,10 @@ export class ActiveProtectionSystemComponent implements OnInit {
 	advanced: boolean; // for advanced section
 	apsStatus: boolean;
 	apsSensitivity: number;
-	repeatShock = true;
+	repeatShock: boolean;
+	manualSnooze: boolean;
+	manualSnoozeTime: number;
+	selectedSnoozeTime: number;
 	public intervals: DropDownInterval[];
 	// public taskBarDimmerValue: number;
 
@@ -31,19 +36,19 @@ export class ActiveProtectionSystemComponent implements OnInit {
 
 		this.intervals = [{
 				name: '30',
-				value: 1,
+				value: 0.5,
 				placeholder: seconds,
 				text: `30 ${seconds}`
 			},
 			{
 				name: '1',
-				value: 2,
+				value: 1,
 				placeholder: minute,
 				text: `1 ${minute}`
 			},
 			{
 				name: '2',
-				value: 3,
+				value: 2,
 				placeholder: minutes,
 				text: `2 ${minutes}`
 			},
@@ -89,10 +94,26 @@ export class ActiveProtectionSystemComponent implements OnInit {
 					}
 				}
 			});
+		this.smartAssist
+			.getAutoDisableSetting()
+			.then(res => this.repeatShock = res);
+		this.smartAssist
+			.getSnoozeSetting()
+			.then(res => this.manualSnooze = res);
+		this.smartAssist
+			.getSnoozeTime()
+			.then(res => { console.log('SNOOZE', res); this.manualSnoozeTime = +res; });
+	}
+
+	setAPSMode(event) {
+		const value = !this.apsStatus;
+		this.smartAssist
+			.setAPSMode(value)
+			.then(res => console.log('APS SET', res));
 	}
 
 	setAPSSensitivityLevel(event) {
-		let value;
+		let value: number;
 		switch (event.value) {
 			case 0: {
 				value = 2;
@@ -109,10 +130,48 @@ export class ActiveProtectionSystemComponent implements OnInit {
 		}
 		this.smartAssist
 			.setAPSSensitivityLevel(value)
-			.then(res => console.log('APS SET', res));
+			.then(res => console.log('APS SENSITIVITY SET', res));
 	}
 
-	setRepetitiveShock(event) {
-		console.log(event);
+	setAutoDisableSetting(event) {
+		const value = !this.repeatShock;
+		this.smartAssist
+			.setAutoDisableSetting(value)
+			.then(res => console.log('AUTO DISABLE SET', res));
+	}
+
+	setSnoozeSetting(event) {
+		const value = !this.manualSnooze;
+		this.smartAssist
+			.setSnoozeSetting(value)
+			.then(res => console.log('Snooze Set', res));
+	}
+
+	setSnoozeTime(event: DropDownInterval) {
+		this.selectedSnoozeTime = event.value;
+		this.smartAssist
+			.setSnoozeTime(event.value.toString())
+			.then(res => console.log(res));
+	}
+
+	suspendNow() {
+		let timeInSec;
+		switch(this.selectedSnoozeTime) {
+			case 0.5:
+				timeInSec = '30';
+				break;
+			case 1:
+				timeInSec = '60';
+				break;
+			case 1:
+				timeInSec = '120';
+				break;
+			case 3:
+				timeInSec = '180';
+				break;
+		}
+		this.smartAssist
+			.sendSnoozeCommand(timeInSec)
+			.then(res => console.log('Snooze Command Send', res));
 	}
 }

@@ -46,6 +46,7 @@ export class SystemUpdateService {
 	public downloadingPercent = 0;
 	public isInstallationCompleted = false;
 	public isInstallationSuccess = false;
+	public isDownloadingCancel = false;
 	/**
 	 * gets data about last scan, install & schedule scan date-time for Check for Update section
 	 */
@@ -218,10 +219,12 @@ export class SystemUpdateService {
 		} else if (status === 'idle') {
 			this.isUpdateDownloading = false;
 			if (response.updateTaskList && response.updateTaskList.length > 0) {
-				this.isInstallationCompleted = true;
-				this.updateInfo = this.mapScheduleInstallResponse(response.updateTaskList);
-				this.isInstallationSuccess = this.updateInfo.status === SystemUpdateStatusMessage.SUCCESS.code;
-				this.commonService.sendNotification(UpdateProgress.ScheduleUpdateCheckComplete, this.updateInfo);
+				if (!this.isDownloadingCancel) {
+					this.isInstallationCompleted = true;
+					this.updateInfo = this.mapScheduleInstallResponse(response.updateTaskList);
+					this.isInstallationSuccess = this.updateInfo.status === SystemUpdateStatusMessage.SUCCESS.code;
+					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateCheckComplete, this.updateInfo);
+				}
 			} else {
 				this.commonService.sendNotification(UpdateProgress.ScheduleUpdateIdle, response);
 			}
@@ -309,8 +312,7 @@ export class SystemUpdateService {
 			const result = ignoredUpdates.find(x => x.packageName === update.packageName);
 			if (result && update.packageSeverity !== UpdateInstallSeverity.Critical) {
 				update.isIgnored = true;
-			}
-			else {
+			} else {
 				update.isIgnored = false;
 			}
 		});
@@ -460,18 +462,24 @@ export class SystemUpdateService {
 	}
 
 	private installUpdates(updates: Array<InstallUpdate>, isInstallingAllUpdates: boolean) {
-		if(updates.length == 0) {
+		if (updates.length === 0) {
 			const payload = new AvailableUpdate();
 			payload.status = 20;
 			payload.updateList = this.ignoredRebootDelayUpdates;
-			this.isInstallationCompleted = true;
-			this.commonService.sendNotification(UpdateProgress.InstallationComplete, payload);
+			if (!this.isDownloadingCancel) {
+				this.isInstallationCompleted = true;
+				this.commonService.sendNotification(UpdateProgress.InstallationComplete, payload);
+			} else {
+				this.isInstallationCompleted = false;
+			}
 			return;
 		}
 		// VAN-2798 immediately show progress bar
-		this.isUpdateDownloading = true;
-		this.installationPercent = 0;
-		this.downloadingPercent = 0;
+		if (!this.isDownloadingCancel) {
+			this.isUpdateDownloading = true;
+			this.installationPercent = 0;
+			this.downloadingPercent = 0;
+		}
 		this.commonService.sendNotification(UpdateProgress.InstallingUpdate, { downloadPercentage: 0, installPercentage: 0 });
 
 		this.systemUpdateBridge.installUpdates(updates, (progress: any) => {
@@ -484,19 +492,24 @@ export class SystemUpdateService {
 			console.log('installUpdates response', response);
 			if (response && response.updateResultList && response.updateResultList.length > 0) {
 				this.isUpdateDownloading = false;
-				this.isInstallationCompleted = true;
-				this.downloadingPercent = 100;
-				this.installationPercent = 100;
-				this.mapInstallationStatus(this.updateInfo.updateList, response.updateResultList, isInstallingAllUpdates);
-				const payload = new AvailableUpdate();
-				payload.status = parseInt(response.status, 10);
-				payload.updateList = this.installedUpdates;
-				if(this.ignoredRebootDelayUpdates) {
-					this.ignoredRebootDelayUpdates.forEach(
-						(rebootDelayUpdate) => payload.updateList.push(rebootDelayUpdate));
+				if (!this.isDownloadingCancel) {
+					this.isInstallationCompleted = true;
+					this.downloadingPercent = 100;
+					this.installationPercent = 100;
+					this.mapInstallationStatus(this.updateInfo.updateList, response.updateResultList, isInstallingAllUpdates);
+					const payload = new AvailableUpdate();
+					payload.status = parseInt(response.status, 10);
+					payload.updateList = this.installedUpdates;
+					if (this.ignoredRebootDelayUpdates) {
+						this.ignoredRebootDelayUpdates.forEach(
+							(rebootDelayUpdate) => payload.updateList.push(rebootDelayUpdate));
+					}
+					this.isInstallationSuccess = this.getInstallationSuccess(payload);
+					this.commonService.sendNotification(UpdateProgress.InstallationComplete, payload);
+				} else {
+					this.isInstallationCompleted = false;
+					return;
 				}
-				this.isInstallationSuccess = this.getInstallationSuccess(payload);
-				this.commonService.sendNotification(UpdateProgress.InstallationComplete, payload);
 			} else {
 				// VAN-3314, sometimes, the install complete response will contains empty UpdateTaskList
 				this.getScheduleUpdateStatus(true);
@@ -649,11 +662,13 @@ export class SystemUpdateService {
 			this.systemUpdateBridge.cancelDownload()
 				.then((status: boolean) => {
 					this.isUpdateDownloading = false;
-					// this.isInstallingAllUpdates = true;
 					this.percentCompleted = 0;
 					this.isUpdatesAvailable = true;
 					this.installationPercent = 0;
 					this.downloadingPercent = 0;
+					this.isInstallationCompleted = false;
+					this.isDownloadingCancel = true;
+					this.isInstallingAllUpdates = true;
 					this.commonService.sendNotification(UpdateProgress.UpdateDownloadCancelled, status);
 				})
 				.catch((error) => {

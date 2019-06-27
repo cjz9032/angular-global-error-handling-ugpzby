@@ -4,7 +4,7 @@
 		</div>
 	</div>
 	<div class="row content" [ngClass]="{'show-overlay':account.state === 'trialExpired' || account.state === 'local'}" *ngIf="pluginAvailable">
-			<div class="col-4 icon-container">
+			<div class="col-lg-4 col-12 icon-container container-fluid ">
 				<div class="row">
 					<div class="icon col-4">
 						<fa-icon [icon]="['fal', 'home-lg-alt']"></fa-icon>
@@ -24,54 +24,58 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-5 device-info">
-				<div class="row">
-					<div class="col-5 number-container">
-						<div class="icon">
-							<img class="img-fluid circle" src="assets/images/connected-home-security/ecosystem-circle-red.svg" *ngIf="!allDevicesInfo.allDevicesStatus"/>
-							<img class="img-fluid circle" src="assets/images/connected-home-security/ecosystem-circle-green.svg" *ngIf="allDevicesInfo.allDevicesStatus"/>
+			<div class="device-info-and-add-device device-info col-lg-8 col-12 row">
+						<div class="col-md-4 col-4 number-container">
+							<div class="icon">
+								<img class="img-fluid circle" src="assets/images/connected-home-security/ecosystem-circle-red.svg" *ngIf="!allDevicesInfo.allDevicesStatus"/>
+								<img class="img-fluid circle" src="assets/images/connected-home-security/ecosystem-circle-green.svg" *ngIf="allDevicesInfo.allDevicesStatus"/>
+							</div>
+							<div class="device-number" [ngClass]="{'sizeChange': judgeDeviceNumber()}" *ngIf="allDevicesInfo.allDevicesNumber!==0">{{allDevicesInfo.allDevicesNumber}}</div>
 						</div>
-						<div class="device-number" [ngClass]="{'sizeChange': judgeDeviceNumber()}" *ngIf="allDevicesInfo.allDevicesNumber!==0">{{allDevicesInfo.allDevicesNumber}}</div>
-					</div>
-					<div class="col-7 text" >
-						<div class="device-text text-uppercase">{{'homeSecurity.overview.devices' | translate}}</div>
-						<div class="status">
-							<h3 style="margin-bottom: 0rem" *ngIf="showBadge()">
-								<span class="badge badge-pill badge-success" *ngIf="allDevicesInfo.allDevicesStatus">
-									{{'homeSecurity.overview.secure' | translate}}
-								</span>
-								<span class="badge badge-pill badge-danger" (click)="openCornet()" *ngIf="!allDevicesInfo.allDevicesStatus"
-									id="chs-btn-ad-needAttention"
-									attr.aria-label="chs-btn-ad-needAttention"
+
+						<div class="device-text-add-device col-md-8 col-8 row">
+						<div class="col-md-6 col-12 text" >
+							<div class="device-text text-uppercase">{{'homeSecurity.overview.devices' | translate}}</div>
+							<div class="status">
+								<h3 *ngIf="account && allDevicesInfo && (allDevicesInfo.allDevicesNumber !== 0 || this.account.state === 'trialExpired' || this.account.state === 'local')">
+									<span class="badge badge-pill badge-success" *ngIf="allDevicesInfo.allDevicesStatus">
+										{{'homeSecurity.overview.secure' | translate}}
+									</span>
+									<span class="badge badge-pill badge-danger" (click)="openCornet()" *ngIf="!allDevicesInfo.allDevicesStatus"
+										id="chs-btn-ad-needAttention"
+										attr.aria-label="chs-btn-ad-needAttention"
+										vtrMetrics
+										metricsItem="needAttentionAllDevice"
+										metricsEvent="featureClick">
+										{{'homeSecurity.overview.needAttention' | translate}}</span>
+								</h3>
+							</div>
+							<div class="protected-device">
+								<a  target="_blank" href="javascript:void(0)"
+									id="chs-lnk-ad-seeProtectedDevices"
+									aria-label="chs-lnk-ad-seeProtectedDevices"
 									vtrMetrics
-									metricsItem="needAttentionAllDevice"
-									metricsEvent="featureClick">
-									{{'homeSecurity.overview.needAttention' | translate}}</span>
-							</h3>
+									metricsItem="seeProtectedDevicesAllDevice"
+									metricsEvent="featureClick"
+									(click)="openCornet()">{{'homeSecurity.overview.seeProtectedDevices' | translate}}</a>
+							</div>
 						</div>
-						<div class="protected-device">
-							<a  target="_blank" href="javascript:void(0)"
-								id="chs-lnk-ad-seeProtectedDevices"
-								attr.aria-label="chs-lnk-ad-seeProtectedDevices"
+
+						<div class="col-md-6 col-12 add-device">
+							<vtr-ui-button
+								id="chs-btnlnk-ad-addDevice"
+								attr.aria-label="chs-btn-ad-addDevice"
 								vtrMetrics
-								metricsItem="seeProtectedDevicesAllDevice"
+								metricsItem="addDeviceAllDevice"
 								metricsEvent="featureClick"
-								(click)="openCornet()">{{'homeSecurity.overview.seeProtectedDevices' | translate}}</a>
+								(click)="openCornet()"
+								[title]="'homeSecurity.overview.addDevice' | translate"
+								[label]="'homeSecurity.overview.addDevice' | translate">
+							</vtr-ui-button>
 						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-3 add-device">
-				<vtr-ui-button
-					id="chs-btnlnk-ad-addDevice"
-					aria-label="chs-btn-ad-addDevice"
-					vtrMetrics
-					metricsItem="addDeviceAllDevice"
-					metricsEvent="featureClick"
-					(click)="openCornet()"
-					[title]="'homeSecurity.overview.addDevice' | translate"
-					[label]="'homeSecurity.overview.addDevice' | translate">
-				</vtr-ui-button>
+
+						</div>
+
 			</div>
 	</div>
 	<div class="row overlay" *ngIf="pluginAvailable && account">

@@ -3,7 +3,9 @@
 		<div class="icon">
 			<img class="img-fluid" src="assets/images/device.png" />
 		</div>
+		<div class="sub-text-device-status">
 		<div class="sub-text">
+			<div class="row sub-title">{{'homeSecurity.overview.myDevice' | translate}}</div>
 			<span title="{{homeSecurityOverviewMyDevice.deviceName}}" *ngIf="homeSecurityOverviewMyDevice && homeSecurityOverviewMyDevice.deviceName"> {{homeSecurityOverviewMyDevice.deviceName | characterLimit:20}} </span>
 			<div class="loading" *ngIf="!homeSecurityOverviewMyDevice || !homeSecurityOverviewMyDevice.deviceName">
 				<div class="spinner-border text-primary progress-spinner" role="status">
@@ -21,13 +23,48 @@
 			</h3>
 		</div>
 	</div>
-	<div class="device-status-container">
+	<div class="icon-collapse">
+			<div class="d-flex" vtrMetrics
+				metricsItem="collapseDevicePostures"
+				metricsEvent="featureClick"
+				data-toggle="collapse"
+				data-target="#device-posture-expands"
+				id="chs-btn-posture-expands"
+				aria-label="chs-btn-posture-expands"
+				aria-expanded="true"
+				aria-controls="device-posture-expands"
+				*ngIf="isShowPosture===true"
+				(click)="isShowPosture=false">
+				<fa-icon
+					[icon]="['fal', 'chevron-up']"
+					class="pl-3">
+				</fa-icon>
+			</div>
+			<div class="d-flex" vtrMetrics
+				metricsItem="expandDevicePostures"
+				metricsEvent="featureClick"
+				data-toggle="collapse"
+				data-target="#device-posture-collapse"
+				id="chs-btn-posture-collapse"
+				aria-label="chs-btn-posture-collapse"
+				aria-expanded="false"
+				aria-controls="device-posture-collapse"
+				*ngIf="isShowPosture===false"
+				(click)="isShowPosture=true">
+					<fa-icon
+						[icon]="['fal', 'chevron-down']"
+						class="pl-3">
+					</fa-icon>
+			</div>
+	</div>
+	</div>
+	<div class="device-status-container" [ngClass]="{'show':!isShowPosture}">
 		<div class="loading" *ngIf="!homeSecurityOverviewMyDevice || !homeSecurityOverviewMyDevice.devicePostures">
 			<div class="spinner-border text-primary progress-spinner" role="status">
 			</div>
 		</div>
 		<div class="row" *ngIf="homeSecurityOverviewMyDevice && homeSecurityOverviewMyDevice.devicePostures">
-			<div class="col-6 device-info" *ngFor="let device of homeSecurityOverviewMyDevice.devicePostures">
+			<div class=" col-12 col-lg-6 device-info" *ngFor="let device of homeSecurityOverviewMyDevice.devicePostures">
 				<div class="row">
 					<div class="col-7 title" title="{{device.name}}">{{ device.name }}</div>
 					<div class="col-3 detail bad" *ngIf="device.vulnerable === true">

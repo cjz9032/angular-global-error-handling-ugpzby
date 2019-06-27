@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -1228,7 +1230,7 @@
             "attend": "Zúčastnit se",
             "rebootRequiredTag": "Je nutno restartovat počítač",
             "rebootDelayTag": "Je vyžadováno restart počítače, zdroj napájení je nutný",
-            "shutdownRequiredTag": "Je nutno provést restart",
+            "shutdownRequiredTag": "Je vyžadováno vypnutí",
             "dependedPackage": "Závislý balíček"
         },
         "availableUpdates": {
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Zabezpečení připojené domácnosti",
-        "notification":{
+        "notification": {
             "recent": "Nedávná bezpečnostní oznámení",
             "notifications": "Upozornění"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Chraňte ekosystém svých zařízení",
             "thisDevice": "Toto zařízení",
@@ -1284,7 +1286,7 @@
             "protected": "Chráněno",
             "notProtected": "Nechráněno",
             "trialExpired": "Platnost zkušební verze vypršela",
-			"upgrade": "upgrade",
+            "upgrade": "upgrade",
             "inEcosystem": "V ekosystému",
             "ecosystemEnable": "Ekosystém povolen",
             "inTrial": "Zkušební",
@@ -1292,23 +1294,23 @@
             "enableEcosystem": "Povolit ekosystém",
             "startTrial": "Spustit zkušební verzi",
             "fullAccess": "Plný přístup",
-			"renew": "Obnovit"
-		},
-		"overview": {
-			"overviewBlockTitle": "Přehled zabezpečení ekosystému",
-			"allDevices": "Všechna zařízení",
-			"myDevice": "Mé zařízení",
-			"secure": "ZABEZPEČIT",
-			"needAttention": "VYŽADUJE POZORNOST",
-			"manageAccount": "Správa účtu",
-			"devices": "Zařízení",
-			"seeProtectedDevices": "Zobrazit chráněná zařízení",
-			"addDevice": "přidat zařízení",
-			"trialExpired": "Platnost zkušební verze vypršela - Upgrade na ochranu všech zařízení",
-			"upgrade": "upgrade",
-			"freeTrial": "Ochrana všech zařízení - Bezplatná 30denní zkušební verze",
-			"startTrial": "Spustit zkušební verzi"
-		},
+            "renew": "Obnovit"
+        },
+        "overview": {
+            "overviewBlockTitle": "Přehled zabezpečení ekosystému",
+            "allDevices": "Všechna zařízení",
+            "myDevice": "Mé zařízení",
+            "secure": "ZABEZPEČIT",
+            "needAttention": "VYŽADUJE POZORNOST",
+            "manageAccount": "Správa účtu",
+            "devices": "Zařízení",
+            "seeProtectedDevices": "Zobrazit chráněná zařízení",
+            "addDevice": "přidat zařízení",
+            "trialExpired": "Platnost zkušební verze vypršela - Upgrade na ochranu všech zařízení",
+            "upgrade": "upgrade",
+            "freeTrial": "Ochrana všech zařízení - Bezplatná 30denní zkušební verze",
+            "startTrial": "Spustit zkušební verzi"
+        },
         "tour": {
             "back": "Zpět",
             "skip": "Přeskočit",
