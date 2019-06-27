@@ -35,11 +35,3 @@
 	cursor: pointer;
   }
 }
-
-.all-articles-link {
-  @extend %button-link__text;
-  color: #4A81FD;
-  text-transform: uppercase;
-  display: inline-block;
-  float: right;
-}

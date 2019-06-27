@@ -42,6 +42,7 @@ import { OneClickScanModule } from './feature/one-click-scan/one-click-scan.modu
 import { PrivacyScoreComponent } from './pages/result/privacy-score/privacy-score.component';
 import { BrowserAccountHeaderComponent } from './pages/browser-accounts/browser-account-header/browser-account-header.component';
 import { CommunicationWithFigleafService } from './utils/communication-with-figleaf/communication-with-figleaf.service';
+import { ArticleDescriptionComponent } from './pages/articles/article-description/article-description.component';
 
 library.add(fal);
 
@@ -79,6 +80,7 @@ library.add(fal);
 		ArticlePreviewComponent,
 		ArticleSidebarComponent,
 		BrowserAccountHeaderComponent,
+		ArticleDescriptionComponent,
 	],
 	providers: [
 		{

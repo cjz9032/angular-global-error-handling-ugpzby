@@ -1,6 +1,5 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ArticlesService } from '../articles.service';
-import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { RoutersName } from '../../../privacy-routing-name';
@@ -10,8 +9,8 @@ import { RoutersName } from '../../../privacy-routing-name';
 	templateUrl: './article-single.component.html',
 	styleUrls: ['./article-single.component.scss']
 })
-export class ArticleSingleComponent implements OnInit, AfterViewInit {
-	@ViewChild('innerHTML') articleInner: ElementRef;
+export class ArticleSingleComponent implements OnInit {
+	@Input() article;
 
 	article$ = this.route.queryParams.pipe(
 		switchMap((params) => this.articlesService.getArticle(params.articleId)),
@@ -23,7 +22,6 @@ export class ArticleSingleComponent implements OnInit, AfterViewInit {
 	);
 
 	constructor(
-		private vantageCommunicationService: VantageCommunicationService,
 		private route: ActivatedRoute,
 		private articlesService: ArticlesService,
 		private router: Router
@@ -31,16 +29,6 @@ export class ArticleSingleComponent implements OnInit, AfterViewInit {
 	}
 
 	ngOnInit() {
-	}
-
-	ngAfterViewInit() {
-		const thisElement = this.articleInner.nativeElement;
-		thisElement.addEventListener('click', (event) => {
-			if (event.target.tagName.toLowerCase() === 'a') {
-				this.vantageCommunicationService.openUri(event.target.href);
-			}
-			event.preventDefault();
-		});
 	}
 
 	openArticle(articleId) {

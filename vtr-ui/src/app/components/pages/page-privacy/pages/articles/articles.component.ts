@@ -9,8 +9,6 @@ import { RoutersName } from '../../privacy-routing-name';
 	styleUrls: ['./articles.component.scss']
 })
 export class ArticlesComponent {
-
-	articles = this.articlesService.articles;
 	articles$ = this.articlesService.getListOfArticles();
 
 	constructor(

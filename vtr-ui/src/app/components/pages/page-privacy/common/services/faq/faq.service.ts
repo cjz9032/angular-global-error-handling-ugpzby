@@ -214,7 +214,7 @@ export class FaqService {
 			questions: this.questionCategories.dataBreaches
 		},
 		landing: {
-			visible: false,
+			visible: true,
 			questions: this.questionCategories.dataBreaches
 		},
 		privacy: {

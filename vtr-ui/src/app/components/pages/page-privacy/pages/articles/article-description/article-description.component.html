@@ -1,0 +1,8 @@
+<div class="article">
+	<h1 class="article__title">{{article?.Title}}</h1>
+	<img class="article__img" src="{{article?.Image}}" alt="{{article?.Title}}">
+	<div #innerHTML [innerHTML]="article?.Body"></div>
+	<div class="article__pitch">
+		<vtr-big-pitch></vtr-big-pitch>
+	</div>
+</div>
