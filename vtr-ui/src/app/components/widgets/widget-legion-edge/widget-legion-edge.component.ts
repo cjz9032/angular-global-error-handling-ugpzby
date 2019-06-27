@@ -107,7 +107,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			tooltipText: '',
 			readonly: true,
 			type: 'gaming.dashboard.device.legionEdge.networkBoost',
-			routerLink: '/networkboost'
+			routerLink: '/networkboost',
+			canNavigate: true
 		},
 		{
 			readMoreText: '',
@@ -205,9 +206,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.gamingCapabilities.networkBoostFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.networkBoostFeature
 		);
-		this.gamingCapabilities.hybridStatus = this.gamingCapabilityService.getCapabilityFromCache(
-			LocalStorageKey.HybridModeStatus
-		);
 		this.gamingCapabilities.touchpadLockFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.touchpadLockFeature
 		);
@@ -240,7 +238,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.legionUpdate[0].isVisible = gamingStatus.cpuOCFeature;
 		this.legionUpdate[1].isVisible = gamingStatus.memOCFeature;
 		// TBD add autoclose later at index 2
-		this.legionUpdate[3].isVisible = gamingStatus.networkBoostFeature;
+		// TODO have to remove this || condition and line no 242.
+		this.legionUpdate[3].isVisible = gamingStatus.networkBoostFeature || true;
 		console.log('aparna  driver lack ' + gamingStatus.networkBoostFeature);
 		this.legionUpdate[4].isVisible = gamingStatus.hybridModeFeature;
 		this.legionUpdate[4].isChecked = gamingStatus.hybridStatus;
@@ -320,7 +319,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		}
 	}
 
-	onOptionSelected(event) {
+	onOptionSelected(event: any) {
 		if (event.target.name === 'gaming.dashboard.device.legionEdge.title') {
 			if (this.setCpuOCStatus === undefined) {
 				this.setCpuOCStatus = new CPUOCStatus();
@@ -359,25 +358,15 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		}
 		// });
 	}
-	
+
 	public renderHybridModeStatus() {
 		this.gamingHybridModeService.getHybridModeStatus().then((hybridModeStatus) => {
 			if (hybridModeStatus !== undefined) {
 				this.HybrimodeStatusObj.hybridModeStatus = hybridModeStatus;
-				this.SetHybridModeCacheStatus(hybridModeStatus);
 				this.legionUpdate[4].isChecked = hybridModeStatus;
 			}
 		});
 	}
-
-	public GetHybridModeCacheStatus() {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.HybridModeStatus);
-	}
-
-	public SetHybridModeCacheStatus(hybridModeStatus: Boolean) {
-		return this.commonService.setLocalStorageValue(LocalStorageKey.HybridModeStatus, hybridModeStatus);
-	}
-
 	public renderTouchpadLockStatus() {
 		// value from cache
 		if (this.commonService !== undefined) {
@@ -486,5 +475,19 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			}
 			await this.setNetworkBoostStatus($event.switchValue);
 		}
+	}
+
+	onIconClick(event: any) {
+		event = event || {name: ''};
+		const {name} = event;
+		this.legionUpdate[3].isDriverPopup = false;
+		if (name === 'gaming.dashboard.device.legionEdge.networkBoost') {
+			this.gamingCapabilities.fbNetFilter = !!this.gamingCapabilities.fbNetFilter;
+			if (!this.gamingCapabilities.fbNetFilter) {
+				console.log('-----------------------<><>', name, this.legionUpdate[3].isDriverPopup);
+				this.legionUpdate[3].isDriverPopup = true;
+			}
+		}
+
 	}
 }

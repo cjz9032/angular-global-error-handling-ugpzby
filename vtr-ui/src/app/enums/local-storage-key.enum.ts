@@ -37,7 +37,6 @@ export enum LocalStorageKey {
 	LidFirstSignInDate = '[LocalStorageKey] LidFirstSignInDate',
 	LidHasCreateStarterAccount = '[LocalStorageKey] LidHasCreateStarterAccount',
 	CpuOCStatus = '[LocalStorageKey] CpuOCStatus',
-	RamOcStatus = '[LocalStorageKey] RamOcStatus',
 	CurrentThermalModeStatus = '[LocalStorageKey] CurrentThermalModeStatus',
 	CurrentThermalModeFeature = '[LocalStorageKey] CurrentThermalModeFeature',
 	PrevThermalModeStatus = '[LocalStorageKey] PrevThermalModeStatus',
@@ -56,7 +55,6 @@ export enum LocalStorageKey {
 	 * 3 means "thinkCenter"
 	 */
 	MachineType = '[LocalStorageKey] MachineType',
-	HybridModeStatus = '[LocalStorageKey] HybridModeStatus',
 	TouchpadLockStatus = '[LocalStorageKey] TouchpadLockStatus',
 	DolbyModeCache = '[LocalStorageKey] DolbyModeCache',
 	RapidChargeCache = '[LocalStorageKey] RapidChargeCache',
