@@ -4,6 +4,7 @@ import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { AnalyticsService } from '../../services/analytics.service';
 import { GetParentForAnalyticsService } from '../../services/get-parent-for-analytics.service';
+import { RouterChangeHandlerService } from '../../services/router-change-handler.service';
 
 @Component({
 	selector: 'vtr-common-popup',
@@ -39,6 +40,7 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 	constructor(
 		private commonPopupService: CommonPopupService,
 		private getParentForAnalyticsService: GetParentForAnalyticsService,
+		private routerChangeHandlerService: RouterChangeHandlerService,
 		private analyticsService: AnalyticsService) {
 	}
 
@@ -60,6 +62,9 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 				this.isOpen = isOpenState;
 			});
 
+		this.routerChangeHandlerService.onChange$
+			.pipe(takeUntil(instanceDestroyed(this)))
+			.subscribe(() => this.closePopup());
 	}
 
 	ngOnDestroy() {

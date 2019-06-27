@@ -1,5 +1,10 @@
 @import "../../../styles/common-blocks";
 
+.article {
+	@extend %common-block-wrapper;
+	margin-top: -5.6rem;
+}
+
 .article-recommendations {
 	margin-top: 5rem;
 	&__top {
@@ -14,6 +19,7 @@
 	}
 	&__read-more {
 		@extend %button-link__text;
+		font-size: 1.3rem;
 		text-transform: uppercase;
 		color: #4A81FD;
 	}

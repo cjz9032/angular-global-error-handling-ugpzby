@@ -49,7 +49,7 @@ export class ArticlesService {
 			visible: true,
 		},
 		[RoutersName.LANDING]: {
-			visible: true,
+			visible: false,
 		},
 		[RoutersName.PRIVACY]: {
 			visible: true,

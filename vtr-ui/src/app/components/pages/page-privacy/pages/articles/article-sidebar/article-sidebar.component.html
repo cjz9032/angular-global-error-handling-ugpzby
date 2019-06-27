@@ -9,10 +9,13 @@
 </div>
 <vtr-common-popup [popUpId]="articlePopupId" size="large">
 	<ng-template>
-		<vtr-article-description [article]="article"></vtr-article-description>
-
-		<a class="all-articles-link" routerLink="/privacy/articles" (click)="closeArticlePopup()">see all articles</a>
+		<ng-container *ngIf="article">
+			<vtr-article-description [article]="article"></vtr-article-description>
+			<a class="all-articles-link" routerLink="/privacy/articles">see all articles</a>
+		</ng-container>
+		<ng-container *ngIf="!article">
+			<vtr-spinner></vtr-spinner>
+		</ng-container>
 	</ng-template>
-
 </vtr-common-popup>
 

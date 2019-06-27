@@ -23,3 +23,13 @@
 		text-transform: uppercase;
 	}
 }
+
+.all-articles-link {
+	@extend %button-link__text;
+	margin-top: 4rem;
+	font-size: 1.3rem;
+	text-transform: uppercase;
+	display: inline-block;
+	float: right;
+	color: #4A81FD;
+}

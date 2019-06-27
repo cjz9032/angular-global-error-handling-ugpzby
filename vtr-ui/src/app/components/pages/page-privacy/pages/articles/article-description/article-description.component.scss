@@ -1,9 +1,6 @@
 @import "../../../styles/common-blocks";
 
 .article {
-	@extend %common-block-wrapper;
-	margin-top: -5.6rem;
-
 	&__title {
 		color: #34495E;
 		font-size: 3.5rem;
