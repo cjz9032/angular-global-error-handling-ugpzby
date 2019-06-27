@@ -142,7 +142,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		this.initialiseRapidChargeCache();
 		this.getDolbySettings();
 		this.initialiseRapidChargeSettings();
-
 		this.gamingCapabilities.smartFanFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.smartFanFeature);
 
@@ -153,18 +152,10 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			this.quickSettings[0].isVisible = false;
 		}
 
-		if (!this.gamingSettings.rapidChargeFeature) {
-			this.quickSettings[1].isVisible = false;
-		}
-
 		if (!this.gamingSettings.winKeyLockFeature) {
 			this.quickSettings[2].isVisible = false;
 		}
-
-		if (!this.gamingSettings.dolbySoundFeature) {
-			this.quickSettings[3].isVisible = false;
-		}
-
+		this.checkQuickSettingsVisibility();
 		// Initialize Quicksetting;
 		this.quicksettingListInit();
 		this.commonService.notification.subscribe((response) => {
@@ -327,6 +318,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			const dolbySettings = await this.audioService.getDolbyFeatureStatus();
 			this.quickSettings[3].isVisible = dolbySettings.available;
 			this.quickSettings[3].isChecked = dolbySettings.status;
+			this.commonService.setLocalStorageValue(LocalStorageKey.DolbyModeCache, dolbySettings);
+
 		} catch (err) {
 			console.log(`ERROR in getDolbySettings()`, err);
 		} finally {
@@ -350,6 +343,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	public initialiseDolbyCache() {
 		try {
 			const { available, status } = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyModeCache, { available: false, status: false });
+			console.log(available,'=====================<>DOLBY', status);
 			this.quickSettings[3].isVisible = available;
 			this.quickSettings[3].isChecked = status;
 		} catch (err) {
