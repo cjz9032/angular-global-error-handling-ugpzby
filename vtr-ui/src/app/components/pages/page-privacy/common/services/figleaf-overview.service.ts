@@ -62,8 +62,7 @@ export class FigleafOverviewService implements OnDestroy {
 				),
 				takeUntil(instanceDestroyed(this)),
 			)
-			.subscribe((response) => {
-				const [settings, dashboard, status] = response;
+			.subscribe(([settings, dashboard, status]) => {
 				this.figleafSettings$.next(settings.payload);
 				this.figleafDashboard$.next(dashboard.payload);
 				this.figleafStatus$.next(status.payload);
