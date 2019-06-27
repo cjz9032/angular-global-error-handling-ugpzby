@@ -720,7 +720,7 @@
 						"apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
 						"options": {
 							"quiteCool3": "Cool & Quiet",
-							"performance3": "High Performance",
+							"performance3": "Performance",
 							"quiteCool4": "Cool & Quiet",
 							"performance4": "Performance",
 							"quiteCool5": "Cool & Quiet",
