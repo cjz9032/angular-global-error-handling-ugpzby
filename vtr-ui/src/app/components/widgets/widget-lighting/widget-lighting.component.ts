@@ -43,7 +43,7 @@ export class WidgetLightingComponent implements OnInit {
 
 		this.ledSetFeature = this.commonService.getLocalStorageValue(LocalStorageKey.ledSetFeature);
 		this.ledDriver = this.commonService.getLocalStorageValue(LocalStorageKey.ledDriver);
-        console.log('ledSetFeature-----'+this.ledSetFeature +'--------ledDriver--------'+ this.ledDriver );
+       // console.log('ledSetFeature-----'+this.ledSetFeature +'--------ledDriver--------'+ this.ledDriver );
 		//this.ledSetFeature = true;
 		//this.ledDriver = false;
 
@@ -72,10 +72,14 @@ export class WidgetLightingComponent implements OnInit {
 					console.log('getLightingProfileId------------response---------------->',
 						JSON.stringify(response));
 					if (!this.didSuccess) {
+						if (LocalStorageKey.ProfileId !== undefined) {
 						this.setprofId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId) || 0;
+						}
 						console.log('status---false: ' + this.setprofId);
 					} else {
+						if (LocalStorageKey.ProfileId !== undefined) {
 						this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, this.profileId);
+						}
 						this.setprofId = this.profileId;
 						console.log('getLightingProfileId---cache----------true: ', JSON.stringify(this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId)));
 					}
@@ -93,14 +97,16 @@ export class WidgetLightingComponent implements OnInit {
 			console.log("--------------home page lighting event-----" + eventval);
 
 			if (this.gamingLightingService.isShellAvailable) {
-				this.gamingLightingService.setLightingProfileId(1, eventval).then((response: any) => {
+				this.gamingLightingService.setLightingProfileId(0, eventval).then((response: any) => {
 					console.log('setLightingProfileId------------response---------------->',
 						JSON.stringify(response));
 
 					this.didSuccess = response.didSuccess;
 
 					if (!this.didSuccess) {
+						if (LocalStorageKey.ProfileId !== undefined) {
 						this.setprofId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId) || 0;
+						}
 						console.log('setLightingProfileId------------false---------------->');
 						//this.setprofId = eventval;
 					} else {
@@ -109,7 +115,9 @@ export class WidgetLightingComponent implements OnInit {
 							console.log('checkstatus resp in if--------', this.isdriverpopup);
 
 						}
+						if (LocalStorageKey.ProfileId !== undefined) {
 						this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, response.profileId);
+						}
 						this.setprofId = response.profileId;
 						console.log('setLightingProfileId------------True---------------->', this.setprofId);
 					}
@@ -121,13 +129,13 @@ export class WidgetLightingComponent implements OnInit {
 	}
 
 	public checkStatus(id) {
-		console.log('checkstatus resp--------', id);
+		//console.log('checkstatus resp--------', id);
 		if (id) {
 			this.isdriverpopup = true;
-			console.log('checkstatus resp in if--------', this.isdriverpopup);
+			//console.log('checkstatus resp in if--------', this.isdriverpopup);
 
 		} else {
-			console.log('checkstatus resp in else--------', id);
+			//console.log('checkstatus resp in else--------', id);
 
 			this.router.navigate(['/lightingcustomize', this.setprofId])
 		}

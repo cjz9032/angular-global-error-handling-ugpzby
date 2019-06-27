@@ -70,6 +70,7 @@ export enum LocalStorageKey {
 	ProfileId = '[LocalStorageKey] ProfileId',
 	LightingRGBTop = '[LocalStorageKey] LightingRGBTop',
 	LightingRGBSide = '[LocalStorageKey] LightingRGBSide',
+	LightingSetDefaultProfile = '[LocalStorageKey] LightingSetDefaultProfile',
 
 
 
