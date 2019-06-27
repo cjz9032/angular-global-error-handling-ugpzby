@@ -289,6 +289,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -864,7 +914,7 @@
             "displayCamera": {
                 "title": "Pantalla y cámara",
                 "subtitle": "Valores de pantalla y cámara",
-                "description": "Esta sección le permite mejorar su experiencia visual y configurar las propiedades de la cámara.Explore más características y personalice su experiencia de pantalla aquí.",
+                "description": "Esta sección le permite mejorar su experiencia visual y configurar las propiedades de la cámara. Explore más características y personalice su experiencia de pantalla aquí.",
                 "jumpTo": {
                     "title": "IR A CONFIGURACIÓN",
                     "shortcuts": {
@@ -872,7 +922,7 @@
                             "title": "Pantalla"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Cámara"
                         }
                     }
                 },
@@ -894,40 +944,40 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Temperatura del color de visualización",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Cálido (mejor para los ojos)",
+                            "cold": "Frío"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Restablecer temperatura",
+                        "tooltip": "La modalidad de cuidado de la visión ajusta la temperatura del color de la pantalla para filtrar la luz azul y reducir el esfuerzo para los ojos.",
+                        "onSunsetToSunriseScheduleDescription": "Planificación del modo de cuidado ocular de anochecer a amanecer",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Nota",
+                            "description": "Lenovo Vantage necesita acceder a la información de ubicación para calcular la hora del atardecer y amanecer de su región."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Privacy Guard",
+                        "description": "Esta característica impide que otras personas espíen su pantalla. Cuando está activado, cambia el ángulo de visualización de la pantalla, manteniéndola en privado para los demás. También puede alternar los modos pulsando las teclas “FN+D”.",
+                        "note": "Privacy Guard no funciona en la modalidad de pantalla vertical. En este modo, la pantalla sigue estando visible desde los costados.",
+                        "labelText": "Activar esta característica al escribir contraseñas"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Valores de energía de OLED",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "La pantalla OLED del sistema también puede reducir el consumo de energía y aumentar la vida útil de la batería al atenuar selectivamente partes de la pantalla.",
+                            "También es recomendable atenuar la barra de tareas y otras áreas de la pantalla que no cambian con frecuencia para prolongar la vida útil general de la pantalla."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Restablecer temperatura",
+                        "tooltip": "Esta característica puede reducir el consumo de energía y aumentar la vida útil de la batería al atenuar selectivamente partes de la pantalla."
                     }
                 },
                 "camera": {
                     "title": "Cámara",
                     "note": {
                         "title": "Nota",
-                        "description": "Lenovo Vantage no tiene permiso para obtener acceso a su cámara.Active el acceso a la cámara para la aplicación Lenovo Vantage."
+                        "description": "Lenovo Vantage no tiene permiso para obtener acceso a su cámara. Active el acceso a la cámara para la aplicación Lenovo Vantage."
                     },
                     "url": "Vaya a valores de privacidad de Windows",
                     "cameraPrivacy": {
@@ -946,10 +996,10 @@
                     "notAvailable": "Cámara no disponible",
                     "camerablur": {
                         "title": "Difuminado de segundo plano de la cámara",
-                        "caption": "Esta característica difumina el segundo plano cuando utiliza la cámara para realizar videollamadas o tomar fotos.Podría elegir entre distintos efectos desde las opciones a continuación.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Esta característica difumina el segundo plano cuando utiliza la cámara para realizar videollamadas o tomar fotos. Podría elegir entre distintos efectos desde las opciones a continuación.",
+                        "blurMode": "Modalidad difuminado",
+                        "comicMode": "Modalidad cómic",
+                        "sketchMode": "Modalidad boceto"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1369,7 +1419,9 @@
             "status": "Estado: ",
             "subDescription1": "Este producto tiene una garantía limitada por años y derecho a servicio de reparación de depósito. Los clientes pueden llamar al centro de servicio local para obtener más información. Los distribuidores pueden proporcionar reparación de entrega para este producto.",
             "subDescription2": "No pudimos encontrar los detalles de garantía para su dispositivo, para tener más opciones de garantía, visite nuestro sitio web de soporte de garantía.",
-            "viewWarrantyOptions": "VER OPCIONES DE GARANTÍA"
+            "viewWarrantyOptions": "VER OPCIONES DE GARANTÍA",
+            "offlineTips1": "Please connect to internet for latest warranty info.",
+            "offlineTips2": "Please connect internet to update warranty information."
         },
         "documentation": {
             "title": "Documentación",

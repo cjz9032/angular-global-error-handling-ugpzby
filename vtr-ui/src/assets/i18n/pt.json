@@ -289,6 +289,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -864,7 +914,7 @@
             "displayCamera": {
                 "title": "Ecrã e Câmara",
                 "subtitle": "Definições de visualização e câmara",
-                "description": "Esta secção permite-lhe melhorar a sua experiência visual e configurar as propriedades da sua câmara.Explore mais recursos e personalize a sua experiência de visualização aqui.",
+                "description": "Esta secção permite-lhe melhorar a sua experiência visual e configurar as propriedades da sua câmara. Explore mais funcionalidades e personalize a sua experiência de visualização aqui.",
                 "jumpTo": {
                     "title": "IR PARA AS DEFINIÇÕES",
                     "shortcuts": {
@@ -872,7 +922,7 @@
                             "title": "Ecrã"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Câmara"
                         }
                     }
                 },
@@ -894,45 +944,45 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Temperatura de cor do ecrã",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Quente (melhor para os olhos)",
+                            "cold": "Frio"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Redefinir temperatura",
+                        "tooltip": "O Modo de Cuidados com a Visão ajusta a temperatura de cor do ecrã para filtrar a luz azul e reduzir o cansaço dos olhos.",
+                        "onSunsetToSunriseScheduleDescription": "Programe o Modo de Cuidados com a Visão do pôr ao nascer do sol",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Nota",
+                            "description": "A Lenovo Vantage precisa de aceder às suas informações de localização para calcular o horário do pôr e do nascer do sol na sua região."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Privacy Guard",
+                        "description": "Esta funcionalidade impede que outras pessoas espreitem para o seu ecrã. Quando se encontra ativado, altera o ângulo de visão do ecrã, mantendo-o privado daqueles em seu redor. Também é possível alternar entre modos premindo as teclas “Fn+D”.",
+                        "note": "O Privacy Guard não funciona com o ecrã no modo vertical. Neste modo, o ecrã continua visível a partir dos lados.",
+                        "labelText": "Ativar esta funcionalidade durante a introdução de palavras-passe"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Definições de energia OLED",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "O ecrã OLED do computador também pode reduzir o consumo de energia e aumentar a duração da bateria através da diminuição seletiva de partes do ecrã.",
+                            "Também é recomendável diminuir a luminosidade da barra de tarefas e de outras áreas do ecrã que não mudam frequentemente, de modo a prolongar a vida útil geral do ecrã."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Redefinir temperatura",
+                        "tooltip": "Esta funcionalidade pode reduzir o consumo de energia e aumentar a duração da bateria através da diminuição seletiva de partes do ecrã."
                     }
                 },
                 "camera": {
                     "title": "Câmara",
                     "note": {
                         "title": "Nota",
-                        "description": "O Lenovo Vantage não tem permissões para aceder à sua câmara.Ative o acesso à sua câmara para a aplicação Lenovo Vantage."
+                        "description": "O Lenovo Vantage não tem permissões para aceder à sua câmara. Ative o acesso à sua câmara para a aplicação Lenovo Vantage."
                     },
                     "url": "Vá para as janela de definições de privacidade",
                     "cameraPrivacy": {
                         "title": "Modo de Privacidade da Câmara",
-                        "tooltip": "Com a definição Privacidade ativada, a câmara deixa de enviar imagens em direto. Ative esta definição, apenas quando não pretender partilhar as suas imagens com outras pessoas durante as chamadas de vídeo."
+                        "tooltip": "Quando a definição de privacidade está ativada, a câmara para de enviar imagens em direto. Ative esta definição, apenas quando não pretender partilhar as suas imagens com outras pessoas durante as chamadas de vídeo."
                     },
                     "camera": {
                         "title": "Câmara",
@@ -946,10 +996,10 @@
                     "notAvailable": "Câmara não disponível",
                     "camerablur": {
                         "title": "Desfocagem de Fundo da Câmara",
-                        "caption": "Esta funcionalidade desfoca o fundo quando a câmara é utilizada para videochamadas ou fotografias.É possível escolher entre as seleções de efeitos abaixo:",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Esta funcionalidade desfoca o fundo quando a câmara é utilizada para videochamadas ou fotografias. É possível escolher entre as diferentes seleções de efeitos abaixo.",
+                        "blurMode": "Modo desfocado",
+                        "comicMode": "Modo banda desenhada",
+                        "sketchMode": "Modo esboço"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1369,7 +1419,9 @@
             "status": "Estado: ",
             "subDescription1": "Este produto tem garantia limitada em anos e inclui reparação ou troca num centro de assistência designado. Os clientes podem contactar o centro de assistência local para obter mais informações. Os revendedores poderão fornecer serviço de recolha para reparação para este produto.",
             "subDescription2": "Não foi possível localizar os detalhes de garantia para o dispositivo. Para mais opções de garantia, visite o nosso sítio de suporte na Web.",
-            "viewWarrantyOptions": "VER OPÇÕES DE GARANTIA"
+            "viewWarrantyOptions": "VER OPÇÕES DE GARANTIA",
+            "offlineTips1": "Please connect to internet for latest warranty info.",
+            "offlineTips2": "Please connect internet to update warranty information."
         },
         "documentation": {
             "title": "Documentação",

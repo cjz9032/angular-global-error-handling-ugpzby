@@ -289,6 +289,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -864,7 +914,7 @@
             "displayCamera": {
                 "title": "Skærm og kamera",
                 "subtitle": "Indstillinger for skærm og kamera",
-                "description": "I denne sektion kan du forbedre din visuelle oplevelse og konfigurere egenskaberne for kameraet.Udforsk flere funktioner, og tilpas din skærmoplevelse her.",
+                "description": "I denne sektion kan du forbedre din visuelle oplevelse og konfigurere egenskaberne for kameraet. Udforsk flere funktioner, og tilpas din skærmoplevelse her.",
                 "jumpTo": {
                     "title": "HOP TIL INDSTILLINGER",
                     "shortcuts": {
@@ -872,7 +922,7 @@
                             "title": "Skærm"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Kamera"
                         }
                     }
                 },
@@ -894,45 +944,45 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Skærmens farvetemperatur",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Varm (bedre for øjne)",
+                            "cold": "Kold"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Nulstil temperatur",
+                        "tooltip": "Øjenbeskyttelsestilstand justerer automatisk din skærms farvetemperatur, så blåt lys filtreres ud, og dine øjne belastes mindre.",
+                        "onSunsetToSunriseScheduleDescription": "Planlæg øjenbeskyttelsestilstand fra solnedgang til solopgang",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Bemærk",
+                            "description": "Lenovo Vantage skal have adgang til dine placeringsoplysninger for at beregne tiden for solnedgang og solopgang i dit område."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Privatlivsbeskyttelse",
+                        "description": "Denne funktion forhindrer, at andre kan se på din skærm. Når den er aktiveret, ændres visningsvinklen for skærmen, så andre omkring dig ikke kan se indholdet på den. Du kan også skifte tilstand ved at trykke på tasterne \"Fn+D\".",
+                        "note": "Privatlivsbeskyttelse fungerer ikke i stående skærmvisning. I denne tilstand er skærmen stadig synlig fra siderne.",
+                        "labelText": "Aktivér denne funktion, når du skriver adgangskoder"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "OLED-strømindstillinger",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Du kan også reducere strømforbruget og øge batterilevetiden for computerens OLED-skærm ved at vælge at dæmpe dele af skærmen.",
+                            "Det anbefales desuden at dæmpe proceslinjen og andre områder af skærmen, som ikke ændres hyppigt, for at forlænge skærmens samlede levetid."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Nulstil temperatur",
+                        "tooltip": "Denne funktion kan også reducere strømforbruget og øge batteriets levetid ved at vælge at dæmpe dele af skærmen."
                     }
                 },
                 "camera": {
                     "title": "Kamera",
                     "note": {
                         "title": "Bemærk",
-                        "description": "Lenovo Vantage har ikke adgangstilladelse til dit kamera.Aktivér adgang til dit kamera for Lenovo Vantage-appen."
+                        "description": "Lenovo Vantage har ikke adgangstilladelse til dit kamera. Aktivér adgang til dit kamera for Lenovo Vantage-appen."
                     },
                     "url": "Gå til Windows-indstillinger for beskyttelse af personlige oplysninger",
                     "cameraPrivacy": {
                         "title": "Tilstand for beskyttelse af personlige oplysninger for kamera",
-                        "tooltip": "Kameraet holder op med at sende live-billeder, når indstillingen for beskyttelse af personlige oplysninger er aktiveret.Slå kun denne indstilling til, hvis du ikke ønsker at dele dine billeder med andre under videoopkald."
+                        "tooltip": "Kameraet holder op med at sende live-billeder, når indstillingen for privatlivsbeskyttelse er aktiveret. Slå kun denne indstilling til, hvis du ikke ønsker at dele dine billeder med andre under videoopkald."
                     },
                     "camera": {
                         "title": "Kamera",
@@ -946,10 +996,10 @@
                     "notAvailable": "Kameraet er ikke tilgængeligt",
                     "camerablur": {
                         "title": "Sløret kamerabaggrund",
-                        "caption": "Denne funktion slører baggrunden, når du bruger kameraet til videoopkald eller til at tage billeder.Du kan vælge en anden effekt i indstillingerne nedenfor.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Denne funktion slører baggrunden, når du bruger kameraet til videoopkald eller til at tage billeder. Du kan vælge en anden effekt i indstillingerne nedenfor.",
+                        "blurMode": "Sløret tilstand",
+                        "comicMode": "Tegneserietilstand",
+                        "sketchMode": "Skitsetilstand"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1369,7 +1419,9 @@
             "status": "Status: ",
             "subDescription1": "Dette produkt har års begrænset garanti, og det er berettiget til deponeringsreparation. Kunder kan ringe til deres lokale servicecenter for at få flere oplysninger. Forhandlere kan yde reparation ved indlevering af dette produkt.",
             "subDescription2": "Vi kunne ikke finde garantioplysninger for din enhed. Du kan finde flere garantimuligheder ved at gå til vores supportwebsted.",
-            "viewWarrantyOptions": "VIS GARANTIMULIGHEDER"
+            "viewWarrantyOptions": "VIS GARANTIMULIGHEDER",
+            "offlineTips1": "Please connect to internet for latest warranty info.",
+            "offlineTips2": "Please connect internet to update warranty information."
         },
         "documentation": {
             "title": "Dokumentation",

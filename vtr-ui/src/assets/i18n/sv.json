@@ -289,6 +289,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -864,7 +914,7 @@
             "displayCamera": {
                 "title": "Bildskärm och kamera",
                 "subtitle": "Bildskärms- och kamerainställningar",
-                "description": "I detta avsnitt kan du förbättra grafikupplevelsen och ange kamerainställningar.Se fler funktioner och anpassa bildskärmsupplevelsen här.",
+                "description": "I detta avsnitt kan du förbättra grafikupplevelsen och ange kamerainställningar. Se fler funktioner och anpassa bildskärmsupplevelsen här.",
                 "jumpTo": {
                     "title": "ÖPPNA INSTÄLLNINGAR",
                     "shortcuts": {
@@ -872,7 +922,7 @@
                             "title": "Skärm"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Kamera"
                         }
                     }
                 },
@@ -889,45 +939,45 @@
                         "tooltip": "Ögonskyddsläge justerar automatiskt färgtemperaturen på bildskärmen och filtrerar bort blått ljus för att minska belastningen på ögonen.",
                         "onSunsetToSunriseScheduleDescription": "Schemalägg ögonskyddsläge från morgon till kväll",
                         "note": {
-                            "title": "Obs!",
+                            "title": "Anmärkning",
                             "description": "Lenovo Vantage behöver åtkomst till din platsinformation för att kunna beräkna solnedgång och soluppgång i din region."
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Bildskärmens färgtemperatur",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Varmt (bättre för ögonen)",
+                            "cold": "Kall"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Nollställ temperatur",
+                        "tooltip": "Ögonskyddsläge justerar automatiskt färgtemperaturen på bildskärmen och filtrerar bort blått ljus för att minska belastningen på ögonen.",
+                        "onSunsetToSunriseScheduleDescription": "Schemalägg ögonskyddsläge från morgon till kväll",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Anmärkning",
+                            "description": "Lenovo Vantage behöver åtkomst till din platsinformation för att kunna beräkna solnedgång och soluppgång i din region."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Sekretesskydd",
+                        "description": "Den här funktionen förhindrar att andra kikar på din skärm. När denna funktion är aktiverad ändras bildskärmens visningsvinkel så att andra i närheten inte kan se innehållet. Du kan också växla läge genom att trycka på ”Fn+D”.",
+                        "note": "Sekretesskydd fungerar inte när bildskärmen används i stående läge. I detta läge syns innehållet på skärmen fortfarande från sidorna.",
+                        "labelText": "Aktivera funktionen när du skriver lösenord"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "OLED-ströminställningar",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Datorns OLED-bildskärm kan också minska strömförbrukningen och förlänga batteriets livslängd genom att selektivt sänka ljusstyrkan på delar av bildskärmen.",
+                            "För att förlänga bildskärmens livslängd rekommenderas du också att sänka ljusstyrkan i aktivitetsfältet och andra områden på bildskärmen som sällan ändras."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Nollställ temperatur",
+                        "tooltip": "Denna funktion kan minska strömförbrukningen och förlänga batteriets livslängd genom att selektivt sänka ljusstyrkan på delar av bildskärmen."
                     }
                 },
                 "camera": {
                     "title": "Kamera",
                     "note": {
-                        "title": "Obs!",
-                        "description": "Lenovo Vantage har inte åtkomst till din kamera.Ge Lenovo Vantage-appen åtkomst till din kamera."
+                        "title": "Anmärkning",
+                        "description": "Lenovo Vantage har inte åtkomst till din kamera. Ge appen Lenovo Vantage åtkomst till din kamera."
                     },
                     "url": "Öppna sekretessinställningarna i Windows",
                     "cameraPrivacy": {
@@ -946,10 +996,10 @@
                     "notAvailable": "Kameran är inte tillgänglig",
                     "camerablur": {
                         "title": "Kameraoskärpa i bakgrund",
-                        "caption": "Med denna funktion görs bakgrunden oskarp när du använder kameran för att ringa videosamtal eller ta foton.Du kan välja bland effekterna nedan.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Med denna funktion görs bakgrunden oskarp när du använder kameran för att ringa videosamtal eller ta foton. Du kan välja bland effekterna nedan.",
+                        "blurMode": "Oskärpeläge",
+                        "comicMode": "Komiskt läge",
+                        "sketchMode": "Skissläge"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1369,7 +1419,9 @@
             "status": "Status: ",
             "subDescription1": "Denna produkt omfattas av garanti under ett fördefinierat antal år och har rätt till reparationsservice på verkstad. Kunden kan ringa det lokala servicecentret för mer information. Återförsäljare kan erbjuda reparation med inlämning för denna produkt.",
             "subDescription2": "Det gick inte att hitta garantiinformation för din enhet. Besök vår supportwebbplats för mer information om garantialternativ.",
-            "viewWarrantyOptions": "VISA GARANTIALTERNATIV"
+            "viewWarrantyOptions": "VISA GARANTIALTERNATIV",
+            "offlineTips1": "Please connect to internet for latest warranty info.",
+            "offlineTips2": "Please connect internet to update warranty information."
         },
         "documentation": {
             "title": "Dokumentation",

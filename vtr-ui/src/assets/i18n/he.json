@@ -289,6 +289,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -864,7 +914,7 @@
             "displayCamera": {
                 "title": "תצוגה ומצלמה",
                 "subtitle": "הגדרות תצוגה ומצלמה",
-                "description": "סעיף זה מאפשר לכם לשפר את החוויה החזותית שלכם ולהגדיר את מאפייני המצלמה.גלו תכונות נוספות והתאימו אישית את חוויית התצוגה שלכם כאן.",
+                "description": "סעיף זה מאפשר לכם לשפר את החוויה החזותית שלכם ולהגדיר את מאפייני המצלמה. גלו תכונות נוספות והתאימו אישית את חוויית התצוגה שלכם כאן.",
                 "jumpTo": {
                     "title": "מעבר להגדרות",
                     "shortcuts": {
@@ -872,7 +922,7 @@
                             "title": "תצוגה"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "מצלמה"
                         }
                     }
                 },
@@ -894,45 +944,45 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "טמפרטורת צבע התצוגה",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "חם (עדיף לעיניים)",
+                            "cold": "קרה"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "איפוס הטמפרטורה",
+                        "tooltip": "מצב שמירה על העיניים מתאים באופן אוטומטי את טמפרטורת הצבע של התצוגה כדי לסנן את האור הכחול ולהפחית את ההשפעה על העיניים.",
+                        "onSunsetToSunriseScheduleDescription": "תזמון מצב שמירה על העיניים מהשקיעה עד הזריחה",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "הערה",
+                            "description": "Lenovo Vantage צריך לגשת לפרטי המיקום שלכם לחישוב זמן השקיעה והזריחה באזורכם."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "מגן הפרטיות",
+                        "description": "תכונה זו מונעת מאנשים אחרים להציץ למסך שלכם. כשהיא פועלת, היא משנה את זווית הצפייה של התצוגה כך שאחרים לא יוכלו לראות מה יש במסך שלכם. כמו כן תוכלו לעבור בין מצבים על ידי הקשה על המקשים \"Fn+D\".",
+                        "note": "מגן הפרטיות לא עובד במצב תצוגה לאורך של המסך. במצב זה, המסך עדיין גלוי לעין מהצדדים.",
+                        "labelText": "הפעל תכונה זו בעת הקלדת סיסמאות"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "הגדרות צריכת החשמל של OLED (LED אורגני)",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "תצוגת ה-OLED של המחשב יכולה להפחית את צריכת החשמל ולהאריך את חיי הסוללה על ידי עמעום סלקטיבי של חלקים מהתצוגה.",
+                            "בנוסף, מומלץ לעמעם את שורת המשימות ואזורים אחרים של התצוגה שאינם משתנים לעיתים קרובות כדי להאריך את חיי הצג."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "איפוס הטמפרטורה",
+                        "tooltip": "תכונה זו יכולה להפחית את צריכת החשמל ולהאריך את חיי הסוללה על ידי עמעום סלקטיבי של חלקים מהתצוגה."
                     }
                 },
                 "camera": {
                     "title": "מצלמה",
                     "note": {
                         "title": "הערה",
-                        "description": "ל-Lenovo Vantage אין הרשאות לגשת אל המצלמה שלכם.הפעילו עבור היישום Lenovo Vantage את הגישה אל המצלמה שלכם."
+                        "description": "ל-Lenovo Vantage אין הרשאות לגשת אל המצלמה שלכם. הפעילו עבור היישום Lenovo Vantage את הגישה אל המצלמה שלכם."
                     },
                     "url": "מעבר אל הגדרות הפרטיות של Windows",
                     "cameraPrivacy": {
                         "title": "מצב פרטיות מצלמה",
-                        "tooltip": "כאשר ההגדרה \"פרטיות\" מופעלת, המצלמה מפסיקה לשלוח תמונות בזמן אמת. הפעילו הגדרה זו רק כשאינכם מעוניינים לשתף את תמונותיכם עם אחרים במהלך שיחות וידאו."
+                        "tooltip": "כאשר הגדרת הפרטיות מופעלת, המצלמה מפסיקה לשלוח תמונות בזמן אמת. הפעילו הגדרה זו רק כשאינכם מעוניינים לשתף את תמונותיכם עם אחרים במהלך שיחות וידאו."
                     },
                     "camera": {
                         "title": "מצלמה",
@@ -946,10 +996,10 @@
                     "notAvailable": "המצלמה לא זמינה",
                     "camerablur": {
                         "title": "טשטוש הרקע של המצלמה",
-                        "caption": "תכונה זו מטשטשת את הרקע כשמשתמשים במצלמה לשיחת וידאו או לצילום תמונות.ניתן לבחור אפקט אחר מבין האפקטים הבאים.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "תכונה זו מטשטשת את הרקע כשמשתמשים במצלמה לשיחת וידאו או לצילום תמונות. ניתן לבחור אפקט אחר מבין האפקטים הבאים.",
+                        "blurMode": "מצב טשטוש",
+                        "comicMode": "מצב קומיקס",
+                        "sketchMode": "מצב ציור"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1309,7 +1359,7 @@
             "trialExpired": "פג תוקפה של גרסת הניסיון - שדרגו כדי להגן על כל המכשירים",
             "upgrade": "שדרוג",
             "freeTrial": "הגנו על כל המכשירים - יסיון חינם למשך 30 יוםנ",
-            "startTrial": "התחלת תקופת ניסיון",
+            "startTrial": "התחלת תקופת ניסיון"
         },
         "tour": {
             "back": "אחורית",
@@ -1369,7 +1419,9 @@
             "status": "מצב: ",
             "subDescription1": "מוצר זה כולל אחריות מוגבלת בשנים והוא זכאי לשירות תיקונים במרכז השירות. לקוחות רשאים להתקשר למרכז השירות המקומי שלהם לקבלת מידע נוסף. משווקים עשויים לספק תיקון במסירה למוצר זה.",
             "subDescription2": "לא הצלחנו לאתר את פרטי האחריות של המכשיר, כדי לקבל אפשרויות אחריות נוספות, יש לבקר באתר התמיכה שלנו.",
-            "viewWarrantyOptions": "הצגת אפשרויות אחריות"
+            "viewWarrantyOptions": "הצגת אפשרויות אחריות",
+            "offlineTips1": "Please connect to internet for latest warranty info.",
+            "offlineTips2": "Please connect internet to update warranty information."
         },
         "documentation": {
             "title": "תיעוד",

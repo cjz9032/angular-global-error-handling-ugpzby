@@ -289,6 +289,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -872,7 +922,7 @@
                             "title": "ディスプレイ"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "カメラ"
                         }
                     }
                 },
@@ -894,33 +944,33 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "ディスプレイの色温度",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "暖色 (目に優しい)",
+                            "cold": "停止"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "温度をリセット",
+                        "tooltip": "アイ・ケア・モードでは、ディスプレイの色温度が調整されてブルーライトがフィルターで除去され、目の負担が軽減されます。",
+                        "onSunsetToSunriseScheduleDescription": "日没から日の出までのアイ・ケア・モードのスケジュール",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "お願い",
+                            "description": "Lenovo Vantage はその地域の日没と日の出の時刻を計算するために、位置情報にアクセスする必要があります。"
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "プライバシー・ガード",
+                        "description": "この機能を使用すると、他のユーザーによる画面の覗き見を防止できます。オンにすると、ディスプレイの視野角が変わり、周囲の人たちからディスプレイが見えなくなります。「Fn+D」 キーを押してモードを切り替えることができます。",
+                        "note": "プライバシー・ガードは画面の向きが縦の場合には機能しません。このモードでは、画面は側面から見えます。",
+                        "labelText": "パスワードの入力時にこの機能を有効にする"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "有機 EL 電源設定",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "また、ご使用のコンピューターの有機 EL ディスプレイは、ディスプレイの一部を選択して暗くすることで、電力消費を削減しバッテリー駆動時間を延ばすことができます。",
+                            "また、タスクバーやディスプレイのあまり変化しない領域を暗くして、ディスプレイ全体の寿命を延ばすことをお勧めします。"
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "温度をリセット",
+                        "tooltip": "この機能は、ディスプレイの一部を選択して暗くすることで、電力消費を削減しバッテリー駆動時間を延ばすことができます。"
                     }
                 },
                 "camera": {
@@ -947,9 +997,9 @@
                     "camerablur": {
                         "title": "カメラの背景のぼかし",
                         "caption": "この機能は、ビデオ通話または写真撮影にカメラを使用する際に背景をぼかします。以下の選択肢から別の効果を選択できます。",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "blurMode": "ぼかしモード",
+                        "comicMode": "コミック モード",
+                        "sketchMode": "スケッチ モード"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1369,7 +1419,9 @@
             "status": "ステータス:",
             "subDescription1": "この製品は、年間限定保証とデポ修理サービスを受けることができます。詳細については、最寄りのサービスセンターまでお問い合わせください。販売店は、本製品の搬入修理を行うことができます。",
             "subDescription2": "お使いのデバイスの保証の詳細を見つけることができませんでした。さらなる保証オプションについては、当社のサポート Web サイトをご覧ください。",
-            "viewWarrantyOptions": "保証オプションを表示"
+            "viewWarrantyOptions": "保証オプションを表示",
+            "offlineTips1": "Please connect to internet for latest warranty info.",
+            "offlineTips2": "Please connect internet to update warranty information."
         },
         "documentation": {
             "title": "資料",

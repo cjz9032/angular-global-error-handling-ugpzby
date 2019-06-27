@@ -289,6 +289,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -864,7 +914,7 @@
             "displayCamera": {
                 "title": "Näyttö ja kamera",
                 "subtitle": "Näytön ja kameran asetukset",
-                "description": "Tämän osan avulla voit parantaa visuaalista käyttökokemusta ja määrittää kameran ominaisuuksien asetukset.Tutustu muihin toimintoihin ja mukauta näytön käyttökokemusta täältä.",
+                "description": "Tämän osan avulla voit parantaa visuaalista käyttökokemusta ja määrittää kameran ominaisuuksien asetukset. Tutustu muihin toimintoihin ja mukauta näytön käyttökokemusta täältä.",
                 "jumpTo": {
                     "title": "SIIRRY ASETUKSIIN",
                     "shortcuts": {
@@ -872,7 +922,7 @@
                             "title": "Näyttö"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Kamera"
                         }
                     }
                 },
@@ -894,40 +944,40 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Näytön värilämpötila",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Lämmin (parempi silmille)",
+                            "cold": "Kylmä"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Lämpötilan uudelleenasetus",
+                        "tooltip": "Silmien hoitotila suodattaa sinistä valoa ja vähentää rasitusta silmille säätämällä näytön värilämpötilaa.",
+                        "onSunsetToSunriseScheduleDescription": "Ajoita silmien hoitotila auringonlaskusta auringonnousuun",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Huomautus",
+                            "description": "Lenovo Vantage -ohjelman on käytettävä sijaintitietojasi oman alueesi auringon lasku- ja nousuajan laskemiseen."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Privacy Guard",
+                        "description": "Tämä ominaisuus estää muita henkilöitä näkemästä näyttösi sisältöä. Kun se on käytössä, se muuttaa näytön katselukulmaa ja estää ympärillä olijoita näkemästä näytön sisältöä. Voit myös vaihtaa tilaa painamalla \"Fn+D\"-näppäimiä.",
+                        "note": "Privacy Guard ei toimi, kun näyttö on pystyasennossa. Tässä tilassa näytön voi edelleen nähdä sivuilta.",
+                        "labelText": "Ota tämä ominaisuus käyttöön salasanoja kirjoitettaessa"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "OLED-näytön virta-asetukset",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Tietokoneen OLED-näyttö voi myös pienentää virrankulutusta ja lisätä akun käyttöikää himmentämällä valikoivasti näytön osia.",
+                            "Myös tehtäväpalkin ja näytön muiden harvoin muuttuvien osien himmentämistä suositellaan näytön yleisen käyttöiän pidentämiseksi."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Lämpötilan uudelleenasetus",
+                        "tooltip": "Ominaisuus voi pienentää virrankulutusta ja lisätä akun käyttöikää himmentämällä näytön osia valikoivasti."
                     }
                 },
                 "camera": {
                     "title": "Kamera",
                     "note": {
                         "title": "Huomautus",
-                        "description": "Lenovo Vantage -sovelluksella ei ole kameran käyttöoikeuksia.Ota kameran käyttöoikeudet käyttöön Lenovo Vantage -sovellukselle."
+                        "description": "Lenovo Vantage -sovelluksella ei ole kameran käyttöoikeuksia. Ota kameran käyttöoikeudet käyttöön Lenovo Vantage -sovellukselle."
                     },
                     "url": "Siirry Windowsin yksityisyysasetuksiin",
                     "cameraPrivacy": {
@@ -946,10 +996,10 @@
                     "notAvailable": "Kamera ei ole käytettävissä",
                     "camerablur": {
                         "title": "Kameran taustan sumennus",
-                        "caption": "Tämä ominaisuus sumentaa taustan, kun käytät kameraa videopuheluihin tai valokuvaamiseen.Voit valita eri tehosteen alla olevasta valikoimasta.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Tämä ominaisuus sumentaa taustan, kun käytät kameraa videopuheluihin tai valokuvaamiseen. Voit valita eri tehosteen alla olevasta valikoimasta.",
+                        "blurMode": "Sumennustila",
+                        "comicMode": "Sarjakuvatila",
+                        "sketchMode": "Luonnostila"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1369,7 +1419,9 @@
             "status": "Tila: ",
             "subDescription1": "Tälle tuotteelle on vuoden rajoitettu takuu, ja oikeutettu korjauspalveluun korjauskeskuksessa Asiakkaat voivat ottaa yhteyttä paikalliseen palvelukeskukseen lisätietoja varten. Korjauspalveluita tälle tuotteelle voi olla saatavilla jälleenmyyjien toimipisteissä.",
             "subDescription2": "Emme pystyneet löytämään takuutietoja laitteellesi. Tutustu tukisivustoomme jos haluat nähdä lisää takuuvaihtoehtoja.",
-            "viewWarrantyOptions": "NÄYTÄ TAKUUVAIHTOEHDOT"
+            "viewWarrantyOptions": "NÄYTÄ TAKUUVAIHTOEHDOT",
+            "offlineTips1": "Please connect to internet for latest warranty info.",
+            "offlineTips2": "Please connect internet to update warranty information."
         },
         "documentation": {
             "title": "Ohjeaineisto",

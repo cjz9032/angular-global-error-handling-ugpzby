@@ -289,6 +289,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -864,7 +914,7 @@
             "displayCamera": {
                 "title": "Дисплей і камера",
                 "subtitle": "Настройки дисплею й камери",
-                "description": "Цей розділ дає змогу покращити візуальні враження й налаштувати властивості камери.Ознайомтеся з додатковими функціями та налаштуйте потрібне відображення.",
+                "description": "Цей розділ дає змогу покращити візуальні враження й налаштувати властивості камери. Ознайомтеся з додатковими функціями та налаштуйте потрібне відображення.",
                 "jumpTo": {
                     "title": "ПЕРЕЙТИ ДО НАСТРОЙОК",
                     "shortcuts": {
@@ -872,7 +922,7 @@
                             "title": "Дисплей"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Камера"
                         }
                     }
                 },
@@ -894,45 +944,45 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Температура кольору екрана",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Тепла (краще для очей)",
+                            "cold": "Холодна"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Скинути значення температури",
+                        "tooltip": "Режим захисту зору регулює колірну температуру екрана, зменшуючи рівень синього світла. Таким чином він знижує втому очей.",
+                        "onSunsetToSunriseScheduleDescription": "Заплануйте режим захисту зору від заходу до сходу сонця",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Примітка",
+                            "description": "Lenovo Vantage потребує інформацію про ваше місцезнаходження, щоб розрахувати час заходу та сходу сонця у вашому регіоні."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Захисник конфіденційності",
+                        "description": "Ця функція завадить оточуючим підглядати за вашим екраном. Після ввімкнення вона змінює кут огляду екрана, щоб оточуючим не було нічого видно. Її можна вмикати й вимикати сполученням клавіш \"Fn+D\".",
+                        "note": "Захисник конфіденційності не працює в книжковій орієнтації екрана. У цьому режимі екран залишається видимим із боків.",
+                        "labelText": "Вмикайте цю функцію під час введення паролів"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Настройки живлення ОСД-екрана",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Можна також зменшити рівень споживання електроенергії ОСД-екраном і подовжити час роботи від акумулятора шляхом затінення окремих областей екрана.",
+                            "Щоб подовжити термін експлуатації екрана, рекомендується також затінювати панель завдань та інші області екрана, які не часто змінюються."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Скинути значення температури",
+                        "tooltip": "Ця функція може зменшувати рівень споживання електроенергії та подовжити час роботи від акумулятора шляхом затінення окремих областей екрана."
                     }
                 },
                 "camera": {
                     "title": "Камера",
                     "note": {
                         "title": "Примітка",
-                        "description": "У програми Lenovo Vantage немає дозволу на доступ до камери.Надайте Lenovo Vantage дозвіл на доступ до камери."
+                        "description": "У програми Lenovo Vantage немає дозволу на доступ до камери. Надайте Lenovo Vantage дозвіл на доступ до камери."
                     },
                     "url": "Перейти до настройок конфіденційності Windows",
                     "cameraPrivacy": {
                         "title": "Режим конфіденційності камери",
-                        "tooltip": "Якщо ввімкнено настройки конфіденційності, камера припиняє трансляцію відеозображення. Вмикайте цей параметр, лише якщо не бажаєте, щоб співрозмовники отримували зображення під час відеовикликів."
+                        "tooltip": "Якщо ввімкнено режим конфіденційності, камера припиняє трансляцію відеозображення. Вмикайте цей параметр, лише якщо не бажаєте, щоб співрозмовники отримували зображення під час відеовикликів."
                     },
                     "camera": {
                         "title": "Камера",
@@ -946,10 +996,10 @@
                     "notAvailable": "Камера недоступна",
                     "camerablur": {
                         "title": "Розмиття фону під час зйомки",
-                        "caption": "Ця функція розмиває фон під час будь-яких відеовикликів або зйомки фотографій.Доступні такі ефекти:",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Ця функція розмиває фон під час будь-яких відеовикликів або зйомки фотографій. Доступні такі ефекти:",
+                        "blurMode": "Режим \"Розмиття\"",
+                        "comicMode": "Режим \"Комічний\"",
+                        "sketchMode": "Режим \"Ескіз\""
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1369,7 +1419,9 @@
             "status": "Статус: ",
             "subDescription1": "Цей продукт має стільки років обмеженої гарантії й право на ремонт у сервісному-центрі. Зателефонуйте до місцевого сервіс-центру, щоб дізнатися більше. Для цього продукту дилери можуть пропонувати ремонт із самостійною доставкою силами користувача.",
             "subDescription2": "Не вдалося отримати відомості про гарантію на ваш пристрій. Щоб переглянути інші варіанти гарантії, завітайте на наш веб-сайт підтримки.",
-            "viewWarrantyOptions": "ПЕРЕГЛЯНУТИ ВАРІАНТИ ГАРАНТІЇ"
+            "viewWarrantyOptions": "ПЕРЕГЛЯНУТИ ВАРІАНТИ ГАРАНТІЇ",
+            "offlineTips1": "Please connect to internet for latest warranty info.",
+            "offlineTips2": "Please connect internet to update warranty information."
         },
         "documentation": {
             "title": "Документація",

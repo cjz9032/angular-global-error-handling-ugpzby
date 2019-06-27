@@ -289,6 +289,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -864,7 +914,7 @@
             "displayCamera": {
                 "title": "Ekran ve Kamera",
                 "subtitle": "Ekran ve Kamera Ayarları",
-                "description": "Bu bölüm, görsel deneyiminizi iyileştirmenizi ve kamera özelliklerinizi yapılandırmanızı sağlar.Daha fazla özellik keşfedin ve ekran deneyiminizi burada özelleştirin.",
+                "description": "Bu bölüm, görsel deneyiminizi iyileştirmenizi ve kamera özelliklerinizi yapılandırmanızı sağlar. Daha fazla özellik keşfedin ve ekran deneyiminizi burada özelleştirin.",
                 "jumpTo": {
                     "title": "AYARLARA GİT",
                     "shortcuts": {
@@ -872,7 +922,7 @@
                             "title": "Ekran"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Kamera"
                         }
                     }
                 },
@@ -894,40 +944,40 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Ekran rengi sıcaklığı",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Sıcak (Gözler için daha iyi)",
+                            "cold": "Soğuk"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Sıcaklığı sıfırla",
+                        "tooltip": "Göz Koruması Kipi, mavi ışığı filtreleyip göz yorgunluğunu azaltmak için ekranınızın renk sıcaklığını ayarlar.",
+                        "onSunsetToSunriseScheduleDescription": "Göz koruması kipini gün batımından gün doğumuna kadar sürecek şekilde ayarlayın",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Not",
+                            "description": "Lenovo Vantage'ın, bölgenizdeki gün batımı ve gün doğumu saatlerini hesaplamak için konum bilgilerinize erişmesi gerekir."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Gizlilik koruması",
+                        "description": "Bu özellik başkalarının ekranınıza gizlice bakmasını önler. Açık olduğunda ekranınızın görüş açısını değiştirir ve ekranı çevrenizdekilerin görememesini sağlar. Ayrıca “Fn+D” tuşlarına basarak kipler arasında geçiş yapabilirsiniz.",
+                        "note": "Gizlilik Koruması, dikey ekran kipinde çalışmaz. Bu kipte, ekranınız yanlardan görünmeye devam eder.",
+                        "labelText": "Bu özelliği parolaları yazarken etkinleştirin"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "OLED Güç Ayarları",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Bilgisayarınızın OLED ekranı, isteğe bağlı olarak ekranın bazı bölümleri karartılarak güç tüketimini azaltabilir ve pil ömrünü uzatabilir.",
+                            "Ayrıca ekranın genel kullanım ömrünü uzatmak için görev çubuğunun ve ekranın sık sık değişmeyen diğer alanlarının karartılması önerilir."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Sıcaklığı sıfırla",
+                        "tooltip": "Bu özellik, aynı zamanda isteğe bağlı olarak ekranın bazı bölümleri karartılarak güç tüketimini azaltabilir ve pil ömrünü uzatabilir."
                     }
                 },
                 "camera": {
                     "title": "Kamera",
                     "note": {
                         "title": "Not",
-                        "description": "Lenovo Vantage'ın kameranıza erişim izni yok.Lenovo Vantage uygulaması için lütfen kameranıza erişimi açın."
+                        "description": "Lenovo Vantage'ın kameranıza erişim izni yok. Lenovo Vantage uygulaması için lütfen kameranıza erişimi açın."
                     },
                     "url": "Windows gizlilik ayarlarına git",
                     "cameraPrivacy": {
@@ -946,10 +996,10 @@
                     "notAvailable": "Kamera Kullanılamıyor",
                     "camerablur": {
                         "title": "Kamera Arka Plan Bulanıklık",
-                        "caption": "Bu özellik, kamerayı kullanarak görüntülü arama yaparken veya fotoğraf çekerken arka planınızı bulanıklaştırır.Aşağıdaki seçimlerden farklı bir efekt belirleyebilirsiniz.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Bu özellik, kamerayı kullanarak görüntülü arama yaparken veya fotoğraf çekerken arka planınızı bulanıklaştırır. Aşağıdaki seçimlerden farklı bir efekt belirleyebilirsiniz.",
+                        "blurMode": "Bulanıklık kipi",
+                        "comicMode": "Karikatür kipi",
+                        "sketchMode": "Eskiz kipi"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1369,7 +1419,9 @@
             "status": "Durum: ",
             "subDescription1": "Bu ürün yıllık sınırlı garanti ve depo onarım hizmeti hakkına sahiptir. Müşteriler daha fazla bilgi için yerel hizmet merkezini arayabilir. Bayiler, müşteri tarafından teslim halinde bu ürün için onarım sağlayabilir.",
             "subDescription2": "Cihazınız için garanti ayrıntılarını bulamadık. Diğer garanti seçenekleri için lütfen destek web sitemizi ziyaret edin.",
-            "viewWarrantyOptions": "GARANTİ SEÇENEKLERİNİ GÖRÜNTÜLE"
+            "viewWarrantyOptions": "GARANTİ SEÇENEKLERİNİ GÖRÜNTÜLE",
+            "offlineTips1": "Please connect to internet for latest warranty info.",
+            "offlineTips2": "Please connect internet to update warranty information."
         },
         "documentation": {
             "title": "Belgeler",
