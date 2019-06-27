@@ -43,6 +43,7 @@ import { PrivacyScoreComponent } from './pages/result/privacy-score/privacy-scor
 import { BrowserAccountHeaderComponent } from './pages/browser-accounts/browser-account-header/browser-account-header.component';
 import { CommunicationWithFigleafService } from './utils/communication-with-figleaf/communication-with-figleaf.service';
 import { ArticleDescriptionComponent } from './pages/articles/article-description/article-description.component';
+import { FigleafOverviewService } from './common/services/figleaf-overview.service';
 
 library.add(fal);
 
@@ -98,6 +99,7 @@ library.add(fal);
 		AnalyticsService,
 		TaskActionService,
 		CommunicationWithFigleafService,
+		FigleafOverviewService
 	],
 })
 export class PrivacyModule {

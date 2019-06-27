@@ -109,6 +109,7 @@ export class UserDataGetStateService {
 
 	private getGlobalAppStatus() {
 		if (this.isFigleafReadyForCommunication) {
+			// TODO return new statuses
 			return AppStatuses.figLeafInstalled;
 		}
 		const userDataStatus = this.getFeatureStatus();

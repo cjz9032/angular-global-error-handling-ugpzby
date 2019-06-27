@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, EMPTY, merge, ReplaySubject, Subject, Subscription } from 'rxjs';
+import { BehaviorSubject, EMPTY, merge, ReplaySubject, Subject, Subscription, timer } from 'rxjs';
 import { catchError, distinctUntilChanged, map, switchMap, switchMapTo, take, tap } from 'rxjs/operators';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { EmailScannerService, ErrorNames } from '../../feature/check-breached-accounts/services/email-scanner.service';
@@ -49,7 +49,8 @@ export class BreachedAccountsService {
 			this.emailScannerService.validationStatusChanged$,
 			this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(
 				distinctUntilChanged(),
-			)
+			),
+			timer(30000, 30000),
 		).pipe(
 			switchMapTo(this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(take(1))),
 			tap(() => this.onGetBreachedAccountsCompleted$.next(false)),

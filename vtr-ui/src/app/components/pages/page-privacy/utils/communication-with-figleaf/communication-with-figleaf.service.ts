@@ -1,6 +1,6 @@
 import { Injectable, NgZone } from '@angular/core';
 import { FigleafConnectorInstance as FigleafConnector, MessageToFigleaf } from './figleaf-connector';
-import { EMPTY, from, ReplaySubject, Subscription, timer } from 'rxjs';
+import { EMPTY, from, Observable, ReplaySubject, Subscription, timer } from 'rxjs';
 import { catchError, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
 
 export interface MessageFromFigleaf {
@@ -75,11 +75,11 @@ export class CommunicationWithFigleafService {
 		return from(FigleafConnector.sendMessageToFigleaf({type: 'testfigleafStatus'}));
 	}
 
-	sendMessageToFigleaf(message: MessageToFigleaf) {
+	sendMessageToFigleaf<T>(message: MessageToFigleaf): Observable<T> {
 		return this.isFigleafReadyForCommunication.pipe(
 			switchMap(isFigleafInstalled => {
 				if (isFigleafInstalled) {
-					return from(FigleafConnector.sendMessageToFigleaf(message));
+					return from(FigleafConnector.sendMessageToFigleaf(message)) as Observable<T> ;
 				} else {
 					console.error('figLeaf not installed');
 					return EMPTY;
