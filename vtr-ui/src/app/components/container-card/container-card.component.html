@@ -15,7 +15,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 content">
-					<a [attr.href]="!actionLink ? null : actionLink"
+					<a *ngIf="isOnline" [attr.href]="!actionLink ? null : actionLink"
 					   (click)="linkClicked(actionType, actionLink)"
 					   vtrMetrics
 					   metricsItemCategory="corner"
@@ -39,6 +39,23 @@
 							</div>
 						</div>
 					</a>
+					<div *ngIf="!isOnline" 
+						class="card-image default-cursor"
+						[style.background-image]="'url(' + img + ')'">
+						<div class="inner-content">
+							<div *ngIf="title"
+								class="title">{{title}}</div>
+							<div *ngIf="caption"
+								class="caption">{{caption}}</div>
+							<div *ngIf="logo || logoText"
+								class="logo">
+							<span class="logo-img">
+								<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
+							</span>
+								<span class="logo-text">{{logoText}}</span>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -50,7 +67,7 @@
 		<div class="container-fluid">
 			<div class="row" *ngIf="isOnline">
 				<div class="col col-12 content">
-					<a [attr.href]="!actionLink ? null : actionLink"
+					<a *ngIf="isOnline" [attr.href]="!actionLink ? null : actionLink"
 					   (click)="linkClicked(actionType, actionLink)"
 					   target="_blank"
 					   class="card-image"
@@ -74,6 +91,23 @@
 							</div>
 						</div>
 					</a>
+					<div *ngIf="!isOnline"
+						class="card-image default-cursor"
+						[style.background-image]="'url(' + img + ')'">
+						<div class="inner-content">
+							<div *ngIf="title"
+								class="title">{{title}}</div>
+							<div *ngIf="caption"
+								class="caption"><div [innerHTML]="caption|sanitize:'html'"></div></div>
+							<div *ngIf="logo || logoText"
+								class="logo">
+							<span class="logo-img">
+								<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
+							</span>
+								<span class="logo-text">{{logoText}}</span>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="row" *ngIf="!isOnline">
@@ -89,7 +123,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 content">
-					<a [attr.href]="!actionLink ? null : actionLink"
+					<a *ngIf="isOnline" [attr.href]="!actionLink ? null : actionLink"
 					   metricsItemCategory="highlight"
 					   vtrMetrics
 					   metricsEvent="docClick"
@@ -104,6 +138,15 @@
 								 [innerHTML]="title"></div>
 						</div>
 					</a>
+					<div *ngIf="!isOnline"
+						class="card-image default-cursor"
+						[style.background-image]="'url(' + img + ')'">
+						<div class="inner-content">
+							<div *ngIf="title"
+								class="title"
+								[innerHTML]="title"></div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -113,7 +156,7 @@
 		 *ngIf="type === 'article'"
 		 [style.height.px]="containerHeight">
 		<div class="container-fluid">
-			<a [attr.href]="!actionLink ? null : actionLink"
+			<a *ngIf="isOnline" [attr.href]="!actionLink ? null : actionLink"
 			   metricsItemCategory="article"
 			   vtrMetrics
 			   metricsEvent="docClick"
@@ -123,7 +166,7 @@
 				<div class="row">
 					<div class="col col-12 image-container">
 						<a [attr.href]="!actionLink ? null : actionLink"
-						   target="_blank"
+							target="_blank"
 						   class="card-image"
 						   [style.background-image]="'url(' + img + ')'">
 							<div *ngIf="logo || logoText"
@@ -136,7 +179,7 @@
 						</a>
 					</div>
 					<div class="row">
-						<div class="col col-12 content">
+							<div class="col col-12 content">
 							<div *ngIf="title"
 								 class="title">{{title}}</div>
 							<div *ngIf="actionLink"
@@ -150,6 +193,22 @@
 					</div>
 				</div>
 			</a>
+			<div class="offline-a" *ngIf="!isOnline">
+				<div class="row">
+					<div class="col col-12 image-container">
+						<div class="card-image default-cursor"
+							[style.background-image]="'url(' + img + ')'">
+							<div *ngIf="logo || logoText"
+								class="logo">
+							<span class="logo-img">
+								<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
+							</span>
+								<span class="logo-text">{{logoText}}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -168,7 +227,7 @@
 						<span class="logo-text">{{logoText}}</span>
 					</div>
 					<div class="row">
-						<a [attr.href]="!actionLink ? null : actionLink"
+						<a *ngIf="isOnline" [attr.href]="!actionLink ? null : actionLink"
 						   target="_blank"
 						   vtrMetrics
 						   metricsEvent="docClick"
@@ -183,6 +242,16 @@
 								</div>
 							</div>
 						</a>
+						<div *ngIf="!isOnline"
+							class="default-cursor">
+							<div class="col col-12 content">
+								<div *ngIf="title"
+									class="title">{{title}}</div>
+								<div *ngIf="actionLink"
+									class="read-more">
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

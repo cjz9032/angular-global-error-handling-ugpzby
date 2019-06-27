@@ -89,6 +89,10 @@
 					}
 				}
 			}
+
+			.default-cursor {
+				cursor: default;
+			}
 		}
 	}
 
@@ -158,6 +162,10 @@
 					}
 				}
 			}
+
+			.default-cursor {
+				cursor: default;
+			}
 		}
 	}
 
@@ -208,6 +216,10 @@
 					}
 				}
 			}
+
+			.default-cursor {
+				cursor: default;
+			}
 		}
 	}
 
@@ -216,7 +228,11 @@
 			max-width: 100%;
 		}
 
-		a {
+		.offline-a {
+			height: 100%;
+		}
+
+		a, .offline-a {
 			&:hover {
 				text-decoration: none;
 			}
@@ -234,6 +250,10 @@
 				cursor: pointer;
 				width: 100%;
 				height: 100%;
+			}
+
+			.default-cursor {
+				cursor: default;
 			}
 
 			.content {
@@ -300,6 +320,10 @@
 			}
 		}
 
+		.default-cursor {
+			cursor: default;
+		}
+
 		.content {
 			padding: 3rem 4rem;
 			cursor: pointer;
@@ -355,7 +379,7 @@
 		position: relative;
 		z-index: 1;
 		padding: 3rem;
-
+		
 		.title {
 			color: $main_dark;
 			font-size: 2.5rem;
