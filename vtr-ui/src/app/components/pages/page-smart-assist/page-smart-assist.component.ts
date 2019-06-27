@@ -167,7 +167,7 @@ export class PageSmartAssistComponent implements OnInit {
 			this.intelligentScreen.isAutoScreenOffNoteVisible = responses[3];
 			this.intelligentScreen.isReadingOrBrowsingVisible = responses[4];
 			this.intelligentScreen.isReadingOrBrowsingEnabled = responses[5];
-			this.intelligentScreen.readingOrBrowsingTime = responses[6] / 60;
+			this.intelligentScreen.readingOrBrowsingTime = responses[6];
 			console.log('PageSmartAssistComponent.Promise.IntelligentScreen()', responses, this.intelligentScreen);
 
 			if (this.intelligentScreen.isIntelligentScreenVisible) {
