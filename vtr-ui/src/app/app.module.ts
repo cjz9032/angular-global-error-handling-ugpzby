@@ -236,6 +236,7 @@ import { CapitalizeFirstPipe } from './pipe/capitalize-pipe/capitalize-first.pip
 import { SanitizeModule } from './modules/sanitize.module';
 import { SmartStandbyComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/smart-standby/smart-standby.component';
 import { UiDaysPickerComponent } from './components/ui/ui-days-picker/ui-days-picker.component';
+import { DownloadFailedModalComponent } from './components/pages/page-smart-assist/voice/download-failed-modal/download-failed-modal.component';
 
 library.add(fas);
 library.add(fab);
@@ -425,7 +426,8 @@ library.add(fal);
 		ModalVoiceComponent,
 		CapitalizeFirstPipe,
 		SmartStandbyComponent,
-		UiDaysPickerComponent
+		UiDaysPickerComponent,
+		DownloadFailedModalComponent
 	],
 	imports: [
 		BrowserModule,
@@ -479,7 +481,8 @@ library.add(fal);
 		ModalGamingLegionedgeComponent,
 		ModalChsWelcomeContainerComponent,
 		ModalIntelligentCoolingModesComponent,
-		ModalVoiceComponent
+		ModalVoiceComponent,
+		DownloadFailedModalComponent
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

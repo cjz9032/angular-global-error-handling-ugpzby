@@ -289,6 +289,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -864,20 +914,20 @@
             "displayCamera": {
                 "title": "Οθόνη & Κάμερα",
                 "subtitle": "Ρυθμίσεις οθόνης & κάμερας",
-                "description": "Αυτή η ενότητα σας επιτρέπει να βελτιώνετε την οπτική εμπειρία σας και να διαμορφώνετε τις ιδιότητες της κάμεράς σας.Εξερευνήστε περισσότερες δυνατότητες και προσαρμόστε την εμπειρία οθόνης σας εδώ.",
+                "description": "Αυτή η ενότητα σας επιτρέπει να βελτιώνετε την οπτική εμπειρία σας και να διαμορφώνετε τις ιδιότητες της κάμεράς σας. Εξερευνήστε περισσότερες δυνατότητες και προσαρμόστε την εμπειρία της οθόνης σας εδώ.",
                 "jumpTo": {
                     "title": "ΜΕΤΑΒΑΣΗ ΣΤΙΣ ΡΥΘΜΙΣΕΙΣ",
                     "shortcuts": {
                         "display": {
-                            "title": "Οθόνη"
+                            "title": "Παρουσίαση"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Κάμερα"
                         }
                     }
                 },
                 "display": {
-                    "title": "Οθόνη",
+                    "title": "Παρουσίαση",
                     "eyeCareMode": {
                         "title": "Λειτουργία Φροντίδα ματιών",
                         "checkbox": "Προγραμματίστε τη λειτουργία φροντίδας ματιών από το ηλιοβασίλεμα έως την ανατολή",
@@ -894,45 +944,45 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Θερμοκρασία χρωμάτων οθόνης",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Ζεστό (καλύτερο για τα μάτια)",
+                            "cold": "Ψυχρό"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Επαναφορά θερμοκρασίας",
+                        "tooltip": "Η λειτουργία φροντίδας ματιών ρυθμίζει τη θερμοκρασία των χρωμάτων της οθόνης σας για φιλτράρισμα του μπλε φωτός και μείωση της κόπωσης των ματιών.",
+                        "onSunsetToSunriseScheduleDescription": "Προγραμματίστε τη λειτουργία φροντίδας ματιών από το ηλιοβασίλεμα έως την ανατολή",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Σημείωση",
+                            "description": "Η εφαρμογή Lenovo Vantage πρέπει να έχει πρόσβαση στις πληροφορίες της τοποθεσίας σας για να μπορεί να υπολογίσει την ώρα του ηλιοβασιλέματος και την ώρα της ανατολής στην περιοχή σας."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Privacy Guard",
+                        "description": "Αυτή η δυνατότητα εμποδίζει άλλα άτομα να κρυφοκοιτάζουν την οθόνη σας. Όταν είναι ενεργοποιημένη, αλλάζει τη γωνία προβολής της οθόνης σας, ώστε να διατηρείται ιδιωτική από εκείνους που βρίσκονται γύρω σας. Μπορείτε επίσης να αλλάζετε λειτουργίες πιέζοντας τα πλήκτρα \"Fn+D\".",
+                        "note": "Το Privacy Guard δεν λειτουργεί σε κατακόρυφη λειτουργία οθόνης. Σε αυτήν τη λειτουργία, η οθόνη σας παραμένει ορατή από το πλάι.",
+                        "labelText": "Ενεργοποίηση αυτής της δυνατότητας κατά την πληκτρολόγηση κωδικών πρόσβασης"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Ρυθμίσεις ενέργειας OLED",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Επίσης, η οθόνη OLED του υπολογιστή σας μπορεί να μειώσει την κατανάλωση ενέργειας και να παρατείνει τη διάρκεια ζωής της μπαταρίας, μέσω της επιλεκτικής μείωσης της φωτεινότητας σε τμήματα της οθόνης.",
+                            "Σας συνιστούμε επίσης να μειώνετε τη φωτεινότητα της γραμμής εργασιών και άλλων περιοχών της οθόνης που δεν αλλάζουν συχνά, ώστε να παρατείνετε τη συνολική διάρκεια ζωής της οθόνης."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Επαναφορά θερμοκρασίας",
+                        "tooltip": "Αυτή η δυνατότητα μπορεί να μειώσει την κατανάλωση ενέργειας και να παρατείνει τη διάρκεια ζωής της μπαταρίας, μέσω της επιλεκτικής μείωσης της φωτεινότητας σε τμήματα της οθόνης."
                     }
                 },
                 "camera": {
                     "title": "Κάμερα",
                     "note": {
                         "title": "Σημείωση",
-                        "description": "Η εφαρμογή Lenovo Vantage δεν έχει δικαιώματα πρόσβασης στην κάμερά σας.Ενεργοποιήστε την πρόσβαση στην κάμερά σας για την εφαρμογή Lenovo Vantage."
+                        "description": "Η εφαρμογή Lenovo Vantage δεν έχει δικαιώματα πρόσβασης στην κάμερά σας. Ενεργοποιήστε την πρόσβαση στην κάμερα για την εφαρμογή Lenovo Vantage."
                     },
                     "url": "Μετάβαση στις ρυθμίσεις απορρήτου των Windows",
                     "cameraPrivacy": {
                         "title": "Λειτουργία απορρήτου κάμερας",
-                        "tooltip": "Η κάμερα σταματά να στέλνει ζωντανές εικόνες αν έχει ενεργοποιηθεί η ρύθμιση απορρήτου. Ενεργοποιήστε αυτήν τη ρύθμιση μόνο αν δεν θέλετε να μοιράζεστε εικόνες με άλλους κατά τη βιντεοκλήση."
+                        "tooltip": "Η κάμερα σταματά να αποστέλλει ζωντανές εικόνες όταν είναι ενεργοποιημένη η ρύθμιση απορρήτου. Ενεργοποιήστε αυτήν τη ρύθμιση μόνο αν δεν θέλετε να μοιράζεστε εικόνες με άλλους κατά τη βιντεοκλήση."
                     },
                     "camera": {
                         "title": "Κάμερα",
@@ -946,10 +996,10 @@
                     "notAvailable": "Η κάμερα δεν είναι διαθέσιμη",
                     "camerablur": {
                         "title": "Θόλωση φόντου κάμερας",
-                        "caption": "Αυτή η δυνατότητα θολώνει το φόντο σας όταν χρησιμοποιείτε την κάμερα για κλήση βίντεο ή λήψη φωτογραφιών.Μπορείτε να επιλέξετε άλλο εφέ από τις παρακάτω επιλογές.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Αυτή η δυνατότητα θολώνει το φόντο σας όταν χρησιμοποιείτε την κάμερα για κλήση βίντεο ή λήψη φωτογραφιών. Μπορείτε να επιλέξετε άλλο εφέ από τις παρακάτω επιλογές.",
+                        "blurMode": "Λειτουργία θόλωσης",
+                        "comicMode": "Κωμική λειτουργία",
+                        "sketchMode": "Λειτουργία σκίτσου"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",

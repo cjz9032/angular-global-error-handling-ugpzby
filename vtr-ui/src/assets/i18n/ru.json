@@ -289,6 +289,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -864,7 +914,7 @@
             "displayCamera": {
                 "title": "Дисплей и камера",
                 "subtitle": "Параметры дисплея и камеры",
-                "description": "В этом разделе можно повысить качество изображения и настроить свойства камеры.Здесь можно настроить различные функции и параметры дисплея.",
+                "description": "В этом разделе можно повысить качество изображения и настроить свойства камеры. Здесь можно настроить различные функции и параметры дисплея.",
                 "jumpTo": {
                     "title": "ПЕРЕЙТИ К ПАРАМЕТРАМ",
                     "shortcuts": {
@@ -872,7 +922,7 @@
                             "title": "Дисплей"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Фотокамера"
                         }
                     }
                 },
@@ -894,40 +944,40 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Цветовая температура экрана",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Теплые тона (лучше для глаз)",
+                            "cold": "Холодный"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Сбросить температуру",
+                        "tooltip": "В режиме защиты глаз цветовая температура экрана регулируется для фильтрации синего света и уменьшения напряжения глаз.",
+                        "onSunsetToSunriseScheduleDescription": "Установите график режима защиты глаз в темное время суток",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Примечание",
+                            "description": "Lenovo Vantage требуется доступ к информации о вашем местоположении, чтобы рассчитать время заката и восхода в вашем регионе."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Защита конфиденциальности",
+                        "description": "Эта функция препятствует просмотру информации на вашем экране другими людьми. Если эта функция включена, угол обзора вашего дисплея меняется и люди вокруг не могут видеть отображаемое на нем. Переключаться между режимами можно с помощью клавиш \"Fn+D\".",
+                        "note": "Функция защиты конфиденциальности не работает, если экран находится в портретном режиме. В этом режиме изображение на экране по-прежнему видно с боков.",
+                        "labelText": "Включать эту функцию при вводе паролей"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Параметры питания органических светодиодов",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Компьютерный дисплей на органических светодиодах позволяет также снизить энергопотребление и увеличить время работы аккумулятора путем выборочного затемнения участков экрана.",
+                            "Рекомендуется также затемнить панель задач и другие редко изменяемые области дисплея, чтобы продлить срок его службы."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Сбросить температуру",
+                        "tooltip": "Эта функция позволяет снизить энергопотребление и увеличить время работы аккумулятора путем выборочного затемнения участков экрана."
                     }
                 },
                 "camera": {
                     "title": "Фотокамера",
                     "note": {
                         "title": "Примечание",
-                        "description": "У Lenovo Vantage нет разрешения на доступ к камере.Включите доступ к камере для приложения Lenovo Vantage."
+                        "description": "У Lenovo Vantage нет разрешения на доступ к камере. Включите доступ к камере для Lenovo Vantage."
                     },
                     "url": "Перейдите в раздел параметров конфиденциальности Windows",
                     "cameraPrivacy": {
@@ -946,10 +996,10 @@
                     "notAvailable": "Камера недоступна",
                     "camerablur": {
                         "title": "Размытие фона камеры",
-                        "caption": "Эта функция размывает фон при использовании камеры для видеовызовов и съемки фотографий.Можно выбрать другой эффект из следующего списка.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Эта функция размывает фон при использовании камеры для видеовызовов и съемки фотографий. Можно выбрать другой эффект из следующего списка.",
+                        "blurMode": "Режим размытия",
+                        "comicMode": "Комический режим",
+                        "sketchMode": "Режим эскиза"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
