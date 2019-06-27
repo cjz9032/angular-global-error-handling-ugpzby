@@ -391,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Feedback geven",
+            "subtitle": "Vertel ons wat u van het voordeel vindt.",
+            "button": "Feedback geven",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Opmerkingen...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Bedankt voor uw feedback."
                 },
                 "question1": "Bent u tevreden over de nieuwe stijl van Vantage?",
                 "question2": "Denkt u dat de prestaties acceptabel zijn?",
@@ -1369,7 +1369,9 @@
             "status": "Status: ",
             "subDescription1": "Dit product heeft jaar beperkte garantie en het recht op depot-reparatieservice. Klanten kunnen hun lokale servicecentrum bellen voor meer informatie. Dealers kunnen carry-in-reparatie bieden voor dit product.",
             "subDescription2": "We hebben geen garantie-informatie over uw apparaat gevonden. Ga voor meer garantieopties naar onze ondersteuningswebsite.",
-            "viewWarrantyOptions": "GARANTIEOPTIES WEERGEVEN"
+            "viewWarrantyOptions": "GARANTIEOPTIES WEERGEVEN",
+            "offlineTips1": "Maak verbinding met internet voor de recentste garantie-informatie.",
+            "offlineTips2": "Maak verbinding met internet om de garantie-informatie bij te werken."
         },
         "documentation": {
             "title": "Documentatie",

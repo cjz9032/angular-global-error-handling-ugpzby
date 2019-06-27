@@ -391,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Pošaljite povratne informacije",
+            "subtitle": "Recite nam što mislite o Vantage.",
+            "button": "Pošaljite povratne informacije",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Komentari...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Hvala vam na povratnim informacijama!"
                 },
                 "question1": "Sviđa li vam se novi stil aplikacije Vantage?",
                 "question2": "Mislite li da su performanse prihvatljive?",
@@ -1369,7 +1369,9 @@
             "status": "Stanje: ",
             "subDescription1": "Ovaj proizvod ima godinama ograničeno jamstvo i ima pravo na uslugu popravka u skladištu. Korisnici mogu nazvati svoj lokalni servisni centar za više informacija. Trgovci mogu pružati popravak za ovaj proizvod.",
             "subDescription2": "Nismo mogli locirati podatke o jamstvu za vaš uređaj. Za više mogućnosti jamstva posjetite naše web-mjesto za podršku.",
-            "viewWarrantyOptions": "PRIKAŽI MOGUĆNOSTI JAMSTVA"
+            "viewWarrantyOptions": "PRIKAŽI MOGUĆNOSTI JAMSTVA",
+            "offlineTips1": "Za najnovije informacije o jamstvu priključite se na internet.",
+            "offlineTips2": "Za ažuriranje informacija o jamstvu priključite se na internet."
         },
         "documentation": {
             "title": "Dokumentacija",

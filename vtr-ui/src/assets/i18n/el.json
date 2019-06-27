@@ -391,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Υποβολή σχολίων",
+            "subtitle": "Πείτε μας τη γνώμη σας για το Vantage.",
+            "button": "Υποβολή σχολίων",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Σχόλια...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Σας ευχαριστούμε για τα σχόλιά σας!"
                 },
                 "question1": "Σας αρέσει το νέο στιλ του Vantage;",
                 "question2": "Πιστεύετε ότι η απόδοση είναι αποδεκτή;",
@@ -1369,7 +1369,9 @@
             "status": "Κατάσταση: ",
             "subDescription1": "Αυτό το προϊόν έχει περιορισμένη εγγύηση ετών και δικαιούται υπηρεσία επισκευής στην αποθήκη. Οι πελάτες μπορούν να καλούν το τοπικό κέντρο επισκευής για περισσότερες πληροφορίες. Οι αντιπρόσωποι έχουν τη δυνατότητα παροχής υπηρεσιών επισκευής κατόπιν παράδοσης στον χώρο τους για το συγκεκριμένο προϊόν.",
             "subDescription2": "Δεν μπορέσαμε να εντοπίσουμε τα στοιχεία της εγγύησης για τη συσκευή σας, για περισσότερες επιλογές εγγύησης, παρακαλούμε επισκεφθείτε τον δικτυακό τόπο μας υποστήριξης.",
-            "viewWarrantyOptions": "ΠΡΟΒΟΛΗ ΕΠΙΛΟΓΩΝ ΕΓΓΥΗΣΗΣ"
+            "viewWarrantyOptions": "ΠΡΟΒΟΛΗ ΕΠΙΛΟΓΩΝ ΕΓΓΥΗΣΗΣ",
+            "offlineTips1": "Συνδεθείτε στο Internet για τις τελευταίες πληροφορίες εγγύησης.",
+            "offlineTips2": "Συνδεθείτε στο Internet για να ενημερώσετε τις πληροφορίες εγγύησης."
         },
         "documentation": {
             "title": "Τεκμηρίωση",

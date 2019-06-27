@@ -1,4 +1,4 @@
-<div class="vtr-widget-home-security-my-device container-fluid">
+<div class="vtr-home-security-my-device container-fluid">
 	<div class="icon-container">
 		<div class="icon">
 			<img class="img-fluid" src="assets/images/device.png" />
@@ -58,7 +58,7 @@
 			</div>
 	</div>
 	</div>
-	<div class="device-status-container" [ngClass]="{'show':!isShowPosture}">
+	<div class="device-status-container" [ngClass]="{'hidden':!isShowPosture}">
 		<div class="loading" *ngIf="!homeSecurityOverviewMyDevice || !homeSecurityOverviewMyDevice.devicePostures">
 			<div class="spinner-border text-primary progress-spinner" role="status">
 			</div>
