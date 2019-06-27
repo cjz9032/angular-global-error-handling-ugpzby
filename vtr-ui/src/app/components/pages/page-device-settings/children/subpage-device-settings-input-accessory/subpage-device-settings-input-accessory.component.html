@@ -18,13 +18,13 @@
 				[allowCollapse]="true"
 				[theme]="'white'">
 				<ul class="list-group list-group-flush">
-					<li class="pt-3">
+					<li class="pt-3" *ngIf="machineType == 1 && keyboardCompatability">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.title' | translate"
 							componentName="Input Accessories"
 							[caption]=""
 							[isSwitchVisible]="false"
-							[leftIcon]="['fal', 'keyboard']"
+							[leftIcon]="['svg', 'Hiddenkeyboardfunctions']"
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'white'">

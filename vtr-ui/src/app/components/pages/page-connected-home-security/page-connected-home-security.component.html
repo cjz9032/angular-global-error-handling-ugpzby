@@ -2,13 +2,13 @@
     <div class="row vtr-page-header">
         <div class="col vtr-col">
             <vtr-header-main [backarrow]="'&lt; '" [back]="'common.ui.back' | translate"
-                [title]="'homeSecurity.title' | translate"></vtr-header-main>
+                [title]="'homeSecurity.title' | translate" [backId]="backId"></vtr-header-main>
         </div>
     </div>
     <div class="row vtr-page-content">
         <div class="col vtr-col">
             <div class="row">
-                <div class="col-12 col-sm-12 col-lg-8 vtr-page-left-column">
+                <div class="col-12 col-sm-12 col-md-8 vtr-page-left-column">
                     <div class="vtr-subpage">
                         <div class="vtr-page-shift-up">
                             <div class="container-fluid">
@@ -17,7 +17,6 @@
                                         <vtr-widget-home-security-device
                                             [device]="account.device"
                                             [allDevice]="account.allDevice"
-                                            (upgradeAccount)="onUpgradeAccount()"
                                           ></vtr-widget-home-security-device>
                                     </div>
                                 </div>
@@ -25,20 +24,19 @@
                                     <div class="container-fluid fix-height">
                                         <div class="row title">{{'homeSecurity.overview.overviewBlockTitle' | translate}}</div>
                                         <div class="container-fluid sub-container">
-                                            <div class="row sub-title">{{'homeSecurity.overview.myDevice' | translate}}</div>
+                                            <div class="row sub-title mydevice-title">{{'homeSecurity.overview.myDevice' | translate}}</div>
                                             <div class="row container-fluid h-50 device-card">
                                                 <vtr-widget-home-security-my-device class="container-fluid"
                                                     [homeSecurityOverviewMyDevice]="homeSecurityOverviewMyDevice">
                                                 </vtr-widget-home-security-my-device>
                                             </div>
                                             <div class="row sub-title">{{'homeSecurity.overview.allDevices' | translate}}
-                                                <vtr-ui-button (click)="switchStatus()" [label]="'switch'">
-                                                </vtr-ui-button>
                                             </div>
                                             <div class="row container-fluid home-card">
-                                                <vtr-widget-home-security-all-devices class="container-fluid"
-                                                    [eventEmitter]="eventEmitter" [allDevicesInfo]="allDevicesInfo"
-                                                    [account]="account" (emitter)="haddleChange($event)">
+												<vtr-widget-home-security-all-devices class="container-fluid"
+													[connectedHomeSecurity]="connectedHomeSecurity"
+                                                    [allDevicesInfo]="allDevicesInfo"
+                                                    [account]="account">
                                                 </vtr-widget-home-security-all-devices>
                                             </div>
                                         </div>
@@ -48,7 +46,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-12 col-lg-4 vtr-page-right-column">
+                <div class="col-12 col-sm-12 col-md-4 vtr-page-right-column">
                     <div class="vtr-page-shift-up">
                         <div class="container-fluid">
                             <div class="row mb-40">
@@ -61,7 +59,7 @@
                                 </div>
                             </div>
                             <div class="row mb-40">
-                                <div class="col col-12" [ngClass]="{'offline':isOnline}">
+                                <div class="col col-12">
                                     <vtr-widget-questions [title]="'homeSecurity.notification.notifications' | translate"
                                         [description]="'homeSecurity.notification.recent' | translate "
                                         [items]="notificationItems?.notificationItem" [clickable]="false"

@@ -58,7 +58,7 @@
 					"macroKey": "Marco Key",
 					"hardwareScan": "Hardware Scan",
 					"systemUpdate": "System Update",
-					"header":"System Tools"
+					"header": "System Tools"
 				},
 				"lighting": {
 					"title": "Lighting Customize",
@@ -289,6 +289,56 @@
 				"option4": {
 					"title": "Slow Blink"
 				}
+			},
+			"profile": {
+				"text1": {
+					"title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+				},
+				"text2": {
+					"title": "effect"
+				},
+				"text3": {
+					"title": "Effect"
+				}
+			},
+			"button": {
+				"default": {
+					"title": "Set to default"
+				}
+			},
+			"profileheading": {
+				"text1": {
+					"title": "Off"
+				},
+				"text2": {
+					"title": "Profile 1"
+				},
+				"text3": {
+					"title": "Profile 2"
+				},
+				"text4": {
+					"title": "Profile 3"
+				}
+			},
+			"lightingProfileHeading": {
+				"text1": {
+					"title": "Off"
+				},
+				"text2": {
+					"title": "1"
+				},
+				"text3": {
+					"title": "2"
+				},
+				"text4": {
+					"title": "3"
+				},
+				"Customize": {
+					"title": "Customize"
+				},
+				"heading": {
+					"title": "Select Profile:"
+				}
 			}
 		}
 	},
@@ -516,7 +566,7 @@
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
 				"updating": "Updating",
-				"thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+				"thresholdNote": "To extend the battery lifespan, you have set your battery to stop charging at",
 				"voltageError": "Battery voltage incorrect",
 				"batteryNotDetected": "No Battery Detected",
 				"details": {
@@ -1275,7 +1325,7 @@
 	},
 	"homeSecurity": {
 		"title": "Connected Home Security",
-		"notification":{
+		"notification": {
 			"recent": "Recent security notifications",
 			"notifications": "Notifications"
 		},
@@ -1369,7 +1419,9 @@
 			"status": "Status: ",
 			"subDescription1": "This product has years limited warranty and it entitled to depot repair service. Customers may call their local service center for more information. Dealers may provide carry-in repair for this product.",
 			"subDescription2": "We were unable to locate warranty details for your device, to have more warranty options, please visit our support website.",
-			"viewWarrantyOptions": "VIEW WARRANTY OPTIONS"
+			"viewWarrantyOptions": "VIEW WARRANTY OPTIONS",
+			"offlineTips1": "Please connect to internet for latest warranty info.",
+			"offlineTips2": "Please connect internet to update warranty information."
 		},
 		"documentation": {
 			"title": "Documentation",

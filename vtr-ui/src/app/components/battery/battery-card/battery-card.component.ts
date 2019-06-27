@@ -131,7 +131,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 	getChargeThresholdInfo() {
 		this.powerService.getChargeThresholdInfo().then((response: any) => {
-			this.chargeThresholdInfo = response[0];
+			this.chargeThresholdInfo = response;
 			console.log('Charge Threshold Info: ', this.chargeThresholdInfo);
 		});
 	}

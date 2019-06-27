@@ -91,7 +91,8 @@
             .text {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+				justify-content: center;
+				padding-left: 0;
                 .device-text {
                     justify-content: center;
                     font-size: 1.5rem;
@@ -154,5 +155,55 @@
                 }
             }
         }
-    }
+	}
+
+	@media #{$medium-screen} {
+		.content{
+			.icon-container{
+				border-bottom: 0.1rem solid $shade_lighter;
+				height: 50%;
+				.icon{
+					font-size: 8rem;
+				}
+			}
+		}
+
+		.device-info-and-add-device{
+			height: 50%;
+		}
+
+		.device-text-add-device{
+			.text{
+				padding-left: 0;
+			}
+		}
+	}
+
+	@media #{$small-screen} {
+		.icon-container{
+			height: 45% ;
+			border-bottom: 0.1rem solid $shade_lighter;
+			.icon{
+				font-size: 8rem !important;
+			}
+		}
+
+		.device-info-and-add-device{
+			height: 55% ;
+		}
+
+		.device-text-add-device{
+			.text{
+				padding-left: 0;
+				justify-content: flex-end !important;
+			}
+			.add-device {
+				display: flex;
+				justify-content: flex-start;
+				align-items: flex-start;
+				padding: 0;
+			}
+		}
+	}
+
 }

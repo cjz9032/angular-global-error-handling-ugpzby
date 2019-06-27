@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -422,7 +424,7 @@
             "memory": {
                 "title": "Memory",
                 "detail": {
-                    "notFound": "Memory not found",
+                    "notFound": "找不到内存",
                     "of": "of"
                 }
             },
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "連線家庭安全性",
-        "notification":{
+        "notification": {
             "recent": "最近的安全通知",
             "notifications": "通知"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "保護您的裝置生態系統",
             "thisDevice": "這部裝置",
@@ -1293,22 +1295,22 @@
             "startTrial": "開始試用",
             "fullAccess": "完整存取權",
             "renew": "更新"
-		},
-		"overview": {
-			"overviewBlockTitle": "您的生態系統安全概要",
-			"allDevices": "全部裝置",
-			"myDevice": "我的裝置",
-			"secure": "安全",
-			"needAttention": "需要關注",
-			"manageAccount": "管理帳戶",
-			"devices": "裝置",
-			"seeProtectedDevices": "請參閱受保護裝置",
-			"addDevice": "新增裝置",
-			"trialExpired": "試用已過期 - 升級以保護您的全部裝置",
-			"upgrade": "升級",
-			"freeTrial": "保護您的全部裝置 - 30 天免費試用版",
-			"startTrial": "開始試用"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "您的生態系統安全概要",
+            "allDevices": "全部裝置",
+            "myDevice": "我的裝置",
+            "secure": "安全",
+            "needAttention": "需要關注",
+            "manageAccount": "管理帳戶",
+            "devices": "裝置",
+            "seeProtectedDevices": "請參閱受保護裝置",
+            "addDevice": "新增裝置",
+            "trialExpired": "試用已過期 - 升級以保護您的全部裝置",
+            "upgrade": "升級",
+            "freeTrial": "保護您的全部裝置 - 30 天免費試用版",
+            "startTrial": "開始試用"
+        },
         "tour": {
             "back": "上一頁",
             "skip": "跳過",

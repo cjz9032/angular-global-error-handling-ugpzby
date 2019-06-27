@@ -78,8 +78,8 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 }
 
 	public toggleAutoChargeSettings(event: any) {
-		console.log('toggleAutoSettings------>', event);
-		if(event){
+		// console.log('toggleAutoSettings------>', event);
+		// if(event){
 			this.autoStartStopAtCharge();
 			this.selectedOptionsData = {
 				startValue : this.selectedStartAtCharge,
@@ -87,7 +87,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 				checkBoxValue: this.isCheckedAuto
 			}
 			this.autoChecked.emit(this.selectedOptionsData)
-		}	
+		// }	
 
 	}
 }

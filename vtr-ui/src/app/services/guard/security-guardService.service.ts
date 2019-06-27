@@ -28,7 +28,7 @@ export class GuardService {
 			ItemType: 'PageView',
 			PageName: activatedRouteSnapshot.data.pageName,
 			PageDuration: `${Math.floor((Date.now() - this.interTime) / 1000)}`,
-			PageContext: !this.pageContext ? null : this.commonService.getLocalStorageValue(this.pageContext),
+			PageContext: this.pageContext,
 		};
 		console.log('Deactivate : ' + activatedRouteSnapshot.data.pageName, ' >>>>>>>>>> ', data);
 		this.metrics.sendAsync(data);

@@ -194,6 +194,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			this.setUpdateByCategory(this.systemUpdateService.installedUpdates);
 		}
 
+		this.getScheduleUpdateStatus(false);
+		this.isComponentInitialized = true;
+
 		this.getLastUpdateScanDetail();
 		if (action && action.toLowerCase() === 'enable') {
 			this.systemUpdateService.setUpdateSchedule(true, false);
@@ -201,8 +204,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			this.systemUpdateService.getUpdateSchedule();
 		}
 		this.systemUpdateService.getUpdateHistory();
-		this.getScheduleUpdateStatus(false);
-		this.isComponentInitialized = true;
+
 		this.setUpdateTitle();
 	}
 
@@ -467,8 +469,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		modalRef.componentInstance.packages = packages;
 		modalRef.componentInstance.OkText = 'systemUpdates.popup.okayButton';
 		modalRef.componentInstance.CancelText = 'systemUpdates.popup.cancelButton';
-		modalRef.componentInstance.metricsParent = 'Pages.SystemUpdate.RebootRequiredControl';
-
 		modalRef.result.then(
 			result => {
 				// on open
@@ -504,6 +504,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		const description = 'systemUpdates.popup.rebootForceMsg';
 		modalRef.componentInstance.header = header;
 		modalRef.componentInstance.description = description;
+		modalRef.componentInstance.metricsParent = 'Pages.SystemUpdate.RebootForceMsgControl';
 	}
 
 	private showPowerOffForceModal(modalRef: NgbModalRef) {
@@ -511,6 +512,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		const description = 'systemUpdates.popup.shutdownForceMsg';
 		modalRef.componentInstance.header = header;
 		modalRef.componentInstance.description = description;
+		modalRef.componentInstance.metricsParent = 'Pages.SystemUpdate.ShutdownForceMsgControl';
 	}
 
 	private showRebootDelayedModal(modalRef: NgbModalRef) {
@@ -518,6 +520,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		const description = 'systemUpdates.popup.rebootDelayedMsg';
 		modalRef.componentInstance.header = header;
 		modalRef.componentInstance.description = description;
+		modalRef.componentInstance.metricsParent = 'Pages.SystemUpdate.RebootDelayedMsgControl';
 	}
 
 	private setUpdateByCategory(updateList: Array<AvailableUpdateDetail>) {
@@ -704,6 +707,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					if (this.isCheckingPluginStatus) {
 						this.getScheduleUpdateStatus(false);
 					}
+					this.isOnline = notification.payload.isOnline;
+					this.offlineSubtitle = `${this.getLastUpdatedText()}<br>${this.getNextUpdatedScanText()}`;
+					break;
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
 					this.offlineSubtitle = `${this.getLastUpdatedText()}<br>${this.getNextUpdatedScanText()}`;
@@ -767,7 +773,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
 					this.setUpdateByCategory(payload.updateList);
 					this.systemUpdateService.getUpdateHistory();
-					//using this check to avoid displaying more than on reboot confimation dialogs.
+					// using this check to avoid displaying more than on reboot confimation dialogs.
 					if (!this.isRebootRequested) {
 					this.checkRebootRequested();
 					}
@@ -782,6 +788,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.systemUpdateService.isUpdateDownloading = false;
 		this.systemUpdateService.isInstallationSuccess = false;
 		this.systemUpdateService.isInstallationCompleted = false;
+		this.systemUpdateService.isDownloadingCancel = false;
 	}
 
 	private getScheduleUpdateStatus(reportProgress: boolean) {
@@ -865,6 +872,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		});
 		this.translate.stream(this.at).subscribe((res) => {
 			this.at = res;
-		})
+		});
 	}
 }

@@ -19,7 +19,7 @@ import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-cap
 @Component({
 	selector: 'vtr-widget-legion-edge',
 	templateUrl: './widget-legion-edge.component.html',
-	styleUrls: [ './widget-legion-edge.component.scss' ]
+	styleUrls: ['./widget-legion-edge.component.scss']
 })
 export class WidgetLegionEdgeComponent implements OnInit {
 	// public ramOcStatus = false;
@@ -191,7 +191,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		private gamingHybridModeService: GamingHybridModeService,
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private gamingNetworkBoostService: NetworkBoostService
-	) {}
+	) { }
 	ngOnInit() {
 		this.gamingCapabilities.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.hybridModeFeature
@@ -204,9 +204,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		);
 		this.gamingCapabilities.networkBoostFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.networkBoostFeature
-		);
-		this.gamingCapabilities.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(
-			LocalStorageKey.hybridModeFeature
 		);
 		this.gamingCapabilities.hybridStatus = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.HybridModeStatus
@@ -277,10 +274,22 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			if (networkBoostModeStatus !== undefined) {
 				console.log('aparna  ' + networkBoostModeStatus);
 				this.NetworkBoostStatusObj.networkBoostStatus = networkBoostModeStatus;
-				this.SetHybridModeCacheStatus(networkBoostModeStatus);
+				this.SetNetworkBoostCacheStatus(networkBoostModeStatus);
 				this.legionUpdate[3].isChecked = networkBoostModeStatus;
 			}
 		});
+	}
+
+	public async setNetworkBoostStatus(status: any) {
+		try {
+			const isStatusUpdated = await this.gamingNetworkBoostService.setNetworkBoostStatus(status);
+			// TODO has to confirm with aparna to update status of cache IRR of isStatusUpdated.
+			if (isStatusUpdated) {
+				this.SetNetworkBoostCacheStatus(status);
+			}
+		} catch (err) {
+			console.log(`ERROR in setNetworkBoostStatus() of widget-legion.component`, err);
+		}
 	}
 
 	public GetNetworkBoostCacheStatus() {
@@ -338,25 +347,19 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.modalService.open(ModalGamingLegionedgeComponent, { windowClass: 'gaming-help-modal' });
 	}
 	public renderRamOverClockStatus() {
-		//	this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
+		// this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
 		if (this.gamingCapabilities.xtuService === true) {
 			this.gamingSystemUpdateService.getRamOCStatus().then((ramOcStatus) => {
 				if (ramOcStatus !== undefined) {
 					this.RamOCSatusObj.ramOcStatus = ramOcStatus;
-					this.SetRAMOverClockCacheStatus(ramOcStatus);
+					// this.SetRAMOverClockCacheStatus(ramOcStatus);
 					this.legionUpdate[1].isChecked = ramOcStatus;
 				}
 			});
 		}
 		// });
 	}
-	public GetRAMOverClockCacheStatus() {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.RamOcStatus);
-	}
-	public SetRAMOverClockCacheStatus(ramOcStatus: Boolean) {
-		return this.commonService.setLocalStorageValue(LocalStorageKey.RamOcStatus, ramOcStatus);
-	}
-
+	
 	public renderHybridModeStatus() {
 		this.gamingHybridModeService.getHybridModeStatus().then((hybridModeStatus) => {
 			if (hybridModeStatus !== undefined) {
@@ -409,16 +412,14 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public onPopupClosed($event) {
 		const name = $event.name;
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
-			//	this.disableButtons = false;
 			this.commonService.sendNotification(name, this.legionUpdate[1].isChecked);
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
-			//	this.disableButtons = false;
 			this.commonService.sendNotification(name, this.legionUpdate[4].isChecked);
 		}
 	}
 
-	public toggleOnOffRamOCStatus($event) {
+	public async toggleOnOffRamOCStatus($event) {
 		const { name, checked } = $event.target;
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			if (this.gamingCapabilities.xtuService === false) {
@@ -430,11 +431,11 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				.setRamOCStatus($event.switchValue)
 				.then((value: boolean) => {
 					console.log('setRamOc.then', value);
-					if (value !== undefined) {
-						this.commonService.setLocalStorageValue(LocalStorageKey.RamOcStatus, $event.switchValue);
-						this.gamingCapabilities.RamOCSatus = !$event.switchValue;
-						this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {});
-					}
+					// if (value !== undefined) {
+					//  this.commonService.setLocalStorageValue(LocalStorageKey.RamOcStatus, $event.switchValue);
+					// 	this.gamingCapabilities.RamOCSatus = !$event.switchValue;
+					// 	 this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => { });
+					// }
 				})
 				.catch((error) => {
 					console.error('setRamOcStatus', error);
@@ -445,14 +446,13 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
 			this.legionUpdate[4].isPopup = $event;
-			//	this.disableButtons = true;
 			this.gamingHybridModeService
 				.setHybridModeStatus($event.switchValue)
 				.then((value: boolean) => {
 					console.log('setHybridModeStatus.then', value);
-					if (value !== undefined) {
-						this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {});
-					}
+					// if (value !== undefined) {
+					// 	this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => { });
+					// }
 				})
 				.catch((error) => {
 					console.error('setHybridModeStatus', error);
@@ -478,14 +478,13 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				});
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.networkBoost') {
-			if (true) {
+			this.gamingCapabilities.fbNetFilter = !!this.gamingCapabilities.fbNetFilter;
+			if (!this.gamingCapabilities.fbNetFilter) {
 				this.legionUpdate[3].isDriverPopup = $event;
 			} else {
 				this.legionUpdate[3].isPopup = $event;
 			}
-		} else {
-			// to hide the existing popup which is open(hybridmode, ramoc)
-			this.legionUpdate[3].isPopup = false;
+			await this.setNetworkBoostStatus($event.switchValue);
 		}
 	}
 }

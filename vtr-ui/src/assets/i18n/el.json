@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Ασφάλεια οικιακής σύνδεσης",
-        "notification":{
+        "notification": {
             "recent": "Πρόσφατες ειδοποιήσεις ασφάλειας",
             "notifications": "Ειδοποιήσεις"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Προστατεύστε το περιβάλλον της συσκευής σας",
             "thisDevice": "Αυτή η συσκευή",
@@ -1293,22 +1295,22 @@
             "startTrial": "Έναρξη δοκιμής",
             "fullAccess": "Πλήρης πρόσβαση",
             "renew": "Ανανέωση"
-		},
-		"overview": {
-			"overviewBlockTitle": "Επισκόπηση ασφάλειας του περιβάλλοντός σας",
-			"allDevices": "Όλες οι συσκευές",
-			"myDevice": "Η συσκευή μου",
-			"secure": "ΑΣΦΑΛΗΣ",
-			"needAttention": "ΑΠΑΙΤΕΙΤΑΙ ΠΡΟΣΟΧΗ",
-			"manageAccount": "Διαχείριση λογαριασμού",
-			"devices": "Συσκευές",
-			"seeProtectedDevices": "Προβολή προστατευμένων συσκευών",
-			"addDevice": "προσθήκη συσκευής",
-			"trialExpired": "Η δοκιμαστική έκδοση έληξε - Πραγματοποιήστε αναβάθμιση για να προστατεύσετε όλες τις συσκευές σας",
-			"upgrade": "αναβάθμιση",
-			"freeTrial": "Προστατεύστε όλες τις συσκευές σας - Δωρεάν περίοδος δοκιμής 30 ημερών",
-			"startTrial": "Έναρξη δοκιμής"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Επισκόπηση ασφάλειας του περιβάλλοντός σας",
+            "allDevices": "Όλες οι συσκευές",
+            "myDevice": "Η συσκευή μου",
+            "secure": "ΑΣΦΑΛΗΣ",
+            "needAttention": "ΑΠΑΙΤΕΙΤΑΙ ΠΡΟΣΟΧΗ",
+            "manageAccount": "Διαχείριση λογαριασμού",
+            "devices": "Συσκευές",
+            "seeProtectedDevices": "Προβολή προστατευμένων συσκευών",
+            "addDevice": "προσθήκη συσκευής",
+            "trialExpired": "Η δοκιμαστική έκδοση έληξε - Πραγματοποιήστε αναβάθμιση για να προστατεύσετε όλες τις συσκευές σας",
+            "upgrade": "αναβάθμιση",
+            "freeTrial": "Προστατεύστε όλες τις συσκευές σας - Δωρεάν περίοδος δοκιμής 30 ημερών",
+            "startTrial": "Έναρξη δοκιμής"
+        },
         "tour": {
             "back": "Πίσω",
             "skip": "Παράλειψη",

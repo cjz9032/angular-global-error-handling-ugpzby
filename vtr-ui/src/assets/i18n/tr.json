@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Bağlı Ev Güvenliği",
-        "notification":{
-	        "recent": "En son güvenlik bildirimleri",
+        "notification": {
+            "recent": "En son güvenlik bildirimleri",
             "notifications": "Bildirimler"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Cihazınızın ekosistemini koruyun",
             "thisDevice": "Bu cihaz",
@@ -1293,22 +1295,22 @@
             "startTrial": "Deneme Süresini Başlat",
             "fullAccess": "Tam Erişim",
             "renew": "Yenile"
-		},
-		"overview": {
-			"overviewBlockTitle": "Ekosisteminizin Güvenliğine Genel Bakış",
-			"allDevices": "Tüm Cihazlar",
-			"myDevice": "Cihazım",
-			"secure": "GÜVENLİ",
-			"needAttention": "İLGİLENMENİZ GEREKİYOR",
-			"manageAccount": "Hesabı Yönet",
-			"devices": "Cihazlar",
-			"seeProtectedDevices": "Korunan cihazları görün",
-			"addDevice": "cihaz ekle",
-			"trialExpired": "Deneme Süresi Doldu - Tüm cihazlarınızı korumak için yükseltin",
-			"upgrade": "yükselt",
-			"freeTrial": "Tüm cihazlarınızı koruyun - Ücretsiz 30 günlük deneme süresi",
-			"startTrial": "Deneme Süresini Başlat"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Ekosisteminizin Güvenliğine Genel Bakış",
+            "allDevices": "Tüm Cihazlar",
+            "myDevice": "Cihazım",
+            "secure": "GÜVENLİ",
+            "needAttention": "İLGİLENMENİZ GEREKİYOR",
+            "manageAccount": "Hesabı Yönet",
+            "devices": "Cihazlar",
+            "seeProtectedDevices": "Korunan cihazları görün",
+            "addDevice": "cihaz ekle",
+            "trialExpired": "Deneme Süresi Doldu - Tüm cihazlarınızı korumak için yükseltin",
+            "upgrade": "yükselt",
+            "freeTrial": "Tüm cihazlarınızı koruyun - Ücretsiz 30 günlük deneme süresi",
+            "startTrial": "Deneme Süresini Başlat"
+        },
         "tour": {
             "back": "Geri",
             "skip": "Atla",
