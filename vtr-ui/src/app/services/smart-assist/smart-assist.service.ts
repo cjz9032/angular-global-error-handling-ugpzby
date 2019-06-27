@@ -379,7 +379,7 @@ export class SmartAssistService {
 	}
 	// SET Snooze time
 	public setSnoozeTime(value: string): Promise<boolean> {
-		console.log('SNOOZE VALUE', typeof value);
+		console.log('SNOOZE VALUE', typeof value, value);
 		if (this.isAPSavailable) {
 			return this.activeProtectionSystem.setSnoozeTime(value);
 		}
@@ -387,6 +387,7 @@ export class SmartAssistService {
 	}
 	// Suspend APS
 	public sendSnoozeCommand(value: string): Promise<boolean> {
+		console.log('SUSPEND', typeof value, value);
 		if (this.isAPSavailable) {
 			return this.activeProtectionSystem.sendSnoozeCommand(value);
 		}
