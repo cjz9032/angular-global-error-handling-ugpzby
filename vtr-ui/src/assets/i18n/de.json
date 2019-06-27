@@ -1155,10 +1155,10 @@
         "history": "VOLLSTÄNDIGER VERLAUF",
         "notAvailable": "Nicht verfügbar",
         "notInstalled": "Nicht installiert",
-        "criticalUpdates": "Kritische Aktualisierungen",
-        "recommendedUpdates": "Empfohlene Aktualisierungen",
-        "optionalUpdates": "Optionale Aktualisierungen",
-        "ignoredUpdates": "Ignorierte Aktualisierungen",
+        "criticalUpdates": "Kritische Updates",
+        "recommendedUpdates": "Empfohlene Updates",
+        "optionalUpdates": "Optionale Updates",
+        "ignoredUpdates": "Ignorierte Updates",
         "successInstall": "Erfolgreiche Installation am",
         "failedInstall": "Installation fehlgeschlagen am",
         "at": "unter",
@@ -1180,7 +1180,7 @@
             "title": "Einstellungen zur autom. Aktualisierung",
             "subtitle": "UPDATES AUTOMATISCH INSTALLIEREN",
             "critical": {
-                "title": "Kritische Aktualisierungen",
+                "title": "Kritische Updates",
                 "tooltip": "Kritische Updates verhindern massive Probleme, schwere Störungen, Hardwarefehler oder Datenbeschädigungen."
             },
             "recommended": {
