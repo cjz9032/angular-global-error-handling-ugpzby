@@ -1,6 +1,4 @@
-import { EventTypes, CHSDeviceOverview } from '@lenovo/tan-client-bridge';
-import { CommonService } from 'src/app/services/common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { CHSDeviceOverview } from '@lenovo/tan-client-bridge';
 
 export class HomeSecurityAllDevice {
 	allDevicesStatus: boolean;
