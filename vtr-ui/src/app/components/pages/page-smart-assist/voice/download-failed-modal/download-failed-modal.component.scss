@@ -1,0 +1,55 @@
+@import '../../../../../app.theme.scss';
+
+.vtr-modal-voice-installed {
+	&.modal-body {
+		padding: 0;
+	}
+
+	fa-icon {
+		font-size: 3rem;
+		color: $main;
+	}
+
+	h1 {
+		font-size: 3.5rem;
+		font-weight: normal;
+		color: $main_dark;
+		line-height: 29px;
+		&.sub-heading{
+			font-weight: $weight_bold;
+		}
+		text-align: center;
+	}
+
+	.text-center {
+		margin: 1rem 0rem 3rem 0rem;
+	}
+
+	.center {
+		text-align: center;
+		display: block;
+	}
+	.close-button {
+		background: $gradient_main;
+		border-radius: 3rem;
+		color: $light;
+		font-size: 2rem;
+		padding: 1rem 3rem;
+		font-weight: 500;
+		margin-top: 1rem;
+		font-weight: $weight_bold;
+		text-transform: uppercase;
+	}
+
+	.number-list {
+		list-style: none;
+		padding: 0;
+
+		.text-regular {
+			color: $shade_blue;
+			padding: 1.4rem 0 0 1.5rem;
+			font-size: 1.8rem;
+			line-height: 1.2;
+		}
+	}
+}

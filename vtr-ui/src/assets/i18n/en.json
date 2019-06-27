@@ -1195,6 +1195,11 @@
 					"point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
 					"point9": "Click the microphone icon to start speaking",
 					"closeText": "close"
+				},
+				"modalInstallationFailed": {
+					"btnText": "ok",
+					"title": "Install Failed",
+					"desc": "Install failed, please try again later in order to use Lenovo Voice."
 				}
 			}
 		}
