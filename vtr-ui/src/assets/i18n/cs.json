@@ -441,16 +441,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Zaslat zpětnou vazbu",
+            "subtitle": "Řekněte nám, co si myslíte o Vantage.",
+            "button": "Zaslat zpětnou vazbu",
             "form": {
                 "email": "E-mail (volitelné)",
-                "comments": "Komentáře ...",
+                "comments": "Poznámky...",
                 "button": "Předložit",
                 "addScreenshot": "Přidat ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Děkujeme vám za vaši reakci !"
+                    "feedbackSuccess": "Děkujeme za váš názor."
                 },
                 "question1": "Líbí se vám nový styl aplikace Vantage?",
                 "question2": "Myslíte si, že aplikace funguje dobře?",
@@ -1420,8 +1420,8 @@
             "subDescription1": "Tento výrobek má roční omezenou záruku a je oprávněn k opravě servisu. Další zákazníci mohou zákazníci získat telefonicky v místním servisním středisku. Prodejci mohou pro tento produkt poskytnout opravu typu carry-in.",
             "subDescription2": "Nepodařilo se nám najít podrobnosti o záruce pro dané zařízení. Další možnosti záruky najdete na našem webu podpory.",
             "viewWarrantyOptions": "ZOBRAZIT MOŽNOSTI ZÁRUKY",
-            "offlineTips1": "Please connect to internet for latest warranty info.",
-            "offlineTips2": "Please connect internet to update warranty information."
+            "offlineTips1": "Pokud chcete nejnovější informace o záruce, připojte se k internetu.",
+            "offlineTips2": "Pokud chcete aktualizovat informace o záruce, připojte se k internetu."
         },
         "documentation": {
             "title": "Dokumentace",

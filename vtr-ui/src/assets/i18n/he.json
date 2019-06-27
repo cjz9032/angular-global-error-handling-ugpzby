@@ -441,16 +441,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "תנו משוב",
+            "subtitle": "ספרו לנו מה אתם חושבים על Vantage.",
+            "button": "תנו משוב",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "הערות...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "תודה על המשוב!"
                 },
                 "question1": "האם אתם אוהבים את הסגנון החדש של Vantage?",
                 "question2": "האם לדעתכם הביצועים טובים?",
@@ -1420,8 +1420,8 @@
             "subDescription1": "מוצר זה כולל אחריות מוגבלת בשנים והוא זכאי לשירות תיקונים במרכז השירות. לקוחות רשאים להתקשר למרכז השירות המקומי שלהם לקבלת מידע נוסף. משווקים עשויים לספק תיקון במסירה למוצר זה.",
             "subDescription2": "לא הצלחנו לאתר את פרטי האחריות של המכשיר, כדי לקבל אפשרויות אחריות נוספות, יש לבקר באתר התמיכה שלנו.",
             "viewWarrantyOptions": "הצגת אפשרויות אחריות",
-            "offlineTips1": "Please connect to internet for latest warranty info.",
-            "offlineTips2": "Please connect internet to update warranty information."
+            "offlineTips1": "התחברו לאינטרנט לקבלת מידע עדכני בנוגע לאחריות.",
+            "offlineTips2": "התחברו לאינטרנט כדי לצפות במידע העדכני בנוגע לאחריות."
         },
         "documentation": {
             "title": "תיעוד",

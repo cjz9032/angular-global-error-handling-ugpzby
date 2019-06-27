@@ -442,15 +442,15 @@
         },
         "feedback": {
             "title": "提供反馈",
-            "subtitle": "告诉我们您对 VANTAGE 的想法",
+            "subtitle": "告诉我们您对 Vantage 的看法。",
             "button": "提供反馈",
             "form": {
                 "email": "联系方式（如果您不喜欢可留空）",
-                "comments": "内容",
+                "comments": "意见...",
                 "button": "提交",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "感谢您的反馈意见 ！"
+                    "feedbackSuccess": "感谢您的反馈！"
                 },
                 "question1": "您喜欢 Vantage 的新风格吗？",
                 "question2": "您认为性能是否可以接受？",
@@ -1420,8 +1420,8 @@
             "subDescription1": "本产品具有若干年的有限保修，并有权送往维修站获得维修服务。客户可以致电其当地服务中心来获取更多信息。经销商可对本产品提供送修服务。",
             "subDescription2": "我们无法找到适用于您设备的保修详细信息，要获取更多保修选项，请访问我们的支持网站。",
             "viewWarrantyOptions": "查看保修选项",
-            "offlineTips1": "Please connect to internet for latest warranty info.",
-            "offlineTips2": "Please connect internet to update warranty information."
+            "offlineTips1": "请连接到因特网以获取最新的保修信息。",
+            "offlineTips2": "请连接到因特网以更新保修信息。"
         },
         "documentation": {
             "title": "文档",

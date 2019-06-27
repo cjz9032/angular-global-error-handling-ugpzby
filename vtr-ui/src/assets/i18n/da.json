@@ -441,16 +441,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Giv feedback",
+            "subtitle": "Fortæl os, hvad du synes om Vantage.",
+            "button": "Giv feedback",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Kommentarer...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Tak for din feedback!"
                 },
                 "question1": "Kan du lide den nye Vantage-stil?",
                 "question2": "Synes du, at ydeevnen er acceptabel?",
@@ -1420,8 +1420,8 @@
             "subDescription1": "Dette produkt har års begrænset garanti, og det er berettiget til deponeringsreparation. Kunder kan ringe til deres lokale servicecenter for at få flere oplysninger. Forhandlere kan yde reparation ved indlevering af dette produkt.",
             "subDescription2": "Vi kunne ikke finde garantioplysninger for din enhed. Du kan finde flere garantimuligheder ved at gå til vores supportwebsted.",
             "viewWarrantyOptions": "VIS GARANTIMULIGHEDER",
-            "offlineTips1": "Please connect to internet for latest warranty info.",
-            "offlineTips2": "Please connect internet to update warranty information."
+            "offlineTips1": "Opret forbindelse til internettet for at få de nyeste garantioplysninger.",
+            "offlineTips2": "Opret forbindelse til internettet for at opdatere garantioplysningerne."
         },
         "documentation": {
             "title": "Dokumentation",

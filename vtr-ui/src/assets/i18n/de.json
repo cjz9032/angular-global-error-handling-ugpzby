@@ -441,16 +441,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Feedback geben",
+            "subtitle": "Sagen Sie uns, was Sie von Vantage halten.",
+            "button": "Feedback geben",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Kommentare…",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Vielen Dank für Ihr Feedback!"
                 },
                 "question1": "Gefällt Ihnen der neue Stil von Vantage?",
                 "question2": "Halten Sie die Leistung für akzeptabel?",
@@ -1420,8 +1420,8 @@
             "subDescription1": "Dieses Produkt hat eine jahrelange beschränkte Garantie und ist berechtigt für einen Depot-Reparaturservice. Kunden können sich für weitere Informationen an ihr lokales Service-Center wenden. Händler können für dieses Produkt eine Reparatur mit Einschicken des Geräts durch den Kunden durchführen.",
             "subDescription2": "Wir konnten keine Garantieinformationen für Ihr Gerät finden, um weitere Garantieoptionen zu erhalten. Besuchen Sie bitte unsere Support-Website.",
             "viewWarrantyOptions": "GARANTIEOPTIONEN ANZEIGEN",
-            "offlineTips1": "Please connect to internet for latest warranty info.",
-            "offlineTips2": "Please connect internet to update warranty information."
+            "offlineTips1": "Stellen Sie eine Verbindung zum Internet her, um die neuesten Garantieinformationen zu erhalten.",
+            "offlineTips2": "Stellen Sie eine Verbindung zum Internet her, um die Garantieinformationen zu aktualisieren."
         },
         "documentation": {
             "title": "Dokumentation",

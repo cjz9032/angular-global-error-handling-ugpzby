@@ -441,16 +441,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Envie seus comentários",
+            "subtitle": "Conte-nos sua opinião sobre o Vantage.",
+            "button": "Envie seus comentários",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Comentários...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Obrigado pelos seus comentários!"
                 },
                 "question1": "Você gosta do novo estilo do Vantage?",
                 "question2": "Você considera o desempenho aceitável?",
@@ -1420,8 +1420,8 @@
             "subDescription1": "Este produto tem garantia limitada de anos e é qualificado para o serviço de reparo no depósito. Os clientes devem ligar para o centro de serviço local para obter mais informações. Os revendedores podem fornecer reparo de transporte para este produto.",
             "subDescription2": "Não foi possível localizar os detalhes da garantia do seu dispositivo, ou obter mais opções de garantia, visite nosso site de suporte.",
             "viewWarrantyOptions": "EXIBIR OPÇÕES DE GARANTIA",
-            "offlineTips1": "Please connect to internet for latest warranty info.",
-            "offlineTips2": "Please connect internet to update warranty information."
+            "offlineTips1": "Conecte-se à Internet para obter as informações mais recentes de garantia.",
+            "offlineTips2": "Conecte-se à Internet para atualizar as informações de garantia."
         },
         "documentation": {
             "title": "Documentação",

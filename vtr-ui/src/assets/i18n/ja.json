@@ -441,16 +441,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "フィードバックを送る",
+            "subtitle": "Vantage の感想をお聞かせください。",
+            "button": "フィードバックを送る",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "コメント...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "フィードバックをありがとうございました!"
                 },
                 "question1": "Vantage の新しいスタイルを気に入っていますか？",
                 "question2": "パフォーマンスは許容できると思いますか？",
@@ -1420,8 +1420,8 @@
             "subDescription1": "この製品は、年間限定保証とデポ修理サービスを受けることができます。詳細については、最寄りのサービスセンターまでお問い合わせください。販売店は、本製品の搬入修理を行うことができます。",
             "subDescription2": "お使いのデバイスの保証の詳細を見つけることができませんでした。さらなる保証オプションについては、当社のサポート Web サイトをご覧ください。",
             "viewWarrantyOptions": "保証オプションを表示",
-            "offlineTips1": "Please connect to internet for latest warranty info.",
-            "offlineTips2": "Please connect internet to update warranty information."
+            "offlineTips1": "最新の保証情報についてはインターネットに接続してください。",
+            "offlineTips2": "保証情報を更新するにはインターネットに接続してください。"
         },
         "documentation": {
             "title": "資料",

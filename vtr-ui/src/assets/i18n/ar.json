@@ -441,16 +441,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "تقديم تعليقات",
+            "subtitle": "أخبرنا عن رأيك حول Vantage.",
+            "button": "تقديم ملاحظات",
             "form": {
                 "email": "البريد الإلكتروني اختياري",
-                "comments": "...تعليقات",
+                "comments": "التعليقات...",
                 "button": "خضع",
                 "addScreenshot": "إضافة لقطة شاشة",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "نشكرك على تعليقاتك!"
                 },
                 "question1": "هل أعجبك نمط Vantage الجديد؟",
                 "question2": "هل تعتقد أن الأداء مقبول؟",
@@ -1420,8 +1420,8 @@
             "subDescription1": "هذا المنتج لديه سنوات ضمان محدودة ويتمتع بخدمة إصلاح مستودع. يمكن للعملاء الاتصال بمركز الخدمة المحلي للحصول علي مزيد من المعلومات. يمكن للتجار توفير إصلاح بإحضار المنتج لهذا المنتج.",
             "subDescription2": "لم نكن قادرون علي تحديد تفاصيل الضمان لجهازك، للحصول علي المزيد من خيارات الضمان، يرجى زيارة موقعنا علي الإنترنت الخاص بالدعم.",
             "viewWarrantyOptions": "عرض خيارات الضمان",
-            "offlineTips1": "Please connect to internet for latest warranty info.",
-            "offlineTips2": "Please connect internet to update warranty information."
+            "offlineTips1": "يرجى الاتصال بالإنترنت للحصول على أحدث معلومات الضمان.",
+            "offlineTips2": "يرجى الاتصال بالإنترنت لتحديث معلومات الضمان."
         },
         "documentation": {
             "title": "المستندات",

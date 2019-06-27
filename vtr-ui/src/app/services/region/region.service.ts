@@ -13,7 +13,7 @@ export class RegionService {
 		return Observable.create((observer: Observer<string>) => {
 			if (Windows) {
 				observer.next(
-					Windows.System.UserProfile.GlobalizationPreferences.homeGeographicRegion
+					Windows.System.UserProfile.GlobalizationPreferences.homeGeographicRegion.toLowerCase()
 				);
 			} else {
 				observer.error('Windows is undefined');
@@ -25,7 +25,7 @@ export class RegionService {
 	getLanguage(): Observable<string> {
 		return Observable.create((observer: Observer<string>) => {
 			if (Windows) {
-				const language = Windows.System.UserProfile.GlobalizationPreferences.languages[0];
+				const language = Windows.System.UserProfile.GlobalizationPreferences.languages[0].toLowerCase();
 				observer.next(
 					language.lastIndexOf('-') > 0 ?
 						language.substring(0, language.lastIndexOf('-')) : language
