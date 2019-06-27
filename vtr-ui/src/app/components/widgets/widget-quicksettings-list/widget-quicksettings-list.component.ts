@@ -162,7 +162,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			if (response.type === Gaming.GamingCapablities) {
 				this.gamingCapabilities = response.payload;
 				this.quicksettingListInit();
-				this.registerThermalModeEvent();
 			}
 		});
 
