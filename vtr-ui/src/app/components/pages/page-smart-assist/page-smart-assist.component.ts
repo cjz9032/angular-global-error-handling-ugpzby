@@ -145,7 +145,7 @@ export class PageSmartAssistComponent implements OnInit {
 		Promise
 			.all([this.smartAssist.getAPSCapability(), this.smartAssist.getSensorStatus(), this.smartAssist.getHDDStatus()])
 			.then((response: any[]) => {
-				if (response[0], response[1], response[2] >= 0) {
+				if (response[0] && response[1] && response[2] >= 0) {
 					this.isAPSavailable = true;
 				}
 			})
