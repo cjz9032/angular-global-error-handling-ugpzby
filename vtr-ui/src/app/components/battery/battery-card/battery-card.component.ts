@@ -46,7 +46,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	batteryIndex = 0;
 	chargeThresholdInfo: any; // ChargeThresholdInfo
 	batteryConditionStatus: string;
-
+	chargeThresholdBatteries: number[];
 	private powerSupplyStatusEventRef: any;
 	private remainingPercentageEventRef: any;
 	private remainingTimeEventRef: any;
@@ -131,8 +131,15 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 	getChargeThresholdInfo() {
 		this.powerService.getChargeThresholdInfo().then((response: any) => {
-			this.chargeThresholdInfo = response[0];
+			this.chargeThresholdInfo = response;
+			const chargeThresholdBatteries = [];
 			console.log('Charge Threshold Info: ', this.chargeThresholdInfo);
+			this.chargeThresholdInfo.forEach((chargeThreshold) => {
+				if (chargeThreshold.isCapable && chargeThreshold.isOn) {
+					chargeThresholdBatteries.push(chargeThreshold.batteryNum);
+				}
+			});
+			this.chargeThresholdBatteries = chargeThresholdBatteries;
 		});
 	}
 	public updateBatteryDetails() {

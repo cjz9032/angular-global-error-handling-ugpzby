@@ -566,7 +566,12 @@
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
 				"updating": "Updating",
-				"thresholdNote": "To extend the battery lifespan, you have set your battery to stop charging at",
+				"thresholdNote": {
+					"note1": "To extend the battery lifespan, you have set your ",
+					"note2": "to stop charging at ",
+					"note3": "battery",
+					"note4": "and "
+				},
 				"voltageError": "Battery voltage incorrect",
 				"batteryNotDetected": "No Battery Detected",
 				"details": {
