@@ -391,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Gi tilbakemelding",
+            "subtitle": "Fortell oss hva du synes om Vantage.",
+            "button": "Gi tilbakemelding",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Kommentarer...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Takk for tilbakemeldingen!"
                 },
                 "question1": "Liker du den nye stilen til Vantage?",
                 "question2": "Synes du at ytelsen er akseptabel?",
@@ -1369,7 +1369,9 @@
             "status": "Status: ",
             "subDescription1": "Dette produktet dekkes av den begrensede garantien og er berettiget til reparasjon på servicesenter. Kunder kan ringe sitt lokale servicesenter for å få mer informasjon. Forhandlere kan tilby reparasjon av dette produktet.",
             "subDescription2": "Vi fant ikke noen garantidetaljer for enheten din. Gå til støttenettstedet vårt for å få flere garantialternativer.",
-            "viewWarrantyOptions": "SE GARANTIALTERNATIVER"
+            "viewWarrantyOptions": "SE GARANTIALTERNATIVER",
+            "offlineTips1": "Koble deg til Internett for å få den nyeste garantiinformasjonen.",
+            "offlineTips2": "Koble deg til Internett for å oppdatere garantiinformasjonen."
         },
         "documentation": {
             "title": "Dokumentasjon",
