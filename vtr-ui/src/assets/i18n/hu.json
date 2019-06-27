@@ -391,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Visszajelzés küldése",
+            "subtitle": "Mondja el, mit gondol a Vantage-ről.",
+            "button": "Visszajelzés küldése",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Megjegyzések...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Köszönjük a visszajelzését."
                 },
                 "question1": "Tetszik a Vantage új stílusa?",
                 "question2": "Elfogadhatónak tartja a teljesítményt?",
@@ -1369,7 +1369,9 @@
             "status": "Állapot: ",
             "subDescription1": "Erre a termékre több év jótállás vonatkozik, és jogosult a telephelyi javításra. Az ügyfelek a helyi szervizközponttól kaphatnak további információt. A márkakereskedők átvételes javítást is biztosíthatnak a termékhez.",
             "subDescription2": "Nem találtuk az eszköz jótállási adatait. További jótállási lehetőségeket támogatási webhelyünkön talál.",
-            "viewWarrantyOptions": "JÓTÁLLÁSI LEHETŐSÉGEK MEGTEKINTÉSE"
+            "viewWarrantyOptions": "JÓTÁLLÁSI LEHETŐSÉGEK MEGTEKINTÉSE",
+            "offlineTips1": "A jótállásra vonatkozó legújabb információkért csatlakozzon az internethez.",
+            "offlineTips2": "A jótállásra vonatkozó információk frissítéséhez csatlakozzon az internethez."
         },
         "documentation": {
             "title": "Dokumentáció",

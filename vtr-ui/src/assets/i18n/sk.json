@@ -391,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Spätná väzba",
+            "subtitle": "Povedzte nám, čo si myslíte o aplikácii Vantage.",
+            "button": "Spätná väzba",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Poznámky...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Ďakujeme vám za spätnú väzbu!"
                 },
                 "question1": "Páči sa vám nový štýl Vantage?",
                 "question2": "Považujete výkon za prijateľný?",
@@ -1369,7 +1369,9 @@
             "status": "Stav: ",
             "subDescription1": "Na tento produkt sa vzťahuje ročná obmedzená záruka s opravou v servisnom stredisku. Zákazníci môžu získať ďalšie informácie kontaktovaním miestneho servisného strediska. Predajcovia môžu pre tento produkt poskytovať opravu po doručení zákazníkom.",
             "subDescription2": "Nepodarilo sa nám nájsť informácie o záruke na vaše zariadenie. Ak chcete získať informácie o ďalších možnostiach záruky, navštívte našu webovú lokalitu podpory.",
-            "viewWarrantyOptions": "ZOBRAZIŤ MOŽNOSTI ZÁRUKY"
+            "viewWarrantyOptions": "ZOBRAZIŤ MOŽNOSTI ZÁRUKY",
+            "offlineTips1": "Ak chcete získať najnovšie informácie o záruke, pripojte sa na internet.",
+            "offlineTips2": "Ak chcete aktualizovať informácie o záruke, pripojte sa na internet."
         },
         "documentation": {
             "title": "Dokumentácia",

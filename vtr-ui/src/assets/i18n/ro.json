@@ -391,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Oferiţi feedback",
+            "subtitle": "Spuneți-ne părerea despre Vantage.",
+            "button": "Oferiți feedback",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Comentarii...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Vă mulţumim pentru feedbackul furnizat!"
                 },
                 "question1": "Vă place noul stil al Vantage?",
                 "question2": "Credeți că performanța este acceptabilă?",
@@ -1369,7 +1369,9 @@
             "status": "Stare: ",
             "subDescription1": "Acest produs are garanția limitată și beneficiază de service depot. Clienții pot apela la centrul de service local pentru informații suplimentare. Reprezentanții pot furniza reparații pentru acest produs.",
             "subDescription2": "Nu am putut localiza detaliile de garanție pentru dispozitivul dvs. Pentru a obține mai multe opțiuni de garanție, accesați site-ul nostru de asistență.",
-            "viewWarrantyOptions": "VIZUALIZARE OPȚIUNI DE GARANȚIE"
+            "viewWarrantyOptions": "VIZUALIZARE OPȚIUNI DE GARANȚIE",
+            "offlineTips1": "Vă rugăm să vă conectați la internet pentru a afla ultimele informații despre garanție.",
+            "offlineTips2": "Vă rugăm să vă conectați la internet pentru a actualiza informațiile despre garanție."
         },
         "documentation": {
             "title": "Documentație",

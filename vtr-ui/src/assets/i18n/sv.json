@@ -391,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Ge feedback",
+            "subtitle": "Berätta vad du tycker om Vantage.",
+            "button": "Ge feedback",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Kommentarer…",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Tack för din feedback!"
                 },
                 "question1": "Gillar du det nya utseendet på Vantage?",
                 "question2": "Tycker du att kapaciteten är acceptabel?",
@@ -1369,7 +1369,9 @@
             "status": "Status: ",
             "subDescription1": "Denna produkt omfattas av garanti under ett fördefinierat antal år och har rätt till reparationsservice på verkstad. Kunden kan ringa det lokala servicecentret för mer information. Återförsäljare kan erbjuda reparation med inlämning för denna produkt.",
             "subDescription2": "Det gick inte att hitta garantiinformation för din enhet. Besök vår supportwebbplats för mer information om garantialternativ.",
-            "viewWarrantyOptions": "VISA GARANTIALTERNATIV"
+            "viewWarrantyOptions": "VISA GARANTIALTERNATIV",
+            "offlineTips1": "Anslut till internet för att se aktuell garantiinformation.",
+            "offlineTips2": "Anslut till internet för att uppdatera garantiinformationen."
         },
         "documentation": {
             "title": "Dokumentation",
