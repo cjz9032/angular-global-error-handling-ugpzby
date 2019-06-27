@@ -3,12 +3,12 @@ import { HomeSecurityMockService } from 'src/app/services/home-security/home-sec
 import { CHSAccountState, ConnectedHomeSecurity, EventTypes, CHSNotificationType } from '@lenovo/tan-client-bridge';
 
 @Component({
-	selector: 'vtr-widget-home-security-device',
-	templateUrl: './widget-home-security-device.component.html',
-	styleUrls: ['./widget-home-security-device.component.scss']
+	selector: 'vtr-home-security-device',
+	templateUrl: './home-security-device.component.html',
+	styleUrls: ['./home-security-device.component.scss']
 })
 
-export class WidgetHomeSecurityDeviceComponent implements OnInit {
+export class HomeSecurityDeviceComponent implements OnInit {
 	@Input() device;
 	@Input() allDevice;
 	constructor(public homeSecurityMockService: HomeSecurityMockService) {

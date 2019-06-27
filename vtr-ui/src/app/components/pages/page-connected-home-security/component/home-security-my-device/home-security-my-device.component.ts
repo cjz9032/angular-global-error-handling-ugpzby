@@ -8,12 +8,12 @@ interface DevicePostureDetail {
 }
 
 @Component({
-	selector: 'vtr-widget-home-security-my-device',
-	templateUrl: './widget-home-security-my-device.component.html',
-	styleUrls: ['./widget-home-security-my-device.component.scss']
+	selector: 'vtr-home-security-my-device',
+	templateUrl: './home-security-my-device.component.html',
+	styleUrls: ['./home-security-my-device.component.scss']
 })
 
-export class WidgetHomeSecurityMyDeviceComponent implements OnInit {
+export class HomeSecurityMyDeviceComponent implements OnInit {
 	@Input() homeSecurityOverviewMyDevice: HomeSecurityOverviewMyDevice;
 
 	isShowPosture = false;
