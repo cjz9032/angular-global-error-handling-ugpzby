@@ -155,13 +155,7 @@
 		.device-info {
             border-right: 0.1rem solid $shade_lighter;
 		}
-		.device-info:nth-last-child(2) {
-			border-bottom: 0.1rem solid $shade_lighter !important;
-		}
-		.device-info:first-child{
-			border-top: 0.1rem solid $shade_lighter;
-		}
-		.show{
+		.hidden{
 			display: none;
 		}
 

@@ -58,7 +58,7 @@
 			</div>
 	</div>
 	</div>
-	<div class="device-status-container" [ngClass]="{'show':!isShowPosture}">
+	<div class="device-status-container" [ngClass]="{'hidden':!isShowPosture}">
 		<div class="loading" *ngIf="!homeSecurityOverviewMyDevice || !homeSecurityOverviewMyDevice.devicePostures">
 			<div class="spinner-border text-primary progress-spinner" role="status">
 			</div>
