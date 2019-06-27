@@ -391,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Przekaż opinię",
+            "subtitle": "Powiedz nam, co myślisz o aplikacji Vantage.",
+            "button": "Przekaż opinię",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Komentarze...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Dziękujemy za opinie!"
                 },
                 "question1": "Czy podoba Ci się nowy styl aplikacji Vantage?",
                 "question2": "Czy uważasz, że wydajność jest zadowalająca?",
@@ -1369,7 +1369,9 @@
             "status": "Stan: ",
             "subDescription1": "Ten produkt jest objęty wieloletnią gwarancją ograniczoną i podlega usłudze serwisu wysyłkowego. Aby uzyskać więcej informacji, klienci mogą zadzwonić do lokalnego centrum serwisowego. Sprzedawcy mogą zapewniać usługę naprawy dla tego produktu po dostarczeniu go przez nabywcę.",
             "subDescription2": "Nie znaleziono szczegółów gwarancji na Twoje urządzenie. Aby uzyskać więcej opcji gwarancji, odwiedź naszą witrynę wsparcia technicznego.",
-            "viewWarrantyOptions": "WYŚWIETL OPCJE GWARANCJI"
+            "viewWarrantyOptions": "WYŚWIETL OPCJE GWARANCJI",
+            "offlineTips1": "Połącz się z Internetem, aby uzyskać najnowsze informacje o gwarancji.",
+            "offlineTips2": "Połącz się z Internetem, aby uaktualnić informacje o gwarancji."
         },
         "documentation": {
             "title": "Dokumentacja",

@@ -391,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Anna palautetta",
+            "subtitle": "Kerro meille, mitä mieltä olet vantagesta.",
+            "button": "Anna palautetta",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Kommentit...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Kiitos palautteestasi."
                 },
                 "question1": "Pidätkö Vantagen uudesta tyylistä?",
                 "question2": "Onko sen suorituskyky mielestäsi hyväksyttävä?",
@@ -1369,7 +1369,9 @@
             "status": "Tila: ",
             "subDescription1": "Tälle tuotteelle on vuoden rajoitettu takuu, ja oikeutettu korjauspalveluun korjauskeskuksessa Asiakkaat voivat ottaa yhteyttä paikalliseen palvelukeskukseen lisätietoja varten. Korjauspalveluita tälle tuotteelle voi olla saatavilla jälleenmyyjien toimipisteissä.",
             "subDescription2": "Emme pystyneet löytämään takuutietoja laitteellesi. Tutustu tukisivustoomme jos haluat nähdä lisää takuuvaihtoehtoja.",
-            "viewWarrantyOptions": "NÄYTÄ TAKUUVAIHTOEHDOT"
+            "viewWarrantyOptions": "NÄYTÄ TAKUUVAIHTOEHDOT",
+            "offlineTips1": "Muodosta Internet-yhteys uusimpia takuutietoja varten.",
+            "offlineTips2": "Päivitä takuutiedot muodostamalla Internet-yhteys."
         },
         "documentation": {
             "title": "Ohjeaineisto",
