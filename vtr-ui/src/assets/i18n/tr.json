@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -389,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Geri Bildirim Gönder",
+            "subtitle": "Vantage hakkındaki düşüncelerinizi bizimle paylaşın.",
+            "button": "Geri bildirim gönder",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Açıklamalar...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Geri bildiriminiz için teşekkürler!"
                 },
                 "question1": "Vantage'ın yeni tarzını beğendiniz mi?",
                 "question2": "Performansın kabul edilir olduğunu düşünüyor musunuz?",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Bağlı Ev Güvenliği",
-        "notification":{
-	        "recent": "En son güvenlik bildirimleri",
+        "notification": {
+            "recent": "En son güvenlik bildirimleri",
             "notifications": "Bildirimler"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Cihazınızın ekosistemini koruyun",
             "thisDevice": "Bu cihaz",
@@ -1293,22 +1295,22 @@
             "startTrial": "Deneme Süresini Başlat",
             "fullAccess": "Tam Erişim",
             "renew": "Yenile"
-		},
-		"overview": {
-			"overviewBlockTitle": "Ekosisteminizin Güvenliğine Genel Bakış",
-			"allDevices": "Tüm Cihazlar",
-			"myDevice": "Cihazım",
-			"secure": "GÜVENLİ",
-			"needAttention": "İLGİLENMENİZ GEREKİYOR",
-			"manageAccount": "Hesabı Yönet",
-			"devices": "Cihazlar",
-			"seeProtectedDevices": "Korunan cihazları görün",
-			"addDevice": "cihaz ekle",
-			"trialExpired": "Deneme Süresi Doldu - Tüm cihazlarınızı korumak için yükseltin",
-			"upgrade": "yükselt",
-			"freeTrial": "Tüm cihazlarınızı koruyun - Ücretsiz 30 günlük deneme süresi",
-			"startTrial": "Deneme Süresini Başlat"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Ekosisteminizin Güvenliğine Genel Bakış",
+            "allDevices": "Tüm Cihazlar",
+            "myDevice": "Cihazım",
+            "secure": "GÜVENLİ",
+            "needAttention": "İLGİLENMENİZ GEREKİYOR",
+            "manageAccount": "Hesabı Yönet",
+            "devices": "Cihazlar",
+            "seeProtectedDevices": "Korunan cihazları görün",
+            "addDevice": "cihaz ekle",
+            "trialExpired": "Deneme Süresi Doldu - Tüm cihazlarınızı korumak için yükseltin",
+            "upgrade": "yükselt",
+            "freeTrial": "Tüm cihazlarınızı koruyun - Ücretsiz 30 günlük deneme süresi",
+            "startTrial": "Deneme Süresini Başlat"
+        },
         "tour": {
             "back": "Geri",
             "skip": "Atla",
@@ -1367,7 +1369,9 @@
             "status": "Durum: ",
             "subDescription1": "Bu ürün yıllık sınırlı garanti ve depo onarım hizmeti hakkına sahiptir. Müşteriler daha fazla bilgi için yerel hizmet merkezini arayabilir. Bayiler, müşteri tarafından teslim halinde bu ürün için onarım sağlayabilir.",
             "subDescription2": "Cihazınız için garanti ayrıntılarını bulamadık. Diğer garanti seçenekleri için lütfen destek web sitemizi ziyaret edin.",
-            "viewWarrantyOptions": "GARANTİ SEÇENEKLERİNİ GÖRÜNTÜLE"
+            "viewWarrantyOptions": "GARANTİ SEÇENEKLERİNİ GÖRÜNTÜLE",
+            "offlineTips1": "En son garanti bilgileri için lütfen İnternet'e bağlanın.",
+            "offlineTips2": "Garanti bilgilerini güncellemek için lütfen İnternet'e bağlanın."
         },
         "documentation": {
             "title": "Belgeler",

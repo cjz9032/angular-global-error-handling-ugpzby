@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -389,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Feedback geven",
+            "subtitle": "Vertel ons wat u van het voordeel vindt.",
+            "button": "Feedback geven",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Opmerkingen...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Bedankt voor uw feedback."
                 },
                 "question1": "Bent u tevreden over de nieuwe stijl van Vantage?",
                 "question2": "Denkt u dat de prestaties acceptabel zijn?",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Connected Home-beveiliging",
-        "notification":{
+        "notification": {
             "recent": "Recente beveiligingsmeldingen",
             "notifications": "Berichten"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Bescherm het ecosysteem van uw apparaat",
             "thisDevice": "Dit apparaat",
@@ -1293,22 +1295,22 @@
             "startTrial": "Proefperiode starten",
             "fullAccess": "Volledige toegang",
             "renew": "Verlengen"
-		},
-		"overview": {
-			"overviewBlockTitle": "Uw ecosysteem beveiligingsoverzicht",
-			"allDevices": "Alle apparaten",
-			"myDevice": "Mijn apparaat",
-			"secure": "Beveiligen",
-			"needAttention": "HEEFT AANDACHT NODIG",
-			"manageAccount": "Account beheren",
-			"devices": "Apparaten",
-			"seeProtectedDevices": "Zie beveiligde apparaten",
-			"addDevice": "Apparaat toevoegen",
-			"trialExpired": "Proefperiode verlopen - Upgrade uitvoeren om al uw apparaten te beschermen",
-			"upgrade": "Upgraden",
-			"freeTrial": "Bescherm al uw apparaten - Gratis proefperiode van 30 dagen",
-			"startTrial": "Proefperiode starten"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Uw ecosysteem beveiligingsoverzicht",
+            "allDevices": "Alle apparaten",
+            "myDevice": "Mijn apparaat",
+            "secure": "Beveiligen",
+            "needAttention": "HEEFT AANDACHT NODIG",
+            "manageAccount": "Account beheren",
+            "devices": "Apparaten",
+            "seeProtectedDevices": "Zie beveiligde apparaten",
+            "addDevice": "Apparaat toevoegen",
+            "trialExpired": "Proefperiode verlopen - Upgrade uitvoeren om al uw apparaten te beschermen",
+            "upgrade": "Upgraden",
+            "freeTrial": "Bescherm al uw apparaten - Gratis proefperiode van 30 dagen",
+            "startTrial": "Proefperiode starten"
+        },
         "tour": {
             "back": "Terug",
             "skip": "Overslaan",
@@ -1367,7 +1369,9 @@
             "status": "Status: ",
             "subDescription1": "Dit product heeft jaar beperkte garantie en het recht op depot-reparatieservice. Klanten kunnen hun lokale servicecentrum bellen voor meer informatie. Dealers kunnen carry-in-reparatie bieden voor dit product.",
             "subDescription2": "We hebben geen garantie-informatie over uw apparaat gevonden. Ga voor meer garantieopties naar onze ondersteuningswebsite.",
-            "viewWarrantyOptions": "GARANTIEOPTIES WEERGEVEN"
+            "viewWarrantyOptions": "GARANTIEOPTIES WEERGEVEN",
+            "offlineTips1": "Maak verbinding met internet voor de recentste garantie-informatie.",
+            "offlineTips2": "Maak verbinding met internet om de garantie-informatie bij te werken."
         },
         "documentation": {
             "title": "Documentatie",

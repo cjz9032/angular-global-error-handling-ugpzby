@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -389,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Anna palautetta",
+            "subtitle": "Kerro meille, mitä mieltä olet vantagesta.",
+            "button": "Anna palautetta",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Kommentit...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Kiitos palautteestasi."
                 },
                 "question1": "Pidätkö Vantagen uudesta tyylistä?",
                 "question2": "Onko sen suorituskyky mielestäsi hyväksyttävä?",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Connected Home -suojaus",
-        "notification":{
+        "notification": {
             "recent": "Viimeaikaiset suojausilmoitukset",
             "notifications": "Ilmoitukset"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Suojaa laitteesi ekosysteemi",
             "thisDevice": "Tämä laite",
@@ -1293,22 +1295,22 @@
             "startTrial": "Aloita kokeilu",
             "fullAccess": "Täydet käyttöoikeudet",
             "renew": "Uusiminen"
-		},
-		"overview": {
-			"overviewBlockTitle": "Yleistä ekosysteemin suojauksesta",
-			"allDevices": "Kaikki laitteet",
-			"myDevice": "Oma laite",
-			"secure": "TURVALLINEN",
-			"needAttention": "TOIMENPITEITÄ TARVITAAN",
-			"manageAccount": "Hallitse tiliä",
-			"devices": "Laitteet",
-			"seeProtectedDevices": "Katso suojatut laitteet",
-			"addDevice": "lisää laite",
-			"trialExpired": "Kokeiluversio vanhentunut - Päivitä kaikki laitteesi suojatuiksi",
-			"upgrade": "päivitä",
-			"freeTrial": "Suojaa kaikki laitteesi - Maksuton 30 päivän kokeiluversio",
-			"startTrial": "Aloita kokeilu"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Yleistä ekosysteemin suojauksesta",
+            "allDevices": "Kaikki laitteet",
+            "myDevice": "Oma laite",
+            "secure": "TURVALLINEN",
+            "needAttention": "TOIMENPITEITÄ TARVITAAN",
+            "manageAccount": "Hallitse tiliä",
+            "devices": "Laitteet",
+            "seeProtectedDevices": "Katso suojatut laitteet",
+            "addDevice": "lisää laite",
+            "trialExpired": "Kokeiluversio vanhentunut - Päivitä kaikki laitteesi suojatuiksi",
+            "upgrade": "päivitä",
+            "freeTrial": "Suojaa kaikki laitteesi - Maksuton 30 päivän kokeiluversio",
+            "startTrial": "Aloita kokeilu"
+        },
         "tour": {
             "back": "Edellinen",
             "skip": "Ohita",
@@ -1367,7 +1369,9 @@
             "status": "Tila: ",
             "subDescription1": "Tälle tuotteelle on vuoden rajoitettu takuu, ja oikeutettu korjauspalveluun korjauskeskuksessa Asiakkaat voivat ottaa yhteyttä paikalliseen palvelukeskukseen lisätietoja varten. Korjauspalveluita tälle tuotteelle voi olla saatavilla jälleenmyyjien toimipisteissä.",
             "subDescription2": "Emme pystyneet löytämään takuutietoja laitteellesi. Tutustu tukisivustoomme jos haluat nähdä lisää takuuvaihtoehtoja.",
-            "viewWarrantyOptions": "NÄYTÄ TAKUUVAIHTOEHDOT"
+            "viewWarrantyOptions": "NÄYTÄ TAKUUVAIHTOEHDOT",
+            "offlineTips1": "Muodosta Internet-yhteys uusimpia takuutietoja varten.",
+            "offlineTips2": "Päivitä takuutiedot muodostamalla Internet-yhteys."
         },
         "documentation": {
             "title": "Ohjeaineisto",

@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -389,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Pošaljite povratne informacije",
+            "subtitle": "Recite nam što mislite o Vantage.",
+            "button": "Pošaljite povratne informacije",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Komentari...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Hvala vam na povratnim informacijama!"
                 },
                 "question1": "Sviđa li vam se novi stil aplikacije Vantage?",
                 "question2": "Mislite li da su performanse prihvatljive?",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Povezana sigurnost doma",
-        "notification":{
+        "notification": {
             "recent": "Nedavne sigurnosne obavijesti",
             "notifications": "Obavijesti"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Zaštitite ekosustav uređaja",
             "thisDevice": "Ovaj uređaj",
@@ -1293,22 +1295,22 @@
             "startTrial": "Započnite probno razdoblje",
             "fullAccess": "Puni pristup",
             "renew": "Obnovi"
-		},
-		"overview": {
-			"overviewBlockTitle": "Pregled sigurnosti ekosustava",
-			"allDevices": "Svi uređaji",
-			"myDevice": "Moj uređaj",
-			"secure": "SIGURNO",
-			"needAttention": "ZAHTIJEVA PAŽNJU",
-			"manageAccount": "Upravljanje računom",
-			"devices": "Uređaji",
-			"seeProtectedDevices": "Pogledajte zaštićene uređaje",
-			"addDevice": "dodaj uređaj",
-			"trialExpired": "Probna je verzija istekla - Nadogradite kako biste zaštitili sve svoje uređaje",
-			"upgrade": "nadogradite",
-			"freeTrial": "Zaštitite sve svoje uređaje - Besplatno probno razdoblje od 30 dana",
-			"startTrial": "Započnite probno razdoblje"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Pregled sigurnosti ekosustava",
+            "allDevices": "Svi uređaji",
+            "myDevice": "Moj uređaj",
+            "secure": "SIGURNO",
+            "needAttention": "ZAHTIJEVA PAŽNJU",
+            "manageAccount": "Upravljanje računom",
+            "devices": "Uređaji",
+            "seeProtectedDevices": "Pogledajte zaštićene uređaje",
+            "addDevice": "dodaj uređaj",
+            "trialExpired": "Probna je verzija istekla - Nadogradite kako biste zaštitili sve svoje uređaje",
+            "upgrade": "nadogradite",
+            "freeTrial": "Zaštitite sve svoje uređaje - Besplatno probno razdoblje od 30 dana",
+            "startTrial": "Započnite probno razdoblje"
+        },
         "tour": {
             "back": "Natrag",
             "skip": "Preskoči",
@@ -1367,7 +1369,9 @@
             "status": "Stanje: ",
             "subDescription1": "Ovaj proizvod ima godinama ograničeno jamstvo i ima pravo na uslugu popravka u skladištu. Korisnici mogu nazvati svoj lokalni servisni centar za više informacija. Trgovci mogu pružati popravak za ovaj proizvod.",
             "subDescription2": "Nismo mogli locirati podatke o jamstvu za vaš uređaj. Za više mogućnosti jamstva posjetite naše web-mjesto za podršku.",
-            "viewWarrantyOptions": "PRIKAŽI MOGUĆNOSTI JAMSTVA"
+            "viewWarrantyOptions": "PRIKAŽI MOGUĆNOSTI JAMSTVA",
+            "offlineTips1": "Za najnovije informacije o jamstvu priključite se na internet.",
+            "offlineTips2": "Za ažuriranje informacija o jamstvu priključite se na internet."
         },
         "documentation": {
             "title": "Dokumentacija",

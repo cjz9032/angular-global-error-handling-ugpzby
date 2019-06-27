@@ -52,6 +52,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	public responseData: any[] = [];
 	public machineType: any;
+	public currentBatteryChargeVal: number;
 	private batteryCountStatusEventRef: any;
 
 	chargeOptions: number[] = [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
@@ -795,7 +796,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	// start battery threshold settings
 	private getBatterStatusEvent(response) {
-		//console.log('Event response here---------------....>%%%%%%%%%%%?>', response)
+		// console.log('Event response here---------------....>%%%%%%%%%%%?>', response)
+		 this.responseData = response;
+		this.getBatteryThresholdInformation();		
 	}
 	public getBatteryThresholdInformation() {
 		if (this.powerService.isShellAvailable) {
@@ -839,27 +842,20 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 							}
 						}
 					}
-					this.getBatteryDetails();
+					this.getBatteryCharge();
 				})
 				.catch(error => {
 					console.error('', error);
 				});
 		}
 	}
-	private getBatteryDetails() {
-		this.batteryService.getBatteryDetail()
-			.then((response: any) => {
-				console.log('getBatteryDetails', response);
-				this.batteryGauge = response.batteryIndicatorInfo;
-				if (this.batteryGauge.percentage > this.selectedStopAtChargeVal1 || this.batteryGauge.percentage > this.selectedStopAtChargeVal) {
-					this.showWarningMsg = true;
-				} else {
-					this.showWarningMsg = false;
-				}
-
-			}).catch(error => {
-				console.error('getBatteryDetails error', error);
-			});
+	private getBatteryCharge() {
+		this.currentBatteryChargeVal = this.commonService.getLocalStorageValue(LocalStorageKey.BatteryPercentage);
+		if (this.currentBatteryChargeVal > this.selectedStopAtChargeVal1 || this.currentBatteryChargeVal > this.selectedStopAtChargeVal) {
+			this.showWarningMsg = true;
+		} else {
+			this.showWarningMsg = false;
+		}
 	}
 	public showBatteryThresholdsettings(event) {
 		this.showBatteryThreshold = event;
@@ -888,7 +884,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (batteryNum == 2) {
 			this.selectedStopAtChargeVal1 = batteryDetails.stopValue;
 		}
-		if (this.batteryGauge.percentage > this.selectedStopAtChargeVal1 || this.batteryGauge.percentage > this.selectedStopAtChargeVal) {
+		if (this.currentBatteryChargeVal > this.selectedStopAtChargeVal1 || this.currentBatteryChargeVal > this.selectedStopAtChargeVal) {
 			this.showWarningMsg = true;
 		} else {
 			this.showWarningMsg = false;
@@ -920,40 +916,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			}
 		} catch (error) {
 			console.error(error.message);
-		}
-	}
-
-
-	public autoCheckSelected(batteryDetails: any, batteryNum: any) {
-		let batteryInfo: any = {};
-		if (batteryNum == 1) {
-			this.selectedStopAtChargeVal = batteryDetails.stopValue;
-		}
-		if (batteryNum == 2) {
-			this.selectedStopAtChargeVal1 = batteryDetails.stopValue;
-		}
-		if (this.batteryGauge.percentage > this.selectedStopAtChargeVal1 || this.batteryGauge.percentage > this.selectedStopAtChargeVal) {
-			this.showWarningMsg = true;
-		} else {
-			this.showWarningMsg = false;
-		}
-
-		if (this.powerService.isShellAvailable) {
-			try {
-				if (batteryDetails && batteryNum) {
-					batteryInfo = {
-						batteryNumber: batteryNum,
-						startValue: batteryDetails.startValue,
-						stopValue: batteryDetails.stopValue,
-						checkBoxValue: batteryDetails.checkBoxValue
-					};
-					console.log('selected battery information here ------>', batteryInfo);
-					this.powerService
-						.setCtAutoCheckbox(batteryInfo);
-				}
-			} catch (error) {
-				console.error(error.message);
-			}
 		}
 	}
 

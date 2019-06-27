@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -389,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "تقديم تعليقات",
+            "subtitle": "أخبرنا عن رأيك حول Vantage.",
+            "button": "تقديم ملاحظات",
             "form": {
                 "email": "البريد الإلكتروني اختياري",
-                "comments": "...تعليقات",
+                "comments": "التعليقات...",
                 "button": "خضع",
                 "addScreenshot": "إضافة لقطة شاشة",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "نشكرك على تعليقاتك!"
                 },
                 "question1": "هل أعجبك نمط Vantage الجديد؟",
                 "question2": "هل تعتقد أن الأداء مقبول؟",
@@ -1273,17 +1275,17 @@
     },
     "homeSecurity": {
         "title": "أمان المنزل المتصل",
-        "notification":{
+        "notification": {
             "recent": "إعلامات الأمان الأخيرة",
             "notifications": "الإعلامات"
-		},
+        },
         "ecosystem": {
-			"ecosystemBlockTitle": "حماية النظام البيئي جهازك",
+            "ecosystemBlockTitle": "حماية النظام البيئي جهازك",
             "thisDevice": "هذا الجهاز",
             "allDevices": "جميع الأجهزة",
-			"protected": "محمي",
+            "protected": "محمي",
             "notProtected": "غير محمي",
-			"trialExpired": "انتهت صلاحية التجربة",
+            "trialExpired": "انتهت صلاحية التجربة",
             "upgrade": "ترقية",
             "inEcosystem": "في النظام البيئي",
             "ecosystemEnable": "تم تمكين النظام البيئي",
@@ -1293,22 +1295,22 @@
             "startTrial": "بدء الإصدار التجريبي",
             "fullAccess": "الوصول الكامل",
             "renew": "تجديد"
-		},
-		"overview": {
-			"overviewBlockTitle": "نظرة عامة على أمان النظام البيئي",
-			"allDevices": "جميع الأجهزة",
-			"myDevice": "جهازي",
-			"secure": "آمن",
-			"needAttention": "يحتاج إلى الانتباه",
-			"manageAccount": "إدارة الحساب",
-			"devices": "الأجهزة",
-			"seeProtectedDevices": "راجع الأجهزة المحمية",
-			"addDevice": "إضافة جهاز",
-			"trialExpired": "الترقية لحماية جميع أجهزتك - الترقية لحماية جميع أجهزت",
-			"upgrade": "ترقية",
-			"freeTrial": "إصدار تجريبي مجاني لمدة 30 يومًا - حماية جميع أجهزتك",
-			"startTrial": "بدء الإصدار التجريبي"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "نظرة عامة على أمان النظام البيئي",
+            "allDevices": "جميع الأجهزة",
+            "myDevice": "جهازي",
+            "secure": "آمن",
+            "needAttention": "يحتاج إلى الانتباه",
+            "manageAccount": "إدارة الحساب",
+            "devices": "الأجهزة",
+            "seeProtectedDevices": "راجع الأجهزة المحمية",
+            "addDevice": "إضافة جهاز",
+            "trialExpired": "الترقية لحماية جميع أجهزتك - الترقية لحماية جميع أجهزت",
+            "upgrade": "ترقية",
+            "freeTrial": "إصدار تجريبي مجاني لمدة 30 يومًا - حماية جميع أجهزتك",
+            "startTrial": "بدء الإصدار التجريبي"
+        },
         "tour": {
             "back": "السابق‬",
             "skip": "تخطي",
@@ -1367,7 +1369,9 @@
             "status": "الحالة: ",
             "subDescription1": "هذا المنتج لديه سنوات ضمان محدودة ويتمتع بخدمة إصلاح مستودع. يمكن للعملاء الاتصال بمركز الخدمة المحلي للحصول علي مزيد من المعلومات. يمكن للتجار توفير إصلاح بإحضار المنتج لهذا المنتج.",
             "subDescription2": "لم نكن قادرون علي تحديد تفاصيل الضمان لجهازك، للحصول علي المزيد من خيارات الضمان، يرجى زيارة موقعنا علي الإنترنت الخاص بالدعم.",
-            "viewWarrantyOptions": "عرض خيارات الضمان"
+            "viewWarrantyOptions": "عرض خيارات الضمان",
+            "offlineTips1": "يرجى الاتصال بالإنترنت للحصول على أحدث معلومات الضمان.",
+            "offlineTips2": "يرجى الاتصال بالإنترنت لتحديث معلومات الضمان."
         },
         "documentation": {
             "title": "المستندات",

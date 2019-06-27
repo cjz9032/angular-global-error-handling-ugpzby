@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -389,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Pošljite povratne informacije",
+            "subtitle": "Povejte nam svoje mnenje o storitvi Vantage.",
+            "button": "Pošljite povratne informacije",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Komentarji...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Hvala za povratne informacije."
                 },
                 "question1": "Ali vam je novi slog programa Vantage všeč?",
                 "question2": "Ali menite, da je učinkovitost delovanja sprejemljiva?",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Povezana domača varnost",
-        "notification":{
+        "notification": {
             "recent": "Nedavna varnostna obvestila",
             "notifications": "Obvestila"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Zaščita ekosistema naprave",
             "thisDevice": "Ta naprava",
@@ -1293,22 +1295,22 @@
             "startTrial": "Začnite preskus",
             "fullAccess": "Poln dostop",
             "renew": "Obnovi"
-		},
-		"overview": {
-			"overviewBlockTitle": "Pregled varnosti ekosistema",
-			"allDevices": "Vse naprave",
-			"myDevice": "Moja naprava",
-			"secure": "VARNO",
-			"needAttention": "POTREBEN JE UKREP",
-			"manageAccount": "Upravljanje računa",
-			"devices": "Naprave",
-			"seeProtectedDevices": "Ogled zaščitenih naprav",
-			"addDevice": "dodajanje naprave",
-			"trialExpired": "Preskus potekel - Nadgradite, da zaščitite vse svoje naprave",
-			"upgrade": "nadgradnja",
-			"freeTrial": "Zaščitite vse svoje naprave - Brezplačen 30-dnevni preskus",
-			"startTrial": "Začnite preskus"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Pregled varnosti ekosistema",
+            "allDevices": "Vse naprave",
+            "myDevice": "Moja naprava",
+            "secure": "VARNO",
+            "needAttention": "POTREBEN JE UKREP",
+            "manageAccount": "Upravljanje računa",
+            "devices": "Naprave",
+            "seeProtectedDevices": "Ogled zaščitenih naprav",
+            "addDevice": "dodajanje naprave",
+            "trialExpired": "Preskus potekel - Nadgradite, da zaščitite vse svoje naprave",
+            "upgrade": "nadgradnja",
+            "freeTrial": "Zaščitite vse svoje naprave - Brezplačen 30-dnevni preskus",
+            "startTrial": "Začnite preskus"
+        },
         "tour": {
             "back": "Nazaj",
             "skip": "Preskoči",
@@ -1367,7 +1369,9 @@
             "status": "Stanje: ",
             "subDescription1": "Ta izdelek ima -letno omejeno garancijo in je upravičen do popravila na servisu. Stranke lahko za več informacij pokličejo lokalni servisni center. Prodajalci lahko za ta izdelek ponujajo popravilo s prinosom na servis.",
             "subDescription2": "Podrobnosti garancije za vašo napravo ni bilo mogoče najti. Za več garancijskih možnosti obiščite naše spletno mesto za podporo.",
-            "viewWarrantyOptions": "OGLED GARANCIJSKIH MOŽNOSTI"
+            "viewWarrantyOptions": "OGLED GARANCIJSKIH MOŽNOSTI",
+            "offlineTips1": "Za najnovejše informacije o garanciji se povežite z internetom.",
+            "offlineTips2": "Za posodobitev informacij o garanciji se povežite z internetom."
         },
         "documentation": {
             "title": "Dokumentacija",

@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -389,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Visszajelzés küldése",
+            "subtitle": "Mondja el, mit gondol a Vantage-ről.",
+            "button": "Visszajelzés küldése",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Megjegyzések...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Köszönjük a visszajelzését."
                 },
                 "question1": "Tetszik a Vantage új stílusa?",
                 "question2": "Elfogadhatónak tartja a teljesítményt?",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Biztonsági rendszer csatlakoztatott otthonhoz",
-        "notification":{
+        "notification": {
             "recent": "Legutóbbi biztonsági értesítések",
             "notifications": "Értesítések"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "A készülék ökoszisztémájának védelme",
             "thisDevice": "Ez az eszköz",
@@ -1293,22 +1295,22 @@
             "startTrial": "Próbaidőszak megkezdése",
             "fullAccess": "Teljes hozzáférés",
             "renew": "Megújítás"
-		},
-		"overview": {
-			"overviewBlockTitle": "Az ökoszisztéma biztonságának áttekintése",
-			"allDevices": "Minden eszköz",
-			"myDevice": "Saját készülékem",
-			"secure": "BIZTONSÁGOS",
-			"needAttention": "ELLENŐRIZNI KELL",
-			"manageAccount": "Fiók kezelése",
-			"devices": "Eszközök",
-			"seeProtectedDevices": "A védett eszközök megtekintése",
-			"addDevice": "eszköz hozzáadása",
-			"trialExpired": "Próbaverzió lejárt - Bővítés az összes eszköz védelmére",
-			"upgrade": "frissítés",
-			"freeTrial": "Az összes eszköz védelme - Ingyenes 30 napos próbaváltozat",
-			"startTrial": "Próbaidőszak megkezdése"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Az ökoszisztéma biztonságának áttekintése",
+            "allDevices": "Minden eszköz",
+            "myDevice": "Saját készülékem",
+            "secure": "BIZTONSÁGOS",
+            "needAttention": "ELLENŐRIZNI KELL",
+            "manageAccount": "Fiók kezelése",
+            "devices": "Eszközök",
+            "seeProtectedDevices": "A védett eszközök megtekintése",
+            "addDevice": "eszköz hozzáadása",
+            "trialExpired": "Próbaverzió lejárt - Bővítés az összes eszköz védelmére",
+            "upgrade": "frissítés",
+            "freeTrial": "Az összes eszköz védelme - Ingyenes 30 napos próbaváltozat",
+            "startTrial": "Próbaidőszak megkezdése"
+        },
         "tour": {
             "back": "Vissza",
             "skip": "Kihagyás",
@@ -1367,7 +1369,9 @@
             "status": "Állapot: ",
             "subDescription1": "Erre a termékre több év jótállás vonatkozik, és jogosult a telephelyi javításra. Az ügyfelek a helyi szervizközponttól kaphatnak további információt. A márkakereskedők átvételes javítást is biztosíthatnak a termékhez.",
             "subDescription2": "Nem találtuk az eszköz jótállási adatait. További jótállási lehetőségeket támogatási webhelyünkön talál.",
-            "viewWarrantyOptions": "JÓTÁLLÁSI LEHETŐSÉGEK MEGTEKINTÉSE"
+            "viewWarrantyOptions": "JÓTÁLLÁSI LEHETŐSÉGEK MEGTEKINTÉSE",
+            "offlineTips1": "A jótállásra vonatkozó legújabb információkért csatlakozzon az internethez.",
+            "offlineTips2": "A jótállásra vonatkozó információk frissítéséhez csatlakozzon az internethez."
         },
         "documentation": {
             "title": "Dokumentáció",

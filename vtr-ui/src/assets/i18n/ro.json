@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -389,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Oferiţi feedback",
+            "subtitle": "Spuneți-ne părerea despre Vantage.",
+            "button": "Oferiți feedback",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Comentarii...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Vă mulţumim pentru feedbackul furnizat!"
                 },
                 "question1": "Vă place noul stil al Vantage?",
                 "question2": "Credeți că performanța este acceptabilă?",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Securitate conectată, la domiciliu",
-        "notification":{
+        "notification": {
             "recent": "Notificări recente de securitate",
             "notifications": "Notificări"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Protejați-vă ecosistemul dispozitivului",
             "thisDevice": "Acest dispozitiv",
@@ -1293,22 +1295,22 @@
             "startTrial": "Începeți perioada de probă",
             "fullAccess": "Acces complet",
             "renew": "Reînnoiți"
-		},
-		"overview": {
-			"overviewBlockTitle": "Prezentarea generală a securității ecosistemului",
-			"allDevices": "Toate dispozitivele",
-			"myDevice": "Dispozitivul meu",
-			"secure": "SIGUR",
-			"needAttention": "ARE NEVOIE DE ATENȚIE",
-			"manageAccount": "Gestionare cont",
-			"devices": "Dispozitive",
-			"seeProtectedDevices": "Vedeți dispozitivele protejate",
-			"addDevice": "adăugați dispozitiv",
-			"trialExpired": "Perioadă de încercare expirată - Faceți upgrade la protecția tuturor dispozitivelor dvs.",
-			"upgrade": "upgrade",
-			"freeTrial": "Protejați-vă toate dispozitivele - Perioadă de probă gratuită de 30 de zile",
-			"startTrial": "Începeți perioada de probă"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Prezentarea generală a securității ecosistemului",
+            "allDevices": "Toate dispozitivele",
+            "myDevice": "Dispozitivul meu",
+            "secure": "SIGUR",
+            "needAttention": "ARE NEVOIE DE ATENȚIE",
+            "manageAccount": "Gestionare cont",
+            "devices": "Dispozitive",
+            "seeProtectedDevices": "Vedeți dispozitivele protejate",
+            "addDevice": "adăugați dispozitiv",
+            "trialExpired": "Perioadă de încercare expirată - Faceți upgrade la protecția tuturor dispozitivelor dvs.",
+            "upgrade": "upgrade",
+            "freeTrial": "Protejați-vă toate dispozitivele - Perioadă de probă gratuită de 30 de zile",
+            "startTrial": "Începeți perioada de probă"
+        },
         "tour": {
             "back": "Înapoi",
             "skip": "Ignorare",
@@ -1367,7 +1369,9 @@
             "status": "Stare: ",
             "subDescription1": "Acest produs are garanția limitată și beneficiază de service depot. Clienții pot apela la centrul de service local pentru informații suplimentare. Reprezentanții pot furniza reparații pentru acest produs.",
             "subDescription2": "Nu am putut localiza detaliile de garanție pentru dispozitivul dvs. Pentru a obține mai multe opțiuni de garanție, accesați site-ul nostru de asistență.",
-            "viewWarrantyOptions": "VIZUALIZARE OPȚIUNI DE GARANȚIE"
+            "viewWarrantyOptions": "VIZUALIZARE OPȚIUNI DE GARANȚIE",
+            "offlineTips1": "Vă rugăm să vă conectați la internet pentru a afla ultimele informații despre garanție.",
+            "offlineTips2": "Vă rugăm să vă conectați la internet pentru a actualiza informațiile despre garanție."
         },
         "documentation": {
             "title": "Documentație",

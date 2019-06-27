@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -389,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Zaslat zpětnou vazbu",
+            "subtitle": "Řekněte nám, co si myslíte o Vantage.",
+            "button": "Zaslat zpětnou vazbu",
             "form": {
                 "email": "E-mail (volitelné)",
-                "comments": "Komentáře ...",
+                "comments": "Poznámky...",
                 "button": "Předložit",
                 "addScreenshot": "Přidat ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Děkujeme vám za vaši reakci !"
+                    "feedbackSuccess": "Děkujeme za váš názor."
                 },
                 "question1": "Líbí se vám nový styl aplikace Vantage?",
                 "question2": "Myslíte si, že aplikace funguje dobře?",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Zabezpečení připojené domácnosti",
-        "notification":{
+        "notification": {
             "recent": "Nedávná bezpečnostní oznámení",
             "notifications": "Upozornění"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Chraňte ekosystém svých zařízení",
             "thisDevice": "Toto zařízení",
@@ -1284,7 +1286,7 @@
             "protected": "Chráněno",
             "notProtected": "Nechráněno",
             "trialExpired": "Platnost zkušební verze vypršela",
-			"upgrade": "upgrade",
+            "upgrade": "upgrade",
             "inEcosystem": "V ekosystému",
             "ecosystemEnable": "Ekosystém povolen",
             "inTrial": "Zkušební",
@@ -1292,23 +1294,23 @@
             "enableEcosystem": "Povolit ekosystém",
             "startTrial": "Spustit zkušební verzi",
             "fullAccess": "Plný přístup",
-			"renew": "Obnovit"
-		},
-		"overview": {
-			"overviewBlockTitle": "Přehled zabezpečení ekosystému",
-			"allDevices": "Všechna zařízení",
-			"myDevice": "Mé zařízení",
-			"secure": "ZABEZPEČIT",
-			"needAttention": "VYŽADUJE POZORNOST",
-			"manageAccount": "Správa účtu",
-			"devices": "Zařízení",
-			"seeProtectedDevices": "Zobrazit chráněná zařízení",
-			"addDevice": "přidat zařízení",
-			"trialExpired": "Platnost zkušební verze vypršela - Upgrade na ochranu všech zařízení",
-			"upgrade": "upgrade",
-			"freeTrial": "Ochrana všech zařízení - Bezplatná 30denní zkušební verze",
-			"startTrial": "Spustit zkušební verzi"
-		},
+            "renew": "Obnovit"
+        },
+        "overview": {
+            "overviewBlockTitle": "Přehled zabezpečení ekosystému",
+            "allDevices": "Všechna zařízení",
+            "myDevice": "Mé zařízení",
+            "secure": "ZABEZPEČIT",
+            "needAttention": "VYŽADUJE POZORNOST",
+            "manageAccount": "Správa účtu",
+            "devices": "Zařízení",
+            "seeProtectedDevices": "Zobrazit chráněná zařízení",
+            "addDevice": "přidat zařízení",
+            "trialExpired": "Platnost zkušební verze vypršela - Upgrade na ochranu všech zařízení",
+            "upgrade": "upgrade",
+            "freeTrial": "Ochrana všech zařízení - Bezplatná 30denní zkušební verze",
+            "startTrial": "Spustit zkušební verzi"
+        },
         "tour": {
             "back": "Zpět",
             "skip": "Přeskočit",
@@ -1367,7 +1369,9 @@
             "status": "Stav: ",
             "subDescription1": "Tento výrobek má roční omezenou záruku a je oprávněn k opravě servisu. Další zákazníci mohou zákazníci získat telefonicky v místním servisním středisku. Prodejci mohou pro tento produkt poskytnout opravu typu carry-in.",
             "subDescription2": "Nepodařilo se nám najít podrobnosti o záruce pro dané zařízení. Další možnosti záruky najdete na našem webu podpory.",
-            "viewWarrantyOptions": "ZOBRAZIT MOŽNOSTI ZÁRUKY"
+            "viewWarrantyOptions": "ZOBRAZIT MOŽNOSTI ZÁRUKY",
+            "offlineTips1": "Pokud chcete nejnovější informace o záruce, připojte se k internetu.",
+            "offlineTips2": "Pokud chcete aktualizovat informace o záruce, připojte se k internetu."
         },
         "documentation": {
             "title": "Dokumentace",

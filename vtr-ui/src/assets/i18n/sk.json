@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -389,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Spätná väzba",
+            "subtitle": "Povedzte nám, čo si myslíte o aplikácii Vantage.",
+            "button": "Spätná väzba",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Poznámky...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Ďakujeme vám za spätnú väzbu!"
                 },
                 "question1": "Páči sa vám nový štýl Vantage?",
                 "question2": "Považujete výkon za prijateľný?",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Zabezpečenie prepojenej domácnosti",
-        "notification":{
+        "notification": {
             "recent": "Posledné bezpečnostné oznámenia",
             "notifications": "Oznámenia"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Chráňte ekosystém svojho zariadenia",
             "thisDevice": "Toto zariadenie",
@@ -1293,22 +1295,22 @@
             "startTrial": "Spustiť skúšobnú verziu",
             "fullAccess": "Úplný prístup",
             "renew": "Obnoviť"
-		},
-		"overview": {
-			"overviewBlockTitle": "Zabezpečenie vášho ekosystému: prehľad",
-			"allDevices": "Všetky zariadenia",
-			"myDevice": "Moje zariadenie",
-			"secure": "ZABEZPEČENÉ",
-			"needAttention": "VYŽADUJE POZORNOSŤ",
-			"manageAccount": "Spravovať konto",
-			"devices": "Zariadenia",
-			"seeProtectedDevices": "Zobraziť chránené zariadenia",
-			"addDevice": "pridať zariadenie",
-			"trialExpired": "Platnosť skúšobnej verzie uplynula - Inovujte na ochranu všetkých zariadení",
-			"upgrade": "inovovať",
-			"freeTrial": "Chráňte všetky svoje zariadenia - Bezplatná 30-dňová skúšobná verzia",
-			"startTrial": "Spustiť skúšobnú verziu"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Zabezpečenie vášho ekosystému: prehľad",
+            "allDevices": "Všetky zariadenia",
+            "myDevice": "Moje zariadenie",
+            "secure": "ZABEZPEČENÉ",
+            "needAttention": "VYŽADUJE POZORNOSŤ",
+            "manageAccount": "Spravovať konto",
+            "devices": "Zariadenia",
+            "seeProtectedDevices": "Zobraziť chránené zariadenia",
+            "addDevice": "pridať zariadenie",
+            "trialExpired": "Platnosť skúšobnej verzie uplynula - Inovujte na ochranu všetkých zariadení",
+            "upgrade": "inovovať",
+            "freeTrial": "Chráňte všetky svoje zariadenia - Bezplatná 30-dňová skúšobná verzia",
+            "startTrial": "Spustiť skúšobnú verziu"
+        },
         "tour": {
             "back": "Naspäť",
             "skip": "Preskočiť",
@@ -1367,7 +1369,9 @@
             "status": "Stav: ",
             "subDescription1": "Na tento produkt sa vzťahuje ročná obmedzená záruka s opravou v servisnom stredisku. Zákazníci môžu získať ďalšie informácie kontaktovaním miestneho servisného strediska. Predajcovia môžu pre tento produkt poskytovať opravu po doručení zákazníkom.",
             "subDescription2": "Nepodarilo sa nám nájsť informácie o záruke na vaše zariadenie. Ak chcete získať informácie o ďalších možnostiach záruky, navštívte našu webovú lokalitu podpory.",
-            "viewWarrantyOptions": "ZOBRAZIŤ MOŽNOSTI ZÁRUKY"
+            "viewWarrantyOptions": "ZOBRAZIŤ MOŽNOSTI ZÁRUKY",
+            "offlineTips1": "Ak chcete získať najnovšie informácie o záruke, pripojte sa na internet.",
+            "offlineTips2": "Ak chcete aktualizovať informácie o záruke, pripojte sa na internet."
         },
         "documentation": {
             "title": "Dokumentácia",

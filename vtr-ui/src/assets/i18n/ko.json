@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -389,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "피드백 제출",
+            "subtitle": "Vantage에 대해 어떻게 생각하는지 얘기하십시요.",
+            "button": "피드백 제출",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "댓글...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "소중한 의견을 들려주셔서 감사합니다!"
                 },
                 "question1": "새로운 스타일의 Vantage를 원하십니까?",
                 "question2": "성능이 적합하다고 생각합니까?",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "홈 보안 연결",
-        "notification":{
+        "notification": {
             "recent": "최근 보안 알림",
             "notifications": "알림"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "장치 생태계 보호",
             "thisDevice": "이 장치",
@@ -1293,22 +1295,22 @@
             "startTrial": "평가판 시작",
             "fullAccess": "전체 액세스",
             "renew": "갱신"
-		},
-		"overview": {
-			"overviewBlockTitle": "생태계 보안 개요",
-			"allDevices": "모든 장치",
-			"myDevice": "내 장치",
-			"secure": "보안",
-			"needAttention": "주의 필요",
-			"manageAccount": "계정 관리",
-			"devices": "장치",
-			"seeProtectedDevices": "보호 장치 참고",
-			"addDevice": "장치 추가",
-			"trialExpired": "평가판 만료됨 - 모든 장치를 보호하도록 업그레이드",
-			"upgrade": "업그레이드",
-			"freeTrial": "모든 장치 보호 - 30일 무료 평가판",
-			"startTrial": "평가판 시작"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "생태계 보안 개요",
+            "allDevices": "모든 장치",
+            "myDevice": "내 장치",
+            "secure": "보안",
+            "needAttention": "주의 필요",
+            "manageAccount": "계정 관리",
+            "devices": "장치",
+            "seeProtectedDevices": "보호 장치 참고",
+            "addDevice": "장치 추가",
+            "trialExpired": "평가판 만료됨 - 모든 장치를 보호하도록 업그레이드",
+            "upgrade": "업그레이드",
+            "freeTrial": "모든 장치 보호 - 30일 무료 평가판",
+            "startTrial": "평가판 시작"
+        },
         "tour": {
             "back": "뒤로",
             "skip": "건너뛰기",
@@ -1367,7 +1369,9 @@
             "status": "상태: ",
             "subDescription1": "이 제품에는 햇수 제한 보증이 적용되며, 보관 수리 서비스를 받을 수 있습니다. 고객은 해당 지역 서비스 센터로 전화하여 자세한 정보를 요청할 수 있습니다. 대리점은 이 제품에 대한 직접 입고 수리를 제공할 수 있습니다.",
             "subDescription2": "장치에 대한 보증 상세 정보를 찾을 수 없으며 자세한 보증 옵션을 보유할 수 없습니다. 당사 지원 지원 웹 사이트를 방문하십시오.",
-            "viewWarrantyOptions": "보증 옵션 보기"
+            "viewWarrantyOptions": "보증 옵션 보기",
+            "offlineTips1": "최신 보증 정보는 인터넷에 연결하십시오.",
+            "offlineTips2": "인터넷에 연결하여 최신 보증 정보를 업데이트하십시오."
         },
         "documentation": {
             "title": "문서",

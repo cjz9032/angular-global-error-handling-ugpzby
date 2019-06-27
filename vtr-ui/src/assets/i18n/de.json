@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -389,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Feedback geben",
+            "subtitle": "Sagen Sie uns, was Sie von Vantage halten.",
+            "button": "Feedback geben",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Kommentare…",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Vielen Dank für Ihr Feedback!"
                 },
                 "question1": "Gefällt Ihnen der neue Stil von Vantage?",
                 "question2": "Halten Sie die Leistung für akzeptabel?",
@@ -1153,10 +1155,10 @@
         "history": "VOLLSTÄNDIGER VERLAUF",
         "notAvailable": "Nicht verfügbar",
         "notInstalled": "Nicht installiert",
-        "criticalUpdates": "Kritische Aktualisierungen",
-        "recommendedUpdates": "Empfohlene Aktualisierungen",
-        "optionalUpdates": "Optionale Aktualisierungen",
-        "ignoredUpdates": "Ignorierte Aktualisierungen",
+        "criticalUpdates": "Kritische Updates",
+        "recommendedUpdates": "Empfohlene Updates",
+        "optionalUpdates": "Optionale Updates",
+        "ignoredUpdates": "Ignorierte Updates",
         "successInstall": "Erfolgreiche Installation am",
         "failedInstall": "Installation fehlgeschlagen am",
         "at": "unter",
@@ -1178,7 +1180,7 @@
             "title": "Einstellungen zur autom. Aktualisierung",
             "subtitle": "UPDATES AUTOMATISCH INSTALLIEREN",
             "critical": {
-                "title": "Kritische Aktualisierungen",
+                "title": "Kritische Updates",
                 "tooltip": "Kritische Updates verhindern massive Probleme, schwere Störungen, Hardwarefehler oder Datenbeschädigungen."
             },
             "recommended": {
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Sicherheit für das verbundene Zuhause",
-        "notification":{
+        "notification": {
             "recent": "Aktuelle Sicherheitsbenachrichtigungen",
             "notifications": "Benachrichtigungen"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Schützen Sie Ihr Geräte-Ökosystem",
             "thisDevice": "Dieses Gerät",
@@ -1293,22 +1295,22 @@
             "startTrial": "Testversion starten",
             "fullAccess": "Uneingeschränkter Zugriff",
             "renew": "Verlängern"
-		},
-		"overview": {
-			"overviewBlockTitle": "Übersicht über Ihre Ökosystem-Sicherheit",
-			"allDevices": "Alle Geräte",
-			"myDevice": "Meine Einheit",
-			"secure": "SICHER",
-			"needAttention": "MUSS GEPRÜFT WERDEN",
-			"manageAccount": "Konto verwalten",
-			"devices": "Geräte",
-			"seeProtectedDevices": "Siehe \"geschützte Geräte\"",
-			"addDevice": "Gerät hinzufügen",
-			"trialExpired": "Testversion abgelaufen - Upgrade zum Schutz all Ihrer Geräte",
-			"upgrade": "Upgrade",
-			"freeTrial": "Schützen Sie all Ihre Geräte - Kostenlos für 30 Tage testen",
-			"startTrial": "Testversion starten"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Übersicht über Ihre Ökosystem-Sicherheit",
+            "allDevices": "Alle Geräte",
+            "myDevice": "Meine Einheit",
+            "secure": "SICHER",
+            "needAttention": "MUSS GEPRÜFT WERDEN",
+            "manageAccount": "Konto verwalten",
+            "devices": "Geräte",
+            "seeProtectedDevices": "Siehe \"geschützte Geräte\"",
+            "addDevice": "Gerät hinzufügen",
+            "trialExpired": "Testversion abgelaufen - Upgrade zum Schutz all Ihrer Geräte",
+            "upgrade": "Upgrade",
+            "freeTrial": "Schützen Sie all Ihre Geräte - Kostenlos für 30 Tage testen",
+            "startTrial": "Testversion starten"
+        },
         "tour": {
             "back": "Zurück",
             "skip": "Überspringen",
@@ -1367,7 +1369,9 @@
             "status": "Status: ",
             "subDescription1": "Dieses Produkt hat eine jahrelange beschränkte Garantie und ist berechtigt für einen Depot-Reparaturservice. Kunden können sich für weitere Informationen an ihr lokales Service-Center wenden. Händler können für dieses Produkt eine Reparatur mit Einschicken des Geräts durch den Kunden durchführen.",
             "subDescription2": "Wir konnten keine Garantieinformationen für Ihr Gerät finden, um weitere Garantieoptionen zu erhalten. Besuchen Sie bitte unsere Support-Website.",
-            "viewWarrantyOptions": "GARANTIEOPTIONEN ANZEIGEN"
+            "viewWarrantyOptions": "GARANTIEOPTIONEN ANZEIGEN",
+            "offlineTips1": "Stellen Sie eine Verbindung zum Internet her, um die neuesten Garantieinformationen zu erhalten.",
+            "offlineTips2": "Stellen Sie eine Verbindung zum Internet her, um die Garantieinformationen zu aktualisieren."
         },
         "documentation": {
             "title": "Dokumentation",

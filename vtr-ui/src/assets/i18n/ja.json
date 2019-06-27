@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -389,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "フィードバックを送る",
+            "subtitle": "Vantage の感想をお聞かせください。",
+            "button": "フィードバックを送る",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "コメント...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "フィードバックをありがとうございました!"
                 },
                 "question1": "Vantage の新しいスタイルを気に入っていますか？",
                 "question2": "パフォーマンスは許容できると思いますか？",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "接続ホーム・セキュリティー",
-        "notification":{
+        "notification": {
             "recent": "最近のセキュリティー通知",
             "notifications": "通知"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "デバイスのエコシステムを保護する",
             "thisDevice": "このデバイス",
@@ -1292,23 +1294,23 @@
             "enableEcosystem": "エコシステムを有効にする",
             "startTrial": "トライアルを開始する",
             "fullAccess": "完全アクセス",
-			"renew": "更新"
-		},
-		"overview": {
-			"overviewBlockTitle": "エコシステム・セキュリティーの概要",
-			"allDevices": "すべてのデバイス",
-			"myDevice": "デバイス",
-			"secure": "安全",
-			"needAttention": "注意が必要",
-			"manageAccount": "アカウントの管理",
-			"devices": "デバイス",
-			"seeProtectedDevices": "保護されたデバイスを見る",
-			"addDevice": "デバイスの追加",
-			"trialExpired": "試用期限切れ - アップグレードして、すべてのデバイスを保護する",
-			"upgrade": "アップグレード",
-			"freeTrial": "すべてのデバイスを保護する - 30 日間無料トライアル",
-			"startTrial": "トライアルを開始する"
-		},
+            "renew": "更新"
+        },
+        "overview": {
+            "overviewBlockTitle": "エコシステム・セキュリティーの概要",
+            "allDevices": "すべてのデバイス",
+            "myDevice": "デバイス",
+            "secure": "安全",
+            "needAttention": "注意が必要",
+            "manageAccount": "アカウントの管理",
+            "devices": "デバイス",
+            "seeProtectedDevices": "保護されたデバイスを見る",
+            "addDevice": "デバイスの追加",
+            "trialExpired": "試用期限切れ - アップグレードして、すべてのデバイスを保護する",
+            "upgrade": "アップグレード",
+            "freeTrial": "すべてのデバイスを保護する - 30 日間無料トライアル",
+            "startTrial": "トライアルを開始する"
+        },
         "tour": {
             "back": "戻る",
             "skip": "スキップ",
@@ -1367,7 +1369,9 @@
             "status": "ステータス:",
             "subDescription1": "この製品は、年間限定保証とデポ修理サービスを受けることができます。詳細については、最寄りのサービスセンターまでお問い合わせください。販売店は、本製品の搬入修理を行うことができます。",
             "subDescription2": "お使いのデバイスの保証の詳細を見つけることができませんでした。さらなる保証オプションについては、当社のサポート Web サイトをご覧ください。",
-            "viewWarrantyOptions": "保証オプションを表示"
+            "viewWarrantyOptions": "保証オプションを表示",
+            "offlineTips1": "最新の保証情報についてはインターネットに接続してください。",
+            "offlineTips2": "保証情報を更新するにはインターネットに接続してください。"
         },
         "documentation": {
             "title": "資料",

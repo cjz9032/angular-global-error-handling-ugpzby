@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -389,16 +391,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Fornecer Comentários",
+            "subtitle": "Diga-nos o que pensa do Vantage.",
+            "button": "Fornecer comentários",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Comentários...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Agradecemos os seus comentários!"
                 },
                 "question1": "Gosta do novo estilo do Vantage?",
                 "question2": "Acha que o desempenho é aceitável?",
@@ -1273,10 +1275,10 @@
     },
     "homeSecurity": {
         "title": "Segurança de Casa Conectada",
-        "notification":{
-	        "recent": "Notificações de segurança recentes",
+        "notification": {
+            "recent": "Notificações de segurança recentes",
             "notifications": "Notificações"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Proteja o ecossistema do dispositivo",
             "thisDevice": "Este dispositivo",
@@ -1293,22 +1295,22 @@
             "startTrial": "Iniciar versão de avaliação",
             "fullAccess": "Acesso total",
             "renew": "Renovar"
-		},
-		"overview": {
-			"overviewBlockTitle": "Descrição geral da segurança do ecossistema",
-			"allDevices": "Todos os dispositivos",
-			"myDevice": "O Meu Dispositivo",
-			"secure": "SEGURO",
-			"needAttention": "PRECISA DE ATENÇÃO",
-			"manageAccount": "Gerir Conta",
-			"devices": "Dispositivos",
-			"seeProtectedDevices": "Ver dispositivos protegidos",
-			"addDevice": "adicionar dispositivo",
-			"trialExpired": "Versão de avaliação expirada - Atualizar para proteger todos os dispositivos",
-			"upgrade": "atualizar",
-			"freeTrial": "Proteger todos os dispositivos - Versão de avaliação gratuita de 30 dias",
-			"startTrial": "Iniciar versão de avaliação"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Descrição geral da segurança do ecossistema",
+            "allDevices": "Todos os dispositivos",
+            "myDevice": "O Meu Dispositivo",
+            "secure": "SEGURO",
+            "needAttention": "PRECISA DE ATENÇÃO",
+            "manageAccount": "Gerir Conta",
+            "devices": "Dispositivos",
+            "seeProtectedDevices": "Ver dispositivos protegidos",
+            "addDevice": "adicionar dispositivo",
+            "trialExpired": "Versão de avaliação expirada - Atualizar para proteger todos os dispositivos",
+            "upgrade": "atualizar",
+            "freeTrial": "Proteger todos os dispositivos - Versão de avaliação gratuita de 30 dias",
+            "startTrial": "Iniciar versão de avaliação"
+        },
         "tour": {
             "back": "Retroceder",
             "skip": "Ignorar",
@@ -1367,7 +1369,9 @@
             "status": "Estado: ",
             "subDescription1": "Este produto tem garantia limitada em anos e inclui reparação ou troca num centro de assistência designado. Os clientes podem contactar o centro de assistência local para obter mais informações. Os revendedores poderão fornecer serviço de recolha para reparação para este produto.",
             "subDescription2": "Não foi possível localizar os detalhes de garantia para o dispositivo. Para mais opções de garantia, visite o nosso sítio de suporte na Web.",
-            "viewWarrantyOptions": "VER OPÇÕES DE GARANTIA"
+            "viewWarrantyOptions": "VER OPÇÕES DE GARANTIA",
+            "offlineTips1": "Estabeleça ligação à Internet para obter as mais recentes informações sobre garantia.",
+            "offlineTips2": "Estabeleça ligação à Internet para obter informações sobre garantia atualizadas."
         },
         "documentation": {
             "title": "Documentação",
