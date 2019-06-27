@@ -9,6 +9,9 @@ export class HomeSecurityAllDevice {
 			const allDevices = chsDeviceOverview.allDevices;
 			if (allDevices.length > 0) {
 				this.allDevicesNumber = allDevices.length;
+				if (this.allDevicesNumber > 99) {
+					this.allDevicesNumber = 99;
+				}
 				this.allDevicesStatus = allDevices.filter(device => {
 					return !device.protected;
 				}).length <= 0;
