@@ -7,10 +7,7 @@
 			<div class="sub-text">
 				<div class="row sub-title">{{'homeSecurity.overview.myDevice' | translate}}</div>
 				<span title="{{homeSecurityOverviewMyDevice.deviceName}}" *ngIf="homeSecurityOverviewMyDevice && homeSecurityOverviewMyDevice.deviceName"> {{homeSecurityOverviewMyDevice.deviceName | characterLimit:20}} </span>
-				<div class="loading" *ngIf="!homeSecurityOverviewMyDevice || !homeSecurityOverviewMyDevice.deviceName">
-					<div class="spinner-border text-primary progress-spinner" role="status">
-					</div>
-				</div>
+				<span *ngIf="!homeSecurityOverviewMyDevice || !homeSecurityOverviewMyDevice.deviceName"> {{'homeSecurity.overview.thisComputer' | translate}} </span>
 			</div>
 			<div class="device-status">
 				<h3>

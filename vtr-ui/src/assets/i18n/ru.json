@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "Обзор безопасности экосистемы",
             "allDevices": "Все устройства",
-            "myDevice": "Мое устройство",
+			"myDevice": "Мое устройство",
+			"thisComputer": "This computer",
             "secure": "БЕЗОПАСНО",
             "needAttention": "ТРЕБУЕТ ВНИМАНИЯ",
             "manageAccount": "Управление учетной записью",

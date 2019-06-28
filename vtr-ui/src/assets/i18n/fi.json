@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "Yleistä ekosysteemin suojauksesta",
             "allDevices": "Kaikki laitteet",
-            "myDevice": "Oma laite",
+			"myDevice": "Oma laite",
+			"thisComputer": "This computer",
             "secure": "TURVALLINEN",
             "needAttention": "TOIMENPITEITÄ TARVITAAN",
             "manageAccount": "Hallitse tiliä",

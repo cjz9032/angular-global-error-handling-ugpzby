@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "Επισκόπηση ασφάλειας του περιβάλλοντός σας",
             "allDevices": "Όλες οι συσκευές",
-            "myDevice": "Η συσκευή μου",
+			"myDevice": "Η συσκευή μου",
+			"thisComputer": "This computer",
             "secure": "ΑΣΦΑΛΗΣ",
             "needAttention": "ΑΠΑΙΤΕΙΤΑΙ ΠΡΟΣΟΧΗ",
             "manageAccount": "Διαχείριση λογαριασμού",

@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "エコシステム・セキュリティーの概要",
             "allDevices": "すべてのデバイス",
-            "myDevice": "デバイス",
+			"myDevice": "デバイス",
+			"thisComputer": "This computer",
             "secure": "安全",
             "needAttention": "注意が必要",
             "manageAccount": "アカウントの管理",
