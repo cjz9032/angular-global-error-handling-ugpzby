@@ -9,10 +9,14 @@ import { Router } from '@angular/router'
 export class UiGamingDriverPopupComponent implements OnInit {
 	@Input() showMePartially: boolean;
 	@Input() isLightingText: boolean;
+	@Input() popupText: any;
 	@Output() driverpopval = new EventEmitter<boolean>();
 	constructor(private Router: Router) { }
 
 	ngOnInit() {
+		if (!this.popupText || this.popupText.length < 2) {
+		this.popupText = 'gaming.dashboard.device.legionEdge.driverPopup.text';
+		}
 	}
 	close() {
 		this.showMePartially = !this.showMePartially;

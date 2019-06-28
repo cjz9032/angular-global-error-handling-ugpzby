@@ -3,7 +3,7 @@ import {
 	OnInit,
 	OnDestroy,
 	HostListener,
-	AfterContentInit
+	AfterViewInit
 } from '@angular/core';
 import {
 	EventTypes, ConnectedHomeSecurity
@@ -19,7 +19,7 @@ import {
 } from 'src/app/data-models/home-security/home-security-page-status.model';
 import { TranslateService } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalChsWelcomeContainerComponent } from '../../modal/modal-chs-welcome-container/modal-chs-welcome-container.component';
+import { ModalChsWelcomeContainerComponent } from '../page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { HomeSecurityMockService } from 'src/app/services/home-security/home-security.service';
@@ -38,7 +38,7 @@ import { HomeSecurityCommon } from 'src/app/data-models/home-security/home-secur
 	templateUrl: './page-connected-home-security.component.html',
 	styleUrls: ['./page-connected-home-security.component.scss']
 })
-export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, AfterContentInit {
+export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, AfterViewInit {
 	pageStatus: HomeSecurityPageStatus;
 
 	connectedHomeSecurity: ConnectedHomeSecurity;
@@ -64,6 +64,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	}
 
 	ngOnInit() {
+		if (this.connectedHomeSecurity) {
+			this.connectedHomeSecurity.startPullingCHS();
+		}
 		const cacheMyDevice = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityMyDevice);
 		const cacheAllDevices = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices);
 		if (cacheAllDevices) {
@@ -138,7 +141,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 
 	}
 
-	ngAfterContentInit(): void {
+	ngAfterViewInit(): void {
 		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, true);
 		const welcomeComplete = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, false);
 		const showWelcome = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, 0);
@@ -162,6 +165,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 
 	ngOnDestroy() {
 		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, false);
+		if (this.connectedHomeSecurity) {
+			this.connectedHomeSecurity.stopPullingCHS();
+		}
 	}
 
 	@HostListener('window: focus')
@@ -200,30 +206,5 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			});
 			welcomeModal.componentInstance.switchPage = 4;
 		}
-	}
-
-	onStartTrial() {
-		if (this.connectedHomeSecurity.account.lenovoId.loggedIn) {
-			this.connectedHomeSecurity.account.createAccount();
-		} else {
-			this.modalService.open(ModalLenovoIdComponent, {
-				backdrop: 'static',
-				centered: true,
-				windowClass: 'lenovo-id-modal-size'
-			});
-			this.commonService.notification.subscribe((notification: AppNotification) => {
-				if (notification && notification.type === LenovoIdStatus.SignedIn) {
-					this.connectedHomeSecurity.account.createAccount();
-				}
-			});
-		}
-	}
-
-	onManageAccount(feature?: string) {
-		this.connectedHomeSecurity.account.visitWebConsole(feature);
-	}
-
-	onUpgradeAccount() {
-		this.connectedHomeSecurity.account.purchase();
 	}
 }

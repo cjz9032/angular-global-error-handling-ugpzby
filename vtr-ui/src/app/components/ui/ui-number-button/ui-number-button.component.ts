@@ -25,6 +25,10 @@ export class UiNumberButtonComponent implements OnInit {
 	ngOnInit() {}
 
 	numberClicked(number) {
+		if (this.recordingStatus) {
+			return;
+		}
+
 		this.isShowingPopup = false;
 		if (isUndefined(this.selectedNumber) || this.selectedNumber.key !== number.key) {
 			this.numberSelected.emit(number);

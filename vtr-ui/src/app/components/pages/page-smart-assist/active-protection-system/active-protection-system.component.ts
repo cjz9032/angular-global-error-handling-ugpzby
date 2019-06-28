@@ -107,6 +107,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 
 	setAPSMode(event) {
 		const value = !this.apsStatus;
+		this.apsStatus = !this.apsStatus;
 		this.smartAssist
 			.setAPSMode(value)
 			.then(res => console.log('APS SET', res));

@@ -163,7 +163,7 @@ import { PageSettingsComponent } from './components/pages/page-settings/page-set
 import { UiPopoverComponent } from './components/ui/ui-popover/ui-popover.component';
 import { OledPowerSettingsComponent } from './components/display/oled-power-settings/oled-power-settings.component';
 import { UiMacrokeyPopupComponent } from './components/ui/ui-macrokey-popup/ui-macrokey-popup.component';
-import { ModalChsWelcomeContainerComponent } from './components/modal/modal-chs-welcome-container/modal-chs-welcome-container.component';
+import { ModalChsWelcomeContainerComponent } from './components/pages/page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
 
 // SA Components
 import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
@@ -206,7 +206,6 @@ import { HomeSecurityAllDevicesComponent } from './components/pages/page-connect
 import { HomeSecurityDeviceComponent } from './components/pages/page-connected-home-security/component/home-security-device/home-security-device.component';
 // CHS pipes
 import { DaysIntervalPipe } from './pipe/connected-home-security/account-status/days-interval.pipe';
-import { GetDeviceNumberPipe } from './pipe/connected-home-security/get-device-number.pipe';
 import { CharacterLimitPipe } from './pipe/ui-chs-statusbar/character-limit.pipe';
 
 import { AutoupdateSettingsComponent } from './components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
@@ -420,7 +419,6 @@ library.add(fal);
 		ModalIntelligentCoolingModesComponent,
 		DaysIntervalPipe,
 		CharacterLimitPipe,
-		GetDeviceNumberPipe,
 		UiTimePickerComponent,
 		VoiceComponent,
 		ModalVoiceComponent,

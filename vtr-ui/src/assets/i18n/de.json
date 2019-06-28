@@ -682,7 +682,12 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -1057,7 +1062,7 @@
         },
         "smartAssist": {
             "title": "Intelligente Unterstützung",
-            "description": "Bei der Funktion \"Intelligente Sensorik\" von Lenovo werden verschiedene Sensoren auf Ihrem Computer kombiniert,um Ihre Aktivitäten zu analysieren, die Energieverwaltung optimal anzupassen und Ihre Privatsphäre zu schützen.",
+            "description": "Bei der Funktion \"Intelligente Sensorik\" von Lenovo werden verschiedene Sensoren auf Ihrem Computer kombiniert, um Ihre Aktivitäten zu analysieren, die Energieverwaltung optimal anzupassen und Ihre Privatsphäre zu schützen.",
             "jumpTo": {
                 "title": "EINSTELLUNGEN AUFRUFEN",
                 "security": "Sicherheit",
@@ -1074,8 +1079,8 @@
                     "tooltip": "Klicken Sie hier, um die Einstellungen für die Anwesenheitserkennung zurückzusetzen."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Benutzeranwesenheitserkennung",
+                    "tooltip": "Klicken Sie hier, um die Einstellungen für die Anwesenheitserkennung zurückzusetzen."
                 },
                 "zeroTouchLogin": {
                     "title": "Zero-Touch-Anmeldung",
@@ -1083,7 +1088,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Zero-Touch-Sperre",
-                    "caption": "Diese Funktion dunkelt die Anzeige ab und sperrt den Computer, wenn die Anwesenheit des Benutzers nicht mehr erkannt wird.Sie kann das Risiko eines unbefugten Zugriffs auf den Computer verringern, wenn dieser unbeaufsichtigt und entsperrt ist. Außerdem reduziert die Funktion den Stromverbrauch, indem sie das System in dem Modern-Standby-Modus versetzt, wenn Ihre Anwesenheit nicht mehr erkannt wird.",
+                    "caption": "Diese Funktion dunkelt die Anzeige ab und sperrt den Computer, wenn die Anwesenheit des Benutzers nicht mehr erkannt wird. Sie kann das Risiko eines unbefugten Zugriffs auf den Computer verringern, wenn dieser unbeaufsichtigt und entsperrt ist. Außerdem reduziert die Funktion den Stromverbrauch, indem sie das System in dem Modern-Standby-Modus versetzt, wenn Ihre Anwesenheit nicht mehr erkannt wird.",
                     "autoScreenLockTimer": {
                         "title": "AUTOMATISCHE SPERRE FÜR BILDSCHIRMSPERRE",
                         "radioButton": {
@@ -1091,46 +1096,46 @@
                             "medium": "Mittel",
                             "slow": "Langsam"
                         },
-                        "toolTipContent": "Wählen Sie die gewünschte Option aus, um die Anzeige mit einer schnellen, mittleren oder langsamen Geschwindigkeit zu sperren, wenn Ihre Anwesenheit nicht erkannt wird.Die Zeit, in der der Bildschirm gesperrt wird, wird jedoch auch durch das tatsächliche Benutzerszenario, die Sensorik und die Timeout-Einstellungen der Windows-Anzeige beeinflusst. Wir empfehlen Ihnen daher dringend, Ihr System sofort zu sperren, bevor Sie es verlassen."
+                        "toolTipContent": "Wählen Sie die gewünschte Option aus, um die Anzeige mit einer schnellen, mittleren oder langsamen Geschwindigkeit zu sperren, wenn Ihre Anwesenheit nicht erkannt wird. Die Zeit, in der der Bildschirm gesperrt wird, wird jedoch auch durch das tatsächliche Benutzerszenario, die Sensorik und die Windows Bildschirmtimeout-Einstellungen beeinflusst. Wir empfehlen Ihnen daher dringend, Ihr System sofort zu sperren, bevor Sie es verlassen."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Die automatische Abstandsanpassung passtden Erkennungsabstand automatisch über eine AI-Engine an.",
+                    "title": "ANPASSEN DER ABSTANDSEMPFINDLICHKEIT",
+                    "caption": "Die automatische Abstandsanpassung passt den Erkennungsabstand automatisch über eine AI-Engine an.",
                     "options": {
                         "near": "Nah",
                         "far": "Weit"
                     }
                 },
                 "note": {
-                    "description1": "Diese Funktion basiert auf Windows Hello.Stellen Sie sicher, dass die Gesichtserkennung in den Windows-Einstellungen eingeschaltet ist.",
-                    "description2": "Die Funktion verwendet Sensoren und die Kamera, um Ihre Anwesenheit zu erkennen.Die Funktion sammelt und speichert jedoch KEINE personenbezogenen Daten oder Bilder, um ein Leck zu vermeiden.",
-                    "description3": "1. Wenn Ihr Computer im Zelt‑, Tablet‑ oder Standmodus ist,funktionieren diese Funktionen möglicherweise nicht ordnungsgemäß.",
-                    "description4": "2. Wenn sich der Computer im Ruhezustand befindet oder ausgeschaltet ist.Die automatische Anmeldung per IR-Kamera funktioniert nicht.",
-                    "description5": "3. Passen Sie den Computerbildschirm auf einen Winkel an,bei dem die IR-Kamera Ihr Gesicht für die automatische Anmeldung erkennen kann."
+                    "description1": "Diese Funktion basiert auf Windows Hello. Stellen Sie sicher, dass die Gesichtserkennung in den Windows-Einstellungen eingeschaltet ist.",
+                    "description2": "Die Funktion verwendet Sensoren und die Kamera, um Ihre Anwesenheit zu erkennen. Die Funktion sammelt jedoch KEINE personenbezogenen Daten.",
+                    "description3": "1. Wenn Ihr Computer im Zelt‑, Tablet‑ oder Standmodus ist, funktionieren diese Funktionen möglicherweise nicht ordnungsgemäß.",
+                    "description4": "2. Wenn sich der Computer im Ruhezustand befindet oder ausgeschaltet ist. Die automatische Anmeldung per IR-Kamera funktioniert nicht.",
+                    "description5": "3. Passen Sie den Computerbildschirm auf einen Winkel an, bei dem die IR-Kamera Ihr Gesicht für die automatische Anmeldung erkennen kann."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello-Einstellungen aufrufen",
                     "screenTimeoutSettings": "Gehen Sie zu den Einstellungen für das Bildschirmzeitlimit"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "STANDARDEINSTELLUNGEN WIEDERHERSTELLEN"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Intelligente Anzeige",
+                "description": "Bei der Funktion \"Intelligente Sensorik\" von Lenovo werden die verschiedenen Sensoren auf Ihrem Computer kombiniert, um Ihre Aktivitäten zu analysieren und die Energieverwaltung entsprechend anzupassen. Wenn die Sensoren erkennen, dass Sie laufen, wird der Bildschirm z. B. abgedunkelt. Wenn erkannt wird, dass Sie gerade etwas lesen, wird der Bildschirm dagegen nicht abgedunkelt.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Automatische Bildschirmabschaltung",
+                    "caption": "Bildschirm automatisch ausschalten, wenn das Gerät nach unten zeigt oder ich laufe.",
+                    "note": "Diese Funktion ist nicht verfügbar, wenn Sie beim Energieschema in den Windows-Systemeinstellungen eingestellt haben, dass der Bildschirm im Akkubetrieb niemals ausgeschaltet werden soll. Wählen Sie eine andere Einstellung als \"Niemals\" aus, um die Funktion zu aktivieren.",
+                    "windowsLink": "Zu Energie‑ und Energiesparmoduseinstellungen in den Windows-Einstellungen wechseln"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Bildschirm aktiviert lassen",
+                    "caption": "Bildschirm aktiviert lassen, wenn ich lese oder im Internet surfe.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Dauer bis zum Abdunkeln beim Surfen (in Minuten)",
+                        "startTime": "0 Minuten",
+                        "endTime": "60 Minuten"
                     }
                 }
             },
@@ -1165,10 +1170,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Intelligente Medien",
+                "title": "Zero-Touch-Videowiedergabe",
+                "desc": "Diese Funktion pausiert das Video, wenn Sie sich vom Computer entfernen, und spielt es weiter ab, wenn Sie zurück sind.",
+                "tooltip": "Diese Funktion funktioniert nicht bei Web-Videoplayern. Bekannte lokale Videoplayer unterstützen diese Funktion, z. B. Windows Media Player, 5KPlayer etc."
             },
             "voice": {
                 "title": "Voice",
@@ -1195,6 +1200,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1210,8 +1220,8 @@
         "optionalUpdates": "Optionale Updates",
         "ignoredUpdates": "Ignorierte Updates",
         "successInstall": "Erfolgreiche Installation am",
-        "failedInstall": "Installation fehlgeschlagen am",
-        "at": "unter",
+        "failedInstall": "Fehlgeschlagene Installation am",
+        "at": "um",
         "readMore": "Weiterlesen",
         "popup": {
             "reboot": "Neust.",
@@ -1349,7 +1359,8 @@
         "overview": {
             "overviewBlockTitle": "Übersicht über Ihre Ökosystem-Sicherheit",
             "allDevices": "Alle Geräte",
-            "myDevice": "Meine Einheit",
+			"myDevice": "Meine Einheit",
+			"thisComputer": "This computer",
             "secure": "SICHER",
             "needAttention": "MUSS GEPRÜFT WERDEN",
             "manageAccount": "Konto verwalten",
