@@ -27,7 +27,6 @@ export class SidebarInstallWidgetComponent implements OnInit, OnDestroy {
 	isFigleafInstalled = false;
 	isFirstTimeVisitor = false;
 	currentPath = '';
-	routersName = RoutersName;
 
 	constructor(
 		private routerChangeHandler: RouterChangeHandlerService,
@@ -48,17 +47,18 @@ export class SidebarInstallWidgetComponent implements OnInit, OnDestroy {
 				filter((currentPath) => this.sidebarInstallWidgetService.pagesSettings[currentPath]),
 				tap((currentPath) => this.currentPath = currentPath)
 			),
-		)
-			.pipe(
-				takeUntil(instanceDestroyed(this)),
-			)
-			.subscribe(() => {
-				if (this.isFirstTimeVisitor) {
-					this.installWidgetSettings = this.sidebarInstallWidgetService.generalizedSettings;
-				} else {
-					this.installWidgetSettings = this.sidebarInstallWidgetService.pagesSettings[this.currentPath];
-				}
-			});
+		).pipe(
+			takeUntil(instanceDestroyed(this)),
+		).subscribe(() => {
+			if (this.isFirstTimeVisitor) {
+				this.installWidgetSettings = {
+					...this.sidebarInstallWidgetService.generalizedSettings,
+					visible: this.sidebarInstallWidgetService.pagesSettings[this.currentPath].visible
+				};
+			} else {
+				this.installWidgetSettings = this.sidebarInstallWidgetService.pagesSettings[this.currentPath];
+			}
+		});
 	}
 
 	ngOnDestroy() {
