@@ -320,6 +320,29 @@
 					"title": "Profile 3"
 				}
 			},
+			"colourwheel": {
+				"text1": {
+					"title": "Selecting colour not available to this effect."
+				},
+				"text2": {
+					"title": "APPLY"
+				},
+				"text3": {
+					"title": "APPLIED"
+				},
+				"text4": {
+					"title": "R:"
+				},
+				"text5": {
+					"title": "G:"
+				},
+				"text6": {
+					"title": "B:"
+				},
+				"text7": {
+					"title": "Color"
+				}
+			},
 			"lightingProfileHeading": {
 				"text1": {
 					"title": "Off"
