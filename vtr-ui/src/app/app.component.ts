@@ -24,7 +24,7 @@ import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-cap
 export class AppComponent implements OnInit {
 	title = 'vtr-ui';
 	private allCapablitiyFlag: Boolean = false;
-	private machineInfo: any;
+	machineInfo: any;
 
 	constructor(
 		private devService: DevService,
