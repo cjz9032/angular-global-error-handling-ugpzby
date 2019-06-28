@@ -289,6 +289,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -894,40 +944,40 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "显示色温",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "暖（更护眼）",
+                            "cold": "冷"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "重置温度",
+                        "tooltip": "护眼模式会调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。",
+                        "onSunsetToSunriseScheduleDescription": "设定从日出到日落的护眼模式",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "注",
+                            "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日出日落时间。"
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "隐私保护",
+                        "description": "此功能可防止其他人偷看您的屏幕。当此功能开启时，将改变您显示屏的视角，使您周围的人无法偷看您的隐私。您还可以通过按“Fn+D”键切换模式。",
+                        "note": "隐私保护在屏幕纵向模式下无法工作。在此模式下，仍可从侧面看到您的屏幕。",
+                        "labelText": "输入密码时启用此功能"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "OLED 电源设置",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "通过有选择地使显示屏的部分区域变暗，计算机的 OLED 显示屏还能降低功耗并延长电池使用时间。",
+                            "与此同时，我们建议调暗不频繁变化的工具栏和显示屏的其他区域，以延长显示屏的总使用时间。"
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "重置温度",
+                        "tooltip": "此功能可以有选择地使显示屏的部分区域变暗，从而降低功耗并延长电池使用时间。"
                     }
                 },
                 "camera": {
                     "title": "摄像头",
                     "note": {
                         "title": "注",
-                        "description": "Lenovo Vantage 无权访问您的摄像头。请允许 Lenovo Vantage 应用程序访问您的摄像头。"
+                        "description": "Lenovo Vantage 无权访问您的摄像头。请允许 Lenovo Vantage 应用访问您的摄像头。"
                     },
                     "url": "转到 Windows 隐私设置",
                     "cameraPrivacy": {
@@ -946,10 +996,10 @@
                     "notAvailable": "摄像头不可用",
                     "camerablur": {
                         "title": "摄像头背景模糊",
-                        "caption": "当您使用摄像头进行视频通话或拍摄照片时，该功能可以使背景变得模糊。您可以从下面的选项中选择不同效果。",
+                        "caption": "当您使用摄像头进行视频通话或拍摄照片时，该功能可以使背景变得模糊。您可以从下面的选项中选择不同的效果。",
                         "blurMode": "模糊模式",
                         "comicMode": "漫画模式",
-                        "sketchMode": "草图模式"
+                        "sketchMode": "素描模式"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -2027,7 +2077,7 @@
     },
     "welcometutorial": {
         "description": "Vantage使您可以轻松更新驱动程序，运行诊断程序，请求支持以及了解您的设备。快速定制您的体验，并根据您的需求找到有用的信息。",
-        "bullets1": "使用Vantage仪表板查看系统的状态。",
+        "bullets1": "使用Vantage首页查看系统的状态。",
         "bullets2": "安全顾问可以使您轻松管理安全性（在某些系统上可用）。",
         "bullets3": "自动更新让您的设备处于最佳状态（在某些系统上可用）。",
         "subtitle1": "你将如何使用你的设备？",
