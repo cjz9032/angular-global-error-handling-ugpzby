@@ -289,6 +289,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -391,16 +441,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Pošljite povratne informacije",
+            "subtitle": "Povejte nam svoje mnenje o storitvi Vantage.",
+            "button": "Pošljite povratne informacije",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Komentarji...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Hvala za povratne informacije."
                 },
                 "question1": "Ali vam je novi slog programa Vantage všeč?",
                 "question2": "Ali menite, da je učinkovitost delovanja sprejemljiva?",
@@ -864,7 +914,7 @@
             "displayCamera": {
                 "title": "Zaslon in kamera",
                 "subtitle": "Nastavitve zaslona in kamere",
-                "description": "Ta razdelek vam omogoča, da izboljšate vizualno izkušnjo in konfigurirate lastnosti kamere.Tukaj raziščite več funkcij in prilagodite izkušnjo z zaslonom.",
+                "description": "Ta razdelek vam omogoča, da izboljšate vizualno izkušnjo in konfigurirate lastnosti kamere. Tukaj raziščite več funkcij in prilagodite izkušnjo z zaslonom.",
                 "jumpTo": {
                     "title": "SKOK NA NASTAVITVE",
                     "shortcuts": {
@@ -872,7 +922,7 @@
                             "title": "Prikaz"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Kamera"
                         }
                     }
                 },
@@ -894,45 +944,45 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Barvna temperatura zaslona",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Toplo (bolje za oči)",
+                            "cold": "Hladno"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Ponastavitev temperature",
+                        "tooltip": "Očem prijazen način prilagodi barvno temperaturo zaslona, tako da filtrira modro svetlobo in zmanjša utrujenost oči.",
+                        "onSunsetToSunriseScheduleDescription": "Načrtujte očem prijazen način od sončnega zahoda do sončnega vzhoda",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Opomba",
+                            "description": "Lenovo Vantage potrebuje dostop do informacij o vaši lokaciji za izračun časa sončnega zahoda in vzhoda v vaši regiji."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Zaščita zasebnosti",
+                        "description": "Ta funkcija preprečuje drugim, da bi videli, kaj je na vašem zaslonu. Ko je vklopljena, spremeni vidni kot zaslona, tako da ni viden drugim okrog vas. Med načini lahko preklapljate s tipkama »Fn + D«.",
+                        "note": "Zaščita zasebnosti ne deluje v pokončnem načinu zaslona. V tem načinu je zaslon še vedno viden s strani.",
+                        "labelText": "Omogoči to funkcijo pri vnosu gesel"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Nastavitve napajanja zaslona OLED",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Zaslon OLED v računalniku lahko s selektivnim zatemnjevanjem delov zaslona tudi zmanjša porabo energije in podaljša čas delovanja pri baterijskem napajanju.",
+                            "Za podaljšanje splošne življenjske dobe zaslona priporočamo tudi zatemnitev opravilne vrstice in drugih delov zaslona, ki se ne spreminjajo pogosto."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Ponastavitev temperature",
+                        "tooltip": "Ta funkcija lahko s selektivnim zatemnjevanjem delov zaslona zmanjša porabo energije in podaljša življenjsko dobo baterije."
                     }
                 },
                 "camera": {
                     "title": "Kamera",
                     "note": {
                         "title": "Opomba",
-                        "description": "Lenovo Vantage nima dovoljenj za dostop do kamere.Vklopite dostop do kamere za program Lenovo Vantage."
+                        "description": "Lenovo Vantage nima dovoljenj za dostop do kamere. Vklopite dostop do kamere za Lenovo Vantage."
                     },
                     "url": "Odprite nastavitve zasebnosti sistema Windows",
                     "cameraPrivacy": {
                         "title": "Zasebnostni način za kamero",
-                        "tooltip": "Če je omogočena nastavitev zasebnosti, kamera preneha pošiljati slike v živo. To nastavitev vklopite, samo če med videoklici svoje slike ne želite prikazati drugim."
+                        "tooltip": "Če je omogočena nastavitev za zasebnost, kamera neha pošiljati slike v živo. To nastavitev vklopite, samo če med videoklici svoje slike ne želite prikazati drugim."
                     },
                     "camera": {
                         "title": "Kamera",
@@ -946,10 +996,10 @@
                     "notAvailable": "Kamera ni na voljo",
                     "camerablur": {
                         "title": "Zameglitev ozadja kamere",
-                        "caption": "Ta funkcija zamegli ozadje, ko kamero uporabljate za videoklice ali fotografiranje.Med spodnjimi izbori lahko izberete različne učinke.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Ta funkcija zamegli ozadje, ko kamero uporabljate za videoklice ali fotografiranje. Med spodnjimi možnostmi lahko izberete različne učinke.",
+                        "blurMode": "Način zameglitve",
+                        "comicMode": "Način stripa",
+                        "sketchMode": "Način skice"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1369,7 +1419,9 @@
             "status": "Stanje: ",
             "subDescription1": "Ta izdelek ima -letno omejeno garancijo in je upravičen do popravila na servisu. Stranke lahko za več informacij pokličejo lokalni servisni center. Prodajalci lahko za ta izdelek ponujajo popravilo s prinosom na servis.",
             "subDescription2": "Podrobnosti garancije za vašo napravo ni bilo mogoče najti. Za več garancijskih možnosti obiščite naše spletno mesto za podporo.",
-            "viewWarrantyOptions": "OGLED GARANCIJSKIH MOŽNOSTI"
+            "viewWarrantyOptions": "OGLED GARANCIJSKIH MOŽNOSTI",
+            "offlineTips1": "Za najnovejše informacije o garanciji se povežite z internetom.",
+            "offlineTips2": "Za posodobitev informacij o garanciji se povežite z internetom."
         },
         "documentation": {
             "title": "Dokumentacija",

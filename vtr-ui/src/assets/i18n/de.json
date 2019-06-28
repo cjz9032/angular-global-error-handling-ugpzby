@@ -289,6 +289,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -391,16 +441,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Feedback geben",
+            "subtitle": "Sagen Sie uns, was Sie von Vantage halten.",
+            "button": "Feedback geben",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Kommentare…",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Vielen Dank für Ihr Feedback!"
                 },
                 "question1": "Gefällt Ihnen der neue Stil von Vantage?",
                 "question2": "Halten Sie die Leistung für akzeptabel?",
@@ -864,7 +914,7 @@
             "displayCamera": {
                 "title": "Anzeige und Kamera",
                 "subtitle": "Anzeige- und Kameraeinstellungen",
-                "description": "In diesem Abschnitt können Sie Ihre visuellen Erlebnisse verbessern und die Kameraeigenschaften konfigurieren.Entdecken Sie weitere Funktionen, und passen Sie Ihr Anzeigeerlebnis hier an.",
+                "description": "In diesem Abschnitt können Sie Ihre visuellen Erlebnisse verbessern und die Kameraeigenschaften konfigurieren. Entdecken Sie weitere Funktionen und passen Sie Ihr Anzeigeerlebnis hier an.",
                 "jumpTo": {
                     "title": "EINSTELLUNGEN AUFRUFEN",
                     "shortcuts": {
@@ -872,7 +922,7 @@
                             "title": "Anzeigen"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Kamera"
                         }
                     }
                 },
@@ -894,40 +944,40 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Farbtemperatur der Anzeige",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Warm (besser für die Augen)",
+                            "cold": "Kalt"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Temperatur zurücksetzen",
+                        "tooltip": "Der Modus \"Augen schonen\" passt die Farbtemperatur der Anzeige automatisch an. Blaues Licht wird gefiltert, was die Augen schont.",
+                        "onSunsetToSunriseScheduleDescription": "Modus \"Augen schonen\" von Sonnenuntergang bis Sonnenaufgang planen",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Anmerkung",
+                            "description": "Lenovo Vantage muss auf Ihre Standortinformationen zugreifen, um die Sonnenuntergangs- und Sonnenaufgangszeit Ihrer Gegend zu berechnen."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Bildschirm-Blickschutz",
+                        "description": "Mit dieser Funktion können Sie verhindern, dass andere Benutzer sehen, was auf Ihrem Bildschirm angezeigt wird. Wenn diese Einstellung aktiviert ist, ändert sie den Betrachtungswinkel des Bildschirms und verhindert, dass andere Personen um Sie herum ihn einsehen können. Sie können die Modi auch durch Drücken der Tastenkombination \"Fn+D\" umschalten.",
+                        "note": "Der Bildschirm-Blickschutz funktioniert nicht im Hochformat. In diesem Modus ist Ihr Bildschirm immer noch von allen Seiten einsehbar.",
+                        "labelText": "Diese Funktion aktivieren, wenn Kennwörter eingegeben werden"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Einstellungen für die OLED-Energieversorgung",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Die OLED-Anzeige des Computers kann durch das gezielte Verdunkeln bestimmter Anzeigebereiche auch den Stromverbrauch verringern und die Akkubetriebszeit verlängern.",
+                            "Um die allgemeine Lebensdauer der Anzeige zu verlängern, wird auch empfohlen, die Taskleiste und andere Anzeigebereiche zu verdunkeln, die sich nicht häufig ändern."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Temperatur zurücksetzen",
+                        "tooltip": "Diese Funktion kann durch das gezielte Verdunkeln bestimmter Anzeigebereiche auch den Stromverbrauch verringern und die Akkulautzeit verlängern."
                     }
                 },
                 "camera": {
                     "title": "Kamera",
                     "note": {
                         "title": "Anmerkung",
-                        "description": "Lenovo Vantage verfügt nicht über die Berechtigungen für den Zugriff auf Ihre Kamera.Bitte aktivieren Sie den Kamerazugriff für die Lenovo Vantage-App."
+                        "description": "Lenovo Vantage verfügt nicht über die Berechtigungen für den Zugriff auf Ihre Kamera. Bitte aktivieren Sie den Kamerazugriff für die Lenovo Vantage-App."
                     },
                     "url": "Windows-Datenschutzeinstellungen aufrufen",
                     "cameraPrivacy": {
@@ -946,10 +996,10 @@
                     "notAvailable": "Kamera nicht verfügbar",
                     "camerablur": {
                         "title": "Kamerahintergrund weichzeichnen",
-                        "caption": "Mit dieser Funktion wird Ihr Hintergrund weichgezeichnet, wenn Sie die Kamera für Videokonferenzen oder die Aufnahme von Fotos verwenden.Sie können einen der unten aufgeführten Effekte auswählen.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Mit dieser Funktion wird Ihr Hintergrund weichgezeichnet, wenn Sie die Kamera für Videokonferenzen oder die Aufnahme von Fotos verwenden. Sie können einen der unten aufgeführten Effekte auswählen.",
+                        "blurMode": "Weichzeichnen-Modus",
+                        "comicMode": "Comic-Modus",
+                        "sketchMode": "Skizzen-Modus"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1369,7 +1419,9 @@
             "status": "Status: ",
             "subDescription1": "Dieses Produkt hat eine jahrelange beschränkte Garantie und ist berechtigt für einen Depot-Reparaturservice. Kunden können sich für weitere Informationen an ihr lokales Service-Center wenden. Händler können für dieses Produkt eine Reparatur mit Einschicken des Geräts durch den Kunden durchführen.",
             "subDescription2": "Wir konnten keine Garantieinformationen für Ihr Gerät finden, um weitere Garantieoptionen zu erhalten. Besuchen Sie bitte unsere Support-Website.",
-            "viewWarrantyOptions": "GARANTIEOPTIONEN ANZEIGEN"
+            "viewWarrantyOptions": "GARANTIEOPTIONEN ANZEIGEN",
+            "offlineTips1": "Stellen Sie eine Verbindung zum Internet her, um die neuesten Garantieinformationen zu erhalten.",
+            "offlineTips2": "Stellen Sie eine Verbindung zum Internet her, um die Garantieinformationen zu aktualisieren."
         },
         "documentation": {
             "title": "Dokumentation",
