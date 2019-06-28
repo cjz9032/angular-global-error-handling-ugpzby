@@ -1209,9 +1209,9 @@
         "recommendedUpdates": "Priporočene posodobitve",
         "optionalUpdates": "Izbirne posodobitve",
         "ignoredUpdates": "Prezrte posodobitve",
-        "successInstall": "Uspešna namestitev v",
-        "failedInstall": "Nespešna namestitev v",
-        "at": "na",
+        "successInstall": "Uspešna namestitev",
+        "failedInstall": "Neuspešna namestitev",
+        "at": "ob",
         "readMore": "Preberite več",
         "popup": {
             "reboot": "Znova zaženi",
@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "Pregled varnosti ekosistema",
             "allDevices": "Vse naprave",
-            "myDevice": "Moja naprava",
+			"myDevice": "Moja naprava",
+			"thisComputer": "This computer",
             "secure": "VARNO",
             "needAttention": "POTREBEN JE UKREP",
             "manageAccount": "Upravljanje računa",

@@ -1209,8 +1209,8 @@
         "recommendedUpdates": "تحديث مستحسن (تحديثات مستحسنة)",
         "optionalUpdates": "تحديث اختياري (تحديثات اختيارية)",
         "ignoredUpdates": "تحديث تم تجاهله (تحديثات تم تجاهلها)",
-        "successInstall": "تم التثبيت بنجاح على",
-        "failedInstall": "فشل التثبيت على",
+        "successInstall": "تم التثبيت بنجاح في",
+        "failedInstall": "فشل التثبيت في",
         "at": "عند",
         "readMore": "اقرأ أكثر",
         "popup": {
@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "نظرة عامة على أمان النظام البيئي",
             "allDevices": "جميع الأجهزة",
-            "myDevice": "جهازي",
+			"myDevice": "جهازي",
+			"thisComputer": "This computer",
             "secure": "آمن",
             "needAttention": "يحتاج إلى الانتباه",
             "manageAccount": "إدارة الحساب",

@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "Az ökoszisztéma biztonságának áttekintése",
             "allDevices": "Minden eszköz",
-            "myDevice": "Saját készülékem",
+			"myDevice": "Saját készülékem",
+			"thisComputer": "This computer",
             "secure": "BIZTONSÁGOS",
             "needAttention": "ELLENŐRIZNI KELL",
             "manageAccount": "Fiók kezelése",

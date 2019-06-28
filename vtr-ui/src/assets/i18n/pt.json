@@ -1207,11 +1207,11 @@
         "notInstalled": "Não instalado",
         "criticalUpdates": "Atualização(ões) Crítica(s)",
         "recommendedUpdates": "Atualização(ões) Recomendada(s)",
-        "optionalUpdates": "Atualização(ões) Opcional(ais)",
+        "optionalUpdates": "Atualização(ões) Opcional(s)",
         "ignoredUpdates": "Atualização(ões) Ignorada(s)",
         "successInstall": "Instalada com sucesso em",
         "failedInstall": "Instalação falhou em",
-        "at": "em",
+        "at": "às",
         "readMore": "Ler mais",
         "popup": {
             "reboot": "Reini.",
@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "Descrição geral da segurança do ecossistema",
             "allDevices": "Todos os dispositivos",
-            "myDevice": "O Meu Dispositivo",
+			"myDevice": "O Meu Dispositivo",
+			"thisComputer": "This computer",
             "secure": "SEGURO",
             "needAttention": "PRECISA DE ATENÇÃO",
             "manageAccount": "Gerir Conta",
