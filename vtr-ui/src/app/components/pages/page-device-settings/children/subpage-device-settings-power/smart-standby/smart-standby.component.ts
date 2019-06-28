@@ -39,15 +39,18 @@ export class SmartStandbyComponent implements OnInit {
 	// 		this.powerService.getSmartStandbyEnabled()
 	// 			.then((response: boolean) => {
 	// 				console.log('getSmartStandbyEnabled response', response);
-	// 				Promise.all([
-	// 					this.powerService.getSmartStandbyActiveStartEnd(),
-	// 					this.powerService.getSmartStandbyDaysOfWeekOff()
-	// 				]).then((responses: any[]) => {
-	// 					this.smartStandby.activeStartEnd = responses[0];
-	// 					this.smartStandby.daysOfWeekOff = responses[1];
-	// 				}).catch((error) => {
-	// 					console.log('getSmartStandbyCapability Error', error);
-	// 				});
+	// 				this.smartStandby.isEnabled = response;
+	// 				if (this.smartStandby.isEnabled) {
+	// 					Promise.all([
+	// 						this.powerService.getSmartStandbyActiveStartEnd(),
+	// 						this.powerService.getSmartStandbyDaysOfWeekOff()
+	// 					]).then((responses: any[]) => {
+	// 						this.smartStandby.activeStartEnd = responses[0];
+	// 						this.smartStandby.daysOfWeekOff = responses[1];
+	// 					}).catch((error) => {
+	// 						console.log('getSmartStandbyCapability Error', error);
+	// 					});
+	// 				}
 	// 			}).catch((error) => {
 	// 				console.log('getSmartStandbyCapability Error', error);
 	// 			});
@@ -90,9 +93,14 @@ export class SmartStandbyComponent implements OnInit {
 		this.smartStandbyEndTime = startEndTime[1];
 	}
 
-	onSetStartTime(event) {
+	onSetActiveStartEnd(event, isStart) {
+		let activeStartEnd;
+		if (isStart) {
+			activeStartEnd = event + '-' + this.smartStandbyEndTime;
+		} else {
+			activeStartEnd = this.smartStandbyStartTime + '-' + event;
+		}
 
-		const activeStartEnd = event + '-' + this.smartStandbyEndTime;
 		try {
 			console.log('setSmartStandbyStartTime entered', event);
 			if (this.powerService.isShellAvailable) {
@@ -105,27 +113,6 @@ export class SmartStandbyComponent implements OnInit {
 					})
 					.catch(error => {
 						console.error('setSmartStandbyStartTime', error);
-					});
-			}
-		} catch (error) {
-			console.error(error.message);
-		}
-	}
-
-	onSetEndTime(event) {
-		const activeStartEnd = this.smartStandbyStartTime + '-' + event;
-		try {
-			console.log('setSmartStandbyEndTime entered', event);
-			if (this.powerService.isShellAvailable) {
-				this.powerService.setSmartStandbyActiveStartEnd(activeStartEnd)
-					.then((value: number) => {
-						console.log('setSmartStandbyEndTime.then', value);
-						if (value === 0) {
-							this.smartStandbyEndTime = event;
-						}
-					})
-					.catch(error => {
-						console.error('setSmartStandbyEndTime.error', error);
 					});
 			}
 		} catch (error) {

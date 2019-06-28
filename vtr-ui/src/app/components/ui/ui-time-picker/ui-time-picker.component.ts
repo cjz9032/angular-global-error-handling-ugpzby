@@ -78,6 +78,7 @@ export class UiTimePickerComponent implements OnInit {
 		this.initiateBlock();
 	}
 	onToggleDropDown() {
+		this.initiateBlock();
 		this.showTimerDropDown = !this.showTimerDropDown;
 	}
 
