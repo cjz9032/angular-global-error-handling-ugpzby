@@ -201,29 +201,4 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			welcomeModal.componentInstance.switchPage = 4;
 		}
 	}
-
-	onStartTrial() {
-		if (this.connectedHomeSecurity.account.lenovoId.loggedIn) {
-			this.connectedHomeSecurity.account.createAccount();
-		} else {
-			this.modalService.open(ModalLenovoIdComponent, {
-				backdrop: 'static',
-				centered: true,
-				windowClass: 'lenovo-id-modal-size'
-			});
-			this.commonService.notification.subscribe((notification: AppNotification) => {
-				if (notification && notification.type === LenovoIdStatus.SignedIn) {
-					this.connectedHomeSecurity.account.createAccount();
-				}
-			});
-		}
-	}
-
-	onManageAccount(feature?: string) {
-		this.connectedHomeSecurity.account.visitWebConsole(feature);
-	}
-
-	onUpgradeAccount() {
-		this.connectedHomeSecurity.account.purchase();
-	}
 }
