@@ -20,18 +20,18 @@ export class SmartStandbyComponent implements OnInit {
 
 	public showSmartStandby() {
 		this.initSmartStandby();
-		// if (this.powerService.isShellAvailable) {
-		// 	this.powerService.getSmartStandbyCapability()
-		// 		.then((response: boolean) => {
-		// 			console.log(' getSmartStandbyCapability response', response);
-		// 			this.smartStandby.isCapable = response;
-		// 			if (this.smartStandby.isCapable) {
-		// 				this.setSmartStandbySection();
-		// 			}
-		// 		}).catch((error) => {
-		// 			console.log('getSmartStandbyCapability Error', error);
-		// 		});
-		// }
+		if (this.powerService.isShellAvailable) {
+			this.powerService.getSmartStandbyCapability()
+				.then((response: boolean) => {
+					console.log(' getSmartStandbyCapability response', response);
+					this.smartStandby.isCapable = response;
+					if (this.smartStandby.isCapable) {
+						this.setSmartStandbySection();
+					}
+				}).catch((error) => {
+					console.log('getSmartStandbyCapability Error', error);
+				});
+		}
 	}
 
 	setSmartStandbySection() {
