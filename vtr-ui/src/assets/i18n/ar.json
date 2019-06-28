@@ -1209,8 +1209,8 @@
         "recommendedUpdates": "تحديث مستحسن (تحديثات مستحسنة)",
         "optionalUpdates": "تحديث اختياري (تحديثات اختيارية)",
         "ignoredUpdates": "تحديث تم تجاهله (تحديثات تم تجاهلها)",
-        "successInstall": "تم التثبيت بنجاح على",
-        "failedInstall": "فشل التثبيت على",
+        "successInstall": "تم التثبيت بنجاح في",
+        "failedInstall": "فشل التثبيت في",
         "at": "عند",
         "readMore": "اقرأ أكثر",
         "popup": {

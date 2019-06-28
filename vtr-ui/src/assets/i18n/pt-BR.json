@@ -1209,9 +1209,9 @@
         "recommendedUpdates": "Atualizações recomendadas",
         "optionalUpdates": "Atualizações opcionais",
         "ignoredUpdates": "Atualizações ignoradas",
-        "successInstall": "Instalada com êxito em",
+        "successInstall": "Instalado com êxito em",
         "failedInstall": "Falha ao instalar em",
-        "at": "em",
+        "at": "às",
         "readMore": "Ler mais",
         "popup": {
             "reboot": "Reinicializar",

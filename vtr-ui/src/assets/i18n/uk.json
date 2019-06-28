@@ -1209,8 +1209,8 @@
         "recommendedUpdates": "Рекомендовані оновлення",
         "optionalUpdates": "Необов'язкові оновлення",
         "ignoredUpdates": "Пропущені оновлення",
-        "successInstall": "Успішно інстальовано на",
-        "failedInstall": "Не вдалось інсталювати на",
+        "successInstall": "Успішно інстальовано",
+        "failedInstall": "Не вдалось інсталювати",
         "at": "в",
         "readMore": "Розгорнути",
         "popup": {

@@ -1209,9 +1209,9 @@
         "recommendedUpdates": "Rekommenderade uppdateringar",
         "optionalUpdates": "Valfria uppdateringar",
         "ignoredUpdates": "Ignorerade uppdateringar",
-        "successInstall": "Installerades den",
-        "failedInstall": "Kunde inte installeras den",
-        "at": "på",
+        "successInstall": "Installerades",
+        "failedInstall": "Kunde inte installeras",
+        "at": "kl.",
         "readMore": "Läs mer",
         "popup": {
             "reboot": "Starta om",

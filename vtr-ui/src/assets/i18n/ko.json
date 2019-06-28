@@ -1209,9 +1209,9 @@
         "recommendedUpdates": "권장 업데이트",
         "optionalUpdates": "선택적 업데이트",
         "ignoredUpdates": "무시된 업데이트",
-        "successInstall": "설치 완료 시간",
-        "failedInstall": "설치 실패 시간",
-        "at": "위치",
+        "successInstall": "설치 완료 날짜",
+        "failedInstall": "설치 실패 날짜",
+        "at": "시간",
         "readMore": "자세히 읽기",
         "popup": {
             "reboot": "다시 시작",

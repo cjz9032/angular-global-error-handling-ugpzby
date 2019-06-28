@@ -1209,8 +1209,8 @@
         "recommendedUpdates": "Aggiornamento/i consigliato/i",
         "optionalUpdates": "Aggiornamento/i facoltativo/i",
         "ignoredUpdates": "Aggiornamento/i ignorato/i",
-        "successInstall": "Installazione riuscita su",
-        "failedInstall": "Impossibile installare su",
+        "successInstall": "Installazione riuscita il",
+        "failedInstall": "Installazione non riuscita il",
         "at": "alle",
         "readMore": "Ulteriori informazioni",
         "popup": {

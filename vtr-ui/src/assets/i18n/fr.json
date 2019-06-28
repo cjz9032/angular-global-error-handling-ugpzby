@@ -1211,7 +1211,7 @@
         "ignoredUpdates": "Mise(s) à jour ignorée(s)",
         "successInstall": "Installé avec succès le",
         "failedInstall": "Échec de l'installation le",
-        "at": "au",
+        "at": "à",
         "readMore": "En savoir plus",
         "popup": {
             "reboot": "Redém.",

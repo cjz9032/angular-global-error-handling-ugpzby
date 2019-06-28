@@ -1209,8 +1209,8 @@
         "recommendedUpdates": "Önerilen Güncellemeler",
         "optionalUpdates": "İsteğe Bağlı Güncellemeler",
         "ignoredUpdates": "Yoksayılan Güncellemeler",
-        "successInstall": "Başarılı yükleme tarihi",
-        "failedInstall": "Başarısız yükleme tarihi",
+        "successInstall": "Şu tarihte yüklendi:",
+        "failedInstall": "Şu tarihte yükleme başarısız:",
         "at": "saat",
         "readMore": "Okumaya devam edin",
         "popup": {

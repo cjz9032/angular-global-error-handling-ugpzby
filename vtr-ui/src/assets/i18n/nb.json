@@ -1209,8 +1209,8 @@
         "recommendedUpdates": "Anbefalt(e) oppdatering(er)",
         "optionalUpdates": "Valgfri(e) oppdatering(er)",
         "ignoredUpdates": "Ignorert(e) oppdatering(er)",
-        "successInstall": "Oppdateringen ble installert",
-        "failedInstall": "Installasjon mislyktes",
+        "successInstall": "Ble installert den",
+        "failedInstall": "Installasjon mislyktes den",
         "at": "klokken",
         "readMore": "Les mer",
         "popup": {
