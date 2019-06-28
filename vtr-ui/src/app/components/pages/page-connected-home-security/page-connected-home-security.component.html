@@ -51,10 +51,9 @@
                         <div class="container-fluid">
                             <div class="row mb-40">
                                 <div class="col col-12">
-                                    <vtr-home-security-account-status [status]="account.state"
-                                        [standardTime]="account.standardTime" [expiredDate]="account.expiration"
-                                        (startTrial)="onStartTrial()" (manageAccount)="onManageAccount($event)"
-                                        (upgradeAccount)="onUpgradeAccount()">
+									<vtr-home-security-account-status
+										[account]="account"
+                                        [common]="common">
                                     </vtr-home-security-account-status>
                                 </div>
                             </div>
