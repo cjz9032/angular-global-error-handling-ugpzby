@@ -406,7 +406,12 @@ export class ConfigService {
 		},
 		icon: ['fal', 'home-lg-alt'],
 		forArm: false,
-		subitems: []
+		subitems: [],
+		pre: [
+			'assets/images/connected-home-security/welcome-page-one.png',
+			'assets/images/connected-home-security/welcome-page-two.png',
+			'assets/images/connected-home-security/welcome-chs-logo.png'
+		]
 	}, {
 		id: 'user',
 		label: 'User',

@@ -682,7 +682,12 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -1057,7 +1062,7 @@
         },
         "smartAssist": {
             "title": "Assistance intelligente",
-            "description": "Le capteur intelligent Lenovo combine plusieurs capteurs sur votre ordinateur pour détecter vos activités,régler les paramètres pour une gestion de l'alimentation optimale et protéger votre confidentialité.",
+            "description": "Le capteur intelligent Lenovo combine plusieurs capteurs sur votre ordinateur pour détecter vos activités, régler les paramètres pour une gestion de l'alimentation optimale et protéger votre confidentialité.",
             "jumpTo": {
                 "title": "ACCÉDER AUX PARAMÈTRES",
                 "security": "Sécurité",
@@ -1068,14 +1073,14 @@
             },
             "intelligentSecurity": {
                 "title": "Sécurité intelligente",
-                "readMore": "En savoir plus",
+                "readMore": "Afficher plus",
                 "HumanPresenceDetection": {
                     "title": "Détection de présence humaine",
                     "tooltip": "Cliquez ici pour réinitialiser les paramètres de détection de présence humaine."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Détection de présence de l'utilisateur",
+                    "tooltip": "Cliquez ici pour réinitialiser les paramètres de détection de présence humaine."
                 },
                 "zeroTouchLogin": {
                     "title": "Connexion sans pression tactile",
@@ -1083,7 +1088,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Verrouillage sans pression tactile",
-                    "caption": "Cette fonction assombrit l'écran et verrouille l'ordinateur lorsque la présence de l'utilisateur n'est pas détectée.Cela permet de réduire les risques d'accès non autorisé à l'ordinateur quand vous laissez l'ordinateur sans surveillance ou déverrouillé. Cela permet également de réduire la consommation d'énergie en mettant le système en Veille moderne lorsque votre présence n'est pas détectée.",
+                    "caption": "Cette fonction assombrit l'écran et verrouille l'ordinateur lorsque la présence de l'utilisateur n'est pas détectée. Cela permet de réduire les risques d'accès non autorisé à l'ordinateur quand vous laissez l'ordinateur sans surveillance ou déverrouillé. Cela permet également de réduire la consommation d'énergie en mettant le système en mode veille lorsque votre présence n'est pas détectée.",
                     "autoScreenLockTimer": {
                         "title": "DÉLAI DE VERROUILLAGE AUTOMATIQUE DE L'ÉCRAN",
                         "radioButton": {
@@ -1091,44 +1096,44 @@
                             "medium": "Moyen",
                             "slow": "Lent"
                         },
-                        "toolTipContent": "Sélectionnez l'option de votre choix pour verrouiller votre écran à une vitesse rapide/moyenne/lente lorsque votre présence n'est pas détectée.Cependant, l'heure à laquelle l'écran sera verrouillé est également influencée par le scénario utilisateur réel, la fonction de capteur et les paramètres de délai d'attente de l'écran Windows. Par conséquent, nous vous recommandons vivement de verrouiller votre système au moment où vous le quittez."
+                        "toolTipContent": "Sélectionnez l'option de votre choix pour verrouiller votre écran à une vitesse rapide/moyenne/lente lorsque votre présence n'est pas détectée. Cependant, le moment auquel l'écran sera verrouillé est également influencé par le scénario utilisateur réel, la fonction du capteur et les paramètres Windows de mise en veille de l'écran. Par conséquent, nous vous recommandons vivement de verrouiller votre système au moment où vous le quittez."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Le réglage automatique de la distance va mettre à jour automatiquementla distance de détection via un moteur IA.",
+                    "title": "AJUSTEMENT DE LA SENSIBILITÉ DE LA DISTANCE",
+                    "caption": "Le réglage de distance automatique met à jour automatiquement la distance de détection via un moteur AI.",
                     "options": {
                         "near": "Proche",
                         "far": "Éloigné"
                     }
                 },
                 "note": {
-                    "description1": "Cette fonction dépend de Windows Hello.Assurez-vous que la reconnaissance faciale est activée dans les paramètres Windows.",
-                    "description2": "Cette fonction utilise les capteurs et l'appareil photo pour détecter votre présence.Cependant, la fonction ne recueille, ne sauvegarde et ne divulgue PAS de données ou images personnelles.",
-                    "description3": "1. Si votre ordinateur est en mode chevalet, tablette ou sur support,il se peut que ces fonctions ne fonctionnent pas correctement.",
-                    "description4": "2. Si l'ordinateur est en mode hibernation ou a été éteint.La connexion à la caméra automatique IR ne fonctionnera pas.",
-                    "description5": "3. Veuillez ajuster l'écran de votre ordinateur à un angle appropriépour que la caméra infrarouge reconnaisse votre visage pour vous connecter automatiquement."
+                    "description1": "Cette fonction dépend de Windows Hello. Assurez-vous que la reconnaissance faciale est activée dans les paramètres Windows.",
+                    "description2": "Cette fonction utilise les capteurs et l'appareil photo pour détecter votre présence. Cependant, la fonction ne recueille AUCUNE donnée personnelle.",
+                    "description3": "1. Si votre ordinateur est en mode chevalet, tablette ou sur support, il se peut que ces fonctions ne marchent pas correctement.",
+                    "description4": "2. Si l'ordinateur est en mode hibernation ou a été éteint. La connexion à la caméra automatique IR ne fonctionnera pas.",
+                    "description5": "3. Veuillez ajuster l'écran de l'ordinateur à un angle approprié pour que la caméra infrarouge reconnaisse votre visage pour vous connecter automatiquement."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accédez aux paramètres Windows Hello",
                     "screenTimeoutSettings": "Accédez aux paramètres de mise en veille de l'écran"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "RESTAURATION DES PARAMÈTRES PAR DÉFAUT"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Écran intelligent",
+                "description": "Le capteur intelligent Lenovo combine plusieurs capteurs sur votre ordinateur afin de détecter vos activités et régler les paramètres de gestion de l'alimentation. Par exemple, le système abaissera la luminosité de l'écran s'il détecte que vous vous êtes éloigné de l'ordinateur, mais la maintiendra s'il détecte que vous êtes en train de lire.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Désactivation automatique de l'écran",
+                    "caption": "Désactive automatique l'écran quand celui-ci est rabattu ou lorsque l'utilisateur s'en éloigne.",
+                    "note": "Cette fonction n'est pas disponible si les paramètres du mode de gestion de l'alimentation sont configurés sur \"Ne jamais désactiver l'affichage de la batterie\" dans la \"section Système\" des paramètres Windows. Choisissez une autre valeur que \"Jamais\" pour activer cette fonction.",
+                    "windowsLink": "Accédez aux paramètres d'alimentation et de mise en veille dans les paramètres Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Conserver mon écran",
+                    "caption": "Garder mon écran activé lorsque je lis ou que je navigue sur Internet.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
+                        "title": "Minutes avant que la luminosité de l'écran se réduise pendant la navigation sur Internet",
                         "startTime": "0 minutes",
                         "endTime": "60 minutes"
                     }
@@ -1165,10 +1170,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Support intelligent",
+                "title": "Lecture de la vidéo sans pression tactile",
+                "desc": "Cette fonctionnalité interrompra la vidéo lorsque vous quittez l'ordinateur et reprendra sa lecture lorsque vous revenez.",
+                "tooltip": "Cette fonction n'est pas applicable aux lecteurs vidéo Web. Les lecteurs vidéo locaux populaires tels que Windows Media Player, 5KPlayer, etc. prennent en charge cette fonction."
             },
             "voice": {
                 "title": "Voice",
@@ -1195,6 +1200,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1211,7 +1221,7 @@
         "ignoredUpdates": "Mise(s) à jour ignorée(s)",
         "successInstall": "Installé avec succès le",
         "failedInstall": "Échec de l'installation le",
-        "at": "au",
+        "at": "à",
         "readMore": "En savoir plus",
         "popup": {
             "reboot": "Redém.",
@@ -1349,7 +1359,8 @@
         "overview": {
             "overviewBlockTitle": "Présentation de la sécurité de l'écosystème",
             "allDevices": "Tous les périphériques",
-            "myDevice": "Mon périphérique",
+			"myDevice": "Mon périphérique",
+			"thisComputer": "This computer",
             "secure": "SÉCURISER",
             "needAttention": "NÉCESSITE VOTRE ATTENTION",
             "manageAccount": "Gérer le compte",

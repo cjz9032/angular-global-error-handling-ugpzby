@@ -682,7 +682,12 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -1057,7 +1062,7 @@
         },
         "smartAssist": {
             "title": "עזרה חכמה",
-            "description": "החישה החכמה של Lenovo משלבת חיישנים של המחשב כדי לזהות את הפעילויות שלכם,לכוונן הגדרות לצורך ניהול צריכת חשמל אופטימלית ולהגן על פרטיותכם.",
+            "description": "החישה החכמה של Lenovo משלבת חיישנים על המחשב כדי לזהות את הפעילויות שלכם, לכוונן הגדרות לצורך ניהול צריכת חשמל אופטימלית ולהגן על פרטיותכם.",
             "jumpTo": {
                 "title": "מעבר להגדרות",
                 "security": "אבטחה",
@@ -1074,16 +1079,16 @@
                     "tooltip": "לחצו כאן כדי לאפס את ההגדרות של איתור נוכחות אדם."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "חישת נוכחות משתמש",
+                    "tooltip": "לחצו כאן כדי לאפס את ההגדרות של איתור נוכחות אדם."
                 },
                 "zeroTouchLogin": {
                     "title": "כניסה באפס מגע",
                     "caption": "תכונה זו מעוררת או מבטלת את נעילת המחשב באופן אוטומטי כשאתם יושבים מולו או מתקרבים אליו."
                 },
                 "zeroTouchLock": {
-                    "title": "נעילה באפס מגע",
-                    "caption": "תכונה זו תעמעם את התצוגה ותנעל את המחשב כאשר לא מזוהה נוכחות של המשתמש.היא יכולה להפחית את הסיכוי של גישה בלתי מורשית למחשב כאשר משאירים את המחשב ללא השגחה ולא נעול. היא גם מקטינה את צריכת החשמל על-ידי העברת המערכת למצב 'המתנה מודרנית' כאשר הנוכחות שלכם לא מזוהה.",
+                    "title": "נעילה ללא מגע",
+                    "caption": "תכונה זו תעמעם את התצוגה ותנעל את המחשב כאשר לא מזוהה נוכחות של המשתמש. היא יכולה להפחית את הסיכוי של גישה בלתי מורשית למחשב כאשר משאירים את המחשב ללא השגחה ולא נעול. היא גם מקטינה את צריכת החשמל על-ידי העברת המערכת למצב 'המתנה מודרנית' כאשר הנוכחות שלכם לא מזוהה.",
                     "autoScreenLockTimer": {
                         "title": "קוצב זמן אוטומטי לנעילת מסך",
                         "radioButton": {
@@ -1091,46 +1096,46 @@
                             "medium": "בינוני",
                             "slow": "ברירת מחדל"
                         },
-                        "toolTipContent": "בחרו את האפשרות הרצויה לנעילת המסך בקצב מהיר/בינוני/איטי כאשר הנוכחות שלכם אינה מזוהה.עם זאת, הזמן שבמהלכו המסך יהיה נעול מושפע גם מתרחיש המשתמש בפועל, מיכולת החיישן ומהגדרות הגבלת זמן פעילות המסך של Windows. לכן, אנו ממליצים בחום לנעול את המערכת באופן מיידי לפני שעוזבים."
+                        "toolTipContent": "בחרו את האפשרות הרצויה לנעילת המסך בקצב מהיר/בינוני/איטי כאשר הנוכחות שלכם אינה מזוהה. עם זאת, הזמן שבמהלכו המסך יהיה נעול מושפע גם מפעולות המשתמש בפועל, מיכולת החיישן ומהגדרות הגבלת זמן פעילות המסך של Windows. לכן, אנו ממליצים בחום לנעול את המערכת באופן מיידי לפני שעוזבים."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "התאמת מרחק אוטומטית תעדכן באופן אוטומטיאת מרחק הזיהוי באמצעות מנוע AI.",
+                    "title": "התאמה של רגישות לזיהוי מרחק",
+                    "caption": "התאמת מרחק אוטומטית תעדכן באופן אוטומטי את מרחק הזיהוי באמצעות מנוע AI.",
                     "options": {
                         "near": "קרוב",
                         "far": "רחוק"
                     }
                 },
                 "note": {
-                    "description1": "תכונה זו מסתמכת על Windows Hello.ודאו שזיהוי פנים מופעל בהגדרות Windows.",
-                    "description2": "התכונה משתמשת בחיישנים ובמצלמה כדי לזהות את נוכחותכם.עם זאת, התכונה אינה אוספת, שומרת או מבצעת דליפה של נתונים אישיים או תמונות.",
-                    "description3": "‏1. אם המחשב במצב אוהל, לוח או מעמד,ייתכן שתכונות אלה לא יפעלו כראוי.",
-                    "description4": "‏2. אם המחשב במצב שינה או כבוי.כניסה אוטומטית למצלמת IR לא תפעל.",
-                    "description5": "‏3. כווננו את מסך המחשב לזווית מתאימהכך שמצלמת ה-IR תוכל לזהות את הפנים שלכם לכניסה אוטומטית."
+                    "description1": "תכונה זו מסתמכת על Windows Hello. ודאו שזיהוי פנים מופעל בהגדרות Windows.",
+                    "description2": "התכונה משתמשת בחיישנים ובמצלמה כדי לזהות את נוכחותכם. עם זאת, התכונה אינה אוספת נתונים אישיים כלל.",
+                    "description3": "1. אם המחשב נמצא במצב אוהל, לוח או מעמד, ייתכן שתכונות אלה לא יפעלו כראוי.",
+                    "description4": "2. אם המחשב במצב שינה או כבוי. כניסה אוטומטית למצלמת IR לא תפעל.",
+                    "description5": "3. כווננו את מסך המחשב לזווית מתאימה כך שמצלמת ה-IR תוכל לזהות את הפנים שלכם לצורך כניסה אוטומטית."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "מעבר אל הגדרות Windows Hello",
                     "screenTimeoutSettings": "עברו אל הגדרות הגבלת זמן פעילות המסך"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "איפוס להגדרות ברירת המחדל"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "מסך חכם",
+                "description": "החישה החכמה של Lenovo משלבת את החיישנים השונים שעל המחשב כדי לזהות את הפעילויות שלכם ולכוונן הגדרות לצורך ניהול צריכת החשמל. לדוגמה, היא תעמעם את הצג אם היא תזהה שאתם צועדים, אך לא תעמעם אותו אם תזהה שאתם קוראים.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "כיבוי מסך אוטומטי",
+                    "caption": "כיבוי הצג באופן אוטומטי כאשר הפנים מופנים כלפי מטה או בעת הליכה.",
+                    "note": "תכונה זו אינה זמינה אם בהגדרות תוכנית צריכת החשמל הוגדר \"לעולם לא לכבות את המסך בעת הפעלה מהסוללה\" ב\"קטע המערכת\" של הגדרות Windows. בחרו ערך שונה מ\"לעולם לא\" כדי להפעיל תכונה זו.",
+                    "windowsLink": "עברו אל 'הגדרות צריכת חשמל ושינה' בהגדרות Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "השארת הצג שלי פועל",
+                    "caption": "השארת הצג פועל בעת קריאה או גלישה.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "דקות לפני עמעום הצג בעת גלישה",
+                        "startTime": "0 דקות",
+                        "endTime": "60 דקות"
                     }
                 }
             },
@@ -1165,10 +1170,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "מדיה חכמה",
+                "title": "הפעלת וידאו ללא מגע",
+                "desc": "תכונה זו תשהה את הווידאו כאשר אתם עוזבים את המחשב ותחדש את הווידאו כשאתם חוזרים.",
+                "tooltip": "תכונה זו לא ישימה עבור נגני וידאו באינטרנט. נגני וידאו פופולריים, כמו Windows Media Player, 5KPlayer וכן הלאה תומכים בתכונה זו."
             },
             "voice": {
                 "title": "Voice",
@@ -1195,6 +1200,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1211,7 +1221,7 @@
         "ignoredUpdates": "עדכונים שהמערכת התעלמה מהם",
         "successInstall": "הותקן בהצלחה בתאריך",
         "failedInstall": "ההתקנה נכשלה בתאריך",
-        "at": "אל",
+        "at": "ב-",
         "readMore": "פרטים נוספים",
         "popup": {
             "reboot": "הפעלה מחדש",
@@ -1349,7 +1359,8 @@
         "overview": {
             "overviewBlockTitle": "סקירה של אבטחת המערכת האקולוגית",
             "allDevices": "כל המכשירים",
-            "myDevice": "ההתקן שלי",
+			"myDevice": "ההתקן שלי",
+			"thisComputer": "This computer",
             "secure": "מאובטח",
             "needAttention": "נדרשת תשומת לב",
             "manageAccount": "ניהול חשבון",

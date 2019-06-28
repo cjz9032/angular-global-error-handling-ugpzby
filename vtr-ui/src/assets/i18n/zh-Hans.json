@@ -682,7 +682,12 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -1075,11 +1080,11 @@
                 },
                 "humanPresenceDetection": {
                     "title": "用户存在感知",
-                    "tooltip": "单击此处重置人体存在检测设置。"
+                    "tooltip": "单击此处以重置人类存在检测设置。"
                 },
                 "zeroTouchLogin": {
                     "title": "零触摸登录",
-                    "caption": "当您坐在计算机前或接近计算机时，此功能会自动解锁或唤醒计算机。"
+                    "caption": "当您坐在计算机面前或接近计算机时，此功能会自动解锁或唤醒计算机。"
                 },
                 "zeroTouchLock": {
                     "title": "零触摸锁定",
@@ -1104,7 +1109,7 @@
                 },
                 "note": {
                     "description1": "此功能依赖于 Windows Hello。确保在 Windows 设置中已开启面部识别。",
-                    "description2": "该功能使用传感器和摄像头来检测您的存在。然而，该功能不会收集、保存或泄露任何个人数据或图像。",
+                    "description2": "该功能使用传感器和摄像头来检测您的存在。然而，该功能不会收集任何个人数据。",
                     "description3": "1.如果您的计算机处于帐篷模式、平板电脑模式或站立模式，则这些功能可能无法正常工作。",
                     "description4": "2.如果您的计算机处于休眠模式或已关机。自动红外摄像头登录将无法工作。",
                     "description5": "3.请将计算机屏幕调整至适当的角度，以便红外摄像头能够识别您的面部，进行自动登录。"
@@ -1113,22 +1118,22 @@
                     "goToWindowsHello": "转到 Windows Hello 设置",
                     "screenTimeoutSettings": "转至屏幕超时设置"
                 },
-                "resetToDefault": "重置为默认设置"
+                "resetToDefault": "重置为缺省设置"
             },
             "intelligentScreen": {
                 "title": "智能屏幕",
-                "description": "Lenovo Intelligent Sensing结合了计算机上的各种传感器来检测您的活动并调整电源管理设置。例如，如果检测到您正在行走，它会使您的显示屏变暗，但如果检测到您正在阅读，则不会使其变暗。",
+                "description": "Lenovo 智能感知通过计算机上的各种传感器检测您的活动并调整设置以进行电源管理。例如，如果它检测到您正在走路，则将让显示屏变暗，但如果它检测到您正在阅读，则不会让显示屏变暗。",
                 "autoScreenOff": {
                     "title": "自动关闭屏幕",
-                    "caption": "面朝下或行走时自动关闭显示。",
-                    "note": "如果在Windows设置系统部分中将电源计划设置设置为永不关闭电池屏幕，则此功能不可用。请选择“从不”以外的值以启用此功能。",
-                    "windowsLink": "转到Windows设置中的电源和睡眠设置"
+                    "caption": "面朝下或行走时自动关闭显示屏。",
+                    "note": "如果在“Windows 设置”的“系统部分”中将电源计划设置为“电池供电时从不关闭屏幕”，则此功能不可用。请选择“从不”以外的值以启用此功能。",
+                    "windowsLink": "转至“Windows 设置”中的“电源和睡眠”设置"
                 },
                 "keepMyDisplay": {
-                    "title": "保持我的显示",
-                    "caption": "在我阅读或浏览时保持显示。",
+                    "title": "保持显示",
+                    "caption": "当阅读或浏览时，保持显示。",
                     "displaySlider": {
-                        "title": "分钟在浏览时显示变暗之前",
+                        "title": "浏览时显示屏变暗之前的分钟数",
                         "startTime": "0 分钟",
                         "endTime": "60 分钟"
                     }
@@ -1166,9 +1171,9 @@
             },
             "intelligentMedia": {
                 "heading": "智能媒体",
-                "title": "零接触视频播放",
-                "desc": "当您离开计算机时，此功能将暂停视频，并在您返回时恢复视频。",
-                "tooltip": "此功能不适用于网络视频播放器。流行的本地视频播放器，如Windows Media Player，5KPlayer等，支持此功能。"
+                "title": "零触摸视频播放",
+                "desc": "此功能将在离开计算机时暂停视频，并在您回来时重新播放视频。",
+                "tooltip": "此功能不适用于 Web 视频播放器。流行的本地视频播放器（例如 Windows Media Player、5KPlayer 等）均支持此功能。"
             },
             "voice": {
                 "title": "Voice",
@@ -1195,6 +1200,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1209,9 +1219,9 @@
         "recommendedUpdates": "个推荐更新",
         "optionalUpdates": "个可选更新",
         "ignoredUpdates": "个已忽略的更新",
-        "successInstall": "安装成功",
-        "failedInstall": "安装失败",
-        "at": "在",
+        "successInstall": "安装成功的日期",
+        "failedInstall": "安装失败的日期",
+        "at": "时间",
         "readMore": "阅读更多信息",
         "popup": {
             "reboot": "重启",
@@ -1249,7 +1259,7 @@
             "neverChecked": "欢迎使用系统更新。",
             "title": "保持最新状态的系统才是健康的系统。",
             "last": "上次更新时间为",
-            "next": "下次更新扫描计划时间",
+            "next": "下次更新扫描计划时间为",
             "checkButton": "检查更新",
             "checking": "正在检查更新",
             "downloading": "正在下载更新",
@@ -1349,7 +1359,8 @@
         "overview": {
             "overviewBlockTitle": "您的生态系统安全概述",
             "allDevices": "所有设备",
-            "myDevice": "我的设备",
+			"myDevice": "我的设备",
+			"thisComputer": "This computer",
             "secure": "安全",
             "needAttention": "需要注意",
             "manageAccount": "管理帐户",

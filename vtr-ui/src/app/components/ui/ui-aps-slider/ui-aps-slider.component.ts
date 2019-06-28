@@ -4,18 +4,22 @@ import {
 	Input,
 	Output,
 	EventEmitter,
-	AfterContentChecked
+	AfterContentChecked,
 } from '@angular/core';
-import { Options, ChangeContext, ValueToPositionFunction } from 'ng5-slider';
+import {
+	Options,
+	ChangeContext,
+	ValueToPositionFunction
+} from 'ng5-slider';
 
 @Component({
-  selector: 'vtr-ui-aps-slider',
-  templateUrl: './ui-aps-slider.component.html',
-  styleUrls: ['./ui-aps-slider.component.scss']
+	selector: 'vtr-ui-aps-slider',
+	templateUrl: './ui-aps-slider.component.html',
+	styleUrls: ['./ui-aps-slider.component.scss']
 })
 export class UiApsSliderComponent implements OnInit, AfterContentChecked {
 
-  public options: Options;
+	public options: Options;
 
 	@Input() enableSlider;
 
@@ -27,18 +31,20 @@ export class UiApsSliderComponent implements OnInit, AfterContentChecked {
 	@Input() step = 1; // ticks or steps to change on each slide
 	@Input() legends: string[]; // label to display at the start of slider
 	@Input() legendPositionFunction: ValueToPositionFunction; // function to handle legend position for Eye Care
-	@Input() stepsArray: Array<any>; // array with legend value for Eye care
-	@Input() manualRefresh = new EventEmitter<void>();
+	@Input() stepsArray: Array < any > ; // array with legend value for Eye care
+	@Input() manualRefresh = new EventEmitter < void > ();
 
-	@Output() change: EventEmitter<ChangeContext> = new EventEmitter();
-	@Output() valueChange: EventEmitter<ChangeContext> = new EventEmitter();
-	@Output() valueChangeEnd: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() change: EventEmitter < ChangeContext > = new EventEmitter();
+	@Output() valueChange: EventEmitter < ChangeContext > = new EventEmitter();
+	@Output() valueChangeEnd: EventEmitter < ChangeContext > = new EventEmitter();
 
 
-	constructor() { }
+	constructor() {}
 
 	ngAfterContentChecked() {
-		this.options = Object.assign({}, this.options, { disabled: this.enableSlider });
+		this.options = Object.assign({}, this.options, {
+			disabled: this.enableSlider
+		});
 	}
 
 	ngOnInit() {
@@ -77,7 +83,7 @@ export class UiApsSliderComponent implements OnInit, AfterContentChecked {
 	public onSliderChanged(event: any) {
 		console.log('slider changed');
 	}
-	public dragEnd(){
+	public dragEnd() {
 		this.valueChangeEnd.emit();
 	}
 
