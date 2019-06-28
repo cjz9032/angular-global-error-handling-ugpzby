@@ -109,14 +109,4 @@ but not to any other element on the page. using ::ng-deep
 	[disabled].ng5-slider .ng5-slider-pointer {
 		background-color: initial;
 	}
-
-	.on-hover-slider-icon {
-		.ng5-slider {
-			.ng5-slider-pointer {
-				&:hover {
-					background: #8b91a2 !important;
-				}
-			}
-		}
-	}
 }
