@@ -206,7 +206,6 @@ import { HomeSecurityAllDevicesComponent } from './components/pages/page-connect
 import { HomeSecurityDeviceComponent } from './components/pages/page-connected-home-security/component/home-security-device/home-security-device.component';
 // CHS pipes
 import { DaysIntervalPipe } from './pipe/connected-home-security/account-status/days-interval.pipe';
-import { GetDeviceNumberPipe } from './pipe/connected-home-security/get-device-number.pipe';
 import { CharacterLimitPipe } from './pipe/ui-chs-statusbar/character-limit.pipe';
 
 import { AutoupdateSettingsComponent } from './components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
@@ -420,7 +419,6 @@ library.add(fal);
 		ModalIntelligentCoolingModesComponent,
 		DaysIntervalPipe,
 		CharacterLimitPipe,
-		GetDeviceNumberPipe,
 		UiTimePickerComponent,
 		VoiceComponent,
 		ModalVoiceComponent,
