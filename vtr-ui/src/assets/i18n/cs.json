@@ -1220,7 +1220,7 @@
         "optionalUpdates": "Volitelné aktualizace",
         "ignoredUpdates": "Ignorované aktualizace",
         "successInstall": "Úspěšně instalováno v systému",
-        "failedInstall": "Neúspěšná instalace v systému",
+        "failedInstall": "Instalace se nezdařila v systému",
         "at": "v",
         "readMore": "Další informace",
         "popup": {
@@ -1359,7 +1359,8 @@
         "overview": {
             "overviewBlockTitle": "Přehled zabezpečení ekosystému",
             "allDevices": "Všechna zařízení",
-            "myDevice": "Mé zařízení",
+			"myDevice": "Mé zařízení",
+			"thisComputer": "This computer",
             "secure": "ZABEZPEČIT",
             "needAttention": "VYŽADUJE POZORNOST",
             "manageAccount": "Správa účtu",

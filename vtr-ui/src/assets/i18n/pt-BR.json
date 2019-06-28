@@ -1219,9 +1219,9 @@
         "recommendedUpdates": "Atualizações recomendadas",
         "optionalUpdates": "Atualizações opcionais",
         "ignoredUpdates": "Atualizações ignoradas",
-        "successInstall": "Instalada com êxito em",
+        "successInstall": "Instalado com êxito em",
         "failedInstall": "Falha ao instalar em",
-        "at": "em",
+        "at": "às",
         "readMore": "Ler mais",
         "popup": {
             "reboot": "Reinicializar",
@@ -1359,7 +1359,8 @@
         "overview": {
             "overviewBlockTitle": "Visão geral da segurança do ecossistema",
             "allDevices": "Todos os dispositivos",
-            "myDevice": "Meu Dispositivo",
+			"myDevice": "Meu Dispositivo",
+			"thisComputer": "This computer",
             "secure": "SEGURO",
             "needAttention": "PRECISA DE ATENÇÃO",
             "manageAccount": "Gerenciar conta",

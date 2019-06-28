@@ -1221,7 +1221,7 @@
         "ignoredUpdates": "עדכונים שהמערכת התעלמה מהם",
         "successInstall": "הותקן בהצלחה בתאריך",
         "failedInstall": "ההתקנה נכשלה בתאריך",
-        "at": "אל",
+        "at": "ב-",
         "readMore": "פרטים נוספים",
         "popup": {
             "reboot": "הפעלה מחדש",
@@ -1359,7 +1359,8 @@
         "overview": {
             "overviewBlockTitle": "סקירה של אבטחת המערכת האקולוגית",
             "allDevices": "כל המכשירים",
-            "myDevice": "ההתקן שלי",
+			"myDevice": "ההתקן שלי",
+			"thisComputer": "This computer",
             "secure": "מאובטח",
             "needAttention": "נדרשת תשומת לב",
             "manageAccount": "ניהול חשבון",

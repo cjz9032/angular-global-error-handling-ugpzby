@@ -1219,8 +1219,8 @@
         "recommendedUpdates": "Aggiornamento/i consigliato/i",
         "optionalUpdates": "Aggiornamento/i facoltativo/i",
         "ignoredUpdates": "Aggiornamento/i ignorato/i",
-        "successInstall": "Installazione riuscita su",
-        "failedInstall": "Impossibile installare su",
+        "successInstall": "Installazione riuscita il",
+        "failedInstall": "Installazione non riuscita il",
         "at": "alle",
         "readMore": "Ulteriori informazioni",
         "popup": {
@@ -1359,7 +1359,8 @@
         "overview": {
             "overviewBlockTitle": "Panoramica sulla protezione dell'ecosistema",
             "allDevices": "Tutti i dispositivi",
-            "myDevice": "Il mio dispositivo",
+			"myDevice": "Il mio dispositivo",
+			"thisComputer": "This computer",
             "secure": "SICURO",
             "needAttention": "RICHIEDE ATTENZIONE",
             "manageAccount": "Gestisci account",

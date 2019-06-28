@@ -2,7 +2,8 @@ import {
 	Component,
 	OnInit,
 	Input,
-	HostListener
+	HostListener,
+	AfterViewInit
 } from '@angular/core';
 import {
 	NgbActiveModal, NgbModal
@@ -14,7 +15,7 @@ import * as phoenix from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes, WinRT } from '@lenovo/tan-client-bridge';
 import * as Phoenix from '@lenovo/tan-client-bridge';
-import { ModalLenovoIdComponent } from '../modal-lenovo-id/modal-lenovo-id.component';
+import { ModalLenovoIdComponent } from '../../../../modal/modal-lenovo-id/modal-lenovo-id.component';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { HomeSecurityMockService } from 'src/app/services/home-security/home-security.service';
 
@@ -23,17 +24,18 @@ import { HomeSecurityMockService } from 'src/app/services/home-security/home-sec
 	templateUrl: './modal-chs-welcome-container.component.html',
 	styleUrls: ['./modal-chs-welcome-container.component.scss']
 })
-export class ModalChsWelcomeContainerComponent implements OnInit {
+export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit {
 	containerPage: number;
 	switchPage: number = 1;
-	isLenovoIdLogin: boolean = false; // mock data
+	isLenovoIdLogin: boolean;
 	url = 'ms-settings:privacy-location';
 	showPageFour = false;
 	hasSystemPermissionShowed: boolean;
 	isLocationServiceOn: boolean;
 	chs: Phoenix.ConnectedHomeSecurity;
 	permission: any;
-	disabled = false;
+	loading = false;
+	metricsParent = 'Page.ConnectedHomeSecurity';
 	constructor(
 		public activeModal: NgbActiveModal,
 		public homeSecurityMockService: HomeSecurityMockService,
@@ -41,7 +43,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 		private commonService: CommonService,
 		public modalService: NgbModal
 	) {
-		this.chs = homeSecurityMockService.getConnectedHomeSecurity();
+		this.chs = vantageShellService.getConnectedHomeSecurity();
 		this.permission = vantageShellService.getPermission();
 	}
 
@@ -51,7 +53,10 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.refreshPage();
+		if (this.switchPage === 4) {
+			this.showPageFour = true;
+		}
+
 		this.chs.on(EventTypes.chsHasSystemPermissionShowedEvent, (data) => {
 			this.hasSystemPermissionShowed = data;
 			if (data) {
@@ -77,10 +82,11 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 		});
 	}
 
+	ngAfterViewInit(): void {
+		this.refreshPage();
+	}
+
 	refreshPage() {
-		if (this.switchPage === 4) {
-			this.showPageFour = true;
-		}
 		this.permission.getSystemPermissionShowed().then((response: boolean) => {
 			this.hasSystemPermissionShowed = response;
 			if (response) {
@@ -101,39 +107,38 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 			this.switchPage = 2;
 		} else if (switchPage === 2) {
 			if (isLenovoIdLogin) {
-				this.disabled = true;
+				this.loading = true;
 				this.chs.account.createAccount().then((trial: boolean) => {
-					if (trial) {
-						this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
-					}
-					if (isLocationServiceOn && trial) {
-						this.disabled = false;
+					if (!trial) { return; }
+					this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+					if (isLocationServiceOn) {
+						this.loading = false;
 						this.closeModal();
 					} else {
 						this.switchPage = 4;
 						this.showPageFour = true;
 					}
+				}).finally(() => {
+					this.loading = false;
 				});
 			} else {
 				this.switchPage = 3;
 			}
 		} else if (switchPage === 3) {
-			this.disabled = true;
+			this.loading = true;
 			this.chs.account.createAccount().then((trial: boolean) => {
-				if (trial) {
-					this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
-				}
-				if (isLocationServiceOn && trial) {
-					this.disabled = false;
+				if (!trial) { return; }
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+				if (isLocationServiceOn) {
+					this.loading = false;
 					this.closeModal();
 				} else {
 					this.switchPage = 4;
 					this.showPageFour = true;
 				}
+			}).finally(() => {
+				this.loading = false;
 			});
-
-		} else if (switchPage === 4) {
-			this.closeModal();
 		}
 	}
 

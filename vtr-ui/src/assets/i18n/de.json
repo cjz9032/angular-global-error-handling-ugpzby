@@ -1220,8 +1220,8 @@
         "optionalUpdates": "Optionale Updates",
         "ignoredUpdates": "Ignorierte Updates",
         "successInstall": "Erfolgreiche Installation am",
-        "failedInstall": "Installation fehlgeschlagen am",
-        "at": "unter",
+        "failedInstall": "Fehlgeschlagene Installation am",
+        "at": "um",
         "readMore": "Weiterlesen",
         "popup": {
             "reboot": "Neust.",
@@ -1359,7 +1359,8 @@
         "overview": {
             "overviewBlockTitle": "Übersicht über Ihre Ökosystem-Sicherheit",
             "allDevices": "Alle Geräte",
-            "myDevice": "Meine Einheit",
+			"myDevice": "Meine Einheit",
+			"thisComputer": "This computer",
             "secure": "SICHER",
             "needAttention": "MUSS GEPRÜFT WERDEN",
             "manageAccount": "Konto verwalten",

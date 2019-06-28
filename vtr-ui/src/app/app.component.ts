@@ -19,12 +19,12 @@ import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-cap
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.scss']
+	styleUrls: [ './app.component.scss' ]
 })
 export class AppComponent implements OnInit {
-
 	title = 'vtr-ui';
 	private allCapablitiyFlag: Boolean = false;
+	private machineInfo: any;
 
 	constructor(
 		private devService: DevService,
@@ -39,10 +39,39 @@ export class AppComponent implements OnInit {
 		private gamingAllCapabilitiesService: GamingAllCapabilitiesService,
 		private vantageShellService: VantageShellService
 	) {
-		translate.addLangs(['en', 'zh-Hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it',
-			'ja', 'ko', 'nb', 'nl', 'pl', 'pt-BR', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-Latn', 'sv', 'tr', 'uk', 'zh-Hant']);
+		translate.addLangs([
+			'en',
+			'zh-Hans',
+			'ar',
+			'cs',
+			'da',
+			'de',
+			'el',
+			'es',
+			'fi',
+			'fr',
+			'he',
+			'hr',
+			'hu',
+			'it',
+			'ja',
+			'ko',
+			'nb',
+			'nl',
+			'pl',
+			'pt-BR',
+			'pt',
+			'ro',
+			'ru',
+			'sk',
+			'sl',
+			'sr-Latn',
+			'sv',
+			'tr',
+			'uk',
+			'zh-Hant'
+		]);
 		this.translate.setDefaultLang('en');
-
 
 		//#region VAN-2779 this is moved in MVP 2
 
@@ -55,25 +84,32 @@ export class AppComponent implements OnInit {
 
 		//#endregion
 
-		window.addEventListener('online', (e) => {
-			console.log('online', e, navigator.onLine);
-			this.notifyNetworkState();
-		}, false);
+		window.addEventListener(
+			'online',
+			(e) => {
+				console.log('online', e, navigator.onLine);
+				this.notifyNetworkState();
+			},
+			false
+		);
 
-		window.addEventListener('offline', (e) => {
-			console.log('offline', e, navigator.onLine);
-			this.notifyNetworkState();
-		}, false);
+		window.addEventListener(
+			'offline',
+			(e) => {
+				console.log('offline', e, navigator.onLine);
+				this.notifyNetworkState();
+			},
+			false
+		);
 		this.notifyNetworkState();
 	}
 
 	openWelcomeModal(page: number) {
-		const modalRef = this.modalService.open(ModalWelcomeComponent,
-			{
-				backdrop: 'static',
-				centered: true,
-				windowClass: 'welcome-modal-size'
-			});
+		const modalRef = this.modalService.open(ModalWelcomeComponent, {
+			backdrop: 'static',
+			centered: true,
+			windowClass: 'welcome-modal-size'
+		});
 		modalRef.componentInstance.page = page;
 		modalRef.result.then(
 			(result: WelcomeTutorial) => {
@@ -97,11 +133,14 @@ export class AppComponent implements OnInit {
 		sessionStorage.clear();
 
 		if (!this.allCapablitiyFlag) {
-			this.gamingAllCapabilitiesService.getCapabilities().then((response) => {
-				this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
-			}).catch(err => {
-				console.log(`ERROR in appComponent getCapabilities()`, err);
-			});
+			this.gamingAllCapabilitiesService
+				.getCapabilities()
+				.then((response) => {
+					this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
+				})
+				.catch((err) => {
+					console.log(`ERROR in appComponent getCapabilities()`, err);
+				});
 			this.allCapablitiyFlag = true;
 		}
 
@@ -112,7 +151,7 @@ export class AppComponent implements OnInit {
 		// document.getElementById('html-root').classList.add('is-arm');
 
 		const self = this;
-		window.onresize = function () {
+		window.onresize = function() {
 			self.displayService.calcSize(self.displayService);
 		};
 		self.displayService.calcSize(self.displayService);
@@ -127,9 +166,8 @@ export class AppComponent implements OnInit {
 		}
 
 		/********* add this for navigation within a page **************/
-		this.router.events.subscribe(s => {
+		this.router.events.subscribe((s) => {
 			if (s instanceof NavigationEnd) {
-
 				const tree = this.router.parseUrl(this.router.url);
 				if (tree.fragment) {
 					const element = document.querySelector('#' + tree.fragment);
@@ -141,6 +179,7 @@ export class AppComponent implements OnInit {
 		});
 
 		const result = this.getMachineInfo();
+
 		const hadRunApp: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
 		const appFirstRun = !hadRunApp;
 		if (appFirstRun && this.deviceService.isShellAvailable) {
@@ -150,6 +189,12 @@ export class AppComponent implements OnInit {
 					this.sendFirstRunEvent(machineInfo);
 				});
 			}
+		}
+
+		if (result) {
+			result.then((machineInfo) => {
+				this.machineInfo = machineInfo;
+			});
 		}
 
 		this.checkIsDesktopOrAllInOneMachine();
@@ -162,25 +207,32 @@ export class AppComponent implements OnInit {
 			isGaming = machineInfo.isGaming;
 		}
 		const metricsClient = this.vantageShellService.getMetrics();
-		metricsClient.sendAsyncEx({
-			ItemType: 'FirstRun',
-			IsGaming: isGaming
-		}, {
+		metricsClient.sendAsyncEx(
+			{
+				ItemType: 'FirstRun',
+				IsGaming: isGaming
+			},
+			{
 				forced: true
-			});
+			}
+		);
 	}
 
 	private getMachineInfo() {
 		if (this.deviceService.isShellAvailable) {
-			return this.deviceService.getMachineInfo()
+			return this.deviceService
+				.getMachineInfo()
 				.then((value: any) => {
 					console.log('getMachineInfo.then', value);
-					if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
+					console.log('########################################## 1', value);
+					if (value && ![ 'zh', 'pt' ].includes(value.locale.substring(0, 2).toLowerCase())) {
 						this.translate.use(value.locale.substring(0, 2));
 						this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
 					} else {
 						if (value && value.locale.substring(0, 2).toLowerCase() === 'pt') {
-							value.locale.toLowerCase() === 'pt-br' ? this.translate.use('pt-BR') : this.translate.use('pt');
+							value.locale.toLowerCase() === 'pt-br'
+								? this.translate.use('pt-BR')
+								: this.translate.use('pt');
 						}
 						if (value && value.locale.toLowerCase() === 'zh-hans') {
 							this.translate.use('zh-Hans');
@@ -191,7 +243,8 @@ export class AppComponent implements OnInit {
 					}
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
 					return value;
-				}).catch(error => {
+				})
+				.catch((error) => {
 					console.error('getMachineInfo', error);
 				});
 		}
@@ -202,12 +255,14 @@ export class AppComponent implements OnInit {
 	private checkIsDesktopOrAllInOneMachine() {
 		try {
 			if (this.deviceService.isShellAvailable) {
-				this.deviceService.getMachineType()
+				this.deviceService
+					.getMachineType()
 					.then((value: any) => {
 						console.log('checkIsDesktopMachine.then', value);
-						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, (value === 4));
+						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, value === 4);
 						this.commonService.setLocalStorageValue(LocalStorageKey.MachineType, value);
-					}).catch(error => {
+					})
+					.catch((error) => {
 						console.error('checkIsDesktopMachine', error);
 					});
 			}
@@ -225,7 +280,7 @@ export class AppComponent implements OnInit {
 		}
 	}
 
-	@HostListener('window:keyup', ['$event'])
+	@HostListener('window:keyup', [ '$event' ])
 	onKeyUp(event: KeyboardEvent) {
 		try {
 			if (this.deviceService.isShellAvailable) {
@@ -244,7 +299,7 @@ export class AppComponent implements OnInit {
 		}
 	}
 
-	@HostListener('window:load', ['$event'])
+	@HostListener('window:load', [ '$event' ])
 	onLoad(event) {
 		const scale = 1 / (window.devicePixelRatio || 1);
 		const content = `shrink-to-fit=no, width=device-width, initial-scale=${scale}, minimum-scale=${scale}`;
@@ -253,10 +308,13 @@ export class AppComponent implements OnInit {
 	}
 
 	// Defect fix VAN-2988
-	@HostListener('window:keydown', ['$event'])
+	@HostListener('window:keydown', [ '$event' ])
 	disbleCtrlACV($event: KeyboardEvent) {
 		console.log('$event.keyCode ' + $event.keyCode);
-		if (($event.ctrlKey || $event.metaKey) && ($event.keyCode === 65 || $event.keyCode === 67 || $event.keyCode === 86)) {
+		if (
+			($event.ctrlKey || $event.metaKey) &&
+			($event.keyCode === 65 || $event.keyCode === 67 || $event.keyCode === 86)
+		) {
 			// if ($event.keyCode === 65) {
 			// 	console.log('Disable CTRL + A');
 			// }

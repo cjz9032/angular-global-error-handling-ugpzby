@@ -1359,7 +1359,8 @@
         "overview": {
             "overviewBlockTitle": "Pregled bezbednosti ekosistema",
             "allDevices": "Svi uređaji",
-            "myDevice": "Moj uređaj",
+			"myDevice": "Moj uređaj",
+			"thisComputer": "This computer",
             "secure": "BEZBEDNO",
             "needAttention": "POTREBNA JE PAŽNJA",
             "manageAccount": "Upravljanje nalogom",

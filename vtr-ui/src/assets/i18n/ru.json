@@ -1219,8 +1219,8 @@
         "recommendedUpdates": "Рекомендуемые обновления",
         "optionalUpdates": "Необязательные обновления",
         "ignoredUpdates": "Пропущенные обновления",
-        "successInstall": "Успешно установлено на",
-        "failedInstall": "Сбой при установке на",
+        "successInstall": "Успешно установлено",
+        "failedInstall": "Сбой при установке",
         "at": "в",
         "readMore": "Подробнее",
         "popup": {
@@ -1359,7 +1359,8 @@
         "overview": {
             "overviewBlockTitle": "Обзор безопасности экосистемы",
             "allDevices": "Все устройства",
-            "myDevice": "Мое устройство",
+			"myDevice": "Мое устройство",
+			"thisComputer": "This computer",
             "secure": "БЕЗОПАСНО",
             "needAttention": "ТРЕБУЕТ ВНИМАНИЯ",
             "manageAccount": "Управление учетной записью",

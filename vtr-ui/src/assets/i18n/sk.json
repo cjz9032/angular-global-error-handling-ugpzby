@@ -1359,7 +1359,8 @@
         "overview": {
             "overviewBlockTitle": "Zabezpečenie vášho ekosystému: prehľad",
             "allDevices": "Všetky zariadenia",
-            "myDevice": "Moje zariadenie",
+			"myDevice": "Moje zariadenie",
+			"thisComputer": "This computer",
             "secure": "ZABEZPEČENÉ",
             "needAttention": "VYŽADUJE POZORNOSŤ",
             "manageAccount": "Spravovať konto",

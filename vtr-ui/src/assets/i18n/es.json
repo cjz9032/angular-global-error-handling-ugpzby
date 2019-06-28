@@ -1219,9 +1219,9 @@
         "recommendedUpdates": "Actualizaciones recomendadas",
         "optionalUpdates": "Actualizaciones opcionales",
         "ignoredUpdates": "Actualizaciones ignoradas",
-        "successInstall": "Instalado correctamente en",
-        "failedInstall": "Error en la instalación en",
-        "at": "a",
+        "successInstall": "Instalado correctamente a las",
+        "failedInstall": "Error en la instalación a las",
+        "at": "a las",
         "readMore": "Leer más",
         "popup": {
             "reboot": "Rearr.",
@@ -1359,7 +1359,8 @@
         "overview": {
             "overviewBlockTitle": "Descripción de la seguridad del ecosistema",
             "allDevices": "Todos los dispositivos",
-            "myDevice": "Mi dispositivo",
+			"myDevice": "Mi dispositivo",
+			"thisComputer": "This computer",
             "secure": "SEGURO",
             "needAttention": "REQUIERE ATENCIÓN",
             "manageAccount": "Administrar cuenta",
