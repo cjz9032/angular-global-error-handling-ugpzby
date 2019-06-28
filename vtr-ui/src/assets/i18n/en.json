@@ -567,7 +567,8 @@
 				"button": "SEE BATTERY DETAILS",
 				"updating": "Updating",
 				"thresholdNote": {
-					"note1": "To extend the battery lifespan, you have set your ",
+					"note": "Note: ",
+					"note1": "To extend the battery lifespan, you have set your battery to stop charging at ",
 					"note2": "to stop charging at ",
 					"note3": "battery",
 					"note4": "and "
