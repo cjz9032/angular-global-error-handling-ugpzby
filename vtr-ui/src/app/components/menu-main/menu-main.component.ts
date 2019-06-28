@@ -1,13 +1,4 @@
-import {
-	Component,
-	OnInit,
-	OnDestroy,
-	DoCheck,
-	HostListener,
-	SimpleChanges,
-	SimpleChange,
-	ViewChild
-} from '@angular/core';
+import { Component, OnInit, OnDestroy, DoCheck, HostListener, SimpleChanges, SimpleChange, ViewChild, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -36,7 +27,7 @@ import { ModalCommonConfirmationComponent } from '../modal/modal-common-confirma
 	templateUrl: './menu-main.component.html',
 	styleUrls: [ './menu-main.component.scss' ]
 })
-export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
+export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewInit {
 	@ViewChild('menuTarget') menuTarget;
 	public deviceModel: string;
 	public country: string;
@@ -51,6 +42,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	public locale: string;
 	public items: any;
 	showMenu = false;
+	preloadImages: string[];
 
 	constructor(
 		private router: Router,
@@ -133,6 +125,13 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 		});
 
 		this.isDashboard = true;
+	}
+	ngAfterViewInit(): void {
+		this.getMenuItems().then((items) => {
+			const chsItem = items.find(item => item.id === 'home-security');
+			if (!chsItem) { return; }
+			this.preloadImages = [].concat(chsItem.pre);
+		});
 	}
 	ngDoCheck() {
 		if (this.router.url !== null) {
