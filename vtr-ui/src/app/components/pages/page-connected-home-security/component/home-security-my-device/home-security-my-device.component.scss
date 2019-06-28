@@ -1,6 +1,6 @@
-@import "../../../app.theme.scss";
+@import "../../../../../app.theme.scss";
 
-.vtr-widget-home-security-my-device {
+.vtr-home-security-my-device {
     height: 100%;
     display: flex;
 	flex-direction: row;
@@ -155,7 +155,13 @@
 		.device-info {
             border-right: 0.1rem solid $shade_lighter;
 		}
-		.show{
+		.device-info:nth-last-child(2) {
+			border-bottom: 0.1rem solid $shade_lighter !important;
+		}
+		.device-info:first-child{
+			border-top: 0.1rem solid $shade_lighter;
+		}
+		.hidden{
 			display: none;
 		}
 
@@ -180,6 +186,10 @@
 						.sub-title{
 							font-weight: $weight_medium;
 							display: flex;
+						}
+						.loading{
+							justify-content: flex-start;
+							padding-left: 1rem
 						}
 					}
 				}

@@ -401,5 +401,27 @@ export class SmartAssistService {
 		}
 		return undefined;
 	}
+
+	public isLenovoVoiceInstalled():  Promise<boolean> {
+		if (this.lenovoVoice) {
+			return this.lenovoVoice.getInstallStatus();
+		}
+		return undefined;
+	}
+
+	public downloadLenovoVoice():  Promise<string> {
+		if (this.lenovoVoice) {
+			return this.lenovoVoice.downloadAndInstallVoiceApp();
+		}
+		return undefined;
+	}
+
+	public launchLenovoVoice():  Promise<boolean> {
+		if (this.lenovoVoice) {
+			return this.lenovoVoice.launchVoiceApp();
+		}
+		return undefined;
+	}
+
 	// End Lenovo Voice
 }
