@@ -133,7 +133,7 @@ export enum LocalStorageKey {
 	CurrentMacroKeyInterval = '[LocalStorageKey] CurrentMacroKeyInterval',
 	SubBrand = '[LocalStorageKey] SubBrand',
 
-	userDeterminePrivacy = '[LocalStorageKey] userDeterminePrivacy',
+	UserDeterminePrivacy = '[LocalStorageKey] UserDeterminePrivacy',
 
 	BatteriesHealths = '[LocalStorageKey] BatteriesHealths',
 	IsLenovoVoiceSupported = '[LocalStorageKey] IsLenovoVoiceSupported',

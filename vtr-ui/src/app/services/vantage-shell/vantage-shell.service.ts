@@ -10,6 +10,8 @@ import { HybridModeStatus } from 'src/app/data-models/gaming/hybrid-mode-status.
 import { TouchpadLockStatus } from 'src/app/data-models/gaming/touchpad-lock-status.model';
 import { SystemStatus } from 'src/app/data-models/gaming/system-status.model';
 import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
+import { HttpClient } from '@angular/common/http';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -17,7 +19,8 @@ import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 export class VantageShellService {
 	private phoenix: any;
 	private shell: any;
-	constructor(private commonService: CommonService) {
+	constructor(private commonService: CommonService,
+		private http: HttpClient) {
 		this.shell = this.getVantageShell();
 		if (this.shell) {
 			const metricClient = this.shell.MetricsClient ? new this.shell.MetricsClient() : null;
@@ -145,6 +148,22 @@ export class VantageShellService {
 		};
 
 		return defaultMetricsClient;
+	}
+
+	public getMetricsPolicy(callback){
+		const self = this;
+		this.downloadMetricsPolicy().subscribe((response)=>{
+			self.deviceFilter(JSON.stringify(response)).then((result)=>{
+				const userDeterminePrivacy = self.commonService.getLocalStorageValue(LocalStorageKey.UserDeterminePrivacy);
+				if(!userDeterminePrivacy){
+					callback(result);
+				}
+			});	
+		});
+	}
+
+	private downloadMetricsPolicy() {
+		return this.http.get<string>('/assets/privacy-json/metrics.json');
 	}
 
 	/**
