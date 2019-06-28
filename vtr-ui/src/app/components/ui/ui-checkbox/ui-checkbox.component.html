@@ -6,6 +6,7 @@
 		[value]="value"
 		[checked]="checked"
 		[disabled]="disabled"
-		(change)="onChange($event)">
-	<label for="styled-checkbox-1">{{ label }}</label>
+		(change)="onChange($event)"
+		>
+	<label [ngClass]="{'disabled': disabled}" for="styled-checkbox-1">{{ label }}</label>
 </p>

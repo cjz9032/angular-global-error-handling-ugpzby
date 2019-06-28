@@ -163,7 +163,7 @@ import { PageSettingsComponent } from './components/pages/page-settings/page-set
 import { UiPopoverComponent } from './components/ui/ui-popover/ui-popover.component';
 import { OledPowerSettingsComponent } from './components/display/oled-power-settings/oled-power-settings.component';
 import { UiMacrokeyPopupComponent } from './components/ui/ui-macrokey-popup/ui-macrokey-popup.component';
-import { ModalChsWelcomeContainerComponent } from './components/modal/modal-chs-welcome-container/modal-chs-welcome-container.component';
+import { ModalChsWelcomeContainerComponent } from './components/pages/page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
 
 // SA Components
 import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';

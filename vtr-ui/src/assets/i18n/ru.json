@@ -682,7 +682,12 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -1057,7 +1062,7 @@
         },
         "smartAssist": {
             "title": "Интеллектуальный помощник",
-            "description": "Функция интеллектуального распознавания Lenovo распознает ваши действия по сигналам датчиков компьютераи соответствующим образом корректирует параметры для оптимального управления электропитанием и защиты вашей конфиденциальности.",
+            "description": "Функция интеллектуального распознавания Lenovo распознает ваши действия по сигналам датчиков компьютера и соответствующим образом корректирует параметры для оптимального управления электропитанием и защиты вашей конфиденциальности.",
             "jumpTo": {
                 "title": "ПЕРЕЙТИ К ПАРАМЕТРАМ",
                 "security": "Защита",
@@ -1074,8 +1079,8 @@
                     "tooltip": "Щелкните здесь, чтобы сбросить параметры обнаружения присутствия человека."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Обнаружение присутствия пользователя",
+                    "tooltip": "Щелкните здесь, чтобы сбросить параметры обнаружения присутствия человека."
                 },
                 "zeroTouchLogin": {
                     "title": "Бесконтактный вход",
@@ -1083,7 +1088,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Бесконтактная блокировка",
-                    "caption": "Эта функция затемняет дисплей и блокирует компьютер, если присутствие пользователя не обнаружено.Эта функция уменьшает вероятность несанкционированного доступа к компьютеру, если вы уходите, оставляя компьютер без присмотра разблокированным. Кроме того, она уменьшает энергопотребление, переводя систему в текущий режим ожидания, если ваше присутствие не обнаружено.",
+                    "caption": "Эта функция затемняет дисплей и блокирует компьютер, если присутствие пользователя не обнаружено. Она также уменьшает вероятность несанкционированного доступа к компьютеру, если вы уходите, оставляя компьютер без присмотра разблокированным. Кроме того, эта функция уменьшает энергопотребление, переводя систему в текущий режим ожидания, если ваше присутствие не обнаружено.",
                     "autoScreenLockTimer": {
                         "title": "ТАЙМЕР АВТОМАТИЧЕСКОЙ БЛОКИРОВКИ ЭКРАНА",
                         "radioButton": {
@@ -1091,46 +1096,46 @@
                             "medium": "Средней сложности",
                             "slow": "Медленно"
                         },
-                        "toolTipContent": "Выберите скорость блокировки экрана (высокую, среднюю или низкую), если ваше присутствие не обнаружено.Также время блокировки экрана зависит от фактического сценария использования, возможностей датчиков и параметров тайм-аута экрана Windows. Поэтому мы настоятельно рекомендуем блокировать систему перед уходом."
+                        "toolTipContent": "Выберите скорость блокировки экрана (высокую, среднюю или низкую), если ваше присутствие не обнаружено. Также время блокировки экрана зависит от фактического сценария использования, возможностей датчиков и параметров тайм-аута экрана Windows. Поэтому мы настоятельно рекомендуем блокировать систему перед уходом."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Функция автоматической корректировки расстояния автоматически обновитрасстояние обнаружения с помощью механизма искусственного интеллекта.",
+                    "title": "РЕГУЛИРОВКА ЧУВСТВИТЕЛЬНОСТИ ОБНАРУЖЕНИЯ РАССТОЯНИЯ",
+                    "caption": "Функция автоматической корректировки расстояния автоматически обновит расстояние обнаружения с помощью механизма искусственного интеллекта.",
                     "options": {
                         "near": "Рядом",
                         "far": "Далеко"
                     }
                 },
                 "note": {
-                    "description1": "Эта функция основана на технологии Windows Hello.Убедитесь, что функция распознавания лица включена в параметрах Windows.",
-                    "description2": "Эта функция обнаруживает ваше присутствие с помощью датчиков и камеры.Тем не менее, она НЕ ОСУЩЕСТВЛЯЕТ сбор, сохранение или передачу каких-либо личных данных или изображений.",
-                    "description3": "1. Если компьютер находится в режиме тента, планшета или консоли,эти функции могут работать неправильно.",
-                    "description4": "2. Если компьютер находится в режиме гибернации или выключен.Функция автоматического входа с помощью ИК-камеры не будет работать.",
-                    "description5": "3. Подберите угол наклона экрана вашего компьютера таким образом,чтобы ИК-камера могла распознавать ваше лицо для автоматического входа в систему."
+                    "description1": "Эта функция основана на технологии Windows Hello. Убедитесь, что функция распознавания лица включена в параметрах Windows.",
+                    "description2": "Эта функция обнаруживает ваше присутствие с помощью датчиков и камеры. Тем не менее, она НЕ ОСУЩЕСТВЛЯЕТ сбор каких-либо личных данных.",
+                    "description3": "1. Если компьютер находится в режиме тента, планшета или консоли, эти функции могут работать неправильно.",
+                    "description4": "2. Если компьютер находится в режиме гибернации или выключен. Функция автоматического входа с помощью ИК-камеры не будет работать.",
+                    "description5": "3. Подберите угол наклона экрана вашего компьютера таким образом, чтобы ИК-камера могла распознавать ваше лицо для автоматического входа в систему."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Перейдите в раздел параметров Windows Hello",
                     "screenTimeoutSettings": "Перейти к параметрам тайм-аута экрана"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "ВОССТАНОВЛЕНИЕ ПАРАМЕТРОВ ПО УМОЛЧАНИЮ"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Интеллектуальный экран",
+                "description": "Функция интеллектуального распознавания Lenovo распознает ваши действия по сигналам различных датчиков компьютера и соответствующим образом корректирует параметры управления электропитанием. Например, она погасит дисплей вашего устройства, если обнаружит, что вы идёте, и не будет гасить дисплей, если распознает, что вы читаете.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Автоматическое выключение экрана",
+                    "caption": "Автоматическое выключение дисплея в положении экраном вниз или во время ходьбы.",
+                    "note": "Эта функция недоступна, если в разделе параметров Windows, который называется \"Система\", план электропитания настроен так, чтобы экран никогда не отключался (выбрано значение \"Никогда\"). Выберите другое значение, чтобы включить эту функцию.",
+                    "windowsLink": "Переход в раздел параметров управления питанием и спящим режимом Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Продление включенного состояния дисплея",
+                    "caption": "Продление включенного состояния дисплея при чтении и работе в Интернете.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Количество минут до гашения дисплея при работе в Интернете",
+                        "startTime": "0 минут",
+                        "endTime": "60 минуты"
                     }
                 }
             },
@@ -1165,10 +1170,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Интеллектуальная работа с мультимедиа",
+                "title": "Бесконтактное воспроизведение видео",
+                "desc": "Эта функция приостанавливает воспроизведение видео, когда вы уходите от компьютера, и возобновляет воспроизведение, как только вы снова оказываетесь у компьютера.",
+                "tooltip": "Эта функция не распространяется на интернет-проигрыватели видео. Самые популярные локальные видеопроигрыватели (например,проигрыватель Windows Media Player, 5KPlayer и т. д.) поддерживают эту функцию."
             },
             "voice": {
                 "title": "Voice",
@@ -1195,6 +1200,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1209,8 +1219,8 @@
         "recommendedUpdates": "Рекомендуемые обновления",
         "optionalUpdates": "Необязательные обновления",
         "ignoredUpdates": "Пропущенные обновления",
-        "successInstall": "Успешно установлено на",
-        "failedInstall": "Сбой при установке на",
+        "successInstall": "Успешно установлено",
+        "failedInstall": "Сбой при установке",
         "at": "в",
         "readMore": "Подробнее",
         "popup": {
@@ -1349,7 +1359,8 @@
         "overview": {
             "overviewBlockTitle": "Обзор безопасности экосистемы",
             "allDevices": "Все устройства",
-            "myDevice": "Мое устройство",
+			"myDevice": "Мое устройство",
+			"thisComputer": "This computer",
             "secure": "БЕЗОПАСНО",
             "needAttention": "ТРЕБУЕТ ВНИМАНИЯ",
             "manageAccount": "Управление учетной записью",

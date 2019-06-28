@@ -193,6 +193,9 @@
 								(click)="onLogout(); showMenu = false">{{'lenovoId.logout' | translate}}</a>
 						</div>
 					</li>
+					<div *ngIf="item.id==='home-security'" class="d-none">
+						<img *ngFor="let i of preloadImages" [src]="i" alt="">
+					</div>
 				</ng-container>
 			</ul>
 		</div>

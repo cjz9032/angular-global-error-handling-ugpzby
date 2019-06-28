@@ -49,50 +49,75 @@
 									<div class="hours-block pl-5 ml-4 mx-5">
 
 										<div class="toggle-icon"
-											[class.disabled]="copyHour==0"
-											(click)="decrementHours()">
+											(click)="updateHours(false)">
 											<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
 										</div>
 
-										<span>{{hours[copyHour-1]}}</span><br>
+										<span>{{hours[prevHour]}}</span><br>
 										<span class="highlight">{{hours[copyHour]}}</span><br>
-										<span>{{hours[copyHour+1]}}</span>
+										<span>{{hours[nextHour]}}</span>
 
 										<div class="toggle-icon"
-											[class.disabled]="copyHour==11"
-											(click)="incrementHours()">
+											(click)="updateHours(true)">
 											<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
 										</div>
 
 									</div>
 
 									<div class="minutes-block">
-
 										<div class="toggle-icon"
-											[class.disabled]="copyMinute==0"
-											(click)="decrementMinutes()">
+											(click)="updateMinutes(false)">
 											<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
 										</div>
 
-										<span>{{minutes[copyMinute - 1]}}</span><br>
+										<span>{{minutes[prevMinute]}}</span><br>
 										<span class="highlight">{{minutes[copyMinute]}}</span><br>
-										<span>{{minutes[copyMinute+1]}}</span>
+										<span>{{minutes[nextMinute]}}</span>
 
 										<div class="toggle-icon"
-											[class.disabled]="copyMinute==3"
-											(click)="incrementMinutes()">
+											(click)="updateMinutes(true)">
 											<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
 										</div>
 
 									</div>
-									<div class="am-pm ml-5">
+									<div class="am-pm ml-5 highlight">
 										<div class="toggle-icon">
 											<!-- <fa-icon [icon]="['fal', 'chevron-up']"></fa-icon> -->
 										</div>
-										<span (click)="setAmPm(0)"
-											[class.highlight]="copyAmPm==0">{{amPms[0]}}</span><br>
-										<span (click)="setAmPm(1)"
-											[class.highlight]="copyAmPm==1">{{amPms[1]}}</span>
+										<span>
+											<label class="inline-block">
+												<input class="label-radio"
+													id="radio1"
+													[name]="'ampmradio'+id"
+													type="radio"
+													value="0"
+													[checked]="copyAmPm==0"
+													(click)="setAmPm(0)" />
+												<p class="label-text">AM</p>
+											</label>
+										</span><br>
+										<span>
+											<label class="inline-block">
+												<!-- <fa-layers [fixedWidth]="true">
+													<fa-icon [icon]="['far', 'circle']"
+														class="label-radio"></fa-icon>
+													<fa-icon [icon]="['fas', 'circle']"
+														transform="shrink-2"
+														class="label-inner-radio">
+													</fa-icon>
+												</fa-layers> -->
+												<!-- <fa-icon class="label-radio"
+													[icon]="['far', 'circle']"></fa-icon> -->
+												<input class="label-radio"
+													id="radio2"
+													[name]="'ampmradio'+id"
+													type="radio"
+													value="1"
+													[checked]="copyAmPm==1"
+													(click)="setAmPm(1)" />
+												<p class="label-text">PM</p>
+											</label>
+										</span>
 										<div class="toggle-icon">
 											<!-- <fa-icon [icon]="['fal', 'chevron-down']"></fa-icon> -->
 										</div>
