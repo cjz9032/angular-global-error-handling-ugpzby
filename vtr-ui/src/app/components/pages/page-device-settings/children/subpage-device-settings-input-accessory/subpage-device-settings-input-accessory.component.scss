@@ -41,8 +41,8 @@
 .inputSection {
 	margin-top: 0.3rem;
 	width: 75%;
-	@media #{$mediaquery_X28} {		
-		margin-top: 1rem;		
+	@media #{$mediaquery_X28} {
+		margin-top: 1rem;
 	}
 	@media #{$mediaquery_X26} {
 		width: 72%;
@@ -145,4 +145,9 @@
 		}
 	}
 }
+}
+.pressf12 {
+	text-align: center;
+	font-size: 12px;
+
 }
