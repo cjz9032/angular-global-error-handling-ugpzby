@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../../../app.theme.scss';
 
 .vtr-modal-chs-welcome-container {
     .modal-header {
@@ -112,5 +112,14 @@
             width: 25rem;
         }
 
-    }
+	}
+	.loading {
+		top: 0;
+		opacity: 0.5;
+		background-color: $light;
+		.spinner-border {
+			width: 5rem;
+			height: 5rem;
+		}
+	}
 }

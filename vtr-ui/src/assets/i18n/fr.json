@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "Présentation de la sécurité de l'écosystème",
             "allDevices": "Tous les périphériques",
-            "myDevice": "Mon périphérique",
+			"myDevice": "Mon périphérique",
+			"thisComputer": "This computer",
             "secure": "SÉCURISER",
             "needAttention": "NÉCESSITE VOTRE ATTENTION",
             "manageAccount": "Gérer le compte",
