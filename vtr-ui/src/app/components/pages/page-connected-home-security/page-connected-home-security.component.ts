@@ -33,6 +33,7 @@ import { HomeSecurityOverviewMyDevice } from 'src/app/data-models/home-security/
 import { HomeSecurityNotifications } from 'src/app/data-models/home-security/home-security-notifications.model';
 import { HomeSecurityCommon } from 'src/app/data-models/home-security/home-security-common.model';
 
+
 @Component({
 	selector: 'vtr-page-connected-home-security',
 	templateUrl: './page-connected-home-security.component.html',
@@ -59,6 +60,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		private commonService: CommonService,
 	) {
 		this.connectedHomeSecurity = vantageShellService.getConnectedHomeSecurity();
+		if (!this.connectedHomeSecurity) {
+			this.connectedHomeSecurity = this.homeSecurityMockService.getConnectedHomeSecurity();
+		}
 		this.permission = vantageShellService.getPermission();
 		this.welcomeModel = new HomeSecurityWelcome();
 	}
@@ -85,7 +89,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		const cacheAccount = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount);
 		if (cacheAccount) {
 			this.account = cacheAccount;
-			if (this.connectedHomeSecurity.account)	{
+			if (this.connectedHomeSecurity.account) {
 				this.account.createAccount = this.connectedHomeSecurity.account.createAccount;
 				this.account.purchase = this.connectedHomeSecurity.account.purchase;
 				const cacheLid = this.connectedHomeSecurity.account.lenovoId.loggedIn;
@@ -138,7 +142,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityNotifications, this.notificationItems);
 			}
 		});
-
 	}
 
 	ngAfterViewInit(): void {
