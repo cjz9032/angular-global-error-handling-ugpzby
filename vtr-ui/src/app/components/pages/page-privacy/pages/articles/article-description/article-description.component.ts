@@ -23,7 +23,6 @@ export class ArticleDescriptionComponent implements AfterViewInit {
 	}
 
 	searchLink(e) {
-		console.log('click', e.tagName);
 		if (e.tagName.toLowerCase() === 'html') {
 			return;
 		}
