@@ -11,6 +11,7 @@ export class HomeSecurityNotifications {
 	notificationItem: NotificationItem[];
 	constructor(notification: CHSNotifications) {
 		this.notificationItem = [];
+		if (!notification || !notification.value) { return; }
 		notification.value.forEach(value => {
 			switch (value.type) {
 				case CHSNotificationType.connectedUnsafeNetwork: {
@@ -47,8 +48,7 @@ export class HomeSecurityNotifications {
 				title: this.title, notificationDetail: this.subText, date: this.date
 			});
 			this.notificationItem.push(item);
-
-		})
+		});
 	}
 	getTime(date: Date) {
 		let now = new Date();
