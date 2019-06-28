@@ -115,8 +115,8 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	@HostListener('document:click', [ '$event.target' ])
 	onClick(targetElement) {
 		const clickedInside = this.menuTarget.nativeElement.contains(targetElement);
-		var toggleMenuButton =
-			targetElement.classList.contains('navbar-toggler-icon') || targetElement.classList.contains('fa-bars');
+		const toggleMenuButton =
+			targetElement.classList.contains('navbar-toggler-icon ') || targetElement.classList.contains('fa-bars');
 		if (!clickedInside && !toggleMenuButton) {
 			this.showMenu = false;
 		}
@@ -325,15 +325,15 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 					Promise.all([
 						this.smartAssist.getHPDVisibilityInIdeaPad(),
 						this.smartAssist.getHPDVisibilityInThinkPad(),
-						this.smartAssist.isLenovoVoiceAvailable()
-						// this.smartAssist.getVideoPauseResumeStatus(), // returns object
-						// this.smartAssist.getIntelligentScreenVisibility()
+						this.smartAssist.isLenovoVoiceAvailable(),
+						this.smartAssist.getVideoPauseResumeStatus(), // returns object
+						this.smartAssist.getIntelligentScreenVisibility()
 					])
 						.then((responses: any[]) => {
 							console.log('showSmartAssist.Promise.all()', responses);
-							// const isAvailable = (responses[0] || responses[1] || responses[2].available || responses[3] || responses[4]);
-							// const isAvailable = (responses[0] || responses[1] || responses[2]);
-							const isAvailable = true;
+							const isAvailable =
+								responses[0] || responses[1] || responses[2] || responses[3].available || responses[4];
+							// const isAvailable = true;
 							this.commonService.setLocalStorageValue(
 								LocalStorageKey.IsLenovoVoiceSupported,
 								responses[2]

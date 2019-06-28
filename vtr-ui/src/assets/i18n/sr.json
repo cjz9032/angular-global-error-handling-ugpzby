@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -287,6 +289,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -389,16 +441,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Pružite povratne informacije",
+            "subtitle": "Recite nam šta mislite o Vantage.",
+            "button": "Pružite povratne informacije",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Komentari...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Hvala nam na povratnim informacijama!"
                 },
                 "question1": "Da li vam se dopada novi stil Vantage-a?",
                 "question2": "Da li mislite da je učinak prihvatljiv?",
@@ -862,7 +914,7 @@
             "displayCamera": {
                 "title": "Ekran i kamera",
                 "subtitle": "Ekran i postavke kamere",
-                "description": "Ovaj odeljak vam omogućava da poboljšate vizuelni doživljaj i konfigurišete svojstva kamere.Istražite više funkcija i prilagodite svoje iskustvo prikaza ovde.",
+                "description": "Ovaj odeljak vam omogućava da poboljšate vizuelni doživljaj i konfigurišete svojstva kamere. Istražite više funkcija i prilagodite svoje iskustvo prikaza ovde.",
                 "jumpTo": {
                     "title": "PRELAZAK NA POSTAVKE",
                     "shortcuts": {
@@ -870,7 +922,7 @@
                             "title": "Ekran"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Kamera"
                         }
                     }
                 },
@@ -892,40 +944,40 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Temperatura boje ekrana",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Toplo (bolje za oči)",
+                            "cold": "Hladno"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Postavite temperaturu na početnu vrednost",
+                        "tooltip": "Režim za zaštitu vida prilagođava temperaturu boja ekrana kako bi se isfiltriralo plavo svetlo i smanjilo naprezanje očiju.",
+                        "onSunsetToSunriseScheduleDescription": "Zakažite režim za zaštitu vida od zalaska do izlaska sunca",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Napomena",
+                            "description": "Lenovo Vantage treba da pristupi informacijama o lokaciji kako bi se izračunalo vreme zalaska i izlaska sunca u vašem regionu."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Zaštita privatnosti",
+                        "description": "Ova funkcija sprečava druge osobe da zaviruju na vaš ekran. Kada je uključena, menja ugao prikaza ekrana, tako da sprečava da osobe oko vas narušavaju vašu privatnost. Možete da se prebacujete između režima pritiskom na tastere „Fn+D“.",
+                        "note": "Zaštita privatnosti ne funkcioniše u vertikalnom režimu prikaza ekrana. U ovom režimu, ekran je i dalje vidljiv sa strana.",
+                        "labelText": "Omogućite ovu funkciju prilikom unosa lozinki"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Postavke napajanja za Organski LED",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Organski LED ekran vašeg računara može i da smanji potrošnju napajanja i produži životni vek baterije putem selektivnog zatamnjenja delova ekrana.",
+                            "Preporučuje se i zatamnjenje trake zadataka i oblasti ekrana koje se ne menjaju često da bi se produžio ukupan rok trajanja ekrana."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Postavite temperaturu na početnu vrednost",
+                        "tooltip": "Ova funkcija može da smanji potrošnju napajanja i produži životni vek baterije putem selektivnog zatamnjenja delova ekrana."
                     }
                 },
                 "camera": {
                     "title": "Kamera",
                     "note": {
                         "title": "Napomena",
-                        "description": "Lenovo Vantage nema dozvole da pristupi vašoj kameri.Dozvolite aplikaciji Lenovo Vantage da pristupi kameri."
+                        "description": "Lenovo Vantage nema dozvole da pristupi vašoj kameri. Dozvolite aplikaciji Lenovo Vantage da pristupi kameri."
                     },
                     "url": "Idite na postavke zaštite privatnosti sistema Windows",
                     "cameraPrivacy": {
@@ -944,10 +996,10 @@
                     "notAvailable": "Kamera nije dostupna",
                     "camerablur": {
                         "title": "Zamagljenje pozadine za kameru",
-                        "caption": "Ova funkcija zamagljuje pozadinu kada koristite kameru za video poziv ili fotografisanje.Možete da odaberete drugačije efekte iz izbora u nastavku.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Ova funkcija zamagljuje pozadinu kada koristite kameru za video poziv ili fotografisanje. Možete da odaberete drugačije efekte iz izbora u nastavku.",
+                        "blurMode": "Režim zamagljenja",
+                        "comicMode": "Režim stripa",
+                        "sketchMode": "Režim crteža"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1273,10 +1325,10 @@
     },
     "homeSecurity": {
         "title": "Povezana kućna bezbednost",
-        "notification":{
+        "notification": {
             "recent": "Nedavna bezbednosna obaveštenja",
             "notifications": "Obaveštenja"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Zaštitite ekosistem uređaja",
             "thisDevice": "Ovaj uređaj",
@@ -1293,22 +1345,22 @@
             "startTrial": "Započnite probni period",
             "fullAccess": "Pun pristup",
             "renew": "Obnova"
-		},
-		"overview": {
-			"overviewBlockTitle": "Pregled bezbednosti ekosistema",
-			"allDevices": "Svi uređaji",
-			"myDevice": "Moj uređaj",
-			"secure": "BEZBEDNO",
-			"needAttention": "POTREBNA JE PAŽNJA",
-			"manageAccount": "Upravljanje nalogom",
-			"devices": "Uređaji",
-			"seeProtectedDevices": "Pogledajte zaštićene uređaje",
-			"addDevice": "dodajte uređaj",
-			"trialExpired": "Probna verzija je istekla - Nadogradite da biste zaštitili sve uređaje",
-			"upgrade": "nadogradnja",
-			"freeTrial": "Zaštitite sve uređaje - Besplatni tridesetodnevni probni period",
-			"startTrial": "Započnite probni period"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Pregled bezbednosti ekosistema",
+            "allDevices": "Svi uređaji",
+            "myDevice": "Moj uređaj",
+            "secure": "BEZBEDNO",
+            "needAttention": "POTREBNA JE PAŽNJA",
+            "manageAccount": "Upravljanje nalogom",
+            "devices": "Uređaji",
+            "seeProtectedDevices": "Pogledajte zaštićene uređaje",
+            "addDevice": "dodajte uređaj",
+            "trialExpired": "Probna verzija je istekla - Nadogradite da biste zaštitili sve uređaje",
+            "upgrade": "nadogradnja",
+            "freeTrial": "Zaštitite sve uređaje - Besplatni tridesetodnevni probni period",
+            "startTrial": "Započnite probni period"
+        },
         "tour": {
             "back": "Nazad",
             "skip": "Preskoči",
@@ -1367,7 +1419,9 @@
             "status": "Status: ",
             "subDescription1": "Ovaj proizvod ima godišnje ograničenu garanciju i ima pravo na uslugu popravke u servisu. Korisnici mogu nazvati svoj lokalni servisni centar za više informacija. Prodavci mogu da pruže uslugu popravke za ovaj proizvod ako ga prime u svojim prostorijama.",
             "subDescription2": "Nismo uspeli da lociramo detalje garancije za vaš uređaj. Za više opcija garancije posetite našu veb lokaciju za podršku.",
-            "viewWarrantyOptions": "PREGLED OPCIJA GARANCIJE"
+            "viewWarrantyOptions": "PREGLED OPCIJA GARANCIJE",
+            "offlineTips1": "Povežite se na internet radi najnovijih informacija o garanciji.",
+            "offlineTips2": "Povežite se na internet radi ažuriranja informacija o garanciji."
         },
         "documentation": {
             "title": "Dokumentacija",

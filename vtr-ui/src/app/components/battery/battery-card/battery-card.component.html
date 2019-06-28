@@ -94,20 +94,34 @@
 				</span>
 			</div>
 		</div>
-		<div class="feature-note p-4 mt-2"
-			*ngIf="chargeThresholdInfo?.isOn">
+		<div class="feature-note p-2 mt-2"
+			*ngIf="chargeThresholdBatteries.length>0">
 			<div class="row">
 				<p>
 					<span style="font-weight: bold">Note: </span>
 					<span>
-						{{'device.deviceSettings.batteryGauge.thresholdNote'  | translate}}
-						{{chargeThresholdInfo.stopValue}}%
+						{{'device.deviceSettings.batteryGauge.thresholdNote.note1'  | translate}}
+						{{'device.deviceSettings.batteryGauge.thresholdNote.note3'  | translate}}
+					</span>
+					<span *ngIf="chargeThresholdInfo.length>1">{{chargeThresholdBatteries[0]}}</span>
+					<span>
+						{{'device.deviceSettings.batteryGauge.thresholdNote.note2'  | translate}}
+						{{chargeThresholdInfo[chargeThresholdBatteries[0]-1].stopValue}}%
+					</span>
+					<span *ngIf="chargeThresholdBatteries.length>1">
+						{{'device.deviceSettings.batteryGauge.thresholdNote.note4'  | translate}}
+						{{'device.deviceSettings.batteryGauge.thresholdNote.note3'  | translate}}
+						{{chargeThresholdBatteries[1]}}
+						<span>
+							{{'device.deviceSettings.batteryGauge.thresholdNote.note2'  | translate}}{{chargeThresholdInfo[chargeThresholdBatteries[1]-1].stopValue}}%
+						</span>
 					</span>
 					<!-- <a href="javascript:void()">
 						{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
 					</a> -->
 			</div>
 		</div>
+
 		<div class="pt-4 text-center">
 			<button type="button"
 				vtrMetrics
