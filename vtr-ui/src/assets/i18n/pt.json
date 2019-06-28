@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "Descrição geral da segurança do ecossistema",
             "allDevices": "Todos os dispositivos",
-            "myDevice": "O Meu Dispositivo",
+			"myDevice": "O Meu Dispositivo",
+			"thisComputer": "This computer",
             "secure": "SEGURO",
             "needAttention": "PRECISA DE ATENÇÃO",
             "manageAccount": "Gerir Conta",

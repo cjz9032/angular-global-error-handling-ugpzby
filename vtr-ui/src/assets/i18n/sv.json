@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "Översikt över ekosystemets säkerhet",
             "allDevices": "Alla enheter",
-            "myDevice": "Min enhet",
+			"myDevice": "Min enhet",
+			"thisComputer": "This computer",
             "secure": "SÄKERT",
             "needAttention": "ÅTGÄRD KRÄVS",
             "manageAccount": "Hantera konto",
