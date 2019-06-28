@@ -289,6 +289,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -864,7 +914,7 @@
             "displayCamera": {
                 "title": "Afișaj și cameră",
                 "subtitle": "Setări afișaj și cameră",
-                "description": "Această secțiune vă oferă posibilitatea de a vă îmbunătăți experiența vizuală și de a vă configura proprietățile camerei.Explorați mai multe caracteristici și personalizați-vă experiența de afișaj aici.",
+                "description": "Această secțiune vă oferă posibilitatea de a vă îmbunătăți experiența vizuală și de a vă configura proprietățile camerei. Explorați mai multe caracteristici și personalizați-vă experiența de afișaj aici.",
                 "jumpTo": {
                     "title": "ACCESAȚI SETĂRILE",
                     "shortcuts": {
@@ -872,7 +922,7 @@
                             "title": "Afișaj"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Cameră"
                         }
                     }
                 },
@@ -894,45 +944,45 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Temperatură culoare afișaj",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Cald (mai bine pentru ochi)",
+                            "cold": "Rece"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Resetați temperatura",
+                        "tooltip": "Modul de protejare a ochilor ajustează temperatura culorii ecranului dvs. pentru a filtra lumina albastră și pentru a proteja ochii.",
+                        "onSunsetToSunriseScheduleDescription": "Programați modul de protejare a ochilor de la apus până la răsărit",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Notă",
+                            "description": "Lenovo Vantage trebuie să vă acceseze informațiile privind locația pentru determinarea orei de apus și răsărit din regiunea dvs."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Protector de confidențialitate",
+                        "description": "Această caracteristică împiedică alte persoane să vizualizeze ecranul. Când este pornit, modifică unghiul de vizualizare a ecranului, astfel păstrându-i confidențialitatea. Puteți să comutați modurile prin apăsarea tastelor „Fn + D”.",
+                        "note": "Protectorul de confidențialitate nu funcționează în modul portret al ecranului. În acest mod, ecranul este în continuare vizibil din lateral.",
+                        "labelText": "Activaţi această caracteristică la tastarea parolelor"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Setări alimentare LED organic",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Afişajul cu LED organic al calculatorului poate, de asemenea, reduce consumul de energie şi poate creşte durata de viaţă a bateriei prin estomparea selectivă a unor părţi de afişaj.",
+                            "De asemenea, se recomandă estomparea barei de activități și a altor zone ale afișajului care nu se schimbă frecvent pentru a prelungi durata generală de viață a afișajului."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Resetați temperatura",
+                        "tooltip": "Această caracteristică poate reduce consumul de energie și poate crește durata de viață a bateriei prin estomparea selectivă a unor părți de afișaj."
                     }
                 },
                 "camera": {
                     "title": "Cameră",
                     "note": {
                         "title": "Notă",
-                        "description": "Lenovo Vantage nu are permisiunea de a vă accesa camera.Permiteți aplicației Lenovo Vantage să vă acceseze camera."
+                        "description": "Lenovo Vantage nu are permisiunea de a vă accesa camera. Permiteţi aplicaţiei Lenovo Vantage să vă acceseze camera."
                     },
                     "url": "Accesați setările de confidențialitate Windows",
                     "cameraPrivacy": {
                         "title": "Modul de confidențialitate a camerei",
-                        "tooltip": "Camera nu mai trimite imagini live când setarea de confidențialitate este activată. Activaţi această setare numai când nu doriţi să partajaţi imaginile cu celelalte persoane în timpul unui apel video."
+                        "tooltip": "Camera nu mai trimite imagini live când setarea confidențialitate este activată. Activaţi această setare numai când nu doriţi să partajaţi imaginile cu celelalte persoane în timpul unui apel video."
                     },
                     "camera": {
                         "title": "Cameră",
@@ -946,10 +996,10 @@
                     "notAvailable": "Camera nu este disponibilă",
                     "camerablur": {
                         "title": "Estompare fundal cameră",
-                        "caption": "Această caracteristică estompează fundalul atunci când utilizați camera pentru apeluri video sau pentru a realiza fotografii.Puteți alege diverse efecte din selecțiile de mai jos.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Această caracteristică estompează fundalul atunci când utilizați camera pentru apeluri video sau pentru a realiza fotografii. Puteți alege diverse efecte din selecțiile de mai jos.",
+                        "blurMode": "Mod estompare",
+                        "comicMode": "Mod comic",
+                        "sketchMode": "Mod schiță"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",

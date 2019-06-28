@@ -206,7 +206,6 @@ import { HomeSecurityAllDevicesComponent } from './components/pages/page-connect
 import { HomeSecurityDeviceComponent } from './components/pages/page-connected-home-security/component/home-security-device/home-security-device.component';
 // CHS pipes
 import { DaysIntervalPipe } from './pipe/connected-home-security/account-status/days-interval.pipe';
-import { GetDeviceNumberPipe } from './pipe/connected-home-security/get-device-number.pipe';
 import { CharacterLimitPipe } from './pipe/ui-chs-statusbar/character-limit.pipe';
 
 import { AutoupdateSettingsComponent } from './components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
@@ -236,6 +235,7 @@ import { CapitalizeFirstPipe } from './pipe/capitalize-pipe/capitalize-first.pip
 import { SanitizeModule } from './modules/sanitize.module';
 import { SmartStandbyComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/smart-standby/smart-standby.component';
 import { UiDaysPickerComponent } from './components/ui/ui-days-picker/ui-days-picker.component';
+import { DownloadFailedModalComponent } from './components/pages/page-smart-assist/voice/download-failed-modal/download-failed-modal.component';
 
 library.add(fas);
 library.add(fab);
@@ -419,13 +419,13 @@ library.add(fal);
 		ModalIntelligentCoolingModesComponent,
 		DaysIntervalPipe,
 		CharacterLimitPipe,
-		GetDeviceNumberPipe,
 		UiTimePickerComponent,
 		VoiceComponent,
 		ModalVoiceComponent,
 		CapitalizeFirstPipe,
 		SmartStandbyComponent,
-		UiDaysPickerComponent
+		UiDaysPickerComponent,
+		DownloadFailedModalComponent
 	],
 	imports: [
 		BrowserModule,
@@ -479,7 +479,8 @@ library.add(fal);
 		ModalGamingLegionedgeComponent,
 		ModalChsWelcomeContainerComponent,
 		ModalIntelligentCoolingModesComponent,
-		ModalVoiceComponent
+		ModalVoiceComponent,
+		DownloadFailedModalComponent
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

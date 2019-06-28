@@ -142,8 +142,8 @@
 									</div>
 								</div>
 								<div class="expand-icon">
-									<fa-icon [icon]="['fas', 'chevron-down']" [hidden]="showAllHDs || hds.length<2"></fa-icon>
-									<fa-icon [icon]="['fas', 'chevron-up']" [hidden]="!showAllHDs || hds.length<2"></fa-icon>
+									<fa-icon [icon]="['fas', 'chevron-down']" [hidden]="showAllHDs || hds.length<=2"></fa-icon>
+									<fa-icon [icon]="['fas', 'chevron-up']" [hidden]="!showAllHDs || hds.length<=2"></fa-icon>
 								</div>
 							</div>
 						</div>

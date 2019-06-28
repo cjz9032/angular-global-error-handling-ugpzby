@@ -289,6 +289,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -864,7 +914,7 @@
             "displayCamera": {
                 "title": "Skjerm og kamera",
                 "subtitle": "Skjerm- og kamerainnstillinger",
-                "description": "I denne delen kan du forbedre din visuelle opplevelse og konfigurere kameraegenskapene.Utforsk flere funksjoner og tilpass visningsopplevelsen her.",
+                "description": "I denne delen kan du forbedre din visuelle opplevelse og konfigurere kameraegenskapene. Utforsk flere funksjoner og tilpass den visuelle opplevelsen her.",
                 "jumpTo": {
                     "title": "GÅ TIL INNSTILLINGER",
                     "shortcuts": {
@@ -872,7 +922,7 @@
                             "title": "Skjerm"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Kamera"
                         }
                     }
                 },
@@ -894,45 +944,45 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Skjermens fargetemperatur",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Varm (bedre for øynene)",
+                            "cold": "Kaldt"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Tilbakestill temperatur",
+                        "tooltip": "Øyebeskyttelsesmodus justerer automatisk skjermens fargetemperatur for å filtrere ut blått lys og redusere belastningen på øynene.",
+                        "onSunsetToSunriseScheduleDescription": "Planlegg øyebeskyttelsesmodus fra solnedgang til soloppgang",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Merk",
+                            "description": "Lenovo Vantage trenger tilgang til informasjon om plasseringen din for å beregne tidspunkter for solnedgang og soloppgang for regionen din."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Personvernbeskyttelse",
+                        "description": "Denne funksjonen hindrer andre i å titte på skjermen. Når den er på, endrer den skjermens synsvinkel og hindrer innsyn fra andre rundt deg. Du kan også veksle mellom moduser ved å trykke på \"Fn+D\".",
+                        "note": "Personvernbeskyttelse fungerer ikke når skjermen er i stående modus. I denne modusen kan andre få innsyn fra sidene.",
+                        "labelText": "Aktiver denne funksjonen ved å skrive inn passord"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "OLED-strøminnstillinger",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Datamaskinens OLED-skjerm kan også redusere strømforbruket og øke batteriets levetid ved å dimme bestemte deler av skjermen.",
+                            "Det anbefales også at du dimmer oppgavelinjen og andre områder av skjermen som ikke endres ofte, for å forlenge den generelle levetiden til skjermen."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Tilbakestill temperatur",
+                        "tooltip": "Denne funksjonen kan redusere strømforbruket og øke batteriets levetid ved å dimme bestemte deler av skjermen."
                     }
                 },
                 "camera": {
                     "title": "Kamera",
                     "note": {
                         "title": "Merk",
-                        "description": "Lenovo Vantage har ikke tilgang til kameraet.Aktiver tilgangen til kameraet for Lenovo Vantage-appen."
+                        "description": "Lenovo Vantage har ikke tilgang til kameraet. Slå på tilgangen til kameraet for Lenovo Vantage-appen."
                     },
                     "url": "Gå til Windows-personvernsinnstillinger",
                     "cameraPrivacy": {
                         "title": "Personvernmodus for kamera",
-                        "tooltip": "Kameraet slutter å sende direktebilder når Personvern-innstillingen er aktivert. Slå på denne innstillingen bare når du vil dele bildene dine med andre under videosamtaler."
+                        "tooltip": "Kameraet slutter å sende direktebilder når personverninnstillingen er aktivert. Slå på denne innstillingen bare når du vil dele bildene dine med andre under videosamtaler."
                     },
                     "camera": {
                         "title": "Kamera",
@@ -946,10 +996,10 @@
                     "notAvailable": "Kamera er ikke tilgjengelig",
                     "camerablur": {
                         "title": "Uskarp kamerabakgrunn",
-                        "caption": "Denne funksjonen gjør bakgrunnen uskarp når du bruker kameraet til videosamtaler eller tar bilder.Du kan velge ulike effekter blant alternativene nedenfor.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Denne funksjonen gjør bakgrunnen uskarp når du bruker kameraet til videosamtaler eller tar bilder. Du kan velge en annen effekt blant alternativene under.",
+                        "blurMode": "Uskarp modus",
+                        "comicMode": "Tegneseriemodus",
+                        "sketchMode": "Skissemodus"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
