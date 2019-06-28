@@ -3,7 +3,7 @@ import {
 	OnInit,
 	OnDestroy,
 	HostListener,
-	AfterContentInit
+	AfterViewInit
 } from '@angular/core';
 import {
 	EventTypes, ConnectedHomeSecurity
@@ -19,7 +19,7 @@ import {
 } from 'src/app/data-models/home-security/home-security-page-status.model';
 import { TranslateService } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalChsWelcomeContainerComponent } from '../../modal/modal-chs-welcome-container/modal-chs-welcome-container.component';
+import { ModalChsWelcomeContainerComponent } from '../page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { HomeSecurityMockService } from 'src/app/services/home-security/home-security.service';
@@ -38,7 +38,7 @@ import { HomeSecurityCommon } from 'src/app/data-models/home-security/home-secur
 	templateUrl: './page-connected-home-security.component.html',
 	styleUrls: ['./page-connected-home-security.component.scss']
 })
-export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, AfterContentInit {
+export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, AfterViewInit {
 	pageStatus: HomeSecurityPageStatus;
 
 	connectedHomeSecurity: ConnectedHomeSecurity;
@@ -138,7 +138,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 
 	}
 
-	ngAfterContentInit(): void {
+	ngAfterViewInit(): void {
 		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, true);
 		const welcomeComplete = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, false);
 		const showWelcome = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, 0);
