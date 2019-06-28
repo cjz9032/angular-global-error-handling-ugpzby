@@ -220,7 +220,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 			}
 		);
 
-		this.cmsService.fetchCMSArticle(this.urlGetMcAfee, {'Lang': 'EN'}).then((response: any) => {
+		this.cmsService.fetchCMSArticle(this.urlGetMcAfee).then((response: any) => {
 			if (response && response.Results && response.Results.Category) {
 				this.mcafeeArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
 			}
@@ -229,10 +229,10 @@ export class PageSecurityAntivirusComponent implements OnInit {
 
 	openArticle() {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
-			backdrop: true, /* sahinul25Jun2019 for VAN-5751*/
+			backdrop: true,
 			size: 'lg',
 			centered: true,
-			windowClass: 'Article-Detail-Modal', 
+			windowClass: 'Article-Detail-Modal',
 			keyboard : false
 		});
 

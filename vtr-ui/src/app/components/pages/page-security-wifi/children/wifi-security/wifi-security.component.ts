@@ -184,7 +184,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		}
 		this.locatorButtonDisable = true;
 		const threatLocatorModal: NgbModalRef = this.modalService.open(ModalThreatLocatorComponent, {
-			backdrop: true, /* sahinul25Jun2019 for VAN-5751*/
+			backdrop: true,
 			size: 'lg',
 			centered: true,
 			windowClass: 'Threat-Locator-Modal'

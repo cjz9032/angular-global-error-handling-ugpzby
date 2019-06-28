@@ -37,7 +37,6 @@ export enum LocalStorageKey {
 	LidFirstSignInDate = '[LocalStorageKey] LidFirstSignInDate',
 	LidHasCreateStarterAccount = '[LocalStorageKey] LidHasCreateStarterAccount',
 	CpuOCStatus = '[LocalStorageKey] CpuOCStatus',
-	RamOcStatus = '[LocalStorageKey] RamOcStatus',
 	CurrentThermalModeStatus = '[LocalStorageKey] CurrentThermalModeStatus',
 	CurrentThermalModeFeature = '[LocalStorageKey] CurrentThermalModeFeature',
 	PrevThermalModeStatus = '[LocalStorageKey] PrevThermalModeStatus',
@@ -47,6 +46,7 @@ export enum LocalStorageKey {
 	ConnectedHomeSecurityAccount = '[LocalStorageKey] ConnectedHomeSecurityAccount',
 	ConnectedHomeSecurityMyDevice = '[LocalStorageKey] ConnectedHomeSecurityMyDevice',
 	ConnectedHomeSecurityNotifications = '[LocalStorageKey] ConnectedHomeSecurityNotifications',
+	NetworkBoostStatus = '[LocalStorageKey] NetworkBoostStatus',
 	ConnectedHomeSecurityWelcomeComplete = '[LocalStorageKey] ConnectedHomeSecurityWelcomeComplete',
 	/**
 	 * 0  means "ideaPad",
@@ -55,7 +55,6 @@ export enum LocalStorageKey {
 	 * 3 means "thinkCenter"
 	 */
 	MachineType = '[LocalStorageKey] MachineType',
-	HybridModeStatus = '[LocalStorageKey] HybridModeStatus',
 	TouchpadLockStatus = '[LocalStorageKey] TouchpadLockStatus',
 	DolbyModeCache = '[LocalStorageKey] DolbyModeCache',
 	RapidChargeCache = '[LocalStorageKey] RapidChargeCache',
@@ -70,8 +69,7 @@ export enum LocalStorageKey {
 	ProfileId = '[LocalStorageKey] ProfileId',
 	LightingRGBTop = '[LocalStorageKey] LightingRGBTop',
 	LightingRGBSide = '[LocalStorageKey] LightingRGBSide',
-
-
+	LightingSetDefaultProfile = '[LocalStorageKey] LightingSetDefaultProfile',
 
 	SystemUpdateCriticalUpdateStatus = '[LocalStorageKey] SystemUpdateCriticalUpdateStatus',
 	SystemUpdateRecommendUpdateStatus = '[LocalStorageKey] SystemUpdateRecommendUpdateStatus',
@@ -135,7 +133,7 @@ export enum LocalStorageKey {
 	CurrentMacroKeyInterval = '[LocalStorageKey] CurrentMacroKeyInterval',
 	SubBrand = '[LocalStorageKey] SubBrand',
 
-	userDeterminePrivacy = '[LocalStorageKey] userDeterminePrivacy',
+	UserDeterminePrivacy = '[LocalStorageKey] UserDeterminePrivacy',
 
 	BatteriesHealths = '[LocalStorageKey] BatteriesHealths',
 	IsLenovoVoiceSupported = '[LocalStorageKey] IsLenovoVoiceSupported',

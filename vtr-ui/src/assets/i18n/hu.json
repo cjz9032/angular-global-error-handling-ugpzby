@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -287,6 +289,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -389,16 +441,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Visszajelzés küldése",
+            "subtitle": "Mondja el, mit gondol a Vantage-ről.",
+            "button": "Visszajelzés küldése",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Megjegyzések...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Köszönjük a visszajelzését."
                 },
                 "question1": "Tetszik a Vantage új stílusa?",
                 "question2": "Elfogadhatónak tartja a teljesítményt?",
@@ -862,7 +914,7 @@
             "displayCamera": {
                 "title": "Képernyő és kamera",
                 "subtitle": "Képernyő és kamera beállításai",
-                "description": "Ezen a részen javítható a vizuális megjelenítés és konfigurálhatók a kamera tulajdonságai.Itt fedezheti fel további funkciókat és szabhatja testre a képernyő beállításait.",
+                "description": "Ezen a részen javítható a vizuális megjelenítés és konfigurálhatók a kamera tulajdonságai. Itt fedezheti fel további funkciókat és szabhatja testre a képernyő beállításait.",
                 "jumpTo": {
                     "title": "UGRÁS A BEÁLLÍTÁSOKHOZ",
                     "shortcuts": {
@@ -870,7 +922,7 @@
                             "title": "Megjelenítés"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Kamera"
                         }
                     }
                 },
@@ -892,45 +944,45 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "A képernyő színhőmérséklete",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Meleg (jobb a szemnek)",
+                            "cold": "Hideg"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Hőmérséklet visszaállítása",
+                        "tooltip": "A Szemvédő mód úgy módosítja a képernyő színhőmérsékletét, hogy kiszűrje a kék fényt és csökkentse a szem terhelését.",
+                        "onSunsetToSunriseScheduleDescription": "Ütemezze a naplemente és napkelte közötti időszakra a szemvédő módot",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Megjegyzés",
+                            "description": "A napnyugta és a napkelte idejének kiszámításához a Lenovo Vantage-nek hozzá kell férnie a helyadatokhoz."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Biztos adatvédelem",
+                        "description": "A funkcióval megakadályozható, hogy mások megnézhessék az Ön képernyőjén lévő tartalmakat. Bekapcsoláskor megváltoztatja a képernyő betekintési szögét, így az Ön körül állók nem láthatják a tartalmát. Az üzemmódok között az „Fn+D” billentyűkombinációval is válthat.",
+                        "note": "A Biztos adatvédelem nem működik a képernyőn álló módjában. Ebben az üzemmódban a képernyő oldalról is látható.",
+                        "labelText": "Használja ezt a funkciót a jelszavak beírásakor"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Organikus LED – Energiagazdálkodási beállítások",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "A számítógép organikus LED-képernyője a képernyő adott részeinek elsötétítésére szolgáló funkcióval csökkentheti az energiafogyasztást és növelheti az akkumulátor élettartamát.",
+                            "A tálcát és a képernyő ritkábban módosított területeit ugyancsak tanácsos elsötétíteni, így ugyanis meghosszabbítható a képernyő élettartama."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Hőmérséklet visszaállítása",
+                        "tooltip": "Ez a funkció elsötétíti a képernyő adott részeit, így csökkentheti az energiafogyasztást és növelheti az akkumulátor élettartamát."
                     }
                 },
                 "camera": {
                     "title": "Kamera",
                     "note": {
                         "title": "Megjegyzés",
-                        "description": "A Lenovo Vantage nem rendelkezik hozzáférési engedéllyel a kamerához.Adjon hozzáférést a kamerához a Lenovo Vantage számára."
+                        "description": "A Lenovo Vantage nem rendelkezik hozzáférési engedéllyel a kamerához. Adjon hozzáférést a kamerához a Lenovo Vantage számára."
                     },
                     "url": "Ugrás a Windows adatvédelmi beállításaihoz",
                     "cameraPrivacy": {
                         "title": "Kamera privát üzemmódja",
-                        "tooltip": "Ha az adatvédelmi beállítás engedélyezve van, a kamera nem küld élő képeket. Akkor használja a beállítást, ha nem szeretne képeket megosztani másokkal videohívás közben."
+                        "tooltip": "A Privát beállítás engedélyezése esetén a kamera nem küld élőképeket. Akkor használja a beállítást, ha nem szeretne képeket megosztani másokkal videohívás közben."
                     },
                     "camera": {
                         "title": "Kamera",
@@ -944,10 +996,10 @@
                     "notAvailable": "A kamera nem érhető el",
                     "camerablur": {
                         "title": "Kamera háttérelmosás",
-                        "caption": "Ez a funkció elhomályosítja a hátteret, ha a kamerát videohíváshoz vagy fényképezéshez használják.Az alábbi effektusok közül választhat.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Ez a funkció elhomályosítja a hátteret, ha a kamerát videohíváshoz vagy fényképezéshez használják. Az alábbi effektusok közül választhat.",
+                        "blurMode": "Elmosás mód",
+                        "comicMode": "Rajzfilm mód",
+                        "sketchMode": "Skicc mód"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1273,10 +1325,10 @@
     },
     "homeSecurity": {
         "title": "Biztonsági rendszer csatlakoztatott otthonhoz",
-        "notification":{
+        "notification": {
             "recent": "Legutóbbi biztonsági értesítések",
             "notifications": "Értesítések"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "A készülék ökoszisztémájának védelme",
             "thisDevice": "Ez az eszköz",
@@ -1293,22 +1345,22 @@
             "startTrial": "Próbaidőszak megkezdése",
             "fullAccess": "Teljes hozzáférés",
             "renew": "Megújítás"
-		},
-		"overview": {
-			"overviewBlockTitle": "Az ökoszisztéma biztonságának áttekintése",
-			"allDevices": "Minden eszköz",
-			"myDevice": "Saját készülékem",
-			"secure": "BIZTONSÁGOS",
-			"needAttention": "ELLENŐRIZNI KELL",
-			"manageAccount": "Fiók kezelése",
-			"devices": "Eszközök",
-			"seeProtectedDevices": "A védett eszközök megtekintése",
-			"addDevice": "eszköz hozzáadása",
-			"trialExpired": "Próbaverzió lejárt - Bővítés az összes eszköz védelmére",
-			"upgrade": "frissítés",
-			"freeTrial": "Az összes eszköz védelme - Ingyenes 30 napos próbaváltozat",
-			"startTrial": "Próbaidőszak megkezdése"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Az ökoszisztéma biztonságának áttekintése",
+            "allDevices": "Minden eszköz",
+            "myDevice": "Saját készülékem",
+            "secure": "BIZTONSÁGOS",
+            "needAttention": "ELLENŐRIZNI KELL",
+            "manageAccount": "Fiók kezelése",
+            "devices": "Eszközök",
+            "seeProtectedDevices": "A védett eszközök megtekintése",
+            "addDevice": "eszköz hozzáadása",
+            "trialExpired": "Próbaverzió lejárt - Bővítés az összes eszköz védelmére",
+            "upgrade": "frissítés",
+            "freeTrial": "Az összes eszköz védelme - Ingyenes 30 napos próbaváltozat",
+            "startTrial": "Próbaidőszak megkezdése"
+        },
         "tour": {
             "back": "Vissza",
             "skip": "Kihagyás",
@@ -1367,7 +1419,9 @@
             "status": "Állapot: ",
             "subDescription1": "Erre a termékre több év jótállás vonatkozik, és jogosult a telephelyi javításra. Az ügyfelek a helyi szervizközponttól kaphatnak további információt. A márkakereskedők átvételes javítást is biztosíthatnak a termékhez.",
             "subDescription2": "Nem találtuk az eszköz jótállási adatait. További jótállási lehetőségeket támogatási webhelyünkön talál.",
-            "viewWarrantyOptions": "JÓTÁLLÁSI LEHETŐSÉGEK MEGTEKINTÉSE"
+            "viewWarrantyOptions": "JÓTÁLLÁSI LEHETŐSÉGEK MEGTEKINTÉSE",
+            "offlineTips1": "A jótállásra vonatkozó legújabb információkért csatlakozzon az internethez.",
+            "offlineTips2": "A jótállásra vonatkozó információk frissítéséhez csatlakozzon az internethez."
         },
         "documentation": {
             "title": "Dokumentáció",

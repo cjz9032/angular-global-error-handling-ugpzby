@@ -57,10 +57,12 @@
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -287,6 +289,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -389,16 +441,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Feedback geven",
+            "subtitle": "Vertel ons wat u van het voordeel vindt.",
+            "button": "Feedback geven",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Opmerkingen...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "Bedankt voor uw feedback."
                 },
                 "question1": "Bent u tevreden over de nieuwe stijl van Vantage?",
                 "question2": "Denkt u dat de prestaties acceptabel zijn?",
@@ -862,7 +914,7 @@
             "displayCamera": {
                 "title": "Weergave en camera",
                 "subtitle": "Instellingen weergave en camera",
-                "description": "In dit gedeelte kunt u uw visuele ervaring verbeteren en de eigenschappen van de camera configureren.Bekijk hier meer functies en pas uw weergave aan.",
+                "description": "In dit gedeelte kunt u uw visuele ervaring verbeteren en de eigenschappen van de camera configureren. Ontdek hier meer functies en pas uw weergave aan.",
                 "jumpTo": {
                     "title": "NAAR INSTELLINGEN GAAN",
                     "shortcuts": {
@@ -892,45 +944,45 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Kleurtemperatuur weergeven",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Warm (beter voor de ogen)",
+                            "cold": "Koud"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Temperatuur opnieuw instellen",
+                        "tooltip": "In de Oogzorg-modus wordt de kleurtemperatuur van uw beeldscherm aangepast om blauw licht eruit te filteren en uw ogen minder te belasten.",
+                        "onSunsetToSunriseScheduleDescription": "Oogzorg-modus voor zonsondergang tot zonsopgang plannen",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Opmerking",
+                            "description": "Lenovo Vantage heeft toegang nodig tot uw locatiegegevens voor het berekenen van de tijd voor zonsondergang en zonsopgang van uw regio."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Privacybewaking",
+                        "description": "Met deze functie voorkomt u dat andere personen op uw scherm kunnen kijken. Bij inschakeling wordt de kijkhoek van het beeldscherm gewijzigd, zodat dit privé blijft van degenen om je heen. U kunt ook van modus wisselen door op de toetsen \"Fn+D\" te drukken.",
+                        "note": "Privacy Guard werkt niet in schermportretmodus. In deze werkstand is het scherm nog steeds zichtbaar vanaf de zijkanten.",
+                        "labelText": "Schakel deze functie in tijdens het typen van wachtwoorden"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Oled-energiebeheerinstellingen",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Het oled-beeldscherm van uw computer kan ook het stroomverbruik beperken en de gebruiksduur van de accu verlengen door delen van het beeldscherm selectief te dimmen.",
+                            "Het wordt ook aangeraden om de taakbalk en andere delen van het beeldscherm die niet vaak veranderen, te dimmen om de levensduur van het beeldscherm te verlengen."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Temperatuur opnieuw instellen",
+                        "tooltip": "Deze functie kan het stroomverbruik verminderen en de levensduur van de batterij verlengen door delen van het display op selectieve wijze te dimmen."
                     }
                 },
                 "camera": {
                     "title": "Camera",
                     "note": {
                         "title": "Opmerking",
-                        "description": "Lenovo Vantage heeft geen toestemming om uw camera te gebruiken.Schakel de toegang tot uw camera in voor de Lenovo Vantage-app."
+                        "description": "Lenovo Vantage heeft geen toestemming om uw camera te gebruiken. Schakel de toegang tot uw camera in voor de Lenovo Vantage-app."
                     },
                     "url": "Ga naar Windows-privacyinstellingen",
                     "cameraPrivacy": {
                         "title": "Privacy-modus camera",
-                        "tooltip": "De camera verstuurt geen live-beelden meer als de privacyinstelling is ingesteld. Schakel deze instelling alleen in als u uw foto's niet meer met anderen wilt delen tijdens een videogesprek."
+                        "tooltip": "De camera verstuurt geen live-beelden meer als de instelling Privacy ingeschakeld is. Schakel deze instelling alleen in als u uw foto's niet meer met anderen wilt delen tijdens een videogesprek."
                     },
                     "camera": {
                         "title": "Camera",
@@ -944,10 +996,10 @@
                     "notAvailable": "Camera niet beschikbaar",
                     "camerablur": {
                         "title": "Vervaging camera-achtergrond",
-                        "caption": "Deze functie vervaagt de achtergrond wanneer u de camera gebruikt voor een videogesprek of het maken van foto's.U kunt kiezen uit de onderstaande effecten.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Deze functie vervaagt de achtergrond wanneer u de camera gebruikt voor een videogesprek of het maken van foto's. U kunt verschillende effecten kiezen uit onderstaande selecties.",
+                        "blurMode": "Vervaagmodus",
+                        "comicMode": "Stripmodus",
+                        "sketchMode": "Schetsmodus"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1273,10 +1325,10 @@
     },
     "homeSecurity": {
         "title": "Connected Home-beveiliging",
-        "notification":{
+        "notification": {
             "recent": "Recente beveiligingsmeldingen",
             "notifications": "Berichten"
-		},
+        },
         "ecosystem": {
             "ecosystemBlockTitle": "Bescherm het ecosysteem van uw apparaat",
             "thisDevice": "Dit apparaat",
@@ -1293,22 +1345,22 @@
             "startTrial": "Proefperiode starten",
             "fullAccess": "Volledige toegang",
             "renew": "Verlengen"
-		},
-		"overview": {
-			"overviewBlockTitle": "Uw ecosysteem beveiligingsoverzicht",
-			"allDevices": "Alle apparaten",
-			"myDevice": "Mijn apparaat",
-			"secure": "Beveiligen",
-			"needAttention": "HEEFT AANDACHT NODIG",
-			"manageAccount": "Account beheren",
-			"devices": "Apparaten",
-			"seeProtectedDevices": "Zie beveiligde apparaten",
-			"addDevice": "Apparaat toevoegen",
-			"trialExpired": "Proefperiode verlopen - Upgrade uitvoeren om al uw apparaten te beschermen",
-			"upgrade": "Upgraden",
-			"freeTrial": "Bescherm al uw apparaten - Gratis proefperiode van 30 dagen",
-			"startTrial": "Proefperiode starten"
-		},
+        },
+        "overview": {
+            "overviewBlockTitle": "Uw ecosysteem beveiligingsoverzicht",
+            "allDevices": "Alle apparaten",
+            "myDevice": "Mijn apparaat",
+            "secure": "Beveiligen",
+            "needAttention": "HEEFT AANDACHT NODIG",
+            "manageAccount": "Account beheren",
+            "devices": "Apparaten",
+            "seeProtectedDevices": "Zie beveiligde apparaten",
+            "addDevice": "Apparaat toevoegen",
+            "trialExpired": "Proefperiode verlopen - Upgrade uitvoeren om al uw apparaten te beschermen",
+            "upgrade": "Upgraden",
+            "freeTrial": "Bescherm al uw apparaten - Gratis proefperiode van 30 dagen",
+            "startTrial": "Proefperiode starten"
+        },
         "tour": {
             "back": "Terug",
             "skip": "Overslaan",
@@ -1367,7 +1419,9 @@
             "status": "Status: ",
             "subDescription1": "Dit product heeft jaar beperkte garantie en het recht op depot-reparatieservice. Klanten kunnen hun lokale servicecentrum bellen voor meer informatie. Dealers kunnen carry-in-reparatie bieden voor dit product.",
             "subDescription2": "We hebben geen garantie-informatie over uw apparaat gevonden. Ga voor meer garantieopties naar onze ondersteuningswebsite.",
-            "viewWarrantyOptions": "GARANTIEOPTIES WEERGEVEN"
+            "viewWarrantyOptions": "GARANTIEOPTIES WEERGEVEN",
+            "offlineTips1": "Maak verbinding met internet voor de recentste garantie-informatie.",
+            "offlineTips2": "Maak verbinding met internet om de garantie-informatie bij te werken."
         },
         "documentation": {
             "title": "Documentatie",

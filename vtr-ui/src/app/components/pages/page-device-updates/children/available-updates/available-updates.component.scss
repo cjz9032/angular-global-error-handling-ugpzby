@@ -59,16 +59,9 @@
 
 	vtr-ui-button {
 		::ng-deep .vtr-ui-button{
+			max-width: 100% !important;
 			.button-box .button{
-				max-width: 33rem;
-			}
-		}
-		@media #{$mediaquery_X7, $mediaquery_17}{
-			::ng-deep .vtr-ui-button{
 				max-width: 100% !important;
-				.button-box .button{
-					max-width: 100% !important;
-				}
 			}
 		}
 	}

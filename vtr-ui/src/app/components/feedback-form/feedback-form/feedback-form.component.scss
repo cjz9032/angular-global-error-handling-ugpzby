@@ -183,7 +183,6 @@
 				background-clip: padding-box;
 				border-radius: 0.9rem;
 				box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
-				padding: 1.5rem 1.5rem;
 				max-width: 29rem;
 
 				.menu-pointer {
@@ -203,14 +202,13 @@
 				.dropdown-item {
 					text-transform: uppercase;
 					color: $shade_darkest;
-					padding: 0.5 1rem;
+					padding: 1.5rem 2.5rem;
 					font-size: 1.6rem;
 					overflow: hidden;
 					width: 100%;
 					white-space: nowrap;
 					text-overflow: ellipsis;
 					text-decoration: underline;
-					background: #ffffff;
 					cursor: pointer;
 
 					&:hover {
@@ -223,14 +221,10 @@
 			@media screen and (max-height: 600px) {
 				.dropdown-list {
 					top: 4rem !important;
-					padding: 1rem;
 					max-width: 24rem;
 
-					.menu-pointer {
-					}
-
 					.dropdown-item {
-						padding: 0 0.5rem;
+						padding: 1rem 1.5rem;
 					}
 				}
 			}
