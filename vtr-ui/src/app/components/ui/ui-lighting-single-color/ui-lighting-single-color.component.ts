@@ -22,6 +22,7 @@ export class UiLightingSingleColorComponent implements OnInit, OnChanges {
 
 	getValue(optionId) {
 		this.selectedOption = this.options.filter((item) => item.id === optionId)[0];
+		this.selectedOptionId = optionId;
 		this.changeSingleColorOption.emit(optionId);
 	}
 	public singleColorOpt: any = LightEffectSimpleType;
@@ -40,6 +41,10 @@ export class UiLightingSingleColorComponent implements OnInit, OnChanges {
 				console.log('selectedOptionId changed------------------------------------ssss', changes.selectedOptionId.currentValue);
 			}
 		}
+	}
+
+	isChecked(id: number) {
+		return id && id === this.selectedOptionId;
 	}
 
 }

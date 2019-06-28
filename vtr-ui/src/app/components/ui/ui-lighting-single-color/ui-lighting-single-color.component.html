@@ -3,8 +3,8 @@
 	<li *ngFor="let option of options">
 			<label class="gaming-radio">{{option.name | translate}}
 	   <input type="radio" name="price" (click)="getValue(option.id)"
-		 [checked]="option.id === selectedOptionId"
-		  value= {{option.id}}>
+		 [checked]="isChecked(option.id)"
+		  [value]= option.id>
 		  <span class="checkmark"></span>
 		</label>
 	</li>
