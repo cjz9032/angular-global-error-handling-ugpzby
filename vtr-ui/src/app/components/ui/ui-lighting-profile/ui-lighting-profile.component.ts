@@ -265,10 +265,7 @@ export class UiLightingProfileComponent implements OnInit {
 		console.log('id----------------------------------', this.currentProfileId);
 		this.isProfileOff = false;
 		this.getGamingLightingCapabilities();
-		if (this.currentProfileId !== 0) {
-			this.getLightingProfileById(this.currentProfileId);
-			this.getLightingBrightness();
-		} else {
+		if (this.currentProfileId === 0) {
 			this.isProfileOff = true;
 		}
 	}
@@ -347,6 +344,9 @@ export class UiLightingProfileComponent implements OnInit {
 								}
 							}
 						}
+
+						this.getLightingProfileById(this.currentProfileId);
+						this.getLightingBrightness();
 					} else {
 						response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingCapabilities);
 						if (response.LightPanelType.length > 0) {
