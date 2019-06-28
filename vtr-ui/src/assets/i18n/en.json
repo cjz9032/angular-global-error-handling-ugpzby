@@ -38,6 +38,8 @@
 					"driverPopup": {
 						"headerText": "Driver Install Required",
 						"text": "You need install driver for RAM Overclock to  make it effective",
+						"networkBoostText": "You need install driver for Network Boost to  make it effective",
+						"hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
 						"button": "Install",
 						"link": "cancel"
 					},
@@ -1360,6 +1362,7 @@
 			"overviewBlockTitle": "Your Ecosystem Security Overview",
 			"allDevices": "All Devices",
 			"myDevice": "My Device",
+			"thisComputer": "This computer",
 			"secure": "SECURE",
 			"needAttention": "NEEDS ATTENTION",
 			"manageAccount": "Manage account",

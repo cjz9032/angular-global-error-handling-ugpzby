@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "Prezentarea generală a securității ecosistemului",
             "allDevices": "Toate dispozitivele",
-            "myDevice": "Dispozitivul meu",
+			"myDevice": "Dispozitivul meu",
+			"thisComputer": "This computer",
             "secure": "SIGUR",
             "needAttention": "ARE NEVOIE DE ATENȚIE",
             "manageAccount": "Gestionare cont",

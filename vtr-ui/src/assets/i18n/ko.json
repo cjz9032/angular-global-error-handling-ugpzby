@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "생태계 보안 개요",
             "allDevices": "모든 장치",
-            "myDevice": "내 장치",
+			"myDevice": "내 장치",
+			"thisComputer": "This computer",
             "secure": "보안",
             "needAttention": "주의 필요",
             "manageAccount": "계정 관리",

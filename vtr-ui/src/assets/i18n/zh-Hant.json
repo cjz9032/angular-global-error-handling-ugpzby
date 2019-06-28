@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "您的生態系統安全概要",
             "allDevices": "全部裝置",
-            "myDevice": "我的裝置",
+			"myDevice": "我的裝置",
+			"thisComputer": "This computer",
             "secure": "安全",
             "needAttention": "需要關注",
             "manageAccount": "管理帳戶",

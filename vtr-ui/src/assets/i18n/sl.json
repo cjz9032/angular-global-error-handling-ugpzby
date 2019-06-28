@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "Pregled varnosti ekosistema",
             "allDevices": "Vse naprave",
-            "myDevice": "Moja naprava",
+			"myDevice": "Moja naprava",
+			"thisComputer": "This computer",
             "secure": "VARNO",
             "needAttention": "POTREBEN JE UKREP",
             "manageAccount": "Upravljanje računa",

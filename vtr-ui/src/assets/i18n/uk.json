@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "Огляд безпеки вашої екосистеми",
             "allDevices": "Усі пристрої",
-            "myDevice": "Мій пристрій",
+			"myDevice": "Мій пристрій",
+			"thisComputer": "This computer",
             "secure": "У БЕЗПЕЦІ",
             "needAttention": "ПОТРЕБУЄ УВАГИ",
             "manageAccount": "Керування обліковим записом",

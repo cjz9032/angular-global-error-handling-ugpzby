@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "Übersicht über Ihre Ökosystem-Sicherheit",
             "allDevices": "Alle Geräte",
-            "myDevice": "Meine Einheit",
+			"myDevice": "Meine Einheit",
+			"thisComputer": "This computer",
             "secure": "SICHER",
             "needAttention": "MUSS GEPRÜFT WERDEN",
             "manageAccount": "Konto verwalten",
