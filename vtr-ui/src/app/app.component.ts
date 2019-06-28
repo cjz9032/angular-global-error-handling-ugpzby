@@ -24,7 +24,6 @@ import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-cap
 export class AppComponent implements OnInit {
 	title = 'vtr-ui';
 	private allCapablitiyFlag: Boolean = false;
-	private machineInfo: any;
 
 	constructor(
 		private devService: DevService,
@@ -189,12 +188,6 @@ export class AppComponent implements OnInit {
 					this.sendFirstRunEvent(machineInfo);
 				});
 			}
-		}
-
-		if (result) {
-			result.then((machineInfo) => {
-				this.machineInfo = machineInfo;
-			});
 		}
 
 		this.checkIsDesktopOrAllInOneMachine();

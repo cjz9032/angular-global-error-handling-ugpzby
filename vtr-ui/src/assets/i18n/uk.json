@@ -682,7 +682,12 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -1057,7 +1062,7 @@
         },
         "smartAssist": {
             "title": "Розумний помічник",
-            "description": "Функція \"Інтелектуальне зчитування\" Lenovo використовує різноманітні датчики комп'ютера, щоб розпізнавати вашу активність,налаштовувати оптимальне керування живленням і захищати конфіденційність.",
+            "description": "Функція \"Інтелектуальне зчитування\" Lenovo використовує різноманітні датчики комп'ютера, щоб розпізнавати вашу активність, налаштовувати оптимальне керування живленням і захищати конфіденційність.",
             "jumpTo": {
                 "title": "ПЕРЕЙТИ ДО НАСТРОЙОК",
                 "security": "Безпека",
@@ -1074,8 +1079,8 @@
                     "tooltip": "Натисніть тут, щоб скинути настройки перевірки присутності користувача."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Виявлення присутності користувача",
+                    "tooltip": "Натисніть тут, щоб скинути настройки перевірки присутності користувача."
                 },
                 "zeroTouchLogin": {
                     "title": "Автоматичний вхід",
@@ -1083,7 +1088,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Автоматичне блокування",
-                    "caption": "Ця функція вимикає екран і блокує комп'ютер, коли виявляє відсутність користувача.Функція зменшує ймовірність несанкціонованого доступу до комп'ютера, коли ви залишаєте його незаблокованим без нагляду. Вона також зменшує енергоспоживання, переводячи систему в сучасний режим очікування, коли ви не за комп'ютером.",
+                    "caption": "Ця функція вимикає екран і блокує комп'ютер, коли виявляє відсутність користувача. Вона зменшує шанси на несанкціонований доступ до комп'ютера, коли ви залишаєте його незаблокованим без нагляду. Вона також зменшує енергоспоживання, переводячи систему в сучасний режим очікування, коли ви не за комп'ютером.",
                     "autoScreenLockTimer": {
                         "title": "АВТОМАТИЧНИЙ ТАЙМЕР БЛОКУВАННЯ ЕКРАНА",
                         "radioButton": {
@@ -1091,46 +1096,46 @@
                             "medium": "Середній",
                             "slow": "Повільний"
                         },
-                        "toolTipContent": "Виберіть потрібний параметр, щоб заблокувати свій екран (швидко, помірно або повільно), коли вашу присутність не виявлено.Але на час блокування екрана також впливають фактичний сценарій користувача, можливості датчиків і настройки екрана Windows. Тож ми наполегливо радимо негайно блокувати екран, перш ніж перервати роботу."
+                        "toolTipContent": "Виберіть потрібний параметр, щоб заблокувати свій екран (швидко, помірно або повільно), коли вашу присутність не виявлено. Але на час блокування екрана також впливають фактичний сценарій користувача, можливості датчиків і настройки часу очікування екрана Windows. Тож ми наполегливо радимо негайно блокувати екран, перш ніж перервати роботу."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Автоматичне регулювання відстані автоматично оновлюватимевідстань розпізнавання за допомогою штучного інтелекту.",
+                    "title": "РЕГУЛЮВАННЯ ЧУТЛИВОСТІ НА РІЗНИХ ВІДСТАНЯХ",
+                    "caption": "Автоматичне регулювання відстані буде автоматично оновлювати відстань розпізнавання за допомогою штучного інтелекту.",
                     "options": {
                         "near": "Поблизу",
                         "far": "Далеко"
                     }
                 },
                 "note": {
-                    "description1": "Ця функція працює за допомогою Windows Hello.Переконайтеся, що ввімкнули розпізнавання облич у настройках Windows.",
-                    "description2": "Ця функція виявляє вашу присутність за допомогою датчиків і камери.Однак ця функція НЕ збирає, НЕ зберігає й НЕ розповсюджує жодних особистих даних або зображень.",
-                    "description3": "1. Якщо комп'ютер знаходиться в режимі \"Намет\", \"Планшет\" або \"Стенд\",ці функції можуть не працювати належним чином.",
-                    "description4": "2. Якщо комп'ютер вимкнуто або переведено в режим глибокого сну.Автоматичний вхід за допомогою ІЧ-камери не працюватиме.",
-                    "description5": "3. Розташуйте екран комп'ютера під таким кутом,щоб інфрачервона камера могла розпізнати ваше обличчя для автоматичного входу."
+                    "description1": "Ця функція працює за допомогою Windows Hello. Переконайтеся, що ввімкнули розпізнавання облич у настройках Windows.",
+                    "description2": "Ця функція виявляє вашу присутність за допомогою датчиків і камери. Однак ця функція НЕ збирає жодних персональних даних.",
+                    "description3": "1. Якщо комп'ютер знаходиться в режимі \"Намет\", \"Планшет\" або \"Стенд\", ці функції можуть не працювати належним чином.",
+                    "description4": "2. Якщо комп'ютер вимкнуто або переведено в режим глибокого сну. Автоматичний вхід за допомогою ІЧ-камери не працюватиме.",
+                    "description5": "3. Розташуйте екран комп'ютера під таким кутом, щоб інфрачервона камера могла розпізнати ваше обличчя для автоматичного входу."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Перейти до настройок Windows Hello",
                     "screenTimeoutSettings": "Перейти до настройок часу очікування екрана"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "СКИДАННЯ ДО НАСТРОЙОК ЗА ЗАМОВЧУВАННЯМ"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Інтелектуальний екран",
+                "description": "Функція \"Інтелектуальне зчитування\" Lenovo використовує різноманітні датчики комп'ютера, за допомогою яких реєструється активність користувача та змінюються настройки керування живленням. Наприклад, система затінить дисплей, якщо зареєструє рух пішки, і не буде затіняти його, якщо визначить, що користувач читає.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Автоматичне вимкнення екрана",
+                    "caption": "Автоматично вимикати дисплей під час руху пішки або якщо він лежить лицьовою стороною донизу.",
+                    "note": "Ця функція недоступна, якщо в розділі настройок Windows, який називається \"Система\", план живлення налаштовано так, що екран ніколи не вимикається (вибрано значення \"Ніколи\"). Виберіть інше значення, щоб увімкнути цю функцію.",
+                    "windowsLink": "Перейти до настройок керування живленням і режимом сну в настройках Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Не вимикати дисплей",
+                    "caption": "Не вимикати дисплей під час читання або перегляду веб-сторінок.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "До затінення дисплея під час перегляду веб-сторінок, хв",
+                        "startTime": "0 хвилин",
+                        "endTime": "60 хвилин"
                     }
                 }
             },
@@ -1165,10 +1170,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Інтелектуальне відтворення мультимедіа",
+                "title": "Автоматичне відтворення відео",
+                "desc": "Ця функція призупинятиме відео, коли ви відходите від комп'ютера, та відновлятиме відтворення, коли ви повертаєтесь.",
+                "tooltip": "Ця функція не застосовується до програвачів онлайн-відео. Популярніші місцеві відеоплеєри (як-от Windows Media Player, 5KPlayer тощо) підтримують цю функцію."
             },
             "voice": {
                 "title": "Voice",
@@ -1195,6 +1200,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1349,7 +1359,8 @@
         "overview": {
             "overviewBlockTitle": "Огляд безпеки вашої екосистеми",
             "allDevices": "Усі пристрої",
-            "myDevice": "Мій пристрій",
+			"myDevice": "Мій пристрій",
+			"thisComputer": "This computer",
             "secure": "У БЕЗПЕЦІ",
             "needAttention": "ПОТРЕБУЄ УВАГИ",
             "manageAccount": "Керування обліковим записом",

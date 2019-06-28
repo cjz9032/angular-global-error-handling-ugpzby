@@ -18,16 +18,17 @@ export class HomeSecurityOverviewMyDevice {
 
 	createHomeDevicePosture(chsDevicePostures: CHSDevicePosture[], translate: TranslateService) {
 		this.devicePostures = chsDevicePostures.map((devicePosture) => {
+			this.mappingDevicePosture(devicePosture, translate);
 			return {
-				name: this.mappingDevicePosture(devicePosture.name, translate),
+				name: devicePosture.name,
 				vulnerable: devicePosture.vulnerable
 			};
 		});
 	}
 
-	mappingDevicePosture(config: string, translate: TranslateService): string {
+	mappingDevicePosture(devicePosture: CHSDevicePosture, translate: TranslateService) {
 		let title: string;
-		config = config.toLowerCase();
+		const config = devicePosture.name.toLowerCase();
 		if (config.includes('apps')) {
 			title = 'security.homeprotection.securityhealth.deviceName1';
 		} else if (config.includes('developer')) {
@@ -52,9 +53,8 @@ export class HomeSecurityOverviewMyDevice {
 			title = 'other';
 		}
 		translate.stream(title).subscribe((res) => {
-			title = res;
+			devicePosture.name = res;
 		});
-		return title;
 	}
 
 	creatDeviceStatus(devicePostures: CHSDevicePosture[]) {
