@@ -29,7 +29,7 @@ export class CMSService {
 				this.region = x;
 			},
 			error: err => {
-				this.region = 'US';
+				this.region = 'us';
 			}
 		});
 		regionService.getLanguage().subscribe({
@@ -37,7 +37,7 @@ export class CMSService {
 				this.language = x;
 			},
 			error: err => {
-				this.language = 'EN';
+				this.language = 'en';
 			}
 		});
 	}
@@ -155,17 +155,21 @@ export class CMSService {
 		});
 	}
 
-	fetchCMSArticle(articleId, queryParams) {
+	fetchCMSArticle(articleId, queryParams?) {
+		const that = this;
 		return new Promise((resolve, reject) => {
-			this.commsService.endpointGetCall('/api/v1/articles/' + articleId, queryParams, {}).subscribe(
-				(response: any) => {
-					resolve(response);
-				},
-				error => {
-					console.log('fetchCMSArticle error', error);
-					reject('fetchCMSArticle error');
-				}
-			);
+			this.commsService.endpointGetCall(
+				'/api/v1/articles/' + articleId,
+				Object.assign({ Lang: that.language }, queryParams))
+				.subscribe(
+					(response: any) => {
+						resolve(response);
+					},
+					error => {
+						console.log('fetchCMSArticle error', error);
+						reject('fetchCMSArticle error');
+					}
+				);
 		});
 	}
 

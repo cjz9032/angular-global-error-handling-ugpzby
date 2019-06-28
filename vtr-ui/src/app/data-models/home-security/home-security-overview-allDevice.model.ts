@@ -1,6 +1,4 @@
-import { EventTypes, CHSDeviceOverview } from '@lenovo/tan-client-bridge';
-import { CommonService } from 'src/app/services/common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { CHSDeviceOverview } from '@lenovo/tan-client-bridge';
 
 export class HomeSecurityAllDevice {
 	allDevicesStatus: boolean;
@@ -11,9 +9,15 @@ export class HomeSecurityAllDevice {
 			const allDevices = chsDeviceOverview.allDevices;
 			if (allDevices.length > 0) {
 				this.allDevicesNumber = allDevices.length;
+				if (this.allDevicesNumber > 99) {
+					this.allDevicesNumber = 99;
+				}
 				this.allDevicesStatus = allDevices.filter(device => {
 					return !device.protected;
 				}).length <= 0;
+			} else {
+				this.allDevicesNumber = 0;
+				this.allDevicesStatus = undefined;
 			}
 		}
 	}

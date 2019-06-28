@@ -1,8 +1,15 @@
 <div class='cover' *ngIf='isDropDownOpen' (click)="toggle()">
 </div>
 <section class="vtr-ui-dropdown">
-	<div class="input"
-		(click)="toggle()">
+	<div class="list" *ngIf="isDropDownOpen">
+		<ul>
+			<li (click)="select(i)"
+				*ngFor="let i of list">
+				{{i.text}}
+			</li>
+		</ul>
+	</div>
+	<div class="input" (click)="toggle()">
 		<div class="time">
 			<span>{{name}} {{placeholder}} </span>
 		</div>
@@ -15,11 +22,5 @@
 			</fa-icon>
 		</p>
 	</div>
-	<div class="list"
-		*ngIf="isDropDownOpen">
-		<ul>
-			<li (click)="select(i)"
-				*ngFor="let i of list">{{i.text}}</li>
-		</ul>
-	</div>
+	
 </section>

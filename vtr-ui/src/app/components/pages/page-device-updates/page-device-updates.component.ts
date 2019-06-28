@@ -204,7 +204,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			this.systemUpdateService.getUpdateSchedule();
 		}
 		this.systemUpdateService.getUpdateHistory();
-		
+
 		this.setUpdateTitle();
 	}
 
@@ -707,6 +707,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					if (this.isCheckingPluginStatus) {
 						this.getScheduleUpdateStatus(false);
 					}
+					this.isOnline = notification.payload.isOnline;
+					this.offlineSubtitle = `${this.getLastUpdatedText()}<br>${this.getNextUpdatedScanText()}`;
+					break;
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
 					this.offlineSubtitle = `${this.getLastUpdatedText()}<br>${this.getNextUpdatedScanText()}`;
@@ -770,7 +773,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
 					this.setUpdateByCategory(payload.updateList);
 					this.systemUpdateService.getUpdateHistory();
-					//using this check to avoid displaying more than on reboot confimation dialogs.
+					// using this check to avoid displaying more than on reboot confimation dialogs.
 					if (!this.isRebootRequested) {
 					this.checkRebootRequested();
 					}
@@ -785,6 +788,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.systemUpdateService.isUpdateDownloading = false;
 		this.systemUpdateService.isInstallationSuccess = false;
 		this.systemUpdateService.isInstallationCompleted = false;
+		this.systemUpdateService.isDownloadingCancel = false;
 	}
 
 	private getScheduleUpdateStatus(reportProgress: boolean) {
@@ -868,6 +872,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		});
 		this.translate.stream(this.at).subscribe((res) => {
 			this.at = res;
-		})
+		});
 	}
 }

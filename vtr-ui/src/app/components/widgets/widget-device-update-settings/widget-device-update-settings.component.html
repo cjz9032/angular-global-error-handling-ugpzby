@@ -27,7 +27,7 @@
 											<a vtrMetrics
 												[metricsItem]="item.header | translate "
 												metricsEvent="featureClick"
-												[routerLink]="item.routerLink"
+												(click) ="navigateToLink(item)"
 												*ngIf="item.isCustomizable"
 												class="customizable">
 												<i class="icon icon-gear"></i>

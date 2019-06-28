@@ -39,8 +39,8 @@ export class HomeSecurityNotifications {
 					break;
 				}
 			};
-			this.title = value.content.keys().next().value;
-			this.subText = value.content.get(this.title);
+			this.title = value.content.title;
+			this.subText = value.content.content;
 			this.date = this.getTime(value.time);
 			let item = new NotificationItem({
 				iconName: this.iconName, color: this.color,

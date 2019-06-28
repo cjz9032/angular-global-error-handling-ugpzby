@@ -100,7 +100,16 @@
 			}
 
 			.icomoon {
-				font-size: 4rem !important;
+				font-size: 4rem;
+				@media #{$mediaquery_6} {
+					font-size: 3.5rem;
+				}
+				@media #{$mediaquery_8} {
+					font-size: 3rem;
+				}
+				@media #{$mediaquery_9} {
+					font-size: 2.7rem;
+				}
 			}
 
 			&.disable {

@@ -1,6 +1,12 @@
-import { Injectable } from '@angular/core';
-import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import {
+	Injectable
+} from '@angular/core';
+import {
+	VantageShellService
+} from '../vantage-shell/vantage-shell.service';
+import {
+	FeatureStatus
+} from 'src/app/data-models/common/feature-status.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -228,6 +234,14 @@ export class SmartAssistService {
 		return undefined;
 	}
 
+	public setAutoScreenOffStatus(value: boolean): Promise<boolean> {
+		if (this.isShellAvailable) {
+			const option = value ? 'True' : 'False';
+			return this.intelligentSensing.SetWalkingMode(option);
+		}
+		return undefined;
+	}
+
 	/**
 	 * if value returned is true then show note
 	 */
@@ -255,7 +269,7 @@ export class SmartAssistService {
 	public setReadingOrBrowsingStatus(value: boolean): Promise<boolean> {
 		if (this.isShellAvailable) {
 			const option = value ? 'True' : 'False';
-			return this.intelligentSensing.SetBrowsingMode(option);
+			return this.intelligentSensing.setBrowsingMode(option);
 		}
 		return undefined;
 	}
@@ -270,7 +284,7 @@ export class SmartAssistService {
 	public setReadingOrBrowsingTime(value: number): Promise<boolean> {
 		if (this.isShellAvailable) {
 			const option = value * 60;
-			return this.intelligentSensing.setBrowsingTime(option);
+			return this.intelligentSensing.SetBrowsingTime(option);
 		}
 		return undefined;
 	}
@@ -307,16 +321,106 @@ export class SmartAssistService {
 		}
 		return undefined;
 	}
+	// SET APS MODE
+	public setAPSMode(value: boolean): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setAPSMode(value);
+		}
+		return undefined;
+	}
+	// Get Sensitivity Level
+	public getAPSSensitivityLevel(): Promise<number> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.getAPSSensitivityLevel();
+		}
+		return undefined;
+	}
+	// Get Sensitivity Level
+	public setAPSSensitivityLevel(value: number): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setAPSSensitivityLevel(value);
+		}
+		return undefined;
+	}
+	// Get Repetitive Shock
+	public getAutoDisableSetting(): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.getAutoDisableSetting();
+		}
+		return undefined;
+	}
+	// Set Repetitive Shock
+	public setAutoDisableSetting(value: boolean): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setAutoDisableSetting(value);
+		}
+		return undefined;
+	}
+	// GET Manual suspention of APS
+	public getSnoozeSetting(): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.getSnoozeSetting();
+		}
+		return undefined;
+	}
+	// SET Manual Suspension of APS
+	public setSnoozeSetting(value: boolean): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setSnoozeSetting(value);
+		}
+		return undefined;
+	}
+	// GET Snooze value
+	public getSnoozeTime(): Promise<number> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.getSnoozeTime();
+		}
+		return undefined;
+	}
+	// SET Snooze time
+	public setSnoozeTime(value: string): Promise<boolean> {
+		console.log('SNOOZE VALUE', typeof value);
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setSnoozeTime(value);
+		}
+		return undefined;
+	}
+	// Suspend APS
+	public sendSnoozeCommand(value: string): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.sendSnoozeCommand(value);
+		}
+	}
+	//#endregion
 
 	// Start Lenovo Voice
-	public isLenovoVoiceAvailable():  Promise<boolean> {
+	public isLenovoVoiceAvailable(): Promise<boolean> {
 		if (this.lenovoVoice) {
 			return this.lenovoVoice.getCapability();
 		}
 		return undefined;
 	}
 
-	// End Lenovo Voice
+	public isLenovoVoiceInstalled():  Promise<boolean> {
+		if (this.lenovoVoice) {
+			return this.lenovoVoice.getInstallStatus();
+		}
+		return undefined;
+	}
 
-	//#endregion
+	public downloadLenovoVoice():  Promise<string> {
+		if (this.lenovoVoice) {
+			return this.lenovoVoice.downloadAndInstallVoiceApp();
+		}
+		return undefined;
+	}
+
+	public launchLenovoVoice():  Promise<boolean> {
+		if (this.lenovoVoice) {
+			return this.lenovoVoice.launchVoiceApp();
+		}
+		return undefined;
+	}
+
+	// End Lenovo Voice
 }

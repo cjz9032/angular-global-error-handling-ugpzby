@@ -8,37 +8,36 @@
     <div class="row vtr-page-content">
         <div class="col vtr-col">
             <div class="row">
-                <div class="col-12 col-sm-12 col-lg-8 vtr-page-left-column">
+                <div class="col-12 col-sm-12 col-md-8 vtr-page-left-column">
                     <div class="vtr-subpage">
                         <div class="vtr-page-shift-up">
                             <div class="container-fluid">
                                 <div class="row mb-40 content-container p-40">
                                     <div class="container-fluid">
-                                        <vtr-widget-home-security-device
+                                        <vtr-home-security-device
                                             [device]="account.device"
                                             [allDevice]="account.allDevice"
-                                          ></vtr-widget-home-security-device>
+                                          ></vtr-home-security-device>
                                     </div>
                                 </div>
                                 <div class="row content-container p-40">
                                     <div class="container-fluid fix-height">
                                         <div class="row title">{{'homeSecurity.overview.overviewBlockTitle' | translate}}</div>
                                         <div class="container-fluid sub-container">
-                                            <div class="row sub-title">{{'homeSecurity.overview.myDevice' | translate}}</div>
+                                            <div class="row sub-title mydevice-title">{{'homeSecurity.overview.myDevice' | translate}}</div>
                                             <div class="row container-fluid h-50 device-card">
-                                                <vtr-widget-home-security-my-device class="container-fluid"
+                                                <vtr-home-security-my-device class="container-fluid"
                                                     [homeSecurityOverviewMyDevice]="homeSecurityOverviewMyDevice">
-                                                </vtr-widget-home-security-my-device>
+                                                </vtr-home-security-my-device>
                                             </div>
                                             <div class="row sub-title">{{'homeSecurity.overview.allDevices' | translate}}
-                                                <vtr-ui-button (click)="switchStatus()" [label]="'switch'">
-                                                </vtr-ui-button>
                                             </div>
                                             <div class="row container-fluid home-card">
-                                                <vtr-widget-home-security-all-devices class="container-fluid"
-                                                    [eventEmitter]="eventEmitter" [allDevicesInfo]="allDevicesInfo"
-                                                    [account]="account" (emitter)="haddleChange($event)">
-                                                </vtr-widget-home-security-all-devices>
+												<vtr-home-security-all-devices class="container-fluid"
+													[common]="common"
+                                                    [allDevicesInfo]="allDevicesInfo"
+                                                    [account]="account">
+                                                </vtr-home-security-all-devices>
                                             </div>
                                         </div>
                                     </div>
@@ -47,16 +46,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-12 col-lg-4 vtr-page-right-column">
+                <div class="col-12 col-sm-12 col-md-4 vtr-page-right-column">
                     <div class="vtr-page-shift-up">
                         <div class="container-fluid">
                             <div class="row mb-40">
                                 <div class="col col-12">
-                                    <vtr-widget-home-security-account-status [status]="account.state"
-                                        [standardTime]="account.standardTime" [expiredDate]="account.expiration"
-                                        (startTrial)="onStartTrial()" (manageAccount)="onManageAccount($event)"
-                                        (upgradeAccount)="onUpgradeAccount()">
-                                    </vtr-widget-home-security-account-status>
+									<vtr-home-security-account-status
+										[account]="account"
+                                        [common]="common">
+                                    </vtr-home-security-account-status>
                                 </div>
                             </div>
                             <div class="row mb-40">
