@@ -25,6 +25,9 @@
       border: 1px solid $main_shade;
       border-radius: 2px;
     }
+    & + label.disabled:before {
+      opacity: 0.5;
+    }
   
     // Box hover
     &:hover + label:before {
@@ -72,6 +75,8 @@
       transform: rotate(45deg);
     }
   }
+
+
   
   // Demo-only styles
   // --------------

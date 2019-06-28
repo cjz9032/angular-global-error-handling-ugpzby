@@ -64,6 +64,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	}
 
 	ngOnInit() {
+		if (this.connectedHomeSecurity) {
+			this.connectedHomeSecurity.startPullingCHS();
+		}
 		const cacheMyDevice = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityMyDevice);
 		const cacheAllDevices = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices);
 		if (cacheAllDevices) {
@@ -162,6 +165,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 
 	ngOnDestroy() {
 		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, false);
+		if (this.connectedHomeSecurity) {
+			this.connectedHomeSecurity.stopPullingCHS();
+		}
 	}
 
 	@HostListener('window: focus')

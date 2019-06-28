@@ -682,7 +682,12 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -1057,7 +1062,7 @@
         },
         "smartAssist": {
             "title": "Slimme hulp",
-            "description": "Lenovo Intelligente detectie combineert verschillende sensoren van uw computerom uw activiteiten te volgen, instellingen voor optimaal energiebeheer aan te passen en uw privacy te beschermen.",
+            "description": "Lenovo Intelligente detectie combineert verschillende sensoren van uw computer om uw activiteiten te volgen, instellingen voor optimaal energiebeheer aan te passen en uw privacy te beschermen.",
             "jumpTo": {
                 "title": "NAAR INSTELLINGEN GAAN",
                 "security": "Beveiliging",
@@ -1074,8 +1079,8 @@
                     "tooltip": "Klik hier om de instellingen voor de aanwezigheidsdetectie van personen opnieuw in te stellen."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Aanwezigheidssensor van gebruiker",
+                    "tooltip": "Klik hier om de instellingen voor de aanwezigheidsdetectie van personen opnieuw in te stellen."
                 },
                 "zeroTouchLogin": {
                     "title": "Aanmelding bij nul aanraken",
@@ -1083,7 +1088,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Vergrendeling bij nul aanraken",
-                    "caption": "Deze functie dimt het beeldscherm en vergrendelt de computer wanneer wordt gedetecteerd dat de gebruiker niet aanwezig is.Dit kan de kans dat onbevoegden toegang tot de computer verkrijgen wanneer u de computer onbeheerd en niet-vergrendeld achterlaat, verkleinen. Het verlaagt ook het energieverbruik, doordat het systeem in Modern stand-by wordt gezet wanneer uw aanwezigheid niet wordt gedetecteerd.",
+                    "caption": "Deze functie dimt het beeldscherm en vergrendelt de computer wanneer wordt gedetecteerd dat de gebruiker niet aanwezig is. Dit kan de kans dat onbevoegden toegang tot de computer verkrijgen wanneer u de computer onbeheerd en niet-vergrendeld achterlaat, verkleinen. Het verlaagt ook het energieverbruik, doordat het systeem in Modern stand-by wordt gezet wanneer uw aanwezigheid niet wordt gedetecteerd.",
                     "autoScreenLockTimer": {
                         "title": "TIMER AUTOMATISCHE SCHERMVERGRENDELING",
                         "radioButton": {
@@ -1091,46 +1096,46 @@
                             "medium": "Gemiddeld",
                             "slow": "Traag"
                         },
-                        "toolTipContent": "Selecteer de gewenste optie om het scherm te vergrendelen met een hoge/gemiddelde/lage snelheid als uw aanwezigheid niet wordt gedetecteerd.Het moment waarop het scherm wordt vergrendeld, wordt echter ook beïnvloed door het feitelijke gebruikersscenario, het sensorvermogen en de Windows-instellingen voor time-out voor het scherm. Het is dus raadzaam om het systeem meteen te vergrendelen voordat u weggaat."
+                        "toolTipContent": "Selecteer de gewenste optie om het scherm te vergrendelen met een hoge/gemiddelde/lage snelheid als uw aanwezigheid niet wordt gedetecteerd. Het moment waarop het scherm wordt vergrendeld, wordt echter ook beïnvloed door het feitelijke gebruikersscenario, het sensorvermogen en de Windows-instellingen voor time-out voor het scherm. Het is dus raadzaam om het systeem meteen te vergrendelen voordat u weggaat."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "De detectieafstand wordt via een AI-engineautomatisch bijgewerkt.",
+                    "title": "AANPASSEN VAN AFSTANDSGEVOELIGHEID",
+                    "caption": "De detectieafstand wordt via een AI-engine automatisch bijgewerkt.",
                     "options": {
                         "near": "Dichtbij",
                         "far": "Ver"
                     }
                 },
                 "note": {
-                    "description1": "Deze functie maakt gebruik van Windows Hello.Zorg dat gezichtsherkenning is ingeschakeld in Windows-instellingen.",
-                    "description2": "De functie gebruikt sensoren en de camera om uw aanwezigheid te detecteren.Persoonlijke gegevens of afbeeldingen worden echter niet door deze functie verzameld, opgeslagen of gelekt.",
-                    "description3": "1. Als uw computer in Tent-, Tablet- of Standaardmodus staat,werken deze functies mogelijk niet helemaal naar wens.",
-                    "description4": "2. Als uw computer in de sluimerstand staat of is uitgeschakeld.Automatische aanmelding via IR-camera werkt niet.",
-                    "description5": "3. Zet uw computerscherm in een hoek waarin de IR-camerauw gezicht kan herkennen voor automatisch aanmelden."
+                    "description1": "Deze functie maakt gebruik van Windows Hello. Zorg dat gezichtsherkenning is ingeschakeld in Windows-instellingen.",
+                    "description2": "De functie gebruikt sensoren en de camera om uw aanwezigheid te detecteren. Persoonlijke gegevens of afbeeldingen worden echter NIET door deze functie verzameld, opgeslagen of gelekt.",
+                    "description3": "1. Als uw computer in Tent-, Tablet- of Standaardmodus staat, werken deze functies mogelijk niet naar behoren.",
+                    "description4": "2. Als uw computer in de sluimerstand staat of is uitgeschakeld. Automatische aanmelding via IR-camera werkt niet.",
+                    "description5": "3. Zet uw computerscherm in een hoek waarin de IR-camera uw gezicht kan herkennen voor automatisch aanmelden."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ga naar Windows Hello-instellingen",
                     "screenTimeoutSettings": "Ga naar de instellingen voor de time-out van het beeldscherm"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "DE STANDAARDINSTELLINGEN HERSTELLEN"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Intelligent beeldscherm",
+                "description": "Lenovo Intelligente detectie combineert de verschillende sensoren van uw computer om uw activiteiten te volgen en instellingen voor energiebeheer aan te passen. Zo wordt bijvoorbeeld het licht van uw beeldscherm gedempt als Slimme Sensor merkt dat u loopt, maar als wordt gedetecteerd dat u aan het lezen bent, wordt het licht niet gedempt.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Automatische scherm uit",
+                    "caption": "Beeldscherm automatisch uitschakelen als het beeldscherm met het beeld omlaag ligt of als u loopt.",
+                    "note": "Deze functie is niet beschikbaar als u de energiebeheerinstellingen hebt ingesteld op \"Beeldscherm nooit uitschakelen in accumodus\" in Windows Settings \"Systeem sectie\". Selecteer een andere waarde dan \"Nooit\" om deze functie in te schakelen.",
+                    "windowsLink": "Ga naar Instellingen voor energiebeheer en slaapstand in Windows Systeeminstellingen"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Mijn beeldscherm behouden",
+                    "caption": "Mijn beeldscherm ingeschakeld houden als ik lees of browse.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Minuten voordat het licht van het beeldscherm wordt gedempt tijdens bladeren",
+                        "startTime": "0 minuten",
+                        "endTime": "60 minuten"
                     }
                 }
             },
@@ -1165,10 +1170,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Intelligente media",
+                "title": "Zero Touch Video afspelen",
+                "desc": "Met deze functie wordt de video gepauzeerd wanneer u weggaat bij de computer en hervat wanneer u terugkeert.",
+                "tooltip": "Deze functie is niet van toepassing op webvideospelers. Populaire lokale videospelers, zoals Windows Media Player, 5KPlayer en dergelijke, ondersteunen deze functie."
             },
             "voice": {
                 "title": "Voice",
@@ -1195,6 +1200,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1349,7 +1359,8 @@
         "overview": {
             "overviewBlockTitle": "Uw ecosysteem beveiligingsoverzicht",
             "allDevices": "Alle apparaten",
-            "myDevice": "Mijn apparaat",
+			"myDevice": "Mijn apparaat",
+			"thisComputer": "This computer",
             "secure": "Beveiligen",
             "needAttention": "HEEFT AANDACHT NODIG",
             "manageAccount": "Account beheren",

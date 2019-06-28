@@ -682,7 +682,12 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -1057,7 +1062,7 @@
         },
         "smartAssist": {
             "title": "Smart hjälp",
-            "description": "Lenovo Intelligent avkänning kombinerar datorns olika sensorer för att känna av vad du göroch justera inställningarna för optimalt energisparläge och sekretesskydd.",
+            "description": "Lenovo Intelligent avkänning kombinerar datorns olika sensorer för att känna av vad du gör och justera inställningarna för optimalt energisparläge och sekretesskydd.",
             "jumpTo": {
                 "title": "ÖPPNA INSTÄLLNINGAR",
                 "security": "Säkerhet",
@@ -1074,8 +1079,8 @@
                     "tooltip": "Klicka här för att återställa inställningarna för närvaroavkänning."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Närvaroavkänning",
+                    "tooltip": "Klicka här för att återställa inställningarna för närvaroavkänning."
                 },
                 "zeroTouchLogin": {
                     "title": "Beröringsfri inloggning",
@@ -1083,7 +1088,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Beröringsfritt lås",
-                    "caption": "Denna funktion släcker bildskärmen och låser datorn om den inte känner av din närvaro.Detta kan minska risken för obehörig åtkomst när du lämnar datorn obevakad och olåst. Det minskar också energiförbrukningen eftersom datorn sätts i modernt vänteläge när din närvaro inte identifieras.",
+                    "caption": "Denna funktion släcker bildskärmen och låser datorn om den inte känner av din närvaro. Detta kan minska risken för obehörig åtkomst till datorn när du lämnar den obevakad och olåst. Det minskar också energiförbrukningen eftersom datorn sätts i modernt vänteläge när din närvaro inte identifieras.",
                     "autoScreenLockTimer": {
                         "title": "AUTOMATISK SKÄRMLÅSTIMER",
                         "radioButton": {
@@ -1091,46 +1096,46 @@
                             "medium": "Mellan",
                             "slow": "Långsam"
                         },
-                        "toolTipContent": "Välj önskat alternativ för att låsa skärmen snabbt/medelsnabbt/långsamt när din närvaro inte identifieras.Tiden när skärmen låses påverkas också av den faktiska användarsituationen, sensorkapaciteten och inställningarna för skärmtidsgräns i Windows. Vi rekommenderar därför att du låser datorn omedelbart innan du lämnar den."
+                        "toolTipContent": "Välj önskat alternativ för att låsa skärmen snabbt/medelsnabbt/långsamt när din närvaro inte identifieras. Tiden när skärmen låses påverkas också av den faktiska användarsituationen, sensorkapaciteten och inställningarna för skärmtidsgräns i Windows. Vi rekommenderar därför att du låser datorn omedelbart innan du lämnar den."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Automatisk avståndsjustering uppdaterar automatisktidentifieringsavståndet via en AI-motor.",
+                    "title": "JUSTERING AV AVSTÅNDSKÄNSLIGHET",
+                    "caption": "Automatisk avståndsjustering uppdaterar automatiskt identifieringsavståndet via en AI-motor.",
                     "options": {
                         "near": "Nära",
                         "far": "Långt bort"
                     }
                 },
                 "note": {
-                    "description1": "Funktionen bygger på Windows Hello.Kontrollera att ansiktsigenkänning är aktiverat i Windows-inställningarna.",
-                    "description2": "Funktionen använder sensorer och kamera för att identifiera din närvaro.Den samlar INTE in, sparar eller läcker personliga uppgifter eller bilder.",
-                    "description3": "1. Dessa funktioner kanske inte fungerar korrektom datorn är i tält- eller pekplatteläge eller stående läge.",
-                    "description4": "2. Om datorn är i viloläge eller avstängd.Automatisk inloggning med IR-kamera fungerar inte.",
-                    "description5": "3. Justera datorskärmen i rätt vinkel så att IR-kamerankan identifiera ditt ansikte för automatisk inloggning."
+                    "description1": "Funktionen bygger på Windows Hello. Kontrollera att ansiktsigenkänning är aktiverat i Windows-inställningarna.",
+                    "description2": "Funktionen använder sensorer och kamera för att identifiera din närvaro. Den samlar INTE in, sparar eller läcker personliga uppgifter eller bilder.",
+                    "description3": "1. Dessa funktioner kanske inte fungerar korrekt om datorn är i tält-, pekplatte- eller stödläge.",
+                    "description4": "2. Om datorn är i viloläge eller avstängd. Automatisk inloggning med IR-kamera fungerar inte.",
+                    "description5": "3. Justera datorskärmen i rätt vinkel så att IR-kameran kan identifiera ditt ansikte för automatisk inloggning."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Öppna inställningarna för Windows Hello",
                     "screenTimeoutSettings": "Öppna inställningarna för skärmens tidsgräns"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "ÅTERSTÄLL STANDARDINSTÄLLNINGAR"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Intelligent skärm",
+                "description": "Lenovos intelligenta avkänning kombinerar datorns olika sensorer för att känna av vad du gör och justera inställningarna för energisparfunktioner. Exempelvis sänker den skärmens ljusstyrka om den känner av att du går, men sänker den inte om den känner av att du läser.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Automatiskt skärmlås av",
+                    "caption": "Automatisk avstängning av skärmen när du sänker huvudet eller går.",
+                    "note": "Denna funktion är inte tillgänglig om inställningen för Energischema har angetts till Stäng aldrig av skärmen med batteridrift i avsnittet System i inställningarna i Windows. Välj ett annat värde än Aldrig för att aktivera funktionen.",
+                    "windowsLink": "Välj Ström- och strömsparinställningar i Windows-inställningar"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Behåll min bildskärm",
+                    "caption": "Låt skärmen vara igång längre när jag läser eller surfar på nätet.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Minuter till att skärmens ljusstyrka sänks vid webbsurfning",
+                        "startTime": "0 minuter",
+                        "endTime": "60 minuter"
                     }
                 }
             },
@@ -1165,10 +1170,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Intelligenta medier",
+                "title": "Beröringsfri videouppspelning",
+                "desc": "Videon pausas när du lämnar datorn och återupptas när du är tillbaka.",
+                "tooltip": "Denna funktion fungerar inte på onlinevideospelare. Vanliga lokala videospelare (som Windows Media Player och 5KPlayer) har stöd för denna funktion."
             },
             "voice": {
                 "title": "Voice",
@@ -1195,6 +1200,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1349,7 +1359,8 @@
         "overview": {
             "overviewBlockTitle": "Översikt över ekosystemets säkerhet",
             "allDevices": "Alla enheter",
-            "myDevice": "Min enhet",
+			"myDevice": "Min enhet",
+			"thisComputer": "This computer",
             "secure": "SÄKERT",
             "needAttention": "ÅTGÄRD KRÄVS",
             "manageAccount": "Hantera konto",
