@@ -1209,8 +1209,8 @@
         "recommendedUpdates": "Actualizări recomandate",
         "optionalUpdates": "Actualizări opționale",
         "ignoredUpdates": "Actualizări ignorate",
-        "successInstall": "Instalare cu succes în data de",
-        "failedInstall": "Instalare nereușită în data de",
+        "successInstall": "Instalare reuşită în data de",
+        "failedInstall": "Instalare nereuşită în data de",
         "at": "la",
         "readMore": "Citiți mai multe",
         "popup": {

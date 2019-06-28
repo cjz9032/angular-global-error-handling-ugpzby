@@ -1209,9 +1209,9 @@
         "recommendedUpdates": "Zalecane aktualizacje",
         "optionalUpdates": "Opcjonalne aktualizacje",
         "ignoredUpdates": "Zignorowane aktualizacje",
-        "successInstall": "Pomyślnie zainstalowano",
-        "failedInstall": "Instalacja zakończona niepowodzeniem",
-        "at": "o",
+        "successInstall": "Pomyślnie zainstalowano w dniu",
+        "failedInstall": "Instalacja zakończona niepowodzeniem w dniu",
+        "at": "o godzinie",
         "readMore": "Dowiedz się więcej",
         "popup": {
             "reboot": "Restart",

@@ -1211,7 +1211,7 @@
         "ignoredUpdates": "עדכונים שהמערכת התעלמה מהם",
         "successInstall": "הותקן בהצלחה בתאריך",
         "failedInstall": "ההתקנה נכשלה בתאריך",
-        "at": "אל",
+        "at": "ב-",
         "readMore": "פרטים נוספים",
         "popup": {
             "reboot": "הפעלה מחדש",

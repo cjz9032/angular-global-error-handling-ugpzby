@@ -1209,8 +1209,8 @@
         "recommendedUpdates": "Suositeltavat päivitykset",
         "optionalUpdates": "Valinnaiset päivitykset",
         "ignoredUpdates": "Huomiotta jätetyt päivitykset",
-        "successInstall": "Asennus onnistui kohteeseen",
-        "failedInstall": "Asennus epäonnistui kohteeseen",
+        "successInstall": "Asennus onnistui",
+        "failedInstall": "Asennus epäonnistui",
         "at": "klo",
         "readMore": "Lue lisää",
         "popup": {

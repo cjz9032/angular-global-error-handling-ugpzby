@@ -1210,7 +1210,7 @@
         "optionalUpdates": "Volitelné aktualizace",
         "ignoredUpdates": "Ignorované aktualizace",
         "successInstall": "Úspěšně instalováno v systému",
-        "failedInstall": "Neúspěšná instalace v systému",
+        "failedInstall": "Instalace se nezdařila v systému",
         "at": "v",
         "readMore": "Další informace",
         "popup": {

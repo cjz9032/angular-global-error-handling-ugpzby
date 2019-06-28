@@ -1211,7 +1211,7 @@
         "ignoredUpdates": "Atualização(ões) Ignorada(s)",
         "successInstall": "Instalada com sucesso em",
         "failedInstall": "Instalação falhou em",
-        "at": "em",
+        "at": "às",
         "readMore": "Ler mais",
         "popup": {
             "reboot": "Reini.",
