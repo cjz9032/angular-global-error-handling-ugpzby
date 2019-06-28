@@ -38,6 +38,8 @@
 					"driverPopup": {
 						"headerText": "Driver Install Required",
 						"text": "You need install driver for RAM Overclock to  make it effective",
+						"networkBoostText": "You need install driver for Network Boost to  make it effective",
+						"hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
 						"button": "Install",
 						"link": "cancel"
 					},
@@ -1053,6 +1055,7 @@
 				"userDefinedKey": {
 					"title": "User-defined Key",
 					"caption": "The key represented by the star icon allows you to set user defined function",
+					"tooltip" : "Content to be filled",
 					"dropDown": {
 						"title": "Action User Defined key",
 						"note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
@@ -1065,11 +1068,11 @@
 			"description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
 			"jumpTo": {
 				"title": "JUMP TO SETTINGS",
-				"security": "Security",
-				"screen": "Screen",
-				"media": "Media",
-				"voice": "Voice",
-				"APS": "APS"
+				"security": "Intelligent Security",
+				"screen": "Intelligent Screen",
+				"media": "Intelligent Media",
+				"voice": "Intelligent Voice",
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Intelligent Security",
