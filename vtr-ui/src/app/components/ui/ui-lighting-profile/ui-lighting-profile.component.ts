@@ -623,6 +623,7 @@ export class UiLightingProfileComponent implements OnInit {
 		}
 	}
 	changeSingleCoorEffect($event) {
+		this.selectedSingleColorOptionId = $event;
 		console.log('single color option change fired------------------------------', $event);
 		if (this.lightingProfileEffectColorNUmber === undefined) {
 			this.lightingProfileEffectColorNUmber = new LightingProfileEffectColorNUmber();
@@ -887,6 +888,7 @@ export class UiLightingProfileComponent implements OnInit {
 						JSON.stringify(response)
 					);
 					if (response.didSuccess) {
+						console.log('DID SUCCESS,----------------------------------------');
 						if (LocalStorageKey.LightingProfileById !== undefined) {
 							this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileById, response);
 						}
