@@ -682,7 +682,12 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -1057,7 +1062,7 @@
         },
         "smartAssist": {
             "title": "Akıllı Yardım",
-            "description": "Lenovo Akıllı Algılama özelliği, etkinliklerinizi algılamak, ideal güç yönetimi ayarlarını düzenlemekve gizliliğinizi korumak için bilgisayarınızdaki çeşitli sensörleri birleştirir.",
+            "description": "Lenovo Akıllı Algılama özelliği, etkinliklerinizi algılamak, ideal güç yönetimi ayarlarını düzenlemek ve gizliliğinizi korumak için bilgisayarınızdaki çeşitli sensörleri birleştirir.",
             "jumpTo": {
                 "title": "AYARLARA GİT",
                 "security": "Güvenlik",
@@ -1070,20 +1075,20 @@
                 "title": "Akıllı Güvenlik",
                 "readMore": "Okumaya devam edin",
                 "HumanPresenceDetection": {
-                    "title": "İnsan Varlığını Algılama",
-                    "tooltip": "İnsan varlığını Algılama ayarlarını sıfırlamak için buraya tıklayın."
+                    "title": "İnsan varlığını algılama",
+                    "tooltip": "İnsan varlığını algılama ayarlarını sıfırlamak için burayı tıklatın."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Kullanıcı Varlığını Algılama",
+                    "tooltip": "İnsan varlığını Algılama ayarlarını sıfırlamak için buraya tıklayın."
                 },
                 "zeroTouchLogin": {
                     "title": "Sıfır Dokunma ile Oturum Açma",
                     "caption": "Bu özellik, bilgisayarın karşısında olduğunuzda veya bilgisayara yaklaştığınızda bilgisayar kilidini otomatik olarak açar ya da bilgisayarı uyandırır."
                 },
                 "zeroTouchLock": {
-                    "title": "Sıfır Dokunma ile kilitleme",
-                    "caption": "Bu özellik, kullanıcı varlığı algılanmadığında ekranı karartır ve bilgisayarı kilitler.Bu özellik sayesinde bilgisayarı gözetimsiz ve açık bıraktığınızda bilgisayara yetkisiz erişim olasılığı azalabilir. Ayrıca, varlığınız algılanmadığında sistemi Modern Bekleme Durumu kipine geçirerek güç tüketimini de azaltır.",
+                    "title": "Sıfır Dokunma ile Kilitleme",
+                    "caption": "Bu özellik, kullanıcı varlığı algılanmadığında ekranı karartır ve bilgisayarı kilitler. Bu özellik sayesinde bilgisayarı gözetimsiz ve açık bıraktığınızda bilgisayara yetkisiz erişim olasılığı azalır. Ayrıca varlığınız algılanmadığında sistemi Modern Bekleme Durumu kipine geçirerek güç tüketimini de azaltır.",
                     "autoScreenLockTimer": {
                         "title": "OTOMATİK EKRAN KİLİDİ ZAMANLAYICISI",
                         "radioButton": {
@@ -1091,46 +1096,46 @@
                             "medium": "Orta",
                             "slow": "Yavaş"
                         },
-                        "toolTipContent": "Varlığınız algılanmadığında ekranınızı Hızlı/Orta/Yavaş hızda kilitlemek için istediğiniz seçeneği belirleyin.Ancak, ekranın kilitlenme süresi gerçek kullanıcı senaryosu, sensör kapasitesi ve Windows ekranı zaman aşımı ayarlarından da etkilenir. Bu yüzden, bilgisayarınızın başından ayrılmadan önce sisteminizi hemen kilitlemenizi önemle tavsiye ederiz."
+                        "toolTipContent": "Varlığınız algılanmadığında ekranınızı Hızlı/Orta/Yavaş hızda kilitlemek için istediğiniz seçeneği belirleyin. Ancak, ekranın kilitlenme süresi gerçek kullanıcı senaryosu, sensör kapasitesi ve Windows ekranı zaman aşımı ayarlarından da etkilenir. Bu yüzden, bilgisayarınızın başından ayrılmadan önce sisteminizi hemen kilitlemenizi önemle tavsiye ederiz."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Otomatik Uzaklık Ayarlama, bir yapay zeka altyapısıaracılığıyla algılama uzaklığını otomatik olarak günceller.",
+                    "title": "UZAKLIK ALGILAMAYI AYARLAMA",
+                    "caption": "Otomatik Uzaklık Ayarı, algılama uzaklığını bir yapay zeka altyapısı aracılığıyla otomatik olarak günceller.",
                     "options": {
                         "near": "Yakın",
                         "far": "Uzak"
                     }
                 },
                 "note": {
-                    "description1": "Bu özellik için Windows Hello gereklidir.Windows ayarlarında yüz tanımanın açık olduğundan emin olun.",
-                    "description2": "Bu özellik, varlığınızı algılamak için sensörler ve kamera kullanır.Ancak, özellik hiçbir kişisel veri veya görüntüyü TOPLAMAZ, KAYDETMEZ veya SIZDIRMAZ.",
-                    "description3": "1. Bilgisayarınız Çadır, Tablet veya Stant kipindeysebu özellikler düzgün çalışmayabilir.",
-                    "description4": "2. Bilgisayarınız uyku kipindeyse veya kapalıysa.Kızılötesi kamerayla otomatik oturum açma çalışmaz.",
-                    "description5": "3. Lütfen bilgisayarınızın ekranını, kızılötesi kameranın otomatikoturum açma için yüzünüzü tanıyabileceği uygun bir açıya ayarlayın."
+                    "description1": "Bu özellik için Windows Hello gereklidir. Windows ayarlarında yüz tanımanın açık olduğundan emin olun.",
+                    "description2": "Bu özellik, varlığınızı algılamak için sensörler ve kamera kullanır. Ancak, özellik hiçbir kişisel veriyi TOPLAMAZ.",
+                    "description3": "1. Bilgisayarınız Çadır, Tablet veya Stant kipindeyse bu özellikler düzgün çalışmayabilir.",
+                    "description4": "2. Bilgisayarınız uyku kipindeyse veya kapalıysa. Kızılötesi kamerayla otomatik oturum açma çalışmaz.",
+                    "description5": "3. Lütfen bilgisayarınızın ekranını, kızılötesi kameranın otomatik oturum açma için yüzünüzü tanıyabileceği uygun bir açıya ayarlayın."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello Ayarları'na git",
                     "screenTimeoutSettings": "Ekran zaman aşımı ayarlarına git"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "VARSAYILAN AYARLARA SIFIRLA"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Akıllı Ekran",
+                "description": "Lenovo Akıllı Algılama özelliği, etkinliklerinizi algılamak ve güç yönetimi ayarlarını düzenlemek için bilgisayarınızın çeşitli algılayıcılarını birleştirir. Örneğin; yürüdüğünüzü algılarsa ekranı karartır ancak okuduğunuzu algılarsa ekranı karartmaz.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Otomatik ekran kapatma",
+                    "caption": "Ekran aşağı baktığında veya yürüdüğünüzde ekranı otomatik olarak kapatır.",
+                    "note": "Windows Ayarları “Sistem bölümünde” Güç Planı ayarlarınız “pil gücüyle çalışırken asla ekranı kapatma” olarak ayarlanmışsa bu özelliği kullanamazsınız. Bu özelliği etkinleştirmek için lütfen “Asla” haricinde bir değer seçin.",
+                    "windowsLink": "Windows ayarlarında Güç ve uyku ayarları'na gidin"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Ekranımı açık bırak",
+                    "caption": "Okurken veya gezinirken ekranımı açık bırak.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Gezinirken ekranın kararmasından önce geçecek süre (dakika)",
+                        "startTime": "0 dakika",
+                        "endTime": "60 dakika"
                     }
                 }
             },
@@ -1165,10 +1170,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Akıllı Medya",
+                "title": "Sıfır Dokunma ile Video Oynatma",
+                "desc": "Bu özellik, bilgisayarın başından ayrıldığınızda videoyu duraklatır ve geri döndüğünüzde videoyu oynatmaya devam eder.",
+                "tooltip": "Bu özellik, Web üzerindeki video oynatıcılar için geçerli değildir. Windows Media Player ya da 5KPlayer gibi popüler yerel video oynatıcılar bu özelliği destekler."
             },
             "voice": {
                 "title": "Voice",
@@ -1195,6 +1200,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1209,8 +1219,8 @@
         "recommendedUpdates": "Önerilen Güncellemeler",
         "optionalUpdates": "İsteğe Bağlı Güncellemeler",
         "ignoredUpdates": "Yoksayılan Güncellemeler",
-        "successInstall": "Başarılı yükleme tarihi",
-        "failedInstall": "Başarısız yükleme tarihi",
+        "successInstall": "Şu tarihte yüklendi:",
+        "failedInstall": "Şu tarihte yükleme başarısız:",
         "at": "saat",
         "readMore": "Okumaya devam edin",
         "popup": {
@@ -1349,7 +1359,8 @@
         "overview": {
             "overviewBlockTitle": "Ekosisteminizin Güvenliğine Genel Bakış",
             "allDevices": "Tüm Cihazlar",
-            "myDevice": "Cihazım",
+			"myDevice": "Cihazım",
+			"thisComputer": "This computer",
             "secure": "GÜVENLİ",
             "needAttention": "İLGİLENMENİZ GEREKİYOR",
             "manageAccount": "Hesabı Yönet",

@@ -2,6 +2,9 @@ import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import {MockService} from "../../../services/mock/mock.service";
 import {NgbCarouselConfig, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import {ModalArticleDetailComponent} from "../../modal/modal-article-detail/modal-article-detail.component";
+import { CommonService } from 'src/app/services/common/common.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 
 @Component({
 	selector: 'vtr-widget-carousel',
@@ -26,7 +29,9 @@ export class WidgetCarouselComponent implements OnInit {
 	@Input() wrap: boolean;
 	@Input() order:number;
 
-	constructor(private config: NgbCarouselConfig,private MocckService:MockService) {
+	isOnline = true;
+
+	constructor(private config: NgbCarouselConfig,private MocckService:MockService,private commonService: CommonService) {
 
 	}
 
@@ -39,6 +44,12 @@ export class WidgetCarouselComponent implements OnInit {
 		this.config.showNavigationIndicators = typeof this.showNavigationIndicators !== 'undefined' ? this.showNavigationIndicators : true;
 		this.config.wrap = typeof this.wrap !== 'undefined' ? this.wrap : true;
 		this.parseToCarouselModel();
+
+		this.isOnline = this.commonService.isOnline;
+
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
 	}
 
 	byString(o: any, s: string) {
@@ -82,6 +93,20 @@ export class WidgetCarouselComponent implements OnInit {
 		if (!link) {
 			$event.preventDefault();
 
+		}
+	}
+
+	
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
 		}
 	}
 

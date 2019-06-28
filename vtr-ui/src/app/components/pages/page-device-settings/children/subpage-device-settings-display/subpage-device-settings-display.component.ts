@@ -266,6 +266,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 	public onEyeCareModeStatusToggle(event: any) {
 		this.isEyeCareMode = event.switchValue;
+		this.enableSlider=false;
 		console.log('onEyeCareModeStatusToggle', this.isEyeCareMode);
 		try {
 			if (this.displayService.isShellAvailable) {
