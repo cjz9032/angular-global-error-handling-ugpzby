@@ -56,13 +56,15 @@ export class HomeSecurityAccount {
 	purchase() {}
 
 	constructor(chsAccount: any,
-		private modalService: NgbModal) {
+		private modalService: NgbModal, args?) {
 		this.state = chsAccount.state;
 		this.expiration = chsAccount.expiration;
 		this.standardTime = chsAccount.serverTimeUTC;
-		this.lenovoIdLoggedIn = chsAccount.lenovoId.loggedIn;
 		this.createAccount = chsAccount.createAccount;
 		this.purchase = chsAccount.purchase;
+		if (typeof args === 'boolean') {
+			this.lenovoIdLoggedIn = args;
+		} else { this.lenovoIdLoggedIn = chsAccount.lenovoId.loggedIn; }
 		this.creatViewModel();
 	}
 

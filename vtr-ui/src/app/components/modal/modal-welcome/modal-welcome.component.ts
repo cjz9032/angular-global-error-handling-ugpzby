@@ -43,16 +43,10 @@ export class ModalWelcomeComponent implements OnInit {
 		this.metrics = shellService.getMetrics();
 		this.privacyPolicy = this.metrics.metricsEnabled;
 		const self = this;
-		this.downloadMetricsPolicy().subscribe((response)=>{		
-			shellService.deviceFilter(JSON.stringify(response)).then((result)=>{
-				const userDeterminePrivacy = commonService.getLocalStorageValue(LocalStorageKey.userDeterminePrivacy);
-				if(!userDeterminePrivacy){
-					self.privacyPolicy = result;
-					self.metrics.metricsEnabled =  (self.privacyPolicy === true);
-				}
-			});	
+		shellService.getMetricsPolicy((result)=>{
+			self.privacyPolicy = result;
+			self.metrics.metricsEnabled =  (self.privacyPolicy === true);
 		});
-		
 	}
 
 	ngOnInit() {
@@ -152,14 +146,10 @@ export class ModalWelcomeComponent implements OnInit {
 		} else {
 			this.progress -= 17;
 		}
-		this.commonService.setLocalStorageValue(LocalStorageKey.userDeterminePrivacy, true);
+		this.commonService.setLocalStorageValue(LocalStorageKey.UserDeterminePrivacy, true);
 	}
 	moreInterestClicked() {
 		this.interestCopy = this.interests;
 		this.hideMoreInterestBtn = true;
-	}
-
-	private downloadMetricsPolicy() {		
-		return this.http.get<string>('/assets/privacy-json/metrics.json');	
 	}
 }

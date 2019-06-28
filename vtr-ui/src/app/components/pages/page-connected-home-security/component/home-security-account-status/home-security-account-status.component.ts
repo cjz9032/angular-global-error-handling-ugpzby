@@ -5,14 +5,14 @@ import {
 	Output,
 	EventEmitter
 } from '@angular/core';
-import { BaseComponent } from '../../base/base.component';
+import { BaseComponent } from '../../../../base/base.component';
 
 @Component({
-	selector: 'vtr-widget-home-security-account-status',
-	templateUrl: './widget-home-security-account-status.component.html',
-	styleUrls: ['./widget-home-security-account-status.component.scss']
+	selector: 'vtr-home-security-account-status',
+	templateUrl: './home-security-account-status.component.html',
+	styleUrls: ['./home-security-account-status.component.scss']
 })
-export class WidgetHomeSecurityAccountStatusComponent extends BaseComponent implements OnInit {
+export class HomeSecurityAccountStatusComponent extends BaseComponent implements OnInit {
 	@Input() status: string;
 	@Input() standardTime = new Date();
 	@Input() expiredDate: Date = new Date();

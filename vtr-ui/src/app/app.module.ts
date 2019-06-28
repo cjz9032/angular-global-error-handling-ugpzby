@@ -177,7 +177,6 @@ import { AdvisorWifiSecurityComponent } from './components/pages/page-security/c
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
 
 // SA Widgets
-import { WidgetHomeSecurityDeviceComponent } from './components/widgets/widget-home-security-device/widget-home-security-device.component';
 import { WidgetSecurityStatusComponent } from './components/widgets/widget-security-status/widget-security-status.component';
 import { WidgetMcafeeComponent } from './components/widgets/widget-mcafee/widget-mcafee.component';
 
@@ -201,12 +200,13 @@ import { ConnectedHomeComponent } from './components/pages/page-security-wifi/ch
 import { ConnectedHomeMyHomeComponent } from './components/pages/page-security-wifi/children/connected-home-my-home/connected-home-my-home.component';
 
 // CHS widgets
-import { WidgetHomeSecurityAccountStatusComponent } from './components/widgets/widget-home-security-account-status/widget-home-security-account-status.component';
-import { WidgetHomeSecurityMyDeviceComponent } from './components/widgets/widget-home-security-my-device/widget-home-security-my-device.component';
-import { WidgetHomeSecurityAllDevicesComponent } from './components/widgets/widget-home-security-all-devices/widget-home-security-all-devices.component';
-
+import { HomeSecurityAccountStatusComponent } from './components/pages/page-connected-home-security/component/home-security-account-status/home-security-account-status.component';
+import { HomeSecurityMyDeviceComponent } from './components/pages/page-connected-home-security/component/home-security-my-device/home-security-my-device.component';
+import { HomeSecurityAllDevicesComponent } from './components/pages/page-connected-home-security/component/home-security-all-devices/home-security-all-devices.component';
+import { HomeSecurityDeviceComponent } from './components/pages/page-connected-home-security/component/home-security-device/home-security-device.component';
 // CHS pipes
 import { DaysIntervalPipe } from './pipe/connected-home-security/account-status/days-interval.pipe';
+import { CharacterLimitPipe } from './pipe/ui-chs-statusbar/character-limit.pipe';
 
 import { AutoupdateSettingsComponent } from './components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
 import { UiLightingProfileToggleComponent } from './components/ui/ui-lighting-profile-toggle/ui-lighting-profile-toggle.component';
@@ -228,7 +228,6 @@ import { ActiveProtectionSystemAdvancedComponent } from './components/pages/page
 import { UiColorWheelComponent } from './components/ui/ui-color-wheel/ui-color-wheel.component';
 import { SubpageDeviceSettingsInputAccessoryComponent } from './components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
 import { ModalIntelligentCoolingModesComponent } from './components/modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
-import { CharacterLimitPipe } from './pipe/ui-chs-statusbar/character-limit.pipe';
 import { UiTimePickerComponent } from './components/ui/ui-time-picker/ui-time-picker.component';
 import { VoiceComponent } from './components/pages/page-smart-assist/voice/voice.component';
 import { ModalVoiceComponent } from './components/modal/modal-voice/modal-voice.component';
@@ -236,6 +235,7 @@ import { CapitalizeFirstPipe } from './pipe/capitalize-pipe/capitalize-first.pip
 import { SanitizeModule } from './modules/sanitize.module';
 import { SmartStandbyComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/smart-standby/smart-standby.component';
 import { UiDaysPickerComponent } from './components/ui/ui-days-picker/ui-days-picker.component';
+import { DownloadFailedModalComponent } from './components/pages/page-smart-assist/voice/download-failed-modal/download-failed-modal.component';
 
 library.add(fas);
 library.add(fab);
@@ -262,7 +262,7 @@ library.add(fal);
 		WidgetQuestionsComponent,
 		WidgetDeviceUpdateComponent,
 		WidgetDeviceUpdateSettingsComponent,
-		WidgetHomeSecurityAccountStatusComponent,
+		HomeSecurityAccountStatusComponent,
 		PageQuestionsComponent,
 		ContainerCardComponent,
 		HeaderMainComponent,
@@ -384,7 +384,7 @@ library.add(fal);
 		PageNetworkBoostComponent,
 		PowerSmartSettingsComponent,
 		PageSettingsComponent,
-		WidgetHomeSecurityDeviceComponent,
+		HomeSecurityDeviceComponent,
 		UiLightingProfileComponent,
 		OledPowerSettingsComponent,
 		UiDropDownComponent,
@@ -404,8 +404,8 @@ library.add(fal);
 		UiLightingEffectComponent,
 		UiLightingSingleColorComponent,
 		UiLightingColorWheelComponent,
-		WidgetHomeSecurityMyDeviceComponent,
-		WidgetHomeSecurityAllDevicesComponent,
+		HomeSecurityMyDeviceComponent,
+		HomeSecurityAllDevicesComponent,
 		UiMacrokeyCollapsibleContainerComponent,
 		UiGamingDriverPopupComponent,
 		ActiveProtectionSystemComponent,
@@ -424,7 +424,8 @@ library.add(fal);
 		ModalVoiceComponent,
 		CapitalizeFirstPipe,
 		SmartStandbyComponent,
-		UiDaysPickerComponent
+		UiDaysPickerComponent,
+		DownloadFailedModalComponent
 	],
 	imports: [
 		BrowserModule,
@@ -478,7 +479,8 @@ library.add(fal);
 		ModalGamingLegionedgeComponent,
 		ModalChsWelcomeContainerComponent,
 		ModalIntelligentCoolingModesComponent,
-		ModalVoiceComponent
+		ModalVoiceComponent,
+		DownloadFailedModalComponent
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

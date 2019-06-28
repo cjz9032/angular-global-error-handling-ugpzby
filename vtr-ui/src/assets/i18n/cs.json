@@ -289,6 +289,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -391,16 +441,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Zaslat zpětnou vazbu",
+            "subtitle": "Řekněte nám, co si myslíte o Vantage.",
+            "button": "Zaslat zpětnou vazbu",
             "form": {
                 "email": "E-mail (volitelné)",
-                "comments": "Komentáře ...",
+                "comments": "Poznámky...",
                 "button": "Předložit",
                 "addScreenshot": "Přidat ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Děkujeme vám za vaši reakci !"
+                    "feedbackSuccess": "Děkujeme za váš názor."
                 },
                 "question1": "Líbí se vám nový styl aplikace Vantage?",
                 "question2": "Myslíte si, že aplikace funguje dobře?",
@@ -862,94 +912,94 @@
                 }
             },
             "displayCamera": {
-                "title": "Displej a kamera",
-                "subtitle": "Nastavení displeje a kamery",
-                "description": "V této části můžete vylepšit vizuální zážitek a nakonfigurovat vlastnosti kamery.Prohlédněte si další funkce a přizpůsobte si možnosti zobrazení.",
+                "title": "Prikaz i kamera",
+                "subtitle": "Postavke prikaza i kamere",
+                "description": "Ovaj odjeljak omogućava vam da poboljšate vizualni doživljaj i prilagodite svojstva kamere. Istražite više značajki i prilagodite doživljaj prikaza ovdje.",
                 "jumpTo": {
-                    "title": "PŘEJÍT K NASTAVENÍ",
+                    "title": "SKOČI NA POSTAVKE",
                     "shortcuts": {
                         "display": {
-                            "title": "Displej"
+                            "title": "Prikaz"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Kamera"
                         }
                     }
                 },
                 "display": {
-                    "title": "Displej",
+                    "title": "Prikaz",
                     "eyeCareMode": {
-                        "title": "Režim Péče o oči",
-                        "checkbox": "Naplánovat režim péče o zrak od západu do východu slunce",
+                        "title": "Način rada ugodan za oči",
+                        "checkbox": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",
                         "options": {
-                            "warm": "Teplé (lepší pro oči)",
-                            "cold": "Studená"
+                            "warm": "Toplo (bolje za oči)",
+                            "cold": "Hladno"
                         },
-                        "reset": "Resetovat teplotu",
-                        "tooltip": "Režim Péče o oči upravuje teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí.",
-                        "onSunsetToSunriseScheduleDescription": "Naplánovat režim péče o zrak od západu do východu slunce",
+                        "reset": "Ponovno postavite temperaturu",
+                        "tooltip": "Način rada ugodan za oči prilagođava temperaturu boje prikaza kako bi filtrirao plavu svjetlost i smanjio naprezanje očiju.",
+                        "onSunsetToSunriseScheduleDescription": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",
                         "note": {
-                            "title": "Poznámka",
-                            "description": "Program Lenovo Vantage potřebuje získat přístup k informacím o umístění pro výpočet času západu a východu slunce."
+                            "title": "Napomena",
+                            "description": "Lenovo Vantage mora pristupiti informacijama o lokaciji kako bi izračunao vrijeme zalaska i izlaska sunca u vašoj regiji."
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Temperatura boje prikaza",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Toplo (bolje za oči)",
+                            "cold": "Hladno"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Ponovno postavite temperaturu",
+                        "tooltip": "Način rada ugodan za oči prilagođava temperaturu boje prikaza kako bi filtrirao plavu svjetlost i smanjio naprezanje očiju.",
+                        "onSunsetToSunriseScheduleDescription": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Napomena",
+                            "description": "Lenovo Vantage mora pristupiti informacijama o lokaciji kako bi izračunao vrijeme zalaska i izlaska sunca u vašoj regiji."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Zaštita privatnosti",
+                        "description": "Tom se značajkom drugim korisnicima onemogućuje prikaz vašeg zaslona. Kada je uključena, mijenja se kut gledanja vašeg prikaza i na taj je način zaštićen od pogleda ljudi oko vas. Načine možete mijenjati i pritiskom na tipke \"Fn+D\".",
+                        "note": "Zaštita privatnosti ne radi u okomitom načinu prikaza zaslona. U ovom je načinu rada zaslon i dalje vidljiv sa strane.",
+                        "labelText": "Omogućivanje značajke prilikom unosa lozinke"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Postavke napajanja OLED zaslona",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "OLED zaslon računala može smanjiti potrošnju energije i produljiti trajanje baterije selektivnim zatamnjivanjem dijelova zaslona.",
+                            "Da bi se produljio vijek trajanja zaslona, preporučuje se i zatamnjenje programske trake i drugih područja na zaslonu koja se ne mijenjaju često."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Ponovno postavite temperaturu",
+                        "tooltip": "Ova značajka može smanjiti potrošnju energije i produljiti trajanje baterije selektivnim zatamnjivanjem dijelova zaslona."
                     }
                 },
                 "camera": {
-                    "title": "Fotoaparát",
+                    "title": "Kamera",
                     "note": {
-                        "title": "Poznámka",
-                        "description": "Program Lenovo Vantage nemá oprávnění k přístupu ke kameře.Povolte tedy programu Lenovo Vantage přístup ke kameře."
+                        "title": "Napomena",
+                        "description": "Lenovo Vantage nema dozvole za pristup kameri. Omogućite aplikaciji Lenovo Vantage pristup kameri."
                     },
-                    "url": "Přejít na nastavení ochrany soukromí systému Windows",
+                    "url": "Idite na postavke privatnosti sustava Windows",
                     "cameraPrivacy": {
-                        "title": "Režim soukromí kamery",
-                        "tooltip": "Je-li aktivní nastavení soukromí, přestane kamera odesílat živý obraz.Tuto volbu tedy zapněte pouze v případě, když během videohovoru nechcete sdílet svůj obraz."
+                        "title": "Način privatnosti kamere",
+                        "tooltip": "Kad je omogućena postavka za zaštitu privatnosti, kamera prestaje slati slike uživo. Tu postavku uključite samo kad ne želite svoju sliku slati drugima tijekom videopoziva."
                     },
                     "camera": {
-                        "title": "Fotoaparát",
-                        "tooltip": "Kliknutím sem obnovíte výchozí nastavení vlastností kamery.",
-                        "reset": "Obnovit nastavení z výroby"
+                        "title": "Kamera",
+                        "tooltip": "Kliknite ovdje kako biste vratili svojstva Kamere na zadane postavke.",
+                        "reset": "Vrati na tvorničke postavke"
                     },
-                    "brightness": "Jas",
+                    "brightness": "Svjetlina",
                     "contrast": "Kontrast",
-                    "autoExposure": "Automatická expozice",
-                    "autoFocus": "Automatické ostření",
-                    "notAvailable": "Kamera není dostupná",
+                    "autoExposure": "Automatska ekspozicija",
+                    "autoFocus": "Automatski fokus",
+                    "notAvailable": "Nije dostupna kamera",
                     "camerablur": {
-                        "title": "Rozostření pozadí při použití kamery",
-                        "caption": "Tato funkce rozostří pozadí při použití kamery pro libovolný videohovor nebo fotografování.V následujících volbách si můžete vybrat jiný efekt.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "title": "Zamagljenje pozadine kamere",
+                        "caption": "Ova značajka zamagljuje pozadinu kada se koristite kamerom za videopoziv ili fotografiranje. Možete odabrati različite efekte iz odabira u nastavku.",
+                        "blurMode": "Način zamagljenja",
+                        "comicMode": "Način stripa",
+                        "sketchMode": "Način skice"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1369,7 +1419,9 @@
             "status": "Stav: ",
             "subDescription1": "Tento výrobek má roční omezenou záruku a je oprávněn k opravě servisu. Další zákazníci mohou zákazníci získat telefonicky v místním servisním středisku. Prodejci mohou pro tento produkt poskytnout opravu typu carry-in.",
             "subDescription2": "Nepodařilo se nám najít podrobnosti o záruce pro dané zařízení. Další možnosti záruky najdete na našem webu podpory.",
-            "viewWarrantyOptions": "ZOBRAZIT MOŽNOSTI ZÁRUKY"
+            "viewWarrantyOptions": "ZOBRAZIT MOŽNOSTI ZÁRUKY",
+            "offlineTips1": "Pokud chcete nejnovější informace o záruce, připojte se k internetu.",
+            "offlineTips2": "Pokud chcete aktualizovat informace o záruce, připojte se k internetu."
         },
         "documentation": {
             "title": "Dokumentace",

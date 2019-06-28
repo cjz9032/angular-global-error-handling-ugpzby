@@ -566,7 +566,12 @@
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
 				"updating": "Updating",
-				"thresholdNote": "To extend the battery lifespan, you have set your battery to stop charging at",
+				"thresholdNote": {
+					"note1": "To extend the battery lifespan, you have set your ",
+					"note2": "to stop charging at ",
+					"note3": "battery",
+					"note4": "and "
+				},
 				"voltageError": "Battery voltage incorrect",
 				"batteryNotDetected": "No Battery Detected",
 				"details": {
@@ -719,15 +724,15 @@
 						"optimize": "optimize system for",
 						"apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
 						"options": {
-							"quiteCool3": "Cool Mode",
-							"performance3": "High Performance",
-							"quiteCool4": "Quiet & Cool",
+							"quiteCool3": "Cool & Quiet",
+							"performance3": "Performance",
+							"quiteCool4": "Cool & Quiet",
 							"performance4": "Performance",
-							"quiteCool5": "Quiet & Cool",
+							"quiteCool5": "Cool & Quiet",
 							"performance5": "Performance",
 							"batterySaving": "Battery Saving",
 							"performance13": "Performance",
-							"quiteCool13": "Quiet & Cool",
+							"quiteCool13": "Cool & Quiet",
 							"performance14": "Extreme Performance",
 							"quiteCool14": "Intelligent Cooling"
 						},
@@ -846,7 +851,7 @@
 				},
 				"energyStar": {
 					"title": "Energy Star",
-					"description": "AN ENERGY STAR CERTIFIED PRODUCT"
+					"description": "An ENERGY STAR certified product"
 				}
 			},
 			"audio": {
@@ -1196,6 +1201,11 @@
 					"point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
 					"point9": "Click the microphone icon to start speaking",
 					"closeText": "close"
+				},
+				"modalInstallationFailed": {
+					"btnText": "ok",
+					"title": "Install Failed",
+					"desc": "Install failed, please try again later in order to use Lenovo Voice."
 				}
 			}
 		}

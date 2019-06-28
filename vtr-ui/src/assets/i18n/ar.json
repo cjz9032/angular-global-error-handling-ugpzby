@@ -289,6 +289,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -391,16 +441,16 @@
             "buttonText": "Get Support"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "تقديم تعليقات",
+            "subtitle": "أخبرنا عن رأيك حول Vantage.",
+            "button": "تقديم ملاحظات",
             "form": {
                 "email": "البريد الإلكتروني اختياري",
-                "comments": "...تعليقات",
+                "comments": "التعليقات...",
                 "button": "خضع",
                 "addScreenshot": "إضافة لقطة شاشة",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
+                    "feedbackSuccess": "نشكرك على تعليقاتك!"
                 },
                 "question1": "هل أعجبك نمط Vantage الجديد؟",
                 "question2": "هل تعتقد أن الأداء مقبول؟",
@@ -864,7 +914,7 @@
             "displayCamera": {
                 "title": "جهاز العرض والكاميرا",
                 "subtitle": "إعدادات جهاز العرض والكاميرا",
-                "description": "يمكّنك هذا القسم من تحسين تجربتك المرئية وتكوين خصائص الكاميرا.استكشف المزيد من الميزات وخصص تجربة العرض هنا.",
+                "description": "يمكّنك هذا القسم من تحسين تجربتك المرئية وتكوين خصائص الكاميرا. استكشف المزيد من الميزات وخصص تجربة العرض هنا.",
                 "jumpTo": {
                     "title": "انتقال سريع إلى الإعدادات",
                     "shortcuts": {
@@ -872,12 +922,12 @@
                             "title": "جهاز العرض"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "الكاميرا"
                         }
                     }
                 },
                 "display": {
-                    "title": "جهازالعرض",
+                    "title": "جهاز العرض",
                     "eyeCareMode": {
                         "title": "وضع العناية بالعين",
                         "checkbox": "جدولة وضع العناية بالعين من غروب الشمس حتى شروقها",
@@ -889,47 +939,47 @@
                         "tooltip": "يقوم وضع العناية بالعين بضبط درجة حرارة ألوان جهاز العرض لتصفية الضوء الأزرق وتقليل إجهاد العين.",
                         "onSunsetToSunriseScheduleDescription": "جدولة وضع العناية بالعين من غروب الشمس حتى شروقها",
                         "note": {
-                            "title": "ملاحظة",
+                            "title": "ملحوظة",
                             "description": "يحتاج Lenovo Vantage إلى الوصول إلى معلومات موقعك لحساب وقت الغروب وشروق الشمس في منطقتك."
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "درجة حرارة ألوان جهاز العرض",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "دافئ (أفضل للعيون)",
+                            "cold": "بارد"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "إعادة تعيين درجة الحرارة",
+                        "tooltip": "يقوم وضع العناية بالعين بضبط درجة حرارة ألوان جهاز العرض لتصفية الضوء الأزرق وتقليل إجهاد العين.",
+                        "onSunsetToSunriseScheduleDescription": "جدولة وضع العناية بالعين من غروب الشمس حتى شروقها",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "ملحوظة",
+                            "description": "يحتاج Lenovo Vantage إلى الوصول إلى معلومات موقعك لحساب وقت الغروب وشروق الشمس في منطقتك."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "حماية الخصوصية",
+                        "description": "بإمكان هذه الميزة منع الأشخاص الآخرين من استراق النظر إلى شاشتك. عند تشغيلها، فهي تغير زاوية الرؤية للشاشة، وتحافظ على الخصوصية بحمايتك من المتجولين حولك. يمكنك أيضًا تبديل الأوضاع بالضغط على مفتاحي \"Fn+D\".",
+                        "note": "لا تعمل ميزة حماية الخصوصية في الوضع الأفقي للشاشة. في هذا الوضع، تظل الشاشة مرئية من الجوانب.",
+                        "labelText": "تمكين هذه الميزة عند كتابه كلمات المرور"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "إعدادات طاقة جهاز عرض OLED",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "يمكن أيضًا لجهاز عرض OLED‬ في الكمبيوتر خفض استهلاك الطاقة وزيادة عمر البطارية عن طريق تعتيم أجزاء من جهاز العرض بطريقة انتقائية.",
+                            "من المستحسن أيضًا تعتيم شريط المهام والمناطق الأخرى على جهاز العرض التي لا تتغير بشكل متكرر لإطالة العمر الإجمالي لجهاز العرض."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "إعادة تعيين درجة الحرارة",
+                        "tooltip": "يمكن أيضًا لجهاز عرض OLED‬ في الكمبيوتر الخاص بك خفض استهلاك الطاقة وزيادة عمر البطارية عن طريق تعتيم أجزاء من جهاز العرض بطريقة انتقائية."
                     }
                 },
                 "camera": {
                     "title": "الكاميرا",
                     "note": {
-                        "title": "ملاحظة",
-                        "description": "لا تتوفر أذونات الوصول إلى الكاميرا لتطبيق Lenovo Vantage.يُرجى تشغيل إذن الوصول إلى الكاميرا لتطبيق Lenovo Vantage."
+                        "title": "ملحوظة",
+                        "description": "لا تتوفر أذونات الوصول إلى الكاميرا لتطبيق Lenovo Vantage. يُرجى تشغيل إذن الوصول إلى الكاميرا لتطبيق Lenovo Vantage."
                     },
-                    "url": "انتقال إلى إعدادات خصوصية Windows",
+                    "url": "انتقال إلى إعدادات خصوصية Windows",
                     "cameraPrivacy": {
                         "title": "وضع خصوصية الكاميرا",
                         "tooltip": "تتوقف الكاميرا عن إرسال صور مباشرة عند تمكين إعداد الخصوصية. شغّل هذا الإعداد فقط عندما لا تريد مشاركة صورك مع الآخرين أثناء إجراء مكالمات فيديو."
@@ -946,10 +996,10 @@
                     "notAvailable": "الكاميرا غير متوفرة",
                     "camerablur": {
                         "title": "تمويه الخلفية في الكاميرا",
-                        "caption": "تقوم هذه الميزة بإضفاء التمويه على الخلفية عندما تستخدم الكاميرا لأي مكالمة فيديو أو التقاط الصور.يمكنك اختيار تأثير مختلف من الأقسام التالية.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "تقوم هذه الميزة بإضفاء التمويه على الخلفية عندما تستخدم الكاميرا لأي مكالمة فيديو أو التقاط الصور. يمكنك اختيار تأثير مختلف من الأقسام التالية.",
+                        "blurMode": "وضع التمويه",
+                        "comicMode": "الوضع الكوميدي",
+                        "sketchMode": "وضع التخطيط"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1369,7 +1419,9 @@
             "status": "الحالة: ",
             "subDescription1": "هذا المنتج لديه سنوات ضمان محدودة ويتمتع بخدمة إصلاح مستودع. يمكن للعملاء الاتصال بمركز الخدمة المحلي للحصول علي مزيد من المعلومات. يمكن للتجار توفير إصلاح بإحضار المنتج لهذا المنتج.",
             "subDescription2": "لم نكن قادرون علي تحديد تفاصيل الضمان لجهازك، للحصول علي المزيد من خيارات الضمان، يرجى زيارة موقعنا علي الإنترنت الخاص بالدعم.",
-            "viewWarrantyOptions": "عرض خيارات الضمان"
+            "viewWarrantyOptions": "عرض خيارات الضمان",
+            "offlineTips1": "يرجى الاتصال بالإنترنت للحصول على أحدث معلومات الضمان.",
+            "offlineTips2": "يرجى الاتصال بالإنترنت لتحديث معلومات الضمان."
         },
         "documentation": {
             "title": "المستندات",

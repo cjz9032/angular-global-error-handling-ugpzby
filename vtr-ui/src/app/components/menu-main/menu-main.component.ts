@@ -318,7 +318,6 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 						this.smartAssist.getIntelligentScreenVisibility()
 					]).then((responses: any[]) => {
 						console.log('showSmartAssist.Promise.all()', responses);
-						// const isAvailable = (responses[0] || responses[1] || responses[2].available || responses[3] || responses[4]);
 						const isAvailable = (responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]);
 						// const isAvailable = true;
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsLenovoVoiceSupported, responses[2]);
