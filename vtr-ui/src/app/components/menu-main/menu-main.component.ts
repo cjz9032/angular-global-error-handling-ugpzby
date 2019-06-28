@@ -21,6 +21,7 @@ import { RegionService } from 'src/app/services/region/region.service';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { ModalCommonConfirmationComponent } from '../modal/modal-common-confirmation/modal-common-confirmation.component';
+import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -305,6 +306,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 				if (!smartAssistItem) {
 					// if cache has value true for IsSmartAssistSupported, add menu item
 					const isSmartAssistSupported = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, false);
+
 					if (isSmartAssistSupported) {
 						this.addSmartAssistMenu(myDeviceItem);
 					}
@@ -318,6 +320,14 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 						this.smartAssist.getIntelligentScreenVisibility()
 					]).then((responses: any[]) => {
 						console.log('showSmartAssist.Promise.all()', responses);
+						// cache smart assist capability
+						const smartAssistCapability: SmartAssistCapability = new SmartAssistCapability();
+						smartAssistCapability.isIntelligentSecuritySupported = responses[0] || responses[1];
+						smartAssistCapability.isLenovoVoiceSupported = responses[2];
+						smartAssistCapability.isIntelligentMediaSupported = responses[3];
+						smartAssistCapability.isIntelligentScreenSupported = responses[4];
+						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+
 						const isAvailable = (responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]);
 						// const isAvailable = true;
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsLenovoVoiceSupported, responses[2]);

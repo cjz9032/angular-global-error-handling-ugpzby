@@ -13,6 +13,7 @@ import { QaService } from 'src/app/services/qa/qa.service';
 import { IntelligentScreen } from 'src/app/data-models/smart-assist/intelligent-screen.model';
 import { parse } from 'querystring';
 import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
+import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -74,6 +75,7 @@ export class PageSmartAssistComponent implements OnInit {
 
 	cardContentPositionA: any = {};
 	private machineType: number;
+	private smartAssistCapability: SmartAssistCapability = undefined;
 
 	constructor(
 		private smartAssist: SmartAssistService,
@@ -91,6 +93,7 @@ export class PageSmartAssistComponent implements OnInit {
 
 	ngOnInit() {
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		this.smartAssistCapability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCapability, undefined);
 		this.initLenovoVoice();
 		this.setIsThinkPad(this.machineType === 1);
 		this.setIntelligentSecurity();
