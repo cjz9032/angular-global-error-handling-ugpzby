@@ -1211,7 +1211,7 @@
         "ignoredUpdates": "Genegeerde update(s)",
         "successInstall": "Geïnstalleerd op",
         "failedInstall": "Installatie mislukt op",
-        "at": "op",
+        "at": "om",
         "readMore": "Meer weergeven",
         "popup": {
             "reboot": "Opnieuw opstarten",
@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "Uw ecosysteem beveiligingsoverzicht",
             "allDevices": "Alle apparaten",
-            "myDevice": "Mijn apparaat",
+			"myDevice": "Mijn apparaat",
+			"thisComputer": "This computer",
             "secure": "Beveiligen",
             "needAttention": "HEEFT AANDACHT NODIG",
             "manageAccount": "Account beheren",

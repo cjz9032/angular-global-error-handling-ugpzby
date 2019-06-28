@@ -1209,8 +1209,8 @@
         "recommendedUpdates": "Preporučena ažuriranja",
         "optionalUpdates": "Neobavezna ažuriranja",
         "ignoredUpdates": "Zanemarena ažuriranja",
-        "successInstall": "Uspješno instalirano na",
-        "failedInstall": "Instalacija nije uspjela na",
+        "successInstall": "Uspješno instalirano",
+        "failedInstall": "Instalacija nije uspjela",
         "at": "u",
         "readMore": "Pročitajte više",
         "popup": {
@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "Pregled sigurnosti ekosustava",
             "allDevices": "Svi uređaji",
-            "myDevice": "Moj uređaj",
+			"myDevice": "Moj uređaj",
+			"thisComputer": "This computer",
             "secure": "SIGURNO",
             "needAttention": "ZAHTIJEVA PAŽNJU",
             "manageAccount": "Upravljanje računom",

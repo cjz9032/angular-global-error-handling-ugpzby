@@ -1209,8 +1209,8 @@
         "recommendedUpdates": "Önerilen Güncellemeler",
         "optionalUpdates": "İsteğe Bağlı Güncellemeler",
         "ignoredUpdates": "Yoksayılan Güncellemeler",
-        "successInstall": "Başarılı yükleme tarihi",
-        "failedInstall": "Başarısız yükleme tarihi",
+        "successInstall": "Şu tarihte yüklendi:",
+        "failedInstall": "Şu tarihte yükleme başarısız:",
         "at": "saat",
         "readMore": "Okumaya devam edin",
         "popup": {
@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "Ekosisteminizin Güvenliğine Genel Bakış",
             "allDevices": "Tüm Cihazlar",
-            "myDevice": "Cihazım",
+			"myDevice": "Cihazım",
+			"thisComputer": "This computer",
             "secure": "GÜVENLİ",
             "needAttention": "İLGİLENMENİZ GEREKİYOR",
             "manageAccount": "Hesabı Yönet",

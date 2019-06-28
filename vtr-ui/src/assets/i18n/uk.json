@@ -1209,8 +1209,8 @@
         "recommendedUpdates": "Рекомендовані оновлення",
         "optionalUpdates": "Необов'язкові оновлення",
         "ignoredUpdates": "Пропущені оновлення",
-        "successInstall": "Успішно інстальовано на",
-        "failedInstall": "Не вдалось інсталювати на",
+        "successInstall": "Успішно інстальовано",
+        "failedInstall": "Не вдалось інсталювати",
         "at": "в",
         "readMore": "Розгорнути",
         "popup": {
@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "Огляд безпеки вашої екосистеми",
             "allDevices": "Усі пристрої",
-            "myDevice": "Мій пристрій",
+			"myDevice": "Мій пристрій",
+			"thisComputer": "This computer",
             "secure": "У БЕЗПЕЦІ",
             "needAttention": "ПОТРЕБУЄ УВАГИ",
             "manageAccount": "Керування обліковим записом",

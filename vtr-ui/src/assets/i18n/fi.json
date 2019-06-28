@@ -1209,8 +1209,8 @@
         "recommendedUpdates": "Suositeltavat päivitykset",
         "optionalUpdates": "Valinnaiset päivitykset",
         "ignoredUpdates": "Huomiotta jätetyt päivitykset",
-        "successInstall": "Asennus onnistui kohteeseen",
-        "failedInstall": "Asennus epäonnistui kohteeseen",
+        "successInstall": "Asennus onnistui",
+        "failedInstall": "Asennus epäonnistui",
         "at": "klo",
         "readMore": "Lue lisää",
         "popup": {
@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "Yleistä ekosysteemin suojauksesta",
             "allDevices": "Kaikki laitteet",
-            "myDevice": "Oma laite",
+			"myDevice": "Oma laite",
+			"thisComputer": "This computer",
             "secure": "TURVALLINEN",
             "needAttention": "TOIMENPITEITÄ TARVITAAN",
             "manageAccount": "Hallitse tiliä",

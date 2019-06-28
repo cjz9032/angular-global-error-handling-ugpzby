@@ -1209,9 +1209,9 @@
         "recommendedUpdates": "建議更新",
         "optionalUpdates": "選用更新項目",
         "ignoredUpdates": "已忽略的更新",
-        "successInstall": "成功安裝在",
-        "failedInstall": "無法安裝在",
-        "at": "在",
+        "successInstall": "成功安裝的日期：",
+        "failedInstall": "安裝失敗的日期：",
+        "at": "時間：",
         "readMore": "較多內容",
         "popup": {
             "reboot": "重新開機",
@@ -1349,7 +1349,8 @@
         "overview": {
             "overviewBlockTitle": "您的生態系統安全概要",
             "allDevices": "全部裝置",
-            "myDevice": "我的裝置",
+			"myDevice": "我的裝置",
+			"thisComputer": "This computer",
             "secure": "安全",
             "needAttention": "需要關注",
             "manageAccount": "管理帳戶",
