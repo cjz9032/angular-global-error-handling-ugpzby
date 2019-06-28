@@ -3,6 +3,8 @@ import { ArticlesService } from '../articles.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { RoutersName } from '../../../privacy-routing-name';
+import { SecureMath } from '@lenovo/tan-client-bridge';
+import { combineLatest } from 'rxjs';
 
 @Component({
 	selector: 'vtr-article-single',
@@ -10,15 +12,18 @@ import { RoutersName } from '../../../privacy-routing-name';
 	styleUrls: ['./article-single.component.scss']
 })
 export class ArticleSingleComponent implements OnInit {
-	@Input() article;
-
 	article$ = this.route.queryParams.pipe(
 		switchMap((params) => this.articlesService.getArticle(params.articleId)),
 	);
-	otherArticles$ = this.articlesService.getListOfArticles().pipe(
-		withLatestFrom(this.route.queryParams),
-		map(([articles, params]) => articles.filter((article) => article.id !== params.articleId)),
-		map((articles) => articles.slice(0, 2))
+	otherArticles$ = combineLatest([
+		this.articlesService.getListOfArticles(),
+		this.route.queryParams
+	]).pipe(
+		map(([articles, params]) => articles.filter((article) => article.ActionLink !== params.articleId)),
+		map((articles) => {
+			const randomIndex = Math.floor(SecureMath.random() * (articles.length - 2));
+			return articles.slice(randomIndex, randomIndex + 2);
+		})
 	);
 
 	constructor(

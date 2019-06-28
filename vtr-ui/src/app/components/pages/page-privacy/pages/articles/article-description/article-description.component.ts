@@ -17,10 +17,23 @@ export class ArticleDescriptionComponent implements AfterViewInit {
 	ngAfterViewInit() {
 		const thisElement = this.articleInner.nativeElement;
 		thisElement.addEventListener('click', (event) => {
-			if (event.target.tagName.toLowerCase() === 'a') {
-				this.vantageCommunicationService.openUri(event.target.href);
-			}
+			this.searchLink(event.target);
 			event.preventDefault();
 		});
+	}
+
+	searchLink(e) {
+		console.log('click', e.tagName);
+		if (e.tagName.toLowerCase() === 'html') {
+			return;
+		}
+
+
+		if (e.tagName.toLowerCase() === 'a') {
+			this.vantageCommunicationService.openUri(e.href);
+			return;
+		}
+
+		this.searchLink(e.parentElement);
 	}
 }
