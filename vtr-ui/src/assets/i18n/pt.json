@@ -682,7 +682,12 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -1057,7 +1062,7 @@
         },
         "smartAssist": {
             "title": "Assistente Inteligente",
-            "description": "A Deteção Inteligente Lenovo combina os vários sensores no computador para detetar as suas atividades,e ajustar as definições para uma gestão da energia ideal, e proteger a sua privacidade.",
+            "description": "A Deteção Inteligente Lenovo combina os vários sensores no computador para detetar as suas atividades, ajustar as definições para uma gestão da energia ideal e proteger a sua privacidade.",
             "jumpTo": {
                 "title": "IR PARA AS DEFINIÇÕES",
                 "security": "Segurança",
@@ -1071,11 +1076,11 @@
                 "readMore": "Ler mais",
                 "HumanPresenceDetection": {
                     "title": "Deteção de presença humana",
-                    "tooltip": "Clique aqui para repor as definições de Deteção de presença humana."
+                    "tooltip": "Clique aqui para repor as definições de deteção de presença humana."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Deteção de presença do utilizador",
+                    "tooltip": "Clique aqui para repor as definições de Deteção de presença humana."
                 },
                 "zeroTouchLogin": {
                     "title": "Login Zero Touch",
@@ -1083,7 +1088,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Bloqueio Zero Touch",
-                    "caption": "Esta funcionalidade escurece o ecrã e bloqueia o computador quando não é detetada a presença do utilizador.Poderá reduzir as possibilidades de acesso não autorizado ao computador quando o utilizador deixa o computador sem vigilância e desbloqueado. Também reduz o consumo de energia através da colocação do sistema no Modo de Suspensão Moderno quando não é detetada a presença do utilizador.",
+                    "caption": "Esta funcionalidade escurece o ecrã e bloqueia o computador quando não é detetada a presença do utilizador. Poderá reduzir as possibilidades de acesso não autorizado ao computador quando o utilizador deixa o computador sem vigilância e desbloqueado. Também reduz o consumo de energia através da colocação do sistema no Modo de Suspensão Moderno quando não é detetada a presença do utilizador.",
                     "autoScreenLockTimer": {
                         "title": "TEMPORIZADOR DE BLOQUEIO DE ECRÃ AUTOMÁTICO",
                         "radioButton": {
@@ -1091,46 +1096,46 @@
                             "medium": "Médio",
                             "slow": "Lento"
                         },
-                        "toolTipContent": "Seleccione a opção pretendida para bloquear o ecrã a uma velocidade rápida/média/baixa quando a sua presença não é detetada.Contudo, o tempo em que o ecrã será bloqueado também é afetado pelo cenário real do utilizador, pela capacidade do sensor e pelas configurações de tempo limite do ecrã do Windows. Por isso, sugerimos que bloqueie instantaneamente o seu sistema antes de sair."
+                        "toolTipContent": "Seleccione a opção pretendida para bloquear o ecrã a uma velocidade rápida/média/baixa quando a sua presença não é detetada. Contudo, o tempo em que o ecrã será bloqueado também é afetado pelo cenário real do utilizador, pela capacidade do sensor e pelas definições de tempo limite do ecrã do Windows. Por isso, sugerimos que bloqueie instantaneamente o seu sistema antes de sair."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "O ajuste automático de distância atualizará automaticamentea distância de deteção através de um motor de IA.",
+                    "title": "AJUSTE DA SENSIBILIDADE DA DISTÂNCIA",
+                    "caption": "O Ajuste automático de distância atualizará automaticamente a distância de deteção através de um motor de IA.",
                     "options": {
                         "near": "Perto",
                         "far": "Longe"
                     }
                 },
                 "note": {
-                    "description1": "Esta funcionalidade depende do Windows Hello.Verifique se o reconhecimento facial está ativado nas configurações do Windows.",
-                    "description2": "O recurso usa sensores e câmara para detetar a sua presença.No entanto, a funcionalidade NÃO recolhe, guarda, ou transmite qualquer dado pessoal ou imagem.",
-                    "description3": "1. Se o computador estiver no modo Tenda, Tablet ou Suporte,estas funcionalidades poderão não funcionar corretamente.",
-                    "description4": "2. Se o computador estiver no modo de hibernação ou tiver sido desligado.O início de sessão automático com câmara de IV não irá funcionar.",
-                    "description5": "3. Ajuste o ecrã do computador para um ânguloque permita que a câmara de IV possa reconhecer o seu rosto para o início de sessão automático."
+                    "description1": "Esta funcionalidade depende do Windows Hello. Verifique se o reconhecimento facial está ativado nas definições do Windows.",
+                    "description2": "O recurso usa sensores e câmara para detetar a sua presença. No entanto, a funcionalidade NÃO recolhe qualquer dado pessoal.",
+                    "description3": "1. Se o computador estiver no modo Tenda, Tablet ou Suporte, estas funcionalidades poderão não funcionar corretamente.",
+                    "description4": "2. Se o computador estiver no modo de hibernação ou tiver sido desligado. O início de sessão automático com câmara de IV não irá funcionar.",
+                    "description5": "3. Ajuste o ecrã do computador para um ângulo que permita que a câmara de IV possa reconhecer o seu rosto para o início de sessão automático."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Vá para as definições Windows Hello",
                     "screenTimeoutSettings": "Aceda a Definições de tempo de espera do ecrã"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "REPOR AS PREDEFINIÇÕES"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Ecrã Inteligente",
+                "description": "A Deteção Inteligente Lenovo combina os vários sensores no computador para detetar as suas atividades e ajustar as definições de gestão da energia. Por exemplo, escurecerá o ecrã se detetar que está a caminhar, mas não escurecerá se detetar que está a ler.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Desligar o ecrã automaticamente",
+                    "caption": "Desativa o ecrã automaticamente quando voltado para baixo ou ao caminhar.",
+                    "note": "Esta função não se encontra disponível se as definições do Esquema de energia estiverem configuradas para \"nunca desligar o ecrã em bateria\" na secção \"Sistema\" das Definições do Windows. Selecione um valor que não seja \"Nunca\" para ativar esta função.",
+                    "windowsLink": "Aceda às definições de Energia e suspensão nas definições do Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Manter o meu ecrã",
+                    "caption": "Manter o ecrã ativado quando estou a ler ou a navegar.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Minutos até escurecer do ecrã ao navegar",
+                        "startTime": "0 minutos",
+                        "endTime": "60 minutos"
                     }
                 }
             },
@@ -1165,10 +1170,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Multimédia Inteligente",
+                "title": "Reprodução de vídeo Zero Touch",
+                "desc": "Esta funcionalidade irá colocar o vídeo em pausa quando o utilizador deixar o computador e retomar o vídeo quando este voltar.",
+                "tooltip": "Esta funcionalidade não se aplica a leitores de vídeo Web. Os leitores de vídeo locais populares, tais como o Windows Media Player e o 5KPlayer, entre outros, suportam esta funcionalidade."
             },
             "voice": {
                 "title": "Voice",
@@ -1195,6 +1200,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }

@@ -682,7 +682,12 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -1057,7 +1062,7 @@
         },
         "smartAssist": {
             "title": "Inteligentny asystent",
-            "description": "Funkcja inteligentnej detekcji Lenovo łączy działanie różnych czujników w komputerze, co pozwala wykryć aktywność użytkownika i odpowiedniodostosować optymalne ustawienia zarządzania energią oraz chronić prywatność.",
+            "description": "Funkcja inteligentnej detekcji Lenovo łączy działanie różnych czujników w komputerze, co pozwala wykryć aktywność użytkownika i odpowiednio dostosować optymalne ustawienia zarządzania energią oraz chronić prywatność.",
             "jumpTo": {
                 "title": "PRZEJDŹ DO USTAWIEŃ",
                 "security": "Ochrona",
@@ -1074,8 +1079,8 @@
                     "tooltip": "Kliknij tutaj, aby zresetować ustawienia wykrywania obecności człowieka."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Wykrywanie obecności użytkownika",
+                    "tooltip": "Kliknij tutaj, aby zresetować ustawienia wykrywania obecności człowieka."
                 },
                 "zeroTouchLogin": {
                     "title": "Logowanie bez dotyku",
@@ -1083,7 +1088,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Blokada bez dotyku",
-                    "caption": "Ta funkcja przyciemni ekran i zablokuje komputer, gdy nieobecność użytkownika zostanie wykryta.Zmniejsza możliwość nieuprawnionego dostępu do komputera, gdy zostawisz niezablokowany komputer bez nadzoru. Zmniejsza również zużycie energii, przełączając system w tryb wstrzymania, gdy zostanie wykryta Twoja nieobecność.",
+                    "caption": "Ta funkcja przyciemni ekran i zablokuje komputer, gdy nieobecność użytkownika zostanie wykryta. Zmniejsza ona możliwość nieuprawnionego dostępu do komputera, gdy zostawisz niezablokowany komputer bez nadzoru. Zmniejsza również zużycie energii, przełączając system w tryb wstrzymania, gdy zostanie wykryta Twoja nieobecność.",
                     "autoScreenLockTimer": {
                         "title": "LICZNIK AUTOMATYCZNEJ BLOKADY EKRANU",
                         "radioButton": {
@@ -1091,46 +1096,46 @@
                             "medium": "Średnia",
                             "slow": "Wolno"
                         },
-                        "toolTipContent": "Wybierz żądaną opcję, aby szybko/umiarkowanie/wolno zablokować ekran, gdy Twoja obecność nie zostanie wykryta.W rzeczywistości czas, w którym ekran zostanie zablokowany, zależy również od danego przypadku, możliwości czujnika i ustawienia limitu czasu ekranu systemu Windows. Dlatego przed odejściem od komputera zdecydowanie zalecamy natychmiastowe zablokowanie systemu."
+                        "toolTipContent": "Wybierz żądaną opcję, aby szybko/umiarkowanie/wolno zablokować ekran, gdy Twoja obecność nie zostanie wykryta. W rzeczywistości czas, w którym ekran zostanie zablokowany, zależy również od danego przypadku, możliwości czujnika i ustawienia limitu czasu ekranu systemu Windows. Dlatego przed odejściem od komputera zdecydowanie zalecamy natychmiastowe zablokowanie systemu."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Automatyczna regulacja odległości automatycznie aktualizujeodległość wykrywania za pomocą silnika AI.",
+                    "title": "REGULACJA CZUŁOŚCI ODLEGŁOŚCI",
+                    "caption": "Automatyczna regulacja odległości automatycznie aktualizuje odległość wykrywania za pomocą silnika AI.",
                     "options": {
                         "near": "Blisko",
                         "far": "Daleko"
                     }
                 },
                 "note": {
-                    "description1": "Ta funkcja zależy od funkcji Windows Hello.Upewnij się, że funkcja rozpoznawania twarzy jest włączona w ustawieniach systemu Windows.",
-                    "description2": "Funkcja wykorzystuje czujniki i kamerę do wykrywania Twojej obecności.Jednak ta funkcja NIE zbiera, nie zapisuje oraz nie ujawnia żadnych danych osobowych ani obrazów.",
-                    "description3": "1.Te funkcje mogą nie działać prawidłowo, gdy komputer jest w trybie namiotu, tabletu lub podstawki.",
-                    "description4": "2. Gdy komputer jest w trybie hibernacji lub został wyłączony.Automatyczne logowanie kamery na podczerwień nie będzie działać.",
-                    "description5": "3. Dostosuj ekran komputera do odpowiedniego kąta,tak aby kamera IR mogła rozpoznać Twoją twarz w celu automatycznego logowania."
+                    "description1": "Ta funkcja zależy od funkcji Windows Hello. Upewnij się, że funkcja rozpoznawania twarzy jest włączona w ustawieniach systemu Windows.",
+                    "description2": "Funkcja wykorzystuje czujniki i kamerę do wykrywania Twojej obecności. Jednak ta funkcja NIE zbiera żadnych danych osobowych.",
+                    "description3": "1. Funkcja może nie działać prawidłowo, gdy komputer jest w trybie namiotu, tabletu lub podstawki.",
+                    "description4": "2. Gdy komputer jest w trybie hibernacji lub został wyłączony. Automatyczne logowanie kamery na podczerwień nie będzie działać.",
+                    "description5": "3. Dostosuj ekran komputera do odpowiedniego kąta, tak aby kamera IR mogła rozpoznać Twoją twarz w celu automatycznego logowania."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Przejdź do ustawień funkcji Windows Hello",
                     "screenTimeoutSettings": "Przejdź do ustawień limitu czasu ekranu"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "RESETUJ DO USTAWIEŃ DOMYŚLNYCH"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Inteligentny ekran",
+                "description": "Funkcja inteligentnej detekcji Lenovo łączy działanie różnych czujników w komputerze, co pozwala wykryć aktywność użytkownika i odpowiednio dostosować ustawienia zarządzania energią. Przykładowo, powoduje przyciemnienie wyświetlacza, jeśli wykryje, że użytkownik idzie, jednak wyświetlacz nie zostanie przyciemniony, gdy okaże się, że użytkownik czyta.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Automatyczne wyłączanie ekranu",
+                    "caption": "Automatycznie wyłącza wyświetlacz, gdy jest skierowany w dół lub gdy użytkownik idzie.",
+                    "note": "Funkcja ta jest niedostępna, jeżeli w sekcji System w Ustawieniach systemu Windows wybrano ustawienie planu zasilania: „nigdy nie wyłączaj ekranu na zasilaniu akumulatorowym”. Aby włączyć tę funkcję, wybierz wartość inną niż „Nigdy”.",
+                    "windowsLink": "Przechodzenie do ustawień zasilania i uśpienia w Ustawieniach systemu Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Pozostaw wyświetlacz włączony",
+                    "caption": "Pozostaw wyświetlacz włączony, gdy czytam albo przeglądam.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Kilka minut przed przyciemnieniem wyświetlacza podczas przeglądania",
+                        "startTime": "0 minut",
+                        "endTime": "60 minut"
                     }
                 }
             },
@@ -1165,10 +1170,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Inteligentne multimedia",
+                "title": "Odtwarzanie wideo bez dotyku",
+                "desc": "Ta funkcja wstrzymuje odtwarzanie wideo, gdy odchodzisz od komputera, i wznawia je, gdy wracasz.",
+                "tooltip": "Ta funkcja nie dotyczy odtwarzaczy wideo w sieci Web. Popularne lokalne odtwarzacze wideo, takie jak program Windows Media Player, 5KPlayer itd., obsługują tę funkcję."
             },
             "voice": {
                 "title": "Voice",
@@ -1195,6 +1200,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }

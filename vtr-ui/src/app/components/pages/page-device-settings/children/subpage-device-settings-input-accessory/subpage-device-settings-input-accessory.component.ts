@@ -4,29 +4,29 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Component({
-  selector: 'vtr-subpage-device-settings-input-accessory',
-  templateUrl: './subpage-device-settings-input-accessory.component.html',
-  styleUrls: ['./subpage-device-settings-input-accessory.component.scss']
+	selector: 'vtr-subpage-device-settings-input-accessory',
+	templateUrl: './subpage-device-settings-input-accessory.component.html',
+	styleUrls: ['./subpage-device-settings-input-accessory.component.scss']
 })
 export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 
-  title = 'device.deviceSettings.inputAccessories.title';  
+	title = 'device.deviceSettings.inputAccessories.title';
 
-  public shortcutKeys: any[] = [];
+	public shortcutKeys: any[] = [];
 
-  userDefinedKeyOptions: any[] = [{
-	'title': 'Launch Lenovo',
-	'value': 1
-},
-{
-  'title': 'Open website',
-  'value': 2
-},
-{
-  'title': 'Enter text',
-  'value': 3
-}
-];
+	userDefinedKeyOptions: any[] = [{
+		'title': 'Launch Lenovo Vantage',
+		'value': 1
+	},
+	{
+		'title': 'Open website',
+		'value': 2
+	},
+	{
+		'title': 'Enter text',
+		'value': 3
+	}
+	];
 
 public privacyIcon = '../../../../../../assets/images/keyboard-images/KeyboarmMap_Icons/Privacy-Screen.png';
 public kbdBlIcon = '../../../../../../assets/images/keyboard-images/KeyboarmMap_Icons/KBD-BL.png';
@@ -53,7 +53,7 @@ public keyboardCompatability: boolean;
   public onChange(item){
 	    this.selectedValue = item;
     }
-    
+
     // To Check Keyboard Compatability Status
     public getKeyboardCompatability(){
       try {
@@ -67,11 +67,11 @@ public keyboardCompatability: boolean;
             })
             .catch(error => {
               console.error('keyboard compatability error here', error);
-            });			
+            });
         }
       } catch (error) {
         console.error(error.message);
-      }      
+      }
     }
 // To get Keyboard Layout Name
     public getKBDLayoutName(){
@@ -80,15 +80,15 @@ public keyboardCompatability: boolean;
           this.keyboardService.GetKBDLayoutName().then((value: any) => {
               if(value){
                 this.getKBDMachineType(value);
-            }            
+            }
             })
             .catch(error => {
               console.error('keyboard Layout name error here', error);
-            });			
+            });
         }
       } catch (error) {
         console.error(error.message);
-      }      
+      }
     }
 
     // To get Machine Type
@@ -101,11 +101,11 @@ public keyboardCompatability: boolean;
             })
             .catch(error => {
               console.error('keyboard Layout name error here', error);
-            });			
+            });
         }
       } catch (error) {
         console.error(error.message);
-      }      
+      }
     }
     // To display the keyboard map image
     public getKeyboardMap(layOutName, machineType){
@@ -129,7 +129,7 @@ public keyboardCompatability: boolean;
           }else{
             this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/Belgium.png';
             return this.image
-          }         
+          }
            break;
         case "french":
           if(type == 'other'){
@@ -139,7 +139,7 @@ public keyboardCompatability: boolean;
           }else{
             this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/French.png';
             return this.image
-          }         
+          }
            break;
         case "french_canadian":
           if(type == 'other'){
@@ -148,7 +148,7 @@ public keyboardCompatability: boolean;
           }else{
             this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/French_Canadian.png';
             return this.image
-          }     
+          }
                break;
         case "german":
           if(type == 'other'){
@@ -157,7 +157,7 @@ public keyboardCompatability: boolean;
           }else{
             this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/German.png';
             return this.image
-          }          
+          }
           break;
           case "italian":
             if(type == 'other'){
@@ -166,7 +166,7 @@ public keyboardCompatability: boolean;
             }else{
               this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/Italian.png';
             return this.image
-            }            
+            }
             break;
           case "spanish":
             if(type == 'other'){
@@ -175,7 +175,7 @@ public keyboardCompatability: boolean;
             }else{
               this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/Spanish.png';
               return this.image
-            }            
+            }
             break;
           case "turkish_":
             if(type == 'other'){
@@ -184,7 +184,7 @@ public keyboardCompatability: boolean;
             }else{
               this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/Turkish_F.png';
               return this.image
-            }            
+            }
               break;
         default:
           this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Standered.png';
@@ -201,9 +201,9 @@ public keyboardCompatability: boolean;
             this.keyboardService.GetKbdHiddenKeyMagnifierCapability(),
             this.keyboardService.GetKbdHiddenKeyBackLightCapability(),
 
-					]).then((response: any []) => {          
+					]).then((response: any []) => {
             //console.log('promise all resonse  here -------------.>', response);
-            if(response && response.length){              
+            if(response && response.length){
               if(response[0]){
                 this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.firstKeyObj');
               }
@@ -222,13 +222,13 @@ public keyboardCompatability: boolean;
               performane: response[0],
               privacy: response[1],
               magnifier: response[2],
-              backLight: response[3],                 
+              backLight: response[3],
                 }
             }
-         });               	
+         });
         }
       } catch (error) {
         console.error(error.message);
-      }  
+      }
     }
 }
