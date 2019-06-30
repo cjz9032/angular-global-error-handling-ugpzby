@@ -200,11 +200,12 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.getLastUpdateScanDetail();
 		if (action && action.toLowerCase() === 'enable') {
 			this.systemUpdateService.setUpdateSchedule(true, false);
+		} else if (action && action.toLowerCase() === 'start') {
+			this.onCheckForUpdates();
 		} else {
 			this.systemUpdateService.getUpdateSchedule();
 		}
 		this.systemUpdateService.getUpdateHistory();
-
 		this.setUpdateTitle();
 	}
 

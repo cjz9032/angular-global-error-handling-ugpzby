@@ -682,7 +682,12 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -1057,7 +1062,7 @@
         },
         "smartAssist": {
             "title": "고급 지원",
-            "description": "Lenovo 지능형 센싱은 컴퓨터의 다양한 센서를 조합하여 사용자의 활동을 감지하고전원 관리 최적화를 위한 설정을 조정하여 개인정보를 보호합니다.",
+            "description": "Lenovo 지능형 감지 기능은 컴퓨터의 다양한 센서를 조합하여 사용자의 활동을 감지하고 전원 관리 최적화 설정을 조정하며 개인정보를 보호합니다.",
             "jumpTo": {
                 "title": "설정으로 건너뛰기",
                 "security": "보안",
@@ -1070,20 +1075,20 @@
                 "title": "지능형 보안",
                 "readMore": "자세히 읽기",
                 "HumanPresenceDetection": {
-                    "title": "사용자의 존재 감지",
-                    "tooltip": "사용자의 존재 감지 설정을 다시 설정하려면, 여기를 클릭하십시오."
+                    "title": "사용자 존재 감지",
+                    "tooltip": "사용자 존재 감지 설정을 변경하려면 여기를 클릭하십시오."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "사용자 존재 감지",
+                    "tooltip": "사용자의 존재 감지 설정을 다시 설정하려면, 여기를 클릭하십시오."
                 },
                 "zeroTouchLogin": {
                     "title": "제로 터치 로그인",
-                    "caption": "이 기능은 사용자가 바로 앞에 있거나 다가오면 자동으로 컴퓨터를 잠금 해제하거나 절전 모드에서 해제합니다."
+                    "caption": "이 기능은 사용자가 바로 앞에 있거나 다가오는 경우 컴퓨터를 자동으로 잠금해제하거나 절전 모드에서 해제합니다."
                 },
                 "zeroTouchLock": {
                     "title": "제로 터치 잠금",
-                    "caption": "이 기능을 사용하면 사용자 상태가 감지되지 않을 때 디스플레이가 어두워지고 컴퓨터가 잠깁니다.이 기능을 사용하여 컴퓨터를 방치하거나 잠금이 해제된 상태일 때 컴퓨터에 대한 무단 액세스의 가능성을 줄일 수 있습니다. 또한 사용자의 존재가 감지되지 않을 때 시스템을 모던 대기 모드로 설정하여 전력 소비를 줄일 수 있습니다.",
+                    "caption": "이 기능을 사용하면 사용자 상태가 감지되지 않을 때 디스플레이가 어두워지고 컴퓨터가 잠깁니다. 이 기능을 사용하면 컴퓨터를 방치하거나 잠금 해제된 상태로 둘 경우 컴퓨터에 대한 무단 액세스의 가능성을 줄일 수 있습니다. 또한 사용자의 존재가 감지되지 않을 때 시스템을 모던 대기 모드로 설정하여 전력 소비를 줄입니다.",
                     "autoScreenLockTimer": {
                         "title": "자동 스크린 잠금 타이머",
                         "radioButton": {
@@ -1091,46 +1096,46 @@
                             "medium": "보통",
                             "slow": "느리게"
                         },
-                        "toolTipContent": "사용자의 존재를 감지하지 못하면, 원하는 옵션을 선택하여 빠른/중간/느린 속도로 화면을 잠그십시오.그러나 화면이 잠기는 시간도 실제 사용자 시나리오, 센서 용량 및 Windows 화면 시간 제한 설정의 영향을 받습니다. 따라서 시스템을 떠나기 전에 즉시 잠그는 것이 좋습니다."
+                        "toolTipContent": "사용자의 존재를 감지하지 못하면, 원하는 옵션을 선택하여 빠른/중간/느린 속도로 화면을 잠그십시오. 그러나 화면이 잠기는 시간도 실제 사용자 시나리오, 센서 능력 및 Windows 화면 시간 제한 설정의 영향을 받습니다. 따라서 시스템을 떠나기 전에 즉시 잠그는 것이 좋습니다."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "자동 거리 조정은 AI 엔진을 통해 감지 거리를자동으로 업데이트합니다.",
+                    "title": "거리 감도 조정",
+                    "caption": "자동 거리 조정은 AI 엔진을 통해 감지 거리를 자동으로 업데이트합니다.",
                     "options": {
                         "near": "근처",
                         "far": "보다 멀리"
                     }
                 },
                 "note": {
-                    "description1": "이 기능은 Windows Hello를 이용합니다.Windows 설정에서 얼굴 인식이 켜졌는지 확인하십시오.",
-                    "description2": "이 기능은 센서 및 카메라를 사용하여 사용자의 존재를 감지합니다.그러나 이 기능이 모든 개인 데이터 또는 이미지를 수집, 저장 및 손실하는 것은 아닙니다.",
-                    "description3": "1. 컴퓨터가 텐트, 태블릿 또는 대기 모드에 있을 경우,이러한 기능이 적절하게 작동하지 않을 수 있습니다.",
-                    "description4": "2. 컴퓨터가 최대 절전 모드이거나 꺼져 있었던 경우.자동 IR 카메라 로그인이 작동하지 않습니다.",
-                    "description5": "3. IR 카메라에서 얼굴을 인식하여 자동 로그인을 할 수 있도록컴퓨터 화면을 적절한 각도로 조정하십시오."
+                    "description1": "이 기능은 Windows Hello를 이용합니다. Windows 설정에서 얼굴 인식이 켜졌는지 확인하십시오.",
+                    "description2": "이 기능은 센서 및 카메라를 사용하여 사용자의 존재를 감지합니다. 그러나 이 기능은 어떤 개인 정보도 수집하지 않습니다.",
+                    "description3": "1. 컴퓨터가 텐트, 태블릿 또는 대기 모드에 있을 경우 이러한 기능이 적절하게 작동하지 않을 수 있습니다.",
+                    "description4": "2. 컴퓨터가 최대 절전 모드이거나 꺼져 있었던 경우. 자동 IR 카메라 로그인이 작동하지 않습니다.",
+                    "description5": "3. IR 카메라에서 얼굴을 인식하여 자동 로그인을 할 수 있도록 컴퓨터 화면을 적절한 각도로 조정하십시오."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello 설정으로 이동",
                     "screenTimeoutSettings": "화면 시간 종료 설정으로 이동"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "기본 설정 복구"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "지능형 화면",
+                "description": "Lenovo 지능형 감지 기능은 컴퓨터의 다양한 센서를 조합하여 사용자 활동을 감지하고 전원 관리 설정을 조절합니다. 예를 들면 사용자가 걷고 있는 것이 감지되면 디스플레이를 흐리게 하고 읽는 것이 감지되면 선명하게 유지합니다.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "자동 화면 잠금",
+                    "caption": "고개를 숙이고 있거나 걷고 있는 경우에는 자동으로 디스플레이를 끕니다.",
+                    "note": "전원 관리 옵션 설정이 Windows 설정의 시스템 섹션에서 \"배터리 사용 시 화면 끄기 사용 안 함\"으로 설정된 경우 이 기능은 사용될 수 없습니다. 이 기능을 사용하려면 \"사용 안 함\"이 아닌 다른 값을 선택하십시오.",
+                    "windowsLink": "Windows 설정의 전원 및 절전 설정으로 이동"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "내 디스플레이 유지",
+                    "caption": "읽거나 브라우징 중일 때 내 디스플레이 유지.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "브라우징 시 디스플레이가 흐려지기까지 걸리는 시간(분)",
+                        "startTime": "0분",
+                        "endTime": "60분"
                     }
                 }
             },
@@ -1165,10 +1170,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "지능형 미디어",
+                "title": "제로 터치 비디오 재생",
+                "desc": "이 기능은 컴퓨터를 두고 자리를 떠나면 비디오를 일시 정지하고 자리에 다시 돌아 오면 비디오를 다시 시작합니다.",
+                "tooltip": "이 기능은 웹 비디오 플레이어에는 적용되지 않습니다. 대중적인 비디오 플레이어(예: Windows Media Player, 5KPlayer 등)가 이 기능을 지원합니다."
             },
             "voice": {
                 "title": "Voice",
@@ -1195,6 +1200,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1209,9 +1219,9 @@
         "recommendedUpdates": "권장 업데이트",
         "optionalUpdates": "선택적 업데이트",
         "ignoredUpdates": "무시된 업데이트",
-        "successInstall": "설치 완료 시간",
-        "failedInstall": "설치 실패 시간",
-        "at": "위치",
+        "successInstall": "설치 완료 날짜",
+        "failedInstall": "설치 실패 날짜",
+        "at": "시간",
         "readMore": "자세히 읽기",
         "popup": {
             "reboot": "다시 시작",
@@ -1349,7 +1359,8 @@
         "overview": {
             "overviewBlockTitle": "생태계 보안 개요",
             "allDevices": "모든 장치",
-            "myDevice": "내 장치",
+			"myDevice": "내 장치",
+			"thisComputer": "This computer",
             "secure": "보안",
             "needAttention": "주의 필요",
             "manageAccount": "계정 관리",
