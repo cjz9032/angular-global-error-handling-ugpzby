@@ -63,7 +63,7 @@
 							[name]="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
 							[caption]=""
 							[isSwitchVisible]="true"
-							[isLastChild]=true
+							[isLastChild]="false"
 							[leftIcon]="['fal', 'eye']"
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
@@ -159,6 +159,7 @@
 							componentName="Oled Power Settings"
 							[name]="'device.deviceSettings.displayCamera.display.oledPowerSettings.title' | translate"
 							[isSwitchVisible]="false"
+							[isLastChild]="true"
 							[leftIcon]="['fal', 'tv']"
 							[showChildContent]="true"
 							[isSwitchChecked]="eyeCareModeStatus.status"

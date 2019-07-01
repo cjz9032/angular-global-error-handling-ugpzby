@@ -109,8 +109,6 @@ export class PageSmartAssistComponent implements OnInit {
 	}
 
 	private setIntelligentSecurity() {
-		// service call to fetch Intelligent Security Properties
-		// this.intelligentSecurity = new IntelligentSecurity(true, 1, true, true, '0', true, false, false, false);
 		this.intelligentSecurity = new IntelligentSecurity();
 		this.intelligentSecurity.isHPDEnabled = true;
 		this.intelligentSecurity.zeroTouchLoginDistance = 1;
