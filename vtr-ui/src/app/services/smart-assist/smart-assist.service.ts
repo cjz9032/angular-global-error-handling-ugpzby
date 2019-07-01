@@ -442,6 +442,34 @@ export class SmartAssistService {
 		}
 		return undefined;
 	}
+	// Set Pen settings
+	public setPenSetting(value: boolean): Promise < boolean > {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setPenSetting(value);
+		}
+		return undefined;
+	}
+	// Set Pen Delay
+	public setPenDelayTime(value: number): Promise <boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setPenDelayTime(value);
+		}
+		return undefined;
+	}
+	//  Set Touch settings
+	public setTouchInputSetting(value: boolean): Promise <boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setTouchInputSetting(value);
+		}
+		return undefined;
+	}
+	// Set PSensor Settings
+	public setPSensorSetting(value: boolean): Promise <boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setPSensorSetting(value);
+		}
+		return undefined;
+	}
 	//#endregion
 
 	//#region Start Lenovo Voice

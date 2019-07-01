@@ -107,7 +107,9 @@ export class ActiveProtectionSystemComponent implements OnInit {
 			.then(res => this.manualSnooze = res);
 		this.smartAssist
 			.getSnoozeTime()
-			.then(res => {this.manualSnoozeTime = +(res); });
+			.then(res => {
+				this.manualSnoozeTime = +(res);
+			});
 	}
 	// APS Advanced
 	checkAdvance() {
@@ -115,7 +117,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 			.all([this.smartAssist.getPenCapability(), this.smartAssist.getTouchCapability(), this.smartAssist.getPSensorCapability()])
 			.then((res: any[]) => {
 				console.log('Advanced RESPONSE', res);
-				(res[0] || res[1] || res[2]) ? this.advanceAvailable = true : this.advanceAvailable = true;
+				(res[0] || res[1] || res[2]) ? this.advanceAvailable = true: this.advanceAvailable = true;
 				res[0] ? this.penCapability = true : this.penCapability = true;
 				res[1] ? this.touchCapability = true : this.touchCapability = true;
 				res[2] ? this.pSensorCapability = true : this.pSensorCapability = true;
@@ -162,6 +164,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 
 	setSnoozeSetting(event) {
 		const value = !this.manualSnooze;
+		this.manualSnooze = !this.manualSnooze;
 		this.smartAssist
 			.setSnoozeSetting(value)
 			.then(res => console.log('Snooze Set', res));
@@ -176,7 +179,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 
 	suspendNow() {
 		let timeInSec;
-		switch(this.selectedSnoozeTime) {
+		switch (this.selectedSnoozeTime) {
 			case 0.5:
 				timeInSec = '30';
 				break;
@@ -194,4 +197,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 			.sendSnoozeCommand(timeInSec)
 			.then(res => console.log('Snooze Command Send', res));
 	}
+
+	// Advanced APS Functions
+
 }

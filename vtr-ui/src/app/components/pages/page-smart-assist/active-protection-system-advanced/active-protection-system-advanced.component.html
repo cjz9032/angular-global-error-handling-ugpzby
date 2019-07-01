@@ -10,11 +10,11 @@
 					<vtr-ui-row-switch
 						[title]="'device.smartAssist.activeProtectionSystem.advanced.pen.title' | translate"
 						[caption]="'device.smartAssist.activeProtectionSystem.advanced.pen.description' | translate"
-						[theme]="'white'" [isSwitchVisible]="true" [showChildContent]="true" [checked]="penStatus">
+						[theme]="'white'" [isSwitchVisible]="true" [showChildContent]="true" [isSwitchChecked]="penStatus" (toggleOnOff)="setPenSetting($event)">
 					</vtr-ui-row-switch>
 					<div class="dropdown row">
 						<section class="col-sm-6">
-							<vtr-ui-dropdown [list]="intervals" [value]="penDelay" (change)="">
+							<vtr-ui-dropdown *ngIf="penStatus" [list]="intervals" [value]="penDelay" (change)="setPenDelayTime($event)">
 							</vtr-ui-dropdown>
 						</section>
 					</div>
@@ -25,7 +25,7 @@
 				<div>
 					<vtr-ui-row-switch
 						[title]="'device.smartAssist.activeProtectionSystem.advanced.touch.title' | translate"
-						[theme]="'white'" [isSwitchVisible]="true" [showChildContent]="true" [checked]="touchStatus">
+						[theme]="'white'" [isSwitchVisible]="true" [showChildContent]="true" [isSwitchChecked]="touchStatus" (toggleOnOff)="setTouchInputSetting($event)">
 					</vtr-ui-row-switch>
 				</div>
 			</li>
@@ -34,7 +34,7 @@
 				<div>
 					<vtr-ui-row-switch
 						[title]="'device.smartAssist.activeProtectionSystem.advanced.hand.title' | translate"
-						[theme]="'white'" [isSwitchVisible]="true" [showChildContent]="true" [checked]="pSensorStatus">
+						[theme]="'white'" [isSwitchVisible]="true" [showChildContent]="true" [isSwitchChecked]="pSensorStatus" (toggleOnOff)="setPSensorSetting($event)">
 					</vtr-ui-row-switch>
 				</div>
 			</li>

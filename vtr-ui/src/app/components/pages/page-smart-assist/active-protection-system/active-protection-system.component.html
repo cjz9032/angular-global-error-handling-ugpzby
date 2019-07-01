@@ -57,14 +57,14 @@
 							(toggleOnOff)="setSnoozeSetting($event)"
 							[disabled]="!apsStatus"
 							>
-							<div class="dropdown row">
+							<div *ngIf="manualSnooze" class="dropdown row">
 								<section class="col-sm-6">
 									<p class="text-uppercase">
 										{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.dropdown-title' | translate }}
 									</p>
 									<vtr-ui-dropdown
-										*ngIf='manualSnoozeTime'
-										[list]="intervals"
+										*ngIf="manualSnoozeTime"
+ 										[list]="intervals"
 										[value]="manualSnoozeTime"
 										(change)="setSnoozeTime($event)">
 									</vtr-ui-dropdown>
@@ -84,7 +84,7 @@
 					</li>
 
 					<!-- Advanced section -->
-					<li *ngIf="advanceAvailable" class="advanced pt-3 keep-my-display-block auto-screen-off-block">
+					<li *ngIf="advanceAvailable && apsStatus" class="advanced pt-3 keep-my-display-block auto-screen-off-block">
 						<h4 *ngIf="!advancedToggle">MORE</h4>
 						<a *ngIf="!advancedToggle"
 							(click)="toggleAdvanced()">
@@ -97,7 +97,6 @@
 								[penCapability]="penCapability"
 								[touchCapability]="touchCapability"
 								[pSensorCapability]="pSensorCapability">
-
 							</vtr-active-protection-system-advanced>
 							<a (click)="toggleAdvanced()">
 								<p>HIDE ADVANCED SETTINGS</p>
