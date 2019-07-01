@@ -62,7 +62,9 @@ export class HomeSecurityAccount {
 			this.standardTime = chsAccount.serverTimeUTC;
 			this.createAccount = chsAccount.createAccount;
 			this.purchase = chsAccount.purchase;
-			this.lenovoIdLoggedIn = chsAccount.lenovoId.loggedIn;
+			if (chsAccount.lenovoId) {
+				this.lenovoIdLoggedIn = chsAccount.lenovoId.loggedIn;
+			}
 			this.createViewModel();
 		}
 	}
