@@ -20,7 +20,6 @@
 				[theme]="'white'"
 				(toggle)="onCardCollapse($event)">
 				<ul class="list-group list-group-flush">
-					<!-- current selected value is : {{displayColorTempDataSource.current}} -->
 					<li class="pt-3"
 						*ngIf="displayColorTempDataSource && displayColorTempDataSource.available">
 						<vtr-ui-row-switch
@@ -91,7 +90,8 @@
 										[noteTitle]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.title' | translate"
 										[description]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.description' | translate"
 										[path]="'ms-settings:privacy-location'"
-										*ngIf="enableSunsetToSunrise"></vtr-widget-permission-note>
+										*ngIf="enableSunsetToSunrise">
+									</vtr-widget-permission-note>
 
 									<!-- <span *ngIf="!enableSunsetToSunrise; else vtrwidgetpermissionnote"></span>
 									<ng-template #vtrwidgetpermissionnote>
@@ -105,7 +105,8 @@
 						</vtr-ui-row-switch>
 					</li>
 
-					<li class="pt-3">
+					<li class="pt-3"
+						*ngIf="privacyGuardCapability">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.display.privacyGuard.title' | translate"
 							componentName="Privacy guard"
@@ -114,6 +115,8 @@
 							[leftIcon]="['svg', 'privacy-guard']"
 							[readMoreText]="''"
 							[showChildContent]="true"
+							[isSwitchChecked]="privacyGuardToggleStatus"
+							(toggleOnOff)="setPrivacyGuardToggleStatus($event)"
 							[theme]="'white'">
 							<div class="row">
 								<div class="col d-flex justify-content-between pt-2 pr-3">
@@ -131,13 +134,15 @@
 									</p>
 								</div>
 							</div>
-							<div class="row">
+							<div class="row"
+								*ngIf="privacyGuardOnPasswordCapability">
 								<div class="col-12">
 									<div class="custom-control custom-checkbox privacy-checkbox">
 										<input type="checkbox"
 											class="custom-control-input"
 											id="cb-privacy-guard"
-											[checked]="" />
+											[checked]="privacyGuardCheckBox"
+											(change)="setPrivacyGuardOnPasswordStatusVal($event)" />
 										<label class="custom-control-label"
 											for="cb-privacy-guard">
 											<span>

@@ -150,15 +150,15 @@ export class VantageShellService {
 		return defaultMetricsClient;
 	}
 
-	public getMetricsPolicy(callback){
+	public getMetricsPolicy(callback) {
 		const self = this;
-		this.downloadMetricsPolicy().subscribe((response)=>{
-			self.deviceFilter(JSON.stringify(response)).then((result)=>{
+		this.downloadMetricsPolicy().subscribe((response) => {
+			self.deviceFilter(JSON.stringify(response)).then((result) => {
 				const userDeterminePrivacy = self.commonService.getLocalStorageValue(LocalStorageKey.UserDeterminePrivacy);
-				if(!userDeterminePrivacy){
+				if (!userDeterminePrivacy) {
 					callback(result);
 				}
-			});	
+			});
 		});
 	}
 
@@ -284,6 +284,19 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	/**
+	 * returns Privacy Guard object from VantageShellService of JS Bridge
+	 */
+	public getPrivacyGuardObject(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.display.privacyGuard;
+		}
+		return undefined;
+	}
+
+
+
 	/**
 	 * returns CameraPrivacy object from VantageShellService of JS Bridge
 	 */

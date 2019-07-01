@@ -9,6 +9,7 @@ export class DisplayService {
 	private displayEyeCareMode: any;
 	private cameraPrivacyStatus: any;
 	private cameraSettings: any;
+	private privacyGuardSettings: any;
 
 	public isShellAvailable = false;
 	@Output() windowResize: EventEmitter<any> = new EventEmitter();
@@ -32,6 +33,11 @@ export class DisplayService {
 		}
 		this.cameraSettings = shellService.getCameraSettings();
 		if (this.cameraSettings) {
+			this.isShellAvailable = true;
+		}
+
+		this.privacyGuardSettings = shellService.getPrivacyGuardObject();
+		if (this.privacyGuardSettings) {
 			this.isShellAvailable = true;
 		}
 	}
@@ -204,6 +210,7 @@ export class DisplayService {
 		return undefined;
 	}
 
+	// Start Day Time Color Temperature Settings
 	public getDaytimeColorTemperature(): Promise<FeatureStatus> {
 		if (this.displayEyeCareMode) {
 			return this.displayEyeCareMode.getDaytimeColorTemperature();
@@ -225,8 +232,53 @@ export class DisplayService {
 		return undefined;
 	}
 
+	// End Day Time Color Temperature Settings
+
+	// Start Privacy Guard Settings
+	public getPrivacyGuardCapability(): Promise<any> {
+		if (this.privacyGuardSettings) {
+			return this.privacyGuardSettings.getPrivacyGuardCapability();
+		}
+		return undefined;
+	}
+
+	public getPrivacyGuardOnPasswordCapability(): Promise<any> {
+		if (this.privacyGuardSettings) {
+			return this.privacyGuardSettings.getPrivacyGuardOnPasswordCapability();
+		}
+		return undefined;
+	}
+
+	public getPrivacyGuardStatus(): Promise<any> {
+		if (this.privacyGuardSettings) {
+			return this.privacyGuardSettings.getPrivacyGuardStatus();
+		}
+		return undefined;
+	}
+
+	public getPrivacyGuardOnPasswordStatus(): Promise<any> {
+		if (this.privacyGuardSettings) {
+			return this.privacyGuardSettings.getPrivacyGuardOnPasswordStatus();
+		}
+		return undefined;
+	}
+
+	public setPrivacyGuardStatus(value): Promise<any> {
+		if (this.privacyGuardSettings) {
+			return this.privacyGuardSettings.setPrivacyGuardStatus(value);
+		}
+		return undefined;
+	}
+
+	public setPrivacyGuardOnPasswordStatus(value): Promise<any> {
+		if (this.privacyGuardSettings) {
+			return this.privacyGuardSettings.setPrivacyGuardOnPasswordStatus(value);
+		}
+		return undefined;
+	}
 
 
+	// End Privacy Guard Settings
 
 	public statusChangedLocationPermission(handler: any) {
 		try {
