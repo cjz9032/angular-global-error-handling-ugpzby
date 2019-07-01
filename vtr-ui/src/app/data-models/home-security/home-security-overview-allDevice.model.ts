@@ -4,7 +4,7 @@ export class HomeSecurityAllDevice {
 	allDevicesStatus: boolean;
 	allDevicesNumber: number;
 
-	constructor(chsDeviceOverview: CHSDeviceOverview) {
+	constructor(chsDeviceOverview?: CHSDeviceOverview) {
 		if (chsDeviceOverview && chsDeviceOverview.allDevices) {
 			const allDevices = chsDeviceOverview.allDevices;
 			if (allDevices.length > 0) {

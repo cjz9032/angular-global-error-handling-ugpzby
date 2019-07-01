@@ -25,13 +25,11 @@
 		</div>
 		<div class="modal-body">
 			<vtr-battery-detail [data]="batteryInfo"
+				[batteryConditionStatus]="batteryConditionStatus"
 				[dataGauge]="batteryGauge"> </vtr-battery-detail>
 		</div>
 	</ng-template>
-	<div class="container p-5"
-		[ngClass]="{'background-green':batteryConditionStatus=='Good',
-					'background-orange': batteryConditionStatus=='Fair',
-					'background-red':batteryConditionStatus=='Poor'}">
+	<div class="container p-5 background-green">
 		<div class="battery-gauge-label text-uppercase">
 			{{'device.deviceSettings.batteryGauge.title' | translate}}
 		</div>
@@ -95,28 +93,37 @@
 			</div>
 		</div>
 		<div class="feature-note p-2 mt-2"
-			*ngIf="chargeThresholdBatteries.length>0">
+			*ngIf="chargeThresholdInfo?.isOn">
 			<div class="row">
 				<p>
-					<span style="font-weight: bold">Note: </span>
+					<span style="font-weight: bold">
+						{{'device.deviceSettings.batteryGauge.thresholdNote.note'  | translate}}
+					</span>
 					<span>
 						{{'device.deviceSettings.batteryGauge.thresholdNote.note1'  | translate}}
-						{{'device.deviceSettings.batteryGauge.thresholdNote.note3'  | translate}}
+						{{chargeThresholdInfo.stopValue}}%
 					</span>
-					<span *ngIf="chargeThresholdInfo.length>1">{{chargeThresholdBatteries[0]}}</span>
+				</p>
+				<!-- TODO: uncomment in dual battery implementation story -->
+
+				<!-- <span>
+					{{'device.deviceSettings.batteryGauge.thresholdNote.note1'  | translate}}
+					{{'device.deviceSettings.batteryGauge.thresholdNote.note3'  | translate}}
+				</span>
+				<span *ngIf="chargeThresholdInfo.length>1">{{chargeThresholdBatteries[0]}}</span>
+				<span>
+					{{'device.deviceSettings.batteryGauge.thresholdNote.note2'  | translate}}
+					{{chargeThresholdInfo[chargeThresholdBatteries[0]-1].stopValue}}%
+				</span>
+				<span *ngIf="chargeThresholdBatteries.length>1">
+					{{'device.deviceSettings.batteryGauge.thresholdNote.note4'  | translate}}
+					{{'device.deviceSettings.batteryGauge.thresholdNote.note3'  | translate}}
+					{{chargeThresholdBatteries[1]}}
 					<span>
-						{{'device.deviceSettings.batteryGauge.thresholdNote.note2'  | translate}}
-						{{chargeThresholdInfo[chargeThresholdBatteries[0]-1].stopValue}}%
+						{{'device.deviceSettings.batteryGauge.thresholdNote.note2'  | translate}}{{chargeThresholdInfo[chargeThresholdBatteries[1]-1].stopValue}}%
 					</span>
-					<span *ngIf="chargeThresholdBatteries.length>1">
-						{{'device.deviceSettings.batteryGauge.thresholdNote.note4'  | translate}}
-						{{'device.deviceSettings.batteryGauge.thresholdNote.note3'  | translate}}
-						{{chargeThresholdBatteries[1]}}
-						<span>
-							{{'device.deviceSettings.batteryGauge.thresholdNote.note2'  | translate}}{{chargeThresholdInfo[chargeThresholdBatteries[1]-1].stopValue}}%
-						</span>
-					</span>
-					<!-- <a href="javascript:void()">
+				</span> -->
+				<!-- <a href="javascript:void()">
 						{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
 					</a> -->
 			</div>

@@ -265,10 +265,7 @@ export class UiLightingProfileComponent implements OnInit {
 		console.log('id----------------------------------', this.currentProfileId);
 		this.isProfileOff = false;
 		this.getGamingLightingCapabilities();
-		if (this.currentProfileId !== 0) {
-			this.getLightingProfileById(this.currentProfileId);
-			this.getLightingBrightness();
-		} else {
+		if (this.currentProfileId === 0) {
 			this.isProfileOff = true;
 		}
 	}
@@ -350,6 +347,9 @@ export class UiLightingProfileComponent implements OnInit {
 								}
 							}
 						}
+
+						this.getLightingProfileById(this.currentProfileId);
+						this.getLightingBrightness();
 					} else {
 						if (LocalStorageKey.LightingCapabilities !== undefined) {
 							response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingCapabilities);
@@ -623,6 +623,7 @@ export class UiLightingProfileComponent implements OnInit {
 		}
 	}
 	changeSingleCoorEffect($event) {
+		this.selectedSingleColorOptionId = $event;
 		console.log('single color option change fired------------------------------', $event);
 		if (this.lightingProfileEffectColorNUmber === undefined) {
 			this.lightingProfileEffectColorNUmber = new LightingProfileEffectColorNUmber();
@@ -647,10 +648,10 @@ export class UiLightingProfileComponent implements OnInit {
 		}
 	}
 
-	setDefaultProfile(event) {
+	setDefaultProfile(currentProfileId) {
 		try {
-			if (event !== undefined) {
-				this.isOff = Number(event);
+			if (currentProfileId !== undefined) {
+				this.isOff = Number(currentProfileId);
 			}
 
 			console.log('in profile click event....................................', this.isOff);
@@ -708,8 +709,8 @@ export class UiLightingProfileComponent implements OnInit {
 												response.lightInfo[0].lightEffectType
 											);
 											this.lightEffectRGBOptionName = lightEffectRGBOptionNameA[0].name;
-											this.lightingEffectData.drop[0].curSelected =
-												response.lightInfo[0].lightEffectType;
+											// this.lightingEffectData.drop[0].curSelected =
+											// 	response.lightInfo[0].lightEffectType;
 											this.inHex1 = response.lightInfo[0].lightColor;
 											if (response.lightInfo.length > 1) {
 												this.sideSelectedValue = response.lightInfo[1].lightEffectType;
@@ -887,6 +888,7 @@ export class UiLightingProfileComponent implements OnInit {
 						JSON.stringify(response)
 					);
 					if (response.didSuccess) {
+						console.log('DID SUCCESS,----------------------------------------');
 						if (LocalStorageKey.LightingProfileById !== undefined) {
 							this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileById, response);
 						}
@@ -958,7 +960,7 @@ export class UiLightingProfileComponent implements OnInit {
 								}
 							}
 						}
-						console.log('getLightingProfileById----------------cache---------->', JSON.stringify(this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById)));
+						//	console.log('getLightingProfileById----------------cache---------->', JSON.stringify(this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById)));
 					} else {
 
 						if (LocalStorageKey.LightingProfileById !== undefined) {
@@ -1231,14 +1233,16 @@ export class UiLightingProfileComponent implements OnInit {
 					);
 
 					if (response.didSuccess) {
+						this.inHex1 = $event;
 						this.applyBtnStatus1 = 'applied';
-					//	this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileEffectColor, response);
-					/*	console.log(
-							'set color pallet color effect front response----------cache---------->',
-							JSON.stringify(
-								this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileEffectColor)
-							)
-						);*/
+
+						//	this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileEffectColor, response);
+						/*	console.log(
+								'set color pallet color effect front response----------cache---------->',
+								JSON.stringify(
+									this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileEffectColor)
+								)
+							);*/
 					}
 					/* else {
 						response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileEffectColor);
@@ -1268,7 +1272,9 @@ export class UiLightingProfileComponent implements OnInit {
 					);
 
 					if (response.didSuccess) {
+						this.inHex2 = $event;
 						this.applyBtnStatus2 = 'applied';
+
 					}
 				});
 		}
