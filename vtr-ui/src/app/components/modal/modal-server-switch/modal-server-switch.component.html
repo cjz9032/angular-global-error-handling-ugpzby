@@ -1,0 +1,16 @@
+<div class="modal-body vtr-modal-server-switch vtr-modal-article-detail">
+	<div role="button"
+		class="close-btn"
+		aria-hidden="true"
+	 (click)="closeModal()">
+		<img [src]=" '/assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
+	</div>
+	<h1>{{serverSwitchTitle}}</h1>
+	<div class="article-content">
+		<div class="article-body">
+      <input type="text" class="form-control" id="segment"
+       required 
+       [(ngModel)]="serverSwitchData.segment" name="segment">
+    </div>
+	</div>
+</div>
