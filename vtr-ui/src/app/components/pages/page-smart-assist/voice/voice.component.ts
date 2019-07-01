@@ -48,7 +48,7 @@ export class VoiceComponent implements OnInit {
 					.then((status: boolean) => {
 						console.log('isLenovoVoiceInstalled.then', status);
 						if (status) {
-							this.installedStatus == InstalledStatus.DONE;
+							this.installedStatus = InstalledStatus.DONE;
 							this.btnText = this.translate.instant('device.smartAssist.voice.launchBtnText');
 						} else {
 							this.installedStatus == InstalledStatus.CANCELED;

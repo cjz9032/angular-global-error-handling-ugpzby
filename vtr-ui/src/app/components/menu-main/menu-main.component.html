@@ -15,8 +15,11 @@
 		</div>
 		<div *ngIf="deviceService.isGaming"
 			class="navbar-brand pt-0">
-			<img src="../../../assets/images/gaming/gaming-logo-small.png"
-				alt="L" />
+			<a vtrMetrics routerLinkActive="link-active" [routerLinkActiveOptions]="items[0].routerLinkActiveOptions"
+				[metricsEvent]="items[0].metricsEvent" [metricsParent]="items[0].metricsParent" [metricsItem]="items[0].metricsItem"
+				routerLink="/{{items.path}}">
+				<img src="../../../assets/images/gaming/gaming-logo-small.png" alt="L" />
+			</a>
 		</div>
 		<div class="navbar-text clearfix">
 			<span *ngIf="appVersion && configService.appBrand && configService.appName">
@@ -56,11 +59,14 @@
 							routerLinkActive="active"
 							(click)="showMenu = false"
 							*ngIf="item.label | translate">
-							<fa-icon *ngIf="item.icon[0]!=='icomoon'"
-								[icon]="item.icon"
-								class="fa-icon"></fa-icon>
-							<span *ngIf="item.icon[0]==='icomoon'"
-							 [ngClass]="['navbar-icon',item.icon[0],item.icon[1]]"></span>
+							<div class="icon">
+								<fa-icon *ngIf="item.icon[0]!=='icomoon'"
+										 [icon]="item.icon"
+										 class="fa-icon"></fa-icon>
+								<span *ngIf="item.icon[0]==='icomoon'"
+									  [ngClass]="['navbar-icon',item.icon[0],item.icon[1]]"></span>
+							</div>
+
 							{{item.label | translate}}
 						</a>
 					</li>
@@ -81,8 +87,10 @@
 							aria-expanded="false"
 							(click)="showMenu = false"
 							*ngIf="item.label | translate">
-							<fa-icon [icon]="item.icon"
-							 class="fa-icon"></fa-icon>
+							<div class="icon">
+								<fa-icon [icon]="item.icon"
+										 class="fa-icon"></fa-icon>
+							</div>
 							{{item.label | translate}}
 						</a>
 						<div class="dropdown-menu"

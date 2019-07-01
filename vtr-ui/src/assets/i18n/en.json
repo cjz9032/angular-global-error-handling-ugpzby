@@ -49,6 +49,10 @@
 						"button": "Install",
 						"link": "cancel"
 					},
+					"lightingColorMessage": {
+						"text": "Selecting color not available to this effect."
+					},
+
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",
@@ -278,6 +282,8 @@
 					"title": " effect"
 				}
 			},
+
+
 			"lightingSingleLightingOption": {
 				"option1": {
 					"title": "Always On"
