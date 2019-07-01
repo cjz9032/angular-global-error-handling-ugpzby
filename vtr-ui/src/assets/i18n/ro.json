@@ -39,7 +39,9 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -344,13 +346,13 @@
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "Tablou de bord",
             "device": {
-                "title": "Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "Dispozitiv",
+                "sub1": "Dispozitivul meu",
+                "sub2": "Setările dispozitivului",
                 "sub3": "System Updates",
-                "sub4": "‏\"Asistent inteligent\""
+                "sub4": "Asistent inteligent"
             },
             "security": {
                 "title": "Securitate",
@@ -361,9 +363,9 @@
                 "sub5": "Protecție pe internet",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "Asistenţă",
+            "homeSecurity": "Conectat acasă",
+            "privacy": "Confidenţialitate"
         },
         "securityAdvisor": {
             "title": "Asistenţă securitate",
@@ -686,7 +688,8 @@
                     "note1": "To extend the battery lifespan, you have set your ",
                     "note2": "to stop charging at ",
                     "note3": "battery",
-                    "note4": "and "
+                    "note4": "and ",
+                    "note": "Note: "
                 },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
@@ -1056,7 +1059,8 @@
                     "dropDown": {
                         "title": "Action User Defined key",
                         "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
-                    }
+                    },
+                    "tooltip": "Content to be filled"
                 }
             }
         },
@@ -1359,8 +1363,8 @@
         "overview": {
             "overviewBlockTitle": "Prezentarea generală a securității ecosistemului",
             "allDevices": "Toate dispozitivele",
-			"myDevice": "Dispozitivul meu",
-			"thisComputer": "This computer",
+            "myDevice": "Dispozitivul meu",
+            "thisComputer": "This computer",
             "secure": "SIGUR",
             "needAttention": "ARE NEVOIE DE ATENȚIE",
             "manageAccount": "Gestionare cont",

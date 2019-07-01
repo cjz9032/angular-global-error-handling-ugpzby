@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChanges } from '@angular/core';
 import { DaysOfWeek, DaysOfWeekShort } from 'src/app/enums/days-of-week.enum';
 
 @Component({
@@ -6,7 +6,7 @@ import { DaysOfWeek, DaysOfWeekShort } from 'src/app/enums/days-of-week.enum';
 	templateUrl: './ui-days-picker.component.html',
 	styleUrls: ['./ui-days-picker.component.scss']
 })
-export class UiDaysPickerComponent implements OnInit {
+export class UiDaysPickerComponent implements OnInit, OnChanges {
 	@Input() days: string;
 	@Input() subHeadingText: string;
 	@Input() daysId: string;
@@ -23,24 +23,30 @@ export class UiDaysPickerComponent implements OnInit {
 	selectedDays: any = [];
 	// , , Tuesday, Wednesday, Thursday, Friday, Saturday
 	schedule: string;
+	copySchedule: string;
 	@Output() setDays = new EventEmitter<string>();
 	showDaysDropDown: boolean;
 	constructor() { }
 
 	ngOnInit() {
+		this.showDaysDropDown = false;
 		this.splitDays();
 	}
 
+	ngOnChanges(changes: SimpleChanges): void {
+		this.splitDays();
+	}
 	splitDays() {
 		this.selectedDays = this.days.split(',');
-		this.findSchedule(this.selectedDays);
+		this.schedule = this.findSchedule(this.selectedDays);
 	}
 
 	findSchedule(days) {
+		let schedule;
 		const length = days.length;
 		// "mon" | "Monday" (long date will be displayed if only 1 day is selected)
 		if (length === 1) {
-			this.schedule = DaysOfWeek[DaysOfWeekShort[days[0]]];
+			schedule = DaysOfWeek[DaysOfWeekShort[days[0]]];
 			this.isSelectedSingleDay = DaysOfWeek[DaysOfWeekShort[days[0]]];
 			for (let i = 0; i < this.allDays.length; i++) {
 				if (this.allDays[i].shortname === days[0]) {
@@ -48,7 +54,7 @@ export class UiDaysPickerComponent implements OnInit {
 				}
 			}
 		} else if (length === 7) {
-			this.schedule = 'Everyday';
+			schedule = 'Everyday';
 			for (let i = 0; i < this.allDays.length; i++) {
 				this.allDays[i].status = true;
 			}
@@ -57,7 +63,7 @@ export class UiDaysPickerComponent implements OnInit {
 			// "sun,sat" | "Weekends"
 			if (days.includes(DaysOfWeekShort[DaysOfWeekShort.sun]) &&
 				days.includes(DaysOfWeekShort[DaysOfWeekShort.sat])) {
-				this.schedule = 'Weekends';
+				schedule = 'Weekends';
 				this.allDays[0].status = true;
 				this.allDays[6].status = true;
 			}
@@ -68,7 +74,7 @@ export class UiDaysPickerComponent implements OnInit {
 				days.includes(DaysOfWeekShort[DaysOfWeekShort.wed]) &&
 				days.includes(DaysOfWeekShort[DaysOfWeekShort.thurs]) &&
 				days.includes(DaysOfWeekShort[DaysOfWeekShort.fri])) {
-				this.schedule = 'Weekdays';
+				schedule = 'Weekdays';
 				for (let i = 1; i < 6; i++) {
 					this.allDays[i].status = true;
 				}
@@ -82,11 +88,11 @@ export class UiDaysPickerComponent implements OnInit {
 				(days.includes(DaysOfWeekShort[DaysOfWeekShort.sat]) ||
 					days.includes(DaysOfWeekShort[DaysOfWeekShort.sun]))) {
 				if (days.includes(DaysOfWeekShort[DaysOfWeekShort.sun])) {
-					this.schedule = 'Weekdays, Sun';
+					schedule = 'Weekdays, Sun';
 					this.allDays[0].status = true;
 				}
 				if (days.includes(DaysOfWeekShort[DaysOfWeekShort.sat])) {
-					this.schedule = 'Weekdays, Sat';
+					schedule = 'Weekdays, Sat';
 					this.allDays[6].status = true;
 				}
 				for (let i = 1; i < 6; i++) {
@@ -108,23 +114,23 @@ export class UiDaysPickerComponent implements OnInit {
 				if (days.includes(DaysOfWeekShort[DaysOfWeekShort.mon]) ||
 					days.includes(DaysOfWeekShort[DaysOfWeekShort.tue])) {
 					if (days.includes(DaysOfWeekShort[DaysOfWeekShort.mon])) {
-						this.schedule = 'Weekends, Mon';
+						schedule = 'Weekends, Mon';
 						this.allDays[1].status = true;
 					} else if (days.includes(DaysOfWeekShort[DaysOfWeekShort.tue])) {
-						this.schedule = 'Weekends, Tue';
+						schedule = 'Weekends, Tue';
 						this.allDays[2].status = true;
 					}
 				} else if (days.includes(DaysOfWeekShort[DaysOfWeekShort.wed]) ||
 					days.includes(DaysOfWeekShort[DaysOfWeekShort.thurs])) {
 					if (days.includes(DaysOfWeekShort[DaysOfWeekShort.wed])) {
-						this.schedule = 'Weekends, Wed';
+						schedule = 'Weekends, Wed';
 						this.allDays[3].status = true;
 					} else if (days.includes(DaysOfWeekShort[DaysOfWeekShort.thurs])) {
-						this.schedule = 'Weekends, Thurs';
+						schedule = 'Weekends, Thurs';
 						this.allDays[4].status = true;
 					}
 				} else if (days.includes(DaysOfWeekShort[DaysOfWeekShort.fri])) {
-					this.schedule = 'Weekends, Fri';
+					schedule = 'Weekends, Fri';
 					this.allDays[5].status = true;
 				}
 			}
@@ -140,18 +146,18 @@ export class UiDaysPickerComponent implements OnInit {
 				)
 			) {
 				console.log('sun,mon,tue,fri,sat | Weekends, Mon, Tue, Fri');
-				let schedule = 'Weekends';
+				let schedule1 = 'Weekends';
 				let length2 = 0;
 				for (let i = 1; i < 6; i++) {
 					if (days.includes(this.allDays[i].shortname)) {
 						length2++;
-						schedule = schedule + ', ' + this.allDays[i].displayname;
-						console.log(schedule);
+						schedule1 = schedule1 + ', ' + this.allDays[i].displayname;
+						console.log(schedule1);
 					}
 				}
 				if (length2 < 5 && length2 > 1) {
-					this.schedule = schedule;
-					console.log(this.schedule);
+					schedule = schedule1;
+					console.log(schedule);
 				}
 			}
 			if (!(days.includes(DaysOfWeekShort[DaysOfWeekShort.mon]) &&
@@ -162,28 +168,28 @@ export class UiDaysPickerComponent implements OnInit {
 			) &&
 				!(days.includes(DaysOfWeekShort[DaysOfWeekShort.sun]) &&
 					days.includes(DaysOfWeekShort[DaysOfWeekShort.sat]))) {
-				let schedule = '';
+				let schedule2 = '';
 
 				for (let i = 0; i < 6; i++) {
 					if (days.includes(this.allDays[i].shortname)) {
 
-						schedule = schedule + ', ' + this.allDays[i].displayname;
-						console.log(schedule);
+						schedule2 = schedule2 + ', ' + this.allDays[i].displayname;
+						console.log(schedule2);
 					}
 				}
-				schedule = schedule.substr(1);
-				this.schedule = schedule;
+				schedule2 = schedule2.substr(1);
+				schedule = schedule2;
 			}
 		}
-	}
-	initiateBlock() {
-
+		return schedule;
 	}
 
 	setOffDays() {
 		const setSelectedDays = this.selectedDays.join();
 		this.setDays.emit(setSelectedDays);
+		this.showDaysDropDown = false;
 	}
+
 	checkedDays(event) {
 		console.log(event);
 		console.log(event.target.checked);
@@ -194,17 +200,13 @@ export class UiDaysPickerComponent implements OnInit {
 			const index = this.selectedDays.indexOf(event.target.value);
 			this.selectedDays.splice(index, 1);
 		}
-		this.findSchedule(this.selectedDays);
+		this.copySchedule = this.findSchedule(this.selectedDays);
 	}
+
 	clearSettings() {
 		this.showDaysDropDown = false;
-		for (let i = 0; i < this.allDays.length; i++) {
-			this.allDays[i].status = false;
-			console.log(this.allDays[i].status + '' + this.allDays[i].dayname);
-		}
-
-		this.splitDays();
 	}
+
 	onToggleDropDown() {
 		this.showDaysDropDown = !this.showDaysDropDown;
 	}

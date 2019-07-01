@@ -39,7 +39,9 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -344,13 +346,13 @@
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "Πίνακας εργαλείων",
             "device": {
-                "title": "Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "Συσκευή",
+                "sub1": "Η συσκευή μου",
+                "sub2": "Οι ρυθμίσεις της συσκευής μου",
                 "sub3": "System Updates",
-                "sub4": "‏\"Έξυπνη βοήθεια\""
+                "sub4": "Έξυπνη βοήθεια"
             },
             "security": {
                 "title": "Ασφάλεια",
@@ -361,9 +363,9 @@
                 "sub5": "Προστασία στο Internet",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "Υποστήριξη",
+            "homeSecurity": "Συνδεδεμένη οικία",
+            "privacy": "Προσωπικά δεδομένα"
         },
         "securityAdvisor": {
             "title": "Σύμβουλος ασφάλειας",
@@ -686,7 +688,8 @@
                     "note1": "To extend the battery lifespan, you have set your ",
                     "note2": "to stop charging at ",
                     "note3": "battery",
-                    "note4": "and "
+                    "note4": "and ",
+                    "note": "Note: "
                 },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
@@ -1056,7 +1059,8 @@
                     "dropDown": {
                         "title": "Action User Defined key",
                         "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
-                    }
+                    },
+                    "tooltip": "Content to be filled"
                 }
             }
         },
@@ -1359,8 +1363,8 @@
         "overview": {
             "overviewBlockTitle": "Επισκόπηση ασφάλειας του περιβάλλοντός σας",
             "allDevices": "Όλες οι συσκευές",
-			"myDevice": "Η συσκευή μου",
-			"thisComputer": "This computer",
+            "myDevice": "Η συσκευή μου",
+            "thisComputer": "This computer",
             "secure": "ΑΣΦΑΛΗΣ",
             "needAttention": "ΑΠΑΙΤΕΙΤΑΙ ΠΡΟΣΟΧΗ",
             "manageAccount": "Διαχείριση λογαριασμού",
