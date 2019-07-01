@@ -37,7 +37,7 @@
 					},
 					"driverPopup": {
 						"headerText": "Driver Install Required",
-						"text": "You need install driver for RAM Overclock to  make it effective",
+						"text": "Install driver to activate RAM Overclock,",
 						"networkBoostText": "You need install driver for Network Boost to  make it effective",
 						"hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
 						"button": "Install",
@@ -130,7 +130,7 @@
 				},
 				"recording": {
 					"title": "START TYPING",
-					"description": "20 inputs with in 20 seconds can be recorded."
+					"description": "20 inputs within 20 seconds can be recorded."
 				},
 				"recorded": {
 					"title": "MACRO KEY FOR ",
@@ -219,7 +219,7 @@
 			},
 			"popupContent": {
 				"clearMacrokey": {
-					"title": "Are you sure to clear this macro key?"
+					"title": "Are you sure you want to clear this macro key?"
 				},
 				"timeoutRecording": {
 					"title": "Time Out For Recording.",

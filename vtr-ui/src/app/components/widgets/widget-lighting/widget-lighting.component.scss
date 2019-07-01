@@ -107,33 +107,33 @@
 				color: white !important;
 			}
 			#off_radio:checked {
-				& ~ #off {
-					color: $gaming_lightest;
-				}
+				// & ~ #off {
+				// 	color: $gaming_lightest;
+				// }
 				& ~ .toggle {
 					left: 0%;
 				}
 			}
 			#first_radio:checked {
-				& ~ #first_lbl {
-					color: $gaming_lightest;
-				}
+				// & ~ #first_lbl {
+				// 	color: $gaming_lightest;
+				// }
 				& ~ .toggle {
 					left: 25%;
 				}
 			}
 			#second_radio:checked {
-				& ~ #second_lbl {
-					color: $gaming_lightest;
-				}
+				// & ~ #second_lbl {
+				// 	color: $gaming_lightest;
+				// }
 				& ~ .toggle {
 					left: 50%;
 				}
 			}
 			#third_radio:checked {
-				& ~ #third_lbl {
-					color: $gaming_lightest;
-				}
+				// & ~ #third_lbl {
+				// 	color: $gaming_lightest;
+				// }
 				& ~ .toggle {
 					left: 74%;
 				}
@@ -186,5 +186,8 @@
 				}
 			}
 		}
+	}
+	.gamingTextColor {
+		color: $gaming_lightest !important;
 	}
 }
