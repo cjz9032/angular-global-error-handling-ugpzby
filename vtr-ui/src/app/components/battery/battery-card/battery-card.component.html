@@ -69,10 +69,7 @@
 			<div class="col">
 				<span class="battery-conditions-title"
 					*ngIf="batteryConditionNote?.title">
-					{{batteryConditionNote.title | translate}}
-				</span>&nbsp;
-				<span *ngIf="batteryConditions[i].condition==batteryConditionsEnum.Illegal">
-					<br>
+					{{batteryConditionNote.title | translate}} &nbsp;
 				</span>
 				<span class="battery-conditions-description"
 					*ngIf="batteryConditionNote?.description.length > 0">

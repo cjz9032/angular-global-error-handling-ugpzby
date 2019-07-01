@@ -150,22 +150,25 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			let batteryIndex = -1;
 			const batteriesHealths = [];
 			this.batteryInfo.forEach((info) => {
+				if (info.batteryHealth === undefined || info.batteryHealth === null) {
+					info['batteryHealth'] = 0;
+				}
 				batteriesHealths.push(info.batteryHealth);
 				if (info.batteryHealth >= this.batteryHealth) {
 					this.batteryHealth = info.batteryHealth;
 					batteryIndex += 1;
 				}
 			});
-			// this.commonService.setLocalStorageValue(LocalStorageKey.BatteryPercentage, batteriesHealths);
 			this.batteryIndex = batteryIndex;
 		}
-
 		this.batteryConditionStatus = this.getBatteryHealth(this.batteryHealth);
 		this.batteryIndicator.percent = this.batteryGauge.percentage;
 		this.batteryIndicator.charging = this.batteryGauge.isAttached;
 		this.batteryIndicator.convertMin(this.batteryGauge.time);
 		this.batteryIndicator.timeText = this.batteryGauge.timeType;
-		this.batteryIndicator.expressCharging = this.batteryGauge.isExpressCharging;
+		if (this.batteryGauge.isExpressCharging === undefined || this.batteryGauge.isExpressCharging === null) {
+			this.batteryIndicator.expressCharging = false;
+		}
 		this.batteryIndicator.voltageError = this.batteryInfo[this.batteryIndex].isVoltageError;
 		this.batteryIndicator.batteryNotDetected = this.batteryHealth === 4;
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo, { detail: this.batteryInfo, gauge: this.batteryGauge });
