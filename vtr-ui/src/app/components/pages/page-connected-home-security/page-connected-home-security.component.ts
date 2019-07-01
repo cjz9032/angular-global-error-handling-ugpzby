@@ -25,10 +25,12 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { HomeSecurityMockService } from 'src/app/services/home-security/home-security.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { HomeSecurityWelcome } from 'src/app/data-models/home-security/home-security-welcome.model';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { HomeSecurityAllDevice } from 'src/app/data-models/home-security/home-security-overview-allDevice.model';
 import { HomeSecurityOverviewMyDevice } from 'src/app/data-models/home-security/home-security-overview-my-device.model';
 import { HomeSecurityNotifications } from 'src/app/data-models/home-security/home-security-notifications.model';
 import { HomeSecurityCommon } from 'src/app/data-models/home-security/home-security-common.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 
 
 @Component({
@@ -48,6 +50,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	account: HomeSecurityAccount;
 	common: HomeSecurityCommon;
 	backId = 'chs-btn-back';
+	isOnline = true;
 
 	constructor(
 		vantageShellService: VantageShellService,
@@ -70,6 +73,10 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	}
 
 	ngOnInit() {
+		this.isOnline = this.commonService.isOnline;
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
 		if (this.connectedHomeSecurity) {
 			this.connectedHomeSecurity.startPullingCHS();
 		}
@@ -211,6 +218,19 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				windowClass: 'Welcome-container-Modal'
 			});
 			welcomeModal.componentInstance.switchPage = 4;
+		}
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
 		}
 	}
 }
