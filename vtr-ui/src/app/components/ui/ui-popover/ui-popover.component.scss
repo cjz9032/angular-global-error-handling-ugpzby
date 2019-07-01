@@ -16,6 +16,9 @@ ui-popover {
   @media #{$medium-screen} {
     width: 50rem;
   }
+  @media #{$mediaquery_X31} {
+    width: 40rem;
+  }
   &::after {
     content: "";
     position: absolute;
