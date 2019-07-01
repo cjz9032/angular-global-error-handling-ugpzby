@@ -19,13 +19,17 @@ import {
 	styleUrls: ['./active-protection-system.component.scss']
 })
 export class ActiveProtectionSystemComponent implements OnInit {
-	advanced: boolean; // for advanced section
+	advancedToggle: boolean; // for advanced section toggle
+	advanceAvailable: boolean; // show / hide advanced section
 	apsStatus: boolean;
 	apsSensitivity: number;
 	repeatShock: boolean;
 	manualSnooze: boolean;
 	manualSnoozeTime: number;
 	selectedSnoozeTime: number;
+	penCapability: boolean;
+	touchCapability: boolean;
+	pSensorCapability: boolean;
 	public intervals: DropDownInterval[];
 	// public taskBarDimmerValue: number;
 
@@ -62,14 +66,15 @@ export class ActiveProtectionSystemComponent implements OnInit {
 	}
 
 	toggleAdvanced() {
-		this.advanced = !this.advanced;
+		this.advancedToggle = !this.advancedToggle;
 	}
 	constructor(private smartAssist: SmartAssistService) {}
 
 	ngOnInit() {
-		this.advanced = false;
+		this.advancedToggle = false;
 		this.populateIntervals();
 		this.initAPS(); // get Default or set APS values
+		this.checkAdvance(); // checking advanced features
 	}
 
 	initAPS() {
@@ -102,9 +107,23 @@ export class ActiveProtectionSystemComponent implements OnInit {
 			.then(res => this.manualSnooze = res);
 		this.smartAssist
 			.getSnoozeTime()
-			.then(res => { console.log('SNOOZE', res); this.manualSnoozeTime = +res; });
+			.then(res => {this.manualSnoozeTime = +(res); });
+	}
+	// APS Advanced
+	checkAdvance() {
+		Promise
+			.all([this.smartAssist.getPenCapability(), this.smartAssist.getTouchCapability(), this.smartAssist.getPSensorCapability()])
+			.then((res: any[]) => {
+				console.log('Advanced RESPONSE', res);
+				(res[0] || res[1] || res[2]) ? this.advanceAvailable = true : this.advanceAvailable = true;
+				res[0] ? this.penCapability = true : this.penCapability = true;
+				res[1] ? this.touchCapability = true : this.touchCapability = true;
+				res[2] ? this.pSensorCapability = true : this.pSensorCapability = true;
+			})
+			.catch(error => console.log('APS Advanced not available', error));
 	}
 
+	// APS FUNCTIONS
 	setAPSMode(event) {
 		const value = !this.apsStatus;
 		this.smartAssist

@@ -4,36 +4,37 @@
 <div class="container">
 	<div class="row">
 		<div class="col">
-			<li class="input-item">
+			
+			<li *ngIf="penCapability" class="input-item">
 				<div>
 					<vtr-ui-row-switch
 						[title]="'device.smartAssist.activeProtectionSystem.advanced.pen.title' | translate"
 						[caption]="'device.smartAssist.activeProtectionSystem.advanced.pen.description' | translate"
-						[theme]="'white'" [isSwitchVisible]="true" [showChildContent]="true">
+						[theme]="'white'" [isSwitchVisible]="true" [showChildContent]="true" [checked]="penStatus">
 					</vtr-ui-row-switch>
 					<div class="dropdown row">
 						<section class="col-sm-6">
-							<vtr-ui-dropdown [list]="intervals" [value]="10">
+							<vtr-ui-dropdown [list]="intervals" [value]="penDelay" (change)="">
 							</vtr-ui-dropdown>
 						</section>
 					</div>
 				</div>
-      </li>
-      
-			<li class="input-item">
+			</li>
+
+			<li *ngIf="touchCapability" class="input-item">
 				<div>
 					<vtr-ui-row-switch
 						[title]="'device.smartAssist.activeProtectionSystem.advanced.touch.title' | translate"
-						[theme]="'white'" [isSwitchVisible]="true" [showChildContent]="true">
+						[theme]="'white'" [isSwitchVisible]="true" [showChildContent]="true" [checked]="touchStatus">
 					</vtr-ui-row-switch>
 				</div>
-      </li>
-      
-			<li class="input-item">
+			</li>
+
+			<li *ngIf="pSensorCapability" class="input-item">
 				<div>
 					<vtr-ui-row-switch
 						[title]="'device.smartAssist.activeProtectionSystem.advanced.hand.title' | translate"
-						[theme]="'white'" [isSwitchVisible]="true" [showChildContent]="true">
+						[theme]="'white'" [isSwitchVisible]="true" [showChildContent]="true" [checked]="pSensorStatus">
 					</vtr-ui-row-switch>
 				</div>
 			</li>

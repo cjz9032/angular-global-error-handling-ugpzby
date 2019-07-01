@@ -82,16 +82,21 @@
 					</li>
 
 					<!-- Advanced section -->
-					<li class="advanced pt-3 keep-my-display-block auto-screen-off-block">
-						<h4 *ngIf="!advanced">MORE</h4>
-						<a *ngIf="!advanced"
+					<li *ngIf="advanceAvailable" class="advanced pt-3 keep-my-display-block auto-screen-off-block">
+						<h4 *ngIf="!advancedToggle">MORE</h4>
+						<a *ngIf="!advancedToggle"
 							(click)="toggleAdvanced()">
 							<p>ADVANCED SETTINGS</p>
 						</a>
 
-						<section *ngIf="advanced">
+						<section *ngIf="advancedToggle">
 							<h4>ADVANCED SETTINGS</h4>
-							<vtr-active-protection-system-advanced></vtr-active-protection-system-advanced>
+							<vtr-active-protection-system-advanced
+								[penCapability]="penCapability"
+								[touchCapability]="touchCapability"
+								[pSensorCapability]="pSensorCapability">
+
+							</vtr-active-protection-system-advanced>
 							<a (click)="toggleAdvanced()">
 								<p>HIDE ADVANCED SETTINGS</p>
 							</a>
