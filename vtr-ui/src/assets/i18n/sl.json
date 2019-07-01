@@ -39,7 +39,9 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -344,13 +346,13 @@
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "Nadzorna plošča",
             "device": {
-                "title": "Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "Naprava",
+                "sub1": "Moja naprava",
+                "sub2": "Nastavitve mojih naprav",
                 "sub3": "System Updates",
-                "sub4": "‏\"Pametna pomoč\""
+                "sub4": "Pametna pomoč"
             },
             "security": {
                 "title": "Zaščita",
@@ -361,9 +363,9 @@
                 "sub5": "Internetna zaščita",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "Podpora",
+            "homeSecurity": "Povezani dom",
+            "privacy": "Zasebnost"
         },
         "securityAdvisor": {
             "title": "Varnostni svetovalec",
@@ -682,7 +684,13 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -1051,13 +1059,14 @@
                     "dropDown": {
                         "title": "Action User Defined key",
                         "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
-                    }
+                    },
+                    "tooltip": "Content to be filled"
                 }
             }
         },
         "smartAssist": {
             "title": "Pametna pomoč",
-            "description": "Tehnologija Lenovo za pametno zaznavanje združuje senzorje v računalniku, ki zaznavajo vaše dejavnosti,prilagodijo nastavitve za optimalno upravljanje porabe energije in zaščitijo vašo zasebnost.",
+            "description": "Tehnologija Lenovo za pametno zaznavanje združuje senzorje v računalniku, ki zaznavajo vaše dejavnosti, prilagodijo nastavitve za optimalno upravljanje porabe energije in zaščitijo vašo zasebnost.",
             "jumpTo": {
                 "title": "SKOK NA NASTAVITVE",
                 "security": "Zaščita",
@@ -1074,8 +1083,8 @@
                     "tooltip": "Kliknite tukaj za ponastavitev nastavitev zaznavanja človeške prisotnosti."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Zaznavanje prisotnosti uporabnika",
+                    "tooltip": "Kliknite tukaj za ponastavitev nastavitev zaznavanja človeške prisotnosti."
                 },
                 "zeroTouchLogin": {
                     "title": "Prijava brez dotika",
@@ -1083,7 +1092,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Zaklepanje brez dotika",
-                    "caption": "Ta funkcija bo zatemnila zaslon in zaklenila računalnik, ko ne zazna prisotnosti uporabnika.Zmanjša lahko možnost nepooblaščenega dostopa do računalnika, ko pustite računalnik brez nadzora in odklenjen. Zmanjša tudi porabo energije, ker sistem preklopi v stanje pripravljenosti, ko ne zazna vaše prisotnosti.",
+                    "caption": "Ta funkcija bo zatemnila zaslon in zaklenila računalnik, ko ne zazna prisotnosti uporabnika. Zmanjša lahko možnost nepooblaščenega dostopa do računalnika, ko pustite računalnik brez nadzora in odklenjen. Zmanjša tudi porabo energije, ker sistem preklopi v stanje pripravljenosti, ko ne zazna vaše prisotnosti.",
                     "autoScreenLockTimer": {
                         "title": "ČASOVNIK SAMODEJNEGA ZAKLEPANJA ZASLONA",
                         "radioButton": {
@@ -1091,46 +1100,46 @@
                             "medium": "Srednje",
                             "slow": "Počasi"
                         },
-                        "toolTipContent": "Izberite želeno možnost, da zaklenete zaslon pri hitro/srednje/počasni hitrosti, ko vaša prisotnost ni zaznana.Na čas, ko bo zaslon zaklenjen, vpliva tudi dejanska situacija uporabnika, zmožnost senzorja in nastavitve časa za izklop zaslona Windows. Zato priporočamo, da sistem takoj zaklenete, preden odidete."
+                        "toolTipContent": "Izberite želeno možnost, da zaklenete zaslon pri hitro/srednje/počasni hitrosti, ko vaša prisotnost ni zaznana. Na čas, ko bo zaslon zaklenjen, vpliva tudi dejanska situacija uporabnika, zmožnost senzorja in nastavitve časa za izklop zaslona Windows. Zato priporočamo, da sistem takoj zaklenete, preden odidete."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Samodejno prilagajanje razdalje samodejno posodobirazdaljo zaznavanja z uporabo umetne inteligence.",
+                    "title": "PRILAGAJANJE OBČUTLJIVOST ZAZNAVANJA",
+                    "caption": "Samodejno prilagajanje razdalje samodejno posodobi razdaljo zaznavanja z uporabo umetne inteligence.",
                     "options": {
                         "near": "Blizu",
                         "far": "Daleč"
                     }
                 },
                 "note": {
-                    "description1": "Ta funkcija uporablja Windows Hello.Poskrbite, da je funkcija prepoznavanja obraza vklopljena v nastavitvah sistema Windows.",
-                    "description2": "Funkcija uporablja senzorje in kamero za zaznavanje vaše prisotnosti.Vendar pa funkcija NE zbira, shranjuje ali posreduje kakršnih koli osebnih podatkov ali slik.",
-                    "description3": "1. Če je računalnik v načinu šotora, tabličnega računalnika ali stojala,te funkcije morda ne bodo pravilno delovale.",
-                    "description4": "2. Če je računalnik v načinu mirovanja ali je izklopljen.Samodejna prijava z IR-kamero ne bo delovala.",
-                    "description5": "3. Prilagodite zaslon računalnika na primeren kot,tako da bo lahko IR-kamera prepoznala vaš obraz za samodejno prijavo."
+                    "description1": "Ta funkcija uporablja Windows Hello. Poskrbite, da je funkcija prepoznavanja obraza vklopljena v nastavitvah sistema Windows.",
+                    "description2": "Funkcija uporablja senzorje in kamero za zaznavanje vaše prisotnosti. Vendar pa funkcija NE zbira, shranjuje ali posreduje kakršnih koli osebnih podatkov ali slik.",
+                    "description3": "1. Če je računalnik v načinu šotora, tabličnega računalnika ali stanja, te funkcije morda ne bodo pravilno delovale.",
+                    "description4": "2. Če je računalnik v načinu mirovanja ali je izklopljen. Samodejna prijava z IR-kamero ne bo delovala.",
+                    "description5": "3. Prilagodite zaslon računalnika na primeren kot, tako da bo lahko IR-kamera prepoznala vaš obraz za samodejno prijavo."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Odprite nastavitve Windows Hello",
                     "screenTimeoutSettings": "Odprite nastavitve časa za izklop zaslona"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "PONASTAVITEV NA PRIVZETE NASTAVITVE"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Inteligentni zaslon",
+                "description": "Tehnologija Lenovo za pametno zaznavanje združuje različne senzorje v računalniku, ki zaznavajo vaše dejavnosti in prilagodijo nastavitve za upravljanje porabe energije. Če ta tehnologija na primer zazna, da hodite, bo zatemnila zaslon, če zazna, da berete, pa tega ne bo storila.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Samodejni zaslon je izklopljen",
+                    "caption": "Samodejni izklop zaslona, ko je obrnjen navzdol ali med hojo.",
+                    "note": "Ta funkcija ni na voljo, če so nastavitve načrta porabe nastavljene tako, da nikoli ne izklopijo zaslona na bateriji v razdelku Nastavitve sistema Windows. Če želite omogočiti to funkcijo, izberite vrednost, ki ni »Nikoli«.",
+                    "windowsLink": "Nastavitve napajanja in stanja pripravljenosti v nastavitvah sistema Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Obdržite svoj zaslon",
+                    "caption": "Zaslon naj bo dalj časa vklopljen, ko berem ali brskam.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Čas, preden se zaslon zatemni med brskanjem (v minutah)",
+                        "startTime": "0 minuti",
+                        "endTime": "60 minuti"
                     }
                 }
             },
@@ -1165,10 +1174,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Inteligentni mediji",
+                "title": "Predvajanje videoposnetkov z ničelnim dotikom",
+                "desc": "Ta funkcija bo začasno ustavila videoposnetek, ko zapustite računalnik, in nadaljevala predvajanje, ko se vrnete.",
+                "tooltip": "Ta funkcija se ne uporablja za spletne videopredvajalnike. To funkcijo podpirajo priljubljeni lokalni videopredvajalniki, kot so Windows Media Player, 5KPlayer in drugi."
             },
             "voice": {
                 "title": "Voice",
@@ -1195,6 +1204,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1209,9 +1223,9 @@
         "recommendedUpdates": "Priporočene posodobitve",
         "optionalUpdates": "Izbirne posodobitve",
         "ignoredUpdates": "Prezrte posodobitve",
-        "successInstall": "Uspešna namestitev v",
-        "failedInstall": "Nespešna namestitev v",
-        "at": "na",
+        "successInstall": "Uspešna namestitev",
+        "failedInstall": "Neuspešna namestitev",
+        "at": "ob",
         "readMore": "Preberite več",
         "popup": {
             "reboot": "Znova zaženi",
@@ -1350,6 +1364,7 @@
             "overviewBlockTitle": "Pregled varnosti ekosistema",
             "allDevices": "Vse naprave",
             "myDevice": "Moja naprava",
+            "thisComputer": "This computer",
             "secure": "VARNO",
             "needAttention": "POTREBEN JE UKREP",
             "manageAccount": "Upravljanje računa",

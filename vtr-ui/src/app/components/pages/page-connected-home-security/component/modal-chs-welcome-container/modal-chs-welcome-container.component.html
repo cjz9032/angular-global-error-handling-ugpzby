@@ -1,4 +1,4 @@
-<div class="vtr-modal-chs-welcome-container">
+<div class="vtr-modal-chs-welcome-container position-relative">
 	<div class="modal-header">
 		<button type="button" class="close close-button" id="chs-tour-btn-close" data-dismiss="modal"
 			(click)="closeModal()" aria-label="chs-tour-btn-close">
@@ -14,13 +14,13 @@
 			<p class="page-title mb-3">{{'homeSecurity.tour.welcome1' | translate}}</p>
 			<p class="page-desc p-0">{{'homeSecurity.tour.welcomeDesc1' | translate}}</p>
 			<p class="page-desc font-weight-bold">{{'homeSecurity.tour.welcomeDescStart' | translate}}</p>
-    	</div>
+		</div>
 	</div>
 	<!-- end of page1-->
 	<!-- start of page 2-->
 	<div class="page page-two" *ngIf="switchPage === 2">
 		<div class="text-center">
-      		<div class="page-img">
+				<div class="page-img">
 				<img src="assets/images/connected-home-security/welcome-page-two.png" alt="">
 			</div>
 			<p class="page-title pb-3">{{'homeSecurity.tour.welcome2' | translate}}</p>
@@ -33,71 +33,72 @@
 		<div class="chs-logo w-100 pb-5">
 			<img src="assets/images/connected-home-security/welcome-chs-logo.png" alt="">
 		</div>
-    <div class="chs-login-content row no-gutters">
-      <div class="col-7">
-        <div class="text-regular mb-5 ml-4">
-          <p class="h3">{{'homeSecurity.tour.create' | translate}}</p>
-          <p class="h1">{{'homeSecurity.tour.lenovoId' | translate}}</p>
-        </div>
-        <div class="mb-5 ml-4">
-          <ul class="list-unstyled">
-            <li class="text pb-4">
-              <div class="row">
-                <div class="col-auto pl-0">
-                  <div class="bullet-icon-check">
-                    <div class="icon-bkg">
-                      <fa-icon [icon]="['fas', 'check']">
-                      </fa-icon>
-                    </div>
-                  </div>
-                </div>
-                <div class="col text-regular align-self-center" [innerHtml]="'homeSecurity.tour.notifications' | translate"></div>
-              </div>
-            </li>
-            <li class="text pb-4">
-              <div class="row">
-                <div class="col-auto pl-0">
-                  <div class="bullet-icon-check">
-                    <div class="icon-bkg">
-                      <fa-icon [icon]="['fas', 'check']">
-                      </fa-icon>
-                    </div>
-                  </div>
-                </div>
-                <div class="col text-regular align-self-center" [innerHtml]="'homeSecurity.tour.monitor' | translate"></div>
-              </div>
-            </li>
-            <li class="text">
-              <div class="row">
-                <div class="col-auto pl-0">
-                  <div class="bullet-icon-check">
-                    <div class="icon-bkg">
-                      <fa-icon [icon]="['fas', 'check']">
-                      </fa-icon>
-                    </div>
-                  </div>
-                </div>
-                <div class="col text-regular align-self-center" [innerHtml]="'homeSecurity.tour.peaceOfMind' | translate"></div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <vtr-ui-button
+	<div class="chs-login-content row no-gutters">
+		<div class="col-7">
+		<div class="text-regular mb-5 ml-4">
+			<p class="h3">{{'homeSecurity.tour.create' | translate}}</p>
+			<p class="h1">{{'homeSecurity.tour.lenovoId' | translate}}</p>
+		</div>
+		<div class="mb-5 ml-4">
+			<ul class="list-unstyled">
+			<li class="text pb-4">
+				<div class="row">
+				<div class="col-auto pl-0">
+					<div class="bullet-icon-check">
+					<div class="icon-bkg">
+						<fa-icon [icon]="['fas', 'check']">
+						</fa-icon>
+					</div>
+					</div>
+				</div>
+				<div class="col text-regular align-self-center" [innerHtml]="'homeSecurity.tour.notifications' | translate"></div>
+				</div>
+			</li>
+			<li class="text pb-4">
+				<div class="row">
+				<div class="col-auto pl-0">
+					<div class="bullet-icon-check">
+					<div class="icon-bkg">
+						<fa-icon [icon]="['fas', 'check']">
+						</fa-icon>
+					</div>
+					</div>
+				</div>
+				<div class="col text-regular align-self-center" [innerHtml]="'homeSecurity.tour.monitor' | translate"></div>
+				</div>
+			</li>
+			<li class="text">
+				<div class="row">
+				<div class="col-auto pl-0">
+					<div class="bullet-icon-check">
+					<div class="icon-bkg">
+						<fa-icon [icon]="['fas', 'check']">
+						</fa-icon>
+					</div>
+					</div>
+				</div>
+				<div class="col text-regular align-self-center" [innerHtml]="'homeSecurity.tour.peaceOfMind' | translate"></div>
+				</div>
+			</li>
+			</ul>
+		</div>
+		<vtr-ui-button
 			id="chs-tour-btn-login-lenovoId"
 			aria-label="chs-tour-btn-login-lenovoId"
 			vtrMetrics
 			metricsEvent="FeatureClick"
 			metricsItem="loginLenovoId"
-            [label]="'homeSecurity.tour.signInLenovoId' | translate"
-            [title]="'homeSecurity.tour.signInLenovoId' | translate"
-            (click)="openLenovoId()"></vtr-ui-button>
-      </div>
-      <div class="col-5">
-        <div class= "w-100 row justify-content-end">
-          <img src="assets/images/connected-home-security/ecosystem-circle-green2x.png" alt="">
-        </div>
-      </div>
-    </div>
+			metricsParent="{{metricsParent}}"
+			[label]="'homeSecurity.tour.signInLenovoId' | translate"
+			[title]="'homeSecurity.tour.signInLenovoId' | translate"
+			(click)="openLenovoId()"></vtr-ui-button>
+		</div>
+		<div class="col-5">
+		<div class= "w-100 row justify-content-end">
+			<img src="assets/images/connected-home-security/ecosystem-circle-green2x.png" alt="">
+		</div>
+		</div>
+	</div>
 	</div>
 	<!-- end of page3-->
 	<!-- start of page 4-->
@@ -116,6 +117,10 @@
 				<vtr-ui-button *ngIf="!isLocationServiceOn"
 					id="chs-tour-btn-openLocation"
 					aria-label="chs-tour-btn-openLocation"
+					vtrMetrics
+					metricsEvent="FeatureClick"
+					metricsItem="CHSWelcomeOpenLocationButton"
+					metricsParent="{{metricsParent}}"
 					(click)="openLocation($event)"
 					[upperCaseLabel]=false
 					[label]="'homeSecurity.tour.locationTitle' | translate"
@@ -124,6 +129,10 @@
 				<vtr-ui-button *ngIf="isLocationServiceOn === true"
 					id="chs-tour-location-done-btn"
 					aria-label="chs-tour-location-done-btn"
+					vtrMetrics
+					metricsEvent="FeatureClick"
+					metricsItem="CHSWelcomeDoneButton"
+					metricsParent="{{metricsParent}}"
 					(click)="closeModal()"
 					[label]="'homeSecurity.tour.done' | translate"
 					[title]="'homeSecurity.tour.done' | translate"></vtr-ui-button>
@@ -139,7 +148,8 @@
 					aria-label="chs-tour-btn-start"
 					vtrMetrics
 					metricsEvent="FeatureClick"
-					metricsItem="nextCHSWelcome"
+					metricsItem="CHSWelcomeNextButton"
+					metricsParent="{{metricsParent}}"
 					[label]="'tutorial.next' | translate"
 					(click)="next(switchPage, isLenovoIdLogin, isLocationServiceOn)"
 					[title]="'tutorial.next' | translate"></vtr-ui-button>
@@ -151,7 +161,8 @@
 					aria-label="chs-tour-btn-prev"
 					vtrMetrics
 					metricsEvent="FeatureClick"
-					metricsItem="prevCHSWelcome"
+					metricsItem="CHSWelcomePrevButton"
+					metricsParent="{{metricsParent}}"
 					[label]="'common.ui.back' | translate"
 					(click)="prev(switchPage)"
 					[title]="'common.ui.back' | translate"></vtr-ui-button>
@@ -162,9 +173,9 @@
 					aria-label="chs-tour-btn-next"
 					vtrMetrics
 					metricsEvent="FeatureClick"
-					metricsItem="nextCHSWelcome"
+					metricsItem="CHSWelcomeNextButton"
+					metricsParent="{{metricsParent}}"
 					(click)="next(switchPage, isLenovoIdLogin, isLocationServiceOn)"
-					[disabled]="disabled"
 					[label]="'tutorial.next' | translate"
 					[title]="'tutorial.next' | translate"></vtr-ui-button>
 				<vtr-ui-button *ngIf="isLenovoIdLogin && isLocationServiceOn"
@@ -172,40 +183,38 @@
 					aria-label="chs-tour-btn-done"
 					vtrMetrics
 					metricsEvent="FeatureClick"
-					metricsItem="doneCHSWelcome"
-					[disabled]="disabled"
+					metricsItem="CHSWelcomeStartTrialButton"
+					metricsParent="{{metricsParent}}"
 					(click)="next(switchPage, isLenovoIdLogin, isLocationServiceOn)"
 					[label]="'homeSecurity.tour.done' | translate"
 					[title]="'homeSecurity.tour.done' | translate"></vtr-ui-button>
 			</div>
-    	</div>
+		</div>
 		<div *ngIf="switchPage === 3" class="row text-center justify-content-between align-items-center no-gutters">
 			<div class="button-welcome">
 				<vtr-ui-button id="chs-tour-btn-pageThree-prev"
 					aria-label="chs-tour-btn-pageThree-prev"
 					vtrMetrics
 					metricsEvent="FeatureClick"
-					metricsItem="prevCHSWelcome"
+					metricsItem="CHSWelcomePrevButton"
+					metricsParent="{{metricsParent}}"
 					(click)="prev(switchPage)"
 					[label]="'common.ui.back' | translate"
 					[title]="'common.ui.back' | translate"></vtr-ui-button>
 			</div>
 			<div class="button-welcome">
-				<a *ngIf="!isLocationServiceOn"
-					id="chs-tour-lnk-skip"
+				<a id="chs-tour-lnk-skip"
 					attr.aria-label="chs-tour-lnk-skip"
 					vtrMetrics
 					metricsEvent="FeatureClick"
-					metricsItem="skipCHSWelcome"
+					metricsItem="CHSWelcomeStartTrialButton"
+					metricsParent="{{metricsParent}}"
 					(click)="next(switchPage, isLenovoIdLogin, isLocationServiceOn)">{{'homeSecurity.tour.skip' | translate}}</a>
-				<a *ngIf="isLocationServiceOn"
-					id="chs-tour-lnk-done"
-					attr.aria-label="chs-tour-lnk-done"
-					vtrMetrics
-					metricsEvent="FeatureClick"
-					metricsItem="doneCHSWelcome"
-					(click)="next(switchPage, isLenovoIdLogin, isLocationServiceOn)">{{'homeSecurity.tour.done' | translate}}</a>
 			</div>
+		</div>
+	</div>
+	<div *ngIf="loading" class="loading position-absolute w-100 h-100 d-flex justify-content-center align-items-center">
+		<div class="spinner-border text-primary progress-spinner" role="status">
 		</div>
 	</div>
 </div>

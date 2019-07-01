@@ -38,7 +38,7 @@
 						<vtr-ui-color-wheel *ngIf="lightingCapabilities.RGBfeature===255"
 							[showOverlay]="showHideOverlay" [inHEX]="inHex1" [btnStatus]="applyBtnStatus1"
 							(colorEffectChanged)="colorEffectChangedFront($event)" [showApply]="showHideApply1"
-							(colorEffectChanged)="colorEffectChangedFront($event)">
+							 >
 						</vtr-ui-color-wheel>
 					</div>
 				</div>
@@ -68,7 +68,7 @@
 					<vtr-ui-color-wheel *ngIf="lightingCapabilities.RGBfeature===255"
 						[showOverlay]="showHideOverlaySide" [inHEX]="inHex2" [btnStatus]="applyBtnStatus2"
 						(colorEffectChanged)="colorEffectChangedSide($event)" [showApply]="showHideApply2"
-						(colorEffectChanged)="colorEffectChangedSide($event)">
+					 >
 					</vtr-ui-color-wheel>
 				</div>
 			</div>

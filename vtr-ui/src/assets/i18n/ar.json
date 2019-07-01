@@ -39,7 +39,9 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -344,26 +346,26 @@
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "لوحة المعلومات",
             "device": {
-                "title": "Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "الجهاز",
+                "sub1": "جهازي",
+                "sub2": "إعدادات جهازي",
                 "sub3": "System Updates",
-                "sub4": "‏مساعدة ذكية"
+                "sub4": "مساعدة ذكية"
             },
             "security": {
                 "title": "الأمان",
                 "sub1": "أمن جهازي",
                 "sub2": "مكافحة الفيروسات",
-                "sub3": "أمان شبكة WiFi",
+                "sub3": "أمان WiFi",
                 "sub4": "سلامة كلمة المرور",
                 "sub5": "حماية الإنترنت",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "الدعم",
+            "homeSecurity": "المنزل المتصل",
+            "privacy": "الخصوصية"
         },
         "securityAdvisor": {
             "title": "مستشار الأمان",
@@ -682,7 +684,13 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -1051,13 +1059,14 @@
                     "dropDown": {
                         "title": "Action User Defined key",
                         "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
-                    }
+                    },
+                    "tooltip": "Content to be filled"
                 }
             }
         },
         "smartAssist": {
-            "title": "‏مساعدة ذكية",
-            "description": "تدمج ميزة \"الاستشعار الذكي من Lenovo\" أجهزة الاستشعار المختلفة على الكمبيوتر للكشف عن أنشطتك،وضبط الإعدادات لإدارة الطاقة بشكل مثالي وحماية خصوصيتك.",
+            "title": "مساعدة ذكية",
+            "description": "تدمج ميزة الاستشعار الذكي من Lenovo أجهزة الاستشعار على الكمبيوتر للكشف عن أنشطتك، وضبط الإعدادات لإدارة الطاقة بشكل مثالي وحماية خصوصيتك.",
             "jumpTo": {
                 "title": "انتقال سريع إلى الإعدادات",
                 "security": "الأمان",
@@ -1067,15 +1076,15 @@
                 "APS": "APS"
             },
             "intelligentSecurity": {
-                "title": "الأمان الذكي",
+                "title": "الأمان الذكي",
                 "readMore": "اقرأ أكثر",
                 "HumanPresenceDetection": {
                     "title": "الكشف عن الوجود البشري",
-                    "tooltip": "انقر هنا لإعادة تعيين إعدادات الكشف عن الوجود البشري."
+                    "tooltip": "انقر هنا لإعادة تعيين إعدادات الكشف عن الوجود البشري."
                 },
                 "humanPresenceDetection": {
-                    "title": "الكشف عن الوجود البشري",
-                    "tooltip": "انقر هنا لإعادة تعيين إعدادات الكشف عن الوجود البشري."
+                    "title": "استشعار وجود المستخدم",
+                    "tooltip": "انقر هنا لإعادة تعيين إعدادات الكشف عن الوجود البشري."
                 },
                 "zeroTouchLogin": {
                     "title": "تسجيل الدخول من دون لمس",
@@ -1083,7 +1092,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "قفل من دون لمس",
-                    "caption": "ستقوم هذه الميزة بتعتيم جهاز العرض وتامين الكمبيوتر عندما لا يتم الكشف عن وجود المستخدم.بإمكان هذه الميزة تقليل فرص الوصول غير المخول إلى الكمبيوتر عندما تتركه بدون مراقبة أو بدون تأمين. وهي تقلل أيضًا استهلاك الطاقة عن طريق إدخال النظام في وضع الاستعداد الحديث عندما لا يتم الكشف عن وجودك.",
+                    "caption": "ستقوم هذه الميزة بتعتيم جهاز العرض وتامين الكمبيوتر عندما لا يتم الكشف عن وجود المستخدم. ويمكنها تقليل فرص الوصول غير المخول إلى الكمبيوتر عندما تتركه بدون مراقبة أو بدون تأمين. وهي تقلل أيضًا استهلاك الطاقة عن طريق إدخال النظام في وضع الاستعداد الحديث عندما لا يتم الكشف عن وجودك.",
                     "autoScreenLockTimer": {
                         "title": "مؤقت قفل الشاشة التلقائي",
                         "radioButton": {
@@ -1091,46 +1100,46 @@
                             "medium": "متوسطة",
                             "slow": "بطيئة"
                         },
-                        "toolTipContent": "حدد الخيار الذي تريده لقفل الشاشة بسرعة سريعة/متوسطة/بطيئة عندما لا يتم الكشف عن وجودك.ومع ذلك، فإن وقت قفل الشاشة سوف يتأثر أيضًا بسيناريو المستخدم الفعلي، وقدرة المستشعر وإعدادات مهلة شاشة Windows. لذلك، نقترح ضرورة إغلاق النظام على الفور قبل المغادرة."
+                        "toolTipContent": "حدد الخيار الذي تريده لقفل الشاشة بسرعة سريعة/متوسطة/بطيئة عندما لا يتم الكشف عن وجودك. ومع ذلك، فإن وقت قفل الشاشة سوف يتأثر أيضًا بسيناريو المستخدم الفعلي، وقدرة المستشعر وإعدادات مهلة شاشة Windows. لذلك، نقترح ضرورة إغلاق النظام على الفور قبل المغادرة."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "سيؤدي ضبط المسافة تلقائيًا إلى تحديثمسافة الكشف بشكل تلقائي عبر محرك AI.",
+                    "title": "ضبط حساسية المسافة",
+                    "caption": "سيؤدي ضبط المسافة تلقائيًا إلى تحديث مسافة الكشف بشكل تلقائي عبر محرك AI.",
                     "options": {
                         "near": "قريب",
                         "far": "بعيد"
                     }
                 },
                 "note": {
-                    "description1": "تعتمد هذه الميزة على Windows Hello.تأكد من تشغيل ميزة التعرف على الوجوه في إعدادات Windows.",
-                    "description2": "تستخدم الميزة المستشعرات والكاميرا للكشف عن وجودك.ومع ذلك، فإن الميزة لا تجمع أو تحفظ أو تسرب أي بيانات أو صور شخصية.",
-                    "description3": "‏1. إذا كان الكمبيوتر في وضع خيمة أو وضع الكمبيوتر اللوحي أو وضع الحامل،فقد لا تعمل هذه الميزات بشكل صحيح.",
-                    "description4": "‏2. إذا كان الكمبيوتر في وضع الإسبات أو تم إيقاف تشغيله.لن يعمل تسجيل دخول كاميرا الأشعة تحت الحمراء تلقائيًا.",
-                    "description5": "‏3. يُرجى ضبط شاشه الكمبيوتر إلى الزاوية المناسبةمما يسمح للكاميرا التي تعمل بالأشعة تحت الحمراء من التعرف على وجهك لتمكين تسجيل الدخول التلقائي."
+                    "description1": "تعتمد هذه الميزة على Windows Hello. تأكد من تشغيل ميزة التعرف على الوجوه في إعدادات Windows.",
+                    "description2": "تستخدم الميزة المستشعرات والكاميرا للكشف عن وجودك. ومع ذلك، فإن الميزة لا تجمع أي بيانات شخصية.",
+                    "description3": "1. إذا كان الكمبيوتر الخاص بك في وضع خيمة أو وضع جهاز لوحي أو وضع حامل، فقد لا تعمل هذه الميزات بشكل صحيح.",
+                    "description4": "2. إذا كان الكمبيوتر في وضع الإسبات أو تم إيقاف تشغيله. لن يعمل تسجيل دخول كاميرا الأشعة تحت الحمراء تلقائيًا.",
+                    "description5": "3. يُرجى ضبط شاشه الكمبيوتر إلى الزاوية المناسبة مما يسمح للكاميرا التي تعمل بالأشعة تحت الحمراء من التعرف على وجهك لتمكين تسجيل الدخول التلقائي."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "انتقال إلى إعدادات Windows Hello",
                     "screenTimeoutSettings": "إعدادات مهلة الذهاب إلى الشاشة"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "إعادة تعيين إلى الإعدادات الافتراضية"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "شاشة ذكية",
+                "description": "تدمج ميزة الاستشعار الذكي من Lenovo أجهزة الاستشعار المختلفة على الكمبيوتر للكشف عن أنشطتك وضبط الإعدادات الخاصة بإدارة الطاقة. على سبيل المثال، ستقوم هذه الميزة بتعتيم جهاز العرض عندما تكتشف أنك تمشي ولكنها لن تعتمه إذا اكتشفت أنك تقرأ.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "إيقاف تشغيل الشاشة تلقائيًا",
+                    "caption": "إيقاف تشغيل جهاز العرض تلقائيًا عند توجيه الوجه للأسفل أو المشي.",
+                    "note": "لا تتوفر هذه الميزة إذا تم تعيين إعدادات مخطط الطاقة لديك إلى \"عدم إيقاف تشغيل الشاشة على البطارية\" في قسم \"نظام إعدادات Windows\". برجاء تحديد قيمة خلاف \"أبدًا\" لتمكين هذه الميزة.",
+                    "windowsLink": "انتقال إلى إعدادات الطاقة والسكون في إعدادات Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "إبقاء جهاز العرض الخاص بي",
+                    "caption": "إبقاء جهاز العرض قيد التشغيل لفترة أطول عند القراءة أو الاستعراض.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "عدد الدقائق قبل تعتيم جهاز العرض أثناء الاستعراض",
+                        "startTime": "0 دقيقة",
+                        "endTime": "60 دقيقة"
                     }
                 }
             },
@@ -1165,10 +1174,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "الوسائط الذكية",
+                "title": "تشغيل الفيديو من دون لمس",
+                "desc": "ستعمل هذه الميزة على إيقاف الفيديو بشكل مؤقت عندما تغادر الكمبيوتر، وتستأنف الفيديو عند عودتك إليه.",
+                "tooltip": "لا تنطبق هذه الميزة على مشغلات فيديو الويب. تدعم مشغلات الفيديو المحلية الأكثر رواجًا، مثل Windows Media Player و5KPlayer وغيرها، هذه الميزة."
             },
             "voice": {
                 "title": "Voice",
@@ -1195,6 +1204,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1209,8 +1223,8 @@
         "recommendedUpdates": "تحديث مستحسن (تحديثات مستحسنة)",
         "optionalUpdates": "تحديث اختياري (تحديثات اختيارية)",
         "ignoredUpdates": "تحديث تم تجاهله (تحديثات تم تجاهلها)",
-        "successInstall": "تم التثبيت بنجاح على",
-        "failedInstall": "فشل التثبيت على",
+        "successInstall": "تم التثبيت بنجاح في",
+        "failedInstall": "فشل التثبيت في",
         "at": "عند",
         "readMore": "اقرأ أكثر",
         "popup": {
@@ -1350,6 +1364,7 @@
             "overviewBlockTitle": "نظرة عامة على أمان النظام البيئي",
             "allDevices": "جميع الأجهزة",
             "myDevice": "جهازي",
+            "thisComputer": "This computer",
             "secure": "آمن",
             "needAttention": "يحتاج إلى الانتباه",
             "manageAccount": "إدارة الحساب",

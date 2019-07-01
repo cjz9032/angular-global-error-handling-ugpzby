@@ -386,7 +386,8 @@ export class SmartAssistService {
 		return undefined;
 	}
 	// Suspend APS
-	public sendSnoozeCommand(value: string): Promise < boolean > {
+	public sendSnoozeCommand(value: string): Promise<boolean> {
+		console.log('SUSPEND', typeof value, value);
 		if (this.isAPSavailable) {
 			return this.activeProtectionSystem.sendSnoozeCommand(value);
 		}

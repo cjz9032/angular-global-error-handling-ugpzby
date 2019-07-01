@@ -26,7 +26,7 @@
 							<vtr-ui-aps-slider [legends]="['Low Sensitivity', 'Medium Sensitivity', 'High Sensitivity']"
 								[minValue]="0"
 								[maxValue]="100"
-								[enableSlider]="false"
+								[enableSlider]="!apsStatus"
 								[value]="apsSensitivity"
 								[theme]="'white'"
 								[step]='50'
@@ -38,7 +38,8 @@
 							<vtr-ui-checkbox
 								[label]="'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate"
 								[checked]="repeatShock"
-								(change)="setAutoDisableSetting($event)">
+								(change)="setAutoDisableSetting($event)"
+								[disabled]="!apsStatus">
 							</vtr-ui-checkbox>
 						</div>
 					</li>
@@ -54,31 +55,32 @@
 							[isSwitchChecked]="manualSnooze"
 							[showChildContent]="true"
 							(toggleOnOff)="setSnoozeSetting($event)"
+							[disabled]="!apsStatus"
 							>
+							<div class="dropdown row">
+								<section class="col-sm-6">
+									<p class="text-uppercase">
+										{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.dropdown-title' | translate }}
+									</p>
+									<vtr-ui-dropdown
+										*ngIf='manualSnoozeTime'
+										[list]="intervals"
+										[value]="manualSnoozeTime"
+										(change)="setSnoozeTime($event)">
+									</vtr-ui-dropdown>
+								</section>
+								<section class="col-sm-5">
+									<div class="pt-4 text-center">
+										<button 
+											type="button"
+											class="btn btn-primary btn-block btn-lg battery-detail-button text-uppercase"
+											(click)="suspendNow()">
+											{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.button' | translate }}
+										</button>
+									</div>
+								</section>
+							</div>
 						</vtr-ui-row-switch>
-						<div class="dropdown row">
-							<section class="col-sm-6">
-								<p class="text-uppercase">
-									{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.dropdown-title' | translate }}
-								</p>
-								<vtr-ui-dropdown
-									*ngIf='manualSnoozeTime'
-									[list]="intervals"
-									[value]="manualSnoozeTime"
-									(change)="setSnoozeTime($event)">
-								</vtr-ui-dropdown>
-							</section>
-							<section class="col-sm-5">
-								<div class="pt-4 text-center">
-									<button 
-										type="button"
-										class="btn btn-primary btn-block btn-lg battery-detail-button text-uppercase"
-										(click)="suspendNow()">
-										{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.button' | translate }}
-									</button>
-								</div>
-							</section>
-						</div>
 					</li>
 
 					<!-- Advanced section -->
