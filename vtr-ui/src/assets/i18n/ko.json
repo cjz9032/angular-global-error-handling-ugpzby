@@ -39,7 +39,9 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -344,13 +346,13 @@
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "대시보드",
             "device": {
-                "title": "Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "장치",
+                "sub1": "내 장치",
+                "sub2": "내 장치 설정",
                 "sub3": "System Updates",
-                "sub4": "‏\"고급 지원\""
+                "sub4": "고급 지원"
             },
             "security": {
                 "title": "보안",
@@ -361,9 +363,9 @@
                 "sub5": "인터넷 보호",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "지원",
+            "homeSecurity": "홈 연결",
+            "privacy": "프라이버시"
         },
         "securityAdvisor": {
             "title": "보안 어드바이저",
@@ -686,7 +688,8 @@
                     "note1": "To extend the battery lifespan, you have set your ",
                     "note2": "to stop charging at ",
                     "note3": "battery",
-                    "note4": "and "
+                    "note4": "and ",
+                    "note": "Note: "
                 },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
@@ -1056,7 +1059,8 @@
                     "dropDown": {
                         "title": "Action User Defined key",
                         "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
-                    }
+                    },
+                    "tooltip": "Content to be filled"
                 }
             }
         },
@@ -1359,8 +1363,8 @@
         "overview": {
             "overviewBlockTitle": "생태계 보안 개요",
             "allDevices": "모든 장치",
-			"myDevice": "내 장치",
-			"thisComputer": "This computer",
+            "myDevice": "내 장치",
+            "thisComputer": "This computer",
             "secure": "보안",
             "needAttention": "주의 필요",
             "manageAccount": "계정 관리",

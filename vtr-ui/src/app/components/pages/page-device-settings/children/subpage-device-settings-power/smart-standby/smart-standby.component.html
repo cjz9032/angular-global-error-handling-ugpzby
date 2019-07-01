@@ -15,7 +15,7 @@
 						[isSwitchChecked]="smartStandby.isEnabled"
 						(toggleOnOff)="onSmartStandbyToggle($event)">
 					</vtr-ui-row-switch>
-					<section *ngIf="smartStandby.isEnabled">
+					<section *ngIf="smartStandby?.isEnabled">
 						<div class="smart-standby-timer">
 							<h5>
 								{{ 'device.deviceSettings.power.smartStandby.timer.heading' | translate | uppercase }}
@@ -23,12 +23,12 @@
 							<vtr-ui-time-picker [time]="smartStandbyStartTime"
 								[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading1'"
 								[id]="'dropcheck1'"
-								(setTime)="onSetStartTime($event)">
+								(setTime)="onSetActiveStartEnd($event, true)">
 							</vtr-ui-time-picker>
 							<vtr-ui-time-picker [time]="smartStandbyEndTime"
 								[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading2'"
 								[id]="'dropcheck2'"
-								(setTime)="onSetEndTime($event)">
+								(setTime)="onSetActiveStartEnd($event, false)">
 							</vtr-ui-time-picker>
 							<div class="row">
 								<div class="col">

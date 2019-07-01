@@ -23,6 +23,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 	public dataSourceGauge: BatteryGaugeDetail; // BI Update
 	@Input() data: BatteryDetail[];
 	@Input() dataGauge: BatteryGaugeDetail; // BI Update
+	@Input() batteryConditionStatus: string;
 	remainingTimeText = '';
 	chargeCompletionTimeText = '';
 	batteryIndicators = new BatteryIndicator();
@@ -71,7 +72,6 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 				}
 			});
 		}
-		this.batteryIndicators.batteryHealth = this.batteryIndicators.getBatteryHealth(batteryHealth);
 		this.batteryIndicators.batteryNotDetected = batteryHealth === 4;
 		for (let i = 0; i < response.detail.length; i++) {
 			response.detail[i].remainingCapacity = Math.round(response.detail[i].remainingCapacity * 100) / 100;
