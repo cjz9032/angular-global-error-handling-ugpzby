@@ -45,8 +45,8 @@ export class WidgetLightingComponent implements OnInit {
 		 this.ledSetFeature = this.commonService.getLocalStorageValue(LocalStorageKey.ledSetFeature);
 		 this.ledDriver = this.commonService.getLocalStorageValue(LocalStorageKey.ledDriver);
 		// console.log('ledSetFeature-----'+this.ledSetFeature +'--------ledDriver--------'+ this.ledDriver );
-		// this.ledSetFeature = true;
-		// this.ledDriver = false;
+		 this.ledSetFeature = true;
+	      this.ledDriver = false;
 
 		if (this.ledSetFeature) {
 			this.getLightingProfileId();
@@ -98,32 +98,20 @@ export class WidgetLightingComponent implements OnInit {
 			console.log("--------------home page lighting event-----" + eventval);
 
 			if (this.gamingLightingService.isShellAvailable) {
+				if (this.isPopupVisible) {
+					this.isdriverpopup = true;
+				}
 				this.gamingLightingService.setLightingProfileId(0, eventval).then((response: any) => {
 					console.log('setLightingProfileId------------response---------------->',
 						JSON.stringify(response));
-
 					this.didSuccess = response.didSuccess;
-
-					if (!this.didSuccess) {
-						if (LocalStorageKey.ProfileId !== undefined) {
-							// this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId) || 0;
-						}
-						console.log('setLightingProfileId------------false---------------->');
-						// this.setprofId = eventval;
-					} else {
-						if (this.isPopupVisible) {
-							this.isdriverpopup = true;
-
-							console.log('checkstatus resp in if--------', this.isdriverpopup);
-
-						}
+					if (this.didSuccess) {
 						if (LocalStorageKey.ProfileId !== undefined) {
 							this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, response.profileId);
 						}
-						if (!this.isdriverpopup) {
+						if (!this.isPopupVisible) {
 							this.setprofId = response.profileId;
 						}
-						console.log('setLightingProfileId------------True---------------->', this.setprofId);
 					}
 				});
 			}
