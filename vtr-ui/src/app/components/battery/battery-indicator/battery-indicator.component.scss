@@ -8,14 +8,14 @@ $fill-color-15-24-stop: #fad961;
 $fill-color-25-100-start: #2ecc71;
 $fill-color-25-100-stop: #35e6b9;
 
-$border-shadow-color-0-14: #fff7f1;
-$border-color-0-14: #f6eed7;
+$border-shadow-color-0-14: rgba($stop_dark, 0.4);
+$border-color-0-14: rgba($stop_dark, 0.4);
 
-$border-shadow-color-15-24: #fffaeb;
-$border-color-15-24: #fee9df;
+$border-shadow-color-15-24: rgba($orange, 0.4);
+$border-color-15-24: rgba($orange, 0.4);
 
-$border-shadow-color-25-100: #fffaeb;
-$border-color-25-100: #fee9df;
+$border-shadow-color-25-100: #{rgba($go_light, 0.4)};
+$border-color-25-100: #{rgba($go_light, 0.4)};
 
 .vtr-battery-indicator {
 	/* start variables : below are --css-variables will be used in .ts file. */
@@ -78,7 +78,7 @@ $border-color-25-100: #fee9df;
 		/* battery shadow/blur background */
 		.battery-shadow {
 			position: absolute;
-			width: 92%;
+			width: 93%;
 			height: 13rem;
 			border: 1.2rem solid var(--border-color);
 			opacity: 1;
