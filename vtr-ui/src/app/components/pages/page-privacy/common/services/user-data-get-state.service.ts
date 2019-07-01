@@ -3,7 +3,7 @@ import { ReplaySubject } from 'rxjs';
 import { BreachedAccountsService } from './breached-accounts.service';
 import { BrowserAccountsService } from './browser-accounts.service';
 import { TrackingMapService } from '../../feature/tracking-map/services/tracking-map.service';
-import { debounceTime, distinctUntilChanged, filter, shareReplay } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, shareReplay } from 'rxjs/operators';
 import { typeData } from '../../feature/tracking-map/services/tracking-map.interface';
 import { AppStatuses, FeaturesStatuses } from '../../userDataStatuses';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
@@ -33,6 +33,10 @@ export class UserDataGetStateService {
 	isTrackersBlocked = false;
 	figleafStatus: FigleafStatus;
 	licenseTypes = licenseTypes;
+
+	isFigleafTrialSoonExpired$ = this.isAppStatusesEqual(AppStatuses.trialSoonExpired);
+	isFigleafTrialExpired$ = this.isAppStatusesEqual(AppStatuses.trialExpired);
+	isFigleafInstalled$ = this.isAppStatusesEqual(AppStatuses.figLeafInstalled);
 
 	constructor(
 		private breachedAccountsService: BreachedAccountsService,
@@ -150,5 +154,11 @@ export class UserDataGetStateService {
 		}
 
 		return appStatus;
+	}
+
+	private isAppStatusesEqual(appStatus: AppStatuses) {
+		return this.userDataStatus$.pipe(
+			map((userDataStatus) => userDataStatus.appState === appStatus)
+		);
 	}
 }
