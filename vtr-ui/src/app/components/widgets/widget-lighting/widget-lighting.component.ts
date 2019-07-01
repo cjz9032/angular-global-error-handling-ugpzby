@@ -90,12 +90,15 @@ export class WidgetLightingComponent implements OnInit {
 
 	public SetProfile(event) {
 		try {
-			let eventval: number = event.target.value;
+			const eventval: number = event.target.value;
 			console.log("--------------home page lighting event-----" + eventval);
-
+			let prevSetprofId;
 			if (this.gamingLightingService.isShellAvailable) {
 				if (this.isPopupVisible) {
 					this.isdriverpopup = true;
+				} else {
+					prevSetprofId = this.setprofId;
+					this.setprofId = eventval;
 				}
 				this.gamingLightingService.setLightingProfileId(0, eventval).then((response: any) => {
 					console.log('setLightingProfileId------------response---------------->',
@@ -108,6 +111,8 @@ export class WidgetLightingComponent implements OnInit {
 						if (!this.isPopupVisible) {
 							this.setprofId = response.profileId;
 						}
+					} else {
+						this.setprofId = prevSetprofId;
 					}
 				});
 			}
