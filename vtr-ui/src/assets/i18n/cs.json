@@ -682,7 +682,12 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -1057,7 +1062,7 @@
         },
         "smartAssist": {
             "title": "Inteligentní pomoc",
-            "description": "Technologie inteligentní detekce Lenovo rozpoznává pomocí snímačů v počítači vašiaktuální činnost a přizpůsobuje podle ní řízení spotřeby a chrání vaše soukromí.",
+            "description": "Technologie inteligentní detekce Lenovo používá snímače v počítači, kterými sleduje vaši aktuální činnost, přizpůsobuje řízení spotřeby a chrání vaše soukromí.",
             "jumpTo": {
                 "title": "PŘEJÍT K NASTAVENÍ",
                 "security": "Zabezpečení",
@@ -1074,16 +1079,16 @@
                     "tooltip": "Kliknutím sem obnovíte nastavení rozpoznání přítomnosti lidí."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Rozpoznání přítomnosti uživatele",
+                    "tooltip": "Kliknutím sem obnovíte nastavení rozpoznání přítomnosti lidí."
                 },
                 "zeroTouchLogin": {
                     "title": "Bezkontaktní přihlášení",
-                    "caption": "Tato funkce počítač automaticky odemkne nebo probudí,když si před něj sednete nebo když se k němu přiblížíte."
+                    "caption": "Tato funkce počítač automaticky odemkne nebo probudí, když si před něj sednete nebo když se k němu přiblížíte."
                 },
                 "zeroTouchLock": {
                     "title": "Bezkontaktní uzamčení",
-                    "caption": "Tato funkce zhasne displej a uzamkne počítač, když není rozpoznána přítomnost uživatele.Může snížit riziko, že přístup k vašemu počítači získají neautorizované osoby, když počítač necháte bez dozoru a neuzamčený.Současně klesá spotřeba energie tím, že přepne systém do moderního úsporného režimu, když není rozpoznána vaše přítomnost.",
+                    "caption": "Tato funkce zhasne displej a uzamkne počítač, když není rozpoznána přítomnost uživatele. Může snížit riziko, že přístup k vašemu počítači získají neautorizované osoby, když počítač necháte bez dozoru a neuzamčený. Současně klesá spotřeba energie tím, že přepne systém do moderního úsporného režimu, když není rozpoznána vaše přítomnost.",
                     "autoScreenLockTimer": {
                         "title": "ČASOVAČ AUTOMATICKÉHO UZAMČENÍ OBRAZOVKY",
                         "radioButton": {
@@ -1091,46 +1096,46 @@
                             "medium": "Střední",
                             "slow": "Pomalá"
                         },
-                        "toolTipContent": "Výběrem požadované možnosti uzamkněte obrazovku rychle/středně/pomalu, pokud není zjištěna přítomnost.Čas, kdy bude obrazovka uzamčena, však bude ovlivněn také skutečným scénářem uživatele, možnostmi snímače a nastavením časového limitu obrazovky systému Windows.Proto důrazně doporučujeme, abyste svůj systém okamžitě uzamkli, než jej opustíte."
+                        "toolTipContent": "Výběrem požadované možnosti uzamkněte obrazovku rychle/středně/pomalu, pokud není zjištěna přítomnost. Dobu, za jakou bude obrazovka uzamčena, však ovlivňuje také momentální scénář uživatele, možnosti snímače a nastavení časového limitu obrazovky systému Windows. Proto důrazně doporučujeme, abyste svůj systém okamžitě uzamkli, než jej opustíte."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Automatická úprava vzdálenosti rozpoznávání automaticky aktualizujevzdálenost rozpoznávání pomocí jádra umělé inteligence.",
+                    "title": "ÚPRAVA VZDÁLENOSTI ROZPOZNÁVÁNÍ",
+                    "caption": "Automatické nastavení vzdálenosti automaticky aktualizuje vzdálenost rozpoznávání pomocí jádra umělé inteligence.",
                     "options": {
                         "near": "Malá",
                         "far": "Velká"
                     }
                 },
                 "note": {
-                    "description1": "Tato funkce závisí na Windows Hello.Ujistěte se, že je v nastavení systému Windows zapnuto rozpoznávání obličeje.",
-                    "description2": "Tato funkce využívá ke zjištění vaší přítomnosti snímače a fotoaparát.Tato funkce však neshromažďuje žádné osobní údaje a snímky ani je neukládá.",
-                    "description3": "1.Tyto funkce nemusí pracovat správně, pokud je počítačv režimu Stan, Tablet nebo Stojan.",
-                    "description4": "2.Když je počítač v režimu hibernace nebo vypnutý.Automatické přihlášení pomocí infračervené kamery nebude funkční.",
-                    "description5": "3.Nastavte obrazovku počítače do odpovídajícího úhlu, aby infračervenákamera mohla rozpoznat váš obličej pro automatické přihlášení."
+                    "description1": "Tato funkce závisí na Windows Hello. Ujistěte se, že je v nastavení systému Windows zapnuto rozpoznávání obličeje.",
+                    "description2": "Tato funkce využívá ke zjištění vaší přítomnosti snímače a fotoaparát. Tato funkce však neshromažďuje žádné osobní údaje.",
+                    "description3": "1. Tyto funkce nemusí pracovat správně, pokud je počítač v režimu Stan, Tablet nebo Stojan.",
+                    "description4": "2. Když je počítač v režimu hibernace nebo vypnutý. Automatické přihlášení pomocí infračervené kamery nebude funkční.",
+                    "description5": "3. Nastavte obrazovku počítače do odpovídajícího úhlu, aby infračervená kamera mohla rozpoznat váš obličej pro automatické přihlášení."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Přejít na nastavení programu Windows Hello",
                     "screenTimeoutSettings": "Přechod na nastavení časového limitu vypnutí obrazovky"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "OBNOVIT VÝCHOZÍ NASTAVENÍ"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Inteligentní obrazovka",
+                "description": "Technologie inteligentní detekce Lenovo rozpoznává pomocí různých snímačů v počítači vaši aktuální činnost a přizpůsobuje podle ní řízení spotřeby. Pokud například zjistí, že právě jdete, sníží jas obrazovky. Pokud naopak zjistí, že čtete, jas snižovat nebude.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Automatické vypnutí obrazovky",
+                    "caption": "Automaticky vypnout displej při chůzi nebo otočení zařízení displejem dolů.",
+                    "note": "Tato funkce není k dispozici, pokud je vaše schéma napájení nastaveno na hodnotu „při napájení z baterie nikdy nevypínat obrazovku“ v Nastavení systému Windows v části „Systém“. K povolení této funkce vyberte jinou hodnotu než „Nikdy“.",
+                    "windowsLink": "Přejít k nastavení napájení a režimu spánku v systému Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Nechat displej zapnutý",
+                    "caption": "Nechat displej zapnutý při čtení nebo procházení internetu.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Počet minut před ztlumením displeje při procházení internetu",
+                        "startTime": "0 minut",
+                        "endTime": "60 minut"
                     }
                 }
             },
@@ -1165,10 +1170,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Inteligentní média",
+                "title": "Bezdotykové přehrávání videa",
+                "desc": "Tato funkce pozastaví video, když odejdete od počítače, a opět je spustí, když se vrátíte.",
+                "tooltip": "Tato funkce není použitelná pro webové přehrávače videa. Oblíbené přehrávače videí v počítači (například Windows Media Player, 5KPlayer apod.) tuto funkci podporují."
             },
             "voice": {
                 "title": "Voice",
@@ -1195,6 +1200,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }

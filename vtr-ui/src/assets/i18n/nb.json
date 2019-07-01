@@ -682,7 +682,12 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -1057,7 +1062,7 @@
         },
         "smartAssist": {
             "title": "Smart hjelp",
-            "description": "Lenovo Intelligent Sensing kombinerer sensorer på datamaskinen for å oppdage aktivitetene dine,justere innstillingene for optimal strømstyring og beskytte personvernet ditt.",
+            "description": "Lenovo Intelligent Sensing bruker sensorer på datamaskinen til å gjenkjenne hva du gjør, justere innstillingene for optimal strømstyring og beskytte personvernet ditt.",
             "jumpTo": {
                 "title": "GÅ TIL INNSTILLINGER",
                 "security": "Sikkerhet",
@@ -1070,20 +1075,20 @@
                 "title": "Intelligent sikkerhet",
                 "readMore": "Les mer",
                 "HumanPresenceDetection": {
-                    "title": "Oppdaging av mennesker til stede",
-                    "tooltip": "Klikk her for å tilbakestille innstillingene for oppdaging av mennesker til stede."
+                    "title": "Oppdagelse av menneskelig tilstedeværelse",
+                    "tooltip": "Klikk her for å tilbakestille innstillingene for oppdagelse av menneskelig tilstedeværelse."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Oppdagelse av brukerens tilstedeværelse",
+                    "tooltip": "Klikk her for å tilbakestille innstillingene for oppdaging av mennesker til stede."
                 },
                 "zeroTouchLogin": {
                     "title": "Pålogging uten berøring",
                     "caption": "Denne funksjonen låser opp eller aktiverer datamaskinen automatisk når du befinner deg foran den eller nærmer deg den."
                 },
                 "zeroTouchLock": {
-                    "title": "Låsing uten berøring",
-                    "caption": "Denne funksjonen dimmer skjermen og låser datamaskinen når det registreres at brukeren ikke er til stede.Den kan redusere faren for uautorisert tilgang til datamaskinen hvis du forlater den ulåst og uten tilsyn. Den reduserer også strømforbruket ved å sette systemet i Moderne hvilemodus når tilstedeværelsen din ikke registreres.",
+                    "title": "Berøringsfri lås",
+                    "caption": "Denne funksjonen dimmer skjermen og låser datamaskinen når det registreres at brukeren ikke er til stede. Funksjonen kan redusere faren for uautorisert tilgang til datamaskinen hvis du forlater den ulåst og uten tilsyn. Den reduserer også strømforbruket ved å sette systemet i Moderne hvilemodus når tilstedeværelsen din ikke registreres.",
                     "autoScreenLockTimer": {
                         "title": "TIMER FOR AUTOMATISK SKJERMLÅS",
                         "radioButton": {
@@ -1091,46 +1096,46 @@
                             "medium": "Middels",
                             "slow": "Langsom"
                         },
-                        "toolTipContent": "Velg ønsket alternativ for å låse skjermen på en rask/middels/langsom hastighet når tilstedeværelsen din ikke oppdages.Tidspunktet skjermen låses på, påvirkes også av det faktiske brukerscenarioet, sensorfunksjonaliteten og innstillingene for tidsavbrudd for Windows-skjermen. Vi anbefaler derfor sterkt at du umiddelbart låser systemet før du forlater det."
+                        "toolTipContent": "Velg ønsket alternativ for å låse skjermen på en rask/middels/langsom hastighet når tilstedeværelsen din ikke oppdages. Når skjermen låses, påvirkes også av det faktiske brukerscenarioet, sensorfunksjonaliteten og innstillingene for skjermtidsavbrudd i Windows. Vi anbefaler derfor sterkt at du umiddelbart låser systemet før du forlater det."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Automatisk avstandsjustering oppdatererdeteksjonsavstanden automatisk via en AI-motor.",
+                    "title": "JUSTERING AV AVSTANDSFØLSOMHET",
+                    "caption": "Automatisk avstandsjustering vil automatisk oppdatere avstandsfølsomheten via en AI-motor.",
                     "options": {
                         "near": "Kort avstand",
                         "far": "Lang avstand"
                     }
                 },
                 "note": {
-                    "description1": "Denne funksjonen er avhengig av Windows Hello.Sørg for at ansiktsgjenkjenning er aktivert i Windows-innstillinger.",
-                    "description2": "Funksjonen bruker sensorer og kamera til å oppdage din tilstedeværelse.Funksjonen vil imidlertid IKKE samle inn, lagre, eller lekke personlige data eller bilder.",
-                    "description3": "1. Disse funksjonene fungerer kanskje ikke som de skalhvis datamaskinen er i telt-, nettbrett- eller stativmodus.",
-                    "description4": "2. Hvis datamaskinen er i dvalemodus eller er slått av.Automatisk IR-kamerapålogging fungerer ikke.",
-                    "description5": "3. Juster dataskjermens vinkel slik at det infrarøde kameraetkan gjenkjenne ansiktet ditt og logge deg på automatisk."
+                    "description1": "Denne funksjonen er avhengig av Windows Hello. Pass på at ansiktsgjenkjenning er aktivert i Windows-innstillingene.",
+                    "description2": "Funksjonen bruker sensorer og kamera til å oppdage din tilstedeværelse. Funksjonen samler imidlertid IKKE inn noen personlige opplysninger.",
+                    "description3": "1. Disse funksjonene fungerer kanskje ikke på riktig måte hvis datamaskinen er i telt-, nettbrett- eller stativmodus.",
+                    "description4": "2. Hvis datamaskinen er i dvalemodus eller er slått av. Automatisk pålogging med det infrarøde kameraet vil ikke fungere.",
+                    "description5": "3. Juster dataskjermens vinkel slik at det infrarøde kameraet kan gjenkjenne ansiktet ditt og logge deg på automatisk."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Gå til Windows Hello-innstillinger",
                     "screenTimeoutSettings": "Gå til innstillingene for tidsutkobling av skjermen"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "TILBAKESTILL TIL STANDARDINNSTILLINGENE"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Intelligent skjerm",
+                "description": "Lenovo Intelligent Sensing bruker de ulike sensorene på datamaskinen til å gjenkjenne hva du gjør, og justere innstillingene for strømstyring. Funksjonen dimmer for eksempel skjermen hvis den oppdager at du går, men ikke hvis den oppdager at du leser.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Slå av skjermen automatisk",
+                    "caption": "Slå av skjermen automatisk når den ligger med forsiden ned, eller når du går.",
+                    "note": "Denne funksjonen er ikke tilgjengelig hvis du har valgt aldri å slå av skjermen på batteristrøm i innstillingene for strømstyringsplan under System i Windows. Velg en annen verdi enn Aldri for å aktivere denne funksjonen.",
+                    "windowsLink": "Gå til innstillingene for strøm og hvilemodus i Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Hold skjermen på",
+                    "caption": "Hold skjermen på når jeg leser eller surfer.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Minutter før skjermen dimmes når du surfer",
+                        "startTime": "0 minutter",
+                        "endTime": "60 minutter"
                     }
                 }
             },
@@ -1165,10 +1170,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Intelligent medieavspilling",
+                "title": "Berøringsfri videoavspilling",
+                "desc": "Denne funksjonen setter videoen på pause når du forlater datamaskinen, og fortsetter avspillingen når du kommer tilbake.",
+                "tooltip": "Denne funksjonen støttes ikke av nettvideospillere. Populære lokale videospillere, for eksempel Windows Media Player og 5KPlayer, støtter denne funksjonen."
             },
             "voice": {
                 "title": "Voice",
@@ -1195,6 +1200,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }

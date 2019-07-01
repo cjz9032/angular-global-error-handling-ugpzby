@@ -682,7 +682,12 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -1074,8 +1079,8 @@
                     "tooltip": "用滑鼠按一下此處，可重設人員在場偵測設定。"
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "使用者在場感應",
+                    "tooltip": "用滑鼠按一下此處，可重設人員在場偵測設定。"
                 },
                 "zeroTouchLogin": {
                     "title": "零接觸登入",
@@ -1095,7 +1100,7 @@
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
+                    "title": "距離敏感度調整",
                     "caption": "自動距離調整將會透過 AI 引擎自動更新偵測距離。",
                     "options": {
                         "near": "近",
@@ -1104,7 +1109,7 @@
                 },
                 "note": {
                     "description1": "此功能必須依賴 Windows Hello。確定 Windows 設定中已開啟臉部辨識。",
-                    "description2": "該功能會使用感應器和攝影機來偵測您的存在。不過，這項功能不會收集、保存或洩漏任何個人資料或影像。",
+                    "description2": "該功能會使用感應器和攝影機來偵測您的存在。不過，這項功能不會收集任何個人資料。",
                     "description3": "1.如果您的電腦處於帳篷、平板或直立模式，這些功能可能無法正常運作。",
                     "description4": "2.當您的電腦處於休眠模式或已關閉電源時。自動紅外線攝影機登入將不會運作。",
                     "description5": "3.請將電腦螢幕調整至適當的角度，讓紅外線攝影機可以辨識出您的臉部，進行自動登入。"
@@ -1113,24 +1118,24 @@
                     "goToWindowsHello": "跳至 Windows Hello 設定",
                     "screenTimeoutSettings": "前往螢幕逾時設定"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "重設為預設值"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "智慧型螢幕",
+                "description": "Lenovo 智慧型感應會結合您電腦上的各種感應器來偵測您的活動，並調整電源管理的設定。例如，如果它偵測到您正在走路，便會使顯示器變暗；如果偵測到您正在閱讀，則不會使顯示器變暗。",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "自動螢幕關閉",
+                    "caption": "面朝下或行走時，自動關閉顯示器。",
+                    "note": "如果您在 Windows 設定的「系統」區段中將電源計劃設定成「使用電池時永不關閉顯示器」，就無法使用這個功能。請選取「永不」以外的值才能啟用這個功能。",
+                    "windowsLink": "移至 Windows 設定中的電源和睡眠設定"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "保持顯示",
+                    "caption": "當我在閱讀或瀏覽時，保持顯示。",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "瀏覽時，顯示器變暗前的分鐘數",
+                        "startTime": "0 分鐘",
+                        "endTime": "60 分鐘"
                     }
                 }
             },
@@ -1165,10 +1170,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "智慧型媒體",
+                "title": "零接觸視訊播放",
+                "desc": "此功能將在您離開電腦時暫停視訊，並在您回來時繼續播放視訊。",
+                "tooltip": "此功能不適用於 Web 視訊播放程式。受歡迎的本端視訊播放程式（例如 Windows Media Player、5KPlayer 等）都支援此功能。"
             },
             "voice": {
                 "title": "Voice",
@@ -1195,6 +1200,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
