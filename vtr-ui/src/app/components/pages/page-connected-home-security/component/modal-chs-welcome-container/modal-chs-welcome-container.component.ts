@@ -47,11 +47,6 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 		this.permission = vantageShellService.getPermission();
 	}
 
-	@HostListener('window: focus')
-	onFocus(): void {
-		this.refreshPage();
-	}
-
 	ngOnInit() {
 		if (this.switchPage === 4) {
 			this.showPageFour = true;
@@ -87,14 +82,19 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	}
 
 	refreshPage() {
-		this.permission.getSystemPermissionShowed().then((response: boolean) => {
-			this.hasSystemPermissionShowed = response;
-			if (response) {
-				this.permission.requestPermission('geoLocatorStatus').then((status) => {
+		if (this.hasSystemPermissionShowed) {
+			this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
+				this.isLocationServiceOn = status;
+			});
+		} else {
+			this.permission.getSystemPermissionShowed().then((response: boolean) => {
+				this.hasSystemPermissionShowed = response;
+				if (!response) { return; }
+				this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
 					this.isLocationServiceOn = status;
 				});
-			}
-		});
+			});
+		}
 		this.isLenovoIdLogin = this.chs.account.lenovoId.loggedIn;
 	}
 

@@ -41,25 +41,37 @@
         flex-direction: column;
       }
     }
+    @media #{$below-large-screen}{
+      background: url(./../../../../assets/images/gaming/lighting/blueBG-horizontal.png) center top no-repeat $gaming_lighting_profile_bg;
+      background-size: 100% auto;
+      .d-flex{
+        flex-direction: column;
+      }
+    }
     .gaming-device-image {
       max-width: 45%;
-      @media #{$mediaquery_X29} {
-        max-width: 35%;
-      }
+      // @media #{$mediaquery_X29} {
+      //   max-width: 35%;
+      // }
 
-      @media #{$mediaquery_17} {
-        max-width: 30%;
-      }
-      @media #{$mediaquery_X7} {
-        max-width: 25%;
-      }
-      @media #{$mediaquery_10} {
-        min-width: 20%;
-      }
-      @media #{$mediaquery_X9} {
-        width: 30%;
-      }
+      // @media #{$mediaquery_17} {
+      //   max-width: 30%;
+      // }
+      // @media #{$mediaquery_X7} {
+      //   max-width: 25%;
+      // }
+      // @media #{$mediaquery_10} {
+      //   min-width: 20%;
+      // }
+      // @media #{$mediaquery_X9} {
+      //   width: 30%;
+      // }
       @media #{$small-screen}{
+        justify-content: flex-end;
+        max-width: 100%;
+        align-items: flex-end !important;
+      }
+      @media #{$below-large-screen}{
         justify-content: flex-end;
         max-width: 100%;
         align-items: flex-end !important;
@@ -78,19 +90,23 @@
   .gaming-light-options {
     margin-left: 4rem;
     width: 50%;
-    @media #{$mediaquery_X9} {
-      width: 60%;
-    }
-    @media #{$mediaquery_17} {
-      width: 70%;
-    }
-    @media #{$mediaquery_X7} {
-      max-width: 75%;
-    }
-    @media #{$mediaquery_10} {
-      min-width: 75%;
-    }
+    // @media #{$mediaquery_X9} {
+    //   width: 60%;
+    // }
+    // @media #{$mediaquery_17} {
+    //   width: 70%;
+    // }
+    // @media #{$mediaquery_X7} {
+    //   max-width: 75%;
+    // }
+    // @media #{$mediaquery_10} {
+    //   min-width: 75%;
+    // }
     @media #{$small-screen}{
+      margin-left: 0;
+      width: 100%;
+    }
+    @media #{$below-large-screen}{
       margin-left: 0;
       width: 100%;
     }
