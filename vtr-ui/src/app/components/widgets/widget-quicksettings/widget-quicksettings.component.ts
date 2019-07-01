@@ -114,14 +114,15 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		} else {
 			this.getMicrophoneStatus();
 		}
-
+		this.displayService.startMonitorForCameraPermission();
 		const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
 		if (privacy) {
 			this.cameraStatus = privacy;
 			this.getCameraPermission();
 		} else {
+			this.getCameraPermission();
 			this.getCameraStatus();
-			this.displayService.startMonitorForCameraPermission();
+
 		}
 
 		this.initEyecaremodeSettings();
@@ -189,8 +190,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 						// if privacy available then start monitoring
 						if (featureStatus.available) {
 							this.startMonitorForCamera();
-							this.getCameraPermission();
-							this.displayService.startMonitorForCameraPermission();
 						}
 					})
 					.catch(error => {
@@ -207,6 +206,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		console.log('startMonitorHandlerForCamera', value);
 		this.camera.isLoading = false;
 		this.cameraStatus = value;
+		this.cameraStatus.available = value.available;
+		this.cameraStatus.status=value.permission;
 		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraStatus);
 	}
 

@@ -39,7 +39,9 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
                     },
                     "autoClose": "自动关闭",
                     "networkBoost": "网络提升",
@@ -344,25 +346,25 @@
     },
     "common": {
         "menu": {
-            "dashboard": "首页",
+            "dashboard": "仪表板",
             "device": {
                 "title": "设备",
-                "sub1": "设备信息",
-                "sub2": "设备设置",
-                "sub3": "系统升级",
-                "sub4": "‏\"智能帮助\""
+                "sub1": "我的设备",
+                "sub2": "我的设备设置",
+                "sub3": "System Updates",
+                "sub4": "智能帮助"
             },
             "security": {
-                "title": "安全顾问",
-                "sub1": "我的安全顾问",
-                "sub2": "病毒防护",
+                "title": "安全性",
+                "sub1": "我的安全性",
+                "sub2": "反病毒",
                 "sub3": "WiFi 安全",
-                "sub4": "密码保险箱",
-                "sub5": "网络保护",
+                "sub4": "密码安全状况",
+                "sub5": "因特网保护",
                 "sub6": "Windows Hello"
             },
             "support": "支持服务",
-            "homeSecurity": "Connected Home",
+            "homeSecurity": "互联家庭网络",
             "privacy": "隐私"
         },
         "securityAdvisor": {
@@ -686,7 +688,8 @@
                     "note1": "To extend the battery lifespan, you have set your ",
                     "note2": "to stop charging at ",
                     "note3": "battery",
-                    "note4": "and "
+                    "note4": "and ",
+                    "note": "Note: "
                 },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
@@ -1056,7 +1059,8 @@
                     "dropDown": {
                         "title": "Action User Defined key",
                         "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
-                    }
+                    },
+                    "tooltip": "Content to be filled"
                 }
             }
         },
@@ -1359,8 +1363,8 @@
         "overview": {
             "overviewBlockTitle": "您的生态系统安全概述",
             "allDevices": "所有设备",
-			"myDevice": "我的设备",
-			"thisComputer": "This computer",
+            "myDevice": "我的设备",
+            "thisComputer": "This computer",
             "secure": "安全",
             "needAttention": "需要注意",
             "manageAccount": "管理帐户",

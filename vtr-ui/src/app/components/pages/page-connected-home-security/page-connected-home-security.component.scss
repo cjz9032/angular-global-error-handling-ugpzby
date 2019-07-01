@@ -217,8 +217,18 @@
 	}
 
 	.vtr-page-right-column, .vtr-page-left-column{
-		@media #{$mediaquery_X5} {
+		@media #{$medium-screen} {
 			padding: 0rem 4rem 4rem 4rem;
+			margin-top: 0;
+		}
+	}
+
+	@media #{$small-screen}{
+		.vtr-page-left-column{
+			background-color: #fff;
+		}
+		.vtr-page-right-column{
+			margin-top: 6rem;
 		}
 	}
 
