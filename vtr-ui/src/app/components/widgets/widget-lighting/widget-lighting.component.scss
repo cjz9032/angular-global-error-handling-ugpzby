@@ -84,7 +84,17 @@
 					cursor: pointer;
 				}
 			}
-
+			.toggle-stable {
+				position: absolute ;
+				background: $gaming_lighting_gradient;
+				width: 25% ;
+				height: 4.2rem;
+				border-radius: 4.2rem;
+				margin: 0.4rem 0.2rem;
+				transition: all 0.3s ease-in-out;
+				left: 0;
+				color: white !important;
+			}
 			.toggle {
 				position: absolute;
 				background: $gaming_lighting_gradient;
@@ -94,6 +104,7 @@
 				margin: 0.4rem 0.2rem;
 				transition: all 0.3s ease-in-out;
 				left: 0;
+				color: white !important;
 			}
 			#off_radio:checked {
 				& ~ #off {
@@ -164,17 +175,13 @@
 				color: $shade_light;
 				line-height: 1.5rem;
 				.icon {
-					margin-right: 1rem;
+					margin-right: 0.5rem;
 					font-size: 2rem;
 					transition: all .2s ease-in-out;
-					width: 2.5rem;
-					height: 2.5rem;
-					background: transparent;
-					padding-top: 0.25rem;
-					padding-left: 0.4rem;
 					border-radius: 50%;
+					padding: 0.6rem;
 					&:hover {
-						background: $screen_dark_30;
+						background:$gaming_light_02;
 					}
 				}
 			}
