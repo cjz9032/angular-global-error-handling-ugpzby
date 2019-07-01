@@ -60,6 +60,11 @@ export class UiColorWheelComponent implements OnInit, OnChanges {
 				}
 			}
 		}
+		if (!isUndefined(changes.btnStatus)) {
+			if (changes.btnStatus.previousValue !== changes.btnStatus.currentValue) {
+				this.btnStatus = changes.btnStatus.currentValue;
+			}
+		}
 	}
 
 	onApplyColorEffect(backColor) {

@@ -1233,8 +1233,9 @@ export class UiLightingProfileComponent implements OnInit {
 					);
 
 					if (response.didSuccess) {
-						this.applyBtnStatus1 = 'applied';
 						this.inHex1 = $event;
+						this.applyBtnStatus1 = 'applied';
+
 						//	this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileEffectColor, response);
 						/*	console.log(
 								'set color pallet color effect front response----------cache---------->',
@@ -1271,8 +1272,9 @@ export class UiLightingProfileComponent implements OnInit {
 					);
 
 					if (response.didSuccess) {
-						this.applyBtnStatus2 = 'applied';
 						this.inHex2 = $event;
+						this.applyBtnStatus2 = 'applied';
+
 					}
 				});
 		}
