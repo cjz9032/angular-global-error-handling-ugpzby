@@ -1,14 +1,14 @@
 <div class="vtr-ui-color-wheel picker-container">
 	<div class="overlay" *ngIf="showOverlay">
-		Selecting color not available to this effect.
+		{{'gaming.dashboard.device.legionEdge.lightingColorMessage.text' | translate}}
 	</div>
 
 	<div class="row">
-		<div class="col-8">
+		<div class="col-8 wheel-container">
 			<h3 class="content-title">{{'gaming.lightingProfile.colourwheel.text7.title' | translate}}</h3>
 			<div id="color-wheel" #colorWheel></div>
 		</div>
-		<div class="col-4 mt-5 pt-3 ">
+		<div class="col-4 mt-5 pt-3 value-container">
 			<div class="rgb-values">
 
 
