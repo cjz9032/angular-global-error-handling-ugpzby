@@ -43,6 +43,11 @@ export class SubpageDeviceSettingsDisplayComponent
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	public shouldCameraSectionDisabled = true;
 	public isCameraHidden = false;
+	public privacyGuardCapability = false;
+	public privacyGuardToggleStatus = false;
+	public privacyGuardCheckBox = false;
+	public privacyGuardOnPasswordCapability = false;
+	public privacyGuardInterval: any;
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 	headerMenuItems = [
@@ -133,7 +138,8 @@ export class SubpageDeviceSettingsDisplayComponent
 		);
 		this.startEyeCareMonitor();
 		this.initEyecaremodeSettings();
-
+		this.getPrivacyGuardCapabilityStatus();
+		this.getPrivacyGuardOnPasswordCapabilityStatus();
 		this.getCameraPrivacyModeStatus();
 		this.getCameraDetails();
 		this.statusChangedLocationPermission();
@@ -186,6 +192,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		}
 		this.stopEyeCareMonitor();
 		this.stopMonitorForCamera();
+		clearTimeout(this.privacyGuardInterval);
 	}
 
 	/**
@@ -266,7 +273,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 	public onEyeCareModeStatusToggle(event: any) {
 		this.isEyeCareMode = event.switchValue;
-		this.enableSlider=false;
+		this.enableSlider = false;
 		console.log('onEyeCareModeStatusToggle', this.isEyeCareMode);
 		try {
 			if (this.displayService.isShellAvailable) {
@@ -717,4 +724,73 @@ export class SubpageDeviceSettingsDisplayComponent
 			this.initCameraBlurMethods();
 		}
 	}
+
+	// Start Privacy Gaurd
+
+	public getPrivacyGuardCapabilityStatus() {
+		this.displayService.getPrivacyGuardCapability().then((status: boolean) => {
+			// console.log('privacy guard compatability here -------------.>', status);
+			if (status) {
+				this.privacyGuardCapability = status;
+				this.getPrivacyToggleStatus();
+
+				this.privacyGuardInterval = setInterval(() => {
+					console.log('Trying after 30 seconds for getting privacy guard status');
+					this.getPrivacyToggleStatus();
+				}, 30000);
+			}
+		})
+			.catch(error => {
+				console.error('privacy guard compatability error here', error);
+			});
+
+	}
+
+	public getPrivacyToggleStatus() {
+		this.displayService.getPrivacyGuardStatus().then((value: boolean) => {
+			// console.log('privacy guard status here -------------.>', value);
+			this.privacyGuardToggleStatus = value;
+		})
+			.catch(error => {
+				console.error('privacy guard status error here', error);
+			});
+	}
+	public getPrivacyGuardOnPasswordCapabilityStatus() {
+		this.displayService.getPrivacyGuardOnPasswordCapability().then((status: boolean) => {
+			// console.log('privacy guard on password compatability here -------------.>', status);
+			if (status) {
+				this.privacyGuardOnPasswordCapability = status;
+				this.displayService.getPrivacyGuardOnPasswordStatus().then((value: boolean) => {
+					this.privacyGuardCheckBox = value;
+					// console.log('privacy guard on password status here -------------.>', value);
+				})
+					.catch(error => {
+						console.error('privacy guard on password status error here', error);
+					});
+			}
+		})
+			.catch(error => {
+				console.error('privacy guard on password compatability error here', error);
+			});
+	}
+
+	public setPrivacyGuardToggleStatus(event) {
+		this.displayService.setPrivacyGuardStatus(event.switchValue).then((response: boolean) => {
+			// console.log('set privacy guard status here ------****-------.>', response);
+		})
+			.catch(error => {
+				console.error('set privacy guard status error here', error);
+			});
+	}
+
+	public setPrivacyGuardOnPasswordStatusVal(event) {
+		this.displayService.setPrivacyGuardOnPasswordStatus(event.target.checked).then((response: boolean) => {
+			// console.log('set privacy guard on password status here -------------.>', response);
+		})
+			.catch(error => {
+				console.error('set privacy guard on password status error here', error);
+			});
+	}
+
+	// End Privacy Gaurd
 }
