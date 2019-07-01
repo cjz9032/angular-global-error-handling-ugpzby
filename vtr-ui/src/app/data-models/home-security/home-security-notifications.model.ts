@@ -9,7 +9,7 @@ export class HomeSecurityNotifications {
 	date: string;
 	// notification: CHSNotifications;
 	notificationItem: NotificationItem[];
-	constructor(notification: CHSNotifications) {
+	constructor(notification?: CHSNotifications) {
 		this.notificationItem = [];
 		if (!notification || !notification.value) { return; }
 		notification.value.forEach(value => {
