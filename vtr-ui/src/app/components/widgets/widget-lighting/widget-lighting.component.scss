@@ -84,7 +84,17 @@
 					cursor: pointer;
 				}
 			}
-
+			.toggle-stable {
+				position: absolute ;
+				background: $gaming_lighting_gradient;
+				width: 25% ;
+				height: 4.2rem;
+				border-radius: 4.2rem;
+				margin: 0.4rem 0.2rem;
+				transition: all 0.3s ease-in-out;
+				left: 0;
+				color: white !important;
+			}
 			.toggle {
 				position: absolute;
 				background: $gaming_lighting_gradient;
@@ -96,7 +106,38 @@
 				left: 0;
 				color: white !important;
 			}
-			
+			#off_radio:checked {
+				& ~ #off {
+					color: $gaming_lightest;
+				}
+				& ~ .toggle {
+					left: 0%;
+				}
+			}
+			#first_radio:checked {
+				& ~ #first_lbl {
+					color: $gaming_lightest;
+				}
+				& ~ .toggle {
+					left: 25%;
+				}
+			}
+			#second_radio:checked {
+				& ~ #second_lbl {
+					color: $gaming_lightest;
+				}
+				& ~ .toggle {
+					left: 50%;
+				}
+			}
+			#third_radio:checked {
+				& ~ #third_lbl {
+					color: $gaming_lightest;
+				}
+				& ~ .toggle {
+					left: 74%;
+				}
+			}
 		}
 		vtr-ui-gaming-driver-popup {
 			::ng-deep{
