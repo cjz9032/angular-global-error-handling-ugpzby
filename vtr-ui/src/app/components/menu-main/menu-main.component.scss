@@ -102,6 +102,10 @@
 								color: $main;
 							}
 						}
+						.icon{
+							display: inline-block;
+							width:20px !important;
+						}
 
 						&.user {
 							padding: 2rem 2rem 2rem 2rem;
@@ -161,6 +165,7 @@
 							position: relative;
 							z-index: 1;
 							color: $main_shade;
+							padding:0.25rem 0.9rem;
 							font-size: 1.6rem;
 							line-height: 2.2rem;
 							font-weight: $weight_medium;
@@ -276,6 +281,7 @@
 							.dropdown-item {
 								color: $light;
 								line-height: 4rem;
+								padding:0.25rem 0.9rem;
 								text-decoration: none;
 								&.link {
 									background: transparent;
@@ -313,7 +319,6 @@
 
 		.fa-icon {
 			position: relative;
-			top: 0.3rem;
 			padding-right: 0.3rem;
 			font-size: 2.1rem;
 		}
