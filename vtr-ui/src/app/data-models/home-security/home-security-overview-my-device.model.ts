@@ -6,7 +6,8 @@ export class HomeSecurityOverviewMyDevice {
 	devicePostures: CHSDevicePosture[];
 	deviceStatus: string;
 
-	constructor (translate: TranslateService, overview: CHSDeviceOverview) {
+	constructor (translate: TranslateService, overview?: CHSDeviceOverview) {
+		if (!overview) { return; }
 		if (overview.myDevice && overview.myDevice.name) {
 			this.deviceName = overview.myDevice.name;
 		}
