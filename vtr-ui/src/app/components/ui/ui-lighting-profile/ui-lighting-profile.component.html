@@ -44,6 +44,7 @@
 							[inHEX]="inHex1"
 							[btnStatus]="applyBtnStatus1"
 							(colorEffectChanged)="colorEffectChangedFront($event)"
+							(colorChanged)="colorChangedFront($event)"
 							[showApply]="showHideApply1">
 						</vtr-ui-color-wheel>
 					</div>
@@ -81,6 +82,7 @@
 						[inHEX]="inHex2"
 						[btnStatus]="applyBtnStatus2"
 						(colorEffectChanged)="colorEffectChangedSide($event)"
+						(colorChanged)="colorChangedSide($event)"
 						[showApply]="showHideApply2">
 					</vtr-ui-color-wheel>
 				</div>

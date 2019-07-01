@@ -1287,4 +1287,12 @@ export class UiLightingProfileComponent implements OnInit {
 				});
 		}
 	}
+	colorChangedFront($event) {
+		console.log('colorChangedFront ------------------------>',	JSON.stringify($event));
+		this.inHex1 =  $event.hex;
+	}
+	colorChangedSide($event) {
+		console.log('colorChangedSide------------------------>',JSON.stringify($event));
+		this.inHex2 =  $event.hex;
+	}
 }
