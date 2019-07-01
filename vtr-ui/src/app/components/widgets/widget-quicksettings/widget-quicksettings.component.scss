@@ -9,10 +9,13 @@
 .widget-icon{
 	display: flex;
 	justify-content: space-between;
-	@media screen and (max-width:991px){
+	@media #{$mediaquery_21}{
 		justify-content: flex-start
 	}
 	>div{
 		margin-right: 5rem;
+		@media #{$mediaquery_20}{
+			margin-right: 15rem;
+		}
 	}
 }

@@ -50,7 +50,8 @@
 									{{item.detail}}
 								</div>
 								<div *ngIf="item.subText" class="sub-text">
-									{{item.subText}} &nbsp;{{item.date}}
+									<span title="{{item.subText}}">{{item.subText | characterLimit:20}}</span>
+									<span class="pl-3">{{item.date}}</span>
 								</div>
 							</div>
 						</div>
