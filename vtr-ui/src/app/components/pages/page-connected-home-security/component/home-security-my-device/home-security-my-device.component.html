@@ -4,26 +4,23 @@
 			<img class="img-fluid" src="assets/images/device.png" />
 		</div>
 		<div class="sub-text-device-status">
-		<div class="sub-text">
-			<div class="row sub-title">{{'homeSecurity.overview.myDevice' | translate}}</div>
-			<span title="{{homeSecurityOverviewMyDevice.deviceName}}" *ngIf="homeSecurityOverviewMyDevice && homeSecurityOverviewMyDevice.deviceName"> {{homeSecurityOverviewMyDevice.deviceName | characterLimit:20}} </span>
-			<div class="loading" *ngIf="!homeSecurityOverviewMyDevice || !homeSecurityOverviewMyDevice.deviceName">
-				<div class="spinner-border text-primary progress-spinner" role="status">
-				</div>
+			<div class="sub-text">
+				<div class="row sub-title">{{'homeSecurity.overview.myDevice' | translate}}</div>
+				<span title="{{homeSecurityOverviewMyDevice.deviceName}}" *ngIf="homeSecurityOverviewMyDevice && homeSecurityOverviewMyDevice.deviceName"> {{homeSecurityOverviewMyDevice.deviceName | characterLimit:20}} </span>
+				<span *ngIf="!homeSecurityOverviewMyDevice || !homeSecurityOverviewMyDevice.deviceName"> {{'homeSecurity.overview.thisComputer' | translate}} </span>
+			</div>
+			<div class="device-status">
+				<h3>
+					<span class="badge badge-pill badge-success" *ngIf="homeSecurityOverviewMyDevice && homeSecurityOverviewMyDevice.deviceStatus==='secure'">
+						{{'homeSecurity.overview.secure' | translate}}
+					</span>
+					<span class="badge badge-pill badge-danger" *ngIf="homeSecurityOverviewMyDevice && homeSecurityOverviewMyDevice.deviceStatus==='needs attention'">
+						{{'homeSecurity.overview.needAttention' | translate}}
+					</span>
+				</h3>
 			</div>
 		</div>
-		<div class="device-status">
-			<h3>
-				<span class="badge badge-pill badge-success" *ngIf="homeSecurityOverviewMyDevice && homeSecurityOverviewMyDevice.deviceStatus==='secure'">
-					{{'homeSecurity.overview.secure' | translate}}
-				</span>
-				<span class="badge badge-pill badge-danger" *ngIf="homeSecurityOverviewMyDevice && homeSecurityOverviewMyDevice.deviceStatus==='needs attention'">
-					{{'homeSecurity.overview.needAttention' | translate}}
-				</span>
-			</h3>
-		</div>
-	</div>
-	<div class="icon-collapse">
+		<div class="icon-collapse">
 			<div class="d-flex" vtrMetrics
 				metricsItem="collapseDevicePostures"
 				metricsEvent="featureClick"
@@ -56,14 +53,14 @@
 						class="pl-3">
 					</fa-icon>
 			</div>
-	</div>
+		</div>
 	</div>
 	<div class="device-status-container" [ngClass]="{'hidden':!isShowPosture}">
-		<div class="loading" *ngIf="!homeSecurityOverviewMyDevice || !homeSecurityOverviewMyDevice.devicePostures">
+		<div class="loading" *ngIf="!homeSecurityOverviewMyDevice || !homeSecurityOverviewMyDevice.devicePostures || homeSecurityOverviewMyDevice.devicePostures.length === 0">
 			<div class="spinner-border text-primary progress-spinner" role="status">
 			</div>
 		</div>
-		<div class="row" *ngIf="homeSecurityOverviewMyDevice && homeSecurityOverviewMyDevice.devicePostures">
+		<div class="row" *ngIf="homeSecurityOverviewMyDevice && homeSecurityOverviewMyDevice.devicePostures && homeSecurityOverviewMyDevice.devicePostures.length > 0">
 			<div class=" col-12 col-lg-6 device-info" *ngFor="let device of homeSecurityOverviewMyDevice.devicePostures">
 				<div class="row">
 					<div class="col-7 title" title="{{device.name}}">{{ device.name }}</div>

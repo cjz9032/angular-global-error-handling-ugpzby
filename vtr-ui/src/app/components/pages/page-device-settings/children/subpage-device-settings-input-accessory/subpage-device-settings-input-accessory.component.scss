@@ -41,8 +41,8 @@
 .inputSection {
 	margin-top: 0.3rem;
 	width: 75%;
-	@media #{$mediaquery_X28} {		
-		margin-top: 1rem;		
+	@media #{$mediaquery_X28} {
+		margin-top: 1rem;
 	}
 	@media #{$mediaquery_X26} {
 		width: 72%;
@@ -56,7 +56,7 @@
 	}
 	.select-title {
 		font-size: 1.2rem;
-		font-weight: $weight_bold;
+		font-weight: $weight_medium;
 		text-transform: uppercase;
 		color: $shade;
 		letter-spacing: 0;
@@ -120,7 +120,8 @@
 		border-radius: $border_radius_sm;
 		background-color: $light;
 		box-shadow: $drop_shadow;
-		font-size: 1.6rem;
+		font-size: 1.2rem;
+		
 		padding: 1rem;
 		width: 100%;
 		&:hover{
@@ -145,4 +146,9 @@
 		}
 	}
 }
+}
+.pressf12 {
+	text-align: center;
+	font-size: 12px;
+
 }
