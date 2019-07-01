@@ -34,17 +34,27 @@
           </div>
         </div>
       </div>
-      <div class="fa-color ml-auto mr-4" *ngIf="isShowMore===false" (click)="isShowMore=true"
-        id="chs-ecosystem-btn-collapseEcosystem" aria-label="chs-ecosystem-btn-collapseEcosystem"
-        vtrMetrics metricsEvent="FeatureClick" metricsItem="collapseEcosystem">
-        <fa-icon [icon]="['fas', 'chevron-up']">
-        </fa-icon>
+      <div class="fa-color ml-auto mr-4 mt-4 align-self-start"
+            *ngIf="isShowMore===false" 
+            (click)="isShowMore=true"
+            id="chs-ecosystem-btn-collapseEcosystem" 
+            attr.aria-label="chs-ecosystem-btn-collapseEcosystem"
+            vtrMetrics
+            metricsEvent="FeatureClick"
+            metricsItem="collapseEcosystem">
+            <fa-icon [icon]="['fas', 'chevron-up']">
+            </fa-icon>
       </div>
-      <div class="fa-color ml-auto mr-4" aria-label="sa-ws-btn-moreinfo" *ngIf="isShowMore===true"
-        (click)="isShowMore=false" id="chs-ecosystem-btn-expandEcosystem" aria-label="chs-ecosystem-btn-expandEcosystem"
-        vtrMetrics metricsEvent="FeatureClick" metricsItem="expandEcosystem">
-        <fa-icon [icon]="['fas', 'chevron-down']">
-        </fa-icon>
+      <div class="fa-color ml-auto mr-4 mt-4 align-self-start"
+            *ngIf="isShowMore===true"
+            (click)="isShowMore=false" 
+            id="chs-ecosystem-btn-expandEcosystem" 
+            attr.aria-label="chs-ecosystem-btn-expandEcosystem"
+            vtrMetrics
+            metricsEvent="FeatureClick" 
+            metricsItem="expandEcosystem">
+            <fa-icon [icon]="['fas', 'chevron-down']">
+            </fa-icon>
       </div>
     </div>
   </li>
