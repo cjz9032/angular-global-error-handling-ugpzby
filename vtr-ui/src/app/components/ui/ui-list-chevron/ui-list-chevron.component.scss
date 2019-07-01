@@ -210,6 +210,9 @@
 				.sub-text{
 					font-size: 1.2rem;
 					margin-top: 2px;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
 				}
 			}
 

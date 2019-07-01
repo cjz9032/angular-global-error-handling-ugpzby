@@ -39,7 +39,9 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -344,13 +346,13 @@
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "ダッシュボード",
             "device": {
-                "title": "Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "デバイス",
+                "sub1": "デバイス",
+                "sub2": "デバイス設定",
                 "sub3": "System Updates",
-                "sub4": "‏\"スマート・アシスト\""
+                "sub4": "スマート・アシスト"
             },
             "security": {
                 "title": "セキュリティー",
@@ -361,9 +363,9 @@
                 "sub5": "インターネット保護",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "サポート",
+            "homeSecurity": "接続ホーム",
+            "privacy": "プライバシー"
         },
         "securityAdvisor": {
             "title": "セキュリティー・アドバイザー",
@@ -682,7 +684,13 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -1051,7 +1059,8 @@
                     "dropDown": {
                         "title": "Action User Defined key",
                         "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
-                    }
+                    },
+                    "tooltip": "Content to be filled"
                 }
             }
         },
@@ -1071,11 +1080,11 @@
                 "readMore": "表示を多くする",
                 "HumanPresenceDetection": {
                     "title": "人物存在検知",
-                    "tooltip": "人物存在検知設定をリセットするには、ここをクリックしてください。"
+                    "tooltip": "人物存在検知の設定をリセットするには、ここをクリックしてください。"
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "ユーザー存在センサー",
+                    "tooltip": "人物存在検知設定をリセットするには、ここをクリックしてください。"
                 },
                 "zeroTouchLogin": {
                     "title": "ゼロ・タッチ・ログイン",
@@ -1095,7 +1104,7 @@
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
+                    "title": "距離感度調整",
                     "caption": "自動距離調整は、AI エンジン経由で検出距離を自動更新します。",
                     "options": {
                         "near": "近い",
@@ -1104,7 +1113,7 @@
                 },
                 "note": {
                     "description1": "この機能は Windows Hello に依存しています。Windows の設定で顔認識がオンになっていることを確認してください。",
-                    "description2": "この機能はセンサーとカメラを使ってユーザーの存在を検出します。ただし、この機能は個人のデータや画像を収集、保存、漏洩することはありません。",
+                    "description2": "この機能はセンサーとカメラを使ってユーザーの存在を検出します。ただし、この機能が個人のデータを収集することはありません。",
                     "description3": "1.コンピューターがテント・モード、タブレット・モード、またはスタンド・モードの場合、この機能が適切に動作しないことがあります。",
                     "description4": "2.コンピューターが休止状態またはオフである。自動 IR カメラ・ログインは機能しません。",
                     "description5": "3.自動ログインのために IR カメラが顔を認識できるように、コンピューター画面を適切な角度に調整してください。"
@@ -1113,24 +1122,24 @@
                     "goToWindowsHello": "Windows Hello 設定に移動",
                     "screenTimeoutSettings": "画面のタイムアウト設定に移動します"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "デフォルト設定にリセットする"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "インテリジェント・スクリーン",
+                "description": "Lenovo インテリジェント・センサーは、コンピューターの各種センサーを併用してアクティビティを検出し、電源管理の設定を調整します。たとえば、ユーザーが歩行中であることを検出した場合は画面を暗くしますが、画面を読んでいることを検出した場合は暗くしません。",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "自動画面オフ",
+                    "caption": "画面表面が下を向いているか歩行中の場合に、自動的に画面をオフにします。",
+                    "note": "この機能は、Windows の設定画面の「システム・セクション」で、電源プランの設定が「バッテリー駆動時に画面の電源を切らない」に設定されている場合、使用できません。この機能を有効にするには、「なし」以外の値を選択してください。",
+                    "windowsLink": "Windows の設定画面の「電源とスリープ」設定に移動する"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "画面を維持する",
+                    "caption": "読書中または閲覧中の場合に、画面を維持します。",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "閲覧時に画面が暗くなるまでの時間",
+                        "startTime": "0 分",
+                        "endTime": "60 分"
                     }
                 }
             },
@@ -1165,10 +1174,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "インテリジェント・メディア",
+                "title": "ゼロ・タッチ・ビデオ再生",
+                "desc": "この機能では、コンピューターを離れるときにビデオを一時停止し、戻ったときにビデオを再開します。",
+                "tooltip": "この機能は Web ビデオ・プレイヤーに適用できません。Windows Media Player、5KPlayer など、人気のあるローカル・ビデオ・プレイヤーは、この機能をサポートしています。"
             },
             "voice": {
                 "title": "Voice",
@@ -1195,6 +1204,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1350,6 +1364,7 @@
             "overviewBlockTitle": "エコシステム・セキュリティーの概要",
             "allDevices": "すべてのデバイス",
             "myDevice": "デバイス",
+            "thisComputer": "This computer",
             "secure": "安全",
             "needAttention": "注意が必要",
             "manageAccount": "アカウントの管理",

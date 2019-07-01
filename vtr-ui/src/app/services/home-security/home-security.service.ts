@@ -19,7 +19,7 @@ export class HomeSecurityMockService {
 				loggedIn: false
 			},
 			createAccount() {
-				this.state =  CHSAccountState.trial;
+				this.state = CHSAccountState.trial;
 				this.mitt.emit(EventTypes.chsEvent, this.chs);
 				return Promise.resolve(true);
 			},
@@ -46,43 +46,43 @@ export class HomeSecurityMockService {
 		overview: {
 			devicePostures: {
 				value: [
-					{name: 'PasswordProtection', vulnerable: false},
-					{name: 'HardDriveEncryption', vulnerable: true},
-					{name: 'AntiVirusAvailability', vulnerable: false},
-					{name: 'FirewallAvailability', vulnerable: false},
-					{name: 'AppsFromUnknownSources', vulnerable: true},
-					{name: 'DeveloperMode', vulnerable: true},
-					{name: 'NotActivatedWindows', vulnerable: false},
-					{name: 'UacNotification', vulnerable: false}]
+					{ name: 'PasswordProtection', vulnerable: false },
+					{ name: 'HardDriveEncryption', vulnerable: true },
+					{ name: 'AntiVirusAvailability', vulnerable: false },
+					{ name: 'FirewallAvailability', vulnerable: false },
+					{ name: 'AppsFromUnknownSources', vulnerable: true },
+					{ name: 'DeveloperMode', vulnerable: true },
+					{ name: 'NotActivatedWindows', vulnerable: false },
+					{ name: 'UacNotification', vulnerable: false }]
 			},
 			myDevice: {
 				name: 'ThinkPad T470',
 				protected: true,
 			},
 			allDevices: [
-				{name: 'aaa', protected: true},
-				{name: 'bbb', protected: true},
-				{name: 'ccc', protected: true},
-				{name: 'ddd', protected: true},
-				{name: 'eee', protected: true},
-				{name: 'fff', protected: true},
-				{name: 'fff', protected: true},
-				{name: 'fff', protected: true},
-				{name: 'fff', protected: true},
-				{name: 'ggg', protected: false}
+				{ name: 'aaa', protected: true },
+				{ name: 'bbb', protected: true },
+				{ name: 'ccc', protected: true },
+				{ name: 'ddd', protected: true },
+				{ name: 'eee', protected: true },
+				{ name: 'fff', protected: true },
+				{ name: 'fff', protected: true },
+				{ name: 'fff', protected: true },
+				{ name: 'fff', protected: true },
+				{ name: 'ggg', protected: false }
 			]
 		},
-		notifications:  {
+		notifications: {
 			value: [
-			{type: CHSNotificationType.connectedUnsafeNetwork, time: new Date(), content: new Map([['Unsafe network connection', 'ThinkPad T490s']])},
-			{type: CHSNotificationType.unknownDeviceConnected, time: new Date('2019-6-18 6:33:00'), content: new Map([['New device detected', 'ThinkPad T490s']])},
-			{type: CHSNotificationType.applianceDisconnected, time: new Date('2017-12-18 13:33:00'), content: new Map([['Device disconnected', 'ThinkPad T490s']])},
-			{type: CHSNotificationType.vulnerableDeviceDetected, time: new Date('2018-6-18 13:33:00'), content: new Map([['Unsafe device detected', 'ThinkPad T490s']])},
-			{type: CHSNotificationType.homeNetworkUnsafe, time: new Date('2019-6-17 13:33:00'), content: new Map([['Network unsafe', 'ThinkPad T490s']])},
-			{type: CHSNotificationType.applianceDisconnected, time: new Date('2017-12-18 13:33:00'), content: new Map([['Device disconnected', 'ThinkPad T490s']])},
-			{type: CHSNotificationType.vulnerableDeviceDetected, time: new Date('2018-6-18 13:33:00'), content: new Map([['Unsafe device detected', 'ThinkPad T490s']])},
-			{type: CHSNotificationType.homeNetworkUnsafe, time: new Date('2019-6-17 13:33:00'), content: new Map([['Network unsafe', 'ThinkPad T490s']])},
-		]
+				{ type: CHSNotificationType.connectedUnsafeNetwork, time: new Date(), content: { title: 'New device detected', content: 'ThinkPad T490s' } },
+				{ type: CHSNotificationType.unknownDeviceConnected, time: new Date('2019-6-18 6:33:00'), content: { title: 'New device detected', content: 'ThinkPad T490s' } },
+				{ type: CHSNotificationType.applianceDisconnected, time: new Date('2017-12-18 13:33:00'), content: { title: 'Device disconnected', content: 'ThinkPad T490s' } },
+				{ type: CHSNotificationType.vulnerableDeviceDetected, time: new Date('2018-6-18 13:33:00'), content: { title: 'Unsafe device detected', content: 'ThinkPad T490s' } },
+				{ type: CHSNotificationType.homeNetworkUnsafe, time: new Date('2019-6-17 13:33:00'), content: { title: 'Network unsafe', content: 'ThinkPad T490s' } },
+				{ type: CHSNotificationType.applianceDisconnected, time: new Date('2017-12-18 13:33:00'), content: { title: 'Device disconnected', content: 'ThinkPad T490s' } },
+				{ type: CHSNotificationType.vulnerableDeviceDetected, time: new Date('2018-6-18 13:33:00'), content: { title: 'Unsafe device detected', content: 'ThinkPad T490s' } },
+				{ type: CHSNotificationType.homeNetworkUnsafe, time: new Date('2019-6-17 13:33:00'), content: { title: 'Network unsafe', content: 'ThinkPad T490s' } },
+			]
 		},
 		on(type, handler) {
 			this.mitt.on(type, handler);

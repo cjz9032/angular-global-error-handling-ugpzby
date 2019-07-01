@@ -18,8 +18,7 @@
 					[disable]="!(microphoneStatus.permission && microphoneStatus.available && quickSettingsWidget[0].state)">
 				</vtr-widget-switch-icon>
 			</div>
-			<div class="text-center"
-				*ngIf="cameraStatus.available">
+			<div class="text-center">
 				<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Camera2x'"
 					[offIconDefinition]="'icomoon icomoon-LE-Camera-privacy-mode2x'"
 					#camera

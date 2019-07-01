@@ -39,7 +39,9 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -344,13 +346,13 @@
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "Panel de mandos",
             "device": {
-                "title": "Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "Dispositivo",
+                "sub1": "Mi dispositivo",
+                "sub2": "Configuración de Mi dispositivo",
                 "sub3": "System Updates",
-                "sub4": "‏\"Asistencia inteligente\""
+                "sub4": "Asistencia inteligente"
             },
             "security": {
                 "title": "Seguridad",
@@ -361,9 +363,9 @@
                 "sub5": "Protección de Internet",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "Soporte",
+            "homeSecurity": "Hogar conectado",
+            "privacy": "Privacidad"
         },
         "securityAdvisor": {
             "title": "Asesor de seguridad",
@@ -682,7 +684,13 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -1051,13 +1059,14 @@
                     "dropDown": {
                         "title": "Action User Defined key",
                         "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
-                    }
+                    },
+                    "tooltip": "Content to be filled"
                 }
             }
         },
         "smartAssist": {
             "title": "Asistencia inteligente",
-            "description": "La detección inteligente de Lenovo combina los sensores del equipo para detectar sus actividades,ajustar los valores para una administración óptima de la energía y proteger su privacidad.",
+            "description": "La detección inteligente de Lenovo combina los sensores del equipo para detectar sus actividades, ajustar los valores para una administración óptima de la energía y proteger su privacidad.",
             "jumpTo": {
                 "title": "IR A CONFIGURACIÓN",
                 "security": "Seguridad",
@@ -1071,19 +1080,19 @@
                 "readMore": "Leer más",
                 "HumanPresenceDetection": {
                     "title": "Detección de presencia humana",
-                    "tooltip": "Haga clic aquí para restablecer los valores de Detección de presencia humana."
+                    "tooltip": "Haga clic aquí para restablecer los valores de detección de presencia humana."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Detección de presencia de usuario",
+                    "tooltip": "Haga clic aquí para restablecer los valores de Detección de presencia humana."
                 },
                 "zeroTouchLogin": {
                     "title": "Inicio de sesión sin interacción",
-                    "caption": "Esta característica desbloquea o activa automáticamente el equipo cuando se encuentre frente o se acerque a él."
+                    "caption": "Esta característica desbloquea o activa automáticamente el equipo cuando se encuentra frente o se acerca a este."
                 },
                 "zeroTouchLock": {
                     "title": "Bloqueo sin interacción",
-                    "caption": "Esta característica atenuará la pantalla y bloqueará el sistema cuando no se pueda detectar la presencia del usuario.Puede reducir las posibilidades de que se produzcan casos de acceso no autorizado al equipo cuando deja el equipo desatendido y desbloqueado. También reduce el consumo de energía al poner el sistema en Espera moderna cuando no se puede detectar su presencia.",
+                    "caption": "Esta característica atenuará la pantalla y bloqueará el sistema cuando no se pueda detectar la presencia del usuario. Puede reducir las posibilidades de que se produzcan casos de acceso no autorizado al equipo cuando deja el equipo desatendido y desbloqueado. También reduce el consumo de energía al poner el sistema en Espera moderna cuando no se puede detectar su presencia.",
                     "autoScreenLockTimer": {
                         "title": "TIEMPO DE BLOQUEO DE PANTALLA AUTOMÁTICO",
                         "radioButton": {
@@ -1091,46 +1100,46 @@
                             "medium": "Medio",
                             "slow": "Lento"
                         },
-                        "toolTipContent": "Seleccione la opción que desee para bloquear la pantalla a una velocidad rápida/intermedia/lenta cuando detecte su presencia.Sin embargo, el tiempo en el que se bloqueará la pantalla también se ve afectado por la situación real del usuario, la capacidad del sensor y los valores de tiempo de espera de pantalla de Windows. Por lo tanto, recomendamos encarecidamente que bloquee el sistema inmediatamente antes de salir."
+                        "toolTipContent": "Seleccione la opción que desee para bloquear la pantalla a una velocidad rápida/intermedia/lenta cuando detecte su presencia. Sin embargo, el tiempo en el que se bloqueará la pantalla también se ve afectado por la situación real del usuario, la capacidad del sensor y los valores de tiempo de espera de pantalla de Windows. Por lo tanto, recomendamos encarecidamente que bloquee el sistema inmediatamente antes de salir."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "El Ajuste de distancia automático actualizará automáticamente ladistancia de detección a través de un motor de IA.",
+                    "title": "AJUSTE DE DETECCIÓN A DISTANCIA",
+                    "caption": "El ajuste de distancia automático actualizará automáticamente la distancia de detección a través de un motor de IA.",
                     "options": {
                         "near": "Cerca",
                         "far": "Lejos"
                     }
                 },
                 "note": {
-                    "description1": "Esta característica se basa en Windows Hello.Asegúrese de que el reconocimiento facial esté activado en los valores de Windows.",
-                    "description2": "La característica utiliza sensores y la cámara para detectar su presencia.Sin embargo, la característica NO recopila, guarda o divulga datos personales o de imagen.",
-                    "description3": "1. Si el equipo está en modalidad de lienzo, tableta o pedestal,estas características podrían no funcionar correctamente.",
-                    "description4": "2. Si el sistema se encuentra en hibernación o se apagó.El inicio de sesión de con cámara IR automático no funcionará.",
-                    "description5": "3. Ajuste la pantalla del sistema en un ángulo adecuadode forma que la cámara IR pueda reconocer su rostro para el inicio de sesión automático."
+                    "description1": "Esta característica se basa en Windows Hello. Asegúrese de que el reconocimiento facial esté activado en los valores de Windows.",
+                    "description2": "La característica utiliza sensores y la cámara para detectar su presencia. Sin embargo, la característica NO recopila datos personales.",
+                    "description3": "1. Si el equipo está en modalidad de lienzo, tableta o pedestal, estas características podrían no funcionar correctamente.",
+                    "description4": "2. Si el sistema se encuentra en hibernación o se apagó. El inicio de sesión de con cámara IR automático no funcionará.",
+                    "description5": "3. Ajuste la pantalla del sistema en un ángulo adecuado de forma que la cámara IR pueda reconocer su rostro para el inicio de sesión automático."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Vaya a valores de Windows Hello",
                     "screenTimeoutSettings": "Vaya a Configuración de tiempo de espera de pantalla"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "RESTABLECER A LOS VALORES PREDETERMINADOS"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Pantalla inteligente",
+                "description": "La detección inteligente de Lenovo combina los diferentes sensores del sistema para detectar sus actividades y ajustar los valores para una mejor administración de energía. Por ejemplo, atenuará la pantalla si detecta que está caminando, pero no lo hará si detecta que está leyendo.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Bloqueo de pantalla automático",
+                    "caption": "Apagar la pantalla automáticamente cuando apunte al suelo o cuando esté caminando.",
+                    "note": "Esta función no está disponible si la configuración del plan de energía es “con batería, nunca apagar la pantalla” en la sección “Sistema” de la configuración de Windows. Seleccione un valor distinto de “Nunca” para activar esta característica.",
+                    "windowsLink": "Vaya a Configuración de Inicio/Apagado y suspensión en la configuración de Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Conservar mi pantalla",
+                    "caption": "Mantener la pantalla encendida por más tiempo cuando estoy leyendo o navegando.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Minutos antes de atenuar la pantalla al navegar",
+                        "startTime": "0 minutos",
+                        "endTime": "60 minutos"
                     }
                 }
             },
@@ -1165,10 +1174,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Medios inteligentes",
+                "title": "Reproducción de video sin interacción",
+                "desc": "Esta característica pausará el video cuando deje el equipo y reanudará el video cuando vuelva.",
+                "tooltip": "Esta característica no se aplica a reproductores de video Web. Los reproductores de video locales más populares, como Windows Media Player, 5KPlayer, etc., admiten esta característica."
             },
             "voice": {
                 "title": "Voice",
@@ -1195,6 +1204,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1209,9 +1223,9 @@
         "recommendedUpdates": "Actualizaciones recomendadas",
         "optionalUpdates": "Actualizaciones opcionales",
         "ignoredUpdates": "Actualizaciones ignoradas",
-        "successInstall": "Instalado correctamente en",
-        "failedInstall": "Error en la instalación en",
-        "at": "a",
+        "successInstall": "Instalado correctamente a las",
+        "failedInstall": "Error en la instalación a las",
+        "at": "a las",
         "readMore": "Leer más",
         "popup": {
             "reboot": "Rearr.",
@@ -1350,6 +1364,7 @@
             "overviewBlockTitle": "Descripción de la seguridad del ecosistema",
             "allDevices": "Todos los dispositivos",
             "myDevice": "Mi dispositivo",
+            "thisComputer": "This computer",
             "secure": "SEGURO",
             "needAttention": "REQUIERE ATENCIÓN",
             "manageAccount": "Administrar cuenta",
