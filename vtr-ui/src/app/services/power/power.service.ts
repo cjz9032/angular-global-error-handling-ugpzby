@@ -399,10 +399,10 @@ export class PowerService {
 			throw new Error(error.message);
 		}
 	}
-	public startMonitorForICIdeapad() {
+	public startMonitorForICIdeapad(handler: any) {
 		try {
 			if (this.intelligentCoolingForIdeaPad) {
-				return this.intelligentCoolingForIdeaPad.startMonitor();
+				return this.intelligentCoolingForIdeaPad.startMonitor(handler);
 			}
 			return undefined;
 		} catch (error) {
