@@ -7,6 +7,7 @@ import { UserDataGetStateService } from '../../../common/services/user-data-get-
 import { AppStatuses } from '../../../userDataStatuses';
 import { merge } from 'rxjs';
 import { RoutersName } from '../../../privacy-routing-name';
+import { getFigleafProtectedStatus } from '../../../utils/helpers';
 
 @Component({
 	selector: 'vtr-sidebar-install-widget',
@@ -40,7 +41,7 @@ export class SidebarInstallWidgetComponent implements OnInit, OnDestroy {
 			this.userDataGetStateService.userDataStatus$.pipe(
 				tap(({appState}) => {
 					this.isFirstTimeVisitor = appState === AppStatuses.firstTimeVisitor;
-					this.isFigleafInstalled = appState === AppStatuses.figLeafInstalled;
+					this.isFigleafInstalled = getFigleafProtectedStatus(appState);
 				})
 			),
 			this.routerChangeHandler.onChange$.pipe(

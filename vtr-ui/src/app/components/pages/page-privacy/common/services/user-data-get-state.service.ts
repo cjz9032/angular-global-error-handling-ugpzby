@@ -16,7 +16,7 @@ export interface UserStatuses {
 	nonPrivatePasswordResult: FeaturesStatuses;
 }
 
-const TIME_TO_SHOW_EXPIRED_PITCH_MS = 24 * 60 * 60 * 1000;
+export const TIME_TO_SHOW_EXPIRED_PITCH_MS = 24 * 60 * 60 * 1000;
 
 @Injectable()
 export class UserDataGetStateService {

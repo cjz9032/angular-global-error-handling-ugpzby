@@ -1,0 +1,49 @@
+<div class="sidebar-expired-widget" *ngIf="(isFigleafTrialSoonExpired$ | async) || (isFigleafTrialExpired$ | async)">
+	<div class="sidebar-expired-widget__inner">
+		<ng-container
+			*ngIf="(isFigleafTrialSoonExpired$ | async)"
+			[ngTemplateOutlet]="trialSoonExpired">
+		</ng-container>
+		<ng-container
+			*ngIf="(isFigleafTrialExpired$ | async)"
+			[ngTemplateOutlet]="trialExpired">
+		</ng-container>
+
+		<button class="sidebar-expired-widget__button sidebar-expired-widget__button--transparent"
+				(click)="goToSeePlans()">
+			See plans
+		</button>
+	</div>
+</div>
+
+<ng-template #trialSoonExpired>
+	<div>
+		<img class="sidebar-expired-widget__main-image"
+			 [src]="'/assets/images/privacy-tab/trial-widget/trial-soon-expired.png'"
+			 [srcset]="'/assets/images/privacy-tab/trial-widget/trial-soon-expired@2x.png 2x'"
+			 alt="Trial soon expired">
+	</div>
+	<div class="sidebar-expired-widget__text">
+		<strong class="sidebar-expired-widget__text-strong" [ngPlural]="timeToExpires">
+			<ng-template ngPluralCase="=1">Trial expires in {{timeToExpires}} day</ng-template>
+			<ng-template ngPluralCase="other">Trial expires in {{timeToExpires}} days</ng-template>
+		</strong>
+		<div class="sidebar-expired-widget__main-text sidebar-expired-widget__main-text--sm">
+			<p class="sidebar-expired-widget__text-light">Get a subscription and stay in control of your privacy.</p>
+		</div>
+	</div>
+</ng-template>
+<ng-template #trialExpired>
+	<div>
+		<img class="sidebar-expired-widget__main-image"
+			 [src]="'/assets/images/privacy-tab/trial-widget/trial-expired.png'"
+			 [srcset]="'/assets/images/privacy-tab/trial-widget/trial-expired@2x.png 2x'"
+			 alt="Trial soon expired">
+	</div>
+	<div class="sidebar-expired-widget__text">
+		<strong class="sidebar-expired-widget__text-strong">Trial expired</strong>
+		<div class="sidebar-expired-widget__main-text sidebar-expired-widget__main-text--sm">
+			<p class="sidebar-expired-widget__text-light">Get a subscription and stay in control of your privacy.</p>
+		</div>
+	</div>
+</ng-template>
