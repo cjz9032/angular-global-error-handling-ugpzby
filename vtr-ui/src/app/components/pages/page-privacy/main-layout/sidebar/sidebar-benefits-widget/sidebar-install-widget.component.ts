@@ -7,6 +7,7 @@ import { UserDataGetStateService } from '../../../common/services/user-data-get-
 import { AppStatuses } from '../../../userDataStatuses';
 import { merge } from 'rxjs';
 import { RoutersName } from '../../../privacy-routing-name';
+import { getFigleafProtectedStatus } from '../../../utils/helpers';
 
 @Component({
 	selector: 'vtr-sidebar-install-widget',
@@ -27,7 +28,6 @@ export class SidebarInstallWidgetComponent implements OnInit, OnDestroy {
 	isFigleafInstalled = false;
 	isFirstTimeVisitor = false;
 	currentPath = '';
-	routersName = RoutersName;
 
 	constructor(
 		private routerChangeHandler: RouterChangeHandlerService,
@@ -41,24 +41,25 @@ export class SidebarInstallWidgetComponent implements OnInit, OnDestroy {
 			this.userDataGetStateService.userDataStatus$.pipe(
 				tap(({appState}) => {
 					this.isFirstTimeVisitor = appState === AppStatuses.firstTimeVisitor;
-					this.isFigleafInstalled = appState === AppStatuses.figLeafInstalled;
+					this.isFigleafInstalled = getFigleafProtectedStatus(appState);
 				})
 			),
 			this.routerChangeHandler.onChange$.pipe(
 				filter((currentPath) => this.sidebarInstallWidgetService.pagesSettings[currentPath]),
 				tap((currentPath) => this.currentPath = currentPath)
 			),
-		)
-			.pipe(
-				takeUntil(instanceDestroyed(this)),
-			)
-			.subscribe(() => {
-				if (this.isFirstTimeVisitor) {
-					this.installWidgetSettings = this.sidebarInstallWidgetService.generalizedSettings;
-				} else {
-					this.installWidgetSettings = this.sidebarInstallWidgetService.pagesSettings[this.currentPath];
-				}
-			});
+		).pipe(
+			takeUntil(instanceDestroyed(this)),
+		).subscribe(() => {
+			if (this.isFirstTimeVisitor) {
+				this.installWidgetSettings = {
+					...this.sidebarInstallWidgetService.generalizedSettings,
+					visible: this.sidebarInstallWidgetService.pagesSettings[this.currentPath].visible
+				};
+			} else {
+				this.installWidgetSettings = this.sidebarInstallWidgetService.pagesSettings[this.currentPath];
+			}
+		});
 	}
 
 	ngOnDestroy() {

@@ -16,9 +16,9 @@ interface FigleafStatusResponse {
 	payload: FigleafStatus;
 }
 
-interface FigleafStatus {
+export interface FigleafStatus {
 	appVersion: string;
-	licenseType: string;
+	licenseType: licenseTypes;
 	expirationDate: number;
 }
 
@@ -40,11 +40,12 @@ export interface FigleafDashboard {
 	websitesConnectedPrivately: number;
 }
 
-enum licenseTypes {
+export enum licenseTypes {
 	Unknown,
 	Free,
 	Trial,
-	Subscription
+	Subscription,
+	NonInstalled
 }
 
 @Injectable()
@@ -72,7 +73,7 @@ export class FigleafOverviewService implements OnDestroy {
 			.subscribe(([settings, dashboard, status]) => {
 				this.figleafSettings$.next(settings.payload);
 				this.figleafDashboard$.next(dashboard.payload);
-				this.figleafStatus$.next(this.transformLicenseType(status.payload));
+				this.figleafStatus$.next(status.payload);
 			});
 	}
 

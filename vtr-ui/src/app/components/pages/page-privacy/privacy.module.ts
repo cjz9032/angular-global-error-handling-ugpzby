@@ -44,6 +44,7 @@ import { BrowserAccountHeaderComponent } from './pages/browser-accounts/browser-
 import { CommunicationWithFigleafService } from './utils/communication-with-figleaf/communication-with-figleaf.service';
 import { ArticleDescriptionComponent } from './pages/articles/article-description/article-description.component';
 import { FigleafOverviewService } from './common/services/figleaf-overview.service';
+import { TrialExpiredWidgetComponent } from './main-layout/sidebar/trial-expired-widget/trial-expired-widget.component';
 
 library.add(fal);
 
@@ -82,6 +83,7 @@ library.add(fal);
 		ArticleSidebarComponent,
 		BrowserAccountHeaderComponent,
 		ArticleDescriptionComponent,
+		TrialExpiredWidgetComponent,
 	],
 	providers: [
 		{

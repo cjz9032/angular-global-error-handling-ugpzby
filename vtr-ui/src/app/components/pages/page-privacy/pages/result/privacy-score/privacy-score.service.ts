@@ -6,6 +6,7 @@ import { BrowserAccountsService } from '../../../common/services/browser-account
 import { BreachedAccountsService } from '../../../common/services/breached-accounts.service';
 import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
 import { AppStatuses } from '../../../userDataStatuses';
+import { getFigleafProtectedStatus } from '../../../utils/helpers';
 
 @Injectable()
 export class PrivacyScoreService {
@@ -26,11 +27,11 @@ export class PrivacyScoreService {
 	};
 
 	getScoreParametrs() {
-		let figleafInstalled = false;
+		let isFigleafProtected = false;
 		return this.userDataGetStateService.userDataStatus$.pipe(
 			filter((userDataStatuses) => userDataStatuses.appState !== AppStatuses.firstTimeVisitor),
 			switchMap((userDataStatuses) => {
-				figleafInstalled = userDataStatuses.appState === AppStatuses.figLeafInstalled;
+				isFigleafProtected = getFigleafProtectedStatus(userDataStatuses.appState);
 				return combineLatest([
 					this.getBreachesScore(),
 					this.getStoragesScore(),
@@ -40,8 +41,8 @@ export class PrivacyScoreService {
 				const receivedScoreParam = val.reduce((acc, curr) => ({...acc, ...curr}));
 				return {
 					...receivedScoreParam,
-					monitoringEnabled: figleafInstalled,
-					trackingEnabled: figleafInstalled,
+					monitoringEnabled: isFigleafProtected,
+					trackingEnabled: isFigleafProtected,
 				};
 			}),
 		);

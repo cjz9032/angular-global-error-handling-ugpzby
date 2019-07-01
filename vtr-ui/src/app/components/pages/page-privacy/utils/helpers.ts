@@ -1,6 +1,6 @@
 import { BrowserListType } from '../common/services/vantage-communication.service';
 import { createHash } from './createHash';
-import { FeaturesStatuses } from '../userDataStatuses';
+import { AppStatuses, FeaturesStatuses } from '../userDataStatuses';
 
 export function returnUniqueElementsInArray<T>(arr: T[]): T[] {
 	return Array.from(new Set<T>(arr));
@@ -37,4 +37,9 @@ export function getDisplayedCountValueOfIssues(status: FeaturesStatuses, issuesC
 		default:
 			return '';
 	}
+}
+
+export function getFigleafProtectedStatus(appState: AppStatuses | AppStatuses.figLeafInstalled | AppStatuses.trialSoonExpired | AppStatuses.trialExpired) {
+	const figleafProtectStatuses = [AppStatuses.figLeafInstalled, AppStatuses.trialSoonExpired, AppStatuses.trialExpired];
+	return figleafProtectStatuses.includes(appState);
 }

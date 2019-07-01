@@ -1,4 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { TIME_TO_SHOW_EXPIRED_PITCH_MS } from '../../services/user-data-get-state.service';
+
+const MS_IN_DAY = 24 * 60 * 60 * 1000;
 
 @Component({
 	selector: 'vtr-big-pitch',
@@ -11,5 +14,9 @@ export class BigPitchComponent {
 		text: 'Get the app that lets you decide when to share and when to be private, wherever you go online. ' +
 			'Trial duration 14-day. No credit card required.'
 	};
+	@Input() isFigleafTrialSoonExpired = false;
+	@Input() isFigleafTrialExpired = false;
 	@Output() clickMore = new EventEmitter();
+
+	timeToExpires = TIME_TO_SHOW_EXPIRED_PITCH_MS / MS_IN_DAY;
 }

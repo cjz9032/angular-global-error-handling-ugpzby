@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { VantageCommunicationService } from '../../services/vantage-communication.service';
-import { FigleafOverviewService } from '../../services/figleaf-overview.service';
-import { take } from 'rxjs/operators';
-import { LocalStorageKey } from '../../../../../../enums/local-storage-key.enum';
+import { FigleafOverviewService, licenseTypes } from '../../services/figleaf-overview.service';
+import { switchMap, take } from 'rxjs/operators';
+import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
+import { of } from 'rxjs';
 
 @Component({
 	selector: 'vtr-support-popup',
@@ -10,9 +11,11 @@ import { LocalStorageKey } from '../../../../../../enums/local-storage-key.enum'
 	styleUrls: ['./support-popup.scss']
 })
 export class SupportPopupComponent implements OnInit {
+	private licenseTypes = licenseTypes;
 
 	constructor(
 		private vantageCommunicationService: VantageCommunicationService,
+		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private figleafOverviewService: FigleafOverviewService
 	) {
 	}
@@ -25,11 +28,13 @@ export class SupportPopupComponent implements OnInit {
 	}
 
 	openFigleafSupport() {
-		this.figleafOverviewService.figleafStatus$.pipe(
+		this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(
+			switchMap((isReady) => isReady ? this.figleafOverviewService.figleafStatus$ :
+					of({licenseType: this.licenseTypes.NonInstalled, appVersion: ''})),
 			take(1)
 		).subscribe((status) => {
 			try {
-				const getParams = window.btoa(`appState=${status.licenseType}&appVersion=${status.appVersion || 0}`);
+				const getParams = window.btoa(`appState=${licenseTypes[status.licenseType]}&appVersion=${status.appVersion || 0}`);
 				this.vantageCommunicationService.openUri(`https://figleafapp.com/lv/help/?${getParams}`);
 			} catch (error) {
 				console.error(error.message);
