@@ -11,7 +11,10 @@
   }
   .brightCondition{
 	  color: $gaming_lightest;
-	  font-size: 1.8rem;
+    font-size: 1.8rem;
+    @media #{$large-screen-1}{
+      font-size: 1.6rem;
+    }
   }
   .dropdown-toggle {
     display: flex;
