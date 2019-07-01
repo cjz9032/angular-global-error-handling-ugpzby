@@ -4,12 +4,12 @@
     padding-left: 0;
     list-style: none;
     li {
-        margin-bottom: 2rem;
+        margin-bottom: 0;
     }
     .gaming-radio {
-        display: block;
+        display: inline-block;
         position: relative;
-        padding-left: 3rem;
+        padding-left: 3.5rem;
         margin-bottom: 12px;
         cursor: pointer;
         font-size: 1.6rem;
@@ -19,6 +19,10 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
+        @media #{$small-screen}{
+            line-height: 3.5rem;
+            margin-bottom: 0.8rem;
+        }
         input {
             position: absolute;
             opacity: 0;
