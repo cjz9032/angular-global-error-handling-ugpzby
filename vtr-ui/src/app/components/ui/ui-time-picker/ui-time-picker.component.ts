@@ -25,6 +25,11 @@ export class UiTimePickerComponent implements OnInit {
 	minutes = ['00', '15', '30', '45'];
 	amPms = ['AM', 'PM'];
 
+	prevHour: number;
+	nextHour: number;
+	prevMinute: number;
+	nextMinute: number;
+
 	constructor() { }
 
 	ngOnInit() {
@@ -39,37 +44,24 @@ export class UiTimePickerComponent implements OnInit {
 		this.initiateBlock();
 	}
 
-	incrementMinutes() {
-		if (this.copyMinute < 3) {
-			this.copyMinute = this.copyMinute + 1;
-		}
+	updateMinutes(value: boolean) {
+		value ? this.copyMinute = this.nextMinute : this.copyMinute = this.prevMinute;
+		this.setTimerBlock();
 	}
 
-	decrementMinutes() {
-		if (this.copyMinute > 0) {
-			this.copyMinute = this.copyMinute - 1;
-		}
-	}
-
-	incrementHours() {
-		if (this.copyHour < 11) {
-			this.copyHour = this.copyHour + 1;
-		}
-	}
-
-	decrementHours() {
-		if (this.copyHour > 0) {
-			this.copyHour = this.copyHour - 1;
-		}
+	updateHours(value: boolean) {
+		value ? this.copyHour = this.nextHour : this.copyHour = this.prevHour;
+		this.setTimerBlock();
 	}
 
 	initiateBlock() {
 		this.copyHour = this.hour;
 		this.copyMinute = this.minute;
 		this.copyAmPm = this.amPm;
+		this.setTimerBlock();
 	}
 
-	setAmPm(value: number) {
+	setAmPm(value) {
 		this.copyAmPm = value;
 	}
 
@@ -87,5 +79,28 @@ export class UiTimePickerComponent implements OnInit {
 	}
 	onToggleDropDown() {
 		this.showTimerDropDown = !this.showTimerDropDown;
+	}
+
+	setTimerBlock() {
+		this.nextHour = this.copyHour + 1;
+		this.prevHour = this.copyHour - 1;
+
+		this.nextMinute = this.copyMinute + 1;
+		this.prevMinute = this.copyMinute - 1;
+
+		if (this.copyHour === 0) {
+			this.prevHour = 11;
+		}
+
+		if (this.copyHour === 11) {
+			this.nextHour = 0;
+		}
+		if (this.copyMinute === 0) {
+			this.prevMinute = 3;
+		}
+
+		if (this.copyMinute === 3) {
+			this.nextMinute = 0;
+		}
 	}
 }

@@ -9,7 +9,7 @@
 		</div>
 		<div class="content-body">
 			<h1>{{'gaming.dashboard.device.legionEdge.driverPopup.headerText' | translate}}</h1>
-			<p *ngIf="!isLightingText">{{'gaming.dashboard.device.legionEdge.driverPopup.text' | translate}}</p>
+			<p *ngIf="!isLightingText">{{popupText | translate}}</p>
 			<p *ngIf="isLightingText">{{'gaming.dashboard.device.legionEdge.lightingDriverPopup.text' | translate}}</p>
 		</div>
 		<hr>
