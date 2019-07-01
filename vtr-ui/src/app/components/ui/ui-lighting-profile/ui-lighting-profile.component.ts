@@ -265,10 +265,7 @@ export class UiLightingProfileComponent implements OnInit {
 		console.log('id----------------------------------', this.currentProfileId);
 		this.isProfileOff = false;
 		this.getGamingLightingCapabilities();
-		if (this.currentProfileId !== 0) {
-			this.getLightingProfileById(this.currentProfileId);
-			this.getLightingBrightness();
-		} else {
+		if (this.currentProfileId === 0) {
 			this.isProfileOff = true;
 		}
 	}
@@ -288,7 +285,10 @@ export class UiLightingProfileComponent implements OnInit {
 			if (this.gamingLightingService.isShellAvailable) {
 				this.gamingLightingService.getLightingCapabilities().then((response: any) => {
 					if (response.LightPanelType.length > 0) {
-						this.commonService.setLocalStorageValue(LocalStorageKey.LightingCapabilities, response);
+						if (LocalStorageKey.LightingCapabilities !== undefined) {
+							this.commonService.setLocalStorageValue(LocalStorageKey.LightingCapabilities, response);
+						}
+
 						this.lightingCapabilities = response;
 						console.log(
 							'gaming Lighting Capabilities js bridge ------------------------>',
@@ -347,32 +347,51 @@ export class UiLightingProfileComponent implements OnInit {
 								}
 							}
 						}
+
+						this.getLightingProfileById(this.currentProfileId);
+						this.getLightingBrightness();
 					} else {
-						response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingCapabilities);
+						if (LocalStorageKey.LightingCapabilities !== undefined) {
+							response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingCapabilities);
+						}
 						if (response.LightPanelType.length > 0) {
 							this.lightingCapabilities = response;
 							console.log(
 								'gaming Lighting Capabilities js bridge ------------------------>',
 								JSON.stringify(this.lightingCapabilities)
 							);
-							this.dropOptions = response.LedType_Complex;
-
-							this.lightingEffectData.drop[0].dropOptions = this.lightingEffectData.drop[0].dropOptions.filter(
-								(i) => this.dropOptions.includes(i.value)
-							);
-							this.lightingEffectData.drop[1].dropOptions = this.lightingEffectData.drop[1].dropOptions.filter(
-								(i) => this.dropOptions.includes(i.value)
-							);
-
-							console.log(
-								'after drop options filter--------------------------------------------------------------------' +
-								JSON.stringify(this.lightingEffectData.drop[0].dropOptions)
-							);
 							console.log(
 								'led panel type ------------------------------------------',
 								this.lightingCapabilities.RGBfeature
 							);
+							if (response.LedType_Complex.length > 1) {
+								this.simpleOrComplex = 2;
+							} else if (response.LedType_simple.length > 1) {
+								this.simpleOrComplex = 1;
+							}
+							if (response.RGBfeature === 1 && this.simpleOrComplex === 1) {
+								this.dropOptions = response.LedType_simple;
 
+								this.optionsSingleColor = this.optionsSingleColor.filter((obj) =>
+									this.dropOptions.includes(obj.id)
+								);
+								console.log(
+									'single color options filtered  ------------------------------------------',
+									JSON.stringify(this.optionsSingleColor)
+								);
+							} else if (response.RGBfeature === 255 || this.simpleOrComplex === 2) {
+								this.dropOptions = response.LedType_Complex;
+								this.lightingEffectData.drop[0].dropOptions = this.lightingEffectData.drop[0].dropOptions.filter(
+									(i) => this.dropOptions.includes(i.value)
+								);
+								this.lightingEffectData.drop[1].dropOptions = this.lightingEffectData.drop[1].dropOptions.filter(
+									(i) => this.dropOptions.includes(i.value)
+								);
+								console.log(
+									'after drop options filter--------------------------------------------------------------------' +
+									JSON.stringify(this.lightingEffectData.drop[0].dropOptions)
+								);
+							}
 							const ledRGB = this.lightingCapabilities.RGBfeature;
 							if (this.lightingCapabilities.LightPanelType.length > 0) {
 								const ledPanel = this.lightingCapabilities.LightPanelType[0];
@@ -381,6 +400,7 @@ export class UiLightingProfileComponent implements OnInit {
 								});
 								if (resultImg.length > 0) {
 									this.panelImage1 = this.imagePath + '/' + resultImg[0].PanelImage;
+									console.log('image path 1...............................................', this.panelImage1);
 								}
 
 								if (this.lightingCapabilities.LightPanelType.length > 1) {
@@ -432,10 +452,9 @@ export class UiLightingProfileComponent implements OnInit {
 					console.log('setLightingProfileEffectColor top------------------------>', JSON.stringify(response));
 
 					if (response.didSuccess) {
-						// this.commonService.setLocalStorageValue(
-						// 	LocalStorageKey.LightingProfileEffectColorTop,
-						// 	response
-						// );
+						if (LocalStorageKey.LightingProfileEffectColorTop !== undefined) {
+							this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileEffectColorTop, response);
+						}
 						if (response.lightInfo.length > 0) {
 							if (this.lightingCapabilities.LedType_Complex.length > 0 && this.simpleOrComplex == 2) {
 								this.frontSelectedValue = response.lightInfo[0].lightEffectType;
@@ -472,20 +491,36 @@ export class UiLightingProfileComponent implements OnInit {
 							)
 						);
 					} else {
-						response = this.commonService.getLocalStorageValue(
-							LocalStorageKey.LightingProfileEffectColorTop
-						);
+						if (LocalStorageKey.LightingProfileEffectColorTop !== undefined) {
+							response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileEffectColorTop);
+						}
 						if (response.lightInfo.length > 0) {
-							this.frontSelectedValue = response.lightInfo[0].lightEffectType;
-							this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
-							//this.inHex1 = response.lightInfo[0].lightColor;
-							if (response.lightInfo.length > 1) {
-								this.sideSelectedValue = response.lightInfo[1].lightEffectType;
-								this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
-								//this.inHex2 = response.lightInfo[1].lightColor;
+							if (this.lightingCapabilities.LedType_Complex.length > 0 && this.simpleOrComplex == 2) {
+								this.frontSelectedValue = response.lightInfo[0].lightEffectType;
+								this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
+								//this.inHex1 = response.lightInfo[0].lightColor;
+								if (response.lightInfo.length > 1) {
+									this.sideSelectedValue = response.lightInfo[1].lightEffectType;
+									this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
+									this.inHex2 = response.lightInfo[1].lightColor;
+									if (this.lightingCapabilities.RGBfeature === 255) {
+										if ($event.value === LightEffectComplexType.Wave || $event.value === LightEffectComplexType.Smooth || $event.value === LightEffectComplexType.CPU_thermal || $event.value === LightEffectComplexType.CPU_frequency) {
+											this.showHideOverlaySide = true;
+										} else {
+											this.showHideOverlaySide = false;
+										}
+										if (this.sideSelectedValue === LightEffectComplexType.Breath || this.sideSelectedValue === LightEffectComplexType.Wave) {
+											this.enableBrightConditionside = true;
+										} else {
+											this.enableBrightConditionside = false;
+										}
+									}
+									const lightEffectRGBOptionNameB = this.getLightEffectOptionName(
+										response.lightInfo[1].lightEffectType
+									);
+									this.lightEffectRGBOptionNameSide = lightEffectRGBOptionNameB[0].name;
+								}
 							}
-						} else {
-							response = null;
 						}
 					}
 				});
@@ -525,10 +560,9 @@ export class UiLightingProfileComponent implements OnInit {
 						JSON.stringify(response)
 					);
 					if (response.didSuccess) {
-						this.commonService.setLocalStorageValue(
-							LocalStorageKey.LightingProfileEffectColorSide,
-							response
-						);
+						if (LocalStorageKey.LightingProfileEffectColorSide !== undefined) {
+							this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileEffectColorSide, response);
+						}
 						if (response.lightInfo.length > 0) {
 							this.frontSelectedValue = response.lightInfo[0].lightEffectType;
 							this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
@@ -559,18 +593,29 @@ export class UiLightingProfileComponent implements OnInit {
 							)
 						);
 					} else {
-						response = this.commonService.getLocalStorageValue(
-							LocalStorageKey.LightingProfileEffectColorSide
-						);
-
+						if (LocalStorageKey.LightingProfileEffectColorSide !== undefined) {
+							response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileEffectColorSide);
+						}
 						if (response.lightInfo.length > 0) {
 							this.frontSelectedValue = response.lightInfo[0].lightEffectType;
 							this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
-							//this.inHex1 = response.lightInfo[0].lightColor;
+							if (this.lightingCapabilities.RGBfeature === 255) {
+								if ($event.value === LightEffectComplexType.Wave || $event.value === LightEffectComplexType.Smooth || $event.value === LightEffectComplexType.CPU_thermal || $event.value === LightEffectComplexType.CPU_frequency) {
+									this.showHideOverlay = true;
+								} else {
+									this.showHideOverlay = false;
+								}
+								if (this.frontSelectedValue === LightEffectComplexType.Breath || this.frontSelectedValue === LightEffectComplexType.Wave) {
+									this.enableBrightCondition = true;
+								} else {
+									this.enableBrightCondition = false;
+								}
+							}
+
 							if (response.lightInfo.length > 1) {
 								this.sideSelectedValue = response.lightInfo[1].lightEffectType;
 								this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
-								//this.inHex2 = response.lightInfo[1].lightColor;
+
 							}
 						}
 					}
@@ -578,6 +623,7 @@ export class UiLightingProfileComponent implements OnInit {
 		}
 	}
 	changeSingleCoorEffect($event) {
+		this.selectedSingleColorOptionId = $event;
 		console.log('single color option change fired------------------------------', $event);
 		if (this.lightingProfileEffectColorNUmber === undefined) {
 			this.lightingProfileEffectColorNUmber = new LightingProfileEffectColorNUmber();
@@ -597,24 +643,15 @@ export class UiLightingProfileComponent implements OnInit {
 						'setLightingProfileEffectColor side------------------------>',
 						JSON.stringify(response)
 					);
-					// if (response.didSuccess) {
-					// 	this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileEffectColor, response);
-					// 	console.log(
-					// 		'single EffectColor------cache: ',
-					// 		JSON.stringify(
-					// 			this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileEffectColorTop)
-					// 		)
-					// 	);
-					// } else {
-					// 	response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileEffectColor);
-					// }
+
 				});
 		}
 	}
-	setDefaultProfile(event) {
+
+	setDefaultProfile(currentProfileId) {
 		try {
-			if (event !== undefined) {
-				this.isOff = Number(event);
+			if (currentProfileId !== undefined) {
+				this.isOff = Number(currentProfileId);
 			}
 
 			console.log('in profile click event....................................', this.isOff);
@@ -633,7 +670,87 @@ export class UiLightingProfileComponent implements OnInit {
 								JSON.stringify(response)
 							);
 							if (response.didSuccess) {
-								this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileById, response);
+								if (LocalStorageKey.LightingSetDefaultProfile !== undefined) {
+									this.commonService.setLocalStorageValue(LocalStorageKey.LightingSetDefaultProfile, response);
+								}
+								if (response.profileId > 0) {
+									this.currentProfileId = response.profileId;
+									this.currentProfile = response.profileId;
+									this.profileBrightness = response.brightness;
+									if (this.lightingCapabilities.RGBfeature === 1) {
+										console.log(
+											'selectedSingleColorOptionId------------single color---------------->',
+											JSON.stringify(response.lightInfo[0].lightEffectType)
+										);
+										this.selectedSingleColorOptionId = response.lightInfo[0].lightEffectType;
+									} else {
+										if (response.lightInfo.length > 0) {
+											console.log(
+												'setLightingDefaultProfileById------------ --------------------------------------------------------->',
+												JSON.stringify(response.lightInfo[0].lightEffectType)
+											);
+											this.frontSelectedValue = response.lightInfo[0].lightEffectType;
+											if (
+												this.frontSelectedValue === 8 ||
+												this.frontSelectedValue === 32 ||
+												this.frontSelectedValue === 64 ||
+												this.frontSelectedValue === 128
+											) {
+												this.showHideOverlay = true;
+											} else {
+												this.showHideOverlay = false;
+											}
+											if (this.frontSelectedValue === 4 || this.frontSelectedValue === 8) {
+												this.enableBrightCondition = true;
+											} else {
+												this.enableBrightCondition = false;
+											}
+											const lightEffectRGBOptionNameA = this.getLightEffectOptionName(
+												response.lightInfo[0].lightEffectType
+											);
+											this.lightEffectRGBOptionName = lightEffectRGBOptionNameA[0].name;
+											// this.lightingEffectData.drop[0].curSelected =
+											// 	response.lightInfo[0].lightEffectType;
+											this.inHex1 = response.lightInfo[0].lightColor;
+											if (response.lightInfo.length > 1) {
+												this.sideSelectedValue = response.lightInfo[1].lightEffectType;
+												if (
+													this.sideSelectedValue === 8 ||
+													this.sideSelectedValue === 32 ||
+													this.sideSelectedValue === 64 ||
+													this.sideSelectedValue === 128
+												) {
+													this.showHideOverlaySide = true;
+												} else {
+													this.showHideOverlaySide = false;
+												}
+												if (this.sideSelectedValue === 4 || this.sideSelectedValue === 8) {
+													this.enableBrightConditionside = true;
+												} else {
+													this.enableBrightConditionside = false;
+												}
+												const lightEffectRGBOptionNameB = this.getLightEffectOptionName(
+													response.lightInfo[1].lightEffectType
+												);
+												this.lightEffectRGBOptionNameSide = lightEffectRGBOptionNameB[0].name;
+												this.inHex2 = response.lightInfo[1].lightColor;
+												this.lightingEffectData.drop[1].curSelected =
+													response.lightInfo[1].lightEffectType;
+											}
+										}
+									}
+								}
+								console.log(
+									'setLightingDefaultProfileById---------cache---------->',
+									JSON.stringify(
+										this.commonService.getLocalStorageValue(LocalStorageKey.LightingSetDefaultProfile)
+									)
+								);
+							}
+							else {
+								if (LocalStorageKey.LightingSetDefaultProfile !== undefined) {
+									response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingSetDefaultProfile);
+								}
 								if (response.profileId > 0) {
 									this.currentProfileId = response.profileId;
 									this.currentProfile = response.profileId;
@@ -700,34 +817,7 @@ export class UiLightingProfileComponent implements OnInit {
 											}
 										}
 									}
-								}
-								console.log(
-									'setLightingDefaultProfileById---------cache---------->',
-									JSON.stringify(
-										this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById)
-									)
-								);
-							}
-							else {
-								response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById);
-								if (response !== undefined) {
-									this.currentProfileId = response.profileId;
-									this.currentProfile = response.profileId;
-									this.profileBrightness = response.brightness;
-									if (response.lightInfo.length > 0) {
-										console.log(
-											'setLightingDefaultProfileById------------ --------------------------------------------------------->',
-											JSON.stringify(response.lightInfo[0].lightEffectType)
-										);
-										this.frontSelectedValue = response.lightInfo[0].lightEffectType;
-										this.lightingEffectData.drop[0].curSelected =
-											response.lightInfo[0].lightEffectType;
-										if (response.lightInfo.length > 1) {
-											this.sideSelectedValue = response.lightInfo[1].lightEffectType;
-											this.lightingEffectData.drop[1].curSelected =
-												response.lightInfo[1].lightEffectType;
-										}
-									}
+
 								} else {
 									this.isProfileOff = false;
 								}
@@ -764,7 +854,9 @@ export class UiLightingProfileComponent implements OnInit {
 						if (!this.didSuccess) {
 							this.getLightingBrightness();
 						} else {
-							this.commonService.setLocalStorageValue(LocalStorageKey.ProfileBrightness, this.brightness);
+							if (LocalStorageKey.ProfileBrightness !== undefined) {
+								this.commonService.setLocalStorageValue(LocalStorageKey.ProfileBrightness, this.brightness);
+							}
 							this.getLightingBrightness();
 						}
 					});
@@ -777,7 +869,9 @@ export class UiLightingProfileComponent implements OnInit {
 
 	public getLightingBrightness() {
 		try {
-			this.profileBrightness = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileBrightness) || 0;
+			if (LocalStorageKey.ProfileBrightness !== undefined) {
+				this.profileBrightness = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileBrightness) || 0;
+			}
 			console.log('brightness cache value  ----------------', this.profileBrightness);
 		} catch (error) {
 			console.error(error.message);
@@ -794,6 +888,7 @@ export class UiLightingProfileComponent implements OnInit {
 						JSON.stringify(response)
 					);
 					if (response.didSuccess) {
+						console.log('DID SUCCESS,----------------------------------------');
 						if (LocalStorageKey.LightingProfileById !== undefined) {
 							this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileById, response);
 						}
@@ -865,37 +960,78 @@ export class UiLightingProfileComponent implements OnInit {
 								}
 							}
 						}
+						//	console.log('getLightingProfileById----------------cache---------->', JSON.stringify(this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById)));
 					} else {
-						this.response =
-							this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById) || 0;
+
+						if (LocalStorageKey.LightingProfileById !== undefined) {
+							this.response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById) || 0;
+						}
 						if (response !== undefined) {
 							this.currentProfileId = response.profileId;
 							this.currentProfile = response.profileId;
 							this.profileBrightness = response.brightness;
 							if (response.lightInfo.length > 0) {
-								//	this.dropDataChanges.topdata = response.lightInfo[0].lightEffectType;
-								this.frontSelectedValue = response.lightInfo[0].lightEffectType;
-								if (this.frontSelectedValue === LightEffectComplexType.Wave || this.frontSelectedValue === LightEffectComplexType.Smooth || this.frontSelectedValue === LightEffectComplexType.CPU_thermal || this.frontSelectedValue === LightEffectComplexType.CPU_frequency) {
-									this.showHideOverlay = true;
-								} else {
-									this.showHideOverlay = false;
-								}
-								console.log(
-									'sateesh------------------------------------------- ---------------->',
-									this.frontSelectedValue
-								);
-								this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
-								this.inHex1 = response.lightInfo[0].lightColor;
+								if (this.lightingCapabilities.RGBfeature === 1) {
+									console.log(
+										'selectedSingleColorOptionId------------single color---------------->',
+										JSON.stringify(response.lightInfo[0].lightEffectType)
+									);
 
-								if (response.lightInfo.length > 1) {
-									this.sideSelectedValue = response.lightInfo[1].lightEffectType;
-									if (this.sideSelectedValue === LightEffectComplexType.Wave || this.sideSelectedValue === LightEffectComplexType.Smooth || this.sideSelectedValue === LightEffectComplexType.CPU_thermal || this.sideSelectedValue === LightEffectComplexType.CPU_frequency) {
-										this.showHideOverlaySide = true;
-									} else {
-										this.showHideOverlaySide = false;
+									if (this.lightingCapabilities.LedType_Complex.length > 1) {
+										this.simpleOrComplex = 2;
+										this.frontSelectedValue = response.lightInfo[0].lightEffectType;
+										this.sideSelectedValue = response.lightInfo[1].lightEffectType;
+									} else if (this.lightingCapabilities.LedType_simple.length > 1) {
+										this.selectedSingleColorOptionId = response.lightInfo[0].lightEffectType;
 									}
-									this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
-									this.inHex2 = response.lightInfo[1].lightColor;
+
+								} else {
+									//	this.dropDataChanges.topdata = response.lightInfo[0].lightEffectType;
+									this.frontSelectedValue = response.lightInfo[0].lightEffectType;
+
+									if (this.frontSelectedValue === LightEffectComplexType.Wave || this.frontSelectedValue === LightEffectComplexType.Smooth || this.frontSelectedValue === LightEffectComplexType.CPU_thermal || this.frontSelectedValue === LightEffectComplexType.CPU_frequency) {
+										this.showHideOverlay = true;
+									} else {
+										this.showHideOverlay = false;
+									}
+									if (this.frontSelectedValue === LightEffectComplexType.Breath || this.frontSelectedValue === LightEffectComplexType.Wave) {
+										this.enableBrightCondition = true;
+									} else {
+										this.enableBrightCondition = false;
+									}
+
+									const lightEffectRGBOptionNameA = this.getLightEffectOptionName(
+										response.lightInfo[0].lightEffectType
+									);
+									this.lightEffectRGBOptionName = lightEffectRGBOptionNameA[0].name;
+
+									console.log(
+										'sateesh------------------------------------------- ---------------->',
+										JSON.stringify(lightEffectRGBOptionNameA)
+									);
+									this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
+									this.inHex1 = response.lightInfo[0].lightColor;
+
+									if (response.lightInfo.length > 1) {
+										this.sideSelectedValue = response.lightInfo[1].lightEffectType;
+										const lightEffectRGBOptionNameB = this.getLightEffectOptionName(
+											response.lightInfo[1].lightEffectType
+										);
+										this.lightEffectRGBOptionNameSide = lightEffectRGBOptionNameB[0].name;
+										if (this.sideSelectedValue === LightEffectComplexType.Wave || this.sideSelectedValue === LightEffectComplexType.Smooth || this.sideSelectedValue === LightEffectComplexType.CPU_thermal || this.sideSelectedValue === LightEffectComplexType.CPU_frequency) {
+											this.showHideOverlaySide = true;
+										} else {
+											this.showHideOverlaySide = false;
+										}
+										if (this.sideSelectedValue === LightEffectComplexType.Breath || this.sideSelectedValue === LightEffectComplexType.Wave) {
+											this.enableBrightConditionside = true;
+										} else {
+											this.enableBrightConditionside = false;
+										}
+										this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
+										this.inHex2 = response.lightInfo[1].lightColor;
+										console.log('in hex2-------------------------------------', this.inHex2);
+									}
 								}
 							}
 						} else {
@@ -915,6 +1051,7 @@ export class UiLightingProfileComponent implements OnInit {
 		});
 		return result;
 	}
+
 	public setLightingProfileId(event) {
 		try {
 			this.isOff = Number(event.target.value);
@@ -928,7 +1065,10 @@ export class UiLightingProfileComponent implements OnInit {
 				this.gamingLightingService.setLightingProfileId(1, this.isOff).then((response: any) => {
 					console.log('setLightingProfileId------------response---------------->', JSON.stringify(response));
 					if (response.didSuccess) {
-						this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileById, response);
+						if (LocalStorageKey.LightingProfileById !== undefined) {
+							this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileById, response);
+						}
+
 						if (response.profileId > 0) {
 							if (this.lightingCapabilities.RGBfeature === 1) {
 								console.log(
@@ -987,28 +1127,71 @@ export class UiLightingProfileComponent implements OnInit {
 							this.profileBrightness = response.brightness;
 							// end of set functionality
 						}
+						console.log('setLightingProfileId-----------cache------------------>', JSON.stringify(this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById)));
+
 					} else {
-						response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById);
+						if (LocalStorageKey.LightingProfileById !== undefined) {
+							response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById);
+						}
 						if (response !== undefined) {
-							if (response.lightInfo.length > 0) {
-								this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
-								this.frontSelectedValue = response.lightInfo[0].lightEffectType;
-								if (this.frontSelectedValue === LightEffectComplexType.Wave || this.frontSelectedValue === LightEffectComplexType.Smooth || this.frontSelectedValue === LightEffectComplexType.CPU_thermal || this.frontSelectedValue === LightEffectComplexType.CPU_frequency) {
-									this.showHideOverlay = true;
-								} else {
-									this.showHideOverlay = false;
-								}
-								if (response.lightInfo.length > 1) {
-									this.sideSelectedValue = response.lightInfo[1].lightEffectType;
-									if (this.sideSelectedValue === LightEffectComplexType.Wave || this.sideSelectedValue === LightEffectComplexType.Smooth || this.sideSelectedValue === LightEffectComplexType.CPU_thermal || this.sideSelectedValue === LightEffectComplexType.CPU_frequency) {
-										this.showHideOverlaySide = true;
-									} else {
-										this.showHideOverlaySide = false;
+							if (response.profileId > 0) {
+								if (this.lightingCapabilities.RGBfeature === 1) {
+									console.log(
+										'selectedSingleColorOptionId------------single color---------------->',
+										JSON.stringify(response.lightInfo[0].lightEffectType)
+									);
+									//	this.selectedSingleColorOptionId = response.lightInfo[0].lightEffectType;
+									if (this.lightingCapabilities.LedType_Complex.length > 1) {
+										this.simpleOrComplex = 2;
+										this.frontSelectedValue = response.lightInfo[0].lightEffectType;
+										this.sideSelectedValue = response.lightInfo[1].lightEffectType;
+									} else if (this.lightingCapabilities.LedType_simple.length > 1) {
+										this.selectedSingleColorOptionId = response.lightInfo[0].lightEffectType;
 									}
-									this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
+								} else {
+									if (response.lightInfo.length > 0) {
+										this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
+										this.frontSelectedValue = response.lightInfo[0].lightEffectType;
+										if (this.frontSelectedValue === LightEffectComplexType.Wave || this.frontSelectedValue === LightEffectComplexType.Smooth || this.frontSelectedValue === LightEffectComplexType.CPU_thermal || this.frontSelectedValue === LightEffectComplexType.CPU_frequency) {
+											this.showHideOverlay = true;
+										} else {
+											this.showHideOverlay = false;
+										}
+										if (this.frontSelectedValue === 4 || this.frontSelectedValue === 8) {
+											this.enableBrightCondition = true;
+										} else {
+											this.enableBrightCondition = false;
+										}
+										const lightEffectRGBOptionNameA = this.getLightEffectOptionName(
+											response.lightInfo[0].lightEffectType
+										);
+										this.lightEffectRGBOptionName = lightEffectRGBOptionNameA[0].name;
+										this.inHex1 = response.lightInfo[0].lightColor;
+										if (response.lightInfo.length > 1) {
+											this.sideSelectedValue = response.lightInfo[1].lightEffectType;
+											const lightEffectRGBOptionNameB = this.getLightEffectOptionName(
+												response.lightInfo[1].lightEffectType
+											);
+											this.lightEffectRGBOptionNameSide = lightEffectRGBOptionNameB[0].name;
+											if (this.sideSelectedValue === LightEffectComplexType.Wave || this.sideSelectedValue === LightEffectComplexType.Smooth || this.sideSelectedValue === LightEffectComplexType.CPU_thermal || this.sideSelectedValue === LightEffectComplexType.CPU_frequency) {
+												this.showHideOverlaySide = true;
+											} else {
+												this.showHideOverlaySide = false;
+											}
+											if (this.sideSelectedValue === 4 || this.sideSelectedValue === 8) {
+												this.enableBrightConditionside = true;
+											} else {
+												this.enableBrightConditionside = false;
+											}
+											this.inHex2 = response.lightInfo[1].lightColor;
+											this.lightingEffectData.drop[1].curSelected =
+												response.lightInfo[1].lightEffectType;
+										}
+									}
 								}
+								this.profileBrightness = response.brightness;
+								// end of set functionality
 							}
-							this.profileBrightness = response.brightness;
 						}
 					}
 				});
@@ -1050,17 +1233,20 @@ export class UiLightingProfileComponent implements OnInit {
 					);
 
 					if (response.didSuccess) {
+						this.inHex1 = $event;
 						this.applyBtnStatus1 = 'applied';
-						this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileEffectColor, response);
-						console.log(
-							'set color pallet color effect front response----------cache---------->',
-							JSON.stringify(
-								this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileEffectColor)
-							)
-						);
-					} else {
-						response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileEffectColor);
+
+						//	this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileEffectColor, response);
+						/*	console.log(
+								'set color pallet color effect front response----------cache---------->',
+								JSON.stringify(
+									this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileEffectColor)
+								)
+							);*/
 					}
+					/* else {
+						response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileEffectColor);
+					}*/
 				});
 		}
 	}
@@ -1086,7 +1272,9 @@ export class UiLightingProfileComponent implements OnInit {
 					);
 
 					if (response.didSuccess) {
+						this.inHex2 = $event;
 						this.applyBtnStatus2 = 'applied';
+
 					}
 				});
 		}

@@ -379,7 +379,7 @@ export class SmartAssistService {
 	}
 	// SET Snooze time
 	public setSnoozeTime(value: string): Promise<boolean> {
-		console.log('SNOOZE VALUE', typeof value);
+		console.log('SNOOZE VALUE', typeof value, value);
 		if (this.isAPSavailable) {
 			return this.activeProtectionSystem.setSnoozeTime(value);
 		}
@@ -387,6 +387,7 @@ export class SmartAssistService {
 	}
 	// Suspend APS
 	public sendSnoozeCommand(value: string): Promise<boolean> {
+		console.log('SUSPEND', typeof value, value);
 		if (this.isAPSavailable) {
 			return this.activeProtectionSystem.sendSnoozeCommand(value);
 		}
@@ -400,5 +401,27 @@ export class SmartAssistService {
 		}
 		return undefined;
 	}
+
+	public isLenovoVoiceInstalled():  Promise<boolean> {
+		if (this.lenovoVoice) {
+			return this.lenovoVoice.getInstallStatus();
+		}
+		return undefined;
+	}
+
+	public downloadLenovoVoice():  Promise<string> {
+		if (this.lenovoVoice) {
+			return this.lenovoVoice.downloadAndInstallVoiceApp();
+		}
+		return undefined;
+	}
+
+	public launchLenovoVoice():  Promise<boolean> {
+		if (this.lenovoVoice) {
+			return this.lenovoVoice.launchVoiceApp();
+		}
+		return undefined;
+	}
+
 	// End Lenovo Voice
 }

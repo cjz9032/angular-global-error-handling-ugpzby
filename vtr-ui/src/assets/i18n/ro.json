@@ -39,7 +39,9 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -289,18 +291,68 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "Tablou de bord",
             "device": {
-                "title": "Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "Dispozitiv",
+                "sub1": "Dispozitivul meu",
+                "sub2": "Setările dispozitivului",
                 "sub3": "System Updates",
-                "sub4": "‏\"Asistent inteligent\""
+                "sub4": "Asistent inteligent"
             },
             "security": {
                 "title": "Securitate",
@@ -311,9 +363,9 @@
                 "sub5": "Protecție pe internet",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "Asistenţă",
+            "homeSecurity": "Conectat acasă",
+            "privacy": "Confidenţialitate"
         },
         "securityAdvisor": {
             "title": "Asistenţă securitate",
@@ -632,7 +684,13 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -864,7 +922,7 @@
             "displayCamera": {
                 "title": "Afișaj și cameră",
                 "subtitle": "Setări afișaj și cameră",
-                "description": "Această secțiune vă oferă posibilitatea de a vă îmbunătăți experiența vizuală și de a vă configura proprietățile camerei.Explorați mai multe caracteristici și personalizați-vă experiența de afișaj aici.",
+                "description": "Această secțiune vă oferă posibilitatea de a vă îmbunătăți experiența vizuală și de a vă configura proprietățile camerei. Explorați mai multe caracteristici și personalizați-vă experiența de afișaj aici.",
                 "jumpTo": {
                     "title": "ACCESAȚI SETĂRILE",
                     "shortcuts": {
@@ -872,7 +930,7 @@
                             "title": "Afișaj"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Cameră"
                         }
                     }
                 },
@@ -894,45 +952,45 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Temperatură culoare afișaj",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Cald (mai bine pentru ochi)",
+                            "cold": "Rece"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Resetați temperatura",
+                        "tooltip": "Modul de protejare a ochilor ajustează temperatura culorii ecranului dvs. pentru a filtra lumina albastră și pentru a proteja ochii.",
+                        "onSunsetToSunriseScheduleDescription": "Programați modul de protejare a ochilor de la apus până la răsărit",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Notă",
+                            "description": "Lenovo Vantage trebuie să vă acceseze informațiile privind locația pentru determinarea orei de apus și răsărit din regiunea dvs."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Protector de confidențialitate",
+                        "description": "Această caracteristică împiedică alte persoane să vizualizeze ecranul. Când este pornit, modifică unghiul de vizualizare a ecranului, astfel păstrându-i confidențialitatea. Puteți să comutați modurile prin apăsarea tastelor „Fn + D”.",
+                        "note": "Protectorul de confidențialitate nu funcționează în modul portret al ecranului. În acest mod, ecranul este în continuare vizibil din lateral.",
+                        "labelText": "Activaţi această caracteristică la tastarea parolelor"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Setări alimentare LED organic",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Afişajul cu LED organic al calculatorului poate, de asemenea, reduce consumul de energie şi poate creşte durata de viaţă a bateriei prin estomparea selectivă a unor părţi de afişaj.",
+                            "De asemenea, se recomandă estomparea barei de activități și a altor zone ale afișajului care nu se schimbă frecvent pentru a prelungi durata generală de viață a afișajului."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Resetați temperatura",
+                        "tooltip": "Această caracteristică poate reduce consumul de energie și poate crește durata de viață a bateriei prin estomparea selectivă a unor părți de afișaj."
                     }
                 },
                 "camera": {
                     "title": "Cameră",
                     "note": {
                         "title": "Notă",
-                        "description": "Lenovo Vantage nu are permisiunea de a vă accesa camera.Permiteți aplicației Lenovo Vantage să vă acceseze camera."
+                        "description": "Lenovo Vantage nu are permisiunea de a vă accesa camera. Permiteţi aplicaţiei Lenovo Vantage să vă acceseze camera."
                     },
                     "url": "Accesați setările de confidențialitate Windows",
                     "cameraPrivacy": {
                         "title": "Modul de confidențialitate a camerei",
-                        "tooltip": "Camera nu mai trimite imagini live când setarea de confidențialitate este activată. Activaţi această setare numai când nu doriţi să partajaţi imaginile cu celelalte persoane în timpul unui apel video."
+                        "tooltip": "Camera nu mai trimite imagini live când setarea confidențialitate este activată. Activaţi această setare numai când nu doriţi să partajaţi imaginile cu celelalte persoane în timpul unui apel video."
                     },
                     "camera": {
                         "title": "Cameră",
@@ -946,10 +1004,10 @@
                     "notAvailable": "Camera nu este disponibilă",
                     "camerablur": {
                         "title": "Estompare fundal cameră",
-                        "caption": "Această caracteristică estompează fundalul atunci când utilizați camera pentru apeluri video sau pentru a realiza fotografii.Puteți alege diverse efecte din selecțiile de mai jos.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Această caracteristică estompează fundalul atunci când utilizați camera pentru apeluri video sau pentru a realiza fotografii. Puteți alege diverse efecte din selecțiile de mai jos.",
+                        "blurMode": "Mod estompare",
+                        "comicMode": "Mod comic",
+                        "sketchMode": "Mod schiță"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1001,13 +1059,14 @@
                     "dropDown": {
                         "title": "Action User Defined key",
                         "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
-                    }
+                    },
+                    "tooltip": "Content to be filled"
                 }
             }
         },
         "smartAssist": {
             "title": "Asistent inteligent",
-            "description": "Detectarea inteligentă Lenovo combină senzorii de pe computerul dvs. pentru a vă detecta activitățile,a vă regla setările pentru gestionarea optimă a alimentării și a vă proteja confidențialitatea.",
+            "description": "Detectarea inteligentă Lenovo combină senzorii de pe computerul dvs. pentru a vă detecta activitățile, a vă regla setările pentru gestionarea optimă a alimentării și a vă proteja confidențialitatea.",
             "jumpTo": {
                 "title": "ACCESAȚI SETĂRILE",
                 "security": "Securitate",
@@ -1024,8 +1083,8 @@
                     "tooltip": "Dați clic aici pentru a reseta setările pentru detecția prezenței umane."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Detectarea prezenței utilizatorului",
+                    "tooltip": "Dați clic aici pentru a reseta setările pentru detecția prezenței umane."
                 },
                 "zeroTouchLogin": {
                     "title": "Conectare fără atingere",
@@ -1033,7 +1092,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Blocare fără atingere",
-                    "caption": "Această caracteristică va estompa ecranul și va bloca computerul atunci când nu este detectată prezența utilizatorului.Poate reduce posibilitățile de acces neautorizat la calculator atunci când lăsați computerul nesupravegheat și deblocat. Reduce și consumul de energie prin punerea sistemului într-un mod de veghe modern, atunci când nu este detectată prezența dvs.",
+                    "caption": "Această caracteristică va estompa ecranul și va bloca computerul atunci când nu este detectată prezența utilizatorului. Poate reduce posibilitățile de acces neautorizat la calculator atunci când lăsați computerul nesupravegheat și deblocat. De asemenea, reduce consumul de energie prin punerea sistemului într-un mod de veghe modern, atunci când nu este detectată prezența dumneavoastră.",
                     "autoScreenLockTimer": {
                         "title": "CRONOMETRU AUTOMAT DE BLOCARE ECRAN",
                         "radioButton": {
@@ -1041,46 +1100,46 @@
                             "medium": "Mediu",
                             "slow": "Lent"
                         },
-                        "toolTipContent": "Selectați opțiunea dorită pentru a bloca ecranul la o viteză mică/medie/mare, atunci când nu vi se detectează prezența.Cu toate acestea, timpul în care ecranul va fi blocat este influențat și de scenariul actual al utilizatorului, de abilitatea senzorului și setările Windows de expirare a ecranului. Vă recomandăm să vă blocați imediat sistemul înainte de a pleca."
+                        "toolTipContent": "Selectați opțiunea dorită pentru a bloca ecranul la o viteză mică/medie/mare, atunci când nu vi se detectează prezența. Cu toate acestea, timpul în care ecranul va fi blocat este influențat și de scenariul actual al utilizatorului, de abilitatea senzorului și setările Windows de expirare a ecranului. Vă recomandăm să vă blocați imediat sistemul înainte de a pleca."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Reglarea automată în funcție de distanță va actualiza automatdistanța de detecție prin intermediul inteligenței artificiale.",
+                    "title": "AJUSTAREA SENSIBILITĂȚII PENTRU DISTANȚĂ",
+                    "caption": "Ajustarea automată a distanței va actualiza automat distanța de detecție prin intermediul unui motor AI.",
                     "options": {
                         "near": "Lângă",
                         "far": "Departe"
                     }
                 },
                 "note": {
-                    "description1": "Această caracteristică se bazează pe Windows Hello.Asigurați-vă că recunoașterea feței este activată în setările Windows.",
-                    "description2": "Această caracteristică folosește senzorii și camera pentru a vă detecta prezența.Cu toate acestea, caracteristica NU colectează, nu salvează și nu prezintă scurgeri ale datelor sau fotografiilor personale.",
-                    "description3": "1. Dacă computerul dvs. se află în modul „Tent”, „Tablet” sau „Stand”,este posibil ca aceste funcții să nu funcționeze corect.",
-                    "description4": "2. În cazul în care computerul dvs. se află în modul hibernare sau a fost oprit.Conectarea automată a camerei IR nu va funcționa.",
-                    "description5": "3. Vă rugăm să reglați ecranul computerului la un unghi corespunzător,astfel încât camera IR să vă poată recunoaște fața pentru autentificare automată."
+                    "description1": "Această caracteristică se bazează pe Windows Hello. Asigurați-vă că recunoașterea feței este activată în setările Windows.",
+                    "description2": "Această caracteristică folosește senzorii și camera pentru a vă detecta prezența. Cu toate acestea, caracteristica NU colectează date personale.",
+                    "description3": "1. În cazul în care computerul dvs. se află în modul Cort, Tabletă sau Suport, este posibil ca aceste caracteristici să nu funcționeze corect.",
+                    "description4": "2. În cazul în care computerul dvs. se află în modul hibernare sau a fost oprit. Conectarea automată a camerei IR nu va funcționa.",
+                    "description5": "3. Vă rugăm să reglați ecranul computerului la un unghi corespunzător, astfel încât camera IR să vă poată recunoaște fața pentru autentificare automată."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accesați setările Windows Hello",
                     "screenTimeoutSettings": "Accesați setările de expirare a ecranului"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "RESETARE LA SETĂRILE IMPLICITE"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Ecran inteligent",
+                "description": "Detectarea inteligentă Lenovo combină diverșii senzori de pe computer pentru a detecta activitățile și pentru a ajusta setările pentru managementul alimentării. De exemplu, va estompa afișajul dacă detectează că vă deplasați, dar nu îl va estompa dacă detectează că citiți.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Dezactivare automată ecran",
+                    "caption": "Dezactivează automat ecranul când este orientat cu fața în jos sau când vă deplasați.",
+                    "note": "Această caracteristică nu este disponibilă dacă setările dvs. Plan alimentare sunt configurate la „nu se dezactivează niciodată ecranul pe baterie” în „secțiunea Sistem” din Setări Windows. Selectați o valoare diferită de „Niciodată” pentru a activa această caracteristică.",
+                    "windowsLink": "Accesați Setări pentru alimentare și repaus din setările Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Se păstrează afișajul meu",
+                    "caption": "Se păstrează afișajul meu când citesc sau navighez.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Minute înainte ca afișajul să se estompeze la navigare",
+                        "startTime": "0 minute",
+                        "endTime": "60 minute"
                     }
                 }
             },
@@ -1115,10 +1174,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Medii inteligente",
+                "title": "Redare video fără atingere",
+                "desc": "Această funcție întrerupe videoclipul atunci când părăsiți computerul și reia redarea atunci când vă întoarceți.",
+                "tooltip": "Această funcție nu se aplică jucătorilor de jocuri video pe web. Cele mai populare playere video locale, cum ar fi Windows Media Player, 5KPlayer și altele, acceptă această funcție."
             },
             "voice": {
                 "title": "Voice",
@@ -1145,6 +1204,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1159,8 +1223,8 @@
         "recommendedUpdates": "Actualizări recomandate",
         "optionalUpdates": "Actualizări opționale",
         "ignoredUpdates": "Actualizări ignorate",
-        "successInstall": "Instalare cu succes în data de",
-        "failedInstall": "Instalare nereușită în data de",
+        "successInstall": "Instalare reuşită în data de",
+        "failedInstall": "Instalare nereuşită în data de",
         "at": "la",
         "readMore": "Citiți mai multe",
         "popup": {
@@ -1300,6 +1364,7 @@
             "overviewBlockTitle": "Prezentarea generală a securității ecosistemului",
             "allDevices": "Toate dispozitivele",
             "myDevice": "Dispozitivul meu",
+            "thisComputer": "This computer",
             "secure": "SIGUR",
             "needAttention": "ARE NEVOIE DE ATENȚIE",
             "manageAccount": "Gestionare cont",

@@ -55,18 +55,19 @@ export class HomeSecurityAccount {
 	createAccount() {}
 	purchase() {}
 
-	constructor(chsAccount: any,
-		private modalService: NgbModal) {
-		this.state = chsAccount.state;
-		this.expiration = chsAccount.expiration;
-		this.standardTime = chsAccount.serverTimeUTC;
-		this.lenovoIdLoggedIn = chsAccount.lenovoId.loggedIn;
-		this.createAccount = chsAccount.createAccount;
-		this.purchase = chsAccount.purchase;
-		this.creatViewModel();
+	constructor(private modalService?: NgbModal, chsAccount?: any) {
+		if (chsAccount) {
+			this.state = chsAccount.state;
+			this.expiration = chsAccount.expiration;
+			this.standardTime = chsAccount.serverTimeUTC;
+			this.createAccount = chsAccount.createAccount;
+			this.purchase = chsAccount.purchase;
+			this.lenovoIdLoggedIn = chsAccount.lenovoId.loggedIn;
+			this.createViewModel();
+		}
 	}
 
-	creatViewModel() {
+	createViewModel() {
 		const deviceBadge = this.device;
 		const allDevice = this.allDevice;
 		switch (this.state) {

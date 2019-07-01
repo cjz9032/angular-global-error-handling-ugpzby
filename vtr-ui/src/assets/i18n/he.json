@@ -39,7 +39,9 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -289,18 +291,68 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "לוח מחוונים",
             "device": {
-                "title": "Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
-                "sub3": "System Updates",
-                "sub4": "‏\"עזרה חכמה\""
+                "title": "התקן",
+                "sub1": "ההתקן שלי",
+                "sub2": "הגדרות המכשיר שלי",
+                "sub3": "‏System Updates",
+                "sub4": "עזרה חכמה"
             },
             "security": {
                 "title": "אבטחה",
@@ -311,9 +363,9 @@
                 "sub5": "הגנה באינטרנט",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "תמיכה",
+            "homeSecurity": "בית מחובר",
+            "privacy": "פרטיות"
         },
         "securityAdvisor": {
             "title": "יועץ האבטחה",
@@ -632,7 +684,13 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -864,7 +922,7 @@
             "displayCamera": {
                 "title": "תצוגה ומצלמה",
                 "subtitle": "הגדרות תצוגה ומצלמה",
-                "description": "סעיף זה מאפשר לכם לשפר את החוויה החזותית שלכם ולהגדיר את מאפייני המצלמה.גלו תכונות נוספות והתאימו אישית את חוויית התצוגה שלכם כאן.",
+                "description": "סעיף זה מאפשר לכם לשפר את החוויה החזותית שלכם ולהגדיר את מאפייני המצלמה. גלו תכונות נוספות והתאימו אישית את חוויית התצוגה שלכם כאן.",
                 "jumpTo": {
                     "title": "מעבר להגדרות",
                     "shortcuts": {
@@ -872,7 +930,7 @@
                             "title": "תצוגה"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "מצלמה"
                         }
                     }
                 },
@@ -894,45 +952,45 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "טמפרטורת צבע התצוגה",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "חם (עדיף לעיניים)",
+                            "cold": "קרה"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "איפוס הטמפרטורה",
+                        "tooltip": "מצב שמירה על העיניים מתאים באופן אוטומטי את טמפרטורת הצבע של התצוגה כדי לסנן את האור הכחול ולהפחית את ההשפעה על העיניים.",
+                        "onSunsetToSunriseScheduleDescription": "תזמון מצב שמירה על העיניים מהשקיעה עד הזריחה",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "הערה",
+                            "description": "Lenovo Vantage צריך לגשת לפרטי המיקום שלכם לחישוב זמן השקיעה והזריחה באזורכם."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "מגן הפרטיות",
+                        "description": "תכונה זו מונעת מאנשים אחרים להציץ למסך שלכם. כשהיא פועלת, היא משנה את זווית הצפייה של התצוגה כך שאחרים לא יוכלו לראות מה יש במסך שלכם. כמו כן תוכלו לעבור בין מצבים על ידי הקשה על המקשים \"Fn+D\".",
+                        "note": "מגן הפרטיות לא עובד במצב תצוגה לאורך של המסך. במצב זה, המסך עדיין גלוי לעין מהצדדים.",
+                        "labelText": "הפעל תכונה זו בעת הקלדת סיסמאות"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "הגדרות צריכת החשמל של OLED (LED אורגני)",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "תצוגת ה-OLED של המחשב יכולה להפחית את צריכת החשמל ולהאריך את חיי הסוללה על ידי עמעום סלקטיבי של חלקים מהתצוגה.",
+                            "בנוסף, מומלץ לעמעם את שורת המשימות ואזורים אחרים של התצוגה שאינם משתנים לעיתים קרובות כדי להאריך את חיי הצג."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "איפוס הטמפרטורה",
+                        "tooltip": "תכונה זו יכולה להפחית את צריכת החשמל ולהאריך את חיי הסוללה על ידי עמעום סלקטיבי של חלקים מהתצוגה."
                     }
                 },
                 "camera": {
                     "title": "מצלמה",
                     "note": {
                         "title": "הערה",
-                        "description": "ל-Lenovo Vantage אין הרשאות לגשת אל המצלמה שלכם.הפעילו עבור היישום Lenovo Vantage את הגישה אל המצלמה שלכם."
+                        "description": "ל-Lenovo Vantage אין הרשאות לגשת אל המצלמה שלכם. הפעילו עבור היישום Lenovo Vantage את הגישה אל המצלמה שלכם."
                     },
                     "url": "מעבר אל הגדרות הפרטיות של Windows",
                     "cameraPrivacy": {
                         "title": "מצב פרטיות מצלמה",
-                        "tooltip": "כאשר ההגדרה \"פרטיות\" מופעלת, המצלמה מפסיקה לשלוח תמונות בזמן אמת. הפעילו הגדרה זו רק כשאינכם מעוניינים לשתף את תמונותיכם עם אחרים במהלך שיחות וידאו."
+                        "tooltip": "כאשר הגדרת הפרטיות מופעלת, המצלמה מפסיקה לשלוח תמונות בזמן אמת. הפעילו הגדרה זו רק כשאינכם מעוניינים לשתף את תמונותיכם עם אחרים במהלך שיחות וידאו."
                     },
                     "camera": {
                         "title": "מצלמה",
@@ -946,10 +1004,10 @@
                     "notAvailable": "המצלמה לא זמינה",
                     "camerablur": {
                         "title": "טשטוש הרקע של המצלמה",
-                        "caption": "תכונה זו מטשטשת את הרקע כשמשתמשים במצלמה לשיחת וידאו או לצילום תמונות.ניתן לבחור אפקט אחר מבין האפקטים הבאים.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "תכונה זו מטשטשת את הרקע כשמשתמשים במצלמה לשיחת וידאו או לצילום תמונות. ניתן לבחור אפקט אחר מבין האפקטים הבאים.",
+                        "blurMode": "מצב טשטוש",
+                        "comicMode": "מצב קומיקס",
+                        "sketchMode": "מצב ציור"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1001,13 +1059,14 @@
                     "dropDown": {
                         "title": "Action User Defined key",
                         "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
-                    }
+                    },
+                    "tooltip": "Content to be filled"
                 }
             }
         },
         "smartAssist": {
             "title": "עזרה חכמה",
-            "description": "החישה החכמה של Lenovo משלבת חיישנים של המחשב כדי לזהות את הפעילויות שלכם,לכוונן הגדרות לצורך ניהול צריכת חשמל אופטימלית ולהגן על פרטיותכם.",
+            "description": "החישה החכמה של Lenovo משלבת חיישנים על המחשב כדי לזהות את הפעילויות שלכם, לכוונן הגדרות לצורך ניהול צריכת חשמל אופטימלית ולהגן על פרטיותכם.",
             "jumpTo": {
                 "title": "מעבר להגדרות",
                 "security": "אבטחה",
@@ -1024,16 +1083,16 @@
                     "tooltip": "לחצו כאן כדי לאפס את ההגדרות של איתור נוכחות אדם."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "חישת נוכחות משתמש",
+                    "tooltip": "לחצו כאן כדי לאפס את ההגדרות של איתור נוכחות אדם."
                 },
                 "zeroTouchLogin": {
                     "title": "כניסה באפס מגע",
                     "caption": "תכונה זו מעוררת או מבטלת את נעילת המחשב באופן אוטומטי כשאתם יושבים מולו או מתקרבים אליו."
                 },
                 "zeroTouchLock": {
-                    "title": "נעילה באפס מגע",
-                    "caption": "תכונה זו תעמעם את התצוגה ותנעל את המחשב כאשר לא מזוהה נוכחות של המשתמש.היא יכולה להפחית את הסיכוי של גישה בלתי מורשית למחשב כאשר משאירים את המחשב ללא השגחה ולא נעול. היא גם מקטינה את צריכת החשמל על-ידי העברת המערכת למצב 'המתנה מודרנית' כאשר הנוכחות שלכם לא מזוהה.",
+                    "title": "נעילה ללא מגע",
+                    "caption": "תכונה זו תעמעם את התצוגה ותנעל את המחשב כאשר לא מזוהה נוכחות של המשתמש. היא יכולה להפחית את הסיכוי של גישה בלתי מורשית למחשב כאשר משאירים את המחשב ללא השגחה ולא נעול. היא גם מקטינה את צריכת החשמל על-ידי העברת המערכת למצב 'המתנה מודרנית' כאשר הנוכחות שלכם לא מזוהה.",
                     "autoScreenLockTimer": {
                         "title": "קוצב זמן אוטומטי לנעילת מסך",
                         "radioButton": {
@@ -1041,46 +1100,46 @@
                             "medium": "בינוני",
                             "slow": "ברירת מחדל"
                         },
-                        "toolTipContent": "בחרו את האפשרות הרצויה לנעילת המסך בקצב מהיר/בינוני/איטי כאשר הנוכחות שלכם אינה מזוהה.עם זאת, הזמן שבמהלכו המסך יהיה נעול מושפע גם מתרחיש המשתמש בפועל, מיכולת החיישן ומהגדרות הגבלת זמן פעילות המסך של Windows. לכן, אנו ממליצים בחום לנעול את המערכת באופן מיידי לפני שעוזבים."
+                        "toolTipContent": "בחרו את האפשרות הרצויה לנעילת המסך בקצב מהיר/בינוני/איטי כאשר הנוכחות שלכם אינה מזוהה. עם זאת, הזמן שבמהלכו המסך יהיה נעול מושפע גם מפעולות המשתמש בפועל, מיכולת החיישן ומהגדרות הגבלת זמן פעילות המסך של Windows. לכן, אנו ממליצים בחום לנעול את המערכת באופן מיידי לפני שעוזבים."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "התאמת מרחק אוטומטית תעדכן באופן אוטומטיאת מרחק הזיהוי באמצעות מנוע AI.",
+                    "title": "התאמה של רגישות לזיהוי מרחק",
+                    "caption": "התאמת מרחק אוטומטית תעדכן באופן אוטומטי את מרחק הזיהוי באמצעות מנוע AI.",
                     "options": {
                         "near": "קרוב",
                         "far": "רחוק"
                     }
                 },
                 "note": {
-                    "description1": "תכונה זו מסתמכת על Windows Hello.ודאו שזיהוי פנים מופעל בהגדרות Windows.",
-                    "description2": "התכונה משתמשת בחיישנים ובמצלמה כדי לזהות את נוכחותכם.עם זאת, התכונה אינה אוספת, שומרת או מבצעת דליפה של נתונים אישיים או תמונות.",
-                    "description3": "‏1. אם המחשב במצב אוהל, לוח או מעמד,ייתכן שתכונות אלה לא יפעלו כראוי.",
-                    "description4": "‏2. אם המחשב במצב שינה או כבוי.כניסה אוטומטית למצלמת IR לא תפעל.",
-                    "description5": "‏3. כווננו את מסך המחשב לזווית מתאימהכך שמצלמת ה-IR תוכל לזהות את הפנים שלכם לכניסה אוטומטית."
+                    "description1": "תכונה זו מסתמכת על Windows Hello. ודאו שזיהוי פנים מופעל בהגדרות Windows.",
+                    "description2": "התכונה משתמשת בחיישנים ובמצלמה כדי לזהות את נוכחותכם. עם זאת, התכונה אינה אוספת נתונים אישיים כלל.",
+                    "description3": "1. אם המחשב נמצא במצב אוהל, לוח או מעמד, ייתכן שתכונות אלה לא יפעלו כראוי.",
+                    "description4": "2. אם המחשב במצב שינה או כבוי. כניסה אוטומטית למצלמת IR לא תפעל.",
+                    "description5": "3. כווננו את מסך המחשב לזווית מתאימה כך שמצלמת ה-IR תוכל לזהות את הפנים שלכם לצורך כניסה אוטומטית."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "מעבר אל הגדרות Windows Hello",
                     "screenTimeoutSettings": "עברו אל הגדרות הגבלת זמן פעילות המסך"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "איפוס להגדרות ברירת המחדל"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "מסך חכם",
+                "description": "החישה החכמה של Lenovo משלבת את החיישנים השונים שעל המחשב כדי לזהות את הפעילויות שלכם ולכוונן הגדרות לצורך ניהול צריכת החשמל. לדוגמה, היא תעמעם את הצג אם היא תזהה שאתם צועדים, אך לא תעמעם אותו אם תזהה שאתם קוראים.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "כיבוי מסך אוטומטי",
+                    "caption": "כיבוי הצג באופן אוטומטי כאשר הפנים מופנים כלפי מטה או בעת הליכה.",
+                    "note": "תכונה זו אינה זמינה אם בהגדרות תוכנית צריכת החשמל הוגדר \"לעולם לא לכבות את המסך בעת הפעלה מהסוללה\" ב\"קטע המערכת\" של הגדרות Windows. בחרו ערך שונה מ\"לעולם לא\" כדי להפעיל תכונה זו.",
+                    "windowsLink": "עברו אל 'הגדרות צריכת חשמל ושינה' בהגדרות Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "השארת הצג שלי פועל",
+                    "caption": "השארת הצג פועל בעת קריאה או גלישה.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "דקות לפני עמעום הצג בעת גלישה",
+                        "startTime": "0 דקות",
+                        "endTime": "60 דקות"
                     }
                 }
             },
@@ -1115,10 +1174,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "מדיה חכמה",
+                "title": "הפעלת וידאו ללא מגע",
+                "desc": "תכונה זו תשהה את הווידאו כאשר אתם עוזבים את המחשב ותחדש את הווידאו כשאתם חוזרים.",
+                "tooltip": "תכונה זו לא ישימה עבור נגני וידאו באינטרנט. נגני וידאו פופולריים, כמו Windows Media Player, 5KPlayer וכן הלאה תומכים בתכונה זו."
             },
             "voice": {
                 "title": "Voice",
@@ -1145,6 +1204,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1161,7 +1225,7 @@
         "ignoredUpdates": "עדכונים שהמערכת התעלמה מהם",
         "successInstall": "הותקן בהצלחה בתאריך",
         "failedInstall": "ההתקנה נכשלה בתאריך",
-        "at": "אל",
+        "at": "ב-",
         "readMore": "פרטים נוספים",
         "popup": {
             "reboot": "הפעלה מחדש",
@@ -1300,6 +1364,7 @@
             "overviewBlockTitle": "סקירה של אבטחת המערכת האקולוגית",
             "allDevices": "כל המכשירים",
             "myDevice": "ההתקן שלי",
+            "thisComputer": "This computer",
             "secure": "מאובטח",
             "needAttention": "נדרשת תשומת לב",
             "manageAccount": "ניהול חשבון",

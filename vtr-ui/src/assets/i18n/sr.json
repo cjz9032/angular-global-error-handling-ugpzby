@@ -39,7 +39,9 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -289,18 +291,68 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "Kontrolna tabla",
             "device": {
-                "title": "Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "Uređaj",
+                "sub1": "Moj uređaj",
+                "sub2": "Moje postavke uređaja",
                 "sub3": "System Updates",
-                "sub4": "‏\"Pametna pomoć\""
+                "sub4": "Pametna pomoć"
             },
             "security": {
                 "title": "Bezbednost",
@@ -311,9 +363,9 @@
                 "sub5": "Zaštita na internetu",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "Podrška",
+            "homeSecurity": "Povezana kućna bezbednost",
+            "privacy": "Privatnost"
         },
         "securityAdvisor": {
             "title": "Savetnik za bezb.",
@@ -632,7 +684,13 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -864,7 +922,7 @@
             "displayCamera": {
                 "title": "Ekran i kamera",
                 "subtitle": "Ekran i postavke kamere",
-                "description": "Ovaj odeljak vam omogućava da poboljšate vizuelni doživljaj i konfigurišete svojstva kamere.Istražite više funkcija i prilagodite svoje iskustvo prikaza ovde.",
+                "description": "Ovaj odeljak vam omogućava da poboljšate vizuelni doživljaj i konfigurišete svojstva kamere. Istražite više funkcija i prilagodite svoje iskustvo prikaza ovde.",
                 "jumpTo": {
                     "title": "PRELAZAK NA POSTAVKE",
                     "shortcuts": {
@@ -872,7 +930,7 @@
                             "title": "Ekran"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Kamera"
                         }
                     }
                 },
@@ -894,40 +952,40 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Temperatura boje ekrana",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Toplo (bolje za oči)",
+                            "cold": "Hladno"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Postavite temperaturu na početnu vrednost",
+                        "tooltip": "Režim za zaštitu vida prilagođava temperaturu boja ekrana kako bi se isfiltriralo plavo svetlo i smanjilo naprezanje očiju.",
+                        "onSunsetToSunriseScheduleDescription": "Zakažite režim za zaštitu vida od zalaska do izlaska sunca",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Napomena",
+                            "description": "Lenovo Vantage treba da pristupi informacijama o lokaciji kako bi se izračunalo vreme zalaska i izlaska sunca u vašem regionu."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Zaštita privatnosti",
+                        "description": "Ova funkcija sprečava druge osobe da zaviruju na vaš ekran. Kada je uključena, menja ugao prikaza ekrana, tako da sprečava da osobe oko vas narušavaju vašu privatnost. Možete da se prebacujete između režima pritiskom na tastere „Fn+D“.",
+                        "note": "Zaštita privatnosti ne funkcioniše u vertikalnom režimu prikaza ekrana. U ovom režimu, ekran je i dalje vidljiv sa strana.",
+                        "labelText": "Omogućite ovu funkciju prilikom unosa lozinki"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Postavke napajanja za Organski LED",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Organski LED ekran vašeg računara može i da smanji potrošnju napajanja i produži životni vek baterije putem selektivnog zatamnjenja delova ekrana.",
+                            "Preporučuje se i zatamnjenje trake zadataka i oblasti ekrana koje se ne menjaju često da bi se produžio ukupan rok trajanja ekrana."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Postavite temperaturu na početnu vrednost",
+                        "tooltip": "Ova funkcija može da smanji potrošnju napajanja i produži životni vek baterije putem selektivnog zatamnjenja delova ekrana."
                     }
                 },
                 "camera": {
                     "title": "Kamera",
                     "note": {
                         "title": "Napomena",
-                        "description": "Lenovo Vantage nema dozvole da pristupi vašoj kameri.Dozvolite aplikaciji Lenovo Vantage da pristupi kameri."
+                        "description": "Lenovo Vantage nema dozvole da pristupi vašoj kameri. Dozvolite aplikaciji Lenovo Vantage da pristupi kameri."
                     },
                     "url": "Idite na postavke zaštite privatnosti sistema Windows",
                     "cameraPrivacy": {
@@ -946,10 +1004,10 @@
                     "notAvailable": "Kamera nije dostupna",
                     "camerablur": {
                         "title": "Zamagljenje pozadine za kameru",
-                        "caption": "Ova funkcija zamagljuje pozadinu kada koristite kameru za video poziv ili fotografisanje.Možete da odaberete drugačije efekte iz izbora u nastavku.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Ova funkcija zamagljuje pozadinu kada koristite kameru za video poziv ili fotografisanje. Možete da odaberete drugačije efekte iz izbora u nastavku.",
+                        "blurMode": "Režim zamagljenja",
+                        "comicMode": "Režim stripa",
+                        "sketchMode": "Režim crteža"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1001,13 +1059,14 @@
                     "dropDown": {
                         "title": "Action User Defined key",
                         "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
-                    }
+                    },
+                    "tooltip": "Content to be filled"
                 }
             }
         },
         "smartAssist": {
             "title": "Pametna pomoć",
-            "description": "Lenovo inteligentno raspoznavanje kombinuje različite senzore na računaru kako bi se otkrile vaše aktivnosti,prilagodile postavke za optimalno upravljanje napajanjem i zaštitila vaša privatnost.",
+            "description": "Lenovo inteligentno raspoznavanje kombinuje različite senzore na računaru kako bi se otkrile vaše aktivnosti, prilagodile postavke za optimalno upravljanje napajanjem i zaštitila vaša privatnost.",
             "jumpTo": {
                 "title": "PRELAZAK NA POSTAVKE",
                 "security": "Bezbednost",
@@ -1020,12 +1079,12 @@
                 "title": "Inteligentna bezbednost",
                 "readMore": "Pročitajte više",
                 "HumanPresenceDetection": {
-                    "title": "Detekcija ljudskih prisustva",
-                    "tooltip": "Kliknite ovde da biste uspostavili početne vrednosti postavki za otkrivanje ljudskih prisustva."
+                    "title": "Detekcija ljudskog prisustva",
+                    "tooltip": "Kliknite ovde da biste uspostavili početne vrednosti postavki za otkrivanje ljudskog prisustva."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Osetljivost na ljudsko prisustvo",
+                    "tooltip": "Kliknite ovde da biste uspostavili početne vrednosti postavki za otkrivanje ljudskih prisustva."
                 },
                 "zeroTouchLogin": {
                     "title": "Zero Touch prijavljivanje",
@@ -1033,7 +1092,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Zero Touch zaključavanje",
-                    "caption": "Ova funkcija zatamnjuje ekran i zaključava računar kada se ne otkrije prisustvo korisnika.To može smanjiti šanse neovlašćenog pristupa računaru kada ostavite računar otključan i bez nadzora. Takođe, umanjuje potrošnju struje tako što stavlja sistem u moderno stanje pripravnosti kada vaše prisustvo nije otkriveno.",
+                    "caption": "Ova funkcija zatamnjuje ekran i zaključava računar kada se ne otkrije prisustvo korisnika. To može smanjiti šanse neovlašćenog pristupa računaru kada ostavite računar otključan i bez nadzora. Takođe, umanjuje potrošnju struje tako što stavlja sistem u moderno stanje pripravnosti kada vaše prisustvo nije otkriveno.",
                     "autoScreenLockTimer": {
                         "title": "TAJMER AUTOMATSKOG ZAKLJUČAVANJA EKRANA",
                         "radioButton": {
@@ -1041,46 +1100,46 @@
                             "medium": "Srednje",
                             "slow": "Sporo"
                         },
-                        "toolTipContent": "Izaberite željenu opciju da biste zaključali ekran Brzom/Srednjom/Sporom brzinom kada vaše prisustvo nije otkriveno.Međutim, na vreme kada će ekran biti zaključan utiče i stvarni korisnički scenario, mogućnosti senzora i postavke vremenskog ograničenja ekrana operativnog sistema Windows. Zato vam preporučujemo da smesta zaključate sistem pred odlazak."
+                        "toolTipContent": "Izaberite željenu opciju da biste zaključali ekran Brzom/Srednjom/Sporom brzinom kada vaše prisustvo nije otkriveno. Međutim, na vreme kada će ekran biti zaključan utiče i stvarni korisnički scenario, mogućnosti senzora i postavke vremenskog ograničenja ekrana operativnog sistema Windows. Zato vam preporučujemo da smesta zaključate sistem pred odlazak."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Automatsko podešavanje razdaljine će automatski ažuriratirastojanje za detekciju putem mehanizma veštačke inteligencije.",
+                    "title": "PODEŠAVANJE OSETLJIVOSTI NA RAZDALJINU",
+                    "caption": "Automatsko podešavanje razdaljine će automatski ažurirati rastojanje za detekciju putem mehanizma veštačke inteligencije.",
                     "options": {
                         "near": "Blizu",
                         "far": "Daleko"
                     }
                 },
                 "note": {
-                    "description1": "Ova funkcija se oslanja na sistem Windows Hello.Uverite se da je prepoznavanje lica uključeno u postavkama operativnog sistema Windows.",
-                    "description2": "Funkcija koristi senzore i kameru da bi otkrila vaše prisustvo.Međutim, funkcija NE prikuplja, ne čuva, ne propušta nikakve lične podatke ili slike.",
-                    "description3": "1. Ako je računar u režimima šatora, tableta ili postolja,ove funkcije možda neće raditi ispravno.",
-                    "description4": "2. Ako je računar u režimu hibernacije ili je isključen.Automatsko prijavljivanje putem IC kamere neće funkcionisati.",
-                    "description5": "3. Podesite ekran računara na odgovarajući ugaokako bi IC kamera mogla da prepozna vaše lice za automatsko prijavljivanje."
+                    "description1": "Ova funkcija se oslanja na sistem Windows Hello. Uverite se da je prepoznavanje lica uključeno u postavkama operativnog sistema Windows.",
+                    "description2": "Funkcija koristi senzore i kameru da bi otkrila vaše prisustvo. Međutim, funkcija NE prikuplja, nikakve lične podatke.",
+                    "description3": "1. Ako je računar u režimima šatora, tableta ili postolja, ove funkcije možda neće ispravno funkcionisati.",
+                    "description4": "2. Ako je računar u režimu hibernacije ili je isključen. Automatsko prijavljivanje putem IC kamere neće funkcionisati.",
+                    "description5": "3. Podesite ekran računara na odgovarajući ugao kako bi IC kamera mogla da prepozna vaše lice za automatsko prijavljivanje."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Idite na postavke sistema Windows Hello",
                     "screenTimeoutSettings": "Idite na postavke vremena čekanja za ekran"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "PONOVNO POSTAVLJANJE NA PODRAZUMEVANE POSTAVKE"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Inteligentni ekran",
+                "description": "Lenovo inteligentno raspoznavanje kombinuje različite senzore na računaru kako bi se otkrile vaše aktivnosti i prilagodile postavke za upravljanje napajanjem. Na primer, ono će zatamneti ekran ako otkrije da hodate, ali ga neće zatamneti ako otkrije da čitate.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Automatsko isključivanje ekrana",
+                    "caption": "Automatski isključuje ekran kada se okrene nadole ili tokom šetnje.",
+                    "note": "Ova funkcija nije dostupna ako su postavke plana napajanja podešene na „never turn off the screen on battery“ (nikada ne isključuj ekran prilikom napajanja sa baterije) u odeljku Sistem („System section“) u okviru Windows Settings (Windows postavke). Izaberite neku vrednost koja nije „Never“ (nikada) da biste omogućili ovu funkciju.",
+                    "windowsLink": "Idi na Postavke za napajanje i stanje spavanja u Windows postavkama"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Zadrži moj ekran",
+                    "caption": "Drži moj ekran uključenim kada čitam ili pregledam.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Broj minuta pre zatamnjivanja ekrana prilikom pregledanja",
+                        "startTime": "0 minuta",
+                        "endTime": "60 minuta"
                     }
                 }
             },
@@ -1115,10 +1174,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Inteligentni mediji",
+                "title": "Zero Touch reprodukcija video snimaka",
+                "desc": "Ova funkcija će pauzirati video kada odlazite od računara i nastaviti video kada se vratite.",
+                "tooltip": "Ova funkcija nije primenjiva na Web video plejere. Popularni lokalni video plejeri kao što su Windows Media Player, 5KPlayer itd. podržavaju ovu funkciju."
             },
             "voice": {
                 "title": "Voice",
@@ -1145,6 +1204,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1300,6 +1364,7 @@
             "overviewBlockTitle": "Pregled bezbednosti ekosistema",
             "allDevices": "Svi uređaji",
             "myDevice": "Moj uređaj",
+            "thisComputer": "This computer",
             "secure": "BEZBEDNO",
             "needAttention": "POTREBNA JE PAŽNJA",
             "manageAccount": "Upravljanje nalogom",

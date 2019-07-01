@@ -39,7 +39,9 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -289,18 +291,68 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "Instrumentpanel",
             "device": {
-                "title": "Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "Enhet",
+                "sub1": "Min enhet",
+                "sub2": "Mina enhetsinställningar",
                 "sub3": "System Updates",
-                "sub4": "‏\"Smart hjälp\""
+                "sub4": "Smart hjälp"
             },
             "security": {
                 "title": "Säkerhet",
@@ -312,8 +364,8 @@
                 "sub6": "Windows Hello"
             },
             "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "homeSecurity": "Uppkopplat hem",
+            "privacy": "Sekretess"
         },
         "securityAdvisor": {
             "title": "Säkerhetsrådgivare",
@@ -632,7 +684,13 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -864,7 +922,7 @@
             "displayCamera": {
                 "title": "Bildskärm och kamera",
                 "subtitle": "Bildskärms- och kamerainställningar",
-                "description": "I detta avsnitt kan du förbättra grafikupplevelsen och ange kamerainställningar.Se fler funktioner och anpassa bildskärmsupplevelsen här.",
+                "description": "I detta avsnitt kan du förbättra grafikupplevelsen och ange kamerainställningar. Se fler funktioner och anpassa bildskärmsupplevelsen här.",
                 "jumpTo": {
                     "title": "ÖPPNA INSTÄLLNINGAR",
                     "shortcuts": {
@@ -872,7 +930,7 @@
                             "title": "Skärm"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Kamera"
                         }
                     }
                 },
@@ -889,45 +947,45 @@
                         "tooltip": "Ögonskyddsläge justerar automatiskt färgtemperaturen på bildskärmen och filtrerar bort blått ljus för att minska belastningen på ögonen.",
                         "onSunsetToSunriseScheduleDescription": "Schemalägg ögonskyddsläge från morgon till kväll",
                         "note": {
-                            "title": "Obs!",
+                            "title": "Anmärkning",
                             "description": "Lenovo Vantage behöver åtkomst till din platsinformation för att kunna beräkna solnedgång och soluppgång i din region."
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Bildskärmens färgtemperatur",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Varmt (bättre för ögonen)",
+                            "cold": "Kall"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Nollställ temperatur",
+                        "tooltip": "Ögonskyddsläge justerar automatiskt färgtemperaturen på bildskärmen och filtrerar bort blått ljus för att minska belastningen på ögonen.",
+                        "onSunsetToSunriseScheduleDescription": "Schemalägg ögonskyddsläge från morgon till kväll",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Anmärkning",
+                            "description": "Lenovo Vantage behöver åtkomst till din platsinformation för att kunna beräkna solnedgång och soluppgång i din region."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Sekretesskydd",
+                        "description": "Den här funktionen förhindrar att andra kikar på din skärm. När denna funktion är aktiverad ändras bildskärmens visningsvinkel så att andra i närheten inte kan se innehållet. Du kan också växla läge genom att trycka på ”Fn+D”.",
+                        "note": "Sekretesskydd fungerar inte när bildskärmen används i stående läge. I detta läge syns innehållet på skärmen fortfarande från sidorna.",
+                        "labelText": "Aktivera funktionen när du skriver lösenord"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "OLED-ströminställningar",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Datorns OLED-bildskärm kan också minska strömförbrukningen och förlänga batteriets livslängd genom att selektivt sänka ljusstyrkan på delar av bildskärmen.",
+                            "För att förlänga bildskärmens livslängd rekommenderas du också att sänka ljusstyrkan i aktivitetsfältet och andra områden på bildskärmen som sällan ändras."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Nollställ temperatur",
+                        "tooltip": "Denna funktion kan minska strömförbrukningen och förlänga batteriets livslängd genom att selektivt sänka ljusstyrkan på delar av bildskärmen."
                     }
                 },
                 "camera": {
                     "title": "Kamera",
                     "note": {
-                        "title": "Obs!",
-                        "description": "Lenovo Vantage har inte åtkomst till din kamera.Ge Lenovo Vantage-appen åtkomst till din kamera."
+                        "title": "Anmärkning",
+                        "description": "Lenovo Vantage har inte åtkomst till din kamera. Ge appen Lenovo Vantage åtkomst till din kamera."
                     },
                     "url": "Öppna sekretessinställningarna i Windows",
                     "cameraPrivacy": {
@@ -946,10 +1004,10 @@
                     "notAvailable": "Kameran är inte tillgänglig",
                     "camerablur": {
                         "title": "Kameraoskärpa i bakgrund",
-                        "caption": "Med denna funktion görs bakgrunden oskarp när du använder kameran för att ringa videosamtal eller ta foton.Du kan välja bland effekterna nedan.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Med denna funktion görs bakgrunden oskarp när du använder kameran för att ringa videosamtal eller ta foton. Du kan välja bland effekterna nedan.",
+                        "blurMode": "Oskärpeläge",
+                        "comicMode": "Komiskt läge",
+                        "sketchMode": "Skissläge"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1001,13 +1059,14 @@
                     "dropDown": {
                         "title": "Action User Defined key",
                         "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
-                    }
+                    },
+                    "tooltip": "Content to be filled"
                 }
             }
         },
         "smartAssist": {
             "title": "Smart hjälp",
-            "description": "Lenovo Intelligent avkänning kombinerar datorns olika sensorer för att känna av vad du göroch justera inställningarna för optimalt energisparläge och sekretesskydd.",
+            "description": "Lenovo Intelligent avkänning kombinerar datorns olika sensorer för att känna av vad du gör och justera inställningarna för optimalt energisparläge och sekretesskydd.",
             "jumpTo": {
                 "title": "ÖPPNA INSTÄLLNINGAR",
                 "security": "Säkerhet",
@@ -1024,8 +1083,8 @@
                     "tooltip": "Klicka här för att återställa inställningarna för närvaroavkänning."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Närvaroavkänning",
+                    "tooltip": "Klicka här för att återställa inställningarna för närvaroavkänning."
                 },
                 "zeroTouchLogin": {
                     "title": "Beröringsfri inloggning",
@@ -1033,7 +1092,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Beröringsfritt lås",
-                    "caption": "Denna funktion släcker bildskärmen och låser datorn om den inte känner av din närvaro.Detta kan minska risken för obehörig åtkomst när du lämnar datorn obevakad och olåst. Det minskar också energiförbrukningen eftersom datorn sätts i modernt vänteläge när din närvaro inte identifieras.",
+                    "caption": "Denna funktion släcker bildskärmen och låser datorn om den inte känner av din närvaro. Detta kan minska risken för obehörig åtkomst till datorn när du lämnar den obevakad och olåst. Det minskar också energiförbrukningen eftersom datorn sätts i modernt vänteläge när din närvaro inte identifieras.",
                     "autoScreenLockTimer": {
                         "title": "AUTOMATISK SKÄRMLÅSTIMER",
                         "radioButton": {
@@ -1041,46 +1100,46 @@
                             "medium": "Mellan",
                             "slow": "Långsam"
                         },
-                        "toolTipContent": "Välj önskat alternativ för att låsa skärmen snabbt/medelsnabbt/långsamt när din närvaro inte identifieras.Tiden när skärmen låses påverkas också av den faktiska användarsituationen, sensorkapaciteten och inställningarna för skärmtidsgräns i Windows. Vi rekommenderar därför att du låser datorn omedelbart innan du lämnar den."
+                        "toolTipContent": "Välj önskat alternativ för att låsa skärmen snabbt/medelsnabbt/långsamt när din närvaro inte identifieras. Tiden när skärmen låses påverkas också av den faktiska användarsituationen, sensorkapaciteten och inställningarna för skärmtidsgräns i Windows. Vi rekommenderar därför att du låser datorn omedelbart innan du lämnar den."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Automatisk avståndsjustering uppdaterar automatisktidentifieringsavståndet via en AI-motor.",
+                    "title": "JUSTERING AV AVSTÅNDSKÄNSLIGHET",
+                    "caption": "Automatisk avståndsjustering uppdaterar automatiskt identifieringsavståndet via en AI-motor.",
                     "options": {
                         "near": "Nära",
                         "far": "Långt bort"
                     }
                 },
                 "note": {
-                    "description1": "Funktionen bygger på Windows Hello.Kontrollera att ansiktsigenkänning är aktiverat i Windows-inställningarna.",
-                    "description2": "Funktionen använder sensorer och kamera för att identifiera din närvaro.Den samlar INTE in, sparar eller läcker personliga uppgifter eller bilder.",
-                    "description3": "1. Dessa funktioner kanske inte fungerar korrektom datorn är i tält- eller pekplatteläge eller stående läge.",
-                    "description4": "2. Om datorn är i viloläge eller avstängd.Automatisk inloggning med IR-kamera fungerar inte.",
-                    "description5": "3. Justera datorskärmen i rätt vinkel så att IR-kamerankan identifiera ditt ansikte för automatisk inloggning."
+                    "description1": "Funktionen bygger på Windows Hello. Kontrollera att ansiktsigenkänning är aktiverat i Windows-inställningarna.",
+                    "description2": "Funktionen använder sensorer och kamera för att identifiera din närvaro. Den samlar INTE in, sparar eller läcker personliga uppgifter eller bilder.",
+                    "description3": "1. Dessa funktioner kanske inte fungerar korrekt om datorn är i tält-, pekplatte- eller stödläge.",
+                    "description4": "2. Om datorn är i viloläge eller avstängd. Automatisk inloggning med IR-kamera fungerar inte.",
+                    "description5": "3. Justera datorskärmen i rätt vinkel så att IR-kameran kan identifiera ditt ansikte för automatisk inloggning."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Öppna inställningarna för Windows Hello",
                     "screenTimeoutSettings": "Öppna inställningarna för skärmens tidsgräns"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "ÅTERSTÄLL STANDARDINSTÄLLNINGAR"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Intelligent skärm",
+                "description": "Lenovos intelligenta avkänning kombinerar datorns olika sensorer för att känna av vad du gör och justera inställningarna för energisparfunktioner. Exempelvis sänker den skärmens ljusstyrka om den känner av att du går, men sänker den inte om den känner av att du läser.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Automatiskt skärmlås av",
+                    "caption": "Automatisk avstängning av skärmen när du sänker huvudet eller går.",
+                    "note": "Denna funktion är inte tillgänglig om inställningen för Energischema har angetts till Stäng aldrig av skärmen med batteridrift i avsnittet System i inställningarna i Windows. Välj ett annat värde än Aldrig för att aktivera funktionen.",
+                    "windowsLink": "Välj Ström- och strömsparinställningar i Windows-inställningar"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Behåll min bildskärm",
+                    "caption": "Låt skärmen vara igång längre när jag läser eller surfar på nätet.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Minuter till att skärmens ljusstyrka sänks vid webbsurfning",
+                        "startTime": "0 minuter",
+                        "endTime": "60 minuter"
                     }
                 }
             },
@@ -1115,10 +1174,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Intelligenta medier",
+                "title": "Beröringsfri videouppspelning",
+                "desc": "Videon pausas när du lämnar datorn och återupptas när du är tillbaka.",
+                "tooltip": "Denna funktion fungerar inte på onlinevideospelare. Vanliga lokala videospelare (som Windows Media Player och 5KPlayer) har stöd för denna funktion."
             },
             "voice": {
                 "title": "Voice",
@@ -1145,6 +1204,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1159,9 +1223,9 @@
         "recommendedUpdates": "Rekommenderade uppdateringar",
         "optionalUpdates": "Valfria uppdateringar",
         "ignoredUpdates": "Ignorerade uppdateringar",
-        "successInstall": "Installerades den",
-        "failedInstall": "Kunde inte installeras den",
-        "at": "på",
+        "successInstall": "Installerades",
+        "failedInstall": "Kunde inte installeras",
+        "at": "kl.",
         "readMore": "Läs mer",
         "popup": {
             "reboot": "Starta om",
@@ -1300,6 +1364,7 @@
             "overviewBlockTitle": "Översikt över ekosystemets säkerhet",
             "allDevices": "Alla enheter",
             "myDevice": "Min enhet",
+            "thisComputer": "This computer",
             "secure": "SÄKERT",
             "needAttention": "ÅTGÄRD KRÄVS",
             "manageAccount": "Hantera konto",

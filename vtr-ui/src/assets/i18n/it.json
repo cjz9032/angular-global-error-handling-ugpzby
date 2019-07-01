@@ -39,7 +39,9 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -289,6 +291,56 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
@@ -296,11 +348,11 @@
         "menu": {
             "dashboard": "Dashboard",
             "device": {
-                "title": "Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "Dispositivo",
+                "sub1": "Il mio dispositivo",
+                "sub2": "Impostazioni dispositivo",
                 "sub3": "System Updates",
-                "sub4": "‏\"Assistenza intelligente\""
+                "sub4": "Assistenza intelligente"
             },
             "security": {
                 "title": "Protezione",
@@ -311,8 +363,8 @@
                 "sub5": "Protezione Internet",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
+            "support": "Supporto",
+            "homeSecurity": "Abitazione connessa",
             "privacy": "Privacy"
         },
         "securityAdvisor": {
@@ -632,7 +684,13 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -864,7 +922,7 @@
             "displayCamera": {
                 "title": "Schermo e fotocamera",
                 "subtitle": "Impostazioni Schermo e fotocamera",
-                "description": "Questa sezione consente di migliorare l'esperienza visiva e di configurare le proprietà della fotocamera.Esplora ulteriori funzioni e personalizza qui l'esperienza di visualizzazione.",
+                "description": "Questa sezione consente di migliorare l'esperienza visiva e di configurare le proprietà della fotocamera. Esplorare ulteriori funzioni e personalizzare qui l'esperienza di visualizzazione.",
                 "jumpTo": {
                     "title": "PASSA A IMPOSTAZIONI",
                     "shortcuts": {
@@ -872,7 +930,7 @@
                             "title": "Visualizza"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Fotocamera"
                         }
                     }
                 },
@@ -894,45 +952,45 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Temperatura colore schermo",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Caldo (migliore per gli occhi)",
+                            "cold": "Fredda"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Ripristina temperatura",
+                        "tooltip": "La modalità Comfort visivo regola la temperatura del colore dello schermo per filtrare la luce blu e ridurre l'affaticamento degli occhi.",
+                        "onSunsetToSunriseScheduleDescription": "Pianifica la modalità Comfort visivo dal tramonto all'alba",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Nota",
+                            "description": "Lenovo Vantage deve accedere alle informazioni sulla posizione per calcolare l'ora del tramonto e dell'alba dell'area geografica in cui ci si trova."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Protezione della privacy",
+                        "description": "Questa funzione impedisce ad altre persone di vedere i contenuti sullo schermo. Se attiva, modifica l'angolo di visione dello schermo, proteggendoti da sguardi indiscreti. È inoltre possibile attivare o disattivare le modalità premendo i tasti \"FN+D\".",
+                        "note": "La protezione della privacy non funziona quando lo schermo è in modalità verticale. In questa modalità, lo schermo è ancora visibile dai lati.",
+                        "labelText": "Abilitare questa funzione quando si digitano le password"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Impostazioni energetiche OLED",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Lo schermo OLED del computer può inoltre ridurre il consumo energetico e aumentare la durata della batteria riducendo in modo selettivo la luminosità di alcune aree.",
+                            "Si consiglia inoltre di ridurre la luminosità della barra delle applicazioni e di altre aree dello schermo che non cambiano di frequente per prolungare la durata dello schermo."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Ripristina temperatura",
+                        "tooltip": "Questa funzionalità può ridurre il consumo energetico e aumentare la durata della batteria riducendo in modo selettivo la luminosità di alcune aree."
                     }
                 },
                 "camera": {
                     "title": "Fotocamera",
                     "note": {
                         "title": "Nota",
-                        "description": "Lenovo Vantage non dispone delle autorizzazioni per accedere alla fotocamera.Attivare l'accesso alla fotocamera per l'app Lenovo Vantage."
+                        "description": "Lenovo Vantage non dispone delle autorizzazioni per accedere alla fotocamera. Attivare l'accesso alla fotocamera per l'app Lenovo Vantage."
                     },
                     "url": "Vai a Impostazioni di privacy di Windows",
                     "cameraPrivacy": {
                         "title": "Modalità privacy fotocamera",
-                        "tooltip": "La fotocamera non invia più immagini dal vivo quando è abilitata l'impostazione di privacy. Attivare questa impostazione solo se non si desidera condividere le proprie immagini con altri durante le videochiamate."
+                        "tooltip": "La fotocamera non invia più immagini dal vivo quando è abilitata l'impostazione relativa alla privacy. Attivare questa impostazione solo se non si desidera condividere le proprie immagini con altri durante le videochiamate."
                     },
                     "camera": {
                         "title": "Fotocamera",
@@ -946,10 +1004,10 @@
                     "notAvailable": "Fotocamera non disponibile",
                     "camerablur": {
                         "title": "Sfocatura dello sfondo della fotocamera",
-                        "caption": "Questa funzionalità consente di sfocare lo sfondo quando la fotocamera viene utilizzata per videochiamate o per scattare foto.È possibile scegliere un effetto diverso tra le selezioni elencate di seguito.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Questa funzionalità consente di sfocare lo sfondo quando la fotocamera viene utilizzata per videochiamate o per scattare foto. È possibile scegliere un effetto diverso tra le selezioni elencate di seguito.",
+                        "blurMode": "Modalità sfocatura",
+                        "comicMode": "Modalità fumetto",
+                        "sketchMode": "Modalità schizzo"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1001,13 +1059,14 @@
                     "dropDown": {
                         "title": "Action User Defined key",
                         "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
-                    }
+                    },
+                    "tooltip": "Content to be filled"
                 }
             }
         },
         "smartAssist": {
             "title": "Assistenza intelligente",
-            "description": "Rilevamento intelligente Lenovo combina vari sensori del computer per rilevare le attività,modificare le impostazioni per un risparmio ottimale dell'energia e proteggere la privacy.",
+            "description": "Rilevamento intelligente Lenovo combina vari sensori del computer per rilevare le attività, modificare le impostazioni per un risparmio ottimale dell'energia e proteggere la privacy.",
             "jumpTo": {
                 "title": "PASSA A IMPOSTAZIONI",
                 "security": "Protezione",
@@ -1021,19 +1080,19 @@
                 "readMore": "Ulteriori informazioni",
                 "HumanPresenceDetection": {
                     "title": "Rilevamento presenza umana",
-                    "tooltip": "Fare clic qui per ripristinare le impostazioni di Rilevazione presenza umana."
+                    "tooltip": "Fare clic qui per ripristinare le impostazioni di rilevamento della presenza umana."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Rilevamento presenza utente",
+                    "tooltip": "Fare clic qui per ripristinare le impostazioni di Rilevazione presenza umana."
                 },
                 "zeroTouchLogin": {
                     "title": "Accesso zero touch",
-                    "caption": "Questa funzione sblocca o attiva automaticamente il computerquando l'utente si avvicina o si siede di fronte ad esso."
+                    "caption": "Questa funzione sblocca o attiva automaticamente il computer quando l'utente si avvicina o si siede di fronte al PC."
                 },
                 "zeroTouchLock": {
                     "title": "Blocco zero touch",
-                    "caption": "Questa funzione ridurrà la luminosità dello schermo e bloccherà il computer quando non viene rilevata la presenza dell'utente.Consente inoltre di ridurre gli accessi non autorizzati al computer quando l'utente si allontana dal computer senza bloccarlo. Riduce anche il consumo di energia, attivando la modalità Standby moderno del sistema, quando non viene rilevata la presenza dell'utente.",
+                    "caption": "Questa funzione ridurrà la luminosità dello schermo e bloccherà il computer quando non viene rilevata la presenza dell'utente. Consente inoltre di ridurre gli accessi non autorizzati al computer quando l'utente si allontana dal computer senza bloccarlo. Riduce anche il consumo di energia, attivando la modalità Standby moderno del sistema, quando non viene rilevata la presenza dell'utente.",
                     "autoScreenLockTimer": {
                         "title": "TIMER BLOCCO SCHERMO AUTOMATICO",
                         "radioButton": {
@@ -1041,46 +1100,46 @@
                             "medium": "Medio",
                             "slow": "Lento"
                         },
-                        "toolTipContent": "Selezionare l'opzione desiderata per bloccare lo schermo a una velocità Rapida/Media/Lenta quando non viene rilevata la propria presenza.Tuttavia, l'ora in cui lo schermo verrà bloccato è influenzata dallo scenario effettivo dell'utente, dalla capacità del sensore e dalle impostazioni del timeout dello schermo di Windows. Pertanto, si consiglia di bloccare immediatamente il sistema prima di uscire."
+                        "toolTipContent": "Selezionare l'opzione desiderata per bloccare lo schermo a una velocità Rapida/Media/Lenta quando non viene rilevata la propria presenza. Tuttavia, l'ora in cui lo schermo verrà bloccato è influenzata dallo scenario effettivo dell'utente, dalla capacità del sensore e dalle impostazioni del timeout dello schermo di Windows. Pertanto, si consiglia di bloccare immediatamente il sistema prima di uscire."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "La regolazione automatica della distanza aggiornerà automaticamentela distanza di rilevamento tramite un motore AI.",
+                    "title": "REGOLAZIONE SENSIBILITÀ DELLA DISTANZA",
+                    "caption": "La regolazione automatica della sensibilità della distanza aggiornerà automaticamente la distanza di rilevamento tramite un motore AI.",
                     "options": {
                         "near": "Vicino",
                         "far": "Lontano"
                     }
                 },
                 "note": {
-                    "description1": "Questa funzione si basa su Windows Hello.Verificare che il riconoscimento facciale sia attivo nelle impostazioni di Windows.",
-                    "description2": "La funzione utilizza sensori e fotocamera per rilevare la presenza dell'utente.Tuttavia, non raccoglie, salva, né fa trapelare alcun dato o immagine personale.",
-                    "description3": "1. Se il computer è in modalità tenda, tablet o supporto,queste funzioni potrebbero non funzionare correttamente.",
-                    "description4": "2. Se il computer è in modalità Ibernazione o è stato spento.L'accesso automatico alla fotocamera IR non funzionerà.",
-                    "description5": "3. Regolare lo schermo del computer con un'angolazione appropriatain modo che la fotocamera IR riconosca il volto per l'accesso automatico."
+                    "description1": "Questa funzione si basa su Windows Hello. Verificare che il riconoscimento facciale sia attivo nelle impostazioni di Windows.",
+                    "description2": "La funzione utilizza sensori e fotocamera per rilevare la presenza dell'utente. Tuttavia, non raccoglie alcun dato personale.",
+                    "description3": "1. Se il computer è in modalità tenda, tablet o supporto, queste funzioni potrebbero non funzionare correttamente.",
+                    "description4": "2. Se il computer è in modalità Ibernazione o è stato spento. L'accesso automatico alla fotocamera IR non funzionerà.",
+                    "description5": "3. Regolare lo schermo del computer con un'angolazione appropriata in modo che la fotocamera IR riconosca il volto per l'accesso automatico."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Vai a Impostazioni di Windows Hello",
                     "screenTimeoutSettings": "Accedi alle impostazioni di timeout dello schermo"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "RIPRISTINA IMPOSTAZIONI PREDEFINITE"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Schermo intelligente",
+                "description": "Rilevamento intelligente Lenovo combina i diversi sensori del computer per rilevare le attività e modificare le impostazioni per il risparmio di energia. Ad esempio, ridurrà la luminosità dello schermo se rileva che l'utente sta camminando ma la manterrà se rileva che sta leggendo.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Spegnimento schermo automatico",
+                    "caption": "Disattivare automaticamente lo schermo quando l'utente è a faccia in giù o sta camminando.",
+                    "note": "Questa funzione non è disponibile se le impostazioni del piano di alimentazione sono impostate su \"Non spegnere mai lo schermo\" nella sezione \"Sistema\" delle impostazioni di Windows. Selezionare un valore diverso da \"Mai\" per attivare questa funzione.",
+                    "windowsLink": "Accedere alle impostazioni di alimentazione e sospensione nelle impostazioni di Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Mantieni acceso lo schermo",
+                    "caption": "Tenere acceso lo schermo quando l'utente sta leggendo o navigando.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Minuti prima che venga ridotta la luminosità dello schermo durante la navigazione",
+                        "startTime": "0 minuti",
+                        "endTime": "60 minuti"
                     }
                 }
             },
@@ -1115,10 +1174,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Supporti intelligenti",
+                "title": "Riproduzione video zero touch",
+                "desc": "Questa funzione metterà in pausa il video quando ci si allontana dal computer e riprenderà la riproduzione del video al rientro dell'utente.",
+                "tooltip": "Questa funzione non è applicabile ai lettori video Web. I principali lettori video locali, come Windows Media Player, 5KPlayer e così via supportano questa funzione."
             },
             "voice": {
                 "title": "Voice",
@@ -1145,6 +1204,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1159,8 +1223,8 @@
         "recommendedUpdates": "Aggiornamento/i consigliato/i",
         "optionalUpdates": "Aggiornamento/i facoltativo/i",
         "ignoredUpdates": "Aggiornamento/i ignorato/i",
-        "successInstall": "Installazione riuscita su",
-        "failedInstall": "Impossibile installare su",
+        "successInstall": "Installazione riuscita il",
+        "failedInstall": "Installazione non riuscita il",
         "at": "alle",
         "readMore": "Ulteriori informazioni",
         "popup": {
@@ -1300,6 +1364,7 @@
             "overviewBlockTitle": "Panoramica sulla protezione dell'ecosistema",
             "allDevices": "Tutti i dispositivi",
             "myDevice": "Il mio dispositivo",
+            "thisComputer": "This computer",
             "secure": "SICURO",
             "needAttention": "RICHIEDE ATTENZIONE",
             "manageAccount": "Gestisci account",

@@ -161,7 +161,7 @@
 							position: relative;
 							z-index: 1;
 							color: $main_shade;
-							font-size: 1.6rem;
+							font-size: 1.5rem;
 							line-height: 2.2rem;
 							font-weight: $weight_medium;
 
@@ -279,9 +279,7 @@
 								text-decoration: none;
 								&.link {
 									background: transparent;
-									&:hover {
-										font-weight: $weight_regular;
-									}
+
 								}
 							}
 							fa-icon {

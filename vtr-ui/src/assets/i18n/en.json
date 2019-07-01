@@ -38,6 +38,8 @@
 					"driverPopup": {
 						"headerText": "Driver Install Required",
 						"text": "You need install driver for RAM Overclock to  make it effective",
+						"networkBoostText": "You need install driver for Network Boost to  make it effective",
+						"hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
 						"button": "Install",
 						"link": "cancel"
 					},
@@ -47,6 +49,10 @@
 						"button": "Install",
 						"link": "cancel"
 					},
+					"lightingColorMessage": {
+						"text": "Selecting color not available to this effect."
+					},
+
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",
@@ -276,6 +282,8 @@
 					"title": " effect"
 				}
 			},
+
+
 			"lightingSingleLightingOption": {
 				"option1": {
 					"title": "Always On"
@@ -318,6 +326,29 @@
 				},
 				"text4": {
 					"title": "Profile 3"
+				}
+			},
+			"colourwheel": {
+				"text1": {
+					"title": "Selecting colour not available to this effect."
+				},
+				"text2": {
+					"title": "APPLY"
+				},
+				"text3": {
+					"title": "APPLIED"
+				},
+				"text4": {
+					"title": "R:"
+				},
+				"text5": {
+					"title": "G:"
+				},
+				"text6": {
+					"title": "B:"
+				},
+				"text7": {
+					"title": "Color"
 				}
 			},
 			"lightingProfileHeading": {
@@ -566,7 +597,13 @@
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
 				"updating": "Updating",
-				"thresholdNote": "To extend the battery lifespan, you have set your battery to stop charging at",
+				"thresholdNote": {
+					"note": "Note: ",
+					"note1": "To extend the battery lifespan, you have set your battery to stop charging at ",
+					"note2": "to stop charging at ",
+					"note3": "battery",
+					"note4": "and "
+				},
 				"voltageError": "Battery voltage incorrect",
 				"batteryNotDetected": "No Battery Detected",
 				"details": {
@@ -719,15 +756,15 @@
 						"optimize": "optimize system for",
 						"apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
 						"options": {
-							"quiteCool3": "Cool Mode",
-							"performance3": "High Performance",
-							"quiteCool4": "Quiet & Cool",
+							"quiteCool3": "Cool & Quiet",
+							"performance3": "Performance",
+							"quiteCool4": "Cool & Quiet",
 							"performance4": "Performance",
-							"quiteCool5": "Quiet & Cool",
+							"quiteCool5": "Cool & Quiet",
 							"performance5": "Performance",
 							"batterySaving": "Battery Saving",
 							"performance13": "Performance",
-							"quiteCool13": "Quiet & Cool",
+							"quiteCool13": "Cool & Quiet",
 							"performance14": "Extreme Performance",
 							"quiteCool14": "Intelligent Cooling"
 						},
@@ -846,7 +883,7 @@
 				},
 				"energyStar": {
 					"title": "Energy Star",
-					"description": "AN ENERGY STAR CERTIFIED PRODUCT"
+					"description": "An ENERGY STAR certified product"
 				}
 			},
 			"audio": {
@@ -1048,6 +1085,7 @@
 				"userDefinedKey": {
 					"title": "User-defined Key",
 					"caption": "The key represented by the star icon allows you to set user defined function",
+					"tooltip" : "Content to be filled",
 					"dropDown": {
 						"title": "Action User Defined key",
 						"note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
@@ -1060,11 +1098,11 @@
 			"description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
 			"jumpTo": {
 				"title": "JUMP TO SETTINGS",
-				"security": "Security",
-				"screen": "Screen",
-				"media": "Media",
-				"voice": "Voice",
-				"APS": "APS"
+				"security": "Intelligent Security",
+				"screen": "Intelligent Screen",
+				"media": "Intelligent Media",
+				"voice": "Intelligent Voice",
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Intelligent Security",
@@ -1195,6 +1233,11 @@
 					"point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
 					"point9": "Click the microphone icon to start speaking",
 					"closeText": "close"
+				},
+				"modalInstallationFailed": {
+					"btnText": "ok",
+					"title": "Install Failed",
+					"desc": "Install failed, please try again later in order to use Lenovo Voice."
 				}
 			}
 		}
@@ -1350,6 +1393,7 @@
 			"overviewBlockTitle": "Your Ecosystem Security Overview",
 			"allDevices": "All Devices",
 			"myDevice": "My Device",
+			"thisComputer": "This computer",
 			"secure": "SECURE",
 			"needAttention": "NEEDS ATTENTION",
 			"manageAccount": "Manage account",

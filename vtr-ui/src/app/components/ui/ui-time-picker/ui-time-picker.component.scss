@@ -32,6 +32,16 @@
 				line-height: 13px;
 				text-align: center;
 				display: block;
+				.inline-block {
+					display: inline-flex;
+				}
+				.label-text {
+					padding: 0.2rem 0.2rem 0.2rem 0.5rem;
+				}
+				.label-radio {
+					width: 2rem;
+					height: 2rem;
+				}
 			}
 			.highlight {
 				color: $shade_blue;

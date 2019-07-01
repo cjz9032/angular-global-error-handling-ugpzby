@@ -1,5 +1,5 @@
 <div class="vtr-ui-list-chevron">
-	<ul class="chevron-list" [ngClass]="{'wifiStatus-no-border-bottom': items.length > 0 && items[0].path === 'security/wifi-security' && items[0].status === 0}">
+	<ul class="chevron-list">
 		<li *ngFor="let item of items" [ngClass]="getItemStatusClass(item)">
 			<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false then user routerLink to naviagate within Lenovo Vantage Application -->
 
@@ -50,7 +50,8 @@
 									{{item.detail}}
 								</div>
 								<div *ngIf="item.subText" class="sub-text">
-									{{item.subText}} &nbsp;{{item.date}}
+									<span title="{{item.subText}}">{{item.subText | characterLimit:20}}</span>
+									<span class="pl-3">{{item.date}}</span>
 								</div>
 							</div>
 						</div>

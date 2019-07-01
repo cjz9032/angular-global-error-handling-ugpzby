@@ -39,7 +39,9 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -289,18 +291,68 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "Панель инструментов",
             "device": {
-                "title": "Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "Устройство",
+                "sub1": "Мое устройство",
+                "sub2": "Параметры моего устройства",
                 "sub3": "System Updates",
-                "sub4": "‏\"Интеллектуальный помощник\""
+                "sub4": "Интеллектуальный помощник"
             },
             "security": {
                 "title": "Защита",
@@ -311,9 +363,9 @@
                 "sub5": "Защита в Интернете",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "Поддержка",
+            "homeSecurity": "Домашняя сеть",
+            "privacy": "Конфиденциальность"
         },
         "securityAdvisor": {
             "title": "Помощник по безопасности",
@@ -632,7 +684,13 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -864,7 +922,7 @@
             "displayCamera": {
                 "title": "Дисплей и камера",
                 "subtitle": "Параметры дисплея и камеры",
-                "description": "В этом разделе можно повысить качество изображения и настроить свойства камеры.Здесь можно настроить различные функции и параметры дисплея.",
+                "description": "В этом разделе можно повысить качество изображения и настроить свойства камеры. Здесь можно настроить различные функции и параметры дисплея.",
                 "jumpTo": {
                     "title": "ПЕРЕЙТИ К ПАРАМЕТРАМ",
                     "shortcuts": {
@@ -872,7 +930,7 @@
                             "title": "Дисплей"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Фотокамера"
                         }
                     }
                 },
@@ -894,40 +952,40 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Цветовая температура экрана",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Теплые тона (лучше для глаз)",
+                            "cold": "Холодный"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Сбросить температуру",
+                        "tooltip": "В режиме защиты глаз цветовая температура экрана регулируется для фильтрации синего света и уменьшения напряжения глаз.",
+                        "onSunsetToSunriseScheduleDescription": "Установите график режима защиты глаз в темное время суток",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Примечание",
+                            "description": "Lenovo Vantage требуется доступ к информации о вашем местоположении, чтобы рассчитать время заката и восхода в вашем регионе."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Защита конфиденциальности",
+                        "description": "Эта функция препятствует просмотру информации на вашем экране другими людьми. Если эта функция включена, угол обзора вашего дисплея меняется и люди вокруг не могут видеть отображаемое на нем. Переключаться между режимами можно с помощью клавиш \"Fn+D\".",
+                        "note": "Функция защиты конфиденциальности не работает, если экран находится в портретном режиме. В этом режиме изображение на экране по-прежнему видно с боков.",
+                        "labelText": "Включать эту функцию при вводе паролей"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Параметры питания органических светодиодов",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Компьютерный дисплей на органических светодиодах позволяет также снизить энергопотребление и увеличить время работы аккумулятора путем выборочного затемнения участков экрана.",
+                            "Рекомендуется также затемнить панель задач и другие редко изменяемые области дисплея, чтобы продлить срок его службы."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Сбросить температуру",
+                        "tooltip": "Эта функция позволяет снизить энергопотребление и увеличить время работы аккумулятора путем выборочного затемнения участков экрана."
                     }
                 },
                 "camera": {
                     "title": "Фотокамера",
                     "note": {
                         "title": "Примечание",
-                        "description": "У Lenovo Vantage нет разрешения на доступ к камере.Включите доступ к камере для приложения Lenovo Vantage."
+                        "description": "У Lenovo Vantage нет разрешения на доступ к камере. Включите доступ к камере для Lenovo Vantage."
                     },
                     "url": "Перейдите в раздел параметров конфиденциальности Windows",
                     "cameraPrivacy": {
@@ -946,10 +1004,10 @@
                     "notAvailable": "Камера недоступна",
                     "camerablur": {
                         "title": "Размытие фона камеры",
-                        "caption": "Эта функция размывает фон при использовании камеры для видеовызовов и съемки фотографий.Можно выбрать другой эффект из следующего списка.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Эта функция размывает фон при использовании камеры для видеовызовов и съемки фотографий. Можно выбрать другой эффект из следующего списка.",
+                        "blurMode": "Режим размытия",
+                        "comicMode": "Комический режим",
+                        "sketchMode": "Режим эскиза"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1001,13 +1059,14 @@
                     "dropDown": {
                         "title": "Action User Defined key",
                         "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
-                    }
+                    },
+                    "tooltip": "Content to be filled"
                 }
             }
         },
         "smartAssist": {
             "title": "Интеллектуальный помощник",
-            "description": "Функция интеллектуального распознавания Lenovo распознает ваши действия по сигналам датчиков компьютераи соответствующим образом корректирует параметры для оптимального управления электропитанием и защиты вашей конфиденциальности.",
+            "description": "Функция интеллектуального распознавания Lenovo распознает ваши действия по сигналам датчиков компьютера и соответствующим образом корректирует параметры для оптимального управления электропитанием и защиты вашей конфиденциальности.",
             "jumpTo": {
                 "title": "ПЕРЕЙТИ К ПАРАМЕТРАМ",
                 "security": "Защита",
@@ -1024,8 +1083,8 @@
                     "tooltip": "Щелкните здесь, чтобы сбросить параметры обнаружения присутствия человека."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Обнаружение присутствия пользователя",
+                    "tooltip": "Щелкните здесь, чтобы сбросить параметры обнаружения присутствия человека."
                 },
                 "zeroTouchLogin": {
                     "title": "Бесконтактный вход",
@@ -1033,7 +1092,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Бесконтактная блокировка",
-                    "caption": "Эта функция затемняет дисплей и блокирует компьютер, если присутствие пользователя не обнаружено.Эта функция уменьшает вероятность несанкционированного доступа к компьютеру, если вы уходите, оставляя компьютер без присмотра разблокированным. Кроме того, она уменьшает энергопотребление, переводя систему в текущий режим ожидания, если ваше присутствие не обнаружено.",
+                    "caption": "Эта функция затемняет дисплей и блокирует компьютер, если присутствие пользователя не обнаружено. Она также уменьшает вероятность несанкционированного доступа к компьютеру, если вы уходите, оставляя компьютер без присмотра разблокированным. Кроме того, эта функция уменьшает энергопотребление, переводя систему в текущий режим ожидания, если ваше присутствие не обнаружено.",
                     "autoScreenLockTimer": {
                         "title": "ТАЙМЕР АВТОМАТИЧЕСКОЙ БЛОКИРОВКИ ЭКРАНА",
                         "radioButton": {
@@ -1041,46 +1100,46 @@
                             "medium": "Средней сложности",
                             "slow": "Медленно"
                         },
-                        "toolTipContent": "Выберите скорость блокировки экрана (высокую, среднюю или низкую), если ваше присутствие не обнаружено.Также время блокировки экрана зависит от фактического сценария использования, возможностей датчиков и параметров тайм-аута экрана Windows. Поэтому мы настоятельно рекомендуем блокировать систему перед уходом."
+                        "toolTipContent": "Выберите скорость блокировки экрана (высокую, среднюю или низкую), если ваше присутствие не обнаружено. Также время блокировки экрана зависит от фактического сценария использования, возможностей датчиков и параметров тайм-аута экрана Windows. Поэтому мы настоятельно рекомендуем блокировать систему перед уходом."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Функция автоматической корректировки расстояния автоматически обновитрасстояние обнаружения с помощью механизма искусственного интеллекта.",
+                    "title": "РЕГУЛИРОВКА ЧУВСТВИТЕЛЬНОСТИ ОБНАРУЖЕНИЯ РАССТОЯНИЯ",
+                    "caption": "Функция автоматической корректировки расстояния автоматически обновит расстояние обнаружения с помощью механизма искусственного интеллекта.",
                     "options": {
                         "near": "Рядом",
                         "far": "Далеко"
                     }
                 },
                 "note": {
-                    "description1": "Эта функция основана на технологии Windows Hello.Убедитесь, что функция распознавания лица включена в параметрах Windows.",
-                    "description2": "Эта функция обнаруживает ваше присутствие с помощью датчиков и камеры.Тем не менее, она НЕ ОСУЩЕСТВЛЯЕТ сбор, сохранение или передачу каких-либо личных данных или изображений.",
-                    "description3": "1. Если компьютер находится в режиме тента, планшета или консоли,эти функции могут работать неправильно.",
-                    "description4": "2. Если компьютер находится в режиме гибернации или выключен.Функция автоматического входа с помощью ИК-камеры не будет работать.",
-                    "description5": "3. Подберите угол наклона экрана вашего компьютера таким образом,чтобы ИК-камера могла распознавать ваше лицо для автоматического входа в систему."
+                    "description1": "Эта функция основана на технологии Windows Hello. Убедитесь, что функция распознавания лица включена в параметрах Windows.",
+                    "description2": "Эта функция обнаруживает ваше присутствие с помощью датчиков и камеры. Тем не менее, она НЕ ОСУЩЕСТВЛЯЕТ сбор каких-либо личных данных.",
+                    "description3": "1. Если компьютер находится в режиме тента, планшета или консоли, эти функции могут работать неправильно.",
+                    "description4": "2. Если компьютер находится в режиме гибернации или выключен. Функция автоматического входа с помощью ИК-камеры не будет работать.",
+                    "description5": "3. Подберите угол наклона экрана вашего компьютера таким образом, чтобы ИК-камера могла распознавать ваше лицо для автоматического входа в систему."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Перейдите в раздел параметров Windows Hello",
                     "screenTimeoutSettings": "Перейти к параметрам тайм-аута экрана"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "ВОССТАНОВЛЕНИЕ ПАРАМЕТРОВ ПО УМОЛЧАНИЮ"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Интеллектуальный экран",
+                "description": "Функция интеллектуального распознавания Lenovo распознает ваши действия по сигналам различных датчиков компьютера и соответствующим образом корректирует параметры управления электропитанием. Например, она погасит дисплей вашего устройства, если обнаружит, что вы идёте, и не будет гасить дисплей, если распознает, что вы читаете.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Автоматическое выключение экрана",
+                    "caption": "Автоматическое выключение дисплея в положении экраном вниз или во время ходьбы.",
+                    "note": "Эта функция недоступна, если в разделе параметров Windows, который называется \"Система\", план электропитания настроен так, чтобы экран никогда не отключался (выбрано значение \"Никогда\"). Выберите другое значение, чтобы включить эту функцию.",
+                    "windowsLink": "Переход в раздел параметров управления питанием и спящим режимом Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Продление включенного состояния дисплея",
+                    "caption": "Продление включенного состояния дисплея при чтении и работе в Интернете.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Количество минут до гашения дисплея при работе в Интернете",
+                        "startTime": "0 минут",
+                        "endTime": "60 минуты"
                     }
                 }
             },
@@ -1115,10 +1174,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Интеллектуальная работа с мультимедиа",
+                "title": "Бесконтактное воспроизведение видео",
+                "desc": "Эта функция приостанавливает воспроизведение видео, когда вы уходите от компьютера, и возобновляет воспроизведение, как только вы снова оказываетесь у компьютера.",
+                "tooltip": "Эта функция не распространяется на интернет-проигрыватели видео. Самые популярные локальные видеопроигрыватели (например,проигрыватель Windows Media Player, 5KPlayer и т. д.) поддерживают эту функцию."
             },
             "voice": {
                 "title": "Voice",
@@ -1145,6 +1204,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1159,8 +1223,8 @@
         "recommendedUpdates": "Рекомендуемые обновления",
         "optionalUpdates": "Необязательные обновления",
         "ignoredUpdates": "Пропущенные обновления",
-        "successInstall": "Успешно установлено на",
-        "failedInstall": "Сбой при установке на",
+        "successInstall": "Успешно установлено",
+        "failedInstall": "Сбой при установке",
         "at": "в",
         "readMore": "Подробнее",
         "popup": {
@@ -1300,6 +1364,7 @@
             "overviewBlockTitle": "Обзор безопасности экосистемы",
             "allDevices": "Все устройства",
             "myDevice": "Мое устройство",
+            "thisComputer": "This computer",
             "secure": "БЕЗОПАСНО",
             "needAttention": "ТРЕБУЕТ ВНИМАНИЯ",
             "manageAccount": "Управление учетной записью",

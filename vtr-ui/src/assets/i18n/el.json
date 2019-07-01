@@ -39,7 +39,9 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -289,18 +291,68 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "Πίνακας εργαλείων",
             "device": {
-                "title": "Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "Συσκευή",
+                "sub1": "Η συσκευή μου",
+                "sub2": "Οι ρυθμίσεις της συσκευής μου",
                 "sub3": "System Updates",
-                "sub4": "‏\"Έξυπνη βοήθεια\""
+                "sub4": "Έξυπνη βοήθεια"
             },
             "security": {
                 "title": "Ασφάλεια",
@@ -311,9 +363,9 @@
                 "sub5": "Προστασία στο Internet",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "Υποστήριξη",
+            "homeSecurity": "Συνδεδεμένη οικία",
+            "privacy": "Προσωπικά δεδομένα"
         },
         "securityAdvisor": {
             "title": "Σύμβουλος ασφάλειας",
@@ -632,7 +684,13 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -864,20 +922,20 @@
             "displayCamera": {
                 "title": "Οθόνη & Κάμερα",
                 "subtitle": "Ρυθμίσεις οθόνης & κάμερας",
-                "description": "Αυτή η ενότητα σας επιτρέπει να βελτιώνετε την οπτική εμπειρία σας και να διαμορφώνετε τις ιδιότητες της κάμεράς σας.Εξερευνήστε περισσότερες δυνατότητες και προσαρμόστε την εμπειρία οθόνης σας εδώ.",
+                "description": "Αυτή η ενότητα σας επιτρέπει να βελτιώνετε την οπτική εμπειρία σας και να διαμορφώνετε τις ιδιότητες της κάμεράς σας. Εξερευνήστε περισσότερες δυνατότητες και προσαρμόστε την εμπειρία της οθόνης σας εδώ.",
                 "jumpTo": {
                     "title": "ΜΕΤΑΒΑΣΗ ΣΤΙΣ ΡΥΘΜΙΣΕΙΣ",
                     "shortcuts": {
                         "display": {
-                            "title": "Οθόνη"
+                            "title": "Παρουσίαση"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Κάμερα"
                         }
                     }
                 },
                 "display": {
-                    "title": "Οθόνη",
+                    "title": "Παρουσίαση",
                     "eyeCareMode": {
                         "title": "Λειτουργία Φροντίδα ματιών",
                         "checkbox": "Προγραμματίστε τη λειτουργία φροντίδας ματιών από το ηλιοβασίλεμα έως την ανατολή",
@@ -894,45 +952,45 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Θερμοκρασία χρωμάτων οθόνης",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Ζεστό (καλύτερο για τα μάτια)",
+                            "cold": "Ψυχρό"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Επαναφορά θερμοκρασίας",
+                        "tooltip": "Η λειτουργία φροντίδας ματιών ρυθμίζει τη θερμοκρασία των χρωμάτων της οθόνης σας για φιλτράρισμα του μπλε φωτός και μείωση της κόπωσης των ματιών.",
+                        "onSunsetToSunriseScheduleDescription": "Προγραμματίστε τη λειτουργία φροντίδας ματιών από το ηλιοβασίλεμα έως την ανατολή",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Σημείωση",
+                            "description": "Η εφαρμογή Lenovo Vantage πρέπει να έχει πρόσβαση στις πληροφορίες της τοποθεσίας σας για να μπορεί να υπολογίσει την ώρα του ηλιοβασιλέματος και την ώρα της ανατολής στην περιοχή σας."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Privacy Guard",
+                        "description": "Αυτή η δυνατότητα εμποδίζει άλλα άτομα να κρυφοκοιτάζουν την οθόνη σας. Όταν είναι ενεργοποιημένη, αλλάζει τη γωνία προβολής της οθόνης σας, ώστε να διατηρείται ιδιωτική από εκείνους που βρίσκονται γύρω σας. Μπορείτε επίσης να αλλάζετε λειτουργίες πιέζοντας τα πλήκτρα \"Fn+D\".",
+                        "note": "Το Privacy Guard δεν λειτουργεί σε κατακόρυφη λειτουργία οθόνης. Σε αυτήν τη λειτουργία, η οθόνη σας παραμένει ορατή από το πλάι.",
+                        "labelText": "Ενεργοποίηση αυτής της δυνατότητας κατά την πληκτρολόγηση κωδικών πρόσβασης"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Ρυθμίσεις ενέργειας OLED",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Επίσης, η οθόνη OLED του υπολογιστή σας μπορεί να μειώσει την κατανάλωση ενέργειας και να παρατείνει τη διάρκεια ζωής της μπαταρίας, μέσω της επιλεκτικής μείωσης της φωτεινότητας σε τμήματα της οθόνης.",
+                            "Σας συνιστούμε επίσης να μειώνετε τη φωτεινότητα της γραμμής εργασιών και άλλων περιοχών της οθόνης που δεν αλλάζουν συχνά, ώστε να παρατείνετε τη συνολική διάρκεια ζωής της οθόνης."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Επαναφορά θερμοκρασίας",
+                        "tooltip": "Αυτή η δυνατότητα μπορεί να μειώσει την κατανάλωση ενέργειας και να παρατείνει τη διάρκεια ζωής της μπαταρίας, μέσω της επιλεκτικής μείωσης της φωτεινότητας σε τμήματα της οθόνης."
                     }
                 },
                 "camera": {
                     "title": "Κάμερα",
                     "note": {
                         "title": "Σημείωση",
-                        "description": "Η εφαρμογή Lenovo Vantage δεν έχει δικαιώματα πρόσβασης στην κάμερά σας.Ενεργοποιήστε την πρόσβαση στην κάμερά σας για την εφαρμογή Lenovo Vantage."
+                        "description": "Η εφαρμογή Lenovo Vantage δεν έχει δικαιώματα πρόσβασης στην κάμερά σας. Ενεργοποιήστε την πρόσβαση στην κάμερα για την εφαρμογή Lenovo Vantage."
                     },
                     "url": "Μετάβαση στις ρυθμίσεις απορρήτου των Windows",
                     "cameraPrivacy": {
                         "title": "Λειτουργία απορρήτου κάμερας",
-                        "tooltip": "Η κάμερα σταματά να στέλνει ζωντανές εικόνες αν έχει ενεργοποιηθεί η ρύθμιση απορρήτου. Ενεργοποιήστε αυτήν τη ρύθμιση μόνο αν δεν θέλετε να μοιράζεστε εικόνες με άλλους κατά τη βιντεοκλήση."
+                        "tooltip": "Η κάμερα σταματά να αποστέλλει ζωντανές εικόνες όταν είναι ενεργοποιημένη η ρύθμιση απορρήτου. Ενεργοποιήστε αυτήν τη ρύθμιση μόνο αν δεν θέλετε να μοιράζεστε εικόνες με άλλους κατά τη βιντεοκλήση."
                     },
                     "camera": {
                         "title": "Κάμερα",
@@ -946,10 +1004,10 @@
                     "notAvailable": "Η κάμερα δεν είναι διαθέσιμη",
                     "camerablur": {
                         "title": "Θόλωση φόντου κάμερας",
-                        "caption": "Αυτή η δυνατότητα θολώνει το φόντο σας όταν χρησιμοποιείτε την κάμερα για κλήση βίντεο ή λήψη φωτογραφιών.Μπορείτε να επιλέξετε άλλο εφέ από τις παρακάτω επιλογές.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Αυτή η δυνατότητα θολώνει το φόντο σας όταν χρησιμοποιείτε την κάμερα για κλήση βίντεο ή λήψη φωτογραφιών. Μπορείτε να επιλέξετε άλλο εφέ από τις παρακάτω επιλογές.",
+                        "blurMode": "Λειτουργία θόλωσης",
+                        "comicMode": "Κωμική λειτουργία",
+                        "sketchMode": "Λειτουργία σκίτσου"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1001,13 +1059,14 @@
                     "dropDown": {
                         "title": "Action User Defined key",
                         "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
-                    }
+                    },
+                    "tooltip": "Content to be filled"
                 }
             }
         },
         "smartAssist": {
             "title": "Έξυπνη βοήθεια",
-            "description": "H δυνατότητα Έξυπνης ανίχνευσης της Lenovo συνδυάζει τους διαφόρους αισθητήρες του υπολογιστή σας για να ανιχνεύσει τις δραστηριότητές σας,να προσαρμόσει τις ρυθμίσεις για βέλτιστη διαχείριση ενέργειας και να προστατεύσει το απόρρητό σας.",
+            "description": "H δυνατότητα Έξυπνης ανίχνευσης της Lenovo συνδυάζει τους διαφόρους αισθητήρες του υπολογιστή σας για να ανιχνεύει τις δραστηριότητές σας, να προσαρμόζει τις ρυθμίσεις για βέλτιστη διαχείριση ενέργειας και να προστατεύει το απόρρητό σας.",
             "jumpTo": {
                 "title": "ΜΕΤΑΒΑΣΗ ΣΤΙΣ ΡΥΘΜΙΣΕΙΣ",
                 "security": "Ασφάλεια",
@@ -1024,16 +1083,16 @@
                     "tooltip": "Κάντε κλικ εδώ για να επαναφέρετε τις ρυθμίσεις ανίχνευσης ανθρώπινης παρουσίας."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Ανίχνευση παρουσίας χρήστη",
+                    "tooltip": "Κάντε κλικ εδώ για να επαναφέρετε τις ρυθμίσεις ανίχνευσης ανθρώπινης παρουσίας."
                 },
                 "zeroTouchLogin": {
                     "title": "Είσοδος χωρίς αφή",
-                    "caption": "Η δυνατότητα αυτή ξεκλειδώνει τον υπολογιστή ή τον επαναφέρει σε λειτουργία αυτόματα όταν καθίσετε μπροστά του ή τον πλησιάσετε."
+                    "caption": "Η δυνατότητα αυτή ξεκλειδώνει τον υπολογιστή ή τον επαναφέρει σε λειτουργία αυτόματα, όταν καθίσετε μπροστά του ή πλησιάσετε σε αυτόν."
                 },
                 "zeroTouchLock": {
                     "title": "Κλείδωμα χωρίς αφή",
-                    "caption": "Αυτή η δυνατότητα μειώνει τη φωτεινότητα της οθόνης και κλειδώνει τον υπολογιστή όταν δεν εντοπίζεται η παρουσία του χρήστη.Μπορεί να μειώσει τις πιθανότητες μη εξουσιοδοτημένης πρόσβασης στον υπολογιστή όταν αφήνετε τον υπολογιστή αφύλακτο και ξεκλείδωτο. Μειώνει, επίσης, την κατανάλωση ρεύματος θέτοντας το σύστημα σε κατάσταση Σύγχρονης αναμονής όταν δεν ανιχνεύεται η παρουσία σας.",
+                    "caption": "Αυτή η δυνατότητα μειώνει τη φωτεινότητα της οθόνης και κλειδώνει τον υπολογιστή όταν δεν εντοπίζεται η παρουσία του χρήστη. Μπορεί να μειώσει, επίσης, τις πιθανότητες μη εξουσιοδοτημένης πρόσβασης στον υπολογιστή, όταν αφήνετε τον υπολογιστή αφύλακτο και ξεκλείδωτο. Μειώνει, επίσης, την κατανάλωση ρεύματος θέτοντας το σύστημα σε κατάσταση σύγχρονης αναμονής όταν δεν ανιχνεύεται η παρουσία σας.",
                     "autoScreenLockTimer": {
                         "title": "ΧΡΟΝΟΔΙΑΚΟΠΤΗΣ ΑΥΤΟΜΑΤΟΥ ΚΛΕΙΔΩΜΑΤΟΣ ΟΘΟΝΗΣ",
                         "radioButton": {
@@ -1041,46 +1100,46 @@
                             "medium": "Μεσαία",
                             "slow": "Αργή"
                         },
-                        "toolTipContent": "Επιλέξτε την επιθυμητή ρύθμιση για κλείδωμα της οθόνης σας με Υψηλή/Μέτρια/Χαμηλή ταχύτητα όταν δεν εντοπιστεί η παρουσία σας.Ωστόσο, ο χρόνος που θα παρέλθει για να κλειδώσει η οθόνη επηρεάζεται επίσης από τον πραγματικό χρήστη, τις δυνατότητες των αισθητήρων και τις ρυθμίσεις λήξης χρόνου οθόνης των Windows. Επομένως, προτείνουμε να κλειδώνετε σε κάθε περίπτωση και αμέσως το σύστημά σας πριν φύγετε απ' αυτό."
+                        "toolTipContent": "Επιλέξτε την επιθυμητή ρύθμιση για κλείδωμα της οθόνης σας με Υψηλή/Μέτρια/Χαμηλή ταχύτητα όταν δεν εντοπιστεί η παρουσία σας. Ωστόσο, ο χρόνος που θα παρέλθει για να κλειδώσει η οθόνη επηρεάζεται επίσης από τον πραγματικό χρήστη, τις δυνατότητες των αισθητήρων και τις ρυθμίσεις λήξης χρόνου οθόνης των Windows. Επομένως, προτείνουμε να κλειδώνετε σε κάθε περίπτωση και αμέσως το σύστημά σας πριν φύγετε απ' αυτό."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Η αυτόματη ρύθμιση απόστασης θα ενημερώσει αυτόματατην απόσταση ανίχνευσης μέσω μιας μηχανής AI.",
+                    "title": "ΠΡΟΣΑΡΜΟΓΗ ΤΗΣ ΕΥΑΙΣΘΗΣΙΑΣ ΑΠΟΣΤΑΣΗΣ",
+                    "caption": "Η αυτόματη προσαρμογή της απόστασης θα ενημερώνει αυτόματα την απόσταση ανίχνευσης μέσω μιας μηχανής AI.",
                     "options": {
                         "near": "Κοντά",
                         "far": "Μακριά"
                     }
                 },
                 "note": {
-                    "description1": "Αυτή η δυνατότητα βασίζεται στο Windows Hello.Βεβαιωθείτε ότι η αναγνώριση προσώπου είναι ενεργοποιημένη στις ρυθμίσεις των Windows.",
-                    "description2": "Η δυνατότητα χρησιμοποιεί αισθητήρες και κάμερα για να ανιχνεύει την παρουσία σας.Ωστόσο, ΔΕΝ συλλέγει, αποθηκεύει ή διαρρέει προσωπικά δεδομένα ή εικόνες.",
-                    "description3": "1. Εάν ο υπολογιστής σας βρίσκεται σε λειτουργία Σκηνής, Tablet ή Ανάκλησης,αυτές οι δυνατότητες ενδέχεται να μη λειτουργούν σωστά.",
-                    "description4": "2. Εάν ο υπολογιστής σας είναι σε κατάσταση αδρανοποίησης ή έχει απενεργοποιηθεί.Η αυτόματη είσοδος με κάμερα IR δεν θα λειτουργήσει.",
-                    "description5": "3. Ρυθμίστε την οθόνη του υπολογιστή σας σε κατάλληλη γωνίαώστε η κάμερα IR να μπορεί να αναγνωρίσει το πρόσωπό σας για αυτόματη είσοδο."
+                    "description1": "Αυτή η δυνατότητα βασίζεται στο Windows Hello. Βεβαιωθείτε ότι η αναγνώριση προσώπου είναι ενεργοποιημένη στις ρυθμίσεις των Windows.",
+                    "description2": "Η δυνατότητα χρησιμοποιεί αισθητήρες και κάμερα για να ανιχνεύει την παρουσία σας. Ωστόσο, ΔΕΝ συλλέγει, αποθηκεύει ή διαρρέει προσωπικά δεδομένα ή εικόνες.",
+                    "description3": "1. Εάν ο υπολογιστής σας είναι σε λειτουργία σκηνής, tablet ή ανάκλισης, οι δυνατότητες αυτές ενδέχεται να μη λειτουργούν σωστά.",
+                    "description4": "2. Εάν ο υπολογιστής σας είναι σε κατάσταση αδρανοποίησης ή έχει απενεργοποιηθεί. Η αυτόματη είσοδος με κάμερα IR δεν θα λειτουργήσει.",
+                    "description5": "3. Ρυθμίστε την οθόνη του υπολογιστή σας σε κατάλληλη γωνία ώστε η κάμερα IR να μπορεί να αναγνωρίσει το πρόσωπό σας για αυτόματη είσοδο."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Μετάβαση στις Ρυθμίσεις του Windows Hello",
                     "screenTimeoutSettings": "Μετάβαση στις ρυθμίσεις λήξης χρονικού ορίου οθόνης"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "ΕΠΑΝΑΦΟΡΑ ΣΤΙΣ ΠΡΟΕΠΙΛΕΓΜΕΝΕΣ ΡΥΘΜΙΣΕΙΣ"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Έξυπνη οθόνη",
+                "description": "H Έξυπνη ανίχνευση Lenovo συνδυάζει τους διάφορους αισθητήρες του υπολογιστή σας, για να ανιχνεύσει τις δραστηριότητές σας και να προσαρμόσει τις ρυθμίσεις για διαχείριση της ενέργειας. Για παράδειγμα, θα μειώσει τη φωτεινότητα της οθόνης αν ανιχνεύσει ότι απομακρύνεστε, αλλά δεν θα τη μειώσει αν ανιχνεύσει ότι διαβάζετε.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Αυτόματη απενεργοποίηση οθόνης",
+                    "caption": "Αυτόματη απενεργοποίηση της οθόνης όταν στρέφω το πρόσωπό μου προς τα κάτω ή περπατάω.",
+                    "note": "Αυτή η δυνατότητα δεν διατίθεται, αν οι ρυθμίσεις σχεδίου παροχής ενέργειας έχουν οριστεί στην επιλογή \"να μην απενεργοποιείται ποτέ η οθόνη όταν λειτουργεί με μπαταρία\" στην ενότητα \"Σύστημα\" των Ρυθμίσεων των Windows. Επιλέξτε μια τιμή εκτός της τιμής \"Ποτέ\", για να ενεργοποιήσετε αυτήν τη δυνατότητα.",
+                    "windowsLink": "Μεταβείτε στις Ρυθμίσεις λειτουργίας και αναστολής στις ρυθμίσεις των Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Διατήρηση της οθόνης μου",
+                    "caption": "Διατήρηση της οθόνης ενεργοποιημένης κατά την ανάγνωση ή την περιήγηση.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Λεπτά που απομένουν μέχρι το σβήσιμο της οθόνης κατά την περιήγηση",
+                        "startTime": "0 λεπτά",
+                        "endTime": "60 λεπτά"
                     }
                 }
             },
@@ -1115,10 +1174,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Έξυπνα μέσα",
+                "title": "Αναπαραγωγή βίντεο μηδενικής αφής",
+                "desc": "Αυτή η δυνατότητα διακόπτει την αναπαραγωγή του βίντεο μόλις απομακρυνθείτε από τον υπολογιστή και συνεχίζει την αναπαραγωγή του βίντεο μόλις επιστρέψετε.",
+                "tooltip": "Αυτή η δυνατότητα δεν ισχύει για προγράμματα αναπαραγωγής βίντεο Web. Αυτή η δυνατότητα υποστηρίζεται από τα πλέον δημοφιλή τοπικά προγράμματα αναπαραγωγής βίντεο, π.χ. Windows Media Player, 5KPlayer κ.λπ."
             },
             "voice": {
                 "title": "Voice",
@@ -1145,6 +1204,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1161,7 +1225,7 @@
         "ignoredUpdates": "Ενημερώσεις που έχουν παραβλεφθεί",
         "successInstall": "Επιτυχής εγκατάσταση στις",
         "failedInstall": "Αποτυχία εγκατάστασης στις",
-        "at": "στις",
+        "at": "ώρα",
         "readMore": "Διαβάστε περισσότερα",
         "popup": {
             "reboot": "Επανεκκίνηση",
@@ -1300,6 +1364,7 @@
             "overviewBlockTitle": "Επισκόπηση ασφάλειας του περιβάλλοντός σας",
             "allDevices": "Όλες οι συσκευές",
             "myDevice": "Η συσκευή μου",
+            "thisComputer": "This computer",
             "secure": "ΑΣΦΑΛΗΣ",
             "needAttention": "ΑΠΑΙΤΕΙΤΑΙ ΠΡΟΣΟΧΗ",
             "manageAccount": "Διαχείριση λογαριασμού",

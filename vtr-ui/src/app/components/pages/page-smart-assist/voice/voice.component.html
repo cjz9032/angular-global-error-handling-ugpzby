@@ -4,8 +4,12 @@
 			<div class="col-12">
 				<div class="d-flex justify-content-between">
 					<p class="context">{{'device.smartAssist.voice.description' | translate}}</p>
-					<button type="button"
-						class="btn btn-primary btn-block install-btn">{{'device.smartAssist.voice.installBtnText' | translate | uppercase }}</button>
+					<button *ngIf="!showLoader" type="button"
+						class="btn btn-primary btn-block install-btn"
+						(click)="btnClicked()">
+						{{ btnText | uppercase }}
+					</button>
+					<vtr-spinner *ngIf="showLoader" class="blue-theme"></vtr-spinner>
 						<!-- <button type="button"
 						class="btn btn-primary btn-block install-btn">{{'device.smartAssist.voice.launchBtnText' | translate | uppercase }}</button> -->
 				</div>

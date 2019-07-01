@@ -39,7 +39,9 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -289,18 +291,68 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "Informačná tabuľa",
             "device": {
-                "title": "Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "Zariadenie",
+                "sub1": "Moje zariadenie",
+                "sub2": "Nastavenia môjho zariadenia",
                 "sub3": "System Updates",
-                "sub4": "‏\"Inteligentný asistent\""
+                "sub4": "Inteligentný asistent"
             },
             "security": {
                 "title": "Zabezpečenie",
@@ -311,9 +363,9 @@
                 "sub5": "Internetová ochrana",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "Technická podpora",
+            "homeSecurity": "Prepojená domácnosť",
+            "privacy": "Ochrana osobných údajov"
         },
         "securityAdvisor": {
             "title": "Poradca zabezpečením",
@@ -632,7 +684,13 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -864,7 +922,7 @@
             "displayCamera": {
                 "title": "Obrazovka a kamera",
                 "subtitle": "Nastavenia obrazovky a kamery",
-                "description": "V tejto časti môžete zlepšiť vizuálny zážitok a konfigurovať vlastnosti kamery.Objavte tu ďalšie funkcie a prispôsobte si zobrazenie.",
+                "description": "V tejto časti môžete zlepšiť vizuálny zážitok a konfigurovať vlastnosti kamery. Objavte tu ďalšie funkcie a prispôsobte si zobrazenie.",
                 "jumpTo": {
                     "title": "PREJSŤ NA NASTAVENIA",
                     "shortcuts": {
@@ -872,7 +930,7 @@
                             "title": "Obrazovka"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Kamera"
                         }
                     }
                 },
@@ -894,45 +952,45 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Teplota farieb obrazovky",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Teplé farby (lepšie pre oči)",
+                            "cold": "Studené farby"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Vynulovať teplotu farieb",
+                        "tooltip": "Režim na ochranu zraku automaticky upravuje teplotu farieb obrazovky odfiltrovaním spektra modrého svetla na zníženie únavy zraku.",
+                        "onSunsetToSunriseScheduleDescription": "Naplánovať režim na ochranu zraku medzi západom a východom slnka",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Poznámka",
+                            "description": "Aplikácia Lenovo Vantage potrebuje prístup k lokálnym informáciám na výpočet času západu a východu slnka vo vašej oblasti."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Režim inkognito",
+                        "description": "Táto funkcia zabraňuje ostatným používateľom nahliadnuť na obrazovku. Keď je zapnutá, zmení zobrazovací uhol obrazovky, aby jej obsah ľudia naokolo nevideli. Režimy môžete prepínať aj stlačením klávesov „Fn+D“.",
+                        "note": "Režim inkognito nefunguje v režime zobrazenia na výšku. V tomto režime je obrazovka stále viditeľná zo strán.",
+                        "labelText": "Túto funkciu zapnite pri zadávaní hesiel."
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Nastavenie napájania obrazovky OLED",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Obrazovka OLED počítača tiež môže znížiť spotrebu energie a predĺžiť výdrž batérie selektívnym stmavovaním častí obrazovky.",
+                            "Tiež sa odporúča stmaviť panel úloh a ďalšie časti obrazovky, ktoré sa často nemenia, aby sa predĺžila celková životnosť obrazovky."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Vynulovať teplotu farieb",
+                        "tooltip": "Táto funkcia môže znížiť spotrebu energie a predĺžiť výdrž batérie selektívnym stmavovaním častí obrazovky."
                     }
                 },
                 "camera": {
                     "title": "Kamera",
                     "note": {
                         "title": "Poznámka",
-                        "description": "Aplikácia Lenovo Vantage nemá povolenia na prístup ku kamere.Zapnite pre aplikáciu Lenovo Vantage prístup ku kamere."
+                        "description": "Aplikácia Lenovo Vantage nemá povolenia na prístup ku kamere. Zapnite pre aplikáciu Lenovo Vantage prístup ku kamere."
                     },
                     "url": "Prejsť na nastavenia ochrany osobných údajov systému Windows",
                     "cameraPrivacy": {
                         "title": "Režim súkromia kamery",
-                        "tooltip": "Keď je zapnuté nastavenie súkromia, kamera neodosiela obraz naživo. Toto nastavenie zapnite, len ak nechcete, aby počas videohovorov ostatní videli váš obraz."
+                        "tooltip": "Keď je zapnuté nastavenie Súkromné, kamera neodosiela obraz naživo. Toto nastavenie zapnite, len ak nechcete, aby počas videohovorov ostatní videli váš obraz."
                     },
                     "camera": {
                         "title": "Kamera",
@@ -946,10 +1004,10 @@
                     "notAvailable": "Kamera nie je k dispozícii",
                     "camerablur": {
                         "title": "Rozostrenie pozadia fotoaparátom",
-                        "caption": "Táto funkcia rozostrí pozadie pri použití kamery na videohovor alebo fotografovanie.Môžete si vybrať z rôznych efektov uvedených nižšie.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Táto funkcia rozostrí pozadie pri použití kamery na videohovor alebo fotografovanie. Môžete si vybrať z rôznych efektov uvedených nižšie.",
+                        "blurMode": "Režim rozostrenia",
+                        "comicMode": "Režim komiksu",
+                        "sketchMode": "Režim náčrtu"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1001,13 +1059,14 @@
                     "dropDown": {
                         "title": "Action User Defined key",
                         "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
-                    }
+                    },
+                    "tooltip": "Content to be filled"
                 }
             }
         },
         "smartAssist": {
             "title": "Inteligentný asistent",
-            "description": "Funkcia inteligentného snímania Lenovo prostredníctvom kombinácie rôznych senzorov v počítači zisťuje vaše aktivity,upravuje nastavenia týkajúce sa optimálnej správy napájania a chráni vaše súkromie.",
+            "description": "Funkcia inteligentného snímania Lenovo prostredníctvom kombinácie rôznych senzorov v počítači zisťuje vaše aktivity, upravuje nastavenia týkajúce sa optimálnej správy napájania a chráni vaše súkromie.",
             "jumpTo": {
                 "title": "PREJSŤ NA NASTAVENIA",
                 "security": "Zabezpečenie",
@@ -1024,16 +1083,16 @@
                     "tooltip": "Kliknite sem na obnovenie predvolených nastavení zisťovania prítomnosti človeka."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Snímanie prítomnosti používateľa",
+                    "tooltip": "Kliknite sem na obnovenie predvolených nastavení zisťovania prítomnosti človeka."
                 },
                 "zeroTouchLogin": {
                     "title": "Bezdotykové prihlásenie",
-                    "caption": "Táto funkcia odomkne alebo prebudí počítač automaticky,keď ste pred ním alebo sa k nemu priblížite."
+                    "caption": "Táto funkcia odomkne alebo prebudí počítač automaticky, keď ste pred ním alebo sa k nemu priblížite."
                 },
                 "zeroTouchLock": {
                     "title": "Bezdotykové uzamknutie",
-                    "caption": "Táto funkcia stlmí displej a zamkne počítač, keď sa nezistí prítomnosť používateľa.Tým môže znížiť riziko neoprávneného prístupu k počítaču, keď zostane bez dozoru a odomknutý. Navyše tak znižuje spotrebu energie prepnutím systému do moderného pohotovostného režimu, keď sa nezistí vaša prítomnosť.",
+                    "caption": "Táto funkcia stlmí displej a zamkne počítač, keď sa nezistí prítomnosť používateľa. Tým môže znížiť riziko neoprávneného prístupu k počítaču, keď počítač zostane bez dozoru a odomknutý. Navyše tak znižuje spotrebu energie prepnutím systému do moderného pohotovostného režimu, keď sa nezistí vaša prítomnosť.",
                     "autoScreenLockTimer": {
                         "title": "ČASOVAČ AUTOMATICKÉHO UZAMKNUTIA OBRAZOVKY",
                         "radioButton": {
@@ -1041,46 +1100,46 @@
                             "medium": "Stredné",
                             "slow": "Pomalé"
                         },
-                        "toolTipContent": "Vyberte požadovanú možnosť rýchleho, stredne rýchleho alebo pomalého uzamknutia obrazovky, keď sa nezistí vaša prítomnosť.Čas uzamknutia obrazovky však bude ovplyvnený aj aktuálnym používaním, možnosťami senzora a nastaveniami časového limitu obrazovky systému Windows. Preto dôrazne odporúčame, aby ste systém uzamkli bezprostredne pred odchodom."
+                        "toolTipContent": "Vyberte požadovanú možnosť rýchleho, stredne rýchleho alebo pomalého uzamknutia obrazovky, keď sa nezistí vaša prítomnosť. Čas uzamknutia obrazovky však bude ovplyvnený aj aktuálnym používaním, možnosťami senzora a nastaveniami časového limitu obrazovky systému Windows. Preto dôrazne odporúčame, aby ste systém uzamkli bezprostredne pred odchodom."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Automatické nastavenie vzdialenosti automaticky aktualizujevzdialenosť detekcie pomocou nástroja využívajúceho umelú inteligenciu.",
+                    "title": "NASTAVENIE CITLIVOSTI ZISŤOVANIA VZDIALENOSTI",
+                    "caption": "Automatické nastavenie vzdialenosti automaticky aktualizuje vzdialenosť detekcie pomocou nástroja využívajúceho umelú inteligenciu.",
                     "options": {
                         "near": "Blízko",
                         "far": "Ďaleko"
                     }
                 },
                 "note": {
-                    "description1": "Táto funkcia využíva službu Windows Hello.Uistite sa, že v nastaveniach systému Windows je zapnuté rozpoznávanie tváre.",
-                    "description2": "Táto funkcia využíva senzory a kameru na zistenie vašej prítomnosti.Funkcia však nezhromažďuje, neukladá ani neposkytuje žiadne osobné údaje ani snímky.",
-                    "description3": "1. Ak je počítač v režime stan, tablet alebo stojan,tieto funkcie nemusia fungovať správne.",
-                    "description4": "2. Ak je počítač v režime dlhodobého spánku alebo je vypnutý,automatické prihlásenie sa prostredníctvom infračervenej kamery nefunguje.",
-                    "description5": "3. Nastavte obrazovku počítača do vhodného uhla,aby infračervená kamera dokázala rozpoznať vašu tvár pri automatickom prihlásení."
+                    "description1": "Táto funkcia využíva službu Windows Hello. Uistite sa, že v nastaveniach systému Windows je zapnuté rozpoznávanie tváre.",
+                    "description2": "Táto funkcia využíva senzory a kameru na zistenie vašej prítomnosti. Funkcia však nezhromažďuje, neukladá ani neposkytuje žiadne osobné údaje ani snímky.",
+                    "description3": "1. Ak je počítač v režime Stan, Tablet alebo Podstavec, tieto funkcie nemusia správne fungovať.",
+                    "description4": "2. Ak je počítač v režime dlhodobého spánku alebo je vypnutý, Automatické prihlásenie sa prostredníctvom infračervenej kamery nefunguje.",
+                    "description5": "3. Nastavte obrazovku počítača do vhodného uhla, aby infračervená kamera dokázala rozpoznať vašu tvár pri automatickom prihlásení."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Prejsť na nastavenia služby Windows Hello",
-                    "screenTimeoutSettings": "Prejsť na nastavenia časovača obrazovky"
+                    "screenTimeoutSettings": "Prejdite na nastavenia časovača obrazovky"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "OBNOVIŤ PREDVOLENÉ NASTAVENIA"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Inteligentná obrazovka",
+                "description": "Funkcia inteligentného snímania Lenovo prostredníctvom kombinácie rôznych senzorov v počítači zisťuje vaše aktivity a upravuje nastavenia týkajúce sa správy napájania. Obrazovka napríklad stmavne počas chôdze, ale nestmavne, ak čítate.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Automatické vypnutie obrazovky",
+                    "caption": "Automaticky vypne obrazovku, ak je zariadenie otočené prednou stranou smerom nadol alebo pri chôdzi.",
+                    "note": "Táto funkcia nie je k dispozícii, ak je v časti Systém nastavení systému Windows nastavený plán napájania „nikdy nevypínať obrazovku pri napájaní z batérie“. Ak chcete túto funkciu zapnúť, vyberte inú hodnotu ako „Nikdy“.",
+                    "windowsLink": "Prejdite na nastavenia napájania a spánku v nastaveniach systému Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Nechať obrazovku zapnutú",
+                    "caption": "Nechať obrazovku zapnutú počas čítania alebo prehľadávania.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Počet minút pred stmavnutím obrazovky počas prehľadávania",
+                        "startTime": "0 minúty",
+                        "endTime": "60 minúty"
                     }
                 }
             },
@@ -1115,10 +1174,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Inteligentné médiá",
+                "title": "Bezdotykové prehrávanie videa",
+                "desc": "Táto funkcia pozastaví prehrávanie videa, keď odídete od počítača a obnoví prehrávanie videa, keď sa vrátite.",
+                "tooltip": "Táto funkcia sa nevzťahuje na webové video prehrávače. Obľúbené lokálne prehrávače videa (prehrávač Windows Media Player, 5KPlayer a pod.) túto funkciu podporujú."
             },
             "voice": {
                 "title": "Voice",
@@ -1145,6 +1204,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1300,6 +1364,7 @@
             "overviewBlockTitle": "Zabezpečenie vášho ekosystému: prehľad",
             "allDevices": "Všetky zariadenia",
             "myDevice": "Moje zariadenie",
+            "thisComputer": "This computer",
             "secure": "ZABEZPEČENÉ",
             "needAttention": "VYŽADUJE POZORNOSŤ",
             "manageAccount": "Spravovať konto",

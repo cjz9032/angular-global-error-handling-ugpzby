@@ -39,7 +39,9 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -289,18 +291,68 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "Koontinäkymä",
             "device": {
-                "title": "Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "Laite",
+                "sub1": "Oma laite",
+                "sub2": "Omat laiteasetukset",
                 "sub3": "System Updates",
-                "sub4": "‏\"Älykäs apu\""
+                "sub4": "Älykäs apu"
             },
             "security": {
                 "title": "Suojaus",
@@ -311,9 +363,9 @@
                 "sub5": "Internet-suojaus",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
+            "support": "Tuki",
             "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "privacy": "Yksityisyys"
         },
         "securityAdvisor": {
             "title": "Security Advisor",
@@ -632,7 +684,13 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -864,7 +922,7 @@
             "displayCamera": {
                 "title": "Näyttö ja kamera",
                 "subtitle": "Näytön ja kameran asetukset",
-                "description": "Tämän osan avulla voit parantaa visuaalista käyttökokemusta ja määrittää kameran ominaisuuksien asetukset.Tutustu muihin toimintoihin ja mukauta näytön käyttökokemusta täältä.",
+                "description": "Tämän osan avulla voit parantaa visuaalista käyttökokemusta ja määrittää kameran ominaisuuksien asetukset. Tutustu muihin toimintoihin ja mukauta näytön käyttökokemusta täältä.",
                 "jumpTo": {
                     "title": "SIIRRY ASETUKSIIN",
                     "shortcuts": {
@@ -872,7 +930,7 @@
                             "title": "Näyttö"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Kamera"
                         }
                     }
                 },
@@ -894,40 +952,40 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Näytön värilämpötila",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Lämmin (parempi silmille)",
+                            "cold": "Kylmä"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Lämpötilan uudelleenasetus",
+                        "tooltip": "Silmien hoitotila suodattaa sinistä valoa ja vähentää rasitusta silmille säätämällä näytön värilämpötilaa.",
+                        "onSunsetToSunriseScheduleDescription": "Ajoita silmien hoitotila auringonlaskusta auringonnousuun",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Huomautus",
+                            "description": "Lenovo Vantage -ohjelman on käytettävä sijaintitietojasi oman alueesi auringon lasku- ja nousuajan laskemiseen."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Privacy Guard",
+                        "description": "Tämä ominaisuus estää muita henkilöitä näkemästä näyttösi sisältöä. Kun se on käytössä, se muuttaa näytön katselukulmaa ja estää ympärillä olijoita näkemästä näytön sisältöä. Voit myös vaihtaa tilaa painamalla \"Fn+D\"-näppäimiä.",
+                        "note": "Privacy Guard ei toimi, kun näyttö on pystyasennossa. Tässä tilassa näytön voi edelleen nähdä sivuilta.",
+                        "labelText": "Ota tämä ominaisuus käyttöön salasanoja kirjoitettaessa"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "OLED-näytön virta-asetukset",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Tietokoneen OLED-näyttö voi myös pienentää virrankulutusta ja lisätä akun käyttöikää himmentämällä valikoivasti näytön osia.",
+                            "Myös tehtäväpalkin ja näytön muiden harvoin muuttuvien osien himmentämistä suositellaan näytön yleisen käyttöiän pidentämiseksi."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Lämpötilan uudelleenasetus",
+                        "tooltip": "Ominaisuus voi pienentää virrankulutusta ja lisätä akun käyttöikää himmentämällä näytön osia valikoivasti."
                     }
                 },
                 "camera": {
                     "title": "Kamera",
                     "note": {
                         "title": "Huomautus",
-                        "description": "Lenovo Vantage -sovelluksella ei ole kameran käyttöoikeuksia.Ota kameran käyttöoikeudet käyttöön Lenovo Vantage -sovellukselle."
+                        "description": "Lenovo Vantage -sovelluksella ei ole kameran käyttöoikeuksia. Ota kameran käyttöoikeudet käyttöön Lenovo Vantage -sovellukselle."
                     },
                     "url": "Siirry Windowsin yksityisyysasetuksiin",
                     "cameraPrivacy": {
@@ -946,10 +1004,10 @@
                     "notAvailable": "Kamera ei ole käytettävissä",
                     "camerablur": {
                         "title": "Kameran taustan sumennus",
-                        "caption": "Tämä ominaisuus sumentaa taustan, kun käytät kameraa videopuheluihin tai valokuvaamiseen.Voit valita eri tehosteen alla olevasta valikoimasta.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Tämä ominaisuus sumentaa taustan, kun käytät kameraa videopuheluihin tai valokuvaamiseen. Voit valita eri tehosteen alla olevasta valikoimasta.",
+                        "blurMode": "Sumennustila",
+                        "comicMode": "Sarjakuvatila",
+                        "sketchMode": "Luonnostila"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1001,13 +1059,14 @@
                     "dropDown": {
                         "title": "Action User Defined key",
                         "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
-                    }
+                    },
+                    "tooltip": "Content to be filled"
                 }
             }
         },
         "smartAssist": {
             "title": "Älykäs apu",
-            "description": "Lenovon älykäs tunnistustoiminto yhdistää tietokoneen tunnistimia toimintojen tunnistamista ja optimaalisen virranhallinnan asetusten muokkaamista varten, sekä yksityissuojasi parantamiseksi.",
+            "description": "Lenovon älykäs tunnistustoiminto yhdistää tietokoneen tunnistimia toimintojen tunnistamista, virranhallinnan asetusten muuttamista ja käyttäjän yksityisyyden suojaamista varten.",
             "jumpTo": {
                 "title": "SIIRRY ASETUKSIIN",
                 "security": "Suojaus",
@@ -1024,8 +1083,8 @@
                     "tooltip": "Napsauta tätä, jos haluat palauttaa ihmisten läsnäolon tunnistusasetukset."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Käyttäjän läsnäolon tunnistus",
+                    "tooltip": "Napsauta tätä, jos haluat palauttaa ihmisten läsnäolon tunnistusasetukset."
                 },
                 "zeroTouchLogin": {
                     "title": "Zero Touch -kirjautuminen",
@@ -1033,7 +1092,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Zero Touch -lukitus",
-                    "caption": "Tämä toiminto himmentää näytön ja lukitsee tietokoneen, kun käyttäjää ei havaita.Se voi myös pienentää tietokoneen luvattoman käytön mahdollisuuksia, kun käyttäjä jättää tietokoneen valvomatta tai lukitsematta. Se pienentää myös virrankulutusta asettamalla järjestelmän nykyaikaiseen valmiustilaan, kun käyttäjää ei havaita.",
+                    "caption": "Tämä toiminto himmentää näytön ja lukitsee tietokoneen, kun käyttäjää ei havaita. Se voi myös pienentää tietokoneen luvattoman käytön mahdollisuuksia, kun käyttäjä jättää tietokoneen valvomatta tai lukitsematta. Se pienentää myös virrankulutusta asettamalla järjestelmän nykyaikaiseen valmiustilaan, kun käyttäjää ei havaita.",
                     "autoScreenLockTimer": {
                         "title": "AUTOMAATTISEN NÄYTÖN LUKITUKSEN AJASTIN",
                         "radioButton": {
@@ -1041,11 +1100,11 @@
                             "medium": "Keskikokoinen",
                             "slow": "Hidas"
                         },
-                        "toolTipContent": "Valitse haluamasi vaihtoehto, jos haluat lukita näytön nopeasti, keskinopeasti tai hitaasti, kun läsnäoloasi ei havaita.Aikaan, jolloin näyttö on lukittuna, vaikuttaa myös todellinen käyttäjäskenaario, tunnistimen toimintakyky ja Windowsin näytön aikakatkaisuasetukset. Suosittelemme näin ollen, että lukitset järjestelmän ennen, kuin lähdet tietokoneen luota."
+                        "toolTipContent": "Valitse haluamasi vaihtoehto, jos haluat lukita näytön nopeasti, keskinopeasti tai hitaasti, kun läsnäoloasi ei havaita. Aikaan, jolloin näyttö on lukittuna, vaikuttaa myös todellinen käyttäjäskenaario, tunnistimen toimintakyky ja Windowsin näytön aikakatkaisuasetukset. Suosittelemme näin ollen, että lukitset järjestelmän ennen, kuin lähdet tietokoneen luota."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
+                    "title": "ETÄISYYDENTUNNISTUKSEN MUUTTAMINEN",
                     "caption": "Etäisyyden automaattinen muutto päivittää tunnistusetäisyyden automaattisesti tekoälymoduulin avulla.",
                     "options": {
                         "near": "Lähellä",
@@ -1053,34 +1112,34 @@
                     }
                 },
                 "note": {
-                    "description1": "Tämä ominaisuus hyödyntää Windows Hellota.Varmista, että kasvojentunnistus on käytössä Windowsin asetuksissa.",
-                    "description2": "Tämä ominaisuus käyttää tunnistimia ja kameraa läsnäolon havaitsemiseksi.Toiminto EI kuitenkaan kerää, tallenna tai paljasta mitään henkilökohtaisia tietoja tai kuvia.",
-                    "description3": "1. Jos tietokone on kolmio-, taitos- tai tauluasennossa,nämä ominaisuudet eivät ehkä toimi oikein.",
-                    "description4": "2. Jos tietokone on horrostilassa tai siitä on katkaistu virta.Automaattinen infrapunakameran sisäänkirjaus ei toimi.",
-                    "description5": "3. Muuta tietokoneen näytön kulmaaniin, että infrapunakamera voi tunnistaa kasvosi automaattista sisäänkirjautumista varten."
+                    "description1": "Tämä ominaisuus hyödyntää Windows Hellota. Varmista, että kasvojentunnistus on otettu käyttöön Windowsin asetuksista.",
+                    "description2": "Tämä ominaisuus käyttää tunnistimia ja kameraa läsnäolon havaitsemiseksi. Toiminto EI kuitenkaan kerää henkilötietoja.",
+                    "description3": "1. Jos tietokone on kolmio-, taitos- tai tauluasennossa, nämä ominaisuudet eivät ehkä toimi oikein.",
+                    "description4": "2. Jos tietokone on horrostilassa tai siitä on katkaistu virta. Automaattinen infrapunakameran sisäänkirjaus ei toimi.",
+                    "description5": "3. Muuta tietokoneen näytön kulmaa niin, että infrapunakamera voi tunnistaa kasvosi automaattista sisäänkirjautumista varten."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Siirry Windows Hello -asetuksiin",
                     "screenTimeoutSettings": "Siirry näytön aikakatkaisun asetuksiin"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "PALAUTA TEHDASASETUKSET"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Älykäs näyttö",
+                "description": "Lenovo älykäs tunnistustoiminto yhdistää tietokoneen useita tunnistimia toimintojen tunnistamista ja virranhallinnan asetusten muuttamista varten. Toiminto esimerkiksi himmentää näytön, jos se havaitsee sinun kävelevän, tai jättää näytön himmentämättä, jos se havaitsee sinun lukevan.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Automaattinen näyttö ei käytössä",
+                    "caption": "Katkaise näytön virta automaattisesti, kun en katso näyttöä tai kävelen.",
+                    "note": "Tämä ominaisuus ei ole käytettävissä, jos Windows-asetusten Järjestelmä-osiossa on määritetty virrankäyttösuunnitelman asetukseksi \"älä koskaan sammuta näyttöä käytettäessä akkuvirtaa\". Ota tämä ominaisuus käyttöön valitsemalla jokin muu arvo kuin \"Ei koskaan\".",
+                    "windowsLink": "Siirry Virta- ja lepotila-asetukset -kohtaan Windows-asetuksissa"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Pidä näyttö",
+                    "caption": "Pidä näyttö, kun luen tai selaan Internetiä.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Minuutit, jonka jälkeen näyttö himmenee Internetiä selattaessa",
+                        "startTime": "0 minuuttia",
+                        "endTime": "60 minuuttia"
                     }
                 }
             },
@@ -1115,10 +1174,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Älykäs tietoväline",
+                "title": "Zero Touch -videon toisto",
+                "desc": "Tämä ominaisuus keskeyttää videon toiston, kun poistut tietokoneelta, ja jatkaa toistoa, kun palaat takaisin.",
+                "tooltip": "Tämä ominaisuus ei ole käytettävissä verkkovideosoittimissa. Suositut paikalliset videosoittimet (kuten Windows Media Player ja 5KPlayer) tukevat tätä ominaisuutta."
             },
             "voice": {
                 "title": "Voice",
@@ -1145,6 +1204,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1159,8 +1223,8 @@
         "recommendedUpdates": "Suositeltavat päivitykset",
         "optionalUpdates": "Valinnaiset päivitykset",
         "ignoredUpdates": "Huomiotta jätetyt päivitykset",
-        "successInstall": "Asennus onnistui kohteeseen",
-        "failedInstall": "Asennus epäonnistui kohteeseen",
+        "successInstall": "Asennus onnistui",
+        "failedInstall": "Asennus epäonnistui",
         "at": "klo",
         "readMore": "Lue lisää",
         "popup": {
@@ -1300,6 +1364,7 @@
             "overviewBlockTitle": "Yleistä ekosysteemin suojauksesta",
             "allDevices": "Kaikki laitteet",
             "myDevice": "Oma laite",
+            "thisComputer": "This computer",
             "secure": "TURVALLINEN",
             "needAttention": "TOIMENPITEITÄ TARVITAAN",
             "manageAccount": "Hallitse tiliä",

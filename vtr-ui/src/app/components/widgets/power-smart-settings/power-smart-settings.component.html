@@ -36,7 +36,7 @@
                         [radioId]="'radio2'"
                         [group]="'radio'"
                         [label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool' + showIC | translate"
-                        [value]="'LE-IntelligentCooling2x'"
+                        [value]="showIC==14 ? 'LE-IntelligentCooling2x' : 'LE-CoolingDown2x' "
                         [checked]="radioQuietCool"
                         (change)="changeQuietCool($event)">
                       </vtr-ui-circle-radio-with-checkbox>

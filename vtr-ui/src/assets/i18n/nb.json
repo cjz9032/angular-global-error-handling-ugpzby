@@ -39,7 +39,9 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -289,18 +291,68 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "Instrumentbord",
             "device": {
-                "title": "Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "Enhet",
+                "sub1": "Min enhet",
+                "sub2": "Mine enhetsinnstillinger",
                 "sub3": "System Updates",
-                "sub4": "‏\"Smart hjelp\""
+                "sub4": "Smart hjelp"
             },
             "security": {
                 "title": "Sikkerhet",
@@ -311,9 +363,9 @@
                 "sub5": "Internettbeskyttelse",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "Støtte",
+            "homeSecurity": "Tilkoblede hjem",
+            "privacy": "Personvern"
         },
         "securityAdvisor": {
             "title": "Sikkerhetsrådgivning",
@@ -632,7 +684,13 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -864,7 +922,7 @@
             "displayCamera": {
                 "title": "Skjerm og kamera",
                 "subtitle": "Skjerm- og kamerainnstillinger",
-                "description": "I denne delen kan du forbedre din visuelle opplevelse og konfigurere kameraegenskapene.Utforsk flere funksjoner og tilpass visningsopplevelsen her.",
+                "description": "I denne delen kan du forbedre din visuelle opplevelse og konfigurere kameraegenskapene. Utforsk flere funksjoner og tilpass den visuelle opplevelsen her.",
                 "jumpTo": {
                     "title": "GÅ TIL INNSTILLINGER",
                     "shortcuts": {
@@ -872,7 +930,7 @@
                             "title": "Skjerm"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Kamera"
                         }
                     }
                 },
@@ -894,45 +952,45 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "Skjermens fargetemperatur",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Varm (bedre for øynene)",
+                            "cold": "Kaldt"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Tilbakestill temperatur",
+                        "tooltip": "Øyebeskyttelsesmodus justerer automatisk skjermens fargetemperatur for å filtrere ut blått lys og redusere belastningen på øynene.",
+                        "onSunsetToSunriseScheduleDescription": "Planlegg øyebeskyttelsesmodus fra solnedgang til soloppgang",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Merk",
+                            "description": "Lenovo Vantage trenger tilgang til informasjon om plasseringen din for å beregne tidspunkter for solnedgang og soloppgang for regionen din."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Personvernbeskyttelse",
+                        "description": "Denne funksjonen hindrer andre i å titte på skjermen. Når den er på, endrer den skjermens synsvinkel og hindrer innsyn fra andre rundt deg. Du kan også veksle mellom moduser ved å trykke på \"Fn+D\".",
+                        "note": "Personvernbeskyttelse fungerer ikke når skjermen er i stående modus. I denne modusen kan andre få innsyn fra sidene.",
+                        "labelText": "Aktiver denne funksjonen ved å skrive inn passord"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "OLED-strøminnstillinger",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Datamaskinens OLED-skjerm kan også redusere strømforbruket og øke batteriets levetid ved å dimme bestemte deler av skjermen.",
+                            "Det anbefales også at du dimmer oppgavelinjen og andre områder av skjermen som ikke endres ofte, for å forlenge den generelle levetiden til skjermen."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Tilbakestill temperatur",
+                        "tooltip": "Denne funksjonen kan redusere strømforbruket og øke batteriets levetid ved å dimme bestemte deler av skjermen."
                     }
                 },
                 "camera": {
                     "title": "Kamera",
                     "note": {
                         "title": "Merk",
-                        "description": "Lenovo Vantage har ikke tilgang til kameraet.Aktiver tilgangen til kameraet for Lenovo Vantage-appen."
+                        "description": "Lenovo Vantage har ikke tilgang til kameraet. Slå på tilgangen til kameraet for Lenovo Vantage-appen."
                     },
                     "url": "Gå til Windows-personvernsinnstillinger",
                     "cameraPrivacy": {
                         "title": "Personvernmodus for kamera",
-                        "tooltip": "Kameraet slutter å sende direktebilder når Personvern-innstillingen er aktivert. Slå på denne innstillingen bare når du vil dele bildene dine med andre under videosamtaler."
+                        "tooltip": "Kameraet slutter å sende direktebilder når personverninnstillingen er aktivert. Slå på denne innstillingen bare når du vil dele bildene dine med andre under videosamtaler."
                     },
                     "camera": {
                         "title": "Kamera",
@@ -946,10 +1004,10 @@
                     "notAvailable": "Kamera er ikke tilgjengelig",
                     "camerablur": {
                         "title": "Uskarp kamerabakgrunn",
-                        "caption": "Denne funksjonen gjør bakgrunnen uskarp når du bruker kameraet til videosamtaler eller tar bilder.Du kan velge ulike effekter blant alternativene nedenfor.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Denne funksjonen gjør bakgrunnen uskarp når du bruker kameraet til videosamtaler eller tar bilder. Du kan velge en annen effekt blant alternativene under.",
+                        "blurMode": "Uskarp modus",
+                        "comicMode": "Tegneseriemodus",
+                        "sketchMode": "Skissemodus"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1001,13 +1059,14 @@
                     "dropDown": {
                         "title": "Action User Defined key",
                         "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
-                    }
+                    },
+                    "tooltip": "Content to be filled"
                 }
             }
         },
         "smartAssist": {
             "title": "Smart hjelp",
-            "description": "Lenovo Intelligent Sensing kombinerer sensorer på datamaskinen for å oppdage aktivitetene dine,justere innstillingene for optimal strømstyring og beskytte personvernet ditt.",
+            "description": "Lenovo Intelligent Sensing bruker sensorer på datamaskinen til å gjenkjenne hva du gjør, justere innstillingene for optimal strømstyring og beskytte personvernet ditt.",
             "jumpTo": {
                 "title": "GÅ TIL INNSTILLINGER",
                 "security": "Sikkerhet",
@@ -1020,20 +1079,20 @@
                 "title": "Intelligent sikkerhet",
                 "readMore": "Les mer",
                 "HumanPresenceDetection": {
-                    "title": "Oppdaging av mennesker til stede",
-                    "tooltip": "Klikk her for å tilbakestille innstillingene for oppdaging av mennesker til stede."
+                    "title": "Oppdagelse av menneskelig tilstedeværelse",
+                    "tooltip": "Klikk her for å tilbakestille innstillingene for oppdagelse av menneskelig tilstedeværelse."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Oppdagelse av brukerens tilstedeværelse",
+                    "tooltip": "Klikk her for å tilbakestille innstillingene for oppdaging av mennesker til stede."
                 },
                 "zeroTouchLogin": {
                     "title": "Pålogging uten berøring",
                     "caption": "Denne funksjonen låser opp eller aktiverer datamaskinen automatisk når du befinner deg foran den eller nærmer deg den."
                 },
                 "zeroTouchLock": {
-                    "title": "Låsing uten berøring",
-                    "caption": "Denne funksjonen dimmer skjermen og låser datamaskinen når det registreres at brukeren ikke er til stede.Den kan redusere faren for uautorisert tilgang til datamaskinen hvis du forlater den ulåst og uten tilsyn. Den reduserer også strømforbruket ved å sette systemet i Moderne hvilemodus når tilstedeværelsen din ikke registreres.",
+                    "title": "Berøringsfri lås",
+                    "caption": "Denne funksjonen dimmer skjermen og låser datamaskinen når det registreres at brukeren ikke er til stede. Funksjonen kan redusere faren for uautorisert tilgang til datamaskinen hvis du forlater den ulåst og uten tilsyn. Den reduserer også strømforbruket ved å sette systemet i Moderne hvilemodus når tilstedeværelsen din ikke registreres.",
                     "autoScreenLockTimer": {
                         "title": "TIMER FOR AUTOMATISK SKJERMLÅS",
                         "radioButton": {
@@ -1041,46 +1100,46 @@
                             "medium": "Middels",
                             "slow": "Langsom"
                         },
-                        "toolTipContent": "Velg ønsket alternativ for å låse skjermen på en rask/middels/langsom hastighet når tilstedeværelsen din ikke oppdages.Tidspunktet skjermen låses på, påvirkes også av det faktiske brukerscenarioet, sensorfunksjonaliteten og innstillingene for tidsavbrudd for Windows-skjermen. Vi anbefaler derfor sterkt at du umiddelbart låser systemet før du forlater det."
+                        "toolTipContent": "Velg ønsket alternativ for å låse skjermen på en rask/middels/langsom hastighet når tilstedeværelsen din ikke oppdages. Når skjermen låses, påvirkes også av det faktiske brukerscenarioet, sensorfunksjonaliteten og innstillingene for skjermtidsavbrudd i Windows. Vi anbefaler derfor sterkt at du umiddelbart låser systemet før du forlater det."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Automatisk avstandsjustering oppdatererdeteksjonsavstanden automatisk via en AI-motor.",
+                    "title": "JUSTERING AV AVSTANDSFØLSOMHET",
+                    "caption": "Automatisk avstandsjustering vil automatisk oppdatere avstandsfølsomheten via en AI-motor.",
                     "options": {
                         "near": "Kort avstand",
                         "far": "Lang avstand"
                     }
                 },
                 "note": {
-                    "description1": "Denne funksjonen er avhengig av Windows Hello.Sørg for at ansiktsgjenkjenning er aktivert i Windows-innstillinger.",
-                    "description2": "Funksjonen bruker sensorer og kamera til å oppdage din tilstedeværelse.Funksjonen vil imidlertid IKKE samle inn, lagre, eller lekke personlige data eller bilder.",
-                    "description3": "1. Disse funksjonene fungerer kanskje ikke som de skalhvis datamaskinen er i telt-, nettbrett- eller stativmodus.",
-                    "description4": "2. Hvis datamaskinen er i dvalemodus eller er slått av.Automatisk IR-kamerapålogging fungerer ikke.",
-                    "description5": "3. Juster dataskjermens vinkel slik at det infrarøde kameraetkan gjenkjenne ansiktet ditt og logge deg på automatisk."
+                    "description1": "Denne funksjonen er avhengig av Windows Hello. Pass på at ansiktsgjenkjenning er aktivert i Windows-innstillingene.",
+                    "description2": "Funksjonen bruker sensorer og kamera til å oppdage din tilstedeværelse. Funksjonen samler imidlertid IKKE inn noen personlige opplysninger.",
+                    "description3": "1. Disse funksjonene fungerer kanskje ikke på riktig måte hvis datamaskinen er i telt-, nettbrett- eller stativmodus.",
+                    "description4": "2. Hvis datamaskinen er i dvalemodus eller er slått av. Automatisk pålogging med det infrarøde kameraet vil ikke fungere.",
+                    "description5": "3. Juster dataskjermens vinkel slik at det infrarøde kameraet kan gjenkjenne ansiktet ditt og logge deg på automatisk."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Gå til Windows Hello-innstillinger",
                     "screenTimeoutSettings": "Gå til innstillingene for tidsutkobling av skjermen"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "TILBAKESTILL TIL STANDARDINNSTILLINGENE"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Intelligent skjerm",
+                "description": "Lenovo Intelligent Sensing bruker de ulike sensorene på datamaskinen til å gjenkjenne hva du gjør, og justere innstillingene for strømstyring. Funksjonen dimmer for eksempel skjermen hvis den oppdager at du går, men ikke hvis den oppdager at du leser.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Slå av skjermen automatisk",
+                    "caption": "Slå av skjermen automatisk når den ligger med forsiden ned, eller når du går.",
+                    "note": "Denne funksjonen er ikke tilgjengelig hvis du har valgt aldri å slå av skjermen på batteristrøm i innstillingene for strømstyringsplan under System i Windows. Velg en annen verdi enn Aldri for å aktivere denne funksjonen.",
+                    "windowsLink": "Gå til innstillingene for strøm og hvilemodus i Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Hold skjermen på",
+                    "caption": "Hold skjermen på når jeg leser eller surfer.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Minutter før skjermen dimmes når du surfer",
+                        "startTime": "0 minutter",
+                        "endTime": "60 minutter"
                     }
                 }
             },
@@ -1115,10 +1174,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Intelligent medieavspilling",
+                "title": "Berøringsfri videoavspilling",
+                "desc": "Denne funksjonen setter videoen på pause når du forlater datamaskinen, og fortsetter avspillingen når du kommer tilbake.",
+                "tooltip": "Denne funksjonen støttes ikke av nettvideospillere. Populære lokale videospillere, for eksempel Windows Media Player og 5KPlayer, støtter denne funksjonen."
             },
             "voice": {
                 "title": "Voice",
@@ -1145,6 +1204,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1159,8 +1223,8 @@
         "recommendedUpdates": "Anbefalt(e) oppdatering(er)",
         "optionalUpdates": "Valgfri(e) oppdatering(er)",
         "ignoredUpdates": "Ignorert(e) oppdatering(er)",
-        "successInstall": "Oppdateringen ble installert",
-        "failedInstall": "Installasjon mislyktes",
+        "successInstall": "Ble installert den",
+        "failedInstall": "Installasjon mislyktes den",
         "at": "klokken",
         "readMore": "Les mer",
         "popup": {
@@ -1300,6 +1364,7 @@
             "overviewBlockTitle": "Vis sikkerhetsoversikt for økosystemet",
             "allDevices": "Alle enheter",
             "myDevice": "Min enhet",
+            "thisComputer": "This computer",
             "secure": "SIKKER",
             "needAttention": "TRENGER OPPMERKSOMHET",
             "manageAccount": "Administrer konto",

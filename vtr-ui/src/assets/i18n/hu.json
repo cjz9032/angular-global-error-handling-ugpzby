@@ -39,7 +39,9 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -289,18 +291,68 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "Irányítópult",
             "device": {
-                "title": "Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "Eszköz",
+                "sub1": "Saját készülékem",
+                "sub2": "Saját eszközbeállítások",
                 "sub3": "System Updates",
-                "sub4": "‏\"Intelligens segítség\""
+                "sub4": "Intelligens segítség"
             },
             "security": {
                 "title": "Biztonság",
@@ -311,9 +363,9 @@
                 "sub5": "Védelem az interneten",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "Támogatás",
+            "homeSecurity": "Összekapcsolt otthon",
+            "privacy": "Adatvédelem"
         },
         "securityAdvisor": {
             "title": "Bizt. Tanácsadó",
@@ -632,7 +684,13 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -864,7 +922,7 @@
             "displayCamera": {
                 "title": "Képernyő és kamera",
                 "subtitle": "Képernyő és kamera beállításai",
-                "description": "Ezen a részen javítható a vizuális megjelenítés és konfigurálhatók a kamera tulajdonságai.Itt fedezheti fel további funkciókat és szabhatja testre a képernyő beállításait.",
+                "description": "Ezen a részen javítható a vizuális megjelenítés és konfigurálhatók a kamera tulajdonságai. Itt fedezheti fel további funkciókat és szabhatja testre a képernyő beállításait.",
                 "jumpTo": {
                     "title": "UGRÁS A BEÁLLÍTÁSOKHOZ",
                     "shortcuts": {
@@ -872,7 +930,7 @@
                             "title": "Megjelenítés"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Kamera"
                         }
                     }
                 },
@@ -894,45 +952,45 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "A képernyő színhőmérséklete",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Meleg (jobb a szemnek)",
+                            "cold": "Hideg"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Hőmérséklet visszaállítása",
+                        "tooltip": "A Szemvédő mód úgy módosítja a képernyő színhőmérsékletét, hogy kiszűrje a kék fényt és csökkentse a szem terhelését.",
+                        "onSunsetToSunriseScheduleDescription": "Ütemezze a naplemente és napkelte közötti időszakra a szemvédő módot",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "Megjegyzés",
+                            "description": "A napnyugta és a napkelte idejének kiszámításához a Lenovo Vantage-nek hozzá kell férnie a helyadatokhoz."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Biztos adatvédelem",
+                        "description": "A funkcióval megakadályozható, hogy mások megnézhessék az Ön képernyőjén lévő tartalmakat. Bekapcsoláskor megváltoztatja a képernyő betekintési szögét, így az Ön körül állók nem láthatják a tartalmát. Az üzemmódok között az „Fn+D” billentyűkombinációval is válthat.",
+                        "note": "A Biztos adatvédelem nem működik a képernyőn álló módjában. Ebben az üzemmódban a képernyő oldalról is látható.",
+                        "labelText": "Használja ezt a funkciót a jelszavak beírásakor"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Organikus LED – Energiagazdálkodási beállítások",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "A számítógép organikus LED-képernyője a képernyő adott részeinek elsötétítésére szolgáló funkcióval csökkentheti az energiafogyasztást és növelheti az akkumulátor élettartamát.",
+                            "A tálcát és a képernyő ritkábban módosított területeit ugyancsak tanácsos elsötétíteni, így ugyanis meghosszabbítható a képernyő élettartama."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Hőmérséklet visszaállítása",
+                        "tooltip": "Ez a funkció elsötétíti a képernyő adott részeit, így csökkentheti az energiafogyasztást és növelheti az akkumulátor élettartamát."
                     }
                 },
                 "camera": {
                     "title": "Kamera",
                     "note": {
                         "title": "Megjegyzés",
-                        "description": "A Lenovo Vantage nem rendelkezik hozzáférési engedéllyel a kamerához.Adjon hozzáférést a kamerához a Lenovo Vantage számára."
+                        "description": "A Lenovo Vantage nem rendelkezik hozzáférési engedéllyel a kamerához. Adjon hozzáférést a kamerához a Lenovo Vantage számára."
                     },
                     "url": "Ugrás a Windows adatvédelmi beállításaihoz",
                     "cameraPrivacy": {
                         "title": "Kamera privát üzemmódja",
-                        "tooltip": "Ha az adatvédelmi beállítás engedélyezve van, a kamera nem küld élő képeket. Akkor használja a beállítást, ha nem szeretne képeket megosztani másokkal videohívás közben."
+                        "tooltip": "A Privát beállítás engedélyezése esetén a kamera nem küld élőképeket. Akkor használja a beállítást, ha nem szeretne képeket megosztani másokkal videohívás közben."
                     },
                     "camera": {
                         "title": "Kamera",
@@ -946,10 +1004,10 @@
                     "notAvailable": "A kamera nem érhető el",
                     "camerablur": {
                         "title": "Kamera háttérelmosás",
-                        "caption": "Ez a funkció elhomályosítja a hátteret, ha a kamerát videohíváshoz vagy fényképezéshez használják.Az alábbi effektusok közül választhat.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "caption": "Ez a funkció elhomályosítja a hátteret, ha a kamerát videohíváshoz vagy fényképezéshez használják. Az alábbi effektusok közül választhat.",
+                        "blurMode": "Elmosás mód",
+                        "comicMode": "Rajzfilm mód",
+                        "sketchMode": "Skicc mód"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1001,13 +1059,14 @@
                     "dropDown": {
                         "title": "Action User Defined key",
                         "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
-                    }
+                    },
+                    "tooltip": "Content to be filled"
                 }
             }
         },
         "smartAssist": {
             "title": "Intelligens segítség",
-            "description": "A Lenovo intelligens észlelési funkciója a számítógép különböző érzékelőivel észleli a felhasználói tevékenységeket,és úgy módosítja a beállításokat, hogy védje az Ön adatait, és az energiagazdálkodás optimális legyen.",
+            "description": "A Lenovo intelligens észlelési funkciója a számítógép különböző érzékelőivel észleli a felhasználói tevékenységeket, és úgy módosítja a beállításokat, hogy védje az Ön adatait, és az energiagazdálkodás optimális legyen.",
             "jumpTo": {
                 "title": "UGRÁS A BEÁLLÍTÁSOKHOZ",
                 "security": "Biztonság",
@@ -1024,8 +1083,8 @@
                     "tooltip": "Ide kattintva alaphelyzetbe állíthatja az emberi jelenlét észlelésének beállításait."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Felhasználói jelenlét észlelése",
+                    "tooltip": "Ide kattintva alaphelyzetbe állíthatja az emberi jelenlét észlelésének beállításait."
                 },
                 "zeroTouchLogin": {
                     "title": "Érintés nélküli bejelentkezés",
@@ -1033,7 +1092,7 @@
                 },
                 "zeroTouchLock": {
                     "title": "Érintés nélküli zárolás",
-                    "caption": "Ez a funkció elsötétíti a képernyőt, valamint lezárja a számítógépet, amikor nem érzékeli a felhasználó jelenlétét.Csökkentheti annak az esélyét, hogy valaki jogosulatlanul használja a gépet, amikor Ön zárolás nélkül hagyja magára. Az energiafelhasználást is csökkenti azáltal, hogy a rendszert modern készenléti állapotba helyezi, amikor a gép nem érzékeli az Ön jelenlétét.",
+                    "caption": "Ez a funkció elsötétíti a képernyőt, valamint lezárja a számítógépet, amikor nem érzékeli a felhasználó jelenlétét. Csökkenti annak az esélyét, hogy valaki jogosulatlanul használja a gépet, amikor Ön zárolás nélkül hagyja magára. Csökkenti az energiafelhasználást is az által, hogy a rendszert modern készenléti állapotba helyezi, amikor nem érzékeli az Ön jelenlétét.",
                     "autoScreenLockTimer": {
                         "title": "AUTOMATIKUS KÉPERNYŐZÁR IDŐZÍTŐJE",
                         "radioButton": {
@@ -1041,46 +1100,46 @@
                             "medium": "Közepes",
                             "slow": "Lassú"
                         },
-                        "toolTipContent": "Válassza ki, hogyan szeretné zárolni a képernyőt (Gyorsan/Közepes sebességgel/Lassan), ha Ön nincs a közelben.A képernyő zárolási sebességére a tényleges felhasználói alkalmazás, a szenzor tulajdonságai és a Windows képernyőre vonatkozó időtúllépési beállításai is hatással vannak. Ezért határozottan azt javasoljuk, hogy azonnal zárolja a rendszert, amikor magára hagyja az eszközt."
+                        "toolTipContent": "Válassza ki, hogyan szeretné zárolni a képernyőt (Gyorsan/Közepes sebességgel/Lassan), ha Ön nincs a közelben. A képernyő zárolási sebességére a tényleges felhasználói alkalmazás, a szenzor tulajdonságai és a Windows képernyőre vonatkozó időtúllépési beállításai is hatással vannak. Ezért határozottan azt javasoljuk, hogy azonnal zárolja a rendszert, amikor magára hagyja az eszközt."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Az Automatikus távolságkorrekció mesterséges intelligencia használatával automatikusan frissíti az észlelési távolságot.",
+                    "title": "A TÁVOLSÁGÉSZLELŐ BEÁLLÍTÁSA",
+                    "caption": "Az Automatikus távolságkorrekció mesterséges intelligencia használatával automatikusan frissíti az érzékelési távolságot.",
                     "options": {
                         "near": "Közel",
                         "far": "Távol"
                     }
                 },
                 "note": {
-                    "description1": "A funkcióhoz a Windows Hello szükséges.Ellenőrizze, hogy az arcfelismerés be van-e kapcsolva a Windows beállításai között.",
-                    "description2": "A funkció érzékelőkkel és kamerával észleli az Ön jelenlétét.A funkció azonban NEM gyűjt, tárol vagy biztosít másoknak személyes adatokat vagy képeket.",
-                    "description3": "1. Ha a számítógép sátor, táblagép vagy álló üzemmódban van,előfordulhat, hogy ezek a funkciók nem működnek megfelelően.",
-                    "description4": "2. Ha a számítógép hibernált módban van vagy ki van kapcsolva,az infravörös kamerával való automatikus bejelentkezés nem használható.",
-                    "description5": "3. Állítsa megfelelő szögbe a számítógép képernyőjét,hogy az infravörös kamera felismerhesse az arcot az automatikus bejelentkeztetéshez."
+                    "description1": "A funkcióhoz a Windows Hello szükséges. Ellenőrizze, hogy az arcfelismerés be van-e kapcsolva a Windows beállításai között.",
+                    "description2": "A funkció érzékelőkkel és kamerával észleli az Ön jelenlétét. A funkció azonban NEM gyűjt személyes adatokat.",
+                    "description3": "1. Ha a számítógép sátor, táblagép vagy álló üzemmódban van, előfordulhat, hogy ezek a funkciók nem működnek megfelelően.",
+                    "description4": "2. Ha a számítógép hibernált módban van vagy ki van kapcsolva, Az infravörös kamerával való automatikus bejelentkezés nem használható.",
+                    "description5": "3. Állítsa megfelelő szögbe a számítógép képernyőjét, hogy az infravörös kamera felismerhesse az arcot az automatikus bejelentkeztetéshez."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ugrás a Windows Hello beállításaihoz",
                     "screenTimeoutSettings": "Ugrás a képernyő időtúllépésének beállításaihoz"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "ALAPÉRTELMEZETT BEÁLLÍTÁSOK VISSZAÁLLÍTÁSA"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Intelligens képernyő",
+                "description": "A Lenovo intelligens észlelési funkciója a számítógép különböző érzékelőivel észleli a felhasználói tevékenységeket, és módosítja az energiagazdálkodási beállításokat. A funkció például elsötétíti a képernyőt, ha azt észleli, hogy a felhasználó járkál, de nem sötétíti el, ha azt észleli, hogy olvas.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "A képernyő automatikus kikapcsolása",
+                    "caption": "Ha a képernyő lefelé néz vagy mozgásba kerül, automatikusan kikapcsolódik.",
+                    "note": "A szolgáltatás nem érhető el, ha az Energiaséma beállítása „soha ne kapcsolja ki a képernyőt akkumulátor használatakor” a Windows beállításainak „Rendszer részén”. A szolgáltatás engedélyezéséhez válasszon a „Soha” értéktől eltérő beállítást.",
+                    "windowsLink": "Ugrás az Energiaellátási és alvó állapottal kapcsolatos beállításokhoz a Windows beállításaiban"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "A képernyő bekapcsolva tartása",
+                    "caption": "Olvasás vagy böngészés közben tovább maradjon bekapcsolva a képernyő.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "A képernyő ennyi perc után sötétül el böngészés esetén",
+                        "startTime": "0 perc",
+                        "endTime": "60 perc"
                     }
                 }
             },
@@ -1115,10 +1174,10 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Intelligens média",
+                "title": "Zero Touch Videolejátszás",
+                "desc": "Ez a funkció szünetelteti a videólejátszást, amikor a felhasználó magára hagyja a számítógépet, és újraindítja a lejátszást, amikor visszatér.",
+                "tooltip": "Ez a funkció nem használható internetes videólejátszókhoz. A népszerű helyi videólejátszók (pl. a Windows Media Player vagy a 5KPlayer) támogatják ezt a funkciót."
             },
             "voice": {
                 "title": "Voice",
@@ -1145,6 +1204,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1300,6 +1364,7 @@
             "overviewBlockTitle": "Az ökoszisztéma biztonságának áttekintése",
             "allDevices": "Minden eszköz",
             "myDevice": "Saját készülékem",
+            "thisComputer": "This computer",
             "secure": "BIZTONSÁGOS",
             "needAttention": "ELLENŐRIZNI KELL",
             "manageAccount": "Fiók kezelése",

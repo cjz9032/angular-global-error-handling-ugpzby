@@ -39,7 +39,9 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
                     },
                     "autoClose": "自动关闭",
                     "networkBoost": "网络提升",
@@ -289,30 +291,80 @@
                 "option4": {
                     "title": "Slow Blink"
                 }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
     "common": {
         "menu": {
-            "dashboard": "首页",
+            "dashboard": "仪表板",
             "device": {
                 "title": "设备",
-                "sub1": "设备信息",
-                "sub2": "设备设置",
-                "sub3": "系统升级",
-                "sub4": "‏\"智能帮助\""
+                "sub1": "我的设备",
+                "sub2": "我的设备设置",
+                "sub3": "System Updates",
+                "sub4": "智能帮助"
             },
             "security": {
-                "title": "安全顾问",
-                "sub1": "我的安全顾问",
-                "sub2": "病毒防护",
+                "title": "安全性",
+                "sub1": "我的安全性",
+                "sub2": "反病毒",
                 "sub3": "WiFi 安全",
-                "sub4": "密码保险箱",
-                "sub5": "网络保护",
+                "sub4": "密码安全状况",
+                "sub5": "因特网保护",
                 "sub6": "Windows Hello"
             },
             "support": "支持服务",
-            "homeSecurity": "Connected Home",
+            "homeSecurity": "互联家庭网络",
             "privacy": "隐私"
         },
         "securityAdvisor": {
@@ -632,7 +684,13 @@
                     }
                 },
                 "updating": "Updating",
-                "thresholdNote": "To spread the battery lifespan you have set your battery to stop charging at",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No Battery Detected"
             },
@@ -894,40 +952,40 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Daytime color temperature",
+                        "title": "显示色温",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "暖（更护眼）",
+                            "cold": "冷"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "重置温度",
+                        "tooltip": "护眼模式会调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。",
+                        "onSunsetToSunriseScheduleDescription": "设定从日出到日落的护眼模式",
                         "note": {
-                            "title": "Note",
-                            "description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
+                            "title": "注",
+                            "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日出日落时间。"
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "隐私保护",
+                        "description": "此功能可防止其他人偷看您的屏幕。当此功能开启时，将改变您显示屏的视角，使您周围的人无法偷看您的隐私。您还可以通过按“Fn+D”键切换模式。",
+                        "note": "隐私保护在屏幕纵向模式下无法工作。在此模式下，仍可从侧面看到您的屏幕。",
+                        "labelText": "输入密码时启用此功能"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "OLED 电源设置",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "通过有选择地使显示屏的部分区域变暗，计算机的 OLED 显示屏还能降低功耗并延长电池使用时间。",
+                            "与此同时，我们建议调暗不频繁变化的工具栏和显示屏的其他区域，以延长显示屏的总使用时间。"
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "重置温度",
+                        "tooltip": "此功能可以有选择地使显示屏的部分区域变暗，从而降低功耗并延长电池使用时间。"
                     }
                 },
                 "camera": {
                     "title": "摄像头",
                     "note": {
                         "title": "注",
-                        "description": "Lenovo Vantage 无权访问您的摄像头。请允许 Lenovo Vantage 应用程序访问您的摄像头。"
+                        "description": "Lenovo Vantage 无权访问您的摄像头。请允许 Lenovo Vantage 应用访问您的摄像头。"
                     },
                     "url": "转到 Windows 隐私设置",
                     "cameraPrivacy": {
@@ -946,10 +1004,10 @@
                     "notAvailable": "摄像头不可用",
                     "camerablur": {
                         "title": "摄像头背景模糊",
-                        "caption": "当您使用摄像头进行视频通话或拍摄照片时，该功能可以使背景变得模糊。您可以从下面的选项中选择不同效果。",
+                        "caption": "当您使用摄像头进行视频通话或拍摄照片时，该功能可以使背景变得模糊。您可以从下面的选项中选择不同的效果。",
                         "blurMode": "模糊模式",
                         "comicMode": "漫画模式",
-                        "sketchMode": "草图模式"
+                        "sketchMode": "素描模式"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
@@ -1001,7 +1059,8 @@
                     "dropDown": {
                         "title": "Action User Defined key",
                         "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
-                    }
+                    },
+                    "tooltip": "Content to be filled"
                 }
             }
         },
@@ -1025,11 +1084,11 @@
                 },
                 "humanPresenceDetection": {
                     "title": "用户存在感知",
-                    "tooltip": "单击此处重置人体存在检测设置。"
+                    "tooltip": "单击此处以重置人类存在检测设置。"
                 },
                 "zeroTouchLogin": {
                     "title": "零触摸登录",
-                    "caption": "当您坐在计算机前或接近计算机时，此功能会自动解锁或唤醒计算机。"
+                    "caption": "当您坐在计算机面前或接近计算机时，此功能会自动解锁或唤醒计算机。"
                 },
                 "zeroTouchLock": {
                     "title": "零触摸锁定",
@@ -1054,7 +1113,7 @@
                 },
                 "note": {
                     "description1": "此功能依赖于 Windows Hello。确保在 Windows 设置中已开启面部识别。",
-                    "description2": "该功能使用传感器和摄像头来检测您的存在。然而，该功能不会收集、保存或泄露任何个人数据或图像。",
+                    "description2": "该功能使用传感器和摄像头来检测您的存在。然而，该功能不会收集任何个人数据。",
                     "description3": "1.如果您的计算机处于帐篷模式、平板电脑模式或站立模式，则这些功能可能无法正常工作。",
                     "description4": "2.如果您的计算机处于休眠模式或已关机。自动红外摄像头登录将无法工作。",
                     "description5": "3.请将计算机屏幕调整至适当的角度，以便红外摄像头能够识别您的面部，进行自动登录。"
@@ -1063,22 +1122,22 @@
                     "goToWindowsHello": "转到 Windows Hello 设置",
                     "screenTimeoutSettings": "转至屏幕超时设置"
                 },
-                "resetToDefault": "重置为默认设置"
+                "resetToDefault": "重置为缺省设置"
             },
             "intelligentScreen": {
                 "title": "智能屏幕",
-                "description": "Lenovo Intelligent Sensing结合了计算机上的各种传感器来检测您的活动并调整电源管理设置。例如，如果检测到您正在行走，它会使您的显示屏变暗，但如果检测到您正在阅读，则不会使其变暗。",
+                "description": "Lenovo 智能感知通过计算机上的各种传感器检测您的活动并调整设置以进行电源管理。例如，如果它检测到您正在走路，则将让显示屏变暗，但如果它检测到您正在阅读，则不会让显示屏变暗。",
                 "autoScreenOff": {
                     "title": "自动关闭屏幕",
-                    "caption": "面朝下或行走时自动关闭显示。",
-                    "note": "如果在Windows设置系统部分中将电源计划设置设置为永不关闭电池屏幕，则此功能不可用。请选择“从不”以外的值以启用此功能。",
-                    "windowsLink": "转到Windows设置中的电源和睡眠设置"
+                    "caption": "面朝下或行走时自动关闭显示屏。",
+                    "note": "如果在“Windows 设置”的“系统部分”中将电源计划设置为“电池供电时从不关闭屏幕”，则此功能不可用。请选择“从不”以外的值以启用此功能。",
+                    "windowsLink": "转至“Windows 设置”中的“电源和睡眠”设置"
                 },
                 "keepMyDisplay": {
-                    "title": "保持我的显示",
-                    "caption": "在我阅读或浏览时保持显示。",
+                    "title": "保持显示",
+                    "caption": "当阅读或浏览时，保持显示。",
                     "displaySlider": {
-                        "title": "分钟在浏览时显示变暗之前",
+                        "title": "浏览时显示屏变暗之前的分钟数",
                         "startTime": "0 分钟",
                         "endTime": "60 分钟"
                     }
@@ -1116,9 +1175,9 @@
             },
             "intelligentMedia": {
                 "heading": "智能媒体",
-                "title": "零接触视频播放",
-                "desc": "当您离开计算机时，此功能将暂停视频，并在您返回时恢复视频。",
-                "tooltip": "此功能不适用于网络视频播放器。流行的本地视频播放器，如Windows Media Player，5KPlayer等，支持此功能。"
+                "title": "零触摸视频播放",
+                "desc": "此功能将在离开计算机时暂停视频，并在您回来时重新播放视频。",
+                "tooltip": "此功能不适用于 Web 视频播放器。流行的本地视频播放器（例如 Windows Media Player、5KPlayer 等）均支持此功能。"
             },
             "voice": {
                 "title": "Voice",
@@ -1145,6 +1204,11 @@
                     "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
                     "point9": "Click the microphone icon to start speaking",
                     "closeText": "close"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
                 }
             }
         }
@@ -1159,9 +1223,9 @@
         "recommendedUpdates": "个推荐更新",
         "optionalUpdates": "个可选更新",
         "ignoredUpdates": "个已忽略的更新",
-        "successInstall": "安装成功",
-        "failedInstall": "安装失败",
-        "at": "在",
+        "successInstall": "安装成功的日期",
+        "failedInstall": "安装失败的日期",
+        "at": "时间",
         "readMore": "阅读更多信息",
         "popup": {
             "reboot": "重启",
@@ -1199,7 +1263,7 @@
             "neverChecked": "欢迎使用系统更新。",
             "title": "保持最新状态的系统才是健康的系统。",
             "last": "上次更新时间为",
-            "next": "下次更新扫描计划时间",
+            "next": "下次更新扫描计划时间为",
             "checkButton": "检查更新",
             "checking": "正在检查更新",
             "downloading": "正在下载更新",
@@ -1300,6 +1364,7 @@
             "overviewBlockTitle": "您的生态系统安全概述",
             "allDevices": "所有设备",
             "myDevice": "我的设备",
+            "thisComputer": "This computer",
             "secure": "安全",
             "needAttention": "需要注意",
             "manageAccount": "管理帐户",
@@ -2027,7 +2092,7 @@
     },
     "welcometutorial": {
         "description": "Vantage使您可以轻松更新驱动程序，运行诊断程序，请求支持以及了解您的设备。快速定制您的体验，并根据您的需求找到有用的信息。",
-        "bullets1": "使用Vantage仪表板查看系统的状态。",
+        "bullets1": "使用Vantage首页查看系统的状态。",
         "bullets2": "安全顾问可以使您轻松管理安全性（在某些系统上可用）。",
         "bullets3": "自动更新让您的设备处于最佳状态（在某些系统上可用）。",
         "subtitle1": "你将如何使用你的设备？",
