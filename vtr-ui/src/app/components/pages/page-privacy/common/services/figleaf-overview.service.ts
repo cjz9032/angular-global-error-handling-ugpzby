@@ -44,13 +44,14 @@ export enum licenseTypes {
 	Unknown,
 	Free,
 	Trial,
+	TrialExpired,
 	Subscription,
+	SubscriptionExpired,
 	NonInstalled
 }
 
 @Injectable()
 export class FigleafOverviewService implements OnDestroy {
-
 	figleafSettings$ = new ReplaySubject<FigleafSettings>(1);
 	figleafDashboard$ = new ReplaySubject<FigleafDashboard>(1);
 	figleafStatus$ = new ReplaySubject<FigleafStatus>(1);
@@ -73,7 +74,7 @@ export class FigleafOverviewService implements OnDestroy {
 			.subscribe(([settings, dashboard, status]) => {
 				this.figleafSettings$.next(settings.payload);
 				this.figleafDashboard$.next(dashboard.payload);
-				this.figleafStatus$.next(status.payload);
+				this.figleafStatus$.next(this.transformLicenseType(status.payload));
 			});
 	}
 
@@ -87,6 +88,19 @@ export class FigleafOverviewService implements OnDestroy {
 	}
 
 	private transformLicenseType(payload: FigleafStatus) {
-		return {...payload, licenseType: licenseTypes[payload.licenseType]};
+		let licenseType = payload.licenseType;
+		const isTrialLicense = payload.licenseType === licenseTypes.Trial;
+		const isSubscriptionLicense = payload.licenseType === licenseTypes.Subscription;
+		const isExpired = payload.expirationDate < Math.floor(Date.now() / 1000);
+
+		if (isTrialLicense && isExpired) {
+			licenseType = licenseTypes.TrialExpired;
+		}
+
+		if (isSubscriptionLicense && isExpired) {
+			licenseType = licenseTypes.SubscriptionExpired;
+		}
+
+		return {...payload, licenseType};
 	}
 }

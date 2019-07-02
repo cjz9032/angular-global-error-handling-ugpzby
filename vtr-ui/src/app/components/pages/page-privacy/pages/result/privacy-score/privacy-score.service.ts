@@ -32,23 +32,31 @@ export class PrivacyScoreService {
 
 	private breachedAccountsFromKnownWebsites$ = this.getBreachesAccount((x: BreachedAccount) => x.domain !== 'n/a');
 	private breachedAccountsFromUnknownWebsites$ = this.getBreachesAccount((x: BreachedAccount) => x.domain === 'n/a');
-	private ammountPasswordFromBrowser$ = this.browserAccountsService.installedBrowsersData.pipe(
-		map((installedBrowsersData) => {
-				return installedBrowsersData.browserData.reduce((acc, curr) => {
-					acc += curr.accountsCount;
-					return acc;
-				}, 0);
-			}
-		));
+	private ammountPasswordFromBrowser$ = this.userDataGetStateService.userDataStatus$.pipe(
+		map((userDataStatus) =>
+			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.undefined &&
+			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.error),
+		distinctUntilChanged(),
+		filter(Boolean),
+		switchMapTo(this.browserAccountsService.installedBrowsersData.pipe(
+			map((installedBrowsersData) => {
+					return installedBrowsersData.browserData.reduce((acc, curr) => {
+						acc += curr.accountsCount;
+						return acc;
+					}, 0);
+				}
+			)))
+	);
 
 	private monitoringEnable$ = this.getFigleafSetting((settings: FigleafSettings) => settings.isBreachMonitoringEnabled);
 	private isAntitrackingEnabled$ = this.userDataGetStateService.userDataStatus$.pipe(
 		map((userDataStatus) =>
 			userDataStatus.websiteTrackersResult !== FeaturesStatuses.undefined &&
 			userDataStatus.websiteTrackersResult !== FeaturesStatuses.error),
-		distinctUntilChanged(),
 		filter(Boolean),
-		switchMapTo(this.getFigleafSetting((settings: FigleafSettings) => settings.isAntitrackingEnabled))
+		switchMapTo(
+			this.getFigleafSetting((settings: FigleafSettings) => settings.isAntitrackingEnabled)
+		),
 	);
 
 	private scoreFromBreachedAccount$ = combineLatest([
@@ -82,8 +90,8 @@ export class PrivacyScoreService {
 			map((isMonitoringEnable) => Number(isMonitoringEnable) * this.coefficients.breachMonitoring)
 		),
 		this.isAntitrackingEnabled$.pipe(
-			map((isMonitoringEnable) => Number(isMonitoringEnable) * this.coefficients.trackingTools),
-			startWith(0)
+			map((isAntitrackingEnabled) => Number(isAntitrackingEnabled) * this.coefficients.trackingTools),
+			startWith((this.coefficients.trackingTools * this.coefficients.withoutScan) as number)
 		),
 	]).pipe(
 		debounceTime(500),
@@ -147,6 +155,7 @@ export class PrivacyScoreService {
 	private getFigleafSetting(mapFunc) {
 		return this.figleafOverviewService.figleafSettings$.pipe(
 			map(mapFunc),
+			startWith(false),
 		);
 	}
 
