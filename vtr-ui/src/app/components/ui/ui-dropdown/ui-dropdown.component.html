@@ -11,7 +11,7 @@
 	</div>
 	<div class="input" (click)="toggle()">
 		<div class="time">
-			<span>{{name}} {{placeholder}} </span>
+			<span>{{name}} {{placeholder | uppercase}} </span>
 		</div>
 		<p class="chevron">
 			<fa-icon *ngIf="!isDropDownOpen"

@@ -326,12 +326,16 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 						this.smartAssist.getHPDVisibilityInThinkPad(),
 						this.smartAssist.isLenovoVoiceAvailable(),
 						this.smartAssist.getVideoPauseResumeStatus(), // returns object
-						this.smartAssist.getIntelligentScreenVisibility()
+						this.smartAssist.getIntelligentScreenVisibility(),
+						this.smartAssist.getAPSCapability(),
+						this.smartAssist.getSensorStatus(),
+						this.smartAssist.getHDDStatus()
 					])
 					.then((responses: any[]) => {
 						console.log('showSmartAssist.Promise.all()', responses);
+						console.log("IS APS AVAILABLE",(responses[5] && responses[6] && responses[7] >= 0));
 						const isAvailable =
-							responses[0] || responses[1] || responses[2] || responses[3].available || responses[4];
+							responses[0] || responses[1] || responses[2] || responses[3].available || responses[4] || (responses[5] && responses[6] && responses[7] >= 0 );
 						// const isAvailable = true;
 						this.commonService.setLocalStorageValue(
 							LocalStorageKey.IsLenovoVoiceSupported,

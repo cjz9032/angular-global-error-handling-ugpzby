@@ -60,11 +60,11 @@ export class PageSmartAssistComponent implements OnInit {
 		// 	path: 'media',
 		// 	sortOrder: 3
 		// },
-		{
-			title: 'device.smartAssist.jumpTo.APS',
-			path: 'aps',
-			sortOrder: 4
-		},
+		// {
+		// 	title: 'device.smartAssist.jumpTo.APS',
+		// 	path: 'aps',
+		// 	sortOrder: 4
+		// },
 		{
 			title: 'device.smartAssist.jumpTo.voice',
 			path: 'voice',
@@ -145,7 +145,16 @@ export class PageSmartAssistComponent implements OnInit {
 		Promise
 			.all([this.smartAssist.getAPSCapability(), this.smartAssist.getSensorStatus(), this.smartAssist.getHDDStatus()])
 			.then((response: any[]) => {
+				console.log('APS Capability', response[0], 'APS SENSOR', response[1], 'HDD STATUS', response[2]);
 				(response[0] && response[1] && response[2] >= 0) ? this.isAPSavailable = true : this.isAPSavailable = false;
+				if (response[0] && response[1] && response[2] >= 0) {
+					this.headerMenuItems.push({
+						title: 'device.smartAssist.jumpTo.APS',
+						path: 'aps',
+						sortOrder: 5
+					});
+					this.headerMenuItems = this.sortMenuItems(this.headerMenuItems);
+				}
 			})
 			.catch((error) => { console.log('APS ERROR------------------', error); });
 	}
