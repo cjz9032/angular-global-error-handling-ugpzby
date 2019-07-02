@@ -14,13 +14,14 @@ import { TranslationService } from 'src/app/services/translation/translation.ser
 import Translation from 'src/app/data-models/translation/translation';
 import { environment } from '../../../environments/environment';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
-import { WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
+import { WindowsHello, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { RegionService } from 'src/app/services/region/region.service';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { ModalCommonConfirmationComponent } from '../modal/modal-common-confirmation/modal-common-confirmation.component';
+import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -43,6 +44,8 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 	public items: any;
 	showMenu = false;
 	preloadImages: string[];
+	securityAdvisor: SecurityAdvisor;
+	isRS5OrLater: boolean;
 
 	constructor(
 		private router: Router,
@@ -57,9 +60,14 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 		private translate: TranslateService,
 		private regionService: RegionService,
 		private smartAssist: SmartAssistService,
-		private logger: LoggerService
+		private logger: LoggerService,
+		private securityAdvisorMockService: SecurityAdvisorMockService
 	) {
 		this.showVpn();
+		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
+		if (!this.securityAdvisor) {
+			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
+		}
 		this.getMenuItems().then((items) => {
 			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(
 				LocalStorageKey.SecurityShowWindowsHello
@@ -78,9 +86,8 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 					subitems: []
 				});
 			}
-			const securityAdvisor = vantageShellService.getSecurityAdvisor();
-			if (securityAdvisor) {
-				const windowsHello: WindowsHello = securityAdvisor.windowsHello;
+			if (this.securityAdvisor) {
+				const windowsHello: WindowsHello = this.securityAdvisor.windowsHello;
 				if (windowsHello.fingerPrintStatus) {
 					this.showWindowsHello(windowsHello);
 				}
@@ -237,7 +244,13 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 	showWindowsHello(windowsHello: WindowsHello) {
 		this.getMenuItems().then((items) => {
 			const securityItem = items.find((item) => item.id === 'security');
-			if (!this.commonService.isRS5OrLater() || typeof windowsHello.fingerPrintStatus !== 'string') {
+			const version = this.commonService.getWindowsVersion();
+			if (version === 0) {
+				this.isRS5OrLater = true;
+			} else {
+				this.isRS5OrLater = this.commonService.isRS5OrLater();
+			}
+			if (!this.isRS5OrLater || typeof windowsHello.fingerPrintStatus !== 'string') {
 				securityItem.subitems = securityItem.subitems.filter((subitem) => subitem.id !== 'windows-hello');
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
 			} else {
