@@ -23,6 +23,7 @@ export class UiLightingProfileComponent implements OnInit {
 	@Input() currentProfileId: number;
 	public lightingCapabilities: LightingCapabilities;
 	public profileBrightness: any;
+	public profileRGBFeature: number = 0;
 	public options: any;
 	public effectData: any;
 	public isProfileOff: boolean = true;
@@ -284,12 +285,18 @@ export class UiLightingProfileComponent implements OnInit {
 		try {
 			if (this.gamingLightingService.isShellAvailable) {
 				this.gamingLightingService.getLightingCapabilities().then((response: any) => {
+					if (response !== undefined) {
+						if (this.lightingCapabilities === undefined) {
+							this.lightingCapabilities = new LightingCapabilities();
+						}
+						this.profileRGBFeature = response.RGBfeature;
+						this.lightingCapabilities = response;
+					}
 					if (response.LightPanelType.length > 0) {
 						if (LocalStorageKey.LightingCapabilities !== undefined) {
 							this.commonService.setLocalStorageValue(LocalStorageKey.LightingCapabilities, response);
 						}
 
-						this.lightingCapabilities = response;
 						console.log(
 							'gaming Lighting Capabilities js bridge ------------------------>',
 							JSON.stringify(this.lightingCapabilities)
@@ -677,6 +684,7 @@ export class UiLightingProfileComponent implements OnInit {
 									this.currentProfileId = response.profileId;
 									this.currentProfile = response.profileId;
 									this.profileBrightness = response.brightness;
+
 									if (this.lightingCapabilities.RGBfeature === 1) {
 										console.log(
 											'selectedSingleColorOptionId------------single color---------------->',
@@ -893,6 +901,7 @@ export class UiLightingProfileComponent implements OnInit {
 							this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileById, response);
 						}
 
+
 						this.currentProfileId = response.profileId;
 						this.currentProfile = response.profileId;
 						this.profileBrightness = response.brightness;
@@ -1068,6 +1077,9 @@ export class UiLightingProfileComponent implements OnInit {
 						if (LocalStorageKey.LightingProfileById !== undefined) {
 							this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileById, response);
 						}
+						if (LocalStorageKey.ProfileId !== undefined) {
+							this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, response.profileId);
+						}
 
 						if (response.profileId > 0) {
 							if (this.lightingCapabilities.RGBfeature === 1) {
@@ -1233,8 +1245,9 @@ export class UiLightingProfileComponent implements OnInit {
 					);
 
 					if (response.didSuccess) {
-						this.applyBtnStatus1 = 'applied';
 						this.inHex1 = $event;
+						this.applyBtnStatus1 = 'applied';
+
 						//	this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileEffectColor, response);
 						/*	console.log(
 								'set color pallet color effect front response----------cache---------->',
@@ -1271,10 +1284,19 @@ export class UiLightingProfileComponent implements OnInit {
 					);
 
 					if (response.didSuccess) {
-						this.applyBtnStatus2 = 'applied';
 						this.inHex2 = $event;
+						this.applyBtnStatus2 = 'applied';
+
 					}
 				});
 		}
+	}
+	colorChangedFront($event) {
+		console.log('colorChangedFront ------------------------>',	JSON.stringify($event));
+		this.inHex1 =  $event.hex;
+	}
+	colorChangedSide($event) {
+		console.log('colorChangedSide------------------------>',JSON.stringify($event));
+		this.inHex2 =  $event.hex;
 	}
 }

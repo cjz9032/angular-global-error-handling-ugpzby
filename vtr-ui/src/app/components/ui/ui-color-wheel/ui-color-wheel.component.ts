@@ -38,8 +38,8 @@ export class UiColorWheelComponent implements OnInit, OnChanges {
 			onChange: function (color) {
 				that.backColor = color.hex;
 				that.color = color.rgb;
-				that.colorChanged.emit(this.color);
 				that.btnStatus = 'apply';
+				that.colorChanged.emit(color);
 			}
 		});
 
@@ -58,6 +58,11 @@ export class UiColorWheelComponent implements OnInit, OnChanges {
 					// this.colorWheel.rgb = this.color;
 					this.colorWheel.redraw();
 				}
+			}
+		}
+		if (!isUndefined(changes.btnStatus)) {
+			if (changes.btnStatus.previousValue !== changes.btnStatus.currentValue) {
+				this.btnStatus = changes.btnStatus.currentValue;
 			}
 		}
 	}

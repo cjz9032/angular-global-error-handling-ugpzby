@@ -29,7 +29,7 @@
 							[name]="'device.deviceSettings.audio.audioSmartsettings.dolby.title' | translate"
 							componentName="Automatic Dolby Audio Settings"
 							[caption]="''"
-							[isSwitchVisible]=true
+							[isSwitchVisible]="autoDolbyFeatureStatus.available"
 							[leftIcon]="['icomoon', 'icomoon-LE-Dolby2x']"
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
