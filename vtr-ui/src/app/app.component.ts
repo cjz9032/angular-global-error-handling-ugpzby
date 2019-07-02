@@ -292,13 +292,13 @@ export class AppComponent implements OnInit {
 			//sahinul01Jul2019, VAN-5872, server switch feature
 			if(event.ctrlKey && event.shiftKey && event.keyCode==67){
 				console.log('sahinul Event',event);
-				/*const serverSwitchModal : NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
+				const serverSwitchModal : NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
 					backdrop: true,
 					size: 'lg',
 					centered: true,
 					windowClass: 'Server-Switch-Modal',
 					keyboard : false
-				});*/
+				});
 				//serverSwitchModal.componentInstance.articleId = this.item.Id;
 			}
 

@@ -52,6 +52,9 @@
                         "text": "Please install driver",
                         "button": "Install",
                         "link": "cancel"
+                    },
+                    "lightingColorMessage": {
+                        "text": "Selecting color not available to this effect."
                     }
                 },
                 "systemTools": {
@@ -81,6 +84,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                },
+                "systemStatus": {
+                    "info": "INFO"
                 }
             }
         },
@@ -126,7 +132,7 @@
                 },
                 "recording": {
                     "title": "START TYPING",
-                    "description": "20 inputs with in 20 seconds can be recorded."
+                    "description": "20 inputs within 20 seconds can be recorded."
                 },
                 "recorded": {
                     "title": "MACRO KEY FOR ",
@@ -215,7 +221,7 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure to clear this macro key?"
+                    "title": "Are you sure you want to clear this macro key?"
                 },
                 "timeoutRecording": {
                     "title": "Time Out For Recording.",
@@ -234,6 +240,9 @@
                     "btnCancel": "Cancel"
                 },
                 "btnOk": "OK"
+            },
+            "recording": {
+                "title": "Recording Macro Key For"
             }
         },
         "lightingProfile": {
@@ -915,24 +924,24 @@
                         "tooltip": "Možete prilagoditi MIC efekat podešavanjem jačine zvuka mikrofonai navesti odgovarajući režim."
                     },
                     "volume": {
-                        "title": "Microphone Volume",
-                        "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
+                        "title": "Jačina zvuka mikrofona",
+                        "description": "Dolby Audio isporučuje bogat, jasan, moćan zvuk iz celokupnog sadržaja u kom uživate. Izaberite odgovarajući režim za vaš sadržaj i opremu.",
                         "options": {
                             "silent": "Tiho",
                             "loud": "Glasno"
                         }
                     },
                     "suppress": {
-                        "title": "Suppress keyboard noise",
-                        "tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+                        "title": "Priguši zvuk tastature",
+                        "tooltip": "Uključite ovo da biste optimizovali MIC zvuk potiskivanjem buke koju generiše tastatura."
                     },
                     "acoustic": {
-                        "title": "Acoustic Echo Cancellation",
-                        "tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+                        "title": "Smanjenje akustičnog eha",
+                        "tooltip": "Uključite ovu funkciju da biste optimizovali MIC zvuk smanjivanjem akustičnog odjeka."
                     },
                     "optimize": {
-                        "title": "Optimize my microphone for:",
-                        "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+                        "title": "Optimizuj mikrofon na sledeći način:",
+                        "tooltip": "Konfigurišite efekat mikrofona da biste poboljšali audio doživljaj različitim scenarijima i okruženjem.",
                         "options": {
                             "VoiceRecognition": "PREPOZNAVANJE GLASA",
                             "OnlyMyVoice": "SAMO MOJ GLAS",
