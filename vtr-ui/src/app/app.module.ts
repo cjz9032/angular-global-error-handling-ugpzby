@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ColorPickerModule } from 'ngx-color-picker';
+import { SelectDropDownModule } from 'ngx-select-dropdown';
 
 // CUSTOM MODULES
 import { AppRoutingModule } from './app-routing.module';
@@ -445,7 +446,8 @@ library.add(fal);
 		BrowserAnimationsModule,
 		PrivacyModule,
 		ColorPickerModule,
-		SanitizeModule
+		SanitizeModule,
+		SelectDropDownModule
 	],
 	providers: [
 		CookieService,

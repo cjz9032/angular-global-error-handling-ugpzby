@@ -14,6 +14,7 @@ export class SupportService {
 	private sysinfo: any;
 	private warranty: any;
 	metrics: any;
+	userGuide: any;
 	metricsDatas = {
 		viewOrder: 1,
 		pageNumber: 1,
@@ -28,6 +29,7 @@ export class SupportService {
 		this.sysinfo = shellService.getSysinfo();
 		this.warranty = shellService.getWarranty();
 		this.metrics = shellService.getMetrics();
+		this.userGuide = shellService.getUserGuide();
 		this.warrantyData = {
 			info: {
 				status: -1,
@@ -35,6 +37,9 @@ export class SupportService {
 			},
 			cache: false
 		};
+		if (this.userGuide) {
+			this.userGuide.refresh();
+		}
 	}
 
 	public getMachineInfo(): Promise<any> {
@@ -73,10 +78,16 @@ export class SupportService {
 					} else {
 						this.warrantyData.info = defaultWarranty;
 					}
+				}).catch((err) => {
+					console.log(err);
+					this.warrantyData.info = defaultWarranty;
 				});
 			} else {
 				this.warrantyData.info = defaultWarranty;
 			}
+		}).catch((err) => {
+			console.log(err);
+			this.warrantyData.info = defaultWarranty;
 		});
 	}
 
@@ -119,6 +130,8 @@ export class SupportService {
 	}
 
 	launchUserGuide(launchPDF?: boolean) {
-		this.shellService.launchUserGuide(launchPDF);
+		if (this.userGuide) {
+			this.userGuide.launch(launchPDF);
+		}
 	}
 }

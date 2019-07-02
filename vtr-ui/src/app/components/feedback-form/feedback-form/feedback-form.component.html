@@ -10,9 +10,7 @@
 			<div class="line"></div>
 			<div class="qa-item"
 				*ngFor="let qa of questions">
-				<div class="question">
-					{{ qa.question | translate}}
-				</div>
+				<div class="question" [innerHTML]="qa.question | translate"></div>
 				<div class="form-check form-check-inline">
 					<input class="form-check-input"
 						type="radio"

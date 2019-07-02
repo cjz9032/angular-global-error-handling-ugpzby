@@ -394,9 +394,9 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public launchUserGuide(launchPDF?: boolean) {
+	public getUserGuide() {
 		if (this.phoenix && this.phoenix.userGuide) {
-			this.phoenix.userGuide.launch(launchPDF);
+			return this.phoenix.userGuide;
 		}
 		return undefined;
 	}

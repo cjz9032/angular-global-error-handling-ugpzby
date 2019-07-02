@@ -18,12 +18,18 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 
 	buildVersion = environment.appVersion;
 	shellVersion: string;
+	userGuide: any;
 	constructor(
 		public activeModal: NgbActiveModal,
 		public modalService: NgbModal,
 		private translate: TranslateService,
 		private shellService: VantageShellService,
-	) { }
+	) {
+		this.userGuide = shellService.getUserGuide();
+		if (this.userGuide) {
+			this.userGuide.refresh();
+		}
+	}
 
 	ngOnInit() {
 		if (this.translate.currentLang) { this.lang = this.translate.currentLang; }
@@ -76,7 +82,9 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 	}
 
 	launchUserGuide() {
-		this.shellService.launchUserGuide(true);
+		if (this.userGuide) {
+			this.userGuide.launch(true);
+		}
 	}
 
 	closeModal() {
