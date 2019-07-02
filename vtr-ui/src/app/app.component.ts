@@ -25,7 +25,7 @@ import { ModalServerSwitchComponent } from './components/modal/modal-server-swit
 export class AppComponent implements OnInit {
 	title = 'vtr-ui';
 	private allCapablitiyFlag: Boolean = false;
-
+	machineInfo: any;
 	constructor(
 		private devService: DevService,
 		private displayService: DisplayService,
@@ -179,7 +179,6 @@ export class AppComponent implements OnInit {
 		});
 
 		const result = this.getMachineInfo();
-
 		const hadRunApp: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
 		const appFirstRun = !hadRunApp;
 		if (appFirstRun && this.deviceService.isShellAvailable) {
@@ -189,6 +188,12 @@ export class AppComponent implements OnInit {
 					this.sendFirstRunEvent(machineInfo);
 				});
 			}
+		}
+
+		if (result) {
+				result.then((machineInfo) => {
+				this.machineInfo = machineInfo;
+			});
 		}
 
 		this.checkIsDesktopOrAllInOneMachine();
