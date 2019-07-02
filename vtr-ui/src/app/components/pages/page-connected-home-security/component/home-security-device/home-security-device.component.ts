@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { HomeSecurityMockService } from 'src/app/services/home-security/home-security.service';
+import { HomeSecurityMockService } from 'src/app/services/home-security/home-security-mock.service';
 import { CHSAccountState, ConnectedHomeSecurity, EventTypes, CHSNotificationType } from '@lenovo/tan-client-bridge';
 
 @Component({
