@@ -73,10 +73,16 @@ export class SupportService {
 					} else {
 						this.warrantyData.info = defaultWarranty;
 					}
+				}).catch((err) => {
+					console.log(err);
+					this.warrantyData.info = defaultWarranty;
 				});
 			} else {
 				this.warrantyData.info = defaultWarranty;
 			}
+		}).catch((err) => {
+			console.log(err);
+			this.warrantyData.info = defaultWarranty;
 		});
 	}
 
