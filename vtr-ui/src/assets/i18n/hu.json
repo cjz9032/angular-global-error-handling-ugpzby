@@ -52,6 +52,9 @@
                         "text": "Please install driver",
                         "button": "Install",
                         "link": "cancel"
+                    },
+                    "lightingColorMessage": {
+                        "text": "Selecting color not available to this effect."
                     }
                 },
                 "systemTools": {
@@ -81,6 +84,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                },
+                "systemStatus": {
+                    "info": "INFO"
                 }
             }
         },
@@ -126,7 +132,7 @@
                 },
                 "recording": {
                     "title": "START TYPING",
-                    "description": "20 inputs with in 20 seconds can be recorded."
+                    "description": "20 inputs within 20 seconds can be recorded."
                 },
                 "recorded": {
                     "title": "MACRO KEY FOR ",
@@ -215,7 +221,7 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure to clear this macro key?"
+                    "title": "Are you sure you want to clear this macro key?"
                 },
                 "timeoutRecording": {
                     "title": "Time Out For Recording.",
@@ -234,6 +240,9 @@
                     "btnCancel": "Cancel"
                 },
                 "btnOk": "OK"
+            },
+            "recording": {
+                "title": "Recording Macro Key For"
             }
         },
         "lightingProfile": {
@@ -341,6 +350,29 @@
                 "heading": {
                     "title": "Select Profile:"
                 }
+            },
+            "colourwheel": {
+                "text1": {
+                    "title": "Selecting colour not available to this effect."
+                },
+                "text2": {
+                    "title": "APPLY"
+                },
+                "text3": {
+                    "title": "APPLIED"
+                },
+                "text4": {
+                    "title": "R:"
+                },
+                "text5": {
+                    "title": "G:"
+                },
+                "text6": {
+                    "title": "B:"
+                },
+                "text7": {
+                    "title": "Color"
+                }
             }
         }
     },
@@ -398,8 +430,8 @@
         },
         "ui": {
             "back": "VISSZA",
-            "on": "BE",
-            "off": "KI",
+            "on": "ON",
+            "off": "OFF",
             "collapse": "Összecsukás",
             "expand": "Kibontás",
             "loader": "Fetching <br> Status"
@@ -892,24 +924,24 @@
                         "tooltip": "A MIKROFON működése személyre szabható a mikrofon hangerejének beállításávalés a megfelelő mód kiválasztásával."
                     },
                     "volume": {
-                        "title": "Microphone Volume",
-                        "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
+                        "title": "Mikrofon hangereje",
+                        "description": "A Dolby Audio gazdag, tiszta és erőteljes hangzást biztosít az Ön által élvezett összes tartalom esetén, valamint lehetővé teszi, hogy kiválassza a megfelelő módot a tartalmaihoz és az eszközeihez.",
                         "options": {
                             "silent": "Csendes",
                             "loud": "Hangos"
                         }
                     },
                     "suppress": {
-                        "title": "Suppress keyboard noise",
-                        "tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+                        "title": "Billentyűzet hangjának csökkentése",
+                        "tooltip": "Kapcsolja be ezt a funkciót a mikrofonhang (MIC) billentyűzet zajának elnyomásával történő optimalizálásához."
                     },
                     "acoustic": {
-                        "title": "Acoustic Echo Cancellation",
-                        "tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+                        "title": "Akusztikus visszhang leállítása",
+                        "tooltip": "Kapcsolja be ezt a funkciót a mikrofonhang (MIC) akusztikus visszhang elnyomásával történő optimalizálásához."
                     },
                     "optimize": {
-                        "title": "Optimize my microphone for:",
-                        "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+                        "title": "Mikrofon optimalizálása:",
+                        "tooltip": "A mikrofoneffektus konfigurálása úgy, hogy javítsa a hangzást különböző körülmények között, illetve különböző környezetekben.",
                         "options": {
                             "VoiceRecognition": "HANGFELISMERÉS",
                             "OnlyMyVoice": "CSAK A SAJÁT HANGOM",

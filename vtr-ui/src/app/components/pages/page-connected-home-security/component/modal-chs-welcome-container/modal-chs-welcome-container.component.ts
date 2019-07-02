@@ -17,7 +17,7 @@ import { EventTypes, WinRT } from '@lenovo/tan-client-bridge';
 import * as Phoenix from '@lenovo/tan-client-bridge';
 import { ModalLenovoIdComponent } from '../../../../modal/modal-lenovo-id/modal-lenovo-id.component';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { HomeSecurityMockService } from 'src/app/services/home-security/home-security.service';
+import { HomeSecurityMockService } from 'src/app/services/home-security/home-security-mock.service';
 
 @Component({
 	selector: 'vtr-modal-chs-welcome-container',
@@ -45,11 +45,6 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	) {
 		this.chs = vantageShellService.getConnectedHomeSecurity();
 		this.permission = vantageShellService.getPermission();
-	}
-
-	@HostListener('window: focus')
-	onFocus(): void {
-		this.refreshPage();
 	}
 
 	ngOnInit() {
@@ -87,14 +82,19 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	}
 
 	refreshPage() {
-		this.permission.getSystemPermissionShowed().then((response: boolean) => {
-			this.hasSystemPermissionShowed = response;
-			if (response) {
-				this.permission.requestPermission('geoLocatorStatus').then((status) => {
+		if (this.hasSystemPermissionShowed) {
+			this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
+				this.isLocationServiceOn = status;
+			});
+		} else {
+			this.permission.getSystemPermissionShowed().then((response: boolean) => {
+				this.hasSystemPermissionShowed = response;
+				if (!response) { return; }
+				this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
 					this.isLocationServiceOn = status;
 				});
-			}
-		});
+			});
+		}
 		this.isLenovoIdLogin = this.chs.account.lenovoId.loggedIn;
 	}
 

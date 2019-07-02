@@ -18,7 +18,8 @@
 				[allowCollapse]="true"
 				[theme]="'white'">
 				<ul class="list-group list-group-flush">
-					<li class="pt-3" *ngIf="machineType == 1 && keyboardCompatability">
+					<li class="pt-3"
+						*ngIf="machineType == 1 && keyboardCompatability">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.title' | translate"
 							componentName="Input Accessories"
@@ -39,16 +40,22 @@
 							<div class="row">
 								<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 									<!-- <img src="../../../../../../assets/icons/Hidden keyboard functions.svg" alt="">-->
-									<div class="img-preview" [ngStyle]="{ 'background-image': 'url(' + image + ')'}">
-										 <div class="img-preview" [style.background-image]="additionalCapabilitiesObj.privacy ? 'url(' + privacyIcon + ')': ''">
-											<div class="img-preview"  [style.background-image]="additionalCapabilitiesObj.backLight ? 'url(' + kbdBlIcon + ')': ''">
-												<div class="img-preview" [style.background-image]="additionalCapabilitiesObj.magnifier ? 'url(' + merlynIcon + ')': ''">
-													<img *ngIf="additionalCapabilitiesObj.performane" [src]="zoomIcon" class="image"/>
-												   </div>
-											   </div>
+									<div class="img-preview"
+										[ngStyle]="{ 'background-image': 'url(' + image + ')'}">
+										<div class="img-preview"
+											[style.background-image]="additionalCapabilitiesObj.privacy ? 'url(' + privacyIcon + ')': ''">
+											<div class="img-preview"
+												[style.background-image]="additionalCapabilitiesObj.backLight ? 'url(' + kbdBlIcon + ')': ''">
+												<div class="img-preview"
+													[style.background-image]="additionalCapabilitiesObj.magnifier ? 'url(' + merlynIcon + ')': ''">
+													<img *ngIf="additionalCapabilitiesObj.performane"
+														[src]="zoomIcon"
+														class="image" />
+												</div>
 											</div>
-
 										</div>
+
+									</div>
 								</div>
 							</div>
 							<div class="row keys-row">
@@ -69,73 +76,81 @@
 						</vtr-ui-row-switch>
 					</li>
 
-					<li class="pt-3 user-defined-key-block">
-						<vtr-ui-row-switch [title]="'device.deviceSettings.inputAccessories.userDefinedKey.title' | translate"
+					<li class="pt-3 user-defined-key-block"
+						*ngIf="hasUDKCapability">
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.inputAccessories.userDefinedKey.title' | translate"
 							componentName="User defined key"
 							[caption]="'device.deviceSettings.inputAccessories.userDefinedKey.caption' | translate"
-							[leftIcon]="['fal', 'gem']"
-							[rightIcon]="['far', 'question-circle']"
+							[leftIcon]="['fal', 'gem']"						
 							[showChildContent]="true"
 							[theme]="'white'"
-							[tooltipText]="'device.deviceSettings.inputAccessories.userDefinedKey.tooltip' | translate" >
+							[tooltipText]="'device.deviceSettings.inputAccessories.userDefinedKey.tooltip' | translate">
 
 							<div class="row">
 								<div class="col-md-10 col-sm-12 col-lg-10 pt-5">
 									<div class="row">
 										<div class="col-auto pl-0">
-											<img class="img-fluid" src="../../../../../../assets/images/F12-key.PNG">
-											<p class="pressf12" style="text-align: center">press F12</p>
+											<img class="img-fluid"
+												src="../../../../../../assets/images/F12-key.PNG">
+											<p class="pressf12"
+												style="text-align: center">press F12 </p>
 										</div>
-											<div class="inputSection">
-													<div class="col">
-														<div class="btn-group btn-block dropdown-left" ngbDropdown
-															placement="bottom">
-															<button
-																[ngClass]="['btn','btn-outline-shadow']"
-																ngbDropdownToggle type="button">
-																<div class="row d-flex justify-content-between">
-																	<div class="col-auto pl-1 pr-1">
-																		<div class="select-title">
-																			{{'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.title' | translate}}
-																		</div>
+										<div class="inputSection">
+											<div class="col">
+												<div class="btn-group btn-block dropdown-left"
+													ngbDropdown
+													placement="bottom">
+													<button [ngClass]="['btn','btn-outline-shadow']"
+														ngbDropdownToggle
+														type="button">
+														<div class="row d-flex justify-content-between">
+															<div class="col-auto pl-1 pr-1">
+																<div class="select-title">
+																	{{'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.title' | translate}}
 
-																		<div class="select-text text-left">
-																			{{selectedValue.title}}
-																		</div>
-																	</div>
-																	<div class="col-auto pl-0 pr-1">
-																		<div class="dropdown-icon">
-																			<fa-icon [icon]="['fas', 'chevron-down']"></fa-icon>
-																		</div>
-																	</div>
 																</div>
-															</button>
-															<div ngbDropdownMenu aria-labelledby="">
-																<a [ngClass]="['dropdown-item']"
-																	*ngFor="let item of userDefinedKeyOptions"
-																	(click)="onChange(item)"
-																	 >{{item.title}}</a>
+
+																<div class="select-text text-left">
+																	{{selectedValue.title}}
+																</div>
+															</div>
+															<div class="col-auto pl-0 pr-1">
+																<div class="dropdown-icon">
+																	<fa-icon [icon]="['fas', 'chevron-down']"></fa-icon>
+																</div>
 															</div>
 														</div>
+													</button>
+													<div ngbDropdownMenu
+														aria-labelledby="">
+														<a [ngClass]="['dropdown-item']"
+															*ngFor="let item of userDefinedKeyOptions"
+															(click)="onChange(item)">{{item.title}}</a>
 													</div>
-
-															<div class="col" *ngIf = "selectedValue.value == 2">
-																<textarea placeholder="WEBSITE URL"></textarea>
-															</div>
-
-																<div class="col" *ngIf = "selectedValue.value == 3">
-																		<div class="note align-items-center">
-																				{{'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.note' | translate}}
-																		</div>
-																</div>
-
-
-															<div class="col" *ngIf = "selectedValue.value == 3">
-																<textarea placeholder="TEXT TO BE ENETERED"></textarea>
-															</div>
-
+												</div>
 											</div>
+
+											<div class="col"
+												*ngIf="selectedValue.value == 2">
+												<textarea placeholder="WEBSITE URL"></textarea>
+											</div>
+
+											<div class="col"
+												*ngIf="selectedValue.value == 3">
+												<div class="note align-items-center">
+													{{'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.note' | translate}}
+												</div>
+											</div>
+
+
+											<div class="col"
+												*ngIf="selectedValue.value == 3">
+												<textarea placeholder="TEXT TO BE ENETERED"></textarea>
+											</div>
+
 										</div>
+									</div>
 								</div>
 							</div>
 						</vtr-ui-row-switch>

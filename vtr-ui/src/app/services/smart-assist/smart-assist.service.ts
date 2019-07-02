@@ -379,7 +379,7 @@ export class SmartAssistService {
 	}
 	// SET Snooze time
 	public setSnoozeTime(value: string): Promise<boolean> {
-		console.log('SNOOZE VALUE', typeof value, value);
+		console.log('SNOOZE VALUE', typeof value);
 		if (this.isAPSavailable) {
 			return this.activeProtectionSystem.setSnoozeTime(value);
 		}
@@ -391,10 +391,88 @@ export class SmartAssistService {
 		if (this.isAPSavailable) {
 			return this.activeProtectionSystem.sendSnoozeCommand(value);
 		}
+		return undefined;
+	}
+	//  Get Pen Capability
+	public getPenCapability(): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.getPenCapability();
+		}
+		return undefined;
+	}
+	// Get Touch Capability
+	public getTouchCapability(): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.getTouchCapability();
+		}
+		return undefined;
+	}
+	// Get PSensor Capability
+	public getPSensorCapability(): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.getPSensorCapability();
+		}
+		return undefined;
+	}
+	// Get Pen Status
+	public getPenSetting(): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.getPenSetting();
+		}
+		return undefined;
+	}
+	// Get Pen Delay
+	public getPenDelayTime(): Promise<number> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.getPenDelayTime();
+		}
+		return undefined;
+	}
+	// Get Touch Status
+	public getTouchInputSetting(): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.getTouchInputSetting();
+		}
+		return undefined;
+	}
+	// Get PSensor Status
+	public getPSensorSetting(): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.getPSensorSetting();
+		}
+		return undefined;
+	}
+	// Set Pen settings
+	public setPenSetting(value: boolean): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setPenSetting(value);
+		}
+		return undefined;
+	}
+	// Set Pen Delay
+	public setPenDelayTime(value: number): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setPenDelayTime(value);
+		}
+		return undefined;
+	}
+	//  Set Touch settings
+	public setTouchInputSetting(value: boolean): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setTouchInputSetting(value);
+		}
+		return undefined;
+	}
+	// Set PSensor Settings
+	public setPSensorSetting(value: boolean): Promise<boolean> {
+		if (this.isAPSavailable) {
+			return this.activeProtectionSystem.setPSensorSetting(value);
+		}
+		return undefined;
 	}
 	//#endregion
 
-	// Start Lenovo Voice
+	//#region Start Lenovo Voice
 	public isLenovoVoiceAvailable(): Promise<boolean> {
 		if (this.lenovoVoice) {
 			return this.lenovoVoice.getCapability();
@@ -402,26 +480,26 @@ export class SmartAssistService {
 		return undefined;
 	}
 
-	public isLenovoVoiceInstalled():  Promise<boolean> {
+	public isLenovoVoiceInstalled(): Promise<boolean> {
 		if (this.lenovoVoice) {
 			return this.lenovoVoice.getInstallStatus();
 		}
 		return undefined;
 	}
 
-	public downloadLenovoVoice():  Promise<string> {
+	public downloadLenovoVoice(): Promise<string> {
 		if (this.lenovoVoice) {
 			return this.lenovoVoice.downloadAndInstallVoiceApp();
 		}
 		return undefined;
 	}
 
-	public launchLenovoVoice():  Promise<boolean> {
+	public launchLenovoVoice(): Promise<boolean> {
 		if (this.lenovoVoice) {
 			return this.lenovoVoice.launchVoiceApp();
 		}
 		return undefined;
 	}
 
-	// End Lenovo Voice
+	//#endregion
 }

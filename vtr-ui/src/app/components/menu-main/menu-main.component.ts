@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, DoCheck, HostListener, SimpleChanges, SimpleChange, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, DoCheck, HostListener, ViewChild, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -14,18 +14,20 @@ import { TranslationService } from 'src/app/services/translation/translation.ser
 import Translation from 'src/app/data-models/translation/translation';
 import { environment } from '../../../environments/environment';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
-import { WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
+import { WindowsHello, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { RegionService } from 'src/app/services/region/region.service';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { ModalCommonConfirmationComponent } from '../modal/modal-common-confirmation/modal-common-confirmation.component';
+import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
+import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 
 @Component({
 	selector: 'vtr-menu-main',
 	templateUrl: './menu-main.component.html',
-	styleUrls: [ './menu-main.component.scss' ]
+	styleUrls: ['./menu-main.component.scss']
 })
 export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewInit {
 	@ViewChild('menuTarget') menuTarget;
@@ -43,6 +45,8 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 	public items: any;
 	showMenu = false;
 	preloadImages: string[];
+	securityAdvisor: SecurityAdvisor;
+	isRS5OrLater: boolean;
 
 	constructor(
 		private router: Router,
@@ -57,9 +61,14 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 		private translate: TranslateService,
 		private regionService: RegionService,
 		private smartAssist: SmartAssistService,
-		private logger: LoggerService
+		private logger: LoggerService,
+		private securityAdvisorMockService: SecurityAdvisorMockService
 	) {
 		this.showVpn();
+		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
+		if (!this.securityAdvisor) {
+			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
+		}
 		this.getMenuItems().then((items) => {
 			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(
 				LocalStorageKey.SecurityShowWindowsHello
@@ -78,9 +87,8 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 					subitems: []
 				});
 			}
-			const securityAdvisor = vantageShellService.getSecurityAdvisor();
-			if (securityAdvisor) {
-				const windowsHello: WindowsHello = securityAdvisor.windowsHello;
+			if (this.securityAdvisor) {
+				const windowsHello: WindowsHello = this.securityAdvisor.windowsHello;
 				if (windowsHello.fingerPrintStatus) {
 					this.showWindowsHello(windowsHello);
 				}
@@ -104,7 +112,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 	onFocus(): void {
 		this.showVpn();
 	}
-	@HostListener('document:click', [ '$event.target' ])
+	@HostListener('document:click', ['$event.target'])
 	onClick(targetElement) {
 		const clickedInside = this.menuTarget.nativeElement.contains(targetElement);
 		const toggleMenuButton =
@@ -237,7 +245,13 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 	showWindowsHello(windowsHello: WindowsHello) {
 		this.getMenuItems().then((items) => {
 			const securityItem = items.find((item) => item.id === 'security');
-			if (!this.commonService.isRS5OrLater() || typeof windowsHello.fingerPrintStatus !== 'string') {
+			const version = this.commonService.getWindowsVersion();
+			if (version === 0) {
+				this.isRS5OrLater = true;
+			} else {
+				this.isRS5OrLater = this.commonService.isRS5OrLater();
+			}
+			if (!this.isRS5OrLater || typeof windowsHello.fingerPrintStatus !== 'string') {
 				securityItem.subitems = securityItem.subitems.filter((subitem) => subitem.id !== 'windows-hello');
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
 			} else {
@@ -259,7 +273,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 			}
 		});
 	}
-	showPrivacy() {}
+	showPrivacy() { }
 	showVpn() {
 		this.regionService.getRegion().subscribe({
 			next: (x) => {
@@ -312,10 +326,8 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 				const smartAssistItem = myDeviceItem.subitems.find((item) => item.id === 'smart-assist');
 				if (!smartAssistItem) {
 					// if cache has value true for IsSmartAssistSupported, add menu item
-					const isSmartAssistSupported = this.commonService.getLocalStorageValue(
-						LocalStorageKey.IsSmartAssistSupported,
-						false
-					);
+					const isSmartAssistSupported = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, false);
+
 					if (isSmartAssistSupported) {
 						this.addSmartAssistMenu(myDeviceItem);
 					}
@@ -326,29 +338,33 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 						this.smartAssist.getHPDVisibilityInThinkPad(),
 						this.smartAssist.isLenovoVoiceAvailable(),
 						this.smartAssist.getVideoPauseResumeStatus(), // returns object
-						this.smartAssist.getIntelligentScreenVisibility()
-					])
-						.then((responses: any[]) => {
-							console.log('showSmartAssist.Promise.all()', responses);
-							const isAvailable =
-								responses[0] || responses[1] || responses[2] || responses[3].available || responses[4];
-							// const isAvailable = true;
-							this.commonService.setLocalStorageValue(
-								LocalStorageKey.IsLenovoVoiceSupported,
-								responses[2]
-							);
-							this.commonService.setLocalStorageValue(
-								LocalStorageKey.IsSmartAssistSupported,
-								isAvailable
-							);
-							// avoid duplicate entry. if not added earlier then add menu
-							if (isAvailable && !isSmartAssistSupported) {
-								this.addSmartAssistMenu(myDeviceItem);
-							}
-						})
-						.catch((error) => {
-							this.logger.error('error in initSmartAssist.Promise.all()', error);
-						});
+						this.smartAssist.getIntelligentScreenVisibility(),
+						this.smartAssist.getAPSCapability(),
+						this.smartAssist.getSensorStatus(),
+						this.smartAssist.getHDDStatus()
+					]).then((responses: any[]) => {
+						console.log('showSmartAssist.Promise.all()', responses);
+						// cache smart assist capability
+						const smartAssistCapability: SmartAssistCapability = new SmartAssistCapability();
+						smartAssistCapability.isIntelligentSecuritySupported = responses[0] || responses[1];
+						smartAssistCapability.isLenovoVoiceSupported = responses[2];
+						smartAssistCapability.isIntelligentMediaSupported = responses[3];
+						smartAssistCapability.isIntelligentScreenSupported = responses[4];
+						smartAssistCapability.isAPSSupported = (responses[5] && responses[6] && responses[7] >= 0);
+						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+
+						const isAvailable =
+							(responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && responses[7] >= 0);
+						// const isAvailable = true;
+						this.commonService.setLocalStorageValue(LocalStorageKey.IsLenovoVoiceSupported, responses[2]);
+						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, isAvailable);
+						// avoid duplicate entry. if not added earlier then add menu
+						if (isAvailable && !isSmartAssistSupported) {
+							this.addSmartAssistMenu(myDeviceItem);
+						}
+					}).catch((error) => {
+						this.logger.error('error in initSmartAssist.Promise.all()', error);
+					});
 				}
 			}
 		});

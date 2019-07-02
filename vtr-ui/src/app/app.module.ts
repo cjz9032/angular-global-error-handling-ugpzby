@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ColorPickerModule } from 'ngx-color-picker';
+import { SelectDropDownModule } from 'ngx-select-dropdown';
 
 // CUSTOM MODULES
 import { AppRoutingModule } from './app-routing.module';
@@ -236,6 +237,7 @@ import { SanitizeModule } from './modules/sanitize.module';
 import { SmartStandbyComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/smart-standby/smart-standby.component';
 import { UiDaysPickerComponent } from './components/ui/ui-days-picker/ui-days-picker.component';
 import { DownloadFailedModalComponent } from './components/pages/page-smart-assist/voice/download-failed-modal/download-failed-modal.component';
+import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component';
 
 library.add(fas);
 library.add(fab);
@@ -425,7 +427,8 @@ library.add(fal);
 		CapitalizeFirstPipe,
 		SmartStandbyComponent,
 		UiDaysPickerComponent,
-		DownloadFailedModalComponent
+		DownloadFailedModalComponent,
+		ModalServerSwitchComponent
 	],
 	imports: [
 		BrowserModule,
@@ -443,7 +446,8 @@ library.add(fal);
 		BrowserAnimationsModule,
 		PrivacyModule,
 		ColorPickerModule,
-		SanitizeModule
+		SanitizeModule,
+		SelectDropDownModule
 	],
 	providers: [
 		CookieService,
@@ -480,7 +484,8 @@ library.add(fal);
 		ModalChsWelcomeContainerComponent,
 		ModalIntelligentCoolingModesComponent,
 		ModalVoiceComponent,
-		DownloadFailedModalComponent
+		DownloadFailedModalComponent,
+		ModalServerSwitchComponent
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

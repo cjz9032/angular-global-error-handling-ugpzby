@@ -22,7 +22,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalChsWelcomeContainerComponent } from '../page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { HomeSecurityMockService } from 'src/app/services/home-security/home-security.service';
+import { HomeSecurityMockService } from 'src/app/services/home-security/home-security-mock.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { HomeSecurityWelcome } from 'src/app/data-models/home-security/home-security-welcome.model';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -73,13 +73,13 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	}
 
 	ngOnInit() {
+		if (this.connectedHomeSecurity) {
+			this.connectedHomeSecurity.startPullingCHS();
+		}
 		this.isOnline = this.commonService.isOnline;
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-		if (this.connectedHomeSecurity) {
-			this.connectedHomeSecurity.startPullingCHS();
-		}
 
 		const cacheMyDevice = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityMyDevice);
 		if (cacheMyDevice) {
@@ -158,8 +158,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, true);
 		const welcomeComplete = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, false);
 		const showWelcome = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, 0);
-		if (welcomeComplete || showWelcome === 2) {
+		if (welcomeComplete) {
 			this.permission.getSystemPermissionShowed().then((response: boolean) => {
+				this.welcomeModel.hasSystemPermissionShowed = response;
 				if (response) {
 					this.permission.requestPermission('geoLocatorStatus').then((location: boolean) => {
 						if (location) {
@@ -176,20 +177,23 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		}
 	}
 
-	ngOnDestroy() {
-		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, false);
+	@HostListener('window: focus')
+	onFocus(): void {
+		if (this.connectedHomeSecurity) {
+			this.connectedHomeSecurity.startPullingCHS();
+		}
+	}
+
+	@HostListener('window: blur')
+	onBlur(): void {
 		if (this.connectedHomeSecurity) {
 			this.connectedHomeSecurity.stopPullingCHS();
 		}
 	}
 
-	@HostListener('window: focus')
-	onFocus(): void {
-		this.permission.getSystemPermissionShowed().then(response => {
-			this.welcomeModel.hasSystemPermissionShowed = response;
-		});
+	ngOnDestroy() {
+		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, false);
 	}
-
 
 	openWelcomeModal(showWelcome) {
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
@@ -197,6 +201,11 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				return;
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, showWelcome + 1);
+
+			if (showWelcome === 1) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+			}
+
 			this.modalService.open(ModalChsWelcomeContainerComponent, {
 				backdrop: 'static',
 				size: 'lg',
@@ -218,6 +227,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				windowClass: 'Welcome-container-Modal'
 			});
 			welcomeModal.componentInstance.switchPage = 4;
+			welcomeModal.componentInstance.hasSystemPermissionShowed = this.welcomeModel.hasSystemPermissionShowed;
 		}
 	}
 

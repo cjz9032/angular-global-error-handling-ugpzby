@@ -52,6 +52,9 @@
                         "text": "Please install driver",
                         "button": "Install",
                         "link": "cancel"
+                    },
+                    "lightingColorMessage": {
+                        "text": "Selecting color not available to this effect."
                     }
                 },
                 "systemTools": {
@@ -81,6 +84,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                },
+                "systemStatus": {
+                    "info": "INFO"
                 }
             }
         },
@@ -126,7 +132,7 @@
                 },
                 "recording": {
                     "title": "START TYPING",
-                    "description": "20 inputs with in 20 seconds can be recorded."
+                    "description": "20 inputs within 20 seconds can be recorded."
                 },
                 "recorded": {
                     "title": "MACRO KEY FOR ",
@@ -215,7 +221,7 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure to clear this macro key?"
+                    "title": "Are you sure you want to clear this macro key?"
                 },
                 "timeoutRecording": {
                     "title": "Time Out For Recording.",
@@ -234,6 +240,9 @@
                     "btnCancel": "Cancel"
                 },
                 "btnOk": "OK"
+            },
+            "recording": {
+                "title": "Recording Macro Key For"
             }
         },
         "lightingProfile": {
@@ -341,6 +350,29 @@
                 "heading": {
                     "title": "Select Profile:"
                 }
+            },
+            "colourwheel": {
+                "text1": {
+                    "title": "Selecting colour not available to this effect."
+                },
+                "text2": {
+                    "title": "APPLY"
+                },
+                "text3": {
+                    "title": "APPLIED"
+                },
+                "text4": {
+                    "title": "R:"
+                },
+                "text5": {
+                    "title": "G:"
+                },
+                "text6": {
+                    "title": "B:"
+                },
+                "text7": {
+                    "title": "Color"
+                }
             }
         }
     },
@@ -398,8 +430,8 @@
         },
         "ui": {
             "back": "WSTECZ",
-            "on": "WŁ.",
-            "off": "WYŁ.",
+            "on": "ON",
+            "off": "OFF",
             "collapse": "Zwiń",
             "expand": "Rozwiń",
             "loader": "Fetching <br> Status"
@@ -892,24 +924,24 @@
                         "tooltip": "Możesz dostosować efekt mikrofonu, regulując głośność mikrofonui określając odpowiedni tryb."
                     },
                     "volume": {
-                        "title": "Microphone Volume",
-                        "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
+                        "title": "Głośność mikrofonu",
+                        "description": "Ciesz się głębokim i czystym dźwiękiem Dolby wysokiej jakości ulubionej zawartości. W tym celu wybierz odpowiedni tryb dla zawartości oraz sprzętu.",
                         "options": {
                             "silent": "Cichy",
                             "loud": "Głośny"
                         }
                     },
                     "suppress": {
-                        "title": "Suppress keyboard noise",
-                        "tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+                        "title": "Tłum odgłosy klawiatury",
+                        "tooltip": "Włącz tę funkcję, aby zoptymalizować dźwięk MIC przez tłumienie odgłosów klawiatury."
                     },
                     "acoustic": {
-                        "title": "Acoustic Echo Cancellation",
-                        "tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+                        "title": "Eliminacja echa akustycznego",
+                        "tooltip": "Włącz tę funkcję, aby zoptymalizować dźwięk MIC, zmniejszając echo akustyczne."
                     },
                     "optimize": {
-                        "title": "Optimize my microphone for:",
-                        "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+                        "title": "Zoptymalizuj mikrofon:",
+                        "tooltip": "Skonfiguruj efekt mikrofonu, aby poprawić wrażenia dźwiękowe w różnych scenariuszach i środowiskach.",
                         "options": {
                             "VoiceRecognition": "ROZPOZNAWANIE GŁOSU",
                             "OnlyMyVoice": "TYLKO MÓJ GŁOS",

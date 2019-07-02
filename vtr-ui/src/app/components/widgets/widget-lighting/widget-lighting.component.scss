@@ -107,33 +107,33 @@
 				color: white !important;
 			}
 			#off_radio:checked {
-				& ~ #off {
-					color: $gaming_lightest;
-				}
+				// & ~ #off {
+				// 	color: $gaming_lightest;
+				// }
 				& ~ .toggle {
 					left: 0%;
 				}
 			}
 			#first_radio:checked {
-				& ~ #first_lbl {
-					color: $gaming_lightest;
-				}
+				// & ~ #first_lbl {
+				// 	color: $gaming_lightest;
+				// }
 				& ~ .toggle {
 					left: 25%;
 				}
 			}
 			#second_radio:checked {
-				& ~ #second_lbl {
-					color: $gaming_lightest;
-				}
+				// & ~ #second_lbl {
+				// 	color: $gaming_lightest;
+				// }
 				& ~ .toggle {
 					left: 50%;
 				}
 			}
 			#third_radio:checked {
-				& ~ #third_lbl {
-					color: $gaming_lightest;
-				}
+				// & ~ #third_lbl {
+				// 	color: $gaming_lightest;
+				// }
 				& ~ .toggle {
 					left: 74%;
 				}
@@ -165,7 +165,7 @@
 			padding-top: 0;
 			a {
 				font-size: 1.5rem;
-				color: $gaming_lightest;
+				color: $gaming_switch_light;
 				text-decoration: none;
 				padding-left: 0;
 				display: flex;
@@ -174,17 +174,25 @@
 				cursor: pointer;
 				color: $shade_light;
 				line-height: 1.5rem;
+				&:hover {
+					color: $gaming_lightest;
+					.icon{
+						background:$screen_dark_20;
+						color: $gaming_lightest;
+					}
+				}
 				.icon {
 					margin-right: 0.5rem;
 					font-size: 2rem;
 					transition: all .2s ease-in-out;
 					border-radius: 50%;
 					padding: 0.6rem;
-					&:hover {
-						background:$gaming_light_02;
-					}
+					color: $gaming_grey_lightest;
 				}
 			}
 		}
+	}
+	.gamingTextColor {
+		color: $gaming_lightest !important;
 	}
 }
