@@ -52,7 +52,6 @@
 					"lightingColorMessage": {
 						"text": "Selecting color not available to this effect."
 					},
-
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",
@@ -65,6 +64,9 @@
 					"hardwareScan": "Hardware Scan",
 					"systemUpdate": "System Update",
 					"header": "System Tools"
+				},
+				"systemStatus": {
+					"info": "INFO"
 				},
 				"lighting": {
 					"title": "Lighting Customize",
@@ -238,6 +240,9 @@
 					"btnCancel": "Cancel"
 				},
 				"btnOk": "OK"
+			},
+			"recording": {
+				"title": "Recording Macro Key For"
 			}
 		},
 		"lightingProfile": {
@@ -282,8 +287,6 @@
 					"title": " effect"
 				}
 			},
-
-
 			"lightingSingleLightingOption": {
 				"option1": {
 					"title": "Always On"
@@ -1085,7 +1088,7 @@
 				"userDefinedKey": {
 					"title": "User-defined Key",
 					"caption": "The key represented by the star icon allows you to set user defined function",
-					"tooltip" : "Content to be filled",
+					"tooltip": "Content to be filled",
 					"dropDown": {
 						"title": "Action User Defined key",
 						"note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
