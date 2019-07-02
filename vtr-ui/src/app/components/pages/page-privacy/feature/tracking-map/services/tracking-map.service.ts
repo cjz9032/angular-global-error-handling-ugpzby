@@ -24,7 +24,7 @@ import { FigleafOverviewService } from '../../../common/services/figleaf-overvie
 	providedIn: 'root'
 })
 export class TrackingMapService {
-	isTrackersBlocked$ = this.figleafOverviewService.figleafSettings$.asObservable()
+	isTrackersBlocked$ = this.figleafOverviewService.figleafSettings$
 		.pipe(
 			map((settings) => settings.isAntitrackingEnabled),
 			startWith(false)
