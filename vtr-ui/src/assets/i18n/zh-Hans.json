@@ -374,7 +374,7 @@
                 "title": "设备",
                 "sub1": "我的设备",
                 "sub2": "我的设备设置",
-                "sub3": "System Updates",
+                "sub3": "系统更新",
                 "sub4": "智能帮助"
             },
             "security": {
@@ -520,7 +520,7 @@
                 }
             },
             "systemUpdate": {
-                "title": "系统升级",
+                "title": "系统更新",
                 "detail": {
                     "update": "更新"
                 }
