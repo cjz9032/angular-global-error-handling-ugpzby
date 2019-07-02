@@ -73,6 +73,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	}
 
 	ngOnInit() {
+		if (this.connectedHomeSecurity) {
+			this.connectedHomeSecurity.startPullingCHS();
+		}
 		this.isOnline = this.commonService.isOnline;
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
