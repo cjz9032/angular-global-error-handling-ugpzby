@@ -116,6 +116,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryInfo = response.batteryInformation;
 				this.batteryGauge = response.batteryIndicatorInfo;
 
+				this.percentageLimitation = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
+
 				this.commonService.setLocalStorageValue(LocalStorageKey.BatteryPercentage,
 					this.batteryGauge.percentage);
 
@@ -148,24 +150,28 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	public updateBatteryDetails() {
 		if (this.batteryInfo !== undefined && this.batteryInfo.length !== 0) {
 			let batteryIndex = -1;
-			const batteriesHealths = [];
+			const remainingPercentages = [];
 			this.batteryInfo.forEach((info) => {
-				batteriesHealths.push(info.batteryHealth);
+				if (info.batteryHealth === undefined || info.batteryHealth === null) {
+					info['batteryHealth'] = 0;
+				}
+				remainingPercentages.push(info.remainingPercent);
 				if (info.batteryHealth >= this.batteryHealth) {
 					this.batteryHealth = info.batteryHealth;
 					batteryIndex += 1;
 				}
 			});
-			// this.commonService.setLocalStorageValue(LocalStorageKey.BatteryPercentage, batteriesHealths);
 			this.batteryIndex = batteryIndex;
+			this.commonService.setLocalStorageValue(LocalStorageKey.RemainingPercentages, remainingPercentages);
 		}
-
 		this.batteryConditionStatus = this.getBatteryHealth(this.batteryHealth);
 		this.batteryIndicator.percent = this.batteryGauge.percentage;
 		this.batteryIndicator.charging = this.batteryGauge.isAttached;
 		this.batteryIndicator.convertMin(this.batteryGauge.time);
 		this.batteryIndicator.timeText = this.batteryGauge.timeType;
-		this.batteryIndicator.expressCharging = this.batteryGauge.isExpressCharging;
+		if (this.batteryGauge.isExpressCharging === undefined || this.batteryGauge.isExpressCharging === null) {
+			this.batteryIndicator.expressCharging = false;
+		}
 		this.batteryIndicator.voltageError = this.batteryInfo[this.batteryIndex].isVoltageError;
 		this.batteryIndicator.batteryNotDetected = this.batteryHealth === 4;
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo, { detail: this.batteryInfo, gauge: this.batteryGauge });

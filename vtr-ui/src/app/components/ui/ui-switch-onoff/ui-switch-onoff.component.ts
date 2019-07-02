@@ -58,18 +58,21 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	 * this function is to send the change event for readonly = false types.
 	 */
 	onChange($event) {
-		if (!this.readonly) {
-			this.disabled = true;
-			if (this.name === 'recommended-updates') {
-				this.disabled = this.isSwitchDisable;
-				this.value = !this.value;
-			} else if (this.name !== 'wifiSecurity') {
-				this.disabled = false;
-				this.value = !this.value;
+		setTimeout(()=>{
+			if (!this.readonly) {
+				this.disabled = true;
+				if (this.name === 'recommended-updates') {
+					this.disabled = this.isSwitchDisable;
+					this.value = !this.value;
+				} else if (this.name !== 'wifiSecurity') {
+					this.disabled = false;
+					this.value = !this.value;
+				}
+				$event.switchValue = this.value;
+				this.toggle.emit($event);
 			}
-			$event.switchValue = this.value;
-			this.toggle.emit($event);
-		}
+		},0);
+
 	}
 
 	/**

@@ -95,6 +95,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 					});
 					break;
 				case DeviceMonitorStatus.CameraStatus:
+					this.camera.isLoading = false;
 					this.cameraStatus.permission = payload;
 					break;
 				default:
@@ -121,7 +122,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		} else {
 			this.getCameraPermission();
 			this.getCameraStatus();
-			
+
 		}
 
 		this.initEyecaremodeSettings();
@@ -130,8 +131,10 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public getCameraPermission() {
 		try {
 			if (this.displayService.isShellAvailable) {
+				this.camera.isLoading = true;
 				this.displayService.getCameraSettingsInfo()
 					.then((result) => {
+						this.camera.isLoading = false;
 						console.log('getCameraPermission.then', result);
 						if (result) {
 							this.cameraStatus.permission = result.permission;
@@ -149,8 +152,10 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public initEyecaremodeSettings() {
 		try {
 			if (this.displayService.isShellAvailable) {
+				this.eyecare.isLoading = true;
 				this.displayService.initEyecaremodeSettings()
 					.then((result: boolean) => {
+						this.eyecare.isLoading = false;
 						console.log('initEyecaremodeSettings.then', result);
 						if (result === true) {
 							const eyeCare = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardEyeCareMode);
@@ -170,6 +175,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	}
 
 	private getCameraStatus() {
+<<<<<<< HEAD
 		if (this.dashboardService.isShellAvailable) {
 			this.dashboardService
 				.getCameraStatus()
@@ -188,11 +194,39 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				.catch(error => {
 					console.error('getCameraStatus', error);
 				});
+=======
+		try {
+			if (this.dashboardService.isShellAvailable) {
+				if (this.cameraStatus.permission) {
+					this.camera.isLoading = true;
+				}
+				this.dashboardService
+					.getCameraStatus()
+					.then((featureStatus: FeatureStatus) => {
+						this.camera.isLoading = false;
+						console.log('getCameraStatus.then', featureStatus);
+						this.cameraStatus = featureStatus;
+						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, featureStatus);
+						// if privacy available then start monitoring
+						if (featureStatus.available) {
+							this.startMonitorForCamera();
+						}
+					})
+					.catch(error => {
+						console.error('getCameraStatus', error);
+					});
+			}
+		} catch(error) {
+			this.camera.isLoading = false;
+			console.error(error.message);
+>>>>>>> fd74170300dfb813bd9da42767395198a0fa2aa1
 		}
 	}
 
 	startMonitorHandlerForCamera(value: FeatureStatus) {
 		console.log('startMonitorHandlerForCamera', value);
+		this.camera.isLoading = false;
+		this.cameraStatus = value;
 		this.cameraStatus.available = value.available;
 		this.cameraStatus.status=value.permission;
 		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraStatus);

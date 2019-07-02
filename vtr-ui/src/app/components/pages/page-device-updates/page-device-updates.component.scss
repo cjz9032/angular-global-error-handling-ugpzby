@@ -218,3 +218,13 @@
 		}
 	}
 }
+.is-gaming{
+	vtr-autoupdate-settings{
+		display: none;
+		::ng-deep{
+			.vtr-autoupdate-settings {
+				background: $dark_cell;
+			}
+		}
+	}
+}
