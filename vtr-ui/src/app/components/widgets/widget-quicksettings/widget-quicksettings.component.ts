@@ -175,7 +175,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				.getCameraStatus()
 				.then((featureStatus: FeatureStatus) => {
 					console.log('getCameraStatus.then', featureStatus);
-					this.cameraStatus = featureStatus;
+					this.cameraStatus.available = featureStatus.available;
+					this.cameraStatus.status = featureStatus.status;
 					this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, featureStatus);
 					// if privacy available then start monitoring
 					if (featureStatus.available) {
