@@ -64,6 +64,8 @@
 		word-wrap: break-word;
 		white-space: pre-wrap;
 		white-space: -moz-pre-wrap;
+		width: 100%;
+		overflow-x: hidden;
 	}
 
 	.spinner-content {

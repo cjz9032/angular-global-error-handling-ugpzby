@@ -17,7 +17,7 @@ import { EventTypes, WinRT } from '@lenovo/tan-client-bridge';
 import * as Phoenix from '@lenovo/tan-client-bridge';
 import { ModalLenovoIdComponent } from '../../../../modal/modal-lenovo-id/modal-lenovo-id.component';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { HomeSecurityMockService } from 'src/app/services/home-security/home-security.service';
+import { HomeSecurityMockService } from 'src/app/services/home-security/home-security-mock.service';
 
 @Component({
 	selector: 'vtr-modal-chs-welcome-container',
