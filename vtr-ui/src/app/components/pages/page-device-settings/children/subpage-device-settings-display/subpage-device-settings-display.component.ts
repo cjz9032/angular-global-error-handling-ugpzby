@@ -235,7 +235,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					this.cameraFeatureAccess.showAutoExposureSlider = true;
 					console.log('no camera permission .then', this.emptyCameraDetails[0]);
 					const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
-					privacy.status = false;
+					// privacy.status = false;
 					this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
 					this.dataSource.exposure.autoValue = false
 				}
