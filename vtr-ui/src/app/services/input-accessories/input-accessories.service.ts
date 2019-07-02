@@ -3,18 +3,58 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { promise } from 'protractor';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class InputAccessoriesService {
-  public keyboardManager: any;
-  public isShellAvailable = false;
-  
-	constructor(shellService: VantageShellService) {	
+	public keyboardManager: any;
+	public isShellAvailable = false;
+
+	constructor(shellService: VantageShellService) {
 		this.keyboardManager = shellService.getKeyboardManagerObject();
 		if (this.keyboardManager) {
 			this.isShellAvailable = true;
-		}	
+		}
 	}
+
+
+	public setUserDefinedKeySetting(type, actionType, settingKey, settingValue): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.setUserDefinedKeySetting(type, actionType, settingKey, settingValue);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+
+	}
+	//  Check Keyboard UDK Compatability Status
+	public GetUDKCapability(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.GetUDKCapability();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	//  Get the UDKTypeList
+	public GetUDKTypeList(): Promise<any> {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.GetUDKTypeList();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+
+
+
 	// Start Hidden keyboard keys
 	public GetKeyboardMapCapability(): Promise<boolean> {
 		try {
@@ -47,7 +87,7 @@ export class InputAccessoriesService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
-	}	
+	}
 
 
 	public GetKbdHiddenKeyPrivacyFilterCapability(): Promise<boolean> {
