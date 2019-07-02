@@ -157,6 +157,7 @@
 					opacity: 0;
 					transition: all 0.5s ease-in-out;
 					word-break: break-all;
+					pointer-events: none;
 					&::after {
 						content: "";
 						position: absolute;
