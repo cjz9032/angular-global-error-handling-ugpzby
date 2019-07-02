@@ -901,6 +901,7 @@ export class UiLightingProfileComponent implements OnInit {
 							this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileById, response);
 						}
 
+
 						this.currentProfileId = response.profileId;
 						this.currentProfile = response.profileId;
 						this.profileBrightness = response.brightness;
@@ -1075,6 +1076,9 @@ export class UiLightingProfileComponent implements OnInit {
 					if (response.didSuccess) {
 						if (LocalStorageKey.LightingProfileById !== undefined) {
 							this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileById, response);
+						}
+						if (LocalStorageKey.ProfileId !== undefined) {
+							this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, response.profileId);
 						}
 
 						if (response.profileId > 0) {
