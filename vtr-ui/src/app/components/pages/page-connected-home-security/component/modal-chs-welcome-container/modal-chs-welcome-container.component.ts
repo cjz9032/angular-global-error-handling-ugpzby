@@ -26,7 +26,7 @@ import { HomeSecurityMockService } from 'src/app/services/home-security/home-sec
 })
 export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit {
 	containerPage: number;
-	switchPage: number = 1;
+	switchPage = 1;
 	isLenovoIdLogin: boolean;
 	url = 'ms-settings:privacy-location';
 	showPageFour = false;
@@ -45,11 +45,6 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	) {
 		this.chs = vantageShellService.getConnectedHomeSecurity();
 		this.permission = vantageShellService.getPermission();
-	}
-
-	@HostListener('window: focus')
-	onFocus(): void {
-		this.refreshPage();
 	}
 
 	ngOnInit() {
@@ -87,14 +82,19 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	}
 
 	refreshPage() {
-		this.permission.getSystemPermissionShowed().then((response: boolean) => {
-			this.hasSystemPermissionShowed = response;
-			if (response) {
-				this.permission.requestPermission('geoLocatorStatus').then((status) => {
+		if (this.hasSystemPermissionShowed) {
+			this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
+				this.isLocationServiceOn = status;
+			});
+		} else {
+			this.permission.getSystemPermissionShowed().then((response: boolean) => {
+				this.hasSystemPermissionShowed = response;
+				if (!response) { return; }
+				this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
 					this.isLocationServiceOn = status;
 				});
-			}
-		});
+			});
+		}
 		this.isLenovoIdLogin = this.chs.account.lenovoId.loggedIn;
 	}
 
@@ -125,20 +125,22 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 				this.switchPage = 3;
 			}
 		} else if (switchPage === 3) {
-			this.loading = true;
-			this.chs.account.createAccount().then((trial: boolean) => {
-				if (!trial) { return; }
-				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
-				if (isLocationServiceOn) {
+			if (isLenovoIdLogin) {
+				this.loading = true;
+				this.chs.account.createAccount().then((trial: boolean) => {
+					if (!trial) { return; }
+					this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+				}).finally(() => {
 					this.loading = false;
-					this.closeModal();
-				} else {
-					this.switchPage = 4;
-					this.showPageFour = true;
-				}
-			}).finally(() => {
+				});
+			}
+			if (isLocationServiceOn) {
 				this.loading = false;
-			});
+				this.closeModal();
+			} else {
+				this.switchPage = 4;
+				this.showPageFour = true;
+			}
 		}
 	}
 
