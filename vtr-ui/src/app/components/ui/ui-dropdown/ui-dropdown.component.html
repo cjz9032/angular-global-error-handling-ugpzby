@@ -5,13 +5,13 @@
 		<ul>
 			<li (click)="select(i)"
 				*ngFor="let i of list">
-				{{i.text}}
+				{{i.text | uppercase }}
 			</li>
 		</ul>
 	</div>
 	<div class="input" (click)="toggle()">
 		<div class="time">
-			<span>{{name}} {{placeholder | uppercase}} </span>
+			<span>{{name}} {{placeholder | uppercase }} </span>
 		</div>
 		<p class="chevron">
 			<fa-icon *ngIf="!isDropDownOpen"
