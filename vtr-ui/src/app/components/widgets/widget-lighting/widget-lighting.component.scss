@@ -165,7 +165,7 @@
 			padding-top: 0;
 			a {
 				font-size: 1.5rem;
-				color: $gaming_lightest;
+				color: $gaming_switch_light;
 				text-decoration: none;
 				padding-left: 0;
 				display: flex;
@@ -174,15 +174,20 @@
 				cursor: pointer;
 				color: $shade_light;
 				line-height: 1.5rem;
+				&:hover {
+					color: $gaming_lightest;
+					.icon{
+						background:$screen_dark_20;
+						color: $gaming_lightest;
+					}
+				}
 				.icon {
 					margin-right: 0.5rem;
 					font-size: 2rem;
 					transition: all .2s ease-in-out;
 					border-radius: 50%;
 					padding: 0.6rem;
-					&:hover {
-						background:$gaming_light_02;
-					}
+					color: $gaming_grey_lightest;
 				}
 			}
 		}

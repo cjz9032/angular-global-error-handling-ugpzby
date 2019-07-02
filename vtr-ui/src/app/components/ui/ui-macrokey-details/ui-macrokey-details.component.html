@@ -1,7 +1,7 @@
 <div class="macrokey-wrapper" [ngClass]="{'recording': recording && number}">
 	<div class="header-component" *ngIf="number && !number.status">
 		<div class="title-main">
-			Recording Macro Key For <span
+			{{ 'gaming.macroKey.recording.title' | translate }} <span
 				*ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>
 			{{ number.key | translate }}
 		</div>

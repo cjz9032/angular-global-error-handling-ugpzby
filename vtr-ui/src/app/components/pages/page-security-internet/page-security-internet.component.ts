@@ -8,6 +8,7 @@ import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { RegionService } from 'src/app/services/region/region.service';
+import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 
 @Component({
 	selector: 'vtr-page-security-internet',
@@ -28,14 +29,18 @@ export class PageSecurityInternetComponent implements OnInit {
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		public regionService: RegionService,
-		vantageShellService: VantageShellService
+		vantageShellService: VantageShellService,
+		private securityAdvisorMockService: SecurityAdvisorMockService
 	) {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
+		if (!this.securityAdvisor) {
+			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
+		}
 		this.statusItem = {
 			title: 'security.vpn.statusTitle',
 			status: 'loading'
 		};
-		this.vpn = vantageShellService.getSecurityAdvisor().vpn;
+		this.vpn = this.securityAdvisor.vpn;
 		const cacheStatus: string = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityVPNStatus);
 		if (cacheStatus) {
 			this.statusItem.status = cacheStatus;

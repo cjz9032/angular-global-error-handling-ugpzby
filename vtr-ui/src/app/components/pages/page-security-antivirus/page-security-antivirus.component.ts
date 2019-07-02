@@ -11,6 +11,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { RegionService } from 'src/app/services/region/region.service';
+import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',
@@ -44,9 +45,13 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		public cmsService: CMSService,
 		public commonService: CommonService,
 		public modalService: NgbModal,
-		public regionService: RegionService,) {
+		public regionService: RegionService,
+		private securityAdvisorMockService: SecurityAdvisorMockService) {
 		this.securityAdvisor = this.VantageShell.getSecurityAdvisor();
-		this.antiVirus = this.VantageShell.getSecurityAdvisor().antivirus;
+		if (!this.securityAdvisor) {
+			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
+		}
+		this.antiVirus = this.securityAdvisor.antivirus;
 		this.viewModel = new AntiVirusviewModel(this.antiVirus, commonService);
 		this.fetchCMSArticles();
 	}

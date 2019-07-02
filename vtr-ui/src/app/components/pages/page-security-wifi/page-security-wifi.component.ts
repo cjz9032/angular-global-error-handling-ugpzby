@@ -13,6 +13,7 @@ import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/mo
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { SecurityService } from 'src/app/services/security/security.service';
 import { RegionService } from 'src/app/services/region/region.service';
+import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 
 interface DevicePostureDetail {
 	status: number; // 1,2
@@ -68,9 +69,13 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		private cmsService: CMSService,
 		public translate: TranslateService,
 		private ngZone: NgZone,
-		public regionService: RegionService
+		public regionService: RegionService,
+		private securityAdvisorMockService: SecurityAdvisorMockService
 	) {
 		this.securityAdvisor = shellService.getSecurityAdvisor();
+		if (!this.securityAdvisor) {
+			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
+		}
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 		this.homeProtection = this.securityAdvisor.homeProtection;
 		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.ngZone, this.securityService);
