@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="30" height="30" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e74c3c"/>
+      <stop offset="1" stop-color="#ff7d70"/>
+    </linearGradient>
+  </defs>
+  <g id="组件" clip-path="url(#clip-path)">
+    <g id="组_109" data-name="组 109">
+      <circle id="Oval_Copy_3" data-name="Oval Copy 3" cx="15" cy="15" r="15" fill="url(#linear-gradient)"/>
+    </g>
+    <path id="Path_Copy" data-name="Path Copy" d="M11.694,10.306,7.417,6l4.278-4.306A.972.972,0,0,0,12,.986a.948.948,0,0,0-.292-.694A.964.964,0,0,0,11,0a1.038,1.038,0,0,0-.722.278L6,4.583,1.722.278A1.038,1.038,0,0,0,1,0,.964.964,0,0,0,.292.292.964.964,0,0,0,0,1a.9.9,0,0,0,.306.694L4.583,6,.306,10.306A.9.9,0,0,0,0,11a.964.964,0,0,0,.292.708A.964.964,0,0,0,1,12a1.038,1.038,0,0,0,.722-.278L6,7.417l4.278,4.306A1.038,1.038,0,0,0,11,12a1,1,0,0,0,1-1A.9.9,0,0,0,11.694,10.306Z" transform="translate(9 9)" fill="#fff"/>
+  </g>
+</svg>

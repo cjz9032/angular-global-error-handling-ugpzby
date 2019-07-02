@@ -158,6 +158,9 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 						position: relative;
 						top: -0.6rem;
 					}
+					.no-battery {
+						top: -0.2rem !important;
+					}
 				}
 
 				.percentage {

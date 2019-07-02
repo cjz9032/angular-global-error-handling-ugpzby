@@ -14,7 +14,7 @@
 					</vtr-ui-row-switch>
 					<div class="dropdown row">
 						<section class="col-sm-6">
-							<vtr-ui-dropdown *ngIf="penStatus" [list]="intervals" [value]="penDelay" (change)="setPenDelayTime($event)">
+							<vtr-ui-dropdown *ngIf=" penStatus && penDelay " [list]="intervals" [value]="penDelay" (change)="setPenDelayTime($event)">
 							</vtr-ui-dropdown>
 						</section>
 					</div>

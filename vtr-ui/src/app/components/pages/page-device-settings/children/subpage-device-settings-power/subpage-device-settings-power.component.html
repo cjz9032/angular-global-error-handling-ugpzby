@@ -38,7 +38,7 @@
 	</div>
 	<vtr-power-smart-settings (isPowerSmartSettingHidden)=hidePowerSmartSetting(value)
 		*ngIf="!isDesktopMachine"></vtr-power-smart-settings>
-		<vtr-smart-standby></vtr-smart-standby>
+	<vtr-smart-standby></vtr-smart-standby>
 	<div class="row py-5"
 		id="battery">
 		<div class="col-10 mx-auto ">
@@ -63,7 +63,7 @@
 
 					<!-- MVP 2 feature -->
 					<li class=""
-						*ngIf="machineType == 1 && responseData[0].isCapable">
+						*ngIf="machineType == 1 && responseData[0]?.isCapable">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.batteryThreshold.description' | translate "
