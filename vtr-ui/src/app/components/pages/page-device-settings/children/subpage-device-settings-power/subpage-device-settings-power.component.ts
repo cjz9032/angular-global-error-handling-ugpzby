@@ -9,6 +9,7 @@ import { BatteryDetailService } from 'src/app/services/battery-detail/battery-de
 import { SmartStandby } from 'src/app/data-models/device/smart-standby.model';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes } from '@lenovo/tan-client-bridge';
+import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
 
 
 enum PowerMode {
@@ -797,8 +798,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	// start battery threshold settings
 	private getBatterStatusEvent(response) {
 		// console.log('Event response here---------------....>%%%%%%%%%%%?>', response)
-		 this.responseData = response;
-		this.getBatteryThresholdInformation();		
+		this.responseData = response;
+		this.getBatteryThresholdInformation();
 	}
 	public getBatteryThresholdInformation() {
 		if (this.powerService.isShellAvailable) {
@@ -808,7 +809,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.responseData = res || [];
 					// this.responseData = [{batteryNum: 1, startValue: 25, stopValue: 95, checkBoxValue : true, isOn: true, isCapable: true},
 					// {batteryNum:2, startValue: 57, stopValue: 78, checkBoxValue : false, isOn: true}];
-
+					this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, res);
 					if (this.responseData && this.responseData.length > 0) {
 						this.selectedStartAtChargeVal = this.responseData[0].startValue - (this.responseData[0].startValue % 5);
 						this.selectedStopAtChargeVal = this.responseData[0].stopValue - (this.responseData[0].stopValue % 5);
@@ -865,13 +866,14 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.setChargeThresholdValues(batteryInfo, batteryInfo.batteryNum, 'changedValues');
 			})
 		} else {
-			this.powerService.setToggleOff(this.responseData.length).then((value: any) => {
-				// console.log('change threshold value------------------->>>>>>>>>', value);
-			})
+			this.powerService.setToggleOff(this.responseData.length)
+				.then((value: any) => {
+					// console.log('change threshold value------------------->>>>>>>>>', value);
+					this.getBatteryThresholdInformation();
+				})
 				.catch(error => {
 					console.error('change threshold value', error);
 				});
-			this.getBatteryThresholdInformation();
 		}
 
 	}
@@ -903,6 +905,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						.setChargeThresholdValue(batteryInfo)
 						.then((value: any) => {
 							// console.log('change threshold value------------------->>>>>>>>>', value);
+							this.getBatteryThresholdInformation();
 						})
 						.catch(error => {
 							console.error('change threshold value', error);

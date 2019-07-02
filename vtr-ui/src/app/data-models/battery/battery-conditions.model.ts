@@ -24,10 +24,10 @@ export class BatteryConditionModel {
 					'device.deviceSettings.batteryGauge.condition.Illegal.description',
 					'device.deviceSettings.batteryGauge.condition.Illegal.description1',
 					'device.deviceSettings.batteryGauge.condition.Illegal.description2');
-			case BatteryConditionsEnum.Exhaution:
+			case BatteryConditionsEnum.Exhaustion:
 				return new BatteryConditionNote(
-					'device.deviceSettings.batteryGauge.condition.Exhaution.title',
-					'device.deviceSettings.batteryGauge.condition.Exhaution.description', '', '');
+					'device.deviceSettings.batteryGauge.condition.Exhaustion.title',
+					'device.deviceSettings.batteryGauge.condition.Exhaustion.description', '', '');
 			case BatteryConditionsEnum.NotDetected:
 				return new BatteryConditionNote(
 					'device.deviceSettings.batteryGauge.condition.NotDetected.title',

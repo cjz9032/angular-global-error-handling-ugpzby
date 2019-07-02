@@ -1,6 +1,6 @@
 export enum BatteryConditionsEnum {
 	Good,
-	Exhaution,
+	Exhaustion,
 	Bad,
 	Illegal,
 	NotDetected,
