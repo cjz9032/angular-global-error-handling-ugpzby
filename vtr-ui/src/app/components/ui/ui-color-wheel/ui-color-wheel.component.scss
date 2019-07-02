@@ -99,7 +99,8 @@
     width: 4rem;
   }
   #color-wheel {
-    position: relative;
+	position: relative;
+	z-index: 8;
     ::ng-deep {
       .reinvented-color-wheel,
       .reinvented-color-wheel--hue-wheel,
@@ -136,6 +137,7 @@
 				margin: auto;
 				clip-path: circle(50% at 50% 50%);
 				//border-radius: 50%;
+
 			}
 
 			.reinvented-color-wheel--hue-handle,
@@ -150,6 +152,7 @@
 
 			.reinvented-color-wheel--sv-space {
 				clip-path: circle(50% at 50% 50%);
+
 			}
 		}
 	}
