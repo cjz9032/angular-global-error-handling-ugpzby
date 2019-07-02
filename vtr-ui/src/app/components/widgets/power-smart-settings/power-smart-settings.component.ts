@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { PowerService } from 'src/app/services/power/power.service';
 import {
 	ICModes,
@@ -18,7 +18,7 @@ const ideapad = 0;
 	templateUrl: './power-smart-settings.component.html',
 	styleUrls: ['./power-smart-settings.component.scss']
 })
-export class PowerSmartSettingsComponent implements OnInit {
+export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	intelligentCoolingModes = IntelligentCoolingHardware.ITS
 	dYTCRevision = 0;
 	cQLCapability = false;
@@ -95,7 +95,21 @@ export class PowerSmartSettingsComponent implements OnInit {
 			if (response && !response.available) {
 				this.showIC = 0;
 				this.isPowerSmartSettingHidden.emit(true);
+				return;
 			}
+			if (response && response.available) {
+				if (response.itsVersion == 3 || response.itsVersion == 4) {
+					this.initPowerSmartSettingsUIForIdeaPad(response);
+					this.startMonitorForICIdeapad();
+				}
+			}
+		} catch (error) {
+			console.error("initPowerSmartSettingsForIdeaPad: " + error.message);
+		}
+	}
+
+	initPowerSmartSettingsUIForIdeaPad(response: any) {
+		try {
 			if (response && response.available) {
 				if (response.itsVersion == 3) {
 					this.intelligentCoolingModes = IntelligentCoolingHardware.ITS13;
@@ -121,8 +135,43 @@ export class PowerSmartSettingsComponent implements OnInit {
 					this.setPerformanceAndCool(currentMode);
 				}
 			}
+		} catch(error) {
+			console.error("initPowerSmartSettingsUIForIdeaPad: " + error.message);
+		}
+	}
+
+	callbackForStartMonitorICIdeapad(response: any) {
+		console.log("callbackForStartMonitorICIdeapad", response);
+		this.initPowerSmartSettingsUIForIdeaPad(response);
+	}
+
+	startMonitorForICIdeapad() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService.startMonitorForICIdeapad(this.callbackForStartMonitorICIdeapad.bind(this))
+					.then((value: boolean) => {
+						console.log('startMonitorForICIdeapad.then', value);
+					}).catch(error => {
+						console.error('startMonitorForICIdeapad', error);
+					});
+			}
 		} catch (error) {
-			console.error("initPowerSmartSettingsForIdeaPad: " + error.message);
+			console.error('startMonitorForICIdeapad' + error.message);
+		}
+	}
+
+	stopMonitorForICIdeapad() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService.stopMonitorForICIdeapad()
+					.then((value: boolean) => {
+						console.log('stopMonitorForICIdeapad', value);
+					}).catch(error => {
+						console.error('stopMonitorForICIdeapad', error);
+					});
+			}
+		} catch (error) {
+			console.error('stopMonitorForICIdeapad' + error.message);
 		}
 	}
 
@@ -445,5 +494,9 @@ export class PowerSmartSettingsComponent implements OnInit {
 
 	readMore() {
 		this.onReadMoreClick = true;
+	}
+
+	ngOnDestroy() {
+		this.stopMonitorForICIdeapad();
 	}
 }
