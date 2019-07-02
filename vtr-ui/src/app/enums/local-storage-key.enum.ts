@@ -139,5 +139,6 @@ export enum LocalStorageKey {
 	IsLenovoVoiceSupported = '[LocalStorageKey] IsLenovoVoiceSupported',
 
 	BatteryPercentage = '[LocalStorageKey] BatteryPercentage',
-	SmartAssistCapability = '[LocalStorageKey] SmartAssistCapability'
+	SmartAssistCapability = '[LocalStorageKey] SmartAssistCapability',
+	RemainingPercentages = '[LocalStorageKey] RemainingPercentages'
 }

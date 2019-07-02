@@ -56,6 +56,9 @@ export class AntiVirusLandingViewModel {
 			subjectStatus.title = res;
 		});
 		const setAntivirusStatus = (av: boolean, fw: boolean, currentPage: string) => {
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fw !== undefined ? fw : null);
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, av !== undefined ? av : null);
+
 			if (typeof av === 'boolean' && typeof fw === 'boolean') {
 				avStatus.status = av === true ? 0 : 1;
 				avStatus.detail = av === true ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
@@ -104,9 +107,6 @@ export class AntiVirusLandingViewModel {
 					this.imgUrl = '';
 					break;
 			}
-
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fw !== undefined ? fw : null);
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, av !== undefined ? av : null);
 
 			translate.stream(avStatus.detail).subscribe((res) => {
 				avStatus.detail = res;
@@ -159,6 +159,10 @@ export class AntiVirusLandingViewModel {
 		}
 		if (cacheAvStatus || cacheFwStatus) {
 			setAntivirusStatus(cacheAvStatus, cacheFwStatus, cacheCurrentPage);
+		}
+
+		if (avModel) {
+			setPage(avModel);
 		}
 
 		avModel.on(EventTypes.avRefreshedEvent, (av) => {

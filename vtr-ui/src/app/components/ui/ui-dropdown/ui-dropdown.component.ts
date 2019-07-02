@@ -18,7 +18,7 @@ export class UiDropDownComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
-		console.log('Setting Snooze Value', this.value);
+		console.log('Setting Dropdown  Value', this.value);
 		this.setDropDownValue();
 	}
 

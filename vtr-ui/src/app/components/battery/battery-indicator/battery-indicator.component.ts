@@ -77,13 +77,13 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 		}
 		const {
 			borderColor,
-			backgroundColor,
+			borderShadowColor,
 			fillColor
 		} = this.getLevelCssValues(percentage);
 
 		this.batteryIndicator.nativeElement.style.setProperty(
-			'--background-color',
-			backgroundColor
+			'--border-shadow-color',
+			borderShadowColor
 		);
 
 		this.batteryIndicator.nativeElement.style.setProperty(
@@ -108,13 +108,13 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 		// RedCross with a black background: Battery is error.
 
 		let borderColor = '';
-		let backgroundColor = '';
+		let borderShadowColor = '';
 		let fillColor = '';
 
 		switch (true) {
 			case level >= 0 && level < 15: // red status
-				backgroundColor = this.getCssPropertyValue(
-					'--background-color-0-14'
+				borderShadowColor = this.getCssPropertyValue(
+					'--border-shadow-color-0-14'
 				);
 				borderColor = this.getCssPropertyValue(
 					'--border-color-0-14'
@@ -124,8 +124,8 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				);
 				break;
 			case level >= 15 && level < 25: // Yellow
-				backgroundColor = this.getCssPropertyValue(
-					'--background-color-15-24'
+				borderShadowColor = this.getCssPropertyValue(
+					'--border-shadow-color-15-24'
 				);
 				borderColor = this.getCssPropertyValue(
 					'--border-color-15-24'
@@ -135,8 +135,8 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				);
 				break;
 			case level >= 25: // green
-				backgroundColor = this.getCssPropertyValue(
-					'--background-color-25-100'
+				borderShadowColor = this.getCssPropertyValue(
+					'--border-shadow-color-25-100'
 				);
 				borderColor = this.getCssPropertyValue(
 					'--border-color-25-100'
@@ -147,8 +147,8 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				break;
 			default:
 				// -1 for battery error
-				backgroundColor = this.getCssPropertyValue(
-					'--background-color-error'
+				borderShadowColor = this.getCssPropertyValue(
+					'--border-shadow-color-error'
 				);
 				borderColor = this.getCssPropertyValue(
 					'--border-color-error'
@@ -169,7 +169,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 		// 		borderColor = this.getCssPropertyValue('--border-color-0-14');
 		// 		break;
 		// }
-		return { borderColor, backgroundColor, fillColor };
+		return { borderColor, borderShadowColor, fillColor };
 	}
 
 	public getTimeRemaining(): string {
