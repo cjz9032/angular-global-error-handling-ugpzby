@@ -22,7 +22,7 @@ export interface FigleafStatus {
 	expirationDate: number;
 }
 
-interface FigleafSettings {
+export interface FigleafSettings {
 	isAntitrackingEnabled: boolean;
 	isBreachMonitoringEnabled: boolean;
 }

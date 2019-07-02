@@ -1,7 +1,7 @@
 import { Directive, HostListener } from '@angular/core';
 import { VantageCommunicationService } from '../services/vantage-communication.service';
 import { TrialExpiredWidgetService } from '../../main-layout/sidebar/trial-expired-widget/trial-expired-widget.service';
-import { map, switchMap } from 'rxjs/operators';
+import { map, switchMap, take } from 'rxjs/operators';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 
 @Directive({
@@ -17,10 +17,10 @@ export class OpenSeePlansDirective {
 	@HostListener('click', ['$event']) onClick() {
 		this.communicationWithFigleafService.sendMessageToFigleaf({type: 'getFigleafLinks'}).pipe(
 			map((response) => response['payload']),
-			switchMap((response) => this.vantageCommunicationService.openUri(response.seePlansLink))
+			switchMap((response) => this.vantageCommunicationService.openUri(response.seePlansLink)),
+			take(1)
 		).subscribe(
 			() => {},
 			(err) => console.error('Open link error ', err));
 	}
-
 }
