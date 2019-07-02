@@ -220,7 +220,8 @@
 			}
 			.vtr-page-right-column {
 				background-color: $gaming_darker;
-				padding-left: 2.2rem;
+				//padding-left: 2.2rem;
+				padding: 0 8.5rem 4rem 4rem;
 				@media #{$small-screen} {
 					margin-top: -0.1rem;
 					padding: 6rem 1.5rem 1.5rem 1.5rem;

@@ -53,8 +53,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	public responseData: any[] = [];
 	public machineType: any;
-	public currentBatteryChargeVal: number;
+	public primaryBatteryChargeVal: any;
+	public secondaryBatteryChargeVal: any;
 	private batteryCountStatusEventRef: any;
+	public batteryChargeValues: any = [];
 
 	chargeOptions: number[] = [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
 	startAtChargeOptions: number[] = this.chargeOptions.slice(0, this.chargeOptions.length - 1);
@@ -258,6 +260,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		this.batteryChargeValues = this.commonService.getLocalStorageValue(LocalStorageKey.RemainingPercentages);
+
 		if (this.isDesktopMachine) {
 			this.headerMenuItems.splice(0, 1);
 		}
@@ -851,8 +855,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 	private getBatteryCharge() {
-		this.currentBatteryChargeVal = this.commonService.getLocalStorageValue(LocalStorageKey.BatteryPercentage);
-		if (this.currentBatteryChargeVal > this.selectedStopAtChargeVal1 || this.currentBatteryChargeVal > this.selectedStopAtChargeVal) {
+		this.primaryBatteryChargeVal = this.batteryChargeValues[0];
+		this.secondaryBatteryChargeVal = this.batteryChargeValues[1] || 0;
+
+		if (this.primaryBatteryChargeVal > this.selectedStopAtChargeVal || this.secondaryBatteryChargeVal > this.selectedStopAtChargeVal1) {
 			this.showWarningMsg = true;
 		} else {
 			this.showWarningMsg = false;
@@ -886,7 +892,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (batteryNum == 2) {
 			this.selectedStopAtChargeVal1 = batteryDetails.stopValue;
 		}
-		if (this.currentBatteryChargeVal > this.selectedStopAtChargeVal1 || this.currentBatteryChargeVal > this.selectedStopAtChargeVal) {
+		if (this.primaryBatteryChargeVal > this.selectedStopAtChargeVal || this.secondaryBatteryChargeVal > this.selectedStopAtChargeVal1) {
 			this.showWarningMsg = true;
 		} else {
 			this.showWarningMsg = false;

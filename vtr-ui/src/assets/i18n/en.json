@@ -300,6 +300,10 @@
 				"option4": {
 					"title": "Slow Blink"
 				}
+				,
+				"option5": {
+					"title": "Blink Level"
+				}
 			},
 			"profile": {
 				"text1": {
@@ -1180,7 +1184,7 @@
 				"description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
 				"activeProtection": {
 					"title": "Active Protection",
-					"caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
+					"caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection.",
 					"checkbox": "Ignore repetative shocks such as those of a train or a car"
 				},
 				"manualActiveProtectionSuspension": {
@@ -1193,7 +1197,7 @@
 					"description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
 					"pen": {
 						"title": "Pen Input",
-						"description": "When pen input is used, Enable APS when pen input is out of range"
+						"description": "When pen input is used, enable APS when pen input is out of range for"
 					},
 					"touch": {
 						"title": "Touch Input",

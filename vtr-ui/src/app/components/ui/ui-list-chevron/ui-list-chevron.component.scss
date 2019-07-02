@@ -235,7 +235,10 @@
 	}
 
 	.disabled {
-		cursor: default;
+		cursor: default !important;
+		* {
+			cursor: default !important;
+		}
 	}
 
 }

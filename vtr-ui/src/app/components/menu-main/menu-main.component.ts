@@ -338,7 +338,10 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 						this.smartAssist.getHPDVisibilityInThinkPad(),
 						this.smartAssist.isLenovoVoiceAvailable(),
 						this.smartAssist.getVideoPauseResumeStatus(), // returns object
-						this.smartAssist.getIntelligentScreenVisibility()
+						this.smartAssist.getIntelligentScreenVisibility(),
+						this.smartAssist.getAPSCapability(),
+						this.smartAssist.getSensorStatus(),
+						this.smartAssist.getHDDStatus()
 					]).then((responses: any[]) => {
 						console.log('showSmartAssist.Promise.all()', responses);
 						// cache smart assist capability
@@ -347,9 +350,11 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 						smartAssistCapability.isLenovoVoiceSupported = responses[2];
 						smartAssistCapability.isIntelligentMediaSupported = responses[3];
 						smartAssistCapability.isIntelligentScreenSupported = responses[4];
+						smartAssistCapability.isAPSSupported = (responses[5] && responses[6] && responses[7] >= 0);
 						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
 
-						const isAvailable = (responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]);
+						const isAvailable =
+							(responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && responses[7] >= 0);
 						// const isAvailable = true;
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsLenovoVoiceSupported, responses[2]);
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, isAvailable);

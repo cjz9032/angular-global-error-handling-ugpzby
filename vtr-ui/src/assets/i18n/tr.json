@@ -52,6 +52,9 @@
                         "text": "Please install driver",
                         "button": "Install",
                         "link": "cancel"
+                    },
+                    "lightingColorMessage": {
+                        "text": "Selecting color not available to this effect."
                     }
                 },
                 "systemTools": {
@@ -81,6 +84,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                },
+                "systemStatus": {
+                    "info": "INFO"
                 }
             }
         },
@@ -126,7 +132,7 @@
                 },
                 "recording": {
                     "title": "START TYPING",
-                    "description": "20 inputs with in 20 seconds can be recorded."
+                    "description": "20 inputs within 20 seconds can be recorded."
                 },
                 "recorded": {
                     "title": "MACRO KEY FOR ",
@@ -215,7 +221,7 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure to clear this macro key?"
+                    "title": "Are you sure you want to clear this macro key?"
                 },
                 "timeoutRecording": {
                     "title": "Time Out For Recording.",
@@ -234,6 +240,9 @@
                     "btnCancel": "Cancel"
                 },
                 "btnOk": "OK"
+            },
+            "recording": {
+                "title": "Recording Macro Key For"
             }
         },
         "lightingProfile": {
@@ -421,8 +430,8 @@
         },
         "ui": {
             "back": "GERİ",
-            "on": "AÇIK",
-            "off": "KAPALI",
+            "on": "ON",
+            "off": "OFF",
             "collapse": "Daralt",
             "expand": "Genişlet",
             "loader": "Fetching <br> Status"
@@ -915,24 +924,24 @@
                         "tooltip": "Mikrofon ses düzeyini ayarlayarak MIC efektinizi özelleştirebilirve uygun kipi belirtebilirsiniz."
                     },
                     "volume": {
-                        "title": "Microphone Volume",
-                        "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
+                        "title": "Mikrofon Ses Düzeyi",
+                        "description": "Dolby Ses, zevk aldığınız tüm içeriklerden zengin, net ve güçlü bir ses sunar. İçeriğiniz ve ekipmanınız için uygun kipi seçin.",
                         "options": {
                             "silent": "Sessiz",
                             "loud": "Yüksek Ses"
                         }
                     },
                     "suppress": {
-                        "title": "Suppress keyboard noise",
-                        "tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+                        "title": "Klavye gürültüsünü gizle",
+                        "tooltip": "Klavye gürültüsünü engelleyerek MIC sesini iyileştirmek için bu düğmeyi açın."
                     },
                     "acoustic": {
-                        "title": "Acoustic Echo Cancellation",
-                        "tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+                        "title": "Akustik Yankı İptali",
+                        "tooltip": "Akustik yankıyı azaltarak MIC sesinizi iyileştirmek için bu özelliği açın."
                     },
                     "optimize": {
-                        "title": "Optimize my microphone for:",
-                        "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+                        "title": "Mikrofonumu şunun için en iyi konuma getirin:",
+                        "tooltip": "Ses deneyiminizi farklı senaryolar ve ortamlarla geliştirmek için mikrofon efektini yapılandırın.",
                         "options": {
                             "VoiceRecognition": "SES TANIMA",
                             "OnlyMyVoice": "YALNIZCA BENİM SESİM",

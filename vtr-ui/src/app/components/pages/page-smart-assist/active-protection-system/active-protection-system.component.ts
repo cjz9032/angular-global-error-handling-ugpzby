@@ -108,6 +108,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 		this.smartAssist
 			.getSnoozeTime()
 			.then(res => {
+				console.log("MANUAL SNOOZE TIME ---------------------------------");
 				this.manualSnoozeTime = +(res);
 			});
 	}
@@ -117,10 +118,10 @@ export class ActiveProtectionSystemComponent implements OnInit {
 			.all([this.smartAssist.getPenCapability(), this.smartAssist.getTouchCapability(), this.smartAssist.getPSensorCapability()])
 			.then((res: any[]) => {
 				console.log('Advanced RESPONSE', res);
-				(res[0] || res[1] || res[2]) ? this.advanceAvailable = true: this.advanceAvailable = true;
-				res[0] ? this.penCapability = true : this.penCapability = true;
-				res[1] ? this.touchCapability = true : this.touchCapability = true;
-				res[2] ? this.pSensorCapability = true : this.pSensorCapability = true;
+				(res[0] || res[1] || res[2]) ? this.advanceAvailable = true : this.advanceAvailable = false;
+				res[0] ? this.penCapability = true : this.penCapability = false;
+				res[1] ? this.touchCapability = true : this.touchCapability = false;
+				res[2] ? this.pSensorCapability = true : this.pSensorCapability = false;
 			})
 			.catch(error => console.log('APS Advanced not available', error));
 	}
