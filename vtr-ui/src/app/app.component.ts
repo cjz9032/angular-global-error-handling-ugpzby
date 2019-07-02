@@ -25,7 +25,7 @@ import { ModalServerSwitchComponent } from './components/modal/modal-server-swit
 export class AppComponent implements OnInit {
 	title = 'vtr-ui';
 	private allCapablitiyFlag: Boolean = false;
-
+	machineInfo: any;
 	constructor(
 		private devService: DevService,
 		private displayService: DisplayService,
@@ -179,7 +179,6 @@ export class AppComponent implements OnInit {
 		});
 
 		const result = this.getMachineInfo();
-
 		const hadRunApp: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
 		const appFirstRun = !hadRunApp;
 		if (appFirstRun && this.deviceService.isShellAvailable) {
@@ -189,6 +188,12 @@ export class AppComponent implements OnInit {
 					this.sendFirstRunEvent(machineInfo);
 				});
 			}
+		}
+
+		if (result) {
+				result.then((machineInfo) => {
+				this.machineInfo = machineInfo;
+			});
 		}
 
 		this.checkIsDesktopOrAllInOneMachine();
@@ -292,13 +297,13 @@ export class AppComponent implements OnInit {
 			//sahinul01Jul2019, VAN-5872, server switch feature
 			if(event.ctrlKey && event.shiftKey && event.keyCode==67){
 				console.log('sahinul Event',event);
-				/*const serverSwitchModal : NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
+				const serverSwitchModal : NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
 					backdrop: true,
 					size: 'lg',
 					centered: true,
 					windowClass: 'Server-Switch-Modal',
 					keyboard : false
-				});*/
+				});
 				//serverSwitchModal.componentInstance.articleId = this.item.Id;
 			}
 

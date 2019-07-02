@@ -65,15 +65,15 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 	initAPSAdvanced() {
 		this.smartAssist
 			.getPenSetting()
-			.then(res => { this.penStatus = res; console.log("*******",res); })
+			.then(res => { this.penStatus = res; console.log('Pen Status', res); })
 			.catch(error =>  console.log(error));
 		this.smartAssist
 			.getTouchInputSetting()
-			.then(res => { this.touchStatus = res; console.log("*******",res); })
+			.then(res => { this.touchStatus = res; console.log('Touch Status', res); })
 			.catch(error =>  console.log(error));
 		this.smartAssist
 			.getPSensorSetting()
-			.then(res => { this.pSensorStatus = res; console.log("*******", res); })
+			.then(res => { this.pSensorStatus = res; console.log('PSensor Status', res); })
 			.catch(error =>  console.log(error));
 		this.smartAssist
 			.getPenDelayTime()

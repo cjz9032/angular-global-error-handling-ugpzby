@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, DoCheck, HostListener, SimpleChanges, SimpleChange, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, DoCheck, HostListener, ViewChild, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -21,12 +21,13 @@ import { RegionService } from 'src/app/services/region/region.service';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { ModalCommonConfirmationComponent } from '../modal/modal-common-confirmation/modal-common-confirmation.component';
+import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 
 @Component({
 	selector: 'vtr-menu-main',
 	templateUrl: './menu-main.component.html',
-	styleUrls: [ './menu-main.component.scss' ]
+	styleUrls: ['./menu-main.component.scss']
 })
 export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewInit {
 	@ViewChild('menuTarget') menuTarget;
@@ -111,7 +112,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 	onFocus(): void {
 		this.showVpn();
 	}
-	@HostListener('document:click', [ '$event.target' ])
+	@HostListener('document:click', ['$event.target'])
 	onClick(targetElement) {
 		const clickedInside = this.menuTarget.nativeElement.contains(targetElement);
 		const toggleMenuButton =
@@ -272,7 +273,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 			}
 		});
 	}
-	showPrivacy() {}
+	showPrivacy() { }
 	showVpn() {
 		this.regionService.getRegion().subscribe({
 			next: (x) => {
@@ -325,10 +326,8 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 				const smartAssistItem = myDeviceItem.subitems.find((item) => item.id === 'smart-assist');
 				if (!smartAssistItem) {
 					// if cache has value true for IsSmartAssistSupported, add menu item
-					const isSmartAssistSupported = this.commonService.getLocalStorageValue(
-						LocalStorageKey.IsSmartAssistSupported,
-						false
-					);
+					const isSmartAssistSupported = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, false);
+
 					if (isSmartAssistSupported) {
 						this.addSmartAssistMenu(myDeviceItem);
 					}
@@ -339,27 +338,31 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 						this.smartAssist.getHPDVisibilityInThinkPad(),
 						this.smartAssist.isLenovoVoiceAvailable(),
 						this.smartAssist.getVideoPauseResumeStatus(), // returns object
-						this.smartAssist.getIntelligentScreenVisibility()
-					])
-					.then((responses: any[]) => {
+						this.smartAssist.getIntelligentScreenVisibility(),
+						this.smartAssist.getAPSCapability(),
+						this.smartAssist.getSensorStatus(),
+						this.smartAssist.getHDDStatus()
+					]).then((responses: any[]) => {
 						console.log('showSmartAssist.Promise.all()', responses);
+						// cache smart assist capability
+						const smartAssistCapability: SmartAssistCapability = new SmartAssistCapability();
+						smartAssistCapability.isIntelligentSecuritySupported = responses[0] || responses[1];
+						smartAssistCapability.isLenovoVoiceSupported = responses[2];
+						smartAssistCapability.isIntelligentMediaSupported = responses[3];
+						smartAssistCapability.isIntelligentScreenSupported = responses[4];
+						smartAssistCapability.isAPSSupported = (responses[5] && responses[6] && responses[7] >= 0);
+						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+
 						const isAvailable =
-							responses[0] || responses[1] || responses[2] || responses[3].available || responses[4];
+							(responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && responses[7] >= 0);
 						// const isAvailable = true;
-						this.commonService.setLocalStorageValue(
-							LocalStorageKey.IsLenovoVoiceSupported,
-							responses[2]
-						);
-						this.commonService.setLocalStorageValue(
-							LocalStorageKey.IsSmartAssistSupported,
-							isAvailable
-						);
+						this.commonService.setLocalStorageValue(LocalStorageKey.IsLenovoVoiceSupported, responses[2]);
+						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, isAvailable);
 						// avoid duplicate entry. if not added earlier then add menu
 						if (isAvailable && !isSmartAssistSupported) {
 							this.addSmartAssistMenu(myDeviceItem);
 						}
-					})
-					.catch((error) => {
+					}).catch((error) => {
 						this.logger.error('error in initSmartAssist.Promise.all()', error);
 					});
 				}

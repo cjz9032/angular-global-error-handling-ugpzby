@@ -52,6 +52,9 @@
                         "text": "Please install driver",
                         "button": "Install",
                         "link": "cancel"
+                    },
+                    "lightingColorMessage": {
+                        "text": "Selecting color not available to this effect."
                     }
                 },
                 "systemTools": {
@@ -81,6 +84,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                },
+                "systemStatus": {
+                    "info": "INFO"
                 }
             }
         },
@@ -126,7 +132,7 @@
                 },
                 "recording": {
                     "title": "START TYPING",
-                    "description": "20 inputs with in 20 seconds can be recorded."
+                    "description": "20 inputs within 20 seconds can be recorded."
                 },
                 "recorded": {
                     "title": "MACRO KEY FOR ",
@@ -215,7 +221,7 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure to clear this macro key?"
+                    "title": "Are you sure you want to clear this macro key?"
                 },
                 "timeoutRecording": {
                     "title": "Time Out For Recording.",
@@ -234,6 +240,9 @@
                     "btnCancel": "Cancel"
                 },
                 "btnOk": "OK"
+            },
+            "recording": {
+                "title": "Recording Macro Key For"
             }
         },
         "lightingProfile": {
@@ -915,24 +924,24 @@
                         "tooltip": "Pode personalizar o seu efeito MIC ajustando o volume do microfonee especificando o modo apropriado."
                     },
                     "volume": {
-                        "title": "Microphone Volume",
-                        "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
+                        "title": "Volume do microfone",
+                        "description": "O Dolby Audio fornece um som rico, claro e poderoso para todos os conteúdos de que gosta. Selecione o modo adequado para os conteúdos e equipamento.",
                         "options": {
                             "silent": "Silencioso",
                             "loud": "Alto"
                         }
                     },
                     "suppress": {
-                        "title": "Suppress keyboard noise",
-                        "tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+                        "title": "Suprimir o ruído do teclado",
+                        "tooltip": "Ative esta função para otimizar o áudio do microfone através da supressão do ruído do teclado."
                     },
                     "acoustic": {
-                        "title": "Acoustic Echo Cancellation",
-                        "tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+                        "title": "Cancelamento de eco acústico",
+                        "tooltip": "Ative esta função para otimizar o áudio do microfone através da redução do eco acústico."
                     },
                     "optimize": {
-                        "title": "Optimize my microphone for:",
-                        "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+                        "title": "Otimizar o microfone para:",
+                        "tooltip": "Configure os efeitos do microfone para melhorar a sua experiência de áudio através de diferentes cenários e ambientes.",
                         "options": {
                             "VoiceRecognition": "RECONHECIMENTO DE VOZ",
                             "OnlyMyVoice": "APENAS A MINHA VOZ",
