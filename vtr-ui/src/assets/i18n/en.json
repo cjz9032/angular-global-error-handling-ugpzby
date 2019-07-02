@@ -932,7 +932,7 @@
 						}
 					},
 					"suppress": {
-						"title": "Suppress keyboard noise",
+						"title": "Suppress Keyboard Noise",
 						"tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
 					},
 					"acoustic": {
@@ -940,7 +940,7 @@
 						"tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
 					},
 					"optimize": {
-						"title": "Optimize my microphone for:",
+						"title": "Optimize My Microphone For:",
 						"tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
 						"options": {
 							"VoiceRecognition": "VOICE RECOGNITION",
@@ -993,7 +993,7 @@
 						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
 					},
 					"dispColorTemp": {
-						"title": "Daytime color temperature",
+						"title": "Daytime Color Temperature",
 						"options": {
 							"warm": "Warm (Better for eyes)",
 							"cold": "Cold"
@@ -1007,7 +1007,7 @@
 						}
 					},
 					"privacyGuard": {
-						"title": "Privacy guard",
+						"title": "Privacy Guard",
 						"description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
 						"note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
 						"labelText": "Enable this feature when typing passwords"
@@ -1021,7 +1021,7 @@
 					},
 					"url": "Go to windows privacy settings",
 					"cameraPrivacy": {
-						"title": "Camera privacy mode",
+						"title": "Camera Privacy Mode",
 						"tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling."
 					},
 					"camera": {
@@ -1056,7 +1056,7 @@
 				"inputAccessory": {
 					"title": "Intelligent Keyboard",
 					"hiddenKeyboardFunctions": {
-						"title": "Hidden keyboard functions",
+						"title": "Hidden Keyboard Functions",
 						"description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
 					},
 					"firstKeyObj": {
@@ -1086,7 +1086,7 @@
 					}
 				},
 				"userDefinedKey": {
-					"title": "User-defined Key",
+					"title": "User-Defined Key",
 					"caption": "The key represented by the star icon allows you to set user defined function",
 					"tooltip": "Content to be filled",
 					"dropDown": {
@@ -1111,7 +1111,7 @@
 				"title": "Intelligent Security",
 				"readMore": "Read more",
 				"HumanPresenceDetection": {
-					"title": "Human presence detection",
+					"title": "Human Presence Detection",
 					"tooltip": "Click here to reset the human presence detection settings."
 				},
 				"humanPresenceDetection": {
@@ -1160,13 +1160,13 @@
 				"title": "Intelligent Screen",
 				"description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
 				"autoScreenOff": {
-					"title": "Auto screen off",
+					"title": "Auto Screen Off",
 					"caption": "Automatically turn off display when face-down or walking.",
 					"note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
 					"windowsLink": "Go to Power & sleep settings in Windows settings"
 				},
 				"keepMyDisplay": {
-					"title": "Keep my display",
+					"title": "Keep My Display",
 					"caption": "Keep my display when I am reading or browsing.",
 					"displaySlider": {
 						"title": "Minutes Before display dims when browsing",
@@ -1200,7 +1200,7 @@
 						"description": "When Touch input is used, Enable APS when touch input is not detected"
 					},
 					"hand": {
-						"title": "Hand proximity sensing on computer edges",
+						"title": "Hand Proximity Sensing on Computer Edges",
 						"description": "When tablet mode is enabled, Enable APS when hand is not detected"
 					}
 				}
@@ -2158,7 +2158,7 @@
 		"settings": "Settings",
 		"settingsDescription": "In preference setting page, you can choose to turn on/off your message notification based on the categories of Vantage's message, please be noted that even if all the message categories are disabled, you may still occasionally receive System Critical message from Vantage when necessary.",
 		"messagesInLenovoVantage": "Messages in Lenovo Vantage",
-		"appFeatures": "App features",
+		"appFeatures": "App Features",
 		"appFeaturesDescription": "Messages pertaining System Update, articles and other noteworthy features.",
 		"marketing": "Marketing",
 		"marketingDescription": "Promotion messages including Lenovo special offers.",

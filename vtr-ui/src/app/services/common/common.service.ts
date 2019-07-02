@@ -143,6 +143,7 @@ export class CommonService {
 				version = value.substring(dotIndex + 1, value.length);
 			}
 		});
+		console.log(version);
 		return Number(version);
 	}
 

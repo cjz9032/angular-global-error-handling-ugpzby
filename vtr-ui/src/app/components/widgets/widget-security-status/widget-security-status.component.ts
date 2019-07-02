@@ -21,6 +21,7 @@ export class WidgetSecurityStatusComponent implements OnInit {
 	@Input() securityAdvisor: SecurityAdvisor;
 	items: Array<WidgetItem>;
 	region: string;
+	isRS5OrLater: boolean;
 
 	constructor(private commonService: CommonService, private translateService: TranslateService, private regionService: RegionService, private ngZone: NgZone) {}
 
@@ -46,7 +47,13 @@ export class WidgetSecurityStatusComponent implements OnInit {
 
 	showWindowsHello(windowsHello: WindowsHello) {
 		const windowsHelloItem = this.items.find(item => item.id === 'sa-widget-lnk-wh');
-		if (this.commonService.isRS5OrLater()
+		const version = this.commonService.getWindowsVersion();
+		if (version === 0) {
+			this.isRS5OrLater = true;
+		} else {
+			this.isRS5OrLater = this.commonService.isRS5OrLater();
+		}
+		if (this.isRS5OrLater
 		&& (typeof windowsHello.fingerPrintStatus === 'string')) {
 			if (!windowsHelloItem) {
 				this.items.push(new WindowsHelloWidgetItem(this.securityAdvisor.windowsHello, this.commonService, this.translateService));

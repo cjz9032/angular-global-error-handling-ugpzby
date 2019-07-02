@@ -486,7 +486,7 @@
                 "messages": {
                     "feedbackSuccess": "نشكرك على تعليقاتك!"
                 },
-                "question1": "هل أعجبك نمط Vantage الجديد؟",
+                "question1": "<span dir=\"rtl\">هل أعجبك نمط Vantage الجديد؟</span>",
                 "question2": "هل تعتقد أن الأداء مقبول؟",
                 "question3": "هل ستستخدم التطبيق بشكل أكثر تكرارًا في المستقبل؟",
                 "yes": "نعم",

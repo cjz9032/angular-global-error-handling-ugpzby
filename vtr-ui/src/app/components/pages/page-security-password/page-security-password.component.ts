@@ -10,6 +10,7 @@ import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/mo
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { RegionService } from 'src/app/services/region/region.service';
+import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 
 @Component({
 	selector: 'vtr-page-security-password',
@@ -33,10 +34,14 @@ export class PageSecurityPasswordComponent implements OnInit {
 		private cmsService: CMSService,
 		private modalService: NgbModal,
 		public regionService: RegionService,
-		vantageShellService: VantageShellService
+		vantageShellService: VantageShellService,
+		private securityAdvisorMockService: SecurityAdvisorMockService
 	) {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
-		this.passwordManager = vantageShellService.getSecurityAdvisor().passwordManager;
+		if (!this.securityAdvisor) {
+			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
+		}
+		this.passwordManager = this.securityAdvisor.passwordManager;
 		this.statusItem = {
 			title: 'security.passwordManager.statusTitle',
 			status: 'loading'
