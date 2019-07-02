@@ -33,7 +33,7 @@ export class PageSmartAssistComponent implements OnInit {
 	public humanPresenceDetectStatus = new FeatureStatus(false, true);
 	public autoIrCameraLoginStatus = new FeatureStatus(false, true);
 	public intelligentSecurity: IntelligentSecurity;
-	public intelligentSecurityCopy: IntelligentSecurity;
+	// public intelligentSecurityCopy: IntelligentSecurity;
 	public autoScreenLockTimer = false;
 	public zeroTouchLoginStatus = new FeatureStatus(false, true);
 	public zeroTouchLockTitle: string;
@@ -85,20 +85,19 @@ export class PageSmartAssistComponent implements OnInit {
 		private logger: LoggerService,
 		private commonService: CommonService
 	) {
-		if (this.smartAssist.isShellAvailable) {
-			this.initSmartAssist(true);
-		}
 		this.fetchCMSArticles();
 	}
 
 	ngOnInit() {
-		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
-		this.smartAssistCapability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCapability, undefined);
-		this.initLenovoVoice();
-		this.setIsThinkPad(this.machineType === 1);
-		this.setIntelligentSecurity();
-		this.setIntelligentScreen();
-		this.getVideoPauseResumeStatus();
+		if (this.smartAssist.isShellAvailable) {
+			this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+			this.smartAssistCapability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCapability, undefined);
+			this.initLenovoVoice();
+			this.setIsThinkPad(this.machineType === 1);
+			this.setIntelligentSecurity();
+			this.setIntelligentScreen();
+			this.initSmartAssist(true);
+		}
 	}
 
 	private initLenovoVoice() {
@@ -135,11 +134,28 @@ export class PageSmartAssistComponent implements OnInit {
 
 	// invoke HPD related JS bridge calls
 	private initSmartAssist(isFirstTimeLoad: boolean) {
-		this.initZeroTouchLock(isFirstTimeLoad);
-		this.initZeroTouchLogin();
-		this.initIntelligentScreen();
 		this.apsAvailability();
 
+		if (this.smartAssistCapability === undefined) {
+			this.initZeroTouchLock(isFirstTimeLoad);
+			this.initZeroTouchLogin();
+			this.initIntelligentScreen();
+			this.getVideoPauseResumeStatus();
+		} else {
+			if (this.smartAssistCapability.isIntelligentSecuritySupported) {
+				this.intelligentSecurity.isIntelligentSecuritySupported = true;
+				this.initZeroTouchLock(isFirstTimeLoad);
+				this.initZeroTouchLogin();
+			}
+			if (this.smartAssistCapability.isIntelligentMediaSupported) {
+				this.intelligentMedia = this.smartAssistCapability.isIntelligentMediaSupported;
+				this.getVideoPauseResumeStatus();
+			}
+			if (this.smartAssistCapability.isIntelligentScreenSupported) {
+				this.intelligentScreen.isIntelligentScreenVisible = true;
+				this.initIntelligentScreen();
+			}
+		}
 	}
 
 	private apsAvailability() {
@@ -150,6 +166,7 @@ export class PageSmartAssistComponent implements OnInit {
 			})
 			.catch((error) => { console.log('APS ERROR------------------', error); });
 	}
+
 	private initIntelligentScreen() {
 		Promise.all([
 			this.smartAssist.getIntelligentScreenVisibility(),
@@ -263,16 +280,16 @@ export class PageSmartAssistComponent implements OnInit {
 
 	public onHumanPresenceDetectStatusToggle($event: any) {
 		this.intelligentSecurity.isHPDEnabled = $event.switchValue;
-		this.intelligentSecurityCopy = { ...this.intelligentSecurity };
-		if (!this.intelligentSecurity.isHPDEnabled) {
-			this.intelligentSecurity.isZeroTouchLoginEnabled = false;
-			this.intelligentSecurity.isZeroTouchLockEnabled = false;
-			this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = false;
-		} else {
-			this.intelligentSecurity.isZeroTouchLoginEnabled = this.intelligentSecurityCopy.isZeroTouchLoginEnabled;
-			this.intelligentSecurity.isZeroTouchLockEnabled = this.intelligentSecurityCopy.isZeroTouchLockEnabled;
-			this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = this.intelligentSecurityCopy.isZeroTouchLoginAdjustEnabled;
-		}
+		// this.intelligentSecurityCopy = { ...this.intelligentSecurity };
+		// if (!this.intelligentSecurity.isHPDEnabled) {
+		// 	this.intelligentSecurity.isZeroTouchLoginEnabled = false;
+		// 	this.intelligentSecurity.isZeroTouchLockEnabled = false;
+		// 	this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = false;
+		// } else {
+		// 	this.intelligentSecurity.isZeroTouchLoginEnabled = this.intelligentSecurityCopy.isZeroTouchLoginEnabled;
+		// 	this.intelligentSecurity.isZeroTouchLockEnabled = this.intelligentSecurityCopy.isZeroTouchLockEnabled;
+		// 	this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = this.intelligentSecurityCopy.isZeroTouchLoginAdjustEnabled;
+		// }
 
 		this.smartAssist.setHPDStatus(this.intelligentSecurity.isHPDEnabled)
 			.then((isSuccess: boolean) => {
