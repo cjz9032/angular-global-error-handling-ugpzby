@@ -4,5 +4,11 @@
 	.container-card {
 		background-color: $gaming_lightest;
 		box-shadow: $drop_shadow_gaming;
+		&.card-highlight {
+		background-color: transparent;
+		.card-image{
+			background-color: $gaming_lightest;
+		}
+		}
 	}
 }
