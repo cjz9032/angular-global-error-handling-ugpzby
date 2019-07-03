@@ -277,6 +277,14 @@
                 },
                 "applied": {
                     "title": "APPLIED"
+				}
+			},
+			"brightness": {
+                "text1": {
+                    "title": "*Brightness setting doesn't apply on "
+                },
+                "text2": {
+                    "title": " effect"
                 }
             },
             "brightness": {
@@ -485,8 +493,8 @@
                 "email": "联系方式（如果您不喜欢可留空）",
                 "comments": "意见...",
                 "button": "提交",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
+				"addScreenshot": "Add ScreenShot",
+				"messages": {
                     "feedbackSuccess": "感谢您的反馈！"
                 },
                 "question1": "您喜欢 Vantage 的新风格吗？",
@@ -682,6 +690,10 @@
                     "NotSupportACAdapter": {
                         "title": "不支持AC适配器",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
+					},
+					"MissingDriver": {
+                        "title": "The Lenovo Power Manager driver",
+                        "description": "未安装或无法正常工作。请运行Windows Update以安装最新的驱动程序"
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager driver",
@@ -850,6 +862,11 @@
                             "checkboxText": "自动将启动充电阈值设置为低于停止充电阈值5个百分点。",
                             "stop": "停止充电"
                         }
+					},
+					"expressCharging": {
+                        "title": "快速充电",
+                        "description": "快速充电可用比常规模式更快的速度将电池充满电。",
+                        "tooltip": "快速充电能够以更快的速度为系统电池充电，但这样可能会缩短电池寿命。"
                     },
                     "expressCharging": {
                         "title": "快速充电",
@@ -933,6 +950,10 @@
                             "silent": "静音",
                             "loud": "大音量"
                         }
+					},
+					"suppress": {
+                        "title": "抑制键盘噪音",
+                        "tooltip": "将此切换到打开以通过抑制键盘噪音来优化麦克风音频效果。"
                     },
                     "suppress": {
                         "title": "抑制键盘噪音",
@@ -973,17 +994,17 @@
                     "title": "显示",
                     "eyeCareMode": {
                         "title": "护眼模式",
-                        "checkbox": "设定从日落到日出的护眼模式",
+                        "checkbox": "设定从日出到日落的护眼模式",
                         "options": {
                             "warm": "暖（更护眼）",
                             "cold": "冷"
                         },
                         "reset": "重置温度",
                         "tooltip": "护眼模式会调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。",
-                        "onSunsetToSunriseScheduleDescription": "设定从日落到日出的护眼模式",
+                        "onSunsetToSunriseScheduleDescription": "设定从日出到日落的护眼模式",
                         "note": {
                             "title": "注",
-                            "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日落日出时间。"
+                            "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日出日落时间。"
                         }
                     },
                     "dispColorTemp": {
@@ -994,10 +1015,10 @@
                         },
                         "reset": "重置温度",
                         "tooltip": "护眼模式会调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。",
-                        "onSunsetToSunriseScheduleDescription": "设定从日落到日出的护眼模式",
+                        "onSunsetToSunriseScheduleDescription": "设定从日出到日落的护眼模式",
                         "note": {
                             "title": "注",
-                            "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日落日出时间。"
+                            "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日出日落时间。"
                         }
                     },
                     "privacyGuard": {
@@ -1330,7 +1351,7 @@
             "rebootRequiredTag": "需要重启",
             "rebootDelayTag": "需要重启，需要连接电源",
             "shutdownRequiredTag": "需要关机",
-            "dependedPackage": "依赖项包"
+            "dependedPackage": "被依赖的包"
         },
         "availableUpdates": {
             "title": "可用更新",

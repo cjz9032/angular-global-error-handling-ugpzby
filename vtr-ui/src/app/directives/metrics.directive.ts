@@ -81,25 +81,13 @@ export class MetricsDirective {
 				data.ItemType = 'ArticleClick';
 				data.ItemParent = this.metricsParent;
 				if (typeof this.viewOrderService[this.metricsParent] === 'undefined') {
-
 					this.viewOrderService[this.metricsParent] = 0;
 				}
 				data.viewOrder = (++this.viewOrderService[this.metricsParent]);
-				if (this.metricsItemID) {
-					data.ItemID = this.metricsItemID;
-				}
-				if (this.metricsItemCategory) {
-					data.ItemCategory = this.metricsItemCategory;
-				}
-				if (this.metricsItemPosition) {
-					data.ItemPosition = this.metricsItemPosition;
-				}
-				if (!this.metricsPageNumber) {
-					data.pageNumber = '1';
-				}
-				if (this.metricsPageNumber) {
-					data.PageNumber = this.metricsPageNumber;
-				}
+				data.ItemID = this.metricsItemID || 'null';
+				data.ItemCategory = this.metricsItemCategory || 'null';
+				data.ItemPosition = this.metricsItemPosition || 'null';
+				data.PageNumber = this.metricsPageNumber || 1;
 				break;
 			}
 			case 'settingupdate': {
