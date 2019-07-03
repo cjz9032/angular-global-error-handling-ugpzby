@@ -15,6 +15,9 @@
 					<div class="col-sm-12 col-lg-8 col-xl-8 vtr-page-left-column">
 						<div class="vtr-subpage">
 							<div class="vtr-page-shift-up">
+								<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
+									[isSubtitleVisible]="false"
+									[isButtonVisible]="false"></vtr-widget-offline-info>
 								<wifi-security [data]="wifiHomeViewModel"
 									[wifiIsShowMore]="wifiIsShowMore"></wifi-security>
 							</div>
