@@ -120,6 +120,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryService.getBatteryDetail()
 			.then((response: any) => {
 				console.log('getBatteryDetails', response);
+				this.isLoading = false;
 				this.batteryInfo = response;
 				this.batteryInfo = response.batteryInformation;
 				this.batteryGauge = response.batteryIndicatorInfo;
@@ -128,9 +129,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 				this.commonService.setLocalStorageValue(LocalStorageKey.BatteryPercentage,
 					this.batteryGauge.percentage);
-
-				this.isLoading = false;
-
 				this.isBatteryDetailsBtnDisabled =
 					this.batteryGauge.isPowerDriverMissing || this.batteryInfo.length === 0;
 				this.updateBatteryDetails();
