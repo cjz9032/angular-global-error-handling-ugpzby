@@ -70,7 +70,6 @@
 						<vtr-ui-button
 							id="chs-btnlnk-ad-addDevice"
 							attr.aria-label="chs-btn-ad-addDevice"
-							vtrMetrics
 							metricsItem="addDeviceAllDevice"
 							metricsEvent="featureClick"
 							(click)="common.openCornet()"
@@ -89,7 +88,6 @@
 			<vtr-ui-button
 				id="chs-btn-ad-upgrade"
 				aria-label="chs-btn-ad-upgrade"
-				vtrMetrics
 				metricsItem="upgradeAllDevice"
 				metricsEvent="featureClick"
 				(click)="common.upgrade()"
@@ -102,8 +100,7 @@
 			<vtr-ui-button
 				id="chs-btn-ad-startTrial"
 				aria-label="chs-btn-ad-startTrial"
-				vtrMetrics
-				metricsItem="startTrialAllDevice"
+				metricsItem="CHSStartTrialButton"
 				metricsEvent="featureClick"
 				(click)="common.startTrial()"
 				[label]="'homeSecurity.overview.startTrial' | translate">
