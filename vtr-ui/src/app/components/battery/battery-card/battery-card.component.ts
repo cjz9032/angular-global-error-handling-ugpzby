@@ -253,10 +253,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryQuality.Poor));
 		}
 		if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
-			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryQuality.Fair));
+			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryQuality.AcError));
 		}
 		if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'notsupported') {
-			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryQuality.Poor));
+			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryQuality.AcError));
 		}
 		this.batteryConditions = batteryConditions;
 		console.log('Battery conditions length', this.batteryConditions.length);

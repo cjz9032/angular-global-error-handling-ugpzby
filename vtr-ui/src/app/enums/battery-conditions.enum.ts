@@ -20,5 +20,5 @@ export enum BatteryConditionsEnum {
 }
 
 export enum BatteryQuality {
-	Good, Fair, Poor
+	Good, Fair, Poor, AcError
 }
