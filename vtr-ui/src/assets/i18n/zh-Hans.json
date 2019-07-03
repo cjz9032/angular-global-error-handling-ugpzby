@@ -1327,7 +1327,7 @@
             "rebootRequiredTag": "需要重启",
             "rebootDelayTag": "需要重启，需要连接电源",
             "shutdownRequiredTag": "需要关机",
-            "dependedPackage": "依赖项包"
+            "dependedPackage": "被依赖的包"
         },
         "availableUpdates": {
             "title": "可用更新",
