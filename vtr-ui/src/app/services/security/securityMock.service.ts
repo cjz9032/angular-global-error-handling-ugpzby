@@ -147,7 +147,8 @@ export class SecurityAdvisorMockService {
 				let p1 = new Promise((resolve) => {});
 				let p2 = new Promise((resolve) => {});
 				return Promise.all([p1, p2]);
-			}
+			},
+			cancelRefresh() {}
 		},
 		homeProtection: {
 			mitt: new mitt(),
