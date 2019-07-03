@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostListener, NgZone } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, HostListener, NgZone } from '@angular/core';
 import { SecurityAdvisor, WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { WidgetItem } from 'src/app/data-models/security-advisor/widget-security-status/widget-item.model';
@@ -16,7 +16,7 @@ import { RegionService } from 'src/app/services/region/region.service';
 	templateUrl: './widget-security-status.component.html',
 	styleUrls: ['./widget-security-status.component.scss']
 })
-export class WidgetSecurityStatusComponent implements OnInit {
+export class WidgetSecurityStatusComponent implements OnInit, OnDestroy {
 
 	@Input() securityAdvisor: SecurityAdvisor;
 	items: Array<WidgetItem>;
@@ -43,6 +43,10 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
 			this.showWindowsHello(windowsHello);
 		});
+	}
+
+	ngOnDestroy() {
+		this.securityAdvisor.wifiSecurity.cancelRefresh();
 	}
 
 	showWindowsHello(windowsHello: WindowsHello) {
@@ -87,5 +91,10 @@ export class WidgetSecurityStatusComponent implements OnInit {
 	onFocus(): void {
 		this.securityAdvisor.refresh();
 		this.showVpn();
+	}
+
+	@HostListener('window: blur')
+	onBlur(): void {
+		this.securityAdvisor.wifiSecurity.cancelRefresh();
 	}
 }
