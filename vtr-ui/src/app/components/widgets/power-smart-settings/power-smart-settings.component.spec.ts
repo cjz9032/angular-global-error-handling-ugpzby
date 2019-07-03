@@ -3,8 +3,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PowerSmartSettingsComponent } from './power-smart-settings.component';
 
 describe('PowerSmartSettingsComponent', () => {
-//   let component: PowerSmartSettingsComponent;
-//   let fixture: ComponentFixture<PowerSmartSettingsComponent>;
+  // let component: PowerSmartSettingsComponent;
+  // let fixture: ComponentFixture<PowerSmartSettingsComponent>;
 
   beforeEach(async(() => {
     // TestBed.configureTestingModule({
@@ -20,6 +20,6 @@ describe('PowerSmartSettingsComponent', () => {
   });
 
   it('should create', () => {
-    //expect(component).toBeTruthy();
+    // expect(component).toBeTruthy();
   });
 });

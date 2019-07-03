@@ -117,7 +117,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 	onClick(targetElement) {
 		const clickedInside = this.menuTarget.nativeElement.contains(targetElement);
 		const toggleMenuButton =
-			targetElement.classList.contains('navbar-toggler-icon ') || targetElement.classList.contains('fa-bars');
+			targetElement.classList.contains('navbar-toggler-icon ') || targetElement.classList.contains('fa-bars') || targetElement.localName === 'path';
 		if (!clickedInside && !toggleMenuButton) {
 			this.showMenu = false;
 		}
