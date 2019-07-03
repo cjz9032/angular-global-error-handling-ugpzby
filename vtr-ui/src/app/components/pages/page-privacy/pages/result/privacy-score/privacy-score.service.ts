@@ -128,7 +128,7 @@ export class PrivacyScoreService {
 			return {
 				privacyLevel: 'medium-low',
 				title: 'Medium privacy score',
-				text: `You’re taking a few steps to be private, but some of your info could easily be exposed. Lenovo Privacy by FigLeaf can help.`,
+				text: `You’re taking a few steps to be private, but some of your info could easily be exposed. Lenovo Privacy Essentials by FigLeaf can help.`,
 			};
 		} else if (score < 80) {
 			return {

@@ -33,7 +33,7 @@ export class TrackersComponent {
 	textForFeatureHeader = {
 		title: 'Check for tracking tools',
 		figleafTitle: 'Tracking tools you should know about',
-		figleafInstalled: 'Learn more about tracking tools that Lenovo Privacy by FigLeaf blocked on websites you visit.',
+		figleafInstalled: 'Learn more about tracking tools that Lenovo Privacy Essentials by FigLeaf blocked on websites you visit.',
 		figleafUninstalled: 'Some websites use tracking tools to collect information about you. ' +
 			'They may share it with third-party partners without notifying you.',
 	};
@@ -43,7 +43,7 @@ export class TrackersComponent {
 			'and even shopping history to personalize your experience, show targeted ads, ' +
 			'or suggest things based on your interests.',
 		howToFix: 'You can block some tracking tools by turning on the ‘Do Not Track’ feature in your browser. ' +
-			'Or install Lenovo Privacy by FigLeaf and block them ' +
+			'Or install Lenovo Privacy Essentials by FigLeaf and block them ' +
 			'completely from collecting your personal information.',
 		riskAfterInstallFigleaf: 'Most websites collect your IP address, location, social profile information,' +
 			' and even shopping history to personalize your experience, show targeted ads, ' +

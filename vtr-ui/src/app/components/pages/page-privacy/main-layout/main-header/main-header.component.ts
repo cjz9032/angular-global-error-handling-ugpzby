@@ -14,7 +14,7 @@ interface PageSettings {
 }
 
 const defaultPageSettings: PageSettings = {
-	title: 'Lenovo Privacy',
+	title: 'Lenovo Privacy Essentials',
 	backButton: false,
 	figLeafIcon: true,
 };
@@ -26,7 +26,7 @@ const defaultPageSettings: PageSettings = {
 })
 export class MainHeaderComponent implements OnInit, OnDestroy {
 
-	title = 'Lenovo Privacy';
+	title = 'Lenovo Privacy Essentials';
 	backButton = false;
 	figLeafIcon = true;
 
@@ -41,7 +41,7 @@ export class MainHeaderComponent implements OnInit, OnDestroy {
 		breaches: defaultPageSettings,
 		'browser-accounts': defaultPageSettings,
 		landing: {
-			title: 'Lenovo Privacy by FigLeaf',
+			title: 'Lenovo Privacy Essentials by FigLeaf',
 			backButton: true,
 			figLeafIcon: false
 		},

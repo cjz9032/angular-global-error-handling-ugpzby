@@ -23,7 +23,7 @@ export class BreachedAccountComponent implements AfterViewInit {
 
 	tryProductText = {
 		risk: 'When your accounts are breached, people you don’t know can access and use your private information.',
-		howToFix: 'You should change the passwords for your breached accounts. Try Lenovo Privacy by FigLeaf to fix breaches and help prevent them in the future.',
+		howToFix: 'You should change the passwords for your breached accounts. Try Lenovo Privacy Essentials by FigLeaf to fix breaches and help prevent them in the future.',
 		riskAfterInstallFigleaf: 'When your accounts are breached, people you don’t know can access and use your private information.',
 		howToFixAfterInstallFigleaf: 'You should change passwords for breached accounts. Open Lenovo Privacy Essentials by FigLeaf and follow the recommendations.'
 	};
