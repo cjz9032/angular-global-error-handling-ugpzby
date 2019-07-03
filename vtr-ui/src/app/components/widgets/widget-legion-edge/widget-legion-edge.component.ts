@@ -183,7 +183,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	};
 	public cpuOCStatus: CPUOCStatus = new CPUOCStatus();
 	public setCpuOCStatus: any;
-
+	public cacheMemOCFeature: boolean=false;
 	constructor(
 		private modalService: NgbModal,
 		private ngZone: NgZone,
@@ -223,7 +223,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.gamingCapabilities.fbNetFilter = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.fbNetFilter
 		);
-
+		this.cacheMemOCFeature = this.commonService.getLocalStorageValue(LocalStorageKey.memOCFeatureStatus);
+		this.legionUpdate[1].isChecked = this.cacheMemOCFeature;
 		// Initialize Legion Edge component from cache
 		this.legionEdgeInit();
 		// console.log('CPU get status', this.GetCPUOverClockCacheStatus());
@@ -348,6 +349,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.modalService.open(ModalGamingLegionedgeComponent, { windowClass: 'gaming-help-modal' });
 	}
 	public renderRamOverClockStatus() {
+
 		// this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
 		if (this.gamingCapabilities.xtuService === true) {
 			this.gamingSystemUpdateService.getRamOCStatus().then((ramOcStatus) => {
@@ -355,6 +357,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 					this.RamOCSatusObj.ramOcStatus = ramOcStatus;
 					// this.SetRAMOverClockCacheStatus(ramOcStatus);
 					this.legionUpdate[1].isChecked = ramOcStatus;
+					this.commonService.setLocalStorageValue(LocalStorageKey.memOCFeatureStatus, ramOcStatus);
 				}
 			});
 		}
@@ -480,8 +483,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 
 	onIconClick(event: any) {
-		event = event || {name: ''};
-		const {name} = event;
+		event = event || { name: '' };
+		const { name } = event;
 		this.legionUpdate[3].isDriverPopup = false;
 		if (name === 'gaming.dashboard.device.legionEdge.networkBoost') {
 			this.gamingCapabilities.fbNetFilter = !!this.gamingCapabilities.fbNetFilter;
