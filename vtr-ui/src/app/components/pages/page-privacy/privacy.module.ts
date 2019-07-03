@@ -10,7 +10,6 @@ import { fal } from '@fortawesome/pro-light-svg-icons';
 import { BreachedAccountsComponent } from './pages/breached-accounts/breached-accounts.component';
 import { TrackersComponent } from './pages/trackers/trackers.component';
 import { BrowserAccountsComponent } from './pages/browser-accounts/browser-accounts.component';
-import { ResultComponent } from './pages/result/result.component';
 import { LandingComponent } from './pages/landing/landing.component';
 // Main Layout Components
 import { MainLayoutComponent } from './main-layout/main-layout.component';
@@ -70,7 +69,6 @@ library.add(fal);
 		BreachedAccountsComponent,
 		TrackersComponent,
 		BrowserAccountsComponent,
-		ResultComponent,
 		// Common UI components
 		SidebarComponent,
 		FaqComponent,

@@ -32,7 +32,6 @@ interface GetBreachedAccountsState {
 @Injectable()
 export class BreachedAccountsService {
 	onGetBreachedAccounts$ = new ReplaySubject<GetBreachedAccountsState>(1);
-	onGetBreachedAccountsCompleted$ = new BehaviorSubject(false);
 
 	taskStartedTime = 0;
 	scanBreachesAction$ = new Subject<{ TaskDuration: number }>();
@@ -53,7 +52,6 @@ export class BreachedAccountsService {
 			timer(30000, 30000),
 		).pipe(
 			switchMapTo(this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(take(1))),
-			tap(() => this.onGetBreachedAccountsCompleted$.next(false)),
 			switchMap((isFigleafInstalled) => {
 				this.taskStartedTime = Date.now();
 				return isFigleafInstalled ? this.getBreachedAccountsFromApp() : this.getBreachedAccountsFromBackend();
@@ -66,9 +64,7 @@ export class BreachedAccountsService {
 			catchError((error) => this.handleError(error))
 		).subscribe((response: BreachedAccount[]) => {
 			this.onGetBreachedAccounts$.next({breaches: response, error: null});
-			this.onGetBreachedAccountsCompleted$.next(true);
 			this.sendTaskAcrion();
-
 		});
 	}
 
@@ -90,7 +86,6 @@ export class BreachedAccountsService {
 
 	private handleError(error: any) {
 		console.error('onGetBreachedAccounts', error);
-		this.onGetBreachedAccountsCompleted$.next(true);
 		if (error !== ErrorNames.noAccessToken) {
 			this.onGetBreachedAccounts$.next({breaches: null, error: error});
 		}
