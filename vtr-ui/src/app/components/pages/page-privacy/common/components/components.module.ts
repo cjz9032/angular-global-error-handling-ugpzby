@@ -28,6 +28,7 @@ import { NoIssuePitchComponent } from './no-issue-pitch/no-issue-pitch.component
 import { BigPitchComponent } from './big-pitch/big-pitch.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TooltipComponent } from './tooltip/tooltip.component';
 
 @NgModule({
 	declarations: [
@@ -52,7 +53,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 		AccountsStoredComponent,
 		NoIssuePitchComponent,
 		BigPitchComponent,
-		SpinnerComponent
+		SpinnerComponent,
+		TooltipComponent,
 	],
 	exports: [
 		SimpleLoaderComponent,
@@ -76,7 +78,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 		AccountsStoredComponent,
 		NoIssuePitchComponent,
 		BigPitchComponent,
-		SpinnerComponent
+		SpinnerComponent,
+		TooltipComponent,
 	],
 	imports: [
 		CommonModule,

@@ -74,7 +74,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 
 	ngOnInit() {
 		if (this.connectedHomeSecurity) {
-			this.connectedHomeSecurity.startPullingCHS();
+			// this.connectedHomeSecurity.startPullingCHS();
 		}
 		this.isOnline = this.commonService.isOnline;
 		this.commonService.notification.subscribe((notification: AppNotification) => {
@@ -180,14 +180,14 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	@HostListener('window: focus')
 	onFocus(): void {
 		if (this.connectedHomeSecurity) {
-			this.connectedHomeSecurity.startPullingCHS();
+			// this.connectedHomeSecurity.startPullingCHS();
 		}
 	}
 
 	@HostListener('window: blur')
 	onBlur(): void {
 		if (this.connectedHomeSecurity) {
-			this.connectedHomeSecurity.stopPullingCHS();
+			// this.connectedHomeSecurity.stopPullingCHS();
 		}
 	}
 

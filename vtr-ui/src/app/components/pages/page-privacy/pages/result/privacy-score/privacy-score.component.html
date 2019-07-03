@@ -1,32 +1,40 @@
 <div class="privacy-score" data-analyticsName="ScoreBlock">
-  <div class="privacy-score__picture score-pic">
-    <div [class]="'score-pic__circle score-pic__circle--'+privacyLevel">
-      <div *ngIf="isFirstTimeVisitor$ | async" class="score-pic__symbol">
-        <img src="{{defaultScoreImageUrl}}" alt="undefined privacy score">
-      </div>
-      <div *ngIf="!(isFirstTimeVisitor$ | async)" class="score-pic__number">
-        {{score}} <span class="score-pic__percent">%</span>
-      </div>
-    </div>
-  </div>
-  <div class="privacy-score__description-col">
-    <div class="privacy-score__text-block score-description">
-      <h4 class="score-description__title">{{title}}</h4>
-      <p class="score-description__text">{{text}}</p>
-    </div>
-    <div class="privacy-score__btn-container" *ngIf="isFirstTimeVisitor$ | async">
-      <button class="privacy-score__btn"
-              vtrSendAnalytics
-              [metricsEvent]="'ItemClick'"
-              [metricsItem]="clickEventName"
-              (click)="openPopUp('one-click-scan')">
-        {{btn_text}}
-      </button>
-    </div>
-  </div>
+	<div class="privacy-score__picture score-pic">
+		<div [class]="'score-pic__circle score-pic__circle--'+privacyLevel">
+			<div *ngIf="isFirstTimeVisitor$ | async" class="score-pic__symbol">
+				<img src="{{defaultScoreImageUrl}}" alt="undefined privacy score">
+			</div>
+			<div *ngIf="!(isFirstTimeVisitor$ | async)" class="score-pic__number">
+				{{score}} <span class="score-pic__percent">%</span>
+			</div>
+		</div>
+	</div>
+	<div class="privacy-score__description-col">
+		<div class="privacy-score__text-block score-description">
+			<h4 class="score-description__title">{{title}}</h4>
+			<p class="score-description__text">{{text}}</p>
+			<!--<vtr-tooltip>-->
+				<!--<ng-template #tooltipText>-->
+					<!--<span class="score-description__tooltip-text">How we calculate score?</span>-->
+				<!--</ng-template>-->
+				<!--<ng-template #tooltipContext>-->
+					<!--<span class="score-description__tooltip-context">Test test test test Test test test test Test test test test Test test test test</span>-->
+				<!--</ng-template>-->
+			<!--</vtr-tooltip>-->
+		</div>
+		<div class="privacy-score__btn-container" *ngIf="isFirstTimeVisitor$ | async">
+			<button class="privacy-score__btn"
+					vtrSendAnalytics
+					[metricsEvent]="'ItemClick'"
+					[metricsItem]="clickEventName"
+					(click)="openPopUp('one-click-scan')">
+				{{btn_text}}
+			</button>
+		</div>
+	</div>
 </div>
 <vtr-common-popup popUpId="one-click-scan" size="big">
-  <ng-template>
-	<vtr-one-click-scan popupId="one-click-scan"></vtr-one-click-scan>
-  </ng-template>
+	<ng-template>
+		<vtr-one-click-scan popupId="one-click-scan"></vtr-one-click-scan>
+	</ng-template>
 </vtr-common-popup>

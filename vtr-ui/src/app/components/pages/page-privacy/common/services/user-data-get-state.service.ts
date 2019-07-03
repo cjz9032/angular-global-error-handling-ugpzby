@@ -143,7 +143,7 @@ export class UserDataGetStateService {
 		let appStatus = AppStatuses.figLeafInstalled;
 		const isTrialLicense = this.figleafStatus && this.figleafStatus.licenseType === this.licenseTypes.Trial;
 		const isTrialExpiredSoon = this.figleafStatus && this.figleafStatus.expirationDate <= Math.floor( (Date.now() + TIME_TO_SHOW_EXPIRED_PITCH_MS) / 1000);
-		const isTrialExpired = this.figleafStatus && this.figleafStatus.expirationDate < Math.floor( Date.now() / 1000);
+		const isTrialExpired = this.figleafStatus && this.figleafStatus.licenseType === this.licenseTypes.TrialExpired;
 
 		if (isTrialLicense && isTrialExpiredSoon) {
 			appStatus = AppStatuses.trialSoonExpired;
