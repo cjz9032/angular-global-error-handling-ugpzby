@@ -1238,7 +1238,7 @@
 					"point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
 					"point7": "Select your desired source language and target language.",
 					"point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-					"point9": "Click the microphone icon to start speaking",
+					"point9": "Click the microphone icon to start speaking.",
 					"closeText": "close"
 				},
 				"modalInstallationFailed": {
