@@ -88,9 +88,6 @@
 			width: 100%;
 			letter-spacing: 0;
 		}
-		.battery-conditions-icon {
-			font-size: 2rem;
-		}
 		.good {
 			color: #{$go_light};
 		}
@@ -113,6 +110,11 @@
 		.spinner-border {
 			height: 50px;
 			width: 50px;
+		}
+
+		.battery-conditions {
+			vertical-align: middle;
+			font-size: 14pt;
 		}
 	}
 }

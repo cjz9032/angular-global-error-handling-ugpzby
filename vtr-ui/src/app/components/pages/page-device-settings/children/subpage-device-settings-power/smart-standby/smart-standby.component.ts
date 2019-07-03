@@ -12,6 +12,7 @@ export class SmartStandbyComponent implements OnInit {
 	public smartStandby = new SmartStandby();
 	public smartStandbyStartTime: string;
 	public smartStandbyEndTime: string;
+	isSmartStandbyVisible: boolean;
 	constructor(public powerService: PowerService) { }
 
 	ngOnInit() {
@@ -25,6 +26,7 @@ export class SmartStandbyComponent implements OnInit {
 				.then((response: boolean) => {
 					console.log(' getSmartStandbyCapability response', response);
 					this.smartStandby.isCapable = response;
+					this.isSmartStandbyVisible = response;
 					if (this.smartStandby.isCapable) {
 						this.setSmartStandbySection();
 					}

@@ -69,7 +69,7 @@ export class PageSmartAssistComponent implements OnInit {
 		{
 			title: 'device.smartAssist.jumpTo.voice',
 			path: 'voice',
-			sortOrder: 5
+			sortOrder: 3
 		}
 	];
 
@@ -200,7 +200,7 @@ export class PageSmartAssistComponent implements OnInit {
 					this.headerMenuItems.push({
 						title: 'device.smartAssist.jumpTo.screen',
 						path: 'screen',
-						sortOrder: 2
+						sortOrder: 5
 					});
 
 					this.headerMenuItems = this.sortMenuItems(this.headerMenuItems);
@@ -432,7 +432,7 @@ export class PageSmartAssistComponent implements OnInit {
 							this.headerMenuItems.push({
 								title: 'device.smartAssist.jumpTo.media',
 								path: 'media',
-								sortOrder: 3
+								sortOrder: 2
 							});
 							this.headerMenuItems = this.sortMenuItems(this.headerMenuItems);
 						}

@@ -612,7 +612,7 @@
 					"note4": "and "
 				},
 				"voltageError": "Battery voltage incorrect",
-				"batteryNotDetected": "No Battery Detected",
+				"batteryNotDetected": "No battery detected",
 				"details": {
 					"title": "Battery Details",
 					"primary": "Primary Battery",

@@ -7,7 +7,7 @@
 	<div class="container-fluid p-0"
 		[ngClass]="{'vtr-disabled': disabled}">
 		<div class="row m-0">
-			<div class="col"
+			<div [ngClass]="{'col-md-10 col-9': (isSwitchVisible && !resetTextAsButton),'col-md-7': (resetTextAsButton || !isSwitchVisible)}"
 				[ngClass]="{'col-md-8': (type==='auto-updates' || type==='Camera'), 'col-md-10':type===undefined}">
 				<div class="container-fluid p-0">
 					<div class="row m-0">
@@ -28,11 +28,10 @@
 						</div>
 						<div class="col">
 							<div class="title">{{ title }}</div>
-							<span class="caption"
-								[innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption">
-								<!-- {{ caption }} -->
-							</span>
-							<span class="read-more"
+							<span>
+								<div class="caption" [innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption"></div>
+						</span>
+								<!-- {{ caption }} -->														<span class="read-more"
 								*ngIf="!contentExpand"
 								(click)="onReadMoreClick($event)">
 								{{ readMoreText }}
@@ -41,7 +40,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="col d-flex justify-content-end">
+			
+			<div  [ngClass]="{'col-md-2 d-flex col-3': (isSwitchVisible && !resetTextAsButton),'col-md-5 d-flex justify-content-end': (resetTextAsButton || !isSwitchVisible)}" >
 				<div class="row">
 					<div class="p-0"
 						[ngClass]="{'ml-auto': type!=='Camera'}"

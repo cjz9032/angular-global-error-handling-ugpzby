@@ -5,7 +5,7 @@ import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
 import { BatteryChargeStatus } from 'src/app/enums/battery-charge-status.enum';
 import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.model';
 import { CommonService } from 'src/app/services/common/common.service';
-import { BatteryInformation } from 'src/app/enums/battery-information.enum';
+import { BatteryInformation, ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { ViewRef_ } from '@angular/core/src/view';
@@ -15,6 +15,8 @@ import { BatteryConditionModel } from 'src/app/data-models/battery/battery-condi
 import { BatteryConditionNote } from 'src/app/data-models/battery/battery-condition-translations.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { PowerService } from 'src/app/services/power/power.service';
+import { Subscription } from 'rxjs';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 
 @Component({
 	selector: 'vtr-battery-card',
@@ -52,11 +54,13 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	private remainingTimeEventRef: any;
 	public isLoading = true;
 
+	notificationSubscription: Subscription;
+
 	ngOnInit() {
 		this.isLoading = true;
 
 		this.getBatteryDetailOnCard();
-		this.getChargeThresholdInfo();
+
 		this.powerSupplyStatusEventRef = this.onPowerSupplyStatusEvent.bind(this);
 		this.remainingPercentageEventRef = this.onRemainingPercentageEvent.bind(this);
 		this.remainingTimeEventRef = this.onRemainingTimeEvent.bind(this);
@@ -64,6 +68,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.shellServices.registerEvent(EventTypes.pwrPowerSupplyStatusEvent, this.powerSupplyStatusEventRef);
 		this.shellServices.registerEvent(EventTypes.pwrRemainingPercentageEvent, this.remainingPercentageEventRef);
 		this.shellServices.registerEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
+
+		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
+			this.onNotification(response);
+		});
 	}
 
 	onPowerSupplyStatusEvent(info: any) {
@@ -115,8 +123,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryInfo = response;
 				this.batteryInfo = response.batteryInformation;
 				this.batteryGauge = response.batteryIndicatorInfo;
-
-				this.percentageLimitation = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
+				const percentLimit = (this.batteryInfo[0].designCapacity / this.batteryInfo[0].fullChargeCapacity) * 100;
+				this.percentageLimitation = parseFloat(percentLimit.toFixed(2));
 
 				this.commonService.setLocalStorageValue(LocalStorageKey.BatteryPercentage,
 					this.batteryGauge.percentage);
@@ -131,9 +139,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				console.error('getBatteryDetails error', error);
 			});
 	}
-	getChargeThresholdInfo() {
-		this.powerService.getChargeThresholdInfo().then((response: any) => {
-			this.chargeThresholdInfo = response[0];
+
+	onNotification(notification: AppNotification) {
+		if (notification && notification.type === ChargeThresholdInformation.ChargeThresholdInfo) {
+			this.chargeThresholdInfo = notification.payload[0];
 
 			// TODO: uncomment in dual battery implementation story
 
@@ -145,8 +154,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			// 	}
 			// });
 			// this.chargeThresholdBatteries = chargeThresholdBatteries;
-		});
+		}
 	}
+
 	public updateBatteryDetails() {
 		if (this.batteryInfo !== undefined && this.batteryInfo.length !== 0) {
 			let batteryIndex = -1;
@@ -164,7 +174,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryIndex = batteryIndex;
 			this.commonService.setLocalStorageValue(LocalStorageKey.RemainingPercentages, remainingPercentages);
 		}
-		this.batteryConditionStatus = this.getBatteryHealth(this.batteryHealth);
+
 		this.batteryIndicator.percent = this.batteryGauge.percentage;
 		this.batteryIndicator.charging = this.batteryGauge.isAttached;
 		this.batteryIndicator.convertMin(this.batteryGauge.time);
@@ -199,10 +209,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 
 	public getBatteryCondition() {
-		// server api call to fetch battery conditions
+		this.batteryConditionStatus = this.getBatteryHealth(this.batteryHealth);
 		const batteryConditions = [];
 		const isThinkpad = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType) === 1;
-		if (isThinkpad && this.batteryHealth === 1 || this.batteryHealth === 2) {
+		if (isThinkpad && (this.batteryHealth === 1 || this.batteryHealth === 2)) {
 			this.batteryHealth = BatteryConditionsEnum.StoreLimitation;
 		}
 		if (this.batteryHealth !== 0) {
@@ -232,7 +242,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.OverheatedBattery, BatteryQuality.Fair));
 						break;
 					case 'permanenterror':
-						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.PermanentError, BatteryQuality.Fair));
+						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.PermanentError, BatteryQuality.Poor));
 						break;
 					case 'hardwareauthenticationerror':
 						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.HardwareAuthenticationError, BatteryQuality.Fair));

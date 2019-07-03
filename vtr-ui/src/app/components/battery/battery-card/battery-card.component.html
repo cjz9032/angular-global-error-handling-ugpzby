@@ -51,25 +51,17 @@
 
 		<div class="p-3 row"
 			*ngFor="let batteryConditionNote of batteryConditionNotes; let i = index">
-			<div class="p-0 pr-2 col-auto battery-conditions-icon">
-				<fa-icon *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Good"
-					[icon]="['fas', 'check-circle']"
-					class="good">
-				</fa-icon>
-				<fa-icon *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Poor"
-					[icon]="['fas', 'times-circle']"
-					class="poor">
-				</fa-icon>
-				<fa-icon *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Fair"
-					[icon]="['fas', 'exclamation-circle']"
-					class="fair">
-				</fa-icon>
-			</div>
+			<div class="p-0 pr-2 col-auto battery-conditions-icon battery-conditions">
+				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Good"
+					[src]=" '/assets/icons/battery-conditions/good.svg'" />
+				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Fair"
+					[src]=" '/assets/icons/battery-conditions/fair.svg'" />
+				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Poor"
+					[src]=" '/assets/icons/battery-conditions/poor.svg'" />
 
-			<div class="col">
 				<span class="battery-conditions-title"
 					*ngIf="batteryConditionNote?.title">
-					{{batteryConditionNote.title | translate}} &nbsp;
+					{{batteryConditionNote.title | translate}}
 				</span>
 				<span class="battery-conditions-description"
 					*ngIf="batteryConditionNote?.description.length > 0">
@@ -88,6 +80,7 @@
 					{{batteryConditionNote.description2 | translate}}
 				</span>
 			</div>
+
 		</div>
 		<div class="feature-note p-2 mt-2"
 			*ngIf="chargeThresholdInfo?.isOn">
