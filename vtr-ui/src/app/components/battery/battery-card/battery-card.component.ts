@@ -166,13 +166,14 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 					info['batteryHealth'] = 0;
 				}
 				remainingPercentages.push(info.remainingPercent);
-				if (info.batteryHealth >= this.batteryHealth) {
-					this.batteryHealth = info.batteryHealth;
-					batteryIndex += 1;
-				}
+				// if (info.batteryHealth >= this.batteryHealth) {
+				// 	this.batteryHealth = info.batteryHealth;
+				// 	batteryIndex += 1;
+				// }
 			});
-			this.batteryIndex = batteryIndex;
+			this.batteryIndex = 0; // temp set primary battery conditions
 			this.commonService.setLocalStorageValue(LocalStorageKey.RemainingPercentages, remainingPercentages);
+			this.batteryHealth = this.batteryInfo[0].batteryHealth;
 		}
 
 		this.batteryIndicator.percent = this.batteryGauge.percentage;

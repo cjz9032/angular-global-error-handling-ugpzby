@@ -13,8 +13,8 @@ export enum BatteryConditionsEnum {
 	HardwareAuthenticationError,
 
 	MissingDriver,
-	NotSupportACAdapter,
 
+	NotSupportACAdapter,
 	LimitedACAdapterSupport,
 	StoreLimitation
 }
