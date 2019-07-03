@@ -15,6 +15,14 @@
 					<div [ngClass]="'col-sm-12 col-lg-7 col-xl-8 vtr-page-left-column'">
 						<div class="vtr-page-shift-up nmx-40">
 							<div class="container-fluid">
+								<div class="row" *ngIf="!isOnline">
+									<div class="col col-12 px-40 pb-40">
+										<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
+											[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+											[buttonText]="'dashboard.offlineInfo.buttonText' | translate" [isSubtitleVisible]="false"
+											[isButtonVisible]="false" (buttonClick)="onConnectivityClick($event)"></vtr-widget-offline-info>
+									</div>
+								</div>
 								<div class="row mb-60">
 									<div class="col col-12 px-40">
 										<app-widget-system-monitor></app-widget-system-monitor>
