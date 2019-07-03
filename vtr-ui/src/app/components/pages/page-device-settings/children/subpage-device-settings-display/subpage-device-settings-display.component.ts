@@ -284,6 +284,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						this.eyeCareDataSource.current = value.colorTemperature;
 						const eyeCare = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardEyeCareMode);
 						eyeCare.status = this.isEyeCareMode;
+						console.log('eycare mode request sent to the dashboard------------->', eyeCare);
 						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, eyeCare);
 					}).catch(error => {
 						console.error('onEyeCareModeStatusToggle', error);
@@ -421,7 +422,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 	public onSunsetToSunrise($featureStatus: any) {
 		try {
-			console.log('sunset to sunrise event', $featureStatus.status);
+			console.log('sunset to sunrise event', $featureStatus);
 			if (this.displayService.isShellAvailable) {
 				this.displayService
 					.setEyeCareAutoMode($featureStatus.status).
@@ -431,6 +432,7 @@ export class SubpageDeviceSettingsDisplayComponent
 							this.eyeCareDataSource.current = response.colorTemperature;
 							this.eyeCareModeStatus.status = response.eyecaremodeState;
 							this.enableSlider = response.eyecaremodeState;
+							this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, this.eyeCareModeStatus);
 						}
 
 					}).catch(error => {
