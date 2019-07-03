@@ -1,8 +1,6 @@
 import {
 	Component,
 	OnInit,
-	Input,
-	HostListener,
 	AfterViewInit
 } from '@angular/core';
 import {
@@ -11,7 +9,6 @@ import {
 import {
 	CommonService
 } from 'src/app/services/common/common.service';
-import * as phoenix from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes, WinRT } from '@lenovo/tan-client-bridge';
 import * as Phoenix from '@lenovo/tan-client-bridge';
@@ -35,7 +32,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	chs: Phoenix.ConnectedHomeSecurity;
 	permission: any;
 	loading = false;
-	metricsParent = 'Page.ConnectedHomeSecurity';
+	metricsParent = 'ConnectedHomeSecurity';
 	constructor(
 		public activeModal: NgbActiveModal,
 		public homeSecurityMockService: HomeSecurityMockService,
@@ -44,6 +41,9 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 		public modalService: NgbModal
 	) {
 		this.chs = vantageShellService.getConnectedHomeSecurity();
+		if (!this.chs) {
+			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
+		}
 		this.permission = vantageShellService.getPermission();
 	}
 
