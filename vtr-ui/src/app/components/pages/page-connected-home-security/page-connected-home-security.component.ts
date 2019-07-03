@@ -41,7 +41,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, AfterViewInit {
 	pageStatus: HomeSecurityPageStatus;
 
-	connectedHomeSecurity: ConnectedHomeSecurity;
+	chs: ConnectedHomeSecurity;
 	permission: any;
 	welcomeModel: HomeSecurityWelcome;
 	allDevicesInfo: HomeSecurityAllDevice;
@@ -51,6 +51,8 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	common: HomeSecurityCommon;
 	backId = 'chs-btn-back';
 	isOnline = true;
+	intervalId: number;
+	interval = 5000;
 
 	constructor(
 		vantageShellService: VantageShellService,
@@ -59,12 +61,12 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		private modalService: NgbModal,
 		private commonService: CommonService,
 	) {
-		this.connectedHomeSecurity = vantageShellService.getConnectedHomeSecurity();
-		if (!this.connectedHomeSecurity) {
-			this.connectedHomeSecurity = this.homeSecurityMockService.getConnectedHomeSecurity();
+		this.chs = vantageShellService.getConnectedHomeSecurity();
+		if (!this.chs) {
+			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
 		}
 		this.permission = vantageShellService.getPermission();
-		this.common = new HomeSecurityCommon(this.connectedHomeSecurity, this.modalService);
+		this.common = new HomeSecurityCommon(this.chs, this.modalService);
 		this.welcomeModel = new HomeSecurityWelcome();
 		this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice(this.translateService);
 		this.allDevicesInfo = new HomeSecurityAllDevice();
@@ -73,9 +75,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	}
 
 	ngOnInit() {
-		if (this.connectedHomeSecurity) {
-			this.connectedHomeSecurity.startPullingCHS();
-		}
 		this.isOnline = this.commonService.isOnline;
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
@@ -85,29 +84,29 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		if (cacheMyDevice) {
 			this.homeSecurityOverviewMyDevice = cacheMyDevice;
 		}
-		if (this.connectedHomeSecurity && this.connectedHomeSecurity.overview) {
-			this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice(this.translateService, this.connectedHomeSecurity.overview);
+		if (this.chs && this.chs.overview) {
+			this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice(this.translateService, this.chs.overview);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityMyDevice, this.homeSecurityOverviewMyDevice);
 		}
 		const cacheAllDevices = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices);
 		if (cacheAllDevices) {
 			this.allDevicesInfo = cacheAllDevices;
 		}
-		if (this.connectedHomeSecurity && this.connectedHomeSecurity.overview && this.connectedHomeSecurity.overview.allDevices) {
-			this.allDevicesInfo = new HomeSecurityAllDevice(this.connectedHomeSecurity.overview);
+		if (this.chs && this.chs.overview && this.chs.overview.allDevices) {
+			this.allDevicesInfo = new HomeSecurityAllDevice(this.chs.overview);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
 		}
 		const cacheAccount = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount);
 		if (cacheAccount) {
 			this.account = cacheAccount;
-			if (this.connectedHomeSecurity.account) {
-				this.account.createAccount = this.connectedHomeSecurity.account.createAccount;
-				this.account.purchase = this.connectedHomeSecurity.account.purchase;
+			if (this.chs.account) {
+				this.account.createAccount = this.chs.account.createAccount;
+				this.account.purchase = this.chs.account.purchase;
 				this.account = new HomeSecurityAccount(this.modalService, this.account);
 			}
 		}
-		if (this.connectedHomeSecurity.account && this.connectedHomeSecurity.account.state) {
-			this.account = new HomeSecurityAccount(this.modalService, this.connectedHomeSecurity.account);
+		if (this.chs.account && this.chs.account.state) {
+			this.account = new HomeSecurityAccount(this.modalService, this.chs.account);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, {
 				state: this.account.state,
 				expiration: this.account.expiration,
@@ -115,26 +114,26 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				device: this.account.device,
 				allDevice: this.account.allDevice,
 			});
-			this.common = new HomeSecurityCommon(this.connectedHomeSecurity, this.modalService);
+			this.common = new HomeSecurityCommon(this.chs, this.modalService);
 		}
 		const cacheNotifications = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityNotifications);
 		if (cacheNotifications) {
 			this.notificationItems = cacheNotifications;
 		}
 
-		if (this.connectedHomeSecurity.notifications) {
-			this.notificationItems = new HomeSecurityNotifications(this.connectedHomeSecurity.notifications);
+		if (this.chs.notifications) {
+			this.notificationItems = new HomeSecurityNotifications(this.chs.notifications);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityNotifications, this.notificationItems);
 		}
 
-		this.connectedHomeSecurity.on(EventTypes.chsEvent, (chs: ConnectedHomeSecurity) => {
+		this.chs.on(EventTypes.chsEvent, (chs: ConnectedHomeSecurity) => {
 			if (chs && chs.overview) {
 				this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice(this.translateService, chs.overview);
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityMyDevice, this.homeSecurityOverviewMyDevice);
 			}
 			if (chs.account) {
 				this.account = new HomeSecurityAccount(this.modalService, chs.account);
-				this.common = new HomeSecurityCommon(this.connectedHomeSecurity, this.modalService);
+				this.common = new HomeSecurityCommon(this.chs, this.modalService);
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, {
 					state: this.account.state,
 					expiration: this.account.expiration,
@@ -152,6 +151,11 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityNotifications, this.notificationItems);
 			}
 		});
+
+		if (this.chs) {
+			this.chs.refresh();
+			this.pullCHS();
+		}
 	}
 
 	ngAfterViewInit(): void {
@@ -179,20 +183,21 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		if (this.connectedHomeSecurity) {
-			this.connectedHomeSecurity.startPullingCHS();
+		if (this.chs && !this.intervalId) {
+			this.chs.refresh();
+			this.pullCHS();
 		}
 	}
 
 	@HostListener('window: blur')
 	onBlur(): void {
-		if (this.connectedHomeSecurity) {
-			this.connectedHomeSecurity.stopPullingCHS();
-		}
+		clearInterval(this.intervalId);
+		delete this.intervalId;
 	}
 
 	ngOnDestroy() {
 		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, false);
+		clearInterval(this.intervalId);
 	}
 
 	openWelcomeModal(showWelcome) {
@@ -242,5 +247,23 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 					break;
 			}
 		}
+	}
+
+	private pullCHS(): void {
+		this.intervalId = window.setInterval(() => {
+			this.chs.refresh().then(() => {
+				if (this.chs.account && this.chs.account.state
+					&& this.chs.overview && this.chs.overview.devicePostures
+					&& this.chs.overview.devicePostures.value
+					&& this.intervalId) {
+					clearInterval(this.intervalId);
+					const oneMinute = 60000;
+					this.interval = oneMinute;
+					this.intervalId = window.setInterval(() => {
+						this.chs.refresh();
+					}, this.interval);
+				}
+			});
+		}, this.interval);
 	}
 }

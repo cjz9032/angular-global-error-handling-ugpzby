@@ -19,12 +19,14 @@ export class HomeSecurityCommon {
 	}
 
 	startTrial() {
-		if (this.connectedHomeSecurity.account.lenovoId.loggedIn) {
+		let alreadyLoggedIn = this.connectedHomeSecurity.account.lenovoId.loggedIn;
+		if (alreadyLoggedIn) {
 			this.connectedHomeSecurity.account.createAccount();
 		} else {
 			const callback = (loggedIn: boolean) => {
-				if (loggedIn) {
+				if (loggedIn && !alreadyLoggedIn) {
 					this.connectedHomeSecurity.account.createAccount();
+					alreadyLoggedIn = true;
 				}
 			};
 			this.modalService.open(ModalLenovoIdComponent, {
@@ -32,11 +34,11 @@ export class HomeSecurityCommon {
 				centered: true,
 				windowClass: 'lenovo-id-modal-size'
 			}).result.then(() => {
-				this.connectedHomeSecurity.off(EventTypes.lenovoIdStatusChange, callback.bind(this));
+				this.connectedHomeSecurity.off(EventTypes.lenovoIdStatusChange, callback);
 			}).catch(() => {
-				this.connectedHomeSecurity.off(EventTypes.lenovoIdStatusChange, callback.bind(this));
+				this.connectedHomeSecurity.off(EventTypes.lenovoIdStatusChange, callback);
 			});
-			this.connectedHomeSecurity.on(EventTypes.lenovoIdStatusChange, callback.bind(this));
+			this.connectedHomeSecurity.on(EventTypes.lenovoIdStatusChange, callback);
 		}
 	}
 
