@@ -26,6 +26,7 @@ export class ContainerCardComponent implements OnInit, AfterViewInit, OnChanges 
 	@Input() cornerShift: String = '';
 	@Input() order: number;
 	@Input() itemID: string;
+	@Input() sideFlag = '';
 
 	isLoading = true;
 
