@@ -1108,7 +1108,7 @@
 				"security": "Intelligent Security",
 				"screen": "Intelligent Screen",
 				"media": "Intelligent Media",
-				"voice": "Intelligent Voice",
+				"voice": "Voice",
 				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
