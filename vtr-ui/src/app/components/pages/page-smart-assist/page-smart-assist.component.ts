@@ -162,9 +162,12 @@ export class PageSmartAssistComponent implements OnInit {
 		Promise
 			.all([this.smartAssist.getAPSCapability(), this.smartAssist.getSensorStatus(), this.smartAssist.getHDDStatus()])
 			.then((response: any[]) => {
-				console.log('APS Capability', response[0], 'APS SENSOR', response[1], 'HDD STATUS', response[2]);
+				console.log(
+				'APS Capability ---------------------------------', response[0],
+				'APS SENSOR ---------------------------------', response[1],
+				'HDD STATUS ---------------------------------', response[2]);
 				(response[0] && response[1] && response[2] >= 0) ? this.isAPSavailable = true : this.isAPSavailable = false;
-				if (response[0] && response[1] && response[2] >= 0) {
+				if (this.isAPSavailable) {
 					this.headerMenuItems.push({
 						title: 'device.smartAssist.jumpTo.APS',
 						path: 'aps',
