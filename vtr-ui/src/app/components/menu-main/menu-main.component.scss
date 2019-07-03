@@ -148,6 +148,13 @@
 							margin-top: 0;
 						}
 
+						&.dropdown-menu-id {
+							left: auto;
+							right: 0rem;
+							padding-right: 16px;
+							transform: translateX(0px);
+						}
+
 						fa-icon {
 							&.menu-pointer {
 								position: absolute;
