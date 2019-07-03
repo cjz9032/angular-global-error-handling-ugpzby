@@ -2,7 +2,8 @@ import {
 	Component,
 	OnInit,
 	HostListener,
-	NgZone
+	NgZone,
+	OnDestroy
 } from '@angular/core';
 import {
 	VantageShellService
@@ -60,7 +61,7 @@ import { SecurityAdvisorMockService } from 'src/app/services/security/securityMo
 	styleUrls: ['./page-security.component.scss']
 })
 
-export class PageSecurityComponent implements OnInit {
+export class PageSecurityComponent implements OnInit, OnDestroy {
 	passwordManagerLandingViewModel: PasswordManagerLandingViewModel;
 	antivirusLandingViewModel: AntiVirusLandingViewModel;
 	vpnLandingViewModel: VpnLandingViewModel;
@@ -122,6 +123,11 @@ export class PageSecurityComponent implements OnInit {
 		this.refreshAll();
 	}
 
+	@HostListener('window: blur')
+	onBlur(): void {
+		this.wifiSecurity.cancelRefresh();
+	}
+
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
 		this.commonService.notification.subscribe((notification: AppNotification) => {
@@ -129,6 +135,10 @@ export class PageSecurityComponent implements OnInit {
 		});
 		this.refreshAll();
 		this.fetchCMSArticles();
+	}
+
+	ngOnDestroy() {
+		this.wifiSecurity.cancelRefresh();
 	}
 
 	private refreshAll() {
