@@ -95,6 +95,9 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	private everSignIn: any;
 	public appFeature = null;
 	private webView = null;
+	private eventBind : any;
+	private startBind : any;
+	private completeBInd : any;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -171,9 +174,12 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 
 		this.webView.create("<div style='display: block;position: fixed;z-index: 1;padding-top:5%;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgba(0,0,0,0.4);'>  <div style='position: relative;background-color: #fefefe;margin: auto;padding: auto;border: 1px solid #888;max-width: 460px;height: 80%;'>  <style>.close {  color: black;  float: right;  font-size: 28px;  font-weight: bold;}.close:hover,.close:focus {  color: black;  text-decoration: none;  cursor: pointer;} @keyframes spinner {  to {transform: rotate(360deg);}} .spinner:before {  content: '';  box-sizing: border-box;  position: absolute;  top: 50%;  left: 50%;  width: 60px;  height: 60px;  margin-top: -15px;  margin-left: -30px;  border-radius: 50%;  border: 3px solid #ccc;  border-top-color: #07d;  animation: spinner .6s linear infinite;} </style>  <div id='btnClose' style='padding: 2px 16px;background-color: white;color: black;border-bottom: 1px solid #e5e5e5;'>  <span class='close'>&times;</span> <div style='height:45px;'></div>  </div>    <div style='height: 100%;' id='webviewBorder'> <div id='spinnerCtrl' class='spinner'></div> <div id='webviewPlaceHolder'></div>    </div>  </div></div>");
 		this.webView.show();
-		this.webView.addEventListener("eventtriggered", this.onEvent.bind(this));
-		this.webView.addEventListener("navigationstarting", this.onNavigationStart.bind(this));
-		this.webView.addEventListener("navigationcompleted", this.onNavigationCompleted.bind(this));
+		this.eventBind = this.onEvent.bind(this);
+		this.startBind = this.onNavigationStart.bind(this);
+		this.completeBInd = this.onNavigationCompleted.bind(this);
+		this.webView.addEventListener("eventtriggered", this.eventBind);
+		this.webView.addEventListener("navigationstarting", this.startBind);
+		this.webView.addEventListener("navigationcompleted", this.completeBInd);
 
 		if (!this.cacheCleared) {
 			// Hide browser while clearing cache
@@ -408,6 +414,9 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 
 	ngOnDestroy(): void {
 		if (this.webView) {
+			this.webView.removeEventListener("eventtriggered", this.eventBind);
+			this.webView.removeEventListener("navigationstarting", this.startBind);
+			this.webView.removeEventListener("navigationcompleted", this.completeBInd);
 			this.webView.close();
 		}
 	}
