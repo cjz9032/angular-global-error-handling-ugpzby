@@ -1,66 +1,79 @@
 @import "../../../app.theme.scss";
-
-.lighting-list-option {
-    padding-left: 0;
-    list-style: none;
-    li {
-        margin-bottom: 0;
-    }
-    .gaming-radio {
-        display: inline-block;
-        position: relative;
-        padding-left: 3.5rem;
-        margin-bottom: 12px;
-        cursor: pointer;
-        font-size: 1.6rem;
-        color: $gaming_lightest;
-        line-height: 3rem;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        @media #{$small-screen}{
-            line-height: 3.5rem;
-            margin-bottom: 0.8rem;
-        }
-        input {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-            &:checked {
-                &~.checkmark {
-                    background-color: transparent;
-                    &:after {
-                        display: block;
-                    }
-                }
-            }
-        }
-        .checkmark {
-            &:after {
-                top: 50%;
-                left: 50%;
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                background:$gaming_light_blue;
-                transform: translateX(-50%) translateY(-50%);
-            }
-        }
-    }
-    .checkmark {
-        position: absolute;
-        top: 0.4rem;
-        left: 0;
-        height: 20px;
-        width: 20px;
-        background-color: transparent;
-        border: 0.3rem solid $gaming_light_blue;
-        border-radius: 50%;
-        &:after {
-            content: "";
-            position: absolute;
-            display: none;
-        }
-    }
+.lighting-single-color
+{
+	::ng-deep {
+		.content-title{
+			color: $gaming_lightest;
+			font-weight: $weight_medium;
+			font-size: 2rem;
+			letter-spacing: -0.02rem;
+			line-height: 2rem;
+			margin-bottom: 2rem;
+			margin-top: 9rem;
+		}
+	}
+	.lighting-list-option {
+		padding-left: 0;
+		list-style: none;
+		li {
+			margin-bottom: 0;
+		}
+		.gaming-radio {
+			display: inline-block;
+			position: relative;
+			padding-left: 3.5rem;
+			margin-bottom: 12px;
+			cursor: pointer;
+			font-size: 1.6rem;
+			color: $gaming_lightest;
+			line-height: 3rem;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			@media #{$small-screen}{
+				line-height: 3.5rem;
+				margin-bottom: 0.8rem;
+			}
+			input {
+				position: absolute;
+				opacity: 0;
+				cursor: pointer;
+				&:checked {
+					&~.checkmark {
+						background-color: transparent;
+						&:after {
+							display: block;
+						}
+					}
+				}
+			}
+			.checkmark {
+				&:after {
+					top: 50%;
+					left: 50%;
+					width: 12px;
+					height: 12px;
+					border-radius: 50%;
+					background:$gaming_light_blue;
+					transform: translateX(-50%) translateY(-50%);
+				}
+			}
+		}
+		.checkmark {
+			position: absolute;
+			top: 0.4rem;
+			left: 0;
+			height: 20px;
+			width: 20px;
+			background-color: transparent;
+			border: 0.3rem solid $gaming_light_blue;
+			border-radius: 50%;
+			&:after {
+				content: "";
+				position: absolute;
+				display: none;
+			}
+		}
+	}
 }

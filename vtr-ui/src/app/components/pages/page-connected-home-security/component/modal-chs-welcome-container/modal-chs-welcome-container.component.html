@@ -1,7 +1,9 @@
 <div class="vtr-modal-chs-welcome-container position-relative">
 	<div class="modal-header">
 		<button type="button" class="close close-button" id="chs-tour-btn-close" data-dismiss="modal"
-			(click)="closeModal()" aria-label="chs-tour-btn-close">
+			(click)="closeModal()" aria-label="chs-tour-btn-close" vtrMetrics
+			metricsItem="closeCHSWelcomeModal"
+			metricsEvent="featureClick">
 			<span aria-hidden="true">&times;</span>
 		</button>
 	</div>
@@ -85,7 +87,6 @@
 		<vtr-ui-button
 			id="chs-tour-btn-login-lenovoId"
 			aria-label="chs-tour-btn-login-lenovoId"
-			vtrMetrics
 			metricsEvent="FeatureClick"
 			metricsItem="loginLenovoId"
 			metricsParent="{{metricsParent}}"
@@ -95,7 +96,7 @@
 		</div>
 		<div class="col-5">
 		<div class= "w-100 row justify-content-end">
-			<img src="assets/images/connected-home-security/ecosystem-circle-green2x.png" alt="">
+			<img src="assets/images/connected-home-security/ecosystem-circle-green.svg" alt="">
 		</div>
 		</div>
 	</div>
@@ -117,7 +118,6 @@
 				<vtr-ui-button *ngIf="!isLocationServiceOn"
 					id="chs-tour-btn-openLocation"
 					aria-label="chs-tour-btn-openLocation"
-					vtrMetrics
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomeOpenLocationButton"
 					metricsParent="{{metricsParent}}"
@@ -129,7 +129,6 @@
 				<vtr-ui-button *ngIf="isLocationServiceOn === true"
 					id="chs-tour-location-done-btn"
 					aria-label="chs-tour-location-done-btn"
-					vtrMetrics
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomeDoneButton"
 					metricsParent="{{metricsParent}}"
@@ -146,7 +145,6 @@
 			<div>
 				<vtr-ui-button id="chs-tour-btn-start"
 					aria-label="chs-tour-btn-start"
-					vtrMetrics
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomeNextButton"
 					metricsParent="{{metricsParent}}"
@@ -159,7 +157,6 @@
 			<div class="button-welcome">
 				<vtr-ui-button id="chs-tour-btn-prev"
 					aria-label="chs-tour-btn-prev"
-					vtrMetrics
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomePrevButton"
 					metricsParent="{{metricsParent}}"
@@ -171,7 +168,6 @@
 				<vtr-ui-button *ngIf="!isLenovoIdLogin || !isLocationServiceOn"
 					id="chs-tour-btn-next"
 					aria-label="chs-tour-btn-next"
-					vtrMetrics
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomeNextButton"
 					metricsParent="{{metricsParent}}"
@@ -181,9 +177,8 @@
 				<vtr-ui-button *ngIf="isLenovoIdLogin && isLocationServiceOn"
 					id="chs-tour-btn-done"
 					aria-label="chs-tour-btn-done"
-					vtrMetrics
 					metricsEvent="FeatureClick"
-					metricsItem="CHSWelcomeStartTrialButton"
+					metricsItem="CHSStartTrialButton"
 					metricsParent="{{metricsParent}}"
 					(click)="next(switchPage, isLenovoIdLogin, isLocationServiceOn)"
 					[label]="'homeSecurity.tour.done' | translate"
@@ -194,7 +189,6 @@
 			<div class="button-welcome">
 				<vtr-ui-button id="chs-tour-btn-pageThree-prev"
 					aria-label="chs-tour-btn-pageThree-prev"
-					vtrMetrics
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomePrevButton"
 					metricsParent="{{metricsParent}}"
@@ -207,7 +201,7 @@
 					attr.aria-label="chs-tour-lnk-skip"
 					vtrMetrics
 					metricsEvent="FeatureClick"
-					metricsItem="CHSWelcomeStartTrialButton"
+					metricsItem="CHSStartTrialButton"
 					metricsParent="{{metricsParent}}"
 					(click)="next(switchPage, isLenovoIdLogin, isLocationServiceOn)">{{'homeSecurity.tour.skip' | translate}}</a>
 			</div>
