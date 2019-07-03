@@ -37,4 +37,15 @@
     a {
         text-decoration: underline;
 	}
+	@media #{$small-screen} {
+		.startTrial-btn vtr-ui-button{
+			::ng-deep .vtr-ui-button{
+				text-align: center;
+				button{
+					max-width: 36rem;
+				}
+			}
+
+		}
+	}
 }
