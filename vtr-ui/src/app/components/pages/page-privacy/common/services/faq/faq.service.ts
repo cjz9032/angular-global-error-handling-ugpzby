@@ -99,7 +99,9 @@ export class FaqService {
 					id: 'how-block-online-trackers',
 					title: 'How does Lenovo Privacy Essentials block online tracking tools?',
 					texts: [
-						`FigLeaf has anti-tracking technology built right in. Simply put, it detects tracking tools and then stops them from starting up, ultimately protecting you from being tracked. `,
+						'Lenovo Privacy Essentials by FigLeaf has anti-tracking technology built right in. ' +
+						'Simply put, it detects tracking tools and then stops them from starting up, ' +
+						'ultimately protecting you from being tracked. ',
 					],
 					icon: 'debug',
 				},
