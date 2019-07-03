@@ -20,7 +20,7 @@
 					   vtrMetrics
 					   metricsItemCategory="corner"
 					   metricsEvent="docClick"
-					   [metricsItemPosition]="order"
+					   [metricsItemPosition]="sideFlag + order"
 					   [metricsItemID]="itemID"
 					   target="_blank"
 					   class="card-image"
@@ -39,7 +39,7 @@
 							</div>
 						</div>
 					</a>
-					<div *ngIf="!isOnline" 
+					<div *ngIf="!isOnline"
 						class="card-image default-cursor"
 						[style.background-image]="'url(' + img + ')'">
 						<div class="inner-content">
@@ -74,7 +74,7 @@
 					   vtrMetrics
 					   metricsEvent="ArticleClick"
 					   metricsItemCategory="corner-article"
-					   [metricsItemPosition]="order"
+					   [metricsItemPosition]="sideFlag + order"
 					   [metricsItemID]="itemID"
 					   [style.background-image]="'url(' + img + ')'">
 						<div class="inner-content">
@@ -127,7 +127,7 @@
 					   metricsItemCategory="highlight"
 					   vtrMetrics
 					   metricsEvent="docClick"
-					   [metricsItemPosition]="order"
+					   [metricsItemPosition]="sideFlag + order"
 					   [metricsItemID]="itemID"
 					   target="_blank"
 					   class="card-image"
@@ -160,7 +160,7 @@
 			   metricsItemCategory="article"
 			   vtrMetrics
 			   metricsEvent="docClick"
-			   [metricsItemPosition]="order"
+			   [metricsItemPosition]="sideFlag + order"
 			   [metricsItemID]="itemID"
 			   target="_blank">
 				<div class="row">
@@ -232,7 +232,7 @@
 						   vtrMetrics
 						   metricsEvent="docClick"
 						   [metricsItemID]="itemID"
-						   [metricsItemPosition]="order"
+						   [metricsItemPosition]="sideFlag + order"
 						   metricsItemCategory="partnerarticle">
 							<div class="col col-12 content">
 								<div *ngIf="title"
