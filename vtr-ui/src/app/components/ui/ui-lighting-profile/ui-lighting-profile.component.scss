@@ -111,7 +111,7 @@
       width: 100%;
     }
     .light-option {
-      ::ng-deep {
+      //::ng-deep {
         .content-title {
           color: $gaming_lightest;
           font-weight: $weight_medium;
@@ -149,7 +149,7 @@
             }
           }
         }
-      }
+     // }
       &.lighting-off {
         height: 100%;
         display: flex;
