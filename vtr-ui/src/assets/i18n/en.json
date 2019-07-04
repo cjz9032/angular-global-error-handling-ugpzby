@@ -868,9 +868,9 @@
 						}
 					},
 					"expressCharging": {
-						"title": "Express Charging",
-						"description": "Express Charge allows your battery to a full charge much faster than normal mode.",
-						"tooltip": "Express Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
+						"title": "Rapid Charging",
+						"description": "Rapid Charge allows your battery to a full charge much faster than normal mode.",
+						"tooltip": "Rapid Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
 					},
 					"conservationMode": {
 						"title": "Conservation Mode",
@@ -878,7 +878,7 @@
 						"tooltip": {
 							"line1": "This function is useful to extend the lifespan of your battery when plugged.",
 							"line2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
-							"line3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
+							"line3": "Note: Rapid Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
 						}
 					},
 					"airPlanePower": {
@@ -1139,7 +1139,7 @@
 				},
 				"distanceSensitivityAdjusting": {
 					"title": "DISTANCE SENSITIVITY ADJUSTING",
-					"caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+					"caption": "Distance Sensitivity Adjusting will automatically update the detection distance via an AI engine.",
 					"options": {
 						"near": "Near",
 						"far": "Far"
@@ -1219,7 +1219,7 @@
 				"installBtnText": "Install",
 				"launchBtnText": "Launch",
 				"voiceToText": {
-					"title": "Voice to text",
+					"title": "Voice to Text",
 					"caption": "This feature helps to convert your voice into texts."
 				},
 				"translation": {
