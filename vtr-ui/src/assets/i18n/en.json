@@ -1091,6 +1091,15 @@
 					"title": "User-Defined Key",
 					"caption": "The key represented by the star icon allows you to set user defined function",
 					"tooltip": "Content to be filled",
+					"apply": {
+						"title": "APPLY"
+					},
+					"website": {
+						"url": "WEBSITE URL"
+					},
+					"enterText": {
+						"title": "TEXT TO BE ENTERED"
+					},
 					"dropDown": {
 						"title": "Action User Defined key",
 						"note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
