@@ -231,13 +231,13 @@
 						height: 100%;
 						padding: 1rem 1.5rem;
 						@media #{$mediaquery_13} {
-							padding: 1rem 0.5rem;
+							padding: 1rem 1.5rem;;
 						}
 						@media #{$mediaquery_X30} {
-							padding: 1rem 0.7rem;
+							padding: 1rem 1.5rem;
 						}
 						@media #{$mediaquery_X23} {
-							padding: 1rem 0.5rem;
+							padding: 1rem 1.5rem;
 						}
 						.stack-container {
 							position: relative;
