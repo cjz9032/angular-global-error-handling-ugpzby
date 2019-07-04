@@ -299,8 +299,7 @@
 				},
 				"option4": {
 					"title": "Slow Blink"
-				}
-				,
+				},
 				"option5": {
 					"title": "Blink Level"
 				}
@@ -663,10 +662,9 @@
 				},
 				"condition": {
 					"Illegal": {
-						"title": "Battery 1",
-						"description": "you cannot use the attached battery with this computer.",
-						"description1": "Replace",
-						"description2": "it with a battery of correct model."
+						"description": "The battery installed is",
+						"description1": "not supported",
+						"description2": "by the system and will not charge. Please replace the battery with the correct Lenovo battery for this system."
 					},
 					"Good": {
 						"title": "The battery is in good condition."
@@ -677,14 +675,14 @@
 					},
 					"Bad": {
 						"title": "A battery error has occurred.",
-						"description": "The battery cannot be charged/discharged . Replace the battery."
+						"description": "The battery cannot be charged/discharged. Replace the battery."
 					},
 					"NotDetected": {
 						"title": "No battery detected or not",
 						"description": "plugged in battery."
 					},
 					"NotGood": {
-						"title": "The battery is not in a good Condition"
+						"title": "The battery is not in a good Condition."
 					},
 					"NotSupportACAdapter": {
 						"title": "AC adapter not supported.",
@@ -696,17 +694,17 @@
 					},
 					"MissingDriver": {
 						"title": "The Lenovo Power Manager driver",
-						"description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
+						"description": "is not installed or not working properly. Please run Windows Update to install the latest driver."
 					},
 					"StoreLimitation": {
 						"title": "The battery can only store",
 						"description1": "of",
-						"description2": "it's original full charge capacity"
+						"description2": "it's original full charge capacity."
 					},
 					"HighTemperature": {
 						"title": "Discharging",
 						"description": "has been stopped because the",
-						"description1": "battery temperature is too high"
+						"description1": "battery temperature is too high."
 					},
 					"TrickleCharge": {
 						"description": "The battery was",
@@ -725,8 +723,8 @@
 					},
 					"HardwareAuthenticationError": {
 						"description": "The battery installed is",
-						"description1": "is not supported",
-						"description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
+						"description1": "not supported",
+						"description2": "by the system and will not charge. Please replace the battery with the correct Lenovo battery for this system."
 					}
 				}
 			},
@@ -829,7 +827,7 @@
 				"smartStandby": {
 					"title": "Smart Standby",
 					"description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
 					"timer": {
 						"heading": "Set time when you typically use this computer",
 						"subHeading1": "start",
@@ -1108,7 +1106,7 @@
 				"security": "Intelligent Security",
 				"screen": "Intelligent Screen",
 				"media": "Intelligent Media",
-				"voice": "Intelligent Voice",
+				"voice": "Voice",
 				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
@@ -1238,7 +1236,7 @@
 					"point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
 					"point7": "Select your desired source language and target language.",
 					"point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-					"point9": "Click the microphone icon to start speaking",
+					"point9": "Click the microphone icon to start speaking.",
 					"closeText": "close"
 				},
 				"modalInstallationFailed": {

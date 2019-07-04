@@ -216,7 +216,7 @@
 	</div>
 
 	<!-- Camera -->
-	<div class="row py-5 smartsettings-card"
+	<div class="row py-5 smartsettings-card" *ngIf="!isDTmachine"
 		id="camera"
 		[hidden]="isCameraHidden">
 		<div class="col-10 mx-auto ">

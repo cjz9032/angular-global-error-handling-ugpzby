@@ -37,3 +37,21 @@
 		}
 	}
 }
+.vtr-page-shift-up{
+	@media #{$medium-screen}{
+		.no-gutters{
+			> .col, > [class*="col-"]{
+				padding-right: 15px;
+				padding-left: 15px;
+			}
+		}
+	}
+	@media #{$small-screen}{
+		.no-gutters{
+			> .col, > [class*="col-"]{
+				padding-right: 15px;
+				padding-left: 15px;
+			}
+		}
+	}
+}
