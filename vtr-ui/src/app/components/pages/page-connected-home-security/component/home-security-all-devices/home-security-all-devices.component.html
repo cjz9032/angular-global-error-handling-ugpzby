@@ -103,7 +103,8 @@
 				metricsItem="CHSStartTrialButton"
 				metricsEvent="featureClick"
 				(click)="common.startTrial()"
-				[label]="'homeSecurity.overview.startTrial' | translate">
+				[label]="'homeSecurity.overview.startTrial' | translate"
+				[isDisabled]="common?.startTrialDisabled">
 			</vtr-ui-button>
 		</div>
 	</div>

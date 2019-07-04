@@ -103,7 +103,7 @@ export class PageSmartAssistComponent implements OnInit {
 
 	initVisibility() {
 		try {
-			console.log("initVisibility: ", this.smartAssistCapability);
+			console.log('initVisibility: ', this.smartAssistCapability);
 			if (!this.smartAssistCapability.isIntelligentSecuritySupported) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'security');
 			}
@@ -185,8 +185,9 @@ export class PageSmartAssistComponent implements OnInit {
 				'APS SENSOR ---------------------------------', response[1],
 				'HDD STATUS ---------------------------------', response[2]);
 				(response[0] && response[1] && response[2] >= 0) ? this.isAPSavailable = true : this.isAPSavailable = false;
-				if (!(response[0] && response[1] && response[2] >= 0)) {
-					this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps')
+
+				if (!this.isAPSavailable) {
+					this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
 				}
 			})
 			.catch((error) => { console.log('APS ERROR------------------', error); });
