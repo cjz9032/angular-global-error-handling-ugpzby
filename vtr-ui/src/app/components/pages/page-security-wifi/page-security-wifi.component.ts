@@ -2,7 +2,7 @@ import { Component, OnInit, HostListener, AfterViewInit, OnDestroy, NgZone } fro
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import * as phoenix from '@lenovo/tan-client-bridge';
-import { EventTypes, WifiSecurity, HomeProtection, DeviceInfo } from '@lenovo/tan-client-bridge';
+import { DeviceInfo, PluginMissingError } from '@lenovo/tan-client-bridge';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
-import { SecurityService } from 'src/app/services/security/security.service';
+import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { RegionService } from 'src/app/services/region/region.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -63,7 +63,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	constructor(
 		public activeRouter: ActivatedRoute,
 		private commonService: CommonService,
-		private securityService: SecurityService,
+		private dialogService: DialogService,
 		public modalService: NgbModal,
 		public shellService: VantageShellService,
 		private cmsService: CMSService,
@@ -78,7 +78,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		}
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 		this.homeProtection = this.securityAdvisor.homeProtection;
-		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.ngZone, this.securityService);
+		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.ngZone, this.dialogService);
 		this.securityHealthViewModel = new SecurityHealthViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.translate, this.ngZone);
 		const cacheHomeStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus);
 		if (this.homeProtection.status) {
@@ -100,17 +100,18 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, 'true');
+		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, true);
+		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, true);
 		if (this.homeProtection) {
-			this.homeProtection.refresh();
+			this.homeProtection.refresh().catch(this.pluginMissingHandler.bind(this));
 			this.pullCHS();
 		}
 
 		if (this.wifiSecurity) {
-			this.wifiSecurity.refresh();
+			this.wifiSecurity.refresh().catch(this.pluginMissingHandler.bind(this));
 
 			this.wifiSecurity.getWifiState().then((res) => {}, (error) => {
-				this.securityService.wifiSecurityLocationDialog(this.wifiSecurity);
+				this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 			});
 		}
 		this.wifiIsShowMore = this.activeRouter.snapshot.queryParams['isShowMore'];
@@ -127,9 +128,10 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	@HostListener('window:focus')
 	onFocus(): void {
 		if (this.wifiSecurity) {
-			this.wifiSecurity.refresh();
+			this.wifiSecurity.refresh().catch(this.pluginMissingHandler.bind(this));
 		}
 		if (this.homeProtection && !this.intervalId) {
+			this.homeProtection.refresh();
 			this.pullCHS();
 		}
 	}
@@ -144,7 +146,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	}
 
 	ngOnDestroy() {
-		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, 'false');
+		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, false);
+		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, false);
 		if (this.wifiSecurity) {
 			this.wifiSecurity.cancelRefresh();
 		}
@@ -222,7 +225,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 					}
 				}
 				, (error) => {
-					this.securityService.wifiSecurityLocationDialog(this.wifiSecurity);
+					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 				});
 			}
 		} catch (err) {
@@ -255,6 +258,12 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		}
 	}
 
+	private pluginMissingHandler(err) {
+		if (err && err instanceof PluginMissingError) {
+			this.dialogService.wifiSecurityErrorMessageDialog();
+		}
+	}
+
 	private pullCHS(): void {
 		this.intervalId = window.setInterval(() => {
 			this.homeProtection.refresh().then(() => {
@@ -263,10 +272,11 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 					const oneMinute = 60000;
 					this.interval = oneMinute;
 					this.intervalId = window.setInterval(() => {
-						this.homeProtection.refresh();
+						this.homeProtection.refresh()
+						.catch(this.pluginMissingHandler.bind(this));
 					}, this.interval);
 				}
-			});
+			}).catch(this.pluginMissingHandler.bind(this));
 		}, this.interval);
 	}
 }

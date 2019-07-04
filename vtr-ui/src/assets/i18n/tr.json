@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -467,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Bugün çok dinç görünüyorsun "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Internet bağlantısı saptanmadı",
+            "subtitle": "Bağlantı sorunlarının nasıl çözüleceğini öğrenmek için",
+            "buttonText": "Destek Alın"
         },
         "feedback": {
             "title": "Geri Bildirim Gönder",
@@ -497,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Hızlı Ayarlarınız",
+            "microphone": "Mikrofon",
+            "cameraPrivacy": "Kamera",
+            "eyeCareMode": "Göz Koruması Kipi"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Sistem Durumu",
+            "subtitle": "CİHAZINIZIN DURUMUNA HIZLI GENEL BAKIŞ.",
             "memory": {
-                "title": "Memory",
+                "title": "Bellek",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Bellek bulunamadı",
+                    "of": "/"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Disk Alanı",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Disk bulunamadı",
+                    "of": "/"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Garanti",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Garanti bulunamadı",
+                    "until": "Bitiş",
+                    "expiredOn": "Garanti süresi sonu",
+                    "notAvailable": "Garanti mevcut değil"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Güncelle"
                 }
             }
         }
@@ -649,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -810,9 +812,9 @@
                         "checkbox": "Bilgisayar kapalıyken dizüstü bilgisayar pilinden USB dolumunu etkinleştirin."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Kolay Sürdür",
+                        "description": "Bilgisayarınızın kapağını sıklıkla açıp kapatıyorsanız sürdürme süresini iyileştirmek için bu özelliği etkinleştirin.",
+                        "tooltip": "Bu özellik, bilgisayarınızın kapağını sıklıkla açıp kapatıyorsanız sürdürme süresini geliştirir. Etkinleştirildiğinde, kapağını kapattığınızda bilgisayarınız düşük güç kipine girer ancak kapattıktan sonraki 15 dakika içerisinde yeniden açmanız durumunda anında sürdürülür. Bu özellik, sistem askıda kipine geçmeden önce bilgisayarınızın bekleyen etkinlikleri (e-posta gönderme veya dosya indirme gibi) tamamlamaya çalışmasına olanak sağlar."
                     }
                 },
                 "otherSettings": {
@@ -828,9 +830,9 @@
                         "title": "Pil Şarj Eşiği",
                         "description": "Genel olarak bilgisayarınızı AC bağdaştırıcısına takılı bir şekilde çalıştırıyorsanız ve pil gücünü nadirenkullanıyorsanız maksimum şarj değerini %100'ün altına ayarlayarak pil ömrünü uzatabilirsiniz. Nadiren kullanılan piller tamamen dolmadan tutulduğunda daha uzun bir pil ömrüne sahip olduğu için bu özellik faydalıdır.",
                         "tooltip": "Piliniz şu anda doldurmayı durdurma eşiğinin üzerindeki bir doluluktaysa pil düzeyi, doldurmayı durdurma eşiğine veya eşiğin altındaki bir değere gelene kadar güç bağdaştırıcısını çıkarın.Pilin durumuna (eski veya yeni) bağlı olarak, şarj başlangıç veya bitiş noktaları %2'ye kadar değişiklik gösterebilir. Bu özelliği etkinleştirirseniz pil durumunun doğru şekilde raporlanmasını sağlamak için ara sıra Pil Göstergesi Sıfırlama işlemi gerçekleştirmeniz önerilir.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Not",
+                        "readMoreText": "Okumaya devam edin.",
+                        "noteInfo": " Pil Şarj Eşiği henüz tamamen etkin değil. Lütfen makinenizi fişten çekin ve pilinizin tamamen boşalmasını veya doldurmayı durdurma eşiğinin altına düşmesini bekleyin.",
                         "settings": {
                             "title1": "Yerleşik pil için eşik",
                             "title2": "Çıkarılabilir pil için eşik"
@@ -843,9 +845,9 @@
                             "cancel": "İPTAL"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Şu değerden az olduğunda şarj etmeye başla",
+                            "checkboxText": "Pili doldurmaya başlama eşiğini, otomatik olarak pili doldurmayı durdurma eşiğinin %5 oranında altına ayarlayın.",
+                            "stop": "Şu değerde şarjı durdur"
                         }
                     },
                     "expressCharging": {
@@ -869,21 +871,21 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "ENERGY STAR SERTİFİKALI ÜRÜN"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Akıllı Bekleme",
+                    "description": "Bu özellik, yoğun kullanım zamanlarında hızlı başlatmadan ödün vermeden, bilgisayar boşta olduğunda pil güç tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
+                    "tooltip": "Akıllı Bekleme özelliği etkin olduğunda bilgisayarınız zamanlanan Başlangıç saatinden önce Modern Bekleme Durumu kipine geçer ve pil gücünde belirli bir süre etkin olmadan beklediğinde hazırda bekleme kipine geçer. Bu süre, ayarladığınız zamanlamaya göre iyileştirilir. Bilgisayar hazırda bekleme kipinden Modern Bekleme Durumu kipine yalnızca zamanlanan günlerde geçer ve zamanlanan günlerde art arda etkin olmadan beklediğinde kipi değiştirmez.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Bu bilgisayarı genelde kullandığınız saatleri ayarlayın",
+                        "subHeading1": "bu alanın",
+                        "subHeading2": "bitiş",
+                        "subHeading3": "bu zamanlamanın kullanılacağı zaman",
+                        "endTimeNote": "Bitiş saati, Başlangıç saatinden sonraki 20 saat içinde olmalıdır",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
+                            "unit1": "Saat",
+                            "unit2": "Dakika",
                             "unit3": "AM/PM"
                         }
                     }
@@ -1613,7 +1615,8 @@
             },
             "errorMessage": {
                 "headerText": "Hata",
-                "bodyText": "Vantage'ın kritik parçalarının sizde olmadığını tespit ettik. Bu parçalar arka planda indirilecek. Lütfen daha sonra yeniden deneyin."
+				"bodyText": "Vantage'ın kritik parçalarının sizde olmadığını tespit ettik. Bu parçalar arka planda indirilecek. Lütfen daha sonra yeniden deneyin.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

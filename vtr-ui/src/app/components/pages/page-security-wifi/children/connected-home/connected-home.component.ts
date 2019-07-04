@@ -1,6 +1,6 @@
 import { Component, Input, EventEmitter } from '@angular/core';
 import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
-import { SecurityService } from 'src/app/services/security/security.service';
+import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-article-detail/modal-article-detail.component';
 import { CMSService } from 'src/app/services/cms/cms.service';
@@ -21,7 +21,7 @@ export class ConnectedHomeComponent {
 
 
 	constructor(
-		public securityService: SecurityService,
+		public dialogService: DialogService,
 		public modalService: NgbModal,
 		private cmsService: CMSService
 	) {

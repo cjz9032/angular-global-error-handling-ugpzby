@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -467,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Näytät energiseltä tänään "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Ohjelma ei ole havainnut Internet-yhteyttä",
+            "subtitle": "Lue lisätietoja siitä, miten ratkaista yhteysongelmat",
+            "buttonText": "Hae tukea"
         },
         "feedback": {
             "title": "Anna palautetta",
@@ -497,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Pika-asetuksesi",
+            "microphone": "Mikrofoni",
+            "cameraPrivacy": "Kamera",
+            "eyeCareMode": "Silmien hoitotila"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Järjestelmän tila",
+            "subtitle": "PIKAINEN YHTEENVETO LAITTEESI TILASTA.",
             "memory": {
-                "title": "Memory",
+                "title": "Muisti",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Muistia ei löydy",
+                    "of": "/"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Levytila",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Asemaa ei löytynyt",
+                    "of": "/"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Takuu",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Takuuta ei löydy",
+                    "until": "Kunnes",
+                    "expiredOn": "Takuu vanhentunut (pvm)",
+                    "notAvailable": "Takuuta ei saatavilla"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Päivitä"
                 }
             }
         }
@@ -649,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -810,9 +812,9 @@
                         "checkbox": "Salli USB-lataus akkuvirralla, kun tietokoneesta on katkaistu virta."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Helppo palautus",
+                        "description": "Ottamalla tämän toiminnon käyttöön voit nopeuttaa jatkamisaikaa, jos avaat ja suljet tietokoneen kannen toistuvasti.",
+                        "tooltip": "Tämä toiminto nopeuttaa jatkamisaikaa, jos avaat ja suljet tietokoneen kannen toistuvasti. Kun asetus on käytössä, tietokone siirtyy virransäästötilaan, kun suljet sen kannen, mutta jatkaa toimintaansa heti, jos avaat kannen 15 minuutin kuluessa kannen sulkemisesta. Kun tämä toiminto on käytössä, kannettava tietokone yrittää myös suorittaa keskeneräiset toiminnot loppuun (kuten sähköpostin lähettämisen tai tiedoston lataamisen), ennen kuin järjestelmä siirtyy keskeytystilaan."
                     }
                 },
                 "otherSettings": {
@@ -828,9 +830,9 @@
                         "title": "Akun varauksen kynnysarvo",
                         "description": "Jos käytät tietokonetta yleensä verkkovirralla verkkolaite kytkettynä ja vain satunnaisesti akkuvirralla,voit pidentää akun käyttöikää määrittämällä varauksen enimmäisarvoksi alle 100 prosenttia. Tästä on hyötyä, koska harvoin käytetyt akut kestävät pidempään, kun akkuja säilytetään niin, että niiden varaus on alle 100 prosenttia.",
                         "tooltip": "Jos akkua ladataan niin, että sen varaus ylittää latauksen lopettamisen kynnysarvon, pura akun varaus vähintään latauksen lopettamisen kynnysarvoon asti irrottamalla tietokone verkkovirrasta.Akun tilan (vanha tai uusi) mukaan latauksen tarkat aloitus- ja lopetuspisteet saattavat vaihdella jopa kaksi prosenttiyksikköä. Jos otat tämän toiminnon käyttöön, akkumittari on suositeltavaa nollata säännöllisesti akun toimintakunnon tarkan raportoinnin varmistamiseksi.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Huomautus",
+                        "readMoreText": "Lue lisää.",
+                        "noteInfo": " Akun varauksen kynnysarvo ei ole täysin käytössä. Irrota laite ja anna akun tyhjentyä latauksen lopettamisen kynnysarvoon asti tai sen alle.",
                         "settings": {
                             "title1": "Sisäisen akun kynnysarvo",
                             "title2": "Irrotettavan akun kynnysarvo"
@@ -843,9 +845,9 @@
                             "cancel": "PERUUTA"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Aloita lataus varauksen ollessa alle",
+                            "checkboxText": "Määritä latauksen aloittamisen kynnysarvoksi automaattisesti viisi prosenttiyksikköä alle latauksen lopettamisen kynnysarvon.",
+                            "stop": "Lopeta lataus varaustason ollessa"
                         }
                     },
                     "expressCharging": {
@@ -869,22 +871,22 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "ENERGY STAR -VAATIMUSTEN MUKAINEN TUOTE"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Älykäs valmiustila",
+                    "description": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysajan aikana ilman, että käynnistysaika hidastuu kovan käytön aikana.",
+                    "tooltip": "Kun älykäs valmiustila on käytössä, tietokone vaihtaa moderniin valmiustilaan ennen ajoitettua aloitusaikaa ja siirtyy horrostilaan sen jälkeen, kun tietokone on ollut käyttämättömänä tietyn ajanjakson ajan akkuvirtaa käytettäessä. Tämä ajanjakso optimoidaan määritetyn aikataulun perusteella. Tietokone vaihtaa horrostilasta moderniin valmiustilaan vain ajoitettuina päivinä eikä silloin, kun se on käyttämättömänä peräkkäisinä ajoitettuina päivinä.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Määritä aika, jolloin yleensä käytät tätä tietokonetta",
+                        "subHeading1": "aloitat",
+                        "subHeading2": "lopetusaika",
+                        "subHeading3": "käytä tätä aikataulua seuraavaan:",
+                        "endTimeNote": "Lopetusajan on oltava 20 tunnin kuluessa aloitusajasta",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
-                            "unit3": "AM/PM"
+                            "unit1": "tuntia",
+                            "unit2": "minuuttia",
+                            "unit3": "aamupäivä/iltapäivä"
                         }
                     }
                 }
@@ -1613,7 +1615,8 @@
             },
             "errorMessage": {
                 "headerText": "Virhe",
-                "bodyText": "Olemme havainneet, että sinulta puuttuu tärkeitä Vantagen osia. Nämä osat ladataan taustalla. Yritä myöhemmin uudelleen."
+				"bodyText": "Olemme havainneet, että sinulta puuttuu tärkeitä Vantagen osia. Nämä osat ladataan taustalla. Yritä myöhemmin uudelleen.",
+				"closeText": "close"
             }
         },
         "homeprotection": {
