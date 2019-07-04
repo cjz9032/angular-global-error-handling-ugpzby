@@ -62,15 +62,16 @@ export class PageSmartAssistComponent implements OnInit {
 			sortOrder: 3
 		},
 		{
-			title: 'device.smartAssist.jumpTo.voice',
-			path: 'voice',
+			title: 'device.smartAssist.jumpTo.APS',
+			path: 'aps',
 			sortOrder: 4
 		},
 		{
-			title: 'device.smartAssist.jumpTo.APS',
-			path: 'aps',
+			title: 'device.smartAssist.jumpTo.voice',
+			path: 'voice',
 			sortOrder: 5
-		}
+		},
+
 	];
 
 	cardContentPositionA: any = {};
@@ -106,6 +107,7 @@ export class PageSmartAssistComponent implements OnInit {
 			if (!this.smartAssistCapability.isIntelligentSecuritySupported) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'security');
 			}
+			this.lenovoVoice.available = this.smartAssistCapability.isLenovoVoiceSupported;
 			if (!this.smartAssistCapability.isLenovoVoiceSupported) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'voice');
 			}
