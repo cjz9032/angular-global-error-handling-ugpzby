@@ -46,31 +46,32 @@ export class PageSmartAssistComponent implements OnInit {
 	public isAPSavailable = false;
 
 	headerMenuItems: PageAnchorLink[] = [
-		// {
-		// 	title: 'device.smartAssist.jumpTo.security',
-		// 	path: 'security',
-		// 	sortOrder: 1
-		// },
-		// {
-		// 	title: 'device.smartAssist.jumpTo.screen',
-		// 	path: 'screen',
-		// 	sortOrder: 2
-		// },
-		// {
-		// 	title: 'device.smartAssist.jumpTo.media',
-		// 	path: 'media',
-		// 	sortOrder: 3
-		// },
-		// {
-		// 	title: 'device.smartAssist.jumpTo.APS',
-		// 	path: 'aps',
-		// 	sortOrder: 4
-		// },
+		{
+			title: 'device.smartAssist.jumpTo.security',
+			path: 'security',
+			sortOrder: 1
+		},
+		{
+			title: 'device.smartAssist.jumpTo.screen',
+			path: 'screen',
+			sortOrder: 2
+		},
+		{
+			title: 'device.smartAssist.jumpTo.media',
+			path: 'media',
+			sortOrder: 3
+		},
+		{
+			title: 'device.smartAssist.jumpTo.APS',
+			path: 'aps',
+			sortOrder: 4
+		},
 		{
 			title: 'device.smartAssist.jumpTo.voice',
 			path: 'voice',
-			sortOrder: 3
-		}
+			sortOrder: 5
+		},
+
 	];
 
 	cardContentPositionA: any = {};
@@ -92,7 +93,7 @@ export class PageSmartAssistComponent implements OnInit {
 		if (this.smartAssist.isShellAvailable) {
 			this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 			this.smartAssistCapability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCapability, undefined);
-			this.initLenovoVoice();
+			this.initVisibility();
 			this.setIsThinkPad(this.machineType === 1);
 			this.setIntelligentSecurity();
 			this.setIntelligentScreen();
@@ -100,10 +101,27 @@ export class PageSmartAssistComponent implements OnInit {
 		}
 	}
 
-	private initLenovoVoice() {
-		this.lenovoVoice.available = this.commonService.getLocalStorageValue(LocalStorageKey.IsLenovoVoiceSupported);
-		if (!this.lenovoVoice.available) {
-			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'voice');
+	initVisibility() {
+		try {
+			console.log('initVisibility: ', this.smartAssistCapability);
+			if (!this.smartAssistCapability.isIntelligentSecuritySupported) {
+				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'security');
+			}
+			this.lenovoVoice.available = this.smartAssistCapability.isLenovoVoiceSupported;
+			if (!this.smartAssistCapability.isLenovoVoiceSupported) {
+				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'voice');
+			}
+			if (!this.smartAssistCapability.isIntelligentMediaSupported.available) {
+				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
+			}
+			if (!this.smartAssistCapability.isIntelligentScreenSupported) {
+				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'screen');
+			}
+			if (!this.smartAssistCapability.isAPSSupported) {
+				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
+			}
+		} catch(error) {
+			console.log('initVisibility', error);
 		}
 	}
 
@@ -162,15 +180,14 @@ export class PageSmartAssistComponent implements OnInit {
 		Promise
 			.all([this.smartAssist.getAPSCapability(), this.smartAssist.getSensorStatus(), this.smartAssist.getHDDStatus()])
 			.then((response: any[]) => {
-				console.log('APS Capability', response[0], 'APS SENSOR', response[1], 'HDD STATUS', response[2]);
+				console.log(
+				'APS Capability ---------------------------------', response[0],
+				'APS SENSOR ---------------------------------', response[1],
+				'HDD STATUS ---------------------------------', response[2]);
 				(response[0] && response[1] && response[2] >= 0) ? this.isAPSavailable = true : this.isAPSavailable = false;
-				if (response[0] && response[1] && response[2] >= 0) {
-					this.headerMenuItems.push({
-						title: 'device.smartAssist.jumpTo.APS',
-						path: 'aps',
-						sortOrder: 5
-					});
-					this.headerMenuItems = this.sortMenuItems(this.headerMenuItems);
+
+				if (!this.isAPSavailable) {
+					this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
 				}
 			})
 			.catch((error) => { console.log('APS ERROR------------------', error); });
@@ -194,17 +211,9 @@ export class PageSmartAssistComponent implements OnInit {
 			this.intelligentScreen.isReadingOrBrowsingEnabled = responses[5];
 			this.intelligentScreen.readingOrBrowsingTime = responses[6];
 			console.log('PageSmartAssistComponent.Promise.IntelligentScreen()', responses, this.intelligentScreen);
-
-			if (this.intelligentScreen.isIntelligentScreenVisible) {
-				if (this.intelligentSecurity.isIntelligentSecuritySupported) {
-					this.headerMenuItems.push({
-						title: 'device.smartAssist.jumpTo.screen',
-						path: 'screen',
-						sortOrder: 5
-					});
-
-					this.headerMenuItems = this.sortMenuItems(this.headerMenuItems);
-				}
+			if (!(this.intelligentScreen.isIntelligentScreenVisible &&
+				this.intelligentSecurity.isIntelligentSecuritySupported)) {
+					this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'screen')
 			}
 		}).catch(error => {
 			this.logger.error('error in PageSmartAssistComponent.Promise.IntelligentScreen()', error);
@@ -251,14 +260,8 @@ export class PageSmartAssistComponent implements OnInit {
 				this.intelligentSecurity.isIntelligentSecuritySupported = responses[5];
 			}
 
-			if (this.intelligentSecurity.isIntelligentSecuritySupported && isFirstTimeLoad) {
-				this.headerMenuItems.push({
-					title: 'device.smartAssist.jumpTo.security',
-					path: 'security',
-					sortOrder: 1
-				});
-
-				this.headerMenuItems = this.sortMenuItems(this.headerMenuItems);
+			if (!(this.intelligentSecurity.isIntelligentSecuritySupported && isFirstTimeLoad)) {
+				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'security')
 			}
 			console.log('PageSmartAssistComponent.Promise.initZeroTouchLock()', responses, this.intelligentSecurity);
 		}).catch(error => {
@@ -428,13 +431,8 @@ export class PageSmartAssistComponent implements OnInit {
 						this.intelligentMedia = response;
 						console.log('getVideoPauseResumeStatus.then:', response);
 
-						if (response.available) {
-							this.headerMenuItems.push({
-								title: 'device.smartAssist.jumpTo.media',
-								path: 'media',
-								sortOrder: 2
-							});
-							this.headerMenuItems = this.sortMenuItems(this.headerMenuItems);
+						if (!response.available) {
+							this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media')
 						}
 					}).catch(error => {
 						console.error('getVideoPauseResumeStatus.error', error);

@@ -145,7 +145,20 @@
 					right: calc(100% - 1rem);
 					top: -3rem;
 					@media #{$medium-screen}{
-						right: calc(0% - 3rem);
+						right: auto;
+						left: 50%;
+						transform: translateX(-50%);
+						top: -23rem;
+						&::after {
+							top: calc(100% - 1.5rem);
+							right: calc(50% - 1.5rem);
+							transform: rotate(45deg);
+						}
+					}
+					@media #{$small-screen}{
+						right: auto;
+						left: 50%;
+						transform: translateX(-50%);
 						top: -23rem;
 						&::after {
 							top: calc(100% - 1.5rem);
@@ -163,6 +176,7 @@
 			border: none;
 			padding-left: 0;
 			padding-top: 0;
+			margin-bottom: -1.8rem;
 			a {
 				font-size: 1.5rem;
 				color: $gaming_switch_light;

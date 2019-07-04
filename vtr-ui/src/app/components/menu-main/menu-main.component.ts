@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, DoCheck, HostListener, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, DoCheck, HostListener, ViewChild, AfterViewInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -31,6 +31,7 @@ import { SecurityAdvisorMockService } from 'src/app/services/security/securityMo
 })
 export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewInit {
 	@ViewChild('menuTarget', { static: true }) menuTarget;
+	@Input() loadMenuItem: any;
 	public deviceModel: string;
 	public country: string;
 	public firstName: 'User';
@@ -116,7 +117,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 	onClick(targetElement) {
 		const clickedInside = this.menuTarget.nativeElement.contains(targetElement);
 		const toggleMenuButton =
-			targetElement.classList.contains('navbar-toggler-icon ') || targetElement.classList.contains('fa-bars');
+			targetElement.classList.contains('navbar-toggler-icon ') || targetElement.classList.contains('fa-bars') || targetElement.parentElement.classList.contains('fa-bars') || targetElement.localName === 'path';
 		if (!clickedInside && !toggleMenuButton) {
 			this.showMenu = false;
 		}
@@ -356,7 +357,6 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 						const isAvailable =
 							(responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && responses[7] >= 0);
 						// const isAvailable = true;
-						this.commonService.setLocalStorageValue(LocalStorageKey.IsLenovoVoiceSupported, responses[2]);
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, isAvailable);
 						// avoid duplicate entry. if not added earlier then add menu
 						if (isAvailable && !isSmartAssistSupported) {

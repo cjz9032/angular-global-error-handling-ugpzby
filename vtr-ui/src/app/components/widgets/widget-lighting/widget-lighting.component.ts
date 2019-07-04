@@ -53,6 +53,7 @@ export class WidgetLightingComponent implements OnInit {
 		}
 		if (this.ledSetFeature && this.ledDriver) {
 			this.isLightingVisible = true;
+			this.isPopupVisible = false;
 		} else if (!this.ledSetFeature && this.ledDriver) {
 			this.isLightingVisible = false;
 		} else if (this.ledSetFeature && !this.ledDriver) {

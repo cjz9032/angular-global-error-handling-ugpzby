@@ -120,6 +120,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryService.getBatteryDetail()
 			.then((response: any) => {
 				console.log('getBatteryDetails', response);
+				this.isLoading = false;
 				this.batteryInfo = response;
 				this.batteryInfo = response.batteryInformation;
 				this.batteryGauge = response.batteryIndicatorInfo;
@@ -128,9 +129,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 				this.commonService.setLocalStorageValue(LocalStorageKey.BatteryPercentage,
 					this.batteryGauge.percentage);
-
-				this.isLoading = false;
-
 				this.isBatteryDetailsBtnDisabled =
 					this.batteryGauge.isPowerDriverMissing || this.batteryInfo.length === 0;
 				this.updateBatteryDetails();
@@ -166,13 +164,14 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 					info['batteryHealth'] = 0;
 				}
 				remainingPercentages.push(info.remainingPercent);
-				if (info.batteryHealth >= this.batteryHealth) {
-					this.batteryHealth = info.batteryHealth;
-					batteryIndex += 1;
-				}
+				// if (info.batteryHealth >= this.batteryHealth) {
+				// 	this.batteryHealth = info.batteryHealth;
+				// 	batteryIndex += 1;
+				// }
 			});
-			this.batteryIndex = batteryIndex;
+			this.batteryIndex = 0; // temp set primary battery conditions
 			this.commonService.setLocalStorageValue(LocalStorageKey.RemainingPercentages, remainingPercentages);
+			this.batteryHealth = this.batteryInfo[0].batteryHealth;
 		}
 
 		this.batteryIndicator.percent = this.batteryGauge.percentage;
@@ -254,10 +253,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryQuality.Poor));
 		}
 		if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
-			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryQuality.Fair));
+			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryQuality.AcError));
 		}
 		if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'notsupported') {
-			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryQuality.Poor));
+			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryQuality.AcError));
 		}
 		this.batteryConditions = batteryConditions;
 		console.log('Battery conditions length', this.batteryConditions.length);
