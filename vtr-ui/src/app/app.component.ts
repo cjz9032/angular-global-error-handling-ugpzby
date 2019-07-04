@@ -24,7 +24,7 @@ import { ModalServerSwitchComponent } from './components/modal/modal-server-swit
 })
 export class AppComponent implements OnInit {
 	title = 'vtr-ui';
-	private allCapablitiyFlag: Boolean = false;
+
 	machineInfo: any;
 	constructor(
 		private devService: DevService,
@@ -132,17 +132,7 @@ export class AppComponent implements OnInit {
 		// forcefully clearing session storage
 		sessionStorage.clear();
 
-		if (!this.allCapablitiyFlag) {
-			this.gamingAllCapabilitiesService
-				.getCapabilities()
-				.then((response) => {
-					this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
-				})
-				.catch((err) => {
-					console.log(`ERROR in appComponent getCapabilities()`, err);
-				});
-			this.allCapablitiyFlag = true;
-		}
+
 
 		this.devService.writeLog('APP INIT', window.location.href, window.devicePixelRatio);
 
@@ -293,7 +283,7 @@ export class AppComponent implements OnInit {
 				);
 				window.parent.postMessage(response, 'ms-appx-web://e046963f.lenovocompanionbeta/index.html');
 			}
-			
+
 			//sahinul01Jul2019, VAN-5872, server switch feature
 			if(event.ctrlKey && event.shiftKey && event.keyCode==67){
 				console.log('sahinul Event',event);
