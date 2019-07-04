@@ -5,7 +5,6 @@ import { ChartPieLogo, ChartPieLogo_NULL } from './ChartPieLogo';
 import { ColorUtils, Color } from '../Color';
 import { TextStyle, defaultGlobalTextStyle } from '../Text';
 import { VectorUtils, Vector2 } from '../Transform';
-import { copyStyles } from '@angular/animations/browser/src/util';
 
 export interface DotStyle {
 	color: string;

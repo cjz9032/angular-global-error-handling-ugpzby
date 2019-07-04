@@ -7,7 +7,7 @@ import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular
 })
 export class UiLightingColorWheelComponent implements OnInit {
 
-	public color: string = "rgb(144,255,0)";
+	public color = 'rgb(144,255,0)';
 	public pickerContainerWidth = 0;
 	public showPicker = false;
 
@@ -15,7 +15,7 @@ export class UiLightingColorWheelComponent implements OnInit {
 	green = 255;
 	blue = 0;
 
-	@ViewChild('pickerContainer') pickerContainer : ElementRef;
+	@ViewChild('pickerContainer', { static: true }) pickerContainer: ElementRef;
 
 	constructor() { }
 
@@ -28,19 +28,19 @@ export class UiLightingColorWheelComponent implements OnInit {
 		this.updateWheelContainerWidth();
 	}
 
-	updateWheelContainerWidth(){
+	updateWheelContainerWidth() {
 		this.showPicker = false;
 		this.pickerContainerWidth = this.pickerContainer.nativeElement.offsetWidth;
 		const self = this;
-		const delay = setTimeout(function(){
+		const delay = setTimeout(function () {
 			self.showPicker = true;
-		}, 500)
+		}, 500);
 		// console.log('WHEEL CONTAINER WIDTH', this.pickerContainerWidth);
 	}
 
-	colorChanged(event){
+	colorChanged(event) {
 		// console.log('COLOR CHANGED', event);
-		const colors = event.replace('rgb(','').replace(')','').split(",");
+		const colors = event.replace('rgb(', '').replace(')', '').split(',');
 		this.red = parseInt(colors[0]);
 		this.green = parseInt(colors[1]);
 		this.blue = parseInt(colors[2]);

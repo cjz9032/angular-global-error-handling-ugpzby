@@ -23,8 +23,8 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	public fillEndColor = '#00ff00';
 	hideRemainingTimeTxt = false;
 
-	@ViewChild('battery') battery: ElementRef;
-	@ViewChild('batteryIndicator') batteryIndicator: ElementRef;
+	@ViewChild('battery', { static: true }) battery: ElementRef;
+	@ViewChild('batteryIndicator', { static: true }) batteryIndicator: ElementRef;
 
 	@Input() isVoltageError = false; // boolean indicator if its changing or not
 	@Input() isCharging = true; // boolean indicator if its changing or not
@@ -192,7 +192,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	}
 
 	checkRemainingTimeIsZero() {
-		let isZero = false;
+		const isZero = false;
 		if (Number.isNaN(this.remainingMinutes)) {
 			this.hideRemainingTimeTxt = true;
 			return;

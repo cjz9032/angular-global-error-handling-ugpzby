@@ -39,7 +39,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	public cameraErrorDescription: string;
 	public isCameraInErrorState = false;
 
-	@ViewChild('cameraPreview') set content(content: ElementRef) {
+	@ViewChild('cameraPreview', { static: true }) set content(content: ElementRef) {
 		// when camera preview video element is visible then start camera feed
 		this.cameraPreview = content;
 		if (content && !this.cameraDetail.isPrivacyModeEnabled) {

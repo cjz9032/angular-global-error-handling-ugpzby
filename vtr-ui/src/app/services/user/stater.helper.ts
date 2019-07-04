@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
 import { DevService } from '../dev/dev.service';
 import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import * as X2JS from 'x2js';
+import X2JS from 'x2js';
 import { DeviceService } from '../device/device.service';
 import { environment } from '../../../environments/environment';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -127,7 +126,7 @@ export class LIDStarterHelper {
 	generateStarterAccountToken(account: string) {
 		let tokenInfo = null;
 		if (account) {
-			tokenInfo =  STARTER_ACCOUNT_TOKEN;
+			tokenInfo = STARTER_ACCOUNT_TOKEN;
 		}
 		return tokenInfo;
 	}

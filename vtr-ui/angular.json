@@ -10,7 +10,7 @@
 			"prefix": "vtr",
 			"schematics": {
 				"@schematics/angular:component": {
-					"styleext": "scss"
+					"style": "scss"
 				}
 			},
 			"architect": {
@@ -21,7 +21,8 @@
 						"index": "src/index.html",
 						"main": "src/main.ts",
 						"polyfills": "src/polyfills.ts",
-						"tsConfig": "src/tsconfig.app.json",
+						"tsConfig": "tsconfig.app.json",
+            "aot": false,
 						"assets": [
 							"src/favicon.ico",
 							"src/assets",
@@ -95,38 +96,31 @@
 					"options": {
 						"main": "src/test.ts",
 						"polyfills": "src/polyfills.ts",
-						"tsConfig": "src/tsconfig.spec.json",
-						"karmaConfig": "src/karma.conf.js",
+						"tsConfig": "tsconfig.spec.json",
+						"karmaConfig": "karma.conf.js",
+						"assets": [
+							"src/favicon.ico",
+							"src/assets"
+						],
 						"styles": [
 							"src/styles.scss"
 						],
-						"scripts": [],
-						"assets": [
-							"src/favicon.ico",
-							"src/assets",
-							"src/manifest.webmanifest"
-						]
+						"scripts": []
 					}
 				},
 				"lint": {
 					"builder": "@angular-devkit/build-angular:tslint",
 					"options": {
 						"tsConfig": [
-							"src/tsconfig.app.json",
-							"src/tsconfig.spec.json"
+							"tsconfig.app.json",
+							"tsconfig.spec.json",
+							"e2e/tsconfig.json"
 						],
 						"exclude": [
 							"**/node_modules/**"
 						]
 					}
-				}
-			}
-		},
-		"vtr-ui-e2e": {
-			"root": "e2e/",
-			"projectType": "application",
-			"prefix": "vtr",
-			"architect": {
+				},
 				"e2e": {
 					"builder": "@angular-devkit/build-angular:protractor",
 					"options": {
@@ -137,15 +131,6 @@
 						"production": {
 							"devServerTarget": "vtr-ui:serve:production"
 						}
-					}
-				},
-				"lint": {
-					"builder": "@angular-devkit/build-angular:tslint",
-					"options": {
-						"tsConfig": "e2e/tsconfig.e2e.json",
-						"exclude": [
-							"**/node_modules/**"
-						]
 					}
 				}
 			}

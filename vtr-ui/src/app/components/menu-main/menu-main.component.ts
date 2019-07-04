@@ -30,7 +30,7 @@ import { SecurityAdvisorMockService } from 'src/app/services/security/securityMo
 	styleUrls: ['./menu-main.component.scss']
 })
 export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewInit {
-	@ViewChild('menuTarget') menuTarget;
+	@ViewChild('menuTarget', { static: true }) menuTarget;
 	public deviceModel: string;
 	public country: string;
 	public firstName: 'User';

@@ -18,7 +18,7 @@ import { ChartPieLine } from '../../tracking-map-base/ChartCore/ChartPieLine';
 	styleUrls: ['./chart-hitbox.component.scss']
 })
 export class ChartHitboxComponent implements OnInit {
-	@ViewChild('svgHitbox') hitbox: ElementRef<SVGPathElement | SVGRectElement>;
+	@ViewChild('svgHitbox', { static: true }) hitbox: ElementRef<SVGPathElement | SVGRectElement>;
 
 	@Input() p: ChartPieLine;
 

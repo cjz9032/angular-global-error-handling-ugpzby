@@ -28,7 +28,7 @@
 	}
 }
 
-/deep/ {
+::ng-deep {
 	.picker-container {
 		.color-picker {
 			border: 0;
@@ -54,7 +54,7 @@
 					input {
 						color: $gaming_lightest;
 						background: $gaming_darker;
-						border: 0
+						border: 0;
 					}
 				}
 			}
