@@ -68,7 +68,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		this.permission = vantageShellService.getPermission();
 		this.common = new HomeSecurityCommon(this.chs, this.modalService);
 		this.welcomeModel = new HomeSecurityWelcome();
-		this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice(this.translateService);
+		this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice();
 		this.allDevicesInfo = new HomeSecurityAllDevice();
 		this.notificationItems = new HomeSecurityNotifications();
 		this.account = new HomeSecurityAccount();
@@ -85,7 +85,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			this.homeSecurityOverviewMyDevice = cacheMyDevice;
 		}
 		if (this.chs && this.chs.overview) {
-			this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice(this.translateService, this.chs.overview);
+			this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice(this.chs.overview);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityMyDevice, this.homeSecurityOverviewMyDevice);
 		}
 		const cacheAllDevices = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices);
@@ -128,7 +128,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 
 		this.chs.on(EventTypes.chsEvent, (chs: ConnectedHomeSecurity) => {
 			if (chs && chs.overview) {
-				this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice(this.translateService, chs.overview);
+				this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice(chs.overview);
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityMyDevice, this.homeSecurityOverviewMyDevice);
 			}
 			if (chs.account) {
