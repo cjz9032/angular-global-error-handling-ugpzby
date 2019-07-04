@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -1613,7 +1616,8 @@
             },
             "errorMessage": {
                 "headerText": "Fel",
-                "bodyText": "Vi har sett att du saknar viktiga komponenter i Vantage. Komponenterna hämtas i bakgrunden. Försök igen litet senare."
+				"bodyText": "Vi har sett att du saknar viktiga komponenter i Vantage. Komponenterna hämtas i bakgrunden. Försök igen litet senare.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

@@ -5,78 +5,43 @@
 	<div class="container">
 		<div class="row">
 			<h1 class="col-12">{{serverSwitchTitle}}</h1>
+			<h4 class="col-12">{{serverSwitchData.currentUrl}}</h4>
 		</div>
 		<div class="row server-content">
-			<div class="server-body col-6">
-				<form (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm" class="form" novalidate>
-					<div *ngIf="sddInvalid.status" class="alert alert-danger">
-						{{sddInvalid.messages}}
-					</div>
+			<div class="server-body col">
+				<form name="serverswitchform" [formGroup]="serverSwitchForm" (ngSubmit)="onSubmit()" class="form" novalidate>
+					<ul *ngIf="sddInvalid.status" class="alert alert-danger">
+						<li class="fa fa-error" *ngFor="let msg of sddInvalid.message;">{{msg}}</li>
+					</ul>
 
 					<div class="form-group row mb-2">
 						<label for="country" class="col col-4 col-form-label">Country</label>
 						<div class="col">
-							<ngx-select-dropdown [config]="sddConfigCountry" [options]="serverSwitchData.countryList"
-								[(ngModel)]="serverSwitchData.country" name="country" id="country" #country="ngModel"
+							<ngx-select-dropdown [config]="sddConfigCountry" [options]="serverSwitchData.countryList" 
+								name="country" id="country" formControlName="country"
 								required class=""></ngx-select-dropdown>
-							<!--<div *ngIf="country.invalid && (country.dirty || country.touched)"
-                  class="alert alert-danger">
-                  <div *ngIf="country.errors.required">
-                    Country is required.
-                  </div>
-                </div>-->
 						</div>
 					</div>
 					<div class="form-group row mb-2">
 						<label for="language" class="col col-4 col-form-label">Language</label>
 						<div class="col">
 							<ngx-select-dropdown [config]="sddConfigLanguage" [options]="serverSwitchData.languageList"
-								[(ngModel)]="serverSwitchData.language" name="language" id="language"
-								#language="ngModel" required class=""></ngx-select-dropdown>
-							<!--<div *ngIf="language.invalid && (language.dirty || language.touched)"
-				class="alert alert-danger">
-				<div *ngIf="language.errors.required">
-				  Language is required.
-				</div>
-			  </div>-->
+							    formControlName="language" name="language" id="language"
+								 required class=""></ngx-select-dropdown>
 						</div>
 					</div>
 					<div class="form-group row mb-2">
 						<label for="segment" class="col col-4 col-form-label">Segment</label>
 						<div class="col">
 							<ngx-select-dropdown [config]="sddConfigSegment" [options]="serverSwitchData.segmentList"
-								[(ngModel)]="serverSwitchData.segment" name="segment" id="segment" #segment="ngModel"
+							    formControlName="segment" name="segment" id="segment" 
 								required class=""></ngx-select-dropdown>
-							<!--<div *ngIf="segment.invalid && (segment.dirty || segment.touched)"
-				class="alert alert-danger">
-				<div *ngIf="segment.errors.required">
-				  Segment is required.
-				</div>
-			  </div>-->
 						</div>
 					</div>
-
-
-					<!-- <div class="form-group row">
-            <label for="segment" class="col col-form-label">Segment</label>
-            <div class="col-10">
-              <input type="text" class="form-control form-control-lg" id="segment" required [(ngModel)]="serverSwitchData.segment" name="segment" #segment="ngModel">
-              <div *ngIf="segment.invalid && (segment.dirty || segment.touched)"
-                class="alert alert-danger">
-                <div *ngIf="segment.errors.required">
-                  Segment is required.
-                </div>
-              </div>
-            </div>
-        </div>-->
-
 					<div class="col-12">
-						<input type="submit" class="form-control-lg btn btn-primary" value="Submit">
+						<input type="submit" class="btn btn-lg btn-primary" value="Submit">
 					</div>
 				</form>
-				<p>
-					{{serverSwitchData.segment}}
-				</p>
 			</div>
 		</div>
 	</div>

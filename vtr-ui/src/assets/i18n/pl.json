@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -1613,7 +1616,8 @@
             },
             "errorMessage": {
                 "headerText": "Błąd",
-                "bodyText": "Wykryliśmy, że brakuje ważnych elementów aplikacji Vantage. Te elementy zostaną pobrane w tle. Spróbuj ponownie później."
+				"bodyText": "Wykryliśmy, że brakuje ważnych elementów aplikacji Vantage. Te elementy zostaną pobrane w tle. Spróbuj ponownie później.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

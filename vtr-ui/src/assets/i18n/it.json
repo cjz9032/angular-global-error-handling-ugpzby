@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -1613,7 +1616,8 @@
             },
             "errorMessage": {
                 "headerText": "Errore",
-                "bodyText": "Sono stati rilevati errori di perdita di pacchetti Vantage. Questi pacchetti verranno scaricati in background. Si prega di riprovare più tardi."
+				"bodyText": "Sono stati rilevati errori di perdita di pacchetti Vantage. Questi pacchetti verranno scaricati in background. Si prega di riprovare più tardi.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -1613,7 +1616,8 @@
             },
             "errorMessage": {
                 "headerText": "Error",
-                "bodyText": "Hemos detectado que faltan piezas críticas de Vantage. Estas piezas se descargarán en segundo plano. Vuelva a intentarlo más tarde."
+				"bodyText": "Hemos detectado que faltan piezas críticas de Vantage. Estas piezas se descargarán en segundo plano. Vuelva a intentarlo más tarde.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

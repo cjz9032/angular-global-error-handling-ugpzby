@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -1613,7 +1616,8 @@
             },
             "errorMessage": {
                 "headerText": "오류",
-                "bodyText": "Vantage의 중요한 부분이 누락된 것을 발견했습니다. 이 파일은 백그라운드에서 다운로드됩니다. 나중에 다시 시도하십시오."
+				"bodyText": "Vantage의 중요한 부분이 누락된 것을 발견했습니다. 이 파일은 백그라운드에서 다운로드됩니다. 나중에 다시 시도하십시오.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

@@ -6,28 +6,27 @@ export class HomeSecurityOverviewMyDevice {
 	devicePostures: CHSDevicePosture[];
 	deviceStatus: string;
 
-	constructor (translate: TranslateService, overview?: CHSDeviceOverview) {
+	constructor (overview?: CHSDeviceOverview) {
 		if (!overview) { return; }
 		if (overview.myDevice && overview.myDevice.name) {
 			this.deviceName = overview.myDevice.name;
 		}
 		if (overview.devicePostures && overview.devicePostures.value.length > 0) {
-			this.createHomeDevicePosture(overview.devicePostures.value, translate);
+			this.createHomeDevicePosture(overview.devicePostures.value);
 			this.creatDeviceStatus(overview.devicePostures.value);
 		}
 	}
 
-	createHomeDevicePosture(chsDevicePostures: CHSDevicePosture[], translate: TranslateService) {
+	createHomeDevicePosture(chsDevicePostures: CHSDevicePosture[]) {
 		this.devicePostures = chsDevicePostures.map((devicePosture) => {
-			this.mappingDevicePosture(devicePosture, translate);
 			return {
-				name: devicePosture.name,
+				name: this.mappingDevicePosture(devicePosture),
 				vulnerable: devicePosture.vulnerable
 			};
 		});
 	}
 
-	mappingDevicePosture(devicePosture: CHSDevicePosture, translate: TranslateService) {
+	mappingDevicePosture(devicePosture: CHSDevicePosture) {
 		let title: string;
 		const config = devicePosture.name.toLowerCase();
 		if (config.includes('apps')) {
@@ -53,9 +52,7 @@ export class HomeSecurityOverviewMyDevice {
 		} else {
 			title = 'other';
 		}
-		translate.stream(title).subscribe((res) => {
-			devicePosture.name = res;
-		});
+		return title;
 	}
 
 	creatDeviceStatus(devicePostures: CHSDevicePosture[]) {

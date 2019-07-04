@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -1613,7 +1616,8 @@
             },
             "errorMessage": {
                 "headerText": "Virhe",
-                "bodyText": "Olemme havainneet, että sinulta puuttuu tärkeitä Vantagen osia. Nämä osat ladataan taustalla. Yritä myöhemmin uudelleen."
+				"bodyText": "Olemme havainneet, että sinulta puuttuu tärkeitä Vantagen osia. Nämä osat ladataan taustalla. Yritä myöhemmin uudelleen.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

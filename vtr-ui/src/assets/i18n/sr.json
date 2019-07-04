@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -1613,7 +1616,8 @@
             },
             "errorMessage": {
                 "headerText": "Greška",
-                "bodyText": "Detektovali smo da vam nedostaju kritični delovi programa Vantage. Preuzimanje tih delova će se obaviti u pozadini. Pokušajte ponovo kasnije."
+				"bodyText": "Detektovali smo da vam nedostaju kritični delovi programa Vantage. Preuzimanje tih delova će se obaviti u pozadini. Pokušajte ponovo kasnije.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

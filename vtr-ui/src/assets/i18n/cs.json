@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -1613,7 +1616,8 @@
             },
             "errorMessage": {
                 "headerText": "Chyba",
-                "bodyText": "Zjistili jsme, že aplikace Vantage postrádá důležité součásti. Tyto součásti se stáhnou na pozadí. Zkuste to prosím později."
+				"bodyText": "Zjistili jsme, že aplikace Vantage postrádá důležité součásti. Tyto součásti se stáhnou na pozadí. Zkuste to prosím později.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

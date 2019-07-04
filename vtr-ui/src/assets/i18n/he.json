@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -1613,7 +1616,8 @@
             },
             "errorMessage": {
                 "headerText": "שגיאה",
-                "bodyText": "גילינו שחסרים לכם חלקים קריטיים של Vantage. הורדה של חלקים אלה תתבצע ברקע. נסו שוב מאוחר יותר."
+				"bodyText": "גילינו שחסרים לכם חלקים קריטיים של Vantage. הורדה של חלקים אלה תתבצע ברקע. נסו שוב מאוחר יותר.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

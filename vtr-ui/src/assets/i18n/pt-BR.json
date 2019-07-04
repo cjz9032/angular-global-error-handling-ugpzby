@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -1613,7 +1616,8 @@
             },
             "errorMessage": {
                 "headerText": "Erro",
-                "bodyText": "Detectamos que você não possui partes essenciais do Vantage. Essas partes serão baixadas em segundo plano. Tente novamente mais tarde."
+				"bodyText": "Detectamos que você não possui partes essenciais do Vantage. Essas partes serão baixadas em segundo plano. Tente novamente mais tarde.",
+				"closeText": "close"
             }
         },
         "homeprotection": {
