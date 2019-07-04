@@ -896,12 +896,12 @@
 				"subtitle": "Audio Settings",
 				"description": "This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.",
 				"audioSmartsettings": {
-					"title": "Audio Smart settings",
+					"title": "Audio Smart Settings",
 					"subtitle": "APPLICATION-BASED SETTINGS",
 					"description": "Automatically adjust audio settings according to different apps you are using.",
 					"dolby": {
-						"title": "Automatic Dolby Audio settings",
-						"tooltip": "Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
+						"title": "Automatic Dolby Audio Settings",
+						"tooltip": "Automatic Dolby Audio Settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
 						"options": {
 							"dynamic": "DYNAMIC",
 							"movie": "MOVIE",
@@ -942,7 +942,7 @@
 						"tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
 					},
 					"optimize": {
-						"title": "Optimize My Microphone For:",
+						"title": "Optimize my Microphone for:",
 						"tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
 						"options": {
 							"VoiceRecognition": "VOICE RECOGNITION",
@@ -1139,7 +1139,7 @@
 				},
 				"distanceSensitivityAdjusting": {
 					"title": "DISTANCE SENSITIVITY ADJUSTING",
-					"caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+					"caption": "Distance Sensitivity Adjusting will automatically update the detection distance via an AI engine.",
 					"options": {
 						"near": "Near",
 						"far": "Far"
@@ -1219,7 +1219,7 @@
 				"installBtnText": "Install",
 				"launchBtnText": "Launch",
 				"voiceToText": {
-					"title": "Voice to text",
+					"title": "Voice to Text",
 					"caption": "This feature helps to convert your voice into texts."
 				},
 				"translation": {
