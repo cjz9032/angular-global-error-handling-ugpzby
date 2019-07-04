@@ -896,12 +896,12 @@
 				"subtitle": "Audio Settings",
 				"description": "This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.",
 				"audioSmartsettings": {
-					"title": "Audio Smart Settings",
+					"title": "Audio Smart settings",
 					"subtitle": "APPLICATION-BASED SETTINGS",
 					"description": "Automatically adjust audio settings according to different apps you are using.",
 					"dolby": {
-						"title": "Automatic Dolby Audio Settings",
-						"tooltip": "Automatic Dolby Audio Settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
+						"title": "Automatic Dolby Audio settings",
+						"tooltip": "Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
 						"options": {
 							"dynamic": "DYNAMIC",
 							"movie": "MOVIE",
@@ -942,7 +942,7 @@
 						"tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
 					},
 					"optimize": {
-						"title": "Optimize my Microphone for:",
+						"title": "Optimize My Microphone For:",
 						"tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
 						"options": {
 							"VoiceRecognition": "VOICE RECOGNITION",
