@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -467,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Vypadáte dnes aktivně "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Nebylo zjištěno žádné připojení k Internetu.",
+            "subtitle": "Další informace o řešení problémů s připojením naleznete v našem článku",
+            "buttonText": "Získejte podporu"
         },
         "feedback": {
             "title": "Zaslat zpětnou vazbu",
@@ -497,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Vaše rychlá nastavení",
+            "microphone": "Mikrofon",
+            "cameraPrivacy": "Fotoaparát",
+            "eyeCareMode": "Režim péče o oči"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Stav systému",
+            "subtitle": "RYCHLÉ ZACHYCENÍ STAVU ZAŘÍZENÍ.",
             "memory": {
-                "title": "Memory",
+                "title": "Paměť",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Paměť nebyla nalezena",
+                    "of": "z"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Místo na disku",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Disk nebyl nalezen",
+                    "of": "z"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Záruka",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Záruka nebyla nalezena.",
+                    "until": "Dokud",
+                    "expiredOn": "Platnost záruky vypršela dne",
+                    "notAvailable": "Záruka není k dispozici"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Aktualizace"
                 }
             }
         }
@@ -649,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -810,9 +812,9 @@
                         "checkbox": "Povolit USB nabíjení z akumulátoru, když je počítač vypnutý."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Rychlé znovuspuštění",
+                        "description": "Aktivujte tuto funkci, zrychlí obnovení provozu počítače v případě, že často otevíráte a zavíráte jeho víko.",
+                        "tooltip": "Tato funkce zrychlí obnovení provozu počítače v případě, že často otevíráte a zavíráte jeho víko. Je-li zapnuta, počítač po zavření víka přejde do režimu nízké spotřeby, v případě znovuotevření víka během 15 sekund od jeho zavření se však okamžitě vrátí k běžnému provozu. Kromě toho se díky ní notebook může pokusit dokončit započaté činnosti (například odeslání e-mailu nebo stahování souboru) ještě předtím, než přejde do pohotovostního režimu."
                     }
                 },
                 "otherSettings": {
@@ -828,9 +830,9 @@
                         "title": "Limit nabíjení baterie",
                         "description": "Pokud k napájení počítače používáte zejména napájecí adaptér a baterii používáte jen zřídka,můžete její životnost prodloužit nastavením maximální úrovně nabití na méně než 100 %.Málo používané baterie totiž mají delší životnost, pokud nejsou udržovány plně nabité.",
                         "tooltip": "Je-li baterie momentálně nabita nad nastavený horní limit, je třeba odpojit napájení a ponechat ho odpojený, dokud nabití baterie neklesne minimálně na limit.Přesný stav, při kterém se nabíjení zapne nebo zastaví, se může podle stáří baterie lišit až o 2 procenta.Pokud tuto funkci zapnete, doporučujeme čas od času resetovat ukazatel stavu baterie. Tím zajistíte přesnost údaje o stavu baterie.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Poznámka",
+                        "readMoreText": "Další informace.",
+                        "noteInfo": " Prahová hodnota nabíjení baterie stále není plně aktivní. Odpojte počítač a nechte baterii vybít na nebo pod limit nabíjení baterie.",
                         "settings": {
                             "title1": "Prahová hodnota pro vestavěnou baterii",
                             "title2": "Prahová hodnota pro vyjímatelnou baterii"
@@ -843,9 +845,9 @@
                             "cancel": "STORNO"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Začít nabíjení při poklesu pod",
+                            "checkboxText": "Automaticky nastavit limit spuštění nabíjení, když se baterie vybije 5 % pod horní limit.",
+                            "stop": "Zastavit nabíjení na"
                         }
                     },
                     "expressCharging": {
@@ -869,22 +871,22 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "ZAŘÍZENÍ S CERTIFIKACÍ ENERGY STAR"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Chytrý pohotovostní režim",
+                    "description": "Pomocí této funkce lze optimalizovat výdrž baterie počítače v době, kdy se s ním nepracuje, aniž by to mělo negativní vliv na rychlost jeho opětovného spuštění při intenzivnějším využívání.",
+                    "tooltip": "Když chytrý pohotovostní režim povolíte, počítač se před jeho plánovaným začátkem přepne do moderního pohotovostního režimu, a pokud bude napájen z baterie a nebudete s ním po určitou dobu pracovat, přejde do režimu hibernace. Toto časové rozmezí se optimalizuje na základě nastaveného plánu. Počítač se bude z hibernace probouzet pouze v určené dny a nezapne se, když bude neaktivní po dobu několika po sobě jdoucích vybraných dnů.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Nastavte čas, kdy počítač obvykle používáte",
+                        "subHeading1": "pokračovat",
+                        "subHeading2": "konec",
+                        "subHeading3": "použít toto nastavení pro",
+                        "endTimeNote": "Koncový čas nesmí být od počátečního času vzdálen více než 20 hodin",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
-                            "unit3": "AM/PM"
+                            "unit1": "Hodin",
+                            "unit2": "Minut",
+                            "unit3": "dop/odp"
                         }
                     }
                 }

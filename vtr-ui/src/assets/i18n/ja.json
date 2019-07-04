@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -467,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "今日はエネルギーにあふれているように見えます"
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "インターネット接続は検出されませんでした",
+            "subtitle": "接続の問題を解決する方法の詳細については、",
+            "buttonText": "サポートを受ける"
         },
         "feedback": {
             "title": "フィードバックを送る",
@@ -497,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "クイック設定",
+            "microphone": "マイクロホン",
+            "cameraPrivacy": "カメラ",
+            "eyeCareMode": "アイ・ケア・モード"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "システム状況",
+            "subtitle": "デバイス状況をすばやく確認。",
             "memory": {
-                "title": "Memory",
+                "title": "メモリー",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "メモリーが見つかりません",
+                    "of": "の"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "ディスク容量",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "ディスクが見つかりません",
+                    "of": "の"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "保証",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "保証が見つかりませんでした",
+                    "until": "期限",
+                    "expiredOn": "保証の有効期限が切れた日",
+                    "notAvailable": "保証を利用できません"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "更新"
                 }
             }
         }
@@ -649,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -810,9 +812,9 @@
                         "checkbox": "コンピュータの電源が切れているときに、ラップトップのバッテリーからの USB 充電を有効にします。"
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "イージー・レジューム",
+                        "description": "この機能を有効にして、コンピュータのふたを頻繁に開閉する場合に再開までの時間を改善します。",
+                        "tooltip": "この機能はコンピュータのふたを頻繁に開閉する場合に再開までの時間を改善します。有効にすると、ふたを閉めたときコンピューターは低電力モードになりますが、15 分以内に再度ふたを開けるとすぐに再開します。また、この機能により、ノートブックはシステムが一時停止になる前に保留中の操作 (メールの送信やファイルのダウンロードなど) を完了させることができます。"
                     }
                 },
                 "otherSettings": {
@@ -828,9 +830,9 @@
                         "title": "バッテリー充電のしきい値",
                         "description": "コンピューターを主に AC アダプターに接続して使用し、バッテリー電源はそれほど使用しない場合は、充電のしきい値を 100 % より下に変更してバッテリー寿命を延ばすことができます。それほど使用しないバッテリーは完全に充電しない状態を維持することで寿命が長くなるため、効果的です。",
                         "tooltip": "現状でバッテリーが充電停止しきい値を超えて充電されている場合は、電源を取り外して、バッテリーを充電停止しきい値以下まで放電させてください。バッテリーの状態 (古いまたは新しい) によって、充電の正確な開始点および停止点は、最大 2 パーセントのポイントで異なります。この機能が有効の場合、バッテリーの状態が正しく報告されるように定期的にバッテリー・ゲージのリセットを実行することをお勧めします。",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "お願い",
+                        "readMoreText": "表示を多くする。",
+                        "noteInfo": " バッテリー充電のしきい値がまだ完全にアクティブではありません。マシンの電源を切り、充電停止しきい値以下までバッテリを放電してください。",
                         "settings": {
                             "title1": "内蔵バッテリーのしきい値",
                             "title2": "取り外し可能なバッテリーのしきい値"
@@ -843,9 +845,9 @@
                             "cancel": "キャンセル"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "次の時点を下回った場合に充電を開始",
+                            "checkboxText": "充電開始しきい値を、充電停止しきい値より 5 パーセント下に自動的に設定します。",
+                            "stop": "充電を停止する時点"
                         }
                     },
                     "expressCharging": {
@@ -869,22 +871,22 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "ENERGY STAR 認定製品"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "スマート・スタンバイ",
+                    "description": "この機能は、使用頻度の高い時間中の高速スタートアップ時間に影響を与えずにアイドル時間中のバッテリー省電力を最適化するようにコンピューターをスケジュールします。",
+                    "tooltip": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時間前にモダン・スタンバイに切り替わり、バッテリー電源の使用中に一定時間操作されない場合は休止状態に入ります。時間は設定されたスケジュールに基づいて最適化されます。コンピューターはスケジュールされた日のみ休止状態からモダン・スタンバイに切り替わります。スケジュールされた日に連続して操作されない場合は切り替わりません。",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "通常このコンピューターを使用する時刻を設定します",
+                        "subHeading1": "フィールドの",
+                        "subHeading2": "終了",
+                        "subHeading3": "このスケジュールを使用する期間",
+                        "endTimeNote": "終了時間は開始時間から 20 時間以内にする必要があります",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
-                            "unit3": "AM/PM"
+                            "unit1": "時間",
+                            "unit2": "分",
+                            "unit3": "午前/午後"
                         }
                     }
                 }

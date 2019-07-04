@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -467,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Du ser ud til at være fuld af energi i dag "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Ingen internetforbindelse fundet",
+            "subtitle": "Læs mere om, hvordan du løser forbindelsesproblemer, i vores",
+            "buttonText": "Få support"
         },
         "feedback": {
             "title": "Giv feedback",
@@ -497,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Dine Hurtige indstillinger",
+            "microphone": "Mikrofon",
+            "cameraPrivacy": "Kamera",
+            "eyeCareMode": "Øjenbeskyttelsestilstand"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Systemstatus",
+            "subtitle": "FÅ ET HURTIGT INDBLIK I DIN ENHEDSSTATUS.",
             "memory": {
-                "title": "Memory",
+                "title": "Hukommelse",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Hukommelsen blev ikke fundet",
+                    "of": "af"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Diskplads",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Disken blev ikke fundet",
+                    "of": "af"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Garanti",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Garantien blev ikke fundet",
+                    "until": "Indtil",
+                    "expiredOn": "Garantien udløber den",
+                    "notAvailable": "Garantien er ikke tilgængelig"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Opdatér"
                 }
             }
         }
@@ -649,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -810,9 +812,9 @@
                         "checkbox": "Aktivér USB-opladning fra computerens batteri, når computeren er slukket."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Nem genoptagelse",
+                        "description": "Aktiver denne funktion for at forbedre genoptagelsestiden, hvis du ofte åbner og lukker computerens låg.",
+                        "tooltip": "Denne funktion forbedrer genoptagelsestiden, hvis du ofte åbner og lukker computerens låg. Når den er aktiveret, går computeren i en tilstand med lavt strømforbrug, når du lukker dens låg, men den genoptager driften med det samme, hvis du åbner låget inden for 15 minutter efter, du har lukket det. Denne funktion giver din notebook mulighed for at forsøge at udføre ventende aktiviteter (som f.eks. afsendelse af e-mail eller download af en fil), inden systemet går i dvale."
                     }
                 },
                 "otherSettings": {
@@ -828,9 +830,9 @@
                         "title": "Opladningsgrænse for batteri",
                         "description": "Hvis du primært bruger computeren med vekselstrømsadapteren tilsluttet og kun sjældent bruger strøm fra batteriet,kan du øge batteriets levetid ved at sætte den maksimale opladningsværdi til mindre end 100 %.Dette er nyttigt, fordi batterier, der ikke bruges så ofte, har en længere levetid, når de ikke er fuldt opladet.",
                         "tooltip": "Hvis batteriet er opladet til over opladningsgrænsen, skal du frakoble strømadapteren, indtil batteriet er afladet til eller under opladningsgrænsen.Afhængigt af batteriets status (gammelt eller nyt) kan det præcise punkt, hvor opladningen starter eller stopper, variere med op til 2 procentpoint.Hvis du aktiverer funktionen, anbefales det at udføre en nulstilling af batterimåler med jævne mellemrum for at sikre en korrekt angivelse af batteriets tilstand.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Bemærk",
+                        "readMoreText": "Læs mere.",
+                        "noteInfo": " Opladningsgrænse for batteri er stadig ikke fuldt aktiv. Tag maskinens strømstik ud, og lad batteriet aflade til under den grænse, hvor enheden stopper med at oplade.",
                         "settings": {
                             "title1": "Grænse for indbygget batteri",
                             "title2": "Grænse for flytbart batteri"
@@ -843,9 +845,9 @@
                             "cancel": "ANNULLER"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Start opladning, når under",
+                            "checkboxText": "Indstil automatisk grænsen for start af opladning til 5 procentpoint under grænsen for stop af opladningen.",
+                            "stop": "Stop opladning ved"
                         }
                     },
                     "expressCharging": {
@@ -869,21 +871,21 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "ET ENERGY STAR-CERTIFICERET PRODUKT"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Smart-standby",
+                    "description": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
+                    "tooltip": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte starttidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres på baggrund af den tidsplan, du angiver. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Angiv det tidspunkt, hvor du normalt bruger denne computer",
+                        "subHeading1": "starter",
+                        "subHeading2": "slut",
+                        "subHeading3": "brug denne tidsplan for",
+                        "endTimeNote": "Sluttidspunktet skal være inden for 20 timer fra starttidspunktet",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
+                            "unit1": "Timer",
+                            "unit2": "Minutter",
                             "unit3": "AM/PM"
                         }
                     }

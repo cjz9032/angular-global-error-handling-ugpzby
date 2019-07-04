@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -467,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "تبدو نشيطًا اليوم "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "لم يتم الكشف عن اتصال بالإنترنت",
+            "subtitle": "اعرف المزيد حول كيفية حل مشاكل الاتصال في",
+            "buttonText": "الحصول على الدعم"
         },
         "feedback": {
             "title": "تقديم تعليقات",
@@ -497,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "إعداداتك السريعة",
+            "microphone": "الميكروفون",
+            "cameraPrivacy": "الكاميرا",
+            "eyeCareMode": "وضع العناية بالعين"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "حالة النظام",
+            "subtitle": "اطلع على حالة جهازك بسرعة.",
             "memory": {
-                "title": "Memory",
+                "title": "الذاكرة",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "لم يتم العثور على الذاكرة",
+                    "of": "من"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "مساحة القرص",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "لم يتم العثور على القرص",
+                    "of": "من"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "الضمان",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "لم يتم العثور على الضمان",
+                    "until": "حتى",
+                    "expiredOn": "انتهت صلاحية الضمان في",
+                    "notAvailable": "الضمان غير متوفر"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "تعديل"
                 }
             }
         }
@@ -649,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -810,9 +812,9 @@
                         "checkbox": "تمكين شحن USB من بطارية الكمبيوتر المحمول عند إيقاف تشغيل الكمبيوتر."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "الاستئناف السهل",
+                        "description": "مكّن هذه الميزة لتحسين وقت استئناف العمل إذا كنت تقوم بفتح غطاء الكمبيوتر وإغلاقه بشكل متكرر.",
+                        "tooltip": "ستسمح هذه الميزة بتحسين وقت استئناف العمل إذا كنت تقوم بشكل متكرر بفتح غطاء الكمبيوتر وإغلاقه. عند تمكين هذه الميزة، سيدخل الكمبيوتر في وضع الطاقة المنخفضة عند إغلاق غطائه، ولكنه سيستأنف عمله على الفور عند إعادة فتح الغطاء في غضون 15 دقيقة من إغلاقه. تسمح هذه الميزة أيضًا للكمبيوتر المحمول بإنهاء الأنشطة المعلقة (كإرسال البريد الإلكتروني أو تنزيل ملف) قبل أن يدخل النظام في وضع التوقف المؤقت."
                     }
                 },
                 "otherSettings": {
@@ -828,9 +830,9 @@
                         "title": "حد شحن البطارية",
                         "description": "إذا كنت تستخدم الكمبيوتر مع توصيل محول التيار المتردد بشكل أساسي وتستخدم طاقة البطارية بشكل غير متكرر،فيمكنك إطالة عمر البطارية من خلال تعيين قيمة الشحن القصوى إلى أقل من 100%. يُعد هذا الأمر مفيدًا لأن عمر البطاريات التي لا تُستخدم بشكل متكرر سيكون أطول عند الاحتفاظ بها عند نسبة شحن أقل من الشحنة الكاملة.",
                         "tooltip": "إذا تم شحن بطاريتك حاليًا عند مستوى يفوق حد إيقاف الشحن، فافصل الطاقة حتى يتم إفراغ البطارية وصولاً إلى مستوى حد إيقاف الشحن أو أدناه.بحسب حالة البطارية (جديدة أو قديمة)، قد تختلف النقطة الدقيقة التي سيبدأ عندها الشحن أو يتوقف بنقطتي نسبة مئوية. إذا قمت بتمكين الميزة، فمن المستحسن تنفيذ عملية إعادة تعيين مقياس البطارية من وقت إلى آخر لضمان الحصول على تقرير صحيح عن سلامة البطارية.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "ملحوظة",
+                        "readMoreText": "اقرأ أكثر.",
+                        "noteInfo": " لا يزال حد شحن البطارية غير نشط بشكل كامل. الرجاء فصل الطاقة عن الجهاز، ودع البطارية تستهلك الطاقة حتى تصل إلى حد إيقاف الشحن أو أقل منه.",
                         "settings": {
                             "title1": "حد البطارية المدمجة",
                             "title2": "حد البطارية القابلة للإزالة"
@@ -843,9 +845,9 @@
                             "cancel": "إلغاء"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "بدء الشحن عندما تكون الشحنة أقل من",
+                            "checkboxText": "يتم تعيين حد بدء الشحن تلقائيًا إلى مستوى يقل عن 5 نقاط نسبة مئوية من حد إيقاف الشحن.",
+                            "stop": "إيقاف الشحن عند"
                         }
                     },
                     "expressCharging": {
@@ -869,22 +871,22 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "منتج حاصل على اعتماد ENERGY STAR"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "وضع الاستعداد الذكي",
+                    "description": "تعمل هذه الميزة على جدولة الكمبيوتر لتحسين معدل توفير طاقة البطارية خلال ساعات الخمول دون التضحية بفترة بدء التشغيل السريع خلال ساعات الاستعمال الأكثر كثافة.",
+                    "tooltip": "عند تمكين وضع الاستعداد الذكي، سيتحول الكمبيوتر إلى وضع الاستعداد الحديث قبل وقت البدء المجدول زمنيًا ويدخل في الإسبات بعد عدم النشاط في طاقة البطارية لفترة زمنية محددة. يتم تحسين هذه المدة الزمنية استنادًا إلى الجدول الزمني الذي حددته. لا يتحول الكمبيوتر من الإسبات إلى الوضع الاحتياطي الحديث إلا في الأيام المجدولة زمنيًا ولا يتم التحول عند عدم النشاط لعدة أيام متتالية مجدولة زمنيًا.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "اضبط الوقت الذي تستخدم فيه هذا الكمبيوتر عادة",
+                        "subHeading1": "بدء",
+                        "subHeading2": "إنهاء",
+                        "subHeading3": "استخدم هذا الجدول الزمني لأجل",
+                        "endTimeNote": "يجب أن يقع وقت الإنهاء بعد 20 ساعة من وقت البدء.",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
-                            "unit3": "AM/PM"
+                            "unit1": "ساعات",
+                            "unit2": "دقائق",
+                            "unit3": "ص/م"
                         }
                     }
                 }

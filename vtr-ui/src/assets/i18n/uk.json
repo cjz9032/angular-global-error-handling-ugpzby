@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -467,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Сьогодні ви енергійні "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Немає підключення до Інтернету",
+            "subtitle": "Дізнайтеся більше про те, як вирішити проблеми з підключенням, у",
+            "buttonText": "Отримати підтримку"
         },
         "feedback": {
             "title": "Залишити відгук",
@@ -497,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Ваші швидкі настройки",
+            "microphone": "Мікрофон",
+            "cameraPrivacy": "Камера",
+            "eyeCareMode": "Режим захисту зору"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Стан системи",
+            "subtitle": "ШВИДКО ДІЗНАВАЙТЕСЯ СТАН СИСТЕМИ ПРИСТРОЮ.",
             "memory": {
-                "title": "Memory",
+                "title": "Пам’ять",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Пам’ять не знайдено",
+                    "of": "з"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Дисковий простір",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Диск не знайдено",
+                    "of": "з"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Гарантія",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Гарантію не знайдено",
+                    "until": "До",
+                    "expiredOn": "Термін дії гарантії закінчився",
+                    "notAvailable": "Гарантія недоступна"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Оновлення"
                 }
             }
         }
@@ -649,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -810,9 +812,9 @@
                         "checkbox": "Увімкніть заряджання через USB від акумулятора ноутбука, коли комп'ютер вимкнено."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Швидке відновлення",
+                        "description": "Використання цієї функції зменшить час відновлення роботи, якщо ви часто відкриваєте та закриваєте кришку комп'ютера.",
+                        "tooltip": "Використання цієї функції зменшить час відновлення роботи, якщо ви часто відкриваєте і закриваєте кришку комп'ютера. Якщо функція ввімкнена, комп'ютер перейде в режим низького споживання електроенергії після закриття кришки і миттєво відновить звичний робочий стан у разі відкриття кришки протягом 15 хвилин після її закриття. Ця функція також дозволяє ноутбуку завершити активні задачі (наприклад, відправку електронного листа або завантаження файлу), перш ніж система призупинить роботу."
                     }
                 },
                 "otherSettings": {
@@ -828,9 +830,9 @@
                         "title": "Граничне значення заряду акумулятора",
                         "description": "Якщо зазвичай для живлення комп'ютера використовується підключений адаптер змінного струму й тільки інколи — акумулятор,можна збільшити термін експлуатації акумулятора, встановивши максимальне значення заряду менше 100 %. Якщо акумулятор, що використовується нерегулярно, заряджатиметься не до кінця, він зможе прослужити довше.",
                         "tooltip": "Якщо заряд акумулятора перевищує вказане граничне значення для завершення заряджання, від'єднайте живлення, щоб акумулятор розрядився до цього граничного значення або сильніше.Залежно від стану акумулятора (старий або новий) точне значення, за якого починається чи закінчується заряджання, може коливатися в межах ±2 %. Якщо цю функцію ввімкнуто, рекомендується час від часу скидати показники вольтметра акумулятора, щоб відомості про стан акумулятора були точними.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Примітка",
+                        "readMoreText": "Розгорніть.",
+                        "noteInfo": " Граничне значення заряду акумулятора ще не активовано повністю. Відключіть комп'ютер від електромережі та дайте акумулятору розрядитися до граничного значення або сильніше.",
                         "settings": {
                             "title1": "Граничне значення для вбудованого акумулятора",
                             "title2": "Граничне значення для знімного акумулятора"
@@ -843,9 +845,9 @@
                             "cancel": "СКАСУВАТИ"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Розпочати заряджання, коли рівень заряду буде нижче",
+                            "checkboxText": "Установіть граничне значення для початку заряджання на 5 % нижче граничного значення для закінчення заряджання.",
+                            "stop": "Припинити заряджання, коли рівень заряду досягне"
                         }
                     },
                     "expressCharging": {
@@ -869,22 +871,22 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "ПРОДУКТ ІЗ СЕРТИФІКАТОМ ENERGY STAR"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Розумне очікування",
+                    "description": "Ця функція допомагає комп’ютеру заощаджувати заряд акумулятора в години простою та зберігати швидкість запуску для періодів інтенсивного використання.",
+                    "tooltip": "Коли розумне очікування ввімкнуто, комп’ютер переключається в сучасний режим очікування перед початком використання та входить у режим сну після певної тривалості простою, якщо він працює від акумулятора. Цей час оптимізується згідно з розкладом, який ви вказали. Комп’ютер переключається з режиму глибокого сну в сучасний режим очікування лише в заплановані дні та не переключається зовсім, якщо не користуватися ним кілька запланованих днів поспіль.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Укажіть час, коли ви зазвичай користуєтеся комп’ютером",
+                        "subHeading1": "Початок використання",
+                        "subHeading2": "Завершення використання",
+                        "subHeading3": "Використовувати цей розклад",
+                        "endTimeNote": "Час завершення має бути в межах 20 годин після часу початку",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
-                            "unit3": "AM/PM"
+                            "unit1": "год.",
+                            "unit2": "Хвилини",
+                            "unit3": "ранку/вечора"
                         }
                     }
                 }

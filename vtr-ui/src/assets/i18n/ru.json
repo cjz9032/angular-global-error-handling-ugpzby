@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -467,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "У вас сегодня бодрый вид "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Соединение с Интернетом не обнаружено",
+            "subtitle": "Дополнительные сведения о решении проблем с подключением в нашем",
+            "buttonText": "Получить поддержку"
         },
         "feedback": {
             "title": "Отправьте отзыв",
@@ -497,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Ваша панель быстрой настройки параметров",
+            "microphone": "Микрофон",
+            "cameraPrivacy": "Фотокамера",
+            "eyeCareMode": "Режим защиты глаз"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Состояние системы",
+            "subtitle": "КРАТКАЯ СВОДКА О СОСТОЯНИИ ВАШЕГО УСТРОЙСТВА.",
             "memory": {
-                "title": "Memory",
+                "title": "Память",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Память не найдена",
+                    "of": "из"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Пространство на диске",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Диск не найден",
+                    "of": "из"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Гарантия",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Гарантия не найдена",
+                    "until": "До",
+                    "expiredOn": "Срок гарантии истек",
+                    "notAvailable": "Гарантия недоступна"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Обновление"
                 }
             }
         }
@@ -649,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -810,9 +812,9 @@
                         "checkbox": "Включите зарядку от аккумулятора ноутбука через USB-порт при выключенном компьютере."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Простое восстановление",
+                        "description": "Включите эту функцию, чтобы сократить время возобновления работы при частом открытии и закрытии крышки компьютера.",
+                        "tooltip": "Эта функция сокращает время возобновления работы при частом открытии и закрытии крышки компьютера. Когда эта функция включена, компьютер переходит в режим низкого энергопотребления при закрытии крышки, но мгновенно возвращается в обычный режим, если открыть крышку в течение 15 минут после ее закрытия. Кроме того, данная функция предоставляет ноутбуку возможность завершить текущие операции (например, отправку сообщения электронной почты или загрузку файла) перед переходом системы в режим ожидания."
                     }
                 },
                 "otherSettings": {
@@ -828,9 +830,9 @@
                         "title": "Пороговый уровень заряда аккумулятора",
                         "description": "Если компьютер в основном питается от сети переменного тока и работает от аккумулятора лишь изредка,срок службы аккумулятора можно увеличить, установив для максимального уровня заряда значение меньше 100%. Это связано с тем, что редко используемые аккумуляторы служат дольше, если они хранятся в недозаряженном состоянии.",
                         "tooltip": "Если аккумулятор в настоящее время заряжен сверх установленного порогового уровня, необходимо отключить питание от электросети и дать аккумулятору разрядиться до порогового уровня или ниже его.В зависимости от состояния аккумулятора (старый или новый) точная пороговая точка начала или прекращения зарядки может отличаться от установленных пороговых уровней максимум на 2 процента. В случае включения этой функции рекомендуется периодически выполнять сброс индикатора аккумулятора для повышения точности информации о его состоянии.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Примечание",
+                        "readMoreText": "Подробнее.",
+                        "noteInfo": " Пороговый уровень заряда аккумулятора по-прежнему не является полностью активным. Отключите компьютер от сети переменного тока и дайте аккумулятору разрядиться до порогового уровня прекращения зарядки или ниже его.",
                         "settings": {
                             "title1": "Порог для встроенного аккумулятора",
                             "title2": "Порог для съемного аккумулятора"
@@ -843,9 +845,9 @@
                             "cancel": "ОТМЕНА"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Начинать зарядку при уровне ниже",
+                            "checkboxText": "Пороговое значение начала зарядки автоматически устанавливается на 5 % ниже порогового уровня заряда.",
+                            "stop": "Прекратить зарядку при уровне"
                         }
                     },
                     "expressCharging": {
@@ -869,21 +871,21 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "ПРОДУКТ С СЕРТИФИКАТОМ ENERGY STAR"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Интеллектуальный режим ожидания",
+                    "description": "Эта функция позволяет компьютеру оптимизировать экономию энергии аккумулятора при бездействии с сохранением возможности быстрого запуска в часы интенсивного использования.",
+                    "tooltip": "Если функция интеллектуального режима ожидания включена, компьютер переключается в текущий режим ожидания до запланированного времени начала работы, а при неактивности в течение определенного периода времени при питании от аккумулятора переходит в режим гибернации. Этот период времени оптимизируется на основе заданного расписания. Компьютер переключается из режима гибернации в текущий режим ожидания только в запланированные дни и не переключается при неактивности в течение нескольких запланированных дней подряд.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Укажите время, когда вы обычно используете этот компьютер",
+                        "subHeading1": "начнете",
+                        "subHeading2": "окончание",
+                        "subHeading3": "использовать это расписание в",
+                        "endTimeNote": "Время окончания должно быть позже времени начала не более чем на 20 часов",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
+                            "unit1": "Часы",
+                            "unit2": "Минуты",
                             "unit3": "AM/PM"
                         }
                     }

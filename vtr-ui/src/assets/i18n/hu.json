@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -467,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Ma energikusnak látszik "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Nem található Internet kapcsolat.",
+            "subtitle": "További információ arról, hogyan oldhatja meg a csatlakozási problémákat eszközünkben",
+            "buttonText": "Támogatáskérés"
         },
         "feedback": {
             "title": "Visszajelzés küldése",
@@ -497,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Saját gyorsbeállítások",
+            "microphone": "Mikrofon",
+            "cameraPrivacy": "Kamera",
+            "eyeCareMode": "Szemvédő mód"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Rendszerállapot",
+            "subtitle": "AZ ESZKÖZÁLLAPOT GYORS ÁTTEKINTÉSE.",
             "memory": {
-                "title": "Memory",
+                "title": "Memória",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "A memória nem található",
+                    "of": "/"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Lemezterület",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "A lemez nem található",
+                    "of": "/"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Jótállás",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "A jótállás nem található",
+                    "until": "Eddig",
+                    "expiredOn": "A jótállási idő véget ért ekkor",
+                    "notAvailable": "Nincs jótállás"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Frissítés"
                 }
             }
         }
@@ -649,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -810,9 +812,9 @@
                         "checkbox": "Ha a számítógép ki van kapcsolva, engedélyezze az USB-csatlakozón keresztül történő töltést a laptop akkumulátoráról."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Egyszerű visszatérés",
+                        "description": "Ha gyakran nyitja fel és csukja le a számítógép képernyőjét, akkor a funkció engedélyezésével gyorsabbá tehető a visszatérés.",
+                        "tooltip": "Ha gyakran nyitja fel és csukja le a számítógép képernyőjét, akkor ezzel a funkcióval gyorsabbá tehető a visszatérés. Ha engedélyezi a funkciót, akkor a számítógép a képernyő lehajtásakor alacsony energiafogyasztási állapotba lép, de azonnal visszatér, ha a képernyő lecsukásától számított 15 percen belül nyitja fel a képernyőt. A funkció használata esetén a notebook megpróbálja befejezni a függőben lévő tevékenységeket (például az e-mailek küldését vagy a fájlok letöltését) a rendszer működésének felfüggesztése előtt."
                     }
                 },
                 "otherSettings": {
@@ -828,9 +830,9 @@
                         "title": "Akkumulátortöltési küszöbérték",
                         "description": "Ha a számítógépet elsősorban csatlakoztatott hálózati adapterrel használja, akkumulátorral viszont csak ritkán,akkor meghosszabbíthatja az akkumulátor élettartamát, ha maximális töltési értékként 100%-nál kisebb beállítást használ. Ez azért hasznos, mert a ritkán használt akkumulátorok élettartama hosszabb, ha nem teljesen feltöltve tárolja őket.",
                         "tooltip": "Ha az akkumulátor jelenleg a leállítási küszöbértéken túl lett töltve, akkor le kell választani az elektromos hálózatról, amíg az akkumulátor töltöttsége a küszöbértékig nem csökken.Az akkumulátor állapotától (új vagy régi) függően a töltés indulásának vagy leállásának pontos pontja legfeljebb 2%-kal eltérhet. Ha engedélyezi a funkciót, akkor időnként célszerű alaphelyzetbe állítani az akkumulátormérőt, hogy az akkumulátor állapotára vonatkozó jelentés pontos legyen.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Megjegyzés",
+                        "readMoreText": "További információ.",
+                        "noteInfo": " Az akkumulátortöltési küszöbérték még nem aktív teljesen. Válassza le a gépet az elektromos hálózatról, és hagyja, hogy az akkumulátor teljesen vagy a töltés leállítási küszöbértéke alá merüljön le.",
                         "settings": {
                             "title1": "Beépített akkumulátor küszöbértéke",
                             "title2": "Eltávolítható akkumulátor küszöbértéke"
@@ -843,9 +845,9 @@
                             "cancel": "MÉGSE"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Töltés kezdete ilyen érték alatt",
+                            "checkboxText": "A töltés kezdetének küszöbértékét automatikusan 5%-kal a leállítási küszöbérték alatt adja meg.",
+                            "stop": "Töltés leállítása ennél a pontnál"
                         }
                     },
                     "expressCharging": {
@@ -869,22 +871,22 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "ENERGY STAR-TANÚSÍTVÁNNYAL RENDELKEZŐ TERMÉK"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Intelligens készenlét",
+                    "description": "A funkció a számítógép működésének ütemezésével úgy optimalizálja az akkumulátor energiafogyasztását a használaton kívüli időszak alatt, hogy a rendszerindítás nem lesz lassabb a gép komolyabb használata során.",
+                    "tooltip": "Amikor aktiválja az Intelligens készenlét funkciót, a számítógép az ütemezett kezdési idő előtt Modern készenlétre vált, és hibernált állapotba kerül, ha akkumulátorról üzemel, és egy adott ideig nem használják. Ezt az időszakot a megadott ütemezés alapján optimalizálja a rendszer. A számítógép csak az ütemezett napokon vált hibernált módról Modern készenlétre; ha egymást követő ütemezett napokon nem használják, nem történik meg a váltás.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Adja meg, hogy általában mikor használja a számítógépet",
+                        "subHeading1": "mezőből",
+                        "subHeading2": "befejezés",
+                        "subHeading3": "az ütemezés használata a következőhöz",
+                        "endTimeNote": "A befejezési idő legfeljebb 20 órával lehet a kezdési idő után",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
-                            "unit3": "AM/PM"
+                            "unit1": "Óra",
+                            "unit2": "Perc",
+                            "unit3": "DÉLELŐTT/DÉLUTÁN"
                         }
                     }
                 }

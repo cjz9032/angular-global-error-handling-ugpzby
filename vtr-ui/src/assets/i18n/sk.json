@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -467,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Dnes máte veľa energie "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Nezistilo sa žiadne pripojenie k internetu",
+            "subtitle": "Získajte ďalšie informácie o riešení problémov s pripojením v",
+            "buttonText": "Získajte technickú podporu"
         },
         "feedback": {
             "title": "Spätná väzba",
@@ -497,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Vaše rýchle nastavenia",
+            "microphone": "Mikrofón",
+            "cameraPrivacy": "Kamera",
+            "eyeCareMode": "Režim na ochranu zraku"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Stav systému",
+            "subtitle": "RÝCHLO ZISTITE STAV ZARIADENIA.",
             "memory": {
-                "title": "Memory",
+                "title": "Pamäť",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Pamäť sa nenašla",
+                    "of": "z"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Miesto na disku",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Disk sa nenašiel",
+                    "of": "z"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Záruka",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Záruka sa nenašla",
+                    "until": "Do",
+                    "expiredOn": "Platnosť záruky uplynula dňa",
+                    "notAvailable": "Záruka nie je k dispozícii"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Aktualizovať"
                 }
             }
         }
@@ -649,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -810,9 +812,9 @@
                         "checkbox": "Povoliť nabíjanie cez port USB z batérie prenosného počítača, keď je počítač vypnutý."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Jednoduché obnovenie",
+                        "description": "Zapnutím tejto funkcie skrátite čas obnovenia prevádzky pri častom zatváraní a otváraní obrazovky počítača.",
+                        "tooltip": "Táto funkcia skracuje čas obnovenia prevádzky pri častom zatváraní a otváraní obrazovky počítača. Ak je zapnutá, počítač prejde do úsporného režimu po zatvorení obrazovky. Po otvorení obrazovky do 15 minút od zatvorenia sa však prevádzka obnoví okamžite. Táto funkcia umožňuje prenosnému počítaču pokúsiť sa dokončiť prebiehajúce aktivity (napríklad odosielanie e-mailu alebo preberanie súboru), skôr ako počítač prejde do režimu odstavenia."
                     }
                 },
                 "otherSettings": {
@@ -828,9 +830,9 @@
                         "title": "Hraničná úroveň nabitia batérie",
                         "description": "Ak počítač používate primárne s pripojeným napájacím adaptérom a napájate ho z batérie len občas,životnosť batérie môžete predĺžiť nastavením maximálnej hodnoty nabíjania na hodnotu nižšiu ako 100 %. Je to užitočné, pretože nepravidelne používané batérie majú dlhšiu životnosť, ak nie sú udržiavané plne nabité.",
                         "tooltip": "Ak je batéria práve nabitá nad hraničnú úroveň nabitia, odpojte napájanie, aby sa vybila na alebo pod túto úroveň.V závislosti od stavu (veku) batérie sa presný bod spustenia alebo zastavenia nabíjania môže líšiť až o 2 percentuálne body. Ak túto funkciu zapnete, odporúča sa občas vynulovať ukazovateľ batérie, aby sa zaistili presné hlásenia o stave batérie.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Poznámka",
+                        "readMoreText": "Prečítajte si ďalšie informácie.",
+                        "noteInfo": " Hraničná úroveň nabitia batérie stále nie je plne aktívna. Odpojte zariadenie a nechajte batériu, aby sa vybila na alebo pod hraničnú úroveň nabitia.",
                         "settings": {
                             "title1": "Hraničná úroveň pre vstavanú batériu",
                             "title2": "Hraničná úroveň pre vymeniteľnú batériu"
@@ -843,9 +845,9 @@
                             "cancel": "ZRUŠIŤ"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Začať nabíjanie pri hodnote nižšej ako",
+                            "checkboxText": "Automaticky nastaviť úroveň spustenia nabíjania na 5 percent pod hraničnou úrovňou nabitia",
+                            "stop": "Zastaviť nabíjanie pri"
                         }
                     },
                     "expressCharging": {
@@ -869,22 +871,22 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "CERTIFIKOVANÝ PRODUKT ENERGY STAR"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Inteligentný pohotovostný režim",
+                    "description": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie pri náročnejšom využívaní.",
+                    "tooltip": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným začiatkom a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie sa optimalizuje podľa vami nastaveného plánu. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie keď sa počas nasledujúcich plánovaných dní nevyužíva.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Nastavte čas, v ktorom zvyčajne používate počítač",
+                        "subHeading1": "začnete",
+                        "subHeading2": "koniec",
+                        "subHeading3": "tento plán použiť na",
+                        "endTimeNote": "Hodnota času ukončenia musí byť do 20 hodín od času začiatku",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
-                            "unit3": "AM/PM"
+                            "unit1": "Hodiny",
+                            "unit2": "Minúty",
+                            "unit3": "Dop./pop."
                         }
                     }
                 }
