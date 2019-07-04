@@ -69,6 +69,7 @@ export class PageDeviceGamingComponent implements OnInit {
 			}
 		});
 		this.isOnline = this.commonService.isOnline;
+		console.log('Status of internet ================>', this.isOnline);
 		if (this.dashboardService.isShellAvailable) {
 			console.log('PageDashboardComponent.getSystemInfo');
 			this.getSystemInfo();
@@ -223,7 +224,7 @@ export class PageDeviceGamingComponent implements OnInit {
 			FeatureImage: './../../../../assets/cms-cache/Gamestore8x3-zone3.png',
 			Action: '',
 			ActionType: 'External',
-			ActionLink: null,
+			ActionLink: 'https://gamestore.lenovo.com/',
 			BrandName: '',
 			BrandImage: '',
 			Priority: 'P1',
@@ -513,6 +514,7 @@ export class PageDeviceGamingComponent implements OnInit {
 					break;
 				case LenovoIdKey.FirstName:
 					this.firstName = notification.payload;
+					break;
 				default:
 					break;
 			}

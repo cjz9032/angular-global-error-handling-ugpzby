@@ -1,6 +1,6 @@
 <div class="row py-5"
 	id="smart-standby"
-	*ngIf="isSmartStandbyVisible">
+	*ngIf="smartStandby?.isCapable">
 	<div class="col-10 mx-auto ">
 		<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.smartStandby.title' | translate"
 			[isCollapsed]="false">
@@ -30,7 +30,8 @@
 								[id]="'dropcheck2'"
 								(setTime)="onSetActiveStartEnd($event, false)">
 							</vtr-ui-time-picker>
-							<div class="row">
+							<div *ngIf="showDiffNote"
+								class="row">
 								<div class="col">
 									<div class="note align-items-center">
 										{{ 'device.deviceSettings.power.smartStandby.timer.endTimeNote' | translate }}

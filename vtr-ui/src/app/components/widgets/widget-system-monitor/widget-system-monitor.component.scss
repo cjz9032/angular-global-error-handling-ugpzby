@@ -113,9 +113,9 @@
 							color: $shade;
 						}
 					}
-					&:hover .gaming-tooltip {
-						display: block;
-					}
+					// &:hover .gaming-tooltip {
+					// 	display: block;
+					// }
 					.gaming-tooltip {
 						position: absolute;
 						display: none;
@@ -225,7 +225,7 @@
 							}
 						}
 					}
-					
+
 					.monitor-stack {
 						height: 100%;
 						padding: 1rem 1.5rem;

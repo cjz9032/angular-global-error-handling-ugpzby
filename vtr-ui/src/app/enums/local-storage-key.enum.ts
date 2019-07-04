@@ -136,9 +136,10 @@ export enum LocalStorageKey {
 	UserDeterminePrivacy = '[LocalStorageKey] UserDeterminePrivacy',
 
 	BatteriesHealths = '[LocalStorageKey] BatteriesHealths',
-	IsLenovoVoiceSupported = '[LocalStorageKey] IsLenovoVoiceSupported',
-
 	BatteryPercentage = '[LocalStorageKey] BatteryPercentage',
 	SmartAssistCapability = '[LocalStorageKey] SmartAssistCapability',
-	RemainingPercentages = '[LocalStorageKey] RemainingPercentages'
+	RemainingPercentages = '[LocalStorageKey] RemainingPercentages',
+
+	memOCFeatureStatus = '[LocalStorageKey] MemOCFeatureStatus',
+	hybridModeFeatureStatus = '[LocalStorageKey] HybridModeFeatureStatus',
 }

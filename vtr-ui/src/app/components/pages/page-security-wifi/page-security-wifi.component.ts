@@ -57,12 +57,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	securityHealthArticleCategory: string;
 	cancelClick = false;
 	isOnline = true;
+	intervalId: number;
+	interval = 5000;
 
-	@HostListener('window:focus')
-	onFocus(): void {
-		this.wifiSecurity.refresh();
-		this.homeProtection.refresh();
-	}
 	constructor(
 		public activeRouter: ActivatedRoute,
 		private commonService: CommonService,
@@ -104,11 +101,18 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			this.onNotification(notification);
 		});
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, 'true');
-		this.wifiSecurity.refresh();
-		this.homeProtection.refresh();
-		this.wifiSecurity.getWifiState().then((res) => {}, (error) => {
-			this.securityService.wifiSecurityLocationDialog(this.wifiSecurity);
-		});
+		if (this.homeProtection) {
+			this.homeProtection.refresh();
+			this.pullCHS();
+		}
+
+		if (this.wifiSecurity) {
+			this.wifiSecurity.refresh();
+
+			this.wifiSecurity.getWifiState().then((res) => {}, (error) => {
+				this.securityService.wifiSecurityLocationDialog(this.wifiSecurity);
+			});
+		}
 		this.wifiIsShowMore = this.activeRouter.snapshot.queryParams['isShowMore'];
 	}
 
@@ -120,8 +124,31 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		}
 	}
 
+	@HostListener('window:focus')
+	onFocus(): void {
+		if (this.wifiSecurity) {
+			this.wifiSecurity.refresh();
+		}
+		if (this.homeProtection && !this.intervalId) {
+			this.pullCHS();
+		}
+	}
+
+	@HostListener('window: blur')
+	onBlur(): void {
+		if (this.wifiSecurity) {
+			this.wifiSecurity.cancelRefresh();
+		}
+		clearInterval(this.intervalId);
+		delete this.intervalId;
+	}
+
 	ngOnDestroy() {
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, 'false');
+		if (this.wifiSecurity) {
+			this.wifiSecurity.cancelRefresh();
+		}
+		clearInterval(this.intervalId);
 	}
 
 	getActivateDeviceStateHandler(value: WifiSecurityState) {
@@ -226,5 +253,20 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 					break;
 			}
 		}
+	}
+
+	private pullCHS(): void {
+		this.intervalId = window.setInterval(() => {
+			this.homeProtection.refresh().then(() => {
+				if (this.homeProtection.devicePosture && this.intervalId) {
+					clearInterval(this.intervalId);
+					const oneMinute = 60000;
+					this.interval = oneMinute;
+					this.intervalId = window.setInterval(() => {
+						this.homeProtection.refresh();
+					}, this.interval);
+				}
+			});
+		}, this.interval);
 	}
 }

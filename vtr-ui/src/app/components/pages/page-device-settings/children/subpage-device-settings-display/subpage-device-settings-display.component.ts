@@ -13,6 +13,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { CameraBlur } from 'src/app/data-models/camera/camera-blur-model';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 enum defaultTemparature {
 	defaultValue = 4500
 }
@@ -111,6 +112,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		}
 	];
 	public cameraBlur = new CameraBlur();
+	isDTmachine = false;
 	constructor(public baseCameraDetail: BaseCameraDetail,
 		private deviceService: DeviceService,
 		public displayService: DisplayService,
@@ -140,13 +142,20 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.initEyecaremodeSettings();
 		this.getPrivacyGuardCapabilityStatus();
 		this.getPrivacyGuardOnPasswordCapabilityStatus();
+		this.statusChangedLocationPermission();
+		this.initCameraSection();
+	}
+
+	initCameraSection() {
+		this.isDTmachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+		if (this.isDTmachine) {
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'camera');
+		}
 		this.getCameraPrivacyModeStatus();
 		this.getCameraDetails();
-		this.statusChangedLocationPermission();
 		this.displayService.startMonitorForCameraPermission();
 		this.startMonitorForCamera();
 	}
-
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			const { type, payload } = notification;
@@ -284,6 +293,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						this.eyeCareDataSource.current = value.colorTemperature;
 						const eyeCare = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardEyeCareMode);
 						eyeCare.status = this.isEyeCareMode;
+						console.log('eycare mode request sent to the dashboard------------->', eyeCare);
 						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, eyeCare);
 					}).catch(error => {
 						console.error('onEyeCareModeStatusToggle', error);
@@ -421,7 +431,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 	public onSunsetToSunrise($featureStatus: any) {
 		try {
-			console.log('sunset to sunrise event', $featureStatus.status);
+			console.log('sunset to sunrise event', $featureStatus);
 			if (this.displayService.isShellAvailable) {
 				this.displayService
 					.setEyeCareAutoMode($featureStatus.status).
@@ -431,6 +441,7 @@ export class SubpageDeviceSettingsDisplayComponent
 							this.eyeCareDataSource.current = response.colorTemperature;
 							this.eyeCareModeStatus.status = response.eyecaremodeState;
 							this.enableSlider = response.eyecaremodeState;
+							this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, this.eyeCareModeStatus);
 						}
 
 					}).catch(error => {
