@@ -36,7 +36,7 @@
 				[menuTitle]="'device.deviceSettings.power.jumpto.title' | translate"></vtr-ui-header-subpage>
 		</div>
 	</div>
-	<vtr-power-smart-settings (isPowerSmartSettingHidden)=hidePowerSmartSetting(value)
+	<vtr-power-smart-settings (isPowerSmartSettingHidden)="hidePowerSmartSetting(false)"
 		*ngIf="!isDesktopMachine"></vtr-power-smart-settings>
 	<vtr-smart-standby></vtr-smart-standby>
 	<div class="row py-5"

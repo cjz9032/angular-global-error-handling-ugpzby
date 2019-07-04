@@ -17,7 +17,7 @@ export class CutMultilineTextWithDotsDirective implements AfterViewInit, OnDestr
 	}
 
 	@HostListener('window:resize', ['$event'])
-	onResize() {
+	onResize($event) {
 		this.addCutText();
 	}
 

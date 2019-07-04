@@ -27,7 +27,7 @@ export class SendAnalyticsDirective implements OnInit, OnDestroy {
 	) {
 	}
 
-	@HostListener('click', ['$event']) onClick() {
+	@HostListener('click', ['$event']) onClick($event) {
 		if (this.metricsEvent !== ItemTypes.ItemClick) {
 			return;
 		}

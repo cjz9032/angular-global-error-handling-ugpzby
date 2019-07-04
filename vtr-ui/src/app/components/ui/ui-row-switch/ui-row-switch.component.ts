@@ -120,7 +120,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 		}
 	}
 
-	voicePopUp(stringValue) {
+	voicePopUp() {
 		console.log('modal open');
 		console.log(this.voiceValue);
 		const modalRef = this.modalService.open(ModalVoiceComponent,
