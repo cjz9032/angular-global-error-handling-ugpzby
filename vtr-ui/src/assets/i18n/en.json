@@ -45,7 +45,7 @@
 					},
 					"lightingDriverPopup": {
 						"headerText": "Driver Install Required",
-						"text": "Please install driver",
+						"text": "Install driver to activate lighting",
 						"button": "Install",
 						"link": "cancel"
 					},
@@ -62,7 +62,7 @@
 					"media": "Media",
 					"macroKey": "Marco Key",
 					"hardwareScan": "Hardware Scan",
-					"systemUpdate": "System Update",
+					"systemUpdate": "System Updates",
 					"header": "System Tools"
 				},
 				"systemStatus": {
