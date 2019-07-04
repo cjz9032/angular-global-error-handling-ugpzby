@@ -2,7 +2,8 @@ import {
 	Component,
 	OnInit,
 	HostListener,
-	NgZone
+	NgZone,
+	OnDestroy
 } from '@angular/core';
 import {
 	VantageShellService
@@ -51,6 +52,7 @@ import {
 import {
 	NetworkStatus
 } from 'src/app/enums/network-status.enum';
+import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 
 
 @Component({
@@ -59,7 +61,7 @@ import {
 	styleUrls: ['./page-security.component.scss']
 })
 
-export class PageSecurityComponent implements OnInit {
+export class PageSecurityComponent implements OnInit, OnDestroy {
 	passwordManagerLandingViewModel: PasswordManagerLandingViewModel;
 	antivirusLandingViewModel: AntiVirusLandingViewModel;
 	vpnLandingViewModel: VpnLandingViewModel;
@@ -80,6 +82,7 @@ export class PageSecurityComponent implements OnInit {
 	isOnline: boolean;
 	region: string;
 	backId = 'sa-ov-btn-back';
+	isRS5OrLater: boolean;
 	itemStatusClass = {
 		0: 'good',
 		1: 'orange',
@@ -97,9 +100,13 @@ export class PageSecurityComponent implements OnInit {
 		private commonService: CommonService,
 		private translate: TranslateService,
 		private regionService: RegionService,
-		private ngZone: NgZone
+		private ngZone: NgZone,
+		private securityAdvisorMockService: SecurityAdvisorMockService
 	) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
+		if (!this.securityAdvisor) {
+			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
+		}
 		this.passwordManager = this.securityAdvisor.passwordManager;
 		this.antivirus = this.securityAdvisor.antivirus;
 		this.vpn = this.securityAdvisor.vpn;
@@ -116,6 +123,11 @@ export class PageSecurityComponent implements OnInit {
 		this.refreshAll();
 	}
 
+	@HostListener('window: blur')
+	onBlur(): void {
+		this.wifiSecurity.cancelRefresh();
+	}
+
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
 		this.commonService.notification.subscribe((notification: AppNotification) => {
@@ -123,6 +135,10 @@ export class PageSecurityComponent implements OnInit {
 		});
 		this.refreshAll();
 		this.fetchCMSArticles();
+	}
+
+	ngOnDestroy() {
+		this.wifiSecurity.cancelRefresh();
 	}
 
 	private refreshAll() {
@@ -254,7 +270,13 @@ export class PageSecurityComponent implements OnInit {
 	}
 
 	showWindowsHello(windowsHello: phoenix.WindowsHello): void {
-		if (this.commonService.isRS5OrLater() &&
+		const version = this.commonService.getWindowsVersion();
+		if (version === 0) {
+			this.isRS5OrLater = true;
+		} else {
+			this.isRS5OrLater = this.commonService.isRS5OrLater();
+		}
+		if (this.isRS5OrLater &&
 			windowsHello.fingerPrintStatus) {
 			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.translate, windowsHello, this.commonService);
 		} else {

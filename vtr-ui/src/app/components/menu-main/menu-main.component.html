@@ -46,7 +46,7 @@
 		<div class="collapse navbar-collapse"
 			#menuTarget
 			[ngClass]="{'show':showMenu}">
-			<ul class="navbar-nav ml-auto">
+			<ul class="navbar-nav ml-auto" *ngIf='loadMenuItem'>
 				<ng-container *ngFor="let item of items; let i=index">
 					<li *ngIf="item.subitems.length===0&&item.id!=='user'&&showItem(item)"
 						class="nav-item">
@@ -107,6 +107,7 @@
 									[metricsItem]="subitem.metricsItem"
 									class="dropdown-item link"
 									target="_blank"
+									href="javascript:void(0)"
 									(click)="showMenu = false; openExternalLink(subitem.path)">{{subitem.label | translate}}</a>
 								<a *ngIf="!subitem.externallink && subitem.path==='support'"
 									vtrMetrics
@@ -160,8 +161,7 @@
 								{{deviceService.isArm || userService.starter ? 'L' : userService.initials }}
 							</div>
 						</a>
-						<div class="dropdown-menu {{item.id}}"
-							style="min-width: 22.5rem"
+						<div class="dropdown-menu {{item.id}} dropdown-menu-id"
 							id="navbarDropdownMenu"
 							aria-labelledby="navbarDropdown">
 							<div class="dropdown-item"

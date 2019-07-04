@@ -12,6 +12,9 @@ export class SmartStandbyComponent implements OnInit {
 	public smartStandby = new SmartStandby();
 	public smartStandbyStartTime: string;
 	public smartStandbyEndTime: string;
+	isSmartStandbyVisible: boolean;
+	showDiffNote: boolean;
+
 	constructor(public powerService: PowerService) { }
 
 	ngOnInit() {
@@ -46,6 +49,7 @@ export class SmartStandbyComponent implements OnInit {
 							this.powerService.getSmartStandbyDaysOfWeekOff()
 						]).then((responses: any[]) => {
 							this.smartStandby.activeStartEnd = responses[0];
+							this.splitStartEndTime();
 							this.smartStandby.daysOfWeekOff = responses[1];
 						}).catch((error) => {
 							console.log('getSmartStandbyCapability Error', error);
@@ -60,7 +64,7 @@ export class SmartStandbyComponent implements OnInit {
 	initSmartStandby() {
 		this.smartStandby.isCapable = true;
 		this.smartStandby.isEnabled = true;
-		this.smartStandby.activeStartEnd = '9:00-18:00';
+		this.smartStandby.activeStartEnd = '00:00-10:30';
 		this.smartStandby.daysOfWeekOff = 'sun';
 		this.splitStartEndTime();
 	}
@@ -92,19 +96,33 @@ export class SmartStandbyComponent implements OnInit {
 		const startEndTime = this.smartStandby.activeStartEnd.split('-');
 		this.smartStandbyStartTime = startEndTime[0];
 		this.smartStandbyEndTime = startEndTime[1];
+		const diff = this.calculateTimeDifference(this.smartStandbyStartTime, this.smartStandbyEndTime);
+		if (diff > 20) {
+			this.showDiffNote = true;
+		} else {
+			this.showDiffNote = false;
+		}
 	}
 
 	onSetActiveStartEnd(event, isStart) {
+		let diff, unchangedTime;
 		let activeStartEnd;
 		if (isStart) {
 			activeStartEnd = event + '-' + this.smartStandbyEndTime;
+			unchangedTime = this.smartStandbyEndTime;
 		} else {
 			activeStartEnd = this.smartStandbyStartTime + '-' + event;
+			unchangedTime = this.smartStandbyStartTime;
 		}
-
+		diff = this.calculateTimeDifference(unchangedTime, event);
+		if (diff > 20) {
+			this.showDiffNote = true;
+		} else {
+			this.showDiffNote = false;
+		}
 		try {
 			console.log('setSmartStandbyStartTime entered', event);
-			if (this.powerService.isShellAvailable) {
+			if (this.powerService.isShellAvailable && diff < 20) {
 				this.powerService.setSmartStandbyActiveStartEnd(activeStartEnd)
 					.then((value: number) => {
 						console.log('setSmartStandbyStartTime.then', value);
@@ -143,5 +161,15 @@ export class SmartStandbyComponent implements OnInit {
 			console.error(error.message);
 		}
 		// this.smartStandby.daysOfWeekOff = daysOfWeekOff;
+	}
+
+	calculateTimeDifference(startTime, endTime) {
+		let hourMinutes = startTime.split(':');
+		const startMinutes = parseInt(hourMinutes[0], 10) * 60 + parseInt(hourMinutes[1], 10);
+
+		hourMinutes = endTime.split(':');
+		const endMinutes = parseInt(hourMinutes[0], 10) * 60 + parseInt(hourMinutes[1], 10);
+		const diffTime = (Math.abs(endMinutes - startMinutes) / 60);
+		return diffTime;
 	}
 }

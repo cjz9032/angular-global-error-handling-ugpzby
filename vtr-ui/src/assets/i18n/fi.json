@@ -52,6 +52,9 @@
                         "text": "Please install driver",
                         "button": "Install",
                         "link": "cancel"
+                    },
+                    "lightingColorMessage": {
+                        "text": "Selecting color not available to this effect."
                     }
                 },
                 "systemTools": {
@@ -81,6 +84,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                },
+                "systemStatus": {
+                    "info": "INFO"
                 }
             }
         },
@@ -126,7 +132,7 @@
                 },
                 "recording": {
                     "title": "START TYPING",
-                    "description": "20 inputs with in 20 seconds can be recorded."
+                    "description": "20 inputs within 20 seconds can be recorded."
                 },
                 "recorded": {
                     "title": "MACRO KEY FOR ",
@@ -215,7 +221,7 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure to clear this macro key?"
+                    "title": "Are you sure you want to clear this macro key?"
                 },
                 "timeoutRecording": {
                     "title": "Time Out For Recording.",
@@ -234,6 +240,9 @@
                     "btnCancel": "Cancel"
                 },
                 "btnOk": "OK"
+            },
+            "recording": {
+                "title": "Recording Macro Key For"
             }
         },
         "lightingProfile": {
@@ -290,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -915,24 +927,24 @@
                         "tooltip": "Voit mukauttaa MIC-tehostetta säätämällä mikrofonin äänen voimakkuuttaja määrittämällä sopivan tilan."
                     },
                     "volume": {
-                        "title": "Microphone Volume",
-                        "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
+                        "title": "Mikrofonin äänenvoimakkuus",
+                        "description": "Dolby-ääni tarjoaa monipuolista, selkeää ja tehokasta ääntä kaikelle sisällölle, josta pidät, kun valitset sopivan tilan sisällöllesi ja laitteistollesi.",
                         "options": {
                             "silent": "Hiljainen",
                             "loud": "Kova"
                         }
                     },
                     "suppress": {
-                        "title": "Suppress keyboard noise",
-                        "tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+                        "title": "Vaimenna näppäimistön äänet",
+                        "tooltip": "Ota tämä toiminto käyttöön, kun haluat optimoida MIC-äänen vaimentamalla näppäimistön melua."
                     },
                     "acoustic": {
-                        "title": "Acoustic Echo Cancellation",
-                        "tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+                        "title": "Kiertoefektin peruutus",
+                        "tooltip": "Ota tämä toiminto käyttöön, kun haluat optimoida MIC-äänesi vähentämällä akustista kaikua."
                     },
                     "optimize": {
-                        "title": "Optimize my microphone for:",
-                        "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+                        "title": "Optimoi mikrofoni laitteelle:",
+                        "tooltip": "Määritä mikrofonin äänitehoste parantaaksesi äänikokemustasi eri skenaarioissa ja ympäristöissä.",
                         "options": {
                             "VoiceRecognition": "PUHEENTUNNISTUS",
                             "OnlyMyVoice": "VAIN MINUN ÄÄNENI",

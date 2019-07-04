@@ -52,6 +52,9 @@
                         "text": "Please install driver",
                         "button": "Install",
                         "link": "cancel"
+                    },
+                    "lightingColorMessage": {
+                        "text": "Selecting color not available to this effect."
                     }
                 },
                 "systemTools": {
@@ -81,6 +84,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                },
+                "systemStatus": {
+                    "info": "INFO"
                 }
             }
         },
@@ -126,7 +132,7 @@
                 },
                 "recording": {
                     "title": "START TYPING",
-                    "description": "20 inputs with in 20 seconds can be recorded."
+                    "description": "20 inputs within 20 seconds can be recorded."
                 },
                 "recorded": {
                     "title": "MACRO KEY FOR ",
@@ -215,7 +221,7 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure to clear this macro key?"
+                    "title": "Are you sure you want to clear this macro key?"
                 },
                 "timeoutRecording": {
                     "title": "Time Out For Recording.",
@@ -234,6 +240,9 @@
                     "btnCancel": "Cancel"
                 },
                 "btnOk": "OK"
+            },
+            "recording": {
+                "title": "Recording Macro Key For"
             }
         },
         "lightingProfile": {
@@ -290,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -421,8 +433,8 @@
         },
         "ui": {
             "back": "НАЗАД",
-            "on": "УВІМК.",
-            "off": "ВИМК.",
+            "on": "ON",
+            "off": "OFF",
             "collapse": "Згорнути",
             "expand": "Розгорнути",
             "loader": "Fetching <br> Status"
@@ -915,24 +927,24 @@
                         "tooltip": "Ефект MIC можна налаштувати: відрегулюйте гучність мікрофоната вкажіть відповідний режим."
                     },
                     "volume": {
-                        "title": "Microphone Volume",
-                        "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
+                        "title": "Гучність мікрофона",
+                        "description": "Dolby Audio забезпечує насичене, чітке та потужне відтворення звуку будь-яких файлів. Виберіть відповідний режим для вашого вмісту та обладнання.",
                         "options": {
                             "silent": "Беззвучний режим",
                             "loud": "Голосно"
                         }
                     },
                     "suppress": {
-                        "title": "Suppress keyboard noise",
-                        "tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+                        "title": "Знизити шум клавіатури",
+                        "tooltip": "Увімкніть цю опцію, щоб оптимізувати аудіосигнал MIC, приглушуючи шум клавіатури."
                     },
                     "acoustic": {
-                        "title": "Acoustic Echo Cancellation",
-                        "tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+                        "title": "Придушення акустичного відлуння",
+                        "tooltip": "Увімкніть цю опцію, щоб оптимізувати аудіосигнал MIC, зменшуючи акустичне відлуння."
                     },
                     "optimize": {
-                        "title": "Optimize my microphone for:",
-                        "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+                        "title": "Оптимізувати мікрофон для:",
+                        "tooltip": "Налаштуйте ефект мікрофона, який покращуватиме звук у певних середовищах за допомогою різних сценаріїв.",
                         "options": {
                             "VoiceRecognition": "РОЗПІЗНАВАННЯ ГОЛОСУ",
                             "OnlyMyVoice": "ЛИШЕ МІЙ ГОЛОС",

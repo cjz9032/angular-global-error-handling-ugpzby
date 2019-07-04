@@ -1,15 +1,12 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { ConnectedHomeSecurity, CHSAccountState, WinRT, EventTypes, CHSNotificationType } from '@lenovo/tan-client-bridge';
-import mitt from 'mitt';
-import { HomeSecurityAccount } from 'src/app/data-models/home-security/home-security-account.model';
-import { NotificationItem } from '../../data-models/home-security/home-security-notification-item.model'
 
 @Injectable({
 	providedIn: 'root',
 })
 export class HomeSecurityMockService {
 
-	private connectedHomeSecurity: any = {
+	private connectedHomeSecurity: ConnectedHomeSecurity = {
 		account: {
 			state: CHSAccountState.local,
 			serverTimeUTC: new Date(),
@@ -90,24 +87,13 @@ export class HomeSecurityMockService {
 		},
 		off() { return this; },
 		refresh() {
-			return Promise.resolve(true);
+			return Promise.resolve([true]);
 		}
 	};
 
 	public id = 0;
 
 	public getConnectedHomeSecurity(): ConnectedHomeSecurity {
-		if (!this.connectedHomeSecurity.mitt) {
-			const emitter = new mitt();
-			this.connectedHomeSecurity.mitt = emitter;
-			this.connectedHomeSecurity.account.mitt = emitter;
-			this.connectedHomeSecurity.account.chs = this.connectedHomeSecurity;
-			this.connectedHomeSecurity.overview.mitt = emitter;
-			this.connectedHomeSecurity.overview.chs = this.connectedHomeSecurity;
-			this.connectedHomeSecurity.notifications.mitt = emitter;
-			this.connectedHomeSecurity.notifications.chs = this.connectedHomeSecurity;
-		}
 		return <ConnectedHomeSecurity>this.connectedHomeSecurity;
 	}
-
 }

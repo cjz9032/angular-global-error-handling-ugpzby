@@ -52,6 +52,9 @@
                         "text": "Please install driver",
                         "button": "Install",
                         "link": "cancel"
+                    },
+                    "lightingColorMessage": {
+                        "text": "Selecting color not available to this effect."
                     }
                 },
                 "systemTools": {
@@ -81,6 +84,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                },
+                "systemStatus": {
+                    "info": "INFO"
                 }
             }
         },
@@ -126,7 +132,7 @@
                 },
                 "recording": {
                     "title": "START TYPING",
-                    "description": "20 inputs with in 20 seconds can be recorded."
+                    "description": "20 inputs within 20 seconds can be recorded."
                 },
                 "recorded": {
                     "title": "MACRO KEY FOR ",
@@ -215,7 +221,7 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure to clear this macro key?"
+                    "title": "Are you sure you want to clear this macro key?"
                 },
                 "timeoutRecording": {
                     "title": "Time Out For Recording.",
@@ -234,6 +240,9 @@
                     "btnCancel": "Cancel"
                 },
                 "btnOk": "OK"
+            },
+            "recording": {
+                "title": "Recording Macro Key For"
             }
         },
         "lightingProfile": {
@@ -290,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -915,24 +927,24 @@
                         "tooltip": "Du kan tilpasse mikrofonens effekt ved at justere mikrofonens lydstyrkeog angive den rette tilstand."
                     },
                     "volume": {
-                        "title": "Microphone Volume",
-                        "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
+                        "title": "Mikrofonlydstyrke",
+                        "description": "Dolby-lyd giver detaljeret, klar og kraftfuld lyd fra alt indhold, du bruger. Vælg den korrekte tilstand til dit indhold og udstyr.",
                         "options": {
                             "silent": "Lydløs",
                             "loud": "Højt"
                         }
                     },
                     "suppress": {
-                        "title": "Suppress keyboard noise",
-                        "tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+                        "title": "Reducer tastaturstøj",
+                        "tooltip": "Slå denne til for at optimere mikrofonlyden ved at undertrykke tastaturstøj."
                     },
                     "acoustic": {
-                        "title": "Acoustic Echo Cancellation",
-                        "tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+                        "title": "Akustisk ekko annulleret",
+                        "tooltip": "Slå denne funktion til for at optimere mikrofonlyden ved at reducere akustisk ekko."
                     },
                     "optimize": {
-                        "title": "Optimize my microphone for:",
-                        "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+                        "title": "Optimer mikrofonen til:",
+                        "tooltip": "Konfigurer mikrofoneffekt for at forbedre lydoplevelsen i forskellige scenarier og omgivelser.",
                         "options": {
                             "VoiceRecognition": "STEMMEGENKENDELSE",
                             "OnlyMyVoice": "KUN MIN STEMME",

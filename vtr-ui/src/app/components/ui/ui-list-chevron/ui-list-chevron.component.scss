@@ -130,8 +130,11 @@
 				height: 3rem;
 				width: 3rem;
 				align-items: center;
+				margin: auto;
 				.icon{
-					font-size: 2rem;				}
+					font-size: 2rem;
+					margin: auto
+				}
 			}
 
 			.item-text {
@@ -235,7 +238,10 @@
 	}
 
 	.disabled {
-		cursor: default;
+		cursor: default !important;
+		* {
+			cursor: default !important;
+		}
 	}
 
 }

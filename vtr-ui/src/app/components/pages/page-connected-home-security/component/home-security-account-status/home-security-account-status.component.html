@@ -25,9 +25,10 @@
 			(click)="common?.startTrial()"
 			[isFullWidth]="true"
 			metricsEvent="FeatureClick"
-			metricsItem="startTrial"
+			metricsItem="CHSStartTrialButton"
 			[label]="'homeSecurity.accountStatus.startTrial' | translate"
-			[title]="'homeSecurity.accountStatus.startTrial' | translate">
+			[title]="'homeSecurity.accountStatus.startTrial' | translate"
+			[isDisabled]="common?.startTrialDisabled">
 		</vtr-ui-button>
 		<vtr-ui-button *ngIf="account?.state === 'trial' || account?.state === 'trialExpired'"
 			id="chs-account-btn-upgradeAccount" aria-label="chs-account-btn-upgradeAccount"

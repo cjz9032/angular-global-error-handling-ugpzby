@@ -13,6 +13,9 @@ import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/mo
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { SecurityService } from 'src/app/services/security/security.service';
 import { RegionService } from 'src/app/services/region/region.service';
+import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 
 interface DevicePostureDetail {
 	status: number; // 1,2
@@ -53,12 +56,10 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	securityHealthArticleId = '9CEBB4794F534648A64C5B376FBC2E39';
 	securityHealthArticleCategory: string;
 	cancelClick = false;
+	isOnline = true;
+	intervalId: number;
+	interval = 5000;
 
-	@HostListener('window:focus')
-	onFocus(): void {
-		this.wifiSecurity.refresh();
-		this.homeProtection.refresh();
-	}
 	constructor(
 		public activeRouter: ActivatedRoute,
 		private commonService: CommonService,
@@ -68,9 +69,13 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		private cmsService: CMSService,
 		public translate: TranslateService,
 		private ngZone: NgZone,
-		public regionService: RegionService
+		public regionService: RegionService,
+		private securityAdvisorMockService: SecurityAdvisorMockService
 	) {
 		this.securityAdvisor = shellService.getSecurityAdvisor();
+		if (!this.securityAdvisor) {
+			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
+		}
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 		this.homeProtection = this.securityAdvisor.homeProtection;
 		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.ngZone, this.securityService);
@@ -91,12 +96,23 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	}
 
 	ngOnInit() {
-		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, 'true');
-		this.wifiSecurity.refresh();
-		this.homeProtection.refresh();
-		this.wifiSecurity.getWifiState().then((res) => {}, (error) => {
-			this.securityService.wifiSecurityLocationDialog(this.wifiSecurity);
+		this.isOnline = this.commonService.isOnline;
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
 		});
+		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, 'true');
+		if (this.homeProtection) {
+			this.homeProtection.refresh();
+			this.pullCHS();
+		}
+
+		if (this.wifiSecurity) {
+			this.wifiSecurity.refresh();
+
+			this.wifiSecurity.getWifiState().then((res) => {}, (error) => {
+				this.securityService.wifiSecurityLocationDialog(this.wifiSecurity);
+			});
+		}
 		this.wifiIsShowMore = this.activeRouter.snapshot.queryParams['isShowMore'];
 	}
 
@@ -108,8 +124,31 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		}
 	}
 
+	@HostListener('window:focus')
+	onFocus(): void {
+		if (this.wifiSecurity) {
+			this.wifiSecurity.refresh();
+		}
+		if (this.homeProtection && !this.intervalId) {
+			this.pullCHS();
+		}
+	}
+
+	@HostListener('window: blur')
+	onBlur(): void {
+		if (this.wifiSecurity) {
+			this.wifiSecurity.cancelRefresh();
+		}
+		clearInterval(this.intervalId);
+		delete this.intervalId;
+	}
+
 	ngOnDestroy() {
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, 'false');
+		if (this.wifiSecurity) {
+			this.wifiSecurity.cancelRefresh();
+		}
+		clearInterval(this.intervalId);
 	}
 
 	getActivateDeviceStateHandler(value: WifiSecurityState) {
@@ -201,5 +240,33 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		});
 
 		articleDetailModal.componentInstance.articleId = this.securityHealthArticleId;
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
+		}
+	}
+
+	private pullCHS(): void {
+		this.intervalId = window.setInterval(() => {
+			this.homeProtection.refresh().then(() => {
+				if (this.homeProtection.devicePosture && this.intervalId) {
+					clearInterval(this.intervalId);
+					const oneMinute = 60000;
+					this.interval = oneMinute;
+					this.intervalId = window.setInterval(() => {
+						this.homeProtection.refresh();
+					}, this.interval);
+				}
+			});
+		}, this.interval);
 	}
 }

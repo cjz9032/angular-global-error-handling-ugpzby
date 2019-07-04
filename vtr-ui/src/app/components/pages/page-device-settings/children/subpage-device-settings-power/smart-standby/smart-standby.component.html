@@ -30,7 +30,8 @@
 								[id]="'dropcheck2'"
 								(setTime)="onSetActiveStartEnd($event, false)">
 							</vtr-ui-time-picker>
-							<div class="row">
+							<div *ngIf="showDiffNote"
+								class="row">
 								<div class="col">
 									<div class="note align-items-center">
 										{{ 'device.deviceSettings.power.smartStandby.timer.endTimeNote' | translate }}

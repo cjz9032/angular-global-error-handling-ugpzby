@@ -40,16 +40,20 @@ export class WidgetLightingComponent implements OnInit {
 	}
 
 	public getCapabilities() {
-		console.log('capabilities global valuesir');
+		console.log('capabilities global values -------------lighting widget dashboard');
 
 		this.ledSetFeature = this.commonService.getLocalStorageValue(LocalStorageKey.ledSetFeature);
 		this.ledDriver = this.commonService.getLocalStorageValue(LocalStorageKey.ledDriver);
 		// console.log('ledSetFeature-----'+this.ledSetFeature +'--------ledDriver--------'+ this.ledDriver );
 		if (this.ledSetFeature) {
+			if (LocalStorageKey.ProfileId !== undefined) {
+				this.setprofId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId) || 0;
+			}
 			this.getLightingProfileId();
 		}
 		if (this.ledSetFeature && this.ledDriver) {
 			this.isLightingVisible = true;
+			this.isPopupVisible = false;
 		} else if (!this.ledSetFeature && this.ledDriver) {
 			this.isLightingVisible = false;
 		} else if (this.ledSetFeature && !this.ledDriver) {
@@ -90,12 +94,15 @@ export class WidgetLightingComponent implements OnInit {
 
 	public SetProfile(event) {
 		try {
-			let eventval: number = event.target.value;
+			const eventval: number = event.target.value;
 			console.log("--------------home page lighting event-----" + eventval);
-
+			let prevSetprofId;
 			if (this.gamingLightingService.isShellAvailable) {
 				if (this.isPopupVisible) {
 					this.isdriverpopup = true;
+				} else {
+					prevSetprofId = this.setprofId;
+					this.setprofId = eventval;
 				}
 				this.gamingLightingService.setLightingProfileId(0, eventval).then((response: any) => {
 					console.log('setLightingProfileId------------response---------------->',
@@ -108,6 +115,8 @@ export class WidgetLightingComponent implements OnInit {
 						if (!this.isPopupVisible) {
 							this.setprofId = response.profileId;
 						}
+					} else {
+						this.setprofId = prevSetprofId;
 					}
 				});
 			}

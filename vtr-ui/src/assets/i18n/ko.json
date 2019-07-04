@@ -52,6 +52,9 @@
                         "text": "Please install driver",
                         "button": "Install",
                         "link": "cancel"
+                    },
+                    "lightingColorMessage": {
+                        "text": "Selecting color not available to this effect."
                     }
                 },
                 "systemTools": {
@@ -81,6 +84,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                },
+                "systemStatus": {
+                    "info": "INFO"
                 }
             }
         },
@@ -126,7 +132,7 @@
                 },
                 "recording": {
                     "title": "START TYPING",
-                    "description": "20 inputs with in 20 seconds can be recorded."
+                    "description": "20 inputs within 20 seconds can be recorded."
                 },
                 "recorded": {
                     "title": "MACRO KEY FOR ",
@@ -215,7 +221,7 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure to clear this macro key?"
+                    "title": "Are you sure you want to clear this macro key?"
                 },
                 "timeoutRecording": {
                     "title": "Time Out For Recording.",
@@ -234,6 +240,9 @@
                     "btnCancel": "Cancel"
                 },
                 "btnOk": "OK"
+            },
+            "recording": {
+                "title": "Recording Macro Key For"
             }
         },
         "lightingProfile": {
@@ -290,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -421,8 +433,8 @@
         },
         "ui": {
             "back": "뒤로",
-            "on": "켜짐",
-            "off": "꺼짐",
+            "on": "ON",
+            "off": "OFF",
             "collapse": "축소",
             "expand": "확장",
             "loader": "Fetching <br> Status"
@@ -915,24 +927,24 @@
                         "tooltip": "마이크 볼륨을 조정하고 적절한 모드를 지정하여 마이크 효과를사용자 정의할 수 있습니다."
                     },
                     "volume": {
-                        "title": "Microphone Volume",
-                        "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
+                        "title": "마이크 볼륨",
+                        "description": "Dolby 오디오는 사용자가 즐기는 모든 콘텐츠에서 풍부하고 선명하고 강력한 사운드를 제공하며 콘텐츠 및 장비에 적합한 모드를 선택합니다.",
                         "options": {
                             "silent": "조용히",
                             "loud": "크게"
                         }
                     },
                     "suppress": {
-                        "title": "Suppress keyboard noise",
-                        "tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+                        "title": "키보드 소음 차단",
+                        "tooltip": "키보드 소음을 억제하여 MIC 오디오를 최적화하려면 이 기능을 켜십시오."
                     },
                     "acoustic": {
-                        "title": "Acoustic Echo Cancellation",
-                        "tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+                        "title": "음향 에코 취소",
+                        "tooltip": "음향 반향을 줄임으로써 MIC 오디오를 최적화하려면 이 기능을 켜십시오."
                     },
                     "optimize": {
-                        "title": "Optimize my microphone for:",
-                        "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+                        "title": "마이크 최적화:",
+                        "tooltip": "다양한 시나리오와 환경에서 오디오 환경을 향상시키려면 마이크 효과를 구성하십시오.",
                         "options": {
                             "VoiceRecognition": "음성 인식",
                             "OnlyMyVoice": "내 음성만",

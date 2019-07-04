@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="30" height="30" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.859" y1="0.856" x2="0.055" y2="0.266" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f17f14"/>
+      <stop offset="1" stop-color="#ed4e04"/>
+    </linearGradient>
+  </defs>
+  <g id="组件" clip-path="url(#clip-path)">
+    <g id="组_20" data-name="组 20" transform="translate(-362 -1351)">
+      <g id="_6.20pxIcon_checkFillWithBorder" data-name="6.20pxIcon/checkFillWithBorder" transform="translate(362 1351)" clip-path="url(#clip-path)">
+        <g id="Group_15_Copy_6" data-name="Group 15 Copy 6" transform="translate(1 1)">
+          <circle id="Oval_Copy_2" data-name="Oval Copy 2" cx="14" cy="14" r="14" fill="url(#linear-gradient)"/>
+        </g>
+      </g>
+    </g>
+    <g id="组_36" data-name="组 36" transform="translate(3 7)">
+      <path id="Shape" d="M17.25,5H6.75A.75.75,0,0,0,6,5.75v1.5A.75.75,0,0,0,6.75,8H7a5,5,0,0,0,4.5,4.975V16h1V12.975A5,5,0,0,0,17,8h.25A.75.75,0,0,0,18,7.25V5.75A.75.75,0,0,0,17.25,5ZM17,7H16V8A4,4,0,0,1,8,8V7H7V6H17ZM14.5,4.5V.5a.5.5,0,1,1,1,0v4Zm-6,0V.5a.5.5,0,1,1,1,0v4Z" fill="#fff"/>
+    </g>
+  </g>
+</svg>

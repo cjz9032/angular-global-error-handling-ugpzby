@@ -104,7 +104,7 @@
 						}
 						.icon{
 							display: inline-block;
-							width:20px !important;
+							vertical-align: middle;
 						}
 
 						&.user {
@@ -146,6 +146,13 @@
 							margin-left: -1.5rem;
 							border-radius: 0;
 							margin-top: 0;
+						}
+
+						&.dropdown-menu-id {
+							left: auto;
+							right: 0rem;
+							padding-right: 16px;
+							transform: translateX(0px);
 						}
 
 						fa-icon {

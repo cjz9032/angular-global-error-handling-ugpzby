@@ -111,7 +111,7 @@
       width: 100%;
     }
     .light-option {
-      ::ng-deep {
+      //::ng-deep {
         .content-title {
           color: $gaming_lightest;
           font-weight: $weight_medium;
@@ -149,7 +149,7 @@
             }
           }
         }
-      }
+     // }
       &.lighting-off {
         height: 100%;
         display: flex;
@@ -164,7 +164,7 @@
 
   .footer-part {
     .link {
-      color: $gaming;
+      color:  $gaming_info_link;
       text-decoration: none;
       text-transform: uppercase;
       font-weight: $weight_bold;
@@ -172,7 +172,12 @@
       display: inline-block;
       margin-top: 2rem;
       padding-bottom: 0.5rem;
-      border-bottom: 1px solid $gaming;
+	  border-bottom: 1px solid $gaming;
+	  &:hover {
+		color: $gaming_info_link_hover;
+		border-color: $gaming_info_link_hover;
+		text-decoration: none;
+	}
     }
   }
 }

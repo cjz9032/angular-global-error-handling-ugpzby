@@ -1,16 +1,48 @@
-<div class="modal-body vtr-modal-server-switch vtr-modal-article-detail">
-	<div role="button"
-		class="close-btn"
-		aria-hidden="true"
-	 (click)="closeModal()">
+<div class="modal-body vtr-modal-server-switch">
+	<div role="button" class="close-btn" aria-hidden="true" (click)="closeModal()">
 		<img [src]=" '/assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
 	</div>
-	<h1>{{serverSwitchTitle}}</h1>
-	<div class="article-content">
-		<div class="article-body">
-      <input type="text" class="form-control" id="segment"
-       required 
-       [(ngModel)]="serverSwitchData" name="segment">
-    </div>
+	<div class="container">
+		<div class="row">
+			<h1 class="col-12">{{serverSwitchTitle}}</h1>
+			<h4 class="col-12">{{serverSwitchData.currentUrl}}</h4>
+		</div>
+		<div class="row server-content">
+			<div class="server-body col">
+				<form name="serverswitchform" [formGroup]="serverSwitchForm" (ngSubmit)="onSubmit()" class="form" novalidate>
+					<ul *ngIf="sddInvalid.status" class="alert alert-danger">
+						<li class="fa fa-error" *ngFor="let msg of sddInvalid.message;">{{msg}}</li>
+					</ul>
+
+					<div class="form-group row mb-2">
+						<label for="country" class="col col-4 col-form-label">Country</label>
+						<div class="col">
+							<ngx-select-dropdown [config]="sddConfigCountry" [options]="serverSwitchData.countryList" 
+								name="country" id="country" formControlName="country"
+								required class=""></ngx-select-dropdown>
+						</div>
+					</div>
+					<div class="form-group row mb-2">
+						<label for="language" class="col col-4 col-form-label">Language</label>
+						<div class="col">
+							<ngx-select-dropdown [config]="sddConfigLanguage" [options]="serverSwitchData.languageList"
+							    formControlName="language" name="language" id="language"
+								 required class=""></ngx-select-dropdown>
+						</div>
+					</div>
+					<div class="form-group row mb-2">
+						<label for="segment" class="col col-4 col-form-label">Segment</label>
+						<div class="col">
+							<ngx-select-dropdown [config]="sddConfigSegment" [options]="serverSwitchData.segmentList"
+							    formControlName="segment" name="segment" id="segment" 
+								required class=""></ngx-select-dropdown>
+						</div>
+					</div>
+					<div class="col-12">
+						<input type="submit" class="btn btn-lg btn-primary" value="Submit">
+					</div>
+				</form>
+			</div>
+		</div>
 	</div>
 </div>

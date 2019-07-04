@@ -52,6 +52,9 @@
                         "text": "Please install driver",
                         "button": "Install",
                         "link": "cancel"
+                    },
+                    "lightingColorMessage": {
+                        "text": "Selecting color not available to this effect."
                     }
                 },
                 "systemTools": {
@@ -81,6 +84,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                },
+                "systemStatus": {
+                    "info": "INFO"
                 }
             }
         },
@@ -126,7 +132,7 @@
                 },
                 "recording": {
                     "title": "START TYPING",
-                    "description": "20 inputs with in 20 seconds can be recorded."
+                    "description": "20 inputs within 20 seconds can be recorded."
                 },
                 "recorded": {
                     "title": "MACRO KEY FOR ",
@@ -215,7 +221,7 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure to clear this macro key?"
+                    "title": "Are you sure you want to clear this macro key?"
                 },
                 "timeoutRecording": {
                     "title": "Time Out For Recording.",
@@ -234,6 +240,9 @@
                     "btnCancel": "Cancel"
                 },
                 "btnOk": "OK"
+            },
+            "recording": {
+                "title": "Recording Macro Key For"
             }
         },
         "lightingProfile": {
@@ -290,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -915,24 +927,24 @@
                         "tooltip": "Učinek MIC lahko prilagodite tako, da prilagodite glasnost mikrofonain podate ustrezen način."
                     },
                     "volume": {
-                        "title": "Microphone Volume",
-                        "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
+                        "title": "Glasnost mikrofona",
+                        "description": "Dolby Audio zagotavlja globok, jasen in močan zvok za vse vsebine, v katerih uživate – izberite ustrezen način za svojo vsebino in opremo.",
                         "options": {
                             "silent": "Tiho",
                             "loud": "Glasno"
                         }
                     },
                     "suppress": {
-                        "title": "Suppress keyboard noise",
-                        "tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+                        "title": "Utišanje zvoka tipkovnice",
+                        "tooltip": "Vklopite, da optimizirate zvok mikrofona z dušenjem hrupa tipkovnice."
                     },
                     "acoustic": {
-                        "title": "Acoustic Echo Cancellation",
-                        "tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+                        "title": "Odpravljanje akustičnega odmeva",
+                        "tooltip": "Vklopite, da optimizirate zvok mikrofona z zmanjšanjem akustičnega odmeva."
                     },
                     "optimize": {
-                        "title": "Optimize my microphone for:",
-                        "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+                        "title": "Optimiziranje mikrofona za:",
+                        "tooltip": "Konfigurirajte učinek mikrofona, da izboljšate zvočno izkušnjo v različnih načinih in okoljih uporabe.",
                         "options": {
                             "VoiceRecognition": "PREPOZNAVANJE GLASU",
                             "OnlyMyVoice": "SAMO MOJ GLAS",

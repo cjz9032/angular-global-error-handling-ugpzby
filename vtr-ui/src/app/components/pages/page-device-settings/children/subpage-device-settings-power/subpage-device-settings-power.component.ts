@@ -9,6 +9,7 @@ import { BatteryDetailService } from 'src/app/services/battery-detail/battery-de
 import { SmartStandby } from 'src/app/data-models/device/smart-standby.model';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes } from '@lenovo/tan-client-bridge';
+import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
 
 
 enum PowerMode {
@@ -52,8 +53,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	public responseData: any[] = [];
 	public machineType: any;
-	public currentBatteryChargeVal: number;
+	public primaryBatteryChargeVal: any;
+	public secondaryBatteryChargeVal: any;
 	private batteryCountStatusEventRef: any;
+	public batteryChargeValues: any = [];
 
 	chargeOptions: number[] = [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
 	startAtChargeOptions: number[] = this.chargeOptions.slice(0, this.chargeOptions.length - 1);
@@ -257,6 +260,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		this.batteryChargeValues = this.commonService.getLocalStorageValue(LocalStorageKey.RemainingPercentages);
+
 		if (this.isDesktopMachine) {
 			this.headerMenuItems.splice(0, 1);
 		}
@@ -797,8 +802,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	// start battery threshold settings
 	private getBatterStatusEvent(response) {
 		// console.log('Event response here---------------....>%%%%%%%%%%%?>', response)
-		 this.responseData = response;
-		this.getBatteryThresholdInformation();		
+		this.responseData = response;
+		this.getBatteryThresholdInformation();
 	}
 	public getBatteryThresholdInformation() {
 		if (this.powerService.isShellAvailable) {
@@ -808,7 +813,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.responseData = res || [];
 					// this.responseData = [{batteryNum: 1, startValue: 25, stopValue: 95, checkBoxValue : true, isOn: true, isCapable: true},
 					// {batteryNum:2, startValue: 57, stopValue: 78, checkBoxValue : false, isOn: true}];
-
+					this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, res);
 					if (this.responseData && this.responseData.length > 0) {
 						this.selectedStartAtChargeVal = this.responseData[0].startValue - (this.responseData[0].startValue % 5);
 						this.selectedStopAtChargeVal = this.responseData[0].stopValue - (this.responseData[0].stopValue % 5);
@@ -850,8 +855,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 	private getBatteryCharge() {
-		this.currentBatteryChargeVal = this.commonService.getLocalStorageValue(LocalStorageKey.BatteryPercentage);
-		if (this.currentBatteryChargeVal > this.selectedStopAtChargeVal1 || this.currentBatteryChargeVal > this.selectedStopAtChargeVal) {
+		this.primaryBatteryChargeVal = this.batteryChargeValues[0];
+		this.secondaryBatteryChargeVal = this.batteryChargeValues[1] || 0;
+
+		if (this.primaryBatteryChargeVal > this.selectedStopAtChargeVal || this.secondaryBatteryChargeVal > this.selectedStopAtChargeVal1) {
 			this.showWarningMsg = true;
 		} else {
 			this.showWarningMsg = false;
@@ -865,13 +872,14 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.setChargeThresholdValues(batteryInfo, batteryInfo.batteryNum, 'changedValues');
 			})
 		} else {
-			this.powerService.setToggleOff(this.responseData.length).then((value: any) => {
-				// console.log('change threshold value------------------->>>>>>>>>', value);
-			})
+			this.powerService.setToggleOff(this.responseData.length)
+				.then((value: any) => {
+					// console.log('change threshold value------------------->>>>>>>>>', value);
+					this.getBatteryThresholdInformation();
+				})
 				.catch(error => {
 					console.error('change threshold value', error);
 				});
-			this.getBatteryThresholdInformation();
 		}
 
 	}
@@ -884,7 +892,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (batteryNum == 2) {
 			this.selectedStopAtChargeVal1 = batteryDetails.stopValue;
 		}
-		if (this.currentBatteryChargeVal > this.selectedStopAtChargeVal1 || this.currentBatteryChargeVal > this.selectedStopAtChargeVal) {
+		if (this.primaryBatteryChargeVal > this.selectedStopAtChargeVal || this.secondaryBatteryChargeVal > this.selectedStopAtChargeVal1) {
 			this.showWarningMsg = true;
 		} else {
 			this.showWarningMsg = false;
@@ -903,6 +911,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						.setChargeThresholdValue(batteryInfo)
 						.then((value: any) => {
 							// console.log('change threshold value------------------->>>>>>>>>', value);
+							this.getBatteryThresholdInformation();
 						})
 						.catch(error => {
 							console.error('change threshold value', error);
