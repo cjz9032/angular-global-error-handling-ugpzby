@@ -31,7 +31,7 @@
 
 		<div class="breaches-page__tooltip">
 			<vtr-why-seeing-tooltip
-				[contextText]="getTextForTooltip((breachedAccountsCount$ | async))"
+				[contextText]="textForTooltip"
 				*ngIf="!(isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ | async) &&
 					!(isFigleafReadyForCommunication$ | async) &&
 					(breachedAccounts$ | async).length > 0">

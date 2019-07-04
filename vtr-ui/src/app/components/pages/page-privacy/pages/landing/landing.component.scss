@@ -88,7 +88,17 @@
 	}
 
 	&__buttons {
-		padding: 2rem 0 0;
+		padding: 2rem 0 0 0;
+		display: flex;
+		flex-flow: row;
+		flex-wrap: wrap;
+		align-content: center;
+		align-items: center;
+
+		@media screen and (max-width: 1600px) {
+			flex-flow: column;
+			justify-content: space-between;
+		}
 	}
 
 	&__button {
@@ -100,6 +110,11 @@
 		font-size: 1.2rem;
 		line-height: 2.3rem;
 		margin-left: 5rem;
+		padding: 1.5rem 0;
+
+		@media screen and (max-width: 1600px) {
+			margin-left: 0;
+		}
 	}
 }
 

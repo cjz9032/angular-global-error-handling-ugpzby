@@ -31,6 +31,8 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 		noIssuesTitle: 'No breaches found for your email',
 		noIssuesDescription: 'Your private information associated with this email address is safe so far.'
 	};
+	textForTooltip = 'Your private information is not private anymore. You allowed us to do a search, ' +
+		'and we found these tied to your email address among compromised records on the internet and the dark web.';
 
 	constructor(
 		private breachedAccountsService: BreachedAccountsService,
@@ -70,7 +72,7 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 
 	getTextForTooltip(numberOfIssues) {
 		const numberOfIssuesText = numberOfIssues === 1 ? 'breached account' : 'breached accounts';
-		return `Your private information is not private anymore. You allowed us to do a search, and we found ${numberOfIssues} ${numberOfIssuesText} ` +
+		return `Your private information is not private anymore. You allowed us to do a search, and we found these ` +
 			`tied to your email address among compromised records on the internet and the dark web.`;
 	}
 
