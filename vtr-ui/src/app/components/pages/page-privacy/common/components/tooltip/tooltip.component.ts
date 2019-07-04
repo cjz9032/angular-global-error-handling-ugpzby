@@ -6,7 +6,7 @@ import { Component, ContentChild, ElementRef, Input, TemplateRef } from '@angula
 	styleUrls: ['./tooltip.component.scss']
 })
 export class TooltipComponent {
-	@Input() positionContextTo: 'center' | 'right' | 'left' = 'right';
+	@Input() positionContextTo: 'center' | 'right' | 'left' = 'center';
 	@ContentChild('tooltipText') tooltipText: TemplateRef<ElementRef>;
 	@ContentChild('tooltipContext') tooltipContext: TemplateRef<ElementRef>;
 

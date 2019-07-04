@@ -11,16 +11,36 @@
 	</div>
 	<div class="privacy-score__description-col">
 		<div class="privacy-score__text-block score-description">
-			<h4 class="score-description__title">{{title}}</h4>
+			<div class="privacy-score__title-wrapper">
+				<h4 class="score-description__title">{{title}}</h4>
+				<vtr-tooltip>
+					<ng-template #tooltipText>
+						<span class="score-description__tooltip-text">i</span>
+					</ng-template>
+					<ng-template #tooltipContext>
+						<div class="score-description__tooltip-context">
+							<p class="score-description__tooltip-context-title">
+								These actions influence your privacy score:
+							</p>
+							<ul class="score-description__tooltip-context-list">
+								<li class="score-description__tooltip-context-list-item">
+									Fix breached accounts if there are any
+								</li>
+								<li class="score-description__tooltip-context-list-item">
+									Use software that blocks tracking tools
+								</li>
+								<li class="score-description__tooltip-context-list-item">
+									Don't store passwords in browsers
+								</li>
+								<li class="score-description__tooltip-context-list-item">
+									Control your privacy with Lenovo Privacy Essentials by Figleaf
+								</li>
+							</ul>
+						</div>
+					</ng-template>
+				</vtr-tooltip>
+			</div>
 			<p class="score-description__text">{{text}}</p>
-			<!--<vtr-tooltip>-->
-				<!--<ng-template #tooltipText>-->
-					<!--<span class="score-description__tooltip-text">How we calculate score?</span>-->
-				<!--</ng-template>-->
-				<!--<ng-template #tooltipContext>-->
-					<!--<span class="score-description__tooltip-context">Test test test test Test test test test Test test test test Test test test test</span>-->
-				<!--</ng-template>-->
-			<!--</vtr-tooltip>-->
 		</div>
 		<div class="privacy-score__btn-container" *ngIf="isFirstTimeVisitor$ | async">
 			<button class="privacy-score__btn"
