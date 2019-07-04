@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -467,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Wygląda na pełnego energii "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Nie wykryto połączenia z Internetem.",
+            "subtitle": "Uzyskaj więcej informacji, jak rozwiązać problemy z połączeniem w naszym",
+            "buttonText": "Uzyskaj pomoc techniczną"
         },
         "feedback": {
             "title": "Przekaż opinię",
@@ -497,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Twoje szybkie ustawienia",
+            "microphone": "Mikrofon",
+            "cameraPrivacy": "Aparat",
+            "eyeCareMode": "Tryb ochrony oczu"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Stan systemu",
+            "subtitle": "SZYBKO SPRAWDŹ STAN URZĄDZENIA.",
             "memory": {
-                "title": "Memory",
+                "title": "Pamięć",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Nie znaleziono pamięci",
+                    "of": "z"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Miejsce na dysku",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Nie znaleziono dysku",
+                    "of": "z"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Gwarancja",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Nie znaleziono gwarancji",
+                    "until": "Do",
+                    "expiredOn": "Gwarancja wygasła dnia",
+                    "notAvailable": "Gwarancja niedostępna"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Aktualizacja"
                 }
             }
         }
@@ -649,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -810,9 +812,9 @@
                         "checkbox": "Włącz funkcję ładowania przez USB z akumulatora laptopa, gdy komputer jest wyłączony."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Łatwe wznawianie",
+                        "description": "Włącz tę funkcję, aby skrócić czas wznawiania, jeśli często otwierasz i zamykasz pokrywę komputera.",
+                        "tooltip": "Ta funkcja skraca czas wznawiania, jeśli użytkownik często otwiera i zamyka pokrywę komputera. Gdy ta funkcja jest włączona, na komputerze jest uruchamiany tryb niskiego zużycia energii, jeśli zostanie zamknięta pokrywa, a jego praca jest natychmiast wznawiana po ponownym otwarciu pokrywy w ciągu 15 minut. Dzięki tej funkcji notebook może podjąć próbę dokończenia nieukończonych operacji (na przykład wysłanie wiadomości e-mail lub pobranie pliku) zanim praca systemu zostanie wstrzymana."
                     }
                 },
                 "otherSettings": {
@@ -828,9 +830,9 @@
                         "title": "Próg ładowania akumulatora",
                         "description": "Jeśli komputer jest używany głównie z podłączonym zasilaczem sieciowym i jest rzadko zasilany akumulatorem,można wydłużyć czas pracy akumulatora, wybierając maksymalną wartość ładowania poniżej 100%. Jest to przydatna funkcja, ponieważ czas eksploatacji akumulatorów, które są rzadko, jest dłuższy, gdy nie ładuje się ich do końca.",
                         "tooltip": "Jeśli akumulator jest obecnie naładowany powyżej ustalonego progu zatrzymania ładowania, odłącz źródło zasilania i rozładuj akumulator do poziomu progowego lub niższego.W zależności od stanu akumulatora (stary lub nowy) dokładny punkt, w którym rozpoczyna się lub kończy ładowanie, może różnić się o dwa punkty procentowe. Jeśli ta funkcja jest włączona, zalecamy od czasu do czasu zresetować miernik poziomu akumulatora, aby zapewnić dokładne raportowanie stanu akumulatora.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Uwaga",
+                        "readMoreText": "Dowiedz się więcej.",
+                        "noteInfo": " Funkcja progu ładowania akumulatora nadal nie jest w pełni aktywna. Odłącz komputer od zasilania z sieci elektrycznej i poczekaj, aż stopień naładowania akumulatora spadnie co najmniej do wartości progu zatrzymania ładowania.",
                         "settings": {
                             "title1": "Próg dla wbudowanego akumulatora",
                             "title2": "Próg dla wymiennego akumulatora"
@@ -843,9 +845,9 @@
                             "cancel": "ANULUJ"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Rozpocznij ładowanie poniżej",
+                            "checkboxText": "Ładowanie akumulatora rozpocznie się automatycznie, gdy poziom jego naładowania spadnie 5% poniżej ustalonego progu zatrzymania ładowania.",
+                            "stop": "Zatrzymaj ładowanie w momencie"
                         }
                     },
                     "expressCharging": {
@@ -869,22 +871,22 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "PRODUKT Z CERTYFIKATEM ENERGY STAR"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Inteligentne wstrzymanie",
+                    "description": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie uruchamianie w godzinach bardziej intensywnego korzystania.",
+                    "tooltip": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną początkową komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z akumulatora przechodzi w tryb hibernacji. Okres bezczynności jest optymalizowany na podstawie ustawionego harmonogramu. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowanych dniach, a nie przełącza się w ogóle, jeśli nie jest używany przez kilka kolejnych zaplanowanych dni.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Ustaw typowe godziny korzystania z komputera",
+                        "subHeading1": "rozpocząć się",
+                        "subHeading2": "koniec",
+                        "subHeading3": "używaj tego harmonogramu dla",
+                        "endTimeNote": "Czas od godziny początkowej do końcowej nie może przekraczać 20 godzin",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
-                            "unit3": "AM/PM"
+                            "unit1": "Godziny",
+                            "unit2": "Minuty",
+                            "unit3": "rano/wieczorem"
                         }
                     }
                 }
@@ -1613,7 +1615,8 @@
             },
             "errorMessage": {
                 "headerText": "Błąd",
-                "bodyText": "Wykryliśmy, że brakuje ważnych elementów aplikacji Vantage. Te elementy zostaną pobrane w tle. Spróbuj ponownie później."
+				"bodyText": "Wykryliśmy, że brakuje ważnych elementów aplikacji Vantage. Te elementy zostaną pobrane w tle. Spróbuj ponownie później.",
+				"closeText": "close"
             }
         },
         "homeprotection": {
