@@ -22,8 +22,8 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
 	selector: 'vtr-page-device-gaming',
 	templateUrl: './page-device-gaming.component.html',
-	styleUrls: [ './page-device-gaming.component.scss' ],
-	providers: [ NgbModalConfig, NgbModal ]
+	styleUrls: ['./page-device-gaming.component.scss'],
+	providers: [NgbModalConfig, NgbModal]
 })
 export class PageDeviceGamingComponent implements OnInit {
 	firstName = 'User';
@@ -167,7 +167,7 @@ export class PageDeviceGamingComponent implements OnInit {
 		});
 	}
 
-	public onConnectivityClick($event: any) {}
+	public onConnectivityClick($event: any) { }
 
 	private setDefaultCMSContent() {
 		this.heroBannerItems = [
@@ -176,7 +176,7 @@ export class PageDeviceGamingComponent implements OnInit {
 				id: 1,
 				source: 'Vantage Beta',
 				title: 'Welcome to the next generation of Lenovo Vantage!',
-				url: './../../../../assets/cms-cache/Vantage3Hero-zone0.png',
+				url: './../../../../assets/cms-cache/Vantage3Hero-zone0.jpg',
 				ActionLink: null
 			}
 		];
@@ -185,7 +185,7 @@ export class PageDeviceGamingComponent implements OnInit {
 			Title: '',
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: './../../../../assets/cms-cache/Alexa4x3-zone1.png',
+			FeatureImage: './../../../../assets/cms-cache/Alexa4x3-zone1.jpg',
 			Action: '',
 			ActionType: 'External',
 			ActionLink: null,
@@ -203,7 +203,7 @@ export class PageDeviceGamingComponent implements OnInit {
 			Title: '',
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.png',
+			FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg',
 			Action: '',
 			ActionType: 'External',
 			ActionLink: null,
@@ -221,7 +221,7 @@ export class PageDeviceGamingComponent implements OnInit {
 			Title: '',
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: './../../../../assets/cms-cache/Gamestore8x3-zone3.png',
+			FeatureImage: './../../../../assets/cms-cache/Gamestore8x3-zone3.jpg',
 			Action: '',
 			ActionType: 'External',
 			ActionLink: 'https://gamestore.lenovo.com/',

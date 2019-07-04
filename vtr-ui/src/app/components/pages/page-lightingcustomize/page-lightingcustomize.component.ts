@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
 	selector: 'vtr-page-lightingcustomize',
 	templateUrl: './page-lightingcustomize.component.html',
-	styleUrls: [ './page-lightingcustomize.component.scss' ]
+	styleUrls: ['./page-lightingcustomize.component.scss']
 })
 export class PageLightingcustomizeComponent implements OnInit {
 	public currentProfileId: any;
@@ -39,7 +39,7 @@ export class PageLightingcustomizeComponent implements OnInit {
 		FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
 	};
 	cardContentPositionB: any = {
-		FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.png'
+		FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
 	};
 
 	constructor(private cmsService: CMSService, private route: ActivatedRoute) {
