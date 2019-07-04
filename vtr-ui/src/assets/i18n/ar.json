@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -1613,7 +1616,8 @@
             },
             "errorMessage": {
                 "headerText": "خطأ",
-                "bodyText": "لقد اكتشفنا أنك تفتقد إلى أجزاء ضرورية من Vantage. سيتم تنزيل هذه الأجزاء في الخلفية. يُرجى إعادة المحاولة لاحقًا."
+				"bodyText": "لقد اكتشفنا أنك تفتقد إلى أجزاء ضرورية من Vantage. سيتم تنزيل هذه الأجزاء في الخلفية. يُرجى إعادة المحاولة لاحقًا.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

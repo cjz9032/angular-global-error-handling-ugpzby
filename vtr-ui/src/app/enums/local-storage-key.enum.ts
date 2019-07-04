@@ -139,7 +139,8 @@ export enum LocalStorageKey {
 	BatteryPercentage = '[LocalStorageKey] BatteryPercentage',
 	SmartAssistCapability = '[LocalStorageKey] SmartAssistCapability',
 	RemainingPercentages = '[LocalStorageKey] RemainingPercentages',
-
+	// server switch strorage key
+	ServerSwitchKey = '[LocalStorageKey] ServerSwitch',
 	memOCFeatureStatus = '[LocalStorageKey] MemOCFeatureStatus',
 	hybridModeFeatureStatus = '[LocalStorageKey] HybridModeFeatureStatus',
 }

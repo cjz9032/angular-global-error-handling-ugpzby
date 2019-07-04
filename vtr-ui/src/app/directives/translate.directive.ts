@@ -23,7 +23,11 @@ export class TranslateDirective {
 		this.containerRef.createEmbeddedView(this.template);
 		const element: HTMLElement = this.template.elementRef.nativeElement.nextElementSibling;
 		const childNodes = Array.from(element.getElementsByTagName('a'));
-
+		if (element.innerText) {
+			element.childNodes.forEach(childNode => {
+				childNode.nodeValue = '';
+			});
+		}
 		childNodes.forEach((childNode, index) => {
 			const childElement: HTMLElement = (<HTMLElement>childNode);
 			childElement.insertAdjacentElement('afterend', document.createElement('span'));

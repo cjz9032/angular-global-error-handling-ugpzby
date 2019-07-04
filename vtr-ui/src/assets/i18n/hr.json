@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -1613,7 +1616,8 @@
             },
             "errorMessage": {
                 "headerText": "Pogreška",
-                "bodyText": "Utvrdili smo da vam nedostaju važni dijelovi usluge Vantage. Ti će se dijelovi preuzeti u pozadini. Pokušajte ponovno kasnije."
+				"bodyText": "Utvrdili smo da vam nedostaju važni dijelovi usluge Vantage. Ti će se dijelovi preuzeti u pozadini. Pokušajte ponovno kasnije.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

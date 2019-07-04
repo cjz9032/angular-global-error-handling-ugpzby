@@ -5,7 +5,9 @@
 	display: flex;
 	flex-flow: column;
 	height: calc(100vh - 5.5rem);
-	box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 2rem;
+    font-weight: normal;
 
 	fa-icon {
 		font-size: 2rem;
@@ -13,11 +15,13 @@
 	}
 
 	.server-content{
-		width: 100%;
+        width: 100%;
+        height: calc(100vh - 7rem);
 		padding-right: 4rem;
 		overflow-x: hidden;
         overflow-y: auto;
         margin-top: 3rem;
+        border: 1px solid red;
 	}
 
 	h1 {
