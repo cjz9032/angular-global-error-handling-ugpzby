@@ -470,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Φαίνεστε γεμάτος/η ενέργεια σήμερα "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Δεν εντοπίστηκε σύνδεση στο Internet",
+            "subtitle": "Μάθετε πώς να επιλύετε προβλήματα σύνδεσης στη σελίδα μας",
+            "buttonText": "Λήψη υποστήριξης"
         },
         "feedback": {
             "title": "Υποβολή σχολίων",
@@ -500,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Οι γρήγορες ρυθμίσεις σας",
+            "microphone": "Μικρόφωνο",
+            "cameraPrivacy": "Κάμερα",
+            "eyeCareMode": "Λειτ. Φροντίδας ματιών"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Κατάσταση συστήματος",
+            "subtitle": "ΕΛΕΓΞΤΕ ΓΡΗΓΟΡΑ ΤΗΝ ΚΑΤΑΣΤΑΣΗ ΤΗΣ ΣΥΣΚΕΥΗΣ ΣΑΣ.",
             "memory": {
-                "title": "Memory",
+                "title": "Μνήμη",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Η μνήμη δεν βρέθηκε",
+                    "of": "από"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Χώρος στον δίσκο",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Ο δίσκος δεν βρέθηκε",
+                    "of": "από"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Warranty (Εγγύηση)",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Η εγγύηση δεν βρέθηκε",
+                    "until": "Έως",
+                    "expiredOn": "Η εγγύηση έληξε στις",
+                    "notAvailable": "Η εγγύηση δεν είναι διαθέσιμη"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Ενημέρωση"
                 }
             }
         }
@@ -652,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -813,9 +812,9 @@
                         "checkbox": "Ενεργοποιήστε τη φόρτιση USB από την μπαταρία του φορητού υπολογιστή όταν ο υπολογιστής είναι απενεργοποιημένος."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Εύκολη επαναφορά",
+                        "description": "Ενεργοποιήστε αυτή τη δυνατότητα, για να μειώσετε τον χρόνο επαναφοράς στην κανονική λειτουργία, αν ανοίγετε και κλείνετε συχνά το καπάκι του υπολογιστή σας.",
+                        "tooltip": "Αυτή η δυνατότητα θα μειώσει το χρόνο επαναφοράς στην κανονική λειτουργία, αν ανοίγετε και κλείνετε συχνά το καπάκι του υπολογιστή σας. Όταν είναι ενεργοποιημένη, ο υπολογιστής σας θα μεταβαίνει σε μια λειτουργία χαμηλής ενέργειας όταν κλείνετε το καπάκι του, αλλά θα επανέρχεται σε κανονική λειτουργία αμέσως, αν το ξανανοίξετε μέσα σε 15 λεπτά από το κλείσιμο. Επίσης, με αυτήν τη δυνατότητα ο φορητός υπολογιστής επιχειρεί να ολοκληρώσει τις εκκρεμείς δραστηριότητες (όπως την αποστολή ενός email ή τη μεταφόρτωση ενός αρχείο) πριν από τη μετάβαση του συστήματος σε κατάσταση αναστολής λειτουργίας."
                     }
                 },
                 "otherSettings": {
@@ -831,9 +830,9 @@
                         "title": "Όριο φορτίου μπαταρίας",
                         "description": "Αν χρησιμοποιείτε κυρίως τον υπολογιστή σας με το μετασχηματιστή εναλλασσόμενου ρεύματος συνδεδεμένο και μόνο σπάνια χρησιμοποιείτε την τροφοδοσία από την μπαταρία,μπορείτε να αυξήσετε τη διάρκεια ζωής της μπαταρίας ορίζοντας τη μέγιστη τιμή φορτίου σε ποσοστό χαμηλότερο του 100%. Αυτό είναι χρήσιμο επειδή οι μπαταρίες που δεν χρησιμοποιούνται συχνά έχουν μεγαλύτερη διάρκεια ζωής όταν διατηρούνται σε φορτίο μικρότερο από το πλήρες.",
                         "tooltip": "Εάν η μπαταρία είναι τη δεδομένη στιγμή φορτισμένη πάνω από το όριο διακοπής φόρτισης, αποσυνδέστε τον μετασχηματιστή εναλλασσόμενου ρεύματος έως ότου η μπαταρία εκφορτιστεί ή πέσει κάτω από το όριο διακοπής φόρτισης.Ανάλογα με την κατάσταση της μπαταρίας (παλαιά ή καινούρια), το ακριβές σημείο στο οποίο αρχίζει ή διακόπτεται η φόρτιση ενδέχεται να διαφέρει έως και 2 ποσοστιαίες μονάδες. Εάν ενεργοποιήσετε αυτήν τη δυνατότητα, συνιστάται η περιστασιακή εκτέλεση Επαναφοράς μετρητή μπαταρίας, ώστε να διασφαλιστεί η ακριβής αναφορά της κατάστασης της μπαταρίας.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Σημείωση",
+                        "readMoreText": "Διαβάστε περισσότερα.",
+                        "noteInfo": " Το όριο φορτίου μπαταρίας δεν είναι ακόμη πλήρως ενεργό. Αποσυνδέστε το μηχάνημά σας και αφήστε τη μπαταρία σας να εξαντληθεί στο ή κάτω από το όριο φόρτισης.",
                         "settings": {
                             "title1": "Κατώτατο όριο για ενσωματωμένη μπαταρία",
                             "title2": "Κατώτατο όριο για αφαιρούμενη μπαταρία"
@@ -846,9 +845,9 @@
                             "cancel": "ΑΚΥΡΟ"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Έναρξη φόρτισης όταν είναι κάτω από",
+                            "checkboxText": "Ορίστε το όριο αυτόματης έναρξης φόρτισης στο 5% κάτω από το όριο διακοπής φόρτισης.",
+                            "stop": "Διακοπή φόρτισης στο"
                         }
                     },
                     "expressCharging": {
@@ -872,22 +871,22 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "ΠΡΟΪΟΝ ΜΕ ΠΙΣΤΟΠΟΙΗΣΗ ENERGY STAR"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Έξυπνη αναμονή",
+                    "description": "Αυτή η δυνατότητα δημιουργεί χρονοδιαγράμματα στον υπολογιστή σας, ώστε να βελτιστοποιείται η εξοικονόμηση της μπαταρίας κατά τις ώρες αδράνειας χωρίς να επηρεάζεται η γρήγορη εκκίνηση κατά τις ώρες πιο εντατικής χρήσης.",
+                    "tooltip": "Όταν είναι ενεργοποιημένη η Έξυπνη αναμονή, ο υπολογιστής σας μεταβαίνει στη Σύγχρονη αναμονή πριν από την προγραμματισμένη ώρα Έναρξης και μεταβαίνει σε κατάσταση αδρανοποίησης εάν παραμείνει ανενεργός για ένα καθορισμένο χρονικό διάστημα ενώ λειτουργεί με μπαταρία. Αυτό το χρονικό διάστημα βελτιστοποιείται σύμφωνα με το χρονοδιάγραμμα που έχετε καθορίσει. Ο υπολογιστής αλλάζει από την κατάσταση αδρανοποίησης στη Σύγχρονη αναμονή μόνο κατά τις προγραμματισμένες ημέρες, ενώ δεν αλλάζει όταν είναι ανενεργός για συνεχόμενες προγραμματισμένες ημέρες.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Ρυθμίστε την ώρα κατά την οποία χρησιμοποιείτε συνήθως αυτόν τον υπολογιστή",
+                        "subHeading1": "αρχίσετε",
+                        "subHeading2": "λήξη",
+                        "subHeading3": "χρήση αυτού του χρονοδιαγράμματος για",
+                        "endTimeNote": "Η ώρα Λήξης δεν μπορεί να υπερβαίνει τις 20 ώρες από την ώρα Έναρξης",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
-                            "unit3": "AM/PM"
+                            "unit1": "Ώρες",
+                            "unit2": "Λεπτά",
+                            "unit3": "πμ/μμ"
                         }
                     }
                 }

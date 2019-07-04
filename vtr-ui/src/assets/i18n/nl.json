@@ -470,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Het ziet er als een energieke dag uit vandaag "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Geen internetverbinding aangetroffen",
+            "subtitle": "Meer informatie over het oplossen van verbindingsproblemen in onze",
+            "buttonText": "Ondersteuning"
         },
         "feedback": {
             "title": "Feedback geven",
@@ -500,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
+            "title": "Uw Quick Settings",
+            "microphone": "Microfoon",
             "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "eyeCareMode": "Oogzorg-modus"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Systeemstatus",
+            "subtitle": "SNEL DE STATUS INZICHTELIJK VAN UW APPARAATSTATUS.",
             "memory": {
-                "title": "Memory",
+                "title": "Geheugen",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Geheugen niet gevonden",
+                    "of": "van"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Schijfruimte",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Schijf niet gevonden",
+                    "of": "van"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Garantie",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Garantie niet gevonden",
+                    "until": "Tot",
+                    "expiredOn": "Garantie verlopen op",
+                    "notAvailable": "Garantie niet beschikbaar"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Updaten"
                 }
             }
         }
@@ -652,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -813,9 +812,9 @@
                         "checkbox": "Schakel laden via USB vanuit de computeraccu in wanneer de computer uit staat."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Eenvoudig hervatten",
+                        "description": "Schakel deze functie in om de computer sneller te herstellen als u de klep van uw computer vaak opent en sluit.",
+                        "tooltip": "Door deze functie herstelt de computer sneller als u de klep van uw computer vaak opent en sluit. Als deze functie is ingeschakeld, wordt de modus voor laag energieverbruik ingeschakeld als u de klep sluit, maar meteen weer hersteld als u de klep binnen 15 minuten nadat u de klep sloot weer opent. Deze functie zorgt er ook voor dat uw notebook lopende activiteiten (zoals het versturen van e-mail of het downloaden van een bestand) probeert af te ronden voordat de slaapstand wordt geactiveerd."
                     }
                 },
                 "otherSettings": {
@@ -831,9 +830,9 @@
                         "title": "Drempelwaarde voor batterijlading",
                         "description": "Als u de computer meestal gebruikt met stroom van het lichtnet en slechts zelden op stroom van de batterij,kunt u de levensduur van de batterij verlengen door de maximale oplaadwaarde in te stellen op minder dan 100%. Dit is handig omdat batterijen die niet vaak worden gebruikt, langer meegaan als ze worden opgeborgen terwijl ze minder dan volledig zijn opgeladen.",
                         "tooltip": "Als de batterij meer is opgeladen dan de bovenste drempelwaarde, koppelt u de netvoeding los totdat de batterij tot aan de onderste drempelwaarde is ontladen.Afhankelijk van de conditie van de batterij (oud of nieuw) kan het exacte punt waarop het opladen start of stopt, tot twee procentpunten variëren. Als u deze functie inschakelt, raden we u aan af en toe Batterijmeter opnieuw instellen uit te voeren, zodat u nauwkeurige meldingen over de conditie van de batterij ontvangt.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Opmerking",
+                        "readMoreText": "Meer weergeven.",
+                        "noteInfo": " De drempelwaarde voor batterijlading is niet volledig geactiveerd. Haal de stekker uit het stopcontact en ontlaad de batterij tot onder het niveau waarop het opladen wordt gestopt.",
                         "settings": {
                             "title1": "Drempel voor ingebouwde batterij",
                             "title2": "Drempel voor verwijderbare batterij"
@@ -846,9 +845,9 @@
                             "cancel": "ANNULEREN"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Beginnen met opladen als de resterende capaciteit van de batterij lager is dan",
+                            "checkboxText": "Automatisch de onderste drempelwaarde instellen 5 procentpunten onder de bovenste drempelwaarde.",
+                            "stop": "Opladen stoppen bij"
                         }
                     },
                     "expressCharging": {
@@ -871,22 +870,22 @@
                     }
                 },
                 "energyStar": {
-                    "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "title": "Energy star",
+                    "description": "EEN DOOR ENERGY STAR GECERTIFICEERD PRODUCT"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Slim stand-by",
+                    "description": "Met deze functie wordt de energiebesparing van de batterij geoptimaliseerd wanneer de computer niet actief is, maar blijft de opstarttijd snel bij zwaarder gebruik.",
+                    "tooltip": "Als Slim stand-by is ingeschakeld, schakelt de computer vóór de geplande begintijd over naar Modern stand-by en wordt de sluimerstand ingeschakeld nadat de computer een bepaalde periode niet actief is geweest op batterijvoeding. Deze periode wordt geoptimaliseerd op basis van de planning die u instelt. De computer schakelt alleen op geplande dagen van de sluimerstand over naar Modern stand-by en schakelt niet over wanneer de computer niet actief is gedurende opeenvolgende geplande dagen.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Stel de tijd in waarop u deze computer gewoonlijk gebruikt",
+                        "subHeading1": "met",
+                        "subHeading2": "eind",
+                        "subHeading3": "Gebruik deze planning voor",
+                        "endTimeNote": "Eindtijd moet binnen 20 uur na begintijd liggen",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
+                            "unit1": "Uur",
+                            "unit2": "Minuten",
                             "unit3": "AM/PM"
                         }
                     }

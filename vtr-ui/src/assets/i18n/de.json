@@ -470,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Sie sehen heute energiegeladen aus "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Keine Internetverbindung vorhanden",
+            "subtitle": "Weitere Informationen zum Lösen von Verbindungsproblemen finden Sie in unserem",
+            "buttonText": "Support anfordern"
         },
         "feedback": {
             "title": "Feedback geben",
@@ -500,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Ihre Schnelleinstellungen",
+            "microphone": "Mikrofon",
+            "cameraPrivacy": "Kamera",
+            "eyeCareMode": "Modus \"Augen schonen\""
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Systemstatus",
+            "subtitle": "SCHNELLE ÜBERSICHT ÜBER DEN GERÄTESTATUS.",
             "memory": {
-                "title": "Memory",
+                "title": "Hauptspeicher",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Hauptspeicher nicht gefunden",
+                    "of": "von"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Festplattenspeicher",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Festplatte nicht gefunden",
+                    "of": "von"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Garantie",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Garantie wurde nicht gefunden",
+                    "until": "Bis",
+                    "expiredOn": "Garantie abgelaufen am",
+                    "notAvailable": "Garantie nicht verfügbar"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Aktualisierung"
                 }
             }
         }
@@ -652,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -813,9 +812,9 @@
                         "checkbox": "USB-Ladevorgang über den Laptop-Akku aktivieren, wenn der Computer ausgeschaltet ist."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Schnellstartfunktion",
+                        "description": "Aktivieren Sie diese Funktion, um die Aktivierungszeit zu verkürzen, wenn Sie die Abdeckung Ihres Computers häufig öffnen und schließen.",
+                        "tooltip": "Mit dieser Funktion wird die Aktivierungszeit verkürzt, wenn Sie die Abdeckung Ihres Computers häufig öffnen und schließen. Ist diese Funktion aktiviert, wird der Computer beim Schließen der Abdeckung in einen Modus mit niedrigen Stromverbrauch versetzt, ist aber sofort wieder einsatzbereit, wenn Sie die Abdeckung innerhalb von 15 Minuten wieder öffnen. Bei dieser Funktion führt Ihr Notebook außerdem noch nicht abgeschlossene Aktivitäten zu Ende (wie das Senden einer E-Mail oder das Herunterladen einer Datei), bevor das System in den Energiesparmodus übergeht."
                     }
                 },
                 "otherSettings": {
@@ -831,9 +830,9 @@
                         "title": "Schwellenwert für Akkuladung",
                         "description": "Wenn Sie den Computer hauptsächlich mit angeschlossenem Netzteil und nur selten mit dem Akku betreiben,kann die Lebensdauer des Akkus durch Ändern des maximalen Ladezustands auf unter 100 % verlängert werden. Diese Option ist sinnvoll, da Akkus, die nicht oft verwendet werden, eine längere Lebensdauer haben, wenn sie bei Nichtnutzung nicht voll aufgeladen sind.",
                         "tooltip": "Überschreitet die Akkuladung derzeit den Schwellenwert, an dem der Ladevorgang stoppt, entfernen Sie das Netzteil, bis der Akku bis zum Schwellenwert oder darunter entladen ist.Je nach Akkuzustand (alt oder neu) kann der genaue Zeitpunkt, an dem der Ladevorgang gestartet oder beendet wird, um bis zu 2 % abweichen. Bei Verwendung dieser Funktion wird empfohlen, regelmäßig die Funktion Akkuzustandsanzeiger zurücksetzen auszuführen, damit die Angaben zur Akkuintegrität korrekt sind.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Anmerkung",
+                        "readMoreText": "Weiterlesen.",
+                        "noteInfo": " Der Schwellenwert für die Akkuladung ist noch nicht komplett aktiv. Bitte trennen Sie Ihr Gerät von der Stromversorgung und warten Sie, bis der Akku ganz oder bis zum Ladestopp-Schwellenwert entladen ist.",
                         "settings": {
                             "title1": "Schwellenwert für eingebauten Akku",
                             "title2": "Schwellenwert für wechselbaren Akku"
@@ -846,9 +845,9 @@
                             "cancel": "ABBRECHEN"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Aufladen starten bei",
+                            "checkboxText": "Ladestart-Schwellenwert automatisch auf 5 % unter der dem Ladestopp-Schwellenwert konfigurieren.",
+                            "stop": "Aufladen beenden bei"
                         }
                     },
                     "expressCharging": {
@@ -872,22 +871,22 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "EIN ENERGY STAR-ZERTIFIZIERTES PRODUKT"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Smart-Standby",
+                    "description": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Hochfahren bei intensiverer Nutzung beeinträchtigt wird.",
+                    "tooltip": "Wenn Smart-Standby aktiviert ist, wechselt Ihr Computer vor der festgelegten Startzeit zu Modern-Standby und wird in den Ruhezustand versetzt, wenn er für einen gewissen Zeitraum im Akkubetrieb inaktiv war. Dieser Zeitraum wird auf Grundlage des von Ihnen festgelegten Zeitplans optimiert. Der Computer wechselt nur an geplanten Tagen vom Ruhezustand zu Modern-Standby und wechselt nicht, wenn er an aufeinanderfolgenden geplanten Tagen inaktiv ist.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Typische Nutzungszeiten für diesen Computer festlegen",
+                        "subHeading1": "innerhalb des Felds",
+                        "subHeading2": "Ende",
+                        "subHeading3": "Zeitplan nutzen für",
+                        "endTimeNote": "Endzeit darf maximal 20 Stunden nach der Startzeit liegen",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
-                            "unit3": "AM/PM"
+                            "unit1": "Stunden",
+                            "unit2": "Minuten",
+                            "unit3": "vormittags/nachmittags"
                         }
                     }
                 }

@@ -470,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Energin är på topp i dag "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Det finns ingen Internetanslutning",
+            "subtitle": "Läs mer om hur du åtgärdar anslutningsproblem i",
+            "buttonText": "Få support"
         },
         "feedback": {
             "title": "Ge feedback",
@@ -500,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Dina snabbinställningar",
+            "microphone": "Mikrofon",
+            "cameraPrivacy": "Kamera",
+            "eyeCareMode": "Ögonskyddsläge"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Systemstatus",
+            "subtitle": "ÖVERSIKT ÖVER ENHETENS STATUS.",
             "memory": {
-                "title": "Memory",
+                "title": "Minne",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Minne hittades inte",
+                    "of": "av"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Diskutrymme",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Disk hittades inte",
+                    "of": "av"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Garanti",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Garantin hittades inte",
+                    "until": "Till",
+                    "expiredOn": "Garantin upphörde den",
+                    "notAvailable": "Garanti inte tillgänglig"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Uppdatera"
                 }
             }
         }
@@ -652,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -813,9 +812,9 @@
                         "checkbox": "Aktivera USB-laddning från datorbatteriet när datorn är avstängd."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Program för smidig återgång",
+                        "description": "Aktivera denna funktion för att datorn ska starta snabbare om du ofta öppnar och stänger datorlocket.",
+                        "tooltip": "Funktionen förkortar tiden det tar att återgå till arbetsläge om du ofta öppnar eller stänger datorlocket. När den är aktiverad försätts datorn i ett lågenergiläge när du stänger locket, men återgår direkt till arbetsläge om du öppnar locket igen inom 15 minuter. Funktionen gör även att din bärbara dator kan försöka avsluta pågående aktiviteter (som att skicka ett e-postmeddelande eller hämta en fil) innan systemet försätts i vänteläge."
                     }
                 },
                 "otherSettings": {
@@ -831,9 +830,9 @@
                         "title": "Gränsvärde för batteriladdning",
                         "description": "Om du oftast använder datorn med nätadaptern ansluten och endast sällan använder batterietkan du förlänga batteriets livslängd genom att ställa in högsta laddnings till under 100 %. Detta är användbart då batterier som används oregelbundet får en längre livslängd när de inte är helt fulladdade.",
                         "tooltip": "Om batteriet för närvarande är laddat över stoppunkten ska du koppla från strömförsörjningen så att batteriet laddas ur under stoppunkten.Beroende på om batteriet är gammalt eller nytt kan den exakta start- och stoppunkten för uppladdning variera från det angivna gränsvärdet med upp till två procentenheter. Om du aktiverar denna funktion rekommenderar vi att du regelbundet nollställer batterimätaren för att säkerställa att batteriets tillstånd rapporteras korrekt.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Anmärkning",
+                        "readMoreText": "Läs mer.",
+                        "noteInfo": " Gränsvärdet för batteriladdning är fortfarande inte helt aktiverat. Koppla från enheten och ladda ur batteriet till gränsvärdet för laddningsstopp eller mer.",
                         "settings": {
                             "title1": "Gränsvärde för inbyggt batteri",
                             "title2": "Gränsvärde för löstagbart batteri"
@@ -846,9 +845,9 @@
                             "cancel": "AVBRYT"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Börja ladda när nivån är under",
+                            "checkboxText": "Ställ automatiskt in startpunkten för uppladdning till fem procentenheter under stoppunkten.",
+                            "stop": "Sluta ladda vid"
                         }
                     },
                     "expressCharging": {
@@ -872,22 +871,22 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "EN ENERGY STAR-CERTIFIERAD PRODUKT"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Smart vänteläge",
+                    "description": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den startar snabbt under tider då den används mer frekvent.",
+                    "tooltip": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda starttiden och i viloläge när den inte har använts under en viss tidsperiod på batteriström. Denna tidsperiod optimeras utifrån schemat du har angett. Datorn övergår från viloläge till modernt vänteläge endast på schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
+                        "heading": "Ange vilken tid du använder datorn mest",
                         "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "subHeading2": "slut",
+                        "subHeading3": "använd detta schema för",
+                        "endTimeNote": "Sluttiden måste infalla högst 20 timmar efter starttiden",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
-                            "unit3": "AM/PM"
+                            "unit1": "Timmar",
+                            "unit2": "Minuter",
+                            "unit3": "FM/EM"
                         }
                     }
                 }

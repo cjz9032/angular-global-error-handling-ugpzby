@@ -470,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Parece revitalizado/a hoje "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Não foi detetada ligação à Internet",
+            "subtitle": "Saiba mais sobre como resolver problemas de ligação do",
+            "buttonText": "Obter suporte"
         },
         "feedback": {
             "title": "Fornecer Comentários",
@@ -500,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "As suas definições rápidas",
+            "microphone": "Microfone",
+            "cameraPrivacy": "Câmara",
+            "eyeCareMode": "Modo Cuidados com a Visão"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Estado do sistema",
+            "subtitle": "FIQUE A SABER RAPIDAMENTE O ESTADO DO DISPOSTIVO.",
             "memory": {
-                "title": "Memory",
+                "title": "Memória",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Memória não encontrada",
+                    "of": "de"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Espaço em Disco",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Disco não encontrado",
+                    "of": "de"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Garantia",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Garantia não encontrada",
+                    "until": "Até",
+                    "expiredOn": "Garantia expirou em",
+                    "notAvailable": "Garantia não disponível"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Atualizar"
                 }
             }
         }
@@ -652,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -813,9 +812,9 @@
                         "checkbox": "Ativar o carregamento USB da bateria do portátil quando o computador estiver desligado."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Retomar Rápido",
+                        "description": "Se abrir e fechar a tampa do computador com frequência, ative esta função para melhorar o tempo para retomar o funcionamento normal.",
+                        "tooltip": "Esta função melhorará o tempo para retomar o funcionamento normal, se abrir e fechar a tampa do computador com frequência. Quando esta opção está ativada, o computador entra num modo de baixo consumo de energia ao fechar a respetiva tampa, mas retomará de imediato se voltar a abrir a tampa até 15 minutos depois de fechá-la. Esta função também permite que o seu portátil tente terminar as atividades pendentes (como o envio de correio eletrónico ou a transferência de um ficheiro) antes de o sistema entrar em suspensão."
                     }
                 },
                 "otherSettings": {
@@ -831,9 +830,9 @@
                         "title": "Limiar de Carregamento da Bateria",
                         "description": "Se utilizar o computador principalmente com o transformador CA ligado e se utilizar a bateria apenas algumas vezes,poderá aumentar a duração da bateria definindo um valor máximo de carga inferior a 100%. Isto é útil, porque as baterias que são utilizadas poucas vezes têm uma vida útil mais longa quando são mantidas com uma carga inferior à total.",
                         "tooltip": "Se a carga atual da bateria estiver acima do limiar de carregamento da bateria, desligue o transformador até que a bateria esteja descarregada ou abaixo do limiar de carregamento da bateria.Dependendo do estado da bateria (antiga ou nova), o ponto exato de início ou paragem do carregamento poderá variar em até 2 pontos percentuais. Se ativar a função, é aconselhável efetuar ocasionalmente a Reposição do Indicador da Bateria para garantir uma comunicação precisa da condição da bateria.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Nota",
+                        "readMoreText": "Ler mais.",
+                        "noteInfo": " O Limiar de Carregamento da Bateria ainda não está totalmente ativo. Desligue os cabos do equipamento e permita que a bateria se descarregue até ou abaixo do limiar de paragem de carregamento.",
                         "settings": {
                             "title1": "Limiar para bateria incorporada",
                             "title2": "Limiar para bateria removível"
@@ -846,9 +845,9 @@
                             "cancel": "CANCELAR"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Começar a carregar quando estiver abaixo de",
+                            "checkboxText": "Definir automaticamente o limiar de início de carregamento para 5% abaixo do limiar de paragem de carregamento.",
+                            "stop": "Parar carregamento a"
                         }
                     },
                     "expressCharging": {
@@ -872,21 +871,21 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "UM PRODUTO COM CERTIFICAÇÃO ENERGY STAR"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Modo de Suspensão Inteligente",
+                    "description": "Esta funcionalidade programa a otimização da poupança de energia da bateria do computador durante períodos de inatividade sem prejudicar um tempo de arranque rápido durante horas de utilização mais intensa.",
+                    "tooltip": "Quando o Modo de Suspensão Inteligente está ativado, o computador muda para o Modo de Suspensão Moderno antes da Hora de início agendada e entra em hibernação quando estiver inativo durante um determinado período de tempo quando alimentado pela bateria. Este período de tempo é otimizado com base no agendamento definido pelo utilizador. O computador muda do modo de hibernação para o Modo de Suspensão Moderno apenas em dias agendados e não muda quando está inativo por dias agendados consecutivos.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Hora definida em que geralmente utiliza este computador",
+                        "subHeading1": "comece",
+                        "subHeading2": "fim",
+                        "subHeading3": "utilizar este agendamento para",
+                        "endTimeNote": "A Hora de fim tem de estar dentro de um prazo de 20 hora a partir da Hora de início",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
+                            "unit1": "Horas",
+                            "unit2": "Minutos",
                             "unit3": "AM/PM"
                         }
                     }

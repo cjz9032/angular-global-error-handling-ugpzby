@@ -277,14 +277,6 @@
                 },
                 "applied": {
                     "title": "APPLIED"
-				}
-			},
-			"brightness": {
-                "text1": {
-                    "title": "*Brightness setting doesn't apply on "
-                },
-                "text2": {
-                    "title": " effect"
                 }
             },
             "brightness": {
@@ -493,8 +485,8 @@
                 "email": "联系方式（如果您不喜欢可留空）",
                 "comments": "意见...",
                 "button": "提交",
-				"addScreenshot": "Add ScreenShot",
-				"messages": {
+                "addScreenshot": "Add ScreenShot",
+                "messages": {
                     "feedbackSuccess": "感谢您的反馈！"
                 },
                 "question1": "您喜欢 Vantage 的新风格吗？",
@@ -660,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "该系统可能不支持电池",
                         "description": "不是联想制造或授权的正版。系统将继续启动，但可能不会使用未经授权的电池充电。",
                         "description1": "注意：",
                         "description2": "Lenovo对未经授权的电池的性能或安全性不承担任何责任，并且不对因使用而导致的故障或损坏提供任何保证。"
@@ -690,10 +681,6 @@
                     "NotSupportACAdapter": {
                         "title": "不支持AC适配器",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
-					},
-					"MissingDriver": {
-                        "title": "The Lenovo Power Manager driver",
-                        "description": "未安装或无法正常工作。请运行Windows Update以安装最新的驱动程序"
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager driver",
@@ -862,11 +849,6 @@
                             "checkboxText": "自动将启动充电阈值设置为低于停止充电阈值5个百分点。",
                             "stop": "停止充电"
                         }
-					},
-					"expressCharging": {
-                        "title": "快速充电",
-                        "description": "快速充电可用比常规模式更快的速度将电池充满电。",
-                        "tooltip": "快速充电能够以更快的速度为系统电池充电，但这样可能会缩短电池寿命。"
                     },
                     "expressCharging": {
                         "title": "快速充电",
@@ -889,22 +871,22 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "ENERGY STAR 认证产品"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "智能待机",
+                    "description": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的快速启动时间。",
+                    "tooltip": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "设置通常使用此计算机的时间",
+                        "subHeading1": "开始",
+                        "subHeading2": "结束",
+                        "subHeading3": "将此计划用于",
+                        "endTimeNote": "结束时间必须在自开始时间起的 20 小时之内",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
-                            "unit3": "AM/PM"
+                            "unit1": "小时",
+                            "unit2": "分钟",
+                            "unit3": "上午/下午"
                         }
                     }
                 }
@@ -950,10 +932,6 @@
                             "silent": "静音",
                             "loud": "大音量"
                         }
-					},
-					"suppress": {
-                        "title": "抑制键盘噪音",
-                        "tooltip": "将此切换到打开以通过抑制键盘噪音来优化麦克风音频效果。"
                     },
                     "suppress": {
                         "title": "抑制键盘噪音",
@@ -994,17 +972,17 @@
                     "title": "显示",
                     "eyeCareMode": {
                         "title": "护眼模式",
-                        "checkbox": "设定从日出到日落的护眼模式",
+                        "checkbox": "设定从日落到日出的护眼模式",
                         "options": {
                             "warm": "暖（更护眼）",
                             "cold": "冷"
                         },
                         "reset": "重置温度",
                         "tooltip": "护眼模式会调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。",
-                        "onSunsetToSunriseScheduleDescription": "设定从日出到日落的护眼模式",
+                        "onSunsetToSunriseScheduleDescription": "设定从日落到日出的护眼模式",
                         "note": {
                             "title": "注",
-                            "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日出日落时间。"
+                            "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日落日出时间。"
                         }
                     },
                     "dispColorTemp": {
@@ -1015,10 +993,10 @@
                         },
                         "reset": "重置温度",
                         "tooltip": "护眼模式会调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。",
-                        "onSunsetToSunriseScheduleDescription": "设定从日出到日落的护眼模式",
+                        "onSunsetToSunriseScheduleDescription": "设定从日落到日出的护眼模式",
                         "note": {
                             "title": "注",
-                            "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日出日落时间。"
+                            "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日落日出时间。"
                         }
                     },
                     "privacyGuard": {
@@ -1357,8 +1335,8 @@
             "title": "可用更新",
             "description": "这些软件包包含对计算机的正常运行至关重要的更新。关键更新有助于使您的计算机更安全、更可靠，请尽快安装。推荐更新和可选更新有助于使您的软件保持最新，以及使您的计算机保持最佳运行状态。",
             "installAllUpdates": "安装所有更新",
-            "installSuccessHeader": "已成功安装所有更新",
             "installFailHeader": "某些更新未成功安装",
+            "installSuccessHeader": "已成功安装所有更新",
             "installFailDescription": "下载和安装这些更新的过程中发生了问题。请确保您处于联网状态，且安装更新的过程中不要关闭计算机。",
             "optionalUpdates": "可选更新",
             "installSelectedUpdates": "安装所选更新"
@@ -1613,8 +1591,8 @@
                 "name": "WIFI 安全",
                 "enable": "已启用",
                 "disable": "已禁用",
-                "less": "缩略信息",
                 "more": "更多信息",
+                "less": "缩略信息",
                 "networkHistory": "网络历史记录",
                 "connect": "最后连接",
                 "showmore": "显示更多内容",

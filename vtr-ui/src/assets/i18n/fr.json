@@ -470,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Vous avez bonne mine aujourd'hui "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Aucune connexion Internet n'a été détectée",
+            "subtitle": "En savoir plus sur la résolution des incidents de connexion dans notre",
+            "buttonText": "Obtenir de l'aide"
         },
         "feedback": {
             "title": "Donnez votre avis",
@@ -500,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
+            "title": "Vos paramètres rapides",
             "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "cameraPrivacy": "Caméra",
+            "eyeCareMode": "Mode Protection des yeux"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "État du système",
+            "subtitle": "DÉTECTEZ RAPIDEMENT L'ÉTAT DE VOTRE PÉRIPHÉRIQUE.",
             "memory": {
-                "title": "Memory",
+                "title": "Mémoire",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Mémoire introuvable",
+                    "of": "sur"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Espace disque",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Disque introuvable",
+                    "of": "sur"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Garantie",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Impossible de trouver la garantie",
+                    "until": "Jusqu'au",
+                    "expiredOn": "Garantie arrivée à expiration le",
+                    "notAvailable": "Garantie non disponible"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Mettre à jour"
                 }
             }
         }
@@ -652,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -813,9 +812,9 @@
                         "checkbox": "Activer le chargement USB à partir de la batterie de l'ordinateur portable quand celui-ci est éteint."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Reprise facile",
+                        "description": "Activez cette fonctionnalité pour améliorer la sortie du mode veille si vous ouvrez et rabattez fréquemment le capot de l'ordinateur.",
+                        "tooltip": "Cette fonctionnalité améliorera la sortie du mode veille de votre ordinateur si vous ouvrez et rabattez fréquemment le capot de votre ordinateur. Lorsque cette fonctionnalité est activée, votre ordinateur se mettra en mode économie d'énergie lorsque vous fermez son capot, et sortira du mode veille instantanément si vous le réouvrez moins de 15 minutes après l'avoir fermé. Cette fonctionnalité permet également à votre ordinateur de tenter de terminer les activités en cours (par exemple, l'envoi d'un e-mail ou le téléchargement d'un fichier) avant que le système ne s'interrompe."
                     }
                 },
                 "otherSettings": {
@@ -831,9 +830,9 @@
                         "title": "Seuil de chargement de la batterie",
                         "description": "Si vous utilisez votre ordinateur principalement avec son bloc d'alimentation et rarement sur batterie,vous pouvez augmenter la durée de vie de la batterie en définissant une valeur inférieure à 100 % pour la charge maximale. Une telle manipulation est utile car en stockant les batteries qui sont utilisées rarement à une valeur inférieure à la charge maximale, vous augmentez leur durée de vie.",
                         "tooltip": "Si votre batterie se charge actuellement au-delà du seuil d'arrêt de chargement, débranchez l'alimentation pour décharger la batterie jusqu'à ce qu'elle atteigne le seuil d'arrêt de chargement ou un niveau inférieur à celui-ci.Selon l'état de votre batterie (ancienne ou neuve), il est normal que le point exact de lancement ou d'arrêt du chargement diffère de 2 points de pourcentage maximum. Si vous activez cette fonctionnalité, il est recommandé de procéder périodiquement à une réinitialisation de la jauge de la batterie afin d'assurer l'exactitude du rapport de l'état de la batterie.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Important",
+                        "readMoreText": "En savoir plus.",
+                        "noteInfo": " Le seuil de chargement de la batterie n'est toujours pas pleinement actif. Veuillez débrancher votre appareil et laisser votre batterie se vider jusqu'au seuil d'arrêt de chargement ou en dessous de celui-ci.",
                         "settings": {
                             "title1": "Seuil pour batterie intégrée",
                             "title2": "Seuil pour batterie amovible"
@@ -846,9 +845,9 @@
                             "cancel": "ANNULER"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Commence le chargement quand le niveau est inférieur à",
+                            "checkboxText": "Définit automatiquement le seuil de lancement du chargement à 5 points de pourcentage en dessous du seuil d'arrêt de chargement.",
+                            "stop": "Arrêt du chargement à"
                         }
                     },
                     "expressCharging": {
@@ -872,20 +871,20 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "UN PRODUIT CERTIFIÉ ENERGY STAR"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Veille intelligente",
+                    "description": "Cette fonctionnalité programme l'ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant un démarrage rapide pendant les heures d'utilisation intense.",
+                    "tooltip": "Lorsque la Veille intelligente est activée, votre ordinateur passe à la Veille moderne avant l'heure de début prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisé en fonction de la période que vous aurez définie. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Définissez les heures pendant lesquelles vous utilisez en général votre ordinateur",
+                        "subHeading1": "début",
+                        "subHeading2": "fin",
+                        "subHeading3": "utilisez cette planification pour",
+                        "endTimeNote": "L'heure de fin doit se situer dans les 20 heures suivant l'heure de début",
                         "timeUnits": {
-                            "unit1": "Hours",
+                            "unit1": "Heures",
                             "unit2": "Minutes",
                             "unit3": "AM/PM"
                         }
