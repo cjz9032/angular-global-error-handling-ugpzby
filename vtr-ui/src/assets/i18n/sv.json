@@ -1616,7 +1616,8 @@
             },
             "errorMessage": {
                 "headerText": "Fel",
-                "bodyText": "Vi har sett att du saknar viktiga komponenter i Vantage. Komponenterna hämtas i bakgrunden. Försök igen litet senare."
+				"bodyText": "Vi har sett att du saknar viktiga komponenter i Vantage. Komponenterna hämtas i bakgrunden. Försök igen litet senare.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

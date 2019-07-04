@@ -1616,7 +1616,8 @@
             },
             "errorMessage": {
                 "headerText": "Hata",
-                "bodyText": "Vantage'ın kritik parçalarının sizde olmadığını tespit ettik. Bu parçalar arka planda indirilecek. Lütfen daha sonra yeniden deneyin."
+				"bodyText": "Vantage'ın kritik parçalarının sizde olmadığını tespit ettik. Bu parçalar arka planda indirilecek. Lütfen daha sonra yeniden deneyin.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

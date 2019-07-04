@@ -1616,7 +1616,8 @@
             },
             "errorMessage": {
                 "headerText": "Hiba",
-                "bodyText": "Úgy észleltük, hogy a Vantage létfontosságú összetevői hiányoznak. Ezek az összetevők a háttérben töltődnek le. Kérjük, később próbálja meg újra."
+				"bodyText": "Úgy észleltük, hogy a Vantage létfontosságú összetevői hiányoznak. Ezek az összetevők a háttérben töltődnek le. Kérjük, később próbálja meg újra.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

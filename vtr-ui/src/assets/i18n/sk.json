@@ -1616,7 +1616,8 @@
             },
             "errorMessage": {
                 "headerText": "Chyba",
-                "bodyText": "Zistili sme, že vám chýbajú dôležité časti aplikácie Vantage. Tieto časti sa prevezmú v pozadí. Skúste to znova neskôr."
+				"bodyText": "Zistili sme, že vám chýbajú dôležité časti aplikácie Vantage. Tieto časti sa prevezmú v pozadí. Skúste to znova neskôr.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

@@ -1616,7 +1616,8 @@
             },
             "errorMessage": {
                 "headerText": "Erro",
-                "bodyText": "Detetámos que não tem componentes críticos do Vantage. Estes componentes serão transferidos em segundo plano. Tente novamente mais tarde."
+				"bodyText": "Detetámos que não tem componentes críticos do Vantage. Estes componentes serão transferidos em segundo plano. Tente novamente mais tarde.",
+				"closeText": "close"
             }
         },
         "homeprotection": {
