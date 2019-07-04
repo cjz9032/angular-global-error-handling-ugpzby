@@ -143,6 +143,8 @@ import { ModalSupportWechatComponent } from './components/modal/modal-support-we
 import { ModalLicenseComponent } from './components/modal/modal-license/modal-license.component';
 import { SpinnerComponent } from './components/common/spinner/spinner.component';
 import { PagePrivacyComponent } from './components/pages/page-privacy/page-privacy.component';
+
+//GAMING
 import { PageDeviceGamingComponent } from './components/pages/page-device-gaming/page-device-gaming.component';
 import { WidgetLegionEdgeComponent } from './components/widgets/widget-legion-edge/widget-legion-edge.component';
 import { WidgetSystemToolsComponent } from './components/widgets/widget-system-tools/widget-system-tools.component';
@@ -150,22 +152,23 @@ import { WidgetSystemMonitorComponent } from './components/widgets/widget-system
 import { WidgetQuicksettingsListComponent } from './components/widgets/widget-quicksettings-list/widget-quicksettings-list.component';
 import { WidgetLightingComponent } from './components/widgets/widget-lighting/widget-lighting.component';
 import { ModalGamingLegionedgeComponent } from './components/modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
-import { PrivacyModule } from './components/pages/page-privacy/privacy.module';
 import { UiGamingCollapsibleContainerComponent } from './components/ui/ui-gaming-collapsible-container/ui-gaming-collapsible-container.component';
 import { PageMacrokeyComponent } from './components/pages/page-macrokey/page-macrokey.component';
 import { PageLightingcustomizeComponent } from './components/pages/page-lightingcustomize/page-lightingcustomize.component';
-import { PageHardwarescanComponent } from './components/pages/page-hardwarescan/page-hardwarescan.component';
-import { UiRoundedRectangleRadioComponent } from './components/ui/ui-rounded-rectangle-radio/ui-rounded-rectangle-radio.component';
-import { CameraBackgroundBlurComponent } from './components/camera-background-blur/camera-background-blur.component';
 import { PageAutocloseComponent } from './components/pages/page-autoclose/page-autoclose.component';
 import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
-import { PowerSmartSettingsComponent } from './components/widgets/power-smart-settings/power-smart-settings.component';
-import { PageSettingsComponent } from './components/pages/page-settings/page-settings.component';
 import { UiPopoverComponent } from './components/ui/ui-popover/ui-popover.component';
-import { OledPowerSettingsComponent } from './components/display/oled-power-settings/oled-power-settings.component';
 import { UiMacrokeyPopupComponent } from './components/ui/ui-macrokey-popup/ui-macrokey-popup.component';
-import { ModalChsWelcomeContainerComponent } from './components/pages/page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
 
+
+import { OledPowerSettingsComponent } from './components/display/oled-power-settings/oled-power-settings.component';
+import { PageSettingsComponent } from './components/pages/page-settings/page-settings.component';
+import { PowerSmartSettingsComponent } from './components/widgets/power-smart-settings/power-smart-settings.component';
+import { CameraBackgroundBlurComponent } from './components/camera-background-blur/camera-background-blur.component';
+import { PageHardwarescanComponent } from './components/pages/page-hardwarescan/page-hardwarescan.component';
+import { ModalChsWelcomeContainerComponent } from './components/pages/page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
+import { UiRoundedRectangleRadioComponent } from './components/ui/ui-rounded-rectangle-radio/ui-rounded-rectangle-radio.component';
+import { PrivacyModule } from './components/pages/page-privacy/privacy.module';
 // SA Components
 import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
 import { PageSecurityWifiComponent } from './components/pages/page-security-wifi/page-security-wifi.component';
