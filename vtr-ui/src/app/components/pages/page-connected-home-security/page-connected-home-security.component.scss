@@ -216,11 +216,22 @@
 		}
 	}
 
-	.vtr-page-right-column, .vtr-page-left-column{
-		@media #{$medium-screen} {
-			padding: 0rem 4rem 4rem 4rem;
-			margin-top: 0;
+	vtr-widget-questions{
+		::ng-deep .vtr-ui-list-chevron .chevron-list .item-text{
+			padding-left: 1.5rem !important;
 		}
+	}
+
+		@media #{$medium-screen} {
+			.vtr-page-right-column, .vtr-page-left-column{
+				padding: 0rem 4rem 4rem 4rem;
+				margin-top: 0;
+			}
+			vtr-header-main{
+				::ng-deep .vtr-header-main{
+					padding-left: 5rem;
+				}
+			}
 	}
 
 	@media #{$small-screen}{
@@ -229,6 +240,11 @@
 		}
 		.vtr-page-right-column{
 			margin-top: 6rem;
+		}
+		vtr-widget-questions{
+			::ng-deep .vtr-ui-list-chevron .chevron-list .item-text{
+				padding-left: 1rem !important;
+			}
 		}
 	}
 
