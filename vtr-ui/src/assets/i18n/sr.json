@@ -470,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Danas izgledate puni energije "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Nije otkrivena veza sa internetom",
+            "subtitle": "Saznajte više kako da rešite probleme sa vezom u našem članku",
+            "buttonText": "Pronađite podršku"
         },
         "feedback": {
             "title": "Pružite povratne informacije",
@@ -500,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Vaše brze postavke",
+            "microphone": "Mikrofon",
+            "cameraPrivacy": "Kamera",
+            "eyeCareMode": "Režim za zaštitu vida"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Status sistema",
+            "subtitle": "BRZO BUDITE U TOKU SA STATUSOM UREĐAJA.",
             "memory": {
-                "title": "Memory",
+                "title": "Memorija",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Memorija nije pronađena",
+                    "of": "od"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Prostor na disku",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Disk nije pronađen",
+                    "of": "od"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Garancija",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Garancija nije pronađena",
+                    "until": "Do",
+                    "expiredOn": "Garancija je istekla",
+                    "notAvailable": "Garancija nije dostupna"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Ažuriraj"
                 }
             }
         }
@@ -652,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -813,9 +812,9 @@
                         "checkbox": "Omogući USB punjenje sa baterije laptop računara kada je računar isključen."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Lako vraćanje",
+                        "description": "Omogućite ovu funkciju da biste poboljšali vreme nastavka rada ako često otvarate i zatvarate poklopac računara.",
+                        "tooltip": "Ova funkcija će poboljšati vreme nastavka rada ako često otvarate i zatvarate poklopac računara. Kada je omogućite, računar će ući u režim slabog napajanja kada zatvorite njegov poklopac, ali će nastaviti odmah ako ponovo otvorite poklopac u roku od 15 minuta od zatvaranja. Ova funkcija takođe dozvoljava vašem prenosivom računaru da pokuša za završi aktivnosti na čekanju (kao što je slanje e-poruke ili preuzimanje datoteke) pre nego što sistem pređe u režim privremenog obustavljanja."
                     }
                 },
                 "otherSettings": {
@@ -831,9 +830,9 @@
                         "title": "Prag punjenja baterije",
                         "description": "Ako prvenstveno koristite računar sa prikačenim adapterom za naizmeničnu struju i samo povremeno koristite napajanje iz baterije,možete da produžite životni vek baterije podešavanjem maksimalne vrednosti napunjenosti ispod 100%. Ovo je korisno zato što baterije koje se samo povremeno koriste imaju duži životni vek kada se održavaju na manjoj vrednosti od potpunog punjenja.",
                         "tooltip": "Ako je baterija trenutno napunjena iznad praga zaustavljanja punjenja, odvojite napajanje dok baterija se ne isprazni do ili ispod praga zaustavljanja punjenja.U zavisnosti od statusa baterije (da li je stara ili nova), tačna tačka pri kojoj punjenje započinje ili se zaustavlja može da se razlikuje i do 2%. Ako omogućite funkciju, treba da povremeno obavite resetovanje pokazivača napunjenosti baterije da biste obezbedili precizno izveštavanje o ispravnosti baterije.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Napomena",
+                        "readMoreText": "Pročitajte više.",
+                        "noteInfo": " Prag punjenja baterije još uvek nije potpuno aktivan. Isključite mašinu i omogućite da se baterija isprazni ili da bude ispod praga za prestanak punjenja.",
                         "settings": {
                             "title1": "Prag za ugrađenu bateriju",
                             "title2": "Prag za uklonjivu bateriju"
@@ -846,9 +845,9 @@
                             "cancel": "OTKAŽI"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Pokreni punjenje kada je ispod",
+                            "checkboxText": "Automatski podesite prag početka punjenja na 5 procenata ispod praga zaustavljanja punjenja.",
+                            "stop": "Zaustavi punjenje na"
                         }
                     },
                     "expressCharging": {
@@ -872,22 +871,22 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "SERTIFIKOVANI ENERGY STAR PROIZVOD"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Pametno stanje pripravnosti",
+                    "description": "Ova funkcija zakazuje optimizaciju štednje energije računara tokom časova neaktivnosti bez žrtvovanja vremena brzog pokretanja tokom časova intenzivnijeg korišćenja.",
+                    "tooltip": "Kada je omogućeno pametno stanje pripravnosti, računar se prebacuje u moderno stanje pripravnosti pre zakazanog vremena početka i ulazi u stanje hibernacije nakon izvesnog perioda neaktivnosti tokom rada na bateriju. Taj vremenski period je optimizovan na osnovu rasporeda koji ste podesili. Računar se prebacuje iy stanja hibernacije u moderno stanje pripravnosti samo tokom zakazanih dana, a ne prebacuje se kad je neaktivan tokom uzastopnih zakazanih dana.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Podesite vreme kada obično koristite ovaj računar",
+                        "subHeading1": "započnete",
+                        "subHeading2": "završetak",
+                        "subHeading3": "koristite ovaj raspored za",
+                        "endTimeNote": "Vreme završetka mora da bude u roku od 20 časova od vremena početka",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
-                            "unit3": "AM/PM"
+                            "unit1": "Sati",
+                            "unit2": "Minuti",
+                            "unit3": "Pre podne/po podne"
                         }
                     }
                 }
@@ -1616,7 +1615,8 @@
             },
             "errorMessage": {
                 "headerText": "Greška",
-                "bodyText": "Detektovali smo da vam nedostaju kritični delovi programa Vantage. Preuzimanje tih delova će se obaviti u pozadini. Pokušajte ponovo kasnije."
+				"bodyText": "Detektovali smo da vam nedostaju kritični delovi programa Vantage. Preuzimanje tih delova će se obaviti u pozadini. Pokušajte ponovo kasnije.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

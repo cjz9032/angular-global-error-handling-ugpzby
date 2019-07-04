@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef, HostListener, SecurityContext } from '@angular/core';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -7,6 +8,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 //import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ServerSwitch } from '../../../data-models/server-switch/server-switch.model'
 import { isNull, isUndefined } from 'util';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @Component({
   selector: 'vtr-modal-server-switch',
@@ -63,7 +65,8 @@ export class ModalServerSwitchComponent implements OnInit {
 
   constructor(
     public activeModal: NgbActiveModal,
-    public commonService: CommonService
+    public commonService: CommonService,
+    private router: Router 
   ) { }
 
   ngOnInit() {
@@ -143,9 +146,23 @@ export class ModalServerSwitchComponent implements OnInit {
       };
       //storing into localStorage
       this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey,serverSwitchLocalData);
-      console.log(window.location.href);
       
+      this.closeModal();
       //reload with new serverSwitch Parms
-      //window.location.reload();//working
+      this.redirectTo(this.router.url,{ serverswitch: true,d: (new Date).getTime()});
   }
+
+  redirectTo(uri:string,parms:{}) {
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigated = false;
+    this.router.routeReuseStrategy.shouldReuseRoute = function(){
+      return false;
+    };
+    this.router.navigateByUrl('/', {queryParams: parms ,queryParamsHandling: "merge",skipLocationChange: false})
+    .then(() => 
+      this.router.navigateByUrl(uri,{queryParams: parms,skipLocationChange: false})
+    );
+  }
+
+
 }

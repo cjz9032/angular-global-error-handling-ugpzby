@@ -470,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "오늘 동력 공급 상태 보기 "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "인터넷이 연결되어 있지 않음",
+            "subtitle": "연결 문제 해결 방법에 대해 자세히 알아보기",
+            "buttonText": "지원 가져오기"
         },
         "feedback": {
             "title": "피드백 제출",
@@ -500,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "빠른 설정",
+            "microphone": "마이크",
+            "cameraPrivacy": "카메라",
+            "eyeCareMode": "아이 케어 모드"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "시스템 상태",
+            "subtitle": "장치 상태를 빠르게 파악할 수 있습니다.",
             "memory": {
-                "title": "Memory",
+                "title": "메모리",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "파일을 찾을 수 없음",
+                    "of": "/"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "디스크 공간",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "디스크를 찾을 수 없음",
+                    "of": "/"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "보증",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "보증을 찾을 수 없음",
+                    "until": "기한",
+                    "expiredOn": "보증이 만료일",
+                    "notAvailable": "보증을 이용할 수 없음"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "업데이트"
                 }
             }
         }
@@ -652,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -813,9 +812,9 @@
                         "checkbox": "컴퓨터가 꺼져 있는 경우, 노트북 배터리를 통한 USB 충전을 사용으로 설정하십시오."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "간편 복귀",
+                        "description": "컴퓨터 덮개를 자주 열고 닫는다면 이 기능을 사용하여 복귀 시간을 향상시킬 수 있습니다.",
+                        "tooltip": "컴퓨터 덮개를 자주 열고 닫는다면 이 기능을 통해 복귀 시간을 향상시킬 수 있습니다. 이 설정을 사용하는 경우 컴퓨터의 덮개를 닫으면 전원을 적게 사용하는 모드가 시작되지만 덮고 나서 15분 내에 다시 덮개를 열면 바로 복귀가 가능합니다. 또한 이 기능을 사용해 시스템이 대기 모드에 들어가기 전에 노트북이 보류 중인 활동(예: 이메일 전송 또는 파일 다운로드)을 마치도록 할 수 있습니다."
                     }
                 },
                 "otherSettings": {
@@ -831,9 +830,9 @@
                         "title": "배터리 충전 임계값",
                         "description": "컴퓨터 사용 시 주로 AC 어댑터를 연결하고 가끔씩만 배터리 전원을 사용하는 경우,최대 충전 값을 100% 미만으로 설정하여 배터리 수명을 연장시킬 수 있습니다. 가끔씩 사용하는 배터리는 완전 충전 용량보다 적게 충전될 때 수명이 길어지므로 이 방법이 유용합니다.",
                         "tooltip": "현재 배터리가 충전 중지 임계값보다 높게 충전된 경우 배터리가 충전 중지 임계값 이하로 방전될 때까지 전원을 분리하십시오.배터리 상태(낡거나 낡지 않은 상태)에 따라, 충전이 시작되거나 중지되는 바로 그 지점에서 최대 2퍼센트의 차이가 생길 수도 있습니다. 해당 기능을 사용하는 경우 배터리 상태에 관한 어김없는 정확한 보고를 위해서 가끔 배터리 게이지 리셋을 수행하는 것이 바람직합니다.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "주",
+                        "readMoreText": "자세히 읽으십시오.",
+                        "noteInfo": " 배터리 충전 임계값이 여전히 완전히 활성화되지 않았습니다. 컴퓨터 플러그를 뽑고 충전 중지 임계값 이하로 배터리를 방전하십시오.",
                         "settings": {
                             "title1": "기본 제공 배터리의 임계값",
                             "title2": "이동식 배터리의 임계값"
@@ -846,9 +845,9 @@
                             "cancel": "취소"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "충전 시작 기준",
+                            "checkboxText": "충전 중지 임계값의 5% 이하로 충전 시작 임계값을 자동으로 설정합니다.",
+                            "stop": "충전 중지 기준"
                         }
                     },
                     "expressCharging": {
@@ -872,22 +871,22 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "ENERGY STAR 인증 제품"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "스마트 대기",
+                    "description": "사용량이 많을 때 빠른 시작 시간을 희생시키지 않고 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약하는 기능입니다.",
+                    "tooltip": "스마트 대기를 사용할 경우 예약된 시작 시간 전에 컴퓨터가 모던 대기로 바뀌며 배터리 전원이 일정 시간 동안 비활성화된 후 최대 절전 모드로 전환됩니다. 이 시간은 사용자가 설정한 스케줄을 토대로 최적화됩니다. 컴퓨터는 예약된 날에만 최대 절전 모드에서 모던 대기로 전환되며 비활성화되도록 예약된 날에는 전환되지 않습니다.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "이 컴퓨터를 주로 사용하는 시간 설정",
+                        "subHeading1": "시작하면",
+                        "subHeading2": "종료",
+                        "subHeading3": "다음에 대해 이 스케줄을 사용합니다",
+                        "endTimeNote": "종료 시간은 시작 시간으로부터 20시간 이내여야 합니다",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
-                            "unit3": "AM/PM"
+                            "unit1": "시간",
+                            "unit2": "분",
+                            "unit3": "오전/오후"
                         }
                     }
                 }
@@ -1616,7 +1615,8 @@
             },
             "errorMessage": {
                 "headerText": "오류",
-                "bodyText": "Vantage의 중요한 부분이 누락된 것을 발견했습니다. 이 파일은 백그라운드에서 다운로드됩니다. 나중에 다시 시도하십시오."
+				"bodyText": "Vantage의 중요한 부분이 누락된 것을 발견했습니다. 이 파일은 백그라운드에서 다운로드됩니다. 나중에 다시 시도하십시오.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

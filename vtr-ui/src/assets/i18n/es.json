@@ -470,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Energícese hoy "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "No se ha detectado ninguna conexión a Internet",
+            "subtitle": "Obtenga más información sobre cómo resolver problemas de conexión en nuestro",
+            "buttonText": "Obtenga soporte"
         },
         "feedback": {
             "title": "Proporcionar comentarios",
@@ -500,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Su configuración rápida",
+            "microphone": "Micrófono",
+            "cameraPrivacy": "Cámara",
+            "eyeCareMode": "Modalidad cuidado visión"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Estado del sistema",
+            "subtitle": "ACTUALIZACIÓN RÁPIDA DEL ESTADO DE SU DISPOSITIVO.",
             "memory": {
-                "title": "Memory",
+                "title": "Memoria",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "No se encontró la memoria",
+                    "of": "de"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Espacio de disco",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "No se encontró el disco",
+                    "of": "de"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Garantía",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "No se encontró garantía",
+                    "until": "Hasta",
+                    "expiredOn": "Garantía expirada el",
+                    "notAvailable": "Garantía no disponible"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Actualizar"
                 }
             }
         }
@@ -652,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -813,9 +812,9 @@
                         "checkbox": "Habilite la carga USB desde la batería del equipo portátil cuando sistema está desactivada."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Reanudación fácil",
+                        "description": "Habilite esta función para mejorar el tiempo de reanudación, en caso de que abra y cierre frecuentemente la tapa del equipo.",
+                        "tooltip": "Esta función mejorará el tiempo de reanudación, en caso de que abra y cierre frecuentemente la tapa del equipo. Cuando está habilitada, el equipo entrará a una modalidad de baja energía cuando cierre la tapa, pero se reanudará instantáneamente si la vuelve a abrir dentro de 15 minutos de haberla cerrado. Esta función también permite que el equipo portátil intente finalizar actividades pendientes (como enviar un correo electrónico o descargar un archivo) antes de que el sistema se suspenda."
                     }
                 },
                 "otherSettings": {
@@ -831,9 +830,9 @@
                         "title": "Umbral de carga de la batería",
                         "description": "Si utiliza principalmente el sistema con el adaptador de alimentación de CA conectado y solo utiliza la batería esporádicamente,puede aumentar la duración de la batería al configurar el valor máximo de carga a un valor inferior a 100 %. Esto resulta útil porque las baterías que se usan esporádicamente poseen una vida útil mayor cuando se mantienen con una carga inferior a la carga total.",
                         "tooltip": "Si la batería se carga actualmente por sobre el umbral de detención de carga, desconecte la alimentación hasta que la batería se descargue o esté bajo el umbral de detención de carga.Según el estado de la batería (antigua o nueva), el punto exacto de inicio o detención de la carga podría variar en hasta 2 puntos porcentuales. Si habilita la característica, se recomienda realizar ocasionalmente un Restablecimiento del indicador de batería para asegurar la realización de un informe exacto del estado de la batería.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Nota",
+                        "readMoreText": "Leer más.",
+                        "noteInfo": " El umbral de carga de la batería aún no está completamente activo. Desconecte la máquina y deje que la batería se agote o quede bajo el umbral de detención de carga.",
                         "settings": {
                             "title1": "Umbral de batería incorporada",
                             "title2": "Umbral de batería extraíble"
@@ -846,9 +845,9 @@
                             "cancel": "CANCELAR"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Comenzar a cargar cuando esté por debajo de",
+                            "checkboxText": "Configure automáticamente el umbral de inicio de carga cuando la batería esté 5 % bajo el umbral de detención de carga.",
+                            "stop": "Detener la carga en"
                         }
                     },
                     "expressCharging": {
@@ -872,21 +871,21 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "UN PRODUCTO CERTIFICADO POR ENERGY STAR"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Suspensión inteligente",
+                    "description": "Esta característica programa su equipo para optimizar el ahorro de energía de la batería durante las horas de inactividad sin sacrificar el tiempo de arranque rápido durante las horas de uso más intensivo.",
+                    "tooltip": "Cuando está activada la Suspensión inteligente, su equipo cambiará a Suspensión moderna antes de la hora de inicio programada y entrará en hibernación de energía de la batería después de estar inactivo por un periodo determinado. Este periodo se optimiza de acuerdo con su planificación establecida. El equipo cambiará de hibernación a Suspensión moderna solo en los días programados, no cambiará cuando esté inactivo por días programados consecutivos.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Establezca los horarios en los que normalmente utiliza este equipo",
+                        "subHeading1": "comience",
+                        "subHeading2": "final",
+                        "subHeading3": "utilice esta planificación para",
+                        "endTimeNote": "El tiempo de finalización debe encontrarse en un plazo de 20 horas desde la hora de inicio",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
+                            "unit1": "Horas",
+                            "unit2": "Minutos",
                             "unit3": "AM/PM"
                         }
                     }
@@ -1616,7 +1615,8 @@
             },
             "errorMessage": {
                 "headerText": "Error",
-                "bodyText": "Hemos detectado que faltan piezas críticas de Vantage. Estas piezas se descargarán en segundo plano. Vuelva a intentarlo más tarde."
+				"bodyText": "Hemos detectado que faltan piezas críticas de Vantage. Estas piezas se descargarán en segundo plano. Vuelva a intentarlo más tarde.",
+				"closeText": "close"
             }
         },
         "homeprotection": {
