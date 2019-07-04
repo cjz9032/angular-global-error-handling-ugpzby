@@ -15,14 +15,17 @@
 			},
 			"architect": {
 				"build": {
-					"builder": "@angular-devkit/build-angular:browser",
+					"builder": "@angular-builders/custom-webpack:browser",
 					"options": {
+						"customWebpackConfig": {
+							"path": "./custom-webpack.config.js"
+						},
 						"outputPath": "dist/vtr-ui",
 						"index": "src/index.html",
 						"main": "src/main.ts",
 						"polyfills": "src/polyfills.ts",
 						"tsConfig": "tsconfig.app.json",
-            "aot": false,
+						"aot": false,
 						"assets": [
 							"src/favicon.ico",
 							"src/assets",
@@ -75,8 +78,11 @@
 					}
 				},
 				"serve": {
-					"builder": "@angular-devkit/build-angular:dev-server",
+					"builder": "@angular-builders/custom-webpack:dev-server",
 					"options": {
+						"customWebpackConfig": {
+							"path": "./custom-webpack.config.js"
+						},
 						"browserTarget": "vtr-ui:build"
 					},
 					"configurations": {
