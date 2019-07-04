@@ -14,6 +14,11 @@
 				(click)="openFigleafApp()">
 			Block in Lenovo Privacy Essentials
 		</button>
+		<vtr-why-seeing-tooltip
+			[contextText]="textForTooltip"
+			*ngIf="!(isFigleafReadyForCommunication$ | async) && (websiteTrackersCount$ | async) > 0">
+		</vtr-why-seeing-tooltip>
+
 	</div>
 	<div class="trackers-concent"
 		 *ngIf="!(isConsentGiven$ | async) && !(isTrackersBlocked$ | async)">

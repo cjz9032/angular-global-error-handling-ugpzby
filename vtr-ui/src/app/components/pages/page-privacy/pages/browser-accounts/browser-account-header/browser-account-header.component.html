@@ -14,12 +14,17 @@
 	</p>
 </ng-container>
 <ng-template #defaultHeader>
-	<vtr-feature-header
-		[texts]="textForFeatureHeader"
-		[countOfIssue]="nonPrivatePasswordCount"
-		[isFeatureWasScanned]="isNonPrivatePasswordWasScanned"
-		[isFigleafReadyToCommunication]="isFigleafReadyForCommunication">
-		<span class="browser-accounts-header__title--red">{{nonPrivatePasswordCount}}</span> Non-private
-		passwords found
-	</vtr-feature-header>
+	<div class="browser-accounts-header">
+		<vtr-feature-header
+			[texts]="textForFeatureHeader"
+			[countOfIssue]="nonPrivatePasswordCount"
+			[isFeatureWasScanned]="isNonPrivatePasswordWasScanned"
+			[isFigleafReadyToCommunication]="isFigleafReadyForCommunication">
+			<span class="browser-accounts-header__title--red">{{nonPrivatePasswordCount}}</span> Non-private
+			passwords found
+		</vtr-feature-header>
+		<vtr-why-seeing-tooltip *ngIf="!isFigleafReadyForCommunication && nonPrivatePasswordCount > 0"
+			[contextText]="textForTooltip">
+		</vtr-why-seeing-tooltip>
+	</div>
 </ng-template>

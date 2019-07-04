@@ -28,6 +28,15 @@
 				(click)="openFigleafApp()">
 			Fix in Lenovo Privacy Essentials
 		</button>
+
+		<div class="breaches-page__tooltip">
+			<vtr-why-seeing-tooltip
+				[contextText]="getTextForTooltip((breachedAccountsCount$ | async))"
+				*ngIf="!(isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ | async) &&
+					!(isFigleafReadyForCommunication$ | async) &&
+					(breachedAccounts$ | async).length > 0">
+			</vtr-why-seeing-tooltip>
+		</div>
 	</div>
 
 	<div class="breached-accounts" data-analyticsName="BreachedAccountsBlock">

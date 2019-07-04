@@ -52,6 +52,10 @@ export class TrackersComponent {
 			'in Lenovo Privacy Essentials by Figleaf.'
 	};
 
+	textForTooltip = 'Your private information is being collected and shared without your permission. ' +
+		'You allowed us to scan your browsing history, and we found that you\'ve visited sites ' +
+		'that frequently use tracking tools.';
+
 	constructor(
 		private userAllowService: UserAllowService,
 		private countNumberOfIssuesService: CountNumberOfIssuesService,

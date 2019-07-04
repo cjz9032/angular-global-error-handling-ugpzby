@@ -23,6 +23,11 @@ export class BrowserAccountHeaderComponent {
 			'you risk sharing this private information unintentionally with apps and extensions on your PC.',
 	};
 
+	textForTooltip = 'Your passwords can be freely accessed by third-party apps. ' +
+		'You allowed us to scan your browser, so we found and easily decrypted these' +
+		' passwords to show you how other programs can do the same without your knowledge. ' +
+		'One big difference — we don\'t store or share your passwords.';
+
 	isNoneBreachedAndFigleafReadyState() {
 		return this.isNonPrivatePasswordWasScanned &&
 			this.isFigleafReadyForCommunication &&

@@ -1,6 +1,13 @@
 @import "../../../styles/common-blocks";
 
 .browser-accounts-header {
+	display: flex;
+	flex-flow: row;
+	align-content: center;
+	align-items: center;
+	justify-content: space-between;
+
+
 	&__header {
 		margin-bottom: 3rem;
 	}

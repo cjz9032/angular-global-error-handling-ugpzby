@@ -29,6 +29,7 @@ import { BigPitchComponent } from './big-pitch/big-pitch.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TooltipComponent } from './tooltip/tooltip.component';
+import { WhySeeingTooltipComponent } from './why-seeing-tooltip/why-seeing-tooltip.component';
 
 @NgModule({
 	declarations: [
@@ -55,6 +56,7 @@ import { TooltipComponent } from './tooltip/tooltip.component';
 		BigPitchComponent,
 		SpinnerComponent,
 		TooltipComponent,
+		WhySeeingTooltipComponent,
 	],
 	exports: [
 		SimpleLoaderComponent,
@@ -80,6 +82,7 @@ import { TooltipComponent } from './tooltip/tooltip.component';
 		BigPitchComponent,
 		SpinnerComponent,
 		TooltipComponent,
+		WhySeeingTooltipComponent,
 	],
 	imports: [
 		CommonModule,

@@ -68,6 +68,12 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 		this.vantageCommunicationService.openFigleafByUrl(link);
 	}
 
+	getTextForTooltip(numberOfIssues) {
+		const numberOfIssuesText = numberOfIssues === 1 ? 'breached account' : 'breached accounts';
+		return `Your private information is not private anymore. You allowed us to do a search, and we found ${numberOfIssues} ${numberOfIssuesText} ` +
+			`tied to your email address among compromised records on the internet and the dark web.`;
+	}
+
 	private updateTextForHeader(userEmail: string) {
 		this.textForFeatureHeader = {
 			...this.textForFeatureHeader,
