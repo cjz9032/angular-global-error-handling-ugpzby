@@ -10,7 +10,7 @@
 		"lint": "ng lint",
 		"fix-no-console": "node prebuild/no-console.js",
 		"e2e": "ng e2e",
-		"stats": "ng build --prod --stats-json && npx webpack-bundle-analyzer dist/vtr-ui/stats.json",
+		"stats": "ng build --prod --stats-json && npx webpack-bundle-analyzer dist/vtr-ui/stats-es5.json",
 		"pwa": "ng build --prod & http-server ./dist/vtr-ui -p 4200 -c-1 ",
 		"release": "standard-version"
 	},
