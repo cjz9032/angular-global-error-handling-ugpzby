@@ -63,7 +63,7 @@
 		<div class="row" *ngIf="homeSecurityOverviewMyDevice && homeSecurityOverviewMyDevice.devicePostures && homeSecurityOverviewMyDevice.devicePostures.length > 0">
 			<div class=" col-12 col-lg-6 device-info" *ngFor="let device of homeSecurityOverviewMyDevice.devicePostures">
 				<div class="row">
-					<div class="col-7 title" title="{{device.name}}">{{ device.name }}</div>
+					<div class="col-7 title" title="{{device.name | translate}}">{{ device.name | translate }}</div>
 					<div class="col-3 detail bad" *ngIf="device.vulnerable === true">
 						{{ 'security.homeprotection.securityhealth.fail' | translate}}</div>
 					<div class="col-3 detail good" *ngIf="device.vulnerable === false">
