@@ -1616,7 +1616,8 @@
             },
             "errorMessage": {
                 "headerText": "Fout",
-                "bodyText": "We hebben vastgesteld dat er essentiële stukjes Vantage missen. Deze onderdelen worden op de achtergrond gedownload. Probeer het later alstublieft opnieuw."
+				"bodyText": "We hebben vastgesteld dat er essentiële stukjes Vantage missen. Deze onderdelen worden op de achtergrond gedownload. Probeer het later alstublieft opnieuw.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

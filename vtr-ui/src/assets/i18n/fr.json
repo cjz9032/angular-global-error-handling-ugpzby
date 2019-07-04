@@ -1616,7 +1616,8 @@
             },
             "errorMessage": {
                 "headerText": "Erreur",
-                "bodyText": "Nous avons détecté une absence critique ce certaines pièces de Vantage. Ces pièces sont téléchargées en arrière-plan. Réessayez plus tard."
+				"bodyText": "Nous avons détecté une absence critique ce certaines pièces de Vantage. Ces pièces sont téléchargées en arrière-plan. Réessayez plus tard.",
+				"closeText": "close"
             }
         },
         "homeprotection": {
