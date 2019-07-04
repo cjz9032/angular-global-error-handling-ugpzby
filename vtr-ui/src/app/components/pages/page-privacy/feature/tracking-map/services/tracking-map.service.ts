@@ -86,6 +86,7 @@ export class TrackingMapService {
 	}
 
 	private convertToTrackingData(trackersInfo: TrackersInfo, userHistory: VisitedWebsitesInfo[]): TrackingDataDescription {
+		console.log('convertToTrackingData', userHistory, trackersInfo);
 		const sites = userHistory
 			.filter((site) => site && trackersInfo.sites[site.domain])
 			.map((site) => ({

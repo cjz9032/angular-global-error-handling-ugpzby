@@ -1,12 +1,13 @@
 import { Component, OnDestroy, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
 import { PrivacyScoreService } from './privacy-score.service';
-import { map, takeUntil } from 'rxjs/operators';
+import { filter, map, switchMap, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
 import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
 import { AppStatuses } from '../../../userDataStatuses';
+import { combineLatest } from 'rxjs';
 
 @Component({
 	selector: 'vtr-privacy-score',
@@ -41,14 +42,16 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.privacyScoreService.newPrivacyScore$
-			.pipe(
-				takeUntil(instanceDestroyed(this)),
-			)
-			.subscribe((score) => {
-				this.setDataAccordingToScore(score);
-				this.changeDetectorRef.detectChanges();
-			});
+		combineLatest([
+			this.privacyScoreService.newPrivacyScore$,
+			this.isFirstTimeVisitor$
+		]).pipe(
+			filter(([score, isFirstTimeVisitor]) => !isFirstTimeVisitor),
+			takeUntil(instanceDestroyed(this)),
+		).subscribe(([score]) => {
+			this.setDataAccordingToScore(score);
+			this.changeDetectorRef.detectChanges();
+		});
 	}
 
 	ngOnDestroy() {

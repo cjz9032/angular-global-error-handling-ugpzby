@@ -149,9 +149,11 @@ export class UserDataGetStateService {
 			appStatus = AppStatuses.trialSoonExpired;
 		}
 
-		if (isTrialLicense && isTrialExpired) {
+		if (isTrialExpired) {
 			appStatus = AppStatuses.trialExpired;
 		}
+
+		console.log('calculateAppStatuses', appStatus);
 
 		return appStatus;
 	}
