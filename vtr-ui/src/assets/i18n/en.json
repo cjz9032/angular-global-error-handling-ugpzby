@@ -45,7 +45,7 @@
 					},
 					"lightingDriverPopup": {
 						"headerText": "Driver Install Required",
-						"text": "Please install driver",
+						"text": "Install driver to activate lighting",
 						"button": "Install",
 						"link": "cancel"
 					},
