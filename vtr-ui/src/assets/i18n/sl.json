@@ -1615,7 +1615,8 @@
             },
             "errorMessage": {
                 "headerText": "Napaka",
-                "bodyText": "Zaznali smo, da vam manjkajo ključni deli programa Vantage. Ti deli se bodo prenesli v ozadju. Poskusite znova pozneje."
+				"bodyText": "Zaznali smo, da vam manjkajo ključni deli programa Vantage. Ti deli se bodo prenesli v ozadju. Poskusite znova pozneje.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

@@ -1615,7 +1615,8 @@
             },
             "errorMessage": {
                 "headerText": "Errore",
-                "bodyText": "Sono stati rilevati errori di perdita di pacchetti Vantage. Questi pacchetti verranno scaricati in background. Si prega di riprovare più tardi."
+				"bodyText": "Sono stati rilevati errori di perdita di pacchetti Vantage. Questi pacchetti verranno scaricati in background. Si prega di riprovare più tardi.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

@@ -1615,7 +1615,8 @@
             },
             "errorMessage": {
                 "headerText": "Fehler",
-                "bodyText": "Wir haben festgestellt, dass Ihnen wichtige Teile von Vantage fehlen. Diese Teile werden im Hintergrund heruntergeladen. Versuchen Sie es später erneut."
+				"bodyText": "Wir haben festgestellt, dass Ihnen wichtige Teile von Vantage fehlen. Diese Teile werden im Hintergrund heruntergeladen. Versuchen Sie es später erneut.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

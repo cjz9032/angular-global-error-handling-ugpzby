@@ -30,8 +30,8 @@ import {
 	SessionStorageKey
 } from 'src/app/enums/session-storage-key-enum';
 import {
-	SecurityService
-} from 'src/app/services/security/security.service';
+	DialogService
+} from 'src/app/services/dialog/dialog.service';
 
 @Component({
 	selector: 'wifi-security',
@@ -57,7 +57,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		public modalService: NgbModal,
 		private commonService: CommonService,
 		public regionService: RegionService,
-		private securityService: SecurityService,
+		private dialogService: DialogService,
 		private ngZone: NgZone
 	) {
 		super();
@@ -95,7 +95,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 					}
 					this.data.homeProtection.refresh();
 				}, (error) => {
-					this.securityService.wifiSecurityLocationDialog(this.data.wifiSecurity);
+					this.dialogService.wifiSecurityLocationDialog(this.data.wifiSecurity);
 				});
 			}
 		} catch {
@@ -120,7 +120,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	}
 
 	onToggleChange($event: any) {
-		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage) === 'true') {
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage) === true) {
 			this.switchDisabled = true;
 			if (this.data.isLWSEnabled) {
 				this.data.wifiSecurity.disableWifiSecurity().then((res) => {
@@ -142,7 +142,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 					},
 					(error) => {
 						this.data.isLWSEnabled = false;
-						this.securityService.wifiSecurityLocationDialog(this.data.wifiSecurity);
+						this.dialogService.wifiSecurityLocationDialog(this.data.wifiSecurity);
 						this.switchDisabled = false;
 					}
 				);

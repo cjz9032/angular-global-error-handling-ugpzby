@@ -89,12 +89,12 @@ import { DisplayService } from './services/display/display.service';
 import { ContainerService } from './services/container/container.service';
 import { CommsService } from './services/comms/comms.service';
 import { DashboardService } from './services/dashboard/dashboard.service';
-import { SecurityService } from './services/security/security.service';
 import { UserService } from './services/user/user.service';
 import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-detail.service';
 import { CameraDetailMockService } from './services/camera/camera-detail/camera-detail.mock.service';
 import { AudioService } from './services/audio/audio.service';
 import { RegionService } from './services/region/region.service';
+import { DialogService } from './services/dialog/dialog.service';
 import { GlobalErrorHandler } from './services/error-handler/global.service';
 
 // FONT AWESOME
@@ -240,6 +240,7 @@ import { SanitizeModule } from './modules/sanitize.module';
 import { SmartStandbyComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/smart-standby/smart-standby.component';
 import { UiDaysPickerComponent } from './components/ui/ui-days-picker/ui-days-picker.component';
 import { DownloadFailedModalComponent } from './components/pages/page-smart-assist/voice/download-failed-modal/download-failed-modal.component';
+import { ModalErrorMessageComponent } from './components/modal/modal-error-message/modal-error-message.component';
 import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component';
 
 library.add(fas);
@@ -431,6 +432,7 @@ library.add(fal);
 		SmartStandbyComponent,
 		UiDaysPickerComponent,
 		DownloadFailedModalComponent,
+		ModalErrorMessageComponent,
 		ModalServerSwitchComponent
 	],
 	imports: [
@@ -460,10 +462,10 @@ library.add(fal);
 		ContainerService,
 		CommsService,
 		DashboardService,
-		SecurityService,
 		UserService,
 		AudioService,
 		RegionService,
+		DialogService,
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService },
 		{ provide: ErrorHandler, useClass: GlobalErrorHandler }
 	],
@@ -488,6 +490,7 @@ library.add(fal);
 		ModalIntelligentCoolingModesComponent,
 		ModalVoiceComponent,
 		DownloadFailedModalComponent,
+		ModalErrorMessageComponent,
 		ModalServerSwitchComponent
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]

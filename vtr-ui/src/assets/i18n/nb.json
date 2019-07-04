@@ -1615,7 +1615,8 @@
             },
             "errorMessage": {
                 "headerText": "Feil",
-                "bodyText": "Vi har oppdaget at du mangler viktige deler av Vantage. Disse delene lastes ned i bakgrunnen. Prøv igjen senere."
+				"bodyText": "Vi har oppdaget at du mangler viktige deler av Vantage. Disse delene lastes ned i bakgrunnen. Prøv igjen senere.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

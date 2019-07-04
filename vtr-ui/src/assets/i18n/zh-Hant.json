@@ -1615,7 +1615,8 @@
             },
             "errorMessage": {
                 "headerText": "錯誤",
-                "bodyText": "我們發現您缺少 Vantage 的關鍵組件。這些組件將在背景進行下載。請稍後重試。"
+				"bodyText": "我們發現您缺少 Vantage 的關鍵組件。這些組件將在背景進行下載。請稍後重試。",
+				"closeText": "close"
             }
         },
         "homeprotection": {
