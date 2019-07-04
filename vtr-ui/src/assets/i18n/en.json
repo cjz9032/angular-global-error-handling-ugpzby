@@ -826,7 +826,7 @@
 				},
 				"smartStandby": {
 					"title": "Smart Standby",
-					"description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
+					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
 					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
 					"timer": {
 						"heading": "Set time when you typically use this computer",
@@ -1227,16 +1227,16 @@
 					"caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
 				},
 				"modalPopUp": {
-					"heading": "Get started:",
-					"point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
+					"heading": "Getting started:",
+					"point1": "Make sure that the Lenovo Voice icons is displayed in the Windows system tray.",
 					"point2": "Open the file where you want to record the converted text.",
 					"point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
 					"point4": "Select your desired language and click the microphone icon to start.",
 					"point5": "Put the cursor to where you want to edit and begin to speak.",
-					"point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-					"point7": "Select your desired source language and target language.",
-					"point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-					"point9": "Click the microphone icon to start speaking.",
+					"point6": "Click on the Lenovo Voice icon and select Translation.",
+					"point7": "Set your origin (left) and destination (right) languages.",
+					"point8": "Choose the speaker or microphone audio input source (lower right).",
+					"point9": "Click the main microphone button to start translating.",
 					"closeText": "close"
 				},
 				"modalInstallationFailed": {
