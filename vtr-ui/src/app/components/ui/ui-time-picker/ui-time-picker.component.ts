@@ -21,7 +21,7 @@ export class UiTimePickerComponent implements OnInit, OnChanges {
 	copyHour: number;
 	copyMinute: number;
 	copyAmPm: number;
-	hours = ['12', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11'];
+	hours = ['12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'];
 	minutes = ['00', '15', '30', '45'];
 	amPms = ['AM', 'PM'];
 
@@ -72,8 +72,11 @@ export class UiTimePickerComponent implements OnInit, OnChanges {
 
 	setTimer() {
 		const hour = this.copyAmPm ? this.copyHour + 12 : this.copyHour;
-
-		const time = hour + ':' + this.minutes[this.copyMinute];
+		let hourString = hour.toString();
+		if (hour < 10) {
+			hourString = '0' + hour.toString();
+		}
+		const time = hourString + ':' + this.minutes[this.copyMinute];
 		this.setTime.emit(time);
 		this.showTimerDropDown = false;
 	}

@@ -123,6 +123,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 						this.onIntelligentCoolingToggle(customEvent, false);
 					} else {
 						// need to make toggle button off
+						this.enableIntelligentCoolingToggle = false;
+						this.showIntelligentCoolingModes = true;
 						this.setPerformanceAndCool(currentMode);
 					}
 				} else if (response.itsVersion == 4) {
