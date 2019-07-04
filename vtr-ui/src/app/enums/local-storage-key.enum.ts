@@ -143,4 +143,5 @@ export enum LocalStorageKey {
 	RemainingPercentages = '[LocalStorageKey] RemainingPercentages',
 
 	memOCFeatureStatus = '[LocalStorageKey] MemOCFeatureStatus',
+	hybridModeFeatureStatus = '[LocalStorageKey] HybridModeFeatureStatus',
 }

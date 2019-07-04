@@ -183,7 +183,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	};
 	public cpuOCStatus: CPUOCStatus = new CPUOCStatus();
 	public setCpuOCStatus: any;
-	public cacheMemOCFeature: boolean=false;
+	public cacheMemOCFeature: boolean = false;
+	public cacheHybridModeFeature: boolean = false;
 	constructor(
 		private modalService: NgbModal,
 		private ngZone: NgZone,
@@ -225,6 +226,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		);
 		this.cacheMemOCFeature = this.commonService.getLocalStorageValue(LocalStorageKey.memOCFeatureStatus);
 		this.legionUpdate[1].isChecked = this.cacheMemOCFeature;
+
+		this.cacheHybridModeFeature = this.commonService.getLocalStorageValue(LocalStorageKey.hybridModeFeatureStatus);
+		this.legionUpdate[4].isChecked = this.cacheHybridModeFeature;
 		// Initialize Legion Edge component from cache
 		this.legionEdgeInit();
 		// console.log('CPU get status', this.GetCPUOverClockCacheStatus());
@@ -242,10 +246,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.legionUpdate[1].isVisible = gamingStatus.memOCFeature;
 		// TBD add autoclose later at index 2
 		// TODO have to remove this || condition and line no 242.
-		this.legionUpdate[3].isVisible = gamingStatus.networkBoostFeature || true;
+		this.legionUpdate[3].isVisible = gamingStatus.networkBoostFeature; // || true;
 		console.log('aparna  driver lack ' + gamingStatus.networkBoostFeature);
 		this.legionUpdate[4].isVisible = gamingStatus.hybridModeFeature;
-		this.legionUpdate[4].isChecked = gamingStatus.hybridStatus;
+		//this.legionUpdate[4].isChecked = gamingStatus.hybridStatus;
 		this.legionUpdate[5].isVisible = gamingStatus.touchpadLockFeature;
 		this.legionUpdate[5].isChecked = gamingStatus.touchpadLockStatus;
 
@@ -369,6 +373,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			if (hybridModeStatus !== undefined) {
 				this.HybrimodeStatusObj.hybridModeStatus = hybridModeStatus;
 				this.legionUpdate[4].isChecked = hybridModeStatus;
+				this.commonService.setLocalStorageValue(LocalStorageKey.hybridModeFeatureStatus, hybridModeStatus);
 			}
 		});
 	}
