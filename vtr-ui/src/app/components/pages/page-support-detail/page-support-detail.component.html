@@ -12,7 +12,7 @@
 					<div class="row mn-6 card mx-5 mb-5">
 						<div class="col p-5">
 							<div class="row py-5 description-container">
-								<div class="col" [innerHTML]="qa.description | sanitize : 'bypasshtml'"> <!-- sahinul25Jun2019 VAN-5719-->
+								<div class="col" [innerHTML]="qa.description | sanitize : 'html'"> <!-- sahinul25Jun2019 VAN-5719-->
 								</div>
 							</div>
 							<div class="row inset-content align-items-center justify-content-center py-3 invisible"
