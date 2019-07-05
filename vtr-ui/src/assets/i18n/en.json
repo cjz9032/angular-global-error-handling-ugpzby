@@ -671,8 +671,9 @@
 						"title": "The battery is in good condition."
 					},
 					"Exhaustion": {
-						"title": "The battery has failed due to normal",
-						"description": "wear. The battery cannot be charged. Replace the battery."
+						"description": "The battery has",
+						"description1": "failed due to normal wear.",
+						"description2": "The battery cannot be charged. Replace the battery."
 					},
 					"Bad": {
 						"title": "A battery error has occurred.",
