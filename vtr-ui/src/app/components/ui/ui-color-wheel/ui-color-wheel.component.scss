@@ -2,7 +2,7 @@
 
 .picker-container {
   position: relative;
- // border-top: 0.2rsem solid $gaming_darkest;
+  border-top: 0.2rem solid $gaming_darkest;
   .overlay {
     position: absolute;
     width: 100%;
@@ -21,28 +21,35 @@
     padding-top: 16rem;
     box-sizing: border-box;
     @media #{$mediaquery_X7} {
-      min-width: 320px;
+      //min-width: 320px;
     }
     @media #{$mediaquery_10} {
-      min-width: 47rem;
+      //min-width: 47rem;
     }
     @media #{$mediaquery_X29} {
-      min-width: 47rem;
+      //min-width: 50rem;
     }
   }
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: flex-end;
+  .rgb-header {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    .content-title{
+      font-weight: $weight_medium;
+      color: $gaming_lightest;
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+  }
   .wheel-container {
+    display: flex;
+    align-items: flex-end;
 	  @media #{$large-screen-1}{
-		  margin-right: -3rem;
-	  }
-	  .content-title{
-		color: $light;
-		font-size: 1.8rem;
-		font-weight: $weight_bold;
-		margin-top: 4rem;
-		margin-bottom: 6rem;
+		  //margin-right: -3rem;
 	  }
   }
   .color-display {
