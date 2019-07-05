@@ -34,13 +34,12 @@
 				[contextText]="textForTooltip"
 				*ngIf="!(isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ | async) &&
 					!(isFigleafReadyForCommunication$ | async) &&
-					(breachedAccounts$ | async).length > 0">
+					(breachedAccounts$ | async)?.length > 0">
 			</vtr-why-seeing-tooltip>
 		</div>
 	</div>
 
 	<div class="breached-accounts" data-analyticsName="BreachedAccountsBlock">
-
 		<vtr-email-scanner
 			*ngIf="isUndefinedWithoutFigleafState$ | async"
 			[userEmail]="userEmail$ | async"
