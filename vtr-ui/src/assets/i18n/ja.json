@@ -1179,31 +1179,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Lenovo Active Protection System は、ハードディスク・ドライブを物理的な強い衝撃や振動による損傷から保護する役に立つ自動機能です。ご使用のコンピューターの動きを常にモニターし、落下など損傷のおそれがある事態が予測される場合に、ハードディスク・ドライブを一時的に停止します。",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "感度を変更します。低感度モードでは、大きな衝撃の場合にのみ保護をアクティブにします",
+                    "checkbox": "電車や車の振動のような繰り返しの衝撃を無視します"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Active Protection を手動で休止する",
+                    "caption": "Active Protection System を手動で休止できるようにします",
+                    "dropdown-title": "休止時間",
+                    "button": "今すぐ休止"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "タブレット使用中のハードディスク・ドライブへのアクセスを向上させるために、次の活動が検出されたら Active Protection System を一時停止します",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "ペン入力",
+                        "description": "ペン入力の使用時に、ペンが範囲外になると APS を有効にします"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "タッチ入力",
+                        "description": "タッチ入力の使用時に、タッチ入力が検出されないと APS を有効にします"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "コンピューターの端の手元近接センサーによる感知",
+                        "description": "タブレットモードが有効な場合、手が検出されないと APS を有効にします"
                     }
                 }
             },
@@ -1214,30 +1214,30 @@
                 "tooltip": "この機能は Web ビデオ・プレイヤーに適用できません。Windows Media Player、5KPlayer など、人気のあるローカル・ビデオ・プレイヤーは、この機能をサポートしています。"
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "音声",
+                "description": "Lenovo Voice は、音声テキスト変換機能を使用して音声をテキストに変換し、翻訳機能を使用して音声からテキストへのリアルタイムの翻訳を提供します。",
+                "installBtnText": "インストール",
+                "launchBtnText": "起動",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "音声テキスト変換",
+                    "caption": "この機能を使用して音声をテキストに変換できます。"
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "翻訳",
+                    "caption": "この機能は音声のリアルタイム翻訳を提供します。翻訳された内容はテキストで表示されます。必要に応じて原文の言語と訳文の言語を選択できます。"
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "使用開始:",
+                    "point1": "Lenovo Voice アイコンが Windows のシステム トレイに表示されていることを確認します。",
+                    "point2": "変換したテキストを記録するファイルを開きます。",
+                    "point3": "Windows システム トレイの Lenovo Voice アイコンをクリックして、「音声テキスト変換」を選択します。",
+                    "point4": "目的の言語を選択し、マイクのアイコンをクリックして開始します。",
+                    "point5": "編集箇所にカーソルを置き、話し始めます。",
+                    "point6": "Windows システム トレイの Lenovo Voice アイコンをクリックして、「翻訳」を選択します。",
+                    "point7": "目的の原文言語と訳文言語を選択します。",
+                    "point8": "必要に応じて、スピーカーまたはマイクからの音声入力を設定します。",
+                    "point9": "マイクのアイコンをクリックして話し始めます",
+                    "closeText": "閉じる"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1615,8 +1615,9 @@
             },
             "errorMessage": {
                 "headerText": "エラー",
-				"bodyText": "Vantage の重要なピースを見逃していることがわかりました。これらのピースはバックグラウンドでダウンロードされます。後から再試行してください。",
-				"closeText": "close"
+                "bodyText": "Vantage の重要なピースを見逃していることがわかりました。これらのピースはバックグラウンドでダウンロードされます。後から再試行してください。",
+                "closeText": "close",
+                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
             }
         },
         "homeprotection": {

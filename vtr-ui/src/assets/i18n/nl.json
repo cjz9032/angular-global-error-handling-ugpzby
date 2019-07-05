@@ -1179,31 +1179,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Het Lenovo Active Protection System is een autonome functie die uw vaste schijf beschermt tegen schade die wordt veroorzaakt door zware fysieke schokken en trillingen. Het controleert voortdurend de beweging van uw computer en stopt de vaste schijf tijdelijk wanneer een val of vergelijkbaar voorval dat schade met zich mee kan brengen, wordt verwacht.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "De gevoeligheid wijzigen in de laag gevoelige werkstand, alleen harde schokken activeren de bescherming",
+                    "checkbox": "Herhaaldelijke schokken, zoals in een trein of auto, negeren"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Handmatige Active Protection Suspension",
+                    "caption": "Laat me het Active Protection System handmatig onderbreken",
+                    "dropdown-title": "Onderbreken gedurende",
+                    "button": "Nu onderbreken"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Om tijdens het gebruik van de tablet de toegang tot het vasteschijfstation te verbeteren, schakelt u Active Protection System uit wanneer de onderstaande activiteiten worden gedetecteerd",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Peninvoer",
+                        "description": "Wanneer peninvoer wordt gebruikt, schakelt u APS in als de pen buiten bereik is"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Invoer via aanraken",
+                        "description": "Als aanraakinvoer wordt gebruikt, schakelt u APS in als aanraakinvoer niet wordt gedetecteerd"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Sensors voor handnabijheid aan de randen van de computer",
+                        "description": "Als de Tablet werkstand is ingeschakeld, moet u APS inschakelen als de hand niet wordt gedetecteerd"
                     }
                 }
             },
@@ -1214,30 +1214,30 @@
                 "tooltip": "Deze functie is niet van toepassing op webvideospelers. Populaire lokale videospelers, zoals Windows Media Player, 5KPlayer en dergelijke, ondersteunen deze functie."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Spraak",
+                "description": "Lenovo Voice helpt bij het converteren van uw stem naar teksten met de functie Stem naar tekst en biedt realtime vertaling van Stem naar tekst met de vertaalfunctie.",
+                "installBtnText": "Installeer",
+                "launchBtnText": "Starten",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Stem naar tekst",
+                    "caption": "Met deze functie kunt u uw stem omzetten in tekst."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Vertaling",
+                    "caption": "Deze functie biedt realtime vertaling naar stem. De vertaalde inhoud wordt in tekst weergegeven. U kunt de bron- en doeltalen kiezen, afgestemd op uw behoeften."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Aan de slag:",
+                    "point1": "Zorg ervoor dat het Lenovo Voice-pictogram in het systeemvak van Windows wordt afgebeeld.",
+                    "point2": "Open het bestand waarin u de geconverteerde tekst wilt opslaan.",
+                    "point3": "Klik op het Lenovo Voice-pictogram in het systeemvak van Windows en selecteer Stem naar tekst.",
+                    "point4": "Selecteer de gewenste taal en klik op het pictogram van de microfoon om te beginnen.",
+                    "point5": "Plaats de cursor op de positie waar u wilt bewerken en begin te spreken.",
+                    "point6": "Klik op het Lenovo Voice-pictogram in het systeemvak van Windows en selecteer Vertalen.",
+                    "point7": "Selecteer de gewenste bron- en doeltaal.",
+                    "point8": "Stel de steminvoer vanaf een luidspreker of vanaf een microfoon in, afhankelijk van uw behoeften.",
+                    "point9": "Klik op het pictogram microfoon om te beginnen met spreken",
+                    "closeText": "sluiten"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1615,8 +1615,9 @@
             },
             "errorMessage": {
                 "headerText": "Fout",
-				"bodyText": "We hebben vastgesteld dat er essentiële stukjes Vantage missen. Deze onderdelen worden op de achtergrond gedownload. Probeer het later alstublieft opnieuw.",
-				"closeText": "close"
+                "bodyText": "We hebben vastgesteld dat er essentiële stukjes Vantage missen. Deze onderdelen worden op de achtergrond gedownload. Probeer het later alstublieft opnieuw.",
+                "closeText": "close",
+                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
             }
         },
         "homeprotection": {
