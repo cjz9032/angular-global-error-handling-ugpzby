@@ -1164,7 +1164,7 @@
                 "autoScreenOff": {
                     "title": "Automatyczne wyłączanie ekranu",
                     "caption": "Automatycznie wyłącza wyświetlacz, gdy jest skierowany w dół lub gdy użytkownik idzie.",
-                    "note": "Funkcja ta jest niedostępna, jeżeli w sekcji System w Ustawieniach systemu Windows wybrano ustawienie planu zasilania: „nigdy nie wyłączaj ekranu na zasilaniu akumulatorowym”. Aby włączyć tę funkcję, wybierz wartość inną niż „Nigdy”.",
+                    "note": "Funkcja ta jest niedostępna, jeżeli w sekcji System w Ustawieniach systemu Windows wybrano ustawienie planu zasilania: „nigdy nie wyłączaj ekranu na zasilaniu akumulatorowym”. Aby włączyć tę funkcję, wybierz wartość inną niż „Nigdy”.",
                     "windowsLink": "Przechodzenie do ustawień zasilania i uśpienia w Ustawieniach systemu Windows"
                 },
                 "keepMyDisplay": {
@@ -1179,31 +1179,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Lenovo Active Protection System to automatycznie działająca funkcja, która pomaga chronić dysk twardy przed uszkodzeniem spowodowanym przez silne wstrząsy i wibracje. Stale monitoruje ruchy komputera i tymczasowo zatrzymuje dysk twardy, jeśli przewidzi upadek lub podobne zdarzenie mogące prowadzić do uszkodzenia.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "Zmiana wrażliwości w trybie o niskiej wrażliwości, tylko większe wstrząsy aktywują ochronę",
+                    "checkbox": "Ignoruj powtarzające się wstrząsy, takie jak w pociągu lub samochodzie"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Ręczne zawieszenie funkcji Active Protection",
+                    "caption": "Zezwól na ręczne zawieszanie funkcji Active Protection System",
+                    "dropdown-title": "Zawieś na",
+                    "button": "Zawieś teraz"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Aby poprawić dostęp do dysku twardego podczas korzystania z tabletu, zawieś funkcję Active Protection System, gdy zostaną wykryte następujące działania",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Wprowadzanie przy użyciu rysika",
+                        "description": "Gdy do wprowadzania danych używany jest rysik, włącz APS, jeśli rysik jest poza zasięgiem"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Wprowadzanie dotykowe",
+                        "description": "Gdy używane jest wprowadzanie dotykowe, włącz APS, gdy wprowadzanie dotykowe nie zostanie wykryte"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Bliskość dłoni wykrywana na krawędziach komputera",
+                        "description": "Gdy tryb tabletu jest włączony, włącz APS, gdy ręka nie zostanie wykryta"
                     }
                 }
             },
@@ -1214,30 +1214,30 @@
                 "tooltip": "Ta funkcja nie dotyczy odtwarzaczy wideo w sieci Web. Popularne lokalne odtwarzacze wideo, takie jak program Windows Media Player, 5KPlayer itd., obsługują tę funkcję."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Głos",
+                "description": "Funkcja Lenovo Voice pomaga przekształcić Twój głos na tekst za pomocą funkcji Głos na tekst i zapewnia tłumaczenie w czasie rzeczywistym z głosu na tekst za pomocą funkcji tłumaczenia.",
+                "installBtnText": "Zainstaluj",
+                "launchBtnText": "Uruchom",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Głos na tekst",
+                    "caption": "Ta funkcja pomaga przekształcić Twój głos na tekst."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Tłumaczenie",
+                    "caption": "Ta funkcja zapewnia tłumaczenie głosu w czasie rzeczywistym. Przetłumaczone treści są wyświetlane jako tekst. Możesz wybrać języki źródłowe i docelowe zgodnie z własnymi potrzebami."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Rozpocznij:",
+                    "point1": "Upewnij się, że ikona funkcji Lenovo Voice jest wyświetlana na pasku zadań systemu Windows.",
+                    "point2": "Otwórz plik, w którym chcesz nagrać przekonwertowany tekst.",
+                    "point3": "Kliknij ikonę funkcji Lenovo Voice na pasku zadań systemu Windows i wybierz opcję Głos na tekst.",
+                    "point4": "Wybierz żądany język i kliknij ikonę mikrofonu, aby rozpocząć.",
+                    "point5": "Umieść kursor w miejscu, w którym chcesz edytować i zacznij mówić.",
+                    "point6": "Kliknij ikonę funkcji Lenovo Voice na pasku zadań systemu Windows i wybierz opcję Tłumacz.",
+                    "point7": "Wybierz żądany język źródłowy oraz docelowy.",
+                    "point8": "W zależności od potrzeb ustaw wejście głosowe z głośnika lub z mikrofonu.",
+                    "point9": "Kliknij ikonę mikrofonu, aby zacząć mówić",
+                    "closeText": "zamknij"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1615,8 +1615,9 @@
             },
             "errorMessage": {
                 "headerText": "Błąd",
-				"bodyText": "Wykryliśmy, że brakuje ważnych elementów aplikacji Vantage. Te elementy zostaną pobrane w tle. Spróbuj ponownie później.",
-				"closeText": "close"
+                "bodyText": "Wykryliśmy, że brakuje ważnych elementów aplikacji Vantage. Te elementy zostaną pobrane w tle. Spróbuj ponownie później.",
+                "closeText": "close",
+                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
             }
         },
         "homeprotection": {

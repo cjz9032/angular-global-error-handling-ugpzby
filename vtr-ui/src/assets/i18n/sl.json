@@ -1179,31 +1179,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Tehnologija Lenovo Active Protection System je samodejna funkcija, ki pomaga trdi disk zaščititi pred poškodbami, ki nastanejo zaradi močnega fizičnega udarca in vibracij. Stalno spremlja gibanje računalnika in začasno ustavi trdi disk, ko predvidi padec ali podoben dogodek, ki lahko poškoduje disk.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "Spremenite občutljivost – zaščita bo v načinu nizke občutljivosti aktivirana samo ob močnejših udarcih",
+                    "checkbox": "Prezri ponavljajoče se udarce, na primer tiste v vlaku ali avtomobilu"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Ročna ustavitev tehnologije Active Protection",
+                    "caption": "Dovoli ročno ustavitev tehnologije Active Protection System",
+                    "dropdown-title": "Ustavi za",
+                    "button": "Ustavi zdaj"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Za izboljšan dostop do trdega diska pri uporabi v načinu tabličnega računalnika ustavi Active Protection System, ko so zaznane te dejavnosti",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Vnos s peresom",
+                        "description": "Pri uporabi vnosa s peresom omogoči APS, ko je pero zunaj dosega"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Vnos z dotikom",
+                        "description": "Pri uporabi vnosa z dotikom omogoči APS, ko vnos z dotikom ni zaznan"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Zaznavanje bližine rok na robovih računalnika",
+                        "description": "Ko je omogočen način tabličnega računalnika, omogoči APS, ko roka ni zaznana"
                     }
                 }
             },
@@ -1214,30 +1214,30 @@
                 "tooltip": "Ta funkcija se ne uporablja za spletne videopredvajalnike. To funkcijo podpirajo priljubljeni lokalni videopredvajalniki, kot so Windows Media Player, 5KPlayer in drugi."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Glas",
+                "description": "Lenovo Voice s funkcijo pretvorbe glasu v besedilo pomaga pretvoriti glas v besedilo, s funkcijo Prevajanje pa zagotavlja prevode iz glasu v besedila v realnem času.",
+                "installBtnText": "Namestitev",
+                "launchBtnText": "Zaženite",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Pretvorba glasu v besedilo",
+                    "caption": "Ta funkcija pomaga pretvoriti glas v besedilo."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Prevod",
+                    "caption": "Ta funkcija zagotavlja prevajanje glasu v realnem času. Prevedena vsebina je prikazana kot besedilo. Izvorne in ciljne jezike lahko izberete glede na lastne potrebe."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Začnimo:",
+                    "point1": "Prepričajte se, da je na sistemskem pladnju Windows prikazana ikona Lenovo Voice.",
+                    "point2": "Odprite datoteko, v katero želite zabeležiti pretvorjeno besedilo.",
+                    "point3": "Kliknite ikono Lenovo Voice na sistemskem pladnju Windows in izberite Voice to text (Pretvorba glasu v besedilo).",
+                    "point4": "Izberite želeni jezik in kliknite ikono mikrofona, da začnete.",
+                    "point5": "Kazalec premaknite na mesto, kjer želite urejati, in začnite govoriti.",
+                    "point6": "Kliknite ikono Lenovo Voice na sistemskem pladnju Windows in izberite Translate (Prevajanje).",
+                    "point7": "Izberite želeni izvorni in ciljni jezik.",
+                    "point8": "Zvočni vhod nastavite na zvočnik ali mikrofon (odvisno od vaših potreb).",
+                    "point9": "Če želite začeti govoriti, kliknite ikono mikrofona",
+                    "closeText": "zapri"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1615,8 +1615,9 @@
             },
             "errorMessage": {
                 "headerText": "Napaka",
-				"bodyText": "Zaznali smo, da vam manjkajo ključni deli programa Vantage. Ti deli se bodo prenesli v ozadju. Poskusite znova pozneje.",
-				"closeText": "close"
+                "bodyText": "Zaznali smo, da vam manjkajo ključni deli programa Vantage. Ti deli se bodo prenesli v ozadju. Poskusite znova pozneje.",
+                "closeText": "close",
+                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
             }
         },
         "homeprotection": {

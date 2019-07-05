@@ -1179,31 +1179,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Lenovo Active Protection System er en automatisk funktion, der beskytter harddisken mod beskadigelse, som skyldes kraftige fysiske stød eller rystelser. Funktionen overvåger computerens bevægelser hele tiden og stopper harddisken midlertidigt, hvis der registreres et fald eller en lignende hændelse.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "Skift følsomheden. Når der er valgt en tilstand med lav følsomhed, vil kun hårde stød aktivere beskyttelsen",
+                    "checkbox": "Ignorer gentagne stød, f.eks. fra et tog eller bil"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Afbryd Active Protection manuelt",
+                    "caption": "Giv mig mulighed for at afbryde Active Protection System manuelt",
+                    "dropdown-title": "Afbryd i",
+                    "button": "Afbryd nu"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "For at forbedre adgangen til harddisken under tabletbrug skal Active Protection System afbrydes, når følgende aktiviteter registreres",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Input via pen",
+                        "description": "Når der bruges input med pennen, skal APS aktiveres, når pennens input er uden for rækkevidde"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Input via berøring",
+                        "description": "Når der bruges berøringsinput, skal du APS aktiveres, når berøringsinput ikke registreres"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Registrering af, hvor langt hånden er fra computerens kanter",
+                        "description": "Når tablet-tilstand er aktiveret, skal APS aktiveres, når hånden ikke registreres"
                     }
                 }
             },
@@ -1214,30 +1214,30 @@
                 "tooltip": "Denne funktion kan ikke bruges med internetvideoafspillere. Populære lokale videoafspillere som f.eks. Windows Media Player, 5KPlayer osv. understøtter denne funktion."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "stemme",
+                "description": "Lenovo Voice hjælper med at konvertere din tale til tekst med funktionen Tale til tekst og giver mulighed for realtidsoversættelse fra tale til tekst med oversættelsesfunktionen.",
+                "installBtnText": "Installér",
+                "launchBtnText": "Start",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Tale til tekst",
+                    "caption": "Med denne funktion kan du konvertere din tale til tekst."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Oversættelse",
+                    "caption": "Denne funktion giver realtidsoversættelse af det, der siges. Det oversatte indhold vises som tekst. Du kan vælge kildesprog og målsprog i henhold til dine behov."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Kom i gang:",
+                    "point1": "Tjek, at Lenovo Voice-ikonet vises i systembakken i Windows.",
+                    "point2": "Åbn den fil, hvor den konverterede tekst skal optages.",
+                    "point3": "Klik på Lenovo Voice-ikonet i systembakken i Windows, og vælg Tale til tekst.",
+                    "point4": "Vælg det ønskede sprog, og klik på mikrofonikonet for at starte.",
+                    "point5": "Placer markøren på det sted, du vil redigere, og begynd at tale.",
+                    "point6": "Klik på Lenovo Voice-ikonet i systembakken i Windows, og vælg Oversæt.",
+                    "point7": "Vælg det ønskede kildesprog og målsprog.",
+                    "point8": "Angiv stemmeinput fra højttaler eller fra mikrofon afhængigt af dine behov.",
+                    "point9": "Klik på mikrofonikonet for at begynde at tale",
+                    "closeText": "luk"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1615,8 +1615,9 @@
             },
             "errorMessage": {
                 "headerText": "Fejl",
-				"bodyText": "Vi har opdaget, at du mangler vigtige dele af Vantage. Disse dele downloades i baggrunden. Prøv igen senere.",
-				"closeText": "close"
+                "bodyText": "Vi har opdaget, at du mangler vigtige dele af Vantage. Disse dele downloades i baggrunden. Prøv igen senere.",
+                "closeText": "close",
+                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
             }
         },
         "homeprotection": {
