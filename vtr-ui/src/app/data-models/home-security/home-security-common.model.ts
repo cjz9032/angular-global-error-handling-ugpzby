@@ -12,18 +12,18 @@ export class HomeSecurityCommon {
 	}
 
 	openCornet(feature?: string) {
-		this.connectedHomeSecurity.account.visitWebConsole(feature);
+		this.connectedHomeSecurity.visitWebConsole(feature);
 	}
 
 	upgrade() {
-		this.connectedHomeSecurity.account.purchase();
+		this.connectedHomeSecurity.purchase();
 	}
 
 	startTrial() {
 		let alreadyLoggedIn = this.connectedHomeSecurity.account.lenovoId.loggedIn;
 		if (alreadyLoggedIn) {
 			this.startTrialDisabled = true;
-			this.connectedHomeSecurity.account.createAccount().then((result) => {
+			this.connectedHomeSecurity.createAndGetAccount().then((result) => {
 				this.startTrialDisabled = result ;
 			}).catch(() => {
 				this.startTrialDisabled = false;
@@ -31,7 +31,7 @@ export class HomeSecurityCommon {
 		} else {
 			const callback = (loggedIn: boolean) => {
 				if (loggedIn && !alreadyLoggedIn) {
-					this.connectedHomeSecurity.account.createAccount().then((result) => {
+					this.connectedHomeSecurity.createAndGetAccount().then((result) => {
 						this.startTrialDisabled = result ;
 					}).catch(() => {
 						this.startTrialDisabled = false;
