@@ -12,24 +12,37 @@
 
 	<div class="dropdown row">
 		<section class="col-sm-12 col-md-4">
-			<h5>TASKBAR DIMMER</h5>
+			<h5>{{'device.deviceSettings.displayCamera.display.oledPowerSettings.taskBarDimmer' | translate}}
+			</h5>
 			<vtr-ui-dropdown [list]="intervals"
 				[value]="taskBarDimmerValue"
-				(change)="onTaskBarDimmerChange($event)">
+				(change)="onTaskBarDimmerChange($event)"
+				vtrMetrics
+				metricsEvent="FeatureClick"
+				metricsParent="Page.Settings"
+				metricsName="OledPowerSettings.TaskBarDimmer">
 			</vtr-ui-dropdown>
 		</section>
 		<section class="col-sm-12 col-md-4">
-			<h5>BACKGROUND DIMMER</h5>
+			<h5>{{'device.deviceSettings.displayCamera.display.oledPowerSettings.backgroundDimmer' | translate}}</h5>
 			<vtr-ui-dropdown [list]="intervals"
 				[value]="backgroundDimmerValue"
-				(change)="onBackgroundDimmerChange($event)">
+				(change)="onBackgroundDimmerChange($event)"
+				vtrMetrics
+				metricsEvent="FeatureClick"
+				metricsParent="Page.Settings"
+				metricsName="OledPowerSettings.BackgroundDimmer">
 			</vtr-ui-dropdown>
 		</section>
 		<section class="col-sm-12 col-md-4">
-			<h5>DISPLAY DIMMER</h5>
+			<h5>{{'device.deviceSettings.displayCamera.display.oledPowerSettings.displayDimmer' | translate}}</h5>
 			<vtr-ui-dropdown [list]="intervals"
 				[value]="displayDimmerValue"
-				(change)="onDisplayDimmerChange($event)">
+				(change)="onDisplayDimmerChange($event)"
+				vtrMetrics
+				metricsEvent="FeatureClick"
+				metricsParent="Page.Settings"
+				metricsName="OledPowerSettings.DisplayDimmer">
 			</vtr-ui-dropdown>
 		</section>
 	</div>

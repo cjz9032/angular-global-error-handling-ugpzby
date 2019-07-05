@@ -993,7 +993,18 @@
 							"It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
 						],
 						"reset": "Reset temperature",
-						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display.",
+						"dropDown": {
+							"seconds": "seconds",
+							"minute": "minute",
+							"minutes": "minutes",
+							"alwaysOn": "Always on",
+							"never": "never",
+							"halfTime": "Half time of display off timer"
+						},
+						"taskBarDimmer": "TASKBAR DIMMER",
+						"backgroundDimmer": "BACKGROUND DIMMER",
+						"displayDimmer": "DISPLAY DIMMER"
 					},
 					"dispColorTemp": {
 						"title": "Daytime Color Temperature",
