@@ -145,14 +145,13 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	onNotification(notification: AppNotification) {
 		if (notification && notification.type === ChargeThresholdInformation.ChargeThresholdInfo) {
 			const chargeThresholdInfo = notification.payload;
+			this.chargeThresholdInfo = chargeThresholdInfo[0];
 			if (chargeThresholdInfo.length > 1) {
-				if (chargeThresholdInfo[1].isOn) {
-					this.chargeThresholdInfo = notification.payload[0];
-				}
-				if (chargeThresholdInfo[0].isOn) {
+				if (!chargeThresholdInfo[0].isOn && chargeThresholdInfo[1].isOn) {
 					this.chargeThresholdInfo = notification.payload[0];
 				}
 			}
+
 			// TODO: uncomment in dual battery implementation story
 
 			// const chargeThresholdBatteries = [];
