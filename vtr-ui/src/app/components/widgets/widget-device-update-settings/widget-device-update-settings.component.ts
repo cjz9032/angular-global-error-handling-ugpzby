@@ -18,6 +18,7 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 	@Output() toggleOnOff = new EventEmitter<any>();
 	@Output() popupClosed = new EventEmitter<any>();
 	@Output() iconClick = new EventEmitter<any>();
+	@Output() showDropDown = new EventEmitter();
 	showVar = false;
 
 	public showDriversPopup: boolean;

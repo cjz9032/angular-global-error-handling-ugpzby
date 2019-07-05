@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { DropDownInterval } from '../../../data-models/common/drop-down-interval.model';
+import { TranslateService } from '@ngx-translate/core';
+import { DisplayService } from 'src/app/services/display/display.service';
 
 @Component({
 	selector: 'vtr-oled-power-settings',
@@ -8,27 +10,36 @@ import { DropDownInterval } from '../../../data-models/common/drop-down-interval
 })
 export class OledPowerSettingsComponent implements OnInit {
 	@Input() description: any;
-
+	@Input() hasOLEDPowerControlCapability;
 	title: string;
 	public intervals: DropDownInterval[];
 	public taskBarDimmerValue: number;
 	public backgroundDimmerValue: number;
 	public displayDimmerValue: number;
 
-	constructor() { }
+	constructor(public displayService: DisplayService,
+		private translate: TranslateService) { }
 
 	ngOnInit() {
 		this.populateIntervals();
 		this.initOledSettings();
 	}
 
+	ngOnChanges(changes: SimpleChanges) {
+		// only run when property "data" changed
+		if (changes['hasOLEDPowerControlCapability']) {
+			console.log(' hasOLEDPowerControlCapability value changed', this.hasOLEDPowerControlCapability);
+			this.initOledSettings();
+		}
+	}
+
 	private populateIntervals() {
-		const seconds = 'seconds';
-		const minute = 'minute';
-		const minutes = 'minutes';
-		const alwaysOn = 'Always on';
-		const never = 'Never';
-		const halfTime = 'Half time of display off timer';
+		const seconds = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.seconds'); //'';
+		const minute = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.minute'); //'minute';
+		const minutes = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.minutes');  //'minutes';
+		const alwaysOn = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.alwaysOn'); //'Always on';
+		const never = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.never'); //'Never';
+		const halfTime = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.halfTime'); //'Half time of display off timer';
 
 		this.intervals = [{
 			name: alwaysOn,
@@ -98,31 +109,180 @@ export class OledPowerSettingsComponent implements OnInit {
 		}];
 	}
 
-	private initOledSettings() {
-		// make JS bridge and get current state
-		this.taskBarDimmerValue = 0;
-		this.backgroundDimmerValue = 0;
-		this.displayDimmerValue = 0;
-	}
+	public initOledSettings() {
+		try {
+			if (this.displayService.isShellAvailable) {
+				this.displayService.getOLEDPowerControlCapability()
+					.then((result: boolean) => {
+						console.log('OLED-Power-Settings : getOLEDPowerControlCapability.then', result);
+						this.hasOLEDPowerControlCapability = result;
+						if (this.hasOLEDPowerControlCapability === true) {
+							this.getTaskbarDimmerSetting();
+							this.getBackgroundDimmerSetting();
+							this.getDisplayDimmerSetting();
+						}
 
-	public onTaskBarDimmerChange($event: DropDownInterval) {
-		console.log('onTaskBarDimmerChange', $event);
-		if ($event) {
-			this.title = $event.placeholder;
+					}).catch(error => {
+						console.error('OLED-Power-Settings : getOLEDPowerControlCapability', error);
+
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+
 		}
 	}
 
-	public onBackgroundDimmerChange($event: DropDownInterval) {
-		console.log('onBackgroundDimmerChange', $event);
+
+	public onTaskBarDimmerChange($event: DropDownInterval) {
+		console.log('OLED-Power-Settings : onTaskBarDimmerChange', String($event.value));
 		if ($event) {
 			this.title = $event.placeholder;
+			this.taskBarDimmerValue = $event.value;
+			this.setTaskbarDimmerSetting($event.value);
+		}
+
+	}
+
+	public onBackgroundDimmerChange($event: DropDownInterval) {
+		console.log('OLED-Power-Settings : onBackgroundDimmerChange', String($event.value));
+		if ($event) {
+			this.title = $event.placeholder;
+			this.backgroundDimmerValue = $event.value;
+			this.setBackgroundDimmerSetting($event.value);
 		}
 	}
 
 	public onDisplayDimmerChange($event: DropDownInterval) {
-		console.log('onDisplayDimmerChange', $event);
+		console.log('OLED-Power-Settings : onDisplayDimmerChange', String($event.value));
 		if ($event) {
 			this.title = $event.placeholder;
+			this.displayDimmerValue = $event.value;
+			this.setDisplayDimmerSetting($event.value);
+		}
+	}
+
+
+
+	getTaskbarDimmerSetting() {
+		try {
+			if (this.displayService.isShellAvailable && this.hasOLEDPowerControlCapability) {
+				this.displayService.getTaskbarDimmerSetting()
+					.then((result: any) => {
+						console.log('OLED-Power-Settings : getTaskbarDimmerSetting.then', result.displayStrIndex);
+						// this.taskbarDimmerSetting = result;
+						this.taskBarDimmerValue = result.displayStrIndex;
+
+					}).catch(error => {
+						console.error('OLED-Power-Settings : getTaskbarDimmerSetting error', error);
+
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+
+		}
+	}
+
+	getBackgroundDimmerSetting() {
+		try {
+			if (this.displayService.isShellAvailable && this.hasOLEDPowerControlCapability) {
+				this.displayService.getBackgroundDimmerSetting()
+					.then((result: any) => {
+						console.log('OLED-Power-Settings : getBackgroundDimmerSetting.then', result.displayStrIndex);
+						/* this.backgroundDimmerSetting = result; */
+						this.backgroundDimmerValue = result.displayStrIndex;
+
+					}).catch(error => {
+						console.error('OLED-Power-Settings : getBackgroundDimmerSetting error', error);
+
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+
+		}
+	}
+
+	getDisplayDimmerSetting() {
+		try {
+			if (this.displayService.isShellAvailable && this.hasOLEDPowerControlCapability) {
+				this.displayService.getDisplayDimmerSetting()
+					.then((result: any) => {
+						console.log('OLED-Power-Settings : getDisplayDimmerSetting.then', result.displayStrIndex);
+						/* this.displayDimmerSetting = result; */
+						this.displayDimmerValue = result.displayStrIndex;
+
+					}).catch(error => {
+						console.error('OLED-Power-Settings : getDisplayDimmerSetting error', error);
+
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+
+		}
+	}
+
+
+	private setTaskbarDimmerSetting(value: number) {
+		try {
+			console.log('OLED-Power-Settings : setTaskbarDimmerSetting changed in display', value);
+			if (this.displayService.isShellAvailable && this.hasOLEDPowerControlCapability) {
+				this.displayService
+					.setTaskbarDimmerSetting(String(value)).then((result: boolean) => {
+						console.log('OLED-Power-Settings : setTaskbarDimmerSetting.then', result);
+
+					}).catch(error => {
+						console.error('OLED-Power-Settings : setTaskbarDimmerSetting error ', error);
+
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+
+
+	private setBackgroundDimmerSetting(value: number) {
+		try {
+			console.log('OLED-Power-Settings : setBackgroundDimmerSetting changed in display', value);
+
+			if (this.displayService.isShellAvailable && this.hasOLEDPowerControlCapability) {
+				this.displayService
+					.setBackgroundDimmerSetting(String(value)).then((result: boolean) => {
+						console.log('OLED-Power-Settings : setBackgroundDimmerSetting.then', result);
+
+
+					}).catch(error => {
+						console.error('OLED-Power-Settings : setBackgroundDimmerSetting error', error.message);
+
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+
+
+	private setDisplayDimmerSetting(value: number) {
+		try {
+			console.log('OLED-Power-Settings : setDisplayDimmerSetting changed in display', value);
+
+
+			if (this.displayService.isShellAvailable && this.hasOLEDPowerControlCapability) {
+				this.displayService
+					.setDisplayDimmerSetting(String(value)).then((result: boolean) => {
+						console.log('OLED-Power-Settings : setDisplayDimmerSetting.then', result);
+
+
+					}).catch(error => {
+						console.error('OLED-Power-Settings : setDisplayDimmerSetting error', error);
+
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
 		}
 	}
 }

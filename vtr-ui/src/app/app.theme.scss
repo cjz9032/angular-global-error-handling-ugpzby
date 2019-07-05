@@ -149,8 +149,8 @@ $mediaquery_16: "only screen and (min-width: 531px) and (max-width : 585px)";
 $mediaquery_17: "only screen and (min-width: 1196px) and (max-width : 1346px)";
 $mediaquery_18: "only screen and (min-width: 1258px) and (max-width : 1271px)";
 $mediaquery_19: "only screen and (min-width: 2160px) and (max-width : 3840px) and (max-resolution: 300dpi)";
-$mediaquery_20:"only screen and (min-width:350px) and (max-width : 500px)";
-$mediaquery_21:"only screen and (min-width:500px) and (max-width:991px)";
+$mediaquery_20: "only screen and (min-width:350px) and (max-width : 500px)";
+$mediaquery_21: "only screen and (min-width:500px) and (max-width:991px)";
 $mediaquery_xl: "only screen and (max-width : 1199px)";
 $mediaquery_lg: "only screen and (max-width : 992px)";
 $mediaquery_md: "only screen and (max-width : 768px)";
@@ -186,7 +186,7 @@ $mediaquery_X28: "only screen and (max-width : 700px)";
 $mediaquery_X29: "only screen and (min-width: 1346px) and (max-width : 1550px)";
 $mediaquery_X30: "only screen and (min-width: 1030px) and (max-width : 1080px)";
 $mediaquery_X31: "only screen and (min-width: 768px) and (max-width : 917px)";
-
+$mediaquery_X32: "only screen and (min-width: 560px) and (max-width : 600px)";
 $dpiquery_0: "max-resolution: 350dpi";
 $dpiquery_1: "max-resolution: 275dpi";
 $dpiquery_2: "max-resolution: 200dpi";
@@ -252,8 +252,11 @@ $menu_height: 9rem;
 $header_height: 20.5rem;
 
 $modal_top_margin: 8rem;
+$grey_dark: #667481;
+$grey_light: #e6eaeb;
 
 /*media screen sizes for gaming*/
+$only-small-screen: "only screen and (max-width : 575px)";
 $small-screen: "only screen and (max-width : 767px)";
 $medium-screen: "only screen and (min-width : 768px) and (max-width : 992px)";
 $below-large-screen: "only screen and (min-width : 993px) and (max-width : 1199px)";
