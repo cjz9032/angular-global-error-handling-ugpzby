@@ -6,7 +6,7 @@ import {
 	AfterViewInit
 } from '@angular/core';
 import {
-	EventTypes, ConnectedHomeSecurity, PluginMissingError
+	EventTypes, ConnectedHomeSecurity, PluginMissingError, CHSAccountState,
 } from '@lenovo/tan-client-bridge';
 import {
 	VantageShellService
@@ -210,7 +210,8 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		if (showPluginMissingDialog === 'unknow') {
 			setTimeout(this.showWelcomeDialog.bind(this), 16);
 		} else if (showPluginMissingDialog === 'notShow') {
-			const welcomeComplete = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, false);
+			const welcomeComplete = this.chs.account.state !== CHSAccountState.local
+			|| this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, false) === true;
 			const showWelcome = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, 0);
 			if (welcomeComplete) {
 				this.permission.getSystemPermissionShowed().then((response: boolean) => {
@@ -252,7 +253,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				centered: true,
 				windowClass: 'Welcome-container-Modal'
 			});
-			welcomeModal.result.finally(() => {
+			welcomeModal.result.then(() => {
+				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
+			}).catch(() => {
 				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
 			});
 		}
@@ -271,7 +274,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			});
 			welcomeModal.componentInstance.switchPage = 4;
 			welcomeModal.componentInstance.hasSystemPermissionShowed = this.welcomeModel.hasSystemPermissionShowed;
-			welcomeModal.result.finally(() => {
+			welcomeModal.result.then(() => {
+				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
+			}).catch(() => {
 				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
 			});
 		}
@@ -309,6 +314,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				if (this.chs.account && this.chs.account.state
 					&& this.chs.overview && this.chs.overview.devicePostures
 					&& this.chs.overview.devicePostures.value
+					&& this.chs.overview.devicePostures.value.length > 0
 					&& this.intervalId) {
 					clearInterval(this.intervalId);
 					const oneMinute = 60000;
