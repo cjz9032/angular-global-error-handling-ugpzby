@@ -1,8 +1,18 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { EMPTY, merge, ReplaySubject, Subject, Subscription, timer } from 'rxjs';
-import { catchError, debounceTime, distinctUntilChanged, map, switchMap, switchMapTo, take } from 'rxjs/operators';
+import {
+	catchError,
+	debounceTime,
+	distinctUntilChanged,
+	map,
+	switchMap,
+	switchMapTo,
+	take,
+	takeUntil
+} from 'rxjs/operators';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { EmailScannerService, ErrorNames } from '../../feature/check-breached-accounts/services/email-scanner.service';
+import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
 
 interface GetBreachedAccountsResponse {
 	type: string;
@@ -30,7 +40,7 @@ interface GetBreachedAccountsState {
 }
 
 @Injectable()
-export class BreachedAccountsService {
+export class BreachedAccountsService implements OnDestroy {
 	onGetBreachedAccounts$ = new ReplaySubject<GetBreachedAccountsState>(1);
 
 	private getNewBreachedAccounts$ = new Subject<boolean>();
@@ -44,7 +54,11 @@ export class BreachedAccountsService {
 		this.getBreachedAccounts();
 	}
 
-	getBreachedAccounts(): Subscription {
+	getNewBreachedAccounts() {
+		this.getNewBreachedAccounts$.next(true);
+	}
+
+	private getBreachedAccounts(): Subscription {
 		return merge(
 			this.emailScannerService.scanNotifier$,
 			this.emailScannerService.validationStatusChanged$,
@@ -65,16 +79,15 @@ export class BreachedAccountsService {
 				const unknownBreaches = breachedAccounts.filter(x => x.domain === 'n/a');
 				return [...breaches, ...unknownBreaches];
 			}),
-			catchError((error) => this.handleError(error))
+			catchError((error) => this.handleError(error)),
+			takeUntil(instanceDestroyed(this))
 		).subscribe((response: BreachedAccount[]) => {
 			this.onGetBreachedAccounts$.next({breaches: response, error: null});
 			this.sendTaskAcrion();
 		});
 	}
 
-	getNewBreachedAccounts() {
-		this.getNewBreachedAccounts$.next(true);
-	}
+	ngOnDestroy() {	}
 
 	private sendTaskAcrion() {
 		const taskDuration = (Date.now() - this.taskStartedTime) / 1000;
