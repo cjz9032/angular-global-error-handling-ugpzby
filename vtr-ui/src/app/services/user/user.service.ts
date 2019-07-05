@@ -130,7 +130,8 @@ export class UserService {
 				if (token && self.lidStarterHelper.isStarterToken(token)) {
 					self.starter = true;
 				}
-			}).finally(function() {
+				self.commonService.sendNotification(self.starter ? LenovoIdStatus.StarterId : LenovoIdStatus.SignedOut, appFeature);
+			}).catch(function() {
 				self.commonService.sendNotification(self.starter ? LenovoIdStatus.StarterId : LenovoIdStatus.SignedOut, appFeature);
 			});
 		}
