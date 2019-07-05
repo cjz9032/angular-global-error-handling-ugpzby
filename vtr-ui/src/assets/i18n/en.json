@@ -835,7 +835,7 @@
 						"subHeading1": "start",
 						"subHeading2": "end",
 						"subHeading3": "use this schedule for",
-						"endTimeNote": "END must be within 20 hours from START",
+						"endTimeNote": "END must be within 20 hours from START time",
 						"timeUnits": {
 							"unit1": "Hours",
 							"unit2": "Minutes",
