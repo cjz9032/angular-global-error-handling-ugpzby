@@ -811,6 +811,12 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 }
 
+.Welcome-container-Modal {
+	.modal-content {
+		border-radius: $border_radius;
+	}
+}
+
 // gaming overrides need to be at the bottom here
 @import "./styles-gaming.scss";
 
