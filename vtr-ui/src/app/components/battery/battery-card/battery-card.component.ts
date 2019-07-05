@@ -124,8 +124,12 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryInfo = response;
 				this.batteryInfo = response.batteryInformation;
 				this.batteryGauge = response.batteryIndicatorInfo;
-				const percentLimit = (this.batteryInfo[0].designCapacity / this.batteryInfo[0].fullChargeCapacity) * 100;
-				this.percentageLimitation = parseFloat(percentLimit.toFixed(2));
+
+				if (this.batteryInfo[0].fullChargeCapacity !== undefined && this.batteryInfo[0].fullChargeCapacity !== null
+					&& this.batteryInfo[0].designCapacity !== undefined && this.batteryInfo[0].designCapacity !== null) {
+					const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
+					this.percentageLimitation = parseFloat(percentLimit.toFixed(2));
+				}
 
 				this.commonService.setLocalStorageValue(LocalStorageKey.BatteryPercentage,
 					this.batteryGauge.percentage);
@@ -140,7 +144,13 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	onNotification(notification: AppNotification) {
 		if (notification && notification.type === ChargeThresholdInformation.ChargeThresholdInfo) {
-			this.chargeThresholdInfo = notification.payload[0];
+			const chargeThresholdInfo = notification.payload;
+			this.chargeThresholdInfo = chargeThresholdInfo[0];
+			if (chargeThresholdInfo.length > 1) {
+				if (!chargeThresholdInfo[0].isOn && chargeThresholdInfo[1].isOn) {
+					this.chargeThresholdInfo = notification.payload[0];
+				}
+			}
 
 			// TODO: uncomment in dual battery implementation story
 
@@ -157,7 +167,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	public updateBatteryDetails() {
 		if (this.batteryInfo !== undefined && this.batteryInfo.length !== 0) {
-			let batteryIndex = -1;
+			// let batteryIndex = -1;
 			const remainingPercentages = [];
 			this.batteryInfo.forEach((info) => {
 				if (info.batteryHealth === undefined || info.batteryHealth === null) {
@@ -173,7 +183,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.commonService.setLocalStorageValue(LocalStorageKey.RemainingPercentages, remainingPercentages);
 			this.batteryHealth = this.batteryInfo[0].batteryHealth;
 		}
-
 		this.batteryIndicator.percent = this.batteryGauge.percentage;
 		this.batteryIndicator.charging = this.batteryGauge.isAttached;
 		this.batteryIndicator.convertMin(this.batteryGauge.time);
@@ -252,12 +261,14 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		if (this.batteryGauge.isPowerDriverMissing) {
 			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryQuality.Poor));
 		}
-		if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
-			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryQuality.AcError));
-		}
-		if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'notsupported') {
-			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryQuality.AcError));
-		}
+
+		// if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
+		// 	batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryQuality.AcError));
+		// }
+		// if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'notsupported') {
+		// 	batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryQuality.AcError));
+		// }
+
 		this.batteryConditions = batteryConditions;
 		console.log('Battery conditions length', this.batteryConditions.length);
 		this.batteryConditionNotes = [];

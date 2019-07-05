@@ -81,17 +81,16 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 			.getTouchInputSetting()
 			.then(res => {
 				this.touchStatus = res;
-				console.log("Touch Status --------------------------------- ", res);
+				console.log('Touch Status --------------------------------- ', res);
 			})
 			.catch(error => console.log(error));
 		this.smartAssist
 			.getPSensorSetting()
 			.then(res => {
 				this.pSensorStatus = res;
-				console.log("PSensor --------------------------------- ", res);
+				console.log('PSensor --------------------------------- ', res);
 			})
 			.catch(error => console.log(error));
-		
 	}
 	setPenSetting(event) {
 		const value = !this.penStatus;
@@ -105,21 +104,21 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 		const value = event.value;
 		this.smartAssist
 			.setPenDelayTime(value)
-			.then(res => console.log('PEN DELAY TIME --------------------------------- ',value, res))
+			.then(res => console.log('PEN DELAY TIME --------------------------------- ', value, res))
 			.catch(err => console.log(err));
 	}
 	setTouchInputSetting(event) {
 		const value = !this.touchStatus;
 		this.smartAssist
 			.setTouchInputSetting(value)
-			.then(res => console.log('TOUCH INPUT SET --------------------------------- ',res))
+			.then(res => console.log('TOUCH INPUT SET --------------------------------- ', res))
 			.catch(err => console.log(err));
 	}
 	setPSensorSetting(event) {
 		const value = !this.pSensorStatus;
 		this.smartAssist
 			.setPSensorSetting(value)
-			.then(res => console.log('PSENSOR SET --------------------------------- ',res))
+			.then(res => console.log('PSENSOR SET --------------------------------- ', res))
 			.catch(err => console.log(err));
 	}
 
