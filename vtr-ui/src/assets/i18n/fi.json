@@ -470,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Näytät energiseltä tänään "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Ohjelma ei ole havainnut Internet-yhteyttä",
+            "subtitle": "Lue lisätietoja siitä, miten ratkaista yhteysongelmat",
+            "buttonText": "Hae tukea"
         },
         "feedback": {
             "title": "Anna palautetta",
@@ -500,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Pika-asetuksesi",
+            "microphone": "Mikrofoni",
+            "cameraPrivacy": "Kamera",
+            "eyeCareMode": "Silmien hoitotila"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Järjestelmän tila",
+            "subtitle": "PIKAINEN YHTEENVETO LAITTEESI TILASTA.",
             "memory": {
-                "title": "Memory",
+                "title": "Muisti",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Muistia ei löydy",
+                    "of": "/"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Levytila",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Asemaa ei löytynyt",
+                    "of": "/"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Takuu",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Takuuta ei löydy",
+                    "until": "Kunnes",
+                    "expiredOn": "Takuu vanhentunut (pvm)",
+                    "notAvailable": "Takuuta ei saatavilla"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Päivitä"
                 }
             }
         }
@@ -652,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -813,9 +812,9 @@
                         "checkbox": "Salli USB-lataus akkuvirralla, kun tietokoneesta on katkaistu virta."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Helppo palautus",
+                        "description": "Ottamalla tämän toiminnon käyttöön voit nopeuttaa jatkamisaikaa, jos avaat ja suljet tietokoneen kannen toistuvasti.",
+                        "tooltip": "Tämä toiminto nopeuttaa jatkamisaikaa, jos avaat ja suljet tietokoneen kannen toistuvasti. Kun asetus on käytössä, tietokone siirtyy virransäästötilaan, kun suljet sen kannen, mutta jatkaa toimintaansa heti, jos avaat kannen 15 minuutin kuluessa kannen sulkemisesta. Kun tämä toiminto on käytössä, kannettava tietokone yrittää myös suorittaa keskeneräiset toiminnot loppuun (kuten sähköpostin lähettämisen tai tiedoston lataamisen), ennen kuin järjestelmä siirtyy keskeytystilaan."
                     }
                 },
                 "otherSettings": {
@@ -831,9 +830,9 @@
                         "title": "Akun varauksen kynnysarvo",
                         "description": "Jos käytät tietokonetta yleensä verkkovirralla verkkolaite kytkettynä ja vain satunnaisesti akkuvirralla,voit pidentää akun käyttöikää määrittämällä varauksen enimmäisarvoksi alle 100 prosenttia. Tästä on hyötyä, koska harvoin käytetyt akut kestävät pidempään, kun akkuja säilytetään niin, että niiden varaus on alle 100 prosenttia.",
                         "tooltip": "Jos akkua ladataan niin, että sen varaus ylittää latauksen lopettamisen kynnysarvon, pura akun varaus vähintään latauksen lopettamisen kynnysarvoon asti irrottamalla tietokone verkkovirrasta.Akun tilan (vanha tai uusi) mukaan latauksen tarkat aloitus- ja lopetuspisteet saattavat vaihdella jopa kaksi prosenttiyksikköä. Jos otat tämän toiminnon käyttöön, akkumittari on suositeltavaa nollata säännöllisesti akun toimintakunnon tarkan raportoinnin varmistamiseksi.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Huomautus",
+                        "readMoreText": "Lue lisää.",
+                        "noteInfo": " Akun varauksen kynnysarvo ei ole täysin käytössä. Irrota laite ja anna akun tyhjentyä latauksen lopettamisen kynnysarvoon asti tai sen alle.",
                         "settings": {
                             "title1": "Sisäisen akun kynnysarvo",
                             "title2": "Irrotettavan akun kynnysarvo"
@@ -846,9 +845,9 @@
                             "cancel": "PERUUTA"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Aloita lataus varauksen ollessa alle",
+                            "checkboxText": "Määritä latauksen aloittamisen kynnysarvoksi automaattisesti viisi prosenttiyksikköä alle latauksen lopettamisen kynnysarvon.",
+                            "stop": "Lopeta lataus varaustason ollessa"
                         }
                     },
                     "expressCharging": {
@@ -872,22 +871,22 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "ENERGY STAR -VAATIMUSTEN MUKAINEN TUOTE"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Älykäs valmiustila",
+                    "description": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysajan aikana ilman, että käynnistysaika hidastuu kovan käytön aikana.",
+                    "tooltip": "Kun älykäs valmiustila on käytössä, tietokone vaihtaa moderniin valmiustilaan ennen ajoitettua aloitusaikaa ja siirtyy horrostilaan sen jälkeen, kun tietokone on ollut käyttämättömänä tietyn ajanjakson ajan akkuvirtaa käytettäessä. Tämä ajanjakso optimoidaan määritetyn aikataulun perusteella. Tietokone vaihtaa horrostilasta moderniin valmiustilaan vain ajoitettuina päivinä eikä silloin, kun se on käyttämättömänä peräkkäisinä ajoitettuina päivinä.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Määritä aika, jolloin yleensä käytät tätä tietokonetta",
+                        "subHeading1": "aloitat",
+                        "subHeading2": "lopetusaika",
+                        "subHeading3": "käytä tätä aikataulua seuraavaan:",
+                        "endTimeNote": "Lopetusajan on oltava 20 tunnin kuluessa aloitusajasta",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
-                            "unit3": "AM/PM"
+                            "unit1": "tuntia",
+                            "unit2": "minuuttia",
+                            "unit3": "aamupäivä/iltapäivä"
                         }
                     }
                 }
@@ -1180,31 +1179,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Automaattinen Lenovo Active Protection System -toiminto auttaa suojamaan kiintolevyasemaa voimakkaiden iskujen ja tärinän aiheuttamilta vaurioilta. Se valvoo tietokoneen liikkeitä jatkuvasti ja pysäyttää kiintolevyaseman tilapäisesti, kun tietokone esimerkiksi putoaa.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "Muuta herkkyyttä. Vähäisen herkkyyden tilassa vain kovemmat iskut aktivoivat suojauksen",
+                    "checkbox": "Jätä toistuvat iskut, kuten junan tai auton aiheuttamat iskut, huomiotta"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Manuaalinen Active Protection -ohjelman keskeyttäminen",
+                    "caption": "Salli Active Protection System -ohjelman keskeyttäminen manuaalisesti",
+                    "dropdown-title": "Keskeytä ajaksi",
+                    "button": "Keskeytä nyt"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Paranna kiintolevyn käytettävyyttä muistiotilassa keskeyttämällä Active Protection System, kun seuraavia toimintoja havaitaan",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Kynäsyöttö",
+                        "description": "Ota APS käyttöön, kun kynäsyöttö on käytössä ja kynä on alueen ulkopuolella"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Kosketussyöttö",
+                        "description": "Ota APS käyttöön, kun kosketussyöttö on käytössä ja järjestelmä havaitsee kosketussyötön"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Käden läheisyyden tunnistus tietokoneen reunoilla",
+                        "description": "Ota APS käyttöön, kun muistiotila on käytössä ja järjestelmä ei havaitse kättä"
                     }
                 }
             },
@@ -1215,30 +1214,30 @@
                 "tooltip": "Tämä ominaisuus ei ole käytettävissä verkkovideosoittimissa. Suositut paikalliset videosoittimet (kuten Windows Media Player ja 5KPlayer) tukevat tätä ominaisuutta."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Ääni",
+                "description": "Lenovo Voice muuttaa puheen tekstiksi Puhe tekstiksi -toiminnon avulla ja antaa reaaliaikaisen käännöksen puheesta tekstiksi Käännös-toiminnon avulla.",
+                "installBtnText": "Asenna",
+                "launchBtnText": "Aloita",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Puhe tekstiksi",
+                    "caption": "Tämän ominaisuuden avulla voit muuttaa puheen tekstiksi."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Käännös",
+                    "caption": "Tämän ominaisuuden avulla voit kääntää puhetta reaaliaikaisesti. Käännetty sisältö näytetään tekstinä. Voit valita lähde- ja kohdekielet tarpeen mukaan."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Aloittaminen:",
+                    "point1": "Varmista, että Lenovo Voice -kuvake näkyy Windowsin ilmaisinalueella.",
+                    "point2": "Avaa tiedosto, johon haluat tallentaa muutetun tekstin.",
+                    "point3": "Napsauta Windowsin ilmaisinalueelta Lenovo Voice -kuvaketta ja valitse Puhe tekstiksi.",
+                    "point4": "Valitse haluamasi kieli ja aloita napsauttamalla mikrofonia.",
+                    "point5": "Siirrä kohdistin kohtaan, jota haluat muokata, ja aloita puhuminen.",
+                    "point6": "Napsauta Windowsin ilmaisinalueelta Lenovo Voice -kuvaketta ja valitse Käännä.",
+                    "point7": "Valitse haluamasi lähde- ja kohdekieli.",
+                    "point8": "Määritä äänisyöttö kaiuttimesta tai mikrofonista tarpeen mukaan.",
+                    "point9": "Napsauta mikrofonikuvaketta ja aloita puhuminen",
+                    "closeText": "sulje"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1616,7 +1615,9 @@
             },
             "errorMessage": {
                 "headerText": "Virhe",
-                "bodyText": "Olemme havainneet, että sinulta puuttuu tärkeitä Vantagen osia. Nämä osat ladataan taustalla. Yritä myöhemmin uudelleen."
+                "bodyText": "Olemme havainneet, että sinulta puuttuu tärkeitä Vantagen osia. Nämä osat ladataan taustalla. Yritä myöhemmin uudelleen.",
+                "closeText": "close",
+                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
             }
         },
         "homeprotection": {

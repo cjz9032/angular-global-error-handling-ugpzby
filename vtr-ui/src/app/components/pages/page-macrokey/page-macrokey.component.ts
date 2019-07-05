@@ -4,18 +4,18 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 @Component({
 	selector: 'vtr-page-macrokey',
 	templateUrl: './page-macrokey.component.html',
-	styleUrls: [ './page-macrokey.component.scss' ]
+	styleUrls: ['./page-macrokey.component.scss']
 })
 export class PageMacrokeyComponent implements OnInit {
 	cardContentPositionA: any = {
 		FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
 	};
 	cardContentPositionB: any = {
-		FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.png'
+		FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
 	};
 	backId = 'vtr-gaming-macrokey-btn-back';
 
-	constructor(private cmsService: CMSService) {}
+	constructor(private cmsService: CMSService) { }
 
 	ngOnInit() {
 		// TODO: Change the query params for macrokey subpage

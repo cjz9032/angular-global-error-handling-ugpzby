@@ -10,7 +10,7 @@ export class DisplayService {
 	private cameraPrivacyStatus: any;
 	private cameraSettings: any;
 	private privacyGuardSettings: any;
-
+	private oledSettings: any;
 	public isShellAvailable = false;
 	@Output() windowResize: EventEmitter<any> = new EventEmitter();
 
@@ -38,6 +38,11 @@ export class DisplayService {
 
 		this.privacyGuardSettings = shellService.getPrivacyGuardObject();
 		if (this.privacyGuardSettings) {
+			this.isShellAvailable = true;
+		}
+
+		this.oledSettings = shellService.getOledSettings();
+		if (this.oledSettings) {
 			this.isShellAvailable = true;
 		}
 	}
@@ -347,6 +352,58 @@ export class DisplayService {
 	public initEyecaremodeSettings(): Promise<boolean> {
 		if (this.displayEyeCareMode) {
 			return this.displayEyeCareMode.initEyecaremodeSettings();
+		}
+		return undefined;
+	}
+	public getOLEDPowerControlCapability(): Promise<boolean> {
+		if (this.oledSettings) {
+			// this.oledSettings = this.shellService.getOledSettings();
+			return this.oledSettings.getOLEDPowerControlCapability();
+		}
+		return undefined;
+	}
+
+	public getTaskbarDimmerSetting(): Promise<any> {
+		if (this.oledSettings) {
+			return this.oledSettings.getTaskbarDimmerSetting();
+		}
+		return undefined;
+	}
+
+	public getBackgroundDimmerSetting(): Promise<any> {
+		if (this.oledSettings) {
+			return this.oledSettings.getBackgroundDimmerSetting();
+		}
+		return undefined;
+	}
+
+	public getDisplayDimmerSetting(): Promise<any> {
+		if (this.oledSettings) {
+			return this.oledSettings.getDisplayDimmerSetting();
+		}
+		return undefined;
+	}
+
+	public setTaskbarDimmerSetting(value: String): Promise<boolean> {
+		if (this.oledSettings) {
+			//console.log('this.setTaskbarDimmerSetting', this.oledSettings);
+			return this.oledSettings.setTaskbarDimmerSetting(value);
+		}
+		return undefined;
+	}
+
+	public setBackgroundDimmerSetting(value: String): Promise<boolean> {
+		if (this.oledSettings) {
+			//console.log('this.setBackgroundDimmerSetting', this.oledSettings);
+			return this.oledSettings.setBackgroundDimmerSetting(value);
+		}
+		return undefined;
+	}
+
+	public setDisplayDimmerSetting(value: String): Promise<boolean> {
+		if (this.oledSettings) {
+			//console.log('this.setDisplayDimmerSetting', this.oledSettings);
+			return this.oledSettings.setDisplayDimmerSetting(value);
 		}
 		return undefined;
 	}

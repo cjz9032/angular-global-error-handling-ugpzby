@@ -470,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Danas smo puni energije "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Internetska veza nije otkrivena",
+            "subtitle": "Doznajte više o rješavanju poteškoća s vezom u našem",
+            "buttonText": "Ostvarite podršku"
         },
         "feedback": {
             "title": "Pošaljite povratne informacije",
@@ -500,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Vaše Brze postavke",
+            "microphone": "Mikrofon",
+            "cameraPrivacy": "Kamera",
+            "eyeCareMode": "Način rada ugodan za oči"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Status sustava",
+            "subtitle": "BRZE NOVOSTI O STATUSU UREĐAJA.",
             "memory": {
-                "title": "Memory",
+                "title": "Memorija",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Nije pronađena memorija",
+                    "of": "od"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Diskovni prostor",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Nije pronađen disk",
+                    "of": "od"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Jamstvo",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Jamstvo nije pronađeno",
+                    "until": "Do",
+                    "expiredOn": "Jamstvo je isteklo",
+                    "notAvailable": "Nije dostupno jamstvo"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Ažuriraj"
                 }
             }
         }
@@ -652,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -813,9 +812,9 @@
                         "checkbox": "Omogući USB punjenje s baterije prijenosnog računala kada je računalo isključeno."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Jednostavni nastavak",
+                        "description": "Omogućite ovu značajku da biste skratiti vrijeme potrebno za nastavak rada ako često otvarate i zatvarate poklopac računala.",
+                        "tooltip": "Ta će značajka skratiti vrijeme potrebno za nastavak rada ako često otvarate i zatvarate poklopac računala. Kad je omogućena, računalo će prilikom zatvaranja poklopca prijeći u način male potrošnje energije, ali će odmah nastaviti s radom ako poklopac otvorite u roku od 15 minuta od zatvaranja. Značajka prijenosnom računalu omogućuje da pokuša dovršiti aktivnosti koje su u tijeku (npr. slanje e-pošte ili preuzimanje datoteke) prije nego što se obustavi rad sustava."
                     }
                 },
                 "otherSettings": {
@@ -831,9 +830,9 @@
                         "title": "Prag punjenja baterije",
                         "description": "Ako se računalom prvenstveno koristite dok je priključeno na prilagodnik izmjeničnog napona te se rijetko koristite napajanjem baterije,možete povećati životni vijek baterije tako da vrijednost maksimalnog punjenja postavite na manje od 100 %. To je korisno zato što će baterije koje se rijetko koriste dulje trajati ako se drže tek djelomično napunjene.",
                         "tooltip": "Ako je baterija trenutačno napunjena iznad praga za zaustavljanje punjenja, odvojite napajanje dok se baterija ne isprazni na prag za zaustavljanje punjenja ili ispod njega.Ovisno o stanju baterije (stara ili nova), točna točka u kojoj punjenje počinje ili se zaustavlja može se razlikovati za najviše 2 postotna boda. Ako omogućite značajku, preporučeno je da povremeno pokrenete ponovno postavljanje mjerača baterije kako biste osigurali točan izvještaj o stanju baterije.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Napomena",
+                        "readMoreText": "Pročitajte više.",
+                        "noteInfo": " Prag punjenja baterije još uvijek nije potpuno aktivan. Odspojite uređaj i pričekajte da se baterija isprazni do praga prestanka punjenja ili ispod njega.",
                         "settings": {
                             "title1": "Prag za ugrađenu bateriju",
                             "title2": "Prag za uklonjivu bateriju"
@@ -846,9 +845,9 @@
                             "cancel": "ODUSTANI"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Pokreni punjenje kada je ispod",
+                            "checkboxText": "Automatski postavlja prag za početak punjenja pet postotaka ispod praga za prekidanje punjenja.",
+                            "stop": "Prekini punjenje na"
                         }
                     },
                     "expressCharging": {
@@ -872,22 +871,22 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "PROIZVOD S CERTIFIKATOM ENERGY STAR"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Pametno stanje mirovanja",
+                    "description": "Ova značajka zakazuje optimizaciju baterije računala radi uštede njezina napajanja tijekom neaktivnosti bez žrtvovanja brzog pokretanja tijekom rada s većim opterećenjem.",
+                    "tooltip": "Kada je pametno stanje mirovanja omogućeno, računalo će se prebaciti u moderno stanje mirovanja prije zakazanog vremena početka i pokrenuti hibernaciju nakon određenog vremena neaktivnosti uz napajanje putem baterije. To je vrijeme optimizirano na temelju rasporeda koji ste postavili. Računalo će se prebaciti iz hibernacije u moderno stanje mirovanja samo tijekom zakazanih dana i neće se prebaciti kada nije aktivno tijekom uzastopnih zakazanih dana.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Postavite vrijeme kada obično koristite računalo",
+                        "subHeading1": "početak",
+                        "subHeading2": "završetak",
+                        "subHeading3": "koristi ovaj raspored za",
+                        "endTimeNote": "Vrijeme završetka mora biti unutar 20 sati od vremena početka",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
-                            "unit3": "AM/PM"
+                            "unit1": "Sati",
+                            "unit2": "Minuta",
+                            "unit3": "PRIJEPODNE / POSLIJEPODNE"
                         }
                     }
                 }
@@ -1180,31 +1179,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Lenovo Active Protection System automatska je značajka koja pomaže u zaštiti tvrdog diska od oštećenja nastalih snažnim fizičkih udarcem i vibracijama. Neprekidno nadzire pomicanje računala i privremeno zaustavlja tvrdi disk ako pretpostavi udarac ili sličnu radnju koja bi ga mogla oštetiti.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "Promjena osjetljivosti: u načinu rada niske osjetljivosti samo će jači udarci aktivirati zaštitu",
+                    "checkbox": "Zanemarivanje ponavljajućih udaraca, primjerice pri vožnji vlakom ili automobilom"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Ručno obustavljanje značajke Active Protection",
+                    "caption": "Dopusti mi ručno obustavljanje značajke Active Protection System",
+                    "dropdown-title": "Obustavi na",
+                    "button": "Obustavi odmah"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Da biste poboljšali pristup pogonu tvrdog diska tijekom korištenja tableta, obustavite značajku Active Protection System za sljedeće radnje",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Unos olovkom",
+                        "description": "Kada koristite unos olovkom, omogućite APS ako se ulazni podaci olovke nalaze izvan raspona"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Unos dodirom",
+                        "description": "Kada koristite unos dodirom, omogućite APS ako nije otkriven dodir"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Razina osjetljivosti otkrivanja blizine ruke pri rubovima računala",
+                        "description": "Kada je omogućen način rada tableta, omogućite APS ako nije otkrivena ruka"
                     }
                 }
             },
@@ -1215,30 +1214,30 @@
                 "tooltip": "Ta značajka nije primjenjiva na web-reproduktore videosadržaja. Popularni lokalni reproduktori videosadržaja, kao što su Windows Media Player, 5KPlayer itd., podržavaju tu značajku."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Glas",
+                "description": "Lenovo Voice omogućuje pretvaranje vašeg govora u tekst s pomoću funkcije Govor u tekst i prijevod govora u tekst u stvarnom vremenu s pomoću funkcije Prijevod.",
+                "installBtnText": "Instaliranje",
+                "launchBtnText": "Pokretanje",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Govor u tekst",
+                    "caption": "S pomoću ove značajke možete pretvoriti govor u tekst."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Prijevod",
+                    "caption": "Ova značajka omogućava prijevod govora u realnom vremenu. Prevedeni se sadržaj prikazuje kao tekst. Možete odabrati izvorne jezike i ciljne jezike prema vlastitim potrebama."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Početak rada:",
+                    "point1": "Provjerite je li ikona Lenovo Voice prikazana u paleti sustava Windows.",
+                    "point2": "Otvorite datoteku u koju želite snimiti pretvoreni tekst.",
+                    "point3": "Kliknite ikonu Lenovo Voice u paleti sustava Windows i odaberite funkciju Voice to text (Govor u tekst).",
+                    "point4": "Za početak rada odaberite željeni jezik i kliknite ikonu mikrofona.",
+                    "point5": "Postavite pokazivač na mjesto koje želite urediti i počnite govoriti.",
+                    "point6": "Kliknite ikonu Lenovo Voice u paleti sustava Windows i odaberite Translate (Prevedi).",
+                    "point7": "Odaberite željeni izvorni i ciljni jezik.",
+                    "point8": "Ovisno o vašim potrebama, postavite glasovni ulaz iz zvučnika ili iz mikrofona.",
+                    "point9": "Da biste počeli govoriti, kliknite ikonu mikrofona",
+                    "closeText": "zatvori"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1616,7 +1615,9 @@
             },
             "errorMessage": {
                 "headerText": "Pogreška",
-                "bodyText": "Utvrdili smo da vam nedostaju važni dijelovi usluge Vantage. Ti će se dijelovi preuzeti u pozadini. Pokušajte ponovno kasnije."
+                "bodyText": "Utvrdili smo da vam nedostaju važni dijelovi usluge Vantage. Ti će se dijelovi preuzeti u pozadini. Pokušajte ponovno kasnije.",
+                "closeText": "close",
+                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
             }
         },
         "homeprotection": {

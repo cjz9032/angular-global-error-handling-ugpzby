@@ -470,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Você parece animado hoje "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Nenhuma conexão à Internet detectada",
+            "subtitle": "Saiba mais sobre como resolver problemas de conexão em nosso",
+            "buttonText": "Obter Suporte"
         },
         "feedback": {
             "title": "Envie seus comentários",
@@ -500,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Suas configurações rápidas",
+            "microphone": "Microfone",
+            "cameraPrivacy": "Câmera",
+            "eyeCareMode": "Modo Proteção Ocular"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Status do sistema",
+            "subtitle": "MANTENHA O STATUS DO DISPOSITIVO ATUALIZADO RAPIDAMENTE.",
             "memory": {
-                "title": "Memory",
+                "title": "Memória",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Memória não encontrada",
+                    "of": "de"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Espaço em disco",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Disco não encontrado",
+                    "of": "de"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Garantia",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Garantia não encontrada",
+                    "until": "Até",
+                    "expiredOn": "Garantia expirada em",
+                    "notAvailable": "Garantia não disponível"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Atualizar"
                 }
             }
         }
@@ -652,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -813,9 +812,9 @@
                         "checkbox": "Ative o carregamento USB da bateria do laptop quando o computador estiver desligado."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Retomada fácil",
+                        "description": "Ative este recurso para aprimorar o tempo para retomada se você abre e fecha a tampa do computador com frequência.",
+                        "tooltip": "Este recurso aprimorará o tempo para retomada se você abre e fecha a tampa do computador com frequência. Quando ativado, o computador entrará em um modo de potência baixa quando você fechar a tampa, mas retomará imediatamente se você reabrir a tampa dentro de 15 minutos depois de fechá-la. Esse recurso também permite que seu notebook tente concluir atividades pendentes (como envio de email ou download de arquivo) antes que o sistema entre em suspensão."
                     }
                 },
                 "otherSettings": {
@@ -831,9 +830,9 @@
                         "title": "Limite de Carga da Bateria",
                         "description": "Se você usa seu computador conectado ao adaptador de energia CA na maioria das vezes, e só usa a energia da bateria ocasionalmente,poderá aumentar a vida útil da bateria configurando o valor de carga máximo para abaixo de 100%. Isso é útil porque as baterias que são usadas com pouca frequência possuem uma vida útil maior quando são mantidas com carga inferior à máxima.",
                         "tooltip": "Se a bateria estiver carregada acima do limite de interrupção de carga, desconecte a energia para que a bateria descarregue até o limite de interrupção de carga ou abaixo dele.Dependendo do status da bateria (nova ou velha), o ponto exato em que o carregamento será iniciado ou interrompido pode variar em até 2 pontos percentuais. Se você ativar o recurso, recomenda-se executar uma Redefinição do medidor da bateria ocasionalmente para garantir a detecção de integridade precisa da bateria.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Nota",
+                        "readMoreText": "Leia mais.",
+                        "noteInfo": " O limite de carga da bateria ainda não está totalmente ativo. Desconecte sua máquina e permita que a bateria descarregue até ou abaixo do limite de interrupção de carga.",
                         "settings": {
                             "title1": "Limite da bateria interna",
                             "title2": "Limite da bateria removível"
@@ -846,9 +845,9 @@
                             "cancel": "CANCELAR"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Iniciar carregamento quando abaixo de",
+                            "checkboxText": "Automaticamente define o limite de início de carga para 5 pontos percentuais abaixo do limite de interrupção de carga.",
+                            "stop": "Parar carregamento em"
                         }
                     },
                     "expressCharging": {
@@ -872,22 +871,22 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "UM PRODUTO COM CERTIFICAÇÃO ENERGY STAR"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Suspensão inteligente",
+                    "description": "Esse recurso programa o computador para otimizar a economia de carga da bateria durante horas ociosas sem prejudicar o tempo do início rápido durantes horas de maior uso.",
+                    "tooltip": "Quando a Suspensão inteligente estiver ativada, o computador alternará para a Suspensão moderna antes da hora de início programada e entrará no modo de hibernação depois que estiver inativo por um certo tempo na carga da bateria. O tempo será otimizado com base no planejamento que você definir. O computador alterna do modo de hibernação para a Suspensão moderna apenas nos dias programados e não alterna quando estiver inativo por dias programados consecutivos.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Defina a hora em que você geralmente usa este computador",
+                        "subHeading1": "inicie",
+                        "subHeading2": "término",
+                        "subHeading3": "use essa programação para",
+                        "endTimeNote": "A hora de término deve estar dentro de 20 horas da hora de início",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
-                            "unit3": "AM/PM"
+                            "unit1": "Horas",
+                            "unit2": "Minutos",
+                            "unit3": "MANHÃ/TARDE"
                         }
                     }
                 }
@@ -1180,31 +1179,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "O Lenovo Active Protection System é um recurso automático que ajuda a proteger o disco rígido de danos causados por fortes choques físicos e vibração. Ele monitora continuamente o movimento do computador e interrompe temporariamente o disco rígido quando há previsão de queda ou evento danoso similar.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "Alterar a sensibilidade, no modo de baixa sensibilidade, apenas choques mais fortes ativarão a proteção",
+                    "checkbox": "Ignorar choques repetitivos como os de um trem ou de um carro"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Suspensão manual do Active Protection",
+                    "caption": "Permitir que eu suspenda manualmente o Active Protection System",
+                    "dropdown-title": "Suspender por",
+                    "button": "Suspender agora"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Para melhorar o acesso à unidade de disco rígido durante o uso do tablet, suspenda o Active Protection System quando as seguintes atividades forem detectadas",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Entrada de caneta",
+                        "description": "Quando a entrada de caneta for usada, ative o APS no momento em que a entrada de caneta estiver fora do intervalo"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Entrada de toque",
+                        "description": "Quando a entrada de toque for usada, ative o APS quando a Entrada de toque não for detectada"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Sensor de proximidade das mãos nas bordas do computador",
+                        "description": "Quando o modo tablet for ativado, ative o APS quando a mão não for detectada"
                     }
                 }
             },
@@ -1215,30 +1214,30 @@
                 "tooltip": "Esse recurso não é aplicável a players de vídeo da Web. Os players de vídeo populares, como o Windows Media Player, 5KPlayer, dentre outros, oferecem suporte a esse recurso."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Voz",
+                "description": "O Lenovo Voice ajuda a converter sua voz em texto com a função Voz para texto e oferece tradução em tempo real de voz para textos com a função Tradução.",
+                "installBtnText": "Instalar",
+                "launchBtnText": "Iniciar",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Voz para texto",
+                    "caption": "Este recurso ajuda a converter sua voz em textos."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Tradução",
+                    "caption": "Este recurso fornece tradução em tempo real para a voz. Os conteúdos traduzidos são exibidos em textos. Você pode escolher os idiomas de origem e os idiomas de destino de acordo com suas necessidades."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Introdução:",
+                    "point1": "Certifique-se de que o ícone do Lenovo Voice seja exibido na bandeja do sistema do Windows.",
+                    "point2": "Abra o arquivo no qual deseja gravar o texto convertido.",
+                    "point3": "Clique no ícone do Lenovo Voice na bandeja do sistema do Windows e selecione Voz para texto.",
+                    "point4": "Selecione o idioma desejado e clique no ícone do microfone para iniciar.",
+                    "point5": "Coloque o cursor onde deseja editar e comece a falar.",
+                    "point6": "Clique no ícone do Lenovo Voice na bandeja do sistema do Windows e selecione Traduzir.",
+                    "point7": "Selecione o idioma de origem e o idioma de destino desejados.",
+                    "point8": "Dependendo das suas necessidades, defina a entrada de voz do alto-falante ou do microfone.",
+                    "point9": "Clique no ícone do microfone para começar a falar",
+                    "closeText": "fechar"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1616,7 +1615,9 @@
             },
             "errorMessage": {
                 "headerText": "Erro",
-                "bodyText": "Detectamos que você não possui partes essenciais do Vantage. Essas partes serão baixadas em segundo plano. Tente novamente mais tarde."
+                "bodyText": "Detectamos que você não possui partes essenciais do Vantage. Essas partes serão baixadas em segundo plano. Tente novamente mais tarde.",
+                "closeText": "close",
+                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
             }
         },
         "homeprotection": {

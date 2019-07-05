@@ -9,9 +9,10 @@ import { Component, OnInit, Input, ElementRef, Output, EventEmitter, OnChanges }
 	},
 })
 export class UiGamingCollapsibleContainerComponent implements OnInit {
-	
+
 	@Input() public options;
 	@Output() public change = new EventEmitter<any>();
+	@Output() showDropDown = new EventEmitter();
 	public showOptions = false;
 	public buttonName: any = 'Show';
 	public selected = false;
@@ -32,15 +33,18 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 			}
 		});
 	}
-	
-	public toggleOptions(optSelected) {
-		this.showOptions = !this.showOptions;
-		// CHANGE THE NAME OF THE BUTTON.
-		if (this.showOptions) {
-			this.buttonName = 'Hide';
-		} else {
-			this.buttonName = 'Show';
+
+	public toggleOptions(options) {
+		if (!this.options.hideDropDown) {
+			this.showOptions = !this.showOptions;
+			// CHANGE THE NAME OF THE BUTTON.
+			if (this.showOptions) {
+				this.buttonName = 'Hide';
+			} else {
+				this.buttonName = 'Show';
+			}
 		}
+		this.showDropDown.emit(options);
 	}
 
 	public setDefaultOption(option) {

@@ -135,6 +135,7 @@ body {
 	width: 100%;
 	height: 100%;
 	font-family: "Segoe UI", Sans-serif;
+	cursor: default;
 	// font-weight: 300;
 }
 
@@ -371,6 +372,16 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 }
 
+.wifi-security-error-modal {
+	.modal-dialog {
+		max-width: 500px;
+		margin-top: 8rem;
+		.modal-content {
+			border-radius: $border_radius;
+		}
+	}
+}
+
 /*Battery-charge-threshold-modal-styles*/
 .Battery-Charge-Threshold-Modal {
 	.modal-dialog {
@@ -436,7 +447,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		padding: 4rem;
 	}
 }
-
 
 /*-----Voice-Install-Failed-Modal------------*/
 .voice-install-failed-modal {
@@ -798,6 +808,12 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			padding: 0px !important;
 			margin: 0px !important;
 		}
+	}
+}
+
+.Welcome-container-Modal {
+	.modal-content {
+		border-radius: $border_radius;
 	}
 }
 

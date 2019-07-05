@@ -470,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Wygląda na pełnego energii "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Nie wykryto połączenia z Internetem.",
+            "subtitle": "Uzyskaj więcej informacji, jak rozwiązać problemy z połączeniem w naszym",
+            "buttonText": "Uzyskaj pomoc techniczną"
         },
         "feedback": {
             "title": "Przekaż opinię",
@@ -500,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Twoje szybkie ustawienia",
+            "microphone": "Mikrofon",
+            "cameraPrivacy": "Aparat",
+            "eyeCareMode": "Tryb ochrony oczu"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Stan systemu",
+            "subtitle": "SZYBKO SPRAWDŹ STAN URZĄDZENIA.",
             "memory": {
-                "title": "Memory",
+                "title": "Pamięć",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Nie znaleziono pamięci",
+                    "of": "z"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Miejsce na dysku",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Nie znaleziono dysku",
+                    "of": "z"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Gwarancja",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Nie znaleziono gwarancji",
+                    "until": "Do",
+                    "expiredOn": "Gwarancja wygasła dnia",
+                    "notAvailable": "Gwarancja niedostępna"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Aktualizacja"
                 }
             }
         }
@@ -652,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -813,9 +812,9 @@
                         "checkbox": "Włącz funkcję ładowania przez USB z akumulatora laptopa, gdy komputer jest wyłączony."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Łatwe wznawianie",
+                        "description": "Włącz tę funkcję, aby skrócić czas wznawiania, jeśli często otwierasz i zamykasz pokrywę komputera.",
+                        "tooltip": "Ta funkcja skraca czas wznawiania, jeśli użytkownik często otwiera i zamyka pokrywę komputera. Gdy ta funkcja jest włączona, na komputerze jest uruchamiany tryb niskiego zużycia energii, jeśli zostanie zamknięta pokrywa, a jego praca jest natychmiast wznawiana po ponownym otwarciu pokrywy w ciągu 15 minut. Dzięki tej funkcji notebook może podjąć próbę dokończenia nieukończonych operacji (na przykład wysłanie wiadomości e-mail lub pobranie pliku) zanim praca systemu zostanie wstrzymana."
                     }
                 },
                 "otherSettings": {
@@ -831,9 +830,9 @@
                         "title": "Próg ładowania akumulatora",
                         "description": "Jeśli komputer jest używany głównie z podłączonym zasilaczem sieciowym i jest rzadko zasilany akumulatorem,można wydłużyć czas pracy akumulatora, wybierając maksymalną wartość ładowania poniżej 100%. Jest to przydatna funkcja, ponieważ czas eksploatacji akumulatorów, które są rzadko, jest dłuższy, gdy nie ładuje się ich do końca.",
                         "tooltip": "Jeśli akumulator jest obecnie naładowany powyżej ustalonego progu zatrzymania ładowania, odłącz źródło zasilania i rozładuj akumulator do poziomu progowego lub niższego.W zależności od stanu akumulatora (stary lub nowy) dokładny punkt, w którym rozpoczyna się lub kończy ładowanie, może różnić się o dwa punkty procentowe. Jeśli ta funkcja jest włączona, zalecamy od czasu do czasu zresetować miernik poziomu akumulatora, aby zapewnić dokładne raportowanie stanu akumulatora.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Uwaga",
+                        "readMoreText": "Dowiedz się więcej.",
+                        "noteInfo": " Funkcja progu ładowania akumulatora nadal nie jest w pełni aktywna. Odłącz komputer od zasilania z sieci elektrycznej i poczekaj, aż stopień naładowania akumulatora spadnie co najmniej do wartości progu zatrzymania ładowania.",
                         "settings": {
                             "title1": "Próg dla wbudowanego akumulatora",
                             "title2": "Próg dla wymiennego akumulatora"
@@ -846,9 +845,9 @@
                             "cancel": "ANULUJ"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Rozpocznij ładowanie poniżej",
+                            "checkboxText": "Ładowanie akumulatora rozpocznie się automatycznie, gdy poziom jego naładowania spadnie 5% poniżej ustalonego progu zatrzymania ładowania.",
+                            "stop": "Zatrzymaj ładowanie w momencie"
                         }
                     },
                     "expressCharging": {
@@ -872,22 +871,22 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "PRODUKT Z CERTYFIKATEM ENERGY STAR"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Inteligentne wstrzymanie",
+                    "description": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie uruchamianie w godzinach bardziej intensywnego korzystania.",
+                    "tooltip": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną początkową komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z akumulatora przechodzi w tryb hibernacji. Okres bezczynności jest optymalizowany na podstawie ustawionego harmonogramu. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowanych dniach, a nie przełącza się w ogóle, jeśli nie jest używany przez kilka kolejnych zaplanowanych dni.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Ustaw typowe godziny korzystania z komputera",
+                        "subHeading1": "rozpocząć się",
+                        "subHeading2": "koniec",
+                        "subHeading3": "używaj tego harmonogramu dla",
+                        "endTimeNote": "Czas od godziny początkowej do końcowej nie może przekraczać 20 godzin",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
-                            "unit3": "AM/PM"
+                            "unit1": "Godziny",
+                            "unit2": "Minuty",
+                            "unit3": "rano/wieczorem"
                         }
                     }
                 }
@@ -1165,7 +1164,7 @@
                 "autoScreenOff": {
                     "title": "Automatyczne wyłączanie ekranu",
                     "caption": "Automatycznie wyłącza wyświetlacz, gdy jest skierowany w dół lub gdy użytkownik idzie.",
-                    "note": "Funkcja ta jest niedostępna, jeżeli w sekcji System w Ustawieniach systemu Windows wybrano ustawienie planu zasilania: „nigdy nie wyłączaj ekranu na zasilaniu akumulatorowym”. Aby włączyć tę funkcję, wybierz wartość inną niż „Nigdy”.",
+                    "note": "Funkcja ta jest niedostępna, jeżeli w sekcji System w Ustawieniach systemu Windows wybrano ustawienie planu zasilania: „nigdy nie wyłączaj ekranu na zasilaniu akumulatorowym”. Aby włączyć tę funkcję, wybierz wartość inną niż „Nigdy”.",
                     "windowsLink": "Przechodzenie do ustawień zasilania i uśpienia w Ustawieniach systemu Windows"
                 },
                 "keepMyDisplay": {
@@ -1180,31 +1179,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Lenovo Active Protection System to automatycznie działająca funkcja, która pomaga chronić dysk twardy przed uszkodzeniem spowodowanym przez silne wstrząsy i wibracje. Stale monitoruje ruchy komputera i tymczasowo zatrzymuje dysk twardy, jeśli przewidzi upadek lub podobne zdarzenie mogące prowadzić do uszkodzenia.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "Zmiana wrażliwości w trybie o niskiej wrażliwości, tylko większe wstrząsy aktywują ochronę",
+                    "checkbox": "Ignoruj powtarzające się wstrząsy, takie jak w pociągu lub samochodzie"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Ręczne zawieszenie funkcji Active Protection",
+                    "caption": "Zezwól na ręczne zawieszanie funkcji Active Protection System",
+                    "dropdown-title": "Zawieś na",
+                    "button": "Zawieś teraz"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Aby poprawić dostęp do dysku twardego podczas korzystania z tabletu, zawieś funkcję Active Protection System, gdy zostaną wykryte następujące działania",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Wprowadzanie przy użyciu rysika",
+                        "description": "Gdy do wprowadzania danych używany jest rysik, włącz APS, jeśli rysik jest poza zasięgiem"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Wprowadzanie dotykowe",
+                        "description": "Gdy używane jest wprowadzanie dotykowe, włącz APS, gdy wprowadzanie dotykowe nie zostanie wykryte"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Bliskość dłoni wykrywana na krawędziach komputera",
+                        "description": "Gdy tryb tabletu jest włączony, włącz APS, gdy ręka nie zostanie wykryta"
                     }
                 }
             },
@@ -1215,30 +1214,30 @@
                 "tooltip": "Ta funkcja nie dotyczy odtwarzaczy wideo w sieci Web. Popularne lokalne odtwarzacze wideo, takie jak program Windows Media Player, 5KPlayer itd., obsługują tę funkcję."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Głos",
+                "description": "Funkcja Lenovo Voice pomaga przekształcić Twój głos na tekst za pomocą funkcji Głos na tekst i zapewnia tłumaczenie w czasie rzeczywistym z głosu na tekst za pomocą funkcji tłumaczenia.",
+                "installBtnText": "Zainstaluj",
+                "launchBtnText": "Uruchom",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Głos na tekst",
+                    "caption": "Ta funkcja pomaga przekształcić Twój głos na tekst."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Tłumaczenie",
+                    "caption": "Ta funkcja zapewnia tłumaczenie głosu w czasie rzeczywistym. Przetłumaczone treści są wyświetlane jako tekst. Możesz wybrać języki źródłowe i docelowe zgodnie z własnymi potrzebami."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Rozpocznij:",
+                    "point1": "Upewnij się, że ikona funkcji Lenovo Voice jest wyświetlana na pasku zadań systemu Windows.",
+                    "point2": "Otwórz plik, w którym chcesz nagrać przekonwertowany tekst.",
+                    "point3": "Kliknij ikonę funkcji Lenovo Voice na pasku zadań systemu Windows i wybierz opcję Głos na tekst.",
+                    "point4": "Wybierz żądany język i kliknij ikonę mikrofonu, aby rozpocząć.",
+                    "point5": "Umieść kursor w miejscu, w którym chcesz edytować i zacznij mówić.",
+                    "point6": "Kliknij ikonę funkcji Lenovo Voice na pasku zadań systemu Windows i wybierz opcję Tłumacz.",
+                    "point7": "Wybierz żądany język źródłowy oraz docelowy.",
+                    "point8": "W zależności od potrzeb ustaw wejście głosowe z głośnika lub z mikrofonu.",
+                    "point9": "Kliknij ikonę mikrofonu, aby zacząć mówić",
+                    "closeText": "zamknij"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1616,7 +1615,9 @@
             },
             "errorMessage": {
                 "headerText": "Błąd",
-                "bodyText": "Wykryliśmy, że brakuje ważnych elementów aplikacji Vantage. Te elementy zostaną pobrane w tle. Spróbuj ponownie później."
+                "bodyText": "Wykryliśmy, że brakuje ważnych elementów aplikacji Vantage. Te elementy zostaną pobrane w tle. Spróbuj ponownie później.",
+                "closeText": "close",
+                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
             }
         },
         "homeprotection": {

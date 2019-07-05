@@ -470,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Du ser ud til at være fuld af energi i dag "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Ingen internetforbindelse fundet",
+            "subtitle": "Læs mere om, hvordan du løser forbindelsesproblemer, i vores",
+            "buttonText": "Få support"
         },
         "feedback": {
             "title": "Giv feedback",
@@ -500,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Dine Hurtige indstillinger",
+            "microphone": "Mikrofon",
+            "cameraPrivacy": "Kamera",
+            "eyeCareMode": "Øjenbeskyttelsestilstand"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Systemstatus",
+            "subtitle": "FÅ ET HURTIGT INDBLIK I DIN ENHEDSSTATUS.",
             "memory": {
-                "title": "Memory",
+                "title": "Hukommelse",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Hukommelsen blev ikke fundet",
+                    "of": "af"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Diskplads",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Disken blev ikke fundet",
+                    "of": "af"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Garanti",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Garantien blev ikke fundet",
+                    "until": "Indtil",
+                    "expiredOn": "Garantien udløber den",
+                    "notAvailable": "Garantien er ikke tilgængelig"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Opdatér"
                 }
             }
         }
@@ -652,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -813,9 +812,9 @@
                         "checkbox": "Aktivér USB-opladning fra computerens batteri, når computeren er slukket."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Nem genoptagelse",
+                        "description": "Aktiver denne funktion for at forbedre genoptagelsestiden, hvis du ofte åbner og lukker computerens låg.",
+                        "tooltip": "Denne funktion forbedrer genoptagelsestiden, hvis du ofte åbner og lukker computerens låg. Når den er aktiveret, går computeren i en tilstand med lavt strømforbrug, når du lukker dens låg, men den genoptager driften med det samme, hvis du åbner låget inden for 15 minutter efter, du har lukket det. Denne funktion giver din notebook mulighed for at forsøge at udføre ventende aktiviteter (som f.eks. afsendelse af e-mail eller download af en fil), inden systemet går i dvale."
                     }
                 },
                 "otherSettings": {
@@ -831,9 +830,9 @@
                         "title": "Opladningsgrænse for batteri",
                         "description": "Hvis du primært bruger computeren med vekselstrømsadapteren tilsluttet og kun sjældent bruger strøm fra batteriet,kan du øge batteriets levetid ved at sætte den maksimale opladningsværdi til mindre end 100 %.Dette er nyttigt, fordi batterier, der ikke bruges så ofte, har en længere levetid, når de ikke er fuldt opladet.",
                         "tooltip": "Hvis batteriet er opladet til over opladningsgrænsen, skal du frakoble strømadapteren, indtil batteriet er afladet til eller under opladningsgrænsen.Afhængigt af batteriets status (gammelt eller nyt) kan det præcise punkt, hvor opladningen starter eller stopper, variere med op til 2 procentpoint.Hvis du aktiverer funktionen, anbefales det at udføre en nulstilling af batterimåler med jævne mellemrum for at sikre en korrekt angivelse af batteriets tilstand.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Bemærk",
+                        "readMoreText": "Læs mere.",
+                        "noteInfo": " Opladningsgrænse for batteri er stadig ikke fuldt aktiv. Tag maskinens strømstik ud, og lad batteriet aflade til under den grænse, hvor enheden stopper med at oplade.",
                         "settings": {
                             "title1": "Grænse for indbygget batteri",
                             "title2": "Grænse for flytbart batteri"
@@ -846,9 +845,9 @@
                             "cancel": "ANNULLER"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Start opladning, når under",
+                            "checkboxText": "Indstil automatisk grænsen for start af opladning til 5 procentpoint under grænsen for stop af opladningen.",
+                            "stop": "Stop opladning ved"
                         }
                     },
                     "expressCharging": {
@@ -872,21 +871,21 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "ET ENERGY STAR-CERTIFICERET PRODUKT"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Smart-standby",
+                    "description": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
+                    "tooltip": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte starttidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres på baggrund af den tidsplan, du angiver. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Angiv det tidspunkt, hvor du normalt bruger denne computer",
+                        "subHeading1": "starter",
+                        "subHeading2": "slut",
+                        "subHeading3": "brug denne tidsplan for",
+                        "endTimeNote": "Sluttidspunktet skal være inden for 20 timer fra starttidspunktet",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
+                            "unit1": "Timer",
+                            "unit2": "Minutter",
                             "unit3": "AM/PM"
                         }
                     }
@@ -1180,31 +1179,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Lenovo Active Protection System er en automatisk funktion, der beskytter harddisken mod beskadigelse, som skyldes kraftige fysiske stød eller rystelser. Funktionen overvåger computerens bevægelser hele tiden og stopper harddisken midlertidigt, hvis der registreres et fald eller en lignende hændelse.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "Skift følsomheden. Når der er valgt en tilstand med lav følsomhed, vil kun hårde stød aktivere beskyttelsen",
+                    "checkbox": "Ignorer gentagne stød, f.eks. fra et tog eller bil"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Afbryd Active Protection manuelt",
+                    "caption": "Giv mig mulighed for at afbryde Active Protection System manuelt",
+                    "dropdown-title": "Afbryd i",
+                    "button": "Afbryd nu"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "For at forbedre adgangen til harddisken under tabletbrug skal Active Protection System afbrydes, når følgende aktiviteter registreres",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Input via pen",
+                        "description": "Når der bruges input med pennen, skal APS aktiveres, når pennens input er uden for rækkevidde"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Input via berøring",
+                        "description": "Når der bruges berøringsinput, skal du APS aktiveres, når berøringsinput ikke registreres"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Registrering af, hvor langt hånden er fra computerens kanter",
+                        "description": "Når tablet-tilstand er aktiveret, skal APS aktiveres, når hånden ikke registreres"
                     }
                 }
             },
@@ -1215,30 +1214,30 @@
                 "tooltip": "Denne funktion kan ikke bruges med internetvideoafspillere. Populære lokale videoafspillere som f.eks. Windows Media Player, 5KPlayer osv. understøtter denne funktion."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "stemme",
+                "description": "Lenovo Voice hjælper med at konvertere din tale til tekst med funktionen Tale til tekst og giver mulighed for realtidsoversættelse fra tale til tekst med oversættelsesfunktionen.",
+                "installBtnText": "Installér",
+                "launchBtnText": "Start",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Tale til tekst",
+                    "caption": "Med denne funktion kan du konvertere din tale til tekst."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Oversættelse",
+                    "caption": "Denne funktion giver realtidsoversættelse af det, der siges. Det oversatte indhold vises som tekst. Du kan vælge kildesprog og målsprog i henhold til dine behov."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Kom i gang:",
+                    "point1": "Tjek, at Lenovo Voice-ikonet vises i systembakken i Windows.",
+                    "point2": "Åbn den fil, hvor den konverterede tekst skal optages.",
+                    "point3": "Klik på Lenovo Voice-ikonet i systembakken i Windows, og vælg Tale til tekst.",
+                    "point4": "Vælg det ønskede sprog, og klik på mikrofonikonet for at starte.",
+                    "point5": "Placer markøren på det sted, du vil redigere, og begynd at tale.",
+                    "point6": "Klik på Lenovo Voice-ikonet i systembakken i Windows, og vælg Oversæt.",
+                    "point7": "Vælg det ønskede kildesprog og målsprog.",
+                    "point8": "Angiv stemmeinput fra højttaler eller fra mikrofon afhængigt af dine behov.",
+                    "point9": "Klik på mikrofonikonet for at begynde at tale",
+                    "closeText": "luk"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1616,7 +1615,9 @@
             },
             "errorMessage": {
                 "headerText": "Fejl",
-                "bodyText": "Vi har opdaget, at du mangler vigtige dele af Vantage. Disse dele downloades i baggrunden. Prøv igen senere."
+                "bodyText": "Vi har opdaget, at du mangler vigtige dele af Vantage. Disse dele downloades i baggrunden. Prøv igen senere.",
+                "closeText": "close",
+                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
             }
         },
         "homeprotection": {

@@ -1,11 +1,17 @@
 <div class="vtr-modal-chs-welcome-container position-relative">
-	<div class="modal-header">
-		<button type="button" class="close close-button" id="chs-tour-btn-close" data-dismiss="modal"
-			(click)="closeModal()" aria-label="chs-tour-btn-close" vtrMetrics
+	<div class="modal-header justify-content-end">
+		<div role="button" id="chs-tour-btn-close"
+			attr.aria-label="chs-tour-btn-close"
+			href="javascript:;"
+			class="close-btn"
 			metricsItem="closeCHSWelcomeModal"
-			metricsEvent="featureClick">
-			<span aria-hidden="true">&times;</span>
-		</button>
+			metricsEvent="featureClick"
+			metricsParent="ConnectedHomeSecurity"
+			(click)="closeModal()">
+			<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
+				alt=""
+				srcset="">
+		</div>
 	</div>
 	<!-- start of page 1-->
 	<div class="page page-one" *ngIf="switchPage === 1">
@@ -31,7 +37,7 @@
 	</div>
 	<!-- end of page2-->
 	<!-- start of page 3-->
-	<div class="page page-three" *ngIf="switchPage === 3 && isLenovoIdLogin === false">
+	<div class="page page-three" *ngIf="switchPage === 3 && showPageLenovoId === true">
 		<div class="chs-logo w-100 pb-5">
 			<img src="assets/images/connected-home-security/welcome-chs-logo.png" alt="">
 		</div>
@@ -103,7 +109,7 @@
 	</div>
 	<!-- end of page3-->
 	<!-- start of page 4-->
-	<div class="page page-four" *ngIf="switchPage === 4 && showPageFour === true">
+	<div class="page page-four" *ngIf="switchPage === 4 && showPageLocation === true">
 		<div class="chs-logo w-100 pb-5">
 			<img src="assets/images/connected-home-security/welcome-chs-logo.png" alt="">
 		</div>
@@ -132,7 +138,7 @@
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomeDoneButton"
 					metricsParent="{{metricsParent}}"
-					(click)="closeModal()"
+					(click)="next(switchPage, isLenovoIdLogin, isLocationServiceOn)"
 					[label]="'homeSecurity.tour.done' | translate"
 					[title]="'homeSecurity.tour.done' | translate"></vtr-ui-button>
 			</div>
@@ -165,7 +171,7 @@
 					[title]="'common.ui.back' | translate"></vtr-ui-button>
 			</div>
 			<div class="button-welcome">
-				<vtr-ui-button *ngIf="!isLenovoIdLogin || !isLocationServiceOn"
+				<vtr-ui-button
 					id="chs-tour-btn-next"
 					aria-label="chs-tour-btn-next"
 					metricsEvent="FeatureClick"
@@ -174,15 +180,6 @@
 					(click)="next(switchPage, isLenovoIdLogin, isLocationServiceOn)"
 					[label]="'tutorial.next' | translate"
 					[title]="'tutorial.next' | translate"></vtr-ui-button>
-				<vtr-ui-button *ngIf="isLenovoIdLogin && isLocationServiceOn"
-					id="chs-tour-btn-done"
-					aria-label="chs-tour-btn-done"
-					metricsEvent="FeatureClick"
-					metricsItem="CHSStartTrialButton"
-					metricsParent="{{metricsParent}}"
-					(click)="next(switchPage, isLenovoIdLogin, isLocationServiceOn)"
-					[label]="'homeSecurity.tour.done' | translate"
-					[title]="'homeSecurity.tour.done' | translate"></vtr-ui-button>
 			</div>
 		</div>
 		<div *ngIf="switchPage === 3" class="row text-center justify-content-between align-items-center no-gutters">

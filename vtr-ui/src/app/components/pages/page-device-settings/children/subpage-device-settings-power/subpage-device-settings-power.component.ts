@@ -577,6 +577,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					.then((featureStatus: FeatureStatus) => {
 						console.log('getAlwaysOnUSBStatusIdeaNoteBook.then', featureStatus);
 						this.alwaysOnUSBStatus = featureStatus;
+						this.toggleAlwaysOnUsbFlag = this.alwaysOnUSBStatus.status;
 					})
 					.catch(error => {
 						console.error('getAlwaysOnUSBStatusIdeaNoteBook', error);
@@ -598,9 +599,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						if (this.usbChargingInBatteryModeStatus) {
 							this.usbChargingCheckboxFlag = featureStatus.status;
 						}
-						if (this.alwaysOnUSBStatus.status) {
-							this.toggleAlwaysOnUsbFlag = true;
-						}
+						// if (this.alwaysOnUSBStatus.status) {
+						// 	this.toggleAlwaysOnUsbFlag = true;
+						// }
 					})
 					.catch(error => {
 						console.error('getUSBChargingInBatteryModeStatusIdeaNoteBook', error);

@@ -470,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "今天看起來充滿活力"
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "未偵測到網際網路連線",
+            "subtitle": "進一步瞭解如何解決連線問題",
+            "buttonText": "獲得支援"
         },
         "feedback": {
             "title": "提供意見回饋",
@@ -500,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "您的快速設定",
+            "microphone": "麥克風",
+            "cameraPrivacy": "相機",
+            "eyeCareMode": "護眼模式"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "系統狀態",
+            "subtitle": "快速掌握您的裝置狀態。",
             "memory": {
-                "title": "Memory",
+                "title": "記憶體",
                 "detail": {
-                    "notFound": "找不到内存",
-                    "of": "of"
+                    "notFound": "找不到記憶體",
+                    "of": "/"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "磁碟空間",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "找不到磁碟",
+                    "of": "/"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "保固",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "找不到保固",
+                    "until": "直到",
+                    "expiredOn": "保固到期日",
+                    "notAvailable": "沒有可用保固"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "更新"
                 }
             }
         }
@@ -652,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -813,9 +812,9 @@
                         "checkbox": "當電腦關機時，啟用筆記本電腦電池的 USB 充電。"
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "輕鬆回復",
+                        "description": "如果您需要頻繁地打開及闔上電腦機蓋，請啟用此功能以改善電腦恢復作業的時間。",
+                        "tooltip": "如果您需要頻繁地打開、闔上電腦機蓋，此功能將改善電腦恢復作業的時間。啟用時，您的電腦將在您闔上其機蓋時進入省電模式，但是如果您在闔上機蓋後的 15 分鐘內打開機蓋，電腦將立即恢復正常作業。此功能也可讓您的筆記型電腦嘗試完成擱置中的活動（例如傳送電子郵件或下載檔案），然後再使系統暫停。"
                     }
                 },
                 "otherSettings": {
@@ -831,9 +830,9 @@
                         "title": "電池的充電臨界值",
                         "description": "如果您使用電腦時大多都會接上 AC 整流器，而且很少使用電池電力，可以將最高充電值設定為低於 100% 來延長電池的壽命。這方式非常有用，因為不常使用的電池若能維持在非完全充飽的狀態，可延長其壽命。",
                         "tooltip": "如果電池目前已充電至停止充電臨界值以上，請拔下電源，直到電池放電至停止充電臨界值或以下。根據電池狀態（不論新舊），其開始或停止充電的確切時間點可能會有最多 2% 的誤差。如果您啟用此功能，建議您偶爾執行一次電池計量器重設以確保獲得正確的電池性能報告。",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "備注",
+                        "readMoreText": "較多內容。",
+                        "noteInfo": " 電池充電臨界值仍未完全作用。請拔除您的裝置，讓電池電力清空至停止充電臨界值或以下。",
                         "settings": {
                             "title1": "內建電池的臨界值",
                             "title2": "抽取式電池的臨界值"
@@ -846,9 +845,9 @@
                             "cancel": "取消"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "低於下列百分比時開始充電",
+                            "checkboxText": "自動將開始充電臨界值設定為停止充電臨界值減 5%。",
+                            "stop": "達到下列百分比時停止充電"
                         }
                     },
                     "expressCharging": {
@@ -872,22 +871,22 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "ENERGY STAR 認證產品"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "智慧型待命",
+                    "description": "此功能會排程您的電腦以便在閒置時達到最佳的電池省電效能，在工作負荷較重時仍可快速開機。",
+                    "tooltip": "當智慧型待命啟用時，電腦在排程的開始時間之前會切換到新式待命，並在使用電池電力閒置一段時間後進入休眠模式。這段時間會根據您設定的排程最佳化。電腦只有在排程日會從休眠模式切換到新式待命，若是在連續的排程日處於閒置狀態就不會切換。",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "設定您一般使用這部電腦的時間",
+                        "subHeading1": "開始",
+                        "subHeading2": "結束",
+                        "subHeading3": "將此排程用於",
+                        "endTimeNote": "結束時間必須距開始時間 20 小時內",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
-                            "unit3": "AM/PM"
+                            "unit1": "小時",
+                            "unit2": "分鐘",
+                            "unit3": "上午/下午"
                         }
                     }
                 }
@@ -1180,31 +1179,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Lenovo Active Protection System 是一種自主功能，可協助保護硬碟避免因強烈物理震動和振動而受損。其將持續監視電腦的移動，而且會在預測到掉落或類似損害事件時暫停硬碟運作。",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "改變敏感度，在低敏感模式下，只有較強的撞擊才會啟動保護",
+                    "checkbox": "忽略重複震動，例如火車或汽車內的震動"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "手動暫停 Active Protection",
+                    "caption": "允許我手動暫停 Active Protection System",
+                    "dropdown-title": "暫停時間",
+                    "button": "立即暫停"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "為了改善使用平板電腦時的硬碟存取，系統在偵測到下列動作時會暫停 Active Protection System",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "數位筆輸入",
+                        "description": "使用數位筆輸入時，在數位筆輸入離開範圍時啟用 APS"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "觸控輸入",
+                        "description": "使用觸控輸入時，在未偵測到觸控輸入時啟用 APS"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "電腦邊緣感應到手接近",
+                        "description": "啟用平板電腦模式時，在未偵測到手部時啟用 APS"
                     }
                 }
             },
@@ -1215,30 +1214,30 @@
                 "tooltip": "此功能不適用於 Web 視訊播放程式。受歡迎的本端視訊播放程式（例如 Windows Media Player、5KPlayer 等）都支援此功能。"
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "語音",
+                "description": "Lenovo Voice 可使用語音到文字功能，協助將您的語音轉換為文字，並使用翻譯功能提供從語音到文字的即時翻譯。",
+                "installBtnText": "安裝",
+                "launchBtnText": "啟動",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "語音到文字",
+                    "caption": "此功能可協助將您的語音轉換為文字。"
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "翻譯",
+                    "caption": "此功能提供語音的即時翻譯。翻譯的內容顯示在文字中。您可以根據需求選擇來源語言和目標語言。"
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "開始使用：",
+                    "point1": "確保 Lenovo Voice 圖示有顯示在 Windows 系統匣中。",
+                    "point2": "開啟要用來記錄轉換文字的檔案。",
+                    "point3": "按一下 Windows 系統匣中的 Lenovo Voice 圖示，然後選取「語音到文字」。",
+                    "point4": "選取所需的語言，然後按一下麥克風圖示開始。",
+                    "point5": "將游標放在要編輯的位置並開始說話。",
+                    "point6": "按一下 Windows 系統匣中的 Lenovo Voice 圖示，然後選取「翻譯」。",
+                    "point7": "選擇所需的來源語言和目標語言。",
+                    "point8": "根據您的需求，設定從喇叭或麥克風輸入語音。",
+                    "point9": "按一下麥克風圖示開始說話",
+                    "closeText": "關閉"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1616,7 +1615,9 @@
             },
             "errorMessage": {
                 "headerText": "錯誤",
-                "bodyText": "我們發現您缺少 Vantage 的關鍵組件。這些組件將在背景進行下載。請稍後重試。"
+                "bodyText": "我們發現您缺少 Vantage 的關鍵組件。這些組件將在背景進行下載。請稍後重試。",
+                "closeText": "close",
+                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
             }
         },
         "homeprotection": {

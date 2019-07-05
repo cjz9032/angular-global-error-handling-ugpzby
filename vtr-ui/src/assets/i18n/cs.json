@@ -470,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Vypadáte dnes aktivně "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Nebylo zjištěno žádné připojení k Internetu.",
+            "subtitle": "Další informace o řešení problémů s připojením naleznete v našem článku",
+            "buttonText": "Získejte podporu"
         },
         "feedback": {
             "title": "Zaslat zpětnou vazbu",
@@ -500,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Vaše rychlá nastavení",
+            "microphone": "Mikrofon",
+            "cameraPrivacy": "Fotoaparát",
+            "eyeCareMode": "Režim péče o oči"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Stav systému",
+            "subtitle": "RYCHLÉ ZACHYCENÍ STAVU ZAŘÍZENÍ.",
             "memory": {
-                "title": "Memory",
+                "title": "Paměť",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Paměť nebyla nalezena",
+                    "of": "z"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Místo na disku",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Disk nebyl nalezen",
+                    "of": "z"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Záruka",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Záruka nebyla nalezena.",
+                    "until": "Dokud",
+                    "expiredOn": "Platnost záruky vypršela dne",
+                    "notAvailable": "Záruka není k dispozici"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Aktualizace"
                 }
             }
         }
@@ -652,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -813,9 +812,9 @@
                         "checkbox": "Povolit USB nabíjení z akumulátoru, když je počítač vypnutý."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Rychlé znovuspuštění",
+                        "description": "Aktivujte tuto funkci, zrychlí obnovení provozu počítače v případě, že často otevíráte a zavíráte jeho víko.",
+                        "tooltip": "Tato funkce zrychlí obnovení provozu počítače v případě, že často otevíráte a zavíráte jeho víko. Je-li zapnuta, počítač po zavření víka přejde do režimu nízké spotřeby, v případě znovuotevření víka během 15 sekund od jeho zavření se však okamžitě vrátí k běžnému provozu. Kromě toho se díky ní notebook může pokusit dokončit započaté činnosti (například odeslání e-mailu nebo stahování souboru) ještě předtím, než přejde do pohotovostního režimu."
                     }
                 },
                 "otherSettings": {
@@ -831,9 +830,9 @@
                         "title": "Limit nabíjení baterie",
                         "description": "Pokud k napájení počítače používáte zejména napájecí adaptér a baterii používáte jen zřídka,můžete její životnost prodloužit nastavením maximální úrovně nabití na méně než 100 %.Málo používané baterie totiž mají delší životnost, pokud nejsou udržovány plně nabité.",
                         "tooltip": "Je-li baterie momentálně nabita nad nastavený horní limit, je třeba odpojit napájení a ponechat ho odpojený, dokud nabití baterie neklesne minimálně na limit.Přesný stav, při kterém se nabíjení zapne nebo zastaví, se může podle stáří baterie lišit až o 2 procenta.Pokud tuto funkci zapnete, doporučujeme čas od času resetovat ukazatel stavu baterie. Tím zajistíte přesnost údaje o stavu baterie.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Poznámka",
+                        "readMoreText": "Další informace.",
+                        "noteInfo": " Prahová hodnota nabíjení baterie stále není plně aktivní. Odpojte počítač a nechte baterii vybít na nebo pod limit nabíjení baterie.",
                         "settings": {
                             "title1": "Prahová hodnota pro vestavěnou baterii",
                             "title2": "Prahová hodnota pro vyjímatelnou baterii"
@@ -846,9 +845,9 @@
                             "cancel": "STORNO"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Začít nabíjení při poklesu pod",
+                            "checkboxText": "Automaticky nastavit limit spuštění nabíjení, když se baterie vybije 5 % pod horní limit.",
+                            "stop": "Zastavit nabíjení na"
                         }
                     },
                     "expressCharging": {
@@ -872,22 +871,22 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "ZAŘÍZENÍ S CERTIFIKACÍ ENERGY STAR"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Chytrý pohotovostní režim",
+                    "description": "Pomocí této funkce lze optimalizovat výdrž baterie počítače v době, kdy se s ním nepracuje, aniž by to mělo negativní vliv na rychlost jeho opětovného spuštění při intenzivnějším využívání.",
+                    "tooltip": "Když chytrý pohotovostní režim povolíte, počítač se před jeho plánovaným začátkem přepne do moderního pohotovostního režimu, a pokud bude napájen z baterie a nebudete s ním po určitou dobu pracovat, přejde do režimu hibernace. Toto časové rozmezí se optimalizuje na základě nastaveného plánu. Počítač se bude z hibernace probouzet pouze v určené dny a nezapne se, když bude neaktivní po dobu několika po sobě jdoucích vybraných dnů.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Nastavte čas, kdy počítač obvykle používáte",
+                        "subHeading1": "pokračovat",
+                        "subHeading2": "konec",
+                        "subHeading3": "použít toto nastavení pro",
+                        "endTimeNote": "Koncový čas nesmí být od počátečního času vzdálen více než 20 hodin",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
-                            "unit3": "AM/PM"
+                            "unit1": "Hodin",
+                            "unit2": "Minut",
+                            "unit3": "dop/odp"
                         }
                     }
                 }
@@ -1180,31 +1179,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Lenovo Active Protection System je automatická funkce, která pomáhá chránit pevný disk před poškozením způsobeným silnými nárazy a vibracemi. Průběžně sleduje pohyb vašeho počítače a dočasně zastaví pevný disk, pokud předpokládá, že došlo k pádu nebo k podobné nebezpečné události.",
                 "activeProtection": {
-                    "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "title": "Aktivní ochrana Active Protection",
+                    "caption": "Změňte citlivost, v režimu s nízkou citlivostí aktivují ochranu pouze tvrdší otřesy",
+                    "checkbox": "Ignorujte opakované otřesy, ke kterým dochází například ve vlaku nebo automobilu"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Ruční pozastavení aktivní ochrany Active Protection",
+                    "caption": "Umožnit ručně deaktivovat systém aktivní ochrany Active Protection System",
+                    "dropdown-title": "Pozastavit na",
+                    "button": "Pozastavit nyní"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Aby byl pevný disk během používání v režimu tabletu přístupnější, bude systém aktivní ochrany Active Protection System deaktivován v případě rozpoznání následujících činností",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Psaní perem",
+                        "description": "Při používání vstupu pomocí pera aktivovat APS, je-li vstup pomocí pera mimo přípustný rozsah"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Používání dotykové obrazovky",
+                        "description": "Je-li používán dotykový vstup, aktivujte systém APS, pokud není dotykový vstup detekován"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Zjištění ruky v blízkosti okrajů počítače",
+                        "description": "Je-li povolen režim tabletu, aktivujte systém APS, pokud není detekována ruka"
                     }
                 }
             },
@@ -1215,30 +1214,30 @@
                 "tooltip": "Tato funkce není použitelná pro webové přehrávače videa. Oblíbené přehrávače videí v počítači (například Windows Media Player, 5KPlayer apod.) tuto funkci podporují."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Hlas",
+                "description": "Lenovo Voice pomáhá převádět váš hlas do textů funkcí Hlas na text a funkcí Překlad zajišťuje překlad v reálném čase z hlasu do textů.",
+                "installBtnText": "Nainstalujte si",
+                "launchBtnText": "Spustit",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Hlas na text",
+                    "caption": "Tato funkce pomáhá převést váš hlas na texty."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Překlad",
+                    "caption": "Tato funkce poskytuje v reálném čase překlad do hlasu. Přeložený obsah se zobrazuje v textech. Podle svých potřeb si můžete vybrat zdrojové jazyky a cílové jazyky."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Jak začít:",
+                    "point1": "Ujistěte se, zda se na hlavním panelu systému Windows zobrazuje ikona Lenovo Voice.",
+                    "point2": "Otevřete soubor, do kterého chcete zapsat převedený text.",
+                    "point3": "Klepněte na ikonu Lenovo Voice na hlavním panelu systému Windows a vyberte možnost Hlas na text.",
+                    "point4": "Vyberte požadovaný jazyk a začněte klepnutím na ikonu mikrofonu.",
+                    "point5": "Umístěte kurzor na místo, kde chcete provést úpravu, a začněte mluvit.",
+                    "point6": "Klepněte na ikonu Lenovo Voice na hlavním panelu systému Windows a vyberte možnost Přeložit.",
+                    "point7": "Vyberte požadovaný zdrojový jazyk a cílový jazyk.",
+                    "point8": "Podle svých potřeb nastavte hlasový vstup z reproduktoru nebo z mikrofonu.",
+                    "point9": "Klepněte na ikonu mikrofonu a začněte mluvit",
+                    "closeText": "Zavřít"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1616,7 +1615,9 @@
             },
             "errorMessage": {
                 "headerText": "Chyba",
-                "bodyText": "Zjistili jsme, že aplikace Vantage postrádá důležité součásti. Tyto součásti se stáhnou na pozadí. Zkuste to prosím později."
+                "bodyText": "Zjistili jsme, že aplikace Vantage postrádá důležité součásti. Tyto součásti se stáhnou na pozadí. Zkuste to prosím později.",
+                "closeText": "close",
+                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
             }
         },
         "homeprotection": {

@@ -470,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Bugün çok dinç görünüyorsun "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Internet bağlantısı saptanmadı",
+            "subtitle": "Bağlantı sorunlarının nasıl çözüleceğini öğrenmek için",
+            "buttonText": "Destek Alın"
         },
         "feedback": {
             "title": "Geri Bildirim Gönder",
@@ -500,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Hızlı Ayarlarınız",
+            "microphone": "Mikrofon",
+            "cameraPrivacy": "Kamera",
+            "eyeCareMode": "Göz Koruması Kipi"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Sistem Durumu",
+            "subtitle": "CİHAZINIZIN DURUMUNA HIZLI GENEL BAKIŞ.",
             "memory": {
-                "title": "Memory",
+                "title": "Bellek",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Bellek bulunamadı",
+                    "of": "/"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Disk Alanı",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Disk bulunamadı",
+                    "of": "/"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Garanti",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Garanti bulunamadı",
+                    "until": "Bitiş",
+                    "expiredOn": "Garanti süresi sonu",
+                    "notAvailable": "Garanti mevcut değil"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Güncelle"
                 }
             }
         }
@@ -652,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -813,9 +812,9 @@
                         "checkbox": "Bilgisayar kapalıyken dizüstü bilgisayar pilinden USB dolumunu etkinleştirin."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Kolay Sürdür",
+                        "description": "Bilgisayarınızın kapağını sıklıkla açıp kapatıyorsanız sürdürme süresini iyileştirmek için bu özelliği etkinleştirin.",
+                        "tooltip": "Bu özellik, bilgisayarınızın kapağını sıklıkla açıp kapatıyorsanız sürdürme süresini geliştirir. Etkinleştirildiğinde, kapağını kapattığınızda bilgisayarınız düşük güç kipine girer ancak kapattıktan sonraki 15 dakika içerisinde yeniden açmanız durumunda anında sürdürülür. Bu özellik, sistem askıda kipine geçmeden önce bilgisayarınızın bekleyen etkinlikleri (e-posta gönderme veya dosya indirme gibi) tamamlamaya çalışmasına olanak sağlar."
                     }
                 },
                 "otherSettings": {
@@ -831,9 +830,9 @@
                         "title": "Pil Şarj Eşiği",
                         "description": "Genel olarak bilgisayarınızı AC bağdaştırıcısına takılı bir şekilde çalıştırıyorsanız ve pil gücünü nadirenkullanıyorsanız maksimum şarj değerini %100'ün altına ayarlayarak pil ömrünü uzatabilirsiniz. Nadiren kullanılan piller tamamen dolmadan tutulduğunda daha uzun bir pil ömrüne sahip olduğu için bu özellik faydalıdır.",
                         "tooltip": "Piliniz şu anda doldurmayı durdurma eşiğinin üzerindeki bir doluluktaysa pil düzeyi, doldurmayı durdurma eşiğine veya eşiğin altındaki bir değere gelene kadar güç bağdaştırıcısını çıkarın.Pilin durumuna (eski veya yeni) bağlı olarak, şarj başlangıç veya bitiş noktaları %2'ye kadar değişiklik gösterebilir. Bu özelliği etkinleştirirseniz pil durumunun doğru şekilde raporlanmasını sağlamak için ara sıra Pil Göstergesi Sıfırlama işlemi gerçekleştirmeniz önerilir.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Not",
+                        "readMoreText": "Okumaya devam edin.",
+                        "noteInfo": " Pil Şarj Eşiği henüz tamamen etkin değil. Lütfen makinenizi fişten çekin ve pilinizin tamamen boşalmasını veya doldurmayı durdurma eşiğinin altına düşmesini bekleyin.",
                         "settings": {
                             "title1": "Yerleşik pil için eşik",
                             "title2": "Çıkarılabilir pil için eşik"
@@ -846,9 +845,9 @@
                             "cancel": "İPTAL"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Şu değerden az olduğunda şarj etmeye başla",
+                            "checkboxText": "Pili doldurmaya başlama eşiğini, otomatik olarak pili doldurmayı durdurma eşiğinin %5 oranında altına ayarlayın.",
+                            "stop": "Şu değerde şarjı durdur"
                         }
                     },
                     "expressCharging": {
@@ -872,21 +871,21 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "ENERGY STAR SERTİFİKALI ÜRÜN"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Akıllı Bekleme",
+                    "description": "Bu özellik, yoğun kullanım zamanlarında hızlı başlatmadan ödün vermeden, bilgisayar boşta olduğunda pil güç tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
+                    "tooltip": "Akıllı Bekleme özelliği etkin olduğunda bilgisayarınız zamanlanan Başlangıç saatinden önce Modern Bekleme Durumu kipine geçer ve pil gücünde belirli bir süre etkin olmadan beklediğinde hazırda bekleme kipine geçer. Bu süre, ayarladığınız zamanlamaya göre iyileştirilir. Bilgisayar hazırda bekleme kipinden Modern Bekleme Durumu kipine yalnızca zamanlanan günlerde geçer ve zamanlanan günlerde art arda etkin olmadan beklediğinde kipi değiştirmez.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Bu bilgisayarı genelde kullandığınız saatleri ayarlayın",
+                        "subHeading1": "bu alanın",
+                        "subHeading2": "bitiş",
+                        "subHeading3": "bu zamanlamanın kullanılacağı zaman",
+                        "endTimeNote": "Bitiş saati, Başlangıç saatinden sonraki 20 saat içinde olmalıdır",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
+                            "unit1": "Saat",
+                            "unit2": "Dakika",
                             "unit3": "AM/PM"
                         }
                     }
@@ -1180,31 +1179,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Lenovo Active Protection System, sabit sürücünüzü güçlü fiziksel darbe ve titreşimlerin neden olduğu hasarlardan korumanıza yardımcı olan bir otonom özelliktir. Sürekli olarak bilgisayarınızın hareketini izler ve düşme veya benzeri şekilde zarar verici bir olay öngörüldüğünde sabit sürücüyü geçici olarak durdurur.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "Duyarlılığı düşük duyarlılık moduna değiştirdiğinizde yalnızca daha sert darbeler korumayı etkinleştirir",
+                    "checkbox": "Bir tren veya arabadaki gibi tekrarlayan darbeleri göz ardı et"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Active Protection'ı Manuel Olarak Askıya Alma",
+                    "caption": "Active Protection System'i manuel olarak askıya almama izin ver",
+                    "dropdown-title": "Askıya alma süresi:",
+                    "button": "Şimdi Askıya Al"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Tablet kullanımı sırasında sabit disk sürücüsüne erişimi iyileştirmek için aşağıdakiler algılandığında Active Protection System öğesini askıya al",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Kalemle Giriş",
+                        "description": "Kalemle giriş kullanılırken kalem aralık dışı olduğunda APS'yi etkinleştir"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Dokunarak Giriş",
+                        "description": "Dokunarak giriş kullanılırken dokunarak giriş algılanmadığında APS'yi etkinleştir"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Bilgisayarın kenarlarında el yakınlığı algılayıcılar",
+                        "description": "Tablet modu etkin durumdayken el algılanmadığında APS'yi etkinleştir"
                     }
                 }
             },
@@ -1215,30 +1214,30 @@
                 "tooltip": "Bu özellik, Web üzerindeki video oynatıcılar için geçerli değildir. Windows Media Player ya da 5KPlayer gibi popüler yerel video oynatıcılar bu özelliği destekler."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Ses",
+                "description": "Lenovo Voice, Sesten metne işlevi sayesinde sesinizi metne dönüştürmeye yardımcı olur ve Çeviri işlevi sayesinde sesten metne gerçek zamanlı çeviri sağlar.",
+                "installBtnText": "Kur",
+                "launchBtnText": "Başlat",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Sesten metne",
+                    "caption": "Bu özellik sesinizin metne dönüştürülmesine yardımcı olur."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Çeviri",
+                    "caption": "Bu özellik sesin gerçek zamanlı çevirisini sağlar. Çevrilen içerikler metin olarak gösterilir. İhtiyacınıza göre kaynak dil ve hedef dil seçebilirsiniz."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Başlayın:",
+                    "point1": "Windows sistem tepsisinde Lenovo Voice simgesinin görüntülendiğinden emin olun.",
+                    "point2": "Dönüştürülmüş metni kaydetmek istediğiniz dosyayı açın.",
+                    "point3": "Windows sistem tepsisinde Lenovo Voice simgesine tıklayın ve Voice to text (Sesten metne) özelliğini seçin.",
+                    "point4": "İstediğiniz dili seçin ve başlamak için mikrofon simgesine tıklayın.",
+                    "point5": "İmleci düzenlemek istediğiniz yere getirin ve konuşmaya başlayın.",
+                    "point6": "Windows sistem tepsisinde Lenovo Voice simgesine tıklayın ve Translate (Çevir) özelliğini seçin.",
+                    "point7": "İstediğiniz kaynak dili ve hedef dili seçin.",
+                    "point8": "Gereksinimlerinize bağlı olarak ses girişini Hoparlör veya Mikrofon olacak şekilde ayarlayın.",
+                    "point9": "Konuşmaya başlamak için mikrofon simgesine tıklayın",
+                    "closeText": "kapat"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1616,7 +1615,9 @@
             },
             "errorMessage": {
                 "headerText": "Hata",
-                "bodyText": "Vantage'ın kritik parçalarının sizde olmadığını tespit ettik. Bu parçalar arka planda indirilecek. Lütfen daha sonra yeniden deneyin."
+                "bodyText": "Vantage'ın kritik parçalarının sizde olmadığını tespit ettik. Bu parçalar arka planda indirilecek. Lütfen daha sonra yeniden deneyin.",
+                "closeText": "close",
+                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
             }
         },
         "homeprotection": {

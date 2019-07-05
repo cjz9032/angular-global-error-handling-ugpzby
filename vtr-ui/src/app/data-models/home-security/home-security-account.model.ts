@@ -55,15 +55,15 @@ export class HomeSecurityAccount {
 	createAccount() {}
 	purchase() {}
 
-	constructor(private modalService?: NgbModal, chsAccount?: any) {
-		if (chsAccount) {
-			this.state = chsAccount.state;
-			this.expiration = chsAccount.expiration;
-			this.standardTime = chsAccount.serverTimeUTC;
-			this.createAccount = chsAccount.createAccount;
-			this.purchase = chsAccount.purchase;
-			if (chsAccount.lenovoId) {
-				this.lenovoIdLoggedIn = chsAccount.lenovoId.loggedIn;
+	constructor(private modalService?: NgbModal, chs?: any) {
+		if (chs && chs.account) {
+			this.state = chs.account.state;
+			this.expiration = chs.account.expiration;
+			this.standardTime = chs.account.serverTimeUTC;
+			this.createAccount = chs.createAndGetAccount.bind(chs);
+			this.purchase = chs.purchase;
+			if (chs.account.lenovoId) {
+				this.lenovoIdLoggedIn = chs.account.lenovoId.loggedIn;
 			}
 			this.createViewModel();
 		}
@@ -105,7 +105,7 @@ export class HomeSecurityAccount {
 							type: 'accountBadge',
 							status: 'disabled',
 							text: 'homeSecurity.ecosystem.upgrade',
-							onClick: this.purchase.bind(this),
+							onClick: this.purchase,
 							id: 'chs-ecosystem-btn-upgradeAccount',
 							metricsItem: 'upgradeAccount',
 						},
@@ -113,7 +113,7 @@ export class HomeSecurityAccount {
 							type: 'trialBadge',
 							status: 'enabled',
 							text: 'homeSecurity.ecosystem.inTrial',
-							onClick: this.purchase.bind(this),
+							onClick: this.purchase,
 							id: 'chs-ecosystem-btn-upgradeAccount',
 							metricsItem: 'upgradeAccount',
 						}
@@ -152,7 +152,7 @@ export class HomeSecurityAccount {
 							type: 'accountBadge',
 							status: 'disabled',
 							text: 'homeSecurity.ecosystem.upgrade',
-							onClick: this.purchase.bind(this),
+							onClick: this.purchase,
 							id: 'chs-ecosystem-btn-upgradeAccount',
 							metricsItem: 'upgradeAccount',
 						},
@@ -160,7 +160,7 @@ export class HomeSecurityAccount {
 							type: 'trialBadge',
 							status: 'disabled',
 							text: 'homeSecurity.ecosystem.trialExpired',
-							onClick: this.purchase.bind(this),
+							onClick: this.purchase,
 							id: 'chs-ecosystem-btn-upgradeAccount',
 							metricsItem: 'upgradeAccount',
 						}
@@ -240,7 +240,7 @@ export class HomeSecurityAccount {
 							type: 'accountBadge',
 							status: 'disabled',
 							text: 'homeSecurity.ecosystem.renew',
-							onClick: this.purchase.bind(this),
+							onClick: this.purchase,
 							id: 'chs-ecosystem-btn-upgradeAccount',
 							metricsItem: 'upgradeAccount',
 						},
@@ -284,7 +284,7 @@ export class HomeSecurityAccount {
 								type: 'accountBadge',
 								status: 'disabled',
 								text: 'homeSecurity.ecosystem.upgrade',
-								onClick: this.purchase.bind(this),
+								onClick: this.purchase,
 								id: 'chs-ecosystem-btn-upgradeAccount',
 								metricsItem: 'upgradeAccount',
 							},
@@ -292,7 +292,7 @@ export class HomeSecurityAccount {
 								type: 'trialBadge',
 								status: 'disabled',
 								text: 'homeSecurity.ecosystem.startTrial',
-								onClick: this.createAccount.bind(this),
+								onClick: this.createAccount,
 								id: 'chs-ecosystem-btn-createAccount',
 								metricsItem: 'createAccount',
 							}

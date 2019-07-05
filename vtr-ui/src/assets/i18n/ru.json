@@ -470,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "У вас сегодня бодрый вид "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Соединение с Интернетом не обнаружено",
+            "subtitle": "Дополнительные сведения о решении проблем с подключением в нашем",
+            "buttonText": "Получить поддержку"
         },
         "feedback": {
             "title": "Отправьте отзыв",
@@ -500,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Ваша панель быстрой настройки параметров",
+            "microphone": "Микрофон",
+            "cameraPrivacy": "Фотокамера",
+            "eyeCareMode": "Режим защиты глаз"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Состояние системы",
+            "subtitle": "КРАТКАЯ СВОДКА О СОСТОЯНИИ ВАШЕГО УСТРОЙСТВА.",
             "memory": {
-                "title": "Memory",
+                "title": "Память",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Память не найдена",
+                    "of": "из"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Пространство на диске",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Диск не найден",
+                    "of": "из"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Гарантия",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Гарантия не найдена",
+                    "until": "До",
+                    "expiredOn": "Срок гарантии истек",
+                    "notAvailable": "Гарантия недоступна"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Обновление"
                 }
             }
         }
@@ -652,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -813,9 +812,9 @@
                         "checkbox": "Включите зарядку от аккумулятора ноутбука через USB-порт при выключенном компьютере."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Простое восстановление",
+                        "description": "Включите эту функцию, чтобы сократить время возобновления работы при частом открытии и закрытии крышки компьютера.",
+                        "tooltip": "Эта функция сокращает время возобновления работы при частом открытии и закрытии крышки компьютера. Когда эта функция включена, компьютер переходит в режим низкого энергопотребления при закрытии крышки, но мгновенно возвращается в обычный режим, если открыть крышку в течение 15 минут после ее закрытия. Кроме того, данная функция предоставляет ноутбуку возможность завершить текущие операции (например, отправку сообщения электронной почты или загрузку файла) перед переходом системы в режим ожидания."
                     }
                 },
                 "otherSettings": {
@@ -831,9 +830,9 @@
                         "title": "Пороговый уровень заряда аккумулятора",
                         "description": "Если компьютер в основном питается от сети переменного тока и работает от аккумулятора лишь изредка,срок службы аккумулятора можно увеличить, установив для максимального уровня заряда значение меньше 100%. Это связано с тем, что редко используемые аккумуляторы служат дольше, если они хранятся в недозаряженном состоянии.",
                         "tooltip": "Если аккумулятор в настоящее время заряжен сверх установленного порогового уровня, необходимо отключить питание от электросети и дать аккумулятору разрядиться до порогового уровня или ниже его.В зависимости от состояния аккумулятора (старый или новый) точная пороговая точка начала или прекращения зарядки может отличаться от установленных пороговых уровней максимум на 2 процента. В случае включения этой функции рекомендуется периодически выполнять сброс индикатора аккумулятора для повышения точности информации о его состоянии.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Примечание",
+                        "readMoreText": "Подробнее.",
+                        "noteInfo": " Пороговый уровень заряда аккумулятора по-прежнему не является полностью активным. Отключите компьютер от сети переменного тока и дайте аккумулятору разрядиться до порогового уровня прекращения зарядки или ниже его.",
                         "settings": {
                             "title1": "Порог для встроенного аккумулятора",
                             "title2": "Порог для съемного аккумулятора"
@@ -846,9 +845,9 @@
                             "cancel": "ОТМЕНА"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Начинать зарядку при уровне ниже",
+                            "checkboxText": "Пороговое значение начала зарядки автоматически устанавливается на 5 % ниже порогового уровня заряда.",
+                            "stop": "Прекратить зарядку при уровне"
                         }
                     },
                     "expressCharging": {
@@ -872,21 +871,21 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "ПРОДУКТ С СЕРТИФИКАТОМ ENERGY STAR"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Интеллектуальный режим ожидания",
+                    "description": "Эта функция позволяет компьютеру оптимизировать экономию энергии аккумулятора при бездействии с сохранением возможности быстрого запуска в часы интенсивного использования.",
+                    "tooltip": "Если функция интеллектуального режима ожидания включена, компьютер переключается в текущий режим ожидания до запланированного времени начала работы, а при неактивности в течение определенного периода времени при питании от аккумулятора переходит в режим гибернации. Этот период времени оптимизируется на основе заданного расписания. Компьютер переключается из режима гибернации в текущий режим ожидания только в запланированные дни и не переключается при неактивности в течение нескольких запланированных дней подряд.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Укажите время, когда вы обычно используете этот компьютер",
+                        "subHeading1": "начнете",
+                        "subHeading2": "окончание",
+                        "subHeading3": "использовать это расписание в",
+                        "endTimeNote": "Время окончания должно быть позже времени начала не более чем на 20 часов",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
+                            "unit1": "Часы",
+                            "unit2": "Минуты",
                             "unit3": "AM/PM"
                         }
                     }
@@ -1180,31 +1179,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Lenovo Active Protection System — это автоматически работающая функция, которая помогает защитить жесткий диск от повреждения в результате сильного удара и вибрации. Она постоянно контролирует перемещение вашего компьютера и при обнаружении возможного падения или аналогичного опасного события временно останавливает жесткий диск.",
                 "activeProtection": {
-                    "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "title": "Система Active Protection System",
+                    "caption": "Изменение чувствительности: в режиме низкой чувствительности защита активируется только при сильных ударах",
+                    "checkbox": "Игнорирование повторяющихся ударов, например в поезде или автомобиле"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Приостановка режима Active Protection вручную",
+                    "caption": "Возможность останавливать работу системы Active Protection System вручную",
+                    "dropdown-title": "Приостановлено на",
+                    "button": "Приостановить сейчас"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Чтобы улучшить доступ к жесткому диску во время использования планшетного ПК, приостанавливайте работу Active Protection System при обнаружении следующих действий:",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Ввод с помощью пера",
+                        "description": "При вводе с помощью пера включать APS, когда ввод с пера находится вне зоны действия"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Сенсорный ввод",
+                        "description": "При сенсорном вводе включать APS, если сенсорный ввод не обнаружен"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Обнаружение приближения рук на краях компьютера",
+                        "description": "При включенном режиме планшета включать APS, если рука не обнаружена"
                     }
                 }
             },
@@ -1215,30 +1214,30 @@
                 "tooltip": "Эта функция не распространяется на интернет-проигрыватели видео. Самые популярные локальные видеопроигрыватели (например,проигрыватель Windows Media Player, 5KPlayer и т. д.) поддерживают эту функцию."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Голос",
+                "description": "Lenovo Voice помогает преобразовать речь в текст с использование функции преобразования голоса в текст и обеспечивает перевод в режиме реального времени при преобразовании голоса в текст с помощью функции перевода.",
+                "installBtnText": "Установить",
+                "launchBtnText": "Запустить",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Преобразование голоса в текст",
+                    "caption": "Эта функция помогает преобразовать голос в текст."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Перевод",
+                    "caption": "Эта функция обеспечивает перевод голосовых данных в режиме реального времени. Переведенное содержимое отображается в виде текста. Можно выбрать исходный и целевой языки в зависимости от ваших потребностей."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Начало работы:",
+                    "point1": "Убедитесь, что на панели задач Windows отображается значок Lenovo Voice.",
+                    "point2": "Откройте файл, в который требуется записать преобразованный текст.",
+                    "point3": "Нажмите значок Lenovo Voice на панели задач Windows и выберите \"Преобразование голоса в текст\".",
+                    "point4": "Выберите нужный язык и нажмите на значок микрофона, чтобы начать.",
+                    "point5": "Поместите курсор в место редактирования и начните говорить.",
+                    "point6": "Нажмите значок Lenovo Voice на панели задач Windows и выберите \"Перевод\".",
+                    "point7": "Выберите нужный исходный язык и целевой язык.",
+                    "point8": "В зависимости от потребностей задайте голосовой ввод с динамиков или с микрофона.",
+                    "point9": "Нажмите значок микрофона, чтобы начать говорить",
+                    "closeText": "закрыть"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1616,7 +1615,9 @@
             },
             "errorMessage": {
                 "headerText": "Ошибка",
-                "bodyText": "Мы обнаружили, что вам не хватает критических компонентов Vantage. Эти компоненты будут загружены в фоновом режиме. Повторите попытку позже."
+                "bodyText": "Мы обнаружили, что вам не хватает критических компонентов Vantage. Эти компоненты будут загружены в фоновом режиме. Повторите попытку позже.",
+                "closeText": "close",
+                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
             }
         },
         "homeprotection": {

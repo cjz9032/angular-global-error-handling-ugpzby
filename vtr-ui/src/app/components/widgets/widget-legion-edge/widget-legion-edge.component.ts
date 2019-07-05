@@ -46,6 +46,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCheckBoxVisible: false,
 			isSwitchVisible: false,
 			isPopup: false,
+			driverPopupText: 'gaming.dashboard.device.legionEdge.driverPopup.cpuOverclockText',
 			isDriverPopup: false,
 			isChecked: false,
 			tooltipText: '',
@@ -154,6 +155,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public drop = {
 		curSelected: 1,
 		modeType: 1,
+		hideDropDown: false,
 		dropOptions: [
 			{
 				header: 'gaming.dashboard.device.legionEdge.status.alwayson',
@@ -234,6 +236,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		// console.log('CPU get status', this.GetCPUOverClockCacheStatus());
 		this.commonService.notification.subscribe((response) => {
 			if (response.type === Gaming.GamingCapablities) {
+				console.log(`GAMINGCAPABLITIES in widget-legion-edge.component`, response);
 				this.gamingCapabilities = response.payload;
 				this.legionEdgeInit();
 			}
@@ -252,11 +255,13 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		//this.legionUpdate[4].isChecked = gamingStatus.hybridStatus;
 		this.legionUpdate[5].isVisible = gamingStatus.touchpadLockFeature;
 		this.legionUpdate[5].isChecked = gamingStatus.touchpadLockStatus;
+		if (!gamingStatus.xtuService) {
+			this.drop.hideDropDown = true;
+		}
 
 		if (gamingStatus.cpuOCFeature) {
 			this.renderCPUOverClockStatus();
 		}
-
 		if (gamingStatus.memOCFeature) {
 			this.renderRamOverClockStatus();
 		}
@@ -410,11 +415,16 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 	public onPopupClosed($event) {
 		const name = $event.name;
+		console.log('-----------------------------------', name);
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			this.commonService.sendNotification(name, this.legionUpdate[1].isChecked);
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
 			this.commonService.sendNotification(name, this.legionUpdate[4].isChecked);
+		}
+		if (name === 'gaming.dashboard.device.legionEdge.title') {
+			console.log('------------------');
+			this.legionUpdate[0].isDriverPopup = false;
 		}
 	}
 
@@ -499,5 +509,13 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			}
 		}
 
+	}
+
+	onShowDropdown(event) {
+		if (event.type === 'gaming.dashboard.device.legionEdge.title') {
+			if (this.drop.hideDropDown) {
+				this.legionUpdate[0].isDriverPopup = true;
+			}
+		}
 	}
 }

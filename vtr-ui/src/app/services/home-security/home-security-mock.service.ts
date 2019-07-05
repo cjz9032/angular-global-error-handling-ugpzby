@@ -14,30 +14,6 @@ export class HomeSecurityMockService {
 			lenovoId: {
 				email: 'email',
 				loggedIn: false
-			},
-			createAccount() {
-				this.state = CHSAccountState.trial;
-				this.mitt.emit(EventTypes.chsEvent, this.chs);
-				return Promise.resolve(true);
-			},
-			purchase() {
-				WinRT.launchUri('https://vantagestore.lenovo.com/en/shop/product/connectedhomesecurityoneyearlicense-windows');
-				this.state = this.state === CHSAccountState.trial ? CHSAccountState.trialExpired : CHSAccountState.standard;
-				this.mitt.emit(EventTypes.chsEvent, this.chs);
-			},
-			visitWebConsole(feature: string) {
-				if (feature) {
-					WinRT.launchUri(`https://homesecurity.coro.net/${feature}`);
-				} else {
-					WinRT.launchUri(`https://homesecurity.coro.net/`);
-				}
-				if (feature === 'login') {
-					this.state = CHSAccountState.local;
-					this.mitt.emit(EventTypes.chsEvent, this.chs);
-				} else if (feature === 'profile') {
-					this.state = CHSAccountState.standard;
-					this.mitt.emit(EventTypes.chsEvent, this.chs);
-				}
 			}
 		},
 		overview: {
@@ -88,6 +64,30 @@ export class HomeSecurityMockService {
 		off() { return this; },
 		refresh() {
 			return Promise.resolve([true]);
+		},
+		createAndGetAccount() {
+			this.account.state = CHSAccountState.trial;
+			this.mitt.emit(EventTypes.chsEvent, this.chs);
+			return Promise.resolve(true);
+		},
+		purchase() {
+			WinRT.launchUri('https://vantagestore.lenovo.com/en/shop/product/connectedhomesecurityoneyearlicense-windows');
+			this.account.state = this.state === CHSAccountState.trial ? CHSAccountState.trialExpired : CHSAccountState.standard;
+			this.mitt.emit(EventTypes.chsEvent, this.chs);
+		},
+		visitWebConsole(feature: string) {
+			if (feature) {
+				WinRT.launchUri(`https://homesecurity.coro.net/${feature}`);
+			} else {
+				WinRT.launchUri(`https://homesecurity.coro.net/`);
+			}
+			if (feature === 'login') {
+				this.account.state = CHSAccountState.local;
+				this.mitt.emit(EventTypes.chsEvent, this.chs);
+			} else if (feature === 'profile') {
+				this.account.state = CHSAccountState.standard;
+				this.mitt.emit(EventTypes.chsEvent, this.chs);
+			}
 		}
 	};
 

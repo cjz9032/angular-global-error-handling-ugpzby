@@ -94,8 +94,14 @@ export class SmartStandbyComponent implements OnInit {
 
 	splitStartEndTime() {
 		const startEndTime = this.smartStandby.activeStartEnd.split('-');
-		this.smartStandbyStartTime = startEndTime[0];
-		this.smartStandbyEndTime = startEndTime[1];
+		if (startEndTime.length === 2) {
+			this.smartStandbyStartTime = startEndTime[0].trim();
+			this.smartStandbyEndTime = startEndTime[1].trim();
+		} else {
+			this.smartStandbyStartTime = '00:00';
+			this.smartStandbyEndTime = '00:00';
+		}
+
 		const diff = this.calculateTimeDifference(this.smartStandbyStartTime, this.smartStandbyEndTime);
 		if (diff > 20) {
 			this.showDiffNote = true;

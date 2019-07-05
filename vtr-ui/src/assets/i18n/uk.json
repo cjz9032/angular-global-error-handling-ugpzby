@@ -470,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Сьогодні ви енергійні "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Немає підключення до Інтернету",
+            "subtitle": "Дізнайтеся більше про те, як вирішити проблеми з підключенням, у",
+            "buttonText": "Отримати підтримку"
         },
         "feedback": {
             "title": "Залишити відгук",
@@ -500,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Ваші швидкі настройки",
+            "microphone": "Мікрофон",
+            "cameraPrivacy": "Камера",
+            "eyeCareMode": "Режим захисту зору"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Стан системи",
+            "subtitle": "ШВИДКО ДІЗНАВАЙТЕСЯ СТАН СИСТЕМИ ПРИСТРОЮ.",
             "memory": {
-                "title": "Memory",
+                "title": "Пам’ять",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Пам’ять не знайдено",
+                    "of": "з"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Дисковий простір",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Диск не знайдено",
+                    "of": "з"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Гарантія",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Гарантію не знайдено",
+                    "until": "До",
+                    "expiredOn": "Термін дії гарантії закінчився",
+                    "notAvailable": "Гарантія недоступна"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Оновлення"
                 }
             }
         }
@@ -652,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -813,9 +812,9 @@
                         "checkbox": "Увімкніть заряджання через USB від акумулятора ноутбука, коли комп'ютер вимкнено."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Швидке відновлення",
+                        "description": "Використання цієї функції зменшить час відновлення роботи, якщо ви часто відкриваєте та закриваєте кришку комп'ютера.",
+                        "tooltip": "Використання цієї функції зменшить час відновлення роботи, якщо ви часто відкриваєте і закриваєте кришку комп'ютера. Якщо функція ввімкнена, комп'ютер перейде в режим низького споживання електроенергії після закриття кришки і миттєво відновить звичний робочий стан у разі відкриття кришки протягом 15 хвилин після її закриття. Ця функція також дозволяє ноутбуку завершити активні задачі (наприклад, відправку електронного листа або завантаження файлу), перш ніж система призупинить роботу."
                     }
                 },
                 "otherSettings": {
@@ -831,9 +830,9 @@
                         "title": "Граничне значення заряду акумулятора",
                         "description": "Якщо зазвичай для живлення комп'ютера використовується підключений адаптер змінного струму й тільки інколи — акумулятор,можна збільшити термін експлуатації акумулятора, встановивши максимальне значення заряду менше 100 %. Якщо акумулятор, що використовується нерегулярно, заряджатиметься не до кінця, він зможе прослужити довше.",
                         "tooltip": "Якщо заряд акумулятора перевищує вказане граничне значення для завершення заряджання, від'єднайте живлення, щоб акумулятор розрядився до цього граничного значення або сильніше.Залежно від стану акумулятора (старий або новий) точне значення, за якого починається чи закінчується заряджання, може коливатися в межах ±2 %. Якщо цю функцію ввімкнуто, рекомендується час від часу скидати показники вольтметра акумулятора, щоб відомості про стан акумулятора були точними.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Примітка",
+                        "readMoreText": "Розгорніть.",
+                        "noteInfo": " Граничне значення заряду акумулятора ще не активовано повністю. Відключіть комп'ютер від електромережі та дайте акумулятору розрядитися до граничного значення або сильніше.",
                         "settings": {
                             "title1": "Граничне значення для вбудованого акумулятора",
                             "title2": "Граничне значення для знімного акумулятора"
@@ -846,9 +845,9 @@
                             "cancel": "СКАСУВАТИ"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Розпочати заряджання, коли рівень заряду буде нижче",
+                            "checkboxText": "Установіть граничне значення для початку заряджання на 5 % нижче граничного значення для закінчення заряджання.",
+                            "stop": "Припинити заряджання, коли рівень заряду досягне"
                         }
                     },
                     "expressCharging": {
@@ -872,22 +871,22 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "ПРОДУКТ ІЗ СЕРТИФІКАТОМ ENERGY STAR"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Розумне очікування",
+                    "description": "Ця функція допомагає комп’ютеру заощаджувати заряд акумулятора в години простою та зберігати швидкість запуску для періодів інтенсивного використання.",
+                    "tooltip": "Коли розумне очікування ввімкнуто, комп’ютер переключається в сучасний режим очікування перед початком використання та входить у режим сну після певної тривалості простою, якщо він працює від акумулятора. Цей час оптимізується згідно з розкладом, який ви вказали. Комп’ютер переключається з режиму глибокого сну в сучасний режим очікування лише в заплановані дні та не переключається зовсім, якщо не користуватися ним кілька запланованих днів поспіль.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Укажіть час, коли ви зазвичай користуєтеся комп’ютером",
+                        "subHeading1": "Початок використання",
+                        "subHeading2": "Завершення використання",
+                        "subHeading3": "Використовувати цей розклад",
+                        "endTimeNote": "Час завершення має бути в межах 20 годин після часу початку",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
-                            "unit3": "AM/PM"
+                            "unit1": "год.",
+                            "unit2": "Хвилини",
+                            "unit3": "ранку/вечора"
                         }
                     }
                 }
@@ -1179,32 +1178,32 @@
                 }
             },
             "activeProtectionSystem": {
-                "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "title": "Active Protection System",
+                "description": "Lenovo Active Protection System — це автономна функція, що допомагає захистити жорсткий диск від ушкоджень, спричинених сильними механічними коливаннями та вібрацією. Вона безперервно відстежує переміщення комп'ютера та призупиняє роботу жорсткого диска, якщо виникає ризик падіння або аналогічного пошкодження.",
                 "activeProtection": {
-                    "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "title": "Active Protection",
+                    "caption": "Змініть чутливість. У режимі низької чутливості захист активуватимуть лише сильні струси",
+                    "checkbox": "Ігнорувати повторювані струси, як-от під час руху потяга або автомобіля"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Ручне призупинення Active Protection",
+                    "caption": "Дозволити мені вручну призупиняти Active Protection System",
+                    "dropdown-title": "Призупинити на",
+                    "button": "Призупинити зараз"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Щоб покращити доступ до жорсткого диска під час використання планшета, призупиняйте Active Protection System, якщо виявлено такі дії:",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "ввод за допомогою пера",
+                        "description": "У разі використання пера включати APS, коли дані не вводяться"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Сенсорний ввод",
+                        "description": "У разі використання сенсорного вводу включати APS, коли дані не вводяться"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Розпізнавання близкості рук по краям комп'ютера",
+                        "description": "У разі роботи в режимі планшета включати APS, коли не виявлено дотик"
                     }
                 }
             },
@@ -1215,30 +1214,30 @@
                 "tooltip": "Ця функція не застосовується до програвачів онлайн-відео. Популярніші місцеві відеоплеєри (як-от Windows Media Player, 5KPlayer тощо) підтримують цю функцію."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Голос",
+                "description": "Lenovo Voice перетворює ваш голос у текст за допомогою функції \"Голос у текст\" і забезпечує письмовий переклад введених голосом даних у режимі реального часу за допомогою функції перекладу.",
+                "installBtnText": "Встановити",
+                "launchBtnText": "Запустити",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Голос у текст",
+                    "caption": "Ця функція допомагає конвертувати дані з голосового вводу в текст."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Переклад",
+                    "caption": "Ця функція забезпечує переклад введених голосом даних у режимі реального часу. Переклад відображається у текстовому форматі. Вихідну мову та мову перекладу можна налаштовувати."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Почніть роботу:",
+                    "point1": "Переконайтеся, що в системному треї Windows відображається піктограма Lenovo Voice.",
+                    "point2": "Відкрийте файл, у який слід записати перетворений текст.",
+                    "point3": "Клацніть піктограму Lenovo Voice у системному треї Windows і виберіть \"Голос у текст\".",
+                    "point4": "Виберіть мову та натисніть піктограму мікрофона, щоб почати.",
+                    "point5": "Поставте курсор туди, де слід почати редагування, і почніть говорити.",
+                    "point6": "Клацніть піктограму Lenovo Voice у системному треї Windows і виберіть \"Переклад\".",
+                    "point7": "Виберіть потрібну вихідну мову та мову перекладу.",
+                    "point8": "Залежно від потреб налаштуйте голосове введення з динаміка або з мікрофона.",
+                    "point9": "Натисніть піктограму мікрофона, щоб почати говорити",
+                    "closeText": "Закрити"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1616,7 +1615,9 @@
             },
             "errorMessage": {
                 "headerText": "Помилка",
-                "bodyText": "Ми виявили, що вам бракує критично важливих компонентів Vantage. Ці компоненти буде завантажено у фоновому режимі. Спробуйте пізніше."
+                "bodyText": "Ми виявили, що вам бракує критично важливих компонентів Vantage. Ці компоненти буде завантажено у фоновому режимі. Спробуйте пізніше.",
+                "closeText": "close",
+                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
             }
         },
         "homeprotection": {

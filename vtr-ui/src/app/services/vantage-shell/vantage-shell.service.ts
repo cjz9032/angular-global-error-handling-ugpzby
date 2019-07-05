@@ -632,4 +632,12 @@ export class VantageShellService {
 		return undefined;
 	}
 	// ==================== End Lenovo Voice
+
+	/** returns OledSettings object from VantageShellService of JS Bridge */
+	public getOledSettings(): any {
+		if (this.getHwSettings()) {
+			return this.getHwSettings().display.OLEDSettings;
+		}
+		return undefined;
+	}
 }
