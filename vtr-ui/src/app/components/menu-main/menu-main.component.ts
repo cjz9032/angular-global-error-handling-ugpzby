@@ -48,6 +48,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 	preloadImages: string[];
 	securityAdvisor: SecurityAdvisor;
 	isRS5OrLater: boolean;
+	public isGamingHome: boolean;
 
 	constructor(
 		private router: Router,
@@ -143,6 +144,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 		});
 	}
 	ngDoCheck() {
+		this.isHomeGaming();
 		if (this.router.url !== null) {
 			if (this.router.url.indexOf('dashboard', 0) > 0) {
 				this.isDashboard = true;
@@ -389,4 +391,15 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 			window.open(link);
 		}
 	}
+
+	public isHomeGaming() {
+
+		if (this.router.url === '/device-gaming' || this.router.url === '/') {
+			this.isGamingHome = true;
+		}
+		else {
+			this.isGamingHome = false;
+		}
+	}
+
 }

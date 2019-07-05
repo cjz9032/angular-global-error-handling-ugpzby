@@ -230,15 +230,6 @@
 					.monitor-stack {
 						height: 100%;
 						padding: 1rem 1.5rem;
-						@media #{$mediaquery_13} {
-							padding: 1rem 1.5rem;;
-						}
-						@media #{$mediaquery_X30} {
-							padding: 1rem 1.5rem;
-						}
-						@media #{$mediaquery_X23} {
-							padding: 1rem 1.5rem;
-						}
 						.stack-container {
 							position: relative;
 							border-radius: $border_radius_sm;
@@ -246,12 +237,6 @@
 							margin: 1rem 0;
 							padding: 0.5rem;
 							width: 4rem;
-							@media #{$mediaquery_X30} {
-								width: 3.5rem;
-							}
-							@media #{$mediaquery_X23} {
-								width: 3rem;
-							}
 							height: calc(100% - 6rem);
 							.stack-border {
 								position: absolute;

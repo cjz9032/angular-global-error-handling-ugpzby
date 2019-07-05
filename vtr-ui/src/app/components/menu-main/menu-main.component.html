@@ -15,10 +15,13 @@
 		</div>
 		<div *ngIf="deviceService.isGaming"
 			class="navbar-brand pt-0">
-			<a vtrMetrics routerLinkActive="link-active" [routerLinkActiveOptions]="items[0].routerLinkActiveOptions"
+
+			<img *ngIf="isGamingHome" src="../../../assets/images/gaming/gaming-logo-small.png" alt="L" />
+
+			<a  *ngIf="!isGamingHome" vtrMetrics routerLinkActive="link-active" [routerLinkActiveOptions]="items[0].routerLinkActiveOptions"
 				[metricsEvent]="items[0].metricsEvent" [metricsParent]="items[0].metricsParent" [metricsItem]="items[0].metricsItem"
 				routerLink="/{{items.path}}">
-				<img src="../../../assets/images/gaming/gaming-logo-small.png" alt="L" />
+				<img  src="../../../assets/images/gaming/gaming-logo-small.png" alt="L" />
 			</a>
 		</div>
 		<div class="navbar-text clearfix">
