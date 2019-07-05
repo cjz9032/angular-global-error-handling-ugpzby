@@ -1,8 +1,9 @@
 @import "../../../app.theme.scss";
 
 .vtr-oled-power-settings {
-	.caption {
+	p.caption {
 		font-size: 1.5rem;
+		margin-left:2rem !important;
 	}
 	.dropdown {
 		margin-top: 2.5rem;
