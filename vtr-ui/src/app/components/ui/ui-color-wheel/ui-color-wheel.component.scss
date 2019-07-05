@@ -2,7 +2,7 @@
 
 .picker-container {
   position: relative;
- // border-top: 0.2rsem solid $gaming_darkest;
+  border-top: 0.3rem solid $gaming_darkest;
   .overlay {
     position: absolute;
     width: 100%;
@@ -34,9 +34,10 @@
   justify-content: space-between;
   align-items: flex-end;
   .wheel-container {
-	  @media #{$large-screen-1}{
-		  margin-right: -3rem;
-	  }
+	//   @media #{$large-screen-1}{
+	// 	  margin-right: -3rem;
+	//   }
+	padding: 0;
 	  .content-title{
 		color: $light;
 		font-size: 1.8rem;
@@ -49,6 +50,15 @@
     width: 0;
     height: 0;
     border: 0;
+  }
+  &>div.row{
+	  width: 100%;
+	  .value-container{
+		  padding: 0;
+		  .d-flex{
+			  justify-content: flex-end;
+		  }
+	  }
   }
   .rgb-values {
     margin-left: 0.9rem;
@@ -73,10 +83,13 @@
       }
       .input-color {
         border-radius: 0.5rem;
-        &#rgb-rgb {
-          margin-left: 1.2rem;
-        }
-      }
+        // &#rgb-rgb {
+        //   margin-left: 1.2rem;
+		// }
+		&#rgb-rgb{
+			margin-left: 0rem;
+		}
+	  }
     }
   }
   .color-codes {
