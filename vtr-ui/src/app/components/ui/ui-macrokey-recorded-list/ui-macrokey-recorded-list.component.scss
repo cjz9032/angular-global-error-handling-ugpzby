@@ -88,6 +88,9 @@
 		.record-item {
 			cursor: pointer;
 			position: relative;
+			svg {
+				vertical-align: bottom;
+			}
 			&:nth-child(odd) {
 				background-color: $gaming_hover;
 				border-radius: 0.3rem;
@@ -198,7 +201,10 @@
 	display: inline-block;
 	text-transform: uppercase;
 	padding: 0.4rem;
-	img {
+	svg {
+		path {
+			fill: $gaming_light_blue;
+		}
 		margin: 0.4rem;
 		height: 2.6rem;
 		width: 2.6rem;
