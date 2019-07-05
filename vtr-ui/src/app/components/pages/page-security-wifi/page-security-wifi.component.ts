@@ -131,7 +131,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			this.wifiSecurity.refresh().catch(this.pluginMissingHandler.bind(this));
 		}
 		if (this.homeProtection && !this.intervalId) {
-			this.homeProtection.refresh();
+			this.homeProtection.refresh().catch(this.pluginMissingHandler.bind(this));
 			this.pullCHS();
 		}
 	}
@@ -267,7 +267,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	private pullCHS(): void {
 		this.intervalId = window.setInterval(() => {
 			this.homeProtection.refresh().then(() => {
-				if (this.homeProtection.devicePosture && this.intervalId) {
+				if (this.homeProtection.devicePosture && this.homeProtection.devicePosture.length > 0 && this.intervalId) {
 					clearInterval(this.intervalId);
 					const oneMinute = 60000;
 					this.interval = oneMinute;
