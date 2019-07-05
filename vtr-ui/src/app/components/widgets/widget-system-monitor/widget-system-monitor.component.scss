@@ -90,6 +90,9 @@
 					@media #{$mediaquery_sm} {
 						position: relative;
 					}
+					@media #{$only-small-screen}{
+						height: 16rem;
+					}
 					&.expanded {
 						height: auto;
 						//border: 1px solid $gaming_dark;
@@ -507,6 +510,12 @@
 							}
 							.hd-item-label {
 								display: block;
+								@media #{$only-small-screen}{
+									display: flex;
+									justify-content: space-between;
+									width: calc(100% - 11rem);
+									margin-left: 1rem;
+								}
 							}
 							.monitor-hd {
 								position: relative;
@@ -562,8 +571,23 @@
 					.hd-item {
 						margin-bottom: 3.4rem;
 						position: relative;
-						&:nth-child(odd) {
-							z-index: 9;
+						@media #{$only-small-screen}{
+							display: flex;
+							align-items: center;
+							&::after {
+								content: "";
+								height: 0.2rem;
+								width: 100%;
+								background-color: $screen_dark_20;
+								position: absolute;
+								top: -1.5rem;
+								left: 0;
+							}
+						}
+						&:first-child {
+							&::after{
+								display: none;
+							}
 						}
 						.gaming-tooltip {
 							top: -6rem;
@@ -596,6 +620,11 @@
 							display: inline-block;
 							padding-left: 1rem;
 							vertical-align: middle;
+							@media #{$only-small-screen}{
+								display: flex;
+								justify-content: space-between;
+								width: calc(100% - 7rem);
+							}
 							.hd-title {
 								color: $gaming_lightest;
 								font-size: 1.5rem;
