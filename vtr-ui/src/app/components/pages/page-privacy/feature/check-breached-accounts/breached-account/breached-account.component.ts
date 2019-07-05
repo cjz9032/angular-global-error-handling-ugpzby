@@ -55,6 +55,10 @@ export class BreachedAccountComponent implements AfterViewInit {
 		this.verifyClick.emit(true);
 	}
 
+	trackByBreachedAccount(index) {
+		return index;
+	}
+
 	private getBreachedAccountsForDisplay(breachedAccounts: BreachedAccount[]) {
 		const breachedAccountsForShow = breachedAccounts.filter(x => x.domain !== 'n/a');
 		const otherBreaches = breachedAccounts.filter(x => x.domain === 'n/a');

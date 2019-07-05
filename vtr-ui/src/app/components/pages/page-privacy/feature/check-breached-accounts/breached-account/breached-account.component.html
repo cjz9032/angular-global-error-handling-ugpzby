@@ -1,6 +1,6 @@
 <div class="breached-account"
 	 [ngClass]="{'breached-account_open': i === openId}"
-	 *ngFor="let account of breachedAccountsForShow; let i = index">
+	 *ngFor="let account of breachedAccountsForShow;  trackBy: trackByBreachedAccount; let i = index">
 	<div class="breached-account__preview">
 		<div class="breached-account__image">
 			<ng-template #defaultFavicon>

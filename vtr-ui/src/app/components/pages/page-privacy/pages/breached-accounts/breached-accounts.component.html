@@ -29,12 +29,11 @@
 			Fix in Lenovo Privacy Essentials
 		</button>
 
-		<div class="breaches-page__tooltip">
-			<vtr-why-seeing-tooltip
-				[contextText]="textForTooltip"
-				*ngIf="!(isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ | async) &&
+		<div class="breaches-page__tooltip"
+			 *ngIf="!(isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ | async) &&
 					!(isFigleafReadyForCommunication$ | async) &&
 					(breachedAccounts$ | async)?.length > 0">
+			<vtr-why-seeing-tooltip [contextText]="textForTooltip">
 			</vtr-why-seeing-tooltip>
 		</div>
 	</div>
