@@ -11,7 +11,7 @@
 			<div class="col-12">
 				<div class="wifiSecurity">
 					<div class="card"
-						[ngClass]="{'collapsed': isCollapsed && data.isLWSEnabled}">
+						[ngClass]="{'collapsed': (data.isLWSEnabled && isShowMore) || (region === 'cn' && !data.isLWSEnabled)}">
 						<div class="card-header flex align-items-center"
 							id="wifiSecurity">
 							<div class="row no-gutters">
@@ -50,7 +50,7 @@
 									<div class="collapse-control"
 										id="sa-ws-lnk-collapsecontrol"
 										aria-label="sa-ws-lnk-collapsecontrol"
-										(click)="$event.preventDefault();isCollapsed=!isCollapsed;"
+										(click)="$event.preventDefault();"
 										[hidden]="!data.isLWSEnabled">
 										<div class="d-flex" vtrMetrics
 											metricsItem="collapseWiFiHistory"
@@ -163,7 +163,7 @@
 			</div>
 		</div>
 		<div class="row threat-locator"
-			*ngIf="(region !== 'CN') && (!data.isLWSEnabled || isShowMore===false)">
+			*ngIf="(region !== 'cn') && (!data.isLWSEnabled || isShowMore===false)">
 			<div class="col">
 				<div class="threat-locator-container">
 					<div class="row">

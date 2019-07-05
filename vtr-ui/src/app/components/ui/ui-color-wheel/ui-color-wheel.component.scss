@@ -2,7 +2,7 @@
 
 .picker-container {
   position: relative;
-  border-top: 0.2rem solid $gaming_darkest;
+ // border-top: 0.2rsem solid $gaming_darkest;
   .overlay {
     position: absolute;
     width: 100%;
@@ -27,7 +27,7 @@
       min-width: 47rem;
     }
     @media #{$mediaquery_X29} {
-      min-width: 50rem;
+      min-width: 47rem;
     }
   }
   display: flex;
@@ -36,6 +36,13 @@
   .wheel-container {
 	  @media #{$large-screen-1}{
 		  margin-right: -3rem;
+	  }
+	  .content-title{
+		color: $light;
+		font-size: 1.8rem;
+		font-weight: $weight_bold;
+		margin-top: 4rem;
+		margin-bottom: 6rem;
 	  }
   }
   .color-display {
