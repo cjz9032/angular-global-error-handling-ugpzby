@@ -20,7 +20,7 @@ export class BatteryConditionModel {
 					'device.deviceSettings.batteryGauge.condition.Bad.description', '', '');
 			case BatteryConditionsEnum.Illegal:
 				return new BatteryConditionNote(
-					'device.deviceSettings.batteryGauge.condition.Illegal.title',
+					'',
 					'device.deviceSettings.batteryGauge.condition.Illegal.description',
 					'device.deviceSettings.batteryGauge.condition.Illegal.description1',
 					'device.deviceSettings.batteryGauge.condition.Illegal.description2');
