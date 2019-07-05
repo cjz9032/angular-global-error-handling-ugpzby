@@ -82,7 +82,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 			.getAPSMode()
 			.then(res => {
 				res ? this.apsStatus = true : this.apsStatus = false; 
-				console.log('APS IS SET---------------------------------', res); 
+				console.log('APS IS SET---------------------------------', res);
 				this.smartAssist
 					.getAPSSensitivityLevel()
 					.then(res => {
