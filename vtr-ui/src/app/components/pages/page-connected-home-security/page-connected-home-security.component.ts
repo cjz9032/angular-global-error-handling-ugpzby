@@ -314,6 +314,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				if (this.chs.account && this.chs.account.state
 					&& this.chs.overview && this.chs.overview.devicePostures
 					&& this.chs.overview.devicePostures.value
+					&& this.chs.overview.devicePostures.value.length > 0
 					&& this.intervalId) {
 					clearInterval(this.intervalId);
 					const oneMinute = 60000;
