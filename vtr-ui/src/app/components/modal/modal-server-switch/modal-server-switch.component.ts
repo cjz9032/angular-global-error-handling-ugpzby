@@ -1,11 +1,14 @@
 import { Component, OnInit, ElementRef, HostListener, SecurityContext } from '@angular/core';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { SelectDropDownModule } from 'ngx-select-dropdown';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { CommonService } from 'src/app/services/common/common.service';
+//import { SelectDropDownModule } from 'ngx-select-dropdown';
+//import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ServerSwitch } from '../../../data-models/server-switch/server-switch.model'
-import { isEmpty } from 'rxjs/operators';
-
+import { isNull, isUndefined } from 'util';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @Component({
   selector: 'vtr-modal-server-switch',
@@ -19,17 +22,17 @@ export class ModalServerSwitchComponent implements OnInit {
 
   serverSwitchTitle: any = 'Server Switch Feature';
   serverSwitchData: ServerSwitch;
-  
+  serverSwitchForm: FormGroup;
   sddInvalid: any = {
-    'status': false,
-    'message': ''
+    status: false,
+    message: []
   };
 
   //SelectDropDownModule, config
   sddConfigCountry: any = {
     displayKey: "Value", //if objects array passed which key to be displayed defaults to description
     search: true, //true/false for the search functionlity defaults to false,
-    height: '50px', //height of the list so that if there are more no of items it can show a scroll defaults to auto. With auto height scroll will never appear
+    height: '15rem', //height of the list so that if there are more no of items it can show a scroll defaults to auto. With auto height scroll will never appear
     placeholder: 'Select', // text to be displayed when no item is selected defaults to Select,
     limitTo: 5, // a number thats limits the no of options displayed in the UI similar to angular's limitTo pipe
     noResultsFound: 'No results found!', // text to be displayed when no items are found while searching
@@ -40,7 +43,7 @@ export class ModalServerSwitchComponent implements OnInit {
   sddConfigLanguage: any = {
     displayKey: "Value", //if objects array passed which key to be displayed defaults to description
     search: true, //true/false for the search functionlity defaults to false,
-    height: '50px', //height of the list so that if there are more no of items it can show a scroll defaults to auto. With auto height scroll will never appear
+    height: '15rem', //height of the list so that if there are more no of items it can show a scroll defaults to auto. With auto height scroll will never appear
     placeholder: 'Select', // text to be displayed when no item is selected defaults to Select,
     limitTo: 5, // a number thats limits the no of options displayed in the UI similar to angular's limitTo pipe
     noResultsFound: 'No results found!', // text to be displayed when no items are found while searching
@@ -51,7 +54,7 @@ export class ModalServerSwitchComponent implements OnInit {
   sddConfigSegment: any = {
     displayKey: "Value", //if objects array passed which key to be displayed defaults to description
     search: true, //true/false for the search functionlity defaults to false,
-    height: '50px', //height of the list so that if there are more no of items it can show a scroll defaults to auto. With auto height scroll will never appear
+    height: '15rem', //height of the list so that if there are more no of items it can show a scroll defaults to auto. With auto height scroll will never appear
     placeholder: 'Select', // text to be displayed when no item is selected defaults to Select,
     limitTo: 5, // a number thats limits the no of options displayed in the UI similar to angular's limitTo pipe
     noResultsFound: 'No results found!', // text to be displayed when no items are found while searching
@@ -62,9 +65,8 @@ export class ModalServerSwitchComponent implements OnInit {
 
   constructor(
     public activeModal: NgbActiveModal,
-    private sanitizer: DomSanitizer,
-    private element: ElementRef,
-    private formBuilder: FormBuilder
+    public commonService: CommonService,
+    private router: Router 
   ) { }
 
   ngOnInit() {
@@ -77,7 +79,13 @@ export class ModalServerSwitchComponent implements OnInit {
 
     this.sddConfigSegment.limitTo = this.serverSwitchData.segmentList.length;
 
-    console.log(this.sddConfigCountry);
+    this.serverSwitchForm = new FormGroup({
+			country: new FormControl(null, Validators.required),
+			language: new FormControl(null, Validators.required),
+			segment: new FormControl(null, Validators.required)
+		});
+
+
   }
 
   closeModal() {
@@ -92,26 +100,69 @@ export class ModalServerSwitchComponent implements OnInit {
   /**
    * Validate & Save the server switch 
    */
-  onSubmit(f:any) {
-    console.log(this.serverSwitchData);
+  onSubmit(): boolean {
+    const formData = this.serverSwitchForm.value;
     this.sddInvalid = {
       status: false,
-      message: ''
+      message: []
     };
-    if(this.serverSwitchData.country.length <=0){
+    //console.log(formData);
+
+    //validating 
+    if(isNull(formData.country) || isUndefined(formData.country)){
       this.sddInvalid.status = true;
-      this.sddInvalid.message = 'Country is required.';
+      this.sddInvalid.message.push('Country is required.');
+    } else {
+      this.serverSwitchData.country = formData.country;
     }
-    if(this.serverSwitchData.language.length <=0){
+
+    if(isNull(formData.language) || isUndefined(formData.language)){
       this.sddInvalid.status = true;
-      this.sddInvalid.message += 'Language is required.';
+      this.sddInvalid.message.push('Language is required.');
+    } else {
+      this.serverSwitchData.language = formData.language;
     }
-    if(this.serverSwitchData.segment.length <=0){
+
+    if(isNull(formData.segment) || isUndefined(formData.segment)){
       this.sddInvalid.status = true;
-      this.sddInvalid.message += 'Segment is required.';
+      this.sddInvalid.message.push('Segment is required.');
+    } else {
+      this.serverSwitchData.segment = formData.segment;
+    }
+
+    //submit success
+    if(!this.sddInvalid.status){
+      this.serverSwitchProcess();
     }
 
     return this.sddInvalid.status;
+  } 
+
+  serverSwitchProcess() {
+      let serverSwitchLocalData = {
+        country: this.serverSwitchData.country,
+        language: this.serverSwitchData.language,
+        segment: this.serverSwitchData.segment,
+      };
+      //storing into localStorage
+      this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey,serverSwitchLocalData);
+      
+      this.closeModal();
+      //reload with new serverSwitch Parms
+      this.redirectTo(this.router.url,{ serverswitch: true,d: (new Date).getTime()});
   }
+
+  redirectTo(uri:string,parms:{}) {
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigated = false;
+    this.router.routeReuseStrategy.shouldReuseRoute = function(){
+      return false;
+    };
+    this.router.navigateByUrl('/', {queryParams: parms ,queryParamsHandling: "merge",skipLocationChange: false})
+    .then(() => 
+      this.router.navigateByUrl(uri,{queryParams: parms,skipLocationChange: false})
+    );
+  }
+
 
 }

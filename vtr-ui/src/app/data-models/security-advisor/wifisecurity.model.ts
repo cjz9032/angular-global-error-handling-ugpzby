@@ -6,7 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { CommsService } from 'src/app/services/comms/comms.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { NgZone } from '@angular/core';
-import { SecurityService } from 'src/app/services/security/security.service';
+import { DialogService } from 'src/app/services/dialog/dialog.service';
 
 
 interface DevicePostureDetail {
@@ -33,7 +33,7 @@ export class WifiHomeViewModel {
 		homeProtection: phoenix.HomeProtection,
 		private commonService: CommonService,
 		private ngZone: NgZone,
-		private securityService: SecurityService
+		private dialogService: DialogService
 		) {
 		const cacheWifiSecurityState = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
 		const cacheWifiSecurityHistory = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys);
@@ -54,7 +54,7 @@ export class WifiHomeViewModel {
 						this.isLWSEnabled = (this.wifiSecurity.state === 'enabled' && value);
 					}
 					if (!value && this.wifiSecurity.state === 'enabled') {
-						this.securityService.wifiSecurityLocationDialog(this.wifiSecurity);
+						this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 					} else if (value) {
 						if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
 							this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');

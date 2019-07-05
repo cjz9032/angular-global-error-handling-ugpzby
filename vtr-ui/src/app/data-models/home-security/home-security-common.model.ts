@@ -5,6 +5,7 @@ import { ModalLenovoIdComponent } from 'src/app/components/modal/modal-lenovo-id
 
 export class HomeSecurityCommon {
 	connectedHomeSecurity: ConnectedHomeSecurity;
+	startTrialDisabled = false;
 
 	constructor(connectedHomeSecurity: ConnectedHomeSecurity, private modalService: NgbModal) {
 		this.connectedHomeSecurity = connectedHomeSecurity;
@@ -21,11 +22,20 @@ export class HomeSecurityCommon {
 	startTrial() {
 		let alreadyLoggedIn = this.connectedHomeSecurity.account.lenovoId.loggedIn;
 		if (alreadyLoggedIn) {
-			this.connectedHomeSecurity.account.createAccount();
+			this.startTrialDisabled = true;
+			this.connectedHomeSecurity.account.createAccount().then((result) => {
+				this.startTrialDisabled = result ;
+			}).catch(() => {
+				this.startTrialDisabled = false;
+			});
 		} else {
 			const callback = (loggedIn: boolean) => {
 				if (loggedIn && !alreadyLoggedIn) {
-					this.connectedHomeSecurity.account.createAccount();
+					this.connectedHomeSecurity.account.createAccount().then((result) => {
+						this.startTrialDisabled = result ;
+					}).catch(() => {
+						this.startTrialDisabled = false;
+					});
 					alreadyLoggedIn = true;
 				}
 			};
