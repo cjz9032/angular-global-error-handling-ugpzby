@@ -21,7 +21,7 @@
 					</span>
 				</div>
 				<div class="battery-error"
-					*ngIf="batteryNotDetected">
+					*ngIf="batteryNotDetected && !isVoltageError">
 					<img [src]=" '/assets/icons/battery-conditions/no_battery.svg'" />
 					<span class="voltage-incorrect no-battery">
 						{{'device.deviceSettings.batteryGauge.batteryNotDetected'| translate}}
