@@ -470,7 +470,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	toggleHDs(canClose = false) {
 		if (canClose) {
 			this.showAllHDs = false;
-		} else if (this.hds.length > 1) {
+		} else if (this.hds.length > 2) {
 			this.showAllHDs = !this.showAllHDs;
 		}
 	}

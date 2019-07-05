@@ -1179,31 +1179,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Active Protection System è una funzione automatica che aiuta a proteggere l'unità disco fisso dai danni che possono essere causati da forti urti e vibrazioni. Monitora continuamente il movimento del computer e interrompe temporaneamente l'unità disco fisso quando si prevede un evento come una caduta o un evento simile che può causare danni.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "Modifica la sensibilità in modalità a bassa sensibilità: solo gli urti più forti attiveranno la protezione",
+                    "checkbox": "Ignora gli urti ripetuti, come quelli di un treno o di una macchina"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Sospensione manuale di Active Protection",
+                    "caption": "Consenti la sospensione manuale di Active Protection System",
+                    "dropdown-title": "Sospendi per",
+                    "button": "Sospendi ora"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Per migliorare l'accesso all'unità disco fisso durante l'utilizzo del tablet, sospendere Active Protection System quando vengono rilevate le seguenti attività",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Input penna",
+                        "description": "Quando viene utilizzato l'input della penna, abilitare APS quando l'input della penna non rientra nell'intervallo per"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Input tocco",
+                        "description": "Quando viene utilizzato Input tocco, abilitare APS quando l'input tocco non viene rilevato"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Rilevamento vicinanza mano sui bordi del computer",
+                        "description": "Quando la modalità tablet è abilitata, abilita APS quando la mano non viene rilevata"
                     }
                 }
             },
@@ -1214,30 +1214,30 @@
                 "tooltip": "Questa funzione non è applicabile ai lettori video Web. I principali lettori video locali, come Windows Media Player, 5KPlayer e così via supportano questa funzione."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Voce",
+                "description": "Lenovo Voice consente di convertire la voce in testo con la funzione \"Voce in testo\" e fornisce una traduzione in tempo reale da voce a testo con la funzione \"Traduzione\".",
+                "installBtnText": "Installa",
+                "launchBtnText": "Avvia",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Voce in testo",
+                    "caption": "Questa funzione consente di convertire la voce in testo."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Traduzione",
+                    "caption": "Questa funzione fornisce una traduzione in tempo reale della voce. I contenuti tradotti sono mostrati in testo. È possibile selezionare le lingue di origine e di destinazione in base alle proprie esigenze."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Operazioni preliminari:",
+                    "point1": "Verificare che l'icona Lenovo Voice sia visualizzata nella barra delle applicazioni di Windows.",
+                    "point2": "Aprire il file in cui si desidera registrare il testo convertito.",
+                    "point3": "Fare clic sull'icona Lenovo Voice nella barra delle applicazioni di Windows e selezionare Voce in testo.",
+                    "point4": "Selezionare la lingua desiderata e fare clic sull'icona del microfono per iniziare.",
+                    "point5": "Posizionare il cursore sul punto che si desidera modificare e iniziare a parlare.",
+                    "point6": "Fare clic sull'icona Lenovo Voice nella barra delle applicazioni di Windows e selezionare Traduci.",
+                    "point7": "Selezionare la lingua di origine e di destinazione desiderate.",
+                    "point8": "In base alle proprie esigenze, impostare l'ingresso vocale dall'altoparlante o dal microfono.",
+                    "point9": "Fare clic sull'icona del microfono per iniziare a parlare",
+                    "closeText": "chiudi"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1615,8 +1615,9 @@
             },
             "errorMessage": {
                 "headerText": "Errore",
-				"bodyText": "Sono stati rilevati errori di perdita di pacchetti Vantage. Questi pacchetti verranno scaricati in background. Si prega di riprovare più tardi.",
-				"closeText": "close"
+                "bodyText": "Sono stati rilevati errori di perdita di pacchetti Vantage. Questi pacchetti verranno scaricati in background. Si prega di riprovare più tardi.",
+                "closeText": "close",
+                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
             }
         },
         "homeprotection": {

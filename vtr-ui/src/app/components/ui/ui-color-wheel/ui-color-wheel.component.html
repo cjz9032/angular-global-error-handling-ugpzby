@@ -3,43 +3,42 @@
 		{{'gaming.dashboard.device.legionEdge.lightingColorMessage.text' | translate}}
 	</div>
 
+	
 	<div class="row">
-		<div class="col-8 wheel-container">
+		<div class="d-flex rgb-header">
 			<h3 class="content-title">{{'gaming.lightingProfile.colourwheel.text7.title' | translate}}</h3>
+			<button class="btn enable-button" [ngClass]="{'disable-button': btnStatus !== 'apply'}"
+				[disabled]="btnStatus !== 'apply'" (click)="onApplyColorEffect(backColor)">
+				<span *ngIf="btnStatus === 'apply'">{{'gaming.lightingProfile.colourwheel.text2.title' | translate}}</span>
+				<span *ngIf="btnStatus === 'applied'">{{'gaming.lightingProfile.colourwheel.text3.title' | translate}}</span>
+				<vtr-spinner *ngIf="btnStatus === 'loading'"></vtr-spinner>
+			</button>
+		</div>
+	</div>
+	
+	<div class="row no-gutters">
+		<div class="col-8 wheel-container">
 			<div id="color-wheel" #colorWheel></div>
 		</div>
 		<div class="col-4 mt-5 pt-3 value-container">
 			<div class="rgb-values">
-
-
-				<div class="form-group d-flex">
-					<label></label>
-					<button class="btn enable-button" [ngClass]="{'disable-button': btnStatus !== 'apply'}"
-						[disabled]="btnStatus !== 'apply'" (click)="onApplyColorEffect(backColor)">
-						<span *ngIf="btnStatus === 'apply'">{{'gaming.lightingProfile.colourwheel.text2.title' | translate}}</span>
-						<span *ngIf="btnStatus === 'applied'">{{'gaming.lightingProfile.colourwheel.text3.title' | translate}}</span>
-						<vtr-spinner *ngIf="btnStatus === 'loading'"></vtr-spinner>
-					</button>
-				</div>
 				<div class="color-codes">
-
-					<div class="form-group d-flex">
-						<label></label>
+					<div class="form-group d-flex justify-content-end">
 						<!-- <div id="rgb-rgb" class="backColorDpiv"  [ngStyle]="{'background-color':  backColor }"></div> -->
 						<input id="rgb-rgb" type="text" min="0" max="255" class="input-color"
 							[ngStyle]="{'background-color':  backColor }" readonly>
 					</div>
-					<div class="form-group d-flex">
+					<div class="form-group d-flex justify-content-end">
 						<label>{{'gaming.lightingProfile.colourwheel.text4.title' | translate}} </label>
 						<input id="rgb-r" type="number" maxlength="3" min="0" max="255" class="input-color"
 							[(ngModel)]="color[0]" (ngModelChange)='rgbChanged()' (keypress)="validateInput($event)">
 					</div>
-					<div class="form-group d-flex">
+					<div class="form-group d-flex justify-content-end">
 						<label>{{'gaming.lightingProfile.colourwheel.text5.title' | translate}} </label>
 						<input id="rgb-g" type="number" maxlength="3" min="0" max="255" class="input-color"
 							[(ngModel)]="color[1]" (ngModelChange)='rgbChanged()'  (keypress)="validateInput($event)">
 					</div>
-					<div class="form-group d-flex">
+					<div class="form-group d-flex justify-content-end">
 						<label>{{'gaming.lightingProfile.colourwheel.text6.title' | translate}} </label>
 						<input id="rgb-b" type="number" maxlength="3" min="0" max="255" class="input-color"
 							[(ngModel)]="color[2]" (ngModelChange)='rgbChanged()'  (keypress)="validateInput($event)">

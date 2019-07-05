@@ -15,6 +15,12 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public shortcutKeys: any[] = [];
 	hasUDKCapability = true;
 	udkTypeList: any[] = [];
+	public description: string;
+	public url: string;
+	public hyperLinkPatterns = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
+	public enterTextPatterns = '[a-zA-Z0-9][A-Za-z0-9._-]*';
+	public hideApplyForDefault = true;
+	public udkFormSubmitted = false;
 
 	userDefinedKeyOptions: any[] = [{
 		'title': 'Launch Lenovo Vantage',
@@ -35,8 +41,6 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public merlynIcon = '../../../../../../assets/images/keyboard-images/KeyboarmMap_Icons/Merlyn-Perf-mode.png';
 	public zoomIcon = '../../../../../../assets/images/keyboard-images/KeyboarmMap_Icons/Zoom-app.png';
 
-
-
 	public selectedValue: any;
 	public image = '';
 	public additionalCapabilitiesObj: any = {};
@@ -54,11 +58,23 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 		if (this.getUDKCapability()) {
 
 			this.selectedValue = this.userDefinedKeyOptions[0];
+			if (this.selectedValue.value === 1) {
+				this.hideApplyForDefault = true;
+			}
 		}
 
 	}
 	public onChange(item) {
 		this.selectedValue = item;
+
+		//reset udkFormSubmitted to false
+		this.udkFormSubmitted = false;
+
+		if (this.selectedValue.value === 1) {
+			this.hideApplyForDefault = false;
+		}
+
+
 	}
 
 
@@ -304,5 +320,10 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 		} catch (error) {
 			console.error(error.message);
 		}
+	}
+
+	udkSubmit() {
+		this.udkFormSubmitted = true;
+		console.log('submit called');
 	}
 }
