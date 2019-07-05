@@ -1179,31 +1179,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "يُعد Lenovo Active Protection System ميزة مستقلة تساعد على حماية محرك الأقراص الثابت من أي ضرر ناتج عن صدمة واهتزاز ماديين قويين. إنها تعمل على مراقبة حركة الكمبيوتر هذه بشكل مستمر وتوقف محرك الأقراص الثابت عن العمل بشكل مؤقت عندما تتوقع حدوث سقوط أو أي حدث مماثل يؤدي إلى وقوع أضرار.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "تغيير الحساسية، في وضع الحساسية المنخفضة، وحدها الصدمات القاسية تؤدي إلى تنشيط الحماية.",
+                    "checkbox": "تجاهل الصدمات المتكررة مثل تلك التي تحدث في القطار أو السيارة"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "تعليق Active Protection يدويًا",
+                    "caption": "السماح لي بتعليق Active Protection System يدويًا",
+                    "dropdown-title": "تعليق من أجل",
+                    "button": "التعليق الآن"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "لتحسين الوصول إلى محرك الأقراص الثابت أثناء استخدام الكمبيوتر اللوحي، يمكنك تعليق Active Protection System عند الكشف عن الأنشطة التالية",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "إدخال القلم",
+                        "description": "عند استخدام إدخال القلم، تمكين APS عندما يكون إدخال القلم خارج النطاق"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "الإدخال باللمس",
+                        "description": "عند استخدام الإدخال باللمس، تمكين APS عندما لا يتم الكشف عن إدخال باللمس"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "استشعار قرب اليد على حواف الكمبيوتر",
+                        "description": "عند تمكين وضع الكمبيوتر اللوحي، بتمكين APS عندما لا يتم الكشف عن اليد"
                     }
                 }
             },
@@ -1214,30 +1214,30 @@
                 "tooltip": "لا تنطبق هذه الميزة على مشغلات فيديو الويب. تدعم مشغلات الفيديو المحلية الأكثر رواجًا، مثل Windows Media Player و5KPlayer وغيرها، هذه الميزة."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "الصوت",
+                "description": "تساعد ميزة Lenovo Voice على تحويل صوتك إلى نصوص باستخدام وظيفة تحويل الصوت إلى نص، وهي توفر الترجمة في الوقت الحقيقي من الصوت إلى النصوص بواسطة وظيفة الترجمة.",
+                "installBtnText": "تثبيت",
+                "launchBtnText": "اطلاق",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "تحويل الصوت إلى نص",
+                    "caption": "تساعد هذه الميزة في تحويل صوتك إلى نصوص."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "الترجمة",
+                    "caption": "توفر هذه الميزة الترجمة في الوقت الحقيقي إلى صوت. تظهر المحتويات المترجمة في نصوص. يمكنك اختيار اللغات المصدر واللغات الهدف وفقًا لاحتياجاتك."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "بدء الاستخدام:",
+                    "point1": "تأكد من ظهور رمز Lenovo Voice في علبة نظام Windows.",
+                    "point2": "افتح الملف حيث تريد تسجيل النص المحول.",
+                    "point3": "انقر فوق رمز Lenovo Voice في علبة نظام Windows، وحدد \"تحويل الصوت إلى نص\".",
+                    "point4": "حدد لغتك المطلوبة وانقر فوق رمز الميكروفون للبدء.",
+                    "point5": "ضع المؤشر في المكان حيث تريد إجراء عملية تحرير وابدأ التحدث.",
+                    "point6": "انقر فوق رمز Lenovo Voice في علبة نظام Windows، وحدد \"ترجمة\".",
+                    "point7": "حدد لغتك المطلوبة، اللغة المصدر واللغة الهدف.",
+                    "point8": "حسب احتياجاتك، اضبط الإدخال الصوتي من السماعة أو من الميكروفون.",
+                    "point9": "انقر فوق رمز الميكروفون لبدء التحدث",
+                    "closeText": "إغلاق"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1615,8 +1615,9 @@
             },
             "errorMessage": {
                 "headerText": "خطأ",
-				"bodyText": "لقد اكتشفنا أنك تفتقد إلى أجزاء ضرورية من Vantage. سيتم تنزيل هذه الأجزاء في الخلفية. يُرجى إعادة المحاولة لاحقًا.",
-				"closeText": "close"
+                "bodyText": "لقد اكتشفنا أنك تفتقد إلى أجزاء ضرورية من Vantage. سيتم تنزيل هذه الأجزاء في الخلفية. يُرجى إعادة المحاولة لاحقًا.",
+                "closeText": "close",
+                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
             }
         },
         "homeprotection": {
