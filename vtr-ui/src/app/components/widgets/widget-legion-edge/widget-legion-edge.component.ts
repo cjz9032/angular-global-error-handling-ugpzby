@@ -46,6 +46,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCheckBoxVisible: false,
 			isSwitchVisible: false,
 			isPopup: false,
+			driverPopupText: 'gaming.dashboard.device.legionEdge.driverPopup.cpuOverclockText',
 			isDriverPopup: false,
 			isChecked: false,
 			tooltipText: '',
