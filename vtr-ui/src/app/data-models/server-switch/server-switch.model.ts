@@ -3,6 +3,7 @@ import LanguageList from "../../../assets/server-switch/LanguageList.json";
 import SegmentList from "../../../assets/server-switch/SegmentList.json";
 
 export class ServerSwitch {
+        public currentUrl: string;
         public country: any;
         public countryId: string;
         public language: any;
@@ -12,4 +13,10 @@ export class ServerSwitch {
         public countryList: any = CountryList;
         public languageList: any = LanguageList;
         public segmentList: any = SegmentList;
+        public serverList: string[] = [
+                'https://vantage.csw.lenovo.com/#/dashboard',
+                'https://vantage-qa.csw.lenovo.com/#/dashboard',
+                'https://vantage-dev.csw.lenovo.com/#/dashboard',
+                'https://vantage-stage.csw.lenovo.com/#/dashboard'
+        ];
 }

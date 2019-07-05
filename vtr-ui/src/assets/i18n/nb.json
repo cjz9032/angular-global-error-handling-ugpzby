@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -467,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Ser frisk ut i dag "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Det ble ikke funnet noen Internett-forbindelse",
+            "subtitle": "Lær mer om hvordan du løser tilkoblingsproblemer i",
+            "buttonText": "Få støtte"
         },
         "feedback": {
             "title": "Gi tilbakemelding",
@@ -497,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Hurtiginnstillingene dine",
+            "microphone": "Mikrofon",
+            "cameraPrivacy": "Kamera",
+            "eyeCareMode": "Øyebeskyttelsesmodus"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Systemstatus",
+            "subtitle": "SE ENHETSSTATUS RASKT.",
             "memory": {
-                "title": "Memory",
+                "title": "Minne",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Finner ikke minne",
+                    "of": "av"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Diskplass",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Finner ikke disk",
+                    "of": "av"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Garanti",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Fant ikke garanti",
+                    "until": "Til",
+                    "expiredOn": "Garantien utløp",
+                    "notAvailable": "Garanti er ikke tilgjengelig"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Oppdater"
                 }
             }
         }
@@ -649,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -810,9 +812,9 @@
                         "checkbox": "Aktiver USB-lading fra den bærbare datamaskinens batteri når den er slått av."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Enkel gjenopptakelse",
+                        "description": "Aktiver denne funksjonen forbedrer gjenopptakelsestiden hvis du åpner og lukker lokket på datamaskinen ofte.",
+                        "tooltip": "Denne funksjonen forbedrer gjenopptakelsestiden hvis du åpner og lukker lokket på datamaskinen ofte. Når den er aktivert, går datamaskinen i en modus med lavt strømforbruk når du lukker lokket, men gjenopptar umiddelbart hvis du åpner lokket innen 15 minutter etter at du lukket det. Denne funksjonen gjør også at den bærbare datamaskinen forsøker å fullføre aktiviteter som venter (som å sende e-post eller laste ned en fil) før systemet går i hvilemodus."
                     }
                 },
                 "otherSettings": {
@@ -828,9 +830,9 @@
                         "title": "Batteriladeterskel",
                         "description": "Hvis du vanligvis bruker datamaskinen med strømadapteren tilkoblet og bare en sjelden gang benytter batteridrift,kan du forlenge batteriets levetid ved å sette maksimal ladeverdi til under 100 %. Dette er nyttig fordi batterier som brukes av og til, har lengre levetid hvis de holdes på et nivå som er under fullt oppladet.",
                         "tooltip": "Hvis batteriet er ladet opp til et nivå over terskelen for å stoppe lading, må du koble fra strømmen frem til batteriet lades ut til under eller på nivå med terskelen.Avhengig av batteristatusen (gammelt eller nytt) kan det nøyaktige punktet der ladingen starter eller stopper, variere med opptil 2 prosentpoeng. Hvis du aktiverer funksjonen, anbefales det at du utfører Tilbakestilling av batterimåler av og til for å sikre nøyaktig rapportering av batteritilstanden.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Merk",
+                        "readMoreText": "Les mer.",
+                        "noteInfo": " Batteriladeterskelen er fremdeles ikke fullstendig aktiv. Koble fra maskinen din og la batterinivået gå ned til eller under terskelen for ladestopp.",
                         "settings": {
                             "title1": "Terskel for innebygd batteri",
                             "title2": "Terskel for avtakbart batteri"
@@ -843,9 +845,9 @@
                             "cancel": "AVBRYT"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Start lading når under",
+                            "checkboxText": "Automatisk angi terskelen for å starte lading 5 prosent under terskelen for å stoppe lading.",
+                            "stop": "Stopp lading ved"
                         }
                     },
                     "expressCharging": {
@@ -869,21 +871,21 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "ET ENERGY STAR SERTIFISERT PRODUKT"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Smart hvilemodus",
+                    "description": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker rask oppstart på tidspunkter med tyngre bruk.",
+                    "tooltip": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt starttidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Angi vanlige tidspunkter for bruk av datamaskinen",
+                        "subHeading1": "begynner",
+                        "subHeading2": "slutt",
+                        "subHeading3": "bruk denne planen for",
+                        "endTimeNote": "Sluttidspunktet må være innen 20 timer etter starttidspunktet",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
+                            "unit1": "Timer",
+                            "unit2": "Minutter",
                             "unit3": "AM/PM"
                         }
                     }
@@ -1613,7 +1615,8 @@
             },
             "errorMessage": {
                 "headerText": "Feil",
-                "bodyText": "Vi har oppdaget at du mangler viktige deler av Vantage. Disse delene lastes ned i bakgrunnen. Prøv igjen senere."
+				"bodyText": "Vi har oppdaget at du mangler viktige deler av Vantage. Disse delene lastes ned i bakgrunnen. Prøv igjen senere.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

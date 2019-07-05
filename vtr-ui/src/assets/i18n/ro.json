@@ -299,6 +299,9 @@
                 },
                 "option4": {
                     "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
                 }
             },
             "profile": {
@@ -467,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Păreți plin de energie astăzi "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Nu s-a detectat nicio conexiune la internet",
+            "subtitle": "Aflați cum puteți rezolva problemele de conexiune în",
+            "buttonText": "Obțineți asistență"
         },
         "feedback": {
             "title": "Oferiţi feedback",
@@ -497,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Setări rapide",
+            "microphone": "Microfon",
+            "cameraPrivacy": "Cameră",
+            "eyeCareMode": "Modul de îngrijire ochi"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Starea sistemului",
+            "subtitle": "FIȚI LA CURENT CU STAREA DISPOZITIVULUI DVS.",
             "memory": {
-                "title": "Memory",
+                "title": "Memorie",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Memoria nu a fost găsită",
+                    "of": "din"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Spațiu pe disc",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Discul nu a fost găsit",
+                    "of": "din"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Garanţie",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Garanţia nu a fost găsită",
+                    "until": "Până pe",
+                    "expiredOn": "Garanția a expirat pe",
+                    "notAvailable": "Garanția nu este disponibilă"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Actualizare"
                 }
             }
         }
@@ -649,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -810,9 +812,9 @@
                         "checkbox": "Activați încărcarea USB de la bateria laptopului când computerul este oprit."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Reluare simplă",
+                        "description": "Activați această caracteristica pentru a îmbunătăți timpul de reluare dacă deschideți și închideți frecvent capacul calculatorului.",
+                        "tooltip": "Această caracteristică va îmbunătăţi timpul de reluare dacă deschideţi şi închideţi frecvent capacul calculatorului. Când este activată, calculatorul va trece în modul de alimentare redusă când închideţi capacul, dar va reveni imediat dacă redeschideţi capacul în decurs de 15 minute după ce l-aţi închis. Această caracteristică permite, de asemenea, notebookului să încerce să termine activităţile în aşteptare (cum ar fi, trimiterea e-mailului sau descărcarea unui fişier) înainte ca sistemul să se oprească."
                     }
                 },
                 "otherSettings": {
@@ -828,9 +830,9 @@
                         "title": "Prag încărcare baterie",
                         "description": "Dacă utilizați în principal calculatorul cu adaptorul c.a. conectat și utilizați doar rar energia bateriei,puteți prelungi durata de viață a bateriei prin setarea valorii maxime de încărcare sub 100%. Acest lucru este util, deoarece bateriile care sunt utilizate rar au o durată de viaţă mai lungă când sunt păstrate neîncărcate complet.",
                         "tooltip": "Dacă bateria este în prezent încărcată peste pragul de oprire a încărcării, deconectați alimentarea până când bateria se descarcă la sau sub pragul de oprire a încărcării.În funcție de starea bateriei (veche sau nouă), punctul exact la care încărcarea va începe sau se va opri poate să difere cu până la 2 procente. Dacă activați caracteristica, se recomandă să efectuați ocazional resetarea indicatorului bateriei pentru a asigura o raportare exactă a funcționării bateriei.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "Notă",
+                        "readMoreText": "Citiți mai multe.",
+                        "noteInfo": " Pragul de încărcare a bateriei nu este încă complet activ. Deconectaţi aparatul şi lăsaţi bateria să se descarce la sau sub pragul de oprire a încărcării.",
                         "settings": {
                             "title1": "Prag pentru bateria încorporată",
                             "title2": "Prag pentru bateria detașabilă"
@@ -843,9 +845,9 @@
                             "cancel": "ANULARE"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Pornire încărcare când este sub",
+                            "checkboxText": "Setați pragul de pornire a încărcării automate cu 5 procente sub pragul de oprire a încărcării.",
+                            "stop": "Oprire încărcare la"
                         }
                     },
                     "expressCharging": {
@@ -869,21 +871,21 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "UN PRODUS CERTIFICAT ENERGY STAR"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "Stare de veghe inteligentă",
+                    "description": "Această caracteristică programează computerul dvs. să optimizeze economia de energie de la baterie în timpul orelor de inactivitate, fără a renunța la timpii rapizi de pornire pe durata orelor de utilizare mai intensivă.",
+                    "tooltip": "Atunci când este activată Starea de veghe inteligentă, computerul dvs. trece în Starea de veghe modernă înaintea orei programate pentru Pornire şi intră în hibernare după ce este inactiv o anumită perioadă de timp cu alimentare de la baterie. Această perioadă de timp este optimizată pe baza programului pe care îl setaţi dvs. Computerul trece din hibernare în Starea de veghe modernă doar în zilele planificate şi nu face acest lucru atunci când este inactiv pe durata mai multor zile programate consecutive.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "Setați orele la care utilizați de obicei acest computer",
+                        "subHeading1": "începeţi",
+                        "subHeading2": "oprire",
+                        "subHeading3": "utilizați această planificare pentru",
+                        "endTimeNote": "Ora de oprire trebuie să fie în interval de maximum 20 de ore de la ora de pornire",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
+                            "unit1": "Ore",
+                            "unit2": "Minute",
                             "unit3": "AM/PM"
                         }
                     }
@@ -1613,7 +1615,8 @@
             },
             "errorMessage": {
                 "headerText": "Eroare",
-                "bodyText": "Am detectat că vă lipesc câteva elemente critice ale Vantage. Aceste elemente vor fi descărcate în fundal. Încercaţi din nou mai târziu."
+				"bodyText": "Am detectat că vă lipesc câteva elemente critice ale Vantage. Aceste elemente vor fi descărcate în fundal. Încercaţi din nou mai târziu.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

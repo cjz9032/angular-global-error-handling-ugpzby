@@ -1,8 +1,8 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';//VAN-5872, serverSwitch
 import { DevService } from './services/dev/dev.service';
 import { DisplayService } from './services/display/display.service';
-import { NgbModal, NgbModalRef  } from '@ng-bootstrap/ng-bootstrap';//sh01Jul2019, VAN-5872
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';//VAN-5872, serverSwitch
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 import { DeviceService } from './services/device/device.service';
 import { CommonService } from './services/common/common.service';
@@ -20,16 +20,17 @@ import { ModalServerSwitchComponent } from './components/modal/modal-server-swit
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',
-	styleUrls: [ './app.component.scss' ]
+	styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
 	title = 'vtr-ui';
-	private allCapablitiyFlag: Boolean = false;
+
 	machineInfo: any;
 	constructor(
 		private devService: DevService,
 		private displayService: DisplayService,
 		private router: Router,
+		private activRouter: ActivatedRoute,
 		private modalService: NgbModal,
 		public deviceService: DeviceService,
 		private commonService: CommonService,
@@ -132,17 +133,6 @@ export class AppComponent implements OnInit {
 		// forcefully clearing session storage
 		sessionStorage.clear();
 
-		if (!this.allCapablitiyFlag) {
-			this.gamingAllCapabilitiesService
-				.getCapabilities()
-				.then((response) => {
-					this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
-				})
-				.catch((err) => {
-					console.log(`ERROR in appComponent getCapabilities()`, err);
-				});
-			this.allCapablitiyFlag = true;
-		}
 
 		this.devService.writeLog('APP INIT', window.location.href, window.devicePixelRatio);
 
@@ -293,10 +283,9 @@ export class AppComponent implements OnInit {
 				);
 				window.parent.postMessage(response, 'ms-appx-web://e046963f.lenovocompanionbeta/index.html');
 			}
-			
-			//sahinul01Jul2019, VAN-5872, server switch feature
+
+			//VAN-5872, server switch feature
 			if(event.ctrlKey && event.shiftKey && event.keyCode==67){
-				console.log('sahinul Event',event);
 				const serverSwitchModal : NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
 					backdrop: true,
 					size: 'lg',
@@ -317,13 +306,14 @@ export class AppComponent implements OnInit {
 		const scale = 1 / (window.devicePixelRatio || 1);
 		const content = `shrink-to-fit=no, width=device-width, initial-scale=${scale}, minimum-scale=${scale}`;
 		document.querySelector('meta[name="viewport"]').setAttribute('content', content);
-		console.log('DPI: ', content);
+		//console.log('DPI: ', content);
+		//alert('I am at onload');
 	}
 
 	// Defect fix VAN-2988
 	@HostListener('window:keydown', [ '$event' ])
 	disbleCtrlACV($event: KeyboardEvent) {
-		console.log('$event.keyCode ' + $event.keyCode);
+		//console.log('$event.keyCode ' + $event.keyCode);
 		if (
 			($event.ctrlKey || $event.metaKey) &&
 			($event.keyCode === 65 || $event.keyCode === 67 || $event.keyCode === 86)

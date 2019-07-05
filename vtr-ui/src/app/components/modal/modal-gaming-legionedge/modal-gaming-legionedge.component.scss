@@ -1,9 +1,6 @@
 @import '../../../app.theme.scss';
 .gaming-help-popup{
-	width: 80rem;
 	position: relative;
-	right: 9rem;
-	
 	background: $gaming_slate_blue;
 	color: $gaming_lightest;
 	.modal-header{
@@ -26,7 +23,9 @@
 	}
 	.modal-body {
 		padding: 0 4rem 3rem 4rem;
+		width: 100%;
 		.innerContent{
+			width: 100%;
 			background: $gaming_Darkslate_blue;
 			padding: 2rem;
 			max-height: 40rem;

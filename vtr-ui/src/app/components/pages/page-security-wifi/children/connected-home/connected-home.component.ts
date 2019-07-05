@@ -1,16 +1,17 @@
-import { Component, Input, EventEmitter } from '@angular/core';
+import { Component, Input, EventEmitter, OnInit } from '@angular/core';
 import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
-import { SecurityService } from 'src/app/services/security/security.service';
+import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-article-detail/modal-article-detail.component';
 import { CMSService } from 'src/app/services/cms/cms.service';
+import { RegionService } from 'src/app/services/region/region.service';
 
 @Component({
 	selector: 'vtr-connected-home',
 	templateUrl: './connected-home.component.html',
 	styleUrls: ['./connected-home.component.scss']
 })
-export class ConnectedHomeComponent {
+export class ConnectedHomeComponent implements OnInit {
 
 	@Input() data: WifiHomeViewModel;
 	@Input() isShowInvitationCode: boolean;
@@ -18,14 +19,28 @@ export class ConnectedHomeComponent {
 	showDescribe = false;
 	peaceOfMindArticleId = '988BE19B75554E09B5A914D5F803C3F3';
 	peaceOfMindArticleCategory: string;
+	isChsExist: boolean;
 
 
 	constructor(
-		public securityService: SecurityService,
+		public dialogService: DialogService,
 		public modalService: NgbModal,
-		private cmsService: CMSService
+		private cmsService: CMSService,
+		public regionService: RegionService,
 	) {
 		this.fetchCMSArticles();
+	}
+
+	ngOnInit() {
+		this.regionService.getRegion().subscribe({
+			next: x => {
+				this.isChsExist = false;
+				if (x.toUpperCase() === 'US') { this.isChsExist = true; }
+			},
+			error: err => {
+				this.isChsExist = false;
+			}
+		});
 	}
 
 	fetchCMSArticles() {
