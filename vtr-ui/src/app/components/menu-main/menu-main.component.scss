@@ -39,9 +39,10 @@
 
 		.navbar-text {
 			margin-left: 2rem;
+			margin-right: auto;
 			@media #{$mediaquery_xl} {
 				text-align: center;
-				margin-right: auto;
+
 			}
 			.app-title {
 				text-transform: uppercase;

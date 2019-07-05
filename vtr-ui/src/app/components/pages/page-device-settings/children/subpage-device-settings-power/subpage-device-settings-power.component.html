@@ -130,6 +130,7 @@
 							[tooltipText]="'device.deviceSettings.power.batterySettings.expressCharging.tooltip' | translate"
 							[isSwitchChecked]="expressChargingStatus.status"
 							[disabled]="expressChargingLock"
+							[showLoaderState]="conservationModeLock"
 							(toggleOnOff)="changeBatteryMode($event,'expressCharging')">
 						</vtr-ui-row-switch>
 					</li>
@@ -146,6 +147,7 @@
 							[tooltipText]="'device.deviceSettings.power.batterySettings.conservationMode.tooltip.line1' | translate"
 							[isSwitchChecked]="conservationModeStatus.status"
 							[disabled]="conservationModeLock"
+							[showLoaderState]="expressChargingLock"
 							(toggleOnOff)="changeBatteryMode($event,'conservationMode')">
 						</vtr-ui-row-switch>
 					</li>

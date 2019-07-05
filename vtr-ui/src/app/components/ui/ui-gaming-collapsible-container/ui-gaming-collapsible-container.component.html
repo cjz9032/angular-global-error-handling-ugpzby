@@ -1,6 +1,6 @@
 <div class="select-box">
 	<div class="dropdown">
-		<a class="dropdown-toggle" id="gaming-drop" (click)="toggleOptions(options.curSelected)">
+		<a class="dropdown-toggle" id="gaming-drop" (click)="toggleOptions(options)">
 			<span *ngFor="let option of options.dropOptions" 
 			[ngStyle]="{display: option.value != options.curSelected? 'none':''}">
 				{{option.name  | translate}}

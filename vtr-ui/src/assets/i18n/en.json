@@ -40,6 +40,7 @@
 						"text": "Install driver to activate RAM Overclock,",
 						"networkBoostText": "You need install driver for Network Boost to  make it effective",
 						"hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+						"cpuOverclockText": "You need install driver for CPU Overclock to  make it effective",
 						"button": "Install",
 						"link": "cancel"
 					},
@@ -670,8 +671,9 @@
 						"title": "The battery is in good condition."
 					},
 					"Exhaustion": {
-						"title": "The battery has failed due to normal",
-						"description": "wear. The battery cannot be charged. Replace the battery."
+						"description": "The battery has",
+						"description1": "failed due to normal wear.",
+						"description2": "The battery cannot be charged. Replace the battery."
 					},
 					"Bad": {
 						"title": "A battery error has occurred.",
@@ -827,13 +829,13 @@
 				"smartStandby": {
 					"title": "Smart Standby",
 					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
 					"timer": {
 						"heading": "Set time when you typically use this computer",
 						"subHeading1": "start",
 						"subHeading2": "end",
 						"subHeading3": "use this schedule for",
-						"endTimeNote": "End time must be within 20 hours from Start time",
+						"endTimeNote": "END must be within 20 hours from START time",
 						"timeUnits": {
 							"unit1": "Hours",
 							"unit2": "Minutes",
@@ -992,7 +994,18 @@
 							"It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
 						],
 						"reset": "Reset temperature",
-						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display.",
+						"dropDown": {
+							"seconds": "seconds",
+							"minute": "minute",
+							"minutes": "minutes",
+							"alwaysOn": "Always on",
+							"never": "never",
+							"halfTime": "Half time of display off timer"
+						},
+						"taskBarDimmer": "TASKBAR DIMMER",
+						"backgroundDimmer": "BACKGROUND DIMMER",
+						"displayDimmer": "DISPLAY DIMMER"
 					},
 					"dispColorTemp": {
 						"title": "Daytime Color Temperature",

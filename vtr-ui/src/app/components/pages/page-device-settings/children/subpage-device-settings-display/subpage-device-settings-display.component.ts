@@ -49,6 +49,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public privacyGuardCheckBox = false;
 	public privacyGuardOnPasswordCapability = false;
 	public privacyGuardInterval: any;
+	public hasOLEDPowerControlCapability = false;
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 	headerMenuItems = [
@@ -144,6 +145,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.getPrivacyGuardOnPasswordCapabilityStatus();
 		this.statusChangedLocationPermission();
 		this.initCameraSection();
+		this.getOLEDPowerControlCapability();
 	}
 
 	initCameraSection() {
@@ -804,4 +806,24 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	// End Privacy Gaurd
+
+	//Updates whether device has OLEDPowerControl
+	public getOLEDPowerControlCapability() {
+		try {
+			if (this.displayService.isShellAvailable) {
+				this.displayService.getOLEDPowerControlCapability()
+					.then((result: boolean) => {
+						console.log('getOLEDPowerControlCapability.then', result);
+						this.hasOLEDPowerControlCapability = result;
+
+					}).catch(error => {
+						console.error('getOLEDPowerControlCapability', error);
+
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+
+		}
+	}
 }
