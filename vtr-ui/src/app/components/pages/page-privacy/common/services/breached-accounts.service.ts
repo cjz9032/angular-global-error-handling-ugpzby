@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, EMPTY, merge, ReplaySubject, Subject, Subscription, timer } from 'rxjs';
-import { catchError, distinctUntilChanged, map, switchMap, switchMapTo, take, tap } from 'rxjs/operators';
+import { EMPTY, merge, ReplaySubject, Subject, Subscription, timer } from 'rxjs';
+import { catchError, debounceTime, distinctUntilChanged, map, switchMap, switchMapTo, take } from 'rxjs/operators';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { EmailScannerService, ErrorNames } from '../../feature/check-breached-accounts/services/email-scanner.service';
 
@@ -33,6 +33,8 @@ interface GetBreachedAccountsState {
 export class BreachedAccountsService {
 	onGetBreachedAccounts$ = new ReplaySubject<GetBreachedAccountsState>(1);
 
+	private getNewBreachedAccounts$ = new Subject<boolean>();
+
 	taskStartedTime = 0;
 	scanBreachesAction$ = new Subject<{ TaskDuration: number }>();
 
@@ -49,8 +51,10 @@ export class BreachedAccountsService {
 			this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(
 				distinctUntilChanged(),
 			),
+			this.getNewBreachedAccounts$.asObservable(),
 			timer(30000, 30000),
 		).pipe(
+			debounceTime(200),
 			switchMapTo(this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(take(1))),
 			switchMap((isFigleafInstalled) => {
 				this.taskStartedTime = Date.now();
@@ -66,6 +70,10 @@ export class BreachedAccountsService {
 			this.onGetBreachedAccounts$.next({breaches: response, error: null});
 			this.sendTaskAcrion();
 		});
+	}
+
+	getNewBreachedAccounts() {
+		this.getNewBreachedAccounts$.next(true);
 	}
 
 	private sendTaskAcrion() {

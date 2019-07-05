@@ -44,7 +44,7 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.breachedAccountsService.getBreachedAccounts();
+		this.breachedAccountsService.getNewBreachedAccounts();
 
 		this.userEmail$.pipe(
 			takeUntil(instanceDestroyed(this)),
