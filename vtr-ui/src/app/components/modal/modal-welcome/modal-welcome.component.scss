@@ -16,7 +16,8 @@
 	position: relative;
 	width: 60rem;
 	max-width: 60rem !important;
-	height: 60rem;
+	height: auto;
+	//height: 60rem;
 	background: $shade_lightest;
 	overflow: hidden;
 
@@ -172,6 +173,7 @@
 			padding-left: 2.2rem;
 			line-height: 1.8rem;
 			font-size: 1.4rem;
+			margin-bottom: 2.2rem;
 			font-weight: $weight_regular;
 
 			// rounded square-box background
@@ -210,7 +212,8 @@
 	}
 
 	.next-btn {
-		height: 5rem;
+		//height: 5rem;
+		padding-bottom: 10px;
 	}
 
 	.vtr-progress-bar {

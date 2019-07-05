@@ -87,8 +87,7 @@
 						<div class="row mb-5"
 							[ngClass]="{'radio-is-selected' : data.page2.radioValue !== null }">
 							<div class="col-4 device-image-content">
-								<div class="device-image"
-								title='{{ "welcometutorial.personal" | translate }}'
+								<div class="device-image"								
 									(click)="saveUsageType($event, 'PERSONAL')">
 									<input type="radio"
 										name="radio"
@@ -110,8 +109,7 @@
 								</div>
 							</div>
 							<div class="col-4 device-image-content"> 
-								<div class="device-image"
-								title='{{ "welcometutorial.business" | translate }}'
+								<div class="device-image"								
 									(click)="saveUsageType($event, 'BUSINESS')">
 									<input type="radio"
 										name="radio"
@@ -132,8 +130,7 @@
 								</div>
 							</div>
 							<div class="col-4 device-image-content">
-								<div class="device-image"
-								title='{{ "welcometutorial.custom" | translate }} {{ "welcometutorial.experience" | translate }}'
+								<div class="device-image"								
 									(click)="saveUsageType($event, 'CUSTOM')">
 									<input type="radio"
 										name="radio"
