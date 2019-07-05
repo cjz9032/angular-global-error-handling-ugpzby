@@ -1,12 +1,14 @@
 import { Component, OnInit, ElementRef, HostListener, SecurityContext } from '@angular/core';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
-//import { SelectDropDownModule } from 'ngx-select-dropdown';
-//import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { ServerSwitch } from '../../../data-models/server-switch/server-switch.model'
+// import { SelectDropDownModule } from 'ngx-select-dropdown';
+// import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { ServerSwitch } from '../../../data-models/server-switch/server-switch.model';
 import { isNull, isUndefined } from 'util';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @Component({
 	selector: 'vtr-modal-server-switch',
@@ -26,11 +28,11 @@ export class ModalServerSwitchComponent implements OnInit {
 		message: []
 	};
 
-	//SelectDropDownModule, config
+	// SelectDropDownModule, config
 	sddConfigCountry: any = {
-		displayKey: "Value", //if objects array passed which key to be displayed defaults to description
-		search: true, //true/false for the search functionlity defaults to false,
-		height: '15rem', //height of the list so that if there are more no of items it can show a scroll defaults to auto. With auto height scroll will never appear
+		displayKey: 'Value', // if objects array passed which key to be displayed defaults to description
+		search: true, // true/false for the search functionlity defaults to false,
+		height: '15rem', // height of the list so that if there are more no of items it can show a scroll defaults to auto. With auto height scroll will never appear
 		placeholder: 'Select', // text to be displayed when no item is selected defaults to Select,
 		limitTo: 5, // a number thats limits the no of options displayed in the UI similar to angular's limitTo pipe
 		noResultsFound: 'No results found!', // text to be displayed when no items are found while searching
@@ -39,9 +41,9 @@ export class ModalServerSwitchComponent implements OnInit {
 	};
 
 	sddConfigLanguage: any = {
-		displayKey: "Value", //if objects array passed which key to be displayed defaults to description
-		search: true, //true/false for the search functionlity defaults to false,
-		height: '15rem', //height of the list so that if there are more no of items it can show a scroll defaults to auto. With auto height scroll will never appear
+		displayKey: 'Value', // if objects array passed which key to be displayed defaults to description
+		search: true, // true/false for the search functionlity defaults to false,
+		height: '15rem', // height of the list so that if there are more no of items it can show a scroll defaults to auto. With auto height scroll will never appear
 		placeholder: 'Select', // text to be displayed when no item is selected defaults to Select,
 		limitTo: 5, // a number thats limits the no of options displayed in the UI similar to angular's limitTo pipe
 		noResultsFound: 'No results found!', // text to be displayed when no items are found while searching
@@ -50,9 +52,9 @@ export class ModalServerSwitchComponent implements OnInit {
 	};
 
 	sddConfigSegment: any = {
-		displayKey: "Value", //if objects array passed which key to be displayed defaults to description
-		search: true, //true/false for the search functionlity defaults to false,
-		height: '15rem', //height of the list so that if there are more no of items it can show a scroll defaults to auto. With auto height scroll will never appear
+		displayKey: 'Value', // if objects array passed which key to be displayed defaults to description
+		search: true, // true/false for the search functionlity defaults to false,
+		height: '15rem', // height of the list so that if there are more no of items it can show a scroll defaults to auto. With auto height scroll will never appear
 		placeholder: 'Select', // text to be displayed when no item is selected defaults to Select,
 		limitTo: 5, // a number thats limits the no of options displayed in the UI similar to angular's limitTo pipe
 		noResultsFound: 'No results found!', // text to be displayed when no items are found while searching
@@ -63,13 +65,14 @@ export class ModalServerSwitchComponent implements OnInit {
 
 	constructor(
 		public activeModal: NgbActiveModal,
-		public commonService: CommonService
+		public commonService: CommonService,
+		private router: Router
 	) { }
 
 	ngOnInit() {
 		this.serverSwitchData = new ServerSwitch();
 
-		//SelectDropDownModule configuration
+		// SelectDropDownModule configuration
 		this.sddConfigCountry.limitTo = this.serverSwitchData.countryList.length;
 
 		this.sddConfigLanguage.limitTo = this.serverSwitchData.languageList.length;
@@ -90,7 +93,7 @@ export class ModalServerSwitchComponent implements OnInit {
 	}
 
 	@HostListener('document:keydown.escape', ['$event'])
-	onClickEscape($event) {
+	onClickEscape() {
 		this.closeModal();
 	}
 
@@ -103,9 +106,9 @@ export class ModalServerSwitchComponent implements OnInit {
 			status: false,
 			message: []
 		};
-		//console.log(formData);
+		// console.log(formData);
 
-		//validating
+		// validating
 		if (isNull(formData.country) || isUndefined(formData.country)) {
 			this.sddInvalid.status = true;
 			this.sddInvalid.message.push('Country is required.');
@@ -127,7 +130,7 @@ export class ModalServerSwitchComponent implements OnInit {
 			this.serverSwitchData.segment = formData.segment;
 		}
 
-		//submit success
+		// submit success
 		if (!this.sddInvalid.status) {
 			this.serverSwitchProcess();
 		}
@@ -141,11 +144,25 @@ export class ModalServerSwitchComponent implements OnInit {
 			language: this.serverSwitchData.language,
 			segment: this.serverSwitchData.segment,
 		};
-		//storing into localStorage
+		// storing into localStorage
 		this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
-		console.log(window.location.href);
 
-		//reload with new serverSwitch Parms
-		//window.location.reload();//working
+		this.closeModal();
+		// reload with new serverSwitch Parms
+		this.redirectTo(this.router.url, { serverswitch: true, d: (new Date).getTime() });
 	}
+
+	redirectTo(uri: string, parms: {}) {
+		this.router.onSameUrlNavigation = 'reload';
+		this.router.navigated = false;
+		this.router.routeReuseStrategy.shouldReuseRoute = function () {
+			return false;
+		};
+		this.router.navigateByUrl('/', { queryParams: parms, queryParamsHandling: 'merge', skipLocationChange: false })
+			.then(() =>
+				this.router.navigateByUrl(uri, { queryParams: parms, skipLocationChange: false })
+			);
+	}
+
+
 }

@@ -470,12 +470,12 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "אתה נראה רענן היום "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "לא נמצא חיבור לאינטרנט",
+            "subtitle": "מידע נוסף על פתרון בעיות חיבור",
+            "buttonText": "קבלת תמיכה"
         },
         "feedback": {
             "title": "תנו משוב",
@@ -500,41 +500,41 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "הגדרות מהירות",
+            "microphone": "מיקרופון",
+            "cameraPrivacy": "מצלמה",
+            "eyeCareMode": "מצב שמירה על העיניים"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "מצב המערכת",
+            "subtitle": "התעדכנות מהירה במצב המכשיר.",
             "memory": {
-                "title": "Memory",
+                "title": "זיכרון",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "הזיכרון לא נמצא",
+                    "of": "מתוך"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "שטח בדיסק",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "הדיסק לא נמצא",
+                    "of": "מתוך"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "אחריות‏‎",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "האחריות לא נמצאה",
+                    "until": "עד",
+                    "expiredOn": "תוקף האחריות פג בתאריך",
+                    "notAvailable": "האחריות לא זמינה"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "עדכון"
                 }
             }
         }
@@ -652,7 +652,6 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "Battery 1",
                         "description": "you cannot use the attached battery with this computer.",
                         "description1": "Replace",
                         "description2": "it with a battery of correct model."
@@ -813,9 +812,9 @@
                         "checkbox": "הפעלת טעינת USB מסוללת המחשב הנייד כאשר המחשב כבוי."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "חזרה לפעולה בקלות",
+                        "description": "הפעילו תכונה זו כדי לשפר את זמן החזרה לפעולה, אם אתם סוגרים ופותחים את מכסה המחשב לעתים קרובות.",
+                        "tooltip": "תכונה זו תשפר את זמן החזרה לפעולה, אם אתם סוגרים ופותחים את מכסה המחשב לעתים קרובות. כשהיא מופעלת, המחשב יעבור למצב צריכת חשמל נמוכה כשתסגרו את המכסה, אך יחזור לפעולה באופן מיידי אם תפתחו בחזרה את המכסה תוך 15 דקות מסגירתו. תכונה זו גם מאפשרת למחשב הנייד לנסות להשלים פעילויות שהחלו (כגון שליחת דואר אלקטרוני או הורדת קובץ) לפני שהמערכת תעבור להשהייה."
                     }
                 },
                 "otherSettings": {
@@ -831,9 +830,9 @@
                         "title": "סף טעינת הסוללה",
                         "description": "אם אתם משתמשים במחשב בעיקר כאשר הוא מחובר למתאם AC ומפעילים אותו באמצעות הסוללה לעתים רחוקות בלבד,תוכלו להאריך את משך חיי הסוללה על-ידי הגדרת הטעינה המרבית לערך הנמוך מ-100%. זוהי אפשרות שימושית משום שמשך החיים של סוללות שנמצאות בשימוש לעתים רחוקות יותר מתארך כאשר הן אינן טעונות במלואן.",
                         "tooltip": "אם הסוללה נטענת כרגע מעל סף עצירת הטעינה, יש לנתק את מקור החשמל עד שהסוללה תתרוקן עד רמת סף עצירת הטעינה או מתחתיו.בהתאם למצב הסוללה (ישנה או חדשה), הנקודה המדויקת שבה הטעינה תתחיל או תעצור עשויה להשתנות בעד שני אחוזים. אם תפעילו תכונה זו, מומלץ לבצע איפוס של מד הסוללה מדי פעם כדי להבטיח דוח מדויק לגבי תקינות הסוללה.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "note": "הערה",
+                        "readMoreText": "פרטים נוספים.",
+                        "noteInfo": " סף טעינת הסוללה עדיין לא פעיל באופן מלא. נתקו את המחשב מהחשמל ואפשרו לסוללה להתרוקן עד לסף עצירת הטעינה, או מתחתיו.",
                         "settings": {
                             "title1": "סף עבור הסוללה המובנית",
                             "title2": "סף עבור הסוללה הניתנת להסרה"
@@ -846,9 +845,9 @@
                             "cancel": "ביטול"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "התחילו בטעינה כשהסוללה מתחת",
+                            "checkboxText": "הגדירו באופן אוטומטי את סף תחילת הטעינה 5 אחוזים מתחת לסף עצירת הטעינה.",
+                            "stop": "הפסקת הטעינה ב-"
                         }
                     },
                     "expressCharging": {
@@ -872,21 +871,21 @@
                 },
                 "energyStar": {
                     "title": "Energy Star",
-                    "description": "AN ENERGY STAR CERTIFIED PRODUCT"
+                    "description": "מוצר עם אישור ENERGY STAR"
                 },
                 "smartStandby": {
-                    "title": "Smart Standby",
-                    "description": "This feature schedules your computer to optimize battery power saving during idle hours without sacrificing fast-startup time during hours of heaviers use.",
-                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled Start time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "title": "המתנה חכמה",
+                    "description": "תכונה זו מתזמנת את המחשב שלכם למיטוב חסכון באנרגיית הסוללה כאשר המחשב אינו בפעולה, בלי לפגוע בזמן האתחול המהיר שנדרש בשעות שבהן נעשה שימוש במחשב.",
+                    "tooltip": "כאשר תכונת 'המתנה חכמה' פועלת, המחשב עובר ל'המתנה מודרנית' לפני מועד ההתחלה שנקבע, והוא עובר למצב שינה אם הוא בלתי פעיל במשך פרק זמן מסוים במצב של חסכון בסוללה. פרק הזמן הזה עובר מיטוב לפי לוח הזמנים שקבעתם. המחשב עובר ממצב שינה למצב 'המתנה מודרנית' רק בימים שנקבעו, ואינו עובר כאשר הוא במצב בלתי פעיל במשך כמה ימים ברצף, לפי מה שקבעתם.",
                     "timer": {
-                        "heading": "Set time when you typically use this computer",
-                        "subHeading1": "start",
-                        "subHeading2": "end",
-                        "subHeading3": "use this schedule for",
-                        "endTimeNote": "End time must be within 20 hours from Start time",
+                        "heading": "הגדירו את הזמן שבו אתם בדרך כלל משתמשים במחשב",
+                        "subHeading1": "הפעלה",
+                        "subHeading2": "סיום",
+                        "subHeading3": "השתמשו בלוח הזמנים הזה לצורך",
+                        "endTimeNote": "זמן הסיום חייב להיות בטווח של 20 שעות מזמן ההתחלה",
                         "timeUnits": {
-                            "unit1": "Hours",
-                            "unit2": "Minutes",
+                            "unit1": "שעות",
+                            "unit2": "דקות",
                             "unit3": "AM/PM"
                         }
                     }
@@ -1616,7 +1615,8 @@
             },
             "errorMessage": {
                 "headerText": "שגיאה",
-                "bodyText": "גילינו שחסרים לכם חלקים קריטיים של Vantage. הורדה של חלקים אלה תתבצע ברקע. נסו שוב מאוחר יותר."
+				"bodyText": "גילינו שחסרים לכם חלקים קריטיים של Vantage. הורדה של חלקים אלה תתבצע ברקע. נסו שוב מאוחר יותר.",
+				"closeText": "close"
             }
         },
         "homeprotection": {

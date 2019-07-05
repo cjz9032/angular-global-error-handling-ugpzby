@@ -17,17 +17,17 @@ import { LightEffectComplexType } from 'src/app/enums/light-effect-complex-type'
 @Component({
 	selector: 'vtr-ui-lighting-profile',
 	templateUrl: './ui-lighting-profile.component.html',
-	styleUrls: [ './ui-lighting-profile.component.scss' ]
+	styleUrls: ['./ui-lighting-profile.component.scss']
 })
 export class UiLightingProfileComponent implements OnInit {
 	@Input() currentProfileId: number;
 	public lightingCapabilities: LightingCapabilities;
 	public profileBrightness: any;
-	public profileRGBFeature: number = 0;
+	public profileRGBFeature = 0;
 	public options: any;
 	public effectData: any;
-	public isProfileOff: boolean = true;
-	public currentProfile: number = 0;
+	public isProfileOff = true;
+	public currentProfile = 0;
 	public lightingData: any;
 	public isOff: number;
 	public brightness: any;
@@ -49,11 +49,11 @@ export class UiLightingProfileComponent implements OnInit {
 	public inHex2: any;
 	public applyBtnStatus1: String = 'apply';
 	public applyBtnStatus2: String = 'apply';
-	public showHideOverlay: boolean = false;
-	public showHideOverlaySide: boolean = false;
+	public showHideOverlay = false;
+	public showHideOverlaySide = false;
 	public selectedSingleColorOptionId: number;
-	public enableBrightCondition: boolean = false;
-	public enableBrightConditionside: boolean = false;
+	public enableBrightCondition = false;
+	public enableBrightConditionside = false;
 	public apply: 'gaming.lightingProfile.effect.apply.title | translate';
 	public lightEffectRGBOptionName: string;
 	public lightEffectRGBOptionNameSide: string;
@@ -260,7 +260,7 @@ export class UiLightingProfileComponent implements OnInit {
 		private gamingLightingService: GamingLightingService,
 		private gamingAllCapabilities: GamingAllCapabilitiesService,
 		private commonService: CommonService
-	) {}
+	) { }
 
 	ngOnInit() {
 		console.log('id----------------------------------', this.currentProfileId);
@@ -284,157 +284,163 @@ export class UiLightingProfileComponent implements OnInit {
 	public getGamingLightingCapabilities() {
 		try {
 			if (this.gamingLightingService.isShellAvailable) {
+				console.log(this.gamingAllCapabilities.isShellAvailable, '----------------<><>><');
 				this.gamingLightingService.getLightingCapabilities().then((response: any) => {
-					if (response !== undefined) {
-						if (this.lightingCapabilities === undefined) {
-							this.lightingCapabilities = new LightingCapabilities();
-						}
-						this.profileRGBFeature = response.RGBfeature;
-						this.lightingCapabilities = response;
-					}
-					if (response.LightPanelType.length > 0) {
-						if (LocalStorageKey.LightingCapabilities !== undefined) {
-							this.commonService.setLocalStorageValue(LocalStorageKey.LightingCapabilities, response);
-						}
-
-						console.log(
-							'gaming Lighting Capabilities js bridge ------------------------>',
-							JSON.stringify(this.lightingCapabilities)
-						);
-						console.log(
-							'led panel type ------------------------------------------',
-							this.lightingCapabilities.RGBfeature
-						);
-						if (response.LedType_Complex.length > 1) {
-							this.simpleOrComplex = 2;
-						} else if (response.LedType_simple.length > 1) {
-							this.simpleOrComplex = 1;
-						}
-						if (response.RGBfeature === 1 && this.simpleOrComplex === 1) {
-							this.dropOptions = response.LedType_simple;
-
-							this.optionsSingleColor = this.optionsSingleColor.filter((obj) =>
-								this.dropOptions.includes(obj.id)
-							);
-							console.log(
-								'single color options filtered  ------------------------------------------',
-								JSON.stringify(this.optionsSingleColor)
-							);
-						} else if (response.RGBfeature === 255 || this.simpleOrComplex === 2) {
-							this.dropOptions = response.LedType_Complex;
-							this.lightingEffectData.drop[0].dropOptions = this.lightingEffectData.drop[0].dropOptions.filter(
-								(i) => this.dropOptions.includes(i.value)
-							);
-							this.lightingEffectData.drop[1].dropOptions = this.lightingEffectData.drop[1].dropOptions.filter(
-								(i) => this.dropOptions.includes(i.value)
-							);
-							console.log(
-								'after drop options filter--------------------------------------------------------------------' +
-									JSON.stringify(this.lightingEffectData.drop[0].dropOptions)
-							);
-						}
-						const ledRGB = this.lightingCapabilities.RGBfeature;
-						if (this.lightingCapabilities.LightPanelType.length > 0) {
-							const ledPanel = this.lightingCapabilities.LightPanelType[0];
-							const resultImg = this.panelImageData.filter(function(v, i) {
-								return v['PanelType'] === ledPanel && v['RGB'] === ledRGB;
-							});
-							if (resultImg.length > 0) {
-								this.panelImage1 = this.imagePath + '/' + resultImg[0].PanelImage;
-								console.log(
-									'image path 1...............................................',
-									this.panelImage1
-								);
-							}
-
-							if (this.lightingCapabilities.LightPanelType.length > 1) {
-								const ledPanel2 = this.lightingCapabilities.LightPanelType[1];
-								const resultImg2 = this.panelImageData.filter(function(v, i) {
-									return v['PanelType'] === ledPanel2 && v['RGB'] === ledRGB;
-								});
-								if (resultImg2.length > 0) {
-									this.panelImage2 = this.imagePath + '/' + resultImg2[0].PanelImage;
-								}
-							}
-						}
-
-						this.getLightingProfileById(this.currentProfileId);
-						this.getLightingBrightness();
-					} else {
-						if (LocalStorageKey.LightingCapabilities !== undefined) {
-							response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingCapabilities);
-						}
-						if (response.LightPanelType.length > 0) {
-							this.lightingCapabilities = response;
-							console.log(
-								'gaming Lighting Capabilities js bridge ------------------------>',
-								JSON.stringify(this.lightingCapabilities)
-							);
-							console.log(
-								'led panel type ------------------------------------------',
-								this.lightingCapabilities.RGBfeature
-							);
-							if (response.LedType_Complex.length > 1) {
-								this.simpleOrComplex = 2;
-							} else if (response.LedType_simple.length > 1) {
-								this.simpleOrComplex = 1;
-							}
-							if (response.RGBfeature === 1 && this.simpleOrComplex === 1) {
-								this.dropOptions = response.LedType_simple;
-
-								this.optionsSingleColor = this.optionsSingleColor.filter((obj) =>
-									this.dropOptions.includes(obj.id)
-								);
-								console.log(
-									'single color options filtered  ------------------------------------------',
-									JSON.stringify(this.optionsSingleColor)
-								);
-							} else if (response.RGBfeature === 255 || this.simpleOrComplex === 2) {
-								this.dropOptions = response.LedType_Complex;
-								this.lightingEffectData.drop[0].dropOptions = this.lightingEffectData.drop[0].dropOptions.filter(
-									(i) => this.dropOptions.includes(i.value)
-								);
-								this.lightingEffectData.drop[1].dropOptions = this.lightingEffectData.drop[1].dropOptions.filter(
-									(i) => this.dropOptions.includes(i.value)
-								);
-								console.log(
-									'after drop options filter--------------------------------------------------------------------' +
-										JSON.stringify(this.lightingEffectData.drop[0].dropOptions)
-								);
-							}
-							const ledRGB = this.lightingCapabilities.RGBfeature;
-							if (this.lightingCapabilities.LightPanelType.length > 0) {
-								const ledPanel = this.lightingCapabilities.LightPanelType[0];
-								const resultImg = this.panelImageData.filter(function(v, i) {
-									return v['PanelType'] === ledPanel && v['RGB'] === ledRGB;
-								});
-								if (resultImg.length > 0) {
-									this.panelImage1 = this.imagePath + '/' + resultImg[0].PanelImage;
-									console.log(
-										'image path 1...............................................',
-										this.panelImage1
-									);
-								}
-
-								if (this.lightingCapabilities.LightPanelType.length > 1) {
-									const ledPanel2 = this.lightingCapabilities.LightPanelType[1];
-									const resultImg2 = this.panelImageData.filter(function(v, i) {
-										return v['PanelType'] === ledPanel2 && v['RGB'] === ledRGB;
-									});
-									if (resultImg2.length > 0) {
-										this.panelImage2 = this.imagePath + '/' + resultImg2[0].PanelImage;
-									}
-								}
-							}
-						}
-					}
+					this.updateGetGamingLightingCapabilities(response);
 				});
 			}
 		} catch (error) {
 			console.error(error.message);
 		}
 	}
-	public optionChangedRGBTop($event) {
+
+	public updateGetGamingLightingCapabilities(response: any) {
+		try {
+			console.log(`RESPONSE for updateGetGamingLightingCapabilities()`, response);
+			if (response !== undefined) {
+				if (this.lightingCapabilities === undefined) {
+					this.lightingCapabilities = new LightingCapabilities();
+				}
+				this.profileRGBFeature = response.RGBfeature;
+				this.lightingCapabilities = response;
+			}
+			if (response.LightPanelType.length > 0) {
+				if (LocalStorageKey.LightingCapabilities !== undefined) {
+					this.commonService.setLocalStorageValue(LocalStorageKey.LightingCapabilities, response);
+				}
+
+				console.log(
+					'gaming Lighting Capabilities js bridge ------------------------>',
+					JSON.stringify(this.lightingCapabilities)
+				);
+				console.log(
+					'led panel type ------------------------------------------',
+					this.lightingCapabilities.RGBfeature
+				);
+				if (response.LedType_Complex.length > 1) {
+					this.simpleOrComplex = 2;
+				} else if (response.LedType_simple.length > 1) {
+					this.simpleOrComplex = 1;
+				}
+				if (response.RGBfeature === 1 && this.simpleOrComplex === 1) {
+					this.dropOptions = response.LedType_simple;
+
+					this.optionsSingleColor = this.optionsSingleColor.filter((obj) =>
+						this.dropOptions.includes(obj.id)
+					);
+					console.log(
+						'single color options filtered  ------------------------------------------',
+						JSON.stringify(this.optionsSingleColor)
+					);
+				} else if (response.RGBfeature === 255 || this.simpleOrComplex === 2) {
+					this.dropOptions = response.LedType_Complex;
+					this.lightingEffectData.drop[0].dropOptions = this.lightingEffectData.drop[0].dropOptions.filter(
+						(i) => this.dropOptions.includes(i.value)
+					);
+					this.lightingEffectData.drop[1].dropOptions = this.lightingEffectData.drop[1].dropOptions.filter(
+						(i) => this.dropOptions.includes(i.value)
+					);
+					console.log(
+						'after drop options filter--------------------------------------------------------------------' +
+						JSON.stringify(this.lightingEffectData.drop[0].dropOptions)
+					);
+				}
+				const ledRGB = this.lightingCapabilities.RGBfeature;
+				if (this.lightingCapabilities.LightPanelType.length > 0) {
+					const ledPanel = this.lightingCapabilities.LightPanelType[0];
+					const resultImg = this.panelImageData.filter(function (v, i) {
+						return v.PanelType === ledPanel && v.RGB === ledRGB;
+					});
+					if (resultImg.length > 0) {
+						this.panelImage1 = this.imagePath + '/' + resultImg[0].PanelImage;
+						console.log('image path 1...............................................', this.panelImage1);
+					}
+
+					if (this.lightingCapabilities.LightPanelType.length > 1) {
+						const ledPanel2 = this.lightingCapabilities.LightPanelType[1];
+						const resultImg2 = this.panelImageData.filter(function (v, i) {
+							return v.PanelType === ledPanel2 && v.RGB === ledRGB;
+						});
+						if (resultImg2.length > 0) {
+							this.panelImage2 = this.imagePath + '/' + resultImg2[0].PanelImage;
+						}
+					}
+				}
+
+				this.getLightingProfileById(this.currentProfileId);
+				this.getLightingBrightness();
+			} else {
+				if (LocalStorageKey.LightingCapabilities !== undefined) {
+					response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingCapabilities);
+				}
+				if (response.LightPanelType.length > 0) {
+					this.lightingCapabilities = response;
+					console.log(
+						'gaming Lighting Capabilities js bridge ------------------------>',
+						JSON.stringify(this.lightingCapabilities)
+					);
+					console.log(
+						'led panel type ------------------------------------------',
+						this.lightingCapabilities.RGBfeature
+					);
+					if (response.LedType_Complex.length > 1) {
+						this.simpleOrComplex = 2;
+					} else if (response.LedType_simple.length > 1) {
+						this.simpleOrComplex = 1;
+					}
+					if (response.RGBfeature === 1 && this.simpleOrComplex === 1) {
+						this.dropOptions = response.LedType_simple;
+
+						this.optionsSingleColor = this.optionsSingleColor.filter((obj) =>
+							this.dropOptions.includes(obj.id)
+						);
+						console.log(
+							'single color options filtered  ------------------------------------------',
+							JSON.stringify(this.optionsSingleColor)
+						);
+					} else if (response.RGBfeature === 255 || this.simpleOrComplex === 2) {
+						this.dropOptions = response.LedType_Complex;
+						this.lightingEffectData.drop[0].dropOptions = this.lightingEffectData.drop[0].dropOptions.filter(
+							(i) => this.dropOptions.includes(i.value)
+						);
+						this.lightingEffectData.drop[1].dropOptions = this.lightingEffectData.drop[1].dropOptions.filter(
+							(i) => this.dropOptions.includes(i.value)
+						);
+						console.log(
+							'after drop options filter--------------------------------------------------------------------' +
+							JSON.stringify(this.lightingEffectData.drop[0].dropOptions)
+						);
+					}
+					const ledRGB = this.lightingCapabilities.RGBfeature;
+					if (this.lightingCapabilities.LightPanelType.length > 0) {
+						const ledPanel = this.lightingCapabilities.LightPanelType[0];
+						const resultImg = this.panelImageData.filter(function (v, i) {
+							return v.PanelType === ledPanel && v.RGB === ledRGB;
+						});
+						if (resultImg.length > 0) {
+							this.panelImage1 = this.imagePath + '/' + resultImg[0].PanelImage;
+							console.log('image path 1...............................................', this.panelImage1);
+						}
+
+						if (this.lightingCapabilities.LightPanelType.length > 1) {
+							const ledPanel2 = this.lightingCapabilities.LightPanelType[1];
+							const resultImg2 = this.panelImageData.filter(function (v, i) {
+								return v.PanelType === ledPanel2 && v.RGB === ledRGB;
+							});
+							if (resultImg2.length > 0) {
+								this.panelImage2 = this.imagePath + '/' + resultImg2[0].PanelImage;
+							}
+						}
+					}
+				}
+			}
+		} catch (err) {
+			console.log(`ERROR in updateGetGamingLightingCapabilities()`, err);
+		}
+	}
+	public optionChangedRGBTop($event, item) {
+		this.lightEffectRGBOptionNameSide = '';
+		this.lightEffectRGBOptionName = '';;
 		console.log('event raised for color effect top RGB-------------------', $event);
 		if (this.lightingProfileEffectColorNUmber === undefined) {
 			this.lightingProfileEffectColorNUmber = new LightingProfileEffectColorNUmber();
@@ -480,7 +486,7 @@ export class UiLightingProfileComponent implements OnInit {
 							if (this.lightingCapabilities.LedType_Complex.length > 0 && this.simpleOrComplex == 2) {
 								this.frontSelectedValue = response.lightInfo[0].lightEffectType;
 								this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
-								//this.inHex1 = response.lightInfo[0].lightColor;
+								// this.inHex1 = response.lightInfo[0].lightColor;
 								if (response.lightInfo.length > 1) {
 									this.sideSelectedValue = response.lightInfo[1].lightEffectType;
 									this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
@@ -508,6 +514,7 @@ export class UiLightingProfileComponent implements OnInit {
 									const lightEffectRGBOptionNameB = this.getLightEffectOptionName(
 										response.lightInfo[1].lightEffectType
 									);
+									this.lightEffectRGBOptionName = lightEffectRGBOptionNameB[0].name;
 									this.lightEffectRGBOptionNameSide = lightEffectRGBOptionNameB[0].name;
 								}
 							}
@@ -529,7 +536,7 @@ export class UiLightingProfileComponent implements OnInit {
 							if (this.lightingCapabilities.LedType_Complex.length > 0 && this.simpleOrComplex == 2) {
 								this.frontSelectedValue = response.lightInfo[0].lightEffectType;
 								this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
-								//this.inHex1 = response.lightInfo[0].lightColor;
+								// this.inHex1 = response.lightInfo[0].lightColor;
 								if (response.lightInfo.length > 1) {
 									this.sideSelectedValue = response.lightInfo[1].lightEffectType;
 									this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
@@ -557,6 +564,7 @@ export class UiLightingProfileComponent implements OnInit {
 									const lightEffectRGBOptionNameB = this.getLightEffectOptionName(
 										response.lightInfo[1].lightEffectType
 									);
+									this.lightEffectRGBOptionName = lightEffectRGBOptionNameB[0].name;
 									this.lightEffectRGBOptionNameSide = lightEffectRGBOptionNameB[0].name;
 								}
 							}
@@ -565,7 +573,9 @@ export class UiLightingProfileComponent implements OnInit {
 				});
 		}
 	}
-	public optionChangedRGBSide($event) {
+	public optionChangedRGBSide($event, item) {
+		this.lightEffectRGBOptionName = '';
+		this.lightEffectRGBOptionNameSide = '';
 		console.log('event raised for color effect side RGB-------------------', $event);
 		if (this.lightingProfileEffectColorNUmber === undefined) {
 			this.lightingProfileEffectColorNUmber = new LightingProfileEffectColorNUmber();
@@ -629,11 +639,17 @@ export class UiLightingProfileComponent implements OnInit {
 									this.enableBrightCondition = false;
 								}
 							}
-							//this.inHex1 = response.lightInfo[0].lightColor;
+							// this.inHex1 = response.lightInfo[0].lightColor;
 							if (response.lightInfo.length > 1) {
 								this.sideSelectedValue = response.lightInfo[1].lightEffectType;
 								this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
-								//this.inHex2 = response.lightInfo[1].lightColor;
+								// this.inHex2 = response.lightInfo[1].lightColor;
+
+								const lightEffectRGBOptionNameB = this.getLightEffectOptionName(
+									response.lightInfo[1].lightEffectType
+								);
+								this.lightEffectRGBOptionName = lightEffectRGBOptionNameB[0].name;
+								this.lightEffectRGBOptionNameSide = lightEffectRGBOptionNameB[0].name;
 							}
 						}
 
@@ -676,6 +692,11 @@ export class UiLightingProfileComponent implements OnInit {
 							if (response.lightInfo.length > 1) {
 								this.sideSelectedValue = response.lightInfo[1].lightEffectType;
 								this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
+								const lightEffectRGBOptionNameB = this.getLightEffectOptionName(
+									response.lightInfo[1].lightEffectType
+								);
+								this.lightEffectRGBOptionName = lightEffectRGBOptionNameB[0].name;
+								this.lightEffectRGBOptionNameSide = lightEffectRGBOptionNameB[0].name;
 							}
 						}
 					}
@@ -901,7 +922,7 @@ export class UiLightingProfileComponent implements OnInit {
 	}
 	setLightingBrightness(event) {
 		try {
-			//event = event + 1;
+			// event = event + 1;
 			console.log('in eventval--------------------------------' + event);
 			if (
 				this.frontSelectedValue !== 8 ||
@@ -914,7 +935,7 @@ export class UiLightingProfileComponent implements OnInit {
 					this.gamingLightingService.setLightingProfileBrightness(event).then((response: any) => {
 						this.didSuccess = response.didSuccess;
 						this.brightness = response.brightness;
-						//this.didSuccess = false;
+						// this.didSuccess = false;
 						console.log(
 							'setLightingProfileBrightness---------------------------->',
 							JSON.stringify(response)
@@ -984,7 +1005,7 @@ export class UiLightingProfileComponent implements OnInit {
 									this.selectedSingleColorOptionId = response.lightInfo[0].lightEffectType;
 								}
 							} else {
-								//	this.dropDataChanges.topdata = response.lightInfo[0].lightEffectType;
+								// 	this.dropDataChanges.topdata = response.lightInfo[0].lightEffectType;
 								this.frontSelectedValue = response.lightInfo[0].lightEffectType;
 
 								if (
@@ -1048,7 +1069,7 @@ export class UiLightingProfileComponent implements OnInit {
 								}
 							}
 						}
-						//	console.log('getLightingProfileById----------------cache---------->', JSON.stringify(this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById)));
+						// 	console.log('getLightingProfileById----------------cache---------->', JSON.stringify(this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById)));
 					} else {
 						if (LocalStorageKey.LightingProfileById !== undefined) {
 							this.response =
@@ -1073,7 +1094,7 @@ export class UiLightingProfileComponent implements OnInit {
 										this.selectedSingleColorOptionId = response.lightInfo[0].lightEffectType;
 									}
 								} else {
-									//	this.dropDataChanges.topdata = response.lightInfo[0].lightEffectType;
+									// 	this.dropDataChanges.topdata = response.lightInfo[0].lightEffectType;
 									this.frontSelectedValue = response.lightInfo[0].lightEffectType;
 
 									if (
@@ -1182,7 +1203,7 @@ export class UiLightingProfileComponent implements OnInit {
 									'selectedSingleColorOptionId------------single color---------------->',
 									JSON.stringify(response.lightInfo[0].lightEffectType)
 								);
-								//	this.selectedSingleColorOptionId = response.lightInfo[0].lightEffectType;
+								// 	this.selectedSingleColorOptionId = response.lightInfo[0].lightEffectType;
 								if (this.lightingCapabilities.LedType_Complex.length > 1) {
 									this.simpleOrComplex = 2;
 									this.frontSelectedValue = response.lightInfo[0].lightEffectType;
@@ -1259,7 +1280,7 @@ export class UiLightingProfileComponent implements OnInit {
 										'selectedSingleColorOptionId------------single color---------------->',
 										JSON.stringify(response.lightInfo[0].lightEffectType)
 									);
-									//	this.selectedSingleColorOptionId = response.lightInfo[0].lightEffectType;
+									// 	this.selectedSingleColorOptionId = response.lightInfo[0].lightEffectType;
 									if (this.lightingCapabilities.LedType_Complex.length > 1) {
 										this.simpleOrComplex = 2;
 										this.frontSelectedValue = response.lightInfo[0].lightEffectType;
@@ -1366,7 +1387,7 @@ export class UiLightingProfileComponent implements OnInit {
 						this.inHex1 = $event;
 						this.applyBtnStatus1 = 'applied';
 
-						//	this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileEffectColor, response);
+						// 	this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileEffectColor, response);
 						/*	console.log(
 								'set color pallet color effect front response----------cache---------->',
 								JSON.stringify(

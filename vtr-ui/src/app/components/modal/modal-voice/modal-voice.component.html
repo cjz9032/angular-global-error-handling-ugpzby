@@ -1,13 +1,22 @@
 <div class="modal-body vtr-modal-voice">
 		<div class="row justify-content-end">
-			<div class="btn-close">
+			<!-- <div class="btn-close">
 				<button type="button"
 					class="close"
 					aria-hidden="true"
 					(click)="closeModal()">
 					<fa-icon [icon]="['fal', 'times']"></fa-icon>
 				</button>
-			</div>
+			</div> -->
+			<a role="button"
+		type="button"
+		href="javascript:;"
+		class="close-btn"
+		(click)="closeModal()">
+		<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
+			alt=""
+			srcset="">
+	</a>
 		</div>
 		<h1 class="mb-3" *ngIf="value=='voiceToText'">
 			{{'device.smartAssist.voice.voiceToText.title' | translate}}</h1>
@@ -93,6 +102,7 @@
 											</div>
 										</div>
 										</div>
+										<div class="line"></div>
 		<div class="row">
 			<button class="btn close-button"
 				(click)="closeModal()">{{'device.smartAssist.voice.modalPopUp.closeText' | translate}}</button>
