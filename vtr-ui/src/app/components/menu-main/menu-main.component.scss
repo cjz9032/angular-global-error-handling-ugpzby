@@ -39,9 +39,10 @@
 
 		.navbar-text {
 			margin-left: 2rem;
+			margin-right: auto;
 			@media #{$mediaquery_xl} {
 				text-align: center;
-				margin-right: auto;
+
 			}
 			.app-title {
 				text-transform: uppercase;
@@ -146,6 +147,13 @@
 							margin-left: -1.5rem;
 							border-radius: 0;
 							margin-top: 0;
+						}
+
+						&.dropdown-menu-id {
+							left: auto;
+							right: 0rem;
+							padding-right: 16px;
+							transform: translateX(0px);
 						}
 
 						fa-icon {

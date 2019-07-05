@@ -1,8 +1,6 @@
 import {
 	Component,
 	OnInit,
-	Input,
-	HostListener,
 	AfterViewInit
 } from '@angular/core';
 import {
@@ -11,9 +9,8 @@ import {
 import {
 	CommonService
 } from 'src/app/services/common/common.service';
-import * as phoenix from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { EventTypes, WinRT } from '@lenovo/tan-client-bridge';
+import { EventTypes, WinRT, CHSAccountState } from '@lenovo/tan-client-bridge';
 import * as Phoenix from '@lenovo/tan-client-bridge';
 import { ModalLenovoIdComponent } from '../../../../modal/modal-lenovo-id/modal-lenovo-id.component';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -29,13 +26,14 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	switchPage = 1;
 	isLenovoIdLogin: boolean;
 	url = 'ms-settings:privacy-location';
-	showPageFour = false;
+	showPageLocation = false;
+	showPageLenovoId = false;
 	hasSystemPermissionShowed: boolean;
 	isLocationServiceOn: boolean;
 	chs: Phoenix.ConnectedHomeSecurity;
 	permission: any;
 	loading = false;
-	metricsParent = 'Page.ConnectedHomeSecurity';
+	metricsParent = 'ConnectedHomeSecurity';
 	constructor(
 		public activeModal: NgbActiveModal,
 		public homeSecurityMockService: HomeSecurityMockService,
@@ -44,12 +42,22 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 		public modalService: NgbModal
 	) {
 		this.chs = vantageShellService.getConnectedHomeSecurity();
+		if (!this.chs) {
+			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
+		}
 		this.permission = vantageShellService.getPermission();
 	}
 
 	ngOnInit() {
-		if (this.switchPage === 4) {
-			this.showPageFour = true;
+		switch (this.switchPage) {
+			case 3:
+				this.showPageLenovoId = true;
+				break;
+			case 4:
+				this.showPageLocation = true;
+				break;
+			default:
+				break;
 		}
 
 		this.chs.on(EventTypes.chsHasSystemPermissionShowedEvent, (data) => {
@@ -64,15 +72,20 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 		this.chs.on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
 			this.isLocationServiceOn = data;
 			if (this.switchPage === 4) {
-				this.showPageFour = true;
+				this.showPageLocation = true;
 			} else {
-				this.showPageFour = !this.isLocationServiceOn;
+				this.showPageLocation = !this.isLocationServiceOn;
 			}
 		});
 
 		this.chs.on(EventTypes.chsEvent, (chsData) => {
 			if (chsData.account.lenovoId) {
 				this.isLenovoIdLogin = chsData.account.lenovoId.loggedIn;
+				if (this.switchPage === 3) {
+					this.showPageLenovoId = true;
+				} else {
+					this.showPageLenovoId = !this.isLenovoIdLogin;
+				}
 			}
 		});
 	}
@@ -107,39 +120,37 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 			this.switchPage = 2;
 		} else if (switchPage === 2) {
 			if (isLenovoIdLogin) {
-				this.loading = true;
-				this.chs.account.createAccount().then((trial: boolean) => {
-					if (!trial) { return; }
-					this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
-					if (isLocationServiceOn) {
-						this.loading = false;
-						this.closeModal();
+				if (isLocationServiceOn) {
+					if (this.chs.account.state === CHSAccountState.local) {
+						this.startTrial();
 					} else {
-						this.switchPage = 4;
-						this.showPageFour = true;
+						this.closeModal();
 					}
-				}).finally(() => {
-					this.loading = false;
-				});
+				} else {
+					this.switchPage = 4;
+					this.showPageLocation = true;
+				}
 			} else {
 				this.switchPage = 3;
+				this.showPageLenovoId = true;
 			}
 		} else if (switchPage === 3) {
-			if (isLenovoIdLogin) {
-				this.loading = true;
-				this.chs.account.createAccount().then((trial: boolean) => {
-					if (!trial) { return; }
-					this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
-				}).finally(() => {
-					this.loading = false;
-				});
-			}
+			this.showPageLenovoId = true;
 			if (isLocationServiceOn) {
-				this.loading = false;
-				this.closeModal();
+				if (isLenovoIdLogin && this.chs.account.state === CHSAccountState.local) {
+					this.startTrial();
+				} else {
+					this.closeModal();
+				}
 			} else {
 				this.switchPage = 4;
-				this.showPageFour = true;
+				this.showPageLocation = true;
+			}
+		} else if (switchPage === 4) {
+			if (isLenovoIdLogin && this.chs.account.state === CHSAccountState.local) {
+				this.startTrial();
+			} else {
+				this.closeModal();
 			}
 		}
 	}
@@ -162,6 +173,17 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 					this.isLocationServiceOn = status;
 				});
 			}
+		});
+	}
+
+	startTrial() {
+		this.loading = true;
+		this.chs.account.createAccount().then((trial: boolean) => {
+			if (!trial) { return; }
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+			this.closeModal();
+		}).catch(() => {
+			this.loading = false;
 		});
 	}
 

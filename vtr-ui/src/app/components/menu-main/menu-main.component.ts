@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, DoCheck, HostListener, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, DoCheck, HostListener, ViewChild, AfterViewInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -31,6 +31,7 @@ import { SecurityAdvisorMockService } from 'src/app/services/security/securityMo
 })
 export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewInit {
 	@ViewChild('menuTarget') menuTarget;
+	@Input() loadMenuItem: any;
 	public deviceModel: string;
 	public country: string;
 	public firstName: 'User';
@@ -47,6 +48,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 	preloadImages: string[];
 	securityAdvisor: SecurityAdvisor;
 	isRS5OrLater: boolean;
+	public isGamingHome: boolean;
 
 	constructor(
 		private router: Router,
@@ -116,7 +118,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 	onClick(targetElement) {
 		const clickedInside = this.menuTarget.nativeElement.contains(targetElement);
 		const toggleMenuButton =
-			targetElement.classList.contains('navbar-toggler-icon ') || targetElement.classList.contains('fa-bars');
+			targetElement.classList.contains('navbar-toggler-icon ') || targetElement.classList.contains('fa-bars') || targetElement.parentElement.classList.contains('fa-bars') || targetElement.localName === 'path';
 		if (!clickedInside && !toggleMenuButton) {
 			this.showMenu = false;
 		}
@@ -142,6 +144,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 		});
 	}
 	ngDoCheck() {
+		this.isHomeGaming();
 		if (this.router.url !== null) {
 			if (this.router.url.indexOf('dashboard', 0) > 0) {
 				this.isDashboard = true;
@@ -350,13 +353,12 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 						smartAssistCapability.isLenovoVoiceSupported = responses[2];
 						smartAssistCapability.isIntelligentMediaSupported = responses[3];
 						smartAssistCapability.isIntelligentScreenSupported = responses[4];
-						smartAssistCapability.isAPSSupported = (responses[5] && responses[6] && responses[7] >= 0);
+						smartAssistCapability.isAPSSupported = (responses[5] && responses[6] && responses[7] > 0);
 						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
 
 						const isAvailable =
-							(responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && responses[7] >= 0);
+							(responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && responses[7] > 0);
 						// const isAvailable = true;
-						this.commonService.setLocalStorageValue(LocalStorageKey.IsLenovoVoiceSupported, responses[2]);
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, isAvailable);
 						// avoid duplicate entry. if not added earlier then add menu
 						if (isAvailable && !isSmartAssistSupported) {
@@ -389,4 +391,15 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 			window.open(link);
 		}
 	}
+
+	public isHomeGaming() {
+
+		if (this.router.url === '/device-gaming' || this.router.url === '/') {
+			this.isGamingHome = true;
+		}
+		else {
+			this.isGamingHome = false;
+		}
+	}
+
 }

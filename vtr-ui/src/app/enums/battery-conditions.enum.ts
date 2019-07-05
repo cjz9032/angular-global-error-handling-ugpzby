@@ -13,12 +13,12 @@ export enum BatteryConditionsEnum {
 	HardwareAuthenticationError,
 
 	MissingDriver,
-	NotSupportACAdapter,
 
+	NotSupportACAdapter,
 	LimitedACAdapterSupport,
 	StoreLimitation
 }
 
 export enum BatteryQuality {
-	Good, Fair, Poor
+	Good, Fair, Poor, AcError
 }

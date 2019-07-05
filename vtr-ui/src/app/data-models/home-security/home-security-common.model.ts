@@ -5,6 +5,7 @@ import { ModalLenovoIdComponent } from 'src/app/components/modal/modal-lenovo-id
 
 export class HomeSecurityCommon {
 	connectedHomeSecurity: ConnectedHomeSecurity;
+	startTrialDisabled = false;
 
 	constructor(connectedHomeSecurity: ConnectedHomeSecurity, private modalService: NgbModal) {
 		this.connectedHomeSecurity = connectedHomeSecurity;
@@ -19,12 +20,23 @@ export class HomeSecurityCommon {
 	}
 
 	startTrial() {
-		if (this.connectedHomeSecurity.account.lenovoId.loggedIn) {
-			this.connectedHomeSecurity.account.createAccount();
+		let alreadyLoggedIn = this.connectedHomeSecurity.account.lenovoId.loggedIn;
+		if (alreadyLoggedIn) {
+			this.startTrialDisabled = true;
+			this.connectedHomeSecurity.account.createAccount().then((result) => {
+				this.startTrialDisabled = result ;
+			}).catch(() => {
+				this.startTrialDisabled = false;
+			});
 		} else {
 			const callback = (loggedIn: boolean) => {
-				if (loggedIn) {
-					this.connectedHomeSecurity.account.createAccount();
+				if (loggedIn && !alreadyLoggedIn) {
+					this.connectedHomeSecurity.account.createAccount().then((result) => {
+						this.startTrialDisabled = result ;
+					}).catch(() => {
+						this.startTrialDisabled = false;
+					});
+					alreadyLoggedIn = true;
 				}
 			};
 			this.modalService.open(ModalLenovoIdComponent, {
@@ -32,11 +44,11 @@ export class HomeSecurityCommon {
 				centered: true,
 				windowClass: 'lenovo-id-modal-size'
 			}).result.then(() => {
-				this.connectedHomeSecurity.off(EventTypes.lenovoIdStatusChange, callback.bind(this));
+				this.connectedHomeSecurity.off(EventTypes.lenovoIdStatusChange, callback);
 			}).catch(() => {
-				this.connectedHomeSecurity.off(EventTypes.lenovoIdStatusChange, callback.bind(this));
+				this.connectedHomeSecurity.off(EventTypes.lenovoIdStatusChange, callback);
 			});
-			this.connectedHomeSecurity.on(EventTypes.lenovoIdStatusChange, callback.bind(this));
+			this.connectedHomeSecurity.on(EventTypes.lenovoIdStatusChange, callback);
 		}
 	}
 

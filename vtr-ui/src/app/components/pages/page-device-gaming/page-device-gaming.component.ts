@@ -18,12 +18,13 @@ import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { UserService } from '../../../services/user/user.service';
 import { TranslateService } from '@ngx-translate/core';
+import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 
 @Component({
 	selector: 'vtr-page-device-gaming',
 	templateUrl: './page-device-gaming.component.html',
-	styleUrls: [ './page-device-gaming.component.scss' ],
-	providers: [ NgbModalConfig, NgbModal ]
+	styleUrls: ['./page-device-gaming.component.scss'],
+	providers: [NgbModalConfig, NgbModal]
 })
 export class PageDeviceGamingComponent implements OnInit {
 	firstName = 'User';
@@ -34,6 +35,7 @@ export class PageDeviceGamingComponent implements OnInit {
 	public securityStatus: Status[] = [];
 	public isOnline = true;
 	heroBannerItems = [];
+	private allCapablitiyFlag: Boolean = false;
 	cardContentPositionB: any = {};
 	cardContentPositionC: any = {};
 	cardContentPositionD: any = {};
@@ -54,6 +56,7 @@ export class PageDeviceGamingComponent implements OnInit {
 		private systemUpdateService: SystemUpdateService,
 		public userService: UserService,
 		private translate: TranslateService,
+		private gamingAllCapabilitiesService: GamingAllCapabilitiesService,
 		vantageShellService: VantageShellService,
 	) {
 		config.backdrop = 'static';
@@ -63,18 +66,30 @@ export class PageDeviceGamingComponent implements OnInit {
 
 	ngOnInit() {
 		const self = this;
+
 		this.translate.stream('lenovoId.user').subscribe((value) => {
 			if (!self.userService.auth) {
 				self.firstName = value;
 			}
 		});
 		this.isOnline = this.commonService.isOnline;
+		console.log('Status of internet ================>', this.isOnline);
 		if (this.dashboardService.isShellAvailable) {
 			console.log('PageDashboardComponent.getSystemInfo');
 			this.getSystemInfo();
 			// this.getSecurityStatus();
 		}
-
+		if (!this.allCapablitiyFlag) {
+			this.gamingAllCapabilitiesService
+				.getCapabilities()
+				.then((response) => {
+					this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
+				})
+				.catch((err) => {
+					console.log(`ERROR in appComponent getCapabilities()`, err);
+				});
+			this.allCapablitiyFlag = true;
+		}
 		this.setDefaultCMSContent();
 
 		const queryOptions = {
@@ -166,7 +181,7 @@ export class PageDeviceGamingComponent implements OnInit {
 		});
 	}
 
-	public onConnectivityClick($event: any) {}
+	public onConnectivityClick($event: any) { }
 
 	private setDefaultCMSContent() {
 		this.heroBannerItems = [
@@ -175,7 +190,7 @@ export class PageDeviceGamingComponent implements OnInit {
 				id: 1,
 				source: 'Vantage Beta',
 				title: 'Welcome to the next generation of Lenovo Vantage!',
-				url: './../../../../assets/cms-cache/Vantage3Hero-zone0.png',
+				url: './../../../../assets/cms-cache/Vantage3Hero-zone0.jpg',
 				ActionLink: null
 			}
 		];
@@ -184,7 +199,7 @@ export class PageDeviceGamingComponent implements OnInit {
 			Title: '',
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: './../../../../assets/cms-cache/Alexa4x3-zone1.png',
+			FeatureImage: './../../../../assets/cms-cache/Alexa4x3-zone1.jpg',
 			Action: '',
 			ActionType: 'External',
 			ActionLink: null,
@@ -202,7 +217,7 @@ export class PageDeviceGamingComponent implements OnInit {
 			Title: '',
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.png',
+			FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg',
 			Action: '',
 			ActionType: 'External',
 			ActionLink: null,
@@ -220,10 +235,10 @@ export class PageDeviceGamingComponent implements OnInit {
 			Title: '',
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: './../../../../assets/cms-cache/Gamestore8x3-zone3.png',
+			FeatureImage: './../../../../assets/cms-cache/Gamestore8x3-zone3.jpg',
 			Action: '',
 			ActionType: 'External',
-			ActionLink: null,
+			ActionLink: 'https://gamestore.lenovo.com/',
 			BrandName: '',
 			BrandImage: '',
 			Priority: 'P1',
@@ -513,6 +528,7 @@ export class PageDeviceGamingComponent implements OnInit {
 					break;
 				case LenovoIdKey.FirstName:
 					this.firstName = notification.payload;
+					break;
 				default:
 					break;
 			}

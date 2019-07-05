@@ -267,6 +267,20 @@
 .gaming-help-modal {
 	.modal-dialog {
 		top: 16rem;	
+		width: 80rem;
+		max-width: 100%;
+		@media #{$medium-screen} {
+			max-width: 70rem;
+			position: relative;
+	   }
+   
+	   @media #{$small-screen} {
+		   max-width: 50rem;
+		   position: relative;
+	   }
+	   @media #{$mediaquery_12} {
+		   left: 9rem;
+	   }
 	}
 }
 button:focus, *:focus{

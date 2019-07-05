@@ -63,8 +63,7 @@
 										{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.dropdown-title' | translate }}
 									</p>
 									<vtr-ui-dropdown
-										*ngIf="manualSnoozeTime"
- 										[list]="intervals"
+											[list]="intervals"
 										[value]="manualSnoozeTime"
 										(change)="setSnoozeTime($event)">
 									</vtr-ui-dropdown>

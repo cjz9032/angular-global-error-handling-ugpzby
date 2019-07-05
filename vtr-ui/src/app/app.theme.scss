@@ -149,8 +149,8 @@ $mediaquery_16: "only screen and (min-width: 531px) and (max-width : 585px)";
 $mediaquery_17: "only screen and (min-width: 1196px) and (max-width : 1346px)";
 $mediaquery_18: "only screen and (min-width: 1258px) and (max-width : 1271px)";
 $mediaquery_19: "only screen and (min-width: 2160px) and (max-width : 3840px) and (max-resolution: 300dpi)";
-$mediaquery_20:"only screen and (min-width:350px) and (max-width : 500px)";
-$mediaquery_21:"only screen and (min-width:500px) and (max-width:991px)";
+$mediaquery_20: "only screen and (min-width:350px) and (max-width : 500px)";
+$mediaquery_21: "only screen and (min-width:500px) and (max-width:991px)";
 $mediaquery_xl: "only screen and (max-width : 1199px)";
 $mediaquery_lg: "only screen and (max-width : 992px)";
 $mediaquery_md: "only screen and (max-width : 768px)";
@@ -252,6 +252,8 @@ $menu_height: 9rem;
 $header_height: 20.5rem;
 
 $modal_top_margin: 8rem;
+$grey_dark: #667481;
+$grey_light: #e6eaeb;
 
 /*media screen sizes for gaming*/
 $small-screen: "only screen and (max-width : 767px)";

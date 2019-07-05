@@ -15,10 +15,13 @@
 		</div>
 		<div *ngIf="deviceService.isGaming"
 			class="navbar-brand pt-0">
-			<a vtrMetrics routerLinkActive="link-active" [routerLinkActiveOptions]="items[0].routerLinkActiveOptions"
+
+			<img *ngIf="isGamingHome" src="../../../assets/images/gaming/gaming-logo-small.png" alt="L" />
+
+			<a  *ngIf="!isGamingHome" vtrMetrics routerLinkActive="link-active" [routerLinkActiveOptions]="items[0].routerLinkActiveOptions"
 				[metricsEvent]="items[0].metricsEvent" [metricsParent]="items[0].metricsParent" [metricsItem]="items[0].metricsItem"
 				routerLink="/{{items.path}}">
-				<img src="../../../assets/images/gaming/gaming-logo-small.png" alt="L" />
+				<img  src="../../../assets/images/gaming/gaming-logo-small.png" alt="L" />
 			</a>
 		</div>
 		<div class="navbar-text clearfix">
@@ -46,7 +49,7 @@
 		<div class="collapse navbar-collapse"
 			#menuTarget
 			[ngClass]="{'show':showMenu}">
-			<ul class="navbar-nav ml-auto">
+			<ul class="navbar-nav ml-auto" *ngIf='loadMenuItem'>
 				<ng-container *ngFor="let item of items; let i=index">
 					<li *ngIf="item.subitems.length===0&&item.id!=='user'&&showItem(item)"
 						class="nav-item">
@@ -107,6 +110,7 @@
 									[metricsItem]="subitem.metricsItem"
 									class="dropdown-item link"
 									target="_blank"
+									href="javascript:void(0)"
 									(click)="showMenu = false; openExternalLink(subitem.path)">{{subitem.label | translate}}</a>
 								<a *ngIf="!subitem.externallink && subitem.path==='support'"
 									vtrMetrics
@@ -160,8 +164,7 @@
 								{{deviceService.isArm || userService.starter ? 'L' : userService.initials }}
 							</div>
 						</a>
-						<div class="dropdown-menu {{item.id}}"
-							style="min-width: 22.5rem"
+						<div class="dropdown-menu {{item.id}} dropdown-menu-id"
 							id="navbarDropdownMenu"
 							aria-labelledby="navbarDropdown">
 							<div class="dropdown-item"

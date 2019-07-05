@@ -87,10 +87,8 @@ export class HomeSecurityMockService {
 		},
 		off() { return this; },
 		refresh() {
-			return Promise.resolve(true);
-		},
-		startPullingCHS(): void {},
-		stopPullingCHS(): void {},
+			return Promise.resolve([true]);
+		}
 	};
 
 	public id = 0;
