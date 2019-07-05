@@ -804,4 +804,14 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	// End Privacy Gaurd
+	// when disable the privacy from system setting
+	cameraDisabled(event){
+		console.log("disabled all is",event);
+		this.shouldCameraSectionDisabled = event;
+		this.dataSource.permission=false;
+		this.cameraFeatureAccess.exposureAutoValue = false;
+		if (this.dataSource.exposure.supported === true && this.cameraFeatureAccess.exposureAutoValue === false) {
+			this.cameraFeatureAccess.showAutoExposureSlider = true;
+		}
+	}
 }
