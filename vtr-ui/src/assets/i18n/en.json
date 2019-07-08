@@ -103,7 +103,7 @@
 		},
 		"macroKey": {
 			"title": "Macro Key",
-			"introLine": "You can record a series of key input, and use them in gaming or other operations.",
+			"introLine": "You can record a series of key inputs, and use them in gaming or other operations.",
 			"status": {
 				"on": {
 					"title": "On",

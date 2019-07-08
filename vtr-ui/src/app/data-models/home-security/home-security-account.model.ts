@@ -1,6 +1,7 @@
 import { CHSAccountState, CHSAccount } from '@lenovo/tan-client-bridge';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalLenovoIdComponent } from 'src/app/components/modal/modal-lenovo-id/modal-lenovo-id.component';
+import { HomeSecurityCommon } from './home-security-common.model';
 
 export class HomeSecurityAccount {
 
@@ -55,15 +56,17 @@ export class HomeSecurityAccount {
 	createAccount() {}
 	purchase() {}
 
-	constructor(private modalService?: NgbModal, chs?: any) {
+	constructor(private modalService?: NgbModal, chs?: any, common?: HomeSecurityCommon) {
 		if (chs && chs.account) {
 			this.state = chs.account.state;
 			this.expiration = chs.account.expiration;
 			this.standardTime = chs.account.serverTimeUTC;
-			this.createAccount = chs.createAndGetAccount.bind(chs);
-			this.purchase = chs.purchase;
 			if (chs.account.lenovoId) {
 				this.lenovoIdLoggedIn = chs.account.lenovoId.loggedIn;
+			}
+			if (common) {
+				this.createAccount = common.startTrial.bind(common);
+				this.purchase = common.upgrade.bind(common);
 			}
 			this.createViewModel();
 		}

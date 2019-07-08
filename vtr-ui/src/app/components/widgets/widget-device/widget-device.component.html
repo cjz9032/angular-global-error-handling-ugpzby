@@ -61,20 +61,23 @@
 
 								</div>
 								<div class="col-auto text-right ml-auto pr-5">
+
+									<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-secondary progress-spinner" role="status"></div></div>
+
 									<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false then user routerLink to naviagate within Lenovo Vantage Application -->
 									<a routerLink="/{{item.path}}"
 										vtrMetrics
 										[metricsItem]="item.title"
 										metricsEvent="itemClick"
 										[metricsValue]="'link.'+item.id"
-										*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false)">
+										*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false && item.status !== 4)">
 										<div class="detail"
 											[ngClass]="{'highlight':item.asLink}">
 											{{item.detail}} <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 										</div>
 									</a>
 									<!--Open Windows Settings /subapges if isSystemLink is not undefined or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
-									<a *ngIf="item.isSystemLink!==undefined &&  item.isSystemLink===true"
+									<a *ngIf="item.isSystemLink!==undefined &&  item.isSystemLink===true && item.status !== 4"
 										vtrMetrics
 										[metricsItem]="item.title"
 										metricsEvent="itemClick"
