@@ -495,7 +495,8 @@
 					&.single {
 						padding: 3rem;
 						@media #{$only-small-screen}{
-							height: 16rem;
+							height: 13.5rem;
+							padding: 2rem 3rem;
 						}
 						.hd-item {
 							text-align: center;
