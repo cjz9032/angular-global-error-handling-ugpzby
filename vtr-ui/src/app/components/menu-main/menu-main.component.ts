@@ -357,9 +357,9 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 						smartAssistCapability.isAPSSupported = (responses[5] && responses[6] && (responses[7] > 0));
 						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
 
-						// const isAvailable =
-						// 	(responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && (responses[7] > 0));
-						const isAvailable = true;
+						const isAvailable =
+							(responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && (responses[7] > 0));
+						// const isAvailable = true;
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, isAvailable);
 						// avoid duplicate entry. if not added earlier then add menu
 						if (isAvailable && !isSmartAssistSupported) {
@@ -397,8 +397,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 
 		if (this.router.url === '/device-gaming' || this.router.url === '/') {
 			this.isGamingHome = true;
-		}
-		else {
+		} else {
 			this.isGamingHome = false;
 		}
 	}
