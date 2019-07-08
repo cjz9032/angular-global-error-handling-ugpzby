@@ -49,7 +49,7 @@
 		<div class="collapse navbar-collapse"
 			#menuTarget
 			[ngClass]="{'show':showMenu}">
-			<ul class="navbar-nav ml-auto" *ngIf="loadMenuItem">
+			<ul class="navbar-nav ml-auto" *ngIf="loadMenuItem.firstRunDate?.length">
 				<ng-container *ngFor="let item of items; let i=index">
 					<li *ngIf="item.subitems.length===0&&item.id!=='user'&&showItem(item)"
 						class="nav-item">
