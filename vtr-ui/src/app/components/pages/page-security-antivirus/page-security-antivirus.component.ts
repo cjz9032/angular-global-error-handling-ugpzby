@@ -12,6 +12,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { RegionService } from 'src/app/services/region/region.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { GuardService } from '../../../services/guard/security-guardService.service';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',
@@ -46,7 +47,9 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		public commonService: CommonService,
 		public modalService: NgbModal,
 		public regionService: RegionService,
-		private securityAdvisorMockService: SecurityAdvisorMockService) {
+		private securityAdvisorMockService: SecurityAdvisorMockService,
+		private guard: GuardService
+		) {
 		this.securityAdvisor = this.VantageShell.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
@@ -202,6 +205,10 @@ export class PageSecurityAntivirusComponent implements OnInit {
 			this.viewModel.mcafee.subscription = data;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfee, this.viewModel.mcafee);
 		});
+
+		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+			this.antiVirus.refresh();
+		}
 	}
 
 

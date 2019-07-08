@@ -43,7 +43,7 @@ export class PageSmartAssistComponent implements OnInit {
 	public intelligentMedia = new FeatureStatus(false, true);
 	public lenovoVoice = new FeatureStatus(false, true);
 	public isIntelligentMediaLoading = true;
-	public isAPSavailable = false;
+	public isAPSAvailable = false;
 
 	headerMenuItems: PageAnchorLink[] = [
 		{
@@ -120,7 +120,7 @@ export class PageSmartAssistComponent implements OnInit {
 			if (!this.smartAssistCapability.isAPSSupported) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
 			}
-		} catch(error) {
+		} catch (error) {
 			console.log('initVisibility', error);
 		}
 	}
@@ -181,12 +181,12 @@ export class PageSmartAssistComponent implements OnInit {
 			.all([this.smartAssist.getAPSCapability(), this.smartAssist.getSensorStatus(), this.smartAssist.getHDDStatus()])
 			.then((response: any[]) => {
 				console.log(
-				'APS Capability ---------------------------------', response[0],
-				'APS SENSOR ---------------------------------', response[1],
-				'HDD STATUS ---------------------------------', response[2]);
-				(response[0] && response[1] && response[2] > 0) ? this.isAPSavailable = true : this.isAPSavailable = false;
+					'APS Capability ---------------------------------', response[0],
+					'APS SENSOR ---------------------------------', response[1],
+					'HDD STATUS ---------------------------------', response[2]);
+				(response[0] && response[1] && response[2] > 0) ? this.isAPSAvailable = true : this.isAPSAvailable = false;
 
-				if (!this.isAPSavailable) {
+				if (!this.isAPSAvailable) {
 					this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
 				}
 			})
@@ -213,7 +213,7 @@ export class PageSmartAssistComponent implements OnInit {
 			console.log('PageSmartAssistComponent.Promise.IntelligentScreen()', responses, this.intelligentScreen);
 			if (!(this.intelligentScreen.isIntelligentScreenVisible &&
 				this.intelligentSecurity.isIntelligentSecuritySupported)) {
-					this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'screen')
+				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'screen')
 			}
 		}).catch(error => {
 			this.logger.error('error in PageSmartAssistComponent.Promise.IntelligentScreen()', error);
