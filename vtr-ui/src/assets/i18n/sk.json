@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Zbaliť",
             "expand": "Rozbaliť",
-            "loader": "Fetching <br> Status"
+            "loader": "Stav <br> načítania",
+			"loading": "Načítava..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "Tiež sa odporúča stmaviť panel úloh a ďalšie časti obrazovky, ktoré sa často nemenia, aby sa predĺžila celková životnosť obrazovky."
                         ],
                         "reset": "Vynulovať teplotu farieb",
-                        "tooltip": "Táto funkcia môže znížiť spotrebu energie a predĺžiť výdrž batérie selektívnym stmavovaním častí obrazovky."
+                        "tooltip": "Táto funkcia môže znížiť spotrebu energie a predĺžiť výdrž batérie selektívnym stmavovaním častí obrazovky.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Vstup a príslušenstvo",
+                "subtitle": "Nastavenia vstupu a príslušenstva",
+                "description": "Funkcia inteligentného snímania Lenovo prostredníctvom kombinácie rôznych senzorov v počítači zisťuje vaše aktivity a upravuje nastavenia týkajúce sa optimálnej správy napájania",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Inteligentná klávesnica",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Skryté funkcie klávesnice",
+                        "description": "Ak chcete vyvolať príkazy zobrazené na mape klávesnice nižšie, môžete stlačiť kláves Fn v ľavej dolnej časti klávesnice súčasne s inými klávesmi."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "slúži na zapnutie funkcie priblíženia na obrazovkách s vysokým rozlíšením",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "prepnutie do režimu spánku",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "zapnutie a vypnutie režimu inkognito",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "slúži na prepínanie medzi režimom vysokého výkonu a tichým režimom",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + medzerník",
+                        "description": "zmena stavu podsvietenia klávesnice",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Kláves definovaný používateľom",
+                    "caption": "Klávesu s ikonou hviezdy môžete priradiť funkciu definovanú používateľom",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Akčný kláves definovaný používateľom",
+                        "note": "Poznámka: pomocou tejto funkcie môžete zadávať bežne zadávaný text, napríklad e-mailové alebo poštové adresy. Spoločnosť Lenovo odporúča, aby ste túto funkciu nikdy nepoužívali na ukladanie a zadávanie hesiel ani akýchkoľvek iných súkromných informácií.",
+                        "options": {
+                            "option1": "Vyberte",
+                            "option2": "Otvorte webovú stránku",
+                            "option3": "Zadajte text"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },

@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';//VAN-5872, serverSwitch
+import { Router, NavigationEnd, ActivatedRoute, ParamMap } from '@angular/router';//VAN-5872, serverSwitch
 import { DevService } from './services/dev/dev.service';
 import { DisplayService } from './services/display/display.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';//VAN-5872, serverSwitch
@@ -188,6 +188,9 @@ export class AppComponent implements OnInit {
 
 		this.checkIsDesktopOrAllInOneMachine();
 		this.settingsService.getPreferenceSettingsValue();
+		
+		//VAN-5872, server switch feature
+		this.serverSwitchThis();
 	}
 
 	private sendFirstRunEvent(machineInfo) {
@@ -267,6 +270,29 @@ export class AppComponent implements OnInit {
 		} else {
 			this.commonService.sendNotification(NetworkStatus.Offline, { isOnline: navigator.onLine });
 		}
+	}
+	
+	private serverSwitchThis() {
+		console.log('@sahinul from nginit');
+		//VAN-5872, server switch feature
+		/* working
+		this.activRouter.queryParams
+			.subscribe(params => {
+				console.log('@sahinul serverSwitchThis from nginit', params);
+				if (params['serverswitch']) {
+					//this.translate.resetLang('ar');
+					this.translate.reloadLang('ar');
+					this.translate.use('ar');
+				}
+			});*/
+		this.activRouter.queryParamMap.subscribe((params: ParamMap) => {
+			console.log('@sahinul serverSwitchThis from nginit', params);
+			if(params.has('serverswitch')){
+				//this.translate.resetLang('ar');
+				this.translate.reloadLang('ar');
+				this.translate.use('ar'); 
+			}
+		});
 	}
 
 	@HostListener('window:keyup', [ '$event' ])

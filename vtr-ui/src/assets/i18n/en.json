@@ -438,7 +438,8 @@
 			"off": "OFF",
 			"collapse": "Collapse",
 			"expand": "Expand",
-			"loader": "Fetching <br> Status"
+			"loader": "Fetching <br> Status",
+			"loading": "Loading..."
 		}
 	},
 	"privacy": {

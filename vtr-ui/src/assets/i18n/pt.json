@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Fechar",
             "expand": "Expandir",
-            "loader": "Fetching <br> Status"
+            "loader": "Buscando <br> Status",
+			"loading": "Carregando..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "Também é recomendável diminuir a luminosidade da barra de tarefas e de outras áreas do ecrã que não mudam frequentemente, de modo a prolongar a vida útil geral do ecrã."
                         ],
                         "reset": "Redefinir temperatura",
-                        "tooltip": "Esta funcionalidade pode reduzir o consumo de energia e aumentar a duração da bateria através da diminuição seletiva de partes do ecrã."
+                        "tooltip": "Esta funcionalidade pode reduzir o consumo de energia e aumentar a duração da bateria através da diminuição seletiva de partes do ecrã.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Introdução e Acessórios",
+                "subtitle": "Definições de Introdução e Acessórios",
+                "description": "A Deteção Inteligente Lenovo combina os vários sensores no computador para detetar as suas atividades e ajustar as definições para uma gestão da energia ideal",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Teclado Inteligente",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Funções ocultas do teclado",
+                        "description": "Pode premir a tecla Fn, na parte inferior esquerda do teclado, em simultâneo com outras teclas para ativar os comandos apresentados no mapa do teclado abaixo."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "ativar a função de ampliação em ecrãs de alta resolução",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "entrar no modo de suspensão",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "ativar e desativar o Privacy Guard",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "alternar entre os modos de Desempenho e Silencioso",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + Barra de espaços",
+                        "description": "alterar o estado da retroiluminação do teclado",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Tecla definida pelo utilizador",
+                    "caption": "A tecla representada pelo ícone de estrela permite configurar uma função definida pelo utilizador",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Tecla de ação definida pelo utilizador",
+                        "note": "Nota: esta ação pode ser utilizada para inserir texto habitualmente usado, como endereços de correio eletrónico ou endereços postais. A Lenovo recomenda que esta função nunca seja utilizada para armazenar e inserir palavras-passe ou quaisquer outras informações privadas.",
+                        "options": {
+                            "option1": "Selecione",
+                            "option2": "Abrir site",
+                            "option3": "Digite o texto"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
