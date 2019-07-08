@@ -61,18 +61,34 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		this.batteryIndicators.convertMin(response.gauge.time);
 
 		this.batteryIndicators.timeText = response.gauge.timeType;
-		this.batteryIndicators.voltageError = response.detail[0].isVoltageError;
-		let batteryIndex = -1;
-		let batteryHealth = 0;
-		if (response.detail !== undefined && response.detail.length !== 0) {
-			response.detail.forEach((info) => {
-				if (info.batteryHealth >= batteryHealth) {
-					batteryHealth = info.batteryHealth;
-					batteryIndex += 1;
-				}
-			});
+
+		// this.batteryIndicators.voltageError = response.detail[0].isVoltageError;
+
+		// let batteryIndex = -1;
+		// let batteryHealth = 0;
+		// if (response.detail !== undefined && response.detail.length !== 0) {
+		// 	response.detail.forEach((info) => {
+		// 		if (info.batteryHealth >= batteryHealth) {
+		// 			batteryHealth = info.batteryHealth;
+		// 			batteryIndex += 1;
+		// 		}
+		// 	});
+		// }
+
+		if (response.batteryGauge.isExpressCharging === undefined ||
+			response.batteryGauge.isExpressCharging === null) {
+			this.batteryIndicators.expressCharging = false;
+		} else {
+			this.batteryIndicators.expressCharging = response.batteryGauge.isExpressCharging;
 		}
-		this.batteryIndicators.batteryNotDetected = batteryHealth === 4;
+
+		if (response.detail.length > 0 && response.detail[0].batteryHealth !== null &&
+			response.detail[0].batteryHealth !== undefined) {
+			this.batteryIndicators.batteryNotDetected = response.detail[0].batteryHealth === 4;
+		} else {
+			this.batteryIndicators.batteryNotDetected = false;
+		}
+
 		for (let i = 0; i < response.detail.length; i++) {
 			response.detail[i].remainingCapacity = Math.round(response.detail[i].remainingCapacity * 100) / 100;
 			response.detail[i].fullChargeCapacity = Math.round(response.detail[i].fullChargeCapacity * 100) / 100;

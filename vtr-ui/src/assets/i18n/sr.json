@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Skupi",
             "expand": "Raširi",
-            "loader": "Fetching <br> Status"
+            "loader": "Status <br> preuzimanja",
+			"loading": "Učitavanje..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "Preporučuje se i zatamnjenje trake zadataka i oblasti ekrana koje se ne menjaju često da bi se produžio ukupan rok trajanja ekrana."
                         ],
                         "reset": "Postavite temperaturu na početnu vrednost",
-                        "tooltip": "Ova funkcija može da smanji potrošnju napajanja i produži životni vek baterije putem selektivnog zatamnjenja delova ekrana."
+                        "tooltip": "Ova funkcija može da smanji potrošnju napajanja i produži životni vek baterije putem selektivnog zatamnjenja delova ekrana.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Unos i pribor",
+                "subtitle": "Postavke unosa i pribora",
+                "description": "Lenovo inteligentno raspoznavanje kombinuje različite senzore na računaru kako bi se otkrile vaše aktivnosti i prilagodile postavke za optimalno upravljanje napajanjem",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Inteligentna tastatura",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Skrivene funkcije tastera",
+                        "description": "Možete da pritisnete taster Fn, u donjem levom uglu tastature, istovremeno sa drugim tasterima da biste pozvali komande koje se prikazuju na mapi tastature u nastavku."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "omogućava funkciju zumiranja na ekranima visoke rezolucije",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "ulazak u režim spavanja",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "uključivanje i isključivanje zaštite privatnosti",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "prelazak između režima performansi tihog režima",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + razmaknica",
+                        "description": "promena statusa pozadinskog osvetljenja tastature",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Korisnički definisan taster",
+                    "caption": "Taster koji je označen ikonom sa zvezdicom vam omogućava da podesite korisnički definisanu funkciju",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Radnja korisnički definisanog tastera",
+                        "note": "Napomena: Ovo može da se koristi za unos tastera koji se često unosi kao što je e-pošta ili poštanska adresa. Lenovo preporučuje da nikada ne koristite ovu funkciju za čuvanje i unošenje lozinki ili bilo kojih drugih privatnih informacija.",
+                        "options": {
+                            "option1": "Izaberite",
+                            "option2": "Open website",
+                            "option3": "Unesite tekst"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
