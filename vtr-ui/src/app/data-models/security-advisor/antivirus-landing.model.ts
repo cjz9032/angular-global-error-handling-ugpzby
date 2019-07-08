@@ -143,11 +143,13 @@ export class AntiVirusLandingViewModel {
 				this.imgUrl = null;
 			} else {
 				this.currentPage = 'windows';
-				setAntivirusStatus(
-					av.windowsDefender.status !== undefined ? av.windowsDefender.status : null,
-					av.windowsDefender.firewallStatus !== undefined ? av.windowsDefender.firewallStatus : null,
-					this.currentPage
-				);
+				if (av.windowsDefender) {
+					setAntivirusStatus(
+						av.windowsDefender.status !== undefined ? av.windowsDefender.status : null,
+						av.windowsDefender.firewallStatus !== undefined ? av.windowsDefender.firewallStatus : null,
+						this.currentPage
+					);
+				}
 				this.imgUrl = '../../../../assets/images/windows-logo.png';
 			}
 		};
@@ -157,7 +159,7 @@ export class AntiVirusLandingViewModel {
 		if (cacheCurrentPage) {
 			this.currentPage = cacheCurrentPage;
 		}
-		if (cacheAvStatus || cacheFwStatus) {
+		if (cacheAvStatus !== undefined || cacheFwStatus !== undefined) {
 			setAntivirusStatus(cacheAvStatus, cacheFwStatus, cacheCurrentPage);
 		}
 

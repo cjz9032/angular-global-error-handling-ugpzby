@@ -742,7 +742,7 @@
 					"other": "Other"
 				},
 				"powerSmartSettings": {
-					"title": "Power Smart Settings",
+					"title": "Power Smart settings",
 					"subtitle": "Intelligent Cooling",
 					"subtitle1": "Battery & Quiet",
 					"description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
@@ -757,7 +757,7 @@
 						"modalBodyText1": "Click on Windows battery icon on System tray to access Windows performance power slider"
 					},
 					"intelligentCooling": {
-						"title": "Intelligent cooling",
+						"title": "Intelligent Cooling",
 						"description": "",
 						"tooltip": "",
 						"optimize": "optimize system for",
@@ -807,7 +807,7 @@
 					}
 				},
 				"powerSettings": {
-					"title": "Power Settings",
+					"title": "Power settings",
 					"alwaysUSB": {
 						"title": "Always on USB",
 						"description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
@@ -820,7 +820,7 @@
 					}
 				},
 				"otherSettings": {
-					"title": "Other Settings",
+					"title": "Other settings",
 					"vantageToolbar": {
 						"title": "Lenovo Vantage Toolbar",
 						"description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
@@ -844,7 +844,7 @@
 					}
 				},
 				"batterySettings": {
-					"title": "Battery Settings",
+					"title": "Battery settings",
 					"batteryThreshold": {
 						"title": "Battery Charge Threshold",
 						"description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
@@ -944,7 +944,7 @@
 						"tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
 					},
 					"optimize": {
-						"title": "Optimize My Microphone For:",
+						"title": "Optimize my microphone for:",
 						"tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
 						"options": {
 							"VoiceRecognition": "VOICE RECOGNITION",
@@ -957,7 +957,7 @@
 			},
 			"displayCamera": {
 				"title": "Display & Camera",
-				"subtitle": "Display & Camera Settings",
+				"subtitle": "Display & camera settings",
 				"description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
 				"jumpTo": {
 					"title": "JUMP TO SETTINGS",
@@ -974,14 +974,14 @@
 					"title": "Display",
 					"eyeCareMode": {
 						"title": "Color Temperature in Eye Care Mode",
-						"checkbox": "Schedule Eye Care Mode from sunset to sunrise",
+						"checkbox": "Schedule eye care mode from sunset to sunrise",
 						"options": {
 							"warm": "Warm (Better for eyes)",
 							"cold": "Cold"
 						},
 						"reset": "Reset temperature",
 						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-						"onSunsetToSunriseScheduleDescription": "Schedule Eye Care Mode from sunset to sunrise",
+						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
 						"note": {
 							"title": "Note",
 							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
@@ -1066,7 +1066,7 @@
 			},
 			"inputAccessories": {
 				"title": "Input & Accessories",
-				"subtitle": "Input & Accessories Settings",
+				"subtitle": "Input & Accessories settings",
 				"description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
 				"inputAccessory": {
 					"title": "Intelligent Keyboard",
@@ -1101,7 +1101,7 @@
 					}
 				},
 				"userDefinedKey": {
-					"title": "User-Defined Key",
+					"title": "User-defined Key",
 					"caption": "The key represented by the star icon allows you to set user defined function",
 					"tooltip": "Content to be filled",
 					"apply": {
@@ -1114,7 +1114,7 @@
 						"title": "TEXT TO BE ENTERED"
 					},
 					"dropDown": {
-						"title": "Action User Defined key",
+						"title": "ACTION USER DEFINED KEY",
 						"note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
 					}
 				}

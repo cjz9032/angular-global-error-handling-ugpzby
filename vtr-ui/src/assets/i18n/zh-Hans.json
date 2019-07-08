@@ -1179,31 +1179,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Lenovo Active Protection System 是一种自主功能部件，它有助于保护硬盘驱动器免受因强烈的物理震动和振动所造成的损坏。它还会持续监视计算机的移动，并且会在预测到掉落或类似损坏事件时暂停硬盘驱动器。",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "改变敏感度，因为在低敏感模式下，只有更大的撞击才能激活保护功能",
+                    "checkbox": "忽略火车或汽车之类颠簸造成的持续震动"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "手动暂挂 Active Protection",
+                    "caption": "允许手动暂挂 Active Protection System",
+                    "dropdown-title": "暂挂时间",
+                    "button": "立即暂挂"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "为改善使用平板电脑期间对硬盘驱动器的访问，当检测到以下活动时，暂挂 Active Protection System",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "数字笔输入",
+                        "description": "使用数字笔输入时，如果数字笔输入超出范围，则启用 APS"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "触摸输入",
+                        "description": "使用触摸输入时，如果未检测到触摸输入，则启用 APS"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "手接近计算机边缘",
+                        "description": "启用平板电脑模式时，如果未检测到手动输入，则启用 APS"
                     }
                 }
             },
@@ -1214,30 +1214,30 @@
                 "tooltip": "此功能不适用于 Web 视频播放器。流行的本地视频播放器（例如 Windows Media Player、5KPlayer 等）均支持此功能。"
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "语音",
+                "description": "联想语音可通过语音转文本功能帮助您将语音转换为文本，并通过翻译功能提供从语音到文本的实时翻译。",
+                "installBtnText": "安装",
+                "launchBtnText": "启动",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "语音转文本",
+                    "caption": "此功能有助于将语音转换为文本。"
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "翻译",
+                    "caption": "此功能提供对语音的实时翻译。译文以文本形式显示。您可以根据需要选择源语言和目标语言。"
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "如何开始使用：",
+                    "point1": "确保 Windows 系统托盘中显示联想语音图标。",
+                    "point2": "打开要记录转换文本的文件。",
+                    "point3": "单击 Windows 系统托盘中的联想语音图标，然后选择语音转文本。",
+                    "point4": "选择所需的语言，然后单击麦克风图标开始。",
+                    "point5": "将光标放在要编辑的位置并开始说话。",
+                    "point6": "单击 Windows 系统托盘中的联想语音图标，然后选择翻译。",
+                    "point7": "选择所需的源语言和目标语言。",
+                    "point8": "根据您的需要，从扬声器或麦克风处设置语音输入。",
+                    "point9": "单击麦克风图标开始说话",
+                    "closeText": "关闭"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1615,8 +1615,9 @@
             },
             "errorMessage": {
                 "headerText": "错误",
-				"bodyText": "我们检测到您丢失了 Vantage 的关键部分。这些部分将在后台下载。请稍后重试。",
-				"closeText": "close"
+                "bodyText": "我们检测到您丢失了 Vantage 的关键部分。这些部分将在后台下载。请稍后重试。",
+                "closeText": "close",
+                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
             }
         },
         "homeprotection": {

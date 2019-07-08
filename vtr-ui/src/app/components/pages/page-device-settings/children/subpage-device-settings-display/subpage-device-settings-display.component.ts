@@ -179,8 +179,7 @@ export class SubpageDeviceSettingsDisplayComponent
 							this.cameraFeatureAccess.showAutoExposureSlider = true;
 						}
 
-					}
-					else {
+					} else {
 						this.shouldCameraSectionDisabled = true;
 						this.cameraFeatureAccess.exposureAutoValue = false;
 						if (this.dataSource.exposure.supported === true && this.cameraFeatureAccess.exposureAutoValue === false) {
@@ -248,7 +247,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
 					// privacy.status = false;
 					this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
-					this.dataSource.exposure.autoValue = false
+					this.dataSource.exposure.autoValue = false;
 				}
 				this.cameraFeatureAccess.showAutoExposureSlider = false;
 				if (this.dataSource.exposure.autoValue === true && !this.shouldCameraSectionDisabled) {
@@ -806,8 +805,18 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	// End Privacy Gaurd
+	// when disable the privacy from system setting
+	cameraDisabled(event) {
+		console.log('disabled all is', event);
+		this.shouldCameraSectionDisabled = event;
+		this.dataSource.permission = false;
+		this.cameraFeatureAccess.exposureAutoValue = false;
+		if (this.dataSource.exposure.supported === true && this.cameraFeatureAccess.exposureAutoValue === false) {
+			this.cameraFeatureAccess.showAutoExposureSlider = true;
+		}
+	}
 
-	//Updates whether device has OLEDPowerControl
+	// Updates whether device has OLEDPowerControl
 	public getOLEDPowerControlCapability() {
 		try {
 			if (this.displayService.isShellAvailable) {
