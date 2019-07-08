@@ -13,6 +13,8 @@
 					[value]="microphoneStatus.status && microphoneStatus.permission"
 					[title]="'dashboard.quickSettings.microphone' | translate"
 					metricsItem="microphone"
+					id="qs-switch-microphone"
+					aria-label="qs-switch-microphone"
 					[isBlocked]="!microphoneStatus.status"
 					(toggle)="onMicrophoneStatusToggle($event)"
 					[disable]="!(microphoneStatus.permission && microphoneStatus.available && quickSettingsWidget[0].state)">
@@ -25,6 +27,8 @@
 					[value]="!cameraStatus.status && cameraStatus.permission"
 					[title]="'dashboard.quickSettings.cameraPrivacy' | translate"
 					metricsItem="camera"
+					id="qs-switch-camera"
+					aria-label="qs-switch-camera"
 					[isBlocked]="cameraStatus.status || !cameraStatus.permission"
 					[isCamera]="true"
 					(toggle)="onCameraStatusToggle($event)"
@@ -37,6 +41,8 @@
 					#eyecare
 					[title]="'dashboard.quickSettings.eyeCareMode' | translate"
 					metricsItem="eyeCareMode"
+					id="qs-switch-eyeCareMode"
+					aria-label="qs-switch-eyeCareMode"
 					[value]="eyeCareModeStatus.status"
 					[isBlocked]="!eyeCareModeStatus.status"
 					(toggle)="onEyeCareModeToggle($event)"
