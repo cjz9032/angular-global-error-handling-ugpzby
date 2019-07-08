@@ -21,7 +21,7 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 			in control of your privacy. It all
 			starts with simple tools to show you how
 			private you are online.`;
-	btn_text = 'Define my score';
+	btnText = 'Define my score';
 	privacyLevel = 'undefined';
 	defaultScoreImageUrl = '/assets/images/privacy-tab/Main_icon.svg';
 	score;
@@ -29,8 +29,6 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 	isFirstTimeVisitor$ = this.userDataGetStateService.userDataStatus$.pipe(
 		map((userDataStatus) => userDataStatus.appState === AppStatuses.firstTimeVisitor)
 	);
-
-	clickEventName = 'UnderstandMyScoreButton';
 
 	constructor(
 		private privacyScoreService: PrivacyScoreService,

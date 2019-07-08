@@ -46,15 +46,15 @@
 			<button class="privacy-score__btn"
 					vtrSendAnalytics
 					[metricsEvent]="'ItemClick'"
-					[metricsItem]="clickEventName"
-					(click)="openPopUp('one-click-scan')">
-				{{btn_text}}
+					[metricsItem]="'DefineMyScoreButton'"
+					(click)="openPopUp('oneClickScan')">
+				{{btnText}}
 			</button>
 		</div>
 	</div>
 </div>
-<vtr-common-popup popUpId="one-click-scan" size="big">
+<vtr-common-popup popUpId="oneClickScan" size="big">
 	<ng-template>
-		<vtr-one-click-scan popupId="one-click-scan"></vtr-one-click-scan>
+		<vtr-one-click-scan popupId="oneClickScan"></vtr-one-click-scan>
 	</ng-template>
 </vtr-common-popup>

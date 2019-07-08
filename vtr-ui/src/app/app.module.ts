@@ -142,7 +142,6 @@ import { WidgetPermissionNoteComponent } from './components/widgets/widget-permi
 import { ModalSupportWechatComponent } from './components/modal/modal-support-wechat/modal-support-wechat.component';
 import { ModalLicenseComponent } from './components/modal/modal-license/modal-license.component';
 import { SpinnerComponent } from './components/common/spinner/spinner.component';
-import { PagePrivacyComponent } from './components/pages/page-privacy/page-privacy.component';
 
 //GAMING
 import { PageDeviceGamingComponent } from './components/pages/page-device-gaming/page-device-gaming.component';
@@ -371,7 +370,6 @@ library.add(fal);
 		ModalSupportWechatComponent,
 		ModalLicenseComponent,
 		SpinnerComponent,
-		PagePrivacyComponent,
 		PageDeviceGamingComponent,
 		WidgetLegionEdgeComponent,
 		WidgetSystemToolsComponent,

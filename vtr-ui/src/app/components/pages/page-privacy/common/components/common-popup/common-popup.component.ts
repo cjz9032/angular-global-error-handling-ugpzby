@@ -19,9 +19,9 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 	isOpen = false;
 
 	analyticsData = {
-		'confirmation-popup': {
+		'confirmationPopup': {
 			ItemName: 'BreachedAccountsClosePopupButton',
-			ItemParent: 'ConfirmYourEmailPopup',
+			ItemParent: 'ConfirmYousrEmailPopup',
 		},
 		'low-privacy-popup': {
 			ItemName: 'ScorePopupCloseButton',
@@ -33,8 +33,21 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 		},
 		'support-popup': {
 			ItemName: 'ChatNowClosePopupButton',
-			ItemParent: 'KindOfHelpPopup',
+			ItemParent: 'HelpPopup',
+		},
+		oneClickScan: {
+			ItemName: 'ScorePopupCloseButton',
+			ItemParent: 'ScorePopup',
+		},
+		trackingMapSingle: {
+			ItemName: 'WebsiteTrackersDetailCloseButton',
+			ItemParent: 'DetailPopup',
+		},
+		removePassword: {
+			ItemName: 'NonPrivatePasswordsClosePopupButton',
+			ItemParent: 'HowToRemoveAccountsPopup',
 		}
+
 	};
 
 	constructor(
@@ -76,9 +89,14 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 	}
 
 	closePopup() {
+		if (!this.isOpen) {
+			return;
+		}
+
 		this.commonPopupService.close(this.popUpId);
 
 		const analyticsData = this.analyticsData[this.popUpId];
+
 		if (analyticsData) {
 			const ItemParent = this.getParentForAnalyticsService.getPageName() + '.' +  analyticsData.ItemParent;
 			this.analyticsService.sendItemClickData({

@@ -1,7 +1,11 @@
 <div *ngIf="showedArticle" class="article-widget">
     <div class="article-widget__top-description">
         <p class="article-widget__title">Privacy hub</p>
-		<a class="article-widget__link" routerLink="/privacy/articles">See all articles</a>
+		<a class="article-widget__link"
+		   vtrSendAnalytics
+		   [metricsEvent]="'ItemClick'"
+		   [metricsItem]="'ArticlesSeeAllButton'"
+		   routerLink="/privacy/articles">See all articles</a>
 	</div>
     <vtr-article-preview
 		(openArticle)="openArticle($event)"
@@ -10,8 +14,13 @@
 <vtr-common-popup [popUpId]="articlePopupId" size="large">
 	<ng-template>
 		<ng-container *ngIf="article">
-			<vtr-article-description [article]="article"></vtr-article-description>
-			<a class="all-articles-link" routerLink="/privacy/articles">see all articles</a>
+			<vtr-article-description [article]="article" data-analyticsName="ArticlePopup"></vtr-article-description>
+			<a class="all-articles-link"
+			   data-analyticsName="NewsPopup"
+			   vtrSendAnalytics
+			   [metricsEvent]="'ItemClick'"
+			   [metricsItem]="'ArticlesSeeAllButton'"
+			   routerLink="/privacy/articles">see all articles</a>
 		</ng-container>
 		<ng-container *ngIf="!article">
 			<vtr-spinner></vtr-spinner>

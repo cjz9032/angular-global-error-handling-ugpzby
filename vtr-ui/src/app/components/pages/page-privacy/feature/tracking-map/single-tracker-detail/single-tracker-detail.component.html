@@ -52,16 +52,16 @@
 							<button class="tracker__btn"
 									vtrSendAnalytics
 									[metricsEvent]="'ItemClick'"
-									[metricsItem]="'TryLenovoPrivacyButton'"
+									[metricsItem]="'InstallButton'"
 									vtrOpenFigleafInstaller>
 								Install Lenovo Privacy Essentials
 							</button>
 							<a class="tracker__link"
-							   routerLink="/privacy/articles"
+							   routerLink="/privacy/landing"
 							   (click)="closePopup()"
 							   vtrSendAnalytics
 							   [metricsEvent]="'ItemClick'"
-							   [metricsItem]="'LenovoPrivacyLearnMoreButton'">
+							   [metricsItem]="'LearnMoreLink'">
 								Learn more
 							</a>
 						</div>

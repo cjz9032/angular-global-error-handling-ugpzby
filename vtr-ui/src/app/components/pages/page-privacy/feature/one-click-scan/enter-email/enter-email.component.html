@@ -24,7 +24,11 @@
 							 (userEmail)="allowEmitter()">
 	</vtr-check-breaches-form>
 
-	<button class="enter-email__button--skip" (click)="disallowEmitter()">
+	<button class="enter-email__button--skip"
+			vtrSendAnalytics
+			[metricsEvent]="'ItemClick'"
+			[metricsItem]="'ScoreEmailPopupSkipButton'"
+			(click)="disallowEmitter()">
 		Skip
 	</button>
 </section>

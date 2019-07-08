@@ -16,6 +16,7 @@ export class BigPitchComponent {
 	};
 	@Input() isFigleafTrialSoonExpired = false;
 	@Input() isFigleafTrialExpired = false;
+	@Input() articleId: number;
 	@Output() clickMore = new EventEmitter();
 
 	timeToExpires = TIME_TO_SHOW_EXPIRED_PITCH_MS / MS_IN_DAY;

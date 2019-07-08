@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ArticlesService } from '../articles.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { map, switchMap, withLatestFrom } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { RoutersName } from '../../../privacy-routing-name';
 import { SecureMath } from '@lenovo/tan-client-bridge';
 import { combineLatest } from 'rxjs';

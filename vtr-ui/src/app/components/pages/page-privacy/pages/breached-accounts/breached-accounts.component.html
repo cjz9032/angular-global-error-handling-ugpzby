@@ -13,6 +13,9 @@
 
 		<button class="breaches-page__button"
 				*ngIf="isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ | async"
+				vtrSendAnalytics
+				[metricsEvent]="'ItemClick'"
+				[metricsItem]="'BreachedAccountsVerifyEmailButton'"
 				(click)="startVerify()">
 			Verify email
 		</button>
@@ -25,6 +28,9 @@
 
 		<button class="breaches-page__button"
 				*ngIf="(isFigleafReadyForCommunication$ | async) && (breachedAccounts$ | async)?.length"
+				vtrSendAnalytics
+				[metricsEvent]="'ItemClick'"
+				[metricsItem]="'BreachedAccountsFixInLenovoPrivacyButton'"
 				(click)="openFigleafApp()">
 			Fix in Lenovo Privacy Essentials
 		</button>

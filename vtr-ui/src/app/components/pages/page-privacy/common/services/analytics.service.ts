@@ -96,8 +96,12 @@ export class AnalyticsService {
 				return 'VisibleToOnlineTrackers';
 			case RoutersName.BROWSERACCOUNTS:
 				return 'NonPrivatePassword';
-			case  RoutersName.LANDING:
+			case RoutersName.LANDING:
 				return 'LenovoPrivacyLanding';
+			case RoutersName.ARTICLES:
+				return 'ArticleAll';
+			case RoutersName.ARTICLEDETAILS:
+				return 'Article';
 			default:
 				return '';
 		}
