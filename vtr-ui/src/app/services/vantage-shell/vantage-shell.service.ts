@@ -31,6 +31,28 @@ export class VantageShellService {
 				hsaDolbyBroker: this.shell.DolbyRpcClient ? this.shell.DolbyRpcClient.instance : null,
 				hsaForteBroker: this.shell.ForteRpcClient ? this.shell.ForteRpcClient.getInstance() : null
 			});
+
+			this.phoenix.loadFeatures([
+				Phoenix.Features.Dashboard,
+				Phoenix.Features.Device,
+				Phoenix.Features.LenovoId,
+				Phoenix.Features.SecurityAdvisor,
+				Phoenix.Features.SystemInformation,
+				Phoenix.Features.HwSettings,
+				Phoenix.Features.Gaming,
+				Phoenix.Features.SystemUpdate,
+				Phoenix.Features.Warranty,
+				Phoenix.Features.Permissions,
+				Phoenix.Features.UserGuide,
+				Phoenix.Features.DeviceFilter,
+				Phoenix.Features.Metrics,
+				Phoenix.Features.ModernPreload,
+				Phoenix.Features.Privacy,
+				Phoenix.Features.LenovoVoiceFeature,
+				Phoenix.Features.GenericMetricsPreference,
+				Phoenix.Features.PreferenceSettings,
+				Phoenix.Features.ConnectedHomeSecurity,
+			]);
 		}
 	}
 

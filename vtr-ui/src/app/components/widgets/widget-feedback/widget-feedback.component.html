@@ -11,6 +11,8 @@
 				<div *ngIf="actionName"
 					class="button-box">
 					<vtr-ui-button (onClick)="feedback($event)"
+						id="widget-btn-feedback"
+						aria-label="widget-btn-feedback"
 						metricsItem="btn.givefeedback"
 						[isFullWidth]="true"
 						[label]="actionName"></vtr-ui-button>

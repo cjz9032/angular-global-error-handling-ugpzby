@@ -17,7 +17,7 @@ export class InputAccessoriesService {
 	}
 
 
-	public setUserDefinedKeySetting(type, actionType, settingKey, settingValue): Promise<boolean> {
+	public setUserDefinedKeySetting(type: string, actionType: string, settingKey: string, settingValue: string): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.setUserDefinedKeySetting(type, actionType, settingKey, settingValue);
