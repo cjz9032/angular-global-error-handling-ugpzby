@@ -218,7 +218,7 @@ import { UiBrightnessSliderComponent } from './components/ui/ui-brightness-slide
 import { SvgInlinePipe } from './pipe/svg-inline/svg-inline.pipe';
 import { UiLightingEffectComponent } from './components/ui/ui-lighting-effect/ui-lighting-effect.component';
 import { UiLightingSingleColorComponent } from './components/ui/ui-lighting-single-color/ui-lighting-single-color.component';
-import { UiLightingColorWheelComponent } from './components/ui/ui-lighting-color-wheel/ui-lighting-color-wheel.component';
+
 import { DisplayColorTempComponent } from './components/display/display-color-temp/display-color-temp.component';
 import { IntelligentMediaComponent } from './components/pages/page-smart-assist/intelligent-media/intelligent-media.component';
 import { UiMacrokeyCollapsibleContainerComponent } from './components/ui/ui-macrokey-collapsible-container/ui-macrokey-collapsible-container.component';
@@ -409,7 +409,7 @@ library.add(fal);
 		UiBrightnessSliderComponent,
 		UiLightingEffectComponent,
 		UiLightingSingleColorComponent,
-		UiLightingColorWheelComponent,
+
 		HomeSecurityMyDeviceComponent,
 		HomeSecurityAllDevicesComponent,
 		UiMacrokeyCollapsibleContainerComponent,

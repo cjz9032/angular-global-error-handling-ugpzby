@@ -136,6 +136,16 @@
 				// }
 				& ~ .toggle {
 					left: 74%;
+
+					@media #{$mediaquery_X5} {
+						left: 74.6%;
+					  }
+					  @media #{$mediaquery_X6} {
+						left: 74.25%;
+					  }
+					  @media #{$mediaquery_X33} {
+						left: 73%;
+					  }
 				}
 			}
 		}
