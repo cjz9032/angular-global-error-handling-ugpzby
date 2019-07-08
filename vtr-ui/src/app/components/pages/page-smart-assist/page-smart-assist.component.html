@@ -68,7 +68,7 @@
 													[maxValue]="3"
 													(change)="setZeroTouchLoginSensitivity($event)"
 													[value]="intelligentSecurity.zeroTouchLoginDistance"
-													[enableSlider]="false">
+													[enableSlider]="intelligentSecurity.isZeroTouchLoginEnabled">
 												</vtr-ui-range-slider>
 												<div class="pt-3"
 													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled"
