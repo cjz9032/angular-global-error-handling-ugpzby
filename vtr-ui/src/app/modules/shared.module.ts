@@ -1,4 +1,3 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, ErrorHandler } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslationModule } from './translation.module';
@@ -26,6 +25,7 @@ import { CommonService } from '../services/common/common.service';
 import { UserService } from '../services/user/user.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { CommsService } from '../services/comms/comms.service';
 
 library.add(fas);
 library.add(fab);
@@ -39,25 +39,24 @@ library.add(fal);
 	],
 	exports: [
 		MetricsDirective,
-		TranslationModule,
 		PipeModule,
 		FormsModule,
 		ReactiveFormsModule,
 		NgbModule,
-		HttpClientModule
+		HttpClientModule,
+		TranslationModule
 	],
 	imports: [
-		// BrowserModule,
 		CommonModule,
 		PipeModule,
-		TranslationModule,
 		AngularSvgIconModule,
 		FontAwesomeModule,
 		Ng5SliderModule,
 		FormsModule,
 		ReactiveFormsModule,
 		NgbModule,
-		HttpClientModule
+		HttpClientModule,
+		TranslationModule
 	],
 	providers: [
 		CookieService,
@@ -67,6 +66,7 @@ library.add(fal);
 		CommonService,
 		UserService,
 		SettingsService,
+		CommsService,
 		{ provide: ErrorHandler, useClass: GlobalErrorHandler }
 	],
 	entryComponents: [

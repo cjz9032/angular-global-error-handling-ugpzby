@@ -16,7 +16,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 			}
 		})
 	],
-	exports: [TranslateModule]
+	exports: [TranslateModule, TranslatePipe]
 })
 export class TranslationModule { }
 
