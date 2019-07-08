@@ -91,7 +91,7 @@
 						position: relative;
 					}
 					@media #{$only-small-screen}{
-						height: 16rem;
+						height: auto;
 					}
 					&.expanded {
 						height: auto;
@@ -494,6 +494,9 @@
 					}
 					&.single {
 						padding: 3rem;
+						@media #{$only-small-screen}{
+							height: 16rem;
+						}
 						.hd-item {
 							text-align: center;
 							.gaming-tooltip {
