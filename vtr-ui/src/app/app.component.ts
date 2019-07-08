@@ -1,8 +1,8 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';//VAN-5872, serverSwitch
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router'; // VAN-5872, serverSwitch
 import { DevService } from './services/dev/dev.service';
 import { DisplayService } from './services/display/display.service';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';//VAN-5872, serverSwitch
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap'; // VAN-5872, serverSwitch
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 import { DeviceService } from './services/device/device.service';
 import { CommonService } from './services/common/common.service';
@@ -30,14 +30,12 @@ export class AppComponent implements OnInit {
 		private devService: DevService,
 		private displayService: DisplayService,
 		private router: Router,
-		private activRouter: ActivatedRoute,
 		private modalService: NgbModal,
 		public deviceService: DeviceService,
 		private commonService: CommonService,
 		private translate: TranslateService,
 		private userService: UserService,
 		private settingsService: SettingsService,
-		private gamingAllCapabilitiesService: GamingAllCapabilitiesService,
 		private vantageShellService: VantageShellService
 	) {
 		translate.addLangs([
@@ -141,7 +139,7 @@ export class AppComponent implements OnInit {
 		// document.getElementById('html-root').classList.add('is-arm');
 
 		const self = this;
-		window.onresize = function() {
+		window.onresize = function () {
 			self.displayService.calcSize(self.displayService);
 		};
 		self.displayService.calcSize(self.displayService);
@@ -181,7 +179,7 @@ export class AppComponent implements OnInit {
 		}
 
 		if (result) {
-				result.then((machineInfo) => {
+			result.then((machineInfo) => {
 				this.machineInfo = machineInfo;
 			});
 		}
@@ -214,7 +212,7 @@ export class AppComponent implements OnInit {
 				.then((value: any) => {
 					console.log('getMachineInfo.then', value);
 					console.log('########################################## 1', value);
-					if (value && ![ 'zh', 'pt' ].includes(value.locale.substring(0, 2).toLowerCase())) {
+					if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
 						this.translate.use(value.locale.substring(0, 2));
 						this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
 					} else {
@@ -269,7 +267,7 @@ export class AppComponent implements OnInit {
 		}
 	}
 
-	@HostListener('window:keyup', [ '$event' ])
+	@HostListener('window:keyup', ['$event'])
 	onKeyUp(event: KeyboardEvent) {
 		try {
 			if (this.deviceService.isShellAvailable) {
@@ -284,16 +282,16 @@ export class AppComponent implements OnInit {
 				window.parent.postMessage(response, 'ms-appx-web://e046963f.lenovocompanionbeta/index.html');
 			}
 
-			//VAN-5872, server switch feature
-			if(event.ctrlKey && event.shiftKey && event.keyCode==67){
-				const serverSwitchModal : NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
+			// VAN-5872, server switch feature
+			if (event.ctrlKey && event.shiftKey && event.keyCode == 67) {
+				const serverSwitchModal: NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
 					backdrop: true,
 					size: 'lg',
 					centered: true,
 					windowClass: 'Server-Switch-Modal',
-					keyboard : false
+					keyboard: false
 				});
-				//serverSwitchModal.componentInstance.articleId = this.item.Id;
+				// serverSwitchModal.componentInstance.articleId = this.item.Id;
 			}
 
 		} catch (error) {
@@ -301,19 +299,19 @@ export class AppComponent implements OnInit {
 		}
 	}
 
-	@HostListener('window:load', [ '$event' ])
+	@HostListener('window:load', ['$event'])
 	onLoad(event) {
 		const scale = 1 / (window.devicePixelRatio || 1);
 		const content = `shrink-to-fit=no, width=device-width, initial-scale=${scale}, minimum-scale=${scale}`;
 		document.querySelector('meta[name="viewport"]').setAttribute('content', content);
-		//console.log('DPI: ', content);
-		//alert('I am at onload');
+		// console.log('DPI: ', content);
+		// alert('I am at onload');
 	}
 
 	// Defect fix VAN-2988
-	@HostListener('window:keydown', [ '$event' ])
+	@HostListener('window:keydown', ['$event'])
 	disbleCtrlACV($event: KeyboardEvent) {
-		//console.log('$event.keyCode ' + $event.keyCode);
+		// console.log('$event.keyCode ' + $event.keyCode);
 		if (
 			($event.ctrlKey || $event.metaKey) &&
 			($event.keyCode === 65 || $event.keyCode === 67 || $event.keyCode === 86)

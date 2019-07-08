@@ -1,36 +1,34 @@
-import { PageLightingcustomizeComponent } from './components/pages/page-lightingcustomize/page-lightingcustomize.component';
-import { PageHardwarescanComponent } from './components/pages/page-hardwarescan/page-hardwarescan.component';
-import { PageMacrokeyComponent } from './components/pages/page-macrokey/page-macrokey.component';
+import { PageLightingcustomizeComponent } from '../components/pages/page-lightingcustomize/page-lightingcustomize.component';
+import { PageHardwarescanComponent } from '../components/pages/page-hardwarescan/page-hardwarescan.component';
+import { PageMacrokeyComponent } from '../components/pages/page-macrokey/page-macrokey.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
-import { PageDeviceComponent } from './components/pages/page-device/page-device.component';
-import { PageDeviceGamingComponent } from './components/pages/page-device-gaming/page-device-gaming.component';
-import { PageDeviceSettingsComponent } from './components/pages/page-device-settings/page-device-settings.component';
-import { SubpageDeviceSettingsPowerComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
-import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
-import { SubpageDeviceSettingsDisplayComponent } from './components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
-import { PageDeviceUpdatesComponent } from './components/pages/page-device-updates/page-device-updates.component';
-import { PageSecurityComponent } from './components/pages/page-security/page-security.component';
-import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
-import { PageSecurityWifiComponent } from './components/pages/page-security-wifi/page-security-wifi.component';
-import { PageSecurityPasswordComponent } from './components/pages/page-security-password/page-security-password.component';
-import { PageSecurityInternetComponent } from './components/pages/page-security-internet/page-security-internet.component';
-import { PageSecurityHomeSecurityComponent } from './components/pages/page-security-home-security/page-security-home-security.component';
-import { PageSupportComponent } from './components/pages/page-support/page-support.component';
-import { PageSupportDetailComponent } from './components/pages/page-support-detail/page-support-detail.component';
-import { PageUserComponent } from './components/pages/page-user/page-user.component';
-import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
-import { WindowsHelloGuardService } from './services/guard/windows-hello-guardService.service';
-import { PageConnectedHomeSecurityComponent } from './components/pages/page-connected-home-security/page-connected-home-security.component';
-import { PrivacyModule } from './components/pages/page-privacy/privacy.module';
-import { GuardService } from './services/guard/security-guardService.service';
-import { LocalStorageKey } from './enums/local-storage-key.enum';
-import { PageAutocloseComponent } from './components/pages/page-autoclose/page-autoclose.component';
-import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
-import { PageSmartAssistComponent } from './components/pages/page-smart-assist/page-smart-assist.component';
-import { PageSettingsComponent } from './components/pages/page-settings/page-settings.component';
-import { SubpageDeviceSettingsInputAccessoryComponent } from './components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
+import { PageDashboardComponent } from '../components/pages/page-dashboard/page-dashboard.component';
+import { PageDeviceComponent } from '../components/pages/page-device/page-device.component';
+import { PageDeviceGamingComponent } from '../components/pages/page-device-gaming/page-device-gaming.component';
+import { PageDeviceSettingsComponent } from '../components/pages/page-device-settings/page-device-settings.component';
+import { SubpageDeviceSettingsPowerComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
+import { SubpageDeviceSettingsAudioComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
+import { SubpageDeviceSettingsDisplayComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
+import { PageDeviceUpdatesComponent } from '../components/pages/page-device-updates/page-device-updates.component';
+import { PageSecurityComponent } from '../components/pages/page-security/page-security.component';
+import { PageSecurityAntivirusComponent } from '../components/pages/page-security-antivirus/page-security-antivirus.component';
+import { PageSecurityWifiComponent } from '../components/pages/page-security-wifi/page-security-wifi.component';
+import { PageSecurityPasswordComponent } from '../components/pages/page-security-password/page-security-password.component';
+import { PageSecurityInternetComponent } from '../components/pages/page-security-internet/page-security-internet.component';
+import { PageSupportComponent } from '../components/pages/page-support/page-support.component';
+import { PageSupportDetailComponent } from '../components/pages/page-support-detail/page-support-detail.component';
+import { PageUserComponent } from '../components/pages/page-user/page-user.component';
+import { PageSecurityWindowsHelloComponent } from '../components/pages/page-security-windows-hello/page-security-windows-hello.component';
+import { WindowsHelloGuardService } from '../services/guard/windows-hello-guardService.service';
+import { PageConnectedHomeSecurityComponent } from '../components/pages/page-connected-home-security/page-connected-home-security.component';
+import { GuardService } from '../services/guard/security-guardService.service';
+import { LocalStorageKey } from '../enums/local-storage-key.enum';
+import { PageAutocloseComponent } from '../components/pages/page-autoclose/page-autoclose.component';
+import { PageNetworkBoostComponent } from '../components/pages/page-network-boost/page-network-boost.component';
+import { PageSmartAssistComponent } from '../components/pages/page-smart-assist/page-smart-assist.component';
+import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
+import { SubpageDeviceSettingsInputAccessoryComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
 
 const routes: Routes = [
 	{
@@ -39,7 +37,7 @@ const routes: Routes = [
 		pathMatch: 'full'
 	}, {
 		path: 'dashboard',
-		component: PageDashboardComponent,
+		loadChildren: () => import('./hardware-dashboard.module').then(m => m.HardwareDashboardModule),
 		canDeactivate: [GuardService],
 		canActivate: [GuardService],
 		data: {
@@ -78,7 +76,7 @@ const routes: Routes = [
 		canActivate: [GuardService],
 		data: {
 			pageName: 'Device.MyDevice',
-			pageContent:'My Device Status'
+			pageContent: 'My Device Status'
 		}
 	}, {
 		path: 'device-gaming',
@@ -87,14 +85,14 @@ const routes: Routes = [
 		canActivate: [GuardService],
 		data: {
 			pageName: 'Device.MyDevice',
-			pageContent:'My Device Status'
+			pageContent: 'My Device Status'
 		}
 	}, {
 		path: 'device/device-settings',
 		component: PageDeviceSettingsComponent,
 		data: {
 			pageName: 'Device.MyDeviceSettings',
-			pageContent:'My Device Status'
+			pageContent: 'My Device Status'
 		},
 		children: [
 			{
@@ -148,7 +146,7 @@ const routes: Routes = [
 
 		data: {
 			pageName: 'Device.MyDeviceSettings',
-			pageContent:'My Device Status'
+			pageContent: 'My Device Status'
 		}
 	},
 	{
@@ -158,7 +156,7 @@ const routes: Routes = [
 		canActivate: [GuardService],
 		data: {
 			pageName: 'Device.SystemUpdate',
-			pageContent:'My Device Status'
+			pageContent: 'My Device Status'
 		}
 	}, {
 		path: 'security',
@@ -167,7 +165,7 @@ const routes: Routes = [
 		canActivate: [GuardService],
 		data: {
 			pageName: 'Security.MySecurity',
-			pageContent:'My Device Status'
+			pageContent: 'My Device Status'
 		}
 
 	}, {
