@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Komprimer",
             "expand": "Utvid",
-            "loader": "Fetching <br> Status"
+            "loader": "Henter <br> status",
+			"loading": "Laster..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "Det anbefales også at du dimmer oppgavelinjen og andre områder av skjermen som ikke endres ofte, for å forlenge den generelle levetiden til skjermen."
                         ],
                         "reset": "Tilbakestill temperatur",
-                        "tooltip": "Denne funksjonen kan redusere strømforbruket og øke batteriets levetid ved å dimme bestemte deler av skjermen."
+                        "tooltip": "Denne funksjonen kan redusere strømforbruket og øke batteriets levetid ved å dimme bestemte deler av skjermen.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Inndata og tilbehør",
+                "subtitle": "Innstillinger for inndata og tilbehør",
+                "description": "Lenovo Intelligent Sensing kombinerer de ulike sensorene på datamaskinen for å gjenkjenne aktivitetene dine og justere innstillingene for optimal strømstyring",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Smarttastatur",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Skjulte tastaturfunksjoner",
+                        "description": "Du kan trykke på Fn-tasten nederst til venstre på tastaturet samtidig med andre taster for å aktivere kommandoene som vises i tastaturkartet nedenfor."
                     },
                     "firstKeyObj": {
-                        "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "tittle": "FN + tab",
+                        "description": "aktiver zoomefunksjonen på skjermer med høy oppløsning",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "gå i hvilemodus",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "slå av og på personvernbeskyttelsen",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "veksle mellom ytelsesmodus og stillemodus",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + mellomrom",
+                        "description": "endre status for tastaturets baklys",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Brukerdefinert tast",
+                    "caption": "Tasten som representeres med stjerneikonet, lar deg angi en brukerdefinert funksjon",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Handling ved brukerdefinert tast",
+                        "note": "Merk: Dette kan brukes til å angi ofte brukt informasjon, som for eksempel e-postadresser eller postadresser. Lenovo anbefaler å aldri bruke denne funksjonen for lagring og angivelse av passord eller annen privat informasjon.",
+                        "options": {
+                            "option1": "Vennligst velg",
+                            "option2": "Åpen nettside",
+                            "option3": "Skriv inn tekst"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },

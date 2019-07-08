@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Sažmi",
             "expand": "Proširi",
-            "loader": "Fetching <br> Status"
+            "loader": "Preuzimanje <br>statusa",
+			"loading": "Učitavam..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "Da bi se produljio vijek trajanja zaslona, preporučuje se i zatamnjenje programske trake i drugih područja na zaslonu koja se ne mijenjaju često."
                         ],
                         "reset": "Ponovno postavite temperaturu",
-                        "tooltip": "Ova značajka može smanjiti potrošnju energije i produljiti trajanje baterije selektivnim zatamnjivanjem dijelova zaslona."
+                        "tooltip": "Ova značajka može smanjiti potrošnju energije i produljiti trajanje baterije selektivnim zatamnjivanjem dijelova zaslona.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Unos i pomagala",
+                "subtitle": "Postavke unosa i pomagala",
+                "description": "Pametni senzori tvrtke Lenovo kombinacija su raznih senzora na računalu koji prate vašu aktivnost i prilagođavaju postavke radi optimalnog upravljanja potrošnjom energije",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Inteligentna tipkovnica",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Skrivene funkcije tipkovnice",
+                        "description": "Možete pritisnuti tipku Fn, u lijevom kutu tipkovnice, istodobno s drugim tipkama da biste pokrenuli naredbe prikazane u donjoj mapi tipkovnice."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "omogući značajku zumiranja na zaslonima velike razlučivosti",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "prebaci u stanje mirovanja",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "uključi ili isključi značajku zaštite privatnosti",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "prebaci između načina rada s većim performansama i tihog načina rada",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + razmaknica",
+                        "description": "promijeni stanje pozadinskog osvjetljenja tipkovnice",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Korisnički definirana tipka",
+                    "caption": "Tipka označena ikonom zvijezde omogućuje vam postavljanje korisnički definirane funkcije",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Radnja korisnički definirane tipke",
+                        "note": "Napomena: Ovo je moguće koristiti za često korišteni niz, primjerice e-poštu ili poštansku adresu. Lenovo preporučuje da ovu značajku nikad ne koristite za pohranu i unos lozinki ili drugih osobnih podataka.",
+                        "options": {
+                            "option1": "Odaberite",
+                            "option2": "Otvori web-lokaciju",
+                            "option3": "Unesite tekst"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
