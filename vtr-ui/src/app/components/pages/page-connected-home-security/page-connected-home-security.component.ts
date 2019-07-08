@@ -68,7 +68,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
 		}
 		this.permission = vantageShellService.getPermission();
-		this.common = new HomeSecurityCommon(this.chs, this.modalService);
+		this.common = new HomeSecurityCommon(this.chs, this.modalService, this.commonService, this.dialogService);
 		this.welcomeModel = new HomeSecurityWelcome();
 		this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice();
 		this.allDevicesInfo = new HomeSecurityAllDevice();
@@ -116,13 +116,13 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		if (cacheAccount) {
 			this.account = cacheAccount;
 			if (this.chs.account) {
-				this.account.createAccount = this.chs.createAndGetAccount;
-				this.account.purchase = this.chs.purchase;
-				this.account = new HomeSecurityAccount(this.modalService, this.chs);
+				this.common = new HomeSecurityCommon(this.chs, this.modalService, this.commonService, this.dialogService);
+				this.account = new HomeSecurityAccount(this.modalService, this.chs, this.common);
 			}
 		}
 		if (this.chs.account && this.chs.account.state) {
-			this.account = new HomeSecurityAccount(this.modalService, this.chs);
+			this.common = new HomeSecurityCommon(this.chs, this.modalService, this.commonService, this.dialogService);
+			this.account = new HomeSecurityAccount(this.modalService, this.chs, this.common);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, {
 				state: this.account.state,
 				expiration: this.account.expiration,
@@ -130,7 +130,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				device: this.account.device,
 				allDevice: this.account.allDevice,
 			});
-			this.common = new HomeSecurityCommon(this.chs, this.modalService);
 		}
 		const cacheNotifications = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityNotifications);
 		if (cacheNotifications) {
@@ -148,8 +147,8 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityMyDevice, this.homeSecurityOverviewMyDevice);
 			}
 			if (chs.account) {
-				this.account = new HomeSecurityAccount(this.modalService, chs);
-				this.common = new HomeSecurityCommon(this.chs, this.modalService);
+				this.common = new HomeSecurityCommon(this.chs, this.modalService, this.commonService, this.dialogService);
+				this.account = new HomeSecurityAccount(this.modalService, chs, this.common);
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, {
 					state: this.account.state,
 					expiration: this.account.expiration,
