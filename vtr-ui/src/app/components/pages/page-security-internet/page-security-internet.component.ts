@@ -9,6 +9,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { RegionService } from 'src/app/services/region/region.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { GuardService } from '../../../services/guard/security-guardService.service';
 
 @Component({
 	selector: 'vtr-page-security-internet',
@@ -30,7 +31,8 @@ export class PageSecurityInternetComponent implements OnInit {
 		private commonService: CommonService,
 		public regionService: RegionService,
 		vantageShellService: VantageShellService,
-		private securityAdvisorMockService: SecurityAdvisorMockService
+		private securityAdvisorMockService: SecurityAdvisorMockService,
+		private guard: GuardService
 	) {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
@@ -61,6 +63,10 @@ export class PageSecurityInternetComponent implements OnInit {
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+
+		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+			this.vpn.refresh();
+		}
 	}
 
 	getSurfEasy(): void {
