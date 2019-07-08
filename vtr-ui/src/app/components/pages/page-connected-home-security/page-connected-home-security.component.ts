@@ -6,7 +6,7 @@ import {
 	AfterViewInit
 } from '@angular/core';
 import {
-	EventTypes, ConnectedHomeSecurity, PluginMissingError, CHSAccountState,
+	EventTypes, ConnectedHomeSecurity, PluginMissingError, CHSAccountState
 } from '@lenovo/tan-client-bridge';
 import {
 	VantageShellService
@@ -53,7 +53,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	backId = 'chs-btn-back';
 	isOnline = true;
 	intervalId: number;
-	interval = 5000;
+	interval = 15000;
 
 	constructor(
 		vantageShellService: VantageShellService,
@@ -193,10 +193,16 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		}
 	}
 
-	@HostListener('window: blur')
-	onBlur(): void {
-		clearInterval(this.intervalId);
-		delete this.intervalId;
+	@HostListener('document: visibilitychange')
+	onVisibilityChange(): void {
+		const visibility = document.visibilityState;
+		if (visibility === 'visible' && !this.intervalId) {
+			this.chs.refresh();
+			this.pullCHS();
+		} else if (visibility === 'hidden') {
+			window.clearInterval(this.intervalId);
+			delete this.intervalId;
+		}
 	}
 
 	ngOnDestroy() {
@@ -310,22 +316,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		this.intervalId = window.setInterval(() => {
 			this.chs.refresh().then(() => {
 				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-				if (this.chs.account && this.chs.account.state
-					&& this.chs.overview && this.chs.overview.devicePostures
-					&& this.chs.overview.devicePostures.value
-					&& this.chs.overview.devicePostures.value.length > 0
-					&& this.intervalId) {
-					clearInterval(this.intervalId);
-					const oneMinute = 60000;
-					this.interval = oneMinute;
-					this.intervalId = window.setInterval(() => {
-						this.chs.refresh()
-						.catch(this.pluginMissingHandler.bind(this))
-						.then(() => {
-							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-						});
-					}, this.interval);
-				}
 			}).catch(this.pluginMissingHandler.bind(this));
 		}, this.interval);
 	}
