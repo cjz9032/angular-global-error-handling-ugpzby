@@ -48,12 +48,16 @@ export class UserDefinedKeyComponent implements OnInit {
 					'path': '3',
 					'actionType': OPEN_WEB.str
 				}];
-			//this.selectedValue = this.userDefinedKeyOptions[0]
+			this.selectedValue = this.userDefinedKeyOptions[0]
 		}
 
 	ngOnInit() {
-		this.getUDKCapability();
-		this.getUDKTypeList();
+		try {
+			this.getUDKCapability();
+			this.getUDKTypeList();
+		} catch (error) {
+			console.log('ngOnInit: ', error);
+		}
 	}
 
 	public onChange(item) {
@@ -122,6 +126,7 @@ export class UserDefinedKeyComponent implements OnInit {
 				this.keyboardService.setUserDefinedKeySetting(type, actionType, settingKey, settingValue)
 				.then((value: any) => {
 					this.udkFormSubmitted = false;
+					this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions,'1');
 					console.log('keyboard setUDKTypeList here -------------.>', value);
 				}).catch(error => {
 					console.error('keyboard setUDKTypeList error here', error);
