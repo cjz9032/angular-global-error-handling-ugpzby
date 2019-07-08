@@ -125,7 +125,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryInfo = response.batteryInformation;
 				this.batteryGauge = response.batteryIndicatorInfo;
 
-				if (this.batteryInfo[0].fullChargeCapacity !== undefined && this.batteryInfo[0].fullChargeCapacity !== null
+				if (this.batteryInfo.length !== 0 && this.batteryInfo[0].fullChargeCapacity !== undefined
+					&& this.batteryInfo[0].fullChargeCapacity !== null
 					&& this.batteryInfo[0].designCapacity !== undefined && this.batteryInfo[0].designCapacity !== null) {
 					const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
 					this.percentageLimitation = parseFloat(percentLimit.toFixed(2));
@@ -187,12 +188,28 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryIndicator.charging = this.batteryGauge.isAttached;
 		this.batteryIndicator.convertMin(this.batteryGauge.time);
 		this.batteryIndicator.timeText = this.batteryGauge.timeType;
+
 		if (this.batteryGauge.isExpressCharging === undefined || this.batteryGauge.isExpressCharging === null) {
 			this.batteryIndicator.expressCharging = false;
+		} else {
+			this.batteryIndicator.expressCharging = this.batteryGauge.isExpressCharging;
 		}
-		this.batteryIndicator.voltageError = this.batteryInfo[this.batteryIndex].isVoltageError;
-		this.batteryIndicator.batteryNotDetected = this.batteryHealth === 4;
+
+		// if (this.batteryInfo.length > 0 &&
+		// 	this.batteryInfo[this.batteryIndex].isVoltageError !== undefined) {
+		// 	this.batteryIndicator.voltageError = this.batteryInfo[this.batteryIndex].isVoltageError;
+		// } else {
+		// 	this.batteryIndicator.voltageError = false;
+		// }
+
+		if (this.batteryHealth !== undefined) {
+			this.batteryIndicator.batteryNotDetected = this.batteryHealth === 4;
+		} else {
+			this.batteryIndicator.batteryNotDetected = false;
+		}
+
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo, { detail: this.batteryInfo, gauge: this.batteryGauge });
+
 		if (this.cd !== null && this.cd !== undefined &&
 			!(this.cd as ViewRef_).destroyed) {
 			this.cd.detectChanges();
@@ -217,47 +234,57 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 
 	public getBatteryCondition() {
-		this.batteryConditionStatus = this.getBatteryHealth(this.batteryHealth);
 		const batteryConditions = [];
 		const isThinkpad = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType) === 1;
-		if (isThinkpad && (this.batteryHealth === 1 || this.batteryHealth === 2)) {
-			this.batteryHealth = BatteryConditionsEnum.StoreLimitation;
-		}
-		if (this.batteryHealth !== 0) {
-			batteryConditions.push(new BatteryConditionModel(this.batteryHealth,
-				this.batteryQuality[this.batteryConditionStatus]));
+
+		this.batteryConditionStatus = this.getBatteryHealth(this.batteryHealth);
+		if (this.batteryInfo.length > 0) {
+			if (this.batteryHealth === undefined) {
+				this.batteryHealth = 0;
+			}
+			if (isThinkpad && (this.batteryHealth === 1 || this.batteryHealth === 2)) {
+				this.batteryHealth = BatteryConditionsEnum.StoreLimitation;
+			}
+			if (this.batteryHealth !== 0) {
+				batteryConditions.push(new BatteryConditionModel(this.batteryHealth,
+					this.batteryQuality[this.batteryConditionStatus]));
+			}
+			if (this.batteryInfo[this.batteryIndex].batteryCondition.length !== 0 &&
+				this.batteryInfo[this.batteryIndex].batteryCondition[0] !== undefined &&
+				this.batteryInfo[this.batteryIndex].batteryCondition[0] !== null) {
+				this.batteryInfo[this.batteryIndex].batteryCondition.forEach((condition) => {
+					if (condition === null || condition === undefined) {
+						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.Good,
+							BatteryQuality.Good));
+					} else {
+						switch (condition.toLocaleLowerCase()) {
+							case 'normal':
+								if (this.batteryHealth === 0) {
+									batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.Good,
+										BatteryQuality.Good));
+								}
+								break;
+							case 'hightemperature':
+								batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.HighTemperature, BatteryQuality.Fair));
+								break;
+							case 'tricklecharge':
+								batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.TrickleCharge, BatteryQuality.Fair));
+								break;
+							case 'overheatedbattery':
+								batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.OverheatedBattery, BatteryQuality.Fair));
+								break;
+							case 'permanenterror':
+								batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.PermanentError, BatteryQuality.Poor));
+								break;
+							case 'hardwareauthenticationerror':
+								batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.HardwareAuthenticationError, BatteryQuality.Fair));
+								break;
+						}
+					}
+				});
+			}
 		}
 
-		this.batteryInfo[this.batteryIndex].batteryCondition.forEach((condition) => {
-			if (condition === null || condition === undefined) {
-				batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.Good,
-					BatteryQuality.Good));
-			} else {
-				switch (condition.toLocaleLowerCase()) {
-					case 'normal':
-						if (this.batteryHealth === 0) {
-							batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.Good,
-								BatteryQuality.Good));
-						}
-						break;
-					case 'hightemperature':
-						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.HighTemperature, BatteryQuality.Fair));
-						break;
-					case 'tricklecharge':
-						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.TrickleCharge, BatteryQuality.Fair));
-						break;
-					case 'overheatedbattery':
-						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.OverheatedBattery, BatteryQuality.Fair));
-						break;
-					case 'permanenterror':
-						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.PermanentError, BatteryQuality.Poor));
-						break;
-					case 'hardwareauthenticationerror':
-						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.HardwareAuthenticationError, BatteryQuality.Fair));
-						break;
-				}
-			}
-		});
 		if (this.batteryGauge.isPowerDriverMissing) {
 			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryQuality.Poor));
 		}

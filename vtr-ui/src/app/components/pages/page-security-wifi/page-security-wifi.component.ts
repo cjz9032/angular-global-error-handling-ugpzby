@@ -16,6 +16,7 @@ import { RegionService } from 'src/app/services/region/region.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { GuardService } from '../../../services/guard/security-guardService.service';
 
 interface DevicePostureDetail {
 	status: number; // 1,2
@@ -70,7 +71,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		public translate: TranslateService,
 		private ngZone: NgZone,
 		public regionService: RegionService,
-		private securityAdvisorMockService: SecurityAdvisorMockService
+		private securityAdvisorMockService: SecurityAdvisorMockService,
+		private guard: GuardService
 	) {
 		this.securityAdvisor = shellService.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
@@ -115,6 +117,11 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			});
 		}
 		this.wifiIsShowMore = this.activeRouter.snapshot.queryParams['isShowMore'];
+
+		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+			this.wifiSecurity.refresh();
+
+		}
 	}
 
 	ngAfterViewInit() {

@@ -53,6 +53,7 @@ import {
 	NetworkStatus
 } from 'src/app/enums/network-status.enum';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { GuardService } from '../../../services/guard/security-guardService.service';
 
 
 @Component({
@@ -101,7 +102,8 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private regionService: RegionService,
 		private ngZone: NgZone,
-		private securityAdvisorMockService: SecurityAdvisorMockService
+		private securityAdvisorMockService: SecurityAdvisorMockService,
+		private guard: GuardService
 	) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
@@ -133,7 +135,9 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-		this.refreshAll();
+		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+			this.refreshAll();
+		}
 		this.fetchCMSArticles();
 	}
 

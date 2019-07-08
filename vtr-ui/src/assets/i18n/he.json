@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "כיווץ",
             "expand": "הרחבה",
-            "loader": "Fetching <br> Status"
+            "loader": "מאחזר <br> סטטוס",
+			"loading": "...טעינה"
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "בנוסף, מומלץ לעמעם את שורת המשימות ואזורים אחרים של התצוגה שאינם משתנים לעיתים קרובות כדי להאריך את חיי הצג."
                         ],
                         "reset": "איפוס הטמפרטורה",
-                        "tooltip": "תכונה זו יכולה להפחית את צריכת החשמל ולהאריך את חיי הסוללה על ידי עמעום סלקטיבי של חלקים מהתצוגה."
+                        "tooltip": "תכונה זו יכולה להפחית את צריכת החשמל ולהאריך את חיי הסוללה על ידי עמעום סלקטיבי של חלקים מהתצוגה.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "קלט ועזרים",
+                "subtitle": "הגדרות קלט ועזרים",
+                "description": "החישה החכמה של Lenovo משלבת חיישנים שונים של המחשב כדי לזהות את הפעילויות שלכם ולכוונן הגדרות לצורך ניהול צריכת חשמל אופטימלית",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "מקלדת חכמה",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "פונקציות מקלדת נסתרות",
+                        "description": "ניתן ללחוץ על מקש Fn, בפינה השמאלית התחתונה של לוח המקשים, בו זמנית עם מקשים אחרים כדי לעורר את הפקודות המוצגות במפת לוח המקשים למטה."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "הפעלת תכונת שינוי גודל התצוגה בתצוגות בעלות רזולוציה גבוהה",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "כניסה למצב שינה",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "הפעלה וכיבוי מגן הפרטיות",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "מעבר בין מצב ביצוע למצב שקט",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + מקש רווח",
+                        "description": "שינוי מצבי תאורה אחורית של המקלדת",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "מקש המוגדר על ידי המשתמש",
+                    "caption": "המקש המיוצג על ידי סמל הכוכב מאפשר לכם להגדיר פונקציה על ידי המשתמש",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "הפעלה של מקש המוגדר על ידי המשתמש",
+                        "note": "הערה: ניתן להשתמש באפשרות זו כדי להכניס מקש של פריטים נפוצים, כמו דואר אלקטרוני או כתובות דואר. Lenovo ממליצה לא להשתמש בתכונה זו לעולם לשם אחסון והזנת סיסמאות או מידע פרטי אחר.",
+                        "options": {
+                            "option1": "יש לבחור",
+                            "option2": "פתח אתר אינטרנט",
+                            "option3": "הזן טקסט"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
