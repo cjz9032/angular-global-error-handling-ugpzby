@@ -242,6 +242,7 @@ import { UiDaysPickerComponent } from './components/ui/ui-days-picker/ui-days-pi
 import { DownloadFailedModalComponent } from './components/pages/page-smart-assist/voice/download-failed-modal/download-failed-modal.component';
 import { ModalErrorMessageComponent } from './components/modal/modal-error-message/modal-error-message.component';
 import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component';
+import { UserDefinedKeyComponent } from './components/pages/page-device-settings/children/subpage-device-settings-input-accessory/user-defined-key/user-defined-key.component';
 
 library.add(fas);
 library.add(fab);
@@ -433,7 +434,8 @@ library.add(fal);
 		UiDaysPickerComponent,
 		DownloadFailedModalComponent,
 		ModalErrorMessageComponent,
-		ModalServerSwitchComponent
+		ModalServerSwitchComponent,
+		UserDefinedKeyComponent
 	],
 	imports: [
 		BrowserModule,

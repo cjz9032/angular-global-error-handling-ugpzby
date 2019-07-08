@@ -11,37 +11,12 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 
 	title = 'device.deviceSettings.inputAccessories.title';
-
 	public shortcutKeys: any[] = [];
-	hasUDKCapability = true;
-	udkTypeList: any[] = [];
-	public description: string;
-	public url: string;
-	public hyperLinkPatterns = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
-	public enterTextPatterns = '[a-zA-Z0-9][A-Za-z0-9._-]*';
-	public hideApplyForDefault = true;
-	public udkFormSubmitted = false;
-
-	userDefinedKeyOptions: any[] = [{
-		'title': 'Launch Lenovo Vantage',
-		'value': 1
-	},
-	{
-		'title': 'Open website',
-		'value': 2
-	},
-	{
-		'title': 'Enter text',
-		'value': 3
-	}
-	];
-
 	public privacyIcon = '../../../../../../assets/images/keyboard-images/KeyboarmMap_Icons/Privacy-Screen.png';
 	public kbdBlIcon = '../../../../../../assets/images/keyboard-images/KeyboarmMap_Icons/KBD-BL.png';
 	public merlynIcon = '../../../../../../assets/images/keyboard-images/KeyboarmMap_Icons/Merlyn-Perf-mode.png';
 	public zoomIcon = '../../../../../../assets/images/keyboard-images/KeyboarmMap_Icons/Zoom-app.png';
 
-	public selectedValue: any;
 	public image = '';
 	public additionalCapabilitiesObj: any = {};
 	public machineType: number;
@@ -54,96 +29,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 		if (this.machineType === 1) {
 			this.getKeyboardCompatability();
 		}
-
-		if (this.getUDKCapability()) {
-
-			this.selectedValue = this.userDefinedKeyOptions[0];
-			if (this.selectedValue.value === 1) {
-				this.hideApplyForDefault = true;
-			}
-		}
-
-	}
-	public onChange(item) {
-		this.selectedValue = item;
-
-		//reset udkFormSubmitted to false
-		this.udkFormSubmitted = false;
-
-		if (this.selectedValue.value === 1) {
-			this.hideApplyForDefault = false;
-		}
-
-
 	}
 
-
-	public setUserDefinedKeySetting(type, actionType, settingKey, settingValue) {
-		try {
-
-			if (this.keyboardService.isShellAvailable) {
-				this.keyboardService.setUserDefinedKeySetting(type, actionType, settingKey, settingValue).then((value: boolean) => {
-					console.log('keyboard setUserDefinedKeySetting here -------------.>', value);
-				})
-					.catch(error => {
-						console.error('keyboard setUserDefinedKeySetting error here', error);
-					});
-			}
-		}
-		catch (error) {
-			console.error(error.message);
-		}
-	}
-
-	public getUDKCapability() {
-		try {
-			if (this.keyboardService.isShellAvailable) {
-				this.keyboardService.GetUDKCapability().then((value: boolean) => {
-					console.log('keyboard UDKCapability here -------------.>', value);
-					this.hasUDKCapability = value;
-					//let self = this;
-
-					/* if (this.hasUDKCapability) {
-						this.getUDKTypeList();
-					} */
-
-					return this.hasUDKCapability;
-				})
-					.catch(error => {
-						console.error('keyboard UDKCapability error here', error);
-					});
-			}
-		}
-		catch (error) {
-			console.error(error.message);
-		}
-		return this.hasUDKCapability;
-
-	}
-
-	//
-
-	public getUDKTypeList() {
-		try {
-			if (this.keyboardService.isShellAvailable) {
-				this.keyboardService.GetUDKTypeList().then((value: any) => {
-					console.log('keyboard getUDKTypeList here -------------.>', value);
-					console.log(value);
-					this.udkTypeList = value;
-					console.log(this.udkTypeList);
-
-				}).catch(error => {
-					console.error('keyboard getUDKTypeList error here', error);
-				});
-			}
-
-		}
-		catch (error) {
-			console.error(error.message);
-		}
-
-		return undefined;
-	}
 	// To Check Keyboard Compatability Status
 	public getKeyboardCompatability() {
 		try {
@@ -320,10 +207,5 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 		} catch (error) {
 			console.error(error.message);
 		}
-	}
-
-	udkSubmit() {
-		this.udkFormSubmitted = true;
-		console.log('submit called');
 	}
 }

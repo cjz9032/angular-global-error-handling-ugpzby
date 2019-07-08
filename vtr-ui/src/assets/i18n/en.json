@@ -1115,7 +1115,12 @@
 					},
 					"dropDown": {
 						"title": "ACTION USER DEFINED KEY",
-						"note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+						"note": "Note: This can be used to enter commonly entered key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information.",
+						"options": {
+							"option1": "Please select",
+							"option2": "Open website",
+							"option3": "Enter text"
+						}
 					}
 				}
 			}
