@@ -4,7 +4,7 @@ export class UDKActionInfo {
 	keyType: number;
 	actionType: number;
 	actionValue: string;
-	index: number;
+	index: number = 0;
 	constructor(response) {
 		this.processGetResponse(response);
 	}
