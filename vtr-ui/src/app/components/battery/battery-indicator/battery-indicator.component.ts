@@ -26,7 +26,6 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	@ViewChild('battery') battery: ElementRef;
 	@ViewChild('batteryIndicator') batteryIndicator: ElementRef;
 
-	@Input() isVoltageError = false; // boolean indicator if its changing or not
 	@Input() isCharging = true; // boolean indicator if its changing or not
 	@Input() isExpressCharging = true; // boolean indicator if its express changing or not
 	@Input() percentage = 50; // number without % symbol
@@ -67,7 +66,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 			fillWidth = 0;
 		let percentage = this.percentage;
 
-		if (this.isVoltageError || this.batteryNotDetected) {
+		if (this.batteryNotDetected) {
 			percentage = 0;
 		}
 
