@@ -197,7 +197,11 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	onVisibilityChange(): void {
 		const visibility = document.visibilityState;
 		if (visibility === 'visible' && !this.intervalId) {
-			this.chs.refresh();
+			this.chs.refresh()
+			.then(() => {
+				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
+			})
+			.catch(this.pluginMissingHandler.bind(this));
 			this.pullCHS();
 		} else if (visibility === 'hidden') {
 			window.clearInterval(this.intervalId);
