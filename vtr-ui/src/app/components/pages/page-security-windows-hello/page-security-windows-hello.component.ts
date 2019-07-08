@@ -9,6 +9,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { RegionService } from 'src/app/services/region/region.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { GuardService } from '../../../services/guard/security-guardService.service';
 
 @Component({
 	selector: 'vtr-page-security-windows-hello',
@@ -29,6 +30,7 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		public regionService: RegionService,
+		private guard: GuardService,
 
 		vantageShellService: VantageShellService,
 		private securityAdvisorMockService: SecurityAdvisorMockService
@@ -53,6 +55,10 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+
+		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+			this.windowsHello.refresh();
+		}
 
 	}
 
