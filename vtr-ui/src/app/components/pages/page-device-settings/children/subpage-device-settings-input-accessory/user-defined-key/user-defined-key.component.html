@@ -58,22 +58,12 @@
 
 							<div class="col"
 								*ngIf="selectedValue.value == 1 && !hideApplyForDefault">
-								<button type="button"
-									class="button"
-									(click)="udkSubmit()"
-									[disabled]="udkFormSubmitted"
-									[ngClass]="{'submittedButton':udkFormSubmitted, 'button':!udkFormSubmitted}"
-									title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}">
-									{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}
-
-								</button>
-
 							</div>
 							<div class="col"
 								*ngIf="selectedValue.value == 2">
 								<form #form1="ngForm"
 									novalidate
-									(ngSubmit)="udkSubmit()">
+									(ngSubmit)="udkSubmit(2)">
 									<div class="row no-gutters">
 										<div class="col-12">
 											<textarea [(ngModel)]="url"
@@ -104,14 +94,12 @@
 								</div>
 							</div>
 
-
-
 							<div class="col"
 								*ngIf="selectedValue.value == 3">
 
 								<form #form2="ngForm"
 									novalidate
-									(ngSubmit)="udkSubmit()">
+									(ngSubmit)="udkSubmit(3)">
 									<div class="row no-gutters">
 										<div class="col-12">
 											<textarea [(ngModel)]="description"
