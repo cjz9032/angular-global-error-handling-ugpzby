@@ -10,7 +10,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { ColorPickerModule } from 'ngx-color-picker';
+
 import { SelectDropDownModule } from 'ngx-select-dropdown';
 
 // CUSTOM MODULES
@@ -450,7 +450,6 @@ library.add(fal);
 		TranslationModule,
 		BrowserAnimationsModule,
 		PrivacyModule,
-		ColorPickerModule,
 		SanitizeModule,
 		SelectDropDownModule
 	],
