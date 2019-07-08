@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Σύμπτυξη",
             "expand": "Επέκταση",
-            "loader": "Fetching <br> Status"
+            "loader": "Λήψη της κατάστασης <br>",
+			"loading": "Φόρτωση..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "Σας συνιστούμε επίσης να μειώνετε τη φωτεινότητα της γραμμής εργασιών και άλλων περιοχών της οθόνης που δεν αλλάζουν συχνά, ώστε να παρατείνετε τη συνολική διάρκεια ζωής της οθόνης."
                         ],
                         "reset": "Επαναφορά θερμοκρασίας",
-                        "tooltip": "Αυτή η δυνατότητα μπορεί να μειώσει την κατανάλωση ενέργειας και να παρατείνει τη διάρκεια ζωής της μπαταρίας, μέσω της επιλεκτικής μείωσης της φωτεινότητας σε τμήματα της οθόνης."
+                        "tooltip": "Αυτή η δυνατότητα μπορεί να μειώσει την κατανάλωση ενέργειας και να παρατείνει τη διάρκεια ζωής της μπαταρίας, μέσω της επιλεκτικής μείωσης της φωτεινότητας σε τμήματα της οθόνης.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Εισαγωγή και αξεσουάρ",
+                "subtitle": "Ρυθμίσεις Εισαγωγής και αξεσουάρ",
+                "description": "H δυνατότητα Έξυπνης ανίχνευσης της Lenovo συνδυάζει τους διαφόρους αισθητήρες του υπολογιστή σας για να ανιχνεύσει τις δραστηριότητές σας και να προσαρμόσει τις ρυθμίσεις για βέλτιστη διαχείριση ενέργειας",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Έξυπνο πληκτρολόγιο",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Κρυφές λειτουργίες πληκτρολογίου",
+                        "description": "Μπορείτε να πιέσετε το πλήκτρο Fn, στην κάτω αριστερή γωνία του πληκτρολογίου σας, ταυτόχρονα με άλλα πλήκτρα για να εμφανιστούν οι εντολές που υποδεικνύονται στο χάρτη του πληκτρολογίου παρακάτω."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "ενεργοποιεί τη δυνατότητα ζουμ σε οθόνες υψηλής ανάλυσης",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "μετάβαση στην κατάσταση αναστολής λειτουργίας",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "ενεργοποίηση και απενεργοποίηση της προστασίας απορρήτου",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "εναλλαγή μεταξύ της λειτουργίας απόδοσης και της αθόρυβης λειτουργίας",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + Διάστημα",
+                        "description": "αλλαγή της κατάστασης του οπίσθιου φωτισμού του πληκτρολογίου",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Πλήκτρο που καθορίζεται από τον χρήστη",
+                    "caption": "Το πλήκτρο που επισημαίνεται με το εικονίδιο του αστεριού σάς επιτρέπει να ορίσετε τη λειτουργία που καθορίζεται από τον χρήστη",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Ενέργεια για το πλήκτρο που καθορίζεται από τον χρήστη",
+                        "note": "Σημείωση: Αυτό μπορεί να χρησιμοποιηθεί για την εισαγωγή ενός πλήκτρου συχνής χρήσης, όπως για την εισαγωγή e-mail ή ταχυδρομικών διευθύνσεων. Η Lenovo συνιστά να μην χρησιμοποιείτε ποτέ αυτή τη δυνατότητα για την αποθήκευση και εισαγωγή κωδικών πρόσβασης ή οποιωνδήποτε άλλων προσωπικών στοιχείων.",
+                        "options": {
+                            "option1": "Επιλέξτε",
+                            "option2": "Άνοιγμα ιστότοπου",
+                            "option3": "Εισαγάγετε κείμενο"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
