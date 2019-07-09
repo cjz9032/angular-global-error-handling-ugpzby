@@ -1,23 +1,20 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler } from '@angular/core';
-
 import { AppComponent } from '../app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { CUSTOM_ELEMENTS_SCHEMA, ErrorHandler, NgModule } from '@angular/core';
 import { GlobalErrorHandler } from '../services/error-handler/global.service';
 import { SharedModule } from './shared.module';
-import { TranslationModule } from './translation.module';
-import { NonGamingRoutingModule } from './non-gaming-routing.module';
-
-// THIRD PARTY MODULES
+import { CommonPipeModule } from './common-pipe.module';
 
 @NgModule({
 	declarations: [
-		AppComponent,
-		// ModalWelcomeComponent
+		AppComponent
 	],
 	imports: [
 		BrowserModule,
 		SharedModule,
-		NonGamingRoutingModule
+		AppRoutingModule,
+		CommonPipeModule
 	],
 	providers: [
 		{ provide: ErrorHandler, useClass: GlobalErrorHandler }
@@ -29,7 +26,6 @@ import { NonGamingRoutingModule } from './non-gaming-routing.module';
 		CUSTOM_ELEMENTS_SCHEMA
 	],
 	entryComponents: [
-		// ModalWelcomeComponent
 	]
 })
 export class AppModule { }

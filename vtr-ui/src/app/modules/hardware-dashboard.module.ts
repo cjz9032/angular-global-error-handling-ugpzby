@@ -3,29 +3,31 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/cor
 
 import { SharedModule } from './shared.module';
 import { SanitizeModule } from './sanitize.module';
-import { ModalCommonConfirmationComponent } from '../components/modal/modal-common-confirmation/modal-common-confirmation.component';
-import { ModalArticleDetailComponent } from '../components/modal/modal-article-detail/modal-article-detail.component';
 import { FeedbackFormComponent } from '../components/feedback-form/feedback-form/feedback-form.component';
+import { PageUserComponent } from '../components/pages/page-user/page-user.component';
+import { PageDashboardComponent } from '../components/pages/page-dashboard/page-dashboard.component';
+import { HardwareDashboardRoutingModule } from './hardware-dashboard-routing.module';
+import { MockService } from '../services/mock/mock.service';
 
 @NgModule({
 	declarations: [
-		ModalCommonConfirmationComponent,
-		ModalArticleDetailComponent,
 		FeedbackFormComponent,
+		PageUserComponent,
+		PageDashboardComponent,
+
 	],
 	imports: [
 		CommonModule,
-		SharedModule
+		SharedModule,
+		HardwareDashboardRoutingModule
 	],
 	exports: [
 	],
 	providers: [
 		SanitizeModule,
-
+		MockService
 	],
 	entryComponents: [
-		ModalCommonConfirmationComponent,
-		ModalArticleDetailComponent,
 		FeedbackFormComponent,
 	],
 	schemas: [

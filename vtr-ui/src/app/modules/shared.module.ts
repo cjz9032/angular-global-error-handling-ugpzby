@@ -1,31 +1,49 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, ErrorHandler } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { TranslationModule } from './translation.module';
-import { Ng5SliderModule } from 'ng5-slider';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { ArticleItemComponent } from '../components/article-item/article-item.component';
+import { BaseComponent } from '../components/base/base.component';
+import { CommonModalModule } from './common-modal.module';
+import { CommonModule } from '@angular/common';
+import { CommonService } from '../services/common/common.service';
+import { CommonUiModule } from './common-ui.module';
+import { CommonWidgetModule } from './common-widget.module';
+import { CommsService } from '../services/comms/comms.service';
+import { ContainerArticleComponent } from '../components/container-article/container-article.component';
+import { ContainerCardComponent } from '../components/container-card/container-card.component';
+import { CookieService } from 'ngx-cookie-service';
+import {
+	CUSTOM_ELEMENTS_SCHEMA,
+	ErrorHandler,
+	NgModule,
+	NO_ERRORS_SCHEMA
+} from '@angular/core';
+import { DeviceService } from '../services/device/device.service';
+import { DevService } from '../services/dev/dev.service';
+import { DisplayService } from '../services/display/display.service';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fal } from '@fortawesome/pro-light-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GlobalErrorHandler } from '../services/error-handler/global.service';
+import { HeaderMainComponent } from '../components/header-main/header-main.component';
+import { HttpClientModule } from '@angular/common/http';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { LinkStatusDirective } from '../directives/link-status.directive';
+import { MenuHeaderComponent } from '../components/menu-header/menu-header.component';
+import { MenuMainComponent } from '../components/menu-main/menu-main.component';
+import { MockService } from '../services/mock/mock.service.prod';
+import { ModalLenovoIdComponent } from '../components/modal/modal-lenovo-id/modal-lenovo-id.component';
+import { ModalWelcomeComponent } from '../components/modal/modal-welcome/modal-welcome.component';
+import { Ng5SliderModule } from 'ng5-slider';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonPipeModule } from './common-pipe.module';
+import { SettingsService } from '../services/settings.service';
+import { TranslationModule } from './translation.module';
+import { UserService } from '../services/user/user.service';
+import { CommonDirectiveModule } from './common-directive.module';
 
 // FONT AWESOME
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-import { far } from '@fortawesome/free-regular-svg-icons';
-import { fal } from '@fortawesome/pro-light-svg-icons';
-import { CookieService } from 'ngx-cookie-service';
-import { ModalWelcomeComponent } from '../components/modal/modal-welcome/modal-welcome.component';
-import { MetricsDirective } from '../directives/metrics.directive';
-import { GlobalErrorHandler } from '../services/error-handler/global.service';
-import { PipeModule } from './pipe.module';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { DevService } from '../services/dev/dev.service';
-import { SettingsService } from '../services/settings.service';
-import { DisplayService } from '../services/display/display.service';
-import { DeviceService } from '../services/device/device.service';
-import { CommonService } from '../services/common/common.service';
-import { UserService } from '../services/user/user.service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClientModule } from '@angular/common/http';
-import { CommsService } from '../services/comms/comms.service';
 
 library.add(fas);
 library.add(fab);
@@ -34,43 +52,58 @@ library.add(fal);
 
 @NgModule({
 	declarations: [
+		ArticleItemComponent,
+		BaseComponent,
+		ContainerArticleComponent,
+		ContainerCardComponent,
+		HeaderMainComponent,
+		LinkStatusDirective,
+		MenuHeaderComponent,
+		MenuMainComponent,
+		ModalLenovoIdComponent,
 		ModalWelcomeComponent,
-		MetricsDirective
 	],
 	exports: [
-		MetricsDirective,
-		PipeModule,
+		// CommonPipeModule,
+		CommonUiModule,
+		CommonWidgetModule,
 		FormsModule,
-		ReactiveFormsModule,
-		NgbModule,
 		HttpClientModule,
-		TranslationModule
+		NgbModule,
+		ReactiveFormsModule,
+		TranslationModule,
+		CommonDirectiveModule
 	],
 	imports: [
-		CommonModule,
-		PipeModule,
+		CommonPipeModule,
+		TranslationModule,
 		AngularSvgIconModule,
+		CommonModalModule,
+		CommonModule,
+		CommonWidgetModule,
 		FontAwesomeModule,
-		Ng5SliderModule,
 		FormsModule,
-		ReactiveFormsModule,
-		NgbModule,
 		HttpClientModule,
-		TranslationModule
+		Ng5SliderModule,
+		NgbModule,
+		ReactiveFormsModule,
+		CommonDirectiveModule
 	],
 	providers: [
+		CommonService,
+		CommsService,
 		CookieService,
 		DevService,
-		DisplayService,
 		DeviceService,
-		CommonService,
-		UserService,
+		DisplayService,
+		MockService,
 		SettingsService,
-		CommsService,
+		UserService,
 		{ provide: ErrorHandler, useClass: GlobalErrorHandler }
 	],
 	entryComponents: [
-		ModalWelcomeComponent
+		ModalWelcomeComponent,
+		ModalLenovoIdComponent
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA,
