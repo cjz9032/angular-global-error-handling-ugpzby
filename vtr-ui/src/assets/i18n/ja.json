@@ -439,7 +439,7 @@
             "collapse": "折りたたみ",
             "expand": "展開",
             "loader": "取得ステータス",
-			"loading": "ロード中..."
+            "loading": "ロード中..."
         }
     },
     "privacy": {
@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "推奨更新",
         "optionalUpdates": "任意の更新",
         "ignoredUpdates": "無視された更新",
-        "successInstall": "次の日時に正常にインストールされました",
-        "failedInstall": "次の日時にインストールに失敗しました",
+        "successInstall": "正常にインストールされました。",
+        "failedInstall": "インストール失敗:",
         "at": "の",
         "readMore": "表示を多くする",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "System Update へようこそ。",
             "title": "最新のシステムは健全なシステムです。",
-            "last": "前回の更新:",
-            "next": "次回の更新スキャン予定",
+            "last": "最終更新日:",
+            "next": "次回の更新スケジュール:",
             "checkButton": "更新の確認",
             "checking": "更新を確認しています",
             "downloading": "更新のダウンロードが完了しました",
@@ -1394,7 +1394,7 @@
             "networkInterruptedException": "システム更新サーバーは現在使用できません。後から再試行してください。",
             "helpCenterInvalidServerException": "システム更新サーバーが無効です。後から再試行してください。",
             "catalogNotFoundException": "ご使用のシステムに適用可能な更新はありません。",
-            "catalogCrcErrorException": "現在、システム更新サーバーでシステムの更新カタログを更新中です。後から再試行してください。",
+            "catalogCrcErrorException": "システムのカタログを更新中です。後から再試行してください。",
             "catalogErrorException": "システム更新サーバーで、ご使用のシステムの更新カタログにエラーが検出されました。後から再試行してください。",
             "fileNotFoundException": "ファイルが見つかりません。"
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "エラー",
                 "bodyText": "Vantage の重要なピースを見逃していることがわかりました。これらのピースはバックグラウンドでダウンロードされます。後から再試行してください。",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "閉じる",
+                "offlineText": "インターネットに接続されていないことがわかりました。このページの一部がが正しく動作しません。再接続してください"
             }
         },
         "homeprotection": {

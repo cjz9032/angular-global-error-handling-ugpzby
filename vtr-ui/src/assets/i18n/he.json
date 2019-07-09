@@ -439,7 +439,7 @@
             "collapse": "כיווץ",
             "expand": "הרחבה",
             "loader": "מאחזר <br> סטטוס",
-			"loading": "...טעינה"
+            "loading": "...טעינה"
         }
     },
     "privacy": {
@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "עדכונים מומלצים",
         "optionalUpdates": "עדכונים אופציונליים",
         "ignoredUpdates": "עדכונים שהמערכת התעלמה מהם",
-        "successInstall": "הותקן בהצלחה בתאריך",
-        "failedInstall": "ההתקנה נכשלה בתאריך",
+        "successInstall": "הותקן בהצלחה: ",
+        "failedInstall": "ההתקנה נכשלה: ",
         "at": "ב-",
         "readMore": "פרטים נוספים",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "ברוכים הבאים לשימוש ב-System Update.",
             "title": "מערכת עדכנית היא מערכת תקינה.",
-            "last": "העדכון האחרון נעשה ב-",
-            "next": "חיפוש העדכונים הבא נקבע לתאריך",
+            "last": "עודכן לאחרונה: ",
+            "next": "העדכון המתוכנן הבא: ",
             "checkButton": "חיפוש עדכונים",
             "checking": "חיפוש עדכונים",
             "downloading": "הורדת העדכונים הושלמה",
@@ -1394,7 +1394,7 @@
             "networkInterruptedException": "השרת עדכוני המערכת אינו זמין כעת. נסו שוב מאוחר יותר.",
             "helpCenterInvalidServerException": "השרת עדכוני המערכת אינו חוקי. נסו שוב מאוחר יותר.",
             "catalogNotFoundException": "לא נמצאו עדכונים עבור המערכת שלכם.",
-            "catalogCrcErrorException": "קטלוג העדכונים של המערכת שלכם מתעדכן כעת בשרת עדכוני המערכת. נסו שוב מאוחר יותר.",
+            "catalogCrcErrorException": "קטלוג המערכת מתעדכן כעת. נסו שוב מאוחר יותר.",
             "catalogErrorException": "זוהתה שגיאה בקטלוג העדכונים של המערכת שלכם בשרת עדכוני המערכת. נסו שוב מאוחר יותר.",
             "fileNotFoundException": "הקובץ לא נמצא."
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "שגיאה",
                 "bodyText": "גילינו שחסרים לכם חלקים קריטיים של Vantage. הורדה של חלקים אלה תתבצע ברקע. נסו שוב מאוחר יותר.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "סגירה",
+                "offlineText": "זיהינו שאינכם מחוברים לאינטרנט. חלקים מסוימים בדף זה לא יפעלו כראוי. התחברו מחדש"
             }
         },
         "homeprotection": {

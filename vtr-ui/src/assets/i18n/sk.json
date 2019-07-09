@@ -439,7 +439,7 @@
             "collapse": "Zbaliť",
             "expand": "Rozbaliť",
             "loader": "Stav <br> načítania",
-			"loading": "Načítava..."
+            "loading": "Načítava..."
         }
     },
     "privacy": {
@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "Odporúčané aktualizácie",
         "optionalUpdates": "Voliteľné aktualizácie",
         "ignoredUpdates": "Ignorované aktualizácie",
-        "successInstall": "Úspešne nainštalované",
-        "failedInstall": "Neúspešná inštalácia",
+        "successInstall": "Úspešne nainštalované: ",
+        "failedInstall": "Neúspešná inštalácia: ",
         "at": "o",
         "readMore": "Ďalšie informácie",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "Vitajte v službe System Update.",
             "title": "Aktuálny systém je zdravý systém.",
-            "last": "Posledná aktualizácia:",
-            "next": "Ďalšie vyhľadávanie aktualizácií je naplánované na",
+            "last": "Posledná aktualizácia: ",
+            "next": "Ďalšia plánovaná aktualizácia: ",
             "checkButton": "VYHĽADAŤ AKTUALIZÁCIE",
             "checking": "Vyhľadávajú sa aktualizácie",
             "downloading": "Aktualizácie boli prevzaté",
@@ -1394,7 +1394,7 @@
             "networkInterruptedException": "Server systémových aktualizácií je momentálne nedostupný. Skúste to znova neskôr.",
             "helpCenterInvalidServerException": "Server systémových aktualizácií je neplatný. Skúste to znova neskôr.",
             "catalogNotFoundException": "Pre váš systém sa nenašli žiadne použiteľné aktualizácie.",
-            "catalogCrcErrorException": "Katalóg aktualizácií pre váš systém sa práve aktualizuje na serveri systémových aktualizácií. Skúste to znova neskôr.",
+            "catalogCrcErrorException": "Katalóg pre váš systém sa práve aktualizuje. Skúste to znova neskôr.",
             "catalogErrorException": "Zistila sa chyba katalógu aktualizácií pre váš systém na serveri systémových aktualizácií. Skúste to znova neskôr.",
             "fileNotFoundException": "Súbor sa nenašiel."
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Chyba",
                 "bodyText": "Zistili sme, že vám chýbajú dôležité časti aplikácie Vantage. Tieto časti sa prevezmú v pozadí. Skúste to znova neskôr.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "zatvoriť",
+                "offlineText": "Zistili sme, že nie ste pripojení k internetu. Niektoré časti tejto stránky nebudú fungovať správne. Pripojte sa znova"
             }
         },
         "homeprotection": {

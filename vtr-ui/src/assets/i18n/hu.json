@@ -439,7 +439,7 @@
             "collapse": "Összecsukás",
             "expand": "Kibontás",
             "loader": "Állapot <br> lekérése",
-			"loading": "Betöltés..."
+            "loading": "Betöltés..."
         }
     },
     "privacy": {
@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "Ajánlott frissítés(ek)",
         "optionalUpdates": "Választható frissítés(ek)",
         "ignoredUpdates": "Figyelmen kívül hagyott frissítés(ek)",
-        "successInstall": "Sikeresen telepítve",
-        "failedInstall": "A telepítés sikertelen",
+        "successInstall": "Sikeresen telepítve: ",
+        "failedInstall": "A telepítés sikertelen: ",
         "at": "Ekkor",
         "readMore": "További információ",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "Üdvözöljük a System Update szolgáltatásban.",
             "title": "A naprakész rendszer megfelelően működik.",
-            "last": "Utolsó frissítés dátuma",
-            "next": "A frissítések következő ellenőrzésének ideje",
+            "last": "Utolsó frissítés: ",
+            "next": "Következő ütemezett frissítés: ",
             "checkButton": "FRISSÍTÉSEK KERESÉSE",
             "checking": "Frissítések keresése",
             "downloading": "A frissítések letöltve",
@@ -1394,7 +1394,7 @@
             "networkInterruptedException": "A rendszerfrissítési kiszolgáló jelenleg nem érhető el. Kérjük, később próbálja meg újra.",
             "helpCenterInvalidServerException": "A rendszerfrissítési kiszolgáló érvénytelen. Kérjük, később próbálja meg újra.",
             "catalogNotFoundException": "Nem érhetők el frissítések a rendszerhez.",
-            "catalogCrcErrorException": "A rendszer frissítési katalógusa jelenleg frissül a rendszerfrissítési kiszolgálón Kérjük, később próbálja meg újra.",
+            "catalogCrcErrorException": "A rendszerkatalógus jelenleg frissül. Kérjük, később próbálja meg újra.",
             "catalogErrorException": "Hibát találtunk a rendszer frissítési katalógusával a rendszerfrissítési kiszolgálón. Kérjük, később próbálja meg újra.",
             "fileNotFoundException": "A fájl nem található."
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Hiba",
                 "bodyText": "Úgy észleltük, hogy a Vantage létfontosságú összetevői hiányoznak. Ezek az összetevők a háttérben töltődnek le. Kérjük, később próbálja meg újra.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "bezárás",
+                "offlineText": "Azt észleltük, hogy nem csatlakozik az internethez. Az oldal egyes részei nem működnek majd megfelelően. Csatlakozzon újra"
             }
         },
         "homeprotection": {
