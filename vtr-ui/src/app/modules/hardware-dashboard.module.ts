@@ -12,6 +12,7 @@ import { CommonWidgetModule } from './common-widget.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpLoaderFactory } from './translation.module';
 import { HttpClient } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
 	declarations: [
@@ -21,17 +22,18 @@ import { HttpClient } from '@angular/common/http';
 	],
 	imports: [
 		CommonModule,
-		SharedModule,
-		HardwareDashboardRoutingModule,
 		CommonUiModule,
 		CommonWidgetModule,
+		SharedModule,
+		HardwareDashboardRoutingModule,
 		TranslateModule.forChild({
 			loader: {
 				provide: TranslateLoader,
 				useFactory: HttpLoaderFactory,
 				deps: [HttpClient]
 			}
-		})
+		}),
+		FontAwesomeModule
 	],
 	exports: [
 		TranslateModule

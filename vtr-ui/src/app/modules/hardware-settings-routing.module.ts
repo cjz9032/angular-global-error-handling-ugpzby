@@ -67,7 +67,7 @@ const routes: Routes = [
 		}
 	},
 	{
-		path: 'device/device-settings',
+		path: 'device-settings',
 		component: PageDeviceSettingsComponent,
 		data: {
 			pageName: 'Device.MyDeviceSettings',
@@ -118,7 +118,7 @@ const routes: Routes = [
 		]
 	},
 	{
-		path: 'device/smart-assist',
+		path: 'smart-assist',
 		component: PageSmartAssistComponent,
 		canDeactivate: [GuardService],
 		canActivate: [GuardService],
@@ -129,7 +129,7 @@ const routes: Routes = [
 		}
 	},
 	{
-		path: 'device/system-updates',
+		path: 'system-updates',
 		component: PageDeviceUpdatesComponent,
 		canDeactivate: [GuardService],
 		canActivate: [GuardService],

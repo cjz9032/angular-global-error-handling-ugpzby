@@ -54,6 +54,9 @@ import { SubpageDeviceSettingsInputAccessoryComponent } from '../components/page
 import { SubpageDeviceSettingsPowerComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
 import { VoiceComponent } from '../components/pages/page-smart-assist/voice/voice.component';
 import { WifiSecurityComponent } from '../components/pages/page-security-wifi/children/wifi-security/wifi-security.component';
+import { CommonUiModule } from './common-ui.module';
+import { CommonWidgetModule } from './common-widget.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -113,8 +116,11 @@ import { WifiSecurityComponent } from '../components/pages/page-security-wifi/ch
 	],
 	imports: [
 		CommonModule,
+		CommonUiModule,
+		CommonWidgetModule,
 		SharedModule,
-		HardwareSettingRoutingModule
+		HardwareSettingRoutingModule,
+		FontAwesomeModule
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA,

@@ -81,7 +81,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		if (this.baseCameraDetail) {
+		if (this.cameraDetailSubscription) {
 			this.cameraDetailSubscription.unsubscribe();
 		}
 		this.cleanupCameraAsync();
