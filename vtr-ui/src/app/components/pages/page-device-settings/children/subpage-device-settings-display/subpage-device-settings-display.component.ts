@@ -64,56 +64,57 @@ export class SubpageDeviceSettingsDisplayComponent
 	];
 	emptyCameraDetails = [
 		{
-			'brightness':
+			brightness:
 			{
-				'autoModeSupported': false,
-				'autoValue': false,
-				'supported': true,
-				'min': 0,
-				'max': 255,
-				'step': 1,
-				'default': 128,
-				'value': 136
+				autoModeSupported: false,
+				autoValue: false,
+				supported: true,
+				min: 0,
+				max: 255,
+				step: 1,
+				default: 128,
+				value: 136
 			},
-			'contrast':
+			contrast:
 			{
-				'autoModeSupported': false,
-				'autoValue': false,
-				'supported': true,
-				'min': 0,
-				'max': 255,
-				'step': 1,
-				'default': 32,
-				'value': 179
+				autoModeSupported: false,
+				autoValue: false,
+				supported: true,
+				min: 0,
+				max: 255,
+				step: 1,
+				default: 32,
+				value: 179
 			},
-			'exposure':
+			exposure:
 			{
-				'autoModeSupported': true,
-				'autoValue': true,
-				'supported': true,
-				'min': -11,
-				'max': -3,
-				'step': 1,
-				'default': -6,
-				'value': -5
+				autoModeSupported: true,
+				autoValue: true,
+				supported: true,
+				min: -11,
+				max: -3,
+				step: 1,
+				default: -6,
+				value: -5
 			},
-			'focus':
+			focus:
 			{
-				'autoModeSupported': false,
-				'autoValue': false,
-				'supported': false,
-				'min': 0,
-				'max': 0,
-				'step': 0,
-				'default': 0,
-				'value': 0
+				autoModeSupported: false,
+				autoValue: false,
+				supported: false,
+				min: 0,
+				max: 0,
+				step: 0,
+				default: 0,
+				value: 0
 			},
-			'permission': false
+			permission: false
 		}
 	];
 	public cameraBlur = new CameraBlur();
 	isDTmachine = false;
-	constructor(public baseCameraDetail: BaseCameraDetail,
+	constructor(
+		public baseCameraDetail: BaseCameraDetail,
 		private deviceService: DeviceService,
 		public displayService: DisplayService,
 		private commonService: CommonService,
@@ -177,8 +178,7 @@ export class SubpageDeviceSettingsDisplayComponent
 							this.cameraFeatureAccess.showAutoExposureSlider = true;
 						}
 
-					}
-					else {
+					} else {
 						this.shouldCameraSectionDisabled = true;
 						this.cameraFeatureAccess.exposureAutoValue = false;
 						if (this.dataSource.exposure.supported === true && this.cameraFeatureAccess.exposureAutoValue === false) {
@@ -246,7 +246,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
 					// privacy.status = false;
 					this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
-					this.dataSource.exposure.autoValue = false
+					this.dataSource.exposure.autoValue = false;
 				}
 				this.cameraFeatureAccess.showAutoExposureSlider = false;
 				if (this.dataSource.exposure.autoValue === true && !this.shouldCameraSectionDisabled) {

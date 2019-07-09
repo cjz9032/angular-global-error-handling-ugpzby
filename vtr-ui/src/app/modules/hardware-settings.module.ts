@@ -57,6 +57,8 @@ import { WifiSecurityComponent } from '../components/pages/page-security-wifi/ch
 import { CommonUiModule } from './common-ui.module';
 import { CommonWidgetModule } from './common-widget.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BaseCameraDetail } from '../services/camera/camera-detail/base-camera-detail.service';
+import { CameraDetailMockService } from '../services/camera/camera-detail/camera-detail.mock.service';
 
 
 @NgModule({
@@ -121,6 +123,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 		SharedModule,
 		HardwareSettingRoutingModule,
 		FontAwesomeModule
+	],
+	providers: [
+		{ provide: BaseCameraDetail, useClass: CameraDetailMockService },
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA,
