@@ -18,7 +18,7 @@ export class WindowsHelloGuardService implements CanActivate {
 		 private router: Router,
 		 private securityAdvisorMockService: SecurityAdvisorMockService) { }
 
-	canActivate(): boolean {
+	canActivate() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
@@ -35,7 +35,7 @@ export class WindowsHelloGuardService implements CanActivate {
 			&& (typeof this.windowsHello.fingerPrintStatus === 'string' || showWhPage);
 
 		if (!result) {
-			this.router.navigate(['dashboard']);
+			return this.router.parseUrl('dashboard');
 		}
 		return result;
 	}
