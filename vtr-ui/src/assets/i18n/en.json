@@ -1270,7 +1270,7 @@
 				"modalInstallationFailed": {
 					"btnText": "ok",
 					"title": "Install Failed",
-					"desc": "Install failed, please try again later in order to use Lenovo Voice."
+					"desc": "Please try again later in order to use Lenovo Voice."
 				}
 			}
 		}
