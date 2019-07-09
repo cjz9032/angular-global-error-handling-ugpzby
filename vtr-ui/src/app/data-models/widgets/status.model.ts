@@ -18,4 +18,5 @@ export class Status {
 	public isSystemLink: boolean;
 	public type: string;
 	public description: string;
+	public metricsItemName: string;
 }

@@ -9,7 +9,8 @@ export class WindowsHelloWidgetItem extends WidgetItem {
 		super({
 			id: 'sa-widget-lnk-wh',
 			path: 'security/windows-hello',
-			type: 'security'
+			type: 'security',
+			metricsItemName: 'Windows Hello'
 		}, translateService);
 		this.translateService.stream('common.securityAdvisor.windowsHello').subscribe((value) => {
 			this.title = value;

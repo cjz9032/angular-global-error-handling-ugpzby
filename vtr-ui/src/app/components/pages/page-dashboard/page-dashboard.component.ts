@@ -291,6 +291,7 @@ export class PageDashboardComponent implements OnInit {
 		const memory = new Status();
 		memory.status = 4;
 		memory.id = 'memory';
+		memory.metricsItemName = 'Memory';
 
 		this.translate.stream('dashboard.systemStatus.memory.title').subscribe((value) => {
 			memory.title = value;
@@ -309,6 +310,7 @@ export class PageDashboardComponent implements OnInit {
 		const disk = new Status();
 		disk.status = 4;
 		disk.id = 'disk';
+		disk.metricsItemName = 'Disk Space';
 
 		this.translate.stream('dashboard.systemStatus.diskSpace.title').subscribe((value) => {
 			disk.title = value;
@@ -328,6 +330,7 @@ export class PageDashboardComponent implements OnInit {
 		const warranty = new Status();
 		warranty.status = 4;
 		warranty.id = 'warranty';
+		warranty.metricsItemName = 'Warranty';
 
 		this.translate.stream('dashboard.systemStatus.warranty.title').subscribe((value) => {
 			warranty.title = value;
@@ -348,6 +351,7 @@ export class PageDashboardComponent implements OnInit {
 		const systemUpdate = new Status();
 		systemUpdate.status = 4;
 		systemUpdate.id = 'systemupdate';
+		systemUpdate.metricsItemName = 'System Update';
 
 		this.translate.stream('dashboard.systemStatus.systemUpdate.title').subscribe((value) => {
 			systemUpdate.title = value;
