@@ -63,11 +63,13 @@ export class BreachedAccountComponent implements AfterViewInit {
 		const breachedAccountsForShow = breachedAccounts.filter(x => x.domain !== 'n/a');
 		const otherBreaches = breachedAccounts.filter(x => x.domain === 'n/a');
 
-		breachedAccountsForShow.push({
-			...otherBreaches[0],
-			hasPassword: otherBreaches.findIndex((breachedAccount) => breachedAccount.hasPassword) > -1,
-			hasEmail: otherBreaches.findIndex((breachedAccount) => breachedAccount.hasEmail) > -1,
-		});
+		if (otherBreaches.length > 0) {
+			breachedAccountsForShow.push({
+				...otherBreaches[0],
+				hasPassword: otherBreaches.findIndex((breachedAccount) => breachedAccount.hasPassword) > -1,
+				hasEmail: otherBreaches.findIndex((breachedAccount) => breachedAccount.hasEmail) > -1,
+			});
+		}
 
 		return {breachedAccountsForShow, otherBreaches};
 	}
