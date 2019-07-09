@@ -8,11 +8,12 @@ import {
 	switchMap,
 	switchMapTo,
 	take,
-	takeUntil
+	takeUntil, tap
 } from 'rxjs/operators';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { EmailScannerService, ErrorNames } from '../../feature/check-breached-accounts/services/email-scanner.service';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
+import { TaskActionWithTimeoutService, TasksName } from './analytics/task-action-with-timeout.service';
 
 interface GetBreachedAccountsResponse {
 	type: string;
@@ -50,6 +51,7 @@ export class BreachedAccountsService implements OnDestroy {
 
 	constructor(
 		private communicationWithFigleafService: CommunicationWithFigleafService,
+		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
 		private emailScannerService: EmailScannerService) {
 		this.getBreachedAccounts();
 	}
@@ -70,8 +72,9 @@ export class BreachedAccountsService implements OnDestroy {
 		).pipe(
 			debounceTime(200),
 			switchMapTo(this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(take(1))),
+			tap(() => this.taskActionWithTimeoutService.startAction(TasksName.scanBreachesAction)),
 			switchMap((isFigleafInstalled) => {
-				this.taskStartedTime = Date.now();
+				console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', isFigleafInstalled);
 				return isFigleafInstalled ? this.getBreachedAccountsFromApp() : this.getBreachedAccountsFromBackend();
 			}),
 			map((breachedAccounts) => {
@@ -90,8 +93,7 @@ export class BreachedAccountsService implements OnDestroy {
 	ngOnDestroy() {	}
 
 	private sendTaskAcrion() {
-		const taskDuration = (Date.now() - this.taskStartedTime) / 1000;
-		this.scanBreachesAction$.next({TaskDuration: taskDuration});
+		this.taskActionWithTimeoutService.finishedAction(TasksName.scanBreachesAction);
 	}
 
 	private getBreachedAccountsFromApp() {

@@ -44,6 +44,7 @@ import { CommunicationWithFigleafService } from './utils/communication-with-figl
 import { ArticleDescriptionComponent } from './pages/articles/article-description/article-description.component';
 import { FigleafOverviewService } from './common/services/figleaf-overview.service';
 import { TrialExpiredWidgetComponent } from './main-layout/sidebar/trial-expired-widget/trial-expired-widget.component';
+import { TaskActionWithTimeoutService } from './common/services/analytics/task-action-with-timeout.service';
 
 library.add(fal);
 
@@ -98,6 +99,7 @@ library.add(fal);
 		UserDataGetStateService,
 		AnalyticsService,
 		TaskActionService,
+		TaskActionWithTimeoutService,
 		CommunicationWithFigleafService,
 		FigleafOverviewService
 	],

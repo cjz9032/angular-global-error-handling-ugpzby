@@ -1,13 +1,17 @@
-import { Component, OnDestroy, OnInit, ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
 import { PrivacyScoreService } from './privacy-score.service';
-import { filter, map, switchMap, takeUntil } from 'rxjs/operators';
+import { filter, map, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
 import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
 import { AppStatuses } from '../../../userDataStatuses';
 import { combineLatest } from 'rxjs';
+import {
+	TaskActionWithTimeoutService,
+	TasksName
+} from '../../../common/services/analytics/task-action-with-timeout.service';
 
 @Component({
 	selector: 'vtr-privacy-score',
@@ -36,6 +40,7 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 		private userDataGetStateService: UserDataGetStateService,
 		private vantageCommunicationService: VantageCommunicationService,
 		private changeDetectorRef: ChangeDetectorRef,
+		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
 		private commonPopupService: CommonPopupService) {
 	}
 
@@ -48,6 +53,7 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 			takeUntil(instanceDestroyed(this)),
 		).subscribe(([score]) => {
 			this.setDataAccordingToScore(score);
+			this.taskActionWithTimeoutService.finishedAction(TasksName.scoreScanAction);
 			this.changeDetectorRef.detectChanges();
 		});
 	}
@@ -65,5 +71,6 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 
 	openPopUp(popUpID) {
 		this.commonPopupService.open(popUpID);
+		this.taskActionWithTimeoutService.startAction(TasksName.scoreScanAction);
 	}
 }

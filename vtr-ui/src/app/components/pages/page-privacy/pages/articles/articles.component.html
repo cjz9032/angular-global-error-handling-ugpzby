@@ -1,5 +1,7 @@
 <ng-container *ngIf="articles$ | async as articles else loader">
-	<div class="articles-wrapper">
+	<div class="articles-wrapper"
+		 vtrSendAnalytics
+		 [metricsEvent]="'PageView'">
 		<div class="article" *ngFor="let articleItem of articles">
 			<vtr-article-preview
 				(openArticle)="openArticle($event)"

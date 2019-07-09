@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { EMPTY, Observable, of, ReplaySubject, Subject } from 'rxjs';
+import { EMPTY, Observable, of, ReplaySubject } from 'rxjs';
 import { catchError, map, shareReplay, startWith, switchMap, take } from 'rxjs/operators';
 import { ChoseBrowserService } from '../../../common/services/chose-browser.service';
 import { UserAllowService } from '../../../common/services/user-allow.service';
@@ -19,6 +19,10 @@ import {
 } from './tracking-map.interface';
 import { returnUniqueElementsInArray } from '../../../utils/helpers';
 import { FigleafOverviewService } from '../../../common/services/figleaf-overview.service';
+import {
+	TaskActionWithTimeoutService,
+	TasksName
+} from '../../../common/services/analytics/task-action-with-timeout.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -36,9 +40,6 @@ export class TrackingMapService {
 	private getTrackingSingleData = new ReplaySubject<SingleTrackersInfo>(1);
 	getTrackingSingleData$ = this.getTrackingSingleData.asObservable();
 
-	taskStartedTime = 0;
-	getTrackingDataAction$ = new Subject<{ TaskDuration: number }>();
-
 	private trackersCache$: Observable<TrackersInfo>;
 
 	constructor(
@@ -47,6 +48,7 @@ export class TrackingMapService {
 		private http: HttpClient,
 		private vantageCommunicationService: VantageCommunicationService,
 		private figleafOverviewService: FigleafOverviewService,
+		private taskActionWithTimeoutService: TaskActionWithTimeoutService
 	) {
 		this.updateTrackingData();
 		this.userAllowService.allowToShow.subscribe(() => {
@@ -68,7 +70,7 @@ export class TrackingMapService {
 	}
 
 	private getTrackingData() {
-		this.taskStartedTime = Date.now();
+		this.taskActionWithTimeoutService.startAction(TasksName.getTrackingDataAction);
 		return this.downloadTrackersInfo().pipe(
 			switchMap((trackersInfo) => {
 					const isAllowScanHistory = this.userAllowService.allowToShow.getValue().trackingMap;
@@ -130,8 +132,7 @@ export class TrackingMapService {
 	}
 
 	private sendTaskAction() {
-		const taskDuration = (Date.now() - this.taskStartedTime) / 1000;
-		this.getTrackingDataAction$.next({TaskDuration: taskDuration});
+		this.taskActionWithTimeoutService.finishedAction(TasksName.getTrackingDataAction);
 	}
 
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { debounceTime, distinctUntilChanged, filter, map, startWith, switchMapTo } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, switchMapTo } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
 import { FigleafOverviewService, FigleafSettings } from '../../../common/services/figleaf-overview.service';
 import { BrowserAccountsService } from '../../../common/services/browser-accounts.service';
@@ -106,6 +106,7 @@ export class PrivacyScoreService {
 				) * 100
 			);
 		}),
+		shareReplay(1)
 	);
 
 	getStaticDataAccordingToScore(score) {

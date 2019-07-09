@@ -43,3 +43,18 @@ export function getFigleafProtectedStatus(appState: AppStatuses | AppStatuses.fi
 	const figleafProtectStatuses = [AppStatuses.figLeafInstalled, AppStatuses.trialSoonExpired, AppStatuses.trialExpired];
 	return figleafProtectStatuses.includes(appState);
 }
+
+export function snake2CamelCase(string) {
+	return string
+		.replace(
+			/_(\w)/g,
+			($, $1) => $1.toUpperCase()
+		)
+		;
+}
+
+export function snake2PascalCase(string) {
+	const s = snake2CamelCase(string);
+
+	return `${s.charAt(0).toUpperCase()}${s.substr(1)}`;
+}

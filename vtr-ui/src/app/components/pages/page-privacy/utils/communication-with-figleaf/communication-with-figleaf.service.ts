@@ -2,6 +2,10 @@ import { Injectable, NgZone } from '@angular/core';
 import { FigleafConnectorInstance as FigleafConnector, MessageToFigleaf } from './figleaf-connector';
 import { EMPTY, from, Observable, ReplaySubject, Subscription, timer } from 'rxjs';
 import { catchError, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
+import {
+	TaskActionWithTimeoutService,
+	TasksName
+} from '../../common/services/analytics/task-action-with-timeout.service';
 
 export interface MessageFromFigleaf {
 	type: string;
@@ -18,7 +22,10 @@ export class CommunicationWithFigleafService {
 
 	subscription: Subscription[] = [];
 
-	constructor(private ngZone: NgZone) {
+	constructor(
+		private ngZone: NgZone,
+		private taskActionWithTimeoutService: TaskActionWithTimeoutService
+	) {
 		FigleafConnector.onConnect(() => {
 			this.ngZone.run(() => this.isFigleafInstalled$.next(true));
 		});
@@ -53,6 +60,7 @@ export class CommunicationWithFigleafService {
 			const figleafReadyForCommunicationState = figleafStatus.status === 0;
 			this.isFigleafReadyForCommunication.next(figleafReadyForCommunicationState);
 			if (figleafReadyForCommunicationState) {
+				this.taskActionWithTimeoutService.finishedAction(TasksName.privacyAppInstallationAction);
 				figleafConnectSubscription.unsubscribe();
 			}
 		}, (error) => {
