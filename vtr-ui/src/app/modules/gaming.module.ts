@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler } from '@angular/core';
-import { PageDeviceGamingComponent } from '../components/pages/page-device-gaming/page-device-gaming.component';
+// import { PageDeviceGamingComponent } from '../components/pages/page-device-gaming/page-device-gaming.component';
 import { WidgetLegionEdgeComponent } from '../components/widgets/widget-legion-edge/widget-legion-edge.component';
 import { WidgetSystemToolsComponent } from '../components/widgets/widget-system-tools/widget-system-tools.component';
 import { WidgetSystemMonitorComponent } from '../components/widgets/widget-system-monitor/widget-system-monitor.component';
@@ -28,10 +28,14 @@ import { UiMacrokeyRecordedListComponent } from '../components/ui/ui-macrokey-re
 import { WidgetMacrokeySettingsComponent } from '../components/widgets/widget-macrokey-settings/widget-macrokey-settings.component';
 import { SharedModule } from './shared.module';
 import { ColorPickerModule } from 'ngx-color-picker';
+import { CommonUiModule } from './common-ui.module';
+import { CommonWidgetModule } from './common-widget.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { GamingRoutingModule } from '../modules/gaming-routing.module';
 
 @NgModule({
 	declarations: [
-		PageDeviceGamingComponent,
+		//PageDeviceGamingComponent,
 		WidgetLegionEdgeComponent,
 		WidgetSystemToolsComponent,
 		WidgetSystemMonitorComponent,
@@ -56,18 +60,18 @@ import { ColorPickerModule } from 'ngx-color-picker';
 		UiMacrokeyDetailsComponent,
 		UiLightingProfileComponent,
 		UiMacrokeyRecordedListComponent,
-		WidgetMacrokeySettingsComponent,
+		WidgetMacrokeySettingsComponent
 	],
 	imports: [
 		CommonModule,
+		CommonUiModule,
+		CommonWidgetModule,
 		SharedModule,
+		GamingRoutingModule,
+		FontAwesomeModule,
 		ColorPickerModule
 	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA
-	],
-	entryComponents: [
-		ModalGamingLegionedgeComponent,
-	]
+	schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+	entryComponents: [ ModalGamingLegionedgeComponent ]
 })
-export class GamingModule { }
+export class GamingModule {}

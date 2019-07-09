@@ -11,6 +11,10 @@ const routes: Routes = [
 		loadChildren: './gaming.module#GamingModule'
 	},
 	{
+		path: 'device-gaming',
+		loadChildren: './gaming-dashboard.module#GamingDashboardModule'
+	},
+	{
 		path: 'device',
 		loadChildren: './hardware-settings.module#HardwareSettingsModule'
 	},
@@ -23,17 +27,13 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [
-		RouterModule.forRoot(
-			routes,
-			{
-				useHash: true,
-				scrollPositionRestoration: 'enabled',
-				enableTracing: false,
-				// preloadingStrategy: PreloadAllModules
-			})
+		RouterModule.forRoot(routes, {
+			useHash: true,
+			scrollPositionRestoration: 'enabled',
+			enableTracing: false
+			// preloadingStrategy: PreloadAllModules
+		})
 	],
-	exports: [
-		RouterModule
-	]
+	exports: [ RouterModule ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
