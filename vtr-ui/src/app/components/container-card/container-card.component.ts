@@ -27,6 +27,8 @@ export class ContainerCardComponent implements OnInit, AfterViewInit, OnChanges 
 	@Input() order: number;
 	@Input() itemID: string;
 	@Input() sideFlag = '';
+	@Input() id = '';
+	@Input() ariaLabel = '';
 
 	isLoading = true;
 
@@ -98,7 +100,7 @@ export class ContainerCardComponent implements OnInit, AfterViewInit, OnChanges 
 
 	articleClicked(articleId) {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
-			backdrop: true,/*'static',*/
+			backdrop: true, /*'static',*/
 			size: 'lg',
 			centered: true,
 			windowClass: 'Article-Detail-Modal',

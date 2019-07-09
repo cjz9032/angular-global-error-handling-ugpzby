@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Riduci",
             "expand": "Espandi",
-            "loader": "Fetching <br> Status"
+            "loader": "Stato di<br> recupero",
+            "loading": "Caricamento in corso..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "Si consiglia inoltre di ridurre la luminosità della barra delle applicazioni e di altre aree dello schermo che non cambiano di frequente per prolungare la durata dello schermo."
                         ],
                         "reset": "Ripristina temperatura",
-                        "tooltip": "Questa funzionalità può ridurre il consumo energetico e aumentare la durata della batteria riducendo in modo selettivo la luminosità di alcune aree."
+                        "tooltip": "Questa funzionalità può ridurre il consumo energetico e aumentare la durata della batteria riducendo in modo selettivo la luminosità di alcune aree.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Input e accessori",
+                "subtitle": "Impostazioni di input e accessori",
+                "description": "Rilevamento intelligente Lenovo combina vari sensori del computer per rilevare le attività e modificare le impostazioni per il risparmio energia ottimale",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Tastiera intelligente",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Funzioni della tastiera nascoste",
+                        "description": "È possibile premere il tasto Fn, sulla parte inferiore sinistra della tastiera, contemporaneamente ad altri tasti, per richiamare i comandi mostrati nella mappa della tastiera di seguito."
                     },
                     "firstKeyObj": {
-                        "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "tittle": "Fn + Tasto di tabulazione",
+                        "description": "abilitare la funzione di zoom sui display ad alta risoluzione",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "attivare la Modalità Sospensione",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "attivare e disattivare la protezione della privacy",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "passare dalla modalità prestazioni alla modalità silenziosa e viceversa",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + Barra spaziatrice",
+                        "description": "modificare gli stati della retroilluminazione della tastiera",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Tasto definito dall'utente",
+                    "caption": "Il tasto rappresentato dall'icona a forma di stella consente di impostare la funzione definita dall'utente",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Azione del tasto definito dall'utente",
+                        "note": "Nota: può essere utilizzato per immettere tasti comuni, come indirizzi e-mail o postali. Lenovo consiglia di non utilizzare questa funzione per la memorizzazione o l'immissione di password o di qualsiasi altra informazione privata.",
+                        "options": {
+                            "option1": "Selezionare",
+                            "option2": "Apri sito Web",
+                            "option3": "Inserire il testo"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "Aggiornamento/i consigliato/i",
         "optionalUpdates": "Aggiornamento/i facoltativo/i",
         "ignoredUpdates": "Aggiornamento/i ignorato/i",
-        "successInstall": "Installazione riuscita il",
-        "failedInstall": "Installazione non riuscita il",
+        "successInstall": "Installazione completata: ",
+        "failedInstall": "Installazione non riuscita: ",
         "at": "alle",
         "readMore": "Ulteriori informazioni",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "Benvenuto in System Update.",
             "title": "Un sistema aggiornato è un sistema sano.",
-            "last": "Ultimo aggiornamento eseguito in data",
-            "next": "La prossima scansione aggiornata è pianificata in data",
+            "last": "Ultimo aggiornamento: ",
+            "next": "Prossimo aggiornamento pianificato: ",
             "checkButton": "VERIFICA DISPONIBILITÀ AGGIORNAMENTI",
             "checking": "Controllo degli aggiornamenti",
             "downloading": "Fine download aggiornamenti",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "Il server di aggiornamento del sistema non è attualmente disponibile. Si prega di riprovare più tardi.",
             "helpCenterInvalidServerException": "Il server di aggiornamento del sistema non è valido. Si prega di riprovare più tardi.",
             "catalogNotFoundException": "Non è stato trovato alcun aggiornamento applicabile per il sistema.",
-            "catalogCrcErrorException": "È attualmente in corso l'aggiornamento del catalogo degli aggiornamenti per il sistema sul server di aggiornamento del sistema. Si prega di riprovare più tardi.",
+            "catalogCrcErrorException": "Il catalogo per il sistema è attualmente in corso di aggiornamento. Si prega di riprovare più tardi.",
             "catalogErrorException": "È stato rilevato un errore con il catalogo degli aggiornamenti per il sistema sul server di aggiornamento del sistema. Si prega di riprovare più tardi.",
             "fileNotFoundException": "File non trovato."
         }
@@ -1616,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Errore",
                 "bodyText": "Sono stati rilevati errori di perdita di pacchetti Vantage. Questi pacchetti verranno scaricati in background. Si prega di riprovare più tardi.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "chiudi",
+                "offlineText": "È stato rilevato che non si è connessi a Internet. Alcune parti di questa pagina non funzioneranno correttamente. Riconnettersi"
             }
         },
         "homeprotection": {

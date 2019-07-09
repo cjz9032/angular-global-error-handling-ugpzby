@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "收合",
             "expand": "展開",
-            "loader": "Fetching <br> Status"
+            "loader": "獲取狀態",
+            "loading": "載入中..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "我們也建議將工作列和顯示畫面中不常變化的其他區域的亮度降低，以延長顯示器的整體壽命。"
                         ],
                         "reset": "重設溫度",
-                        "tooltip": "此功能可以選擇性地降低顯示畫面不同部分的亮度，藉此降低耗電量並延長電池壽命。"
+                        "tooltip": "此功能可以選擇性地降低顯示畫面不同部分的亮度，藉此降低耗電量並延長電池壽命。",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "輸入和配件",
+                "subtitle": "輸入和配件設定",
+                "description": "Lenovo 智慧型感應會結合您電腦上的各種感應器來偵測您的活動，並調整最佳電源管理的設定",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "智慧型鍵盤",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "隱藏的鍵盤功能",
+                        "description": "您可以同時按下 Fn 鍵（位於鍵盤左下角）與其他按鍵以叫出下列鍵盤對照表中顯示的指令。"
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "啟用高解析度顯示器的縮放功能",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "進入睡眠模式",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "開啟和關閉隱私保護",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "在效能模式和靜音模式之間切換",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + 空格鍵",
+                        "description": "變更鍵盤背光狀態",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "使用者定義鍵",
+                    "caption": "以星星圖示代表的按鍵可讓您設定使用者定義的功能",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "操作使用者定義鍵",
+                        "note": "附註：這可用來輸入經常輸入的按鍵，例如電子郵件地址或郵寄地址。Lenovo 建議您絕對不要使用這項功能來儲存及輸入密碼或任何其他私人資訊。",
+                        "options": {
+                            "option1": "請選取",
+                            "option2": "打開網站",
+                            "option3": "輸入文字"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "建議更新",
         "optionalUpdates": "選用更新項目",
         "ignoredUpdates": "已忽略的更新",
-        "successInstall": "成功安裝的日期：",
-        "failedInstall": "安裝失敗的日期：",
+        "successInstall": "已成功安裝：",
+        "failedInstall": "安裝失敗：",
         "at": "時間：",
         "readMore": "較多內容",
         "popup": {
@@ -1297,7 +1325,7 @@
             "neverChecked": "歡迎使用 System Update。",
             "title": "保持最新狀態的系統才是健康的系統。",
             "last": "上次更新：",
-            "next": "下次掃描更新排程於",
+            "next": "下次的排定更新：",
             "checkButton": "檢查更新",
             "checking": "檢查更新項目",
             "downloading": "下載更新完成",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "系統更新伺服器目前無法使用。請稍後重試。",
             "helpCenterInvalidServerException": "系統更新伺服器無效。請稍後重試。",
             "catalogNotFoundException": "找不到適用於您系統的更新。",
-            "catalogCrcErrorException": "目前正在系統更新伺服器上更新您系統的更新目錄。請稍後重試。",
+            "catalogCrcErrorException": "目前正在更新您系統的目錄。請稍後重試。",
             "catalogErrorException": "在系統更新伺服器上偵測到您系統的更新目錄發生錯誤。請稍後重試。",
             "fileNotFoundException": "找不到檔案。"
         }
@@ -1616,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "錯誤",
                 "bodyText": "我們發現您缺少 Vantage 的關鍵組件。這些組件將在背景進行下載。請稍後重試。",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "關閉",
+                "offlineText": "我們發現您沒有連線到網際網路。此頁面的某些部分將無法正確運作。請重新連線"
             }
         },
         "homeprotection": {

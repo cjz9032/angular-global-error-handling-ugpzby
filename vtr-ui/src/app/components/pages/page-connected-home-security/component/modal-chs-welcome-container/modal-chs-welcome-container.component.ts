@@ -15,6 +15,8 @@ import * as Phoenix from '@lenovo/tan-client-bridge';
 import { ModalLenovoIdComponent } from '../../../../modal/modal-lenovo-id/modal-lenovo-id.component';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { HomeSecurityMockService } from 'src/app/services/home-security/home-security-mock.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 
 @Component({
 	selector: 'vtr-modal-chs-welcome-container',
@@ -33,6 +35,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	chs: Phoenix.ConnectedHomeSecurity;
 	permission: any;
 	loading = false;
+	isOnline = true;
 	metricsParent = 'ConnectedHomeSecurity';
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -60,13 +63,9 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 				break;
 		}
 
-		this.chs.on(EventTypes.chsHasSystemPermissionShowedEvent, (data) => {
-			this.hasSystemPermissionShowed = data;
-			if (data) {
-				this.permission.requestPermission('geoLocatorStatus').then((status) => {
-					this.isLocationServiceOn = status;
-				});
-			}
+		this.isOnline = this.commonService.isOnline;
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
 		});
 
 		this.chs.on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
@@ -121,7 +120,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 		} else if (switchPage === 2) {
 			if (isLenovoIdLogin) {
 				if (isLocationServiceOn) {
-					if (this.chs.account.state === CHSAccountState.local) {
+					if (this.chs.account.state === CHSAccountState.local && this.isOnline) {
 						this.startTrial();
 					} else {
 						this.closeModal();
@@ -137,7 +136,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 		} else if (switchPage === 3) {
 			this.showPageLenovoId = true;
 			if (isLocationServiceOn) {
-				if (isLenovoIdLogin && this.chs.account.state === CHSAccountState.local) {
+				if (isLenovoIdLogin && this.chs.account.state === CHSAccountState.local && this.isOnline) {
 					this.startTrial();
 				} else {
 					this.closeModal();
@@ -147,7 +146,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 				this.showPageLocation = true;
 			}
 		} else if (switchPage === 4) {
-			if (isLenovoIdLogin && this.chs.account.state === CHSAccountState.local) {
+			if (isLenovoIdLogin && this.chs.account.state === CHSAccountState.local && this.isOnline) {
 				this.startTrial();
 			} else {
 				this.closeModal();
@@ -163,15 +162,18 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 
 	public openLocation($event: any) {
 		this.permission.getIsDevicePermissionOn().then((response) => {
-			if (response && !this.hasSystemPermissionShowed) {
-				this.permission.requestPermission('geoLocatorStatus').then((status) => {
-					this.isLocationServiceOn = status;
+			if (response) {
+				this.permission.getSystemPermissionShowed().then((res) => {
+					this.hasSystemPermissionShowed = res;
+					if (res) {
+						WinRT.launchUri(this.url);
+					}
+					this.permission.requestPermission('geoLocatorStatus').then((status) => {
+						this.isLocationServiceOn = status;
+					});
 				});
 			} else {
 				WinRT.launchUri(this.url);
-				this.permission.requestPermission('geoLocatorStatus').then((status) => {
-					this.isLocationServiceOn = status;
-				});
 			}
 		});
 	}
@@ -193,5 +195,18 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 			centered: true,
 			windowClass: 'lenovo-id-modal-size'
 		});
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
+		}
 	}
 }

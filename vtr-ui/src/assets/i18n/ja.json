@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "折りたたみ",
             "expand": "展開",
-            "loader": "Fetching <br> Status"
+            "loader": "取得ステータス",
+            "loading": "ロード中..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "また、タスクバーやディスプレイのあまり変化しない領域を暗くして、ディスプレイ全体の寿命を延ばすことをお勧めします。"
                         ],
                         "reset": "温度をリセット",
-                        "tooltip": "この機能は、ディスプレイの一部を選択して暗くすることで、電力消費を削減しバッテリー駆動時間を延ばすことができます。"
+                        "tooltip": "この機能は、ディスプレイの一部を選択して暗くすることで、電力消費を削減しバッテリー駆動時間を延ばすことができます。",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "入力およびアクセサリ",
+                "subtitle": "入力およびアクセサリ設定",
+                "description": "Lenovo インテリジェント・センサーはコンピューターのさまざまなセンサーを組み合わせて操作を検出し、最適な電源管理の設定を調整します",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "インテリジェント・キーボード",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "非表示のキーボード機能",
+                        "description": "キーボード左下の Fn キーと他のキーを同時に押すことで、以下のキーボード・マップに示されるコマンドを起動できます。"
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "高解像度ディスプレイでズーム機能を有効にします",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "スリープ状態の開始",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "プライバシー・ガードをオンまたはオフにします",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "パフォーマンス・モードと静音モードを切り替えます",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + スペース",
+                        "description": "キーボードのバックライトの状態を変更します",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "ユーザー定義キー",
+                    "caption": "星のアイコンがついているキーには、ユーザー定義機能を設定できます",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "ユーザー定義キーの操作",
+                        "note": "注: メールや郵便番号など、よく入力するキーの入力に使用します。パスワードや個人情報の保存や入力には、この機能を使用しないことをお勧めします。",
+                        "options": {
+                            "option1": "選択してください",
+                            "option2": "ウェブサイトを開く",
+                            "option3": "テキストを入力"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "推奨更新",
         "optionalUpdates": "任意の更新",
         "ignoredUpdates": "無視された更新",
-        "successInstall": "次の日時に正常にインストールされました",
-        "failedInstall": "次の日時にインストールに失敗しました",
+        "successInstall": "正常にインストールされました。",
+        "failedInstall": "インストール失敗:",
         "at": "の",
         "readMore": "表示を多くする",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "System Update へようこそ。",
             "title": "最新のシステムは健全なシステムです。",
-            "last": "前回の更新:",
-            "next": "次回の更新スキャン予定",
+            "last": "最終更新日:",
+            "next": "次回の更新スケジュール:",
             "checkButton": "更新の確認",
             "checking": "更新を確認しています",
             "downloading": "更新のダウンロードが完了しました",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "システム更新サーバーは現在使用できません。後から再試行してください。",
             "helpCenterInvalidServerException": "システム更新サーバーが無効です。後から再試行してください。",
             "catalogNotFoundException": "ご使用のシステムに適用可能な更新はありません。",
-            "catalogCrcErrorException": "現在、システム更新サーバーでシステムの更新カタログを更新中です。後から再試行してください。",
+            "catalogCrcErrorException": "システムのカタログを更新中です。後から再試行してください。",
             "catalogErrorException": "システム更新サーバーで、ご使用のシステムの更新カタログにエラーが検出されました。後から再試行してください。",
             "fileNotFoundException": "ファイルが見つかりません。"
         }
@@ -1616,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "エラー",
                 "bodyText": "Vantage の重要なピースを見逃していることがわかりました。これらのピースはバックグラウンドでダウンロードされます。後から再試行してください。",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "閉じる",
+                "offlineText": "インターネットに接続されていないことがわかりました。このページの一部がが正しく動作しません。再接続してください"
             }
         },
         "homeprotection": {

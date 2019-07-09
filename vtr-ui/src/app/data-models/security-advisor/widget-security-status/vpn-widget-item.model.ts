@@ -9,7 +9,8 @@ export class VPNWidgetItem extends WidgetItem {
 		super({
 			id: 'sa-widget-lnk-vpn',
 			path: 'security/internet-protection',
-			type: 'security'
+			type: 'security',
+			metricsItemName: 'VPN'
 		}, translateService);
 		this.translateService.stream('common.securityAdvisor.vpn').subscribe((value) => {
 			this.title = value;

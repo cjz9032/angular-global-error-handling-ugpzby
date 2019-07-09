@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "축소",
             "expand": "확장",
-            "loader": "Fetching <br> Status"
+            "loader": "페치 상태",
+            "loading": "로드 중..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "또한, 디스플레이의 전체 수명을 연장하려면 작업 표시줄과 그 외 디스플레이 영역 중 변화가 별로 없는 부분을 어둡게 설정하시기 바랍니다."
                         ],
                         "reset": "온도 재설정",
-                        "tooltip": "이 기능은 디스플레이의 일부를 선택적으로 어둡게 하여 전원 소모를 줄이고 배터리 수명을 늘릴 수 있습니다."
+                        "tooltip": "이 기능은 디스플레이의 일부를 선택적으로 어둡게 하여 전원 소모를 줄이고 배터리 수명을 늘릴 수 있습니다.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "입력 및 액세서리",
+                "subtitle": "입력 및 액세서리 설정",
+                "description": "Lenovo 지능형 센싱은 컴퓨터의 다양한 센서를 조합하여 사용자의 활동을 감지하고 전원 관리가 최적화될 수 있도록 설정을 조정합니다",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "지능형 키보드",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "숨겨진 키보드 기능",
+                        "description": "키보드의 왼쪽 아래에 있는 Fn 키와 다른 키를 동시에 눌러 아래 키보드 맵에 표시된 명령을 호출할 수 있습니다."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "고해상도 디스플레이의 확대/축소 기능을 사용하도록 설정",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "절전 모드 실행",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "개인 정보 가드 켜기 및 끄기",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "성능 모드와 저소음 모드 사이를 전환",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + 스페이스",
+                        "description": "키보드 백라이트 상태 변경",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "사용자 정의 키",
+                    "caption": "별 모양 아이콘으로 표시된 키는 사용자 정의 기능을 설정할 수 있습니다",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "작업 사용자 정의 키",
+                        "note": "참고: 이메일이나 우편 주소와 같이 일반적으로 입력되는 키를 입력하는 데 사용할 수 있습니다. 암호나 기타 개인 정보를 저장 및 입력하는 데 이 기능을 사용하지 않는 것이 좋습니다.",
+                        "options": {
+                            "option1": "선택하십시오.",
+                            "option2": "웹 사이트 열기",
+                            "option3": "텍스트 입력"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "권장 업데이트",
         "optionalUpdates": "선택적 업데이트",
         "ignoredUpdates": "무시된 업데이트",
-        "successInstall": "설치 완료 날짜",
-        "failedInstall": "설치 실패 날짜",
+        "successInstall": "설치 완료: ",
+        "failedInstall": "설치 실패: ",
         "at": "시간",
         "readMore": "자세히 읽기",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "System Update를 시작합니다.",
             "title": "최신 시스템은 정상적인 시스템입니다.",
-            "last": "최종 업데이트 날짜",
-            "next": "다음 업데이트 검사가 다음 시간에 예약됨",
+            "last": "마지막 업데이트 날짜: ",
+            "next": "다음 예약 업데이트 날짜: ",
             "checkButton": "업데이트 검사",
             "checking": "업데이트 검사",
             "downloading": "업데이트 다운로드 완료",
@@ -1361,12 +1389,12 @@
             "proxyAuthenticationException": "프록시 사용자 이름 또는 암호가 올바르지 않습니다.",
             "proxyConnectionException": "프록시 서버에 연결할 수 없습니다.",
             "autoScriptEvaluationException": "자동 구성 스크립트를 평가 중 오류가 발생했습니다.",
-            "localRepositoryConnectionFailureException": "Local Repository에 연결할 수 없습니다.",
-            "localRepositoryDatabaseException": "Local Repository 데이터베이스를 찾을 수 없거나 데이터베이스가 손상되었습니다.",
+            "localRepositoryConnectionFailureException": "로컬 리포지토리에 연결할 수 없습니다.",
+            "localRepositoryDatabaseException": "로컬 리포지토리 데이터베이스를 찾을 수 없거나 데이터베이스가 손상되었습니다.",
             "networkInterruptedException": "시스템 업데이트 서버를 현재 사용할 수 없습니다. 나중에 다시 시도하십시오.",
             "helpCenterInvalidServerException": "시스템 업데이트 서버가 올바르지 않습니다. 나중에 다시 시도하십시오.",
             "catalogNotFoundException": "시스템에 적용 가능한 업데이트를 찾을 수 없습니다.",
-            "catalogCrcErrorException": "현재 시스템 업데이트 서버에서 시스템의 업데이트 카탈로그를 업데이트하는 중입니다. 나중에 다시 시도하십시오.",
+            "catalogCrcErrorException": "현재 시스템 카탈로그를 업데이트하는 중입니다. 나중에 다시 시도하십시오.",
             "catalogErrorException": "시스템 업데이트 서버의 사용자 시스템 업데이트 카탈로그에서 오류가 발견되었습니다. 나중에 다시 시도하십시오.",
             "fileNotFoundException": "파일을 찾을 수 없습니다."
         }
@@ -1616,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "오류",
                 "bodyText": "Vantage의 중요한 부분이 누락된 것을 발견했습니다. 이 파일은 백그라운드에서 다운로드됩니다. 나중에 다시 시도하십시오.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "닫기",
+                "offlineText": "인터넷에 연결되어 있지 않습니다. 이 페이지의 일부가 정상적으로 작동하지 않을 것입니다. 다시 연결하십시오"
             }
         },
         "homeprotection": {
@@ -2139,7 +2167,7 @@
         "experience": "경험",
         "privacytitle": "익명으로 사용 통계를 수집하여 앱 품질을 개선하는 데 도움을 줄 수 있습니다.",
         "moreInterest": "+ 취미 추가",
-        "title1": "그림을 그리고, 간단한 메모를 하고, 모든 자료에 주석을 달 수 있는 도구인",
+        "title1": "에 오신 것을 환영합니다",
         "title2": "Lenovo",
         "title3": "Vantage",
         "privacypolicy": "Lenovo의 개인정보 보호정책",

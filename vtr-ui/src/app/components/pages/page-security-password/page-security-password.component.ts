@@ -11,6 +11,8 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { RegionService } from 'src/app/services/region/region.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { ActivatedRoute, Params } from '@angular/router';
+import { GuardService } from '../../../services/guard/security-guardService.service';
 
 @Component({
 	selector: 'vtr-page-security-password',
@@ -35,7 +37,9 @@ export class PageSecurityPasswordComponent implements OnInit {
 		private modalService: NgbModal,
 		public regionService: RegionService,
 		vantageShellService: VantageShellService,
-		private securityAdvisorMockService: SecurityAdvisorMockService
+		private securityAdvisorMockService: SecurityAdvisorMockService,
+		private router: ActivatedRoute,
+		private guard: GuardService
 	) {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
@@ -66,6 +70,9 @@ export class PageSecurityPasswordComponent implements OnInit {
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+			this.passwordManager.refresh();
+		}
 	}
 
 	getDashLane(): void {
@@ -101,7 +108,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 			}
 		);
 
-		this.cmsService.fetchCMSArticle(this.dashlaneArticleId, {'Lang': 'EN'}).then((response: any) => {
+		this.cmsService.fetchCMSArticle(this.dashlaneArticleId, { 'Lang': 'EN' }).then((response: any) => {
 			if (response && response.Results && response.Results.Category) {
 				this.dashlaneArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
 			}
@@ -114,7 +121,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 			size: 'lg',
 			centered: true,
 			windowClass: 'Article-Detail-Modal',
-			keyboard : false
+			keyboard: false
 		});
 		articleDetailModal.componentInstance.articleId = this.dashlaneArticleId;
 	}
