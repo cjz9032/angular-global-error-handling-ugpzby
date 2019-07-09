@@ -9,6 +9,9 @@ import { HardwareDashboardRoutingModule } from './hardware-dashboard-routing.mod
 import { MockService } from '../services/mock/mock.service';
 import { CommonUiModule } from './common-ui.module';
 import { CommonWidgetModule } from './common-widget.module';
+import { TranslateModule, TranslateLoader, TranslatePipe } from '@ngx-translate/core';
+import { HttpLoaderFactory } from './translation.module';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
 	declarations: [
@@ -21,7 +24,18 @@ import { CommonWidgetModule } from './common-widget.module';
 		SharedModule,
 		HardwareDashboardRoutingModule,
 		CommonUiModule,
-		CommonWidgetModule
+		CommonWidgetModule,
+		TranslateModule.forChild({
+			loader: {
+				provide: TranslateLoader,
+				useFactory: HttpLoaderFactory,
+				deps: [HttpClient]
+			}
+		})
+	],
+	exports: [
+		TranslateModule,
+		TranslatePipe
 	],
 	providers: [
 		MockService

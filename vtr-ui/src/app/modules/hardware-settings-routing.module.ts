@@ -25,6 +25,7 @@ import { PageConnectedHomeSecurityComponent } from '../components/pages/page-con
 import { PageUserComponent } from '../components/pages/page-user/page-user.component';
 import { PageAutocloseComponent } from '../components/pages/page-autoclose/page-autoclose.component';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
+import { TranslationModule } from './translation.module';
 
 const routes: Routes = [
 	// {
@@ -251,10 +252,12 @@ const routes: Routes = [
 // 	}];
 @NgModule({
 	imports: [
-		RouterModule.forChild(routes)
+		RouterModule.forChild(routes),
+		TranslationModule
 	],
 	exports: [
-		RouterModule
+		RouterModule,
+		TranslationModule
 	]
 })
 export class HardwareSettingRoutingModule { }

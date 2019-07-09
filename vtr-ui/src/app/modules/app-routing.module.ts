@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TranslationModule } from './translation.module';
 
 const routes: Routes = [
 	{
@@ -23,10 +24,12 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [
-		RouterModule.forRoot(routes, { useHash: true, scrollPositionRestoration: 'enabled' })
+		RouterModule.forRoot(routes, { useHash: true, scrollPositionRestoration: 'enabled' }),
+		TranslationModule
 	],
 	exports: [
-		RouterModule
+		RouterModule,
+		TranslationModule
 	]
 })
 export class AppRoutingModule { }

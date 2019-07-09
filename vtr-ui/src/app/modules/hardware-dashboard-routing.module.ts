@@ -20,6 +20,7 @@ import { PageDashboardComponent } from '../components/pages/page-dashboard/page-
 // import { WindowsHelloGuardService } from '../services/guard/windows-hello-guardService.service';
 // import { PageConnectedHomeSecurityComponent } from '../components/pages/page-connected-home-security/page-connected-home-security.component';
 import { GuardService } from '../services/guard/security-guardService.service';
+import { TranslationModule } from './translation.module';
 // import { LocalStorageKey } from '../enums/local-storage-key.enum';
 // import { PageAutocloseComponent } from '../components/pages/page-autoclose/page-autoclose.component';
 // import { PageSmartAssistComponent } from '../components/pages/page-smart-assist/page-smart-assist.component';
@@ -251,10 +252,12 @@ const routes: Routes = [
 	}];
 @NgModule({
 	imports: [
-		RouterModule.forChild(routes)
+		RouterModule.forChild(routes),
+		TranslationModule
 	],
 	exports: [
-		RouterModule
+		RouterModule,
+		TranslationModule
 	]
 })
 export class HardwareDashboardRoutingModule { }

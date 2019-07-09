@@ -7,7 +7,9 @@ import { SharedModule } from './shared.module';
 import { CommonModalModule } from './common-modal.module';
 import { CommonUiModule } from './common-ui.module';
 import { CommonWidgetModule } from './common-widget.module';
-import { TranslationModule } from './translation.module';
+import { TranslationModule, HttpLoaderFactory } from './translation.module';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
 	declarations: [
@@ -19,7 +21,15 @@ import { TranslationModule } from './translation.module';
 		CommonUiModule,
 		CommonWidgetModule,
 		SharedModule,
-		TranslationModule,
+		TranslateModule.forRoot({
+			loader: {
+				provide: TranslateLoader,
+				useFactory: HttpLoaderFactory,
+				deps: [HttpClient]
+			},
+			isolate: false
+		}),
+		TranslationModule.forRoot(),
 		AppRoutingModule,
 	],
 	exports: [
