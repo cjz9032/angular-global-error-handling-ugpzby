@@ -8,8 +8,9 @@
 				<div class="media-body pb-0 mb-0 small">
 					<div class="d-flex justify-content-between align-items-center w-100">
 						<div class="custom-control custom-checkbox update-checkbox">
-							<input id="{{ 'updateCheckbox' + randomNumber + i }}"
-								type="checkbox"
+							<input type="checkbox"
+							id="{{ 'updateCheckbox' + randomNumber + i }}"
+							attr.aria-label="{{ 'updateCheckbox' + randomNumber + i }}"
 								[disabled]="item.isDependency"
 								class="custom-control-input"
 								[checked]="item.isSelected"
@@ -46,7 +47,9 @@
 								</div>
 							</div>
 						</div>
-						<a href="javascript:void();">
+						<a href="javascript:void();"
+						id="su_question_mark"
+						aria-label="su_question_mark">
 							<fa-icon class="question"
 								triggers="click:blur"
 								placement="auto"
@@ -135,6 +138,8 @@
 				<a href="javascript:void(0)"
 					class="read"
 				   vtrMetrics
+				   id="su-package-readme"
+				   aria-label="su-package-readme"
 				   metricsItem="readme"
 				   metricsEvent="featureClick"
 				   (click)="onReadMoreClick($event)">{{'systemUpdates.readMore' | translate}}</a>
@@ -145,6 +150,8 @@
 				<a href="javascript:void(0)"
 					class="ignore"
 					vtrMetrics
+					id="su-ignore-update"
+				    aria-label="su-ignore-update"
 				    metricsItem="ignore"
 					metricsEvent="featureClick"
 					metricsParam="{{ 'packageID=' + packageID }}"
@@ -156,6 +163,8 @@
 				<a href="javascript:void(0)"
 					class="ignore"
 					vtrMetrics
+					id="su-unIgnore-update"
+				    aria-label="su-unIgnore-update"
 				    metricsItem="attend"
 					metricsEvent="featureClick"
 					metricsParam="{{ 'packageID=' + packageID }}"
