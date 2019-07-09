@@ -8,6 +8,8 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalCommonConfirmationComponent } from '../../modal/modal-common-confirmation/modal-common-confirmation.component';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { Subscription } from 'rxjs';
 
 enum ssoErroType {
 
@@ -98,6 +100,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	private eventBind : any;
 	private startBind : any;
 	private completeBInd : any;
+	private notificationSubscription: Subscription;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -111,6 +114,9 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		this.cacheCleared = false;
 		this.isBroswerVisible = false;
 		this.isOnline = this.commonService.isOnline;
+		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
 		this.metrics = vantageShellService.getMetrics();
 		const win: any = window;
 		if (win.webviewPopup) {
@@ -412,12 +418,34 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 
 	}
 
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.devService.writeLog('onNotification() NetworkStatus: ' + notification.type);
+					let currentIsOnline = notification.payload.isOnline;
+					if (!currentIsOnline && this.isOnline != currentIsOnline) {
+						this.popupErrorMessage(ssoErroType.SSO_ErrorType_DisConnect);
+						this.activeModal.dismiss();
+					}
+					this.isOnline = currentIsOnline;
+					break;
+				default:
+					break;
+			}
+		}
+	}
+
 	ngOnDestroy(): void {
 		if (this.webView) {
 			this.webView.removeEventListener("eventtriggered", this.eventBind);
 			this.webView.removeEventListener("navigationstarting", this.startBind);
 			this.webView.removeEventListener("navigationcompleted", this.completeBInd);
 			this.webView.close();
+		}
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
 		}
 	}
 }

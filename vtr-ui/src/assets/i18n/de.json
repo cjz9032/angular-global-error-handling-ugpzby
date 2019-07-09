@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "Empfohlene Updates",
         "optionalUpdates": "Optionale Updates",
         "ignoredUpdates": "Ignorierte Updates",
-        "successInstall": "Erfolgreiche Installation am",
-        "failedInstall": "Fehlgeschlagene Installation am",
+        "successInstall": "Installation erfolgreich: ",
+        "failedInstall": "Fehlgeschlagene Installation: ",
         "at": "um",
         "readMore": "Weiterlesen",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "Willkommen bei System Update.",
             "title": "Ein aktuelles System ist in gutem Zustand.",
-            "last": "Letztes Update",
-            "next": "Nächste Prüfung auf Updates geplant für",
+            "last": "Letzte Aktualisierung: ",
+            "next": "Nächste geplante Aktualisierung: ",
             "checkButton": "AUF UPDATES PRÜFEN",
             "checking": "Es wird nach Aktualisierungen gesucht",
             "downloading": "Herunterladen von Updates abgeschlossen",
@@ -1394,7 +1394,7 @@
             "networkInterruptedException": "Der Systemaktualisierungsserver ist zurzeit nicht verfügbar. Versuchen Sie es später erneut.",
             "helpCenterInvalidServerException": "Ungültiger Systemaktualisierungsserver. Versuchen Sie es später erneut.",
             "catalogNotFoundException": "Es wurden keine verfügbaren Updates für Ihr System gefunden.",
-            "catalogCrcErrorException": "Der Updatekatalog für Ihr System wird gerade auf dem Systemaktualisierungsserver aktualisiert. Versuchen Sie es später erneut.",
+            "catalogCrcErrorException": "Der Katalog für Ihr System wird derzeit aktualisiert. Versuchen Sie es später erneut.",
             "catalogErrorException": "Im Updatekatalog für Ihr System auf dem Systemaktualisierungsserver wurde ein Fehler gefunden. Versuchen Sie es später erneut.",
             "fileNotFoundException": "Datei nicht gefunden."
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Fehler",
                 "bodyText": "Wir haben festgestellt, dass Ihnen wichtige Teile von Vantage fehlen. Diese Teile werden im Hintergrund heruntergeladen. Versuchen Sie es später erneut.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "schließen",
+                "offlineText": "Wir haben festgestellt, dass Sie nicht mit dem Internet verbunden sind. Einige Teile dieser Seite funktionieren nicht richtig. Bitte erneut verbinden"
             }
         },
         "homeprotection": {

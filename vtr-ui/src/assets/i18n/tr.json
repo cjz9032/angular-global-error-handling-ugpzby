@@ -439,7 +439,7 @@
             "collapse": "Daralt",
             "expand": "Genişlet",
             "loader": "Durum <br> Alma",
-			"loading": "Yükleniyor..."
+            "loading": "Yükleniyor..."
         }
     },
     "privacy": {
@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "Önerilen Güncellemeler",
         "optionalUpdates": "İsteğe Bağlı Güncellemeler",
         "ignoredUpdates": "Yoksayılan Güncellemeler",
-        "successInstall": "Şu tarihte yüklendi:",
-        "failedInstall": "Şu tarihte yükleme başarısız:",
+        "successInstall": "Başarıyla yüklendi: ",
+        "failedInstall": "Kurulum yapılamadı: ",
         "at": "saat",
         "readMore": "Okumaya devam edin",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "System Update'i kullanmaya hoş geldiniz.",
             "title": "Güncel bir sistem, sağlıklı sistemdir.",
-            "last": "Son güncelleme tarihi",
-            "next": "Zamanlanan bir sonraki güncellenmiş tarama",
+            "last": "Son güncelleme: ",
+            "next": "Sonraki zamanlanmış güncelleme: ",
             "checkButton": "GÜNCELLEMELERİ DENETLE",
             "checking": "Güncellemeler denetleniyor",
             "downloading": "Güncellemelerin indirilmesi tamamlandı",
@@ -1394,7 +1394,7 @@
             "networkInterruptedException": "Sistem Güncelleme Sunucusu şu anda kullanılamıyor. Lütfen daha sonra yeniden deneyin.",
             "helpCenterInvalidServerException": "Sistem Güncelleme Sunucusu geçersiz. Lütfen daha sonra yeniden deneyin.",
             "catalogNotFoundException": "Sisteminiz için geçerli bir güncelleme yok.",
-            "catalogCrcErrorException": "Sisteminiz için olan güncelleme kataloğu şu anda Sistem Güncelleme Sunucusu'nda güncelleniyor. Lütfen daha sonra yeniden deneyin.",
+            "catalogCrcErrorException": "Sisteminiz için katalog şu anda güncelleniyor. Lütfen daha sonra yeniden deneyin.",
             "catalogErrorException": "Sistem Güncelleme Sunucusu'ndaki sisteminiz için olan güncelleme kataloğunda bir hata saptandı. Lütfen daha sonra yeniden deneyin.",
             "fileNotFoundException": "Dosya bulunamadı."
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Hata",
                 "bodyText": "Vantage'ın kritik parçalarının sizde olmadığını tespit ettik. Bu parçalar arka planda indirilecek. Lütfen daha sonra yeniden deneyin.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "kapat",
+                "offlineText": "İnternet'e bağlı olmadığınızı tespit ettik. Bu sayfanın bazı kısımları düzgün çalışmayacak. Lütfen yeniden bağlanın"
             }
         },
         "homeprotection": {
