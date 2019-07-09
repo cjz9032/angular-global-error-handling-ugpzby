@@ -27,6 +27,7 @@ import { UiLightingProfileComponent } from '../components/ui/ui-lighting-profile
 import { UiMacrokeyRecordedListComponent } from '../components/ui/ui-macrokey-recorded-list/ui-macrokey-recorded-list.component';
 import { WidgetMacrokeySettingsComponent } from '../components/widgets/widget-macrokey-settings/widget-macrokey-settings.component';
 import { SharedModule } from './shared.module';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 @NgModule({
 	declarations: [
@@ -59,10 +60,8 @@ import { SharedModule } from './shared.module';
 	],
 	imports: [
 		CommonModule,
-		SharedModule
-	],
-	providers: [
-
+		SharedModule,
+		ColorPickerModule
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA

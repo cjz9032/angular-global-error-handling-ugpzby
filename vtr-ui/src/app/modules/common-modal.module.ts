@@ -18,6 +18,10 @@ import { ModalServerSwitchComponent } from '../components/modal/modal-server-swi
 import { ModalThreatLocatorComponent } from '../components/modal/modal-threat-locator/modal-threat-locator.component';
 import { ModalAboutComponent } from '../components/modal/modal-about/modal-about.component';
 import { DownloadFailedModalComponent } from '../components/pages/page-smart-assist/voice/download-failed-modal/download-failed-modal.component';
+import { TranslationModule } from './translation.module';
+import { CommonPipeModule } from './common-pipe.module';
+import { CommonDirectiveModule } from './common-directive.module';
+import { SharedModule } from './shared.module';
 
 // THIRD PARTY MODULES
 
@@ -43,11 +47,8 @@ import { DownloadFailedModalComponent } from '../components/pages/page-smart-ass
 		DownloadFailedModalComponent,
 	],
 	imports: [
-		CommonModule
-	],
-	providers: [
-	],
-	bootstrap: [
+		CommonModule,
+		SharedModule
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA

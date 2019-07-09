@@ -5,6 +5,7 @@ import { AppEventDirective } from '../directives/app-event.directive';
 import { OutsideclickDirective } from '../directives/outsideclick.directive';
 import { TranslateDirective } from '../directives/translate.directive';
 import { MetricsDirective } from '../directives/metrics.directive';
+import { LinkStatusDirective } from '../directives/link-status.directive';
 
 @NgModule({
 	declarations: [
@@ -12,24 +13,20 @@ import { MetricsDirective } from '../directives/metrics.directive';
 		MetricsDirective,
 		OutsideclickDirective,
 		TranslateDirective,
+		LinkStatusDirective
 	],
 	exports: [
 		AppEventDirective,
 		MetricsDirective,
 		OutsideclickDirective,
 		TranslateDirective,
+		LinkStatusDirective
 	],
 	imports: [
 		CommonModule
 	],
-	providers: [
-	],
-	bootstrap: [
-	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
-	],
-	entryComponents: [
 	]
 })
 export class CommonDirectiveModule { }

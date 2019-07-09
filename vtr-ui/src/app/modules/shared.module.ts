@@ -1,18 +1,15 @@
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ArticleItemComponent } from '../components/article-item/article-item.component';
 import { BaseComponent } from '../components/base/base.component';
-import { CommonModalModule } from './common-modal.module';
 import { CommonModule } from '@angular/common';
 import { CommonService } from '../services/common/common.service';
 import { CommonUiModule } from './common-ui.module';
-import { CommonWidgetModule } from './common-widget.module';
 import { CommsService } from '../services/comms/comms.service';
 import { ContainerArticleComponent } from '../components/container-article/container-article.component';
 import { ContainerCardComponent } from '../components/container-card/container-card.component';
 import { CookieService } from 'ngx-cookie-service';
 import {
 	CUSTOM_ELEMENTS_SCHEMA,
-	ErrorHandler,
 	NgModule,
 	NO_ERRORS_SCHEMA
 } from '@angular/core';
@@ -25,11 +22,9 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { GlobalErrorHandler } from '../services/error-handler/global.service';
 import { HeaderMainComponent } from '../components/header-main/header-main.component';
 import { HttpClientModule } from '@angular/common/http';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { LinkStatusDirective } from '../directives/link-status.directive';
 import { MenuHeaderComponent } from '../components/menu-header/menu-header.component';
 import { MenuMainComponent } from '../components/menu-main/menu-main.component';
 import { MockService } from '../services/mock/mock.service.prod';
@@ -57,16 +52,13 @@ library.add(fal);
 		ContainerArticleComponent,
 		ContainerCardComponent,
 		HeaderMainComponent,
-		LinkStatusDirective,
 		MenuHeaderComponent,
 		MenuMainComponent,
 		ModalLenovoIdComponent,
 		ModalWelcomeComponent,
 	],
 	exports: [
-		// CommonPipeModule,
-		CommonUiModule,
-		CommonWidgetModule,
+		CommonPipeModule,
 		FormsModule,
 		HttpClientModule,
 		NgbModule,
@@ -75,18 +67,16 @@ library.add(fal);
 		CommonDirectiveModule
 	],
 	imports: [
-		CommonPipeModule,
-		TranslationModule,
 		AngularSvgIconModule,
-		CommonModalModule,
 		CommonModule,
-		CommonWidgetModule,
+		CommonPipeModule,
 		FontAwesomeModule,
 		FormsModule,
 		HttpClientModule,
 		Ng5SliderModule,
 		NgbModule,
 		ReactiveFormsModule,
+		TranslationModule,
 		CommonDirectiveModule
 	],
 	providers: [
@@ -98,8 +88,7 @@ library.add(fal);
 		DisplayService,
 		MockService,
 		SettingsService,
-		UserService,
-		{ provide: ErrorHandler, useClass: GlobalErrorHandler }
+		UserService
 	],
 	entryComponents: [
 		ModalWelcomeComponent,

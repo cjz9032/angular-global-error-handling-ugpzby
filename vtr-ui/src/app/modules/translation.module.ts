@@ -5,7 +5,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-	declarations: [],
 	imports: [
 		HttpClientModule,
 		TranslateModule.forRoot({

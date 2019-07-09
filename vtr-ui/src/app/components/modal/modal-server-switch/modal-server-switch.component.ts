@@ -92,7 +92,7 @@ export class ModalServerSwitchComponent implements OnInit {
 		this.activeModal.close('close');
 	}
 
-	@HostListener('document:keydown.escape', ['$event'])
+	@HostListener('document:keydown.escape')
 	onClickEscape() {
 		this.closeModal();
 	}
@@ -139,7 +139,7 @@ export class ModalServerSwitchComponent implements OnInit {
 	}
 
 	serverSwitchProcess() {
-		let serverSwitchLocalData = {
+		const serverSwitchLocalData = {
 			country: this.serverSwitchData.country,
 			language: this.serverSwitchData.language,
 			segment: this.serverSwitchData.segment,

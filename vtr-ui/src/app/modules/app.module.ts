@@ -4,7 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, ErrorHandler, NgModule } from '@angular/core';
 import { GlobalErrorHandler } from '../services/error-handler/global.service';
 import { SharedModule } from './shared.module';
-import { CommonPipeModule } from './common-pipe.module';
+import { CommonModalModule } from './common-modal.module';
+import { CommonUiModule } from './common-ui.module';
 
 @NgModule({
 	declarations: [
@@ -12,9 +13,10 @@ import { CommonPipeModule } from './common-pipe.module';
 	],
 	imports: [
 		BrowserModule,
+		CommonModalModule,
+		CommonUiModule,
 		SharedModule,
 		AppRoutingModule,
-		CommonPipeModule
 	],
 	providers: [
 		{ provide: ErrorHandler, useClass: GlobalErrorHandler }

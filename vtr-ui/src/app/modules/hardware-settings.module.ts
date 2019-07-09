@@ -52,6 +52,7 @@ import { SubpageDeviceSettingsAudioComponent } from '../components/pages/page-de
 import { SubpageDeviceSettingsDisplayComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
 import { SubpageDeviceSettingsInputAccessoryComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
 import { SubpageDeviceSettingsPowerComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
+import { TranslationModule } from './translation.module';
 import { UiCircleRadioComponent } from '../components/ui/ui-circle-radio/ui-circle-radio.component';
 import { UiDaysPickerComponent } from '../components/ui/ui-days-picker/ui-days-picker.component';
 import { UiListSupportComponent } from '../components/ui/ui-list-support/ui-list-support.component';
@@ -71,6 +72,7 @@ import { VoiceComponent } from '../components/pages/page-smart-assist/voice/voic
 		BatteryIndicatorComponent,
 		CameraBackgroundBlurComponent,
 		CameraControlComponent,
+		ClockComponent,
 		ConnectedHomeComponent,
 		ConnectedHomeMyHomeComponent,
 		ContainerCollapsibleComponent,
@@ -90,6 +92,7 @@ import { VoiceComponent } from '../components/pages/page-smart-assist/voice/voic
 		PageDeviceUpdatesComponent,
 		PageHardwarescanComponent,
 		PagePrivacyComponent,
+		PageQuestionsComponent,
 		PageSecurityAntivirusComponent,
 		PageSecurityComponent,
 		PageSecurityHomeSecurityComponent,
@@ -101,6 +104,7 @@ import { VoiceComponent } from '../components/pages/page-smart-assist/voice/voic
 		PageSmartAssistComponent,
 		PageSupportComponent,
 		PageSupportDetailComponent,
+		PowerSmartSettingsComponent,
 		SmartStandbyComponent,
 		SpinnerComponent,
 		SubpageDeviceSettingsAudioComponent,
@@ -110,24 +114,13 @@ import { VoiceComponent } from '../components/pages/page-smart-assist/voice/voic
 		UiCircleRadioComponent,
 		UiDaysPickerComponent,
 		UiListSupportComponent,
-		VoiceComponent,
-		ClockComponent,
-		PageQuestionsComponent,
-		PowerSmartSettingsComponent,
-
+		VoiceComponent
 	],
 	imports: [
 		CommonModule,
 		SharedModule,
-		HardwareSettingRoutingModule
-	],
-	exports: [
-	],
-	providers: [
-
-	],
-	entryComponents: [
-
+		HardwareSettingRoutingModule,
+		TranslationModule
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA,

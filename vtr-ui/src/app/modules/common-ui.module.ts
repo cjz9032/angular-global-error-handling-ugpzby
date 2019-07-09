@@ -21,6 +21,8 @@ import { UiSecurityStatusbarComponent } from '../components/ui/ui-security-statu
 import { UiSwitchOnoffComponent } from '../components/ui/ui-switch-onoff/ui-switch-onoff.component';
 import { UiTimePickerComponent } from '../components/ui/ui-time-picker/ui-time-picker.component';
 import { UiCircleRadioWithCheckboxComponent } from '../components/ui/ui-circle-radio-with-checkbox/ui-circle-radio-with-checkbox.component';
+import { SharedModule } from './shared.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
 	declarations: [
@@ -51,17 +53,12 @@ import { UiCircleRadioWithCheckboxComponent } from '../components/ui/ui-circle-r
 		UiCircleRadioWithCheckboxComponent
 	],
 	imports: [
-		CommonModule
-	],
-	providers: [
-	],
-	bootstrap: [
+		CommonModule,
+		SharedModule,
+		RouterModule
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
-	],
-	entryComponents: [
-
 	]
 })
 export class CommonUiModule { }

@@ -14,14 +14,11 @@ import { MockService } from '../services/mock/mock.service';
 		FeedbackFormComponent,
 		PageUserComponent,
 		PageDashboardComponent,
-
 	],
 	imports: [
 		CommonModule,
 		SharedModule,
 		HardwareDashboardRoutingModule
-	],
-	exports: [
 	],
 	providers: [
 		SanitizeModule,

@@ -18,6 +18,8 @@ import { WifiSecurityComponent } from '../components/pages/page-security-wifi/ch
 import { WidgetDeviceUpdateComponent } from '../components/widgets/widget-device-update/widget-device-update.component';
 import { WidgetDeviceUpdateSettingsComponent } from '../components/widgets/widget-device-update-settings/widget-device-update-settings.component';
 import { WidgetSecurityComponent } from '../components/widgets/widget-security/widget-security.component';
+import { SharedModule } from './shared.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
 	declarations: [
@@ -41,16 +43,12 @@ import { WidgetSecurityComponent } from '../components/widgets/widget-security/w
 		WidgetSecurityComponent,
 	],
 	imports: [
-		CommonModule
-	],
-	providers: [
-	],
-	bootstrap: [
+		CommonModule,
+		SharedModule,
+		RouterModule
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
-	],
-	entryComponents: [
 	]
 })
 export class CommonWidgetModule { }
