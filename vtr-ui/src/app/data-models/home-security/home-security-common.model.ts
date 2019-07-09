@@ -1,11 +1,10 @@
-import { EventTypes, ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
+import { EventTypes, ConnectedHomeSecurity, LocationPermissionOffError } from '@lenovo/tan-client-bridge';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalLenovoIdComponent } from 'src/app/components/modal/modal-lenovo-id/modal-lenovo-id.component';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from '../common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
-
 
 export class HomeSecurityCommon {
 	connectedHomeSecurity: ConnectedHomeSecurity;
@@ -45,8 +44,11 @@ export class HomeSecurityCommon {
 			if (this.isOnline) {
 				this.connectedHomeSecurity.createAndGetAccount().then((result) => {
 					this.startTrialDisabled = result ;
-				}).catch(() => {
+				}).catch((err: Error) => {
 					this.startTrialDisabled = false;
+					if (err instanceof LocationPermissionOffError) {
+						this.dialogService.openCHSPermissionModal();
+					}
 				});
 			} else {
 				this.dialogService.homeSecurityOfflineDialog();
@@ -57,8 +59,11 @@ export class HomeSecurityCommon {
 				if (loggedIn && !alreadyLoggedIn) {
 					this.connectedHomeSecurity.createAndGetAccount().then((result) => {
 						this.startTrialDisabled = result ;
-					}).catch(() => {
+					}).catch((err: Error) => {
 						this.startTrialDisabled = false;
+						if (err instanceof LocationPermissionOffError) {
+							this.dialogService.openCHSPermissionModal();
+						}
 					});
 					alreadyLoggedIn = true;
 				}
