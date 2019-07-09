@@ -15,15 +15,9 @@ import {
 import { DeviceService } from '../services/device/device.service';
 import { DevService } from '../services/dev/dev.service';
 import { DisplayService } from '../services/display/display.service';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-import { fal } from '@fortawesome/pro-light-svg-icons';
-import { far } from '@fortawesome/free-regular-svg-icons';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderMainComponent } from '../components/header-main/header-main.component';
 import { HttpClientModule } from '@angular/common/http';
-import { library } from '@fortawesome/fontawesome-svg-core';
 import { MenuHeaderComponent } from '../components/menu-header/menu-header.component';
 import { MenuMainComponent } from '../components/menu-main/menu-main.component';
 import { MockService } from '../services/mock/mock.service.prod';
@@ -36,13 +30,6 @@ import { SettingsService } from '../services/settings.service';
 import { TranslationModule } from './translation.module';
 import { UserService } from '../services/user/user.service';
 import { CommonDirectiveModule } from './common-directive.module';
-
-// FONT AWESOME
-
-library.add(fas);
-library.add(fab);
-library.add(far);
-library.add(fal);
 
 @NgModule({
 	declarations: [
@@ -78,7 +65,6 @@ library.add(fal);
 		AngularSvgIconModule,
 		CommonModule,
 		CommonPipeModule,
-		FontAwesomeModule,
 		FormsModule,
 		HttpClientModule,
 		Ng5SliderModule,
