@@ -14,7 +14,9 @@
 											<div class="item-text">{{'systemUpdates.installationHistory.name' | translate}}</div>
 										</div>
 										<div class="col col-3 sort-order">
-											<a (click)="toggleSortOrder()">
+											<a id="su_installation_update_sort_order"
+												aria-label="su_installation_update_sort_order"
+												(click)="toggleSortOrder()">
 												<div class="sort-heading-text">{{'systemUpdates.installationHistory.sortByDate' | translate}}</div>
 												<div class="sort-icon">
 													<fa-icon *ngIf="!sortAsc"
@@ -83,7 +85,8 @@
 											</div>
 										</div>
 										<div class="col col-1 text-right">
-											<div class="expand">
+											<div class="expand"  id="su_installation_update_expand"
+											aria-label="su_installation_update_expand" >
 												<a (click)="toggleExpand(item.packageID)">
 													<fa-icon *ngIf="expandedRecordId!==item.packageID"
 														[icon]="['fas', 'plus-circle']"></fa-icon>
@@ -101,6 +104,8 @@
 				<div class="float-right"
 					*ngIf="!showAll">
 					<button type="button"
+						id="su_installation_update_showAll"
+						aria-label="su_installation_update_showAll"
 						(click)="onShowAllClick()"
 						class="btn btn-link">{{'systemUpdates.installationHistory.showAll' | translate}}</button>
 				</div>

@@ -14,7 +14,10 @@
 			</div>
 			<div class="col-sm-12 col-md-12 col-lg-4">
 				<div class="button-box shift-right">
-					<vtr-ui-button (onClick)="onInstallAllUpdates($event)"
+					<vtr-ui-button
+						id="su_install_all_updates"
+						aria-label="su_install_all_updates"
+						(onClick)="onInstallAllUpdates($event)"
 						[isDisabled]="!((criticalUpdates && criticalUpdates.length > 0) || (recommendedUpdates && recommendedUpdates.length > 0) || (optionalUpdates && optionalUpdates.length > 0))"
 						[upperCaseLabel]="true"
 						[label]="'systemUpdates.availableUpdates.installAllUpdates' | translate"
@@ -109,9 +112,11 @@
 					<div class="col">
 						<div class="header">
 							<div class="row d-flex justify-content-between w-100">
-								<div class="heading">{{ignoredUpdates.length}} 
+								<div class="heading">{{ignoredUpdates.length}}
 									{{'systemUpdates.ignoredUpdates' | translate}}</div>
 								<div class="px-3 collapse-control"
+									id="su-col-exp-ignore"
+									aria-label="su-col-exp-ignore"
 									(click)="onToggle()">
 									<div *ngIf="isCollapsed"
 										class="collapse-text">
@@ -141,6 +146,8 @@
 					<div class="col-12">
 						<div class="button-box shift-left">
 							<vtr-ui-button (onClick)="onInstallSelectedUpdates($event)"
+							id="su_install_selected_updates"
+							aria-label="su_install_selected_updates"
 								[isDisabled]="!isUpdateSelected"
 								[upperCaseLabel]="true"
 								[label]="'systemUpdates.availableUpdates.installSelectedUpdates' | translate"
