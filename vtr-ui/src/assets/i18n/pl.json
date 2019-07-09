@@ -439,7 +439,7 @@
             "collapse": "Zwiń",
             "expand": "Rozwiń",
             "loader": "Pobieranie <br> statusu",
-			"loading": "Ładuję..."
+            "loading": "Ładuję..."
         }
     },
     "privacy": {
@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "Zalecane aktualizacje",
         "optionalUpdates": "Opcjonalne aktualizacje",
         "ignoredUpdates": "Zignorowane aktualizacje",
-        "successInstall": "Pomyślnie zainstalowano w dniu",
-        "failedInstall": "Instalacja zakończona niepowodzeniem w dniu",
+        "successInstall": "Pomyślnie zainstalowano: ",
+        "failedInstall": "Instalacja zakończona niepowodzeniem: ",
         "at": "o godzinie",
         "readMore": "Dowiedz się więcej",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "Witamy w programie System Update.",
             "title": "Zaktualizowany system to wydajny system.",
-            "last": "Ostatnio aktualizowano",
-            "next": "Kolejne wyszukiwanie aktualizacji zaplanowano na",
+            "last": "Ostatnia aktualizacja: ",
+            "next": "Następna planowana aktualizacja: ",
             "checkButton": "SPRAWDŹ AKTUALIZACJE",
             "checking": "Sprawdzanie aktualizacji",
             "downloading": "Ukończono pobieranie aktualizacji",
@@ -1353,7 +1353,7 @@
             "downloadSize": "Rozmiar plików do pobrania: ",
             "diskSpaceNeeded": "Wymagane miejsce na dysku: ",
             "ignore": "Ignoruj",
-            "attend": "Wymagane potwierdzenie",
+            "attend": "Zastosuj",
             "rebootRequiredTag": "Wymagane ponowne uruchomienie",
             "rebootDelayTag": "Wymagane ponowne uruchomienie z podłączonym zasilaniem",
             "shutdownRequiredTag": "Wymagane wyłączenie",
@@ -1394,7 +1394,7 @@
             "networkInterruptedException": "Serwer aktualizacji systemu jest obecnie niedostępny. Spróbuj ponownie później.",
             "helpCenterInvalidServerException": "Serwer aktualizacji systemu jest nieprawidłowy. Spróbuj ponownie później.",
             "catalogNotFoundException": "Nie znaleziono odpowiednich aktualizacji do Twojego systemu.",
-            "catalogCrcErrorException": "Katalog aktualizacji dla danego systemu jest aktualizowany na serwerze aktualizacji systemu. Spróbuj ponownie później.",
+            "catalogCrcErrorException": "Katalog Twojego systemu jest obecnie aktualizowany. Spróbuj ponownie później.",
             "catalogErrorException": "Na serwerze aktualizacji systemu wykryto błąd związany z katalogiem aktualizacji Twojego systemu. Spróbuj ponownie później.",
             "fileNotFoundException": "Nie znaleziono pliku."
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Błąd",
                 "bodyText": "Wykryliśmy, że brakuje ważnych elementów aplikacji Vantage. Te elementy zostaną pobrane w tle. Spróbuj ponownie później.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "zamknij",
+                "offlineText": "Wykryliśmy, że nie masz połączenia z Internetem. Niektóre części tej strony nie będą działać poprawnie. Połącz się ponownie"
             }
         },
         "homeprotection": {

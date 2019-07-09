@@ -439,7 +439,7 @@
             "collapse": "Strni",
             "expand": "Razširi",
             "loader": "Pridobivanje <br> statusa",
-			"loading": "nalaganje..."
+            "loading": "nalaganje..."
         }
     },
     "privacy": {
@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "Priporočene posodobitve",
         "optionalUpdates": "Izbirne posodobitve",
         "ignoredUpdates": "Prezrte posodobitve",
-        "successInstall": "Uspešna namestitev",
-        "failedInstall": "Neuspešna namestitev",
+        "successInstall": "Uspešna namestitev: ",
+        "failedInstall": "Neuspešna namestitev: ",
         "at": "ob",
         "readMore": "Preberite več",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "Uporabite funkcijo System Update.",
             "title": "Posodobljen sistem je zdrav sistem.",
-            "last": "Zadnja posodobitev je bila dne",
-            "next": "Naslednje načrtovano iskanje posodobitev",
+            "last": "Zadnja posodobitev: ",
+            "next": "Naslednja načrtovana posodobitev: ",
             "checkButton": "ISKANJE POSODOBITEV",
             "checking": "Preverite, ali so na voljo posodobitve",
             "downloading": "Prenos posodobitev je končan",
@@ -1394,7 +1394,7 @@
             "networkInterruptedException": "Strežnik za posodobitev sistema trenutno ni na voljo. Poskusite znova pozneje.",
             "helpCenterInvalidServerException": "Strežnik za posodobitev sistema je neveljaven. Poskusite znova pozneje.",
             "catalogNotFoundException": "Za sistem ni bilo najdenih nobenih posodobitev.",
-            "catalogCrcErrorException": "Katalog posodobitev za vaš sistem se trenutno posodablja iz strežnika za posodobitev sistema. Poskusite znova pozneje.",
+            "catalogCrcErrorException": "Katalog za vaš sistem se trenutno posodablja. Poskusite znova pozneje.",
             "catalogErrorException": "V strežniku za posodobitev sistema je bila zaznana napaka v katalogu posodobitev za vaš sistem. Poskusite znova pozneje.",
             "fileNotFoundException": "Datoteka ni bila najdena."
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Napaka",
                 "bodyText": "Zaznali smo, da vam manjkajo ključni deli programa Vantage. Ti deli se bodo prenesli v ozadju. Poskusite znova pozneje.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "zapri",
+                "offlineText": "Zaznali smo, da niste povezani z internetom. Nekateri deli te strani ne bodo delovali pravilno. Znova vzpostavite povezavo"
             }
         },
         "homeprotection": {

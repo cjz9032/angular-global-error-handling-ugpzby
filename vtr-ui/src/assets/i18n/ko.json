@@ -439,7 +439,7 @@
             "collapse": "축소",
             "expand": "확장",
             "loader": "페치 상태",
-			"loading": "로드 중..."
+            "loading": "로드 중..."
         }
     },
     "privacy": {
@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "권장 업데이트",
         "optionalUpdates": "선택적 업데이트",
         "ignoredUpdates": "무시된 업데이트",
-        "successInstall": "설치 완료 날짜",
-        "failedInstall": "설치 실패 날짜",
+        "successInstall": "설치 완료: ",
+        "failedInstall": "설치 실패: ",
         "at": "시간",
         "readMore": "자세히 읽기",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "System Update를 시작합니다.",
             "title": "최신 시스템은 정상적인 시스템입니다.",
-            "last": "최종 업데이트 날짜",
-            "next": "다음 업데이트 검사가 다음 시간에 예약됨",
+            "last": "마지막 업데이트 날짜: ",
+            "next": "다음 예약 업데이트 날짜: ",
             "checkButton": "업데이트 검사",
             "checking": "업데이트 검사",
             "downloading": "업데이트 다운로드 완료",
@@ -1389,12 +1389,12 @@
             "proxyAuthenticationException": "프록시 사용자 이름 또는 암호가 올바르지 않습니다.",
             "proxyConnectionException": "프록시 서버에 연결할 수 없습니다.",
             "autoScriptEvaluationException": "자동 구성 스크립트를 평가 중 오류가 발생했습니다.",
-            "localRepositoryConnectionFailureException": "Local Repository에 연결할 수 없습니다.",
-            "localRepositoryDatabaseException": "Local Repository 데이터베이스를 찾을 수 없거나 데이터베이스가 손상되었습니다.",
+            "localRepositoryConnectionFailureException": "로컬 리포지토리에 연결할 수 없습니다.",
+            "localRepositoryDatabaseException": "로컬 리포지토리 데이터베이스를 찾을 수 없거나 데이터베이스가 손상되었습니다.",
             "networkInterruptedException": "시스템 업데이트 서버를 현재 사용할 수 없습니다. 나중에 다시 시도하십시오.",
             "helpCenterInvalidServerException": "시스템 업데이트 서버가 올바르지 않습니다. 나중에 다시 시도하십시오.",
             "catalogNotFoundException": "시스템에 적용 가능한 업데이트를 찾을 수 없습니다.",
-            "catalogCrcErrorException": "현재 시스템 업데이트 서버에서 시스템의 업데이트 카탈로그를 업데이트하는 중입니다. 나중에 다시 시도하십시오.",
+            "catalogCrcErrorException": "현재 시스템 카탈로그를 업데이트하는 중입니다. 나중에 다시 시도하십시오.",
             "catalogErrorException": "시스템 업데이트 서버의 사용자 시스템 업데이트 카탈로그에서 오류가 발견되었습니다. 나중에 다시 시도하십시오.",
             "fileNotFoundException": "파일을 찾을 수 없습니다."
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "오류",
                 "bodyText": "Vantage의 중요한 부분이 누락된 것을 발견했습니다. 이 파일은 백그라운드에서 다운로드됩니다. 나중에 다시 시도하십시오.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "닫기",
+                "offlineText": "인터넷에 연결되어 있지 않습니다. 이 페이지의 일부가 정상적으로 작동하지 않을 것입니다. 다시 연결하십시오"
             }
         },
         "homeprotection": {

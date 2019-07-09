@@ -439,7 +439,7 @@
             "collapse": "Restrângere",
             "expand": "Extindere",
             "loader": "Obținerea <br> statutului",
-			"loading": "se incarca..."
+            "loading": "se incarca..."
         }
     },
     "privacy": {
@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "Actualizări recomandate",
         "optionalUpdates": "Actualizări opționale",
         "ignoredUpdates": "Actualizări ignorate",
-        "successInstall": "Instalare reuşită în data de",
-        "failedInstall": "Instalare nereuşită în data de",
+        "successInstall": "Instalare reușită: ",
+        "failedInstall": "Instalare nereușită: ",
         "at": "la",
         "readMore": "Citiți mai multe",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "Bun venit la utilizarea System Update.",
             "title": "Un sistem actualizat este un sistem sănătos.",
-            "last": "Ultima actualizare în",
-            "next": "Scanarea următoarei actualizări este programată pe",
+            "last": "Ultima actualizare: ",
+            "next": "Următoarea actualizare programată: ",
             "checkButton": "CĂUTAȚI ACTUALIZĂRI",
             "checking": "Se caută actualizări",
             "downloading": "S-a finalizat descărcarea actualizărilor",
@@ -1394,7 +1394,7 @@
             "networkInterruptedException": "Serverul de actualizări ale sistemului este momentan indisponibil. Încercaţi din nou mai târziu.",
             "helpCenterInvalidServerException": "Serverul de actualizări ale sistemului nu este valid. Încercaţi din nou mai târziu.",
             "catalogNotFoundException": "Nu s-au găsit actualizări aplicabile pentru sistemul dumneavoastră.",
-            "catalogCrcErrorException": "Catalogul de actualizări pentru sistemul dumneavoastră este actualizat în prezent pe serverul de actualizări ale sistemului. Încercaţi din nou mai târziu.",
+            "catalogCrcErrorException": "Catalogul pentru sistemul dvs. este în curs de actualizare. Încercaţi din nou mai târziu.",
             "catalogErrorException": "S-a detectat o eroare la catalogul de actualizări pentru sistemul dumneavoastră pe serverul de actualizări ale sistemului. Încercaţi din nou mai târziu.",
             "fileNotFoundException": "Fişierul nu a fost găsit."
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Eroare",
                 "bodyText": "Am detectat că vă lipesc câteva elemente critice ale Vantage. Aceste elemente vor fi descărcate în fundal. Încercaţi din nou mai târziu.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "închidere",
+                "offlineText": "Nu sunteți conectat(ă) la internet. Unele părți ale acestei pagini nu funcționează corect. Conectați-vă din nou"
             }
         },
         "homeprotection": {
