@@ -17,6 +17,7 @@ import { SecurityAdvisorMockService } from 'src/app/services/security/securityMo
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { GuardService } from '../../../services/guard/security-guardService.service';
+import { Subscription } from 'rxjs';
 
 interface DevicePostureDetail {
 	status: number; // 1,2
@@ -58,6 +59,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	securityHealthArticleCategory: string;
 	cancelClick = false;
 	isOnline = true;
+	notificationSubscription: Subscription;
 	intervalId: number;
 	interval = 5000;
 
@@ -99,7 +101,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
-		this.commonService.notification.subscribe((notification: AppNotification) => {
+		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, true);
@@ -159,6 +161,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			this.wifiSecurity.cancelRefresh();
 		}
 		clearInterval(this.intervalId);
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
 	}
 
 	getActivateDeviceStateHandler(value: WifiSecurityState) {
