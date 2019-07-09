@@ -91,7 +91,9 @@
 						position: relative;
 					}
 					@media #{$only-small-screen}{
-						height: auto;
+						&.onlyOne{
+							height: 16rem;
+						}
 					}
 					&.expanded {
 						height: auto;

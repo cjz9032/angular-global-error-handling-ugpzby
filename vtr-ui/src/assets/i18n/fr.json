@@ -439,7 +439,7 @@
             "collapse": "Réduire",
             "expand": "Développer",
             "loader": "Récupération du statut <br>",
-			"loading": "Chargement..."
+            "loading": "Chargement..."
         }
     },
     "privacy": {
@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "Mise(s) à jour recommandée(s)",
         "optionalUpdates": "Mise(s) à jour facultative(s)",
         "ignoredUpdates": "Mise(s) à jour ignorée(s)",
-        "successInstall": "Installé avec succès le",
-        "failedInstall": "Échec de l'installation le",
+        "successInstall": "Installé avec succès : ",
+        "failedInstall": "Échec de l'installation : ",
         "at": "à",
         "readMore": "En savoir plus",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "Vous êtes invité à utiliser System Update.",
             "title": "Un système à jour est un système sain.",
-            "last": "Dernière mise à jour effectuée le",
-            "next": "La prochaine analyse est prévue le",
+            "last": "Dernière mise à jour : ",
+            "next": "Prochaine mise à jour prévue : ",
             "checkButton": "RECHERCHER DES MISES À JOUR",
             "checking": "Recherche de mises à jour",
             "downloading": "Téléchargement des mises à jour effectué",
@@ -1394,7 +1394,7 @@
             "networkInterruptedException": "Le serveur de mise à jour du système est actuellement indisponible. Réessayez plus tard.",
             "helpCenterInvalidServerException": "Le serveur de mise à jour du système n'est pas valide. Réessayez plus tard.",
             "catalogNotFoundException": "Il n'existe pas de mise à jour correspondante à votre système.",
-            "catalogCrcErrorException": "Le catalogue des mises à jour pour votre système est en cours de mise à jour sur le serveur de mise à jour du système. Réessayez plus tard.",
+            "catalogCrcErrorException": "Le catalogue pour votre système est en cours de mise à jour. Réessayez plus tard.",
             "catalogErrorException": "Une erreur s'est produite avec le catalogue des mises à jour de votre système sur le serveur de mise à jour du système. Réessayez plus tard.",
             "fileNotFoundException": "Fichier introuvable."
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Erreur",
                 "bodyText": "Nous avons détecté une absence critique ce certaines pièces de Vantage. Ces pièces sont téléchargées en arrière-plan. Réessayez plus tard.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "fermer",
+                "offlineText": "Nous avons détecté que vous n'êtes pas connecté à Internet. Certaines parties de cette page ne fonctionneront pas correctement. Veuillez vous reconnecter"
             }
         },
         "homeprotection": {

@@ -68,15 +68,6 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 			this.onNotification(notification);
 		});
 
-		this.chs.on(EventTypes.chsHasSystemPermissionShowedEvent, (data) => {
-			this.hasSystemPermissionShowed = data;
-			if (data) {
-				this.permission.requestPermission('geoLocatorStatus').then((status) => {
-					this.isLocationServiceOn = status;
-				});
-			}
-		});
-
 		this.chs.on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
 			this.isLocationServiceOn = data;
 			if (this.switchPage === 4) {
@@ -171,15 +162,18 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 
 	public openLocation($event: any) {
 		this.permission.getIsDevicePermissionOn().then((response) => {
-			if (response && !this.hasSystemPermissionShowed) {
-				this.permission.requestPermission('geoLocatorStatus').then((status) => {
-					this.isLocationServiceOn = status;
+			if (response) {
+				this.permission.getSystemPermissionShowed().then((res) => {
+					this.hasSystemPermissionShowed = res;
+					if (res) {
+						WinRT.launchUri(this.url);
+					}
+					this.permission.requestPermission('geoLocatorStatus').then((status) => {
+						this.isLocationServiceOn = status;
+					});
 				});
 			} else {
 				WinRT.launchUri(this.url);
-				this.permission.requestPermission('geoLocatorStatus').then((status) => {
-					this.isLocationServiceOn = status;
-				});
 			}
 		});
 	}

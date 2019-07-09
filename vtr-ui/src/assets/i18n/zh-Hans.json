@@ -439,7 +439,7 @@
             "collapse": "折叠",
             "expand": "展开",
             "loader": "获取状态",
-			"loading": "载入中..."
+            "loading": "载入中..."
         }
     },
     "privacy": {
@@ -606,12 +606,12 @@
                 "button": "查看电池详细信息",
                 "updating": "Updating",
                 "thresholdNote": {
-					"note": "Note: ",
-					"note1": "To extend the battery lifespan, you have set your battery to stop charging at ",
-					"note2": "to stop charging at ",
-					"note3": "battery",
-					"note4": "and "
-				},
+                    "note": "Note: ",
+                    "note1": "To extend the battery lifespan, you have set your battery to stop charging at ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and "
+                },
                 "voltageError": "Battery voltage incorrect",
                 "batteryNotDetected": "No battery detected",
                 "details": {
@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "个推荐更新",
         "optionalUpdates": "个可选更新",
         "ignoredUpdates": "个已忽略的更新",
-        "successInstall": "安装成功的日期",
-        "failedInstall": "安装失败的日期",
+        "successInstall": "安装成功：",
+        "failedInstall": "安装失败：",
         "at": "时间",
         "readMore": "阅读更多信息",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "欢迎使用系统更新。",
             "title": "保持最新状态的系统才是健康的系统。",
-            "last": "上次更新时间为",
-            "next": "下次更新扫描计划时间为",
+            "last": "上次更新时间：",
+            "next": "下次计划更新时间：",
             "checkButton": "检查更新",
             "checking": "正在检查更新",
             "downloading": "正在下载更新",
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "错误",
                 "bodyText": "我们检测到您丢失了 Vantage 的关键部分。这些部分将在后台下载。请稍后重试。",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "关闭",
+                "offlineText": "我们检测到您没有连接到互联网。此页面的某些部分将无法正常运行。请重新连接"
             }
         },
         "homeprotection": {

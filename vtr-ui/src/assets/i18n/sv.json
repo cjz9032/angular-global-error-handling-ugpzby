@@ -439,7 +439,7 @@
             "collapse": "Komprimera",
             "expand": "Utöka",
             "loader": "Hämtar <br> status",
-			"loading": "Läser in..."
+            "loading": "Läser in..."
         }
     },
     "privacy": {
@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "Rekommenderade uppdateringar",
         "optionalUpdates": "Valfria uppdateringar",
         "ignoredUpdates": "Ignorerade uppdateringar",
-        "successInstall": "Installerades",
-        "failedInstall": "Kunde inte installeras",
+        "successInstall": "Har installerats: ",
+        "failedInstall": "Har inte installerats: ",
         "at": "kl.",
         "readMore": "Läs mer",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "Välkommen att använda System Update.",
             "title": "Ett uppdaterat system är ett friskt system.",
-            "last": "Senast uppdaterat den",
-            "next": "Nästa sökning efter uppdateringar är planerad den",
+            "last": "Senast uppdaterat: ",
+            "next": "Nästa schemalagda uppdatering: ",
             "checkButton": "SÖK EFTER UPPDATERINGAR",
             "checking": "Söker efter uppdateringar",
             "downloading": "Uppdateringar har hämtats",
@@ -1394,7 +1394,7 @@
             "networkInterruptedException": "Systemuppdateringsservern är inte tillgänglig just nu. Försök igen litet senare.",
             "helpCenterInvalidServerException": "System Update-servern är ogiltig. Försök igen litet senare.",
             "catalogNotFoundException": "Det gick inte att hitta några uppdateringar för ditt system.",
-            "catalogCrcErrorException": "Uppdateringskatalogen för ditt system uppdateras just nu på systemuppdateringsservern. Försök igen litet senare.",
+            "catalogCrcErrorException": "Systemkatalogen uppdateras för närvarande. Försök igen litet senare.",
             "catalogErrorException": "Ett fel inträffade med systemets uppdateringskatalog på systemuppdateringsservern. Försök igen litet senare.",
             "fileNotFoundException": "Filen hittades inte."
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Fel",
                 "bodyText": "Vi har sett att du saknar viktiga komponenter i Vantage. Komponenterna hämtas i bakgrunden. Försök igen litet senare.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "stäng",
+                "offlineText": "Datorn ser inte ut att vara ansluten till internet. Vissa avsnitt på denna sida kommer inte att fungera korrekt. Anslut på nytt"
             }
         },
         "homeprotection": {

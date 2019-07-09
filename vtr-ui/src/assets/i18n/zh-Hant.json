@@ -439,7 +439,7 @@
             "collapse": "收合",
             "expand": "展開",
             "loader": "獲取狀態",
-			"loading": "載入中..."
+            "loading": "載入中..."
         }
     },
     "privacy": {
@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "建議更新",
         "optionalUpdates": "選用更新項目",
         "ignoredUpdates": "已忽略的更新",
-        "successInstall": "成功安裝的日期：",
-        "failedInstall": "安裝失敗的日期：",
+        "successInstall": "已成功安裝：",
+        "failedInstall": "安裝失敗：",
         "at": "時間：",
         "readMore": "較多內容",
         "popup": {
@@ -1325,7 +1325,7 @@
             "neverChecked": "歡迎使用 System Update。",
             "title": "保持最新狀態的系統才是健康的系統。",
             "last": "上次更新：",
-            "next": "下次掃描更新排程於",
+            "next": "下次的排定更新：",
             "checkButton": "檢查更新",
             "checking": "檢查更新項目",
             "downloading": "下載更新完成",
@@ -1394,7 +1394,7 @@
             "networkInterruptedException": "系統更新伺服器目前無法使用。請稍後重試。",
             "helpCenterInvalidServerException": "系統更新伺服器無效。請稍後重試。",
             "catalogNotFoundException": "找不到適用於您系統的更新。",
-            "catalogCrcErrorException": "目前正在系統更新伺服器上更新您系統的更新目錄。請稍後重試。",
+            "catalogCrcErrorException": "目前正在更新您系統的目錄。請稍後重試。",
             "catalogErrorException": "在系統更新伺服器上偵測到您系統的更新目錄發生錯誤。請稍後重試。",
             "fileNotFoundException": "找不到檔案。"
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "錯誤",
                 "bodyText": "我們發現您缺少 Vantage 的關鍵組件。這些組件將在背景進行下載。請稍後重試。",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "關閉",
+                "offlineText": "我們發現您沒有連線到網際網路。此頁面的某些部分將無法正確運作。請重新連線"
             }
         },
         "homeprotection": {
