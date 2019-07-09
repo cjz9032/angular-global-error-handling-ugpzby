@@ -439,7 +439,7 @@
             "collapse": "Recolher",
             "expand": "Expandir",
             "loader": "Buscando <br> Status",
-			"loading": "Carregando..."
+            "loading": "Carregando..."
         }
     },
     "privacy": {
@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "Atualizações recomendadas",
         "optionalUpdates": "Atualizações opcionais",
         "ignoredUpdates": "Atualizações ignoradas",
-        "successInstall": "Instalado com êxito em",
-        "failedInstall": "Falha ao instalar em",
+        "successInstall": "Instalado com êxito: ",
+        "failedInstall": "Falha ao instalar: ",
         "at": "às",
         "readMore": "Ler mais",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "Bem-vindo ao uso do System Update.",
             "title": "Um sistema atualizado é um sistema saudável.",
-            "last": "Atualizado pela última vez em",
-            "next": "Próxima verificação de atualização agendada em",
+            "last": "Última atualização: ",
+            "next": "Próxima atualização agendada: ",
             "checkButton": "VERIFICAR ATUALIZAÇÕES",
             "checking": "Verificando atualizações",
             "downloading": "Download de atualizações concluído",
@@ -1394,7 +1394,7 @@
             "networkInterruptedException": "O Servidor de Atualização do Sistema está indisponível atualmente. Tente novamente mais tarde.",
             "helpCenterInvalidServerException": "O Servidor de Atualização do Sistema é inválido. Tente novamente mais tarde.",
             "catalogNotFoundException": "Nenhuma atualização aplicável encontrada para seu sistema.",
-            "catalogCrcErrorException": "O catálogo de atualizações para seu sistema está sendo atualizado no Servidor de Atualização do Sistema. Tente novamente mais tarde.",
+            "catalogCrcErrorException": "O catálogo do sistema está sendo atualizado no momento. Tente novamente mais tarde.",
             "catalogErrorException": "Erro detectado no catálogo de atualizações para seu sistema no Servidor de Atualização do Sistema. Tente novamente mais tarde.",
             "fileNotFoundException": "Arquivo não encontrado."
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Erro",
                 "bodyText": "Detectamos que você não possui partes essenciais do Vantage. Essas partes serão baixadas em segundo plano. Tente novamente mais tarde.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "fechar",
+                "offlineText": "Detectamos que você não está conectado à Internet. Algumas partes desta página não funcionarão corretamente. Reconecte-se"
             }
         },
         "homeprotection": {

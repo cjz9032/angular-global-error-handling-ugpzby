@@ -439,7 +439,7 @@
             "collapse": "Samenvouwen",
             "expand": "Uitvouwen",
             "loader": "Status <br> ophalen",
-			"loading": "Bezig met laden..."
+            "loading": "Bezig met laden..."
         }
     },
     "privacy": {
@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "Aanbevolen update(s)",
         "optionalUpdates": "Optionele update(s)",
         "ignoredUpdates": "Genegeerde update(s)",
-        "successInstall": "Geïnstalleerd op",
-        "failedInstall": "Installatie mislukt op",
+        "successInstall": "Succesvol geïnstalleerd: ",
+        "failedInstall": "Installatie mislukt: ",
         "at": "om",
         "readMore": "Meer weergeven",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "Welkom bij het gebruik van System Update.",
             "title": "Een bijgewerkt systeem is een gezond systeem.",
-            "last": "Laatst bijgewerkt op",
-            "next": "Volgende bijgewerkte scan is gepland op",
+            "last": "Laatst bijgewerkt: ",
+            "next": "Volgende geplande update: ",
             "checkButton": "CONTROLEREN OP UPDATES",
             "checking": "Zoeken naar updates",
             "downloading": "Updates downloaden voltooid",
@@ -1394,7 +1394,7 @@
             "networkInterruptedException": "De systeemupdateserver is momenteel niet beschikbaar. Probeer het later alstublieft opnieuw.",
             "helpCenterInvalidServerException": "De systeemupdateserver is ongeldig. Probeer het later alstublieft opnieuw.",
             "catalogNotFoundException": "Er zijn geen updates gevonden die op uw systeem van toepassing zijn.",
-            "catalogCrcErrorException": "De updatecatalogus voor uw systeem wordt momenteel bijgewerkt op de systeemupdateserver. Probeer het later alstublieft opnieuw.",
+            "catalogCrcErrorException": "De catalogus voor uw systeem wordt momenteel bijgewerkt. Probeer het later alstublieft opnieuw.",
             "catalogErrorException": "Er is een fout opgetreden met de updatecatalogus voor uw systeem op de systeemupdateserver. Probeer het later alstublieft opnieuw.",
             "fileNotFoundException": "Bestand niet gevonden."
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Fout",
                 "bodyText": "We hebben vastgesteld dat er essentiële stukjes Vantage missen. Deze onderdelen worden op de achtergrond gedownload. Probeer het later alstublieft opnieuw.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "sluiten",
+                "offlineText": "We hebben geconstateerd dat u geen verbinding met internet heeft. Bepaalde onderdelen van deze pagina werken niet correct. Maak opnieuw verbinding"
             }
         },
         "homeprotection": {

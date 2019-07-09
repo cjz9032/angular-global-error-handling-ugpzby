@@ -161,12 +161,15 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		this.commonService.notification.subscribe((response) => {
 			if (response.type === Gaming.GamingCapablities) {
 				this.gamingCapabilities = response.payload;
+				if (this.gamingCapabilities.smartFanFeature) {
+					this.registerThermalModeEvent();
+				}
 				this.quicksettingListInit();
 			}
 		});
 
 		// Binding regThermalMode event
-		this.registerThermalModeEvent();
+		// this.registerThermalModeEvent();
 	}
 
 	ngAfterViewInit() {

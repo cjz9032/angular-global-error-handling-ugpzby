@@ -439,7 +439,7 @@
             "collapse": "Riduci",
             "expand": "Espandi",
             "loader": "Stato di<br> recupero",
-			"loading": "Caricamento in corso..."
+            "loading": "Caricamento in corso..."
         }
     },
     "privacy": {
@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "Aggiornamento/i consigliato/i",
         "optionalUpdates": "Aggiornamento/i facoltativo/i",
         "ignoredUpdates": "Aggiornamento/i ignorato/i",
-        "successInstall": "Installazione riuscita il",
-        "failedInstall": "Installazione non riuscita il",
+        "successInstall": "Installazione completata: ",
+        "failedInstall": "Installazione non riuscita: ",
         "at": "alle",
         "readMore": "Ulteriori informazioni",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "Benvenuto in System Update.",
             "title": "Un sistema aggiornato è un sistema sano.",
-            "last": "Ultimo aggiornamento eseguito in data",
-            "next": "La prossima scansione aggiornata è pianificata in data",
+            "last": "Ultimo aggiornamento: ",
+            "next": "Prossimo aggiornamento pianificato: ",
             "checkButton": "VERIFICA DISPONIBILITÀ AGGIORNAMENTI",
             "checking": "Controllo degli aggiornamenti",
             "downloading": "Fine download aggiornamenti",
@@ -1394,7 +1394,7 @@
             "networkInterruptedException": "Il server di aggiornamento del sistema non è attualmente disponibile. Si prega di riprovare più tardi.",
             "helpCenterInvalidServerException": "Il server di aggiornamento del sistema non è valido. Si prega di riprovare più tardi.",
             "catalogNotFoundException": "Non è stato trovato alcun aggiornamento applicabile per il sistema.",
-            "catalogCrcErrorException": "È attualmente in corso l'aggiornamento del catalogo degli aggiornamenti per il sistema sul server di aggiornamento del sistema. Si prega di riprovare più tardi.",
+            "catalogCrcErrorException": "Il catalogo per il sistema è attualmente in corso di aggiornamento. Si prega di riprovare più tardi.",
             "catalogErrorException": "È stato rilevato un errore con il catalogo degli aggiornamenti per il sistema sul server di aggiornamento del sistema. Si prega di riprovare più tardi.",
             "fileNotFoundException": "File non trovato."
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Errore",
                 "bodyText": "Sono stati rilevati errori di perdita di pacchetti Vantage. Questi pacchetti verranno scaricati in background. Si prega di riprovare più tardi.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "chiudi",
+                "offlineText": "È stato rilevato che non si è connessi a Internet. Alcune parti di questa pagina non funzioneranno correttamente. Riconnettersi"
             }
         },
         "homeprotection": {

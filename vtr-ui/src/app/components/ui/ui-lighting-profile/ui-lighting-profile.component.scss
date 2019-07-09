@@ -57,7 +57,8 @@
       }
     }
     .gaming-device-image {
-      max-width: 40%;
+      width: 40%;
+      //max-width: 40%;
       // @media #{$mediaquery_X29} {
       //   max-width: 35%;
       // }
@@ -96,7 +97,7 @@
   }
 
   .gaming-light-options {
-    margin-left: 4rem;
+    margin-left: 5%;
     width: 55%;
     // @media #{$mediaquery_X9} {
     //   width: 60%;

@@ -9,7 +9,8 @@ export class PassWordManagerWidgetItem extends WidgetItem {
 		super({
 			id: 'sa-widget-lnk-pm',
 			path: 'security/password-protection',
-			type: 'security'
+			type: 'security',
+			metricsItemName: 'Password Manager'
 		}, translateService);
 		this.translateService.stream('common.securityAdvisor.pswdMgr').subscribe((value) => {
 			this.title = value;
