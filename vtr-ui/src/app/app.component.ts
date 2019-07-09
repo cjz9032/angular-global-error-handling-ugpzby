@@ -272,25 +272,35 @@ export class AppComponent implements OnInit {
 		}
 	}
 	
-	private serverSwitchThis() {
-		console.log('@sahinul from nginit');
-		//VAN-5872, server switch feature
-		/* working
-		this.activRouter.queryParams
-			.subscribe(params => {
-				console.log('@sahinul serverSwitchThis from nginit', params);
-				if (params['serverswitch']) {
-					//this.translate.resetLang('ar');
-					this.translate.reloadLang('ar');
-					this.translate.use('ar');
-				}
-			});*/
+	//VAN-5872, server switch feature
+	private serverSwitchThis() {		
 		this.activRouter.queryParamMap.subscribe((params: ParamMap) => {
-			console.log('@sahinul serverSwitchThis from nginit', params);
-			if(params.has('serverswitch')){
-				//this.translate.resetLang('ar');
-				this.translate.reloadLang('ar');
-				this.translate.use('ar'); 
+			if (params.has('serverswitch')) {
+				//retrive from localStorage
+				let serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
+				if (serverSwitchLocalData) {
+					
+					//force cms service to use this server parms
+					serverSwitchLocalData.forceit = true;
+    				this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
+
+					let langCode = (serverSwitchLocalData.language.Value).toLowerCase();
+					let langMap = {
+						'zh-hant':'zh-Hant',
+						'zh-hans':'zh-Hans',
+						'pt-br':'pt-BR',
+					};
+					if(langMap[langCode]){
+						langCode = langMap[langCode];
+					}
+
+					let allLangs = this.translate.getLangs();
+					if (allLangs.indexOf(langCode) >= 0) {
+						//this.translate.resetLang('ar');
+						this.translate.reloadLang(langCode);
+						this.translate.use(langCode);
+					}
+				}
 			}
 		});
 	}
@@ -334,6 +344,10 @@ export class AppComponent implements OnInit {
 		document.querySelector('meta[name="viewport"]').setAttribute('content', content);
 		//console.log('DPI: ', content);
 		//alert('I am at onload');
+
+		//VAN-5872, server switch feature
+		//when app loads for the 1st time then remove ServerSwitch values
+		window.localStorage.removeItem(LocalStorageKey.ServerSwitchKey);
 	}
 
 	// Defect fix VAN-2988
