@@ -167,6 +167,10 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			}
 		});
 
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.WidgetWifiStatus)) {
+			this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
+		}
+
 		if (this.chs) {
 			this.chs.refresh()
 			.then(() => {
