@@ -37,10 +37,10 @@
 					},
 					"driverPopup": {
 						"headerText": "Driver Install Required",
-						"text": "Install driver to activate RAM Overclock,",
-						"networkBoostText": "You need install driver for Network Boost to  make it effective",
-						"hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
-						"cpuOverclockText": "You need install driver for CPU Overclock to  make it effective",
+						"text": "You need to install driver for RAM Overclock to make it effective",
+						"networkBoostText": "You need to install driver for Network Boost to  make it effective",
+						"hybridModeText": "You need to install driver for Hybrid Mode to  make it effective",
+						"cpuOverclockText": "You need to install driver for CPU Overclock to  make it effective",
 						"button": "Install",
 						"link": "cancel"
 					},
