@@ -382,7 +382,7 @@
     },
     "common": {
         "menu": {
-            "dashboard": "仪表板",
+            "dashboard": "首页",
             "device": {
                 "title": "设备",
                 "sub1": "我的设备",

@@ -1,7 +1,6 @@
 import { EventTypes, ConnectedHomeSecurity, LocationPermissionOffError } from '@lenovo/tan-client-bridge';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalLenovoIdComponent } from 'src/app/components/modal/modal-lenovo-id/modal-lenovo-id.component';
-import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from '../common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
@@ -14,19 +13,13 @@ export class HomeSecurityCommon {
 	constructor(
 		connectedHomeSecurity: ConnectedHomeSecurity,
 		private modalService: NgbModal,
-		private commonService: CommonService,
-		private dialogService: DialogService
+		private dialogService: DialogService,
+		isOnline: boolean
 		) {
 			if (connectedHomeSecurity) {
 				this.connectedHomeSecurity = connectedHomeSecurity;
 			}
-			if (commonService) {
-				this.commonService = commonService;
-				this.isOnline = this.commonService.isOnline;
-				this.commonService.notification.subscribe((notification: AppNotification) => {
-					this.onNotification(notification);
-				});
-			}
+			this.isOnline = isOnline;
 	}
 
 	openCornet(feature?: string) {

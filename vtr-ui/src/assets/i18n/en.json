@@ -37,10 +37,10 @@
 					},
 					"driverPopup": {
 						"headerText": "Driver Install Required",
-						"text": "Install driver to activate RAM Overclock,",
+						"text": "Install driver to activate RAM Overclock",
 						"networkBoostText": "You need install driver for Network Boost to  make it effective",
 						"hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
-						"cpuOverclockText": "You need install driver for CPU Overclock to  make it effective",
+						"cpuOverclockText": "Install driver to activate CPU Overclock ",
 						"button": "Install",
 						"link": "cancel"
 					},
@@ -63,7 +63,7 @@
 					"media": "Media",
 					"macroKey": "Marco Key",
 					"hardwareScan": "Hardware Scan",
-					"systemUpdate": "System Update",
+					"systemUpdate": "System Updates",
 					"header": "System Tools"
 				},
 				"systemStatus": {
@@ -387,7 +387,7 @@
 				"title": "Device",
 				"sub1": "My Device",
 				"sub2": "My Device Settings",
-				"sub3": "System Update",
+				"sub3": "System Updates",
 				"sub4": "Smart Assist"
 			},
 			"security": {
@@ -551,8 +551,8 @@
 			"learnMore": "Learn more",
 			"freeMemory": "Free memory",
 			"systemUpdate": {
-				"title": "System Update",
-				"notFound": "System Update not found",
+				"title": "System update",
+				"notFound": "System update not found",
 				"detail": {
 					"uptoDate": "Software up to date ",
 					"updatedOn": "updated on ",
@@ -1270,13 +1270,13 @@
 				"modalInstallationFailed": {
 					"btnText": "ok",
 					"title": "Install Failed",
-					"desc": "Install failed, please try again later in order to use Lenovo Voice."
+					"desc": "Please try again later in order to use Lenovo Voice."
 				}
 			}
 		}
 	},
 	"systemUpdates": {
-		"title": "System Update",
+		"title": "System Updates",
 		"back": "BACK",
 		"history": "FULL HISTORY",
 		"notAvailable": "Not Available",
