@@ -63,7 +63,7 @@
 					"media": "Media",
 					"macroKey": "Marco Key",
 					"hardwareScan": "Hardware Scan",
-					"systemUpdate": "System Updates",
+					"systemUpdate": "System Update",
 					"header": "System Tools"
 				},
 				"systemStatus": {
@@ -387,7 +387,7 @@
 				"title": "Device",
 				"sub1": "My Device",
 				"sub2": "My Device Settings",
-				"sub3": "System Updates",
+				"sub3": "System Update",
 				"sub4": "Smart Assist"
 			},
 			"security": {
@@ -551,8 +551,8 @@
 			"learnMore": "Learn more",
 			"freeMemory": "Free memory",
 			"systemUpdate": {
-				"title": "System update",
-				"notFound": "System update not found",
+				"title": "System Update",
+				"notFound": "System Update not found",
 				"detail": {
 					"uptoDate": "Software up to date ",
 					"updatedOn": "updated on ",
@@ -1276,7 +1276,7 @@
 		}
 	},
 	"systemUpdates": {
-		"title": "System Updates",
+		"title": "System Update",
 		"back": "BACK",
 		"history": "FULL HISTORY",
 		"notAvailable": "Not Available",

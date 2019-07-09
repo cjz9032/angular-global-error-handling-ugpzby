@@ -6,7 +6,7 @@ import {
 	AfterViewInit
 } from '@angular/core';
 import {
-	EventTypes, ConnectedHomeSecurity, PluginMissingError, CHSAccountState
+	EventTypes, ConnectedHomeSecurity, PluginMissingError, LocationPermissionOffError, CHSAccountState
 } from '@lenovo/tan-client-bridge';
 import {
 	VantageShellService
@@ -167,12 +167,16 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			}
 		});
 
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.WidgetWifiStatus)) {
+			this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
+		}
+
 		if (this.chs) {
 			this.chs.refresh()
 			.then(() => {
 				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
 			})
-			.catch(this.pluginMissingHandler.bind(this));
+			.catch((err: Error) => this.handleResponseError(err));
 			this.pullCHS();
 		}
 	}
@@ -188,7 +192,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			.then(() => {
 				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
 			})
-			.catch(this.pluginMissingHandler.bind(this));
+			.catch((err: Error) => this.handleResponseError(err));
 			this.pullCHS();
 		}
 	}
@@ -201,7 +205,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			.then(() => {
 				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
 			})
-			.catch(this.pluginMissingHandler.bind(this));
+			.catch((err: Error) => this.handleResponseError(err));
 			this.pullCHS();
 		} else if (visibility === 'hidden') {
 			window.clearInterval(this.intervalId);
@@ -211,7 +215,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 
 	ngOnDestroy() {
 		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, false);
-		clearInterval(this.intervalId);
+		window.clearInterval(this.intervalId);
 	}
 
 	showWelcomeDialog() {
@@ -304,15 +308,18 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		}
 	}
 
-	private pluginMissingHandler(err) {
+	private handleResponseError(err: Error) {
 		const showPluginMissing = this.commonService.getSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog);
-		if (showPluginMissing !== 'show' && showPluginMissing !== 'finish') {
-			if (err instanceof PluginMissingError) {
+		if (err instanceof PluginMissingError) {
+			if (showPluginMissing !== 'show' && showPluginMissing !== 'finish') {
 				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'show');
 				this.dialogService.homeSecurityPluginMissingDialog();
-			} else {
-				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
 			}
+		} else {
+			this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
+		}
+		if (err instanceof LocationPermissionOffError) {
+			this.dialogService.openCHSPermissionModal();
 		}
 	}
 
@@ -320,7 +327,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		this.intervalId = window.setInterval(() => {
 			this.chs.refresh().then(() => {
 				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-			}).catch(this.pluginMissingHandler.bind(this));
+			}).catch((err: Error) => this.handleResponseError(err));
 		}, this.interval);
 	}
 }
