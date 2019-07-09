@@ -14,13 +14,10 @@ import { ModalCommonConfirmationComponent } from '../components/modal/modal-comm
 import { ModalArticleDetailComponent } from '../components/modal/modal-article-detail/modal-article-detail.component';
 import { ModalIntelligentCoolingModesComponent } from '../components/modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
 import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
-import { ModalServerSwitchComponent } from '../components/modal/modal-server-switch/modal-server-switch.component';
+// import { ModalServerSwitchComponent } from '../components/modal/modal-server-switch/modal-server-switch.component';
 import { ModalThreatLocatorComponent } from '../components/modal/modal-threat-locator/modal-threat-locator.component';
 import { ModalAboutComponent } from '../components/modal/modal-about/modal-about.component';
 import { DownloadFailedModalComponent } from '../components/pages/page-smart-assist/voice/download-failed-modal/download-failed-modal.component';
-import { TranslationModule } from './translation.module';
-import { CommonPipeModule } from './common-pipe.module';
-import { CommonDirectiveModule } from './common-directive.module';
 import { SharedModule } from './shared.module';
 
 // THIRD PARTY MODULES
@@ -40,7 +37,7 @@ import { SharedModule } from './shared.module';
 		ModalArticleDetailComponent,
 		ModalIntelligentCoolingModesComponent,
 		ModalErrorMessageComponent,
-		ModalServerSwitchComponent,
+		// ModalServerSwitchComponent,
 		ModalVoiceComponent,
 		ModalThreatLocatorComponent,
 		ModalAboutComponent,
@@ -67,7 +64,7 @@ import { SharedModule } from './shared.module';
 		ModalArticleDetailComponent,
 		ModalIntelligentCoolingModesComponent,
 		ModalErrorMessageComponent,
-		ModalServerSwitchComponent,
+		// ModalServerSwitchComponent,
 		ModalVoiceComponent,
 		ModalThreatLocatorComponent,
 		ModalAboutComponent,

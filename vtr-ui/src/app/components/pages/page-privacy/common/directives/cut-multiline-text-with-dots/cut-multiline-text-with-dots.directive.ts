@@ -11,7 +11,7 @@ export class CutMultilineTextWithDotsDirective implements AfterViewInit, OnDestr
 	showMoreBtnClickHandler = this.showMoreBtnClick.bind(this);
 
 	constructor(
-		@Inject(DOCUMENT) private document: Document,
+		// @Inject(DOCUMENT) private document: Document,
 		private el: ElementRef,
 	) {
 	}
@@ -28,7 +28,7 @@ export class CutMultilineTextWithDotsDirective implements AfterViewInit, OnDestr
 	addCutText() {
 		const textToAdd = this.textToAppend.split(' ');
 		const cutHtmlElement = this.el.nativeElement;
-		const appendedTextTag = this.document.createElement('span');
+		const appendedTextTag = window.document.createElement('span');
 		cutHtmlElement.append(appendedTextTag);
 		cutHtmlElement.firstElementChild.innerText = '';
 

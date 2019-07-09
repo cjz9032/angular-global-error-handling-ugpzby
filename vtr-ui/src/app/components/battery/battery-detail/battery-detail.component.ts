@@ -1,7 +1,5 @@
 import { Component, OnInit, OnDestroy, Input, ChangeDetectorRef } from '@angular/core';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
-import { BatteryDetailMockService } from 'src/app/services/battery-detail/battery-detail.mock.service';
-import { BaseBatteryDetail } from 'src/app/services/battery-detail/base-battery-detail';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { BatteryChargeStatus } from 'src/app/enums/battery-charge-status.enum';

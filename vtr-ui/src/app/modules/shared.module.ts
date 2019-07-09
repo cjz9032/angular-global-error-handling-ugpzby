@@ -58,13 +58,22 @@ library.add(fal);
 		ModalWelcomeComponent,
 	],
 	exports: [
+		ArticleItemComponent,
+		BaseComponent,
+		CommonDirectiveModule,
 		CommonPipeModule,
+		ContainerArticleComponent,
+		ContainerCardComponent,
 		FormsModule,
+		HeaderMainComponent,
 		HttpClientModule,
+		MenuHeaderComponent,
+		MenuMainComponent,
+		ModalLenovoIdComponent,
+		ModalWelcomeComponent,
 		NgbModule,
 		ReactiveFormsModule,
 		TranslationModule,
-		CommonDirectiveModule
 	],
 	imports: [
 		AngularSvgIconModule,

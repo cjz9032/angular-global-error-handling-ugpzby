@@ -14,7 +14,6 @@ import { WidgetMcafeeComponent } from '../components/widgets/widget-mcafee/widge
 import { WidgetPermissionNoteComponent } from '../components/widgets/widget-permission-note/widget-permission-note.component';
 import { WidgetSupportComponent } from '../components/widgets/widget-support/widget-support.component';
 import { WidgetWarrantyComponent } from '../components/widgets/widget-warranty/widget-warranty.component';
-import { WifiSecurityComponent } from '../components/pages/page-security-wifi/children/wifi-security/wifi-security.component';
 import { WidgetDeviceUpdateComponent } from '../components/widgets/widget-device-update/widget-device-update.component';
 import { WidgetDeviceUpdateSettingsComponent } from '../components/widgets/widget-device-update-settings/widget-device-update-settings.component';
 import { WidgetSecurityComponent } from '../components/widgets/widget-security/widget-security.component';
@@ -23,24 +22,42 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
 	declarations: [
-		WidgetOfflineInfoComponent,
-		WidgetQuestionsComponent,
-		WidgetRebootComponent,
-		WidgetSecurityStatusComponent,
-		WidgetStatusComponent,
 		WidgetCarouselComponent,
-		WidgetFeedbackComponent,
-		WidgetQuicksettingsComponent,
-		WidgetSwitchIconComponent,
 		WidgetDeviceComponent,
-		WidgetMcafeeComponent,
-		WidgetPermissionNoteComponent,
-		WidgetSupportComponent,
-		WidgetWarrantyComponent,
-		WifiSecurityComponent,
 		WidgetDeviceUpdateComponent,
 		WidgetDeviceUpdateSettingsComponent,
+		WidgetFeedbackComponent,
+		WidgetMcafeeComponent,
+		WidgetOfflineInfoComponent,
+		WidgetPermissionNoteComponent,
+		WidgetQuestionsComponent,
+		WidgetQuicksettingsComponent,
+		WidgetRebootComponent,
 		WidgetSecurityComponent,
+		WidgetSecurityStatusComponent,
+		WidgetStatusComponent,
+		WidgetSupportComponent,
+		WidgetSwitchIconComponent,
+		WidgetWarrantyComponent,
+	],
+	exports: [
+		WidgetCarouselComponent,
+		WidgetDeviceComponent,
+		WidgetDeviceUpdateComponent,
+		WidgetDeviceUpdateSettingsComponent,
+		WidgetFeedbackComponent,
+		WidgetMcafeeComponent,
+		WidgetOfflineInfoComponent,
+		WidgetPermissionNoteComponent,
+		WidgetQuestionsComponent,
+		WidgetQuicksettingsComponent,
+		WidgetRebootComponent,
+		WidgetSecurityComponent,
+		WidgetSecurityStatusComponent,
+		WidgetStatusComponent,
+		WidgetSupportComponent,
+		WidgetSwitchIconComponent,
+		WidgetWarrantyComponent,
 	],
 	imports: [
 		CommonModule,

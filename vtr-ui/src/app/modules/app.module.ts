@@ -6,6 +6,8 @@ import { GlobalErrorHandler } from '../services/error-handler/global.service';
 import { SharedModule } from './shared.module';
 import { CommonModalModule } from './common-modal.module';
 import { CommonUiModule } from './common-ui.module';
+import { CommonWidgetModule } from './common-widget.module';
+import { TranslationModule } from './translation.module';
 
 @NgModule({
 	declarations: [
@@ -15,8 +17,17 @@ import { CommonUiModule } from './common-ui.module';
 		BrowserModule,
 		CommonModalModule,
 		CommonUiModule,
+		CommonWidgetModule,
 		SharedModule,
+		TranslationModule,
 		AppRoutingModule,
+	],
+	exports: [
+		CommonModalModule,
+		CommonUiModule,
+		CommonWidgetModule,
+		SharedModule,
+		TranslationModule
 	],
 	providers: [
 		{ provide: ErrorHandler, useClass: GlobalErrorHandler }
@@ -26,8 +37,6 @@ import { CommonUiModule } from './common-ui.module';
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
-	],
-	entryComponents: [
 	]
 })
 export class AppModule { }

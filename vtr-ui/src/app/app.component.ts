@@ -15,7 +15,7 @@ import { KeyPress } from './data-models/common/key-press.model';
 import { VantageShellService } from './services/vantage-shell/vantage-shell.service';
 import { SettingsService } from './services/settings.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
-import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component';
+// import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component';
 
 @Component({
 	selector: 'vtr-root',
@@ -139,7 +139,7 @@ export class AppComponent implements OnInit {
 		// document.getElementById('html-root').classList.add('is-arm');
 
 		const self = this;
-		window.onresize = function () {
+		window.onresize = () => {
 			self.displayService.calcSize(self.displayService);
 		};
 		self.displayService.calcSize(self.displayService);
@@ -283,14 +283,14 @@ export class AppComponent implements OnInit {
 			}
 
 			// VAN-5872, server switch feature
-			if (event.ctrlKey && event.shiftKey && event.keyCode == 67) {
-				const serverSwitchModal: NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
-					backdrop: true,
-					size: 'lg',
-					centered: true,
-					windowClass: 'Server-Switch-Modal',
-					keyboard: false
-				});
+			if (event.ctrlKey && event.shiftKey && event.keyCode === 67) {
+				// const serverSwitchModal: NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
+				// 	backdrop: true,
+				// 	size: 'lg',
+				// 	centered: true,
+				// 	windowClass: 'Server-Switch-Modal',
+				// 	keyboard: false
+				// });
 				// serverSwitchModal.componentInstance.articleId = this.item.Id;
 			}
 

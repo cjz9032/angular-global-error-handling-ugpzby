@@ -53,10 +53,8 @@ import { SubpageDeviceSettingsDisplayComponent } from '../components/pages/page-
 import { SubpageDeviceSettingsInputAccessoryComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
 import { SubpageDeviceSettingsPowerComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
 import { TranslationModule } from './translation.module';
-import { UiCircleRadioComponent } from '../components/ui/ui-circle-radio/ui-circle-radio.component';
-import { UiDaysPickerComponent } from '../components/ui/ui-days-picker/ui-days-picker.component';
-import { UiListSupportComponent } from '../components/ui/ui-list-support/ui-list-support.component';
 import { VoiceComponent } from '../components/pages/page-smart-assist/voice/voice.component';
+import { WifiSecurityComponent } from '../components/pages/page-security-wifi/children/wifi-security/wifi-security.component';
 
 
 @NgModule({
@@ -111,10 +109,8 @@ import { VoiceComponent } from '../components/pages/page-smart-assist/voice/voic
 		SubpageDeviceSettingsDisplayComponent,
 		SubpageDeviceSettingsInputAccessoryComponent,
 		SubpageDeviceSettingsPowerComponent,
-		UiCircleRadioComponent,
-		UiDaysPickerComponent,
-		UiListSupportComponent,
-		VoiceComponent
+		VoiceComponent,
+		WifiSecurityComponent,
 	],
 	imports: [
 		CommonModule,
