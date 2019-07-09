@@ -3,7 +3,6 @@ import { ArticleItemComponent } from '../components/article-item/article-item.co
 import { BaseComponent } from '../components/base/base.component';
 import { CommonModule } from '@angular/common';
 import { CommonService } from '../services/common/common.service';
-import { CommonUiModule } from './common-ui.module';
 import { CommsService } from '../services/comms/comms.service';
 import { ContainerArticleComponent } from '../components/container-article/container-article.component';
 import { ContainerCardComponent } from '../components/container-card/container-card.component';

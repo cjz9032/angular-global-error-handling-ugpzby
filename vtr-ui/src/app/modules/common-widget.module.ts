@@ -19,6 +19,7 @@ import { WidgetDeviceUpdateSettingsComponent } from '../components/widgets/widge
 import { WidgetSecurityComponent } from '../components/widgets/widget-security/widget-security.component';
 import { SharedModule } from './shared.module';
 import { RouterModule } from '@angular/router';
+import { CommonUiModule } from './common-ui.module';
 
 @NgModule({
 	declarations: [
@@ -61,8 +62,9 @@ import { RouterModule } from '@angular/router';
 	],
 	imports: [
 		CommonModule,
+		CommonUiModule,
 		SharedModule,
-		RouterModule
+		RouterModule,
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA

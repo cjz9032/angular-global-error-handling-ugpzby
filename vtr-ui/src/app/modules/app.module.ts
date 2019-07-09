@@ -18,7 +18,6 @@ import { HttpClient } from '@angular/common/http';
 	imports: [
 		BrowserModule,
 		CommonModalModule,
-		CommonUiModule,
 		CommonWidgetModule,
 		SharedModule,
 		TranslateModule.forRoot({
@@ -34,7 +33,6 @@ import { HttpClient } from '@angular/common/http';
 	],
 	exports: [
 		CommonModalModule,
-		CommonUiModule,
 		CommonWidgetModule,
 		SharedModule,
 		TranslationModule

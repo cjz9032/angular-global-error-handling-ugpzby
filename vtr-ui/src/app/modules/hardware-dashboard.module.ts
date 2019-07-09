@@ -9,7 +9,7 @@ import { HardwareDashboardRoutingModule } from './hardware-dashboard-routing.mod
 import { MockService } from '../services/mock/mock.service';
 import { CommonUiModule } from './common-ui.module';
 import { CommonWidgetModule } from './common-widget.module';
-import { TranslateModule, TranslateLoader, TranslatePipe } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpLoaderFactory } from './translation.module';
 import { HttpClient } from '@angular/common/http';
 
@@ -34,8 +34,7 @@ import { HttpClient } from '@angular/common/http';
 		})
 	],
 	exports: [
-		TranslateModule,
-		TranslatePipe
+		TranslateModule
 	],
 	providers: [
 		MockService
