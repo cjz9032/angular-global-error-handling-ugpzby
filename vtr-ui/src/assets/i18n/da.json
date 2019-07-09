@@ -382,7 +382,7 @@
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "Instrumentbræt",
             "device": {
                 "title": "Enhed",
                 "sub1": "Min enhed",
@@ -1799,7 +1799,7 @@
         "footer": {
             "title": "Har du ikke fundet, hvad du leder efter?",
             "description": "Har du brug for ekstra støtte? FORSIGT IKKE AT KONTAKTE OS VIA:",
-            "body": "Lenovo Community",
+            "body": "Lenovo Fællesskab",
             "button": "GÅ TIL FORUM"
         },
         "question1": {
@@ -2152,7 +2152,7 @@
             "para12": "Note",
             "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
         },
-        "pageTitle": "Support Detail"
+        "pageTitle": "Support Detalje"
     },
     "welcometutorial": {
         "description": "Vantage gør det nemt for dig at opdatere dine drivere, foretage fejlfinding, bede om support og få mere at vide om din enhed. Tilpas hurtigt din oplevelse, og få nyttige oplysninger, der er skræddersyet til dig",

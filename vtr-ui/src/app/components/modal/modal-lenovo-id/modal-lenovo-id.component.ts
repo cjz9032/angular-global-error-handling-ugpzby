@@ -97,9 +97,9 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	private everSignIn: any;
 	public appFeature = null;
 	private webView = null;
-	private eventBind : any;
-	private startBind : any;
-	private completeBInd : any;
+	private eventBind: any;
+	private startBind: any;
+	private completeBInd: any;
 	private notificationSubscription: Subscription;
 
 	constructor(
@@ -142,8 +142,8 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 				windowClass: 'common-confirmation-modal'
 			});
 
-		var header = 'lenovoId.ssoErrorTitle';
-		var description = 'lenovoId.ssoErrorCommonEx';
+		const header = 'lenovoId.ssoErrorTitle';
+		let description = 'lenovoId.ssoErrorCommonEx';
 
 		switch (error) {
 			case ssoErroType.SSO_ErrorType_TimeStampIncorrect:
@@ -166,7 +166,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 				description = 'lenovoId.ssoErrorCommonEx';
 				break;
 		}
-		modalRef.componentInstance.CancelText = "";
+		modalRef.componentInstance.CancelText = '';
 		modalRef.componentInstance.header = header;
 		modalRef.componentInstance.description = description;
 	}
@@ -178,14 +178,14 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			return;
 		}
 
-		this.webView.create("<div style='display: block;position: fixed;z-index: 1;padding-top:5%;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgba(0,0,0,0.4);'>  <div style='position: relative;background-color: #fefefe;margin: auto;padding: auto;border: 1px solid #888;max-width: 460px;height: 80%;'>  <style>.close {  color: black;  float: right;  font-size: 28px;  font-weight: bold;}.close:hover,.close:focus {  color: black;  text-decoration: none;  cursor: pointer;} @keyframes spinner {  to {transform: rotate(360deg);}} .spinner:before {  content: '';  box-sizing: border-box;  position: absolute;  top: 50%;  left: 50%;  width: 60px;  height: 60px;  margin-top: -15px;  margin-left: -30px;  border-radius: 50%;  border: 3px solid #ccc;  border-top-color: #07d;  animation: spinner .6s linear infinite;} </style>  <div id='btnClose' style='padding: 2px 16px;background-color: white;color: black;border-bottom: 1px solid #e5e5e5;'>  <span class='close'>&times;</span> <div style='height:45px;'></div>  </div>    <div style='height: 100%;' id='webviewBorder'> <div id='spinnerCtrl' class='spinner'></div> <div id='webviewPlaceHolder'></div>    </div>  </div></div>");
+		this.webView.create('<div style=\'display: block;position: fixed;z-index: 1;padding-top:5%;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgba(0,0,0,0.4);\'>  <div style=\'position: relative;background-color: #fefefe;margin: auto;padding: auto;border: 1px solid #888;max-width: 460px;height: 80%;\'>  <style>.close {  color: black;  float: right;  font-size: 28px;  font-weight: bold;}.close:hover,.close:focus {  color: black;  text-decoration: none;  cursor: pointer;} @keyframes spinner {  to {transform: rotate(360deg);}} .spinner:before {  content: \'\';  box-sizing: border-box;  position: absolute;  top: 50%;  left: 50%;  width: 60px;  height: 60px;  margin-top: -15px;  margin-left: -30px;  border-radius: 50%;  border: 3px solid #ccc;  border-top-color: #07d;  animation: spinner .6s linear infinite;} </style>  <div id=\'btnClose\' style=\'padding: 2px 16px;background-color: white;color: black;border-bottom: 1px solid #e5e5e5;\'>  <span class=\'close\'>&times;</span> <div style=\'height:45px;\'></div>  </div>    <div style=\'height: 100%;\' id=\'webviewBorder\'> <div id=\'spinnerCtrl\' class=\'spinner\'></div> <div id=\'webviewPlaceHolder\'></div>    </div>  </div></div>');
 		this.webView.show();
 		this.eventBind = this.onEvent.bind(this);
 		this.startBind = this.onNavigationStart.bind(this);
 		this.completeBInd = this.onNavigationCompleted.bind(this);
-		this.webView.addEventListener("eventtriggered", this.eventBind);
-		this.webView.addEventListener("navigationstarting", this.startBind);
-		this.webView.addEventListener("navigationcompleted", this.completeBInd);
+		this.webView.addEventListener('eventtriggered', this.eventBind);
+		this.webView.addEventListener('navigationstarting', this.startBind);
+		this.webView.addEventListener('navigationcompleted', this.completeBInd);
 
 		if (!this.cacheCleared) {
 			// Hide browser while clearing cache
@@ -193,7 +193,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			// This is the link for SSO production environment
 			this.webView.navigate('https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null');
 			// This is the link for SSO dev environment
-			//this.webView.navigate('https://uss-test.lenovomm.cn/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null');
+			// this.webView.navigate('https://uss-test.lenovomm.cn/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null');
 			this.cacheCleared = true;
 		}
 	}
@@ -212,9 +212,9 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	//
 	// Create facebook new account within webview control will increase memory rapidly and crash app finally,
 	//  this maybe issue with script running in facebook page.
-	//  this is workaround borrow from Vantage 2.x to launch external browser and avoid the crash. 
+	//  this is workaround borrow from Vantage 2.x to launch external browser and avoid the crash.
 	//  The side effect are:
-	//  1, user have to back to the app and log in again after he/she created account in the brwoser; 
+	//  1, user have to back to the app and log in again after he/she created account in the brwoser;
 	//  2, if url was changed by facebook the workaround will not work anymore.
 	//
 	onNavigationStart(e) {
@@ -223,15 +223,15 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			return;
 		}
 		const url = e;
-		if (url.indexOf("facebook.com/r.php") != -1 ||
-			url.indexOf("facebook.com/reg/") != -1) {
+		if (url.indexOf('facebook.com/r.php') !== -1 ||
+			url.indexOf('facebook.com/reg/') !== -1) {
 			// Open new window to launch default browser to create facebook account
 			if (window) {
 				window.open(url);
 			}
 			// BUGBUG: shell does not provide similar function
 			// Prevent navigations to create facebook account
-			//EventArgs.preventDefault();
+			// EventArgs.preventDefault();
 			return;
 		} else {
 			self.webView.changeVisibility('webviewPlaceHolder', false);
@@ -248,18 +248,18 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			if (eventData.url.startsWith('https://passport.lenovo.com/wauthen5/userLogout?')) {
 				return;
 			}
-			//if (eventData.url.startsWith('https://uss-test.lenovomm.cn/wauthen5/userLogout?')) {
-			//	return;
-			//}
+			// if (eventData.url.startsWith('https://uss-test.lenovomm.cn/wauthen5/userLogout?')) {
+			// 	 return;
+			// }
 			self.webView.changeVisibility('spinnerCtrl', false);
 			self.webView.changeVisibility('webviewPlaceHolder', true);
-			let htmlContent = eventData.content;
+			const htmlContent = eventData.content;
 			try {
 				// Parse html content to get user info
 				const parser = new DOMParser();
 				const doc = parser.parseFromString(htmlContent, 'text/html');
 				const el = doc.documentElement;
-				const title = doc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+				const title = doc.getElementsByTagName('title')[0].childNodes[0].nodeValue;
 				if (title.startsWith('Login success')) {
 					const username = (el.querySelector('#username') as HTMLInputElement).value;
 					const useruad = (el.querySelector('#useruad') as HTMLInputElement).value;
@@ -274,7 +274,6 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 							self.userService.setToken(useruad);
 							self.userService.setAuth(true);
 							// Close logon dialog
-							self.webView.close();
 							self.activeModal.dismiss();
 							self.devService.writeLog('onNavigationCompleted: Login success!');
 							// The metrics need to be sent after enabling sso, some data like user guid would be available after that.
@@ -282,8 +281,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 						}
 					});
 				}
-			}
-			catch (error) {
+			} catch (error) {
 				self.devService.writeLog('onNavigationCompleted: ' + error);
 			}
 		} else {
@@ -295,19 +293,19 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	}
 
 	//
-	// The input parameter 'locale' come from field 'locale' in machine info xml, 
+	// The input parameter 'locale' come from field 'locale' in machine info xml,
 	// it is system locale setting, this fucntion is to convert the locale to LID supported 16 languages.
 	// here is map for each language:
-	//	zh_CN: 中文(简体)
+	// 	zh_CN: 中文(简体)
 	// 	zh_HANT: 中文(繁体)
-	//	da_DK: Dansk
+	// 	da_DK: Dansk
 	// 	de_DE: Deutsch
-	//	en_US: English
+	// 	en_US: English
 	// 	fr_FR: Francais
 	// 	it_IT: Italiano
 	// 	ja_JP: 日本語
 	// 	ko_kR: Korean
-	//	no_NO: Norsk
+	// 	no_NO: Norsk
 	//  nl_NL: Nederlands
 	//  pt_BR: Portugues(Brasi1)
 	//  fi_FI: Suomi
@@ -316,65 +314,65 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	//  ru_RU: Russian
 	//
 	getLidSupportedLanguageFromLocale(locale) {
-		var lang = "en_US";
+		let lang = 'en_US';
 		switch (locale) {
-			case "zh-hans":
-				lang = "zh_CN";
+			case 'zh-hans':
+				lang = 'zh_CN';
 				break;
-			case "zh-hant":
-				lang = "zh_HANT";
+			case 'zh-hant':
+				lang = 'zh_HANT';
 				break;
-			case "da":
-				lang = "da_DK";
+			case 'da':
+				lang = 'da_DK';
 				break;
-			case "de":
-				lang = "de_DE";
+			case 'de':
+				lang = 'de_DE';
 				break;
-			case "en":
-				lang = "en_US";
+			case 'en':
+				lang = 'en_US';
 				break;
-			case "fr":
-				lang = "fr_FR";
+			case 'fr':
+				lang = 'fr_FR';
 				break;
-			case "it":
-				lang = "it_IT";
+			case 'it':
+				lang = 'it_IT';
 				break;
-			case "ja":
-				lang = "ja_JP";
+			case 'ja':
+				lang = 'ja_JP';
 				break;
-			case "ko":
-				lang = "ko_KR";
+			case 'ko':
+				lang = 'ko_KR';
 				break;
-			case "nb":
-				lang = "no_NO";
+			case 'nb':
+				lang = 'no_NO';
 				break;
-			case "nl":
-				lang = "nl_NL";
+			case 'nl':
+				lang = 'nl_NL';
 				break;
-			case "pt-br":
-				lang = "pt_BR";
+			case 'pt-br':
+				lang = 'pt_BR';
 				break;
-			case "fi":
-				lang = "fi_FI";
+			case 'fi':
+				lang = 'fi_FI';
 				break;
-			case "es":
-				lang = "es_ES";
+			case 'es':
+				lang = 'es_ES';
 				break;
-			case "sv":
-				lang = "sv_SE";
+			case 'sv':
+				lang = 'sv_SE';
 				break;
-			case "ru":
-				lang = "ru_RU";
+			case 'ru':
+				lang = 'ru_RU';
 				break;
 			default:
-				lang = "en_US";
+				lang = 'en_US';
 				break;
 		}
 		return lang;
 	}
 
 	isLidSupportedLanguage(lang) {
-		let supportedLangs = ["zh_CN", "zh_HANT", "da_DK", "de_DE", "en_US", "fr_FR", "it_IT", "ja_JP", "ko_KR", "no_NO", "nl_NL", "pt_BR", "fi_FI", "es_ES", "sv_SE", "ru_RU"];
+		const supportedLangs = ['zh_CN', 'zh_HANT', 'da_DK', 'de_DE', 'en_US', 'fr_FR', 'it_IT', 'ja_JP', 'ko_KR', 'no_NO', 'nl_NL', 'pt_BR', 'fi_FI', 'es_ES', 'sv_SE', 'ru_RU'];
 		return supportedLangs.includes(lang, 0);
 	}
 
@@ -383,7 +381,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		// Get logon url and navigate to it
 		self.userService.getLoginUrl().then((result) => {
 			if (result.success && result.status === ssoErroType.SSO_ErrorType_NoErr) {
-				var loginUrl = result.logonURL;
+				let loginUrl = result.logonURL;
 				if (loginUrl.indexOf('sso.lenovo.com') === -1) {
 					self.devService.writeLog('User has already logged in');
 					self.activeModal.dismiss();
@@ -391,15 +389,15 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 				} else {
 					// Change UI language to current system local or user selection saved in cookie
 					self.supportService.getMachineInfo().then((machineInfo) => {
-						let lang = self.userService.getLidLanguageSelectionFromCookies('https://passport.lenovo.com');
-						if (lang != '') {
+						const lang = self.userService.getLidLanguageSelectionFromCookies('https://passport.lenovo.com');
+						if (lang !== '') {
 							if (self.isLidSupportedLanguage(lang)) {
-								loginUrl += "&lang=" + lang;
+								loginUrl += '&lang=' + lang;
 							} else {
-								loginUrl += "&lang=en_US";
+								loginUrl += '&lang=en_US';
 							}
 						} else {
-							loginUrl += "&lang=" + self.getLidSupportedLanguageFromLocale(machineInfo.locale);
+							loginUrl += '&lang=' + self.getLidSupportedLanguageFromLocale(machineInfo.locale);
 						}
 						self.webView.navigate(loginUrl);
 						self.devService.writeLog('Loading login page ', loginUrl);
@@ -409,7 +407,6 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 					});
 				}
 			} else {
-				self.webView.close();
 				self.popupErrorMessage(result.status);
 				self.devService.writeLog('getLoginUrl() failed ' + result.status);
 				self.activeModal.dismiss();
@@ -424,8 +421,8 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
 					this.devService.writeLog('onNotification() NetworkStatus: ' + notification.type);
-					let currentIsOnline = notification.payload.isOnline;
-					if (!currentIsOnline && this.isOnline != currentIsOnline) {
+					const currentIsOnline = notification.payload.isOnline;
+					if (!currentIsOnline && this.isOnline !== currentIsOnline) {
 						this.popupErrorMessage(ssoErroType.SSO_ErrorType_DisConnect);
 						this.activeModal.dismiss();
 					}
@@ -439,10 +436,11 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 
 	ngOnDestroy(): void {
 		if (this.webView) {
-			this.webView.removeEventListener("eventtriggered", this.eventBind);
-			this.webView.removeEventListener("navigationstarting", this.startBind);
-			this.webView.removeEventListener("navigationcompleted", this.completeBInd);
+			this.webView.removeEventListener('eventtriggered', this.eventBind);
+			this.webView.removeEventListener('navigationstarting', this.startBind);
+			this.webView.removeEventListener('navigationcompleted', this.completeBInd);
 			this.webView.close();
+			this.webView = null;
 		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
