@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, Inject } from '@angular/core';
+import { Component, OnInit, HostListener, Inject, OnDestroy } from '@angular/core';
 import { MockService } from 'src/app/services/mock/mock.service';
 import { Vpn, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
@@ -10,13 +10,14 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { RegionService } from 'src/app/services/region/region.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { GuardService } from '../../../services/guard/security-guardService.service';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'vtr-page-security-internet',
 	templateUrl: './page-security-internet.component.html',
 	styleUrls: ['./page-security-internet.component.scss']
 })
-export class PageSecurityInternetComponent implements OnInit {
+export class PageSecurityInternetComponent implements OnInit, OnDestroy {
 
 	vpn: Vpn;
 	statusItem: any;
@@ -24,6 +25,7 @@ export class PageSecurityInternetComponent implements OnInit {
 	securityAdvisor: SecurityAdvisor;
 	backId = 'sa-vpn-btn-back';
 	isOnline = true;
+	notificationSubscription: Subscription;
 
 	constructor(
 		public mockService: MockService,
@@ -60,12 +62,18 @@ export class PageSecurityInternetComponent implements OnInit {
 
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
-		this.commonService.notification.subscribe((notification: AppNotification) => {
+		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 
 		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
 			this.vpn.refresh();
+		}
+	}
+
+	ngOnDestroy() {
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
 		}
 	}
 
