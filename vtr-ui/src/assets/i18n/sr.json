@@ -439,7 +439,7 @@
             "collapse": "Skupi",
             "expand": "Raširi",
             "loader": "Status <br> preuzimanja",
-			"loading": "Učitavanje..."
+            "loading": "Učitavanje..."
         }
     },
     "privacy": {
@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "Preporučena ažuriranja",
         "optionalUpdates": "Opcionalna ažuriranja",
         "ignoredUpdates": "Zanemarena ažuriranja",
-        "successInstall": "Uspešno instalirano",
-        "failedInstall": "Nije uspela instalacija",
+        "successInstall": "Uspešno instalirano: ",
+        "failedInstall": "Nije uspela instalacija: ",
         "at": "u",
         "readMore": "Pročitajte više",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "Dobro došli u System Update.",
             "title": "Ažuran sistem je zdrav sistem.",
-            "last": "Poslednje ažuriranje je obavljeno",
-            "next": "Sledeće ažurirano skeniranje je planirano",
+            "last": "Poslednji put ažurirano: ",
+            "next": "Sledeće planirano ažuriranje: ",
             "checkButton": "PROVERI DA LI POSTOJE ISPRAVKE",
             "checking": "Traženje ažuriranja",
             "downloading": "Preuzimanje ažuriranja je završeno",
@@ -1394,7 +1394,7 @@
             "networkInterruptedException": "Server za ažuriranje sistema trenutno nije dostupan. Pokušajte ponovo kasnije.",
             "helpCenterInvalidServerException": "Server za ažuriranje sistema je neispravan. Pokušajte ponovo kasnije.",
             "catalogNotFoundException": "Nema pronađenih primenljivih ažuriranja za vaš sistem.",
-            "catalogCrcErrorException": "Katalog ažuriranja za vaš sistem se trenutno ažurira na serveru za ažuriranje sistema. Pokušajte ponovo kasnije.",
+            "catalogCrcErrorException": "Katalog za vas sistem se trenutno ažurira. Pokušajte ponovo kasnije.",
             "catalogErrorException": "Otkrivena je greška u katalogu ažuriranja za vaš sistem na serveru za ažuriranje sistema. Pokušajte ponovo kasnije.",
             "fileNotFoundException": "Datoteka nije pronađena."
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Greška",
                 "bodyText": "Detektovali smo da vam nedostaju kritični delovi programa Vantage. Preuzimanje tih delova će se obaviti u pozadini. Pokušajte ponovo kasnije.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "zatvori",
+                "offlineText": "Detektovali smo da niste povezani sa internetom. Neki delovi ove stranice neće raditi pravilno. Povežite se ponovo"
             }
         },
         "homeprotection": {

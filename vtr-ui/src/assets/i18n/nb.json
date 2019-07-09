@@ -439,7 +439,7 @@
             "collapse": "Komprimer",
             "expand": "Utvid",
             "loader": "Henter <br> status",
-			"loading": "Laster..."
+            "loading": "Laster..."
         }
     },
     "privacy": {
@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "Anbefalt(e) oppdatering(er)",
         "optionalUpdates": "Valgfri(e) oppdatering(er)",
         "ignoredUpdates": "Ignorert(e) oppdatering(er)",
-        "successInstall": "Ble installert den",
-        "failedInstall": "Installasjon mislyktes den",
+        "successInstall": "Installert: ",
+        "failedInstall": "Installasjon mislyktes: ",
         "at": "klokken",
         "readMore": "Les mer",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "Velkommen som bruker av System Update.",
             "title": "Et oppdatert system er et velfungerende system.",
-            "last": "Forrige oppdatering:",
-            "next": "Neste oppdateringssøk er planlagt",
+            "last": "Sist oppdatert: ",
+            "next": "Neste planlagte oppdatering: ",
             "checkButton": "SE ETTER OPPDATERINGER",
             "checking": "Ser etter oppdateringer",
             "downloading": "Nedlasting av oppdateringer er ferdig",
@@ -1394,7 +1394,7 @@
             "networkInterruptedException": "Systemoppdateringsserveren er ikke tilgjengelig for øyeblikket. Prøv igjen senere.",
             "helpCenterInvalidServerException": "Systemoppdateringsserveren er ugyldig. Prøv igjen senere.",
             "catalogNotFoundException": "Det ble ikke funnet noen oppdateringer som er aktuelle for systemet ditt.",
-            "catalogCrcErrorException": "Oppdateringskatalogen for ditt system oppdateres for øyeblikket på systemoppdateringsserveren. Prøv igjen senere.",
+            "catalogCrcErrorException": "Systemkatalogen oppdateres for øyeblikket. Prøv igjen senere.",
             "catalogErrorException": "Det ble oppdaget en feil med oppdateringskatalogen for ditt system på systemoppdateringsserveren. Prøv igjen senere.",
             "fileNotFoundException": "Fant ikke fil."
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Feil",
                 "bodyText": "Vi har oppdaget at du mangler viktige deler av Vantage. Disse delene lastes ned i bakgrunnen. Prøv igjen senere.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "Lukk",
+                "offlineText": "Vi har oppdaget at du ikke er koblet til internett. Deler av denne siden vil ikke fungere på riktig måte. Koble til igjen"
             }
         },
         "homeprotection": {

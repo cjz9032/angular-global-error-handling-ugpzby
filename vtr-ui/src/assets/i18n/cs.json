@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "Doporučené aktualizace",
         "optionalUpdates": "Volitelné aktualizace",
         "ignoredUpdates": "Ignorované aktualizace",
-        "successInstall": "Úspěšně instalováno v systému",
-        "failedInstall": "Instalace se nezdařila v systému",
+        "successInstall": "Instalace proběhla úspěšně: ",
+        "failedInstall": "Instalace selhala: ",
         "at": "v",
         "readMore": "Další informace",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "Vítejte při použití programu System Update.",
             "title": "Aktualizovaný systém je zdravým systémem.",
-            "last": "Poslední aktualizace proběhla dne",
-            "next": "Příští kontrola aktualizace je naplánována na",
+            "last": "Poslední aktualizace: ",
+            "next": "Příští plánovaná aktualizace: ",
             "checkButton": "ZKONTROLOVAT AKTUALIZACE",
             "checking": "Kontrola aktualizací",
             "downloading": "Stahování aktualizací je dokončeno",
@@ -1394,7 +1394,7 @@
             "networkInterruptedException": "Server služby aktualizace systému je momentálně nedostupný. Zkuste to prosím později.",
             "helpCenterInvalidServerException": "Chybný server služby aktualizace systému. Zkuste to prosím později.",
             "catalogNotFoundException": "Pro váš systém nebyla nalezena žádná vhodná aktualizace.",
-            "catalogCrcErrorException": "Probíhá aktualizace katalogu aktualizací pro váš systém na serveru služby aktualizace systému. Zkuste to prosím později.",
+            "catalogCrcErrorException": "Právě probíhá aktualizace katalogu pro váš systém. Zkuste to prosím později.",
             "catalogErrorException": "V katalogu aktualizací pro váš systém na serveru služby aktualizace systému byla zjištěna chyba. Zkuste to prosím později.",
             "fileNotFoundException": "Soubor nebyl nalezen."
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Chyba",
                 "bodyText": "Zjistili jsme, že aplikace Vantage postrádá důležité součásti. Tyto součásti se stáhnou na pozadí. Zkuste to prosím později.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "Zavřít",
+                "offlineText": "Zjistili jsme, že nejste připojeni k internetu. Některé části této stránky nebudou správně fungovat. Znovu se prosím připojte"
             }
         },
         "homeprotection": {

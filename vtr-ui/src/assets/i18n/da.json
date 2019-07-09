@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "Anbefalede opdateringer",
         "optionalUpdates": "Valgfrie opdateringer",
         "ignoredUpdates": "Ignorerede opdateringer",
-        "successInstall": "Installeret den",
-        "failedInstall": "Installationen mislykkedes den",
+        "successInstall": "Installationen blev gennemført: ",
+        "failedInstall": "Installationen mislykkedes: ",
         "at": "kl.",
         "readMore": "Læs mere",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "Velkommen til brug af System Update.",
             "title": "Et opdateret system er et velfungerende system.",
-            "last": "Seneste opdatering var den",
-            "next": "Næste søgning efter opdateringer er planlagt til",
+            "last": "Senest opdateret: ",
+            "next": "Næste planlagte opdatering: ",
             "checkButton": "SØG EFTER OPDATERINGER",
             "checking": "Søger efter opdateringer",
             "downloading": "Opdateringer er downloadet",
@@ -1394,7 +1394,7 @@
             "networkInterruptedException": "Systemopdateringsserveren er i øjeblikket ikke tilgængelig. Prøv igen senere.",
             "helpCenterInvalidServerException": "Systemopdateringsserveren er ugyldig. Prøv igen senere.",
             "catalogNotFoundException": "Der er ikke fundet nogen tilgængelige opdateringer til systemet.",
-            "catalogCrcErrorException": "Opdateringskataloget til systemet bliver i øjeblikket opdateret på systemopdateringsserveren. Prøv igen senere.",
+            "catalogCrcErrorException": "Kataloget til dit system er ved at blive opdateret. Prøv igen senere.",
             "catalogErrorException": "Der opstod en fejl med opdateringskataloget til systemet på systemopdateringsserveren. Prøv igen senere.",
             "fileNotFoundException": "Filen blev ikke fundet."
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Fejl",
                 "bodyText": "Vi har opdaget, at du mangler vigtige dele af Vantage. Disse dele downloades i baggrunden. Prøv igen senere.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "luk",
+                "offlineText": "Vi har registreret, at du ikke har forbindelse til internettet. Visse dele af denne side fungerer ikke korrekt. Opret forbindelse igen"
             }
         },
         "homeprotection": {

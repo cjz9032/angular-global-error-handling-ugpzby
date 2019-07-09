@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "تحديث مستحسن (تحديثات مستحسنة)",
         "optionalUpdates": "تحديث اختياري (تحديثات اختيارية)",
         "ignoredUpdates": "تحديث تم تجاهله (تحديثات تم تجاهلها)",
-        "successInstall": "تم التثبيت بنجاح في",
-        "failedInstall": "فشل التثبيت في",
+        "successInstall": "التثبيت بنجاح: ",
+        "failedInstall": "فشل التثبيت: ",
         "at": "عند",
         "readMore": "اقرأ أكثر",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "مرحبًا بك في استخدام System Update.",
             "title": "النظام المحدّث هو نظام سليم.",
-            "last": "تاريخ التحديث الأخير",
-            "next": "تمت جدولة الفحص المحدّث التالي في",
+            "last": "تاريخ التحديث الأخير: ",
+            "next": "التحديث المجدول التالي: ",
             "checkButton": "التحقق من وجود تحديثات",
             "checking": "التحقق من وجود تحديثات",
             "downloading": "تم تنزيل التحديثات",
@@ -1394,7 +1394,7 @@
             "networkInterruptedException": "خادم تحديث النظام غير متوفر حاليًا. يُرجى إعادة المحاولة لاحقًا.",
             "helpCenterInvalidServerException": "خادم تحديث النظام غير صالح. يُرجى إعادة المحاولة لاحقًا.",
             "catalogNotFoundException": "لم يتم العثور على تحديثات قابلة للتطبيق للنظام الذي تستخدمه.",
-            "catalogCrcErrorException": "يجري حاليًا تحديث كتالوج التحديث للنظام على خادم تحديث النظام. يُرجى إعادة المحاولة لاحقًا.",
+            "catalogCrcErrorException": "يجري حاليًا تحديث الكتالوج الخاص بنظامك. يُرجى إعادة المحاولة لاحقًا.",
             "catalogErrorException": "تم الكشف عن خطأ يتعلق بكتالوج التحديث للنظام على خادم تحديث النظام. يُرجى إعادة المحاولة لاحقًا.",
             "fileNotFoundException": "لم يتم العثور على الملف."
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "خطأ",
                 "bodyText": "لقد اكتشفنا أنك تفتقد إلى أجزاء ضرورية من Vantage. سيتم تنزيل هذه الأجزاء في الخلفية. يُرجى إعادة المحاولة لاحقًا.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "إغلاق",
+                "offlineText": "اكتشفنا أنك غير متصل بالإنترنت. لن تعمل بعض أجزاء هذه الصفحة بشكل صحيح. يُرجى معاودة الاتصال"
             }
         },
         "homeprotection": {

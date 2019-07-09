@@ -439,7 +439,7 @@
             "collapse": "Kutista",
             "expand": "Laajenna",
             "loader": "Noutaminen <br> Tila",
-			"loading": "Ladataan..."
+            "loading": "Ladataan..."
         }
     },
     "privacy": {
@@ -1285,8 +1285,8 @@
         "recommendedUpdates": "Suositeltavat päivitykset",
         "optionalUpdates": "Valinnaiset päivitykset",
         "ignoredUpdates": "Huomiotta jätetyt päivitykset",
-        "successInstall": "Asennus onnistui",
-        "failedInstall": "Asennus epäonnistui",
+        "successInstall": "Asennus onnistui: ",
+        "failedInstall": "Asennus epäonnistui: ",
         "at": "klo",
         "readMore": "Lue lisää",
         "popup": {
@@ -1324,8 +1324,8 @@
         "banner": {
             "neverChecked": "Tervetuloa käyttämään System Update -ohjelmaa.",
             "title": "Ajan tasalla oleva järjestelmä on terve järjestelmä.",
-            "last": "Edellisen kerran päivitetty",
-            "next": "Seuraava päivitysten tarkistusajankohta on",
+            "last": "Viimeksi päivitetty: ",
+            "next": "Seuraava ajoitettu päivitys: ",
             "checkButton": "TARKISTA PÄIVITYKSET",
             "checking": "Tarkistetaan päivityksiä",
             "downloading": "Päivitysten nouto on valmis",
@@ -1394,7 +1394,7 @@
             "networkInterruptedException": "Järjestelmän päivityspalvelin ei ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen.",
             "helpCenterInvalidServerException": "Järjestelmän päivityspalvelin on virheellinen. Yritä myöhemmin uudelleen.",
             "catalogNotFoundException": "Järjestelmään soveltuvia päivityksiä ei löydy.",
-            "catalogCrcErrorException": "Järjestelmän päivitysluetteloa päivitetään parhaillaan järjestelmän päivityspalvelimessa. Yritä myöhemmin uudelleen.",
+            "catalogCrcErrorException": "Järjestelmäluetteloa päivitetään parhaillaan. Yritä myöhemmin uudelleen.",
             "catalogErrorException": "Järjestelmän päivitysluettelossa havaittiin virhe järjestelmän päivityspalvelimessa. Yritä myöhemmin uudelleen.",
             "fileNotFoundException": "Tiedostoa ei löydy."
         }
@@ -1644,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Virhe",
                 "bodyText": "Olemme havainneet, että sinulta puuttuu tärkeitä Vantagen osia. Nämä osat ladataan taustalla. Yritä myöhemmin uudelleen.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "sulje",
+                "offlineText": "Internet-yhteyttä ei ole muodostettu. Jotkin tämän sivun osat eivät toimi oikein. Muodosta yhteys uudelleen"
             }
         },
         "homeprotection": {
