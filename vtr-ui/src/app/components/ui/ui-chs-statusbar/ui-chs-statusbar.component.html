@@ -1,34 +1,60 @@
 <ul class="list-group">
-  <li class="list-group-item" *ngFor="let list of statusList">
+  <li class="list-group-item">
     <div class="row align-items-center">
-      <div class="col-auto text px-3 text-uppercase align-self-start">
-        {{ list.title | translate }}
-      </div>
-      <div class="flex-column align-item-center ml-5 badge-position">
-        <h3><span class="badge badge-pill text-uppercase" [ngClass]="list.status | textClass"
-            title="{{list.status | statusText | translate | uppercase}}">
-            {{ list.status | statusText | translate }}
-          </span></h3>
-        <div *ngIf="list.badge && isShowMore===false">
-          <h3 *ngFor="let badgeItem of list.badge" [ngClass]="badgeItem | cursorType">
-            <a *ngIf="badgeItem.status" [href]="badgeItem.expiredUrl | sanitizeUrl" target="_blank">
-              <span class="badge badge-pill text-uppercase"
-                [ngClass]="badgeItem.status | textClass" (click)="badgeItem.clickEvent()" title="{{badgeItem.text}}">
-                {{badgeItem.text}}
-              </span>
-            </a>
-          </h3>
+      <div class="row align-items-center width-size">
+        <div class="col-auto text px-3 text-uppercase align-self-start">
+          {{ ecoSystem?.title | translate }}
+        </div>
+        <div class="flex-column align-item-center ml-5 badge-position">
+          <h3><span class="badge badge-pill text-uppercase" [ngClass]="ecoSystem?.status | textClass"
+              title="{{ecoSystem?.status | statusText | translate | uppercase}}">
+              {{ ecoSystem?.status | statusText | translate }}
+            </span></h3>
+          <div *ngIf="ecoSystem?.badge && isShowMore===false">
+            <h3 *ngFor="let badgeItem of ecoSystem?.badge"
+            [ngClass]="{'badge-item':badgeItem.text !== 'homeSecurity.ecosystem.inTrial' && badgeItem.status !== 'disabled'}">
+              <a *ngIf="badgeItem.status && !badgeItem.id" href="javascript:void(0)">
+                <span class="badge badge-pill text-uppercase" [ngClass]="badgeItem.status | textClass"
+                  (click)="badgeItem.onClick()" title="{{badgeItem.text | translate | uppercase}}">
+                  {{badgeItem.text | translate | characterLimit:20}}
+                </span>
+              </a>
+              <a *ngIf="badgeItem.status && badgeItem.id" href="javascript:void(0)"
+                  vtrMetrics
+                  id="{{badgeItem.id}}"
+                  attr.aria-label="{{badgeItem.id}}"
+                  metricsEvent="FeatureClick"
+                  metricsItem="{{badgeItem.metricsItem}}">
+                <span class="badge badge-pill text-uppercase" [ngClass]="badgeItem.status | textClass"
+                  (click)="badgeItem.onClick()" title="{{badgeItem.text | translate | uppercase}}">
+                  {{badgeItem.text | translate | characterLimit:20}}
+                </span>
+              </a>
+            </h3>
+          </div>
         </div>
       </div>
-      <div class="fa-color ml-auto" vtrMetrics metricsItem="collapseWiFiHistory" metricsEvent="featureClick"
-        *ngIf="isShowMore===false" (click)="isShowMore=true">
-        <fa-icon [icon]="['fas', 'chevron-up']" class="mr-4">
-        </fa-icon>
+      <div class="fa-color ml-auto mr-4 mt-4 align-self-start"
+            *ngIf="isShowMore===false"
+            (click)="isShowMore=true"
+            id="chs-ecosystem-btn-collapseEcosystem"
+            attr.aria-label="chs-ecosystem-btn-collapseEcosystem"
+            vtrMetrics
+            metricsEvent="FeatureClick"
+            metricsItem="collapseEcosystem">
+            <fa-icon [icon]="['fas', 'chevron-up']">
+            </fa-icon>
       </div>
-      <div class="fa-color ml-auto" vtrMetrics metricsItem="expandWiFiHistory" metricsEvent="featureClick"
-        aria-label="sa-ws-btn-moreinfo" *ngIf="isShowMore===true" (click)="isShowMore=false">
-        <fa-icon [icon]="['fas', 'chevron-down']" class="mr-4">
-        </fa-icon>
+      <div class="fa-color ml-auto mr-4 mt-4 align-self-start"
+            *ngIf="isShowMore===true"
+            (click)="isShowMore=false"
+            id="chs-ecosystem-btn-expandEcosystem"
+            attr.aria-label="chs-ecosystem-btn-expandEcosystem"
+            vtrMetrics
+            metricsEvent="FeatureClick"
+            metricsItem="expandEcosystem">
+            <fa-icon [icon]="['fas', 'chevron-down']">
+            </fa-icon>
       </div>
     </div>
   </li>

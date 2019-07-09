@@ -13,9 +13,9 @@ export class ConfigService {
 	appBrand = 'Lenovo';
 	appName = 'Vantage';
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
-	constructor(private deviceService: DeviceService) {}
+	constructor(private deviceService: DeviceService) { }
 
-	menuItemsGaming: Array < any > = [{
+	menuItemsGaming: Array<any> = [{
 		id: 'device',
 		label: 'common.menu.device.title',
 		path: 'device-gaming',
@@ -94,7 +94,7 @@ export class ConfigService {
 		forArm: true,
 		subitems: []
 	}];
-	menuItems: Array < any > = [{
+	menuItems: Array<any> = [{
 		id: 'dashboard',
 		label: 'common.menu.dashboard',
 		path: 'dashboard',
@@ -119,7 +119,7 @@ export class ConfigService {
 		subitems: [{
 			id: 'device',
 			label: 'common.menu.device.sub1',
-			path: 'Device',
+			path: '',
 			icon: '',
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
@@ -228,7 +228,6 @@ export class ConfigService {
 		id: 'home-security',
 		label: 'common.menu.homeSecurity',
 		path: 'home-security',
-		hide: true,
 		metricsEvent: 'itemClick',
 		metricsParent: 'navbar',
 		metricsItem: 'link.homesecurity',
@@ -252,7 +251,7 @@ export class ConfigService {
 		forArm: true,
 		subitems: []
 	}];
-	menuItemsPrivacy: Array < any > = [{
+	menuItemsPrivacy: Array<any> = [{
 		id: 'dashboard',
 		label: 'common.menu.dashboard',
 		path: 'dashboard',
@@ -369,7 +368,7 @@ export class ConfigService {
 			icon: '',
 			subitems: []
 		}]
-	},  {
+	}, {
 		id: 'privacy',
 		label: 'common.menu.privacy',
 		path: 'privacy/breaches',
@@ -382,7 +381,7 @@ export class ConfigService {
 		},
 		forArm: false,
 		subitems: []
-	},  {
+	}, {
 		id: 'support',
 		label: 'common.menu.support',
 		path: 'support',
@@ -399,7 +398,6 @@ export class ConfigService {
 		id: 'home-security',
 		label: 'common.menu.homeSecurity',
 		path: 'home-security',
-		hide: true,
 		metricsEvent: 'itemClick',
 		metricsParent: 'navbar',
 		metricsItem: 'link.homesecurity',
@@ -408,7 +406,12 @@ export class ConfigService {
 		},
 		icon: ['fal', 'home-lg-alt'],
 		forArm: false,
-		subitems: []
+		subitems: [],
+		pre: [
+			'assets/images/connected-home-security/welcome-page-one.png',
+			'assets/images/connected-home-security/welcome-page-two.png',
+			'assets/images/connected-home-security/welcome-chs-logo.png'
+		]
 	}, {
 		id: 'user',
 		label: 'User',
@@ -422,7 +425,7 @@ export class ConfigService {
 		},
 		forArm: true,
 		subitems: []
-	}, ];
+	},];
 	getMenuItems(isGaming) {
 		if (isGaming) {
 			return this.menuItemsGaming;

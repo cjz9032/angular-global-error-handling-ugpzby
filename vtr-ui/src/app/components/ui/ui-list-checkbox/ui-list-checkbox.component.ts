@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgbTooltip, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
+import { SecureMath } from '@lenovo/tan-client-bridge';
 
 import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -35,7 +36,7 @@ export class UiListCheckboxComponent implements OnInit {
 	public packageName: string;
 	public packageID: string;
 	// Random number is used to have unique id of each input field
-	randomNumber: number = Math.floor(new Date().valueOf() * Math.random());
+	randomNumber: number = Math.floor(new Date().valueOf() * SecureMath.random());
 
 	private notInstalledText = 'systemUpdates.notInstalled';
 	private notAvailableText = 'systemUpdates.notAvailable';
@@ -88,7 +89,7 @@ export class UiListCheckboxComponent implements OnInit {
 		// const readMeUrl = 'https://download.lenovo.com/consumer/desktop/lnvusbss.txt';
 		const modalRef = this.modalService.open(ModalUpdateChangeLogComponent,
 			{
-				backdrop: 'static',
+				backdrop: true,
 				size: 'lg',
 				windowClass: 'update-read-more-modal-size',
 				centered: true

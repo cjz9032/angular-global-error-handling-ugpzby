@@ -80,12 +80,12 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 
 	private mapMessage(historyList: Array<UpdateHistory>): Array<UpdateHistory> {
 		historyList.forEach((item: UpdateHistory) => {
-			const date = this.commonService.formatDate(item.utcInstallDate);
-			const time = this.commonService.formatTime(item.utcInstallDate);
+			const date = this.commonService.formatLocalDate(item.utcInstallDate);
+			const time = this.commonService.formatLocalTime(item.utcInstallDate);
 			if (item.status.toLocaleLowerCase() === 'installed') {
-				item.message = this.translate.instant('systemUpdates.successInstall') + ' ' + date + ' ' + this.translate.instant('systemUpdates.at') + ' ' + time;
+				item.message = this.translate.instant('systemUpdates.successInstall') + date + ' ' + time;
 			} else {
-				item.message = this.translate.instant('systemUpdates.failedInstall') + ' ' + date + ' ' + this.translate.instant('systemUpdates.at') + ' ' + time;
+				item.message = this.translate.instant('systemUpdates.failedInstall') + date + ' ' + time;
 			}
 		});
 		return historyList;
@@ -121,5 +121,9 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 		if (this.systemUpdateService.installationHistory) {
 			this.sortInstallationHistory(this.systemUpdateService.installationHistory);
 		}
+	}
+
+	public convertReleaseDate(datestr: string) {
+		return this.commonService.formatLocalDate(`${datestr}T00:00:00`);
 	}
 }

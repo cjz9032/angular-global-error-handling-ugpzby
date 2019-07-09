@@ -4,9 +4,10 @@
 	.camera-preview {
 		.base-preview {
 			border: 0.1rem solid #ecf0f1;
-			height: 25.8rem;
-			object-fit: contain;
+			height: 25rem;
 			width: 100%;
+			max-width: 33.5rem;
+			object-fit: contain;
 			border-radius: 0.4rem;
 		}
 		.feed {
@@ -15,6 +16,25 @@
 			transform: rotateY(180deg);
 			&.disable {
 				cursor: not-allowed;
+			}
+		}
+
+		.error {
+			@extend .base-preview;
+			background-color: $shade_extralight;
+			cursor: not-allowed;
+			padding: 9rem 2rem 0 2rem;
+
+			.error-title {
+				color: $stop_dark;
+				font-size: 1.9rem;
+				font-weight: 600;
+			}
+
+			.error-description {
+				color: $shade_dark;
+				font-size: 1.7rem;
+				font-weight: 600;
 			}
 		}
 	}

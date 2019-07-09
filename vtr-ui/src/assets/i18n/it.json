@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -39,22 +39,36 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
                     "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock"
+                    "touchpadLock": "Touchpad Lock",
+                    "lightingDriverPopup": {
+                        "headerText": "Driver Install Required",
+                        "text": "Please install driver",
+                        "button": "Install",
+                        "link": "cancel"
+                    },
+                    "lightingColorMessage": {
+                        "text": "Selecting color not available to this effect."
+                    }
                 },
                 "systemTools": {
                     "power": "Power",
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -71,6 +85,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                },
+                "systemStatus": {
+                    "info": "INFO"
                 }
             }
         },
@@ -111,11 +128,12 @@
                 },
                 "buttons": {
                     "start": "START RECORDING",
-                    "stop": "STOP RECORDING"
+                    "stop": "STOP RECORDING",
+                    "numberPrefix": "NUM"
                 },
                 "recording": {
                     "title": "START TYPING",
-                    "description": "20 inputs with in 20 seconds can be recorded."
+                    "description": "20 inputs within 20 seconds can be recorded."
                 },
                 "recorded": {
                     "title": "MACRO KEY FOR ",
@@ -204,7 +222,7 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure to clear this macro key?"
+                    "title": "Are you sure you want to clear this macro key?"
                 },
                 "timeoutRecording": {
                     "title": "Time Out For Recording.",
@@ -223,13 +241,16 @@
                     "btnCancel": "Cancel"
                 },
                 "btnOk": "OK"
+            },
+            "recording": {
+                "title": "Recording Macro Key For"
             }
         },
         "lightingProfile": {
             "title": "Lighting",
             "effect": {
                 "option1": {
-                    "title": "Static"
+                    "title": "On"
                 },
                 "option2": {
                     "title": "Flicker"
@@ -241,25 +262,120 @@
                     "title": "Wave"
                 },
                 "option5": {
-                    "title": "Music"
-                },
-                "option6": {
                     "title": "Smooth"
                 },
-                "option7": {
+                "option6": {
                     "title": "CPU Temperature"
                 },
-                "option8": {
+                "option7": {
                     "title": "CPU Utilization"
                 },
-                "option9": {
-                    "title": "Response"
+                "option8": {
+                    "title": "Off"
                 },
-                "option10": {
-                    "title": "Ripple"
+                "apply": {
+                    "title": "APPLY"
                 },
-                "option11": {
-                    "title": "No Light"
+                "applied": {
+                    "title": "APPLIED"
+                }
+            },
+            "brightness": {
+                "text1": {
+                    "title": "*Brightness setting doesn't apply on "
+                },
+                "text2": {
+                    "title": " effect"
+                }
+            },
+            "lightingSingleLightingOption": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
+            },
+            "colourwheel": {
+                "text1": {
+                    "title": "Selecting colour not available to this effect."
+                },
+                "text2": {
+                    "title": "APPLY"
+                },
+                "text3": {
+                    "title": "APPLIED"
+                },
+                "text4": {
+                    "title": "R:"
+                },
+                "text5": {
+                    "title": "G:"
+                },
+                "text6": {
+                    "title": "B:"
+                },
+                "text7": {
+                    "title": "Color"
                 }
             }
         }
@@ -268,11 +384,11 @@
         "menu": {
             "dashboard": "Dashboard",
             "device": {
-                "title": "My Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "Dispositivo",
+                "sub1": "Il mio dispositivo",
+                "sub2": "Impostazioni dispositivo",
                 "sub3": "System Updates",
-                "sub4": "Smart Assist"
+                "sub4": "Assistenza intelligente"
             },
             "security": {
                 "title": "Protezione",
@@ -283,8 +399,8 @@
                 "sub5": "Protezione Internet",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
+            "support": "Supporto",
+            "homeSecurity": "Abitazione connessa",
             "privacy": "Privacy"
         },
         "securityAdvisor": {
@@ -307,25 +423,23 @@
             "notRegistered": "NON REGISTRATO"
         },
         "qAndA": {
-            "title": "Q&A for your machine",
-            "subtitle": "FIND SOME HELPFUL TIPS FOR YOUR DEVICE.",
-            "question1": "Backup and Restore your files",
-            "question2": "How to refresh your PC",
-            "question3": "How to know your machine's CPU",
-            "question4": "Check your machine's battery use",
-            "question5": "Use your PC like a tablet",
-            "question6": "Get to know Cortana, your personal assistant"
+            "title": "Domande e risposte per la tua macchina",
+            "subtitle": "TROVA ALCUNI CONSIGLI UTILI PER IL TUO DISPOSITIVO.",
+            "question1": "Backup e ripristino dei file",
+            "question2": "Come aggiornare il PC",
+            "question3": "Informazioni sulla CPU del computer in uso",
+            "question4": "Informazioni sull'uso della batteria del computer in uso",
+            "question5": "Utilizzo del PC come un tablet",
+            "question6": "Informazioni su Cortana, l'assistente personale"
         },
         "ui": {
             "back": "INDIETRO",
             "on": "ON",
             "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
-            "loader": {
-                "text1": "Fetching",
-                "text2": "Status"
-            }
+            "collapse": "Riduci",
+            "expand": "Espandi",
+            "loader": "Stato di<br> recupero",
+            "loading": "Caricamento in corso..."
         }
     },
     "privacy": {
@@ -344,7 +458,7 @@
         "personal": "PERSONAL",
         "custom": "CUSTOM",
         "skip": "SKIP",
-        "next": "NEXT",
+        "next": "AVANTI",
         "interests": "What are your interests?",
         "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
         "games": "GAMES",
@@ -358,166 +472,179 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Oggi il dispositivo è in ottime condizioni "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Nessuna connessione a Internet rilevata",
+            "subtitle": "Ulteriori informazioni su come risolvere i problemi di connessione in",
+            "buttonText": "Richiedi supporto"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Fornisci feedback",
+            "subtitle": "Esprimi la tua opinione su Vantage.",
+            "button": "Fornisci feedback",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Commenti...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
-                }
+                    "feedbackSuccess": "Grazie del feedback!"
+                },
+                "question1": "Ti piace il nuovo stile di Vantage?",
+                "question2": "Le prestazioni sono accettabili?",
+                "question3": "Utilizzerai l'applicazione più spesso in futuro?",
+                "yes": "Sì",
+                "no": "No",
+                "tips1": "Fornisci eventuali commenti aggiuntivi",
+                "sendFeedback": "Invia feedback",
+                "submitScreenShot": "Invia screenshot"
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera Privacy",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Impostazioni rapide",
+            "microphone": "Microfono",
+            "cameraPrivacy": "Fotocamera",
+            "eyeCareMode": "Modalità comfort visivo"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Stato del sistema",
+            "subtitle": "INFORMAZIONI RAPIDE SULLO STATO DEL DISPOSITIVO.",
             "memory": {
-                "title": "Memory",
+                "title": "Memoria",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Memoria non trovata",
+                    "of": "di"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Spazio su disco",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Disco non trovato",
+                    "of": "di"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Garanzia",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Garanzia non trovata",
+                    "until": "Fino al",
+                    "expiredOn": "Garanzia scaduta il",
+                    "notAvailable": "Garanzia non disponibile"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Aggiorna"
                 }
             }
         }
     },
     "device": {
         "myDevice": {
-            "title": "My Device",
-            "subtitle": "My device status",
-            "serial": "Serial",
-            "productNumber": "Product number",
-            "biosVersion": "Bios version",
-            "learnMore": "Learn more",
-            "freeMemory": "Free memory",
+            "title": "Il mio dispositivo",
+            "subtitle": "Stato dispositivo personale",
+            "serial": "Numero di serie",
+            "productNumber": "Numero di prodotto",
+            "biosVersion": "Versione BIOS",
+            "learnMore": "Per saperne di più",
+            "freeMemory": "Memoria disponibile",
             "systemUpdate": {
-                "title": "System update",
-                "notFound": "System update not found",
+                "title": "Aggiornamento del sistema",
+                "notFound": "Aggiornamento sistema non rilevato",
                 "detail": {
-                    "uptoDate": "Software up to date ",
-                    "updatedOn": "updated on ",
-                    "outdated": "Software outdated ",
-                    "neverRanUpdate": "never ran update"
+                    "uptoDate": "Software aggiornato",
+                    "updatedOn": "aggiornato in data",
+                    "outdated": "Software obsoleto",
+                    "neverRanUpdate": "aggiornamento mai eseguito"
                 }
             },
-            "extendedWarranty": "Extend warranty",
+            "extendedWarranty": "Garanzia estesa",
             "processor": {
-                "title": "Processor",
-                "notFound": "Processor not found"
+                "title": "Processore",
+                "notFound": "Processore non trovato"
             },
             "memory": {
-                "title": "Memory",
-                "notFound": "Memory not found",
+                "title": "Memoria",
+                "notFound": "Memoria non trovata",
                 "ram": "RAM"
             },
             "diskspace": {
-                "title": "Disk Space",
-                "notFound": "Disk not found"
+                "title": "Spazio su disco",
+                "notFound": "Disco non trovato"
             },
-            "software": "Software up to date",
-            "updated": "Updated",
-            "outOfWarranty": "Out of warranty",
-            "expired": "Expired on",
-            "of": "of",
+            "software": "Software aggiornato",
+            "updated": "Aggiornato",
+            "outOfWarranty": "Fuori garanzia",
+            "expired": "Scaduto in data",
+            "of": "di",
             "warranty": {
-                "notFound": "Warranty not found",
+                "notFound": "Garanzia non trovata",
                 "detail": {
-                    "title": "Extend warranty",
-                    "inWarranty": "In warranty ",
-                    "daysRemaining": "days remaining",
-                    "outOfWarranty": "Out of warranty ",
-                    "expiredOn": "Expired on",
-                    "notAvailable": "Warranty not available",
-                    "support": "Support"
+                    "title": "Garanzia estesa",
+                    "inWarranty": "In garanzia",
+                    "daysRemaining": "giorni rimanenti",
+                    "outOfWarranty": "Fuori garanzia",
+                    "expiredOn": "Scaduto in data",
+                    "notAvailable": "Garanzia non disponibile",
+                    "support": "Supporto"
                 }
             },
-            "helpful": "Helpful Content"
+            "helpful": "Contenuto utile"
         },
         "deviceSettings": {
-            "helpful": "Helpful Content",
+            "helpful": "Contenuto utile",
             "batteryGauge": {
-                "title": "BATTERY GAUGE",
-                "subtitle": "Battery",
-                "hours": "hours",
-                "hour": "hour",
-                "minutes": "minutes",
-                "minute": "minute",
-                "charge": "TIME TO FULLY CHARGE",
-                "button": "SEE BATTERY DETAILS",
+                "title": "INDICATORE BATTERIA",
+                "subtitle": "Durata batteria",
+                "hours": "ore",
+                "hour": "ora",
+                "minutes": "minuti",
+                "minute": "minuto",
+                "charge": "TEMPO PER LA CARICA COMPLETA",
+                "button": "VEDI DETTAGLI BATTERIA",
                 "details": {
-                    "title": "Battery Details",
-                    "primary": "Primary Battery",
-                    "secondary": "Secondary Battery",
-                    "tertiary": "Tertiary Battery",
-                    "status": "Status",
-                    "wattage": "Wattage",
-                    "barcode": "Bar-Code",
-                    "remainingPercent": "Remaining percentage",
-                    "temp": "Temperature",
-                    "frupn": "FRU part number",
-                    "remainingTime": "Remaining time",
-                    "chargeCompletionTime": "Charge completion time",
-                    "cycleCount": "Cycle count",
-                    "chemistry": "Device chemistry",
-                    "remainingCap": "Remaining capacity",
-                    "designCap": "Design capacity",
-                    "fullChargeCap": "Full charge capacity",
-                    "manufDt": "Manufacture date",
-                    "designVolt": "Design voltage",
-                    "volts": "Voltage",
-                    "firstUseDt": "First use date",
-                    "firmwareVer": "Firmware version",
+                    "title": "Dettagli batteria",
+                    "primary": "Batteria primaria",
+                    "secondary": "Batteria secondaria",
+                    "tertiary": "Batteria terziaria",
+                    "status": "Stato",
+                    "wattage": "Wattaggio",
+                    "barcode": "Codice a barre",
+                    "remainingPercent": "Percentuale rimanente",
+                    "temp": "Temperatura",
+                    "frupn": "Numero parte FRU",
+                    "remainingTime": "Tempo rimanente",
+                    "chargeCompletionTime": "Tempo per la carica completa",
+                    "cycleCount": "Numero di cicli",
+                    "chemistry": "Composizione chimica dispositivo",
+                    "remainingCap": "Capacità rimanente",
+                    "designCap": "Capacità nominale",
+                    "fullChargeCap": "Capacità carica completa",
+                    "manufDt": "Data produzione",
+                    "designVolt": "Tensione nominale",
+                    "volts": "Voltaggio",
+                    "firstUseDt": "Data primo utilizzo",
+                    "firmwareVer": "Versione firmware",
                     "chargeStatusString": {
-                        "error": "ERROR",
-                        "notinstalled": "Not installed",
-                        "noactivity": "No activity",
-                        "charging": "Charging",
-                        "discharging": "Discharging",
-                        "acdischarging": "Discharging (with ac)"
+                        "error": "ERRORE",
+                        "notinstalled": "Non installato",
+                        "noactivity": "Nessuna attività",
+                        "charging": "Caricamento",
+                        "discharging": "Scaricamento",
+                        "acdischarging": "Scarica (con al.)"
                     },
                     "deviceChemistry": {
                         "li-polymer": "Li-Polymer",
                         "li-ion": "Li-Ion",
                         "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion"
+                        "li_ion": "Li-Ion",
+                        "silver-zinc": "Silver-Zinc",
+                        "silver_zinc": "Silver-Zinc",
+                        "nicd": "NiCd",
+                        "nimh": "NiMH",
+                        "unknown": "Unknown"
                     },
                     "manufacturer": {
                         "title": "Manufacturer",
@@ -527,17 +654,17 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "This system may not support battery that",
-                        "description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
-                        "description1": "Attention:",
-                        "description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
+                        "description": "you cannot use the attached battery with this computer.",
+                        "description1": "Replace",
+                        "description2": "it with a battery of correct model."
                     },
                     "Good": {
-                        "title": "The battery is in good Condition"
+                        "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -551,536 +678,804 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter"
-                    },
-                    "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter"
-                    },
-                    "ACAdapterNotSupported": {
-                        "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
                         "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
+                    "NotSupportACAdapter": {
+                        "title": "AC adapter not supported.",
+                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
+                    },
                     "MissingDriver": {
-                        "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
+                        "title": "The Lenovo Power Manager driver",
                         "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
                     },
                     "StoreLimitation": {
                         "title": "The battery can only store",
                         "description1": "of",
                         "description2": "it's original full charge capacity"
+                    },
+                    "HighTemperature": {
+                        "title": "Discharging",
+                        "description": "has been stopped because the",
+                        "description1": "battery temperature is too high"
+                    },
+                    "TrickleCharge": {
+                        "description": "The battery was",
+                        "description1": "completely discharged",
+                        "description2": "and needs to be recharged. This might take ten hours or more."
+                    },
+                    "OverheatedBattery": {
+                        "description": "The battery is",
+                        "description1": "too hot.",
+                        "description2": "Remove it from the computer and cool it to room temperature."
+                    },
+                    "PermanentError": {
+                        "description": "The battery has",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
+                    },
+                    "HardwareAuthenticationError": {
+                        "description": "The battery installed is",
+                        "description1": "is not supported",
+                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
                     }
-                }
+                },
+                "updating": "Updating",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
+                "voltageError": "Battery voltage incorrect",
+                "batteryNotDetected": "No Battery Detected"
             },
             "power": {
-                "title": "Power",
-                "subtitle": "Power Settings",
-                "description": "This section enables you to dynamically adjust thermal performance and maximize the battery life. It also has other popular power-related features. You can check the default settings in this section and customize your system according to your needs.",
+                "title": "Alimentazione",
+                "subtitle": "Impostazioni energetiche",
+                "description": "Questa sezione consente di regolare dinamicamente le prestazioni termiche e di ottimizzare la durata della batteria.Dispone inoltre di altre funzioni energetiche comuni. È possibile controllare le impostazioni predefinite in questa sezione e personalizzare il sistema in uso in base alle proprie esigenze.",
                 "jumpto": {
-                    "title": "JUMP TO SETTINGS",
-                    "battery": "Battery",
-                    "power": "Power",
-                    "cooling": "Intelligent Cooling",
-                    "other": "Other"
+                    "title": "PASSA A IMPOSTAZIONI",
+                    "battery": "Batteria",
+                    "power": "Alimentazione",
+                    "cooling": "Raffreddamento intelligente",
+                    "other": "Altro"
                 },
                 "powerSmartSettings": {
-                    "title": "Power Smart Settings",
-                    "subtitle": "INTELLIGENT COOLING",
-                    "subtitle1": "Battery & Quiet",
-                    "description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
-                    "description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
-                    "readMore": "Read more.",
+                    "title": "Impostazioni energetiche intelligenti",
+                    "subtitle": "RAFFREDDAMENTO INTELLIGENTE",
+                    "subtitle1": "Batteria e silenzio",
+                    "description1": "Questa funzione regola dinamicamente le impostazioni termiche in base alle esigenze.Quando è accesa, regola le impostazioni per mantenere il dispositivo più fresco o silenzioso, se è in mano all'utente o in caso di inattività. In caso contrario, ottimizza le prestazioni mentre il dispositivo si trova su una superficie stabile. Se disattivata, è possibile impostare manualmente la priorità termica.",
+                    "description2": "Raffreddamento intelligente regola la velocità della ventola, la temperatura massima della superficie e le prestazioni.Questa funzione presenta le modalità elencate di seguito ed è ora accessibile tramite il dispositivo di scorrimento che regola le prestazioni della Modalità risparmio energia di Windows.",
+                    "description3": "Raffreddamento intelligente bilancia automaticamente le prestazioni termiche per adattarle alle proprie esigenze.La funzione Raffreddamento intelligente regola le impostazioni delle prestazioni per fornire una superficie più fredda per il massimo comfort, quando il notebook viene tenuto in mano. Quando il dispositivo si trova su una scrivania, questa funzione ottimizza le prestazioni.",
+                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
+                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "readMore": "Ulteriori informazioni.",
                     "gotoWindows": {
-                        "title": "Go to windows settings",
-                        "modalBodyText1": "Click on Windows battery icon on System tray to access Windows performance power slider"
+                        "title": "Vai a Impostazioni di Windows",
+                        "modalBodyText1": "Fare clic sull'icona della batteria di Windows sull'area di notifica per accedere al dispositivo di scorrimento delle prestazioni di Windows"
                     },
                     "intelligentCooling": {
-                        "title": "Intelligent cooling",
+                        "title": "Raffreddamento intelligente",
                         "description": "",
                         "tooltip": "",
-                        "optimize": "optimize system for",
-                        "apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
+                        "optimize": "ottimizza sistema per",
+                        "apsHint": "Per abilitare Raffreddamento intelligente, è necessario installare e abilitare Lenovo Active Protection System.",
                         "options": {
-                            "quiteCool3": "Cool Mode",
-                            "performance3": "High Performance",
-                            "quiteCool4": "Quiet & Cool",
-                            "performance4": "Performance",
-                            "quiteCool5": "Quiet & Cool",
-                            "performance5": "Performance"
+                            "quiteCool3": "Modalità raffreddamento",
+                            "performance3": "Elevate prestazioni",
+                            "quiteCool4": "Silenzio e raffreddamento",
+                            "performance4": "Prestazioni",
+                            "quiteCool5": "Silenzio e raffreddamento",
+                            "performance5": "Prestazioni",
+                            "batterySaving": "Battery Saving",
+                            "performance13": "Performance",
+                            "quiteCool13": "Quiet & Cool",
+                            "performance14": "Extreme Performance",
+                            "quiteCool14": "Intelligent Cooling"
                         },
                         "readMore": {
-                            "mode1": "Quiet mode",
-                            "mode2": "Balanced mode",
-                            "mode3": "Performance mode",
-                            "line1": "Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "line2": "Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
-                            "line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "mode1": "Modalità silenziosa",
+                            "mode2": "Modalità bilanciata",
+                            "mode3": "Modalità prestazioni",
+                            "line1": "Il dispositivo di scorrimento è all'estrema sinistra.La velocità e le prestazioni della ventola vengono ridotte per ottenere un computer più fresco e silenzioso e la massima durata della batteria.",
+                            "line2": "Il dispositivo di scorrimento è al centro.La velocità e le prestazioni della ventola sono bilanciate in modo dinamico per garantire la migliore esperienza.",
+                            "line3": "Il dispositivo di scorrimento è all'estrema destra. La velocità della ventola e la temperatura consentita della superficie sono più elevate per ottenere le massime prestazioni.",
+                            "line4": "More info"
+                        },
+                        "selectedModeText": {
+                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
+                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
+                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                        },
+                        "intelligentCoolingModesModal": {
+                            "title": "Change intelligent cooling modes",
+                            "close": "close",
+                            "coolingModesList": {
+                                "list1": "Click on the windows battery-icon in the toolbar",
+                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                            }
                         }
                     },
                     "nonintelligentCooling": {
                         "options": {
-                            "intelligentCooling": "INTELLIGENT COOLING",
-                            "extremeCooling": "EXTREME PERFORMANCE",
-                            "battery&Quite": "BATTERY & QUIET"
+                            "intelligentCooling": "RAFFREDDAMENTO INTELLIGENTE",
+                            "extremeCooling": "PRESTAZIONI ESTREME",
+                            "battery&Quite": "BATTERIA E SILENZIO"
                         }
-                    }
+                    },
+                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
                 },
                 "powerSettings": {
-                    "title": "Power Settings",
+                    "title": "Impostazioni energetiche",
                     "alwaysUSB": {
-                        "title": "Always on USB",
-                        "description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
-                        "checkbox": "Enable USB charging from laptop battery when computer is off."
+                        "title": "USB sempre attiva",
+                        "description": "Caricare i dispositivi USB sul computer mediante il connettore USB sempre attiva, quando il computer è in modalità Sospensione, Ibernazione oppure quando è spento.È possibile caricare rapidamente uno smartphone o un tablet dal connettore USB con codifica di colore giallo o contrassegnato con queste icone:",
+                        "checkbox": "Consente la ricarica USB tramite la batteria del notebook quando il computer è spento."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Ripresa facile",
+                        "description": "Abilitare questa funzione per migliorare il tempo di ripresa se si apre e chiude di frequente il coperchio del computer.",
+                        "tooltip": "Questa funzione migliorerà il tempo di ripresa se si apre e chiude di frequente il coperchio del computer. Quando abilitata, il computer entrerà in modalità di risparmio energia quando si chiude il coperchio, ma riprenderà immediatamente se si riapre il coperchio entro 15 minuti dalla chiusura. Questa funzione consente anche al notebook di tentare di finire le attività in sospeso (come l'invio di e-mail o il download di un file) prima che il sistema entri in sospensione."
                     }
                 },
                 "otherSettings": {
-                    "title": "Other Settings",
+                    "title": "Altre impostazioni",
                     "vantageToolbar": {
-                        "title": "Lenovo Vantage Toolbar",
-                        "description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
+                        "title": "Barra degli strumenti di Lenovo Vantage",
+                        "description": "Aggiunge la barra degli strumenti di Vantage alla barra delle applicazioni di Windows per ottenere facilmente ulteriori dettagli sulla batteria e l'accesso alle impostazioni rapide."
                     }
                 },
                 "batterySettings": {
-                    "title": "Battery Settings",
+                    "title": "Impostazioni batteria",
                     "batteryThreshold": {
-                        "title": "Battery Charge Threshold",
-                        "description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
-                        "tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "title": "Soglia di carica batteria",
+                        "description": "Se si utilizza il computer prevalentemente con l'adattatore CA collegato e raramente l'alimentazione della batteria,è possibile aumentare la durata della batteria impostando il valore di carica massimo sotto il 100%. Questa operazione è utile perché le batterie utilizzate non di frequente hanno una durata maggiore quando vengono conservate a un livello di carica non completo.",
+                        "tooltip": "Se la batteria è attualmente ricaricata al di sopra della soglia di arresto della ricarica, scollegare l'alimentazione finché la batteria non sarà scarica o al di sotto della soglia di arresto della ricarica.A seconda dello stato della batteria (vecchia o nuova), il punto esatto in cui la ricarica si avvierà o arresterà potrebbe differire fino a 2 punti percentuali. Se si abilita la funzione, si consiglia di eseguire occasionalmente Reimpostazione indicatore batteria per garantire una segnalazione corretta dello stato della batteria.",
+                        "note": "Nota",
+                        "readMoreText": "Ulteriori informazioni.",
+                        "noteInfo": " La soglia di carica della batteria non è ancora completamente attiva. Scollegare la presa di alimentazione del computer e scaricare completamente la batteria o scendere sotto la soglia di arresto della carica.",
                         "settings": {
-                            "title1": "Threshold for Built in battery",
-                            "title2": "Threshold for Removable battery"
+                            "title1": "Soglia per batteria integrata",
+                            "title2": "Soglia per batteria rimovibile"
                         },
                         "popup": {
-                            "title": "Enable Battery Charge Threshold",
-                            "description1": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life.",
-                            "description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
-                            "enable": "ENABLE",
-                            "cancel": "CANCEL"
+                            "title": "Abilita soglia di carica della batteria",
+                            "description1": "L'abilitazione della carica personalizzata della batteria consente di prolungare la durata della batteria e di utilizzare il dispositivo più a lungo.Tuttavia, se la carica non è completa, l'autonomia della batteria sarà inferiore.",
+                            "description2": "Per abilitare questa funzione, scollegare la presa di alimentazione del computer escaricare completamente la batteria o scendere sotto la soglia di arresto della carica.",
+                            "enable": "ABILITA",
+                            "cancel": "ANNULLA"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Avvia carica quando inferiore a",
+                            "checkboxText": "Imposta automaticamente la soglia di avvio della ricarica a 5 punti percentuali al di sotto della soglia di arresto della ricarica.",
+                            "stop": "Arresta la carica a"
                         }
                     },
                     "expressCharging": {
-                        "title": "Express Charging",
-                        "description": "Express Charge allows your battery to a full charge much faster than normal mode.",
-                        "tooltip": "Express Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
+                        "title": "Carica espressa",
+                        "description": "Carica espressa consente alla batteria di effettuare una carica completa molto più velocemente della modalità normale.",
+                        "tooltip": "Carica espressa consente di caricare la batteria del sistema molto più velocemente,ma questo potrebbe ridurre la durata della batteria."
                     },
                     "conservationMode": {
-                        "title": "Conservation Mode",
-                        "description": "This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
+                        "title": "Modalità conservazione",
+                        "description": "Questa funzione è utile per estendere la durata della batteria in caso di collegamento. <br>Quando questa modalità è abilitata, la batteria viene caricata solo al 55-60% della capacità e la sua durata può essere massimizzata. Tuttavia, in questo modo si ridurrà il tempo di utilizzo del computer dopo che sarà stato scollegato dalla fonte di alimentazione CA.",
                         "tooltip": {
-                            "line1": "This function is useful to extend the lifespan of your battery when plugged.",
-                            "line2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
-                            "line3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
+                            "line1": "Questa funzione è utile per estendere la durata della batteria in caso di collegamento.",
+                            "line2": "Quando questa modalità è abilitata, la batteria viene caricata solo al 55-60% della capacità e la sua durata può essere massimizzata. Tuttavia, in questo modo si ridurrà il tempo di utilizzo del computer dopo che sarà stato scollegato dalla fonte di alimentazione CA.",
+                            "line3": "Nota: le modalità Carica espressa e Conservazione non possono funzionare contemporaneamente.Se una delle due modalità è abilitata, l'altra verrà automaticamente disabilitata."
                         }
                     },
                     "airPlanePower": {
-                        "title": "Airplane Power Mode",
-                        "description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
+                        "title": "Modalità alimentazione in aereo",
+                        "description": "Proteggere la presa elettrica CA aereo controllando il consumo di energia del sistema.Quando è abilitata la funzione Modalità alimentazione in aereo, il computer riduce il consumo di energia limitando la velocità di ricarica della batteria e le prestazioni del sistema."
+                    }
+                },
+                "energyStar": {
+                    "title": "Energy Star",
+                    "description": "UN PRODOTTO CON CERTIFICAZIONE ENERGY STAR"
+                },
+                "smartStandby": {
+                    "title": "Standby intelligente",
+                    "description": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne l'avvio rapido durante i picchi di utilizzo.",
+                    "tooltip": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di inizio pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Il periodo di tempo è ottimizzato in base al piano impostato. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi.",
+                    "timer": {
+                        "heading": "Impostare l'ora in cui generalmente si utilizza il computer",
+                        "subHeading1": "si inizi",
+                        "subHeading2": "fine",
+                        "subHeading3": "usa questa pianificazione per",
+                        "endTimeNote": "L'ora di fine non deve superare le 20 ore da quella di inizio",
+                        "timeUnits": {
+                            "unit1": "Ore",
+                            "unit2": "Minuti",
+                            "unit3": "AM/PM"
+                        }
                     }
                 }
             },
             "audio": {
                 "title": "Audio",
-                "subtitle": "Audio Settings",
-                "description": "This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.",
+                "subtitle": "Impostazioni audio",
+                "description": "Questa sezione consente di ottimizzare in modo automatico o di configurare manualmente ecompletamente le impostazioni audio, ad esempio Dolby Settings, il microfono e così via.",
                 "audioSmartsettings": {
-                    "title": "Audio Smart settings",
-                    "subtitle": "APPLICATION-BASED SETTINGS",
-                    "description": "Automatically adjust audio settings according to different apps you are using.",
+                    "title": "Impostazioni intelligenti audio",
+                    "subtitle": "IMPOSTAZIONI BASATE SULL'APPLICAZIONE",
+                    "description": "Regolare automaticamente le impostazioni audio in base alle app utilizzate.",
                     "dolby": {
-                        "title": "Automatic Dolby Audio settings",
-                        "tooltip": "Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
+                        "title": "Impostazioni audio Dolby automatiche",
+                        "tooltip": "Le impostazioni audio Dolby automatiche configurano le impostazioni audio Dolby nellamodalità appropriata per le diverse app utilizzate per migliorare l'esperienza audio.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "DINAMICO",
+                            "movie": "FILM",
+                            "music": "MUSICA",
+                            "games": "GIOCO",
+                            "voip": "VOCE"
                         }
                     },
                     "voip": {
-                        "title": "Automatic Audio Optimization for VoIP",
-                        "tooltip": "Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality."
+                        "title": "Ottimizzazione audio automatica per VoIP",
+                        "tooltip": "Passare automaticamente alla modalità Voce di Dolby durante le chiamate VoIP per fornire una qualità vocale chiara e coerente."
                     }
                 },
                 "microphone": {
-                    "title": "Microphone",
+                    "title": "Microfono",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permission to access your microphone. Please turn on access to your microphone for the Lenovo Vantage app."
+                        "title": "nota",
+                        "description": "Lenovo Vantage non dispone dell'autorizzazione ad accedere al microfono.Attivare l'accesso al microfono per l'app Lenovo Vantage."
                     },
                     "microphone": {
-                        "title": "Microphone",
-                        "tooltip": "You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode."
+                        "title": "Microfono",
+                        "tooltip": "È possibile personalizzare l'effetto MIC regolando il volume del microfonoe specificando la modalità appropriata."
                     },
                     "volume": {
-                        "title": "Microphone Volume",
-                        "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
+                        "title": "Volume microfono",
+                        "description": "Dolby Audio fornisce un audio preciso, nitido e potente da tutti i contenuti preferiti, selezionando la modalità appropriata in base a contenuti e dispositivi.",
                         "options": {
-                            "silent": "Silent",
-                            "loud": "Loud"
+                            "silent": "Silenzioso",
+                            "loud": "Forte"
                         }
                     },
                     "suppress": {
-                        "title": "Suppress keyboard noise",
-                        "tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+                        "title": "Soppressione rumore tastiera",
+                        "tooltip": "Attivare questa funzione per ottimizzare l'audio MIC, eliminando il rumore della tastiera."
                     },
                     "acoustic": {
-                        "title": "Acoustic Echo Cancellation",
-                        "tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+                        "title": "Eliminazione dell'eco",
+                        "tooltip": "Attivare questa funzione per ottimizzare l'audio MIC riducendo l'eco acustica."
                     },
                     "optimize": {
-                        "title": "Optimize my microphone for:",
-                        "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+                        "title": "Ottimizza microfono per:",
+                        "tooltip": "Configurare l'effetto microfono per migliorare l'esperienza audio in base a scenari e ambienti differenti.",
                         "options": {
-                            "VoiceRecognition": "VOICE RECOGNITION",
-                            "OnlyMyVoice": "ONLY MY VOICE",
-                            "Normal": "NORMAL",
-                            "MultipleVoices": "MULTIPLE VOICES"
+                            "VoiceRecognition": "RICONOSCIMENTO VOCALE",
+                            "OnlyMyVoice": "SOLO LA MIA VOCE",
+                            "Normal": "NORMALE",
+                            "MultipleVoices": "VOCI MULTIPLE"
                         }
                     }
                 }
             },
             "displayCamera": {
-                "title": "Display & Camera",
-                "subtitle": "Display & Camera Settings",
-                "description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
+                "title": "Schermo e fotocamera",
+                "subtitle": "Impostazioni Schermo e fotocamera",
+                "description": "Questa sezione consente di migliorare l'esperienza visiva e di configurare le proprietà della fotocamera. Esplorare ulteriori funzioni e personalizzare qui l'esperienza di visualizzazione.",
                 "jumpTo": {
-                    "title": "JUMP TO SETTINGS",
+                    "title": "PASSA A IMPOSTAZIONI",
                     "shortcuts": {
                         "display": {
-                            "title": "Display"
+                            "title": "Visualizza"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Fotocamera"
                         }
                     }
                 },
                 "display": {
-                    "title": "Display",
+                    "title": "Visualizza",
                     "eyeCareMode": {
-                        "title": "Eye Care Mode",
-                        "checkbox": "Schedule eye care mode from sunset to sunrise",
+                        "title": "Modalità Comfort Visivo",
+                        "checkbox": "Pianifica la modalità Comfort visivo dal tramonto all'alba",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Caldo (migliore per gli occhi)",
+                            "cold": "Fredda"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Ripristina temperatura",
+                        "tooltip": "La modalità Comfort visivo regola la temperatura del colore dello schermo per filtrare la luce blu e ridurre l'affaticamento degli occhi.",
+                        "onSunsetToSunriseScheduleDescription": "Pianifica la modalità Comfort visivo dal tramonto all'alba",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "Nota",
+                            "description": "Lenovo Vantage deve accedere alle informazioni sulla posizione per calcolare l'ora del tramonto e dell'alba dell'area geografica in cui ci si trova."
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Display color temperature",
+                        "title": "Temperatura colore schermo",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Caldo (migliore per gli occhi)",
+                            "cold": "Fredda"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Ripristina temperatura",
+                        "tooltip": "La modalità Comfort visivo regola la temperatura del colore dello schermo per filtrare la luce blu e ridurre l'affaticamento degli occhi.",
+                        "onSunsetToSunriseScheduleDescription": "Pianifica la modalità Comfort visivo dal tramonto all'alba",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "Nota",
+                            "description": "Lenovo Vantage deve accedere alle informazioni sulla posizione per calcolare l'ora del tramonto e dell'alba dell'area geografica in cui ci si trova."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Protezione della privacy",
+                        "description": "Questa funzione impedisce ad altre persone di vedere i contenuti sullo schermo. Se attiva, modifica l'angolo di visione dello schermo, proteggendoti da sguardi indiscreti. È inoltre possibile attivare o disattivare le modalità premendo i tasti \"FN+D\".",
+                        "note": "La protezione della privacy non funziona quando lo schermo è in modalità verticale. In questa modalità, lo schermo è ancora visibile dai lati.",
+                        "labelText": "Abilitare questa funzione quando si digitano le password"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Impostazioni energetiche OLED",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Lo schermo OLED del computer può inoltre ridurre il consumo energetico e aumentare la durata della batteria riducendo in modo selettivo la luminosità di alcune aree.",
+                            "Si consiglia inoltre di ridurre la luminosità della barra delle applicazioni e di altre aree dello schermo che non cambiano di frequente per prolungare la durata dello schermo."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Ripristina temperatura",
+                        "tooltip": "Questa funzionalità può ridurre il consumo energetico e aumentare la durata della batteria riducendo in modo selettivo la luminosità di alcune aree.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
-                    "title": "Camera",
+                    "title": "Fotocamera",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permissions to access your camera. Please turn on access to your camera for the Lenovo Vantage app."
+                        "title": "Nota",
+                        "description": "Lenovo Vantage non dispone delle autorizzazioni per accedere alla fotocamera. Attivare l'accesso alla fotocamera per l'app Lenovo Vantage."
                     },
-                    "url": "Go to windows privacy settings",
+                    "url": "Vai a Impostazioni di privacy di Windows",
                     "cameraPrivacy": {
-                        "title": "Camera privacy mode",
-                        "tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling."
+                        "title": "Modalità privacy fotocamera",
+                        "tooltip": "La fotocamera non invia più immagini dal vivo quando è abilitata l'impostazione relativa alla privacy. Attivare questa impostazione solo se non si desidera condividere le proprie immagini con altri durante le videochiamate."
                     },
                     "camera": {
-                        "title": "Camera",
-                        "tooltip": "Click here to reset Camera properties to default settings.",
-                        "reset": "Reset factory settings"
+                        "title": "Fotocamera",
+                        "tooltip": "Fare clic qui per ripristinare le impostazioni predefinite delle proprietà della fotocamera.",
+                        "reset": "Ripristina impostazioni predefinite"
                     },
-                    "brightness": "Brightness",
-                    "contrast": "Contrast",
-                    "autoExposure": "Auto Exposure",
-                    "autoFocus": "Auto focus",
-                    "notAvailable": "Camera Not Available",
+                    "brightness": "Liminosità",
+                    "contrast": "Contrasto",
+                    "autoExposure": "Esposizione automatica",
+                    "autoFocus": "Messa a fuoco automatica",
+                    "notAvailable": "Fotocamera non disponibile",
                     "camerablur": {
-                        "title": "Camera Background Blur",
-                        "caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "title": "Sfocatura dello sfondo della fotocamera",
+                        "caption": "Questa funzionalità consente di sfocare lo sfondo quando la fotocamera viene utilizzata per videochiamate o per scattare foto. È possibile scegliere un effetto diverso tra le selezioni elencate di seguito.",
+                        "blurMode": "Modalità sfocatura",
+                        "comicMode": "Modalità fumetto",
+                        "sketchMode": "Modalità schizzo"
+                    },
+                    "cameraLoadingFailed": {
+                        "inUseTitle": "CAMERA IS IN USE",
+                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
+                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
+                        "loadingFailedDescription": "Close the app and try again."
+                    }
+                }
+            },
+            "inputAccessories": {
+                "title": "Input e accessori",
+                "subtitle": "Impostazioni di input e accessori",
+                "description": "Rilevamento intelligente Lenovo combina vari sensori del computer per rilevare le attività e modificare le impostazioni per il risparmio energia ottimale",
+                "inputAccessory": {
+                    "title": "Tastiera intelligente",
+                    "hiddenKeyboardFunctions": {
+                        "title": "Funzioni della tastiera nascoste",
+                        "description": "È possibile premere il tasto Fn, sulla parte inferiore sinistra della tastiera, contemporaneamente ad altri tasti, per richiamare i comandi mostrati nella mappa della tastiera di seguito."
+                    },
+                    "firstKeyObj": {
+                        "tittle": "Fn + Tasto di tabulazione",
+                        "description": "abilitare la funzione di zoom sui display ad alta risoluzione",
+                        "image": ""
+                    },
+                    "secondKeyObj": {
+                        "tittle": "Fn + 4",
+                        "description": "attivare la Modalità Sospensione",
+                        "image": ""
+                    },
+                    "thirdKeyObj": {
+                        "tittle": "Fn + D",
+                        "description": "attivare e disattivare la protezione della privacy",
+                        "image": ""
+                    },
+                    "fourthKeyObj": {
+                        "tittle": "Fn + Q",
+                        "description": "passare dalla modalità prestazioni alla modalità silenziosa e viceversa",
+                        "image": ""
+                    },
+                    "fifthKeyObj": {
+                        "tittle": "Fn + Barra spaziatrice",
+                        "description": "modificare gli stati della retroilluminazione della tastiera",
+                        "image": ""
+                    }
+                },
+                "userDefinedKey": {
+                    "title": "Tasto definito dall'utente",
+                    "caption": "Il tasto rappresentato dall'icona a forma di stella consente di impostare la funzione definita dall'utente",
+                    "dropDown": {
+                        "title": "Azione del tasto definito dall'utente",
+                        "note": "Nota: può essere utilizzato per immettere tasti comuni, come indirizzi e-mail o postali. Lenovo consiglia di non utilizzare questa funzione per la memorizzazione o l'immissione di password o di qualsiasi altra informazione privata.",
+                        "options": {
+                            "option1": "Selezionare",
+                            "option2": "Apri sito Web",
+                            "option3": "Inserire il testo"
+                        }
+                    },
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
                     }
                 }
             }
         },
         "smartAssist": {
-            "title": "Smart Assist",
-            "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+            "title": "Assistenza intelligente",
+            "description": "Rilevamento intelligente Lenovo combina vari sensori del computer per rilevare le attività, modificare le impostazioni per un risparmio ottimale dell'energia e proteggere la privacy.",
             "jumpTo": {
-                "title": "JUMP TO SETTINGS",
-                "security": "Security",
-                "screen": "Screen",
-                "media": "Media",
-                "voice": "Voice"
+                "title": "PASSA A IMPOSTAZIONI",
+                "security": "Protezione",
+                "screen": "Schermo",
+                "media": "Multimedia",
+                "voice": "Voce",
+                "APS": "APS"
             },
             "intelligentSecurity": {
-                "title": "Intelligent Security",
-                "readMore": "Read more",
+                "title": "Protezione intelligente",
+                "readMore": "Ulteriori informazioni",
                 "HumanPresenceDetection": {
-                    "title": "Human presence detection",
-                    "tooltip": "Click here to reset the human presence detection settings."
+                    "title": "Rilevamento presenza umana",
+                    "tooltip": "Fare clic qui per ripristinare le impostazioni di rilevamento della presenza umana."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Rilevamento presenza utente",
+                    "tooltip": "Fare clic qui per ripristinare le impostazioni di Rilevazione presenza umana."
                 },
                 "zeroTouchLogin": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
+                    "title": "Accesso zero touch",
+                    "caption": "Questa funzione sblocca o attiva automaticamente il computer quando l'utente si avvicina o si siede di fronte al PC."
                 },
                 "zeroTouchLock": {
-                    "title": "Zero Touch Lock",
-                    "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+                    "title": "Blocco zero touch",
+                    "caption": "Questa funzione ridurrà la luminosità dello schermo e bloccherà il computer quando non viene rilevata la presenza dell'utente. Consente inoltre di ridurre gli accessi non autorizzati al computer quando l'utente si allontana dal computer senza bloccarlo. Riduce anche il consumo di energia, attivando la modalità Standby moderno del sistema, quando non viene rilevata la presenza dell'utente.",
                     "autoScreenLockTimer": {
-                        "title": "AUTO SCREEN LOCK TIMER",
+                        "title": "TIMER BLOCCO SCHERMO AUTOMATICO",
                         "radioButton": {
-                            "fast": "Fast",
-                            "medium": "Medium",
-                            "slow": "Slow"
+                            "fast": "Rapido",
+                            "medium": "Medio",
+                            "slow": "Lento"
                         },
-                        "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+                        "toolTipContent": "Selezionare l'opzione desiderata per bloccare lo schermo a una velocità Rapida/Media/Lenta quando non viene rilevata la propria presenza. Tuttavia, l'ora in cui lo schermo verrà bloccato è influenzata dallo scenario effettivo dell'utente, dalla capacità del sensore e dalle impostazioni del timeout dello schermo di Windows. Pertanto, si consiglia di bloccare immediatamente il sistema prima di uscire."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+                    "title": "REGOLAZIONE SENSIBILITÀ DELLA DISTANZA",
+                    "caption": "La regolazione automatica della sensibilità della distanza aggiornerà automaticamente la distanza di rilevamento tramite un motore AI.",
                     "options": {
-                        "near": "Near",
-                        "far": "Far"
+                        "near": "Vicino",
+                        "far": "Lontano"
                     }
                 },
                 "note": {
-                    "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-                    "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
-                    "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-                    "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
-                    "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+                    "description1": "Questa funzione si basa su Windows Hello. Verificare che il riconoscimento facciale sia attivo nelle impostazioni di Windows.",
+                    "description2": "La funzione utilizza sensori e fotocamera per rilevare la presenza dell'utente. Tuttavia, non raccoglie alcun dato personale.",
+                    "description3": "1. Se il computer è in modalità tenda, tablet o supporto, queste funzioni potrebbero non funzionare correttamente.",
+                    "description4": "2. Se il computer è in modalità Ibernazione o è stato spento. L'accesso automatico alla fotocamera IR non funzionerà.",
+                    "description5": "3. Regolare lo schermo del computer con un'angolazione appropriata in modo che la fotocamera IR riconosca il volto per l'accesso automatico."
                 },
                 "WindowsLink": {
-                    "goToWindowsHello": "Go to Windows Hello Settings",
-                    "screenTimeoutSettings": "Go to Screen timeout settings"
+                    "goToWindowsHello": "Vai a Impostazioni di Windows Hello",
+                    "screenTimeoutSettings": "Accedi alle impostazioni di timeout dello schermo"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "RIPRISTINA IMPOSTAZIONI PREDEFINITE"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Schermo intelligente",
+                "description": "Rilevamento intelligente Lenovo combina i diversi sensori del computer per rilevare le attività e modificare le impostazioni per il risparmio di energia. Ad esempio, ridurrà la luminosità dello schermo se rileva che l'utente sta camminando ma la manterrà se rileva che sta leggendo.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Spegnimento schermo automatico",
+                    "caption": "Disattivare automaticamente lo schermo quando l'utente è a faccia in giù o sta camminando.",
+                    "note": "Questa funzione non è disponibile se le impostazioni del piano di alimentazione sono impostate su \"Non spegnere mai lo schermo\" nella sezione \"Sistema\" delle impostazioni di Windows. Selezionare un valore diverso da \"Mai\" per attivare questa funzione.",
+                    "windowsLink": "Accedere alle impostazioni di alimentazione e sospensione nelle impostazioni di Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Mantieni acceso lo schermo",
+                    "caption": "Tenere acceso lo schermo quando l'utente sta leggendo o navigando.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Minuti prima che venga ridotta la luminosità dello schermo durante la navigazione",
+                        "startTime": "0 minuti",
+                        "endTime": "60 minuti"
+                    }
+                }
+            },
+            "activeProtectionSystem": {
+                "title": "Active Protection System",
+                "description": "Active Protection System è una funzione automatica che aiuta a proteggere l'unità disco fisso dai danni che possono essere causati da forti urti e vibrazioni. Monitora continuamente il movimento del computer e interrompe temporaneamente l'unità disco fisso quando si prevede un evento come una caduta o un evento simile che può causare danni.",
+                "activeProtection": {
+                    "title": "Active Protection",
+                    "caption": "Modifica la sensibilità in modalità a bassa sensibilità: solo gli urti più forti attiveranno la protezione",
+                    "checkbox": "Ignora gli urti ripetuti, come quelli di un treno o di una macchina"
+                },
+                "manualActiveProtectionSuspension": {
+                    "title": "Sospensione manuale di Active Protection",
+                    "caption": "Consenti la sospensione manuale di Active Protection System",
+                    "dropdown-title": "Sospendi per",
+                    "button": "Sospendi ora"
+                },
+                "advanced": {
+                    "description": "Per migliorare l'accesso all'unità disco fisso durante l'utilizzo del tablet, sospendere Active Protection System quando vengono rilevate le seguenti attività",
+                    "pen": {
+                        "title": "Input penna",
+                        "description": "Quando viene utilizzato l'input della penna, abilitare APS quando l'input della penna non rientra nell'intervallo per"
+                    },
+                    "touch": {
+                        "title": "Input tocco",
+                        "description": "Quando viene utilizzato Input tocco, abilitare APS quando l'input tocco non viene rilevato"
+                    },
+                    "hand": {
+                        "title": "Rilevamento vicinanza mano sui bordi del computer",
+                        "description": "Quando la modalità tablet è abilitata, abilita APS quando la mano non viene rilevata"
                     }
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Supporti intelligenti",
+                "title": "Riproduzione video zero touch",
+                "desc": "Questa funzione metterà in pausa il video quando ci si allontana dal computer e riprenderà la riproduzione del video al rientro dell'utente.",
+                "tooltip": "Questa funzione non è applicabile ai lettori video Web. I principali lettori video locali, come Windows Media Player, 5KPlayer e così via supportano questa funzione."
+            },
+            "voice": {
+                "title": "Voce",
+                "description": "Lenovo Voice consente di convertire la voce in testo con la funzione \"Voce in testo\" e fornisce una traduzione in tempo reale da voce a testo con la funzione \"Traduzione\".",
+                "installBtnText": "Installa",
+                "launchBtnText": "Avvia",
+                "voiceToText": {
+                    "title": "Voce in testo",
+                    "caption": "Questa funzione consente di convertire la voce in testo."
+                },
+                "translation": {
+                    "title": "Traduzione",
+                    "caption": "Questa funzione fornisce una traduzione in tempo reale della voce. I contenuti tradotti sono mostrati in testo. È possibile selezionare le lingue di origine e di destinazione in base alle proprie esigenze."
+                },
+                "modalPopUp": {
+                    "heading": "Operazioni preliminari:",
+                    "point1": "Verificare che l'icona Lenovo Voice sia visualizzata nella barra delle applicazioni di Windows.",
+                    "point2": "Aprire il file in cui si desidera registrare il testo convertito.",
+                    "point3": "Fare clic sull'icona Lenovo Voice nella barra delle applicazioni di Windows e selezionare Voce in testo.",
+                    "point4": "Selezionare la lingua desiderata e fare clic sull'icona del microfono per iniziare.",
+                    "point5": "Posizionare il cursore sul punto che si desidera modificare e iniziare a parlare.",
+                    "point6": "Fare clic sull'icona Lenovo Voice nella barra delle applicazioni di Windows e selezionare Traduci.",
+                    "point7": "Selezionare la lingua di origine e di destinazione desiderate.",
+                    "point8": "In base alle proprie esigenze, impostare l'ingresso vocale dall'altoparlante o dal microfono.",
+                    "point9": "Fare clic sull'icona del microfono per iniziare a parlare",
+                    "closeText": "chiudi"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "Aggiornamenti di sistema",
+        "back": "INDIETRO",
+        "history": "CRONOLOGIA COMPLETA",
+        "notAvailable": "Non disponibile",
+        "notInstalled": "Non installato",
+        "criticalUpdates": "Aggiornamento/i critico/i",
+        "recommendedUpdates": "Aggiornamento/i consigliato/i",
+        "optionalUpdates": "Aggiornamento/i facoltativo/i",
+        "ignoredUpdates": "Aggiornamento/i ignorato/i",
+        "successInstall": "Installazione completata: ",
+        "failedInstall": "Installazione non riuscita: ",
+        "at": "alle",
+        "readMore": "Ulteriori informazioni",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+            "reboot": "Riavvia",
+            "shutdown": "Arresta",
+            "rebootForceMsg": "L'aggiornamento o gli aggiornamenti selezionati possono causare l'avvio automatico del sistemadopo l'installazione.",
+            "shutdownForceMsg": "L'aggiornamento o gli aggiornamenti selezionati possono causare l'arrestoautomatico del sistema dopo l'installazione.",
+            "rebootDelayedMsg": "L'aggiornamento o gli aggiornamenti selezionati causeranno il riavvio del sistema dopo l'installazione.Durante l'installazione degli aggiornamenti non spegnere il sistema, né rimuovere la fonte di alimentazione o gli accessori. Si consiglia di salvare il lavoro prima di riavviare il sistema.",
+            "rebootRequiredMsg": "Per installare correttamente gli aggiornamenti, il computer necessita di unriavvio per garantire che tutto sia in esecuzione in modo sicuro e senza problemi.",
             "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "cancelButton": "Annulla",
+            "rebootButton": "RIAVVIA ORA",
+            "dismissButton": "ELIMINA",
+            "rebootPending": "Riavvio in sospeso"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Impostazioni aggiornamento automatico",
+            "subtitle": "INSTALLA AUTOMATICAMENTE GLI AGGIORNAMENTI",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Aggiornamenti critici",
+                "tooltip": "Gli aggiornamenti critici possono evitare problemi significativi, malfunzionamenti gravi, errori hardware o danneggiamento dei dati."
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "Aggiornamenti consigliati",
+                "tooltip": "Gli aggiornamenti dei driver raccomandati mantengono il computer in esecuzione a prestazioni ottimali."
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Aggiornamenti Windows",
+                "url": "Impostazioni di Windows"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Sito Web del supporto Lenovo"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "Benvenuto in System Update.",
+            "title": "Un sistema aggiornato è un sistema sano.",
+            "last": "Ultimo aggiornamento: ",
+            "next": "Prossimo aggiornamento pianificato: ",
+            "checkButton": "VERIFICA DISPONIBILITÀ AGGIORNAMENTI",
+            "checking": "Controllo degli aggiornamenti",
+            "downloading": "Fine download aggiornamenti",
+            "installing": "Installazione aggiornamenti",
+            "percent": "% completa",
+            "cancelCheck": "Annulla controllo",
+            "cancelUpdates": "ANNULLA AGGIORNAMENTI",
+            "available": "Aggiornamenti disponibili",
+            "description": "Questi pacchetti includono gli aggiornamenti per i driver hardware ealtre utilità di sistema critiche per il corretto funzionamento del computer. Gli aggiornamenti critici sono importanti anche per la protezione dei dati sul computer e dovrebbero essere installati non appena sono disponibili. La mancata installazione di tali pacchetti potrebbe provocare la perdita di dati, il malfunzionamento del sistema o errori hardware.",
+            "installButton": "INSTALLA TUTTI GLI AGGIORNAMENTI",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Tutti gli aggiornamenti sono stati installati correttamente",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Alcuni aggiornamenti non sono stati installati correttamente.",
+                    "description": "Si è verificato un problema durante il download o l'installazione di questi aggiornamenti.Verificare di essere online e non spegnere il computer durante l'installazione degli aggiornamenti."
                 }
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend",
-            "rebootRequiredTag": "Reboot Required",
-            "rebootDelayTag": "Reboot Required, Power Source Required",
-            "shutdownRequiredTag": "Shutdown Required",
-            "dependedPackage": "Depended Package"
+            "rebootRequired": "Riavvio richiesto",
+            "failReason": "Motivo dell'errore: l'adattatore di alimentazione CA non è stato collegato al computer. ",
+            "manufacturer": "Produttore: ",
+            "version": "Versione: ",
+            "installVersion": "Versione installata: ",
+            "downloadSize": "Dimensione download: ",
+            "diskSpaceNeeded": "Spazio su disco necessario: ",
+            "ignore": "Ignora",
+            "attend": "Partecipa",
+            "rebootRequiredTag": "Riavvio richiesto",
+            "rebootDelayTag": "Riavvio richiesto, fonte di alimentazione richiesta",
+            "shutdownRequiredTag": "Arresto richiesto",
+            "dependedPackage": "Pacchetto con dipendenze"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "Aggiornamenti disponibili",
+            "description": "Questi pacchetti includono aggiornamenti critici per il corretto funzionamento del computer. Gli aggiornamenti critici contribuiscono a mantenere il computer più sicuro e affidabile e dovrebbero essere installati man mano che diventano disponibili. Gli aggiornamenti consigliati e gli aggiornamenti facoltativi consentono di mantenere il software aggiornato e di ottimizzare le prestazioni del computer.",
+            "installAllUpdates": "Installa tutti gli aggiornamenti",
+            "installSuccessHeader": "Tutti gli aggiornamenti sono stati installati correttamente",
+            "installFailHeader": "Alcuni aggiornamenti non sono stati installati correttamente",
+            "installFailDescription": "Si è verificato un problema durante il download e l'installazione di questi aggiornamenti. Verificare di essere online e non spegnere il computer durante l'installazione degli aggiornamenti.",
+            "optionalUpdates": "Aggiornamenti facoltativi",
+            "installSelectedUpdates": "Installa aggiornamenti selezionati"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "Nome",
+            "sortByDate": "Ordina per data",
+            "packageSize": "Dimensioni del pacchetto:",
+            "releaseDate": "Data di release:",
+            "showAll": "Mostra tutto",
+            "noInstallationHistory": "Nessuna cronologia di installazione disponibile"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Si è verificato un problema durante il recupero di nuovi aggiornamenti. Si prega di riprovare più tardi.",
+            "upToDate": "Nessun aggiornamento disponibile. Il sistema è aggiornato.",
+            "egatherException": "Si è verificato un errore durante la raccolta delle informazioni utente.",
+            "gatheringUserInfoException": "Si è verificato un errore durante la raccolta delle informazioni utente.",
+            "certificateValidationException": "Il server del contenuto di aggiornamento non è valido. Si prega di riprovare più tardi.",
+            "downloadException": "Si è verificato un errore durante il download degli aggiornamenti.",
+            "connectException": "Impossibile collegarsi al server del contenuto di aggiornamento.",
+            "notEnoughDiskSpace": "Non si dispone di spazio su disco sufficiente per eseguire l'attività corrente.",
+            "proxyAuthenticationException": "Nome utente o password del proxy non valido.",
+            "proxyConnectionException": "Impossibile connettersi al server proxy.",
+            "autoScriptEvaluationException": "Si è verificato un errore durante l'analisi dello script di configurazione automatica.",
+            "localRepositoryConnectionFailureException": "Impossibile connettersi al repository locale.",
+            "localRepositoryDatabaseException": "Impossibile trovare il database del repository locale oppure è danneggiato.",
+            "networkInterruptedException": "Il server di aggiornamento del sistema non è attualmente disponibile. Si prega di riprovare più tardi.",
+            "helpCenterInvalidServerException": "Il server di aggiornamento del sistema non è valido. Si prega di riprovare più tardi.",
+            "catalogNotFoundException": "Non è stato trovato alcun aggiornamento applicabile per il sistema.",
+            "catalogCrcErrorException": "Il catalogo per il sistema è attualmente in corso di aggiornamento. Si prega di riprovare più tardi.",
+            "catalogErrorException": "È stato rilevato un errore con il catalogo degli aggiornamenti per il sistema sul server di aggiornamento del sistema. Si prega di riprovare più tardi.",
+            "fileNotFoundException": "File non trovato."
         }
     },
     "homeSecurity": {
-        "title": "Connected Home Security",
-        "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Ecosystem Security Overview",
-        "thisDevice": "This device",
-        "allDevices": "All Devices",
-        "protected": "Protected",
-        "notProtected": "Not Protected",
-        "myDevice": "My Device",
-        "allDevice": "All Devices",
-        "secure": "SECURE",
-        "needAttention": "NEEDS ATTENTION",
-        "manageAccount": "Manage Account",
-        "devices": "Devices",
-        "seeProtectedDevices": "See protected devices",
-        "addDevice": "add device",
-        "trailExpired": "Trail expired",
-        "trailExpiredSubtext": "Upgrate to protect all of your devices",
-        "upgrade": "upgrade",
+        "title": "Protezione abitazione connessa",
+        "notification": {
+            "recent": "Notifiche di sicurezza recenti",
+            "notifications": "Notifiche"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Proteggi l'ecosistema del dispositivo",
+            "thisDevice": "Questo dispositivo",
+            "allDevices": "Tutti i dispositivi",
+            "protected": "Protetto",
+            "notProtected": "Non protetto",
+            "trialExpired": "Versione di valutazione scaduta",
+            "upgrade": "aggiorna",
+            "inEcosystem": "In ecosistema",
+            "ecosystemEnable": "Ecosistema abilitato",
+            "inTrial": "In prova",
+            "addEcosystem": "Aggiungi a ecosistema",
+            "enableEcosystem": "Abilita ecosistema",
+            "startTrial": "Avvia versione di prova",
+            "fullAccess": "Accesso completo",
+            "renew": "Rinnova"
+        },
+        "overview": {
+            "overviewBlockTitle": "Panoramica sulla protezione dell'ecosistema",
+            "allDevices": "Tutti i dispositivi",
+            "myDevice": "Il mio dispositivo",
+            "thisComputer": "This computer",
+            "secure": "SICURO",
+            "needAttention": "RICHIEDE ATTENZIONE",
+            "manageAccount": "Gestisci account",
+            "devices": "Dispositivi",
+            "seeProtectedDevices": "Visualizza dispositivi protetti",
+            "addDevice": "aggiungi dispositivo",
+            "trialExpired": "Versione di valutazione scaduta - Aggiorna per proteggere tutti i dispositivi",
+            "upgrade": "aggiorna",
+            "freeTrial": "Proteggi tutti i dispositivi - Versione di prova gratuita per 30 giorni",
+            "startTrial": "Avvia versione di prova"
+        },
         "tour": {
-            "back": "Back",
-            "skip": "Skip",
-            "start": "START TOUR",
-            "done": "DONE",
-            "welcome1": "Welcome",
-            "welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
-            "welcome2": "Exclusive for Vantage",
-            "welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
-            "create": "Create your account",
-            "lenovoId": "with Lenovo ID",
-            "notifications": "Receive <b>notifications</b> about your home's status",
-            "monitor": "<b>Monitor</b> the safety of your family's devices",
-            "peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
-            "signInLenovoId": "SIGH-UP WITH LENOVO ID",
-            "haveLenovo": "I don't have a <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Create a Lenovo ID",
-            "without": "Proceed <b>without an account</b>",
-            "skipAndTrial": "SKIP AND START TRIAL",
-            "alreadyHave": "I already have a <b>Connected Home Security Account</b>",
-            "loginCHS": "Login to existing CHS account",
-            "locationTitle": "Enable location tracking",
-            "locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+            "back": "Indietro",
+            "skip": "Ignora",
+            "start": "AVVIA TOUR",
+            "done": "FINE",
+            "welcome1": "Benvenuti",
+            "welcomeDesc1": "In pochi clic potrai proteggere PC, dispositivi mobili e dispositivi collegati per te e la tua famiglia.",
+            "welcomeDescStart": "Inizia subito la prova gratuita per 30 giorni.",
+            "welcome2": "Esclusivo per Vantage",
+            "welcomeDesc2": "Protezione abitazione connessa è integrato direttamente in Vantage per accedere rapidamente allo stato della protezione dell'ecosistema e agli avvisi di sicurezza.",
+            "create": "Crea il tuo account",
+            "lenovoId": "con Lenovo ID",
+            "notifications": "Ricevi le <b>notifiche</b> sullo stato della tua abitazione",
+            "monitor": "<b>Monitora</b> la sicurezza dei dispositivi della tua famiglia",
+            "peaceOfMind": "Assicura la protezione dei tuoi dispositivi per la <b>massima tranquillità</b>.",
+            "signInLenovoId": "REGISTRATI CON LENOVO ID",
+            "haveLenovo": "Non ho un <b>Lenovo ID</b>",
+            "createLenovo": "&nbsp;Crea un Lenovo ID",
+            "without": "Continua <b>senza un account</b>",
+            "skipAndTrial": "IGNORA E AVVIA VERSIONE DI PROVA",
+            "alreadyHave": "Ho già un <b>account Protezione abitazione connessa</b>",
+            "loginCHS": "Accedi all'account CHS esistente",
+            "locationTitle": "Abilita il rilevamento della posizione",
+            "locationPermission": "Affinché questa funzione funzioni correttamente, è necessario abilitare il rilevamento della posizione per questo dispositivo"
+        },
+        "accountStatus": {
+            "title": "La mia Protezione abitazione connessa",
+            "startTrial": "Avvia versione di prova",
+            "manageAccount": "Gestisci account",
+            "upgradeAccount": "Aggiorna account",
+            "inTrialDetail1": "{{remainingDays}} Giorni restanti al termine della versione di prova.",
+            "inTrialDetail2": "Attualmente è in corso il periodo di prova. È possibile accedere illimitatamente a tutte le funzioni.",
+            "trialExpiredDetail1": "La versione di prova è scaduta.",
+            "trialExpiredDetail2": "La versione di prova è scaduta e l'ecosistema del dispositivo non è più protetto.",
+            "upgradedDetail1": "L'account è attivo fino al {{expiredDate}}.",
+            "upgradedDetail2": "L'ecosistema del dispositivo è attualmente protetto.",
+            "localAccountDetail2": "Fai clic sul seguente pulsante per avviare la prova gratuita per 30 giorni.",
+            "alreadyHaveAccount": "Hai già un codice di attivazione?"
         }
     },
     "support": {
@@ -1101,7 +1496,9 @@
             "status": "Stato: ",
             "subDescription1": "Questo prodotto viene fornito con garanzia limitata e servizio di riparazione presso il fornitore. Per ulteriori informazioni, i clienti possono contattare il centro di assistenza locale. I rivenditori potrebbero fornire il servizio di riparazione a domicilio per questo prodotto.",
             "subDescription2": "Non è stato possibile individuare i dettagli sulla garanzia del dispositivo. Per ulteriori opzioni della garanzia, visitare il nostro sito Web del supporto.",
-            "viewWarrantyOptions": "VISUALIZZA OPZIONI DELLA GARANZIA"
+            "viewWarrantyOptions": "VISUALIZZA OPZIONI DELLA GARANZIA",
+            "offlineTips1": "Per informazioni più recenti sulla garanzia collegarsi a Internet.",
+            "offlineTips2": "Collegarsi a Internet per aggiornare le informazioni sulla garanzia."
         },
         "documentation": {
             "title": "Documentazione",
@@ -1131,9 +1528,9 @@
             "copyright": "© 2002-2019 Lenovo tutti i diritti riservati"
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "Categorie",
+            "categoriesDesc": "Trova informazioni utili nei nostri articoli.",
+            "seeArticles": "VEDI ARTICOLI"
         }
     },
     "security": {
@@ -1154,9 +1551,7 @@
             "maliciousNetwork": "Tutte le reti dannose {{maliciousWifi}} a cui è stato impedito al computer di collegarsi questo mese.",
             "good": "BUONA",
             "malicious": "DANNOSA",
-            "suspicious": "SOSPETTA",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "SOSPETTA"
         },
         "antivirus": {
             "common": {
@@ -1245,6 +1640,12 @@
                 "describe2": "Per utilizzare Protezione abitazione connessa, è necessario abilitare i servizi di localizzazione per Lenovo Vantage. Desideri abilitare la posizione ora?",
                 "agree": "ACCONSENTO",
                 "cancel": "ANNULLA"
+            },
+            "errorMessage": {
+                "headerText": "Errore",
+                "bodyText": "Sono stati rilevati errori di perdita di pacchetti Vantage. Questi pacchetti verranno scaricati in background. Si prega di riprovare più tardi.",
+                "closeText": "chiudi",
+                "offlineText": "È stato rilevato che non si è connessi a Internet. Alcune parti di questa pagina non funzioneranno correttamente. Riconnettersi"
             }
         },
         "homeprotection": {
@@ -1256,7 +1657,7 @@
                 "homeSecurityAffect3": "Protezione abitazione connessa verifica che i dispositivi connessi alla rete domestica siano sicuri.",
                 "describe": "Le reti e i dispositivi non sicuri possono introdurre malware, causare furti di identità e provocare la perdita di informazioni private e finanziarie. Abilita questa funzione per ridurre il rischio di esporre il dispositivo in uso e la rete domestica agli autori di un attacco",
                 "subtitle": "Protezione garantita",
-                "subtitleDescribe": "Protezione abitazione connessa ti invierà un avviso se rileva una vulnerabilità del dispositivo o della rete domestica in uso o se sei collegato a una rete potenzialmente dannosa. Ulteriori informazioni su Protezione abitazione connessa sono disponibili in Suggerimenti e consigli.",
+                "subtitleDescribe": "Protezione abitazione connessa ti invierà un avviso se rileva una vulnerabilità del dispositivo o della rete domestica in uso o se sei collegato a una rete potenzialmente dannosa. Ulteriori informazioni su Protezione abitazione connessa sono disponibili <tag>qui</tag>.",
                 "tryNow": "Provalo ora"
             },
             "invitationcode": {
@@ -1332,7 +1733,7 @@
             "whatIsPmNotInstalled": "Il modo più semplice e sicuro per salvare le password complesse e affidabili e collegarsi subito a ogni sito.",
             "whatIsPmInstalled": "Aumenta la sicurezza della tua vita digitale: aggiungi le password, abilita il monitoraggio del web oscuro e completa automaticamente le informazioni personali e di pagamento.",
             "startProtect": "Inizia a proteggere i tuoi account online nel modo più semplice.",
-            "discount": "Gli utenti Lenovo beneficiano di un esclusivo periodo gratuito di 6 mesi di Dashlane Premium.",
+            "discount": "Gli utenti Lenovo beneficiano di uno sconto esclusivo del 50% per Dashlane Premium.",
             "offer": "Offerta disponibile solo per i nuovi utenti Dashlane.",
             "getDashLane": "Scarica Dashlane",
             "learnMoreAbout": "<tag>Ulteriori informazioni</tag> per ottimizzare l'uso di Dashlane",
@@ -1378,32 +1779,32 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "Accesso",
+        "logout": "Disconnessione",
+        "unlockExclusives": "Sblocca offerte esclusive",
+        "user": "Utente",
+        "welcomeText": "Oggi il dispositivo è in ottime condizioni, {{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "Oggi il dispositivo è in ottime condizioni!",
+        "helloUser": "Benvenuto {{firstName}}!",
+        "ssoErrorTitle": "Errore",
+        "ssoErrorCommon": "Si è verificato un errore. Riprovare.",
+        "ssoErrorCommonEx": "Errore non previsto. Riprovare.",
+        "ssoErrorTimeStampIncorrect": "L'ora del computer non è corretta. Correggere l'ora del computer e riprovare.",
+        "ssoErrorNetworkDisconnected": "Si Connessione non riuscita. Controllare la connessione Internet e riprovare.",
+        "ssoErrorCommunicating": "Errore di rete. Controllare la connessione e riprovare.",
+        "ssoErrorAccountPluginNotExist": "Plug-in mancante. Se si è connessi a Internet, il plug-in verrà ripristinato automaticamente in background. Questa operazione potrebbe richiedere del tempo, riprovare in un secondo momento."
     },
     "faq": {
         "footer": {
-            "title": "Not finding what you are looking for?",
-            "description": "NEED ADDITIONAL SUPPORT? DON’T HESITATE TO CONTACT US VIA:",
-            "body": "Lenovo Community",
-            "button": "GO TO FORUM"
+            "title": "Non hai trovato quello che cercavi?",
+            "description": "BISOGNO DI SUPPORTO SUPPLEMENTARE? NON ESITARE A CONTATTARCI VIA:",
+            "body": "Comunità Lenovo",
+            "button": "VAI AL FORUM"
         },
         "question1": {
-            "title": "Back up and restore your files",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        Back up and restore your files\n    </div>\n    <hr />\n    <div style='margin-bottom:7rem;'>\n        It's always good to have a backup. Keep copies of your files on another drive in case something happens to the\n        originals.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Set up your backup\n    </div>\n    <hr />\n    <div class='mb-5'>\n        Select the <span style='font-weight:bold'>Start</span> button, select\n        <span style='font-weight:bold'>Settings</span> >\n        <span style='font-weight:bold'>Update & security</span> >\n        <span style='font-weight:bold'>Backup</span> > <span style='font-weight:bold'>Add a drive</span> , and then\n        choose an external drive or network location for your backups.\n    </div>\n    <div class='mb-5'>\n        <img src='./../../../../assets/images/qa/1.1.png' />\n    </div>\n    <div class='mb-5'>\n        All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files\n        get backed up or how often backups happen, go to\n        <span style='font-weight:bold;'>More options</span>.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Restore your files\n    </div>\n    <div class='mb-5'>\n        If you're missing an important file or folder, here's how to get it back:\n    </div>\n    <div>\n\n        <div class='mb-3'>1. Type <span style='font-weight:bold;'>Restore files</span>\n            in the search box on the taskbar, and then select\n            <span class='font-weight:bold'> Restore your files with File History</span>.</div>\n        <div class='mb-3'>2. Look for the file you need, then use the arrows to see all its versions</div>\n        <div class='mb-3'>3. When you find the version you want, select\n            <span style='font-weight:bold'>Restore</span>\n            to save it in its original location. To save it in a different place, press and hold (or right-click)\n            <span style='font-weight:bold'>Restore</span>, select <span style='font-weight:bold'>Restore to</span>, and\n            then choose a new location.</div>\n\n    </div>\n</div>",
+            "title": "Backup e ripristino dei file",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Backup e ripristino dei file    </div>    <hr />    <div style='margin-bottom:7rem;'>        È sempre consigliabile disporre di una copia di backup. Si consiglia di salvare le copie dei file su un'altra unità, in caso di problemi ai file originali.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Configurazione del backup    </div>    <hr />    <div class='mb-5'>        Selezionare il pulsante <span style='font-weight:bold'>Start</span>, fare clic su <span style='font-weight:bold'>Impostazioni</span> > <span style='font-weight:bold'>Aggiornamento e sicurezza</span> > <span style='font-weight:bold'>Backup</span> > <span style='font-weight:bold'>Aggiungi un'unità</span> e scegliere un'unità esterna o il percorso di rete per i backup.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Tutto è pronto. Il backup verrà eseguito ogni ora nella cartella utente (C:\\\\Users\\\\username). Per modificare i file di cui eseguire il backup o la frequenza dei backup, accedere alla sezione <span style='font-weight:bold;'>Altre opzioni</span>.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Ripristino dei file    </div>    <div class='mb-5'>        Se manca un file o una cartella importante, ecco come recuperarlo:    </div>    <div>        <div class='mb-3'>1. Digitare <span style='font-weight:bold;'>Ripristina file</span> nella casella di ricerca sulla barra delle applicazioni, quindi selezionare <span class='font-weight:bold'> Ripristina file con Cronologia file</span>.</div>        <div class='mb-3'>2. Cercare il file che si desidera, quindi utilizzare le frecce per visualizzare tutte le versioni</div>        <div class='mb-3'>3. Una volta trovata la versione desiderata, selezionare <span style='font-weight:bold'>Ripristina</span> per salvarla nel percorso originale. Per salvarla in un percorso differente, tenere premuto (o fare clic con il pulsante destro del mouse su) <span style='font-weight:bold'>Ripristina</span>, selezionare <span style='font-weight:bold'>Ripristina in</span> e scegliere un nuovo percorso.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1443,8 +1844,8 @@
             }
         },
         "question2": {
-            "title": "How to refresh your PC",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        How to refresh your PC\n    </div>\n    <hr>\n    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>\n        Symptom\n    </div>\n    <div style='padding:5px 0;'>\n        If your PC isn't performing as well as it once did, and you don't know why,\n        you can refresh your PC without deleting any of your personal files or\n        changing your settings. Windows can “refresh” your PC so it’s more like a\n        fresh install without deleting your personal files.\n    </div>\n    <div style='padding:5px 0;'>\n        Refresh your PC, Here is what will happen: your files and personalized\n        settings won’t change\n    </div>\n    <div style='padding:5px 0;'>\n        <ul>\n            <li>Your PC settings will be changed back to its defaults</li>\n            <li>Apps from windows store will be kept</li>\n            <li>Apps you installed from disc or website will be removed</li>\n            <li>A list of removed files will be saved on your desktop</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Affected Brands\n    </div>\n\n    <div>\n        <ul>\n            <li>All Desktop and Laptops</li>\n\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Operation System\n    </div>\n\n    <div>\n        <ul>\n            <li>Windows 8, 8.1 & 10</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Solution\n    </div>\n\n    <div>\n        <ul class='list-unstyled'>\n            <li>\n                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>\n                <ol>\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Settings </span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Update and recovery</span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <div>Tap or click <span style='font-weight:bold;'> Recovery</span></div>\n                        <div style='padding:5px 0'>Under Refresh your PC without affecting your files, tap or click\n                            <span style='font-weight:bold;'> Get started.</span></div>\n                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>\n\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Next'</span>.\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Refresh' </span>to start the refresh process.\n                    </li>\n                    <li style='padding:5px 0;'>\n                        Once the refresh process is done, you can find a Removed Apps list on the desktop\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        You can find the removed apps while refreshing your system\n                    </li>\n                </ol>\n            </li>\n            <li style='padding:10px 0;'>\n                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>\n                <ol>\n                    <li style='padding:5px 0;'> Search for <span style='font-weight:bold;'> refresh </span>in the search\n                        tool available in the Start menu,</li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on <span style='font-weight:bold;'> 'Refresh your PC without affecting your\n                                files'</span> in the search results as shown below.</div>\n                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on the\n                            <span style='font-weight:bold;'> Get started </span>\n                            button just below the heading<span style='font-weight:bold;'> 'Refresh your PC without\n                                affecting your files'</span> to start refreshing your Windows 10 PC.</div>\n                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>\n                    </li>\n                </ol>\n            </li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;'>\n        Additional Information\n    </div>\n\n    <div>\n        In most cases, once you start to refresh your PC, it’ll finish on its own.\n        However, if Windows needs missing files, you’ll be asked to insert recovery\n        media, which is typically a DVD disc or thumb drive. If that happens, what\n        you’ll need depends on your PC.\n    </div>\n    <div style='padding:10px 0'>\n        If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use\n        that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact\n        Microsoft Support.\n    </div>\n\n</div>",
+            "title": "Come aggiornare il PC",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Come aggiornare il PC    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        Sintomo    </div>    <div style='padding:5px 0;'>        Se le prestazioni del PC si riducono e non se ne conosce il motivo, è possibile aggiornare il PC senza eliminare i file personali o modificare le impostazioni. Windows può aggiornare il PC con una nuova installazione senza eliminare i file personali.    </div>    <div style='padding:5px 0;'>        Se si aggiorna il PC, ecco cosa accadrà: i file e le impostazioni personalizzate non verranno modificati    </div>    <div style='padding:5px 0;'>        <ul>            <li>Verranno ripristinate le impostazioni predefinite del PC</li>            <li>Le app del Windows Store verranno mantenute</li>            <li>Le app installate da disco o sito Web verranno eliminate</li>            <li>Un elenco dei file rimossi verrà salvato sul desktop</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Marchi interessati    </div>    <div>        <ul>            <li>Tutti i desktop e i notebook</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Sistema operativo    </div>    <div>        <ul>            <li>Windows 8, 8.1 e 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Soluzione    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        Toccare o fare clic su <span style='font-weight:bold;'> Impostazioni </span>                    </li>                    <li style='padding:5px 0;'>                        Toccare o fare clic su <span style='font-weight:bold;'> Aggiorna e ripristina</span>                    </li>                    <li style='padding:5px 0;'>                        <div>Toccare o fare clic su <span style='font-weight:bold;'> Ripristino</span></div>                        <div style='padding:5px 0'>Nella sezione Aggiorna il PC mantenendo i file, toccare o fare clic su <span style='font-weight:bold;'> Operazioni preliminari.</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        Fare clic su <span style='font-weight:bold;'> \\\"Avanti\\\"</span>.                    </li>                    <li style='padding:5px 0;'>                        Fare clic su <span style='font-weight:bold;'> \\\"Aggiorna\\\" </span>per avviare il processo di aggiornamento.                    </li>                    <li style='padding:5px 0;'>                        Una volta completato il processo di aggiornamento, l'elenco delle app rimosse sarà disponibile sul desktop                    </li>                    <li style='padding:5px 0;'>                        Durante l'aggiornamento del sistema è possibile individuare le applicazioni rimosse                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> Cercare <span style='font-weight:bold;'> Aggiorna </span>nello strumento di ricerca disponibile nel menu Start.</li>                    <li style='padding:5px 0;'>                        <div>Fare clic su <span style='font-weight:bold;'> \\\"Aggiorna il PC mantenendo i file\\\"</span> nei risultati della ricerca come mostrato di seguito.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div>Fare clic sul pulsante <span style='font-weight:bold;'> Operazioni preliminari </span> sotto l'intestazione<span style='font-weight:bold;'> \\\"Aggiorna il PC mantenendo i file\\\"</span> per avviare l'aggiornamento del PC Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        Ulteriori informazioni    </div>    <div>        Nella maggior parte dei casi, una volta avviato l'aggiornamento del PC, l'operazione sarà automatica. Tuttavia, se Windows necessita di file mancanti, verrà richiesto di inserire un supporto di ripristino, che generalmente è un disco DVD o una chiavetta. In tal caso, i requisiti variano a seconda del PC.    </div>    <div style='padding:10px 0'>        Se il PC è stato aggiornato a Windows 8.1 o a Windows RT 8.1 con un DVD, utilizzare questo disco. Se non si dispone dei supporti con Windows 8.1 o Windows RT 8.1, contattare il supporto Microsoft.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -1517,8 +1918,8 @@
             "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
         },
         "question3": {
-            "title": "How to know your machine's CPU",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    How to know your machine's CPU\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.\n    The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit\n    system.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n    <li>All Desktop and Laptops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operating System</h3>\n<ul>\n    <li>Windows 7 , 8 , 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n    <li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button,</strong>\n        right-clicking Computer, and then clicking Properties  </li>\n    <li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then click\n        <strong>Search.</strong></li>\n    <li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n    <li>Tap or click <strong>System</strong></li>\n    <li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong>\n        is displayed in the System type field under the System heading.\n        If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong>\n        <strong>32-bit Operating </strong>System is displayed in the System type field under the System heading.<br />\n         </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then\n        click <strong>Search.</strong></li>\n    <li>In the search box, type <strong>system information</strong></li>\n    <li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and then\n        click <strong>System Summary.</strong></li>\n    <li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>\n        x64-based PC is displayed in the <strong>System type</strong> field under the \n        Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong>\n        version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> field\n        under the Item heading.  </li>\n</ol>\n<p> </p>",
+            "title": "Informazioni sulla CPU del computer in uso",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Informazioni sulla CPU del computer in uso</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Sintomo</h3><p>I termini 32 bit e 64 bit si riferiscono al modo in cui il processore di un computer (chiamato anche CPU), gestisce le informazioni. La versione a 64 bit di Windows gestisce in modo più efficiente grandi quantità di memoria RAM (Random Access Memory) rispetto a un sistema a 32 bit.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Marchi interessati</h3><p>Il sintomo sopra riportato è associato, ma non limitato, ai seguenti sistemi:</p><ul>    <li>Tutti i desktop e i notebook</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Sistema operativo</h3><ul>    <li>Windows 7, 8, 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Soluzione</h3><p><strong><u>Windows 7 o Vista</u></strong></p><ol>    <li>Accedere al sistema facendo clic sul <strong>pulsante Start </strong>Immagine del <strong>pulsante Start</strong>, facendo clic con il tasto destro del mouse su Computer; quindi fare clic su Proprietà  </li>    <li>In sistema, è possibile visualizzare il tipo di sistema.</li></ol><p><strong><u>Windows 8 e Windows 10</u></strong></p><p><strong>Metodo 1:</strong> visualizzare la finestra Sistema nel pannello di controllo</p><ol>    <li>Scorrere un dito verso l'interno dal bordo destro dello schermo e quindi toccare <strong>Cerca</strong>. In alternativa, se si sta utilizzando un mouse, puntare all'angolo inferiore destro dello schermo, quindi fare clic su <strong>Cerca.</strong></li>    <li>Digitare <strong>Sistema</strong> nella casella di ricerca, quindi toccare o fare clic su <strong>Impostazioni.</strong></li>    <li>Toccare o fare clic su <strong>Sistema</strong></li>    <li>Se si sta utilizzando una versione a 64 bit di Windows 8, <strong>Sistema operativo a 64 bit</strong> viene visualizzato nel campo \\\"Tipo sistema\\\" sotto l'intestazione \\\"Sistema\\\". Se si sta utilizzando una versione a 32<strong>-bit di Windows</strong> <strong>8,</strong> <strong>Sistema operativo a 32 bit </strong>viene visualizzato nel campo \\\"Tipo sistema\\\" sotto l'intestazione \\\"Sistema\\\".<br />  </li></ol><p><strong>Metodo 2</strong>: visualizzare la finestra \\\"Informazioni sul sistema\\\"</p><ol>    <li>Scorrere un dito verso l'interno dal bordo destro dello schermo e quindi toccare <strong>Cerca</strong>. In alternativa, se si sta utilizzando un mouse, puntare all'angolo inferiore destro dello schermo, quindi fare clic su <strong>Cerca.</strong></li>    <li>Nella casella di ricerca, digitare <strong>Informazioni sul sistema</strong></li>    <li>Toccare o fare clic su<strong> Sistema</strong>, toccare o fare clic su <strong>Informazioni sul sistema,</strong> quindi fare clic su <strong>Risorse di sistema.</strong></li>    <li>Se si sta utilizzando una versione a <strong>64 bit </strong>di Windows 8<strong>, </strong> PC basato su x64 viene visualizzato nel campo <strong>Tipo sistema</strong> sotto l'intestazione Elemento. <br /> <br /> Se si sta utilizzando una versione a<strong> 32 bit</strong> di Windows 8, PC basato su x86 viene visualizzato nel campo <strong>Tipo sistema</strong> sotto l'intestazione Elemento.  </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -1606,8 +2007,8 @@
             }
         },
         "question4": {
-            "title": "Check your machine's battery use",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Check your machine's battery use\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> \n    screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.\n    That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;\n    apps&ndash;are using too much power.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n\n<ul>\n    <li>Lenovo laptops, desktops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Systems</h3>\n<ul>\n    <li>All</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operationg System</h3>\n<ul>\n    <li>Window 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your\n    traditional <strong>control panel </strong>view, this feature is located in the\n    new <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>\n    select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br />\n        <br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last\n    from last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;\n    <strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,\n    the display,</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong>\n     options show how much power is used by applications while you&rsquo;re using them, compared to applications\n    running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>\n        &ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.\n    This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of this\n    feature.\n    It will display a list of the apps have used battery power in that period, and show you what percentage of your\n    battery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
+            "title": "Informazioni sull'uso della batteria del computer in uso",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Informazioni sull'uso della batteria del computer in uso</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Sintomo</h3><p>Windows 10 include una nuova schermata \\\"<strong>Uso batteria\\\"</strong> che mostra le risorse che stanno utilizzando maggiormente la batteria del notebook. Ciò significa che in questa schermata vengono visualizzate le app desktop e le app universali di Windows 10 che richiedono più potenza.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Marchi interessati</h3><ul>    <li>Desktop, notebook Lenovo</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Sistemi interessati</h3><ul>    <li>Tutto</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Sistema operativo</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Soluzione</h3><p>Questa nuova funzione di Windows 10 non si trova nella finestra del <strong>pannello di controllo </strong>tradizionale, ma nella nuova app <strong>\\\"Impostazioni\\\"</strong></p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Individuare la schermata \\\"Uso batteria\\\"</h3></p><p>1. Fare clic o toccare l'opzione <strong>\\\"Impostazioni</strong>\\\" dal menu Start</p><p>2. In <strong>Impostazioni </strong> selezionare <strong>\\\"Sistema\\\"</strong>e scegliere <strong>\\\"Risparmia batteria.\\\"<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Fare clic o toccare il collegamento <strong>\\\"Uso batteria\\\"</strong> sotto questa intestazione per visualizzare maggiori dettagli. </p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analizzare il consumo di energia</h3><p>4 È possibile modificare le impostazioni della schermata \\\"Uso batteria\\\" per visualizzare l'utilizzo della batteria nelle ultime 24-48 ore o nell'ultima settimana</p><p>5 <strong>\\\"Sistema,\\\"</strong> “<strong>Schermo,</strong>\\\" e \\\" percentuali <strong>Wi-Fi”</strong>. Questa finestra mostra la percentuale di batteria utilizzata dai processi di sistema e dallo schermo.</p><p>6 Le opzioni <strong>\\\"In uso\\\"</strong> e <strong>\\\"In background\\\"</strong>  mostrano quante risorse vengono utilizzate dalle applicazioni in esecuzione e in background.</p><p>7 Se le app utilizzano risorse in background, è possibile fare clic o toccare il collegamento <strong> \\\"Modifica le impostazioni per le app in background\\\" </strong>e configurare le app da non eseguire in background. Questo funzione è disponibile solo per le app universali di Windows 10.</p><p>8 Scorrere verso il basso per visualizzare la funzione più utile: un elenco delle applicazioni. In questa sezione è disponibile un elenco di tutte le app che hanno utilizzato la batteria in un determinato periodo di tempo e la percentuale di batteria usata da ogni app</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -1674,8 +2075,8 @@
             }
         },
         "question5": {
-            "title": "Use your PC like a tablet",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Use your PC like a tablet\n</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet\n        mode</strong> .</p>\n<p> </p>\n<p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device \n    on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and\n    how the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the\n    screen.</p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.\n    Select the <strong>Start </strong>button, select <strong>Settings </strong>>\n    <strong>System </strong>> <strong>\n        Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.\n    To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and\n    you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n    <li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n    <li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then\n        drag it to one side to snap it into your divided screen.</li>\n    <li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
+            "title": "Utilizzo del PC come un tablet",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Utilizzo del PC come un tablet</div><hr><p>La modalità tablet rende Windows più intuitivo e più facile da usare quando si dispone di un dispositivo touchscreen.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Utilizzo della modalità tablet</h3><p>Per attivare la modalità tablet, selezionare <strong>Centro notifiche</strong> sulla barra delle applicazioni, quindi scegliere <strong>Modalità tablet</strong> .</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Nota</h3><p>Per verificare se il dispositivo è in grado di attivare automaticamente la modalità tablet, cercare il dispositivo sul sito Web del produttore. Il supporto di questa funzione dipende da hardware, driver installato e modalità di configurazione del dispositivo da parte del produttore. </p><p> </p><p>In modalità tablet, le app vengono visualizzate a schermo intero, offrendo più spazio per lavorare. Per chiudere un'app, trascinarla nella parte inferiore dello schermo.</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Suggerimento</h3><p>La barra delle applicazioni è disponibile quando il PC è in modalità tablet, ma è possibile nasconderla se si desidera più spazio sullo schermo. Selezionare il pulsante <strong>Start </strong>, scegliere <strong>Impostazioni </strong>> <strong>Sistema </strong>> <strong> Modalità tablet </strong>, quindi attivare <strong>Nascondi automaticamente la barra delle applicazioni in modalità tablet</strong>. Per visualizzare la barra delle applicazioni, scorrere verso l'alto dalla parte inferiore dello schermo o utilizzare il mouse per passarvi sopra.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Utilizzo contemporaneo di due app</h3><p>Per utilizzare due app affiancate in modalità tablet, trascinare un'app aperta giù e di lato. L'app verrà ancorata e verranno visualizzate tutte le app aperte accanto.</p><p>In questa vista, è anche possibile:</p><ul>    <li>Usare il bordo condiviso tra due app ancorate per ridimensionare contemporaneamente entrambe le app.</li>    <li>Aprire una nuova app da \\\"Visualizzazione attività\\\" - selezionare <strong>Visualizzazione attività</strong> sulla barra delle applicazioni, selezionare un'app e trascinala su un lato per ancorarla allo schermo diviso.</li>    <li>Utilizzare il pulsante Indietro sulla barra delle applicazioni per tornare a un'app o per aprire un'app che si stava utilizzando.</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -1714,8 +2115,8 @@
             }
         },
         "question6": {
-            "title": "Get to know Cortona, your personal assistant",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Get to know Cortana, your personal assistant\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>What is Cortana?</h3>\n<hr />\n<p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing\n    works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you\n    select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n    <li>Give you reminders based on time, places, or people.</li>\n    <li>Track packages, teams, interests, and flights.</li>\n    <li>Send emails and texts.</li>\n    <li>Manage your calendar and keep you up to date.</li>\n    <li>Create and manage lists.</li>\n    <li>Chit chat and play games.</li>\n    <li>Find facts, files, places, and info.</li>\n    <li>Open any app on your system.</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Try this: Set a reminder</h3>\n<hr />\n\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or\n    even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync\n    notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hey Cortana?</h3>\n<hr />\n<p>Set Cortana to hear you anytime you say\n    'Hey Cortana.' Select the search box on the taskbar to open Cortana home.\n    Then select <strong>Settings</strong>  and turn on <strong>Let Cortana respond to 'Hey\n        Cortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.\n</p>\n<p> </p>",
+            "title": "Informazioni su Cortana, l'assistente personale",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Informazioni su Cortana, l'assistente personale</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Cos'è Cortana?</h3><hr /><p>Cortana è il tuo agente digitale. Ti aiuterà a completare le attività.</p><p>Più usi Cortana, più la tua esperienza sarà personalizzata.</p><p>Per iniziare, digita una domanda nella casella di ricerca o seleziona il microfono per parlare con Cortana. (La digitazione è compatibile con tutti i tipi di PC, ma è necessario un microfono per parlare.)</p><p>Se non sei sicuro di cosa dire, vedrai dei suggerimenti sulla schermata di blocco e in nella Home page di Cortana, quando selezioni la casella di ricerca sulla barra delle applicazioni.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Casa 2. Notebook 3. Impostazioni 4. Feeback</li></ol><p>Ecco alcune cose che Cortana può fare per te:</p><ul>    <li>Impostare un promemoria in base a ora, luoghi o persone.</li>    <li>Monitorare pacchi, squadre, interessi e voli.</li>    <li>Inviare e-mail e testi.</li>    <li>Gestire il calendario e mantenerti aggiornato.</li>    <li>Creare e gestire elenchi.</li>    <li>Chiacchierare e giocare.</li>    <li>Trovare notizie, file, luoghi e informazioni.</li>    <li>Aprire qualsiasi app sul sistema.</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Prova a scrivere o dire: imposta un promemoria</h3><hr /><p>Una delle cose che Cortana può fare è impostare un promemoria. Può ricordarti le attività in base a tempo, luoghi o persone.</p><p>Ad esempio, digita o dici: \\\"Ricordami di congratularmi con Tanya la prossima volta che mi chiama\\\".</p><p>Il promemoria verrà visualizzato quando riceverai una chiamata da Tanya.</p><p>Funzionalità aggiuntiva - Se disponi di un telefono Windows o di Cortana per iPhone o Android, è possibile impostare Cortana per sincronizzare le notifiche tra il PC e il telefono.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Ehi Cortana?</h3><hr /><p>Imposta Cortana per attivarsi ogni volta che dici \\\"Ehi Cortana\\\". Seleziona la casella di ricerca sulla barra delle applicazioni per aprire la Home page di Cortana. Seleziona quindi <strong>Impostazioni</strong>  e attiva <strong>Permetti a Cortana di rispondere a \\\"Ehi Cortana\\\".</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Nota</p><p>Cortana è disponibile solo in alcuni paesi/aree geografiche e alcune funzioni di Cortana potrebbero non essere disponibili ovunque.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -1750,13 +2151,14 @@
             },
             "para12": "Note",
             "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        }
+        },
+        "pageTitle": "Dettagli di supporto"
     },
     "welcometutorial": {
         "description": "Vantage semplifica l'aggiornamento dei driver, l'esecuzione della diagnostica, la richiesta di supporto e il reperimento di informazioni sul dispositivo. Personalizza rapidamente l'esperienza e identifica le informazioni utili in base alle tue esigenze",
         "bullets1": "Visualizza lo stato del tuo sistema con la dashboard di Vantage.",
-        "bullets2": "Assistente sicurezza facilita la gestione della protezione",
-        "bullets3": "Gli aggiornamenti automatici mantengono il dispositivo in forma perfetta",
+        "bullets2": "Assistente sicurezza semplifica la gestione della protezione facile (disponibile su alcuni sistemi).",
+        "bullets3": "Gli aggiornamenti automatici assicurano il perfetto funzionamento del dispositivo (disponibili su alcuni sistemi).",
         "subtitle1": "Come utilizzerai il dispositivo?",
         "subtitle2": "Raccontaci i tuoi interessi",
         "personal": "Uso personale",
@@ -1798,6 +2200,6 @@
         "usageStatistics": "Statistiche utilizzo",
         "usageStatisticsDescription": "Invia statistiche anonime di utilizzo a Lenovo.",
         "Note": "Nota: ",
-        "settingsNotes": "per rendere effettive le impostazioni di questa pagina è necessario il riavvio del sistema da parte degli utenti."
+        "settingsNotes": "per rendere effettive le impostazioni di questa pagina è necessario riavviare l'applicazione."
     }
 }

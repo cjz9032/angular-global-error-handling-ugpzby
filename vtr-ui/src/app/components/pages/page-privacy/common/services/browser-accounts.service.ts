@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, EMPTY, of, Subject } from 'rxjs';
-import { catchError, map, switchMap, take } from 'rxjs/operators';
+import { catchError, map, switchMap, take, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { StorageService } from './storage.service';
 import { MaskedPasswordsInfo, VantageCommunicationService } from './vantage-communication.service';

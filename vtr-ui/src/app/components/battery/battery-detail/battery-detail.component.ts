@@ -23,6 +23,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 	public dataSourceGauge: BatteryGaugeDetail; // BI Update
 	@Input() data: BatteryDetail[];
 	@Input() dataGauge: BatteryGaugeDetail; // BI Update
+	@Input() batteryConditionStatus: string;
 	remainingTimeText = '';
 	chargeCompletionTimeText = '';
 	batteryIndicators = new BatteryIndicator();
@@ -56,12 +57,38 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 			this.translate.instant('device.deviceSettings.batteryGauge.details.tertiary')];
 		this.batteryIndicators.percent = response.gauge.percentage;
 		this.batteryIndicators.charging = response.gauge.isAttached;
+		this.batteryIndicators.expressCharging = response.gauge.isExpressCharging;
 		this.batteryIndicators.convertMin(response.gauge.time);
 
 		this.batteryIndicators.timeText = response.gauge.timeType;
-		this.batteryIndicators.expressCharging = response.detail[0].isExpressCharging;
-		this.batteryIndicators.voltageError = response.detail[0].isVoltageError;
-		this.batteryIndicators.batteryHealth = this.batteryIndicators.getBatteryHealth(response.detail[0].batteryHealth);
+
+		// this.batteryIndicators.voltageError = response.detail[0].isVoltageError;
+
+		// let batteryIndex = -1;
+		// let batteryHealth = 0;
+		// if (response.detail !== undefined && response.detail.length !== 0) {
+		// 	response.detail.forEach((info) => {
+		// 		if (info.batteryHealth >= batteryHealth) {
+		// 			batteryHealth = info.batteryHealth;
+		// 			batteryIndex += 1;
+		// 		}
+		// 	});
+		// }
+
+		if (response.batteryGauge.isExpressCharging === undefined ||
+			response.batteryGauge.isExpressCharging === null) {
+			this.batteryIndicators.expressCharging = false;
+		} else {
+			this.batteryIndicators.expressCharging = response.batteryGauge.isExpressCharging;
+		}
+
+		if (response.detail.length > 0 && response.detail[0].batteryHealth !== null &&
+			response.detail[0].batteryHealth !== undefined) {
+			this.batteryIndicators.batteryNotDetected = response.detail[0].batteryHealth === 4;
+		} else {
+			this.batteryIndicators.batteryNotDetected = false;
+		}
+
 		for (let i = 0; i < response.detail.length; i++) {
 			response.detail[i].remainingCapacity = Math.round(response.detail[i].remainingCapacity * 100) / 100;
 			response.detail[i].fullChargeCapacity = Math.round(response.detail[i].fullChargeCapacity * 100) / 100;

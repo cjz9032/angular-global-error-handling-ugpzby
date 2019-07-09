@@ -28,6 +28,7 @@
 			<a	id="sa-av-link-visitmcafee"
 				aria-label="sa-av-link-visitmcafee"
 				class="d-block"
+				[ngClass]="{'unclickable': !isOnline}"
 				href="{{urlGetMcAfee}}"
 				target="_blank">
 				<vtr-ui-button
@@ -36,6 +37,7 @@
 					[label]="'security.antivirus.mcafee.getMacfee' | translate"
 					[title]="'security.antivirus.mcafee.getMacfee' | translate"
 					[upperCaseLabel]="false"
+					[isDisabled]="!isOnline"
 					*ngIf="!install"></vtr-ui-button>
 			</a>
 		</div>

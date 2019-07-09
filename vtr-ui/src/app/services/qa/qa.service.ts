@@ -7,10 +7,12 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 })
 export class QaService {
 
+	title = `${this.translate.instant('faq.pageTitle')}`; //sahinul, 24June2019 VAN-5534
 	imagePath = 'assets/images/qa';
 	qas: QA[] = [
 		{
 			id: 1,
+			category: 'q&a',
 			path: 'support-detail/1',
 			iconPath: `${this.imagePath}/svg_icon_qa_backup.svg`,
 			title: `${this.translate.instant('faq.question1.title')}`,
@@ -26,7 +28,7 @@ export class QaService {
 				'faq.question1.para5.span7', 'faq.question1.para5.span8', 'faq.question1.para5.span9',
 				'faq.question1.para5.span10', 'faq.question1.para5.span11', 'faq.question1.para5.span12'
 			],
-			description: `${this.translate.instant('faq.question1.title')}`,
+			description: `faq.question1.description`,
 			getDescription: function () {
 				return `<div>
 				<div style='font-size:4rem;font-weight:bold;'>
@@ -88,6 +90,7 @@ export class QaService {
 		},
 		{
 			id: 2,
+			category: 'q&a',
 			path: 'support-detail/2',
 			iconPath: `${this.imagePath}/svg_icon_qa_refresh.svg`,
 			title: `${this.translate.instant('faq.question2.title')}`,
@@ -250,6 +253,7 @@ export class QaService {
 		},
 		{
 			id: 3,
+			category: 'q&a',
 			path: 'support-detail/3',
 			iconPath: `${this.imagePath}/svg_icon_qa_pcbit.svg`,
 			title: `${this.translate.instant('faq.question3.title')}`,
@@ -398,6 +402,7 @@ export class QaService {
 		},
 		{
 			id: 4,
+			category: 'q&a',
 			path: 'support-detail/4',
 			iconPath: `${this.imagePath}/svg_icon_qa_battery.svg`,
 			title: `${this.translate.instant('faq.question4.title')}`,
@@ -544,6 +549,7 @@ export class QaService {
 		},
 		{
 			id: 5,
+			category: 'q&a',
 			path: 'support-detail/5',
 			iconPath: `${this.imagePath}/svg_icon_qa_tablet.svg`,
 			title: `${this.translate.instant('faq.question5.title')}`,
@@ -632,6 +638,7 @@ export class QaService {
 		},
 		{
 			id: 6,
+			category: 'q&a',
 			path: 'support-detail/6',
 			iconPath: `${this.imagePath}/svg_icon_qa_cortana.svg`,
 			title: `${this.translate.instant('faq.question6.title')}`,
@@ -744,6 +751,7 @@ export class QaService {
 			return element.id === id;
 		});
 	}
+
 	setCurrentLangTranslations() {
 		//Evaluate the translations for QA on language Change
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -755,51 +763,106 @@ export class QaService {
 						qa.title = value;
 					});
 
+				} catch (e) {
+					console.log('QA title translation : already translated');
+				}
+
+
+				try {
+					//console.log(qa.description);
 					qa.description = this.translate.instant(qa.description);
-					// console.log(qa.description);
+					this.translate.stream(qa.description).subscribe((value) => {
+						qa.description = value;
+					});
+
+					//console.log(qa.description);
+
+				}
+				catch (e) {
+					console.log('QA description by HTML MAP : already translated');
+				}
+
+
+				try {
 					this.translate.get(qa.keys).subscribe((translation: [string]) => {
 						// console.log(JSON.stringify(translation));
 						qa.keys = translation;
 						// console.log(JSON.stringify(qa.keys));
 					});
-				} catch (e) {
-					console.log('already translated');
 				}
-				finally {
-					console.log('already translated');
+				catch (e) {
+					console.log('QA description by KEY_VALUE MAP : already translated');
 				}
+
 
 			});
 
 			// this.qas = this.qaService.qas;
+
+			//sahinul, 24June2019 VAN-5534
+			try {
+				this.title = this.translate.instant(this.title);
+				this.translate.stream(this.title).subscribe((value) => {
+					this.title = value;
+				});
+			} catch (e) {
+				console.log('QA Page title translation : already translated');
+			}
 		});
 
 
 		this.qas.forEach(qa => {
 			try {
+				//console.log(qa.title);
 				qa.title = this.translate.instant(qa.title);
+				//console.log(qa.title);
 				this.translate.stream(qa.title).subscribe((value) => {
 					qa.title = value;
 				});
 
+			} catch (e) {
+				console.log('QA title translation : already translated');
+			}
 
-				qa.description = this.translate.instant(qa.description);
+
+			try {
 				//console.log(qa.description);
+				qa.description = this.translate.instant(qa.description);
+				this.translate.stream(qa.description).subscribe((value) => {
+					qa.description = value;
+				});
+
+				//console.log(qa.description);
+
+			}
+			catch (e) {
+				console.log('QA description by HTML MAP : already translated');
+			}
+
+
+			try {
 				this.translate.get(qa.keys).subscribe((translation: [string]) => {
-					//console.log(JSON.stringify(translation));
+					// console.log(JSON.stringify(translation));
 					qa.keys = translation;
-					//console.log(JSON.stringify(qa.keys));
+					// console.log(JSON.stringify(qa.keys));
 				});
 			}
 			catch (e) {
-				console.log("already translated");
+				console.log('QA description by KEY_VALUE MAP : already translated');
 			}
-			finally {
-				console.log("already translated");
-			}
+
 
 		});
 
-		//return this.qas;
+		//sahinul, 24June2019 VAN-5534
+		try {
+			this.title = this.translate.instant(this.title);
+			this.translate.stream(this.title).subscribe((value) => {
+				this.title = value;
+			});
+		} catch (e) {
+			console.log('QA Page title translation : already translated');
+		}
+
 	}
 }

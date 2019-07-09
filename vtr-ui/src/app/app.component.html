@@ -1,5 +1,5 @@
 <div [ngClass]="{'is-arm':deviceService.isArm, 'is-gaming':deviceService.isGaming}" class="disable-text-selection">
-	<vtr-menu-main></vtr-menu-main>
+	<vtr-menu-main [loadMenuItem]="machineInfo"></vtr-menu-main>
 	<div class="vtr-app container-fluid">
 		<div class="row">
 			<div class="col p-0">

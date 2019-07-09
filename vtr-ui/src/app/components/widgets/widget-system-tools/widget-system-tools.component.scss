@@ -24,7 +24,7 @@
 				a{
 					text-decoration: none;
 					display: inline-block;
-					padding: 2rem 3rem;
+					padding: 2rem 2rem;
 					border-radius: 1.2rem;
 					width: 100%;
 					background: transparent;
@@ -49,6 +49,7 @@
 					max-width: 10rem;
 					margin: auto;
 					.system-icon {
+						cursor: pointer;
 						display: flex;
 						align-items: center;
 						justify-content: center;

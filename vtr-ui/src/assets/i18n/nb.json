@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -39,22 +39,36 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
                     "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock"
+                    "touchpadLock": "Touchpad Lock",
+                    "lightingDriverPopup": {
+                        "headerText": "Driver Install Required",
+                        "text": "Please install driver",
+                        "button": "Install",
+                        "link": "cancel"
+                    },
+                    "lightingColorMessage": {
+                        "text": "Selecting color not available to this effect."
+                    }
                 },
                 "systemTools": {
                     "power": "Power",
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -71,6 +85,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                },
+                "systemStatus": {
+                    "info": "INFO"
                 }
             }
         },
@@ -111,11 +128,12 @@
                 },
                 "buttons": {
                     "start": "START RECORDING",
-                    "stop": "STOP RECORDING"
+                    "stop": "STOP RECORDING",
+                    "numberPrefix": "NUM"
                 },
                 "recording": {
                     "title": "START TYPING",
-                    "description": "20 inputs with in 20 seconds can be recorded."
+                    "description": "20 inputs within 20 seconds can be recorded."
                 },
                 "recorded": {
                     "title": "MACRO KEY FOR ",
@@ -204,7 +222,7 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure to clear this macro key?"
+                    "title": "Are you sure you want to clear this macro key?"
                 },
                 "timeoutRecording": {
                     "title": "Time Out For Recording.",
@@ -223,13 +241,16 @@
                     "btnCancel": "Cancel"
                 },
                 "btnOk": "OK"
+            },
+            "recording": {
+                "title": "Recording Macro Key For"
             }
         },
         "lightingProfile": {
             "title": "Lighting",
             "effect": {
                 "option1": {
-                    "title": "Static"
+                    "title": "On"
                 },
                 "option2": {
                     "title": "Flicker"
@@ -241,38 +262,133 @@
                     "title": "Wave"
                 },
                 "option5": {
-                    "title": "Music"
-                },
-                "option6": {
                     "title": "Smooth"
                 },
-                "option7": {
+                "option6": {
                     "title": "CPU Temperature"
                 },
-                "option8": {
+                "option7": {
                     "title": "CPU Utilization"
                 },
-                "option9": {
-                    "title": "Response"
+                "option8": {
+                    "title": "Off"
                 },
-                "option10": {
-                    "title": "Ripple"
+                "apply": {
+                    "title": "APPLY"
                 },
-                "option11": {
-                    "title": "No Light"
+                "applied": {
+                    "title": "APPLIED"
+                }
+            },
+            "brightness": {
+                "text1": {
+                    "title": "*Brightness setting doesn't apply on "
+                },
+                "text2": {
+                    "title": " effect"
+                }
+            },
+            "lightingSingleLightingOption": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
+            },
+            "colourwheel": {
+                "text1": {
+                    "title": "Selecting colour not available to this effect."
+                },
+                "text2": {
+                    "title": "APPLY"
+                },
+                "text3": {
+                    "title": "APPLIED"
+                },
+                "text4": {
+                    "title": "R:"
+                },
+                "text5": {
+                    "title": "G:"
+                },
+                "text6": {
+                    "title": "B:"
+                },
+                "text7": {
+                    "title": "Color"
                 }
             }
         }
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "Instrumentbord",
             "device": {
-                "title": "My Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "Enhet",
+                "sub1": "Min enhet",
+                "sub2": "Mine enhetsinnstillinger",
                 "sub3": "System Updates",
-                "sub4": "Smart Assist"
+                "sub4": "Smart hjelp"
             },
             "security": {
                 "title": "Sikkerhet",
@@ -283,9 +399,9 @@
                 "sub5": "Internettbeskyttelse",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "Støtte",
+            "homeSecurity": "Tilkoblede hjem",
+            "privacy": "Personvern"
         },
         "securityAdvisor": {
             "title": "Sikkerhetsrådgivning",
@@ -307,25 +423,23 @@
             "notRegistered": "IKKE REGISTRERT"
         },
         "qAndA": {
-            "title": "Q&A for your machine",
-            "subtitle": "FIND SOME HELPFUL TIPS FOR YOUR DEVICE.",
-            "question1": "Backup and Restore your files",
-            "question2": "How to refresh your PC",
-            "question3": "How to know your machine's CPU",
-            "question4": "Check your machine's battery use",
-            "question5": "Use your PC like a tablet",
-            "question6": "Get to know Cortana, your personal assistant"
+            "title": "Spørsmål & Svar for din maskin",
+            "subtitle": "Finn noen nyttige tips for din enhet.",
+            "question1": "Sikkerhetskopier og gjenopprett filene dine",
+            "question2": "Slik oppfrisker du datamaskinen din",
+            "question3": "Bli kjent med datamaskinens prosessor",
+            "question4": "Kontrollere datamaskinens batteriforbruk",
+            "question5": "Bruke datamaskinen som et nettbrett",
+            "question6": "Bli kjent med Cortana, din personlige assistent"
         },
         "ui": {
             "back": "TILBAKE",
             "on": "ON",
             "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
-            "loader": {
-                "text1": "Fetching",
-                "text2": "Status"
-            }
+            "collapse": "Komprimer",
+            "expand": "Utvid",
+            "loader": "Henter <br> status",
+            "loading": "Laster..."
         }
     },
     "privacy": {
@@ -344,7 +458,7 @@
         "personal": "PERSONAL",
         "custom": "CUSTOM",
         "skip": "SKIP",
-        "next": "NEXT",
+        "next": "NESTE",
         "interests": "What are your interests?",
         "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
         "games": "GAMES",
@@ -358,166 +472,179 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Ser frisk ut i dag "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Det ble ikke funnet noen Internett-forbindelse",
+            "subtitle": "Lær mer om hvordan du løser tilkoblingsproblemer i",
+            "buttonText": "Få støtte"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Gi tilbakemelding",
+            "subtitle": "Fortell oss hva du synes om Vantage.",
+            "button": "Gi tilbakemelding",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Kommentarer...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
-                }
+                    "feedbackSuccess": "Takk for tilbakemeldingen!"
+                },
+                "question1": "Liker du den nye stilen til Vantage?",
+                "question2": "Synes du at ytelsen er akseptabel?",
+                "question3": "Ville du brukt programmet mer i fremtiden?",
+                "yes": "Ja",
+                "no": "Nei",
+                "tips1": "Her kan du legge inn andre kommentarer",
+                "sendFeedback": "Send tilbakemelding",
+                "submitScreenShot": "Send skjermbilde"
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera Privacy",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Hurtiginnstillingene dine",
+            "microphone": "Mikrofon",
+            "cameraPrivacy": "Kamera",
+            "eyeCareMode": "Øyebeskyttelsesmodus"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Systemstatus",
+            "subtitle": "SE ENHETSSTATUS RASKT.",
             "memory": {
-                "title": "Memory",
+                "title": "Minne",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Finner ikke minne",
+                    "of": "av"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Diskplass",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Finner ikke disk",
+                    "of": "av"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Garanti",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Fant ikke garanti",
+                    "until": "Til",
+                    "expiredOn": "Garantien utløp",
+                    "notAvailable": "Garanti er ikke tilgjengelig"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Oppdater"
                 }
             }
         }
     },
     "device": {
         "myDevice": {
-            "title": "My Device",
-            "subtitle": "My device status",
-            "serial": "Serial",
-            "productNumber": "Product number",
-            "biosVersion": "Bios version",
-            "learnMore": "Learn more",
-            "freeMemory": "Free memory",
+            "title": "Min enhet",
+            "subtitle": "Min enhetsstatus",
+            "serial": "Serie",
+            "productNumber": "Produktnummer",
+            "biosVersion": "Bios-versjon",
+            "learnMore": "Få mer informasjon",
+            "freeMemory": "Ledig minne",
             "systemUpdate": {
-                "title": "System update",
-                "notFound": "System update not found",
+                "title": "Systemoppdatering",
+                "notFound": "Finner ikke systemoppdatering",
                 "detail": {
-                    "uptoDate": "Software up to date ",
-                    "updatedOn": "updated on ",
-                    "outdated": "Software outdated ",
-                    "neverRanUpdate": "never ran update"
+                    "uptoDate": "Programvare er oppdatert",
+                    "updatedOn": "oppdatert",
+                    "outdated": "Programvare er utdatert",
+                    "neverRanUpdate": "kjørte aldri oppdatering"
                 }
             },
-            "extendedWarranty": "Extend warranty",
+            "extendedWarranty": "Utvide garantien",
             "processor": {
-                "title": "Processor",
-                "notFound": "Processor not found"
+                "title": "Prosessor",
+                "notFound": "Finner ikke prosessor"
             },
             "memory": {
-                "title": "Memory",
-                "notFound": "Memory not found",
+                "title": "Minne",
+                "notFound": "Finner ikke minne",
                 "ram": "RAM"
             },
             "diskspace": {
-                "title": "Disk Space",
-                "notFound": "Disk not found"
+                "title": "Diskplass",
+                "notFound": "Finner ikke disk"
             },
-            "software": "Software up to date",
-            "updated": "Updated",
-            "outOfWarranty": "Out of warranty",
-            "expired": "Expired on",
-            "of": "of",
+            "software": "Programvare er oppdatert",
+            "updated": "Oppdatert",
+            "outOfWarranty": "Utenfor garantiperioden",
+            "expired": "Utløp",
+            "of": "av",
             "warranty": {
-                "notFound": "Warranty not found",
+                "notFound": "Fant ikke garanti",
                 "detail": {
-                    "title": "Extend warranty",
-                    "inWarranty": "In warranty ",
-                    "daysRemaining": "days remaining",
-                    "outOfWarranty": "Out of warranty ",
-                    "expiredOn": "Expired on",
-                    "notAvailable": "Warranty not available",
-                    "support": "Support"
+                    "title": "Utvide garantien",
+                    "inWarranty": "Innenfor garantiperioden",
+                    "daysRemaining": "dager igjen",
+                    "outOfWarranty": "Utenfor garantiperioden",
+                    "expiredOn": "Utløp",
+                    "notAvailable": "Garanti er ikke tilgjengelig",
+                    "support": "Støtte"
                 }
             },
-            "helpful": "Helpful Content"
+            "helpful": "Nyttig innhold"
         },
         "deviceSettings": {
-            "helpful": "Helpful Content",
+            "helpful": "Nyttig innhold",
             "batteryGauge": {
-                "title": "BATTERY GAUGE",
-                "subtitle": "Battery",
-                "hours": "hours",
-                "hour": "hour",
-                "minutes": "minutes",
-                "minute": "minute",
-                "charge": "TIME TO FULLY CHARGE",
-                "button": "SEE BATTERY DETAILS",
+                "title": "BATTERIMÅLER",
+                "subtitle": "Batterihelse",
+                "hours": "timer",
+                "hour": "time",
+                "minutes": "minutter",
+                "minute": "minutt",
+                "charge": "TID TIL FULLADING",
+                "button": "SE BATTERIINFORMASJON",
                 "details": {
-                    "title": "Battery Details",
-                    "primary": "Primary Battery",
-                    "secondary": "Secondary Battery",
-                    "tertiary": "Tertiary Battery",
+                    "title": "Batteriets detaljer",
+                    "primary": "Primærbatteri",
+                    "secondary": "Ekstrabatteri",
+                    "tertiary": "Tertiært batteri",
                     "status": "Status",
-                    "wattage": "Wattage",
-                    "barcode": "Bar-Code",
-                    "remainingPercent": "Remaining percentage",
-                    "temp": "Temperature",
-                    "frupn": "FRU part number",
-                    "remainingTime": "Remaining time",
-                    "chargeCompletionTime": "Charge completion time",
-                    "cycleCount": "Cycle count",
-                    "chemistry": "Device chemistry",
-                    "remainingCap": "Remaining capacity",
-                    "designCap": "Design capacity",
-                    "fullChargeCap": "Full charge capacity",
-                    "manufDt": "Manufacture date",
-                    "designVolt": "Design voltage",
-                    "volts": "Voltage",
-                    "firstUseDt": "First use date",
-                    "firmwareVer": "Firmware version",
+                    "wattage": "Watt",
+                    "barcode": "Strekkode",
+                    "remainingPercent": "Gjenstående prosentdel",
+                    "temp": "Temperatur",
+                    "frupn": "FRU-delenummer",
+                    "remainingTime": "Gjenstående tid",
+                    "chargeCompletionTime": "Tid til fullført lading",
+                    "cycleCount": "Syklusantall",
+                    "chemistry": "Enhetskjemi",
+                    "remainingCap": "Gjenstående kapasitet",
+                    "designCap": "Designkapasitet",
+                    "fullChargeCap": "Kapasitet fulladet",
+                    "manufDt": "Produksjonsdato",
+                    "designVolt": "Designspenning",
+                    "volts": "Spenning",
+                    "firstUseDt": "Dato for førstegangs bruk",
+                    "firmwareVer": "Fastvareversjon",
                     "chargeStatusString": {
-                        "error": "ERROR",
-                        "notinstalled": "Not installed",
-                        "noactivity": "No activity",
-                        "charging": "Charging",
-                        "discharging": "Discharging",
-                        "acdischarging": "Discharging (with ac)"
+                        "error": "FEIL",
+                        "notinstalled": "Ikke installert",
+                        "noactivity": "Ingen aktivitet",
+                        "charging": "Lader",
+                        "discharging": "Lader ut",
+                        "acdischarging": "Lader ut (med strømadapter)"
                     },
                     "deviceChemistry": {
                         "li-polymer": "Li-Polymer",
                         "li-ion": "Li-Ion",
                         "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion"
+                        "li_ion": "Li-Ion",
+                        "silver-zinc": "Silver-Zinc",
+                        "silver_zinc": "Silver-Zinc",
+                        "nicd": "NiCd",
+                        "nimh": "NiMH",
+                        "unknown": "Unknown"
                     },
                     "manufacturer": {
                         "title": "Manufacturer",
@@ -527,17 +654,17 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "This system may not support battery that",
-                        "description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
-                        "description1": "Attention:",
-                        "description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
+                        "description": "you cannot use the attached battery with this computer.",
+                        "description1": "Replace",
+                        "description2": "it with a battery of correct model."
                     },
                     "Good": {
-                        "title": "The battery is in good Condition"
+                        "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -551,536 +678,804 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter"
-                    },
-                    "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter"
-                    },
-                    "ACAdapterNotSupported": {
-                        "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
                         "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
+                    "NotSupportACAdapter": {
+                        "title": "AC adapter not supported.",
+                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
+                    },
                     "MissingDriver": {
-                        "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
+                        "title": "The Lenovo Power Manager driver",
                         "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
                     },
                     "StoreLimitation": {
                         "title": "The battery can only store",
                         "description1": "of",
                         "description2": "it's original full charge capacity"
+                    },
+                    "HighTemperature": {
+                        "title": "Discharging",
+                        "description": "has been stopped because the",
+                        "description1": "battery temperature is too high"
+                    },
+                    "TrickleCharge": {
+                        "description": "The battery was",
+                        "description1": "completely discharged",
+                        "description2": "and needs to be recharged. This might take ten hours or more."
+                    },
+                    "OverheatedBattery": {
+                        "description": "The battery is",
+                        "description1": "too hot.",
+                        "description2": "Remove it from the computer and cool it to room temperature."
+                    },
+                    "PermanentError": {
+                        "description": "The battery has",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
+                    },
+                    "HardwareAuthenticationError": {
+                        "description": "The battery installed is",
+                        "description1": "is not supported",
+                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
                     }
-                }
+                },
+                "updating": "Updating",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
+                "voltageError": "Battery voltage incorrect",
+                "batteryNotDetected": "No Battery Detected"
             },
             "power": {
-                "title": "Power",
-                "subtitle": "Power Settings",
-                "description": "This section enables you to dynamically adjust thermal performance and maximize the battery life. It also has other popular power-related features. You can check the default settings in this section and customize your system according to your needs.",
+                "title": "Strøm",
+                "subtitle": "Strøminnstillinger",
+                "description": "I denne delen kan du justerere termisk ytelse dynamisk og maksimere batteriets levetid.Den inneholder også andre populære strømrelaterte funksjoner. Du kan kontrollere standardinnstillingene i denne delen og tilpasse systemet etter behov.",
                 "jumpto": {
-                    "title": "JUMP TO SETTINGS",
-                    "battery": "Battery",
-                    "power": "Power",
-                    "cooling": "Intelligent Cooling",
-                    "other": "Other"
+                    "title": "GÅ TIL INNSTILLINGER",
+                    "battery": "Batteri",
+                    "power": "Strøm",
+                    "cooling": "Intelligent kjøling",
+                    "other": "Annen"
                 },
                 "powerSmartSettings": {
-                    "title": "Power Smart Settings",
-                    "subtitle": "INTELLIGENT COOLING",
-                    "subtitle1": "Battery & Quiet",
-                    "description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
-                    "description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
-                    "readMore": "Read more.",
+                    "title": "Innstillinger for smart strømforbruk",
+                    "subtitle": "INTELLIGENT KJØLING",
+                    "subtitle1": "Batteri og stillegående",
+                    "description1": "Denne funksjonen endrer de termiske innstillingene etter behov.Når den er aktivert, justerer den innstillingene for å holde enheten kjøligere eller stillegående, når den holdes eller er inaktiv. Ellers optimaliserer den ytelsen når enheten er på en stabil overflate. Når funksjonen er deaktivert, kan du angi termisk prioritet manuelt.",
+                    "description2": "Intelligent kjøling justerer viftehastighet, maksimal overflatetemperatur og ytelse.Denne funksjonen har modusene nedenfor og er nå tilgjengelig via strømglidebryteren for Windows-ytelse.",
+                    "description3": "Intelligent kjøling balanserer automatisk den termiske ytelsen etter dine behov.Funksjonen Intelligent kjøling justerer ytelsesinnstillingene for å gjøre overflaten kjølig og behagelig når den bærbare datamaskinen holdes. Hvis enheten er på en skrivebordsoverflate, optimaliserer denne funksjonen ytelsen.",
+                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
+                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "readMore": "Les mer.",
                     "gotoWindows": {
-                        "title": "Go to windows settings",
-                        "modalBodyText1": "Click on Windows battery icon on System tray to access Windows performance power slider"
+                        "title": "Gå til Windows-innstillinger",
+                        "modalBodyText1": "Klikk på Windows-batteriikonet i systemstatusfeltet for å få tilgang til glidebryteren for Windows-ytelse"
                     },
                     "intelligentCooling": {
-                        "title": "Intelligent cooling",
+                        "title": "Intelligent kjøling",
                         "description": "",
                         "tooltip": "",
-                        "optimize": "optimize system for",
-                        "apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
+                        "optimize": "optimaliser system for",
+                        "apsHint": "For å bruke Intelligent kjøling må du først installere og aktivere Lenovo Active Protection System.",
                         "options": {
-                            "quiteCool3": "Cool Mode",
-                            "performance3": "High Performance",
-                            "quiteCool4": "Quiet & Cool",
-                            "performance4": "Performance",
-                            "quiteCool5": "Quiet & Cool",
-                            "performance5": "Performance"
+                            "quiteCool3": "Kjølemodus",
+                            "performance3": "Høy ytelse",
+                            "quiteCool4": "Stillegående og kjølig",
+                            "performance4": "Ytelse",
+                            "quiteCool5": "Stillegående og kjølig",
+                            "performance5": "Ytelse",
+                            "batterySaving": "Battery Saving",
+                            "performance13": "Performance",
+                            "quiteCool13": "Quiet & Cool",
+                            "performance14": "Extreme Performance",
+                            "quiteCool14": "Intelligent Cooling"
                         },
                         "readMore": {
-                            "mode1": "Quiet mode",
-                            "mode2": "Balanced mode",
-                            "mode3": "Performance mode",
-                            "line1": "Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "line2": "Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
-                            "line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "mode1": "Stille modus",
+                            "mode2": "Balansert modus",
+                            "mode3": "Ytelsesmodus",
+                            "line1": "Glidebryteren er langt til venstre.Viftehastigheten og ytelsen reduseres for å gi en kjøligere og mer stillegående datamaskin samt lengst mulig batteritid.",
+                            "line2": "Glidebryteren er i midten.Viftehastigheten og ytelsen balanseres dynamisk for å gi den beste brukeropplevelsen.",
+                            "line3": "Glidebryteren er langt til høyre. Viftehastigheten og den tillatte overflatetemperaturen er høyere for maksimal ytelse.",
+                            "line4": "More info"
+                        },
+                        "selectedModeText": {
+                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
+                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
+                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                        },
+                        "intelligentCoolingModesModal": {
+                            "title": "Change intelligent cooling modes",
+                            "close": "close",
+                            "coolingModesList": {
+                                "list1": "Click on the windows battery-icon in the toolbar",
+                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                            }
                         }
                     },
                     "nonintelligentCooling": {
                         "options": {
-                            "intelligentCooling": "INTELLIGENT COOLING",
-                            "extremeCooling": "EXTREME PERFORMANCE",
-                            "battery&Quite": "BATTERY & QUIET"
+                            "intelligentCooling": "INTELLIGENT KJØLING",
+                            "extremeCooling": "EKSTREM YTELSE",
+                            "battery&Quite": "BATTERI OG STILLEGÅENDE"
                         }
-                    }
+                    },
+                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
                 },
                 "powerSettings": {
-                    "title": "Power Settings",
+                    "title": "Strøminnstillinger",
                     "alwaysUSB": {
                         "title": "Always on USB",
-                        "description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
-                        "checkbox": "Enable USB charging from laptop battery when computer is off."
+                        "description": "Lad USB-enheter gjennom Always On USB-kontakten på datamaskinen når datamaskinen er i sove-, dvale- eller av-modus.En smarttelefon eller et nettbrett kan raskt lades opp ved å bruke USB-kontakten som er merket med gult eller har følgende ikoner i silketrykk.",
+                        "checkbox": "Aktiver USB-lading fra den bærbare datamaskinens batteri når den er slått av."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Enkel gjenopptakelse",
+                        "description": "Aktiver denne funksjonen forbedrer gjenopptakelsestiden hvis du åpner og lukker lokket på datamaskinen ofte.",
+                        "tooltip": "Denne funksjonen forbedrer gjenopptakelsestiden hvis du åpner og lukker lokket på datamaskinen ofte. Når den er aktivert, går datamaskinen i en modus med lavt strømforbruk når du lukker lokket, men gjenopptar umiddelbart hvis du åpner lokket innen 15 minutter etter at du lukket det. Denne funksjonen gjør også at den bærbare datamaskinen forsøker å fullføre aktiviteter som venter (som å sende e-post eller laste ned en fil) før systemet går i hvilemodus."
                     }
                 },
                 "otherSettings": {
-                    "title": "Other Settings",
+                    "title": "Andre innstillinger",
                     "vantageToolbar": {
-                        "title": "Lenovo Vantage Toolbar",
-                        "description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
+                        "title": "Lenovo Vantage-verktøylinje",
+                        "description": "Fest Vantage-verktøylinjen til Windows-oppgavelinjen for enkelt å få flere batteridetaljer samt tilgang til hurtiginnstillingene."
                     }
                 },
                 "batterySettings": {
-                    "title": "Battery Settings",
+                    "title": "Batteriinnstillinger",
                     "batteryThreshold": {
-                        "title": "Battery Charge Threshold",
-                        "description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
-                        "tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "title": "Batteriladeterskel",
+                        "description": "Hvis du vanligvis bruker datamaskinen med strømadapteren tilkoblet og bare en sjelden gang benytter batteridrift,kan du forlenge batteriets levetid ved å sette maksimal ladeverdi til under 100 %. Dette er nyttig fordi batterier som brukes av og til, har lengre levetid hvis de holdes på et nivå som er under fullt oppladet.",
+                        "tooltip": "Hvis batteriet er ladet opp til et nivå over terskelen for å stoppe lading, må du koble fra strømmen frem til batteriet lades ut til under eller på nivå med terskelen.Avhengig av batteristatusen (gammelt eller nytt) kan det nøyaktige punktet der ladingen starter eller stopper, variere med opptil 2 prosentpoeng. Hvis du aktiverer funksjonen, anbefales det at du utfører Tilbakestilling av batterimåler av og til for å sikre nøyaktig rapportering av batteritilstanden.",
+                        "note": "Merk",
+                        "readMoreText": "Les mer.",
+                        "noteInfo": " Batteriladeterskelen er fremdeles ikke fullstendig aktiv. Koble fra maskinen din og la batterinivået gå ned til eller under terskelen for ladestopp.",
                         "settings": {
-                            "title1": "Threshold for Built in battery",
-                            "title2": "Threshold for Removable battery"
+                            "title1": "Terskel for innebygd batteri",
+                            "title2": "Terskel for avtakbart batteri"
                         },
                         "popup": {
-                            "title": "Enable Battery Charge Threshold",
-                            "description1": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life.",
-                            "description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
-                            "enable": "ENABLE",
-                            "cancel": "CANCEL"
+                            "title": "Aktiver batteriladeterskel",
+                            "description1": "Hvis du aktiverer en tilpasset batterilading, er det mulig at batteriet varer lenger når du bruker denne enheten.Hvis du ikke har fulladet batteri, får du imidlertid mindre batteritid under kjøretid.",
+                            "description2": "For fullstendig aktivering av denne funksjonen må du koble fra maskinen din ogla batterinivået gå ned til eller under terskelen for ladestopp.",
+                            "enable": "AKTIVER",
+                            "cancel": "AVBRYT"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Start lading når under",
+                            "checkboxText": "Automatisk angi terskelen for å starte lading 5 prosent under terskelen for å stoppe lading.",
+                            "stop": "Stopp lading ved"
                         }
                     },
                     "expressCharging": {
-                        "title": "Express Charging",
-                        "description": "Express Charge allows your battery to a full charge much faster than normal mode.",
-                        "tooltip": "Express Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
+                        "title": "Hurtiglading",
+                        "description": "Med ekspresslading kan batteriet lades opp fullstendig mye raskere enn i vanlig modus.",
+                        "tooltip": "Med ekspresslading kan systembatteriet lades opp mye raskere,men dette kan redusere batteriets levetid."
                     },
                     "conservationMode": {
-                        "title": "Conservation Mode",
-                        "description": "This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
+                        "title": "Sparemodus",
+                        "description": "Denne funksjonen er nyttig for å forlenge batteriets levetid når enheten koblet til strøm. <br>Når denne modusen er aktivert, blir batteriet bare ladet til 55–60 % kapasitet, og batterilevetiden kan maksimeres. Dette vil imidlertid forkorte tiden du bruker datamaskinen etter at den har blitt koblet fra strømkilden.",
                         "tooltip": {
-                            "line1": "This function is useful to extend the lifespan of your battery when plugged.",
-                            "line2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
-                            "line3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
+                            "line1": "Denne funksjonen er nyttig for å forlenge batteriets levetid når enheten koblet til strøm.",
+                            "line2": "Når denne modusen er aktivert, blir batteriet bare ladet til 55–60 % kapasitet, og batterilevetiden kan maksimeres. Dette vil imidlertid forkorte tiden du bruker datamaskinen etter at den har blitt koblet fra strømkilden.",
+                            "line3": "Merk: Ekspresslademodus og Sparemodus kan ikke fungere samtidig.HVIS én av modusene aktiveres, blir den andre automatisk deaktivert."
                         }
                     },
                     "airPlanePower": {
-                        "title": "Airplane Power Mode",
-                        "description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
+                        "title": "Strømmodus for fly",
+                        "description": "Beskytt flyets strømuttak ved å kontrollere systemets strømforbruk.Når Strømmodus for fly er aktivert, reduserer datamaskinen strømforbruket ved å begrense batteriladehastigheten og systemytelsen."
+                    }
+                },
+                "energyStar": {
+                    "title": "Energy Star",
+                    "description": "ET ENERGY STAR SERTIFISERT PRODUKT"
+                },
+                "smartStandby": {
+                    "title": "Smart hvilemodus",
+                    "description": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker rask oppstart på tidspunkter med tyngre bruk.",
+                    "tooltip": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt starttidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad.",
+                    "timer": {
+                        "heading": "Angi vanlige tidspunkter for bruk av datamaskinen",
+                        "subHeading1": "begynner",
+                        "subHeading2": "slutt",
+                        "subHeading3": "bruk denne planen for",
+                        "endTimeNote": "Sluttidspunktet må være innen 20 timer etter starttidspunktet",
+                        "timeUnits": {
+                            "unit1": "Timer",
+                            "unit2": "Minutter",
+                            "unit3": "AM/PM"
+                        }
                     }
                 }
             },
             "audio": {
-                "title": "Audio",
-                "subtitle": "Audio Settings",
-                "description": "This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.",
+                "title": "Lyd",
+                "subtitle": "Lydinnstillinger",
+                "description": "I denne delen kan du optimalisere eller fullt ut automatiskkonfigurere lydinnstillingene manuelt, for eksempel Dolby-innstillinger, mikrofon, osv.",
                 "audioSmartsettings": {
-                    "title": "Audio Smart settings",
-                    "subtitle": "APPLICATION-BASED SETTINGS",
-                    "description": "Automatically adjust audio settings according to different apps you are using.",
+                    "title": "Smarte lydinnstillinger",
+                    "subtitle": "APPBASERTE INNSTILLINGER",
+                    "description": "Juster lydinnstillingene automatisk etter de ulike appene du bruker.",
                     "dolby": {
-                        "title": "Automatic Dolby Audio settings",
-                        "tooltip": "Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
+                        "title": "Automatiske Dolby-lydinnstillinger",
+                        "tooltip": "Automatiske Dolby-lydinnstillinger konfigurerer Dolby-lydinnstillinger tilden aktuelle modusen for ulike apper du bruker for å forbedre lydopplevelsen.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "DYNAMISK",
+                            "movie": "FILM",
+                            "music": "MUSIKK",
+                            "games": "SPILL",
+                            "voip": "TALE"
                         }
                     },
                     "voip": {
-                        "title": "Automatic Audio Optimization for VoIP",
-                        "tooltip": "Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality."
+                        "title": "Automatisk lydoptimalisering for VoIP",
+                        "tooltip": "Bytt automatisk til Dolby Voice-modus under VoIP-samtaler for å oppnå klar, kontinuerlig talekvalitet."
                     }
                 },
                 "microphone": {
-                    "title": "Microphone",
+                    "title": "Mikrofon",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permission to access your microphone. Please turn on access to your microphone for the Lenovo Vantage app."
+                        "title": "merknad",
+                        "description": "Lenovo Vantage har ikke tilgang til mikrofonen.Slå på tilgangen til mikrofonen for Lenovo Vantage-appen."
                     },
                     "microphone": {
-                        "title": "Microphone",
-                        "tooltip": "You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode."
+                        "title": "Mikrofon",
+                        "tooltip": "Du kan tilpasse MIC-effekten ved å justere mikrofonvolumetog spesifisere passende modus."
                     },
                     "volume": {
-                        "title": "Microphone Volume",
-                        "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
+                        "title": "Mikrofonvolum",
+                        "description": "Dolby Audio gir deg detaljert, klar og kraftig lyd fra alt favorittinnholdet ditt. Velg modusen som passer best til innholdet og utstyret du har.",
                         "options": {
-                            "silent": "Silent",
-                            "loud": "Loud"
+                            "silent": "Stille",
+                            "loud": "Høyt"
                         }
                     },
                     "suppress": {
-                        "title": "Suppress keyboard noise",
-                        "tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+                        "title": "Demp tastaturstøy",
+                        "tooltip": "Slå på denne funksjonen for å optimalisere MIC-lyden ved å dempe tastaturstøy."
                     },
                     "acoustic": {
-                        "title": "Acoustic Echo Cancellation",
-                        "tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+                        "title": "Annullering av akustisk ekko",
+                        "tooltip": "Slå på denne funksjonen for å optimalisere MIC-lyden ved å redusere akustisk ekko."
                     },
                     "optimize": {
-                        "title": "Optimize my microphone for:",
-                        "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+                        "title": "Optimaliser mikrofonen for:",
+                        "tooltip": "Konfigurer mikrofoneffekter for å skreddersy lyden etter ulike scenarioer og omgivelser.",
                         "options": {
-                            "VoiceRecognition": "VOICE RECOGNITION",
-                            "OnlyMyVoice": "ONLY MY VOICE",
+                            "VoiceRecognition": "TALEGJENKJENNING",
+                            "OnlyMyVoice": "BARE MIN STEMME",
                             "Normal": "NORMAL",
-                            "MultipleVoices": "MULTIPLE VOICES"
+                            "MultipleVoices": "FLERE STEMMER"
                         }
                     }
                 }
             },
             "displayCamera": {
-                "title": "Display & Camera",
-                "subtitle": "Display & Camera Settings",
-                "description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
+                "title": "Skjerm og kamera",
+                "subtitle": "Skjerm- og kamerainnstillinger",
+                "description": "I denne delen kan du forbedre din visuelle opplevelse og konfigurere kameraegenskapene. Utforsk flere funksjoner og tilpass den visuelle opplevelsen her.",
                 "jumpTo": {
-                    "title": "JUMP TO SETTINGS",
+                    "title": "GÅ TIL INNSTILLINGER",
                     "shortcuts": {
                         "display": {
-                            "title": "Display"
+                            "title": "Skjerm"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Kamera"
                         }
                     }
                 },
                 "display": {
-                    "title": "Display",
+                    "title": "Skjerm",
                     "eyeCareMode": {
-                        "title": "Eye Care Mode",
-                        "checkbox": "Schedule eye care mode from sunset to sunrise",
+                        "title": "Øyebeskyttelse",
+                        "checkbox": "Planlegg øyebeskyttelsesmodus fra solnedgang til soloppgang",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Varm (bedre for øynene)",
+                            "cold": "Kaldt"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Tilbakestill temperatur",
+                        "tooltip": "Øyebeskyttelsesmodus justerer automatisk skjermens fargetemperatur for å filtrere ut blått lys og redusere belastningen på øynene.",
+                        "onSunsetToSunriseScheduleDescription": "Planlegg øyebeskyttelsesmodus fra solnedgang til soloppgang",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "Merk",
+                            "description": "Lenovo Vantage trenger tilgang til informasjon om plasseringen din for å beregne tidspunkter for solnedgang og soloppgang for regionen din."
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Display color temperature",
+                        "title": "Skjermens fargetemperatur",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Varm (bedre for øynene)",
+                            "cold": "Kaldt"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Tilbakestill temperatur",
+                        "tooltip": "Øyebeskyttelsesmodus justerer automatisk skjermens fargetemperatur for å filtrere ut blått lys og redusere belastningen på øynene.",
+                        "onSunsetToSunriseScheduleDescription": "Planlegg øyebeskyttelsesmodus fra solnedgang til soloppgang",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "Merk",
+                            "description": "Lenovo Vantage trenger tilgang til informasjon om plasseringen din for å beregne tidspunkter for solnedgang og soloppgang for regionen din."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Personvernbeskyttelse",
+                        "description": "Denne funksjonen hindrer andre i å titte på skjermen. Når den er på, endrer den skjermens synsvinkel og hindrer innsyn fra andre rundt deg. Du kan også veksle mellom moduser ved å trykke på \"Fn+D\".",
+                        "note": "Personvernbeskyttelse fungerer ikke når skjermen er i stående modus. I denne modusen kan andre få innsyn fra sidene.",
+                        "labelText": "Aktiver denne funksjonen ved å skrive inn passord"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "OLED-strøminnstillinger",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Datamaskinens OLED-skjerm kan også redusere strømforbruket og øke batteriets levetid ved å dimme bestemte deler av skjermen.",
+                            "Det anbefales også at du dimmer oppgavelinjen og andre områder av skjermen som ikke endres ofte, for å forlenge den generelle levetiden til skjermen."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Tilbakestill temperatur",
+                        "tooltip": "Denne funksjonen kan redusere strømforbruket og øke batteriets levetid ved å dimme bestemte deler av skjermen.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
-                    "title": "Camera",
+                    "title": "Kamera",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permissions to access your camera. Please turn on access to your camera for the Lenovo Vantage app."
+                        "title": "Merk",
+                        "description": "Lenovo Vantage har ikke tilgang til kameraet. Slå på tilgangen til kameraet for Lenovo Vantage-appen."
                     },
-                    "url": "Go to windows privacy settings",
+                    "url": "Gå til Windows-personvernsinnstillinger",
                     "cameraPrivacy": {
-                        "title": "Camera privacy mode",
-                        "tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling."
+                        "title": "Personvernmodus for kamera",
+                        "tooltip": "Kameraet slutter å sende direktebilder når personverninnstillingen er aktivert. Slå på denne innstillingen bare når du vil dele bildene dine med andre under videosamtaler."
                     },
                     "camera": {
-                        "title": "Camera",
-                        "tooltip": "Click here to reset Camera properties to default settings.",
-                        "reset": "Reset factory settings"
+                        "title": "Kamera",
+                        "tooltip": "Klikk her for å tilbakestille Kameraegenskaper til standardinnstillingene.",
+                        "reset": "Gjenopprett fabrikkinnstillinger"
                     },
-                    "brightness": "Brightness",
-                    "contrast": "Contrast",
-                    "autoExposure": "Auto Exposure",
-                    "autoFocus": "Auto focus",
-                    "notAvailable": "Camera Not Available",
+                    "brightness": "Lysstyrke",
+                    "contrast": "Kontrast",
+                    "autoExposure": "Automatisk eksponering",
+                    "autoFocus": "Autofokus",
+                    "notAvailable": "Kamera er ikke tilgjengelig",
                     "camerablur": {
-                        "title": "Camera Background Blur",
-                        "caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "title": "Uskarp kamerabakgrunn",
+                        "caption": "Denne funksjonen gjør bakgrunnen uskarp når du bruker kameraet til videosamtaler eller tar bilder. Du kan velge en annen effekt blant alternativene under.",
+                        "blurMode": "Uskarp modus",
+                        "comicMode": "Tegneseriemodus",
+                        "sketchMode": "Skissemodus"
+                    },
+                    "cameraLoadingFailed": {
+                        "inUseTitle": "CAMERA IS IN USE",
+                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
+                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
+                        "loadingFailedDescription": "Close the app and try again."
+                    }
+                }
+            },
+            "inputAccessories": {
+                "title": "Inndata og tilbehør",
+                "subtitle": "Innstillinger for inndata og tilbehør",
+                "description": "Lenovo Intelligent Sensing kombinerer de ulike sensorene på datamaskinen for å gjenkjenne aktivitetene dine og justere innstillingene for optimal strømstyring",
+                "inputAccessory": {
+                    "title": "Smarttastatur",
+                    "hiddenKeyboardFunctions": {
+                        "title": "Skjulte tastaturfunksjoner",
+                        "description": "Du kan trykke på Fn-tasten nederst til venstre på tastaturet samtidig med andre taster for å aktivere kommandoene som vises i tastaturkartet nedenfor."
+                    },
+                    "firstKeyObj": {
+                        "tittle": "FN + tab",
+                        "description": "aktiver zoomefunksjonen på skjermer med høy oppløsning",
+                        "image": ""
+                    },
+                    "secondKeyObj": {
+                        "tittle": "Fn + 4",
+                        "description": "gå i hvilemodus",
+                        "image": ""
+                    },
+                    "thirdKeyObj": {
+                        "tittle": "Fn + D",
+                        "description": "slå av og på personvernbeskyttelsen",
+                        "image": ""
+                    },
+                    "fourthKeyObj": {
+                        "tittle": "Fn + Q",
+                        "description": "veksle mellom ytelsesmodus og stillemodus",
+                        "image": ""
+                    },
+                    "fifthKeyObj": {
+                        "tittle": "Fn + mellomrom",
+                        "description": "endre status for tastaturets baklys",
+                        "image": ""
+                    }
+                },
+                "userDefinedKey": {
+                    "title": "Brukerdefinert tast",
+                    "caption": "Tasten som representeres med stjerneikonet, lar deg angi en brukerdefinert funksjon",
+                    "dropDown": {
+                        "title": "Handling ved brukerdefinert tast",
+                        "note": "Merk: Dette kan brukes til å angi ofte brukt informasjon, som for eksempel e-postadresser eller postadresser. Lenovo anbefaler å aldri bruke denne funksjonen for lagring og angivelse av passord eller annen privat informasjon.",
+                        "options": {
+                            "option1": "Vennligst velg",
+                            "option2": "Åpen nettside",
+                            "option3": "Skriv inn tekst"
+                        }
+                    },
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
                     }
                 }
             }
         },
         "smartAssist": {
-            "title": "Smart Assist",
-            "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+            "title": "Smart hjelp",
+            "description": "Lenovo Intelligent Sensing bruker sensorer på datamaskinen til å gjenkjenne hva du gjør, justere innstillingene for optimal strømstyring og beskytte personvernet ditt.",
             "jumpTo": {
-                "title": "JUMP TO SETTINGS",
-                "security": "Security",
-                "screen": "Screen",
+                "title": "GÅ TIL INNSTILLINGER",
+                "security": "Sikkerhet",
+                "screen": "Skjerm",
                 "media": "Media",
-                "voice": "Voice"
+                "voice": "Tale",
+                "APS": "APS"
             },
             "intelligentSecurity": {
-                "title": "Intelligent Security",
-                "readMore": "Read more",
+                "title": "Intelligent sikkerhet",
+                "readMore": "Les mer",
                 "HumanPresenceDetection": {
-                    "title": "Human presence detection",
-                    "tooltip": "Click here to reset the human presence detection settings."
+                    "title": "Oppdagelse av menneskelig tilstedeværelse",
+                    "tooltip": "Klikk her for å tilbakestille innstillingene for oppdagelse av menneskelig tilstedeværelse."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Oppdagelse av brukerens tilstedeværelse",
+                    "tooltip": "Klikk her for å tilbakestille innstillingene for oppdaging av mennesker til stede."
                 },
                 "zeroTouchLogin": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
+                    "title": "Pålogging uten berøring",
+                    "caption": "Denne funksjonen låser opp eller aktiverer datamaskinen automatisk når du befinner deg foran den eller nærmer deg den."
                 },
                 "zeroTouchLock": {
-                    "title": "Zero Touch Lock",
-                    "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+                    "title": "Berøringsfri lås",
+                    "caption": "Denne funksjonen dimmer skjermen og låser datamaskinen når det registreres at brukeren ikke er til stede. Funksjonen kan redusere faren for uautorisert tilgang til datamaskinen hvis du forlater den ulåst og uten tilsyn. Den reduserer også strømforbruket ved å sette systemet i Moderne hvilemodus når tilstedeværelsen din ikke registreres.",
                     "autoScreenLockTimer": {
-                        "title": "AUTO SCREEN LOCK TIMER",
+                        "title": "TIMER FOR AUTOMATISK SKJERMLÅS",
                         "radioButton": {
-                            "fast": "Fast",
-                            "medium": "Medium",
-                            "slow": "Slow"
+                            "fast": "Hurtig",
+                            "medium": "Middels",
+                            "slow": "Langsom"
                         },
-                        "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+                        "toolTipContent": "Velg ønsket alternativ for å låse skjermen på en rask/middels/langsom hastighet når tilstedeværelsen din ikke oppdages. Når skjermen låses, påvirkes også av det faktiske brukerscenarioet, sensorfunksjonaliteten og innstillingene for skjermtidsavbrudd i Windows. Vi anbefaler derfor sterkt at du umiddelbart låser systemet før du forlater det."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+                    "title": "JUSTERING AV AVSTANDSFØLSOMHET",
+                    "caption": "Automatisk avstandsjustering vil automatisk oppdatere avstandsfølsomheten via en AI-motor.",
                     "options": {
-                        "near": "Near",
-                        "far": "Far"
+                        "near": "Kort avstand",
+                        "far": "Lang avstand"
                     }
                 },
                 "note": {
-                    "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-                    "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
-                    "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-                    "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
-                    "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+                    "description1": "Denne funksjonen er avhengig av Windows Hello. Pass på at ansiktsgjenkjenning er aktivert i Windows-innstillingene.",
+                    "description2": "Funksjonen bruker sensorer og kamera til å oppdage din tilstedeværelse. Funksjonen samler imidlertid IKKE inn noen personlige opplysninger.",
+                    "description3": "1. Disse funksjonene fungerer kanskje ikke på riktig måte hvis datamaskinen er i telt-, nettbrett- eller stativmodus.",
+                    "description4": "2. Hvis datamaskinen er i dvalemodus eller er slått av. Automatisk pålogging med det infrarøde kameraet vil ikke fungere.",
+                    "description5": "3. Juster dataskjermens vinkel slik at det infrarøde kameraet kan gjenkjenne ansiktet ditt og logge deg på automatisk."
                 },
                 "WindowsLink": {
-                    "goToWindowsHello": "Go to Windows Hello Settings",
-                    "screenTimeoutSettings": "Go to Screen timeout settings"
+                    "goToWindowsHello": "Gå til Windows Hello-innstillinger",
+                    "screenTimeoutSettings": "Gå til innstillingene for tidsutkobling av skjermen"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "TILBAKESTILL TIL STANDARDINNSTILLINGENE"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Intelligent skjerm",
+                "description": "Lenovo Intelligent Sensing bruker de ulike sensorene på datamaskinen til å gjenkjenne hva du gjør, og justere innstillingene for strømstyring. Funksjonen dimmer for eksempel skjermen hvis den oppdager at du går, men ikke hvis den oppdager at du leser.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Slå av skjermen automatisk",
+                    "caption": "Slå av skjermen automatisk når den ligger med forsiden ned, eller når du går.",
+                    "note": "Denne funksjonen er ikke tilgjengelig hvis du har valgt aldri å slå av skjermen på batteristrøm i innstillingene for strømstyringsplan under System i Windows. Velg en annen verdi enn Aldri for å aktivere denne funksjonen.",
+                    "windowsLink": "Gå til innstillingene for strøm og hvilemodus i Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Hold skjermen på",
+                    "caption": "Hold skjermen på når jeg leser eller surfer.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Minutter før skjermen dimmes når du surfer",
+                        "startTime": "0 minutter",
+                        "endTime": "60 minutter"
+                    }
+                }
+            },
+            "activeProtectionSystem": {
+                "title": "Active Protection System",
+                "description": "Lenovo Active Protection System er en autonom funksjon som hjelper til med å beskytte harddisken mot skade forårsaket av kraftige fysiske støt eller vibrasjon. Den overvåker bevegelsene til datamaskinen kontinuerlig og stanser harddisken midlertidig når den forutser et fall eller en lignende situasjon som kan medføre skade.",
+                "activeProtection": {
+                    "title": "Active Protection",
+                    "caption": "Endre sentivity, i modus for lite sensitiv, vil bare hardere støt aktivere beskyttelsen",
+                    "checkbox": "Ignorer repetative-støt som for eksempel et tog eller en bil"
+                },
+                "manualActiveProtectionSuspension": {
+                    "title": "Manuell Active Protection-Suspensjon",
+                    "caption": "La meg stanse Active Protection System manuelt",
+                    "dropdown-title": "Koble ut i",
+                    "button": "Utsett Nå"
+                },
+                "advanced": {
+                    "description": "Hvis du vil forbedre tilgangen til harddisken i nettbrettmodus, kan du suspendere Active Protection System når følgende aktiviteter oppdages",
+                    "pen": {
+                        "title": "Inndata fra penn",
+                        "description": "Ved penneinndata skal APS Aktiveres når pennen er utenfor rekkevidde i"
+                    },
+                    "touch": {
+                        "title": "Inndata fra berøring",
+                        "description": "Når du bruker berørings inn data, må du aktivere APS når det ikke blir oppdaget berørings inn data"
+                    },
+                    "hand": {
+                        "title": "Kantene på datamaskinen føler hvor nær hendene er",
+                        "description": "Når nett brett modus er aktivert, må du aktivere APS når hånd ikke gjenkjennes"
                     }
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Intelligent medieavspilling",
+                "title": "Berøringsfri videoavspilling",
+                "desc": "Denne funksjonen setter videoen på pause når du forlater datamaskinen, og fortsetter avspillingen når du kommer tilbake.",
+                "tooltip": "Denne funksjonen støttes ikke av nettvideospillere. Populære lokale videospillere, for eksempel Windows Media Player og 5KPlayer, støtter denne funksjonen."
+            },
+            "voice": {
+                "title": "Tale",
+                "description": "Lenovo Voice hjelper deg med å konvertere stemmen din til tekster med funksjonen for tale på tekst, og gir sann tids oversetting fra tale til tekster med Oversettelses funksjonen.",
+                "installBtnText": "Installer",
+                "launchBtnText": "Start",
+                "voiceToText": {
+                    "title": "Tale til tekst",
+                    "caption": "Denne funksjonen gjør det enklere å konvertere stemmen til tekster."
+                },
+                "translation": {
+                    "title": "Oversettelse",
+                    "caption": "Denne funksjonen gir sann tids oversettelse til stemmen. Det oversatte innholdet blir vist i tekst. Du kan velge kilde språk og mål språk etter behov."
+                },
+                "modalPopUp": {
+                    "heading": "Kom i gang:",
+                    "point1": "Kontroller at Lenovo Voice ikonet blir vist i system skuffen i Windows.",
+                    "point2": "Åpne filen der du vil registrere den konverterte teksten.",
+                    "point3": "Klikk på Lenovo Voice ikonet i system skuffen i Windows og velg tale til tekst.",
+                    "point4": "Velg ønsket språk og klikk på mikrofon ikonet for å starte.",
+                    "point5": "Plasser markøren der du vil redigere og begynne å snakke.",
+                    "point6": "Klikk på Lenovo Voice ikonet i system skuffen i Windows og velg oversette.",
+                    "point7": "Velg ønsket kilde språk og mål språk.",
+                    "point8": "Avhengig av dine behov, må du definere tale signaler fra taler eller mikrofon.",
+                    "point9": "Klikk på mikrofon ikonet for å begynne å snakke",
+                    "closeText": "Lukk"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "Systemoppdateringer",
+        "back": "TILBAKE",
+        "history": "FULLSTENDIG HISTORIKK",
+        "notAvailable": "Ikke tilgjengelig",
+        "notInstalled": "Ikke installert",
+        "criticalUpdates": "Kritisk(e) oppdatering(er)",
+        "recommendedUpdates": "Anbefalt(e) oppdatering(er)",
+        "optionalUpdates": "Valgfri(e) oppdatering(er)",
+        "ignoredUpdates": "Ignorert(e) oppdatering(er)",
+        "successInstall": "Installert: ",
+        "failedInstall": "Installasjon mislyktes: ",
+        "at": "klokken",
+        "readMore": "Les mer",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+            "reboot": "Start på nytt",
+            "shutdown": "Avslutt",
+            "rebootForceMsg": "Oppdateringen(e) du har valgt, fører til at systemet starterpå nytt automatisk etter installasjonen.",
+            "shutdownForceMsg": "Oppdateringen(e) du har valgt, fører til at systemet avsluttesautomatisk etter installasjonen.",
+            "rebootDelayedMsg": "Oppdateringen(e) du har valgt, vil få systemet til å starte på nytt etter installasjonen.Under installasjonen av oppdateringene må du ikke slå av systemet, fjerne strømkilden eller tilbehør. Vi anbefaler at du lagrer arbeidet ditt før omstart av systemet.",
+            "rebootRequiredMsg": "For at installasjonen av oppdateringene skal bli vellykket, trenger datamaskinenen omstart for å sikre at alt kjører trygt og knirkefritt.",
             "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "cancelButton": "Avbryt",
+            "rebootButton": "START PÅ NYTT NÅ",
+            "dismissButton": "AVVIS",
+            "rebootPending": "Omstart venter"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Innstillinger for automatiske oppdateringer",
+            "subtitle": "INSTALLER OPPDATERINGER AUTOMATISK",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Kritiske oppdateringer",
+                "tooltip": "Kritiske oppdateringer kan forhindre vesentlige problemer, store funksjonssvikt, maskinvarefeil eller ødelagte data."
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "Anbefalte oppdateringer",
+                "tooltip": "Anbefalte driveroppdateringer gjør at datamaskinen kjører på optimal ytelse."
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Oppdateringer fra Windows",
+                "url": "Windows-innstillinger"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Nettsted for Lenovos kundestøtte"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "Velkommen som bruker av System Update.",
+            "title": "Et oppdatert system er et velfungerende system.",
+            "last": "Sist oppdatert: ",
+            "next": "Neste planlagte oppdatering: ",
+            "checkButton": "SE ETTER OPPDATERINGER",
+            "checking": "Ser etter oppdateringer",
+            "downloading": "Nedlasting av oppdateringer er ferdig",
+            "installing": "Installerer oppdateringer",
+            "percent": "% fullført",
+            "cancelCheck": "Avbryt sjekk",
+            "cancelUpdates": "AVBRYT OPPDATERINGER",
+            "available": "Tilgjengelige oppdateringer",
+            "description": "Disse pakkene inkluderer oppdateringer av maskinvaredrivere ogandre systemverktøy som er kritiske for at datamaskinen skal fungere som den skal. Kritiske oppdateringer er også viktige for å beskytte data på datamaskinen og må installeres etter som de blir tilgjengelige. Hvis disse pakkene ikke installeres, kan det føre til tap av data, systemsvikt eller maskinvarefeil.",
+            "installButton": "INSTALLER ALLE OPPDATERINGER",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Alle oppdateringer ble installert på riktig måte",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Noen oppdateringer ble ikke installert på riktig måte.",
+                    "description": "Noe gikk galt under nedlastingen eller installasjonen av disse oppdateringene.Kontroller at du er tilkoblet, og ikke slå av datamaskinen under installasjon av oppdateringer."
                 }
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend",
-            "rebootRequiredTag": "Reboot Required",
-            "rebootDelayTag": "Reboot Required, Power Source Required",
-            "shutdownRequiredTag": "Shutdown Required",
-            "dependedPackage": "Depended Package"
+            "rebootRequired": "Omstart nødvendig",
+            "failReason": "Årsaken til feilen: Strømadapteren var ikke tilkoblet datamaskinen. ",
+            "manufacturer": "Produsent: ",
+            "version": "Versjon: ",
+            "installVersion": "Installert versjon: ",
+            "downloadSize": "Nedlastingsstørrelse: ",
+            "diskSpaceNeeded": "Nødvendig diskplass: ",
+            "ignore": "Overse",
+            "attend": "Behandle",
+            "rebootRequiredTag": "Omstart nødvendig",
+            "rebootDelayTag": "Omstart nødvendig, strømkilde nødvendig",
+            "shutdownRequiredTag": "Avslutning kreves",
+            "dependedPackage": "Avhengig pakke"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "Tilgjengelige oppdateringer",
+            "description": "Disse pakkene inneholder oppdateringer som er kritiske for korrekt drift av datamaskinen din. Kritiske oppdateringer bidrar til å gjøre datamaskinen sikrere og mer pålitelig, og bør installeres når de blir tilgjengelige. Anbefalte oppdateringer og valgfrie oppdateringer hjelper deg med å holde programvaren oppdatert og datamaskinen i best mulig tilstand.",
+            "installAllUpdates": "Installer alle oppdateringer",
+            "installSuccessHeader": "Alle oppdateringer ble installert på riktig måte",
+            "installFailHeader": "Noen oppdateringer ble ikke installert korrekt",
+            "installFailDescription": "Noe gikk galt under nedlastingen og installasjonen av disse oppdateringene. Kontroller at du er tilkoblet, og ikke slå av maskinen når du installerer oppdateringer.",
+            "optionalUpdates": "Valgfrie oppdateringer",
+            "installSelectedUpdates": "Installer valgte oppdateringer"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "Navn",
+            "sortByDate": "Sorter etter dato",
+            "packageSize": "Pakkestørrelse:",
+            "releaseDate": "Utgavedato:",
+            "showAll": "Vis alle",
+            "noInstallationHistory": "Det er ingen installeringslogg tilgjengelig"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Det oppstod et problem med henting av nye oppdateringer. Prøv igjen senere.",
+            "upToDate": "Ingen oppdateringer er tilgjengelige. Systemet ditt er oppdatert.",
+            "egatherException": "Det oppstod en feil ved innsamling av brukerinformasjon.",
+            "gatheringUserInfoException": "Det oppstod en feil ved innsamling av brukerinformasjon.",
+            "certificateValidationException": "Oppdateringsinnholdsserveren er ugyldig. Prøv igjen senere.",
+            "downloadException": "Det oppstod en feil under nedlastingen av oppdateringer.",
+            "connectException": "Ikke mulig å koble seg til serveren med oppdateringsinnhold.",
+            "notEnoughDiskSpace": "Det er ikke nok lagerplass til å utføre den aktuelle oppgaven.",
+            "proxyAuthenticationException": "Feil brukernavn eller passord for Proxy.",
+            "proxyConnectionException": "Ikke mulig å koble seg til proxy-serveren.",
+            "autoScriptEvaluationException": "Det oppstod en feil ved evaluering av autokonfigureringsskriptet.",
+            "localRepositoryConnectionFailureException": "Ikke mulig å koble seg til det lokale datalageret.",
+            "localRepositoryDatabaseException": "Databasen i det lokale datalageret ble ikke funnet eller er ødelagt.",
+            "networkInterruptedException": "Systemoppdateringsserveren er ikke tilgjengelig for øyeblikket. Prøv igjen senere.",
+            "helpCenterInvalidServerException": "Systemoppdateringsserveren er ugyldig. Prøv igjen senere.",
+            "catalogNotFoundException": "Det ble ikke funnet noen oppdateringer som er aktuelle for systemet ditt.",
+            "catalogCrcErrorException": "Systemkatalogen oppdateres for øyeblikket. Prøv igjen senere.",
+            "catalogErrorException": "Det ble oppdaget en feil med oppdateringskatalogen for ditt system på systemoppdateringsserveren. Prøv igjen senere.",
+            "fileNotFoundException": "Fant ikke fil."
         }
     },
     "homeSecurity": {
-        "title": "Connected Home Security",
-        "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Ecosystem Security Overview",
-        "thisDevice": "This device",
-        "allDevices": "All Devices",
-        "protected": "Protected",
-        "notProtected": "Not Protected",
-        "myDevice": "My Device",
-        "allDevice": "All Devices",
-        "secure": "SECURE",
-        "needAttention": "NEEDS ATTENTION",
-        "manageAccount": "Manage Account",
-        "devices": "Devices",
-        "seeProtectedDevices": "See protected devices",
-        "addDevice": "add device",
-        "trailExpired": "Trail expired",
-        "trailExpiredSubtext": "Upgrate to protect all of your devices",
-        "upgrade": "upgrade",
+        "title": "Sikkerhet for tilkoblede hjem",
+        "notification": {
+            "recent": "Nylige sikkerhetsvarsler",
+            "notifications": "Varsler"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Beskytt enhetens økosystem",
+            "thisDevice": "Denne enheten",
+            "allDevices": "Alle enheter",
+            "protected": "Beskyttet",
+            "notProtected": "Ikke beskyttet",
+            "trialExpired": "Prøveversjonen er utløpt - Oppgrader for å beskytte alle enhetene dine",
+            "upgrade": "oppgrader",
+            "inEcosystem": "I økosystem",
+            "ecosystemEnable": "Økosystem aktivert",
+            "inTrial": "I prøveperiode",
+            "addEcosystem": "Legg til økosystem",
+            "enableEcosystem": "Aktiver økosystem",
+            "startTrial": "Start prøveperiode",
+            "fullAccess": "Full tilgang",
+            "renew": "Forny"
+        },
+        "overview": {
+            "overviewBlockTitle": "Vis sikkerhetsoversikt for økosystemet",
+            "allDevices": "Alle enheter",
+            "myDevice": "Min enhet",
+            "thisComputer": "This computer",
+            "secure": "SIKKER",
+            "needAttention": "TRENGER OPPMERKSOMHET",
+            "manageAccount": "Administrer konto",
+            "devices": "Enheter",
+            "seeProtectedDevices": "Se beskyttede enheter",
+            "addDevice": "legg til enhet",
+            "trialExpired": "Prøveversjonen er utløpt - Oppgrader for å beskytte alle enhetene dine",
+            "upgrade": "oppgrader",
+            "freeTrial": "Beskytt alle enhetene dine - Gratis 30-dagers prøveperiode",
+            "startTrial": "Start prøveperiode"
+        },
         "tour": {
-            "back": "Back",
-            "skip": "Skip",
-            "start": "START TOUR",
-            "done": "DONE",
-            "welcome1": "Welcome",
-            "welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
-            "welcome2": "Exclusive for Vantage",
-            "welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
-            "create": "Create your account",
-            "lenovoId": "with Lenovo ID",
-            "notifications": "Receive <b>notifications</b> about your home's status",
-            "monitor": "<b>Monitor</b> the safety of your family's devices",
-            "peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
-            "signInLenovoId": "SIGH-UP WITH LENOVO ID",
-            "haveLenovo": "I don't have a <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Create a Lenovo ID",
-            "without": "Proceed <b>without an account</b>",
-            "skipAndTrial": "SKIP AND START TRIAL",
-            "alreadyHave": "I already have a <b>Connected Home Security Account</b>",
-            "loginCHS": "Login to existing CHS account",
-            "locationTitle": "Enable location tracking",
-            "locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+            "back": "Tilbake",
+            "skip": "Hopp over",
+            "start": "START OMVISNING",
+            "done": "FERDIG",
+            "welcome1": "Velkommen",
+            "welcomeDesc1": "Med bare noen få klikk kan du beskytte PC-er, mobilenheter og tilkoblede enheter tilhørende deg og familien din.",
+            "welcomeDescStart": "Start en 30-dagers gratis prøveperiode nå.",
+            "welcome2": "Eksklusivt for Vantage",
+            "welcomeDesc2": "Sikkerhet for tilkoblede hjem er innebygd i Vantage for rask tilgang til beskyttelsesstatusen for økosystemet og sikkerhetsvarsler.",
+            "create": "Opprett en konto",
+            "lenovoId": "med Lenovo ID-en",
+            "notifications": "Motta <b>varslinger</b> om hjemmets status",
+            "monitor": "<b>Overvåk</b> sikkerheten til familiens enheter",
+            "peaceOfMind": "Få <b>ro i sjelen</b> med vissheten om at du alltid er beskyttet.",
+            "signInLenovoId": "REGISTRER DEG MED LENOVO ID",
+            "haveLenovo": "Jeg har ikke <b>Lenovo ID</b>",
+            "createLenovo": "&nbsp;Opprett en Lenovo ID",
+            "without": "Fortsett <b>uten en konto</b>",
+            "skipAndTrial": "HOPP OVER OG START PRØVEPERIODE",
+            "alreadyHave": "Jeg har allerede en <b>Sikkerhet for tilkoblede hjem-konto</b>",
+            "loginCHS": "Logg på eksisterende Sikkerhet for tilkoblede hjem-konto",
+            "locationTitle": "Aktiver posisjonssporing",
+            "locationPermission": "For at denne funksjonen skal fungere på riktig måte, må du aktivere posisjonssporing for denne enheten"
+        },
+        "accountStatus": {
+            "title": "Min Sikkerhet for tilkoblede hjem",
+            "startTrial": "Start prøveperiode",
+            "manageAccount": "Administrer konto",
+            "upgradeAccount": "Oppgrader konto",
+            "inTrialDetail1": "{{remainingDays}} dager til prøveperioden er over.",
+            "inTrialDetail2": "Du er for tiden i prøveperioden. Du har ubegrenset tilgang til alle funksjoner.",
+            "trialExpiredDetail1": "Prøveperioden er utløpt.",
+            "trialExpiredDetail2": "Prøveperioden er utløpt og enhetens økosystem er ikke lenger beskyttet.",
+            "upgradedDetail1": "Kontoen din er aktiv til {{expiredDate}}.",
+            "upgradedDetail2": "Enhetens økosystem er beskyttet.",
+            "localAccountDetail2": "Klikk på knappen nedenfor for å starte en 30-dagers prøveperiode.",
+            "alreadyHaveAccount": "Har du allerede en aktiveringskode?"
         }
     },
     "support": {
@@ -1101,7 +1496,9 @@
             "status": "Status: ",
             "subDescription1": "Dette produktet dekkes av den begrensede garantien og er berettiget til reparasjon på servicesenter. Kunder kan ringe sitt lokale servicesenter for å få mer informasjon. Forhandlere kan tilby reparasjon av dette produktet.",
             "subDescription2": "Vi fant ikke noen garantidetaljer for enheten din. Gå til støttenettstedet vårt for å få flere garantialternativer.",
-            "viewWarrantyOptions": "SE GARANTIALTERNATIVER"
+            "viewWarrantyOptions": "SE GARANTIALTERNATIVER",
+            "offlineTips1": "Koble deg til Internett for å få den nyeste garantiinformasjonen.",
+            "offlineTips2": "Koble deg til Internett for å oppdatere garantiinformasjonen."
         },
         "documentation": {
             "title": "Dokumentasjon",
@@ -1131,9 +1528,9 @@
             "copyright": "© 2002–2019 Lenovo. Med enerett."
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "Kategorier",
+            "categoriesDesc": "Finn nyttig informasjon i artiklene våre.",
+            "seeArticles": "SE ARTIKLER"
         }
     },
     "security": {
@@ -1154,9 +1551,7 @@
             "maliciousNetwork": "Hindret at datamaskinen ble med i {{maliciousWifi}}skadelig nettverk denne måneden.",
             "good": "GOD",
             "malicious": "SKADELIG",
-            "suspicious": "MISTENKELIG",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "MISTENKELIG"
         },
         "antivirus": {
             "common": {
@@ -1245,6 +1640,12 @@
                 "describe2": "For å bruke Sikkerhet for tilkoblede hjem må du aktivere posisjonstjenester for Lenovo Vantage. Vil du aktivere sted nå?",
                 "agree": "AKSEPTER",
                 "cancel": "AVBRYT"
+            },
+            "errorMessage": {
+                "headerText": "Feil",
+                "bodyText": "Vi har oppdaget at du mangler viktige deler av Vantage. Disse delene lastes ned i bakgrunnen. Prøv igjen senere.",
+                "closeText": "Lukk",
+                "offlineText": "Vi har oppdaget at du ikke er koblet til internett. Deler av denne siden vil ikke fungere på riktig måte. Koble til igjen"
             }
         },
         "homeprotection": {
@@ -1256,7 +1657,7 @@
                 "homeSecurityAffect3": "Sikkerhet for tilkoblede hjem sikrer at andre enheter som er koblet til hjemmenettverket ditt er sikre.",
                 "describe": "Usikre enheter og nettverk kan medføre skadelig programvare, føre til identitetstyveri og lekke private og økonomiske opplysninger. Aktiver denne funksjonen for å redusere risikoen for enheten din og at hjemmenettverket ditt utsettes for angripere",
                 "subtitle": "Trygghet",
-                "subtitleDescribe": "Sikkerhet for tilkoblede hjem sender deg et varsel hvis den oppdager et sikkerhetsproblem i enheten eller hjemmenettverket, eller hvis du er koblet til et skadelig nettverk. Finn ut mer om Sikkerhet for tilkoblede hjem i Tips og triks.",
+                "subtitleDescribe": "Sikkerhet for tilkoblede hjem sender deg et varsel hvis den oppdager et sikkerhetsproblem i enheten eller hjemmenettverket, eller hvis du er koblet til et skadelig nettverk. Lær enda mer om Sikkerhet for tilkoblede hjem <tag>her</tag>.",
                 "tryNow": "Prøv nå"
             },
             "invitationcode": {
@@ -1332,7 +1733,7 @@
             "whatIsPmNotInstalled": "Den tryggeste, enkleste måten å lagre sterke, komplekse passord og logge deg umiddelbart på hvert område.",
             "whatIsPmInstalled": "Et tryggere digitalt liv venter: Legg til passord, aktivere Dark Web-overvåking og automatisk utfylling av personlig informasjon og betalingsinformasjon.",
             "startProtect": "Start å beskytte internettkontoene dine på en enkel måte.",
-            "discount": "Lenovo-brukere får en eksklusiv 6 måneder gratis bruk av Dashlane Premium.",
+            "discount": "Lenovo-brukere får 50 % avslag på Dashlane Premium.",
             "offer": "Dette tilbudet gjelder bare for nye Dashlane-brukere.",
             "getDashLane": "Få tak i Dashlane",
             "learnMoreAbout": "<tag>Finn ut mer</tag> om hvordan du får mest mulig ut av Dashlane",
@@ -1378,32 +1779,32 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "Logg på",
+        "logout": "Logg av",
+        "unlockExclusives": "Få eksklusive tilbud",
+        "user": "Bruker",
+        "welcomeText": "Ser frisk ut i dag {{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "Ser frisk ut i dag!",
+        "helloUser": "Hei, {{firstName}}.",
+        "ssoErrorTitle": "Feil",
+        "ssoErrorCommon": "Huff, det har oppstått et problem. Prøv igjen.",
+        "ssoErrorCommonEx": "Uventet feil. Prøv igjen.",
+        "ssoErrorTimeStampIncorrect": "Huff, det ser ut til at klokkeslettet på PC-en ikke er riktig. Rett klokkeslettet på PC-en og prøv på nytt.",
+        "ssoErrorNetworkDisconnected": "Ops! Tilkoblingen mislyktes! Kontroller Internett-forbindelsen og prøv igjen.",
+        "ssoErrorCommunicating": "Nettverksfeil. Kontroller forbindelsen og prøv igjen.",
+        "ssoErrorAccountPluginNotExist": "Plug-in-modul mangler. Vi vil gjenopprette plug-in-modulen automatisk i bakgrunnen hvis du er koblet til Internett. Dette kan ta litt tid, prøv igjen senere."
     },
     "faq": {
         "footer": {
-            "title": "Not finding what you are looking for?",
-            "description": "NEED ADDITIONAL SUPPORT? DON’T HESITATE TO CONTACT US VIA:",
+            "title": "Finner du ikke det du leter etter?",
+            "description": "Trenger du ekstra støtte? IKKE HESITERER Å KONTAKTE OSS VIA:",
             "body": "Lenovo Community",
-            "button": "GO TO FORUM"
+            "button": "GÅ TIL FORUM"
         },
         "question1": {
-            "title": "Back up and restore your files",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        Back up and restore your files\n    </div>\n    <hr />\n    <div style='margin-bottom:7rem;'>\n        It's always good to have a backup. Keep copies of your files on another drive in case something happens to the\n        originals.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Set up your backup\n    </div>\n    <hr />\n    <div class='mb-5'>\n        Select the <span style='font-weight:bold'>Start</span> button, select\n        <span style='font-weight:bold'>Settings</span> >\n        <span style='font-weight:bold'>Update & security</span> >\n        <span style='font-weight:bold'>Backup</span> > <span style='font-weight:bold'>Add a drive</span> , and then\n        choose an external drive or network location for your backups.\n    </div>\n    <div class='mb-5'>\n        <img src='./../../../../assets/images/qa/1.1.png' />\n    </div>\n    <div class='mb-5'>\n        All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files\n        get backed up or how often backups happen, go to\n        <span style='font-weight:bold;'>More options</span>.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Restore your files\n    </div>\n    <div class='mb-5'>\n        If you're missing an important file or folder, here's how to get it back:\n    </div>\n    <div>\n\n        <div class='mb-3'>1. Type <span style='font-weight:bold;'>Restore files</span>\n            in the search box on the taskbar, and then select\n            <span class='font-weight:bold'> Restore your files with File History</span>.</div>\n        <div class='mb-3'>2. Look for the file you need, then use the arrows to see all its versions</div>\n        <div class='mb-3'>3. When you find the version you want, select\n            <span style='font-weight:bold'>Restore</span>\n            to save it in its original location. To save it in a different place, press and hold (or right-click)\n            <span style='font-weight:bold'>Restore</span>, select <span style='font-weight:bold'>Restore to</span>, and\n            then choose a new location.</div>\n\n    </div>\n</div>",
+            "title": "Sikkerhetskopier og gjenopprett filene dine",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Sikkerhetskopier og gjenopprett filene dine    </div>    <hr />    <div style='margin-bottom:7rem;'>        Det er alltid godt å ha en sikkerhets kopi. Behold kopier av filene dine på en annen stasjon hvis det er noe som skjer med originalene.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Konfigurere din sikkerhetskopi    </div>    <hr />    <div class='mb-5'>        Velg på<span style='font-weight:bold'> Start</span> -knappen, <span style='font-weight:bold'>velg</span> innstillinger <span style='font-weight:bold'>> Oppdater & sikkerhets</span> <span style='font-weight:bold'>></span> sikkerhets <span style='font-weight:bold'>kopi > Legg</span> til en stasjon, og velg deretter en ekstern stasjon eller en nettverks plassering for sikkerhets kopier.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Alt er klart. Hver time sikkerhetskopierer vi alt i bruker mappen din (C:\\\\Users\\\\username). Hvis du vil endre hvilke filer som blir sikkerhets kopi ert eller hvor ofte sikkerhets <span style='font-weight:bold;'>kopieringen</span>skal skje, kan du gå til flere alternativer.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Restaurer filene dine    </div>    <div class='mb-5'>        Hvis du mangler en viktig fil eller mappe, kan du få den tilbake på denne måten:    </div>    <div>        <div class='mb-3'>1. Skriv <span style='font-weight:bold;'>Gjenopprett filer</span> i søke boksen på oppgave linjen, og velg <span class='font-weight:bold'>Gjenopprett filene med fillogg.</span></div>        <div class='mb-3'>2. Se etter filen du trenger, og bruk deretter pilene til å se alle versjonene av den</div>        <div class='mb-3'>3. Når du finner den versjonen du ønsker, velger <span style='font-weight:bold'>du</span> Gjenopprett for å lagre den på den opprinnelige plasseringen. Hvis du vil lagre den på et annet sted, trykker du på og holder nede (<span style='font-weight:bold'>eller</span> høyre klikker <span style='font-weight:bold'>) Gjenopprett</span>, velger Gjenopprett til og velger deretter en ny plassering.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1443,8 +1844,8 @@
             }
         },
         "question2": {
-            "title": "How to refresh your PC",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        How to refresh your PC\n    </div>\n    <hr>\n    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>\n        Symptom\n    </div>\n    <div style='padding:5px 0;'>\n        If your PC isn't performing as well as it once did, and you don't know why,\n        you can refresh your PC without deleting any of your personal files or\n        changing your settings. Windows can “refresh” your PC so it’s more like a\n        fresh install without deleting your personal files.\n    </div>\n    <div style='padding:5px 0;'>\n        Refresh your PC, Here is what will happen: your files and personalized\n        settings won’t change\n    </div>\n    <div style='padding:5px 0;'>\n        <ul>\n            <li>Your PC settings will be changed back to its defaults</li>\n            <li>Apps from windows store will be kept</li>\n            <li>Apps you installed from disc or website will be removed</li>\n            <li>A list of removed files will be saved on your desktop</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Affected Brands\n    </div>\n\n    <div>\n        <ul>\n            <li>All Desktop and Laptops</li>\n\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Operation System\n    </div>\n\n    <div>\n        <ul>\n            <li>Windows 8, 8.1 & 10</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Solution\n    </div>\n\n    <div>\n        <ul class='list-unstyled'>\n            <li>\n                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>\n                <ol>\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Settings </span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Update and recovery</span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <div>Tap or click <span style='font-weight:bold;'> Recovery</span></div>\n                        <div style='padding:5px 0'>Under Refresh your PC without affecting your files, tap or click\n                            <span style='font-weight:bold;'> Get started.</span></div>\n                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>\n\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Next'</span>.\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Refresh' </span>to start the refresh process.\n                    </li>\n                    <li style='padding:5px 0;'>\n                        Once the refresh process is done, you can find a Removed Apps list on the desktop\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        You can find the removed apps while refreshing your system\n                    </li>\n                </ol>\n            </li>\n            <li style='padding:10px 0;'>\n                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>\n                <ol>\n                    <li style='padding:5px 0;'> Search for <span style='font-weight:bold;'> refresh </span>in the search\n                        tool available in the Start menu,</li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on <span style='font-weight:bold;'> 'Refresh your PC without affecting your\n                                files'</span> in the search results as shown below.</div>\n                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on the\n                            <span style='font-weight:bold;'> Get started </span>\n                            button just below the heading<span style='font-weight:bold;'> 'Refresh your PC without\n                                affecting your files'</span> to start refreshing your Windows 10 PC.</div>\n                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>\n                    </li>\n                </ol>\n            </li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;'>\n        Additional Information\n    </div>\n\n    <div>\n        In most cases, once you start to refresh your PC, it’ll finish on its own.\n        However, if Windows needs missing files, you’ll be asked to insert recovery\n        media, which is typically a DVD disc or thumb drive. If that happens, what\n        you’ll need depends on your PC.\n    </div>\n    <div style='padding:10px 0'>\n        If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use\n        that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact\n        Microsoft Support.\n    </div>\n\n</div>",
+            "title": "Slik oppfrisker du datamaskinen din",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Slik oppfrisker du datamaskinen din    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        Symptom    </div>    <div style='padding:5px 0;'>        Hvis PC-en ikke er i det sammen hengende, og du ikke vet hvorfor, kan du oppdatere PCen uten å slette noen av de personlige filene eller endre innstillingene. Windows kan \\\"oppdatere\\\" PC-en din slik at den er mer som en ny installering uten å slette dine personlige filer.    </div>    <div style='padding:5px 0;'>        Oppdater PC-en, her er det som skjer: filene og de egen definerte innstillingene endres ikke    </div>    <div style='padding:5px 0;'>        <ul>            <li>PC-innstillingene blir endret tilbake til standard verdiene</li>            <li>Apper fra Windows store blir beholdt</li>            <li>Apper du installerte fra plate eller nettsted vil bli fjernet</li>            <li>En liste over filer som fjernes, vil bli lagret på skrive bordet</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Berørte merker    </div>    <div>        <ul>            <li>Alle stasjonære og bærbare</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Operativsystem    </div>    <div>        <ul>            <li>Windows 8, 8.1 & 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Løsning    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        Klikk eller trykk <span style='font-weight:bold;'> Innstillinger </span>                    </li>                    <li style='padding:5px 0;'>                        Trykk på eller <span style='font-weight:bold;'> Klikk på Oppdater og Gjenopprett</span>                    </li>                    <li style='padding:5px 0;'>                        <div>Klikk eller trykk <span style='font-weight:bold;'> Gjenoppretting</span></div>                        <div style='padding:5px 0'>I delen Forny PCen uten å påvirke filene, klikk eller trykk <span style='font-weight:bold;'> Kom i gang.</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        Klikk på <span style='font-weight:bold;'> Neste </span>.                    </li>                    <li style='padding:5px 0;'>                        Klikk på <span style='font-weight:bold;'>Forfriske </span>for å starte oppdateringsprosessen.                    </li>                    <li style='padding:5px 0;'>                        Når oppdaterings prosessen er fullført, kan du finne en liste over fjernede apper på skrive bordet                    </li>                    <li style='padding:5px 0;'>                        Du kan finne de fjernede appene mens du oppdaterer systemet                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> Søk etter <span style='font-weight:bold;'>oppdatering </span>i søke verktøyet som er tilgjengelig på Start-menyen,</li>                    <li style='padding:5px 0;'>                        <div>Klikk på <span style='font-weight:bold;'> ' Oppdater PCen uten å påvirke filene '</span> i søke resultatene som vist nedenfor.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div>Klikk på knappen <span style='font-weight:bold;'>komme i </span>gang rett under overskriften<span style='font-weight:bold;'> ' Oppdater PCen uten å påvirke filene ' for å</span> starte oppdateringen av Windows 10-PCen din.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        Tilleggsinformasjon    </div>    <div>        Når du i de fleste tilfeller begynner å oppdatere PCen din, avsluttes den på egenhånd. Hvis Windows imidlertid trenger filer, blir du bedt om å sette inn gjenopprettings medier, som vanligvis er en DVD plate-eller tommel stasjon. Hvis dette skjer, er det du trenger, avhengig av PC-en.    </div>    <div style='padding:10px 0'>        Hvis du oppgraderte PCen til Windows 8,1 eller Windows RT 8,1 med en DVD, bruker du denne platen. Hvis du ikke har Windows 8,1 eller Windows RT 8,1-medier, kontakter du Microsoft kunde støtte.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -1517,8 +1918,8 @@
             "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
         },
         "question3": {
-            "title": "How to know your machine's CPU",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    How to know your machine's CPU\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.\n    The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit\n    system.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n    <li>All Desktop and Laptops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operating System</h3>\n<ul>\n    <li>Windows 7 , 8 , 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n    <li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button,</strong>\n        right-clicking Computer, and then clicking Properties  </li>\n    <li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then click\n        <strong>Search.</strong></li>\n    <li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n    <li>Tap or click <strong>System</strong></li>\n    <li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong>\n        is displayed in the System type field under the System heading.\n        If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong>\n        <strong>32-bit Operating </strong>System is displayed in the System type field under the System heading.<br />\n         </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then\n        click <strong>Search.</strong></li>\n    <li>In the search box, type <strong>system information</strong></li>\n    <li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and then\n        click <strong>System Summary.</strong></li>\n    <li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>\n        x64-based PC is displayed in the <strong>System type</strong> field under the \n        Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong>\n        version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> field\n        under the Item heading.  </li>\n</ol>\n<p> </p>",
+            "title": "Bli kjent med datamaskinens prosessor",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Bli kjent med datamaskinens prosessor</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3><p>Begrepene 32-bits og 64-bit henviser til hvordan prosessoren til en data maskin (også kalt en CPU) håndterer informasjon. 64-biters versjonen av Windows håndterer store mengder RAM (Random Access Memory) mer effektivt enn et 32-bits system.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Berørte merker</h3><p>Symptomet ovenfor er knyttet til, men ikke begrenset til, disse systemene:</p><ul>    <li>Alle stasjonære og bærbare</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operativsystem</h3><ul>    <li>Windows 7 , 8 , 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Løsning</h3><p><strong><u>Windows 7 eller Vista</u></strong></p><ol>    <li>Åpne systemet ved å klikke <strong>på Start </strong>-knappen på <strong>Start-knappen</strong>, høyre klikk på data maskinen og deretter på egenskaper  </li>    <li>Under system kan du se system typen.</li></ol><p><strong><u>Windows 8 og Windows 10</u></strong></p><p><strong>Metode 1:</strong> Vis system-vinduet i kontroll panel</p><ol>    <li>Dra inn fra høyre kant av skjermen og trykk deretter <strong>Søk</strong>. Hvis du bruker musen, peker du på nederste høyre hjørne på skjermen og klikker <strong>på Søk.</strong></li>    <li>Skriv <strong>systemet</strong> i søke boksen og trykk eller klikk <strong>på innstillinger.</strong></li>    <li>Klikk eller trykk på <strong>System</strong></li>    <li>Hvis du kjører en 64-biters versjon av Windows 8, <strong>blir 64-biters operativ system</strong> vist i feltet system type under system overskriften. Hvis du kjører en 32<strong>-biters versjon av Windows</strong><strong>8,</strong><strong>blir 32-biters operativ </strong>system vist i feltet system type under system overskriften.<br />  </li></ol><p><strong>Metode 2</strong>: Se vinduet Systeminformasjon</p><ol>    <li>Dra inn fra høyre kant av skjermen og trykk deretter <strong>Søk</strong>. Hvis du bruker musen, peker du på nederste høyre hjørne på skjermen og klikker <strong>på Søk.</strong></li>    <li>Skriv inn <strong>system informasjon i søke boksen</strong></li>    <li>Trykk eller klikk<strong> på</strong>system, trykk på <strong>eller klikk på</strong> system informasjon, <strong>og klikk på system Sammendrag.</strong></li>    <li>Hvis du kjører <strong>en 64 -biters </strong>versjon av Windows 8<strong>, </strong> blir det vist en x64 <strong>basert PC i feltet system</strong>type under element overskriften. <br /> <br /> Hvis du kjører<strong> en 32-biters</strong> versjon av Windows 8, blir x86-basert PC <strong>vist i feltet system</strong> type under element overskriften.  </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -1606,8 +2007,8 @@
             }
         },
         "question4": {
-            "title": "Check your machine's battery use",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Check your machine's battery use\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> \n    screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.\n    That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;\n    apps&ndash;are using too much power.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n\n<ul>\n    <li>Lenovo laptops, desktops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Systems</h3>\n<ul>\n    <li>All</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operationg System</h3>\n<ul>\n    <li>Window 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your\n    traditional <strong>control panel </strong>view, this feature is located in the\n    new <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>\n    select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br />\n        <br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last\n    from last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;\n    <strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,\n    the display,</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong>\n     options show how much power is used by applications while you&rsquo;re using them, compared to applications\n    running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>\n        &ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.\n    This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of this\n    feature.\n    It will display a list of the apps have used battery power in that period, and show you what percentage of your\n    battery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
+            "title": "Kontrollere datamaskinens batteriforbruk",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Kontrollere datamaskinens batteriforbruk</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3><p>Windows 10 inneholder et nytt <strong>batteri bruks</strong> skjerm bilde som viser hva som skjer med din bærbare juice. Det betyr at du kan se nøyaktig hvilke applikasjoner – både stasjonære og Windows 10 \\\"universelle\\\" apper-bruker for mye strøm.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Berørte merker</h3><ul>    <li>Lenovo bærbare maskiner, stasjonære maskiner</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Gjelder for følgende systemer</h3><ul>    <li>Alle</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operativsystem</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Løsning</h3><p>Denne funksjonen er ny i Windows 10, men vi må først finne denne funksjonen fordi den ikke er lagret i den tradisjonelle <strong>kontroll panel </strong>visningen, denne funksjonen finnes i den nye <strong>\\\"Settings\\\"-</strong> appen</p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Finn batteri bruk skjermen</h3></p><p>1. Klikk på eller trykk <strong>på \\\"</strong>Settings\\\"-alternativet på Start-menyen</p><p>2. Velg <strong>system </strong> <strong>under innstillinger</strong>, og velg <strong>deretter \\\"batteris paring\\\". <br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klikk på eller trykk <strong>\\\"på \\\"batteri Bruk\\\"</strong> -koblingen under denne overskriften for å se flere detaljer. </p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analyser strøm forbruket</h3><p>4 Du kan endre for å gjøre batteriet til å bruke skjermen til å se batteri bruk fra de siste 24 timene til de siste 48 timene eller sist fra forrige uke</p><p>5 <strong>\\\"system\\\",</strong> \\\"<strong>skjerm</strong>\\\" og \\\" <strong>Wi-Fi\\\"</strong> prosenter. Dette viser hvor mye batteri strøm som er brukt av system prosesser, skjermen,</p><p>6 <strong>\\\"alternativene\\\"</strong> i bruk og <strong> bakgrunn</strong> viser hvor mye strøm som brukes av applikasjoner mens du bruker dem, sammenlignet med programmer som kjøres i bakgrunnen.</p><p>7 Hvis apper bruker strøm i bakgrunnen, kan du klikke på eller trykke på <strong>koblingen \\\"endre innstillinger for bakgrunns </strong>app\\\" og konfigurere apper slik at de ikke kan kjøres i bakgrunnen. Dette fungerer bare for universelle Windows 10-apper.</p><p>8 Rull nedover og du vil se en liste over applikasjoner, anses dette som den mest nyttige delen av denne funksjonen. Det vil se ut som en liste over appene har brukt batteriet i den perioden, og viser deg hvilken prosent del av batteriet du har brukt i hver app</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -1674,8 +2075,8 @@
             }
         },
         "question5": {
-            "title": "Use your PC like a tablet",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Use your PC like a tablet\n</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet\n        mode</strong> .</p>\n<p> </p>\n<p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device \n    on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and\n    how the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the\n    screen.</p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.\n    Select the <strong>Start </strong>button, select <strong>Settings </strong>>\n    <strong>System </strong>> <strong>\n        Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.\n    To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and\n    you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n    <li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n    <li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then\n        drag it to one side to snap it into your divided screen.</li>\n    <li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
+            "title": "Bruke datamaskinen som et nettbrett",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Bruke datamaskinen som et nettbrett</div><hr><p>Nett brett modus gjør Windows mer intuitiv og enklere å bruke når du har en berørings enhet.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Bruk tavlemodus</h3><p>Hvis du vil slå på nett brett <strong>modus</strong> velger du handlings senter på oppgave linjen <strong>og velger deretter nett brett modus</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Merk</h3><p>Hvis du vil finne ut om enheten kan slå på nett brett modus automatisk, søker du etter enheten på produsentens nettsted. Støtte for denne funksjonen avhenger av maskin varen, driveren som er installert og hvordan enheten ble konfigurert av produsenten. </p><p> </p><p>I nett brett modus åpner apper full skjerm og gir deg mer plass å arbeide på. Hvis du vil lukke en app, drar du den til bunnen av skjermen.</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Spiss</h3><p>Oppgave linjen er tilgjengelig når PC-en er i nett brett modus, men du kan skjule den hvis du vil ha mer plass på skjermen. Velg <strong>på Start</strong>-knappen, <strong>Velg</strong> innstillinger <strong>> </strong>system <strong> > nett </strong>brett modus, og <strong>slå på automatisk Skjul oppgave linjen i nett brett modus</strong>. Hvis du vil se den skjulte oppgave linjen, sveiper du ned nederst på skjermen, eller du kan bruke musen til å peke der.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Bruk to apper samtidig</h3><p>Hvis du vil bruke to applikasjoner side ved side i nett brett modus, drar du en åpen app ned og til siden. Du vil se hvor den kan festes, og du vil se eventuelle åpne apper ved siden av den.</p><p>I denne visningen kan du også:</p><ul>    <li>Bruk den delte kanten mellom to festede applikasjoner til å endre størrelse på begge appene samtidig.</li>    <li>Åpne en ny app fra oppgave visning-Velg <strong>oppgave visning</strong> på oppgave linjen, Velg en app, og dra den til den ene siden for å feste den på den delte skjermen.</li>    <li>Bruk tilbake-knappen på oppgave linjen for å gå tilbake i en app eller åpne en app som du brukte tidligere.</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -1714,8 +2115,8 @@
             }
         },
         "question6": {
-            "title": "Get to know Cortona, your personal assistant",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Get to know Cortana, your personal assistant\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>What is Cortana?</h3>\n<hr />\n<p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing\n    works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you\n    select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n    <li>Give you reminders based on time, places, or people.</li>\n    <li>Track packages, teams, interests, and flights.</li>\n    <li>Send emails and texts.</li>\n    <li>Manage your calendar and keep you up to date.</li>\n    <li>Create and manage lists.</li>\n    <li>Chit chat and play games.</li>\n    <li>Find facts, files, places, and info.</li>\n    <li>Open any app on your system.</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Try this: Set a reminder</h3>\n<hr />\n\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or\n    even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync\n    notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hey Cortana?</h3>\n<hr />\n<p>Set Cortana to hear you anytime you say\n    'Hey Cortana.' Select the search box on the taskbar to open Cortana home.\n    Then select <strong>Settings</strong>  and turn on <strong>Let Cortana respond to 'Hey\n        Cortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.\n</p>\n<p> </p>",
+            "title": "Bli kjent med Cortana, din personlige assistent",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Bli kjent med Cortana, din personlige assistent</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hva er Cortana?</h3><hr /><p>Cortana er den digitale agenten. Hun hjelper deg med å få ting gjort.</p><p>Jo mer du bruker Cortana, jo mer personlig blir opplevelse.</p><p>Skriv et spørsmål i søke boksen eller velg mikrofonen og snakk med Cortana for å komme i gang. (Innskriving fungerer for alle typer PCer, men du trenger en mikrofon for å snakke.)</p><p>Hvis du ikke er sikker på hva du skal si, vil du se forslag på låse skjermen din og på Cortana-hjemmesiden når du velger søk-boksen på oppgave linjen.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Hjem 2. Notat blokk 3. Settings 4. Spillkontroller</li></ol><p>Her er noen ting Cortana kan gjøre for deg:</p><ul>    <li>Gi deg påminnelser basert på tid, steder eller personer.</li>    <li>Spore pakker, grupper, interesser og flights.</li>    <li>Sende e-postmeldinger og-tekster.</li>    <li>Administrer kalenderen din og hold deg oppdatert.</li>    <li>Opprett og administrer lister.</li>    <li>Chit chat og spill spill.</li>    <li>Finn opplysninger, filer, steder og info.</li>    <li>Åpne en hvilken som helst app på systemet.</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Prøv dette: Sett en påminnelse</h3><hr /><p>En av tingene Cortana kan gjøre er å gi deg påminnelser. Hun kan minne deg på å gjøre ting basert på tid, steder eller til og med personer.</p><p>Du kan for eksempel skrive eller si ' Påminn meg til congratulate Tanya neste gang hun ringer.'</p><p>Påminnelsen blir vist når du mottar en oppringing fra Tanya.</p><p>Ekstra bonus &mdash; hvis du har en Windows Phone eller Cortana for iPhone eller Android, kan du definere at Cortana skal synkronisere meldinger mellom PCen og telefonen.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hei Cortana?</h3><hr /><p>Oppgi at Cortana skal høre deg når du sier \\\" Hei Cortana.\\\" Velg søke boksen på oppgave linjen for å åpne Cortana-hjemmesiden. Velg <strong>deretter innstillinger</strong> og slå på <strong>la Cortana svare på Hey Cortana.</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Merk</p><p>Cortana er bare tilgjengelig i visse land/regioner, og noen Cortana-funksjoner er kanskje ikke tilgjengelige overalt.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -1750,13 +2151,14 @@
             },
             "para12": "Note",
             "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        }
+        },
+        "pageTitle": "Støttedetaljer"
     },
     "welcometutorial": {
         "description": "Vantage gjør det enkelt å oppdatere drivere, feilsøke, få hjelp og lære om enheten din. Tilpass brukeropplevelsen din på et blunk, og få nyttig informasjon som er skreddersydd etter behovene dine",
         "bullets1": "Se systemets status med Vantage-dashbordet.",
-        "bullets2": "Få enkel administrasjon av sikkerheten med Sikkerhetsrådgivning ",
-        "bullets3": "Automatiske oppdateringer holder enheten i toppform",
+        "bullets2": "Sikkerhetsrådgivning gjør det enkelt å håndtere sikkerheten (Tilgjengelig på utvalgte systemer).",
+        "bullets3": "Automatiske oppdateringer holder enheten i toppform (Tilgjengelig på utvalgte systemer).",
         "subtitle1": "Hvordan kommer du til å bruke enheten?",
         "subtitle2": "Fortell oss om interessene dine",
         "personal": "Personlig bruk",
@@ -1798,6 +2200,6 @@
         "usageStatistics": "Statistikk over bruk",
         "usageStatisticsDescription": "Send anonym bruksstatistikk til Lenovo.",
         "Note": "Merk: ",
-        "settingsNotes": "Alle innstillingene på denne siden krever omstart for å tre i kraft."
+        "settingsNotes": "Alle innstillingene på denne siden krever omstart av dette programmet for å tre i kraft."
     }
 }

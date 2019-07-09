@@ -1,0 +1,21 @@
+.caption {
+    font-size: 1.5rem;
+    // color: $main_shade;
+}
+.input-item{
+    padding: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    &:first-child{
+        padding: 1.5rem 0;
+    }
+    &:last-child{
+        margin-bottom: 3rem;
+    }
+    .dropdown{
+        width: 50%;
+        margin-top: 3rem;
+        @media screen and (max-width:768px){
+            width: 100%;
+        }
+    }
+}

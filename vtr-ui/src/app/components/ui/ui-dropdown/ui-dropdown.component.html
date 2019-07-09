@@ -1,9 +1,17 @@
+<div class='cover' *ngIf='isDropDownOpen' (click)="toggle()">
+</div>
 <section class="vtr-ui-dropdown">
-	<div class="input"
-		(click)="toggle()">
+	<div class="list" *ngIf="isDropDownOpen">
+		<ul>
+			<li (click)="select(i)"
+				*ngFor="let i of list">
+				{{i.text | uppercase }}
+			</li>
+		</ul>
+	</div>
+	<div class="input" (click)="toggle()">
 		<div class="time">
-			<p>{{placeholder | uppercase}}</p>
-			<span>{{name}}</span>
+			<span>{{name}} {{placeholder | uppercase }} </span>
 		</div>
 		<p class="chevron">
 			<fa-icon *ngIf="!isDropDownOpen"
@@ -14,11 +22,5 @@
 			</fa-icon>
 		</p>
 	</div>
-	<div class="list"
-		*ngIf="isDropDownOpen">
-		<ul>
-			<li (click)="select(i)"
-				*ngFor="let i of list">{{i.text}}</li>
-		</ul>
-	</div>
+	
 </section>

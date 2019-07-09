@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -39,22 +39,36 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
                     "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock"
+                    "touchpadLock": "Touchpad Lock",
+                    "lightingDriverPopup": {
+                        "headerText": "Driver Install Required",
+                        "text": "Please install driver",
+                        "button": "Install",
+                        "link": "cancel"
+                    },
+                    "lightingColorMessage": {
+                        "text": "Selecting color not available to this effect."
+                    }
                 },
                 "systemTools": {
                     "power": "Power",
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -71,6 +85,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                },
+                "systemStatus": {
+                    "info": "INFO"
                 }
             }
         },
@@ -111,11 +128,12 @@
                 },
                 "buttons": {
                     "start": "START RECORDING",
-                    "stop": "STOP RECORDING"
+                    "stop": "STOP RECORDING",
+                    "numberPrefix": "NUM"
                 },
                 "recording": {
                     "title": "START TYPING",
-                    "description": "20 inputs with in 20 seconds can be recorded."
+                    "description": "20 inputs within 20 seconds can be recorded."
                 },
                 "recorded": {
                     "title": "MACRO KEY FOR ",
@@ -204,7 +222,7 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure to clear this macro key?"
+                    "title": "Are you sure you want to clear this macro key?"
                 },
                 "timeoutRecording": {
                     "title": "Time Out For Recording.",
@@ -223,13 +241,16 @@
                     "btnCancel": "Cancel"
                 },
                 "btnOk": "OK"
+            },
+            "recording": {
+                "title": "Recording Macro Key For"
             }
         },
         "lightingProfile": {
             "title": "Lighting",
             "effect": {
                 "option1": {
-                    "title": "Static"
+                    "title": "On"
                 },
                 "option2": {
                     "title": "Flicker"
@@ -241,51 +262,146 @@
                     "title": "Wave"
                 },
                 "option5": {
-                    "title": "Music"
-                },
-                "option6": {
                     "title": "Smooth"
                 },
-                "option7": {
+                "option6": {
                     "title": "CPU Temperature"
                 },
-                "option8": {
+                "option7": {
                     "title": "CPU Utilization"
                 },
-                "option9": {
-                    "title": "Response"
+                "option8": {
+                    "title": "Off"
                 },
-                "option10": {
-                    "title": "Ripple"
+                "apply": {
+                    "title": "APPLY"
                 },
-                "option11": {
-                    "title": "No Light"
+                "applied": {
+                    "title": "APPLIED"
+                }
+            },
+            "brightness": {
+                "text1": {
+                    "title": "*Brightness setting doesn't apply on "
+                },
+                "text2": {
+                    "title": " effect"
+                }
+            },
+            "lightingSingleLightingOption": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
+            },
+            "colourwheel": {
+                "text1": {
+                    "title": "Selecting colour not available to this effect."
+                },
+                "text2": {
+                    "title": "APPLY"
+                },
+                "text3": {
+                    "title": "APPLIED"
+                },
+                "text4": {
+                    "title": "R:"
+                },
+                "text5": {
+                    "title": "G:"
+                },
+                "text6": {
+                    "title": "B:"
+                },
+                "text7": {
+                    "title": "Color"
                 }
             }
         }
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "Nadzorna ploča",
             "device": {
-                "title": "My Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "Uređaj",
+                "sub1": "Moj uređaj",
+                "sub2": "Moje postavke uređaja",
                 "sub3": "System Updates",
-                "sub4": "Smart Assist"
+                "sub4": "Pametna pomoć"
             },
             "security": {
                 "title": "Sigurnost",
                 "sub1": "Moja sigurnost",
                 "sub2": "Zaštita od virusa",
-                "sub3": "Sigurnost WiFi mreže",
+                "sub3": "Sigurnost WiFija",
                 "sub4": "Jačina lozinke",
                 "sub5": "Zaštita na internetu",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "Podrška",
+            "homeSecurity": "Povezani dom",
+            "privacy": "Zaštita privatnosti"
         },
         "securityAdvisor": {
             "title": "Savjetnik za sigurnost tvrtke",
@@ -307,25 +423,23 @@
             "notRegistered": "NIJE REGISTRIRAN"
         },
         "qAndA": {
-            "title": "Q&A for your machine",
-            "subtitle": "FIND SOME HELPFUL TIPS FOR YOUR DEVICE.",
-            "question1": "Backup and Restore your files",
-            "question2": "How to refresh your PC",
-            "question3": "How to know your machine's CPU",
-            "question4": "Check your machine's battery use",
-            "question5": "Use your PC like a tablet",
-            "question6": "Get to know Cortana, your personal assistant"
+            "title": "Pitanja i odgovori za vaš stroj",
+            "subtitle": "Nađite neke korisne savjete za svoj uređaj.",
+            "question1": "Sigurnosno kopiranje i vraćanje datoteka",
+            "question2": "Kako osvježiti računalo",
+            "question3": "Kako znati kojim se CPU-om vaš uređaj koristi",
+            "question4": "Provjerite korištenje baterije uređaja",
+            "question5": "Upotrebljavajte računalo kao tablet",
+            "question6": "Upoznajte Cortanu, svoju osobnu pomoćnicu"
         },
         "ui": {
             "back": "NATRAG",
             "on": "ON",
             "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
-            "loader": {
-                "text1": "Fetching",
-                "text2": "Status"
-            }
+            "collapse": "Sažmi",
+            "expand": "Proširi",
+            "loader": "Preuzimanje <br>statusa",
+            "loading": "Učitavam..."
         }
     },
     "privacy": {
@@ -344,7 +458,7 @@
         "personal": "PERSONAL",
         "custom": "CUSTOM",
         "skip": "SKIP",
-        "next": "NEXT",
+        "next": "DALJE",
         "interests": "What are your interests?",
         "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
         "games": "GAMES",
@@ -358,166 +472,179 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Danas smo puni energije "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Internetska veza nije otkrivena",
+            "subtitle": "Doznajte više o rješavanju poteškoća s vezom u našem",
+            "buttonText": "Ostvarite podršku"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Pošaljite povratne informacije",
+            "subtitle": "Recite nam što mislite o Vantage.",
+            "button": "Pošaljite povratne informacije",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Komentari...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
-                }
+                    "feedbackSuccess": "Hvala vam na povratnim informacijama!"
+                },
+                "question1": "Sviđa li vam se novi stil aplikacije Vantage?",
+                "question2": "Mislite li da su performanse prihvatljive?",
+                "question3": "Biste li češće koristili aplikaciju u budućnosti?",
+                "yes": "Da",
+                "no": "Ne",
+                "tips1": "Ostavite dodatne komentare",
+                "sendFeedback": "Pošalji povratne informacije",
+                "submitScreenShot": "Pošalji snimku zaslona"
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera Privacy",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Vaše Brze postavke",
+            "microphone": "Mikrofon",
+            "cameraPrivacy": "Kamera",
+            "eyeCareMode": "Način rada ugodan za oči"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Status sustava",
+            "subtitle": "BRZE NOVOSTI O STATUSU UREĐAJA.",
             "memory": {
-                "title": "Memory",
+                "title": "Memorija",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Nije pronađena memorija",
+                    "of": "od"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Diskovni prostor",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Nije pronađen disk",
+                    "of": "od"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Jamstvo",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Jamstvo nije pronađeno",
+                    "until": "Do",
+                    "expiredOn": "Jamstvo je isteklo",
+                    "notAvailable": "Nije dostupno jamstvo"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Ažuriraj"
                 }
             }
         }
     },
     "device": {
         "myDevice": {
-            "title": "My Device",
-            "subtitle": "My device status",
-            "serial": "Serial",
-            "productNumber": "Product number",
-            "biosVersion": "Bios version",
-            "learnMore": "Learn more",
-            "freeMemory": "Free memory",
+            "title": "Moj uređaj",
+            "subtitle": "Status mojeg uređaja",
+            "serial": "Serijski",
+            "productNumber": "Broj proizvoda",
+            "biosVersion": "Verzija Bios-a",
+            "learnMore": "Saznajte više",
+            "freeMemory": "Slobodna memorija",
             "systemUpdate": {
-                "title": "System update",
-                "notFound": "System update not found",
+                "title": "Ažuriranje sustava",
+                "notFound": "Nije pronađeno ažuriranje sustava",
                 "detail": {
-                    "uptoDate": "Software up to date ",
-                    "updatedOn": "updated on ",
-                    "outdated": "Software outdated ",
-                    "neverRanUpdate": "never ran update"
+                    "uptoDate": "Softver je ažuriran",
+                    "updatedOn": "ažurirano",
+                    "outdated": "Softver je zastario",
+                    "neverRanUpdate": "nikada nije pokrenuto ažuriranje"
                 }
             },
-            "extendedWarranty": "Extend warranty",
+            "extendedWarranty": "Produlji jamstvo",
             "processor": {
-                "title": "Processor",
-                "notFound": "Processor not found"
+                "title": "Procesor",
+                "notFound": "Nije pronađen procesor"
             },
             "memory": {
-                "title": "Memory",
-                "notFound": "Memory not found",
+                "title": "Memorija",
+                "notFound": "Nije pronađena memorija",
                 "ram": "RAM"
             },
             "diskspace": {
-                "title": "Disk Space",
-                "notFound": "Disk not found"
+                "title": "Diskovni prostor",
+                "notFound": "Nije pronađen disk"
             },
-            "software": "Software up to date",
-            "updated": "Updated",
-            "outOfWarranty": "Out of warranty",
-            "expired": "Expired on",
-            "of": "of",
+            "software": "Softver je ažuriran",
+            "updated": "Ažurirano",
+            "outOfWarranty": "Isteklo jamstvo",
+            "expired": "Isteklo",
+            "of": "od",
             "warranty": {
-                "notFound": "Warranty not found",
+                "notFound": "Jamstvo nije pronađeno",
                 "detail": {
-                    "title": "Extend warranty",
-                    "inWarranty": "In warranty ",
-                    "daysRemaining": "days remaining",
-                    "outOfWarranty": "Out of warranty ",
-                    "expiredOn": "Expired on",
-                    "notAvailable": "Warranty not available",
-                    "support": "Support"
+                    "title": "Produlji jamstvo",
+                    "inWarranty": "Pod jamstvom",
+                    "daysRemaining": "preostalih dana",
+                    "outOfWarranty": "Isteklo jamstvo",
+                    "expiredOn": "Isteklo",
+                    "notAvailable": "Nije dostupno jamstvo",
+                    "support": "Podrška"
                 }
             },
-            "helpful": "Helpful Content"
+            "helpful": "Korisni sadržaj"
         },
         "deviceSettings": {
-            "helpful": "Helpful Content",
+            "helpful": "Korisni sadržaj",
             "batteryGauge": {
-                "title": "BATTERY GAUGE",
-                "subtitle": "Battery",
-                "hours": "hours",
-                "hour": "hour",
-                "minutes": "minutes",
-                "minute": "minute",
-                "charge": "TIME TO FULLY CHARGE",
-                "button": "SEE BATTERY DETAILS",
+                "title": "PRIKAZ NAPUNJENOSTI BATERIJE",
+                "subtitle": "Stanje baterije",
+                "hours": "h",
+                "hour": "h",
+                "minutes": "min",
+                "minute": "min",
+                "charge": "VRIJEME POTREBNO DO POTPUNOG PUNJENJA",
+                "button": "POGLEDAJTE DETALJE O BATERIJI",
                 "details": {
-                    "title": "Battery Details",
-                    "primary": "Primary Battery",
-                    "secondary": "Secondary Battery",
-                    "tertiary": "Tertiary Battery",
-                    "status": "Status",
-                    "wattage": "Wattage",
-                    "barcode": "Bar-Code",
-                    "remainingPercent": "Remaining percentage",
-                    "temp": "Temperature",
-                    "frupn": "FRU part number",
-                    "remainingTime": "Remaining time",
-                    "chargeCompletionTime": "Charge completion time",
-                    "cycleCount": "Cycle count",
-                    "chemistry": "Device chemistry",
-                    "remainingCap": "Remaining capacity",
-                    "designCap": "Design capacity",
-                    "fullChargeCap": "Full charge capacity",
-                    "manufDt": "Manufacture date",
-                    "designVolt": "Design voltage",
-                    "volts": "Voltage",
-                    "firstUseDt": "First use date",
-                    "firmwareVer": "Firmware version",
+                    "title": "Detalji o bateriji",
+                    "primary": "Primarna baterija",
+                    "secondary": "Sekundarna baterija",
+                    "tertiary": "Tercijarna baterija",
+                    "status": "Stanje",
+                    "wattage": "Snaga",
+                    "barcode": "Crtični kod",
+                    "remainingPercent": "Preostali postotak",
+                    "temp": "Temperatura",
+                    "frupn": "FRU kataloški broj",
+                    "remainingTime": "Preostalo vrijeme",
+                    "chargeCompletionTime": "Vrijeme dovršetka punjenja",
+                    "cycleCount": "Brojač ciklusa",
+                    "chemistry": "Kemijski sastav uređaja",
+                    "remainingCap": "Preostali kapacitet",
+                    "designCap": "Deklarirani kapacitet",
+                    "fullChargeCap": "Kapacitet potpuno napunjene baterije",
+                    "manufDt": "Datum proizvodnje",
+                    "designVolt": "Deklarirani napon",
+                    "volts": "Napon",
+                    "firstUseDt": "Datum prve upotrebe",
+                    "firmwareVer": "Verzija firmvera",
                     "chargeStatusString": {
-                        "error": "ERROR",
-                        "notinstalled": "Not installed",
-                        "noactivity": "No activity",
-                        "charging": "Charging",
-                        "discharging": "Discharging",
-                        "acdischarging": "Discharging (with ac)"
+                        "error": "POGREŠKA",
+                        "notinstalled": "Nije instalirana",
+                        "noactivity": "Nema aktivnosti",
+                        "charging": "Punjenje",
+                        "discharging": "Pražnjenje",
+                        "acdischarging": "Pražnjenje (uz izmjenični napon)"
                     },
                     "deviceChemistry": {
                         "li-polymer": "Li-Polymer",
                         "li-ion": "Li-Ion",
                         "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion"
+                        "li_ion": "Li-Ion",
+                        "silver-zinc": "Silver-Zinc",
+                        "silver_zinc": "Silver-Zinc",
+                        "nicd": "NiCd",
+                        "nimh": "NiMH",
+                        "unknown": "Unknown"
                     },
                     "manufacturer": {
                         "title": "Manufacturer",
@@ -527,17 +654,17 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "This system may not support battery that",
-                        "description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
-                        "description1": "Attention:",
-                        "description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
+                        "description": "you cannot use the attached battery with this computer.",
+                        "description1": "Replace",
+                        "description2": "it with a battery of correct model."
                     },
                     "Good": {
-                        "title": "The battery is in good Condition"
+                        "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -551,536 +678,804 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter"
-                    },
-                    "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter"
-                    },
-                    "ACAdapterNotSupported": {
-                        "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
                         "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
+                    "NotSupportACAdapter": {
+                        "title": "AC adapter not supported.",
+                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
+                    },
                     "MissingDriver": {
-                        "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
+                        "title": "The Lenovo Power Manager driver",
                         "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
                     },
                     "StoreLimitation": {
                         "title": "The battery can only store",
                         "description1": "of",
                         "description2": "it's original full charge capacity"
+                    },
+                    "HighTemperature": {
+                        "title": "Discharging",
+                        "description": "has been stopped because the",
+                        "description1": "battery temperature is too high"
+                    },
+                    "TrickleCharge": {
+                        "description": "The battery was",
+                        "description1": "completely discharged",
+                        "description2": "and needs to be recharged. This might take ten hours or more."
+                    },
+                    "OverheatedBattery": {
+                        "description": "The battery is",
+                        "description1": "too hot.",
+                        "description2": "Remove it from the computer and cool it to room temperature."
+                    },
+                    "PermanentError": {
+                        "description": "The battery has",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
+                    },
+                    "HardwareAuthenticationError": {
+                        "description": "The battery installed is",
+                        "description1": "is not supported",
+                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
                     }
-                }
+                },
+                "updating": "Updating",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
+                "voltageError": "Battery voltage incorrect",
+                "batteryNotDetected": "No Battery Detected"
             },
             "power": {
-                "title": "Power",
-                "subtitle": "Power Settings",
-                "description": "This section enables you to dynamically adjust thermal performance and maximize the battery life. It also has other popular power-related features. You can check the default settings in this section and customize your system according to your needs.",
+                "title": "Napajanje",
+                "subtitle": "Postavke napajanja",
+                "description": "Ovaj odjeljak omogućava vam da dinamički podesite termičku učinkovitost i povećate trajanje baterije.Također ima druge popularne značajke povezane s napajanjem. U ovom odjeljku možete provjeriti zadane postavke i prilagoditi sustav svojim potrebama.",
                 "jumpto": {
-                    "title": "JUMP TO SETTINGS",
-                    "battery": "Battery",
-                    "power": "Power",
-                    "cooling": "Intelligent Cooling",
-                    "other": "Other"
+                    "title": "SKOČI NA POSTAVKE",
+                    "battery": "Baterija",
+                    "power": "Napajanje",
+                    "cooling": "Pametno hlađenje",
+                    "other": "Ostalo"
                 },
                 "powerSmartSettings": {
-                    "title": "Power Smart Settings",
-                    "subtitle": "INTELLIGENT COOLING",
-                    "subtitle1": "Battery & Quiet",
-                    "description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
-                    "description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
-                    "readMore": "Read more.",
+                    "title": "Pametne postavke napajanja",
+                    "subtitle": "PAMETNO HLAĐENJE",
+                    "subtitle1": "Baterija i tišina",
+                    "description1": "Ta značajka automatski prilagođava termičke postavke prema vašim potrebama.Kada je uključena, podešava postavke kako bi uređaj bio hladniji ili tiši dok ga držite ili dok je u stanju mirovanja. U protivnom optimizira performanse dok je uređaj na stabilnoj površini. Kada je isključena, možete ručno postaviti prioritet termičkih performansi.",
+                    "description2": "Pametno hlađenje podešava brzinu ventilatora, maksimalnu temperaturu površine i performanse.Ta značajka ima načine rada navedene u nastavku i sada je dostupna u klizaču za performanse napajanja sustava Windows.",
+                    "description3": "Pametno hlađenje automatski usklađuje toplinske performanse s vašim potrebama.Značajka pametnog hlađenja podešava postavke performansi kako bi vam pružila hladniju površinu radi ugodnijeg korištenja pri držanju prijenosnog računala. Kada se uređaj nalazi na radnoj površini, ova značajka optimizira performanse.",
+                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
+                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "readMore": "Pročitajte više.",
                     "gotoWindows": {
-                        "title": "Go to windows settings",
-                        "modalBodyText1": "Click on Windows battery icon on System tray to access Windows performance power slider"
+                        "title": "Idite na postavke sustava Windows",
+                        "modalBodyText1": "Kliknite na ikonu baterije sustava Windows na traci sustava kako biste pristupili klizaču za performanse napajanja sustava Windows"
                     },
                     "intelligentCooling": {
-                        "title": "Intelligent cooling",
+                        "title": "Pametno hlađenje",
                         "description": "",
                         "tooltip": "",
-                        "optimize": "optimize system for",
-                        "apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
+                        "optimize": "optimizirajte sustav za",
+                        "apsHint": "Da biste omogućili pametno hlađenje, morate instalirati i omogućiti Lenovo Active Protection System.",
                         "options": {
-                            "quiteCool3": "Cool Mode",
-                            "performance3": "High Performance",
-                            "quiteCool4": "Quiet & Cool",
-                            "performance4": "Performance",
-                            "quiteCool5": "Quiet & Cool",
-                            "performance5": "Performance"
+                            "quiteCool3": "Način rada s hlađenjem",
+                            "performance3": "Visoke performanse",
+                            "quiteCool4": "Tiho i hladno",
+                            "performance4": "Performanse",
+                            "quiteCool5": "Tiho i hladno",
+                            "performance5": "Performanse",
+                            "batterySaving": "Battery Saving",
+                            "performance13": "Performance",
+                            "quiteCool13": "Quiet & Cool",
+                            "performance14": "Extreme Performance",
+                            "quiteCool14": "Intelligent Cooling"
                         },
                         "readMore": {
-                            "mode1": "Quiet mode",
-                            "mode2": "Balanced mode",
-                            "mode3": "Performance mode",
-                            "line1": "Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "line2": "Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
-                            "line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "mode1": "Tih način rada",
+                            "mode2": "Uravnoteženi način rada",
+                            "mode3": "Način performansi",
+                            "line1": "Klizač je krajnje lijevo.Brzina ventilatora i performanse smanjene su za hladnije, tiše računalo i najbolji vijek trajanja baterije.",
+                            "line2": "Klizač je u sredini.Brzina ventilatora i performanse dinamički su uravnotežene za najbolje iskustvo.",
+                            "line3": "Klizač je krajnje desno. Brzina ventilatora i dopuštena temperatura površine povećani su za najbolje performanse.",
+                            "line4": "More info"
+                        },
+                        "selectedModeText": {
+                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
+                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
+                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                        },
+                        "intelligentCoolingModesModal": {
+                            "title": "Change intelligent cooling modes",
+                            "close": "close",
+                            "coolingModesList": {
+                                "list1": "Click on the windows battery-icon in the toolbar",
+                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                            }
                         }
                     },
                     "nonintelligentCooling": {
                         "options": {
-                            "intelligentCooling": "INTELLIGENT COOLING",
-                            "extremeCooling": "EXTREME PERFORMANCE",
-                            "battery&Quite": "BATTERY & QUIET"
+                            "intelligentCooling": "PAMETNO HLAĐENJE",
+                            "extremeCooling": "IZUZETNE PERFORMANSE",
+                            "battery&Quite": "BATERIJA I TIŠINA"
                         }
-                    }
+                    },
+                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
                 },
                 "powerSettings": {
-                    "title": "Power Settings",
+                    "title": "Postavke napajanja",
                     "alwaysUSB": {
                         "title": "Always on USB",
-                        "description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
-                        "checkbox": "Enable USB charging from laptop battery when computer is off."
+                        "description": "USB uređaje punite putem uvijek uključenog USB priključka na računalu kada je računalo u stanju mirovanja ili hibernacije, odnosno kada je isključeno.Pametni telefon ili tablet mogu se brzo napuniti s pomoću USB priključka koji je označen žutom bojom ili označen tehnikom sitotiska ovim ikonama:",
+                        "checkbox": "Omogući USB punjenje s baterije prijenosnog računala kada je računalo isključeno."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Jednostavni nastavak",
+                        "description": "Omogućite ovu značajku da biste skratiti vrijeme potrebno za nastavak rada ako često otvarate i zatvarate poklopac računala.",
+                        "tooltip": "Ta će značajka skratiti vrijeme potrebno za nastavak rada ako često otvarate i zatvarate poklopac računala. Kad je omogućena, računalo će prilikom zatvaranja poklopca prijeći u način male potrošnje energije, ali će odmah nastaviti s radom ako poklopac otvorite u roku od 15 minuta od zatvaranja. Značajka prijenosnom računalu omogućuje da pokuša dovršiti aktivnosti koje su u tijeku (npr. slanje e-pošte ili preuzimanje datoteke) prije nego što se obustavi rad sustava."
                     }
                 },
                 "otherSettings": {
-                    "title": "Other Settings",
+                    "title": "Ostale postavke",
                     "vantageToolbar": {
-                        "title": "Lenovo Vantage Toolbar",
-                        "description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
+                        "title": "Alatna traka za Lenovo Vantage",
+                        "description": "Pričvrstite alatnu traku Vantage na programsku traku sustava Windows kako biste jednostavnije dobili pojedinosti o bateriji i pristup brzim postavkama."
                     }
                 },
                 "batterySettings": {
-                    "title": "Battery Settings",
+                    "title": "Postavke baterije",
                     "batteryThreshold": {
-                        "title": "Battery Charge Threshold",
-                        "description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
-                        "tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "title": "Prag punjenja baterije",
+                        "description": "Ako se računalom prvenstveno koristite dok je priključeno na prilagodnik izmjeničnog napona te se rijetko koristite napajanjem baterije,možete povećati životni vijek baterije tako da vrijednost maksimalnog punjenja postavite na manje od 100 %. To je korisno zato što će baterije koje se rijetko koriste dulje trajati ako se drže tek djelomično napunjene.",
+                        "tooltip": "Ako je baterija trenutačno napunjena iznad praga za zaustavljanje punjenja, odvojite napajanje dok se baterija ne isprazni na prag za zaustavljanje punjenja ili ispod njega.Ovisno o stanju baterije (stara ili nova), točna točka u kojoj punjenje počinje ili se zaustavlja može se razlikovati za najviše 2 postotna boda. Ako omogućite značajku, preporučeno je da povremeno pokrenete ponovno postavljanje mjerača baterije kako biste osigurali točan izvještaj o stanju baterije.",
+                        "note": "Napomena",
+                        "readMoreText": "Pročitajte više.",
+                        "noteInfo": " Prag punjenja baterije još uvijek nije potpuno aktivan. Odspojite uređaj i pričekajte da se baterija isprazni do praga prestanka punjenja ili ispod njega.",
                         "settings": {
-                            "title1": "Threshold for Built in battery",
-                            "title2": "Threshold for Removable battery"
+                            "title1": "Prag za ugrađenu bateriju",
+                            "title2": "Prag za uklonjivu bateriju"
                         },
                         "popup": {
-                            "title": "Enable Battery Charge Threshold",
-                            "description1": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life.",
-                            "description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
-                            "enable": "ENABLE",
-                            "cancel": "CANCEL"
+                            "title": "Omogući prag punjenja baterije",
+                            "description1": "Omogućivanje prilagođenog punjenja baterije omogućit će dulje sveukupno trajanje baterije dok koristite ovaj uređaj.Međutim, ako baterija nije u potpunosti napunjena, njezino trajanje bit će kraće.",
+                            "description2": "Kako biste u potpunosti omogućili tu značajku, odspojite uređaj ipustite da se baterija isprazni na prag za zaustavljanje punjenja ili ispod njega.",
+                            "enable": "OMOGUĆI",
+                            "cancel": "ODUSTANI"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Pokreni punjenje kada je ispod",
+                            "checkboxText": "Automatski postavlja prag za početak punjenja pet postotaka ispod praga za prekidanje punjenja.",
+                            "stop": "Prekini punjenje na"
                         }
                     },
                     "expressCharging": {
-                        "title": "Express Charging",
-                        "description": "Express Charge allows your battery to a full charge much faster than normal mode.",
-                        "tooltip": "Express Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
+                        "title": "Brzo punjenje",
+                        "description": "Brzo punjenje omogućava bateriji da se u potpunosti napuni brže nego u uobičajenom načinu rada.",
+                        "tooltip": "Brzo punjenje omogućava vam da brže napunite bateriju sustava,ali to može smanjiti vijek trajanja baterije."
                     },
                     "conservationMode": {
-                        "title": "Conservation Mode",
-                        "description": "This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
+                        "title": "Način uštede napajanja",
+                        "description": "Ova je funkcija korisna za produljenje vijeka trajanja baterije kada je priključena. <br>Kada je omogućen ovaj način rada, baterija će se napuniti samo do 55 - 60 % kapaciteta, a vijek trajanja baterije može se maksimalno povećati. Međutim, to će skratiti vrijeme upotrebe računala nakon što se isključi iz izvora napajanja izmjeničnom strujom.",
                         "tooltip": {
-                            "line1": "This function is useful to extend the lifespan of your battery when plugged.",
-                            "line2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
-                            "line3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
+                            "line1": "Ova je funkcija korisna za produljenje vijeka trajanja baterije kada je priključena.",
+                            "line2": "Kada je omogućen ovaj način rada, baterija će se napuniti samo do 55 - 60 % kapaciteta, a vijek trajanja baterije može se maksimalno povećati. Međutim, to će skratiti vrijeme upotrebe računala nakon što se isključi iz izvora napajanja izmjeničnom strujom.",
+                            "line3": "Napomena: način brzog punjenja i način uštede energije ne mogu istodobno raditi.AKO je jedan od načina uključen, drugi će se automatski isključiti."
                         }
                     },
                     "airPlanePower": {
-                        "title": "Airplane Power Mode",
-                        "description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
+                        "title": "Način napajanja u zrakoplovu",
+                        "description": "Kontrolom utroška energije sustava štitite naponsku utičnicu u zrakoplovu.Kada je omogućen način napajanja u zrakoplovu, računalo smanjuje potrošnju energije tako da ograničava brzinu punjenja baterije i performanse sustava."
+                    }
+                },
+                "energyStar": {
+                    "title": "Energy Star",
+                    "description": "PROIZVOD S CERTIFIKATOM ENERGY STAR"
+                },
+                "smartStandby": {
+                    "title": "Pametno stanje mirovanja",
+                    "description": "Ova značajka zakazuje optimizaciju baterije računala radi uštede njezina napajanja tijekom neaktivnosti bez žrtvovanja brzog pokretanja tijekom rada s većim opterećenjem.",
+                    "tooltip": "Kada je pametno stanje mirovanja omogućeno, računalo će se prebaciti u moderno stanje mirovanja prije zakazanog vremena početka i pokrenuti hibernaciju nakon određenog vremena neaktivnosti uz napajanje putem baterije. To je vrijeme optimizirano na temelju rasporeda koji ste postavili. Računalo će se prebaciti iz hibernacije u moderno stanje mirovanja samo tijekom zakazanih dana i neće se prebaciti kada nije aktivno tijekom uzastopnih zakazanih dana.",
+                    "timer": {
+                        "heading": "Postavite vrijeme kada obično koristite računalo",
+                        "subHeading1": "početak",
+                        "subHeading2": "završetak",
+                        "subHeading3": "koristi ovaj raspored za",
+                        "endTimeNote": "Vrijeme završetka mora biti unutar 20 sati od vremena početka",
+                        "timeUnits": {
+                            "unit1": "Sati",
+                            "unit2": "Minuta",
+                            "unit3": "PRIJEPODNE / POSLIJEPODNE"
+                        }
                     }
                 }
             },
             "audio": {
-                "title": "Audio",
-                "subtitle": "Audio Settings",
-                "description": "This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.",
+                "title": "Zvuk",
+                "subtitle": "Postavke zvuka",
+                "description": "U ovom odjeljku možete automatski optimizirati ili u potpunostiručno podesiti postavke zvuka, kao što su postavke Dolby zvuka, mikrofon itd.",
                 "audioSmartsettings": {
-                    "title": "Audio Smart settings",
-                    "subtitle": "APPLICATION-BASED SETTINGS",
-                    "description": "Automatically adjust audio settings according to different apps you are using.",
+                    "title": "Pametne postavke zvuka",
+                    "subtitle": "POSTAVKE UTEMELJENE NA APLIKACIJI",
+                    "description": "Automatski podesite postavke zvuka na temelju različitih aplikacija kojim se koristite.",
                     "dolby": {
-                        "title": "Automatic Dolby Audio settings",
-                        "tooltip": "Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
+                        "title": "Automatske postavke Dolby zvuka",
+                        "tooltip": "Automatske postavke Dolby Audio zvuka podešavaju postavke zvuka Dolby naodgovarajući način rada za različite aplikacije kojim se koristite kako bi poboljšale doživljaj zvuka.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "DINAMIČNI",
+                            "movie": "FILM",
+                            "music": "GLAZBA",
+                            "games": "IGRA",
+                            "voip": "GLAS"
                         }
                     },
                     "voip": {
-                        "title": "Automatic Audio Optimization for VoIP",
-                        "tooltip": "Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality."
+                        "title": "Automatska optimizacija zvuka za VoIP",
+                        "tooltip": "Automatski se prebacite na način rada Dolby Voice tijekom VoIP poziva kako bi se dobila jasna, dosljedna kvaliteta glasa."
                     }
                 },
                 "microphone": {
-                    "title": "Microphone",
+                    "title": "Mikrofon",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permission to access your microphone. Please turn on access to your microphone for the Lenovo Vantage app."
+                        "title": "napomena",
+                        "description": "Lenovo Vantage nema dozvolu za pristup mikrofonu.Omogućite aplikaciji Lenovo Vantage pristup mikrofonu."
                     },
                     "microphone": {
-                        "title": "Microphone",
-                        "tooltip": "You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode."
+                        "title": "Mikrofon",
+                        "tooltip": "Možete prilagoditi MIC efekt podešavanjem glasnoće mikrofonai naznačiti odgovarajući način rada."
                     },
                     "volume": {
-                        "title": "Microphone Volume",
-                        "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
+                        "title": "Glasnoća mikrofona",
+                        "description": "Dolby Audio pruža bogat, jasan, snažan zvuk za sve sadržaje koje volite, odaberite odgovarajući način rada za vaš sadržaj i opremu.",
                         "options": {
-                            "silent": "Silent",
-                            "loud": "Loud"
+                            "silent": "Tiho",
+                            "loud": "Glasno"
                         }
                     },
                     "suppress": {
-                        "title": "Suppress keyboard noise",
-                        "tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+                        "title": "Priguši zvuk tipkovnice",
+                        "tooltip": "Uključite ovu opciju da biste optimizirali MIC audio suzbijanjem buke tipkovnice."
                     },
                     "acoustic": {
-                        "title": "Acoustic Echo Cancellation",
-                        "tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+                        "title": "Poništavanje akustične jeke",
+                        "tooltip": "Uključite ovu značajku kako biste optimizirali svoj MIC audio reduciranjem akustičnog odjeka."
                     },
                     "optimize": {
-                        "title": "Optimize my microphone for:",
-                        "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+                        "title": "Optimiziraj mikrofon za:",
+                        "tooltip": "Konfigurirajte efekt mikrofona kako biste poboljšali svoje audio iskustvo u skladu s različitim scenarijima i okruženjima.",
                         "options": {
-                            "VoiceRecognition": "VOICE RECOGNITION",
-                            "OnlyMyVoice": "ONLY MY VOICE",
-                            "Normal": "NORMAL",
-                            "MultipleVoices": "MULTIPLE VOICES"
+                            "VoiceRecognition": "PREPOZNAVANJE GLASA",
+                            "OnlyMyVoice": "SAMO MOJ GLAS",
+                            "Normal": "NORMALNO",
+                            "MultipleVoices": "VIŠE GLASOVA"
                         }
                     }
                 }
             },
             "displayCamera": {
-                "title": "Display & Camera",
-                "subtitle": "Display & Camera Settings",
-                "description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
+                "title": "Prikaz i kamera",
+                "subtitle": "Postavke prikaza i kamere",
+                "description": "Ovaj odjeljak omogućava vam da poboljšate vizualni doživljaj i prilagodite svojstva kamere. Istražite više značajki i prilagodite doživljaj prikaza ovdje.",
                 "jumpTo": {
-                    "title": "JUMP TO SETTINGS",
+                    "title": "SKOČI NA POSTAVKE",
                     "shortcuts": {
                         "display": {
-                            "title": "Display"
+                            "title": "Prikaz"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Kamera"
                         }
                     }
                 },
                 "display": {
-                    "title": "Display",
+                    "title": "Prikaz",
                     "eyeCareMode": {
-                        "title": "Eye Care Mode",
-                        "checkbox": "Schedule eye care mode from sunset to sunrise",
+                        "title": "Način rada ugodan za oči",
+                        "checkbox": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Toplo (bolje za oči)",
+                            "cold": "Hladno"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Ponovno postavite temperaturu",
+                        "tooltip": "Način rada ugodan za oči prilagođava temperaturu boje prikaza kako bi filtrirao plavu svjetlost i smanjio naprezanje očiju.",
+                        "onSunsetToSunriseScheduleDescription": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "Napomena",
+                            "description": "Lenovo Vantage mora pristupiti informacijama o lokaciji kako bi izračunao vrijeme zalaska i izlaska sunca u vašoj regiji."
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Display color temperature",
+                        "title": "Temperatura boje prikaza",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Toplo (bolje za oči)",
+                            "cold": "Hladno"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Ponovno postavite temperaturu",
+                        "tooltip": "Način rada ugodan za oči prilagođava temperaturu boje prikaza kako bi filtrirao plavu svjetlost i smanjio naprezanje očiju.",
+                        "onSunsetToSunriseScheduleDescription": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "Napomena",
+                            "description": "Lenovo Vantage mora pristupiti informacijama o lokaciji kako bi izračunao vrijeme zalaska i izlaska sunca u vašoj regiji."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Zaštita privatnosti",
+                        "description": "Tom se značajkom drugim korisnicima onemogućuje prikaz vašeg zaslona. Kada je uključena, mijenja se kut gledanja vašeg prikaza i na taj je način zaštićen od pogleda ljudi oko vas. Načine možete mijenjati i pritiskom na tipke \"Fn+D\".",
+                        "note": "Zaštita privatnosti ne radi u okomitom načinu prikaza zaslona. U ovom je načinu rada zaslon i dalje vidljiv sa strane.",
+                        "labelText": "Omogućivanje značajke prilikom unosa lozinke"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Postavke napajanja OLED zaslona",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "OLED zaslon računala može smanjiti potrošnju energije i produljiti trajanje baterije selektivnim zatamnjivanjem dijelova zaslona.",
+                            "Da bi se produljio vijek trajanja zaslona, preporučuje se i zatamnjenje programske trake i drugih područja na zaslonu koja se ne mijenjaju često."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Ponovno postavite temperaturu",
+                        "tooltip": "Ova značajka može smanjiti potrošnju energije i produljiti trajanje baterije selektivnim zatamnjivanjem dijelova zaslona.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
-                    "title": "Camera",
+                    "title": "Kamera",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permissions to access your camera. Please turn on access to your camera for the Lenovo Vantage app."
+                        "title": "Napomena",
+                        "description": "Lenovo Vantage nema dozvole za pristup kameri. Omogućite aplikaciji Lenovo Vantage pristup kameri."
                     },
-                    "url": "Go to windows privacy settings",
+                    "url": "Idite na postavke privatnosti sustava Windows",
                     "cameraPrivacy": {
-                        "title": "Camera privacy mode",
-                        "tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling."
+                        "title": "Način privatnosti kamere",
+                        "tooltip": "Kad je omogućena postavka za zaštitu privatnosti, kamera prestaje slati slike uživo. Tu postavku uključite samo kad ne želite svoju sliku slati drugima tijekom videopoziva."
                     },
                     "camera": {
-                        "title": "Camera",
-                        "tooltip": "Click here to reset Camera properties to default settings.",
-                        "reset": "Reset factory settings"
+                        "title": "Kamera",
+                        "tooltip": "Kliknite ovdje kako biste vratili svojstva Kamere na zadane postavke.",
+                        "reset": "Vrati na tvorničke postavke"
                     },
-                    "brightness": "Brightness",
-                    "contrast": "Contrast",
-                    "autoExposure": "Auto Exposure",
-                    "autoFocus": "Auto focus",
-                    "notAvailable": "Camera Not Available",
+                    "brightness": "Svjetlina",
+                    "contrast": "Kontrast",
+                    "autoExposure": "Automatska ekspozicija",
+                    "autoFocus": "Automatski fokus",
+                    "notAvailable": "Nije dostupna kamera",
                     "camerablur": {
-                        "title": "Camera Background Blur",
-                        "caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "title": "Zamagljenje pozadine kamere",
+                        "caption": "Ova značajka zamagljuje pozadinu kada se koristite kamerom za videopoziv ili fotografiranje. Možete odabrati različite efekte iz odabira u nastavku.",
+                        "blurMode": "Način zamagljenja",
+                        "comicMode": "Način stripa",
+                        "sketchMode": "Način skice"
+                    },
+                    "cameraLoadingFailed": {
+                        "inUseTitle": "CAMERA IS IN USE",
+                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
+                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
+                        "loadingFailedDescription": "Close the app and try again."
+                    }
+                }
+            },
+            "inputAccessories": {
+                "title": "Unos i pomagala",
+                "subtitle": "Postavke unosa i pomagala",
+                "description": "Pametni senzori tvrtke Lenovo kombinacija su raznih senzora na računalu koji prate vašu aktivnost i prilagođavaju postavke radi optimalnog upravljanja potrošnjom energije",
+                "inputAccessory": {
+                    "title": "Inteligentna tipkovnica",
+                    "hiddenKeyboardFunctions": {
+                        "title": "Skrivene funkcije tipkovnice",
+                        "description": "Možete pritisnuti tipku Fn, u lijevom kutu tipkovnice, istodobno s drugim tipkama da biste pokrenuli naredbe prikazane u donjoj mapi tipkovnice."
+                    },
+                    "firstKeyObj": {
+                        "tittle": "Fn + Tab",
+                        "description": "omogući značajku zumiranja na zaslonima velike razlučivosti",
+                        "image": ""
+                    },
+                    "secondKeyObj": {
+                        "tittle": "Fn + 4",
+                        "description": "prebaci u stanje mirovanja",
+                        "image": ""
+                    },
+                    "thirdKeyObj": {
+                        "tittle": "Fn + D",
+                        "description": "uključi ili isključi značajku zaštite privatnosti",
+                        "image": ""
+                    },
+                    "fourthKeyObj": {
+                        "tittle": "Fn + Q",
+                        "description": "prebaci između načina rada s većim performansama i tihog načina rada",
+                        "image": ""
+                    },
+                    "fifthKeyObj": {
+                        "tittle": "Fn + razmaknica",
+                        "description": "promijeni stanje pozadinskog osvjetljenja tipkovnice",
+                        "image": ""
+                    }
+                },
+                "userDefinedKey": {
+                    "title": "Korisnički definirana tipka",
+                    "caption": "Tipka označena ikonom zvijezde omogućuje vam postavljanje korisnički definirane funkcije",
+                    "dropDown": {
+                        "title": "Radnja korisnički definirane tipke",
+                        "note": "Napomena: Ovo je moguće koristiti za često korišteni niz, primjerice e-poštu ili poštansku adresu. Lenovo preporučuje da ovu značajku nikad ne koristite za pohranu i unos lozinki ili drugih osobnih podataka.",
+                        "options": {
+                            "option1": "Odaberite",
+                            "option2": "Otvori web-lokaciju",
+                            "option3": "Unesite tekst"
+                        }
+                    },
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
                     }
                 }
             }
         },
         "smartAssist": {
-            "title": "Smart Assist",
-            "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+            "title": "Pametna pomoć",
+            "description": "Pametni senzori tvrtke Lenovo kombiniraju senzore na računalu kako bi otkrili vaše aktivnosti, prilagodili postavke za optimalno upravljanje potrošnjom energije i zaštitili vašu privatnost.",
             "jumpTo": {
-                "title": "JUMP TO SETTINGS",
-                "security": "Security",
-                "screen": "Screen",
-                "media": "Media",
-                "voice": "Voice"
+                "title": "SKOČI NA POSTAVKE",
+                "security": "Sigurnost",
+                "screen": "Zaslon",
+                "media": "Mediji",
+                "voice": "Glas",
+                "APS": "APS"
             },
             "intelligentSecurity": {
-                "title": "Intelligent Security",
-                "readMore": "Read more",
+                "title": "Pametna sigurnost",
+                "readMore": "Pročitajte više",
                 "HumanPresenceDetection": {
-                    "title": "Human presence detection",
-                    "tooltip": "Click here to reset the human presence detection settings."
+                    "title": "Otkrivanje ljudske prisutnosti",
+                    "tooltip": "Kliknite ovdje kako biste ponovno postavili postavke otkrivanja ljudske prisutnosti."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Prepoznavanje prisutnosti korisnika",
+                    "tooltip": "Kliknite ovdje kako biste ponovno postavili postavke otkrivanja ljudske prisutnosti."
                 },
                 "zeroTouchLogin": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
+                    "title": "Prijava Zero Touch",
+                    "caption": "Ta značajka automatski otključava računalo ili ga vraća iz stanja mirovanja kada dođete ispred njega ili mu se približite."
                 },
                 "zeroTouchLock": {
-                    "title": "Zero Touch Lock",
-                    "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+                    "title": "Zaključavanje Zero Touch",
+                    "caption": "Ta značajka zatamnjuje zaslon i zaključava računalo kada se ne otkrije prisutnost korisnika. Smanjuje vjerojatnost neovlaštenog pristupa računalu kada ga ostavite bez nadzora i otključano. Smanjuje i potrošnju energije tako što sustav prebacuje u moderno stanje mirovanja kada se ne otkrije vaša prisutnost.",
                     "autoScreenLockTimer": {
-                        "title": "AUTO SCREEN LOCK TIMER",
+                        "title": "AUTOMATSKI MJERAČ ZA ZAKLJUČAVANJE ZASLONA",
                         "radioButton": {
-                            "fast": "Fast",
-                            "medium": "Medium",
-                            "slow": "Slow"
+                            "fast": "Brzo",
+                            "medium": "Srednje",
+                            "slow": "Sporo"
                         },
-                        "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+                        "toolTipContent": "Odaberite željenu opciju za zaključavanje zaslona na brzini Brzo/Srednje/Sporo kada nije otkrivena vaša prisutnost. Međutim, na vrijeme kada će zaslon biti zaključan utječe i stvarni korisnički scenarij, mogućnost senzora i postavke isteka vremena za zaslon sustava Windows. Stoga vam preporučujemo da sustav odmah zaključate prije odlaska."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+                    "title": "PODEŠAVANJE OSJETLJIVOSTI NA UDALJENOST",
+                    "caption": "Automatska prilagodba udaljenosti automatski će ažurirati udaljenost otkrivanja putem modula za umjetnu inteligenciju.",
                     "options": {
-                        "near": "Near",
-                        "far": "Far"
+                        "near": "Blizu",
+                        "far": "Daleko"
                     }
                 },
                 "note": {
-                    "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-                    "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
-                    "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-                    "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
-                    "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+                    "description1": "Ta značajka oslanja se na Windows Hello. Pobrinite se da je prepoznavanje lica uključeno u postavkama sustava Windows.",
+                    "description2": "Ta značajka koristi se senzorima i kamerom kako bi otkrila vašu prisutnost. Međutim, značajka NE prikuplja nikakve osobne podatke.",
+                    "description3": "1. Ako je računalo u načinu rada šatora, tableta ili stalka, te značajke možda neće pravilno funkcionirati.",
+                    "description4": "2. Ako je računalo u stanju hibernacije ili je isključeno. Automatska prijava IC kamere neće funkcionirati.",
+                    "description5": "3. Podesite zaslon računala tako da bude pod odgovarajućim kutom kako bi IC kamera mogla prepoznati vaše lice radi automatske prijave."
                 },
                 "WindowsLink": {
-                    "goToWindowsHello": "Go to Windows Hello Settings",
-                    "screenTimeoutSettings": "Go to Screen timeout settings"
+                    "goToWindowsHello": "Idite na postavke sustava Windows Hello",
+                    "screenTimeoutSettings": "Idi na postavke isteka vremena za zaslon"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "VRAĆANJE NA ZADANE POSTAVKE"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Inteligentni zaslon",
+                "description": "Pametni senzori tvrtke Lenovo kombinacija su raznovrsnih senzora na računalu koji prate vaše aktivnosti i prilagođavaju postavke radi upravljanja potrošnjom energije. Zatamnit će zaslon, primjerice, ako otkriju da hodate, ali ga neće zatamniti ako otkriju da čitate.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Automatsko isključivanje zaslona",
+                    "caption": "Automatski isključi zaslon kad je okrenut prema dolje ili tijekom hodanja.",
+                    "note": "Ova značajka nije dostupna ako su vaše postavke plana uštede energije postavljene na \"nikad ne isključuj zaslon računala na baterijskom napajanju\" u Postavkama sustava Windows u \"Odjeljku sustava\". Odaberite vrijednost koja nije \"Nikad\" da biste omogućili ovu značajku.",
+                    "windowsLink": "Idite na postavke Uključi/isključi i stanja mirovanja u postavkama sustava Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Zadrži moj zaslon",
+                    "caption": "Zadrži moj zaslon dok čitam ili pregledavam internet.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Minute do zatamnjenja zaslona prilikom pregledavanja interneta",
+                        "startTime": "0 minute",
+                        "endTime": "60 minute"
+                    }
+                }
+            },
+            "activeProtectionSystem": {
+                "title": "Active Protection System",
+                "description": "Lenovo Active Protection System automatska je značajka koja pomaže u zaštiti tvrdog diska od oštećenja nastalih snažnim fizičkih udarcem i vibracijama. Neprekidno nadzire pomicanje računala i privremeno zaustavlja tvrdi disk ako pretpostavi udarac ili sličnu radnju koja bi ga mogla oštetiti.",
+                "activeProtection": {
+                    "title": "Active Protection",
+                    "caption": "Promjena osjetljivosti: u načinu rada niske osjetljivosti samo će jači udarci aktivirati zaštitu",
+                    "checkbox": "Zanemarivanje ponavljajućih udaraca, primjerice pri vožnji vlakom ili automobilom"
+                },
+                "manualActiveProtectionSuspension": {
+                    "title": "Ručno obustavljanje značajke Active Protection",
+                    "caption": "Dopusti mi ručno obustavljanje značajke Active Protection System",
+                    "dropdown-title": "Obustavi na",
+                    "button": "Obustavi odmah"
+                },
+                "advanced": {
+                    "description": "Da biste poboljšali pristup pogonu tvrdog diska tijekom korištenja tableta, obustavite značajku Active Protection System za sljedeće radnje",
+                    "pen": {
+                        "title": "Unos olovkom",
+                        "description": "Kada koristite unos olovkom, omogućite APS ako se ulazni podaci olovke nalaze izvan raspona"
+                    },
+                    "touch": {
+                        "title": "Unos dodirom",
+                        "description": "Kada koristite unos dodirom, omogućite APS ako nije otkriven dodir"
+                    },
+                    "hand": {
+                        "title": "Razina osjetljivosti otkrivanja blizine ruke pri rubovima računala",
+                        "description": "Kada je omogućen način rada tableta, omogućite APS ako nije otkrivena ruka"
                     }
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Inteligentni mediji",
+                "title": "Zero Touch reprodukcija videozapisa",
+                "desc": "Ta će značajka pauzirati reprodukciju videozapisa kada se udaljite od računala i nastaviti je kada se vratite.",
+                "tooltip": "Ta značajka nije primjenjiva na web-reproduktore videosadržaja. Popularni lokalni reproduktori videosadržaja, kao što su Windows Media Player, 5KPlayer itd., podržavaju tu značajku."
+            },
+            "voice": {
+                "title": "Glas",
+                "description": "Lenovo Voice omogućuje pretvaranje vašeg govora u tekst s pomoću funkcije Govor u tekst i prijevod govora u tekst u stvarnom vremenu s pomoću funkcije Prijevod.",
+                "installBtnText": "Instaliranje",
+                "launchBtnText": "Pokretanje",
+                "voiceToText": {
+                    "title": "Govor u tekst",
+                    "caption": "S pomoću ove značajke možete pretvoriti govor u tekst."
+                },
+                "translation": {
+                    "title": "Prijevod",
+                    "caption": "Ova značajka omogućava prijevod govora u realnom vremenu. Prevedeni se sadržaj prikazuje kao tekst. Možete odabrati izvorne jezike i ciljne jezike prema vlastitim potrebama."
+                },
+                "modalPopUp": {
+                    "heading": "Početak rada:",
+                    "point1": "Provjerite je li ikona Lenovo Voice prikazana u paleti sustava Windows.",
+                    "point2": "Otvorite datoteku u koju želite snimiti pretvoreni tekst.",
+                    "point3": "Kliknite ikonu Lenovo Voice u paleti sustava Windows i odaberite funkciju Voice to text (Govor u tekst).",
+                    "point4": "Za početak rada odaberite željeni jezik i kliknite ikonu mikrofona.",
+                    "point5": "Postavite pokazivač na mjesto koje želite urediti i počnite govoriti.",
+                    "point6": "Kliknite ikonu Lenovo Voice u paleti sustava Windows i odaberite Translate (Prevedi).",
+                    "point7": "Odaberite željeni izvorni i ciljni jezik.",
+                    "point8": "Ovisno o vašim potrebama, postavite glasovni ulaz iz zvučnika ili iz mikrofona.",
+                    "point9": "Da biste počeli govoriti, kliknite ikonu mikrofona",
+                    "closeText": "zatvori"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "Ažuriranja sustava",
+        "back": "NATRAG",
+        "history": "SVA POVIJEST",
+        "notAvailable": "Nije dostupno",
+        "notInstalled": "Nije instalirano",
+        "criticalUpdates": "Ključna ažuriranja",
+        "recommendedUpdates": "Preporučena ažuriranja",
+        "optionalUpdates": "Neobavezna ažuriranja",
+        "ignoredUpdates": "Zanemarena ažuriranja",
+        "successInstall": "Uspješno instalirano: ",
+        "failedInstall": "Instalacija nije uspjela: ",
+        "at": "u",
+        "readMore": "Pročitajte više",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
-            "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "reboot": "Ponovno pokreni",
+            "shutdown": "isključi",
+            "rebootForceMsg": "Ažuriranja koja ste odabrali prouzročit će da se sustav automatski ponovno pokrenenakon instalacije.",
+            "shutdownForceMsg": "Ažuriranja koja ste odabrali prouzročit će da se sustav automatski isključinakon instalacije.",
+            "rebootDelayedMsg": "Ažuriranja koja ste odabrali prouzročit će ponovno pokretanje sustava nakon instalacije,tijekom instalacije ažuriranja nemojte isključiti sustav, ukloniti izvor napajanja ili pomagala. Preporučujemo da prije ponovnog pokretanja sustava spremite sve na čemu radite.",
+            "rebootRequiredMsg": "Kako biste uspješno instalirali ažuriranja, vašem računalu trebaponovno pokretanje kako bi se osiguralo da sve funkcionira sigurno i glatko.",
+            "okayButton": "U redu",
+            "cancelButton": "Odustani",
+            "rebootButton": "PONOVNO POKRENI SADA",
+            "dismissButton": "ODBACI",
+            "rebootPending": "Ponovno pokretanje na čekanju"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Postavke automatskog ažuriranja",
+            "subtitle": "AUTOMATSKI INSTALIRAJ AŽURIRANJA",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Ključna ažuriranja",
+                "tooltip": "Kritična ažuriranja mogu spriječiti značajne probleme, velike neispravnosti, kvar hardvera ili oštećenje podataka."
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "Preporučena ažuriranja",
+                "tooltip": "Preporučena ažuriranja upravljačkih programa omogućuju rad računala na optimalnim performansama."
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Ažuriranja sustava Windows",
+                "url": "Postavke sustava Windows"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Web-mjesto za podršku tvrtke Lenovo"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "Slobodno se koristite System Update-om (Ažuriranje sustava).",
+            "title": "Ažurirani sustav je zdrav sustav.",
+            "last": "Zadnje ažuriranje: ",
+            "next": "Sljedeće zakazano ažuriranje: ",
+            "checkButton": "TRAŽI AŽURIRANJA",
+            "checking": "Traženje ažuriranja",
+            "downloading": "Završeno preuzimanje ažuriranja",
+            "installing": "Instaliranje ažuriranja",
+            "percent": "% dovršeno",
+            "cancelCheck": "Otkaži traženje",
+            "cancelUpdates": "OTKAŽI AŽURIRANJA",
+            "available": "Dostupna ažuriranja",
+            "description": "Ti paketi sadržavaju ažuriranja za upravljačke programe za hardver iostale uslužne programe sustava koji su ključni za ispravan rad računala. Kritička ažuriranja važna su i za zaštitu podataka na računalu i trebala bi se instalirati čim postanu dostupna. Ako se ti paketi ne instaliraju, može doći do gubitka podataka, neispravnog rada sustava ili kvara hardvera.",
+            "installButton": "INSTALIRAJ SVA AŽURIRANJA",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Sva ažuriranja ispravno su instalirana",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Neka ažuriranja nisu ispravno instalirana.",
+                    "description": "Došlo je do problema tijekom preuzimanja ili instalacije tih ažuriranja.Pobrinite se da ste na mreži i ne isključujte računalo tijekom instaliranja ažuriranja."
                 }
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend",
-            "rebootRequiredTag": "Reboot Required",
-            "rebootDelayTag": "Reboot Required, Power Source Required",
-            "shutdownRequiredTag": "Shutdown Required",
-            "dependedPackage": "Depended Package"
+            "rebootRequired": "Potrebno je ponovno pokretanje",
+            "failReason": "Razlog neuspješne instalacije: prilagodnik napajanja nije spojen na računalo. ",
+            "manufacturer": "Proizvođač: ",
+            "version": "Verzija: ",
+            "installVersion": "Instalirana verzija: ",
+            "downloadSize": "Veličina preuzimanja: ",
+            "diskSpaceNeeded": "Potreban slobodan prostor na disku: ",
+            "ignore": "Zanemari",
+            "attend": "Obrati pažnju",
+            "rebootRequiredTag": "Potrebno je ponovno pokretanje",
+            "rebootDelayTag": "Potrebno je ponovno pokretanje, potreban je izvor napajanja",
+            "shutdownRequiredTag": "Obavezno isključivanje",
+            "dependedPackage": "Potrebni programi"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "Dostupna ažuriranja",
+            "description": "Ovi paketi uključuju ažuriranja ključna za ispravan rad vašeg računala. Kritična ažuriranja pomažu da vaše računalo bude sigurnije i pouzdanije te ih je potrebno instalirati čim postanu dostupna. Preporučena ažuriranja i neobavezna ažuriranja pomažu održati softver ažurnim, a vaše računalo radi u najboljem izdanju.",
+            "installAllUpdates": "Instaliraj sva ažuriranja",
+            "installSuccessHeader": "Sva su ažuriranja instalirana ispravno",
+            "installFailHeader": "Neka ažuriranja nisu ispravno instalirana",
+            "installFailDescription": "Došlo je do problema tijekom preuzimanja i instalacije tih ažuriranja. Pobrinite se da ste na mreži i ne gasite računalo tijekom instaliranja ažuriranja.",
+            "optionalUpdates": "Neobavezna ažuriranja",
+            "installSelectedUpdates": "Instaliraj odabrana ažuriranja"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "Naziv",
+            "sortByDate": "Sortiraj po datumu",
+            "packageSize": "Veličina paketa:",
+            "releaseDate": "Datum izdanja:",
+            "showAll": "Pokaži sve",
+            "noInstallationHistory": "Povijest instalacije nije dostupna"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Došlo je do problema s preuzimanjem novih ažuriranja. Pokušajte ponovno kasnije.",
+            "upToDate": "Nema dostupnih ažuriranja. Vaš je sustav ažuriran.",
+            "egatherException": "Došlo je do pogreške prilikom dohvaćanja korisničkih podataka.",
+            "gatheringUserInfoException": "Došlo je do pogreške prilikom dohvaćanja korisničkih podataka.",
+            "certificateValidationException": "Poslužitelj sadržaja ažuriranja nije valjan. Pokušajte ponovno kasnije.",
+            "downloadException": "Došlo je do pogreške prilikom preuzimanja ažuriranja.",
+            "connectException": "Povezivanje s poslužiteljem sadržaja ažuriranja nije moguće.",
+            "notEnoughDiskSpace": "Na disku nema dovoljno prostora da bi se obavio trenutni zadatak.",
+            "proxyAuthenticationException": "Netočno korisničko ime ili lozinka proxy poslužitelja.",
+            "proxyConnectionException": "Povezivanje s proxy poslužiteljem nije moguće.",
+            "autoScriptEvaluationException": "Došlo je do pogreške prilikom procjene skripte za automatsku konfiguraciju.",
+            "localRepositoryConnectionFailureException": "Povezivanje s lokalnim spremištem nije moguće.",
+            "localRepositoryDatabaseException": "Baza podataka lokalnog spremišta nije pronađena ili je oštećena.",
+            "networkInterruptedException": "Poslužitelj za ažuriranje sustava trenutno nije dostupan. Pokušajte ponovno kasnije.",
+            "helpCenterInvalidServerException": "Poslužitelj za ažuriranje sustava nije valjan. Pokušajte ponovno kasnije.",
+            "catalogNotFoundException": "Za sustav nisu pronađena primjenjiva ažuriranja.",
+            "catalogCrcErrorException": "Katalog za vaš sustav trenutno se ažurira. Pokušajte ponovno kasnije.",
+            "catalogErrorException": "Otkrivena je pogreška s katalogom ažuriranja vašeg sustava na poslužitelju za ažuriranje sustava. Pokušajte ponovno kasnije.",
+            "fileNotFoundException": "Datoteka nije pronađena."
         }
     },
     "homeSecurity": {
-        "title": "Connected Home Security",
-        "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Ecosystem Security Overview",
-        "thisDevice": "This device",
-        "allDevices": "All Devices",
-        "protected": "Protected",
-        "notProtected": "Not Protected",
-        "myDevice": "My Device",
-        "allDevice": "All Devices",
-        "secure": "SECURE",
-        "needAttention": "NEEDS ATTENTION",
-        "manageAccount": "Manage Account",
-        "devices": "Devices",
-        "seeProtectedDevices": "See protected devices",
-        "addDevice": "add device",
-        "trailExpired": "Trail expired",
-        "trailExpiredSubtext": "Upgrate to protect all of your devices",
-        "upgrade": "upgrade",
+        "title": "Povezana sigurnost doma",
+        "notification": {
+            "recent": "Nedavne sigurnosne obavijesti",
+            "notifications": "Obavijesti"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Zaštitite ekosustav uređaja",
+            "thisDevice": "Ovaj uređaj",
+            "allDevices": "Svi uređaji",
+            "protected": "Zaštićeno",
+            "notProtected": "Nije zaštićeno",
+            "trialExpired": "Probna je verzija istekla",
+            "upgrade": "nadogradite",
+            "inEcosystem": "U ekosustavu",
+            "ecosystemEnable": "Omogućen ekosustav",
+            "inTrial": "U probnom razdoblju",
+            "addEcosystem": "Dodaj u ekosustav",
+            "enableEcosystem": "Omogući ekosustav",
+            "startTrial": "Započnite probno razdoblje",
+            "fullAccess": "Puni pristup",
+            "renew": "Obnovi"
+        },
+        "overview": {
+            "overviewBlockTitle": "Pregled sigurnosti ekosustava",
+            "allDevices": "Svi uređaji",
+            "myDevice": "Moj uređaj",
+            "thisComputer": "This computer",
+            "secure": "SIGURNO",
+            "needAttention": "ZAHTIJEVA PAŽNJU",
+            "manageAccount": "Upravljanje računom",
+            "devices": "Uređaji",
+            "seeProtectedDevices": "Pogledajte zaštićene uređaje",
+            "addDevice": "dodaj uređaj",
+            "trialExpired": "Probna je verzija istekla - Nadogradite kako biste zaštitili sve svoje uređaje",
+            "upgrade": "nadogradite",
+            "freeTrial": "Zaštitite sve svoje uređaje - Besplatno probno razdoblje od 30 dana",
+            "startTrial": "Započnite probno razdoblje"
+        },
         "tour": {
-            "back": "Back",
-            "skip": "Skip",
-            "start": "START TOUR",
-            "done": "DONE",
-            "welcome1": "Welcome",
-            "welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
-            "welcome2": "Exclusive for Vantage",
-            "welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
-            "create": "Create your account",
-            "lenovoId": "with Lenovo ID",
-            "notifications": "Receive <b>notifications</b> about your home's status",
-            "monitor": "<b>Monitor</b> the safety of your family's devices",
-            "peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
-            "signInLenovoId": "SIGH-UP WITH LENOVO ID",
-            "haveLenovo": "I don't have a <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Create a Lenovo ID",
-            "without": "Proceed <b>without an account</b>",
-            "skipAndTrial": "SKIP AND START TRIAL",
-            "alreadyHave": "I already have a <b>Connected Home Security Account</b>",
-            "loginCHS": "Login to existing CHS account",
-            "locationTitle": "Enable location tracking",
-            "locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+            "back": "Natrag",
+            "skip": "Preskoči",
+            "start": "ZAPOČNI OBILAZAK",
+            "done": "DOVRŠENO",
+            "welcome1": "Dobro došli",
+            "welcomeDesc1": "U samo nekoliko klikova moći ćete zaštititi računala, mobilne uređaje i povezane uređaje za vas i vašu obitelj.",
+            "welcomeDescStart": "Započnite besplatno probno razdoblje od 30 dana.",
+            "welcome2": "Ekskluzivno za Vantage",
+            "welcomeDesc2": "Povezana sigurnost doma izravno je ugrađena u Vantage za brz pristup statusu zaštite vašeg ekosustava i sigurnosnim upozorenjima.",
+            "create": "Stvorite svoj račun",
+            "lenovoId": "s Lenovo ID-om",
+            "notifications": "Primajte <b>obavijesti</b> o statusu vašeg doma",
+            "monitor": "<b>Nadzirite</b> sigurnost uređaja vaše obitelji",
+            "peaceOfMind": "Budite <b>spokojni</b> znajući da ste uvijek zaštićeni!",
+            "signInLenovoId": "PRIJAVITE SE KORISTEĆI LENOVO ID",
+            "haveLenovo": "Nemam <b>Lenovo ID</b>",
+            "createLenovo": "&nbsp;Stvorite Lenovo ID",
+            "without": "Nastavite <b>bez računa</b>",
+            "skipAndTrial": "PRESKOČI I ZAPOČNI PROBNO RAZDOBLJE",
+            "alreadyHave": "Već imam <b>Korisnički račun Povezane sigurnosti doma (CHS)</b>",
+            "loginCHS": "Prijavite se na postojeći CHS račun",
+            "locationTitle": "Omogući praćenje lokacije",
+            "locationPermission": "Da bi ova značajka ispravno funkcionirala, morate omogućiti praćenje lokacije za ovaj uređaj"
+        },
+        "accountStatus": {
+            "title": "Moja Povezana sigurnost doma",
+            "startTrial": "Započnite probno razdoblje",
+            "manageAccount": "Upravljanje računom",
+            "upgradeAccount": "Nadogradi račun",
+            "inTrialDetail1": "{{remainingDays}} dana preostalo do kraja probnog razdoblja.",
+            "inTrialDetail2": "Trenutno ste u probnom razdoblju. Imate neograničen pristup svim značajkama.",
+            "trialExpiredDetail1": "Vaše probno razdoblje je isteklo.",
+            "trialExpiredDetail2": "Vaše probno razdoblje je isteklo i ekosustav uređaja više nije zaštićen.",
+            "upgradedDetail1": "Vaš je račun aktivan do {{expiredDate}},",
+            "upgradedDetail2": "Ekosustav uređaja je trenutno zaštićen.",
+            "localAccountDetail2": "Kliknite na donji gumb za pokretanje besplatnog probnog razdoblja od 30 dana.",
+            "alreadyHaveAccount": "Već imate aktivacijski kôd?"
         }
     },
     "support": {
@@ -1101,7 +1496,9 @@
             "status": "Stanje: ",
             "subDescription1": "Ovaj proizvod ima godinama ograničeno jamstvo i ima pravo na uslugu popravka u skladištu. Korisnici mogu nazvati svoj lokalni servisni centar za više informacija. Trgovci mogu pružati popravak za ovaj proizvod.",
             "subDescription2": "Nismo mogli locirati podatke o jamstvu za vaš uređaj. Za više mogućnosti jamstva posjetite naše web-mjesto za podršku.",
-            "viewWarrantyOptions": "PRIKAŽI MOGUĆNOSTI JAMSTVA"
+            "viewWarrantyOptions": "PRIKAŽI MOGUĆNOSTI JAMSTVA",
+            "offlineTips1": "Za najnovije informacije o jamstvu priključite se na internet.",
+            "offlineTips2": "Za ažuriranje informacija o jamstvu priključite se na internet."
         },
         "documentation": {
             "title": "Dokumentacija",
@@ -1131,9 +1528,9 @@
             "copyright": "© 2002.-2019. Lenovo. Sva prava pridržana."
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "Kategorije",
+            "categoriesDesc": "Pronađite korisne informacije u našim člancima.",
+            "seeArticles": "POGLEDAJ ČLANKE"
         }
     },
     "security": {
@@ -1154,9 +1551,7 @@
             "maliciousNetwork": "Vaše računalo ovaj je mjesec spriječeno pri priključivanju {{maliciousWifi}} zlonamjernim mrežama.",
             "good": "DOBRO",
             "malicious": "ZLONAMJERNO",
-            "suspicious": "SUMNJIVO",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "SUMNJIVO"
         },
         "antivirus": {
             "common": {
@@ -1245,6 +1640,12 @@
                 "describe2": "Da biste upotrijebili značajku povezane sigurnosti doma, morate omogućiti lokacijske usluge za Lenovo Vantage. Želite li sad omogućiti lokacijske usluge?",
                 "agree": "SLAŽEM SE",
                 "cancel": "ODUSTANI"
+            },
+            "errorMessage": {
+                "headerText": "Pogreška",
+                "bodyText": "Utvrdili smo da vam nedostaju važni dijelovi usluge Vantage. Ti će se dijelovi preuzeti u pozadini. Pokušajte ponovno kasnije.",
+                "closeText": "zatvori",
+                "offlineText": "Utvrdili smo da niste povezani s internetom. Neki dijelovi ove stranice neće ispravno funkcionirati. Povežite se iznova"
             }
         },
         "homeprotection": {
@@ -1256,7 +1657,7 @@
                 "homeSecurityAffect3": "povezana sigurnost doma osigurava da su ostali uređaji koji su povezani s vašom kućnom mrežom sigurni.",
                 "describe": "Nesigurni uređaji i mreže mogu uvesti zlonamjerni softver, dovesti do krađe identiteta te curenja privatnih i financijskih informacija. Omogućite tu značajku da biste smanjili rizik od izloženosti svojeg uređaja i kućne mreže napadačima",
                 "subtitle": "Bezbrižan rad",
-                "subtitleDescribe": "Povezana sigurnost doma poslat će vam upozorenje ako otkrije ranjivost na vašem uređaju ili kućnoj mreži ili ako ste povezani s potencijalno zlonamjernom mrežom. Saznajte još više o povezanoj kućnoj sigurnosti u Savjetima i trikovima.",
+                "subtitleDescribe": "Povezana sigurnost doma poslat će vam upozorenje ako otkrije ranjivost na vašem uređaju ili kućnoj mreži ili ako ste povezani s potencijalno zlonamjernom mrežom. Saznajte još više o Povezanoj sigurnosti doma <tag>ovdje</tag>.",
                 "tryNow": "Isprobajte odmah"
             },
             "invitationcode": {
@@ -1332,7 +1733,7 @@
             "whatIsPmNotInstalled": "Najsigurniji, najlakši način za spremanje jakih, složenih lozinki i brzu prijavu na svaku stranicu.",
             "whatIsPmInstalled": "Sigurniji digitalni život čeka: dodajte lozinke, omogućite nadzor tzv. tamnog weba (Dark Web) i automatski ispunite osobne podatke te podatke za plaćanje.",
             "startProtect": "Započnite sa zaštitom svojih mrežnih računa na jednostavan način.",
-            "discount": "Korisnici tvrtke Lenovo ekskluzivno upotrebljavaju vrhunsku aplikaciju Dashlane tijekom 6 besplatnih mjeseci.",
+            "discount": "Korisnici tvrtke Lenovo uživaju u ekskluzivnih 50 % popusta na Dashlane tijekom.",
             "offer": "Ponuda je dostupna samo za nove korisnike aplikacije Dashlane!",
             "getDashLane": "Nabavi Dashlane",
             "learnMoreAbout": "<tag>Saznajte više</tag> o tome kako u potpunosti iskoristiti Dashlane",
@@ -1378,32 +1779,32 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "Prijava",
+        "logout": "Odjava",
+        "unlockExclusives": "Otključaj ekskluzivne stavke",
+        "user": "Korisnik",
+        "welcomeText": "Danas smo puni energije, {{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "Danas smo puni energije!",
+        "helloUser": "Pozdrav, {{firstName}}!",
+        "ssoErrorTitle": "Pogreška",
+        "ssoErrorCommon": "Ups! Naišli smo na pogrešku. Pokušajte ponovno poslije.",
+        "ssoErrorCommonEx": "Neočekivana pogreška. Pokušajte ponovno poslije.",
+        "ssoErrorTimeStampIncorrect": "Uh, čini se da vrijeme vašeg računala nije točno. Ispravite vrijeme računala pa pokušajte ponovno.",
+        "ssoErrorNetworkDisconnected": "Ups! Povezivanje nije uspjelo! Provjerite vezu s internetom i pokušajte ponovno.",
+        "ssoErrorCommunicating": "Pogreška s mrežom. Provjerite vezu s internetom i pokušajte ponovno.",
+        "ssoErrorAccountPluginNotExist": "Nedostaje dodatak. Ako ste povezani s internetom, dodatak ćemo automatski vratiti u pozadini. To bi moglo potrajati neko vrijeme, pokušajte ponovno kasnije."
     },
     "faq": {
         "footer": {
-            "title": "Not finding what you are looking for?",
-            "description": "NEED ADDITIONAL SUPPORT? DON’T HESITATE TO CONTACT US VIA:",
-            "body": "Lenovo Community",
-            "button": "GO TO FORUM"
+            "title": "Niste pronašli ono što tražite?",
+            "description": "POTREBNA DODATNA PODRŠKA? NE ODBIJETI KONTAKTIRAJTE NAS:",
+            "body": "Zajednica tvrtke Lenovo",
+            "button": "Idite na forum"
         },
         "question1": {
-            "title": "Back up and restore your files",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        Back up and restore your files\n    </div>\n    <hr />\n    <div style='margin-bottom:7rem;'>\n        It's always good to have a backup. Keep copies of your files on another drive in case something happens to the\n        originals.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Set up your backup\n    </div>\n    <hr />\n    <div class='mb-5'>\n        Select the <span style='font-weight:bold'>Start</span> button, select\n        <span style='font-weight:bold'>Settings</span> >\n        <span style='font-weight:bold'>Update & security</span> >\n        <span style='font-weight:bold'>Backup</span> > <span style='font-weight:bold'>Add a drive</span> , and then\n        choose an external drive or network location for your backups.\n    </div>\n    <div class='mb-5'>\n        <img src='./../../../../assets/images/qa/1.1.png' />\n    </div>\n    <div class='mb-5'>\n        All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files\n        get backed up or how often backups happen, go to\n        <span style='font-weight:bold;'>More options</span>.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Restore your files\n    </div>\n    <div class='mb-5'>\n        If you're missing an important file or folder, here's how to get it back:\n    </div>\n    <div>\n\n        <div class='mb-3'>1. Type <span style='font-weight:bold;'>Restore files</span>\n            in the search box on the taskbar, and then select\n            <span class='font-weight:bold'> Restore your files with File History</span>.</div>\n        <div class='mb-3'>2. Look for the file you need, then use the arrows to see all its versions</div>\n        <div class='mb-3'>3. When you find the version you want, select\n            <span style='font-weight:bold'>Restore</span>\n            to save it in its original location. To save it in a different place, press and hold (or right-click)\n            <span style='font-weight:bold'>Restore</span>, select <span style='font-weight:bold'>Restore to</span>, and\n            then choose a new location.</div>\n\n    </div>\n</div>",
+            "title": "Sigurnosno kopiranje i vraćanje datoteka",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Sigurnosno kopiranje i vraćanje datoteka    </div>    <hr />    <div style='margin-bottom:7rem;'>        Uvijek je dobro imati podršku. Čuvajte kopije datoteka na drugom pogonu u slučaju da se nešto dogodi s izvornicima.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Postavljanje sigurnosnog kopiranja    </div>    <hr />    <div class='mb-5'>        Odaberite gumb <span style='font-weight:bold'>Start</span> (Početak), odaberite <span style='font-weight:bold'>Settings</span> (Postavke) > <span style='font-weight:bold'>Update & security</span> (Ažuriranje i sigurnost) > <span style='font-weight:bold'>Backup</span> (Sigurnosno kopiranje) > <span style='font-weight:bold'>Add a drive</span> (Dodaj pogon), a zatim odaberite vanjski pogon ili mrežnu lokaciju za sigurnosne kopije.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Sve je spremno. Svakog sata kopirat ćemo sve što je u vašoj korisničkoj mapi (C:\\\\Users\\\\username). Da biste promijenili koje se datoteke sigurnosno kopiraju ili koliko često dolazi do sigurnosnog kopiranja, idite u <span style='font-weight:bold;'>More options</span> (Dodatne mogućnosti).    </div>    <div style='font-size:3rem;font-weight:bold;'>        Vratite svoje datoteke    </div>    <div class='mb-5'>        Ako vam nedostaje važna datoteka ili mapa, evo kako je vratiti:    </div>    <div>        <div class='mb-3'>1. Upišite <span style='font-weight:bold;'>Restore files</span> (Vrati datoteke) u okviru za pretraživanje na programskoj traci, a zatim odaberite <span class='font-weight:bold'> Restore your files with File History</span> (Vrati datoteke s pomoću Prethodne datoteke).</div>        <div class='mb-3'>2. Potražite datoteku koja vam je potrebna, a zatim s pomoću strelica pogledajte sve njezine verzije</div>        <div class='mb-3'>3. Kada pronađete željenu verziju, odaberite <span style='font-weight:bold'>Restore</span> (Vrati) da biste je spremili na njezinu izvornu lokaciju. Da biste je spremili na drugo mjesto, pritisnite i držite (ili desnim klikom miša) <span style='font-weight:bold'>Restore</span> (Vrati), odaberite <span style='font-weight:bold'>Restore to</span> (Vrati u), a zatim odaberite novu lokaciju.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1443,8 +1844,8 @@
             }
         },
         "question2": {
-            "title": "How to refresh your PC",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        How to refresh your PC\n    </div>\n    <hr>\n    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>\n        Symptom\n    </div>\n    <div style='padding:5px 0;'>\n        If your PC isn't performing as well as it once did, and you don't know why,\n        you can refresh your PC without deleting any of your personal files or\n        changing your settings. Windows can “refresh” your PC so it’s more like a\n        fresh install without deleting your personal files.\n    </div>\n    <div style='padding:5px 0;'>\n        Refresh your PC, Here is what will happen: your files and personalized\n        settings won’t change\n    </div>\n    <div style='padding:5px 0;'>\n        <ul>\n            <li>Your PC settings will be changed back to its defaults</li>\n            <li>Apps from windows store will be kept</li>\n            <li>Apps you installed from disc or website will be removed</li>\n            <li>A list of removed files will be saved on your desktop</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Affected Brands\n    </div>\n\n    <div>\n        <ul>\n            <li>All Desktop and Laptops</li>\n\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Operation System\n    </div>\n\n    <div>\n        <ul>\n            <li>Windows 8, 8.1 & 10</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Solution\n    </div>\n\n    <div>\n        <ul class='list-unstyled'>\n            <li>\n                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>\n                <ol>\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Settings </span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Update and recovery</span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <div>Tap or click <span style='font-weight:bold;'> Recovery</span></div>\n                        <div style='padding:5px 0'>Under Refresh your PC without affecting your files, tap or click\n                            <span style='font-weight:bold;'> Get started.</span></div>\n                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>\n\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Next'</span>.\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Refresh' </span>to start the refresh process.\n                    </li>\n                    <li style='padding:5px 0;'>\n                        Once the refresh process is done, you can find a Removed Apps list on the desktop\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        You can find the removed apps while refreshing your system\n                    </li>\n                </ol>\n            </li>\n            <li style='padding:10px 0;'>\n                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>\n                <ol>\n                    <li style='padding:5px 0;'> Search for <span style='font-weight:bold;'> refresh </span>in the search\n                        tool available in the Start menu,</li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on <span style='font-weight:bold;'> 'Refresh your PC without affecting your\n                                files'</span> in the search results as shown below.</div>\n                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on the\n                            <span style='font-weight:bold;'> Get started </span>\n                            button just below the heading<span style='font-weight:bold;'> 'Refresh your PC without\n                                affecting your files'</span> to start refreshing your Windows 10 PC.</div>\n                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>\n                    </li>\n                </ol>\n            </li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;'>\n        Additional Information\n    </div>\n\n    <div>\n        In most cases, once you start to refresh your PC, it’ll finish on its own.\n        However, if Windows needs missing files, you’ll be asked to insert recovery\n        media, which is typically a DVD disc or thumb drive. If that happens, what\n        you’ll need depends on your PC.\n    </div>\n    <div style='padding:10px 0'>\n        If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use\n        that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact\n        Microsoft Support.\n    </div>\n\n</div>",
+            "title": "Kako osvježiti računalo",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Kako osvježiti računalo    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        Simptom    </div>    <div style='padding:5px 0;'>        Ako vaše računalo ne funkcionira dobro kao nekad i ne znate zašto, možete osvježiti računalo bez brisanja osobnih datoteka ili izmjene postavki. Sustav Windows može „osvježiti” vaše računalo tako da je to nalik novoj instalaciji bez brisanja osobnih datoteka.    </div>    <div style='padding:5px 0;'>        Osvježite svoje računalo, evo što će se dogoditi: vaše datoteke i prilagođene postavke neće se promijeniti    </div>    <div style='padding:5px 0;'>        <ul>            <li>Postavke vašeg računala vratit će se na zadane postavke</li>            <li>Aplikacije iz Windows trgovine bit će zadržane</li>            <li>Aplikacije koje ste instalirali s diska ili web-mjesta bit će uklonjene</li>            <li>Popis uklonjenih datoteka bit će spremljen na radnoj površini</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Zahvaćene robne marke    </div>    <div>        <ul>            <li>Sva stolna i prijenosna računala</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Operacijski sustav    </div>    <div>        <ul>            <li>Windows 8, 8.1 i 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Rješenje    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        Dodirnite ili kliknite <span style='font-weight:bold;'> Settings</span> (Postavke)                    </li>                    <li style='padding:5px 0;'>                        Dodirnite ili kliknite <span style='font-weight:bold;'> Update and recovery</span> (Ažuriranje i oporavak)                    </li>                    <li style='padding:5px 0;'>                        <div>Dodirnite ili kliknite <span style='font-weight:bold;'> Recovery</span> (Oporavak)</div>                        <div style='padding:5px 0'>U odjeljku Osvježavanje PC-ja bez utjecaja na datoteke, dodirnite ili kliknite <span style='font-weight:bold;'> Get started</span> (Početak rada).</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        Kliknite <span style='font-weight:bold;'> Next</span> (Dalje).                    </li>                    <li style='padding:5px 0;'>                        Kliknite <span style='font-weight:bold;'> Refresh </span>(Osvježi) za početak postupka osvježavanja.                    </li>                    <li style='padding:5px 0;'>                        Nakon završetka procesa osvježavanja, na radnoj površini možete pronaći popis Uklonjenih aplikacija                    </li>                    <li style='padding:5px 0;'>                        Uklonjene aplikacije možete pronaći dok osvježavate sustav                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> Potražite <span style='font-weight:bold;'> refresh </span>(Osvježi) u alatu za pretraživanje dostupnom u izborniku Start,</li>                    <li style='padding:5px 0;'>                        <div>Kliknite na <span style='font-weight:bold;'> 'Refresh your PC without affecting your files'</span> (Osvježavanje PC-ja bez utjecanja na datoteke) u rezultatima pretraživanja kao što je prikazano u nastavku.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div>Kliknite na <span style='font-weight:bold;'> Get started </span> (Početak rada) odmah ispod naslova<span style='font-weight:bold;'> 'Refresh your PC without affecting your files'</span> („Osvježavanje PC-ja bez utjecaja na datoteke) da biste pokrenuli osvježavanje računala sa sustavom Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        Dodatne informacije    </div>    <div>        U većini slučajeva, kada počnete osvježavati računalo, ono će samostalno završiti radnju. Međutim, ako su sustavu Windows potrebne datoteke koje nedostaju, od vas će se tražiti da umetnete medij za oporavak, koji je obično DVD disk ili pogon za snimanje. Ako se to dogodi, ono što trebate ovisi o vašem računalu.    </div>    <div style='padding:10px 0'>        Ako ste računalo nadogradili na Windows 8.1 ili Windows RT 8.1 s pomoću DVD-a, koristite se tim diskom. Ako nemate Windows 8.1 ili Windows RT 8.1 medij, obratite se Microsoftovoj podršci.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -1517,8 +1918,8 @@
             "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
         },
         "question3": {
-            "title": "How to know your machine's CPU",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    How to know your machine's CPU\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.\n    The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit\n    system.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n    <li>All Desktop and Laptops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operating System</h3>\n<ul>\n    <li>Windows 7 , 8 , 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n    <li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button,</strong>\n        right-clicking Computer, and then clicking Properties  </li>\n    <li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then click\n        <strong>Search.</strong></li>\n    <li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n    <li>Tap or click <strong>System</strong></li>\n    <li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong>\n        is displayed in the System type field under the System heading.\n        If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong>\n        <strong>32-bit Operating </strong>System is displayed in the System type field under the System heading.<br />\n         </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then\n        click <strong>Search.</strong></li>\n    <li>In the search box, type <strong>system information</strong></li>\n    <li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and then\n        click <strong>System Summary.</strong></li>\n    <li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>\n        x64-based PC is displayed in the <strong>System type</strong> field under the \n        Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong>\n        version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> field\n        under the Item heading.  </li>\n</ol>\n<p> </p>",
+            "title": "Kako znati kojim se CPU-om vaš uređaj koristi",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Kako znati kojim se CPU-om vaš uređaj koristi</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Simptom</h3><p>Pojmovi 32-bitni i 64-bitni odnose se na način na koji procesor računala (koji se naziva i CPU) obrađuje informacije. 64-bitna verzija sustava Windows obrađuje velike količine memorije s izravnim pristupom (RAM-a) učinkovitije nego 32-bitni sustav.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Zahvaćene robne marke</h3><p>Prethodno navedeni simptom povezan je sa sljedećim sustavima, ali nije na njih ograničen:</p><ul>    <li>Sva stolna i prijenosna računala</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operacijski sustav</h3><ul>    <li>Windows 7, 8 i 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Rješenje</h3><p><strong><u>U sustavu Windows 7 ili Vista</u></strong></p><ol>    <li>Otvorite System (Sustav) klikom na sliku <strong>gumb Start </strong><strong>gumba Start,</strong> desnom tipkom miša kliknite Computer (Računalo), a zatim kliknite Properties (Svojstva)  </li>    <li>U odjeljku System (Sustav) možete vidjeti vrstu sustava.</li></ol><p><strong><u>Windows 8 i Windows 10</u></strong></p><p><strong>Prva metoda:</strong> pregledajte prozor System (Sustav) u Control Panel (Upravljačka ploča)</p><ol>    <li>Prijeđite prstom od desnog ruba zaslona, a zatim dodirnite <strong>Search</strong> (Pretraživanje). Ili ako se koristite mišem, usmjerite na donji desni kut zaslona, a zatim kliknite <strong>Search</strong> (Traži).</li>    <li>Upišite <strong>system</strong> (sustav) u okvir za pretraživanje, a zatim dodirnite ili kliknite <strong>Settings</strong> (Postavke).</li>    <li>Dodirnite ili kliknite <strong>System</strong> (Sustav)</li>    <li>Ako se koristite 64-bitnom verzijom sustava Windows 8, <strong>64-bitni operacijski sustav</strong> prikazuje se u polju System type (Vrsta sustava) pod naslovom System (Sustav). Ako se koristite 32<strong>-bitnom verzijom sustava Windows</strong> <strong>8,</strong> <strong>32-bitni operacijski </strong>sustav prikazan je u polju System type (Vrsta sustava) pod naslovom System (Sustav).<br />  </li></ol><p><strong>Druga metoda</strong>: prikaz prozora System Information (Informacije o sustavu)</p><ol>    <li>Prijeđite prstom od desnog ruba zaslona, a zatim dodirnite <strong>Search</strong> (Pretraživanje). Ili ako se koristite mišem, usmjerite na donji desni kut zaslona, a zatim kliknite <strong>Search</strong> (Traži).</li>    <li>U okvir za pretraživanje upišite <strong>system information</strong> (informacije o sustavu)</li>    <li>Dodirnite ili kliknite<strong> System</strong> (Sustav), dodirnite ili kliknite <strong>System Information</strong> (Informacije o sustavu), a zatim kliknite <strong>System Summary</strong> (Sažetak sustava).</li>    <li>Ako koristite <strong>64-bitnu </strong>verziju sustava Windows 8<strong>, </strong>prikazuje se računalo s x64 u polju <strong>System type</strong> (Vrsta sustava) pod naslovom Item (Stavka). <br /><br />Ako koristite <strong>32-bitnu </strong>verziju sustava Windows 8, prikazuje se računalo s procesorom x86 u polju <strong>System type</strong> (Tip sustava) pod naslovom Item (Stavka).  </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -1606,8 +2007,8 @@
             }
         },
         "question4": {
-            "title": "Check your machine's battery use",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Check your machine's battery use\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> \n    screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.\n    That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;\n    apps&ndash;are using too much power.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n\n<ul>\n    <li>Lenovo laptops, desktops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Systems</h3>\n<ul>\n    <li>All</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operationg System</h3>\n<ul>\n    <li>Window 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your\n    traditional <strong>control panel </strong>view, this feature is located in the\n    new <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>\n    select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br />\n        <br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last\n    from last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;\n    <strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,\n    the display,</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong>\n     options show how much power is used by applications while you&rsquo;re using them, compared to applications\n    running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>\n        &ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.\n    This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of this\n    feature.\n    It will display a list of the apps have used battery power in that period, and show you what percentage of your\n    battery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
+            "title": "Provjerite korištenje baterije uređaja",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Provjerite korištenje baterije uređaja</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Simptom</h3><p>Windows 10 obuhvaća novi zaslon „<strong>Battery Use”</strong> (Korištenje baterije) koji vam pokazuje što troši energiju prijenosnog računala. To znači da će vam točno reći koje aplikacije, aplikacije radne ploče i „univerzalne” aplikacije sustava Windows 10, upotrebljavaju previše energije.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Zahvaćene robne marke</h3><ul>    <li>Lenovo prijenosna računala, stolna računala</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Zahvaćeni sustavi</h3><ul>    <li>Sve</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operacijski sustav</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Rješenje</h3><p>Ova je značajka nova u sustavu Windows 10, a trebamo je najprije pronaći jer nije pohranjena u vašem standardnom prikazu <strong>upravljačke ploče</strong>, ta se značajka se nalazi u novoj aplikaciji <strong> „Settings”</strong> (Postavke)</p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Pronađite zaslon za upotrebu baterije</h3></p><p>1. Kliknite ili dodirnite <strong>„Settings</strong>” (Postavke) u izborniku Start</p><p>2. U <strong>Settings </strong> (Postavke) odaberite <strong>„System”</strong> (Sustav), a zatim odaberite <strong>„Battery saver” (Ušteda baterije).<br /><br /></strong><strong><br /><br /></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Kliknite ili dodirnite <strong>„Battery use”</strong> (Korištenje baterije) ispod ovog naslova kako biste pogledali više pojedinosti. </p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analizirajte potrošnju energije</h3><p>4 Možete promijeniti zaslon za korištenje baterije kako bi se prikazala potrošnja baterije od zadnja 24 sata do 48 sati ili posljednja od prošlog tjedna</p><p>5 Postotci za <strong>„System”</strong> (Sustav), „<strong>Display</strong>” (Prikaz) i „<strong>Wi-Fi”</strong>. To pokazuje koliko je napajanja baterije korišteno u procesima sustava, zaslonu,</p><p>6 Opcije <strong>„In use”</strong> (U upotrebi) i <strong>„Background”</strong> (Pozadina) pokazuju koliko energije troše aplikacije dok ih upotrebljavate u usporedbi s aplikacijama koje se izvode u pozadini.</p><p>7 Ako aplikacije u pozadini troše napajanje, možete kliknuti ili dodirnuti poveznicu <strong>„Change background app settings”</strong> (Promjena postavki pozadinskih aplikacija) i konfigurirati aplikacije da ne rade u pozadini. Ovo funkcionira samo za univerzalne aplikacije sustava Windows 10.</p><p>8 Pomaknite se prema dolje i vidjet ćete popis aplikacija, što se smatra najkorisnijim dijelom ove značajke. Prikazat će se popis aplikacija koje su u tom razdoblju trošile napajanje baterije i prikazat će se postotak napajanja koji je svaka aplikacija potrošila</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -1674,8 +2075,8 @@
             }
         },
         "question5": {
-            "title": "Use your PC like a tablet",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Use your PC like a tablet\n</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet\n        mode</strong> .</p>\n<p> </p>\n<p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device \n    on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and\n    how the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the\n    screen.</p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.\n    Select the <strong>Start </strong>button, select <strong>Settings </strong>>\n    <strong>System </strong>> <strong>\n        Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.\n    To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and\n    you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n    <li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n    <li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then\n        drag it to one side to snap it into your divided screen.</li>\n    <li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
+            "title": "Upotrebljavajte računalo kao tablet",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Upotrebljavajte računalo kao tablet</div><hr><p>Način rada tableta čini Windows intuitivnijim i jednostavnijim za upotrebu kada imate uređaj osjetljiv na dodir.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Upotrijebi način rada za tablet</h3><p>Da biste uključili način rada za tablet, odaberite <strong>Action center</strong> (Akcijski centar) na programskoj traci, a zatim odaberite <strong>Tablet mode</strong> (Način rada tableta).</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Napomena</h3><p>Da biste saznali može li vaš uređaj automatski uključiti način rada tableta, potražite uređaj na web-mjestu proizvođača. Podrška za ovu značajku ovisi o hardveru, instaliranom upravljačkom programu i načinu na koji je proizvođač postavio uređaj. </p><p> </p><p>U načinu rada tableta aplikacije se otvaraju na cijelom zaslonu, što vam daje više prostora za rad. Da biste zatvorili aplikaciju, povucite je na dno zaslona.</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Savjet</h3><p>Programska traka dostupna je kada je računalo u načinu rada tableta, ali ga možete sakriti ako želite više prostora na zaslonu. Odaberite gumb <strong>Start</strong>, odaberite <strong>Settings </strong>(Postavke) > <strong>System </strong> (Sustav) > <strong> Tablet mode </strong> (Način rada tableta), a zatim uključite <strong>Automatically hide the taskbar in tablet mode</strong> (Automatski sakrij programsku traku u načinu rada tableta). Da biste vidjeli skrivenu programsku traku, prijeđite prstom prema gore s dna zaslona ili lebdite s pomoću miša.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Upotreba dviju aplikacija istodobno</h3><p>Da biste se u načinu rada tableta istodobno koristili dvjema aplikacijama jednom uz drugu, povucite otvorenu aplikaciju dolje i na stranu. Vidjet ćete gdje će se poravnati, a vidjet ćete i sve otvorene aplikacije pored nje.</p><p>U ovom prikazu možete i:</p><ul>    <li>Upotrebljavati zajednički rub između dviju aplikacija prikazanih na dijelu zaslona da biste istodobno promijenili veličinu obiju aplikacija.</li>    <li>Otvorite novu aplikaciju u prikazu zadatka, odaberite <strong>Task view</strong> (Prikaz zadatka) na programskoj traci, odaberite aplikaciju, a zatim je povucite na jednu stranu da biste je poravnali u podijeljeni zaslon.</li>    <li>S pomoću gumba Natrag na programskoj traci možete se vratiti u aplikaciju ili otvoriti aplikaciju koju ste upotrebljavali prije toga.</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -1714,8 +2115,8 @@
             }
         },
         "question6": {
-            "title": "Get to know Cortona, your personal assistant",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Get to know Cortana, your personal assistant\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>What is Cortana?</h3>\n<hr />\n<p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing\n    works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you\n    select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n    <li>Give you reminders based on time, places, or people.</li>\n    <li>Track packages, teams, interests, and flights.</li>\n    <li>Send emails and texts.</li>\n    <li>Manage your calendar and keep you up to date.</li>\n    <li>Create and manage lists.</li>\n    <li>Chit chat and play games.</li>\n    <li>Find facts, files, places, and info.</li>\n    <li>Open any app on your system.</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Try this: Set a reminder</h3>\n<hr />\n\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or\n    even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync\n    notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hey Cortana?</h3>\n<hr />\n<p>Set Cortana to hear you anytime you say\n    'Hey Cortana.' Select the search box on the taskbar to open Cortana home.\n    Then select <strong>Settings</strong>  and turn on <strong>Let Cortana respond to 'Hey\n        Cortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.\n</p>\n<p> </p>",
+            "title": "Upoznajte Cortanu, svoju osobnu pomoćnicu",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Upoznajte Cortanu, svoju osobnu pomoćnicu</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Što je Cortana?</h3><hr /><p>Cortana je vaš digitalni agent. Pomoći će vam da obavite posao.</p><p>Što se više koristite Cortanom, to će vaše iskustvo biti personaliziranije.</p><p>Da biste započeli, upišite pitanje u okvir za pretraživanje ili odaberite mikrofon i razgovarajte s Cortanom. (Tipkanje funkcionira za sve vrste računala, ali za razgovor trebate mikrofon.)</p><p>Ako niste sigurni što reći, vidjet ćete prijedloge na zaključanom zaslonu i na početnoj stranici Cortane kada odaberete okvir za pretraživanje u programskoj traci.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Početna stranica 2. Bilježnica 3. Postavke 4. Povratne informacije</li></ol><p>Evo nekih stvari koje Cortana može učiniti za vas:</p><ul>    <li>Dati vam podsjetnike na temelju vremena, mjesta ili osoba.</li>    <li>Pratite pakete, timove, interese i letove.</li>    <li>Slati e-poštu i tekstove.</li>    <li>Upravljati vašim kalendarom i obavještavati vas o svemu.</li>    <li>Izrađivati popise i upravljati njima.</li>    <li>Razgovarati i igrati igre.</li>    <li>Pronaći činjenice, datoteke, mjesta i informacije.</li>    <li>Otvoriti bilo koju aplikaciju u vašem sustavu.</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Pokušajte sljedeće: postavite podsjetnik</h3><hr /><p>Jedna od stvari koje Cortana može učiniti jest da vas podsjeti na nešto. Može vas podsjetiti da radite stvari na temelju vremena, mjesta ili čak osoba.</p><p>Primjerice, utipkajte ili recite: „Podsjeti me da čestitam Tanyi sljedeći put kad nazove.”</p><p>Podsjetnik će se pojaviti kada dobijete poziv od Tanye.</p><p>Dodatni bonus &mdash; ako imate Windows Phone ili Cortanu za iPhone ili Android, možete postaviti Cortanu da sinkronizira obavijesti između računala i telefona.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hej Cortana?</h3><hr /><p>Postavite Cortanu da vas čuje kad god kažete: \\\"Hej Cortana\\\". Odaberite okvir za pretraživanje na programskoj traci da biste otvorili početnu stranicu Cortane. Zatim odaberite <strong>Settings</strong> (Postavke) i uključite <strong>Let Cortana respond to \\\"Hey Cortana.\\\"</strong> (Neka Cortana odgovara na „Hej Cortana”.)</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Napomena</p><p>Cortana je dostupna samo u određenim zemljama/regijama, a neke značajke Cortane možda nisu dostupne svugdje.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -1750,13 +2151,14 @@
             },
             "para12": "Note",
             "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        }
+        },
+        "pageTitle": "Detalje o podršci"
     },
     "welcometutorial": {
         "description": "Vantage vam olakšava ažuriranje upravljačkih programa, pokretanje dijagnostike, traženje podrške i saznavanje više informacija o uređaju. Brzo prilagodite svoje iskustvo i pronađite korisne informacije prilagođene vašim potrebama",
         "bullets1": "Pogledajte status sustava pomoću nadzorne ploče Vantage.",
-        "bullets2": "Savjetnik za sigurnost tvrtke olakšava upravljanje sigurnosnim značajkama ",
-        "bullets3": "Automatska ažuriranja pomažu vašem uređaju ostati u savršenom stanju",
+        "bullets2": "Savjetnik za sigurnost tvrtke olakšava upravljanje sigurnošću (dostupno na odabranim sustavima).",
+        "bullets3": "Automatska ažuriranja održavaju vaš uređaj u savršenom stanju (dostupno na odabranim sustavima).",
         "subtitle1": "U koju svrhu ćete koristiti uređaj?",
         "subtitle2": "Recite nam više o svojim interesima",
         "personal": "Osobna upotreba",
@@ -1798,6 +2200,6 @@
         "usageStatistics": "Statistički podaci o upotrebi",
         "usageStatisticsDescription": "Slanje anonimnih statističkih podataka o korištenju tvrtki Lenovo.",
         "Note": "Napomena: ",
-        "settingsNotes": "Sve postavke na ovoj stranici trebat će korisnici da se ponovno pokrenu kako bi stupili na snagu."
+        "settingsNotes": "sve postavke na ovoj stranici zahtijevat će da korisnici ponovno pokrenu aplikaciju da bi stupili na snagu."
     }
 }

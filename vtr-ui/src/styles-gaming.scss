@@ -128,21 +128,166 @@
 			.vtr-page-left-column {
 				background-color: $gaming_darkest;
 				@media #{$medium-screen}{
-					padding: 4rem;
+					//padding: 4rem;
+				}
+				.installation-history-container{
+					background: $dark_cell;
+				}
+				.vtr-available-updates {
+					background: $dark_cell;
+					.header{
+						.heading {
+							color: $gaming_lightest;
+						}
+					}
+					.text-regular {
+						color: $gaming_lightest;
+					}
+					.vtr-ui-list-checkbox{
+						.list-group{
+							.list-group-item{
+								background-color: $gaming-Darkslate-blue;
+								.update-title{
+									color: $gaming_lightest;
+								}
+								.custom-control {
+									&.custom-checkbox{
+										.custom-control-input:disabled ~ .custom-control-label::before {
+											background-color: $gaming-Darkslate-blue;
+										}
+										.custom-control-input:disabled:checked ~ .custom-control-label::before {
+											border-color: $gaming-Darkslate-blue;
+										}
+									}
+									.button-box{
+										.btn-round-sm{
+											background: $gaming_orange_grad;
+											color: $gaming_lightest;
+										}
+									}
+								}
+								.icon-check {
+									.icon-bg {						
+										fa-icon {
+											color: $gaming-Darkslate-blue;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				.installation-history-container{
+					vtr-container-collapsible{
+						.vtr-container-collapsible{
+							background: none;
+							box-shadow: none;
+							border: none;
+							.vtr-installation-history{
+								background-color: transparent;
+								.heading{
+									color: $gaming_lightest;
+								}
+								.installation-list{
+									background-color: transparent;
+									border: none;
+									.list-heading{
+										color: $gaming_lightest;
+										border-color: $screen_dark_20;
+										.sort-order {
+											a {
+												text-decoration: none;
+											}
+										}
+										.item-text{
+											padding-left: 0;
+										}
+									}
+									li {
+										border-color: $screen_dark_20;
+										.item-text{
+											color: $gaming_lightest;
+											padding-left: 0;
+										}
+									}
+								}
+								
+							}
+							&.white-theme{
+								.card{
+									.card-header{
+										.header{
+											text-transform: uppercase;
+											font-weight: $weight_black;
+											position: relative;
+											&::after {
+												content: '';
+												position: absolute;
+												height: 0.4rem;
+												width: 110%;
+												left: 0;
+												bottom: -0.6rem;
+												background: $gaming_info_link;
+											}
+										}
+										.collapse-control {
+											.collapse-text{
+												color: $gaming_lightest;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 			.vtr-page-right-column {
 				background-color: $gaming_darker;
-				padding-left: 2.2rem;
+				//padding-left: 2.2rem;
+				padding: 0 8.5rem 4rem 4rem;
 				@media #{$small-screen} {
 					margin-top: -0.1rem;
-					padding: 6rem 1.5rem 1.5rem 1.5rem;
+					padding: 6rem 4rem 1.5rem 4rem;
 					background-color: $gaming_darkest;
 				}
 				@media #{$medium-screen} {
 					margin-top: -0.1rem;
-					padding: 6rem 2rem 2rem 2rem;
+					padding: 6rem 4rem 2rem 4rem;
 					background-color: $gaming_darkest;
+				}
+				vtr-autoupdate-settings{
+					.vtr-autoupdate-settings{
+						background-color: auto;
+						background: $dark_cell;
+						.title {
+							color: $gaming_lightest;
+						}
+						.description {
+							color: $gaming_grey_lightest;
+							font-size: 1.2rem;
+						}
+						.settings-container {
+							.list-group-item{
+								background-color: $gaming-Darkslate-blue;
+								.update-title {
+									color: $gaming_lightest;
+								}
+							}
+						}
+					}
+				}
+			}
+			.tooltip-click.tooltip{
+				ul {
+					li {
+						font-family: "Segoe UI",Sans-serif;
+					}
+				}
+				.tooltip-inner {
+					.read{
+						font-family: "Segoe UI",Sans-serif;
+					}
 				}
 			}
 		}
@@ -158,6 +303,20 @@
 .gaming-help-modal {
 	.modal-dialog {
 		top: 16rem;	
+		width: 80rem;
+		max-width: 100%;
+		@media #{$medium-screen} {
+			max-width: 70rem;
+			position: relative;
+	   }
+   
+	   @media #{$small-screen} {
+		   max-width: 50rem;
+		   position: relative;
+	   }
+	   @media #{$mediaquery_12} {
+		   left: 9rem;
+	   }
 	}
 }
 button:focus, *:focus{

@@ -1,18 +1,23 @@
 <ui-gaming-driver-popup *ngIf="showMePartially">
-	<div class="ui-gaming-driver-popup-head">
-
-	  <button class="close" type="button" (click)="close()">
-		  <i class="icon icon-close"></i>
-	  </button>
-	</div>
-	<p><b>{{'gaming.dashboard.device.legionEdge.driverPopup.headerText' | translate}}</b></p>
-	<div class="ui-gaming-driver-popup-content">
-
-			<p>{{'gaming.dashboard.device.legionEdge.driverPopup.text' | translate}}</p>
+	<div class="modal-body vtr-ui-gaming-driver-popup">
+		<div class="row justify-content-end">
+			<div class="btn-close">
+				<button type="button" class="close" aria-hidden="true" (click)="close()">
+					<fa-icon [icon]="['fal', 'times']"></fa-icon>
+				</button>
+			</div>
 		</div>
-
-	<div class="ui-gaming-driver-popup-footer">
-	  <button class="btn btn-rounded" (click)="close()">{{'gaming.dashboard.device.legionEdge.driverPopup.button' | translate}}</button>
-	&nbsp;&nbsp;<a (click)="close()">{{'gaming.dashboard.device.legionEdge.driverPopup.link' | translate}}</a>
+		<div class="content-body">
+			<h1>{{'gaming.dashboard.device.legionEdge.driverPopup.headerText' | translate}}</h1>
+			<p *ngIf="!isLightingText">{{popupText | translate}}</p>
+			<p *ngIf="isLightingText">{{'gaming.dashboard.device.legionEdge.lightingDriverPopup.text' | translate}}</p>
+		</div>
+		<hr>
+		<div class="row">
+			<button class="btn enable-button"
+				(click)="systemUpdatePage()">{{'gaming.dashboard.device.legionEdge.driverPopup.button' | translate}}</button>
+			<a (click)="close()"
+				class="cancel-link active">{{'gaming.dashboard.device.legionEdge.driverPopup.link' | translate}}</a>
+		</div>
 	</div>
-  </ui-gaming-driver-popup>
+</ui-gaming-driver-popup>

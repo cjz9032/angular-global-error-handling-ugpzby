@@ -1,0 +1,210 @@
+@import "../../../../../app.theme.scss";
+
+.vtr-home-security-my-device {
+    height: 100%;
+    display: flex;
+	flex-direction: row;
+    .icon-container {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        flex-basis: 20%;
+		border-right: 0.1rem solid $shade_lighter;
+        .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-basis: 70%;
+            .img-fluid {
+                max-width: 60%;
+                max-height: 60%;
+            }
+        }
+        .sub-text, .device-status {
+            flex-basis: 15%;
+            display: flex;
+            align-items: center;
+        }
+        .sub-text {
+            font-size: 1.5rem;
+			font-weight: $weight_bold;
+            .loading {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                font-size: 1rem;
+			}
+			.sub-title{
+				display: none;
+			}
+        }
+    }
+    .device-status-container {
+        padding: 0rem;
+        flex-basis: 80%;
+        .loading {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+			align-items: center;
+		}
+        .device-info {
+            padding: 0rem;
+            padding-top: 1.2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 0.1rem solid $shade_lighter;
+        }
+        .device-info:nth-child(odd) {
+            border-right: 0.1rem solid $shade_lighter;
+        }
+        .device-info:nth-last-child(1), .device-info:nth-last-child(2) {
+			border-bottom: 0;
+		}
+        .title {
+            font-size: 1.4rem;
+            font-weight: $weight_bold;
+            float: left;
+            padding-top: 0.1rem;
+            padding-right: 0.1rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: $blue-dark;
+        }
+        .detail {
+            padding-left: 0rem;
+            padding-right: 0rem;
+            padding-top: 0.3rem;
+            float: right;
+            text-align: right;
+            font-size: 1.2rem;
+            color: $shade_dark;
+            font-weight: $weight_medium;
+            max-width: 50%;
+            word-wrap: break-word;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            &.good {
+                color: $main_gstart;
+            }
+
+            &.bad {
+                color: $stop_dark;
+            }
+        }
+        .status-badge {
+            padding-left: 5px;
+            padding-right: 0rem;
+            padding-top: 0.2rem;
+        }
+        .item-icon {
+            &.status {
+                .icon-bkg {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+                    border-radius: 50%;
+                    height: 2rem;
+                    width: 2rem;
+
+                    fa-icon {
+                        font-size: 1.2rem;
+                        line-height: 1.6rem;
+                        color: $light;
+                    }
+                }
+            }
+
+            fa-icon {
+                color: $main;
+                font-size: 1.9rem;
+                line-height: 3rem;
+            }
+        }
+        .bad {
+            &.item-icon {
+                .icon-bkg {
+                    background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+                    background-color: $stop_dark;
+                    border-color: $stop_dark;
+                }
+            }
+        }
+        .good {
+            &.item-icon {
+                .icon-bkg {
+                    background: linear-gradient($gradient_angle, $main_darker 0%, $main_darkest 100%);
+                    background-color: $main_darker;
+                    border-color: $main_darker;
+
+                    fa-icon {
+                        font-size: 0.5rem;
+                        line-height: 1.6rem;
+                        vertical-align: 0.1rem;
+                    }
+                }
+            }
+        }
+	}
+	@media #{$mediaquery_lg} {
+		flex-direction: column;
+		.device-info {
+            border-right: 0.1rem solid $shade_lighter;
+		}
+		.device-info:nth-last-child(2) {
+			border-bottom: 0.1rem solid $shade_lighter !important;
+		}
+		.device-info:first-child{
+			border-top: 0.1rem solid $shade_lighter;
+		}
+		.hidden{
+			display: none;
+		}
+
+		.icon-container {
+				flex-direction: row;
+				justify-content: flex-start;
+				align-items: center;
+				.icon{
+					flex-basis: 20%;
+					justify-content: flex-start;
+					.img-fluid {
+						max-width: 80%;
+						max-height: 80%;
+					}
+				}
+				.sub-text-device-status{
+					flex-basis: 60%;
+					justify-content: flex-start;
+					.sub-text {
+						flex-direction: column;
+						align-items: flex-start;
+						.sub-title{
+							font-weight: $weight_medium;
+							display: flex;
+						}
+						.loading{
+							justify-content: flex-start;
+							padding-left: 1rem
+						}
+					}
+				}
+		}
+	}
+
+	.icon-collapse{
+		display: none;
+		@media #{$mediaquery_lg} {
+			display: flex !important;
+		}
+		fa-icon{
+			font-size: 6rem;
+			color: #4579f0;
+			-webkit-text-stroke-width: 1px;
+		}
+	}
+}

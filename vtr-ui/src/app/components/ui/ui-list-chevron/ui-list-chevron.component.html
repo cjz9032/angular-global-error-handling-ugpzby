@@ -1,9 +1,14 @@
 <div class="vtr-ui-list-chevron">
-	<ul class="chevron-list" [ngClass]="{'wifiStatus-no-border-bottom': items.length > 0 && items[0].path === 'security/wifi-security' && items[0].status === 0}">
+	<ul class="chevron-list">
 		<li *ngFor="let item of items" [ngClass]="getItemStatusClass(item)">
 			<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false then user routerLink to naviagate within Lenovo Vantage Application -->
 
-			<a routerLink="/{{item.path}}" id="{{item.id}}" attr.aria-label="{{item.id}}" [queryParams]="item.pathParams" vtrMetrics [metricsItem]="item.title" [metricsEvent]="metricsEvent"
+			<a routerLink="/{{item.path}}" id="{{item.id}}" attr.aria-label="{{item.id}}" [queryParams]="item.pathParams" vtrMetrics
+			[metricsItem]="item.metricsItemName ? item.metricsItemName : item.title"
+			[metricsEvent]="metricsEvent"
+			[metricsItemID]="item.id"
+			[metricsItemCategory]="item.category"
+			[metricsItemPosition]="blockPosition"
 		[ngClass]="clickable?'':'disabled'"
 				*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false)">
 				<div class="container-fluid">
@@ -24,10 +29,15 @@
 							<div class="item-icon-image" *ngIf="item.iconPath">
 								<img [src]="item.iconPath|svgInline|async" />
 							</div>
+							<div  class="item-icon-class" *ngIf="item.iconName && item.color">
+									<fa-icon [icon]="['fal', item.iconName]"
+									class="icon" [ngStyle]="{ 'color': item.color}"></fa-icon>
+							</div>
 						</div>
 						<div class="col item-text"
 							[ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility}">
-							<div class="row no-gutters">
+							<div class="row no-gutters"
+								[ngClass]="{'flex-column': item.notificationDetail}">
 								<div title="{{item.title}}"
 									class="title text-break"
 									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-8': item.detail}">
@@ -38,6 +48,10 @@
 									*ngIf="item.detail"
 									[ngClass]="getItemDetailClasses(item)">
 									{{item.detail}}
+								</div>
+								<div *ngIf="item.subText" class="sub-text">
+									<span title="{{item.subText}}">{{item.subText | characterLimit:20}}</span>
+									<span class="pl-3">{{item.date}}</span>
 								</div>
 							</div>
 						</div>
@@ -67,7 +81,7 @@
 				</div>
 			</a>
 			<!--Open Windows Settings /subapges if isSystemLink is not undefined and  true or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
-			<a href="#!" id="{{item.id}}" attr.aria-label="{{item.id}}"  vtrMetrics [metricsItem]="item.title" [metricsEvent]="metricsEvent" (click)="launchSystemUri(item.path)" [ngClass]="clickable?'':'disabled'"
+			<a href="#!" id="{{item.id}}" attr.aria-label="{{item.id}}"  vtrMetrics [metricsItem]="item.metricsItemName ? item.metricsItemName : item.title" [metricsEvent]="metricsEvent" (click)="launchSystemUri(item.path)" [ngClass]="clickable?'':'disabled'"
 				*ngIf="item.isSystemLink!==undefined &&  item.isSystemLink===true">
 				<div class="container-fluid">
 					<div class="row align-items-center">
@@ -87,6 +101,10 @@
 							<div class="item-icon-image" *ngIf="item.iconPath">
 								<img [src]="item.iconPath|svgInline|async" />
 							</div>
+							<!-- <div class="item-icon-image" *ngIf="item.iconIClass">
+									<fa-icon [icon]=item.iconIClass></fa-icon>
+									{{item.iconIClass}}
+								</div> -->
 						</div>
 						<div class="col item-text"
 							[ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility}">

@@ -1,21 +1,17 @@
-import {Component, Self, ElementRef, OnInit, AfterViewInit, Input, ChangeDetectorRef} from '@angular/core';
-import {DisplayService} from '../../services/display/display.service';
-import {NgbModalRef, NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {ModalArticleDetailComponent} from '../modal/modal-article-detail/modal-article-detail.component';
-import {CommonService} from 'src/app/services/common/common.service';
-import {AppNotification} from 'src/app/data-models/common/app-notification.model';
-import {NetworkStatus} from 'src/app/enums/network-status.enum';
+import { Component, Self, ElementRef, OnInit, AfterViewInit, Input, ChangeDetectorRef, OnChanges } from '@angular/core';
+import { DisplayService } from '../../services/display/display.service';
+import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalArticleDetailComponent } from '../modal/modal-article-detail/modal-article-detail.component';
+import { CommonService } from 'src/app/services/common/common.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 
 @Component({
 	selector: 'vtr-container-card',
 	templateUrl: './container-card.component.html',
-	styleUrls: [
-		'./container-card.component.scss',
-		'./container-card.component.gaming.scss'
-	]
+	styleUrls: [ './container-card.component.scss', './container-card.component.gaming.scss' ]
 })
-export class ContainerCardComponent implements OnInit, AfterViewInit {
-
+export class ContainerCardComponent implements OnInit, AfterViewInit, OnChanges {
 	@Input() img = '';
 	@Input() caption = '';
 	@Input() title = '';
@@ -30,6 +26,9 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 	@Input() cornerShift: String = '';
 	@Input() order: number;
 	@Input() itemID: string;
+	@Input() sideFlag = '';
+	@Input() id = '';
+	@Input() ariaLabel = '';
 
 	isLoading = true;
 
@@ -45,15 +44,11 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 		private commonService: CommonService,
 		public modalService: NgbModal,
 		private changeDetectorRef: ChangeDetectorRef
-	) {
-	}
+	) {}
 
 	ngOnInit() {
-		let image = new Image();
-		image.onload = () => {
-			setTimeout(()=>{this.isLoading=false;},1000)
-		}
-		image.src = this.img;
+		this.handleLoading();
+
 		this.ratio = this.ratioY / this.ratioX;
 		const self = this;
 		this.resizeListener = this.displayService.windowResizeListener().subscribe((event) => {
@@ -67,11 +62,23 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 		});
 	}
 
+	handleLoading() {
+		console.log(this.img, '+++++++++---------');
+		if (this.img) {
+			this.isLoading = false;
+		} else {
+			const image = new Image();
+			image.onload = () => {
+				this.isLoading = false;
+			};
+			image.src = this.img;
+		}
+	}
+
 	ngAfterViewInit() {
 		const self = this;
 		const delay = setTimeout(() => {
 			self.calcHeight(self.element);
-
 		}, 0);
 	}
 
@@ -93,10 +100,11 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 
 	articleClicked(articleId) {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
-			backdrop: 'static',
+			backdrop: true, /*'static',*/
 			size: 'lg',
 			centered: true,
-			windowClass: 'Article-Detail-Modal'
+			windowClass: 'Article-Detail-Modal',
+			keyboard : false
 		});
 
 		articleDetailModal.componentInstance.articleId = articleId;
@@ -113,5 +121,9 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 					break;
 			}
 		}
+	}
+
+	ngOnChanges(changes) {
+		this.handleLoading();
 	}
 }

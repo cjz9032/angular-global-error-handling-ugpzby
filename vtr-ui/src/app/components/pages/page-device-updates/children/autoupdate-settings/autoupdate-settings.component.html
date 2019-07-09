@@ -12,29 +12,38 @@
             <ul class="list-group">
               <li class="list-group-item"
                 *ngFor="let item of items">
-                <div class="media pl-3 align-items-center">
+				<div class="media pl-3 align-items-center"
+					id="{{item.name}}"
+					attr.aria-label="{{item.name}}">
                   <fa-icon [icon]="item.leftImageSource"></fa-icon>
                   <div class="media-body pb-0 mb-0 small pl-3">
                     <div class="d-flex justify-content-between align-items-center w-100">
                       <div class="update-title"
-                        [innerHTML]="item.header| safeDom : 'html'"></div>
-                      <a href="javascript:void();"
+                        [innerHTML]="item.header| sanitize : 'html'"></div>
+					  <a href="javascript:void();"
                         *ngIf="item.isSwitchVisible"
                         class="d-flex no-pointer">
-                        <vtr-ui-switch-onoff [name]="item.name"
+						<vtr-ui-switch-onoff
+							id="su-auto-updates-onoff"
+							aria-label="su-auto-updates-onoff"
+							[name]="item.name"
                           (toggle)="onToggleOnOff($event)" [value]="item.isChecked" [isSwitchDisable]="item.isDisabled" [disabled]="item.isDisabled">
                         </vtr-ui-switch-onoff>
-  
+
                         <fa-icon class="question"
                           triggers="click:blur"
-                          placement="auto"
+						  placement="auto"
+						  id="su_auto_updates_question_circle"
+						  aria-label="su_auto_updates_question_circle"
                           [ngbTooltip]="item.tooltipText"
                           [icon]="['far', 'question-circle']"
                           container="body"
                           tooltipClass="vtr-tooltip"></fa-icon>
                       </a>
                       <a href="javascript:void();"
-                        class="link-text"
+						class="link-text"
+						id="su-auto-updates-winSettingLink"
+						aria-label="su-auto-updates-winSettingLink"
                         *ngIf="!item.isSwitchVisible"
                         (click)="onLinkClick(item.linkPath)">
                         {{item.linkText}}
@@ -49,4 +58,4 @@
       </div>
     </div>
   </div>
-  
+

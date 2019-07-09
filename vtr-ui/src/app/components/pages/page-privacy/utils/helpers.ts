@@ -1,5 +1,6 @@
 import { BrowserListType } from '../common/services/vantage-communication.service';
 import { createHash } from './createHash';
+import { FeaturesStatuses } from '../userDataStatuses';
 
 export function returnUniqueElementsInArray<T>(arr: T[]): T[] {
 	return Array.from(new Set<T>(arr));
@@ -23,4 +24,17 @@ export function getHashCode(value: string) {
 		return value;
 	}
 	return createHash(value);
+}
+
+export function getDisplayedCountValueOfIssues(status: FeaturesStatuses, issuesCount) {
+	switch (status) {
+		case FeaturesStatuses.exist:
+			return issuesCount;
+		case FeaturesStatuses.none:
+			return 0;
+		case FeaturesStatuses.undefined:
+			return '';
+		default:
+			return '';
+	}
 }

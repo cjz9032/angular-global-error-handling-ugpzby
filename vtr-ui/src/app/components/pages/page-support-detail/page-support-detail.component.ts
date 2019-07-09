@@ -12,6 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class PageSupportDetailComponent implements OnInit {
 
 	title = 'Support Detail';
+	backarrow = '< ';
 
 	qa: QA;
 	qAndA = {
@@ -32,6 +33,8 @@ export class PageSupportDetailComponent implements OnInit {
 		private activateRoute: ActivatedRoute) {
 
 		qaService.setTranslationService(this.translate);
+		//initialize onchange lang for support page: sahinul, 24June2019 VAN-5534
+		qaService.setCurrentLangTranslations();
 		qaService.qas.forEach(qa => {
 			try {
 				qa.title = this.translate.instant(qa.title);
@@ -51,9 +54,16 @@ export class PageSupportDetailComponent implements OnInit {
 			}
 		});
 
+		/*PAGE TITLE : sahinul, 24June2019 VAN-5534 */
+		this.title = this.translate.instant(qaService.title);
+		this.translate.stream(this.title).subscribe((value) => {
+			this.title = value;
+		});  
+		//console.log('sahinul page-support',this.title,qaService.title);   
+
 		this.activateRoute.params.subscribe((params) => {
 			this.qa = this.qaService.getById(parseInt(params['id']));
-		})
+		});
 	}
 
 

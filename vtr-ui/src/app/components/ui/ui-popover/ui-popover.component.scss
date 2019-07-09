@@ -2,19 +2,22 @@
 
 ui-popover {
   position: absolute;
-  width: 55rem;
+  width: 70rem;
   padding: 3rem 5rem;
   background: $gaming_lightest;
   z-index: 9;
   border-radius: 1rem;
   box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
   right: 8rem;
-  top: -13rem;
+  top: -12rem;
   @media #{$small-screen} {
     width: 45rem;
   }
   @media #{$medium-screen} {
     width: 50rem;
+  }
+  @media #{$mediaquery_X31} {
+    width: 40rem;
   }
   &::after {
     content: "";
@@ -23,43 +26,62 @@ ui-popover {
     height: 0;
     border-bottom: 3rem solid $gaming_lightest;
     border-left: 3rem solid transparent;
-    //transform: rotate(45deg);
     bottom: -1rem;
     top: calc(50% - 1.5rem);
-    right: -1.5rem;
+    right: -1.2rem;
     transform: rotate(-45deg);
   }
-  .ui-popover-head {
-    position: relative;
-    height: 3.2rem;
-    .close {
-      color: $gaming_gstart;
-      position: absolute;
-      right: -2rem;
+  .vtr-ui-popover {
+    &.modal-body {
+      padding: 0;
+    }
+
+    .content-body {
+      min-height: 10rem;
+    }
+    fa-icon {
       font-size: 3rem;
+      color: $main;
+      display: block !important;
     }
-  }
-  .ui-popover-content {
-    min-height: 12rem;
-    p {
-      color: $main_darkest;
+
+    h1 {
       font-size: 2.5rem;
-      line-height: 3.6rem;
+      font-weight: normal;
+      color: $blue-dark;
     }
-  }
-  .ui-popover-footer {
-    border-top: 1px solid $screen_dark_30;
-    padding-top: 2.4rem;
-    .btn-rounded {
-      height: 4rem;
+
+    p {
+      font-size: 1.6rem;
+      color: $light-grey;
+      padding: 0.5rem 0;
+    }
+
+    .enable-button {
+      background: $gradient_main;
       border-radius: 3rem;
-      min-width: 15rem;
-      border: none;
-      background: $gaming_lighting_gradient;
-      color: $gaming_lightest;
+      color: $light;
       font-size: 2rem;
+      padding: 1rem 3rem;
+      margin-top: 1rem;
+      font-weight: $weight_bold;
       text-transform: uppercase;
-      letter-spacing: -0.1rem;
+    }
+
+    .cancel-link {
+      color: $main;
+      font-size: 2rem;
+      text-decoration: underline;
+      vertical-align: middle;
+      padding: 1rem 3rem;
+      font-weight: $weight_bold;
+      margin-top: 1rem;
+      cursor: pointer;
+      text-transform: uppercase;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

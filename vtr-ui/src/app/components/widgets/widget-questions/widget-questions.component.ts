@@ -7,10 +7,13 @@ import { BaseComponent } from "../../base/base.component";
 	styleUrls: ['./widget-questions.component.scss']
 })
 export class WidgetQuestionsComponent extends BaseComponent implements OnInit {
-
+	@Input() itemId:string;
 	@Input() title: string;
 	@Input() description: string;
 	@Input() items: any[];
+	@Input() chevronVisibility = true;
+	@Input() clickable = true;
+	@Input() blockPosition: string;
 
 	constructor() {
 		super();

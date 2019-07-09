@@ -1,4 +1,4 @@
-@import '../../app.theme';
+@import "../../app.theme";
 
 .vtr-menu-header {
 	.menu-header-tab {
@@ -6,15 +6,15 @@
 		position: relative;
 		display: inline-block;
 		color: $light;
-		opacity: .5;
+		opacity: 0.5;
 		margin: 0 2rem;
 		&:first-child {
-			margin-left: .5rem;
+			margin-left: 0.5rem;
 		}
 		&.active,
 		&:hover {
 			opacity: 1;
-			.menu-pointer{
+			.menu-pointer {
 				display: inline-block;
 			}
 		}
@@ -24,6 +24,7 @@
 		.tab-label {
 			font-size: 2rem;
 			padding-bottom: 2rem;
+			cursor: pointer;
 		}
 		fa-icon {
 			&.menu-pointer {

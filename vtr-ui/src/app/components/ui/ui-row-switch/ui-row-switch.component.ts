@@ -11,6 +11,7 @@ import { ModalBatteryChargeThresholdComponent } from '../../modal/modal-battery-
 import { BaseComponent } from '../../base/base.component';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TranslateService } from '@ngx-translate/core';
+import { ModalVoiceComponent } from '../../modal/modal-voice/modal-voice.component';
 
 
 @Component({
@@ -34,7 +35,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 	@Input() isSwitchVisible = false;
 	@Input() theme = 'white';
 	@Input() resetText = '';
-	@Input() isSwitchChecked = false;
+	@Input() isSwitchChecked = true;
 	@Input() tooltipText = '';
 	@Input() name = '';
 	@Input() disabled = false;
@@ -43,8 +44,8 @@ export class UiRowSwitchComponent extends BaseComponent {
 	@Input() resetTextAsButton = false;
 	@Input() isLastChild = false;
 	@Input() showLoaderState = false;
-
-
+	@Input() voice = false;
+	@Input() voiceValue = '';
 	@Output() toggleOnOff = new EventEmitter<boolean>();
 	@Output() readMoreClick = new EventEmitter<boolean>();
 	@Output() tooltipClick = new EventEmitter<boolean>();
@@ -119,7 +120,19 @@ export class UiRowSwitchComponent extends BaseComponent {
 		}
 	}
 
+	voicePopUp(stringValue) {
+		console.log("modal open");
+		console.log(this.voiceValue);
+		const modalRef = this.modalService.open(ModalVoiceComponent,
+			{
+				backdrop: 'static',
+				size: 'sm',
+				centered: true,
+				windowClass: 'Voice-Modal',
+			});
+		modalRef.componentInstance.value = this.voiceValue;
 
+	}
 	// private closeTooltip($event: Event) {
 	// 	if (!$event.srcElement.classList.contains('fa-question-circle') && this.tooltip && this.tooltip.isOpen()) {
 	// 		this.tooltip.close();

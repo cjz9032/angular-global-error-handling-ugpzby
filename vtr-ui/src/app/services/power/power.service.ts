@@ -8,7 +8,7 @@ export class PowerService {
 	private devicePower: any;
 	private devicePowerIdeaNoteBook: any;
 	private devicePowerThinkPad: any;
-	private devicePowerSmartSettings: any;
+	private imcHelper: any;
 	private devicePowerItsIntelligentCooling: any;
 	public isShellAvailable = false;
 	public intelligentCoolingForIdeaPad: any;
@@ -24,15 +24,17 @@ export class PowerService {
 		this.devicePowerThinkPad = shellService.getPowerThinkPad();
 		if (this.devicePowerThinkPad) {
 			this.isShellAvailable = true;
-		}	
+		}
 		this.devicePowerItsIntelligentCooling = shellService.getPowerItsIntelligentCooling();
 		if (this.devicePowerItsIntelligentCooling) {
 			this.isShellAvailable = true;
 		}
 		this.intelligentCoolingForIdeaPad = shellService.getIntelligentCoolingForIdeaPad();
-		if(this.intelligentCoolingForIdeaPad) {
+		if (this.intelligentCoolingForIdeaPad) {
 			this.isShellAvailable = true;
 		}
+
+		this.imcHelper = shellService.getImcHelper();
 	}
 	// Start AlwaysOn USB ThinkPad
 	public getAlwaysOnUSBCapabilityThinkPad(): Promise<boolean> {
@@ -116,10 +118,14 @@ export class PowerService {
 	// End Conservation mode for IdeaNoteBook
 	// Express/Rapid Charging mode for IdeaNotebook
 	public getRapidChargeModeStatusIdeaNoteBook(): Promise<FeatureStatus> {
-		if (this.devicePowerIdeaNoteBook) {
-			return this.devicePowerIdeaNoteBook.rapidChargeMode.getRapidChargeModeStatus();
+		try {
+			if (this.devicePowerIdeaNoteBook) {
+				return this.devicePowerIdeaNoteBook.rapidChargeMode.getRapidChargeModeStatus();
+			}
+			return undefined;
+		} catch (err) {
+			throw err;
 		}
-		return undefined;
 	}
 	public setRapidChargeModeStatusIdeaNoteBook(value: boolean): Promise<boolean> {
 		try {
@@ -128,9 +134,10 @@ export class PowerService {
 			}
 			return undefined;
 		} catch (error) {
-			throw new Error(error.message);
+			throw error;
 		}
 	}
+
 	// End Express/Rapid Charging mode for IdeaNoteBook
 	// Start Easy Resume for ThinkPad
 	public getEasyResumeCapabilityThinkPad(): Promise<boolean> {
@@ -210,7 +217,7 @@ export class PowerService {
 	public stopMonitor() {
 		if (this.isShellAvailable) {
 			this.devicePower.stopMonitor((response: boolean) => {
-				//this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
+				// this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
 			});
 		}
 	}
@@ -370,11 +377,11 @@ export class PowerService {
 
 	// ---------- End Legacy Capable
 
-	//-------------Start IdeaPad
+	// -------------Start IdeaPad
 	public getITSModeForICIdeapad() {
 		try {
 			if (this.intelligentCoolingForIdeaPad) {
-				return this.intelligentCoolingForIdeaPad.GetITSMode();
+				return this.intelligentCoolingForIdeaPad.getITSSettings();
 			}
 			return undefined;
 		} catch (error) {
@@ -385,17 +392,17 @@ export class PowerService {
 	public setITSModeForICIdeapad(mode: string) {
 		try {
 			if (this.intelligentCoolingForIdeaPad) {
-				return this.intelligentCoolingForIdeaPad.SetITSMode(mode);
+				return this.intelligentCoolingForIdeaPad.setITSSettings(mode);
 			}
 			return undefined;
 		} catch (error) {
 			throw new Error(error.message);
 		}
 	}
-	public startMonitorForICIdeapad() {
+	public startMonitorForICIdeapad(handler: any) {
 		try {
 			if (this.intelligentCoolingForIdeaPad) {
-				return this.intelligentCoolingForIdeaPad.startMonitor();
+				return this.intelligentCoolingForIdeaPad.startMonitor(handler);
 			}
 			return undefined;
 		} catch (error) {
@@ -413,48 +420,134 @@ export class PowerService {
 			throw new Error(error.message);
 		}
 	}
-	//-------------End IdeaPad
+	// -------------End IdeaPad
 
 	// End Power smart settings
 
-		// ---------- start battery threshold settings
+	// ---------- start battery threshold settings
 
-		public getChargeThresholdInfo(): Promise<any> {
-			try {
-				if (this.devicePowerThinkPad) {
-					return this.devicePowerThinkPad.sectionChargeThreshold.getChargeThresholdInfo();
-				}
-				return undefined;
-			} catch (error) {
-				throw new Error(error.message);
+	public getChargeThresholdInfo(): Promise<any> {
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionChargeThreshold.getChargeThresholdInfo();
 			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
 		}
+	}
+	public setChargeThresholdValue(value: any): Promise<any> {
+		console.log('Battery threshold value here ----->', value);
 
-		public setChargeThresholdValue(value: any): Promise<any> {
-			//console.log('Battery threshold value here ----->', value);
-			try {
-				if (this.devicePowerThinkPad) {
-					return this.devicePowerThinkPad.sectionChargeThreshold.setChargeThresholdValue(value);
-				}
-				return undefined;
-			} catch (error) {
-				throw new Error(error.message);
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionChargeThreshold.setChargeThresholdValue(
+					value.batteryNumber, value.startValue, value.stopValue, value.checkBoxValue
+				);
 			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
 		}
+	}
 
-		public setCtAutoCheckbox(value: any): Promise<any> {
+	public setCtAutoCheckbox(value: any): Promise<any> {
 		//console.log('auto check value here ----->', value);
-			try {
-				if (this.devicePowerThinkPad) {
-					return this.devicePowerThinkPad.sectionChargeThreshold.setCtAutoCheckbox(value);
-				}
-				return undefined;
-			} catch (error) {
-				throw new Error(error.message);
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionChargeThreshold.setCtAutoCheckbox(
+					value.batteryNumber, value.startValue, value.stopValue, value.checkBoxValue
+				);
 			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
 		}
-	
-		
-		// End end battery threshold settings
-	
+	}
+
+	public setToggleOff(value: any): Promise<any> {
+		console.log('auto check value here ----->', value);
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionChargeThreshold.setToggleOff(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+
+
+	// End battery threshold settings
+
+	public getEnergyStarCapability(): Promise<any> {
+		if (this.isShellAvailable) {
+			return this.imcHelper.getIsEnergyStarCapability();
+		}
+		return undefined;
+	}
+
+	public getSmartStandbyCapability(): Promise<boolean> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyCapability();
+		}
+		return undefined;
+	}
+	public getSmartStandbyEnabled(): Promise<boolean> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyEnabled();
+		}
+		return undefined;
+	}
+
+	public getSmartStandbyActiveStartEnd(): Promise<boolean> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyActiveStartEnd();
+		}
+		return undefined;
+	}
+
+	public getSmartStandbyDaysOfWeekOff(): Promise<boolean> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyDaysOfWeekOff();
+		}
+		return undefined;
+	}
+
+	public setSmartStandbyEnabled(value: boolean): Promise<any> {
+		console.log('smart standby enabled value=>', value);
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyEnabled(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public setSmartStandbyActiveStartEnd(value: string): Promise<any> {
+		console.log('smart standby enabled value=>', value);
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyActiveStartEnd(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public setSmartStandbyDaysOfWeekOff(value: string): Promise<any> {
+		console.log('smart standby enabled value=>', value);
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyDaysOfWeekOff(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 }

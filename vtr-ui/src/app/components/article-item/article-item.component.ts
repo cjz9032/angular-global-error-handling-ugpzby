@@ -72,10 +72,11 @@ export class ArticleItemComponent implements OnInit, AfterViewInit {
 		this.metricsDatas.viewOrder++;
 
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
-			backdrop: 'static',
+			backdrop: true,
 			size: 'lg',
 			centered: true,
-			windowClass: 'Article-Detail-Modal'
+			windowClass: 'Article-Detail-Modal',
+			keyboard : false
 		});
 
 		articleDetailModal.componentInstance.articleId = this.item.Id;

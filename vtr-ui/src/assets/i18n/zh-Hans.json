@@ -37,24 +37,38 @@
                     },
                     "driverPopup": {
                         "headerText": "Driver Install Required",
-                        "text": "You need install driver for RAM Overclock to  make it effective",
+                        "text": "Install driver to activate RAM Overclock,",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "自动关闭",
                     "networkBoost": "网络提升",
                     "hybridMode": "混合模式",
-                    "touchpadLock": "触摸板锁定"
+                    "touchpadLock": "触摸板锁定",
+                    "lightingDriverPopup": {
+                        "headerText": "Driver Install Required",
+                        "text": "Install driver to activate lighting",
+                        "button": "Install",
+                        "link": "cancel"
+                    },
+                    "lightingColorMessage": {
+                        "text": "Selecting color not available to this effect."
+                    }
                 },
                 "systemTools": {
                     "power": "功率",
                     "media": "媒体",
                     "macroKey": "Marco Key",
                     "hardwareScan": "硬件扫描",
-                    "systemUpdate": "系统更新"
+                    "systemUpdate": "系统更新",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "照明定制"
+                    "title": "照明定制",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "使用Vantage Edge，您的设置将根据使用情况自动调整。游戏时的最佳性能，更长的电池续航时间。",
@@ -71,6 +85,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "将鼠标悬停在CPU / GPU / RAM和不同驱动器上以显示其描述，包括制造和型号信息"
+                },
+                "systemStatus": {
+                    "info": "INFO"
                 }
             }
         },
@@ -111,11 +128,12 @@
                 },
                 "buttons": {
                     "start": "START RECORDING",
-                    "stop": "STOP RECORDING"
+                    "stop": "STOP RECORDING",
+                    "numberPrefix": "NUM"
                 },
                 "recording": {
                     "title": "START TYPING",
-                    "description": "20 inputs with in 20 seconds can be recorded."
+                    "description": "20 inputs within 20 seconds can be recorded."
                 },
                 "recorded": {
                     "title": "MACRO KEY FOR ",
@@ -204,7 +222,7 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure to clear this macro key?"
+                    "title": "Are you sure you want to clear this macro key?"
                 },
                 "timeoutRecording": {
                     "title": "Time Out For Recording.",
@@ -223,13 +241,16 @@
                     "btnCancel": "Cancel"
                 },
                 "btnOk": "OK"
+            },
+            "recording": {
+                "title": "Recording Macro Key For"
             }
         },
         "lightingProfile": {
             "title": "Lighting",
             "effect": {
                 "option1": {
-                    "title": "Static"
+                    "title": "On"
                 },
                 "option2": {
                     "title": "Flicker"
@@ -241,50 +262,145 @@
                     "title": "Wave"
                 },
                 "option5": {
-                    "title": "Music"
-                },
-                "option6": {
                     "title": "Smooth"
                 },
-                "option7": {
+                "option6": {
                     "title": "CPU Temperature"
                 },
-                "option8": {
+                "option7": {
                     "title": "CPU Utilization"
                 },
-                "option9": {
-                    "title": "Response"
+                "option8": {
+                    "title": "Off"
                 },
-                "option10": {
-                    "title": "Ripple"
+                "apply": {
+                    "title": "APPLY"
                 },
-                "option11": {
-                    "title": "No Light"
+                "applied": {
+                    "title": "APPLIED"
+                }
+            },
+            "brightness": {
+                "text1": {
+                    "title": "*Brightness setting doesn't apply on "
+                },
+                "text2": {
+                    "title": " effect"
+                }
+            },
+            "lightingSingleLightingOption": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "colourwheel": {
+                "text1": {
+                    "title": "Selecting colour not available to this effect."
+                },
+                "text2": {
+                    "title": "APPLY"
+                },
+                "text3": {
+                    "title": "APPLIED"
+                },
+                "text4": {
+                    "title": "R:"
+                },
+                "text5": {
+                    "title": "G:"
+                },
+                "text6": {
+                    "title": "B:"
+                },
+                "text7": {
+                    "title": "Color"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
                 }
             }
         }
     },
     "common": {
         "menu": {
-            "dashboard": "首页",
+            "dashboard": "仪表板",
             "device": {
-                "title": "我的设备",
-                "sub1": "设备信息",
-                "sub2": "设备设置",
-                "sub3": "系统升级",
-                "sub4": "智能助理"
+                "title": "设备",
+                "sub1": "我的设备",
+                "sub2": "我的设备设置",
+                "sub3": "系统更新",
+                "sub4": "智能帮助"
             },
             "security": {
-                "title": "安全顾问",
-                "sub1": "我的安全顾问",
-                "sub2": "病毒防护",
+                "title": "安全性",
+                "sub1": "我的安全性",
+                "sub2": "反病毒",
                 "sub3": "WiFi 安全",
-                "sub4": "密码保险箱",
-                "sub5": "网络保护",
+                "sub4": "密码安全状况",
+                "sub5": "因特网保护",
                 "sub6": "Windows Hello"
             },
             "support": "支持服务",
-            "homeSecurity": "Connected Home",
+            "homeSecurity": "互联家庭网络",
             "privacy": "隐私"
         },
         "securityAdvisor": {
@@ -313,19 +429,17 @@
             "question2": "如何刷新您的电脑",
             "question3": "如何了解计算机的 CPU 情况",
             "question4": "检查计算机的电池使用情况",
-            "question5": "​像使用平板电脑一样使用您的计算机",
-            "question6": "了解您的个人助理 Cortona"
+            "question5": "像使用平板电脑一样使用您的计算机",
+            "question6": "了解您的个人助理 Cortana"
         },
         "ui": {
             "back": "返回",
-            "on": "开",
-            "off": "关",
+            "on": "ON",
+            "off": "OFF",
             "collapse": "折叠",
-            "expand": "扩大",
-            "loader": {
-                "text1": "取",
-                "text2": "状态"
-            }
+            "expand": "展开",
+            "loader": "获取状态",
+            "loading": "载入中..."
         }
     },
     "privacy": {
@@ -344,7 +458,7 @@
         "personal": "个人",
         "custom": "自定义",
         "skip": "跳过",
-        "next": "下一个",
+        "next": "下一页",
         "interests": "您感兴趣的是什么？",
         "howOnesMachinUsed": "请单击一项符合您使用此计算机的用途描述",
         "games": "游戏",
@@ -367,22 +481,30 @@
         },
         "feedback": {
             "title": "提供反馈",
-            "subtitle": "告诉我们您对 VANTAGE 的想法",
+            "subtitle": "告诉我们您对 Vantage 的看法。",
             "button": "提供反馈",
             "form": {
                 "email": "联系方式（如果您不喜欢可留空）",
-                "comments": "内容",
+                "comments": "意见...",
                 "button": "提交",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "感谢您的反馈意见 ！"
-                }
+                    "feedbackSuccess": "感谢您的反馈！"
+                },
+                "question1": "您喜欢 Vantage 的新风格吗？",
+                "question2": "您认为性能是否可以接受？",
+                "question3": "您将来会更频繁地使用该应用程序吗？",
+                "yes": "是",
+                "no": "否",
+                "tips1": "如有任何其他意见，请提出",
+                "sendFeedback": "发送反馈",
+                "submitScreenShot": "提交屏幕截图"
             }
         },
         "quickSettings": {
             "title": "您的设置",
             "microphone": "麦克风",
-            "cameraPrivacy": "摄像头挡板",
+            "cameraPrivacy": "相机",
             "eyeCareMode": "护眼模式"
         },
         "systemStatus": {
@@ -391,7 +513,7 @@
             "memory": {
                 "title": "内存",
                 "detail": {
-                    "notFound": "找不到记忆",
+                    "notFound": "找不到内存",
                     "of": "/"
                 }
             },
@@ -412,7 +534,7 @@
                 }
             },
             "systemUpdate": {
-                "title": "系统升级",
+                "title": "系统更新",
                 "detail": {
                     "update": "更新"
                 }
@@ -421,36 +543,36 @@
     },
     "device": {
         "myDevice": {
-            "title": "设备信息",
-            "subtitle": "设备状态",
+            "title": "我的设备",
+            "subtitle": "我的设备状态",
             "serial": "序列号",
             "productNumber": "产品编号",
             "biosVersion": "BIOS 版本",
             "learnMore": "了解更多信息",
             "freeMemory": "可用内存",
             "systemUpdate": {
-                "title": "系统升级",
+                "title": "系统更新",
                 "notFound": "未找到系统更新",
                 "detail": {
-                    "uptoDate": "软件已更新",
-                    "updatedOn": "更新",
+                    "uptoDate": "软件为最新",
+                    "updatedOn": "更新时间",
                     "outdated": "软件已过时",
-                    "neverRanUpdate": "从未运行过更新"
+                    "neverRanUpdate": "从未运行更新"
                 }
             },
             "extendedWarranty": "延长保修",
             "processor": {
                 "title": "处理器",
-                "notFound": "找不到处理器"
+                "notFound": "未找到处理器"
             },
             "memory": {
                 "title": "内存",
-                "notFound": "找不到记忆",
-                "ram": "内存"
+                "notFound": "未找到内存",
+                "ram": "RAM"
             },
             "diskspace": {
                 "title": "磁盘空间",
-                "notFound": "磁盘未找到"
+                "notFound": "未找到磁盘"
             },
             "software": "软件为最新",
             "updated": "已更新",
@@ -458,35 +580,45 @@
             "expired": "到期时间：",
             "of": "/",
             "warranty": {
-                "notFound": "保修未找到",
+                "notFound": "未找到保修",
                 "detail": {
                     "title": "延长保修",
                     "inWarranty": "在保修期内",
                     "daysRemaining": "剩余天数",
-                    "outOfWarranty": "保修期已过 ",
+                    "outOfWarranty": "保修期已过",
                     "expiredOn": "到期时间：",
-                    "notAvailable": "无保修信息",
-                    "support": "支持"
+                    "notAvailable": "未发现保修信息",
+                    "support": "支持服务"
                 }
             },
-            "helpful": "常见问题"
+            "helpful": "帮助内容"
         },
         "deviceSettings": {
             "helpful": "帮助内容",
             "batteryGauge": {
                 "title": "电池量表",
-                "subtitle": "Battery",
+                "subtitle": "电池运行状况",
                 "hours": "小时",
                 "hour": "小时",
                 "minutes": "分钟",
-                "minute": "分钟",
+                "minute": "分",
                 "charge": "充满电所需的时间",
                 "button": "查看电池详细信息",
+                "updating": "Updating",
+                "thresholdNote": {
+                    "note": "Note: ",
+                    "note1": "To extend the battery lifespan, you have set your battery to stop charging at ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and "
+                },
+                "voltageError": "Battery voltage incorrect",
+                "batteryNotDetected": "No battery detected",
                 "details": {
                     "title": "电池详细信息",
                     "primary": "主电池",
                     "secondary": "备用电池",
-                    "tertiary": "仪表板",
+                    "tertiary": "三级电池",
                     "status": "状态",
                     "wattage": "功率",
                     "barcode": "条码",
@@ -508,16 +640,21 @@
                     "chargeStatusString": {
                         "error": "错误",
                         "notinstalled": "未安装",
-                        "noactivity": "没有活动",
-                        "charging": "充电",
-                        "discharging": "放电",
-                        "acdischarging": "放电（带交流）"
+                        "noactivity": "无活动",
+                        "charging": "正在充电",
+                        "discharging": "正在放电",
+                        "acdischarging": "正在放电（使用交流电）"
                     },
                     "deviceChemistry": {
                         "li-polymer": "锂聚合物",
                         "li-ion": "锂离子电池",
                         "li_polymer": "锂聚合物",
-                        "li_ion": "锂离子电池"
+                        "li_ion": "锂离子电池",
+                        "silver-zinc": "Silver-Zinc",
+                        "silver_zinc": "Silver-Zinc",
+                        "nicd": "NiCd",
+                        "nimh": "NiMH",
+                        "unknown": "Unknown"
                     },
                     "manufacturer": {
                         "title": "制造商",
@@ -527,17 +664,17 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "该系统可能不支持电池",
                         "description": "不是联想制造或授权的正版。系统将继续启动，但可能不会使用未经授权的电池充电。",
                         "description1": "注意：",
                         "description2": "Lenovo对未经授权的电池的性能或安全性不承担任何责任，并且不对因使用而导致的故障或损坏提供任何保证。"
                     },
                     "Good": {
-                        "title": "电池状况良好"
+                        "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "电池因正常而发生故障",
-                        "description": "穿。电池无法充电。更换电池。"
+                        "description": "穿。电池无法充电。更换电池。",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "发生电池错误。",
@@ -550,35 +687,54 @@
                     "NotGood": {
                         "title": "电池状况不佳"
                     },
-                    "LimitedACAdapterSupport": {
-                        "title": "有限支持AC适配器"
-                    },
                     "NotSupportACAdapter": {
-                        "title": "不支持AC适配器"
+                        "title": "不支持AC适配器",
+                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
                     },
-                    "ACAdapterNotSupported": {
-                        "title": "不支持AC适配器。",
-                        "description": "您的Lenovo计算机不支持此AC适配器。它可能会导致突然关机。请连接正确的AC适配器"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC适配器无法提供足够的电量",
-                        "description": "您的Lenovo计算机将影响系统性能和充电速度。请重新连接正确的AC适配器。"
+                    "LimitedACAdapterSupport": {
+                        "title": "有限支持AC适配器",
+                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "MissingDriver": {
-                        "title": "Lenovo Power Manager驱动程序未安装或无法正常工作。请运行Windows Update以安装最新的驱动程序",
+                        "title": "The Lenovo Power Manager driver",
                         "description": "未安装或无法正常工作。请运行Windows Update以安装最新的驱动程序"
                     },
                     "StoreLimitation": {
                         "title": "电池只能存放",
                         "description1": "的",
                         "description2": "它是原始的完全充电容量"
+                    },
+                    "HighTemperature": {
+                        "title": "Discharging",
+                        "description": "has been stopped because the",
+                        "description1": "battery temperature is too high."
+                    },
+                    "TrickleCharge": {
+                        "description": "The battery was",
+                        "description1": "completely discharged",
+                        "description2": "and needs to be recharged. This might take ten hours or more."
+                    },
+                    "OverheatedBattery": {
+                        "description": "The battery is",
+                        "description1": "too hot.",
+                        "description2": "Remove it from the computer and cool it to room temperature."
+                    },
+                    "PermanentError": {
+                        "description": "The battery has",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
+                    },
+                    "HardwareAuthenticationError": {
+                        "description": "The battery installed is",
+                        "description1": "not supported",
+                        "description2": "by the system and will not charge. Please replace the battery with the correct Lenovo battery for this system."
                     }
                 }
             },
             "power": {
                 "title": "电源管理",
                 "subtitle": "电源设置",
-                "description": "在此部分中可动态调节散热性能并最大化电池使用时间。它还具有其他常用的电源相关功能。您可以检查此部分中的缺省设置，并根据需要自定义您的系统。",
+                "description": "在此部分中可动态调节散热性能并最大限度提升电池寿命。它还具有其他常用的电源相关功能。您可以检查此部分中的缺省设置，并根据需要自定义您的系统。",
                 "jumpto": {
                     "title": "跳到设置",
                     "battery": "电池",
@@ -588,44 +744,66 @@
                 },
                 "powerSmartSettings": {
                     "title": "电源智能设置",
-                    "subtitle": "智能冷却",
-                    "subtitle1": "电池和安静",
+                    "subtitle": "智能散热",
+                    "subtitle1": "电池和安静状态",
                     "description1": "此功能动态调节散热设置以满足您的需求。此功能开启时，在手持或空闲状态下可调节设置使设备保持较低温度或较低噪声。而设备放置在稳定平面上时，此功能可优化性能。此功能关闭时，您可以手动设置散热优先级。",
                     "description2": "智能散热可调节风扇速度、最高表面温度和性能。此功能具有以下模式，且现在支持通过 Windows 性能电源滑块访问。",
-                    "description3": "智能散热可自动平衡散热性能，以根据您的需求进行调整。智能散热功能可调节性能设置，以便在握持笔记本电脑时提供更舒适的表面。当设备位于桌面上时，此功能可优化性能。",
-                    "readMore": "阅读更多.",
+                    "description3": "智能冷却功能自动平衡散热性能以满足您的需求。当笔记本电脑处于手持状态时，智能冷却功能可调整性能设置，提供一个温度较低的表面，从而使握持者感到舒适。当该设备放置在桌面上时，此功能可优化性能。",
+                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
+                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider",
+                    "readMore": "阅读更多信息。",
                     "gotoWindows": {
                         "title": "转到 Windows 设置",
-                        "modalBodyText1": "单击系统托盘上的Windows电池图标以访问Windows性能电源滑块"
+                        "modalBodyText1": "单击系统托盘上的 Windows 电池图标以访问 Windows 性能电源滑块"
                     },
                     "intelligentCooling": {
-                        "title": "智能冷却",
+                        "title": "智能散热",
                         "description": "",
                         "tooltip": "",
-                        "optimize": "优化系统",
-                        "apsHint": "要启用智能散热，您必须安装并启用Lenovo Active Protection System。",
+                        "optimize": "优化系统以",
+                        "apsHint": "要启用智能冷却，必须安装并启用 Lenovo Active Protection System。",
                         "options": {
-                            "quiteCool3": "酷模式",
+                            "quiteCool3": "低温模式",
                             "performance3": "高性能",
                             "quiteCool4": "安静和低温模式",
                             "performance4": "性能",
                             "quiteCool5": "安静和低温模式",
-                            "performance5": "性能"
+                            "performance5": "性能",
+                            "batterySaving": "Battery Saving",
+                            "performance13": "Performance",
+                            "quiteCool13": "Cool & Quiet",
+                            "performance14": "Extreme Performance",
+                            "quiteCool14": "Intelligent Cooling"
                         },
                         "readMore": {
                             "mode1": "安静模式",
                             "mode2": "平衡模式",
                             "mode3": "性能模式",
-                            "line1": "滑块位于最左边。降低风扇速度和性能以使计算机温度更低、更安静，并且可获得最佳的电池使用时间。",
+                            "line1": "滑块位于最左边。降低风扇速度和性能以使计算机温度更低、更安静，并且可获得最佳的电池寿命。",
                             "line2": "滑块位于中央。以动态方式平衡风扇速度和性能以获得最佳体验。",
-                            "line3": "滑块位于最右边。提高风扇速度和允许的表面温度以获得最大性能。"
+                            "line3": "滑块位于最右边。提高风扇速度和允许的表面温度以获得最大性能。",
+                            "line4": "More info"
+                        },
+                        "selectedModeText": {
+                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
+                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
+                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                        },
+                        "intelligentCoolingModesModal": {
+                            "title": "Change intelligent cooling modes",
+                            "close": "close",
+                            "coolingModesList": {
+                                "list1": "Click on the windows battery-icon in the toolbar",
+                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                            }
                         }
                     },
                     "nonintelligentCooling": {
                         "options": {
-                            "intelligentCooling": "智能冷却",
-                            "extremeCooling": "极端的表现",
-                            "battery&Quite": "电池和安静"
+                            "intelligentCooling": "智能散热",
+                            "extremeCooling": "极致性能",
+                            "battery&Quite": "电池和安静状态"
                         }
                     }
                 },
@@ -633,7 +811,7 @@
                     "title": "电源设置",
                     "alwaysUSB": {
                         "title": "持续 USB 供电",
-                        "description": "计算机处于睡眠、休眠或关机模式时，通过计算机上的持续 USB 供电接口为 USB 设备充电。可从黄色或有这些丝网印刷图标的 USB 接口为智能手机或平板电脑快速充电：",
+                        "description": "计算机处于睡眠、休眠或关机模式时，通过计算机上的持续 USB 供电接口为 USB 设备充电。可从黄色或以丝网方式印刷这些图标的 USB 接口为智能手机或平板电脑快速充电：",
                         "checkbox": "计算机处于关闭状态时支持从笔记本电脑电池进行 USB 充电。"
                     },
                     "easyResume": {
@@ -653,18 +831,18 @@
                     "title": "电池设置",
                     "batteryThreshold": {
                         "title": "电池充电阈值",
-                        "description": "如果主要在连接交流电源适配器时使用计算机，仅偶尔使用电池供电，则可通过将最大电量值设置为低于 100%，延长电池使用期限。这一点很有用，因为偶尔使用的电池保持不充满的电量可延长使用期限。",
-                        "tooltip": "如果电池当前的充电电量高于停止充电阈值，则需要拔下电源，直至电池放电至停止充电阈值或低于停止充电阈值。 根据电池状态（新旧程度），开始或停止充电的精确点最大可有 2% 的相差幅度。如果启用此功能，建议偶尔执行一次&ldquo;电池量表重置&rdquo;，以确保电池运行状况报告准确。",
+                        "description": "如果主要在连接交流电源适配器时使用计算机，仅偶尔使用电池供电，则可通过将最大充电量设置为低于 100% 的值，以延长电池寿命。这一点很有用，因为偶尔使用的电池保持不充满的电量可延长使用期限。",
+                        "tooltip": "如果电池当前的充电电量高于停止充电阈值，则需要拔下电源，直至电池放电至停止充电阈值或低于停止充电阈值。根据电池状态（新旧程度），开始或停止充电的精确点位最多可有 2% 的相差幅度。如果启用此功能，建议偶尔执行一次“电池量表重置”，以确保电池运行状况报告准确。",
                         "note": "注意",
                         "noteInfo": "电池充电阈值仍未完全激活。拔下电源线，让电池电量耗尽或低于停止充电阈值。",
                         "readMoreText": "阅读更多。",
                         "settings": {
-                            "title1": "内置电池的阈值",
-                            "title2": "可拆卸电池的阈值"
+                            "title1": "内置电池阈值",
+                            "title2": "可拆卸电池阈值"
                         },
                         "popup": {
                             "title": "启用电池充电阈值",
-                            "description1": "在您使用此设备时，启用自定义电池充电可延长电池的整体使用寿命。然而，未能完全充满电将减少电池使用寿命。",
+                            "description1": "在您使用此设备时，启用自定义电池充电可延长电池的整体使用寿命。然而，未能完全充满电将缩短电池寿命。",
                             "description2": "为完全发挥此功能的作用，请拔下计算机的电源插头并消耗电池电量，使电池电量达到或低于停止充电阈值。",
                             "enable": "启用",
                             "cancel": "取消"
@@ -678,20 +856,41 @@
                     "expressCharging": {
                         "title": "快速充电",
                         "description": "快速充电可用比常规模式更快的速度将电池充满电。",
-                        "tooltip": "快速充电可用比常规模式更快的速度将电池充满电。"
+                        "tooltip": "快速充电能够以更快的速度为系统电池充电，但这样可能会缩短电池寿命。"
                     },
                     "conservationMode": {
                         "title": "节电模式",
-                        "description": "此功能可有助于延长插电使用时的电池寿命。<br>启用此模式时，电池只充至容量的 55-60%，从而最大化电池使用寿命。但是，这将缩短断开交流电源后的计算机使用时间。",
+                        "description": "此功能有助于延长插电使用时的电池寿命。<br>启用此模式时，电池只充至容量的 55-60%，从而最大限度提升电池寿命。但是，这将缩短断开交流电源后的计算机使用时间。",
                         "tooltip": {
-                            "line1": "此功能可有助于延长插电使用时的电池寿命。",
-                            "line2": "启用此模式时，电池只充至容量的 55-60%，从而最大化电池使用寿命。但是，这将缩短断开交流电源后的计算机使用时间。",
+                            "line1": "此功能有助于延长插电使用时的电池寿命。",
+                            "line2": "启用此模式时，电池只充至容量的 55-60%，从而最大限度提升电池寿命。但是，这将缩短断开交流电源后的计算机使用时间。",
                             "line3": "注：快速充电和节电模式无法同时进行。如果启用其中一个模式，则将自动关闭另一个模式。"
                         }
                     },
                     "airPlanePower": {
                         "title": "飞行电源模式",
                         "description": "通过控制系统耗电量保护飞机交流电源插座。启用飞行电源模式后，计算机将通过限制电池充电速度和系统性能来降低耗电量。"
+                    }
+                },
+                "energyStar": {
+                    "title": "Energy Star",
+                    "description": "ENERGY STAR 认证产品"
+                },
+                "smartStandby": {
+                    "title": "智能待机",
+                    "description": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的快速启动时间。",
+                    "tooltip": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。",
+                    "timer": {
+                        "heading": "设置通常使用此计算机的时间",
+                        "subHeading1": "开始",
+                        "subHeading2": "结束",
+                        "subHeading3": "将此计划用于",
+                        "endTimeNote": "结束时间必须在自开始时间起的 20 小时之内",
+                        "timeUnits": {
+                            "unit1": "小时",
+                            "unit2": "分钟",
+                            "unit3": "上午/下午"
+                        }
                     }
                 }
             },
@@ -705,7 +904,7 @@
                     "description": "根据您使用的不同应用程序自动调节音频设置。",
                     "dolby": {
                         "title": "自动 Dolby 音频设置",
-                        "tooltip": "自动Dolby Audio设置可将Dolby音频设置配置为适用于您正在使用的不同应用程序的模式，以增强您的音频体验。",
+                        "tooltip": "自动 Dolby 音频设置可将 Dolby 音频设置配置为适用于您正在使用的不同应用程序的适当模式，从而提升音频体验。",
                         "options": {
                             "dynamic": "动态",
                             "movie": "影片",
@@ -716,25 +915,25 @@
                     },
                     "voip": {
                         "title": "自动 VoIP 音频优化",
-                        "tooltip": "在VoIP呼叫期间自动切换到Dolby Voice模式，以提供清晰，一致的语音质量。"
+                        "tooltip": "在 VoIP 通话中自动切换到 Dolby 语音模式以实现清晰、连续的语音质量。"
                     }
                 },
                 "microphone": {
                     "title": "麦克风",
                     "note": {
-                        "title": "注",
-                        "description": "Lenovo Vantage无权访问您的麦克风。请打开Lenovo Vantage应用程序的麦克风访问权限。"
+                        "title": "便笺",
+                        "description": "Lenovo Vantage 无权访问您的麦克风。请允许 Lenovo Vantage 应用程序访问您的麦克风。"
                     },
                     "microphone": {
                         "title": "麦克风",
-                        "tooltip": "可以通过调整麦克风音量并指定合适的模式来定制您的麦克风效果。"
+                        "tooltip": "您可以通过调整麦克风音量并指定合适的模式来自定义您的麦克风效果。"
                     },
                     "volume": {
                         "title": "麦克风音量",
                         "description": "Dolby 音频可为您喜爱的所有内容提供丰富、清晰、震撼的音效，请为您的内容和设备选择合适的模式。",
                         "options": {
                             "silent": "静音",
-                            "loud": "大音量​"
+                            "loud": "大音量"
                         }
                     },
                     "suppress": {
@@ -776,47 +975,58 @@
                     "title": "显示",
                     "eyeCareMode": {
                         "title": "护眼模式",
-                        "checkbox": "设定从日出到日落的护眼模式",
+                        "checkbox": "设定从日落到日出的护眼模式",
                         "options": {
-                            "warm": "暖（更护眼）​",
+                            "warm": "暖（更护眼）",
                             "cold": "冷"
                         },
                         "reset": "重置温度",
                         "tooltip": "护眼模式会调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。",
-                        "onSunsetToSunriseScheduleDescription": "安排从日落到日出的眼保健模式",
+                        "onSunsetToSunriseScheduleDescription": "设定从日落到日出的护眼模式",
                         "note": {
                             "title": "注",
-                            "description": "Lenovo Vantage需要访问您的位置信息，以计算您所在地区的日落和日出时间。"
+                            "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日落日出时间。"
                         }
+                    },
+                    "oledPowerSettings": {
+                        "title": "OLED 电源设置",
+                        "description": [
+                            "通过有选择地使显示屏的部分区域变暗，计算机的 OLED 显示屏还能降低功耗并延长电池使用时间。",
+                            "与此同时，我们建议调暗不频繁变化的工具栏和显示屏的其他区域，以延长显示屏的总使用时间。"
+                        ],
+                        "reset": "重置温度",
+                        "tooltip": "此功能可以有选择地使显示屏的部分区域变暗，从而降低功耗并延长电池使用时间。",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     },
                     "dispColorTemp": {
                         "title": "显示色温",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "暖（更护眼）",
+                            "cold": "冷"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "重置温度",
+                        "tooltip": "护眼模式会调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。",
+                        "onSunsetToSunriseScheduleDescription": "设定从日落到日出的护眼模式",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "注",
+                            "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日落日出时间。"
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
-                    },
-                    "oledPowerSettings": {
-                        "title": "OLED Power Settings",
-                        "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
-                        ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "title": "隐私保护",
+                        "description": "此功能可防止其他人偷看您的屏幕。当此功能开启时，将改变您显示屏的视角，使您周围的人无法偷看您的隐私。您还可以通过按“Fn+D”键切换模式。",
+                        "note": "隐私保护在屏幕纵向模式下无法工作。在此模式下，仍可从侧面看到您的屏幕。",
+                        "labelText": "输入密码时启用此功能"
                     }
                 },
                 "camera": {
@@ -828,7 +1038,7 @@
                     "url": "转到 Windows 隐私设置",
                     "cameraPrivacy": {
                         "title": "摄像头隐私模式",
-                        "tooltip": "启用&ldquo;隐私&rdquo;设置后，摄像头停止发送实时图像。请仅在不希望在视频通话时与其他人共享您的图像时开启此设置。"
+                        "tooltip": "启用“隐私”设置后，摄像头停止发送实时图像。请仅在不希望在视频通话时与其他人共享您的图像时开启此设置。"
                     },
                     "camera": {
                         "title": "摄像头",
@@ -839,100 +1049,229 @@
                     "contrast": "对比度",
                     "autoExposure": "自动曝光",
                     "autoFocus": "自动对焦",
-                    "notAvailable": "相机不可用",
+                    "notAvailable": "摄像头不可用",
                     "camerablur": {
-                        "title": "相机背景模糊",
-                        "caption": "当您使用相机进行任何视频通话或拍照时，此功能会模糊您的背景。您可以从以下选项中选择不同的效果。",
+                        "title": "摄像头背景模糊",
+                        "caption": "当您使用摄像头进行视频通话或拍摄照片时，该功能可以使背景变得模糊。您可以从下面的选项中选择不同的效果。",
                         "blurMode": "模糊模式",
                         "comicMode": "漫画模式",
-                        "sketchMode": "草图模式"
+                        "sketchMode": "素描模式"
+                    },
+                    "cameraLoadingFailed": {
+                        "inUseTitle": "CAMERA IS IN USE",
+                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
+                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
+                        "loadingFailedDescription": "Close the app and try again."
+                    }
+                }
+            },
+            "inputAccessories": {
+                "title": "输入和附件",
+                "subtitle": "输入和附件设置",
+                "description": "Lenovo 智能感知结合计算机上的各种传感器来检测您的活动，并调整设置以实现最优电源管理",
+                "inputAccessory": {
+                    "title": "智能键盘",
+                    "hiddenKeyboardFunctions": {
+                        "title": "隐藏键盘功能",
+                        "description": "同时按下键盘左下角的 Fn 键和其他按键，即可调用下列键盘映射所示的命令"
+                    },
+                    "firstKeyObj": {
+                        "tittle": "Fn + Tab",
+                        "description": "在高分辨率显示屏上启用缩放功能",
+                        "image": ""
+                    },
+                    "secondKeyObj": {
+                        "tittle": "Fn + 4",
+                        "description": "进入睡眠模式",
+                        "image": ""
+                    },
+                    "thirdKeyObj": {
+                        "tittle": "Fn + D",
+                        "description": "开启或关闭隐私保护",
+                        "image": ""
+                    },
+                    "fourthKeyObj": {
+                        "tittle": "Fn + Q",
+                        "description": "在性能模式和安静模式之间切换",
+                        "image": ""
+                    },
+                    "fifthKeyObj": {
+                        "tittle": "Fn + 空格键",
+                        "description": "更改键盘背光状态",
+                        "image": ""
+                    }
+                },
+                "userDefinedKey": {
+                    "title": "用户自定义键",
+                    "caption": "您可以对标有星形图标的按键设置用户自定义功能",
+                    "tooltip": "Content to be filled",
+                    "dropDown": {
+                        "title": "用户自定义键的操作",
+                        "note": "注：可使用该功能输入经常输入的内容，如电子邮件地址或邮寄地址。Lenovo 建议不要使用该功能存储或输入密码或其他私密信息。",
+                        "options": {
+                            "option1": "请选择",
+                            "option2": "打开网站",
+                            "option3": "输入文字"
+                        }
+                    },
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
                     }
                 }
             }
         },
         "smartAssist": {
-            "title": "智能助手",
-            "description": "Lenovo Intelligent Sensing结合了计算机上的传感器来检测您的活动，调整设置以实现最佳电源管理并保护您的隐私。",
+            "title": "智能帮助",
+            "description": "Lenovo 智能感知结合计算机上的各种传感器来检测您的活动，调整设置以实现最优电源管理并保护您的隐私。",
             "jumpTo": {
                 "title": "跳到设置",
-                "security": "安全",
+                "security": "安全性",
                 "screen": "屏幕",
                 "media": "媒体",
-                "voice": "语音"
+                "voice": "语音",
+                "APS": "APS"
             },
             "intelligentSecurity": {
                 "title": "智能安全",
-                "readMore": "阅读更多",
+                "readMore": "阅读更多信息",
                 "HumanPresenceDetection": {
-                    "title": "人体存在检测",
-                    "tooltip": "单击此处重置人体存在检测设置。"
+                    "title": "人类存在检测",
+                    "tooltip": "单击此处以重置人类存在检测设置。"
                 },
                 "humanPresenceDetection": {
                     "title": "用户存在感知",
-                    "tooltip": "单击此处重置人体存在检测设置。"
+                    "tooltip": "单击此处以重置人类存在检测设置。"
                 },
                 "zeroTouchLogin": {
-                    "title": "零接触登录",
-                    "caption": "当您在电脑前或接近电脑时，此功能会自动解锁或唤醒电脑。"
+                    "title": "零触摸登录",
+                    "caption": "当您坐在计算机面前或接近计算机时，此功能会自动解锁或唤醒计算机。"
                 },
                 "zeroTouchLock": {
-                    "title": "零接触锁定",
-                    "caption": "当未检测到用户状态时，此功能将使显示屏变暗并锁定计算机。当您离开计算机无人看管和解锁时，它可以减少未经授权访问计算机的机会。当您未检测到存在时，它还可以通过将系统置于Modern Standby来降低功耗。",
+                    "title": "零触摸锁定",
+                    "caption": "此功能将使显示变暗并在未检测到用户存在时锁定计算机。当您在无人看管且未锁定的状态离开计算机时，它可以降低未经授权访问计算机的机会。它还可以在未检测到您的存在时让系统进入现代待机状态，从而减少耗电量。",
                     "autoScreenLockTimer": {
-                        "title": "自动屏幕锁定时器",
+                        "title": "自动屏幕锁定计时器",
                         "radioButton": {
-                            "fast": "快速",
-                            "medium": "介质",
+                            "fast": "快",
+                            "medium": "中等",
                             "slow": "慢"
                         },
-                        "toolTipContent": "选择所需选项，以便在未检测到状态时以快/中/慢速度锁定屏幕。但是，屏幕锁定的时间也会受到实际用户方案，传感器功能和Windows屏幕超时设置的影响。因此，我们强烈建议您在离开前立即锁定系统。"
+                        "toolTipContent": "当未检测到您的存在时，选择希望的方式以较快/中等/较慢的速度来锁定屏幕。然而，屏幕锁定的时间也会受到实际用户场景、传感器功能和 Windows 屏幕超时设置的影响。因此，我们强烈建议您在离开时即锁定系统。"
                     }
                 },
                 "distanceSensitivityAdjusting": {
                     "title": "距离灵敏度调整",
-                    "caption": "自动距离调整将通过AI引擎自动更新检测距离。",
+                    "caption": "自动距离调整将会通过人工智能引擎自动更新检测距离。",
                     "options": {
-                        "near": "近",
-                        "far": "远"
+                        "near": "附近",
+                        "far": "较远"
                     }
                 },
                 "note": {
-                    "description1": "此功能依赖于Windows Hello。确保在Windows设置中打开了脸部识别功能。",
-                    "description2": "该功能使用传感器和相机来检测您的存在。但是，该功能不会收集，保存泄漏任何个人数据或图像。",
-                    "description3": "1.如果您的计算机处于帐篷，平板电脑或支架模式，则这些功能可能无法正常工作。",
-                    "description4": "2.如果您的计算机处于休眠模式或已关闭。自动红外摄像机登录无效。",
-                    "description5": "3.请将电脑屏幕调整到合适的角度，以便红外热像仪能识别您的脸部以便自动登录。"
+                    "description1": "此功能依赖于 Windows Hello。确保在 Windows 设置中已开启面部识别。",
+                    "description2": "该功能使用传感器和摄像头来检测您的存在。然而，该功能不会收集任何个人数据。",
+                    "description3": "1.如果您的计算机处于帐篷模式、平板电脑模式或站立模式，则这些功能可能无法正常工作。",
+                    "description4": "2.如果您的计算机处于休眠模式或已关机。自动红外摄像头登录将无法工作。",
+                    "description5": "3.请将计算机屏幕调整至适当的角度，以便红外摄像头能够识别您的面部，进行自动登录。"
                 },
                 "WindowsLink": {
-                    "goToWindowsHello": "转到Windows Hello设置",
-                    "screenTimeoutSettings": "转到屏幕超时设置"
+                    "goToWindowsHello": "转到 Windows Hello 设置",
+                    "screenTimeoutSettings": "转至屏幕超时设置"
                 },
-                "resetToDefault": "重置为默认设置"
+                "resetToDefault": "重置为缺省设置"
             },
             "intelligentScreen": {
                 "title": "智能屏幕",
-                "description": "Lenovo Intelligent Sensing结合了计算机上的各种传感器来检测您的活动并调整电源管理设置。例如，如果检测到您正在行走，它会使您的显示屏变暗，但如果检测到您正在阅读，则不会使其变暗。",
+                "description": "Lenovo 智能感知通过计算机上的各种传感器检测您的活动并调整设置以进行电源管理。例如，如果它检测到您正在走路，则将让显示屏变暗，但如果它检测到您正在阅读，则不会让显示屏变暗。",
                 "autoScreenOff": {
                     "title": "自动关闭屏幕",
-                    "caption": "面朝下或行走时自动关闭显示。",
-                    "note": "如果在Windows设置系统部分中将电源计划设置设置为永不关闭电池屏幕，则此功能不可用。请选择“从不”以外的值以启用此功能。",
-                    "windowsLink": "转到Windows设置中的电源和睡眠设置"
+                    "caption": "面朝下或行走时自动关闭显示屏。",
+                    "note": "如果在“Windows 设置”的“系统部分”中将电源计划设置为“电池供电时从不关闭屏幕”，则此功能不可用。请选择“从不”以外的值以启用此功能。",
+                    "windowsLink": "转至“Windows 设置”中的“电源和睡眠”设置"
                 },
                 "keepMyDisplay": {
-                    "title": "保持我的显示",
-                    "caption": "在我阅读或浏览时保持显示。",
+                    "title": "保持显示",
+                    "caption": "当阅读或浏览时，保持显示。",
                     "displaySlider": {
-                        "title": "分钟在浏览时显示变暗之前",
+                        "title": "浏览时显示屏变暗之前的分钟数",
                         "startTime": "0 分钟",
                         "endTime": "60 分钟"
                     }
                 }
             },
+            "activeProtectionSystem": {
+                "title": "Active Protection System",
+                "description": "Lenovo Active Protection System 是一种自主功能部件，它有助于保护硬盘驱动器免受因强烈的物理震动和振动所造成的损坏。它还会持续监视计算机的移动，并且会在预测到掉落或类似损坏事件时暂停硬盘驱动器。",
+                "activeProtection": {
+                    "title": "Active Protection",
+                    "caption": "改变敏感度，因为在低敏感模式下，只有更大的撞击才能激活保护功能",
+                    "checkbox": "忽略火车或汽车之类颠簸造成的持续震动"
+                },
+                "manualActiveProtectionSuspension": {
+                    "title": "手动暂挂 Active Protection",
+                    "caption": "允许手动暂挂 Active Protection System",
+                    "dropdown-title": "暂挂时间",
+                    "button": "立即暂挂"
+                },
+                "advanced": {
+                    "description": "为改善使用平板电脑期间对硬盘驱动器的访问，当检测到以下活动时，暂挂 Active Protection System",
+                    "pen": {
+                        "title": "数字笔输入",
+                        "description": "使用数字笔输入时，如果数字笔输入超出范围，则启用 APS"
+                    },
+                    "touch": {
+                        "title": "触摸输入",
+                        "description": "使用触摸输入时，如果未检测到触摸输入，则启用 APS"
+                    },
+                    "hand": {
+                        "title": "手接近计算机边缘",
+                        "description": "启用平板电脑模式时，如果未检测到手动输入，则启用 APS"
+                    }
+                }
+            },
             "intelligentMedia": {
                 "heading": "智能媒体",
-                "title": "零接触视频播放",
-                "desc": "当您离开计算机时，此功能将暂停视频，并在您返回时恢复视频。",
-                "tooltip": "此功能不适用于网络视频播放器。流行的本地视频播放器，如Windows Media Player，5KPlayer等，支持此功能。"
+                "title": "零触摸视频播放",
+                "desc": "此功能将在离开计算机时暂停视频，并在您回来时重新播放视频。",
+                "tooltip": "此功能不适用于 Web 视频播放器。流行的本地视频播放器（例如 Windows Media Player、5KPlayer 等）均支持此功能。"
+            },
+            "voice": {
+                "title": "语音",
+                "description": "联想语音可通过语音转文本功能帮助您将语音转换为文本，并通过翻译功能提供从语音到文本的实时翻译。",
+                "installBtnText": "安装",
+                "launchBtnText": "启动",
+                "voiceToText": {
+                    "title": "语音转文本",
+                    "caption": "此功能有助于将语音转换为文本。"
+                },
+                "translation": {
+                    "title": "翻译",
+                    "caption": "此功能提供对语音的实时翻译。译文以文本形式显示。您可以根据需要选择源语言和目标语言。"
+                },
+                "modalPopUp": {
+                    "heading": "如何开始使用：",
+                    "point1": "确保 Windows 系统托盘中显示联想语音图标。",
+                    "point2": "打开要记录转换文本的文件。",
+                    "point3": "单击 Windows 系统托盘中的联想语音图标，然后选择语音转文本。",
+                    "point4": "选择所需的语言，然后单击麦克风图标开始。",
+                    "point5": "将光标放在要编辑的位置并开始说话。",
+                    "point6": "单击 Windows 系统托盘中的联想语音图标，然后选择翻译。",
+                    "point7": "选择所需的源语言和目标语言。",
+                    "point8": "根据您的需要，从扬声器或麦克风处设置语音输入。",
+                    "point9": "单击麦克风图标开始说话",
+                    "closeText": "关闭"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                }
             }
         }
     },
@@ -940,28 +1279,28 @@
         "title": "系统更新",
         "back": "返回",
         "history": "完整历史记录",
-        "notAvailable": "无法使用",
+        "notAvailable": "不可用",
         "notInstalled": "未安装",
-        "criticalUpdates": "关键更新",
-        "recommendedUpdates": "推荐更新",
-        "optionalUpdates": "可选更新",
-        "ignoredUpdates": "忽略的更新",
-        "successInstall": "已成功安装",
-        "failedInstall": "无法安装",
-        "at": "在",
-        "readMore": "阅读更多",
+        "criticalUpdates": "个关键更新",
+        "recommendedUpdates": "个推荐更新",
+        "optionalUpdates": "个可选更新",
+        "ignoredUpdates": "个已忽略的更新",
+        "successInstall": "安装成功：",
+        "failedInstall": "安装失败：",
+        "at": "时间",
+        "readMore": "阅读更多信息",
         "popup": {
             "reboot": "重启",
-            "shutdown": "关掉",
-            "rebootForceMsg": "您选择的更新将导致系统在安装后自动重新启动。",
-            "shutdownForceMsg": "您选择的更新将导致系统在安装后自动关闭。",
-            "rebootDelayedMsg": "您选择的更新将导致系统在安装后重新启动，在安装更新期间，请不要关闭系统，卸下电源或附件。我们建议您保存工作以准备重新启动系统。",
-            "rebootRequiredMsg": "为了成功安装更新，您的计算机需要重新启动才能确保一切运行安全，顺畅。",
-            "okayButton": "好",
+            "shutdown": "关机",
+            "rebootForceMsg": "所选更新将导致系统在安装后自动重启。",
+            "shutdownForceMsg": "所选更新将导致系统在安装后自动关机。",
+            "rebootDelayedMsg": "安装所选更新后，系统将重启，在安装更新的过程中，请勿关闭系统、断开电源或移除附件。我们建议保存您的工作以便为系统重启做好准备。",
+            "rebootRequiredMsg": "要成功安装更新，您的计算机需要重启以确保所有内容运行得更快、更顺畅。",
+            "okayButton": "确定",
             "cancelButton": "取消",
-            "rebootButton": "马上重启",
-            "dismissButton": "解雇",
-            "rebootPending": "重新启动等待"
+            "rebootButton": "立即重启",
+            "dismissButton": "取消",
+            "rebootPending": "重启"
         },
         "autoUpdateSettings": {
             "title": "自动更新设置",
@@ -972,7 +1311,7 @@
             },
             "recommended": {
                 "title": "推荐更新",
-                "tooltip": "推荐的驱动程序更新使计算机运行保持最佳性能。"
+                "tooltip": "推荐的驱动程序更新可使计算机以最佳性能运行。"
             },
             "windows": {
                 "title": "Windows 更新",
@@ -980,107 +1319,163 @@
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "联想支持网站"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "​保持最新状态的系统才是健康的系统。",
-            "last": "上次更新时间为",
-            "next": "下次更新扫描计划时间：",
+            "neverChecked": "欢迎使用系统更新。",
+            "title": "保持最新状态的系统才是健康的系统。",
+            "last": "上次更新时间：",
+            "next": "下次计划更新时间：",
             "checkButton": "检查更新",
             "checking": "正在检查更新",
-            "downloading": "下载更新完成",
+            "downloading": "正在下载更新",
             "installing": "正在安装更新",
             "percent": "% 已完成",
-            "cancelCheck": "取消检查",
+            "cancelCheck": "取消",
             "cancelUpdates": "取消更新",
             "available": "可用更新",
-            "description": "这些软件包包含对计算机的正常运行至关重要的硬件驱动程序更新和其他系统实用程序更新。关键更新对保护计算机上的数据来说也很重要，一旦可用就应该尽快安装。未能安装这些软件包可能会导致数据丢失、系统故障或硬件故障",
+            "description": "这些软件包包含对计算机的正常运行至关重要的硬件驱动程序更新和其他系统实用程序更新。关键更新对保护计算机上的数据来说也很重要，请尽快安装。安装这些软件包失败可能会导致数据丢失、系统故障或硬件故障。",
             "installButton": "安装所有更新",
             "result": {
-                "success": "所有更新都已正确安装",
+                "success": "已成功安装所有更新",
                 "fail": {
-                    "title": "某些更新未正确安装。",
-                    "description": "在下载或安装这些更新期间出现问题。请确保您在线，并且在安装更新时不要关闭计算机。"
+                    "title": "某些更新未成功安装。",
+                    "description": "下载或安装这些更新的过程中发生了问题。请确保您处于联网状态，且安装更新的过程中不要关闭计算机。"
                 }
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend",
-            "rebootRequiredTag": "Reboot Required",
-            "rebootDelayTag": "Reboot Required, Power Source Required",
-            "shutdownRequiredTag": "Shutdown Required",
-            "dependedPackage": "Depended Package"
+            "rebootRequired": "需要重启",
+            "failReason": "失败原因：您的计算机未连接电源适配器。",
+            "manufacturer": "制造商：",
+            "version": "版本：",
+            "installVersion": "已安装的版本：",
+            "downloadSize": "下载大小：",
+            "diskSpaceNeeded": "需要的磁盘空间：",
+            "ignore": "忽略",
+            "attend": "停止忽略",
+            "rebootRequiredTag": "需要重启",
+            "rebootDelayTag": "需要重启，需要连接电源",
+            "shutdownRequiredTag": "需要关机",
+            "dependedPackage": "被依赖的包"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "可用更新",
+            "description": "这些软件包包含对计算机的正常运行至关重要的更新。关键更新有助于使您的计算机更安全、更可靠，请尽快安装。推荐更新和可选更新有助于使您的软件保持最新，以及使您的计算机保持最佳运行状态。",
+            "installAllUpdates": "安装所有更新",
+            "installFailHeader": "某些更新未成功安装",
+            "installSuccessHeader": "已成功安装所有更新",
+            "installFailDescription": "下载和安装这些更新的过程中发生了问题。请确保您处于联网状态，且安装更新的过程中不要关闭计算机。",
+            "optionalUpdates": "可选更新",
+            "installSelectedUpdates": "安装所选更新"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "名称",
+            "sortByDate": "按日期排序",
+            "packageSize": "大小：",
+            "releaseDate": "发布日期：",
+            "showAll": "显示所有",
+            "noInstallationHistory": "无历史安装记录"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "检索更新时遇到问题，请稍后重试。",
+            "upToDate": "无可用更新，系统处于最新状态。",
+            "egatherException": "收集用户信息时出错。",
+            "gatheringUserInfoException": "收集用户信息时出错。",
+            "certificateValidationException": "服务器验证失败，请稍后重试。",
+            "downloadException": "下载更新时发生错误。",
+            "connectException": "无法连接到服务器。",
+            "notEnoughDiskSpace": "磁盘空间不足，无法执行当前任务。",
+            "proxyAuthenticationException": "代理服务器用户名或密码不正确。",
+            "proxyConnectionException": "无法连接到代理服务器。",
+            "autoScriptEvaluationException": "校验配置脚本时发生错误。",
+            "localRepositoryConnectionFailureException": "无法连接到本地存储库。",
+            "localRepositoryDatabaseException": "未能找到本地存储库或者该存储库已损坏。",
+            "networkInterruptedException": "系统更新服务器当前不可用，请稍后重试。",
+            "helpCenterInvalidServerException": "系统更新服务器无效，请稍后重试。",
+            "catalogNotFoundException": "没有找到适用于您的系统的更新。",
+            "catalogCrcErrorException": "服务器的配置文件正在更新，请稍后重试。",
+            "catalogErrorException": "在系统更新服务器上检测到您的更新配置有错，请稍后重试。",
+            "fileNotFoundException": "未找到文件。"
         }
     },
     "homeSecurity": {
-        "title": "连接家庭安全",
-        "ecosystemBlockTitle": "保护您的设备生态系统",
-        "overviewBlockTitle": "您的设备安全概述",
-        "thisDevice": "这个设备",
-        "allDevices": "所有设备",
-        "protected": "受保护",
-        "notProtected": "不受保护",
-        "myDevice": "My Device",
-        "allDevice": "All Devices",
-        "secure": "SECURE",
-        "needAttention": "NEEDS ATTENTION",
-        "manageAccount": "Manage Account",
-        "devices": "Devices",
-        "seeProtectedDevices": "See protected devices",
-        "addDevice": "add device",
-        "trailExpired": "Trail expired",
-        "trailExpiredSubtext": "Upgrate to protect all of your devices",
-        "upgrade": "upgrade",
+        "title": "互联家庭网络安全性",
+        "notification": {
+            "recent": "最近的安全通知",
+            "notifications": "通知"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "保护您的设备生态系统",
+            "thisDevice": "此设备",
+            "allDevices": "所有设备",
+            "protected": "受保护",
+            "notProtected": "不受保护",
+            "trialExpired": "试用已到期",
+            "upgrade": "升级",
+            "inEcosystem": "在生态系统中",
+            "ecosystemEnable": "生态系统已启用",
+            "inTrial": "在试用中",
+            "addEcosystem": "添加到生态系统",
+            "enableEcosystem": "启用生态系统",
+            "startTrial": "开始试用",
+            "fullAccess": "完全访问权限",
+            "renew": "更新"
+        },
+        "overview": {
+            "overviewBlockTitle": "您的生态系统安全概述",
+            "allDevices": "所有设备",
+            "myDevice": "我的设备",
+            "thisComputer": "This computer",
+            "secure": "安全",
+            "needAttention": "需要注意",
+            "manageAccount": "管理帐户",
+            "devices": "设备",
+            "seeProtectedDevices": "查看受保护的设备",
+            "addDevice": "添加设备",
+            "trialExpired": "试用已到期 - 升级以保护您的所有设备",
+            "upgrade": "升级",
+            "freeTrial": "保护您的所有设备 - 30 天的免费试用期",
+            "startTrial": "开始试用"
+        },
         "tour": {
-            "back": "Back",
-            "skip": "Skip",
-            "start": "START TOUR",
-            "done": "DONE",
-            "welcome1": "Welcome",
-            "welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
-            "welcome2": "Exclusive for Vantage",
-            "welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
-            "create": "Create your account",
-            "lenovoId": "with Lenovo ID",
-            "notifications": "Receive <b>notifications</b> about your home's status",
-            "monitor": "<b>Monitor</b> the safety of your family's devices",
-            "peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
-            "signInLenovoId": "SIGH-UP WITH LENOVO ID",
-            "haveLenovo": "I don't have a <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Create a Lenovo ID",
-            "without": "Proceed <b>without an account</b>",
-            "skipAndTrial": "SKIP AND START TRIAL",
-            "alreadyHave": "I already have a <b>Connected Home Security Account</b>",
-            "loginCHS": "Login to existing CHS account",
-            "locationTitle": "Enable location tracking",
-            "locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+            "back": "上一步",
+            "skip": "跳过",
+            "start": "开始体验",
+            "done": "完成",
+            "welcome1": "欢迎",
+            "welcomeDesc1": "只需点击几下，您就可以保护您和您家人的电脑、移动设备和已连接设备。",
+            "welcomeDescStart": "立即开始 30 天的免费试用。",
+            "welcome2": "Vantage 特有功能",
+            "welcomeDesc2": "Vantage 内置有互联家庭网络安全性功能，可快速访问生态系统保护状态和安全警报。",
+            "create": "使用 Lenovo ID",
+            "lenovoId": "创建您的帐户",
+            "notifications": "接收关于您家庭状态的<b>通知</b>",
+            "monitor": "<b>监控</b>您家人设备的安全性",
+            "peaceOfMind": "<b>请放心</b>，您时刻处于被保护状态!",
+            "signInLenovoId": "使用 LENOVO ID 注册",
+            "haveLenovo": "我没有 <b>Lenovo ID</b>",
+            "createLenovo": "&nbsp;创建 Lenovo ID",
+            "without": "在<b>没有帐户</b>的情况下继续进行",
+            "skipAndTrial": "跳过并开始试用",
+            "alreadyHave": "我已拥有<b>互联家庭网络安全性帐户</b>",
+            "loginCHS": "登录现有的 CHS 帐户",
+            "locationTitle": "启用位置跟踪",
+            "locationPermission": "要使此功能正常运行，您需要启用此设备的位置跟踪"
+        },
+        "accountStatus": {
+            "title": "互联家庭网络安全性",
+            "startTrial": "开始试用",
+            "manageAccount": "管理帐户",
+            "upgradeAccount": "升级帐户",
+            "inTrialDetail1": "距试用结束还剩 {{remainingDays}} 天。",
+            "inTrialDetail2": "您当前仍在试用期内。您可以无限制地访问所有功能。",
+            "trialExpiredDetail1": "试用已到期。",
+            "trialExpiredDetail2": "您的试用已到期，您的设备生态系统不再受保护。",
+            "upgradedDetail1": "您的帐户将于 {{expiredDate}}失效。",
+            "upgradedDetail2": "您的设备生态系统当前正受保护。",
+            "localAccountDetail2": "点击下面的按钮开始 30 天的免费试用。",
+            "alreadyHaveAccount": "已有激活码？"
         }
     },
     "support": {
@@ -1101,7 +1496,9 @@
             "status": "状态：",
             "subDescription1": "本产品具有若干年的有限保修，并有权送往维修站获得维修服务。客户可以致电其当地服务中心来获取更多信息。经销商可对本产品提供送修服务。",
             "subDescription2": "我们无法找到适用于您设备的保修详细信息，要获取更多保修选项，请访问我们的支持网站。",
-            "viewWarrantyOptions": "查看保修选项"
+            "viewWarrantyOptions": "查看保修选项",
+            "offlineTips1": "请连接到因特网以获取最新的保修信息。",
+            "offlineTips2": "请连接到因特网以更新保修信息。"
         },
         "documentation": {
             "title": "文档",
@@ -1131,9 +1528,9 @@
             "copyright": "© 2002-2019 Lenovo All Rights Reserved"
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "类别",
+            "categoriesDesc": "在我们的文章中查找有用的信息。",
+            "seeArticles": "查看文章"
         }
     },
     "security": {
@@ -1154,9 +1551,7 @@
             "maliciousNetwork": "本月阻止了您的计算机加入 {{maliciousWifi}} 个恶意网络。",
             "good": "良好",
             "malicious": "恶意",
-            "suspicious": "可疑",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "可疑"
         },
         "antivirus": {
             "common": {
@@ -1224,8 +1619,8 @@
                 "name": "WIFI 安全",
                 "enable": "已启用",
                 "disable": "已禁用",
-                "less": "缩略信息",
                 "more": "更多信息",
+                "less": "缩略信息",
                 "networkHistory": "网络历史记录",
                 "connect": "最后连接",
                 "showmore": "显示更多内容",
@@ -1245,6 +1640,12 @@
                 "describe2": "要使用互联家庭网络安全顾问，您必须为 Lenovo Vantage 启用位置服务。是否立即启用位置？",
                 "agree": "同意",
                 "cancel": "取消"
+            },
+            "errorMessage": {
+                "headerText": "错误",
+                "bodyText": "我们检测到您丢失了 Vantage 的关键部分。这些部分将在后台下载。请稍后重试。",
+                "closeText": "关闭",
+                "offlineText": "我们检测到您没有连接到互联网。此页面的某些部分将无法正常运行。请重新连接"
             }
         },
         "homeprotection": {
@@ -1256,7 +1657,7 @@
                 "homeSecurityAffect3": "互联家庭网络安全顾问可确保连接到您家庭网络的其他设备的安全性。",
                 "describe": "不安全设备和网络可能引入恶意软件、导致身份信息被盗以及泄露个人和财务信息。启用此功能以降低将设备和家庭网络曝露给攻击者的风险",
                 "subtitle": "高枕无忧",
-                "subtitleDescribe": "检测到设备或家庭网络存在漏洞，或正在连接到一个潜在恶意网络时，\"互联家庭网络安全顾问\"功能会向您发送警报。请在\"提示和技巧\"中了解有关互联家庭网络安全顾问的更多信息。",
+                "subtitleDescribe": "检测到设备或家庭网络存在漏洞，或正在连接到一个潜在恶意网络时，“互联家庭网络安全性”功能会向您发送警报。可在<tag>此处</tag>了解有关互联家庭网络安全性的更多信息。",
                 "tryNow": "立即试用"
             },
             "invitationcode": {
@@ -1332,7 +1733,7 @@
             "whatIsPmNotInstalled": "提供保存高强度复杂密码和即时登录到每个站点的最安全、简单的方式。",
             "whatIsPmInstalled": "更安全的数字生活正在向您招手：添加密码、启用暗网监控、自动填充个人和支付信息。",
             "startProtect": "开始以简单方式保护您的网上帐户。",
-            "discount": "Lenovo 用户可以专享 6 个月的免费 Dashlane 高级版。",
+            "discount": "Lenovo 用户可以专享 Dashlane 高级版五折优惠。",
             "offer": "此优惠仅面向 Dashlane 新用户！",
             "getDashLane": "获取 Dashlane",
             "learnMoreAbout": "了解充分利用 Dashlane 的<tag>更多信息</tag>",
@@ -1380,21 +1781,22 @@
     "lenovoId": {
         "login": "登录",
         "logout": "注销",
-        "unlockExclusives": "解锁独家",
+        "unlockExclusives": "解锁专享功能",
         "user": "用户",
-        "welcomeText": "元气满满的一天 {{firstName}}！",
+        "welcomeText": "今天也是活力满满的一天 {{firstName}}！",
         "welcomeTextWithouUserName": "元气满满的一天！",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "{{firstName}}，你好！",
+        "welcomeTextWithoutUserName": "今天也是活力满满的一天！",
+        "helloUser": "您好，{{firstName}}！",
         "ssoErrorTitle": "错误",
         "ssoErrorCommon": "糟糕，出现了错误。请重试。",
-        "ssoErrorCommonEx": "意外错误。请重试",
+        "ssoErrorCommonEx": "意外错误。请重试。",
         "ssoErrorTimeStampIncorrect": "糟糕，似乎您的电脑时间不正确。请更正您的电脑时间，然后重试。",
-        "ssoErrorNetworkDisconnected": "糟糕！连接失败了！请检查您的因特网连接并重试。",
+        "ssoErrorNetworkDisconnected": "糟糕！连接失败！请检查因特网连接，然后重试。",
         "ssoErrorCommunicating": "网络错误。请检查连接，然后重试。",
         "ssoErrorAccountPluginNotExist": "缺少插件。如果您已连接因特网，我们将在后台自动恢复插件。这可能需要花费一些时间，请稍后重试。"
     },
     "faq": {
+        "pageTitle": "支持细节",
         "footer": {
             "title": "没找到所需信息？",
             "description": "需要更多支持吗？欢迎通过以下方式联系我们：​",
@@ -1403,7 +1805,7 @@
         },
         "question1": {
             "title": "备份和恢复文件",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        备份和恢复文件\n    </div>\n    <hr />\n    <div style='margin-bottom:7rem;'>\n        进行备份总是有益无害。​将文件备份到其他驱动器上以防止源文件发生意外情况。​\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        设置您的备份\n    </div>\n    <hr />\n    <div class='mb-5'>\n        选择“开始”按钮，,\n        <span style='font-weight:bold'>然后选择“设置</span> >\n        <span style='font-weight:bold'>更新和安全</span> >\n        <span style='font-weight:bold'>备份</span> > <span style='font-weight:bold'>添加驱动器</span> ”，最后选择外部驱动器或网络位置进行备份。\n\n    </div>\n    <div class='mb-5'>\n        <img src='./../../../../assets/images/qa/1.1.png' />\n    </div>\n    <div class='mb-5'>\n        准备就绪。我们每个小时都会对您的用户文件夹（C:\\Users\\username）中的所有文件进行备份。​要更改备份的文件对象或备份频率，\n        <span style='font-weight:bold;'>请转至“更多选项”。</span>.\n\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        恢复文件\n    </div>\n    <div class='mb-5'>\n        如果丢失了重要文件或文件夹，可通过以下方法进行恢复：\n    </div>\n    <div>\n\n        <div class='mb-3'>1.在任务栏的搜索框中输入“还原文件”，然后选择“通过文件历史记录还原你的文件”。</div>\n        <div class='mb-3'>2.查找所需的文件，然后使用箭头查看所有版本</div>\n        <div class='mb-3'>3.找到所需版本后，选择“还原”将其保存到原始位置。要将其保存到其他位置，请按住（或右键单击）“还原”，选择“还原为”，然后选择一个新的位置。\n        </div>\n\n    </div>\n</div>\n",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        备份和恢复文件    </div>    <hr />    <div style='margin-bottom:7rem;'>        进行备份总是有益无害。将文件备份到其他驱动器上以防止源文件发生意外情况。    </div>    <div style='font-size:3rem;font-weight:bold;'>        设置您的备份    </div>    <hr />    <div class='mb-5'>        选择<span style='font-weight:bold'>开始</span>按钮，然后选择<span style='font-weight:bold'>设置</span> > <span style='font-weight:bold'>更新和安全</span> > <span style='font-weight:bold'>备份</span> > <span style='font-weight:bold'>添加驱动器</span>，最后选择外部驱动器或网络位置进行备份。    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        准备就绪。我们每个小时都会对您的用户文件夹（C:\\\\Users\\\\username）中的所有文件进行备份。要更改备份的文件对象或备份频率，请转至<span style='font-weight:bold;'>更多选项</span>。    </div>    <div style='font-size:3rem;font-weight:bold;'>        恢复文件    </div>    <div class='mb-5'>        如果丢失了重要文件或文件夹，可通过以下方法进行恢复：    </div>    <div>        <div class='mb-3'>1.在任务栏的搜索框中输入<span style='font-weight:bold;'>还原文件</span>，然后选择<span class='font-weight:bold'>通过文件历史记录还原您的文件</span>。</div>        <div class='mb-3'>2.查找所需的文件，然后使用箭头查看所有版本</div>        <div class='mb-3'>3.找到所需版本后，选择<span style='font-weight:bold'>还原</span>将其保存到原始位置。要将其保存到其他位置，请按住（或右键单击）<span style='font-weight:bold'>还原</span>，选择<span style='font-weight:bold'>还原为</span>，然后选择一个新的位置。</div>    </div></div>",
             "para1": {
                 "line1": "进行备份总是有益无害。",
                 "line2": "​将文件备份到其他驱动器上以防止源文件发生意外情况。​"
@@ -1431,7 +1833,7 @@
                 "span1": "在任务栏的搜索框中输入",
                 "span2": "“还原文件”，",
                 "span3": "然后选择",
-                "span4": "“通过文件历史记录还原你的文件”。",
+                "span4": "“通过文件历史记录还原您的文件”。",
                 "span5": "查找所需的文件，然后使用箭头查看所有版本",
                 "span6": "找到所需版本后，选择",
                 "span7": "“还原”",
@@ -1444,7 +1846,7 @@
         },
         "question2": {
             "title": "如何刷新您的电脑",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        如何刷新您的电脑\n    </div>\n    <hr>\n    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>\n        症状\n    </div>\n    <div style='padding:5px 0;'>\n        如果您的电脑性能不如从前却不知道原因，则可以刷新您的电脑，这不会删除​任何个人文件或更改您的设置。Windows 可以&ldquo;刷新&rdquo;您的电脑，这就像在不删除个人文件的情况下进行全新安装。\n    </div>\n    <div style='padding:5px 0;'>\n        刷新电脑会发生以下结果：您的文件和个性化设置将不会更改\n    </div>\n    <div style='padding:5px 0;'>\n        <ul>\n            <li>您的电脑设置将恢复为缺省设置</li>\n            <li>来自 Windows 应用商店的应用程序将会保留</li>\n            <li>从磁盘或网站安装的应用程序将被删除</li>\n            <li> 已删除文件的列表将保存在您的桌面上</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        受影响的品牌\n    </div>\n\n    <div>\n        <ul>\n            <li>所有台式机和笔记本电脑/li>\n\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        操作系统\n    </div>\n\n    <div>\n        <ul>\n            <li> Windows 8、8.1 和 10</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        解决方案\n    </div>\n\n    <div>\n        <ul class='list-unstyled'>\n            <li>\n                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>\n                <ol>\n                    <li style='padding:5px 0;'>\n                        轻触或单击&ldquo;设置<span style='font-weight:bold;'> &rdquo; </span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        轻触或单击&ldquo;更新和恢复 <span style='font-weight:bold;'>&rdquo;​</span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <div>轻触或单击&ldquo;恢复<span style='font-weight:bold;'> &rdquo;</span></div>\n                        <div style='padding:5px 0'>。在&ldquo;恢复电脑而不影响你的文件&rdquo;下\n                            <span style='font-weight:bold;'> ，轻触或单击&ldquo;开始&rdquo;。</span></div>\n                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>\n\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <span style='font-weight:bold;'> 单击&ldquo;下一步&rdquo;。</span>.\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <span style='font-weight:bold;'> 请单击&ldquo;刷新&rdquo;开始刷新过程。</span>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        刷新过程完成后，可在桌面上找到&ldquo;已删除的应用&rdquo;列表\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        可以找到刷新系统时删除的应用程序\n                    </li>\n                </ol>\n            </li>\n            <li style='padding:10px 0;'>\n                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>\n                <ol>\n                    <li style='padding:5px 0;'> 在&ldquo;开始&rdquo;菜单提供的搜索工具中搜索&ldquo;刷新&rdquo;，</li>\n                    <li style='padding:5px 0;'>\n                        <div>在搜索结果中单击&ldquo;恢复电脑而不影响你的文件&rdquo;，如下所示。</div>\n                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        <div>单击&ldquo;恢复电脑而不影响你的文件&rdquo;​标题下方的&ldquo;开始&rdquo;按钮开始刷新您的 Windows 10 电脑。</div>\n                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>\n                    </li>\n                </ol>\n            </li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;'>\n        其他信息\n    </div>\n\n    <div>\n        大多数情况下，开始刷新电脑后，它将自己完成该过程。但是，如果 Windows 需要缺少的文件，将会要求您插入恢复盘，通常是 DVD 光盘或 U 盘。如果发生这种情况，所需介质取决于您的电脑。\n\n    </div>\n    <div style='padding:10px 0'>\n        如果曾使用 DVD 光盘将电脑升级到 Windows 8.1 或 Windows RT 8.1，请使用该光盘。如果没有 Windows 8.1 或 Windows RT 8.1 介质，请联系 Microsoft 支持。\n    </div>\n\n</div>",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        如何刷新您的电脑    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        症状    </div>    <div style='padding:5px 0;'>        如果您的电脑性能不如从前却不知道原因，则可以刷新您的电脑，这不会删除任何个人文件或更改您的设置。Windows 可以“刷新”您的电脑，这就像在不删除个人文件的情况下进行全新安装。    </div>    <div style='padding:5px 0;'>        刷新电脑会发生以下结果：您的文件和个性化设置将不会更改    </div>    <div style='padding:5px 0;'>        <ul>            <li>您的电脑设置将恢复为缺省设置</li>            <li>来自 Windows 应用商店的应用程序将会保留</li>            <li>从磁盘或网站安装的应用程序将被删除</li>            <li>已删除文件的列表将保存在您的桌面上</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        受影响的品牌    </div>    <div>        <ul>            <li>所有台式机和笔记本电脑</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        操作系统    </div>    <div>        <ul>            <li>Windows 8、8.1 和 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        解决方案    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        轻触或单击<span style='font-weight:bold;'>设置</span>                    </li>                    <li style='padding:5px 0;'>                        轻触或单击<span style='font-weight:bold;'>更新和恢复</span>                    </li>                    <li style='padding:5px 0;'>                        <div>轻触或单击<span style='font-weight:bold;'>恢复</span></div>                        <div style='padding:5px 0'>在恢复电脑而不影响您的文件下，轻触或单击<span style='font-weight:bold;'>开始。</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        单击<span style='font-weight:bold;'>“下一步”</span>。                    </li>                    <li style='padding:5px 0;'>                        请单击<span style='font-weight:bold;'>“刷新”</span>开始刷新过程。                    </li>                    <li style='padding:5px 0;'>                        刷新过程完成后，可在桌面上找到“已删除的应用”列表                    </li>                    <li style='padding:5px 0;'>                        可以找到刷新系统时删除的应用程序                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> 在开始菜单提供的搜索工具中搜索<span style='font-weight:bold;'>刷新</span>，</li>                    <li style='padding:5px 0;'>                        <div>在搜索结果中单击<span style='font-weight:bold;'>“恢复电脑而不影响你的文件”</span>，如下所示。</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div>单击<span style='font-weight:bold;'>“恢复电脑而不影响你的文件”</span>标题下方的<span style='font-weight:bold;'>开始</span>按钮开始刷新您的 Windows 10 电脑。</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        其他信息    </div>    <div>        大多数情况下，开始刷新电脑后，它将自己完成该过程。但是，如果 Windows 需要缺少的文件，将会要求您插入恢复盘，通常是 DVD 光盘或 U 盘。如果发生这种情况，所需介质取决于您的电脑。    </div>    <div style='padding:10px 0'>        如果曾使用 DVD 光盘将电脑升级到 Windows 8.1 或 Windows RT 8.1，请使用该光盘。如果没有 Windows 8.1 或 Windows RT 8.1 介质，请联系 Microsoft 支持。    </div></div>",
             "heading1": "症状",
             "para1": {
                 "span1": "如果您的电脑性能不如从前却不知道原因，则可以刷新您的电脑，这不会删除​任何个人文件或更改您的设置。",
@@ -1518,7 +1920,7 @@
         },
         "question3": {
             "title": "如何了解计算机的 CPU 情况",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    如何了解计算机的 CPU 情况\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>症状</h3>\n<p>&ldquo;32 位&rdquo;​和&ldquo;64 位&rdquo;是指计算机处理器（也称为 CPU）处理信息的方式。64 位版本的 Windows 可比 32 位的系统更高效地处理大量随机存取内存（RAM）。</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>受影响的品牌</h3>\n<p>上述症状与以下系统相关，但并不限于以下系统：</p>\n<ul>\n    <li>所有台式机和笔记本电脑</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>操作系统</h3>\n<ul>\n    <li>Windows 7、8、10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>解决方案</h3>\n<p><strong><u>Windows 7 或 Vista</u></strong></p>\n<ol>\n    <li>单击&ldquo;开始&rdquo;按钮（&ldquo;开始&rdquo;按钮图片），然后右键单击&ldquo;计算机&rdquo;，最后单击&ldquo;属性&rdquo;打开&ldquo;系统&rdquo;</li>\n    <li>在&ldquo;系统&rdquo;下，可查看系统类型。</li>\n</ol>\n<p><strong><u>Windows 8 和 Windows 10/u></strong></p>\n<p><strong>方法 1：</strong> 在&ldquo;控制面板&rdquo;中查看&ldquo;系统&rdquo;窗口</p>\n<ol>\n    <li>从屏幕右边缘扫入，然后点击&ldquo;搜索&rdquo;。如果使用的是鼠标，请将指针指向屏幕右下角，然后单击&ldquo;搜索&rdquo;。</li>\n    <li>在搜索框中输入&ldquo;系统&rdquo;，然后轻触或单击&ldquo;设置&rdquo;。</strong></li>\n    <li>轻触或单击&ldquo;系统&rdquo;</li>\n    <li>如果运行的是 Windows 8 64 位版本，&ldquo;系统&rdquo;标题下的&ldquo;系统类型&rdquo;字段中将显示&ldquo;64 位操作系统&rdquo;。如果运行的是 Windows 8 32 位版本，&ldquo;系统&rdquo;标题下的&ldquo;系统类型&rdquo;字段中将显示&ldquo;32 位操作系统&rdquo;。\n         </li>\n</ol>\n<p><strong>方法 2 :</strong> 查看&ldquo;系统信息&rdquo;窗口</p>\n<ol>\n    <li>从屏幕右边缘扫入，然后点击&ldquo;搜索&rdquo;。如果使用的是鼠标，请将指针指向屏幕右下角，然后单击&ldquo;搜索&rdquo;。</li>\n    <li>在搜索框中，输入&ldquo;系统信息&rdquo;</li>\n    <li>轻触或单击&ldquo;系统&rdquo;，然后轻触或单击&ldquo;系统信息&rdquo;，最后单击&ldquo;系统摘要&rdquo;。</li>\n    <li>如果运行的是 Windows 8 64 位版本，&ldquo;项目&rdquo;标题下的&ldquo;系统类型&rdquo;字段中将显示&ldquo;基于 x64 的电脑&rdquo;。\n         <br /> <br /> 如果运行的是 Windows 8 32 位版本，&ldquo;项目&rdquo;标题下的&ldquo;系统类型&rdquo;字段中将显示&ldquo;基于 x86 的电脑&rdquo;。\n         </li>\n</ol>\n<p> </p>",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    如何了解计算机的 CPU 情况</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>症状</h3><p>“32 位”和“64 位”是指计算机处理器（也称为 CPU）处理信息的方式。64 位版本的 Windows 可比 32 位的系统更高效地处理大量随机存取内存（RAM）。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>受影响的品牌</h3><p>上述症状与以下系统相关，但并不限于以下系统：</p><ul>    <li>所有台式机和笔记本电脑</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>操作系统</h3><ul>    <li>Windows 7、8、10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>解决方案</h3><p><strong><u>Windows 7 或 Vista</u></strong></p><ol>    <li>单击<strong>开始按钮</strong>（<strong>开始按钮</strong>图片），然后右键单击计算机，最后单击属性打开系统  </li>    <li>在“系统”下，可查看系统类型。</li></ol><p><strong><u>Windows 8 和 Windows 10</u></strong></p><p><strong>方法 1：</strong>在控制面板中查看系统窗口</p><ol>    <li>从屏幕右边缘扫入，然后点击<strong>搜索</strong>。如果使用的是鼠标，请将指针指向屏幕右下角，然后单击<strong>搜索</strong>。</li>    <li>在搜索框中输入<strong>系统</strong>，然后轻触或单击<strong>设置</strong>。</li>    <li>轻触或单击<strong>系统</strong></li>    <li>如果运行的是 Windows 8 64 位版本，系统标题下的系统类型字段中将显示<strong>64 位操作系统</strong>。如果运行的是 <strong>Windows 8</strong> 32 <strong>位版本</strong>，系统标题下的系统类型字段中将显示<strong>32 位操作</strong>系统。<br /> </li></ol><p><strong>方法 2：</strong>查看系统信息窗口</p><ol>    <li>从屏幕右边缘扫入，然后点击<strong>搜索</strong>。如果使用的是鼠标，请将指针指向屏幕右下角，然后单击<strong>搜索。</strong></li>    <li>在搜索框中，输入<strong>系统信息</strong></li>    <li>轻触或单击<strong>系统</strong>，然后轻触或单击<strong>系统信息</strong>，最后单击<strong>系统摘要。</strong></li>    <li>如果运行的是 Windows 8 <strong>64 位</strong>版本<strong>，</strong>项目标题下的<strong>系统类型</strong>字段中将显示基于 x64 的电脑。<br /><br />如果运行的是 Windows 8 <strong>32 位</strong>版本，项目标题下的<strong>系统类型</strong>字段中将显示基于 x86 的电脑。 </li></ol><p> </p>",
             "heading1": "症状",
             "para1": "“32 位”​和“64 位”是指计算机处理器（也称为 CPU）处理信息的方式。64 位版本的 Windows 可比 32 位的系统更高效地处理大量随机存取内存（RAM）。",
             "heading2": "受影响的品牌",
@@ -1590,7 +1992,7 @@
                 },
                 "span10": {
                     "line1": "如果运行的是 ",
-                    "line2": "Windows 8 64",
+                    "line2": 64,
                     "line3": " 位版本，",
                     "line4": "“项目”标题下的",
                     "line5": "“系统类型”",
@@ -1607,7 +2009,7 @@
         },
         "question4": {
             "title": "检查计算机的电池使用情况",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    检查计算机的电池使用情况\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>症状</h3>\n<p>Windows 10 包含一个新&ldquo;电池使用情况&rdquo;屏幕，可显示正在消耗笔记本电脑电量的程序。也就是说，该屏幕可清楚显示哪些应用程序（包括桌面程序和 Windows 10 &ldquo;通用&rdquo;应用）正在消耗过多的电量。​\n</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>受影响的品牌</h3>\n\n<ul>\n    <li>Lenovo 笔记本电脑、台式机</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>受影响的系统</h3>\n<ul>\n    <li>所有</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>操作系统</h3>\n<ul>\n    <li>Window 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>解决方案</h3>\n<p>此功能是 Windows 10 中的新功能，首先需要找到此功能，因为它不在传统的&ldquo;控制面板&rdquo;视图中，而是位于新的&ldquo;设置&rdquo;应用程序中</p>\n<p><br /> </p>\n<p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. 找到&ldquo;电池使用情况&rdquo;屏幕</h3>\n</p>\n<p>1.单击或轻触&ldquo;开始&rdquo;菜单中的&ldquo;设置&rdquo;选项</p>\n<p>2.在&ldquo;设置&rdquo;中选择&ldquo;系统&rdquo;，然后选择&ldquo;节电模式&rdquo;。</p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3.单击或轻触此标题下的&ldquo;电池使用情况&rdquo;链接以查看更多详细信息。 </p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. 分析电源使用情况</h3>\n<p>4.您可以更改设置使电池使用情况屏幕显示过去 24 小时到过去 48 小时或过去一周的电池使用情况</p>\n<p>5 &ldquo;系统&rdquo;、&ldquo;显示器&rdquo;和&ldquo;Wi-Fi&rdquo;​百分比。这将显示系统进程、显示器使用的电量</p>\n<p>6 ​&ldquo;使用中&rdquo;和&ldquo;后台&rdquo;选项对比显示正在使用的应用程序和在后台运行的应用程序消耗的电量。</p>\n<p>7 如果应用程序在后台消耗电量，可点击或轻触&ldquo;更改后台应用设置&rdquo;​链接，然后配置让应用程序不在后台运行。​此功能仅适用于通用 Windows 10 应用程序。</p>\n<p>8 进一步向下滚动，您将看到一个应用程序列表，这是此功能最有用的部分。它将显示在该期间内使用过电池电量的应用程序列表，并显示每个应用程序消耗的电池电量百分比\n</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    检查计算机的电池使用情况</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>症状</h3><p>Windows 10 包含一个新<strong>“电池使用情况”</strong>屏幕，可显示正在消耗笔记本电脑电量的程序。也就是说，该屏幕可清楚显示哪些应用程序（包括桌面程序和 Windows 10 “通用”应用）正在消耗过多的电量。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>受影响的品牌</h3><ul>    <li>Lenovo 笔记本电脑、台式机</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>受影响的系统</h3><ul>    <li>全部</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>操作系统</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>解决方案</h3><p>此功能是 Windows 10 中的新功能，首先需要找到此功能，因为它不在传统的<strong>控制面板</strong>视图中，而是位于新的<strong>“设置”</strong>应用程序中</p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. 找到“电池使用情况”屏幕</h3></p><p>1.单击或轻触开始菜单中的<strong>“设置”</strong>选项</p><p>2.在<strong>设置</strong>中选择<strong>“系统”</strong>，然后选择<strong>“节电模式”<br /><br /></strong><strong><br /><br /></strong>。</p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3.单击或轻触此标题下的<strong>“电池使用情况”</strong>链接以查看更多详细信息。</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. 分析电源使用情况</h3><p>4 您可以更改设置使电池使用情况屏幕显示过去 24 小时到过去 48 小时或过去一周的电池使用情况</p><p>5 <strong>“系统”</strong>、“<strong>显示器</strong>”和“<strong>Wi-Fi”</strong>百分比。这将显示系统进程、显示器使用的电量</p><p>6 <strong>“使用中”</strong>和<strong>“后台”</strong>选项对比显示正在使用的应用程序和在后台运行的应用程序消耗的电量。</p><p>7 如果应用程序在后台消耗电量，可点击或轻触<strong>“更改后台应用设置”</strong>链接，然后配置让应用程序不在后台运行。此功能仅适用于通用 Windows 10 应用程序。</p><p>8 进一步向下滚动，您将看到一个应用程序列表，这是此功能最有用的部分。它将显示在该期间内使用过电池电量的应用程序列表，并显示每个应用程序消耗的电池电量百分比</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "症状",
             "para1": {
                 "span1": "Windows 10 包含一个新",
@@ -1675,7 +2077,7 @@
         },
         "question5": {
             "title": "像使用平板电脑一样使用您的计算机",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    ​像使用平板电脑一样使用您的计算机\n</div>\n<hr>\n<p>对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>使用平板电脑模式</h3>\n<p>要开启平板电脑模式，请在任务栏上选择&ldquo;操作中心&rdquo;，然后选择&ldquo;平板模式&rdquo;。</p>\n<p> </p>\n<p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>注</h3>\n<p>要确定您的设备是否可以自动打开平板电脑模式，请在制造商的网站上搜索您的设备。是否支持此功能取决于硬件、安装的驱动程序以及制造商设置设备的方 式。  </p>\n<p> </p>\n<p>在平板电脑模式下将以全屏模式打开应用程序，从而提供更多工作空间。要关闭应用程序，请将其拖到屏幕底部。\n</p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>提示</h3>\n<p>计算机处于平板电脑模式时会显示任务栏，但如果需要更多屏幕空间，可以将其隐藏。选择&ldquo;开始&rdquo;按钮，选择&ldquo;设置 > 系统 > 平板模式&rdquo;，然后打开&ldquo;在平板模式下自动隐藏任务栏&rdquo;。要查看隐藏的任务栏，从屏幕底部向上轻扫，或将鼠标悬停在该处。\n</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>同时使用两个应用程序</h3>\n<p>要在平板电脑模式下并排使用两个应用程序，请将一个打开的应用程序向下拖动，然后拖向一边。​您将看到它​贴靠的位置并看到它旁边的所有打开的应用程序。\n</p>\n<p>在此视图中，您还可以：/p>\n    <ul>\n        <li>使用两个辅屏之间共享的边缘来同时重新调整两个应用程序的大小。</li>\n        <li> 在任务视图中打开一个新应用程序——在任务栏上选择&ldquo;任务视图&rdquo;，选择一个应用程序，然后将其拖到一侧以将其贴靠在分隔的屏幕中。\n        </li>\n        <li>使用任务栏上的后退按钮返回应用程序，或打开一个之前用过的应用程序。\n        </li>\n    </ul>\n    <p> </p>",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    像使用平板电脑一样使用您的计算机</div><hr><p>对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>使用平板电脑模式</h3><p>要开启平板电脑模式，请在任务栏上选择<strong>操作中心</strong>，然后选择<strong>平板模式</strong>。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>注</h3><p>要确定您的设备是否可以自动打开平板电脑模式，请在制造商的网站上搜索您的设备。是否支持此功能取决于硬件、安装的驱动程序以及制造商设置设备的方式。 </p><p> </p><p>在平板电脑模式下将以全屏模式打开应用程序，从而提供更多工作空间。要关闭应用程序，请将其拖到屏幕底部。</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>提示</h3><p>计算机处于平板电脑模式时会显示任务栏，但如果需要更多屏幕空间，可以将其隐藏。选择<strong>开始</strong>按钮，选择<strong>设置</strong> > <strong>系统</strong> > <strong>平板模式</strong>，然后打开<strong>在平板模式下自动隐藏任务栏</strong>。要查看隐藏的任务栏，从屏幕底部向上轻扫，或将鼠标悬停在该处。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>同时使用两个应用程序</h3><p>要在平板电脑模式下并排使用两个应用程序，请将一个打开的应用程序向下拖动，然后拖向一边。您将看到它贴靠的位置并看到它旁边的所有打开的应用程序。</p><p>在此视图中，您还可以：</p><ul>    <li>使用两个辅屏之间共享的边缘来同时重新调整两个应用程序的大小。</li>    <li>在任务视图中打开一个新应用程序&mdash;&mdash;在任务栏上选择<strong>任务视图</strong>，选择一个应用程序，然后将其拖到一侧以将其贴靠在分隔的屏幕中。</li>    <li>使用任务栏上的后退按钮返回应用程序，或打开一个之前用过的应用程序。</li></ul><p> </p>",
             "para1": "对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。\n",
             "heading1": "使用平板电脑模式",
             "para2": {
@@ -1714,8 +2116,8 @@
             }
         },
         "question6": {
-            "title": "了解您的个人助理 Cortona",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    了解您的个人助理 Cortona\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Cortana 是什么？</h3>\n<hr />\n<p>Cortana 是您的数字助手。她可以帮助您完成工作。\n</p>\n<p>使用 Cortana 的次数越多，获得的体验也会更具个性化。</p>\n<p>要开始使用，请在搜索框中输入一个问题，或选择麦克风，然后通过语音与 Cortana 交互。（所有类型的电脑均支持手动输入，但必须具有麦克风才能进行语音输入。）\n</p>\n<p>如果不确定要说些什么，可参考锁屏界面以及 Cortana 主页（在任务栏上选择搜索框时显示）中的建议。\n</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>1.主页 2. 笔记本 3. 设置 4. 反馈</li>\n</ol>\n<p>以下是 Cortana 可为您做的一些事情：/p>\n    <ul>\n        <li> 基于时间、地点、人物为您提供提醒。</li>\n        <li>跟踪包裹、团队、兴趣和航班。</li>\n        <li>发送电子邮件和文本。</li>\n        <li>管理您的日历，不错失最新动态。</li>\n        <li>创建和管理列表。</li>\n        <li>聊天和玩游戏。</li>\n        <li>查找事件、文件、地点和信息。</li>\n        <li>打开系统上的任何应用程序。</li>\n    </ul>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>\n        试试这个：设置提醒</h3>\n    <hr />\n\n    <p>Cortana 可执行的操作之一是向您提供提醒。她可以基于事件、地点，甚至人物来向您提醒待办事项。\n    </p>\n    <p>例如，您可以手动输入或语音说出：&ldquo;下次 Tanya 来电时提醒我向她表示祝贺&rdquo;。\"</p>\n    <p>当收到 Tanya 的来电时，将显示这条提醒。</p>\n    <p>此外还有更棒的消息—如果您有 Windows phone 或适用于 iPhone 或 Android 的 Cortana，则可以设置 Cortana 在电脑和手机之间同步通知。\n    </p>\n    <p><img src='./../../../assets/images/qa/6.2.png' /></p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>你好小娜？</h3>\n    <hr />\n    <p>设置 Cortana 随时在您说出&ldquo;你好小娜&rdquo;时听取您的语音。选择任务栏上的搜索框以打开 Cortana 主页。然后选择&ldquo;设置&rdquo;并打开&ldquo;让 Cortana 响应&ldquo;你好小娜&rdquo;&rdquo;。\"\n    </p>\n    <p><img src='./../../../assets/images/qa/6.3.png' /></p>\n    <p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>注</p>\n    <p>Cortana 仅在某些国家/地区可用，且部分 Cortana 功能并非在所有国家/地区可用。\n    </p>\n    <p> </p>",
+            "title": "了解您的个人助理 Cortana",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    了解您的个人助理 Cortana</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Cortana 是什么？</h3><hr /><p>Cortana 是您的数字助手。她可以帮助您完成工作。</p><p>使用 Cortana 的次数越多，获得的体验也会更具个性化。</p><p>要开始使用，请在搜索框中输入一个问题，或选择麦克风，然后通过语音与 Cortana 交互。（所有类型的电脑均支持手动输入，但必须具有麦克风才能进行语音输入。）</p><p>如果不确定要说些什么，可参考锁屏界面以及 Cortana 主页（在任务栏上选择搜索框时显示）中的建议。</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>主页 2. 笔记本 3. 设置 4. 反馈</li></ol><p>以下是 Cortana 可为您做的一些事情：</p><ul>    <li>基于时间、地点、人物为您提供提醒。</li>    <li>跟踪包裹、团队、兴趣和航班。</li>    <li>发送电子邮件和文本。</li>    <li>管理您的日历，不错失最新动态。</li>    <li>创建和管理列表。</li>    <li>聊天和玩游戏。</li>    <li>查找事件、文件、地点和信息。</li>    <li>打开系统上的任何应用程序。</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>试试这个：设置提醒</h3><hr /><p>Cortana 可执行的操作之一是向您提供提醒。她可以基于事件、地点，甚至人物来向您提醒待办事项。</p><p>例如，您可以手动输入或语音说出：“下次 Tanya 来电时提醒我向她表示祝贺。”</p><p>当收到 Tanya 的来电时，将显示这条提醒。</p><p>此外还有更棒的消息&mdash;如果您有 Windows phone 或适用于 iPhone 或 Android 的 Cortana，则可以设置 Cortana 在电脑和手机之间同步通知。</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>你好小娜？</h3><hr /><p>设置 Cortana 随时在您说出“你好小娜”时听取您的语音。选择任务栏上的搜索框以打开 Cortana 主页。然后选择<strong>设置</strong>并打开<strong>让 Cortana 响应“你好小娜。”</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>注</p><p>Cortana 仅在某些国家/地区可用，且部分 Cortana 功能并非在所有国家/地区可用。</p><p> </p>",
             "heading1": "Cortana 是什么？",
             "para1": "Cortana 是您的数字助手。她可以帮助您完成工作。",
             "para2": "使用 Cortana 的次数越多，获得的体验也会更具个性化。",
@@ -1753,11 +2155,11 @@
         }
     },
     "welcometutorial": {
-        "description": "Vantage使您可以轻松更新驱动程序，运行诊断程序，请求支持以及了解您的设备。快速定制您的体验，并根据您的需求找到有用的信息。",
-        "bullets1": "使用Vantage仪表板查看系统的状态。",
-        "bullets2": "安全顾问 使您的安全管理变得简单（在选定的系统上可用)。",
-        "bullets3": "自动更新可使您的设备保持最佳状态 (在选定系统上可用)。",
-        "subtitle1": "你将如何使用你的设备？",
+        "description": "您好！欢迎使用Vantage<br>Vantage是为您量身定做的系统管家。我们在Vantage中集成了多种功能可以帮助您轻松掌握系统状态，并持续保持系统处于最优状态。也可在您系统遇到问题时，为您快速运行诊断程序，定位问题。",
+        "bullets1": "系统整体状态在首页清晰可览。",
+        "bullets2": "安全顾问助您轻松改善系统安全状况。",
+        "bullets3": "自动更新让您的设备处于最佳状态（ARM平台机型不可用）。",
+        "subtitle1": "您将如何使用您的设备？",
         "subtitle2": "告诉我们您的兴趣",
         "personal": "个人使用",
         "business": "商业用途",
@@ -1769,7 +2171,7 @@
         "title2": "Lenovo",
         "title3": "Vantage",
         "privacypolicy": "Lenovo 的隐私政策",
-        "done": "DONE",
+        "done": "完成",
         "interests": {
             "games": "游戏",
             "news": "新闻",
@@ -1798,6 +2200,6 @@
         "usageStatistics": "使用情况统计信息",
         "usageStatisticsDescription": "向 Lenovo 发送匿名的使用情况统计信息。",
         "Note": "注意：",
-        "settingsNotes": "用户需重新启动才能使此页面中的所有设置生效。"
+        "settingsNotes": "用户需重新启动此应用程序才能使此页面中的所有设置生效。"
     }
 }

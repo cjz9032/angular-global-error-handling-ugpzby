@@ -13,7 +13,10 @@
 				<div class="row">
 					<div class="col-12 col-sm-12 col-lg-8 vtr-page-left-column">
 						<div class="vtr-subpage">
-							<div class="vtr-page-shift-up">
+							<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
+								[isSubtitleVisible]="false"
+								[isButtonVisible]="false"></vtr-widget-offline-info>
+							<div [ngClass]="{'vtr-page-shift-up': isOnline}">
 								<div class="vtr-page-security-internet">
 									<div class="container-fluid p-40 security-card">
 										<div class="row">
@@ -44,10 +47,11 @@
 												<div class="col-12">
 													<vtr-ui-button id="sa-vpn-btn-getsufeasy"
 														aria-label="sa-vpn-btn-getsufeasy"
-														*ngIf="statusItem.status === 'not-installed'"
+														*ngIf="statusItem.status === 'not-installed' || statusItem.status === 'installing'"
 														(click)="getSurfEasy()"
 														metricsEvent="FeatureClick"
 														metricsItem="getSurfEasy"
+														[isDisabled]="statusItem.status === 'installing' || isOnline === false"
 														[label]="'security.vpn.getSufEasy' | translate"
 														[title]="'security.vpn.getSufEasy' | translate">
 													</vtr-ui-button>
@@ -67,7 +71,7 @@
 								</div>
 							</div>
 							<div class="row vtr-page-security-internet"
-								*ngIf="statusItem.status === 'not-installed'">
+								*ngIf="statusItem.status === 'not-installed' || statusItem.status === 'installing'">
 								<div class="row">
 									<div class="col col-12 col-sm-12 mt-40">
 										<div>
@@ -163,7 +167,7 @@
 								<div class="row w-100">
 									<div class="col-12 col-lg-6 mt-40">
 										<div class="col mt-4">
-											<img src="../../../../assets/images/SurfEasy-Left-img-2.png"
+											<img src="../../../../assets/images/SurfEasy-Left-img-2.jpg"
 												class="surfeasy-side-right-img" />
 										</div>
 									</div>
@@ -266,7 +270,8 @@
 															[actionLink]="cardContentPositionA.ActionLink"
 															[type]="'corner-article'"
 															cornerShift="large"
-															order="r1"
+															order="2"
+															sideFlag="r"
 															[ratioX]="4"
 															[ratioY]="2"
 															[cornerShift]="'large'">

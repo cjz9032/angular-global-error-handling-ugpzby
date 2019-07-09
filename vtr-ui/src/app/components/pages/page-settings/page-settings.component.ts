@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SettingsService } from 'src/app/services/settings.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-page-settings',
@@ -47,9 +49,14 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	constructor(
 		private shellService: VantageShellService,
 		private settingsService: SettingsService,
+		private commonService: CommonService
 	) {
 		this.preferenceSettings = this.shellService.getPreferenceSettings();
 		this.metrics = shellService.getMetrics();
+		shellService.getMetricsPolicy((result)=>{
+			this.metrics.metricsEnabled = result;
+			this.toggleUsageStatistics = this.metrics.metricsEnabled;
+		});
 	}
 
 	ngOnInit() {
@@ -163,7 +170,16 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			this.toggleUsageStatistics = !event.switchValue;
 			this.settingsService.toggleUsageStatistics = !event.switchValue;
 		}
-		this.sendSettingMetrics('SettingUsageStatistics', event.switchValue);
+		const settingUpdateMetrics = {
+			ItemType: 'SettingUpdate',
+			SettingName: 'Accept Privacy Policy',
+			SettingValue: event.switchValue ? 'Enabled' : 'Disabled',
+			SettingParent: 'Page.Settings'
+		};
+		if (this.metrics && this.metrics.sendAsyncEx) {
+			this.metrics.sendAsyncEx(settingUpdateMetrics, { forced: true });
+		}
+		this.commonService.setLocalStorageValue(LocalStorageKey.UserDeterminePrivacy, true);
 	}
 
 	sendMetrics(data: any) {

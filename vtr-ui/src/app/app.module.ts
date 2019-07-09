@@ -1,6 +1,7 @@
+import { OutsideclickDirective } from './directives/outsideclick.directive';
 // ANGULAR MODULES
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -9,7 +10,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { ColorPickerModule } from 'ngx-color-picker';
+
+import { SelectDropDownModule } from 'ngx-select-dropdown';
 
 // CUSTOM MODULES
 import { AppRoutingModule } from './app-routing.module';
@@ -87,12 +89,13 @@ import { DisplayService } from './services/display/display.service';
 import { ContainerService } from './services/container/container.service';
 import { CommsService } from './services/comms/comms.service';
 import { DashboardService } from './services/dashboard/dashboard.service';
-import { SecurityService } from './services/security/security.service';
 import { UserService } from './services/user/user.service';
 import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-detail.service';
 import { CameraDetailMockService } from './services/camera/camera-detail/camera-detail.mock.service';
 import { AudioService } from './services/audio/audio.service';
 import { RegionService } from './services/region/region.service';
+import { DialogService } from './services/dialog/dialog.service';
+import { GlobalErrorHandler } from './services/error-handler/global.service';
 
 // FONT AWESOME
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -109,22 +112,20 @@ import { PageSupportDetailComponent } from './components/pages/page-support-deta
 import { WidgetSupportComponent } from './components/widgets/widget-support/widget-support.component';
 import { UiListSupportComponent } from './components/ui/ui-list-support/ui-list-support.component';
 import { WidgetWarrantyComponent } from './components/widgets/widget-warranty/widget-warranty.component';
-import { SanitizeHtmlPipe } from './pipe/sanitizehtml.pipe';
 import { WidgetRebootComponent } from './components/widgets/widget-reboot/widget-reboot.component';
 import { ContainerArticleComponent } from './components/container-article/container-article.component';
 import { ArticleItemComponent } from './components/article-item/article-item.component';
-import { SanitizeUrlPipe } from './pipe/sanitise-url.pipe';
 import { UniqueIdPipe } from './pipe/unique-id.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
 import { MetricsDirective } from './directives/metrics.directive';
 import { TranslateDirective } from './directives/translate.directive';
+import { LinkStatusDirective } from './directives/link-status.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
 import { ModalCommonConfirmationComponent } from './components/modal/modal-common-confirmation/modal-common-confirmation.component';
 import { BaseComponent } from './components/base/base.component';
 import { AppEventDirective } from './directives/app-event.directive';
-import { SafeDomPipe } from './pipe/safe-dom/safe-dom.pipe';
 import { ModalUpdateChangeLogComponent } from './components/modal/modal-update-change-log.component/modal-update-change-log.component';
 import { ModalArticleDetailComponent } from './components/modal/modal-article-detail/modal-article-detail.component';
 import { ModalThreatLocatorComponent } from './components/modal/modal-threat-locator/modal-threat-locator.component';
@@ -142,6 +143,8 @@ import { ModalSupportWechatComponent } from './components/modal/modal-support-we
 import { ModalLicenseComponent } from './components/modal/modal-license/modal-license.component';
 import { SpinnerComponent } from './components/common/spinner/spinner.component';
 import { PagePrivacyComponent } from './components/pages/page-privacy/page-privacy.component';
+
+//GAMING
 import { PageDeviceGamingComponent } from './components/pages/page-device-gaming/page-device-gaming.component';
 import { WidgetLegionEdgeComponent } from './components/widgets/widget-legion-edge/widget-legion-edge.component';
 import { WidgetSystemToolsComponent } from './components/widgets/widget-system-tools/widget-system-tools.component';
@@ -149,22 +152,23 @@ import { WidgetSystemMonitorComponent } from './components/widgets/widget-system
 import { WidgetQuicksettingsListComponent } from './components/widgets/widget-quicksettings-list/widget-quicksettings-list.component';
 import { WidgetLightingComponent } from './components/widgets/widget-lighting/widget-lighting.component';
 import { ModalGamingLegionedgeComponent } from './components/modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
-import { PrivacyModule } from './components/pages/page-privacy/privacy.module';
 import { UiGamingCollapsibleContainerComponent } from './components/ui/ui-gaming-collapsible-container/ui-gaming-collapsible-container.component';
 import { PageMacrokeyComponent } from './components/pages/page-macrokey/page-macrokey.component';
 import { PageLightingcustomizeComponent } from './components/pages/page-lightingcustomize/page-lightingcustomize.component';
-import { PageHardwarescanComponent } from './components/pages/page-hardwarescan/page-hardwarescan.component';
-import { UiRoundedRectangleRadioComponent } from './components/ui/ui-rounded-rectangle-radio/ui-rounded-rectangle-radio.component';
-import { CameraBackgroundBlurComponent } from './components/camera-background-blur/camera-background-blur.component';
 import { PageAutocloseComponent } from './components/pages/page-autoclose/page-autoclose.component';
 import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
-import { PowerSmartSettingsComponent } from './components/widgets/power-smart-settings/power-smart-settings.component';
-import { PageSettingsComponent } from './components/pages/page-settings/page-settings.component';
 import { UiPopoverComponent } from './components/ui/ui-popover/ui-popover.component';
-import { OledPowerSettingsComponent } from './components/display/oled-power-settings/oled-power-settings.component';
 import { UiMacrokeyPopupComponent } from './components/ui/ui-macrokey-popup/ui-macrokey-popup.component';
-import { ModalChsWelcomeContainerComponent } from './components/modal/modal-chs-welcome-container/modal-chs-welcome-container.component';
 
+
+import { OledPowerSettingsComponent } from './components/display/oled-power-settings/oled-power-settings.component';
+import { PageSettingsComponent } from './components/pages/page-settings/page-settings.component';
+import { PowerSmartSettingsComponent } from './components/widgets/power-smart-settings/power-smart-settings.component';
+import { CameraBackgroundBlurComponent } from './components/camera-background-blur/camera-background-blur.component';
+import { PageHardwarescanComponent } from './components/pages/page-hardwarescan/page-hardwarescan.component';
+import { ModalChsWelcomeContainerComponent } from './components/pages/page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
+import { UiRoundedRectangleRadioComponent } from './components/ui/ui-rounded-rectangle-radio/ui-rounded-rectangle-radio.component';
+import { PrivacyModule } from './components/pages/page-privacy/privacy.module';
 // SA Components
 import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
 import { PageSecurityWifiComponent } from './components/pages/page-security-wifi/page-security-wifi.component';
@@ -172,20 +176,13 @@ import { PageSecurityPasswordComponent } from './components/pages/page-security-
 import { PageSecurityInternetComponent } from './components/pages/page-security-internet/page-security-internet.component';
 import { PageSecurityHomeSecurityComponent } from './components/pages/page-security-home-security/page-security-home-security.component';
 import { PageSecurityComponent } from './components/pages/page-security/page-security.component';
-import { PageConnectedHomeSecurityComponent } from './components/pages/page-connected-home-security/page-connected-home-security.component';
-import { ConnectedHomeComponent } from './components/pages/page-security-wifi/children/connected-home/connected-home.component';
-import { ConnectedHomeMyHomeComponent } from './components/pages/page-security-wifi/children/connected-home-my-home/connected-home-my-home.component';
 import { WifiSecurityComponent } from './components/pages/page-security-wifi/children/wifi-security/wifi-security.component';
 import { AdvisorWifiSecurityComponent } from './components/pages/page-security/children/advisor-wifi-security/advisor-wifi-security.component';
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
 
 // SA Widgets
-import { WidgetHomeSecurityDeviceComponent } from './components/widgets/widget-home-security-device/widget-home-security-device.component';
 import { WidgetSecurityStatusComponent } from './components/widgets/widget-security-status/widget-security-status.component';
 import { WidgetMcafeeComponent } from './components/widgets/widget-mcafee/widget-mcafee.component';
-import { WidgetHomeSecurityAccountStatusComponent } from './components/widgets/widget-home-security-account-status/widget-home-security-account-status.component';
-import { WidgetHomeSecurityMyDeviceComponent } from './components/widgets/widget-home-security-my-device/widget-home-security-my-device.component';
-import { WidgetHomeSecurityAllDevicesComponent } from './components/widgets/widget-home-security-all-devices/widget-home-security-all-devices.component';
 
 // SA pipes
 import { JoinclassPipe } from './pipe/security-wifi/join-class.pipe';
@@ -201,20 +198,51 @@ import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
 import { UiLightingProfileComponent } from './components/ui/ui-lighting-profile/ui-lighting-profile.component';
 import { UiDropDownComponent } from './components/ui/ui-dropdown/ui-dropdown.component';
 
+// CHS Components
+import { PageConnectedHomeSecurityComponent } from './components/pages/page-connected-home-security/page-connected-home-security.component';
+import { ConnectedHomeComponent } from './components/pages/page-security-wifi/children/connected-home/connected-home.component';
+import { ConnectedHomeMyHomeComponent } from './components/pages/page-security-wifi/children/connected-home-my-home/connected-home-my-home.component';
+
+// CHS widgets
+import { HomeSecurityAccountStatusComponent } from './components/pages/page-connected-home-security/component/home-security-account-status/home-security-account-status.component';
+import { HomeSecurityMyDeviceComponent } from './components/pages/page-connected-home-security/component/home-security-my-device/home-security-my-device.component';
+import { HomeSecurityAllDevicesComponent } from './components/pages/page-connected-home-security/component/home-security-all-devices/home-security-all-devices.component';
+import { HomeSecurityDeviceComponent } from './components/pages/page-connected-home-security/component/home-security-device/home-security-device.component';
+// CHS pipes
+import { DaysIntervalPipe } from './pipe/connected-home-security/account-status/days-interval.pipe';
+import { CharacterLimitPipe } from './pipe/ui-chs-statusbar/character-limit.pipe';
+
 import { AutoupdateSettingsComponent } from './components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
 import { UiLightingProfileToggleComponent } from './components/ui/ui-lighting-profile-toggle/ui-lighting-profile-toggle.component';
 import { UiBrightnessSliderComponent } from './components/ui/ui-brightness-slider/ui-brightness-slider.component';
 import { SvgInlinePipe } from './pipe/svg-inline/svg-inline.pipe';
 import { UiLightingEffectComponent } from './components/ui/ui-lighting-effect/ui-lighting-effect.component';
 import { UiLightingSingleColorComponent } from './components/ui/ui-lighting-single-color/ui-lighting-single-color.component';
-import { UiLightingColorWheelComponent } from './components/ui/ui-lighting-color-wheel/ui-lighting-color-wheel.component';
+
 import { DisplayColorTempComponent } from './components/display/display-color-temp/display-color-temp.component';
 import { IntelligentMediaComponent } from './components/pages/page-smart-assist/intelligent-media/intelligent-media.component';
 import { UiMacrokeyCollapsibleContainerComponent } from './components/ui/ui-macrokey-collapsible-container/ui-macrokey-collapsible-container.component';
-import { CursorTypePipe } from './pipe/ui-security-statusbar/cursor-type.pipe';
 import { UiGamingDriverPopupComponent } from './components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
+import { ActiveProtectionSystemComponent } from './components/pages/page-smart-assist/active-protection-system/active-protection-system.component';
+import { UiApsSliderComponent } from './components/ui/ui-aps-slider/ui-aps-slider.component';
+import { UiCheckboxComponent } from './components/ui/ui-checkbox/ui-checkbox.component';
 import { UiCircleRadioWithCheckboxComponent } from './components/ui/ui-circle-radio-with-checkbox/ui-circle-radio-with-checkbox.component';
 import { UiChsStatusbarComponent } from './components/ui/ui-chs-statusbar/ui-chs-statusbar.component';
+import { ActiveProtectionSystemAdvancedComponent } from './components/pages/page-smart-assist/active-protection-system-advanced/active-protection-system-advanced.component';
+import { UiColorWheelComponent } from './components/ui/ui-color-wheel/ui-color-wheel.component';
+import { SubpageDeviceSettingsInputAccessoryComponent } from './components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
+import { ModalIntelligentCoolingModesComponent } from './components/modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
+import { UiTimePickerComponent } from './components/ui/ui-time-picker/ui-time-picker.component';
+import { VoiceComponent } from './components/pages/page-smart-assist/voice/voice.component';
+import { ModalVoiceComponent } from './components/modal/modal-voice/modal-voice.component';
+import { CapitalizeFirstPipe } from './pipe/capitalize-pipe/capitalize-first.pipe';
+import { SanitizeModule } from './modules/sanitize.module';
+import { SmartStandbyComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/smart-standby/smart-standby.component';
+import { UiDaysPickerComponent } from './components/ui/ui-days-picker/ui-days-picker.component';
+import { DownloadFailedModalComponent } from './components/pages/page-smart-assist/voice/download-failed-modal/download-failed-modal.component';
+import { ModalErrorMessageComponent } from './components/modal/modal-error-message/modal-error-message.component';
+import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component';
+import { UserDefinedKeyComponent } from './components/pages/page-device-settings/children/subpage-device-settings-input-accessory/user-defined-key/user-defined-key.component';
 
 library.add(fas);
 library.add(fab);
@@ -241,7 +269,7 @@ library.add(fal);
 		WidgetQuestionsComponent,
 		WidgetDeviceUpdateComponent,
 		WidgetDeviceUpdateSettingsComponent,
-		WidgetHomeSecurityAccountStatusComponent,
+		HomeSecurityAccountStatusComponent,
 		PageQuestionsComponent,
 		ContainerCardComponent,
 		HeaderMainComponent,
@@ -289,12 +317,10 @@ library.add(fal);
 		UiListSupportComponent,
 		WidgetWarrantyComponent,
 		ModalLenovoIdComponent,
-		SanitizeHtmlPipe,
 		WidgetRebootComponent,
 		FeedbackFormComponent,
 		ContainerArticleComponent,
 		ArticleItemComponent,
-		SanitizeUrlPipe,
 		UniqueIdPipe,
 		ModalBatteryChargeThresholdComponent,
 		WidgetMcafeeComponent,
@@ -306,14 +332,15 @@ library.add(fal);
 		ModalBatteryChargeThresholdComponent,
 		MetricsDirective,
 		TranslateDirective,
+		LinkStatusDirective,
 		InstallationHistoryComponent,
 		SeparatePascalCasePipe,
 		ModalCommonConfirmationComponent,
 		BaseComponent,
 		ModalCommonConfirmationComponent,
 		AppEventDirective,
+		OutsideclickDirective,
 		ModalUpdateChangeLogComponent,
-		SafeDomPipe,
 		ModalCommonConfirmationComponent,
 		ModalArticleDetailComponent,
 		DolbyModesTranslationPipe,
@@ -364,7 +391,7 @@ library.add(fal);
 		PageNetworkBoostComponent,
 		PowerSmartSettingsComponent,
 		PageSettingsComponent,
-		WidgetHomeSecurityDeviceComponent,
+		HomeSecurityDeviceComponent,
 		UiLightingProfileComponent,
 		OledPowerSettingsComponent,
 		UiDropDownComponent,
@@ -381,17 +408,34 @@ library.add(fal);
 		DisplayColorTempComponent,
 		UiLightingProfileToggleComponent,
 		UiBrightnessSliderComponent,
-		SvgInlinePipe,
 		UiLightingEffectComponent,
 		UiLightingSingleColorComponent,
-		UiLightingColorWheelComponent,
-		WidgetHomeSecurityMyDeviceComponent,
-		WidgetHomeSecurityAllDevicesComponent,
+
+		HomeSecurityMyDeviceComponent,
+		HomeSecurityAllDevicesComponent,
 		UiMacrokeyCollapsibleContainerComponent,
-		CursorTypePipe,
 		UiGamingDriverPopupComponent,
+		ActiveProtectionSystemComponent,
+		UiApsSliderComponent,
+		UiCheckboxComponent,
 		UiCircleRadioWithCheckboxComponent,
-		UiChsStatusbarComponent
+		UiChsStatusbarComponent,
+		ActiveProtectionSystemAdvancedComponent,
+		UiColorWheelComponent,
+		SubpageDeviceSettingsInputAccessoryComponent,
+		ModalIntelligentCoolingModesComponent,
+		DaysIntervalPipe,
+		CharacterLimitPipe,
+		UiTimePickerComponent,
+		VoiceComponent,
+		ModalVoiceComponent,
+		CapitalizeFirstPipe,
+		SmartStandbyComponent,
+		UiDaysPickerComponent,
+		DownloadFailedModalComponent,
+		ModalErrorMessageComponent,
+		ModalServerSwitchComponent,
+		UserDefinedKeyComponent
 	],
 	imports: [
 		BrowserModule,
@@ -408,7 +452,8 @@ library.add(fal);
 		TranslationModule,
 		BrowserAnimationsModule,
 		PrivacyModule,
-		ColorPickerModule
+		SanitizeModule,
+		SelectDropDownModule
 	],
 	providers: [
 		CookieService,
@@ -418,11 +463,12 @@ library.add(fal);
 		ContainerService,
 		CommsService,
 		DashboardService,
-		SecurityService,
 		UserService,
 		AudioService,
 		RegionService,
-		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
+		DialogService,
+		{ provide: BaseCameraDetail, useClass: CameraDetailMockService },
+		{ provide: ErrorHandler, useClass: GlobalErrorHandler }
 	],
 	bootstrap: [AppComponent],
 	entryComponents: [
@@ -441,7 +487,12 @@ library.add(fal);
 		ModalSupportWechatComponent,
 		ModalLicenseComponent,
 		ModalGamingLegionedgeComponent,
-		ModalChsWelcomeContainerComponent
+		ModalChsWelcomeContainerComponent,
+		ModalIntelligentCoolingModesComponent,
+		ModalVoiceComponent,
+		DownloadFailedModalComponent,
+		ModalErrorMessageComponent,
+		ModalServerSwitchComponent
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

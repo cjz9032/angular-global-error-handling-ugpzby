@@ -7,7 +7,7 @@
 	<div class="container-fluid p-0"
 		[ngClass]="{'vtr-disabled': disabled}">
 		<div class="row m-0">
-			<div class="col"
+			<div [ngClass]="{'col-md-10 col-9': (isSwitchVisible && !resetTextAsButton),'col-md-11 col-11':(!resetTextAsButton && !isSwitchVisible),'col-md-7': (resetTextAsButton && !isSwitchVisible)}"
 				[ngClass]="{'col-md-8': (type==='auto-updates' || type==='Camera'), 'col-md-10':type===undefined}">
 				<div class="container-fluid p-0">
 					<div class="row m-0">
@@ -20,7 +20,7 @@
 								<svg-icon *ngIf="leftIcon[0]==='svg'"
 									[applyCss]="true"
 									[stretch]="true"
-									class="left-icon"
+									class="left-icon-svg svg-inline--fa fa-w-20  ng-fa-icon"
 									[src]="'assets/icons/'+leftIcon[1]+'.svg'"></svg-icon>
 								<span *ngIf="leftIcon[0]==='icomoon'"
 									[ngClass]="'icomoon '+leftIcon[1]"></span>
@@ -28,11 +28,10 @@
 						</div>
 						<div class="col">
 							<div class="title">{{ title }}</div>
-							<span class="caption"
-								[innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption">
-								<!-- {{ caption }} -->
-							</span>
-							<span class="read-more"
+							<span>
+								<div class="caption" [innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption"></div>
+						</span>
+								<!-- {{ caption }} -->														<span class="read-more"
 								*ngIf="!contentExpand"
 								(click)="onReadMoreClick($event)">
 								{{ readMoreText }}
@@ -41,7 +40,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="col d-flex justify-content-end">
+			
+			<div  [ngClass]="{'col-md-2 d-flex col-3 justify-content-end': (isSwitchVisible && !resetTextAsButton),'col-md-1 col-1 d-flex justify-content-end':(!resetTextAsButton && !isSwitchVisible),'col-md-5 d-flex justify-content-end': (resetTextAsButton && !isSwitchVisible)}" >
 				<div class="row">
 					<div class="p-0"
 						[ngClass]="{'ml-auto': type!=='Camera'}"
@@ -83,7 +83,7 @@
 
 					<div class="p-0"
 						[ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}"
-						*ngIf="rightIcon.length > 0">
+						*ngIf="rightIcon.length > 0 && !voice">
 						<fa-icon class="right-icon"
 							triggers="click:blur"
 							placement="auto"
@@ -92,6 +92,13 @@
 							container="body"
 							tooltipClass="vtr-tooltip"
 							(click)="onRightIconClick($event)"></fa-icon>
+					</div>
+
+					<div class="p-0"
+						*ngIf="rightIcon.length > 0 && voice">
+						<fa-icon class="right-icon"
+							[icon]="rightIcon"
+							(click)="voicePopUp()"></fa-icon>
 					</div>
 				</div>
 			</div>

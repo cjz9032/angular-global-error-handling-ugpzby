@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -39,22 +39,36 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
                     "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock"
+                    "touchpadLock": "Touchpad Lock",
+                    "lightingDriverPopup": {
+                        "headerText": "Driver Install Required",
+                        "text": "Please install driver",
+                        "button": "Install",
+                        "link": "cancel"
+                    },
+                    "lightingColorMessage": {
+                        "text": "Selecting color not available to this effect."
+                    }
                 },
                 "systemTools": {
                     "power": "Power",
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -71,6 +85,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                },
+                "systemStatus": {
+                    "info": "INFO"
                 }
             }
         },
@@ -111,11 +128,12 @@
                 },
                 "buttons": {
                     "start": "START RECORDING",
-                    "stop": "STOP RECORDING"
+                    "stop": "STOP RECORDING",
+                    "numberPrefix": "NUM"
                 },
                 "recording": {
                     "title": "START TYPING",
-                    "description": "20 inputs with in 20 seconds can be recorded."
+                    "description": "20 inputs within 20 seconds can be recorded."
                 },
                 "recorded": {
                     "title": "MACRO KEY FOR ",
@@ -204,7 +222,7 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure to clear this macro key?"
+                    "title": "Are you sure you want to clear this macro key?"
                 },
                 "timeoutRecording": {
                     "title": "Time Out For Recording.",
@@ -223,13 +241,16 @@
                     "btnCancel": "Cancel"
                 },
                 "btnOk": "OK"
+            },
+            "recording": {
+                "title": "Recording Macro Key For"
             }
         },
         "lightingProfile": {
             "title": "Lighting",
             "effect": {
                 "option1": {
-                    "title": "Static"
+                    "title": "On"
                 },
                 "option2": {
                     "title": "Flicker"
@@ -241,38 +262,133 @@
                     "title": "Wave"
                 },
                 "option5": {
-                    "title": "Music"
-                },
-                "option6": {
                     "title": "Smooth"
                 },
-                "option7": {
+                "option6": {
                     "title": "CPU Temperature"
                 },
-                "option8": {
+                "option7": {
                     "title": "CPU Utilization"
                 },
-                "option9": {
-                    "title": "Response"
+                "option8": {
+                    "title": "Off"
                 },
-                "option10": {
-                    "title": "Ripple"
+                "apply": {
+                    "title": "APPLY"
                 },
-                "option11": {
-                    "title": "No Light"
+                "applied": {
+                    "title": "APPLIED"
+                }
+            },
+            "brightness": {
+                "text1": {
+                    "title": "*Brightness setting doesn't apply on "
+                },
+                "text2": {
+                    "title": " effect"
+                }
+            },
+            "lightingSingleLightingOption": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
+            },
+            "colourwheel": {
+                "text1": {
+                    "title": "Selecting colour not available to this effect."
+                },
+                "text2": {
+                    "title": "APPLY"
+                },
+                "text3": {
+                    "title": "APPLIED"
+                },
+                "text4": {
+                    "title": "R:"
+                },
+                "text5": {
+                    "title": "G:"
+                },
+                "text6": {
+                    "title": "B:"
+                },
+                "text7": {
+                    "title": "Color"
                 }
             }
         }
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "Tablou de bord",
             "device": {
-                "title": "My Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "Dispozitiv",
+                "sub1": "Dispozitivul meu",
+                "sub2": "Setările dispozitivului",
                 "sub3": "System Updates",
-                "sub4": "Smart Assist"
+                "sub4": "Asistent inteligent"
             },
             "security": {
                 "title": "Securitate",
@@ -283,9 +399,9 @@
                 "sub5": "Protecție pe internet",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "Asistenţă",
+            "homeSecurity": "Conectat acasă",
+            "privacy": "Confidenţialitate"
         },
         "securityAdvisor": {
             "title": "Asistenţă securitate",
@@ -307,25 +423,23 @@
             "notRegistered": "NEÎNREGISTRAT"
         },
         "qAndA": {
-            "title": "Q&A for your machine",
-            "subtitle": "FIND SOME HELPFUL TIPS FOR YOUR DEVICE.",
-            "question1": "Backup and Restore your files",
-            "question2": "How to refresh your PC",
-            "question3": "How to know your machine's CPU",
-            "question4": "Check your machine's battery use",
-            "question5": "Use your PC like a tablet",
-            "question6": "Get to know Cortana, your personal assistant"
+            "title": "Întrebări și răspunsuri pentru mașina dvs.",
+            "subtitle": "Găsiți câteva sfaturi bune pentru aparatul Dvs.",
+            "question1": "Copii de siguranță și restaurarea fișierelor",
+            "question2": "Cum să reîmprospătați PC-ul",
+            "question3": "Cum să cunoașteți procesorul dispozitivului",
+            "question4": "Verificați utilizarea bateriei dispozitivului",
+            "question5": "Folosiți PC-ul ca o tabletă",
+            "question6": "Cunoașteți-o pe Cortana, asistentul personal"
         },
         "ui": {
             "back": "ÎNAPOI",
             "on": "ON",
             "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
-            "loader": {
-                "text1": "Fetching",
-                "text2": "Status"
-            }
+            "collapse": "Restrângere",
+            "expand": "Extindere",
+            "loader": "Obținerea <br> statutului",
+            "loading": "se incarca..."
         }
     },
     "privacy": {
@@ -344,7 +458,7 @@
         "personal": "PERSONAL",
         "custom": "CUSTOM",
         "skip": "SKIP",
-        "next": "NEXT",
+        "next": "URMĂTORUL",
         "interests": "What are your interests?",
         "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
         "games": "GAMES",
@@ -358,166 +472,179 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Păreți plin de energie astăzi "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Nu s-a detectat nicio conexiune la internet",
+            "subtitle": "Aflați cum puteți rezolva problemele de conexiune în",
+            "buttonText": "Obțineți asistență"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Oferiţi feedback",
+            "subtitle": "Spuneți-ne părerea despre Vantage.",
+            "button": "Oferiți feedback",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Comentarii...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
-                }
+                    "feedbackSuccess": "Vă mulţumim pentru feedbackul furnizat!"
+                },
+                "question1": "Vă place noul stil al Vantage?",
+                "question2": "Credeți că performanța este acceptabilă?",
+                "question3": "Ați folosi aplicația mai des în viitor?",
+                "yes": "Da",
+                "no": "Nu",
+                "tips1": "Vă rugăm să lăsați orice comentarii suplimentare",
+                "sendFeedback": "Trimiteți feedbackul",
+                "submitScreenShot": "Trimiteți captura de ecran"
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera Privacy",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Setări rapide",
+            "microphone": "Microfon",
+            "cameraPrivacy": "Cameră",
+            "eyeCareMode": "Modul de îngrijire ochi"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Starea sistemului",
+            "subtitle": "FIȚI LA CURENT CU STAREA DISPOZITIVULUI DVS.",
             "memory": {
-                "title": "Memory",
+                "title": "Memorie",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Memoria nu a fost găsită",
+                    "of": "din"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Spațiu pe disc",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Discul nu a fost găsit",
+                    "of": "din"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Garanţie",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Garanţia nu a fost găsită",
+                    "until": "Până pe",
+                    "expiredOn": "Garanția a expirat pe",
+                    "notAvailable": "Garanția nu este disponibilă"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Actualizare"
                 }
             }
         }
     },
     "device": {
         "myDevice": {
-            "title": "My Device",
-            "subtitle": "My device status",
-            "serial": "Serial",
-            "productNumber": "Product number",
-            "biosVersion": "Bios version",
-            "learnMore": "Learn more",
-            "freeMemory": "Free memory",
+            "title": "Dispozitivul meu",
+            "subtitle": "Starea dispozitivului meu",
+            "serial": "Nr. serie",
+            "productNumber": "Număr de produs",
+            "biosVersion": "Versiune BIOS",
+            "learnMore": "Aflaţi mai multe",
+            "freeMemory": "Memorie liberă",
             "systemUpdate": {
-                "title": "System update",
-                "notFound": "System update not found",
+                "title": "Actualizare sistem",
+                "notFound": "Actualizarea sistemului a fost găsită",
                 "detail": {
-                    "uptoDate": "Software up to date ",
-                    "updatedOn": "updated on ",
-                    "outdated": "Software outdated ",
-                    "neverRanUpdate": "never ran update"
+                    "uptoDate": "Software actualizat",
+                    "updatedOn": "actualizat pe",
+                    "outdated": "Software învechit",
+                    "neverRanUpdate": "nu a fost actualizat niciodată"
                 }
             },
-            "extendedWarranty": "Extend warranty",
+            "extendedWarranty": "Extindere garanție",
             "processor": {
-                "title": "Processor",
-                "notFound": "Processor not found"
+                "title": "Procesor",
+                "notFound": "Procesorul nu a fost găsit"
             },
             "memory": {
-                "title": "Memory",
-                "notFound": "Memory not found",
+                "title": "Memorie",
+                "notFound": "Memoria nu a fost găsită",
                 "ram": "RAM"
             },
             "diskspace": {
-                "title": "Disk Space",
-                "notFound": "Disk not found"
+                "title": "Spațiu pe disc",
+                "notFound": "Discul nu a fost găsit"
             },
-            "software": "Software up to date",
-            "updated": "Updated",
-            "outOfWarranty": "Out of warranty",
-            "expired": "Expired on",
-            "of": "of",
+            "software": "Software actualizat",
+            "updated": "Actualizat",
+            "outOfWarranty": "În afara garanției",
+            "expired": "A expirat pe",
+            "of": "din",
             "warranty": {
-                "notFound": "Warranty not found",
+                "notFound": "Garanţia nu a fost găsită",
                 "detail": {
-                    "title": "Extend warranty",
-                    "inWarranty": "In warranty ",
-                    "daysRemaining": "days remaining",
-                    "outOfWarranty": "Out of warranty ",
-                    "expiredOn": "Expired on",
-                    "notAvailable": "Warranty not available",
-                    "support": "Support"
+                    "title": "Extindere garanție",
+                    "inWarranty": "În garanție",
+                    "daysRemaining": "zile rămase",
+                    "outOfWarranty": "În afara garanției",
+                    "expiredOn": "A expirat pe",
+                    "notAvailable": "Garanția nu este disponibilă",
+                    "support": "Asistenţă"
                 }
             },
-            "helpful": "Helpful Content"
+            "helpful": "Conținut util"
         },
         "deviceSettings": {
-            "helpful": "Helpful Content",
+            "helpful": "Conținut util",
             "batteryGauge": {
-                "title": "BATTERY GAUGE",
-                "subtitle": "Battery",
-                "hours": "hours",
-                "hour": "hour",
-                "minutes": "minutes",
-                "minute": "minute",
-                "charge": "TIME TO FULLY CHARGE",
-                "button": "SEE BATTERY DETAILS",
+                "title": "INDICATOR BATERIE",
+                "subtitle": "Funcţionare baterie",
+                "hours": "ore",
+                "hour": "oră",
+                "minutes": "minute",
+                "minute": "minut",
+                "charge": "TIMP PÂNĂ LA ÎNCĂRCAREA COMPLETĂ",
+                "button": "VEDEȚI DETALIILE BATERIEI",
                 "details": {
-                    "title": "Battery Details",
-                    "primary": "Primary Battery",
-                    "secondary": "Secondary Battery",
-                    "tertiary": "Tertiary Battery",
-                    "status": "Status",
-                    "wattage": "Wattage",
-                    "barcode": "Bar-Code",
-                    "remainingPercent": "Remaining percentage",
-                    "temp": "Temperature",
-                    "frupn": "FRU part number",
-                    "remainingTime": "Remaining time",
-                    "chargeCompletionTime": "Charge completion time",
-                    "cycleCount": "Cycle count",
-                    "chemistry": "Device chemistry",
-                    "remainingCap": "Remaining capacity",
-                    "designCap": "Design capacity",
-                    "fullChargeCap": "Full charge capacity",
-                    "manufDt": "Manufacture date",
-                    "designVolt": "Design voltage",
-                    "volts": "Voltage",
-                    "firstUseDt": "First use date",
-                    "firmwareVer": "Firmware version",
+                    "title": "Detalii baterie",
+                    "primary": "Baterie principală",
+                    "secondary": "Baterie secundară",
+                    "tertiary": "Baterie terță",
+                    "status": "Stare",
+                    "wattage": "Putere exprimată în waţi",
+                    "barcode": "Cod de bare",
+                    "remainingPercent": "Procent rămas",
+                    "temp": "Temperatura",
+                    "frupn": "Număr de reper FRU",
+                    "remainingTime": "Timp rămas",
+                    "chargeCompletionTime": "Timp până la finalizarea încărcării",
+                    "cycleCount": "Număr cicluri",
+                    "chemistry": "Material dispozitiv",
+                    "remainingCap": "Capacitate rămasă",
+                    "designCap": "Capacitate model",
+                    "fullChargeCap": "Capacitate de încărcare completă",
+                    "manufDt": "Data fabricaţiei",
+                    "designVolt": "Tensiune model",
+                    "volts": "Tensiune",
+                    "firstUseDt": "Data primei utilizări",
+                    "firmwareVer": "Versiune firmware",
                     "chargeStatusString": {
-                        "error": "ERROR",
-                        "notinstalled": "Not installed",
-                        "noactivity": "No activity",
-                        "charging": "Charging",
-                        "discharging": "Discharging",
-                        "acdischarging": "Discharging (with ac)"
+                        "error": "EROARE",
+                        "notinstalled": "Neinstalată",
+                        "noactivity": "Fără activitate",
+                        "charging": "Se încarcă",
+                        "discharging": "Se descarcă",
+                        "acdischarging": "Se descarcă (cu acumulator)"
                     },
                     "deviceChemistry": {
                         "li-polymer": "Li-Polymer",
                         "li-ion": "Li-Ion",
                         "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion"
+                        "li_ion": "Li-Ion",
+                        "silver-zinc": "Silver-Zinc",
+                        "silver_zinc": "Silver-Zinc",
+                        "nicd": "NiCd",
+                        "nimh": "NiMH",
+                        "unknown": "Unknown"
                     },
                     "manufacturer": {
                         "title": "Manufacturer",
@@ -527,17 +654,17 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "This system may not support battery that",
-                        "description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
-                        "description1": "Attention:",
-                        "description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
+                        "description": "you cannot use the attached battery with this computer.",
+                        "description1": "Replace",
+                        "description2": "it with a battery of correct model."
                     },
                     "Good": {
-                        "title": "The battery is in good Condition"
+                        "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -551,536 +678,804 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter"
-                    },
-                    "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter"
-                    },
-                    "ACAdapterNotSupported": {
-                        "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
                         "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
+                    "NotSupportACAdapter": {
+                        "title": "AC adapter not supported.",
+                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
+                    },
                     "MissingDriver": {
-                        "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
+                        "title": "The Lenovo Power Manager driver",
                         "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
                     },
                     "StoreLimitation": {
                         "title": "The battery can only store",
                         "description1": "of",
                         "description2": "it's original full charge capacity"
+                    },
+                    "HighTemperature": {
+                        "title": "Discharging",
+                        "description": "has been stopped because the",
+                        "description1": "battery temperature is too high"
+                    },
+                    "TrickleCharge": {
+                        "description": "The battery was",
+                        "description1": "completely discharged",
+                        "description2": "and needs to be recharged. This might take ten hours or more."
+                    },
+                    "OverheatedBattery": {
+                        "description": "The battery is",
+                        "description1": "too hot.",
+                        "description2": "Remove it from the computer and cool it to room temperature."
+                    },
+                    "PermanentError": {
+                        "description": "The battery has",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
+                    },
+                    "HardwareAuthenticationError": {
+                        "description": "The battery installed is",
+                        "description1": "is not supported",
+                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
                     }
-                }
+                },
+                "updating": "Updating",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
+                "voltageError": "Battery voltage incorrect",
+                "batteryNotDetected": "No Battery Detected"
             },
             "power": {
-                "title": "Power",
-                "subtitle": "Power Settings",
-                "description": "This section enables you to dynamically adjust thermal performance and maximize the battery life. It also has other popular power-related features. You can check the default settings in this section and customize your system according to your needs.",
+                "title": "Alimentare",
+                "subtitle": "Setări alimentare",
+                "description": "Această secțiune vă oferă posibilitatea de a regla în mod dinamic performanța termică și de a maximiza viața bateriei.Are și alte caracteristici cunoscute legate de alimentare. Puteți verifica setările implicite din această secțiune și personaliza sistemul conform nevoilor dvs.",
                 "jumpto": {
-                    "title": "JUMP TO SETTINGS",
-                    "battery": "Battery",
-                    "power": "Power",
-                    "cooling": "Intelligent Cooling",
-                    "other": "Other"
+                    "title": "ACCESAȚI SETĂRILE",
+                    "battery": "Baterie",
+                    "power": "Alimentare",
+                    "cooling": "Răcire inteligentă",
+                    "other": "Altele"
                 },
                 "powerSmartSettings": {
-                    "title": "Power Smart Settings",
-                    "subtitle": "INTELLIGENT COOLING",
-                    "subtitle1": "Battery & Quiet",
-                    "description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
-                    "description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
-                    "readMore": "Read more.",
+                    "title": "Setări inteligente de alimentare",
+                    "subtitle": "RĂCIRE INTELIGENTĂ",
+                    "subtitle1": "Modul baterie și silențios",
+                    "description1": "Această caracteristică adaptează dinamic setările termice nevoilor dumneavoastră.Când este activată, ajustează setările pentru a menține dispozitivul rece și silențios, când acesta este asupra dvs. sau inactiv. În caz contrar, optimizează performanța în timp ce dispozitivul se află pe o suprafață stabilă. Când este dezactivat, puteți să setați în mod manual prioritatea termală.",
+                    "description2": "Răcirea inteligentă ajustează viteza ventilatorului, temperatura maximă a suprafeței și performanța.Această caracteristică are modurile de mai jos și poate fi accesată acum prin glisorul pentru performanța de alimentare Windows.",
+                    "description3": "Funcţia Răcire inteligentă adaptează automat performanţa termică nevoilor dumneavoastră.Caracteristica Răcire inteligentă ajustează setările performanței pentru a oferi o suprafață mai rece pentru confort când notebookul este asupra dvs. Când dispozitivul este pe un birou, această caracteristică optimizează performanța sistemului.",
+                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
+                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "readMore": "Citiți mai multe.",
                     "gotoWindows": {
-                        "title": "Go to windows settings",
-                        "modalBodyText1": "Click on Windows battery icon on System tray to access Windows performance power slider"
+                        "title": "Accesați setările Windows",
+                        "modalBodyText1": "Dați clic pe pictograma bateriei Windows din bara de sistem pentru a accesa glisorul pentru performanța de alimentare Windows"
                     },
                     "intelligentCooling": {
-                        "title": "Intelligent cooling",
+                        "title": "Răcire inteligentă",
                         "description": "",
                         "tooltip": "",
-                        "optimize": "optimize system for",
-                        "apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
+                        "optimize": "optimizare sistem pentru",
+                        "apsHint": "Pentru a activa Răcirea inteligentă, trebuie să instalaţi şi să activaţi Lenovo Active Protection System.",
                         "options": {
-                            "quiteCool3": "Cool Mode",
-                            "performance3": "High Performance",
-                            "quiteCool4": "Quiet & Cool",
-                            "performance4": "Performance",
-                            "quiteCool5": "Quiet & Cool",
-                            "performance5": "Performance"
+                            "quiteCool3": "Mod răcire",
+                            "performance3": "Performanţă ridicată",
+                            "quiteCool4": "Modul rece și silențios",
+                            "performance4": "Performanţă",
+                            "quiteCool5": "Modul rece și silențios",
+                            "performance5": "Performanţă",
+                            "batterySaving": "Battery Saving",
+                            "performance13": "Performance",
+                            "quiteCool13": "Quiet & Cool",
+                            "performance14": "Extreme Performance",
+                            "quiteCool14": "Intelligent Cooling"
                         },
                         "readMore": {
-                            "mode1": "Quiet mode",
-                            "mode2": "Balanced mode",
-                            "mode3": "Performance mode",
-                            "line1": "Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "line2": "Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
-                            "line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "mode1": "Mod silențios",
+                            "mode2": "Mod echilibrat",
+                            "mode3": "Mod performanță",
+                            "line1": "Glisorul este în stânga.Viteza și performanța ventilatorului sunt mai reduse pentru un computer mai silențios, cu o răcire mai bună și cu cea mai bună durată de viață a bateriei.",
+                            "line2": "Cursorul este în centru.Viteza și performanța ventilatorului sunt echilibrate dinamic pentru cea mai bună experiență.",
+                            "line3": "Glisorul este în dreapta. Viteza ventilatorului și temperatura permisă a suprafeței sunt mai ridicate pentru cea mai mare performanță.",
+                            "line4": "More info"
+                        },
+                        "selectedModeText": {
+                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
+                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
+                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                        },
+                        "intelligentCoolingModesModal": {
+                            "title": "Change intelligent cooling modes",
+                            "close": "close",
+                            "coolingModesList": {
+                                "list1": "Click on the windows battery-icon in the toolbar",
+                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                            }
                         }
                     },
                     "nonintelligentCooling": {
                         "options": {
-                            "intelligentCooling": "INTELLIGENT COOLING",
-                            "extremeCooling": "EXTREME PERFORMANCE",
-                            "battery&Quite": "BATTERY & QUIET"
+                            "intelligentCooling": "RĂCIRE INTELIGENTĂ",
+                            "extremeCooling": "PERFORMANȚĂ EXTREMĂ",
+                            "battery&Quite": "MODUL BATERIE ȘI SILENȚIOS"
                         }
-                    }
+                    },
+                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
                 },
                 "powerSettings": {
-                    "title": "Power Settings",
+                    "title": "Setări alimentare",
                     "alwaysUSB": {
                         "title": "Always on USB",
-                        "description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
-                        "checkbox": "Enable USB charging from laptop battery when computer is off."
+                        "description": "Încărcaţi dispozitivele USB prin conectorul USB întotdeauna alimentat de pe calculator, când calculatorul este în modul repaus, hibernare sau oprit.Un telefon inteligent sau o tabletă pot fi încărcate mai rapid de la conectorul USB care este marcat cu galben sau care are aceste pictograme:",
+                        "checkbox": "Activați încărcarea USB de la bateria laptopului când computerul este oprit."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Reluare simplă",
+                        "description": "Activați această caracteristica pentru a îmbunătăți timpul de reluare dacă deschideți și închideți frecvent capacul calculatorului.",
+                        "tooltip": "Această caracteristică va îmbunătăţi timpul de reluare dacă deschideţi şi închideţi frecvent capacul calculatorului. Când este activată, calculatorul va trece în modul de alimentare redusă când închideţi capacul, dar va reveni imediat dacă redeschideţi capacul în decurs de 15 minute după ce l-aţi închis. Această caracteristică permite, de asemenea, notebookului să încerce să termine activităţile în aşteptare (cum ar fi, trimiterea e-mailului sau descărcarea unui fişier) înainte ca sistemul să se oprească."
                     }
                 },
                 "otherSettings": {
-                    "title": "Other Settings",
+                    "title": "Alte setări",
                     "vantageToolbar": {
-                        "title": "Lenovo Vantage Toolbar",
-                        "description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
+                        "title": "Bara de instrumente Lenovo Vantage",
+                        "description": "Fixați bara de instrumente Vantage în bara de activități Windows pentru a obține într-un mod mai simplu mai multe detalii despre baterie și acces la setările rapide."
                     }
                 },
                 "batterySettings": {
-                    "title": "Battery Settings",
+                    "title": "Setări baterie",
                     "batteryThreshold": {
-                        "title": "Battery Charge Threshold",
-                        "description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
-                        "tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "title": "Prag încărcare baterie",
+                        "description": "Dacă utilizați în principal calculatorul cu adaptorul c.a. conectat și utilizați doar rar energia bateriei,puteți prelungi durata de viață a bateriei prin setarea valorii maxime de încărcare sub 100%. Acest lucru este util, deoarece bateriile care sunt utilizate rar au o durată de viaţă mai lungă când sunt păstrate neîncărcate complet.",
+                        "tooltip": "Dacă bateria este în prezent încărcată peste pragul de oprire a încărcării, deconectați alimentarea până când bateria se descarcă la sau sub pragul de oprire a încărcării.În funcție de starea bateriei (veche sau nouă), punctul exact la care încărcarea va începe sau se va opri poate să difere cu până la 2 procente. Dacă activați caracteristica, se recomandă să efectuați ocazional resetarea indicatorului bateriei pentru a asigura o raportare exactă a funcționării bateriei.",
+                        "note": "Notă",
+                        "readMoreText": "Citiți mai multe.",
+                        "noteInfo": " Pragul de încărcare a bateriei nu este încă complet activ. Deconectaţi aparatul şi lăsaţi bateria să se descarce la sau sub pragul de oprire a încărcării.",
                         "settings": {
-                            "title1": "Threshold for Built in battery",
-                            "title2": "Threshold for Removable battery"
+                            "title1": "Prag pentru bateria încorporată",
+                            "title2": "Prag pentru bateria detașabilă"
                         },
                         "popup": {
-                            "title": "Enable Battery Charge Threshold",
-                            "description1": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life.",
-                            "description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
-                            "enable": "ENABLE",
-                            "cancel": "CANCEL"
+                            "title": "Activați pragul pentru încărcarea bateriei",
+                            "description1": "Activarea unei taxe particularizate pentru baterie va permite ca timpul general de utilizare a bateriei să dureze mai mult pe măsură ce utilizaţi acest dispozitiv.Cu toate acestea, fără o încărcare completă, bateria va avea o durată de utilizare mai mică.",
+                            "description2": "Pentru a activa pe deplin această caracteristică, deconectați aparatul și lăsați bateria să se descarce până la sau sub pragul de oprire a încărcării.",
+                            "enable": "ACTIVARE",
+                            "cancel": "ANULARE"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Pornire încărcare când este sub",
+                            "checkboxText": "Setați pragul de pornire a încărcării automate cu 5 procente sub pragul de oprire a încărcării.",
+                            "stop": "Oprire încărcare la"
                         }
                     },
                     "expressCharging": {
-                        "title": "Express Charging",
-                        "description": "Express Charge allows your battery to a full charge much faster than normal mode.",
-                        "tooltip": "Express Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
+                        "title": "Încărcare rapidă",
+                        "description": "Încărcarea rapidă oferă posibilitatea bateriei dvs. de a se încărca complet mult mai repede decât se încarcă în modul normal.",
+                        "tooltip": "Încărcarea rapidă vă permite să încărcați bateria sistemului mult mai repede,dar acest lucru poate duce la reducerea duratei de viață a bateriei."
                     },
                     "conservationMode": {
-                        "title": "Conservation Mode",
-                        "description": "This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
+                        "title": "Mod economisire",
+                        "description": "Caracteristica este utilă pentru a prelungi durata de viață a bateriei, atunci când este conectată. <br>Când acest mod este activat, bateria va fi încărcată doar până la 55-60% din capacitate și durata de viață a acesteia poate fi maximizată. Cu toate acestea, acest lucru va duce la reducerea timpului utilizării computerului, după ce va fi deconectat de la sursa de alimentare c.a.",
                         "tooltip": {
-                            "line1": "This function is useful to extend the lifespan of your battery when plugged.",
-                            "line2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
-                            "line3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
+                            "line1": "Caracteristica este utilă pentru a prelungi durata de viață a bateriei, atunci când este conectată.",
+                            "line2": "Când acest mod este activat, bateria va fi încărcată doar până la 55-60% din capacitate și durata de viață a acesteia poate fi maximizată. Cu toate acestea, acest lucru va duce la reducerea timpului utilizării computerului, după ce va fi deconectat de la sursa de alimentare c.a.",
+                            "line3": "Notă: modul de încărcare rapidă și modul de conservare nu pot funcționa în același timp.DACĂ unul dintre moduri este pornit, celălalt va fi oprit automat."
                         }
                     },
                     "airPlanePower": {
-                        "title": "Airplane Power Mode",
-                        "description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
+                        "title": "Mod alimentare avion",
+                        "description": "Protejaţi priza de c.a. din avion controlând consumul de energie al sistemului.Când modul de alimentare avion este activat, calculatorul reduce consumul de energie prin limitarea ratei de încărcare a bateriei și a performanței sistemului."
+                    }
+                },
+                "energyStar": {
+                    "title": "Energy Star",
+                    "description": "UN PRODUS CERTIFICAT ENERGY STAR"
+                },
+                "smartStandby": {
+                    "title": "Stare de veghe inteligentă",
+                    "description": "Această caracteristică programează computerul dvs. să optimizeze economia de energie de la baterie în timpul orelor de inactivitate, fără a renunța la timpii rapizi de pornire pe durata orelor de utilizare mai intensivă.",
+                    "tooltip": "Atunci când este activată Starea de veghe inteligentă, computerul dvs. trece în Starea de veghe modernă înaintea orei programate pentru Pornire şi intră în hibernare după ce este inactiv o anumită perioadă de timp cu alimentare de la baterie. Această perioadă de timp este optimizată pe baza programului pe care îl setaţi dvs. Computerul trece din hibernare în Starea de veghe modernă doar în zilele planificate şi nu face acest lucru atunci când este inactiv pe durata mai multor zile programate consecutive.",
+                    "timer": {
+                        "heading": "Setați orele la care utilizați de obicei acest computer",
+                        "subHeading1": "începeţi",
+                        "subHeading2": "oprire",
+                        "subHeading3": "utilizați această planificare pentru",
+                        "endTimeNote": "Ora de oprire trebuie să fie în interval de maximum 20 de ore de la ora de pornire",
+                        "timeUnits": {
+                            "unit1": "Ore",
+                            "unit2": "Minute",
+                            "unit3": "AM/PM"
+                        }
                     }
                 }
             },
             "audio": {
                 "title": "Audio",
-                "subtitle": "Audio Settings",
-                "description": "This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.",
+                "subtitle": "Setări audio",
+                "description": "Această secțiune vă oferă posibilitatea de a optimiza în mod automat sau de a configuracomplet setările audio manual, cum ar fi setările Dolby, microfonul etc.",
                 "audioSmartsettings": {
-                    "title": "Audio Smart settings",
-                    "subtitle": "APPLICATION-BASED SETTINGS",
-                    "description": "Automatically adjust audio settings according to different apps you are using.",
+                    "title": "Setări audio inteligente",
+                    "subtitle": "SETĂRI ÎN FUNCŢIE DE APLICAŢII",
+                    "description": "Ajustați în mod automat setările audio conform diverselor aplicații pe care le folosiți.",
                     "dolby": {
-                        "title": "Automatic Dolby Audio settings",
-                        "tooltip": "Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
+                        "title": "Setări audio automate Dolby",
+                        "tooltip": "Setările audio automate Dolby configurează setările audio Dolby la modul potrivit pentru diferite aplicații pe care le utilizați pentru a îmbunătăți experiența audio.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "DINAMIC",
+                            "movie": "FILM",
+                            "music": "MUZICĂ",
+                            "games": "JOC",
+                            "voip": "VOCE"
                         }
                     },
                     "voip": {
-                        "title": "Automatic Audio Optimization for VoIP",
-                        "tooltip": "Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality."
+                        "title": "Optimizare audio automată pentru VoIP",
+                        "tooltip": "Comutați în mod automat la modul voce Dolby în timpul apelurilor VoIP pentru a o calitate a vocii clară și consecventă."
                     }
                 },
                 "microphone": {
-                    "title": "Microphone",
+                    "title": "Microfon",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permission to access your microphone. Please turn on access to your microphone for the Lenovo Vantage app."
+                        "title": "notă",
+                        "description": "Lenovo Vantage nu are permisiunea de a vă accesa microfonul.Permiteți accesul la microfon pentru aplicația Lenovo Vantage."
                     },
                     "microphone": {
-                        "title": "Microphone",
-                        "tooltip": "You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode."
+                        "title": "Microfon",
+                        "tooltip": "Vă puteți personaliza efectul MIC prin ajustarea volumului microfonuluiși puteți specifica modul potrivit."
                     },
                     "volume": {
-                        "title": "Microphone Volume",
-                        "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
+                        "title": "Volum microfon",
+                        "description": "Dolby Audio oferă un sunet bogat, clar și puternic pentru tot ceea ce vă place, selectând modul adecvat pentru conținutul și echipamentul dvs.",
                         "options": {
-                            "silent": "Silent",
-                            "loud": "Loud"
+                            "silent": "Silențios",
+                            "loud": "Tare"
                         }
                     },
                     "suppress": {
-                        "title": "Suppress keyboard noise",
-                        "tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+                        "title": "Reducere zgomot tastatură",
+                        "tooltip": "Activați această opțiune pentru a optimiza sunetul MIC prin suprimarea zgomotului de la tastatură."
                     },
                     "acoustic": {
-                        "title": "Acoustic Echo Cancellation",
-                        "tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+                        "title": "Anulare Acoustic Echo",
+                        "tooltip": "Activați această caracteristică pentru a optimiza sunetul MIC prin reducerea ecoului acustic."
                     },
                     "optimize": {
-                        "title": "Optimize my microphone for:",
-                        "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+                        "title": "Optimizare microfon propriu la:",
+                        "tooltip": "Configurați efectul microfonului pentru a vă îmbunătăți experiența audio prin diferite scenarii și medii.",
                         "options": {
-                            "VoiceRecognition": "VOICE RECOGNITION",
-                            "OnlyMyVoice": "ONLY MY VOICE",
+                            "VoiceRecognition": "RECUNOAȘTERE VOCE",
+                            "OnlyMyVoice": "DOAR VOCEA MEA",
                             "Normal": "NORMAL",
-                            "MultipleVoices": "MULTIPLE VOICES"
+                            "MultipleVoices": "MAI MULTE VOCI"
                         }
                     }
                 }
             },
             "displayCamera": {
-                "title": "Display & Camera",
-                "subtitle": "Display & Camera Settings",
-                "description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
+                "title": "Afișaj și cameră",
+                "subtitle": "Setări afișaj și cameră",
+                "description": "Această secțiune vă oferă posibilitatea de a vă îmbunătăți experiența vizuală și de a vă configura proprietățile camerei. Explorați mai multe caracteristici și personalizați-vă experiența de afișaj aici.",
                 "jumpTo": {
-                    "title": "JUMP TO SETTINGS",
+                    "title": "ACCESAȚI SETĂRILE",
                     "shortcuts": {
                         "display": {
-                            "title": "Display"
+                            "title": "Afișaj"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Cameră"
                         }
                     }
                 },
                 "display": {
-                    "title": "Display",
+                    "title": "Afișaj",
                     "eyeCareMode": {
-                        "title": "Eye Care Mode",
-                        "checkbox": "Schedule eye care mode from sunset to sunrise",
+                        "title": "Modul de îngrijire a ochilor",
+                        "checkbox": "Programați modul de protejare a ochilor de la apus până la răsărit",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Cald (mai bine pentru ochi)",
+                            "cold": "Rece"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Resetați temperatura",
+                        "tooltip": "Modul de protejare a ochilor ajustează temperatura culorii ecranului dvs. pentru a filtra lumina albastră și pentru a proteja ochii.",
+                        "onSunsetToSunriseScheduleDescription": "Programați modul de protejare a ochilor de la apus până la răsărit",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "Notă",
+                            "description": "Lenovo Vantage trebuie să vă acceseze informațiile privind locația pentru determinarea orei de apus și răsărit din regiunea dvs."
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Display color temperature",
+                        "title": "Temperatură culoare afișaj",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Cald (mai bine pentru ochi)",
+                            "cold": "Rece"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Resetați temperatura",
+                        "tooltip": "Modul de protejare a ochilor ajustează temperatura culorii ecranului dvs. pentru a filtra lumina albastră și pentru a proteja ochii.",
+                        "onSunsetToSunriseScheduleDescription": "Programați modul de protejare a ochilor de la apus până la răsărit",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "Notă",
+                            "description": "Lenovo Vantage trebuie să vă acceseze informațiile privind locația pentru determinarea orei de apus și răsărit din regiunea dvs."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Protector de confidențialitate",
+                        "description": "Această caracteristică împiedică alte persoane să vizualizeze ecranul. Când este pornit, modifică unghiul de vizualizare a ecranului, astfel păstrându-i confidențialitatea. Puteți să comutați modurile prin apăsarea tastelor „Fn + D”.",
+                        "note": "Protectorul de confidențialitate nu funcționează în modul portret al ecranului. În acest mod, ecranul este în continuare vizibil din lateral.",
+                        "labelText": "Activaţi această caracteristică la tastarea parolelor"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Setări alimentare LED organic",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Afişajul cu LED organic al calculatorului poate, de asemenea, reduce consumul de energie şi poate creşte durata de viaţă a bateriei prin estomparea selectivă a unor părţi de afişaj.",
+                            "De asemenea, se recomandă estomparea barei de activități și a altor zone ale afișajului care nu se schimbă frecvent pentru a prelungi durata generală de viață a afișajului."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Resetați temperatura",
+                        "tooltip": "Această caracteristică poate reduce consumul de energie și poate crește durata de viață a bateriei prin estomparea selectivă a unor părți de afișaj.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
-                    "title": "Camera",
+                    "title": "Cameră",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permissions to access your camera. Please turn on access to your camera for the Lenovo Vantage app."
+                        "title": "Notă",
+                        "description": "Lenovo Vantage nu are permisiunea de a vă accesa camera. Permiteţi aplicaţiei Lenovo Vantage să vă acceseze camera."
                     },
-                    "url": "Go to windows privacy settings",
+                    "url": "Accesați setările de confidențialitate Windows",
                     "cameraPrivacy": {
-                        "title": "Camera privacy mode",
-                        "tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling."
+                        "title": "Modul de confidențialitate a camerei",
+                        "tooltip": "Camera nu mai trimite imagini live când setarea confidențialitate este activată. Activaţi această setare numai când nu doriţi să partajaţi imaginile cu celelalte persoane în timpul unui apel video."
                     },
                     "camera": {
-                        "title": "Camera",
-                        "tooltip": "Click here to reset Camera properties to default settings.",
-                        "reset": "Reset factory settings"
+                        "title": "Cameră",
+                        "tooltip": "Dați clic aici pentru a reseta proprietățile camerei la setările implicite.",
+                        "reset": "Resetare la setările din fabrică"
                     },
-                    "brightness": "Brightness",
+                    "brightness": "Luminozitate",
                     "contrast": "Contrast",
-                    "autoExposure": "Auto Exposure",
-                    "autoFocus": "Auto focus",
-                    "notAvailable": "Camera Not Available",
+                    "autoExposure": "Expunere automată",
+                    "autoFocus": "Focalizare automată",
+                    "notAvailable": "Camera nu este disponibilă",
                     "camerablur": {
-                        "title": "Camera Background Blur",
-                        "caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "title": "Estompare fundal cameră",
+                        "caption": "Această caracteristică estompează fundalul atunci când utilizați camera pentru apeluri video sau pentru a realiza fotografii. Puteți alege diverse efecte din selecțiile de mai jos.",
+                        "blurMode": "Mod estompare",
+                        "comicMode": "Mod comic",
+                        "sketchMode": "Mod schiță"
+                    },
+                    "cameraLoadingFailed": {
+                        "inUseTitle": "CAMERA IS IN USE",
+                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
+                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
+                        "loadingFailedDescription": "Close the app and try again."
+                    }
+                }
+            },
+            "inputAccessories": {
+                "title": "Intrare și accesorii",
+                "subtitle": "Setări intrare și accesorii",
+                "description": "Detectarea inteligentă Lenovo combină diverși senzori de pe computerul dvs. pentru a vă detecta activitățile și pentru a regla setările pentru gestionarea optimă a alimentării",
+                "inputAccessory": {
+                    "title": "Tastatură inteligentă",
+                    "hiddenKeyboardFunctions": {
+                        "title": "Funcții ascunse ale tastaturii",
+                        "description": "Puteţi apăsa tasta Fn din partea stângă jos a tastaturii simultan cu alte taste pentru a activa comenzile afişate în harta tastaturii de mai jos."
+                    },
+                    "firstKeyObj": {
+                        "tittle": "Fn + Tab",
+                        "description": "activați caracteristica zoom pe ecranele de înaltă rezoluție",
+                        "image": ""
+                    },
+                    "secondKeyObj": {
+                        "tittle": "Fn + 4",
+                        "description": "activați modul repaus",
+                        "image": ""
+                    },
+                    "thirdKeyObj": {
+                        "tittle": "Fn + D",
+                        "description": "activați/dezactivați Protectorul de confidențialitate",
+                        "image": ""
+                    },
+                    "fourthKeyObj": {
+                        "tittle": "Fn + Q",
+                        "description": "schimbați între modul performanță și modul silențios",
+                        "image": ""
+                    },
+                    "fifthKeyObj": {
+                        "tittle": "Fn + Spațiu",
+                        "description": "modificați stările de retroiluminare a tastaturii",
+                        "image": ""
+                    }
+                },
+                "userDefinedKey": {
+                    "title": "Tastă definită de utilizator",
+                    "caption": "Tasta marcată cu o stea vă permite să configurați funcții definite de utilizator",
+                    "dropDown": {
+                        "title": "Tastă cu acțiune definită de utilizator",
+                        "note": "Notă: aceasta poate fi utilizată pentru introducerea textului obișnuit, cum ar fi e-mailuri sau adrese poștale. Lenovo nu recomandă ca această caracteristică să fie utilizată pentru stocarea şi introducerea parolelor sau a altor informaţii confidenţiale.",
+                        "options": {
+                            "option1": "Selectaţi",
+                            "option2": "Deschideți site-ul web",
+                            "option3": "Introduceți text"
+                        }
+                    },
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
                     }
                 }
             }
         },
         "smartAssist": {
-            "title": "Smart Assist",
-            "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+            "title": "Asistent inteligent",
+            "description": "Detectarea inteligentă Lenovo combină senzorii de pe computerul dvs. pentru a vă detecta activitățile, a vă regla setările pentru gestionarea optimă a alimentării și a vă proteja confidențialitatea.",
             "jumpTo": {
-                "title": "JUMP TO SETTINGS",
-                "security": "Security",
-                "screen": "Screen",
+                "title": "ACCESAȚI SETĂRILE",
+                "security": "Securitate",
+                "screen": "Ecran",
                 "media": "Media",
-                "voice": "Voice"
+                "voice": "Voce",
+                "APS": "APS"
             },
             "intelligentSecurity": {
-                "title": "Intelligent Security",
-                "readMore": "Read more",
+                "title": "Securitate inteligentă",
+                "readMore": "Citiți mai multe",
                 "HumanPresenceDetection": {
-                    "title": "Human presence detection",
-                    "tooltip": "Click here to reset the human presence detection settings."
+                    "title": "Detecție prezență umană",
+                    "tooltip": "Dați clic aici pentru a reseta setările pentru detecția prezenței umane."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Detectarea prezenței utilizatorului",
+                    "tooltip": "Dați clic aici pentru a reseta setările pentru detecția prezenței umane."
                 },
                 "zeroTouchLogin": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
+                    "title": "Conectare fără atingere",
+                    "caption": "Această funcție deblochează sau activează automat computerul atunci când stați în fața acestuia sau vă apropiați de el."
                 },
                 "zeroTouchLock": {
-                    "title": "Zero Touch Lock",
-                    "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+                    "title": "Blocare fără atingere",
+                    "caption": "Această caracteristică va estompa ecranul și va bloca computerul atunci când nu este detectată prezența utilizatorului. Poate reduce posibilitățile de acces neautorizat la calculator atunci când lăsați computerul nesupravegheat și deblocat. De asemenea, reduce consumul de energie prin punerea sistemului într-un mod de veghe modern, atunci când nu este detectată prezența dumneavoastră.",
                     "autoScreenLockTimer": {
-                        "title": "AUTO SCREEN LOCK TIMER",
+                        "title": "CRONOMETRU AUTOMAT DE BLOCARE ECRAN",
                         "radioButton": {
-                            "fast": "Fast",
-                            "medium": "Medium",
-                            "slow": "Slow"
+                            "fast": "Rapid",
+                            "medium": "Mediu",
+                            "slow": "Lent"
                         },
-                        "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+                        "toolTipContent": "Selectați opțiunea dorită pentru a bloca ecranul la o viteză mică/medie/mare, atunci când nu vi se detectează prezența. Cu toate acestea, timpul în care ecranul va fi blocat este influențat și de scenariul actual al utilizatorului, de abilitatea senzorului și setările Windows de expirare a ecranului. Vă recomandăm să vă blocați imediat sistemul înainte de a pleca."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+                    "title": "AJUSTAREA SENSIBILITĂȚII PENTRU DISTANȚĂ",
+                    "caption": "Ajustarea automată a distanței va actualiza automat distanța de detecție prin intermediul unui motor AI.",
                     "options": {
-                        "near": "Near",
-                        "far": "Far"
+                        "near": "Lângă",
+                        "far": "Departe"
                     }
                 },
                 "note": {
-                    "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-                    "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
-                    "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-                    "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
-                    "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+                    "description1": "Această caracteristică se bazează pe Windows Hello. Asigurați-vă că recunoașterea feței este activată în setările Windows.",
+                    "description2": "Această caracteristică folosește senzorii și camera pentru a vă detecta prezența. Cu toate acestea, caracteristica NU colectează date personale.",
+                    "description3": "1. În cazul în care computerul dvs. se află în modul Cort, Tabletă sau Suport, este posibil ca aceste caracteristici să nu funcționeze corect.",
+                    "description4": "2. În cazul în care computerul dvs. se află în modul hibernare sau a fost oprit. Conectarea automată a camerei IR nu va funcționa.",
+                    "description5": "3. Vă rugăm să reglați ecranul computerului la un unghi corespunzător, astfel încât camera IR să vă poată recunoaște fața pentru autentificare automată."
                 },
                 "WindowsLink": {
-                    "goToWindowsHello": "Go to Windows Hello Settings",
-                    "screenTimeoutSettings": "Go to Screen timeout settings"
+                    "goToWindowsHello": "Accesați setările Windows Hello",
+                    "screenTimeoutSettings": "Accesați setările de expirare a ecranului"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "RESETARE LA SETĂRILE IMPLICITE"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Ecran inteligent",
+                "description": "Detectarea inteligentă Lenovo combină diverșii senzori de pe computer pentru a detecta activitățile și pentru a ajusta setările pentru managementul alimentării. De exemplu, va estompa afișajul dacă detectează că vă deplasați, dar nu îl va estompa dacă detectează că citiți.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Dezactivare automată ecran",
+                    "caption": "Dezactivează automat ecranul când este orientat cu fața în jos sau când vă deplasați.",
+                    "note": "Această caracteristică nu este disponibilă dacă setările dvs. Plan alimentare sunt configurate la „nu se dezactivează niciodată ecranul pe baterie” în „secțiunea Sistem” din Setări Windows. Selectați o valoare diferită de „Niciodată” pentru a activa această caracteristică.",
+                    "windowsLink": "Accesați Setări pentru alimentare și repaus din setările Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Se păstrează afișajul meu",
+                    "caption": "Se păstrează afișajul meu când citesc sau navighez.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Minute înainte ca afișajul să se estompeze la navigare",
+                        "startTime": "0 minute",
+                        "endTime": "60 minute"
+                    }
+                }
+            },
+            "activeProtectionSystem": {
+                "title": "Active Protection System",
+                "description": "Lenovo Active Protection System este o caracteristică autonomă, care vă ajută să protejaţi unitatea HDD împotriva deteriorărilor cauzate de şocurile fizice şi de vibraţiile puternice. Aceasta monitorizează încontinuu mișcarea computerului și oprește temporar unitatea HDD când o eroare sau un eveniment similar de deteriorare este prevăzut.",
+                "activeProtection": {
+                    "title": "Active Protection",
+                    "caption": "Modificând sensibilitatea, în modul de sensibilitate redusă, doar șocurile mai puternice vor activa protecția",
+                    "checkbox": "Ignorați șocurile repetitive, cum ar fi cele produse de tren sau de mașină"
+                },
+                "manualActiveProtectionSuspension": {
+                    "title": "Suspendarea manuală a Active Protection",
+                    "caption": "Permiteți-mi să suspend manual Active Protection System",
+                    "dropdown-title": "Suspendare pentru",
+                    "button": "Suspendare imediată"
+                },
+                "advanced": {
+                    "description": "Pentru a îmbunătăți accesul la unitatea HDD în timpul utilizării tabletei, suspendați Active Protection System când sunt detectate următoarele activități",
+                    "pen": {
+                        "title": "Introducere date cu creionul",
+                        "description": "Când se utilizează introducerea datelor cu ajutorul creionului, activați APS în momentul în care creionul este în afara ariei de acoperire"
+                    },
+                    "touch": {
+                        "title": "Introducere date prin atingere",
+                        "description": "Când se utilizează introducerea datelor prin atingere, activați APS în momentul în care introducerea prin atingere nu este detectată"
+                    },
+                    "hand": {
+                        "title": "Sesizarea apropierii mâinii de marginile calculatorului",
+                        "description": "Când modul tabletă este activat, activați APS atunci când mâna nu este detectată"
                     }
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Medii inteligente",
+                "title": "Redare video fără atingere",
+                "desc": "Această funcție întrerupe videoclipul atunci când părăsiți computerul și reia redarea atunci când vă întoarceți.",
+                "tooltip": "Această funcție nu se aplică jucătorilor de jocuri video pe web. Cele mai populare playere video locale, cum ar fi Windows Media Player, 5KPlayer și altele, acceptă această funcție."
+            },
+            "voice": {
+                "title": "Voce",
+                "description": "Lenovo Voice vă ajută să vă convertiți vocea în texte cu ajutorul funcției Voce în text și vă oferă traducere în timp real din voce în texte cu ajutorul funcției Traducere.",
+                "installBtnText": "Instalare",
+                "launchBtnText": "Lansare",
+                "voiceToText": {
+                    "title": "Voce în text",
+                    "caption": "Această caracteristică vă ajută să vă transformați vocea în texte."
+                },
+                "translation": {
+                    "title": "Traducere",
+                    "caption": "Această caracteristică oferă traducerea în timp real a vocii. Conținutul tradus este prezentat în texte. Puteți alege limbile sursă și limbile țintă în funcție de nevoile dvs."
+                },
+                "modalPopUp": {
+                    "heading": "Introducere:",
+                    "point1": "Asigurați-vă că pictograma Lenovo Voice este afișată în bara de sistem Windows.",
+                    "point2": "Deschideți fișierul în care doriți să înregistrați textul convertit.",
+                    "point3": "Faceți clic pe pictograma Lenovo Voice din bara de sistem Windows și selectați Voice to text.",
+                    "point4": "Selectați limba dorită și faceți clic pe pictograma microfon pentru a începe.",
+                    "point5": "Puneți cursorul în locul în care doriți să editați și începeți să vorbiți.",
+                    "point6": "Faceți clic pe pictograma Lenovo Voice din bara de sistem Windows și selectați Translate.",
+                    "point7": "Selectați limba sursă și limba țintă dorite.",
+                    "point8": "În funcție de nevoile dvs., setați intrarea vocală din Speaker sau din Microphone.",
+                    "point9": "Faceți clic pe pictograma microfon pentru a începe să vorbiți",
+                    "closeText": "închidere"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "Actualizări sistem",
+        "back": "ÎNAPOI",
+        "history": "ISTORIC COMPLET",
+        "notAvailable": "Nedisponibil",
+        "notInstalled": "Neinstalată",
+        "criticalUpdates": "Actualizări critice",
+        "recommendedUpdates": "Actualizări recomandate",
+        "optionalUpdates": "Actualizări opționale",
+        "ignoredUpdates": "Actualizări ignorate",
+        "successInstall": "Instalare reușită: ",
+        "failedInstall": "Instalare nereușită: ",
+        "at": "la",
+        "readMore": "Citiți mai multe",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+            "reboot": "Repornire",
+            "shutdown": "Oprire",
+            "rebootForceMsg": "Actualizările pe are le-ați selectat vor duce la repornirea automată a sistemuluidupă finalizarea instalării.",
+            "shutdownForceMsg": "Actualizările pe care le-ați selectat vor duce la oprirea automată a sistemului,după finalizarea instalării.",
+            "rebootDelayedMsg": "După instalare, actualizările selectate vor duce la repornirea automată a sistemului.În timpul instalării actualizărilor, nu opriți sistemul și nu îndepărtați sursa de alimentare sau accesoriile. Vă recomandăm să vă salvați lucrările în curs înainte de repornirea sistemului.",
+            "rebootRequiredMsg": "Pentru a instala cu succes actualizările, computerul dvs. trebuierepornit pentru a se asigura că totul funcționează fără probleme.",
             "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "cancelButton": "Anulare",
+            "rebootButton": "REPORNIȚI ACUM",
+            "dismissButton": "RESPINGERE",
+            "rebootPending": "Repornire în așteptare"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Setări automate de actualizare",
+            "subtitle": "ACTUALIZĂRILE SE INSTALEAZĂ AUTOMAT",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Actualizări critice",
+                "tooltip": "Actualizările critice pot împiedica apariția problemelor grave, a defecțiunilor majore, a erorilor de hardware sau a deteriorării datelor."
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "Actualizări recomandate",
+                "tooltip": "Actualizările de drivere recomandate vă mențin calculatorul la o performanță optimă."
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Actualizări Windows",
+                "url": "Setări Windows"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Site-ul Web de asistență Lenovo"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "Bun venit la utilizarea System Update.",
+            "title": "Un sistem actualizat este un sistem sănătos.",
+            "last": "Ultima actualizare: ",
+            "next": "Următoarea actualizare programată: ",
+            "checkButton": "CĂUTAȚI ACTUALIZĂRI",
+            "checking": "Se caută actualizări",
+            "downloading": "S-a finalizat descărcarea actualizărilor",
+            "installing": "Se instalează actualizările",
+            "percent": "% finalizat",
+            "cancelCheck": "Anulați căutarea",
+            "cancelUpdates": "ANULAȚI ACTUALIZĂRILE",
+            "available": "Actualizări disponibile",
+            "description": "Aceste pachete includ actualizări ale driverelor hardware șiale altor instrumente de sistem foarte importante pentru funcționarea corespunzătoare a computerului dvs. Actualizările critice sunt importante și pentru protejarea datelor de pe computerul dvs. și trebuie instalate în momentul în care devin disponibile. În cazul în care nu reușiți să instalați aceste pachete, se poate ajunge la pierderea datelor, la o defecțiune majoră a sistemului sau la o defecțiune de hardware.",
+            "installButton": "INSTALAȚI TOATE ACTUALIZĂRILE",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Toate actualizările s-au instalat corect",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Unele actualizări nu au fost instalate corect.",
+                    "description": "A apărut o problemă în timpul descărcării sau instalării acestor actualizări.Asigurați-vă că sunteți online și nu opriți computerul când instalați actualizările."
                 }
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend",
-            "rebootRequiredTag": "Reboot Required",
-            "rebootDelayTag": "Reboot Required, Power Source Required",
-            "shutdownRequiredTag": "Shutdown Required",
-            "dependedPackage": "Depended Package"
+            "rebootRequired": "Repornire necesară",
+            "failReason": "Motivul eșuării: adaptorul de alimentare nu a fost conectat la computerul dvs. ",
+            "manufacturer": "Producător: ",
+            "version": "Versiune: ",
+            "installVersion": "Versiune instalată: ",
+            "downloadSize": "Dimensiune descărcare: ",
+            "diskSpaceNeeded": "Spațiu pe disc necesar: ",
+            "ignore": "Ignorare",
+            "attend": "Participați",
+            "rebootRequiredTag": "Repornire necesară",
+            "rebootDelayTag": "Este necesară repornirea, este necesară sursa de alimentare",
+            "shutdownRequiredTag": "Este necesară oprirea",
+            "dependedPackage": "Pachet dependent"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "Actualizări disponibile",
+            "description": "Aceste pachete includ actualizări critice pentru operarea corectă a computerului dvs. Actualizările critice vă ajută computerul să fie sigur și fiabil și ar trebui instalate pe măsură ce devin disponibile. Actualizările recomandate și cele opționale vă mențin software-ul la cea mai recentă versiune, iar computerul va oferi performanțe maxime.",
+            "installAllUpdates": "Instalați toate actualizările",
+            "installSuccessHeader": "Toate actualizările s-au instalat corect",
+            "installFailHeader": "Unele actualizări nu au fost instalate corect",
+            "installFailDescription": "A apărut o problemă în timpul descărcării și instalării acestor actualizări. Asigurați-vă că sunteți online și nu opriți computerul când instalați actualizările.",
+            "optionalUpdates": "Actualizări opționale",
+            "installSelectedUpdates": "Instalați actualizările selectate"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "Nume",
+            "sortByDate": "Sortare după dată",
+            "packageSize": "Dimensiune pachet:",
+            "releaseDate": "Data lansării:",
+            "showAll": "Afişare totală",
+            "noInstallationHistory": "Istoricul instalărilor nu este disponibil"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "A apărut o problemă la preluarea noilor actualizări. Încercaţi din nou mai târziu.",
+            "upToDate": "Nicio actualizare nu este disponibilă. Sistemul este actualizat.",
+            "egatherException": "A apărut o eroare la adunarea informaţiilor utilizatorului.",
+            "gatheringUserInfoException": "A apărut o eroare la adunarea informaţiilor utilizatorului.",
+            "certificateValidationException": "Serverul pentru conţinutul actualizării nu este valid. Încercaţi din nou mai târziu.",
+            "downloadException": "A apărut o eroare la descărcarea actualizărilor.",
+            "connectException": "Imposibil de conectat la serverul pentru conţinutul actualizării.",
+            "notEnoughDiskSpace": "Nu există spaţiu suficient pe disc pentru a efectua activitatea curentă.",
+            "proxyAuthenticationException": "Nume utilizator sau parolă proxy incorectă.",
+            "proxyConnectionException": "Imposibil de conectat la serverul proxy.",
+            "autoScriptEvaluationException": "A apărut o eroare la evaluarea scriptului de configurare automată.",
+            "localRepositoryConnectionFailureException": "Imposibil de conectat la depozitul local.",
+            "localRepositoryDatabaseException": "Baza de date din depozitul local nu a putut fi găsită sau este deteriorată.",
+            "networkInterruptedException": "Serverul de actualizări ale sistemului este momentan indisponibil. Încercaţi din nou mai târziu.",
+            "helpCenterInvalidServerException": "Serverul de actualizări ale sistemului nu este valid. Încercaţi din nou mai târziu.",
+            "catalogNotFoundException": "Nu s-au găsit actualizări aplicabile pentru sistemul dumneavoastră.",
+            "catalogCrcErrorException": "Catalogul pentru sistemul dvs. este în curs de actualizare. Încercaţi din nou mai târziu.",
+            "catalogErrorException": "S-a detectat o eroare la catalogul de actualizări pentru sistemul dumneavoastră pe serverul de actualizări ale sistemului. Încercaţi din nou mai târziu.",
+            "fileNotFoundException": "Fişierul nu a fost găsit."
         }
     },
     "homeSecurity": {
-        "title": "Connected Home Security",
-        "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Ecosystem Security Overview",
-        "thisDevice": "This device",
-        "allDevices": "All Devices",
-        "protected": "Protected",
-        "notProtected": "Not Protected",
-        "myDevice": "My Device",
-        "allDevice": "All Devices",
-        "secure": "SECURE",
-        "needAttention": "NEEDS ATTENTION",
-        "manageAccount": "Manage Account",
-        "devices": "Devices",
-        "seeProtectedDevices": "See protected devices",
-        "addDevice": "add device",
-        "trailExpired": "Trail expired",
-        "trailExpiredSubtext": "Upgrate to protect all of your devices",
-        "upgrade": "upgrade",
+        "title": "Securitate conectată, la domiciliu",
+        "notification": {
+            "recent": "Notificări recente de securitate",
+            "notifications": "Notificări"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Protejați-vă ecosistemul dispozitivului",
+            "thisDevice": "Acest dispozitiv",
+            "allDevices": "Toate dispozitivele",
+            "protected": "Protejat",
+            "notProtected": "Neprotejat",
+            "trialExpired": "Perioadă de încercare expirată",
+            "upgrade": "upgrade",
+            "inEcosystem": "În ecosistem",
+            "ecosystemEnable": "Ecosistem activat",
+            "inTrial": "În perioada de probă",
+            "addEcosystem": "Adăugați la ecosistem",
+            "enableEcosystem": "Activați ecosistemul",
+            "startTrial": "Începeți perioada de probă",
+            "fullAccess": "Acces complet",
+            "renew": "Reînnoiți"
+        },
+        "overview": {
+            "overviewBlockTitle": "Prezentarea generală a securității ecosistemului",
+            "allDevices": "Toate dispozitivele",
+            "myDevice": "Dispozitivul meu",
+            "thisComputer": "This computer",
+            "secure": "SIGUR",
+            "needAttention": "ARE NEVOIE DE ATENȚIE",
+            "manageAccount": "Gestionare cont",
+            "devices": "Dispozitive",
+            "seeProtectedDevices": "Vedeți dispozitivele protejate",
+            "addDevice": "adăugați dispozitiv",
+            "trialExpired": "Perioadă de încercare expirată - Faceți upgrade la protecția tuturor dispozitivelor dvs.",
+            "upgrade": "upgrade",
+            "freeTrial": "Protejați-vă toate dispozitivele - Perioadă de probă gratuită de 30 de zile",
+            "startTrial": "Începeți perioada de probă"
+        },
         "tour": {
-            "back": "Back",
-            "skip": "Skip",
-            "start": "START TOUR",
-            "done": "DONE",
-            "welcome1": "Welcome",
-            "welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
-            "welcome2": "Exclusive for Vantage",
-            "welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
-            "create": "Create your account",
-            "lenovoId": "with Lenovo ID",
-            "notifications": "Receive <b>notifications</b> about your home's status",
-            "monitor": "<b>Monitor</b> the safety of your family's devices",
-            "peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
-            "signInLenovoId": "SIGH-UP WITH LENOVO ID",
-            "haveLenovo": "I don't have a <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Create a Lenovo ID",
-            "without": "Proceed <b>without an account</b>",
-            "skipAndTrial": "SKIP AND START TRIAL",
-            "alreadyHave": "I already have a <b>Connected Home Security Account</b>",
-            "loginCHS": "Login to existing CHS account",
-            "locationTitle": "Enable location tracking",
-            "locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+            "back": "Înapoi",
+            "skip": "Ignorare",
+            "start": "ÎNCEPEȚI TURUL",
+            "done": "EFECTUAT",
+            "welcome1": "Bine aţi venit",
+            "welcomeDesc1": "Cu doar câteva clicuri, veți putea să protejați computerele, dispozitivele mobile și dispozitivele conectate ale dvs. și ale familiei.",
+            "welcomeDescStart": "Începeți acum perioada de probă gratuită de 30 de zile.",
+            "welcome2": "Exclusiv pentru Vantage",
+            "welcomeDesc2": "Funcția Securitate conectată, la domiciliu este integrată în Vantage pentru acces rapid la starea de protecție a ecosistemului și la alertele de securitate.",
+            "create": "Creați-vă cont",
+            "lenovoId": "cu Lenovo ID",
+            "notifications": "Primiți <b>notificări</b> despre starea casei",
+            "monitor": "<b>Monitorizați</b> siguranța dispozitivelor familiei",
+            "peaceOfMind": "Obțineți <b>liniște sufletească</b> prin protecție permanentă!",
+            "signInLenovoId": "ÎNREGISTRAȚI-VĂ CU LENOVO ID",
+            "haveLenovo": "Nu am un <b>Lenovo ID</b>",
+            "createLenovo": "&nbsp;Creați un Lenovo ID",
+            "without": "Continuați <b>fără cont</b>",
+            "skipAndTrial": "SĂRIȚI PESTE ȘI ÎNCEPEȚI TUTORIALUL",
+            "alreadyHave": "Am deja un <b>cont Securitate conectată, la domiciliu</b>",
+            "loginCHS": "Conectați-vă cu contul existent",
+            "locationTitle": "Activați monitorizarea locației",
+            "locationPermission": "Pentru ca această caracteristică să funcționeze corect, va trebui să activați monitorizarea locației pentru acest dispozitiv"
+        },
+        "accountStatus": {
+            "title": "Securitatea mea conectată, la domiciliu",
+            "startTrial": "Începeți perioada de probă",
+            "manageAccount": "Gestionare cont",
+            "upgradeAccount": "Upgrade cont",
+            "inTrialDetail1": "{{remainingDays}} zile rămase până la sfârșitul perioadei de probă.",
+            "inTrialDetail2": "Momentan sunteți în perioada de probă. Aveți acces nelimitat la toate caracteristicile.",
+            "trialExpiredDetail1": "Perioada de probă a expirat.",
+            "trialExpiredDetail2": "Perioada de probă a expirat, iar ecosistemul dispozitivului nu mai este protejat.",
+            "upgradedDetail1": "Contul dvs. este activ până pe {{expiredDate}}.",
+            "upgradedDetail2": "Ecosistemul dispozitivului este protejat momentan.",
+            "localAccountDetail2": "Dați clic pe butonul de mai jos pentru a începe perioada de probă gratuită de 30 de zile.",
+            "alreadyHaveAccount": "Aveți deja un cod de activare?"
         }
     },
     "support": {
@@ -1101,7 +1496,9 @@
             "status": "Stare: ",
             "subDescription1": "Acest produs are garanția limitată și beneficiază de service depot. Clienții pot apela la centrul de service local pentru informații suplimentare. Reprezentanții pot furniza reparații pentru acest produs.",
             "subDescription2": "Nu am putut localiza detaliile de garanție pentru dispozitivul dvs. Pentru a obține mai multe opțiuni de garanție, accesați site-ul nostru de asistență.",
-            "viewWarrantyOptions": "VIZUALIZARE OPȚIUNI DE GARANȚIE"
+            "viewWarrantyOptions": "VIZUALIZARE OPȚIUNI DE GARANȚIE",
+            "offlineTips1": "Vă rugăm să vă conectați la internet pentru a afla ultimele informații despre garanție.",
+            "offlineTips2": "Vă rugăm să vă conectați la internet pentru a actualiza informațiile despre garanție."
         },
         "documentation": {
             "title": "Documentație",
@@ -1131,9 +1528,9 @@
             "copyright": "© 2002-2019 Lenovo toate drepturile sunt rezervate"
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "Categorii",
+            "categoriesDesc": "Găsiți informații utile în articolele noastre.",
+            "seeArticles": "CONSULTAȚI ARTICOLELE"
         }
     },
     "security": {
@@ -1154,9 +1551,7 @@
             "maliciousNetwork": "Computerul dvs. a fost împiedicat să se alăture {{maliciousWifi}} rețele rău-intenționate, în această lună.",
             "good": "BUN",
             "malicious": "RĂU-INTENȚIONAT",
-            "suspicious": "SUSPECTED",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "SUSPECTED"
         },
         "antivirus": {
             "common": {
@@ -1245,6 +1640,12 @@
                 "describe2": "Pentru a utiliza funcția securitate conectată, la domiciliu, trebuie să activați serviciile de localizare pentru Lenovo Vantage. Doriţi să activaţi acum localizarea?",
                 "agree": "DE ACORD",
                 "cancel": "ANULARE"
+            },
+            "errorMessage": {
+                "headerText": "Eroare",
+                "bodyText": "Am detectat că vă lipesc câteva elemente critice ale Vantage. Aceste elemente vor fi descărcate în fundal. Încercaţi din nou mai târziu.",
+                "closeText": "închidere",
+                "offlineText": "Nu sunteți conectat(ă) la internet. Unele părți ale acestei pagini nu funcționează corect. Conectați-vă din nou"
             }
         },
         "homeprotection": {
@@ -1256,7 +1657,7 @@
                 "homeSecurityAffect3": "Securitatea conectată, la domiciliu, asigură faptul că alte dispozitive conectate la rețeaua casei dvs. sunt sigure.",
                 "describe": "Dispozitivele și rețelele nesigure pot introduce programe rău-intenționate, pot conduce la furtul de identitate și la scurgeri de date private și financiare. Activați această funcție pentru a reduce riscul de expunere a dispozitivului și rețelei dvs. la atacuri",
                 "subtitle": "Liniştea minţii",
-                "subtitleDescribe": "Securitatea conectată, la domiciliu, vă va trimite o alertă dacă detectează o vulnerabilitate în dispozitivul sau în rețeaua dvs., sau dacă sunteți conectat la o rețea potențial rău-intenționată. Aflați și mai multe despre securitatea conectată, la domiciliu, în „Sfaturi și trucuri”.",
+                "subtitleDescribe": "Securitatea conectată, la domiciliu, vă va trimite o alertă dacă detectează o vulnerabilitate în dispozitivul sau în rețeaua dvs., sau dacă sunteți conectat la o rețea potențial rău-intenționată. Aflați mai multe despre Securitate conectată, la domiciliu <tag>aici</tag>.",
                 "tryNow": "Încercați acum"
             },
             "invitationcode": {
@@ -1332,7 +1733,7 @@
             "whatIsPmNotInstalled": "Cel mai sigur, cel mai simplu mod de a salva parole puternice, complexe, și de a vă conecta instantaneu la fiecare site.",
             "whatIsPmInstalled": "O viață digitală mai sigură vă așteaptă: adăugați parole, activați monitorizarea dark-web-ului, completați automat date personale și de plată.",
             "startProtect": "Începeți să vă protejați conturile online, în modul simplu.",
-            "discount": "Utilizatorii Lenovo se bucură de Dashlane Premium exclusiv, gratuit 6 luni.",
+            "discount": "Utilizatorii Lenovo se bucură de o reducere de 50% pentru Dashlane Premium.",
             "offer": "Această ofertă este valabilă doar pentru utilizatorii Dashlane!",
             "getDashLane": "Obțineți Dashlane",
             "learnMoreAbout": "<tag>Aflați mai multe</tag> despre a profita la maximum de Dashlane",
@@ -1378,32 +1779,32 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "Conectare",
+        "logout": "Deconectare",
+        "unlockExclusives": "Deblocare Exclusive",
+        "user": "Utilizator",
+        "welcomeText": "Păreți plin de energie astăzi, {{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "Păreți plin de energie astăzi!",
+        "helloUser": "Bună, {{firstName}}!",
+        "ssoErrorTitle": "Eroare",
+        "ssoErrorCommon": "Ups, am întâmpinat o eroare. Încercaţi din nou.",
+        "ssoErrorCommonEx": "Eroare neaşteptată. Încercaţi din nou.",
+        "ssoErrorTimeStampIncorrect": "Ups! Se pare că ora PC-ului dvs. este incorectă. Corectaţi ora PC-ului dvs. şi încercaţi din nou.",
+        "ssoErrorNetworkDisconnected": "Ups! Conexiune nereușită! Verificaţi conexiunea la internet şi încercaţi din nou.",
+        "ssoErrorCommunicating": "Eroare de reţea. Verificaţi conexiunea şi încercaţi din nou.",
+        "ssoErrorAccountPluginNotExist": "Plug-in-ul lipseşte. Vom restabili automat plug-in-ul în fundal atunci când veţi fi conectat la internet. Acest lucru poate dura ceva timp, încercaţi din nou mai târziu."
     },
     "faq": {
         "footer": {
-            "title": "Not finding what you are looking for?",
-            "description": "NEED ADDITIONAL SUPPORT? DON’T HESITATE TO CONTACT US VIA:",
-            "body": "Lenovo Community",
-            "button": "GO TO FORUM"
+            "title": "Nu găsiți ceea ce căutați?",
+            "description": "NEVOIE SUPORT SUPORT? NU ESTE HESITAT SĂ CONTACTĂȚI VIA:",
+            "body": "Comunitatea Lenovo",
+            "button": "Du-te la FORUM"
         },
         "question1": {
-            "title": "Back up and restore your files",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        Back up and restore your files\n    </div>\n    <hr />\n    <div style='margin-bottom:7rem;'>\n        It's always good to have a backup. Keep copies of your files on another drive in case something happens to the\n        originals.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Set up your backup\n    </div>\n    <hr />\n    <div class='mb-5'>\n        Select the <span style='font-weight:bold'>Start</span> button, select\n        <span style='font-weight:bold'>Settings</span> >\n        <span style='font-weight:bold'>Update & security</span> >\n        <span style='font-weight:bold'>Backup</span> > <span style='font-weight:bold'>Add a drive</span> , and then\n        choose an external drive or network location for your backups.\n    </div>\n    <div class='mb-5'>\n        <img src='./../../../../assets/images/qa/1.1.png' />\n    </div>\n    <div class='mb-5'>\n        All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files\n        get backed up or how often backups happen, go to\n        <span style='font-weight:bold;'>More options</span>.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Restore your files\n    </div>\n    <div class='mb-5'>\n        If you're missing an important file or folder, here's how to get it back:\n    </div>\n    <div>\n\n        <div class='mb-3'>1. Type <span style='font-weight:bold;'>Restore files</span>\n            in the search box on the taskbar, and then select\n            <span class='font-weight:bold'> Restore your files with File History</span>.</div>\n        <div class='mb-3'>2. Look for the file you need, then use the arrows to see all its versions</div>\n        <div class='mb-3'>3. When you find the version you want, select\n            <span style='font-weight:bold'>Restore</span>\n            to save it in its original location. To save it in a different place, press and hold (or right-click)\n            <span style='font-weight:bold'>Restore</span>, select <span style='font-weight:bold'>Restore to</span>, and\n            then choose a new location.</div>\n\n    </div>\n</div>",
+            "title": "Copii de siguranță și restaurarea fișierelor",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Copii de siguranță și restaurarea fișierelor    </div>    <hr />    <div style='margin-bottom:7rem;'>        Întotdeauna este bine să aveți o copie de siguranță. Păstrați copiile fișierelor pe o altă unitate, în cazul în care se întâmplă ceva cu cele originale.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Configurați-vă copiile de siguranță    </div>    <hr />    <div class='mb-5'>        Selectați butonul <span style='font-weight:bold'>Start</span>, selectați <span style='font-weight:bold'>Settings</span> > <span style='font-weight:bold'>Update & security</span> > <span style='font-weight:bold'>Backup</span> > <span style='font-weight:bold'>Add a drive</span> și apoi alegeți o unitate externă sau o locație din rețea pentru copiile de siguranță.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Totul este gata. Vom face copii de siguranță, la interval de o oră, pentru toate fișierele din folderul utilizatorului (C:\\\\Users\\\\username). Pentru a alege pentru ce fișiere sau la ce interval de timp se fac copiile de siguranță, accesați <span style='font-weight:bold;'>More options</span>.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Restaurați-vă fișierele    </div>    <div class='mb-5'>        Dacă vă lipsește un fișier sau folder important, iată ce puteți face pentru a-l recupera:    </div>    <div>        <div class='mb-3'>1. În caseta de căutare din bara de activități, introduceți <span style='font-weight:bold;'>Restore files</span> și apoi selectați <span class='font-weight:bold'> Restore your files with File History</span>.</div>        <div class='mb-3'>2. Căutați fișierul, apoi folosiți săgețile pentru a vedea toate versiunile acestuia</div>        <div class='mb-3'>3. Când găsiți versiunea pe care o doriți, selectați <span style='font-weight:bold'>Restore</span> pentru a o salva în locația originală. Pentru a o salva în altă locație țineți apăsat (sau dați clic dreapta pe) <span style='font-weight:bold'>Restore</span>, selectați <span style='font-weight:bold'>Restore to</span> și apoi alegeți o nouă locație.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1443,8 +1844,8 @@
             }
         },
         "question2": {
-            "title": "How to refresh your PC",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        How to refresh your PC\n    </div>\n    <hr>\n    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>\n        Symptom\n    </div>\n    <div style='padding:5px 0;'>\n        If your PC isn't performing as well as it once did, and you don't know why,\n        you can refresh your PC without deleting any of your personal files or\n        changing your settings. Windows can “refresh” your PC so it’s more like a\n        fresh install without deleting your personal files.\n    </div>\n    <div style='padding:5px 0;'>\n        Refresh your PC, Here is what will happen: your files and personalized\n        settings won’t change\n    </div>\n    <div style='padding:5px 0;'>\n        <ul>\n            <li>Your PC settings will be changed back to its defaults</li>\n            <li>Apps from windows store will be kept</li>\n            <li>Apps you installed from disc or website will be removed</li>\n            <li>A list of removed files will be saved on your desktop</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Affected Brands\n    </div>\n\n    <div>\n        <ul>\n            <li>All Desktop and Laptops</li>\n\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Operation System\n    </div>\n\n    <div>\n        <ul>\n            <li>Windows 8, 8.1 & 10</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Solution\n    </div>\n\n    <div>\n        <ul class='list-unstyled'>\n            <li>\n                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>\n                <ol>\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Settings </span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Update and recovery</span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <div>Tap or click <span style='font-weight:bold;'> Recovery</span></div>\n                        <div style='padding:5px 0'>Under Refresh your PC without affecting your files, tap or click\n                            <span style='font-weight:bold;'> Get started.</span></div>\n                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>\n\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Next'</span>.\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Refresh' </span>to start the refresh process.\n                    </li>\n                    <li style='padding:5px 0;'>\n                        Once the refresh process is done, you can find a Removed Apps list on the desktop\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        You can find the removed apps while refreshing your system\n                    </li>\n                </ol>\n            </li>\n            <li style='padding:10px 0;'>\n                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>\n                <ol>\n                    <li style='padding:5px 0;'> Search for <span style='font-weight:bold;'> refresh </span>in the search\n                        tool available in the Start menu,</li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on <span style='font-weight:bold;'> 'Refresh your PC without affecting your\n                                files'</span> in the search results as shown below.</div>\n                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on the\n                            <span style='font-weight:bold;'> Get started </span>\n                            button just below the heading<span style='font-weight:bold;'> 'Refresh your PC without\n                                affecting your files'</span> to start refreshing your Windows 10 PC.</div>\n                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>\n                    </li>\n                </ol>\n            </li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;'>\n        Additional Information\n    </div>\n\n    <div>\n        In most cases, once you start to refresh your PC, it’ll finish on its own.\n        However, if Windows needs missing files, you’ll be asked to insert recovery\n        media, which is typically a DVD disc or thumb drive. If that happens, what\n        you’ll need depends on your PC.\n    </div>\n    <div style='padding:10px 0'>\n        If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use\n        that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact\n        Microsoft Support.\n    </div>\n\n</div>",
+            "title": "Cum să reîmprospătați PC-ul",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Cum să reîmprospătați PC-ul    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        Simptom    </div>    <div style='padding:5px 0;'>        În cazul în care computerul dvs. nu mai funcționează la fel de bine și nu știți motivul, puteți să îl reîmprospătați fără să ștergeți fișiere personale sau să modificați setările. Windows vă poate „reîmprospăta” computerul, la fel ca după o instalare proaspătă, fără să șteargă fișierele personale.    </div>    <div style='padding:5px 0;'>        Iată ce se va întâmpla dacă vă reîmprospătați computerul: fișierele și setările personalizate nu se vor modifica    </div>    <div style='padding:5px 0;'>        <ul>            <li>Setările computerului vor reveni la valorile implicite</li>            <li>Aplicațiile din Windows Store vor fi păstrate</li>            <li>Aplicațiile pe care le-ați instalat de pe disc sau de pe un site web vor fi eliminate</li>            <li>Va fi salvată o listă cu fișierele eliminate pe desktop</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Mărci afectate    </div>    <div>        <ul>            <li>Toate desktopurile și laptopurile</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Sistem de operare    </div>    <div>        <ul>            <li>Windows 8, 8.1 și 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Soluție    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        Atingeți sau dați clic pe <span style='font-weight:bold;'> Settings </span>                    </li>                    <li style='padding:5px 0;'>                        Atingeți sau dați clic pe <span style='font-weight:bold;'> Update and recovery</span>                    </li>                    <li style='padding:5px 0;'>                        <div>Atingeți sau dați clic pe <span style='font-weight:bold;'> Recovery</span></div>                        <div style='padding:5px 0'>Sub Refresh your PC without affecting your files, atingeți sau dați clic pe <span style='font-weight:bold;'> Get started.</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        Dați clic pe <span style='font-weight:bold;'> „Next”</span>.                    </li>                    <li style='padding:5px 0;'>                        Dați clic pe <span style='font-weight:bold;'> „Refresh” </span>pentru a începe procesul de reîmprospătare.                    </li>                    <li style='padding:5px 0;'>                        După ce procesul de reîmprospătare s-a încheiat, puteți găsi o listă de aplicații eliminate pe desktop                    </li>                    <li style='padding:5px 0;'>                        Puteți găsi aplicațiile eliminate în timpul reîmprospătării sistemului                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> Căutați <span style='font-weight:bold;'> refresh </span>în instrumentul de căutare disponibil în meniul Start,</li>                    <li style='padding:5px 0;'>                        <div>Dați clic pe <span style='font-weight:bold;'> „Refresh your PC without affecting your files”</span> din rezultatele căutării, după cum se arată mai jos.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div>Dați clic pe butonul <span style='font-weight:bold;'> Get started </span> de sub titlul<span style='font-weight:bold;'> „Refresh your PC without affecting your files”</span> pentru a începe reîmprospătarea PC-ului Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        Informaţii suplimentare    </div>    <div>        În majoritatea cazurilor, după ce începeți reîmprospătarea PC-ului, aceasta se va încheia de la sine. Totuși, dacă Windows are nevoie de fișiere lipsă, vi se va solicita să introduceți un Recovery Media, care este în general un disc DVD sau o unitate USB. În acest caz, ceea ce veți avea nevoie depinde de PC-ul dvs.    </div>    <div style='padding:10px 0'>        Dacă ați făcut upgrade la Windows 8.1 sau Windows RT 8.1 folosind un DVD, utilizați acel disc. Dacă nu aveți o unitate Windows 8.1 sau Windows RT 8.1, contactați Asistența Microsoft.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -1517,8 +1918,8 @@
             "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
         },
         "question3": {
-            "title": "How to know your machine's CPU",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    How to know your machine's CPU\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.\n    The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit\n    system.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n    <li>All Desktop and Laptops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operating System</h3>\n<ul>\n    <li>Windows 7 , 8 , 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n    <li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button,</strong>\n        right-clicking Computer, and then clicking Properties  </li>\n    <li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then click\n        <strong>Search.</strong></li>\n    <li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n    <li>Tap or click <strong>System</strong></li>\n    <li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong>\n        is displayed in the System type field under the System heading.\n        If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong>\n        <strong>32-bit Operating </strong>System is displayed in the System type field under the System heading.<br />\n         </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then\n        click <strong>Search.</strong></li>\n    <li>In the search box, type <strong>system information</strong></li>\n    <li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and then\n        click <strong>System Summary.</strong></li>\n    <li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>\n        x64-based PC is displayed in the <strong>System type</strong> field under the \n        Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong>\n        version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> field\n        under the Item heading.  </li>\n</ol>\n<p> </p>",
+            "title": "Cum să cunoașteți procesorul dispozitivului",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Cum să cunoașteți procesorul dispozitivului</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Simptom</h3><p>Termenii 32 de biți și 64 de biți se referă la modul în care procesorul unui computer (numit și CPU) gestionează informațiile. Versiunea pe 64 de biți a Windows gestionează cantități mari de memorie RAM mai eficient decât un sistem pe 32 de biți.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Mărci afectate</h3><p>Simptomul de mai sus este asociat cu, dar fără a se limita la următoarele sisteme:</p><ul>    <li>Toate desktopurile și laptopurile</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Sistem de operare</h3><ul>    <li>Windows 7, 8 și 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Soluție</h3><p><strong><u>Windows 7 sau Vista</u></strong></p><ol>    <li>Deschideți System dând clic pe imaginea <strong>Start button </strong>a <strong>Start button,</strong> apoi dând clic dreapta pe Computer, iar apoi dând clic pe Properties  </li>    <li>În System, puteți vedea tipul sistemului.</li></ol><p><strong><u>Windows 8 și Windows 10</u></strong></p><p><strong>Metoda 1:</strong> vizualizați fereastra System din Control Panel</p><ol>    <li>Treceți cu degetele de la marginea din dreapta a afișajului și atingeți <strong>Search</strong>. Sau, dacă folosiți un mouse, duceți indicatorul în colțul din dreapta-jos al ecranului, apoi dați clic pe <strong>Search.</strong></li>    <li>Introduceți <strong>system</strong> în caseta de căutare, iar apoi atingeți sau dați clic pe <strong>Settings.</strong></li>    <li>Atingeți sau dați clic pe <strong>System</strong></li>    <li>Dacă rulați o versiune pe 64 de biți a Windows 8, este afișat mesajul <strong>64-bit Operating System</strong> în câmpul System type, sub titlul System. Dacă rulați o versiune pe 32 <strong>de biți a Windows</strong> <strong>8,</strong> este afișat mesajul <strong>32-bit Operating </strong>System în câmpul System type, sub titlul System.<br />  </li></ol><p><strong>Metoda 2</strong>: vizualizați fereastra System Information</p><ol>    <li>Treceți cu degetele de la marginea din dreapta a afișajului și atingeți <strong>Search</strong>. Sau, dacă folosiți un mouse, duceți indicatorul în colțul din dreapta-jos al ecranului, apoi dați clic pe <strong>Search.</strong></li>    <li>În caseta de căutare, introduceți <strong>system information</strong></li>    <li>Atingeți sau dați clic pe<strong> System</strong>, atingeți sau dați clic pe <strong>System Information,</strong> iar apoi dați clic pe <strong>System Summary.</strong></li>    <li>Dacă rulați o versiune pe <strong>64 de biți </strong>a Windows 8<strong>, </strong> este afișat mesajul x64-based PC în câmpul <strong>System type</strong>, sub titlul Item. <br /> <br /> Dacă rulați o versiune pe<strong> 32 de biți</strong> a Windows 8, este afișat mesajul x86-based PC în câmpul <strong>System type</strong>, sub titlul Item.  </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -1606,8 +2007,8 @@
             }
         },
         "question4": {
-            "title": "Check your machine's battery use",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Check your machine's battery use\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> \n    screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.\n    That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;\n    apps&ndash;are using too much power.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n\n<ul>\n    <li>Lenovo laptops, desktops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Systems</h3>\n<ul>\n    <li>All</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operationg System</h3>\n<ul>\n    <li>Window 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your\n    traditional <strong>control panel </strong>view, this feature is located in the\n    new <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>\n    select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br />\n        <br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last\n    from last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;\n    <strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,\n    the display,</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong>\n     options show how much power is used by applications while you&rsquo;re using them, compared to applications\n    running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>\n        &ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.\n    This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of this\n    feature.\n    It will display a list of the apps have used battery power in that period, and show you what percentage of your\n    battery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
+            "title": "Verificați utilizarea bateriei dispozitivului",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Verificați utilizarea bateriei dispozitivului</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Simptom</h3><p>Windows 10 include un nou ecran „<strong>Battery Use”</strong> care vă arată ce utilizează bateria laptopului. Aceasta înseamnă că vă va spune exact ce aplicații (atât desktop, cât și aplicații „universale” Windows 10) utilizează prea multă energie.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Mărci afectate</h3><ul>    <li>Laptopuri, desktopuri Lenovo</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Sisteme afectate</h3><ul>    <li>Toate</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Sistem de operare</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Soluție</h3><p>Această caracteristică este nouă în Windows 10. Întâi trebuie să găsim caracteristica, deoarece nu se află în vizualizarea tradițională <strong>Control Panel, </strong>ci în noua aplicație <strong>„Settings”</strong></p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Găsiți ecranul Battery Use</h3></p><p>1. Dați clic pe sau atingeți opțiunea <strong>„Settings</strong>” din meniul Start</p><p>2. În <strong>Settings </strong> selectați <strong>„System”</strong>și apoi selectați <strong>„Battery saver.”<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Dați clic pe sau atingeți linkul <strong>„Battery use”</strong> de sub acest titlu pentru a vedea mai multe detalii. </p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analizați utilizarea energiei</h3><p>4 Puteți modifica ecranul Battery Use pentru a afișa utilizarea bateriei din ultimele 24 de ore în ultimele 48 de ore sau ultima săptămână</p><p>5 Procentaje <strong>„System,”</strong> „<strong>Display,</strong>” și „ <strong>Wi-Fi”</strong>. Acestea arată cât de multă energie a bateriei a fost utilizată de procesele de sistem, de afișaj,</p><p>6 Opțiunile <strong>„In use”</strong> și <strong>„Background”</strong> arată cât de multă energie este utilizată de aplicații în timp ce le folosiți, în comparație cu aplicațiile care rulează în fundal.</p><p>7 Dacă aplicațiile utilizează energie în fundal, să dați clic pe sau să atingeți linkul <strong> „Change background app settings” </strong>și să configurați aplicațiile să nu mai ruleze în fundal. Aceasta funcționează doar pentru aplicațiile universale Windows 10.</p><p>8 Derulați mai jos și veți vedea o listă de aplicații. Aceasta este considerată cea mai utilă secțiune a caracteristicii. Aici sunt afișate aplicațiile care au utilizat energia bateriei în acea perioadă și vă arată ce procentaj din energia bateriei a fost utilizat de fiecare aplicație</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -1674,8 +2075,8 @@
             }
         },
         "question5": {
-            "title": "Use your PC like a tablet",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Use your PC like a tablet\n</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet\n        mode</strong> .</p>\n<p> </p>\n<p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device \n    on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and\n    how the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the\n    screen.</p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.\n    Select the <strong>Start </strong>button, select <strong>Settings </strong>>\n    <strong>System </strong>> <strong>\n        Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.\n    To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and\n    you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n    <li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n    <li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then\n        drag it to one side to snap it into your divided screen.</li>\n    <li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
+            "title": "Folosiți PC-ul ca o tabletă",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Folosiți PC-ul ca o tabletă</div><hr><p>Modul Tabletă face sistemul Windows mai intuitiv și mai ușor de folosit dacă aveți un dispozitiv cu touchscreen.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>modul Tabletă</h3><p>Pentru a activa modul Tabletă, selectați <strong>action center</strong> din bara de activități, apoi selectați <strong>Tablet mode</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Notă</h3><p>Pentru a afla dacă dispozitivul dvs. poate activa automat modul Tabletă, căutați dispozitivul pe site-ul web al producătorului. Compatibilitatea cu această caracteristică depinde de hardware, de driverul instalat și de modul în care dispozitivul a fost configurat de producător. </p><p> </p><p>În modul Tabletă, aplicațiile se deschid în modul ecran complet, oferindu-vă mai mult spațiu de lucru. Pentru a închide o aplicație, trageți-o în partea de jos a ecranului.</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Sfat</h3><p>Bara de activități este disponibilă când computerul este în modul Tabletă, dar o puteți ascunde dacă doriți mai mult spațiu pe ecran. Selectați butonul <strong>Start, </strong>selectați <strong>Settings </strong>> <strong>System </strong>> <strong> Tablet mode, </strong>apoi activați <strong>Automatically hide the taskbar in tablet mode</strong>. Pentru a vedea bara de activități ascunsă, glisați în sus de la marginea de jos a ecranului sau plasați mouse-ul în acea zonă.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Utilizați simultan două aplicații</h3><p>Pentru a utiliza două aplicații una lângă alta, trageți o aplicație deschisă în joi, iar apoi în lateral. Veți vedea unde se va alinia și veți vedea celelalte aplicații deschise lângă aceasta.</p><p>În această vizualizare, puteți și să:</p><ul>    <li>Utilizați marginea partajată dintre două aplicații aliniate pentru a redimensiona ambele aplicații simultan.</li>    <li>Deschideți o nouă aplicație din Task view &mdash; selectați <strong>Task view</strong> din bara de activități, selectați o aplicație, apoi trageți-o în lateral pentru a o alinia în ecranul divizat.</li>    <li>Utilizați butonul înapoi de pe bara de activități pentru a vă întoarce într-o aplicație sau pentru a deschide o aplicație pe care ați utilizat-o înainte.</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -1714,8 +2115,8 @@
             }
         },
         "question6": {
-            "title": "Get to know Cortona, your personal assistant",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Get to know Cortana, your personal assistant\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>What is Cortana?</h3>\n<hr />\n<p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing\n    works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you\n    select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n    <li>Give you reminders based on time, places, or people.</li>\n    <li>Track packages, teams, interests, and flights.</li>\n    <li>Send emails and texts.</li>\n    <li>Manage your calendar and keep you up to date.</li>\n    <li>Create and manage lists.</li>\n    <li>Chit chat and play games.</li>\n    <li>Find facts, files, places, and info.</li>\n    <li>Open any app on your system.</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Try this: Set a reminder</h3>\n<hr />\n\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or\n    even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync\n    notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hey Cortana?</h3>\n<hr />\n<p>Set Cortana to hear you anytime you say\n    'Hey Cortana.' Select the search box on the taskbar to open Cortana home.\n    Then select <strong>Settings</strong>  and turn on <strong>Let Cortana respond to 'Hey\n        Cortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.\n</p>\n<p> </p>",
+            "title": "Cunoașteți-o pe Cortana, asistentul personal",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Cunoașteți-o pe Cortana, asistentul personal</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Ce este Cortana?</h3><hr /><p>Cortana este agentul dvs. digital. Ea vă va ajuta să faceți acțiuni.</p><p>Cu cât o utilizați mai mult Cortana, cu atât va fi mai personalizată experiența dvs.</p><p>Pentru a începe, tastați o întrebare în caseta de căutare sau selectați microfonul și vorbiți cu Cortana. (Tastarea funcționează pe toate tipurile de computere, însă aveți nevoie de un microfon pentru a vorbi.)</p><p>Dacă nu sunteți sigur(ă) ce să spuneți, veți vedea sugestii pe ecranul de blocare și pe pagina de pornire Cortana când selectați caseta de căutare din bara de activități.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Pagina de pornire 2. Blocnotes 3. Setări 4. Feedback</li></ol><p>Iată câteva lucruri pe care Cortana le poate face:</p><ul>    <li>Vă poate afișa mementouri în funcție de timp, locație sau persoane.</li>    <li>Poate urmări colete, echipe, interese și zboruri.</li>    <li>Poate trimite e-mailuri și mesaje SMS.</li>    <li>Poate gestiona calendarul și vă poate ține la curent.</li>    <li>Poate crea și gestiona liste.</li>    <li>Vă poate răspunde și puteți juca jocuri.</li>    <li>Poate găsi fapte, fișiere, locuri și informații.</li>    <li>Poate deschide orice aplicație din sistemul dvs.</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Încercați această acțiune: setați un memento</h3><hr /><p>Unul dintre lucrurile pe care Cortana le poate face este să vă afișeze mementouri. Vă poate reaminti să faceți anumite lucruri în funcție de timp, loc sau chiar persoane.</p><p>De exemplu, tastați sau rostiți „Remind me to congratulate Tanya the next time she calls” („Reamintește-mi să o felicit pe Tanya data viitoare când sună”).</p><p>Mementoul va apărea când primiți un apel de la Tanya.</p><p>Suplimentar, dacă aveți un Windows Phone sau ați instalat Cortana pe iPhone sau Android, puteți sincroniza notificările Cortana între computer și telefon.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hey Cortana?</h3><hr /><p>Setați Cortana să vă asculte de fiecare dată când rostiți „Hey Cortana”. Selectați caseta de căutare din bara de activități pentru a deschide pagina de pornire Cortana. Apoi selectați <strong>Settings</strong>  și activați <strong>Let Cortana respond to 'Hey Cortana'</strong>.</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Notă</p><p>Cortana este disponibilă numai în anumite țări/regiuni, iar unele caracteristici Cortana ar putea să nu fie disponibile peste tot.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -1750,13 +2151,14 @@
             },
             "para12": "Note",
             "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        }
+        },
+        "pageTitle": "Detaliile de asistență"
     },
     "welcometutorial": {
         "description": "Lenovo Vantage facilitează actualizarea driverelor, executarea diagnosticelor, solicitarea asistenței și vă oferă informații despre dispozitiv.Personalizați-vă rapid experiența și găsiți informații utile adaptate nevoilor dvs",
         "bullets1": "Vizualizați starea sistemului cu tabloul de bord Vantage.",
-        "bullets2": "Consultatul de securitatea facilitează gestionarea securității ",
-        "bullets3": "Actualizările automate vă mențin dispozitivul în stare perfectă",
+        "bullets2": "Consultatul de securitate simplifică gestionarea securității (caracteristică disponibilă pe anumite sisteme).",
+        "bullets3": "Actualizările automate vă mențin dispozitivul în stare perfectă (caracteristică disponibilă pe anumite sisteme).",
         "subtitle1": "Cum veți utiliza dispozitivul?",
         "subtitle2": "Spuneți-ne despre interesele dvs",
         "personal": "Utilizare personală",
@@ -1798,6 +2200,6 @@
         "usageStatistics": "Statistici utilizare",
         "usageStatisticsDescription": "Trimiteţi statisticile de utilizare anonimă la Lenovo.",
         "Note": "Notă: ",
-        "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornire."
+        "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației."
     }
 }

@@ -1,0 +1,82 @@
+@import '../../../app.theme.scss';
+
+.vtr-modal-intelligent-cooling-modes {
+
+	&.modal-body {
+		padding: 0;
+	}
+
+	fa-icon {
+		font-size: 3rem;
+		color: $main;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		font-weight: normal;
+		color: $main_dark;
+		line-height: 29px;
+	}
+
+	p {
+		font-size: 1.6rem;
+		color: $light-grey;
+		padding: 0.5rem 0;
+	}
+
+	.close-button {
+		background: $gradient_main;
+		border-radius: 3rem;
+		color: $light;
+		font-size: 2rem;
+		padding: 1rem 3rem;
+		font-weight: 500;
+		margin-top: 1rem;
+		font-weight: $weight_bold;
+		text-transform: uppercase;
+	}
+
+
+
+	.number-list {
+		margin-top: 1rem;
+		list-style: none;
+		padding: 0;
+
+		.text-regular {
+			color: $shade_blue;
+			padding: 0.8rem;
+			font-size: 1.8rem;
+		}
+		.serial-bakcground{
+				background: linear-gradient(270deg, #4980FC 0%, #2E62D9 100%);
+				border-radius: 50%;
+				width: 5rem;
+				height: 5rem;
+			.serial{
+				font-size: 2.5rem;
+				color: $light;
+				width: 4.3rem;
+				height: 2.9rem;
+				font-weight: $weight_bold;
+				text-align: center;
+				padding: 0;
+				margin: 0 auto;
+				line-height: 1.8;
+				&.serial2 {
+					width: 5rem;
+				}
+
+			}
+		}
+
+	}
+
+.battery-guage-block  {
+	width: 85%;
+}
+.toolbar-block  {
+	width: 75%;
+}
+
+}

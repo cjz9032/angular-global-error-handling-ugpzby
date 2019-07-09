@@ -1,0 +1,63 @@
+<div class='vtr-ui-days-picker'>
+	<p class="sub-heading">
+		{{ subHeadingText | translate | uppercase }}</p>
+	<div class="row">
+		<div class="col-md-10 col-sm-12 pl-0">
+
+			<div class="dropdown">
+				<input id="daysId"
+					class="dropcheck"
+					type="checkbox"
+					[checked]="showDaysDropDown"
+					(click)="onToggleDropDown()">
+				<label for="daysId"
+					class="dropbtn">
+					<div class="row align-items-center d-flex justify-content-between pl-5">
+						<h5>{{schedule}}</h5>
+						<div class="toggle-icon">
+							<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
+						</div>
+
+
+					</div>
+				</label>
+
+				<div class="dropdown-content"
+					*ngIf="showDaysDropDown">
+					<section class="weekdays-block">
+						<div class="row">
+							<div class="col">
+								<div class="main-block pl-5 pt-5 pb-3">
+									<div *ngFor="let i of allDays">
+										<div class="custom-control custom-checkbox mb-3 ml-3">
+											<input class="custom-control-input"
+												type="checkbox"
+												value="{{i.shortname}}"
+												id="{{i.dayname}}"
+												[(ngModel)]="i.status"
+												(change)="checkedDays($event)">
+											<label class="custom-control-label"
+												for="{{i.dayname}}">
+												{{i.dayname}}
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="d-flex justify-content-end py-3">
+									<div class="select-close">
+										<fa-icon [icon]="['fal', 'check']"
+											(click)="setOffDays()"></fa-icon>
+										<fa-icon [icon]="['fal', 'times']"
+											(click)="clearSettings()"></fa-icon>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

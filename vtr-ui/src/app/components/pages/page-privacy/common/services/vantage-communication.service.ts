@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
-import { catchError, map, share, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { catchError, map, shareReplay, switchMap } from 'rxjs/operators';
 import { EMPTY, from, Observable, throwError } from 'rxjs';
 
 export enum BrowserListType {
@@ -55,7 +55,7 @@ export class VantageCommunicationService {
 		);
 
 		return this.sendContractToPrivacyCore<InstalledBrowsers>(contract).pipe(
-			shareReplay(),
+			shareReplay(1),
 			catchError((err) => {
 				console.error('InstalledBrowsers err', err);
 				return EMPTY;

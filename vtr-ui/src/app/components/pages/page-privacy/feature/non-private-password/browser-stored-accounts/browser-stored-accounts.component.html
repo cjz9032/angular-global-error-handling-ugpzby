@@ -1,7 +1,11 @@
-<vtr-installed-browser
-		*ngFor="let browser of (installedBrowsers$ | async).browserData; trackBy: trackByBrowser; let i = index"
+<div *ngFor="let browser of (installedBrowsers$ | async).browserData; trackBy: trackByBrowser; let i = index">
+	<vtr-installed-browser
 		[installedBrowser]="browser"
 		[showDetailAction]="inputData.showDetailAction"
 		[index]="i"
-		[isDetailsExpanded]="i === openPasswordId">
-</vtr-installed-browser>
+		[isDetailsExpanded]="i === openPasswordId"
+		[isFigleafInstalled]="isFigleafInstalled$ | async"
+		(howToFixClick)="howToFixClick.emit($event)"
+		(openAccordion)="openAccordion($event)">
+	</vtr-installed-browser>
+</div>

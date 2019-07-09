@@ -7,17 +7,15 @@
                 <vtr-nav-tabs *ngIf="showNavigationBlock"></vtr-nav-tabs>
                 <router-outlet></router-outlet>
             </div>
+			<vtr-no-issue-pitch></vtr-no-issue-pitch>
+			<vtr-stat
+				*ngIf="(isFigleafReadyForCommunication$ | async)"
+				[dashboardData]="dashboardData$ | async">
+			</vtr-stat>
             <vtr-support-banner *ngIf="showSupportBanner"></vtr-support-banner>
         </div>
         <div class="privacy-wrapper__side-col">
             <vtr-side-bar></vtr-side-bar>
         </div>
     </div>
-    <vtr-common-popup [popUpId]="permitTrackersAndPasswordsPopupId" size="large">
-        <ng-template>
-            <vtr-permit-trackers-and-passwords
-                    (allow)="setPermit($event, permitTrackersAndPasswordsPopupId)">
-            </vtr-permit-trackers-and-passwords>
-        </ng-template>
-    </vtr-common-popup>
 </div>

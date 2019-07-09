@@ -2,36 +2,26 @@
 	<div class="dropdown">
 		<a class="dropdown-toggle"
 			id="gaming-drop"
-			(click)="toggleOptions(options.curSelected)">
-			<!-- <span>{{ currentOption | translate }}</span> -->
-			<span *ngIf="options.curSelected==1" > {{options.dropOptions[0].name  | translate}}</span>
-			<span *ngIf="options.curSelected==2" > {{options.dropOptions[1].name  | translate}}</span>
-			<span *ngIf="options.curSelected==3" > {{options.dropOptions[2].name  | translate}}</span>
-			<span *ngIf="options.curSelected==4" > {{options.dropOptions[3].name  | translate}}</span>
-			<span *ngIf="options.curSelected==5" > {{options.dropOptions[4].name  | translate}}</span>
-			<span *ngIf="options.curSelected==6" > {{options.dropOptions[5].name  | translate}}</span>
-			<span *ngIf="options.curSelected==7" > {{options.dropOptions[6].name  | translate}}</span>
-			<span *ngIf="options.curSelected==8" > {{options.dropOptions[7].name  | translate}}</span>
-			<span *ngIf="options.curSelected==9" > {{options.dropOptions[8].name  | translate}}</span>
-			<span *ngIf="options.curSelected==10" > {{options.dropOptions[9].name  | translate}}</span>
-			<span *ngIf="options.curSelected==11" > {{options.dropOptions[10].name  | translate}}</span>
+			(click)="toggleOptions()">
+			<span *ngIf="selectedOption">{{ selectedOption.name | translate }}</span>
 			<i class="icon icon-arrowdown"></i>
 		</a>
 		<ng-container *ngIf="showOptions">
 			<div class="gaming-dropdown-menu">
 				<ng-container *ngFor="let option of options.dropOptions; index as i">
-					<li [ngClass]="{ 'selected': options.curSelected===(i+1) }"
-						(click)="optionSelected(option)" 	(mouseenter)="changeDescription(option)"
+					<li [ngClass]="{ 'selected': selectedOption && option.name === selectedOption.name }"
+						(click)="optionSelected(option)"
+						(mouseenter)="changeDescription(option)"
 						(mouseleave)="resetDescription(option)">
-						<a class="dropdown-item"><i class="icon icon-checkline"></i>{{option.name | translate}}</a>
+						<a class="dropdown-item"><i class="icon icon-checkline"></i>{{ option.name  | translate}}</a>
 					</li>
-
 				</ng-container>
-
-				<!-- <div class="information">
-				  <p>{{ currentDescription | translate }}</p>
-				</div> -->
+				<div class="information"
+					*ngIf="enableDescription">
+					<p>{{ selectedOption.description | translate }}</p>
+				</div>
 			</div>
 		</ng-container>
 	</div>
+	<p class="brightCondition" *ngIf="enableBrightCondition1">{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}} {{'gaming.lightingProfile.brightness.text2.title' | translate}}</p>
 </div>

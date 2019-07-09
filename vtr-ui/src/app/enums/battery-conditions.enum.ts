@@ -1,24 +1,24 @@
 export enum BatteryConditionsEnum {
-    Good,
-    Exhaution,
-    Bad,
-    Illegal,
-    NotDetected,
-    Error,
+	Good,
+	Exhaustion,
+	Bad,
+	Illegal,
+	NotDetected,
+	Error,
 
-    Normal,
-    HighTemperature,
-    TrickleCharge,
-    OverheatedBattery,
-    PermanentError,
-    HardwareAuthenticationError,
+	HighTemperature,
+	TrickleCharge,
+	OverheatedBattery,
+	PermanentError,
+	HardwareAuthenticationError,
 
-    MissingDriver,
-    NotSupportACAdapter,
+	MissingDriver,
 
-    LimitedACAdapterSupport
+	NotSupportACAdapter,
+	LimitedACAdapterSupport,
+	StoreLimitation
 }
 
 export enum BatteryQuality {
-    Good, Fair, Poor
+	Good, Fair, Poor, AcError
 }

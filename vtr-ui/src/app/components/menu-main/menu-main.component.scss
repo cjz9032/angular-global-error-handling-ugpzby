@@ -39,9 +39,10 @@
 
 		.navbar-text {
 			margin-left: 2rem;
+			margin-right: auto;
 			@media #{$mediaquery_xl} {
 				text-align: center;
-				margin-right: auto;
+
 			}
 			.app-title {
 				text-transform: uppercase;
@@ -61,6 +62,7 @@
 
 			.device-type {
 				font-size: 1.6rem;
+				text-align: left;
 			}
 		}
 
@@ -101,6 +103,10 @@
 								color: $main;
 							}
 						}
+						.icon{
+							display: inline-block;
+							vertical-align: middle;
+						}
 
 						&.user {
 							padding: 2rem 2rem 2rem 2rem;
@@ -133,12 +139,21 @@
 						box-shadow: $drop_shadow;
 						margin-top: -1rem;
 						padding: 2.5rem 1.5rem;
-						min-width: 22.5rem;
+						transform: translateX(-50%);
+						left: 50%;
+						// min-width: 22.5rem;
 
 						&.user {
 							margin-left: -1.5rem;
 							border-radius: 0;
 							margin-top: 0;
+						}
+
+						&.dropdown-menu-id {
+							left: auto;
+							right: 0rem;
+							padding-right: 16px;
+							transform: translateX(0px);
 						}
 
 						fa-icon {
@@ -158,7 +173,8 @@
 							position: relative;
 							z-index: 1;
 							color: $main_shade;
-							font-size: 1.6rem;
+							padding:0.25rem 0.9rem;
+							font-size: 1.5rem;
 							line-height: 2.2rem;
 							font-weight: $weight_medium;
 
@@ -167,7 +183,6 @@
 
 								&:hover {
 									color: $menu_hover;
-									font-weight: $weight_bold;
 								}
 							}
 
@@ -180,8 +195,6 @@
 
 					&:last-child {
 						.dropdown-menu {
-							right: 0;
-							left: auto;
 							min-width: 20rem;
 							max-width: 50rem;
 						}
@@ -275,12 +288,11 @@
 							.dropdown-item {
 								color: $light;
 								line-height: 4rem;
+								padding:0.25rem 0.9rem;
 								text-decoration: none;
 								&.link {
 									background: transparent;
-									&:hover {
-										font-weight: $weight_regular;
-									}
+
 								}
 							}
 							fa-icon {
@@ -295,8 +307,13 @@
 		}
 
 		.navbar-toggler {
+			display: none;
 			font-size: 5rem;
 			color: $shade_light;
+			@media #{$mediaquery_xl}{
+				display: block;
+
+			}
 			&:hover {
 				color: $shade_extralight;
 			}
@@ -309,7 +326,6 @@
 
 		.fa-icon {
 			position: relative;
-			top: 0.3rem;
 			padding-right: 0.3rem;
 			font-size: 2.1rem;
 		}
@@ -318,6 +334,13 @@
 			position: relative;
 			top: 0.3rem;
 		}
+	}
+}
+
+@media  #{$mediaquery_xl}{
+	.dropdown-menu{
+		top:0 !important;
+		position:relative;
 	}
 }
 /*

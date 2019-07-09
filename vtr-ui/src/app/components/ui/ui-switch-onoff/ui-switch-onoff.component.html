@@ -1,30 +1,38 @@
 <div>
-	<div *ngIf="showLoader" class="row spinner-row"
-		 [ngClass]="{'white-theme': theme==='white',
+	<div *ngIf="showLoader"
+		class="row spinner-row"
+		[ngClass]="{'white-theme': theme==='white',
 					'blue-theme': theme==='blue'}">
 		<vtr-spinner></vtr-spinner>
-		<span class="spinner-text">{{ 'common.ui.loader.text1' | translate }} <br/> {{ 'common.ui.loader.text2' | translate }}</span>
+		<span [innerHTML]="'common.ui.loader' | translate" class="spinner-text"></span>
 	</div>
-	<div *ngIf="!showLoader" class="checkbox"
-		 [ngClass]="{'switch-disable': isSwitchDisable}">
-		<label vtrMetrics
-			   metricsEvent="featureClick"
-			   [metricsItem]="name"
-			   [metricsValue]="value">
+	<div *ngIf="!showLoader"
+		class="checkbox"
+		[ngClass]="{'switch-disable': isSwitchDisable}">
+		<label>
 			<input type="checkbox"
-				   [name]="name"
-				   class="switch"
-				   [ngClass]="{'wifi-checked': value===true}"
-				   [value]="value"
-				   [checked]="value"
-				   [disabled]="disabled"
-				   (change)="onChange($event)"/>
+				vtrMetrics
+				metricsEvent="featureClick"
+				[metricsItem]="'chk.'+name"
+				[metricsValue]="value"
+				[name]="name"
+				class="switch"
+				[ngClass]="{'wifi-checked': value===true}"
+				[value]="value"
+				[checked]="value"
+				[disabled]="disabled"
+				[readonly]="readonly"
+				(change)="onChange($event)"
+				(click)="sendChangeEvent($event)"/>
 
-			<span class="switch {{ size }}" (click)="stopPropagation($event);"> <small></small> </span>
-			<div *ngIf="!value" (click)="stopPropagation($event);"
-				 class="switch-label off-label">{{'common.ui.off' | translate}}</div>
-			<div *ngIf="value" (click)="stopPropagation($event);"
-				 class="switch-label on-label">{{'common.ui.on' | translate}}</div>
+			<span class="switch {{ size }}"
+				(click)="stopPropagation($event);"> <small></small> </span>
+			<div *ngIf="!value"
+				(click)="stopPropagation($event);"
+				class="switch-label off-label">{{'common.ui.off' | translate}}</div>
+			<div *ngIf="value"
+				(click)="stopPropagation($event);"
+				class="switch-label on-label">{{'common.ui.on' | translate}}</div>
 		</label>
 	</div>
 </div>

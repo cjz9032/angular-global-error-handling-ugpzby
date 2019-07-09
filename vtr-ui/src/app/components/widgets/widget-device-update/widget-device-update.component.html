@@ -15,10 +15,12 @@
 					class="row">
 					<div class="col button-row">
 						<button class="action-button"
+							id="su_check_updates"
+							aria-label="su_check_updates"
 							vtrMetrics
 							metricsEvent="itemClick"
 							metricsParent="update-to-date"
-							[metricsItem]="'btn.'+buttonText"
+							metricsItem="btn.Check For Updates"
 							[disabled]="isCheckingPluginStatus"
 							(click)="onCheckForUpdates()">{{buttonText}}</button>
 					</div>
@@ -43,12 +45,16 @@
 					</div>
 					<div class="col col-12 row">
 						<div class="col col-12 cancel-check p-5">
-							<a class="cancel-check-text"
-							   vtrMetrics
-							   metricsEvent="ItemClick"
-							   metricsParent="Pages.SystemUpdate"
-							   [metricsItem]="'btn.cancel'"
-							   (click)="cancelUpdates($event)">{{'systemUpdates.banner.cancelCheck' | translate}}</a>
+							<button type="button"
+								id="su_cancel_updates"
+								attr.aria-label="su_cancel_updates"
+								vtrMetrics
+								metricsEvent="ItemClick"
+								metricsParent="Pages.SystemUpdate"
+								metricsItem="'btn.cancel'"
+							class="btn btn-link cancel-check"
+							[disabled]="percent === 0"
+							(click)="cancelUpdates($event)">{{'systemUpdates.banner.cancelCheck' | translate}}</button>
 						</div>
 					</div>
 				</div>
@@ -65,7 +71,7 @@
 								class="success"
 								*ngIf="downloadingPercent === 100">
 							</fa-icon>
-							{{downloadingUpdateText}}
+							{{downloadingUpdateText | translate}}
 						</div>
 						<div class="col col-3 progress-percent-text">
 							<div class="row progress-right">
@@ -107,12 +113,14 @@
 					<div class="col col-12 row">
 						<div class="col col-12 cancel-check p-5">
 							<button type="button"
+									id="su_cancel_update_download"
+									attr.aria-label="su_cancel_update_download"
 									vtrMetrics
 									metricsEvent="ItemClick"
 									metricsParent="Pages.SystemUpdate"
 									metricsItem="btn.cancel downloading"
 								class="btn btn-link cancel-check"
-								[disabled]="downloadingPercent === 100"
+								[disabled]="downloadingPercent === 100 || downloadingPercent === 0"
 								(click)="onCancelUpdateDownload()">{{'systemUpdates.banner.cancelUpdates' | translate}}</button>
 						</div>
 					</div>

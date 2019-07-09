@@ -105,13 +105,24 @@
 			<div class="col">
 				<div class="peace-of-mind">
 					<div class="sub-heading">{{'security.homeprotection.homesecurity.subtitle' | translate}}</div>
-					<div class="text-regular">{{'security.homeprotection.homesecurity.subtitleDescribe' | translate}}
+					<div class="text-regular" *vtrTranslate="'security.homeprotection.homesecurity.subtitleDescribe' | translate">
+						<a vtrMetrics  id="sa-ws-lnk-CHS-here"
+							aria-label="sa-ws-lnk-CHS-here"
+							metricsEvent="ArticleClick"
+							metricsItem="learnMoreAboutSecurityHealth"
+							metricsItemPosition="1"
+							metricsPageNumber="1"
+							[metricsItemID]="peaceOfMindArticleId"
+							[metricsItemCategory]="peaceOfMindArticleCategory"
+							href="javascript:void(0)"
+							(click)="openPeaceOfMindArticle()"
+							target="_blank"></a>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div hidden class="row">
-			<div class="col-sm-6" routerLink="/home-security">
+		<div class="row">
+			<div class="col-sm-6" routerLink="/home-security" *ngIf="isChsExist">
 				<div class="button-box shift-left">
 					<vtr-ui-button id="sa-ws-btn-trynow"
 						aria-label="sa-ws-btn-trynow"

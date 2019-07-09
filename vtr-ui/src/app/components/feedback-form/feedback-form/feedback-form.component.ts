@@ -1,8 +1,7 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
-import { TranslateService } from '@ngx-translate/core';
 import { DeviceService } from 'src/app/services/device/device.service';
 
 
@@ -12,52 +11,80 @@ import { DeviceService } from 'src/app/services/device/device.service';
 	styleUrls: ['./feedback-form.component.scss']
 })
 export class FeedbackFormComponent implements OnInit {
-	@Output() feedbackClick = new EventEmitter<any>();
-	// @Input() buttonText = 'Submit';
-	@Input() buttonText = this.translate.instant('dashboard.feedback.form.button');
 
 	feedbackForm: FormGroup;
-	feedbackButtonText: string;
+	feedbackSuccess = false;
+	leftTime = 3;
 
-	constructor(public activeModal: NgbActiveModal, private shellService: VantageShellService,
-		private translate: TranslateService, private deviceService: DeviceService) {
-		this.metrics = shellService.getMetrics();
-	}
 	private metrics: any;
 
+	questions = [
+		{
+			idYes: 'feedback-qa-new-style-yes',
+			idNo: 'feedback-qa-new-style-no',
+			name: 'qaNewStyle',
+			question: 'dashboard.feedback.form.question1',
+		},
+		{
+			idYes: 'feedback-qa-performance-yes',
+			idNo: 'feedback-performance-no',
+			name: 'qaPerformance',
+			question: 'dashboard.feedback.form.question2',
+		},
+		{
+			idYes: 'feedback-qa-use-frequency-yes',
+			idNo: 'feedback-qa-use-frequency-no',
+			name: 'qaUseFrequency',
+			question: 'dashboard.feedback.form.question3',
+		},
+	];
+
+	constructor(
+		public activeModal: NgbActiveModal,
+		private shellService: VantageShellService,
+		private deviceService: DeviceService,
+	) {
+		this.metrics = this.shellService.getMetrics();
+	}
+
 	ngOnInit() {
-		this.buttonText = this.translate.instant('dashboard.feedback.form.button');
-		this.feedbackButtonText = this.buttonText;
 		this.createFeedbackForm();
 	}
 
-
-
-	public onFeedBackSubmit($event): void {
+	public onFeedBackSubmit(): void {
 		const formData = this.feedbackForm.value;
 		const data = {
 			'ItemType': 'UserFeedback',
 			'ItemName': 'Submit',
 			'ItemParent': 'Dialog.Feedback',
-			'UserEmail': formData.userEmail,
-			'Content': formData.userComment
+			'Content': formData.userComment,
+			'QA': {
+				'QaNewStyle': formData.qaNewStyle,
+				'QaPerformance': formData.qaPerformance,
+				'QaUseFrequency': formData.qaUseFrequency,
+			}
 		};
-		this.metrics.sendAsync(data);
-		console.log('onFeedBackSubmit: ', JSON.stringify(data), $event);
+		if (this.metrics) {
+			this.metrics.sendAsync(data);
+		}
 		this.feedbackForm.reset();
-		// TODO: integrate with API
-		this.feedbackClick.emit($event);
-		this.feedbackButtonText = this.translate.instant('dashboard.feedback.form.messages.feedbackSuccess');  // 'Thank you for your feedback !';
-		setTimeout(() => {
-			this.activeModal.close();
-			this.feedbackButtonText = this.buttonText;
-		}, 3000);
+		this.feedbackSuccess = true;
+		const leftTimeInterval = setInterval(() => {
+			this.leftTime--;
+			if (this.leftTime <= 0) {
+				this.activeModal.close();
+				clearInterval(leftTimeInterval);
+			}
+		}, 1000);
 	}
 
 	private createFeedbackForm(): void {
 		this.feedbackForm = new FormGroup({
-			userEmail: new FormControl('', [Validators.email]),
-			userComment: new FormControl('', [Validators.required, Validators.minLength(1)])
+			// userEmail: new FormControl('', [Validators.email]),
+			userComment: new FormControl('', [Validators.required, Validators.minLength(1)]),
+			qaNewStyle: new FormControl(null),
+			qaPerformance: new FormControl(null),
+			qaUseFrequency: new FormControl(null)
 		});
 	}
 

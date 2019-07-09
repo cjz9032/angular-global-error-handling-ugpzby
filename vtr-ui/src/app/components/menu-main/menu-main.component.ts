@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, DoCheck, HostListener, SimpleChanges, SimpleChange } from '@angular/core';
+import { Component, OnInit, OnDestroy, DoCheck, HostListener, ViewChild, AfterViewInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -12,23 +12,27 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { TranslationService } from 'src/app/services/translation/translation.service';
 import Translation from 'src/app/data-models/translation/translation';
-import { TranslationSection } from 'src/app/enums/translation-section.enum';
 import { environment } from '../../../environments/environment';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
-import { WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
+import { WindowsHello, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { RegionService } from 'src/app/services/region/region.service';
-import { SupportService } from '../../services/support/support.service';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { ModalCommonConfirmationComponent } from '../modal/modal-common-confirmation/modal-common-confirmation.component';
+import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
+import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { DialogService } from 'src/app/services/dialog/dialog.service';
 
 @Component({
 	selector: 'vtr-menu-main',
 	templateUrl: './menu-main.component.html',
 	styleUrls: ['./menu-main.component.scss']
 })
-export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
-
+export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewInit {
+	@ViewChild('menuTarget') menuTarget;
+	@Input() loadMenuItem: any;
 	public deviceModel: string;
 	public country: string;
 	public firstName: 'User';
@@ -42,6 +46,10 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	public locale: string;
 	public items: any;
 	showMenu = false;
+	preloadImages: string[];
+	securityAdvisor: SecurityAdvisor;
+	isRS5OrLater: boolean;
+	public isGamingHome: boolean;
 
 	constructor(
 		private router: Router,
@@ -55,14 +63,22 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 		vantageShellService: VantageShellService,
 		private translate: TranslateService,
 		private regionService: RegionService,
-		private smartAssist: SmartAssistService
+		private smartAssist: SmartAssistService,
+		private logger: LoggerService,
+		private securityAdvisorMockService: SecurityAdvisorMockService,
+		private dialogService: DialogService
 	) {
 		this.showVpn();
+		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
+		if (!this.securityAdvisor) {
+			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
+		}
 		this.getMenuItems().then((items) => {
-			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
+			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(
+				LocalStorageKey.SecurityShowWindowsHello
+			);
 			if (cacheShowWindowsHello) {
-
-				const securityItem = items.find(item => item.id === 'security');
+				const securityItem = items.find((item) => item.id === 'security');
 				securityItem.subitems.push({
 					id: 'windows-hello',
 					label: 'common.menu.security.sub6',
@@ -75,9 +91,8 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 					subitems: []
 				});
 			}
-			const securityAdvisor = vantageShellService.getSecurityAdvisor();
-			if (securityAdvisor) {
-				const windowsHello: WindowsHello = securityAdvisor.windowsHello;
+			if (this.securityAdvisor) {
+				const windowsHello: WindowsHello = this.securityAdvisor.windowsHello;
 				if (windowsHello.fingerPrintStatus) {
 					this.showWindowsHello(windowsHello);
 				}
@@ -85,10 +100,9 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 					this.showWindowsHello(windowsHello);
 				});
 			}
-			this.commonMenuSubscription = this.translationService.subscription
-				.subscribe((translation: Translation) => {
-					this.onLanguageChange(translation);
-				});
+			this.commonMenuSubscription = this.translationService.subscription.subscribe((translation: Translation) => {
+				this.onLanguageChange(translation);
+			});
 		});
 
 		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
@@ -102,9 +116,16 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	onFocus(): void {
 		this.showVpn();
 	}
-
+	@HostListener('document:click', ['$event.target'])
+	onClick(targetElement) {
+		const clickedInside = this.menuTarget.nativeElement.contains(targetElement);
+		const toggleMenuButton =
+			targetElement.classList.contains('navbar-toggler-icon ') || targetElement.classList.contains('fa-bars') || targetElement.parentElement.classList.contains('fa-bars') || targetElement.localName === 'path';
+		if (!clickedInside && !toggleMenuButton) {
+			this.showMenu = false;
+		}
+	}
 	ngOnInit() {
-
 		const self = this;
 		this.translate.stream('lenovoId.user').subscribe((value) => {
 			if (!self.userService.auth) {
@@ -114,9 +135,18 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+
 		this.isDashboard = true;
 	}
+	ngAfterViewInit(): void {
+		this.getMenuItems().then((items) => {
+			const chsItem = items.find(item => item.id === 'home-security');
+			if (!chsItem) { return; }
+			this.preloadImages = [].concat(chsItem.pre);
+		});
+	}
 	ngDoCheck() {
+		this.isHomeGaming();
 		if (this.router.url !== null) {
 			if (this.router.url.indexOf('dashboard', 0) > 0) {
 				this.isDashboard = true;
@@ -167,12 +197,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 
 	//  to popup Lenovo ID modal dialog
 	OpenLenovoId(appFeature = null) {
-		const modal: NgbModalRef = this.modalService.open(ModalLenovoIdComponent, {
-			backdrop: 'static',
-			centered: true,
-			windowClass: 'lenovo-id-modal-size'
-		});
-		(<ModalLenovoIdComponent>modal.componentInstance).appFeature = appFeature;
+		this.dialogService.lenovoIdDialog(appFeature);
 	}
 
 	onLogout() {
@@ -182,12 +207,12 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			switch (notification.type) {
-				case LocalStorageKey.MachineInfo:
-					this.deviceModel = notification.payload.family;
-					this.country = notification.payload.country;
-					break;
 				case LenovoIdKey.FirstName:
 					this.firstName = notification.payload;
+					break;
+				case 'MachineInfo':
+					this.deviceModel = notification.payload.family;
+					this.country = notification.payload.country;
 					break;
 				default:
 					break;
@@ -205,13 +230,18 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 
 	showWindowsHello(windowsHello: WindowsHello) {
 		this.getMenuItems().then((items) => {
-			const securityItem = items.find(item => item.id === 'security');
-			if (!this.commonService.isRS5OrLater()
-				|| (typeof windowsHello.fingerPrintStatus !== 'string')) {
-				securityItem.subitems = securityItem.subitems.filter(subitem => subitem.id !== 'windows-hello');
+			const securityItem = items.find((item) => item.id === 'security');
+			const version = this.commonService.getWindowsVersion();
+			if (version === 0) {
+				this.isRS5OrLater = true;
+			} else {
+				this.isRS5OrLater = this.commonService.isRS5OrLater();
+			}
+			if (!this.isRS5OrLater || typeof windowsHello.fingerPrintStatus !== 'string') {
+				securityItem.subitems = securityItem.subitems.filter((subitem) => subitem.id !== 'windows-hello');
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
 			} else {
-				const windowsHelloItem = securityItem.subitems.find(item => item.id === 'windows-hello');
+				const windowsHelloItem = securityItem.subitems.find((item) => item.id === 'windows-hello');
 				if (!windowsHelloItem) {
 					securityItem.subitems.push({
 						id: 'windows-hello',
@@ -228,21 +258,21 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, true);
 			}
 		});
-
 	}
-	showPrivacy() {
-
-
-	}
+	showPrivacy() { }
 	showVpn() {
 		this.regionService.getRegion().subscribe({
-			next: x => { this.region = x; },
-			error: err => { this.region = 'US'; }
+			next: (x) => {
+				this.region = x;
+			},
+			error: (err) => {
+				this.region = 'US';
+			}
 		});
 		this.getMenuItems().then((items) => {
-			const securityItemForVpn = items.find(item => item.id === 'security');
+			const securityItemForVpn = items.find((item) => item.id === 'security');
 			if (securityItemForVpn !== undefined) {
-				const vpnItem = securityItemForVpn.subitems.find(item => item.id === 'internet-protection');
+				const vpnItem = securityItemForVpn.subitems.find((item) => item.id === 'internet-protection');
 				if (this.region !== 'CN') {
 					if (!vpnItem) {
 						securityItemForVpn.subitems.splice(4, 0, {
@@ -259,13 +289,16 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 					}
 				} else {
 					if (vpnItem) {
-						securityItemForVpn.subitems = securityItemForVpn.subitems.filter(item => item.id !== 'internet-protection');
+						securityItemForVpn.subitems = securityItemForVpn.subitems.filter(
+							(item) => item.id !== 'internet-protection'
+						);
 					}
 				}
 			}
 		});
 	}
 	getMenuItems(): Promise<any> {
+		console.log('########################################## 2', this.deviceService.isGaming);
 		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
 			this.items = items;
 			return this.items;
@@ -274,37 +307,83 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 
 	private showSmartAssist() {
 		this.getMenuItems().then((items) => {
-			const myDeviceItem = items.find(item => item.id === this.constantDevice);
+			const myDeviceItem = items.find((item) => item.id === this.constantDevice);
 			if (myDeviceItem !== undefined) {
-				const smartAssistItem = myDeviceItem.subitems.find(item => item.id === 'smart-assist');
+				const smartAssistItem = myDeviceItem.subitems.find((item) => item.id === 'smart-assist');
 				if (!smartAssistItem) {
-					/**
-					* check if HPD related features are supported or not. If yes show Smart Assist tab else hide. Default is hidden
-					*/
-					this.smartAssist.getHPDVisibilityInIdeaPad()
-						.then((isAvailable: boolean) => {
-							console.log('getHPDVisibilityInIdeaPad()', isAvailable);
-							// isAvailable = true;
-							this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
-							if (isAvailable) {
-								myDeviceItem.subitems.splice(4, 0, {
-									id: 'smart-assist',
-									label: 'common.menu.device.sub4',
-									path: 'smart-assist',
-									metricsEvent: 'itemClick',
-									metricsParent: 'navbar',
-									metricsItem: 'link.smartassist',
-									routerLinkActiveOptions: { exact: true },
-									icon: '',
-									subitems: []
-								});
-							}
-						})
-						.catch(error => {
-							console.log('error in getHPDVisibilityInIdeaPad()', error);
-						});
+					// if cache has value true for IsSmartAssistSupported, add menu item
+					const isSmartAssistSupported = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, false);
+
+					if (isSmartAssistSupported) {
+						this.addSmartAssistMenu(myDeviceItem);
+					}
+
+					// still check if any of the feature supported. if yes then add menu
+					Promise.all([
+						this.smartAssist.getHPDVisibilityInIdeaPad(),
+						this.smartAssist.getHPDVisibilityInThinkPad(),
+						this.smartAssist.isLenovoVoiceAvailable(),
+						this.smartAssist.getVideoPauseResumeStatus(), // returns object
+						this.smartAssist.getIntelligentScreenVisibility(),
+						this.smartAssist.getAPSCapability(),
+						this.smartAssist.getSensorStatus(),
+						this.smartAssist.getHDDStatus()
+					]).then((responses: any[]) => {
+						console.log('showSmartAssist.Promise.all()', responses);
+						console.log('Smart Assist Expressions', responses[0] || responses[1] || responses[2] || responses[3].available || responses[4] || (responses[5] && responses[6] && (responses[7] > 0)));
+						// cache smart assist capability
+						const smartAssistCapability: SmartAssistCapability = new SmartAssistCapability();
+						smartAssistCapability.isIntelligentSecuritySupported = responses[0] || responses[1];
+						smartAssistCapability.isLenovoVoiceSupported = responses[2];
+						smartAssistCapability.isIntelligentMediaSupported = responses[3];
+						smartAssistCapability.isIntelligentScreenSupported = responses[4];
+						smartAssistCapability.isAPSSupported = (responses[5] && responses[6] && (responses[7] > 0));
+						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+
+						const isAvailable =
+							(responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && (responses[7] > 0));
+						// const isAvailable = true;
+						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, isAvailable);
+						// avoid duplicate entry. if not added earlier then add menu
+						if (isAvailable && !isSmartAssistSupported) {
+							this.addSmartAssistMenu(myDeviceItem);
+						}
+					}).catch((error) => {
+						this.logger.error('error in initSmartAssist.Promise.all()', error);
+					});
 				}
 			}
 		});
 	}
+
+	private addSmartAssistMenu(myDeviceItem: any) {
+		myDeviceItem.subitems.splice(4, 0, {
+			id: 'smart-assist',
+			label: 'common.menu.device.sub4',
+			path: 'smart-assist',
+			metricsEvent: 'itemClick',
+			metricsParent: 'navbar',
+			metricsItem: 'link.smartassist',
+			routerLinkActiveOptions: { exact: true },
+			icon: '',
+			subitems: []
+		});
+	}
+
+	public openExternalLink(link) {
+		if (link) {
+			window.open(link);
+		}
+	}
+
+	public isHomeGaming() {
+
+		if (this.router.url === '/device-gaming' || this.router.url === '/') {
+			this.isGamingHome = true;
+		}
+		else {
+			this.isGamingHome = false;
+		}
+	}
+
 }

@@ -24,85 +24,55 @@
 	}
 }
 
-.bullet-icon {
-	.icon-bkg {
-		display: inline-block;
-		border-radius: 50%;
-		height: 3.3rem;
-		width: 3.3rem;
-		border-width: 0.3rem;
-		border-style: solid;
-		text-align: center;
-
-		fa-icon {
-			font-size: 1.6rem;
-			line-height: 2.7rem;
-			color: $light;
-		}
-	}
-
-	.icon-check {
-		background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
-		background-color: $go_dark;
-		border-color: $go_dark;
-	}
-
-	.icon-check:before {
-		content: '';
-	}
-
-	.icon-times {
-		background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
-		background-color: $stop_dark;
-		border-color: $stop_dark;
-	}
-
-	.icon-dot {
-		border-width: 1rem;
-		border-color: $main;
-	}
-
-}
-
-
 
 .badge-item{
-	a:hover{
-		cursor: default;
-	}
-}
-
-.badge-item-click{
-	a:hover{
-		cursor: pointer;
-	}
-
-	span:hover{
-		cursor: pointer;
+	a{
+		cursor: default !important;
+		span{
+			cursor: default !important;
+		}
 	}
 }
 
 .fa-color{
-	fa-icon{
+	cursor: pointer;
+	::ng-deep fa-icon {
 		color: $main;
 		font-size: 2.4rem;
+		cursor: pointer;
+		svg {
+			cursor: pointer;
+			path{
+				cursor: pointer;
+			}
+		}
 	}
 }
 
-.fa-color:hover{
-	cursor: pointer;
-}
-
-span{
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	max-width: 22ch;
-}
-
 .badge-position{
-	margin-top: 2.5rem;
+	margin-top: 2rem;
 	h3{
 		margin-bottom: 2rem;
+	}
+}
+
+@media #{$mediaquery_sm} {
+	.width-size{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.badge-position{
+	  margin: 0 0 0 1rem !important;
+	  align-self: start;
+	  h3{
+		margin-bottom: 1rem;
+	}
+	}
+
+	.list-group{
+		.text {
+			margin: 1rem 0 0.5rem 0;
+		}
 	}
 }

@@ -9,9 +9,9 @@ import {
 import { Options, ChangeContext, ValueToPositionFunction } from 'ng5-slider';
 
 @Component({
-  selector: 'vtr-ui-brightness-slider',
-  templateUrl: './ui-brightness-slider.component.html',
-  styleUrls: ['./ui-brightness-slider.component.scss']
+	selector: 'vtr-ui-brightness-slider',
+	templateUrl: './ui-brightness-slider.component.html',
+	styleUrls: ['./ui-brightness-slider.component.scss']
 })
 export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked {
 	// package url https://angular-slider.github.io/ng5-slider/demos
@@ -20,18 +20,18 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 
 	@Input() enableSlider;
 
-	@Input() value = 0; // initial slider value
-	@Input() minValue = 0; // slider minimum end value
-	@Input() maxValue = 3; // slider maximum end value
+	@Input() value = 1; // initial slider value
+	@Input() minValue = 1; // slider minimum end value
+	@Input() maxValue = 4; // slider maximum end value
 	@Input() step = 1; // ticks or steps to change on each slide
 	@Input() minValueLegend = ''; // label to display at the start of slider
 	@Input() maxValueLegend = ''; // label to display at the end of slider
 	@Input() legendPositionFunction: ValueToPositionFunction; // function to handle legend position for Eye Care
 	@Input() stepsArray: Array<any>; // array with legend value for Eye care
 	@Input() manualRefresh = new EventEmitter<void>();
-
 	@Output() change: EventEmitter<ChangeContext> = new EventEmitter();
-	@Output() valueChange: EventEmitter<ChangeContext> = new EventEmitter();
+//	@Output() valueChange: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() setLightingBrightness: EventEmitter<ChangeContext> = new EventEmitter();
 
 	constructor() { }
 
@@ -52,7 +52,6 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 			ceil: this.maxValue, // max value
 			step: this.step // value to change on each slide, default is 1
 		};
-console.log("lighting data---------------------------------------------------", JSON.stringify(this.lightingData));
 	}
 
 	/**
@@ -61,7 +60,9 @@ console.log("lighting data---------------------------------------------------", 
 	 * @param $event event data from ng5-slider component
 	 */
 	public onValueChange($event: ChangeContext) {
-		this.valueChange.emit($event);
+	//	this.valueChange.emit($event);
+		this.setLightingBrightness.emit($event);
+
 	}
 
 	/**

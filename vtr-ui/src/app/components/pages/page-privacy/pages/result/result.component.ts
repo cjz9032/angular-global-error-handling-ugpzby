@@ -11,7 +11,7 @@ import { EmailScannerService } from '../../feature/check-breached-accounts/servi
 @Component({
 	// selector: 'app-admin',
 	templateUrl: './result.component.html',
-	styleUrls: ['./result.component.scss', './privacy-dashboard.component.scss']
+	styleUrls: ['./result.component.scss']
 })
 export class ResultComponent implements OnInit, OnDestroy {
 	readonly breachedAccountMode = BreachedAccountMode;

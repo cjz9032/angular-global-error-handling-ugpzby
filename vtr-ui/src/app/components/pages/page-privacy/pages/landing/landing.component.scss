@@ -4,10 +4,26 @@
 
 }
 
-.landing-welcome {
+.landing-pitch {
 	@extend %common-block-wrapper;
-	margin: $topIndent 0 5rem;
-	padding-bottom: 3rem;
+	margin: $topIndent 0 5rem 0;
+	padding-bottom: 0;
+	overflow: hidden;
+
+	&--bottom {
+		margin: 7rem 0 0 0;
+	}
+
+	&__img {
+		margin: -3.5rem 0 0 -4rem;
+
+		&--bottom {
+			margin: -3.5rem -4rem 0 0;
+			order: 2;
+		}
+	}
+
+
 
 	&__row {
 		display: flex;
@@ -23,6 +39,11 @@
 
 	&__content {
 		flex-grow: 1;
+		margin-left: 4rem;
+
+		&--bottom {
+			margin: 0 4rem 0 0;
+		}
 	}
 
 	&__title {
@@ -36,45 +57,45 @@
 
 	&__text {
 		@extend %text-common;
+		font-size: 1.6rem;
+		line-height: 30px;
 		margin: 2rem 0;
 	}
 
 	&__list {
-		list-style: none;
 		padding: 0;
 		margin: 3rem 0 2.2rem;
+		list-style-position: inside;
 	}
 
 	&__item {
 		@extend %text-common;
 		margin: 1rem 0 0;
-		position: relative;
-		padding: 0 0 0 3.5rem;
+		font-size: 1.6rem;
+		line-height: 4.5rem;
+
+		&--bold {
+			font-weight: bold;
+		}
 
 		&:first-child {
 			margin-top: 0;
 		}
-
-		&:before {
-			content: '';
-			position: absolute;
-			left: 0;
-			top: .1rem;
-			width: 2rem;
-			height: 2rem;
-			background: url('/assets/icons/privacy-tab/icon-check.svg') 0 0 no-repeat;
-			background-size: contain;
-		}
 	}
 
 	&__buttons {
-		text-align: right;
-		border-top: 1px solid #F5F5F5;
 		padding: 2rem 0 0;
 	}
 
 	&__button {
 		@extend %theme-btn;
+	}
+
+	&__button--disable {
+		color: #A1AAB3;
+		font-size: 1.2rem;
+		line-height: 2.3rem;
+		margin-left: 5rem;
 	}
 }
 
@@ -129,6 +150,7 @@
 		font-size: 1.6rem;
 		line-height: 3rem;
 		margin: 0 0 0.3rem;
+		text-transform: uppercase;
 		position: relative;
 
 		&--coming-soon {
@@ -151,68 +173,5 @@
 		font-size: 1.6rem;
 		line-height: 2.4rem;
 		color: #34495E;
-	}
-}
-
-.landing-description-info {
-	@extend %common-block-wrapper;
-	font-weight: 300;
-	display: grid;
-	grid-template-columns: 2fr minmax(140px, 1fr);
-	grid-gap: 2rem;
-
-	&__content {
-
-	}
-
-	&__img-col { // 280px + 20px
-		img	{
-			width: 100%;
-		}
-	}
-
-	&__title {
-		@extend %subtitle;
-		margin: 0 0 2rem;
-	}
-
-	&__subtitle {
-		font-weight: bold;
-		color: #667481;
-		line-height: 2.3rem;
-		margin: 0;
-	}
-
-	&__text {
-		@extend %text-common;
-		margin: 0 0 3rem;
-
-		&--sm-indent {
-			margin-bottom: 1rem;
-		}
-	}
-
-	&__list {
-		padding: 0 0 0 1.6rem;
-		color: #667481;
-		font-size: 1.4rem;
-		margin: 1rem 0;
-	}
-
-	&__item {
-		line-height: 3.2rem;
-	}
-
-	strong {
-		font-weight: bold;
-	}
-
-	&__buttons {
-		grid-column: 1 / 3;
-		grid-row: 2;
-	}
-
-	&__button {
-		@extend %theme-btn;
 	}
 }

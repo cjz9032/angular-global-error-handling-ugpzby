@@ -8,7 +8,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 	selector: '[vtrTranslate]'
 })
 export class TranslateDirective {
-	private isOnline:boolean=this.commonService.isOnline;
+	private isOnline = this.commonService.isOnline;
 	constructor(
 		private containerRef: ViewContainerRef,
 		private template: TemplateRef<any>,
@@ -23,32 +23,36 @@ export class TranslateDirective {
 		this.containerRef.createEmbeddedView(this.template);
 		const element: HTMLElement = this.template.elementRef.nativeElement.nextElementSibling;
 		const childNodes = Array.from(element.getElementsByTagName('a'));
-
-			childNodes.forEach((childNode, index) => {
-				const childElement: HTMLElement = (<HTMLElement>childNode);
-				childElement.insertAdjacentElement('afterend',document.createElement('span'))
-				if (index < contentTextList.length){
-					childElement.insertAdjacentText('beforebegin', contentTextList[index]);
-				}
-				this.commonService.notification.subscribe((notification: AppNotification) => {
-					this.onNotification(notification);
-					if(this.isOnline){
-						if (index < tagTextList.length) {
-							childElement.innerText = tagTextList[index];
-							childElement.nextElementSibling.innerHTML=""
-						}
-					}else{
-						if(index<tagTextList.length){
-							childElement.innerText=""
-							childElement.nextElementSibling.innerHTML=tagTextList[index];
-						}
-					}
-
-				})
-				if (index === childNodes.length - 1 && index + 1 < contentTextList.length) {
-					element.insertAdjacentText('beforeend', contentTextList[index + 1]);
-				}
+		if (element.innerText) {
+			element.childNodes.forEach(childNode => {
+				childNode.nodeValue = '';
 			});
+		}
+		childNodes.forEach((childNode, index) => {
+			const childElement: HTMLElement = (<HTMLElement>childNode);
+			childElement.insertAdjacentElement('afterend', document.createElement('span'));
+			if (index < contentTextList.length) {
+				childElement.insertAdjacentText('beforebegin', contentTextList[index]);
+			}
+			this.commonService.notification.subscribe((notification: AppNotification) => {
+				this.onNotification(notification);
+				if (this.isOnline || (childElement.attributes['unSupportOffline'] ? childElement.attributes['unSupportOffline'].value : false)) {
+					if (index < tagTextList.length) {
+						childElement.innerText = tagTextList[index];
+						childElement.nextElementSibling.innerHTML = '';
+					}
+				} else {
+					if (index < tagTextList.length) {
+						childElement.innerText = '';
+						childElement.nextElementSibling.innerHTML = tagTextList[index];
+					}
+				}
+
+			});
+			if (index === childNodes.length - 1 && index + 1 < contentTextList.length) {
+				element.insertAdjacentText('beforeend', contentTextList[index + 1]);
+			}
+		});
 	}
 
 	private onNotification(notification: AppNotification) {

@@ -3,7 +3,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
 	selector: 'vtr-ui-button',
 	templateUrl: './ui-button.component.html',
-	styleUrls: ['./ui-button.component.scss']
+	styleUrls: [ './ui-button.component.scss' ]
 })
 export class UiButtonComponent implements OnInit {
 	@Input() label: string;
@@ -11,6 +11,8 @@ export class UiButtonComponent implements OnInit {
 	@Input() alreadyJoinGroup = 'unjoined';
 	@Input() upperCaseLabel = true;
 	@Output() onClick = new EventEmitter<any>();
+
+	@Input() tooltip =true;
 
 	@Input() metricsItem: string;
 	@Input() metricsParent: string;
@@ -27,15 +29,13 @@ export class UiButtonComponent implements OnInit {
 	@Input() isGradient = false;
 	@Input() title: string;
 
-	constructor() { }
+	constructor() {}
 
 	onClickButton(event) {
+		event.target.blur();
 		this.onClick.emit(event);
 	}
 
 	ngOnInit() {
 	}
-
-
-
 }

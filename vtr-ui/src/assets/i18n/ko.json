@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -39,22 +39,36 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
                     "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock"
+                    "touchpadLock": "Touchpad Lock",
+                    "lightingDriverPopup": {
+                        "headerText": "Driver Install Required",
+                        "text": "Please install driver",
+                        "button": "Install",
+                        "link": "cancel"
+                    },
+                    "lightingColorMessage": {
+                        "text": "Selecting color not available to this effect."
+                    }
                 },
                 "systemTools": {
                     "power": "Power",
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -71,6 +85,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                },
+                "systemStatus": {
+                    "info": "INFO"
                 }
             }
         },
@@ -111,11 +128,12 @@
                 },
                 "buttons": {
                     "start": "START RECORDING",
-                    "stop": "STOP RECORDING"
+                    "stop": "STOP RECORDING",
+                    "numberPrefix": "NUM"
                 },
                 "recording": {
                     "title": "START TYPING",
-                    "description": "20 inputs with in 20 seconds can be recorded."
+                    "description": "20 inputs within 20 seconds can be recorded."
                 },
                 "recorded": {
                     "title": "MACRO KEY FOR ",
@@ -204,7 +222,7 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure to clear this macro key?"
+                    "title": "Are you sure you want to clear this macro key?"
                 },
                 "timeoutRecording": {
                     "title": "Time Out For Recording.",
@@ -223,13 +241,16 @@
                     "btnCancel": "Cancel"
                 },
                 "btnOk": "OK"
+            },
+            "recording": {
+                "title": "Recording Macro Key For"
             }
         },
         "lightingProfile": {
             "title": "Lighting",
             "effect": {
                 "option1": {
-                    "title": "Static"
+                    "title": "On"
                 },
                 "option2": {
                     "title": "Flicker"
@@ -241,38 +262,133 @@
                     "title": "Wave"
                 },
                 "option5": {
-                    "title": "Music"
-                },
-                "option6": {
                     "title": "Smooth"
                 },
-                "option7": {
+                "option6": {
                     "title": "CPU Temperature"
                 },
-                "option8": {
+                "option7": {
                     "title": "CPU Utilization"
                 },
-                "option9": {
-                    "title": "Response"
+                "option8": {
+                    "title": "Off"
                 },
-                "option10": {
-                    "title": "Ripple"
+                "apply": {
+                    "title": "APPLY"
                 },
-                "option11": {
-                    "title": "No Light"
+                "applied": {
+                    "title": "APPLIED"
+                }
+            },
+            "brightness": {
+                "text1": {
+                    "title": "*Brightness setting doesn't apply on "
+                },
+                "text2": {
+                    "title": " effect"
+                }
+            },
+            "lightingSingleLightingOption": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
+            },
+            "colourwheel": {
+                "text1": {
+                    "title": "Selecting colour not available to this effect."
+                },
+                "text2": {
+                    "title": "APPLY"
+                },
+                "text3": {
+                    "title": "APPLIED"
+                },
+                "text4": {
+                    "title": "R:"
+                },
+                "text5": {
+                    "title": "G:"
+                },
+                "text6": {
+                    "title": "B:"
+                },
+                "text7": {
+                    "title": "Color"
                 }
             }
         }
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "대시보드",
             "device": {
-                "title": "My Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "장치",
+                "sub1": "내 장치",
+                "sub2": "내 장치 설정",
                 "sub3": "System Updates",
-                "sub4": "Smart Assist"
+                "sub4": "고급 지원"
             },
             "security": {
                 "title": "보안",
@@ -283,9 +399,9 @@
                 "sub5": "인터넷 보호",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "지원",
+            "homeSecurity": "홈 연결",
+            "privacy": "프라이버시"
         },
         "securityAdvisor": {
             "title": "보안 어드바이저",
@@ -307,25 +423,23 @@
             "notRegistered": "등록되지 않음"
         },
         "qAndA": {
-            "title": "Q&A for your machine",
-            "subtitle": "FIND SOME HELPFUL TIPS FOR YOUR DEVICE.",
-            "question1": "Backup and Restore your files",
-            "question2": "How to refresh your PC",
-            "question3": "How to know your machine's CPU",
-            "question4": "Check your machine's battery use",
-            "question5": "Use your PC like a tablet",
-            "question6": "Get to know Cortana, your personal assistant"
+            "title": "당신의 기계에 대한 Q & A",
+            "subtitle": "귀하의 장치에 대한 몇 가지 유용한 정보를 찾으십시오.",
+            "question1": "파일 백업 및 복원",
+            "question2": "PC를 새로 고치는 방법",
+            "question3": "컴퓨터의 CPU를 아는 방법",
+            "question4": "시스템의 배터리 사용 확인",
+            "question5": "태블릿 같은 PC 사용",
+            "question6": "개인 비서 Cortana 알아 보기"
         },
         "ui": {
             "back": "뒤로",
             "on": "ON",
             "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
-            "loader": {
-                "text1": "Fetching",
-                "text2": "Status"
-            }
+            "collapse": "축소",
+            "expand": "확장",
+            "loader": "페치 상태",
+            "loading": "로드 중..."
         }
     },
     "privacy": {
@@ -344,7 +458,7 @@
         "personal": "PERSONAL",
         "custom": "CUSTOM",
         "skip": "SKIP",
-        "next": "NEXT",
+        "next": "다음",
         "interests": "What are your interests?",
         "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
         "games": "GAMES",
@@ -358,166 +472,179 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "오늘 동력 공급 상태 보기 "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "인터넷이 연결되어 있지 않음",
+            "subtitle": "연결 문제 해결 방법에 대해 자세히 알아보기",
+            "buttonText": "지원 가져오기"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "피드백 제출",
+            "subtitle": "Vantage에 대해 어떻게 생각하는지 얘기하십시요.",
+            "button": "피드백 제출",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "댓글...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
-                }
+                    "feedbackSuccess": "소중한 의견을 들려주셔서 감사합니다!"
+                },
+                "question1": "새로운 스타일의 Vantage를 원하십니까?",
+                "question2": "성능이 적합하다고 생각합니까?",
+                "question3": "나중에 응용 프로그램을 보다 자주 사용하시겠습니까?",
+                "yes": "예",
+                "no": "아니요",
+                "tips1": "추가 의견을 남겨 주십시오.",
+                "sendFeedback": "피드백 보내기",
+                "submitScreenShot": "스크린 샷 제출"
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera Privacy",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "빠른 설정",
+            "microphone": "마이크",
+            "cameraPrivacy": "카메라",
+            "eyeCareMode": "아이 케어 모드"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "시스템 상태",
+            "subtitle": "장치 상태를 빠르게 파악할 수 있습니다.",
             "memory": {
-                "title": "Memory",
+                "title": "메모리",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "파일을 찾을 수 없음",
+                    "of": "/"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "디스크 공간",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "디스크를 찾을 수 없음",
+                    "of": "/"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "보증",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "보증을 찾을 수 없음",
+                    "until": "기한",
+                    "expiredOn": "보증이 만료일",
+                    "notAvailable": "보증을 이용할 수 없음"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "업데이트"
                 }
             }
         }
     },
     "device": {
         "myDevice": {
-            "title": "My Device",
-            "subtitle": "My device status",
-            "serial": "Serial",
-            "productNumber": "Product number",
-            "biosVersion": "Bios version",
-            "learnMore": "Learn more",
-            "freeMemory": "Free memory",
+            "title": "내 장치",
+            "subtitle": "내 장치 상태",
+            "serial": "일련 번호",
+            "productNumber": "제품 번호",
+            "biosVersion": "Bios 버전",
+            "learnMore": "세부사항",
+            "freeMemory": "여유 메모리",
             "systemUpdate": {
-                "title": "System update",
-                "notFound": "System update not found",
+                "title": "시스템 업데이트",
+                "notFound": "시스템 업데이트를 찾을 수 없음",
                 "detail": {
-                    "uptoDate": "Software up to date ",
-                    "updatedOn": "updated on ",
-                    "outdated": "Software outdated ",
-                    "neverRanUpdate": "never ran update"
+                    "uptoDate": "소프트웨어가 최신임",
+                    "updatedOn": "업데이트 날짜",
+                    "outdated": "소프트웨어가 오래됨",
+                    "neverRanUpdate": "업데이트 실행되지 않음"
                 }
             },
-            "extendedWarranty": "Extend warranty",
+            "extendedWarranty": "연장 보증",
             "processor": {
-                "title": "Processor",
-                "notFound": "Processor not found"
+                "title": "프로세서",
+                "notFound": "프로세서를 찾을 수 없음"
             },
             "memory": {
-                "title": "Memory",
-                "notFound": "Memory not found",
+                "title": "메모리",
+                "notFound": "파일을 찾을 수 없음",
                 "ram": "RAM"
             },
             "diskspace": {
-                "title": "Disk Space",
-                "notFound": "Disk not found"
+                "title": "디스크 공간",
+                "notFound": "디스크를 찾을 수 없음"
             },
-            "software": "Software up to date",
-            "updated": "Updated",
-            "outOfWarranty": "Out of warranty",
-            "expired": "Expired on",
-            "of": "of",
+            "software": "소프트웨어가 최신임",
+            "updated": "업데이트됨",
+            "outOfWarranty": "보증 기간 경과",
+            "expired": "만료 날짜",
+            "of": "/",
             "warranty": {
-                "notFound": "Warranty not found",
+                "notFound": "보증을 찾을 수 없음",
                 "detail": {
-                    "title": "Extend warranty",
-                    "inWarranty": "In warranty ",
-                    "daysRemaining": "days remaining",
-                    "outOfWarranty": "Out of warranty ",
-                    "expiredOn": "Expired on",
-                    "notAvailable": "Warranty not available",
-                    "support": "Support"
+                    "title": "연장 보증",
+                    "inWarranty": "보증 적용됨",
+                    "daysRemaining": "남은 기간",
+                    "outOfWarranty": "보증 기간 경과",
+                    "expiredOn": "만료 날짜",
+                    "notAvailable": "보증을 이용할 수 없음",
+                    "support": "지원"
                 }
             },
-            "helpful": "Helpful Content"
+            "helpful": "유용한 콘텐츠"
         },
         "deviceSettings": {
-            "helpful": "Helpful Content",
+            "helpful": "유용한 콘텐츠",
             "batteryGauge": {
-                "title": "BATTERY GAUGE",
-                "subtitle": "Battery",
-                "hours": "hours",
-                "hour": "hour",
-                "minutes": "minutes",
-                "minute": "minute",
-                "charge": "TIME TO FULLY CHARGE",
-                "button": "SEE BATTERY DETAILS",
+                "title": "배터리 게이지",
+                "subtitle": "배터리 상태",
+                "hours": "시",
+                "hour": "시간",
+                "minutes": "분",
+                "minute": "분",
+                "charge": "완전 충전에 소요되는 시간",
+                "button": "배터리 세부사항",
                 "details": {
-                    "title": "Battery Details",
-                    "primary": "Primary Battery",
-                    "secondary": "Secondary Battery",
-                    "tertiary": "Tertiary Battery",
-                    "status": "Status",
-                    "wattage": "Wattage",
-                    "barcode": "Bar-Code",
-                    "remainingPercent": "Remaining percentage",
-                    "temp": "Temperature",
-                    "frupn": "FRU part number",
-                    "remainingTime": "Remaining time",
-                    "chargeCompletionTime": "Charge completion time",
-                    "cycleCount": "Cycle count",
-                    "chemistry": "Device chemistry",
-                    "remainingCap": "Remaining capacity",
-                    "designCap": "Design capacity",
-                    "fullChargeCap": "Full charge capacity",
-                    "manufDt": "Manufacture date",
-                    "designVolt": "Design voltage",
-                    "volts": "Voltage",
-                    "firstUseDt": "First use date",
-                    "firmwareVer": "Firmware version",
+                    "title": "배터리 세부 사항",
+                    "primary": "기본 배터리",
+                    "secondary": "보조 배터리",
+                    "tertiary": "제3 배터리",
+                    "status": "상태",
+                    "wattage": "와트",
+                    "barcode": "바코드",
+                    "remainingPercent": "남은 용량 백분율",
+                    "temp": "온도",
+                    "frupn": "FRU 부품 번호",
+                    "remainingTime": "남은 시간",
+                    "chargeCompletionTime": "충전 완료 시간",
+                    "cycleCount": "주기 횟수",
+                    "chemistry": "장치 종류",
+                    "remainingCap": "남은 용량",
+                    "designCap": "설계 용량",
+                    "fullChargeCap": "완전 충전 용량",
+                    "manufDt": "제조 날짜",
+                    "designVolt": "설계 전압",
+                    "volts": "전압",
+                    "firstUseDt": "처음 사용 날짜",
+                    "firmwareVer": "펌웨어 버전",
                     "chargeStatusString": {
-                        "error": "ERROR",
-                        "notinstalled": "Not installed",
-                        "noactivity": "No activity",
-                        "charging": "Charging",
-                        "discharging": "Discharging",
-                        "acdischarging": "Discharging (with ac)"
+                        "error": "오류",
+                        "notinstalled": "설치되지 않음",
+                        "noactivity": "활동 없음",
+                        "charging": "충전 중",
+                        "discharging": "사용 중",
+                        "acdischarging": "방전 중(AC 어댑터 사용)"
                     },
                     "deviceChemistry": {
                         "li-polymer": "Li-Polymer",
                         "li-ion": "Li-Ion",
                         "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion"
+                        "li_ion": "Li-Ion",
+                        "silver-zinc": "Silver-Zinc",
+                        "silver_zinc": "Silver-Zinc",
+                        "nicd": "NiCd",
+                        "nimh": "NiMH",
+                        "unknown": "Unknown"
                     },
                     "manufacturer": {
                         "title": "Manufacturer",
@@ -527,17 +654,17 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "This system may not support battery that",
-                        "description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
-                        "description1": "Attention:",
-                        "description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
+                        "description": "you cannot use the attached battery with this computer.",
+                        "description1": "Replace",
+                        "description2": "it with a battery of correct model."
                     },
                     "Good": {
-                        "title": "The battery is in good Condition"
+                        "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -551,536 +678,804 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter"
-                    },
-                    "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter"
-                    },
-                    "ACAdapterNotSupported": {
-                        "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
                         "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
+                    "NotSupportACAdapter": {
+                        "title": "AC adapter not supported.",
+                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
+                    },
                     "MissingDriver": {
-                        "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
+                        "title": "The Lenovo Power Manager driver",
                         "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
                     },
                     "StoreLimitation": {
                         "title": "The battery can only store",
                         "description1": "of",
                         "description2": "it's original full charge capacity"
+                    },
+                    "HighTemperature": {
+                        "title": "Discharging",
+                        "description": "has been stopped because the",
+                        "description1": "battery temperature is too high"
+                    },
+                    "TrickleCharge": {
+                        "description": "The battery was",
+                        "description1": "completely discharged",
+                        "description2": "and needs to be recharged. This might take ten hours or more."
+                    },
+                    "OverheatedBattery": {
+                        "description": "The battery is",
+                        "description1": "too hot.",
+                        "description2": "Remove it from the computer and cool it to room temperature."
+                    },
+                    "PermanentError": {
+                        "description": "The battery has",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
+                    },
+                    "HardwareAuthenticationError": {
+                        "description": "The battery installed is",
+                        "description1": "is not supported",
+                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
                     }
-                }
+                },
+                "updating": "Updating",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
+                "voltageError": "Battery voltage incorrect",
+                "batteryNotDetected": "No Battery Detected"
             },
             "power": {
-                "title": "Power",
-                "subtitle": "Power Settings",
-                "description": "This section enables you to dynamically adjust thermal performance and maximize the battery life. It also has other popular power-related features. You can check the default settings in this section and customize your system according to your needs.",
+                "title": "전원",
+                "subtitle": "전원 설정",
+                "description": "이 섹션에서는 동적으로 열 성능을 조정하고, 배터리 수명을 극대화할 수 있습니다.기타 인기 있는 전원 관련 기능도 있습니다. 이 섹션에서 기본 설정을 확인하고, 필요에 따라 시스템을 사용자 정의할 수 있습니다.",
                 "jumpto": {
-                    "title": "JUMP TO SETTINGS",
-                    "battery": "Battery",
-                    "power": "Power",
-                    "cooling": "Intelligent Cooling",
-                    "other": "Other"
+                    "title": "설정으로 건너뛰기",
+                    "battery": "배터리",
+                    "power": "전원",
+                    "cooling": "지능형 냉각",
+                    "other": "기타"
                 },
                 "powerSmartSettings": {
-                    "title": "Power Smart Settings",
-                    "subtitle": "INTELLIGENT COOLING",
-                    "subtitle1": "Battery & Quiet",
-                    "description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
-                    "description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
-                    "readMore": "Read more.",
+                    "title": "전원 스마트 설정",
+                    "subtitle": "지능형 냉각",
+                    "subtitle1": "배터리 및 저소음",
+                    "description1": "이 기능은 사용자의 요구에 맞게 열 설정을 동적으로 조정합니다.설정 시, 들고 있는 동안이나 유휴 상태인 경우에 장치를 더욱 시원하거나 조용하게 유지합니다. 그렇지 않으면 장치가 안정된 표면에 있는 동안 성능이 최적화됩니다. 설정 해제 시 수동으로 열 우선순위를 설정할 수 있습니다.",
+                    "description2": "지능형 냉각 기능은 팬 속도, 최대 표면 온도 및 성능을 조절합니다.이 기능의 모드는 다음과 같으며, 현재 Windows 성능 전원 켜기 슬라이더를 사용하여 액세스할 수 있습니다.",
+                    "description3": "지능형 냉각 기능이 필요에 따라 자동으로 열효율을 조절합니다.노트북의 경우, 액세서리에서 분리하면 지능형 냉각 기능이 성능 설정을 조정하여 사용 편의를 위해 표면을 더 식혀줍니다. 장치가 데스크탑에 연결되어 있는 경우에는 이 기능이 성능을 최적화합니다.",
+                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
+                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "readMore": "자세히 읽으십시오.",
                     "gotoWindows": {
-                        "title": "Go to windows settings",
-                        "modalBodyText1": "Click on Windows battery icon on System tray to access Windows performance power slider"
+                        "title": "Windows 설정으로 이동",
+                        "modalBodyText1": "시스템 트레이에서 Windows 배터리 아이콘을 클릭하여 Windows 성능 전원 슬라이더에 액세스"
                     },
                     "intelligentCooling": {
-                        "title": "Intelligent cooling",
+                        "title": "지능형 냉각",
                         "description": "",
                         "tooltip": "",
-                        "optimize": "optimize system for",
-                        "apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
+                        "optimize": "다음을 위해 시스템 최적화",
+                        "apsHint": "지능형 냉각 기능을 사용하려면 Lenovo Active Protection System을 설치하고 활성화해야 합니다.",
                         "options": {
-                            "quiteCool3": "Cool Mode",
-                            "performance3": "High Performance",
-                            "quiteCool4": "Quiet & Cool",
-                            "performance4": "Performance",
-                            "quiteCool5": "Quiet & Cool",
-                            "performance5": "Performance"
+                            "quiteCool3": "냉각 모드",
+                            "performance3": "고성능",
+                            "quiteCool4": "저소음 및 냉각",
+                            "performance4": "성능",
+                            "quiteCool5": "저소음 및 냉각",
+                            "performance5": "성능",
+                            "batterySaving": "Battery Saving",
+                            "performance13": "Performance",
+                            "quiteCool13": "Quiet & Cool",
+                            "performance14": "Extreme Performance",
+                            "quiteCool14": "Intelligent Cooling"
                         },
                         "readMore": {
-                            "mode1": "Quiet mode",
-                            "mode2": "Balanced mode",
-                            "mode3": "Performance mode",
-                            "line1": "Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "line2": "Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
-                            "line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "mode1": "저소음 모드",
+                            "mode2": "균형 조정 모드",
+                            "mode3": "성능 모드",
+                            "line1": "슬라이더가 왼쪽 끝에 있습니다.팬 속도와 성능을 낮춰 컴퓨터의 온도를 더욱 낮추고 조용하게 하며, 배터리 수명을 최상 상태로 제공합니다.",
+                            "line2": "슬라이더가 가운데 있습니다.최상의 환경을 위해 팬 속도와 성능이 동적으로 균형을 이룹니다.",
+                            "line3": "슬라이더가 오른쪽 끝에 있습니다. 팬 속도와 허용 표면 온도가 더 높아져 성능을 극대화할 수 있습니다.",
+                            "line4": "More info"
+                        },
+                        "selectedModeText": {
+                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
+                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
+                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                        },
+                        "intelligentCoolingModesModal": {
+                            "title": "Change intelligent cooling modes",
+                            "close": "close",
+                            "coolingModesList": {
+                                "list1": "Click on the windows battery-icon in the toolbar",
+                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                            }
                         }
                     },
                     "nonintelligentCooling": {
                         "options": {
-                            "intelligentCooling": "INTELLIGENT COOLING",
-                            "extremeCooling": "EXTREME PERFORMANCE",
-                            "battery&Quite": "BATTERY & QUIET"
+                            "intelligentCooling": "지능형 냉각",
+                            "extremeCooling": "극한 성능",
+                            "battery&Quite": "배터리 및 저소음"
                         }
-                    }
+                    },
+                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
                 },
                 "powerSettings": {
-                    "title": "Power Settings",
+                    "title": "전원 설정",
                     "alwaysUSB": {
                         "title": "Always on USB",
-                        "description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
-                        "checkbox": "Enable USB charging from laptop battery when computer is off."
+                        "description": "컴퓨터가 절전, 최대 절전 또는 끄기 모드 상태일 경우 컴퓨터의 항시 사용 USB 커넥터를 통해 USB 장치를 충전합니다.스마트폰 또는 태블릿은 노란색 표시가 있거나 배터리 아이콘이 인쇄된 USB 커넥터로 빠르게 충전할 수 있습니다.",
+                        "checkbox": "컴퓨터가 꺼져 있는 경우, 노트북 배터리를 통한 USB 충전을 사용으로 설정하십시오."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "간편 복귀",
+                        "description": "컴퓨터 덮개를 자주 열고 닫는다면 이 기능을 사용하여 복귀 시간을 향상시킬 수 있습니다.",
+                        "tooltip": "컴퓨터 덮개를 자주 열고 닫는다면 이 기능을 통해 복귀 시간을 향상시킬 수 있습니다. 이 설정을 사용하는 경우 컴퓨터의 덮개를 닫으면 전원을 적게 사용하는 모드가 시작되지만 덮고 나서 15분 내에 다시 덮개를 열면 바로 복귀가 가능합니다. 또한 이 기능을 사용해 시스템이 대기 모드에 들어가기 전에 노트북이 보류 중인 활동(예: 이메일 전송 또는 파일 다운로드)을 마치도록 할 수 있습니다."
                     }
                 },
                 "otherSettings": {
-                    "title": "Other Settings",
+                    "title": "기타 설정",
                     "vantageToolbar": {
-                        "title": "Lenovo Vantage Toolbar",
-                        "description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
+                        "title": "Lenovo Vantage 도구 모음",
+                        "description": "Vantage 도구 모음을 Windows 작업 표시줄에 고정시켜 쉽게 배터리 상세 정보를 얻어 빠른 설정에 액세스할 수 있습니다."
                     }
                 },
                 "batterySettings": {
-                    "title": "Battery Settings",
+                    "title": "배터리 설정",
                     "batteryThreshold": {
-                        "title": "Battery Charge Threshold",
-                        "description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
-                        "tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "title": "배터리 충전 임계값",
+                        "description": "컴퓨터 사용 시 주로 AC 어댑터를 연결하고 가끔씩만 배터리 전원을 사용하는 경우,최대 충전 값을 100% 미만으로 설정하여 배터리 수명을 연장시킬 수 있습니다. 가끔씩 사용하는 배터리는 완전 충전 용량보다 적게 충전될 때 수명이 길어지므로 이 방법이 유용합니다.",
+                        "tooltip": "현재 배터리가 충전 중지 임계값보다 높게 충전된 경우 배터리가 충전 중지 임계값 이하로 방전될 때까지 전원을 분리하십시오.배터리 상태(낡거나 낡지 않은 상태)에 따라, 충전이 시작되거나 중지되는 바로 그 지점에서 최대 2퍼센트의 차이가 생길 수도 있습니다. 해당 기능을 사용하는 경우 배터리 상태에 관한 어김없는 정확한 보고를 위해서 가끔 배터리 게이지 리셋을 수행하는 것이 바람직합니다.",
+                        "note": "주",
+                        "readMoreText": "자세히 읽으십시오.",
+                        "noteInfo": " 배터리 충전 임계값이 여전히 완전히 활성화되지 않았습니다. 컴퓨터 플러그를 뽑고 충전 중지 임계값 이하로 배터리를 방전하십시오.",
                         "settings": {
-                            "title1": "Threshold for Built in battery",
-                            "title2": "Threshold for Removable battery"
+                            "title1": "기본 제공 배터리의 임계값",
+                            "title2": "이동식 배터리의 임계값"
                         },
                         "popup": {
-                            "title": "Enable Battery Charge Threshold",
-                            "description1": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life.",
-                            "description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
-                            "enable": "ENABLE",
-                            "cancel": "CANCEL"
+                            "title": "배터리 충전 임계값 사용",
+                            "description1": "사용자 지정 배터리 충전을 사용하면 이 장치를 사용할 때 전체 배터리 상태가 더 오래 지속될 수 있습니다.그러나 완전 충전을 하지 않으면, 런타임 배터리 수명이 줄어듭니다.",
+                            "description2": "이 기능을 완벽하게 사용하려면, 컴퓨터 플러그를 뽑고충전 중지 임계값 이하로 배터리를 방전하십시오.",
+                            "enable": "사용",
+                            "cancel": "취소"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "충전 시작 기준",
+                            "checkboxText": "충전 중지 임계값의 5% 이하로 충전 시작 임계값을 자동으로 설정합니다.",
+                            "stop": "충전 중지 기준"
                         }
                     },
                     "expressCharging": {
-                        "title": "Express Charging",
-                        "description": "Express Charge allows your battery to a full charge much faster than normal mode.",
-                        "tooltip": "Express Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
+                        "title": "신속 충전",
+                        "description": "빠른 충전으로 배터리를 일반 모드 보다 훨씬 빠르게 완전 충전할 수 있습니다.",
+                        "tooltip": "빠른 충전으로 시스템 배터리의 충전 시간을 크게 줄일 수는 있지만,배터리 수명이 줄어들 수 있습니다."
                     },
                     "conservationMode": {
-                        "title": "Conservation Mode",
-                        "description": "This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
+                        "title": "보존 모드",
+                        "description": "이 기능은 전원을 연결할 때 배터리 수명을 연장하는 데 유용합니다. <br>이 모드를 사용하면 배터리는 용량의 55-60%까지만 충전되어 배터리의 수명을 극대화할 수 있습니다. 그러나 이렇게 하면 AC 전원에서 분리한 후 컴퓨터를 사용하는 시간이 줄어듭니다.",
                         "tooltip": {
-                            "line1": "This function is useful to extend the lifespan of your battery when plugged.",
-                            "line2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
-                            "line3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
+                            "line1": "이 기능은 전원을 연결할 때 배터리 수명을 연장하는 데 유용합니다.",
+                            "line2": "이 모드를 사용하면 배터리는 용량의 55-60%까지만 충전되어 배터리의 수명을 극대화할 수 있습니다. 그러나 이렇게 하면 AC 전원에서 분리한 후 컴퓨터를 사용하는 시간이 줄어듭니다.",
+                            "line3": "참고: 빠른 충전과 보존 모드를 동시에 사용할 수 없습니다.모드 중 하나가 켜져 있으면, 다른 모드는 자동으로 꺼집니다."
                         }
                     },
                     "airPlanePower": {
-                        "title": "Airplane Power Mode",
-                        "description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
+                        "title": "비행기 전원 모드",
+                        "description": "시스템의 전력 소모를 제어하여 비행기의 AC 전원 콘센트를 보호하십시오.비행기 전원 모드를 사용하면, 컴퓨터가 배터리 충전율과 시스템 성능을 제한하여 전력 소모를 줄입니다."
+                    }
+                },
+                "energyStar": {
+                    "title": "Energy Star",
+                    "description": "ENERGY STAR 인증 제품"
+                },
+                "smartStandby": {
+                    "title": "스마트 대기",
+                    "description": "사용량이 많을 때 빠른 시작 시간을 희생시키지 않고 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약하는 기능입니다.",
+                    "tooltip": "스마트 대기를 사용할 경우 예약된 시작 시간 전에 컴퓨터가 모던 대기로 바뀌며 배터리 전원이 일정 시간 동안 비활성화된 후 최대 절전 모드로 전환됩니다. 이 시간은 사용자가 설정한 스케줄을 토대로 최적화됩니다. 컴퓨터는 예약된 날에만 최대 절전 모드에서 모던 대기로 전환되며 비활성화되도록 예약된 날에는 전환되지 않습니다.",
+                    "timer": {
+                        "heading": "이 컴퓨터를 주로 사용하는 시간 설정",
+                        "subHeading1": "시작하면",
+                        "subHeading2": "종료",
+                        "subHeading3": "다음에 대해 이 스케줄을 사용합니다",
+                        "endTimeNote": "종료 시간은 시작 시간으로부터 20시간 이내여야 합니다",
+                        "timeUnits": {
+                            "unit1": "시간",
+                            "unit2": "분",
+                            "unit3": "오전/오후"
+                        }
                     }
                 }
             },
             "audio": {
-                "title": "Audio",
-                "subtitle": "Audio Settings",
-                "description": "This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.",
+                "title": "오디오",
+                "subtitle": "오디오 설정",
+                "description": "이 섹션에서는 Dolby 설정, 마이크 등의 오디오 설정을 수동으로자동으로 최적화하거나 구성할 수 있습니다.",
                 "audioSmartsettings": {
-                    "title": "Audio Smart settings",
-                    "subtitle": "APPLICATION-BASED SETTINGS",
-                    "description": "Automatically adjust audio settings according to different apps you are using.",
+                    "title": "오디오 스마트 설정",
+                    "subtitle": "응용 프로그램 기반 설정",
+                    "description": "사용하고 있는 다양한 앱에 따라 오디오 설정을 자동으로 조정합니다.",
                     "dolby": {
-                        "title": "Automatic Dolby Audio settings",
-                        "tooltip": "Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
+                        "title": "자동 Dolby 오디오 설정",
+                        "tooltip": "자동 Dolby 오디오 설정 기능에서는 Dolby 오디오 설정울 사용하고있는 다른 앱에 적절한 모드로 구성하여 더욱 개선된 오이오를 사용할 수 있게 합니다.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "동적",
+                            "movie": "영화",
+                            "music": "음악",
+                            "games": "게임",
+                            "voip": "음성"
                         }
                     },
                     "voip": {
-                        "title": "Automatic Audio Optimization for VoIP",
-                        "tooltip": "Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality."
+                        "title": "VoIP에 대한 자동 오디오 최적화",
+                        "tooltip": "VoIP 통화를 하는 동안 자동으로 Dolby 음성 모드로 전환하여 깨끗하고 일관된 음성 품질을 제공하십시오."
                     }
                 },
                 "microphone": {
-                    "title": "Microphone",
+                    "title": "마이크",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permission to access your microphone. Please turn on access to your microphone for the Lenovo Vantage app."
+                        "title": "주",
+                        "description": "Lenovo Vantage가 마이크에 액세스할 수 있는 권한이 없습니다.Lenovo Vantage 앱에서 마이크에 액세스할 수 있도록 설정하십시오."
                     },
                     "microphone": {
-                        "title": "Microphone",
-                        "tooltip": "You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode."
+                        "title": "마이크",
+                        "tooltip": "마이크 볼륨을 조정하고 적절한 모드를 지정하여 마이크 효과를사용자 정의할 수 있습니다."
                     },
                     "volume": {
-                        "title": "Microphone Volume",
-                        "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
+                        "title": "마이크 볼륨",
+                        "description": "Dolby 오디오는 사용자가 즐기는 모든 콘텐츠에서 풍부하고 선명하고 강력한 사운드를 제공하며 콘텐츠 및 장비에 적합한 모드를 선택합니다.",
                         "options": {
-                            "silent": "Silent",
-                            "loud": "Loud"
+                            "silent": "조용히",
+                            "loud": "크게"
                         }
                     },
                     "suppress": {
-                        "title": "Suppress keyboard noise",
-                        "tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+                        "title": "키보드 소음 차단",
+                        "tooltip": "키보드 소음을 억제하여 MIC 오디오를 최적화하려면 이 기능을 켜십시오."
                     },
                     "acoustic": {
-                        "title": "Acoustic Echo Cancellation",
-                        "tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+                        "title": "음향 에코 취소",
+                        "tooltip": "음향 반향을 줄임으로써 MIC 오디오를 최적화하려면 이 기능을 켜십시오."
                     },
                     "optimize": {
-                        "title": "Optimize my microphone for:",
-                        "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+                        "title": "마이크 최적화:",
+                        "tooltip": "다양한 시나리오와 환경에서 오디오 환경을 향상시키려면 마이크 효과를 구성하십시오.",
                         "options": {
-                            "VoiceRecognition": "VOICE RECOGNITION",
-                            "OnlyMyVoice": "ONLY MY VOICE",
-                            "Normal": "NORMAL",
-                            "MultipleVoices": "MULTIPLE VOICES"
+                            "VoiceRecognition": "음성 인식",
+                            "OnlyMyVoice": "내 음성만",
+                            "Normal": "일반",
+                            "MultipleVoices": "다중 음성"
                         }
                     }
                 }
             },
             "displayCamera": {
-                "title": "Display & Camera",
-                "subtitle": "Display & Camera Settings",
-                "description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
+                "title": "디스플레이 및 카메라",
+                "subtitle": "디스플레이 및 카메라 설정",
+                "description": "이 섹션에서는 시각적 효과를 높이고 카메라 속성을 구성할 수 있습니다. 더 많은 기능을 살펴보고 여기서 디스플레이 환경을 사용자 정의하십시오.",
                 "jumpTo": {
-                    "title": "JUMP TO SETTINGS",
+                    "title": "설정으로 건너뛰기",
                     "shortcuts": {
                         "display": {
-                            "title": "Display"
+                            "title": "디스플레이"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "카메라"
                         }
                     }
                 },
                 "display": {
-                    "title": "Display",
+                    "title": "디스플레이",
                     "eyeCareMode": {
-                        "title": "Eye Care Mode",
-                        "checkbox": "Schedule eye care mode from sunset to sunrise",
+                        "title": "아이 케어 모드",
+                        "checkbox": "아이 케어 모드를 일몰에서 일출로 예약",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "웜(눈에 더 적절)",
+                            "cold": "정상"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "온도 재설정",
+                        "tooltip": "아이 케어 모드는 디스플레이의 색상 온도를 조절하여 블루라이트를 필터링하고 눈의 피로감을 덜어줍니다.",
+                        "onSunsetToSunriseScheduleDescription": "아이케어 모드를 일몰에서 일출로 예약",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "주",
+                            "description": "Lenovo Vantage는 위치 정보에 액세스하여 지역의 일몰 및 일출 시간을 계산해야 합니다."
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Display color temperature",
+                        "title": "디스플레이 색상 온도",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "웜(눈에 더 적절)",
+                            "cold": "정상"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "온도 재설정",
+                        "tooltip": "아이 케어 모드는 디스플레이의 색상 온도를 조절하여 블루라이트를 필터링하고 눈의 피로감을 덜어줍니다.",
+                        "onSunsetToSunriseScheduleDescription": "아이케어 모드를 일몰에서 일출로 예약",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "주",
+                            "description": "Lenovo Vantage는 위치 정보에 액세스하여 지역의 일몰 및 일출 시간을 계산해야 합니다."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "개인 정보 가드",
+                        "description": "이 기능은 다른 사람들이 사용자 화면을 엿보는 것을 방지합니다. 디스플레이가 켜졌을 때 이 기능으로 시야각이 바뀌므로 주변의 시선으로부터 항시 보호됩니다. 또한, \"Fn+D\" 키를 눌러서 모드를 전환할 수 있습니다.",
+                        "note": "화면 세로 모드에서는 개인 정보 가드가 작동하지 않없습니다. 이 모드에서는 여전히 화면을 옆에서 볼 수 있습니다.",
+                        "labelText": "암호를 입력하면 이 기능을 사용 가능"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "OLED 전원 설정",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "또한, 본 컴퓨터의 OLED 디스플레이의 경우 디스플레이의 일부를 선택적으로 어둡게 할 수 있어서 전원 소모가 줄어들고 배터리 수명이 늘어납니다.",
+                            "또한, 디스플레이의 전체 수명을 연장하려면 작업 표시줄과 그 외 디스플레이 영역 중 변화가 별로 없는 부분을 어둡게 설정하시기 바랍니다."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "온도 재설정",
+                        "tooltip": "이 기능은 디스플레이의 일부를 선택적으로 어둡게 하여 전원 소모를 줄이고 배터리 수명을 늘릴 수 있습니다.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
-                    "title": "Camera",
+                    "title": "카메라",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permissions to access your camera. Please turn on access to your camera for the Lenovo Vantage app."
+                        "title": "주",
+                        "description": "Lenovo Vantage는 카메라에 엑세스할 수 없는 권한이 없습니다. Lenovo Vantage 앱에서 카메라에 액세스할 수 있도록 설정하십시오."
                     },
-                    "url": "Go to windows privacy settings",
+                    "url": "Windows 프라이버시 설정으로 이동",
                     "cameraPrivacy": {
-                        "title": "Camera privacy mode",
-                        "tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling."
+                        "title": "카메라 프라이버시 모드",
+                        "tooltip": "개인 설정 상태에서는 카메라가 실시간 이미지 전송을 중단합니다. 화상 통화 중 다른 사람에게 이미지를 공유하지 않으려면 이 설정을 켜십시오."
                     },
                     "camera": {
-                        "title": "Camera",
-                        "tooltip": "Click here to reset Camera properties to default settings.",
-                        "reset": "Reset factory settings"
+                        "title": "카메라",
+                        "tooltip": "카메라 속성을 기본 설정으로 다시 설정하려면, 여기를 클릭하십시오.",
+                        "reset": "공장 기본 설정으로 초기화"
                     },
-                    "brightness": "Brightness",
-                    "contrast": "Contrast",
-                    "autoExposure": "Auto Exposure",
-                    "autoFocus": "Auto focus",
-                    "notAvailable": "Camera Not Available",
+                    "brightness": "밝기",
+                    "contrast": "대비",
+                    "autoExposure": "자동 노출",
+                    "autoFocus": "자동 포커스",
+                    "notAvailable": "카메라를 사용할 수 없음",
                     "camerablur": {
-                        "title": "Camera Background Blur",
-                        "caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "title": "카메라 배경 흐림",
+                        "caption": "이 기능을 사용하면 카메라에서 영상 통화를 하거나 사진을 촬영할 때 배경이 흐려집니다. 아래의 선택 사항에서 다른 효과를 선택할 수 있습니다.",
+                        "blurMode": "흐림 모드",
+                        "comicMode": "만화 모드",
+                        "sketchMode": "스케치 모드"
+                    },
+                    "cameraLoadingFailed": {
+                        "inUseTitle": "CAMERA IS IN USE",
+                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
+                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
+                        "loadingFailedDescription": "Close the app and try again."
+                    }
+                }
+            },
+            "inputAccessories": {
+                "title": "입력 및 액세서리",
+                "subtitle": "입력 및 액세서리 설정",
+                "description": "Lenovo 지능형 센싱은 컴퓨터의 다양한 센서를 조합하여 사용자의 활동을 감지하고 전원 관리가 최적화될 수 있도록 설정을 조정합니다",
+                "inputAccessory": {
+                    "title": "지능형 키보드",
+                    "hiddenKeyboardFunctions": {
+                        "title": "숨겨진 키보드 기능",
+                        "description": "키보드의 왼쪽 아래에 있는 Fn 키와 다른 키를 동시에 눌러 아래 키보드 맵에 표시된 명령을 호출할 수 있습니다."
+                    },
+                    "firstKeyObj": {
+                        "tittle": "Fn + Tab",
+                        "description": "고해상도 디스플레이의 확대/축소 기능을 사용하도록 설정",
+                        "image": ""
+                    },
+                    "secondKeyObj": {
+                        "tittle": "Fn + 4",
+                        "description": "절전 모드 실행",
+                        "image": ""
+                    },
+                    "thirdKeyObj": {
+                        "tittle": "Fn + D",
+                        "description": "개인 정보 가드 켜기 및 끄기",
+                        "image": ""
+                    },
+                    "fourthKeyObj": {
+                        "tittle": "Fn + Q",
+                        "description": "성능 모드와 저소음 모드 사이를 전환",
+                        "image": ""
+                    },
+                    "fifthKeyObj": {
+                        "tittle": "Fn + 스페이스",
+                        "description": "키보드 백라이트 상태 변경",
+                        "image": ""
+                    }
+                },
+                "userDefinedKey": {
+                    "title": "사용자 정의 키",
+                    "caption": "별 모양 아이콘으로 표시된 키는 사용자 정의 기능을 설정할 수 있습니다",
+                    "dropDown": {
+                        "title": "작업 사용자 정의 키",
+                        "note": "참고: 이메일이나 우편 주소와 같이 일반적으로 입력되는 키를 입력하는 데 사용할 수 있습니다. 암호나 기타 개인 정보를 저장 및 입력하는 데 이 기능을 사용하지 않는 것이 좋습니다.",
+                        "options": {
+                            "option1": "선택하십시오.",
+                            "option2": "웹 사이트 열기",
+                            "option3": "텍스트 입력"
+                        }
+                    },
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
                     }
                 }
             }
         },
         "smartAssist": {
-            "title": "Smart Assist",
-            "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+            "title": "고급 지원",
+            "description": "Lenovo 지능형 감지 기능은 컴퓨터의 다양한 센서를 조합하여 사용자의 활동을 감지하고 전원 관리 최적화 설정을 조정하며 개인정보를 보호합니다.",
             "jumpTo": {
-                "title": "JUMP TO SETTINGS",
-                "security": "Security",
-                "screen": "Screen",
-                "media": "Media",
-                "voice": "Voice"
+                "title": "설정으로 건너뛰기",
+                "security": "보안",
+                "screen": "화면",
+                "media": "미디어",
+                "voice": "음성",
+                "APS": "APS"
             },
             "intelligentSecurity": {
-                "title": "Intelligent Security",
-                "readMore": "Read more",
+                "title": "지능형 보안",
+                "readMore": "자세히 읽기",
                 "HumanPresenceDetection": {
-                    "title": "Human presence detection",
-                    "tooltip": "Click here to reset the human presence detection settings."
+                    "title": "사용자 존재 감지",
+                    "tooltip": "사용자 존재 감지 설정을 변경하려면 여기를 클릭하십시오."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "사용자 존재 감지",
+                    "tooltip": "사용자의 존재 감지 설정을 다시 설정하려면, 여기를 클릭하십시오."
                 },
                 "zeroTouchLogin": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
+                    "title": "제로 터치 로그인",
+                    "caption": "이 기능은 사용자가 바로 앞에 있거나 다가오는 경우 컴퓨터를 자동으로 잠금해제하거나 절전 모드에서 해제합니다."
                 },
                 "zeroTouchLock": {
-                    "title": "Zero Touch Lock",
-                    "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+                    "title": "제로 터치 잠금",
+                    "caption": "이 기능을 사용하면 사용자 상태가 감지되지 않을 때 디스플레이가 어두워지고 컴퓨터가 잠깁니다. 이 기능을 사용하면 컴퓨터를 방치하거나 잠금 해제된 상태로 둘 경우 컴퓨터에 대한 무단 액세스의 가능성을 줄일 수 있습니다. 또한 사용자의 존재가 감지되지 않을 때 시스템을 모던 대기 모드로 설정하여 전력 소비를 줄입니다.",
                     "autoScreenLockTimer": {
-                        "title": "AUTO SCREEN LOCK TIMER",
+                        "title": "자동 스크린 잠금 타이머",
                         "radioButton": {
-                            "fast": "Fast",
-                            "medium": "Medium",
-                            "slow": "Slow"
+                            "fast": "빠르게",
+                            "medium": "보통",
+                            "slow": "느리게"
                         },
-                        "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+                        "toolTipContent": "사용자의 존재를 감지하지 못하면, 원하는 옵션을 선택하여 빠른/중간/느린 속도로 화면을 잠그십시오. 그러나 화면이 잠기는 시간도 실제 사용자 시나리오, 센서 능력 및 Windows 화면 시간 제한 설정의 영향을 받습니다. 따라서 시스템을 떠나기 전에 즉시 잠그는 것이 좋습니다."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+                    "title": "거리 감도 조정",
+                    "caption": "자동 거리 조정은 AI 엔진을 통해 감지 거리를 자동으로 업데이트합니다.",
                     "options": {
-                        "near": "Near",
-                        "far": "Far"
+                        "near": "근처",
+                        "far": "보다 멀리"
                     }
                 },
                 "note": {
-                    "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-                    "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
-                    "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-                    "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
-                    "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+                    "description1": "이 기능은 Windows Hello를 이용합니다. Windows 설정에서 얼굴 인식이 켜졌는지 확인하십시오.",
+                    "description2": "이 기능은 센서 및 카메라를 사용하여 사용자의 존재를 감지합니다. 그러나 이 기능은 어떤 개인 정보도 수집하지 않습니다.",
+                    "description3": "1. 컴퓨터가 텐트, 태블릿 또는 대기 모드에 있을 경우 이러한 기능이 적절하게 작동하지 않을 수 있습니다.",
+                    "description4": "2. 컴퓨터가 최대 절전 모드이거나 꺼져 있었던 경우. 자동 IR 카메라 로그인이 작동하지 않습니다.",
+                    "description5": "3. IR 카메라에서 얼굴을 인식하여 자동 로그인을 할 수 있도록 컴퓨터 화면을 적절한 각도로 조정하십시오."
                 },
                 "WindowsLink": {
-                    "goToWindowsHello": "Go to Windows Hello Settings",
-                    "screenTimeoutSettings": "Go to Screen timeout settings"
+                    "goToWindowsHello": "Windows Hello 설정으로 이동",
+                    "screenTimeoutSettings": "화면 시간 종료 설정으로 이동"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "기본 설정 복구"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "지능형 화면",
+                "description": "Lenovo 지능형 감지 기능은 컴퓨터의 다양한 센서를 조합하여 사용자 활동을 감지하고 전원 관리 설정을 조절합니다. 예를 들면 사용자가 걷고 있는 것이 감지되면 디스플레이를 흐리게 하고 읽는 것이 감지되면 선명하게 유지합니다.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "자동 화면 잠금",
+                    "caption": "고개를 숙이고 있거나 걷고 있는 경우에는 자동으로 디스플레이를 끕니다.",
+                    "note": "전원 관리 옵션 설정이 Windows 설정의 시스템 섹션에서 \"배터리 사용 시 화면 끄기 사용 안 함\"으로 설정된 경우 이 기능은 사용될 수 없습니다. 이 기능을 사용하려면 \"사용 안 함\"이 아닌 다른 값을 선택하십시오.",
+                    "windowsLink": "Windows 설정의 전원 및 절전 설정으로 이동"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "내 디스플레이 유지",
+                    "caption": "읽거나 브라우징 중일 때 내 디스플레이 유지.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "브라우징 시 디스플레이가 흐려지기까지 걸리는 시간(분)",
+                        "startTime": "0분",
+                        "endTime": "60분"
+                    }
+                }
+            },
+            "activeProtectionSystem": {
+                "title": "Active Protection System",
+                "description": "Lenovo Active Protection System은 강한 물리적 충격과 진동으로 인한 손상으로부터 하드 드라이브를 보호하는 데 유용한 자율 기능입니다. 이 기능을 통하여 계속해서 본 컴퓨터의 움직임이 모니터링되며 낙하 등의 손상이 예측되는 경우 하드 드라이브는 일시적으로 정지하게 됩니다.",
+                "activeProtection": {
+                    "title": "Active Protection",
+                    "caption": "감도를 변경하십시오. 감도가 낮으면 센 충격이 있어야만 보호가 활성화됩니다",
+                    "checkbox": "기차 또는 자동차와 같은 반복 충격 무시"
+                },
+                "manualActiveProtectionSuspension": {
+                    "title": "수동 Active Protection 일시 중단",
+                    "caption": "수동으로 Active Protection System을 일시 중단하겠습니다",
+                    "dropdown-title": "일시 중단 대상",
+                    "button": "지금 일시 중단"
+                },
+                "advanced": {
+                    "description": "태블릿 사용 중에 하드 디스크 드라이브의 액세스를 개선하려면, 다음 작업이 감지될 때 Active Protection System를 중단하십시오",
+                    "pen": {
+                        "title": "펜 입력",
+                        "description": "펜을 사용할 때 펜 입력이 범위를 벗어나면 APS를 사용 가능으로 설정하십시오"
+                    },
+                    "touch": {
+                        "title": "터치 입력",
+                        "description": "터치 입력을 사용할 때 터치 입력이 감지되지 않으면 APS를 사용 가능으로 설정하십시오"
+                    },
+                    "hand": {
+                        "title": "컴퓨터 가장자리에서 손 근접 감지",
+                        "description": "태블릿 모드를 사용할 때 손이 감지되지 않으면 APS를 사용 가능으로 설정하십시오"
                     }
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "지능형 미디어",
+                "title": "제로 터치 비디오 재생",
+                "desc": "이 기능은 컴퓨터를 두고 자리를 떠나면 비디오를 일시 정지하고 자리에 다시 돌아 오면 비디오를 다시 시작합니다.",
+                "tooltip": "이 기능은 웹 비디오 플레이어에는 적용되지 않습니다. 대중적인 비디오 플레이어(예: Windows Media Player, 5KPlayer 등)가 이 기능을 지원합니다."
+            },
+            "voice": {
+                "title": "음성",
+                "description": "Lenovo Voice는 음성에서 텍스트로의 변환 기능을 제공하며 번역 기능을 사용하여 음성에서 텍스트로의 실시간 번역을 제공합니다.",
+                "installBtnText": "설치",
+                "launchBtnText": "시작",
+                "voiceToText": {
+                    "title": "음성에서 텍스트로",
+                    "caption": "이 기능을 사용하면 음성을 텍스트로 변환할 수 있습니다."
+                },
+                "translation": {
+                    "title": "번역",
+                    "caption": "이 기능은 음성으로의 실시간 번역을 제공합니다. 번역된 내용은 텍스트로 표시됩니다. 필요에 따라 소스 언어 및 대상 언어를 선택할 수 있습니다."
+                },
+                "modalPopUp": {
+                    "heading": "시작하기:",
+                    "point1": "Lenovo Voice 아이콘이 Windows 시스템 트레이에 표시되는지 확인하십시오.",
+                    "point2": "변환된 텍스트를 기록할 파일을 여십시오.",
+                    "point3": "Windows 시스템 트레이에서 Lenovo Voice 아이콘을 클릭하고 음성에서 텍스트로를 선택하십시오.",
+                    "point4": "원하는 언어를 선택하고 마이크 아이콘을 클릭하여 시작하십시오.",
+                    "point5": "편집하려는 곳으로 커서를 이동하고 말하기를 시작하십시오.",
+                    "point6": "Windows 시스템 트레이에서 Lenovo Voice 아이콘을 클릭하고 변환을 선택하십시오.",
+                    "point7": "원하는 소스 언어 및 대상 언어를 선택하십시오.",
+                    "point8": "필요에 따라 스피커 또는 마이크에서 음성 입력을 설정하십시오.",
+                    "point9": "말하기를 시작하려면 마이크 아이콘을 클릭하십시오",
+                    "closeText": "닫기"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "System 업데이트",
+        "back": "뒤로",
+        "history": "전체 내역",
+        "notAvailable": "사용할 수 없음",
+        "notInstalled": "설치되지 않음",
+        "criticalUpdates": "중요 업데이트",
+        "recommendedUpdates": "권장 업데이트",
+        "optionalUpdates": "선택적 업데이트",
+        "ignoredUpdates": "무시된 업데이트",
+        "successInstall": "설치 완료: ",
+        "failedInstall": "설치 실패: ",
+        "at": "시간",
+        "readMore": "자세히 읽기",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
-            "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "reboot": "다시 시작",
+            "shutdown": "시스템 종료",
+            "rebootForceMsg": "선택한 업데이트로 인해, 시스템이 설치 후다시 부팅됩니다.",
+            "shutdownForceMsg": "선택한 업데이트로 인해 시스템이 설치 후자동으로 종료됩니다.",
+            "rebootDelayedMsg": "선택한 업데이트로 인해 설치 후 시스템이 재부팅되며,업데이트를 설치하는 동안 시스템을 끄거나 전원 또는 액세서리를 제거하지 마십시오. 시스템 재부팅에 대비하여 현재의 작업을 저장하는 것이 바람직합니다.",
+            "rebootRequiredMsg": "업데이트를 성공적으로 설치하려면 컴퓨터를 다시 부팅하여모든 것이 안전하고 원활하게 실행되어야 합니다.",
+            "okayButton": "확인",
+            "cancelButton": "취소",
+            "rebootButton": "지금 다시 부팅",
+            "dismissButton": "해제",
+            "rebootPending": "다시 부팅 보류 중"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "자동 업데이트 설정",
+            "subtitle": "자동 업데이트 설치",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "중요 업데이트",
+                "tooltip": "중요 업데이트는 심각한 오류, 주요 기능 장애, 하드웨어 결함 또는 데이터 손상을 예방할 수 있습니다."
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "권장 업데이트",
+                "tooltip": "권장 드라이버 업데이트로 인해 컴퓨터가 최적의 성능으로 작동합니다."
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Windows 업데이트",
+                "url": "Windows 설정"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Lenovo 지원 웹 사이트"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "System Update를 시작합니다.",
+            "title": "최신 시스템은 정상적인 시스템입니다.",
+            "last": "마지막 업데이트 날짜: ",
+            "next": "다음 예약 업데이트 날짜: ",
+            "checkButton": "업데이트 검사",
+            "checking": "업데이트 검사",
+            "downloading": "업데이트 다운로드 완료",
+            "installing": "업데이트를 설치하는 중",
+            "percent": "% 완료",
+            "cancelCheck": "검사 취소",
+            "cancelUpdates": "업데이트 취소",
+            "available": "사용 가능한 업데이트",
+            "description": "이 패키지에는 컴퓨터의 올바른 작동에 필요한 하드웨어드라이버 및 기타 시스템 유틸리티 관련 업데이트가 포함되어 있습니다. 또한 중요 업데이트는 사용자 컴퓨터의 데이터를 보호하기 위해 중요하며 사용 가능한 중요 업데이트가 있으면 설치해야 합니다. 이러한 패키지 설치에 실패하면 데이터 손실, 시스템 결함 또는 하드웨어 실패가 발생할 수 있습니다.",
+            "installButton": "모든 업데이트 설치",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "모든 업데이트가 올바르게 설치됨",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "일부 업데이트가 올바르게 설치되지 않았습니다.",
+                    "description": "이러한 업데이트의 다운로드 또는 설치 중에 문제가 발생했습니다.온라인 상태인지 확인하고 업데이트를 설치할 때 컴퓨터를 끄지 마십시오."
                 }
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend",
-            "rebootRequiredTag": "Reboot Required",
-            "rebootDelayTag": "Reboot Required, Power Source Required",
-            "shutdownRequiredTag": "Shutdown Required",
-            "dependedPackage": "Depended Package"
+            "rebootRequired": "재부팅해야 함",
+            "failReason": "실패 이유: AC 전원 어댑터가 컴퓨터에 연결되어 있지 않습니다. ",
+            "manufacturer": "제조업체: ",
+            "version": "버전: ",
+            "installVersion": "설치 버전: ",
+            "downloadSize": "다운로드 크기: ",
+            "diskSpaceNeeded": "필요한 디스크 공간: ",
+            "ignore": "무시",
+            "attend": "참석",
+            "rebootRequiredTag": "재부팅해야 함",
+            "rebootDelayTag": "재부팅 필요, 전원 필요",
+            "shutdownRequiredTag": "종료해야 합니다.",
+            "dependedPackage": "종속 패키지"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "사용 가능한 업데이트",
+            "description": "이러한 패키지에는 컴퓨터의 올바른 작동에 중요한 업데이트가 포함되어 있습니다. 중요 업데이트는 컴퓨터를 보다 안전하고 신뢰할 수 있게 유지하는 데 도움이 되며 사용 가능할 때 설치해야 합니다. 권장 업데이트 및 선택적 업데이트는 소프트웨어를 최신 상태로 유지하고 컴퓨터를 최상의 상태로 유지하는 데 도움이 됩니다.",
+            "installAllUpdates": "모든 업데이트 설치",
+            "installSuccessHeader": "모든 업데이트가 올바르게 설치됨",
+            "installFailHeader": "일부 업데이트가 올바르게 설치되지 않았습니다",
+            "installFailDescription": "이러한 업데이트의 다운로드 및 설치 중에 문제가 발생했습니다. 온라인 상태인지 확인하고 업데이트를 설치할 때 컴퓨터를 끄지 마십시오.",
+            "optionalUpdates": "선택적 업데이트",
+            "installSelectedUpdates": "선택한 업데이트 설치"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "이름",
+            "sortByDate": "날짜로 정렬",
+            "packageSize": "패키지 크기:",
+            "releaseDate": "릴리스 날짜:",
+            "showAll": "모두 표시",
+            "noInstallationHistory": "설치 내역을 사용할 수 없음"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "새 업데이트를 검색하는 데 문제가 있습니다. 나중에 다시 시도하십시오.",
+            "upToDate": "사용 가능한 업데이트가 없습니다. 시스템이 최신 상태입니다.",
+            "egatherException": "사용자 정보 수집 중 오류가 발생했습니다.",
+            "gatheringUserInfoException": "사용자 정보 수집 중 오류가 발생했습니다.",
+            "certificateValidationException": "업데이트 콘텐츠 서버가 올바르지 않습니다. 나중에 다시 시도하십시오.",
+            "downloadException": "업데이트 다운로드 중 오류가 발생했습니다.",
+            "connectException": "업데이트 콘텐츠 서버에 연결할 수 없습니다.",
+            "notEnoughDiskSpace": "디스크 공간이 부족하여 현재 작업을 수행할 수 없습니다.",
+            "proxyAuthenticationException": "프록시 사용자 이름 또는 암호가 올바르지 않습니다.",
+            "proxyConnectionException": "프록시 서버에 연결할 수 없습니다.",
+            "autoScriptEvaluationException": "자동 구성 스크립트를 평가 중 오류가 발생했습니다.",
+            "localRepositoryConnectionFailureException": "로컬 리포지토리에 연결할 수 없습니다.",
+            "localRepositoryDatabaseException": "로컬 리포지토리 데이터베이스를 찾을 수 없거나 데이터베이스가 손상되었습니다.",
+            "networkInterruptedException": "시스템 업데이트 서버를 현재 사용할 수 없습니다. 나중에 다시 시도하십시오.",
+            "helpCenterInvalidServerException": "시스템 업데이트 서버가 올바르지 않습니다. 나중에 다시 시도하십시오.",
+            "catalogNotFoundException": "시스템에 적용 가능한 업데이트를 찾을 수 없습니다.",
+            "catalogCrcErrorException": "현재 시스템 카탈로그를 업데이트하는 중입니다. 나중에 다시 시도하십시오.",
+            "catalogErrorException": "시스템 업데이트 서버의 사용자 시스템 업데이트 카탈로그에서 오류가 발견되었습니다. 나중에 다시 시도하십시오.",
+            "fileNotFoundException": "파일을 찾을 수 없습니다."
         }
     },
     "homeSecurity": {
-        "title": "Connected Home Security",
-        "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Ecosystem Security Overview",
-        "thisDevice": "This device",
-        "allDevices": "All Devices",
-        "protected": "Protected",
-        "notProtected": "Not Protected",
-        "myDevice": "My Device",
-        "allDevice": "All Devices",
-        "secure": "SECURE",
-        "needAttention": "NEEDS ATTENTION",
-        "manageAccount": "Manage Account",
-        "devices": "Devices",
-        "seeProtectedDevices": "See protected devices",
-        "addDevice": "add device",
-        "trailExpired": "Trail expired",
-        "trailExpiredSubtext": "Upgrate to protect all of your devices",
-        "upgrade": "upgrade",
+        "title": "홈 보안 연결",
+        "notification": {
+            "recent": "최근 보안 알림",
+            "notifications": "알림"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "장치 생태계 보호",
+            "thisDevice": "이 장치",
+            "allDevices": "모든 장치",
+            "protected": "보호됨",
+            "notProtected": "보호되지 않음",
+            "trialExpired": "평가판 만료됨",
+            "upgrade": "업그레이드",
+            "inEcosystem": "생태계에서",
+            "ecosystemEnable": "생태계 사용",
+            "inTrial": "평가판에서",
+            "addEcosystem": "생태계에 추가",
+            "enableEcosystem": "생태계 활성화",
+            "startTrial": "평가판 시작",
+            "fullAccess": "전체 액세스",
+            "renew": "갱신"
+        },
+        "overview": {
+            "overviewBlockTitle": "생태계 보안 개요",
+            "allDevices": "모든 장치",
+            "myDevice": "내 장치",
+            "thisComputer": "This computer",
+            "secure": "보안",
+            "needAttention": "주의 필요",
+            "manageAccount": "계정 관리",
+            "devices": "장치",
+            "seeProtectedDevices": "보호 장치 참고",
+            "addDevice": "장치 추가",
+            "trialExpired": "평가판 만료됨 - 모든 장치를 보호하도록 업그레이드",
+            "upgrade": "업그레이드",
+            "freeTrial": "모든 장치 보호 - 30일 무료 평가판",
+            "startTrial": "평가판 시작"
+        },
         "tour": {
-            "back": "Back",
-            "skip": "Skip",
-            "start": "START TOUR",
-            "done": "DONE",
-            "welcome1": "Welcome",
-            "welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
-            "welcome2": "Exclusive for Vantage",
-            "welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
-            "create": "Create your account",
-            "lenovoId": "with Lenovo ID",
-            "notifications": "Receive <b>notifications</b> about your home's status",
-            "monitor": "<b>Monitor</b> the safety of your family's devices",
-            "peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
-            "signInLenovoId": "SIGH-UP WITH LENOVO ID",
-            "haveLenovo": "I don't have a <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Create a Lenovo ID",
-            "without": "Proceed <b>without an account</b>",
-            "skipAndTrial": "SKIP AND START TRIAL",
-            "alreadyHave": "I already have a <b>Connected Home Security Account</b>",
-            "loginCHS": "Login to existing CHS account",
-            "locationTitle": "Enable location tracking",
-            "locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+            "back": "뒤로",
+            "skip": "건너뛰기",
+            "start": "투어 시작",
+            "done": "완료",
+            "welcome1": "환영합니다",
+            "welcomeDesc1": "몇 번의 클릭 만으로 사용자 자신 및 가족을 위해 PC, 모바일 장치 및 연결 장치를 보호할 수 있습니다.",
+            "welcomeDescStart": "지금 30일 무료 평가판을 시작하십시오.",
+            "welcome2": "Vantage 전용",
+            "welcomeDesc2": "연결된 홈 보안은 사용자 생태계 및 보안 경고에 대한 보호 상태에 빠르게 액세스할 수 있도록 직접 Vantage에 작성됩니다.",
+            "create": "계정 만들기",
+            "lenovoId": "Lenovo ID 포함",
+            "notifications": "집 상태에 대한 <b>알림</b>을 받기",
+            "monitor": "가족 장치의 안전 <b>모니터링</b>",
+            "peaceOfMind": "항상 보고하고 있다는 점을 <b>안심</b>하십시오!",
+            "signInLenovoId": "Lenovo ID로 가입",
+            "haveLenovo": "<b>Lenovo ID</b>가 없음",
+            "createLenovo": "&nbsp;Lenovo ID 만들기",
+            "without": "<b>계정 없이</b> 계속",
+            "skipAndTrial": "건너뛰기 및 평가판 시작",
+            "alreadyHave": "이미 <b>연결된 홈 보안 계정</b>이 있음",
+            "loginCHS": "기존 CHS 계정으로 로그인",
+            "locationTitle": "위치 추적 활성화",
+            "locationPermission": "이 기능이 올바르게 작동하려면, 이 장치의 위치 추적을 활성화해야 합니다."
+        },
+        "accountStatus": {
+            "title": "내 연결된 홈 보안",
+            "startTrial": "평가판 시작",
+            "manageAccount": "계정 관리",
+            "upgradeAccount": "계정 업그레이드",
+            "inTrialDetail1": "평가판 종료까지 {{remainingDays}}일 남았습니다.",
+            "inTrialDetail2": "현재 평가판 기간 내에 있습니다. 모든 기능에 무제한 액세스할 수 있습니다.",
+            "trialExpiredDetail1": "평가판이 만료되었습니다.",
+            "trialExpiredDetail2": "평가판이 만료되어 장치 생태계가 더 이상 보호되지 않습니다.",
+            "upgradedDetail1": "계정이 {{expiredDate}}까지 활성 상태입니다.",
+            "upgradedDetail2": "장치 생태계가 현재 보호되고 있습니다.",
+            "localAccountDetail2": "30일 무료 평가판을 시작하려면, 아래 버튼을 클릭하십시오.",
+            "alreadyHaveAccount": "활성화 코드가 이미 있습니까?"
         }
     },
     "support": {
@@ -1101,7 +1496,9 @@
             "status": "상태: ",
             "subDescription1": "이 제품에는 햇수 제한 보증이 적용되며, 보관 수리 서비스를 받을 수 있습니다. 고객은 해당 지역 서비스 센터로 전화하여 자세한 정보를 요청할 수 있습니다. 대리점은 이 제품에 대한 직접 입고 수리를 제공할 수 있습니다.",
             "subDescription2": "장치에 대한 보증 상세 정보를 찾을 수 없으며 자세한 보증 옵션을 보유할 수 없습니다. 당사 지원 지원 웹 사이트를 방문하십시오.",
-            "viewWarrantyOptions": "보증 옵션 보기"
+            "viewWarrantyOptions": "보증 옵션 보기",
+            "offlineTips1": "최신 보증 정보는 인터넷에 연결하십시오.",
+            "offlineTips2": "인터넷에 연결하여 최신 보증 정보를 업데이트하십시오."
         },
         "documentation": {
             "title": "문서",
@@ -1131,9 +1528,9 @@
             "copyright": "© 2002-2019 Lenovo all rights reserved"
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "카테고리",
+            "categoriesDesc": "기사에서 유용한 정보 찾기.",
+            "seeArticles": "기사 보기"
         }
     },
     "security": {
@@ -1154,9 +1551,7 @@
             "maliciousNetwork": "이 달에 컴퓨터를 {{maliciousWifi}} 악성 테트워크와 연결할 수 없습니다.",
             "good": "좋음",
             "malicious": "악성",
-            "suspicious": "의심스러움",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "의심스러움"
         },
         "antivirus": {
             "common": {
@@ -1245,6 +1640,12 @@
                 "describe2": "홈 보안 연결을 사용하려면, Lenovo Vantage에 대한 위치 서비스를 사용으로 설정해야 합니다. 지금 위치를 사용하시겠습니까?",
                 "agree": "동의",
                 "cancel": "취소"
+            },
+            "errorMessage": {
+                "headerText": "오류",
+                "bodyText": "Vantage의 중요한 부분이 누락된 것을 발견했습니다. 이 파일은 백그라운드에서 다운로드됩니다. 나중에 다시 시도하십시오.",
+                "closeText": "닫기",
+                "offlineText": "인터넷에 연결되어 있지 않습니다. 이 페이지의 일부가 정상적으로 작동하지 않을 것입니다. 다시 연결하십시오"
             }
         },
         "homeprotection": {
@@ -1256,7 +1657,7 @@
                 "homeSecurityAffect3": "홈 보안 연결은 홈 네트워크에 연결된 다른 장치가 안전하다는 점을 보장합니다.",
                 "describe": "안전하지 않은 장치 및 네트워크는 맬웨어에 감염되어 ID를 도난당하고 개인 및 재무 정보가 유출될 수 있습니다. 사용 중인 장치와 홈 네트워크가 공격자에게 노출될 위험을 줄이려면, 이 기능을 사용으로 설정",
                 "subtitle": "안심하고 사용",
-                "subtitleDescribe": "장치 또는 홈 네트워크에서 취약한 점이 감지되거나 악성일 가능성이 있는 네트워크에 연결되어 있는 경우, 연결된 홈 보안 장치에서 경고를 보냅니다. 힌트 및 팁에서 Lenovo WiFi 보안에 대해 자세히 알아보십시오.",
+                "subtitleDescribe": "장치 또는 홈 네트워크에서 취약한 점이 감지되거나 악성일 가능성이 있는 네트워크에 연결되어 있는 경우, 연결된 홈 보안 장치에서 경고를 보냅니다. 연결된 홈 보안에 대해 자세히 알아보십시오 <tag>여기</tag>.",
                 "tryNow": "지금 사용해 보기"
             },
             "invitationcode": {
@@ -1332,7 +1733,7 @@
             "whatIsPmNotInstalled": "강력하고 복합한 암호를 저장하여 모든 사이트에 즉시 로그인하는 가장 안전하고 손쉬운 방법.",
             "whatIsPmInstalled": "더욱 안전한 디지털 라이프 대기 중: 암호 추가, 다크 웹 모니터링 사용, 개인 및 지불 정보 자동 충전.",
             "startProtect": "간단한 방법으로 온라인 사용자 계정 보호를 시작하십시오.",
-            "discount": "Lenovo 사용자는 Dashlane 프리미엄을 6개월 동안 무료로 독점 사용할 수 있습니다.",
+            "discount": "Lenovo 사용자는 Dashlane 프리미엄을 50% 할인된 가격으로 독점 사용할 수 있습니다.",
             "offer": "이 제안은 신규 Dashlane 사용자만 이용할 수 있습니다!",
             "getDashLane": "Dashlane 가져오기",
             "learnMoreAbout": "Dashlane를 최대한 활용하는 방법에 대해 <tag>자세히 알아보기</tag>",
@@ -1378,32 +1779,32 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "로그인",
+        "logout": "로그아웃",
+        "unlockExclusives": "독점 잠금 해제",
+        "user": "사용자",
+        "welcomeText": "오늘 동력 공급 상태 보기{{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "오늘 동력 공급 상태 보기!",
+        "helloUser": "{{firstName}}님, 안녕하십니까!",
+        "ssoErrorTitle": "오류",
+        "ssoErrorCommon": "문제가 발생했습니다. 다시 시도하십시오.",
+        "ssoErrorCommonEx": "예기치 않은 오류가 발생했습니다. 다시 시도하십시오.",
+        "ssoErrorTimeStampIncorrect": "이런, PC 시간이 올바르지 않은 것 같습니다. PC에서 올바른 시간을 설정한 후 다시 시도하십시오.",
+        "ssoErrorNetworkDisconnected": "죄송합니다! 연결이 실패했습니다. 인터넷 연결을 확인하고 다시 시도하십시오.",
+        "ssoErrorCommunicating": "네트워크 오류가 발생했습니다. 연결을 확인하고 다시 시도하십시오.",
+        "ssoErrorAccountPluginNotExist": "플러그인이 누락되었습니다. 인터넷에 연결하면 플러그인이 백그라운드에서 자동으로 복원됩니다. 시간이 약간 걸릴 수 있습니다. 나중에 다시 시도하십시오."
     },
     "faq": {
         "footer": {
-            "title": "Not finding what you are looking for?",
-            "description": "NEED ADDITIONAL SUPPORT? DON’T HESITATE TO CONTACT US VIA:",
+            "title": "당신이 찾고있는 것을 찾지 못했습니까?",
+            "description": "추가 지원이 필요하십니까? VIA에 연락을 주저하지 마십시오.",
             "body": "Lenovo Community",
-            "button": "GO TO FORUM"
+            "button": "포럼으로 이동"
         },
         "question1": {
-            "title": "Back up and restore your files",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        Back up and restore your files\n    </div>\n    <hr />\n    <div style='margin-bottom:7rem;'>\n        It's always good to have a backup. Keep copies of your files on another drive in case something happens to the\n        originals.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Set up your backup\n    </div>\n    <hr />\n    <div class='mb-5'>\n        Select the <span style='font-weight:bold'>Start</span> button, select\n        <span style='font-weight:bold'>Settings</span> >\n        <span style='font-weight:bold'>Update & security</span> >\n        <span style='font-weight:bold'>Backup</span> > <span style='font-weight:bold'>Add a drive</span> , and then\n        choose an external drive or network location for your backups.\n    </div>\n    <div class='mb-5'>\n        <img src='./../../../../assets/images/qa/1.1.png' />\n    </div>\n    <div class='mb-5'>\n        All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files\n        get backed up or how often backups happen, go to\n        <span style='font-weight:bold;'>More options</span>.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Restore your files\n    </div>\n    <div class='mb-5'>\n        If you're missing an important file or folder, here's how to get it back:\n    </div>\n    <div>\n\n        <div class='mb-3'>1. Type <span style='font-weight:bold;'>Restore files</span>\n            in the search box on the taskbar, and then select\n            <span class='font-weight:bold'> Restore your files with File History</span>.</div>\n        <div class='mb-3'>2. Look for the file you need, then use the arrows to see all its versions</div>\n        <div class='mb-3'>3. When you find the version you want, select\n            <span style='font-weight:bold'>Restore</span>\n            to save it in its original location. To save it in a different place, press and hold (or right-click)\n            <span style='font-weight:bold'>Restore</span>, select <span style='font-weight:bold'>Restore to</span>, and\n            then choose a new location.</div>\n\n    </div>\n</div>",
+            "title": "파일 백업 및 복원",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        파일 백업 및 복원    </div>    <hr />    <div style='margin-bottom:7rem;'>        항상 백업 파일을 만드는 것이 좋습니다. 원본에 무슨 일이 발생하는 경우, 파일을 다른 드라이브에 보관하십시오.    </div>    <div style='font-size:3rem;font-weight:bold;'>        백업 설정    </div>    <hr />    <div class='mb-5'>        <span style='font-weight:bold'>시작</span> 버튼, <span style='font-weight:bold'>설정</span> > <span style='font-weight:bold'>업데이트 & 보안</span> > <span style='font-weight:bold'>백업</span> > <span style='font-weight:bold'>드라이브 추가</span>를 차례로 선택한 다음, 백업 파일을 저장할 외장 드라이브 또는 네트워크 위치를 선택하십시오.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        설정 완료. 매 시간마다 사용자 폴더(C:\\\\Users\\\\username)에 있는 모든 파일을 백업합니다. 백업할 파일 또는 백업 빈도를 변경하려면, <span style='font-weight:bold;'>추가 옵션</span>으로 이동하십시오.    </div>    <div style='font-size:3rem;font-weight:bold;'>        파일 복구    </div>    <div class='mb-5'>        중요한 파일이나 폴더가 없는 경우, 다시 가져오는 방법은 다음과 같습니다.    </div>    <div>        <div class='mb-3'>1. 작업 표시줄의 검색 상자에서 <span style='font-weight:bold;'>파일 복원</span>을 입력하고 <span class='font-weight:bold'>파일 기록으로 파일 복원</span>을 선택하십시오.</div>        <div class='mb-3'>2. 필요한 파일을 찾은 다음, 화살표를 사용하여 모든 버전 표시</div>        <div class='mb-3'>3. 원하는 버전을 찾았으면, <span style='font-weight:bold'>복원</span>을 선택하여 원래 위치에 저장하십시오. 다른 장소에 저장하려면, <span style='font-weight:bold'>복원</span>을 길게 누르고(또는 마우스 오른쪽 버튼을 클릭하고) <span style='font-weight:bold'>복원 위치</span>를 선택한 다음 새 위치를 선택하십시오.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1443,8 +1844,8 @@
             }
         },
         "question2": {
-            "title": "How to refresh your PC",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        How to refresh your PC\n    </div>\n    <hr>\n    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>\n        Symptom\n    </div>\n    <div style='padding:5px 0;'>\n        If your PC isn't performing as well as it once did, and you don't know why,\n        you can refresh your PC without deleting any of your personal files or\n        changing your settings. Windows can “refresh” your PC so it’s more like a\n        fresh install without deleting your personal files.\n    </div>\n    <div style='padding:5px 0;'>\n        Refresh your PC, Here is what will happen: your files and personalized\n        settings won’t change\n    </div>\n    <div style='padding:5px 0;'>\n        <ul>\n            <li>Your PC settings will be changed back to its defaults</li>\n            <li>Apps from windows store will be kept</li>\n            <li>Apps you installed from disc or website will be removed</li>\n            <li>A list of removed files will be saved on your desktop</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Affected Brands\n    </div>\n\n    <div>\n        <ul>\n            <li>All Desktop and Laptops</li>\n\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Operation System\n    </div>\n\n    <div>\n        <ul>\n            <li>Windows 8, 8.1 & 10</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Solution\n    </div>\n\n    <div>\n        <ul class='list-unstyled'>\n            <li>\n                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>\n                <ol>\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Settings </span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Update and recovery</span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <div>Tap or click <span style='font-weight:bold;'> Recovery</span></div>\n                        <div style='padding:5px 0'>Under Refresh your PC without affecting your files, tap or click\n                            <span style='font-weight:bold;'> Get started.</span></div>\n                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>\n\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Next'</span>.\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Refresh' </span>to start the refresh process.\n                    </li>\n                    <li style='padding:5px 0;'>\n                        Once the refresh process is done, you can find a Removed Apps list on the desktop\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        You can find the removed apps while refreshing your system\n                    </li>\n                </ol>\n            </li>\n            <li style='padding:10px 0;'>\n                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>\n                <ol>\n                    <li style='padding:5px 0;'> Search for <span style='font-weight:bold;'> refresh </span>in the search\n                        tool available in the Start menu,</li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on <span style='font-weight:bold;'> 'Refresh your PC without affecting your\n                                files'</span> in the search results as shown below.</div>\n                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on the\n                            <span style='font-weight:bold;'> Get started </span>\n                            button just below the heading<span style='font-weight:bold;'> 'Refresh your PC without\n                                affecting your files'</span> to start refreshing your Windows 10 PC.</div>\n                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>\n                    </li>\n                </ol>\n            </li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;'>\n        Additional Information\n    </div>\n\n    <div>\n        In most cases, once you start to refresh your PC, it’ll finish on its own.\n        However, if Windows needs missing files, you’ll be asked to insert recovery\n        media, which is typically a DVD disc or thumb drive. If that happens, what\n        you’ll need depends on your PC.\n    </div>\n    <div style='padding:10px 0'>\n        If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use\n        that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact\n        Microsoft Support.\n    </div>\n\n</div>",
+            "title": "PC를 새로 고치는 방법",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        PC를 새로 고치는 방법    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        증상    </div>    <div style='padding:5px 0;'>        PC가 수행한 작업을 수행한 경우는 물론이고 작업을 수행하지 않는 경우 및 그 이유를 모르는 경우, 개인 파일을 삭제하거나 설정을 변경하지 않고 PC를 새로 고칠 수 있습니다. Windows는 개인 파일을 삭제하지 않고 새로 설치하는 것과 비슷하게 PC를 \\\"새로 고칠\\\" 수 있습니다.    </div>    <div style='padding:5px 0;'>        PC를 새로 고치면, 파일과 사용자 설정 설정이 변경되지 않습니다    </div>    <div style='padding:5px 0;'>        <ul>            <li>PC 설정이 기본값으로 다시 변경됨</li>            <li>Windows 스토어의 앱이 보관됨</li>            <li>디스크 또는 웹 사이트에서 설치한 앱이 제거됨</li>            <li>제거된 파일 목록이 바탕 화면에 저장됨</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        영향을 받는 브랜드    </div>    <div>        <ul>            <li>모든 데스크탑 및 노트북</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        운영 체제    </div>    <div>        <ul>            <li>Windows 8, 8.1 및 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        해결 방법    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        <span style='font-weight:bold;'>설정</span>을 누르거나 클릭                    </li>                    <li style='padding:5px 0;'>                        <span style='font-weight:bold;'>업데이트 및 복구</span>를 누르거나 클릭                    </li>                    <li style='padding:5px 0;'>                        <div><span style='font-weight:bold;'>복구</span>를 누르거나 클릭</div>                        <div style='padding:5px 0'>PC 새로 고치기에서 파일에 영향을 주지 않고 <span style='font-weight:bold;'>시작하기</span>를 누르거나 클릭하십시오.</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        <span style='font-weight:bold;'>'다음'</span>을 클릭하십시오.                    </li>                    <li style='padding:5px 0;'>                        <span style='font-weight:bold;'>'새로 고침'</span>을 클릭하여 새로 고침 프로세스를 시작하십시오.                    </li>                    <li style='padding:5px 0;'>                        새로 고침 프로세스가 완료되면, 바탕 화면에서 제거된 앱 목록을 찾을 수 있습니다                    </li>                    <li style='padding:5px 0;'>                        시스템을 새로 고치는 동안 제거 된 앱을 찾을 수 있습니다                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> 시작 메뉴에서 사용할 수 있는 검색 도구에서 <span style='font-weight:bold;'>새로 고침</span>을 검색합니다.</li>                    <li style='padding:5px 0;'>                        <div>아래와 같이 검색 결과에서 <span style='font-weight:bold;'>'파일에 영향을 주지 않고 PC 새로 고침'</span>을 클릭하십시오.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div><span style='font-weight:bold;'>'파일에 영향을 주지 않고 PC 새로 고침'</span> 제목 바로 아래에 있는 <span style='font-weight:bold;'>시작하기</span> 버튼을 클릭하여 Windows 10 PC 새로 고침을 시작하십시오.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        추가 정보    </div>    <div>        대부분의 경우, PC를 새로 고치기 시작하면 PC가 자체적으로 완료됩니다. 그러나 Windows에 누락된 파일이 필요한 경우, 복구 미디어(일반적으로 DVD 디스크 또는 썸 드라이브)를 삽입하라는 메시지가 표시됩니다. 그런 경우, PC에 따라 필요한 사항이 달라집니다.    </div>    <div style='padding:10px 0'>        DVD를 사용하여 PC를 Windows 8.1 또는 Windows RT 8.1로 업그레이드한 경우, 해당 디스크를 사용하십시오. Windows 8.1 또는 Windows RT 8.1 미디어가 없는 경우, Microsoft 지원에 문의하십시오.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -1517,8 +1918,8 @@
             "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
         },
         "question3": {
-            "title": "How to know your machine's CPU",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    How to know your machine's CPU\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.\n    The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit\n    system.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n    <li>All Desktop and Laptops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operating System</h3>\n<ul>\n    <li>Windows 7 , 8 , 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n    <li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button,</strong>\n        right-clicking Computer, and then clicking Properties  </li>\n    <li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then click\n        <strong>Search.</strong></li>\n    <li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n    <li>Tap or click <strong>System</strong></li>\n    <li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong>\n        is displayed in the System type field under the System heading.\n        If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong>\n        <strong>32-bit Operating </strong>System is displayed in the System type field under the System heading.<br />\n         </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then\n        click <strong>Search.</strong></li>\n    <li>In the search box, type <strong>system information</strong></li>\n    <li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and then\n        click <strong>System Summary.</strong></li>\n    <li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>\n        x64-based PC is displayed in the <strong>System type</strong> field under the \n        Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong>\n        version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> field\n        under the Item heading.  </li>\n</ol>\n<p> </p>",
+            "title": "컴퓨터의 CPU를 아는 방법",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    컴퓨터의 CPU를 아는 방법</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>증상</h3><p>32비트 및 64비트라는 용어는 컴퓨터의 프로세서(CPU라고도 함)가 정보를 처리하는 방식을 의미합니다. 64비트 버전의 Windows는 32비트 시스템보다 훨씬 효과적으로 대량의 RAM(Random Access Memory)을 처리합니다.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>영향을 받는 브랜드</h3><p>위 증상은 다음 시스템 등과 연결되어 있습니다.</p><ul>    <li>모든 데스크탑 및 노트북</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>운영 체제</h3><ul>    <li>Windows 7, 8 및 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>해결 방법</h3><p><strong><u>Windows 7 또는 Vista</u></strong></p><ol>    <li><strong>시작 버튼</strong>의 <strong>시작 버튼</strong> 그림과 컴퓨터에서 마우스 오른쪽 버튼을 차례로 클릭한 다음 속성을 클릭하여 시스템을 열기  </li>    <li>시스템에서 시스템 유형을 볼 수 있습니다.</li></ol><p><strong><u>Windows 8 및 Windows 10</u></strong></p><p><strong>방법 1:</strong> 제어판에서 시스템 창 보기</p><ol>    <li>화면의 오른쪽 가장자리부터 밀어 <strong>검색</strong> 탭을 누르십시오. 또는 마우스를 사용하는 경우, 화면의 오른쪽 아래 모서리를 가리킨 다음 <strong>검색</strong>을 클릭하십시오.</li>    <li>검색 상자에 <strong>시스템</strong>을 입력한 다음, <strong>설정</strong>을 누르거나 클릭하십시오.</li>    <li><strong>시스템</strong>을 누르거나 클릭</li>    <li>64비트 버전의 Windows 8을 실행하는 경우, <strong>64비트 운영 체제</strong>가 시스템 제목 아래의 시스템 유형 필드에 표시됩니다. 32<strong>비트 버전의 Windows</strong> <strong>8을 실행하는 경우,</strong> <strong>32비트 운영 </strong>체제가 시스템 제목 아래의 시스템 유형 필드에 표시됩니다.<br />  </li></ol><p><strong>방법 2</strong>: 시스템 정보 창 보기</p><ol>    <li>화면의 오른쪽 가장자리부터 밀어 <strong>검색</strong> 탭을 누르십시오. 또는 마우스를 사용하는 경우, 화면의 오른쪽 아래 모서리를 가리킨 다음 <strong>검색</strong>을 클릭하십시오.</li>    <li>검색 상자에 <strong>시스템 정보</strong> 입력</li>    <li><strong>시스템</strong>과 <strong>시스템 정보</strong>를 차례로 누르거나 클릭한 다음 <strong>시스템 요약</strong>을 클릭하십시오.</li>    <li><strong>64비트</strong> 버전의 Windows 8<strong>을 실행하는 경우, </strong> x64기반 PC가 항목 제목 아래의 <strong>시스템 유형</strong> 필드에 표시됩니다. <br /><br /><strong>32비트</strong> 버전의 Windows 8을 실행하는 경우, x86기반 PC가 항목 제목 아래에 <strong>시스템 유형</strong> 필드에 표시됩니다.  </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -1606,8 +2007,8 @@
             }
         },
         "question4": {
-            "title": "Check your machine's battery use",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Check your machine's battery use\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> \n    screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.\n    That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;\n    apps&ndash;are using too much power.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n\n<ul>\n    <li>Lenovo laptops, desktops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Systems</h3>\n<ul>\n    <li>All</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operationg System</h3>\n<ul>\n    <li>Window 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your\n    traditional <strong>control panel </strong>view, this feature is located in the\n    new <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>\n    select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br />\n        <br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last\n    from last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;\n    <strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,\n    the display,</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong>\n     options show how much power is used by applications while you&rsquo;re using them, compared to applications\n    running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>\n        &ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.\n    This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of this\n    feature.\n    It will display a list of the apps have used battery power in that period, and show you what percentage of your\n    battery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
+            "title": "시스템의 배터리 사용 확인",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    시스템의 배터리 사용 확인</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>증상</h3><p>Windows 10에는 노트북의 전력을 소모하는 것이 무엇인지 나타내는 새로운 <strong>배터리 사용</strong> 화면이 화면이 포함되어 있습니다. 이 화면은 데스크톱 앱과 Windows 10 \\\"범용\\\" 앱에서 모두 너무 많은 전력을 사용하는 앱이 어떤 것인지 정확하게 알려 줍니다.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>영향을 받는 브랜드</h3><ul>    <li>Lenovo 노트북, 데스크탑</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>영향을 받는 시스템</h3><ul>    <li>모두</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>운영 체제</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>해결 방법</h3><p>이 기능은 Windows 10에서 새로운 기능입니다. 기존의 <strong>제어판</strong> 보기에 저장되어 있지 않으므로 먼저 이 기능을 찾아야 하며, 새로운 <strong>\\\"설정\\\"</strong> 앱에 저장되어 있습니다</p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. 배터리 사용 화면 검색</h3></p><p>1. 시작 메뉴에서 <strong>\\\"설정\\\"</strong> 옵션을 클릭하거나 누르십시오</p><p>2. <strong>설정</strong>에서 <strong>\\\"시스템\\\"</strong>과 <strong>\\\"배터리 절약 모드\\\"<br />를 차례로 선택합니다.<br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. 자세한 정보를 보려면, 이 제목 아래에 있는 <strong>\\\"배터리 사용\\\"</strong> 링크를 클릭하십시오. </p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. 전원 사용 분석</h3><p>4 배터리 사용 화면을 변경하여 지난 24시간에서 48시간까지 또는 지난 주부터 마지막 시간까지 배터리 사용을 표시하기 위해 할 수 있음</p><p>5 <strong>\\\"시스템\\\"</strong>, \\\"<strong>디스플레이,</strong>\\\" 및 \\\"<strong>Wi-Fi\\\"</strong> 비율. 이 기능은 시스템 프로세스에서 사용한 배터리 전력량를 나타냅니다, 디스플레이.</p><p>6 <strong>\\\"사용 중\\\"</strong> 및 <strong>\\\"배경\\\"</strong> 옵션에서는 이 애플리케이션을 사용하는 동안 배경에서 실행되는 애플리케이션에 비해 얼마나 많은 전력이 사용되는지 나타냅니다.</p><p>7 앱이 배경에서 전력을 사용하는 경우, <strong>\\\"배경 앱 설정 변경\\\" </strong>링크를 클릭하거나 눌러 앱이 배경에서 실행되지 않도록 구성할 수 있습니다. 이 기능은 범용 Windows 10 응용 프로그램에서만 작동합니다.</p><p>8. 아래로 더 스크롤하면 응용 프로그램 목록이 표시되며, 이 기능의 가장 유용한 섹션으로 간주할 수 있습니다. 이 프로그램은 해당 기간에 배터리 전력을 사용하여 앱 목록을 표시하고, 각 앱에 사용된 배터리 전원의 비율이 얼마인지을 보여 줌</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -1674,8 +2075,8 @@
             }
         },
         "question5": {
-            "title": "Use your PC like a tablet",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Use your PC like a tablet\n</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet\n        mode</strong> .</p>\n<p> </p>\n<p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device \n    on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and\n    how the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the\n    screen.</p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.\n    Select the <strong>Start </strong>button, select <strong>Settings </strong>>\n    <strong>System </strong>> <strong>\n        Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.\n    To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and\n    you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n    <li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n    <li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then\n        drag it to one side to snap it into your divided screen.</li>\n    <li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
+            "title": "태블릿 같은 PC 사용",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    태블릿 같은 PC 사용</div><hr><p>태블릿 모드는 터치 스크린 장치가 있는 경우 Windows를 더욱 직관적이고 사용하기 쉽게 만듭니다.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>태블릿 모드 사용</h3><p>태블릿 모드를 켜려면, 작업 표시줄에서 <strong>관리 센터</strong>를 선택한 다음 <strong>태블릿 모드</strong>를 선택하십시오.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>주</h3><p>장치에서 태블릿 모드를 자동으로 켤 수 있는지 확인하려면, 제조업체 웹 사이트에서 장치를 검색하십시오. 이 기능에 대한 지원은 하드웨어, 설치된 드라이버 및 제조업체에서 장치를 설정하는 방법에 따라 다릅니다. </p><p> </p><p>태블릿 모드에서는 앱이 전체 화면을 열기 때문에 작업 공간이 더 많이 제공됩니다. 앱을 닫으려면, 화면 맨 아래로 끄십시오.</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>팁</h3><p>작업 표시줄은 PC가 태블릿 모드에 있는 경우에 사용할 수 있지만, 화면에 여유 공간을 추가로 원한다면 숨길 수 있습니다. <strong>시작</strong> 버튼, <strong>설정 </strong>> <strong>시스템 </strong>> <strong> 태블릿 모드</strong>를 차례로 선택한 다음, <strong>태블릿 모드에서 자동으로 작업 표시줄 자동으로 숨기기</strong>를 켭니다. 숨겨진 작업 표시줄을 표시하려면, 화면 하단에서 위로 살짝 밀어 올리거나 마우스를 사용하여 위치를 가리킵니다.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>동시에 두 개의 앱 사용</h3><p>태블릿 모드에서 두 개의 앱을 나란히 사용하려면, 열려 있는 앱을 아래로 및 옆으로 끄십시오. 그러면 표시되는 위치를 볼 수 있으며, 옆에 열려 있는 앱이 표시됩니다.</p><p>이 보기에서 다음을 수행할 수도 있습니다.</p><ul>    <li>두 개의 딸각 소리가 나는 앱 사이의 공유 가장자리를 사용하여 동시에 두 앱의 크기를 조정하십시오.</li>    <li>작업 보기에서 새 앱 열기 &mdash; <strong>작업 표시줄</strong>에서 작업 보기를 선택하고 앱을 선택한 후, 한 쪽으로 끌어서 분할된 화면에 맞춥니다.</li>    <li>앱에서 작업 표시줄의 뒤로 버튼을 사용하여 돌아가거나 전에 사용하던 앱을 여십시오.</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -1714,8 +2115,8 @@
             }
         },
         "question6": {
-            "title": "Get to know Cortona, your personal assistant",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Get to know Cortana, your personal assistant\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>What is Cortana?</h3>\n<hr />\n<p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing\n    works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you\n    select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n    <li>Give you reminders based on time, places, or people.</li>\n    <li>Track packages, teams, interests, and flights.</li>\n    <li>Send emails and texts.</li>\n    <li>Manage your calendar and keep you up to date.</li>\n    <li>Create and manage lists.</li>\n    <li>Chit chat and play games.</li>\n    <li>Find facts, files, places, and info.</li>\n    <li>Open any app on your system.</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Try this: Set a reminder</h3>\n<hr />\n\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or\n    even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync\n    notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hey Cortana?</h3>\n<hr />\n<p>Set Cortana to hear you anytime you say\n    'Hey Cortana.' Select the search box on the taskbar to open Cortana home.\n    Then select <strong>Settings</strong>  and turn on <strong>Let Cortana respond to 'Hey\n        Cortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.\n</p>\n<p> </p>",
+            "title": "개인 비서 Cortana 알아 보기",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    개인 비서 Cortana 알아 보기</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Cortana란?</h3><hr /><p>Cortana는 사용자의 디지털 에이전트입니다. 작업을 완료하는 데 도움을 줄 수 있습니다.</p><p>Cortana를 많이 사용할수록, 경험을 더 많이 개인화할 수 있습니다.</p><p>시작하려면, 검색 상자에 질문을 입력하거나 마이크를 선택한 후 Cortana에게 문의하십시오. (모든 유형의 PC에서 입력을 할 수는 있지만, 말할 때 마이크가 필요합니다.)</p><p>무엇을 말해야 할 지 모르는 경우, 작업 표시줄의 검색 상자를 선택하면 잠금 화면 및 Cortana 홈에 제안이 표시됩니다.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>홈 2, 노트북 3, 설정 4, 피드백</li></ol><p>Cortana가 수행할 수 있는 작업은 다음과 같습니다.</p><ul>    <li>시간, 장소 또는 사람을 기준으로 미리 알림을 제공합니다.</li>    <li>패키지, 팀, 취미 및 항공편을 추적합니다.</li>    <li>이메일 및 텍스트를 전송합니다.</li>    <li>일정을 관리하고 최신 상태를 유지할 수 있습니다.</li>    <li>목록을 작성 및 관리합니다.</li>    <li>잡담 및 게임 재생.</li>    <li>팩트, 파일, 장소 및 정보를 찾습니다.</li>    <li>시스템에서 앱을 여십시오.</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>실행 방법: 미리 알림 설정</h3><hr /><p>Cortana가 할 수 있는 사항 중 하나는 미리 알림을 제공하는 것입니다. 시간, 장소 또는 사람을 기준으로 해야 할 일들을 알려 줄 수 있습니다.</p><p>예를 들어, '다음 번에 요청할 때 Tanya를 축하해야 한다는 것을 미리'이라고 입력하십시오.</p><p>Tanya에서 전화를 받을 때 미리 알림이 표시됩니다.</p><p>추가 보너스 &mdash; iPhone 또는 Android용 Windows 전화 또는 Cortana가 있는 경우, Cortana를 설정하여 PC와 휴대폰 사이의 알림을 동기화할 수 있습니다.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>안녕 Cortana?</h3><hr /><p>\\\"안녕 Cortana\\\"라고 말할 때마다 들을 수 있도록 Cortana를 설정하십시오. 작업 표시줄의 검색 상자를 선택하여 Cortana 홈을 엽니다. 그런 다음, <strong>설정</strong>을 선택하여 <strong>Cortana에게 '안녕 Cortana'에 응답하게 하기'를 켜십시오.</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>주</p><p>Cortana는 특정 국가/지역에서만 사용할 수 있으며, 일부 Cortana 기능은 어디에서든 사용할 수 있는 것은 아닙니다.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -1750,13 +2151,14 @@
             },
             "para12": "Note",
             "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        }
+        },
+        "pageTitle": "지원 세부 정보"
     },
     "welcometutorial": {
         "description": "Vantage를 사용하면 간편하게 드라이버 업데이트, 진단 프로그램 실행, 지원 요청 및 장치에 대한 학습이 간편합니다.사용 환경을 신속하게 사용자 지정하고 사용자의 요구 사항에 맞는 유용한 정보를 찾습니다",
         "bullets1": "Vantage 대시 보드로 시스템 상태를 봅니다.",
-        "bullets2": "보안 관리자를 사용하면 용이하게 보안을 관리할 수 있습니다 ",
-        "bullets3": "자동 업데이트를 사용하여 장치를 최상의 상태로 유지",
+        "bullets2": "보안 어드바이저는보안을 쉽게 관리할 수 있습니다 (선택된 시스템에서 사용 가능).",
+        "bullets3": "자동 업데이트를 사용하여 장치를 최상의 상태로 유지 (선택된 시스템에서 사용 가능).",
         "subtitle1": "장치는 어떻게 사용하려고 합니까?",
         "subtitle2": "관심 사항을 말해 주십시오",
         "personal": "개인용",
@@ -1765,7 +2167,7 @@
         "experience": "경험",
         "privacytitle": "익명으로 사용 통계를 수집하여 앱 품질을 개선하는 데 도움을 줄 수 있습니다.",
         "moreInterest": "+ 취미 추가",
-        "title1": "그림을 그리고, 간단한 메모를 하고, 모든 자료에 주석을 달 수 있는 도구인",
+        "title1": "에 오신 것을 환영합니다",
         "title2": "Lenovo",
         "title3": "Vantage",
         "privacypolicy": "Lenovo의 개인정보 보호정책",
@@ -1798,6 +2200,6 @@
         "usageStatistics": "사용 현황 통계",
         "usageStatisticsDescription": "Lenovo에 익명으로 사용 통계 보내기.",
         "Note": "참고: ",
-        "settingsNotes": "이 페이지의 모든 설정을 적용하려면 사용자를 다시 시작해야 합니다."
+        "settingsNotes": "이 페이지의 모든 설정을 적용하려면, 사용자가 이 응용 프로그램을 시작하여 적용해야 합니다."
     }
 }

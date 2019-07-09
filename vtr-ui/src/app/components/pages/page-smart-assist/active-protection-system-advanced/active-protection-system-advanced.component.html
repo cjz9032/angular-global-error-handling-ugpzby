@@ -1,0 +1,41 @@
+<p class="caption">
+	{{'device.smartAssist.activeProtectionSystem.advanced.description' | translate}}
+</p>
+<div class="container">
+	<div class="row">
+		<div class="col">
+			
+			<li *ngIf="penCapability" class="input-item">
+				<div>
+					<vtr-ui-row-switch
+						[title]="'device.smartAssist.activeProtectionSystem.advanced.pen.title' | translate"
+						[caption]="'device.smartAssist.activeProtectionSystem.advanced.pen.description' | translate"
+						[theme]="'white'" [isSwitchVisible]="true" [showChildContent]="true" [isSwitchChecked]="penStatus" (toggleOnOff)="setPenSetting($event)">
+						<div class="dropdown">
+							<vtr-ui-dropdown *ngIf=" penStatus " [list]="intervals" [value]="penDelay" (change)="setPenDelayTime($event)">
+							</vtr-ui-dropdown>
+						</div>
+					</vtr-ui-row-switch>
+				</div>
+			</li>
+
+			<li *ngIf="touchCapability" class="input-item">
+				<div>
+					<vtr-ui-row-switch
+						[title]="'device.smartAssist.activeProtectionSystem.advanced.touch.title' | translate"
+						[theme]="'white'" [isSwitchVisible]="true" [showChildContent]="true" [isSwitchChecked]="touchStatus" (toggleOnOff)="setTouchInputSetting($event)">
+					</vtr-ui-row-switch>
+				</div>
+			</li>
+
+			<li *ngIf="pSensorCapability" class="input-item">
+				<div>
+					<vtr-ui-row-switch
+						[title]="'device.smartAssist.activeProtectionSystem.advanced.hand.title' | translate"
+						[theme]="'white'" [isSwitchVisible]="true" [showChildContent]="true" [isSwitchChecked]="pSensorStatus" (toggleOnOff)="setPSensorSetting($event)">
+					</vtr-ui-row-switch>
+				</div>
+			</li>
+		</div>
+	</div>
+</div>

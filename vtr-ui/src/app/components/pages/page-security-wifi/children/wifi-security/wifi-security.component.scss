@@ -129,9 +129,14 @@
 			}
 		}
 	}
-	
+
 	::ng-deep vtr-ui-switch-onoff {
 		.checkbox {
+			> label {
+				.switch-label {
+					cursor: pointer;
+				}
+			}
 			.switch {
 				margin-right: 0rem;
 			}
@@ -175,7 +180,7 @@
 
 	.threat-locator {
 		// padding-left: 3rem;
-		background: url("../../../../../../assets/images/threat-locator-background.png");
+		background: url("../../../../../../assets/images/threat-locator-background.jpg");
 		border-radius: 0.8rem;
 		border-top-left-radius: 0rem;
 		border-top-right-radius: 0rem;
@@ -311,7 +316,7 @@
 				border-bottom-right-radius: 0.8rem;
 				// border: 0.1rem solid rgba(0, 0, 0, 0.125);
 			}
-			
+
 			.no-gutters {
 				height: 2.7rem;
 				width: 100%;
@@ -501,6 +506,18 @@
 		.switch-disable {
 			opacity: 0.3;
 			cursor: auto;
+			::ng-deep .checkbox {
+				opacity: 0.3;
+				cursor: default;
+
+				.switch {
+					cursor: default;
+				}
+
+				.switch-label {
+					cursor: default;
+				}
+			}
 		}
 	}
 	vtr-ui-button {

@@ -5,7 +5,7 @@
       width: 100%;
 
         h3 {
-        opacity: 0.8;
+        //opacity: 0.8;
         color: $light;
         font-size: 1.8rem;
         line-height: 2.8rem;
@@ -14,7 +14,7 @@
         font-weight: 600;
         }
         p {
-            opacity: 0.8;
+            //opacity: 0.8;
             color: $light;
             font-size: 1.6rem;
             a {
@@ -54,7 +54,8 @@
         border-radius: 10px;
         opacity: 0.9;
         font-size: 1.7rem;
-        color: $light;
+		color: $light;
+		margin-top: 1rem;
     }
     .alignment {
         margin-top: 1rem;
@@ -62,7 +63,15 @@
     }
     .list-group.list-group-flush {
         list-style-type: none;
-    }
+	}
+
+	.cooling-modes{
+		font-weight: $weight_bold;
+	}
+
+	.more-info {
+		cursor: pointer;
+	}
 }
 
 .read-more-link {

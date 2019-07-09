@@ -1,6 +1,12 @@
 @import "../../../app.theme";
 
 .vtr-page-security-windows-hello {
+	.vtr-subpage {
+		::ng-deep .vtr-widget-offline-info {
+			margin-top: $shift_up_small;
+		}
+	}
+
 	.security-card {
 		box-shadow: $drop_shadow;
 		border-radius: $border_radius;
@@ -198,6 +204,16 @@
 					}
 				}
 			}
+
+			@media #{$mediaquery_X8} {
+				margin-bottom: 5rem;
+			}
+		}
+	}
+
+	.vtr-page-right-column {
+		@media #{$mediaquery_X8} {
+			padding: 0 4rem 4rem 8.5rem;
 		}
 	}
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MockService } from '../../../services/mock/mock.service';
 import { SupportService } from '../../../services/support/support.service';
 import { DeviceService } from '../../../services/device/device.service';
@@ -14,21 +14,18 @@ import { Subscription } from 'rxjs';
 	templateUrl: './page-support.component.html',
 	styleUrls: ['./page-support.component.scss']
 })
-export class PageSupportComponent implements OnInit, OnDestroy {
+export class PageSupportComponent implements OnInit {
 
 	title = 'support.common.getSupport';
 	searchWords = '';
 	searchCount = 1;
-	articles: any;
+	articles: any = [];
 	/** content | articles */
 	articlesType = 'loading';
 	articleCategories: any = [];
-	warranty: any;
-	pageDuration: number;
-	location: any;
+	warrantyData: { info: any, cache: boolean };
 	isOnline: boolean;
 	notificationSubscription: Subscription;
-	warrantyNormalUrl = 'https://pcsupport.lenovo.com/us/en/warrantylookup';
 	langText = 'en';
 	// langText = 'zh-hans';
 	backId = 'support-page-btn-back';
@@ -112,34 +109,17 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 	) {
 		this.isOnline = this.commonService.isOnline;
+		this.warrantyData = this.supportService.warrantyData;
 	}
 
 	ngOnInit() {
 		if (this.translate.currentLang) { this.langText = this.translate.currentLang; }
-		this.getMachineInfo();
-		this.fetchCMSContents(this.langText);
-		this.fetchCMSArticleCategory(this.langText);
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
-		// console.log('Open support page.');
-		this.location = window.location.href.substring(window.location.href.indexOf('#') + 2).split('/').join('.');
-		this.pageDuration = 0;
-		setInterval(() => {
-			this.pageDuration += 1;
-		}, 1000);
-	}
-
-	ngOnDestroy() {
-		const pageViewMetrics = {
-			ItemType: 'PageView',
-			PageName: this.location,
-			PageContext: 'Get support page',
-			PageDuration: this.pageDuration,
-			OnlineStatus: ''
-		};
-		this.supportService.sendMetricsAsync(pageViewMetrics);
-		// console.log(pageViewMetrics);
+		this.getWarrantyInfo(this.isOnline);
+		this.fetchCMSContents(this.langText);
+		this.fetchCMSArticleCategory(this.langText);
 	}
 
 	onNotification(notification: AppNotification) {
@@ -149,6 +129,28 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
+					if (this.isOnline) {
+						this.supportService.warrantyData.cache = false;
+						sessionStorage.removeItem('warrantyCache');
+						const retryInterval = setInterval(() => {
+							if (this.articleCategories.length > 0 &&
+								this.articles.length > 0 &&
+								this.supportService.warrantyData.cache
+							) {
+								clearInterval(retryInterval);
+								return;
+							}
+							if (this.articleCategories.length === 0) {
+								this.fetchCMSArticleCategory(this.langText);
+							}
+							if (this.articles.length === 0) {
+								this.fetchCMSContents(this.langText);
+							}
+							if (!this.supportService.warrantyData.cache) {
+								this.getWarrantyInfo(this.isOnline);
+							}
+						}, 2500);
+					}
 					break;
 				default:
 					break;
@@ -156,33 +158,8 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	onGetSupportClick($event: any) {
-	}
-
-	getMachineInfo() {
-		try {
-			this.supportService.getMachineInfo().then((machineInfo) => {
-				this.supportService
-					// .getWarranty('PC0G9X77')
-					// .getWarranty('R9T6M3E')
-					// .getWarranty('R90HTPEU')
-					.getWarranty(machineInfo.serialnumber)
-					.then((warranty) => {
-						this.warranty = warranty;
-						if (machineInfo.serialnumber) {
-							this.warranty.url = `https://www.lenovo.com/us/en/warrantyApos?serialNumber=${machineInfo.serialnumber}&cid=ww:apps:pikjhe&utm_source=Companion&utm_medium=Native&utm_campaign=Warranty`;
-						} else {
-							this.warranty.url = this.warrantyNormalUrl;
-						}
-					});
-			});
-		} catch (error) {
-			console.log(error);
-			this.warranty = {
-				status: 2,
-				url: this.warrantyNormalUrl
-			};
-		}
+	getWarrantyInfo(online: boolean) {
+		this.supportService.getWarrantyInfo(online);
 	}
 
 	fetchCMSContents(lang: string) {
@@ -199,7 +176,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				if (response.length > 0) {
+				if (response && response.length > 0) {
 					this.articles = response.slice(0, 8);
 					// console.log(this.articles);
 					this.articlesType = 'content';
@@ -228,8 +205,8 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 
 		this.cmsService.fetchCMSArticleCategories(queryOptions).then(
 			(response: any) => {
-				console.log(response);
-				if (response.length > 0) {
+				// console.log(response);
+				if (response && response.length > 0) {
 					this.articleCategories = response.slice(0, 4);
 				} else {
 					this.fetchCMSArticleCategory('en');
@@ -262,7 +239,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 
 		this.cmsService.fetchCMSArticles(queryOptions, true).then(
 			(response: any) => {
-				if (response.length > 0) {
+				if (response && response.length > 0) {
 					this.articles = response;
 					this.articlesType = 'articles';
 				} else {

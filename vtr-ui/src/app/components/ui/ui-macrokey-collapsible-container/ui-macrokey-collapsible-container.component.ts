@@ -1,42 +1,30 @@
-import { Component, OnInit, Input, Output, EventEmitter, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef, OnChanges } from '@angular/core';
+import { isUndefined } from 'util';
 
 @Component({
 	selector: 'vtr-ui-macrokey-collapsible-container',
 	templateUrl: './ui-macrokey-collapsible-container.component.html',
-	styleUrls: [ './ui-macrokey-collapsible-container.component.scss' ],
+	styleUrls: ['./ui-macrokey-collapsible-container.component.scss'],
 	host: {
 		'(document:click)': 'generalClick($event)'
 	}
 })
-export class UiMacrokeyCollapsibleContainerComponent implements OnInit {
+export class UiMacrokeyCollapsibleContainerComponent implements OnInit, OnChanges {
 	@Input() public options;
+	@Input() public selectedValue;
 	@Input() public enableDescription: Boolean = true;
 	@Input() isRecording: Boolean = false;
 	@Output() public change = new EventEmitter<any>();
 	public showOptions = false;
 	public buttonName: any = 'Show';
 	public selected = false;
-	public currentOption: string;
+	public selectedOption: string;
 	public currentDescription: string;
 	public selectedDescription: string;
 
-	constructor(private elementRef: ElementRef) {}
+	constructor(private elementRef: ElementRef) { }
 
-	ngOnInit() {
-		this.options.forEach((option) => {
-			if (option.selectedOption && this.currentOption === undefined) {
-				this.setDefaultOption(option);
-			}
-		});
-
-		if (this.currentOption === undefined) {
-			this.options.forEach((option) => {
-				if (option.defaultOption) {
-					this.setDefaultOption(option);
-				}
-			});
-		}
-	}
+	ngOnInit() { }
 
 	public toggleOptions() {
 		this.showOptions = !this.showOptions;
@@ -50,17 +38,12 @@ export class UiMacrokeyCollapsibleContainerComponent implements OnInit {
 	}
 
 	public setDefaultOption(option) {
-		this.currentOption = option.name;
-		this.selectedDescription = option.description;
-		this.currentDescription = this.selectedDescription;
+		this.selectedOption = option;
 		this.showOptions = false;
 	}
 
 	public optionSelected(option) {
-		this.currentOption = option.name;
-		this.options.curSelected = option.value;
-		this.selectedDescription = option.description;
-		this.currentDescription = this.selectedDescription;
+		this.selectedOption = option;
 		this.showOptions = false;
 		this.change.emit(option);
 	}
@@ -78,6 +61,18 @@ export class UiMacrokeyCollapsibleContainerComponent implements OnInit {
 			if (!this.elementRef.nativeElement.contains(event.target)) {
 				if (this.showOptions) {
 					this.showOptions = false;
+				}
+			}
+		}
+	}
+
+	ngOnChanges(changes) {
+		if (!isUndefined(this.options)) {
+			if (!isUndefined(this.options)) {
+				if (!isUndefined(changes.selectedValue)) {
+					this.selectedOption = this.options.filter(
+						(option) => option.value === changes.selectedValue.currentValue
+					)[0];
 				}
 			}
 		}

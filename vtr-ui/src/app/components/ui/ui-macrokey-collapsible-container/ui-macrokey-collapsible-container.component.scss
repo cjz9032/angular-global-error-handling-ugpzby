@@ -45,8 +45,14 @@
 		overflow: hidden;
 		z-index: 9;
 		top: 3.5rem;
+		ul {
+			padding: 0 !important;
+			max-height: 35rem;
+			overflow: auto;
+		}
 		li {
 			list-style: none;
+			margin: 0;
 			.dropdown-item {
 				color: $gaming_lightest;
 				font-size: 1.6rem;

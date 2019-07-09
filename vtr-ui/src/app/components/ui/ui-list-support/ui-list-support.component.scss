@@ -8,20 +8,13 @@
 		background-color: #f5f7f8;
 		border: .1rem solid $shade_lighter;
 		border-radius: $border_radius;
+		overflow: hidden;
 
 		li {
 			min-height: 6rem;
 			// padding: 1.5rem 1rem 1.5rem 0;
 			border-bottom: .1rem solid $shade_lighter;
 			color: $main_darker;
-
-			&.pointer {
-				cursor: pointer;
-
-				&:hover {
-					background-color: $shade_extralight;
-				}
-			}
 
 			&:last-child {
 				border: none;
@@ -67,6 +60,9 @@
 			}
 
 			.item-icon {
+				.icon-bkg {
+					cursor: pointer;
+				}
 				&.status {
 					.icon-bkg {
 						display: inline-block;
@@ -89,6 +85,7 @@
 					color: $main;
 					font-size: 1.9rem;
 					line-height: 3rem;
+					cursor: pointer;
 				}
 			}
 
@@ -97,19 +94,20 @@
 				height: 2rem;
 				width: 2rem;
 				line-height: 3rem;
+				cursor: pointer;
 			}
 
 			.item-text {
 				overflow: hidden;
 				display: flex;
 				align-items: center;
-
+				cursor: pointer;
 				.title {
 					line-height: 1.8rem;
 					font-size: 1.4rem;
 					font-weight: $weight_bold;
 					float: left;
-
+					cursor: pointer;
 					&.light-title {
 						font-weight: $weight_light;
 					}
@@ -123,7 +121,7 @@
 					font-size: 1.2rem;
 					color: $shade_dark;
 					font-style: italic;
-
+					cursor: pointer;
 					&.highlight {
 						color: $main_shade;
 						text-decoration: underline;
@@ -139,6 +137,7 @@
 				color: $main_darker;
 				line-height: 2.8rem;
 				font-size: 2rem;
+				cursor: pointer;
 			}
 		}
 	}

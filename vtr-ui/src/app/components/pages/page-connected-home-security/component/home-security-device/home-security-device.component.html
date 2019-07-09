@@ -1,0 +1,19 @@
+<div class="vtr-home-security-device">
+	<div class="row">
+		<div class="col">
+			<div class="heading">{{'homeSecurity.ecosystem.ecosystemBlockTitle' | translate}}</div>
+		</div>
+		<div class="pull right align-self-center"><img class="coronet_logo"
+			[src]=" '../../../../assets/images/coronet-logo.svg' | svgInline | async" /></div>
+	</div>
+	<div class="row mt-20">
+		<div class="col">
+			<vtr-ui-chs-statusbar [ecoSystem]="device"></vtr-ui-chs-statusbar>
+		</div>
+	</div>
+	<div class="row mt-20 mb-3">
+		<div class="col">
+			<vtr-ui-chs-statusbar [ecoSystem]="allDevice"></vtr-ui-chs-statusbar>
+		</div>
+	</div>
+</div>

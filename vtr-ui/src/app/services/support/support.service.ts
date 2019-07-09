@@ -2,10 +2,7 @@
 /// <reference path='../../../../node_modules/@lenovo/tan-client-bridge/src/features/dashboard-feature.js' />
 
 import { Injectable } from '@angular/core';
-
-import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalSupportWechatComponent } from '../../components/modal/modal-support-wechat/modal-support-wechat.component';
 import { ModalAboutComponent } from 'src/app/components/modal/modal-about/modal-about.component';
@@ -17,12 +14,14 @@ export class SupportService {
 	private sysinfo: any;
 	private warranty: any;
 	metrics: any;
+	userGuide: any;
 	metricsDatas = {
 		viewOrder: 1,
 		pageNumber: 1,
 	};
+	warrantyData: { info: any, cache: boolean };
+	warrantyNormalUrl = 'https://pcsupport.lenovo.com/us/en/warrantylookup';
 
-	// public isShellAvailable = false;
 	constructor(
 		private shellService: VantageShellService,
 		private modalService: NgbModal,
@@ -30,6 +29,17 @@ export class SupportService {
 		this.sysinfo = shellService.getSysinfo();
 		this.warranty = shellService.getWarranty();
 		this.metrics = shellService.getMetrics();
+		this.userGuide = shellService.getUserGuide();
+		this.warrantyData = {
+			info: {
+				status: -1,
+				url: this.warrantyNormalUrl
+			},
+			cache: false
+		};
+		if (this.userGuide) {
+			this.userGuide.refresh();
+		}
 	}
 
 	public getMachineInfo(): Promise<any> {
@@ -43,6 +53,42 @@ export class SupportService {
 		if (this.warranty) {
 			return this.warranty.getWarrantyInformation(serialnumber);
 		}
+	}
+
+	getWarrantyInfo(online: boolean) {
+		const defaultWarranty = {
+			status: 2,
+			url: this.warrantyNormalUrl
+		};
+
+		this.getMachineInfo().then((machineInfo) => {
+			if (machineInfo) {
+				// machineInfo.serialnumber = 'R90HTPEU';
+				// 'PC0G9X77' 'R9T6M3E' 'R90HTPEU' machineInfo.serialnumber
+				this.getWarranty(machineInfo.serialnumber).then((result) => {
+					if (result) {
+						this.warrantyData.info = result;
+						if (online) { this.warrantyData.cache = true; }
+						if (machineInfo.serialnumber) {
+							this.warrantyData.info.url =
+								`https://www.lenovo.com/us/en/warrantyApos?serialNumber=${machineInfo.serialnumber}&cid=ww:apps:pikjhe&utm_source=Companion&utm_medium=Native&utm_campaign=Warranty`;
+						} else {
+							this.warrantyData.info.url = this.warrantyNormalUrl;
+						}
+					} else {
+						this.warrantyData.info = defaultWarranty;
+					}
+				}).catch((err) => {
+					console.log(err);
+					this.warrantyData.info = defaultWarranty;
+				});
+			} else {
+				this.warrantyData.info = defaultWarranty;
+			}
+		}).catch((err) => {
+			console.log(err);
+			this.warrantyData.info = defaultWarranty;
+		});
 	}
 
 	sendMetricsAsync(data: any) {
@@ -84,6 +130,8 @@ export class SupportService {
 	}
 
 	launchUserGuide(launchPDF?: boolean) {
-		this.shellService.launchUserGuide(launchPDF);
+		if (this.userGuide) {
+			this.userGuide.launch(launchPDF);
+		}
 	}
 }

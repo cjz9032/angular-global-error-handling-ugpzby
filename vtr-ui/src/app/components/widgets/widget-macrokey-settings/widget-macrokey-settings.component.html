@@ -5,30 +5,25 @@
 				<div class="col-sm-12">
 					<p class="intro-text">{{ 'gaming.macroKey.introLine' | translate }}</p>
 				</div>
-				<div class="col-sm-6" *ngIf="properties.macroKeyStatus == 0">
+				<div class="col-sm-6 macrokey-status-wrapper" *ngIf="isNumpad">
 					<div class="select-wrapper">
-						<vtr-ui-macrokey-collapsible-container
-							[isRecording]="isRecording"
-							[options]="macroKeyOptions"
-							(change)="optionChanged($event)">
+						<vtr-ui-macrokey-collapsible-container [isRecording]="isRecording" [options]="macroKeyOptions"
+							[selectedValue]="macroKeyTypeStatus.MacroKeyStatus" (change)="optionChanged($event)">
 						</vtr-ui-macrokey-collapsible-container>
 					</div>
 				</div>
 				<div class="col-sm-12">
-					<div class="macrokey-wrapper" [ngClass]="{numberpad: properties.macroKeyStatus == 0}">
+					<div class="macrokey-wrapper" [ngClass]="{numberpad: isNumpad}">
 						<div class="numbers-wrapper">
-							<vtr-ui-number-button
-								[numbers]="numbers"
-								(numberSelected)="onNumberSelected($event)"
-								[isNumberpad]="properties.macroKeyStatus == 0"
-								[recordingStatus]="isRecording">
+							<vtr-ui-number-button [numbers]="macroKeyRecordedStatus"
+								(numberSelected)="onNumberSelected($event)" [isNumberpad]="isNumpad"
+								[selectedNumber]="numberSelected" [recordingStatus]="isRecording">
 							</vtr-ui-number-button>
 						</div>
 						<div class="details-wrapper">
-							<vtr-ui-macrokey-details
-								[number]="selectedNumber"
-								(isRecording)="onRecordingChanged($event)"
-								[recordedData]="recorderKeyData">
+							<vtr-ui-macrokey-details [number]="numberSelected" [isNumberpad]="isNumpad"
+								[messageData]="macroKeyMessageData" (isRecording)="onRecordingChanged($event)"
+								[keyData]="macroKeyInputData.macro" [recordingData]="macroKeyInputData.macro.inputs">
 							</vtr-ui-macrokey-details>
 						</div>
 					</div>

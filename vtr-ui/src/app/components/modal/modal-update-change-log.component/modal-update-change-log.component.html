@@ -1,6 +1,6 @@
 <div class="vtr-modal-update-change-log">
 	<div class="card bg-light">
-		<div class="card-header"> {{'device.systemUpdates.readMore' | translate}}
+		<div class="card-header"> {{'systemUpdates.readMore' | translate}}
 			<button type="button"
 				class="close"
 				aria-label="Close"
@@ -14,7 +14,7 @@
 			<!-- 4:3 aspect ratio -->
 			<div class="embed-responsive embed-responsive-4by3">
 				<iframe class="embed-responsive-item"
-					[src]="url | safeDom : 'resourceUrl'"></iframe>
+					[src]="url | sanitize : 'resourceUrl'"></iframe>
 			</div>
 		</div>
 	</div>

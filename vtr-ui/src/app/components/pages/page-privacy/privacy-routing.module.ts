@@ -6,7 +6,6 @@ import { TrackersComponent } from './pages/trackers/trackers.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { RoutersName } from './privacy-routing-name';
-import { PermitTrackersAndPasswordsGuard } from './common/guards/permit-trackers-and-passwords.guard';
 import { ArticlesComponent } from './pages/articles/articles.component';
 
 const adminRoutes: Routes = [
@@ -24,7 +23,6 @@ const adminRoutes: Routes = [
 			}, {
 				path: RoutersName.TRACKERS,
 				component: TrackersComponent,
-				canActivate: [PermitTrackersAndPasswordsGuard]
 			}, {
 				path: RoutersName.BROWSERACCOUNTS,
 				component: BrowserAccountsComponent

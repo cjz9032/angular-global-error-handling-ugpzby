@@ -1,16 +1,23 @@
 <div class="vtr-camera-control">
 	<div class="row">
 		<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 pl-0 pr-0">
-			<div class="camera-preview"
-				[hidden]="disabledAll">
+			<div class="camera-preview text-center">
 				<video #cameraPreview
+					*ngIf="!disabledAll && !isCameraInErrorState"
 					class="feed"></video>
-			</div>
-			<div class="camera-preview"
-				*ngIf="disabledAll">
 				<img class="feed disable"
+					*ngIf="disabledAll && !isCameraInErrorState"
 					src="../../../assets/images/camera-disable.png"
 					title="{{'device.deviceSettings.displayCamera.camera.notAvailable' | translate}}" />
+					<div class="error"
+					*ngIf="isCameraInErrorState">
+					<div class="error-title">
+						{{ cameraErrorTitle | translate }}
+					</div>
+					<div class="error-description">
+						{{ cameraErrorDescription | translate }}
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">

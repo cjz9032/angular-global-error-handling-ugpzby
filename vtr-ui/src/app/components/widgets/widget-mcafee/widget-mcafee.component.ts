@@ -13,6 +13,7 @@ export class WidgetMcafeeComponent implements OnInit {
 	@Input() install: any;
 	@Input() name: string;
 	@Input() mcafee: any;
+	@Input() isOnline: boolean;
 	urlGetMcAfee: string;
 	country: string;
 	nls = new Map([

@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -39,22 +39,36 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
                     "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock"
+                    "touchpadLock": "Touchpad Lock",
+                    "lightingDriverPopup": {
+                        "headerText": "Driver Install Required",
+                        "text": "Please install driver",
+                        "button": "Install",
+                        "link": "cancel"
+                    },
+                    "lightingColorMessage": {
+                        "text": "Selecting color not available to this effect."
+                    }
                 },
                 "systemTools": {
                     "power": "Power",
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -71,6 +85,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                },
+                "systemStatus": {
+                    "info": "INFO"
                 }
             }
         },
@@ -111,11 +128,12 @@
                 },
                 "buttons": {
                     "start": "START RECORDING",
-                    "stop": "STOP RECORDING"
+                    "stop": "STOP RECORDING",
+                    "numberPrefix": "NUM"
                 },
                 "recording": {
                     "title": "START TYPING",
-                    "description": "20 inputs with in 20 seconds can be recorded."
+                    "description": "20 inputs within 20 seconds can be recorded."
                 },
                 "recorded": {
                     "title": "MACRO KEY FOR ",
@@ -204,7 +222,7 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure to clear this macro key?"
+                    "title": "Are you sure you want to clear this macro key?"
                 },
                 "timeoutRecording": {
                     "title": "Time Out For Recording.",
@@ -223,13 +241,16 @@
                     "btnCancel": "Cancel"
                 },
                 "btnOk": "OK"
+            },
+            "recording": {
+                "title": "Recording Macro Key For"
             }
         },
         "lightingProfile": {
             "title": "Lighting",
             "effect": {
                 "option1": {
-                    "title": "Static"
+                    "title": "On"
                 },
                 "option2": {
                     "title": "Flicker"
@@ -241,38 +262,133 @@
                     "title": "Wave"
                 },
                 "option5": {
-                    "title": "Music"
-                },
-                "option6": {
                     "title": "Smooth"
                 },
-                "option7": {
+                "option6": {
                     "title": "CPU Temperature"
                 },
-                "option8": {
+                "option7": {
                     "title": "CPU Utilization"
                 },
-                "option9": {
-                    "title": "Response"
+                "option8": {
+                    "title": "Off"
                 },
-                "option10": {
-                    "title": "Ripple"
+                "apply": {
+                    "title": "APPLY"
                 },
-                "option11": {
-                    "title": "No Light"
+                "applied": {
+                    "title": "APPLIED"
+                }
+            },
+            "brightness": {
+                "text1": {
+                    "title": "*Brightness setting doesn't apply on "
+                },
+                "text2": {
+                    "title": " effect"
+                }
+            },
+            "lightingSingleLightingOption": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
+            },
+            "colourwheel": {
+                "text1": {
+                    "title": "Selecting colour not available to this effect."
+                },
+                "text2": {
+                    "title": "APPLY"
+                },
+                "text3": {
+                    "title": "APPLIED"
+                },
+                "text4": {
+                    "title": "R:"
+                },
+                "text5": {
+                    "title": "G:"
+                },
+                "text6": {
+                    "title": "B:"
+                },
+                "text7": {
+                    "title": "Color"
                 }
             }
         }
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "Koontinäkymä",
             "device": {
-                "title": "My Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "Laite",
+                "sub1": "Oma laite",
+                "sub2": "Omat laiteasetukset",
                 "sub3": "System Updates",
-                "sub4": "Smart Assist"
+                "sub4": "Älykäs apu"
             },
             "security": {
                 "title": "Suojaus",
@@ -283,9 +399,9 @@
                 "sub5": "Internet-suojaus",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
+            "support": "Tuki",
             "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "privacy": "Yksityisyys"
         },
         "securityAdvisor": {
             "title": "Security Advisor",
@@ -307,25 +423,23 @@
             "notRegistered": "EI REKISTERÖITY"
         },
         "qAndA": {
-            "title": "Q&A for your machine",
-            "subtitle": "FIND SOME HELPFUL TIPS FOR YOUR DEVICE.",
-            "question1": "Backup and Restore your files",
-            "question2": "How to refresh your PC",
-            "question3": "How to know your machine's CPU",
-            "question4": "Check your machine's battery use",
-            "question5": "Use your PC like a tablet",
-            "question6": "Get to know Cortana, your personal assistant"
+            "title": "Kysymyksiä ja vastauksia koneellesi",
+            "subtitle": "TARKISTA, ETTÄ KOSKEVAT OHJELMAT LAITTEESTA.",
+            "question1": "Tiedostojen varmuuskopiointi ja palauttaminen",
+            "question2": "Tietokoneen siivoaminen",
+            "question3": "Koneen suorittimen tunnistaminen",
+            "question4": "Tarkista koneen akun käyttö",
+            "question5": "Tietokoneen käyttö taulutietokoneen tavoin",
+            "question6": "Tutustu Cortanaan, henkilökohtaiseen avustajaasi"
         },
         "ui": {
             "back": "EDELLINEN",
             "on": "ON",
             "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
-            "loader": {
-                "text1": "Fetching",
-                "text2": "Status"
-            }
+            "collapse": "Kutista",
+            "expand": "Laajenna",
+            "loader": "Noutaminen <br> Tila",
+            "loading": "Ladataan..."
         }
     },
     "privacy": {
@@ -344,7 +458,7 @@
         "personal": "PERSONAL",
         "custom": "CUSTOM",
         "skip": "SKIP",
-        "next": "NEXT",
+        "next": "SEURAAVA",
         "interests": "What are your interests?",
         "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
         "games": "GAMES",
@@ -358,166 +472,179 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Näytät energiseltä tänään "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Ohjelma ei ole havainnut Internet-yhteyttä",
+            "subtitle": "Lue lisätietoja siitä, miten ratkaista yhteysongelmat",
+            "buttonText": "Hae tukea"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Anna palautetta",
+            "subtitle": "Kerro meille, mitä mieltä olet vantagesta.",
+            "button": "Anna palautetta",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Kommentit...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
-                }
+                    "feedbackSuccess": "Kiitos palautteestasi."
+                },
+                "question1": "Pidätkö Vantagen uudesta tyylistä?",
+                "question2": "Onko sen suorituskyky mielestäsi hyväksyttävä?",
+                "question3": "Käyttäisitkö sovellusta useammin tulevaisuudessa?",
+                "yes": "Kyllä",
+                "no": "Ei",
+                "tips1": "Anna lisäkommentteja",
+                "sendFeedback": "Lähetä palautetta",
+                "submitScreenShot": "Lähetä näyttökuva"
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera Privacy",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Pika-asetuksesi",
+            "microphone": "Mikrofoni",
+            "cameraPrivacy": "Kamera",
+            "eyeCareMode": "Silmien hoitotila"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Järjestelmän tila",
+            "subtitle": "PIKAINEN YHTEENVETO LAITTEESI TILASTA.",
             "memory": {
-                "title": "Memory",
+                "title": "Muisti",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Muistia ei löydy",
+                    "of": "/"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Levytila",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Asemaa ei löytynyt",
+                    "of": "/"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Takuu",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Takuuta ei löydy",
+                    "until": "Kunnes",
+                    "expiredOn": "Takuu vanhentunut (pvm)",
+                    "notAvailable": "Takuuta ei saatavilla"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Päivitä"
                 }
             }
         }
     },
     "device": {
         "myDevice": {
-            "title": "My Device",
-            "subtitle": "My device status",
-            "serial": "Serial",
-            "productNumber": "Product number",
-            "biosVersion": "Bios version",
-            "learnMore": "Learn more",
-            "freeMemory": "Free memory",
+            "title": "Oma laite",
+            "subtitle": "Laitteen tila",
+            "serial": "Sarjanro",
+            "productNumber": "Tuotenumero",
+            "biosVersion": "Bios-versio",
+            "learnMore": "Lisätietoja",
+            "freeMemory": "Vapaa muisti",
             "systemUpdate": {
-                "title": "System update",
-                "notFound": "System update not found",
+                "title": "Järjestelmän päivitys",
+                "notFound": "Järjestelmän päivitystä ei löydy",
                 "detail": {
-                    "uptoDate": "Software up to date ",
-                    "updatedOn": "updated on ",
-                    "outdated": "Software outdated ",
-                    "neverRanUpdate": "never ran update"
+                    "uptoDate": "Ohjelmisto ajan tasalla",
+                    "updatedOn": "päivitetty",
+                    "outdated": "Vanhentunut ohjelmisto",
+                    "neverRanUpdate": "päivitystä ei ole koskaan tehty"
                 }
             },
-            "extendedWarranty": "Extend warranty",
+            "extendedWarranty": "Laajenna takuu",
             "processor": {
-                "title": "Processor",
-                "notFound": "Processor not found"
+                "title": "Suoritin",
+                "notFound": "Suoritinta ei löydy"
             },
             "memory": {
-                "title": "Memory",
-                "notFound": "Memory not found",
-                "ram": "RAM"
+                "title": "Muisti",
+                "notFound": "Muistia ei löydy",
+                "ram": "RAM-muisti"
             },
             "diskspace": {
-                "title": "Disk Space",
-                "notFound": "Disk not found"
+                "title": "Levytila",
+                "notFound": "Asemaa ei löytynyt"
             },
-            "software": "Software up to date",
-            "updated": "Updated",
-            "outOfWarranty": "Out of warranty",
-            "expired": "Expired on",
-            "of": "of",
+            "software": "Ohjelmisto ajan tasalla",
+            "updated": "Päivitetty",
+            "outOfWarranty": "Takuu päättynyt",
+            "expired": "Vanhentunut (pvm)",
+            "of": "/",
             "warranty": {
-                "notFound": "Warranty not found",
+                "notFound": "Takuuta ei löydy",
                 "detail": {
-                    "title": "Extend warranty",
-                    "inWarranty": "In warranty ",
-                    "daysRemaining": "days remaining",
-                    "outOfWarranty": "Out of warranty ",
-                    "expiredOn": "Expired on",
-                    "notAvailable": "Warranty not available",
-                    "support": "Support"
+                    "title": "Laajenna takuu",
+                    "inWarranty": "Takuu voimassa",
+                    "daysRemaining": "päivää jäljellä",
+                    "outOfWarranty": "Takuu päättynyt",
+                    "expiredOn": "Vanhentunut (pvm)",
+                    "notAvailable": "Takuuta ei saatavilla",
+                    "support": "Tuki"
                 }
             },
-            "helpful": "Helpful Content"
+            "helpful": "Hyödyllistä sisältöä"
         },
         "deviceSettings": {
-            "helpful": "Helpful Content",
+            "helpful": "Hyödyllistä sisältöä",
             "batteryGauge": {
-                "title": "BATTERY GAUGE",
-                "subtitle": "Battery",
-                "hours": "hours",
-                "hour": "hour",
-                "minutes": "minutes",
-                "minute": "minute",
-                "charge": "TIME TO FULLY CHARGE",
-                "button": "SEE BATTERY DETAILS",
+                "title": "AKKUMITTARI",
+                "subtitle": "Akun toimintakunto",
+                "hours": "tuntia",
+                "hour": "tunti",
+                "minutes": "minuuttia",
+                "minute": "minuutti",
+                "charge": "TÄYTEEN LATAUKSEEN KULUVA AIKA",
+                "button": "KATSO AKUN TIEDOT",
                 "details": {
-                    "title": "Battery Details",
-                    "primary": "Primary Battery",
-                    "secondary": "Secondary Battery",
-                    "tertiary": "Tertiary Battery",
-                    "status": "Status",
-                    "wattage": "Wattage",
-                    "barcode": "Bar-Code",
-                    "remainingPercent": "Remaining percentage",
-                    "temp": "Temperature",
-                    "frupn": "FRU part number",
-                    "remainingTime": "Remaining time",
-                    "chargeCompletionTime": "Charge completion time",
-                    "cycleCount": "Cycle count",
-                    "chemistry": "Device chemistry",
-                    "remainingCap": "Remaining capacity",
-                    "designCap": "Design capacity",
-                    "fullChargeCap": "Full charge capacity",
-                    "manufDt": "Manufacture date",
-                    "designVolt": "Design voltage",
-                    "volts": "Voltage",
-                    "firstUseDt": "First use date",
-                    "firmwareVer": "Firmware version",
+                    "title": "Akun tiedot",
+                    "primary": "Ensisijainen akku",
+                    "secondary": "Toissijainen akku",
+                    "tertiary": "Akun vara-akku",
+                    "status": "Tila",
+                    "wattage": "Teho",
+                    "barcode": "Viivakoodi",
+                    "remainingPercent": "Jäljellä oleva varaus",
+                    "temp": "Lämpötila",
+                    "frupn": "Vaihdettavissa olevan osan numero",
+                    "remainingTime": "Jäljellä oleva aika",
+                    "chargeCompletionTime": "Lataukseen kuluva aika",
+                    "cycleCount": "Syklien määrä",
+                    "chemistry": "Kemiallinen koostumus",
+                    "remainingCap": "Jäljellä oleva kapasiteetti",
+                    "designCap": "Suunniteltu kapasiteetti",
+                    "fullChargeCap": "Täyteen ladatun kapasiteetti",
+                    "manufDt": "Valmistuspäivämäärä",
+                    "designVolt": "Suunniteltu jännite",
+                    "volts": "Jännite",
+                    "firstUseDt": "Ensimmäinen käyttöpäivämäärä",
+                    "firmwareVer": "Laiteohjelmiston versio",
                     "chargeStatusString": {
-                        "error": "ERROR",
-                        "notinstalled": "Not installed",
-                        "noactivity": "No activity",
-                        "charging": "Charging",
-                        "discharging": "Discharging",
-                        "acdischarging": "Discharging (with ac)"
+                        "error": "VIRHE",
+                        "notinstalled": "Ei asennettu",
+                        "noactivity": "Ei toimintaa",
+                        "charging": "Ladataan",
+                        "discharging": "Tyhjennetään",
+                        "acdischarging": "Tyhjennetään (verkkovirralla)"
                     },
                     "deviceChemistry": {
                         "li-polymer": "Li-Polymer",
                         "li-ion": "Li-Ion",
                         "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion"
+                        "li_ion": "Li-Ion",
+                        "silver-zinc": "Silver-Zinc",
+                        "silver_zinc": "Silver-Zinc",
+                        "nicd": "NiCd",
+                        "nimh": "NiMH",
+                        "unknown": "Unknown"
                     },
                     "manufacturer": {
                         "title": "Manufacturer",
@@ -527,17 +654,17 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "This system may not support battery that",
-                        "description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
-                        "description1": "Attention:",
-                        "description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
+                        "description": "you cannot use the attached battery with this computer.",
+                        "description1": "Replace",
+                        "description2": "it with a battery of correct model."
                     },
                     "Good": {
-                        "title": "The battery is in good Condition"
+                        "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -551,536 +678,804 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter"
-                    },
-                    "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter"
-                    },
-                    "ACAdapterNotSupported": {
-                        "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
                         "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
+                    "NotSupportACAdapter": {
+                        "title": "AC adapter not supported.",
+                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
+                    },
                     "MissingDriver": {
-                        "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
+                        "title": "The Lenovo Power Manager driver",
                         "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
                     },
                     "StoreLimitation": {
                         "title": "The battery can only store",
                         "description1": "of",
                         "description2": "it's original full charge capacity"
+                    },
+                    "HighTemperature": {
+                        "title": "Discharging",
+                        "description": "has been stopped because the",
+                        "description1": "battery temperature is too high"
+                    },
+                    "TrickleCharge": {
+                        "description": "The battery was",
+                        "description1": "completely discharged",
+                        "description2": "and needs to be recharged. This might take ten hours or more."
+                    },
+                    "OverheatedBattery": {
+                        "description": "The battery is",
+                        "description1": "too hot.",
+                        "description2": "Remove it from the computer and cool it to room temperature."
+                    },
+                    "PermanentError": {
+                        "description": "The battery has",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
+                    },
+                    "HardwareAuthenticationError": {
+                        "description": "The battery installed is",
+                        "description1": "is not supported",
+                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
                     }
-                }
+                },
+                "updating": "Updating",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
+                "voltageError": "Battery voltage incorrect",
+                "batteryNotDetected": "No Battery Detected"
             },
             "power": {
-                "title": "Power",
-                "subtitle": "Power Settings",
-                "description": "This section enables you to dynamically adjust thermal performance and maximize the battery life. It also has other popular power-related features. You can check the default settings in this section and customize your system according to your needs.",
+                "title": "Virta",
+                "subtitle": "Virta-asetukset",
+                "description": "Tämän osan avulla voit säätää lämpösuorituskykyä dynaamisesti ja pidentää akun käyttöikää.Siinä on myös muita suosittuja virrankulutukseen liittyviä ominaisuuksia. Voit tarkistaa tämän osan oletusasetukset ja mukauttaa järjestelmän tarpeidesi mukaan.",
                 "jumpto": {
-                    "title": "JUMP TO SETTINGS",
-                    "battery": "Battery",
-                    "power": "Power",
-                    "cooling": "Intelligent Cooling",
-                    "other": "Other"
+                    "title": "SIIRRY ASETUKSIIN",
+                    "battery": "Akku",
+                    "power": "Virta",
+                    "cooling": "Älykäs jäähdytys",
+                    "other": "Muu"
                 },
                 "powerSmartSettings": {
-                    "title": "Power Smart Settings",
-                    "subtitle": "INTELLIGENT COOLING",
-                    "subtitle1": "Battery & Quiet",
-                    "description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
-                    "description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
-                    "readMore": "Read more.",
+                    "title": "Virrankulutuksen älykkäät asetukset",
+                    "subtitle": "ÄLYKÄS JÄÄHDYTYS",
+                    "subtitle1": "Akku ja hiljainen",
+                    "description1": "Tämä ominaisuus muuttaa lämpöasetuksia dynaamisesti käyttäjän tarpeisiin sopiviksi.Kun ominaisuus on käytössä, laite pysyy viileänä esimerkiksi käyttäjän pidellessä sitä tai laitteen ollessa joutoajalla. Muulloin se optimoi suorituskyvyn, kun laite on vakaalla alustalla. Kun ominaisuus ei ole käytössä, käyttäjä voi määrittää lämpöprioriteetin itse.",
+                    "description2": "Älykäs jäähdytys säätää tuulettimen kierrosnopeutta, tietokoneen pinnan enimmäislämpötilaa ja suorituskykyä.Tämän ominaisuuden kolme toimintatilaa on lueteltu jäljempänä. Sitä käytetään Windowsissa näkyvällä liukusäätimellä, jolla ohjataan suorituskykyä.",
+                    "description3": "Älykäs jäähdytys tasapainottaa automaattisesti lämpösuorituskyvyn käyttäjän tarpeisiin sopivaksi.Älykäs jäähdytys viilentää kannettavan tietokoneen pintaa muuttamalla suorituskyvyn asetuksia, jotta käyttäjän on miellyttävä pidellä laitetta. Kun laite on asetettu työpöydälle, toiminto optimoi suorituskyvyn.",
+                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
+                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "readMore": "Lue lisää.",
                     "gotoWindows": {
-                        "title": "Go to windows settings",
-                        "modalBodyText1": "Click on Windows battery icon on System tray to access Windows performance power slider"
+                        "title": "Siirry Windowsin asetuksiin",
+                        "modalBodyText1": "Liukusäätimen saa käyttöön napsauttamalla Windowsin järjestelmäalueella näkyvää akun kuvaketta"
                     },
                     "intelligentCooling": {
-                        "title": "Intelligent cooling",
+                        "title": "Älykäs jäähdytys",
                         "description": "",
                         "tooltip": "",
-                        "optimize": "optimize system for",
-                        "apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
+                        "optimize": "optimoi järjestelmä",
+                        "apsHint": "Jotta voit ottaa älykkään jäähdytyksen käyttöön, sinun on asennettava ja otettava käyttöön Lenovo Active Protection System -ohjelma.",
                         "options": {
-                            "quiteCool3": "Cool Mode",
-                            "performance3": "High Performance",
-                            "quiteCool4": "Quiet & Cool",
-                            "performance4": "Performance",
-                            "quiteCool5": "Quiet & Cool",
-                            "performance5": "Performance"
+                            "quiteCool3": "Jäähdytystila",
+                            "performance3": "Tehokas näytönohjain",
+                            "quiteCool4": "Hiljainen ja viileä",
+                            "performance4": "Suorituskyky",
+                            "quiteCool5": "Hiljainen ja viileä",
+                            "performance5": "Suorituskyky",
+                            "batterySaving": "Battery Saving",
+                            "performance13": "Performance",
+                            "quiteCool13": "Quiet & Cool",
+                            "performance14": "Extreme Performance",
+                            "quiteCool14": "Intelligent Cooling"
                         },
                         "readMore": {
-                            "mode1": "Quiet mode",
-                            "mode2": "Balanced mode",
-                            "mode3": "Performance mode",
-                            "line1": "Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "line2": "Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
-                            "line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "mode1": "Hiljainen tila",
+                            "mode2": "Tasapainotettu tila",
+                            "mode3": "Suorituskykytila",
+                            "line1": "Liukusäädin on ääriasennossa vasemmalla.Tuulettimen kierrosnopeutta hidastetaan ja tietokoneen suorituskykyä vähennetään, joten se pysyy viileämpänä ja toimii hiljaisemmin. Samalla akku kestää pidempään.",
+                            "line2": "Liukusäädin on keskellä.Tuulettimen kierrosnopeus ja tietokoneen suorituskyky tasapainotetaan dynaamisesti parhaan käyttökokemuksen varmistamiseksi.",
+                            "line3": "Liukusäädin on ääriasennossa oikealla. Tuulettimen kierrosnopeus ja sallittu pinnan lämpötila ovat suurempia parhaan suorituskyvyn turvaamiseksi.",
+                            "line4": "More info"
+                        },
+                        "selectedModeText": {
+                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
+                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
+                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                        },
+                        "intelligentCoolingModesModal": {
+                            "title": "Change intelligent cooling modes",
+                            "close": "close",
+                            "coolingModesList": {
+                                "list1": "Click on the windows battery-icon in the toolbar",
+                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                            }
                         }
                     },
                     "nonintelligentCooling": {
                         "options": {
-                            "intelligentCooling": "INTELLIGENT COOLING",
-                            "extremeCooling": "EXTREME PERFORMANCE",
-                            "battery&Quite": "BATTERY & QUIET"
+                            "intelligentCooling": "ÄLYKÄS JÄÄHDYTYS",
+                            "extremeCooling": "ERINOMAINEN SUORITUSKYKY",
+                            "battery&Quite": "AKKU JA HILJAINEN"
                         }
-                    }
+                    },
+                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
                 },
                 "powerSettings": {
-                    "title": "Power Settings",
+                    "title": "Virta-asetukset",
                     "alwaysUSB": {
-                        "title": "Always on USB",
-                        "description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
-                        "checkbox": "Enable USB charging from laptop battery when computer is off."
+                        "title": "Jatkuva USB-virransyöttö",
+                        "description": "Lataa USB-laitteita tietokoneen jatkuvan USB-virransyötön liitännän kautta, kun tietokone on lepo- tai horrostilassa tai tietokoneesta on katkaistu virta.Älypuhelimen tai taulutietokoneen voi ladata nopeasti keltaisen tai seuraavilla symboleilla merkityn USB-liitännän kautta:",
+                        "checkbox": "Salli USB-lataus akkuvirralla, kun tietokoneesta on katkaistu virta."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Helppo palautus",
+                        "description": "Ottamalla tämän toiminnon käyttöön voit nopeuttaa jatkamisaikaa, jos avaat ja suljet tietokoneen kannen toistuvasti.",
+                        "tooltip": "Tämä toiminto nopeuttaa jatkamisaikaa, jos avaat ja suljet tietokoneen kannen toistuvasti. Kun asetus on käytössä, tietokone siirtyy virransäästötilaan, kun suljet sen kannen, mutta jatkaa toimintaansa heti, jos avaat kannen 15 minuutin kuluessa kannen sulkemisesta. Kun tämä toiminto on käytössä, kannettava tietokone yrittää myös suorittaa keskeneräiset toiminnot loppuun (kuten sähköpostin lähettämisen tai tiedoston lataamisen), ennen kuin järjestelmä siirtyy keskeytystilaan."
                     }
                 },
                 "otherSettings": {
-                    "title": "Other Settings",
+                    "title": "Muut asetukset",
                     "vantageToolbar": {
-                        "title": "Lenovo Vantage Toolbar",
-                        "description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
+                        "title": "Lenovo Vantage -työkalurivi",
+                        "description": "Kiinnitä Vantage-työkalurivi Windowsin tehtäväpalkkiin, jotta saat helposti lisää akun tietoja ja voit käyttää pika-asetuksia."
                     }
                 },
                 "batterySettings": {
-                    "title": "Battery Settings",
+                    "title": "Akun asetukset",
                     "batteryThreshold": {
-                        "title": "Battery Charge Threshold",
-                        "description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
-                        "tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "title": "Akun varauksen kynnysarvo",
+                        "description": "Jos käytät tietokonetta yleensä verkkovirralla verkkolaite kytkettynä ja vain satunnaisesti akkuvirralla,voit pidentää akun käyttöikää määrittämällä varauksen enimmäisarvoksi alle 100 prosenttia. Tästä on hyötyä, koska harvoin käytetyt akut kestävät pidempään, kun akkuja säilytetään niin, että niiden varaus on alle 100 prosenttia.",
+                        "tooltip": "Jos akkua ladataan niin, että sen varaus ylittää latauksen lopettamisen kynnysarvon, pura akun varaus vähintään latauksen lopettamisen kynnysarvoon asti irrottamalla tietokone verkkovirrasta.Akun tilan (vanha tai uusi) mukaan latauksen tarkat aloitus- ja lopetuspisteet saattavat vaihdella jopa kaksi prosenttiyksikköä. Jos otat tämän toiminnon käyttöön, akkumittari on suositeltavaa nollata säännöllisesti akun toimintakunnon tarkan raportoinnin varmistamiseksi.",
+                        "note": "Huomautus",
+                        "readMoreText": "Lue lisää.",
+                        "noteInfo": " Akun varauksen kynnysarvo ei ole täysin käytössä. Irrota laite ja anna akun tyhjentyä latauksen lopettamisen kynnysarvoon asti tai sen alle.",
                         "settings": {
-                            "title1": "Threshold for Built in battery",
-                            "title2": "Threshold for Removable battery"
+                            "title1": "Sisäisen akun kynnysarvo",
+                            "title2": "Irrotettavan akun kynnysarvo"
                         },
                         "popup": {
-                            "title": "Enable Battery Charge Threshold",
-                            "description1": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life.",
-                            "description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
-                            "enable": "ENABLE",
-                            "cancel": "CANCEL"
+                            "title": "Ota akun varauksen kynnysarvo käyttöön",
+                            "description1": "Kun otat mukautetun akun varauksen käyttöön, tämän laitteen akku pysyy toimintakunnossa pitempään.Akun varauksen kesto käytön aikana kuitenkin lyhenee, koska akku ei lataudu täyteen.",
+                            "description2": "Jotta voit ottaa tämän toiminnon täysin käyttöön, irrota laite jaanna akun tyhjentyä latauksen lopettamisen kynnysarvoon asti tai sen alle.",
+                            "enable": "OTA KÄYTTÖÖN",
+                            "cancel": "PERUUTA"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Aloita lataus varauksen ollessa alle",
+                            "checkboxText": "Määritä latauksen aloittamisen kynnysarvoksi automaattisesti viisi prosenttiyksikköä alle latauksen lopettamisen kynnysarvon.",
+                            "stop": "Lopeta lataus varaustason ollessa"
                         }
                     },
                     "expressCharging": {
-                        "title": "Express Charging",
-                        "description": "Express Charge allows your battery to a full charge much faster than normal mode.",
-                        "tooltip": "Express Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
+                        "title": "Pikalataus",
+                        "description": "Pikalataus-ominaisuuden avulla akun voi ladata täyteen huomattavasti normaalitilaa nopeammin.",
+                        "tooltip": "Pikalataustoiminnon avulla voit ladata järjestelmän akun paljon nopeammin,mutta tämä saattaa lyhentää akun käyttöikää."
                     },
                     "conservationMode": {
-                        "title": "Conservation Mode",
-                        "description": "This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
+                        "title": "Säästötila",
+                        "description": "Tämä toiminto on hyödyllinen akun käyttöiän pidentämiseen, kun tietokone on verkkovirrassa. <br>Kun tämä tila on käytössä, akku ladataan vain 55 - 60 %:iin kapasiteetista, ja akun käyttöikää voidaan pidentää. Tämä lyhentää kuitenkin tietokoneen käyttöikää sen jälkeen, kun se on irrotettu verkkovirtalähteestä.",
                         "tooltip": {
-                            "line1": "This function is useful to extend the lifespan of your battery when plugged.",
-                            "line2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
-                            "line3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
+                            "line1": "Tämä toiminto on hyödyllinen akun käyttöiän pidentämiseen, kun tietokone on verkkovirrassa.",
+                            "line2": "Kun tämä tila on käytössä, akku ladataan vain 55 - 60 %:iin kapasiteetista, ja akun käyttöikää voidaan pidentää. Tämä lyhentää kuitenkin tietokoneen käyttöikää sen jälkeen, kun se on irrotettu verkkovirtalähteestä.",
+                            "line3": "Huomautus: Pikalataus ja säästötila eivät toimi samanaikaisesti.Jos toinen tila otetaan käyttöön, toinen tila poistetaan käytöstä automaattisesti."
                         }
                     },
                     "airPlanePower": {
-                        "title": "Airplane Power Mode",
-                        "description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
+                        "title": "Lentokonevirtatila",
+                        "description": "Suojaa lentokoneen pistorasiaa rajoittamalla tietokoneesi virrankulutusta.Kun lentokonevirtatila on käytössä, tietokone vähentää virrankulutusta rajoittamalla akun latausta ja järjestelmän suorituskykyä."
+                    }
+                },
+                "energyStar": {
+                    "title": "Energy Star",
+                    "description": "ENERGY STAR -VAATIMUSTEN MUKAINEN TUOTE"
+                },
+                "smartStandby": {
+                    "title": "Älykäs valmiustila",
+                    "description": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysajan aikana ilman, että käynnistysaika hidastuu kovan käytön aikana.",
+                    "tooltip": "Kun älykäs valmiustila on käytössä, tietokone vaihtaa moderniin valmiustilaan ennen ajoitettua aloitusaikaa ja siirtyy horrostilaan sen jälkeen, kun tietokone on ollut käyttämättömänä tietyn ajanjakson ajan akkuvirtaa käytettäessä. Tämä ajanjakso optimoidaan määritetyn aikataulun perusteella. Tietokone vaihtaa horrostilasta moderniin valmiustilaan vain ajoitettuina päivinä eikä silloin, kun se on käyttämättömänä peräkkäisinä ajoitettuina päivinä.",
+                    "timer": {
+                        "heading": "Määritä aika, jolloin yleensä käytät tätä tietokonetta",
+                        "subHeading1": "aloitat",
+                        "subHeading2": "lopetusaika",
+                        "subHeading3": "käytä tätä aikataulua seuraavaan:",
+                        "endTimeNote": "Lopetusajan on oltava 20 tunnin kuluessa aloitusajasta",
+                        "timeUnits": {
+                            "unit1": "tuntia",
+                            "unit2": "minuuttia",
+                            "unit3": "aamupäivä/iltapäivä"
+                        }
                     }
                 }
             },
             "audio": {
-                "title": "Audio",
-                "subtitle": "Audio Settings",
-                "description": "This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.",
+                "title": "Äänitoiminnot",
+                "subtitle": "Ääniasetukset",
+                "description": "Tämän osan avulla voit automaattisesti optimoida taimäärittää ääniasetukset manuaalisesti (esimerkiksi Dolby-asetukset, mikrofoni jne.).",
                 "audioSmartsettings": {
-                    "title": "Audio Smart settings",
-                    "subtitle": "APPLICATION-BASED SETTINGS",
-                    "description": "Automatically adjust audio settings according to different apps you are using.",
+                    "title": "Älykkäät ääniasetukset",
+                    "subtitle": "SOVELLUSPOHJAISET ASETUKSET",
+                    "description": "Säädä ääniasetuksia automaattisesti erilaisten sovellusten mukaan.",
                     "dolby": {
-                        "title": "Automatic Dolby Audio settings",
-                        "tooltip": "Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
+                        "title": "Automaattiset Dolby-ääniasetukset",
+                        "tooltip": "Automaattiset Dolby-ääniasetukset määrittävät Dolby-ääniasetuksillesoveltuvan tilan erilaisten sovellusten mukaan äänikokemuksesi parantamiseksi.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "DYNAAMINEN",
+                            "movie": "ELOKUVA",
+                            "music": "MUSIIKKI",
+                            "games": "PELI",
+                            "voip": "ÄÄNI"
                         }
                     },
                     "voip": {
-                        "title": "Automatic Audio Optimization for VoIP",
-                        "tooltip": "Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality."
+                        "title": "Automaattinen ääniasetusten optimointi VoIP:lle",
+                        "tooltip": "Vaihda automaattisesti Dolby Voice -tilaan VoIP-puhelujen aikana, jotta äänen laatu on selkeä ja yhdenmukainen."
                     }
                 },
                 "microphone": {
-                    "title": "Microphone",
+                    "title": "Mikrofoni",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permission to access your microphone. Please turn on access to your microphone for the Lenovo Vantage app."
+                        "title": "huomautus",
+                        "description": "Lenovo Vantage -sovelluksella ei ole mikrofonin käyttöoikeuksia.Ota mikrofonin käyttöoikeudet käyttöön Lenovo Vantage -sovellukselle."
                     },
                     "microphone": {
-                        "title": "Microphone",
-                        "tooltip": "You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode."
+                        "title": "Mikrofoni",
+                        "tooltip": "Voit mukauttaa MIC-tehostetta säätämällä mikrofonin äänen voimakkuuttaja määrittämällä sopivan tilan."
                     },
                     "volume": {
-                        "title": "Microphone Volume",
-                        "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
+                        "title": "Mikrofonin äänenvoimakkuus",
+                        "description": "Dolby-ääni tarjoaa monipuolista, selkeää ja tehokasta ääntä kaikelle sisällölle, josta pidät, kun valitset sopivan tilan sisällöllesi ja laitteistollesi.",
                         "options": {
-                            "silent": "Silent",
-                            "loud": "Loud"
+                            "silent": "Hiljainen",
+                            "loud": "Kova"
                         }
                     },
                     "suppress": {
-                        "title": "Suppress keyboard noise",
-                        "tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+                        "title": "Vaimenna näppäimistön äänet",
+                        "tooltip": "Ota tämä toiminto käyttöön, kun haluat optimoida MIC-äänen vaimentamalla näppäimistön melua."
                     },
                     "acoustic": {
-                        "title": "Acoustic Echo Cancellation",
-                        "tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+                        "title": "Kiertoefektin peruutus",
+                        "tooltip": "Ota tämä toiminto käyttöön, kun haluat optimoida MIC-äänesi vähentämällä akustista kaikua."
                     },
                     "optimize": {
-                        "title": "Optimize my microphone for:",
-                        "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+                        "title": "Optimoi mikrofoni laitteelle:",
+                        "tooltip": "Määritä mikrofonin äänitehoste parantaaksesi äänikokemustasi eri skenaarioissa ja ympäristöissä.",
                         "options": {
-                            "VoiceRecognition": "VOICE RECOGNITION",
-                            "OnlyMyVoice": "ONLY MY VOICE",
-                            "Normal": "NORMAL",
-                            "MultipleVoices": "MULTIPLE VOICES"
+                            "VoiceRecognition": "PUHEENTUNNISTUS",
+                            "OnlyMyVoice": "VAIN MINUN ÄÄNENI",
+                            "Normal": "NORMAALI",
+                            "MultipleVoices": "USEITA ÄÄNIÄ"
                         }
                     }
                 }
             },
             "displayCamera": {
-                "title": "Display & Camera",
-                "subtitle": "Display & Camera Settings",
-                "description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
+                "title": "Näyttö ja kamera",
+                "subtitle": "Näytön ja kameran asetukset",
+                "description": "Tämän osan avulla voit parantaa visuaalista käyttökokemusta ja määrittää kameran ominaisuuksien asetukset. Tutustu muihin toimintoihin ja mukauta näytön käyttökokemusta täältä.",
                 "jumpTo": {
-                    "title": "JUMP TO SETTINGS",
+                    "title": "SIIRRY ASETUKSIIN",
                     "shortcuts": {
                         "display": {
-                            "title": "Display"
+                            "title": "Näyttö"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Kamera"
                         }
                     }
                 },
                 "display": {
-                    "title": "Display",
+                    "title": "Näyttö",
                     "eyeCareMode": {
-                        "title": "Eye Care Mode",
-                        "checkbox": "Schedule eye care mode from sunset to sunrise",
+                        "title": "Silmien hoitotila",
+                        "checkbox": "Ajoita silmien hoitotila auringonlaskusta auringonnousuun",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Lämmin (parempi silmille)",
+                            "cold": "Kylmä"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Lämpötilan uudelleenasetus",
+                        "tooltip": "Silmien hoitotila suodattaa sinistä valoa ja vähentää rasitusta silmille säätämällä näytön värilämpötilaa.",
+                        "onSunsetToSunriseScheduleDescription": "Ajoita silmien hoitotila auringonlaskusta auringonnousuun",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "Huomautus",
+                            "description": "Lenovo Vantage -ohjelman on käytettävä sijaintitietojasi oman alueesi auringon lasku- ja nousuajan laskemiseen."
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Display color temperature",
+                        "title": "Näytön värilämpötila",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Lämmin (parempi silmille)",
+                            "cold": "Kylmä"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Lämpötilan uudelleenasetus",
+                        "tooltip": "Silmien hoitotila suodattaa sinistä valoa ja vähentää rasitusta silmille säätämällä näytön värilämpötilaa.",
+                        "onSunsetToSunriseScheduleDescription": "Ajoita silmien hoitotila auringonlaskusta auringonnousuun",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "Huomautus",
+                            "description": "Lenovo Vantage -ohjelman on käytettävä sijaintitietojasi oman alueesi auringon lasku- ja nousuajan laskemiseen."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Privacy Guard",
+                        "description": "Tämä ominaisuus estää muita henkilöitä näkemästä näyttösi sisältöä. Kun se on käytössä, se muuttaa näytön katselukulmaa ja estää ympärillä olijoita näkemästä näytön sisältöä. Voit myös vaihtaa tilaa painamalla \"Fn+D\"-näppäimiä.",
+                        "note": "Privacy Guard ei toimi, kun näyttö on pystyasennossa. Tässä tilassa näytön voi edelleen nähdä sivuilta.",
+                        "labelText": "Ota tämä ominaisuus käyttöön salasanoja kirjoitettaessa"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "OLED-näytön virta-asetukset",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Tietokoneen OLED-näyttö voi myös pienentää virrankulutusta ja lisätä akun käyttöikää himmentämällä valikoivasti näytön osia.",
+                            "Myös tehtäväpalkin ja näytön muiden harvoin muuttuvien osien himmentämistä suositellaan näytön yleisen käyttöiän pidentämiseksi."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Lämpötilan uudelleenasetus",
+                        "tooltip": "Ominaisuus voi pienentää virrankulutusta ja lisätä akun käyttöikää himmentämällä näytön osia valikoivasti.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
-                    "title": "Camera",
+                    "title": "Kamera",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permissions to access your camera. Please turn on access to your camera for the Lenovo Vantage app."
+                        "title": "Huomautus",
+                        "description": "Lenovo Vantage -sovelluksella ei ole kameran käyttöoikeuksia. Ota kameran käyttöoikeudet käyttöön Lenovo Vantage -sovellukselle."
                     },
-                    "url": "Go to windows privacy settings",
+                    "url": "Siirry Windowsin yksityisyysasetuksiin",
                     "cameraPrivacy": {
-                        "title": "Camera privacy mode",
-                        "tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling."
+                        "title": "Kameran yksityisyystila",
+                        "tooltip": "Kamera ei lähetä videokuvaa, kun yksityisyysasetus on käytössä. Ota tämä asetus käyttöön vain silloin, kun et haluat jakaa kuvia muiden kanssa videopuhelun aikana."
                     },
                     "camera": {
-                        "title": "Camera",
-                        "tooltip": "Click here to reset Camera properties to default settings.",
-                        "reset": "Reset factory settings"
+                        "title": "Kamera",
+                        "tooltip": "Napsauta tätä, jos haluat palauttaa kameran ominaisuuksien oletusasetukset.",
+                        "reset": "Palauta tehdasasetukset"
                     },
-                    "brightness": "Brightness",
-                    "contrast": "Contrast",
-                    "autoExposure": "Auto Exposure",
-                    "autoFocus": "Auto focus",
-                    "notAvailable": "Camera Not Available",
+                    "brightness": "Kirkkaus",
+                    "contrast": "Kontrasti",
+                    "autoExposure": "Automaattinen valotus",
+                    "autoFocus": "Automaattinen tarkennus",
+                    "notAvailable": "Kamera ei ole käytettävissä",
                     "camerablur": {
-                        "title": "Camera Background Blur",
-                        "caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "title": "Kameran taustan sumennus",
+                        "caption": "Tämä ominaisuus sumentaa taustan, kun käytät kameraa videopuheluihin tai valokuvaamiseen. Voit valita eri tehosteen alla olevasta valikoimasta.",
+                        "blurMode": "Sumennustila",
+                        "comicMode": "Sarjakuvatila",
+                        "sketchMode": "Luonnostila"
+                    },
+                    "cameraLoadingFailed": {
+                        "inUseTitle": "CAMERA IS IN USE",
+                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
+                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
+                        "loadingFailedDescription": "Close the app and try again."
+                    }
+                }
+            },
+            "inputAccessories": {
+                "title": "Syöttö ja lisävarusteet",
+                "subtitle": "Syötteen ja lisävarusteiden asetukset",
+                "description": "Lenovon älykäs tunnistustoiminto yhdistää tietokoneen eri tunnistimia toimintojen tunnistamista ja optimaalisen virranhallinnan asetusten muokkaamista varten",
+                "inputAccessory": {
+                    "title": "Älykäs näppäimistö",
+                    "hiddenKeyboardFunctions": {
+                        "title": "Piilotetut näppäimistötoiminnot",
+                        "description": "Voit painaa Fn-näppäintä (näppäimistön vasemmassa alareunassa) samanaikaisesti toisen näppäimen kanssa, jos haluat käyttää alla olevassa näppäimistökartassa esitettyjä toimintoja."
+                    },
+                    "firstKeyObj": {
+                        "tittle": "Fn+Sarkain",
+                        "description": "ota zoomaustoiminto käyttöön suuritarkkuuksisissa näytöissä",
+                        "image": ""
+                    },
+                    "secondKeyObj": {
+                        "tittle": "Fn + 4",
+                        "description": "siirry lepotilaan",
+                        "image": ""
+                    },
+                    "thirdKeyObj": {
+                        "tittle": "Fn+D",
+                        "description": "ota Privacy Guard käyttöön",
+                        "image": ""
+                    },
+                    "fourthKeyObj": {
+                        "tittle": "Fn+Q",
+                        "description": "vaihda suorituskykytilan ja hiljaisen tilan välillä",
+                        "image": ""
+                    },
+                    "fifthKeyObj": {
+                        "tittle": "Fn+Välilyönti",
+                        "description": "muuta näppäimistön taustavalon tiloja",
+                        "image": ""
+                    }
+                },
+                "userDefinedKey": {
+                    "title": "Käyttäjän määrittämä näppäin",
+                    "caption": "Tähdellä varustetun näppäimen avulla voit määrittää käyttäjän määrittämän toiminnon",
+                    "dropDown": {
+                        "title": "Käyttäjän määrittämän näppäimen toiminto",
+                        "note": "Huomautus: Tämän avulla voit kirjoittaa usein kirjoitetun tekstin, kuten sähköpostiosoitteen tai postiosoitteen. Lenovo suosittelee, ettei tämän toiminnon avulla koskaan tallenneta ja kirjoiteta salasanoja tai muita yksityisiä tietoja.",
+                        "options": {
+                            "option1": "Valitse",
+                            "option2": "Avaa verkkosivusto",
+                            "option3": "Kirjoita teksti"
+                        }
+                    },
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
                     }
                 }
             }
         },
         "smartAssist": {
-            "title": "Smart Assist",
-            "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+            "title": "Älykäs apu",
+            "description": "Lenovon älykäs tunnistustoiminto yhdistää tietokoneen tunnistimia toimintojen tunnistamista, virranhallinnan asetusten muuttamista ja käyttäjän yksityisyyden suojaamista varten.",
             "jumpTo": {
-                "title": "JUMP TO SETTINGS",
-                "security": "Security",
-                "screen": "Screen",
+                "title": "SIIRRY ASETUKSIIN",
+                "security": "Suojaus",
+                "screen": "Kuvaruutu",
                 "media": "Media",
-                "voice": "Voice"
+                "voice": "Ääni",
+                "APS": "APS"
             },
             "intelligentSecurity": {
-                "title": "Intelligent Security",
-                "readMore": "Read more",
+                "title": "Älykäs suojaus",
+                "readMore": "Lue lisää",
                 "HumanPresenceDetection": {
-                    "title": "Human presence detection",
-                    "tooltip": "Click here to reset the human presence detection settings."
+                    "title": "Ihmisten läsnäolon tunnistus",
+                    "tooltip": "Napsauta tätä, jos haluat palauttaa ihmisten läsnäolon tunnistusasetukset."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Käyttäjän läsnäolon tunnistus",
+                    "tooltip": "Napsauta tätä, jos haluat palauttaa ihmisten läsnäolon tunnistusasetukset."
                 },
                 "zeroTouchLogin": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
+                    "title": "Zero Touch -kirjautuminen",
+                    "caption": "Tämä ominaisuus avaa tietokoneen lukituksen tai herättää tietokoneen automaattisesti, kun olet tietokoneen edessä tai lähestyt tietokonetta."
                 },
                 "zeroTouchLock": {
-                    "title": "Zero Touch Lock",
-                    "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+                    "title": "Zero Touch -lukitus",
+                    "caption": "Tämä toiminto himmentää näytön ja lukitsee tietokoneen, kun käyttäjää ei havaita. Se voi myös pienentää tietokoneen luvattoman käytön mahdollisuuksia, kun käyttäjä jättää tietokoneen valvomatta tai lukitsematta. Se pienentää myös virrankulutusta asettamalla järjestelmän nykyaikaiseen valmiustilaan, kun käyttäjää ei havaita.",
                     "autoScreenLockTimer": {
-                        "title": "AUTO SCREEN LOCK TIMER",
+                        "title": "AUTOMAATTISEN NÄYTÖN LUKITUKSEN AJASTIN",
                         "radioButton": {
-                            "fast": "Fast",
-                            "medium": "Medium",
-                            "slow": "Slow"
+                            "fast": "Nopea",
+                            "medium": "Keskikokoinen",
+                            "slow": "Hidas"
                         },
-                        "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+                        "toolTipContent": "Valitse haluamasi vaihtoehto, jos haluat lukita näytön nopeasti, keskinopeasti tai hitaasti, kun läsnäoloasi ei havaita. Aikaan, jolloin näyttö on lukittuna, vaikuttaa myös todellinen käyttäjäskenaario, tunnistimen toimintakyky ja Windowsin näytön aikakatkaisuasetukset. Suosittelemme näin ollen, että lukitset järjestelmän ennen, kuin lähdet tietokoneen luota."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+                    "title": "ETÄISYYDENTUNNISTUKSEN MUUTTAMINEN",
+                    "caption": "Etäisyyden automaattinen muutto päivittää tunnistusetäisyyden automaattisesti tekoälymoduulin avulla.",
                     "options": {
-                        "near": "Near",
-                        "far": "Far"
+                        "near": "Lähellä",
+                        "far": "Kaukana"
                     }
                 },
                 "note": {
-                    "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-                    "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
-                    "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-                    "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
-                    "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+                    "description1": "Tämä ominaisuus hyödyntää Windows Hellota. Varmista, että kasvojentunnistus on otettu käyttöön Windowsin asetuksista.",
+                    "description2": "Tämä ominaisuus käyttää tunnistimia ja kameraa läsnäolon havaitsemiseksi. Toiminto EI kuitenkaan kerää henkilötietoja.",
+                    "description3": "1. Jos tietokone on kolmio-, taitos- tai tauluasennossa, nämä ominaisuudet eivät ehkä toimi oikein.",
+                    "description4": "2. Jos tietokone on horrostilassa tai siitä on katkaistu virta. Automaattinen infrapunakameran sisäänkirjaus ei toimi.",
+                    "description5": "3. Muuta tietokoneen näytön kulmaa niin, että infrapunakamera voi tunnistaa kasvosi automaattista sisäänkirjautumista varten."
                 },
                 "WindowsLink": {
-                    "goToWindowsHello": "Go to Windows Hello Settings",
-                    "screenTimeoutSettings": "Go to Screen timeout settings"
+                    "goToWindowsHello": "Siirry Windows Hello -asetuksiin",
+                    "screenTimeoutSettings": "Siirry näytön aikakatkaisun asetuksiin"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "PALAUTA TEHDASASETUKSET"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Älykäs näyttö",
+                "description": "Lenovo älykäs tunnistustoiminto yhdistää tietokoneen useita tunnistimia toimintojen tunnistamista ja virranhallinnan asetusten muuttamista varten. Toiminto esimerkiksi himmentää näytön, jos se havaitsee sinun kävelevän, tai jättää näytön himmentämättä, jos se havaitsee sinun lukevan.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Automaattinen näyttö ei käytössä",
+                    "caption": "Katkaise näytön virta automaattisesti, kun en katso näyttöä tai kävelen.",
+                    "note": "Tämä ominaisuus ei ole käytettävissä, jos Windows-asetusten Järjestelmä-osiossa on määritetty virrankäyttösuunnitelman asetukseksi \"älä koskaan sammuta näyttöä käytettäessä akkuvirtaa\". Ota tämä ominaisuus käyttöön valitsemalla jokin muu arvo kuin \"Ei koskaan\".",
+                    "windowsLink": "Siirry Virta- ja lepotila-asetukset -kohtaan Windows-asetuksissa"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Pidä näyttö",
+                    "caption": "Pidä näyttö, kun luen tai selaan Internetiä.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Minuutit, jonka jälkeen näyttö himmenee Internetiä selattaessa",
+                        "startTime": "0 minuuttia",
+                        "endTime": "60 minuuttia"
+                    }
+                }
+            },
+            "activeProtectionSystem": {
+                "title": "Active Protection System",
+                "description": "Automaattinen Lenovo Active Protection System -toiminto auttaa suojamaan kiintolevyasemaa voimakkaiden iskujen ja tärinän aiheuttamilta vaurioilta. Se valvoo tietokoneen liikkeitä jatkuvasti ja pysäyttää kiintolevyaseman tilapäisesti, kun tietokone esimerkiksi putoaa.",
+                "activeProtection": {
+                    "title": "Active Protection",
+                    "caption": "Muuta herkkyyttä. Vähäisen herkkyyden tilassa vain kovemmat iskut aktivoivat suojauksen",
+                    "checkbox": "Jätä toistuvat iskut, kuten junan tai auton aiheuttamat iskut, huomiotta"
+                },
+                "manualActiveProtectionSuspension": {
+                    "title": "Manuaalinen Active Protection -ohjelman keskeyttäminen",
+                    "caption": "Salli Active Protection System -ohjelman keskeyttäminen manuaalisesti",
+                    "dropdown-title": "Keskeytä ajaksi",
+                    "button": "Keskeytä nyt"
+                },
+                "advanced": {
+                    "description": "Paranna kiintolevyn käytettävyyttä muistiotilassa keskeyttämällä Active Protection System, kun seuraavia toimintoja havaitaan",
+                    "pen": {
+                        "title": "Kynäsyöttö",
+                        "description": "Ota APS käyttöön, kun kynäsyöttö on käytössä ja kynä on alueen ulkopuolella"
+                    },
+                    "touch": {
+                        "title": "Kosketussyöttö",
+                        "description": "Ota APS käyttöön, kun kosketussyöttö on käytössä ja järjestelmä havaitsee kosketussyötön"
+                    },
+                    "hand": {
+                        "title": "Käden läheisyyden tunnistus tietokoneen reunoilla",
+                        "description": "Ota APS käyttöön, kun muistiotila on käytössä ja järjestelmä ei havaitse kättä"
                     }
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Älykäs tietoväline",
+                "title": "Zero Touch -videon toisto",
+                "desc": "Tämä ominaisuus keskeyttää videon toiston, kun poistut tietokoneelta, ja jatkaa toistoa, kun palaat takaisin.",
+                "tooltip": "Tämä ominaisuus ei ole käytettävissä verkkovideosoittimissa. Suositut paikalliset videosoittimet (kuten Windows Media Player ja 5KPlayer) tukevat tätä ominaisuutta."
+            },
+            "voice": {
+                "title": "Ääni",
+                "description": "Lenovo Voice muuttaa puheen tekstiksi Puhe tekstiksi -toiminnon avulla ja antaa reaaliaikaisen käännöksen puheesta tekstiksi Käännös-toiminnon avulla.",
+                "installBtnText": "Asenna",
+                "launchBtnText": "Aloita",
+                "voiceToText": {
+                    "title": "Puhe tekstiksi",
+                    "caption": "Tämän ominaisuuden avulla voit muuttaa puheen tekstiksi."
+                },
+                "translation": {
+                    "title": "Käännös",
+                    "caption": "Tämän ominaisuuden avulla voit kääntää puhetta reaaliaikaisesti. Käännetty sisältö näytetään tekstinä. Voit valita lähde- ja kohdekielet tarpeen mukaan."
+                },
+                "modalPopUp": {
+                    "heading": "Aloittaminen:",
+                    "point1": "Varmista, että Lenovo Voice -kuvake näkyy Windowsin ilmaisinalueella.",
+                    "point2": "Avaa tiedosto, johon haluat tallentaa muutetun tekstin.",
+                    "point3": "Napsauta Windowsin ilmaisinalueelta Lenovo Voice -kuvaketta ja valitse Puhe tekstiksi.",
+                    "point4": "Valitse haluamasi kieli ja aloita napsauttamalla mikrofonia.",
+                    "point5": "Siirrä kohdistin kohtaan, jota haluat muokata, ja aloita puhuminen.",
+                    "point6": "Napsauta Windowsin ilmaisinalueelta Lenovo Voice -kuvaketta ja valitse Käännä.",
+                    "point7": "Valitse haluamasi lähde- ja kohdekieli.",
+                    "point8": "Määritä äänisyöttö kaiuttimesta tai mikrofonista tarpeen mukaan.",
+                    "point9": "Napsauta mikrofonikuvaketta ja aloita puhuminen",
+                    "closeText": "sulje"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "System Update",
+        "back": "EDELLINEN",
+        "history": "KOKO HISTORIA",
+        "notAvailable": "Ei käytettävissä",
+        "notInstalled": "Ei asennettu",
+        "criticalUpdates": "Välttämättömät päivitykset",
+        "recommendedUpdates": "Suositeltavat päivitykset",
+        "optionalUpdates": "Valinnaiset päivitykset",
+        "ignoredUpdates": "Huomiotta jätetyt päivitykset",
+        "successInstall": "Asennus onnistui: ",
+        "failedInstall": "Asennus epäonnistui: ",
+        "at": "klo",
+        "readMore": "Lue lisää",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+            "reboot": "Käynnistä uudelleen",
+            "shutdown": "Sammutus",
+            "rebootForceMsg": "Valitsemasi päivitykset aiheuttavat sen, että asennuksen jälkeen järjestelmä käynnistetäänuudelleen automaattisesti.",
+            "shutdownForceMsg": "Valitsemasi päivitykset aiheuttavat sen, että asennuksen jälkeen järjestelmäsammutetaan automaattisesti.",
+            "rebootDelayedMsg": "Valitsemasi päivitykset aiheuttavat sen, että järjestelmä käynnistetään uudelleen asennuksen jälkeen.Älä katkaise järjestelmän virtaa tai poista virtalähdettä tai lisävarusteita päivitysten asennuksen aikana. Suosittelemme tallentamaan työt, jotta järjestelmä voidaan valmistella uudelleenkäynnistymistä varten.",
+            "rebootRequiredMsg": "Jotta päivitysten asennus onnistuisi, tietokone onkäynnistettävä uudelleen, jotta kaikki toimii turvallisesti ja sujuvasti.",
             "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "cancelButton": "Peruuta",
+            "rebootButton": "KÄYNNISTÄ UUDELLEEN NYT",
+            "dismissButton": "HYLKÄÄ",
+            "rebootPending": "Uudelleenkäynnistys on meneillään"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Automaattisten päivitysten asetukset",
+            "subtitle": "ASENNA PÄIVITYKSET AUTOMAATTISESTI",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Välttämättömät päivitykset",
+                "tooltip": "Välttämättömät päivitykset estävät merkittävien ongelmien, vakavien toimintahäiriöiden ja laitteistohäiriöiden syntymisen sekä tietojen vahingoittumisen."
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "Suositellut päivitykset",
+                "tooltip": "Suositellut ohjainpäivitykset pitävät tietokoneen käynnissä optimaalisesti."
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Windows-päivitykset",
+                "url": "Windowsin asetukset"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Lenovon tukisivusto"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "Tervetuloa käyttämään System Update -ohjelmaa.",
+            "title": "Ajan tasalla oleva järjestelmä on terve järjestelmä.",
+            "last": "Viimeksi päivitetty: ",
+            "next": "Seuraava ajoitettu päivitys: ",
+            "checkButton": "TARKISTA PÄIVITYKSET",
+            "checking": "Tarkistetaan päivityksiä",
+            "downloading": "Päivitysten nouto on valmis",
+            "installing": "Päivityksiä asennetaan",
+            "percent": "% valmiina",
+            "cancelCheck": "Peruuta tarkistus",
+            "cancelUpdates": "PERUUTA PÄIVITYKSET",
+            "available": "Saatavilla olevat päivitykset",
+            "description": "Näissä paketeissa on päivityksiä laitteisto-ohjaimiin jajärjestelmätoimintoihin, jotka ovat välttämättömiä tietokoneesi toiminnan kannalta. Välttämättömät päivitykset ovat tärkeitä myös tietokoneen tietojen suojauksessa, ja välttämättömät päivitykset pitäisi asentaa heti, kun ne ovat käytettävissä. Pakettien asentamatta jättäminen saattaa johtaa tietojen menetykseen, järjestelmän toimintahäiriöön tai laitteistohäiriöön.",
+            "installButton": "ASENNA KAIKKI PÄIVITYKSET",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Kaikki päivitykset on asennettu oikein",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Joidenkin päivitysten asennus ei onnistunut.",
+                    "description": "Jokin meni vikaan näiden päivitysten latauksen tai asennuksen aikana.Varmista, että laite on verkkoyhteydessä äläkä katkaise tietokoneesta virtaa, kun asennat päivityksiä."
                 }
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend",
-            "rebootRequiredTag": "Reboot Required",
-            "rebootDelayTag": "Reboot Required, Power Source Required",
-            "shutdownRequiredTag": "Shutdown Required",
-            "dependedPackage": "Depended Package"
+            "rebootRequired": "Tietokone on käynnistettävä uudelleen",
+            "failReason": "Epäonnistumisen syy: Verkkolaite ei ollut kytkettynä tietokoneeseen. ",
+            "manufacturer": "Valmistaja: ",
+            "version": "Versio: ",
+            "installVersion": "Asennettu versio: ",
+            "downloadSize": "Latauksen koko: ",
+            "diskSpaceNeeded": "Tarvittava levytila: ",
+            "ignore": "Ohita",
+            "attend": "Osallistu",
+            "rebootRequiredTag": "Tietokone on käynnistettävä uudelleen",
+            "rebootDelayTag": "Uudelleenkäynnistys vaaditaan, virtalähde vaaditaan",
+            "shutdownRequiredTag": "Laite on sammutettava",
+            "dependedPackage": "Riippuvuuspaketti"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "Saatavilla olevat päivitykset",
+            "description": "Nämä paketit sisältävät päivityksiä, jotka ovat tärkeitä tietokoneen oikean toiminnan kannalta. Välttämättömät päivitykset auttavat pitämään tietokoneen suojattuna ja luotettavina, ja ne tulee asentaa heti, kun ne ovat käytettävissä. Suositeltujen päivitysten ja valinnaisten päivitysten avulla ohjelmisto pysyy ajan tasalla ja tietokone toimii parhaimmillaan.",
+            "installAllUpdates": "Asenna kaikki päivitykset",
+            "installSuccessHeader": "Kaikki päivitykset asennettiin oikein",
+            "installFailHeader": "Joidenkin päivitysten asennus ei onnistunut",
+            "installFailDescription": "Jokin meni vikaan näiden päivitysten latauksen ja asennuksen aikana. Varmista, että laite on verkkoyhteydessä äläkä katkaise tietokoneesta virtaa, kun asennat päivityksiä.",
+            "optionalUpdates": "Valinnaiset päivitykset",
+            "installSelectedUpdates": "Asenna valitut päivitykset"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "Nimi",
+            "sortByDate": "Lajittele päivämäärän mukaan",
+            "packageSize": "Paketin koko:",
+            "releaseDate": "Julkaisupäivämäärä:",
+            "showAll": "Näytä kaikki",
+            "noInstallationHistory": "Asennushistoriaa ei ole saatavana"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Uusien päivitysten noudossa ilmeni ongelma. Yritä myöhemmin uudelleen.",
+            "upToDate": "Päivityksiä ei ole saatavana. Järjestelmä on ajan tasalla.",
+            "egatherException": "Käyttäjätietojen keruun aikana on ilmennyt virhe.",
+            "gatheringUserInfoException": "Käyttäjätietojen keruun aikana on ilmennyt virhe.",
+            "certificateValidationException": "Päivityksen sisältöpalvelin on virheellinen. Yritä myöhemmin uudelleen.",
+            "downloadException": "Päivitysten lataamisen aikana on ilmennyt virhe.",
+            "connectException": "Yhteyden muodostus päivityksen sisältöpalvelimeen ei onnistu.",
+            "notEnoughDiskSpace": "Levytilaa ei ole riittävästi valitun toiminnon toteutukseen.",
+            "proxyAuthenticationException": "Virheellinen välityspalvelimen käyttäjätunnus tai salasana.",
+            "proxyConnectionException": "Yhteyden muodostus välityspalvelimeen ei onnistu.",
+            "autoScriptEvaluationException": "Automaattisen kokoonpanon määrityksen komentotiedoston arvioinnissa on ilmennyt virhe.",
+            "localRepositoryConnectionFailureException": "Yhteyden muodostus paikalliseen säilöön ei onnistu.",
+            "localRepositoryDatabaseException": "Paikallisen säilön tietokantaa ei ole löytynyt tai se on viallinen.",
+            "networkInterruptedException": "Järjestelmän päivityspalvelin ei ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen.",
+            "helpCenterInvalidServerException": "Järjestelmän päivityspalvelin on virheellinen. Yritä myöhemmin uudelleen.",
+            "catalogNotFoundException": "Järjestelmään soveltuvia päivityksiä ei löydy.",
+            "catalogCrcErrorException": "Järjestelmäluetteloa päivitetään parhaillaan. Yritä myöhemmin uudelleen.",
+            "catalogErrorException": "Järjestelmän päivitysluettelossa havaittiin virhe järjestelmän päivityspalvelimessa. Yritä myöhemmin uudelleen.",
+            "fileNotFoundException": "Tiedostoa ei löydy."
         }
     },
     "homeSecurity": {
-        "title": "Connected Home Security",
-        "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Ecosystem Security Overview",
-        "thisDevice": "This device",
-        "allDevices": "All Devices",
-        "protected": "Protected",
-        "notProtected": "Not Protected",
-        "myDevice": "My Device",
-        "allDevice": "All Devices",
-        "secure": "SECURE",
-        "needAttention": "NEEDS ATTENTION",
-        "manageAccount": "Manage Account",
-        "devices": "Devices",
-        "seeProtectedDevices": "See protected devices",
-        "addDevice": "add device",
-        "trailExpired": "Trail expired",
-        "trailExpiredSubtext": "Upgrate to protect all of your devices",
-        "upgrade": "upgrade",
+        "title": "Connected Home -suojaus",
+        "notification": {
+            "recent": "Viimeaikaiset suojausilmoitukset",
+            "notifications": "Ilmoitukset"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Suojaa laitteesi ekosysteemi",
+            "thisDevice": "Tämä laite",
+            "allDevices": "Kaikki laitteet",
+            "protected": "Suojattu",
+            "notProtected": "Ei suojausta",
+            "trialExpired": "Kokeiluversio vanhentunut",
+            "upgrade": "päivitä",
+            "inEcosystem": "Ekosysteemissä",
+            "ecosystemEnable": "Ekosysteemi käytössä",
+            "inTrial": "Kokeiluversio käytössä",
+            "addEcosystem": "Lisää ekosysteemiin",
+            "enableEcosystem": "Ota Ekosysteemi käyttöön",
+            "startTrial": "Aloita kokeilu",
+            "fullAccess": "Täydet käyttöoikeudet",
+            "renew": "Uusiminen"
+        },
+        "overview": {
+            "overviewBlockTitle": "Yleistä ekosysteemin suojauksesta",
+            "allDevices": "Kaikki laitteet",
+            "myDevice": "Oma laite",
+            "thisComputer": "This computer",
+            "secure": "TURVALLINEN",
+            "needAttention": "TOIMENPITEITÄ TARVITAAN",
+            "manageAccount": "Hallitse tiliä",
+            "devices": "Laitteet",
+            "seeProtectedDevices": "Katso suojatut laitteet",
+            "addDevice": "lisää laite",
+            "trialExpired": "Kokeiluversio vanhentunut - Päivitä kaikki laitteesi suojatuiksi",
+            "upgrade": "päivitä",
+            "freeTrial": "Suojaa kaikki laitteesi - Maksuton 30 päivän kokeiluversio",
+            "startTrial": "Aloita kokeilu"
+        },
         "tour": {
-            "back": "Back",
-            "skip": "Skip",
-            "start": "START TOUR",
-            "done": "DONE",
-            "welcome1": "Welcome",
-            "welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
-            "welcome2": "Exclusive for Vantage",
-            "welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
-            "create": "Create your account",
-            "lenovoId": "with Lenovo ID",
-            "notifications": "Receive <b>notifications</b> about your home's status",
-            "monitor": "<b>Monitor</b> the safety of your family's devices",
-            "peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
-            "signInLenovoId": "SIGH-UP WITH LENOVO ID",
-            "haveLenovo": "I don't have a <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Create a Lenovo ID",
-            "without": "Proceed <b>without an account</b>",
-            "skipAndTrial": "SKIP AND START TRIAL",
-            "alreadyHave": "I already have a <b>Connected Home Security Account</b>",
-            "loginCHS": "Login to existing CHS account",
-            "locationTitle": "Enable location tracking",
-            "locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+            "back": "Edellinen",
+            "skip": "Ohita",
+            "start": "ALOITA TUTUSTUMINEN",
+            "done": "VALMIS",
+            "welcome1": "Tervetuloa",
+            "welcomeDesc1": "Vain muutamalla napsautuksella voit suojata sinun ja perheesi tietokoneet, mobiililaitteet ja liitetyt laitteet.",
+            "welcomeDescStart": "Aloita ilmainen 30 päivän kokeilujakso nyt.",
+            "welcome2": "Saatavilla vain Vantagessa",
+            "welcomeDesc2": "Connected Home -suojaus on rakennettu suoraan Vantageen, ja sen avulla voit nopeasti tarkastella ekosysteemisi ja suojausvaroitusten suojaustilaa.",
+            "create": "Luo käyttäjätili",
+            "lenovoId": "Lenovo ID:llä",
+            "notifications": "Vastaanota <b>ilmoituksia</b> kotisi tilasta",
+            "monitor": "<b>Valvo</b> perheesi laitteiden turvallisuutta",
+            "peaceOfMind": "Saat <b>mielenrauhan</b>, että laitteesi ovat aina suojattuja!",
+            "signInLenovoId": "Rekisteröidy Lenovo ID:llä",
+            "haveLenovo": "Minulla ei ole <b>Lenovo ID</b>:tä",
+            "createLenovo": "&nbsp;Luo Lenovo ID",
+            "without": "Jatka <b>ilman tiliä</b>",
+            "skipAndTrial": "OHITA JA ALOITA KOKEILU",
+            "alreadyHave": "Minulla on jo <b>Connected Home -suojauksen tili</b>",
+            "loginCHS": "Kirjaudu sisään olemassa olevaan CHS-tiliin",
+            "locationTitle": "Ota sijainnin seuranta käyttöön",
+            "locationPermission": "Jotta tämä toiminto toimisi oikein, sinun on otettava käyttöön sijainnin seuranta tässä laitteessa"
+        },
+        "accountStatus": {
+            "title": "Oma Connected Home -suojaukseni",
+            "startTrial": "Aloita kokeilu",
+            "manageAccount": "Hallitse tiliä",
+            "upgradeAccount": "Päivitä tili",
+            "inTrialDetail1": "{{remainingDays}} päivää jäljellä kokeilujakson päättymiseen.",
+            "inTrialDetail2": "Sinulla on tällä hetkellä meneillään kokeilujakso. Sinulla on rajoittamaton pääsy kaikkiin toimintoihin.",
+            "trialExpiredDetail1": "Kokeilujaksosi on päättynyt.",
+            "trialExpiredDetail2": "Kokeilujaksosi on päättynyt ja laitteesi ekosysteemi ei ole enää suojattu.",
+            "upgradedDetail1": "Käyttäjätilisi on aktiivinen {{expiredDate}} asti.",
+            "upgradedDetail2": "Laitteesi ekosysteemi on tällä hetkellä suojattu.",
+            "localAccountDetail2": "Aloita ilmainen 30 päivän kokeilujakso napsauttamalla alla olevaa painiketta.",
+            "alreadyHaveAccount": "Onko sinulla jo aktivointikoodi?"
         }
     },
     "support": {
@@ -1101,7 +1496,9 @@
             "status": "Tila: ",
             "subDescription1": "Tälle tuotteelle on vuoden rajoitettu takuu, ja oikeutettu korjauspalveluun korjauskeskuksessa Asiakkaat voivat ottaa yhteyttä paikalliseen palvelukeskukseen lisätietoja varten. Korjauspalveluita tälle tuotteelle voi olla saatavilla jälleenmyyjien toimipisteissä.",
             "subDescription2": "Emme pystyneet löytämään takuutietoja laitteellesi. Tutustu tukisivustoomme jos haluat nähdä lisää takuuvaihtoehtoja.",
-            "viewWarrantyOptions": "NÄYTÄ TAKUUVAIHTOEHDOT"
+            "viewWarrantyOptions": "NÄYTÄ TAKUUVAIHTOEHDOT",
+            "offlineTips1": "Muodosta Internet-yhteys uusimpia takuutietoja varten.",
+            "offlineTips2": "Päivitä takuutiedot muodostamalla Internet-yhteys."
         },
         "documentation": {
             "title": "Ohjeaineisto",
@@ -1131,9 +1528,9 @@
             "copyright": "© 2002-2019 Lenovo kaikki oikeudet pidätetään"
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "Luokat",
+            "categoriesDesc": "Hyödyllisten tietojen haku artikkeleistamme.",
+            "seeArticles": "KATSO ARTIKKELIT"
         }
     },
     "security": {
@@ -1154,9 +1551,7 @@
             "maliciousNetwork": "Tietokonettasi on estetty liittymästä {{maliciousWifi}} haitalliseen verkkoon tässä kuussa.",
             "good": "HYVÄ",
             "malicious": "HAITALLINEN",
-            "suspicious": "EPÄILYTTÄVIÄ",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "EPÄILYTTÄVIÄ"
         },
         "antivirus": {
             "common": {
@@ -1245,6 +1640,12 @@
                 "describe2": "Jotta voit käyttää Connected Home -suojausominaisuutta, sinun on otettava käyttöön Lenovo Vantage -sovelluksen sijaintipalvelut. Haluatko ottaa sijainnin käyttöön nyt?",
                 "agree": "HYVÄKSYN",
                 "cancel": "PERUUTA"
+            },
+            "errorMessage": {
+                "headerText": "Virhe",
+                "bodyText": "Olemme havainneet, että sinulta puuttuu tärkeitä Vantagen osia. Nämä osat ladataan taustalla. Yritä myöhemmin uudelleen.",
+                "closeText": "sulje",
+                "offlineText": "Internet-yhteyttä ei ole muodostettu. Jotkin tämän sivun osat eivät toimi oikein. Muodosta yhteys uudelleen"
             }
         },
         "homeprotection": {
@@ -1256,7 +1657,7 @@
                 "homeSecurityAffect3": "Connected Home -suojaus varmistaa, että muut kotiverkkoosi yhdistyneet laitteet ovat turvallisia.",
                 "describe": "Laitteet ja verkot, jotka eivät ole turvallisia, voivat tuoda laitteisiin haittaohjelmia, johtaa identiteettivarkauksiin ja paljastaa yksityisiä ja taloustietoja. Ottamalla tämän ominaisuuden käyttöön voit pienentää riskiä, että laitteesi ja kotiverkkosi joutuvat hyökkäyksen kohteeksi",
                 "subtitle": "Mielenrauhaa",
-                "subtitleDescribe": "Connected Home -suojaus lähettää sinulle hälytyksen havaitessaan haavoittuvuuden laitteessasi tai kotiverkossasi tai, jos olet yhdistynyt mahdollisesti vahingolliseen verkkoon. Lue lisää Lenovo Wi-Fi -suojauksesta kohdassa Vihjeet ja vinkit.",
+                "subtitleDescribe": "Connected Home -suojaus lähettää sinulle hälytyksen havaitessaan haavoittuvuuden laitteessasi tai kotiverkossasi tai, jos olet yhdistynyt mahdollisesti vahingolliseen verkkoon. Lue lisää Connected Home -suojauksesta <tag>tästä</tag>.",
                 "tryNow": "Kokeile nyt"
             },
             "invitationcode": {
@@ -1332,7 +1733,7 @@
             "whatIsPmNotInstalled": "Turvallisin ja helpoin tapa tallentaa vahvoja, monimutkaisia salasanoja ja kirjautua hetkessä jokaiselle sivustolle.",
             "whatIsPmInstalled": "Turvallisempi digitaalinen elämä odottaa: Lisää salasanoja, ota käyttöön pimeän verkon valvonta ja täytä automaattisesti henkilökohtaisia ja maksutietoja.",
             "startProtect": "Aloita verkkotiliesi suojaus yksinkertaisella tavalla.",
-            "discount": "Lenovon käyttäjät saavat erityisetuna Dashlane Premium -palvelun käyttöönsä ilmaiseksi kuuden kuukauden ajaksi.",
+            "discount": "Lenovon käyttäjät saavat erityisetuna Dashlane Premium -palvelun käyttöönsä 50 %:n alennuksella.",
             "offer": "Tarjous on saatavilla on vain uusille Dashlanen käyttäjille!",
             "getDashLane": "Hanki Dashlane",
             "learnMoreAbout": "<tag>Lue lisää</tag> Dashlanen hyödyntämisestä",
@@ -1378,32 +1779,32 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "Sisäänkirjaus",
+        "logout": "Kirjaudu ulos",
+        "unlockExclusives": "Ota käyttöön erikoissisältöä",
+        "user": "Käyttäjä",
+        "welcomeText": "Näytät energiseltä tänään {{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "Näytät energiseltä tänään!",
+        "helloUser": "Hei {{firstName}}!",
+        "ssoErrorTitle": "Virhe",
+        "ssoErrorCommon": "Tapahtui virhe. Yritä uudelleen.",
+        "ssoErrorCommonEx": "Odottamaton virhe. Yritä uudelleen.",
+        "ssoErrorTimeStampIncorrect": "Tietokoneen kellonaika on virheellinen. Korjaa tietokoneen kellonaika ja yritä uudelleen.",
+        "ssoErrorNetworkDisconnected": "Oops! Yhteys epäonnistui. Tarkista Internet-yhteys ja yritä uudelleen.",
+        "ssoErrorCommunicating": "Verkkovirhe. Tarkista yhteys ja yritä uudelleen.",
+        "ssoErrorAccountPluginNotExist": "Laajennus puuttuu. Palautamme laajennuksen taustalla automaattisesti, jos Internet-yhteys on muodostettuna. Tämä voi kestää jonkin aikaa. Yritä myöhemmin uudelleen."
     },
     "faq": {
         "footer": {
-            "title": "Not finding what you are looking for?",
-            "description": "NEED ADDITIONAL SUPPORT? DON’T HESITATE TO CONTACT US VIA:",
-            "body": "Lenovo Community",
-            "button": "GO TO FORUM"
+            "title": "Etkö löydä mitä etsit?",
+            "description": "LISÄTIETOJA? ÄLÄ KYSY YHTEYTTÄ VIA:",
+            "body": "Lenovo-yhteisö",
+            "button": "Siirry FORUMiin"
         },
         "question1": {
-            "title": "Back up and restore your files",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        Back up and restore your files\n    </div>\n    <hr />\n    <div style='margin-bottom:7rem;'>\n        It's always good to have a backup. Keep copies of your files on another drive in case something happens to the\n        originals.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Set up your backup\n    </div>\n    <hr />\n    <div class='mb-5'>\n        Select the <span style='font-weight:bold'>Start</span> button, select\n        <span style='font-weight:bold'>Settings</span> >\n        <span style='font-weight:bold'>Update & security</span> >\n        <span style='font-weight:bold'>Backup</span> > <span style='font-weight:bold'>Add a drive</span> , and then\n        choose an external drive or network location for your backups.\n    </div>\n    <div class='mb-5'>\n        <img src='./../../../../assets/images/qa/1.1.png' />\n    </div>\n    <div class='mb-5'>\n        All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files\n        get backed up or how often backups happen, go to\n        <span style='font-weight:bold;'>More options</span>.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Restore your files\n    </div>\n    <div class='mb-5'>\n        If you're missing an important file or folder, here's how to get it back:\n    </div>\n    <div>\n\n        <div class='mb-3'>1. Type <span style='font-weight:bold;'>Restore files</span>\n            in the search box on the taskbar, and then select\n            <span class='font-weight:bold'> Restore your files with File History</span>.</div>\n        <div class='mb-3'>2. Look for the file you need, then use the arrows to see all its versions</div>\n        <div class='mb-3'>3. When you find the version you want, select\n            <span style='font-weight:bold'>Restore</span>\n            to save it in its original location. To save it in a different place, press and hold (or right-click)\n            <span style='font-weight:bold'>Restore</span>, select <span style='font-weight:bold'>Restore to</span>, and\n            then choose a new location.</div>\n\n    </div>\n</div>",
+            "title": "Tiedostojen varmuuskopiointi ja palauttaminen",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Tiedostojen varmuuskopiointi ja palauttaminen    </div>    <hr />    <div style='margin-bottom:7rem;'>        Varmuuskopiointi on aina hyvä asia. Säilytä tiedostojen kopioita toisella asemalla siltä varalta, että alkuperäisille tapahtuu jotain.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Varmuuskopioinnin määritys    </div>    <hr />    <div class='mb-5'>        Valitse <span style='font-weight:bold'>Käynnistä</span>-painike ja sitten <span style='font-weight:bold'>Asetukset</span> > <span style='font-weight:bold'>Päivittäminen ja suojaus</span> > <span style='font-weight:bold'>Varmuuskopiointi</span> > <span style='font-weight:bold'>Lisää asema</span>, ja valitse sitten ulkoinen asema tai verkkosijainti.varmuuskopiointia varten.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Valmista. Varmuuskopioimme kaikki käyttäjän kansiossa olevat tiedostot (C:\\\\Users\\\\username) tunnin väliajoin. Jos haluat määrittää, mitkä tiedostot varmuuskopioidaan tai kuinka usein varmuuskopiointi tapahtuu, siirry kohtaan <span style='font-weight:bold;'>Lisää vaihtoehtoja</span>.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Tiedostojen palauttaminen    </div>    <div class='mb-5'>        Jos sinulta puuttuu tärkeä tiedosto tai kansio, voit palauttaa sen seuraavasti:    </div>    <div>        <div class='mb-3'>1. Kirjoita <span style='font-weight:bold;'>Tiedostojen palautus</span> tehtäväpalkin hakuruutuun ja valitse sitten <span class='font-weight:bold'> Palauta tiedostot ja tiedostohistoria</span>.</div>        <div class='mb-3'>2. Etsi tarvitsemasi tiedosto ja tarkastele kaikkia sen versioita nuolien avulla</div>        <div class='mb-3'>3. Kun löydät haluamasi version, valitse <span style='font-weight:bold'>Palauta</span>, jos haluat tallentaa tiedoston sen alkuperäiseen sijaintipaikkaan. Jos haluat tallentaa sen eri paikkaan, paina pitkään (tai napsauta hiiren kakkospainikkeella) <span style='font-weight:bold'>Palauta</span>-painiketta, valitse <span style='font-weight:bold'>Palauta sijaintiin</span> -vaihtoehto ja valitse sitten uusi sijainti.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1443,8 +1844,8 @@
             }
         },
         "question2": {
-            "title": "How to refresh your PC",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        How to refresh your PC\n    </div>\n    <hr>\n    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>\n        Symptom\n    </div>\n    <div style='padding:5px 0;'>\n        If your PC isn't performing as well as it once did, and you don't know why,\n        you can refresh your PC without deleting any of your personal files or\n        changing your settings. Windows can “refresh” your PC so it’s more like a\n        fresh install without deleting your personal files.\n    </div>\n    <div style='padding:5px 0;'>\n        Refresh your PC, Here is what will happen: your files and personalized\n        settings won’t change\n    </div>\n    <div style='padding:5px 0;'>\n        <ul>\n            <li>Your PC settings will be changed back to its defaults</li>\n            <li>Apps from windows store will be kept</li>\n            <li>Apps you installed from disc or website will be removed</li>\n            <li>A list of removed files will be saved on your desktop</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Affected Brands\n    </div>\n\n    <div>\n        <ul>\n            <li>All Desktop and Laptops</li>\n\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Operation System\n    </div>\n\n    <div>\n        <ul>\n            <li>Windows 8, 8.1 & 10</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Solution\n    </div>\n\n    <div>\n        <ul class='list-unstyled'>\n            <li>\n                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>\n                <ol>\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Settings </span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Update and recovery</span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <div>Tap or click <span style='font-weight:bold;'> Recovery</span></div>\n                        <div style='padding:5px 0'>Under Refresh your PC without affecting your files, tap or click\n                            <span style='font-weight:bold;'> Get started.</span></div>\n                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>\n\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Next'</span>.\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Refresh' </span>to start the refresh process.\n                    </li>\n                    <li style='padding:5px 0;'>\n                        Once the refresh process is done, you can find a Removed Apps list on the desktop\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        You can find the removed apps while refreshing your system\n                    </li>\n                </ol>\n            </li>\n            <li style='padding:10px 0;'>\n                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>\n                <ol>\n                    <li style='padding:5px 0;'> Search for <span style='font-weight:bold;'> refresh </span>in the search\n                        tool available in the Start menu,</li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on <span style='font-weight:bold;'> 'Refresh your PC without affecting your\n                                files'</span> in the search results as shown below.</div>\n                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on the\n                            <span style='font-weight:bold;'> Get started </span>\n                            button just below the heading<span style='font-weight:bold;'> 'Refresh your PC without\n                                affecting your files'</span> to start refreshing your Windows 10 PC.</div>\n                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>\n                    </li>\n                </ol>\n            </li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;'>\n        Additional Information\n    </div>\n\n    <div>\n        In most cases, once you start to refresh your PC, it’ll finish on its own.\n        However, if Windows needs missing files, you’ll be asked to insert recovery\n        media, which is typically a DVD disc or thumb drive. If that happens, what\n        you’ll need depends on your PC.\n    </div>\n    <div style='padding:10px 0'>\n        If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use\n        that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact\n        Microsoft Support.\n    </div>\n\n</div>",
+            "title": "Tietokoneen siivoaminen",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Tietokoneen siivoaminen    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        Tilanne    </div>    <div style='padding:5px 0;'>        Jos tietokoneesi ei toimi yhtä hyvin kuin aiemmin etkä tiedä miksi, voit päivittää tietokoneen poistamatta henkilökohtaisia tiedostoja tai muuttamatta asetuksia. Windows voi ”päivittää” tietokoneen niin, että se on kuin vasta asennettu ilman, että henkilökohtaisia tiedostojasi poistetaan.    </div>    <div style='padding:5px 0;'>        Siivoa tietokone -toiminnossa tapahtuu seuraava: tiedostot ja mukautetut asetukset eivät muutu    </div>    <div style='padding:5px 0;'>        <ul>            <li>Tietokoneen asetukset muutetaan takaisin oletusasetuksiksi</li>            <li>Windows-kaupan sovellukset säilyvät</li>            <li>Ohjelmat, jotka on asennettu levyltä tai verkkosivustosta, poistetaan</li>            <li>Luettelo poistetuista tiedostoista tallennetaan työpöydälle</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Tuotemerkit, joita tämä koskee    </div>    <div>        <ul>            <li>Kaikki pöytätietokoneet ja kannettavat</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Käyttöjärjestelmä    </div>    <div>        <ul>            <li>Windows 8, 8.1 ja 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Ratkaisu    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        Valitse <span style='font-weight:bold;'> Asetukset </span>                    </li>                    <li style='padding:5px 0;'>                        Valitse <span style='font-weight:bold;'> Päivitys ja palautus</span>                    </li>                    <li style='padding:5px 0;'>                        <div>Valitse <span style='font-weight:bold;'> Palautus</span></div>                        <div style='padding:5px 0'>Valitse Siivoa tietokone vaikuttamatta tiedostoihisi -kohdassa <span style='font-weight:bold;'> Aloittaminen.</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        Napauta <span style='font-weight:bold;'> 'Seuraava'</span>.                    </li>                    <li style='padding:5px 0;'>                        Aloita päivitysprosessi valitsemalla <span style='font-weight:bold;'> 'Päivitä'</span>.                    </li>                    <li style='padding:5px 0;'>                        Kun päivitysprosessi on valmis, voit etsiä Poistetut sovellukset -luettelon työpöydältä                    </li>                    <li style='padding:5px 0;'>                        Voit etsiä poistetut sovellukset samalla, kun päivität järjestelmän                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> Etsi <span style='font-weight:bold;'> Päivitys </span>aloitusvalikon hakutyökalussa.</li>                    <li style='padding:5px 0;'>                        <div>Valitse <span style='font-weight:bold;'> 'Siivoa tietokoneesi vaikuttamatta tiedostoihin'</span> alla näkyvistä hakutuloksista.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div>Aloita Windows 10 -tietokoneesi päivitys valitsemalla <span style='font-weight:bold;'> Aloitus </span>-painike heti otsikon <span style='font-weight:bold;'> 'Siivoa tietokone vaikuttamatta tiedostoihisi'</span> alla.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        Lisätietoja    </div>    <div>        Useimmiten, kun aloitat tietokoneen siivoamisen, se suorittaa toiminnon loppuun itse. Jos Windows kuitenkin tarvitsee puuttuvia tiedostoja, ohjelma pyytää asettamaan tietokoneeseen elvytystietovälineen, joka on yleensä DVD-levy tai muistitikku. Jos näin käy, tarvittavat toimenpiteet riippuvat tietokoneestasi.    </div>    <div style='padding:10px 0'>        Jos olet päivittänyt tietokoneesi Windows 8.1- tai Windows RT 8.1 -versioon DVD-levyn avulla, käytä kyseistä levyä. Jos sinulla ei ole Windows 8.1 tai Windows RT 8.1 -tietovälinettä, ota yhteys Microsoftin tukipalveluun.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -1517,8 +1918,8 @@
             "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
         },
         "question3": {
-            "title": "How to know your machine's CPU",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    How to know your machine's CPU\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.\n    The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit\n    system.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n    <li>All Desktop and Laptops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operating System</h3>\n<ul>\n    <li>Windows 7 , 8 , 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n    <li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button,</strong>\n        right-clicking Computer, and then clicking Properties  </li>\n    <li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then click\n        <strong>Search.</strong></li>\n    <li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n    <li>Tap or click <strong>System</strong></li>\n    <li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong>\n        is displayed in the System type field under the System heading.\n        If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong>\n        <strong>32-bit Operating </strong>System is displayed in the System type field under the System heading.<br />\n         </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then\n        click <strong>Search.</strong></li>\n    <li>In the search box, type <strong>system information</strong></li>\n    <li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and then\n        click <strong>System Summary.</strong></li>\n    <li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>\n        x64-based PC is displayed in the <strong>System type</strong> field under the \n        Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong>\n        version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> field\n        under the Item heading.  </li>\n</ol>\n<p> </p>",
+            "title": "Koneen suorittimen tunnistaminen",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Koneen suorittimen tunnistaminen</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tilanne</h3><p>Termit 32-bittinen ja 64-bittinen viittaavat tapaan, jolla tietokoneen suoritin (kutsutaan myös keskusyksiköksi tai CPU:ksi) käsittelee tietoja. 64-bittinen Windows-versio käsittelee suuria määriä RAM (Random Access Memory) -muistia tehokkaammin kuin 32-bittinen järjestelmä.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tuotemerkit, joita tämä koskee</h3><p>Yllä mainittu tilanne liittyy seuraaviin järjestelmiin, näihin kuitenkaan rajoittumatta:</p><ul>    <li>Kaikki pöytätietokoneet ja kannettavat</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Käyttöjärjestelmä</h3><ul>    <li>Windows 7, 8, 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Ratkaisu</h3><p><strong><u>Windows 7 tai Vista</u></strong></p><ol>    <li>Avaa järjestelmä napsauttamalla <strong>Käynnistä-painiketta </strong>Kuva <strong>Käynnistä-painikkeesta,</strong> napsauta hiiren oikealla painikkeella Tietokone ja valitse sitten Ominaisuudet  </li>    <li>Järjestelmä-kohdassa voit tarkastella järjestelmän lajia.</li></ol><p><strong><u>Windows 8 ja Windows 10</u></strong></p><p><strong>Tapa 1:</strong> Tarkastele järjestelmäikkunaa Ohjauspaneelissa</p><ol>    <li>Sipaise kuvaruudun oikeasta reunasta sisäänpäin ja napauta sitten <strong>Hae</strong>. Jos käytät hiirtä, osoita näytön oikeaa alakulmaa ja napsauta sitten <strong>Haku-painiketta.</strong></li>    <li>Kirjoita hakukenttään <strong>järjestelmä</strong> ja valitse sitten <strong>Asetukset.</strong></li>    <li>Valitse <strong>Järjestelmä</strong></li>    <li>Jos käytät Windows 8 -käyttöjärjestelmän 64-bittistä versiota <strong>64-bittinen käyttöjärjestelmä</strong> näkyy Järjestelmän tyyppi -kentässä Järjestelmä-otsikon alla. Jos käytät Windows 8 <strong>-käyttöjärjestelmän</strong> <strong>32</strong>-bittistä versiota, <strong>32-bittinen </strong>käyttöjärjestelmä näkyy Järjestelmän tyyppi -kentässä Järjestelmä-otsikon alla.<br />  </li></ol><p><strong>Tapa 2</strong>: Tarkastele Järjestelmätiedot-ikkunaa</p><ol>    <li>Sipaise kuvaruudun oikeasta reunasta sisäänpäin ja napauta sitten <strong>Hae</strong>. Jos käytät hiirtä, osoita näytön oikeaa alakulmaa ja napsauta sitten <strong>Haku-painiketta.</strong></li>    <li>Kirjoita hakukenttään <strong>järjestelmän tiedot</strong></li>    <li>Valitse<strong> Järjestelmä</strong>, napsauta <strong>Järjestelmän tiedot,</strong> ja valitse sitten <strong>Järjestelmän yhteenveto.</strong></li>    <li>Jos käytät Windows 8 -käyttöjärjestelmän <strong>64-bittistä </strong>versiota<strong>, </strong> x64-pohjainen tietokone näkyy <strong>Järjestelmän tyyppi</strong> -kohdassa nimikkeen otsikon alla. <br /> <br /> Jos käytät Windows 8 -käyttöjärjestelmän<strong> 32-bittistä</strong> versiota, x86-pohjainen tietokone näkyy <strong>Järjestelmän tyyppi</strong> -kentässä nimikkeen otsikon alla.  </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -1606,8 +2007,8 @@
             }
         },
         "question4": {
-            "title": "Check your machine's battery use",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Check your machine's battery use\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> \n    screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.\n    That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;\n    apps&ndash;are using too much power.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n\n<ul>\n    <li>Lenovo laptops, desktops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Systems</h3>\n<ul>\n    <li>All</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operationg System</h3>\n<ul>\n    <li>Window 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your\n    traditional <strong>control panel </strong>view, this feature is located in the\n    new <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>\n    select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br />\n        <br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last\n    from last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;\n    <strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,\n    the display,</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong>\n     options show how much power is used by applications while you&rsquo;re using them, compared to applications\n    running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>\n        &ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.\n    This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of this\n    feature.\n    It will display a list of the apps have used battery power in that period, and show you what percentage of your\n    battery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
+            "title": "Tarkista koneen akun käyttö",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Tarkista koneen akun käyttö</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tilanne</h3><p>Windows 10 -käyttöjärjestelmään kuuluu uusi ”<strong>Akun käyttö”</strong> -näyttö, josta näet mikä tyhjentää kannettavasi akkua. Tämä tarkoittaa, että se kertoo tarkalleen, mitkä sovellukset – sekä työpöytäversiot että Windows 10 -käyttöjärjestelmän yleissovellukset – käyttävät liikaa virtaa.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tuotemerkit, joita tämä koskee</h3><ul>    <li>Lenovon kannettavat tietokoneet, pöytätietokoneet</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Järjestelmät</h3><ul>    <li>Kaikki</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Käyttöjärjestelmä</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Ratkaisu</h3><p>Tämä ominaisuus on uusi Windows 10:ssä, joten se on löydettävä ensin, koska sitä ei ole tallennettu perinteiseen <strong>ohjauspaneeli</strong>-näkymään. Tämä ominaisuus sijaitsee uudessa <strong>”Asetukset”</strong>-sovelluksessa</p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Hae Akun käyttö -näyttö</h3></p><p>1. Valitse <strong>Käynnistysvalikon </strong>” Asetukset”-vaihtoehto</p><p>2. Valitse <strong>Asetukset</strong>-kohdassa <strong>”Järjestelmä”</strong>ja valitse sitten <strong>”Akun säästö”.<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Lisätietoja saat napauttamalla <strong>”Akun käyttö”</strong>-linkkiä tämän otsikon alla. </p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analysoi virran käyttöäsi</h3><p>4 Voit muuttaa akun käyttönäytön näyttämään akun käytön viimeisten 24 – 48 tunnin aikana tai edellisen viikon aikana</p><p>5 <strong>”Järjestelmä”,</strong> ”<strong>Näyttö,</strong>” ja ”<strong>Wi-Fi”</strong> prosentit. Tämä näyttää, paljonko akkuvirtaa järjestelmän prosessit ja näyttö ovat käyttäneet.</p><p>6 Vaihtoehdot <strong>”Käytössä”</strong> ja <strong>”Taustalla”</strong> näyttävät, kuinka paljon sovellukset käyttävät virtaa niiden käytön aikana verrattuna taustalla käynnissä oleviin sovelluksiin.</p><p>7 Jos sovellukset käyttävät virtaa taustalla, voit napauttaa <strong>”Muuta taustasovellusten asetuksia” </strong>-linkkiä ja estää sovelluksia olemasta käynnissä taustalla. Tämä toimii vain Windows 10:n yleissovelluksissa.</p><p>8 Vieritä pidemmälle alaspäin ja näet luettelon sovelluksista. Tätä pidetään tämän toiminnon hyödyllisimpänä osiona. Se tuo näkyviin luettelon sovelluksista, jotka ovat käyttäneet akkuvirtaa kyseisenä ajanjaksona ja näyttää, kuinka monta prosenttia akkuvirtaa kukin sovellus on käyttänyt</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -1674,8 +2075,8 @@
             }
         },
         "question5": {
-            "title": "Use your PC like a tablet",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Use your PC like a tablet\n</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet\n        mode</strong> .</p>\n<p> </p>\n<p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device \n    on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and\n    how the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the\n    screen.</p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.\n    Select the <strong>Start </strong>button, select <strong>Settings </strong>>\n    <strong>System </strong>> <strong>\n        Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.\n    To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and\n    you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n    <li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n    <li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then\n        drag it to one side to snap it into your divided screen.</li>\n    <li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
+            "title": "Tietokoneen käyttö taulutietokoneen tavoin",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Tietokoneen käyttö taulutietokoneen tavoin</div><hr><p>Muistiotila tekee Windows-käyttöjärjestelmästä entistä intuitiivisemman ja helppokäyttöisemmän, kun käytössä on kosketusnäytöllinen laite.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Muistiotila</h3><p>Voit ottaa muistiotilan käyttöön napsauttamalla tehtäväpalkissa <strong>toimintokeskus</strong> ja valitsemalla sitten <strong>Muistiotila</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Huomautus</h3><p>Saat lisätietoja siitä, miten laite ottaa muistiotilan automaattisesti käyttöön etsimällä laitteesi valmistajan verkkosivulta. Tämän toiminnon tuki riippuu laitteistosta, asennetusta ohjaimesta ja siitä, miten valmistaja on määrittänyt laitteen asetukset. </p><p> </p><p>Muistiotilassa sovellukset avautuvat koko näytön kokoisiksi, mikä tuo työskentelylle lisätilaa. Jos haluat sulkea sovelluksen, vedä se näytön alareunaan.</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Vinkki</h3><p>Tehtäväpalkki on käytettävissä, kun tietokone on muistiotilassa. Voit kuitenkin piilottaa sen, jos haluat lisää tilaa näyttöön. Valitse <strong>Käynnistä</strong>-painike ja sitten <strong>Asetukset </strong>> <strong>Järjestelmä </strong>> <strong> Muistiotila</strong> ja ota <strong>Piilota tehtäväpalkki automaattisesti muistiotilassa</strong>. Voit tuoda piilotetun tehtäväpalkin näkyviin sipaisemalla näytön alareunasta ylöspäin tai viemällä hiiren osoittimen tämän kohdan päälle.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Kahden sovelluksen käyttö samanaikaisesti</h3><p>Jos haluat käyttää kahta sovellusta rinnakkain muistiotilassa, vedä avoin sovellus alaspäin ja sivulle. Näet, mihin se loksahtaa paikalleen ja näet avoinna olevat sovellukset sen vieressä.</p><p>Tässä näkymässä voit myös:</p><ul>    <li>Muuttaa molempien sovellusten kokoa samanaikaisesti käyttämällä kahden näytöllä olevan sovelluksen välistä jaettua reunaa.</li>    <li>Avaa uusi sovellus tehtävänäkymästä, valitse tehtäväpalkissa <strong>Tehtävänäkymä</strong>, valitse sovellus ja vedä se sitten toiseen laitaan, kun haluat sijoittaa sen jaetulle näytölle.</li>    <li>Voit siirtyä takaisin sovellukseen tai avata aiemmin käyttämäsi sovelluksen napsauttamalla tehtäväpalkin Edellinen-painiketta.</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -1714,8 +2115,8 @@
             }
         },
         "question6": {
-            "title": "Get to know Cortona, your personal assistant",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Get to know Cortana, your personal assistant\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>What is Cortana?</h3>\n<hr />\n<p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing\n    works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you\n    select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n    <li>Give you reminders based on time, places, or people.</li>\n    <li>Track packages, teams, interests, and flights.</li>\n    <li>Send emails and texts.</li>\n    <li>Manage your calendar and keep you up to date.</li>\n    <li>Create and manage lists.</li>\n    <li>Chit chat and play games.</li>\n    <li>Find facts, files, places, and info.</li>\n    <li>Open any app on your system.</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Try this: Set a reminder</h3>\n<hr />\n\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or\n    even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync\n    notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hey Cortana?</h3>\n<hr />\n<p>Set Cortana to hear you anytime you say\n    'Hey Cortana.' Select the search box on the taskbar to open Cortana home.\n    Then select <strong>Settings</strong>  and turn on <strong>Let Cortana respond to 'Hey\n        Cortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.\n</p>\n<p> </p>",
+            "title": "Tutustu Cortanaan, henkilökohtaiseen avustajaasi",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Tutustu Cortanaan, henkilökohtaiseen avustajaasi</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Mikä Cortana on?</h3><hr /><p>Cortana on digitaalinen agenttisi. Hän auttaa sinua saamaan asioita aikaan.</p><p>Mitä enemmän käytät Cortanaa, sitä räätälöidympi kokemuksesi tulee olemaan.</p><p>Aloita kirjoittamalla kysymys hakukenttään, tai valitse mikrofoni ja puhu Cortanalle. (Kirjoitus toimii kaikentyyppisissä tietokoneissa, mutta sinulla on oltava mikrofoni, jotta voit ohjata sovellusta puheella.)</p><p>Jos et ole varma siitä, mitä haluat sanoa, näet ehdotukset lukitusnäytössä ja Cortanan aloitusnäytöllä, kun olet valinnut tehtäväpalkin hakuruudun.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Koti 2. Kannettava tietokone 3. Asetukset 4. Palaute</li></ol><p>Seuraavassa on joitakin tapoja, joilla Cortana voi auttaa sinua:</p><ul>    <li>Saat aikaan, paikkoihin tai henkilöihin perustuvia muistutuksia.</li>    <li>Seuraa paketteja, tiimejä, kiinnostuksen kohteita ja lentoja.</li>    <li>Lähetä sähköposteja ja tekstiviestejä.</li>    <li>Hallitse kalenteriasi ja pidä itsesi ajan tasalla.</li>    <li>Luo ja hallinnoi luetteloja.</li>    <li>Jutustele ja pelata pelejä.</li>    <li>Hae faktoja, tiedostoja, paikkoja ja tietoja.</li>    <li>Avaa mikä tahansa järjestelmän sovellus.</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Kokeile tätä: muistutuksen asetus</h3><hr /><p>Yksi asioista, jotka Cortana voi tehdä, on antaa sinulle muistutuksia. Hän voi muistuttaa sinua tekemään asioita perustuen aikaan, paikkoihin tai jopa ihmisiin.</p><p>Voit esimerkiksi kirjoittaa tai sanoa: \\\"Muistuta minua onnittelemaan Tarjaa, kun hän soittaa seuraavan kerran\\\".</p><p>Muistutus tulee näkyviin, kun Tarja soittaa sinulle.</p><p>Lisäbonus: Jos sinulla on Windows-puhelin tai Cortana for iPhone tai Android -sovellus, voit määrittää Cortanan synkronoimaan ilmoitukset tietokoneen ja puhelimen välillä.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hei Cortana?</h3><hr /><p>Voit asettaa Cortanan kuuntelemaan aina, kun sanot: \\\"Hei Cortana\\\". Avaa Cortanan aloitusnäyttö valitsemalla tehtäväpalkista hakuruutu. Valitse sitten <strong>Asetukset</strong> ja ota käyttöön <strong>Anna Cortanan vastata \\\"Hei Cortana\\\" -komentoon.</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Huomautus</p><p>Cortana on käytettävissä vain tietyissä maissa tai joillakin alueilla, ja jotkin Cortanan ominaisuudet eivät ehkä ole käytettävissä kaikkialla.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -1750,13 +2151,14 @@
             },
             "para12": "Note",
             "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        }
+        },
+        "pageTitle": "Tukitiedot"
     },
     "welcometutorial": {
         "description": "Vantagen avulla voit helposti päivittää ajureita, suorittaa vianmäärityksen, jättää tukipyyntöjä ja saada lisätietoja laitteesta. Voit nopeasti mukauttaa käyttökokemusta ja etsiä hyödyllisiä, tarpeisiisi räätälöityjä tietoja",
         "bullets1": "Tarkastele järjestelmän tilaa Vantage-kojelaudalla.",
-        "bullets2": "Security Advisor helpottaa suojauksen hallintaa ",
-        "bullets3": "Automaattiset päivitykset pitävät laitteen moitteettomassa kunnossa",
+        "bullets2": "Security Advisor -ohjelman avulla voit hallita tietoturvaa helposti (saatavilla tietyissä järjestelmissä).",
+        "bullets3": "Automaattiset päivitykset pitävät laitteen moitteettomassa kunnossa (saatavilla tietyissä järjestelmissä).",
         "subtitle1": "Miten aiot käyttää laitetta?",
         "subtitle2": "Kerro meille kiinnostuksen kohteistasi",
         "personal": "Henkilökohtainen käyttö",
@@ -1798,6 +2200,6 @@
         "usageStatistics": "Käyttötilastot",
         "usageStatisticsDescription": "Lähetä nimettömiä käyttötilastoja Lenovolle.",
         "Note": "Huomautus: ",
-        "settingsNotes": "Kaikki tämän sivun asetukset tulevat voimaan vasta, kun käyttäjä on käynnistänyt tietokoneen uudelleen."
+        "settingsNotes": "Kaikki tämän sivun asetukset tulevat voimaan vasta, kun käyttäjä on käynnistänyt sovelluksen uudelleen."
     }
 }

@@ -4,16 +4,19 @@
 	display: inline-block;
 	position: relative;
 	cursor: pointer;
+	label {
+		cursor: pointer;
+	}
 	&.switch-disable {
 		opacity: 0.3;
-		cursor: auto;
+		cursor: pointer;
 		
 		.switch {
-			cursor: auto;
+			cursor: pointer;
 		}
 
 		.switch-label {
-			cursor: auto;
+			cursor: pointer;
 		}
 	}
 }
@@ -157,10 +160,12 @@ input.wifi-checked + .switch.switch-xs > small {
 	font-weight: $weight_medium;
 	position: absolute;
 	top: 0.6rem;
-	left: 1.5rem;
+	width: 3.5rem;
+	left: 0.5rem;
+	text-align: center;
 
 	&.off-label {
-		left: 2.2rem;
+		left: 2rem;
 		color: $shade_darkest;
 	}
 }

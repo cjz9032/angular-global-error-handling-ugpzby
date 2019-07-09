@@ -1,0 +1,211 @@
+<div class="vtr-modal-chs-welcome-container position-relative">
+	<div class="modal-header justify-content-end">
+		<div role="button" id="chs-tour-btn-close"
+			attr.aria-label="chs-tour-btn-close"
+			href="javascript:;"
+			class="close-btn"
+			metricsItem="closeCHSWelcomeModal"
+			metricsEvent="featureClick"
+			metricsParent="ConnectedHomeSecurity"
+			(click)="closeModal()">
+			<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
+				alt=""
+				srcset="">
+		</div>
+	</div>
+	<!-- start of page 1-->
+	<div class="page page-one" *ngIf="switchPage === 1">
+		<div class="text-center">
+			<div class="page-img">
+				<img src="assets/images/connected-home-security/welcome-page-one.png" alt="">
+			</div>
+			<p class="page-title mb-3">{{'homeSecurity.tour.welcome1' | translate}}</p>
+			<p class="page-desc p-0">{{'homeSecurity.tour.welcomeDesc1' | translate}}</p>
+			<p class="page-desc font-weight-bold">{{'homeSecurity.tour.welcomeDescStart' | translate}}</p>
+		</div>
+	</div>
+	<!-- end of page1-->
+	<!-- start of page 2-->
+	<div class="page page-two" *ngIf="switchPage === 2">
+		<div class="text-center">
+				<div class="page-img">
+				<img src="assets/images/connected-home-security/welcome-page-two.png" alt="">
+			</div>
+			<p class="page-title pb-3">{{'homeSecurity.tour.welcome2' | translate}}</p>
+			<p class="page-desc">{{'homeSecurity.tour.welcomeDesc2' | translate}}</p>
+		</div>
+	</div>
+	<!-- end of page2-->
+	<!-- start of page 3-->
+	<div class="page page-three" *ngIf="switchPage === 3 && showPageLenovoId === true">
+		<div class="chs-logo w-100 pb-5">
+			<img src="assets/images/connected-home-security/welcome-chs-logo.png" alt="">
+		</div>
+	<div class="chs-login-content row no-gutters">
+		<div class="col-7">
+		<div class="text-regular mb-5 ml-4">
+			<p class="h3">{{'homeSecurity.tour.create' | translate}}</p>
+			<p class="h1">{{'homeSecurity.tour.lenovoId' | translate}}</p>
+		</div>
+		<div class="mb-5 ml-4">
+			<ul class="list-unstyled">
+			<li class="text pb-4">
+				<div class="row">
+				<div class="col-auto pl-0">
+					<div class="bullet-icon-check">
+					<div class="icon-bkg">
+						<fa-icon [icon]="['fas', 'check']">
+						</fa-icon>
+					</div>
+					</div>
+				</div>
+				<div class="col text-regular align-self-center" [innerHtml]="'homeSecurity.tour.notifications' | translate"></div>
+				</div>
+			</li>
+			<li class="text pb-4">
+				<div class="row">
+				<div class="col-auto pl-0">
+					<div class="bullet-icon-check">
+					<div class="icon-bkg">
+						<fa-icon [icon]="['fas', 'check']">
+						</fa-icon>
+					</div>
+					</div>
+				</div>
+				<div class="col text-regular align-self-center" [innerHtml]="'homeSecurity.tour.monitor' | translate"></div>
+				</div>
+			</li>
+			<li class="text">
+				<div class="row">
+				<div class="col-auto pl-0">
+					<div class="bullet-icon-check">
+					<div class="icon-bkg">
+						<fa-icon [icon]="['fas', 'check']">
+						</fa-icon>
+					</div>
+					</div>
+				</div>
+				<div class="col text-regular align-self-center" [innerHtml]="'homeSecurity.tour.peaceOfMind' | translate"></div>
+				</div>
+			</li>
+			</ul>
+		</div>
+		<vtr-ui-button
+			id="chs-tour-btn-login-lenovoId"
+			aria-label="chs-tour-btn-login-lenovoId"
+			metricsEvent="FeatureClick"
+			metricsItem="loginLenovoId"
+			metricsParent="{{metricsParent}}"
+			[label]="'homeSecurity.tour.signInLenovoId' | translate"
+			[title]="'homeSecurity.tour.signInLenovoId' | translate"
+			(click)="openLenovoId()"></vtr-ui-button>
+		</div>
+		<div class="col-5">
+		<div class= "w-100 row justify-content-end">
+			<img [src]="'assets/images/connected-home-security/ecosystem-circle-green.svg' | svgInline | async" alt="">
+		</div>
+		</div>
+	</div>
+	</div>
+	<!-- end of page3-->
+	<!-- start of page 4-->
+	<div class="page page-four" *ngIf="switchPage === 4 && showPageLocation === true">
+		<div class="chs-logo w-100 pb-5">
+			<img src="assets/images/connected-home-security/welcome-chs-logo.png" alt="">
+		</div>
+		<p class="description">
+			{{'homeSecurity.tour.locationTitle' | translate}}
+		</p>
+		<p class="sub-desc">
+			{{'homeSecurity.tour.locationPermission' | translate}}
+		</p>
+		<div class="d-flex sub-desc">
+			<div class="ml-0 mr-4 pl-0">
+				<vtr-ui-button *ngIf="!isLocationServiceOn"
+					id="chs-tour-btn-openLocation"
+					aria-label="chs-tour-btn-openLocation"
+					metricsEvent="FeatureClick"
+					metricsItem="CHSWelcomeOpenLocationButton"
+					metricsParent="{{metricsParent}}"
+					(click)="openLocation($event)"
+					[upperCaseLabel]=false
+					[label]="'homeSecurity.tour.locationTitle' | translate"
+					[title]="'homeSecurity.tour.locationTitle' | translate"></vtr-ui-button>
+				<!-- show done button -->
+				<vtr-ui-button *ngIf="isLocationServiceOn === true"
+					id="chs-tour-location-done-btn"
+					aria-label="chs-tour-location-done-btn"
+					metricsEvent="FeatureClick"
+					metricsItem="CHSWelcomeDoneButton"
+					metricsParent="{{metricsParent}}"
+					(click)="next(switchPage, isLenovoIdLogin, isLocationServiceOn)"
+					[label]="'homeSecurity.tour.done' | translate"
+					[title]="'homeSecurity.tour.done' | translate"></vtr-ui-button>
+			</div>
+		</div>
+	</div>
+	<!-- end of page4-->
+	<div class="page-indicator">
+		<div *ngIf="switchPage === 1"
+			class="row text-center align-items-center justify-content-center">
+			<div>
+				<vtr-ui-button id="chs-tour-btn-start"
+					aria-label="chs-tour-btn-start"
+					metricsEvent="FeatureClick"
+					metricsItem="CHSWelcomeNextButton"
+					metricsParent="{{metricsParent}}"
+					[label]="'tutorial.next' | translate"
+					(click)="next(switchPage, isLenovoIdLogin, isLocationServiceOn)"
+					[title]="'tutorial.next' | translate"></vtr-ui-button>
+			</div>
+		</div>
+		<div *ngIf="switchPage === 2" class="row text-center justify-content-between align-items-center no-gutters">
+			<div class="button-welcome">
+				<vtr-ui-button id="chs-tour-btn-prev"
+					aria-label="chs-tour-btn-prev"
+					metricsEvent="FeatureClick"
+					metricsItem="CHSWelcomePrevButton"
+					metricsParent="{{metricsParent}}"
+					[label]="'common.ui.back' | translate"
+					(click)="prev(switchPage)"
+					[title]="'common.ui.back' | translate"></vtr-ui-button>
+			</div>
+			<div class="button-welcome">
+				<vtr-ui-button
+					id="chs-tour-btn-next"
+					aria-label="chs-tour-btn-next"
+					metricsEvent="FeatureClick"
+					metricsItem="CHSWelcomeNextButton"
+					metricsParent="{{metricsParent}}"
+					(click)="next(switchPage, isLenovoIdLogin, isLocationServiceOn)"
+					[label]="'tutorial.next' | translate"
+					[title]="'tutorial.next' | translate"></vtr-ui-button>
+			</div>
+		</div>
+		<div *ngIf="switchPage === 3" class="row text-center justify-content-between align-items-center no-gutters">
+			<div class="button-welcome">
+				<vtr-ui-button id="chs-tour-btn-pageThree-prev"
+					aria-label="chs-tour-btn-pageThree-prev"
+					metricsEvent="FeatureClick"
+					metricsItem="CHSWelcomePrevButton"
+					metricsParent="{{metricsParent}}"
+					(click)="prev(switchPage)"
+					[label]="'common.ui.back' | translate"
+					[title]="'common.ui.back' | translate"></vtr-ui-button>
+			</div>
+			<div class="button-welcome">
+				<a id="chs-tour-lnk-skip"
+					attr.aria-label="chs-tour-lnk-skip"
+					vtrMetrics
+					metricsEvent="FeatureClick"
+					metricsItem="CHSStartTrialButton"
+					metricsParent="{{metricsParent}}"
+					(click)="next(switchPage, isLenovoIdLogin, isLocationServiceOn)">{{'homeSecurity.tour.skip' | translate}}</a>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="loading" class="loading position-absolute w-100 h-100 d-flex justify-content-center align-items-center">
+		<div class="spinner-border text-primary progress-spinner" role="status">
+		</div>
+	</div>
+</div>

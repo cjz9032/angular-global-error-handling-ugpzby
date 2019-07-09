@@ -15,14 +15,17 @@
 			[metricsValue]="!radio.checked">
 		<label for="{{radioId}}"
 			class="checkbox-custom-label">
-			<div *ngIf="!hideIcon" [ngClass]="'icomoon icomoon-'+value"></div>
-			<fa-layers [fixedWidth]="true" *ngIf="checked">
-				<fa-icon class="icon-circle"[icon]="['fas', 'circle']"></fa-icon>
-				<fa-icon class="check-circle"[icon]="['far', 'check-circle']"></fa-icon>
-
-		</fa-layers>
+			<div *ngIf="!hideIcon"
+				[ngClass]="'icomoon icomoon-'+value"></div>
+			<fa-layers [fixedWidth]="true"
+				*ngIf="checked">
+				<fa-icon class="icon-circle"
+					[icon]="['fas', 'circle']"></fa-icon>
+				<fa-icon class="check-circle"
+					[icon]="['far', 'check-circle']"></fa-icon>
+			</fa-layers>
 
 		</label>
-		<div [ngClass]="['title','text-center',theme==='white'?'text-primary':'text-white']">{{label|uppercase}}</div>
+		<div [ngClass]="['title','text-center',theme==='white'?'text-primary':'text-white']">{{label | capitalizeFirst}}</div>
 	</div>
 </div>

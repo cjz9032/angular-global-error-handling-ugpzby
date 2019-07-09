@@ -1,4 +1,4 @@
-@import '../../../app.theme.scss';
+@import "../../../app.theme.scss";
 
 .vtr-widget-lighting {
 	.widget-title {
@@ -13,7 +13,7 @@
 		padding: 4rem;
 		background: url(./../../../../assets/images/gaming/lightingImage@2x.png) center top no-repeat $gaming_dark;
 		background-size: 100% auto;
-		padding-top:18rem;
+		padding-top: 18rem;
 	}
 	.lighting-porfile {
 		padding: 3rem;
@@ -39,7 +39,7 @@
 			background-clip: padding-box;
 			border: solid 0.2rem transparent;
 			&::after {
-				content: ' ';
+				content: " ";
 				position: absolute;
 				border-radius: 5rem;
 				top: 0rem;
@@ -51,7 +51,7 @@
 				z-index: -1;
 			}
 			&::before {
-				content: ' ';
+				content: " ";
 				position: absolute;
 				border-radius: 5rem;
 				top: 0rem;
@@ -84,7 +84,17 @@
 					cursor: pointer;
 				}
 			}
-
+			.toggle-stable {
+				position: absolute ;
+				background: $gaming_lighting_gradient;
+				width: 25% ;
+				height: 4.2rem;
+				border-radius: 4.2rem;
+				margin: 0.4rem 0.2rem;
+				transition: all 0.3s ease-in-out;
+				left: 0;
+				color: white !important;
+			}
 			.toggle {
 				position: absolute;
 				background: $gaming_lighting_gradient;
@@ -92,58 +102,121 @@
 				height: 4.2rem;
 				border-radius: 4.2rem;
 				margin: 0.4rem 0.2rem;
-				transition: all .3s ease-in-out;
+				transition: all 0.3s ease-in-out;
 				left: 0;
+				color: white !important;
 			}
 			#off_radio:checked {
-				& ~ #off {
-					color: $gaming_lightest;
-				}
+				// & ~ #off {
+				// 	color: $gaming_lightest;
+				// }
 				& ~ .toggle {
 					left: 0%;
 				}
 			}
 			#first_radio:checked {
-				& ~ #first_lbl {
-					color: $gaming_lightest;
-				}
+				// & ~ #first_lbl {
+				// 	color: $gaming_lightest;
+				// }
 				& ~ .toggle {
 					left: 25%;
 				}
 			}
 			#second_radio:checked {
-				& ~ #second_lbl {
-					color: $gaming_lightest;
-				}
+				// & ~ #second_lbl {
+				// 	color: $gaming_lightest;
+				// }
 				& ~ .toggle {
 					left: 50%;
 				}
 			}
 			#third_radio:checked {
-				& ~ #third_lbl {
-					color: $gaming_lightest;
-				}
+				// & ~ #third_lbl {
+				// 	color: $gaming_lightest;
+				// }
 				& ~ .toggle {
 					left: 74%;
+
+					@media #{$mediaquery_X5} {
+						left: 74.6%;
+					  }
+					  @media #{$mediaquery_X6} {
+						left: 74.25%;
+					  }
+					  @media #{$mediaquery_X34} {
+						left: 73%;
+					  }
+				}
+			}
+		}
+		vtr-ui-gaming-driver-popup {
+			::ng-deep{
+				ui-gaming-driver-popup {
+					right: calc(100% - 1rem);
+					top: -3rem;
+					@media #{$medium-screen}{
+						right: auto;
+						left: 50%;
+						transform: translateX(-50%);
+						top: -23rem;
+						&::after {
+							top: calc(100% - 1.5rem);
+							right: calc(50% - 1.5rem);
+							transform: rotate(45deg);
+						}
+					}
+					@media #{$small-screen}{
+						right: auto;
+						left: 50%;
+						transform: translateX(-50%);
+						top: -23rem;
+						&::after {
+							top: calc(100% - 1.5rem);
+							right: calc(50% - 1.5rem);
+							transform: rotate(45deg);
+						}
+					}
 				}
 			}
 		}
 	}
 	.list-group {
-		.list-group-item{
+		.list-group-item {
 			background: transparent;
 			border: none;
+			padding-left: 0;
+			padding-top: 0;
+			margin-bottom: -1.8rem;
 			a {
-				font-size: 1.6rem;
-				color: $gaming_lightest;
+				font-size: 1.5rem;
+				color: $gaming_switch_light;
 				text-decoration: none;
-				padding-left: 0.4rem;
+				padding-left: 0;
 				display: flex;
+				width: 11rem;
 				align-items: center;
+				cursor: pointer;
+				color: $shade_light;
+				line-height: 1.5rem;
+				&:hover {
+					color: $gaming_lightest;
+					.icon{
+						background:$screen_dark_20;
+						color: $gaming_lightest;
+					}
+				}
 				.icon {
 					margin-right: 0.5rem;
+					font-size: 2rem;
+					transition: all .2s ease-in-out;
+					border-radius: 50%;
+					padding: 0.6rem;
+					color: $gaming_grey_lightest;
 				}
 			}
 		}
+	}
+	.gamingTextColor {
+		color: $gaming_lightest !important;
 	}
 }

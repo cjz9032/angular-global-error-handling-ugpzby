@@ -1,113 +1,184 @@
 @import "../../../app.theme.scss";
 
 .ui-lighting-profile {
-    border-radius: $border_radius;
-    background: $dark_cell;
-    box-shadow: $drop_shadow_gaming;
-    padding: 6rem;
+  border-radius: $border_radius;
+  background: $dark_cell;
+  box-shadow: $drop_shadow_gaming;
+  padding: 6rem;
+  height: auto;
+  @media #{$mediaquery_5} {
     height: auto;
-    @media #{$mediaquery_5} {
+  }
+  @media #{$mediaquery_6} {
+    padding: 4rem;
+    height: auto;
+  }
+  vtr-ui-lighting-profile-toggle {
+    width: 75%;
+    @media #{$small-screen}{
+      width: 48%;
+    }
+  }
+  vtr-ui-brightness-slider {
+    width: 20%;
+    @media #{$small-screen}{
+      width: 48%;
+    }
+  }
+
+  .lighting-area {
+    min-height: 40rem;
+    margin-top: 2.2rem;
+    background: $gaming_lighting_profile_bg;
+    border-radius: 0.5rem;
+    background: url(./../../../../assets/images/gaming/lighting/blueBG.png) left center no-repeat $gaming_lighting_profile_bg;
+    background-size: contain;
+    padding: 2rem;
+    @media #{$small-screen}{
+      background: url(./../../../../assets/images/gaming/lighting/blueBG-horizontal.png) center top no-repeat $gaming_lighting_profile_bg;
+      background-size: 100% auto;
+      .d-flex{
+        flex-direction: column;
+      }
+    }
+    @media #{$below-large-screen}{
+      background: url(./../../../../assets/images/gaming/lighting/blueBG-horizontal.png) center top no-repeat $gaming_lighting_profile_bg;
+      background-size: 100% auto;
+      .d-flex{
+        flex-direction: column;
+      }
+    }
+    .gaming-device-image {
+      width: 40%;
+      //max-width: 40%;
+      // @media #{$mediaquery_X29} {
+      //   max-width: 35%;
+      // }
+
+      // @media #{$mediaquery_17} {
+      //   max-width: 30%;
+      // }
+      // @media #{$mediaquery_X7} {
+      //   max-width: 25%;
+      // }
+      // @media #{$mediaquery_10} {
+      //   min-width: 20%;
+      // }
+      // @media #{$mediaquery_X9} {
+      //   width: 30%;
+      // }
+      @media #{$small-screen}{
+        justify-content: flex-end;
+        max-width: 100%;
+        align-items: flex-end !important;
+      }
+      @media #{$below-large-screen}{
+        justify-content: flex-end;
+        max-width: 100%;
+        align-items: flex-end !important;
+      }
+      .img-responsive {
+        width: 100%;
+        max-width: 40rem;
         height: auto;
-    }
-    @media #{$mediaquery_6} {
-        padding: 4rem;
-        height: auto;
-    }
-    vtr-ui-lighting-profile-toggle {
-        width: 75%;
-    }
-    vtr-ui-brightness-slider {
-        width: 20%;
-    }
-
-    // brightness slider   
-
-
-    .lighting-area {
-        min-height: 40rem;
-        margin-top: 2.2rem;
-        background: $gaming_lighting_profile_bg;
-        border-radius: 0.5rem;
-        background: url(./../../../../assets/images/gaming/lighting/blueBG.png) left center no-repeat $gaming_lighting_profile_bg;
-        background-size: contain;
-        padding: 2rem;
-        .gaming-device-image {
-            max-width: 45%;
-            .img-responsive {
-                width: 100%;
-                max-width: 40rem;
-                height: auto;
-            }
+        @media #{$small-screen}{
+          max-width: 20rem;
         }
+      }
     }
+  }
 
-    .gaming-light-options {
-        margin-left: 4rem;
-        width: 50%;
-        .light-option {
-            ::ng-deep{
-                .content-title{
-                    color: $gaming_lightest;
-                    font-weight: $weight_medium;
-                    font-size: 2rem;
-                    letter-spacing: -0.02rem;
-                    line-height: 2rem;
-                    margin-bottom: 2rem;
-                    margin-top: 6rem;
-                }
-                .main-title {
-                    font-size: 3rem;
-                    color: $gaming_lightest;
-                    padding: 0;
-                    margin-top: 3.5rem;
-                }
-                vtr-ui-lighting-effect {
-                    ::ng-deep{
-                        &.select-box{
-                            height: 4.8rem;
-                            line-height: 6.8rem;
-                            border-radius: 0.6rem;
-                            background: $gaming_shade;
-                            margin-bottom: 5rem;
-                            .dropdown-toggle {
-                                padding-left: 2rem;
-                                padding-right: 2rem;
-                                line-height: 4.8rem;
-                                .icon {
-                                    top: 0.3rem;
-                                }
-                            }
-                            .gaming-dropdown-menu {
-                                top: 4.9rem;
-                            }
-                        }
-                    }
-                }
-			}
-			&.lighting-off {
-                height:100%;
-                display: flex;
-                p {
-                    color: $gaming_lightest;
-                    font-size: 2rem;
-                    line-height: 3rem;
-                }
-            }
-		}
-
+  .gaming-light-options {
+    margin-left: 5%;
+    width: 55%;
+    // @media #{$mediaquery_X9} {
+    //   width: 60%;
+    // }
+    // @media #{$mediaquery_17} {
+    //   width: 70%;
+    // }
+    // @media #{$mediaquery_X7} {
+    //   max-width: 75%;
+    // }
+    // @media #{$mediaquery_10} {
+    //   min-width: 75%;
+    // }
+    @media #{$small-screen}{
+      margin-left: 0;
+      width: 100%;
     }
-
-    .footer-part{
-        .link {
-            color: $gaming;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: $weight_bold;
-            font-size: 1.6rem;
-            display: inline-block;
-            margin-top: 2rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid $gaming;
+    @media #{$below-large-screen}{
+      margin-left: 0;
+      width: 100%;
+    }
+    .light-option {
+      //::ng-deep {
+        .content-title {
+          color: $gaming_lightest;
+          font-weight: $weight_medium;
+          font-size: 2rem;
+          letter-spacing: -0.02rem;
+          line-height: 2rem;
+          margin-bottom: 2rem;
+          margin-top: 6rem;
         }
+        .main-title {
+          font-size: 3rem;
+          color: $gaming_lightest;
+          padding: 0;
+          margin-top: 3.5rem;
+        }
+        vtr-ui-lighting-effect {
+          ::ng-deep {
+            &.select-box {
+              height: 4.8rem;
+              line-height: 6.8rem;
+              border-radius: 0.6rem;
+              background: $gaming_shade;
+              margin-bottom: 5rem;
+              .dropdown-toggle {
+                padding-left: 2rem;
+                padding-right: 2rem;
+                line-height: 4.8rem;
+                .icon {
+                  top: 0.3rem;
+                }
+              }
+              .gaming-dropdown-menu {
+                top: 4.9rem;
+              }
+            }
+          }
+        }
+     // }
+      &.lighting-off {
+        height: 100%;
+        display: flex;
+        p {
+          color: $gaming_lightest;
+          font-size: 2rem;
+          line-height: 3rem;
+        }
+      }
     }
+  }
+
+  .footer-part {
+    .link {
+      color:  $gaming_info_link;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: $weight_bold;
+      font-size: 1.6rem;
+      display: inline-block;
+      margin-top: 2rem;
+      padding-bottom: 0.5rem;
+	  border-bottom: 1px solid $gaming;
+	  &:hover {
+		color: $gaming_info_link_hover;
+		border-color: $gaming_info_link_hover;
+		text-decoration: none;
+	}
+    }
+  }
 }

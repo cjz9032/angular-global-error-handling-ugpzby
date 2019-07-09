@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Article } from '../articles.service';
 import { Router } from '@angular/router';
 import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
@@ -10,7 +10,7 @@ import { RoutersName } from '../../../privacy-routing-name';
 	templateUrl: './article-preview.component.html',
 	styleUrls: ['./article-preview.component.scss'],
 })
-export class ArticlePreviewComponent implements OnInit {
+export class ArticlePreviewComponent implements OnInit, OnDestroy {
 	@Input() article: Article;
 
 	articlePopupId = 'articlePopupId';
@@ -23,6 +23,10 @@ export class ArticlePreviewComponent implements OnInit {
 	}
 
 	ngOnInit() {
+	}
+
+	ngOnDestroy() {
+		this.closeArticlePopup();
 	}
 
 	openSingleArticle(id) {

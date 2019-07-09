@@ -14,7 +14,7 @@
 				<div class="row">
 					<div class="col-12 col-sm-12 col-lg-8 vtr-page-left-column">
 						<div *ngIf="viewModel?.currentPage ==='windows'">
-							<div class="header mt-minus">
+							<div *ngIf="isOnline" class="header mt-minus">
 								<div class="rounded-card-with-shadow p-5">
 									<div class="row">
 										<div class="col-auto align-self-center">
@@ -30,23 +30,27 @@
 												[innerHTML]="'security.antivirus.windowsDefender.subtitle' | translate">
 											</div>
 											<div class="p-3">
-												<vtr-ui-button id="sa-av-btn-learnmore" 
+												<vtr-ui-button id="sa-av-btn-learnmore"
 													aria-label="sa-av-btn-learnmore"
 													metricsItem="learnMoreAboutMcafee"
 													metricsEvent="ArticleClick"
-													metricsItemPosition="1"
+													metricsItemPosition="2"
 													metricsPageNumber="1"
 													[metricsItemID]="urlGetMcAfee"
 													[metricsItemCategory]="mcafeeArticleCategory"
 													[label]="'security.antivirus.windowsDefender.learnMore' | translate"
 													[title]="'security.antivirus.windowsDefender.learnMore' | translate"
 													(onClick)="openArticle()"
+													[isDisabled]="!isOnline"
 													[upperCaseLabel]=false></vtr-ui-button>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+							<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
+								[isSubtitleVisible]="false"
+								[isButtonVisible]="false"></vtr-widget-offline-info>
 							<div class="subheader antivirus-block">
 								<div class="rounded-card-with-shadow p-5 bg-white">
 									<div>
@@ -69,7 +73,7 @@
 										</vtr-ui-security-statusbar>
 
 									</div>
-									<vtr-widget-mcafee [install]="false"
+									<vtr-widget-mcafee [install]="false" [isOnline]="isOnline"
 										[name]="'Windows Defender'"></vtr-widget-mcafee>
 								</div>
 							</div>
@@ -80,7 +84,7 @@
 										<div class="col col-6 mt-20">
 											<div class="col">
 												<img class="dashlane-side-left-img"
-													src="./../../../../assets/images/antivirus/side.png" />
+													src="./../../../../assets/images/antivirus/side.jpg" />
 											</div>
 										</div>
 										<div class="col col-6 mt-20">
@@ -181,10 +185,11 @@
 						</div>
 
 						<div *ngIf="viewModel?.currentPage ==='mcafee'">
-							<div class="subheader mt-minus">
+							<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
+								[isSubtitleVisible]="false"
+								[isButtonVisible]="false"></vtr-widget-offline-info>
+							<div class="subheader" [ngClass]="{'mt-minus': isOnline}">
 								<div class="rounded-card-with-shadow p-5 bg-white">
-
-
 									<div class="row">
 										<div class="col-auto px-0 mr-auto">
 											<div class="title pb-3">{{'security.antivirus.mcafee.title' | translate}}
@@ -220,6 +225,7 @@
 														metricsEvent="featureClick"
 														target="_blank"
 														href="{{viewModel.mcafee?.trialUrl}}"
+														[ngClass]="{'unclickable': !isOnline}"
 														class="text">{{'security.antivirus.mcafee.upgrade' | translate}}</a>
 												</span>
 											</div>
@@ -380,8 +386,10 @@
 						</div>
 
 						<div *ngIf="viewModel?.currentPage ==='others'">
-
-							<div class="subheader mt-minus">
+							<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
+								[isSubtitleVisible]="false"
+								[isButtonVisible]="false"></vtr-widget-offline-info>
+							<div class="subheader" [ngClass]="{'mt-minus': isOnline}">
 								<div class="rounded-card-with-shadow p-5 bg-white">
 									<div *ngIf="viewModel.otherAntiVirus && viewModel.otherAntiVirus.name">
 										<div class="row">
@@ -421,6 +429,7 @@
 
 									</div>
 									<vtr-widget-mcafee [install]="viewModel.mcafeeInstall"
+										[isOnline]="isOnline"
 										[name]="viewModel.otherAntiVirus.name"
 										[mcafee]="viewModel.mcafee"></vtr-widget-mcafee>
 								</div>
@@ -432,7 +441,7 @@
 										<div class="col col-6 mt-20">
 											<div class="col">
 												<img class="dashlane-side-left-img"
-													src="./../../../../assets/images/antivirus/side.png" />
+													src="./../../../../assets/images/antivirus/side.jpg" />
 											</div>
 										</div>
 										<div class="col col-6 mt-20">
@@ -555,7 +564,8 @@
 											[ratioY]="2"
 											type="corner-article"
 											cornerShift="large"
-											order="r1">
+											order="1"
+											sideFlag="r" >
 										</vtr-container-card>
 									</div>
 								</div>

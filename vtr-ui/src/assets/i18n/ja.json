@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -39,22 +39,36 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
                     "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock"
+                    "touchpadLock": "Touchpad Lock",
+                    "lightingDriverPopup": {
+                        "headerText": "Driver Install Required",
+                        "text": "Please install driver",
+                        "button": "Install",
+                        "link": "cancel"
+                    },
+                    "lightingColorMessage": {
+                        "text": "Selecting color not available to this effect."
+                    }
                 },
                 "systemTools": {
                     "power": "Power",
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -71,6 +85,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                },
+                "systemStatus": {
+                    "info": "INFO"
                 }
             }
         },
@@ -111,11 +128,12 @@
                 },
                 "buttons": {
                     "start": "START RECORDING",
-                    "stop": "STOP RECORDING"
+                    "stop": "STOP RECORDING",
+                    "numberPrefix": "NUM"
                 },
                 "recording": {
                     "title": "START TYPING",
-                    "description": "20 inputs with in 20 seconds can be recorded."
+                    "description": "20 inputs within 20 seconds can be recorded."
                 },
                 "recorded": {
                     "title": "MACRO KEY FOR ",
@@ -204,7 +222,7 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure to clear this macro key?"
+                    "title": "Are you sure you want to clear this macro key?"
                 },
                 "timeoutRecording": {
                     "title": "Time Out For Recording.",
@@ -223,13 +241,16 @@
                     "btnCancel": "Cancel"
                 },
                 "btnOk": "OK"
+            },
+            "recording": {
+                "title": "Recording Macro Key For"
             }
         },
         "lightingProfile": {
             "title": "Lighting",
             "effect": {
                 "option1": {
-                    "title": "Static"
+                    "title": "On"
                 },
                 "option2": {
                     "title": "Flicker"
@@ -241,38 +262,133 @@
                     "title": "Wave"
                 },
                 "option5": {
-                    "title": "Music"
-                },
-                "option6": {
                     "title": "Smooth"
                 },
-                "option7": {
+                "option6": {
                     "title": "CPU Temperature"
                 },
-                "option8": {
+                "option7": {
                     "title": "CPU Utilization"
                 },
-                "option9": {
-                    "title": "Response"
+                "option8": {
+                    "title": "Off"
                 },
-                "option10": {
-                    "title": "Ripple"
+                "apply": {
+                    "title": "APPLY"
                 },
-                "option11": {
-                    "title": "No Light"
+                "applied": {
+                    "title": "APPLIED"
+                }
+            },
+            "brightness": {
+                "text1": {
+                    "title": "*Brightness setting doesn't apply on "
+                },
+                "text2": {
+                    "title": " effect"
+                }
+            },
+            "lightingSingleLightingOption": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
+            },
+            "colourwheel": {
+                "text1": {
+                    "title": "Selecting colour not available to this effect."
+                },
+                "text2": {
+                    "title": "APPLY"
+                },
+                "text3": {
+                    "title": "APPLIED"
+                },
+                "text4": {
+                    "title": "R:"
+                },
+                "text5": {
+                    "title": "G:"
+                },
+                "text6": {
+                    "title": "B:"
+                },
+                "text7": {
+                    "title": "Color"
                 }
             }
         }
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "ダッシュボード",
             "device": {
-                "title": "My Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "デバイス",
+                "sub1": "デバイス",
+                "sub2": "デバイス設定",
                 "sub3": "System Updates",
-                "sub4": "Smart Assist"
+                "sub4": "スマート・アシスト"
             },
             "security": {
                 "title": "セキュリティー",
@@ -283,9 +399,9 @@
                 "sub5": "インターネット保護",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "サポート",
+            "homeSecurity": "接続ホーム",
+            "privacy": "プライバシー"
         },
         "securityAdvisor": {
             "title": "セキュリティー・アドバイザー",
@@ -307,25 +423,23 @@
             "notRegistered": "未登録"
         },
         "qAndA": {
-            "title": "Q&A for your machine",
-            "subtitle": "FIND SOME HELPFUL TIPS FOR YOUR DEVICE.",
-            "question1": "Backup and Restore your files",
-            "question2": "How to refresh your PC",
-            "question3": "How to know your machine's CPU",
-            "question4": "Check your machine's battery use",
-            "question5": "Use your PC like a tablet",
-            "question6": "Get to know Cortana, your personal assistant"
+            "title": "あなたの機械のQ&A",
+            "subtitle": "あなたのデバイスのためのいくつかの役に立つヒントを見つけてください。",
+            "question1": "ファイルをバックアップし、復元する",
+            "question2": "PC を更新する方法",
+            "question3": "ご使用のマシンの CPU を知る方法",
+            "question4": "マシンのバッテリーの使用を確認する",
+            "question5": "PC をタブレットのように使用する",
+            "question6": "パーソナル・アシスタントの Cortana についてもっと知る"
         },
         "ui": {
             "back": "戻る",
             "on": "ON",
             "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
-            "loader": {
-                "text1": "Fetching",
-                "text2": "Status"
-            }
+            "collapse": "折りたたみ",
+            "expand": "展開",
+            "loader": "取得ステータス",
+            "loading": "ロード中..."
         }
     },
     "privacy": {
@@ -344,7 +458,7 @@
         "personal": "PERSONAL",
         "custom": "CUSTOM",
         "skip": "SKIP",
-        "next": "NEXT",
+        "next": "次へ",
         "interests": "What are your interests?",
         "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
         "games": "GAMES",
@@ -358,166 +472,179 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "今日はエネルギーにあふれているように見えます"
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "インターネット接続は検出されませんでした",
+            "subtitle": "接続の問題を解決する方法の詳細については、",
+            "buttonText": "サポートを受ける"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "フィードバックを送る",
+            "subtitle": "Vantage の感想をお聞かせください。",
+            "button": "フィードバックを送る",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "コメント...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
-                }
+                    "feedbackSuccess": "フィードバックをありがとうございました!"
+                },
+                "question1": "Vantage の新しいスタイルを気に入っていますか？",
+                "question2": "パフォーマンスは許容できると思いますか？",
+                "question3": "今後もっと頻繁にアプリケーションを使いますか？",
+                "yes": "はい",
+                "no": "いいえ",
+                "tips1": "追加のコメントを残してください",
+                "sendFeedback": "フィードバックを送る",
+                "submitScreenShot": "スクリーンショットを送信する"
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera Privacy",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "クイック設定",
+            "microphone": "マイクロホン",
+            "cameraPrivacy": "カメラ",
+            "eyeCareMode": "アイ・ケア・モード"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "システム状況",
+            "subtitle": "デバイス状況をすばやく確認。",
             "memory": {
-                "title": "Memory",
+                "title": "メモリー",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "メモリーが見つかりません",
+                    "of": "の"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "ディスク容量",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "ディスクが見つかりません",
+                    "of": "の"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "保証",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "保証が見つかりませんでした",
+                    "until": "期限",
+                    "expiredOn": "保証の有効期限が切れた日",
+                    "notAvailable": "保証を利用できません"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "更新"
                 }
             }
         }
     },
     "device": {
         "myDevice": {
-            "title": "My Device",
-            "subtitle": "My device status",
-            "serial": "Serial",
-            "productNumber": "Product number",
-            "biosVersion": "Bios version",
-            "learnMore": "Learn more",
-            "freeMemory": "Free memory",
+            "title": "デバイス",
+            "subtitle": "デバイスの状態",
+            "serial": "シリアル",
+            "productNumber": "製品番号",
+            "biosVersion": "BIOS バージョン",
+            "learnMore": "さらに詳しい説明を見る",
+            "freeMemory": "空きメモリー",
             "systemUpdate": {
-                "title": "System update",
-                "notFound": "System update not found",
+                "title": "システム更新",
+                "notFound": "システム更新が見つかりません",
                 "detail": {
-                    "uptoDate": "Software up to date ",
-                    "updatedOn": "updated on ",
-                    "outdated": "Software outdated ",
-                    "neverRanUpdate": "never ran update"
+                    "uptoDate": "ソフトウェアは最新です",
+                    "updatedOn": "更新日",
+                    "outdated": "古いソフトウェア",
+                    "neverRanUpdate": "更新を実行したことがありません"
                 }
             },
-            "extendedWarranty": "Extend warranty",
+            "extendedWarranty": "保証の延長",
             "processor": {
-                "title": "Processor",
-                "notFound": "Processor not found"
+                "title": "プロセッサー",
+                "notFound": "プロセッサーが見つかりません"
             },
             "memory": {
-                "title": "Memory",
-                "notFound": "Memory not found",
+                "title": "メモリー",
+                "notFound": "メモリーが見つかりません",
                 "ram": "RAM"
             },
             "diskspace": {
-                "title": "Disk Space",
-                "notFound": "Disk not found"
+                "title": "ディスク容量",
+                "notFound": "ディスクが見つかりません"
             },
-            "software": "Software up to date",
-            "updated": "Updated",
-            "outOfWarranty": "Out of warranty",
-            "expired": "Expired on",
-            "of": "of",
+            "software": "ソフトウェアは最新です",
+            "updated": "更新",
+            "outOfWarranty": "保証期間切れ",
+            "expired": "失効日",
+            "of": "の",
             "warranty": {
-                "notFound": "Warranty not found",
+                "notFound": "保証が見つかりませんでした",
                 "detail": {
-                    "title": "Extend warranty",
-                    "inWarranty": "In warranty ",
-                    "daysRemaining": "days remaining",
-                    "outOfWarranty": "Out of warranty ",
-                    "expiredOn": "Expired on",
-                    "notAvailable": "Warranty not available",
-                    "support": "Support"
+                    "title": "保証の延長",
+                    "inWarranty": "保証期間内",
+                    "daysRemaining": "残りの日数",
+                    "outOfWarranty": "保証期間切れ",
+                    "expiredOn": "失効日",
+                    "notAvailable": "保証を利用できません",
+                    "support": "サポート"
                 }
             },
-            "helpful": "Helpful Content"
+            "helpful": "役に立つコンテンツ"
         },
         "deviceSettings": {
-            "helpful": "Helpful Content",
+            "helpful": "役に立つコンテンツ",
             "batteryGauge": {
-                "title": "BATTERY GAUGE",
-                "subtitle": "Battery",
-                "hours": "hours",
-                "hour": "hour",
-                "minutes": "minutes",
-                "minute": "minute",
-                "charge": "TIME TO FULLY CHARGE",
-                "button": "SEE BATTERY DETAILS",
+                "title": "バッテリー・ゲージ",
+                "subtitle": "バッテリー状態",
+                "hours": "時間",
+                "hour": "時",
+                "minutes": "分",
+                "minute": "分",
+                "charge": "完全充電までの時間",
+                "button": "バッテリーの詳細を表示",
                 "details": {
-                    "title": "Battery Details",
-                    "primary": "Primary Battery",
-                    "secondary": "Secondary Battery",
-                    "tertiary": "Tertiary Battery",
-                    "status": "Status",
-                    "wattage": "Wattage",
-                    "barcode": "Bar-Code",
-                    "remainingPercent": "Remaining percentage",
-                    "temp": "Temperature",
-                    "frupn": "FRU part number",
-                    "remainingTime": "Remaining time",
-                    "chargeCompletionTime": "Charge completion time",
-                    "cycleCount": "Cycle count",
-                    "chemistry": "Device chemistry",
-                    "remainingCap": "Remaining capacity",
-                    "designCap": "Design capacity",
-                    "fullChargeCap": "Full charge capacity",
-                    "manufDt": "Manufacture date",
-                    "designVolt": "Design voltage",
-                    "volts": "Voltage",
-                    "firstUseDt": "First use date",
-                    "firmwareVer": "Firmware version",
+                    "title": "バッテリーの詳細",
+                    "primary": "プライマリー・バッテリー",
+                    "secondary": "セカンダリ・バッテリー",
+                    "tertiary": "ターシャリー・バッテリー",
+                    "status": "ステータス",
+                    "wattage": "ワット数",
+                    "barcode": "バーコード",
+                    "remainingPercent": "残余割合",
+                    "temp": "温度",
+                    "frupn": "FRU 部品番号",
+                    "remainingTime": "残り時間",
+                    "chargeCompletionTime": "充電完了時間",
+                    "cycleCount": "サイクル・カウント",
+                    "chemistry": "化学デバイス",
+                    "remainingCap": "残存容量",
+                    "designCap": "設計容量",
+                    "fullChargeCap": "完全充電時の容量",
+                    "manufDt": "製造日",
+                    "designVolt": "設計電圧",
+                    "volts": "電圧",
+                    "firstUseDt": "初回使用日",
+                    "firmwareVer": "ファームウェア・バージョン",
                     "chargeStatusString": {
-                        "error": "ERROR",
-                        "notinstalled": "Not installed",
-                        "noactivity": "No activity",
-                        "charging": "Charging",
-                        "discharging": "Discharging",
-                        "acdischarging": "Discharging (with ac)"
+                        "error": "エラー",
+                        "notinstalled": "未インストール",
+                        "noactivity": "動作していません",
+                        "charging": "充電中",
+                        "discharging": "放電中",
+                        "acdischarging": "放電中 (AC 電源接続)"
                     },
                     "deviceChemistry": {
                         "li-polymer": "Li-Polymer",
                         "li-ion": "Li-Ion",
                         "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion"
+                        "li_ion": "Li-Ion",
+                        "silver-zinc": "Silver-Zinc",
+                        "silver_zinc": "Silver-Zinc",
+                        "nicd": "NiCd",
+                        "nimh": "NiMH",
+                        "unknown": "Unknown"
                     },
                     "manufacturer": {
                         "title": "Manufacturer",
@@ -527,17 +654,17 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "This system may not support battery that",
-                        "description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
-                        "description1": "Attention:",
-                        "description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
+                        "description": "you cannot use the attached battery with this computer.",
+                        "description1": "Replace",
+                        "description2": "it with a battery of correct model."
                     },
                     "Good": {
-                        "title": "The battery is in good Condition"
+                        "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -551,536 +678,804 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter"
-                    },
-                    "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter"
-                    },
-                    "ACAdapterNotSupported": {
-                        "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
                         "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
+                    "NotSupportACAdapter": {
+                        "title": "AC adapter not supported.",
+                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
+                    },
                     "MissingDriver": {
-                        "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
+                        "title": "The Lenovo Power Manager driver",
                         "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
                     },
                     "StoreLimitation": {
                         "title": "The battery can only store",
                         "description1": "of",
                         "description2": "it's original full charge capacity"
+                    },
+                    "HighTemperature": {
+                        "title": "Discharging",
+                        "description": "has been stopped because the",
+                        "description1": "battery temperature is too high"
+                    },
+                    "TrickleCharge": {
+                        "description": "The battery was",
+                        "description1": "completely discharged",
+                        "description2": "and needs to be recharged. This might take ten hours or more."
+                    },
+                    "OverheatedBattery": {
+                        "description": "The battery is",
+                        "description1": "too hot.",
+                        "description2": "Remove it from the computer and cool it to room temperature."
+                    },
+                    "PermanentError": {
+                        "description": "The battery has",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
+                    },
+                    "HardwareAuthenticationError": {
+                        "description": "The battery installed is",
+                        "description1": "is not supported",
+                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
                     }
-                }
+                },
+                "updating": "Updating",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
+                "voltageError": "Battery voltage incorrect",
+                "batteryNotDetected": "No Battery Detected"
             },
             "power": {
-                "title": "Power",
-                "subtitle": "Power Settings",
-                "description": "This section enables you to dynamically adjust thermal performance and maximize the battery life. It also has other popular power-related features. You can check the default settings in this section and customize your system according to your needs.",
+                "title": "電源",
+                "subtitle": "電源設定",
+                "description": "このセクションでは、熱性能を動的に調整してバッテリー寿命を最大化することができます。また、一般的な電源関連機能もここにあります。このセクションでデフォルト設定を確認し、必要に応じてシステムをカスタマイズできます。",
                 "jumpto": {
-                    "title": "JUMP TO SETTINGS",
-                    "battery": "Battery",
-                    "power": "Power",
-                    "cooling": "Intelligent Cooling",
-                    "other": "Other"
+                    "title": "設定に移動",
+                    "battery": "バッテリー",
+                    "power": "電源",
+                    "cooling": "インテリジェント・クーリング",
+                    "other": "その他"
                 },
                 "powerSmartSettings": {
-                    "title": "Power Smart Settings",
-                    "subtitle": "INTELLIGENT COOLING",
-                    "subtitle1": "Battery & Quiet",
-                    "description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
-                    "description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
-                    "readMore": "Read more.",
+                    "title": "電源スマート設定",
+                    "subtitle": "インテリジェント・クーリング",
+                    "subtitle1": "バッテリー & 静音",
+                    "description1": "この機能は必要に応じて熱設定を動的に調整します。オンにすると、デバイスを手に持っているときやアイドル状態のときはデバイスの温度を低めに、または静かに保ちます。それ以外の場合は、デバイスが安定した場所にあるときにパフォーマンスが最適化されます。オフにすると、熱の優先度を手動で設定できます。",
+                    "description2": "インテリジェント・クーリングは、ファンの速度、最大表面温度、およびパフォーマンスを調整します。この機能には以下のモードがあり、Windows パフォーマンスの電源スライダーからアクセスできるようになりました。",
+                    "description3": "インテリジェント・クーリングは熱性能のバランスを必要に応じて自動的に調整します。ノートブックを手で持っている場合、インテリジェントクーリング機能はパフォーマンス設定を調整して表面の熱を軽減させ、使いやすくします。デバイスが机上に置かれると、この機能はパフォーマンスを最適化します。",
+                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
+                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "readMore": "表示を多くする。",
                     "gotoWindows": {
-                        "title": "Go to windows settings",
-                        "modalBodyText1": "Click on Windows battery icon on System tray to access Windows performance power slider"
+                        "title": "Windows 設定に移動",
+                        "modalBodyText1": "Windows のパフォーマンスの電源スライダーにアクセスするには、Windows のシステム トレイのバッテリー・アイコンをクリックします"
                     },
                     "intelligentCooling": {
-                        "title": "Intelligent cooling",
+                        "title": "インテリジェント・クーリング",
                         "description": "",
                         "tooltip": "",
-                        "optimize": "optimize system for",
-                        "apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
+                        "optimize": "システムを最適化する",
+                        "apsHint": "インテリジェント・クーリングを有効にするには、Lenovo Active Protection System をインストールして有効にする必要があります。",
                         "options": {
-                            "quiteCool3": "Cool Mode",
-                            "performance3": "High Performance",
-                            "quiteCool4": "Quiet & Cool",
-                            "performance4": "Performance",
-                            "quiteCool5": "Quiet & Cool",
-                            "performance5": "Performance"
+                            "quiteCool3": "クール・モード",
+                            "performance3": "高パフォーマンス",
+                            "quiteCool4": "静音 & クール",
+                            "performance4": "性能",
+                            "quiteCool5": "静音 & クール",
+                            "performance5": "性能",
+                            "batterySaving": "Battery Saving",
+                            "performance13": "Performance",
+                            "quiteCool13": "Quiet & Cool",
+                            "performance14": "Extreme Performance",
+                            "quiteCool14": "Intelligent Cooling"
                         },
                         "readMore": {
-                            "mode1": "Quiet mode",
-                            "mode2": "Balanced mode",
-                            "mode3": "Performance mode",
-                            "line1": "Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "line2": "Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
-                            "line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "mode1": "静音モード",
+                            "mode2": "バランス・モード",
+                            "mode3": "パフォーマンス・モード",
+                            "line1": "スライダーが左端。コンピューターの冷却と静音、およびバッテリー寿命を最長にするために、ファンの速度とパフォーマンスは低下します。",
+                            "line2": "スライダーが中央。最適なエクスペリエンスのために、ファンの速度とパフォーマンスが動的にバランスされます。",
+                            "line3": "スライダーが右端。最高のパフォーマンスを得るために、ファン速度と許容表面温度が高くなります。",
+                            "line4": "More info"
+                        },
+                        "selectedModeText": {
+                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
+                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
+                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                        },
+                        "intelligentCoolingModesModal": {
+                            "title": "Change intelligent cooling modes",
+                            "close": "close",
+                            "coolingModesList": {
+                                "list1": "Click on the windows battery-icon in the toolbar",
+                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                            }
                         }
                     },
                     "nonintelligentCooling": {
                         "options": {
-                            "intelligentCooling": "INTELLIGENT COOLING",
-                            "extremeCooling": "EXTREME PERFORMANCE",
-                            "battery&Quite": "BATTERY & QUIET"
+                            "intelligentCooling": "インテリジェント・クーリング",
+                            "extremeCooling": "エクストリーム・パフォーマンス",
+                            "battery&Quite": "バッテリー & 静音"
                         }
-                    }
+                    },
+                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
                 },
                 "powerSettings": {
-                    "title": "Power Settings",
+                    "title": "電源設定",
                     "alwaysUSB": {
-                        "title": "Always on USB",
-                        "description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
-                        "checkbox": "Enable USB charging from laptop battery when computer is off."
+                        "title": "常に USB デバイスに電源を供給する",
+                        "description": "コンピューターがスリープ状態、休止状態または電源オフのときに、常に電源を供給する USB コネクターを通して USB デバイスを充電します。スマートフォンまたはタブレットは、黄色のコードまたは以下のアイコンが印刷された USB コネクターからすばやく充電できます。",
+                        "checkbox": "コンピュータの電源が切れているときに、ラップトップのバッテリーからの USB 充電を有効にします。"
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "イージー・レジューム",
+                        "description": "この機能を有効にして、コンピュータのふたを頻繁に開閉する場合に再開までの時間を改善します。",
+                        "tooltip": "この機能はコンピュータのふたを頻繁に開閉する場合に再開までの時間を改善します。有効にすると、ふたを閉めたときコンピューターは低電力モードになりますが、15 分以内に再度ふたを開けるとすぐに再開します。また、この機能により、ノートブックはシステムが一時停止になる前に保留中の操作 (メールの送信やファイルのダウンロードなど) を完了させることができます。"
                     }
                 },
                 "otherSettings": {
-                    "title": "Other Settings",
+                    "title": "他の設定",
                     "vantageToolbar": {
-                        "title": "Lenovo Vantage Toolbar",
-                        "description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
+                        "title": "Lenovo Vantage ツールバー",
+                        "description": "Vantage ツールバーを Windows のタスクバーに固定すると、簡単にバッテリーの詳細を確認できたり、クイック設定にアクセスしたりできます。"
                     }
                 },
                 "batterySettings": {
-                    "title": "Battery Settings",
+                    "title": "バッテリー設定",
                     "batteryThreshold": {
-                        "title": "Battery Charge Threshold",
-                        "description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
-                        "tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "title": "バッテリー充電のしきい値",
+                        "description": "コンピューターを主に AC アダプターに接続して使用し、バッテリー電源はそれほど使用しない場合は、充電のしきい値を 100 % より下に変更してバッテリー寿命を延ばすことができます。それほど使用しないバッテリーは完全に充電しない状態を維持することで寿命が長くなるため、効果的です。",
+                        "tooltip": "現状でバッテリーが充電停止しきい値を超えて充電されている場合は、電源を取り外して、バッテリーを充電停止しきい値以下まで放電させてください。バッテリーの状態 (古いまたは新しい) によって、充電の正確な開始点および停止点は、最大 2 パーセントのポイントで異なります。この機能が有効の場合、バッテリーの状態が正しく報告されるように定期的にバッテリー・ゲージのリセットを実行することをお勧めします。",
+                        "note": "お願い",
+                        "readMoreText": "表示を多くする。",
+                        "noteInfo": " バッテリー充電のしきい値がまだ完全にアクティブではありません。マシンの電源を切り、充電停止しきい値以下までバッテリを放電してください。",
                         "settings": {
-                            "title1": "Threshold for Built in battery",
-                            "title2": "Threshold for Removable battery"
+                            "title1": "内蔵バッテリーのしきい値",
+                            "title2": "取り外し可能なバッテリーのしきい値"
                         },
                         "popup": {
-                            "title": "Enable Battery Charge Threshold",
-                            "description1": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life.",
-                            "description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
-                            "enable": "ENABLE",
-                            "cancel": "CANCEL"
+                            "title": "バッテリー充電しきい値を有効にする",
+                            "description1": "カスタムのバッテリー充電を有効にすると、このデバイスを使用したときに全般的なバッテリー状態が持続します。しかし、フル充電していないと、バッテリーによる稼働時間が少なくなります。",
+                            "description2": "この機能を完全に有効にするには、マシンの電源を切り、充電停止しきい値以下までバッテリーを放電してください。",
+                            "enable": "有効にする",
+                            "cancel": "キャンセル"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "次の時点を下回った場合に充電を開始",
+                            "checkboxText": "充電開始しきい値を、充電停止しきい値より 5 パーセント下に自動的に設定します。",
+                            "stop": "充電を停止する時点"
                         }
                     },
                     "expressCharging": {
-                        "title": "Express Charging",
-                        "description": "Express Charge allows your battery to a full charge much faster than normal mode.",
-                        "tooltip": "Express Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
+                        "title": "急速充電",
+                        "description": "急速充電では、通常モードよりもはるかに早くフル充電できます。",
+                        "tooltip": "急速充電を使用すると、システムのバッテリーをはるかに早く充電できます。ただし、バッテリーの寿命を縮める可能性があります。"
                     },
                     "conservationMode": {
-                        "title": "Conservation Mode",
-                        "description": "This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
+                        "title": "保全モード",
+                        "description": "この機能は、電源に接続しているときにバッテリーの寿命を延ばすのに役立ちます。<br>このモードを有効にすると、バッテリーは容量の 55 〜 60% までしか充電されず、バッテリーの寿命は最大になります。ただし、コンピューターを AC 電源から切り離した後の使用時間は短くなります。",
                         "tooltip": {
-                            "line1": "This function is useful to extend the lifespan of your battery when plugged.",
-                            "line2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
-                            "line3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
+                            "line1": "この機能は、電源に接続しているときにバッテリーの寿命を延ばすのに役立ちます。",
+                            "line2": "このモードを有効にすると、バッテリーは容量の 55 〜 60% までしか充電されず、バッテリーの寿命は最大になります。ただし、コンピューターを AC 電源から切り離した後の使用時間は短くなります。",
+                            "line3": "注: 急速充電と保全モードは同時に機能しません。モードのいずれかがオンの場合は、もう一方のモードは自動的にオフになります。"
                         }
                     },
                     "airPlanePower": {
-                        "title": "Airplane Power Mode",
-                        "description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
+                        "title": "飛行機電源モード",
+                        "description": "システムの消費電力量を制御することで飛行機の AC 電源コンセントを保護します。飛行機電源モードを有効にすると、コンピューターはバッテリー充電率とシステム・パフォーマンスを制限して電力消費量を抑えます。"
+                    }
+                },
+                "energyStar": {
+                    "title": "Energy Star",
+                    "description": "ENERGY STAR 認定製品"
+                },
+                "smartStandby": {
+                    "title": "スマート・スタンバイ",
+                    "description": "この機能は、使用頻度の高い時間中の高速スタートアップ時間に影響を与えずにアイドル時間中のバッテリー省電力を最適化するようにコンピューターをスケジュールします。",
+                    "tooltip": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時間前にモダン・スタンバイに切り替わり、バッテリー電源の使用中に一定時間操作されない場合は休止状態に入ります。時間は設定されたスケジュールに基づいて最適化されます。コンピューターはスケジュールされた日のみ休止状態からモダン・スタンバイに切り替わります。スケジュールされた日に連続して操作されない場合は切り替わりません。",
+                    "timer": {
+                        "heading": "通常このコンピューターを使用する時刻を設定します",
+                        "subHeading1": "フィールドの",
+                        "subHeading2": "終了",
+                        "subHeading3": "このスケジュールを使用する期間",
+                        "endTimeNote": "終了時間は開始時間から 20 時間以内にする必要があります",
+                        "timeUnits": {
+                            "unit1": "時間",
+                            "unit2": "分",
+                            "unit3": "午前/午後"
+                        }
                     }
                 }
             },
             "audio": {
-                "title": "Audio",
-                "subtitle": "Audio Settings",
-                "description": "This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.",
+                "title": "オーディオ",
+                "subtitle": "オーディオの設定",
+                "description": "このセクションでは、Dolby 設定やマイクなどのオーディオ設定を自動で最適化することも、すべて手動で構成することもできます。",
                 "audioSmartsettings": {
-                    "title": "Audio Smart settings",
-                    "subtitle": "APPLICATION-BASED SETTINGS",
-                    "description": "Automatically adjust audio settings according to different apps you are using.",
+                    "title": "オーディオ・スマート設定",
+                    "subtitle": "アプリケーションに基づく設定",
+                    "description": "ご使用のアプリそれぞれに合わせて、オーディオの設定を自動的に調整します。",
                     "dolby": {
-                        "title": "Automatic Dolby Audio settings",
-                        "tooltip": "Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
+                        "title": "自動 Dolby オーディオ設定",
+                        "tooltip": "自動 Dolby オーディオ設定は、オーディオ・エクスペリエンスを向上させるために使用しているさまざまなアプリに適したモードに Dolby オーディオ設定を構成します。",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "ダイナミック",
+                            "movie": "ムービー",
+                            "music": "ミュージック",
+                            "games": "ゲーム",
+                            "voip": "音声"
                         }
                     },
                     "voip": {
-                        "title": "Automatic Audio Optimization for VoIP",
-                        "tooltip": "Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality."
+                        "title": "VoIP 向けのオーディオの自動最適化",
+                        "tooltip": "VoIP 通話中に自動的に Dolby Voice モードに切り替えて、鮮明で安定した音声品質を提供します。"
                     }
                 },
                 "microphone": {
-                    "title": "Microphone",
+                    "title": "マイクロホン",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permission to access your microphone. Please turn on access to your microphone for the Lenovo Vantage app."
+                        "title": "メモ",
+                        "description": "Lenovo Vantage にマイクロホンへのアクセス権限がありません。Lenovo Vantage アプリでマイクロホンへのアクセスをオンにしてください。"
                     },
                     "microphone": {
-                        "title": "Microphone",
-                        "tooltip": "You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode."
+                        "title": "マイクロホン",
+                        "tooltip": "マイクの音量を調整し、適切なモードを指定することで、MIC 効果をカスタマイズできます。"
                     },
                     "volume": {
-                        "title": "Microphone Volume",
-                        "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
+                        "title": "マイクロホンの音量",
+                        "description": "Dolby オーディオは、コンテンツと機器に合わせて適切なモードを選択し、あらゆるコンテンツでクリアでパワフルな厚みのあるサウンドをお楽しみいただけます。",
                         "options": {
-                            "silent": "Silent",
-                            "loud": "Loud"
+                            "silent": "サイレント",
+                            "loud": "ラウド"
                         }
                     },
                     "suppress": {
-                        "title": "Suppress keyboard noise",
-                        "tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+                        "title": "キーボードのノイズを抑制する",
+                        "tooltip": "これをオンにすると、キーボードのノイズが抑制され、MIC オーディオが最適化されます。"
                     },
                     "acoustic": {
-                        "title": "Acoustic Echo Cancellation",
-                        "tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+                        "title": "アコースティック・エコー・キャンセル",
+                        "tooltip": "この機能をオンにすると、音響エコーが減少して、MIC オーディオが最適化されます。"
                     },
                     "optimize": {
-                        "title": "Optimize my microphone for:",
-                        "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+                        "title": "マイクロホンの最適化:",
+                        "tooltip": "さまざまなシナリオや環境に合わせてオーディオ体験を向上させるために、マイク効果を構成します。",
                         "options": {
-                            "VoiceRecognition": "VOICE RECOGNITION",
-                            "OnlyMyVoice": "ONLY MY VOICE",
-                            "Normal": "NORMAL",
-                            "MultipleVoices": "MULTIPLE VOICES"
+                            "VoiceRecognition": "音声認識",
+                            "OnlyMyVoice": "自分の声のみ",
+                            "Normal": "標準",
+                            "MultipleVoices": "複数会話"
                         }
                     }
                 }
             },
             "displayCamera": {
-                "title": "Display & Camera",
-                "subtitle": "Display & Camera Settings",
-                "description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
+                "title": "ディスプレイとカメラ",
+                "subtitle": "ディスプレイとカメラの設定",
+                "description": "このセクションでは、ビジュアル・エクスペリエンスの向上や、カメラのプロパティの構成を行うことができます。ここでたくさんある機能を調べて、ディスプレイ・エクスペリエンスをカスタマイズします。",
                 "jumpTo": {
-                    "title": "JUMP TO SETTINGS",
+                    "title": "設定に移動",
                     "shortcuts": {
                         "display": {
-                            "title": "Display"
+                            "title": "ディスプレイ"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "カメラ"
                         }
                     }
                 },
                 "display": {
-                    "title": "Display",
+                    "title": "ディスプレイ",
                     "eyeCareMode": {
-                        "title": "Eye Care Mode",
-                        "checkbox": "Schedule eye care mode from sunset to sunrise",
+                        "title": "アイ・ケア・モード",
+                        "checkbox": "日没から日の出までのアイ・ケア・モードのスケジュール",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "暖色 (目に優しい)",
+                            "cold": "停止"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "温度をリセット",
+                        "tooltip": "アイ・ケア・モードでは、ディスプレイの色温度が調整されてブルーライトがフィルターで除去され、目の負担が軽減されます。",
+                        "onSunsetToSunriseScheduleDescription": "日没から日の出までのアイ・ケア・モードのスケジュール",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "お願い",
+                            "description": "Lenovo Vantage はその地域の日没と日の出の時刻を計算するために、位置情報にアクセスする必要があります。"
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Display color temperature",
+                        "title": "ディスプレイの色温度",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "暖色 (目に優しい)",
+                            "cold": "停止"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "温度をリセット",
+                        "tooltip": "アイ・ケア・モードでは、ディスプレイの色温度が調整されてブルーライトがフィルターで除去され、目の負担が軽減されます。",
+                        "onSunsetToSunriseScheduleDescription": "日没から日の出までのアイ・ケア・モードのスケジュール",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "お願い",
+                            "description": "Lenovo Vantage はその地域の日没と日の出の時刻を計算するために、位置情報にアクセスする必要があります。"
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "プライバシー・ガード",
+                        "description": "この機能を使用すると、他のユーザーによる画面の覗き見を防止できます。オンにすると、ディスプレイの視野角が変わり、周囲の人たちからディスプレイが見えなくなります。「Fn+D」 キーを押してモードを切り替えることができます。",
+                        "note": "プライバシー・ガードは画面の向きが縦の場合には機能しません。このモードでは、画面は側面から見えます。",
+                        "labelText": "パスワードの入力時にこの機能を有効にする"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "有機 EL 電源設定",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "また、ご使用のコンピューターの有機 EL ディスプレイは、ディスプレイの一部を選択して暗くすることで、電力消費を削減しバッテリー駆動時間を延ばすことができます。",
+                            "また、タスクバーやディスプレイのあまり変化しない領域を暗くして、ディスプレイ全体の寿命を延ばすことをお勧めします。"
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "温度をリセット",
+                        "tooltip": "この機能は、ディスプレイの一部を選択して暗くすることで、電力消費を削減しバッテリー駆動時間を延ばすことができます。",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
-                    "title": "Camera",
+                    "title": "カメラ",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permissions to access your camera. Please turn on access to your camera for the Lenovo Vantage app."
+                        "title": "お願い",
+                        "description": "Lenovo Vantage にカメラへのアクセス権限がありません。Lenovo Vantage アプリを使用したカメラへのアクセスをオンにしてください。"
                     },
-                    "url": "Go to windows privacy settings",
+                    "url": "Windows プライバシー設定に移動",
                     "cameraPrivacy": {
-                        "title": "Camera privacy mode",
-                        "tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling."
+                        "title": "カメラ・プライバシー・モード",
+                        "tooltip": "プライバシー設定を有効にすると、ライブ画像はカメラから送信されなくなります。ビデオ通話中に自分の画像を共有にしたくない場合にのみ、この設定をオンにしてください。"
                     },
                     "camera": {
-                        "title": "Camera",
-                        "tooltip": "Click here to reset Camera properties to default settings.",
-                        "reset": "Reset factory settings"
+                        "title": "カメラ",
+                        "tooltip": "カメラのプロパティをデフォルト設定にリセットするには、ここをクリックしてください。",
+                        "reset": "工場出荷時の状態にリセット"
                     },
-                    "brightness": "Brightness",
-                    "contrast": "Contrast",
-                    "autoExposure": "Auto Exposure",
-                    "autoFocus": "Auto focus",
-                    "notAvailable": "Camera Not Available",
+                    "brightness": "明るさ",
+                    "contrast": "コントラスト",
+                    "autoExposure": "自動露出",
+                    "autoFocus": "自動フォーカス",
+                    "notAvailable": "カメラが使用できません",
                     "camerablur": {
-                        "title": "Camera Background Blur",
-                        "caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "title": "カメラの背景のぼかし",
+                        "caption": "この機能は、ビデオ通話または写真撮影にカメラを使用する際に背景をぼかします。以下の選択肢から別の効果を選択できます。",
+                        "blurMode": "ぼかしモード",
+                        "comicMode": "コミック モード",
+                        "sketchMode": "スケッチ モード"
+                    },
+                    "cameraLoadingFailed": {
+                        "inUseTitle": "CAMERA IS IN USE",
+                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
+                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
+                        "loadingFailedDescription": "Close the app and try again."
+                    }
+                }
+            },
+            "inputAccessories": {
+                "title": "入力およびアクセサリ",
+                "subtitle": "入力およびアクセサリ設定",
+                "description": "Lenovo インテリジェント・センサーはコンピューターのさまざまなセンサーを組み合わせて操作を検出し、最適な電源管理の設定を調整します",
+                "inputAccessory": {
+                    "title": "インテリジェント・キーボード",
+                    "hiddenKeyboardFunctions": {
+                        "title": "非表示のキーボード機能",
+                        "description": "キーボード左下の Fn キーと他のキーを同時に押すことで、以下のキーボード・マップに示されるコマンドを起動できます。"
+                    },
+                    "firstKeyObj": {
+                        "tittle": "Fn + Tab",
+                        "description": "高解像度ディスプレイでズーム機能を有効にします",
+                        "image": ""
+                    },
+                    "secondKeyObj": {
+                        "tittle": "Fn + 4",
+                        "description": "スリープ状態の開始",
+                        "image": ""
+                    },
+                    "thirdKeyObj": {
+                        "tittle": "Fn + D",
+                        "description": "プライバシー・ガードをオンまたはオフにします",
+                        "image": ""
+                    },
+                    "fourthKeyObj": {
+                        "tittle": "Fn + Q",
+                        "description": "パフォーマンス・モードと静音モードを切り替えます",
+                        "image": ""
+                    },
+                    "fifthKeyObj": {
+                        "tittle": "Fn + スペース",
+                        "description": "キーボードのバックライトの状態を変更します",
+                        "image": ""
+                    }
+                },
+                "userDefinedKey": {
+                    "title": "ユーザー定義キー",
+                    "caption": "星のアイコンがついているキーには、ユーザー定義機能を設定できます",
+                    "dropDown": {
+                        "title": "ユーザー定義キーの操作",
+                        "note": "注: メールや郵便番号など、よく入力するキーの入力に使用します。パスワードや個人情報の保存や入力には、この機能を使用しないことをお勧めします。",
+                        "options": {
+                            "option1": "選択してください",
+                            "option2": "ウェブサイトを開く",
+                            "option3": "テキストを入力"
+                        }
+                    },
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
                     }
                 }
             }
         },
         "smartAssist": {
-            "title": "Smart Assist",
-            "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+            "title": "スマート・アシスト",
+            "description": "Lenovo インテリジェント・センサーはコンピューターのさまざまなセンサーを組み合わせて操作を検出し、最適な電源管理の設定を調整し、プライバシーを保護します。",
             "jumpTo": {
-                "title": "JUMP TO SETTINGS",
-                "security": "Security",
-                "screen": "Screen",
-                "media": "Media",
-                "voice": "Voice"
+                "title": "設定に移動",
+                "security": "セキュリティー",
+                "screen": "画面",
+                "media": "メディア",
+                "voice": "音声",
+                "APS": "APS"
             },
             "intelligentSecurity": {
-                "title": "Intelligent Security",
-                "readMore": "Read more",
+                "title": "インテリジェント・セキュリティー",
+                "readMore": "表示を多くする",
                 "HumanPresenceDetection": {
-                    "title": "Human presence detection",
-                    "tooltip": "Click here to reset the human presence detection settings."
+                    "title": "人物存在検知",
+                    "tooltip": "人物存在検知の設定をリセットするには、ここをクリックしてください。"
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "ユーザー存在センサー",
+                    "tooltip": "人物存在検知設定をリセットするには、ここをクリックしてください。"
                 },
                 "zeroTouchLogin": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
+                    "title": "ゼロ・タッチ・ログイン",
+                    "caption": "この機能は、コンピューターの前にいたり近づいているときにコンピューターのロック解除またはウェイクアップを自動的に行います。"
                 },
                 "zeroTouchLock": {
-                    "title": "Zero Touch Lock",
-                    "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+                    "title": "ゼロ・タッチ・ロック",
+                    "caption": "この機能は、ユーザーの存在を検出できない場合、画面を暗くし、コンピューターをロックします。これによって、ユーザーがコンピューターをロック解除したまま離れて放置したときに、コンピューターへの不正アクセスの可能性が減少します。さらに、ユーザーの存在を検出できない場合、システムをモダン・スタンバイの状態に置くことで、消費電力を削減します。",
                     "autoScreenLockTimer": {
-                        "title": "AUTO SCREEN LOCK TIMER",
+                        "title": "自動スクリーン・ロック・タイマー",
                         "radioButton": {
-                            "fast": "Fast",
-                            "medium": "Medium",
-                            "slow": "Slow"
+                            "fast": "速く",
+                            "medium": "普通",
+                            "slow": "遅く"
                         },
-                        "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+                        "toolTipContent": "ユーザーの存在が検出されない場合に、画面をロックするオプションを高速/中間/低速から選択します。ただし、画面がロックされる時間は実際のユーザー・シナリオ、センサーの機能、および Windows の画面タイムアウト設定の影響も受けます。そのため、席を離れるときはすぐにシステムをロックすることを強くお勧めします。"
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+                    "title": "距離感度調整",
+                    "caption": "自動距離調整は、AI エンジン経由で検出距離を自動更新します。",
                     "options": {
-                        "near": "Near",
-                        "far": "Far"
+                        "near": "近い",
+                        "far": "遠い"
                     }
                 },
                 "note": {
-                    "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-                    "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
-                    "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-                    "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
-                    "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+                    "description1": "この機能は Windows Hello に依存しています。Windows の設定で顔認識がオンになっていることを確認してください。",
+                    "description2": "この機能はセンサーとカメラを使ってユーザーの存在を検出します。ただし、この機能が個人のデータを収集することはありません。",
+                    "description3": "1.コンピューターがテント・モード、タブレット・モード、またはスタンド・モードの場合、この機能が適切に動作しないことがあります。",
+                    "description4": "2.コンピューターが休止状態またはオフである。自動 IR カメラ・ログインは機能しません。",
+                    "description5": "3.自動ログインのために IR カメラが顔を認識できるように、コンピューター画面を適切な角度に調整してください。"
                 },
                 "WindowsLink": {
-                    "goToWindowsHello": "Go to Windows Hello Settings",
-                    "screenTimeoutSettings": "Go to Screen timeout settings"
+                    "goToWindowsHello": "Windows Hello 設定に移動",
+                    "screenTimeoutSettings": "画面のタイムアウト設定に移動します"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "デフォルト設定にリセットする"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "インテリジェント・スクリーン",
+                "description": "Lenovo インテリジェント・センサーは、コンピューターの各種センサーを併用してアクティビティを検出し、電源管理の設定を調整します。たとえば、ユーザーが歩行中であることを検出した場合は画面を暗くしますが、画面を読んでいることを検出した場合は暗くしません。",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "自動画面オフ",
+                    "caption": "画面表面が下を向いているか歩行中の場合に、自動的に画面をオフにします。",
+                    "note": "この機能は、Windows の設定画面の「システム・セクション」で、電源プランの設定が「バッテリー駆動時に画面の電源を切らない」に設定されている場合、使用できません。この機能を有効にするには、「なし」以外の値を選択してください。",
+                    "windowsLink": "Windows の設定画面の「電源とスリープ」設定に移動する"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "画面を維持する",
+                    "caption": "読書中または閲覧中の場合に、画面を維持します。",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "閲覧時に画面が暗くなるまでの時間",
+                        "startTime": "0 分",
+                        "endTime": "60 分"
+                    }
+                }
+            },
+            "activeProtectionSystem": {
+                "title": "Active Protection System",
+                "description": "Lenovo Active Protection System は、ハードディスク・ドライブを物理的な強い衝撃や振動による損傷から保護する役に立つ自動機能です。ご使用のコンピューターの動きを常にモニターし、落下など損傷のおそれがある事態が予測される場合に、ハードディスク・ドライブを一時的に停止します。",
+                "activeProtection": {
+                    "title": "Active Protection",
+                    "caption": "感度を変更します。低感度モードでは、大きな衝撃の場合にのみ保護をアクティブにします",
+                    "checkbox": "電車や車の振動のような繰り返しの衝撃を無視します"
+                },
+                "manualActiveProtectionSuspension": {
+                    "title": "Active Protection を手動で休止する",
+                    "caption": "Active Protection System を手動で休止できるようにします",
+                    "dropdown-title": "休止時間",
+                    "button": "今すぐ休止"
+                },
+                "advanced": {
+                    "description": "タブレット使用中のハードディスク・ドライブへのアクセスを向上させるために、次の活動が検出されたら Active Protection System を一時停止します",
+                    "pen": {
+                        "title": "ペン入力",
+                        "description": "ペン入力の使用時に、ペンが範囲外になると APS を有効にします"
+                    },
+                    "touch": {
+                        "title": "タッチ入力",
+                        "description": "タッチ入力の使用時に、タッチ入力が検出されないと APS を有効にします"
+                    },
+                    "hand": {
+                        "title": "コンピューターの端の手元近接センサーによる感知",
+                        "description": "タブレットモードが有効な場合、手が検出されないと APS を有効にします"
                     }
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "インテリジェント・メディア",
+                "title": "ゼロ・タッチ・ビデオ再生",
+                "desc": "この機能では、コンピューターを離れるときにビデオを一時停止し、戻ったときにビデオを再開します。",
+                "tooltip": "この機能は Web ビデオ・プレイヤーに適用できません。Windows Media Player、5KPlayer など、人気のあるローカル・ビデオ・プレイヤーは、この機能をサポートしています。"
+            },
+            "voice": {
+                "title": "音声",
+                "description": "Lenovo Voice は、音声テキスト変換機能を使用して音声をテキストに変換し、翻訳機能を使用して音声からテキストへのリアルタイムの翻訳を提供します。",
+                "installBtnText": "インストール",
+                "launchBtnText": "起動",
+                "voiceToText": {
+                    "title": "音声テキスト変換",
+                    "caption": "この機能を使用して音声をテキストに変換できます。"
+                },
+                "translation": {
+                    "title": "翻訳",
+                    "caption": "この機能は音声のリアルタイム翻訳を提供します。翻訳された内容はテキストで表示されます。必要に応じて原文の言語と訳文の言語を選択できます。"
+                },
+                "modalPopUp": {
+                    "heading": "使用開始:",
+                    "point1": "Lenovo Voice アイコンが Windows のシステム トレイに表示されていることを確認します。",
+                    "point2": "変換したテキストを記録するファイルを開きます。",
+                    "point3": "Windows システム トレイの Lenovo Voice アイコンをクリックして、「音声テキスト変換」を選択します。",
+                    "point4": "目的の言語を選択し、マイクのアイコンをクリックして開始します。",
+                    "point5": "編集箇所にカーソルを置き、話し始めます。",
+                    "point6": "Windows システム トレイの Lenovo Voice アイコンをクリックして、「翻訳」を選択します。",
+                    "point7": "目的の原文言語と訳文言語を選択します。",
+                    "point8": "必要に応じて、スピーカーまたはマイクからの音声入力を設定します。",
+                    "point9": "マイクのアイコンをクリックして話し始めます",
+                    "closeText": "閉じる"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "System Update",
+        "back": "戻る",
+        "history": "全履歴",
+        "notAvailable": "利用できません",
+        "notInstalled": "未インストール",
+        "criticalUpdates": "重要な更新",
+        "recommendedUpdates": "推奨更新",
+        "optionalUpdates": "任意の更新",
+        "ignoredUpdates": "無視された更新",
+        "successInstall": "正常にインストールされました。",
+        "failedInstall": "インストール失敗:",
+        "at": "の",
+        "readMore": "表示を多くする",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+            "reboot": "リブート",
+            "shutdown": "シャットダウン",
+            "rebootForceMsg": "選択した更新は、インストール後にシステムを自動的に再起動します。",
+            "shutdownForceMsg": "選択した更新は、インストール後にシステムを自動的にシャットダウンします。",
+            "rebootDelayedMsg": "選択した更新によって、インストール後、更新のインストール中にシステムが再起動されます。システムの電源を切ったり、電源やアクセサリを取り外したりしないでください。システムの再起動に備えて作業を保存しておくことをお勧めします。",
+            "rebootRequiredMsg": "更新を正常にインストールするために、ココンピューターはすべてが安全かつ円滑に実行されていることを確認するために再起動します。",
             "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "cancelButton": "キャンセル",
+            "rebootButton": "今すぐリブート",
+            "dismissButton": "却下",
+            "rebootPending": "再起動保留"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "自動更新設定",
+            "subtitle": "更新を自動的にインストール",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "重要な更新",
+                "tooltip": "重要な更新は、重大な問題、深刻なシステム誤動作、ハードウェア障害、またはデータの破損を防止します。"
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "推奨アップデート",
+                "tooltip": "推奨されるドライバの更新により、コンピュータは最適なパフォーマンスで動作し続けます。"
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Windows の更新",
+                "url": "Windows の設定"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Lenovo サポート Web サイト"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "System Update へようこそ。",
+            "title": "最新のシステムは健全なシステムです。",
+            "last": "最終更新日:",
+            "next": "次回の更新スケジュール:",
+            "checkButton": "更新の確認",
+            "checking": "更新を確認しています",
+            "downloading": "更新のダウンロードが完了しました",
+            "installing": "更新をインストールしています",
+            "percent": "% 完了",
+            "cancelCheck": "チェックをキャンセル",
+            "cancelUpdates": "更新をキャンセル",
+            "available": "利用できる更新",
+            "description": "これらのパッケージには、コンピューターが正常に動作するために必須のハードウェア・ドライバーおよびその他のシステム・ユーティリティーの更新プログラムが含まれています。重要な更新はまた、ご使用のコンピューターにおけるデータ保護という観点でも重要であり、適用可能になった場合にはインストールする必要があります。これらのパッケージをインストールしない場合は、データ損失、システムの誤動作、またはハードウェア障害が発生する可能性があります。",
+            "installButton": "すべての更新をインストール",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "すべての更新は正しくインストールされました",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "一部の更新は正常にインストールされませんでした。",
+                    "description": "これらの更新のダウンロード中またはインストール中に問題が発生しました。オンラインであることを確認し、更新のインストール中はコンピューターの電源を切らないでください。"
                 }
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend",
-            "rebootRequiredTag": "Reboot Required",
-            "rebootDelayTag": "Reboot Required, Power Source Required",
-            "shutdownRequiredTag": "Shutdown Required",
-            "dependedPackage": "Depended Package"
+            "rebootRequired": "再起動が必要です",
+            "failReason": "失敗の理由: AC 電源アダプターがコンピューターに接続されていませんでした。",
+            "manufacturer": "製造メーカー:",
+            "version": "バージョン:",
+            "installVersion": "インストール済みバージョン:",
+            "downloadSize": "ダウンロード・サイズ:",
+            "diskSpaceNeeded": "ハードディスクに必要な空き容量:",
+            "ignore": "無視",
+            "attend": "アテンド",
+            "rebootRequiredTag": "再起動が必要です",
+            "rebootDelayTag": "再起動が必要、電源が必要",
+            "shutdownRequiredTag": "シャットダウンが必要です",
+            "dependedPackage": "依存パッケージ"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "利用できる更新",
+            "description": "これらのパッケージには、ご使用のコンピューターが正しく動作するために不可欠な更新が含まれています。重要な更新はコンピューターを安全で信頼できる状態にしておくのに役立つものであり、利用できるようになり次第インストールする必要があります。推奨更新と任意の更新は、ソフトウェアを最新の状態に保ち、コンピュータを最高の状態で稼働させるのに役立ちます。",
+            "installAllUpdates": "すべての更新をインストール",
+            "installSuccessHeader": "すべての更新は正しくインストールされました",
+            "installFailHeader": "一部の更新は正常にインストールされませんでした",
+            "installFailDescription": "これらの更新のダウンロード中およびインストール中に問題が発生しました。オンラインであることを確認し、更新のインストール中はコンピューターの電源を切らないでください。",
+            "optionalUpdates": "オプションの更新",
+            "installSelectedUpdates": "選択した更新をインストール"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "名前",
+            "sortByDate": "日付順にソート",
+            "packageSize": "パッケージ・サイズ:",
+            "releaseDate": "リリース日:",
+            "showAll": "すべて表示",
+            "noInstallationHistory": "インストール履歴はありません"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "新規更新の取得中に問題が発生しました。後から再試行してください。",
+            "upToDate": "利用できる更新がありません。システムは最新です。",
+            "egatherException": "ユーザー情報の収集中にエラーが発生しました。",
+            "gatheringUserInfoException": "ユーザー情報の収集中にエラーが発生しました。",
+            "certificateValidationException": "更新コンテンツ・サーバーが無効です。後から再試行してください。",
+            "downloadException": "更新のダウンロード中にエラーが発生しました。",
+            "connectException": "更新コンテンツ・サーバーに接続できません。",
+            "notEnoughDiskSpace": "現行タスクを実行するには、十分なディスク容量がありません。",
+            "proxyAuthenticationException": "プロキシー・ユーザー名またはパスワードが誤っています。",
+            "proxyConnectionException": "プロキシー・サーバーに接続できません。",
+            "autoScriptEvaluationException": "自動構成スクリプトの評価中に、エラーがありました。",
+            "localRepositoryConnectionFailureException": "ローカル・リポジトリーに接続できません。",
+            "localRepositoryDatabaseException": "ローカル・リポジトリー・データベースは、検出できないか、破損しています。",
+            "networkInterruptedException": "システム更新サーバーは現在使用できません。後から再試行してください。",
+            "helpCenterInvalidServerException": "システム更新サーバーが無効です。後から再試行してください。",
+            "catalogNotFoundException": "ご使用のシステムに適用可能な更新はありません。",
+            "catalogCrcErrorException": "システムのカタログを更新中です。後から再試行してください。",
+            "catalogErrorException": "システム更新サーバーで、ご使用のシステムの更新カタログにエラーが検出されました。後から再試行してください。",
+            "fileNotFoundException": "ファイルが見つかりません。"
         }
     },
     "homeSecurity": {
-        "title": "Connected Home Security",
-        "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Ecosystem Security Overview",
-        "thisDevice": "This device",
-        "allDevices": "All Devices",
-        "protected": "Protected",
-        "notProtected": "Not Protected",
-        "myDevice": "My Device",
-        "allDevice": "All Devices",
-        "secure": "SECURE",
-        "needAttention": "NEEDS ATTENTION",
-        "manageAccount": "Manage Account",
-        "devices": "Devices",
-        "seeProtectedDevices": "See protected devices",
-        "addDevice": "add device",
-        "trailExpired": "Trail expired",
-        "trailExpiredSubtext": "Upgrate to protect all of your devices",
-        "upgrade": "upgrade",
+        "title": "接続ホーム・セキュリティー",
+        "notification": {
+            "recent": "最近のセキュリティー通知",
+            "notifications": "通知"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "デバイスのエコシステムを保護する",
+            "thisDevice": "このデバイス",
+            "allDevices": "すべてのデバイス",
+            "protected": "保護",
+            "notProtected": "未保護",
+            "trialExpired": "試用期限切れ",
+            "upgrade": "アップグレード",
+            "inEcosystem": "エコシステムで",
+            "ecosystemEnable": "エコシステムが有効",
+            "inTrial": "トライアルで",
+            "addEcosystem": "エコシステムに追加",
+            "enableEcosystem": "エコシステムを有効にする",
+            "startTrial": "トライアルを開始する",
+            "fullAccess": "完全アクセス",
+            "renew": "更新"
+        },
+        "overview": {
+            "overviewBlockTitle": "エコシステム・セキュリティーの概要",
+            "allDevices": "すべてのデバイス",
+            "myDevice": "デバイス",
+            "thisComputer": "This computer",
+            "secure": "安全",
+            "needAttention": "注意が必要",
+            "manageAccount": "アカウントの管理",
+            "devices": "デバイス",
+            "seeProtectedDevices": "保護されたデバイスを見る",
+            "addDevice": "デバイスの追加",
+            "trialExpired": "試用期限切れ - アップグレードして、すべてのデバイスを保護する",
+            "upgrade": "アップグレード",
+            "freeTrial": "すべてのデバイスを保護する - 30 日間無料トライアル",
+            "startTrial": "トライアルを開始する"
+        },
         "tour": {
-            "back": "Back",
-            "skip": "Skip",
-            "start": "START TOUR",
-            "done": "DONE",
-            "welcome1": "Welcome",
-            "welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
-            "welcome2": "Exclusive for Vantage",
-            "welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
-            "create": "Create your account",
-            "lenovoId": "with Lenovo ID",
-            "notifications": "Receive <b>notifications</b> about your home's status",
-            "monitor": "<b>Monitor</b> the safety of your family's devices",
-            "peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
-            "signInLenovoId": "SIGH-UP WITH LENOVO ID",
-            "haveLenovo": "I don't have a <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Create a Lenovo ID",
-            "without": "Proceed <b>without an account</b>",
-            "skipAndTrial": "SKIP AND START TRIAL",
-            "alreadyHave": "I already have a <b>Connected Home Security Account</b>",
-            "loginCHS": "Login to existing CHS account",
-            "locationTitle": "Enable location tracking",
-            "locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+            "back": "戻る",
+            "skip": "スキップ",
+            "start": "ツアーを開始する",
+            "done": "完了",
+            "welcome1": "ようこそ",
+            "welcomeDesc1": "数回のクリックで、ご自身とご家族のために、PC、モバイル・デバイス、および接続中のデバイスを保護することができます。",
+            "welcomeDescStart": "今すぐ 30 日間無料トライアルを始めましょう。",
+            "welcome2": "Vantage 専用",
+            "welcomeDesc2": "接続ホーム・セキュリティーは、Vantage に直接組み込まれており、これにより、エコシステムの保護ステータスとセキュリティーのアラートにすばやくアクセスできます。",
+            "create": "アカウントの作成",
+            "lenovoId": "Lenovo ID で",
+            "notifications": "家の状況に関する<b>通知</b>を受け取る",
+            "monitor": "ご家族のデバイスの安全性を<b>モニタリングする</b>",
+            "peaceOfMind": "常に保護されていることによる<b>心の平安</b>を得てください！",
+            "signInLenovoId": "Lenovo ID で登録する",
+            "haveLenovo": "<b>Lenovo ID</b> を持っていません",
+            "createLenovo": "&nbsp;Lenovo ID の作成",
+            "without": "<b>アカウントなし</b>で進む",
+            "skipAndTrial": "スキップして、トライアルを開始する",
+            "alreadyHave": "<b>接続ホーム・セキュリティー・アカウント</b>をすでに持っています",
+            "loginCHS": "既存の CHS アカウントにログインする",
+            "locationTitle": "位置追跡を有効にする",
+            "locationPermission": "この機能が正しく動作するには、このデバイスの位置追跡を有効にする必要があります"
+        },
+        "accountStatus": {
+            "title": "接続ホーム・セキュリティー",
+            "startTrial": "トライアルを開始する",
+            "manageAccount": "アカウントの管理",
+            "upgradeAccount": "アカウントのアップグレード",
+            "inTrialDetail1": "{{remainingDays}}トライアルが終了するまでの日数。",
+            "inTrialDetail2": "現在トライアル期間内です。すべての機能に無制限にアクセスできます。",
+            "trialExpiredDetail1": "トライアルの期限が切れています。",
+            "trialExpiredDetail2": "トライアルの期限が切れているため、デバイスのエコシステムは保護されていません。",
+            "upgradedDetail1": "アカウントは{{expiredDate}}まで有効です。",
+            "upgradedDetail2": "デバイス・エコシステムは現在保護されています。",
+            "localAccountDetail2": "下のボタンをクリックして 30 日間の無料トライアルを開始する。",
+            "alreadyHaveAccount": "アクティベーション・コードをすでにお持ちですか？"
         }
     },
     "support": {
@@ -1101,7 +1496,9 @@
             "status": "ステータス:",
             "subDescription1": "この製品は、年間限定保証とデポ修理サービスを受けることができます。詳細については、最寄りのサービスセンターまでお問い合わせください。販売店は、本製品の搬入修理を行うことができます。",
             "subDescription2": "お使いのデバイスの保証の詳細を見つけることができませんでした。さらなる保証オプションについては、当社のサポート Web サイトをご覧ください。",
-            "viewWarrantyOptions": "保証オプションを表示"
+            "viewWarrantyOptions": "保証オプションを表示",
+            "offlineTips1": "最新の保証情報についてはインターネットに接続してください。",
+            "offlineTips2": "保証情報を更新するにはインターネットに接続してください。"
         },
         "documentation": {
             "title": "資料",
@@ -1131,9 +1528,9 @@
             "copyright": "© 2002-2019 Lenovo all rights reserved"
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "カテゴリー",
+            "categoriesDesc": "記事を読んで役に立つ情報を見つけてください。",
+            "seeArticles": "記事を見る"
         }
     },
     "security": {
@@ -1154,9 +1551,7 @@
             "maliciousNetwork": "今月、{{maliciousWifi}}の悪意のあるネットワークへのコンピューターの参加を防止しました。",
             "good": "良好",
             "malicious": "悪意",
-            "suspicious": "疑わしい",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "疑わしい"
         },
         "antivirus": {
             "common": {
@@ -1245,6 +1640,12 @@
                 "describe2": "接続ホーム・セキュリティーを使用するには、Lenovo Vantage に対して位置情報サービスを有効にする必要があります。位置情報を今すぐ有効にしますか?",
                 "agree": "同意する",
                 "cancel": "キャンセル"
+            },
+            "errorMessage": {
+                "headerText": "エラー",
+                "bodyText": "Vantage の重要なピースを見逃していることがわかりました。これらのピースはバックグラウンドでダウンロードされます。後から再試行してください。",
+                "closeText": "閉じる",
+                "offlineText": "インターネットに接続されていないことがわかりました。このページの一部がが正しく動作しません。再接続してください"
             }
         },
         "homeprotection": {
@@ -1256,7 +1657,7 @@
                 "homeSecurityAffect3": "ホーム・ネットワークに接続しているその他のデバイスが安全であることを確認します。",
                 "describe": "安全でないデバイスやネットワークでは、マルウェアが侵入し、個人情報の盗難、プライベート情報や財務情報の漏えいが生じる可能性があります。この機能を有効にして、デバイスとホーム・ネットワークを攻撃者に晒してしまうリスクを軽減してください",
                 "subtitle": "安心を手に入れる",
-                "subtitleDescribe": "接続ホーム・セキュリティーは、デバイスまたはホーム・ネットワークで脆弱性が検出された場合、または悪意がある可能性のネットワークに接続している場合に警告を送信します。接続ホーム・セキュリティーの詳細については、「ヒントとコツ」を参照してください。",
+                "subtitleDescribe": "接続ホーム・セキュリティーは、デバイスまたはホーム・ネットワークで脆弱性が検出された場合、または悪意がある可能性のネットワークに接続している場合に警告を送信します。接続ホーム・セキュリティーについての詳細は、<tag>ここで</tag>ご確認ください。",
                 "tryNow": "今すぐ試してみる"
             },
             "invitationcode": {
@@ -1332,7 +1733,7 @@
             "whatIsPmNotInstalled": "強力で複雑なパスワードを保存し、すべてのサイトですばやくログインするための最も安全で簡単な方法。",
             "whatIsPmInstalled": "より安全なデジタル・ライフ。パスワードを追加し、ダーク・ウェブ監視を有効にして、個人情報や支払情報を自動入力します。",
             "startProtect": "オンライン・アカウントを簡単な方法で保護しましょう。",
-            "discount": "Lenovo ユーザーは、専用の 6 か月間無料の Dashlane プレミアムをご利用いただけます。",
+            "discount": "Lenovo ユーザー限定の 50% オフで Dashlane プレミアムをご利用いただけます。",
             "offer": "この特典は新しい Dashlane ユーザーのみが対象です!",
             "getDashLane": "Dashlane を入手する",
             "learnMoreAbout": "Dashlane を最大限に活用する方法について<tag>詳細をご確認ください</tag>",
@@ -1378,32 +1779,32 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "ログイン",
+        "logout": "ログアウト",
+        "unlockExclusives": "専用機能をロック解除",
+        "user": "ユーザー",
+        "welcomeText": "今日はエネルギーにあふれているように見えます、{{firstName}} さん!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "今日はエネルギーにあふれているように見えます!",
+        "helloUser": "こんにちは {{firstName}} さん!",
+        "ssoErrorTitle": "エラー",
+        "ssoErrorCommon": "内部エラーが発生しました。再度試行してください。",
+        "ssoErrorCommonEx": "予期しないエラー。再度試行してください。",
+        "ssoErrorTimeStampIncorrect": "PC の時刻が正しくないようです。PC の時刻を修正してから再試行してください。",
+        "ssoErrorNetworkDisconnected": "申し訳ございませんが接続に失敗しました!インターネット接続を確認してから再試行してください。",
+        "ssoErrorCommunicating": "ネットワーク・エラー。接続を確認してから再試行してください。",
+        "ssoErrorAccountPluginNotExist": "プラグインが見つかりません。インターネットに接続されている場合、バックグラウンドでプラグインを自動復元します。これには多少の時間がかかるため、後で再試行してください。"
     },
     "faq": {
         "footer": {
-            "title": "Not finding what you are looking for?",
-            "description": "NEED ADDITIONAL SUPPORT? DON’T HESITATE TO CONTACT US VIA:",
-            "body": "Lenovo Community",
-            "button": "GO TO FORUM"
+            "title": "探しているものが見つかりませんか？",
+            "description": "追加サポートが必要ですか？ 次のことで米国に連絡することを躊躇しないでください。",
+            "body": "レノボコミュニティ",
+            "button": "フォーラムへ"
         },
         "question1": {
-            "title": "Back up and restore your files",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        Back up and restore your files\n    </div>\n    <hr />\n    <div style='margin-bottom:7rem;'>\n        It's always good to have a backup. Keep copies of your files on another drive in case something happens to the\n        originals.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Set up your backup\n    </div>\n    <hr />\n    <div class='mb-5'>\n        Select the <span style='font-weight:bold'>Start</span> button, select\n        <span style='font-weight:bold'>Settings</span> >\n        <span style='font-weight:bold'>Update & security</span> >\n        <span style='font-weight:bold'>Backup</span> > <span style='font-weight:bold'>Add a drive</span> , and then\n        choose an external drive or network location for your backups.\n    </div>\n    <div class='mb-5'>\n        <img src='./../../../../assets/images/qa/1.1.png' />\n    </div>\n    <div class='mb-5'>\n        All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files\n        get backed up or how often backups happen, go to\n        <span style='font-weight:bold;'>More options</span>.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Restore your files\n    </div>\n    <div class='mb-5'>\n        If you're missing an important file or folder, here's how to get it back:\n    </div>\n    <div>\n\n        <div class='mb-3'>1. Type <span style='font-weight:bold;'>Restore files</span>\n            in the search box on the taskbar, and then select\n            <span class='font-weight:bold'> Restore your files with File History</span>.</div>\n        <div class='mb-3'>2. Look for the file you need, then use the arrows to see all its versions</div>\n        <div class='mb-3'>3. When you find the version you want, select\n            <span style='font-weight:bold'>Restore</span>\n            to save it in its original location. To save it in a different place, press and hold (or right-click)\n            <span style='font-weight:bold'>Restore</span>, select <span style='font-weight:bold'>Restore to</span>, and\n            then choose a new location.</div>\n\n    </div>\n</div>",
+            "title": "ファイルをバックアップし、復元する",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        ファイルをバックアップし、復元する    </div>    <hr />    <div style='margin-bottom:7rem;'>        どんな場合でもバックアップを取っておくのは良いことです。オリジナルに問題が発生した場合に備えて、ファイルのコピーを別のドライブに保存してください。    </div>    <div style='font-size:3rem;font-weight:bold;'>        バックアップの設定    </div>    <hr />    <div class='mb-5'>        <span style='font-weight:bold'>「スタート」</span>ボタンを選択し、<span style='font-weight:bold'>「設定」</span> > <span style='font-weight:bold'>「更新とセキュリティ」</span> > <span style='font-weight:bold'>「バックアップ」</span> > <span style='font-weight:bold'>「ドライブの追加」</span>の順に選択して、次にバックアップ用の外付けドライブまたはネットワークの場所を選択します。    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        設定完了。毎時間、ユーザー・フォルダー (C:\\\\Users\\\\username) 内の全ファイルをバックアップします。バックアップするファイル、バックアップの頻度を変更するには、<span style='font-weight:bold;'>「その他のオプション」</span>に進みます。    </div>    <div style='font-size:3rem;font-weight:bold;'>        ファイルの復元    </div>    <div class='mb-5'>        重要なファイルやフォルダーが見つからない場合は、以下の手順で元に戻すことができます。    </div>    <div>        <div class='mb-3'>1.タスク バーの検索ボックスに<span style='font-weight:bold;'>「ファイルを復元」</span>と入力して、次に<span class='font-weight:bold'>「ファイル履歴をファイルを復元」</span>を選択します。</div>        <div class='mb-3'>2.必要なファイルを探し、次に矢印を使って、そのすべてのバージョンを表示します</div>        <div class='mb-3'>3.必要なバージョンが見つかったら、<span style='font-weight:bold'>「復元」</span>を選択して、元の場所にそれを保存します。別の場所に保存するには、<span style='font-weight:bold'>「復元」</span>を長押し（または右クリック）し、<span style='font-weight:bold'>「復元先」</span>を選択して、次に新しい場所を選択します。</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1443,8 +1844,8 @@
             }
         },
         "question2": {
-            "title": "How to refresh your PC",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        How to refresh your PC\n    </div>\n    <hr>\n    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>\n        Symptom\n    </div>\n    <div style='padding:5px 0;'>\n        If your PC isn't performing as well as it once did, and you don't know why,\n        you can refresh your PC without deleting any of your personal files or\n        changing your settings. Windows can “refresh” your PC so it’s more like a\n        fresh install without deleting your personal files.\n    </div>\n    <div style='padding:5px 0;'>\n        Refresh your PC, Here is what will happen: your files and personalized\n        settings won’t change\n    </div>\n    <div style='padding:5px 0;'>\n        <ul>\n            <li>Your PC settings will be changed back to its defaults</li>\n            <li>Apps from windows store will be kept</li>\n            <li>Apps you installed from disc or website will be removed</li>\n            <li>A list of removed files will be saved on your desktop</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Affected Brands\n    </div>\n\n    <div>\n        <ul>\n            <li>All Desktop and Laptops</li>\n\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Operation System\n    </div>\n\n    <div>\n        <ul>\n            <li>Windows 8, 8.1 & 10</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Solution\n    </div>\n\n    <div>\n        <ul class='list-unstyled'>\n            <li>\n                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>\n                <ol>\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Settings </span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Update and recovery</span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <div>Tap or click <span style='font-weight:bold;'> Recovery</span></div>\n                        <div style='padding:5px 0'>Under Refresh your PC without affecting your files, tap or click\n                            <span style='font-weight:bold;'> Get started.</span></div>\n                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>\n\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Next'</span>.\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Refresh' </span>to start the refresh process.\n                    </li>\n                    <li style='padding:5px 0;'>\n                        Once the refresh process is done, you can find a Removed Apps list on the desktop\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        You can find the removed apps while refreshing your system\n                    </li>\n                </ol>\n            </li>\n            <li style='padding:10px 0;'>\n                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>\n                <ol>\n                    <li style='padding:5px 0;'> Search for <span style='font-weight:bold;'> refresh </span>in the search\n                        tool available in the Start menu,</li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on <span style='font-weight:bold;'> 'Refresh your PC without affecting your\n                                files'</span> in the search results as shown below.</div>\n                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on the\n                            <span style='font-weight:bold;'> Get started </span>\n                            button just below the heading<span style='font-weight:bold;'> 'Refresh your PC without\n                                affecting your files'</span> to start refreshing your Windows 10 PC.</div>\n                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>\n                    </li>\n                </ol>\n            </li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;'>\n        Additional Information\n    </div>\n\n    <div>\n        In most cases, once you start to refresh your PC, it’ll finish on its own.\n        However, if Windows needs missing files, you’ll be asked to insert recovery\n        media, which is typically a DVD disc or thumb drive. If that happens, what\n        you’ll need depends on your PC.\n    </div>\n    <div style='padding:10px 0'>\n        If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use\n        that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact\n        Microsoft Support.\n    </div>\n\n</div>",
+            "title": "PC を更新する方法",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        PC を更新する方法    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        症状    </div>    <div style='padding:5px 0;'>        お使いの PC が以前のように機能しておらず、その理由が分からない場合は、個人用ファイルを削除したり、設定を変更したりせずに PC をリフレッシュできます。Windows では PC を「リフレッシュ」できます。PC のリフレッシュは、個人用ファイルを削除せずに、新たにインストールするのに似ています。    </div>    <div style='padding:5px 0;'>        PC のリフレッシュにより、ファイルとカスタマイズした設定は変更されません    </div>    <div style='padding:5px 0;'>        <ul>            <li>PC の設定はデフォルトに戻ります</li>            <li>Windows ストアからのアプリは維持されます</li>            <li>ディスクまたは Web サイトからインストールしたアプリは削除されます</li>            <li>削除したファイルのリストはデスクトップに保存されます</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        影響を受けるブランド    </div>    <div>        <ul>            <li>すべてのデスクトップとラップトップ</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        オペレーション・システム    </div>    <div>        <ul>            <li>Windows 8、8.1、および 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        解決法    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        <span style='font-weight:bold;'>「設定」</span>をタップまたはクリックします                    </li>                    <li style='padding:5px 0;'>                        <span style='font-weight:bold;'>「更新と回復」</span>をタップまたはクリックします                    </li>                    <li style='padding:5px 0;'>                        <div><span style='font-weight:bold;'>「回復」</span>タップまたはクリックします</div>                        <div style='padding:5px 0'>「ファイルに影響を与えないように PC をリフレッシュする」から<span style='font-weight:bold;'>「開始する」</span>をタップまたはクリックします。</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        <span style='font-weight:bold;'>「次へ」</span>をクリックします。                    </li>                    <li style='padding:5px 0;'>                        <span style='font-weight:bold;'>「リフレッシュ」</span>をクリックし、リフレッシュ・プロセスを開始します。                    </li>                    <li style='padding:5px 0;'>                        リフレッシュ・プロセスが完了すると、デスクトップに「削除されたアプリ」の一覧が表示されます                    </li>                    <li style='padding:5px 0;'>                        システムをリフレッシュしている間に、削除されたアプリを見つけることができます                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> 「スタート」メニューにある検索ツールで、<span style='font-weight:bold;'>「リフレッシュ」</span>を検索します。</li>                    <li style='padding:5px 0;'>                        <div>以下に示す検索結果の<span style='font-weight:bold;'>「ファイルに影響を与えないように PC をリフレッシュする」</span>をクリックします。</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div><span style='font-weight:bold;'>「ファイルに影響を与えないように PC をリフレッシュする」</span>の見出しのすぐ下にある<span style='font-weight:bold;'>「開始する」</span>ボタンをクリックして、Windows 10 PCのリフレッシュを開始します。</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        追加情報    </div>    <div>        ほとんどの場合、PC のリフレッシュを開始したら、プロセスは自動的に終了します。ただし、Windows にファイルが見つからない場合は、リカバリー・メディア (通常は DVD ディスクまたは USB フラッシュ・ドライブ) を挿入するように求められます。その場合、必要なことは、ご使用の PC により異なります。    </div>    <div style='padding:10px 0'>        DVD を使用して、ご使用の PC を Windows 8.1 または Windows RT 8.1 にアップグレードした場合は、そのディスクを使用します。Windows 8.1 または Windows RT 8.1 のメディアがない場合は、Microsoft サポートにご連絡ください。    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -1517,8 +1918,8 @@
             "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
         },
         "question3": {
-            "title": "How to know your machine's CPU",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    How to know your machine's CPU\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.\n    The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit\n    system.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n    <li>All Desktop and Laptops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operating System</h3>\n<ul>\n    <li>Windows 7 , 8 , 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n    <li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button,</strong>\n        right-clicking Computer, and then clicking Properties  </li>\n    <li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then click\n        <strong>Search.</strong></li>\n    <li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n    <li>Tap or click <strong>System</strong></li>\n    <li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong>\n        is displayed in the System type field under the System heading.\n        If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong>\n        <strong>32-bit Operating </strong>System is displayed in the System type field under the System heading.<br />\n         </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then\n        click <strong>Search.</strong></li>\n    <li>In the search box, type <strong>system information</strong></li>\n    <li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and then\n        click <strong>System Summary.</strong></li>\n    <li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>\n        x64-based PC is displayed in the <strong>System type</strong> field under the \n        Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong>\n        version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> field\n        under the Item heading.  </li>\n</ol>\n<p> </p>",
+            "title": "ご使用のマシンの CPU を知る方法",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    ご使用のマシンの CPU を知る方法</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>症状</h3><p>32 ビットと 64 ビットという用語は、コンピューターのプロセッサー (CPUとも呼ばれる) が情報を処理する方法を表します。64 ビット版の Windows は、32 ビットのシステムよりも効率的に大量のランダム・アクセス・メモリー (RAM) を処理します。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>影響を受けるブランド</h3><p>上記の症状は、以下のシステムに関連しますが、これらに限定されません。</p><ul>    <li>すべてのデスクトップとラップトップ</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>オペレーティング・システム</h3><ul>    <li>Windows 7、8、10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>解決法</h3><p><strong><u>Windows 7 または Vista の場合</u></strong></p><ol>    <li><strong>「スタート」ボタン</strong>の<strong>「スタート」ボタン</strong>の画像をクリックして、システムを開き、「コンピューター」を右クリックし、「プロパティ」をクリックします  </li>    <li>「システム」から、システムのタイプを表示できます。</li></ol><p><strong><u>Windows 8 および Windows 10 の場合</u></strong></p><p><strong>方法 1:</strong> コントロール パネルの「システム」ウィンドウを表示します</p><ol>    <li>画面の右端から内側にスワイプして、次に<strong>「検索」</strong>をタップします。または、マウスを使用している場合は、画面の右下隅をポイントしてから、<strong>「検索」</strong>をクリックします。</li>    <li>検索ボックスに<strong>「システム」</strong>と入力してから、<strong>「設定」</strong>をタップまたはクリックします。</li>    <li><strong>「システム」</strong>をタップまたはクリックします</li>    <li>64 ビット版の Windows 8 を実行している場合は、「システム」の見出しの「システムのタイプ」フィールドに<strong>「64 ビット オペレーティング システム」</strong>と表示されます。32 <strong>ビット版の Windows</strong> <strong>8</strong> を実行している場合は、「システム」の見出しの「システムのタイプ」フィールドに<strong>「32 ビット オペレーティング システム」</strong>と表示されます。<br /> </li></ol><p><strong>方法 2</strong>: システム情報ウィンドウの表示</p><ol>    <li>画面の右端から内側にスワイプして、次に<strong>「検索」</strong>をタップします。または、マウスを使用している場合は、画面の右下隅をポイントしてから、<strong>「検索」</strong>をクリックします。</li>    <li>検索ボックスに<strong>「システム情報」</strong>と入力します</li>    <li><strong>「システム」</strong>をタップまたはクリックし、<strong>「システム情報」</strong>をタップまたはクリックして、次に<strong>「システムの要約」</strong>をタップまたはクリックします。</li>    <li><strong>64 ビット</strong>版の Windows 8 を実行している場合<strong>、</strong>「項目」の見出し下の <strong>「システムの種類」</strong>に「x64 ベース PC」が表示されます。<br /><br /><strong>32 ビット</strong>版の Windows 8 を実行している場合、「項目」の見出しの下の<strong>「システムの種類」</strong>に「x86 ベース PC」が表示されます。 </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -1606,8 +2007,8 @@
             }
         },
         "question4": {
-            "title": "Check your machine's battery use",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Check your machine's battery use\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> \n    screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.\n    That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;\n    apps&ndash;are using too much power.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n\n<ul>\n    <li>Lenovo laptops, desktops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Systems</h3>\n<ul>\n    <li>All</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operationg System</h3>\n<ul>\n    <li>Window 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your\n    traditional <strong>control panel </strong>view, this feature is located in the\n    new <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>\n    select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br />\n        <br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last\n    from last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;\n    <strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,\n    the display,</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong>\n     options show how much power is used by applications while you&rsquo;re using them, compared to applications\n    running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>\n        &ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.\n    This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of this\n    feature.\n    It will display a list of the apps have used battery power in that period, and show you what percentage of your\n    battery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
+            "title": "マシンのバッテリーの使用を確認する",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    マシンのバッテリーの使用を確認する</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>症状</h3><p>Windows 10 には、ラップトップのバッテリー残量を表示する、新しい<strong>「バッテリーの使用」</strong>画面が含まれます。この画面では、どのアプリ (デスクトップと Windows 10 の両方の「ユニバーサル」アプリ) が電力を消費しすぎているのかを正確に知ることができます。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>影響を受けるブランド</h3><ul>    <li>Lenovo のラップトップ、デスクトップ</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>影響を受けるシステム</h3><ul>    <li>すべて</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>オペレーティング・システム</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>解決法</h3><p>この機能は Windows 10で新しく追加されました。従来の<strong>「コントロール パネル」</strong>の表示には格納されていないため、この機能を最初に見つける必要があります。この機能は新しい<strong>「設定」</strong>アプリにあります</p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. バッテリー使用画面を見つける</h3></p><p>1.「スタート」メニューから<strong>「設定」</strong>のオプションをクリックまたはタップします</p><p>2.<strong>「設定」</strong>で、<strong>「システム」</strong><strong>「バッテリー節約機能」の順に選択します。 <br /><br /></strong><strong><br /><br /></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3.この見出しの下の<strong>「バッテリーの使用」</strong>リンクをクリックまたはタップして、詳細を表示します。</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. 電力使用率を分析する</h3><p>4 バッテリー使用画面を変更して、過去 24 時間、48 時間、または先週からのバッテリー使用量を表示することができます</p><p>5 <strong>「システム」</strong>、<strong>「ディスプレイ」、</strong><strong>「Wi-Fi」</strong>の割合がわかります。これは、システムの処理、ディスプレイで消費された電力を表示します。</p><p>6 <strong>「使用中」</strong>および<strong>「バックグラウンド」</strong>オプションは、バックグラウンドで実行中のアプリと比較して、アプリ使用中の消費電力を示します。</p><p>7 バックグラウンドで電力を消費するアプリがある場合、<strong>「バックグラウンド アプリの設定を変更する」</strong>リンクをクリックまたはタップして、アプリがバックグラウンドで起動しないように設定します。これは、ユニバーサル Windows 10 アプリにのみ有効です。</p><p>8 下にスクロールすると、アプリの一覧が表示されます。これは、この機能の最も便利なセクションです。一定期間にバッテリーを消費したアプリの一覧を表示します。また、各アプリが使用した電力の割合を示します</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -1674,8 +2075,8 @@
             }
         },
         "question5": {
-            "title": "Use your PC like a tablet",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Use your PC like a tablet\n</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet\n        mode</strong> .</p>\n<p> </p>\n<p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device \n    on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and\n    how the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the\n    screen.</p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.\n    Select the <strong>Start </strong>button, select <strong>Settings </strong>>\n    <strong>System </strong>> <strong>\n        Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.\n    To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and\n    you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n    <li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n    <li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then\n        drag it to one side to snap it into your divided screen.</li>\n    <li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
+            "title": "PC をタブレットのように使用する",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    PC をタブレットのように使用する</div><hr><p>タブレット モードを使用すると、タッチスクリーン・デバイスを使用しているときに Windows がより直感的で使いやすくなります。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>タブレット モードの使用</h3><p>タブレット モードをオンにするには、タスク バーの<strong>「アクション センター」</strong>を選択してから、 <strong>「タブレット モード」</strong>を選択します。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>お願い</h3><p>デバイスでタブレット モードが自動的にオンになるかどうかを調べるには、製造元の Web サイトでデバイスを検索してください。この機能のサポート状況は、ハードウェア、インストールされているドライバー、および製造元によるデバイスの設定方法によって異なります。 </p><p> </p><p>タブレット モードでは、アプリは全画面表示になり、作業スペースが広がります。アプリを閉じるには、画面の一番下までドラッグします。</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>ヒント</h3><p>タスク バーは、PC がタブレット モードのときに使用できますが、画面に追加のスペースが必要な場合は非表示にすることができます。<strong>「スタート」</strong>ボタンを選択し、<strong>「設定」</strong> > <strong>「システム」</strong> > <strong>「タブレット モード」</strong>の順に選択したら、<strong>「タブレット モードでタスク バーを自動的に非表示にする」</strong>をオンにします。非表示のタスクバーを確認するには、画面の下から上にスワイプするか、そこにマウス・カーソルを合わせます。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>2 つのアプリを同時に使う</h3><p>タブレット モードで 2 つのアプリを並べて使用するには、開いているアプリを下に、また横にドラッグします。アプリのスナップ先の位置と、その横にスナップできる、開いているアプリが表示されます。</p><p>このビューでは、次のこともできます。</p><ul>    <li>スナップされている 2 つのアプリの間で共有エッジを使い、同時に両方のアプリのサイズを変更します。</li>    <li>タスク バーの<strong>「タスク ビュー」</strong>を選び、アプリを選択してから端までドラッグして、分割された画面にスナップさせます。</li>    <li>タスク バーの「戻る」ボタンを使用して、現在のアプリに戻ったり、その前に使っていたアプリを開いたりすることができます。</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -1714,8 +2115,8 @@
             }
         },
         "question6": {
-            "title": "Get to know Cortona, your personal assistant",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Get to know Cortana, your personal assistant\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>What is Cortana?</h3>\n<hr />\n<p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing\n    works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you\n    select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n    <li>Give you reminders based on time, places, or people.</li>\n    <li>Track packages, teams, interests, and flights.</li>\n    <li>Send emails and texts.</li>\n    <li>Manage your calendar and keep you up to date.</li>\n    <li>Create and manage lists.</li>\n    <li>Chit chat and play games.</li>\n    <li>Find facts, files, places, and info.</li>\n    <li>Open any app on your system.</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Try this: Set a reminder</h3>\n<hr />\n\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or\n    even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync\n    notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hey Cortana?</h3>\n<hr />\n<p>Set Cortana to hear you anytime you say\n    'Hey Cortana.' Select the search box on the taskbar to open Cortana home.\n    Then select <strong>Settings</strong>  and turn on <strong>Let Cortana respond to 'Hey\n        Cortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.\n</p>\n<p> </p>",
+            "title": "パーソナル・アシスタントの Cortana についてもっと知る",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    パーソナル・アシスタントの Cortana についてもっと知る</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Cortana とは?</h3><hr /><p>Cortana は、デジタル・エージェントです。Cortana は、ユーザーの作業を支援します。</p><p>Cortana を使用すればするほど、ユーザーの体験はよりパーソナライズされたものになります。</p><p>開始するには、検索ボックスに質問を入力するか、マイクを選択して Cortana に話しかけてください。(すべてのタイプの PC で入力できますが、通話するにはマイクが必要です。)</p><p>何を言うべきかわからない場合は、ロック画面に、またタスク バーの検索ボックスを選択すると、Cortana ホームに候補が表示されます。</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>ホーム 2. ノートブック 3. 設定 4. フィードバック</li></ol><p>以下は、Cortana がユーザーのためにできることの例です。</p><ul>    <li>時間、場所、または人に基づいてリマインダーを提供する。</li>    <li>荷物、チーム、興味、およびフライトを追跡する。</li>    <li>メールとテキストを送信する。</li>    <li>カレンダーを管理して、最新の状態に保つ。</li>    <li>リストを作成および管理する。</li>    <li>チャットをしたり、ゲームをしたりする。</li>    <li>ファクト、ファイル、場所、および情報を見つける。</li>    <li>システム上の任意のアプリを開く。</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>これを試してください: リマインダーのセット</h3><hr /><p>Cortana ができることの 1 つは、リマインダーをセットすることです。Cortana は、時間、場所、または人に基づき、ユーザーに行うべきことを教えることができます。</p><p>たとえば、「次回 Tanya から電話があったら、彼女におめでとうを言うのを思い出させてください」と入力するか、または言います。</p><p>Tanya から電話を受けると、リマインダーが表示されます。</p><p>追加のボーナス &mdash; Windows Phone または iPhone または Android 用の Cortana を使用している場合は、Cortana を設定して、PC とスマートフォンの間で通知を同期することができます。</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>コルタナさん</h3><hr /><p>「コルタナさん」と言うとき常にユーザーの声を聞くように Cortana を設定します。タスク バーの検索ボックスを選択して、Cortana ホームを開きます。次に<strong>「設定」</strong>を選択して、<strong>「「コルタナさん」と言ったら Cortana が応答するようにする」</strong>をオンにします。</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>お願い</p><p>Cortana は、特定の国/地域でしか利用できません。また、Cortana の機能の一部はどこでも利用できるわけではありません。</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -1750,13 +2151,14 @@
             },
             "para12": "Note",
             "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        }
+        },
+        "pageTitle": "サポート詳細"
     },
     "welcometutorial": {
         "description": "Vantage を使用すると、ドライバーの更新、診断の実行、サポートの要求、ご使用のデバイスの詳細確認が簡単になります。すばやく操作性をカスタマイズしたり、必要に合わせた有用な情報を見つけたりできます",
         "bullets1": "Vantageダッシュボードでシステムのステータスを確認してください。",
-        "bullets2": "セキュリティー・アドバイザーでセキュリティ管理が容易に",
-        "bullets3": "自動更新でデバイスはいつでも最新の状態",
+        "bullets2": "セキュリティー・アドバイザーは、セキュリティーの管理を容易にします (一部のシステムで利用可能)。",
+        "bullets3": "自動更新により、デバイスはいつでも最新の状態に維持されます (一部のシステムで利用可能)。",
         "subtitle1": "デバイスをどのように使用しますか?",
         "subtitle2": "興味のあることを教えてください",
         "personal": "個人用",
@@ -1798,6 +2200,6 @@
         "usageStatistics": "利用統計",
         "usageStatisticsDescription": "Lenovo に使用状況の統計を匿名で送信する。",
         "Note": "注:",
-        "settingsNotes": "このページの設定をすべて有効にするには、ユーザーが再起動する必要があります。"
+        "settingsNotes": "このページのすべての設定で、有効にするために、このアプリを再起動する必要があります。"
     }
 }

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="30" height="30" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#2ecc71"/>
+      <stop offset="1" stop-color="#35e6b9"/>
+    </linearGradient>
+  </defs>
+  <g id="battery_good" data-name="battery good" clip-path="url(#clip-path)">
+    <g id="组_20" data-name="组 20" transform="translate(-362 -1351)">
+      <g id="_6.20pxIcon_checkFillWithBorder" data-name="6.20pxIcon/checkFillWithBorder" transform="translate(362 1351)" clip-path="url(#clip-path)">
+        <g id="Group_15_Copy_6" data-name="Group 15 Copy 6" transform="translate(1 1)">
+          <circle id="Oval_Copy_2" data-name="Oval Copy 2" cx="14" cy="14" r="14" fill="url(#linear-gradient)"/>
+        </g>
+      </g>
+    </g>
+    <g id="ion-ios-checkmark-empty_-_Ionicons_2" data-name="ion-ios-checkmark-empty - Ionicons 2" transform="translate(9 9.448)">
+      <path id="ion-ios-checkmark-empty_-_Ionicons" data-name="ion-ios-checkmark-empty - Ionicons" d="M4.29,8.87a.7.7,0,0,1-1.043,0L0,5.623,1.043,4.58,3.768,7.3,11.014,0,12,1.043Z" transform="translate(0 0.552)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

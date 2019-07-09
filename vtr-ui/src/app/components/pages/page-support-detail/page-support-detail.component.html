@@ -1,7 +1,7 @@
 <div class="vtr-page-support vtr-page">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main [title]="title"></vtr-header-main>
+			<vtr-header-main [title]="title" [backarrow]="backarrow" [back]="'common.ui.back' | translate"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -12,11 +12,7 @@
 					<div class="row mn-6 card mx-5 mb-5">
 						<div class="col p-5">
 							<div class="row py-5 description-container">
-								<div class="col"
-									[innerHTML]="qa.getDescription()|sanitizeHtml">
-									<!-- [innerHTML]="qa.description|sanitizeHtml"> -->
-									<!--<div class="col">-->
-
+								<div class="col" [innerHTML]="qa.description | sanitize : 'html'"> <!-- sahinul25Jun2019 VAN-5719-->
 								</div>
 							</div>
 							<div class="row inset-content align-items-center justify-content-center py-3 invisible"
@@ -44,11 +40,13 @@
 						<div class="col">
 							<div class="row p-5">
 								<div class="col title smaller">
-									Not finding what you are looking for?
+									<!-- Not finding what you are looking for?  -->
+									{{'faq.footer.title' | translate}}
 								</div>
 								<div class="w-100"></div>
 								<div class="col subtitle">
-									Need additional support? Don’t hesitate to contact us via:
+									 <!-- Need additional support? Don’t hesitate to contact us via: -->
+									{{'faq.footer.description' | translate}}
 								</div>
 								<div class="w-100"></div>
 								<div class="col px-0 mt-5">
@@ -73,12 +71,13 @@
 													<fa-icon [icon]="['fas','briefcase']"></fa-icon>
 												</div>
 												<div class="col-auto px-2 mr-auto sub-title">
-													Lenovo Community
+													<!-- Lenovo Community -->
+													{{'faq.footer.body' | translate}}
 												</div>
 												<div class="col-auto ">
 													<!-- <button class="btn btn-label">Go To Forum</button> -->
 													<button class="btn btn-label"><a href="https://forums.lenovo.com/"
-															target="_blank">Go To Forum</a></button>
+															target="_blank"><!-- Go To Forum --> {{'faq.footer.button' | translate}}</a></button>
 													<!-- <button class="btn btn-label"
 														onclick="window.open('https://forums.lenovo.com/', '_blank')">Go
 														To Forum
@@ -99,7 +98,8 @@
 							<vtr-widget-questions componentName="qa"
 								[title]="'common.qAndA.title' | translate"
 								[description]="'common.qAndA.subtitle' | translate"
-								[items]="qaService.qas"></vtr-widget-questions>
+								[items]="qaService.qas"
+								blockPosition="r1"></vtr-widget-questions>
 						</div>
 					</div>
 				</div>

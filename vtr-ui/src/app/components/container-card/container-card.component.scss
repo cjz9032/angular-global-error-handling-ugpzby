@@ -61,16 +61,19 @@
 					.title {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+						cursor: pointer;
 					}
 
 					.description {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+						cursor: pointer;
 					}
 
 					.caption {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+						cursor: pointer;
 					}
 
 					.logo {
@@ -84,7 +87,15 @@
 							text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						}
 					}
+
+					.default-cursor {
+						cursor: default;
+					}
 				}
+			}
+
+			.default-cursor {
+				cursor: default;
 			}
 		}
 	}
@@ -127,16 +138,19 @@
 					.title {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+						cursor: pointer;
 					}
 
 					.description {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+						cursor: pointer;
 					}
 
 					.caption {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+						cursor: pointer;
 					}
 
 					.logo {
@@ -151,6 +165,10 @@
 						}
 					}
 				}
+			}
+
+			.default-cursor {
+				cursor: default;
 			}
 		}
 	}
@@ -186,6 +204,7 @@
 						padding: 0 15%;
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+						cursor: pointer;
 						@media #{$mediaquery_X9} {
 							font-size: 3rem;
 							top: 15%;
@@ -201,6 +220,10 @@
 					}
 				}
 			}
+
+			.default-cursor {
+				cursor: default;
+			}
 		}
 	}
 
@@ -209,7 +232,11 @@
 			max-width: 100%;
 		}
 
-		a {
+		.offline-a {
+			height: 100%;
+		}
+
+		a, .offline-a {
 			&:hover {
 				text-decoration: none;
 			}
@@ -229,9 +256,14 @@
 				height: 100%;
 			}
 
+			.default-cursor {
+				cursor: default;
+			}
+
 			.content {
 				padding: 3rem 4rem;
 				height: 40%;
+				cursor: pointer;
 				@media #{$mediaquery_10} {
 					padding: 1.5rem 2rem;
 				}
@@ -239,6 +271,7 @@
 				.title {
 					font-weight: $weight_light;
 					text-decoration: none;
+					cursor: pointer;
 					&:hover {
 						text-decoration: none;
 					}
@@ -291,15 +324,20 @@
 			}
 		}
 
+		.default-cursor {
+			cursor: default;
+		}
+
 		.content {
 			padding: 3rem 4rem;
-
+			cursor: pointer;
 			.title {
 				font-weight: $weight_light;
 				color: $light;
 				text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 				font-size: 4rem;
 				line-height: 4.6rem;
+				cursor: pointer;
 			}
 
 			.read-more {
@@ -345,7 +383,7 @@
 		position: relative;
 		z-index: 1;
 		padding: 3rem;
-
+		
 		.title {
 			color: $main_dark;
 			font-size: 2.5rem;

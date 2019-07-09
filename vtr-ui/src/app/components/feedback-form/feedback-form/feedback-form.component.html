@@ -1,69 +1,106 @@
-<div class="modal-header">
-	<!-- <h5 class="modal-title">Feedback</h5> -->
-	<button type="button"
+<div class="vtr-feedback-form"
+	id="feedback-form-dialog">
+	<div class="content">
+		<div class="title">{{ 'dashboard.feedback.title' | translate }}</div>
+		<form name="feedBack"
+			class="feedback-form"
+			(submit)="onFeedBackSubmit()"
+			[formGroup]="feedbackForm"
+			novalidate>
+			<div class="line"></div>
+			<div class="qa-item"
+				*ngFor="let qa of questions">
+				<div class="question" [innerHTML]="qa.question | translate"></div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"
+						type="radio"
+						[formControlName]="qa.name"
+						[name]="qa.name"
+						[id]="qa.idYes"
+						[value]="true">
+					<label class="form-check-label"
+						[for]="qa.idYes">{{'dashboard.feedback.form.yes' | translate}}</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"
+						type="radio"
+						[formControlName]="qa.name"
+						[name]="qa.name"
+						[id]="qa.idNo"
+						[value]="false">
+					<label class="form-check-label"
+						[for]="qa.idNo">{{'dashboard.feedback.form.no' | translate}}</label>
+				</div>
+				<div class="line"></div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="comment-tip">
+						{{'dashboard.feedback.form.tips1' | translate}}
+					</div>
+					<textarea placeholder="{{'dashboard.feedback.form.comments' | translate}}"
+						class="form-control user-comment"
+						cols="30"
+						rows="10"
+						formControlName="userComment"
+						pattern="^(?!\s*$).+"
+						required></textarea>
+				</div>
+			</div>
+
+			<div class="d-flex">
+				<button type="submit"
+					class="button"
+					title="{{'dashboard.feedback.form.sendFeedback' | translate}}"
+					[disabled]="!feedbackForm.value.userComment && feedbackForm.value.qaNewStyle === null && feedbackForm.value.qaPerformance === null && feedbackForm.value.qaUseFrequency === null">
+					{{'dashboard.feedback.form.sendFeedback' | translate}}
+				</button>
+				<div ngbDropdown 
+					class="d-inline-block dropdown-content">
+					<div class="dropdown-btn"
+						id="feedback-dropdown" ngbDropdownToggle>
+						<fa-icon [icon]="['fal', 'angle-down']"></fa-icon>
+					</div>
+					<div class="dropdown-list"
+						ngbDropdownMenu
+						aria-labelledby="feedback-dropdown">
+						<div class="menu-pointer"></div>
+						<div class="dropdown-item" ngbDropdownItem
+							vtrMetrics
+							metricsItem="btn.SubmitScreenShot"
+							metricsEvent="FeatureClick"
+							metricsParent="Dialog.Feedback"
+							title="{{'dashboard.feedback.form.submitScreenShot' | translate}}"
+							(click)="goToMailUtility()">
+							{{'dashboard.feedback.form.submitScreenShot' | translate}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="feedback-success"
+		*ngIf="feedbackSuccess">
+		<div class="success-icon">
+			<fa-icon [icon]="['fal', 'check-circle']"></fa-icon>
+		</div>
+		<div class="thank-you">{{ 'dashboard.feedback.form.messages.feedbackSuccess' | translate }}</div>
+		<div class="left-time">{{ leftTime }}</div>
+	</div>
+
+	<a role="button"
+		href="javascript:;"
+		class="close-btn"
 		vtrMetrics
 		metricsItem="btn.close"
 		metricsEvent="featureClick"
 		metricsParent="Dialog.Feedback"
-		class="close close-button"
 		data-dismiss="modal"
 		(click)="activeModal.dismiss('Cross click')"
 		aria-label="Close">
-		<span aria-hidden="true">&times;</span>
-	</button>
-</div>
-<div class="modal-body">
-	<form name="feedBack"
-		class="feedback-form"
-		(submit)="onFeedBackSubmit($event)"
-		[formGroup]="feedbackForm"
-		novalidate>
-		<div class="row">
-			<div class="col">
-				<input autocomplete="off"
-					placeholder="{{'dashboard.feedback.form.email' | translate}}"
-					type="email"
-					class="form-control user-email text-center"
-					formControlName="userEmail"
-					pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
-					email
-					ngbAutofocus />
-			</div>
-		</div>
-		<br />
-		<div class="row">
-			<div class="col">
-				<textarea placeholder="{{'dashboard.feedback.form.comments' | translate}}"
-					class="form-control user-comment text-center"
-					cols="30"
-					rows="10"
-					formControlName="userComment"
-					pattern="^(?!\s*$).+"
-					required></textarea>
-			</div>
-		</div>
-		<br />
-		<div class="row">
-			<div class="col text-center">
-				<button type="submit"
-						vtrMetrics
-				       itemtype= "UserFeedback"
-						metricsItem="Submit"
-						ItemParent="Dialog.Feadback"
-						UserEmail= "sample@lenovo.com"
-				Content="Vantage is a very good product(sample)"
-						name="{{'dashboard.feedback.form.button' | translate}}"
-					class="btn btn-primary btn-lg user-submit"
-					[disabled]="feedbackForm.invalid">
-					{{ feedbackButtonText }}
-				</button>
-				<button type="button" 
-					name="{{'dashboard.feedback.form.addScreenshot' | translate}}"
-					class="btn btn-primary btn-lg user-submit"
-					(click)="goToMailUtility()">
-					{{'dashboard.feedback.form.addScreenshot' | translate}}
-				</button>
-			</div>
-		</div>
-	</form>
+		<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
+			alt=""
+			srcset="">
+	</a>
 </div>

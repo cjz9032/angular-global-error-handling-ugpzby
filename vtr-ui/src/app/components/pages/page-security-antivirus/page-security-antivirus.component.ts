@@ -8,6 +8,11 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { RegionService } from 'src/app/services/region/region.service';
+import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { GuardService } from '../../../services/guard/security-guardService.service';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',
@@ -29,6 +34,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 	enableFirewall = 'security.antivirus.common.enableFirewall';
 	backId = 'sa-av-btn-back';
 	mcafeeArticleCategory: string;
+	isOnline = true;
 
 	@HostListener('window:focus')
 	onFocus(): void {
@@ -39,15 +45,25 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		public VantageShell: VantageShellService,
 		public cmsService: CMSService,
 		public commonService: CommonService,
-		public modalService: NgbModal) {
+		public modalService: NgbModal,
+		public regionService: RegionService,
+		private securityAdvisorMockService: SecurityAdvisorMockService,
+		private guard: GuardService
+		) {
 		this.securityAdvisor = this.VantageShell.getSecurityAdvisor();
-		this.antiVirus = this.VantageShell.getSecurityAdvisor().antivirus;
-		console.log(this.antiVirus);
+		if (!this.securityAdvisor) {
+			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
+		}
+		this.antiVirus = this.securityAdvisor.antivirus;
 		this.viewModel = new AntiVirusviewModel(this.antiVirus, commonService);
 		this.fetchCMSArticles();
 	}
 
 	ngOnInit() {
+		this.isOnline = this.commonService.isOnline;
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
 		if (this.antiVirus.mcafee) {
 			this.viewModel.mcafee = this.antiVirus.mcafee;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfee, this.viewModel.mcafee);
@@ -101,7 +117,6 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		if (this.antiVirus.mcafee || this.antiVirus.others || this.antiVirus.windowsDefender) {
 			this.viewModel.antiVirusPage(this.antiVirus);
 		}
-		console.log(this.viewModel.otherFirewall);
 		this.antiVirus.on(EventTypes.avMcafeeStatusEvent, (data) => {
 			this.viewModel.mcafee.launch = this.antiVirus.mcafee.launch.bind(this.antiVirus.mcafee);
 			this.viewModel.mcafee.status = data;
@@ -190,17 +205,16 @@ export class PageSecurityAntivirusComponent implements OnInit {
 			this.viewModel.mcafee.subscription = data;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfee, this.viewModel.mcafee);
 		});
+
+		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+			this.antiVirus.refresh();
+		}
 	}
+
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'anti-virus',
-			'Lang': 'EN',
-			'GEO': 'US',
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			'Page': 'anti-virus'
 		};
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
@@ -218,7 +232,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 			}
 		);
 
-		this.cmsService.fetchCMSArticle(this.urlGetMcAfee, {'Lang': 'EN'}).then((response: any) => {
+		this.cmsService.fetchCMSArticle(this.urlGetMcAfee).then((response: any) => {
 			if (response && response.Results && response.Results.Category) {
 				this.mcafeeArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
 			}
@@ -227,12 +241,26 @@ export class PageSecurityAntivirusComponent implements OnInit {
 
 	openArticle() {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
-			backdrop: 'static',
+			backdrop: true,
 			size: 'lg',
 			centered: true,
-			windowClass: 'Article-Detail-Modal'
+			windowClass: 'Article-Detail-Modal',
+			keyboard : false
 		});
 
 		articleDetailModal.componentInstance.articleId = this.urlGetMcAfee;
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
+		}
 	}
 }

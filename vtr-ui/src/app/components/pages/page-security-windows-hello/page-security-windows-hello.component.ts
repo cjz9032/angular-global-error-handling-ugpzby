@@ -5,6 +5,11 @@ import { VantageShellService } from '../../../services/vantage-shell/vantage-she
 import { CMSService } from '../../../services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { RegionService } from 'src/app/services/region/region.service';
+import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { GuardService } from '../../../services/guard/security-guardService.service';
 
 @Component({
 	selector: 'vtr-page-security-windows-hello',
@@ -18,19 +23,27 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 	cardContentPositionA: any = {};
 	securityAdvisor: SecurityAdvisor;
 	backId = 'sa-wh-btn-back';
+	isOnline = this.commonService.isOnline;
 
 	constructor(
 		public mockService: MockService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
-		vantageShellService: VantageShellService
+		public regionService: RegionService,
+		private guard: GuardService,
+
+		vantageShellService: VantageShellService,
+		private securityAdvisorMockService: SecurityAdvisorMockService
 	) {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
+		if (!this.securityAdvisor) {
+			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
+		}
 		this.statusItem = {
 			title: 'security.windowsHello.statusTitle',
 			status: 'loading'
 		};
-		this.windowsHello = vantageShellService.getSecurityAdvisor().windowsHello;
+		this.windowsHello = this.securityAdvisor.windowsHello;
 		this.updateStatus();
 		this.windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
 			this.updateStatus();
@@ -38,7 +51,16 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 		this.fetchCMSArticles();
 	}
 
-	ngOnInit() { }
+	ngOnInit() {
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+
+		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+			this.windowsHello.refresh();
+		}
+
+	}
 
 	setUpWindowsHello(): void {
 		this.windowsHello.launch();
@@ -66,13 +88,7 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'windows-hello',
-			'Lang': 'EN',
-			'GEO': 'US',
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			'Page': 'windows-hello'
 		};
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
@@ -89,5 +105,18 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 				console.log('fetchCMSContent error', error);
 			}
 		);
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
+		}
 	}
 }

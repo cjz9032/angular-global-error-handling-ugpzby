@@ -11,54 +11,44 @@
 				<div class="settings-container">
 					<ul class="list-group">
 						<ng-container *ngFor="let item of items">
-							<li class="list-group-item"
-								*ngIf="item.isVisible">
+							<li class="list-group-item" *ngIf="item.isVisible">
 								<div class="media pl-3 align-items-center">
 									<fa-icon [icon]="item.leftImageSource"></fa-icon>
 									<div class="media-body pb-0 mb-0 small pl-3">
 										<div class="d-flex justify-content-between align-items-center w-100"
 											[ngClass]="{collapsible: item.isCollapsible}">
 											<div class="update-title"
-												[innerHTML]="item.header | translate | safeDom : 'html' "></div>
+												[innerHTML]="item.header | translate | sanitize : 'html' "></div>
+												<vtr-ui-gaming-driver-popup *ngIf="item.isCollapsible" [showMePartially]="item.isDriverPopup"
+													[popupText]="item.driverPopupText" (driverpopval)="onClosed(item)"></vtr-ui-gaming-driver-popup>
+												
 											<vtr-ui-gaming-collapsible-container [options]="options"
-												*ngIf="item.isCollapsible"
-												(change)="optionChanged($event,item)">
+												*ngIf="item.isCollapsible" (change)="optionChanged($event,item)"
+												(showDropDown)="showDropDown.emit(item)">
 											</vtr-ui-gaming-collapsible-container>
-											<a vtrMetrics
-												[metricsItem]="item.header | translate "
-												metricsEvent="featureClick"
-												[routerLink]="item.routerLink"
-												*ngIf="item.isCustomizable"
-												class="customizable">
+											<a vtrMetrics [metricsItem]="item.header | translate "
+												metricsEvent="featureClick" (click)="navigateToLink(item)"
+												*ngIf="item.isCustomizable" class="customizable">
 												<i class="icon icon-gear"></i>
 											</a>
-											<a href="javascript:void();"
-												*ngIf="item.isSwitchVisible"
+											<a href="javascript:void();" *ngIf="item.isSwitchVisible"
 												class="d-flex no-pointer">
-												<vtr-ui-switch-onoff [name]="item.type"
-													[name]="item.name"
-													(toggle)="onToggleOnOff($event)"
-													[value]="item.isChecked">
+												<!-- <img class="off-state" src="../../../../assets/images/off-state.png"/> -->
+												<vtr-ui-switch-onoff [name]="item.type" [name]="item.name"
+													(toggle)="onToggleOnOff($event)" [value]="item.isChecked"
+													[disabled]="disableButtons" [readonly]="item.readonly">
 												</vtr-ui-switch-onoff>
-												<vtr-ui-popover 
-													[item]="item"
-													[showMePartially]="item.isPopup"
+												<vtr-ui-popover [item]="item" [showMePartially]="item.isPopup"
 													(closeClicked)="onClosed($event)">
 												</vtr-ui-popover>
-												<vtr-ui-gaming-driver-popup [showMePartially]="item.isDriverPopup">
-												</vtr-ui-gaming-driver-popup>
-												<fa-icon class=" question"
-													triggers="click:blur"
-													placement="auto"
-													[ngbTooltip]="item.tooltipText"
-													[icon]="['far', 'question-circle']"
-													container="body"
-													tooltipClass="vtr-tooltip">
+												<vtr-ui-gaming-driver-popup [showMePartially]="item.isDriverPopup"
+													[popupText]="item.driverPopupText"></vtr-ui-gaming-driver-popup>
+												<fa-icon class=" question" triggers="click:blur" placement="auto"
+													[ngbTooltip]="item.tooltipText" [icon]="['far', 'question-circle']"
+													container="body" tooltipClass="vtr-tooltip">
 												</fa-icon>
 											</a>
-											<a href="javascript:void();"
-												class="link-text"
-												*ngIf="!item.isSwitchVisible"
+											<a href="javascript:void();" class="link-text" *ngIf="!item.isSwitchVisible"
 												(click)="onLinkClick(item.linkPath)">
 												{{item.linkText}}
 											</a>

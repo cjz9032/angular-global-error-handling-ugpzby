@@ -9,6 +9,9 @@ import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.mode
 import { HybridModeStatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
 import { TouchpadLockStatus } from 'src/app/data-models/gaming/touchpad-lock-status.model';
 import { SystemStatus } from 'src/app/data-models/gaming/system-status.model';
+import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
+import { HttpClient } from '@angular/common/http';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -16,7 +19,8 @@ import { SystemStatus } from 'src/app/data-models/gaming/system-status.model';
 export class VantageShellService {
 	private phoenix: any;
 	private shell: any;
-	constructor(private commonService: CommonService) {
+	constructor(private commonService: CommonService,
+		private http: HttpClient) {
 		this.shell = this.getVantageShell();
 		if (this.shell) {
 			const metricClient = this.shell.MetricsClient ? new this.shell.MetricsClient() : null;
@@ -27,13 +31,34 @@ export class VantageShellService {
 				hsaDolbyBroker: this.shell.DolbyRpcClient ? this.shell.DolbyRpcClient.instance : null,
 				hsaForteBroker: this.shell.ForteRpcClient ? this.shell.ForteRpcClient.getInstance() : null
 			});
+
+			this.phoenix.loadFeatures([
+				Phoenix.Features.Dashboard,
+				Phoenix.Features.Device,
+				Phoenix.Features.LenovoId,
+				Phoenix.Features.SecurityAdvisor,
+				Phoenix.Features.SystemInformation,
+				Phoenix.Features.HwSettings,
+				Phoenix.Features.Gaming,
+				Phoenix.Features.SystemUpdate,
+				Phoenix.Features.Warranty,
+				Phoenix.Features.Permissions,
+				Phoenix.Features.UserGuide,
+				Phoenix.Features.DeviceFilter,
+				Phoenix.Features.Metrics,
+				Phoenix.Features.ModernPreload,
+				Phoenix.Features.Privacy,
+				Phoenix.Features.LenovoVoiceFeature,
+				Phoenix.Features.GenericMetricsPreference,
+				Phoenix.Features.PreferenceSettings,
+				Phoenix.Features.ConnectedHomeSecurity,
+			]);
 		}
 	}
 
 	public registerEvent(eventType: any, handler: any) {
 		this.phoenix.on(eventType, (val) => {
-			console.log('Event fired: ', eventType);
-			console.log('Event value: ', val);
+			console.log('Event fired: ', eventType, val);
 			handler(val);
 		});
 	}
@@ -100,7 +125,7 @@ export class VantageShellService {
 			if (!metricClient.isInit) {
 				metricClient.init({
 					appVersion: environment.appVersion,
-					appId: 'ZN8F02EQU628',
+					appId: MetricHelper.getAppId('dß'),
 					appName: 'vantage3',
 					channel: '',
 					ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
@@ -111,16 +136,12 @@ export class VantageShellService {
 				metricClient.sendAsync = async function sendAsync(data) {
 					try {
 						// automatically fill the OnlineStatus for page view event
-						const eventType = data.ItemType.toLowerCase();
-						if (eventType === 'pageview') {
-							if (!data.OnlineStatus) {
-								data.OnlineStatus = this.commonService.isOnline ? 1 : 0;
-							}
+						if (!data.OnlineStatus) {
+							data.OnlineStatus = this.commonService.isOnline ? 1 : 0;
 						}
-
 						return await this.sendAsyncOrignally(data);
 					} catch (ex) {
-						console.log('an error ocurr when sending metrics event');
+						console.log('an error ocurr when sending metrics event', ex);
 						return Promise.resolve({
 							status: 0,
 							desc: 'ok'
@@ -131,7 +152,40 @@ export class VantageShellService {
 
 			return metricClient;
 		}
-		return undefined;
+
+		const defaultMetricsClient = {
+			sendAsync() {
+				return Promise.resolve({
+					status: 0,
+					desc: 'ok'
+				});
+			},
+			sendAsyncEx() {
+				return Promise.resolve({
+					status: 0,
+					desc: 'ok'
+				});
+			},
+			metricsEnabled: false
+		};
+
+		return defaultMetricsClient;
+	}
+
+	public getMetricsPolicy(callback) {
+		const self = this;
+		this.downloadMetricsPolicy().subscribe((response) => {
+			self.deviceFilter(JSON.stringify(response)).then((result) => {
+				const userDeterminePrivacy = self.commonService.getLocalStorageValue(LocalStorageKey.UserDeterminePrivacy);
+				if (!userDeterminePrivacy) {
+					callback(result);
+				}
+			});
+		});
+	}
+
+	private downloadMetricsPolicy() {
+		return this.http.get<string>('/assets/privacy-json/metrics.json');
 	}
 
 	/**
@@ -252,6 +306,19 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	/**
+	 * returns Privacy Guard object from VantageShellService of JS Bridge
+	 */
+	public getPrivacyGuardObject(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.display.privacyGuard;
+		}
+		return undefined;
+	}
+
+
+
 	/**
 	 * returns CameraPrivacy object from VantageShellService of JS Bridge
 	 */
@@ -349,9 +416,9 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public launchUserGuide(launchPDF?: boolean) {
+	public getUserGuide() {
 		if (this.phoenix && this.phoenix.userGuide) {
-			this.phoenix.userGuide.launch(launchPDF);
+			return this.phoenix.userGuide;
 		}
 		return undefined;
 	}
@@ -384,38 +451,6 @@ export class VantageShellService {
 		}
 		return false;
 	}
-
-	public getThermalModeStatus(): any {
-		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingThermal.getThermalModeStatus();
-			return undefined;
-		}
-		return undefined;
-	}
-
-	public setThermalModeStatus(ThermalModeStatusObj: ThermalModeStatus): Boolean {
-		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingThermal.setThermalModeStatus(ThermalModeStatusObj.thermalModeStatus);
-			return true;
-		}
-		return true;
-	}
-
-	// public getRAMOCStatus(): any {
-	// 	if (this.phoenix) {
-	// 		return this.phoenix.gaming.gamingOverclock.getRamOCStatus();
-	// 	}
-	// 	return undefined;
-	// }
-
-	// public setRAMOCStatus(ramOCStausObj: RamOCSatus): any {
-	// 	if (this.phoenix) {
-	// 		return this.phoenix.gaming.gamingOverclock.setRamOCStatus(ramOCStausObj.ramOcStatus);
-	// 	}
-	// 	return false;
-	// }
 
 	public getGamingAllCapabilities(): any {
 		if (this.phoenix && this.phoenix.gaming) {
@@ -483,25 +518,147 @@ export class VantageShellService {
 			return this.phoenix.preferenceSettings;
 		}
 	}
-
+	public getNetworkBoost() {
+		if (this.phoenix && this.phoenix.gaming) {
+			console.log('aparna network boost service call' + this.phoenix.gaming.gamingNetworkBoost);
+			return this.phoenix.gaming.gamingNetworkBoost;
+		}
+		return undefined;
+	}
 	/**
      * returns macroKeyClearInfo object from VantageShellService of JS Bridge
      */
 	public setMacroKeyClear(macroKey: string): any {
 		if (this.phoenix) {
+			console.log('Deleting the following macro key ---->', macroKey);
 			return this.phoenix.gaming.gamingMacroKey.setClear(macroKey);
 		}
 		return undefined;
 	}
+
 	public getGamingMacroKey(): any {
 		if (this.phoenix && this.phoenix.gaming) {
 			return this.phoenix.gaming.gamingMacroKey;
 		}
 	}
-	
+
 	public getIntelligentCoolingForIdeaPad(): any {
-		if(this.getPowerIdeaNoteBook()) {
+		if (this.getPowerIdeaNoteBook()) {
 			return this.getPowerIdeaNoteBook().its;
+		}
+		return undefined;
+	}
+
+	public macroKeyInitializeEvent(): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.initMacroKey();
+		}
+		return undefined;
+	}
+
+	public macroKeySetApplyStatus(key): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setApplyStatus(key);
+		}
+		return undefined;
+	}
+
+	public macroKeySetStartRecording(key): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setStartRecording(key);
+		}
+		return undefined;
+	}
+
+	public macroKeySetStopRecording(key, isSuccess, message): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setStopRecording(key, isSuccess, message);
+		}
+		return undefined;
+	}
+
+	public macroKeySetKey(key): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setKey(key);
+		}
+		return undefined;
+	}
+
+	public macroKeyClearKey(key): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setClear(key);
+		}
+		return undefined;
+	}
+
+	public macroKeySetRepeat(key, repeat): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setRepeat(key, repeat);
+		}
+		return undefined;
+	}
+
+	public macroKeySetInterval(key, interval): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setInterval(key, interval);
+		}
+		return undefined;
+	}
+
+	public macroKeySetMacroKey(key, inputs): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setMacroKey(key, inputs);
+		}
+		return undefined;
+	}
+
+	public getGamingThermalMode() {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingThermalmode;
+		}
+	}
+
+	public getImcHelper(): any {
+		if (this.phoenix && this.phoenix.hwsettings.power.thinkpad.sectionImcHelper) {
+			return this.phoenix.hwsettings.power.thinkpad.sectionImcHelper;
+		}
+		return undefined;
+	}
+
+	// Active Protection System
+	public getActiveProtectionSystem(): any {
+		if (this.phoenix) {
+			console.log('PHOENIX AVAILABLE - vantage shell');
+			return this.phoenix.hwsettings.aps.ActiveProtectionSystem; // returning APS Object with methods
+		}
+		console.log('NO PHOENIX AVAILABLE - vantage shell');
+		return undefined;
+	}
+
+	/**
+	 * returns Keyboard manager object  from VantageShellService of JS Bridge
+	 */
+	public getKeyboardManagerObject(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.input.kbdManager;
+		}
+		return undefined;
+	}
+	// =================== Start Lenovo Voice
+	public getLenovoVoice(): any {
+		if (this.phoenix) {
+			console.log('PHOENIX AVAILABLE - vantage shell');
+			return this.phoenix.lenovovoice;
+		}
+		console.log('NO PHOENIX AVAILABLE - vantage shell');
+		return undefined;
+	}
+	// ==================== End Lenovo Voice
+
+	/** returns OledSettings object from VantageShellService of JS Bridge */
+	public getOledSettings(): any {
+		if (this.getHwSettings()) {
+			return this.getHwSettings().display.OLEDSettings;
 		}
 		return undefined;
 	}

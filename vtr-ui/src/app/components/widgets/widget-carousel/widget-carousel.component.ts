@@ -1,7 +1,10 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
-import {MockService} from "../../../services/mock/mock.service";
+import {MockService} from '../../../services/mock/mock.service';
 import {NgbCarouselConfig, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
-import {ModalArticleDetailComponent} from "../../modal/modal-article-detail/modal-article-detail.component";
+import {ModalArticleDetailComponent} from '../../modal/modal-article-detail/modal-article-detail.component';
+import { CommonService } from 'src/app/services/common/common.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 
 @Component({
 	selector: 'vtr-widget-carousel',
@@ -24,9 +27,13 @@ export class WidgetCarouselComponent implements OnInit {
 	@Input() showNavigationArrows: boolean;
 	@Input() showNavigationIndicators: boolean;
 	@Input() wrap: boolean;
-	@Input() order:number;
+	@Input() order: number;
+	@Input() id: string;
+	@Input() ariaLabel: string;
 
-	constructor(private config: NgbCarouselConfig,private MocckService:MockService) {
+	isOnline = true;
+
+	constructor(private config: NgbCarouselConfig, private MocckService: MockService, private commonService: CommonService) {
 
 	}
 
@@ -39,14 +46,20 @@ export class WidgetCarouselComponent implements OnInit {
 		this.config.showNavigationIndicators = typeof this.showNavigationIndicators !== 'undefined' ? this.showNavigationIndicators : true;
 		this.config.wrap = typeof this.wrap !== 'undefined' ? this.wrap : true;
 		this.parseToCarouselModel();
+
+		this.isOnline = this.commonService.isOnline;
+
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
 	}
 
 	byString(o: any, s: string) {
 		s = s.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
 		s = s.replace(/^\./, '');           // strip a leading dot
-		var a = s.split('.');
-		for (var i = 0, n = a.length; i < n; ++i) {
-			var k = a[i];
+		const a = s.split('.');
+		for (let i = 0, n = a.length; i < n; ++i) {
+			const k = a[i];
 			if (k in o) {
 				o = o[k];
 			} else {
@@ -57,7 +70,7 @@ export class WidgetCarouselComponent implements OnInit {
 	}
 
 	ngOnChanges(changes: SimpleChanges) {
-		var change = changes['data'];
+		const change = changes['data'];
 		if (!change.isFirstChange()) {
 			this.parseToCarouselModel();
 		}
@@ -67,14 +80,14 @@ export class WidgetCarouselComponent implements OnInit {
 	parseToCarouselModel() {
 		this.carouselModel = [];
 
-		for (var i = 0; i < this.data.length; i++) {
+		for (let i = 0; i < this.data.length; i++) {
 			this.carouselModel.push({
-				id:this.data[i].id,
+				id: this.data[i].id,
 				source: this.data[i].source,
 				cardTitle: this.data[i].title,
 				image: this.data[i].url,
 				link: this.data[i].ActionLink ? this.data[i].ActionLink : ''
-			})
+			});
 		}
 	}
 
@@ -85,6 +98,20 @@ export class WidgetCarouselComponent implements OnInit {
 		}
 	}
 
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
+		}
+	}
+
 }
 
 interface CarouselModel {
@@ -92,7 +119,7 @@ interface CarouselModel {
 	source: string;
 	image: string;
 	link: string;
-	id:string;
+	id: string;
 }
 
 

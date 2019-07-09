@@ -1,42 +1,46 @@
 <div class="vtr-battery-indicator"
- #batteryIndicator>
+	#batteryIndicator>
 	<div class="cell">
 		<div class="battery-shadow"></div>
 		<div #battery
-		 class="battery">
+			class="battery">
 			<div class="acid-container">
 				<div class="fill"></div>
 				<div class="percentage"
-				 *ngIf="!isVoltageError">
+					*ngIf="!batteryNotDetected">
 					{{ percentage }}
 					<span class="percentage-symbol">
 						%
 					</span>
 				</div>
 				<div class="battery-error"
-				 *ngIf="isVoltageError">
-					<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon>
-					<span class="voltage-incorrect"> Battery voltage incorrect</span>
+					*ngIf="batteryNotDetected">
+					<img [src]=" '/assets/icons/battery-conditions/no_battery.svg'"
+						class="error-icon" />
+					<span class="no-battery-detected">
+						{{'device.deviceSettings.batteryGauge.batteryNotDetected'| translate}}
+					</span>
 				</div>
 			</div>
-
-			<div *ngIf="!isVoltageError && !hideRemainingTimeTxt">
+			<div *ngIf="!batteryNotDetected && !hideRemainingTimeTxt">
 				<div class="remaining-time">
 					{{ getTimeRemaining() }}
 				</div>
 				<div class="remaining-text text-uppercase"
-				 *ngIf="timeText === 'timeRemaining'">
+					*ngIf="timeText === 'timeRemaining'">
 					{{'device.deviceSettings.batteryGauge.details.remainingTime' | translate}}
 				</div>
 				<div class="remaining-text text-uppercase"
-				 *ngIf="timeText === 'timeCompletion'">
+					*ngIf="timeText === 'timeCompletion'">
 					{{'device.deviceSettings.batteryGauge.charge' | translate}}
 				</div>
 			</div>
 			<div class="battery-charging"
-			 *ngIf="!isVoltageError">
-				<span  *ngIf="(isCharging && !isExpressCharging)" class="icomoon icomoon-FA-Plug2x"></span>
-				<span  *ngIf="(isCharging && isExpressCharging)" class="icomoon icomoon-LE-expressCharging2x"></span>
+				*ngIf="!batteryNotDetected">
+				<span *ngIf="(isCharging && !isExpressCharging)"
+					class="icomoon icomoon-FA-Plug2x"></span>
+				<span *ngIf="(isCharging && isExpressCharging)"
+					class="icomoon icomoon-LE-expressCharging2x"></span>
 			</div>
 		</div>
 	</div>

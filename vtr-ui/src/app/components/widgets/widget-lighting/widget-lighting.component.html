@@ -1,30 +1,51 @@
-<div class="vtr-widget-lighting">
+<div class="vtr-widget-lighting" *ngIf="isLightingVisible">
 	<div class="widget-title">
-		{{title}}
+		{{'gaming.dashboard.device.lighting.header' | translate}}
 	</div>
 	<div class="widget-container">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col">
 					<div class="lighting-porfile">
-						<h5 class="card-title">Select Profile:</h5>
+						<h5 class="card-title">
+							{{'gaming.lightingProfile.lightingProfileHeading.heading.title' | translate}}</h5>
 						<div class="multi-state-toggle">
-							<input type="radio" value="" name="lighting-porfile" id="off_radio">
-							<label for="off_radio" id="off">Off</label>
-							<input type="radio" value="" name="lighting-porfile" id="first_radio" checked>
-							<label for="first_radio" id="first_lbl">1</label>
-							<input type="radio" value="" name="lighting-porfile" id="second_radio">
-							<label for="second_radio" id="second_lbl">2</label>
-							<input type="radio" value="" name="lighting-porfile" id="third_radio">
-							<label for="third_radio" id="third_lbl">3</label>
-							<div class="toggle"></div>
+							<input type="radio" value="0"  name="lighting-porfile"
+								id="off_radio" [checked]="setprofId===0" (click)="SetProfile($event)">
+							<label for="off_radio" id="off" [ngClass]="{'toggle-stable': isPopupVisible && setprofId===0, 'gamingTextColor': setprofId==0}">
+								{{'gaming.lightingProfile.lightingProfileHeading.text1.title' | translate}} </label>
+
+							<input type="radio" value="1"  name="lighting-porfile"
+								id="first_radio" [checked]="setprofId===1" (click)="SetProfile($event)">
+							<label for="first_radio" [ngClass]="{'toggle-stable': isPopupVisible && setprofId===1, 'gamingTextColor': setprofId==1}"
+								id="first_lbl">{{'gaming.lightingProfile.lightingProfileHeading.text2.title' | translate}}</label>
+
+							<input type="radio" value="2"  name="lighting-porfile"
+								id="second_radio" [checked]="setprofId===2" (click)="SetProfile($event)">
+							<label for="second_radio" [ngClass]="{'toggle-stable': isPopupVisible && setprofId===2, 'gamingTextColor': setprofId==2}"
+								id="second_lbl">{{'gaming.lightingProfile.lightingProfileHeading.text3.title' | translate}}</label>
+
+							<input type="radio" value="3"  name="lighting-porfile"
+								id="third_radio" [checked]="setprofId===3" (click)="SetProfile($event)">
+							<label for="third_radio" [ngClass]="{'toggle-stable': isPopupVisible && setprofId===3, 'gamingTextColor': setprofId==3}"
+								id="third_lbl">{{'gaming.lightingProfile.lightingProfileHeading.text4.title' | translate}}</label>
+								<div [ngClass]="{toggle: !isPopupVisible}" *ngIf="!isPopupVisible"></div>
+
 						</div>
+
 						<hr class="dark-dashline" />
+						<vtr-ui-gaming-driver-popup *ngIf="isdriverpopup==true" [showMePartially]="isdriverpopup"
+							[isLightingText]="true" (driverpopval)="isdriverpopup=$event">
+						</vtr-ui-gaming-driver-popup>
 						<ul class="list-group">
 							<li class="list-group-item"><a vtrMetrics
 									[metricsItem]="'gaming.dashboard.device.lighting.title' | translate"
-									metricsEvent="featureClick" routerLink="/lightingcustomize"><i
-										class="icon icon-gear"></i> Customize</a></li>
+									metricsEvent="featureClick" (click)="checkStatus(isPopupVisible)">
+									<i class="icon icon-gear"></i>
+									{{'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate}}</a>
+							</li>
+
+
 						</ul>
 					</div>
 

@@ -13,6 +13,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { CameraBlur } from 'src/app/data-models/camera/camera-blur-model';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 enum defaultTemparature {
 	defaultValue = 4500
 }
@@ -42,6 +43,13 @@ export class SubpageDeviceSettingsDisplayComponent
 	private notificationSubscription: Subscription;
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	public shouldCameraSectionDisabled = true;
+	public isCameraHidden = false;
+	public privacyGuardCapability = false;
+	public privacyGuardToggleStatus = false;
+	public privacyGuardCheckBox = false;
+	public privacyGuardOnPasswordCapability = false;
+	public privacyGuardInterval: any;
+	public hasOLEDPowerControlCapability = false;
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 	headerMenuItems = [
@@ -105,6 +113,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		}
 	];
 	public cameraBlur = new CameraBlur();
+	isDTmachine = false;
 	constructor(public baseCameraDetail: BaseCameraDetail,
 		private deviceService: DeviceService,
 		public displayService: DisplayService,
@@ -132,15 +141,23 @@ export class SubpageDeviceSettingsDisplayComponent
 		);
 		this.startEyeCareMonitor();
 		this.initEyecaremodeSettings();
-
-		this.getCameraPrivacyModeStatus();
-		this.getCameraDetails();
+		this.getPrivacyGuardCapabilityStatus();
+		this.getPrivacyGuardOnPasswordCapabilityStatus();
 		this.statusChangedLocationPermission();
-		this.displayService.startMonitorForCameraPermission();
-		this.startMonitorForCamera();
-		this.initCameraBlurMethods();
+		this.initCameraSection();
+		this.getOLEDPowerControlCapability();
 	}
 
+	initCameraSection() {
+		this.isDTmachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+		if (this.isDTmachine) {
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'camera');
+		}
+		this.getCameraPrivacyModeStatus();
+		this.getCameraDetails();
+		this.displayService.startMonitorForCameraPermission();
+		this.startMonitorForCamera();
+	}
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			const { type, payload } = notification;
@@ -148,6 +165,27 @@ export class SubpageDeviceSettingsDisplayComponent
 				case DeviceMonitorStatus.CameraStatus:
 					console.log('DeviceMonitorStatus.CameraStatus', payload);
 					this.dataSource.permission = payload;
+
+
+					if (payload) {
+						this.shouldCameraSectionDisabled = false;
+						this.cameraFeatureAccess.showAutoExposureSlider = false;
+						if (this.dataSource.exposure.autoValue === true) {
+							this.cameraFeatureAccess.exposureAutoValue = true;
+						} else {
+							this.cameraFeatureAccess.exposureAutoValue = false;
+						}
+						if (this.dataSource.exposure.supported === true && this.dataSource.exposure.autoValue === false) {
+							this.cameraFeatureAccess.showAutoExposureSlider = true;
+						}
+
+					} else {
+						this.shouldCameraSectionDisabled = true;
+						this.cameraFeatureAccess.exposureAutoValue = false;
+						if (this.dataSource.exposure.supported === true && this.cameraFeatureAccess.exposureAutoValue === false) {
+							this.cameraFeatureAccess.showAutoExposureSlider = true;
+						}
+					}
 					break;
 				default:
 					break;
@@ -164,6 +202,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		}
 		this.stopEyeCareMonitor();
 		this.stopMonitorForCamera();
+		clearTimeout(this.privacyGuardInterval);
 	}
 
 	/**
@@ -191,7 +230,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			// 	.catch(error => {
 			// 		console.log(error);
 			// 	});
-			console.log('Inside');
+			// console.log('Inside');
 			this.displayService.getCameraSettingsInfo().then((response) => {
 				console.log('getCameraDetails.then', response);
 				this.dataSource = response;
@@ -203,14 +242,17 @@ export class SubpageDeviceSettingsDisplayComponent
 					// 	response.exposure.autoValue = true;
 					this.dataSource = this.emptyCameraDetails[0];
 					this.shouldCameraSectionDisabled = true;
+					this.cameraFeatureAccess.showAutoExposureSlider = true;
 					console.log('no camera permission .then', this.emptyCameraDetails[0]);
 					const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
-					privacy.status = false;
+					// privacy.status = false;
 					this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
+					this.dataSource.exposure.autoValue = false;
 				}
 				this.cameraFeatureAccess.showAutoExposureSlider = false;
-				if (this.dataSource.exposure.autoValue === true) {
+				if (this.dataSource.exposure.autoValue === true && !this.shouldCameraSectionDisabled) {
 					this.cameraFeatureAccess.exposureAutoValue = true;
+
 				} else {
 					this.cameraFeatureAccess.exposureAutoValue = false;
 				}
@@ -241,7 +283,8 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 	public onEyeCareModeStatusToggle(event: any) {
 		this.isEyeCareMode = event.switchValue;
-		console.log('onEyeCareModeStatusToggle', this.isEyeCareMode);		
+		this.enableSlider = false;
+		console.log('onEyeCareModeStatusToggle', this.isEyeCareMode);
 		try {
 			if (this.displayService.isShellAvailable) {
 				this.displayService.setEyeCareModeState(event.switchValue)
@@ -251,18 +294,23 @@ export class SubpageDeviceSettingsDisplayComponent
 						this.eyeCareDataSource.current = value.colorTemperature;
 						const eyeCare = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardEyeCareMode);
 						eyeCare.status = this.isEyeCareMode;
+						console.log('eycare mode request sent to the dashboard------------->', eyeCare);
 						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, eyeCare);
 					}).catch(error => {
 						console.error('onEyeCareModeStatusToggle', error);
 					});
 
-					if(this.isEyeCareMode){
-						this.setToEyeCareMode();
-					}else {
-						this.displayColorTempDataSource.current = this.displayColorTempDataSource.maximum;
-						//this.onSetChangeDisplayColorTemp({value: this.displayColorTempDataSource.current})			
+				if (!this.isEyeCareMode) {
+					this.onSetChangeDisplayColorTemp({ value: this.displayColorTempDataSource.current });
+				}
 
-					}
+				// if(this.isEyeCareMode){
+				// 	this.setToEyeCareMode();
+				// }else {
+				// 	this.displayColorTempDataSource.current = this.displayColorTempDataSource.maximum;
+				// 	//this.onSetChangeDisplayColorTemp({value: this.displayColorTempDataSource.current})
+
+				// }
 			}
 		} catch (error) {
 			console.error(error.message);
@@ -330,7 +378,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				});
 		}
 	}
-	public onEyeCareTemparatureChange($event: ChangeContext) {
+	public onEyeCareTemparatureChange($event: any) {
 		try {
 			console.log('temparature changed in display', $event);
 			if (this.displayService.isShellAvailable) {
@@ -384,7 +432,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 	public onSunsetToSunrise($featureStatus: any) {
 		try {
-			console.log('sunset to sunrise event', $featureStatus.status);
+			console.log('sunset to sunrise event', $featureStatus);
 			if (this.displayService.isShellAvailable) {
 				this.displayService
 					.setEyeCareAutoMode($featureStatus.status).
@@ -394,6 +442,7 @@ export class SubpageDeviceSettingsDisplayComponent
 							this.eyeCareDataSource.current = response.colorTemperature;
 							this.eyeCareModeStatus.status = response.eyecaremodeState;
 							this.enableSlider = response.eyecaremodeState;
+							this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, this.eyeCareModeStatus);
 						}
 
 					}).catch(error => {
@@ -437,24 +486,26 @@ export class SubpageDeviceSettingsDisplayComponent
 
 	public onSetChangeDisplayColorTemp($event: any) {
 		try {
-			console.log('temparature changed in display', $event);
-			if (this.displayService.isShellAvailable) {				
-					this.displayService.setDaytimeColorTemperature($event.value).then((res) => {});
+			console.log('temparature changed in display ----->', $event);
+			if (this.displayService.isShellAvailable) {
+				this.displayService.setDaytimeColorTemperature($event.value);
 			}
 		} catch (error) {
 			console.error(error.message);
 		}
 	}
 	public setToEyeCareMode() {
-		if(this.isEyeCareMode){
-			this.displayColorTempDataSource.current = this.eyeCareDataSource.current;
-			this.onSetChangeDisplayColorTemp({value: this.eyeCareDataSource.current})			
+		if (this.isEyeCareMode) {
+			// this.displayColorTempDataSource.current = this.eyeCareDataSource.current;
+			// this.onSetChangeDisplayColorTemp({value: this.eyeCareDataSource.current})
+			this.onEyeCareTemparatureChange({ value: this.eyeCareDataSource.current });
+
 		}
 	}
 
 	public resetDaytimeColorTemp($event: any) {
 		try {
-			if (this.displayService.isShellAvailable && !this.isEyeCareMode) {
+			if (this.displayService.isShellAvailable) {
 				console.log('temparature reset in display', $event);
 				this.displayService
 					.resetDaytimeColorTemperature().then((resetData: any) => {
@@ -514,7 +565,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		console.log('startMonitorForCamera');
 		try {
 			if (this.displayService.isShellAvailable) {
-				this.displayService.startMonitorForCamera(this.startMonitorHandlerForCamera.bind(this))
+				this.displayService.startCameraPrivacyMonitor(this.startMonitorHandlerForCamera.bind(this))
 					.then((val) => {
 						console.log('startMonitorForCamera.then', val);
 
@@ -530,7 +581,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	stopMonitorForCamera() {
 		try {
 			if (this.displayService.isShellAvailable) {
-				this.displayService.stopMonitorForCamera()
+				this.displayService.stopCameraPrivacyMonitor()
 					.then((value: any) => {
 						console.log('stopMonitorForCamera.then', value);
 					}).catch(error => {
@@ -675,6 +726,113 @@ export class SubpageDeviceSettingsDisplayComponent
 				}).catch(error => {
 					console.log('onCameraBackgroundOptionChange', error);
 				});
+		}
+	}
+
+	public onCameraAvailable(isCameraAvailable: boolean) {
+		console.log('Camera isAvailable', isCameraAvailable);
+		this.isCameraHidden = !isCameraAvailable;
+		if (isCameraAvailable) {
+			this.initCameraBlurMethods();
+		}
+	}
+
+	// Start Privacy Gaurd
+
+	public getPrivacyGuardCapabilityStatus() {
+		this.displayService.getPrivacyGuardCapability().then((status: boolean) => {
+			// console.log('privacy guard compatability here -------------.>', status);
+			if (status) {
+				this.privacyGuardCapability = status;
+				this.getPrivacyToggleStatus();
+
+				this.privacyGuardInterval = setInterval(() => {
+					console.log('Trying after 30 seconds for getting privacy guard status');
+					this.getPrivacyToggleStatus();
+				}, 30000);
+			}
+		})
+			.catch(error => {
+				console.error('privacy guard compatability error here', error);
+			});
+
+	}
+
+	public getPrivacyToggleStatus() {
+		this.displayService.getPrivacyGuardStatus().then((value: boolean) => {
+			// console.log('privacy guard status here -------------.>', value);
+			this.privacyGuardToggleStatus = value;
+		})
+			.catch(error => {
+				console.error('privacy guard status error here', error);
+			});
+	}
+	public getPrivacyGuardOnPasswordCapabilityStatus() {
+		this.displayService.getPrivacyGuardOnPasswordCapability().then((status: boolean) => {
+			// console.log('privacy guard on password compatability here -------------.>', status);
+			if (status) {
+				this.privacyGuardOnPasswordCapability = status;
+				this.displayService.getPrivacyGuardOnPasswordStatus().then((value: boolean) => {
+					this.privacyGuardCheckBox = value;
+					// console.log('privacy guard on password status here -------------.>', value);
+				})
+					.catch(error => {
+						console.error('privacy guard on password status error here', error);
+					});
+			}
+		})
+			.catch(error => {
+				console.error('privacy guard on password compatability error here', error);
+			});
+	}
+
+	public setPrivacyGuardToggleStatus(event) {
+		this.displayService.setPrivacyGuardStatus(event.switchValue).then((response: boolean) => {
+			// console.log('set privacy guard status here ------****-------.>', response);
+		})
+			.catch(error => {
+				console.error('set privacy guard status error here', error);
+			});
+	}
+
+	public setPrivacyGuardOnPasswordStatusVal(event) {
+		this.displayService.setPrivacyGuardOnPasswordStatus(event.target.checked).then((response: boolean) => {
+			// console.log('set privacy guard on password status here -------------.>', response);
+		})
+			.catch(error => {
+				console.error('set privacy guard on password status error here', error);
+			});
+	}
+
+	// End Privacy Gaurd
+	// when disable the privacy from system setting
+	cameraDisabled(event) {
+		console.log('disabled all is', event);
+		this.shouldCameraSectionDisabled = event;
+		this.dataSource.permission = false;
+		this.cameraFeatureAccess.exposureAutoValue = false;
+		if (this.dataSource.exposure.supported === true && this.cameraFeatureAccess.exposureAutoValue === false) {
+			this.cameraFeatureAccess.showAutoExposureSlider = true;
+		}
+	}
+
+	// Updates whether device has OLEDPowerControl
+	public getOLEDPowerControlCapability() {
+		try {
+			if (this.displayService.isShellAvailable) {
+				this.displayService.getOLEDPowerControlCapability()
+					.then((result: boolean) => {
+						console.log('getOLEDPowerControlCapability.then', result);
+						this.hasOLEDPowerControlCapability = result;
+
+					}).catch(error => {
+						console.error('getOLEDPowerControlCapability', error);
+
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+
 		}
 	}
 }

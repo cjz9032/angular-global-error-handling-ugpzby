@@ -17,8 +17,8 @@
 								<div class="tracker__progress-bar-fill" [style.width.%]="percentOfTrack"></div>
 							</div>
 						</div>
-						<div class="tracker__text tracker__text--white">Tracking you on {{percentOfTrack}}% of site
-							visited
+						<div class="tracker__text tracker__text--white">
+							Uses tracking tools on {{percentOfTrack}}% of websites you visit
 						</div>
 					</div>
 				</div>
@@ -43,10 +43,10 @@
 				<div class="tracker__stop-wrapper">
 					<div class="tracker__stop">
 						<h3 class="tracker__stop-title">
-							Want to stop trackers?
+							Choose to block tracking tools completely
 						</h3>
 						<div class="tracker__text">
-							Lenovo Privacy by FigLeaf lets you share what you want or keep things private for each site you visit or transact with. Start your 14-day free trial. No credit card required.
+							Lenovo Privacy lets you visit your favorite websites without sharing your private information.
 						</div>
 						<div class="tracker__btn-group">
 							<button class="tracker__btn"
@@ -54,15 +54,15 @@
 									[metricsEvent]="'ItemClick'"
 									[metricsItem]="'TryLenovoPrivacyButton'"
 									vtrOpenFigleafInstaller>
-								Try Lenovo Privacy
+								Install Lenovo Privacy
 							</button>
 							<a class="tracker__link"
-							   routerLink="./landing"
+							   routerLink="/privacy/articles"
 							   (click)="closePopup()"
 							   vtrSendAnalytics
 							   [metricsEvent]="'ItemClick'"
 							   [metricsItem]="'LenovoPrivacyLearnMoreButton'">
-								Read more
+								Learn more
 							</a>
 						</div>
 					</div>
@@ -71,7 +71,7 @@
 		</div>
 		<div class="tracker__map">
 			<h3 class="tracker__map-title">
-				Where am I being tracked?
+				Websites you visit with {{trackingMapSingleData.tracker.company_name}} tracking tools
 			</h3>
 			<div class="tracker__map-wrapper">
 				<fl-tracking-map-single [trackers]="trackingMapSingleData"

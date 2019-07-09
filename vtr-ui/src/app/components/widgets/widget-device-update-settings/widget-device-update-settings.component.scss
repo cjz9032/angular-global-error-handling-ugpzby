@@ -23,7 +23,14 @@
 		padding: 0;
 		border-radius: 0.9rem;
 		letter-spacing: 0rem;
-
+		.off-state {
+			position: absolute;
+			z-index: 9;
+			height: 2.5rem;
+			width: auto;
+			top: 2.3rem;
+			display: none;
+		}
 		.update-title {
 			color: $shade_blue;
 			font-size: 1.6rem;

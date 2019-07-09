@@ -216,9 +216,71 @@
 		}
 	}
 
-	.vtr-page-right-column{
-		@media #{$mediaquery_X5} {
-			padding: 4rem 4rem 4rem 8.5rem;
+	vtr-widget-questions{
+		::ng-deep .vtr-ui-list-chevron .chevron-list .item-text{
+			padding-left: 1.5rem !important;
+		}
+	}
+
+		@media #{$medium-screen} {
+			.vtr-page-right-column, .vtr-page-left-column{
+				padding: 0rem 4rem 4rem 4rem;
+				margin-top: 0;
+			}
+			vtr-header-main{
+				::ng-deep .vtr-header-main{
+					padding-left: 5rem;
+				}
+			}
+	}
+
+	@media #{$small-screen}{
+		.vtr-page-left-column{
+			background-color: #fff;
+		}
+		.vtr-page-right-column{
+			margin-top: 6rem;
+		}
+		vtr-widget-questions{
+			::ng-deep .vtr-ui-list-chevron .chevron-list .item-text{
+				padding-left: 1rem !important;
+			}
+		}
+	}
+
+	.offline{
+		::ng-deep .vtr-widget-questions{
+			.filter{
+				position: relative;
+				.chevron{
+					.vtr-ui-list-chevron{
+						border-radius: $border_radius;
+						background-color: $light;
+						box-shadow: $drop_shadow;
+						filter: blur(4px);
+					}
+				}
+				.cover{
+					position: absolute;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+
+	::ng-deep .vtr-widget-questions {
+		.description{
+			text-transform: none !important;
+		}
+	}
+
+	@media #{$mediaquery_lg} {
+		.home-card {
+			height: 32rem !important;
+		}
+		.mydevice-title{
+			display: none !important;
 		}
 	}
 

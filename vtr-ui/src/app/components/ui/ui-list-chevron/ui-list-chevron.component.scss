@@ -18,6 +18,7 @@
 
 			.item-icon {
 				&.status {
+					cursor: pointer;
 					.icon-bkg {
 						display: inline-block;
 						border-radius: 50%;
@@ -26,7 +27,7 @@
 						border-width: 0.2rem;
 						border-style: solid;
 						text-align: center;
-
+						cursor: pointer;
 						fa-icon {
 							font-size: 1.2rem;
 							line-height: 1.6rem;
@@ -124,12 +125,24 @@
 				height: 3rem;
 				width: 3rem;
 			}
+			.item-icon-class{
+				display: flex;
+				height: 3rem;
+				width: 3rem;
+				align-items: center;
+				margin: auto;
+				.icon{
+					font-size: 2rem;
+					margin: auto
+				}
+			}
 
 			.item-text {
 				overflow: hidden;
 				padding-left: 1rem;
-
+				cursor: pointer;
 				.title {
+					cursor: pointer;
 					font-size: 1.4rem;
 					font-weight: $weight_bold;
 					float: left;
@@ -142,6 +155,7 @@
 
 					&.light-title {
 						font-weight: $weight_light;
+						cursor: pointer;
 					}
 				}
 
@@ -159,7 +173,7 @@
 					overflow: hidden;
 					text-overflow: ellipsis;
 					white-space: nowrap;
-
+					cursor: pointer;
 					&.good {
 						color: $go_dark;
 					}
@@ -195,13 +209,21 @@
 						}
 					}
 				}
+
+				.sub-text{
+					font-size: 1.2rem;
+					margin-top: 2px;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
 			}
 
 			.arrow {
 				color: $main_darker;
 				line-height: 2.8rem;
 				font-size: 2rem;
-
+				cursor: pointer;
 				&.blue-arrow {
 					color: $main;
 				}
@@ -215,14 +237,11 @@
 		}
 	}
 
-	.wifiStatus-no-border-bottom {
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 0;
-		margin-bottom: 0;
-	}
-
 	.disabled {
-		cursor: default;
+		cursor: default !important;
+		* {
+			cursor: default !important;
+		}
 	}
 
 }

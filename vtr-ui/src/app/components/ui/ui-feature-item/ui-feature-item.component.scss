@@ -34,16 +34,18 @@
 			width: 100%;
 			overflow: hidden;
 			display: block;
-			font-weight: $weight_bold;
 			font-weight: $weight_light;
 			@media #{$mediaquery_10} {
 				font-size: 2rem;
-			}
-			@media #{$mediaquery_X3} {
-				font-size: 1.2rem;
+				height: 6.1rem;
 			}
 			@media #{$mediaquery_X6} {
+				font-size: 1.6rem;
+				height: 4.9rem;
+			}
+			@media #{$mediaquery_X3} {
 				font-size: 1.4rem;
+				height: 4.3rem;
 			}
 		}
 

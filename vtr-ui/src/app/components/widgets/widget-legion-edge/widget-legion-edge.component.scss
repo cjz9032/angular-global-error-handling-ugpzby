@@ -12,6 +12,7 @@
 	.help-box {
 		height: 4rem;
 		margin-top: 1.6rem;
+		margin-right: 0.7rem;
 		.icon {
 			background: $gaming_icon_gradient;
 			-webkit-background-clip: text;
@@ -28,10 +29,18 @@
 			box-shadow: none;
 			border: none;
 			.settings-container{
+				.off-state {
+					position: absolute;
+					z-index: 9;
+					height: 2.5rem;
+					width: auto;
+					top: 0.5rem;
+					display: inline-block;
+				}
 				.list-group-item{
 					background: transparent;
 					color: white;
-					padding: 1.8rem 0.8rem;
+					padding: 1.8rem 0rem;
 					font-size: 1.8rem;
 					border: none;
 					border-bottom: 1px solid $screen_dark_15;

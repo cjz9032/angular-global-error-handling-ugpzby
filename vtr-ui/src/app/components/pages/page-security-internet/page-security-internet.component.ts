@@ -5,6 +5,11 @@ import { VantageShellService } from '../../../services/vantage-shell/vantage-she
 import { CMSService } from '../../../services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { RegionService } from 'src/app/services/region/region.service';
+import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { GuardService } from '../../../services/guard/security-guardService.service';
 
 @Component({
 	selector: 'vtr-page-security-internet',
@@ -18,19 +23,26 @@ export class PageSecurityInternetComponent implements OnInit {
 	cardContentPositionA: any = {};
 	securityAdvisor: SecurityAdvisor;
 	backId = 'sa-vpn-btn-back';
+	isOnline = true;
 
 	constructor(
 		public mockService: MockService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
-		vantageShellService: VantageShellService
+		public regionService: RegionService,
+		vantageShellService: VantageShellService,
+		private securityAdvisorMockService: SecurityAdvisorMockService,
+		private guard: GuardService
 	) {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
+		if (!this.securityAdvisor) {
+			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
+		}
 		this.statusItem = {
 			title: 'security.vpn.statusTitle',
 			status: 'loading'
 		};
-		this.vpn = vantageShellService.getSecurityAdvisor().vpn;
+		this.vpn = this.securityAdvisor.vpn;
 		const cacheStatus: string = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityVPNStatus);
 		if (cacheStatus) {
 			this.statusItem.status = cacheStatus;
@@ -46,7 +58,16 @@ export class PageSecurityInternetComponent implements OnInit {
 		this.fetchCMSArticles();
 	}
 
-	ngOnInit() { }
+	ngOnInit() {
+		this.isOnline = this.commonService.isOnline;
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+
+		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+			this.vpn.refresh();
+		}
+	}
 
 	getSurfEasy(): void {
 		this.vpn.download();
@@ -63,13 +84,7 @@ export class PageSecurityInternetComponent implements OnInit {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'internet-protection',
-			'Lang': 'EN',
-			'GEO': 'US',
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			'Page': 'internet-protection'
 		};
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
@@ -86,5 +101,18 @@ export class PageSecurityInternetComponent implements OnInit {
 				console.log('fetchCMSContent error', error);
 			}
 		);
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
+		}
 	}
 }

@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -39,22 +39,36 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
                     "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock"
+                    "touchpadLock": "Touchpad Lock",
+                    "lightingDriverPopup": {
+                        "headerText": "Driver Install Required",
+                        "text": "Please install driver",
+                        "button": "Install",
+                        "link": "cancel"
+                    },
+                    "lightingColorMessage": {
+                        "text": "Selecting color not available to this effect."
+                    }
                 },
                 "systemTools": {
                     "power": "Power",
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -71,6 +85,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                },
+                "systemStatus": {
+                    "info": "INFO"
                 }
             }
         },
@@ -111,11 +128,12 @@
                 },
                 "buttons": {
                     "start": "START RECORDING",
-                    "stop": "STOP RECORDING"
+                    "stop": "STOP RECORDING",
+                    "numberPrefix": "NUM"
                 },
                 "recording": {
                     "title": "START TYPING",
-                    "description": "20 inputs with in 20 seconds can be recorded."
+                    "description": "20 inputs within 20 seconds can be recorded."
                 },
                 "recorded": {
                     "title": "MACRO KEY FOR ",
@@ -204,7 +222,7 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure to clear this macro key?"
+                    "title": "Are you sure you want to clear this macro key?"
                 },
                 "timeoutRecording": {
                     "title": "Time Out For Recording.",
@@ -223,13 +241,16 @@
                     "btnCancel": "Cancel"
                 },
                 "btnOk": "OK"
+            },
+            "recording": {
+                "title": "Recording Macro Key For"
             }
         },
         "lightingProfile": {
             "title": "Lighting",
             "effect": {
                 "option1": {
-                    "title": "Static"
+                    "title": "On"
                 },
                 "option2": {
                     "title": "Flicker"
@@ -241,38 +262,133 @@
                     "title": "Wave"
                 },
                 "option5": {
-                    "title": "Music"
-                },
-                "option6": {
                     "title": "Smooth"
                 },
-                "option7": {
+                "option6": {
                     "title": "CPU Temperature"
                 },
-                "option8": {
+                "option7": {
                     "title": "CPU Utilization"
                 },
-                "option9": {
-                    "title": "Response"
+                "option8": {
+                    "title": "Off"
                 },
-                "option10": {
-                    "title": "Ripple"
+                "apply": {
+                    "title": "APPLY"
                 },
-                "option11": {
-                    "title": "No Light"
+                "applied": {
+                    "title": "APPLIED"
+                }
+            },
+            "brightness": {
+                "text1": {
+                    "title": "*Brightness setting doesn't apply on "
+                },
+                "text2": {
+                    "title": " effect"
+                }
+            },
+            "lightingSingleLightingOption": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
+            },
+            "colourwheel": {
+                "text1": {
+                    "title": "Selecting colour not available to this effect."
+                },
+                "text2": {
+                    "title": "APPLY"
+                },
+                "text3": {
+                    "title": "APPLIED"
+                },
+                "text4": {
+                    "title": "R:"
+                },
+                "text5": {
+                    "title": "G:"
+                },
+                "text6": {
+                    "title": "B:"
+                },
+                "text7": {
+                    "title": "Color"
                 }
             }
         }
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "Pano",
             "device": {
-                "title": "Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "Cihaz",
+                "sub1": "Cihazım",
+                "sub2": "Cihaz Ayarlarım",
                 "sub3": "System Updates",
-                "sub4": "Smart Assist"
+                "sub4": "Akıllı Yardım"
             },
             "security": {
                 "title": "Güvenlik",
@@ -283,9 +399,9 @@
                 "sub5": "İnternet Koruması",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "Destek",
+            "homeSecurity": "Bağlı Ev",
+            "privacy": "Gizlilik"
         },
         "securityAdvisor": {
             "title": "Güvenlik Danışmanı",
@@ -307,25 +423,23 @@
             "notRegistered": "KAYITLI DEĞİL"
         },
         "qAndA": {
-            "title": "Q&A for your machine",
-            "subtitle": "FIND SOME HELPFUL TIPS FOR YOUR DEVICE.",
-            "question1": "Backup and Restore your files",
-            "question2": "How to refresh your PC",
-            "question3": "How to know your machine's CPU",
-            "question4": "Check your machine's battery use",
-            "question5": "Use your PC like a tablet",
-            "question6": "Get to know Cortana, your personal assistant"
+            "title": "Makineniz için Q & A",
+            "subtitle": "CİHAZINIZ İÇİN BAZI YARDIM İPUÇLARI BULUN.",
+            "question1": "Dosyalarınızın yedeklenmesi ve geri yüklenmesi",
+            "question2": "Bilgisayarınızın yenilenmesi",
+            "question3": "Makinenizin CPU\\'sunun öğrenilmesi",
+            "question4": "Makinenizin pil kullanımının denetlenmesi",
+            "question5": "Bilgisayarınızın tablet gibi kullanılması",
+            "question6": "Kişisel yardımcınız Cortana'yı tanıyın"
         },
         "ui": {
             "back": "GERİ",
             "on": "ON",
             "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
-            "loader": {
-                "text1": "Fetching",
-                "text2": "Status"
-            }
+            "collapse": "Daralt",
+            "expand": "Genişlet",
+            "loader": "Durum <br> Alma",
+            "loading": "Yükleniyor..."
         }
     },
     "privacy": {
@@ -344,7 +458,7 @@
         "personal": "PERSONAL",
         "custom": "CUSTOM",
         "skip": "SKIP",
-        "next": "NEXT",
+        "next": "İLERİ",
         "interests": "What are your interests?",
         "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
         "games": "GAMES",
@@ -358,166 +472,179 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Bugün çok dinç görünüyorsun "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Internet bağlantısı saptanmadı",
+            "subtitle": "Bağlantı sorunlarının nasıl çözüleceğini öğrenmek için",
+            "buttonText": "Destek Alın"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Geri Bildirim Gönder",
+            "subtitle": "Vantage hakkındaki düşüncelerinizi bizimle paylaşın.",
+            "button": "Geri bildirim gönder",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Açıklamalar...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
-                }
+                    "feedbackSuccess": "Geri bildiriminiz için teşekkürler!"
+                },
+                "question1": "Vantage'ın yeni tarzını beğendiniz mi?",
+                "question2": "Performansın kabul edilir olduğunu düşünüyor musunuz?",
+                "question3": "Uygulamayı gelecekte daha sık kullanır mısınız?",
+                "yes": "Evet",
+                "no": "Hayır",
+                "tips1": "Lütfen ek yorumlarınızı bırakın",
+                "sendFeedback": "Geri Bildirim Gönder",
+                "submitScreenShot": "Ekran Görüntüsü Gönder"
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera Privacy",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Hızlı Ayarlarınız",
+            "microphone": "Mikrofon",
+            "cameraPrivacy": "Kamera",
+            "eyeCareMode": "Göz Koruması Kipi"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Sistem Durumu",
+            "subtitle": "CİHAZINIZIN DURUMUNA HIZLI GENEL BAKIŞ.",
             "memory": {
-                "title": "Memory",
+                "title": "Bellek",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Bellek bulunamadı",
+                    "of": "/"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Disk Alanı",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Disk bulunamadı",
+                    "of": "/"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Garanti",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Garanti bulunamadı",
+                    "until": "Bitiş",
+                    "expiredOn": "Garanti süresi sonu",
+                    "notAvailable": "Garanti mevcut değil"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Güncelle"
                 }
             }
         }
     },
     "device": {
         "myDevice": {
-            "title": "My Device",
-            "subtitle": "My device status",
-            "serial": "Serial",
-            "productNumber": "Product number",
-            "biosVersion": "Bios version",
-            "learnMore": "Learn more",
-            "freeMemory": "Free memory",
+            "title": "Cihazım",
+            "subtitle": "Cihazımın durumu",
+            "serial": "Seri",
+            "productNumber": "Ürün numarası",
+            "biosVersion": "Bios sürümü",
+            "learnMore": "Ek bilgi",
+            "freeMemory": "Boş bellek",
             "systemUpdate": {
-                "title": "System update",
-                "notFound": "System update not found",
+                "title": "Sistem güncellemesi",
+                "notFound": "Sistem güncellemesi bulunamadı",
                 "detail": {
-                    "uptoDate": "Software up to date ",
-                    "updatedOn": "updated on ",
-                    "outdated": "Software outdated ",
-                    "neverRanUpdate": "never ran update"
+                    "uptoDate": "Yazılım güncel",
+                    "updatedOn": "güncelleme",
+                    "outdated": "Yazılım güncel değil",
+                    "neverRanUpdate": "hiç güncelleme çalıştırılmadı"
                 }
             },
-            "extendedWarranty": "Extend warranty",
+            "extendedWarranty": "Garantiyi uzat",
             "processor": {
-                "title": "Processor",
-                "notFound": "Processor not found"
+                "title": "İşlemci",
+                "notFound": "İşlemci bulunamadı"
             },
             "memory": {
-                "title": "Memory",
-                "notFound": "Memory not found",
+                "title": "Bellek",
+                "notFound": "Bellek bulunamadı",
                 "ram": "RAM"
             },
             "diskspace": {
-                "title": "Disk Space",
-                "notFound": "Disk not found"
+                "title": "Disk Alanı",
+                "notFound": "Disk bulunamadı"
             },
-            "software": "Software up to date",
-            "updated": "Updated",
-            "outOfWarranty": "Out of warranty",
-            "expired": "Expired on",
-            "of": "of",
+            "software": "Yazılım güncel",
+            "updated": "Güncellendi",
+            "outOfWarranty": "Garanti dışı",
+            "expired": "Süre dolum tarihi",
+            "of": "/",
             "warranty": {
-                "notFound": "Warranty not found",
+                "notFound": "Garanti bulunamadı",
                 "detail": {
-                    "title": "Extend warranty",
-                    "inWarranty": "In warranty ",
-                    "daysRemaining": "days remaining",
-                    "outOfWarranty": "Out of warranty ",
-                    "expiredOn": "Expired on",
-                    "notAvailable": "Warranty not available",
-                    "support": "Support"
+                    "title": "Garantiyi uzat",
+                    "inWarranty": "Garanti kapsamında",
+                    "daysRemaining": "kalan gün",
+                    "outOfWarranty": "Garanti dışı",
+                    "expiredOn": "Süre dolum tarihi",
+                    "notAvailable": "Garanti mevcut değil",
+                    "support": "Destek"
                 }
             },
-            "helpful": "Helpful Content"
+            "helpful": "Faydalı İçerik"
         },
         "deviceSettings": {
-            "helpful": "Helpful Content",
+            "helpful": "Faydalı İçerik",
             "batteryGauge": {
-                "title": "BATTERY GAUGE",
-                "subtitle": "Battery",
-                "hours": "hours",
-                "hour": "hour",
-                "minutes": "minutes",
-                "minute": "minute",
-                "charge": "TIME TO FULLY CHARGE",
-                "button": "SEE BATTERY DETAILS",
+                "title": "PİL GÖSTERGESİ",
+                "subtitle": "Pil durumu",
+                "hours": "saat",
+                "hour": "saat",
+                "minutes": "dakika",
+                "minute": "dakika",
+                "charge": "TAMAMEN DOLMA SÜRESİ",
+                "button": "PİL AYRINTILARINI GÖSTER",
                 "details": {
-                    "title": "Battery Details",
-                    "primary": "Primary Battery",
-                    "secondary": "Secondary Battery",
-                    "tertiary": "Tertiary Battery",
-                    "status": "Status",
-                    "wattage": "Wattage",
-                    "barcode": "Bar-Code",
-                    "remainingPercent": "Remaining percentage",
-                    "temp": "Temperature",
-                    "frupn": "FRU part number",
-                    "remainingTime": "Remaining time",
-                    "chargeCompletionTime": "Charge completion time",
-                    "cycleCount": "Cycle count",
-                    "chemistry": "Device chemistry",
-                    "remainingCap": "Remaining capacity",
-                    "designCap": "Design capacity",
-                    "fullChargeCap": "Full charge capacity",
-                    "manufDt": "Manufacture date",
-                    "designVolt": "Design voltage",
-                    "volts": "Voltage",
-                    "firstUseDt": "First use date",
-                    "firmwareVer": "Firmware version",
+                    "title": "Pil Ayrıntıları",
+                    "primary": "Birincil Pil",
+                    "secondary": "İkincil Pil",
+                    "tertiary": "Üçüncül Pil",
+                    "status": "Durum",
+                    "wattage": "Watt",
+                    "barcode": "Barkod",
+                    "remainingPercent": "Kalan yüzde",
+                    "temp": "Sıcaklık",
+                    "frupn": "FRU parça numarası",
+                    "remainingTime": "Kalan süre",
+                    "chargeCompletionTime": "Dolum tamamlanma süresi",
+                    "cycleCount": "Döngü sayısı",
+                    "chemistry": "Cihaz kimyası",
+                    "remainingCap": "Kalan kapasite",
+                    "designCap": "Tasarlandığı kapasite",
+                    "fullChargeCap": "Tam şarj kapasitesi",
+                    "manufDt": "Üretim tarihi",
+                    "designVolt": "Tasarlandığı voltaj",
+                    "volts": "Voltaj",
+                    "firstUseDt": "İlk kullanım tarihi",
+                    "firmwareVer": "Sabit yazılım sürümü",
                     "chargeStatusString": {
-                        "error": "ERROR",
-                        "notinstalled": "Not installed",
-                        "noactivity": "No activity",
-                        "charging": "Charging",
-                        "discharging": "Discharging",
-                        "acdischarging": "Discharging (with ac)"
+                        "error": "HATA",
+                        "notinstalled": "Kurulu değil",
+                        "noactivity": "Etkinlik yok",
+                        "charging": "Doluyor",
+                        "discharging": "Boşaltılıyor",
+                        "acdischarging": "Boşaltılıyor (AC ile)"
                     },
                     "deviceChemistry": {
                         "li-polymer": "Li-Polymer",
                         "li-ion": "Li-Ion",
                         "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion"
+                        "li_ion": "Li-Ion",
+                        "silver-zinc": "Silver-Zinc",
+                        "silver_zinc": "Silver-Zinc",
+                        "nicd": "NiCd",
+                        "nimh": "NiMH",
+                        "unknown": "Unknown"
                     },
                     "manufacturer": {
                         "title": "Manufacturer",
@@ -527,17 +654,17 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "This system may not support battery that",
-                        "description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
-                        "description1": "Attention:",
-                        "description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
+                        "description": "you cannot use the attached battery with this computer.",
+                        "description1": "Replace",
+                        "description2": "it with a battery of correct model."
                     },
                     "Good": {
-                        "title": "The battery is in good Condition"
+                        "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -551,536 +678,804 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter"
-                    },
-                    "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter"
-                    },
-                    "ACAdapterNotSupported": {
-                        "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
                         "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
+                    "NotSupportACAdapter": {
+                        "title": "AC adapter not supported.",
+                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
+                    },
                     "MissingDriver": {
-                        "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
+                        "title": "The Lenovo Power Manager driver",
                         "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
                     },
                     "StoreLimitation": {
                         "title": "The battery can only store",
                         "description1": "of",
                         "description2": "it's original full charge capacity"
+                    },
+                    "HighTemperature": {
+                        "title": "Discharging",
+                        "description": "has been stopped because the",
+                        "description1": "battery temperature is too high"
+                    },
+                    "TrickleCharge": {
+                        "description": "The battery was",
+                        "description1": "completely discharged",
+                        "description2": "and needs to be recharged. This might take ten hours or more."
+                    },
+                    "OverheatedBattery": {
+                        "description": "The battery is",
+                        "description1": "too hot.",
+                        "description2": "Remove it from the computer and cool it to room temperature."
+                    },
+                    "PermanentError": {
+                        "description": "The battery has",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
+                    },
+                    "HardwareAuthenticationError": {
+                        "description": "The battery installed is",
+                        "description1": "is not supported",
+                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
                     }
-                }
+                },
+                "updating": "Updating",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
+                "voltageError": "Battery voltage incorrect",
+                "batteryNotDetected": "No Battery Detected"
             },
             "power": {
-                "title": "Power",
-                "subtitle": "Power Settings",
-                "description": "This section enables you to dynamically adjust thermal performance and maximize the battery life. It also has other popular power-related features. You can check the default settings in this section and customize your system according to your needs.",
+                "title": "Güç",
+                "subtitle": "Güç Ayarları",
+                "description": "Bu bölüm, termal performansı dinamik olarak ayarlamanızı ve pil ömrünü en üst düzeye çıkarmanızı sağlar.Aynı zamanda, güç ile ilgili diğer popüler özelliklere de sahiptir. Bu bölümdeki varsayılan ayarları kontrol edebilir ve sisteminizi ihtiyaçlarınıza göre özelleştirebilirsiniz.",
                 "jumpto": {
-                    "title": "JUMP TO SETTINGS",
-                    "battery": "Battery",
-                    "power": "Power",
-                    "cooling": "Intelligent Cooling",
-                    "other": "Other"
+                    "title": "AYARLARA GİT",
+                    "battery": "Pil",
+                    "power": "Güç",
+                    "cooling": "Akıllı Soğutma",
+                    "other": "Diğer"
                 },
                 "powerSmartSettings": {
-                    "title": "Power Smart Settings",
-                    "subtitle": "INTELLIGENT COOLING",
-                    "subtitle1": "Battery & Quiet",
-                    "description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
-                    "description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
-                    "readMore": "Read more.",
+                    "title": "Güç Akıllı Ayarları",
+                    "subtitle": "AKILLI SOĞUTMA",
+                    "subtitle1": "Pil ve Sessiz",
+                    "description1": "Bu özellik, termal ayarları ihtiyaçlarınıza göre dinamik olarak belirler.Açık olduğunda ayarları, elde tutulurken veya boşta çalışırken cihazın daha soğuk veya sessiz olmasını sağlayacak şekilde düzenler. Aksi takdirde, cihaz sabit bir yüzeydeyken performansı en iyi duruma getirir. Bu seçenek kapalı olduğunda, termal önceliği manuel olarak ayarlayabilirsiniz.",
+                    "description2": "Akıllı Soğutma fan hızını, maksimum yüzey sıcaklığını ve performansı ayarlar.Bu özellik aşağıdaki kiplere sahiptir ve bu özelliğe artık Windows performans güç kaydırıcısından erişilebilmektedir.",
+                    "description3": "Akıllı Soğutma termal performansı ihtiyaçlarınıza göre ayarlamak üzere otomatik olarak dengeler.Akıllı Soğutma özelliği performans ayarlarını yaparak dizüstü bilgisayarınız elinizde olduğunda daha az ısınan bir yüzey sunar. Cihazınız bir masanın üstündeyken bu özellik performansı en iyi düzeye getirir.",
+                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
+                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "readMore": "Okumaya devam edin.",
                     "gotoWindows": {
-                        "title": "Go to windows settings",
-                        "modalBodyText1": "Click on Windows battery icon on System tray to access Windows performance power slider"
+                        "title": "Windows ayarlarına git",
+                        "modalBodyText1": "Windows performans güç kaydırıcısına erişmek için Sistem tepsisinde Windows pil simgesine tıklayın"
                     },
                     "intelligentCooling": {
-                        "title": "Intelligent cooling",
+                        "title": "Akıllı soğutma",
                         "description": "",
                         "tooltip": "",
-                        "optimize": "optimize system for",
-                        "apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
+                        "optimize": "sistemi şunun için en iyi duruma getir",
+                        "apsHint": "Akıllı Soğutmayı etkinleştirmek için Lenovo Active Protection System'ı indirip etkinleştirmelisiniz.",
                         "options": {
-                            "quiteCool3": "Cool Mode",
-                            "performance3": "High Performance",
-                            "quiteCool4": "Quiet & Cool",
-                            "performance4": "Performance",
-                            "quiteCool5": "Quiet & Cool",
-                            "performance5": "Performance"
+                            "quiteCool3": "Soğutma Kipi",
+                            "performance3": "Yüksek Performans",
+                            "quiteCool4": "Sessiz ve Soğuk",
+                            "performance4": "Performans",
+                            "quiteCool5": "Sessiz ve Soğuk",
+                            "performance5": "Performans",
+                            "batterySaving": "Battery Saving",
+                            "performance13": "Performance",
+                            "quiteCool13": "Quiet & Cool",
+                            "performance14": "Extreme Performance",
+                            "quiteCool14": "Intelligent Cooling"
                         },
                         "readMore": {
-                            "mode1": "Quiet mode",
-                            "mode2": "Balanced mode",
-                            "mode3": "Performance mode",
-                            "line1": "Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "line2": "Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
-                            "line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "mode1": "Sessiz kipi",
+                            "mode2": "Dengeli kipi",
+                            "mode3": "Performans kipi",
+                            "line1": "Kaydırıcı en solda.Daha serin, daha sessiz bir bilgisayar ve en iyi pil ömrü için fan hızı ve performans düşürülür.",
+                            "line2": "Kaydırıcı ortada.En iyi deneyim için fan hızı ve performans dinamik olarak dengelenir.",
+                            "line3": "Kaydırıcı en sağda. Maksimum performans için fan hızı ve izin verilen yüzey sıcaklığı daha yüksektir.",
+                            "line4": "More info"
+                        },
+                        "selectedModeText": {
+                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
+                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
+                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                        },
+                        "intelligentCoolingModesModal": {
+                            "title": "Change intelligent cooling modes",
+                            "close": "close",
+                            "coolingModesList": {
+                                "list1": "Click on the windows battery-icon in the toolbar",
+                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                            }
                         }
                     },
                     "nonintelligentCooling": {
                         "options": {
-                            "intelligentCooling": "INTELLIGENT COOLING",
-                            "extremeCooling": "EXTREME PERFORMANCE",
-                            "battery&Quite": "BATTERY & QUIET"
+                            "intelligentCooling": "AKILLI SOĞUTMA",
+                            "extremeCooling": "EN YÜKSEK PERFORMANS",
+                            "battery&Quite": "PİL VE SESSİZ"
                         }
-                    }
+                    },
+                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
                 },
                 "powerSettings": {
-                    "title": "Power Settings",
+                    "title": "Güç Ayarları",
                     "alwaysUSB": {
                         "title": "Always on USB",
-                        "description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
-                        "checkbox": "Enable USB charging from laptop battery when computer is off."
+                        "description": "Bilgisayar uyku, sabit disk askıda uyku veya kapalı kipinde olduğunda USB cihazlarını bilgisayardaki Always on USB bağlacı aracılığıyla doldurun.Bir akıllı telefon veya tablet, sarı kodlu veya şu simgelere sahip ipek baskılı USB bağlacından hızlı bir şeklide doldurulabilir:",
+                        "checkbox": "Bilgisayar kapalıyken dizüstü bilgisayar pilinden USB dolumunu etkinleştirin."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Kolay Sürdür",
+                        "description": "Bilgisayarınızın kapağını sıklıkla açıp kapatıyorsanız sürdürme süresini iyileştirmek için bu özelliği etkinleştirin.",
+                        "tooltip": "Bu özellik, bilgisayarınızın kapağını sıklıkla açıp kapatıyorsanız sürdürme süresini geliştirir. Etkinleştirildiğinde, kapağını kapattığınızda bilgisayarınız düşük güç kipine girer ancak kapattıktan sonraki 15 dakika içerisinde yeniden açmanız durumunda anında sürdürülür. Bu özellik, sistem askıda kipine geçmeden önce bilgisayarınızın bekleyen etkinlikleri (e-posta gönderme veya dosya indirme gibi) tamamlamaya çalışmasına olanak sağlar."
                     }
                 },
                 "otherSettings": {
-                    "title": "Other Settings",
+                    "title": "Diğer Ayarlar",
                     "vantageToolbar": {
-                        "title": "Lenovo Vantage Toolbar",
-                        "description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
+                        "title": "Lenovo Vantage Araç Çubuğu",
+                        "description": "Kolayca daha fazla pil ayrıntısı edinmek ve hızlı ayarlarınıza erişmek için Vantage Araç Çubuğu'nu Windows görev çubuğuna sabitleyin."
                     }
                 },
                 "batterySettings": {
-                    "title": "Battery Settings",
+                    "title": "Pil Ayarları",
                     "batteryThreshold": {
-                        "title": "Battery Charge Threshold",
-                        "description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
-                        "tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "title": "Pil Şarj Eşiği",
+                        "description": "Genel olarak bilgisayarınızı AC bağdaştırıcısına takılı bir şekilde çalıştırıyorsanız ve pil gücünü nadirenkullanıyorsanız maksimum şarj değerini %100'ün altına ayarlayarak pil ömrünü uzatabilirsiniz. Nadiren kullanılan piller tamamen dolmadan tutulduğunda daha uzun bir pil ömrüne sahip olduğu için bu özellik faydalıdır.",
+                        "tooltip": "Piliniz şu anda doldurmayı durdurma eşiğinin üzerindeki bir doluluktaysa pil düzeyi, doldurmayı durdurma eşiğine veya eşiğin altındaki bir değere gelene kadar güç bağdaştırıcısını çıkarın.Pilin durumuna (eski veya yeni) bağlı olarak, şarj başlangıç veya bitiş noktaları %2'ye kadar değişiklik gösterebilir. Bu özelliği etkinleştirirseniz pil durumunun doğru şekilde raporlanmasını sağlamak için ara sıra Pil Göstergesi Sıfırlama işlemi gerçekleştirmeniz önerilir.",
+                        "note": "Not",
+                        "readMoreText": "Okumaya devam edin.",
+                        "noteInfo": " Pil Şarj Eşiği henüz tamamen etkin değil. Lütfen makinenizi fişten çekin ve pilinizin tamamen boşalmasını veya doldurmayı durdurma eşiğinin altına düşmesini bekleyin.",
                         "settings": {
-                            "title1": "Threshold for Built in battery",
-                            "title2": "Threshold for Removable battery"
+                            "title1": "Yerleşik pil için eşik",
+                            "title2": "Çıkarılabilir pil için eşik"
                         },
                         "popup": {
-                            "title": "Enable Battery Charge Threshold",
-                            "description1": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life.",
-                            "description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
-                            "enable": "ENABLE",
-                            "cancel": "CANCEL"
+                            "title": "Pil Şarj Eşiğini Etkinleştirme",
+                            "description1": "Özel bir pil şarjının etkinleştirilmesi, bu cihazı kullanırken genel pil durumunun daha uzun süre dayanmasını sağlar.Ancak, şarjın tam dolu olmaması çalışma zamanı pil ömrünün daha az olmasına neden olur.",
+                            "description2": "Bu özelliği tamamen etkinleştirmek için lütfen makinenizi fişten çekin vepilinizin tam olarak boşalmasını veya doldurmayı durdurma eşiğinin altına düşmesini bekleyin.",
+                            "enable": "ETKİNLEŞTİR",
+                            "cancel": "İPTAL"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Şu değerden az olduğunda şarj etmeye başla",
+                            "checkboxText": "Pili doldurmaya başlama eşiğini, otomatik olarak pili doldurmayı durdurma eşiğinin %5 oranında altına ayarlayın.",
+                            "stop": "Şu değerde şarjı durdur"
                         }
                     },
                     "expressCharging": {
-                        "title": "Express Charging",
-                        "description": "Express Charge allows your battery to a full charge much faster than normal mode.",
-                        "tooltip": "Express Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
+                        "title": "Hızlı Şarj Etme",
+                        "description": "Hızlı Şarj, pilinizin normal kipten çok daha hızlı bir şekilde tam olarak dolmasını sağlar.",
+                        "tooltip": "Hızlı Şarj, sistem pilinizi çok daha hızlı bir şekilde doldurmanıza olanak tanırancak pilin ömrünü kısaltabilir."
                     },
                     "conservationMode": {
-                        "title": "Conservation Mode",
-                        "description": "This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
+                        "title": "Tasarruf Kipi",
+                        "description": "Bu işlev, cihazınız fişe takılıyken pilinizin ömrünü uzatmak için yararlıdır. <br>Bu kip etkinleştirildiğinde, pil yalnızca kapasitesinin %55-60'ı kadar doldurulur ve pil ömrü en üst düzeye çıkarılabilir. Ancak, bu işlem AC güç kaynağı ile bağlantısını kesmenizden sonra bilgisayarınızı kullanma sürenizi kısaltacaktır.",
                         "tooltip": {
-                            "line1": "This function is useful to extend the lifespan of your battery when plugged.",
-                            "line2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
-                            "line3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
+                            "line1": "Bu işlev, cihazınız fişe takılıyken pilinizin ömrünü uzatmak için yararlıdır.",
+                            "line2": "Bu kip etkinleştirildiğinde, pil yalnızca kapasitesinin %55-60'ı kadar doldurulur ve pil ömrü en üst düzeye çıkarılabilir. Ancak, bu işlem AC güç kaynağı ile bağlantısını kesmenizden sonra bilgisayarınızı kullanma sürenizi kısaltacaktır.",
+                            "line3": "Not: Hızlı Şarj ve Tasarruf kipi aynı anda çalışamaz.Bu kiplerden biri açıksa diğeri otomatik olarak kapatılır."
                         }
                     },
                     "airPlanePower": {
-                        "title": "Airplane Power Mode",
-                        "description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
+                        "title": "Uçak Güç Kipi",
+                        "description": "Sisteminizin güç tüketimini denetleyerek uçak AC güç çıkışını koruyun.Uçak Güç Kipi etkinleştirildiğinde bilgisayar, pil şarj oranını ve sistem performansını sınırlayarak güç tüketimini azaltır."
+                    }
+                },
+                "energyStar": {
+                    "title": "Energy Star",
+                    "description": "ENERGY STAR SERTİFİKALI ÜRÜN"
+                },
+                "smartStandby": {
+                    "title": "Akıllı Bekleme",
+                    "description": "Bu özellik, yoğun kullanım zamanlarında hızlı başlatmadan ödün vermeden, bilgisayar boşta olduğunda pil güç tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
+                    "tooltip": "Akıllı Bekleme özelliği etkin olduğunda bilgisayarınız zamanlanan Başlangıç saatinden önce Modern Bekleme Durumu kipine geçer ve pil gücünde belirli bir süre etkin olmadan beklediğinde hazırda bekleme kipine geçer. Bu süre, ayarladığınız zamanlamaya göre iyileştirilir. Bilgisayar hazırda bekleme kipinden Modern Bekleme Durumu kipine yalnızca zamanlanan günlerde geçer ve zamanlanan günlerde art arda etkin olmadan beklediğinde kipi değiştirmez.",
+                    "timer": {
+                        "heading": "Bu bilgisayarı genelde kullandığınız saatleri ayarlayın",
+                        "subHeading1": "bu alanın",
+                        "subHeading2": "bitiş",
+                        "subHeading3": "bu zamanlamanın kullanılacağı zaman",
+                        "endTimeNote": "Bitiş saati, Başlangıç saatinden sonraki 20 saat içinde olmalıdır",
+                        "timeUnits": {
+                            "unit1": "Saat",
+                            "unit2": "Dakika",
+                            "unit3": "AM/PM"
+                        }
                     }
                 }
             },
             "audio": {
-                "title": "Audio",
-                "subtitle": "Audio Settings",
-                "description": "This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.",
+                "title": "Ses",
+                "subtitle": "Ses Ayarları",
+                "description": "Bu bölüm, ses ayarlarınızı otomatik olarak en iyi durumagetirmenizi veya Dolby ayarları, mikrofon gibi ayarları tamamıyla manuel olarak ayarlamanızı sağlar.",
                 "audioSmartsettings": {
-                    "title": "Audio Smart settings",
-                    "subtitle": "APPLICATION-BASED SETTINGS",
-                    "description": "Automatically adjust audio settings according to different apps you are using.",
+                    "title": "Ses Akıllı ayarları",
+                    "subtitle": "UYGULAMA TABANLI AYARLAR",
+                    "description": "Kullandığınız farklı uygulamalara göre ses ayarlarını otomatik olarak yapın.",
                     "dolby": {
-                        "title": "Automatic Dolby Audio settings",
-                        "tooltip": "Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
+                        "title": "Otomatik Dolby Ses ayarları",
+                        "tooltip": "Otomatik Dolby Ses ayarları, ses deneyiminizi geliştirmekamacıyla Dolby ses ayarlarını kullandığınız farklı uygulamalar için uygun kipe yapılandırır.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "DİNAMİK",
+                            "movie": "FİLM",
+                            "music": "MÜZİK",
+                            "games": "OYUN",
+                            "voip": "SES"
                         }
                     },
                     "voip": {
-                        "title": "Automatic Audio Optimization for VoIP",
-                        "tooltip": "Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality."
+                        "title": "Ses Özelliklerinin VoIP için Otomatik Olarak En İyi Duruma Getirilmesi",
+                        "tooltip": "Net, tutarlı ses kalitesi için VoIP aramaları sırasında otomatik olarak Dolby Ses kipine geçin."
                     }
                 },
                 "microphone": {
-                    "title": "Microphone",
+                    "title": "Mikrofon",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permission to access your microphone. Please turn on access to your microphone for the Lenovo Vantage app."
+                        "title": "not",
+                        "description": "Lenovo Vantage'ın mikrofonunuza erişim izni yok.Lütfen Lenovo Vantage uygulaması için mikrofonunuza erişimi açın."
                     },
                     "microphone": {
-                        "title": "Microphone",
-                        "tooltip": "You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode."
+                        "title": "Mikrofon",
+                        "tooltip": "Mikrofon ses düzeyini ayarlayarak MIC efektinizi özelleştirebilirve uygun kipi belirtebilirsiniz."
                     },
                     "volume": {
-                        "title": "Microphone Volume",
-                        "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
+                        "title": "Mikrofon Ses Düzeyi",
+                        "description": "Dolby Ses, zevk aldığınız tüm içeriklerden zengin, net ve güçlü bir ses sunar. İçeriğiniz ve ekipmanınız için uygun kipi seçin.",
                         "options": {
-                            "silent": "Silent",
-                            "loud": "Loud"
+                            "silent": "Sessiz",
+                            "loud": "Yüksek Ses"
                         }
                     },
                     "suppress": {
-                        "title": "Suppress keyboard noise",
-                        "tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+                        "title": "Klavye gürültüsünü gizle",
+                        "tooltip": "Klavye gürültüsünü engelleyerek MIC sesini iyileştirmek için bu düğmeyi açın."
                     },
                     "acoustic": {
-                        "title": "Acoustic Echo Cancellation",
-                        "tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+                        "title": "Akustik Yankı İptali",
+                        "tooltip": "Akustik yankıyı azaltarak MIC sesinizi iyileştirmek için bu özelliği açın."
                     },
                     "optimize": {
-                        "title": "Optimize my microphone for:",
-                        "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+                        "title": "Mikrofonumu şunun için en iyi konuma getirin:",
+                        "tooltip": "Ses deneyiminizi farklı senaryolar ve ortamlarla geliştirmek için mikrofon efektini yapılandırın.",
                         "options": {
-                            "VoiceRecognition": "VOICE RECOGNITION",
-                            "OnlyMyVoice": "ONLY MY VOICE",
+                            "VoiceRecognition": "SES TANIMA",
+                            "OnlyMyVoice": "YALNIZCA BENİM SESİM",
                             "Normal": "NORMAL",
-                            "MultipleVoices": "MULTIPLE VOICES"
+                            "MultipleVoices": "BİRDEN ÇOK SES"
                         }
                     }
                 }
             },
             "displayCamera": {
-                "title": "Display & Camera",
-                "subtitle": "Display & Camera Settings",
-                "description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
+                "title": "Ekran ve Kamera",
+                "subtitle": "Ekran ve Kamera Ayarları",
+                "description": "Bu bölüm, görsel deneyiminizi iyileştirmenizi ve kamera özelliklerinizi yapılandırmanızı sağlar. Daha fazla özellik keşfedin ve ekran deneyiminizi burada özelleştirin.",
                 "jumpTo": {
-                    "title": "JUMP TO SETTINGS",
+                    "title": "AYARLARA GİT",
                     "shortcuts": {
                         "display": {
-                            "title": "Display"
+                            "title": "Ekran"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Kamera"
                         }
                     }
                 },
                 "display": {
-                    "title": "Display",
+                    "title": "Ekran",
                     "eyeCareMode": {
-                        "title": "Eye Care Mode",
-                        "checkbox": "Schedule eye care mode from sunset to sunrise",
+                        "title": "Göz Koruması Kipi",
+                        "checkbox": "Göz koruması kipini gün batımından gün doğumuna kadar sürecek şekilde ayarlayın",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Sıcak (Gözler için daha iyi)",
+                            "cold": "Soğuk"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Sıcaklığı sıfırla",
+                        "tooltip": "Göz Koruması Kipi, mavi ışığı filtreleyip göz yorgunluğunu azaltmak için ekranınızın renk sıcaklığını ayarlar.",
+                        "onSunsetToSunriseScheduleDescription": "Göz koruması kipini gün batımından gün doğumuna kadar sürecek şekilde ayarlayın",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "Not",
+                            "description": "Lenovo Vantage'ın, bölgenizdeki gün batımı ve gün doğumu saatlerini hesaplamak için konum bilgilerinize erişmesi gerekir."
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Display color temperature",
+                        "title": "Ekran rengi sıcaklığı",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Sıcak (Gözler için daha iyi)",
+                            "cold": "Soğuk"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Sıcaklığı sıfırla",
+                        "tooltip": "Göz Koruması Kipi, mavi ışığı filtreleyip göz yorgunluğunu azaltmak için ekranınızın renk sıcaklığını ayarlar.",
+                        "onSunsetToSunriseScheduleDescription": "Göz koruması kipini gün batımından gün doğumuna kadar sürecek şekilde ayarlayın",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "Not",
+                            "description": "Lenovo Vantage'ın, bölgenizdeki gün batımı ve gün doğumu saatlerini hesaplamak için konum bilgilerinize erişmesi gerekir."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Gizlilik koruması",
+                        "description": "Bu özellik başkalarının ekranınıza gizlice bakmasını önler. Açık olduğunda ekranınızın görüş açısını değiştirir ve ekranı çevrenizdekilerin görememesini sağlar. Ayrıca “Fn+D” tuşlarına basarak kipler arasında geçiş yapabilirsiniz.",
+                        "note": "Gizlilik Koruması, dikey ekran kipinde çalışmaz. Bu kipte, ekranınız yanlardan görünmeye devam eder.",
+                        "labelText": "Bu özelliği parolaları yazarken etkinleştirin"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "OLED Güç Ayarları",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Bilgisayarınızın OLED ekranı, isteğe bağlı olarak ekranın bazı bölümleri karartılarak güç tüketimini azaltabilir ve pil ömrünü uzatabilir.",
+                            "Ayrıca ekranın genel kullanım ömrünü uzatmak için görev çubuğunun ve ekranın sık sık değişmeyen diğer alanlarının karartılması önerilir."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Sıcaklığı sıfırla",
+                        "tooltip": "Bu özellik, aynı zamanda isteğe bağlı olarak ekranın bazı bölümleri karartılarak güç tüketimini azaltabilir ve pil ömrünü uzatabilir.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
-                    "title": "Camera",
+                    "title": "Kamera",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permissions to access your camera. Please turn on access to your camera for the Lenovo Vantage app."
+                        "title": "Not",
+                        "description": "Lenovo Vantage'ın kameranıza erişim izni yok. Lenovo Vantage uygulaması için lütfen kameranıza erişimi açın."
                     },
-                    "url": "Go to windows privacy settings",
+                    "url": "Windows gizlilik ayarlarına git",
                     "cameraPrivacy": {
-                        "title": "Camera privacy mode",
-                        "tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling."
+                        "title": "Kamera gizlilik kipi",
+                        "tooltip": "Gizlilik ayarı etkinleştirildiğinde kamera canlı görüntü göndermeyi durdurur. Yalnızca video görüşmeleri sırasında görüntülerinizin görülmesini istemediğiniz zamanlarda bu seçeneğini kullanın."
                     },
                     "camera": {
-                        "title": "Camera",
-                        "tooltip": "Click here to reset Camera properties to default settings.",
-                        "reset": "Reset factory settings"
+                        "title": "Kamera",
+                        "tooltip": "Kamera özelliklerini varsayılan ayarlarına sıfırlamak için buraya tıklayın.",
+                        "reset": "Fabrika ayarlarına sıfırla"
                     },
-                    "brightness": "Brightness",
-                    "contrast": "Contrast",
-                    "autoExposure": "Auto Exposure",
-                    "autoFocus": "Auto focus",
-                    "notAvailable": "Camera Not Available",
+                    "brightness": "Parlaklık",
+                    "contrast": "Karşıtlık",
+                    "autoExposure": "Otomatik Pozlama",
+                    "autoFocus": "Otomatik odaklanma",
+                    "notAvailable": "Kamera Kullanılamıyor",
                     "camerablur": {
-                        "title": "Camera Background Blur",
-                        "caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "title": "Kamera Arka Plan Bulanıklık",
+                        "caption": "Bu özellik, kamerayı kullanarak görüntülü arama yaparken veya fotoğraf çekerken arka planınızı bulanıklaştırır. Aşağıdaki seçimlerden farklı bir efekt belirleyebilirsiniz.",
+                        "blurMode": "Bulanıklık kipi",
+                        "comicMode": "Karikatür kipi",
+                        "sketchMode": "Eskiz kipi"
+                    },
+                    "cameraLoadingFailed": {
+                        "inUseTitle": "CAMERA IS IN USE",
+                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
+                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
+                        "loadingFailedDescription": "Close the app and try again."
+                    }
+                }
+            },
+            "inputAccessories": {
+                "title": "Giriş ve Aksesuarlar",
+                "subtitle": "Giriş ve Aksesuarlar Ayarları",
+                "description": "Lenovo Akıllı Algılama, etkinliklerinizi algılamak ve ideal güç yönetimi ayarlarını düzenlemek için bilgisayarınızın çeşitli algılayıcılarını birleştirir",
+                "inputAccessory": {
+                    "title": "Akıllı Klavye",
+                    "hiddenKeyboardFunctions": {
+                        "title": "Gizli klavye işlevleri",
+                        "description": "Klavyenizin sol altındaki Fn tuşuna diğer tuşlarla aynı anda basarak, aşağıdaki klavye haritasında gösterilen komutları çağırabilirsiniz."
+                    },
+                    "firstKeyObj": {
+                        "tittle": "Fn + Sekme",
+                        "description": "yüksek çözünürlüklü ekranlarda yakınlaştırma/uzaklaştırma özelliğini etkinleştirir",
+                        "image": ""
+                    },
+                    "secondKeyObj": {
+                        "tittle": "Fn + 4",
+                        "description": "RAM askıda uyku kipine geçer",
+                        "image": ""
+                    },
+                    "thirdKeyObj": {
+                        "tittle": "Fn + D",
+                        "description": "Gizlilik Koruması'nı açıp kapatır",
+                        "image": ""
+                    },
+                    "fourthKeyObj": {
+                        "tittle": "Fn + Q",
+                        "description": "Performans kipleri ve Sessiz kipi arasında geçiş yapar",
+                        "image": ""
+                    },
+                    "fifthKeyObj": {
+                        "tittle": "Fn + Boşluk",
+                        "description": "klavye arka ışığı durumlarını değiştirir",
+                        "image": ""
+                    }
+                },
+                "userDefinedKey": {
+                    "title": "Kullanıcı Tanımlı Tuş",
+                    "caption": "Yıldız simgesiyle temsil edilen tuş, kullanıcı tanımlı işlevi belirlemenize olanak sağlar",
+                    "dropDown": {
+                        "title": "Kullanıcı Tanımlı Tuş İşlemi",
+                        "note": "Not: E-posta veya normal posta adresi gibi sık kullanılan metinleri girmek için kullanılabilir. Lenovo bu özelliğin parola veya başka bir özel bilgi saklamak ve girmek için kullanılmamasını önerir.",
+                        "options": {
+                            "option1": "Lütfen seçin:",
+                            "option2": "Web sitesini aç",
+                            "option3": "Metin gir"
+                        }
+                    },
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
                     }
                 }
             }
         },
         "smartAssist": {
-            "title": "Smart Assist",
-            "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+            "title": "Akıllı Yardım",
+            "description": "Lenovo Akıllı Algılama özelliği, etkinliklerinizi algılamak, ideal güç yönetimi ayarlarını düzenlemek ve gizliliğinizi korumak için bilgisayarınızdaki çeşitli sensörleri birleştirir.",
             "jumpTo": {
-                "title": "JUMP TO SETTINGS",
-                "security": "Security",
-                "screen": "Screen",
-                "media": "Media",
-                "voice": "Voice"
+                "title": "AYARLARA GİT",
+                "security": "Güvenlik",
+                "screen": "Ekran",
+                "media": "Ortam",
+                "voice": "Ses",
+                "APS": "APS"
             },
             "intelligentSecurity": {
-                "title": "Intelligent Security",
-                "readMore": "Read more",
+                "title": "Akıllı Güvenlik",
+                "readMore": "Okumaya devam edin",
                 "HumanPresenceDetection": {
-                    "title": "Human presence detection",
-                    "tooltip": "Click here to reset the human presence detection settings."
+                    "title": "İnsan varlığını algılama",
+                    "tooltip": "İnsan varlığını algılama ayarlarını sıfırlamak için burayı tıklatın."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Kullanıcı Varlığını Algılama",
+                    "tooltip": "İnsan varlığını Algılama ayarlarını sıfırlamak için buraya tıklayın."
                 },
                 "zeroTouchLogin": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
+                    "title": "Sıfır Dokunma ile Oturum Açma",
+                    "caption": "Bu özellik, bilgisayarın karşısında olduğunuzda veya bilgisayara yaklaştığınızda bilgisayar kilidini otomatik olarak açar ya da bilgisayarı uyandırır."
                 },
                 "zeroTouchLock": {
-                    "title": "Zero Touch Lock",
-                    "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+                    "title": "Sıfır Dokunma ile Kilitleme",
+                    "caption": "Bu özellik, kullanıcı varlığı algılanmadığında ekranı karartır ve bilgisayarı kilitler. Bu özellik sayesinde bilgisayarı gözetimsiz ve açık bıraktığınızda bilgisayara yetkisiz erişim olasılığı azalır. Ayrıca varlığınız algılanmadığında sistemi Modern Bekleme Durumu kipine geçirerek güç tüketimini de azaltır.",
                     "autoScreenLockTimer": {
-                        "title": "AUTO SCREEN LOCK TIMER",
+                        "title": "OTOMATİK EKRAN KİLİDİ ZAMANLAYICISI",
                         "radioButton": {
-                            "fast": "Fast",
-                            "medium": "Medium",
-                            "slow": "Slow"
+                            "fast": "Hızlı",
+                            "medium": "Orta",
+                            "slow": "Yavaş"
                         },
-                        "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+                        "toolTipContent": "Varlığınız algılanmadığında ekranınızı Hızlı/Orta/Yavaş hızda kilitlemek için istediğiniz seçeneği belirleyin. Ancak, ekranın kilitlenme süresi gerçek kullanıcı senaryosu, sensör kapasitesi ve Windows ekranı zaman aşımı ayarlarından da etkilenir. Bu yüzden, bilgisayarınızın başından ayrılmadan önce sisteminizi hemen kilitlemenizi önemle tavsiye ederiz."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+                    "title": "UZAKLIK ALGILAMAYI AYARLAMA",
+                    "caption": "Otomatik Uzaklık Ayarı, algılama uzaklığını bir yapay zeka altyapısı aracılığıyla otomatik olarak günceller.",
                     "options": {
-                        "near": "Near",
-                        "far": "Far"
+                        "near": "Yakın",
+                        "far": "Uzak"
                     }
                 },
                 "note": {
-                    "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-                    "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
-                    "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-                    "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
-                    "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+                    "description1": "Bu özellik için Windows Hello gereklidir. Windows ayarlarında yüz tanımanın açık olduğundan emin olun.",
+                    "description2": "Bu özellik, varlığınızı algılamak için sensörler ve kamera kullanır. Ancak, özellik hiçbir kişisel veriyi TOPLAMAZ.",
+                    "description3": "1. Bilgisayarınız Çadır, Tablet veya Stant kipindeyse bu özellikler düzgün çalışmayabilir.",
+                    "description4": "2. Bilgisayarınız uyku kipindeyse veya kapalıysa. Kızılötesi kamerayla otomatik oturum açma çalışmaz.",
+                    "description5": "3. Lütfen bilgisayarınızın ekranını, kızılötesi kameranın otomatik oturum açma için yüzünüzü tanıyabileceği uygun bir açıya ayarlayın."
                 },
                 "WindowsLink": {
-                    "goToWindowsHello": "Go to Windows Hello Settings",
-                    "screenTimeoutSettings": "Go to Screen timeout settings"
+                    "goToWindowsHello": "Windows Hello Ayarları'na git",
+                    "screenTimeoutSettings": "Ekran zaman aşımı ayarlarına git"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "VARSAYILAN AYARLARA SIFIRLA"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Akıllı Ekran",
+                "description": "Lenovo Akıllı Algılama özelliği, etkinliklerinizi algılamak ve güç yönetimi ayarlarını düzenlemek için bilgisayarınızın çeşitli algılayıcılarını birleştirir. Örneğin; yürüdüğünüzü algılarsa ekranı karartır ancak okuduğunuzu algılarsa ekranı karartmaz.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Otomatik ekran kapatma",
+                    "caption": "Ekran aşağı baktığında veya yürüdüğünüzde ekranı otomatik olarak kapatır.",
+                    "note": "Windows Ayarları “Sistem bölümünde” Güç Planı ayarlarınız “pil gücüyle çalışırken asla ekranı kapatma” olarak ayarlanmışsa bu özelliği kullanamazsınız. Bu özelliği etkinleştirmek için lütfen “Asla” haricinde bir değer seçin.",
+                    "windowsLink": "Windows ayarlarında Güç ve uyku ayarları'na gidin"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Ekranımı açık bırak",
+                    "caption": "Okurken veya gezinirken ekranımı açık bırak.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "Gezinirken ekranın kararmasından önce geçecek süre (dakika)",
+                        "startTime": "0 dakika",
+                        "endTime": "60 dakika"
+                    }
+                }
+            },
+            "activeProtectionSystem": {
+                "title": "Active Protection System",
+                "description": "Lenovo Active Protection System, sabit sürücünüzü güçlü fiziksel darbe ve titreşimlerin neden olduğu hasarlardan korumanıza yardımcı olan bir otonom özelliktir. Sürekli olarak bilgisayarınızın hareketini izler ve düşme veya benzeri şekilde zarar verici bir olay öngörüldüğünde sabit sürücüyü geçici olarak durdurur.",
+                "activeProtection": {
+                    "title": "Active Protection",
+                    "caption": "Duyarlılığı düşük duyarlılık moduna değiştirdiğinizde yalnızca daha sert darbeler korumayı etkinleştirir",
+                    "checkbox": "Bir tren veya arabadaki gibi tekrarlayan darbeleri göz ardı et"
+                },
+                "manualActiveProtectionSuspension": {
+                    "title": "Active Protection'ı Manuel Olarak Askıya Alma",
+                    "caption": "Active Protection System'i manuel olarak askıya almama izin ver",
+                    "dropdown-title": "Askıya alma süresi:",
+                    "button": "Şimdi Askıya Al"
+                },
+                "advanced": {
+                    "description": "Tablet kullanımı sırasında sabit disk sürücüsüne erişimi iyileştirmek için aşağıdakiler algılandığında Active Protection System öğesini askıya al",
+                    "pen": {
+                        "title": "Kalemle Giriş",
+                        "description": "Kalemle giriş kullanılırken kalem aralık dışı olduğunda APS'yi etkinleştir"
+                    },
+                    "touch": {
+                        "title": "Dokunarak Giriş",
+                        "description": "Dokunarak giriş kullanılırken dokunarak giriş algılanmadığında APS'yi etkinleştir"
+                    },
+                    "hand": {
+                        "title": "Bilgisayarın kenarlarında el yakınlığı algılayıcılar",
+                        "description": "Tablet modu etkin durumdayken el algılanmadığında APS'yi etkinleştir"
                     }
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Akıllı Medya",
+                "title": "Sıfır Dokunma ile Video Oynatma",
+                "desc": "Bu özellik, bilgisayarın başından ayrıldığınızda videoyu duraklatır ve geri döndüğünüzde videoyu oynatmaya devam eder.",
+                "tooltip": "Bu özellik, Web üzerindeki video oynatıcılar için geçerli değildir. Windows Media Player ya da 5KPlayer gibi popüler yerel video oynatıcılar bu özelliği destekler."
+            },
+            "voice": {
+                "title": "Ses",
+                "description": "Lenovo Voice, Sesten metne işlevi sayesinde sesinizi metne dönüştürmeye yardımcı olur ve Çeviri işlevi sayesinde sesten metne gerçek zamanlı çeviri sağlar.",
+                "installBtnText": "Kur",
+                "launchBtnText": "Başlat",
+                "voiceToText": {
+                    "title": "Sesten metne",
+                    "caption": "Bu özellik sesinizin metne dönüştürülmesine yardımcı olur."
+                },
+                "translation": {
+                    "title": "Çeviri",
+                    "caption": "Bu özellik sesin gerçek zamanlı çevirisini sağlar. Çevrilen içerikler metin olarak gösterilir. İhtiyacınıza göre kaynak dil ve hedef dil seçebilirsiniz."
+                },
+                "modalPopUp": {
+                    "heading": "Başlayın:",
+                    "point1": "Windows sistem tepsisinde Lenovo Voice simgesinin görüntülendiğinden emin olun.",
+                    "point2": "Dönüştürülmüş metni kaydetmek istediğiniz dosyayı açın.",
+                    "point3": "Windows sistem tepsisinde Lenovo Voice simgesine tıklayın ve Voice to text (Sesten metne) özelliğini seçin.",
+                    "point4": "İstediğiniz dili seçin ve başlamak için mikrofon simgesine tıklayın.",
+                    "point5": "İmleci düzenlemek istediğiniz yere getirin ve konuşmaya başlayın.",
+                    "point6": "Windows sistem tepsisinde Lenovo Voice simgesine tıklayın ve Translate (Çevir) özelliğini seçin.",
+                    "point7": "İstediğiniz kaynak dili ve hedef dili seçin.",
+                    "point8": "Gereksinimlerinize bağlı olarak ses girişini Hoparlör veya Mikrofon olacak şekilde ayarlayın.",
+                    "point9": "Konuşmaya başlamak için mikrofon simgesine tıklayın",
+                    "closeText": "kapat"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "Sistem Güncellemeleri",
+        "back": "GERİ",
+        "history": "TAM GEÇMİŞ",
+        "notAvailable": "Kullanılamaz",
+        "notInstalled": "Kurulu Değil",
+        "criticalUpdates": "Kritik Güncellemeler",
+        "recommendedUpdates": "Önerilen Güncellemeler",
+        "optionalUpdates": "İsteğe Bağlı Güncellemeler",
+        "ignoredUpdates": "Yoksayılan Güncellemeler",
+        "successInstall": "Başarıyla yüklendi: ",
+        "failedInstall": "Kurulum yapılamadı: ",
+        "at": "saat",
+        "readMore": "Okumaya devam edin",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
-            "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "reboot": "Yn Ykl",
+            "shutdown": "Kapat",
+            "rebootForceMsg": "Seçtiğiniz güncellemelerin kurulumundan sonra sistem otomatik olarak yenidenyüklenecektir.",
+            "shutdownForceMsg": "Seçtiğiniz güncellemelerin kurulumundan sonra sistem otomatikolarak kapanacaktır.",
+            "rebootDelayedMsg": "Seçtiğiniz güncellemelerin kurulumundan sonra sistem yeniden yüklenecektir.Güncellemelerin kurulumu sırasında lütfen sisteminizi kapatmayın, güç kaynağını veya aksesuarları çıkarmayın. Sisteminizi yeniden yüklemeye hazırlanmak için çalışmanızı kaydetmenizi öneririz.",
+            "rebootRequiredMsg": "Güncellemelerin başarıyla yüklenmesi için sistemin yeniden yüklenipher şeyin güvenli ve sorunsuz bir şekilde çalıştığından emin olunması gerekir.",
+            "okayButton": "TAMAM",
+            "cancelButton": "İptal",
+            "rebootButton": "ŞİMDİ YENİDEN YÜKLE",
+            "dismissButton": "İPTAL ET",
+            "rebootPending": "Yeniden yükleme bekletiliyor"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Otomatik güncelleme ayarları",
+            "subtitle": "GÜNCELLEMELERİ OTOMATİK OLARAK YÜKLE",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Kritik Güncelleştirmeler",
+                "tooltip": "Kritik güncellemeler önemli sorunları, ciddi hataları, donanım arızalarını veya veri bozulmasını önler."
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "Önerilen Güncellemeler",
+                "tooltip": "Önerilen sürücü güncellemeleri"
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Windows Güncellemeleri",
+                "url": "Windows Ayarları"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Lenovo Destek web sitesi"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "System Update'i kullanmaya hoş geldiniz.",
+            "title": "Güncel bir sistem, sağlıklı sistemdir.",
+            "last": "Son güncelleme: ",
+            "next": "Sonraki zamanlanmış güncelleme: ",
+            "checkButton": "GÜNCELLEMELERİ DENETLE",
+            "checking": "Güncellemeler denetleniyor",
+            "downloading": "Güncellemelerin indirilmesi tamamlandı",
+            "installing": "Güncellemeler yükleniyor",
+            "percent": "% tamamlandı",
+            "cancelCheck": "Denetlemeyi iptal et",
+            "cancelUpdates": "GÜNCELLEMELERİ İPTAL ET",
+            "available": "Mevcut güncellemeler",
+            "description": "Bu paketler, bilgisayarınızın doğru şekilde çalışması içinkritik önem taşıyan donanım sürücülerine ve diğer sistem yardımcı programlarına ilişkin güncellemeleri içerir. Kritik güncellemeler aynı zamanda bilgisayarınızdaki verileri korumak için de önemlidir ve yayınlandıklarında yüklenmelidir. Bu paketlerin yüklenmemesi veri kaybına, sistem hatasına ya da donanım arızasına neden olabilir.",
+            "installButton": "TÜM GÜNCELLEMELERİ YÜKLE",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Tüm güncellemeler doğru bir şekilde yüklendi",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Bazı güncellemeler doğru bir şekilde yüklenmedi.",
+                    "description": "Bu güncellemeleri indirme veya yükleme işlemi sırasında bir sorun oluştu.Lütfen güncellemeleri yüklerken çevrimiçi olduğunuzdan emin olun ve bilgisayarınızı kapatmayın."
                 }
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend",
-            "rebootRequiredTag": "Reboot Required",
-            "rebootDelayTag": "Reboot Required, Power Source Required",
-            "shutdownRequiredTag": "Shutdown Required",
-            "dependedPackage": "Depended Package"
+            "rebootRequired": "Yeniden yükleme gerekli",
+            "failReason": "Başarısız olma nedeni: AC güç bağdaştırıcısı bilgisayarınıza takılı değildi. ",
+            "manufacturer": "Üretici: ",
+            "version": "Sürüm: ",
+            "installVersion": "Kurulu sürüm: ",
+            "downloadSize": "İndirme boyutu: ",
+            "diskSpaceNeeded": "Gereken disk alanı: ",
+            "ignore": "Yoksay",
+            "attend": "Katıl",
+            "rebootRequiredTag": "Yeniden Yükleme Gerekli",
+            "rebootDelayTag": "Yeniden Yükleme Gerekli, Güç Kaynağı Gerekli",
+            "shutdownRequiredTag": "Kapatılması Gerekiyor",
+            "dependedPackage": "Bağımlı Paket"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "Mevcut güncellemeler",
+            "description": "Bu paketler, bilgisayarınızın doğru çalışması için kritik olan güncellemeler içerir. Kritik güncellemeler, bilgisayarınızın daha güvenli ve güvenilir kalmasına yardımcı olur ve yayınlandıklarında yüklenmeleri gerekir. Önerilen güncellemeler ve isteğe bağlı güncellemeler, yazılımınızın güncel kalmasına ve bilgisayarınızın en iyi şekilde çalışmasına yardımcı olur.",
+            "installAllUpdates": "Tüm güncellemeleri yükle",
+            "installSuccessHeader": "Tüm güncellemeler doğru bir şekilde yüklendi",
+            "installFailHeader": "Bazı güncellemeler doğru bir şekilde yüklenmedi",
+            "installFailDescription": "Bu güncellemeleri indirme ve yükleme işlemi sırasında bir sorun oluştu. Lütfen güncellemeleri yüklerken çevrimiçi olduğunuzdan emin olun ve bilgisayarınızı kapatmayın.",
+            "optionalUpdates": "İsteğe bağlı güncellemeler",
+            "installSelectedUpdates": "Seçili güncellemeleri yükle"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "Ad",
+            "sortByDate": "Tarihe Göre Sırala",
+            "packageSize": "Paket Boyutu:",
+            "releaseDate": "Yayınlama Tarihi:",
+            "showAll": "Tümünü Göster",
+            "noInstallationHistory": "Kurulum geçmişi yok"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Yeni Güncellemeler alınırken sorun yaşandı. Lütfen daha sonra yeniden deneyin.",
+            "upToDate": "Mevcut güncelleme yok. Sisteminiz güncel.",
+            "egatherException": "Kullanıcı bilgisi toplanırken hata oluştu.",
+            "gatheringUserInfoException": "Kullanıcı bilgisi toplanırken hata oluştu.",
+            "certificateValidationException": "İçerik Güncelleme Sunucusu geçersiz. Lütfen daha sonra yeniden deneyin.",
+            "downloadException": "Güncellemeler indirilirken hata oluştu.",
+            "connectException": "İçerik Güncelleme Sunucusu ile bağlantı kurulamıyor.",
+            "notEnoughDiskSpace": "Sürmekte olan görevi gerçekleştirmek için yeterli disk alanı yok.",
+            "proxyAuthenticationException": "Hatalı Yetkili Sunucu kullanıcı adı veya parolası.",
+            "proxyConnectionException": "Yetkili sunucu ile bağlantı kurulamıyor.",
+            "autoScriptEvaluationException": "Otomatik yapılandırma komutunu değerlendirme hatası oluştu.",
+            "localRepositoryConnectionFailureException": "Yerel Depo'ya bağlanılamıyor.",
+            "localRepositoryDatabaseException": "Yerel depo veri tabanı bulunmadı veya bozuldu.",
+            "networkInterruptedException": "Sistem Güncelleme Sunucusu şu anda kullanılamıyor. Lütfen daha sonra yeniden deneyin.",
+            "helpCenterInvalidServerException": "Sistem Güncelleme Sunucusu geçersiz. Lütfen daha sonra yeniden deneyin.",
+            "catalogNotFoundException": "Sisteminiz için geçerli bir güncelleme yok.",
+            "catalogCrcErrorException": "Sisteminiz için katalog şu anda güncelleniyor. Lütfen daha sonra yeniden deneyin.",
+            "catalogErrorException": "Sistem Güncelleme Sunucusu'ndaki sisteminiz için olan güncelleme kataloğunda bir hata saptandı. Lütfen daha sonra yeniden deneyin.",
+            "fileNotFoundException": "Dosya bulunamadı."
         }
     },
     "homeSecurity": {
-        "title": "Connected Home Security",
-        "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Ecosystem Security Overview",
-        "thisDevice": "This device",
-        "allDevices": "All Devices",
-        "protected": "Protected",
-        "notProtected": "Not Protected",
-        "myDevice": "My Device",
-        "allDevice": "All Devices",
-        "secure": "SECURE",
-        "needAttention": "NEEDS ATTENTION",
-        "manageAccount": "Manage Account",
-        "devices": "Devices",
-        "seeProtectedDevices": "See protected devices",
-        "addDevice": "add device",
-        "trailExpired": "Trail expired",
-        "trailExpiredSubtext": "Upgrate to protect all of your devices",
-        "upgrade": "upgrade",
+        "title": "Bağlı Ev Güvenliği",
+        "notification": {
+            "recent": "En son güvenlik bildirimleri",
+            "notifications": "Bildirimler"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Cihazınızın ekosistemini koruyun",
+            "thisDevice": "Bu cihaz",
+            "allDevices": "Tüm Cihazlar",
+            "protected": "Korunuyor",
+            "notProtected": "Korunmuyor",
+            "trialExpired": "Deneme Süresi Doldu",
+            "upgrade": "yükselt",
+            "inEcosystem": "Ekosistemde",
+            "ecosystemEnable": "Ekosistem Etkinleştirildi",
+            "inTrial": "Deneme süresi devam ediyor",
+            "addEcosystem": "Ekosisteme Ekle",
+            "enableEcosystem": "Ekosistemi Etkinleştir",
+            "startTrial": "Deneme Süresini Başlat",
+            "fullAccess": "Tam Erişim",
+            "renew": "Yenile"
+        },
+        "overview": {
+            "overviewBlockTitle": "Ekosisteminizin Güvenliğine Genel Bakış",
+            "allDevices": "Tüm Cihazlar",
+            "myDevice": "Cihazım",
+            "thisComputer": "This computer",
+            "secure": "GÜVENLİ",
+            "needAttention": "İLGİLENMENİZ GEREKİYOR",
+            "manageAccount": "Hesabı Yönet",
+            "devices": "Cihazlar",
+            "seeProtectedDevices": "Korunan cihazları görün",
+            "addDevice": "cihaz ekle",
+            "trialExpired": "Deneme Süresi Doldu - Tüm cihazlarınızı korumak için yükseltin",
+            "upgrade": "yükselt",
+            "freeTrial": "Tüm cihazlarınızı koruyun - Ücretsiz 30 günlük deneme süresi",
+            "startTrial": "Deneme Süresini Başlat"
+        },
         "tour": {
-            "back": "Back",
-            "skip": "Skip",
-            "start": "START TOUR",
-            "done": "DONE",
-            "welcome1": "Welcome",
-            "welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
-            "welcome2": "Exclusive for Vantage",
-            "welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
-            "create": "Create your account",
-            "lenovoId": "with Lenovo ID",
-            "notifications": "Receive <b>notifications</b> about your home's status",
-            "monitor": "<b>Monitor</b> the safety of your family's devices",
-            "peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
-            "signInLenovoId": "SIGH-UP WITH LENOVO ID",
-            "haveLenovo": "I don't have a <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Create a Lenovo ID",
-            "without": "Proceed <b>without an account</b>",
-            "skipAndTrial": "SKIP AND START TRIAL",
-            "alreadyHave": "I already have a <b>Connected Home Security Account</b>",
-            "loginCHS": "Login to existing CHS account",
-            "locationTitle": "Enable location tracking",
-            "locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+            "back": "Geri",
+            "skip": "Atla",
+            "start": "TURU BAŞLAT",
+            "done": "BİTTİ",
+            "welcome1": "Hoş Geldiniz",
+            "welcomeDesc1": "Yalnızca birkaç tıklamayla kendiniz ve aileniz için bilgisayarlarınızı, mobil cihazlarınızı ve bağlı cihazları koruyabilirsiniz.",
+            "welcomeDescStart": "30 günlük ücretsiz deneme sürenizi şimdi başlatın.",
+            "welcome2": "Vantage'a özel",
+            "welcomeDesc2": "Bağlı Ev Güvenliği, ekosisteminizin ve güvenlik uyarılarınızın koruma durumuna hızlı erişim için doğrudan Vantage'ın içinde yerleşik olarak bulunur.",
+            "create": "Lenovo ID ile",
+            "lenovoId": "hesabınızı oluşturun",
+            "notifications": "Evinizin durumu hakkında <b>bildirimler</b> alın",
+            "monitor": "Ailenizin cihazlarının güvenliğini <b>izleyin</b>",
+            "peaceOfMind": "Her zaman korunduğunuzu bilerek <b>rahat edin</b>!",
+            "signInLenovoId": "LENOVO ID İLE KAYDOL",
+            "haveLenovo": "<b>Lenovo ID'm</b> yok",
+            "createLenovo": "&nbsp;Lenovo ID oluşturun",
+            "without": "<b>Hesap olmadan</b> devam edin",
+            "skipAndTrial": "ATLA VE DENEME SÜRESİNİ BAŞLAT",
+            "alreadyHave": "<b>Bağlı Ev Güvenliği (CHS) Hesabım</b> zaten var",
+            "loginCHS": "Mevcut CHS hesabınızla giriş yapın",
+            "locationTitle": "Konum izlemeyi etkinleştir",
+            "locationPermission": "Bu özelliğin düzgün çalışması için bu cihazda konum izlemeyi etkinleştirmeniz gerekiyor"
+        },
+        "accountStatus": {
+            "title": "Bağlı Ev Güvenliğim",
+            "startTrial": "Deneme Süresini Başlat",
+            "manageAccount": "Hesabı Yönet",
+            "upgradeAccount": "Hesabı Yükselt",
+            "inTrialDetail1": "Deneme süresinin dolmasına {{remainingDays}} gün kaldı.",
+            "inTrialDetail2": "Şu anda deneme süresi içindesiniz. Tüm özelliklere sınırsız erişiminiz var.",
+            "trialExpiredDetail1": "Deneme süreniz doldu.",
+            "trialExpiredDetail2": "Deneme süreniz doldu ve artık cihaz ekosisteminiz korunmuyor.",
+            "upgradedDetail1": "Hesabınız {{expiredDate}} tarihine kadar etkin.",
+            "upgradedDetail2": "Cihaz ekosisteminiz şu anda korunuyor.",
+            "localAccountDetail2": "30 günlük ücretsiz deneme sürenizi başlatmak için aşağıdaki düğmeye tıklayın.",
+            "alreadyHaveAccount": "Etkinleştirme kodunuz zaten var mı?"
         }
     },
     "support": {
@@ -1101,7 +1496,9 @@
             "status": "Durum: ",
             "subDescription1": "Bu ürün yıllık sınırlı garanti ve depo onarım hizmeti hakkına sahiptir. Müşteriler daha fazla bilgi için yerel hizmet merkezini arayabilir. Bayiler, müşteri tarafından teslim halinde bu ürün için onarım sağlayabilir.",
             "subDescription2": "Cihazınız için garanti ayrıntılarını bulamadık. Diğer garanti seçenekleri için lütfen destek web sitemizi ziyaret edin.",
-            "viewWarrantyOptions": "GARANTİ SEÇENEKLERİNİ GÖRÜNTÜLE"
+            "viewWarrantyOptions": "GARANTİ SEÇENEKLERİNİ GÖRÜNTÜLE",
+            "offlineTips1": "En son garanti bilgileri için lütfen İnternet'e bağlanın.",
+            "offlineTips2": "Garanti bilgilerini güncellemek için lütfen İnternet'e bağlanın."
         },
         "documentation": {
             "title": "Belgeler",
@@ -1131,9 +1528,9 @@
             "copyright": "© 2002-2019 Lenovo. Her hakkı saklıdır."
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "Kategoriler",
+            "categoriesDesc": "Makalelerimizde faydalı bilgiler bulun.",
+            "seeArticles": "MAKALELERİ GÖSTER"
         }
     },
     "security": {
@@ -1154,9 +1551,7 @@
             "maliciousNetwork": "Bu ay bilgisayarınızın {{maliciousWifi}} kötü amaçlı ağa katılması önlendi.",
             "good": "İYİ",
             "malicious": "KÖTÜ AMAÇLI",
-            "suspicious": "ŞÜPHELİ",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "ŞÜPHELİ"
         },
         "antivirus": {
             "common": {
@@ -1245,6 +1640,12 @@
                 "describe2": "Bağlı Ev Güvenliği'ni kullanmak isterseniz Lenovo Vantage için konum hizmetlerini etkinleştirmeniz gerekir. Konumu şimdi etkinleştirmek ister misiniz?",
                 "agree": "KABUL EDİYORUM",
                 "cancel": "İPTAL"
+            },
+            "errorMessage": {
+                "headerText": "Hata",
+                "bodyText": "Vantage'ın kritik parçalarının sizde olmadığını tespit ettik. Bu parçalar arka planda indirilecek. Lütfen daha sonra yeniden deneyin.",
+                "closeText": "kapat",
+                "offlineText": "İnternet'e bağlı olmadığınızı tespit ettik. Bu sayfanın bazı kısımları düzgün çalışmayacak. Lütfen yeniden bağlanın"
             }
         },
         "homeprotection": {
@@ -1256,7 +1657,7 @@
                 "homeSecurityAffect3": "Bağlı Ev Güvenliği, ev ağınıza bağlanan diğer cihazların güvende olmasını sağlar.",
                 "describe": "Güvenilmez cihazlar ve ağlar kötü amaçlı yazılımları bulaştırabilir, kimlik hırsızlığına yol açabilir, özel ve finansal bilgileri sızdırabilir. Saldırganların cihazınıza ve ev ağınıza erişme riskini azaltmak için bu özelliği etkinleştirin",
                 "subtitle": "İçiniz Rahat Olsun",
-                "subtitleDescribe": "Bağlı Ev Güvenliği, cihazınızda veya ev ağınızda bir güvenlik açığı algılarsa ya da kötü amaçlı olabilecek bir ağa bağlanırsanız size bir uyarı gönderir. İpuçları ve Püf Noktaları bölümünde Bağlı Ev Güvenliği hakkında daha fazla bilgi edinebilirsiniz.",
+                "subtitleDescribe": "Bağlı Ev Güvenliği, cihazınızda veya ev ağınızda bir güvenlik açığı algılarsa ya da kötü amaçlı olabilecek bir ağa bağlanırsanız size bir uyarı gönderir. Bağlı Ev Güvenliği hakkında daha fazla bilgiye <tag>buradan</tag> ulaşabilirsiniz.",
                 "tryNow": "Şimdi Deneyin"
             },
             "invitationcode": {
@@ -1332,7 +1733,7 @@
             "whatIsPmNotInstalled": "Güçlü, karmaşık parolaları kaydetmenin ve her sitede anında oturum açmanın en güvenli, en kolay yolu.",
             "whatIsPmInstalled": "Daha güvenli bir dijital yaşam sizi bekliyor: Parola ekleyin, Karanlık Ağ İzleme özelliğini etkinleştirin, kişisel bilgileri ve ödeme bilgilerini otomatik olarak doldurun.",
             "startProtect": "Çevrimiçi hesaplarınızı basit bir şekilde korumaya başlayın.",
-            "discount": "Lenovo kullanıcıları, özel 6 aylık ücretsiz Dashlane Premium teklifinden yararlanabilir.",
+            "discount": "Lenovo kullanıcıları, Dashlane Premium'da %50 indirim özel teklifinden yararlanabilir.",
             "offer": "Bu teklif yalnızca yeni Dashlane kullanıcıları için geçerlidir!",
             "getDashLane": "Dashlane'i Edinin",
             "learnMoreAbout": "Dashlane'den en iyi şekilde yararlanma hakkında <tag>daha fazla bilgi edinin</tag>",
@@ -1378,32 +1779,32 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "Oturum Aç",
+        "logout": "Oturumu kapat",
+        "unlockExclusives": "Özellerin Kilidini Aç",
+        "user": "Kullanıcı",
+        "welcomeText": "Bugün çok dinç görünüyorsun {{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "Bugün çok dinç görünüyorsun!",
+        "helloUser": "Merhaba, {{firstName}}!",
+        "ssoErrorTitle": "Hata",
+        "ssoErrorCommon": "Hay aksi, bir hatayla karşılaştık. Lütfen tekrar deneyin.",
+        "ssoErrorCommonEx": "Beklenmedik hata. Lütfen tekrar deneyin.",
+        "ssoErrorTimeStampIncorrect": "Hay aksi, bilgisayarınızın saatinin yanlış olduğu görülüyor. Lütfen bilgisayarınızın saatini düzeltin ve yeniden deneyin.",
+        "ssoErrorNetworkDisconnected": "Hay aksi! Bağlantı başarısız oldu! Lütfen İnternet bağlantınızı denetleyin ve yeniden deneyin.",
+        "ssoErrorCommunicating": "Ağ hatası. Lütfen bağlantınızı denetleyin ve yeniden deneyin.",
+        "ssoErrorAccountPluginNotExist": "Eklenti eksik. İnternet'e bağlıysanız eklentiyi arka planda otomatik olarak geri yükleyeceğiz. Bu işlem biraz zaman alabilir, lütfen daha sonra tekrar deneyin."
     },
     "faq": {
         "footer": {
-            "title": "Not finding what you are looking for?",
-            "description": "NEED ADDITIONAL SUPPORT? DON’T HESITATE TO CONTACT US VIA:",
-            "body": "Lenovo Community",
-            "button": "GO TO FORUM"
+            "title": "Aradığınızı bulamadınız mı?",
+            "description": "EK DESTEĞE İHTİYACINIZ VAR? ABD VİA'yla İLETİŞİME GEÇMEYİN:",
+            "body": "Lenovo Topluluğu",
+            "button": "FORUMA GİT"
         },
         "question1": {
-            "title": "Back up and restore your files",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        Back up and restore your files\n    </div>\n    <hr />\n    <div style='margin-bottom:7rem;'>\n        It's always good to have a backup. Keep copies of your files on another drive in case something happens to the\n        originals.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Set up your backup\n    </div>\n    <hr />\n    <div class='mb-5'>\n        Select the <span style='font-weight:bold'>Start</span> button, select\n        <span style='font-weight:bold'>Settings</span> >\n        <span style='font-weight:bold'>Update & security</span> >\n        <span style='font-weight:bold'>Backup</span> > <span style='font-weight:bold'>Add a drive</span> , and then\n        choose an external drive or network location for your backups.\n    </div>\n    <div class='mb-5'>\n        <img src='./../../../../assets/images/qa/1.1.png' />\n    </div>\n    <div class='mb-5'>\n        All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files\n        get backed up or how often backups happen, go to\n        <span style='font-weight:bold;'>More options</span>.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Restore your files\n    </div>\n    <div class='mb-5'>\n        If you're missing an important file or folder, here's how to get it back:\n    </div>\n    <div>\n\n        <div class='mb-3'>1. Type <span style='font-weight:bold;'>Restore files</span>\n            in the search box on the taskbar, and then select\n            <span class='font-weight:bold'> Restore your files with File History</span>.</div>\n        <div class='mb-3'>2. Look for the file you need, then use the arrows to see all its versions</div>\n        <div class='mb-3'>3. When you find the version you want, select\n            <span style='font-weight:bold'>Restore</span>\n            to save it in its original location. To save it in a different place, press and hold (or right-click)\n            <span style='font-weight:bold'>Restore</span>, select <span style='font-weight:bold'>Restore to</span>, and\n            then choose a new location.</div>\n\n    </div>\n</div>",
+            "title": "Dosyalarınızın yedeklenmesi ve geri yüklenmesi",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Dosyalarınızın yedeklenmesi ve geri yüklenmesi    </div>    <hr />    <div style='margin-bottom:7rem;'>        Yedeğinizin olması her zaman iyidir. Orijinal dosyalarınıza başına bir iş gelmesi durumuna karşı dosyalarınızın kopyalarını başka bir sürücüde saklayın.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Yedeğinizin ayarlanması    </div>    <hr />    <div class='mb-5'>        <span style='font-weight:bold'>Start</span> (Başlat) düğmesini seçin, <span style='font-weight:bold'>Settings</span> (Ayarlar) > <span style='font-weight:bold'>Update & security</span> (Güncelleştirme ve güvenlik) > <span style='font-weight:bold'>Backup</span> (Yedekleme) > <span style='font-weight:bold'>Add a drive</span> (Sürücü ekle) seçeneğini belirleyin ve yedekleriniz için bir harici sürücü veya ağ konumu seçin.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        İşte bu kadar! Kullanıcı klasörünüzün (C:\\\\Users\\\\username) tüm içeriğini saatte bir yedekleriz. Hangi dosyaların yedekleneceğini ve yedeklemenin hangi sıklıkla olacağını değiştirmek için <span style='font-weight:bold;'>More options</span> (Daha fazla seçenek) bölümüne gidin.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Dosyalarınızın geri yüklenmesi    </div>    <div class='mb-5'>        Önemli bir dosya veya klasörü bulamıyorsanız aşağıdaki yolla geri alabilirsiniz:    </div>    <div>        <div class='mb-3'>1. Görev çubuğundaki arama kutusuna <span style='font-weight:bold;'>Restore files</span> (Dosyaları geri yükleme) yazın ve ardından <span class='font-weight:bold'> Restore your files with File History</span> (Dosya Geçmişi ile dosyaların yedeklerini geri yükle) seçeneğini belirleyin.</div>        <div class='mb-3'>2. İhtiyacınız olan dosyayı arayın ve ok tuşlarını kullanarak sürümlerini görün</div>        <div class='mb-3'>3. İstediğiniz sürümü bulduğunuzda <span style='font-weight:bold'>Restore</span> (Geri Yükle) seçeneğini belirleyerek orijinal konumuna kaydedin. Farklı bir yere kaydetmek için <span style='font-weight:bold'>Restore</span> (Geri Yükle) seçeneğini basılı tutun (veya sağ tıklayın), <span style='font-weight:bold'>Restore to</span> (Geri yükleme konumu) seçeneğini belirleyin ve ardından yeni bir konum seçin.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1443,8 +1844,8 @@
             }
         },
         "question2": {
-            "title": "How to refresh your PC",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        How to refresh your PC\n    </div>\n    <hr>\n    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>\n        Symptom\n    </div>\n    <div style='padding:5px 0;'>\n        If your PC isn't performing as well as it once did, and you don't know why,\n        you can refresh your PC without deleting any of your personal files or\n        changing your settings. Windows can “refresh” your PC so it’s more like a\n        fresh install without deleting your personal files.\n    </div>\n    <div style='padding:5px 0;'>\n        Refresh your PC, Here is what will happen: your files and personalized\n        settings won’t change\n    </div>\n    <div style='padding:5px 0;'>\n        <ul>\n            <li>Your PC settings will be changed back to its defaults</li>\n            <li>Apps from windows store will be kept</li>\n            <li>Apps you installed from disc or website will be removed</li>\n            <li>A list of removed files will be saved on your desktop</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Affected Brands\n    </div>\n\n    <div>\n        <ul>\n            <li>All Desktop and Laptops</li>\n\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Operation System\n    </div>\n\n    <div>\n        <ul>\n            <li>Windows 8, 8.1 & 10</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Solution\n    </div>\n\n    <div>\n        <ul class='list-unstyled'>\n            <li>\n                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>\n                <ol>\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Settings </span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Update and recovery</span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <div>Tap or click <span style='font-weight:bold;'> Recovery</span></div>\n                        <div style='padding:5px 0'>Under Refresh your PC without affecting your files, tap or click\n                            <span style='font-weight:bold;'> Get started.</span></div>\n                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>\n\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Next'</span>.\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Refresh' </span>to start the refresh process.\n                    </li>\n                    <li style='padding:5px 0;'>\n                        Once the refresh process is done, you can find a Removed Apps list on the desktop\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        You can find the removed apps while refreshing your system\n                    </li>\n                </ol>\n            </li>\n            <li style='padding:10px 0;'>\n                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>\n                <ol>\n                    <li style='padding:5px 0;'> Search for <span style='font-weight:bold;'> refresh </span>in the search\n                        tool available in the Start menu,</li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on <span style='font-weight:bold;'> 'Refresh your PC without affecting your\n                                files'</span> in the search results as shown below.</div>\n                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on the\n                            <span style='font-weight:bold;'> Get started </span>\n                            button just below the heading<span style='font-weight:bold;'> 'Refresh your PC without\n                                affecting your files'</span> to start refreshing your Windows 10 PC.</div>\n                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>\n                    </li>\n                </ol>\n            </li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;'>\n        Additional Information\n    </div>\n\n    <div>\n        In most cases, once you start to refresh your PC, it’ll finish on its own.\n        However, if Windows needs missing files, you’ll be asked to insert recovery\n        media, which is typically a DVD disc or thumb drive. If that happens, what\n        you’ll need depends on your PC.\n    </div>\n    <div style='padding:10px 0'>\n        If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use\n        that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact\n        Microsoft Support.\n    </div>\n\n</div>",
+            "title": "Bilgisayarınızın yenilenmesi",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Bilgisayarınızın yenilenmesi    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        Belirti    </div>    <div style='padding:5px 0;'>        Bilgisayarınız eskiden olduğu gibi performans göstermiyorsa ve bunun nedenini bilmiyorsanız kişisel dosyalarınızı silmeden veya ayarlarınızı değiştirmeden bilgisayarınızı yenileyebilirsiniz. Windows, bilgisayarınızı “yenileyebilir”. Böylece kişisel dosyalarınızı silmeden yeni bir yükleme yapmış gibi olursunuz.    </div>    <div style='padding:5px 0;'>        Bilgisayarınızı yenilediğinizde şu işlemler gerçekleştirilir: Dosyalarınız ve kişiselleştirilmiş ayarlarınız değiştirilmez    </div>    <div style='padding:5px 0;'>        <ul>            <li>Bilgisayar ayarlarınız varsayılan ayarlarına geri döndürülür</li>            <li>Microsoft Store'dan edindiğiniz uygulamalar korunur</li>            <li>Diskten veya web sitesinden yüklediğiniz uygulamalar kaldırılır</li>            <li>Kaldırılan dosyaların listesi masaüstünüze kaydedilir</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Etkilenen Markalar    </div>    <div>        <ul>            <li>Tüm Masaüstü ve Dizüstü Bilgisayarlar</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        İşletim Sistemi    </div>    <div>        <ul>            <li>Windows 8, 8.1 ve 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Çözüm    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        <span style='font-weight:bold;'> Settings </span> (Ayarlar) seçeneğine dokunun veya tıklayın                    </li>                    <li style='padding:5px 0;'>                        <span style='font-weight:bold;'> Update and recovery</span> (Güncelleştirme ve kurtarma) seçeneğine dokunun veya tıklayın                    </li>                    <li style='padding:5px 0;'>                        <div><span style='font-weight:bold;'> Recovery</span> (Kurtarma) seçeneğine dokunun veya tıklayın</div>                        <div style='padding:5px 0'>Refresh your PC without affecting your files (Dosyalarınızı etkilemeden kişisel bilgisayarınızı yenileyin) altında, <span style='font-weight:bold;'> Get started</span> (Başlarken) seçeneğine dokunun veya tıklayın.</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        <span style='font-weight:bold;'> “Next”</span> (İleri) seçeneğine tıklayın.                    </li>                    <li style='padding:5px 0;'>                        Yenileme işlemini başlatmak için <span style='font-weight:bold;'> “Refresh” </span>(Yenile) seçeneğine tıklayın.                    </li>                    <li style='padding:5px 0;'>                        Yenileme işlemi tamamlandıktan sonra masaüstünde Removed Apps (Kaldırılan Uygulamalar) listesini bulabilirsiniz.                    </li>                    <li style='padding:5px 0;'>                        Sisteminizi yenilerken kaldırılan uygulamaları burada bulabilirsiniz.                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> Start (Başlat) menüsünde bulunan arama aracında <span style='font-weight:bold;'> refresh </span>(yenile) ifadesini arayın,</li>                    <li style='padding:5px 0;'>                        <div>Aşağıda gösterildiği gibi arama sonuçlarında <span style='font-weight:bold;'> “Refresh your PC without affecting your files”</span> (Dosyalarınızı etkilemeden kişisel bilgisayarınızı yenileyin) seçeneğine tıklayın.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div>Windows 10 bilgisayarınızı yenilemeye başlamak için<span style='font-weight:bold;'> “Refresh your PC without affecting your files”</span> (Dosyalarınızı etkilemeden kişisel bilgisayarınızı yenileyin) başlığının hemen altındaki <span style='font-weight:bold;'> Get started </span> (Başlarken) düğmesine tıklayın.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        Ek Bilgi    </div>    <div>        Bilgisayarınızı yenilemeye başladığınızda işlem çoğu durumda kendi kendine sonlanır. Ancak Windows'un eksik dosyalara ihtiyacı varsa bir kurtarma ortamı takmanız istenir. Bu, genellikle bir DVD diski ya da USB flash sürücüsüdür. Bu durumda ihtiyacınız olan şey bilgisayarınıza bağlıdır.    </div>    <div style='padding:10px 0'>        Bilgisayarınızı bir DVD ile Windows 8.1 veya Windows RT 8.1 sürümüne yükselttiyseniz bu diski kullanın. Windows 8.1 veya Windows RT 8.1 ortamınız yoksa Microsoft Desteği'ne başvurun.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -1517,8 +1918,8 @@
             "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
         },
         "question3": {
-            "title": "How to know your machine's CPU",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    How to know your machine's CPU\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.\n    The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit\n    system.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n    <li>All Desktop and Laptops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operating System</h3>\n<ul>\n    <li>Windows 7 , 8 , 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n    <li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button,</strong>\n        right-clicking Computer, and then clicking Properties  </li>\n    <li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then click\n        <strong>Search.</strong></li>\n    <li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n    <li>Tap or click <strong>System</strong></li>\n    <li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong>\n        is displayed in the System type field under the System heading.\n        If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong>\n        <strong>32-bit Operating </strong>System is displayed in the System type field under the System heading.<br />\n         </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then\n        click <strong>Search.</strong></li>\n    <li>In the search box, type <strong>system information</strong></li>\n    <li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and then\n        click <strong>System Summary.</strong></li>\n    <li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>\n        x64-based PC is displayed in the <strong>System type</strong> field under the \n        Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong>\n        version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> field\n        under the Item heading.  </li>\n</ol>\n<p> </p>",
+            "title": "Makinenizin CPU\\'sunun öğrenilmesi",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Makinenizin CPU\\\\'sunun öğrenilmesi</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Belirti</h3><p>32-bit ve 64-bit terimleri bir bilgisayarın işlemcisinin (CPU da denir) bilgileri işleme biçimini ifade eder. Windows'un 64-bit sürümü, 32-bit sistemden daha büyük miktarda rasgele erişim belleği (RAM) kullanır.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Etkilenen Markalar</h3><p>Yukarıdaki belirti, aşağıdaki sistemlerle ilişkilidir ancak bunlarla sınırlı değildir:</p><ul>    <li>Tüm Masaüstü ve Dizüstü Bilgisayarlar</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>İşletim Sistemi</h3><ul>    <li>Windows 7, 8 ve 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Çözüm</h3><p><strong><u>Windows 7 veya Vista</u></strong></p><ol>    <li><strong>Start (Başlat) düğmesi </strong><strong>Start (Başlat) düğmesi</strong> resmine tıklayın, Computer (Bilgisayar) öğesine sağ tıklayın, ardından Properties (Özellikler) seçeneğine tıklayarak System (Sistem) öğesini açın  </li>    <li>System (Sistem) altında sistem türünü görüntüleyebilirsiniz.</li></ol><p><strong><u>Windows 8 ve Windows 10</u></strong></p><p><strong>Yöntem 1:</strong> Control Panel (Denetim Masası) altından System (Sistem) penceresini görüntüleyin</p><ol>    <li>Parmağınızı ekranın sağ kenarından içeri doğru itin ve ardından <strong>Search</strong> (Arama) öğesine dokunun. Alternatif olarak, bir fare kullanıyorsanız ekranın sağ alt köşesine gelin ve ardından <strong>Search</strong> (Arama) öğesine tıklayın.</li>    <li>Arama kutusuna <strong>system</strong> (sistem) yazın ve ardından <strong>Settings</strong> (Ayarlar) seçeneğine dokunun veya tıklayın.</li>    <li><strong>System</strong> (Sistem) seçeneğine dokunun veya tıklayın</li>    <li>Windows 8'in 64-bit sürümünü kullanıyorsanız System (Sistem) başlığının altındaki System type (Sistem türü) alanında <strong>64-bit Operating System</strong> (64-bit İşletim Sistemi) görüntülenir. Windows 8'in 32<strong>-bit sürümünü</strong> <strong>kullanıyorsanız</strong> System (Sistem) başlığının altındaki System type (Sistem türü) alanında <strong>32-bit Operating </strong>System (32-bit İşletim Sistemi) görüntülenir.<br />  </li></ol><p><strong>Yöntem 2</strong>: System Information (Sistem Bilgisi) penceresini görüntüleyin</p><ol>    <li>Parmağınızı ekranın sağ kenarından içeri doğru itin ve ardından <strong>Search</strong> (Arama) öğesine dokunun. Alternatif olarak, bir fare kullanıyorsanız ekranın sağ alt köşesine gelin ve ardından <strong>Search</strong> (Arama) öğesine tıklayın.</li>    <li>Arama kutusuna <strong>system information</strong> (sistem bilgisi) yazın</li>    <li><strong>System</strong> (Sistem), <strong>System Information</strong> (Sistem Bilgisi) öğesine dokunun veya tıklayın ve ardından <strong>System Summary</strong> (Sistem Özeti) seçeneğine tıklayın.</li>    <li>Windows 8'in <strong>64-bit</strong> sürümünü çalıştırıyorsanız<strong>, </strong>Item heading (Öğe başlığı) altındaki <strong>System type</strong> (Sistem türü) alanında x64-based PC (x64 tabanlı bilgisayar) bilgisi görüntülenir. <br /> <br /> Windows 8'in<strong> 32-bit</strong> sürümünü çalıştırıyorsanız Item heading (Öğe başlığı) altındaki <strong>System type</strong> (Sistem türü) alanında x86-based PC (x86 tabanlı bilgisayar) bilgisi görüntülenir.  </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -1606,8 +2007,8 @@
             }
         },
         "question4": {
-            "title": "Check your machine's battery use",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Check your machine's battery use\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> \n    screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.\n    That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;\n    apps&ndash;are using too much power.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n\n<ul>\n    <li>Lenovo laptops, desktops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Systems</h3>\n<ul>\n    <li>All</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operationg System</h3>\n<ul>\n    <li>Window 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your\n    traditional <strong>control panel </strong>view, this feature is located in the\n    new <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>\n    select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br />\n        <br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last\n    from last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;\n    <strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,\n    the display,</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong>\n     options show how much power is used by applications while you&rsquo;re using them, compared to applications\n    running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>\n        &ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.\n    This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of this\n    feature.\n    It will display a list of the apps have used battery power in that period, and show you what percentage of your\n    battery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
+            "title": "Makinenizin pil kullanımının denetlenmesi",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Makinenizin pil kullanımının denetlenmesi</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Belirti</h3><p>Windows 10, dizüstü bilgisayarınızın enerjisini nelerin tükettiğini gösteren yeni bir “<strong>Battery Use”</strong> (Pil Kullanımı) alanı içermektedir. Bu, masaüstü ve Windows 10 “evrensel” uygulamalarından tam olarak hangilerinin çok fazla güç tükettiğini söyleyeceği anlamına gelir.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Etkilenen Markalar</h3><ul>    <li>Lenovo dizüstü bilgisayarlar, masaüstü bilgisayarlar</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Etkilenen Sistemler</h3><ul>    <li>Tümü</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>İşletim Sistemi</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Çözüm</h3><p>Bu özellik, Windows 10'da yenidir. İlk olarak, geleneksel <strong>denetim masası </strong>görünümünüzde bulunmadığından bu özelliği bulmamız gerekir. Bu özellik yeni <strong>“Settings”</strong> (Ayarlar) uygulamasında yer almaktadır.</p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Battery Use (Pil Kullanımı) Ekranının Bulunması</h3></p><p>1. Start (Başlat) menüsünden <strong>“Settings</strong>” (Ayarlar) seçeneğine tıklayın veya dokunun</p><p>2. <strong>Settings </strong> (Ayarlar) seçeneğinde, <strong>“System”</strong> (Sistem) ve ardından <strong>“Battery saver”<br /> (Pil tasarrufu) öğesini seçin. <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Daha ayrıntılı bilgi için bu başlığın altındaki <strong>“Battery use”</strong> (Pil kullanımı) bağlantısına tıklayın veya dokunun. </p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Güç Kullanımınızın Analiz Edilmesi</h3><p>4 Battery use (Pil kullanımı) ekranını son 24 saatten son 48 saate veya son haftadan itibaren pil kullanımını görüntüleyecek şekilde değiştirebilirsiniz</p><p>5 <strong>“System”</strong> (Sistem), “<strong>Display</strong>” (Monitör) ve “<strong>Wi-Fi”</strong> yüzdeleri. Bu, sistem işlemleri ve ekran tarafından ne kadar pil gücünün kullanıldığını gösterir,</p><p>6 <strong>“In use”</strong> (Kullanımda) ve <strong>“Background”</strong> (Arka Plan) seçenekleri, arka planda çalışan uygulamalarla karşılaştırıldığında bu uygulamaları kullanırken uygulamalar tarafından ne kadar güç kullanıldığını gösterir.</p><p>7 Uygulamalar arka planda güç kullanıyorsa <strong> “Change background app settings” </strong>(Arka plan uygulaması ayarlarını değiştir) bağlantısına tıklayabilir veya dokunabilir ve uygulamaları arka planda çalışmayacak şekilde yapılandırabilirsiniz. Bu, yalnızca evrensel Windows 10 uygulamalarında çalışır.</p><p>8 Aşağı doğru biraz daha kaydırdığınızda uygulamaların yer aldığı bir liste görürsünüz. Bu liste, bu özelliğin en kullanışlı bölümü olarak kabul edilir. Söz konusu dönemde pil gücünü kullanan uygulamaları, her bir uygulamanın pil gücünün yüzde kaçını kullandığı bilgisiyle birlikte liste olarak gösterir</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -1674,8 +2075,8 @@
             }
         },
         "question5": {
-            "title": "Use your PC like a tablet",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Use your PC like a tablet\n</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet\n        mode</strong> .</p>\n<p> </p>\n<p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device \n    on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and\n    how the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the\n    screen.</p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.\n    Select the <strong>Start </strong>button, select <strong>Settings </strong>>\n    <strong>System </strong>> <strong>\n        Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.\n    To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and\n    you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n    <li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n    <li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then\n        drag it to one side to snap it into your divided screen.</li>\n    <li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
+            "title": "Bilgisayarınızın tablet gibi kullanılması",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Bilgisayarınızın tablet gibi kullanılması</div><hr><p>Tablet modu, dokunmatik ekranlı bir cihazınız varsa Windows'u daha sezgisel ve kullanımı kolay hale getirir.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tablet modunun kullanılması</h3><p>Tablet modunu açmak için görev çubuğunda <strong>işlem merkezini</strong> açın, ardından <strong>Tablet mode</strong> (Tablet modu) seçeneğini belirleyin.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Not</h3><p>Cihazınızın tablet modunu otomatik olarak açıp açamayacağını öğrenmek için üreticinin web sitesinde cihazınızı arayın. Bu özelliğe yönelik destek donanıma, yüklü sürücüye ve cihazın üretici tarafından nasıl ayarlandığına bağlıdır. </p><p> </p><p>Tablet modunda, uygulamalar tam ekran olarak açılarak size daha fazla çalışma alanı sağlar. Uygulamayı kapatmak için ekranın altına doğru sürükleyin.</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>İpucu</h3><p>Bilgisayarınız tablet modundayken görev çubuğu kullanılabilir ancak ekranda daha fazla yer açmak istiyorsanız görev çubuğunu gizleyebilirsiniz. <strong>Start </strong>(Başlat) düğmesini seçin, <strong>Settings </strong>(Ayarlar) > <strong>System </strong>(Sistem) > <strong> Tablet mode </strong>(Tablet modu) seçeneğini belirleyin, ardından <strong>Automatically hide the taskbar in tablet mode</strong> (Tablet modunda görev çubuğunu otomatik olarak gizle) seçeneğini açın. Gizli görev çubuğunu görmek için ekranın alt kısmından yukarı doğru kaydırın veya farenizi kullanarak üzerine gelin.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>İki uygulamanın aynı anda kullanılması</h3><p>Tablet modunda iki uygulamayı yan yana kullanmak için açık olan bir uygulamayı aşağı ve yana doğru sürükleyin. Nereye tutturulacağı gösterilir ve uygulamanın yanında açık olan diğer uygulamaları görürsünüz.</p><p>Bu görünümde şunları da yapabilirsiniz:</p><ul>    <li>Her iki uygulamayı aynı anda yeniden boyutlandırmak için iki tutturulmuş uygulama arasındaki paylaşılan kenarı kullanın.</li>    <li>Görev görünümünden yeni bir uygulama açın. Görev çubuğunda <strong>Task view</strong> (Görev görünümü) öğesini seçin, bir uygulama belirleyin, ardından bölünmüş ekranınıza tutturmak için bir tarafa sürükleyin.</li>    <li>Bir uygulamaya geri dönmek veya daha önce kullandığınız bir uygulamayı açmak için görev çubuğundaki geri düğmesini kullanın.</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -1714,8 +2115,8 @@
             }
         },
         "question6": {
-            "title": "Get to know Cortona, your personal assistant",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Get to know Cortana, your personal assistant\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>What is Cortana?</h3>\n<hr />\n<p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing\n    works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you\n    select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n    <li>Give you reminders based on time, places, or people.</li>\n    <li>Track packages, teams, interests, and flights.</li>\n    <li>Send emails and texts.</li>\n    <li>Manage your calendar and keep you up to date.</li>\n    <li>Create and manage lists.</li>\n    <li>Chit chat and play games.</li>\n    <li>Find facts, files, places, and info.</li>\n    <li>Open any app on your system.</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Try this: Set a reminder</h3>\n<hr />\n\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or\n    even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync\n    notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hey Cortana?</h3>\n<hr />\n<p>Set Cortana to hear you anytime you say\n    'Hey Cortana.' Select the search box on the taskbar to open Cortana home.\n    Then select <strong>Settings</strong>  and turn on <strong>Let Cortana respond to 'Hey\n        Cortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.\n</p>\n<p> </p>",
+            "title": "Kişisel yardımcınız Cortana'yı tanıyın",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Kişisel yardımcınız Cortana'yı tanıyın</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Cortana nedir?</h3><hr /><p>Cortana, dijital yardımcınızdır. İşleri halletmenize yardımcı olur.</p><p>Cortana'yı ne kadar çok kullanırsanız deneyiminiz o kadar kişiselleşir.</p><p>Başlamak için arama kutusuna bir soru yazın veya mikrofonu seçip Cortana ile konuşun. (Yazma işlevini tüm bilgisayarlarda kullanabilirsiniz ancak konuşmak için bir mikrofona ihtiyacınız vardır.)</p><p>Ne söyleyeceğinizden emin değilseniz kilit ekranınızda ve görev çubuğundaki arama kutusunu seçtiğinizde Cortana giriş sayfasında öneriler görürsünüz.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Giriş 2. Dizüstü Bilgisayar 3. Ayarlar 4. Geri Bildirim</li></ol><p>Burada, Cortana'nın sizin için yapabileceği bazı şeyler bulunmaktadır:</p><ul>    <li>Size zamana, yerlere veya insanlara göre anımsatıcılar sağlar.</li>    <li>Kargoları, takımları, ilgi alanlarını ve uçuşları takip eder.</li>    <li>E-posta ve kısa mesaj gönderir.</li>    <li>Takviminizi yönetir ve güncel kalmanızı sağlar.</li>    <li>Listeler oluşturur ve onları yönetir.</li>    <li>Sohbet eder ve oyun oynar.</li>    <li>Bulguları, dosyaları, yerleri ve bilgileri bulur.</li>    <li>Sisteminizdeki herhangi bir uygulamayı açar.</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Bunu deneyin: Bir anımsatıcı ayarlanması</h3><hr /><p>Cortana'nın yapabileceklerinden biri de sizin için anımsatıcılar ayarlamaktır. Size zamana, yerlere ve hatta insanlara göre bir şeyler yapmanızı anımsatabilir.</p><p>Örneğin, “Remind me to congratulate Tanya the next time she calls.” (Tanya bir daha aradığında onu tebrik etmemi anımsat) yazın.</p><p>Tanya'nın bir sonraki aramasında anımsatıcı görünür.</p><p>Ekstra bonus: Windows Phone, iPhone veya Android için Cortana'nız varsa Cortana'yı bilgisayarınız ile telefonunuz arasında bildirimleri eşitleyecek şekilde ayarlayabilirsiniz.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hey Cortana?</h3><hr /><p>Cortana'yı “Hey Cortana” (Selam Cortana) dediğinizde sizi duyacak şekilde ayarlayın. Cortana giriş sayfasını açmak için görev çubuğundaki arama kutusunu seçin. Ardından, <strong>Settings</strong> (Ayarlar) öğesini seçin ve <strong>Let Cortana respond to “Hey Cortana”</strong> (Cortana'nın “Hey Cortana” denildiğinde yanıt vermesine izin ver) seçeneğini açın.</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Not</p><p>Cortana yalnızca belirli ülkelerde/bölgelerde sunulmaktadır ve bazı Cortana özellikleri her yerde kullanılamayabilir.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -1750,13 +2151,14 @@
             },
             "para12": "Note",
             "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        }
+        },
+        "pageTitle": "Destek Detayı"
     },
     "welcometutorial": {
         "description": "Vantage, sürücülerinizi güncellemeyi, tanılama çalıştırmayı, estek isteğinde bulunmayı ve cihazınız hakkında bilgi edinmeyi kolaylaştırır. Hızlı bir şekilde deneyiminizi özelleştirin ve ihtiyaçlarınıza uyarlanmış yararlı bilgiler bulun",
         "bullets1": "Vantage gösterge panosu ile sisteminizin durumunu görüntüleyin.",
-        "bullets2": "Güvenlik Danışmanı, güvenliğinizi yönetmeyi kolaylaştırır ",
-        "bullets3": "Otomatik güncellemeler, cihazınızı en iyi durumda tutar",
+        "bullets2": "Güvenlik Danışmanı, güvenliğinizin yönetimini kolaylaştırır (seçili sistemlerde bulunur).",
+        "bullets3": "Otomatik güncellemeler, cihazınızı en iyi durumda tutar (seçili sistemlerde bulunur).",
         "subtitle1": "Cihazınızı nasıl kullanacaksınız?",
         "subtitle2": "Bize ilgi alanlarınızdan bahsedin",
         "personal": "Kişisel Kullanım",
@@ -1798,6 +2200,6 @@
         "usageStatistics": "Kullanım İstatistikleri",
         "usageStatisticsDescription": "Lenovo'ya anonim kullanım istatistikleri gönder.",
         "Note": "Not: ",
-        "settingsNotes": "Bu sayfadaki tüm ayarların geçerli olması için kullanıcının yeniden başlatması gerekir."
+        "settingsNotes": "bu sayfadaki tüm ayarların geçerli olması için kullanıcının uygulamayı yeniden başlatması gerekir."
     }
 }

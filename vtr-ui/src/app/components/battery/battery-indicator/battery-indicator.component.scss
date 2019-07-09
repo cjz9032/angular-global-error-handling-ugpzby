@@ -1,5 +1,30 @@
 @import "./../../../app.theme.scss";
+$fill-color-0-14-start: #ed4e04;
+$fill-color-0-14-stop: #f17f14;
 
+$fill-color-15-24-start: #ffaf00;
+$fill-color-15-24-stop: #fad961;
+
+$fill-color-25-100-start: #2ecc71;
+$fill-color-25-100-stop: #35e6b9;
+
+// $border-shadow-color-0-14: #fff7f1;
+// $border-color-0-14: #fee9df;
+
+// $border-shadow-color-15-24: #fffaeb;
+// $border-color-15-24: #f6eed7;
+
+// $border-shadow-color-25-100: #21c48a;
+// $border-color-25-100: #2ecc71;
+
+$border-shadow-color-0-14: rgba($stop_dark, 0.4);
+$border-color-0-14: rgba($stop_dark, 0.4);
+
+$border-shadow-color-15-24: rgba($orange, 0.4);
+$border-color-15-24: rgba($orange, 0.4);
+
+$border-shadow-color-25-100: #{rgba($go_light, 0.4)};
+$border-color-25-100: #{rgba($go_light, 0.4)};
 .vtr-battery-indicator {
 	/* start variables : below are --css-variables will be used in .ts file. */
 
@@ -14,19 +39,38 @@
 	--acid-fill-gradient-error: linear-gradient(#{$gradient_angle_reverse}, #{$stop} 0%, #{$stop_light} 100%);
 
 	// when % is between 0-14
-	--background-color-0-14: #{$stop_dark};
-	--border-color-0-14: #{rgba($stop_dark, 0.4)};
-	--acid-fill-gradient-0-14: linear-gradient(#{$gradient_angle_reverse}, #{$stop_dark} 0%, #{$alt} 100%);
+	--border-shadow-color-0-14: #{$border-shadow-color-0-14};
+	--border-color-0-14: #{$border-color-0-14};
+
+	// --acid-fill-gradient-0-14: linear-gradient(
+	// 	#{$gradient_angle_reverse},
+	// 	#{$fill-color-0-14-stop} 0%,
+	// 	#{$fill-color-0-14-start} 100%
+	// );
+
+	--acid-fill-gradient-0-14: linear-gradient(
+		#{$gradient_angle_reverse},
+		#{$fill-color-0-14-stop} 0%,
+		#{$fill-color-0-14-start} 100%
+	);
 
 	// when % is between 15-24
-	--background-color-15-24: #{$orange};
-	--border-color-15-24: #{rgba($orange, 0.4)};
-	--acid-fill-gradient-15-24: linear-gradient(#{$gradient_angle_reverse}, #{$yellow} 0%, #{$orange} 100%);
+	--border-shadow-color-15-24: #{$border-shadow-color-15-24};
+	--border-color-15-24: #{$border-color-15-24};
+	--acid-fill-gradient-15-24: linear-gradient(
+		#{$gradient_angle_reverse},
+		#{$fill-color-15-24-stop} 0%,
+		#{$fill-color-15-24-start} 100%
+	);
 
 	// when % is between 25-100
-	--background-color-25-100: #{$go_light};
-	--border-color-25-100: #{rgba($go_light, 0.4)};
-	--acid-fill-gradient-25-100: linear-gradient(#{$gradient_angle_reverse}, #{$go_light} 0%, #{$go} 100%);
+	--border-shadow-color-25-100: #{$border-shadow-color-25-100};
+	--border-color-25-100: #{$border-color-25-100};
+	--acid-fill-gradient-25-100: linear-gradient(
+		#{$gradient_angle_reverse},
+		#{$fill-color-25-100-stop} 0%,
+		#{$fill-color-25-100-start} 100%
+	);
 
 	/* end of variables */
 
@@ -42,13 +86,17 @@
 		/* battery shadow/blur background */
 		.battery-shadow {
 			position: absolute;
-			width: 90%;
-			height: 12rem;
-			border: 0.5rem solid var(--border-color);
-			opacity: 0.8;
+			height: 12.5rem;
+
+			// left: 3.3%; // small
+			// width: 91.3%;
+
+			left: 2%; // big
+			width: 91%;
+			border: 0.8rem solid var(--border-color);
+			opacity: 1;
 			border-radius: 0.5rem;
 			filter: blur(0.3rem);
-			left: 3%;
 
 			/* battery notch */
 			&:after {
@@ -68,7 +116,7 @@
 			position: relative;
 			width: 90%;
 			height: 12rem;
-			border: 0.1rem solid var(--border-color);
+			border: 0.2rem solid var(--border-color);
 			border-radius: 0.3rem;
 			left: -1rem;
 
@@ -79,7 +127,7 @@
 				left: 100%;
 				width: 2rem;
 				height: 35%;
-				background-color: var(--background-color);
+				background: var(--acid-fill-gradient);
 				border-radius: 0rem 0.3rem 0.3rem 0rem;
 				content: "";
 				border-left-width: 0;
@@ -114,13 +162,18 @@
 				.battery-error {
 					@extend .base-percentage-text;
 					font-size: 3rem;
-					color: $stop;
-					top: calc(33%);
+					// color: $stop;
+					top: calc(30%);
 
-					.voltage-incorrect {
+					.error-icon {
+						top: -0.8rem;
+						position: relative;
+					}
+					.no-battery-detected {
+						margin-left: 1rem;
 						font-size: 1.5rem;
 						position: relative;
-						top: -0.6rem;
+						top: -0.8rem;
 					}
 				}
 
@@ -179,12 +232,12 @@
 				color: transparent;
 			}
 		}
-		.icomoon:before{
-			font-size:28px;
+		.icomoon:before {
+			font-size: 28px;
 			position: absolute;
-			top:10px;
-			height:28px;
-			width:20.25px;
+			top: 10px;
+			height: 28px;
+			width: 20.25px;
 		}
 	}
 }

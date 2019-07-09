@@ -11,26 +11,29 @@ export class GuardService {
 	interTime: number;
 	metrics: any;
 	pageContext: any;
+	previousPageName = '';
+
 	constructor(private shellService: VantageShellService,
-				private commonService: CommonService) {
+		private commonService: CommonService) {
 		this.metrics = shellService.getMetrics();
 	}
 
-	canActivate(activatedRouteSnapshot: ActivatedRouteSnapshot, routerStateSnapshot: RouterStateSnapshot): Observable<boolean>|Promise<boolean>|boolean {
+	canActivate(activatedRouteSnapshot: ActivatedRouteSnapshot, routerStateSnapshot: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 		this.interTime = Date.now();
 		console.log('Activate : ' + activatedRouteSnapshot.data.pageName);
 		return true;
 	}
 
-	canDeactivate(component: Object, activatedRouteSnapshot: ActivatedRouteSnapshot, routerStateSnapshot: RouterStateSnapshot): Observable<boolean>|Promise<boolean>|boolean {
+	canDeactivate(component: Object, activatedRouteSnapshot: ActivatedRouteSnapshot, routerStateSnapshot: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 		this.pageContext = activatedRouteSnapshot.data.pageContent;
 		const data = {
 			ItemType: 'PageView',
 			PageName: activatedRouteSnapshot.data.pageName,
 			PageDuration: `${Math.floor((Date.now() - this.interTime) / 1000)}`,
-			PageContext: !this.pageContext ? null : this.commonService.getLocalStorageValue(this.pageContext),
+			PageContext: this.pageContext,
 		};
 		console.log('Deactivate : ' + activatedRouteSnapshot.data.pageName, ' >>>>>>>>>> ', data);
+		this.previousPageName = activatedRouteSnapshot.data.pageName;
 		this.metrics.sendAsync(data);
 		return true;
 	}

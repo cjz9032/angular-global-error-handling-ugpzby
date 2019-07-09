@@ -29,7 +29,7 @@
 							[name]="'device.deviceSettings.audio.audioSmartsettings.dolby.title' | translate"
 							componentName="Automatic Dolby Audio Settings"
 							[caption]="''"
-							[isSwitchVisible]=true
+							[isSwitchVisible]="autoDolbyFeatureStatus.available"
 							[leftIcon]="['icomoon', 'icomoon-LE-Dolby2x']"
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
@@ -181,7 +181,7 @@
 						</vtr-ui-row-switch>
 					</li>
 
-					<li class="">
+					<li class="" *ngIf="!isDTmachine">
 						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.optimize.title' | translate"
 							componentName="Optimize my microphone for"
 							[name]="'device.deviceSettings.audio.microphone.optimize.title' | translate"

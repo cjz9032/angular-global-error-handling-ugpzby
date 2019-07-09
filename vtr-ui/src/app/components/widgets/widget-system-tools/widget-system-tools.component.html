@@ -1,6 +1,6 @@
 <div class="vtr-widget-system-tools">
-	<div class="widget-title">
-		{{title}}
+	<div class="widget-title" title="">
+		{{'gaming.dashboard.device.systemTools.header' | translate}}
 	</div>
 	<div class="widget-container">
 		<div class="container-fluid">
@@ -11,7 +11,7 @@
 							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.systemUpdate' | translate"
 								metricsEvent="featureClick" routerLink="/device/system-updates">
 								<figure>
-									<div class="system-icon">
+									<div class="system-icon" title="">
 										<i class="icon icon-systemupdate"></i>
 									</div>
 									<figcaption>{{'gaming.dashboard.device.systemTools.systemUpdate' | translate}}
@@ -23,7 +23,7 @@
 							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.macroKey' | translate"
 								metricsEvent="featureClick" routerLink="/macrokey">
 								<figure>
-									<div class="system-icon">
+									<div class="system-icon" title="">
 										<i class="icon icon-macrokey"></i>
 									</div>
 									<figcaption>{{'gaming.dashboard.device.systemTools.macroKey' | translate}}
@@ -37,7 +37,7 @@
 								metricsEvent="featureClick" routerLink="/device/device-settings/power">
 								<figure>
 
-									<div class="system-icon">
+									<div class="system-icon" title="">
 										<i class="icon icon-power"></i>
 									</div>
 
@@ -50,7 +50,7 @@
 								metricsEvent="featureClick" routerLink="/device/device-settings/display-camera">
 								<figure>
 
-									<div class="system-icon">
+									<div class="system-icon" title="">
 										<i class="icon icon-media"></i>
 									</div>
 

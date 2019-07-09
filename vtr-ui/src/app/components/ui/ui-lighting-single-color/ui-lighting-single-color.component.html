@@ -1,5 +1,19 @@
-<h3 class="content-title">Blink Level</h3>
+<div class="lighting-single-color">
+<h3 class="content-title">{{'gaming.lightingProfile.lightingSingleLightingOption.option5.title' | translate}}</h3>
 <ul class="lighting-list-option">
+	<li *ngFor="let option of options">
+			<label class="gaming-radio">{{option.name | translate}}
+	   <input type="radio" name="price" (click)="getValue(option.id)"
+		 [checked]="isChecked(option.id)"
+		  [value]= option.id>
+		  <span class="checkmark"></span>
+		</label>
+	</li>
+  </ul>
+</div>
+  <!-- {{selectedOptionId}} -->
+  <!-- {{option.name | translate}}  -->
+<!-- <ul class="lighting-list-option">
   <li>
     <label class="gaming-radio">Always On
       <input type="radio" checked="checked" name="radio">
@@ -24,4 +38,4 @@
       <span class="checkmark"></span>
     </label>
   </li>
-</ul>
+</ul> -->

@@ -109,15 +109,16 @@
 	}
 	&__btn {
 		@include href();
-		text-decoration: underline;
 		border: none;
+		border-bottom: 1px solid #2D62D8;
+
 		background: transparent;
 		text-transform: uppercase;
 		font-size: 1.4rem;
 		font-weight: 500;
 		line-height: 2.3rem;
 		margin: 0;
-		padding: 0;
+		padding: 0 0 2px 0;
 	}
 }
 

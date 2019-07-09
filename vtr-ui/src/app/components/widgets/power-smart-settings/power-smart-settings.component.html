@@ -1,102 +1,67 @@
 <div>
-  <div *ngIf="showIC===9">
+  <div *ngIf="showIC===4 || showIC===3 || showIC===14 || showIC===13">
     <div class="row py-5 smartsettings-card" id="cooling">
       <div class="col-10 mx-auto ">
         <vtr-container-collapsible
-          [cardTitle]="'device.deviceSettings.power.powerSmartSettings.subtitle' | translate | lowercase"
-          [isCollapsed]="false" [allowCollapse]="false" [theme]="'blue'">
-          <div class="row">
-            <div class="col-auto text-wrap subtitle">
-              <h3> {{'device.deviceSettings.power.powerSmartSettings.subtitle1' | translate | lowercase}}
-                <!-- Battery & Quiet -->
-              </h3>
-              <p>
-                {{'device.deviceSettings.power.powerSmartSettings.description3' | translate | lowercase}}
-
-                <!-- Battery & Quiet lorem ipsum is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout. -->
-                <a class="read-more-link" href="#">
-                  {{'device.deviceSettings.power.powerSmartSettings.readMore' | translate | lowercase}}
-                  <!--  Read more -->
-                </a></p>
-            </div>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="">
-              <vtr-ui-row-switch [showChildContent]="true" [theme]="'blue'">
-                <div class="my-3" *ngIf="showIntelligentCoolingModes">
-                  <vtr-ui-rectangle-radio [radioId]="'radio1'" [group]="'radio'"
-                    [label]="'device.deviceSettings.power.powerSmartSettings.nonintelligentCooling.options.intelligentCooling' | translate"
-                    [value]="'INTELLIGENT COOLING'"></vtr-ui-rectangle-radio>
-                  <vtr-ui-rectangle-radio [radioId]="'radio2'" [group]="'radio'"
-                    [label]="'device.deviceSettings.power.powerSmartSettings.nonintelligentCooling.options.extremeCooling' | translate"
-                    [value]="'EXTREME PERFORMANCE'"></vtr-ui-rectangle-radio>
-                  <vtr-ui-rectangle-radio [radioId]="'radio3'" [group]="'radio'"
-                    [label]="'device.deviceSettings.power.powerSmartSettings.nonintelligentCooling.options.battery&Quite' | translate"
-                    [value]="'BATTERY & QUIET'"></vtr-ui-rectangle-radio>
-
-                </div>
-              </vtr-ui-row-switch>
-            </li>
-          </ul>
-        </vtr-container-collapsible>
-      </div>
-    </div>
-  </div>
-
-  <div *ngIf="showIC===4 || showIC===3 || showIC===14">
-    <div class="row py-5 smartsettings-card" id="cooling">
-      <div class="col-10 mx-auto ">
-        <vtr-container-collapsible
-          [cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate | lowercase"
-          [isCollapsed]="false" 
-          [allowCollapse]="false" 
+          [cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
+          [isCollapsed]="false"
+          [allowCollapse]="false"
           [theme]="'blue'">
           <ul class=" list-group
               list-group-flush">
             <li class="">
-              <vtr-ui-row-switch 
-                [title]="'device.deviceSettings.power.powerSmartSettings.subtitle' | translate |  lowercase"
+              <vtr-ui-row-switch
+                [title]="'device.deviceSettings.power.powerSmartSettings.subtitle' | translate"
                 [caption]="captionText"
                 [isSwitchVisible]="showIntelligentCoolingToggle"
                 [isSwitchChecked]="enableIntelligentCoolingToggle"
                 [showChildContent]="true"
-                [theme]="'blue'" 
+                [theme]="'blue'"
                 (toggleOnOff)="onIntelligentCoolingToggle($event)">
                 <div class="alignment">
                     <div class="well" *ngIf="showIC===3 && !apsStatus"> {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.apsHint' | translate }} </div>
-                    <div class="well" *ngIf="showIC===14"> {{ selectedModeText }} </div>
                     <div *ngIf="showIC===3 && showIntelligentCoolingModes" class="optimize">
                       {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.optimize' | translate | uppercase }} </div>
                     <div class="row no-gutters" *ngIf="showIntelligentCoolingModes">
-                      <vtr-ui-rounded-rectangle-radio
+                      <vtr-ui-circle-radio-with-checkbox
+                        *ngIf="showIC!==14"
                         [radioId]="'radio1'"
                         [group]="'radio'"
                         [label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' + showIC | translate"
-                        [value]="'PERFORMANCE'"
+                        [value]="'performance'"
                         [checked]="radioPerformance"
                         (change)="changePerformance($event)">
-                      </vtr-ui-rounded-rectangle-radio>
-                      <vtr-ui-rounded-rectangle-radio
+                      </vtr-ui-circle-radio-with-checkbox>
+                      <vtr-ui-circle-radio-with-checkbox
                         [radioId]="'radio2'"
                         [group]="'radio'"
                         [label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool' + showIC | translate"
-                        [value]="'QUIET & COOL'"
+                        [value]="showIC==14 ? 'LE-IntelligentCooling2x' : 'LE-CoolingDown2x' "
                         [checked]="radioQuietCool"
                         (change)="changeQuietCool($event)">
-                      </vtr-ui-rounded-rectangle-radio>
-                      <vtr-ui-rounded-rectangle-radio
+                      </vtr-ui-circle-radio-with-checkbox>
+                      <vtr-ui-circle-radio-with-checkbox
+                        *ngIf="showIC===14"
+                        [radioId]="'radio1'"
+                        [group]="'radio'"
+                        [label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' + showIC | translate"
+                        [value]="'performance'"
+                        [checked]="radioPerformance"
+                        (change)="changePerformance($event)">
+                      </vtr-ui-circle-radio-with-checkbox>
+                      <vtr-ui-circle-radio-with-checkbox
                         *ngIf="showIC===14"
                         [radioId]="'radio3'"
                         [group]="'radio'"
                         [label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.batterySaving' | translate"
-                        [value]="'Battery Saving'"
+                        [value]="'LE-Battery-Life-mode2x'"
                         [checked]="radioBatterySaving"
                         (change)="changeBatterySaving($event)">
-                      </vtr-ui-rounded-rectangle-radio>
-                    </div>
+                      </vtr-ui-circle-radio-with-checkbox>
+					</div>
+					<div class="well" *ngIf="showIC===14"> {{ selectedModeText }} </div>
                 </div>
-                
+
               </vtr-ui-row-switch>
             </li>
           </ul>
@@ -106,71 +71,40 @@
   </div>
 
   <div *ngIf="showIC===5">
-    <div class="row py-5 smartsettings-card" id="cooling">
-      <div class="col-10 mx-auto ">
-        <vtr-container-collapsible
-          [cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate | lowercase"
-          [isCollapsed]="false" [allowCollapse]="false" [theme]="'blue'">
-          <div class="row">
-            <div class="col-auto text-wrap subtitle">
-              <h3>
-                <!-- Intelligent Cooling  -->
-                {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate | lowercase}}
-              </h3>
-              <p>{{'device.deviceSettings.power.powerSmartSettings.description2' | translate}}
-                <!-- <a class="read-more-link"
-                (click)="">Read more.</a> -->
-              </p>
-              <p> <span
-                  class="cooling-modes">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode1' | translate}}:</span>
-                {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line1' | translate}}
-              </p>
-              <p> <span
-                  class="cooling-modes">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode2' | translate}}:</span>
-                {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line2' | translate}}
-              </p>
-              <p> <span
-                  class="cooling-modes">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode3' | translate}}:</span>
-                {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line3' | translate}}
-              </p>
-            </div>
-          </div>
-          <div class="row subtitle-its">
-            <div class="col-auto">
-              <div class="search-icon">
-                <fa-icon [icon]="['fas', 'search']"></fa-icon>
-              </div>
-            </div>
-            <div class="col col-7">
-              <div class="int-cool-text">
-                {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate}}
-              </div>
-            </div>
-            <div class="col-auto"><a class="settings-link" (click)="openContextModal(template)">
-                {{'device.deviceSettings.power.powerSmartSettings.gotoWindows.title' | translate}}</a>
-              <ng-template #template>
-                <div class="justify-content-end">
-                  <button type="button" class="close pull-right" aria-label="Close" (click)="closeContextModal()">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p>{{'device.deviceSettings.power.powerSmartSettings.gotoWindows.modalBodyText1' | translate}}
-                    <!-- 	Click on Windows battery icon on System tray to access Windows performance power
-                  slider -->
-                  </p>
-                  <!-- <span>Performance mode: </span>Slider is far right. Fan speed and
-                      performance. -->
-                </div>
-              </ng-template>
-            </div>
-            <!-- <div class="col">
-            <fa-icon class="question"
-              [icon]="['far', 'question-circle']"></fa-icon>
-          </div> -->
-          </div>
-        </vtr-container-collapsible>
-      </div>
-    </div>
+	<div class="row py-5 smartsettings-card" id="cooling">
+	  <div class="col-10 mx-auto ">
+		<vtr-container-collapsible
+		  [cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
+		  [isCollapsed]="false" [allowCollapse]="false" [theme]="'blue'">
+		  <div class="row">
+			<div class="col-auto text-wrap subtitle">
+			  <h3>
+				<!-- Intelligent Cooling  -->
+				{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate}}
+			  </h3>
+			  <p>{{'device.deviceSettings.power.powerSmartSettings.description5' | translate}}
+				<a class="read-more-link" *ngIf="!onReadMoreClick" (click)="readMore()">Read more.</a>
+			  </p>
+			  <div *ngIf="onReadMoreClick">
+			  <p> <span
+				  class="cooling-modes">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode1' | translate}}:</span>
+				{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line1' | translate}}
+			  </p>
+			  <p> <span
+				  class="cooling-modes">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode2' | translate}}:</span>
+				{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line2' | translate}}
+			  </p>
+			  <p> <span
+				  class="cooling-modes">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode3' | translate}}:</span>
+				{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line3' | translate}}
+			  </p>
+			</div>
+			 <p class="text-right more-info"><a  alt="" (click)="coolingModesPopUp($event)">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line4' | translate}}</a></p>
+			</div>
+		  </div>
+		</vtr-container-collapsible>
+	  </div>
+	</div>
   </div>
+
 </div>

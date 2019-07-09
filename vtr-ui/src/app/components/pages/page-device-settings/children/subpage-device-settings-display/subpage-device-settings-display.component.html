@@ -21,7 +21,7 @@
 				(toggle)="onCardCollapse($event)">
 				<ul class="list-group list-group-flush">
 					<li class="pt-3"
-						*ngIf="displayColorTempDataSource.available">
+						*ngIf="displayColorTempDataSource && displayColorTempDataSource.available">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
 							componentName="Display color temperature"
@@ -41,7 +41,7 @@
 										[manualRefresh]="manualRefresh"
 										(displayColorTempChange)="onSetChangeDisplayColorTemp($event)"
 										(resetTemparature)="resetDaytimeColorTemp($event)"
-										(colorPreviewValue) = "setToEyeCareMode()">									
+										(colorPreviewValue)="setToEyeCareMode()">
 									</vtr-display-color-temp>
 									<div class="row">
 										<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4">
@@ -62,7 +62,7 @@
 							[name]="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
 							[caption]=""
 							[isSwitchVisible]="true"
-							[isLastChild]=true
+							[isLastChild]="false"
 							[leftIcon]="['fal', 'eye']"
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
@@ -85,39 +85,96 @@
 							</div>
 							<div class="row">
 								<div class="col-12 pr-0">
-									<!--
+
 									<vtr-widget-permission-note
 										[noteTitle]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.title' | translate"
 										[description]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.description' | translate"
 										[path]="'ms-settings:privacy-location'"
-										*ngIf="enableSunsetToSunrise"></vtr-widget-permission-note>
-										-->
-									<span *ngIf="!enableSunsetToSunrise; else vtrwidgetpermissionnote"></span>
+										*ngIf="enableSunsetToSunrise">
+									</vtr-widget-permission-note>
+
+									<!-- <span *ngIf="!enableSunsetToSunrise; else vtrwidgetpermissionnote"></span>
 									<ng-template #vtrwidgetpermissionnote>
 										<vtr-widget-permission-note
 											[noteTitle]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.title' | translate"
 											[description]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.description' | translate"
 											[path]="'ms-settings:privacy-location'"></vtr-widget-permission-note>
-									</ng-template>
+									</ng-template> -->
 								</div>
 							</div>
 						</vtr-ui-row-switch>
 					</li>
 
-					<li class="pt-3">
+					<li class="pt-3"
+						*ngIf="privacyGuardCapability">
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.displayCamera.display.privacyGuard.title' | translate"
+							componentName="Privacy guard"
+							[caption]=""
+							[isSwitchVisible]="true"
+							[leftIcon]="['svg', 'privacy-guard']"
+							[readMoreText]="''"
+							[showChildContent]="true"
+							[isSwitchChecked]="privacyGuardToggleStatus"
+							(toggleOnOff)="setPrivacyGuardToggleStatus($event)"
+							[theme]="'white'">
+							<div class="row">
+								<div class="col d-flex justify-content-between pt-2 pr-3">
+									<p class="privacy-guard-caption">
+										{{'device.deviceSettings.displayCamera.display.privacyGuard.description' | translate}}
+									</p>
+									<!-- <img class="img-privacy-guard"
+										src="assets/images/privacy-guard.svg"
+										alt="'device.deviceSettings.displayCamera.display.privacyGuard.title' | translate"> -->
+								</div>
+							</div>
+							<div class="row">
+								<div class="feature-note p-4 m-4">
+									<p>{{'device.deviceSettings.displayCamera.display.privacyGuard.note' | translate}}
+									</p>
+								</div>
+							</div>
+							<div class="row"
+								*ngIf="privacyGuardOnPasswordCapability">
+								<div class="col-12">
+									<div class="custom-control custom-checkbox privacy-checkbox">
+										<input type="checkbox"
+											class="custom-control-input"
+											id="cb-privacy-guard"
+											[checked]="privacyGuardCheckBox"
+											(change)="setPrivacyGuardOnPasswordStatusVal($event)" />
+										<label class="custom-control-label"
+											for="cb-privacy-guard">
+											<span>
+												{{'device.deviceSettings.displayCamera.display.privacyGuard.labelText' | translate}}
+											</span>
+										</label>
+									</div>
+
+								</div>
+							</div>
+
+						</vtr-ui-row-switch>
+					</li>
+
+					<li class="pt-3"
+						*ngIf="hasOLEDPowerControlCapability">
+						<!-- [rightIcon]="['far', 'question-circle']"  [tooltipText]="'device.deviceSettings.displayCamera.display.oledPowerSettings.tooltip' | translate" -->
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.display.oledPowerSettings.title' | translate"
 							componentName="Oled Power Settings"
 							[name]="'device.deviceSettings.displayCamera.display.oledPowerSettings.title' | translate"
 							[isSwitchVisible]="false"
+							[isLastChild]="true"
 							[leftIcon]="['fal', 'tv']"
-							[rightIcon]="['far', 'question-circle']"
-							[readMoreText]="''"
 							[showChildContent]="true"
 							[isSwitchChecked]="eyeCareModeStatus.status"
 							(toggleOnOff)="onEyeCareModeStatusToggle($event)"
 							[theme]="'white'"
-							[tooltipText]="'device.deviceSettings.displayCamera.display.oledPowerSettings.tooltip' | translate">
+							vtrMetrics
+							metricsEvent="FeatureClick"
+							metricsParent="Page.Settings"
+							metricsName="OledPowerSettings">
 							<div class="row">
 								<div class="col-12">
 									<vtr-oled-power-settings
@@ -128,51 +185,7 @@
 						</vtr-ui-row-switch>
 					</li>
 
-					<li class="pt-3">
-						<vtr-ui-row-switch
-							[title]="'device.deviceSettings.displayCamera.display.privacyGuard.title' | translate"
-							componentName="Privacy guard"
-							[caption]=""
-							[isSwitchVisible]="true"
-							[leftIcon]="['fal', 'gem']"
-							[readMoreText]="''"
-							[showChildContent]="true"
-							[theme]="'white'">
-							<div class="row">
-								<div class="col d-flex justify-content-between pt-2 pr-3">
-									<p class="privacy-guard-caption">
-										{{'device.deviceSettings.displayCamera.display.privacyGuard.description' | translate}}
-									</p>
-									<img class="img-privacy-guard"
-										src="assets/images/privacy-guard.svg"
-										alt="'device.deviceSettings.displayCamera.display.privacyGuard.title' | translate">
-								</div>
-							</div>
-							<div class="row">
-								<div class="feature-note p-4 m-4">
-									<p>{{'device.deviceSettings.displayCamera.display.privacyGuard.note' | translate}}
-									</p>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-12">
-									<div class="custom-control custom-checkbox privacy-checkbox">
-										<input type="checkbox"
-											class="custom-control-input"
-											id="cb-privacy-guard"
-											[checked]="" />
-										<label class="custom-control-label"
-											for="cb-privacy-guard">
-											<span
-												class="text-capitalize">{{'device.deviceSettings.displayCamera.display.privacyGuard.labelText' | translate}}</span>
-										</label>
-									</div>
 
-								</div>
-							</div>
-
-						</vtr-ui-row-switch>
-					</li>
 					<!-- MVP 2 feature -->
 					<!-- <li class="pt-3">
 						<vtr-ui-row-switch [title]="'Display Priority Control'"
@@ -205,7 +218,9 @@
 
 	<!-- Camera -->
 	<div class="row py-5 smartsettings-card"
-		id="camera">
+		*ngIf="!isDTmachine"
+		id="camera"
+		[hidden]="isCameraHidden">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.displayCamera.camera.title' | translate"
 				componentName="Camera"
@@ -260,7 +275,9 @@
 										(contrastChange)="onContrastChange($event)"
 										(exposureChange)="onCameraExposureValueChange($event)"
 										(exposureToggle)="onCameraAutoExposureToggle($event)"
-										[disabledAll]="shouldCameraSectionDisabled">
+										(cameraAvailable)="onCameraAvailable($event)"
+										[disabledAll]="shouldCameraSectionDisabled"
+										(cameraDisable)="cameraDisabled($event)">
 									</vtr-camera-control>
 								</div>
 							</div>

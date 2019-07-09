@@ -2,8 +2,8 @@
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="backarrow"
-				[back]="back"
-				[title]="title"
+				[back]="'common.ui.back' | translate"
+				[title]="'common.menu.device.sub2' | translate"
 				[parentPath]="parentPath"
 				[menuItems]="menuItems"></vtr-header-main>
 		</div>
@@ -29,12 +29,14 @@
 									</div>
 									<vtr-widget-questions [title]="'common.qAndA.title' | translate"
 										[description]="'common.qAndA.subtitle' | translate"
-										[items]="qaService.qas"></vtr-widget-questions>
+										[items]="qaService.qas"
+										blockPosition="r2"></vtr-widget-questions>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col col-12">
 									<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+										[itemID]="cardContentPositionA.Id"
 										[caption]="cardContentPositionA.Description"
 										[title]="cardContentPositionA.Title"
 										[logoText]="cardContentPositionA.BrandName"
@@ -44,7 +46,8 @@
 										[type]="'corner-article'"
 										[ratioX]="4"
 										[ratioY]="2"
-										[order]="1"
+										order="3"
+										sideFlag='r'
 										[cornerShift]="'large'">
 									</vtr-container-card>
 								</div>

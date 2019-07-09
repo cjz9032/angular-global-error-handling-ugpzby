@@ -29,7 +29,7 @@ export class UserService {
 	private lid: any;
 	private metrics: any;
 	private lidStarterHelper: LIDStarterHelper;
-	
+
 	constructor(
 		private cookieService: CookieService,
 		private commsService: CommsService,
@@ -99,42 +99,42 @@ export class UserService {
 		}
 	}
 
-	loginSilently(appFeature = null) {
+	async loginSilently(appFeature = null) {
 		const self = this;
-		this.commonService.sendNotification(LenovoIdStatus.Pending, this.auth);
-		const accountState = this.hadEverSignIn();
-		const starterStatus = this.getStarterIdStatus();
 		let loginSuccess = false;
-		this.lidStarterHelper.isStarterAccountScenario().then((isStarterAccount) => {
-			if (self.lid !== undefined) {
-				if (!isStarterAccount) {
-					self.lid.loginSilently().then((result) => {
-						if (result.success && result.status === 0) {
-							loginSuccess = true;
-							self.lid.getUserProfile().then((profile) => {
-								if (profile.success && profile.status === 0) {
-									self.setName(profile.firstName, profile.lastName);
-									self.setAuth(true);
-								}
-							});
-						}
-		
-						self.sendSigninMetrics(loginSuccess ? 'success' : 'failure(rc=UserInteractionRequired)', starterStatus, accountState, 'AppOpen');
-					});
-				} else {
-					self.lidStarterHelper.getStarterAccountToken().then((token) => {
-						if (token && self.lidStarterHelper.isStarterToken(token)) {
-							self.starter = true;
-							self.commonService.sendNotification(LenovoIdStatus.StarterId, self.auth);
+		this.commonService.sendNotification(LenovoIdStatus.Pending, this.auth);
+		const isStarterAccount = await this.lidStarterHelper.isStarterAccountScenario();
+		if (!isStarterAccount) {
+			const accountState = this.hadEverSignIn();
+			const starterStatus = this.getStarterIdStatus();
+			self.lid.loginSilently().then(result => {
+				if (result.success && result.status === 0) {
+					loginSuccess = true;
+					self.lid.getUserProfile().then(profile => {
+						if (profile.success && profile.status === 0) {
+							self.setName(profile.firstName, profile.lastName);
+							self.setAuth(true);
+							self.commonService.sendNotification(LenovoIdStatus.SignedIn, appFeature);
+							self.sendSigninMetrics('success', starterStatus, accountState, 'AppOpen');
 						}
 					})
+				} else {
+					self.commonService.sendNotification(LenovoIdStatus.SignedOut, appFeature);
+					self.sendSigninMetrics('failure(rc=UserInteractionRequired)', starterStatus, accountState, 'AppOpen');
 				}
-			}
-		})
-		if (!this.auth && !this.starter) {
-			this.commonService.sendNotification(LenovoIdStatus.SignedOut, this.auth);
+			}).catch((res) => {
+				self.devService.writeLog('loginSilently() Exception happen ', res);
+			});
+		} else {
+			this.lidStarterHelper.getStarterAccountToken().then((token) => {
+				if (token && self.lidStarterHelper.isStarterToken(token)) {
+					self.starter = true;
+				}
+				self.commonService.sendNotification(self.starter ? LenovoIdStatus.StarterId : LenovoIdStatus.SignedOut, appFeature);
+			}).catch(function() {
+				self.commonService.sendNotification(self.starter ? LenovoIdStatus.StarterId : LenovoIdStatus.SignedOut, appFeature);
+			});
 		}
-		this.devService.writeLog('LOGIN(SILENTLY): ', self.auth);
 	}
 
 	public getLoginUrl(): any {
@@ -275,6 +275,11 @@ export class UserService {
 		self.metrics.sendAsync(metricsData).catch((ex) => {
 			self.devService.writeLog('Exception happen when send metric ', ex.message);
 		});
+	}
+
+	isLenovoIdSupported() {
+		// VAN-5280 Enable LID feature after fix design change impact
+		return true;
 	}
 
 }

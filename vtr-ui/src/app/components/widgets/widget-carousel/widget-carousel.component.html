@@ -4,12 +4,12 @@
 		[showNavigationIndicators]="carouselModel.length>1">
 		<ng-template *ngFor="let model of carouselModel let cIndex = index"
 			ngbSlide>
-			<a [href]="model.link"
+			<a *ngIf="isOnline" [href]="model.link"
 				vtrMetrics
-			    [metricsItem]="model.cardTitle"
+				[id]="id+''+cIndex"
+				[attr.aria-label]="ariaLabel+''+cIndex"
 				metricsEvent="articleclick"
-			   [metricsItemID]="model.id"
-				metricsParent="carousel"
+				[metricsItemID]="model.id"
 			    [metricsItemPosition]="order"
                 [metricsParent]="'dashboard'"
 			    target="_blank"
@@ -23,6 +23,16 @@
 					<h2 class="title">{{model.cardTitle}}</h2>
 				</div>
 			</a>
+			<div *ngIf="!isOnline"
+				class="carousel-link default-cursor"
+				[ngClass]="{'no-link': !model.link}">
+				<img [src]="model.image"
+					class="image img-fluid">
+				<div class="carousel-caption">
+					<h3 class="source">{{model.source}}</h3>
+					<h2 class="title">{{model.cardTitle}}</h2>
+				</div>
+			</div>
 		</ng-template>
 	</ngb-carousel>
 </div>

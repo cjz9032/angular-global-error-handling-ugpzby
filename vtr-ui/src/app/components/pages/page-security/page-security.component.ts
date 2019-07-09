@@ -2,7 +2,8 @@ import {
 	Component,
 	OnInit,
 	HostListener,
-	NgZone
+	NgZone,
+	OnDestroy
 } from '@angular/core';
 import {
 	VantageShellService
@@ -45,13 +46,23 @@ import {
 	RegionService
 } from 'src/app/services/region/region.service';
 
+import {
+	AppNotification
+} from 'src/app/data-models/common/app-notification.model';
+import {
+	NetworkStatus
+} from 'src/app/enums/network-status.enum';
+import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { GuardService } from '../../../services/guard/security-guardService.service';
+
+
 @Component({
 	selector: 'vtr-page-security',
 	templateUrl: './page-security.component.html',
 	styleUrls: ['./page-security.component.scss']
 })
 
-export class PageSecurityComponent implements OnInit {
+export class PageSecurityComponent implements OnInit, OnDestroy {
 	passwordManagerLandingViewModel: PasswordManagerLandingViewModel;
 	antivirusLandingViewModel: AntiVirusLandingViewModel;
 	vpnLandingViewModel: VpnLandingViewModel;
@@ -69,8 +80,10 @@ export class PageSecurityComponent implements OnInit {
 	score: number;
 	maliciousWifi: number;
 	cardContentPositionA: any = {};
+	isOnline: boolean;
 	region: string;
 	backId = 'sa-ov-btn-back';
+	isRS5OrLater: boolean;
 	itemStatusClass = {
 		0: 'good',
 		1: 'orange',
@@ -81,15 +94,21 @@ export class PageSecurityComponent implements OnInit {
 		1: 'security.landing.suspicious',
 		2: 'security.landing.malicious'
 	};
+
 	constructor(
 		public vantageShellService: VantageShellService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		private translate: TranslateService,
 		private regionService: RegionService,
-		private ngZone: NgZone
+		private ngZone: NgZone,
+		private securityAdvisorMockService: SecurityAdvisorMockService,
+		private guard: GuardService
 	) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
+		if (!this.securityAdvisor) {
+			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
+		}
 		this.passwordManager = this.securityAdvisor.passwordManager;
 		this.antivirus = this.securityAdvisor.antivirus;
 		this.vpn = this.securityAdvisor.vpn;
@@ -106,9 +125,24 @@ export class PageSecurityComponent implements OnInit {
 		this.refreshAll();
 	}
 
+	@HostListener('window: blur')
+	onBlur(): void {
+		this.wifiSecurity.cancelRefresh();
+	}
+
 	ngOnInit() {
-		this.refreshAll();
+		this.isOnline = this.commonService.isOnline;
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+			this.refreshAll();
+		}
 		this.fetchCMSArticles();
+	}
+
+	ngOnDestroy() {
+		this.wifiSecurity.cancelRefresh();
 	}
 
 	private refreshAll() {
@@ -220,13 +254,7 @@ export class PageSecurityComponent implements OnInit {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'security',
-			'Lang': 'EN',
-			'GEO': 'US',
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			'Page': 'security'
 		};
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
@@ -246,11 +274,30 @@ export class PageSecurityComponent implements OnInit {
 	}
 
 	showWindowsHello(windowsHello: phoenix.WindowsHello): void {
-		if (this.commonService.isRS5OrLater() &&
+		const version = this.commonService.getWindowsVersion();
+		if (version === 0) {
+			this.isRS5OrLater = true;
+		} else {
+			this.isRS5OrLater = this.commonService.isRS5OrLater();
+		}
+		if (this.isRS5OrLater &&
 			windowsHello.fingerPrintStatus) {
 			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.translate, windowsHello, this.commonService);
 		} else {
 			this.windowsHelloLandingViewModel = null;
+		}
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
 		}
 	}
 }

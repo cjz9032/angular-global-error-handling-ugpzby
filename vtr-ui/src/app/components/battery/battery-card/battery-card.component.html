@@ -1,4 +1,15 @@
-<div class="vtr-battery-card">
+<div class="vtr-battery-card"
+	*ngIf="isLoading">
+	<div class="container p-5"
+		[style.height.px]="292">
+		<div class="loader center-block">
+			<div class="spinner-border text-secondary progress-spinner"
+				role="status"></div>
+		</div>
+	</div>
+</div>
+<div class="vtr-battery-card"
+	*ngIf="!isLoading">
 	<ng-template #batteryDetail
 		let-modal>
 		<div class="modal-header">
@@ -13,13 +24,12 @@
 			</button>
 		</div>
 		<div class="modal-body">
-			<vtr-battery-detail [data]="batteryInfo" [dataGauge]="batteryGauge"> </vtr-battery-detail>
+			<vtr-battery-detail [data]="batteryInfo"
+				[batteryConditionStatus]="batteryConditionStatus"
+				[dataGauge]="batteryGauge"> </vtr-battery-detail>
 		</div>
 	</ng-template>
-	<div class="container p-5" 
-		[ngClass]="{'background-green':batteryIndicator.batteryHealth== 'Good',
-					'background-orange': batteryIndicator.batteryHealth== 'Fair',
-					'background-red':batteryIndicator.batteryHealth== 'Poor'}">
+	<div class="container p-5 background-green">
 		<div class="battery-gauge-label text-uppercase">
 			{{'device.deviceSettings.batteryGauge.title' | translate}}
 		</div>
@@ -28,64 +38,99 @@
 		</div>
 		{{batteryIndicator.percent == 0 && flag ? reInitValue(): ""}}
 		<div class="pt-4 battery-frame pr-3">
-			<vtr-battery-indicator 
-				[batteryHealth]= "batteryIndicator.batteryHealth"
-				[remainingHour]="batteryIndicator.hours"
+			<vtr-battery-indicator [remainingHour]="batteryIndicator.hours"
 				[remainingMinutes]="batteryIndicator.minutes"
 				[percentage]="batteryIndicator.percent"
 				[isCharging]="batteryIndicator.charging"
 				[isExpressCharging]="batteryIndicator.expressCharging"
-				[isVoltageError]="batteryIndicator.voltageError"
+				[batteryNotDetected]="batteryIndicator.batteryNotDetected"
 				[timeText]="batteryIndicator.timeText">
 			</vtr-battery-indicator>
 		</div>
 
-		<!-- <div class="p-3 row" *ngFor="let batteryConditionTranslation of batteryConditionTranslations; let i = index">
-			<div class="p-0 pr-2 col-auto battery-conditions-icon">
-				<fa-icon *ngIf="batteryQuality[batteryCondition.quality]== 'Good'"
-						[icon]="['fas', 'check-circle']" 
-						class="good">
-				</fa-icon>
-				<fa-icon *ngIf="batteryQuality[batteryCondition.quality]== 'Poor'" 
-						[icon]="['fas', 'times-circle']" 
-						class="poor">
-				</fa-icon>
-				<fa-layers *ngIf="batteryQuality[batteryCondition.quality]== 'Fair'" 
-						[fixedWidth]="true">
-					<fa-icon [icon]="['fas', 'circle']" class="fair"></fa-icon>
-					<fa-icon [icon]="['fas', 'exclamation-triangle']" transform="shrink-6" 
-						class="fair-inner-icon">
-					</fa-icon>
-				</fa-layers>
+		<div class="p-3 row"
+			*ngFor="let batteryConditionNote of batteryConditionNotes; let i = index">
+			<div class="p-0 pr-3 col-auto battery-conditions-icon battery-conditions">
+				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Good"
+					[src]=" '/assets/icons/battery-conditions/good.svg'" />
+				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Fair"
+					[src]=" '/assets/icons/battery-conditions/fair.svg'" />
+				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Poor"
+					[src]=" '/assets/icons/battery-conditions/poor.svg'" />
+
+				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.AcError"
+					[src]=" '/assets/icons/battery-conditions/ac_error.svg'" />
 			</div>
-		
-			<div class="col">
-				<span class="battery-conditions-title" *ngIf="batteryConditionTranslation?.title">
-					{{batteryConditionTranslation.title | translate}}
-				</span>&nbsp;
-				<span class="battery-conditions-description" 
-					*ngIf="batteryConditionTranslation?.description.length > 0">
-						{{batteryConditionTranslation.description | translate}}
+			<div class='col pt-2'>
+				<span class="battery-conditions-title"
+					*ngIf="batteryConditionNote?.title">
+					{{batteryConditionNote.title | translate}}
 				</span>
-				<span class="battery-conditions-title" 
-					*ngIf="batteryConditionsEnum[batteryCondition.condition]== 'StoreLimitation'">
-						{{percentageLimitation}}%
+				<span class="battery-conditions-description"
+					*ngIf="batteryConditionNote?.description.length > 0">
+					{{batteryConditionNote.description | translate}}
 				</span>
-				<span class="battery-conditions-title" 
-					*ngIf="batteryConditionTranslation?.description1.length > 0">
-						{{batteryConditionTranslation.description1 | translate}}
+				<span class="battery-conditions-title"
+					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation">
+					{{percentageLimitation}}%
 				</span>
-				<span class="battery-conditions-description" 
-					*ngIf="batteryConditionTranslation?.description2.length > 0">
-						{{batteryConditionTranslation.description2 | translate}}
+				<span class="battery-conditions-title"
+					*ngIf="batteryConditionNote?.description1.length > 0">
+					{{batteryConditionNote.description1 | translate}}
 				</span>
-				
+				<span class="battery-conditions-description"
+					*ngIf="batteryConditionNote?.description2.length > 0">
+					{{batteryConditionNote.description2 | translate}}
+				</span>
 			</div>
-		</div> -->
+
+		</div>
+		<div class="feature-note p-2 mt-2"
+			*ngIf="chargeThresholdInfo?.isOn">
+			<div class="row">
+				<p>
+					<span style="font-weight: bold">
+						{{'device.deviceSettings.batteryGauge.thresholdNote.note'  | translate}}
+					</span>
+					<span>
+						{{'device.deviceSettings.batteryGauge.thresholdNote.note1'  | translate}}
+						{{chargeThresholdInfo.stopValue}}%
+					</span>
+				</p>
+				<!-- TODO: uncomment in dual battery implementation story -->
+
+				<!-- <span>
+					{{'device.deviceSettings.batteryGauge.thresholdNote.note1'  | translate}}
+					{{'device.deviceSettings.batteryGauge.thresholdNote.note3'  | translate}}
+				</span>
+				<span *ngIf="chargeThresholdInfo.length>1">{{chargeThresholdBatteries[0]}}</span>
+				<span>
+					{{'device.deviceSettings.batteryGauge.thresholdNote.note2'  | translate}}
+					{{chargeThresholdInfo[chargeThresholdBatteries[0]-1].stopValue}}%
+				</span>
+				<span *ngIf="chargeThresholdBatteries.length>1">
+					{{'device.deviceSettings.batteryGauge.thresholdNote.note4'  | translate}}
+					{{'device.deviceSettings.batteryGauge.thresholdNote.note3'  | translate}}
+					{{chargeThresholdBatteries[1]}}
+					<span>
+						{{'device.deviceSettings.batteryGauge.thresholdNote.note2'  | translate}}{{chargeThresholdInfo[chargeThresholdBatteries[1]-1].stopValue}}%
+					</span>
+				</span> -->
+				<!-- <a href="javascript:void()">
+						{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
+					</a> -->
+			</div>
+		</div>
+
 		<div class="pt-4 text-center">
-			<button type="button" vtrMetrics metricsItem="see battery details" metricsParent="battery-gauge" metricsEvent="itemClick"
+			<button type="button"
+				vtrMetrics
+				metricsItem="see battery details"
+				metricsParent="battery-gauge"
+				metricsEvent="itemClick"
 				class="btn btn-primary btn-block btn-lg battery-detail-button text-uppercase"
-				(click)="showDetailModal(batteryDetail)">
+				(click)="showDetailModal(batteryDetail)"
+				[disabled]="isBatteryDetailsBtnDisabled">
 				{{'device.deviceSettings.batteryGauge.button' | translate }}
 			</button>
 		</div>

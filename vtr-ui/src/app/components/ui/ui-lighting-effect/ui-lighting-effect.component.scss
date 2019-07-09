@@ -9,6 +9,13 @@
       }
     }
   }
+  .brightCondition{
+	  color: $gaming_lightest;
+    font-size: 1.8rem;
+    @media #{$large-screen-1}{
+      font-size: 1.6rem;
+    }
+  }
   .dropdown-toggle {
     display: flex;
     justify-content: space-between;
@@ -31,7 +38,7 @@
     border-radius: 0.8rem;
     position: absolute;
     overflow: hidden;
-    z-index: 9;
+    z-index: 10;
     top: 3.5rem;
     li {
       list-style: none;

@@ -1,30 +1,30 @@
-<div class="row py-5 smart-assist-card" id="intelligentMedia" *ngIf="playbackStatus.available">
-  <div class="col-10 mx-auto" id="media">
-      <vtr-container-collapsible
-        [cardTitle]="'device.smartAssist.intelligentMedia.heading' | translate"
-        componentName="intelligentMediaCollapsible"
-        [isCollapsed]="false"
-        [allowCollapse]="true"
-        [theme]="'white'"
-        >
-      <ul class="list-group list-group-flush">
-        <li>
-          <vtr-ui-row-switch
-            [title]="'device.smartAssist.intelligentMedia.title' | translate"
-            componentName="intelligentMediaSwitch"
-            [isSwitchVisible]="true" 
-            [leftIcon]="['fal', 'gem']"
-            [rightIcon]="['far', 'question-circle']"
-            [showChildContent]="true" 
-            [isSwitchChecked]="playbackStatus.status"
-            [tooltipText]="'device.smartAssist.intelligentMedia.tooltip' | translate"
-            (toggleOnOff)="setVideoPauseResumeStatus($event)"
-            [caption]="'device.smartAssist.intelligentMedia.desc' | translate"
-            [theme]="'white'"
-            [showLoaderState]="showPlaybackLoader">
-          </vtr-ui-row-switch>
-        </li>
-      </ul>
-    </vtr-container-collapsible>
-  </div>
+<div class="row py-5 smart-assist-card"
+	id="intelligentMedia">
+	<div class="col-10 mx-auto"
+		id="media">
+		<vtr-container-collapsible [cardTitle]="'device.smartAssist.intelligentMedia.heading' | translate"
+			componentName="intelligentMediaCollapsible"
+			[isCollapsed]="false"
+			[allowCollapse]="true"
+			[theme]="'white'">
+			<ul class="list-group list-group-flush">
+				<li>
+					<vtr-ui-row-switch [title]="'device.smartAssist.intelligentMedia.title' | translate"
+						componentName="intelligentMediaSwitch"
+						[isLastChild]="true"
+						[isSwitchVisible]="true"
+						[leftIcon]="['fal', 'gem']"
+						[rightIcon]="['far', 'question-circle']"
+						[showChildContent]="false"
+						[isSwitchChecked]="isChecked"
+						[tooltipText]="'device.smartAssist.intelligentMedia.tooltip' | translate"
+						(toggleOnOff)="setVideoPauseResumeStatus($event)"
+						[caption]="'device.smartAssist.intelligentMedia.desc' | translate"
+						[theme]="'white'"
+						[showLoaderState]="isLoading">
+					</vtr-ui-row-switch>
+				</li>
+			</ul>
+		</vtr-container-collapsible>
+	</div>
 </div>

@@ -7,6 +7,12 @@ import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { RegionService } from 'src/app/services/region/region.service';
+import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { ActivatedRoute, Params } from '@angular/router';
+import { GuardService } from '../../../services/guard/security-guardService.service';
 
 @Component({
 	selector: 'vtr-page-security-password',
@@ -22,16 +28,24 @@ export class PageSecurityPasswordComponent implements OnInit {
 	backId = 'sa-pm-btn-back';
 	dashlaneArticleId = '0EEB43BE718446C6B49F2C83FC190758';
 	dashlaneArticleCategory: string;
+	isOnline = true;
 
 	constructor(
 		public mockService: MockService,
 		private commonService: CommonService,
 		private cmsService: CMSService,
 		private modalService: NgbModal,
-		vantageShellService: VantageShellService
+		public regionService: RegionService,
+		vantageShellService: VantageShellService,
+		private securityAdvisorMockService: SecurityAdvisorMockService,
+		private router: ActivatedRoute,
+		private guard: GuardService
 	) {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
-		this.passwordManager = vantageShellService.getSecurityAdvisor().passwordManager;
+		if (!this.securityAdvisor) {
+			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
+		}
+		this.passwordManager = this.securityAdvisor.passwordManager;
 		this.statusItem = {
 			title: 'security.passwordManager.statusTitle',
 			status: 'loading'
@@ -51,7 +65,15 @@ export class PageSecurityPasswordComponent implements OnInit {
 		this.fetchCMSArticles();
 	}
 
-	ngOnInit() { }
+	ngOnInit() {
+		this.isOnline = this.commonService.isOnline;
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+			this.passwordManager.refresh();
+		}
+	}
 
 	getDashLane(): void {
 		this.passwordManager.download();
@@ -68,13 +90,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'password-protection',
-			'Lang': 'EN',
-			'GEO': 'US',
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			'Page': 'password-protection'
 		};
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
@@ -92,7 +108,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 			}
 		);
 
-		this.cmsService.fetchCMSArticle(this.dashlaneArticleId, {'Lang': 'EN'}).then((response: any) => {
+		this.cmsService.fetchCMSArticle(this.dashlaneArticleId, { 'Lang': 'EN' }).then((response: any) => {
 			if (response && response.Results && response.Results.Category) {
 				this.dashlaneArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
 			}
@@ -101,11 +117,25 @@ export class PageSecurityPasswordComponent implements OnInit {
 
 	openDashLaneArticle(): void {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
-			backdrop: 'static',
+			backdrop: true,
 			size: 'lg',
 			centered: true,
-			windowClass: 'Article-Detail-Modal'
+			windowClass: 'Article-Detail-Modal',
+			keyboard: false
 		});
 		articleDetailModal.componentInstance.articleId = this.dashlaneArticleId;
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
+		}
 	}
 }

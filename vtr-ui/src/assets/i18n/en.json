@@ -30,16 +30,28 @@
 						"gamingText": "CPU Overclocking will be activated automatically while game launches",
 						"offText": "CPU Overclocking will be disabled"
 					},
-					"ramOverlock": "Ram Overclock",
+					"ramOverlock": "RAM Overclock",
 					"popup": {
 						"text": "Change will be effective after restarting computer.",
 						"button": "ok"
 					},
 					"driverPopup": {
 						"headerText": "Driver Install Required",
-						"text": "You need install driver for RAM Overclock to  make it effective",
+						"text": "Install driver to activate RAM Overclock,",
+						"networkBoostText": "You need install driver for Network Boost to  make it effective",
+						"hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+						"cpuOverclockText": "You need install driver for CPU Overclock to  make it effective",
 						"button": "Install",
 						"link": "cancel"
+					},
+					"lightingDriverPopup": {
+						"headerText": "Driver Install Required",
+						"text": "Install driver to activate lighting",
+						"button": "Install",
+						"link": "cancel"
+					},
+					"lightingColorMessage": {
+						"text": "Selecting color not available to this effect."
 					},
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
@@ -51,10 +63,15 @@
 					"media": "Media",
 					"macroKey": "Marco Key",
 					"hardwareScan": "Hardware Scan",
-					"systemUpdate": "System Update"
+					"systemUpdate": "System Update",
+					"header": "System Tools"
+				},
+				"systemStatus": {
+					"info": "INFO"
 				},
 				"lighting": {
-					"title": "Lighting Customize"
+					"title": "Lighting Customize",
+					"header": "Lighting"
 				},
 				"legionEdgeModal": {
 					"line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -86,7 +103,7 @@
 		},
 		"macroKey": {
 			"title": "Macro Key",
-			"introLine": "You can record a series of key input, and use them in gaming or other operations.",
+			"introLine": "You can record a series of key inputs, and use them in gaming or other operations.",
 			"status": {
 				"on": {
 					"title": "On",
@@ -111,11 +128,12 @@
 				},
 				"buttons": {
 					"start": "START RECORDING",
-					"stop": "STOP RECORDING"
+					"stop": "STOP RECORDING",
+					"numberPrefix": "NUM"
 				},
 				"recording": {
 					"title": "START TYPING",
-					"description": "20 inputs with in 20 seconds can be recorded."
+					"description": "20 inputs within 20 seconds can be recorded."
 				},
 				"recorded": {
 					"title": "MACRO KEY FOR ",
@@ -204,7 +222,7 @@
 			},
 			"popupContent": {
 				"clearMacrokey": {
-					"title": "Are you sure to clear this macro key?"
+					"title": "Are you sure you want to clear this macro key?"
 				},
 				"timeoutRecording": {
 					"title": "Time Out For Recording.",
@@ -223,13 +241,16 @@
 					"btnCancel": "Cancel"
 				},
 				"btnOk": "OK"
+			},
+			"recording": {
+				"title": "Recording Macro Key For"
 			}
 		},
 		"lightingProfile": {
 			"title": "Lighting",
 			"effect": {
 				"option1": {
-					"title": "Static"
+					"title": "On"
 				},
 				"option2": {
 					"title": "Flicker"
@@ -241,25 +262,120 @@
 					"title": "Wave"
 				},
 				"option5": {
-					"title": "Music"
-				},
-				"option6": {
 					"title": "Smooth"
 				},
-				"option7": {
+				"option6": {
 					"title": "CPU Temperature"
 				},
-				"option8": {
+				"option7": {
 					"title": "CPU Utilization"
 				},
-				"option9": {
-					"title": "Response"
+				"option8": {
+					"title": "Off"
 				},
-				"option10": {
-					"title": "Ripple"
+				"apply": {
+					"title": "APPLY"
 				},
-				"option11": {
-					"title": "No Light"
+				"applied": {
+					"title": "APPLIED"
+				}
+			},
+			"brightness": {
+				"text1": {
+					"title": "*Brightness setting doesn't apply on "
+				},
+				"text2": {
+					"title": " effect"
+				}
+			},
+			"lightingSingleLightingOption": {
+				"option1": {
+					"title": "Always On"
+				},
+				"option2": {
+					"title": "Fast Blink"
+				},
+				"option3": {
+					"title": "Medium Blink"
+				},
+				"option4": {
+					"title": "Slow Blink"
+				},
+				"option5": {
+					"title": "Blink Level"
+				}
+			},
+			"profile": {
+				"text1": {
+					"title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+				},
+				"text2": {
+					"title": "effect"
+				},
+				"text3": {
+					"title": "Effect"
+				}
+			},
+			"button": {
+				"default": {
+					"title": "Set to default"
+				}
+			},
+			"profileheading": {
+				"text1": {
+					"title": "Off"
+				},
+				"text2": {
+					"title": "Profile 1"
+				},
+				"text3": {
+					"title": "Profile 2"
+				},
+				"text4": {
+					"title": "Profile 3"
+				}
+			},
+			"colourwheel": {
+				"text1": {
+					"title": "Selecting colour not available to this effect."
+				},
+				"text2": {
+					"title": "APPLY"
+				},
+				"text3": {
+					"title": "APPLIED"
+				},
+				"text4": {
+					"title": "R:"
+				},
+				"text5": {
+					"title": "G:"
+				},
+				"text6": {
+					"title": "B:"
+				},
+				"text7": {
+					"title": "Color"
+				}
+			},
+			"lightingProfileHeading": {
+				"text1": {
+					"title": "Off"
+				},
+				"text2": {
+					"title": "1"
+				},
+				"text3": {
+					"title": "2"
+				},
+				"text4": {
+					"title": "3"
+				},
+				"Customize": {
+					"title": "Customize"
+				},
+				"heading": {
+					"title": "Select Profile:"
 				}
 			}
 		}
@@ -271,7 +387,7 @@
 				"title": "Device",
 				"sub1": "My Device",
 				"sub2": "My Device Settings",
-				"sub3": "System Updates",
+				"sub3": "System Update",
 				"sub4": "Smart Assist"
 			},
 			"security": {
@@ -322,10 +438,8 @@
 			"off": "OFF",
 			"collapse": "Collapse",
 			"expand": "Expand",
-			"loader": {
-				"text1": "Fetching",
-				"text2": "Status"
-			}
+			"loader": "Fetching <br> Status",
+			"loading": "Loading..."
 		}
 	},
 	"privacy": {
@@ -371,9 +485,17 @@
 			"button": "Give feedback",
 			"form": {
 				"email": "Email (optional)",
+				"question1": "Do you like the new style of Vantage?",
+				"question2": "Do you think the performance is acceptable?",
+				"question3": "Would you use the application more often in the future?",
+				"yes": "Yes",
+				"no": "No",
+				"tips1": "Please leave any additional comments",
 				"comments": "Comments...",
 				"button": "Submit",
 				"addScreenshot": "Add ScreenShot",
+				"sendFeedback": "Send Feedback",
+				"submitScreenShot": "Submit Screen Shot",
 				"messages": {
 					"feedbackSuccess": "Thank you for your feedback !"
 				}
@@ -382,7 +504,7 @@
 		"quickSettings": {
 			"title": "Your Quick Settings",
 			"microphone": "Microphone",
-			"cameraPrivacy": "Camera Privacy",
+			"cameraPrivacy": "Camera",
 			"eyeCareMode": "Eye Care Mode"
 		},
 		"systemStatus": {
@@ -429,8 +551,8 @@
 			"learnMore": "Learn more",
 			"freeMemory": "Free memory",
 			"systemUpdate": {
-				"title": "System update",
-				"notFound": "System update not found",
+				"title": "System Update",
+				"notFound": "System Update not found",
 				"detail": {
 					"uptoDate": "Software up to date ",
 					"updatedOn": "updated on ",
@@ -482,6 +604,16 @@
 				"minute": "minute",
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
+				"updating": "Updating",
+				"thresholdNote": {
+					"note": "Note: ",
+					"note1": "To extend the battery lifespan, you have set your battery to stop charging at ",
+					"note2": "to stop charging at ",
+					"note3": "battery",
+					"note4": "and "
+				},
+				"voltageError": "Battery voltage incorrect",
+				"batteryNotDetected": "No battery detected",
 				"details": {
 					"title": "Battery Details",
 					"primary": "Primary Battery",
@@ -515,9 +647,13 @@
 					},
 					"deviceChemistry": {
 						"li-polymer": "Li-Polymer",
-						"li-ion": "Li-Ion",
 						"li_polymer": "Li-Polymer",
+						"li-ion": "Li-Ion",
 						"li_ion": "Li-Ion",
+						"silver-zinc": "Silver-Zinc",
+						"silver_zinc": "Silver-Zinc",
+						"nicd": "NiCd",
+						"nimh": "NiMH",
 						"unknown": "Unknown"
 					},
 					"manufacturer": {
@@ -528,51 +664,70 @@
 				},
 				"condition": {
 					"Illegal": {
-						"title": "This system may not support battery that",
-						"description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
-						"description1": "Attention:",
-						"description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
+						"description": "The battery installed is",
+						"description1": "not supported",
+						"description2": "by the system and will not charge. Please replace the battery with the correct Lenovo battery for this system."
 					},
 					"Good": {
-						"title": "The battery is in good Condition"
+						"title": "The battery is in good condition."
 					},
 					"Exhaustion": {
-						"title": "The battery has failed due to normal",
-						"description": "wear. The battery cannot be charged. Replace the battery."
+						"description": "The battery has",
+						"description1": "failed due to normal wear.",
+						"description2": "The battery cannot be charged. Replace the battery."
 					},
 					"Bad": {
 						"title": "A battery error has occurred.",
-						"description": "The battery cannot be charged/discharged . Replace the battery."
+						"description": "The battery cannot be charged/discharged. Replace the battery."
 					},
 					"NotDetected": {
 						"title": "No battery detected or not",
 						"description": "plugged in battery."
 					},
 					"NotGood": {
-						"title": "The battery is not in a good Condition"
-					},
-					"LimitedACAdapterSupport": {
-						"title": "Limited Support AC Adapter"
+						"title": "The battery is not in a good Condition."
 					},
 					"NotSupportACAdapter": {
-						"title": "Not support AC Adapter"
-					},
-					"ACAdapterNotSupported": {
 						"title": "AC adapter not supported.",
-						"description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
+						"description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
 					},
-					"EnoughPowerACAdapter": {
+					"LimitedACAdapterSupport": {
 						"title": "AC adapter cannot provide enough power",
 						"description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
 					},
 					"MissingDriver": {
-						"title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
-						"description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
+						"title": "The Lenovo Power Manager driver",
+						"description": "is not installed or not working properly. Please run Windows Update to install the latest driver."
 					},
 					"StoreLimitation": {
 						"title": "The battery can only store",
 						"description1": "of",
-						"description2": "it's original full charge capacity"
+						"description2": "it's original full charge capacity."
+					},
+					"HighTemperature": {
+						"title": "Discharging",
+						"description": "has been stopped because the",
+						"description1": "battery temperature is too high."
+					},
+					"TrickleCharge": {
+						"description": "The battery was",
+						"description1": "completely discharged",
+						"description2": "and needs to be recharged. This might take ten hours or more."
+					},
+					"OverheatedBattery": {
+						"description": "The battery is",
+						"description1": "too hot.",
+						"description2": "Remove it from the computer and cool it to room temperature."
+					},
+					"PermanentError": {
+						"description": "The battery has",
+						"description1": "failed due to normal wear.",
+						"description2": "The battery cannot be charged. Replace the battery."
+					},
+					"HardwareAuthenticationError": {
+						"description": "The battery installed is",
+						"description1": "not supported",
+						"description2": "by the system and will not charge. Please replace the battery with the correct Lenovo battery for this system."
 					}
 				}
 			},
@@ -588,32 +743,38 @@
 					"other": "Other"
 				},
 				"powerSmartSettings": {
-					"title": "Power Smart Settings",
-					"subtitle": "INTELLIGENT COOLING",
+					"title": "Power Smart settings",
+					"subtitle": "Intelligent Cooling",
 					"subtitle1": "Battery & Quiet",
 					"description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
 					"description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
 					"description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
+					"description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
 					"description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+					"description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider",
 					"readMore": "Read more.",
 					"gotoWindows": {
 						"title": "Go to windows settings",
 						"modalBodyText1": "Click on Windows battery icon on System tray to access Windows performance power slider"
 					},
 					"intelligentCooling": {
-						"title": "Intelligent cooling",
+						"title": "Intelligent Cooling",
 						"description": "",
 						"tooltip": "",
 						"optimize": "optimize system for",
 						"apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
 						"options": {
-							"quiteCool3": "Cool Mode",
-							"performance3": "High Performance",
-							"quiteCool4": "Quiet & Cool",
+							"quiteCool3": "Cool & Quiet",
+							"performance3": "Performance",
+							"quiteCool4": "Cool & Quiet",
 							"performance4": "Performance",
-							"quiteCool5": "Quiet & Cool",
+							"quiteCool5": "Cool & Quiet",
 							"performance5": "Performance",
-							"batterySaving": "Battery Saving"
+							"batterySaving": "Battery Saving",
+							"performance13": "Performance",
+							"quiteCool13": "Cool & Quiet",
+							"performance14": "Extreme Performance",
+							"quiteCool14": "Intelligent Cooling"
 						},
 						"selectedModeText": {
 							"quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
@@ -626,7 +787,16 @@
 							"mode3": "Performance mode",
 							"line1": "Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
 							"line2": "Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
-							"line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+							"line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance.",
+							"line4": "More info"
+						},
+						"intelligentCoolingModesModal": {
+							"title": "Change intelligent cooling modes",
+							"close": "close",
+							"coolingModesList": {
+								"list1": "Click on the windows battery-icon in the toolbar",
+								"list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+							}
 						}
 					},
 					"nonintelligentCooling": {
@@ -638,7 +808,7 @@
 					}
 				},
 				"powerSettings": {
-					"title": "Power Settings",
+					"title": "Power settings",
 					"alwaysUSB": {
 						"title": "Always on USB",
 						"description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
@@ -651,14 +821,31 @@
 					}
 				},
 				"otherSettings": {
-					"title": "Other Settings",
+					"title": "Other settings",
 					"vantageToolbar": {
 						"title": "Lenovo Vantage Toolbar",
 						"description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
 					}
 				},
+				"smartStandby": {
+					"title": "Smart Standby",
+					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+					"timer": {
+						"heading": "Set time when you typically use this computer",
+						"subHeading1": "start",
+						"subHeading2": "end",
+						"subHeading3": "use this schedule for",
+						"endTimeNote": "END must be within 20 hours from START time",
+						"timeUnits": {
+							"unit1": "Hours",
+							"unit2": "Minutes",
+							"unit3": "AM/PM"
+						}
+					}
+				},
 				"batterySettings": {
-					"title": "Battery Settings",
+					"title": "Battery settings",
 					"batteryThreshold": {
 						"title": "Battery Charge Threshold",
 						"description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
@@ -684,9 +871,9 @@
 						}
 					},
 					"expressCharging": {
-						"title": "Express Charging",
-						"description": "Express Charge allows your battery to a full charge much faster than normal mode.",
-						"tooltip": "Express Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
+						"title": "Rapid Charging",
+						"description": "Rapid Charge allows your battery to a full charge much faster than normal mode.",
+						"tooltip": "Rapid Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
 					},
 					"conservationMode": {
 						"title": "Conservation Mode",
@@ -694,13 +881,17 @@
 						"tooltip": {
 							"line1": "This function is useful to extend the lifespan of your battery when plugged.",
 							"line2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
-							"line3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
+							"line3": "Note: Rapid Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
 						}
 					},
 					"airPlanePower": {
 						"title": "Airplane Power Mode",
 						"description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
 					}
+				},
+				"energyStar": {
+					"title": "Energy Star",
+					"description": "An ENERGY STAR certified product"
 				}
 			},
 			"audio": {
@@ -746,7 +937,7 @@
 						}
 					},
 					"suppress": {
-						"title": "Suppress keyboard noise",
+						"title": "Suppress Keyboard Noise",
 						"tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
 					},
 					"acoustic": {
@@ -767,7 +958,7 @@
 			},
 			"displayCamera": {
 				"title": "Display & Camera",
-				"subtitle": "Display & Camera Settings",
+				"subtitle": "Display & camera settings",
 				"description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
 				"jumpTo": {
 					"title": "JUMP TO SETTINGS",
@@ -783,7 +974,7 @@
 				"display": {
 					"title": "Display",
 					"eyeCareMode": {
-						"title": "Eye Care Mode",
+						"title": "Color Temperature in Eye Care Mode",
 						"checkbox": "Schedule eye care mode from sunset to sunrise",
 						"options": {
 							"warm": "Warm (Better for eyes)",
@@ -799,13 +990,26 @@
 					},
 					"oledPowerSettings": {
 						"title": "OLED Power Settings",
-						"description": ["Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-										"It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."],
+						"description": [
+							"Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
+							"It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+						],
 						"reset": "Reset temperature",
-						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display.",
+						"dropDown": {
+							"seconds": "seconds",
+							"minute": "minute",
+							"minutes": "minutes",
+							"alwaysOn": "Always on",
+							"never": "never",
+							"halfTime": "Half time of display off timer"
+						},
+						"taskBarDimmer": "TASKBAR DIMMER",
+						"backgroundDimmer": "BACKGROUND DIMMER",
+						"displayDimmer": "DISPLAY DIMMER"
 					},
 					"dispColorTemp": {
-						"title": "Daytime color temperature",
+						"title": "Daytime Color Temperature",
 						"options": {
 							"warm": "Warm (Better for eyes)",
 							"cold": "Cold"
@@ -815,11 +1019,11 @@
 						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
 						"note": {
 							"title": "Note",
-							"description": "When the Eye care mode is enabled. this color temperature does not take effect. However,  you can drag the slide to get a preview of it. To make it effective. turn off the Eye care mode"
+							"description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
 						}
 					},
 					"privacyGuard": {
-						"title": "Privacy guard",
+						"title": "Privacy Guard",
 						"description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
 						"note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
 						"labelText": "Enable this feature when typing passwords"
@@ -833,7 +1037,7 @@
 					},
 					"url": "Go to windows privacy settings",
 					"cameraPrivacy": {
-						"title": "Camera privacy mode",
+						"title": "Camera Privacy Mode",
 						"tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling."
 					},
 					"camera": {
@@ -852,6 +1056,72 @@
 						"blurMode": "Blur mode",
 						"comicMode": "Comic mode",
 						"sketchMode": "Sketch mode"
+					},
+					"cameraLoadingFailed": {
+						"inUseTitle": "CAMERA IS IN USE",
+						"inUseDescription": "Another app is using the camera. Close the app and try again.",
+						"loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
+						"loadingFailedDescription": "Close the app and try again."
+					}
+				}
+			},
+			"inputAccessories": {
+				"title": "Input & Accessories",
+				"subtitle": "Input & Accessories settings",
+				"description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+				"inputAccessory": {
+					"title": "Intelligent Keyboard",
+					"hiddenKeyboardFunctions": {
+						"title": "Hidden Keyboard Functions",
+						"description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+					},
+					"firstKeyObj": {
+						"tittle": "Fn + Tab",
+						"description": "enable zoom feature on high resolution displays",
+						"image": ""
+					},
+					"secondKeyObj": {
+						"tittle": "Fn + 4",
+						"description": "enter sleep mode",
+						"image": ""
+					},
+					"thirdKeyObj": {
+						"tittle": "Fn + D",
+						"description": "turn on and off Privacy Guard",
+						"image": ""
+					},
+					"fourthKeyObj": {
+						"tittle": "Fn + Q",
+						"description": "change between Performance mode and Quiet mode",
+						"image": ""
+					},
+					"fifthKeyObj": {
+						"tittle": "Fn + Space",
+						"description": "change keyboard backlight states",
+						"image": ""
+					}
+				},
+				"userDefinedKey": {
+					"title": "User-defined Key",
+					"caption": "The key represented by the star icon allows you to set user defined function",
+					"tooltip": "Content to be filled",
+					"apply": {
+						"title": "APPLY"
+					},
+					"website": {
+						"url": "WEBSITE URL"
+					},
+					"enterText": {
+						"title": "TEXT TO BE ENTERED"
+					},
+					"dropDown": {
+						"title": "ACTION USER DEFINED KEY",
+						"note": "Note: This can be used to enter commonly entered key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information.",
+						"options": {
+							"option1": "Please select",
+							"option2": "Open website",
+							"option3": "Enter text"
+						}
 					}
 				}
 			}
@@ -861,16 +1131,17 @@
 			"description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
 			"jumpTo": {
 				"title": "JUMP TO SETTINGS",
-				"security": "Security",
-				"screen": "Screen",
-				"media": "Media",
-				"voice": "Voice"
+				"security": "Intelligent Security",
+				"screen": "Intelligent Screen",
+				"media": "Intelligent Media",
+				"voice": "Voice",
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Intelligent Security",
 				"readMore": "Read more",
 				"HumanPresenceDetection": {
-					"title": "Human presence detection",
+					"title": "Human Presence Detection",
 					"tooltip": "Click here to reset the human presence detection settings."
 				},
 				"humanPresenceDetection": {
@@ -896,7 +1167,7 @@
 				},
 				"distanceSensitivityAdjusting": {
 					"title": "DISTANCE SENSITIVITY ADJUSTING",
-					"caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+					"caption": "Distance Sensitivity Adjusting will automatically update the detection distance via an AI engine.",
 					"options": {
 						"near": "Near",
 						"far": "Far"
@@ -906,7 +1177,7 @@
 					"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
 					"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
 					"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-					"description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
+					"description4": "2. If your computer is in hibernation mode or has been turned off. Zero Touch Lock will not work.",
 					"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
 				},
 				"WindowsLink": {
@@ -919,13 +1190,13 @@
 				"title": "Intelligent Screen",
 				"description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
 				"autoScreenOff": {
-					"title": "Auto screen off",
+					"title": "Auto Screen Off",
 					"caption": "Automatically turn off display when face-down or walking.",
 					"note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
 					"windowsLink": "Go to Power & sleep settings in Windows settings"
 				},
 				"keepMyDisplay": {
-					"title": "Keep my display",
+					"title": "Keep My Display",
 					"caption": "Keep my display when I am reading or browsing.",
 					"displaySlider": {
 						"title": "Minutes Before display dims when browsing",
@@ -934,16 +1205,78 @@
 					}
 				}
 			},
+			"activeProtectionSystem": {
+				"title": "Active Protection System",
+				"description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+				"activeProtection": {
+					"title": "Active Protection",
+					"caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection.",
+					"checkbox": "Ignore repetative shocks such as those of a train or a car"
+				},
+				"manualActiveProtectionSuspension": {
+					"title": "Manual Active Protection Suspension",
+					"caption": "Allow me to manually suspend the Active Protection System",
+					"dropdown-title": "Suspend for",
+					"button": "Suspend Now"
+				},
+				"advanced": {
+					"description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+					"pen": {
+						"title": "Pen Input",
+						"description": "When pen input is used, enable APS when pen input is out of range for"
+					},
+					"touch": {
+						"title": "Touch Input",
+						"description": "When Touch input is used, Enable APS when touch input is not detected"
+					},
+					"hand": {
+						"title": "Hand Proximity Sensing on Computer Edges",
+						"description": "When tablet mode is enabled, Enable APS when hand is not detected"
+					}
+				}
+			},
 			"intelligentMedia": {
 				"heading": "Intelligent Media",
 				"title": "Zero Touch Video Playback",
 				"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
 				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+			},
+			"voice": {
+				"title": "Voice",
+				"description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
+				"installBtnText": "Install",
+				"launchBtnText": "Launch",
+				"voiceToText": {
+					"title": "Voice to Text",
+					"caption": "This feature helps to convert your voice into texts."
+				},
+				"translation": {
+					"title": "Translation",
+					"caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+				},
+				"modalPopUp": {
+					"heading": "Getting started:",
+					"point1": "Make sure that the Lenovo Voice icons is displayed in the Windows system tray.",
+					"point2": "Open the file where you want to record the converted text.",
+					"point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
+					"point4": "Select your desired language and click the microphone icon to start.",
+					"point5": "Put the cursor to where you want to edit and begin to speak.",
+					"point6": "Click on the Lenovo Voice icon and select Translation.",
+					"point7": "Set your origin (left) and destination (right) languages.",
+					"point8": "Choose the speaker or microphone audio input source (lower right).",
+					"point9": "Click the main microphone button to start translating.",
+					"closeText": "close"
+				},
+				"modalInstallationFailed": {
+					"btnText": "ok",
+					"title": "Install Failed",
+					"desc": "Install failed, please try again later in order to use Lenovo Voice."
+				}
 			}
 		}
 	},
 	"systemUpdates": {
-		"title": "System Updates",
+		"title": "System Update",
 		"back": "BACK",
 		"history": "FULL HISTORY",
 		"notAvailable": "Not Available",
@@ -952,8 +1285,8 @@
 		"recommendedUpdates": "Recommended Update(s)",
 		"optionalUpdates": "Optional Update(s)",
 		"ignoredUpdates": "Ignored Update(s)",
-		"successInstall": "Successfully installed on",
-		"failedInstall": "Failed to installed on",
+		"successInstall": "Successfully installed: ",
+		"failedInstall": "Failed to install: ",
 		"at": "at",
 		"readMore": "Read more",
 		"popup": {
@@ -991,8 +1324,8 @@
 		"banner": {
 			"neverChecked": "Welcome to use System Update.",
 			"title": "An up-to-date system is a healthy system.",
-			"last": "Last update was on",
-			"next": "Next updated scan is scheduled on",
+			"last": "Last updated: ",
+			"next": "Next scheduled update: ",
 			"checkButton": "CHECK FOR UPDATES ",
 			"checking": "Checking for updates",
 			"downloading": "Downloading updates",
@@ -1043,34 +1376,76 @@
 			"releaseDate": "Release Date:",
 			"showAll": "Show All",
 			"noInstallationHistory": "No installation history available"
+		},
+		"statusCodeMessage": {
+			"commonFailure": "There is a problem in retrieving new Updates. Please try again later.",
+			"upToDate": "No updates are available. Your system is up to date.",
+			"egatherException": "An error occurred while gathering user information.",
+			"gatheringUserInfoException": "An error occurred while gathering user information.",
+			"certificateValidationException": "The Update Content Server is invalid. Please try again later.",
+			"downloadException": "An error occurred while downloading updates.",
+			"connectException": "Unable to connect to the Update Content Server.",
+			"notEnoughDiskSpace": "There is not enough disk space to perform the current task.",
+			"proxyAuthenticationException": "Incorrect Proxy user name or password.",
+			"proxyConnectionException": "Unable to connect to the proxy server.",
+			"autoScriptEvaluationException": "There was an error evaluating the auto configuration script.",
+			"localRepositoryConnectionFailureException": "Unable to connect to the Local Repository.",
+			"localRepositoryDatabaseException": "The local repository database could not be found or is corrupted.",
+			"networkInterruptedException": "The System Update Server is currently unavailable. Please try again later.",
+			"helpCenterInvalidServerException": "The System Update Server is invalid. Please try again later.",
+			"catalogNotFoundException": "There are no applicable updates found for your system.",
+			"catalogCrcErrorException": "The catalog for your system is currently being updated. Please try again later.",
+			"catalogErrorException": "An error was detected with the update catalog for your system on the System Update Server. Please try again later.",
+			"fileNotFoundException": "File not found."
 		}
 	},
 	"homeSecurity": {
 		"title": "Connected Home Security",
-		"ecosystemBlockTitle": "Protect your device ecosystem",
-		"overviewBlockTitle": "Your Ecosystem Security Overview",
-		"thisDevice": "This device",
-		"allDevices": "All Devices",
-		"protected": "Protected",
-		"notProtected": "Not Protected",
-		"myDevice": "My Device",
-		"allDevice": "All Devices",
-		"secure": "SECURE",
-		"needAttention": "NEEDS ATTENTION",
-		"manageAccount": "Manage Account",
-		"devices": "Devices",
-		"seeProtectedDevices": "See protected devices",
-		"addDevice": "add device",
-		"trailExpired": "Trail expired",
-		"trailExpiredSubtext": "Upgrate to protect all of your devices",
-		"upgrade": "upgrade",
+		"notification": {
+			"recent": "Recent security notifications",
+			"notifications": "Notifications"
+		},
+		"ecosystem": {
+			"ecosystemBlockTitle": "Protect your device ecosystem",
+			"thisDevice": "This device",
+			"allDevices": "All Devices",
+			"protected": "Protected",
+			"notProtected": "Not Protected",
+			"trialExpired": "Trial expired",
+			"upgrade": "upgrade",
+			"inEcosystem": "In Ecosystem",
+			"ecosystemEnable": "Ecosystem Enabled",
+			"inTrial": "In trial",
+			"addEcosystem": "Add to Ecosystem",
+			"enableEcosystem": "Enable Ecosystem",
+			"startTrial": "Start Trial",
+			"fullAccess": "Full Access",
+			"renew": "Renew"
+		},
+		"overview": {
+			"overviewBlockTitle": "Your Ecosystem Security Overview",
+			"allDevices": "All Devices",
+			"myDevice": "My Device",
+			"thisComputer": "This computer",
+			"secure": "SECURE",
+			"needAttention": "NEEDS ATTENTION",
+			"manageAccount": "Manage account",
+			"devices": "Devices",
+			"seeProtectedDevices": "See protected devices",
+			"addDevice": "add device",
+			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+			"upgrade": "upgrade",
+			"freeTrial": "Protect all of your devices - Free 30 day trial",
+			"startTrial": "Start Trial"
+		},
 		"tour": {
 			"back": "Back",
 			"skip": "Skip",
 			"start": "START TOUR",
 			"done": "DONE",
 			"welcome1": "Welcome",
-			"welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
+			"welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family.",
+			"welcomeDescStart": "Start your free 30 day trial now.",
 			"welcome2": "Exclusive for Vantage",
 			"welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
 			"create": "Create your account",
@@ -1078,7 +1453,7 @@
 			"notifications": "Receive <b>notifications</b> about your home's status",
 			"monitor": "<b>Monitor</b> the safety of your family's devices",
 			"peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
-			"signInLenovoId": "SIGH-UP WITH LENOVO ID",
+			"signInLenovoId": "SIGN-UP WITH LENOVO ID",
 			"haveLenovo": "I don't have a <b>Lenovo ID</b>",
 			"createLenovo": "&nbsp;Create a Lenovo ID",
 			"without": "Proceed <b>without an account</b>",
@@ -1087,6 +1462,20 @@
 			"loginCHS": "Login to existing CHS account",
 			"locationTitle": "Enable location tracking",
 			"locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+		},
+		"accountStatus": {
+			"title": "My Connected Home Security",
+			"startTrial": "Start Trial",
+			"manageAccount": "Manage Account",
+			"upgradeAccount": "Upgrade Account",
+			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+			"trialExpiredDetail1": "Your trial has expired.",
+			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+			"upgradedDetail1": "You account is active until {{expiredDate}}.",
+			"upgradedDetail2": "Your device ecosystem is currently being protected.",
+			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
+			"alreadyHaveAccount": "Already have an activation code?"
 		}
 	},
 	"support": {
@@ -1107,7 +1496,9 @@
 			"status": "Status: ",
 			"subDescription1": "This product has years limited warranty and it entitled to depot repair service. Customers may call their local service center for more information. Dealers may provide carry-in repair for this product.",
 			"subDescription2": "We were unable to locate warranty details for your device, to have more warranty options, please visit our support website.",
-			"viewWarrantyOptions": "VIEW WARRANTY OPTIONS"
+			"viewWarrantyOptions": "VIEW WARRANTY OPTIONS",
+			"offlineTips1": "Please connect to internet for latest warranty info.",
+			"offlineTips2": "Please connect internet to update warranty information."
 		},
 		"documentation": {
 			"title": "Documentation",
@@ -1138,7 +1529,7 @@
 		},
 		"quickAccess": {
 			"categories": "Categories",
-			"categoriesDesc": "Find helpful information in our articles",
+			"categoriesDesc": "Find helpful information in our articles.",
 			"seeArticles": "SEE ARTICLES"
 		}
 	},
@@ -1160,10 +1551,7 @@
 			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
 			"good": "GOOD",
 			"malicious": "MALICIOUS",
-			"suspicious": "SUSPICIOUS",
-			"titleOffline": "No internet connection detected",
-			"subTitleOffline": "Learn more on how to solve connection issues in our"
-
+			"suspicious": "SUSPICIOUS"
 		},
 		"antivirus": {
 			"common": {
@@ -1252,6 +1640,12 @@
 				"describe2": "To use Connected Home Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?",
 				"agree": "AGREE",
 				"cancel": "CANCEL"
+			},
+			"errorMessage": {
+				"headerText": "Error",
+				"bodyText": "We've detected that you are missing critical pieces of Vantage. These pieces will download in the background. Please try again later.",
+				"offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect",
+				"closeText": "close"
 			}
 		},
 		"homeprotection": {
@@ -1263,7 +1657,7 @@
 				"homeSecurityAffect3": "Connected Home Security ensures that other devices connected to your home network are safe.",
 				"describe": "Unsafe devices and networks can introduce malware, lead to identity theft, and leak private and financial information. Enable this feature to reduce the risk of having your device, and your home network exposed to attackers",
 				"subtitle": "Peace of Mind",
-				"subtitleDescribe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more in about Connected Home Security in Tips and Tricks.",
+				"subtitleDescribe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more about Connected Home Security <tag>here</tag>.",
 				"tryNow": "Try Now"
 			},
 			"invitationcode": {
@@ -1372,13 +1766,13 @@
 			"whyWindowsHelloDescription1": "Windows Hello makes logging into your PC easier and more secure, and can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello.",
 			"startUsingToday": "Start using Windows Hello Today",
 			"visitAndRegister": "Visit the Windows Hello page and register your fingerprint.",
-			"visitInSettings": "<tag> Visit Windows Hello</tag> in system settings",
+			"visitInSettings": "<tag> Visit Windows Hello</tag> in system settings.",
 			"unlock": "Use Windows Hello to log into and unlock your PC with a touch of a finger on the sensor.",
 			"startUsingWindowsHello": "Start using Windows Hello to log into Microsoft Apps such as Outlook, OneDrive, Office 365 and Xbox Live.",
 			"visitMicrosoft": "Visit Microsoft",
 			"poweredByWindowsHello": "Powered By Windows Hello",
 			"privacyPolicy": "Read more on the <tag>Privacy Policy</tag>",
-			"whyWindowsHelloDescription2": "Windows Hello makes logging into your PC easier and more secure. And you can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello",
+			"whyWindowsHelloDescription2": "Windows Hello makes logging into your PC easier and more secure. And you can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello.",
 			"authentication": "Windows Hello Authentication",
 			"traditional": "Traditional passwords can be stolen and used to access your account from anywhere in the world. More secure and convenient. Windows Hello is the next generation of a password. Use your fingerprint reader instead of insecure passwords to log in.",
 			"howToStart": "How do I start using Windows Hello?"
@@ -1402,6 +1796,7 @@
 		"ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
 	},
 	"faq": {
+		"pageTitle": "Support Detail",
 		"footer": {
 			"title": "Not finding what you are looking for?",
 			"description": "NEED ADDITIONAL SUPPORT? DON’T HESITATE TO CONTACT US VIA:",
@@ -1762,8 +2157,8 @@
 	"welcometutorial": {
 		"description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs.",
 		"bullets1": "View your system's status with the Vantage dashboard.",
-		"bullets2": "Security Advisor makes managing your security easy (Available on selected systems).",
-		"bullets3": "Automatic updates keep your device in tip top shape (Available on selected systems).",
+		"bullets2": "Security Advisor makes managing your security easy. (Available on selected systems)",
+		"bullets3": "Automatic updates keep your device in tip top shape. (Available on selected systems)",
 		"subtitle1": "How will you be using your device?",
 		"subtitle2": "Tell us about your interests",
 		"personal": "Personal Use",
@@ -1795,7 +2190,7 @@
 		"settings": "Settings",
 		"settingsDescription": "In preference setting page, you can choose to turn on/off your message notification based on the categories of Vantage's message, please be noted that even if all the message categories are disabled, you may still occasionally receive System Critical message from Vantage when necessary.",
 		"messagesInLenovoVantage": "Messages in Lenovo Vantage",
-		"appFeatures": "App features",
+		"appFeatures": "App Features",
 		"appFeaturesDescription": "Messages pertaining System Update, articles and other noteworthy features.",
 		"marketing": "Marketing",
 		"marketingDescription": "Promotion messages including Lenovo special offers.",
@@ -1805,6 +2200,6 @@
 		"usageStatistics": "Usage Statistics",
 		"usageStatisticsDescription": "Send anonymous usage statistics to Lenovo.",
 		"Note": "Note: ",
-		"settingsNotes": "all the settings in this page will need users to restart to take effect."
+		"settingsNotes": "all the settings in this page will need users to relaunch this application to take effect."
 	}
 }

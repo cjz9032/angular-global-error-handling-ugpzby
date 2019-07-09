@@ -32,11 +32,16 @@ $gaming_blue_grey_light: #425067;
 $gaming_grey_lightest: #aab0bc;
 $gaming_hover: #545f76;
 $gaming_dark_popup: #404d5f;
-$gaming_light_08: rgba(255, 255, 255, .8);
-$gaming_light_09: rgba(255, 255, 255, .9);
-
+$gaming_light_02: rgba(255, 255, 255, 0.2);
+$gaming_light_08: rgba(255, 255, 255, 0.8);
+$gaming_light_09: rgba(255, 255, 255, 0.9);
+$gaming_info_link: #2776b5;
+$gaming_info_link_hover: #3089c3;
 $gaming_lighting_profile_bg: rgba(20, 29, 49, 0.45);
 $gaming_light_blue: #047aff;
+$gaming_hdd_border_clr: rgba(35, 38, 53, 0.8);
+$gaming_hdd_ring: #6a7080;
+$gaming_orange_grad: linear-gradient(90deg, #ff5900, #ff7b00);
 
 $highlight: #2ec5eb;
 $highlight_bright: #53f9ff;
@@ -58,6 +63,7 @@ $yellow-dark: #e67e22;
 $go: #2cd283;
 $go_light: #31e4b6;
 $go_lighter: #5eebc7;
+$go_dark: #21c48a;
 
 $go_dark: #11b85b;
 $stop: #ea5545;
@@ -134,7 +140,7 @@ $mediaquery_7: "only screen and (max-width : 1200px)";
 $mediaquery_8: "only screen and (max-width : 1000px)";
 $mediaquery_9: "only screen and (max-width : 900px)";
 $mediaquery_10: "only screen and (max-width: 800px)";
-$mediaquery_11: "only screen and (max-width: 768px)";
+$mediaquery_11: "only screen and (max-width: 769px)";
 $mediaquery_12: "only screen and (max-width: 575px)";
 $mediaquery_13: "only screen and (min-width: 576px) and (max-width : 735px)";
 $mediaquery_14: "only screen and (min-width: 768px) and (max-width : 1366px) and (max-resolution: 125dpi)";
@@ -143,12 +149,12 @@ $mediaquery_16: "only screen and (min-width: 531px) and (max-width : 585px)";
 $mediaquery_17: "only screen and (min-width: 1196px) and (max-width : 1346px)";
 $mediaquery_18: "only screen and (min-width: 1258px) and (max-width : 1271px)";
 $mediaquery_19: "only screen and (min-width: 2160px) and (max-width : 3840px) and (max-resolution: 300dpi)";
-
-$mediaquery_xl: "only screen and (max-width : 1200px)";
+$mediaquery_20: "only screen and (min-width:350px) and (max-width : 500px)";
+$mediaquery_21: "only screen and (min-width:500px) and (max-width:991px)";
+$mediaquery_xl: "only screen and (max-width : 1199px)";
 $mediaquery_lg: "only screen and (max-width : 992px)";
 $mediaquery_md: "only screen and (max-width : 768px)";
 $mediaquery_sm: "only screen and (max-width : 576px)";
-
 $mediaquery_X1: "only screen and (min-width: 800px) and (max-width : 1200px)";
 $mediaquery_X2: "only screen and (min-width: 769px) and (max-width : 966px)";
 $mediaquery_X3: "only screen and (max-width: 530px)";
@@ -174,7 +180,16 @@ $mediaquery_X22: "only screen and (min-width: 500px) and (max-width : 661px)";
 $mediaquery_X23: "only screen and (min-width: 990px) and (max-width : 1040px)";
 $mediaquery_X24: "only screen and (min-width: 703px) and (max-width : 963px) and (max-resolution: 300dpi)";
 $mediaquery_X25: "only screen and (min-width: 703px) and (max-width : 963px) and (max-resolution: 350dpi)";
+$mediaquery_X26: "only screen and (min-width: 769px) and (max-width : 837px)";
+$mediaquery_X27: "only screen and (min-width: 993px) and (max-width : 1279px)";
+$mediaquery_X28: "only screen and (max-width : 700px)";
+$mediaquery_X29: "only screen and (min-width: 1346px) and (max-width : 1550px)";
+$mediaquery_X30: "only screen and (min-width: 1030px) and (max-width : 1080px)";
+$mediaquery_X31: "only screen and (min-width: 768px) and (max-width : 917px)";
+$mediaquery_X32: "only screen and (min-width: 560px) and (max-width : 600px)";
 
+$mediaquery_X34: "only screen and (min-width: 990px) and (max-width : 1336px)";
+$mediaquery_X33: "only screen and (min-width: 770px) and (max-width : 992px)";
 $dpiquery_0: "max-resolution: 350dpi";
 $dpiquery_1: "max-resolution: 275dpi";
 $dpiquery_2: "max-resolution: 200dpi";
@@ -240,8 +255,13 @@ $menu_height: 9rem;
 $header_height: 20.5rem;
 
 $modal_top_margin: 8rem;
+$grey_dark: #667481;
+$grey_light: #e6eaeb;
 
 /*media screen sizes for gaming*/
+$only-small-screen: "only screen and (max-width : 575px)";
 $small-screen: "only screen and (max-width : 767px)";
 $medium-screen: "only screen and (min-width : 768px) and (max-width : 992px)";
+$below-large-screen: "only screen and (min-width : 993px) and (max-width : 1199px)";
+$large-screen-1: "only screen and (min-width : 1200px) and (max-width : 1366px)";
 $large-screen: "only screen and (min-width : 1200px)";

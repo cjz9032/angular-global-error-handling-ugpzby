@@ -106,7 +106,7 @@
 
 	&__text {
 		@extend %text-common;
-		margin: 0 3rem 0 0;
+		margin: 2rem 1rem 0 0;
 
 		&--white {
 			color: #FFFFFF;
@@ -168,6 +168,7 @@
 	&__stop-title {
 		@extend %subtitle;
 		font-size: 2.5rem;
+		line-height: 2.4rem;
 		color: #34495E;
 	}
 
@@ -182,13 +183,14 @@
 	&__btn {
 		@extend %theme-btn;
 		text-transform: uppercase;
-		max-width: 24.5rem;
+		font-size: 1.3rem;
+		max-width: 26.5rem;
 	}
 
 	&__link {
 		@extend %button-link;
 		@extend %button-link--to-right;
 		text-decoration: underline;
-		margin-left: 2rem;
+		margin-left: 1rem;
 	}
 }

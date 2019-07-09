@@ -4,27 +4,30 @@
 	@media #{$mediaquery_11} {
 		padding-top: 8.5rem;
 	}
-	@media #{$mediaquery_X5} {
-		padding-left: 8.5rem;
-		padding-top: 12.5rem;
-	}
+	// @media #{$mediaquery_X5} {
+	// 	padding-left: 8.5rem;
+	// 	padding-top: 12.5rem;
+	// }
 	.background-red {
-		background-image: url(../../../../assets/images/battery/Red--Top.png), url(../../../../assets/images/battery/Red--Bottom.png);
+		background-image: url(../../../../assets/images/battery/Red--Top.png),
+			url(../../../../assets/images/battery/Red--Bottom.png);
 	}
 	.background-green {
-		background-image: url(../../../../assets/images/battery/Green-Top.png), url(../../../../assets/images/battery/Green-Bottom.png);
+		background-image: url(../../../../assets/images/battery/Green-Top.png),
+			url(../../../../assets/images/battery/Green-Bottom.png);
 	}
 	.background-orange {
-		background-image: url(../../../../assets/images/battery/Orange--Top.png), url(../../../../assets/images/battery/Orange--Bottom.png);
+		background-image: url(../../../../assets/images/battery/Orange--Top.png),
+			url(../../../../assets/images/battery/Orange--Bottom.png);
 	}
-	
+
 	.container {
 		border-radius: 1rem;
 		background-color: $light;
 		box-shadow: $drop_shadow;
-        background-position: right top, right bottom;
-        background-repeat: no-repeat;
-        background-size: contain;
+		background-position: right top, right bottom;
+		background-repeat: no-repeat;
+		background-size: contain;
 		.battery-gauge-label {
 			opacity: 0.58;
 			color: $main_dark;
@@ -58,6 +61,20 @@
 			font-weight: $weight_bold;
 			letter-spacing: 0.1rem;
 		}
+		.feature-note {
+			background-color: $shade_lightest;
+			border: 1px solid $shade_lighter;
+			p {
+				font-size: 1.5rem;
+				color: $main_darker;
+			}
+			a {
+				text-decoration: underline;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
 		.battery-conditions-title {
 			font-size: 1.8rem;
 			z-index: 5;
@@ -71,9 +88,6 @@
 			width: 100%;
 			letter-spacing: 0;
 		}
-		.battery-conditions-icon {
-			font-size: 2.0rem;
-		}
 		.good {
 			color: #{$go_light};
 		}
@@ -83,8 +97,24 @@
 		.fair {
 			color: #{$orange};
 		}
-		.fair-inner-icon{
+		.fair-inner-icon {
 			color: #{$light};
+		}
+		.loader {
+			position: absolute;
+			z-index: 999;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		.spinner-border {
+			height: 50px;
+			width: 50px;
+		}
+
+		.battery-conditions {
+			vertical-align: middle;
+			font-size: 14pt;
 		}
 	}
 }

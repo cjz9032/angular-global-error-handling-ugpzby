@@ -16,7 +16,10 @@
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col col-12">
-										<vtr-widget-security [percentValue]="score"></vtr-widget-security>
+										<vtr-widget-security *ngIf="isOnline" [percentValue]="score"></vtr-widget-security>
+										<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
+											[isSubtitleVisible]="false"
+											[isButtonVisible]="false"></vtr-widget-offline-info>
 									</div>
 								</div>
 
@@ -117,7 +120,8 @@
 										[ratioX]="4"
 										[ratioY]="2"
 										type="corner-article"
-										order="r1"
+										order="1"
+										sideFlag="r"
 										cornerShift="large">
 									</vtr-container-card>
 								</div>

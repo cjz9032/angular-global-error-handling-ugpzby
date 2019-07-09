@@ -559,12 +559,17 @@
 }
 
 /deep/ {
+	.macrokey-status-wrapper {
+		.select-wrapper {
+			min-width: 40rem;
+		}
+	}
 	.select-wrapper {
 		background: $gaming_hover;
 		border-radius: 0.8rem;
 		padding-bottom: 1.4rem;
 		margin: 1rem 0;
-		@media #{$mediaquery_X3} {
+		@media #{$mediaquery_sm} {
 			width: 40rem;
 		}
 		.dropdown-toggle {
@@ -579,6 +584,7 @@
 			span {
 				padding-left: 1.2rem;
 				color: $gaming_lightest;
+				cursor: pointer;
 			}
 			.icon {
 				position: relative;

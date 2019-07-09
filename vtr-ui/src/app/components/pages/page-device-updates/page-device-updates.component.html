@@ -12,7 +12,7 @@
 		<div class="col vtr-col">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-sm-12 col-md-6 col-lg-7 col-xl-8 vtr-page-left-column">
+					<div class="col-sm-12 col-lg-8 col-xl-8 vtr-page-left-column">
 						<div class="vtr-page-shift-up">
 							<div class="vtr-device-information">
 								<div class="container-fluid">
@@ -27,7 +27,7 @@
 												[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
 												(buttonClick)="onGetSupportClick($event)"></vtr-widget-offline-info>
 
-											<vtr-widget-device-update [title]="updateTitle"
+											<vtr-widget-device-update [title]="updateTitle | translate"
 												*ngIf="isOnline"
 												[subTitle1]="getLastUpdatedText()"
 												[subTitle2]="getNextUpdatedScanText()"
@@ -168,7 +168,7 @@
 										</div> -->
 
 											<vtr-container-collapsible
-												[cardTitle]="'systemUpdates.history' | translate | lowercase"
+												[cardTitle]="'systemUpdates.history' | translate"
 												[isCollapsed]="false">
 												<vtr-installation-history (reinstallUpdate)="onReinstallUpdate($event)">
 												</vtr-installation-history>
@@ -179,7 +179,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-12 col-md-6 col-lg-5 col-xl-4 vtr-page-right-column">
+					<div class="col-sm-12 col-lg-4 col-xl-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 								<div class="row mb-40">
@@ -198,12 +198,16 @@
 								<div class="row">
 									<div class="col col-12 mb-40">
 										<vtr-container-card [img]="'assets/images/support.jpg'"
+											id="su-web-support-cardcontent"
+											aria-label="su-web-support-cardcontent"
+											[itemID]="'LenovoSupportWebsite'"
 											[title]="'systemUpdates.support.title' | translate"
 											[action]="'Read More'"
 											[actionType]="'External'"
 											[actionLink]="supportLink"
 											[type]="'partnerarticle'"
-											[order]="1"
+											order="2"
+											sideFlag = 'r'
 											[ratioX]="4"
 											[ratioY]="2">
 										</vtr-container-card>
@@ -213,7 +217,9 @@
 								<div class="row">
 									<div class="col col-12 mb-40">
 										<vtr-container-card [img]="cardContentPositionA.FeatureImage"
-															[itemID]="cardContentPositionA.Id"
+											id="su-positionA-cardcontent"
+											aria-label="su-positionA-cardcontent"
+											[itemID]="cardContentPositionA.Id"
 											[caption]="cardContentPositionA.Description"
 											[title]="cardContentPositionA.Title"
 											[logoText]="cardContentPositionA.BrandName"
@@ -221,7 +227,8 @@
 											[actionType]="cardContentPositionA.ActionType"
 											[actionLink]="cardContentPositionA.ActionLink"
 											[type]="'corner-article'"
-											[order]="2"
+											order="3"
+											sideFlag = 'r'
 											[ratioX]="4"
 											[ratioY]="2"
 											[cornerShift]="'large'">

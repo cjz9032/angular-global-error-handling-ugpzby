@@ -12,7 +12,6 @@
 			<vtr-ui-range-slider [step]="100"
 				[manualRefresh]="manualRefresh"
 				[enableSlider]="enableSlider"
-				[onHoverSliderIcon]="true"
 				[minValue]="eyeCareModeSettings.minimum"
 				[maxValue]="eyeCareModeSettings.maximum"
 				[minValueLegend]="'device.deviceSettings.displayCamera.display.eyeCareMode.options.warm' | translate"
@@ -41,21 +40,40 @@
 
 		</div>
 	</div>
+
 	<div class="custom-control custom-checkbox eye-care-checkbox"
-		*ngIf="sunsetToSunriseStatus.available">
-		<!-- raj - never disable Schedule Eye Care checkbox if its supported -->
+		*ngIf="sunsetToSunriseStatus.available && enableSunsetToSunrise">
 		<input id="cb-eye-care-schedule"
 			type="checkbox"
+			[disabled]="enableSunsetToSunrise"
 			class="custom-control-input"
-			[checked]="sunsetToSunriseStatus.status && !(enableSunsetToSunrise)"
+			[checked]="sunsetToSunriseStatus.status"
 			(change)="onSunsetToSunrise(sunsetToSunriseStatus)" />
 		<label class="custom-control-label"
 			for="cb-eye-care-schedule">
-			<span class="text-capitalize">
+			<span class="text-capitalize"
+				[ngClass]="{'disabled':sunsetToSunriseStatus.available && enableSunsetToSunrise}">
 				<!-- Schedule eye care mode from sunset to sunrise  -->
 				{{'device.deviceSettings.displayCamera.display.eyeCareMode.onSunsetToSunriseScheduleDescription' | translate}}
 				{{sunriseToSunsetText}}
 			</span>
 		</label>
 	</div>
+	<div class="custom-control custom-checkbox eye-care-checkbox"
+		*ngIf="sunsetToSunriseStatus.available && !enableSunsetToSunrise">
+		<input id="cb-eye-care-schedule"
+			type="checkbox"
+			class="custom-control-input"
+			[checked]="sunsetToSunriseStatus.status"
+			(change)="onSunsetToSunrise(sunsetToSunriseStatus)" />
+		<label class="custom-control-label"
+			for="cb-eye-care-schedule">
+			<span class="">
+				<!-- Schedule eye care mode from sunset to sunrise  -->
+				{{'device.deviceSettings.displayCamera.display.eyeCareMode.onSunsetToSunriseScheduleDescription' | translate}}
+				{{sunriseToSunsetText}}
+			</span>
+		</label>
+	</div>
+
 </div>

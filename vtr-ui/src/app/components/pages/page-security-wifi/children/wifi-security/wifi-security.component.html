@@ -11,7 +11,7 @@
 			<div class="col-12">
 				<div class="wifiSecurity">
 					<div class="card"
-						[ngClass]="{'collapsed': isCollapsed && data.isLWSEnabled}">
+						[ngClass]="{'collapsed': (data.isLWSEnabled && isShowMore) || (region === 'cn' && !data.isLWSEnabled)}">
 						<div class="card-header flex align-items-center"
 							id="wifiSecurity">
 							<div class="row no-gutters">
@@ -29,10 +29,10 @@
 									</div>
 									<h3 class="mb-0 wifisecurity-container-name" title="{{'security.wifisecurity.container.name' | translate}}" >{{'security.wifisecurity.container.name' | translate}}
 									</h3>
-									<h3 class="wifisecurity-container-enable"><span class="badge badge-pill badge-danger button-green line-height-2-5 p-0 pl-3 pr-3"
-										title="{{'security.wifisecurity.container.enable' | translate}}" 
+									<h3 class="wifisecurity-container-enable"><span class="badge badge-pill badge-success line-height-2-5 p-0 pl-3 pr-3"
+										title="{{'security.wifisecurity.container.enable' | translate}}"
 										*ngIf="data.isLWSEnabled">{{'security.wifisecurity.container.enable' | translate}}</span>
-										<span class="badge badge-pill badge-danger button-red line-height-2-5 p-0 pl-3 pr-3" 
+										<span class="badge badge-pill badge-danger line-height-2-5 p-0 pl-3 pr-3"
 										title="{{'security.wifisecurity.container.disable' | translate}}"
 										*ngIf="data.isLWSEnabled===false">{{'security.wifisecurity.container.disable' | translate}}</span>
 									</h3>
@@ -40,18 +40,17 @@
 								<div class="col-sm-6 align-items-center text-right sm-device-responsive">
 									<vtr-ui-switch-onoff id="sa-ws-btn-switchstatus"
 										aria-label="sa-ws-btn-switchstatus"
-										[ngClass]="{'switch-disable': isDisableToggle() || cancelClick}"
+										[ngClass]="{'switch-disable': data.isLWSEnabled === undefined || switchDisabled || cancelClick}"
 										*ngIf="data.wifiSecurity.state !== 'never-used'"
 										name="wifisecurity"
 										[value]="data.isLWSEnabled"
-										[data]="data"
 										[name]="'wifiSecurity'"
-										[disabled]="switchDisabled || cancelClick"
-										[isSwitchDisable]="cancelClick"></vtr-ui-switch-onoff>
-									<div class="collapse-control" 
+										[disabled]="data.isLWSEnabled === undefined || switchDisabled || cancelClick"
+										(toggle)="onToggleChange($event)"></vtr-ui-switch-onoff>
+									<div class="collapse-control"
 										id="sa-ws-lnk-collapsecontrol"
 										aria-label="sa-ws-lnk-collapsecontrol"
-										(click)="$event.preventDefault();isCollapsed=!isCollapsed;"
+										(click)="$event.preventDefault();"
 										[hidden]="!data.isLWSEnabled">
 										<div class="d-flex" vtrMetrics
 											metricsItem="collapseWiFiHistory"
@@ -63,7 +62,7 @@
 											aria-controls="wifi-collapse"
 											*ngIf="isShowMore===false"
 											(click)="isShowMore=true">
-											<button id="sa-ws-btn-lessinfo" 
+											<button id="sa-ws-btn-lessinfo"
 												class="btn btn-link collapse-text p-0"
 												type="button"
 												title="{{'security.wifisecurity.container.less' | translate}}">
@@ -164,7 +163,7 @@
 			</div>
 		</div>
 		<div class="row threat-locator"
-			*ngIf="(region !== 'CN') && (!data.isLWSEnabled || isShowMore===false)">
+			*ngIf="(region !== 'cn') && (!data.isLWSEnabled || isShowMore===false)">
 			<div class="col">
 				<div class="threat-locator-container">
 					<div class="row">

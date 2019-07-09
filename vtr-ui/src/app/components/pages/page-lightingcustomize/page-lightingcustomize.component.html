@@ -10,20 +10,21 @@
 		<div class="col vtr-col">
 			<div class="container-fluid">
 				<div class="row">
-					<div [ngClass]="'col-sm-12 col-md-12 col-lg-7 col-xl-8 vtr-page-left-column'">
+					<div [ngClass]="'col-sm-12 col-md-12 col-lg-8 col-xl-8 vtr-page-left-column'">
 						<div class="vtr-page-shift-up nmx-40">
 							<div class="container-fluid">
 								<div class="row mb-60">
 									<div class="col col-12 px-40">
-										<vtr-ui-lighting-profile [lightingData]="setProfile" [effectData]="lightingEffectData"
+										<!-- <vtr-ui-lighting-profile [lightingData]="setProfile" [effectData]="lightingEffectData"
 											(changeDefaultProfile)="setDefaultProfile($event)" (setDefaultProfileFromLighting)="setDefaultProfileFromLighting(event)" [currentProfileData]="currentProfileData">
-										</vtr-ui-lighting-profile>
+										</vtr-ui-lighting-profile> -->
+										<vtr-ui-lighting-profile [currentProfileId]="currentProfileId"></vtr-ui-lighting-profile>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-12 col-md-12 col-lg-5 col-xl-4 vtr-page-right-column">
+					<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 								<div class="row">

@@ -42,10 +42,20 @@
 		padding: 0.6rem;
 
 		.search-icon {
-			>fa-icon {
+			> fa-icon {
 				font-size: 2rem;
 				padding: 0rem 0.5rem;
 			}
 		}
+	}
+}
+
+.vtr-page-shift-up-medium {
+	// @media #{$mediaquery_X5} {
+	// 	margin-top: 0;
+	// }
+	@media #{$mediaquery_X33} {
+		padding-top:10rem;
+		padding-left: 10rem;
 	}
 }

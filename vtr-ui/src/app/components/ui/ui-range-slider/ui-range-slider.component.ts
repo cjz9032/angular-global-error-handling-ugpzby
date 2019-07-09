@@ -20,7 +20,6 @@ export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 
 	@Input() enableSlider;
 
-	@Input() onHoverSliderIcon: boolean; // on hover eyecare mode
 
 	@Input() value = 0; // initial slider value
 	@Input() minValue = 0; // slider minimum end value
@@ -79,7 +78,7 @@ export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 	public onSliderChanged(event: any) {
 		console.log('slider changed');
 	}
-	public dragEnd(){
-		this.valueChangeEnd.emit();
+	public dragEnd($event: ChangeContext) {
+		this.valueChangeEnd.emit($event);
 	}
 }

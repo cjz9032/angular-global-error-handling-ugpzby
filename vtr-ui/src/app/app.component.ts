@@ -1,8 +1,8 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute, ParamMap } from '@angular/router';//VAN-5872, serverSwitch
 import { DevService } from './services/dev/dev.service';
 import { DisplayService } from './services/display/display.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';//VAN-5872, serverSwitch
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 import { DeviceService } from './services/device/device.service';
 import { CommonService } from './services/common/common.service';
@@ -15,20 +15,22 @@ import { KeyPress } from './data-models/common/key-press.model';
 import { VantageShellService } from './services/vantage-shell/vantage-shell.service';
 import { SettingsService } from './services/settings.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
+import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component';
+
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
 	title = 'vtr-ui';
-	private allCapablitiyFlag: Boolean = false;
 
+	machineInfo: any;
 	constructor(
 		private devService: DevService,
 		private displayService: DisplayService,
 		private router: Router,
+		private activRouter: ActivatedRoute,
 		private modalService: NgbModal,
 		public deviceService: DeviceService,
 		private commonService: CommonService,
@@ -38,53 +40,77 @@ export class AppComponent implements OnInit {
 		private gamingAllCapabilitiesService: GamingAllCapabilitiesService,
 		private vantageShellService: VantageShellService
 	) {
-		translate.addLangs(['en', 'zh-Hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it',
-			'ja', 'ko', 'nb', 'nl', 'pl', 'pt-BR', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-Latn', 'sv', 'tr', 'uk', 'zh-Hant']);
+		translate.addLangs([
+			'en',
+			'zh-Hans',
+			'ar',
+			'cs',
+			'da',
+			'de',
+			'el',
+			'es',
+			'fi',
+			'fr',
+			'he',
+			'hr',
+			'hu',
+			'it',
+			'ja',
+			'ko',
+			'nb',
+			'nl',
+			'pl',
+			'pt-BR',
+			'pt',
+			'ro',
+			'ru',
+			'sk',
+			'sl',
+			'sr-Latn',
+			'sv',
+			'tr',
+			'uk',
+			'zh-Hant'
+		]);
 		this.translate.setDefaultLang('en');
-		const hadRunApp: boolean = commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
-		const appFirstRun = !hadRunApp;
-		if (appFirstRun && deviceService.isShellAvailable) {
-			commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
-			const metricsClient = vantageShellService.getMetrics();
-			if (!metricsClient.sendAsyncEx) {
-				metricsClient.sendAsyncEx = metricsClient.sendAsync;
-			}
-			metricsClient.sendAsyncEx({
-				ItemType: 'FirstRun'
-			}, {
-					forced: true
-				});
-		}
 
 		//#region VAN-2779 this is moved in MVP 2
 
 		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
 		if (tutorial === undefined && navigator.onLine) {
 			this.openWelcomeModal(1);
-		} else if(tutorial && tutorial.page == 1 && navigator.onLine) {
+		} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
 			this.openWelcomeModal(2);
 		}
-		
+
 		//#endregion
 
-		window.addEventListener('online', (e) => {
-			console.log('online', e, navigator.onLine);
-			this.notifyNetworkState();
-		}, false);
+		window.addEventListener(
+			'online',
+			(e) => {
+				console.log('online', e, navigator.onLine);
+				this.notifyNetworkState();
+			},
+			false
+		);
 
-		window.addEventListener('offline', (e) => {
-			console.log('offline', e, navigator.onLine);
-			this.notifyNetworkState();
-		}, false);
+		window.addEventListener(
+			'offline',
+			(e) => {
+				console.log('offline', e, navigator.onLine);
+				this.notifyNetworkState();
+			},
+			false
+		);
 		this.notifyNetworkState();
 	}
 
 	openWelcomeModal(page: number) {
-		const modalRef = this.modalService.open(ModalWelcomeComponent,
-			{
-				backdrop: 'static'
-				, windowClass: 'welcome-modal-size'
-			});
+		const modalRef = this.modalService.open(ModalWelcomeComponent, {
+			backdrop: 'static',
+			centered: true,
+			windowClass: 'welcome-modal-size'
+		});
 		modalRef.componentInstance.page = page;
 		modalRef.result.then(
 			(result: WelcomeTutorial) => {
@@ -95,7 +121,7 @@ export class AppComponent implements OnInit {
 			(reason: WelcomeTutorial) => {
 				// on close
 				console.log('welcome-modal-size', reason);
-				if(reason instanceof WelcomeTutorial) {
+				if (reason instanceof WelcomeTutorial) {
 					this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
 				}
 			}
@@ -103,12 +129,10 @@ export class AppComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		if (!this.allCapablitiyFlag) {
-			this.gamingAllCapabilitiesService.getCapabilities().then((response) => {
-				this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
-			});
-			this.allCapablitiyFlag = true;
-		}
+		// session storage is not getting clear after vantage is close.
+		// forcefully clearing session storage
+		sessionStorage.clear();
+
 
 		this.devService.writeLog('APP INIT', window.location.href, window.devicePixelRatio);
 
@@ -117,7 +141,7 @@ export class AppComponent implements OnInit {
 		// document.getElementById('html-root').classList.add('is-arm');
 
 		const self = this;
-		window.onresize = function () {
+		window.onresize = function() {
 			self.displayService.calcSize(self.displayService);
 		};
 		self.displayService.calcSize(self.displayService);
@@ -127,14 +151,13 @@ export class AppComponent implements OnInit {
 
 		// When startup try to login Lenovo ID silently (in background),
 		//  if user has already logged in before, this call will login automatically and update UI
-		if (!this.deviceService.isArm) {
+		if (!this.deviceService.isArm && this.userService.isLenovoIdSupported()) {
 			this.userService.loginSilently();
 		}
 
 		/********* add this for navigation within a page **************/
-		this.router.events.subscribe(s => {
+		this.router.events.subscribe((s) => {
 			if (s instanceof NavigationEnd) {
-
 				const tree = this.router.parseUrl(this.router.url);
 				if (tree.fragment) {
 					const element = document.querySelector('#' + tree.fragment);
@@ -144,21 +167,64 @@ export class AppComponent implements OnInit {
 				}
 			}
 		});
-		this.getMachineInfo();
+
+		const result = this.getMachineInfo();
+		const hadRunApp: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
+		const appFirstRun = !hadRunApp;
+		if (appFirstRun && this.deviceService.isShellAvailable) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
+			if (result) {
+				result.then((machineInfo) => {
+					this.sendFirstRunEvent(machineInfo);
+				});
+			}
+		}
+
+		if (result) {
+				result.then((machineInfo) => {
+				this.machineInfo = machineInfo;
+			});
+		}
+
 		this.checkIsDesktopOrAllInOneMachine();
 		this.settingsService.getPreferenceSettingsValue();
+		
+		//VAN-5872, server switch feature
+		this.serverSwitchThis();
+	}
+
+	private sendFirstRunEvent(machineInfo) {
+		let isGaming = null;
+		if (machineInfo) {
+			isGaming = machineInfo.isGaming;
+		}
+		const metricsClient = this.vantageShellService.getMetrics();
+		metricsClient.sendAsyncEx(
+			{
+				ItemType: 'FirstRun',
+				IsGaming: isGaming
+			},
+			{
+				forced: true
+			}
+		);
 	}
 
 	private getMachineInfo() {
 		if (this.deviceService.isShellAvailable) {
-			this.deviceService.getMachineInfo()
+			return this.deviceService
+				.getMachineInfo()
 				.then((value: any) => {
 					console.log('getMachineInfo.then', value);
-					if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
+					console.log('########################################## 1', value);
+					if (value && ![ 'zh', 'pt' ].includes(value.locale.substring(0, 2).toLowerCase())) {
 						this.translate.use(value.locale.substring(0, 2));
+						this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
 					} else {
 						if (value && value.locale.substring(0, 2).toLowerCase() === 'pt') {
-							value.locale.toLowerCase() === 'pt-br' ? this.translate.use('pt-BR') : this.translate.use('pt');
+							value.locale.toLowerCase() === 'pt-br'
+								? this.translate.use('pt-BR')
+								: this.translate.use('pt');
 						}
 						if (value && value.locale.toLowerCase() === 'zh-hans') {
 							this.translate.use('zh-Hans');
@@ -168,21 +234,27 @@ export class AppComponent implements OnInit {
 						}
 					}
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
-				}).catch(error => {
+					return value;
+				})
+				.catch((error) => {
 					console.error('getMachineInfo', error);
 				});
 		}
+
+		return null;
 	}
 
 	private checkIsDesktopOrAllInOneMachine() {
 		try {
 			if (this.deviceService.isShellAvailable) {
-				this.deviceService.getMachineType()
+				this.deviceService
+					.getMachineType()
 					.then((value: any) => {
 						console.log('checkIsDesktopMachine.then', value);
-						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, (value === 4));
+						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, value === 4);
 						this.commonService.setLocalStorageValue(LocalStorageKey.MachineType, value);
-					}).catch(error => {
+					})
+					.catch((error) => {
 						console.error('checkIsDesktopMachine', error);
 					});
 			}
@@ -199,8 +271,31 @@ export class AppComponent implements OnInit {
 			this.commonService.sendNotification(NetworkStatus.Offline, { isOnline: navigator.onLine });
 		}
 	}
+	
+	private serverSwitchThis() {
+		console.log('@sahinul from nginit');
+		//VAN-5872, server switch feature
+		/* working
+		this.activRouter.queryParams
+			.subscribe(params => {
+				console.log('@sahinul serverSwitchThis from nginit', params);
+				if (params['serverswitch']) {
+					//this.translate.resetLang('ar');
+					this.translate.reloadLang('ar');
+					this.translate.use('ar');
+				}
+			});*/
+		this.activRouter.queryParamMap.subscribe((params: ParamMap) => {
+			console.log('@sahinul serverSwitchThis from nginit', params);
+			if(params.has('serverswitch')){
+				//this.translate.resetLang('ar');
+				this.translate.reloadLang('ar');
+				this.translate.use('ar'); 
+			}
+		});
+	}
 
-	@HostListener('window:keyup', ['$event'])
+	@HostListener('window:keyup', [ '$event' ])
 	onKeyUp(event: KeyboardEvent) {
 		try {
 			if (this.deviceService.isShellAvailable) {
@@ -214,33 +309,50 @@ export class AppComponent implements OnInit {
 				);
 				window.parent.postMessage(response, 'ms-appx-web://e046963f.lenovocompanionbeta/index.html');
 			}
+
+			//VAN-5872, server switch feature
+			if(event.ctrlKey && event.shiftKey && event.keyCode==67){
+				const serverSwitchModal : NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
+					backdrop: true,
+					size: 'lg',
+					centered: true,
+					windowClass: 'Server-Switch-Modal',
+					keyboard : false
+				});
+				//serverSwitchModal.componentInstance.articleId = this.item.Id;
+			}
+
 		} catch (error) {
 			console.error('AppComponent.onKeyUp', error);
 		}
 	}
 
-	@HostListener('window:load', ['$event'])
+	@HostListener('window:load', [ '$event' ])
 	onLoad(event) {
 		const scale = 1 / (window.devicePixelRatio || 1);
 		const content = `shrink-to-fit=no, width=device-width, initial-scale=${scale}, minimum-scale=${scale}`;
 		document.querySelector('meta[name="viewport"]').setAttribute('content', content);
-		console.log('DPI: ', content);
+		//console.log('DPI: ', content);
+		//alert('I am at onload');
 	}
 
 	// Defect fix VAN-2988
-	@HostListener('window:keydown', ['$event'])
+	@HostListener('window:keydown', [ '$event' ])
 	disbleCtrlACV($event: KeyboardEvent) {
-		console.log('$event.keyCode ' + $event.keyCode);
-		if (($event.ctrlKey || $event.metaKey) && ($event.keyCode === 65 || $event.keyCode === 67 || $event.keyCode === 86)) {
-			if ($event.keyCode === 65) {
-				console.log('Disable CTRL + A');
-			}
-			if ($event.keyCode === 67) {
-				console.log('Disable CTRL + C');
-			}
-			if ($event.keyCode === 86) {
-				console.log('Disable CTRL +  V');
-			}
+		//console.log('$event.keyCode ' + $event.keyCode);
+		if (
+			($event.ctrlKey || $event.metaKey) &&
+			($event.keyCode === 65 || $event.keyCode === 67 || $event.keyCode === 86)
+		) {
+			// if ($event.keyCode === 65) {
+			// 	console.log('Disable CTRL + A');
+			// }
+			// if ($event.keyCode === 67) {
+			// 	console.log('Disable CTRL + C');
+			// }
+			// if ($event.keyCode === 86) {
+			// 	console.log('Disable CTRL +  V');
+			// }
 			$event.stopPropagation();
 			$event.preventDefault();
 		}

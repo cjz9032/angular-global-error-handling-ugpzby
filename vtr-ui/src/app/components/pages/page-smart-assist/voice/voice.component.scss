@@ -1,0 +1,30 @@
+@import "../../../../app.theme.scss";
+ul{
+	list-style: none;
+}
+.context{
+	font-size: 1.5rem;
+	margin-right: 0.5rem;
+}
+
+.install-btn {
+	width: 30%;
+	height: 3.8rem;
+	border-radius: 25rem;
+	color: $light;
+	background: linear-gradient(270deg, #4980FC 0%, #2E62D9 100%);
+	font-size: 1.6rem;
+	font-weight: $weight_bold;
+	border: none;
+	margin-top: 0.5rem;
+}
+
+::ng-deep .vtr-ui-switch-row .white-theme {
+	border-bottom: none !important;
+}
+
+.blue-theme {
+	margin-top: -5px;
+	color: $main;
+}
+

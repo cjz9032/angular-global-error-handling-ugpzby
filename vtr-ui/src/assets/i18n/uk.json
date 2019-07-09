@@ -30,7 +30,7 @@
                         "gamingText": "CPU Overclocking will be activated automatically while game launches",
                         "offText": "CPU Overclocking will be disabled"
                     },
-                    "ramOverlock": "Ram Overclock",
+                    "ramOverlock": "RAM Overclock",
                     "popup": {
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
@@ -39,22 +39,36 @@
                         "headerText": "Driver Install Required",
                         "text": "You need install driver for RAM Overclock to  make it effective",
                         "button": "Install",
-                        "link": "cancel"
+                        "link": "cancel",
+                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
                     "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock"
+                    "touchpadLock": "Touchpad Lock",
+                    "lightingDriverPopup": {
+                        "headerText": "Driver Install Required",
+                        "text": "Please install driver",
+                        "button": "Install",
+                        "link": "cancel"
+                    },
+                    "lightingColorMessage": {
+                        "text": "Selecting color not available to this effect."
+                    }
                 },
                 "systemTools": {
                     "power": "Power",
                     "media": "Media",
                     "macroKey": "Marco Key",
                     "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "systemUpdate": "System Update",
+                    "header": "System Tools"
                 },
                 "lighting": {
-                    "title": "Lighting Customize"
+                    "title": "Lighting Customize",
+                    "header": "Lighting"
                 },
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
@@ -71,6 +85,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                },
+                "systemStatus": {
+                    "info": "INFO"
                 }
             }
         },
@@ -111,11 +128,12 @@
                 },
                 "buttons": {
                     "start": "START RECORDING",
-                    "stop": "STOP RECORDING"
+                    "stop": "STOP RECORDING",
+                    "numberPrefix": "NUM"
                 },
                 "recording": {
                     "title": "START TYPING",
-                    "description": "20 inputs with in 20 seconds can be recorded."
+                    "description": "20 inputs within 20 seconds can be recorded."
                 },
                 "recorded": {
                     "title": "MACRO KEY FOR ",
@@ -204,7 +222,7 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure to clear this macro key?"
+                    "title": "Are you sure you want to clear this macro key?"
                 },
                 "timeoutRecording": {
                     "title": "Time Out For Recording.",
@@ -223,13 +241,16 @@
                     "btnCancel": "Cancel"
                 },
                 "btnOk": "OK"
+            },
+            "recording": {
+                "title": "Recording Macro Key For"
             }
         },
         "lightingProfile": {
             "title": "Lighting",
             "effect": {
                 "option1": {
-                    "title": "Static"
+                    "title": "On"
                 },
                 "option2": {
                     "title": "Flicker"
@@ -241,38 +262,133 @@
                     "title": "Wave"
                 },
                 "option5": {
-                    "title": "Music"
-                },
-                "option6": {
                     "title": "Smooth"
                 },
-                "option7": {
+                "option6": {
                     "title": "CPU Temperature"
                 },
-                "option8": {
+                "option7": {
                     "title": "CPU Utilization"
                 },
-                "option9": {
-                    "title": "Response"
+                "option8": {
+                    "title": "Off"
                 },
-                "option10": {
-                    "title": "Ripple"
+                "apply": {
+                    "title": "APPLY"
                 },
-                "option11": {
-                    "title": "No Light"
+                "applied": {
+                    "title": "APPLIED"
+                }
+            },
+            "brightness": {
+                "text1": {
+                    "title": "*Brightness setting doesn't apply on "
+                },
+                "text2": {
+                    "title": " effect"
+                }
+            },
+            "lightingSingleLightingOption": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                },
+                "text2": {
+                    "title": "effect"
+                },
+                "text3": {
+                    "title": "Effect"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Set to default"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profile 1"
+                },
+                "text3": {
+                    "title": "Profile 2"
+                },
+                "text4": {
+                    "title": "Profile 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
+            },
+            "colourwheel": {
+                "text1": {
+                    "title": "Selecting colour not available to this effect."
+                },
+                "text2": {
+                    "title": "APPLY"
+                },
+                "text3": {
+                    "title": "APPLIED"
+                },
+                "text4": {
+                    "title": "R:"
+                },
+                "text5": {
+                    "title": "G:"
+                },
+                "text6": {
+                    "title": "B:"
+                },
+                "text7": {
+                    "title": "Color"
                 }
             }
         }
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "Панель інструментів",
             "device": {
-                "title": "My Device",
-                "sub1": "My Device",
-                "sub2": "My Device Settings",
+                "title": "Пристрій",
+                "sub1": "Мій пристрій",
+                "sub2": "Настройки мого пристрою",
                 "sub3": "System Updates",
-                "sub4": "Smart Assist"
+                "sub4": "Розумний помічник"
             },
             "security": {
                 "title": "Безпека",
@@ -283,9 +399,9 @@
                 "sub5": "Захист в Інтернеті",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
-            "homeSecurity": "Connected Home",
-            "privacy": "Privacy"
+            "support": "підтримка",
+            "homeSecurity": "Підключений дім",
+            "privacy": "Конфіденційність"
         },
         "securityAdvisor": {
             "title": "Порадник з безпеки",
@@ -307,25 +423,23 @@
             "notRegistered": "НЕ ЗАРЕЄСТРОВАНО"
         },
         "qAndA": {
-            "title": "Q&A for your machine",
-            "subtitle": "FIND SOME HELPFUL TIPS FOR YOUR DEVICE.",
-            "question1": "Backup and Restore your files",
-            "question2": "How to refresh your PC",
-            "question3": "How to know your machine's CPU",
-            "question4": "Check your machine's battery use",
-            "question5": "Use your PC like a tablet",
-            "question6": "Get to know Cortana, your personal assistant"
+            "title": "Питання та відповіді для вашої машини",
+            "subtitle": "Знайдіть деякі корисні поради для вашого пристрою.",
+            "question1": "Резервне копіювання та відновлення файлів",
+            "question2": "Оновлення комп'ютера",
+            "question3": "Як дізнатися модель процесора комп'ютера",
+            "question4": "Перевірка використання акумулятора вашого пристрою",
+            "question5": "Використання комп'ютера як планшета",
+            "question6": "Ознайомтеся з Cortana, вашим особистим помічником"
         },
         "ui": {
             "back": "НАЗАД",
             "on": "ON",
             "off": "OFF",
-            "collapse": "Collapse",
-            "expand": "Expand",
-            "loader": {
-                "text1": "Fetching",
-                "text2": "Status"
-            }
+            "collapse": "Згорнути",
+            "expand": "Розгорнути",
+            "loader": "Отримання <br> статусу",
+            "loading": "Завантаження..."
         }
     },
     "privacy": {
@@ -344,7 +458,7 @@
         "personal": "PERSONAL",
         "custom": "CUSTOM",
         "skip": "SKIP",
-        "next": "NEXT",
+        "next": "ДАЛІ",
         "interests": "What are your interests?",
         "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
         "games": "GAMES",
@@ -358,166 +472,179 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Looking energized today "
+            "title": "Сьогодні ви енергійні "
         },
         "offlineInfo": {
-            "title": "No internet connection detected",
-            "subtitle": "Learn more on how to solve connection issues in our",
-            "buttonText": "Get Support"
+            "title": "Немає підключення до Інтернету",
+            "subtitle": "Дізнайтеся більше про те, як вирішити проблеми з підключенням, у",
+            "buttonText": "Отримати підтримку"
         },
         "feedback": {
-            "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
-            "button": "Give feedback",
+            "title": "Залишити відгук",
+            "subtitle": "Залиште відгук про Vantage.",
+            "button": "Залишити відгук",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comments...",
+                "comments": "Коментар...",
                 "button": "Submit",
                 "addScreenshot": "Add ScreenShot",
                 "messages": {
-                    "feedbackSuccess": "Thank you for your feedback !"
-                }
+                    "feedbackSuccess": "Дякуємо за ваш відгук!"
+                },
+                "question1": "Чи подобається вам новий стиль Vantage?",
+                "question2": "Чи вистачає вам продуктивності?",
+                "question3": "Чи збираєтеся ви користуватися програмою частіше?",
+                "yes": "Так",
+                "no": "Ні",
+                "tips1": "Маєте додаткові коментарі?",
+                "sendFeedback": "Надіслати відгук",
+                "submitScreenShot": "Надіслати знімок екрана"
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
-            "microphone": "Microphone",
-            "cameraPrivacy": "Camera Privacy",
-            "eyeCareMode": "Eye Care Mode"
+            "title": "Ваші швидкі настройки",
+            "microphone": "Мікрофон",
+            "cameraPrivacy": "Камера",
+            "eyeCareMode": "Режим захисту зору"
         },
         "systemStatus": {
-            "title": "System Status",
-            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "title": "Стан системи",
+            "subtitle": "ШВИДКО ДІЗНАВАЙТЕСЯ СТАН СИСТЕМИ ПРИСТРОЮ.",
             "memory": {
-                "title": "Memory",
+                "title": "Пам’ять",
                 "detail": {
-                    "notFound": "Memory not found",
-                    "of": "of"
+                    "notFound": "Пам’ять не знайдено",
+                    "of": "з"
                 }
             },
             "diskSpace": {
-                "title": "Disk Space",
+                "title": "Дисковий простір",
                 "detail": {
-                    "notFound": "Disk not found",
-                    "of": "of"
+                    "notFound": "Диск не знайдено",
+                    "of": "з"
                 }
             },
             "warranty": {
-                "title": "Warranty",
+                "title": "Гарантія",
                 "detail": {
-                    "notFound": "Warranty not found",
-                    "until": "Until",
-                    "expiredOn": "Warranty expired on",
-                    "notAvailable": "Warranty not available"
+                    "notFound": "Гарантію не знайдено",
+                    "until": "До",
+                    "expiredOn": "Термін дії гарантії закінчився",
+                    "notAvailable": "Гарантія недоступна"
                 }
             },
             "systemUpdate": {
                 "title": "System Update",
                 "detail": {
-                    "update": "Update"
+                    "update": "Оновлення"
                 }
             }
         }
     },
     "device": {
         "myDevice": {
-            "title": "My Device",
-            "subtitle": "My device status",
-            "serial": "Serial",
-            "productNumber": "Product number",
-            "biosVersion": "Bios version",
-            "learnMore": "Learn more",
-            "freeMemory": "Free memory",
+            "title": "Мій пристрій",
+            "subtitle": "Стан мого пристрою",
+            "serial": "Номер серії",
+            "productNumber": "Номер продукту",
+            "biosVersion": "Версія BIOS",
+            "learnMore": "Дізнатися більше",
+            "freeMemory": "Вільна пам'ять",
             "systemUpdate": {
-                "title": "System update",
-                "notFound": "System update not found",
+                "title": "Оновлення системи",
+                "notFound": "Оновлення системи не знайдено",
                 "detail": {
-                    "uptoDate": "Software up to date ",
-                    "updatedOn": "updated on ",
-                    "outdated": "Software outdated ",
-                    "neverRanUpdate": "never ran update"
+                    "uptoDate": "Програмне забезпечення не потребує оновлень",
+                    "updatedOn": "оновлено",
+                    "outdated": "Програмне забезпечення потребує оновлення",
+                    "neverRanUpdate": "оновлення ніколи не запускалося"
                 }
             },
-            "extendedWarranty": "Extend warranty",
+            "extendedWarranty": "Подовжити гарантію",
             "processor": {
-                "title": "Processor",
-                "notFound": "Processor not found"
+                "title": "Процесор",
+                "notFound": "Процесор не знайдено"
             },
             "memory": {
-                "title": "Memory",
-                "notFound": "Memory not found",
-                "ram": "RAM"
+                "title": "Пам’ять",
+                "notFound": "Пам’ять не знайдено",
+                "ram": "ОЗП"
             },
             "diskspace": {
-                "title": "Disk Space",
-                "notFound": "Disk not found"
+                "title": "Дисковий простір",
+                "notFound": "Диск не знайдено"
             },
-            "software": "Software up to date",
-            "updated": "Updated",
-            "outOfWarranty": "Out of warranty",
-            "expired": "Expired on",
-            "of": "of",
+            "software": "Програмне забезпечення не потребує оновлень",
+            "updated": "Оновлено",
+            "outOfWarranty": "Не на гарантії",
+            "expired": "Закінчилась",
+            "of": "з",
             "warranty": {
-                "notFound": "Warranty not found",
+                "notFound": "Гарантію не знайдено",
                 "detail": {
-                    "title": "Extend warranty",
-                    "inWarranty": "In warranty ",
-                    "daysRemaining": "days remaining",
-                    "outOfWarranty": "Out of warranty ",
-                    "expiredOn": "Expired on",
-                    "notAvailable": "Warranty not available",
-                    "support": "Support"
+                    "title": "Подовжити гарантію",
+                    "inWarranty": "На гарантії",
+                    "daysRemaining": "дн. залишилося",
+                    "outOfWarranty": "Не на гарантії",
+                    "expiredOn": "Закінчилась",
+                    "notAvailable": "Гарантія недоступна",
+                    "support": "підтримка"
                 }
             },
-            "helpful": "Helpful Content"
+            "helpful": "Корисний вміст"
         },
         "deviceSettings": {
-            "helpful": "Helpful Content",
+            "helpful": "Корисний вміст",
             "batteryGauge": {
-                "title": "BATTERY GAUGE",
-                "subtitle": "Battery",
-                "hours": "hours",
-                "hour": "hour",
-                "minutes": "minutes",
-                "minute": "minute",
-                "charge": "TIME TO FULLY CHARGE",
-                "button": "SEE BATTERY DETAILS",
+                "title": "ВОЛЬТМЕТР АКУМУЛЯТОРА",
+                "subtitle": "Стан акумулятора",
+                "hours": "години",
+                "hour": "година",
+                "minutes": "хв.",
+                "minute": "хвилина",
+                "charge": "ЧАС ДО ПОВНОЇ ЗАРЯДКИ",
+                "button": "ДИВ. ВІДОМОСТІ ПРО АКУМУЛЯТОР",
                 "details": {
-                    "title": "Battery Details",
-                    "primary": "Primary Battery",
-                    "secondary": "Secondary Battery",
-                    "tertiary": "Tertiary Battery",
-                    "status": "Status",
-                    "wattage": "Wattage",
-                    "barcode": "Bar-Code",
-                    "remainingPercent": "Remaining percentage",
-                    "temp": "Temperature",
-                    "frupn": "FRU part number",
-                    "remainingTime": "Remaining time",
-                    "chargeCompletionTime": "Charge completion time",
-                    "cycleCount": "Cycle count",
-                    "chemistry": "Device chemistry",
-                    "remainingCap": "Remaining capacity",
-                    "designCap": "Design capacity",
-                    "fullChargeCap": "Full charge capacity",
-                    "manufDt": "Manufacture date",
-                    "designVolt": "Design voltage",
-                    "volts": "Voltage",
-                    "firstUseDt": "First use date",
-                    "firmwareVer": "Firmware version",
+                    "title": "Відомості про акумулятор",
+                    "primary": "Основний акумулятор",
+                    "secondary": "Другий акумулятор",
+                    "tertiary": "Третій акумулятор",
+                    "status": "Статус",
+                    "wattage": "Потужність",
+                    "barcode": "Штрих-код",
+                    "remainingPercent": "Відсоток, що залишився",
+                    "temp": "Температура",
+                    "frupn": "Артикульний номер знімного компонента",
+                    "remainingTime": "Час, що залишився",
+                    "chargeCompletionTime": "Час завершення заряджання",
+                    "cycleCount": "Кількість циклів",
+                    "chemistry": "Хімічний склад пристрою",
+                    "remainingCap": "Ємність, що залишилась",
+                    "designCap": "Розрахована ємність",
+                    "fullChargeCap": "Повна ємність акумулятора",
+                    "manufDt": "Дата виробництва",
+                    "designVolt": "Розрахована напруга",
+                    "volts": "Напруга",
+                    "firstUseDt": "Дата першого використання",
+                    "firmwareVer": "Версія мікропрограми",
                     "chargeStatusString": {
-                        "error": "ERROR",
-                        "notinstalled": "Not installed",
-                        "noactivity": "No activity",
-                        "charging": "Charging",
-                        "discharging": "Discharging",
-                        "acdischarging": "Discharging (with ac)"
+                        "error": "ПОМИЛКА",
+                        "notinstalled": "Не інстальовано",
+                        "noactivity": "Бездіяльність",
+                        "charging": "Заряджання",
+                        "discharging": "Розряджання",
+                        "acdischarging": "Розряджання (підключено до джерела живлення)"
                     },
                     "deviceChemistry": {
                         "li-polymer": "Li-Polymer",
                         "li-ion": "Li-Ion",
                         "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion"
+                        "li_ion": "Li-Ion",
+                        "silver-zinc": "Silver-Zinc",
+                        "silver_zinc": "Silver-Zinc",
+                        "nicd": "NiCd",
+                        "nimh": "NiMH",
+                        "unknown": "Unknown"
                     },
                     "manufacturer": {
                         "title": "Manufacturer",
@@ -527,17 +654,17 @@
                 },
                 "condition": {
                     "Illegal": {
-                        "title": "This system may not support battery that",
-                        "description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
-                        "description1": "Attention:",
-                        "description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
+                        "description": "you cannot use the attached battery with this computer.",
+                        "description1": "Replace",
+                        "description2": "it with a battery of correct model."
                     },
                     "Good": {
-                        "title": "The battery is in good Condition"
+                        "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -551,536 +678,804 @@
                         "title": "The battery is not in a good Condition"
                     },
                     "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter"
-                    },
-                    "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter"
-                    },
-                    "ACAdapterNotSupported": {
-                        "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
                         "title": "AC adapter cannot provide enough power",
                         "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
+                    "NotSupportACAdapter": {
+                        "title": "AC adapter not supported.",
+                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
+                    },
                     "MissingDriver": {
-                        "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
+                        "title": "The Lenovo Power Manager driver",
                         "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
                     },
                     "StoreLimitation": {
                         "title": "The battery can only store",
                         "description1": "of",
                         "description2": "it's original full charge capacity"
+                    },
+                    "HighTemperature": {
+                        "title": "Discharging",
+                        "description": "has been stopped because the",
+                        "description1": "battery temperature is too high"
+                    },
+                    "TrickleCharge": {
+                        "description": "The battery was",
+                        "description1": "completely discharged",
+                        "description2": "and needs to be recharged. This might take ten hours or more."
+                    },
+                    "OverheatedBattery": {
+                        "description": "The battery is",
+                        "description1": "too hot.",
+                        "description2": "Remove it from the computer and cool it to room temperature."
+                    },
+                    "PermanentError": {
+                        "description": "The battery has",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
+                    },
+                    "HardwareAuthenticationError": {
+                        "description": "The battery installed is",
+                        "description1": "is not supported",
+                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
                     }
-                }
+                },
+                "updating": "Updating",
+                "thresholdNote": {
+                    "note1": "To extend the battery lifespan, you have set your ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and ",
+                    "note": "Note: "
+                },
+                "voltageError": "Battery voltage incorrect",
+                "batteryNotDetected": "No Battery Detected"
             },
             "power": {
-                "title": "Power",
-                "subtitle": "Power Settings",
-                "description": "This section enables you to dynamically adjust thermal performance and maximize the battery life. It also has other popular power-related features. You can check the default settings in this section and customize your system according to your needs.",
+                "title": "Живлення",
+                "subtitle": "Настройки живлення",
+                "description": "Цей розділ дає змогу динамічно регулювати теплові характеристики та збільшувати термін служби акумулятора.Він також містить інші популярні функції, пов'язані з енергоспоживанням. У цьому розділі ви можете перевірити параметри за замовчуванням і налаштувати систему відповідно до своїх потреб.",
                 "jumpto": {
-                    "title": "JUMP TO SETTINGS",
-                    "battery": "Battery",
-                    "power": "Power",
-                    "cooling": "Intelligent Cooling",
-                    "other": "Other"
+                    "title": "ПЕРЕЙТИ ДО НАСТРОЙОК",
+                    "battery": "Акумулятор",
+                    "power": "Живлення",
+                    "cooling": "Інтелектуальне охолодження",
+                    "other": "Інші"
                 },
                 "powerSmartSettings": {
-                    "title": "Power Smart Settings",
-                    "subtitle": "INTELLIGENT COOLING",
-                    "subtitle1": "Battery & Quiet",
-                    "description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
-                    "description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
-                    "readMore": "Read more.",
+                    "title": "Настройки інтелектуального живлення",
+                    "subtitle": "ІНТЕЛЕКТУАЛЬНЕ ОХОЛОДЖЕННЯ",
+                    "subtitle1": "Акумулятор і тиша",
+                    "description1": "Ця функція динамічно регулює настройки тепловиділення відповідно до ваших потреб.Якщо ввімкнути цю функцію, вона відрегулює настройки, щоб посилити охолодження пристрою або перевести його до тихого режиму під час автономної роботи чи бездіяльності. В іншому випадку вона оптимізує швидкодію, коли пристрій перебуває на стійкій поверхні. Якщо цю функцію вимкнуто, пріоритет охолодження можна задати вручну.",
+                    "description2": "Функція інтелектуального охолодження регулює швидкість вентилятора, максимальну температуру поверхні комп'ютера та швидкодію.Ця функція має наведені нижче режими, тепер доступні за допомогою повзунка швидкодії Windows.",
+                    "description3": "Функція інтелектуального охолодження автоматично оптимізує теплові характеристики з урахуванням потреб користувача.Функція інтелектуального охолодження коригує настройки швидкодії, щоб забезпечити охолодження поверхні ноутбука для зручної роботи з ним у руках. Якщо пристрій розташований на поверхні стола, ця функція оптимізує його характеристики.",
+                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
+                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "readMore": "Розгорніть.",
                     "gotoWindows": {
-                        "title": "Go to windows settings",
-                        "modalBodyText1": "Click on Windows battery icon on System tray to access Windows performance power slider"
+                        "title": "Перейти до настройок Windows",
+                        "modalBodyText1": "Клацніть піктограму акумулятора Windows на панелі завдань, щоб отримати доступ до повзунка швидкодії Windows"
                     },
                     "intelligentCooling": {
-                        "title": "Intelligent cooling",
+                        "title": "Інтелектуальне охолодження",
                         "description": "",
                         "tooltip": "",
-                        "optimize": "optimize system for",
-                        "apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
+                        "optimize": "оптимізація системи для",
+                        "apsHint": "Щоб увімкнути інтелектуальне охолодження, потрібно інсталювати та ввімкнути програму Lenovo Active Protection System.",
                         "options": {
-                            "quiteCool3": "Cool Mode",
-                            "performance3": "High Performance",
-                            "quiteCool4": "Quiet & Cool",
-                            "performance4": "Performance",
-                            "quiteCool5": "Quiet & Cool",
-                            "performance5": "Performance"
+                            "quiteCool3": "Режим охолодження",
+                            "performance3": "Висока продуктивність",
+                            "quiteCool4": "Холод і тиша",
+                            "performance4": "Потужність",
+                            "quiteCool5": "Холод і тиша",
+                            "performance5": "Потужність",
+                            "batterySaving": "Battery Saving",
+                            "performance13": "Performance",
+                            "quiteCool13": "Quiet & Cool",
+                            "performance14": "Extreme Performance",
+                            "quiteCool14": "Intelligent Cooling"
                         },
                         "readMore": {
-                            "mode1": "Quiet mode",
-                            "mode2": "Balanced mode",
-                            "mode3": "Performance mode",
-                            "line1": "Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "line2": "Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
-                            "line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "mode1": "Тихий режим",
+                            "mode2": "Збалансований режим",
+                            "mode3": "Режим продуктивності",
+                            "line1": "Повзунок у крайньому лівому положенні.Швидкість вентилятора та швидкодія нижчі, ніж в інших режимах. Комп'ютер менше нагрівається, працює тихіше, час роботи від акумулятора максимальний.",
+                            "line2": "Повзунок по центру.Швидкість вентилятора та швидкодія динамічно збалансовані для найкращої роботи.",
+                            "line3": "Повзунок у крайньому правому положенні. Швидкість вентилятора та припустима температура поверхні вищі, ніж в інших режимах. Комп'ютер має найвищу швидкодію.",
+                            "line4": "More info"
+                        },
+                        "selectedModeText": {
+                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
+                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
+                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                        },
+                        "intelligentCoolingModesModal": {
+                            "title": "Change intelligent cooling modes",
+                            "close": "close",
+                            "coolingModesList": {
+                                "list1": "Click on the windows battery-icon in the toolbar",
+                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                            }
                         }
                     },
                     "nonintelligentCooling": {
                         "options": {
-                            "intelligentCooling": "INTELLIGENT COOLING",
-                            "extremeCooling": "EXTREME PERFORMANCE",
-                            "battery&Quite": "BATTERY & QUIET"
+                            "intelligentCooling": "ІНТЕЛЕКТУАЛЬНЕ ОХОЛОДЖЕННЯ",
+                            "extremeCooling": "НАЙВИЩА ПРОДУКТИВНІСТЬ",
+                            "battery&Quite": "АКУМУЛЯТОР І ТИША"
                         }
-                    }
+                    },
+                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
                 },
                 "powerSettings": {
-                    "title": "Power Settings",
+                    "title": "Настройки живлення",
                     "alwaysUSB": {
-                        "title": "Always on USB",
-                        "description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
-                        "checkbox": "Enable USB charging from laptop battery when computer is off."
+                        "title": "USB з постійним живленням",
+                        "description": "Заряджайте USB-пристрої через роз’єм USB з постійним живленням комп'ютера, коли комп’ютер перебуває в режимі сну, гібернації або вимкнений.Смартфон або планшет можуть швидко зарядитися через роз'єм USB з жовтою або шовкографічною позначкою з наведеними нижче піктограмами.",
+                        "checkbox": "Увімкніть заряджання через USB від акумулятора ноутбука, коли комп'ютер вимкнено."
                     },
                     "easyResume": {
-                        "title": "Easy Resume",
-                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                        "title": "Швидке відновлення",
+                        "description": "Використання цієї функції зменшить час відновлення роботи, якщо ви часто відкриваєте та закриваєте кришку комп'ютера.",
+                        "tooltip": "Використання цієї функції зменшить час відновлення роботи, якщо ви часто відкриваєте і закриваєте кришку комп'ютера. Якщо функція ввімкнена, комп'ютер перейде в режим низького споживання електроенергії після закриття кришки і миттєво відновить звичний робочий стан у разі відкриття кришки протягом 15 хвилин після її закриття. Ця функція також дозволяє ноутбуку завершити активні задачі (наприклад, відправку електронного листа або завантаження файлу), перш ніж система призупинить роботу."
                     }
                 },
                 "otherSettings": {
-                    "title": "Other Settings",
+                    "title": "Інші настройки",
                     "vantageToolbar": {
-                        "title": "Lenovo Vantage Toolbar",
-                        "description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
+                        "title": "Панель інструментів Lenovo Vantage",
+                        "description": "Закріпіть панель інструментів Vantage на панелі завдань Windows, щоб легко отримувати додаткові відомості про акумулятор і доступ до швидких настройок."
                     }
                 },
                 "batterySettings": {
-                    "title": "Battery Settings",
+                    "title": "Настройки акумулятора",
                     "batteryThreshold": {
-                        "title": "Battery Charge Threshold",
-                        "description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
-                        "tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
-                        "note": "Note",
-                        "readMoreText": "Read more.",
-                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "title": "Граничне значення заряду акумулятора",
+                        "description": "Якщо зазвичай для живлення комп'ютера використовується підключений адаптер змінного струму й тільки інколи — акумулятор,можна збільшити термін експлуатації акумулятора, встановивши максимальне значення заряду менше 100 %. Якщо акумулятор, що використовується нерегулярно, заряджатиметься не до кінця, він зможе прослужити довше.",
+                        "tooltip": "Якщо заряд акумулятора перевищує вказане граничне значення для завершення заряджання, від'єднайте живлення, щоб акумулятор розрядився до цього граничного значення або сильніше.Залежно від стану акумулятора (старий або новий) точне значення, за якого починається чи закінчується заряджання, може коливатися в межах ±2 %. Якщо цю функцію ввімкнуто, рекомендується час від часу скидати показники вольтметра акумулятора, щоб відомості про стан акумулятора були точними.",
+                        "note": "Примітка",
+                        "readMoreText": "Розгорніть.",
+                        "noteInfo": " Граничне значення заряду акумулятора ще не активовано повністю. Відключіть комп'ютер від електромережі та дайте акумулятору розрядитися до граничного значення або сильніше.",
                         "settings": {
-                            "title1": "Threshold for Built in battery",
-                            "title2": "Threshold for Removable battery"
+                            "title1": "Граничне значення для вбудованого акумулятора",
+                            "title2": "Граничне значення для знімного акумулятора"
                         },
                         "popup": {
-                            "title": "Enable Battery Charge Threshold",
-                            "description1": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life.",
-                            "description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
-                            "enable": "ENABLE",
-                            "cancel": "CANCEL"
+                            "title": "Увімкнути граничне значення заряду акумулятора",
+                            "description1": "Якщо налаштувати граничне значення заряджання акумулятора, акумулятор він довше залишатиметься в хорошому стані.Проте через неповний заряд ваш пристрій працюватиме від акумулятора протягом меншого часу.",
+                            "description2": "Щоб повністю ввімкнути цю функцію, відключіть комп'ютер від електромережі тадайте акумулятору розрядитися до граничного значення або сильніше.",
+                            "enable": "УВІМКНУТИ",
+                            "cancel": "СКАСУВАТИ"
                         },
                         "options": {
-                            "start": "Start charging when below",
-                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-                            "stop": "Stop charging at"
+                            "start": "Розпочати заряджання, коли рівень заряду буде нижче",
+                            "checkboxText": "Установіть граничне значення для початку заряджання на 5 % нижче граничного значення для закінчення заряджання.",
+                            "stop": "Припинити заряджання, коли рівень заряду досягне"
                         }
                     },
                     "expressCharging": {
-                        "title": "Express Charging",
-                        "description": "Express Charge allows your battery to a full charge much faster than normal mode.",
-                        "tooltip": "Express Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
+                        "title": "Швидке заряджання",
+                        "description": "Функція швидкого заряджання дає змогу повністю заряджати акумулятор набагато швидше, ніж у звичайному режимі.",
+                        "tooltip": "Функція швидкого заряджання дає змогу заряджати акумулятора набагато швидше,але це може скоротити термін його служби."
                     },
                     "conservationMode": {
-                        "title": "Conservation Mode",
-                        "description": "This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
+                        "title": "Економний режим",
+                        "description": "Ця функція корисна для подовження терміну служби акумулятора за підключення. <br>Якщо цей режим увімкнуто, акумулятор заряджається лише на 55–60% від ємності, а термін його служби максимально збільшується. Однак це скоротить час використання комп'ютера після його відключення від джерела живлення змінного струму.",
                         "tooltip": {
-                            "line1": "This function is useful to extend the lifespan of your battery when plugged.",
-                            "line2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
-                            "line3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
+                            "line1": "Ця функція корисна для подовження терміну служби акумулятора за підключення.",
+                            "line2": "Якщо цей режим увімкнуто, акумулятор заряджається лише на 55–60% від ємності, а термін його служби максимально збільшується. Однак це скоротить час використання комп'ютера після його відключення від джерела живлення змінного струму.",
+                            "line3": "Примітка. Режим швидкого заряджання й економний режим не можуть бути ввімкнуті одночасно.Якщо ввімкнути один режим, інший буде автоматично вимкнено."
                         }
                     },
                     "airPlanePower": {
-                        "title": "Airplane Power Mode",
-                        "description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
+                        "title": "Режим живлення \"У літаку\"",
+                        "description": "Захистіть розетку живлення змінного струму в літаку, збалансувавши споживання електроенергії в системі.У режимі У літаку комп'ютер споживає менше електроенергії, обмежуючи швидкість заряду акумулятора та швидкодію системи."
+                    }
+                },
+                "energyStar": {
+                    "title": "Energy Star",
+                    "description": "ПРОДУКТ ІЗ СЕРТИФІКАТОМ ENERGY STAR"
+                },
+                "smartStandby": {
+                    "title": "Розумне очікування",
+                    "description": "Ця функція допомагає комп’ютеру заощаджувати заряд акумулятора в години простою та зберігати швидкість запуску для періодів інтенсивного використання.",
+                    "tooltip": "Коли розумне очікування ввімкнуто, комп’ютер переключається в сучасний режим очікування перед початком використання та входить у режим сну після певної тривалості простою, якщо він працює від акумулятора. Цей час оптимізується згідно з розкладом, який ви вказали. Комп’ютер переключається з режиму глибокого сну в сучасний режим очікування лише в заплановані дні та не переключається зовсім, якщо не користуватися ним кілька запланованих днів поспіль.",
+                    "timer": {
+                        "heading": "Укажіть час, коли ви зазвичай користуєтеся комп’ютером",
+                        "subHeading1": "Початок використання",
+                        "subHeading2": "Завершення використання",
+                        "subHeading3": "Використовувати цей розклад",
+                        "endTimeNote": "Час завершення має бути в межах 20 годин після часу початку",
+                        "timeUnits": {
+                            "unit1": "год.",
+                            "unit2": "Хвилини",
+                            "unit3": "ранку/вечора"
+                        }
                     }
                 }
             },
             "audio": {
-                "title": "Audio",
-                "subtitle": "Audio Settings",
-                "description": "This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.",
+                "title": "Звук",
+                "subtitle": "Настройки звуку",
+                "description": "Цей розділ дає змогу автоматично оптимізувати або повністюналаштувати звук вручну, наприклад настройки системи Dolby, роботу мікрофона тощо.",
                 "audioSmartsettings": {
-                    "title": "Audio Smart settings",
-                    "subtitle": "APPLICATION-BASED SETTINGS",
-                    "description": "Automatically adjust audio settings according to different apps you are using.",
+                    "title": "Інтелектуальні настройки звуку",
+                    "subtitle": "НАСТРОЙКИ, ЗАЛЕЖНІ ВІД ПРОГРАМ",
+                    "description": "Налаштуйте автоматичне встановлення параметрів звуку відповідно до використовуваних програм.",
                     "dolby": {
-                        "title": "Automatic Dolby Audio settings",
-                        "tooltip": "Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
+                        "title": "Автоматичні настройки Dolby Audio",
+                        "tooltip": "Автоматичні настройки Dolby Audio дають змогу налаштувати аудіосистему Dolby навідповідний режим для різних використовуваних програм, щоб покращити рівень звуку.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "ДИНАМІЧНИЙ",
+                            "movie": "КІНО",
+                            "music": "МУЗИКА",
+                            "games": "ГРА",
+                            "voip": "ГОЛОС"
                         }
                     },
                     "voip": {
-                        "title": "Automatic Audio Optimization for VoIP",
-                        "tooltip": "Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality."
+                        "title": "Автоматична оптимізація звуку для VoIP",
+                        "tooltip": "Автоматично перемикайтеся до режиму Dolby Voice під час VoIP-дзвінків, щоб забезпечити чітке йузгоджене звучання."
                     }
                 },
                 "microphone": {
-                    "title": "Microphone",
+                    "title": "Мікрофон",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permission to access your microphone. Please turn on access to your microphone for the Lenovo Vantage app."
+                        "title": "примітка",
+                        "description": "У програми Lenovo Vantage немає дозволу на доступ до мікрофона.Надайте Lenovo Vantage дозвіл на доступ до мікрофона."
                     },
                     "microphone": {
-                        "title": "Microphone",
-                        "tooltip": "You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode."
+                        "title": "Мікрофон",
+                        "tooltip": "Ефект MIC можна налаштувати: відрегулюйте гучність мікрофоната вкажіть відповідний режим."
                     },
                     "volume": {
-                        "title": "Microphone Volume",
-                        "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
+                        "title": "Гучність мікрофона",
+                        "description": "Dolby Audio забезпечує насичене, чітке та потужне відтворення звуку будь-яких файлів. Виберіть відповідний режим для вашого вмісту та обладнання.",
                         "options": {
-                            "silent": "Silent",
-                            "loud": "Loud"
+                            "silent": "Беззвучний режим",
+                            "loud": "Голосно"
                         }
                     },
                     "suppress": {
-                        "title": "Suppress keyboard noise",
-                        "tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+                        "title": "Знизити шум клавіатури",
+                        "tooltip": "Увімкніть цю опцію, щоб оптимізувати аудіосигнал MIC, приглушуючи шум клавіатури."
                     },
                     "acoustic": {
-                        "title": "Acoustic Echo Cancellation",
-                        "tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+                        "title": "Придушення акустичного відлуння",
+                        "tooltip": "Увімкніть цю опцію, щоб оптимізувати аудіосигнал MIC, зменшуючи акустичне відлуння."
                     },
                     "optimize": {
-                        "title": "Optimize my microphone for:",
-                        "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+                        "title": "Оптимізувати мікрофон для:",
+                        "tooltip": "Налаштуйте ефект мікрофона, який покращуватиме звук у певних середовищах за допомогою різних сценаріїв.",
                         "options": {
-                            "VoiceRecognition": "VOICE RECOGNITION",
-                            "OnlyMyVoice": "ONLY MY VOICE",
-                            "Normal": "NORMAL",
-                            "MultipleVoices": "MULTIPLE VOICES"
+                            "VoiceRecognition": "РОЗПІЗНАВАННЯ ГОЛОСУ",
+                            "OnlyMyVoice": "ЛИШЕ МІЙ ГОЛОС",
+                            "Normal": "ЗВИЧАЙНИЙ",
+                            "MultipleVoices": "КІЛЬКА ГОЛОСІВ"
                         }
                     }
                 }
             },
             "displayCamera": {
-                "title": "Display & Camera",
-                "subtitle": "Display & Camera Settings",
-                "description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
+                "title": "Дисплей і камера",
+                "subtitle": "Настройки дисплею й камери",
+                "description": "Цей розділ дає змогу покращити візуальні враження й налаштувати властивості камери. Ознайомтеся з додатковими функціями та налаштуйте потрібне відображення.",
                 "jumpTo": {
-                    "title": "JUMP TO SETTINGS",
+                    "title": "ПЕРЕЙТИ ДО НАСТРОЙОК",
                     "shortcuts": {
                         "display": {
-                            "title": "Display"
+                            "title": "Дисплей"
                         },
                         "camera": {
-                            "title": "Camera"
+                            "title": "Камера"
                         }
                     }
                 },
                 "display": {
-                    "title": "Display",
+                    "title": "Дисплей",
                     "eyeCareMode": {
-                        "title": "Eye Care Mode",
-                        "checkbox": "Schedule eye care mode from sunset to sunrise",
+                        "title": "Режим захисту зору",
+                        "checkbox": "Заплануйте режим захисту зору від заходу до сходу сонця",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Тепла (краще для очей)",
+                            "cold": "Холодна"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Скинути значення температури",
+                        "tooltip": "Режим захисту зору регулює колірну температуру екрана, зменшуючи рівень синього світла. Таким чином він знижує втому очей.",
+                        "onSunsetToSunriseScheduleDescription": "Заплануйте режим захисту зору від заходу до сходу сонця",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "Примітка",
+                            "description": "Lenovo Vantage потребує інформацію про ваше місцезнаходження, щоб розрахувати час заходу та сходу сонця у вашому регіоні."
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Display color temperature",
+                        "title": "Температура кольору екрана",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Тепла (краще для очей)",
+                            "cold": "Холодна"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Скинути значення температури",
+                        "tooltip": "Режим захисту зору регулює колірну температуру екрана, зменшуючи рівень синього світла. Таким чином він знижує втому очей.",
+                        "onSunsetToSunriseScheduleDescription": "Заплануйте режим захисту зору від заходу до сходу сонця",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "Примітка",
+                            "description": "Lenovo Vantage потребує інформацію про ваше місцезнаходження, щоб розрахувати час заходу та сходу сонця у вашому регіоні."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Privacy guard",
-                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-                        "labelText": "Enable this feature when typing passwords"
+                        "title": "Захисник конфіденційності",
+                        "description": "Ця функція завадить оточуючим підглядати за вашим екраном. Після ввімкнення вона змінює кут огляду екрана, щоб оточуючим не було нічого видно. Її можна вмикати й вимикати сполученням клавіш \"Fn+D\".",
+                        "note": "Захисник конфіденційності не працює в книжковій орієнтації екрана. У цьому режимі екран залишається видимим із боків.",
+                        "labelText": "Вмикайте цю функцію під час введення паролів"
                     },
                     "oledPowerSettings": {
-                        "title": "OLED Power Settings",
+                        "title": "Настройки живлення ОСД-екрана",
                         "description": [
-                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                            "Можна також зменшити рівень споживання електроенергії ОСД-екраном і подовжити час роботи від акумулятора шляхом затінення окремих областей екрана.",
+                            "Щоб подовжити термін експлуатації екрана, рекомендується також затінювати панель завдань та інші області екрана, які не часто змінюються."
                         ],
-                        "reset": "Reset temperature",
-                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+                        "reset": "Скинути значення температури",
+                        "tooltip": "Ця функція може зменшувати рівень споживання електроенергії та подовжити час роботи від акумулятора шляхом затінення окремих областей екрана.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
-                    "title": "Camera",
+                    "title": "Камера",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permissions to access your camera. Please turn on access to your camera for the Lenovo Vantage app."
+                        "title": "Примітка",
+                        "description": "У програми Lenovo Vantage немає дозволу на доступ до камери. Надайте Lenovo Vantage дозвіл на доступ до камери."
                     },
-                    "url": "Go to windows privacy settings",
+                    "url": "Перейти до настройок конфіденційності Windows",
                     "cameraPrivacy": {
-                        "title": "Camera privacy mode",
-                        "tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling."
+                        "title": "Режим конфіденційності камери",
+                        "tooltip": "Якщо ввімкнено режим конфіденційності, камера припиняє трансляцію відеозображення. Вмикайте цей параметр, лише якщо не бажаєте, щоб співрозмовники отримували зображення під час відеовикликів."
                     },
                     "camera": {
-                        "title": "Camera",
-                        "tooltip": "Click here to reset Camera properties to default settings.",
-                        "reset": "Reset factory settings"
+                        "title": "Камера",
+                        "tooltip": "Натисніть тут, щоб скинути властивості камери до стандартних настройок.",
+                        "reset": "Скинути до заводських налаштувань"
                     },
-                    "brightness": "Brightness",
-                    "contrast": "Contrast",
-                    "autoExposure": "Auto Exposure",
-                    "autoFocus": "Auto focus",
-                    "notAvailable": "Camera Not Available",
+                    "brightness": "Яскравість",
+                    "contrast": "Контраст",
+                    "autoExposure": "Автоекспозиція",
+                    "autoFocus": "Автофокусування",
+                    "notAvailable": "Камера недоступна",
                     "camerablur": {
-                        "title": "Camera Background Blur",
-                        "caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections.",
-                        "blurMode": "Blur mode",
-                        "comicMode": "Comic mode",
-                        "sketchMode": "Sketch mode"
+                        "title": "Розмиття фону під час зйомки",
+                        "caption": "Ця функція розмиває фон під час будь-яких відеовикликів або зйомки фотографій. Доступні такі ефекти:",
+                        "blurMode": "Режим \"Розмиття\"",
+                        "comicMode": "Режим \"Комічний\"",
+                        "sketchMode": "Режим \"Ескіз\""
+                    },
+                    "cameraLoadingFailed": {
+                        "inUseTitle": "CAMERA IS IN USE",
+                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
+                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
+                        "loadingFailedDescription": "Close the app and try again."
+                    }
+                }
+            },
+            "inputAccessories": {
+                "title": "Введення й аксесуари",
+                "subtitle": "Настройки введення й аксесуарів",
+                "description": "Функція \"Інтелектуальне зчитування\" Lenovo використовує різноманітні датчики комп'ютера, за допомогою яких реєструється активність користувача та змінюються настройки для оптимального керування живленням",
+                "inputAccessory": {
+                    "title": "Інтелектуальна клавіатура",
+                    "hiddenKeyboardFunctions": {
+                        "title": "Приховані функції клавіатури",
+                        "description": "Команди, показані на схемі клавіатури нижче, можна виконувати, натискаючи клавішу Fn у лівому нижньому куті клавіатури одночасно з відповідною клавішею."
+                    },
+                    "firstKeyObj": {
+                        "tittle": "Fn + Tab",
+                        "description": "Увімкнення функції масштабування на екранах із високою роздільною здатністю",
+                        "image": ""
+                    },
+                    "secondKeyObj": {
+                        "tittle": "Fn + 4",
+                        "description": "Перехід у режим сну",
+                        "image": ""
+                    },
+                    "thirdKeyObj": {
+                        "tittle": "Fn + D",
+                        "description": "Увімкнення або вимкнення режиму захисту особистих даних",
+                        "image": ""
+                    },
+                    "fourthKeyObj": {
+                        "tittle": "Fn + Q",
+                        "description": "Перехід із режиму продуктивності в тихий режим або навпаки",
+                        "image": ""
+                    },
+                    "fifthKeyObj": {
+                        "tittle": "Fn + пробіл",
+                        "description": "зміна стану підсвічування клавіатури",
+                        "image": ""
+                    }
+                },
+                "userDefinedKey": {
+                    "title": "Клавіша, яка визначається користувачем",
+                    "caption": "За допомогою клавіші, позначеної зірочкою, користувач може призначити функцію",
+                    "dropDown": {
+                        "title": "Дія клавіші, яка визначається користувачем",
+                        "note": "Примітка. Застосовується для введення ключів, наприклад адрес електронної або звичайної пошти. Компанія Lenovo не рекомендує використовувати цю функцію для зберігання та введення паролів або іншої конфіденційної інформації.",
+                        "options": {
+                            "option1": "Виберіть",
+                            "option2": "Відкрити веб-сайт",
+                            "option3": "Введіть текст"
+                        }
+                    },
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
                     }
                 }
             }
         },
         "smartAssist": {
-            "title": "Smart Assist",
-            "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+            "title": "Розумний помічник",
+            "description": "Функція \"Інтелектуальне зчитування\" Lenovo використовує різноманітні датчики комп'ютера, щоб розпізнавати вашу активність, налаштовувати оптимальне керування живленням і захищати конфіденційність.",
             "jumpTo": {
-                "title": "JUMP TO SETTINGS",
-                "security": "Security",
-                "screen": "Screen",
-                "media": "Media",
-                "voice": "Voice"
+                "title": "ПЕРЕЙТИ ДО НАСТРОЙОК",
+                "security": "Безпека",
+                "screen": "Екран",
+                "media": "Мультимедіа",
+                "voice": "Голос",
+                "APS": "APS"
             },
             "intelligentSecurity": {
-                "title": "Intelligent Security",
-                "readMore": "Read more",
+                "title": "Інтелектуальний захист",
+                "readMore": "Розгорнути",
                 "HumanPresenceDetection": {
-                    "title": "Human presence detection",
-                    "tooltip": "Click here to reset the human presence detection settings."
+                    "title": "Перевірка присутності користувача",
+                    "tooltip": "Натисніть тут, щоб скинути настройки перевірки присутності користувача."
                 },
                 "humanPresenceDetection": {
-                    "title": "User Presence Sensing",
-                    "tooltip": "Click here to reset human presence Detection settings."
+                    "title": "Виявлення присутності користувача",
+                    "tooltip": "Натисніть тут, щоб скинути настройки перевірки присутності користувача."
                 },
                 "zeroTouchLogin": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
+                    "title": "Автоматичний вхід",
+                    "caption": "Ця функція автоматично розблоковує комп'ютер або виводить його з режиму сну, коли ви сідаєте перед ним або підходите до нього."
                 },
                 "zeroTouchLock": {
-                    "title": "Zero Touch Lock",
-                    "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+                    "title": "Автоматичне блокування",
+                    "caption": "Ця функція вимикає екран і блокує комп'ютер, коли виявляє відсутність користувача. Вона зменшує шанси на несанкціонований доступ до комп'ютера, коли ви залишаєте його незаблокованим без нагляду. Вона також зменшує енергоспоживання, переводячи систему в сучасний режим очікування, коли ви не за комп'ютером.",
                     "autoScreenLockTimer": {
-                        "title": "AUTO SCREEN LOCK TIMER",
+                        "title": "АВТОМАТИЧНИЙ ТАЙМЕР БЛОКУВАННЯ ЕКРАНА",
                         "radioButton": {
-                            "fast": "Fast",
-                            "medium": "Medium",
-                            "slow": "Slow"
+                            "fast": "Швидкий",
+                            "medium": "Середній",
+                            "slow": "Повільний"
                         },
-                        "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+                        "toolTipContent": "Виберіть потрібний параметр, щоб заблокувати свій екран (швидко, помірно або повільно), коли вашу присутність не виявлено. Але на час блокування екрана також впливають фактичний сценарій користувача, можливості датчиків і настройки часу очікування екрана Windows. Тож ми наполегливо радимо негайно блокувати екран, перш ніж перервати роботу."
                     }
                 },
                 "distanceSensitivityAdjusting": {
-                    "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+                    "title": "РЕГУЛЮВАННЯ ЧУТЛИВОСТІ НА РІЗНИХ ВІДСТАНЯХ",
+                    "caption": "Автоматичне регулювання відстані буде автоматично оновлювати відстань розпізнавання за допомогою штучного інтелекту.",
                     "options": {
-                        "near": "Near",
-                        "far": "Far"
+                        "near": "Поблизу",
+                        "far": "Далеко"
                     }
                 },
                 "note": {
-                    "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-                    "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
-                    "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-                    "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
-                    "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+                    "description1": "Ця функція працює за допомогою Windows Hello. Переконайтеся, що ввімкнули розпізнавання облич у настройках Windows.",
+                    "description2": "Ця функція виявляє вашу присутність за допомогою датчиків і камери. Однак ця функція НЕ збирає жодних персональних даних.",
+                    "description3": "1. Якщо комп'ютер знаходиться в режимі \"Намет\", \"Планшет\" або \"Стенд\", ці функції можуть не працювати належним чином.",
+                    "description4": "2. Якщо комп'ютер вимкнуто або переведено в режим глибокого сну. Автоматичний вхід за допомогою ІЧ-камери не працюватиме.",
+                    "description5": "3. Розташуйте екран комп'ютера під таким кутом, щоб інфрачервона камера могла розпізнати ваше обличчя для автоматичного входу."
                 },
                 "WindowsLink": {
-                    "goToWindowsHello": "Go to Windows Hello Settings",
-                    "screenTimeoutSettings": "Go to Screen timeout settings"
+                    "goToWindowsHello": "Перейти до настройок Windows Hello",
+                    "screenTimeoutSettings": "Перейти до настройок часу очікування екрана"
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+                "resetToDefault": "СКИДАННЯ ДО НАСТРОЙОК ЗА ЗАМОВЧУВАННЯМ"
             },
             "intelligentScreen": {
-                "title": "Intelligent Screen",
-                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "title": "Інтелектуальний екран",
+                "description": "Функція \"Інтелектуальне зчитування\" Lenovo використовує різноманітні датчики комп'ютера, за допомогою яких реєструється активність користувача та змінюються настройки керування живленням. Наприклад, система затінить дисплей, якщо зареєструє рух пішки, і не буде затіняти його, якщо визначить, що користувач читає.",
                 "autoScreenOff": {
-                    "title": "Auto screen off",
-                    "caption": "Automatically turn off display when face-down or walking.",
-                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    "title": "Автоматичне вимкнення екрана",
+                    "caption": "Автоматично вимикати дисплей під час руху пішки або якщо він лежить лицьовою стороною донизу.",
+                    "note": "Ця функція недоступна, якщо в розділі настройок Windows, який називається \"Система\", план живлення налаштовано так, що екран ніколи не вимикається (вибрано значення \"Ніколи\"). Виберіть інше значення, щоб увімкнути цю функцію.",
+                    "windowsLink": "Перейти до настройок керування живленням і режимом сну в настройках Windows"
                 },
                 "keepMyDisplay": {
-                    "title": "Keep my display",
-                    "caption": "Keep my display when I am reading or browsing.",
+                    "title": "Не вимикати дисплей",
+                    "caption": "Не вимикати дисплей під час читання або перегляду веб-сторінок.",
                     "displaySlider": {
-                        "title": "Minutes Before display dims when browsing",
-                        "startTime": "0 minutes",
-                        "endTime": "60 minutes"
+                        "title": "До затінення дисплея під час перегляду веб-сторінок, хв",
+                        "startTime": "0 хвилин",
+                        "endTime": "60 хвилин"
+                    }
+                }
+            },
+            "activeProtectionSystem": {
+                "title": "Active Protection System",
+                "description": "Lenovo Active Protection System — це автономна функція, що допомагає захистити жорсткий диск від ушкоджень, спричинених сильними механічними коливаннями та вібрацією. Вона безперервно відстежує переміщення комп'ютера та призупиняє роботу жорсткого диска, якщо виникає ризик падіння або аналогічного пошкодження.",
+                "activeProtection": {
+                    "title": "Active Protection",
+                    "caption": "Змініть чутливість. У режимі низької чутливості захист активуватимуть лише сильні струси",
+                    "checkbox": "Ігнорувати повторювані струси, як-от під час руху потяга або автомобіля"
+                },
+                "manualActiveProtectionSuspension": {
+                    "title": "Ручне призупинення Active Protection",
+                    "caption": "Дозволити мені вручну призупиняти Active Protection System",
+                    "dropdown-title": "Призупинити на",
+                    "button": "Призупинити зараз"
+                },
+                "advanced": {
+                    "description": "Щоб покращити доступ до жорсткого диска під час використання планшета, призупиняйте Active Protection System, якщо виявлено такі дії:",
+                    "pen": {
+                        "title": "ввод за допомогою пера",
+                        "description": "У разі використання пера включати APS, коли дані не вводяться"
+                    },
+                    "touch": {
+                        "title": "Сенсорний ввод",
+                        "description": "У разі використання сенсорного вводу включати APS, коли дані не вводяться"
+                    },
+                    "hand": {
+                        "title": "Розпізнавання близкості рук по краям комп'ютера",
+                        "description": "У разі роботи в режимі планшета включати APS, коли не виявлено дотик"
                     }
                 }
             },
             "intelligentMedia": {
-                "heading": "Intelligent Media",
-                "title": "Zero Touch Video Playback",
-                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                "heading": "Інтелектуальне відтворення мультимедіа",
+                "title": "Автоматичне відтворення відео",
+                "desc": "Ця функція призупинятиме відео, коли ви відходите від комп'ютера, та відновлятиме відтворення, коли ви повертаєтесь.",
+                "tooltip": "Ця функція не застосовується до програвачів онлайн-відео. Популярніші місцеві відеоплеєри (як-от Windows Media Player, 5KPlayer тощо) підтримують цю функцію."
+            },
+            "voice": {
+                "title": "Голос",
+                "description": "Lenovo Voice перетворює ваш голос у текст за допомогою функції \"Голос у текст\" і забезпечує письмовий переклад введених голосом даних у режимі реального часу за допомогою функції перекладу.",
+                "installBtnText": "Встановити",
+                "launchBtnText": "Запустити",
+                "voiceToText": {
+                    "title": "Голос у текст",
+                    "caption": "Ця функція допомагає конвертувати дані з голосового вводу в текст."
+                },
+                "translation": {
+                    "title": "Переклад",
+                    "caption": "Ця функція забезпечує переклад введених голосом даних у режимі реального часу. Переклад відображається у текстовому форматі. Вихідну мову та мову перекладу можна налаштовувати."
+                },
+                "modalPopUp": {
+                    "heading": "Почніть роботу:",
+                    "point1": "Переконайтеся, що в системному треї Windows відображається піктограма Lenovo Voice.",
+                    "point2": "Відкрийте файл, у який слід записати перетворений текст.",
+                    "point3": "Клацніть піктограму Lenovo Voice у системному треї Windows і виберіть \"Голос у текст\".",
+                    "point4": "Виберіть мову та натисніть піктограму мікрофона, щоб почати.",
+                    "point5": "Поставте курсор туди, де слід почати редагування, і почніть говорити.",
+                    "point6": "Клацніть піктограму Lenovo Voice у системному треї Windows і виберіть \"Переклад\".",
+                    "point7": "Виберіть потрібну вихідну мову та мову перекладу.",
+                    "point8": "Залежно від потреб налаштуйте голосове введення з динаміка або з мікрофона.",
+                    "point9": "Натисніть піктограму мікрофона, щоб почати говорити",
+                    "closeText": "Закрити"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "ok",
+                    "title": "Install Failed",
+                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "Оновлення системи",
+        "back": "НАЗАД",
+        "history": "ПОВНА ІСТОРІЯ",
+        "notAvailable": "Недоступно",
+        "notInstalled": "Не інстальовано",
+        "criticalUpdates": "Важливі оновлення",
+        "recommendedUpdates": "Рекомендовані оновлення",
+        "optionalUpdates": "Необов'язкові оновлення",
+        "ignoredUpdates": "Пропущені оновлення",
+        "successInstall": "Успішно інстальовано: ",
+        "failedInstall": "Не вдалось інсталювати: ",
+        "at": "в",
+        "readMore": "Розгорнути",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+            "reboot": "Перезавантажити",
+            "shutdown": "Завершити роботу",
+            "rebootForceMsg": "Якщо інсталювати вибрані оновлення,це автоматично перезавантажить систему або завершить її роботу.",
+            "shutdownForceMsg": "Якщо інсталювати вибрані оновлення,це автоматично завершить роботу системи.",
+            "rebootDelayedMsg": "Після інсталяції вибраних оновлень система перезавантажиться.Під час інсталяції оновлень не вимикайте систему та не від’єднуйте джерело живлення або аксесуари. Радимо зберегти файли, перш ніж система перезавантажиться.",
+            "rebootRequiredMsg": "Щоб успішно інсталювати оновлення, слід перезавантажити комп'ютер.Це гарантує безпечну та плавну роботу всіх систем.",
             "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "cancelButton": "Скасувати",
+            "rebootButton": "ПЕРЕЗАВАНТАЖИТИ ЗАРАЗ",
+            "dismissButton": "ВІДХИЛИТИ",
+            "rebootPending": "Очікується перезавантаження"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Настройки автоматичного оновлення",
+            "subtitle": "АВТОМАТИЧНО ІНСТАЛЮВАТИ ОНОВЛЕННЯ",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Важливі оновлення",
+                "tooltip": "Важливі оновлення запобігають серйозним проблемам, суттєвим порушенням у роботі системи, неполадкам устаткування та пошкодженню даних."
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "Рекомендовані оновлення",
+                "tooltip": "Рекомендовані оновлення драйверів підтримують роботу комп'ютера з оптимальною продуктивністю."
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Оновлення Windows",
+                "url": "Настройки Windows"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Веб-сайт служби підтримки Lenovo"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "Запрошуємо скористатися функцією System Update.",
+            "title": "Оновлена система — це справна система.",
+            "last": "Останнє оновлення: ",
+            "next": "Наступне планове оновлення: ",
+            "checkButton": "ПЕРЕВІРИТИ НАЯВНІСТЬ ОНОВЛЕНЬ",
+            "checking": "Перевірка наявності оновлень",
+            "downloading": "Оновлення завантажено",
+            "installing": "Інсталяція оновлень",
+            "percent": "% завершено",
+            "cancelCheck": "Скасувати перевірку",
+            "cancelUpdates": "СКАСУВАТИ ОНОВЛЕННЯ",
+            "available": "Доступні оновлення",
+            "description": "Ці пакети містять важливі оновлення для драйверів обладнаннята інших системних утиліт, які забезпечують правильну роботу комп'ютера. Важливі оновлення також впливають на захист даних на комп'ютері. Їх потрібно інсталювати, щойно вони стають доступними. Якщо не інсталювати вказані пакети, це може призвести до втрати даних, порушень у роботі системи або відмови устаткування.",
+            "installButton": "ІНСТАЛЮВАТИ ВСІ ОНОВЛЕННЯ",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Усі оновлення інстальовано правильно",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Певні оновлення інстальовано неправильно.",
+                    "description": "Під час завантаження або інсталяції цих оновлень сталася помилка.Перевірте підключення до Інтернету та не вимикайте комп'ютер під час інсталяції оновлень."
                 }
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend",
-            "rebootRequiredTag": "Reboot Required",
-            "rebootDelayTag": "Reboot Required, Power Source Required",
-            "shutdownRequiredTag": "Shutdown Required",
-            "dependedPackage": "Depended Package"
+            "rebootRequired": "Необхідне перезавантаження",
+            "failReason": "Причина помилки: адаптер живлення змінного струму відключений від комп'ютера. ",
+            "manufacturer": "Виробник: ",
+            "version": "Версія: ",
+            "installVersion": "Інстальована версія: ",
+            "downloadSize": "Розмір завантаження: ",
+            "diskSpaceNeeded": "Необхідний дисковий простір: ",
+            "ignore": "Ігнорувати",
+            "attend": "Відвідати",
+            "rebootRequiredTag": "Необхідне перезавантаження",
+            "rebootDelayTag": "Потрібне перезавантаження, підключіть систему до джерела живлення",
+            "shutdownRequiredTag": "Потрібне вимкнення",
+            "dependedPackage": "Пакет залежності"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "Доступні оновлення",
+            "description": "Ці пакети містять оновлення, важливі для правильної роботи комп'ютера. Важливі оновлення дають змогу краще захистити ваш комп'ютер. їх слід інсталювати, щойно вони стануть доступними. Рекомендовані й необов'язкові оновлення дають змогу підтримувати актуальність ПЗ, а комп'ютер працює в оптимальному режимі.",
+            "installAllUpdates": "Інсталювати всі оновлення",
+            "installSuccessHeader": "Усі оновлення інстальовано правильно",
+            "installFailHeader": "Певні оновлення інстальовано неправильно",
+            "installFailDescription": "Під час завантаження й інсталяції цих оновлень сталася помилка. Перевірте підключення до Інтернету та не вимикайте комп'ютер під час інсталяції оновлень.",
+            "optionalUpdates": "Необов'язкові оновлення",
+            "installSelectedUpdates": "Інсталювати вибрані оновлення"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "Назва",
+            "sortByDate": "Сортувати за датою",
+            "packageSize": "Розмір пакета:",
+            "releaseDate": "Дата випуску:",
+            "showAll": "Показати все",
+            "noInstallationHistory": "Немає доступної історії інсталяції"
+        },
+        "statusCodeMessage": {
+            "commonFailure": "Виникли неполадки з отриманням нових оновлень. Спробуйте пізніше.",
+            "upToDate": "Немає доступних оновлень. Ваша система не потребує оновлення.",
+            "egatherException": "Під час збирання інформації про користувача сталася помилка.",
+            "gatheringUserInfoException": "Під час збирання інформації про користувача сталася помилка.",
+            "certificateValidationException": "Сервер оновлення вмісту неприпустимий. Спробуйте пізніше.",
+            "downloadException": "Під час завантаження оновлень сталася помилка.",
+            "connectException": "Не вдається підключитися до сервера оновлення вмісту.",
+            "notEnoughDiskSpace": "Недостатньо місця на диску для виконання поточного завдання.",
+            "proxyAuthenticationException": "Неправильне ім'я користувача або пароль проксі-сервера.",
+            "proxyConnectionException": "Не вдається підключитися до проксі-сервера.",
+            "autoScriptEvaluationException": "Під час оцінювання сценарію автоналаштування сталася помилка.",
+            "localRepositoryConnectionFailureException": "Не вдається підключитися до локального сховища.",
+            "localRepositoryDatabaseException": "Базу даних локального сховища не знайдено або пошкоджено.",
+            "networkInterruptedException": "Сервер оновлення системи наразі недоступний. Спробуйте пізніше.",
+            "helpCenterInvalidServerException": "Сервер оновлення системи неприпустимий. Спробуйте пізніше.",
+            "catalogNotFoundException": "Оновлень для вашої системи не знайдено.",
+            "catalogCrcErrorException": "Триває оновлення каталогу для вашої системи. Спробуйте пізніше.",
+            "catalogErrorException": "Під час оновлення цього каталогу для вашої системи на сервері оновлення системи було виявлено помилку. Спробуйте пізніше.",
+            "fileNotFoundException": "Файл не знайдено."
         }
     },
     "homeSecurity": {
-        "title": "Connected Home Security",
-        "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Ecosystem Security Overview",
-        "thisDevice": "This device",
-        "allDevices": "All Devices",
-        "protected": "Protected",
-        "notProtected": "Not Protected",
-        "myDevice": "My Device",
-        "allDevice": "All Devices",
-        "secure": "SECURE",
-        "needAttention": "NEEDS ATTENTION",
-        "manageAccount": "Manage Account",
-        "devices": "Devices",
-        "seeProtectedDevices": "See protected devices",
-        "addDevice": "add device",
-        "trailExpired": "Trail expired",
-        "trailExpiredSubtext": "Upgrate to protect all of your devices",
-        "upgrade": "upgrade",
+        "title": "Безпека підключеного дому",
+        "notification": {
+            "recent": "Останні сповіщення про безпеку",
+            "notifications": "Сповіщення"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Захистіть свою екосистему",
+            "thisDevice": "Цей пристрій",
+            "allDevices": "Усі пристрої",
+            "protected": "Захищено",
+            "notProtected": "Не захищено",
+            "trialExpired": "Термін дії пробної версії закінчився",
+            "upgrade": "передплатити",
+            "inEcosystem": "В екосистемі",
+            "ecosystemEnable": "Екосистему ввімкнуто",
+            "inTrial": "На ознайомленні",
+            "addEcosystem": "Додати до екосистеми",
+            "enableEcosystem": "Увімкнути екосистему",
+            "startTrial": "Почати ознайомлення",
+            "fullAccess": "Повний доступ",
+            "renew": "Подовжити"
+        },
+        "overview": {
+            "overviewBlockTitle": "Огляд безпеки вашої екосистеми",
+            "allDevices": "Усі пристрої",
+            "myDevice": "Мій пристрій",
+            "thisComputer": "This computer",
+            "secure": "У БЕЗПЕЦІ",
+            "needAttention": "ПОТРЕБУЄ УВАГИ",
+            "manageAccount": "Керування обліковим записом",
+            "devices": "Пристрої",
+            "seeProtectedDevices": "Переглянути захищені пристрої",
+            "addDevice": "додати пристрій",
+            "trialExpired": "Термін дії пробної версії закінчився - Передплатіть, щоб захистити всі свої пристрої",
+            "upgrade": "передплатити",
+            "freeTrial": "Захистіть всі свої пристрої - Безкоштовна 30-денна ознайомлювальна версія",
+            "startTrial": "Почати ознайомлення"
+        },
         "tour": {
-            "back": "Back",
-            "skip": "Skip",
-            "start": "START TOUR",
-            "done": "DONE",
-            "welcome1": "Welcome",
-            "welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
-            "welcome2": "Exclusive for Vantage",
-            "welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
-            "create": "Create your account",
-            "lenovoId": "with Lenovo ID",
-            "notifications": "Receive <b>notifications</b> about your home's status",
-            "monitor": "<b>Monitor</b> the safety of your family's devices",
-            "peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
-            "signInLenovoId": "SIGH-UP WITH LENOVO ID",
-            "haveLenovo": "I don't have a <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Create a Lenovo ID",
-            "without": "Proceed <b>without an account</b>",
-            "skipAndTrial": "SKIP AND START TRIAL",
-            "alreadyHave": "I already have a <b>Connected Home Security Account</b>",
-            "loginCHS": "Login to existing CHS account",
-            "locationTitle": "Enable location tracking",
-            "locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+            "back": "Назад",
+            "skip": "Пропустити",
+            "start": "ПОЧАТИ ОГЛЯД",
+            "done": "ГОТОВО",
+            "welcome1": "Вітаємо",
+            "welcomeDesc1": "Усього за кілька кліків ви зможете захистити ПК, мобільні та підключені пристрої, які належать вам і вашій родині.",
+            "welcomeDescStart": "Почніть 30 днів безкоштовного ознайомлення зараз.",
+            "welcome2": "Ексклюзивно для Vantage",
+            "welcomeDesc2": "Програму \"Безпека підключеного дому\" вбудовано прямо у Vantage для швидкого доступу до стану захисту екосистеми та сповіщень про безпеку.",
+            "create": "Створіть обліковий запис",
+            "lenovoId": "з Lenovo ID",
+            "notifications": "Отримуйте <b>сповіщення</b> про стан свого дому",
+            "monitor": "<b>Відстежуйте</b> безпеку пристроїв сім’ї",
+            "peaceOfMind": "<b>Будьте завжди впевнені</b> у своєму захисті!",
+            "signInLenovoId": "ЗАРЕЄСТРУЙТЕСЯ З LENOVO ID",
+            "haveLenovo": "У мене немає <b>Lenovo ID</b>",
+            "createLenovo": "&nbsp;Створіть Lenovo ID",
+            "without": "Продовжити <b>без облікового запису</b>",
+            "skipAndTrial": "ПРОПУСТИТИ ТА ПОЧАТИ ОЗНАЙОМЛЕННЯ",
+            "alreadyHave": "Я вже маю <b>обліковий запис Безпеки підключеного дому</b>",
+            "loginCHS": "Увійти в наявний обліковий запис БПД",
+            "locationTitle": "Увімкнути геолокацію",
+            "locationPermission": "Щоб ця функція працювала правильно, необхідно ввімкнути геолокацію для цього пристрою"
+        },
+        "accountStatus": {
+            "title": "Моя Безпека підключеного дому",
+            "startTrial": "Почати ознайомлення",
+            "manageAccount": "Керування обліковим записом",
+            "upgradeAccount": "Передплатити",
+            "inTrialDetail1": "{{remainingDays}} дн. до завершення ознайомлювального періоду.",
+            "inTrialDetail2": "Триває ознайомлювальний період. Ви маєте необмежений доступ до всіх функцій.",
+            "trialExpiredDetail1": "Ознайомлювальний період скінчився.",
+            "trialExpiredDetail2": "Ознайомлювальний період скінчився, і ваша екосистема пристроїв більше не захищена.",
+            "upgradedDetail1": "Ваш обліковий запис активний до {{expiredDate}}.",
+            "upgradedDetail2": "Ваша екосистема пристроїв захищена.",
+            "localAccountDetail2": "Натисніть кнопку нижче, щоб розпочати 30 днів безкоштовного ознайомлення.",
+            "alreadyHaveAccount": "Уже маєте код активації?"
         }
     },
     "support": {
@@ -1101,7 +1496,9 @@
             "status": "Статус: ",
             "subDescription1": "Цей продукт має стільки років обмеженої гарантії й право на ремонт у сервісному-центрі. Зателефонуйте до місцевого сервіс-центру, щоб дізнатися більше. Для цього продукту дилери можуть пропонувати ремонт із самостійною доставкою силами користувача.",
             "subDescription2": "Не вдалося отримати відомості про гарантію на ваш пристрій. Щоб переглянути інші варіанти гарантії, завітайте на наш веб-сайт підтримки.",
-            "viewWarrantyOptions": "ПЕРЕГЛЯНУТИ ВАРІАНТИ ГАРАНТІЇ"
+            "viewWarrantyOptions": "ПЕРЕГЛЯНУТИ ВАРІАНТИ ГАРАНТІЇ",
+            "offlineTips1": "Щоб отримати актуальну інформацію про гарантію, підключіться до Інтернету.",
+            "offlineTips2": "Щоб оновити інформацію про гарантію, підключіться до Інтернету."
         },
         "documentation": {
             "title": "Документація",
@@ -1131,9 +1528,9 @@
             "copyright": "© Lenovo, 2002–2019 р. Усі права захищено."
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "Категорії",
+            "categoriesDesc": "Знайдіть корисну інформацію в наших статтях.",
+            "seeArticles": "ДИВ. СТАТТІ"
         }
     },
     "security": {
@@ -1154,9 +1551,7 @@
             "maliciousNetwork": "Цього місяця попереджено підключень комп'ютера до потенційно шкідливих мереж: {{maliciousWifi}}.",
             "good": "НАДІЙНА",
             "malicious": "ШКІДЛИВА",
-            "suspicious": "ПІДОЗРІЛА",
-            "titleOffline": "No internet connection detected",
-            "subTitleOffline": "Learn more on how to solve connection issues in our"
+            "suspicious": "ПІДОЗРІЛА"
         },
         "antivirus": {
             "common": {
@@ -1245,6 +1640,12 @@
                 "describe2": "Щоб використовувати функцію \"Безпека підключеного дому\", необхідно ввімкнути служби геолокації для Lenovo Vantage. Увімкнути служби геолокації?",
                 "agree": "ПОГОДЖУЮСЯ",
                 "cancel": "СКАСУВАТИ"
+            },
+            "errorMessage": {
+                "headerText": "Помилка",
+                "bodyText": "Ми виявили, що вам бракує критично важливих компонентів Vantage. Ці компоненти буде завантажено у фоновому режимі. Спробуйте пізніше.",
+                "closeText": "закрити",
+                "offlineText": "Немає підключення до Інтернету. Певні частини цієї сторінки не працюватимуть. Підключіться заново"
             }
         },
         "homeprotection": {
@@ -1256,7 +1657,7 @@
                 "homeSecurityAffect3": "Безпека підключеного дому перевіряє безпечність інших пристроїв, підключених до вашої домашньої мережі.",
                 "describe": "Небезпечні пристрої та мережі можуть розповсюджувати шкідливі програми, призводити до крадіжок ідентифікаційних даних, а також витоків приватної та фінансової інформації. Увімкніть цю функцію, щоб зменшити ризик зламу комп'ютера та домашньої мережі зловмисниками",
                 "subtitle": "Повний спокій",
-                "subtitleDescribe": "Функція \"Безпека підключеного дому\" надішле вам сповіщення, якщо буде виявлено вразливість пристрою або домашньої мережі, або якщо пристрій буде підключено до потенційно шкідливої мережі. Дізнайтеся більше про функцію \"Безпека підключеного дому\" в порадах і підказках.",
+                "subtitleDescribe": "Функція \"Безпека підключеного дому\" надішле вам сповіщення, якщо буде виявлено вразливість пристрою або домашньої мережі, або якщо пристрій буде підключено до потенційно шкідливої мережі. Дізнайтеся більше про Безпеку підключеного дому <tag>тут</tag>.",
                 "tryNow": "Спробувати зараз"
             },
             "invitationcode": {
@@ -1332,7 +1733,7 @@
             "whatIsPmNotInstalled": "Найбезпечніший, найпростіший спосіб зберігати надійні, складні паролі та миттєво виконувати вхід на сайти.",
             "whatIsPmInstalled": "Безпечне цифрове життя вже поруч: додавайте паролі, використовуйте моніторинг темного Інтернету й автозаповнення особистої та платіжної інформації.",
             "startProtect": "Легко захистіть свої облікові записи в Інтернеті.",
-            "discount": "Користувачам Lenovo безкоштовно надається 6 місяців доступу до преміум-плану Dashlane.",
+            "discount": "Користувачам Lenovo надається ексклюзивна знижка 50% на доступ до преміум-плану Dashlane.",
             "offer": "Ця пропозиція доступна лише для нових користувачів Dashlane.",
             "getDashLane": "Отримати Dashlane",
             "learnMoreAbout": "<tag>Дізнайтеся більше</tag> про всі можливості Dashlane",
@@ -1378,32 +1779,32 @@
         }
     },
     "lenovoId": {
-        "login": "Login",
-        "logout": "Logout",
-        "unlockExclusives": "Unlock Exclusives",
-        "user": "User",
-        "welcomeText": "Looking energized today {{firstName}}!",
+        "login": "Вхід",
+        "logout": "Вихід",
+        "unlockExclusives": "Ексклюзивний вміст",
+        "user": "Користувач",
+        "welcomeText": "Сьогодні ви енергійні, {{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Looking energized today!",
-        "helloUser": "Hello, {{firstName}}!",
-        "ssoErrorTitle": "Error",
-        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
-        "ssoErrorCommonEx": "Unexpected error. Please try again.",
-        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
-        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
-        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
-        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+        "welcomeTextWithoutUserName": "Сьогодні ви енергійні!",
+        "helloUser": "Вітаємо, {{firstName}}!",
+        "ssoErrorTitle": "Помилка",
+        "ssoErrorCommon": "Сталася помилка. Спробуйте ще раз.",
+        "ssoErrorCommonEx": "Непередбачена помилка. Спробуйте ще раз.",
+        "ssoErrorTimeStampIncorrect": "Схоже, час на вашому ПК неправильний. Задайте на ПК правильний час і повторіть спробу.",
+        "ssoErrorNetworkDisconnected": "Схоже, Помилка підключення. Перевірте підключення до Інтернету та повторіть спробу.",
+        "ssoErrorCommunicating": "Помилка мережі. Перевірте підключення та повторіть спробу.",
+        "ssoErrorAccountPluginNotExist": "Відсутній плагін. Ми автоматично відновимо плагін у фоновому режимі, якщо ви підключені до Інтернету. Це може зайняти деякий час, повторіть спробу пізніше."
     },
     "faq": {
         "footer": {
-            "title": "Not finding what you are looking for?",
-            "description": "NEED ADDITIONAL SUPPORT? DON’T HESITATE TO CONTACT US VIA:",
-            "body": "Lenovo Community",
-            "button": "GO TO FORUM"
+            "title": "Не знаходите те, що шукаєте?",
+            "description": "ПОТРІБНА ДОПОМОГА? НЕ ПОВОРІВЯТЬСЯ ЗВ'ЯЗАТИСЯ З НАМИ:",
+            "body": "Спільнота Lenovo",
+            "button": "Перейти на форум"
         },
         "question1": {
-            "title": "Back up and restore your files",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        Back up and restore your files\n    </div>\n    <hr />\n    <div style='margin-bottom:7rem;'>\n        It's always good to have a backup. Keep copies of your files on another drive in case something happens to the\n        originals.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Set up your backup\n    </div>\n    <hr />\n    <div class='mb-5'>\n        Select the <span style='font-weight:bold'>Start</span> button, select\n        <span style='font-weight:bold'>Settings</span> >\n        <span style='font-weight:bold'>Update & security</span> >\n        <span style='font-weight:bold'>Backup</span> > <span style='font-weight:bold'>Add a drive</span> , and then\n        choose an external drive or network location for your backups.\n    </div>\n    <div class='mb-5'>\n        <img src='./../../../../assets/images/qa/1.1.png' />\n    </div>\n    <div class='mb-5'>\n        All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files\n        get backed up or how often backups happen, go to\n        <span style='font-weight:bold;'>More options</span>.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Restore your files\n    </div>\n    <div class='mb-5'>\n        If you're missing an important file or folder, here's how to get it back:\n    </div>\n    <div>\n\n        <div class='mb-3'>1. Type <span style='font-weight:bold;'>Restore files</span>\n            in the search box on the taskbar, and then select\n            <span class='font-weight:bold'> Restore your files with File History</span>.</div>\n        <div class='mb-3'>2. Look for the file you need, then use the arrows to see all its versions</div>\n        <div class='mb-3'>3. When you find the version you want, select\n            <span style='font-weight:bold'>Restore</span>\n            to save it in its original location. To save it in a different place, press and hold (or right-click)\n            <span style='font-weight:bold'>Restore</span>, select <span style='font-weight:bold'>Restore to</span>, and\n            then choose a new location.</div>\n\n    </div>\n</div>",
+            "title": "Резервне копіювання та відновлення файлів",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Резервне копіювання та відновлення файлів    </div>    <hr />    <div style='margin-bottom:7rem;'>        Радимо завжди мати резервну копію. Зберігайте копії файлів на іншому диску, на випадок якщо з оригіналами щось трапиться.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Налаштування резервного копіювання    </div>    <hr />    <div class='mb-5'>        Натисніть кнопку <span style='font-weight:bold'>Пуск</span>, виберіть <span style='font-weight:bold'>Настройки</span> > <span style='font-weight:bold'>Оновлення та безпека</span> > <span style='font-weight:bold'>Резервне копіювання</span> > <span style='font-weight:bold'>Додати диск</span>, а потім виберіть зовнішній диск або мережеве розташування для резервних копій.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Готово! Щогодини буде створюватися резервна копія всіх даних у вашій папці користувача (C:\\\\Users\\\\username). Щоб змінити файли або частоту резервного копіювання, перейдіть до розділу <span style='font-weight:bold;'>Додаткові параметри</span>.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Відновлення файлів    </div>    <div class='mb-5'>        Якщо втрачено важливий файл або папку, їх можна відновити.    </div>    <div>        <div class='mb-3'>1. Введіть <span style='font-weight:bold;'>Відновлення файлів</span> у вікні пошуку на панелі завдань, а потім виберіть <span class='font-weight:bold'>Відновити файли за допомогою Банку файлів</span>.</div>        <div class='mb-3'>2. Знайдіть потрібний файл, а потім використовуйте стрілки, щоб переглянути всі його версії</div>        <div class='mb-3'>3. Знайшовши потрібну версію, виберіть <span style='font-weight:bold'>Відновити</span>, щоб зберегти її у початковому розташуванні. Щоб зберегти файл в іншому місці, натисніть і утримуйте (або клацніть правою кнопкою миші) <span style='font-weight:bold'>Відновити</span>, виберіть <span style='font-weight:bold'>Відновити в</span>, а потім виберіть нове розташування.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1443,8 +1844,8 @@
             }
         },
         "question2": {
-            "title": "How to refresh your PC",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        How to refresh your PC\n    </div>\n    <hr>\n    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>\n        Symptom\n    </div>\n    <div style='padding:5px 0;'>\n        If your PC isn't performing as well as it once did, and you don't know why,\n        you can refresh your PC without deleting any of your personal files or\n        changing your settings. Windows can “refresh” your PC so it’s more like a\n        fresh install without deleting your personal files.\n    </div>\n    <div style='padding:5px 0;'>\n        Refresh your PC, Here is what will happen: your files and personalized\n        settings won’t change\n    </div>\n    <div style='padding:5px 0;'>\n        <ul>\n            <li>Your PC settings will be changed back to its defaults</li>\n            <li>Apps from windows store will be kept</li>\n            <li>Apps you installed from disc or website will be removed</li>\n            <li>A list of removed files will be saved on your desktop</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Affected Brands\n    </div>\n\n    <div>\n        <ul>\n            <li>All Desktop and Laptops</li>\n\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Operation System\n    </div>\n\n    <div>\n        <ul>\n            <li>Windows 8, 8.1 & 10</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Solution\n    </div>\n\n    <div>\n        <ul class='list-unstyled'>\n            <li>\n                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>\n                <ol>\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Settings </span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Update and recovery</span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <div>Tap or click <span style='font-weight:bold;'> Recovery</span></div>\n                        <div style='padding:5px 0'>Under Refresh your PC without affecting your files, tap or click\n                            <span style='font-weight:bold;'> Get started.</span></div>\n                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>\n\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Next'</span>.\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Refresh' </span>to start the refresh process.\n                    </li>\n                    <li style='padding:5px 0;'>\n                        Once the refresh process is done, you can find a Removed Apps list on the desktop\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        You can find the removed apps while refreshing your system\n                    </li>\n                </ol>\n            </li>\n            <li style='padding:10px 0;'>\n                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>\n                <ol>\n                    <li style='padding:5px 0;'> Search for <span style='font-weight:bold;'> refresh </span>in the search\n                        tool available in the Start menu,</li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on <span style='font-weight:bold;'> 'Refresh your PC without affecting your\n                                files'</span> in the search results as shown below.</div>\n                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on the\n                            <span style='font-weight:bold;'> Get started </span>\n                            button just below the heading<span style='font-weight:bold;'> 'Refresh your PC without\n                                affecting your files'</span> to start refreshing your Windows 10 PC.</div>\n                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>\n                    </li>\n                </ol>\n            </li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;'>\n        Additional Information\n    </div>\n\n    <div>\n        In most cases, once you start to refresh your PC, it’ll finish on its own.\n        However, if Windows needs missing files, you’ll be asked to insert recovery\n        media, which is typically a DVD disc or thumb drive. If that happens, what\n        you’ll need depends on your PC.\n    </div>\n    <div style='padding:10px 0'>\n        If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use\n        that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact\n        Microsoft Support.\n    </div>\n\n</div>",
+            "title": "Оновлення комп'ютера",
+            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Оновлення комп'ютера    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        Ознака    </div>    <div style='padding:5px 0;'>        Якщо з невідомої причини знизилася продуктивність вашого комп'ютера, можна оновити систему, не видаляючи жодних особистих файлів і не змінюючи настройки. Windows може \\\"оновити\\\" ваш комп'ютер, що схоже на нову інсталяцію без видалення ваших особистих файлів.    </div>    <div style='padding:5px 0;'>        Оновіть свій комп'ютер, після чого: ваші файли та персоналізовані настройки не зміняться    </div>    <div style='padding:5px 0;'>        <ul>            <li>Параметри комп'ютера буде змінено на значення за замовчуванням</li>            <li>Програми з Магазину Windows будуть збережені</li>            <li>Програми, встановлені з диска чи веб-сайту, буде видалено</li>            <li>Список видалених файлів буде збережено на робочому столі</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Моделі, яких це стосується    </div>    <div>        <ul>            <li>Усі комп'ютери та ноутбуки</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Операційна система    </div>    <div>        <ul>            <li>Windows 8, 8.1 і 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Вирішення    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        Натисніть <span style='font-weight:bold;'>Настройки</span>                    </li>                    <li style='padding:5px 0;'>                        Натисніть <span style='font-weight:bold;'>Оновлення та відновлення</span>                    </li>                    <li style='padding:5px 0;'>                        <div>Натисніть <span style='font-weight:bold;'>Відновити</span></div>                        <div style='padding:5px 0'>У розділі \\\"Скидання параметрів ПК зі збереженням файлів\\\", натисніть <span style='font-weight:bold;'>Почати</span>.</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        Натисніть <span style='font-weight:bold;'>Далі</span>.                    </li>                    <li style='padding:5px 0;'>                        Натисніть <span style='font-weight:bold;'>Оновити</span>, щоб почати оновлення.                    </li>                    <li style='padding:5px 0;'>                        Після завершення оновлення на робочому столі можна переглянути список видалених програм                    </li>                    <li style='padding:5px 0;'>                        Видалені програми можна переглядати під час оновлення системи                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> Введіть <span style='font-weight:bold;'>оновлення</span> в засобі пошуку, доступному в меню \\\"Пуск\\\".</li>                    <li style='padding:5px 0;'>                        <div>Клацніть <span style='font-weight:bold;'>Скидання параметрів ПК зі збереженням файлів</span> у результатах пошуку, як показано нижче.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div>Натисніть кнопку <span style='font-weight:bold;'>Почати</span> під заголовком <span style='font-weight:bold;'>Скидання параметрів ПК зі збереженням файлів</span>, щоб почати оновлення комп'ютера з Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        Додаткова інформація    </div>    <div>        У більшості випадків комп'ютер виконує оновлення самостійно. Однак, якщо Windows потребує відсутніх файлів, буде запропоновано вставити носій для відновлення, зазвичай це DVD-диск або флеш-накопичувач. Якщо це станеться, потрібне рішення буде залежати від параметрів вашого комп'ютера.    </div>    <div style='padding:10px 0'>        Якщо ви оновили комп'ютер до Windows 8.1 або Windows RT 8.1 з DVD-диска, використовуйте цей диск. Якщо у вас немає носія Windows 8.1 або Windows RT 8.1, зверніться до служби підтримки Microsoft.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -1517,8 +1918,8 @@
             "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
         },
         "question3": {
-            "title": "How to know your machine's CPU",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    How to know your machine's CPU\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.\n    The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit\n    system.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n    <li>All Desktop and Laptops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operating System</h3>\n<ul>\n    <li>Windows 7 , 8 , 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n    <li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button,</strong>\n        right-clicking Computer, and then clicking Properties  </li>\n    <li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then click\n        <strong>Search.</strong></li>\n    <li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n    <li>Tap or click <strong>System</strong></li>\n    <li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong>\n        is displayed in the System type field under the System heading.\n        If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong>\n        <strong>32-bit Operating </strong>System is displayed in the System type field under the System heading.<br />\n         </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then\n        click <strong>Search.</strong></li>\n    <li>In the search box, type <strong>system information</strong></li>\n    <li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and then\n        click <strong>System Summary.</strong></li>\n    <li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>\n        x64-based PC is displayed in the <strong>System type</strong> field under the \n        Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong>\n        version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> field\n        under the Item heading.  </li>\n</ol>\n<p> </p>",
+            "title": "Як дізнатися модель процесора комп'ютера",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Як дізнатися модель процесора комп'ютера</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Ознака</h3><p>Терміни \\\"32-розрядний\\\" і \\\"64-розрядний\\\" стосуються способу, у який процесор комп'ютера (також називається ЦП) обробляє інформацію. 64-розрядна версія Windows використовує великі обсяги оперативної пам'яті (ОЗП) ефективніше, ніж 32-розрядна система.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Моделі, яких це стосується</h3><p>Наведена вище ознака стосується зокрема наступних систем:</p><ul>    <li>Усі комп'ютери та ноутбуки</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Операційна система</h3><ul>    <li>Windows 7, 8, 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Вирішення</h3><p><strong><u>Windows 7 або Vista</u></strong></p><ol>    <li>Відкрийте вікно \\\"Система\\\", натиснувши кнопку <strong>Пуск</strong> Зображення <strong>кнопка \\\"Пуск\\\"</strong>, клацніть правою кнопкою миші \\\"Комп'ютер\\\" і виберіть пункт \\\"Властивості\\\"  </li>    <li>У розділі \\\"Система\\\" можна переглянути тип системи.</li></ol><p><strong><u>Windows 8 і Windows 10</u></strong></p><p><strong>Спосіб 1.</strong> Перегляд вікна \\\"Система\\\" на панелі керування</p><ol>    <li>Проведіть пальцем із правого краю екрана, а потім торкніться елемента <strong>Пошук</strong>. Або, якщо ви використовуєте мишу, наведіть вказівник на нижній правий кут екрана, а потім клацніть <strong>Пошук</strong>.</li>    <li>Введіть <strong>система</strong> у полі пошуку, а потім натисніть <strong>Настройки</strong>.</li>    <li>Натисніть <strong>Система</strong></li>    <li>Якщо використовується 64-розрядна версія Windows 8, в полі \\\"Тип системи\\\" під заголовком \\\"Система\\\" відобразиться <strong>64-розрядна операційна система</strong>. Якщо використовується 32<strong>-розрядна версія Windows</strong> <strong>8,</strong> у полі \\\"Тип системи\\\" під заголовком \\\"Система\\\" відображається <strong>32-розрядна операційна </strong>система.<br />  </li></ol><p><strong>Спосіб 2</strong>. Перегляд вікна \\\"Відомості про систему\\\"</p><ol>    <li>Проведіть пальцем із правого краю екрана, а потім торкніться елемента <strong>Пошук</strong>. Або, якщо ви використовуєте мишу, наведіть вказівник на нижній правий кут екрана, а потім клацніть <strong>Пошук</strong>.</li>    <li>У полі пошуку введіть <strong>відомості про систему</strong></li>    <li>Виберіть <strong>Система</strong>, потім <strong>Відомості про систему</strong>, а потім клацніть <strong>Відомості про систему</strong>.</li>    <li>Якщо ви використовуєте <strong>64-розрядну </strong>версію Windows 8<strong>, </strong>у полі <strong>Тип системи </strong> під заголовком \\\"Елемент\\\" відображається ПК на базі x64-процесорів. <br /> <br /> Якщо ви використовуєте <strong>32-розрядну</strong> версію Windows 8, у полі <strong>Тип системи</strong> під заголовком \\\"Елемент\\\" відображається \\\"ПК на базі x64-процесорів\\\".  </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -1606,8 +2007,8 @@
             }
         },
         "question4": {
-            "title": "Check your machine's battery use",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Check your machine's battery use\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> \n    screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.\n    That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;\n    apps&ndash;are using too much power.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n\n<ul>\n    <li>Lenovo laptops, desktops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Systems</h3>\n<ul>\n    <li>All</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operationg System</h3>\n<ul>\n    <li>Window 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your\n    traditional <strong>control panel </strong>view, this feature is located in the\n    new <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>\n    select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br />\n        <br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last\n    from last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;\n    <strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,\n    the display,</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong>\n     options show how much power is used by applications while you&rsquo;re using them, compared to applications\n    running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>\n        &ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.\n    This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of this\n    feature.\n    It will display a list of the apps have used battery power in that period, and show you what percentage of your\n    battery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
+            "title": "Перевірка використання акумулятора вашого пристрою",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Перевірка використання акумулятора вашого пристрою</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Ознака</h3><p>Windows 10 містить новий екран <strong>Використання акумулятора</strong>, який показує основні навантаження вашого ноутбука. Це означає, що ви будете точно знати, які програми – класичні та програми для Windows 10 – використовують забагато енергії.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Моделі, яких це стосується</h3><ul>    <li>Ноутбуки, настільні комп'ютери Lenovo</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Системи, яких це стосується</h3><ul>    <li>Усі</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Операційна система</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Вирішення</h3><p>Це нова функція Windows 10. ЇЇ необхідно спочатку знайти, оскільки вона не зберігається на традиційній <strong>панелі керування</strong>. Ця функція знаходиться в новій програмі <strong>Настройки</strong></p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Знайдіть екран \\\"Використання акумулятора\\\"</h3></p><p>1. Натисніть <strong>Настройки</strong> у меню \\\"Пуск\\\"</p><p>2. У розділі <strong>Настройки</strong> виберіть <strong>Система</strong>, а потім виберіть <strong>Економія заряду. <br /><br /></strong><strong><br /><br /></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Клацніть посилання <strong>Використання акумулятора</strong> під цим заголовком, щоб переглянути додаткову інформацію. </p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Проаналізуйте енергоспоживання</h3><p>4 Можна вибрати перегляд на екрані використання акумулятора: від останніх 24 годин до 48 годин або з минулого тижня</p><p>5 <strong>Система</strong>, <strong>Екран</strong> і <strong>Wi-Fi</strong> у відсотках. Показує, скільки заряду акумулятора було використано системними процесами, екраном.</p><p>6 Параметри <strong>Використовується</strong> та <strong>Фон</strong> показують, скільки заряду використовують програми під час їх використання у порівнянні з програмами, що працюють у фоновому режимі.</p><p>7 Якщо програми використовують живлення у фоновому режимі, можна клацнути посилання <strong>Змінити параметри програм, що працюють у фоновому режимі</strong> та налаштувати програми, щоб вони не працювали у фоновому режимі. Це стосується лише універсальних програм Windows 10.</p><p>8 Прокрутіть далі, щоб переглянути список програм. Він вважається найбільш корисним розділом цієї функції. У ньому можна переглянути список програм, які використовували заряд батареї в цей період, а також, який відсоток заряду акумулятора використала кожна програма</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -1674,8 +2075,8 @@
             }
         },
         "question5": {
-            "title": "Use your PC like a tablet",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Use your PC like a tablet\n</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet\n        mode</strong> .</p>\n<p> </p>\n<p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device \n    on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and\n    how the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the\n    screen.</p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.\n    Select the <strong>Start </strong>button, select <strong>Settings </strong>>\n    <strong>System </strong>> <strong>\n        Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.\n    To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and\n    you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n    <li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n    <li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then\n        drag it to one side to snap it into your divided screen.</li>\n    <li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
+            "title": "Використання комп'ютера як планшета",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Використання комп'ютера як планшета</div><hr><p>Режим планшета робить Windows більш інтуїтивною та зручнішою у використанні для пристроїв з сенсорним екраном.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Використання режиму планшета</h3><p>Щоб увімкнути режим планшета, виберіть <strong>Центр підтримки</strong> на панелі завдань, а потім – <strong>Режим планшета</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Примітка</h3><p>Щоб дізнатися, чи може ваш пристрій автоматично вмикати режим планшета, знайдіть свій пристрій на веб-сайті виробника. Підтримка цієї функції залежить від обладнання, встановленого драйвера та способу налаштування пристрою виробником. </p><p> </p><p>У режимі планшета програми відкриваються на весь екран, що дає більше місця для роботи. Щоб закрити програму, перетягніть її в нижню частину екрана.</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Порада</h3><p>Панель завдань доступна, коли комп'ютер перебуває в режимі планшета, але її можна приховати, якщо потрібно більше місця на екрані. Натисніть кнопку <strong>Пуск</strong>, виберіть <strong>Настройки</strong> > <strong>Система</strong> > <strong>Режим планшета</strong>, потім увімкніть параметр <strong>Автоматично приховувати панель завдань у режимі планшета</strong>. Щоб переглянути приховану панель завдань, проведіть пальцем знизу вгору екрана або наведіть курсор миші на неї.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Використання двох програм одночасно</h3><p>Щоб використовувати одночасно дві програми в режимі планшета, перетягніть відкриту програму вниз та в бік. Ви побачите, де вона зафіксується, і поруч з нею відображатимуться відкриті програми.</p><p>У цьому поданні також можна:</p><ul>    <li>Використовувати спільний край двох зафіксованих програм, щоб змінити розмір обох програм одночасно.</li>    <li>Відкривати нову програму з подання завдань: виберіть <strong>Перегляд завдань</strong> на панелі завдань виберіть програму, а потім перетягніть її на одну сторону, щоб зафіксувати її на розділеному екрані.</li>    <li>Натисніть кнопку \\\"Назад\\\" на панелі завдань, щоб повернутися до програми або відкрити програму, яку використовували раніше.</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -1714,8 +2115,8 @@
             }
         },
         "question6": {
-            "title": "Get to know Cortona, your personal assistant",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Get to know Cortana, your personal assistant\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>What is Cortana?</h3>\n<hr />\n<p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing\n    works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you\n    select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n    <li>Give you reminders based on time, places, or people.</li>\n    <li>Track packages, teams, interests, and flights.</li>\n    <li>Send emails and texts.</li>\n    <li>Manage your calendar and keep you up to date.</li>\n    <li>Create and manage lists.</li>\n    <li>Chit chat and play games.</li>\n    <li>Find facts, files, places, and info.</li>\n    <li>Open any app on your system.</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Try this: Set a reminder</h3>\n<hr />\n\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or\n    even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync\n    notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hey Cortana?</h3>\n<hr />\n<p>Set Cortana to hear you anytime you say\n    'Hey Cortana.' Select the search box on the taskbar to open Cortana home.\n    Then select <strong>Settings</strong>  and turn on <strong>Let Cortana respond to 'Hey\n        Cortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.\n</p>\n<p> </p>",
+            "title": "Ознайомтеся з Cortana, вашим особистим помічником",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>    Ознайомтеся з Cortana, вашим особистим помічником</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Що таке Cortana?</h3><hr /><p>Cortana – це ваш цифровий помічник. Вона завжди допоможе вам.</p><p>Чим частіше ви використовуєте Cortana, тим точніше вона будет допомагати вам.</p><p>Щоб почати, введіть питання в поле пошуку або виберіть мікрофон і зверніться до Cortana. (Слова можна вводити на всіх типах комп'ютерів, але для розмови потрібен мікрофон.)</p><p>Якщо ви не впевнені, що сказати, на екрані блокування відображатимуться пропозиції, а також у вікні Cortana, якщо вибрати поле пошуку на панелі завдань.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Головна 2. Ноутбук 3. Настройки 4. Зворотний зв'язок</li></ol><p>Нижче наведені дії, які Cortana може виконати для вас.</p><ul>    <li>Нагадування на основі часу, місця або людей.</li>    <li>Відстеження пакетів, груп, інтересів і рейсів.</li>    <li>Надсилання повідомлень електронної пошти та текстів.</li>    <li>Керування вашим календарем і його оновлення.</li>    <li>Створення списків і керування ними.</li>    <li>Прості розмови та ігри.</li>    <li>Пошук фактів, файлів, місць та інформації.</li>    <li>Відкриття будь-якої програми у вашій системі.</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Спробуйте: встановіть нагадування</h3><hr /><p>Одне з завдань, яке може виконати Cortana, – надати вам нагадування. Вона може надавати нагадування на основі часу, місця або навіть людей.</p><p>Наприклад, введіть або скажіть: \\\"Нагадати про привітання Тані під час її наступного виклику\\\".</p><p>Під час наступного дзвінка від Тані ви отримаєте нагадування.</p><p>Додаткова можливість: якщо у вас є телефон з Windows або Cortana для iPhone або Android, ви можете настроїти Cortana для синхронізації сповіщень між комп'ютером і телефоном.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Привіт, Cortana!</h3><hr /><p>Налаштуйте Cortana, щоб вона слухала вас щоразу, коли ви кажете \\\"Привіт, Cortana!\\\" Виберіть поле пошуку на панелі завдань, щоб відкрити головну сторінку Cortana. Потім виберіть <strong>Настройки</strong> й увімкніть параметр <strong>Дозволити Cortana відповідати на фразу \\\"Привіт, Cortana!\\\"</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Примітка</p><p>Cortana доступна лише в певних країнах і регіонах, а також її певні функції можуть бути недоступні всюди.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -1750,13 +2151,14 @@
             },
             "para12": "Note",
             "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        }
+        },
+        "pageTitle": "Детальна підтримка"
     },
     "welcometutorial": {
         "description": "Vantage дає вам змогу легко оновлювати драйвери, проводити діагностику, отримувати підтримку та дізнаватися більше про свій пристрій. Швидко налаштуйте програму та отримуйте корисну інформацію, підібрану саме для ваших потреб",
         "bullets1": "Перегляньте стан системи з інформаційної панелі Vantage.",
-        "bullets2": "Порадник з безпеки дає змогу легко керувати безпекою пристрою ",
-        "bullets3": "Автоматичні оновлення підтримують пристрій у відмінному стані",
+        "bullets2": "Порадник з безпеки спрощує керування безпекою (доступний лише на окремих системах).",
+        "bullets3": "Автоматичні оновлення підтримують пристрій у відмінному стані (доступні лише на окремих системах).",
         "subtitle1": "Як ви будете використовувати пристрій?",
         "subtitle2": "Розкажіть нам про свої вподобання",
         "personal": "Для особистих потреб",
@@ -1798,6 +2200,6 @@
         "usageStatistics": "Статистика використання",
         "usageStatisticsDescription": "Надсилання статистики щодо анонімного використання до компанії Lenovo.",
         "Note": "Примітка. ",
-        "settingsNotes": "Щоб застосувати зміни, внесені на цій сторінці, необхідно перезавантажити комп'ютер."
+        "settingsNotes": "всі зміни, внесені на цій сторінці, необхідно перезавантажити програму."
     }
 }

@@ -24,10 +24,10 @@ export class GamingLightingService {
 			throw new Error(error.message);
 		}
 	}
-	setLightingProfileId(profileId: number): Promise<boolean> {
+	setLightingProfileId(pageid: number, profileId: number): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
-				return this.getGamingLighting.setLightingProfileId(profileId);
+				return this.getGamingLighting.setLightingProfileId(pageid, profileId);
 			}
 			return undefined;
 		} catch (error) {

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, OnDestroy, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, OnDestroy, ElementRef, Output, EventEmitter, NgZone } from '@angular/core';
 import { CameraDetail, ICameraSettingsResponse, CameraFeatureAccess } from 'src/app/data-models/camera/camera-detail.model';
 import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
@@ -21,7 +21,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	@Output() contrastChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() exposureChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() exposureToggle: EventEmitter<any> = new EventEmitter();
-
+	@Output() cameraAvailable: EventEmitter<boolean> = new EventEmitter();
+	@Output() cameraDisable:EventEmitter<boolean> = new EventEmitter();
 	public cameraDetail = new CameraDetail();
 	private cameraPreview: ElementRef;
 	private _video: HTMLVideoElement;
@@ -33,6 +34,10 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	private DeviceClass: any;
 	private oMediaCapture: any;
 	private visibilityChange: any;
+
+	public cameraErrorTitle: string;
+	public cameraErrorDescription: string;
+	public isCameraInErrorState = false;
 
 	@ViewChild('cameraPreview') set content(content: ElementRef) {
 		// when camera preview video element is visible then start camera feed
@@ -47,7 +52,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	constructor(
 		public cameraFeedService: CameraFeedService,
 		public baseCameraDetail: BaseCameraDetail,
-		private vantageShellService: VantageShellService
+		private vantageShellService: VantageShellService,
+		private ngZone: NgZone
 	) {
 		this.Windows = vantageShellService.getWindows();
 		this.Capture = this.Windows.Media.Capture;
@@ -109,22 +115,46 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		console.log('InitializeCameraAsync');
 		const self = this;
 		try {
-
-
 			// Get available devices for capturing pictures
 			return this.findCameraDeviceByPanelAsync(this.Windows.Devices.Enumeration.Panel.front)
 				.then((camera) => {
 					if (!camera) {
-						console.log('No camera device found!');
+						this.ngZone.run(() => {
+							this.cameraAvailable.emit(false);
+						});
 						return;
 					}
-					self.oMediaCapture = new self.Windows.Media.Capture.MediaCapture();
 
+					this.ngZone.run(() => {
+						this.cameraAvailable.emit(true);
+					});
+
+					self.oMediaCapture = new self.Windows.Media.Capture.MediaCapture();
 					// Register for a notification when something goes wrong
 					// TODO: define the fail handle callback and show error message maybe... there's a chance another app is previewing camera, that's when failed happen.
-					self.oMediaCapture.addEventListener('failed', () => {
-						console.log('failed to capture camera');
+					self.oMediaCapture.addEventListener('failed', (error) => {
+						console.log('failed to capture camera', error);
 						self.cleanupCameraAsync();
+						
+						this.ngZone.run(() => {
+							
+							// Camera is in Use
+							if (error.code === 3222091524) {
+								this.isCameraInErrorState = true;
+								this.cameraErrorTitle = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.inUseTitle';
+								this.cameraErrorDescription = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.inUseDescription';
+								}
+								// disable camera access from system setting
+								else if(error.code === 2147942405){
+									this.cameraDisable.emit(true);
+			
+								}
+								else {
+									this.isCameraInErrorState = true;
+								this.cameraErrorTitle = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.loadingFailedTitle';
+								this.cameraErrorDescription = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.loadingFailedDescription';
+							}
+						});
 					});
 
 					const settings = new self.Capture.MediaCaptureInitializationSettings();
@@ -136,8 +166,10 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 					return self.oMediaCapture.initializeAsync(settings);
 
 				}, (error) => {
-					this.disabledAll = true;
-					console.log(error.message);
+					console.log('findCameraDeviceByPanelAsync error', error.message);
+					this.ngZone.run(() => {
+						this.disabledAll = true;
+					});
 				}).then(function () {
 					return self.startPreviewAsync();
 				}).done();
@@ -148,18 +180,22 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	}
 
 	startPreviewAsync() {
-		const previewUrl = URL.createObjectURL(this.oMediaCapture);
-		this._video = this.cameraPreview.nativeElement;
-		this._video.src = previewUrl;
-		this._video.play();
+		this.ngZone.run(() => {
+			const previewUrl = URL.createObjectURL(this.oMediaCapture);
+			this._video = this.cameraPreview.nativeElement;
+			this._video.src = previewUrl;
+			this._video.play();
+		});
 	}
 
 	stopPreview() {
-		// Cleanup the UI
-		if (this._video) {
-			this._video.pause();
-			this._video.src = '';
-		}
+		this.ngZone.run(() => {
+			// Cleanup the UI
+			if (this._video) {
+				this._video.pause();
+				this._video.src = '';
+			}
+		});
 	}
 
 	cleanupCameraAsync() {
@@ -182,7 +218,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 	public onAutoExposureChange($event: any) {
 		try {
-			console.log('onAutoExposureChange', this.cameraSettings.exposure.supported);
+			console.log('onAutoExposureChange', this.cameraSettings.exposure);
 			this.exposureToggle.emit($event);
 		} catch (error) {
 			console.error(error.message);

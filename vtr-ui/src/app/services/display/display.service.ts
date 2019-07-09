@@ -9,7 +9,8 @@ export class DisplayService {
 	private displayEyeCareMode: any;
 	private cameraPrivacyStatus: any;
 	private cameraSettings: any;
-
+	private privacyGuardSettings: any;
+	private oledSettings: any;
 	public isShellAvailable = false;
 	@Output() windowResize: EventEmitter<any> = new EventEmitter();
 
@@ -32,6 +33,16 @@ export class DisplayService {
 		}
 		this.cameraSettings = shellService.getCameraSettings();
 		if (this.cameraSettings) {
+			this.isShellAvailable = true;
+		}
+
+		this.privacyGuardSettings = shellService.getPrivacyGuardObject();
+		if (this.privacyGuardSettings) {
+			this.isShellAvailable = true;
+		}
+
+		this.oledSettings = shellService.getOledSettings();
+		if (this.oledSettings) {
 			this.isShellAvailable = true;
 		}
 	}
@@ -82,25 +93,25 @@ export class DisplayService {
 		return undefined;
 	}
 
-	public startMonitorForCamera(callback: any): Promise<FeatureStatus> {
+	public startCameraPrivacyMonitor(callback: any): Promise<FeatureStatus> {
 		try {
 			if (this.cameraPrivacyStatus) {
 				return this.cameraPrivacyStatus.startMonitor(callback);
 			}
 			return undefined;
-		} catch(error) {
+		} catch (error) {
 			throw new Error(error.message);
 		}
 	}
 
-	public stopMonitorForCamera(): Promise<FeatureStatus> {
+	public stopCameraPrivacyMonitor(): Promise<FeatureStatus> {
 		try {
 			if (this.cameraPrivacyStatus) {
 				return this.cameraPrivacyStatus.stopMonitor();
 			}
 
 			return undefined;
-		} catch(error) {
+		} catch (error) {
 			throw new Error(error.message);
 		}
 	}
@@ -204,29 +215,75 @@ export class DisplayService {
 		return undefined;
 	}
 
-public getDaytimeColorTemperature(): Promise<FeatureStatus> {
-	if (this.displayEyeCareMode) {
-		return this.displayEyeCareMode.getDaytimeColorTemperature();
+	// Start Day Time Color Temperature Settings
+	public getDaytimeColorTemperature(): Promise<FeatureStatus> {
+		if (this.displayEyeCareMode) {
+			return this.displayEyeCareMode.getDaytimeColorTemperature();
+		}
+		return undefined;
 	}
-	return undefined;
-}
 
-public setDaytimeColorTemperature(value: number): Promise<boolean> {
-	if (this.displayEyeCareMode) {			
-		return this.displayEyeCareMode.setDaytimeColorTemperature(value);
+	public setDaytimeColorTemperature(value: number): Promise<boolean> {
+		if (this.displayEyeCareMode) {
+			return this.displayEyeCareMode.setDaytimeColorTemperature(value);
+		}
+		return undefined;
 	}
-	return undefined;
-}
 
-public resetDaytimeColorTemperature(): Promise<any> {
-	if (this.displayEyeCareMode) {
-		return this.displayEyeCareMode.resetDaytimeColorTemperature();
+	public resetDaytimeColorTemperature(): Promise<any> {
+		if (this.displayEyeCareMode) {
+			return this.displayEyeCareMode.resetDaytimeColorTemperature();
+		}
+		return undefined;
 	}
-	return undefined;
-}
+
+	// End Day Time Color Temperature Settings
+
+	// Start Privacy Guard Settings
+	public getPrivacyGuardCapability(): Promise<any> {
+		if (this.privacyGuardSettings) {
+			return this.privacyGuardSettings.getPrivacyGuardCapability();
+		}
+		return undefined;
+	}
+
+	public getPrivacyGuardOnPasswordCapability(): Promise<any> {
+		if (this.privacyGuardSettings) {
+			return this.privacyGuardSettings.getPrivacyGuardOnPasswordCapability();
+		}
+		return undefined;
+	}
+
+	public getPrivacyGuardStatus(): Promise<any> {
+		if (this.privacyGuardSettings) {
+			return this.privacyGuardSettings.getPrivacyGuardStatus();
+		}
+		return undefined;
+	}
+
+	public getPrivacyGuardOnPasswordStatus(): Promise<any> {
+		if (this.privacyGuardSettings) {
+			return this.privacyGuardSettings.getPrivacyGuardOnPasswordStatus();
+		}
+		return undefined;
+	}
+
+	public setPrivacyGuardStatus(value): Promise<any> {
+		if (this.privacyGuardSettings) {
+			return this.privacyGuardSettings.setPrivacyGuardStatus(value);
+		}
+		return undefined;
+	}
+
+	public setPrivacyGuardOnPasswordStatus(value): Promise<any> {
+		if (this.privacyGuardSettings) {
+			return this.privacyGuardSettings.setPrivacyGuardOnPasswordStatus(value);
+		}
+		return undefined;
+	}
 
 
-
+	// End Privacy Guard Settings
 
 	public statusChangedLocationPermission(handler: any) {
 		try {
@@ -254,8 +311,8 @@ public resetDaytimeColorTemperature(): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
 				return this.cameraSettings.startMonitor((response: any) => {
-					console.log("startMonitorForCameraPermission", response);
-					if (response.permission != undefined) {
+					console.log('startMonitorForCameraPermission', response);
+					if (response.permission !== undefined) {
 						this.commonService.sendNotification(DeviceMonitorStatus.CameraStatus, response.permission);
 					}
 				});
@@ -270,7 +327,7 @@ public resetDaytimeColorTemperature(): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
 				return this.cameraSettings.stopMonitor((response: boolean) => {
-					console.log("stopMonitorForCameraPermission", response);
+					console.log('stopMonitorForCameraPermission', response);
 				});
 			}
 			return undefined;
@@ -282,7 +339,7 @@ public resetDaytimeColorTemperature(): Promise<any> {
 	public stopEyeCareMonitor() {
 		if (this.isShellAvailable) {
 			this.displayEyeCareMode.stopMonitor((response: boolean) => {
-				//this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
+				// this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
 			});
 		}
 	}
@@ -295,6 +352,58 @@ public resetDaytimeColorTemperature(): Promise<any> {
 	public initEyecaremodeSettings(): Promise<boolean> {
 		if (this.displayEyeCareMode) {
 			return this.displayEyeCareMode.initEyecaremodeSettings();
+		}
+		return undefined;
+	}
+	public getOLEDPowerControlCapability(): Promise<boolean> {
+		if (this.oledSettings) {
+			// this.oledSettings = this.shellService.getOledSettings();
+			return this.oledSettings.getOLEDPowerControlCapability();
+		}
+		return undefined;
+	}
+
+	public getTaskbarDimmerSetting(): Promise<any> {
+		if (this.oledSettings) {
+			return this.oledSettings.getTaskbarDimmerSetting();
+		}
+		return undefined;
+	}
+
+	public getBackgroundDimmerSetting(): Promise<any> {
+		if (this.oledSettings) {
+			return this.oledSettings.getBackgroundDimmerSetting();
+		}
+		return undefined;
+	}
+
+	public getDisplayDimmerSetting(): Promise<any> {
+		if (this.oledSettings) {
+			return this.oledSettings.getDisplayDimmerSetting();
+		}
+		return undefined;
+	}
+
+	public setTaskbarDimmerSetting(value: String): Promise<boolean> {
+		if (this.oledSettings) {
+			//console.log('this.setTaskbarDimmerSetting', this.oledSettings);
+			return this.oledSettings.setTaskbarDimmerSetting(value);
+		}
+		return undefined;
+	}
+
+	public setBackgroundDimmerSetting(value: String): Promise<boolean> {
+		if (this.oledSettings) {
+			//console.log('this.setBackgroundDimmerSetting', this.oledSettings);
+			return this.oledSettings.setBackgroundDimmerSetting(value);
+		}
+		return undefined;
+	}
+
+	public setDisplayDimmerSetting(value: String): Promise<boolean> {
+		if (this.oledSettings) {
+			//console.log('this.setDisplayDimmerSetting', this.oledSettings);
+			return this.oledSettings.setDisplayDimmerSetting(value);
 		}
 		return undefined;
 	}

@@ -33,8 +33,22 @@ export class VpnLandingViewModel {
 			subjectStatus.title = res;
 		});
 		const setVpnStatus = (status: string) => {
-			vpnStatus.status = 5;
-			vpnStatus.detail = status === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
+			switch (status) {
+				case 'installed':
+					vpnStatus.detail = 'common.securityAdvisor.installed';
+					vpnStatus.status = 5;
+					subjectStatus.status = 2;
+					break;
+				case 'installing':
+					vpnStatus.detail = 'common.securityAdvisor.installing';
+					vpnStatus.status = 4;
+					subjectStatus.status = 1;
+					break;
+				default:
+					vpnStatus.detail = 'common.securityAdvisor.notInstalled';
+					vpnStatus.status = 5;
+					subjectStatus.status = 1;
+			}
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, status);
 			subjectStatus.status = status === 'installed' ? 2 : 1;
 			translate.stream(vpnStatus.detail).subscribe((res) => {
