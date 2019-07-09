@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Sbalit",
             "expand": "Rozbalit",
-            "loader": "Fetching <br> Status"
+            "loader": "Načítání <br> Status",
+            "loading": "Načítání..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "Da bi se produljio vijek trajanja zaslona, preporučuje se i zatamnjenje programske trake i drugih područja na zaslonu koja se ne mijenjaju često."
                         ],
                         "reset": "Ponovno postavite temperaturu",
-                        "tooltip": "Ova značajka može smanjiti potrošnju energije i produljiti trajanje baterije selektivnim zatamnjivanjem dijelova zaslona."
+                        "tooltip": "Ova značajka može smanjiti potrošnju energije i produljiti trajanje baterije selektivnim zatamnjivanjem dijelova zaslona.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Vstup & Příslušenství",
+                "subtitle": "Vstup & Příslušenství – Nastavení",
+                "description": "Technologie inteligentní detekce Lenovo rozpoznává pomocí různých snímačů v počítači vaši aktuální činnost a přizpůsobuje podle ní řízení spotřeby",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Inteligentní klávesnice",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Skryté funkce klávesnice",
+                        "description": "Současným stiskem klávesy Fn ve spodní části klávesnice a jiných kláves lze vyvolat příkazy uvedené na mapě klávesnice níže."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "aktivace funkce zvětšení na displejích s vysokým rozlišením",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": ": přechod do spánkového režimu",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "zapnutí a vypnutí funkce ochrany soukromí",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "přepínání mezi režimem výkonu a tichým režimem",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + Mezerník",
+                        "description": "změna stavu podsvícení klávesnice",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Uživatelem definovaná klávesa",
+                    "caption": "Této klávese, označené ikonou hvězdy, lze přiřadit funkci podle svého přání",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Akce uživatelem definované klávesy",
+                        "note": "Poznámka: Tuto funkci lze použít k zadání často používaného textu – například e-mailové či poštovní adresy. Společnost Lenovo nicméně doporučuje nikdy ji nepoužívat k zadávání hesel ani osobních údajů.",
+                        "options": {
+                            "option1": "Proveďte výběr",
+                            "option2": "Otevřete webové stránky",
+                            "option3": "Zadejte text"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1179,31 +1207,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Lenovo Active Protection System je automatická funkce, která pomáhá chránit pevný disk před poškozením způsobeným silnými nárazy a vibracemi. Průběžně sleduje pohyb vašeho počítače a dočasně zastaví pevný disk, pokud předpokládá, že došlo k pádu nebo k podobné nebezpečné události.",
                 "activeProtection": {
-                    "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "title": "Aktivní ochrana Active Protection",
+                    "caption": "Změňte citlivost, v režimu s nízkou citlivostí aktivují ochranu pouze tvrdší otřesy",
+                    "checkbox": "Ignorujte opakované otřesy, ke kterým dochází například ve vlaku nebo automobilu"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Ruční pozastavení aktivní ochrany Active Protection",
+                    "caption": "Umožnit ručně deaktivovat systém aktivní ochrany Active Protection System",
+                    "dropdown-title": "Pozastavit na",
+                    "button": "Pozastavit nyní"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Aby byl pevný disk během používání v režimu tabletu přístupnější, bude systém aktivní ochrany Active Protection System deaktivován v případě rozpoznání následujících činností",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Psaní perem",
+                        "description": "Při používání vstupu pomocí pera aktivovat APS, je-li vstup pomocí pera mimo přípustný rozsah"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Používání dotykové obrazovky",
+                        "description": "Je-li používán dotykový vstup, aktivujte systém APS, pokud není dotykový vstup detekován"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Zjištění ruky v blízkosti okrajů počítače",
+                        "description": "Je-li povolen režim tabletu, aktivujte systém APS, pokud není detekována ruka"
                     }
                 }
             },
@@ -1214,30 +1242,30 @@
                 "tooltip": "Tato funkce není použitelná pro webové přehrávače videa. Oblíbené přehrávače videí v počítači (například Windows Media Player, 5KPlayer apod.) tuto funkci podporují."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Hlas",
+                "description": "Lenovo Voice pomáhá převádět váš hlas do textů funkcí Hlas na text a funkcí Překlad zajišťuje překlad v reálném čase z hlasu do textů.",
+                "installBtnText": "Nainstalujte si",
+                "launchBtnText": "Spustit",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Hlas na text",
+                    "caption": "Tato funkce pomáhá převést váš hlas na texty."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Překlad",
+                    "caption": "Tato funkce poskytuje v reálném čase překlad do hlasu. Přeložený obsah se zobrazuje v textech. Podle svých potřeb si můžete vybrat zdrojové jazyky a cílové jazyky."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Jak začít:",
+                    "point1": "Ujistěte se, zda se na hlavním panelu systému Windows zobrazuje ikona Lenovo Voice.",
+                    "point2": "Otevřete soubor, do kterého chcete zapsat převedený text.",
+                    "point3": "Klepněte na ikonu Lenovo Voice na hlavním panelu systému Windows a vyberte možnost Hlas na text.",
+                    "point4": "Vyberte požadovaný jazyk a začněte klepnutím na ikonu mikrofonu.",
+                    "point5": "Umístěte kurzor na místo, kde chcete provést úpravu, a začněte mluvit.",
+                    "point6": "Klepněte na ikonu Lenovo Voice na hlavním panelu systému Windows a vyberte možnost Přeložit.",
+                    "point7": "Vyberte požadovaný zdrojový jazyk a cílový jazyk.",
+                    "point8": "Podle svých potřeb nastavte hlasový vstup z reproduktoru nebo z mikrofonu.",
+                    "point9": "Klepněte na ikonu mikrofonu a začněte mluvit",
+                    "closeText": "Zavřít"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "Doporučené aktualizace",
         "optionalUpdates": "Volitelné aktualizace",
         "ignoredUpdates": "Ignorované aktualizace",
-        "successInstall": "Úspěšně instalováno v systému",
-        "failedInstall": "Instalace se nezdařila v systému",
+        "successInstall": "Instalace proběhla úspěšně: ",
+        "failedInstall": "Instalace selhala: ",
         "at": "v",
         "readMore": "Další informace",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "Vítejte při použití programu System Update.",
             "title": "Aktualizovaný systém je zdravým systémem.",
-            "last": "Poslední aktualizace proběhla dne",
-            "next": "Příští kontrola aktualizace je naplánována na",
+            "last": "Poslední aktualizace: ",
+            "next": "Příští plánovaná aktualizace: ",
             "checkButton": "ZKONTROLOVAT AKTUALIZACE",
             "checking": "Kontrola aktualizací",
             "downloading": "Stahování aktualizací je dokončeno",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "Server služby aktualizace systému je momentálně nedostupný. Zkuste to prosím později.",
             "helpCenterInvalidServerException": "Chybný server služby aktualizace systému. Zkuste to prosím později.",
             "catalogNotFoundException": "Pro váš systém nebyla nalezena žádná vhodná aktualizace.",
-            "catalogCrcErrorException": "Probíhá aktualizace katalogu aktualizací pro váš systém na serveru služby aktualizace systému. Zkuste to prosím později.",
+            "catalogCrcErrorException": "Právě probíhá aktualizace katalogu pro váš systém. Zkuste to prosím později.",
             "catalogErrorException": "V katalogu aktualizací pro váš systém na serveru služby aktualizace systému byla zjištěna chyba. Zkuste to prosím později.",
             "fileNotFoundException": "Soubor nebyl nalezen."
         }
@@ -1615,8 +1643,9 @@
             },
             "errorMessage": {
                 "headerText": "Chyba",
-				"bodyText": "Zjistili jsme, že aplikace Vantage postrádá důležité součásti. Tyto součásti se stáhnou na pozadí. Zkuste to prosím později.",
-				"closeText": "close"
+                "bodyText": "Zjistili jsme, že aplikace Vantage postrádá důležité součásti. Tyto součásti se stáhnou na pozadí. Zkuste to prosím později.",
+                "closeText": "Zavřít",
+                "offlineText": "Zjistili jsme, že nejste připojeni k internetu. Některé části této stránky nebudou správně fungovat. Znovu se prosím připojte"
             }
         },
         "homeprotection": {

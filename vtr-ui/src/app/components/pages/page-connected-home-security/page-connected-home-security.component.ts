@@ -6,7 +6,7 @@ import {
 	AfterViewInit
 } from '@angular/core';
 import {
-	EventTypes, ConnectedHomeSecurity, PluginMissingError, CHSAccountState,
+	EventTypes, ConnectedHomeSecurity, PluginMissingError, CHSAccountState
 } from '@lenovo/tan-client-bridge';
 import {
 	VantageShellService
@@ -53,7 +53,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	backId = 'chs-btn-back';
 	isOnline = true;
 	intervalId: number;
-	interval = 5000;
+	interval = 15000;
 
 	constructor(
 		vantageShellService: VantageShellService,
@@ -68,7 +68,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
 		}
 		this.permission = vantageShellService.getPermission();
-		this.common = new HomeSecurityCommon(this.chs, this.modalService);
+		this.common = new HomeSecurityCommon(this.chs, this.modalService, this.commonService, this.dialogService);
 		this.welcomeModel = new HomeSecurityWelcome();
 		this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice();
 		this.allDevicesInfo = new HomeSecurityAllDevice();
@@ -116,13 +116,13 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		if (cacheAccount) {
 			this.account = cacheAccount;
 			if (this.chs.account) {
-				this.account.createAccount = this.chs.account.createAccount;
-				this.account.purchase = this.chs.account.purchase;
-				this.account = new HomeSecurityAccount(this.modalService, this.account);
+				this.common = new HomeSecurityCommon(this.chs, this.modalService, this.commonService, this.dialogService);
+				this.account = new HomeSecurityAccount(this.modalService, this.chs, this.common);
 			}
 		}
 		if (this.chs.account && this.chs.account.state) {
-			this.account = new HomeSecurityAccount(this.modalService, this.chs.account);
+			this.common = new HomeSecurityCommon(this.chs, this.modalService, this.commonService, this.dialogService);
+			this.account = new HomeSecurityAccount(this.modalService, this.chs, this.common);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, {
 				state: this.account.state,
 				expiration: this.account.expiration,
@@ -130,7 +130,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				device: this.account.device,
 				allDevice: this.account.allDevice,
 			});
-			this.common = new HomeSecurityCommon(this.chs, this.modalService);
 		}
 		const cacheNotifications = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityNotifications);
 		if (cacheNotifications) {
@@ -148,8 +147,8 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityMyDevice, this.homeSecurityOverviewMyDevice);
 			}
 			if (chs.account) {
-				this.account = new HomeSecurityAccount(this.modalService, chs.account);
-				this.common = new HomeSecurityCommon(this.chs, this.modalService);
+				this.common = new HomeSecurityCommon(this.chs, this.modalService, this.commonService, this.dialogService);
+				this.account = new HomeSecurityAccount(this.modalService, chs, this.common);
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, {
 					state: this.account.state,
 					expiration: this.account.expiration,
@@ -194,10 +193,20 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		}
 	}
 
-	@HostListener('window: blur')
-	onBlur(): void {
-		clearInterval(this.intervalId);
-		delete this.intervalId;
+	@HostListener('document: visibilitychange')
+	onVisibilityChange(): void {
+		const visibility = document.visibilityState;
+		if (visibility === 'visible' && !this.intervalId) {
+			this.chs.refresh()
+			.then(() => {
+				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
+			})
+			.catch(this.pluginMissingHandler.bind(this));
+			this.pullCHS();
+		} else if (visibility === 'hidden') {
+			window.clearInterval(this.intervalId);
+			delete this.intervalId;
+		}
 	}
 
 	ngOnDestroy() {
@@ -311,22 +320,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		this.intervalId = window.setInterval(() => {
 			this.chs.refresh().then(() => {
 				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-				if (this.chs.account && this.chs.account.state
-					&& this.chs.overview && this.chs.overview.devicePostures
-					&& this.chs.overview.devicePostures.value
-					&& this.chs.overview.devicePostures.value.length > 0
-					&& this.intervalId) {
-					clearInterval(this.intervalId);
-					const oneMinute = 60000;
-					this.interval = oneMinute;
-					this.intervalId = window.setInterval(() => {
-						this.chs.refresh()
-						.catch(this.pluginMissingHandler.bind(this))
-						.then(() => {
-							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-						});
-					}, this.interval);
-				}
 			}).catch(this.pluginMissingHandler.bind(this));
 		}, this.interval);
 	}

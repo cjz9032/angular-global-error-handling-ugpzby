@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Komprimer",
             "expand": "Utvid",
-            "loader": "Fetching <br> Status"
+            "loader": "Henter <br> status",
+            "loading": "Laster..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "Det anbefales også at du dimmer oppgavelinjen og andre områder av skjermen som ikke endres ofte, for å forlenge den generelle levetiden til skjermen."
                         ],
                         "reset": "Tilbakestill temperatur",
-                        "tooltip": "Denne funksjonen kan redusere strømforbruket og øke batteriets levetid ved å dimme bestemte deler av skjermen."
+                        "tooltip": "Denne funksjonen kan redusere strømforbruket og øke batteriets levetid ved å dimme bestemte deler av skjermen.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Inndata og tilbehør",
+                "subtitle": "Innstillinger for inndata og tilbehør",
+                "description": "Lenovo Intelligent Sensing kombinerer de ulike sensorene på datamaskinen for å gjenkjenne aktivitetene dine og justere innstillingene for optimal strømstyring",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Smarttastatur",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Skjulte tastaturfunksjoner",
+                        "description": "Du kan trykke på Fn-tasten nederst til venstre på tastaturet samtidig med andre taster for å aktivere kommandoene som vises i tastaturkartet nedenfor."
                     },
                     "firstKeyObj": {
-                        "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "tittle": "FN + tab",
+                        "description": "aktiver zoomefunksjonen på skjermer med høy oppløsning",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "gå i hvilemodus",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "slå av og på personvernbeskyttelsen",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "veksle mellom ytelsesmodus og stillemodus",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + mellomrom",
+                        "description": "endre status for tastaturets baklys",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Brukerdefinert tast",
+                    "caption": "Tasten som representeres med stjerneikonet, lar deg angi en brukerdefinert funksjon",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Handling ved brukerdefinert tast",
+                        "note": "Merk: Dette kan brukes til å angi ofte brukt informasjon, som for eksempel e-postadresser eller postadresser. Lenovo anbefaler å aldri bruke denne funksjonen for lagring og angivelse av passord eller annen privat informasjon.",
+                        "options": {
+                            "option1": "Vennligst velg",
+                            "option2": "Åpen nettside",
+                            "option3": "Skriv inn tekst"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1179,31 +1207,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Lenovo Active Protection System er en autonom funksjon som hjelper til med å beskytte harddisken mot skade forårsaket av kraftige fysiske støt eller vibrasjon. Den overvåker bevegelsene til datamaskinen kontinuerlig og stanser harddisken midlertidig når den forutser et fall eller en lignende situasjon som kan medføre skade.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "Endre sentivity, i modus for lite sensitiv, vil bare hardere støt aktivere beskyttelsen",
+                    "checkbox": "Ignorer repetative-støt som for eksempel et tog eller en bil"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Manuell Active Protection-Suspensjon",
+                    "caption": "La meg stanse Active Protection System manuelt",
+                    "dropdown-title": "Koble ut i",
+                    "button": "Utsett Nå"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Hvis du vil forbedre tilgangen til harddisken i nettbrettmodus, kan du suspendere Active Protection System når følgende aktiviteter oppdages",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Inndata fra penn",
+                        "description": "Ved penneinndata skal APS Aktiveres når pennen er utenfor rekkevidde i"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Inndata fra berøring",
+                        "description": "Når du bruker berørings inn data, må du aktivere APS når det ikke blir oppdaget berørings inn data"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Kantene på datamaskinen føler hvor nær hendene er",
+                        "description": "Når nett brett modus er aktivert, må du aktivere APS når hånd ikke gjenkjennes"
                     }
                 }
             },
@@ -1214,30 +1242,30 @@
                 "tooltip": "Denne funksjonen støttes ikke av nettvideospillere. Populære lokale videospillere, for eksempel Windows Media Player og 5KPlayer, støtter denne funksjonen."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Tale",
+                "description": "Lenovo Voice hjelper deg med å konvertere stemmen din til tekster med funksjonen for tale på tekst, og gir sann tids oversetting fra tale til tekster med Oversettelses funksjonen.",
+                "installBtnText": "Installer",
+                "launchBtnText": "Start",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Tale til tekst",
+                    "caption": "Denne funksjonen gjør det enklere å konvertere stemmen til tekster."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Oversettelse",
+                    "caption": "Denne funksjonen gir sann tids oversettelse til stemmen. Det oversatte innholdet blir vist i tekst. Du kan velge kilde språk og mål språk etter behov."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Kom i gang:",
+                    "point1": "Kontroller at Lenovo Voice ikonet blir vist i system skuffen i Windows.",
+                    "point2": "Åpne filen der du vil registrere den konverterte teksten.",
+                    "point3": "Klikk på Lenovo Voice ikonet i system skuffen i Windows og velg tale til tekst.",
+                    "point4": "Velg ønsket språk og klikk på mikrofon ikonet for å starte.",
+                    "point5": "Plasser markøren der du vil redigere og begynne å snakke.",
+                    "point6": "Klikk på Lenovo Voice ikonet i system skuffen i Windows og velg oversette.",
+                    "point7": "Velg ønsket kilde språk og mål språk.",
+                    "point8": "Avhengig av dine behov, må du definere tale signaler fra taler eller mikrofon.",
+                    "point9": "Klikk på mikrofon ikonet for å begynne å snakke",
+                    "closeText": "Lukk"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "Anbefalt(e) oppdatering(er)",
         "optionalUpdates": "Valgfri(e) oppdatering(er)",
         "ignoredUpdates": "Ignorert(e) oppdatering(er)",
-        "successInstall": "Ble installert den",
-        "failedInstall": "Installasjon mislyktes den",
+        "successInstall": "Installert: ",
+        "failedInstall": "Installasjon mislyktes: ",
         "at": "klokken",
         "readMore": "Les mer",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "Velkommen som bruker av System Update.",
             "title": "Et oppdatert system er et velfungerende system.",
-            "last": "Forrige oppdatering:",
-            "next": "Neste oppdateringssøk er planlagt",
+            "last": "Sist oppdatert: ",
+            "next": "Neste planlagte oppdatering: ",
             "checkButton": "SE ETTER OPPDATERINGER",
             "checking": "Ser etter oppdateringer",
             "downloading": "Nedlasting av oppdateringer er ferdig",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "Systemoppdateringsserveren er ikke tilgjengelig for øyeblikket. Prøv igjen senere.",
             "helpCenterInvalidServerException": "Systemoppdateringsserveren er ugyldig. Prøv igjen senere.",
             "catalogNotFoundException": "Det ble ikke funnet noen oppdateringer som er aktuelle for systemet ditt.",
-            "catalogCrcErrorException": "Oppdateringskatalogen for ditt system oppdateres for øyeblikket på systemoppdateringsserveren. Prøv igjen senere.",
+            "catalogCrcErrorException": "Systemkatalogen oppdateres for øyeblikket. Prøv igjen senere.",
             "catalogErrorException": "Det ble oppdaget en feil med oppdateringskatalogen for ditt system på systemoppdateringsserveren. Prøv igjen senere.",
             "fileNotFoundException": "Fant ikke fil."
         }
@@ -1615,8 +1643,9 @@
             },
             "errorMessage": {
                 "headerText": "Feil",
-				"bodyText": "Vi har oppdaget at du mangler viktige deler av Vantage. Disse delene lastes ned i bakgrunnen. Prøv igjen senere.",
-				"closeText": "close"
+                "bodyText": "Vi har oppdaget at du mangler viktige deler av Vantage. Disse delene lastes ned i bakgrunnen. Prøv igjen senere.",
+                "closeText": "Lukk",
+                "offlineText": "Vi har oppdaget at du ikke er koblet til internett. Deler av denne siden vil ikke fungere på riktig måte. Koble til igjen"
             }
         },
         "homeprotection": {

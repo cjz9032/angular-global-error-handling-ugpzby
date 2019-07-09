@@ -1,11 +1,17 @@
 <div class="vtr-modal-chs-welcome-container position-relative">
-	<div class="modal-header">
-		<button type="button" class="close close-button" id="chs-tour-btn-close" data-dismiss="modal"
-			(click)="closeModal()" aria-label="chs-tour-btn-close" vtrMetrics
+	<div class="modal-header justify-content-end">
+		<div role="button" id="chs-tour-btn-close"
+			attr.aria-label="chs-tour-btn-close"
+			href="javascript:;"
+			class="close-btn"
 			metricsItem="closeCHSWelcomeModal"
-			metricsEvent="featureClick">
-			<span aria-hidden="true">&times;</span>
-		</button>
+			metricsEvent="featureClick"
+			metricsParent="ConnectedHomeSecurity"
+			(click)="closeModal()">
+			<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
+				alt=""
+				srcset="">
+		</div>
 	</div>
 	<!-- start of page 1-->
 	<div class="page page-one" *ngIf="switchPage === 1">
@@ -96,7 +102,7 @@
 		</div>
 		<div class="col-5">
 		<div class= "w-100 row justify-content-end">
-			<img src="assets/images/connected-home-security/ecosystem-circle-green.svg" alt="">
+			<img [src]="'assets/images/connected-home-security/ecosystem-circle-green.svg' | svgInline | async" alt="">
 		</div>
 		</div>
 	</div>

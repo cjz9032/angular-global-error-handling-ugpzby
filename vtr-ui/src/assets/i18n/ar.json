@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "طي",
             "expand": "توسيع",
-            "loader": "Fetching <br> Status"
+            "loader": "الجلب <br> الحالة",
+            "loading": "...جار التحميل"
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "من المستحسن أيضًا تعتيم شريط المهام والمناطق الأخرى على جهاز العرض التي لا تتغير بشكل متكرر لإطالة العمر الإجمالي لجهاز العرض."
                         ],
                         "reset": "إعادة تعيين درجة الحرارة",
-                        "tooltip": "يمكن أيضًا لجهاز عرض OLED‬ في الكمبيوتر الخاص بك خفض استهلاك الطاقة وزيادة عمر البطارية عن طريق تعتيم أجزاء من جهاز العرض بطريقة انتقائية."
+                        "tooltip": "يمكن أيضًا لجهاز عرض OLED‬ في الكمبيوتر الخاص بك خفض استهلاك الطاقة وزيادة عمر البطارية عن طريق تعتيم أجزاء من جهاز العرض بطريقة انتقائية.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "الإدخال والملحقات",
+                "subtitle": "إعدادات الإدخال والملحقات",
+                "description": "تدمج ميزة \"الاستشعار الذكي من Lenovo\" أجهزة الاستشعار المختلفة على الكمبيوتر للكشف عن أنشطتك وضبط الإعدادات لإدارة الطاقة بشكل مثالي",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "لوحة المفاتيح الذكية",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "وظائف لوحة المفاتيح المخفية",
+                        "description": "يمكنك الضغط على المفتاح Fn، في الجزء السفلي الأيسر من لوحة المفاتيح، في الوقت نفسه الذي تضغط فيه على المفاتيح الأخرى لاستدعاء الأوامر التي تظهر في خريطة لوحة المفاتيح أدناه."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "لتمكين ميزة التكبير/التصغير على أجهزة العرض عالية الدقة",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "الدخول إلى وضع السكون",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "لتشغيل ميزة حماية الخصوصية وإيقاف تشغيلها",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "التبديل بين وضع الأداء والوضع الهادئ",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + مسافة",
+                        "description": "تغيير حالات الإضاءة الخلفية للوحة المفاتيح",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "مفتاح معرّف من قِبل المستخدم",
+                    "caption": "يسمح لك المفتاح الممثل بواسطة أيقونة النجمة بتعيين وظيفة معرّفة من قِبل المستخدم",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "مفتاح إجراء معرّف من قِبل المستخدم",
+                        "note": "ملاحظة: يمكن استخدام هذا لإدخال مفتاح الذي يتم إدخاله بشكل شائع، كالبريد الإلكتروني أو العناوين البريدية. تنصح Lenovo بعدم استخدام هذه الميزة إطلاقًا لتخزين وإدخال كلمات المرور أو أي معلومات أخرى خاصة.",
+                        "options": {
+                            "option1": "يُرجى تحديد",
+                            "option2": "افتح الموقع",
+                            "option3": "أدخل النص"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1179,31 +1207,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "يُعد Lenovo Active Protection System ميزة مستقلة تساعد على حماية محرك الأقراص الثابت من أي ضرر ناتج عن صدمة واهتزاز ماديين قويين. إنها تعمل على مراقبة حركة الكمبيوتر هذه بشكل مستمر وتوقف محرك الأقراص الثابت عن العمل بشكل مؤقت عندما تتوقع حدوث سقوط أو أي حدث مماثل يؤدي إلى وقوع أضرار.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "تغيير الحساسية، في وضع الحساسية المنخفضة، وحدها الصدمات القاسية تؤدي إلى تنشيط الحماية.",
+                    "checkbox": "تجاهل الصدمات المتكررة مثل تلك التي تحدث في القطار أو السيارة"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "تعليق Active Protection يدويًا",
+                    "caption": "السماح لي بتعليق Active Protection System يدويًا",
+                    "dropdown-title": "تعليق من أجل",
+                    "button": "التعليق الآن"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "لتحسين الوصول إلى محرك الأقراص الثابت أثناء استخدام الكمبيوتر اللوحي، يمكنك تعليق Active Protection System عند الكشف عن الأنشطة التالية",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "إدخال القلم",
+                        "description": "عند استخدام إدخال القلم، تمكين APS عندما يكون إدخال القلم خارج النطاق"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "الإدخال باللمس",
+                        "description": "عند استخدام الإدخال باللمس، تمكين APS عندما لا يتم الكشف عن إدخال باللمس"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "استشعار قرب اليد على حواف الكمبيوتر",
+                        "description": "عند تمكين وضع الكمبيوتر اللوحي، بتمكين APS عندما لا يتم الكشف عن اليد"
                     }
                 }
             },
@@ -1214,30 +1242,30 @@
                 "tooltip": "لا تنطبق هذه الميزة على مشغلات فيديو الويب. تدعم مشغلات الفيديو المحلية الأكثر رواجًا، مثل Windows Media Player و5KPlayer وغيرها، هذه الميزة."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "الصوت",
+                "description": "تساعد ميزة Lenovo Voice على تحويل صوتك إلى نصوص باستخدام وظيفة تحويل الصوت إلى نص، وهي توفر الترجمة في الوقت الحقيقي من الصوت إلى النصوص بواسطة وظيفة الترجمة.",
+                "installBtnText": "تثبيت",
+                "launchBtnText": "اطلاق",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "تحويل الصوت إلى نص",
+                    "caption": "تساعد هذه الميزة في تحويل صوتك إلى نصوص."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "الترجمة",
+                    "caption": "توفر هذه الميزة الترجمة في الوقت الحقيقي إلى صوت. تظهر المحتويات المترجمة في نصوص. يمكنك اختيار اللغات المصدر واللغات الهدف وفقًا لاحتياجاتك."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "بدء الاستخدام:",
+                    "point1": "تأكد من ظهور رمز Lenovo Voice في علبة نظام Windows.",
+                    "point2": "افتح الملف حيث تريد تسجيل النص المحول.",
+                    "point3": "انقر فوق رمز Lenovo Voice في علبة نظام Windows، وحدد \"تحويل الصوت إلى نص\".",
+                    "point4": "حدد لغتك المطلوبة وانقر فوق رمز الميكروفون للبدء.",
+                    "point5": "ضع المؤشر في المكان حيث تريد إجراء عملية تحرير وابدأ التحدث.",
+                    "point6": "انقر فوق رمز Lenovo Voice في علبة نظام Windows، وحدد \"ترجمة\".",
+                    "point7": "حدد لغتك المطلوبة، اللغة المصدر واللغة الهدف.",
+                    "point8": "حسب احتياجاتك، اضبط الإدخال الصوتي من السماعة أو من الميكروفون.",
+                    "point9": "انقر فوق رمز الميكروفون لبدء التحدث",
+                    "closeText": "إغلاق"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "تحديث مستحسن (تحديثات مستحسنة)",
         "optionalUpdates": "تحديث اختياري (تحديثات اختيارية)",
         "ignoredUpdates": "تحديث تم تجاهله (تحديثات تم تجاهلها)",
-        "successInstall": "تم التثبيت بنجاح في",
-        "failedInstall": "فشل التثبيت في",
+        "successInstall": "التثبيت بنجاح: ",
+        "failedInstall": "فشل التثبيت: ",
         "at": "عند",
         "readMore": "اقرأ أكثر",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "مرحبًا بك في استخدام System Update.",
             "title": "النظام المحدّث هو نظام سليم.",
-            "last": "تاريخ التحديث الأخير",
-            "next": "تمت جدولة الفحص المحدّث التالي في",
+            "last": "تاريخ التحديث الأخير: ",
+            "next": "التحديث المجدول التالي: ",
             "checkButton": "التحقق من وجود تحديثات",
             "checking": "التحقق من وجود تحديثات",
             "downloading": "تم تنزيل التحديثات",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "خادم تحديث النظام غير متوفر حاليًا. يُرجى إعادة المحاولة لاحقًا.",
             "helpCenterInvalidServerException": "خادم تحديث النظام غير صالح. يُرجى إعادة المحاولة لاحقًا.",
             "catalogNotFoundException": "لم يتم العثور على تحديثات قابلة للتطبيق للنظام الذي تستخدمه.",
-            "catalogCrcErrorException": "يجري حاليًا تحديث كتالوج التحديث للنظام على خادم تحديث النظام. يُرجى إعادة المحاولة لاحقًا.",
+            "catalogCrcErrorException": "يجري حاليًا تحديث الكتالوج الخاص بنظامك. يُرجى إعادة المحاولة لاحقًا.",
             "catalogErrorException": "تم الكشف عن خطأ يتعلق بكتالوج التحديث للنظام على خادم تحديث النظام. يُرجى إعادة المحاولة لاحقًا.",
             "fileNotFoundException": "لم يتم العثور على الملف."
         }
@@ -1615,8 +1643,9 @@
             },
             "errorMessage": {
                 "headerText": "خطأ",
-				"bodyText": "لقد اكتشفنا أنك تفتقد إلى أجزاء ضرورية من Vantage. سيتم تنزيل هذه الأجزاء في الخلفية. يُرجى إعادة المحاولة لاحقًا.",
-				"closeText": "close"
+                "bodyText": "لقد اكتشفنا أنك تفتقد إلى أجزاء ضرورية من Vantage. سيتم تنزيل هذه الأجزاء في الخلفية. يُرجى إعادة المحاولة لاحقًا.",
+                "closeText": "إغلاق",
+                "offlineText": "اكتشفنا أنك غير متصل بالإنترنت. لن تعمل بعض أجزاء هذه الصفحة بشكل صحيح. يُرجى معاودة الاتصال"
             }
         },
         "homeprotection": {
@@ -2141,7 +2170,7 @@
         "title1": "مرحبًا بك في",
         "title2": "Lenovo",
         "title3": "Vantage",
-        "privacypolicy": "سياسة الخصوصية من Lenovo",
+        "privacypolicy": "<span dir=\"rtl\">سياسة الخصوصية من Lenovo</span>",
         "done": "فعله",
         "interests": {
             "games": "ألعاب",

@@ -38,6 +38,13 @@
     }
   }
 
+  .udk-caption {
+    font-size: 1.5rem;
+    color: $main_darker;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   .inputSection {
     margin-top: 0.3rem;
     width: 75%;
@@ -58,7 +65,6 @@
       font-size: 1.2rem;
       font-weight: $weight_medium;
       text-transform: uppercase;
-      text-align: left;
       color: $shade;
       letter-spacing: 0;
       line-height: 13px;
@@ -77,34 +83,6 @@
       background: $gradient_main;
       padding: 0 3rem;
       color: $light;
-      font-size: 1.5rem;
-      letter-spacing: 0.1rem;
-      font-weight: $weight_600;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      cursor: pointer;
-      -webkit-appearance: initial;
-      max-width: 26rem;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      margin-top: 2rem;
-
-      &:disabled {
-        opacity: 0.5;
-      }
-    }
-
-    .submittedButton {
-      text-transform: uppercase;
-      height: 5rem;
-      line-height: 5rem;
-      border: none;
-      border-radius: 10rem;
-      background: $grey_light;
-      padding: 0 3rem;
-      color: $grey_dark;
       font-size: 1.5rem;
       letter-spacing: 0.1rem;
       font-weight: $weight_600;
@@ -202,6 +180,7 @@
       }
     }
   }
+
   .pressf12 {
     text-align: center;
     font-size: 12px;

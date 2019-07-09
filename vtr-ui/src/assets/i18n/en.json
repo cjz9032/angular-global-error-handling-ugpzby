@@ -103,7 +103,7 @@
 		},
 		"macroKey": {
 			"title": "Macro Key",
-			"introLine": "You can record a series of key input, and use them in gaming or other operations.",
+			"introLine": "You can record a series of key inputs, and use them in gaming or other operations.",
 			"status": {
 				"on": {
 					"title": "On",
@@ -438,7 +438,8 @@
 			"off": "OFF",
 			"collapse": "Collapse",
 			"expand": "Expand",
-			"loader": "Fetching <br> Status"
+			"loader": "Fetching <br> Status",
+			"loading": "Loading..."
 		}
 	},
 	"privacy": {
@@ -671,8 +672,9 @@
 						"title": "The battery is in good condition."
 					},
 					"Exhaustion": {
-						"title": "The battery has failed due to normal",
-						"description": "wear. The battery cannot be charged. Replace the battery."
+						"description": "The battery has",
+						"description1": "failed due to normal wear.",
+						"description2": "The battery cannot be charged. Replace the battery."
 					},
 					"Bad": {
 						"title": "A battery error has occurred.",
@@ -741,8 +743,8 @@
 					"other": "Other"
 				},
 				"powerSmartSettings": {
-					"title": "Power Smart Settings",
-					"subtitle": "INTELLIGENT COOLING",
+					"title": "Power Smart settings",
+					"subtitle": "Intelligent Cooling",
 					"subtitle1": "Battery & Quiet",
 					"description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
 					"description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
@@ -756,7 +758,7 @@
 						"modalBodyText1": "Click on Windows battery icon on System tray to access Windows performance power slider"
 					},
 					"intelligentCooling": {
-						"title": "Intelligent cooling",
+						"title": "Intelligent Cooling",
 						"description": "",
 						"tooltip": "",
 						"optimize": "optimize system for",
@@ -806,7 +808,7 @@
 					}
 				},
 				"powerSettings": {
-					"title": "Power Settings",
+					"title": "Power settings",
 					"alwaysUSB": {
 						"title": "Always on USB",
 						"description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
@@ -819,7 +821,7 @@
 					}
 				},
 				"otherSettings": {
-					"title": "Other Settings",
+					"title": "Other settings",
 					"vantageToolbar": {
 						"title": "Lenovo Vantage Toolbar",
 						"description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
@@ -828,13 +830,13 @@
 				"smartStandby": {
 					"title": "Smart Standby",
 					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
 					"timer": {
 						"heading": "Set time when you typically use this computer",
 						"subHeading1": "start",
 						"subHeading2": "end",
 						"subHeading3": "use this schedule for",
-						"endTimeNote": "End time must be within 20 hours from Start time",
+						"endTimeNote": "END must be within 20 hours from START time",
 						"timeUnits": {
 							"unit1": "Hours",
 							"unit2": "Minutes",
@@ -843,7 +845,7 @@
 					}
 				},
 				"batterySettings": {
-					"title": "Battery Settings",
+					"title": "Battery settings",
 					"batteryThreshold": {
 						"title": "Battery Charge Threshold",
 						"description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
@@ -943,7 +945,7 @@
 						"tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
 					},
 					"optimize": {
-						"title": "Optimize My Microphone For:",
+						"title": "Optimize my microphone for:",
 						"tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
 						"options": {
 							"VoiceRecognition": "VOICE RECOGNITION",
@@ -956,7 +958,7 @@
 			},
 			"displayCamera": {
 				"title": "Display & Camera",
-				"subtitle": "Display & Camera Settings",
+				"subtitle": "Display & camera settings",
 				"description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
 				"jumpTo": {
 					"title": "JUMP TO SETTINGS",
@@ -973,14 +975,14 @@
 					"title": "Display",
 					"eyeCareMode": {
 						"title": "Color Temperature in Eye Care Mode",
-						"checkbox": "Schedule Eye Care Mode from sunset to sunrise",
+						"checkbox": "Schedule eye care mode from sunset to sunrise",
 						"options": {
 							"warm": "Warm (Better for eyes)",
 							"cold": "Cold"
 						},
 						"reset": "Reset temperature",
 						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-						"onSunsetToSunriseScheduleDescription": "Schedule Eye Care Mode from sunset to sunrise",
+						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
 						"note": {
 							"title": "Note",
 							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
@@ -993,7 +995,18 @@
 							"It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
 						],
 						"reset": "Reset temperature",
-						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display.",
+						"dropDown": {
+							"seconds": "seconds",
+							"minute": "minute",
+							"minutes": "minutes",
+							"alwaysOn": "Always on",
+							"never": "never",
+							"halfTime": "Half time of display off timer"
+						},
+						"taskBarDimmer": "TASKBAR DIMMER",
+						"backgroundDimmer": "BACKGROUND DIMMER",
+						"displayDimmer": "DISPLAY DIMMER"
 					},
 					"dispColorTemp": {
 						"title": "Daytime Color Temperature",
@@ -1054,7 +1067,7 @@
 			},
 			"inputAccessories": {
 				"title": "Input & Accessories",
-				"subtitle": "Input & Accessories Settings",
+				"subtitle": "Input & Accessories settings",
 				"description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
 				"inputAccessory": {
 					"title": "Intelligent Keyboard",
@@ -1089,7 +1102,7 @@
 					}
 				},
 				"userDefinedKey": {
-					"title": "User-Defined Key",
+					"title": "User-defined Key",
 					"caption": "The key represented by the star icon allows you to set user defined function",
 					"tooltip": "Content to be filled",
 					"apply": {
@@ -1102,8 +1115,13 @@
 						"title": "TEXT TO BE ENTERED"
 					},
 					"dropDown": {
-						"title": "Action User Defined key",
-						"note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+						"title": "ACTION USER DEFINED KEY",
+						"note": "Note: This can be used to enter commonly entered key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information.",
+						"options": {
+							"option1": "Please select",
+							"option2": "Open website",
+							"option3": "Enter text"
+						}
 					}
 				}
 			}
@@ -1267,8 +1285,8 @@
 		"recommendedUpdates": "Recommended Update(s)",
 		"optionalUpdates": "Optional Update(s)",
 		"ignoredUpdates": "Ignored Update(s)",
-		"successInstall": "Successfully installed on",
-		"failedInstall": "Failed to install on",
+		"successInstall": "Successfully installed: ",
+		"failedInstall": "Failed to install: ",
 		"at": "at",
 		"readMore": "Read more",
 		"popup": {
@@ -1306,8 +1324,8 @@
 		"banner": {
 			"neverChecked": "Welcome to use System Update.",
 			"title": "An up-to-date system is a healthy system.",
-			"last": "Last update was on",
-			"next": "Next updated scan is scheduled on",
+			"last": "Last updated: ",
+			"next": "Next scheduled update: ",
 			"checkButton": "CHECK FOR UPDATES ",
 			"checking": "Checking for updates",
 			"downloading": "Downloading updates",

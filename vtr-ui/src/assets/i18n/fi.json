@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Kutista",
             "expand": "Laajenna",
-            "loader": "Fetching <br> Status"
+            "loader": "Noutaminen <br> Tila",
+            "loading": "Ladataan..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "Myös tehtäväpalkin ja näytön muiden harvoin muuttuvien osien himmentämistä suositellaan näytön yleisen käyttöiän pidentämiseksi."
                         ],
                         "reset": "Lämpötilan uudelleenasetus",
-                        "tooltip": "Ominaisuus voi pienentää virrankulutusta ja lisätä akun käyttöikää himmentämällä näytön osia valikoivasti."
+                        "tooltip": "Ominaisuus voi pienentää virrankulutusta ja lisätä akun käyttöikää himmentämällä näytön osia valikoivasti.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Syöttö ja lisävarusteet",
+                "subtitle": "Syötteen ja lisävarusteiden asetukset",
+                "description": "Lenovon älykäs tunnistustoiminto yhdistää tietokoneen eri tunnistimia toimintojen tunnistamista ja optimaalisen virranhallinnan asetusten muokkaamista varten",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Älykäs näppäimistö",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Piilotetut näppäimistötoiminnot",
+                        "description": "Voit painaa Fn-näppäintä (näppäimistön vasemmassa alareunassa) samanaikaisesti toisen näppäimen kanssa, jos haluat käyttää alla olevassa näppäimistökartassa esitettyjä toimintoja."
                     },
                     "firstKeyObj": {
-                        "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "tittle": "Fn+Sarkain",
+                        "description": "ota zoomaustoiminto käyttöön suuritarkkuuksisissa näytöissä",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "siirry lepotilaan",
                         "image": ""
                     },
                     "thirdKeyObj": {
-                        "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "tittle": "Fn+D",
+                        "description": "ota Privacy Guard käyttöön",
                         "image": ""
                     },
                     "fourthKeyObj": {
-                        "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "tittle": "Fn+Q",
+                        "description": "vaihda suorituskykytilan ja hiljaisen tilan välillä",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn+Välilyönti",
+                        "description": "muuta näppäimistön taustavalon tiloja",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Käyttäjän määrittämä näppäin",
+                    "caption": "Tähdellä varustetun näppäimen avulla voit määrittää käyttäjän määrittämän toiminnon",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Käyttäjän määrittämän näppäimen toiminto",
+                        "note": "Huomautus: Tämän avulla voit kirjoittaa usein kirjoitetun tekstin, kuten sähköpostiosoitteen tai postiosoitteen. Lenovo suosittelee, ettei tämän toiminnon avulla koskaan tallenneta ja kirjoiteta salasanoja tai muita yksityisiä tietoja.",
+                        "options": {
+                            "option1": "Valitse",
+                            "option2": "Avaa verkkosivusto",
+                            "option3": "Kirjoita teksti"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1179,31 +1207,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Automaattinen Lenovo Active Protection System -toiminto auttaa suojamaan kiintolevyasemaa voimakkaiden iskujen ja tärinän aiheuttamilta vaurioilta. Se valvoo tietokoneen liikkeitä jatkuvasti ja pysäyttää kiintolevyaseman tilapäisesti, kun tietokone esimerkiksi putoaa.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "Muuta herkkyyttä. Vähäisen herkkyyden tilassa vain kovemmat iskut aktivoivat suojauksen",
+                    "checkbox": "Jätä toistuvat iskut, kuten junan tai auton aiheuttamat iskut, huomiotta"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Manuaalinen Active Protection -ohjelman keskeyttäminen",
+                    "caption": "Salli Active Protection System -ohjelman keskeyttäminen manuaalisesti",
+                    "dropdown-title": "Keskeytä ajaksi",
+                    "button": "Keskeytä nyt"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Paranna kiintolevyn käytettävyyttä muistiotilassa keskeyttämällä Active Protection System, kun seuraavia toimintoja havaitaan",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Kynäsyöttö",
+                        "description": "Ota APS käyttöön, kun kynäsyöttö on käytössä ja kynä on alueen ulkopuolella"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Kosketussyöttö",
+                        "description": "Ota APS käyttöön, kun kosketussyöttö on käytössä ja järjestelmä havaitsee kosketussyötön"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Käden läheisyyden tunnistus tietokoneen reunoilla",
+                        "description": "Ota APS käyttöön, kun muistiotila on käytössä ja järjestelmä ei havaitse kättä"
                     }
                 }
             },
@@ -1214,30 +1242,30 @@
                 "tooltip": "Tämä ominaisuus ei ole käytettävissä verkkovideosoittimissa. Suositut paikalliset videosoittimet (kuten Windows Media Player ja 5KPlayer) tukevat tätä ominaisuutta."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Ääni",
+                "description": "Lenovo Voice muuttaa puheen tekstiksi Puhe tekstiksi -toiminnon avulla ja antaa reaaliaikaisen käännöksen puheesta tekstiksi Käännös-toiminnon avulla.",
+                "installBtnText": "Asenna",
+                "launchBtnText": "Aloita",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Puhe tekstiksi",
+                    "caption": "Tämän ominaisuuden avulla voit muuttaa puheen tekstiksi."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Käännös",
+                    "caption": "Tämän ominaisuuden avulla voit kääntää puhetta reaaliaikaisesti. Käännetty sisältö näytetään tekstinä. Voit valita lähde- ja kohdekielet tarpeen mukaan."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Aloittaminen:",
+                    "point1": "Varmista, että Lenovo Voice -kuvake näkyy Windowsin ilmaisinalueella.",
+                    "point2": "Avaa tiedosto, johon haluat tallentaa muutetun tekstin.",
+                    "point3": "Napsauta Windowsin ilmaisinalueelta Lenovo Voice -kuvaketta ja valitse Puhe tekstiksi.",
+                    "point4": "Valitse haluamasi kieli ja aloita napsauttamalla mikrofonia.",
+                    "point5": "Siirrä kohdistin kohtaan, jota haluat muokata, ja aloita puhuminen.",
+                    "point6": "Napsauta Windowsin ilmaisinalueelta Lenovo Voice -kuvaketta ja valitse Käännä.",
+                    "point7": "Valitse haluamasi lähde- ja kohdekieli.",
+                    "point8": "Määritä äänisyöttö kaiuttimesta tai mikrofonista tarpeen mukaan.",
+                    "point9": "Napsauta mikrofonikuvaketta ja aloita puhuminen",
+                    "closeText": "sulje"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "Suositeltavat päivitykset",
         "optionalUpdates": "Valinnaiset päivitykset",
         "ignoredUpdates": "Huomiotta jätetyt päivitykset",
-        "successInstall": "Asennus onnistui",
-        "failedInstall": "Asennus epäonnistui",
+        "successInstall": "Asennus onnistui: ",
+        "failedInstall": "Asennus epäonnistui: ",
         "at": "klo",
         "readMore": "Lue lisää",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "Tervetuloa käyttämään System Update -ohjelmaa.",
             "title": "Ajan tasalla oleva järjestelmä on terve järjestelmä.",
-            "last": "Edellisen kerran päivitetty",
-            "next": "Seuraava päivitysten tarkistusajankohta on",
+            "last": "Viimeksi päivitetty: ",
+            "next": "Seuraava ajoitettu päivitys: ",
             "checkButton": "TARKISTA PÄIVITYKSET",
             "checking": "Tarkistetaan päivityksiä",
             "downloading": "Päivitysten nouto on valmis",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "Järjestelmän päivityspalvelin ei ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen.",
             "helpCenterInvalidServerException": "Järjestelmän päivityspalvelin on virheellinen. Yritä myöhemmin uudelleen.",
             "catalogNotFoundException": "Järjestelmään soveltuvia päivityksiä ei löydy.",
-            "catalogCrcErrorException": "Järjestelmän päivitysluetteloa päivitetään parhaillaan järjestelmän päivityspalvelimessa. Yritä myöhemmin uudelleen.",
+            "catalogCrcErrorException": "Järjestelmäluetteloa päivitetään parhaillaan. Yritä myöhemmin uudelleen.",
             "catalogErrorException": "Järjestelmän päivitysluettelossa havaittiin virhe järjestelmän päivityspalvelimessa. Yritä myöhemmin uudelleen.",
             "fileNotFoundException": "Tiedostoa ei löydy."
         }
@@ -1615,8 +1643,9 @@
             },
             "errorMessage": {
                 "headerText": "Virhe",
-				"bodyText": "Olemme havainneet, että sinulta puuttuu tärkeitä Vantagen osia. Nämä osat ladataan taustalla. Yritä myöhemmin uudelleen.",
-				"closeText": "close"
+                "bodyText": "Olemme havainneet, että sinulta puuttuu tärkeitä Vantagen osia. Nämä osat ladataan taustalla. Yritä myöhemmin uudelleen.",
+                "closeText": "sulje",
+                "offlineText": "Internet-yhteyttä ei ole muodostettu. Jotkin tämän sivun osat eivät toimi oikein. Muodosta yhteys uudelleen"
             }
         },
         "homeprotection": {

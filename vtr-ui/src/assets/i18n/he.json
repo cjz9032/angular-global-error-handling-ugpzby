@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "כיווץ",
             "expand": "הרחבה",
-            "loader": "Fetching <br> Status"
+            "loader": "מאחזר <br> סטטוס",
+            "loading": "...טעינה"
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "בנוסף, מומלץ לעמעם את שורת המשימות ואזורים אחרים של התצוגה שאינם משתנים לעיתים קרובות כדי להאריך את חיי הצג."
                         ],
                         "reset": "איפוס הטמפרטורה",
-                        "tooltip": "תכונה זו יכולה להפחית את צריכת החשמל ולהאריך את חיי הסוללה על ידי עמעום סלקטיבי של חלקים מהתצוגה."
+                        "tooltip": "תכונה זו יכולה להפחית את צריכת החשמל ולהאריך את חיי הסוללה על ידי עמעום סלקטיבי של חלקים מהתצוגה.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "קלט ועזרים",
+                "subtitle": "הגדרות קלט ועזרים",
+                "description": "החישה החכמה של Lenovo משלבת חיישנים שונים של המחשב כדי לזהות את הפעילויות שלכם ולכוונן הגדרות לצורך ניהול צריכת חשמל אופטימלית",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "מקלדת חכמה",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "פונקציות מקלדת נסתרות",
+                        "description": "ניתן ללחוץ על מקש Fn, בפינה השמאלית התחתונה של לוח המקשים, בו זמנית עם מקשים אחרים כדי לעורר את הפקודות המוצגות במפת לוח המקשים למטה."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "הפעלת תכונת שינוי גודל התצוגה בתצוגות בעלות רזולוציה גבוהה",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "כניסה למצב שינה",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "הפעלה וכיבוי מגן הפרטיות",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "מעבר בין מצב ביצוע למצב שקט",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + מקש רווח",
+                        "description": "שינוי מצבי תאורה אחורית של המקלדת",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "מקש המוגדר על ידי המשתמש",
+                    "caption": "המקש המיוצג על ידי סמל הכוכב מאפשר לכם להגדיר פונקציה על ידי המשתמש",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "הפעלה של מקש המוגדר על ידי המשתמש",
+                        "note": "הערה: ניתן להשתמש באפשרות זו כדי להכניס מקש של פריטים נפוצים, כמו דואר אלקטרוני או כתובות דואר. Lenovo ממליצה לא להשתמש בתכונה זו לעולם לשם אחסון והזנת סיסמאות או מידע פרטי אחר.",
+                        "options": {
+                            "option1": "יש לבחור",
+                            "option2": "פתח אתר אינטרנט",
+                            "option3": "הזן טקסט"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1179,31 +1207,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Lenovo Active Protection System היא תכונה אוטונומית המסייעת בהגנה על הכונן הקשיח מנזק הנגרם כתוצאה מזעזוע פיזי חזק ומרטט. היא מנטרת ברציפות את התנועה של המחשב, ועוצרת באופן זמני את הכונן הקשיח בזמן שנפילה או אירוע מזיק דומה צפויים להתרחש.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "שינוי הרגישות, במצב רגישות נמוך, רק זעזועים קשים יפעילו את ההגנה",
+                    "checkbox": "התעלמות מזעזועים חוזרים כמו אלו של רכבת או מכונית"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "השהיה ידנית של Active Protection",
+                    "caption": "מאפשרת לי להשהות ידנית את ה-Active Protection System",
+                    "dropdown-title": "השהיה למשך",
+                    "button": "השהיה כעת"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "לשיפור הגישה לכונן הדיסק הקשיח בזמן השימוש כמחשב לוח, Active Protection System תושהה בעת זיהוי הפעילויות הבאות",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "קלט עט",
+                        "description": "בזמן שימוש בקלט עט, הפעילו APS כאשר קלט העט מחוץ לטווח"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "קלט מגע",
+                        "description": "כאשר נעשה שימוש בקלט 'מגע', הפעילו APS כאשר קלט המגע אינו מזוהה"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "חישת קרבת יד בקצוות המחשב",
+                        "description": "כאשר מצב מחשב לוח מופעל, הפעילו APS כשהיד לא מזוהה"
                     }
                 }
             },
@@ -1211,33 +1239,33 @@
                 "heading": "מדיה חכמה",
                 "title": "הפעלת וידאו ללא מגע",
                 "desc": "תכונה זו תשהה את הווידאו כאשר אתם עוזבים את המחשב ותחדש את הווידאו כשאתם חוזרים.",
-                "tooltip": "תכונה זו לא ישימה עבור נגני וידאו באינטרנט. נגני וידאו פופולריים, כמו Windows Media Player, 5KPlayer וכן הלאה תומכים בתכונה זו."
+                "tooltip": "תכונה זו לא ישימה עבור נגני וידאו באינטרנט. נגני וידאו פופולריים, כמו Windows Media Player‏, 5KPlayer וכן הלאה תומכים בתכונה זו."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "קול",
+                "description": "התוכנה Lenovo Voice מסייעת בהמרת הדיבור לטקסטים באמצעות פונקציית המרת דיבור לטקסט והיא מספקת תרגום בזמן אמת של דיבור לטקסטים באמצעות פונקציית התרגום.",
+                "installBtnText": "התקן",
+                "launchBtnText": "הפעלה",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "המרת דיבור לטקסט",
+                    "caption": "תכונה זו מסייעת להמיר את הדיבור לטקסטים."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "תרגום",
+                    "caption": "תכונה זו מספקת תרגום לדיבור בזמן אמת. התוכן המתורגם מוצג בטקסטים. ניתן לבחור בשפות המקור ובשפות היעד בהתאם לצרכים."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "תחילת העבודה:",
+                    "point1": "ודאו כי הסמל Lenovo Voice מוצג במגש המערכת של Windows.",
+                    "point2": "פתחו את הקובץ שבו ברצונכם לתעד את הטקסט שהומר.",
+                    "point3": "לחצו על הסמל Lenovo Voice במגש המערכת של Windows ובחרו באפשרות 'המרת דיבור לטקסט'.",
+                    "point4": "בחרו בשפה הרצויה ולחצו על סמל המיקרופון כדי להתחיל.",
+                    "point5": "מקמו את הסמן במקום שאותו תרצו לערוך והתחילו לדבר.",
+                    "point6": "לחצו על הסמל Lenovo Voice במגש המערכת של Windows ובחרו באפשרות 'תרגום'.",
+                    "point7": "בחרו את שפת המקור ואת שפת היעד הרצויות.",
+                    "point8": "בהתאם לצרכים, הגדירו את קלט הקול מרמקול או ממיקרופון.",
+                    "point9": "לחצו על סמל המיקרופון כדי להתחיל לדבר",
+                    "closeText": "סגירה"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "עדכונים מומלצים",
         "optionalUpdates": "עדכונים אופציונליים",
         "ignoredUpdates": "עדכונים שהמערכת התעלמה מהם",
-        "successInstall": "הותקן בהצלחה בתאריך",
-        "failedInstall": "ההתקנה נכשלה בתאריך",
+        "successInstall": "הותקן בהצלחה: ",
+        "failedInstall": "ההתקנה נכשלה: ",
         "at": "ב-",
         "readMore": "פרטים נוספים",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "ברוכים הבאים לשימוש ב-System Update.",
             "title": "מערכת עדכנית היא מערכת תקינה.",
-            "last": "העדכון האחרון נעשה ב-",
-            "next": "חיפוש העדכונים הבא נקבע לתאריך",
+            "last": "עודכן לאחרונה: ",
+            "next": "העדכון המתוכנן הבא: ",
             "checkButton": "חיפוש עדכונים",
             "checking": "חיפוש עדכונים",
             "downloading": "הורדת העדכונים הושלמה",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "השרת עדכוני המערכת אינו זמין כעת. נסו שוב מאוחר יותר.",
             "helpCenterInvalidServerException": "השרת עדכוני המערכת אינו חוקי. נסו שוב מאוחר יותר.",
             "catalogNotFoundException": "לא נמצאו עדכונים עבור המערכת שלכם.",
-            "catalogCrcErrorException": "קטלוג העדכונים של המערכת שלכם מתעדכן כעת בשרת עדכוני המערכת. נסו שוב מאוחר יותר.",
+            "catalogCrcErrorException": "קטלוג המערכת מתעדכן כעת. נסו שוב מאוחר יותר.",
             "catalogErrorException": "זוהתה שגיאה בקטלוג העדכונים של המערכת שלכם בשרת עדכוני המערכת. נסו שוב מאוחר יותר.",
             "fileNotFoundException": "הקובץ לא נמצא."
         }
@@ -1615,8 +1643,9 @@
             },
             "errorMessage": {
                 "headerText": "שגיאה",
-				"bodyText": "גילינו שחסרים לכם חלקים קריטיים של Vantage. הורדה של חלקים אלה תתבצע ברקע. נסו שוב מאוחר יותר.",
-				"closeText": "close"
+                "bodyText": "גילינו שחסרים לכם חלקים קריטיים של Vantage. הורדה של חלקים אלה תתבצע ברקע. נסו שוב מאוחר יותר.",
+                "closeText": "סגירה",
+                "offlineText": "זיהינו שאינכם מחוברים לאינטרנט. חלקים מסוימים בדף זה לא יפעלו כראוי. התחברו מחדש"
             }
         },
         "homeprotection": {

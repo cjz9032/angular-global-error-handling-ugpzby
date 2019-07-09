@@ -18,6 +18,8 @@
 					<a *ngIf="isOnline" [attr.href]="!actionLink ? null : actionLink"
 					   (click)="linkClicked(actionType, actionLink)"
 					   vtrMetrics
+					   id="{{id}}"
+					   attr.aria-label="{{ariaLabel}}"
 					   metricsItemCategory="corner"
 					   metricsEvent="docClick"
 					   [metricsItemPosition]="sideFlag + order"
@@ -72,6 +74,8 @@
 					   target="_blank"
 					   class="card-image"
 					   vtrMetrics
+					   id="{{id}}"
+					   attr.aria-label="{{ariaLabel}}"
 					   metricsEvent="ArticleClick"
 					   metricsItemCategory="corner-article"
 					   [metricsItemPosition]="sideFlag + order"
@@ -126,6 +130,8 @@
 					<a *ngIf="isOnline" [attr.href]="!actionLink ? null : actionLink"
 					   metricsItemCategory="highlight"
 					   vtrMetrics
+					   id="{{id}}"
+					   attr.aria-label="{{ariaLabel}}"
 					   metricsEvent="docClick"
 					   [metricsItemPosition]="sideFlag + order"
 					   [metricsItemID]="itemID"
@@ -159,6 +165,8 @@
 			<a *ngIf="isOnline" [attr.href]="!actionLink ? null : actionLink"
 			   metricsItemCategory="article"
 			   vtrMetrics
+			   id="{{id}}"
+			   attr.aria-label="{{ariaLabel}}"
 			   metricsEvent="docClick"
 			   [metricsItemPosition]="sideFlag + order"
 			   [metricsItemID]="itemID"
@@ -167,6 +175,8 @@
 					<div class="col col-12 image-container">
 						<a [attr.href]="!actionLink ? null : actionLink"
 							target="_blank"
+							id="{{id}}-card-image"
+			   				attr.aria-label="{{ariaLabel}}-card-image"
 						   class="card-image"
 						   [style.background-image]="'url(' + img + ')'">
 							<div *ngIf="logo || logoText"
@@ -184,7 +194,10 @@
 								 class="title">{{title}}</div>
 							<div *ngIf="actionLink"
 								 class="read-more">
-								<a [attr.href]="!actionLink ? null : actionLink" target="_blank">
+								<a [attr.href]="!actionLink ? null : actionLink" 
+									id="{{id}}-read-more"
+									attr.aria-label="{{ariaLabel}}-read-more"
+									target="_blank">
 									<span class="link-label">{{action}}</span>
 									<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 								</a>
@@ -230,6 +243,8 @@
 						<a *ngIf="isOnline" [attr.href]="!actionLink ? null : actionLink"
 						   target="_blank"
 						   vtrMetrics
+						   id="{{id}}"
+			   			   attr.aria-label="{{ariaLabel}}"
 						   metricsEvent="docClick"
 						   [metricsItemID]="itemID"
 						   [metricsItemPosition]="sideFlag + order"

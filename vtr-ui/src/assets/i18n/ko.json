@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "축소",
             "expand": "확장",
-            "loader": "Fetching <br> Status"
+            "loader": "페치 상태",
+            "loading": "로드 중..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "또한, 디스플레이의 전체 수명을 연장하려면 작업 표시줄과 그 외 디스플레이 영역 중 변화가 별로 없는 부분을 어둡게 설정하시기 바랍니다."
                         ],
                         "reset": "온도 재설정",
-                        "tooltip": "이 기능은 디스플레이의 일부를 선택적으로 어둡게 하여 전원 소모를 줄이고 배터리 수명을 늘릴 수 있습니다."
+                        "tooltip": "이 기능은 디스플레이의 일부를 선택적으로 어둡게 하여 전원 소모를 줄이고 배터리 수명을 늘릴 수 있습니다.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "입력 및 액세서리",
+                "subtitle": "입력 및 액세서리 설정",
+                "description": "Lenovo 지능형 센싱은 컴퓨터의 다양한 센서를 조합하여 사용자의 활동을 감지하고 전원 관리가 최적화될 수 있도록 설정을 조정합니다",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "지능형 키보드",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "숨겨진 키보드 기능",
+                        "description": "키보드의 왼쪽 아래에 있는 Fn 키와 다른 키를 동시에 눌러 아래 키보드 맵에 표시된 명령을 호출할 수 있습니다."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "고해상도 디스플레이의 확대/축소 기능을 사용하도록 설정",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "절전 모드 실행",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "개인 정보 가드 켜기 및 끄기",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "성능 모드와 저소음 모드 사이를 전환",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + 스페이스",
+                        "description": "키보드 백라이트 상태 변경",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "사용자 정의 키",
+                    "caption": "별 모양 아이콘으로 표시된 키는 사용자 정의 기능을 설정할 수 있습니다",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "작업 사용자 정의 키",
+                        "note": "참고: 이메일이나 우편 주소와 같이 일반적으로 입력되는 키를 입력하는 데 사용할 수 있습니다. 암호나 기타 개인 정보를 저장 및 입력하는 데 이 기능을 사용하지 않는 것이 좋습니다.",
+                        "options": {
+                            "option1": "선택하십시오.",
+                            "option2": "웹 사이트 열기",
+                            "option3": "텍스트 입력"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1179,31 +1207,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Lenovo Active Protection System은 강한 물리적 충격과 진동으로 인한 손상으로부터 하드 드라이브를 보호하는 데 유용한 자율 기능입니다. 이 기능을 통하여 계속해서 본 컴퓨터의 움직임이 모니터링되며 낙하 등의 손상이 예측되는 경우 하드 드라이브는 일시적으로 정지하게 됩니다.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "감도를 변경하십시오. 감도가 낮으면 센 충격이 있어야만 보호가 활성화됩니다",
+                    "checkbox": "기차 또는 자동차와 같은 반복 충격 무시"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "수동 Active Protection 일시 중단",
+                    "caption": "수동으로 Active Protection System을 일시 중단하겠습니다",
+                    "dropdown-title": "일시 중단 대상",
+                    "button": "지금 일시 중단"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "태블릿 사용 중에 하드 디스크 드라이브의 액세스를 개선하려면, 다음 작업이 감지될 때 Active Protection System를 중단하십시오",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "펜 입력",
+                        "description": "펜을 사용할 때 펜 입력이 범위를 벗어나면 APS를 사용 가능으로 설정하십시오"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "터치 입력",
+                        "description": "터치 입력을 사용할 때 터치 입력이 감지되지 않으면 APS를 사용 가능으로 설정하십시오"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "컴퓨터 가장자리에서 손 근접 감지",
+                        "description": "태블릿 모드를 사용할 때 손이 감지되지 않으면 APS를 사용 가능으로 설정하십시오"
                     }
                 }
             },
@@ -1214,30 +1242,30 @@
                 "tooltip": "이 기능은 웹 비디오 플레이어에는 적용되지 않습니다. 대중적인 비디오 플레이어(예: Windows Media Player, 5KPlayer 등)가 이 기능을 지원합니다."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "음성",
+                "description": "Lenovo Voice는 음성에서 텍스트로의 변환 기능을 제공하며 번역 기능을 사용하여 음성에서 텍스트로의 실시간 번역을 제공합니다.",
+                "installBtnText": "설치",
+                "launchBtnText": "시작",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "음성에서 텍스트로",
+                    "caption": "이 기능을 사용하면 음성을 텍스트로 변환할 수 있습니다."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "번역",
+                    "caption": "이 기능은 음성으로의 실시간 번역을 제공합니다. 번역된 내용은 텍스트로 표시됩니다. 필요에 따라 소스 언어 및 대상 언어를 선택할 수 있습니다."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "시작하기:",
+                    "point1": "Lenovo Voice 아이콘이 Windows 시스템 트레이에 표시되는지 확인하십시오.",
+                    "point2": "변환된 텍스트를 기록할 파일을 여십시오.",
+                    "point3": "Windows 시스템 트레이에서 Lenovo Voice 아이콘을 클릭하고 음성에서 텍스트로를 선택하십시오.",
+                    "point4": "원하는 언어를 선택하고 마이크 아이콘을 클릭하여 시작하십시오.",
+                    "point5": "편집하려는 곳으로 커서를 이동하고 말하기를 시작하십시오.",
+                    "point6": "Windows 시스템 트레이에서 Lenovo Voice 아이콘을 클릭하고 변환을 선택하십시오.",
+                    "point7": "원하는 소스 언어 및 대상 언어를 선택하십시오.",
+                    "point8": "필요에 따라 스피커 또는 마이크에서 음성 입력을 설정하십시오.",
+                    "point9": "말하기를 시작하려면 마이크 아이콘을 클릭하십시오",
+                    "closeText": "닫기"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "권장 업데이트",
         "optionalUpdates": "선택적 업데이트",
         "ignoredUpdates": "무시된 업데이트",
-        "successInstall": "설치 완료 날짜",
-        "failedInstall": "설치 실패 날짜",
+        "successInstall": "설치 완료: ",
+        "failedInstall": "설치 실패: ",
         "at": "시간",
         "readMore": "자세히 읽기",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "System Update를 시작합니다.",
             "title": "최신 시스템은 정상적인 시스템입니다.",
-            "last": "최종 업데이트 날짜",
-            "next": "다음 업데이트 검사가 다음 시간에 예약됨",
+            "last": "마지막 업데이트 날짜: ",
+            "next": "다음 예약 업데이트 날짜: ",
             "checkButton": "업데이트 검사",
             "checking": "업데이트 검사",
             "downloading": "업데이트 다운로드 완료",
@@ -1361,12 +1389,12 @@
             "proxyAuthenticationException": "프록시 사용자 이름 또는 암호가 올바르지 않습니다.",
             "proxyConnectionException": "프록시 서버에 연결할 수 없습니다.",
             "autoScriptEvaluationException": "자동 구성 스크립트를 평가 중 오류가 발생했습니다.",
-            "localRepositoryConnectionFailureException": "Local Repository에 연결할 수 없습니다.",
-            "localRepositoryDatabaseException": "Local Repository 데이터베이스를 찾을 수 없거나 데이터베이스가 손상되었습니다.",
+            "localRepositoryConnectionFailureException": "로컬 리포지토리에 연결할 수 없습니다.",
+            "localRepositoryDatabaseException": "로컬 리포지토리 데이터베이스를 찾을 수 없거나 데이터베이스가 손상되었습니다.",
             "networkInterruptedException": "시스템 업데이트 서버를 현재 사용할 수 없습니다. 나중에 다시 시도하십시오.",
             "helpCenterInvalidServerException": "시스템 업데이트 서버가 올바르지 않습니다. 나중에 다시 시도하십시오.",
             "catalogNotFoundException": "시스템에 적용 가능한 업데이트를 찾을 수 없습니다.",
-            "catalogCrcErrorException": "현재 시스템 업데이트 서버에서 시스템의 업데이트 카탈로그를 업데이트하는 중입니다. 나중에 다시 시도하십시오.",
+            "catalogCrcErrorException": "현재 시스템 카탈로그를 업데이트하는 중입니다. 나중에 다시 시도하십시오.",
             "catalogErrorException": "시스템 업데이트 서버의 사용자 시스템 업데이트 카탈로그에서 오류가 발견되었습니다. 나중에 다시 시도하십시오.",
             "fileNotFoundException": "파일을 찾을 수 없습니다."
         }
@@ -1615,8 +1643,9 @@
             },
             "errorMessage": {
                 "headerText": "오류",
-				"bodyText": "Vantage의 중요한 부분이 누락된 것을 발견했습니다. 이 파일은 백그라운드에서 다운로드됩니다. 나중에 다시 시도하십시오.",
-				"closeText": "close"
+                "bodyText": "Vantage의 중요한 부분이 누락된 것을 발견했습니다. 이 파일은 백그라운드에서 다운로드됩니다. 나중에 다시 시도하십시오.",
+                "closeText": "닫기",
+                "offlineText": "인터넷에 연결되어 있지 않습니다. 이 페이지의 일부가 정상적으로 작동하지 않을 것입니다. 다시 연결하십시오"
             }
         },
         "homeprotection": {
@@ -2138,7 +2167,7 @@
         "experience": "경험",
         "privacytitle": "익명으로 사용 통계를 수집하여 앱 품질을 개선하는 데 도움을 줄 수 있습니다.",
         "moreInterest": "+ 취미 추가",
-        "title1": "그림을 그리고, 간단한 메모를 하고, 모든 자료에 주석을 달 수 있는 도구인",
+        "title1": "에 오신 것을 환영합니다",
         "title2": "Lenovo",
         "title3": "Vantage",
         "privacypolicy": "Lenovo의 개인정보 보호정책",
