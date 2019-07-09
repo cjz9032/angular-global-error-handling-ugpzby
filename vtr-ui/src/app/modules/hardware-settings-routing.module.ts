@@ -47,6 +47,16 @@ const routes: Routes = [
 	// 	}
 	// },
 	{
+		path: '',
+		component: PageDeviceComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
+		data: {
+			pageName: 'Device.MyDevice',
+			pageContent: 'My Device Status'
+		}
+	},
+	{
 		path: 'device',
 		component: PageDeviceComponent,
 		canDeactivate: [GuardService],

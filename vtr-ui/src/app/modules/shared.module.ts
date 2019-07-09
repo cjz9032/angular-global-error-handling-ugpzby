@@ -30,6 +30,8 @@ import { SettingsService } from '../services/settings.service';
 import { TranslationModule } from './translation.module';
 import { UserService } from '../services/user/user.service';
 import { CommonDirectiveModule } from './common-directive.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
 	declarations: [
@@ -44,12 +46,14 @@ import { CommonDirectiveModule } from './common-directive.module';
 		ModalWelcomeComponent,
 	],
 	exports: [
+		AngularSvgIconModule,
 		ArticleItemComponent,
 		BaseComponent,
 		CommonDirectiveModule,
 		CommonPipeModule,
 		ContainerArticleComponent,
 		ContainerCardComponent,
+		FontAwesomeModule,
 		FormsModule,
 		HeaderMainComponent,
 		HttpClientModule,
@@ -57,21 +61,25 @@ import { CommonDirectiveModule } from './common-directive.module';
 		MenuMainComponent,
 		ModalLenovoIdComponent,
 		ModalWelcomeComponent,
+		Ng5SliderModule,
 		NgbModule,
 		ReactiveFormsModule,
+		RouterModule,
 		TranslationModule
 	],
 	imports: [
 		AngularSvgIconModule,
+		CommonDirectiveModule,
 		CommonModule,
 		CommonPipeModule,
+		FontAwesomeModule,
 		FormsModule,
 		HttpClientModule,
 		Ng5SliderModule,
 		NgbModule,
 		ReactiveFormsModule,
-		TranslationModule.forRoot(),
-		CommonDirectiveModule
+		RouterModule,
+		TranslationModule.forChild()
 	],
 	providers: [
 		CommonService,

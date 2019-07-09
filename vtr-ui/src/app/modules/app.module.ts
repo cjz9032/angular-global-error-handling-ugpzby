@@ -40,7 +40,7 @@ library.add(fal);
 			},
 			isolate: false
 		}),
-		TranslationModule.forRoot(),
+		TranslationModule.forChild(),
 		AppRoutingModule,
 		FontAwesomeModule
 	],
@@ -48,7 +48,8 @@ library.add(fal);
 		CommonModalModule,
 		CommonWidgetModule,
 		SharedModule,
-		TranslationModule
+		TranslationModule,
+		FontAwesomeModule
 	],
 	providers: [
 		{ provide: ErrorHandler, useClass: GlobalErrorHandler }

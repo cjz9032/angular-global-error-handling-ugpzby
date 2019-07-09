@@ -19,7 +19,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 	exports: [TranslateModule, TranslatePipe]
 })
 export class TranslationModule {
-	static forRoot(): ModuleWithProviders {
+	static forChild(): ModuleWithProviders {
 		return {
 			ngModule: TranslationModule
 		};

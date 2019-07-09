@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
 const routes: Routes = [
 	{
@@ -12,7 +12,7 @@ const routes: Routes = [
 	},
 	{
 		path: 'device',
-		loadChildren: './hardware-settings.module#HardwareSettingModule'
+		loadChildren: './hardware-settings.module#HardwareSettingsModule'
 	},
 	{
 		path: '',
@@ -23,7 +23,14 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [
-		RouterModule.forRoot(routes, { useHash: true, scrollPositionRestoration: 'enabled' })
+		RouterModule.forRoot(
+			routes,
+			{
+				useHash: true,
+				scrollPositionRestoration: 'enabled',
+				enableTracing: true,
+				// preloadingStrategy: PreloadAllModules
+			})
 	],
 	exports: [
 		RouterModule
