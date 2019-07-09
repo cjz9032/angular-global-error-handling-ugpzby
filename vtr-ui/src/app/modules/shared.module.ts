@@ -73,7 +73,7 @@ library.add(fal);
 		ModalWelcomeComponent,
 		NgbModule,
 		ReactiveFormsModule,
-		TranslationModule,
+		TranslationModule
 	],
 	imports: [
 		AngularSvgIconModule,
@@ -85,7 +85,7 @@ library.add(fal);
 		Ng5SliderModule,
 		NgbModule,
 		ReactiveFormsModule,
-		TranslationModule,
+		TranslationModule.forRoot(),
 		CommonDirectiveModule
 	],
 	providers: [

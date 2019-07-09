@@ -52,7 +52,6 @@ import { SubpageDeviceSettingsAudioComponent } from '../components/pages/page-de
 import { SubpageDeviceSettingsDisplayComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
 import { SubpageDeviceSettingsInputAccessoryComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
 import { SubpageDeviceSettingsPowerComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
-import { TranslationModule } from './translation.module';
 import { VoiceComponent } from '../components/pages/page-smart-assist/voice/voice.component';
 import { WifiSecurityComponent } from '../components/pages/page-security-wifi/children/wifi-security/wifi-security.component';
 
@@ -115,8 +114,7 @@ import { WifiSecurityComponent } from '../components/pages/page-security-wifi/ch
 	imports: [
 		CommonModule,
 		SharedModule,
-		HardwareSettingRoutingModule,
-		TranslationModule
+		HardwareSettingRoutingModule
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA,
