@@ -6,6 +6,7 @@ export class WidgetItem {
 	detail: string;
 	path: string;
 	type: string;
+	metricsItemName: string;
 
 	constructor(arg: any = {}, translateService: TranslateService) {
 		this.status = arg.status;
@@ -14,6 +15,7 @@ export class WidgetItem {
 		this.detail = arg.detail;
 		this.path = arg.path;
 		this.type = arg.type;
+		this.metricsItemName = arg.metricsItemName;
 		this.status = 4;
 		translateService.stream('common.securityAdvisor.loading').subscribe((value) => {
 			if (!this.detail) {

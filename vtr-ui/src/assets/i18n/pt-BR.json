@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Recolher",
             "expand": "Expandir",
-            "loader": "Fetching <br> Status"
+            "loader": "Buscando <br> Status",
+            "loading": "Carregando..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "Recomenda-se também diminuir a luz da barra de tarefas e de outras áreas do monitor que não mudam com muita frequência para prolongar a vida útil do monitor."
                         ],
                         "reset": "Redefinir temperatura",
-                        "tooltip": "Esse recurso pode reduzir o consumo de energia e prolongar a duração da bateria diminuindo seletivamente a luz do monitor."
+                        "tooltip": "Esse recurso pode reduzir o consumo de energia e prolongar a duração da bateria diminuindo seletivamente a luz do monitor.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Entrada e acessórios",
+                "subtitle": "Configurações de entrada e acessórios",
+                "description": "A Detecção inteligente da Lenovo combina vários sensores no computador para detectar suas atividades e ajustar as configurações para gerenciamento de energia ideal",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Teclado inteligente",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Funções ocultas do teclado",
+                        "description": "Na parte inferior esquerda do teclado, pressione a tecla Fn simultaneamente com outras teclas para ativar os comandos mostrado no mapa do teclado abaixo."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "ativa o recurso de zoom em exibições de alta resolução",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "entra no modo de suspensão",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "ativa e desativar a Proteção de privacidade",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "alterna entre os modos de Desempenho e Silencioso",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + Espaço",
+                        "description": "altera os estados de retroiluminação do teclado",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Tecla definida pelo usuário",
+                    "caption": "A tecla representada pelo ícone de estrela permite configurar a função definida pelo usuário",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Tecla definida pelo usuário de ação",
+                        "note": "Nota: pode ser usado para inserir tecla comumente usada, como endereços postal ou de e-mail. A Lenovo recomenda nunca usar esse recurso para armazenar e inserir senhas ou outras informações privadas.",
+                        "options": {
+                            "option1": "Selecione",
+                            "option2": "Abrir site",
+                            "option3": "Digite o texto"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "Atualizações recomendadas",
         "optionalUpdates": "Atualizações opcionais",
         "ignoredUpdates": "Atualizações ignoradas",
-        "successInstall": "Instalado com êxito em",
-        "failedInstall": "Falha ao instalar em",
+        "successInstall": "Instalado com êxito: ",
+        "failedInstall": "Falha ao instalar: ",
         "at": "às",
         "readMore": "Ler mais",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "Bem-vindo ao uso do System Update.",
             "title": "Um sistema atualizado é um sistema saudável.",
-            "last": "Atualizado pela última vez em",
-            "next": "Próxima verificação de atualização agendada em",
+            "last": "Última atualização: ",
+            "next": "Próxima atualização agendada: ",
             "checkButton": "VERIFICAR ATUALIZAÇÕES",
             "checking": "Verificando atualizações",
             "downloading": "Download de atualizações concluído",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "O Servidor de Atualização do Sistema está indisponível atualmente. Tente novamente mais tarde.",
             "helpCenterInvalidServerException": "O Servidor de Atualização do Sistema é inválido. Tente novamente mais tarde.",
             "catalogNotFoundException": "Nenhuma atualização aplicável encontrada para seu sistema.",
-            "catalogCrcErrorException": "O catálogo de atualizações para seu sistema está sendo atualizado no Servidor de Atualização do Sistema. Tente novamente mais tarde.",
+            "catalogCrcErrorException": "O catálogo do sistema está sendo atualizado no momento. Tente novamente mais tarde.",
             "catalogErrorException": "Erro detectado no catálogo de atualizações para seu sistema no Servidor de Atualização do Sistema. Tente novamente mais tarde.",
             "fileNotFoundException": "Arquivo não encontrado."
         }
@@ -1616,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Erro",
                 "bodyText": "Detectamos que você não possui partes essenciais do Vantage. Essas partes serão baixadas em segundo plano. Tente novamente mais tarde.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "fechar",
+                "offlineText": "Detectamos que você não está conectado à Internet. Algumas partes desta página não funcionarão corretamente. Reconecte-se"
             }
         },
         "homeprotection": {

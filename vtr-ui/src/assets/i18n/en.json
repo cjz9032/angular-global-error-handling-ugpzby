@@ -63,7 +63,7 @@
 					"media": "Media",
 					"macroKey": "Marco Key",
 					"hardwareScan": "Hardware Scan",
-					"systemUpdate": "System Updates",
+					"systemUpdate": "System Update",
 					"header": "System Tools"
 				},
 				"systemStatus": {
@@ -103,7 +103,7 @@
 		},
 		"macroKey": {
 			"title": "Macro Key",
-			"introLine": "You can record a series of key input, and use them in gaming or other operations.",
+			"introLine": "You can record a series of key inputs, and use them in gaming or other operations.",
 			"status": {
 				"on": {
 					"title": "On",
@@ -387,7 +387,7 @@
 				"title": "Device",
 				"sub1": "My Device",
 				"sub2": "My Device Settings",
-				"sub3": "System Updates",
+				"sub3": "System Update",
 				"sub4": "Smart Assist"
 			},
 			"security": {
@@ -438,7 +438,8 @@
 			"off": "OFF",
 			"collapse": "Collapse",
 			"expand": "Expand",
-			"loader": "Fetching <br> Status"
+			"loader": "Fetching <br> Status",
+			"loading": "Loading..."
 		}
 	},
 	"privacy": {
@@ -550,8 +551,8 @@
 			"learnMore": "Learn more",
 			"freeMemory": "Free memory",
 			"systemUpdate": {
-				"title": "System update",
-				"notFound": "System update not found",
+				"title": "System Update",
+				"notFound": "System Update not found",
 				"detail": {
 					"uptoDate": "Software up to date ",
 					"updatedOn": "updated on ",
@@ -1115,7 +1116,12 @@
 					},
 					"dropDown": {
 						"title": "ACTION USER DEFINED KEY",
-						"note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+						"note": "Note: This can be used to enter commonly entered key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information.",
+						"options": {
+							"option1": "Please select",
+							"option2": "Open website",
+							"option3": "Enter text"
+						}
 					}
 				}
 			}
@@ -1270,7 +1276,7 @@
 		}
 	},
 	"systemUpdates": {
-		"title": "System Updates",
+		"title": "System Update",
 		"back": "BACK",
 		"history": "FULL HISTORY",
 		"notAvailable": "Not Available",
@@ -1279,8 +1285,8 @@
 		"recommendedUpdates": "Recommended Update(s)",
 		"optionalUpdates": "Optional Update(s)",
 		"ignoredUpdates": "Ignored Update(s)",
-		"successInstall": "Successfully installed on",
-		"failedInstall": "Failed to install on",
+		"successInstall": "Successfully installed: ",
+		"failedInstall": "Failed to install: ",
 		"at": "at",
 		"readMore": "Read more",
 		"popup": {
@@ -1318,8 +1324,8 @@
 		"banner": {
 			"neverChecked": "Welcome to use System Update.",
 			"title": "An up-to-date system is a healthy system.",
-			"last": "Last update was on",
-			"next": "Next updated scan is scheduled on",
+			"last": "Last updated: ",
+			"next": "Next scheduled update: ",
 			"checkButton": "CHECK FOR UPDATES ",
 			"checking": "Checking for updates",
 			"downloading": "Downloading updates",

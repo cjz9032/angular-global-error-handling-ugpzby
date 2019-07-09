@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Daralt",
             "expand": "Genişlet",
-            "loader": "Fetching <br> Status"
+            "loader": "Durum <br> Alma",
+            "loading": "Yükleniyor..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "Ayrıca ekranın genel kullanım ömrünü uzatmak için görev çubuğunun ve ekranın sık sık değişmeyen diğer alanlarının karartılması önerilir."
                         ],
                         "reset": "Sıcaklığı sıfırla",
-                        "tooltip": "Bu özellik, aynı zamanda isteğe bağlı olarak ekranın bazı bölümleri karartılarak güç tüketimini azaltabilir ve pil ömrünü uzatabilir."
+                        "tooltip": "Bu özellik, aynı zamanda isteğe bağlı olarak ekranın bazı bölümleri karartılarak güç tüketimini azaltabilir ve pil ömrünü uzatabilir.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Giriş ve Aksesuarlar",
+                "subtitle": "Giriş ve Aksesuarlar Ayarları",
+                "description": "Lenovo Akıllı Algılama, etkinliklerinizi algılamak ve ideal güç yönetimi ayarlarını düzenlemek için bilgisayarınızın çeşitli algılayıcılarını birleştirir",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Akıllı Klavye",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Gizli klavye işlevleri",
+                        "description": "Klavyenizin sol altındaki Fn tuşuna diğer tuşlarla aynı anda basarak, aşağıdaki klavye haritasında gösterilen komutları çağırabilirsiniz."
                     },
                     "firstKeyObj": {
-                        "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "tittle": "Fn + Sekme",
+                        "description": "yüksek çözünürlüklü ekranlarda yakınlaştırma/uzaklaştırma özelliğini etkinleştirir",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "RAM askıda uyku kipine geçer",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "Gizlilik Koruması'nı açıp kapatır",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "Performans kipleri ve Sessiz kipi arasında geçiş yapar",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + Boşluk",
+                        "description": "klavye arka ışığı durumlarını değiştirir",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Kullanıcı Tanımlı Tuş",
+                    "caption": "Yıldız simgesiyle temsil edilen tuş, kullanıcı tanımlı işlevi belirlemenize olanak sağlar",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Kullanıcı Tanımlı Tuş İşlemi",
+                        "note": "Not: E-posta veya normal posta adresi gibi sık kullanılan metinleri girmek için kullanılabilir. Lenovo bu özelliğin parola veya başka bir özel bilgi saklamak ve girmek için kullanılmamasını önerir.",
+                        "options": {
+                            "option1": "Lütfen seçin:",
+                            "option2": "Web sitesini aç",
+                            "option3": "Metin gir"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "Önerilen Güncellemeler",
         "optionalUpdates": "İsteğe Bağlı Güncellemeler",
         "ignoredUpdates": "Yoksayılan Güncellemeler",
-        "successInstall": "Şu tarihte yüklendi:",
-        "failedInstall": "Şu tarihte yükleme başarısız:",
+        "successInstall": "Başarıyla yüklendi: ",
+        "failedInstall": "Kurulum yapılamadı: ",
         "at": "saat",
         "readMore": "Okumaya devam edin",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "System Update'i kullanmaya hoş geldiniz.",
             "title": "Güncel bir sistem, sağlıklı sistemdir.",
-            "last": "Son güncelleme tarihi",
-            "next": "Zamanlanan bir sonraki güncellenmiş tarama",
+            "last": "Son güncelleme: ",
+            "next": "Sonraki zamanlanmış güncelleme: ",
             "checkButton": "GÜNCELLEMELERİ DENETLE",
             "checking": "Güncellemeler denetleniyor",
             "downloading": "Güncellemelerin indirilmesi tamamlandı",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "Sistem Güncelleme Sunucusu şu anda kullanılamıyor. Lütfen daha sonra yeniden deneyin.",
             "helpCenterInvalidServerException": "Sistem Güncelleme Sunucusu geçersiz. Lütfen daha sonra yeniden deneyin.",
             "catalogNotFoundException": "Sisteminiz için geçerli bir güncelleme yok.",
-            "catalogCrcErrorException": "Sisteminiz için olan güncelleme kataloğu şu anda Sistem Güncelleme Sunucusu'nda güncelleniyor. Lütfen daha sonra yeniden deneyin.",
+            "catalogCrcErrorException": "Sisteminiz için katalog şu anda güncelleniyor. Lütfen daha sonra yeniden deneyin.",
             "catalogErrorException": "Sistem Güncelleme Sunucusu'ndaki sisteminiz için olan güncelleme kataloğunda bir hata saptandı. Lütfen daha sonra yeniden deneyin.",
             "fileNotFoundException": "Dosya bulunamadı."
         }
@@ -1616,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Hata",
                 "bodyText": "Vantage'ın kritik parçalarının sizde olmadığını tespit ettik. Bu parçalar arka planda indirilecek. Lütfen daha sonra yeniden deneyin.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "kapat",
+                "offlineText": "İnternet'e bağlı olmadığınızı tespit ettik. Bu sayfanın bazı kısımları düzgün çalışmayacak. Lütfen yeniden bağlanın"
             }
         },
         "homeprotection": {

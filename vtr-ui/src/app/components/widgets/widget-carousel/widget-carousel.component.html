@@ -6,6 +6,8 @@
 			ngbSlide>
 			<a *ngIf="isOnline" [href]="model.link"
 				vtrMetrics
+				[id]="id+''+cIndex"
+				[attr.aria-label]="ariaLabel+''+cIndex"
 				metricsEvent="articleclick"
 				[metricsItemID]="model.id"
 			    [metricsItemPosition]="order"

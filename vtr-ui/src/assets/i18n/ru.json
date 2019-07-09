@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Свернуть",
             "expand": "Развернуть",
-            "loader": "Fetching <br> Status"
+            "loader": "Получение <br> статуса",
+            "loading": "загрузка..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "Рекомендуется также затемнить панель задач и другие редко изменяемые области дисплея, чтобы продлить срок его службы."
                         ],
                         "reset": "Сбросить температуру",
-                        "tooltip": "Эта функция позволяет снизить энергопотребление и увеличить время работы аккумулятора путем выборочного затемнения участков экрана."
+                        "tooltip": "Эта функция позволяет снизить энергопотребление и увеличить время работы аккумулятора путем выборочного затемнения участков экрана.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Ввод и аксессуары",
+                "subtitle": "Параметры ввода и аксессуаров",
+                "description": "Функция интеллектуального распознавания Lenovo распознает ваши действия по сигналам различных датчиков компьютера и соответствующим образом корректирует параметры для оптимального управления электропитанием",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Интеллектуальная клавиатура",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Скрытые функции клавиатуры",
+                        "description": "Можно нажать клавишу Fn в нижней левой части клавиатуры одновременно с другими клавишами, чтобы выполнить команды, показанные на карте клавиатуры ниже."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "включение функции изменения масштаба на дисплеях с высоким разрешением",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "переход в режим сна",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "включение и выключение защиты конфиденциальности",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "переключение между режимом производительности и тихим режимом",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + пробел",
+                        "description": "изменение состояния подсветки клавиатуры",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Клавиша, определяемая пользователем",
+                    "caption": "Клавиша, обозначенная звездочкой, позволяет настроить функцию, определяемую пользователем",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Определяемая пользователем клавиша действия",
+                        "note": "Примечание. Эту функцию можно использовать для ввода стандартных данных, например адреса электронной почты или почтового адреса. Lenovo настоятельно не рекомендует использовать эту функцию для хранения или ввода паролей и другой конфиденциальной информации.",
+                        "options": {
+                            "option1": "Выберите",
+                            "option2": "Открытый сайт",
+                            "option3": "Введите текст"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "Рекомендуемые обновления",
         "optionalUpdates": "Необязательные обновления",
         "ignoredUpdates": "Пропущенные обновления",
-        "successInstall": "Успешно установлено",
-        "failedInstall": "Сбой при установке",
+        "successInstall": "Успешно установлено: ",
+        "failedInstall": "Не удалось установить: ",
         "at": "в",
         "readMore": "Подробнее",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "Вас приветствует программа System Update.",
             "title": "Регулярное обновление системы обеспечивает ее исправную работу.",
-            "last": "Дата последнего обновления",
-            "next": "Следующая проверка обновлений запланирована на",
+            "last": "Последнее обновление: ",
+            "next": "Следующее запланированное обновление: ",
             "checkButton": "ПРОВЕРИТЬ НАЛИЧИЕ ОБНОВЛЕНИЙ",
             "checking": "Проверка наличия обновлений",
             "downloading": "Загрузка обновлений завершена",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "Сервер обновления системы в настоящее время недоступен. Повторите попытку позже.",
             "helpCenterInvalidServerException": "Недопустимый сервер обновления системы. Повторите попытку позже.",
             "catalogNotFoundException": "Для вашей системы не обнаружено подходящих обновлений.",
-            "catalogCrcErrorException": "Каталог обновления вашей системы в настоящее время обновляется на сервере обновления системы. Повторите попытку позже.",
+            "catalogCrcErrorException": "Каталог для вашей системы в настоящее время обновляется. Повторите попытку позже.",
             "catalogErrorException": "Обнаружена ошибка, связанная с каталогом обновления вашей системы на сервере обновления системы. Повторите попытку позже.",
             "fileNotFoundException": "Файл не найден."
         }
@@ -1616,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Ошибка",
                 "bodyText": "Мы обнаружили, что вам не хватает критических компонентов Vantage. Эти компоненты будут загружены в фоновом режиме. Повторите попытку позже.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "закрыть",
+                "offlineText": "Мы обнаружили, что вы не подключены к Интернету. Некоторые части этой страницы будут функционировать некорректно. Подключитесь к Интернету повторно"
             }
         },
         "homeprotection": {
