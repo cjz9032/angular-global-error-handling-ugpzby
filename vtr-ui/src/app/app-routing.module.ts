@@ -31,13 +31,15 @@ import { PageNetworkBoostComponent } from './components/pages/page-network-boost
 import { PageSmartAssistComponent } from './components/pages/page-smart-assist/page-smart-assist.component';
 import { PageSettingsComponent } from './components/pages/page-settings/page-settings.component';
 import { SubpageDeviceSettingsInputAccessoryComponent } from './components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
+import { PageDashboardAndroidComponent } from './components/pages/page-dashboard-android/page-dashboard-android.component';
 
 const routes: Routes = [
 	{
 		path: '',
 		redirectTo: 'dashboard',
 		pathMatch: 'full'
-	}, {
+	},
+	{
 		path: 'dashboard',
 		component: PageDashboardComponent,
 		canDeactivate: [GuardService],
@@ -45,7 +47,17 @@ const routes: Routes = [
 		data: {
 			pageName: 'Dashboard'
 		}
-	}, {
+	},
+	{
+		path: 'android',
+		component: PageDashboardAndroidComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
+		data: {
+			pageName: 'DashboardAndroid'
+		}
+	},
+	{
 		path: 'macrokey',
 		component: PageMacrokeyComponent,
 		canDeactivate: [GuardService],
@@ -78,7 +90,7 @@ const routes: Routes = [
 		canActivate: [GuardService],
 		data: {
 			pageName: 'Device.MyDevice',
-			pageContent:'My Device Status'
+			pageContent: 'My Device Status'
 		}
 	}, {
 		path: 'device-gaming',
@@ -87,14 +99,14 @@ const routes: Routes = [
 		canActivate: [GuardService],
 		data: {
 			pageName: 'Device.MyDevice',
-			pageContent:'My Device Status'
+			pageContent: 'My Device Status'
 		}
 	}, {
 		path: 'device/device-settings',
 		component: PageDeviceSettingsComponent,
 		data: {
 			pageName: 'Device.MyDeviceSettings',
-			pageContent:'My Device Status'
+			pageContent: 'My Device Status'
 		},
 		children: [
 			{
@@ -148,7 +160,7 @@ const routes: Routes = [
 
 		data: {
 			pageName: 'Device.MyDeviceSettings',
-			pageContent:'My Device Status'
+			pageContent: 'My Device Status'
 		}
 	},
 	{
@@ -158,7 +170,7 @@ const routes: Routes = [
 		canActivate: [GuardService],
 		data: {
 			pageName: 'Device.SystemUpdate',
-			pageContent:'My Device Status'
+			pageContent: 'My Device Status'
 		}
 	}, {
 		path: 'security',
@@ -167,7 +179,7 @@ const routes: Routes = [
 		canActivate: [GuardService],
 		data: {
 			pageName: 'Security.MySecurity',
-			pageContent:'My Device Status'
+			pageContent: 'My Device Status'
 		}
 
 	}, {

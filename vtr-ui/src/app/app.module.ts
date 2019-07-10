@@ -243,6 +243,7 @@ import { DownloadFailedModalComponent } from './components/pages/page-smart-assi
 import { ModalErrorMessageComponent } from './components/modal/modal-error-message/modal-error-message.component';
 import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component';
 import { UserDefinedKeyComponent } from './components/pages/page-device-settings/children/subpage-device-settings-input-accessory/user-defined-key/user-defined-key.component';
+import { PageDashboardAndroidComponent } from './components/pages/page-dashboard-android/page-dashboard-android.component';
 
 library.add(fas);
 library.add(fab);
@@ -435,7 +436,8 @@ library.add(fal);
 		DownloadFailedModalComponent,
 		ModalErrorMessageComponent,
 		ModalServerSwitchComponent,
-		UserDefinedKeyComponent
+		UserDefinedKeyComponent,
+		PageDashboardAndroidComponent
 	],
 	imports: [
 		BrowserModule,
