@@ -25,7 +25,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 	public cameraDetail = new CameraDetail();
 	private cameraPreview: ElementRef;
-	private _video: HTMLVideoElement;
+	private videoElement: HTMLVideoElement;
 	private cameraDetailSubscription: Subscription;
 	private logger: any;
 	private Windows: any;
@@ -39,7 +39,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	public cameraErrorDescription: string;
 	public isCameraInErrorState = false;
 
-	@ViewChild('cameraPreview', { static: true }) set content(content: ElementRef) {
+	@ViewChild('cameraPreview', { static: false }) set content(content: ElementRef) {
 		// when camera preview video element is visible then start camera feed
 		this.cameraPreview = content;
 		if (content && !this.cameraDetail.isPrivacyModeEnabled) {
@@ -174,18 +174,18 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	startPreviewAsync() {
 		this.ngZone.run(() => {
 			const previewUrl = URL.createObjectURL(this.oMediaCapture);
-			this._video = this.cameraPreview.nativeElement;
-			this._video.src = previewUrl;
-			this._video.play();
+			this.videoElement = this.cameraPreview.nativeElement;
+			this.videoElement.src = previewUrl;
+			this.videoElement.play();
 		});
 	}
 
 	stopPreview() {
 		this.ngZone.run(() => {
 			// Cleanup the UI
-			if (this._video) {
-				this._video.pause();
-				this._video.src = '';
+			if (this.videoElement) {
+				this.videoElement.pause();
+				this.videoElement.src = '';
 			}
 		});
 	}
