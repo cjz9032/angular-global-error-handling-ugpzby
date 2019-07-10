@@ -1,19 +1,19 @@
-import { GuardService } from '../services/guard/security-guardService.service';
+import { GuardService } from 'src/app/services/guard/security-guardService.service';
 import { NgModule } from '@angular/core';
-import { PageAutocloseComponent } from '../components/pages/page-autoclose/page-autoclose.component';
-import { PageDeviceComponent } from '../components/pages/page-device/page-device.component';
-import { PageDeviceSettingsComponent } from '../components/pages/page-device-settings/page-device-settings.component';
-import { PageDeviceUpdatesComponent } from '../components/pages/page-device-updates/page-device-updates.component';
-import { PageSmartAssistComponent } from '../components/pages/page-smart-assist/page-smart-assist.component';
-import { PageSupportComponent } from '../components/pages/page-support/page-support.component';
-import { PageSupportDetailComponent } from '../components/pages/page-support-detail/page-support-detail.component';
-import { PageUserComponent } from '../components/pages/page-user/page-user.component';
+import { PageAutocloseComponent } from 'src/app/components/pages/page-autoclose/page-autoclose.component';
+import { PageDeviceComponent } from 'src/app/components/pages/page-device/page-device.component';
+import { PageDeviceSettingsComponent } from 'src/app/components/pages/page-device-settings/page-device-settings.component';
+import { PageDeviceUpdatesComponent } from 'src/app/components/pages/page-device-updates/page-device-updates.component';
+import { PageSmartAssistComponent } from 'src/app/components/pages/page-smart-assist/page-smart-assist.component';
+import { PageSupportComponent } from 'src/app/components/pages/page-support/page-support.component';
+import { PageSupportDetailComponent } from 'src/app/components/pages/page-support-detail/page-support-detail.component';
+import { PageUserComponent } from 'src/app/components/pages/page-user/page-user.component';
 import { RouterModule, Routes } from '@angular/router';
-import { SubpageDeviceSettingsAudioComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
-import { SubpageDeviceSettingsDisplayComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
-import { SubpageDeviceSettingsInputAccessoryComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
-import { SubpageDeviceSettingsPowerComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
-import { WindowsHelloGuardService } from '../services/guard/windows-hello-guardService.service';
+import { SubpageDeviceSettingsAudioComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
+import { SubpageDeviceSettingsDisplayComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
+import { SubpageDeviceSettingsInputAccessoryComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
+import { SubpageDeviceSettingsPowerComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
+
 
 const routes: Routes = [
 	{

@@ -6,7 +6,7 @@ import { PageSupportComponent } from '../components/pages/page-support/page-supp
 const routes: Routes = [
 	{
 		path: 'dashboard',
-		loadChildren: './hardware-dashboard.module#HardwareDashboardModule'
+		loadChildren: './hardware-settings/hardware-dashboard.module#HardwareDashboardModule'
 	},
 	{
 		path: 'gaming',
@@ -14,7 +14,7 @@ const routes: Routes = [
 	},
 	{
 		path: 'device',
-		loadChildren: './hardware-settings.module#HardwareSettingsModule'
+		loadChildren: './hardware-settings/hardware-settings.module#HardwareSettingsModule'
 	},
 	{
 		path: 'support',

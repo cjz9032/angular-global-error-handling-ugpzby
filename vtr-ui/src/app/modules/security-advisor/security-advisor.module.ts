@@ -26,8 +26,8 @@ import { SubTransformPipe } from 'src/app/pipe/security-antivirus/sub-transform.
 import { LinkStatusDirective } from 'src/app/directives/link-status.directive';
 import { IconNamePipe } from 'src/app/pipe/ui-security-statusbar/icon-name.pipe';
 import { SharedModule } from '../shared.module';
-import { CommonUiModule } from '../common-ui.module';
-import { CommonWidgetModule } from '../common-widget.module';
+import { CommonUiModule } from '../common/common-ui.module';
+import { CommonWidgetModule } from '../common/common-widget.module';
 
 @NgModule({
 	declarations: [

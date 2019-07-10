@@ -9,9 +9,8 @@ import { ConnectedHomeSecurityRoutingModule } from './connected-home-security-ro
 import { DaysIntervalPipe } from 'src/app/pipe/connected-home-security/account-status/days-interval.pipe';
 import { UiChsStatusbarComponent } from 'src/app/components/ui/ui-chs-statusbar/ui-chs-statusbar.component';
 import { SharedModule } from '../shared.module';
-import { CommonUiModule } from '../common-ui.module';
-import { CommonWidgetModule } from '../common-widget.module';
-
+import { CommonUiModule } from '../common/common-ui.module';
+import { CommonWidgetModule } from '../common/common-widget.module';
 
 @NgModule({
 	declarations: [

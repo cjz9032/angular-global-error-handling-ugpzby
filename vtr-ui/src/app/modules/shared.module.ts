@@ -1,9 +1,7 @@
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ArticleItemComponent } from '../components/article-item/article-item.component';
 import { BaseComponent } from '../components/base/base.component';
-import { CommonDirectiveModule } from './common-directive.module';
 import { CommonModule } from '@angular/common';
-import { CommonPipeModule } from './common-pipe.module';
 import { CommonService } from '../services/common/common.service';
 import { CommsService } from '../services/comms/comms.service';
 import { ContainerArticleComponent } from '../components/container-article/container-article.component';
@@ -29,6 +27,8 @@ import { SettingsService } from '../services/settings.service';
 import { TranslationModule } from './translation.module';
 import { UiButtonComponent } from '../components/ui/ui-button/ui-button.component';
 import { UserService } from '../services/user/user.service';
+import { CommonDirectiveModule } from './common/common-directive.module';
+import { CommonPipeModule } from './common/common-pipe.module';
 
 @NgModule({
 	declarations: [
