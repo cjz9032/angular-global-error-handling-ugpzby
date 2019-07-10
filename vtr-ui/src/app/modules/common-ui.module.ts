@@ -1,3 +1,4 @@
+import { UiPopoverComponent } from './../components/ui/ui-popover/ui-popover.component';
 import { CommonModule } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { UiButtonComponent } from '../components/ui/ui-button/ui-button.component';
@@ -26,6 +27,7 @@ import { RouterModule } from '@angular/router';
 import { UiCircleRadioComponent } from '../components/ui/ui-circle-radio/ui-circle-radio.component';
 import { UiDaysPickerComponent } from '../components/ui/ui-days-picker/ui-days-picker.component';
 import { UiListSupportComponent } from '../components/ui/ui-list-support/ui-list-support.component';
+import { UiGamingDriverPopupComponent } from '../components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
 
 @NgModule({
 	declarations: [
@@ -48,6 +50,8 @@ import { UiListSupportComponent } from '../components/ui/ui-list-support/ui-list
 		UiListSupportComponent,
 		UiNumberButtonComponent,
 		UiObjectTitleComponent,
+		UiPopoverComponent,
+		UiGamingDriverPopupComponent,
 		UiRangeSliderComponent,
 		UiRectangleRadioComponent,
 		UiRoundedRectangleRadioComponent,
@@ -87,6 +91,8 @@ import { UiListSupportComponent } from '../components/ui/ui-list-support/ui-list
 		UiSwitchTristateComponent,
 		UiSwitchTristateComponent,
 		UiTimePickerComponent,
+		UiPopoverComponent,
+		UiGamingDriverPopupComponent
 	],
 	imports: [
 		CommonModule,

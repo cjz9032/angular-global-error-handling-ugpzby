@@ -39,7 +39,6 @@ import { WidgetLightingComponent } from '../components/widgets/widget-lighting/w
 		CommonWidgetModule,
 		SharedModule,
 		GamingDashboardRoutingModule,
-		GamingRoutingModule,
 		TranslateModule.forChild({
 			loader: {
 				provide: TranslateLoader,
