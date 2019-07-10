@@ -1,3 +1,4 @@
+import { ModalGamingLegionedgeComponent } from './../components/modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { CommonModule } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler } from '@angular/core';
 // import { PageDeviceGamingComponent } from '../components/pages/page-device-gaming/page-device-gaming.component';
