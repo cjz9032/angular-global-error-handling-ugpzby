@@ -156,7 +156,6 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 			const index = this.selectedDays.indexOf(event.target.value);
 			this.selectedDays.splice(index, 1);
 		}
-		this.copySchedule = this.setSelectedDayText();
 	}
 
 	clearSettings() {
