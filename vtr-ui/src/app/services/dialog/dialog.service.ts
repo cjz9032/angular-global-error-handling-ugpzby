@@ -6,8 +6,6 @@ import { ModalWifiSecuriryLocationNoticeComponent } from 'src/app/components/mod
 import { ModalHomeProtectionLocationNoticeComponent } from 'src/app/components/modal/modal-home-protection-location-notice/modal-home-protection-location-notice.component';
 import { EventTypes, WifiSecurity } from '@lenovo/tan-client-bridge';
 import { ModalErrorMessageComponent } from 'src/app/components/modal/modal-error-message/modal-error-message.component';
-import { ModalLenovoIdComponent } from 'src/app/components/modal/modal-lenovo-id/modal-lenovo-id.component';
-import { ModalCommonConfirmationComponent } from 'src/app/components/modal/modal-common-confirmation/modal-common-confirmation.component';
 import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
 
 @Injectable({
@@ -145,32 +143,5 @@ export class DialogService {
 				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowLocationPermisisonDialog, true);
 			});
 		}
-	}
-
-	lenovoIdDialog(appFeature = null) {
-		return new Promise((resolve, reject) => {
-			if (!navigator.onLine) {
-				const modalRef = this.modalService.open(ModalCommonConfirmationComponent, {
-					backdrop: 'static',
-					size: 'lg',
-					centered: true,
-					windowClass: 'common-confirmation-modal'
-				});
-
-				const header = 'lenovoId.ssoErrorTitle';
-				modalRef.componentInstance.CancelText = '';
-				modalRef.componentInstance.header = header;
-				modalRef.componentInstance.description = 'lenovoId.ssoErrorNetworkDisconnected';
-				reject();
-			} else {
-				const modal: NgbModalRef = this.modalService.open(ModalLenovoIdComponent, {
-					backdrop: 'static',
-					centered: true,
-					windowClass: 'lenovo-id-modal-size'
-				});
-				(<ModalLenovoIdComponent>modal.componentInstance).appFeature = appFeature;
-				resolve();
-			}
-		});
 	}
 }

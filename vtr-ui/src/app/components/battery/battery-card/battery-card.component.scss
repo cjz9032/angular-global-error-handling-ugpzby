@@ -54,12 +54,15 @@
 		.battery-detail-button {
 			height: 5rem;
 			border-radius: 2.5rem;
-			background: linear-gradient($gradient_angle_reverse, $main_light 0%, $main 100%),
-				linear-gradient($gradient_angle, $light 0%, $light 100%);
+			background: $gradient_main;
 			color: $light;
 			font-size: 1.5rem;
 			font-weight: $weight_bold;
 			letter-spacing: 0.1rem;
+
+			&:disabled {
+				opacity: 0.5;
+			}
 		}
 		.feature-note {
 			background-color: $shade_lightest;
