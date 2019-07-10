@@ -140,15 +140,37 @@
 	.dropdown dropdown-menu.show {
 		display: block;
 	}
+	
+    .input-group{
+		border: none;
+		border-image: none;
+		box-shadow: 0px 0px 2.2rem rgba(0,0,0,0.3);
+		font-size: 1.2rem;
+		font-weight: $weight_medium;
+		text-transform: uppercase;
+		text-align: left;
+		color: $shade;
+		letter-spacing: 0;
+		line-height: 1.4rem;
+		width: 100%;
+		border-radius: 0.6rem;
+		display: flex;
+		flex-direction: column;
+		padding: 1.6rem;
+		border: 0.1rem solid $screen_dark_10;
+	  }
+	  .form-control{
+		padding: 0px;
+		outline: invert;
+		border: medium; 
+		border-image: none;
+	  }
 
 	textarea {
-		margin-top: 1rem;
-		border: 1px solid $shade_lighter;
-		border-radius: $border_radius_sm;
-		background-color: $light;
-		box-shadow: $drop_shadow;
+		margin-top: 1rem;		
+		background-color: transparent;
+		box-shadow: none;
 		font-size: 1.2rem;
-
 		padding: 1rem;
 		width: 100%;
 

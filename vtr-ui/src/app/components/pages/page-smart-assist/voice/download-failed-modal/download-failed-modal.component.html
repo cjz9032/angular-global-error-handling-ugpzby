@@ -1,23 +1,27 @@
 <div class="modal-body vtr-modal-voice-installed">
 	<div class="row justify-content-end">
-		<div class="btn-close">
-			<button type="button"
-				class="close"
-				aria-hidden="true"
-				(click)="closeModal()">
-				<fa-icon [icon]="['fal', 'times']"></fa-icon>
-			</button>
-		</div>
+		<a role="button"
+		type="button"
+		href="javascript:;"
+		class="close-btn"
+		(click)="closeModal()">
+		<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
+			alt=""
+			srcset="">
+	</a>
 	</div>
-	<h1 class="mb-3"> {{'device.smartAssist.voice.modalInstallationFailed.title' | translate}}</h1>
-	<div class="row text-center">
+	<div class="row">
+	<h1 class="mb-4"> {{'device.smartAssist.voice.modalInstallationFailed.title' | translate}}</h1>
+</div>
+	<div class="row">
 		<div class="col">
 			<div class="number-list">
-				<span class="text-regular">{{'device.smartAssist.voice.modalInstallationFailed.desc' | translate}}</span>
+				<p class="text-regular">{{'device.smartAssist.voice.modalInstallationFailed.desc' | translate}}</p>
 			</div>
 		</div>
 	</div>
-	<div class="row center">
+	<div class="line"></div>
+	<div class="row">
 		<button class="btn close-button"
 			(click)="closeModal()">{{'device.smartAssist.voice.modalInstallationFailed.btnText' | translate}}</button>
 	</div>
