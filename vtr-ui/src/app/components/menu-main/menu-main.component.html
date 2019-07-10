@@ -38,7 +38,10 @@
 			</span>
 			<vtr-spinner *ngIf="!(appVersion || deviceModel)"> </vtr-spinner>
 			<span *ngIf="deviceModel">
-				<div class="device-type">{{deviceModel}}</div>
+				<div class="device-type">
+					<span>{{deviceModel}}</span>
+					<vtr-ui-header-warranty [pageParent]="items[0].metricsParent"></vtr-ui-header-warranty>
+				</div>
 			</span>
 
 		</div>

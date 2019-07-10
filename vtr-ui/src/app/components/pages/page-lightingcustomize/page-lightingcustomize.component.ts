@@ -60,27 +60,27 @@ export class PageLightingcustomizeComponent implements OnInit {
 			Brand: 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).then((response: any) => {
-			const cardContentPositionA = this.cmsService.getOneCMSContent(
-				response,
-				'half-width-top-image-title-link',
-				'position-F'
-			)[0];
-			if (cardContentPositionA) {
-				this.cardContentPositionA = cardContentPositionA;
-			}
+		// this.cmsService.fetchCMSContent(queryOptions).then((response: any) => {
+		// 	const cardContentPositionA = this.cmsService.getOneCMSContent(
+		// 		response,
+		// 		'half-width-top-image-title-link',
+		// 		'position-F'
+		// 	)[0];
+		// 	if (cardContentPositionA) {
+		// 		this.cardContentPositionA = cardContentPositionA;
+		// 	}
 
-			const cardContentPositionB = this.cmsService.getOneCMSContent(
-				response,
-				'half-width-title-description-link-image',
-				'position-B'
-			)[0];
-			if (cardContentPositionB) {
-				this.cardContentPositionB = cardContentPositionB;
-				if (this.cardContentPositionB.BrandName) {
-					this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
-				}
-			}
-		});
+		// 	const cardContentPositionB = this.cmsService.getOneCMSContent(
+		// 		response,
+		// 		'half-width-title-description-link-image',
+		// 		'position-B'
+		// 	)[0];
+		// 	if (cardContentPositionB) {
+		// 		this.cardContentPositionB = cardContentPositionB;
+		// 		if (this.cardContentPositionB.BrandName) {
+		// 			this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+		// 		}
+		// 	}
+		// });
 	}
 }
