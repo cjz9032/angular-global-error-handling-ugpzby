@@ -20,9 +20,15 @@ const routes: Routes = [
 	},
 	{
 		path: '',
-		redirectTo: 'dashboard',
+		redirectTo: 'support',
 		pathMatch: 'full'
 	}
+	// ,
+	// {
+	// 	path: '',
+	// 	redirectTo: 'device-gaming',
+	// 	pathMatch: 'full'
+	// }
 ];
 
 @NgModule({
