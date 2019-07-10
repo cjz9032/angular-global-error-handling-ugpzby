@@ -16,6 +16,7 @@ export class UserDefinedKeyComponent implements OnInit {
 	title = 'device.deviceSettings.inputAccessories.title';
 	udkActionInfo: UDKActionInfo;
 	hasUDKCapability = true;
+	public machineType: number;
 	public description: string;
 	public url: string;
 	public hyperLinkPatterns = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
@@ -53,8 +54,13 @@ export class UserDefinedKeyComponent implements OnInit {
 
 	ngOnInit() {
 		try {
-			this.getUDKCapability();
-			this.getUDKTypeList();
+			this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+			if (this.machineType === 1) {
+				this.getUDKCapability();
+				this.getUDKTypeList();
+			} else {
+				this.hasUDKCapability = false;
+			}
 		} catch (error) {
 			console.log('ngOnInit: ', error);
 		}

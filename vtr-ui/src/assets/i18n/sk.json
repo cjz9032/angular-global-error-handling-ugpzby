@@ -1105,7 +1105,7 @@
                     "title": "Kláves definovaný používateľom",
                     "caption": "Klávesu s ikonou hviezdy môžete priradiť funkciu definovanú používateľom",
                     "dropDown": {
-                        "title": "Akčný kláves definovaný používateľom",
+                        "title": "Kláves s akciou definovanou používateľom",
                         "note": "Poznámka: pomocou tejto funkcie môžete zadávať bežne zadávaný text, napríklad e-mailové alebo poštové adresy. Spoločnosť Lenovo odporúča, aby ste túto funkciu nikdy nepoužívali na ukladanie a zadávanie hesiel ani akýchkoľvek iných súkromných informácií.",
                         "options": {
                             "option1": "Vyberte",
