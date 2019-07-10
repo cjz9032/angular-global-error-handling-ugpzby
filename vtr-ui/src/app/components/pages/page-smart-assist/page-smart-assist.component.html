@@ -68,7 +68,7 @@
 													[maxValue]="3"
 													(change)="setZeroTouchLoginSensitivity($event)"
 													[value]="intelligentSecurity.zeroTouchLoginDistance"
-													[enableSlider]="intelligentSecurity.isZeroTouchLoginEnabled">
+													[enableSlider]="!intelligentSecurity.isZeroTouchLoginEnabled">
 												</vtr-ui-range-slider>
 												<div class="pt-3"
 													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled"
@@ -76,9 +76,9 @@
 													<div class="feature-note p-4">
 														<div class="row">
 															<!-- <div class="col-auto pl-0">
-																									<fa-icon [icon]="['fal', 'exclamation-circle']">
-																									</fa-icon>
-																								</div> -->
+																<fa-icon [icon]="['fal', 'exclamation-circle']">
+																</fa-icon>
+															</div> -->
 															<div class="col">
 																<p>{{'device.smartAssist.intelligentSecurity.note.description1' | translate}}
 																	<a (click)="launchFaceEnrollment()"
