@@ -1,6 +1,7 @@
 <div class="article-item mb-80"
 	#articleItemDiv
-	id="{{'article-item-' + this.index}}"
+	id="{{'article-item-' + index}}"
+	attr.aria-label="{{'article-item-' + index}}"
 	[ngClass]="{'item-no-img': !item.Thumbnail, 'item-no-title': !item.Title}">
 	<div class="container-fluid">
 		<div class="row">
@@ -9,6 +10,8 @@
 				class="col col-12 image"
 				[style.background-image]="'url('+item.Thumbnail+')'"
 				vtrMetrics
+				id="{{'article-item-image-' + index}}"
+				attr.aria-label="{{'article-item-image-' + index}}"
 				metricsEvent="ArticleClick"
 				metricsParent="Page.Support"
 				metricsItemID="{{ item.Id }}"
@@ -33,6 +36,8 @@
 				<a href="javascript:;"
 					class="title"
 					vtrMetrics
+					id="{{'article-item-title-' + index}}"
+					attr.aria-label="{{'article-item-title-' + index}}"
 					metricsEvent="ArticleClick"
 					metricsParent="Page.Support"
 					metricsItemID="{{ item.Id }}"
@@ -48,6 +53,8 @@
 					class="read-more">
 					<a href="javascript:;"
 						vtrMetrics
+						id="{{'article-item-readmore-' + index}}"
+						attr.aria-label="{{'article-item-readmore-' + index}}"
 						metricsEvent="ArticleClick"
 						metricsParent="Page.Support"
 						metricsItemID="{{ item.Id }}"

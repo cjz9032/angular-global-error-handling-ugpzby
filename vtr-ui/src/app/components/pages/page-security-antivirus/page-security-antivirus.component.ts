@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
 import { MockService } from 'src/app/services/mock/mock.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { AntiVirusviewModel } from 'src/app/data-models/security-advisor/antivirus.model';
@@ -13,13 +13,14 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { RegionService } from 'src/app/services/region/region.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { GuardService } from '../../../services/guard/security-guardService.service';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',
 	templateUrl: './page-security-antivirus.component.html',
 	styleUrls: ['./page-security-antivirus.component.scss']
 })
-export class PageSecurityAntivirusComponent implements OnInit {
+export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	backarrow = '< ';
 	antiVirus: Antivirus;
 	viewModel: any;
@@ -35,6 +36,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 	backId = 'sa-av-btn-back';
 	mcafeeArticleCategory: string;
 	isOnline = true;
+	notificationSubscription: Subscription;
 
 	@HostListener('window:focus')
 	onFocus(): void {
@@ -61,7 +63,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
-		this.commonService.notification.subscribe((notification: AppNotification) => {
+		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 		if (this.antiVirus.mcafee) {
@@ -211,6 +213,11 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		}
 	}
 
+	ngOnDestroy() {
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
+	}
 
 	fetchCMSArticles() {
 		const queryOptions = {

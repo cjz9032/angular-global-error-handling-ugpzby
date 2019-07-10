@@ -59,12 +59,9 @@ export function snake2PascalCase(string) {
 	return `${s.charAt(0).toUpperCase()}${s.substr(1)}`;
 }
 
-// const filter = cb => arr => arr.filter(cb);
-// const map = cb => arr => arr.map(cb);
-//
 // pipe(
-// 	filter(u => u.age >= 18),
-// 	map(u => u.name),
+// 	(val) => val.filter(u => u.age >= 18),
+// 	(val) => val.map(u => u.name),
 // )(users) //["Jack", "Milady"]
 
 export const pipe = (...functions) => args => functions.reduce((arg, fn) => fn(arg), args);
