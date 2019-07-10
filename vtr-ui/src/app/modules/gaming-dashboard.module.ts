@@ -1,3 +1,5 @@
+import { CommonWidgetModule } from './common/common-widget.module';
+import { CommonUiModule } from './common/common-ui.module';
 import { CommonModule } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
@@ -8,8 +10,6 @@ import { SharedModule } from './shared.module';
 import { PageDeviceGamingComponent } from '../components/pages/page-device-gaming/page-device-gaming.component';
 import { GamingDashboardRoutingModule } from './gaming-dashboard-routing.module';
 import { MockService } from '../services/mock/mock.service';
-import { CommonUiModule } from './common-ui.module';
-import { CommonWidgetModule } from './common-widget.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpLoaderFactory } from './translation.module';
 import { HttpClient } from '@angular/common/http';
@@ -22,6 +22,9 @@ import { WidgetSystemToolsComponent } from '../components/widgets/widget-system-
 import { WidgetSystemMonitorComponent } from '../components/widgets/widget-system-monitor/widget-system-monitor.component';
 import { WidgetQuicksettingsListComponent } from '../components/widgets/widget-quicksettings-list/widget-quicksettings-list.component';
 import { WidgetLightingComponent } from '../components/widgets/widget-lighting/widget-lighting.component';
+import { UiGamingCollapsibleContainerComponent } from '../components/ui/ui-gaming-collapsible-container/ui-gaming-collapsible-container.component';
+import { UiGamingDriverPopupComponent } from '../components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
+import { UiPopoverComponent } from '../components/ui/ui-popover/ui-popover.component';
 
 @NgModule({
 	declarations: [
@@ -31,7 +34,10 @@ import { WidgetLightingComponent } from '../components/widgets/widget-lighting/w
 		WidgetSystemToolsComponent,
 		WidgetSystemMonitorComponent,
 		WidgetQuicksettingsListComponent,
-		WidgetLightingComponent
+		WidgetLightingComponent,
+		UiGamingCollapsibleContainerComponent,
+		UiGamingDriverPopupComponent,
+		UiPopoverComponent
 	],
 	imports: [
 		CommonModule,
@@ -48,7 +54,7 @@ import { WidgetLightingComponent } from '../components/widgets/widget-lighting/w
 		}),
 		FontAwesomeModule
 	],
-	exports: [ TranslateModule ],
+	exports: [ TranslateModule, UiGamingCollapsibleContainerComponent ],
 	providers: [ MockService ],
 	entryComponents: [
 		WidgetLegionEdgeComponent,

@@ -1,3 +1,6 @@
+import { UiPopoverComponent } from './../components/ui/ui-popover/ui-popover.component';
+import { UiGamingDriverPopupComponent } from './../components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
+import { UiGamingCollapsibleContainerComponent } from './../components/ui/ui-gaming-collapsible-container/ui-gaming-collapsible-container.component';
 import { ModalGamingLegionedgeComponent } from './../components/modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { CommonModule } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler } from '@angular/core';
@@ -28,8 +31,8 @@ import { UiMacrokeyRecordedListComponent } from '../components/ui/ui-macrokey-re
 import { WidgetMacrokeySettingsComponent } from '../components/widgets/widget-macrokey-settings/widget-macrokey-settings.component';
 import { SharedModule } from './shared.module';
 import { ColorPickerModule } from 'ngx-color-picker';
-import { CommonUiModule } from './common-ui.module';
-import { CommonWidgetModule } from './common-widget.module';
+import { CommonUiModule } from './common/common-ui.module';
+import { CommonWidgetModule } from './common/common-widget.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { GamingRoutingModule } from '../modules/gaming-routing.module';
 
