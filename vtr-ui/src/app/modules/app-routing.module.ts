@@ -26,6 +26,66 @@ const routes: Routes = [
 		path: '',
 		redirectTo: 'dashboard',
 		pathMatch: 'full'
+	},
+	{
+		path: 'home-security',
+		loadChildren: './connected-home-security/connected-home-security.module#ConnectedHomeSecurityModule'
+		// canDeactivate: [GuardService],
+		// canActivate: [GuardService],
+		// data: {
+		// 	pageName: 'ConnectedHomeSecurity'
+		// }
+	},
+	{
+		path: 'security',
+		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
+		// canDeactivate: [GuardService],
+		// canActivate: [GuardService],
+		// data: {
+		// 	pageName: 'Security'
+		// }
+	},
+	{
+		path: 'security/anti-virus',
+		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
+		// canDeactivate: [GuardService],
+		// canActivate: [GuardService],
+		// data: {
+		// 	pageName: 'Security.AntiVirus',
+		// 	pageContent: LocalStorageKey.SecurityCurrentPage
+		// }
+	}, {
+		path: 'security/wifi-security',
+		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
+		// canDeactivate: [GuardService],
+		// canActivate: [GuardService],
+		// data: {
+		// 	pageName: 'Security.WifiSecurity'
+		// }
+	}, {
+		path: 'security/password-protection',
+		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
+		// canDeactivate: [GuardService],
+		// canActivate: [GuardService],
+		// data: {
+		// 	pageName: 'Security.PasswordProtection'
+		// }
+	}, {
+		path: 'security/internet-protection',
+		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
+		// canDeactivate: [GuardService],
+		// canActivate: [GuardService],
+		// data: {
+		// 	pageName: 'Security.InternetProtection'
+		// }
+	}, {
+		path: 'security/windows-hello',
+		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
+		// canActivate: [GuardService, WindowsHelloGuardService],
+		// canDeactivate: [GuardService],
+		// data: {
+		// 	pageName: 'Security.WindowsHello'
+		// }
 	}
 ];
 

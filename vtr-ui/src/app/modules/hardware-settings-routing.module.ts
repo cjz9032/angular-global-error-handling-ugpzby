@@ -1,17 +1,9 @@
 import { GuardService } from '../services/guard/security-guardService.service';
-import { LocalStorageKey } from '../enums/local-storage-key.enum';
 import { NgModule } from '@angular/core';
 import { PageAutocloseComponent } from '../components/pages/page-autoclose/page-autoclose.component';
-import { PageConnectedHomeSecurityComponent } from '../components/pages/page-connected-home-security/page-connected-home-security.component';
 import { PageDeviceComponent } from '../components/pages/page-device/page-device.component';
 import { PageDeviceSettingsComponent } from '../components/pages/page-device-settings/page-device-settings.component';
 import { PageDeviceUpdatesComponent } from '../components/pages/page-device-updates/page-device-updates.component';
-import { PageSecurityAntivirusComponent } from '../components/pages/page-security-antivirus/page-security-antivirus.component';
-import { PageSecurityComponent } from '../components/pages/page-security/page-security.component';
-import { PageSecurityInternetComponent } from '../components/pages/page-security-internet/page-security-internet.component';
-import { PageSecurityPasswordComponent } from '../components/pages/page-security-password/page-security-password.component';
-import { PageSecurityWifiComponent } from '../components/pages/page-security-wifi/page-security-wifi.component';
-import { PageSecurityWindowsHelloComponent } from '../components/pages/page-security-windows-hello/page-security-windows-hello.component';
 import { PageSmartAssistComponent } from '../components/pages/page-smart-assist/page-smart-assist.component';
 import { PageSupportComponent } from '../components/pages/page-support/page-support.component';
 import { PageSupportDetailComponent } from '../components/pages/page-support-detail/page-support-detail.component';
@@ -117,63 +109,6 @@ const routes: Routes = [
 		}
 	},
 	{
-		path: 'security',
-		component: PageSecurityComponent,
-		canDeactivate: [GuardService],
-		canActivate: [GuardService],
-		data: {
-			pageName: 'Security.MySecurity',
-			pageContent: 'My Device Status'
-		}
-
-	},
-	{
-		path: 'security/anti-virus',
-		component: PageSecurityAntivirusComponent,
-		canDeactivate: [GuardService],
-		canActivate: [GuardService],
-		data: {
-			pageName: 'Security.AntiVirus',
-			pageContent: LocalStorageKey.SecurityCurrentPage
-		}
-	},
-	{
-		path: 'security/wifi-security',
-		component: PageSecurityWifiComponent,
-		canDeactivate: [GuardService],
-		canActivate: [GuardService],
-		data: {
-			pageName: 'Security.WifiSecurity'
-		}
-	},
-	{
-		path: 'security/password-protection',
-		component: PageSecurityPasswordComponent,
-		canDeactivate: [GuardService],
-		canActivate: [GuardService],
-		data: {
-			pageName: 'Security.PasswordProtection'
-		}
-	},
-	{
-		path: 'security/internet-protection',
-		component: PageSecurityInternetComponent,
-		canDeactivate: [GuardService],
-		canActivate: [GuardService],
-		data: {
-			pageName: 'Security.InternetProtection'
-		}
-	},
-	{
-		path: 'security/windows-hello',
-		component: PageSecurityWindowsHelloComponent,
-		canActivate: [GuardService, WindowsHelloGuardService],
-		canDeactivate: [GuardService],
-		data: {
-			pageName: 'Security.WindowsHello'
-		}
-	},
-	{
 		path: 'support',
 		component: PageSupportComponent,
 		canDeactivate: [GuardService],
@@ -189,15 +124,6 @@ const routes: Routes = [
 		canActivate: [GuardService],
 		data: {
 			pageName: 'Support.Detail'
-		}
-	},
-	{
-		path: 'home-security',
-		component: PageConnectedHomeSecurityComponent,
-		canDeactivate: [GuardService],
-		canActivate: [GuardService],
-		data: {
-			pageName: 'ConnectedHomeSecurity'
 		}
 	},
 	{
