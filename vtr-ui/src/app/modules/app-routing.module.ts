@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
 import { PageSupportComponent } from '../components/pages/page-support/page-support.component';
 
@@ -28,70 +28,18 @@ const routes: Routes = [
 		}
 	},
 	{
-		path: '',
-		redirectTo: 'dashboard',
-		pathMatch: 'full'
-	},
-	{
 		path: 'home-security',
 		loadChildren: './connected-home-security/connected-home-security.module#ConnectedHomeSecurityModule'
-		// canDeactivate: [GuardService],
-		// canActivate: [GuardService],
-		// data: {
-		// 	pageName: 'ConnectedHomeSecurity'
-		// }
 	},
 	{
 		path: 'security',
 		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
-		// canDeactivate: [GuardService],
-		// canActivate: [GuardService],
-		// data: {
-		// 	pageName: 'Security'
-		// }
 	},
 	{
-		path: 'security/anti-virus',
-		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
-		// canDeactivate: [GuardService],
-		// canActivate: [GuardService],
-		// data: {
-		// 	pageName: 'Security.AntiVirus',
-		// 	pageContent: LocalStorageKey.SecurityCurrentPage
-		// }
-	}, {
-		path: 'security/wifi-security',
-		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
-		// canDeactivate: [GuardService],
-		// canActivate: [GuardService],
-		// data: {
-		// 	pageName: 'Security.WifiSecurity'
-		// }
-	}, {
-		path: 'security/password-protection',
-		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
-		// canDeactivate: [GuardService],
-		// canActivate: [GuardService],
-		// data: {
-		// 	pageName: 'Security.PasswordProtection'
-		// }
-	}, {
-		path: 'security/internet-protection',
-		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
-		// canDeactivate: [GuardService],
-		// canActivate: [GuardService],
-		// data: {
-		// 	pageName: 'Security.InternetProtection'
-		// }
-	}, {
-		path: 'security/windows-hello',
-		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
-		// canActivate: [GuardService, WindowsHelloGuardService],
-		// canDeactivate: [GuardService],
-		// data: {
-		// 	pageName: 'Security.WindowsHello'
-		// }
-	}
+		path: '',
+		redirectTo: 'dashboard',
+		pathMatch: 'full'
+	},
 ];
 
 @NgModule({
@@ -101,8 +49,7 @@ const routes: Routes = [
 			{
 				useHash: true,
 				scrollPositionRestoration: 'enabled',
-				enableTracing: false,
-				// preloadingStrategy: PreloadAllModules
+				enableTracing: false
 			})
 	],
 	exports: [
