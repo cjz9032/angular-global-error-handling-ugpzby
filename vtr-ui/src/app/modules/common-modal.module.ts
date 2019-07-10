@@ -19,56 +19,60 @@ import { ModalThreatLocatorComponent } from '../components/modal/modal-threat-lo
 import { ModalAboutComponent } from '../components/modal/modal-about/modal-about.component';
 import { DownloadFailedModalComponent } from '../components/pages/page-smart-assist/voice/download-failed-modal/download-failed-modal.component';
 import { SharedModule } from './shared.module';
+import { CommonUiModule } from './common-ui.module';
 
 // THIRD PARTY MODULES
 
 @NgModule({
 	declarations: [
-		ModalSupportWechatComponent,
-		ModalUpdateChangeLogComponent,
+		// ModalServerSwitchComponent,
+		DownloadFailedModalComponent,
+		ModalAboutComponent,
+		ModalArticleDetailComponent,
 		ModalBatteryChargeThresholdComponent,
-		ModalVoiceComponent,
-		ModalLicenseComponent,
-		ModalWifiSecurityInvitationComponent,
-		ModalWifiSecuriryLocationNoticeComponent,
-		ModalHomeProtectionLocationNoticeComponent,
 		ModalChsWelcomeContainerComponent,
 		ModalCommonConfirmationComponent,
-		ModalArticleDetailComponent,
-		ModalIntelligentCoolingModesComponent,
 		ModalErrorMessageComponent,
-		// ModalServerSwitchComponent,
-		ModalVoiceComponent,
+		ModalHomeProtectionLocationNoticeComponent,
+		ModalIntelligentCoolingModesComponent,
+		ModalLicenseComponent,
+		ModalSupportWechatComponent,
 		ModalThreatLocatorComponent,
-		ModalAboutComponent,
-		DownloadFailedModalComponent,
+		ModalUpdateChangeLogComponent,
+		ModalVoiceComponent,
+		ModalVoiceComponent,
+		ModalWifiSecuriryLocationNoticeComponent,
+		ModalWifiSecurityInvitationComponent,
 	],
 	imports: [
 		CommonModule,
-		SharedModule
+		SharedModule,
+	],
+	exports: [
+		SharedModule,
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
 	],
 	entryComponents: [
-		ModalSupportWechatComponent,
-		ModalUpdateChangeLogComponent,
+		// ModalServerSwitchComponent,
+		DownloadFailedModalComponent,
+		ModalAboutComponent,
+		ModalArticleDetailComponent,
 		ModalBatteryChargeThresholdComponent,
-		ModalVoiceComponent,
-		ModalLicenseComponent,
-		ModalWifiSecurityInvitationComponent,
-		ModalWifiSecuriryLocationNoticeComponent,
-		ModalHomeProtectionLocationNoticeComponent,
 		ModalChsWelcomeContainerComponent,
 		ModalCommonConfirmationComponent,
-		ModalArticleDetailComponent,
-		ModalIntelligentCoolingModesComponent,
 		ModalErrorMessageComponent,
-		// ModalServerSwitchComponent,
-		ModalVoiceComponent,
+		ModalHomeProtectionLocationNoticeComponent,
+		ModalIntelligentCoolingModesComponent,
+		ModalLicenseComponent,
+		ModalSupportWechatComponent,
 		ModalThreatLocatorComponent,
-		ModalAboutComponent,
-		DownloadFailedModalComponent,
+		ModalUpdateChangeLogComponent,
+		ModalVoiceComponent,
+		ModalVoiceComponent,
+		ModalWifiSecuriryLocationNoticeComponent,
+		ModalWifiSecurityInvitationComponent,
 	]
 })
 export class CommonModalModule { }

@@ -36,7 +36,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 		FontAwesomeModule
 	],
 	exports: [
-		TranslateModule
+		TranslateModule,
+		CommonUiModule
 	],
 	providers: [
 		MockService

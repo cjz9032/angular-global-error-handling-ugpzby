@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { UiButtonComponent } from '../components/ui/ui-button/ui-button.component';
 import { UiHeaderSubpageComponent } from '../components/ui/ui-header-subpage/ui-header-subpage.component';
 import { UiListCheckboxComponent } from '../components/ui/ui-list-checkbox/ui-list-checkbox.component';
 import { UiListChevronComponent } from '../components/ui/ui-list-chevron/ui-list-chevron.component';
@@ -27,7 +26,6 @@ import { UiHeaderWarrantyComponent } from '../components/ui/ui-header-warranty/u
 @NgModule({
 	declarations: [
 		UiApsSliderComponent,
-		UiButtonComponent,
 		UiCheckboxComponent,
 		UiCircleRadioComponent,
 		UiCircleRadioWithCheckboxComponent,
@@ -54,7 +52,6 @@ import { UiHeaderWarrantyComponent } from '../components/ui/ui-header-warranty/u
 	],
 	exports: [
 		UiApsSliderComponent,
-		UiButtonComponent,
 		UiCheckboxComponent,
 		UiCircleRadioComponent,
 		UiCircleRadioWithCheckboxComponent,
