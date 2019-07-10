@@ -55,7 +55,7 @@
 												metricsParam="CategoryId: {{ category.Id }}"
 												metricsParent="Page.Support"
 												(click)="clickCategory(category.Id)">
-												<div class="item-con">
+												<div class="item-con" id="{{'support-category-'+category.Id}}" attr.aria-label="{{'support-category-'+category.Id}}">
 													<fa-icon [icon]="['fal', 'bolt']"></fa-icon>
 													<div class="item-title">{{ category.Title }}</div>
 
