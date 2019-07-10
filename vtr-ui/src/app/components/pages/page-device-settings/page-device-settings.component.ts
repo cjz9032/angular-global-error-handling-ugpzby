@@ -53,6 +53,7 @@ export class PageDeviceSettingsComponent implements OnInit {
 	];
 	cardContentPositionA: any = {};
 	isDesktopMachine = true;
+	machineType: number;
 	constructor(
 		private devService: DevService,
 		public qaService: QaService,
@@ -80,7 +81,10 @@ export class PageDeviceSettingsComponent implements OnInit {
 	ngOnInit() {
 		this.devService.writeLog('DEVICE SETTINGS INIT', this.menuItems);
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
-
+		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		if (this.machineType != 1) {
+			this.menuItems = this.commonService.removeObjFrom(this.menuItems, 'device-settings/input-accessories')
+		}
 		//translate subheader menus
 		this.menuItems.forEach(m => {
 			m.label = this.translate.instant(m.label);
