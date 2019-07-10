@@ -15,8 +15,23 @@ import { HttpLoaderFactory } from './translation.module';
 import { HttpClient } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { WidgetLegionEdgeComponent } from '../components/widgets/widget-legion-edge/widget-legion-edge.component';
+import { ModalGamingLegionedgeComponent } from '../components/modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
+import { WidgetSystemToolsComponent } from '../components/widgets/widget-system-tools/widget-system-tools.component';
+import { WidgetSystemMonitorComponent } from '../components/widgets/widget-system-monitor/widget-system-monitor.component';
+import { WidgetQuicksettingsListComponent } from '../components/widgets/widget-quicksettings-list/widget-quicksettings-list.component';
+import { WidgetLightingComponent } from '../components/widgets/widget-lighting/widget-lighting.component';
+
 @NgModule({
-	declarations: [ PageDeviceGamingComponent ],
+	declarations: [
+		PageDeviceGamingComponent,
+		WidgetLegionEdgeComponent,
+		ModalGamingLegionedgeComponent,
+		WidgetSystemToolsComponent,
+		WidgetSystemMonitorComponent,
+		WidgetQuicksettingsListComponent,
+		WidgetLightingComponent
+	],
 	imports: [
 		CommonModule,
 		CommonUiModule,
@@ -34,7 +49,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 	],
 	exports: [ TranslateModule ],
 	providers: [ MockService ],
-	entryComponents: [],
+	entryComponents: [
+		WidgetLegionEdgeComponent,
+		ModalGamingLegionedgeComponent,
+		WidgetSystemToolsComponent,
+		WidgetSystemMonitorComponent,
+		WidgetQuicksettingsListComponent,
+		WidgetLightingComponent
+	],
 	schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
 })
 export class GamingDashboardModule {}

@@ -7,12 +7,12 @@ const routes: Routes = [
 		loadChildren: './hardware-dashboard.module#HardwareDashboardModule'
 	},
 	{
-		path: 'gaming',
-		loadChildren: './gaming.module#GamingModule'
-	},
-	{
 		path: 'device-gaming',
 		loadChildren: './gaming-dashboard.module#GamingDashboardModule'
+	},
+	{
+		path: 'gaming',
+		loadChildren: './gaming.module#GamingModule'
 	},
 	{
 		path: 'device',

@@ -3,7 +3,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/cor
 
 import { SharedModule } from './shared.module';
 import { FeedbackFormComponent } from '../components/feedback-form/feedback-form/feedback-form.component';
-import { PageUserComponent } from '../components/pages/page-user/page-user.component';
+//import { PageUserComponent } from '../components/pages/page-user/page-user.component';
 import { PageDashboardComponent } from '../components/pages/page-dashboard/page-dashboard.component';
 import { HardwareDashboardRoutingModule } from './hardware-dashboard-routing.module';
 import { MockService } from '../services/mock/mock.service';
@@ -17,7 +17,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
 	declarations: [
 		FeedbackFormComponent,
-		PageUserComponent,
+		//PageUserComponent,
 		PageDashboardComponent,
 	],
 	imports: [

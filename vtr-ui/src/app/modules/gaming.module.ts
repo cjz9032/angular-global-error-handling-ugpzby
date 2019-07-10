@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler } from '@angular/core';
 // import { PageDeviceGamingComponent } from '../components/pages/page-device-gaming/page-device-gaming.component';
-import { WidgetLegionEdgeComponent } from '../components/widgets/widget-legion-edge/widget-legion-edge.component';
-import { WidgetSystemToolsComponent } from '../components/widgets/widget-system-tools/widget-system-tools.component';
-import { WidgetSystemMonitorComponent } from '../components/widgets/widget-system-monitor/widget-system-monitor.component';
-import { WidgetQuicksettingsListComponent } from '../components/widgets/widget-quicksettings-list/widget-quicksettings-list.component';
-import { WidgetLightingComponent } from '../components/widgets/widget-lighting/widget-lighting.component';
-import { ModalGamingLegionedgeComponent } from '../components/modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
+//import { WidgetLegionEdgeComponent } from '../components/widgets/widget-legion-edge/widget-legion-edge.component';
+// import { WidgetSystemToolsComponent } from '../components/widgets/widget-system-tools/widget-system-tools.component';
+// import { WidgetSystemMonitorComponent } from '../components/widgets/widget-system-monitor/widget-system-monitor.component';
+// import { WidgetQuicksettingsListComponent } from '../components/widgets/widget-quicksettings-list/widget-quicksettings-list.component';
+// import { WidgetLightingComponent } from '../components/widgets/widget-lighting/widget-lighting.component';
+//import { ModalGamingLegionedgeComponent } from '../components/modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { UiGamingCollapsibleContainerComponent } from '../components/ui/ui-gaming-collapsible-container/ui-gaming-collapsible-container.component';
 import { PageMacrokeyComponent } from '../components/pages/page-macrokey/page-macrokey.component';
 import { PageLightingcustomizeComponent } from '../components/pages/page-lightingcustomize/page-lightingcustomize.component';
@@ -36,12 +36,12 @@ import { GamingRoutingModule } from '../modules/gaming-routing.module';
 @NgModule({
 	declarations: [
 		//PageDeviceGamingComponent,
-		WidgetLegionEdgeComponent,
-		WidgetSystemToolsComponent,
-		WidgetSystemMonitorComponent,
-		WidgetQuicksettingsListComponent,
-		WidgetLightingComponent,
-		ModalGamingLegionedgeComponent,
+		//WidgetLegionEdgeComponent,
+		// WidgetSystemToolsComponent,
+		// WidgetSystemMonitorComponent,
+		// WidgetQuicksettingsListComponent,
+		// WidgetLightingComponent,
+		//ModalGamingLegionedgeComponent,
 		UiGamingCollapsibleContainerComponent,
 		PageMacrokeyComponent,
 		PageLightingcustomizeComponent,
@@ -72,6 +72,6 @@ import { GamingRoutingModule } from '../modules/gaming-routing.module';
 		ColorPickerModule
 	],
 	schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-	entryComponents: [ ModalGamingLegionedgeComponent ]
+	entryComponents: []
 })
 export class GamingModule {}

@@ -7,11 +7,7 @@ import { CommsService } from '../services/comms/comms.service';
 import { ContainerArticleComponent } from '../components/container-article/container-article.component';
 import { ContainerCardComponent } from '../components/container-card/container-card.component';
 import { CookieService } from 'ngx-cookie-service';
-import {
-	CUSTOM_ELEMENTS_SCHEMA,
-	NgModule,
-	NO_ERRORS_SCHEMA
-} from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { DeviceService } from '../services/device/device.service';
 import { DevService } from '../services/dev/dev.service';
 import { DisplayService } from '../services/display/display.service';
@@ -32,6 +28,7 @@ import { UserService } from '../services/user/user.service';
 import { CommonDirectiveModule } from './common-directive.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
+import { PageUserComponent } from '../components/pages/page-user/page-user.component';
 
 @NgModule({
 	declarations: [
@@ -44,6 +41,7 @@ import { RouterModule } from '@angular/router';
 		MenuMainComponent,
 		ModalLenovoIdComponent,
 		ModalWelcomeComponent,
+		PageUserComponent
 	],
 	exports: [
 		AngularSvgIconModule,
@@ -65,7 +63,8 @@ import { RouterModule } from '@angular/router';
 		NgbModule,
 		ReactiveFormsModule,
 		RouterModule,
-		TranslationModule
+		TranslationModule,
+		PageUserComponent
 	],
 	imports: [
 		AngularSvgIconModule,
@@ -92,13 +91,7 @@ import { RouterModule } from '@angular/router';
 		SettingsService,
 		UserService
 	],
-	entryComponents: [
-		ModalWelcomeComponent,
-		ModalLenovoIdComponent
-	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA,
-		NO_ERRORS_SCHEMA
-	]
+	entryComponents: [ ModalWelcomeComponent, ModalLenovoIdComponent ],
+	schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
 })
-export class SharedModule { }
+export class SharedModule {}
