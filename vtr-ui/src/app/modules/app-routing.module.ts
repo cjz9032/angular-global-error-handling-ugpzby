@@ -28,15 +28,14 @@ const routes: Routes = [
 	},
 	{
 		path: '',
-		redirectTo: 'support',
+		redirectTo: 'device-gaming',
+		pathMatch: 'full'
+	},
+	{
+		path: '',
+		redirectTo: 'dashboard',
 		pathMatch: 'full'
 	}
-	// ,
-	// {
-	// 	path: '',
-	// 	redirectTo: 'device-gaming',
-	// 	pathMatch: 'full'
-	// }
 ];
 
 @NgModule({
