@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PowerService } from 'src/app/services/power/power.service';
 import { SmartStandby } from 'src/app/data-models/device/smart-standby.model';
 
@@ -14,6 +14,7 @@ export class SmartStandbyComponent implements OnInit {
 	public smartStandbyEndTime: string;
 	isSmartStandbyVisible: boolean;
 	showDiffNote: boolean;
+	@Output() smartStandbyCapability = new EventEmitter<boolean>();
 
 	constructor(public powerService: PowerService) { }
 
@@ -31,6 +32,7 @@ export class SmartStandbyComponent implements OnInit {
 					if (this.smartStandby.isCapable) {
 						this.setSmartStandbySection();
 					}
+					this.smartStandbyCapability.emit(this.smartStandby.isCapable);
 				}).catch((error) => {
 					console.log('getSmartStandbyCapability Error', error);
 				});
@@ -58,14 +60,15 @@ export class SmartStandbyComponent implements OnInit {
 				}).catch((error) => {
 					console.log('getSmartStandbyCapability Error', error);
 				});
+			// this.initSmartStandby();
 		}
 	}
 
 	initSmartStandby() {
 		this.smartStandby.isCapable = true;
 		this.smartStandby.isEnabled = true;
-		this.smartStandby.activeStartEnd = '00:00-10:30';
-		this.smartStandby.daysOfWeekOff = 'sun';
+		this.smartStandby.activeStartEnd = '9:00-18:00';
+		this.smartStandby.daysOfWeekOff = 'tue,wed,thurs,fri,sat,sun';
 		this.splitStartEndTime();
 	}
 
@@ -128,23 +131,26 @@ export class SmartStandbyComponent implements OnInit {
 		}
 		try {
 			console.log('setSmartStandbyStartTime entered', event);
-			if (this.powerService.isShellAvailable && diff < 20) {
-				this.powerService.setSmartStandbyActiveStartEnd(activeStartEnd)
-					.then((value: number) => {
-						console.log('setSmartStandbyStartTime.then', value);
-						if (value === 0) {
-							this.smartStandby.activeStartEnd = activeStartEnd;
-							this.splitStartEndTime();
-						}
-					})
-					.catch(error => {
-						console.error('setSmartStandbyStartTime', error);
-					});
+			if (this.powerService.isShellAvailable) {
+				if (!(diff > 20)) {
+					this.powerService.setSmartStandbyActiveStartEnd(activeStartEnd)
+						.then((value: number) => {
+							console.log('setSmartStandbyStartTime.then', value);
+							if (value === 0) {
+								this.smartStandby.activeStartEnd = activeStartEnd;
+								this.splitStartEndTime();
+							}
+						})
+						.catch(error => {
+							console.error('setSmartStandbyStartTime', error);
+						});
+				}
 			}
 		} catch (error) {
 			console.error(error.message);
 		}
 		// this.smartStandby.activeStartEnd = activeStartEnd;
+		// this.splitStartEndTime();
 	}
 
 	onSetDaysOfWeekOff(event) {
