@@ -24,8 +24,8 @@ const routes: Routes = [
 		canDeactivate: [ GuardService ],
 		canActivate: [ GuardService ],
 		data: {
-			pageName: 'MyDevice',
-			pageContent: 'My Device Status'
+			pageName: 'Device',
+			pageContent: 'Device Status'
 		}
 	},
 	{
@@ -34,13 +34,15 @@ const routes: Routes = [
 		canDeactivate: [ GuardService ],
 		canActivate: [ GuardService ],
 		data: {
-			pageName: 'MyDevice',
-			pageContent: 'My Device Status'
+			pageName: 'Device',
+			pageContent: 'Device Status'
 		}
 	},
 	{
-		path: '',
+		path: 'macrokey',
 		component: PageMacrokeyComponent,
+		canDeactivate: [ GuardService ],
+		canActivate: [ GuardService ],
 		data: {
 			pageName: 'Macrokey'
 		}
