@@ -22,6 +22,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalChsWelcomeContainerComponent } from '../page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
 import { CommonService } from 'src/app/services/common/common.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
+import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { HomeSecurityMockService } from 'src/app/services/home-security/home-security-mock.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
@@ -63,14 +64,15 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		private translateService: TranslateService,
 		private modalService: NgbModal,
 		private commonService: CommonService,
-		private dialogService: DialogService
+		private dialogService: DialogService,
+		private lenovoIdDialogService: LenovoIdDialogService
 	) {
 		this.chs = vantageShellService.getConnectedHomeSecurity();
 		if (!this.chs) {
 			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
 		}
 		this.permission = vantageShellService.getPermission();
-		this.common = new HomeSecurityCommon(this.chs, this.modalService, this.dialogService, this.isOnline);
+		this.common = new HomeSecurityCommon(this.chs, this.isOnline, this.modalService, this.dialogService, this.lenovoIdDialogService);
 		this.welcomeModel = new HomeSecurityWelcome();
 		this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice();
 		this.allDevicesInfo = new HomeSecurityAllDevice();
@@ -121,13 +123,13 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		if (cacheAccount) {
 			this.account = cacheAccount;
 			if (this.chs.account) {
-				this.common = new HomeSecurityCommon(this.chs, this.modalService, this.dialogService, this.isOnline);
-				this.account = new HomeSecurityAccount(this.modalService, this.chs, this.common);
+				this.common = new HomeSecurityCommon(this.chs, this.isOnline, this.modalService, this.dialogService, this.lenovoIdDialogService);
+				this.account = new HomeSecurityAccount(this.chs, this.common, this.lenovoIdDialogService);
 			}
 		}
 		if (this.chs.account && this.chs.account.state) {
-			this.common = new HomeSecurityCommon(this.chs, this.modalService, this.dialogService, this.isOnline);
-			this.account = new HomeSecurityAccount(this.modalService, this.chs, this.common);
+			this.common = new HomeSecurityCommon(this.chs, this.isOnline, this.modalService, this.dialogService, this.lenovoIdDialogService);
+			this.account = new HomeSecurityAccount(this.chs, this.common,this.lenovoIdDialogService);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, {
 				state: this.account.state,
 				expiration: this.account.expiration,
@@ -152,8 +154,8 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityMyDevice, this.homeSecurityOverviewMyDevice);
 			}
 			if (chs.account) {
-				this.common = new HomeSecurityCommon(this.chs, this.modalService, this.dialogService, this.isOnline);
-				this.account = new HomeSecurityAccount(this.modalService, chs, this.common);
+				this.common = new HomeSecurityCommon(chs, this.isOnline, this.modalService, this.dialogService, this.lenovoIdDialogService);
+				this.account = new HomeSecurityAccount(chs, this.common, this.lenovoIdDialogService);
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, {
 					state: this.account.state,
 					expiration: this.account.expiration,
