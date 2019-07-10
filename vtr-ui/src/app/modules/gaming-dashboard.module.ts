@@ -15,6 +15,7 @@ import { HttpLoaderFactory } from './translation.module';
 import { HttpClient } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { GamingRoutingModule } from './gaming-routing.module';
 import { WidgetLegionEdgeComponent } from '../components/widgets/widget-legion-edge/widget-legion-edge.component';
 import { ModalGamingLegionedgeComponent } from '../components/modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { WidgetSystemToolsComponent } from '../components/widgets/widget-system-tools/widget-system-tools.component';
@@ -38,6 +39,7 @@ import { WidgetLightingComponent } from '../components/widgets/widget-lighting/w
 		CommonWidgetModule,
 		SharedModule,
 		GamingDashboardRoutingModule,
+		GamingRoutingModule,
 		TranslateModule.forChild({
 			loader: {
 				provide: TranslateLoader,

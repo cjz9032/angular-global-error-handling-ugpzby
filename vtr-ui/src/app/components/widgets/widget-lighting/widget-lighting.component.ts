@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 @Component({
 	selector: 'vtr-widget-lighting',
 	templateUrl: './widget-lighting.component.html',
-	styleUrls: ['./widget-lighting.component.scss']
+	styleUrls: [ './widget-lighting.component.scss' ]
 })
 export class WidgetLightingComponent implements OnInit {
 	public response: any;
@@ -27,7 +27,7 @@ export class WidgetLightingComponent implements OnInit {
 		private commonService: CommonService,
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private router: Router
-	) { }
+	) {}
 
 	ngOnInit() {
 		this.setprofId = 0;
@@ -70,8 +70,7 @@ export class WidgetLightingComponent implements OnInit {
 				this.gamingLightingService.getLightingProfileId().then((response: any) => {
 					this.didSuccess = response.didSuccess;
 					this.profileId = response.profileId;
-					console.log('getLightingProfileId------------response---------------->',
-						JSON.stringify(response));
+					console.log('getLightingProfileId------------response---------------->', JSON.stringify(response));
 					if (!this.didSuccess) {
 						if (LocalStorageKey.ProfileId !== undefined) {
 							this.setprofId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId) || 0;
@@ -82,20 +81,22 @@ export class WidgetLightingComponent implements OnInit {
 							this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, this.profileId);
 						}
 						this.setprofId = this.profileId;
-						console.log('getLightingProfileId---cache----------true: ', JSON.stringify(this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId)));
+						console.log(
+							'getLightingProfileId---cache----------true: ',
+							JSON.stringify(this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId))
+						);
 					}
 				});
 			}
 		} catch (error) {
 			console.error('getLightingProfileId: ' + error.message);
 		}
-
 	}
 
 	public SetProfile(event) {
 		try {
 			const eventval: number = event.target.value;
-			console.log("--------------home page lighting event-----" + eventval);
+			console.log('--------------home page lighting event-----' + eventval);
 			let prevSetprofId;
 			if (this.gamingLightingService.isShellAvailable) {
 				if (this.isPopupVisible) {
@@ -105,8 +106,7 @@ export class WidgetLightingComponent implements OnInit {
 					this.setprofId = eventval;
 				}
 				this.gamingLightingService.setLightingProfileId(0, eventval).then((response: any) => {
-					console.log('setLightingProfileId------------response---------------->',
-						JSON.stringify(response));
+					console.log('setLightingProfileId------------response---------------->', JSON.stringify(response));
 					this.didSuccess = response.didSuccess;
 					if (this.didSuccess) {
 						if (LocalStorageKey.ProfileId !== undefined) {
@@ -130,14 +130,10 @@ export class WidgetLightingComponent implements OnInit {
 		if (id) {
 			this.isdriverpopup = true;
 			//console.log('checkstatus resp in if--------', this.isdriverpopup);
-
 		} else {
 			//console.log('checkstatus resp in else--------', id);
 
-			this.router.navigate(['/lightingcustomize', this.setprofId])
+			this.router.navigate([ '/gaming/lightingcustomize', this.setprofId ]);
 		}
 	}
-
-
-
 }
