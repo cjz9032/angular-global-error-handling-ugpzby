@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Σύμπτυξη",
             "expand": "Επέκταση",
-            "loader": "Fetching <br> Status"
+            "loader": "Λήψη της κατάστασης <br>",
+            "loading": "Φόρτωση..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "Σας συνιστούμε επίσης να μειώνετε τη φωτεινότητα της γραμμής εργασιών και άλλων περιοχών της οθόνης που δεν αλλάζουν συχνά, ώστε να παρατείνετε τη συνολική διάρκεια ζωής της οθόνης."
                         ],
                         "reset": "Επαναφορά θερμοκρασίας",
-                        "tooltip": "Αυτή η δυνατότητα μπορεί να μειώσει την κατανάλωση ενέργειας και να παρατείνει τη διάρκεια ζωής της μπαταρίας, μέσω της επιλεκτικής μείωσης της φωτεινότητας σε τμήματα της οθόνης."
+                        "tooltip": "Αυτή η δυνατότητα μπορεί να μειώσει την κατανάλωση ενέργειας και να παρατείνει τη διάρκεια ζωής της μπαταρίας, μέσω της επιλεκτικής μείωσης της φωτεινότητας σε τμήματα της οθόνης.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Εισαγωγή και αξεσουάρ",
+                "subtitle": "Ρυθμίσεις Εισαγωγής και αξεσουάρ",
+                "description": "H δυνατότητα Έξυπνης ανίχνευσης της Lenovo συνδυάζει τους διαφόρους αισθητήρες του υπολογιστή σας για να ανιχνεύσει τις δραστηριότητές σας και να προσαρμόσει τις ρυθμίσεις για βέλτιστη διαχείριση ενέργειας",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Έξυπνο πληκτρολόγιο",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Κρυφές λειτουργίες πληκτρολογίου",
+                        "description": "Μπορείτε να πιέσετε το πλήκτρο Fn, στην κάτω αριστερή γωνία του πληκτρολογίου σας, ταυτόχρονα με άλλα πλήκτρα για να εμφανιστούν οι εντολές που υποδεικνύονται στο χάρτη του πληκτρολογίου παρακάτω."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "ενεργοποιεί τη δυνατότητα ζουμ σε οθόνες υψηλής ανάλυσης",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "μετάβαση στην κατάσταση αναστολής λειτουργίας",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "ενεργοποίηση και απενεργοποίηση της προστασίας απορρήτου",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "εναλλαγή μεταξύ της λειτουργίας απόδοσης και της αθόρυβης λειτουργίας",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + Διάστημα",
+                        "description": "αλλαγή της κατάστασης του οπίσθιου φωτισμού του πληκτρολογίου",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Πλήκτρο που καθορίζεται από τον χρήστη",
+                    "caption": "Το πλήκτρο που επισημαίνεται με το εικονίδιο του αστεριού σάς επιτρέπει να ορίσετε τη λειτουργία που καθορίζεται από τον χρήστη",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Ενέργεια για το πλήκτρο που καθορίζεται από τον χρήστη",
+                        "note": "Σημείωση: Αυτό μπορεί να χρησιμοποιηθεί για την εισαγωγή ενός πλήκτρου συχνής χρήσης, όπως για την εισαγωγή e-mail ή ταχυδρομικών διευθύνσεων. Η Lenovo συνιστά να μην χρησιμοποιείτε ποτέ αυτή τη δυνατότητα για την αποθήκευση και εισαγωγή κωδικών πρόσβασης ή οποιωνδήποτε άλλων προσωπικών στοιχείων.",
+                        "options": {
+                            "option1": "Επιλέξτε",
+                            "option2": "Άνοιγμα ιστότοπου",
+                            "option3": "Εισαγάγετε κείμενο"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1179,31 +1207,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Το Lenovo Active Protection System είναι μια αυτόνομη δυνατότητα η οποία προστατεύει τον σκληρό σας δίσκο από ζημιές που οφείλονται σε ισχυρούς κραδασμούς και δονήσεις. Παρακολουθεί συνεχώς αυτή την κίνηση του υπολογιστή σας και διακόπτει προσωρινά τη λειτουργία του σκληρού δίσκου, εάν προβλέψει κάποια πτώση ή παρόμοιο περιστατικό που ενδέχεται να προκαλέσει ζημιά.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "Αν αλλάξετε την ευαισθησία, στη λειτουργία χαμηλής ευαισθησίας, η προστασία θα ενεργοποιείται μόνο από ισχυρότερους κραδασμούς",
+                    "checkbox": "Να αγνοούνται επαναλαμβανόμενοι κραδασμοί, όπως εκείνοι που παρατηρούνται σε ένα τρένο ή αυτοκίνητο"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Χειροκίνητη αναστολή του Active Protection",
+                    "caption": "Να μπορώ να αναστέλλω χειροκίνητα το Active Protection System",
+                    "dropdown-title": "Αναστολή για",
+                    "button": "Αναστολή τώρα"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Για να βελτιώσετε την πρόσβαση στη μονάδα σκληρού δίσκου κατά τη χρήση tablet, αναστείλετε το Active Protection System αν ανιχνευτούν οι ακόλουθες δραστηριότητες",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Εισαγωγή με γραφίδα",
+                        "description": "Όταν χρησιμοποιείται εισαγωγή με γραφίδα, να ενεργοποιείται το APS όταν η εισαγωγή είναι εκτός εμβέλειας"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Εισαγωγή με αφή",
+                        "description": "Όταν χρησιμοποιείται εισαγωγή με αφή, να ενεργοποιείται το APS όταν δεν ανιχνεύεται εισαγωγή με αφή"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Ανίχνευση εγγύτητας χεριού στις άκρες του υπολογιστή",
+                        "description": "Όταν είναι ενεργοποιημένη η λειτουργία tablet, να ενεργοποιείται το APS όταν δεν ανιχνεύεται χέρι"
                     }
                 }
             },
@@ -1214,30 +1242,30 @@
                 "tooltip": "Αυτή η δυνατότητα δεν ισχύει για προγράμματα αναπαραγωγής βίντεο Web. Αυτή η δυνατότητα υποστηρίζεται από τα πλέον δημοφιλή τοπικά προγράμματα αναπαραγωγής βίντεο, π.χ. Windows Media Player, 5KPlayer κ.λπ."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Φωνή",
+                "description": "Το Lenovo Voice μετατρέπει τη φωνή σας σε κείμενο με τη λειτουργία \"Φωνή σε κείμενο\" και παρέχει μετάφραση σε πραγματικό χρόνο από φωνή σε κείμενο με τη λειτουργία \"Μετάφραση\".",
+                "installBtnText": "Εγκατάσταση",
+                "launchBtnText": "Εκκίνηση",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Φωνή σε κείμενο",
+                    "caption": "Αυτή η λειτουργία μετατρέπει τη φωνή σας σε κείμενο."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Μετάφραση",
+                    "caption": "Αυτή η λειτουργία παρέχει μετάφραση σε πραγματικό χρόνο στο περιεχόμενο που εκφωνείται. Το μεταφρασμένο περιεχόμενο εμφανίζεται με τη μορφή κειμένου. Μπορείτε να επιλέξετε τη γλώσσα-πηγή και τη γλώσσα-στόχο, ανάλογα με τις ανάγκες σας."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Για να ξεκινήσετε:",
+                    "point1": "Βεβαιωθείτε ότι το εικονίδιο του Lenovo Voice εμφανίζεται στη γραμμή εργασιών των Windows.",
+                    "point2": "Ανοίξτε το αρχείο στο οποίο θέλετε να καταγραφεί το κείμενο που θα μετατραπεί.",
+                    "point3": "Κάντε κλικ στο εικονίδιο του Lenovo Voice στη γραμμή εργασιών των Windows και επιλέξτε \"Φωνή σε κείμενο (Voice to text)\".",
+                    "point4": "Επιλέξτε την επιθυμητή γλώσσα και κάντε κλικ στο εικονίδιο μικροφώνου για να ξεκινήσετε.",
+                    "point5": "Τοποθετήστε τον δρομέα στο σημείο που θέλετε να επεξεργαστείτε και αρχίστε να μιλάτε.",
+                    "point6": "Κάντε κλικ στο εικονίδιο του Lenovo Voice στη γραμμή εργασιών των Windows και επιλέξτε \"Μετάφραση (Translate)\".",
+                    "point7": "Επιλέξτε την επιθυμητή γλώσσα-πηγή και γλώσσα-στόχο.",
+                    "point8": "Ανάλογα με τις ανάγκες σας, ορίστε την είσοδο φωνής από το Ηχείο ή από το Μικρόφωνο.",
+                    "point9": "Κάντε κλικ στο εικονίδιο μικροφώνου για να αρχίσετε να μιλάτε",
+                    "closeText": "κλείσιμο"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "Προτεινόμενες ενημερώσεις",
         "optionalUpdates": "Προαιρετικές ενημερώσεις",
         "ignoredUpdates": "Ενημερώσεις που έχουν παραβλεφθεί",
-        "successInstall": "Επιτυχής εγκατάσταση στις",
-        "failedInstall": "Αποτυχία εγκατάστασης στις",
+        "successInstall": "Επιτυχής εγκατάσταση: ",
+        "failedInstall": "Αποτυχία εγκατάστασης: ",
         "at": "ώρα",
         "readMore": "Διαβάστε περισσότερα",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "Καλωσορίσατε στη χρήση του System Update.",
             "title": "Το ενημερωμένο σύστημα είναι υγιές σύστημα.",
-            "last": "Η τελευταία ενημέρωση έγινε",
-            "next": "Η επόμενη σάρωση για ενημερώσεις έχει προγραμματιστεί για τις",
+            "last": "Τελευταία ενημέρωση: ",
+            "next": "Επόμενη προγραμματισμένη ενημέρωση: ",
             "checkButton": "ΕΛΕΓΧΟΣ ΓΙΑ ΕΝΗΜΕΡΩΣΕΙΣ",
             "checking": "Έλεγχος για ενημερώσεις",
             "downloading": "Η μεταφόρτωση ενημερώσεων ολοκληρώθηκε",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "Ο Διακομιστής ενημέρωσης συστήματος δεν είναι διαθέσιμος αυτήν τη στιγμή. Προσπαθήστε ξανά αργότερα.",
             "helpCenterInvalidServerException": "Ο Διακομιστής ενημέρωσης συστήματος δεν είναι έγκυρος. Προσπαθήστε ξανά αργότερα.",
             "catalogNotFoundException": "Δεν βρέθηκαν κατάλληλες ενημερώσεις για το σύστημά σας.",
-            "catalogCrcErrorException": "Ο κατάλογος ενημερώσεων για το σύστημά σας ενημερώνεται αυτήν τη στιγμή στο Διακομιστή ενημέρωσης συστήματος. Προσπαθήστε ξανά αργότερα.",
+            "catalogCrcErrorException": "Ο κατάλογος για το σύστημά σας ενημερώνεται αυτή τη στιγμή. Προσπαθήστε ξανά αργότερα.",
             "catalogErrorException": "Εντοπίστηκε ένα σφάλμα στον κατάλογος ενημερώσεων για το σύστημά σας στο Διακομιστή ενημέρωσης συστήματος. Προσπαθήστε ξανά αργότερα.",
             "fileNotFoundException": "Το αρχείο δεν βρέθηκε."
         }
@@ -1615,8 +1643,9 @@
             },
             "errorMessage": {
                 "headerText": "Σφάλμα",
-				"bodyText": "Διαπιστώσαμε ότι σας λείπουν κρίσιμα τμήματα του Vantage. Η λήψη αυτών των τμημάτων γίνεται στο παρασκήνιο. Προσπαθήστε ξανά αργότερα.",
-				"closeText": "close"
+                "bodyText": "Διαπιστώσαμε ότι σας λείπουν κρίσιμα τμήματα του Vantage. Η λήψη αυτών των τμημάτων γίνεται στο παρασκήνιο. Προσπαθήστε ξανά αργότερα.",
+                "closeText": "κλείσιμο",
+                "offlineText": "Εντοπίσαμε ότι δεν είστε συνδεδεμένοι στο Internet. Ορισμένα μέρη αυτής της σελίδας δεν θα λειτουργούν σωστά. Συνδεθείτε ξανά"
             }
         },
         "homeprotection": {

@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Свернуть",
             "expand": "Развернуть",
-            "loader": "Fetching <br> Status"
+            "loader": "Получение <br> статуса",
+            "loading": "загрузка..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "Рекомендуется также затемнить панель задач и другие редко изменяемые области дисплея, чтобы продлить срок его службы."
                         ],
                         "reset": "Сбросить температуру",
-                        "tooltip": "Эта функция позволяет снизить энергопотребление и увеличить время работы аккумулятора путем выборочного затемнения участков экрана."
+                        "tooltip": "Эта функция позволяет снизить энергопотребление и увеличить время работы аккумулятора путем выборочного затемнения участков экрана.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Ввод и аксессуары",
+                "subtitle": "Параметры ввода и аксессуаров",
+                "description": "Функция интеллектуального распознавания Lenovo распознает ваши действия по сигналам различных датчиков компьютера и соответствующим образом корректирует параметры для оптимального управления электропитанием",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Интеллектуальная клавиатура",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Скрытые функции клавиатуры",
+                        "description": "Можно нажать клавишу Fn в нижней левой части клавиатуры одновременно с другими клавишами, чтобы выполнить команды, показанные на карте клавиатуры ниже."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "включение функции изменения масштаба на дисплеях с высоким разрешением",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "переход в режим сна",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "включение и выключение защиты конфиденциальности",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "переключение между режимом производительности и тихим режимом",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + пробел",
+                        "description": "изменение состояния подсветки клавиатуры",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Клавиша, определяемая пользователем",
+                    "caption": "Клавиша, обозначенная звездочкой, позволяет настроить функцию, определяемую пользователем",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Определяемая пользователем клавиша действия",
+                        "note": "Примечание. Эту функцию можно использовать для ввода стандартных данных, например адреса электронной почты или почтового адреса. Lenovo настоятельно не рекомендует использовать эту функцию для хранения или ввода паролей и другой конфиденциальной информации.",
+                        "options": {
+                            "option1": "Выберите",
+                            "option2": "Открытый сайт",
+                            "option3": "Введите текст"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1179,31 +1207,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Lenovo Active Protection System — это автоматически работающая функция, которая помогает защитить жесткий диск от повреждения в результате сильного удара и вибрации. Она постоянно контролирует перемещение вашего компьютера и при обнаружении возможного падения или аналогичного опасного события временно останавливает жесткий диск.",
                 "activeProtection": {
-                    "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "title": "Система Active Protection System",
+                    "caption": "Изменение чувствительности: в режиме низкой чувствительности защита активируется только при сильных ударах",
+                    "checkbox": "Игнорирование повторяющихся ударов, например в поезде или автомобиле"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Приостановка режима Active Protection вручную",
+                    "caption": "Возможность останавливать работу системы Active Protection System вручную",
+                    "dropdown-title": "Приостановлено на",
+                    "button": "Приостановить сейчас"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Чтобы улучшить доступ к жесткому диску во время использования планшетного ПК, приостанавливайте работу Active Protection System при обнаружении следующих действий:",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Ввод с помощью пера",
+                        "description": "При вводе с помощью пера включать APS, когда ввод с пера находится вне зоны действия"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Сенсорный ввод",
+                        "description": "При сенсорном вводе включать APS, если сенсорный ввод не обнаружен"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Обнаружение приближения рук на краях компьютера",
+                        "description": "При включенном режиме планшета включать APS, если рука не обнаружена"
                     }
                 }
             },
@@ -1214,30 +1242,30 @@
                 "tooltip": "Эта функция не распространяется на интернет-проигрыватели видео. Самые популярные локальные видеопроигрыватели (например,проигрыватель Windows Media Player, 5KPlayer и т. д.) поддерживают эту функцию."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Голос",
+                "description": "Lenovo Voice помогает преобразовать речь в текст с использование функции преобразования голоса в текст и обеспечивает перевод в режиме реального времени при преобразовании голоса в текст с помощью функции перевода.",
+                "installBtnText": "Установить",
+                "launchBtnText": "Запустить",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Преобразование голоса в текст",
+                    "caption": "Эта функция помогает преобразовать голос в текст."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Перевод",
+                    "caption": "Эта функция обеспечивает перевод голосовых данных в режиме реального времени. Переведенное содержимое отображается в виде текста. Можно выбрать исходный и целевой языки в зависимости от ваших потребностей."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Начало работы:",
+                    "point1": "Убедитесь, что на панели задач Windows отображается значок Lenovo Voice.",
+                    "point2": "Откройте файл, в который требуется записать преобразованный текст.",
+                    "point3": "Нажмите значок Lenovo Voice на панели задач Windows и выберите \"Преобразование голоса в текст\".",
+                    "point4": "Выберите нужный язык и нажмите на значок микрофона, чтобы начать.",
+                    "point5": "Поместите курсор в место редактирования и начните говорить.",
+                    "point6": "Нажмите значок Lenovo Voice на панели задач Windows и выберите \"Перевод\".",
+                    "point7": "Выберите нужный исходный язык и целевой язык.",
+                    "point8": "В зависимости от потребностей задайте голосовой ввод с динамиков или с микрофона.",
+                    "point9": "Нажмите значок микрофона, чтобы начать говорить",
+                    "closeText": "закрыть"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "Рекомендуемые обновления",
         "optionalUpdates": "Необязательные обновления",
         "ignoredUpdates": "Пропущенные обновления",
-        "successInstall": "Успешно установлено",
-        "failedInstall": "Сбой при установке",
+        "successInstall": "Успешно установлено: ",
+        "failedInstall": "Не удалось установить: ",
         "at": "в",
         "readMore": "Подробнее",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "Вас приветствует программа System Update.",
             "title": "Регулярное обновление системы обеспечивает ее исправную работу.",
-            "last": "Дата последнего обновления",
-            "next": "Следующая проверка обновлений запланирована на",
+            "last": "Последнее обновление: ",
+            "next": "Следующее запланированное обновление: ",
             "checkButton": "ПРОВЕРИТЬ НАЛИЧИЕ ОБНОВЛЕНИЙ",
             "checking": "Проверка наличия обновлений",
             "downloading": "Загрузка обновлений завершена",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "Сервер обновления системы в настоящее время недоступен. Повторите попытку позже.",
             "helpCenterInvalidServerException": "Недопустимый сервер обновления системы. Повторите попытку позже.",
             "catalogNotFoundException": "Для вашей системы не обнаружено подходящих обновлений.",
-            "catalogCrcErrorException": "Каталог обновления вашей системы в настоящее время обновляется на сервере обновления системы. Повторите попытку позже.",
+            "catalogCrcErrorException": "Каталог для вашей системы в настоящее время обновляется. Повторите попытку позже.",
             "catalogErrorException": "Обнаружена ошибка, связанная с каталогом обновления вашей системы на сервере обновления системы. Повторите попытку позже.",
             "fileNotFoundException": "Файл не найден."
         }
@@ -1615,8 +1643,9 @@
             },
             "errorMessage": {
                 "headerText": "Ошибка",
-				"bodyText": "Мы обнаружили, что вам не хватает критических компонентов Vantage. Эти компоненты будут загружены в фоновом режиме. Повторите попытку позже.",
-				"closeText": "close"
+                "bodyText": "Мы обнаружили, что вам не хватает критических компонентов Vantage. Эти компоненты будут загружены в фоновом режиме. Повторите попытку позже.",
+                "closeText": "закрыть",
+                "offlineText": "Мы обнаружили, что вы не подключены к Интернету. Некоторые части этой страницы будут функционировать некорректно. Подключитесь к Интернету повторно"
             }
         },
         "homeprotection": {

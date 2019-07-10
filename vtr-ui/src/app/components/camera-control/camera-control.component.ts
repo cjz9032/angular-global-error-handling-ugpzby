@@ -22,7 +22,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	@Output() exposureChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() exposureToggle: EventEmitter<any> = new EventEmitter();
 	@Output() cameraAvailable: EventEmitter<boolean> = new EventEmitter();
-
+	@Output() cameraDisable:EventEmitter<boolean> = new EventEmitter();
 	public cameraDetail = new CameraDetail();
 	private cameraPreview: ElementRef;
 	private videoElement: HTMLVideoElement;
@@ -135,14 +135,22 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 					self.oMediaCapture.addEventListener('failed', (error) => {
 						console.log('failed to capture camera', error);
 						self.cleanupCameraAsync();
-
+						
 						this.ngZone.run(() => {
-							this.isCameraInErrorState = true;
+							
 							// Camera is in Use
 							if (error.code === 3222091524) {
+								this.isCameraInErrorState = true;
 								this.cameraErrorTitle = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.inUseTitle';
 								this.cameraErrorDescription = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.inUseDescription';
-							} else {
+								}
+								// disable camera access from system setting
+								else if(error.code === 2147942405){
+									this.cameraDisable.emit(true);
+			
+								}
+								else {
+									this.isCameraInErrorState = true;
 								this.cameraErrorTitle = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.loadingFailedTitle';
 								this.cameraErrorDescription = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.loadingFailedDescription';
 							}

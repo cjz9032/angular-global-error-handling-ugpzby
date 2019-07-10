@@ -49,6 +49,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public privacyGuardCheckBox = false;
 	public privacyGuardOnPasswordCapability = false;
 	public privacyGuardInterval: any;
+	public hasOLEDPowerControlCapability = false;
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 	headerMenuItems = [
@@ -145,6 +146,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.getPrivacyGuardOnPasswordCapabilityStatus();
 		this.statusChangedLocationPermission();
 		this.initCameraSection();
+		this.getOLEDPowerControlCapability();
 	}
 
 	initCameraSection() {
@@ -440,6 +442,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						if (response.result === true) {
 							this.eyeCareDataSource.current = response.colorTemperature;
 							this.eyeCareModeStatus.status = response.eyecaremodeState;
+							this.isEyeCareMode = this.eyeCareModeStatus.status;
 							this.enableSlider = response.eyecaremodeState;
 							this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, this.eyeCareModeStatus);
 						}
@@ -804,4 +807,34 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	// End Privacy Gaurd
+	// when disable the privacy from system setting
+	cameraDisabled(event) {
+		console.log('disabled all is', event);
+		this.shouldCameraSectionDisabled = event;
+		this.dataSource.permission = false;
+		this.cameraFeatureAccess.exposureAutoValue = false;
+		if (this.dataSource.exposure.supported === true && this.cameraFeatureAccess.exposureAutoValue === false) {
+			this.cameraFeatureAccess.showAutoExposureSlider = true;
+		}
+	}
+
+	// Updates whether device has OLEDPowerControl
+	public getOLEDPowerControlCapability() {
+		try {
+			if (this.displayService.isShellAvailable) {
+				this.displayService.getOLEDPowerControlCapability()
+					.then((result: boolean) => {
+						console.log('getOLEDPowerControlCapability.then', result);
+						this.hasOLEDPowerControlCapability = result;
+
+					}).catch(error => {
+						console.error('getOLEDPowerControlCapability', error);
+
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+
+		}
+	}
 }

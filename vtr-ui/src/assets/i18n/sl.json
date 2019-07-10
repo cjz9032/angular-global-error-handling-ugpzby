@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Strni",
             "expand": "Razširi",
-            "loader": "Fetching <br> Status"
+            "loader": "Pridobivanje <br> statusa",
+            "loading": "nalaganje..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "Za podaljšanje splošne življenjske dobe zaslona priporočamo tudi zatemnitev opravilne vrstice in drugih delov zaslona, ki se ne spreminjajo pogosto."
                         ],
                         "reset": "Ponastavitev temperature",
-                        "tooltip": "Ta funkcija lahko s selektivnim zatemnjevanjem delov zaslona zmanjša porabo energije in podaljša življenjsko dobo baterije."
+                        "tooltip": "Ta funkcija lahko s selektivnim zatemnjevanjem delov zaslona zmanjša porabo energije in podaljša življenjsko dobo baterije.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Vnašanje in pripomočki",
+                "subtitle": "Nastavitve vnašanja in pripomočkov",
+                "description": "Tehnologija Lenovo za pametno zaznavanje združuje različne senzorje v računalniku, ki zaznavajo vaše dejavnosti in prilagodijo nastavitve za optimalno upravljanje porabe energije",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Pametna tipkovnica",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Skrite funkcije tipkovnice",
+                        "description": "Tipko Fn v spodnjem levem kotu tipkovnice lahko pritisnite hkrati z drugimi tipkami, da sprožite ukaze, prikazane na sliki tipkovnice spodaj."
                     },
                     "firstKeyObj": {
-                        "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "tittle": "Fn + tabulatorka",
+                        "description": "omogočanje povečave pri zaslonih velike ločljivosti",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "preklop v način spanja",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "vklop in izklop funkcije Zaščita zasebnosti",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "preklop med načinom učinkovitosti delovanja in tihim načinom",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + preslednica",
+                        "description": "sprememba stanja osvetlitve tipkovnice",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Uporabniško določena tipka",
+                    "caption": "Za tipko, označeno z ikono zvezdice, lahko določite svojo funkcijo",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Dejanje za uporabniško določeno tipko",
+                        "note": "Opomba: to lahko uporabite za vnos pogosto uporabljenega besedila, kot so e-poštni ali poštni naslovi. Lenovo priporoča, da te funkcije nikdar ne uporabite za vnos gesel ali kakršnih koli drugih osebnih podatkov.",
+                        "options": {
+                            "option1": "Prosimo, izberite",
+                            "option2": "Odprite spletno stran",
+                            "option3": "Vnesite besedilo"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1179,31 +1207,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Tehnologija Lenovo Active Protection System je samodejna funkcija, ki pomaga trdi disk zaščititi pred poškodbami, ki nastanejo zaradi močnega fizičnega udarca in vibracij. Stalno spremlja gibanje računalnika in začasno ustavi trdi disk, ko predvidi padec ali podoben dogodek, ki lahko poškoduje disk.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "Spremenite občutljivost – zaščita bo v načinu nizke občutljivosti aktivirana samo ob močnejših udarcih",
+                    "checkbox": "Prezri ponavljajoče se udarce, na primer tiste v vlaku ali avtomobilu"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Ročna ustavitev tehnologije Active Protection",
+                    "caption": "Dovoli ročno ustavitev tehnologije Active Protection System",
+                    "dropdown-title": "Ustavi za",
+                    "button": "Ustavi zdaj"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Za izboljšan dostop do trdega diska pri uporabi v načinu tabličnega računalnika ustavi Active Protection System, ko so zaznane te dejavnosti",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Vnos s peresom",
+                        "description": "Pri uporabi vnosa s peresom omogoči APS, ko je pero zunaj dosega"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Vnos z dotikom",
+                        "description": "Pri uporabi vnosa z dotikom omogoči APS, ko vnos z dotikom ni zaznan"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Zaznavanje bližine rok na robovih računalnika",
+                        "description": "Ko je omogočen način tabličnega računalnika, omogoči APS, ko roka ni zaznana"
                     }
                 }
             },
@@ -1214,30 +1242,30 @@
                 "tooltip": "Ta funkcija se ne uporablja za spletne videopredvajalnike. To funkcijo podpirajo priljubljeni lokalni videopredvajalniki, kot so Windows Media Player, 5KPlayer in drugi."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Glas",
+                "description": "Lenovo Voice s funkcijo pretvorbe glasu v besedilo pomaga pretvoriti glas v besedilo, s funkcijo Prevajanje pa zagotavlja prevode iz glasu v besedila v realnem času.",
+                "installBtnText": "Namestitev",
+                "launchBtnText": "Zaženite",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Pretvorba glasu v besedilo",
+                    "caption": "Ta funkcija pomaga pretvoriti glas v besedilo."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Prevod",
+                    "caption": "Ta funkcija zagotavlja prevajanje glasu v realnem času. Prevedena vsebina je prikazana kot besedilo. Izvorne in ciljne jezike lahko izberete glede na lastne potrebe."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Začnimo:",
+                    "point1": "Prepričajte se, da je na sistemskem pladnju Windows prikazana ikona Lenovo Voice.",
+                    "point2": "Odprite datoteko, v katero želite zabeležiti pretvorjeno besedilo.",
+                    "point3": "Kliknite ikono Lenovo Voice na sistemskem pladnju Windows in izberite Voice to text (Pretvorba glasu v besedilo).",
+                    "point4": "Izberite želeni jezik in kliknite ikono mikrofona, da začnete.",
+                    "point5": "Kazalec premaknite na mesto, kjer želite urejati, in začnite govoriti.",
+                    "point6": "Kliknite ikono Lenovo Voice na sistemskem pladnju Windows in izberite Translate (Prevajanje).",
+                    "point7": "Izberite želeni izvorni in ciljni jezik.",
+                    "point8": "Zvočni vhod nastavite na zvočnik ali mikrofon (odvisno od vaših potreb).",
+                    "point9": "Če želite začeti govoriti, kliknite ikono mikrofona",
+                    "closeText": "zapri"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "Priporočene posodobitve",
         "optionalUpdates": "Izbirne posodobitve",
         "ignoredUpdates": "Prezrte posodobitve",
-        "successInstall": "Uspešna namestitev",
-        "failedInstall": "Neuspešna namestitev",
+        "successInstall": "Uspešna namestitev: ",
+        "failedInstall": "Neuspešna namestitev: ",
         "at": "ob",
         "readMore": "Preberite več",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "Uporabite funkcijo System Update.",
             "title": "Posodobljen sistem je zdrav sistem.",
-            "last": "Zadnja posodobitev je bila dne",
-            "next": "Naslednje načrtovano iskanje posodobitev",
+            "last": "Zadnja posodobitev: ",
+            "next": "Naslednja načrtovana posodobitev: ",
             "checkButton": "ISKANJE POSODOBITEV",
             "checking": "Preverite, ali so na voljo posodobitve",
             "downloading": "Prenos posodobitev je končan",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "Strežnik za posodobitev sistema trenutno ni na voljo. Poskusite znova pozneje.",
             "helpCenterInvalidServerException": "Strežnik za posodobitev sistema je neveljaven. Poskusite znova pozneje.",
             "catalogNotFoundException": "Za sistem ni bilo najdenih nobenih posodobitev.",
-            "catalogCrcErrorException": "Katalog posodobitev za vaš sistem se trenutno posodablja iz strežnika za posodobitev sistema. Poskusite znova pozneje.",
+            "catalogCrcErrorException": "Katalog za vaš sistem se trenutno posodablja. Poskusite znova pozneje.",
             "catalogErrorException": "V strežniku za posodobitev sistema je bila zaznana napaka v katalogu posodobitev za vaš sistem. Poskusite znova pozneje.",
             "fileNotFoundException": "Datoteka ni bila najdena."
         }
@@ -1615,8 +1643,9 @@
             },
             "errorMessage": {
                 "headerText": "Napaka",
-				"bodyText": "Zaznali smo, da vam manjkajo ključni deli programa Vantage. Ti deli se bodo prenesli v ozadju. Poskusite znova pozneje.",
-				"closeText": "close"
+                "bodyText": "Zaznali smo, da vam manjkajo ključni deli programa Vantage. Ti deli se bodo prenesli v ozadju. Poskusite znova pozneje.",
+                "closeText": "zapri",
+                "offlineText": "Zaznali smo, da niste povezani z internetom. Nekateri deli te strani ne bodo delovali pravilno. Znova vzpostavite povezavo"
             }
         },
         "homeprotection": {

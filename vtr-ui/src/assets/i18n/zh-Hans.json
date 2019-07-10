@@ -37,11 +37,12 @@
                     },
                     "driverPopup": {
                         "headerText": "Driver Install Required",
-                        "text": "You need install driver for RAM Overclock to  make it effective",
+                        "text": "Install driver to activate RAM Overclock,",
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "自动关闭",
                     "networkBoost": "网络提升",
@@ -49,7 +50,7 @@
                     "touchpadLock": "触摸板锁定",
                     "lightingDriverPopup": {
                         "headerText": "Driver Install Required",
-                        "text": "Please install driver",
+                        "text": "Install driver to activate lighting",
                         "button": "Install",
                         "link": "cancel"
                     },
@@ -334,26 +335,6 @@
                     "title": "Profile 3"
                 }
             },
-            "lightingProfileHeading": {
-                "text1": {
-                    "title": "Off"
-                },
-                "text2": {
-                    "title": 1
-                },
-                "text3": {
-                    "title": 2
-                },
-                "text4": {
-                    "title": 3
-                },
-                "Customize": {
-                    "title": "Customize"
-                },
-                "heading": {
-                    "title": "Select Profile:"
-                }
-            },
             "colourwheel": {
                 "text1": {
                     "title": "Selecting colour not available to this effect."
@@ -376,12 +357,32 @@
                 "text7": {
                     "title": "Color"
                 }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Customize"
+                },
+                "heading": {
+                    "title": "Select Profile:"
+                }
             }
         }
     },
     "common": {
         "menu": {
-            "dashboard": "仪表板",
+            "dashboard": "首页",
             "device": {
                 "title": "设备",
                 "sub1": "我的设备",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "折叠",
             "expand": "展开",
-            "loader": "获取状态"
+            "loader": "获取状态",
+            "loading": "载入中..."
         }
     },
     "privacy": {
@@ -532,7 +534,7 @@
                 }
             },
             "systemUpdate": {
-                "title": "系统升级",
+                "title": "系统更新",
                 "detail": {
                     "update": "更新"
                 }
@@ -602,6 +604,16 @@
                 "minute": "分",
                 "charge": "充满电所需的时间",
                 "button": "查看电池详细信息",
+                "updating": "Updating",
+                "thresholdNote": {
+                    "note": "Note: ",
+                    "note1": "To extend the battery lifespan, you have set your battery to stop charging at ",
+                    "note2": "to stop charging at ",
+                    "note3": "battery",
+                    "note4": "and "
+                },
+                "voltageError": "Battery voltage incorrect",
+                "batteryNotDetected": "No battery detected",
                 "details": {
                     "title": "电池详细信息",
                     "primary": "主电池",
@@ -660,8 +672,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "电池因正常而发生故障",
-                        "description": "穿。电池无法充电。更换电池。"
+                        "description": "穿。电池无法充电。更换电池。",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "发生电池错误。",
@@ -674,13 +687,13 @@
                     "NotGood": {
                         "title": "电池状况不佳"
                     },
-                    "LimitedACAdapterSupport": {
-                        "title": "有限支持AC适配器",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
-                    },
                     "NotSupportACAdapter": {
                         "title": "不支持AC适配器",
                         "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
+                    },
+                    "LimitedACAdapterSupport": {
+                        "title": "有限支持AC适配器",
+                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                     },
                     "MissingDriver": {
                         "title": "The Lenovo Power Manager driver",
@@ -694,7 +707,7 @@
                     "HighTemperature": {
                         "title": "Discharging",
                         "description": "has been stopped because the",
-                        "description1": "battery temperature is too high"
+                        "description1": "battery temperature is too high."
                     },
                     "TrickleCharge": {
                         "description": "The battery was",
@@ -713,20 +726,10 @@
                     },
                     "HardwareAuthenticationError": {
                         "description": "The battery installed is",
-                        "description1": "is not supported",
-                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
+                        "description1": "not supported",
+                        "description2": "by the system and will not charge. Please replace the battery with the correct Lenovo battery for this system."
                     }
-                },
-                "updating": "Updating",
-                "thresholdNote": {
-                    "note1": "To extend the battery lifespan, you have set your ",
-                    "note2": "to stop charging at ",
-                    "note3": "battery",
-                    "note4": "and ",
-                    "note": "Note: "
-                },
-                "voltageError": "Battery voltage incorrect",
-                "batteryNotDetected": "No Battery Detected"
+                }
             },
             "power": {
                 "title": "电源管理",
@@ -748,6 +751,7 @@
                     "description3": "智能冷却功能自动平衡散热性能以满足您的需求。当笔记本电脑处于手持状态时，智能冷却功能可调整性能设置，提供一个温度较低的表面，从而使握持者感到舒适。当该设备放置在桌面上时，此功能可优化性能。",
                     "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
                     "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider",
                     "readMore": "阅读更多信息。",
                     "gotoWindows": {
                         "title": "转到 Windows 设置",
@@ -768,7 +772,7 @@
                             "performance5": "性能",
                             "batterySaving": "Battery Saving",
                             "performance13": "Performance",
-                            "quiteCool13": "Quiet & Cool",
+                            "quiteCool13": "Cool & Quiet",
                             "performance14": "Extreme Performance",
                             "quiteCool14": "Intelligent Cooling"
                         },
@@ -801,8 +805,7 @@
                             "extremeCooling": "极致性能",
                             "battery&Quite": "电池和安静状态"
                         }
-                    },
-                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
+                    }
                 },
                 "powerSettings": {
                     "title": "电源设置",
@@ -985,6 +988,26 @@
                             "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日落日出时间。"
                         }
                     },
+                    "oledPowerSettings": {
+                        "title": "OLED 电源设置",
+                        "description": [
+                            "通过有选择地使显示屏的部分区域变暗，计算机的 OLED 显示屏还能降低功耗并延长电池使用时间。",
+                            "与此同时，我们建议调暗不频繁变化的工具栏和显示屏的其他区域，以延长显示屏的总使用时间。"
+                        ],
+                        "reset": "重置温度",
+                        "tooltip": "此功能可以有选择地使显示屏的部分区域变暗，从而降低功耗并延长电池使用时间。",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
+                    },
                     "dispColorTemp": {
                         "title": "显示色温",
                         "options": {
@@ -1004,15 +1027,6 @@
                         "description": "此功能可防止其他人偷看您的屏幕。当此功能开启时，将改变您显示屏的视角，使您周围的人无法偷看您的隐私。您还可以通过按“Fn+D”键切换模式。",
                         "note": "隐私保护在屏幕纵向模式下无法工作。在此模式下，仍可从侧面看到您的屏幕。",
                         "labelText": "输入密码时启用此功能"
-                    },
-                    "oledPowerSettings": {
-                        "title": "OLED 电源设置",
-                        "description": [
-                            "通过有选择地使显示屏的部分区域变暗，计算机的 OLED 显示屏还能降低功耗并延长电池使用时间。",
-                            "与此同时，我们建议调暗不频繁变化的工具栏和显示屏的其他区域，以延长显示屏的总使用时间。"
-                        ],
-                        "reset": "重置温度",
-                        "tooltip": "此功能可以有选择地使显示屏的部分区域变暗，从而降低功耗并延长电池使用时间。"
                     }
                 },
                 "camera": {
@@ -1052,48 +1066,62 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "输入和附件",
+                "subtitle": "输入和附件设置",
+                "description": "Lenovo 智能感知结合计算机上的各种传感器来检测您的活动，并调整设置以实现最优电源管理",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "智能键盘",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "隐藏键盘功能",
+                        "description": "同时按下键盘左下角的 Fn 键和其他按键，即可调用下列键盘映射所示的命令"
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "在高分辨率显示屏上启用缩放功能",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "进入睡眠模式",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "开启或关闭隐私保护",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "在性能模式和安静模式之间切换",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + 空格键",
+                        "description": "更改键盘背光状态",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "用户自定义键",
+                    "caption": "您可以对标有星形图标的按键设置用户自定义功能",
                     "tooltip": "Content to be filled",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "用户自定义键的操作",
+                        "note": "注：可使用该功能输入经常输入的内容，如电子邮件地址或邮寄地址。Lenovo 建议不要使用该功能存储或输入密码或其他私密信息。",
+                        "options": {
+                            "option1": "请选择",
+                            "option2": "打开网站",
+                            "option3": "输入文字"
+                        }
+                    },
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
                     }
                 }
             }
@@ -1148,9 +1176,9 @@
                 "note": {
                     "description1": "此功能依赖于 Windows Hello。确保在 Windows 设置中已开启面部识别。",
                     "description2": "该功能使用传感器和摄像头来检测您的存在。然而，该功能不会收集任何个人数据。",
-                    "description3": "1.如果您的计算机处于帐篷模式、平板电脑模式或站立模式，则这些功能可能无法正常工作。",
-                    "description4": "2.如果您的计算机处于休眠模式或已关机。自动红外摄像头登录将无法工作。",
-                    "description5": "3.请将计算机屏幕调整至适当的角度，以便红外摄像头能够识别您的面部，进行自动登录。"
+                    "description3": "1. 如果您的计算机处于帐篷模式、平板电脑模式或站立模式，则这些功能可能无法正常工作。",
+                    "description4": "2. 如果您的计算机处于休眠模式或已关机。自动红外摄像头登录将无法工作。",
+                    "description5": "3. 请将计算机屏幕调整至适当的角度，以便红外摄像头能够识别您的面部，进行自动登录。"
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "转到 Windows Hello 设置",
@@ -1179,31 +1207,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Lenovo Active Protection System 是一种自主功能部件，它有助于保护硬盘驱动器免受因强烈的物理震动和振动所造成的损坏。它还会持续监视计算机的移动，并且会在预测到掉落或类似损坏事件时暂停硬盘驱动器。",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "改变敏感度，因为在低敏感模式下，只有更大的撞击才能激活保护功能",
+                    "checkbox": "忽略火车或汽车之类颠簸造成的持续震动"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "手动暂挂 Active Protection",
+                    "caption": "允许手动暂挂 Active Protection System",
+                    "dropdown-title": "暂挂时间",
+                    "button": "立即暂挂"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "为改善使用平板电脑期间对硬盘驱动器的访问，当检测到以下活动时，暂挂 Active Protection System",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "数字笔输入",
+                        "description": "使用数字笔输入时，如果数字笔输入超出范围，则启用 APS"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "触摸输入",
+                        "description": "使用触摸输入时，如果未检测到触摸输入，则启用 APS"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "手接近计算机边缘",
+                        "description": "启用平板电脑模式时，如果未检测到手动输入，则启用 APS"
                     }
                 }
             },
@@ -1214,30 +1242,30 @@
                 "tooltip": "此功能不适用于 Web 视频播放器。流行的本地视频播放器（例如 Windows Media Player、5KPlayer 等）均支持此功能。"
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "语音",
+                "description": "联想语音可通过语音转文本功能帮助您将语音转换为文本，并通过翻译功能提供从语音到文本的实时翻译。",
+                "installBtnText": "安装",
+                "launchBtnText": "启动",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "语音转文本",
+                    "caption": "此功能有助于将语音转换为文本。"
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "翻译",
+                    "caption": "此功能提供对语音的实时翻译。译文以文本形式显示。您可以根据需要选择源语言和目标语言。"
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "如何开始使用：",
+                    "point1": "确保 Windows 系统托盘中显示联想语音图标。",
+                    "point2": "打开要记录转换文本的文件。",
+                    "point3": "单击 Windows 系统托盘中的联想语音图标，然后选择语音转文本。",
+                    "point4": "选择所需的语言，然后单击麦克风图标开始。",
+                    "point5": "将光标放在要编辑的位置并开始说话。",
+                    "point6": "单击 Windows 系统托盘中的联想语音图标，然后选择翻译。",
+                    "point7": "选择所需的源语言和目标语言。",
+                    "point8": "根据您的需要，从扬声器或麦克风处设置语音输入。",
+                    "point9": "单击麦克风图标开始说话",
+                    "closeText": "关闭"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "个推荐更新",
         "optionalUpdates": "个可选更新",
         "ignoredUpdates": "个已忽略的更新",
-        "successInstall": "安装成功的日期",
-        "failedInstall": "安装失败的日期",
+        "successInstall": "安装成功：",
+        "failedInstall": "安装失败：",
         "at": "时间",
         "readMore": "阅读更多信息",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "欢迎使用系统更新。",
             "title": "保持最新状态的系统才是健康的系统。",
-            "last": "上次更新时间为",
-            "next": "下次更新扫描计划时间为",
+            "last": "上次更新时间：",
+            "next": "下次计划更新时间：",
             "checkButton": "检查更新",
             "checking": "正在检查更新",
             "downloading": "正在下载更新",
@@ -1615,8 +1643,9 @@
             },
             "errorMessage": {
                 "headerText": "错误",
-				"bodyText": "我们检测到您丢失了 Vantage 的关键部分。这些部分将在后台下载。请稍后重试。",
-				"closeText": "close"
+                "bodyText": "我们检测到您丢失了 Vantage 的关键部分。这些部分将在后台下载。请稍后重试。",
+                "closeText": "关闭",
+                "offlineText": "我们检测到您没有连接到互联网。此页面的某些部分将无法正常运行。请重新连接"
             }
         },
         "homeprotection": {
@@ -1767,6 +1796,7 @@
         "ssoErrorAccountPluginNotExist": "缺少插件。如果您已连接因特网，我们将在后台自动恢复插件。这可能需要花费一些时间，请稍后重试。"
     },
     "faq": {
+        "pageTitle": "支持细节",
         "footer": {
             "title": "没找到所需信息？",
             "description": "需要更多支持吗？欢迎通过以下方式联系我们：​",
@@ -2122,8 +2152,7 @@
             },
             "para12": "注",
             "para13": "Cortana 仅在某些国家/地区可用，且部分 Cortana 功能并非在所有国家/地区可用。"
-        },
-        "pageTitle": "支持细节"
+        }
     },
     "welcometutorial": {
         "description": "您好！欢迎使用Vantage<br>Vantage是为您量身定做的系统管家。我们在Vantage中集成了多种功能可以帮助您轻松掌握系统状态，并持续保持系统处于最优状态。也可在您系统遇到问题时，为您快速运行诊断程序，定位问题。",

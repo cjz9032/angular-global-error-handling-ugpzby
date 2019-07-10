@@ -19,28 +19,29 @@
 								[isSwitchChecked]="apsStatus"
 								[leftIcon]="['fal', 'gem']"
 								[theme]="'white'"
+								[showChildContent]='true'
 								(toggleOnOff)="setAPSMode($event)">
+								<div class="slider">
+									<vtr-ui-aps-slider [legends]="['Low Sensitivity', 'Medium Sensitivity', 'High Sensitivity']"
+										[minValue]="0"
+										[maxValue]="100"
+										[enableSlider]="!apsStatus"
+										[value]="apsSensitivity"
+										[theme]="'white'"
+										[step]='50'
+										(change)='setAPSSensitivityLevel($event)'
+										>
+									</vtr-ui-aps-slider>
+								</div>
+								<div class="checkbox">
+									<vtr-ui-checkbox
+										[label]="'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate"
+										[checked]="repeatShock"
+										(change)="setAutoDisableSetting($event)"
+										[disabled]="!apsStatus">
+									</vtr-ui-checkbox>
+								</div>
 							</vtr-ui-row-switch>
-						</div>
-						<div class="slider">
-							<vtr-ui-aps-slider [legends]="['Low Sensitivity', 'Medium Sensitivity', 'High Sensitivity']"
-								[minValue]="0"
-								[maxValue]="100"
-								[enableSlider]="!apsStatus"
-								[value]="apsSensitivity"
-								[theme]="'white'"
-								[step]='50'
-								(change)='setAPSSensitivityLevel($event)'
-								>
-							</vtr-ui-aps-slider>
-						</div>
-						<div class="checkbox">
-							<vtr-ui-checkbox
-								[label]="'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate"
-								[checked]="repeatShock"
-								(change)="setAutoDisableSetting($event)"
-								[disabled]="!apsStatus">
-							</vtr-ui-checkbox>
 						</div>
 					</li>
 

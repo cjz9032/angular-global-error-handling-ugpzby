@@ -4,7 +4,7 @@
 			id="cooling">
 			<div class="col-10 mx-auto ">
 				<vtr-container-collapsible
-					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate | lowercase"
+					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
 					[isCollapsed]="false"
 					[allowCollapse]="false"
 					[theme]="'blue'">
@@ -12,7 +12,7 @@
               list-group-flush">
 						<li class="">
 							<vtr-ui-row-switch
-								[title]="'device.deviceSettings.power.powerSmartSettings.subtitle' | translate |  lowercase"
+								[title]="'device.deviceSettings.power.powerSmartSettings.subtitle' | translate"
 								[caption]="captionText"
 								[isSwitchVisible]="showIntelligentCoolingToggle"
 								[isSwitchChecked]="enableIntelligentCoolingToggle"
@@ -79,7 +79,7 @@
 			id="cooling">
 			<div class="col-10 mx-auto ">
 				<vtr-container-collapsible
-					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate | lowercase"
+					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
 					[isCollapsed]="false"
 					[allowCollapse]="false"
 					[theme]="'blue'">
@@ -87,7 +87,7 @@
 						<div class="col-auto text-wrap subtitle">
 							<h3>
 								<!-- Intelligent Cooling  -->
-								{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate | lowercase}}
+								{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate}}
 							</h3>
 							<p>{{'device.deviceSettings.power.powerSmartSettings.description5' | translate}}
 								<a class="read-more-link"
@@ -108,14 +108,51 @@
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line3' | translate}}
 								</p>
 							</div>
-							<p class="text-right more-info"><a alt=""
-									(click)="coolingModesPopUp()">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line4' | translate}}</a>
-							</p>
 						</div>
 					</div>
-				</vtr-container-collapsible>
-			</div>
-		</div>
-	</div>
 
-</div>
+					<div *ngIf="showIC===5">
+						<div class="row py-5 smartsettings-card"
+							id="cooling">
+							<div class="col-10 mx-auto ">
+								<vtr-container-collapsible
+									[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate | lowercase"
+									[isCollapsed]="false"
+									[allowCollapse]="false"
+									[theme]="'blue'">
+									<div class="row">
+										<div class="col-auto text-wrap subtitle">
+											<h3>
+												<!-- Intelligent Cooling  -->
+												{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate | lowercase}}
+											</h3>
+											<p>{{'device.deviceSettings.power.powerSmartSettings.description5' | translate}}
+												<a class="read-more-link"
+													*ngIf="!onReadMoreClick"
+													(click)="readMore()">Read more.</a>
+											</p>
+											<div *ngIf="onReadMoreClick">
+												<p> <span
+														class="cooling-modes">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode1' | translate}}:</span>
+													{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line1' | translate}}
+												</p>
+												<p> <span
+														class="cooling-modes">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode2' | translate}}:</span>
+													{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line2' | translate}}
+												</p>
+												<p> <span
+														class="cooling-modes">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode3' | translate}}:</span>
+													{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line3' | translate}}
+												</p>
+											</div>
+											<p class="text-right more-info"><a alt=""
+													(click)="coolingModesPopUp()">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line4' | translate}}</a>
+											</p>
+										</div>
+									</div>
+								</vtr-container-collapsible>
+							</div>
+						</div>
+					</div>
+
+			</div>

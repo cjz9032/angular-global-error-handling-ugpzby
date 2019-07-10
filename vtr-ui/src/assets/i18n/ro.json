@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Restrângere",
             "expand": "Extindere",
-            "loader": "Fetching <br> Status"
+            "loader": "Obținerea <br> statutului",
+            "loading": "se incarca..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "De asemenea, se recomandă estomparea barei de activități și a altor zone ale afișajului care nu se schimbă frecvent pentru a prelungi durata generală de viață a afișajului."
                         ],
                         "reset": "Resetați temperatura",
-                        "tooltip": "Această caracteristică poate reduce consumul de energie și poate crește durata de viață a bateriei prin estomparea selectivă a unor părți de afișaj."
+                        "tooltip": "Această caracteristică poate reduce consumul de energie și poate crește durata de viață a bateriei prin estomparea selectivă a unor părți de afișaj.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Intrare și accesorii",
+                "subtitle": "Setări intrare și accesorii",
+                "description": "Detectarea inteligentă Lenovo combină diverși senzori de pe computerul dvs. pentru a vă detecta activitățile și pentru a regla setările pentru gestionarea optimă a alimentării",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Tastatură inteligentă",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Funcții ascunse ale tastaturii",
+                        "description": "Puteţi apăsa tasta Fn din partea stângă jos a tastaturii simultan cu alte taste pentru a activa comenzile afişate în harta tastaturii de mai jos."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "activați caracteristica zoom pe ecranele de înaltă rezoluție",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "activați modul repaus",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "activați/dezactivați Protectorul de confidențialitate",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "schimbați între modul performanță și modul silențios",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + Spațiu",
+                        "description": "modificați stările de retroiluminare a tastaturii",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Tastă definită de utilizator",
+                    "caption": "Tasta marcată cu o stea vă permite să configurați funcții definite de utilizator",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Tastă cu acțiune definită de utilizator",
+                        "note": "Notă: aceasta poate fi utilizată pentru introducerea textului obișnuit, cum ar fi e-mailuri sau adrese poștale. Lenovo nu recomandă ca această caracteristică să fie utilizată pentru stocarea şi introducerea parolelor sau a altor informaţii confidenţiale.",
+                        "options": {
+                            "option1": "Selectaţi",
+                            "option2": "Deschideți site-ul web",
+                            "option3": "Introduceți text"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1179,31 +1207,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Lenovo Active Protection System este o caracteristică autonomă, care vă ajută să protejaţi unitatea HDD împotriva deteriorărilor cauzate de şocurile fizice şi de vibraţiile puternice. Aceasta monitorizează încontinuu mișcarea computerului și oprește temporar unitatea HDD când o eroare sau un eveniment similar de deteriorare este prevăzut.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "Modificând sensibilitatea, în modul de sensibilitate redusă, doar șocurile mai puternice vor activa protecția",
+                    "checkbox": "Ignorați șocurile repetitive, cum ar fi cele produse de tren sau de mașină"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Suspendarea manuală a Active Protection",
+                    "caption": "Permiteți-mi să suspend manual Active Protection System",
+                    "dropdown-title": "Suspendare pentru",
+                    "button": "Suspendare imediată"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Pentru a îmbunătăți accesul la unitatea HDD în timpul utilizării tabletei, suspendați Active Protection System când sunt detectate următoarele activități",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Introducere date cu creionul",
+                        "description": "Când se utilizează introducerea datelor cu ajutorul creionului, activați APS în momentul în care creionul este în afara ariei de acoperire"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Introducere date prin atingere",
+                        "description": "Când se utilizează introducerea datelor prin atingere, activați APS în momentul în care introducerea prin atingere nu este detectată"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Sesizarea apropierii mâinii de marginile calculatorului",
+                        "description": "Când modul tabletă este activat, activați APS atunci când mâna nu este detectată"
                     }
                 }
             },
@@ -1214,30 +1242,30 @@
                 "tooltip": "Această funcție nu se aplică jucătorilor de jocuri video pe web. Cele mai populare playere video locale, cum ar fi Windows Media Player, 5KPlayer și altele, acceptă această funcție."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Voce",
+                "description": "Lenovo Voice vă ajută să vă convertiți vocea în texte cu ajutorul funcției Voce în text și vă oferă traducere în timp real din voce în texte cu ajutorul funcției Traducere.",
+                "installBtnText": "Instalare",
+                "launchBtnText": "Lansare",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Voce în text",
+                    "caption": "Această caracteristică vă ajută să vă transformați vocea în texte."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Traducere",
+                    "caption": "Această caracteristică oferă traducerea în timp real a vocii. Conținutul tradus este prezentat în texte. Puteți alege limbile sursă și limbile țintă în funcție de nevoile dvs."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Introducere:",
+                    "point1": "Asigurați-vă că pictograma Lenovo Voice este afișată în bara de sistem Windows.",
+                    "point2": "Deschideți fișierul în care doriți să înregistrați textul convertit.",
+                    "point3": "Faceți clic pe pictograma Lenovo Voice din bara de sistem Windows și selectați Voice to text.",
+                    "point4": "Selectați limba dorită și faceți clic pe pictograma microfon pentru a începe.",
+                    "point5": "Puneți cursorul în locul în care doriți să editați și începeți să vorbiți.",
+                    "point6": "Faceți clic pe pictograma Lenovo Voice din bara de sistem Windows și selectați Translate.",
+                    "point7": "Selectați limba sursă și limba țintă dorite.",
+                    "point8": "În funcție de nevoile dvs., setați intrarea vocală din Speaker sau din Microphone.",
+                    "point9": "Faceți clic pe pictograma microfon pentru a începe să vorbiți",
+                    "closeText": "închidere"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "Actualizări recomandate",
         "optionalUpdates": "Actualizări opționale",
         "ignoredUpdates": "Actualizări ignorate",
-        "successInstall": "Instalare reuşită în data de",
-        "failedInstall": "Instalare nereuşită în data de",
+        "successInstall": "Instalare reușită: ",
+        "failedInstall": "Instalare nereușită: ",
         "at": "la",
         "readMore": "Citiți mai multe",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "Bun venit la utilizarea System Update.",
             "title": "Un sistem actualizat este un sistem sănătos.",
-            "last": "Ultima actualizare în",
-            "next": "Scanarea următoarei actualizări este programată pe",
+            "last": "Ultima actualizare: ",
+            "next": "Următoarea actualizare programată: ",
             "checkButton": "CĂUTAȚI ACTUALIZĂRI",
             "checking": "Se caută actualizări",
             "downloading": "S-a finalizat descărcarea actualizărilor",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "Serverul de actualizări ale sistemului este momentan indisponibil. Încercaţi din nou mai târziu.",
             "helpCenterInvalidServerException": "Serverul de actualizări ale sistemului nu este valid. Încercaţi din nou mai târziu.",
             "catalogNotFoundException": "Nu s-au găsit actualizări aplicabile pentru sistemul dumneavoastră.",
-            "catalogCrcErrorException": "Catalogul de actualizări pentru sistemul dumneavoastră este actualizat în prezent pe serverul de actualizări ale sistemului. Încercaţi din nou mai târziu.",
+            "catalogCrcErrorException": "Catalogul pentru sistemul dvs. este în curs de actualizare. Încercaţi din nou mai târziu.",
             "catalogErrorException": "S-a detectat o eroare la catalogul de actualizări pentru sistemul dumneavoastră pe serverul de actualizări ale sistemului. Încercaţi din nou mai târziu.",
             "fileNotFoundException": "Fişierul nu a fost găsit."
         }
@@ -1615,8 +1643,9 @@
             },
             "errorMessage": {
                 "headerText": "Eroare",
-				"bodyText": "Am detectat că vă lipesc câteva elemente critice ale Vantage. Aceste elemente vor fi descărcate în fundal. Încercaţi din nou mai târziu.",
-				"closeText": "close"
+                "bodyText": "Am detectat că vă lipesc câteva elemente critice ale Vantage. Aceste elemente vor fi descărcate în fundal. Încercaţi din nou mai târziu.",
+                "closeText": "închidere",
+                "offlineText": "Nu sunteți conectat(ă) la internet. Unele părți ale acestei pagini nu funcționează corect. Conectați-vă din nou"
             }
         },
         "homeprotection": {

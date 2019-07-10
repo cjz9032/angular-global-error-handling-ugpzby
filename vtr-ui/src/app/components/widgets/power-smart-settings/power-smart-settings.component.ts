@@ -249,7 +249,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					this.showIC = 3;
 					this.intelligentCoolingModes = IntelligentCoolingHardware.Legacy;
 					console.log("DYTC 3.0 supported");
-					if (this.cQLCapability || this.tIOCapability) {
+					this.apsStatus = await this.getAPSState();
+					if ((this.cQLCapability || this.tIOCapability) && this.apsStatus) {
 						this.showIntelligentCoolingToggle = true;
 						this.enableIntelligentCoolingToggle = await this.getLegacyAutoModeState();
 
@@ -262,7 +263,6 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					let modeType = modeStatus ? ICModes.Cool : ICModes.Performance;
 					let mode = IntelligentCoolingModes.getMode(modeType);
 					this.setPerformanceAndCool(mode);
-					this.apsStatus = await this.getAPSState();
 				} else {
 					console.log("Intelligent Cooling Not Supported");
 					this.showIC = 0;

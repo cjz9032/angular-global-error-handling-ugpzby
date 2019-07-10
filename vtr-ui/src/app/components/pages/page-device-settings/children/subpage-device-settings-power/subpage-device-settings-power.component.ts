@@ -577,6 +577,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					.then((featureStatus: FeatureStatus) => {
 						console.log('getAlwaysOnUSBStatusIdeaNoteBook.then', featureStatus);
 						this.alwaysOnUSBStatus = featureStatus;
+						this.toggleAlwaysOnUsbFlag = this.alwaysOnUSBStatus.status;
 					})
 					.catch(error => {
 						console.error('getAlwaysOnUSBStatusIdeaNoteBook', error);
@@ -598,9 +599,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						if (this.usbChargingInBatteryModeStatus) {
 							this.usbChargingCheckboxFlag = featureStatus.status;
 						}
-						if (this.alwaysOnUSBStatus.status) {
-							this.toggleAlwaysOnUsbFlag = true;
-						}
+						// if (this.alwaysOnUSBStatus.status) {
+						// 	this.toggleAlwaysOnUsbFlag = true;
+						// }
 					})
 					.catch(error => {
 						console.error('getUSBChargingInBatteryModeStatusIdeaNoteBook', error);
@@ -870,7 +871,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (this.showBatteryThreshold) {
 			this.responseData.forEach(batteryInfo => {
 				this.setChargeThresholdValues(batteryInfo, batteryInfo.batteryNum, 'changedValues');
-			})
+			});
 		} else {
 			this.powerService.setToggleOff(this.responseData.length)
 				.then((value: any) => {
@@ -886,10 +887,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	public setChargeThresholdValues(batteryDetails: any, batteryNum: number, inputString: string) {
 		let batteryInfo: any = {};
-		if (batteryNum == 1) {
+		if (batteryNum === 1) {
 			this.selectedStopAtChargeVal = batteryDetails.stopValue;
 		}
-		if (batteryNum == 2) {
+		if (batteryNum === 2) {
 			this.selectedStopAtChargeVal1 = batteryDetails.stopValue;
 		}
 		if (this.primaryBatteryChargeVal > this.selectedStopAtChargeVal || this.secondaryBatteryChargeVal > this.selectedStopAtChargeVal1) {
@@ -905,7 +906,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					stopValue: batteryDetails.stopValue,
 					checkBoxValue: batteryDetails.checkBoxValue
 				};
-				if (inputString == 'changedValues') {
+				if (inputString === 'changedValues') {
 					// console.log('chnaged values here------------>');
 					this.powerService
 						.setChargeThresholdValue(batteryInfo)
@@ -917,9 +918,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 							console.error('change threshold value', error);
 						});
 				} else {
-					if (inputString == 'autoChecked') {
+					if (inputString === 'autoChecked') {
 						// console.log('auto checked values here------------>');
 						this.powerService.setCtAutoCheckbox(batteryInfo);
+						this.getBatteryThresholdInformation();
 					}
 				}
 			}

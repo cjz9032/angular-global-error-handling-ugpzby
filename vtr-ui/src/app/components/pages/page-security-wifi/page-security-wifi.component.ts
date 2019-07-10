@@ -16,6 +16,8 @@ import { RegionService } from 'src/app/services/region/region.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { GuardService } from '../../../services/guard/security-guardService.service';
+import { Subscription } from 'rxjs';
 
 interface DevicePostureDetail {
 	status: number; // 1,2
@@ -57,6 +59,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	securityHealthArticleCategory: string;
 	cancelClick = false;
 	isOnline = true;
+	notificationSubscription: Subscription;
 	intervalId: number;
 	interval = 5000;
 
@@ -70,7 +73,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		public translate: TranslateService,
 		private ngZone: NgZone,
 		public regionService: RegionService,
-		private securityAdvisorMockService: SecurityAdvisorMockService
+		private securityAdvisorMockService: SecurityAdvisorMockService,
+		private guard: GuardService
 	) {
 		this.securityAdvisor = shellService.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
@@ -97,7 +101,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
-		this.commonService.notification.subscribe((notification: AppNotification) => {
+		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, true);
@@ -115,6 +119,11 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			});
 		}
 		this.wifiIsShowMore = this.activeRouter.snapshot.queryParams['isShowMore'];
+
+		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+			this.wifiSecurity.refresh();
+
+		}
 	}
 
 	ngAfterViewInit() {
@@ -152,6 +161,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			this.wifiSecurity.cancelRefresh();
 		}
 		clearInterval(this.intervalId);
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
 	}
 
 	getActivateDeviceStateHandler(value: WifiSecurityState) {

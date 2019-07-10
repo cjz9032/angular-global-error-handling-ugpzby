@@ -1,40 +1,62 @@
-import { EventTypes, ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
+import { EventTypes, ConnectedHomeSecurity, LocationPermissionOffError } from '@lenovo/tan-client-bridge';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalLenovoIdComponent } from 'src/app/components/modal/modal-lenovo-id/modal-lenovo-id.component';
-
+import { AppNotification } from '../common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { DialogService } from 'src/app/services/dialog/dialog.service';
 
 export class HomeSecurityCommon {
 	connectedHomeSecurity: ConnectedHomeSecurity;
 	startTrialDisabled = false;
+	isOnline: boolean;
 
-	constructor(connectedHomeSecurity: ConnectedHomeSecurity, private modalService: NgbModal) {
-		this.connectedHomeSecurity = connectedHomeSecurity;
+	constructor(
+		connectedHomeSecurity: ConnectedHomeSecurity,
+		private modalService: NgbModal,
+		private dialogService: DialogService,
+		isOnline: boolean
+		) {
+			if (connectedHomeSecurity) {
+				this.connectedHomeSecurity = connectedHomeSecurity;
+			}
+			this.isOnline = isOnline;
 	}
 
 	openCornet(feature?: string) {
-		this.connectedHomeSecurity.account.visitWebConsole(feature);
+		this.connectedHomeSecurity.visitWebConsole(feature);
 	}
 
 	upgrade() {
-		this.connectedHomeSecurity.account.purchase();
+		this.connectedHomeSecurity.purchase();
 	}
 
 	startTrial() {
 		let alreadyLoggedIn = this.connectedHomeSecurity.account.lenovoId.loggedIn;
 		if (alreadyLoggedIn) {
 			this.startTrialDisabled = true;
-			this.connectedHomeSecurity.account.createAccount().then((result) => {
-				this.startTrialDisabled = result ;
-			}).catch(() => {
+			if (this.isOnline) {
+				this.connectedHomeSecurity.createAndGetAccount().then((result) => {
+					this.startTrialDisabled = result ;
+				}).catch((err: Error) => {
+					this.startTrialDisabled = false;
+					if (err instanceof LocationPermissionOffError) {
+						this.dialogService.openCHSPermissionModal();
+					}
+				});
+			} else {
+				this.dialogService.homeSecurityOfflineDialog();
 				this.startTrialDisabled = false;
-			});
+			}
 		} else {
 			const callback = (loggedIn: boolean) => {
 				if (loggedIn && !alreadyLoggedIn) {
-					this.connectedHomeSecurity.account.createAccount().then((result) => {
+					this.connectedHomeSecurity.createAndGetAccount().then((result) => {
 						this.startTrialDisabled = result ;
-					}).catch(() => {
+					}).catch((err: Error) => {
 						this.startTrialDisabled = false;
+						if (err instanceof LocationPermissionOffError) {
+							this.dialogService.openCHSPermissionModal();
+						}
 					});
 					alreadyLoggedIn = true;
 				}
@@ -52,5 +74,17 @@ export class HomeSecurityCommon {
 		}
 	}
 
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
+		}
+	}
 
 }
