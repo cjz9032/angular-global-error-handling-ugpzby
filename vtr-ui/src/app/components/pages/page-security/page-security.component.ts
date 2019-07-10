@@ -140,6 +140,12 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
 			this.refreshAll();
 		}
+		this.regionService.getRegion().subscribe({
+			next: x => { this.region = x; },
+			error: () => {
+				this.region = 'US';
+			}
+		});
 		this.fetchCMSArticles();
 	}
 
@@ -151,14 +157,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	}
 
 	private refreshAll() {
-		this.regionService.getRegion().subscribe({
-			next: x => { this.region = x; },
-			error: err => {
-				console.error(err);
-				this.region = 'US';
-			},
-			complete: () => { console.log('Done'); }
-		});
 		this.securityAdvisor.antivirus.refresh().then(() => {
 			this.getScore();
 		});
