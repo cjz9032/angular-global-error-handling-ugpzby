@@ -37,12 +37,12 @@
                     },
                     "driverPopup": {
                         "headerText": "Driver Install Required",
-                        "text": "Install driver to activate RAM Overclock,",
+                        "text": "Install driver to activate RAM Overclock",
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
                         "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
-                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
+                        "cpuOverclockText": "Install driver to activate CPU Overclock "
                     },
                     "autoClose": "自动关闭",
                     "networkBoost": "网络提升",
@@ -103,7 +103,7 @@
         },
         "macroKey": {
             "title": "Macro Key",
-            "introLine": "You can record a series of key input, and use them in gaming or other operations.",
+            "introLine": "You can record a series of key inputs, and use them in gaming or other operations.",
             "status": {
                 "on": {
                     "title": "On",
@@ -1270,7 +1270,7 @@
                 "modalInstallationFailed": {
                     "btnText": "ok",
                     "title": "Install Failed",
-                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                    "desc": "Please try again later in order to use Lenovo Voice."
                 }
             }
         }
