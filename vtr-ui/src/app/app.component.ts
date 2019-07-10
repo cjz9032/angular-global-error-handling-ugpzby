@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { Router, NavigationEnd, ParamMap } from '@angular/router';
+import { Router, NavigationEnd, ParamMap, ActivatedRoute } from '@angular/router';
 import { DevService } from './services/dev/dev.service';
 import { DisplayService } from './services/display/display.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -34,7 +34,8 @@ export class AppComponent implements OnInit {
 		private translate: TranslateService,
 		private userService: UserService,
 		private settingsService: SettingsService,
-		private vantageShellService: VantageShellService
+		private vantageShellService: VantageShellService,
+		private activatedRoute: ActivatedRoute
 	) {
 		translate.addLangs([
 			'en',
@@ -270,7 +271,7 @@ export class AppComponent implements OnInit {
 
 	// VAN-5872, server switch feature
 	private serverSwitchThis() {
-		this.activRouter.queryParamMap.subscribe((params: ParamMap) => {
+		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
 			if (params.has('serverswitch')) {
 				// retrive from localStorage
 				const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);

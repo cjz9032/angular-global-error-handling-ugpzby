@@ -115,24 +115,14 @@
 				</div>
 			</a>
 			<!--Open Windows Settings /subapges if isSystemLink is not undefined and  true or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
-			<<<<<<< HEAD
-				<a
-				href="#!"
-				id="{{item.id}}"
-				attr.aria-label="{{item.id}}"
-				vtrMetrics
-				[metricsItem]="item.title"
-				[metricsEvent]="metricsEvent"
-				(click)="launchSystemUri(item.path)"
-				[ngClass]="clickable?'':'disabled'"=======<a
-				href="#!"
+			<a href="#!"
 				id="{{item.id}}"
 				attr.aria-label="{{item.id}}"
 				vtrMetrics
 				[metricsItem]="item.metricsItemName ? item.metricsItemName : item.title"
 				[metricsEvent]="metricsEvent"
 				(click)="launchSystemUri(item.path)"
-				[ngClass]="clickable?'':'disabled'">>>>>>> develop
+				[ngClass]="clickable?'':'disabled'"
 				*ngIf="item.isSystemLink!==undefined && item.isSystemLink===true">
 				<div class="container-fluid">
 					<div class="row align-items-center">
@@ -223,7 +213,7 @@
 						</div>
 					</div>
 				</div>
-				</a>
+			</a>
 		</li>
 	</ul>
 </div>

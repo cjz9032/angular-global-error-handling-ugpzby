@@ -26,6 +26,7 @@ import { RouterModule } from '@angular/router';
 import { UiCircleRadioComponent } from '../components/ui/ui-circle-radio/ui-circle-radio.component';
 import { UiDaysPickerComponent } from '../components/ui/ui-days-picker/ui-days-picker.component';
 import { UiListSupportComponent } from '../components/ui/ui-list-support/ui-list-support.component';
+import { UiHeaderWarrantyComponent } from '../components/ui/ui-header-warranty/ui-header-warranty.component';
 
 @NgModule({
 	declarations: [
@@ -57,6 +58,7 @@ import { UiListSupportComponent } from '../components/ui/ui-list-support/ui-list
 		UiSwitchTristateComponent,
 		UiSwitchTristateComponent,
 		UiTimePickerComponent,
+		UiHeaderWarrantyComponent
 	],
 	exports: [
 		UiApsSliderComponent,
@@ -87,6 +89,7 @@ import { UiListSupportComponent } from '../components/ui/ui-list-support/ui-list
 		UiSwitchTristateComponent,
 		UiSwitchTristateComponent,
 		UiTimePickerComponent,
+		UiHeaderWarrantyComponent
 	],
 	imports: [
 		CommonModule,
