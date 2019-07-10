@@ -38,7 +38,6 @@ export class BrowserAccountsService {
 	}
 
 	getInstalledBrowsersDefaultData() {
-		this.taskActionWithTimeoutService.startAction(TasksName.getNonPrivateStoragesAction);
 		this.vantageCommunicationService.getInstalledBrowsers().pipe(
 			map((response) => convertBrowserNameToBrowserData(response.browsers)),
 			switchMap((browserData) => this.concatPasswordsCount(browserData)),

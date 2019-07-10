@@ -4,8 +4,9 @@ import { UserDataGetStateService } from './user-data-get-state.service';
 import { merge } from 'rxjs';
 import { map, withLatestFrom } from 'rxjs/operators';
 import { PrivacyScoreService } from '../../pages/result/privacy-score/privacy-score.service';
-import { snake2PascalCase } from '../../utils/helpers';
+import { pipe, snake2PascalCase } from '../../utils/helpers';
 import { TaskActionWithTimeoutService, TasksName } from './analytics/task-action-with-timeout.service';
+import { FeaturesStatuses } from '../../userDataStatuses';
 
 const INSTALLED_TIMEOUT_FOR_TASK = 24 * 60 * 60 * 1000;
 
@@ -29,13 +30,18 @@ export class TaskActionService {
 			),
 			this.taskActionWithTimeoutService.taskTimeWatcher(TasksName.scoreScanAction).pipe(
 				withLatestFrom(this.privacyScoreService.newPrivacyScore$),
-				map(([value, score]) => {
-					const {privacyLevel} = this.privacyScoreService.getStaticDataAccordingToScore(score);
+				map(([ value, score ]) => {
+					const { privacyLevel } = this.privacyScoreService.getStaticDataAccordingToScore(score);
+					const taskResult = value.TaskResult === 'Timeout' ? 'Timeout' : snake2PascalCase(privacyLevel);
+
+					const isHasError = Object.values(this.userDataGetStateService.getUserDataStatus())
+						.filter((status) => status === FeaturesStatuses.error)
+						.length > 0;
 
 					return {
 						...value,
 						TaskName: 'ScoreScan',
-						TaskResult: value.TaskResult === 'Timeout' ? 'Timeout' : snake2PascalCase(privacyLevel),
+						TaskResult: isHasError ? 'Error' : taskResult
 					};
 				})
 			),

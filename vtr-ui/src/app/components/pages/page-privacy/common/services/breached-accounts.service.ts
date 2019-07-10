@@ -72,9 +72,7 @@ export class BreachedAccountsService implements OnDestroy {
 		).pipe(
 			debounceTime(200),
 			switchMapTo(this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(take(1))),
-			tap(() => this.taskActionWithTimeoutService.startAction(TasksName.scanBreachesAction)),
 			switchMap((isFigleafInstalled) => {
-				console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', isFigleafInstalled);
 				return isFigleafInstalled ? this.getBreachedAccountsFromApp() : this.getBreachedAccountsFromBackend();
 			}),
 			map((breachedAccounts) => {

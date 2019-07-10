@@ -70,7 +70,6 @@ export class TrackingMapService {
 	}
 
 	private getTrackingData() {
-		this.taskActionWithTimeoutService.startAction(TasksName.getTrackingDataAction);
 		return this.downloadTrackersInfo().pipe(
 			switchMap((trackersInfo) => {
 					const isAllowScanHistory = this.userAllowService.allowToShow.getValue().trackingMap;
@@ -88,7 +87,6 @@ export class TrackingMapService {
 	}
 
 	private convertToTrackingData(trackersInfo: TrackersInfo, userHistory: VisitedWebsitesInfo[]): TrackingDataDescription {
-		console.log('convertToTrackingData', userHistory, trackersInfo);
 		const sites = userHistory
 			.filter((site) => site && trackersInfo.sites[site.domain])
 			.map((site) => ({

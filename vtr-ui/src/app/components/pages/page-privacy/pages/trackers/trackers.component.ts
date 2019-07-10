@@ -8,6 +8,10 @@ import { UserDataGetStateService } from '../../common/services/user-data-get-sta
 import { getDisplayedCountValueOfIssues } from '../../utils/helpers';
 import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
 import { TrackingMapService } from '../../feature/tracking-map/services/tracking-map.service';
+import {
+	TaskActionWithTimeoutService,
+	TasksName
+} from '../../common/services/analytics/task-action-with-timeout.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -62,11 +66,13 @@ export class TrackersComponent {
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private userDataGetStateService: UserDataGetStateService,
 		private vantageCommunicationService: VantageCommunicationService,
-		private trackingMapService: TrackingMapService
+		private trackingMapService: TrackingMapService,
+		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
 	) {	}
 
 	giveConcent() {
 		this.userAllowService.setShowTrackingMap(true);
+		this.taskActionWithTimeoutService.startAction(TasksName.getTrackingDataAction);
 	}
 
 	openFigleafApp() {

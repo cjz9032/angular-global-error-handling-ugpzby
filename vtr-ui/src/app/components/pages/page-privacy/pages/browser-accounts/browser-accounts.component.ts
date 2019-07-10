@@ -7,6 +7,10 @@ import { BrowserAccountsService } from '../../common/services/browser-accounts.s
 import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
 import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
 import { FigleafOverviewService } from '../../common/services/figleaf-overview.service';
+import {
+	TaskActionWithTimeoutService,
+	TasksName
+} from '../../common/services/analytics/task-action-with-timeout.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -32,12 +36,14 @@ export class BrowserAccountsComponent {
 		private browserAccountsService: BrowserAccountsService,
 		private countNumberOfIssuesService: CountNumberOfIssuesService,
 		private vantageCommunicationService: VantageCommunicationService,
-		private figleafOverviewService: FigleafOverviewService
+		private figleafOverviewService: FigleafOverviewService,
+		private taskActionWithTimeoutService: TaskActionWithTimeoutService
 	) {
 	}
 
 	giveConcentToGetBrowserAccounts() {
 		this.browserAccountsService.giveConcent();
+		this.taskActionWithTimeoutService.startAction(TasksName.getNonPrivateStoragesAction);
 	}
 
 	openFigleafApp() {
