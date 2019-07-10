@@ -1,51 +1,29 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { PageDashboardComponent } from '../components/pages/page-dashboard/page-dashboard.component';
 import { GuardService } from '../services/guard/security-guardService.service';
-import { PageHardwarescanComponent } from '../components/pages/page-hardwarescan/page-hardwarescan.component';
+import { LocalStorageKey } from '../enums/local-storage-key.enum';
+import { NgModule } from '@angular/core';
+import { PageAutocloseComponent } from '../components/pages/page-autoclose/page-autoclose.component';
+import { PageConnectedHomeSecurityComponent } from '../components/pages/page-connected-home-security/page-connected-home-security.component';
 import { PageDeviceComponent } from '../components/pages/page-device/page-device.component';
 import { PageDeviceSettingsComponent } from '../components/pages/page-device-settings/page-device-settings.component';
-import { SubpageDeviceSettingsPowerComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
+import { PageDeviceUpdatesComponent } from '../components/pages/page-device-updates/page-device-updates.component';
+import { PageSecurityAntivirusComponent } from '../components/pages/page-security-antivirus/page-security-antivirus.component';
+import { PageSecurityComponent } from '../components/pages/page-security/page-security.component';
+import { PageSecurityInternetComponent } from '../components/pages/page-security-internet/page-security-internet.component';
+import { PageSecurityPasswordComponent } from '../components/pages/page-security-password/page-security-password.component';
+import { PageSecurityWifiComponent } from '../components/pages/page-security-wifi/page-security-wifi.component';
+import { PageSecurityWindowsHelloComponent } from '../components/pages/page-security-windows-hello/page-security-windows-hello.component';
+import { PageSmartAssistComponent } from '../components/pages/page-smart-assist/page-smart-assist.component';
+import { PageSupportComponent } from '../components/pages/page-support/page-support.component';
+import { PageSupportDetailComponent } from '../components/pages/page-support-detail/page-support-detail.component';
+import { PageUserComponent } from '../components/pages/page-user/page-user.component';
+import { RouterModule, Routes } from '@angular/router';
 import { SubpageDeviceSettingsAudioComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
 import { SubpageDeviceSettingsDisplayComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
 import { SubpageDeviceSettingsInputAccessoryComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
-import { PageSmartAssistComponent } from '../components/pages/page-smart-assist/page-smart-assist.component';
-import { PageDeviceUpdatesComponent } from '../components/pages/page-device-updates/page-device-updates.component';
-import { PageSecurityComponent } from '../components/pages/page-security/page-security.component';
-import { PageSecurityAntivirusComponent } from '../components/pages/page-security-antivirus/page-security-antivirus.component';
-import { LocalStorageKey } from '../enums/local-storage-key.enum';
-import { PageSecurityWifiComponent } from '../components/pages/page-security-wifi/page-security-wifi.component';
-import { PageSecurityPasswordComponent } from '../components/pages/page-security-password/page-security-password.component';
-import { PageSecurityInternetComponent } from '../components/pages/page-security-internet/page-security-internet.component';
-import { PageSecurityWindowsHelloComponent } from '../components/pages/page-security-windows-hello/page-security-windows-hello.component';
+import { SubpageDeviceSettingsPowerComponent } from '../components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
 import { WindowsHelloGuardService } from '../services/guard/windows-hello-guardService.service';
-import { PageSupportComponent } from '../components/pages/page-support/page-support.component';
-import { PageSupportDetailComponent } from '../components/pages/page-support-detail/page-support-detail.component';
-import { PageConnectedHomeSecurityComponent } from '../components/pages/page-connected-home-security/page-connected-home-security.component';
-import { PageUserComponent } from '../components/pages/page-user/page-user.component';
-import { PageAutocloseComponent } from '../components/pages/page-autoclose/page-autoclose.component';
-import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
 
 const routes: Routes = [
-	// {
-	// 	path: 'dashboard',
-	// 	component: PageDashboardComponent,
-	// 	canDeactivate: [GuardService],
-	// 	canActivate: [GuardService],
-	// 	data: {
-	// 		pageName: 'Dashboard'
-	// 	}
-	// },
-	// {
-	// 	path: 'hardwarescan',
-	// 	component: PageHardwarescanComponent,
-	// 	canDeactivate: [GuardService],
-	// 	canActivate: [GuardService],
-
-	// 	data: {
-	// 		pageName: 'Hardwarescan'
-	// 	}
-	// },
 	{
 		path: '',
 		component: PageDeviceComponent,
@@ -239,26 +217,9 @@ const routes: Routes = [
 		data: {
 			pageName: 'AutoClose'
 		}
-	},
-	{
-		path: 'settings',
-		component: PageSettingsComponent,
-		data: {
-			pageName: 'Page.Settings'
-		}
 	}
 ];
 
-// const routes: Routes = [
-// 	{
-// 		path: '',
-// 		component: PageDashboardComponent,
-// 		canDeactivate: [GuardService],
-// 		canActivate: [GuardService],
-// 		data: {
-// 			pageName: 'Dashboard'
-// 		}
-// 	}];
 @NgModule({
 	imports: [
 		RouterModule.forChild(routes)
