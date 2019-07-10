@@ -6,7 +6,9 @@
 	z-index: 100;
 	width: 100%;
 	@media #{$mediaquery_xl} {
-		position: relative;
+		position: fixed;
+		left: 0%;
+		right: 0%;
 	}
 
 	.navbar {
@@ -140,7 +142,7 @@
 						margin-top: -1rem;
 						padding: 2.5rem 1.5rem;
 						transform: translateX(-50%);
-						margin-left:12rem ;
+						left: 50%;
 						// min-width: 22.5rem;
 
 						&.user {
@@ -152,7 +154,7 @@
 						&.dropdown-menu-id {
 							left: auto;
 							right: 0rem;
-							padding-right: 12px;
+							padding-right: 16px;
 							transform: translateX(0px);
 						}
 
