@@ -49,6 +49,7 @@ export class UiLightingProfileComponent implements OnInit {
 	public inHex2: any;
 	public applyBtnStatus1: String = 'apply';
 	public applyBtnStatus2: String = 'apply';
+	public showHideBrightnessSlider: boolean = false;
 	public showHideOverlay: boolean = false;
 	public showHideOverlaySide: boolean = false;
 	public selectedSingleColorOptionId: number;
@@ -390,6 +391,7 @@ export class UiLightingProfileComponent implements OnInit {
 				// }
 				this.profileRGBFeature = response.RGBfeature;
 				this.lightingCapabilities = response;
+				this.showHideBrightnessSlider = response.BrightAdjustLevel;
 				// }
 				// if (response.LightPanelType.length > 0) {
 				if (LocalStorageKey.LightingCapabilities !== undefined) {
@@ -1117,13 +1119,13 @@ export class UiLightingProfileComponent implements OnInit {
 										JSON.stringify(response.lightInfo[0].lightEffectType)
 									);
 
-									if ( this.lightingCapabilities.LightPanelType.length > 1) {
+									if (this.lightingCapabilities.LightPanelType.length > 1) {
 
 										this.simpleOrComplex = 3;
 										this.frontSelectedValue = response.lightInfo[0].lightEffectType;
 										this.sideSelectedValue = response.lightInfo[1].lightEffectType;
 									}
-									else if ( this.lightingCapabilities.LightPanelType.length === 1) {
+									else if (this.lightingCapabilities.LightPanelType.length === 1) {
 
 										this.simpleOrComplex = 2;
 										this.frontSelectedValue = response.lightInfo[0].lightEffectType;
