@@ -1009,7 +1009,7 @@
                         "displayDimmer": "DISPLAY DIMMER"
                     },
                     "dispColorTemp": {
-                        "title": "显示色温",
+                        "title": "白天色温",
                         "options": {
                             "warm": "暖（更护眼）",
                             "cold": "冷"

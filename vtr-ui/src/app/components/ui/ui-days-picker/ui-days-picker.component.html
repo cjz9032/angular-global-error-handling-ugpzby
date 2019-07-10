@@ -44,6 +44,10 @@
 									</div>
 								</div>
 								<div class="d-flex justify-content-end py-3">
+										<p class="select-close" *ngIf="!checkedLength " >Please select atleast one day</p>
+										<div class="banner-middle">
+	
+											</div>
 									<div class="select-close">
 										<fa-icon [icon]="['fal', 'check']"
 											(click)="setOffDays()"></fa-icon>
