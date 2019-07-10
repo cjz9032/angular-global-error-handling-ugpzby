@@ -125,6 +125,18 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit,
 	}
 
 	next(switchPage, isLenovoIdLogin, isLocationServiceOn) {
+		const callback = () => {
+			if (isLocationServiceOn) {
+				if (isLenovoIdLogin && this.chs.account.state === CHSAccountState.local && this.isOnline) {
+					this.startTrial();
+				} else {
+					this.closeModal();
+				}
+			} else {
+				this.switchPage = 4;
+				this.showPageLocation = true;
+			}
+		};
 		if (switchPage === 1) {
 			this.switchPage = 2;
 		} else if (switchPage === 2) {
@@ -142,15 +154,13 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit,
 			} else {
 				this.switchPage = 3;
 				this.showPageLenovoId = true;
+				this.chs.on(EventTypes.lenovoIdStatusChange, callback);
 			}
 		} else if (switchPage === 3) {
 			this.showPageLenovoId = true;
+			this.chs.off(EventTypes.lenovoIdStatusChange, callback);
 			if (isLocationServiceOn) {
-				if (isLenovoIdLogin && this.chs.account.state === CHSAccountState.local && this.isOnline) {
-					this.startTrial();
-				} else {
-					this.closeModal();
-				}
+				this.closeModal();
 			} else {
 				this.switchPage = 4;
 				this.showPageLocation = true;
