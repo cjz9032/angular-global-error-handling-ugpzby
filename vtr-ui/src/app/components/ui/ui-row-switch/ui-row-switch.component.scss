@@ -5,14 +5,27 @@
     .col-auto {
       height: 100%;
     }
-
+    .vtr-col-pad{
+      padding: 0 1rem;
+    }
+    .vtr-row-switch{
+      padding-right: 3rem;
+      >div.right-align{
+        float: right;
+        ::ng-deep span.switch{
+          margin-right: 0;
+        }
+      }
+    }
     .vtr-disabled {
       opacity: 0.65;
     }
 
     padding: 1.5rem 0.7rem 1.5rem;
     padding-left: 0rem;
-    margin: 0rem 1.7rem 0;
+    // margin: 0rem 1.7rem 0;
+    margin-left: 0;
+    margin-right: 0;
     background-color: none;
     border-bottom: 0.1rem solid $border;
 
@@ -21,7 +34,7 @@
     }
 
     .left-icon-column {
-      padding-left: 0rem;
+      padding: 0 1rem 0 0;
 
       .left-icon {
         font-size: 2rem;
@@ -70,7 +83,7 @@
       font-size: 1.5rem;
       color: $color;
       max-width: 60rem;
-      text-align: justify;
+
     }
 
     .read-more {

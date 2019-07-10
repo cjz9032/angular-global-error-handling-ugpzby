@@ -380,8 +380,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 
 		if (this.router.url === '/device-gaming' || this.router.url === '/') {
 			this.isGamingHome = true;
-		}
-		else {
+		} else {
 			this.isGamingHome = false;
 		}
 	}
