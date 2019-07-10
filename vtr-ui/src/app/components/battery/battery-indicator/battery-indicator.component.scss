@@ -86,15 +86,10 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 		/* battery shadow/blur background */
 		.battery-shadow {
 			position: absolute;
-			height: 12.5rem;
+			width: 90%;
+			height: 12rem;
+			border: 0.5rem solid var(--border-color);
 
-			// left: 3.3%; // small
-			// width: 91.3%;
-
-			left: 2%; // big
-			width: 91%;
-			border: 0.8rem solid var(--border-color);
-			opacity: 1;
 			border-radius: 0.5rem;
 			filter: blur(0.3rem);
 
@@ -118,7 +113,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 			height: 12rem;
 			border: 0.2rem solid var(--border-color);
 			border-radius: 0.3rem;
-			left: -1rem;
+			// left: -1rem;
 
 			/* battery notch */
 			&:after {
