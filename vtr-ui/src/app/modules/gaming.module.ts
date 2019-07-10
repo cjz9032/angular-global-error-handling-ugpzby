@@ -7,12 +7,12 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler } from '@angular/core';
 // import { WidgetQuicksettingsListComponent } from '../components/widgets/widget-quicksettings-list/widget-quicksettings-list.component';
 // import { WidgetLightingComponent } from '../components/widgets/widget-lighting/widget-lighting.component';
 //import { ModalGamingLegionedgeComponent } from '../components/modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
-import { UiGamingCollapsibleContainerComponent } from '../components/ui/ui-gaming-collapsible-container/ui-gaming-collapsible-container.component';
+//import { UiGamingCollapsibleContainerComponent } from '../components/ui/ui-gaming-collapsible-container/ui-gaming-collapsible-container.component';
 import { PageMacrokeyComponent } from '../components/pages/page-macrokey/page-macrokey.component';
 import { PageLightingcustomizeComponent } from '../components/pages/page-lightingcustomize/page-lightingcustomize.component';
 import { PageAutocloseComponent } from '../components/pages/page-autoclose/page-autoclose.component';
 import { PageNetworkBoostComponent } from '../components/pages/page-network-boost/page-network-boost.component';
-import { UiPopoverComponent } from '../components/ui/ui-popover/ui-popover.component';
+//import { UiPopoverComponent } from '../components/ui/ui-popover/ui-popover.component';
 import { UiMacrokeyPopupComponent } from '../components/ui/ui-macrokey-popup/ui-macrokey-popup.component';
 import { UiLightingProfileToggleComponent } from '../components/ui/ui-lighting-profile-toggle/ui-lighting-profile-toggle.component';
 import { UiBrightnessSliderComponent } from '../components/ui/ui-brightness-slider/ui-brightness-slider.component';
@@ -20,7 +20,7 @@ import { UiLightingEffectComponent } from '../components/ui/ui-lighting-effect/u
 import { UiLightingSingleColorComponent } from '../components/ui/ui-lighting-single-color/ui-lighting-single-color.component';
 import { UiLightingColorWheelComponent } from '../components/ui/ui-lighting-color-wheel/ui-lighting-color-wheel.component';
 import { UiMacrokeyCollapsibleContainerComponent } from '../components/ui/ui-macrokey-collapsible-container/ui-macrokey-collapsible-container.component';
-import { UiGamingDriverPopupComponent } from '../components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
+// import { UiGamingDriverPopupComponent } from '../components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
 import { UiColorWheelComponent } from '../components/ui/ui-color-wheel/ui-color-wheel.component';
 import { UiMacrokeyDetailsComponent } from '../components/ui/ui-macrokey-details/ui-macrokey-details.component';
 import { UiLightingProfileComponent } from '../components/ui/ui-lighting-profile/ui-lighting-profile.component';
@@ -42,12 +42,12 @@ import { GamingRoutingModule } from '../modules/gaming-routing.module';
 		// WidgetQuicksettingsListComponent,
 		// WidgetLightingComponent,
 		//ModalGamingLegionedgeComponent,
-		UiGamingCollapsibleContainerComponent,
+		//UiGamingCollapsibleContainerComponent,
 		PageMacrokeyComponent,
 		PageLightingcustomizeComponent,
 		PageAutocloseComponent,
 		PageNetworkBoostComponent,
-		UiPopoverComponent,
+		//UiPopoverComponent,
 		UiMacrokeyPopupComponent,
 		UiLightingProfileToggleComponent,
 		UiBrightnessSliderComponent,
@@ -55,7 +55,7 @@ import { GamingRoutingModule } from '../modules/gaming-routing.module';
 		UiLightingSingleColorComponent,
 		UiLightingColorWheelComponent,
 		UiMacrokeyCollapsibleContainerComponent,
-		UiGamingDriverPopupComponent,
+		//UiGamingDriverPopupComponent,
 		UiColorWheelComponent,
 		UiMacrokeyDetailsComponent,
 		UiLightingProfileComponent,

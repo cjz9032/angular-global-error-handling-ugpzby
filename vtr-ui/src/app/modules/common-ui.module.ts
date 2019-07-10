@@ -27,6 +27,10 @@ import { UiCircleRadioComponent } from '../components/ui/ui-circle-radio/ui-circ
 import { UiDaysPickerComponent } from '../components/ui/ui-days-picker/ui-days-picker.component';
 import { UiListSupportComponent } from '../components/ui/ui-list-support/ui-list-support.component';
 
+import { UiGamingCollapsibleContainerComponent } from '../components/ui/ui-gaming-collapsible-container/ui-gaming-collapsible-container.component';
+import { UiPopoverComponent } from '../components/ui/ui-popover/ui-popover.component';
+import { UiGamingDriverPopupComponent } from '../components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
+
 @NgModule({
 	declarations: [
 		UiApsSliderComponent,
@@ -57,6 +61,9 @@ import { UiListSupportComponent } from '../components/ui/ui-list-support/ui-list
 		UiSwitchTristateComponent,
 		UiSwitchTristateComponent,
 		UiTimePickerComponent,
+		UiPopoverComponent,
+		UiGamingDriverPopupComponent,
+		UiGamingCollapsibleContainerComponent
 	],
 	exports: [
 		UiApsSliderComponent,
@@ -87,14 +94,11 @@ import { UiListSupportComponent } from '../components/ui/ui-list-support/ui-list
 		UiSwitchTristateComponent,
 		UiSwitchTristateComponent,
 		UiTimePickerComponent,
+		UiPopoverComponent,
+		UiGamingDriverPopupComponent,
+		UiGamingCollapsibleContainerComponent
 	],
-	imports: [
-		CommonModule,
-		SharedModule,
-		RouterModule
-	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA
-	]
+	imports: [ CommonModule, SharedModule, RouterModule ],
+	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
-export class CommonUiModule { }
+export class CommonUiModule {}

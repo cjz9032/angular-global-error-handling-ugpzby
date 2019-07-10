@@ -45,15 +45,19 @@ export class WidgetLightingComponent implements OnInit {
 		this.ledSetFeature = this.commonService.getLocalStorageValue(LocalStorageKey.ledSetFeature);
 		this.ledDriver = this.commonService.getLocalStorageValue(LocalStorageKey.ledDriver);
 		// console.log('ledSetFeature-----'+this.ledSetFeature +'--------ledDriver--------'+ this.ledDriver );
+		//console.log(this.ledSetFeature && this.ledDriver);
 		if (this.ledSetFeature) {
 			if (LocalStorageKey.ProfileId !== undefined) {
 				this.setprofId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId) || 0;
 			}
 			this.getLightingProfileId();
 		}
+
 		if (this.ledSetFeature && this.ledDriver) {
+			//console.log('popup check');
 			this.isLightingVisible = true;
 			this.isPopupVisible = false;
+			//console.log('popup check' + this.isPopupVisible);
 		} else if (!this.ledSetFeature && this.ledDriver) {
 			this.isLightingVisible = false;
 		} else if (this.ledSetFeature && !this.ledDriver) {
@@ -96,7 +100,7 @@ export class WidgetLightingComponent implements OnInit {
 	public SetProfile(event) {
 		try {
 			const eventval: number = event.target.value;
-			console.log('--------------home page lighting event-----' + eventval);
+			//console.log('--------------home page lighting event-----' + this.isPopupVisible);
 			let prevSetprofId;
 			if (this.gamingLightingService.isShellAvailable) {
 				if (this.isPopupVisible) {
@@ -106,7 +110,7 @@ export class WidgetLightingComponent implements OnInit {
 					this.setprofId = eventval;
 				}
 				this.gamingLightingService.setLightingProfileId(0, eventval).then((response: any) => {
-					console.log('setLightingProfileId------------response---------------->', JSON.stringify(response));
+					//console.log('setLightingProfileId------------response---------------->', JSON.stringify(response));
 					this.didSuccess = response.didSuccess;
 					if (this.didSuccess) {
 						if (LocalStorageKey.ProfileId !== undefined) {
@@ -126,14 +130,14 @@ export class WidgetLightingComponent implements OnInit {
 	}
 
 	public checkStatus(id) {
-		//console.log('checkstatus resp--------', id);
+		console.log('check status', id + ' ' + this.setprofId);
 		if (id) {
 			this.isdriverpopup = true;
 			//console.log('checkstatus resp in if--------', this.isdriverpopup);
 		} else {
-			//console.log('checkstatus resp in else--------', id);
-
-			this.router.navigate([ '/gaming/lightingcustomize', this.setprofId ]);
+			console.log('checkstatus resp ', this.setprofId);
+			//this.router.navigateByUrl('gaming/lightingcustomize/:' + this.setprofId);
+			this.router.navigate([ 'lightingcustomize/', this.setprofId ]);
 		}
 	}
 }
