@@ -12,6 +12,8 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 	@Input() subHeadingText: string;
 	@Input() daysId: string;
 	isSelectedSingleDay: any;
+	checkedLength: any;
+
 	allDays: AllDays[] = [
 		{ 'dayName': 'Sunday', 'shortName': 'sun', 'displayName': 'Sun', 'status': false },
 		{ 'dayName': 'Monday', 'shortName': 'mon', 'displayName': 'Mon', 'status': false },
@@ -42,6 +44,7 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 	splitDays() {
 		this.selectedDays = this.days.split(',');
 		// this.schedule = this.findSchedule(this.selectedDays);
+		this.checkedLength = this.selectedDays.length;
 		this.setDaysOfWeekOff();
 		this.schedule = this.setSelectedDayText();
 	}
@@ -156,6 +159,7 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 			const index = this.selectedDays.indexOf(event.target.value);
 			this.selectedDays.splice(index, 1);
 		}
+		this.checkedLength = this.selectedDays.length;
 	}
 
 	clearSettings() {

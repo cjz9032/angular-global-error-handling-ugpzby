@@ -113,8 +113,6 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 			height: 12rem;
 			border: 0.2rem solid var(--border-color);
 			border-radius: 0.3rem;
-			// left: -1rem;
-
 			/* battery notch */
 			&:after {
 				position: absolute;

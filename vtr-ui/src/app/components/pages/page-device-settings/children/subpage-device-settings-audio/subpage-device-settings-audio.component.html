@@ -47,7 +47,7 @@
 									[radioId]="'radio'| uniqueId"
 									[group]="radioGroupAutoDolbySettings"
 									[label]="dolbyMode | dolbyModesTranslation"
-									[value]='dolbyMode'
+									[value]='dolbyMode | dolbyModesTranslation'
 									[checked]="dolbyMode == dolbyModeResponse.currentMode"
 									(change)="onDolbySeetingRadioChange($event)">
 								</vtr-ui-circle-radio>
