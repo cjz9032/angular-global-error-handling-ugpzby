@@ -5,15 +5,13 @@ import {
 	OnDestroy
 } from '@angular/core';
 import {
-	NgbActiveModal, NgbModal
+	NgbActiveModal
 } from '@ng-bootstrap/ng-bootstrap';
-import {
-	CommonService
-} from 'src/app/services/common/common.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes, WinRT, CHSAccountState } from '@lenovo/tan-client-bridge';
 import * as Phoenix from '@lenovo/tan-client-bridge';
-import { ModalLenovoIdComponent } from '../../../../modal/modal-lenovo-id/modal-lenovo-id.component';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { HomeSecurityMockService } from 'src/app/services/home-security/home-security-mock.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -45,7 +43,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit,
 		public homeSecurityMockService: HomeSecurityMockService,
 		private vantageShellService: VantageShellService,
 		private commonService: CommonService,
-		public modalService: NgbModal
+		private dialogService: LenovoIdDialogService
 	) {
 		this.chs = vantageShellService.getConnectedHomeSecurity();
 		if (!this.chs) {
@@ -210,11 +208,17 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit,
 	}
 
 	openLenovoId() {
-		this.modalService.open(ModalLenovoIdComponent, {
-			backdrop: 'static',
-			centered: true,
-			windowClass: 'lenovo-id-modal-size'
+		const callback = (loggedIn: boolean) => {
+			if (loggedIn) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+			}
+		};
+		this.dialogService.openLenovoIdDialog('ConnectedHomeSecurity.Welcome').then(() => {
+			this.chs.off(EventTypes.lenovoIdStatusChange, callback);
+		}).catch(() => {
+			this.chs.off(EventTypes.lenovoIdStatusChange, callback);
 		});
+		this.chs.on(EventTypes.lenovoIdStatusChange, callback);
 	}
 
 	private onNotification(notification: AppNotification) {
