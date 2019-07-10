@@ -4,7 +4,9 @@
 			<div class="col-12">
 				<div class="d-flex justify-content-between">
 					<p class="context">{{'device.smartAssist.voice.description' | translate}}</p>
-					<button *ngIf="!showLoader"
+					<button *ngIf="!showLoader"  vtrMetrics
+							metricsEvent="featureClick"
+							[metricsItem]="btnText"
 						type="button"
 						class="btn btn-primary btn-block install-btn"
 						(click)="btnClicked()">

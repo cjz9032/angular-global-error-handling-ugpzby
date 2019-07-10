@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Contraer",
             "expand": "Expandir",
-            "loader": "Fetching <br> Status"
+            "loader": "Obteniendo el estado",
+            "loading": "Cargando..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "También es recomendable atenuar la barra de tareas y otras áreas de la pantalla que no cambian con frecuencia para prolongar la vida útil general de la pantalla."
                         ],
                         "reset": "Restablecer temperatura",
-                        "tooltip": "Esta característica puede reducir el consumo de energía y aumentar la vida útil de la batería al atenuar selectivamente partes de la pantalla."
+                        "tooltip": "Esta característica puede reducir el consumo de energía y aumentar la vida útil de la batería al atenuar selectivamente partes de la pantalla.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Entrada y accesorios",
+                "subtitle": "Configuración de entrada y accesorios",
+                "description": "La detección inteligente de Lenovo combina diferentes sensores del equipo para detectar sus actividades y ajustar los valores para una administración óptima de la energía",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Teclado inteligente",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Funciones ocultas del teclado",
+                        "description": "Puede presionar la tecla Fn en la parte inferior izquierda del teclado, simultáneamente con otras teclas para invocar los mandatos que se muestra en el mapa del teclado a continuación."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "habilita la característica de acercamiento en pantallas de alta resolución",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "entra en modalidad de suspensión",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "activa y desactiva Privacy Guard",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "cambia entre las modalidades de Rendimiento y Silencio",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + Espacio",
+                        "description": "cambia los estados de retroiluminación del teclado",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Tecla definida por el usuario",
+                    "caption": "La tecla representada por el icono de la estrella le permite establecer la función definida por el usuario",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Tecla definida por el usuario para la acción",
+                        "note": "Nota: esto se puede utilizar para ingresar la tecla comúnmente ingresada, como direcciones de correo electrónico o postales. Lenovo le recomienda no utilizar nunca esta característica para almacenar e ingresar contraseñas u otra información privada.",
+                        "options": {
+                            "option1": "Seleccione",
+                            "option2": "Sitio web abierto",
+                            "option3": "Ingrese texto"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1179,31 +1207,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Lenovo Active Protection System es una función autónoma que le ayuda a proteger la unidad de disco duro del daño causado por impactos físicos y vibraciones de alta intensidad. Este supervisa de forma continua el movimiento del equipo e interrumpe momentáneamente el funcionamiento de la unidad de disco duro cuando se detecte una caída o suceso dañino similar.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "Al cambiar la sensibilidad al modo de baja sensibilidad, la protección se activará solo con impactos intensos",
+                    "checkbox": "Ignorar impactos repetitivos, como aquellos de un tren o un vehículo"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Suspensión manual de Active Protection",
+                    "caption": "Permitirme suspender manualmente Active Protection System",
+                    "dropdown-title": "Suspender por",
+                    "button": "Suspender ahora"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Para mejorar el acceso a la unidad de disco duro durante el uso de la tableta, suspenda Active Protection System cuando se detectan las actividades siguientes",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Entrada de lápiz",
+                        "description": "Al usar la entrada de lápiz, habilite APS cuando la entrada de lápiz esté fuera de rango"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Entrada táctil",
+                        "description": "Al usar la entrada táctil, habilitar APS cuando la entrada táctil no se detecta"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Detección de proximidad de la mano en los bordes del sistema",
+                        "description": "Cuando se habilita la modalidad de tableta, habilitar APS cuando no se detecta una mano"
                     }
                 }
             },
@@ -1214,30 +1242,30 @@
                 "tooltip": "Esta característica no se aplica a reproductores de video Web. Los reproductores de video locales más populares, como Windows Media Player, 5KPlayer, etc., admiten esta característica."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Voz",
+                "description": "Lenovo Voice ayuda a convertir la voz a texto con la función Voz a texto y proporciona traducción en tiempo real de voz a texto con la función Traducción.",
+                "installBtnText": "Instalar",
+                "launchBtnText": "Inicie",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Voz a texto",
+                    "caption": "Esta característica facilita la conversión de la voz a texto."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Traducción",
+                    "caption": "Esta función proporciona traducción en tiempo real a la voz. El contenido traducido se muestra en textos. Se puede elegir los idiomas de origen y de destino según su necesidad."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Comenzar:",
+                    "point1": "Asegúrese de que el icono de Lenovo Voice se muestre en la bandeja del sistema de Windows.",
+                    "point2": "Abra el archivo en el punto en el que desea grabar el texto convertido.",
+                    "point3": "Haga clic en el icono de Lenovo Voice en la bandeja de sistema de Windows y seleccionar Voz a texto.",
+                    "point4": "Seleccione su idioma deseado y haga clic en el icono de micrófono para empezar.",
+                    "point5": "Coloque el cursor en el punto desde donde quiere editar y empiece a hablar.",
+                    "point6": "Haga clic en el icono de Lenovo Voice en la bandeja de sistema de Windows y seleccionar Traducir.",
+                    "point7": "Seleccione el idioma origen y el idioma de destino que desee.",
+                    "point8": "En función de sus necesidades, establezca la entrada de voz de altavoz o del micrófono.",
+                    "point9": "Haga clic en el icono de micrófono para empezar a hablar",
+                    "closeText": "cerrar"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "Actualizaciones recomendadas",
         "optionalUpdates": "Actualizaciones opcionales",
         "ignoredUpdates": "Actualizaciones ignoradas",
-        "successInstall": "Instalado correctamente a las",
-        "failedInstall": "Error en la instalación a las",
+        "successInstall": "Instalado correctamente: ",
+        "failedInstall": "Error en la instalación: ",
         "at": "a las",
         "readMore": "Leer más",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "Bienvenido al uso de System Update.",
             "title": "Un sistema actualizado es un sistema en buen estado.",
-            "last": "La última actualización fue",
-            "next": "El siguiente escaneo de actualización está programado en",
+            "last": "Última actualización: ",
+            "next": "Siguiente actualización programada: ",
             "checkButton": "COMPROBAR ACTUALIZACIONES",
             "checking": "Comprobando si hay actualizaciones",
             "downloading": "Descarga de actualizaciones completa",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "El servidor de actualización de sistema no está disponible en este momento. Vuelva a intentarlo más tarde.",
             "helpCenterInvalidServerException": "El servidor de actualización de sistema no es válido. Vuelva a intentarlo más tarde.",
             "catalogNotFoundException": "No se encontraron actualizaciones aplicables para el sistema.",
-            "catalogCrcErrorException": "El catálogo de actualizaciones para su sistema se está actualizando en el servidor de actualización de sistema. Vuelva a intentarlo más tarde.",
+            "catalogCrcErrorException": "El catálogo del sistema se está actualizando en este momento. Vuelva a intentarlo más tarde.",
             "catalogErrorException": "Se detectó un error con el catálogo de actualizaciones para el sistema en el servidor de actualización de sistema. Vuelva a intentarlo más tarde.",
             "fileNotFoundException": "No se ha encontrado el archivo."
         }
@@ -1615,8 +1643,9 @@
             },
             "errorMessage": {
                 "headerText": "Error",
-				"bodyText": "Hemos detectado que faltan piezas críticas de Vantage. Estas piezas se descargarán en segundo plano. Vuelva a intentarlo más tarde.",
-				"closeText": "close"
+                "bodyText": "Hemos detectado que faltan piezas críticas de Vantage. Estas piezas se descargarán en segundo plano. Vuelva a intentarlo más tarde.",
+                "closeText": "cerrar",
+                "offlineText": "Detectamos que no está conectado a Internet. Algunas partes de esta página no funcionarán correctamente. Vuelva a conectar"
             }
         },
         "homeprotection": {

@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
 import { MockService } from 'src/app/services/mock/mock.service';
 import { WindowsHello, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
@@ -9,13 +9,15 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { RegionService } from 'src/app/services/region/region.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { GuardService } from '../../../services/guard/security-guardService.service';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'vtr-page-security-windows-hello',
 	templateUrl: './page-security-windows-hello.component.html',
 	styleUrls: ['./page-security-windows-hello.component.scss']
 })
-export class PageSecurityWindowsHelloComponent implements OnInit {
+export class PageSecurityWindowsHelloComponent implements OnInit, OnDestroy {
 
 	windowsHello: WindowsHello;
 	statusItem: any;
@@ -23,12 +25,14 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 	securityAdvisor: SecurityAdvisor;
 	backId = 'sa-wh-btn-back';
 	isOnline = this.commonService.isOnline;
+	notificationSubscription: Subscription;
 
 	constructor(
 		public mockService: MockService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		public regionService: RegionService,
+		private guard: GuardService,
 
 		vantageShellService: VantageShellService,
 		private securityAdvisorMockService: SecurityAdvisorMockService
@@ -50,10 +54,20 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.commonService.notification.subscribe((notification: AppNotification) => {
+		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 
+		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+			this.windowsHello.refresh();
+		}
+
+	}
+
+	ngOnDestroy() {
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
 	}
 
 	setUpWindowsHello(): void {

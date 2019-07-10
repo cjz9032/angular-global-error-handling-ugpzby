@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -398,7 +399,7 @@
                 "sub5": "Protection Internet",
                 "sub6": "Windows Hello"
             },
-            "support": "Support",
+            "support": "Soutien",
             "homeSecurity": "Maison connectée",
             "privacy": "Confidentialité"
         },
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Réduire",
             "expand": "Développer",
-            "loader": "Fetching <br> Status"
+            "loader": "Récupération du statut <br>",
+            "loading": "Chargement..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "Il est également recommandé de réduire la luminosité de la barre des tâches et d'autres parties de l'écran qui ne changent pas fréquemment pour prolonger la durée de vie totale de l'écran."
                         ],
                         "reset": "Réinitialiser la température",
-                        "tooltip": "Cette fonctionnalité peut également réduire la consommation d'énergie et augmenter la durée de vie de la batterie en réduisant de manière sélective la luminosité de certaines parties de l'écran."
+                        "tooltip": "Cette fonctionnalité peut également réduire la consommation d'énergie et augmenter la durée de vie de la batterie en réduisant de manière sélective la luminosité de certaines parties de l'écran.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Saisie et accessoires",
+                "subtitle": "Paramètres de saisie et des accessoires",
+                "description": "Le capteur intelligent Lenovo combine plusieurs capteurs sur votre ordinateur afin de détecter vos activités et régler les paramètres pour une gestion de l'alimentation optimale",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Clavier intelligent",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Fonctions masquées du clavier",
+                        "description": "Vous pouvez appuyer sur la touche Fn en bas à droite de votre clavier simultanément avec d'autres touches pour déclencher les commandes indiquées sur la carte du clavier ci-dessous."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "activer la fonction de zoom des écrans haute résolution",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "passer en mode veille",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "activer et désactiver le dispositif de protection de la vie privée",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "basculer entre les modes Performance et Silencieux",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + Espace",
+                        "description": "modifier les états de rétroéclairage du clavier",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Touche définie par l'utilisateur",
+                    "caption": "La touche représentée par une icône en forme d'étoile vous permet de définir la fonction définie par l'utilisateur",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Touche d'action définie par l'utilisateur",
+                        "note": "Remarque : cela permet d'entrer les touches les plus fréquemment saisies, comme les adresses e-mail ou postales. Lenovo recommande de ne jamais utiliser cette fonctionnalité pour stocker ou saisir des mots de passe ou toute information privée.",
+                        "options": {
+                            "option1": "Sélectionnez",
+                            "option2": "Site ouvert",
+                            "option3": "Entrez du texte"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1165,7 +1193,7 @@
                     "title": "Désactivation automatique de l'écran",
                     "caption": "Désactive automatique l'écran quand celui-ci est rabattu ou lorsque l'utilisateur s'en éloigne.",
                     "note": "Cette fonction n'est pas disponible si les paramètres du mode de gestion de l'alimentation sont configurés sur \"Ne jamais désactiver l'affichage de la batterie\" dans la \"section Système\" des paramètres Windows. Choisissez une autre valeur que \"Jamais\" pour activer cette fonction.",
-                    "windowsLink": "Accédez aux paramètres d'alimentation et de mise en veille dans les paramètres Windows"
+                    "windowsLink": "Accédez aux paramètres d'alimentation et de mise en veille dans les paramètres Windows"
                 },
                 "keepMyDisplay": {
                     "title": "Conserver mon écran",
@@ -1179,31 +1207,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "Le Lenovo Active Protection System est une fonction autonome qui vous permet de protéger votre disque dur contre les dommages causés par les chocs physiques importants et les vibrations. Cette fonction contrôle en permanence le mouvement de l'ordinateur et arrête temporairement le disque dur lorsqu'une chute ou tout autre événement similaire pouvant causer des dommage est détecté.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "Modifie la sensibilité, en mode faiblement sensible, seuls les chocs forts activeront la protection",
+                    "checkbox": "Ignore les chocs répétitifs tels que ceux d'un train ou d'une voiture"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Suspension manuelle de l'Active Protection",
+                    "caption": "M'autorise à suspendre manuellement l'Active Protection System",
+                    "dropdown-title": "Suspendu pour",
+                    "button": "Suspendre maintenant"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Pour améliorer l'accès à l'unité de disque dur pendant l'utilisation de la tablette, suspendez l'Active Protection System lorsque les activités suivantes sont détectées",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Saisie à l'aide du stylet",
+                        "description": "Lorsque le stylet est utilisé, activation de l'APS quand l'utilisation du stylet n'est pas détectée"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Saisie à l'aide du pavé tactile",
+                        "description": "Lorsque la saisie tactile est utilisée, activation de l'APS quand la saisie tactile n'est pas détectée"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "Détection de la proximité de la main au niveau des bords de l'ordinateur",
+                        "description": "Lorsque le mode tablette est activé, activation de l'APS quand la main n'est pas détectée"
                     }
                 }
             },
@@ -1214,30 +1242,30 @@
                 "tooltip": "Cette fonction n'est pas applicable aux lecteurs vidéo Web. Les lecteurs vidéo locaux populaires tels que Windows Media Player, 5KPlayer, etc. prennent en charge cette fonction."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Voix",
+                "description": "Lenovo Voice vous aide à convertir votre voix en texte avec la fonction de la conversion de la parole en texte et vous offre une traduction en temps réel de la parole en texte grâce à la fonction de traduction.",
+                "installBtnText": "Installer",
+                "launchBtnText": "Lancer",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Conversion de la parole en texte",
+                    "caption": "Cette fonctionnalité vous permet de convertir votre voix en texte."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Traduction",
+                    "caption": "Cette fonctionnalité permet de traduire en temps réel la parole. Les contenus traduits s'affichent en texte. Vous pouvez choisir les langues source et les langues cible en fonction de vos besoins."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Démarrer :",
+                    "point1": "Vérifiez que l'icône Lenovo Voice s'affiche dans la barre d'état système Windows.",
+                    "point2": "Ouvrez le fichier dans lequel vous souhaitez enregistrer le texte converti.",
+                    "point3": "Cliquez sur l'icône Lenovo Voice dans la barre d'état système Windows et sélectionnez Conversion de la parole en texte.",
+                    "point4": "Sélectionnez la langue de votre choix et cliquez sur l'icône du micro pour démarrer.",
+                    "point5": "Placez le curseur à l'endroit où vous souhaitez effectuer une modification et commencez à parler.",
+                    "point6": "Cliquez sur l'icône Lenovo Voice dans la barre d'état système Windows et sélectionnez Traduire.",
+                    "point7": "Sélectionnez la langue source et la langue cible souhaitées.",
+                    "point8": "En fonction de vos besoins, définissez la saisie vocale à partir du haut-parleur ou du micro.",
+                    "point9": "Cliquez sur l'icône du micro pour commencer à parler",
+                    "closeText": "fermer"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "Mise(s) à jour recommandée(s)",
         "optionalUpdates": "Mise(s) à jour facultative(s)",
         "ignoredUpdates": "Mise(s) à jour ignorée(s)",
-        "successInstall": "Installé avec succès le",
-        "failedInstall": "Échec de l'installation le",
+        "successInstall": "Installé avec succès : ",
+        "failedInstall": "Échec de l'installation : ",
         "at": "à",
         "readMore": "En savoir plus",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "Vous êtes invité à utiliser System Update.",
             "title": "Un système à jour est un système sain.",
-            "last": "Dernière mise à jour effectuée le",
-            "next": "La prochaine analyse est prévue le",
+            "last": "Dernière mise à jour : ",
+            "next": "Prochaine mise à jour prévue : ",
             "checkButton": "RECHERCHER DES MISES À JOUR",
             "checking": "Recherche de mises à jour",
             "downloading": "Téléchargement des mises à jour effectué",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "Le serveur de mise à jour du système est actuellement indisponible. Réessayez plus tard.",
             "helpCenterInvalidServerException": "Le serveur de mise à jour du système n'est pas valide. Réessayez plus tard.",
             "catalogNotFoundException": "Il n'existe pas de mise à jour correspondante à votre système.",
-            "catalogCrcErrorException": "Le catalogue des mises à jour pour votre système est en cours de mise à jour sur le serveur de mise à jour du système. Réessayez plus tard.",
+            "catalogCrcErrorException": "Le catalogue pour votre système est en cours de mise à jour. Réessayez plus tard.",
             "catalogErrorException": "Une erreur s'est produite avec le catalogue des mises à jour de votre système sur le serveur de mise à jour du système. Réessayez plus tard.",
             "fileNotFoundException": "Fichier introuvable."
         }
@@ -1615,8 +1643,9 @@
             },
             "errorMessage": {
                 "headerText": "Erreur",
-				"bodyText": "Nous avons détecté une absence critique ce certaines pièces de Vantage. Ces pièces sont téléchargées en arrière-plan. Réessayez plus tard.",
-				"closeText": "close"
+                "bodyText": "Nous avons détecté une absence critique ce certaines pièces de Vantage. Ces pièces sont téléchargées en arrière-plan. Réessayez plus tard.",
+                "closeText": "fermer",
+                "offlineText": "Nous avons détecté que vous n'êtes pas connecté à Internet. Certaines parties de cette page ne fonctionneront pas correctement. Veuillez vous reconnecter"
             }
         },
         "homeprotection": {

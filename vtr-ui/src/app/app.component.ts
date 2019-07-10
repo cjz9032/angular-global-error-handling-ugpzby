@@ -1,8 +1,8 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router'; // VAN-5872, serverSwitch
+import { Router, NavigationEnd, ParamMap, ActivatedRoute } from '@angular/router';
 import { DevService } from './services/dev/dev.service';
 import { DisplayService } from './services/display/display.service';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap'; // VAN-5872, serverSwitch
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 import { DeviceService } from './services/device/device.service';
 import { CommonService } from './services/common/common.service';
@@ -14,8 +14,6 @@ import { NetworkStatus } from './enums/network-status.enum';
 import { KeyPress } from './data-models/common/key-press.model';
 import { VantageShellService } from './services/vantage-shell/vantage-shell.service';
 import { SettingsService } from './services/settings.service';
-import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
-// import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component';
 
 @Component({
 	selector: 'vtr-root',
@@ -36,7 +34,8 @@ export class AppComponent implements OnInit {
 		private translate: TranslateService,
 		private userService: UserService,
 		private settingsService: SettingsService,
-		private vantageShellService: VantageShellService
+		private vantageShellService: VantageShellService,
+		private activatedRoute: ActivatedRoute
 	) {
 		translate.addLangs([
 			'en',
@@ -186,6 +185,9 @@ export class AppComponent implements OnInit {
 
 		this.checkIsDesktopOrAllInOneMachine();
 		this.settingsService.getPreferenceSettingsValue();
+
+		// VAN-5872, server switch feature
+		this.serverSwitchThis();
 	}
 
 	private sendFirstRunEvent(machineInfo) {
@@ -267,6 +269,39 @@ export class AppComponent implements OnInit {
 		}
 	}
 
+	// VAN-5872, server switch feature
+	private serverSwitchThis() {
+		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
+			if (params.has('serverswitch')) {
+				// retrive from localStorage
+				const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
+				if (serverSwitchLocalData) {
+
+					// force cms service to use this server parms
+					serverSwitchLocalData.forceit = true;
+					this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
+
+					let langCode = (serverSwitchLocalData.language.Value).toLowerCase();
+					const langMap = {
+						'zh-hant': 'zh-Hant',
+						'zh-hans': 'zh-Hans',
+						'pt-br': 'pt-BR',
+					};
+					if (langMap[langCode]) {
+						langCode = langMap[langCode];
+					}
+
+					const allLangs = this.translate.getLangs();
+					if (allLangs.indexOf(langCode) >= 0) {
+						// this.translate.resetLang('ar');
+						this.translate.reloadLang(langCode);
+						this.translate.use(langCode);
+					}
+				}
+			}
+		});
+	}
+
 	@HostListener('window:keyup', ['$event'])
 	onKeyUp(event: KeyboardEvent) {
 		try {
@@ -306,6 +341,10 @@ export class AppComponent implements OnInit {
 		document.querySelector('meta[name="viewport"]').setAttribute('content', content);
 		// console.log('DPI: ', content);
 		// alert('I am at onload');
+
+		// VAN-5872, server switch feature
+		// when app loads for the 1st time then remove ServerSwitch values
+		window.localStorage.removeItem(LocalStorageKey.ServerSwitchKey);
 	}
 
 	// Defect fix VAN-2988

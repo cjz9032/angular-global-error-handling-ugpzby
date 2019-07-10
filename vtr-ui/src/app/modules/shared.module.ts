@@ -11,6 +11,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/cor
 import { DeviceService } from '../services/device/device.service';
 import { DevService } from '../services/dev/dev.service';
 import { DisplayService } from '../services/display/display.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderMainComponent } from '../components/header-main/header-main.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,14 +22,13 @@ import { ModalLenovoIdComponent } from '../components/modal/modal-lenovo-id/moda
 import { ModalWelcomeComponent } from '../components/modal/modal-welcome/modal-welcome.component';
 import { Ng5SliderModule } from 'ng5-slider';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CommonPipeModule } from './common-pipe.module';
+import { RouterModule } from '@angular/router';
 import { SettingsService } from '../services/settings.service';
 import { TranslationModule } from './translation.module';
+import { UiButtonComponent } from '../components/ui/ui-button/ui-button.component';
 import { UserService } from '../services/user/user.service';
-import { CommonDirectiveModule } from './common-directive.module';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { RouterModule } from '@angular/router';
-import { PageUserComponent } from '../components/pages/page-user/page-user.component';
+import { CommonDirectiveModule } from './common/common-directive.module';
+import { CommonPipeModule } from './common/common-pipe.module';
 
 @NgModule({
 	declarations: [
@@ -41,7 +41,21 @@ import { PageUserComponent } from '../components/pages/page-user/page-user.compo
 		MenuMainComponent,
 		ModalLenovoIdComponent,
 		ModalWelcomeComponent,
-		PageUserComponent
+		UiButtonComponent
+	],
+	imports: [
+		AngularSvgIconModule,
+		CommonDirectiveModule,
+		CommonModule,
+		CommonPipeModule,
+		FontAwesomeModule,
+		FormsModule,
+		HttpClientModule,
+		Ng5SliderModule,
+		NgbModule,
+		ReactiveFormsModule,
+		RouterModule,
+		TranslationModule.forChild()
 	],
 	exports: [
 		AngularSvgIconModule,
@@ -64,21 +78,7 @@ import { PageUserComponent } from '../components/pages/page-user/page-user.compo
 		ReactiveFormsModule,
 		RouterModule,
 		TranslationModule,
-		PageUserComponent
-	],
-	imports: [
-		AngularSvgIconModule,
-		CommonDirectiveModule,
-		CommonModule,
-		CommonPipeModule,
-		FontAwesomeModule,
-		FormsModule,
-		HttpClientModule,
-		Ng5SliderModule,
-		NgbModule,
-		ReactiveFormsModule,
-		RouterModule,
-		TranslationModule.forChild()
+		UiButtonComponent
 	],
 	providers: [
 		CommonService,
@@ -91,7 +91,7 @@ import { PageUserComponent } from '../components/pages/page-user/page-user.compo
 		SettingsService,
 		UserService
 	],
-	entryComponents: [ ModalWelcomeComponent, ModalLenovoIdComponent ],
+	entryComponents: [ ModalWelcomeComponent, ModalLenovoIdComponent, UiButtonComponent ],
 	schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
 })
 export class SharedModule {}

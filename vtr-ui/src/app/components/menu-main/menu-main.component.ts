@@ -23,6 +23,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { ModalCommonConfirmationComponent } from '../modal/modal-common-confirmation/modal-common-confirmation.component';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { DialogService } from 'src/app/services/dialog/dialog.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -64,7 +65,8 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 		private regionService: RegionService,
 		private smartAssist: SmartAssistService,
 		private logger: LoggerService,
-		private securityAdvisorMockService: SecurityAdvisorMockService
+		private securityAdvisorMockService: SecurityAdvisorMockService,
+		private dialogService: DialogService
 	) {
 		this.showVpn();
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
@@ -195,26 +197,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 
 	//  to popup Lenovo ID modal dialog
 	OpenLenovoId(appFeature = null) {
-		if (!navigator.onLine) {
-			const modalRef = this.modalService.open(ModalCommonConfirmationComponent, {
-				backdrop: 'static',
-				size: 'lg',
-				centered: true,
-				windowClass: 'common-confirmation-modal'
-			});
-
-			const header = 'lenovoId.ssoErrorTitle';
-			modalRef.componentInstance.CancelText = '';
-			modalRef.componentInstance.header = header;
-			modalRef.componentInstance.description = 'lenovoId.ssoErrorNetworkDisconnected';
-			return;
-		}
-		const modal: NgbModalRef = this.modalService.open(ModalLenovoIdComponent, {
-			backdrop: 'static',
-			centered: true,
-			windowClass: 'lenovo-id-modal-size'
-		});
-		(<ModalLenovoIdComponent>modal.componentInstance).appFeature = appFeature;
+		this.dialogService.lenovoIdDialog(appFeature);
 	}
 
 	onLogout() {
@@ -347,17 +330,18 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 						this.smartAssist.getHDDStatus()
 					]).then((responses: any[]) => {
 						console.log('showSmartAssist.Promise.all()', responses);
+						console.log('Smart Assist Expressions', responses[0] || responses[1] || responses[2] || responses[3].available || responses[4] || (responses[5] && responses[6] && (responses[7] > 0)));
 						// cache smart assist capability
 						const smartAssistCapability: SmartAssistCapability = new SmartAssistCapability();
 						smartAssistCapability.isIntelligentSecuritySupported = responses[0] || responses[1];
 						smartAssistCapability.isLenovoVoiceSupported = responses[2];
 						smartAssistCapability.isIntelligentMediaSupported = responses[3];
 						smartAssistCapability.isIntelligentScreenSupported = responses[4];
-						smartAssistCapability.isAPSSupported = (responses[5] && responses[6] && responses[7] > 0);
+						smartAssistCapability.isAPSSupported = (responses[5] && responses[6] && (responses[7] > 0));
 						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
 
 						const isAvailable =
-							(responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && responses[7] > 0);
+							(responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && (responses[7] > 0));
 						// const isAvailable = true;
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, isAvailable);
 						// avoid duplicate entry. if not added earlier then add menu
@@ -396,8 +380,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 
 		if (this.router.url === '/device-gaming' || this.router.url === '/') {
 			this.isGamingHome = true;
-		}
-		else {
+		} else {
 			this.isGamingHome = false;
 		}
 	}

@@ -44,6 +44,8 @@ export class WidgetLightingComponent implements OnInit {
 
 		this.ledSetFeature = this.commonService.getLocalStorageValue(LocalStorageKey.ledSetFeature);
 		this.ledDriver = this.commonService.getLocalStorageValue(LocalStorageKey.ledDriver);
+
+
 		// console.log('ledSetFeature-----'+this.ledSetFeature +'--------ledDriver--------'+ this.ledDriver );
 		//console.log(this.ledSetFeature && this.ledDriver);
 		if (this.ledSetFeature) {
@@ -109,6 +111,7 @@ export class WidgetLightingComponent implements OnInit {
 					prevSetprofId = this.setprofId;
 					this.setprofId = eventval;
 				}
+				if(!this.isPopupVisible){
 				this.gamingLightingService.setLightingProfileId(0, eventval).then((response: any) => {
 					//console.log('setLightingProfileId------------response---------------->', JSON.stringify(response));
 					this.didSuccess = response.didSuccess;
@@ -123,6 +126,7 @@ export class WidgetLightingComponent implements OnInit {
 						this.setprofId = prevSetprofId;
 					}
 				});
+			}
 			}
 		} catch (error) {
 			console.error('setLightingProfileId: ' + error.message);

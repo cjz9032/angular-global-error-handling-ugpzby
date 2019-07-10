@@ -1,7 +1,8 @@
 import {
 	Component,
 	OnInit,
-	AfterViewInit
+	AfterViewInit,
+	OnDestroy
 } from '@angular/core';
 import {
 	NgbActiveModal, NgbModal
@@ -15,13 +16,16 @@ import * as Phoenix from '@lenovo/tan-client-bridge';
 import { ModalLenovoIdComponent } from '../../../../modal/modal-lenovo-id/modal-lenovo-id.component';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { HomeSecurityMockService } from 'src/app/services/home-security/home-security-mock.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'vtr-modal-chs-welcome-container',
 	templateUrl: './modal-chs-welcome-container.component.html',
 	styleUrls: ['./modal-chs-welcome-container.component.scss']
 })
-export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit {
+export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit, OnDestroy {
 	containerPage: number;
 	switchPage = 1;
 	isLenovoIdLogin: boolean;
@@ -33,6 +37,8 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	chs: Phoenix.ConnectedHomeSecurity;
 	permission: any;
 	loading = false;
+	isOnline = true;
+	notificationSubscription: Subscription;
 	metricsParent = 'ConnectedHomeSecurity';
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -60,13 +66,9 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 				break;
 		}
 
-		this.chs.on(EventTypes.chsHasSystemPermissionShowedEvent, (data) => {
-			this.hasSystemPermissionShowed = data;
-			if (data) {
-				this.permission.requestPermission('geoLocatorStatus').then((status) => {
-					this.isLocationServiceOn = status;
-				});
-			}
+		this.isOnline = this.commonService.isOnline;
+		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
 		});
 
 		this.chs.on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
@@ -94,6 +96,13 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 		this.refreshPage();
 	}
 
+	ngOnDestroy() {
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
+	}
+
+
 	refreshPage() {
 		if (this.hasSystemPermissionShowed) {
 			this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
@@ -116,12 +125,24 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	}
 
 	next(switchPage, isLenovoIdLogin, isLocationServiceOn) {
+		const callback = () => {
+			if (isLocationServiceOn) {
+				if (isLenovoIdLogin && this.chs.account.state === CHSAccountState.local && this.isOnline) {
+					this.startTrial();
+				} else {
+					this.closeModal();
+				}
+			} else {
+				this.switchPage = 4;
+				this.showPageLocation = true;
+			}
+		};
 		if (switchPage === 1) {
 			this.switchPage = 2;
 		} else if (switchPage === 2) {
 			if (isLenovoIdLogin) {
 				if (isLocationServiceOn) {
-					if (this.chs.account.state === CHSAccountState.local) {
+					if (this.chs.account.state === CHSAccountState.local && this.isOnline) {
 						this.startTrial();
 					} else {
 						this.closeModal();
@@ -133,21 +154,19 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 			} else {
 				this.switchPage = 3;
 				this.showPageLenovoId = true;
+				this.chs.on(EventTypes.lenovoIdStatusChange, callback);
 			}
 		} else if (switchPage === 3) {
 			this.showPageLenovoId = true;
+			this.chs.off(EventTypes.lenovoIdStatusChange, callback);
 			if (isLocationServiceOn) {
-				if (isLenovoIdLogin && this.chs.account.state === CHSAccountState.local) {
-					this.startTrial();
-				} else {
-					this.closeModal();
-				}
+				this.closeModal();
 			} else {
 				this.switchPage = 4;
 				this.showPageLocation = true;
 			}
 		} else if (switchPage === 4) {
-			if (isLenovoIdLogin && this.chs.account.state === CHSAccountState.local) {
+			if (isLenovoIdLogin && this.chs.account.state === CHSAccountState.local && this.isOnline) {
 				this.startTrial();
 			} else {
 				this.closeModal();
@@ -163,22 +182,25 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 
 	public openLocation($event: any) {
 		this.permission.getIsDevicePermissionOn().then((response) => {
-			if (response && !this.hasSystemPermissionShowed) {
-				this.permission.requestPermission('geoLocatorStatus').then((status) => {
-					this.isLocationServiceOn = status;
+			if (response) {
+				this.permission.getSystemPermissionShowed().then((res) => {
+					this.hasSystemPermissionShowed = res;
+					if (res) {
+						WinRT.launchUri(this.url);
+					}
+					this.permission.requestPermission('geoLocatorStatus').then((status) => {
+						this.isLocationServiceOn = status;
+					});
 				});
 			} else {
 				WinRT.launchUri(this.url);
-				this.permission.requestPermission('geoLocatorStatus').then((status) => {
-					this.isLocationServiceOn = status;
-				});
 			}
 		});
 	}
 
 	startTrial() {
 		this.loading = true;
-		this.chs.account.createAccount().then((trial: boolean) => {
+		this.chs.createAndGetAccount().then((trial: boolean) => {
 			if (!trial) { return; }
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
 			this.closeModal();
@@ -193,5 +215,18 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 			centered: true,
 			windowClass: 'lenovo-id-modal-size'
 		});
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
+		}
 	}
 }

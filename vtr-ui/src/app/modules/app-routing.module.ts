@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
+import { PageSupportComponent } from '../components/pages/page-support/page-support.component';
 
 const routes: Routes = [
 	{
 		path: 'dashboard',
-		loadChildren: './hardware-dashboard.module#HardwareDashboardModule'
+		loadChildren: './hardware-settings/hardware-dashboard.module#HardwareDashboardModule'
 	},
 	{
 		path: 'device-gaming',
@@ -17,7 +18,11 @@ const routes: Routes = [
 	},
 	{
 		path: 'device',
-		loadChildren: './hardware-settings.module#HardwareSettingsModule'
+		loadChildren: './hardware-settings/hardware-settings.module#HardwareSettingsModule'
+	},
+	{
+		path: 'support',
+		component: PageSupportComponent
 	},
 	{
 		path: 'settings',
@@ -25,6 +30,14 @@ const routes: Routes = [
 		data: {
 			pageName: 'Page.Settings'
 		}
+	},
+	{
+		path: 'home-security',
+		loadChildren: './connected-home-security/connected-home-security.module#ConnectedHomeSecurityModule'
+	},
+	{
+		path: 'security',
+		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
 	},
 	{
 		path: '',
@@ -44,7 +57,6 @@ const routes: Routes = [
 			useHash: true,
 			scrollPositionRestoration: 'enabled',
 			enableTracing: false
-			// preloadingStrategy: PreloadAllModules
 		})
 	],
 	exports: [ RouterModule ]

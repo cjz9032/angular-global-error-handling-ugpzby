@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { CommonService } from '../common/common.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { ModalWifiSecuriryLocationNoticeComponent } from 'src/app/components/modal/modal-wifi-securiry-location-notice/modal-wifi-securiry-location-notice.component';
 import { ModalHomeProtectionLocationNoticeComponent } from 'src/app/components/modal/modal-home-protection-location-notice/modal-home-protection-location-notice.component';
-import { EventTypes, WifiSecurity, ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
+import { EventTypes, WifiSecurity } from '@lenovo/tan-client-bridge';
 import { ModalErrorMessageComponent } from 'src/app/components/modal/modal-error-message/modal-error-message.component';
+import { ModalLenovoIdComponent } from 'src/app/components/modal/modal-lenovo-id/modal-lenovo-id.component';
+import { ModalCommonConfirmationComponent } from 'src/app/components/modal/modal-common-confirmation/modal-common-confirmation.component';
+import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
 
 @Injectable({
 	providedIn: 'root'
@@ -121,5 +124,53 @@ export class DialogService {
 			errorMessageModal.componentInstance.closeButtonId = 'chs-btn-offlineDialogClose';
 			errorMessageModal.componentInstance.cancelButtonId = 'chs-btn-offlineDialogcancle';
 		}
+	}
+
+	openCHSPermissionModal() {
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, false)
+			&& !this.commonService.getSessionStorageValue(SessionStorageKey.HomeSecurityShowLocationPermisisonDialog, false)) {
+			if (this.modalService.hasOpenModals()) {
+				return;
+			}
+			const welcomeModal = this.modalService.open(ModalChsWelcomeContainerComponent, {
+				backdrop: 'static',
+				size: 'lg',
+				centered: true,
+				windowClass: 'Welcome-container-Modal'
+			});
+			welcomeModal.componentInstance.switchPage = 4;
+			welcomeModal.result.then(() => {
+				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowLocationPermisisonDialog, true);
+			}).catch(() => {
+				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowLocationPermisisonDialog, true);
+			});
+		}
+	}
+
+	lenovoIdDialog(appFeature = null) {
+		return new Promise((resolve, reject) => {
+			if (!navigator.onLine) {
+				const modalRef = this.modalService.open(ModalCommonConfirmationComponent, {
+					backdrop: 'static',
+					size: 'lg',
+					centered: true,
+					windowClass: 'common-confirmation-modal'
+				});
+
+				const header = 'lenovoId.ssoErrorTitle';
+				modalRef.componentInstance.CancelText = '';
+				modalRef.componentInstance.header = header;
+				modalRef.componentInstance.description = 'lenovoId.ssoErrorNetworkDisconnected';
+				reject();
+			} else {
+				const modal: NgbModalRef = this.modalService.open(ModalLenovoIdComponent, {
+					backdrop: 'static',
+					centered: true,
+					windowClass: 'lenovo-id-modal-size'
+				});
+				(<ModalLenovoIdComponent>modal.componentInstance).appFeature = appFeature;
+				resolve();
+			}
+		});
 	}
 }

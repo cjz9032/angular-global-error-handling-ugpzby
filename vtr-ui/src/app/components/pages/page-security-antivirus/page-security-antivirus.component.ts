@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
 import { MockService } from 'src/app/services/mock/mock.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { AntiVirusviewModel } from 'src/app/data-models/security-advisor/antivirus.model';
@@ -12,13 +12,15 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { RegionService } from 'src/app/services/region/region.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { GuardService } from '../../../services/guard/security-guardService.service';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',
 	templateUrl: './page-security-antivirus.component.html',
 	styleUrls: ['./page-security-antivirus.component.scss']
 })
-export class PageSecurityAntivirusComponent implements OnInit {
+export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	backarrow = '< ';
 	antiVirus: Antivirus;
 	viewModel: any;
@@ -34,6 +36,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 	backId = 'sa-av-btn-back';
 	mcafeeArticleCategory: string;
 	isOnline = true;
+	notificationSubscription: Subscription;
 
 	@HostListener('window:focus')
 	onFocus(): void {
@@ -46,7 +49,9 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		public commonService: CommonService,
 		public modalService: NgbModal,
 		public regionService: RegionService,
-		private securityAdvisorMockService: SecurityAdvisorMockService) {
+		private securityAdvisorMockService: SecurityAdvisorMockService,
+		private guard: GuardService
+		) {
 		this.securityAdvisor = this.VantageShell.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
@@ -58,7 +63,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
-		this.commonService.notification.subscribe((notification: AppNotification) => {
+		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 		if (this.antiVirus.mcafee) {
@@ -202,8 +207,17 @@ export class PageSecurityAntivirusComponent implements OnInit {
 			this.viewModel.mcafee.subscription = data;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfee, this.viewModel.mcafee);
 		});
+
+		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+			this.antiVirus.refresh();
+		}
 	}
 
+	ngOnDestroy() {
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
+	}
 
 	fetchCMSArticles() {
 		const queryOptions = {

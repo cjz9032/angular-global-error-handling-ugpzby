@@ -53,6 +53,8 @@ import {
 	NetworkStatus
 } from 'src/app/enums/network-status.enum';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { GuardService } from '../../../services/guard/security-guardService.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -80,6 +82,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	maliciousWifi: number;
 	cardContentPositionA: any = {};
 	isOnline: boolean;
+	notificationSubscription: Subscription;
 	region: string;
 	backId = 'sa-ov-btn-back';
 	isRS5OrLater: boolean;
@@ -101,7 +104,8 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private regionService: RegionService,
 		private ngZone: NgZone,
-		private securityAdvisorMockService: SecurityAdvisorMockService
+		private securityAdvisorMockService: SecurityAdvisorMockService,
+		private guard: GuardService
 	) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
@@ -130,15 +134,20 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
-		this.commonService.notification.subscribe((notification: AppNotification) => {
+		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-		this.refreshAll();
+		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+			this.refreshAll();
+		}
 		this.fetchCMSArticles();
 	}
 
 	ngOnDestroy() {
 		this.wifiSecurity.cancelRefresh();
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
 	}
 
 	private refreshAll() {

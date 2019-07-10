@@ -22,10 +22,10 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	@Output() exposureChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() exposureToggle: EventEmitter<any> = new EventEmitter();
 	@Output() cameraAvailable: EventEmitter<boolean> = new EventEmitter();
-
+	@Output() cameraDisable:EventEmitter<boolean> = new EventEmitter();
 	public cameraDetail = new CameraDetail();
 	private cameraPreview: ElementRef;
-	private _video: HTMLVideoElement;
+	private videoElement: HTMLVideoElement;
 	private cameraDetailSubscription: Subscription;
 	private logger: any;
 	private Windows: any;
@@ -39,7 +39,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	public cameraErrorDescription: string;
 	public isCameraInErrorState = false;
 
-	@ViewChild('cameraPreview', { static: true }) set content(content: ElementRef) {
+	@ViewChild('cameraPreview', { static: false }) set content(content: ElementRef) {
 		// when camera preview video element is visible then start camera feed
 		this.cameraPreview = content;
 		if (content && !this.cameraDetail.isPrivacyModeEnabled) {
@@ -135,14 +135,22 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 					self.oMediaCapture.addEventListener('failed', (error) => {
 						console.log('failed to capture camera', error);
 						self.cleanupCameraAsync();
-
+						
 						this.ngZone.run(() => {
-							this.isCameraInErrorState = true;
+							
 							// Camera is in Use
 							if (error.code === 3222091524) {
+								this.isCameraInErrorState = true;
 								this.cameraErrorTitle = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.inUseTitle';
 								this.cameraErrorDescription = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.inUseDescription';
-							} else {
+								}
+								// disable camera access from system setting
+								else if(error.code === 2147942405){
+									this.cameraDisable.emit(true);
+			
+								}
+								else {
+									this.isCameraInErrorState = true;
 								this.cameraErrorTitle = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.loadingFailedTitle';
 								this.cameraErrorDescription = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.loadingFailedDescription';
 							}
@@ -174,18 +182,18 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	startPreviewAsync() {
 		this.ngZone.run(() => {
 			const previewUrl = URL.createObjectURL(this.oMediaCapture);
-			this._video = this.cameraPreview.nativeElement;
-			this._video.src = previewUrl;
-			this._video.play();
+			this.videoElement = this.cameraPreview.nativeElement;
+			this.videoElement.src = previewUrl;
+			this.videoElement.play();
 		});
 	}
 
 	stopPreview() {
 		this.ngZone.run(() => {
 			// Cleanup the UI
-			if (this._video) {
-				this._video.pause();
-				this._video.src = '';
+			if (this.videoElement) {
+				this.videoElement.pause();
+				this.videoElement.src = '';
 			}
 		});
 	}

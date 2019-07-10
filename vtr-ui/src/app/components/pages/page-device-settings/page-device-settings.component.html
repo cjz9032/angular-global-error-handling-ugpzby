@@ -2,8 +2,8 @@
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="backarrow"
-				[back]="back"
-				[title]="title"
+				[back]="'common.ui.back' | translate"
+				[title]="'common.menu.device.sub2' | translate"
 				[parentPath]="parentPath"
 				[menuItems]="menuItems"></vtr-header-main>
 		</div>
@@ -47,7 +47,7 @@
 										[ratioX]="4"
 										[ratioY]="2"
 										order="3"
-										sideFlag = 'r'
+										sideFlag='r'
 										[cornerShift]="'large'">
 									</vtr-container-card>
 								</div>

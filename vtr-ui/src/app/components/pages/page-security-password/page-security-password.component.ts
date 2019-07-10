@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
 import { MockService } from 'src/app/services/mock/mock.service';
 import { PasswordManager, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
@@ -11,13 +11,16 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { RegionService } from 'src/app/services/region/region.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { ActivatedRoute, Params } from '@angular/router';
+import { GuardService } from '../../../services/guard/security-guardService.service';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'vtr-page-security-password',
 	templateUrl: './page-security-password.component.html',
 	styleUrls: ['./page-security-password.component.scss']
 })
-export class PageSecurityPasswordComponent implements OnInit {
+export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 
 	passwordManager: PasswordManager;
 	statusItem: any;
@@ -27,6 +30,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 	dashlaneArticleId = '0EEB43BE718446C6B49F2C83FC190758';
 	dashlaneArticleCategory: string;
 	isOnline = true;
+	notificationSubscription: Subscription;
 
 	constructor(
 		public mockService: MockService,
@@ -35,7 +39,9 @@ export class PageSecurityPasswordComponent implements OnInit {
 		private modalService: NgbModal,
 		public regionService: RegionService,
 		vantageShellService: VantageShellService,
-		private securityAdvisorMockService: SecurityAdvisorMockService
+		private securityAdvisorMockService: SecurityAdvisorMockService,
+		private router: ActivatedRoute,
+		private guard: GuardService
 	) {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
@@ -63,9 +69,18 @@ export class PageSecurityPasswordComponent implements OnInit {
 
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
-		this.commonService.notification.subscribe((notification: AppNotification) => {
+		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+			this.passwordManager.refresh();
+		}
+	}
+
+	ngOnDestroy() {
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
 	}
 
 	getDashLane(): void {
@@ -101,7 +116,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 			}
 		);
 
-		this.cmsService.fetchCMSArticle(this.dashlaneArticleId, {'Lang': 'EN'}).then((response: any) => {
+		this.cmsService.fetchCMSArticle(this.dashlaneArticleId, { 'Lang': 'EN' }).then((response: any) => {
 			if (response && response.Results && response.Results.Category) {
 				this.dashlaneArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
 			}
@@ -114,7 +129,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 			size: 'lg',
 			centered: true,
 			windowClass: 'Article-Detail-Modal',
-			keyboard : false
+			keyboard: false
 		});
 		articleDetailModal.componentInstance.articleId = this.dashlaneArticleId;
 	}

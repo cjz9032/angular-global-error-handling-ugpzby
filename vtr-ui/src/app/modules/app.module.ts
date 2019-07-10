@@ -1,11 +1,11 @@
 import { AppComponent } from '../app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModalModule } from './common/common-modal.module';
+import { CommonWidgetModule } from './common/common-widget.module';
 import { CUSTOM_ELEMENTS_SCHEMA, ErrorHandler, NgModule } from '@angular/core';
 import { GlobalErrorHandler } from '../services/error-handler/global.service';
 import { SharedModule } from './shared.module';
-import { CommonModalModule } from './common-modal.module';
-import { CommonWidgetModule } from './common-widget.module';
 import { TranslationModule, HttpLoaderFactory } from './translation.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';

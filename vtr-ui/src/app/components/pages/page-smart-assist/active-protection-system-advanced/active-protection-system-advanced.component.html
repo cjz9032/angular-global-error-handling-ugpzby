@@ -11,13 +11,11 @@
 						[title]="'device.smartAssist.activeProtectionSystem.advanced.pen.title' | translate"
 						[caption]="'device.smartAssist.activeProtectionSystem.advanced.pen.description' | translate"
 						[theme]="'white'" [isSwitchVisible]="true" [showChildContent]="true" [isSwitchChecked]="penStatus" (toggleOnOff)="setPenSetting($event)">
-					</vtr-ui-row-switch>
-					<div class="dropdown row">
-						<section class="col-sm-6">
+						<div class="dropdown">
 							<vtr-ui-dropdown *ngIf=" penStatus " [list]="intervals" [value]="penDelay" (change)="setPenDelayTime($event)">
 							</vtr-ui-dropdown>
-						</section>
-					</div>
+						</div>
+					</vtr-ui-row-switch>
 				</div>
 			</li>
 

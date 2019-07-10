@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Összecsukás",
             "expand": "Kibontás",
-            "loader": "Fetching <br> Status"
+            "loader": "Állapot <br> lekérése",
+            "loading": "Betöltés..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "A tálcát és a képernyő ritkábban módosított területeit ugyancsak tanácsos elsötétíteni, így ugyanis meghosszabbítható a képernyő élettartama."
                         ],
                         "reset": "Hőmérséklet visszaállítása",
-                        "tooltip": "Ez a funkció elsötétíti a képernyő adott részeit, így csökkentheti az energiafogyasztást és növelheti az akkumulátor élettartamát."
+                        "tooltip": "Ez a funkció elsötétíti a képernyő adott részeit, így csökkentheti az energiafogyasztást és növelheti az akkumulátor élettartamát.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Bevitel és kellékek",
+                "subtitle": "Bevitel és kellékek beállításai",
+                "description": "A Lenovo intelligens észlelési funkciója a számítógép különböző érzékelőivel észleli a felhasználói tevékenységeket, és úgy módosítja a beállításokat, hogy az energiagazdálkodás optimális legyen",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Intelligens billentyűzet",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Billentyűzet rejtett funkciói",
+                        "description": "A lenti billentyűzettérképen szereplő parancsok alkalmazásához nyomja meg az Fn billentyűt a billentyűzet bal alsó sarkában, majd azzal egyszerre a megadott billentyűket."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "a nagyítási funkció engedélyezése nagy felbontású képernyőkön",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "alvó módra váltás",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "az adatvédelmi funkció be- és kikapcsolása",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "a teljesítményközpontú mód és a csendes mód közötti váltás",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + szóköz",
+                        "description": "a billentyűzet háttérvilágítási állapotainak módosítása",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Felhasználó által megadott billentyű",
+                    "caption": "A csillag ikonnal rendelkező billentyűhöz tetszőleges funkciót rendelhet a felhasználó",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Művelet felhasználó által megadott billentyűje",
+                        "note": "Megjegyzés: Itt adhat meg általánosan megadott kulcsot, pl. e-mail-címet vagy levelezési címet. A Lenovo azt javasolja, hogy soha ne adjon meg itt jelszavakat vagy bizalmas adatokat.",
+                        "options": {
+                            "option1": "Válasszon",
+                            "option2": "Nyissa meg a webhelyet",
+                            "option3": "Írja be a szöveget"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1179,31 +1207,31 @@
             },
             "activeProtectionSystem": {
                 "title": "Active Protection System",
-                "description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+                "description": "A Lenovo Active Protection System olyan automatikus funkció, amely segít megvédeni a merevlemezt az erős fizikai behatásoktól és a rázkódástól. Folyamatosan figyeli a számítógép mozgását, és ha azt észleli, hogy a gép leeshet (vagy hasonló esetben), leállítja a merevlemezt.",
                 "activeProtection": {
                     "title": "Active Protection",
-                    "caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection",
-                    "checkbox": "Ignore repetative shocks such as those of a train or a car"
+                    "caption": "Módosíthatja az érzékenységet; alacsony érzékenységi módban csak az erősebb behatások aktiválják a védelmet",
+                    "checkbox": "Figyelmen kívül hagyja az ismétlődő rázkódás, például a vonaton vagy autón való utazás során"
                 },
                 "manualActiveProtectionSuspension": {
-                    "title": "Manual Active Protection Suspension",
-                    "caption": "Allow me to manually suspend the Active Protection System",
-                    "dropdown-title": "Suspend for",
-                    "button": "Suspend Now"
+                    "title": "Az Active Protection kézi felfüggesztése",
+                    "caption": "Engedélyezze az Active Protection System manuális felfüggesztését",
+                    "dropdown-title": "Felfüggesztés eddig",
+                    "button": "Felfüggesztés most"
                 },
                 "advanced": {
-                    "description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+                    "description": "Hogy a táblagép használata közben jobban elérhető legyen a merevlemez, a következő tevékenységek észlelésekor felfüggeszti az Active Protection System használatát",
                     "pen": {
-                        "title": "Pen Input",
-                        "description": "When pen input is used, Enable APS when pen input is out of range"
+                        "title": "Tollal történő bevitel",
+                        "description": "Tollal történő bevitel esetén engedélyezze az ASP-t, ha a toll a használati tartományon kívül van"
                     },
                     "touch": {
-                        "title": "Touch Input",
-                        "description": "When Touch input is used, Enable APS when touch input is not detected"
+                        "title": "Érintéses bevitel",
+                        "description": "Érintéses bevitel esetén engedélyezze az ASP-t, ha nem észlelhető érintéses bevitel"
                     },
                     "hand": {
-                        "title": "Hand proximity sensing on computer edges",
-                        "description": "When tablet mode is enabled, Enable APS when hand is not detected"
+                        "title": "A kezek közelségének észlelése a számítógép széleinél",
+                        "description": "Táblagép módban engedélyezze az ASP-t, ha nem észlelhető kézzel való használat"
                     }
                 }
             },
@@ -1214,30 +1242,30 @@
                 "tooltip": "Ez a funkció nem használható internetes videólejátszókhoz. A népszerű helyi videólejátszók (pl. a Windows Media Player vagy a 5KPlayer) támogatják ezt a funkciót."
             },
             "voice": {
-                "title": "Voice",
-                "description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
-                "installBtnText": "Install",
-                "launchBtnText": "Launch",
+                "title": "Hang",
+                "description": "A Lenovo Voice „Hang szöveggé” funkciójával szöveggé alakíthatja át a hangot. A Fordítás funkció valós időben biztosít a hang szöveggé alakításával.",
+                "installBtnText": "Telepítse",
+                "launchBtnText": "Indítás",
                 "voiceToText": {
-                    "title": "Voice to text",
-                    "caption": "This feature helps to convert your voice into texts."
+                    "title": "Hang szöveggé",
+                    "caption": "A funkcióval szöveggé alakítható a hangos bevitel."
                 },
                 "translation": {
-                    "title": "Translation",
-                    "caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+                    "title": "Fordítás",
+                    "caption": "A funkció a hang valós idejű fordítását biztosítja. A lefordított tartalom szövegként jelenik meg. A forrás- és a célnyelvet igény szerint választhatja ki."
                 },
                 "modalPopUp": {
-                    "heading": "Get started:",
-                    "point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-                    "point2": "Open the file where you want to record the converted text.",
-                    "point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-                    "point4": "Select your desired language and click the microphone icon to start.",
-                    "point5": "Put the cursor to where you want to edit and begin to speak.",
-                    "point6": "Click the Lenovo Voice icon in the Windows system tray and select Translate.",
-                    "point7": "Select your desired source language and target language.",
-                    "point8": "Depending on your needs, set the voice input from Speaker or from Microphone.",
-                    "point9": "Click the microphone icon to start speaking",
-                    "closeText": "close"
+                    "heading": "Kezdő lépések:",
+                    "point1": "Győződjön meg arról, hogy a Lenovo Voice ikonja látható a Windows tálcáján.",
+                    "point2": "Nyissa meg azt a fájlt, amelybe rögzíteni szeretné a konvertált szöveget.",
+                    "point3": "Kattintson a Lenovo Voice ikonjára a Windows tálcáján, és válassza a Hang szöveggé parancsot.",
+                    "point4": "Válassza ki a kívánt nyelvet, és a kezdéshez kattintson a mikrofon ikonra.",
+                    "point5": "Vigye a kurzort a szerkesztés helyére, és kezdjen beszélni.",
+                    "point6": "Kattintson a Lenovo Voice ikonjára a Windows tálcáján, és válassza a Fordítás parancsot.",
+                    "point7": "Válassza ki a forrásnyelvet és a célnyelvet.",
+                    "point8": "Szükség szerint állítsa be a hangbemenetet (Hangszóró vagy Mikrofon).",
+                    "point9": "Kattintson a mikrofon ikonra, és kezdjen beszélni",
+                    "closeText": "bezárás"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "Ajánlott frissítés(ek)",
         "optionalUpdates": "Választható frissítés(ek)",
         "ignoredUpdates": "Figyelmen kívül hagyott frissítés(ek)",
-        "successInstall": "Sikeresen telepítve",
-        "failedInstall": "A telepítés sikertelen",
+        "successInstall": "Sikeresen telepítve: ",
+        "failedInstall": "A telepítés sikertelen: ",
         "at": "Ekkor",
         "readMore": "További információ",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "Üdvözöljük a System Update szolgáltatásban.",
             "title": "A naprakész rendszer megfelelően működik.",
-            "last": "Utolsó frissítés dátuma",
-            "next": "A frissítések következő ellenőrzésének ideje",
+            "last": "Utolsó frissítés: ",
+            "next": "Következő ütemezett frissítés: ",
             "checkButton": "FRISSÍTÉSEK KERESÉSE",
             "checking": "Frissítések keresése",
             "downloading": "A frissítések letöltve",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "A rendszerfrissítési kiszolgáló jelenleg nem érhető el. Kérjük, később próbálja meg újra.",
             "helpCenterInvalidServerException": "A rendszerfrissítési kiszolgáló érvénytelen. Kérjük, később próbálja meg újra.",
             "catalogNotFoundException": "Nem érhetők el frissítések a rendszerhez.",
-            "catalogCrcErrorException": "A rendszer frissítési katalógusa jelenleg frissül a rendszerfrissítési kiszolgálón Kérjük, később próbálja meg újra.",
+            "catalogCrcErrorException": "A rendszerkatalógus jelenleg frissül. Kérjük, később próbálja meg újra.",
             "catalogErrorException": "Hibát találtunk a rendszer frissítési katalógusával a rendszerfrissítési kiszolgálón. Kérjük, később próbálja meg újra.",
             "fileNotFoundException": "A fájl nem található."
         }
@@ -1615,8 +1643,9 @@
             },
             "errorMessage": {
                 "headerText": "Hiba",
-				"bodyText": "Úgy észleltük, hogy a Vantage létfontosságú összetevői hiányoznak. Ezek az összetevők a háttérben töltődnek le. Kérjük, később próbálja meg újra.",
-				"closeText": "close"
+                "bodyText": "Úgy észleltük, hogy a Vantage létfontosságú összetevői hiányoznak. Ezek az összetevők a háttérben töltődnek le. Kérjük, később próbálja meg újra.",
+                "closeText": "bezárás",
+                "offlineText": "Azt észleltük, hogy nem csatlakozik az internethez. Az oldal egyes részei nem működnek majd megfelelően. Csatlakozzon újra"
             }
         },
         "homeprotection": {

@@ -47,7 +47,7 @@
 									[radioId]="'radio'| uniqueId"
 									[group]="radioGroupAutoDolbySettings"
 									[label]="dolbyMode | dolbyModesTranslation"
-									[value]='dolbyMode'
+									[value]='dolbyMode | dolbyModesTranslation'
 									[checked]="dolbyMode == dolbyModeResponse.currentMode"
 									(change)="onDolbySeetingRadioChange($event)">
 								</vtr-ui-circle-radio>
@@ -181,7 +181,8 @@
 						</vtr-ui-row-switch>
 					</li>
 
-					<li class="" *ngIf="!isDTmachine">
+					<li class=""
+						*ngIf="!isDTmachine">
 						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.optimize.title' | translate"
 							componentName="Optimize my microphone for"
 							[name]="'device.deviceSettings.audio.microphone.optimize.title' | translate"

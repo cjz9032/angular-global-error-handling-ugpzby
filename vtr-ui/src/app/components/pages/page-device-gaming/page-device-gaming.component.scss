@@ -57,3 +57,17 @@
 		}
 	}
 }
+// .vtr-page-left-column{
+//     .vtr-page-shift-up{
+//         @media #{$mediaquery_X38}{
+//             margin-bottom: 50rem;
+//         }
+//     }
+// }
+.vtr-page-left-column {
+	.vtr-page-shift-up {
+		@media #{$mediaquery_X38} {
+			margin-bottom: 50rem;
+		}
+	}
+}
