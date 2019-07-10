@@ -13,6 +13,8 @@
 								*ngIf="allowCollapse">
 								<div class="collapse-control"
 									vtrMetrics
+									id="{{'container_collapsible_'+ name}}"
+									attr.aria-label="{{'container_collapsible_'+ name}}"
 									metricsEvent="itemClick"
 									[metricsValue]="isCollapsed"
 									[metricsItem]="'btn.collapse'"

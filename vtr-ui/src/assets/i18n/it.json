@@ -382,7 +382,7 @@
     },
     "common": {
         "menu": {
-            "dashboard": "Dashboard",
+            "dashboard": "Cruscotto",
             "device": {
                 "title": "Dispositivo",
                 "sub1": "Il mio dispositivo",
@@ -401,7 +401,7 @@
             },
             "support": "Supporto",
             "homeSecurity": "Abitazione connessa",
-            "privacy": "Privacy"
+            "privacy": "Vita Privata"
         },
         "securityAdvisor": {
             "title": "Assistente sicurezza",

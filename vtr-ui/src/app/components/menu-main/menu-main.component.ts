@@ -1,12 +1,11 @@
 import { Component, OnInit, OnDestroy, DoCheck, HostListener, ViewChild, AfterViewInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
 import { UserService } from '../../services/user/user.service';
-import { ModalLenovoIdComponent } from '../modal/modal-lenovo-id/modal-lenovo-id.component';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -20,9 +19,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { RegionService } from 'src/app/services/region/region.service';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { ModalCommonConfirmationComponent } from '../modal/modal-common-confirmation/modal-common-confirmation.component';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { LenovoIdDialogService } from '../../services/dialog/lenovoIdDialog.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -64,7 +63,8 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 		private regionService: RegionService,
 		private smartAssist: SmartAssistService,
 		private logger: LoggerService,
-		private securityAdvisorMockService: SecurityAdvisorMockService
+		private securityAdvisorMockService: SecurityAdvisorMockService,
+		private dialogService: LenovoIdDialogService
 	) {
 		this.showVpn();
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
@@ -195,26 +195,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 
 	//  to popup Lenovo ID modal dialog
 	OpenLenovoId(appFeature = null) {
-		if (!navigator.onLine) {
-			const modalRef = this.modalService.open(ModalCommonConfirmationComponent, {
-				backdrop: 'static',
-				size: 'lg',
-				centered: true,
-				windowClass: 'common-confirmation-modal'
-			});
-
-			const header = 'lenovoId.ssoErrorTitle';
-			modalRef.componentInstance.CancelText = '';
-			modalRef.componentInstance.header = header;
-			modalRef.componentInstance.description = 'lenovoId.ssoErrorNetworkDisconnected';
-			return;
-		}
-		const modal: NgbModalRef = this.modalService.open(ModalLenovoIdComponent, {
-			backdrop: 'static',
-			centered: true,
-			windowClass: 'lenovo-id-modal-size'
-		});
-		(<ModalLenovoIdComponent>modal.componentInstance).appFeature = appFeature;
+		this.dialogService.openLenovoIdDialog(appFeature);
 	}
 
 	onLogout() {
@@ -397,8 +378,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 
 		if (this.router.url === '/device-gaming' || this.router.url === '/') {
 			this.isGamingHome = true;
-		}
-		else {
+		} else {
 			this.isGamingHome = false;
 		}
 	}

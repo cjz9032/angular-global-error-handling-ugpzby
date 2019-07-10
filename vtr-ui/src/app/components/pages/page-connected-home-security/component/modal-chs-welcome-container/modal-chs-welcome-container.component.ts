@@ -1,29 +1,29 @@
 import {
 	Component,
 	OnInit,
-	AfterViewInit
+	AfterViewInit,
+	OnDestroy
 } from '@angular/core';
 import {
-	NgbActiveModal, NgbModal
+	NgbActiveModal
 } from '@ng-bootstrap/ng-bootstrap';
-import {
-	CommonService
-} from 'src/app/services/common/common.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes, WinRT, CHSAccountState } from '@lenovo/tan-client-bridge';
 import * as Phoenix from '@lenovo/tan-client-bridge';
-import { ModalLenovoIdComponent } from '../../../../modal/modal-lenovo-id/modal-lenovo-id.component';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { HomeSecurityMockService } from 'src/app/services/home-security/home-security-mock.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'vtr-modal-chs-welcome-container',
 	templateUrl: './modal-chs-welcome-container.component.html',
 	styleUrls: ['./modal-chs-welcome-container.component.scss']
 })
-export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit {
+export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit, OnDestroy {
 	containerPage: number;
 	switchPage = 1;
 	isLenovoIdLogin: boolean;
@@ -36,13 +36,14 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	permission: any;
 	loading = false;
 	isOnline = true;
+	notificationSubscription: Subscription;
 	metricsParent = 'ConnectedHomeSecurity';
 	constructor(
 		public activeModal: NgbActiveModal,
 		public homeSecurityMockService: HomeSecurityMockService,
 		private vantageShellService: VantageShellService,
 		private commonService: CommonService,
-		public modalService: NgbModal
+		private dialogService: LenovoIdDialogService
 	) {
 		this.chs = vantageShellService.getConnectedHomeSecurity();
 		if (!this.chs) {
@@ -64,7 +65,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 		}
 
 		this.isOnline = this.commonService.isOnline;
-		this.commonService.notification.subscribe((notification: AppNotification) => {
+		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 
@@ -93,6 +94,13 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 		this.refreshPage();
 	}
 
+	ngOnDestroy() {
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
+	}
+
+
 	refreshPage() {
 		if (this.hasSystemPermissionShowed) {
 			this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
@@ -115,6 +123,18 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	}
 
 	next(switchPage, isLenovoIdLogin, isLocationServiceOn) {
+		const callback = () => {
+			if (isLocationServiceOn) {
+				if (isLenovoIdLogin && this.chs.account.state === CHSAccountState.local && this.isOnline) {
+					this.startTrial();
+				} else {
+					this.closeModal();
+				}
+			} else {
+				this.switchPage = 4;
+				this.showPageLocation = true;
+			}
+		};
 		if (switchPage === 1) {
 			this.switchPage = 2;
 		} else if (switchPage === 2) {
@@ -132,15 +152,13 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 			} else {
 				this.switchPage = 3;
 				this.showPageLenovoId = true;
+				this.chs.on(EventTypes.lenovoIdStatusChange, callback);
 			}
 		} else if (switchPage === 3) {
 			this.showPageLenovoId = true;
+			this.chs.off(EventTypes.lenovoIdStatusChange, callback);
 			if (isLocationServiceOn) {
-				if (isLenovoIdLogin && this.chs.account.state === CHSAccountState.local && this.isOnline) {
-					this.startTrial();
-				} else {
-					this.closeModal();
-				}
+				this.closeModal();
 			} else {
 				this.switchPage = 4;
 				this.showPageLocation = true;
@@ -190,11 +208,17 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	}
 
 	openLenovoId() {
-		this.modalService.open(ModalLenovoIdComponent, {
-			backdrop: 'static',
-			centered: true,
-			windowClass: 'lenovo-id-modal-size'
+		const callback = (loggedIn: boolean) => {
+			if (loggedIn) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+			}
+		};
+		this.dialogService.openLenovoIdDialog('ConnectedHomeSecurity.Welcome').then(() => {
+			this.chs.off(EventTypes.lenovoIdStatusChange, callback);
+		}).catch(() => {
+			this.chs.off(EventTypes.lenovoIdStatusChange, callback);
 		});
+		this.chs.on(EventTypes.lenovoIdStatusChange, callback);
 	}
 
 	private onNotification(notification: AppNotification) {

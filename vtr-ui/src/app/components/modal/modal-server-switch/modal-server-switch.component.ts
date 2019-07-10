@@ -133,7 +133,7 @@ export class ModalServerSwitchComponent implements OnInit {
     }
 
     //submit success
-    if (!this.sddInvalid.status || true) {
+    if (!this.sddInvalid.status) {
       this.serverSwitchProcess();
     }
 
@@ -145,6 +145,7 @@ export class ModalServerSwitchComponent implements OnInit {
       country: this.serverSwitchData.country,
       language: this.serverSwitchData.language,
       segment: this.serverSwitchData.segment,
+      forceit: false
     };
     //storing into localStorage
     this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
@@ -200,8 +201,6 @@ export class ModalServerSwitchComponent implements OnInit {
         console.log('@sh navigateByUrl', this.router.parseUrl(this.router.url), parms);
         this.router.navigateByUrl(urlTree);
       });
-
   }
-
 
 }

@@ -7,7 +7,7 @@
 	<div class="container-fluid p-0"
 		[ngClass]="{'vtr-disabled': disabled}">
 		<div class="row m-0">
-			<div [ngClass]="{'col-md-10 col-9': (isSwitchVisible && !resetTextAsButton),'col-md-11 col-11':(!resetTextAsButton && !isSwitchVisible),'col-md-7': (resetTextAsButton && !isSwitchVisible)}"
+			<div class="vtr-col-pad" [ngClass]="{'col-md-10 col-9': (isSwitchVisible && !resetTextAsButton),'col-md-11 col-11':(!resetTextAsButton && !isSwitchVisible),'col-md-7': (resetTextAsButton && !isSwitchVisible)}"
 				[ngClass]="{'col-md-8': (type==='auto-updates' || type==='Camera'), 'col-md-10':type===undefined}">
 				<div class="container-fluid p-0">
 					<div class="row m-0">
@@ -40,9 +40,9 @@
 					</div>
 				</div>
 			</div>
-			
-			<div  [ngClass]="{'col-md-2 d-flex col-3 justify-content-end': (isSwitchVisible && !resetTextAsButton),'col-md-1 col-1 d-flex justify-content-end':(!resetTextAsButton && !isSwitchVisible),'col-md-5 d-flex justify-content-end': (resetTextAsButton && !isSwitchVisible)}" >
-				<div class="row">
+
+			<div class="vtr-row-switch" [ngClass]="{'col-md-2 d-flex col-3 justify-content-end': (isSwitchVisible && !resetTextAsButton),'col-md-1 col-1 d-flex justify-content-end':(!resetTextAsButton && !isSwitchVisible),'col-md-5 d-flex justify-content-end': (resetTextAsButton && !isSwitchVisible)}" >
+				<!-- <div class="row"> -->
 					<div class="p-0"
 						[ngClass]="{'ml-auto': type!=='Camera'}"
 						*ngIf="resetText.length > 0">
@@ -58,6 +58,8 @@
 					<div class="right-align"
 						*ngIf="isSwitchVisible">
 						<vtr-ui-switch-onoff [name]="name"
+							id="{{'row-switch-onoff-'+name}}"
+							attr.aria-label="{{'row-switch-onoff-'+name}}"
 							[value]="isSwitchChecked"
 							[disabled]="disabled"
 							(toggle)="onOnOffChange($event)"
@@ -100,7 +102,7 @@
 							[icon]="rightIcon"
 							(click)="voicePopUp()"></fa-icon>
 					</div>
-				</div>
+				<!-- </div> -->
 			</div>
 			<!-- <div class="ml-auto p-0"
 				*ngIf="resetText.length > 0">

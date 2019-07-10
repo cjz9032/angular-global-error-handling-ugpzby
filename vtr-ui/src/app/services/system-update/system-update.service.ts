@@ -463,6 +463,7 @@ export class SystemUpdateService {
 
 	private installUpdates(updates: Array<InstallUpdate>, isInstallingAllUpdates: boolean) {
 		if (updates.length === 0) {
+			this.installedUpdates = [];
 			const payload = new AvailableUpdate();
 			payload.status = 20;
 			payload.updateList = this.ignoredRebootDelayUpdates;
