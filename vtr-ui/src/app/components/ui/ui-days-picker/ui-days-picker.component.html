@@ -50,7 +50,7 @@
 											</div>
 									<div class="select-close">
 										<fa-icon [icon]="['fal', 'check']"
-											(click)="setOffDays()"></fa-icon>
+											(click)="setOffDays()" *ngIf="checkedLength > 0" ></fa-icon>
 										<fa-icon [icon]="['fal', 'times']"
 											(click)="clearSettings()"></fa-icon>
 									</div>
