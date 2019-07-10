@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
+import { PageSupportComponent } from '../components/pages/page-support/page-support.component';
 
 const routes: Routes = [
 	{
@@ -14,6 +15,10 @@ const routes: Routes = [
 	{
 		path: 'device',
 		loadChildren: './hardware-settings.module#HardwareSettingsModule'
+	},
+	{
+		path: 'support',
+		component: PageSupportComponent,
 	},
 	{
 		path: 'settings',
