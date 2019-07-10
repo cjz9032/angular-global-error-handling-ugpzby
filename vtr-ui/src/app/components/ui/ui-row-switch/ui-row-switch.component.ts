@@ -20,7 +20,7 @@ import { ModalVoiceComponent } from '../../modal/modal-voice/modal-voice.compone
 	styleUrls: ['./ui-row-switch.component.scss'],
 	exportAs: 'uiRowSwitch'
 })
-export class UiRowSwitchComponent extends BaseComponent {
+export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 	@ViewChild('childContent') childContent: any;
 
 	// Use Fort Awesome Font Awesome Icon Reference Array (library, icon class) ['fas', 'arrow-right']
@@ -59,7 +59,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 	constructor(
 		public modalService: NgbModal
 		, private deviceService: DeviceService
-		, private translate: TranslateService,
+		, private translate: TranslateService,
 	) { super(); }
 
 
@@ -73,8 +73,8 @@ export class UiRowSwitchComponent extends BaseComponent {
 	}
 
 	public onOnOffChange($event) {
-		//if (this.title === 'Battery Charge Threshold') {
-		if (this.title === this.translate.instant('device.deviceSettings.power.batterySettings.batteryThreshold.title') ){
+		// if (this.title === 'Battery Charge Threshold') {
+		if (this.title === this.translate.instant('device.deviceSettings.power.batterySettings.batteryThreshold.title')) {
 			this.isSwitchChecked = !this.isSwitchChecked;
 			if (this.isSwitchChecked) {
 				this.modalService.open(ModalBatteryChargeThresholdComponent, {
@@ -121,7 +121,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 	}
 
 	voicePopUp(stringValue) {
-		console.log("modal open");
+		console.log('modal open');
 		console.log(this.voiceValue);
 		const modalRef = this.modalService.open(ModalVoiceComponent,
 			{
