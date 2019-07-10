@@ -1,7 +1,8 @@
 <div class="vtr-ui-list-support">
 	<ul class="support-list">
 		<li *ngFor="let item of items">
-			<a role="button" *ngIf="item.url" href="{{item.url}}" target="_blank" vtrMetrics metricsItem="{{item?.metricsItem}}"
+			<a role="button" id="{{item.metricsItem}}" attr.aria-label="{{item.metricsItem}}"
+			*ngIf="item.url" href="{{item.url}}" target="_blank" vtrMetrics metricsItem="{{item?.metricsItem}}"
 			 metricsEvent="{{item?.metricsEvent}}" metricsParent="{{item?.metricsParent}}">
 				<div class="container-fluid">
 					<div class="row">
@@ -28,7 +29,7 @@
 					</div>
 				</div>
 			</a>
-			<a role="button" href="javascript:;" *ngIf="item.clickItem" (click)="itemClick(item.clickItem)" vtrMetrics metricsItem="{{item?.metricsItem}}"
+			<a role="button" id="{{item.metricsItem}}" attr.aria-label="{{item.metricsItem}}" href="javascript:;" *ngIf="item.clickItem" (click)="itemClick(item.clickItem)" vtrMetrics metricsItem="{{item?.metricsItem}}"
 			 metricsEvent="{{item?.metricsEvent}}" metricsParent="{{item?.metricsParent}}">
 				<div class="container-fluid">
 					<div class="row">

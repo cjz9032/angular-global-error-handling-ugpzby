@@ -1,143 +1,142 @@
 @import "../../../app.theme";
 
 @mixin theme($name, $background, $color, $icon_color, $border) {
-  .vtr-ui-switch-row.#{$name} {
-    .col-auto {
-      height: 100%;
-    }
-    .vtr-col-pad{
-      padding: 0 1rem;
-    }
-    .vtr-row-switch{
-      padding-right: 3rem;
-      >div.right-align{
-        float: right;
-        ::ng-deep span.switch{
-          margin-right: 0;
-        }
-      }
-    }
-    .vtr-disabled {
-      opacity: 0.65;
-    }
+	.vtr-ui-switch-row.#{$name} {
+		.col-auto {
+			height: 100%;
+		}
+		.vtr-col-pad {
+			padding: 0 1rem;
+		}
+		.vtr-row-switch {
+			padding-right: 3rem;
+			> div.right-align {
+				float: right;
+				::ng-deep span.switch {
+					margin-right: 0;
+				}
+			}
+		}
+		.vtr-disabled {
+			opacity: 0.65;
+		}
 
-    padding: 1.5rem 0.7rem 1.5rem;
-    padding-left: 0rem;
-    // margin: 0rem 1.7rem 0;
-    margin-left: 0;
-    margin-right: 0;
-    background-color: none;
-    border-bottom: 0.1rem solid $border;
+		padding: 1.5rem 0.7rem 1.5rem;
+		padding-left: 0rem;
+		// margin: 0rem 1.7rem 0;
+		margin-left: 0;
+		margin-right: 0;
+		background-color: none;
+		border-bottom: 0.1rem solid $border;
 
-    &.last-child {
-      border-bottom: none;
-    }
+		&.last-child {
+			border-bottom: none;
+		}
 
-    .left-icon-column {
-      padding: 0 1rem 0 0;
+		.left-icon-column {
+			padding: 0 1rem 0 0;
 
-      .left-icon {
-        font-size: 2rem;
-        color: $icon_color;
-        fill: $icon_color;
-        width: 2rem;
-        height: 2rem;
-      }
+			.left-icon {
+				font-size: 2rem;
+				color: $icon_color;
+				fill: $icon_color;
+				width: 2rem;
+				height: 2rem;
+			}
 
-      .left-icon-svg {
-        font-size: 2rem;
-        color: $icon_color;
-        fill: $icon_color;
-        width: 2.5rem;
-        height: 2rem;
-        margin-top: -0.3rem;
-        margin-bottom: 0.3rem;
-        margin-right: -0.2rem;
-        vertical-align: -0.12em;
-      }
-    }
+			.left-icon-svg {
+				font-size: 2rem;
+				color: $icon_color;
+				fill: $icon_color;
+				width: 2.5rem;
+				height: 2rem;
+				margin-top: -0.3rem;
+				margin-bottom: 0.3rem;
+				margin-right: -0.2rem;
+				vertical-align: -0.12em;
+			}
+		}
 
-    .left-icon-block {
-      width: 2rem;
-    }
+		.left-icon-block {
+			width: 2rem;
+		}
 
-    .right-icon {
-      font-size: 1.8rem;
-      color: $icon_color;
-      cursor: pointer;
+		.right-icon {
+			font-size: 1.8rem;
+			color: $icon_color;
+			cursor: pointer;
 
-      &:hover {
-        color: $highlight;
-      }
-    }
+			&:hover {
+				color: $highlight;
+			}
+		}
 
-    .title {
-      font-size: 1.8rem;
-      color: $color;
-      font-weight: $weight_600;
-      letter-spacing: 0.05rem;
-      text-transform: none;
-    }
+		.title {
+			font-size: 1.8rem;
+			color: $color;
+			font-weight: $weight_600;
+			letter-spacing: 0.05rem;
+			text-transform: none;
+		}
 
-    .caption {
-      font-size: 1.5rem;
-      color: $color;
-      max-width: 60rem;
+		.caption {
+			font-size: 1.5rem;
+			color: $color;
+			max-width: 60rem;
+		}
 
-    }
+		.read-more {
+			color: $icon_color;
+			margin-top: 0.3rem;
+			cursor: pointer;
+			font-size: 1.5rem;
 
-    .read-more {
-      color: $icon_color;
-      margin-top: 0.3rem;
-      cursor: pointer;
-      font-size: 1.5rem;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+		.text {
+			font-size: 1.4rem;
 
-    .text {
-      font-size: 1.4rem;
+			.link-text {
+				font-size: 1.2rem;
+				text-decoration: underline;
+				letter-spacing: 0.05rem;
+				padding-top: 0.3rem;
+			}
+		}
 
-      .link-text {
-        font-size: 1.2rem;
-        text-decoration: underline;
-        letter-spacing: 0.05rem;
-        padding-top: 0.3rem;
-      }
-    }
+		.link-text {
+			font-size: 1.2rem;
+			text-decoration: underline;
+			letter-spacing: 0.05rem;
+			padding-top: 0.3rem;
+		}
 
-    .link-text {
-      font-size: 1.2rem;
-      text-decoration: underline;
-      letter-spacing: 0.05rem;
-      padding-top: 0.3rem;
-    }
+		// .right-align{
+		// 	padding-left: 3.5rem;
+		// }
+		.row {
+			flex-wrap: nowrap;
+		}
 
-    // .right-align{
-    // 	padding-left: 3.5rem;
-    // }
-    .row {
-      flex-wrap: nowrap;
-    }
+		.row {
+			flex-wrap: nowrap;
+		}
 
-    .row {
-      flex-wrap: nowrap;
-    }
-
-    .btn-label {
-      margin: 0rem 0rem 1rem 0rem;
-      padding: 0.5rem 1rem;
-      border-radius: 2.25rem;
-      background: $gradient_main;
-      color: $light;
-      font-size: 1.08rem;
-      font-weight: $weight_bold;
-      text-align: center;
-      text-transform: uppercase;
-    }
-  }
+		.btn-label {
+			margin: 0rem 0rem 1rem 0rem;
+			padding: 0.5rem 1rem;
+			border-radius: 2.25rem;
+			background: $gradient_main;
+			color: $light;
+			font-size: 1.08rem;
+			font-weight: $weight_bold;
+			text-align: center;
+			text-transform: uppercase;
+		}
+	}
 }
 
 @include theme(white-theme, $light, $main_darker, $menu_hover, $screen_dark_10);
