@@ -212,7 +212,7 @@ export class PageSmartAssistComponent implements OnInit {
 			this.intelligentScreen.readingOrBrowsingTime = responses[6];
 			console.log('PageSmartAssistComponent.Promise.IntelligentScreen()', responses, this.intelligentScreen);
 			if (!(this.intelligentScreen.isIntelligentScreenVisible &&
-				this.intelligentSecurity.isIntelligentSecuritySupported)) {
+				this.smartAssistCapability.isIntelligentScreenSupported)) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'screen')
 			}
 		}).catch(error => {
