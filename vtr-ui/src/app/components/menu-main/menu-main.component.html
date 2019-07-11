@@ -20,7 +20,7 @@
 
 			<img *ngIf="isGamingHome" src="../../../assets/images/gaming/gaming-logo-small.png" alt="L" />
 
-			<a 
+			<a
 			 id="menu-main-lnk-gaming-logo"
 			 attr.aria-label="menu-main-lnk-gaming-logo"
 			 *ngIf="!isGamingHome" vtrMetrics routerLinkActive="link-active" [routerLinkActiveOptions]="items[0].routerLinkActiveOptions"
@@ -38,7 +38,10 @@
 			</span>
 			<vtr-spinner *ngIf="!(appVersion || deviceModel)"> </vtr-spinner>
 			<span *ngIf="deviceModel">
-				<div class="device-type">{{deviceModel}}</div>
+				<div class="device-type">
+					<span>{{deviceModel}}</span>
+					<vtr-ui-header-warranty [pageParent]="items[0].metricsParent"></vtr-ui-header-warranty>
+				</div>
 			</span>
 
 		</div>
@@ -57,7 +60,7 @@
 		<div class="collapse navbar-collapse"
 			#menuTarget
 			[ngClass]="{'show':showMenu}">
-			<ul class="navbar-nav ml-auto" *ngIf="loadMenuItem.firstRunDate?.length">
+			<ul class="navbar-nav ml-auto" *ngIf="loadMenuItem?.firstRunDate?.length || !deviceService.isShellAvailable">
 				<ng-container *ngFor="let item of items; let i=index">
 					<li *ngIf="item.subitems.length===0&&item.id!=='user'&&showItem(item)"
 						class="nav-item">
@@ -184,7 +187,7 @@
 							</div>
 						</a>
 						<div class="dropdown-menu {{item.id}} dropdown-menu-id"
-							id="navbarDropdownMenu"							
+							id="navbarDropdownMenu"
 							aria-labelledby="navbarDropdown">
 							<div class="dropdown-item"
 								*ngIf="!deviceService.isArm">{{'lenovoId.helloUser' | translate:{firstName:firstName} }}

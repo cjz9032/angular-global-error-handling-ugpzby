@@ -22,6 +22,7 @@ import { VantageShellService } from '../../../services/vantage-shell/vantage-she
 import { UserService } from '../../../services/user/user.service';
 import { QA } from 'src/app/data-models/qa/qa.model';
 import { AndroidService } from 'src/app/services/android/android.service';
+import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -66,11 +67,15 @@ export class PageDashboardComponent implements OnInit {
 		private translate: TranslateService,
 		vantageShellService: VantageShellService,
 		public androidService: AndroidService,
-		private sanitizer: DomSanitizer
+		private sanitizer: DomSanitizer,
+		private securityAdvisorMockService: SecurityAdvisorMockService,
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
+		if (!this.securityAdvisor) {
+			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
+		}
 
 		this.setDefaultSystemStatus();
 
@@ -425,7 +430,7 @@ export class PageDashboardComponent implements OnInit {
 		});
 
 		// system update
-		this.dashboardService.getRecentUpdateInfo().then(value => {
+		this.dashboardService.getRecentUpdateInfo().subscribe(value => {
 			if (value) {
 				const systemUpdate = this.systemStatus[3];
 				const diffInDays = this.systemUpdateService.dateDiffInDays( value.lastupdate);

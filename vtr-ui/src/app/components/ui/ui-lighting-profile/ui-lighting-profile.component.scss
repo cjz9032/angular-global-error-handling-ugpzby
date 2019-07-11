@@ -1,4 +1,12 @@
 @import "../../../app.theme.scss";
+.one-panel{
+	@media #{$mediaquery_X35} {
+		margin-bottom: 80rem;
+	  }
+	  @media #{$mediaquery_X36} {
+		margin-bottom: 30rem;
+	  }
+}
 
 .ui-lighting-profile {
   border-radius: $border_radius;

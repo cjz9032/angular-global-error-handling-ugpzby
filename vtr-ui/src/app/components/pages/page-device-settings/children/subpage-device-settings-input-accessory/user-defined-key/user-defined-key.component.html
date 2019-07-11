@@ -65,10 +65,11 @@
 									novalidate
 									(ngSubmit)="udkSubmit(2)">
 									<div class="row no-gutters">
-										<div class="col-12">
-											<textarea [(ngModel)]="url"
+										<div class="input-group mt-3">
+												<label>{{'device.deviceSettings.inputAccessories.userDefinedKey.website.url' | translate}}</label>
+											<textarea class="form-control" [(ngModel)]="url"
 												name="url"
-												placeholder="{{'device.deviceSettings.inputAccessories.userDefinedKey.website.url' | translate}}"
+											
 												required
 												[pattern]="hyperLinkPatterns"></textarea>
 										</div>
@@ -101,11 +102,12 @@
 									novalidate
 									(ngSubmit)="udkSubmit(3)">
 									<div class="row no-gutters">
-										<div class="col-12">
-											<textarea [(ngModel)]="description"
+										<div class="input-group mt-3">
+												<label>{{'device.deviceSettings.inputAccessories.userDefinedKey.enterText.title' | translate}}</label>
+											<textarea class="form-control" [(ngModel)]="description"
 												name="description"
 												required
-												placeholder="{{'device.deviceSettings.inputAccessories.userDefinedKey.enterText.title' | translate}}"
+												
 												[pattern]="enterTextPatterns"></textarea>
 										</div>
 										<div class="col-12">
