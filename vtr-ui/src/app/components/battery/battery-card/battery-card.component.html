@@ -62,26 +62,11 @@
 					[src]=" '/assets/icons/battery-conditions/ac_error.svg'" />
 			</div>
 			<div class='col pt-2'>
-				<span class="battery-conditions-title"
-					*ngIf="batteryConditionNote?.title">
-					{{batteryConditionNote.title | translate}}
-				</span>
-				<span class="battery-conditions-description"
-					*ngIf="batteryConditionNote?.description.length > 0">
-					{{batteryConditionNote.description | translate}}
-				</span>
-				<span class="battery-conditions-title"
-					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation">
-					{{percentageLimitation}}%
-				</span>
-				<span class="battery-conditions-title"
-					*ngIf="batteryConditionNote?.description1.length > 0">
-					{{batteryConditionNote.description1 | translate}}
-				</span>
-				<span class="battery-conditions-description"
-					*ngIf="batteryConditionNote?.description2.length > 0">
-					{{batteryConditionNote.description2 | translate}}
-				</span>
+				<span *ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation"
+					class="battery-conditions-tips"
+					[innerHTML]="batteryConditionNote | translate:param2"></span>
+				<span class="battery-conditions-tips"
+					[innerHTML]="batteryConditionNote | translate"></span>
 			</div>
 
 		</div>
@@ -89,36 +74,8 @@
 			*ngIf="chargeThresholdInfo?.isOn">
 			<div class="row">
 				<p>
-					<span style="font-weight: bold">
-						{{'device.deviceSettings.batteryGauge.thresholdNote.note'  | translate}}
-					</span>
-					<span>
-						{{'device.deviceSettings.batteryGauge.thresholdNote.note1'  | translate}}
-						{{chargeThresholdInfo.stopValue}}%
-					</span>
+					<span [innerHTML]="'device.deviceSettings.batteryGauge.thresholdNote' | translate:param1"></span>
 				</p>
-				<!-- TODO: uncomment in dual battery implementation story -->
-
-				<!-- <span>
-					{{'device.deviceSettings.batteryGauge.thresholdNote.note1'  | translate}}
-					{{'device.deviceSettings.batteryGauge.thresholdNote.note3'  | translate}}
-				</span>
-				<span *ngIf="chargeThresholdInfo.length>1">{{chargeThresholdBatteries[0]}}</span>
-				<span>
-					{{'device.deviceSettings.batteryGauge.thresholdNote.note2'  | translate}}
-					{{chargeThresholdInfo[chargeThresholdBatteries[0]-1].stopValue}}%
-				</span>
-				<span *ngIf="chargeThresholdBatteries.length>1">
-					{{'device.deviceSettings.batteryGauge.thresholdNote.note4'  | translate}}
-					{{'device.deviceSettings.batteryGauge.thresholdNote.note3'  | translate}}
-					{{chargeThresholdBatteries[1]}}
-					<span>
-						{{'device.deviceSettings.batteryGauge.thresholdNote.note2'  | translate}}{{chargeThresholdInfo[chargeThresholdBatteries[1]-1].stopValue}}%
-					</span>
-				</span> -->
-				<!-- <a href="javascript:void()">
-						{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
-					</a> -->
 			</div>
 		</div>
 
