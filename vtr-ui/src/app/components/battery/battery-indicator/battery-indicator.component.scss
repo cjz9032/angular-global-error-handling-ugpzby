@@ -119,7 +119,12 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 			border: 0.2rem solid var(--border-color);
 			border-radius: 0.3rem;
 			left: -1rem;
-
+			@media #{$medium-screen} {
+				left: -2.2rem;
+			}
+			@media #{$mediaquery_X4} {
+				left: -1.6rem;
+			}
 			/* battery notch */
 			&:after {
 				position: absolute;
@@ -141,7 +146,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 
 				.fill {
 					background: var(--acid-fill-gradient);
-					width: var(--acid-width);
+					width: var(--acid-width);		
 					z-index: 4;
 					position: absolute;
 					height: calc(100% - 0.8rem);

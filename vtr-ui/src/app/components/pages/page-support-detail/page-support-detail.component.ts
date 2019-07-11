@@ -31,7 +31,8 @@ export class PageSupportDetailComponent implements OnInit {
 	constructor(public qaService: QaService,
 		private translate: TranslateService,
 		private activateRoute: ActivatedRoute) {
-
+		
+		/*		
 		qaService.setTranslationService(this.translate);
 		//initialize onchange lang for support page: sahinul, 24June2019 VAN-5534
 		qaService.setCurrentLangTranslations();
@@ -53,13 +54,17 @@ export class PageSupportDetailComponent implements OnInit {
 				console.log("already translated");
 			}
 		});
-
+		*/
+		
 		/*PAGE TITLE : sahinul, 24June2019 VAN-5534 */
 		this.title = this.translate.instant(qaService.title);
 		this.translate.stream(this.title).subscribe((value) => {
 			this.title = value;
 		});  
 		//console.log('sahinul page-support',this.title,qaService.title);   
+
+		this.qaService.getQATranslation(translate);//VAN-5872, server switch feature
+		//this.title = qaService.title;
 
 		this.activateRoute.params.subscribe((params) => {
 			this.qa = this.qaService.getById(parseInt(params['id']));
@@ -68,6 +73,11 @@ export class PageSupportDetailComponent implements OnInit {
 
 
 	ngOnInit() {
+	}
+
+	//VAN-5872, server switch feature
+	ngOnDestroy() {
+		this.qaService.destroyChangeSubscribed();
 	}
 
 }

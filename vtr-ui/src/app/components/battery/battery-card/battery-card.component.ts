@@ -24,14 +24,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 	styleUrls: ['./battery-card.component.scss']
 })
 export class BatteryCardComponent implements OnInit, OnDestroy {
-	constructor(
-		private modalService: NgbModal,
-		private batteryService: BatteryDetailService,
-		private powerService: PowerService,
-		public shellServices: VantageShellService,
-		private commonService: CommonService,
-		private cd: ChangeDetectorRef) {
-	}
+
 	batteryInfo: BatteryDetail[];
 	batteryGauge: BatteryGaugeDetail;
 	batteryCardTimer: any;
@@ -55,6 +48,15 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	public isLoading = true;
 
 	notificationSubscription: Subscription;
+
+	constructor(
+		private modalService: NgbModal,
+		private batteryService: BatteryDetailService,
+		private powerService: PowerService,
+		public shellServices: VantageShellService,
+		private commonService: CommonService,
+		private cd: ChangeDetectorRef) {
+	}
 
 	ngOnInit() {
 		this.isLoading = true;

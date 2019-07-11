@@ -17,21 +17,21 @@
 									<div class="media-body pb-0 mb-0 small pl-3">
 										<div class="d-flex justify-content-between align-items-center w-100"
 											[ngClass]="{collapsible: item.isCollapsible}">
-											<div class="update-title"
+											<div class="update-title" 
 												[innerHTML]="item.header | translate | sanitize : 'html' "></div>
 												<vtr-ui-gaming-driver-popup *ngIf="item.isCollapsible" [showMePartially]="item.isDriverPopup"
 													[popupText]="item.driverPopupText" (driverpopval)="onClosed(item)"></vtr-ui-gaming-driver-popup>
 												
-											<vtr-ui-gaming-collapsible-container [options]="options"
+											<vtr-ui-gaming-collapsible-container id = "{{item.id}}" attr.aria-label = "{{item.ariaLabel}}" [options]="options"
 												*ngIf="item.isCollapsible" (change)="optionChanged($event,item)"
 												(showDropDown)="showDropDown.emit(item)">
 											</vtr-ui-gaming-collapsible-container>
-											<a vtrMetrics [metricsItem]="item.header | translate "
+											<a id = "{{item.id}}" attr.aria-label = "{{item.ariaLabel}}" vtrMetrics [metricsItem]="item.header | translate "
 												metricsEvent="featureClick" (click)="navigateToLink(item)"
 												*ngIf="item.isCustomizable" class="customizable">
 												<i class="icon icon-gear"></i>
 											</a>
-											<a href="javascript:void();" *ngIf="item.isSwitchVisible"
+											<a id = "{{item.id}}" attr.aria-label = "{{item.ariaLabel}}" href="javascript:void();" *ngIf="item.isSwitchVisible"
 												class="d-flex no-pointer">
 												<!-- <img class="off-state" src="../../../../assets/images/off-state.png"/> -->
 												<vtr-ui-switch-onoff [name]="item.type" [name]="item.name"

@@ -1,22 +1,22 @@
 @import "../../../app.theme.scss";
 
 .vtr-oled-power-settings {
-	p.caption {
-		font-size: 1.5rem;
-		margin-left:2rem !important;
-	}
-	.dropdown {
-		margin-top: 2.5rem;
-		section {
-			margin-bottom: 3rem;
-			padding: 0 2rem 0 0;
-			h5 {
-				font-size: 1.5rem;
-				font-weight: 600;
-				color: $main_shade;
-				margin-bottom: 3rem;
-				padding-left: 0.3rem;
-			}
-		}
-	}
+  p.caption {
+    font-size: 1.5rem;
+    margin-left: 0.5rem !important;
+  }
+  .dropdown {
+    margin-top: 2.5rem;
+    section {
+      margin-bottom: 3rem;
+      padding: 0 2rem 0 0;
+      h5 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $main_shade;
+        margin-bottom: 3rem;
+        padding-left: 0.3rem;
+      }
+    }
+  }
 }

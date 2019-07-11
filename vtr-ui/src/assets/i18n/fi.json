@@ -891,7 +891,8 @@
                             "unit2": "minuuttia",
                             "unit3": "aamupäivä/iltapäivä"
                         }
-                    }
+                    },
+                    "warningtip": "Please select at least one day."
                 }
             },
             "audio": {

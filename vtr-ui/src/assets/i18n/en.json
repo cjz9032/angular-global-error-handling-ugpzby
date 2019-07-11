@@ -738,6 +738,7 @@
 				"jumpto": {
 					"title": "JUMP TO SETTINGS",
 					"battery": "Battery",
+					"smartStandby": "Smart Standby",
 					"power": "Power",
 					"cooling": "Intelligent Cooling",
 					"other": "Other"
@@ -830,7 +831,7 @@
 				"smartStandby": {
 					"title": "Smart Standby",
 					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
 					"timer": {
 						"heading": "Set time when you typically use this computer",
 						"subHeading1": "start",
@@ -842,7 +843,8 @@
 							"unit2": "Minutes",
 							"unit3": "AM/PM"
 						}
-					}
+					},
+					"warningtip":"Please select at least one day."
 				},
 				"batterySettings": {
 					"title": "Battery settings",
@@ -1199,7 +1201,7 @@
 					"title": "Keep My Display",
 					"caption": "Keep my display when I am reading or browsing.",
 					"displaySlider": {
-						"title": "Minutes Before display dims when browsing",
+						"title": "Minutes before display dims when browsing",
 						"startTime": "0 minutes",
 						"endTime": "60 minutes"
 					}
