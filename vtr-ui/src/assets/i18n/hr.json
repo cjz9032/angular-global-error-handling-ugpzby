@@ -891,7 +891,8 @@
                             "unit2": "Minuta",
                             "unit3": "PRIJEPODNE / POSLIJEPODNE"
                         }
-                    }
+                    },
+                    "warningtip": "Please select at least one day."
                 }
             },
             "audio": {
