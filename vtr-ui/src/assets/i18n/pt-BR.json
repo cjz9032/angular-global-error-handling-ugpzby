@@ -891,7 +891,8 @@
                             "unit2": "Minutos",
                             "unit3": "MANHÃ/TARDE"
                         }
-                    }
+                    },
+                    "warningtip": "Please select at least one day."
                 }
             },
             "audio": {

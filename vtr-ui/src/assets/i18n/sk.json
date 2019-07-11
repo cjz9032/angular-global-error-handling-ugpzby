@@ -891,7 +891,8 @@
                             "unit2": "Minúty",
                             "unit3": "Dop./pop."
                         }
-                    }
+                    },
+                    "warningtip": "Please select at least one day."
                 }
             },
             "audio": {
