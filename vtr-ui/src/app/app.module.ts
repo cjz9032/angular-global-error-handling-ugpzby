@@ -144,7 +144,7 @@ import { ModalLicenseComponent } from './components/modal/modal-license/modal-li
 import { SpinnerComponent } from './components/common/spinner/spinner.component';
 import { PagePrivacyComponent } from './components/pages/page-privacy/page-privacy.component';
 
-//GAMING
+// GAMING
 import { PageDeviceGamingComponent } from './components/pages/page-device-gaming/page-device-gaming.component';
 import { WidgetLegionEdgeComponent } from './components/widgets/widget-legion-edge/widget-legion-edge.component';
 import { WidgetSystemToolsComponent } from './components/widgets/widget-system-tools/widget-system-tools.component';
@@ -243,6 +243,7 @@ import { DownloadFailedModalComponent } from './components/pages/page-smart-assi
 import { ModalErrorMessageComponent } from './components/modal/modal-error-message/modal-error-message.component';
 import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component';
 import { UserDefinedKeyComponent } from './components/pages/page-device-settings/children/subpage-device-settings-input-accessory/user-defined-key/user-defined-key.component';
+import { PageDashboardAndroidComponent } from './components/pages/page-dashboard-android/page-dashboard-android.component';
 import { UiHeaderWarrantyComponent } from './components/ui/ui-header-warranty/ui-header-warranty.component';
 
 library.add(fas);
@@ -437,7 +438,8 @@ library.add(fal);
 		DownloadFailedModalComponent,
 		ModalErrorMessageComponent,
 		ModalServerSwitchComponent,
-		UserDefinedKeyComponent
+		UserDefinedKeyComponent,
+		PageDashboardAndroidComponent
 	],
 	imports: [
 		BrowserModule,

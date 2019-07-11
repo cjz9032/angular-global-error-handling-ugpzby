@@ -891,7 +891,8 @@
                             "unit2": "Хвилини",
                             "unit3": "ранку/вечора"
                         }
-                    }
+                    },
+                    "warningtip": "Please select at least one day."
                 }
             },
             "audio": {

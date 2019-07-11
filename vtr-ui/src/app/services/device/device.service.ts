@@ -19,6 +19,7 @@ export class DeviceService {
 	private microphone: any;
 	public isShellAvailable = false;
 	public isArm = false;
+	public isAndroid = false;
 	public is64bit = true;
 	public showPrivacy = true;
 	public isGaming = false;
@@ -79,6 +80,8 @@ export class DeviceService {
 				this.getMachineInfo()
 					.then((machineInfo: any) => {
 						this.isArm = this.androidService.isAndroid || machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
+						this.isAndroid = this.androidService.isAndroid;
+
 					}).catch(error => {
 						console.error('initArm', error);
 					});

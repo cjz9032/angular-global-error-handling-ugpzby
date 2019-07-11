@@ -891,7 +891,8 @@
                             "unit2": "Perc",
                             "unit3": "DÉLELŐTT/DÉLUTÁN"
                         }
-                    }
+                    },
+                    "warningtip": "Please select at least one day."
                 }
             },
             "audio": {
