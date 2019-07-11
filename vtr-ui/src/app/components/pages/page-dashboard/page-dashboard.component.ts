@@ -88,9 +88,9 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.feedbackButtonText = this.submit;
 		});
 		// Evaluate the translations for QA on language Change
-		//this.qaService.setTranslationService(this.translate);
-		//this.qaService.setCurrentLangTranslations();
-		this.qaService.getQATranslation(translate);//VAN-5872, server switch feature
+		// this.qaService.setTranslationService(this.translate);
+		// this.qaService.setCurrentLangTranslations();
+		this.qaService.getQATranslation(translate); // VAN-5872, server switch feature
 
 	}
 
@@ -200,6 +200,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 			}
 		}
+
+		this.qaService.destroyChangeSubscribed();
 	}
 
 	onFeedbackModal() {
@@ -413,7 +415,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				}
 				const disk = this.systemStatus[1];
 				const totalDisk = value.disk.total;
-				const usedDisk  = value.disk.used;
+				const usedDisk = value.disk.used;
 				this.translate.stream('dashboard.systemStatus.memory.detail.of').subscribe((re) => {
 					memory.detail = `${this.commonService.formatBytes(usedRam, 1)} ${re} ${this.commonService.formatBytes(totalRam, 1)}`;
 					disk.detail = `${this.commonService.formatBytes(usedDisk, 1)} ${re} ${this.commonService.formatBytes(totalDisk, 1)}`;
@@ -456,7 +458,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		this.dashboardService.getRecentUpdateInfo().subscribe(value => {
 			if (value) {
 				const systemUpdate = this.systemStatus[3];
-				const diffInDays = this.systemUpdateService.dateDiffInDays( value.lastupdate);
+				const diffInDays = this.systemUpdateService.dateDiffInDays(value.lastupdate);
 				if (value.status === 1) {
 					if (diffInDays > 30) {
 						systemUpdate.status = 1;
@@ -485,10 +487,4 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			}
 		}
 	}
-
-	//VAN-5872, server switch feature
-	ngOnDestroy() {
-		this.qaService.destroyChangeSubscribed();
-	}
-
 }
