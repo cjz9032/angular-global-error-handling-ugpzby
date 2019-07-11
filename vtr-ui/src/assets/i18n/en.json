@@ -843,7 +843,8 @@
 							"unit2": "Minutes",
 							"unit3": "AM/PM"
 						}
-					}
+					},
+					"warningtip":"Please select at least one day."
 				},
 				"batterySettings": {
 					"title": "Battery settings",

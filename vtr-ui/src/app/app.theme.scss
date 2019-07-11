@@ -265,6 +265,7 @@ $grey_light: #e6eaeb;
 /*media screen sizes for gaming*/
 $only-small-screen: "only screen and (max-width : 575px)";
 $small-screen: "only screen and (max-width : 767px)";
+$between-small-medium-screen: "only screen and (min-width: 400px) and (max-width: 768px)";
 $medium-screen: "only screen and (min-width : 768px) and (max-width : 992px)";
 $below-large-screen: "only screen and (min-width : 993px) and (max-width : 1199px)";
 $large-screen-1: "only screen and (min-width : 1200px) and (max-width : 1366px)";

@@ -9,7 +9,9 @@
 			padding: 0 1rem;
 		}
 		.vtr-row-switch {
-			padding-right: 3rem;
+      // padding-right: 3rem;
+      padding-right: 0;
+      display: flex;
 			> div.right-align {
 				float: right;
 				::ng-deep span.switch {

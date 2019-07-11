@@ -141,8 +141,8 @@
 						box-shadow: $drop_shadow;
 						margin-top: -1rem;
 						padding: 2.5rem 1.5rem;
-						transform: translateX(-50%);
-						left: 50%;
+						transform: translateX(0%);
+						//left: 50%;
 						// min-width: 22.5rem;
 
 						&.user {
@@ -309,7 +309,7 @@
 		}
 
 		.navbar-toggler {
-			display: none;
+			//display: none;
 			font-size: 5rem;
 			color: $shade_light;
 			@media #{$mediaquery_xl}{

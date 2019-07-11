@@ -143,4 +143,6 @@ export enum LocalStorageKey {
 	ServerSwitchKey = '[LocalStorageKey] ServerSwitch',
 	memOCFeatureStatus = '[LocalStorageKey] MemOCFeatureStatus',
 	hybridModeFeatureStatus = '[LocalStorageKey] HybridModeFeatureStatus',
+
+	LastSystemUpdateStatus = '[LocalStorageKey] SystemUpdateStatus'
 }
