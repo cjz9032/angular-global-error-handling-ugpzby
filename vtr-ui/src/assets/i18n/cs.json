@@ -891,7 +891,8 @@
                             "unit2": "Minut",
                             "unit3": "dop/odp"
                         }
-                    }
+                    },
+                    "warningtip": "Please select at least one day."
                 }
             },
             "audio": {

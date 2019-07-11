@@ -891,7 +891,8 @@
                             "unit2": "Minuti",
                             "unit3": "Pre podne/po podne"
                         }
-                    }
+                    },
+                    "warningtip": "Please select at least one day."
                 }
             },
             "audio": {

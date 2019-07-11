@@ -891,7 +891,8 @@
                             "unit2": "دقائق",
                             "unit3": "ص/م"
                         }
-                    }
+                    },
+                    "warningtip": "Please select at least one day."
                 }
             },
             "audio": {

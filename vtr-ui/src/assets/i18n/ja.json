@@ -891,7 +891,8 @@
                             "unit2": "分",
                             "unit3": "午前/午後"
                         }
-                    }
+                    },
+                    "warningtip": "Please select at least one day."
                 }
             },
             "audio": {

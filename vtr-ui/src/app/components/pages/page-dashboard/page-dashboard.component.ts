@@ -88,8 +88,9 @@ export class PageDashboardComponent implements OnInit, DoCheck {
 			this.feedbackButtonText = this.submit;
 		});
 		// Evaluate the translations for QA on language Change
-		this.qaService.setTranslationService(this.translate);
-		this.qaService.setCurrentLangTranslations();
+		//this.qaService.setTranslationService(this.translate);
+		//this.qaService.setCurrentLangTranslations();
+		this.qaService.getQATranslation(translate);//VAN-5872, server switch feature
 
 	}
 
@@ -475,6 +476,11 @@ export class PageDashboardComponent implements OnInit, DoCheck {
 					break;
 			}
 		}
+	}
+
+	//VAN-5872, server switch feature
+	ngOnDestroy() {
+		this.qaService.destroyChangeSubscribed();
 	}
 
 }

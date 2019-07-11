@@ -891,7 +891,8 @@
                             "unit2": "Minuten",
                             "unit3": "vormittags/nachmittags"
                         }
-                    }
+                    },
+                    "warningtip": "Please select at least one day."
                 }
             },
             "audio": {
