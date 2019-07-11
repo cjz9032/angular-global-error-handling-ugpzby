@@ -137,6 +137,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				device: this.account.device,
 				allDevice: this.account.allDevice,
 			});
+			if (this.account.lenovoIdLoggedIn && this.account.state !== CHSAccountState.local) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+			}
 		}
 		const cacheNotifications = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityNotifications);
 		if (cacheNotifications) {
@@ -163,6 +166,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 					device: this.account.device,
 					allDevice: this.account.allDevice,
 				});
+				if (this.account.lenovoIdLoggedIn && this.account.state !== CHSAccountState.local) {
+					this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+				}
 			}
 			if (chs.overview.allDevices) {
 				this.allDevicesInfo = new HomeSecurityAllDevice(chs.overview);
@@ -189,6 +195,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	}
 
 	ngAfterViewInit(): void {
+		if (this.account.lenovoIdLoggedIn && this.account.state !== CHSAccountState.local) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+		}
 		this.showWelcomeDialog();
 	}
 
@@ -233,8 +242,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		if (showPluginMissingDialog === 'unknow') {
 			setTimeout(this.showWelcomeDialog.bind(this), 16);
 		} else if (showPluginMissingDialog === 'notShow') {
-			const welcomeComplete = this.chs.account.state !== CHSAccountState.local
-			|| this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, false) === true;
+			const welcomeComplete = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, false) === true;
 			const showWelcome = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, 0);
 			if (welcomeComplete) {
 				this.permission.getSystemPermissionShowed().then((response: boolean) => {

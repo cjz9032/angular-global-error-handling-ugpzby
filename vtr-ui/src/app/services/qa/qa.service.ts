@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { QA } from '../../data-models/qa/qa.model';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { isArray } from 'util';
 
 @Injectable({
 	providedIn: 'root'
@@ -863,6 +864,34 @@ export class QaService {
 		} catch (e) {
 			console.log('QA Page title translation : already translated');
 		}
+
+	}
+
+	//VAN-5872, server switch feature
+	getQATranslation(translateQA: TranslateService) {
+
+		translateQA.getTranslation(translateQA.currentLang);
+		translateQA.stream(this.title).subscribe((value) => {
+			this.title = value;
+		});
+
+		this.qas.forEach(qa => {
+			translateQA.stream(qa.title).subscribe((value) => {
+				qa.title = value;
+			});
+			console.log('@sahinul in getQATranslation', translateQA.currentLang, qa.title);
+
+			translateQA.stream(qa.description).subscribe((value) => {
+				qa.description = value;
+			});
+			console.log('@sahinul in getQATranslation keys', translateQA.currentLang, qa.keys);
+
+			if (isArray(qa.keys)) {
+				translateQA.stream(qa.keys).subscribe((translation: [string]) => {
+					qa.keys = translation;
+				}); 
+			}
+		});
 
 	}
 }
