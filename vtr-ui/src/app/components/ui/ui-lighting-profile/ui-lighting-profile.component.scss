@@ -77,12 +77,12 @@
       // }
       @media #{$small-screen}{
         justify-content: flex-end;
-        max-width: 100%;
+        width: 100%;
         align-items: flex-end !important;
       }
       @media #{$below-large-screen}{
         justify-content: flex-end;
-        max-width: 100%;
+        width: 100%;
         align-items: flex-end !important;
       }
       .img-responsive {
