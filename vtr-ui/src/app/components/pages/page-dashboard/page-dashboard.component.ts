@@ -1,4 +1,4 @@
-import { Component, OnInit, SecurityContext, DoCheck } from '@angular/core';
+import { Component, OnInit, SecurityContext, DoCheck, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -31,7 +31,7 @@ import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.se
 	styleUrls: ['./page-dashboard.component.scss'],
 	providers: [NgbModalConfig, NgbModal]
 })
-export class PageDashboardComponent implements OnInit, DoCheck {
+export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	firstName = 'User';
 	submit = this.translate.instant('dashboard.feedback.form.button');
 	feedbackButtonText = this.submit;
@@ -190,6 +190,14 @@ export class PageDashboardComponent implements OnInit, DoCheck {
 		if (lastAction !== this.protocalAction) {
 			if (this.protocalAction.toLowerCase() === 'lenovoid') {
 				this.lenovoIdDialogService.openLenovoIdDialog();
+			}
+		}
+	}
+
+	ngOnDestroy() {
+		if (this.router.routerState.snapshot.url.indexOf('security') === -1 || this.router.routerState.snapshot.url.indexOf('dashboard') === -1) {
+			if (this.securityAdvisor.wifiSecurity) {
+				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 			}
 		}
 	}
