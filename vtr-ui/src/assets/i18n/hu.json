@@ -1105,7 +1105,7 @@
                     "title": "Felhasználó által megadott billentyű",
                     "caption": "A csillag ikonnal rendelkező billentyűhöz tetszőleges funkciót rendelhet a felhasználó",
                     "dropDown": {
-                        "title": "Művelet felhasználó által megadott billentyűje",
+                        "title": "Felhasználó által megadott billentyűhöz tartozó művelet",
                         "note": "Megjegyzés: Itt adhat meg általánosan megadott kulcsot, pl. e-mail-címet vagy levelezési címet. A Lenovo azt javasolja, hogy soha ne adjon meg itt jelszavakat vagy bizalmas adatokat.",
                         "options": {
                             "option1": "Válasszon",

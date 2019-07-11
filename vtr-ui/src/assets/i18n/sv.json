@@ -1105,7 +1105,7 @@
                     "title": "Användardefinierad tangent",
                     "caption": "Med hjälp av tangenten med stjärnikonen kan du ställa in användardefinierade funktioner",
                     "dropDown": {
-                        "title": "Användardefinierad åtgärdstangent",
+                        "title": "Funktion användardefinierad tangent",
                         "note": "Obs! Detta kan användas för att ange tangenter som ofta används, till exempel e-postadresser eller postadresser. Lenovo rekommenderar att du aldrig använder den här funktionen för att lagra och ange lösenord eller annan privat information.",
                         "options": {
                             "option1": "Välj",

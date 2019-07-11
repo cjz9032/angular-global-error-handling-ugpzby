@@ -73,6 +73,7 @@
 									<div class="pt-4 text-center">
 										<button 
 											type="button"
+											[disabled]="!apsStatus"
 											class="btn btn-primary btn-block btn-lg battery-detail-button text-uppercase"
 											(click)="suspendNow()">
 											{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.button' | translate }}
