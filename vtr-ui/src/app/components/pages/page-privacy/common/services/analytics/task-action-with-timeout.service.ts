@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
-import { catchError, concatMap, debounceTime, map, take, timeout } from 'rxjs/operators';
+import { catchError, debounceTime, map, switchMap, take, timeout } from 'rxjs/operators';
 
 export enum TasksName {
 	scoreScanAction = 'scoreScanAction',
@@ -45,7 +45,7 @@ export class TaskActionWithTimeoutService {
 	taskTimeWatcher(taskName: TasksName, due = STANDART_TIMEOUT_FOR_TASK): Observable<{TaskDuration: number, TaskResult?: string}> {
 		return this.taskActionsStart$[taskName]
 			.pipe(
-				concatMap((startTime) => {
+				switchMap((startTime) => {
 					return this.taskActionsFinished$[taskName].pipe(
 						debounceTime(500),
 						map(() => ({TaskDuration: this.getTaskDuration(startTime)})),
