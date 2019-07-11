@@ -49,7 +49,7 @@ export class UiLightingProfileComponent implements OnInit {
 	public inHex2: any;
 	public applyBtnStatus1: String = 'apply';
 	public applyBtnStatus2: String = 'apply';
-	public showHideBrightnessSlider: boolean = false;
+	public showBrightnessSlider: boolean = false;
 	public showHideOverlay: boolean = false;
 	public showHideOverlaySide: boolean = false;
 	public selectedSingleColorOptionId: number;
@@ -391,7 +391,13 @@ export class UiLightingProfileComponent implements OnInit {
 				// }
 				this.profileRGBFeature = response.RGBfeature;
 				this.lightingCapabilities = response;
-				this.showHideBrightnessSlider = response.BrightAdjustLevel;
+				if (response.BrightAdjustLevel === 0) {
+					this.showBrightnessSlider = false;
+				}
+				else{
+					this.showBrightnessSlider = true;
+				}
+
 				// }
 				// if (response.LightPanelType.length > 0) {
 				if (LocalStorageKey.LightingCapabilities !== undefined) {
