@@ -80,7 +80,8 @@ export class PageDeviceGamingComponent implements OnInit {
 			this.getSystemInfo();
 			// this.getSecurityStatus();
 		}
-		if (LocalStorageKey.allGamingCapabilities === undefined) {
+		if (localStorage.getItem("AllGamingCapabilities") === null) {
+			console.log(`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  AllGamingCapabilities is null-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-`);
 			this.commonService.setLocalStorageValue(LocalStorageKey.allGamingCapabilities, false);
 		}
 		if (this.commonService.getLocalStorageValue(LocalStorageKey.allGamingCapabilities) === false) {
@@ -93,18 +94,9 @@ export class PageDeviceGamingComponent implements OnInit {
 				.catch((err) => {
 					console.log(`ERROR in appComponent getCapabilities()`, err);
 				});
-			//if (LocalStorageKey.allGamingCapabilities !== undefined) {
 			this.commonService.setLocalStorageValue(LocalStorageKey.allGamingCapabilities, true);
-			//}
-			//	this.allCapablitiyFlag = true;
 		}
-		// }
-		// else {
-		// 	this.commonService.setLocalStorageValue(LocalStorageKey.allGamingCapabilities, true);
-		// }
-
 		this.setDefaultCMSContent();
-
 		const queryOptions = {
 			Page: 'dashboard',
 			Lang: 'EN',

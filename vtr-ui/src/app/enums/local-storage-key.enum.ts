@@ -144,5 +144,6 @@ export enum LocalStorageKey {
 	memOCFeatureStatus = '[LocalStorageKey] MemOCFeatureStatus',
 	hybridModeFeatureStatus = '[LocalStorageKey] HybridModeFeatureStatus',
 	allGamingCapabilities = '[LocalStorageKey] AllGamingCapabilities',
+
 	LastSystemUpdateStatus = '[LocalStorageKey] SystemUpdateStatus'
 }
