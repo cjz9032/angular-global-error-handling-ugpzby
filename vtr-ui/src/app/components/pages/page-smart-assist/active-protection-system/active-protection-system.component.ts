@@ -194,13 +194,14 @@ export class ActiveProtectionSystemComponent implements OnInit {
 			case 1:
 				timeInSec = '60';
 				break;
-			case 1:
+			case 2:
 				timeInSec = '120';
 				break;
 			case 3:
 				timeInSec = '180';
 				break;
 		}
+		console.log(this.selectedSnoozeTime);
 		this.smartAssist
 			.sendSnoozeCommand(timeInSec)
 			.then(res => console.log('SNOOZE SUSPEND COMMAND --------------------------------- ', timeInSec, res));
