@@ -86,13 +86,17 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 		/* battery shadow/blur background */
 		.battery-shadow {
 			position: absolute;
-			width: 91%;
 			height: 12.5rem;
-			border: 1.2rem solid var(--border-color);
+
+			// left: 3.3%; // small
+			// width: 91.3%;
+
+			left: 2%; // big
+			width: 91%;
+			border: 0.8rem solid var(--border-color);
 			opacity: 1;
 			border-radius: 0.5rem;
 			filter: blur(0.3rem);
-			left: 3%;
 
 			/* battery notch */
 			&:after {
@@ -115,7 +119,12 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 			border: 0.2rem solid var(--border-color);
 			border-radius: 0.3rem;
 			left: -1rem;
-
+			@media #{$medium-screen} {
+				left: -2.2rem;
+			}
+			@media #{$mediaquery_X28} {
+				left: -1.6rem;
+			}
 			/* battery notch */
 			&:after {
 				position: absolute;
@@ -137,7 +146,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 
 				.fill {
 					background: var(--acid-fill-gradient);
-					width: var(--acid-width);
+					width: var(--acid-width);		
 					z-index: 4;
 					position: absolute;
 					height: calc(100% - 0.8rem);
@@ -158,16 +167,18 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 				.battery-error {
 					@extend .base-percentage-text;
 					font-size: 3rem;
-					color: $stop;
-					top: calc(33%);
+					// color: $stop;
+					top: calc(30%);
 
-					.voltage-incorrect {
+					.error-icon {
+						top: -0.8rem;
+						position: relative;
+					}
+					.no-battery-detected {
+						margin-left: 1rem;
 						font-size: 1.5rem;
 						position: relative;
-						top: -0.6rem;
-					}
-					.no-battery {
-						top: -0.2rem !important;
+						top: -0.8rem;
 					}
 				}
 

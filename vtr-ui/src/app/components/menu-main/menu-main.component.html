@@ -3,6 +3,8 @@
 		<div *ngIf="!deviceService.isGaming"
 			class="navbar-brand pt-0">
 			<a vtrMetrics
+				id="menu-main-lnk-l-logo"
+				attr.aria-label="menu-main-lnk-l-logo"
 				routerLinkActive="link-active"
 				[routerLinkActiveOptions]="items[0].routerLinkActiveOptions"
 				[metricsEvent]="items[0].metricsEvent"
@@ -18,7 +20,10 @@
 
 			<img *ngIf="isGamingHome" src="../../../assets/images/gaming/gaming-logo-small.png" alt="L" />
 
-			<a  *ngIf="!isGamingHome" vtrMetrics routerLinkActive="link-active" [routerLinkActiveOptions]="items[0].routerLinkActiveOptions"
+			<a
+			 id="menu-main-lnk-gaming-logo"
+			 attr.aria-label="menu-main-lnk-gaming-logo"
+			 *ngIf="!isGamingHome" vtrMetrics routerLinkActive="link-active" [routerLinkActiveOptions]="items[0].routerLinkActiveOptions"
 				[metricsEvent]="items[0].metricsEvent" [metricsParent]="items[0].metricsParent" [metricsItem]="items[0].metricsItem"
 				routerLink="/{{items.path}}">
 				<img  src="../../../assets/images/gaming/gaming-logo-small.png" alt="L" />
@@ -33,11 +38,17 @@
 			</span>
 			<vtr-spinner *ngIf="!(appVersion || deviceModel)"> </vtr-spinner>
 			<span *ngIf="deviceModel">
-				<div class="device-type">{{deviceModel}}</div>
+				<div class="device-type">
+					<span>{{deviceModel}}</span>
+					<vtr-ui-header-warranty [pageParent]="items[0].metricsParent"></vtr-ui-header-warranty>
+				</div>
 			</span>
 
 		</div>
-		<button class="navbar-toggler"
+		<button
+			id="menu-main-btn-navbar-toggler"
+			aria-label="menu-main-btn-navbar-toggler"
+			class="navbar-toggler"
 			type="button"
 			(click)="toggleMenu($event)">
 			<span class="navbar-toggler-icon">
@@ -49,12 +60,14 @@
 		<div class="collapse navbar-collapse"
 			#menuTarget
 			[ngClass]="{'show':showMenu}">
-			<ul class="navbar-nav ml-auto" *ngIf="loadMenuItem">
+			<ul class="navbar-nav ml-auto" *ngIf="loadMenuItem?.firstRunDate?.length || !deviceService.isShellAvailable">
 				<ng-container *ngFor="let item of items; let i=index">
 					<li *ngIf="item.subitems.length===0&&item.id!=='user'&&showItem(item)"
 						class="nav-item">
 						<a class="nav-link {{item.id}}"
 							vtrMetrics
+							id="menu-main-nav-lnk-{{item.id}}"
+							attr.aria-label="menu-main-nav-lnk-{{item.id}}"
 							[metricsEvent]="item.metricsEvent"
 							[metricsParent]="item.metricsParent"
 							[metricsItem]="item.metricsItem"
@@ -78,6 +91,8 @@
 						[ngClass]="{'active': isParentActive(item)}">
 						<a class="nav-link dropdown-toggle {{item.id}}"
 							vtrMetrics
+							id="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
+							attr.aria-label="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
 							[metricsEvent]="item.metricsEvent"
 							[metricsParent]="item.metricsParent"
 							[metricsItem]="item.metricsItem"
@@ -103,6 +118,8 @@
 							<span *ngFor="let subitem of item.subitems; let ii=index">
 								<a *ngIf="subitem.externallink"
 									vtrMetrics
+									id="menu-main-nav-lnk-dropdown-menu-external-{{item.id}}-{{ii}}"
+									attr.aria-label="menu-main-nav-lnk-dropdown-menu-external-{{item.id}}-{{ii}}"
 									routerLinkActive="link-active"
 									[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
 									[metricsEvent]="subitem.metricsEvent"
@@ -114,6 +131,8 @@
 									(click)="showMenu = false; openExternalLink(subitem.path)">{{subitem.label | translate}}</a>
 								<a *ngIf="!subitem.externallink && subitem.path==='support'"
 									vtrMetrics
+									id="menu-main-nav-lnk-dropdown-menu-support-{{item.id}}-{{ii}}"
+									attr.aria-label="menu-main-nav-lnk-dropdown-menu-support-{{item.id}}-{{ii}}"
 									routerLinkActive="link-active"
 									[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
 									[metricsEvent]="subitem.metricsEvent"
@@ -124,6 +143,8 @@
 									(click)="showMenu = false">{{subitem.label | translate}}</a>
 								<a *ngIf="!subitem.externallink  && subitem.path!=='support'"
 									vtrMetrics
+									id="menu-main-nav-lnk-dropdown-menu-{{item.id}}-{{ii}}"
+									attr.aria-label="menu-main-nav-lnk-dropdown-menu-{{item.id}}-{{ii}}"
 									routerLinkActive="link-active"
 									[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
 									[metricsEvent]="subitem.metricsEvent"
@@ -153,6 +174,7 @@
 
 						<a class="nav-link {{item.id}}"
 							id="navbarDropdown"
+							attr.aria-label="navbarDropdown"
 							*ngIf="userService.isLenovoIdSupported()"
 							[ngClass]="{'dropdown-toggle': true}"
 							role="button"
@@ -171,6 +193,8 @@
 								*ngIf="!deviceService.isArm">{{'lenovoId.helloUser' | translate:{firstName:firstName} }}
 							</div>
 							<a vtrMetrics
+								id="menu-main-lnk-open-preference"
+								attr.aria-label="menu-main-lnk-open-preference"
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
 								metricsItem="SettingsButton"
@@ -180,6 +204,8 @@
 								(click)="showMenu = false">{{ 'settings.preferenceSettings' | translate }}</a>
 							<a *ngIf="!deviceService.isArm && !userService.auth && !userService.starter"
 								vtrMetrics
+								id="menu-main-lnk-open-lenovoid-login"
+								attr.aria-label="menu-main-lnk-open-lenovoid-login"
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
 								metricsItem="LenovoIdSignInButton"
@@ -188,6 +214,8 @@
 								(click)="OpenLenovoId('NavigationLenovoAccount.Submenu'); showMenu = false">{{'lenovoId.login' | translate}}</a>
 							<a *ngIf="!deviceService.isArm && !userService.auth && userService.starter"
 								vtrMetrics
+								id="menu-main-lnk-open-lenovoid-unlock"
+								attr.aria-label="menu-main-lnk-open-lenovoid-unlock"
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
 								metricsItem="LenovoIdStarterIdButton"
@@ -196,6 +224,8 @@
 								(click)="OpenLenovoId('NavigationLenovoAccount.Submenu'); showMenu = false">{{'lenovoId.unlockExclusives' | translate}}</a>
 							<a *ngIf="!deviceService.isArm && userService.auth"
 								vtrMetrics
+								id="menu-main-lnk-user-logout"
+								attr.aria-label="menu-main-lnk-user-logout"
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
 								metricsItem="LenovoIdSignOutButton"

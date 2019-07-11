@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Ausblenden",
             "expand": "Erweitern",
-            "loader": "Fetching <br> Status"
+            "loader": "Abrufen des <br> Status",
+            "loading": "Wird geladen..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "Um die allgemeine Lebensdauer der Anzeige zu verlängern, wird auch empfohlen, die Taskleiste und andere Anzeigebereiche zu verdunkeln, die sich nicht häufig ändern."
                         ],
                         "reset": "Temperatur zurücksetzen",
-                        "tooltip": "Diese Funktion kann durch das gezielte Verdunkeln bestimmter Anzeigebereiche auch den Stromverbrauch verringern und die Akkulautzeit verlängern."
+                        "tooltip": "Diese Funktion kann durch das gezielte Verdunkeln bestimmter Anzeigebereiche auch den Stromverbrauch verringern und die Akkulautzeit verlängern.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Eingabe und Zubehör",
+                "subtitle": "Einstellungen für Eingabe und Zubehör",
+                "description": "Bei der Funktion \"Intelligente Sensorik\" von Lenovo werden verschiedene Sensoren auf Ihrem Computer kombiniert, um Ihre Aktivitäten zu analysieren und die Energieverwaltung optimal anzupassen",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Intelligente Tastatur",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Versteckte Tastaturfunktionen",
+                        "description": "Drücken Sie die Fn-Taste links unten auf Ihrer Tastatur gleichzeitig mit anderen Tasten, um die in der Tabelle weiter unten gezeigten Funktionen aufzurufen."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "Zoom-Funktion bei hochauflösenden Bildschirmen aktivieren",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "Energiesparmodus aktivieren",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "Bildschirm-Blickschutz ein-/ausschalten",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "zwischen Leistungsmodus und ruhigem Modus wechseln",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + Leertaste",
+                        "description": "Status der Tastaturhintergrundbeleuchtung ändern",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Benutzerdefinierte Taste",
+                    "caption": "Für die Taste mit dem Stern-Symbol können Sie eine benutzerdefinierte Funktion festlegen",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Aktion für benutzerdefinierte Taste",
+                        "note": "Hinweis: Mit dieser Funktion kann Text eingefügt werden, z. B. eine E-Mail-Adresse oder Postanschrift. Lenovo empfiehlt, diese Funktion niemals zum Speichern und Eingeben von Kennwörtern oder anderen vertraulichen Daten zu verwenden.",
+                        "options": {
+                            "option1": "Bitte auswählen",
+                            "option2": "Webseite öffnen",
+                            "option3": "Text eingeben"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "Empfohlene Updates",
         "optionalUpdates": "Optionale Updates",
         "ignoredUpdates": "Ignorierte Updates",
-        "successInstall": "Erfolgreiche Installation am",
-        "failedInstall": "Fehlgeschlagene Installation am",
+        "successInstall": "Installation erfolgreich: ",
+        "failedInstall": "Fehlgeschlagene Installation: ",
         "at": "um",
         "readMore": "Weiterlesen",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "Willkommen bei System Update.",
             "title": "Ein aktuelles System ist in gutem Zustand.",
-            "last": "Letztes Update",
-            "next": "Nächste Prüfung auf Updates geplant für",
+            "last": "Letzte Aktualisierung: ",
+            "next": "Nächste geplante Aktualisierung: ",
             "checkButton": "AUF UPDATES PRÜFEN",
             "checking": "Es wird nach Aktualisierungen gesucht",
             "downloading": "Herunterladen von Updates abgeschlossen",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "Der Systemaktualisierungsserver ist zurzeit nicht verfügbar. Versuchen Sie es später erneut.",
             "helpCenterInvalidServerException": "Ungültiger Systemaktualisierungsserver. Versuchen Sie es später erneut.",
             "catalogNotFoundException": "Es wurden keine verfügbaren Updates für Ihr System gefunden.",
-            "catalogCrcErrorException": "Der Updatekatalog für Ihr System wird gerade auf dem Systemaktualisierungsserver aktualisiert. Versuchen Sie es später erneut.",
+            "catalogCrcErrorException": "Der Katalog für Ihr System wird derzeit aktualisiert. Versuchen Sie es später erneut.",
             "catalogErrorException": "Im Updatekatalog für Ihr System auf dem Systemaktualisierungsserver wurde ein Fehler gefunden. Versuchen Sie es später erneut.",
             "fileNotFoundException": "Datei nicht gefunden."
         }
@@ -1616,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Fehler",
                 "bodyText": "Wir haben festgestellt, dass Ihnen wichtige Teile von Vantage fehlen. Diese Teile werden im Hintergrund heruntergeladen. Versuchen Sie es später erneut.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "schließen",
+                "offlineText": "Wir haben festgestellt, dass Sie nicht mit dem Internet verbunden sind. Einige Teile dieser Seite funktionieren nicht richtig. Bitte erneut verbinden"
             }
         },
         "homeprotection": {

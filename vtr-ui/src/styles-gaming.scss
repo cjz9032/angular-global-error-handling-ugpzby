@@ -127,8 +127,11 @@
 		.vtr-page-content {
 			.vtr-page-left-column {
 				background-color: $gaming_darkest;
+				@media #{$between-small-medium-screen}{
+					padding: 0rem 5rem 4rem 5rem;
+				}
 				@media #{$medium-screen}{
-					padding: 4rem;
+					padding: 0 8.5rem 4rem 8.5rem;
 				}
 				.installation-history-container{
 					background: $dark_cell;
@@ -188,6 +191,30 @@
 								.heading{
 									color: $gaming_lightest;
 								}
+								.installation-list{
+									background-color: transparent;
+									border: none;
+									.list-heading{
+										color: $gaming_lightest;
+										border-color: $screen_dark_20;
+										.sort-order {
+											a {
+												text-decoration: none;
+											}
+										}
+										.item-text{
+											padding-left: 0;
+										}
+									}
+									li {
+										border-color: $screen_dark_20;
+										.item-text{
+											color: $gaming_lightest;
+											padding-left: 0;
+										}
+									}
+								}
+								
 							}
 							&.white-theme{
 								.card{
@@ -224,12 +251,12 @@
 				padding: 0 8.5rem 4rem 4rem;
 				@media #{$small-screen} {
 					margin-top: -0.1rem;
-					padding: 6rem 1.5rem 1.5rem 1.5rem;
+					padding: 6rem 3rem 1.5rem 3rem;
 					background-color: $gaming_darkest;
 				}
 				@media #{$medium-screen} {
 					margin-top: -0.1rem;
-					padding: 6rem 2rem 2rem 2rem;
+					padding: 6rem 6.5rem 4rem 6.5rem;
 					background-color: $gaming_darkest;
 				}
 				vtr-autoupdate-settings{
@@ -251,6 +278,18 @@
 								}
 							}
 						}
+					}
+				}
+			}
+			.tooltip-click.tooltip{
+				ul {
+					li {
+						font-family: "Segoe UI",Sans-serif;
+					}
+				}
+				.tooltip-inner {
+					.read{
+						font-family: "Segoe UI",Sans-serif;
 					}
 				}
 			}

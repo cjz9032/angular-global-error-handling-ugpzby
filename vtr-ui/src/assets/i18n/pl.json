@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Zwiń",
             "expand": "Rozwiń",
-            "loader": "Fetching <br> Status"
+            "loader": "Pobieranie <br> statusu",
+            "loading": "Ładuję..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "W celu wydłużenia całkowitego okresu eksploatacji ekranu zaleca się również przyciemnianie paska zadań i innych obszarów ekranu, które nie zmieniają się często."
                         ],
                         "reset": "Zresetuj temperaturę",
-                        "tooltip": "Ta funkcja może również zmniejszyć zużycie energii i wydłużyć czas działania komputera na akumulatorze, selektywnie przyciemniając części ekranu."
+                        "tooltip": "Ta funkcja może również zmniejszyć zużycie energii i wydłużyć czas działania komputera na akumulatorze, selektywnie przyciemniając części ekranu.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Wprowadzanie i akcesoria",
+                "subtitle": "Ustawienia wprowadzania i akcesoriów",
+                "description": "Funkcja inteligentnej detekcji Lenovo łączy działanie różnych czujników w komputerze, co pozwala wykryć aktywność użytkownika i odpowiednio dostosować optymalne ustawienia zarządzania energią",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Inteligentna klawiatura",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Ukryte funkcje klawiatury",
+                        "description": "W lewym dolnym rogu klawiatury znajduje się klawisz Fn. Naciskając go razem z innymi klawiszami, można wywoływać polecenia pokazane na mapie klawiatury poniżej."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "włącza funkcję powiększania na ekranach o wysokiej rozdzielczości",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "przechodzenie do trybu uśpienia",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "wyłącza i wyłącza funkcję Ochrona prywatności",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "przełącza między trybami wydajności i cichym",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + spacja",
+                        "description": "zmienia stany podświetlenia klawiatury",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Klawisz zdefiniowany przez użytkownika",
+                    "caption": "Do klawisza z ikoną gwiazdki można przypisać funkcję zdefiniowaną przez użytkownika",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Działanie klawisza zdefiniowanego przez użytkownika",
+                        "note": "Uwaga: może służyć do wprowadzania często wpisywanych tekstów, takich jak adresy e-mail lub adresy pocztowe. Lenovo zaleca, aby nigdy nie używać tej funkcji do przechowywania i wprowadzania haseł ani żadnych innych prywatnych informacji.",
+                        "options": {
+                            "option1": "Wybierz",
+                            "option2": "Otwórz stronę internetową",
+                            "option3": "Wprowadź tekst"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "Zalecane aktualizacje",
         "optionalUpdates": "Opcjonalne aktualizacje",
         "ignoredUpdates": "Zignorowane aktualizacje",
-        "successInstall": "Pomyślnie zainstalowano w dniu",
-        "failedInstall": "Instalacja zakończona niepowodzeniem w dniu",
+        "successInstall": "Pomyślnie zainstalowano: ",
+        "failedInstall": "Instalacja zakończona niepowodzeniem: ",
         "at": "o godzinie",
         "readMore": "Dowiedz się więcej",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "Witamy w programie System Update.",
             "title": "Zaktualizowany system to wydajny system.",
-            "last": "Ostatnio aktualizowano",
-            "next": "Kolejne wyszukiwanie aktualizacji zaplanowano na",
+            "last": "Ostatnia aktualizacja: ",
+            "next": "Następna planowana aktualizacja: ",
             "checkButton": "SPRAWDŹ AKTUALIZACJE",
             "checking": "Sprawdzanie aktualizacji",
             "downloading": "Ukończono pobieranie aktualizacji",
@@ -1325,7 +1353,7 @@
             "downloadSize": "Rozmiar plików do pobrania: ",
             "diskSpaceNeeded": "Wymagane miejsce na dysku: ",
             "ignore": "Ignoruj",
-            "attend": "Wymagane potwierdzenie",
+            "attend": "Zastosuj",
             "rebootRequiredTag": "Wymagane ponowne uruchomienie",
             "rebootDelayTag": "Wymagane ponowne uruchomienie z podłączonym zasilaniem",
             "shutdownRequiredTag": "Wymagane wyłączenie",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "Serwer aktualizacji systemu jest obecnie niedostępny. Spróbuj ponownie później.",
             "helpCenterInvalidServerException": "Serwer aktualizacji systemu jest nieprawidłowy. Spróbuj ponownie później.",
             "catalogNotFoundException": "Nie znaleziono odpowiednich aktualizacji do Twojego systemu.",
-            "catalogCrcErrorException": "Katalog aktualizacji dla danego systemu jest aktualizowany na serwerze aktualizacji systemu. Spróbuj ponownie później.",
+            "catalogCrcErrorException": "Katalog Twojego systemu jest obecnie aktualizowany. Spróbuj ponownie później.",
             "catalogErrorException": "Na serwerze aktualizacji systemu wykryto błąd związany z katalogiem aktualizacji Twojego systemu. Spróbuj ponownie później.",
             "fileNotFoundException": "Nie znaleziono pliku."
         }
@@ -1616,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Błąd",
                 "bodyText": "Wykryliśmy, że brakuje ważnych elementów aplikacji Vantage. Te elementy zostaną pobrane w tle. Spróbuj ponownie później.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "zamknij",
+                "offlineText": "Wykryliśmy, że nie masz połączenia z Internetem. Niektóre części tej strony nie będą działać poprawnie. Połącz się ponownie"
             }
         },
         "homeprotection": {

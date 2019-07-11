@@ -1,6 +1,5 @@
 import {
-	Injectable,
-	EventEmitter
+	Injectable
 } from '@angular/core';
 import {
 	SecurityAdvisor,
@@ -8,7 +7,6 @@ import {
 	HomeProtectionDeviceInfo
 } from '@lenovo/tan-client-bridge';
 import mitt from 'mitt';
-import { resolve } from 'dns';
 
 @Injectable({
 	providedIn: 'root',
@@ -183,7 +181,8 @@ export class SecurityAdvisorMockService {
 			},
 			updateActivateDeviceState(res: HomeProtectionDeviceInfo): void {},
 			getActivateDeviceState(callback: Function): void {},
-			getDevicePosture(callback: Function): void {},
+			getDevicePosture(): Promise<any> { return Promise.resolve(); },
+			cancelGetDevicePosture(): void {},
 			on(type, handler) {
 				return this;
 			},

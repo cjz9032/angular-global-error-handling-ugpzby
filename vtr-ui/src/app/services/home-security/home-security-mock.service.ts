@@ -26,7 +26,9 @@ export class HomeSecurityMockService {
 					{ name: 'AppsFromUnknownSources', vulnerable: true },
 					{ name: 'DeveloperMode', vulnerable: true },
 					{ name: 'NotActivatedWindows', vulnerable: false },
-					{ name: 'UacNotification', vulnerable: false }]
+					{ name: 'UacNotification', vulnerable: false }],
+				getDevicePosture() { return Promise.resolve(); },
+				cancelGetDevicePosture() {}
 			},
 			myDevice: {
 				name: 'ThinkPad T470',

@@ -10,7 +10,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { ColorPickerModule } from 'ngx-color-picker';
+
 import { SelectDropDownModule } from 'ngx-select-dropdown';
 
 // CUSTOM MODULES
@@ -218,7 +218,7 @@ import { UiBrightnessSliderComponent } from './components/ui/ui-brightness-slide
 import { SvgInlinePipe } from './pipe/svg-inline/svg-inline.pipe';
 import { UiLightingEffectComponent } from './components/ui/ui-lighting-effect/ui-lighting-effect.component';
 import { UiLightingSingleColorComponent } from './components/ui/ui-lighting-single-color/ui-lighting-single-color.component';
-import { UiLightingColorWheelComponent } from './components/ui/ui-lighting-color-wheel/ui-lighting-color-wheel.component';
+
 import { DisplayColorTempComponent } from './components/display/display-color-temp/display-color-temp.component';
 import { IntelligentMediaComponent } from './components/pages/page-smart-assist/intelligent-media/intelligent-media.component';
 import { UiMacrokeyCollapsibleContainerComponent } from './components/ui/ui-macrokey-collapsible-container/ui-macrokey-collapsible-container.component';
@@ -242,6 +242,8 @@ import { UiDaysPickerComponent } from './components/ui/ui-days-picker/ui-days-pi
 import { DownloadFailedModalComponent } from './components/pages/page-smart-assist/voice/download-failed-modal/download-failed-modal.component';
 import { ModalErrorMessageComponent } from './components/modal/modal-error-message/modal-error-message.component';
 import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component';
+import { UserDefinedKeyComponent } from './components/pages/page-device-settings/children/subpage-device-settings-input-accessory/user-defined-key/user-defined-key.component';
+import { UiHeaderWarrantyComponent } from './components/ui/ui-header-warranty/ui-header-warranty.component';
 
 library.add(fas);
 library.add(fab);
@@ -300,6 +302,7 @@ library.add(fal);
 		BatteryIndicatorComponent,
 		UiRowSwitchComponent,
 		UiHeaderSubpageComponent,
+		UiHeaderWarrantyComponent,
 		UiSwitchTristateComponent,
 		UiRowSwitchComponent,
 		EyeCareModeComponent,
@@ -409,7 +412,7 @@ library.add(fal);
 		UiBrightnessSliderComponent,
 		UiLightingEffectComponent,
 		UiLightingSingleColorComponent,
-		UiLightingColorWheelComponent,
+
 		HomeSecurityMyDeviceComponent,
 		HomeSecurityAllDevicesComponent,
 		UiMacrokeyCollapsibleContainerComponent,
@@ -433,7 +436,8 @@ library.add(fal);
 		UiDaysPickerComponent,
 		DownloadFailedModalComponent,
 		ModalErrorMessageComponent,
-		ModalServerSwitchComponent
+		ModalServerSwitchComponent,
+		UserDefinedKeyComponent
 	],
 	imports: [
 		BrowserModule,
@@ -450,7 +454,6 @@ library.add(fal);
 		TranslationModule,
 		BrowserAnimationsModule,
 		PrivacyModule,
-		ColorPickerModule,
 		SanitizeModule,
 		SelectDropDownModule
 	],

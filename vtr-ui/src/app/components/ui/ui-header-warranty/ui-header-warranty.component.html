@@ -1,0 +1,58 @@
+<div ngbDropdown
+	class="d-inline-block dropdown-content"
+	*ngIf="warrantyData.info.status === 0 || warrantyData.info.status === 1">
+	<div class="dropdown-btn"
+		id="header-warranty-icon"
+		aria-label="header-warranty-icon"
+		ngbDropdownToggle>
+		<div class="icon-con in-warranty"
+			*ngIf="warrantyData.info.status === 0">
+			<fa-icon [icon]="['fas', 'check']"></fa-icon>
+		</div>
+		<div class="icon-con"
+			*ngIf="warrantyData.info.status === 1">
+			<fa-icon [icon]="['fas', 'exclamation']"></fa-icon>
+		</div>
+	</div>
+	<div class="header-warranty-dropdown"
+		[class.in-warranty]="warrantyData.info.status === 0"
+		[class.expired]="warrantyData.info.status === 1"
+		ngbDropdownMenu
+		aria-labelledby="header-warranty-icon">
+		<div class="menu-pointer"></div>
+		<div class="dropdown-item"
+			ngbDropdownItem>
+			<div class="title pb-3"
+				*ngIf="warrantyData.info.status === 0">
+				{{'support.warranty.titleInWarranty' | translate}}
+			</div>
+			<div class="title pb-3"
+				*ngIf="warrantyData.info.status === 1">
+				{{'support.warranty.titleWarrantyExpired' | translate}}
+			</div>
+
+			<div class="sub-description pb-4">
+				<div class="pb-1">
+					{{'support.warranty.startDate' | translate}}<b>{{ dateFormat(warrantyData.info.startDate) }}</b>
+				</div>
+				<div>
+					{{'support.warranty.endDate' | translate}}<b>{{ dateFormat(warrantyData.info.endDate) }}</b>
+				</div>
+			</div>
+
+			<div class="button-box">
+				<a role="button"
+					href="{{warrantyData.info.url}}"
+					target="_blank"
+					class="button"
+					id="btn-header-warranty-options"
+					aria-label="btn-header-warranty-options"
+					title="{{'support.warranty.viewWarrantyOptions' | translate}}"
+					vtrMetrics
+					metricsItem="ViewWarrantyOptionsButton"
+					metricsEvent="FeatureClick"
+					metricsParent="{{pageParent}}">{{'support.warranty.viewWarrantyOptions' | translate}}</a>
+			</div>
+		</div>
+	</div>
+</div>

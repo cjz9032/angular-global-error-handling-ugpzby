@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Strni",
             "expand": "Razširi",
-            "loader": "Fetching <br> Status"
+            "loader": "Pridobivanje <br> statusa",
+            "loading": "nalaganje..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "Za podaljšanje splošne življenjske dobe zaslona priporočamo tudi zatemnitev opravilne vrstice in drugih delov zaslona, ki se ne spreminjajo pogosto."
                         ],
                         "reset": "Ponastavitev temperature",
-                        "tooltip": "Ta funkcija lahko s selektivnim zatemnjevanjem delov zaslona zmanjša porabo energije in podaljša življenjsko dobo baterije."
+                        "tooltip": "Ta funkcija lahko s selektivnim zatemnjevanjem delov zaslona zmanjša porabo energije in podaljša življenjsko dobo baterije.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Vnašanje in pripomočki",
+                "subtitle": "Nastavitve vnašanja in pripomočkov",
+                "description": "Tehnologija Lenovo za pametno zaznavanje združuje različne senzorje v računalniku, ki zaznavajo vaše dejavnosti in prilagodijo nastavitve za optimalno upravljanje porabe energije",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Pametna tipkovnica",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Skrite funkcije tipkovnice",
+                        "description": "Tipko Fn v spodnjem levem kotu tipkovnice lahko pritisnite hkrati z drugimi tipkami, da sprožite ukaze, prikazane na sliki tipkovnice spodaj."
                     },
                     "firstKeyObj": {
-                        "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "tittle": "Fn + tabulatorka",
+                        "description": "omogočanje povečave pri zaslonih velike ločljivosti",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "preklop v način spanja",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "vklop in izklop funkcije Zaščita zasebnosti",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "preklop med načinom učinkovitosti delovanja in tihim načinom",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + preslednica",
+                        "description": "sprememba stanja osvetlitve tipkovnice",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Uporabniško določena tipka",
+                    "caption": "Za tipko, označeno z ikono zvezdice, lahko določite svojo funkcijo",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Dejanje za uporabniško določeno tipko",
+                        "note": "Opomba: to lahko uporabite za vnos pogosto uporabljenega besedila, kot so e-poštni ali poštni naslovi. Lenovo priporoča, da te funkcije nikdar ne uporabite za vnos gesel ali kakršnih koli drugih osebnih podatkov.",
+                        "options": {
+                            "option1": "Prosimo, izberite",
+                            "option2": "Odprite spletno stran",
+                            "option3": "Vnesite besedilo"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "Priporočene posodobitve",
         "optionalUpdates": "Izbirne posodobitve",
         "ignoredUpdates": "Prezrte posodobitve",
-        "successInstall": "Uspešna namestitev",
-        "failedInstall": "Neuspešna namestitev",
+        "successInstall": "Uspešna namestitev: ",
+        "failedInstall": "Neuspešna namestitev: ",
         "at": "ob",
         "readMore": "Preberite več",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "Uporabite funkcijo System Update.",
             "title": "Posodobljen sistem je zdrav sistem.",
-            "last": "Zadnja posodobitev je bila dne",
-            "next": "Naslednje načrtovano iskanje posodobitev",
+            "last": "Zadnja posodobitev: ",
+            "next": "Naslednja načrtovana posodobitev: ",
             "checkButton": "ISKANJE POSODOBITEV",
             "checking": "Preverite, ali so na voljo posodobitve",
             "downloading": "Prenos posodobitev je končan",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "Strežnik za posodobitev sistema trenutno ni na voljo. Poskusite znova pozneje.",
             "helpCenterInvalidServerException": "Strežnik za posodobitev sistema je neveljaven. Poskusite znova pozneje.",
             "catalogNotFoundException": "Za sistem ni bilo najdenih nobenih posodobitev.",
-            "catalogCrcErrorException": "Katalog posodobitev za vaš sistem se trenutno posodablja iz strežnika za posodobitev sistema. Poskusite znova pozneje.",
+            "catalogCrcErrorException": "Katalog za vaš sistem se trenutno posodablja. Poskusite znova pozneje.",
             "catalogErrorException": "V strežniku za posodobitev sistema je bila zaznana napaka v katalogu posodobitev za vaš sistem. Poskusite znova pozneje.",
             "fileNotFoundException": "Datoteka ni bila najdena."
         }
@@ -1616,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Napaka",
                 "bodyText": "Zaznali smo, da vam manjkajo ključni deli programa Vantage. Ti deli se bodo prenesli v ozadju. Poskusite znova pozneje.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "zapri",
+                "offlineText": "Zaznali smo, da niste povezani z internetom. Nekateri deli te strani ne bodo delovali pravilno. Znova vzpostavite povezavo"
             }
         },
         "homeprotection": {

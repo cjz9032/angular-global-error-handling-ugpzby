@@ -26,8 +26,10 @@
 		// border-top-right-radius:1rem;
 		background: url("./../../../../assets/images/welcome/header-1.jpg") no-repeat;
 		//background-size:100% 16rem;
+		margin-left:3rem;
+		margin-right:3rem;
 		height: 24rem;
-		width: 100%;
+		width: 90%;
 		background-position: center;
 
 		.title-alignment {
@@ -172,8 +174,8 @@
 		.custom-control-label {
 			padding-left: 2.2rem;
 			line-height: 1.8rem;
-			font-size: 1.4rem;
-			margin-bottom: 2.2rem;
+			font-size: 1.2rem;
+			margin-bottom: 1rem;
 			font-weight: $weight_regular;
 
 			// rounded square-box background

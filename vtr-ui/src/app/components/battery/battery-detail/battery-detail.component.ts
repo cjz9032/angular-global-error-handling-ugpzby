@@ -55,47 +55,69 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 			this.translate.instant('device.deviceSettings.batteryGauge.details.primary'),
 			this.translate.instant('device.deviceSettings.batteryGauge.details.secondary'),
 			this.translate.instant('device.deviceSettings.batteryGauge.details.tertiary')];
-		this.batteryIndicators.percent = response.gauge.percentage;
-		this.batteryIndicators.charging = response.gauge.isAttached;
-		this.batteryIndicators.expressCharging = response.gauge.isExpressCharging;
-		this.batteryIndicators.convertMin(response.gauge.time);
+		if (response !== null && response !== undefined) {
+			if (response.gauge !== undefined && response.gauge !== null) {
+				this.batteryIndicators.percent = response.gauge.percentage;
+				this.batteryIndicators.charging = response.gauge.isAttached;
+				this.batteryIndicators.expressCharging = response.gauge.isExpressCharging;
+				this.batteryIndicators.convertMin(response.gauge.time);
 
-		this.batteryIndicators.timeText = response.gauge.timeType;
-		this.batteryIndicators.voltageError = response.detail[0].isVoltageError;
-		let batteryIndex = -1;
-		let batteryHealth = 0;
-		if (response.detail !== undefined && response.detail.length !== 0) {
-			response.detail.forEach((info) => {
-				if (info.batteryHealth >= batteryHealth) {
-					batteryHealth = info.batteryHealth;
-					batteryIndex += 1;
+				this.batteryIndicators.timeText = response.gauge.timeType;
+
+				// this.batteryIndicators.voltageError = response.detail[0].isVoltageError;
+
+				// let batteryIndex = -1;
+				// let batteryHealth = 0;
+				// if (response.detail !== undefined && response.detail.length !== 0) {
+				// 	response.detail.forEach((info) => {
+				// 		if (info.batteryHealth >= batteryHealth) {
+				// 			batteryHealth = info.batteryHealth;
+				// 			batteryIndex += 1;
+				// 		}
+				// 	});
+				// }
+
+				if (response.batteryGauge.isExpressCharging === undefined ||
+					response.batteryGauge.isExpressCharging === null) {
+					this.batteryIndicators.expressCharging = false;
+				} else {
+					this.batteryIndicators.expressCharging = response.batteryGauge.isExpressCharging;
 				}
-			});
-		}
-		this.batteryIndicators.batteryNotDetected = batteryHealth === 4;
-		for (let i = 0; i < response.detail.length; i++) {
-			response.detail[i].remainingCapacity = Math.round(response.detail[i].remainingCapacity * 100) / 100;
-			response.detail[i].fullChargeCapacity = Math.round(response.detail[i].fullChargeCapacity * 100) / 100;
-			response.detail[i].voltage = Math.round(response.detail[i].voltage * 100) / 100;
-			response.detail[i].wattage = Math.round(response.detail[i].wattage * 100) / 100;
-			response.detail[i].heading = response.detail.length > 1 ? headings[i] : '';
-			const id = response.detail[i].chargeStatus;
-			response.detail[i].chargeStatusString = this.translate.instant(BatteryChargeStatus.getBatteryChargeStatus(id));
-			if (response.detail[i].chargeStatus === BatteryChargeStatus.NO_ACTIVITY.id
-				|| response.detail[i].chargeStatus === BatteryChargeStatus.ERROR.id
-				|| response.detail[i].chargeStatus === BatteryChargeStatus.NOT_INSTALLED.id) {
-				/// if chargeStatus is 'No activity' | 'Error' | 'Not installed'
-				// remaining time will not be displayed
-				response.detail[i].remainingTime = undefined;
 			}
-			// response[i].chargeStatus == BatteryChargeStatus.CHARGING.id
-			if (response.gauge.timeType === 'timeCompletion') {
-				response.detail[i].remainingTimeText = this.chargeCompletionTimeText;
+
+			if (response.detail.length > 0 && response.detail[0].batteryHealth !== null &&
+				response.detail[0].batteryHealth !== undefined) {
+				this.batteryIndicators.batteryNotDetected = response.detail[0].batteryHealth === 4;
 			} else {
-				response.detail[i].remainingTimeText = this.remainingTimeText;
+				this.batteryIndicators.batteryNotDetected = false;
 			}
-			const chemistry: string = response.detail[i].deviceChemistry;
-			this.deviceChemistry[i] = this.translate.instant('device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase());
+
+			for (let i = 0; i < response.detail.length; i++) {
+				if (response.detail[i] !== undefined && response.detail[i] !== null) {
+					response.detail[i].remainingCapacity = Math.round(response.detail[i].remainingCapacity * 100) / 100;
+				response.detail[i].fullChargeCapacity = Math.round(response.detail[i].fullChargeCapacity * 100) / 100;
+				response.detail[i].voltage = Math.round(response.detail[i].voltage * 100) / 100;
+				response.detail[i].wattage = Math.round(response.detail[i].wattage * 100) / 100;
+				response.detail[i].heading = response.detail.length > 1 ? headings[i] : '';
+				const id = response.detail[i].chargeStatus;
+				response.detail[i].chargeStatusString = this.translate.instant(BatteryChargeStatus.getBatteryChargeStatus(id));
+				if (response.detail[i].chargeStatus === BatteryChargeStatus.NO_ACTIVITY.id
+					|| response.detail[i].chargeStatus === BatteryChargeStatus.ERROR.id
+					|| response.detail[i].chargeStatus === BatteryChargeStatus.NOT_INSTALLED.id) {
+					/// if chargeStatus is 'No activity' | 'Error' | 'Not installed'
+					// remaining time will not be displayed
+					response.detail[i].remainingTime = undefined;
+				}
+				// response[i].chargeStatus == BatteryChargeStatus.CHARGING.id
+				if (response.gauge.timeType === 'timeCompletion') {
+					response.detail[i].remainingTimeText = this.chargeCompletionTimeText;
+				} else {
+					response.detail[i].remainingTimeText = this.remainingTimeText;
+				}
+				const chemistry: string = response.detail[i].deviceChemistry;
+				this.deviceChemistry[i] = this.translate.instant('device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase());
+				}
+			}
 		}
 		this.dataSource = response.detail;
 		this.dataSourceGauge = response.gauge;

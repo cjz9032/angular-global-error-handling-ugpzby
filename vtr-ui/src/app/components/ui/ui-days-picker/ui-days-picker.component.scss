@@ -52,6 +52,9 @@
 			font-size: 2rem;
 			padding: 0 2.5rem;
 		}
+		color: #f12e2e;
+			font-size: 2rem;
+			padding: 0 2.5rem;
 	}
 	.weekdays-block {
 		border-radius: 0.5rem;
@@ -175,4 +178,7 @@
 	.disabled {
 		opacity: 0.5;
 	}
+	.banner-middle {
+		flex: 1;
+	  }
 }

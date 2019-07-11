@@ -1,6 +1,6 @@
-import { CHSAccountState, CHSAccount } from '@lenovo/tan-client-bridge';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalLenovoIdComponent } from 'src/app/components/modal/modal-lenovo-id/modal-lenovo-id.component';
+import { CHSAccountState } from '@lenovo/tan-client-bridge';
+import { HomeSecurityCommon } from './home-security-common.model';
+import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.service';
 
 export class HomeSecurityAccount {
 
@@ -8,6 +8,7 @@ export class HomeSecurityAccount {
 	expiration: Date;
 	standardTime: Date;
 	lenovoIdLoggedIn: boolean;
+	dialogService: LenovoIdDialogService;
 	device = {
 		title: 'homeSecurity.ecosystem.thisDevice',
 		status: 'protected',
@@ -55,15 +56,20 @@ export class HomeSecurityAccount {
 	createAccount() {}
 	purchase() {}
 
-	constructor(private modalService?: NgbModal, chs?: any) {
+	constructor(chs?: any, common?: HomeSecurityCommon, dialogService?: LenovoIdDialogService) {
+		if (dialogService) {
+			this.dialogService = dialogService;
+		}
 		if (chs && chs.account) {
 			this.state = chs.account.state;
 			this.expiration = chs.account.expiration;
 			this.standardTime = chs.account.serverTimeUTC;
-			this.createAccount = chs.createAndGetAccount.bind(chs);
-			this.purchase = chs.purchase;
 			if (chs.account.lenovoId) {
 				this.lenovoIdLoggedIn = chs.account.lenovoId.loggedIn;
+			}
+			if (common) {
+				this.createAccount = common.startTrial.bind(common);
+				this.purchase = common.upgrade.bind(common);
 			}
 			this.createViewModel();
 		}
@@ -346,10 +352,6 @@ export class HomeSecurityAccount {
 	}
 
 	launchLenovoId() {
-		this.modalService.open(ModalLenovoIdComponent, {
-			backdrop: 'static',
-			centered: true,
-			windowClass: 'lenovo-id-modal-size'
-		});
+		this.dialogService.openLenovoIdDialog('ConnectedHomeSecurity');
 	}
 }

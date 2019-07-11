@@ -11,4 +11,13 @@
     &:last-child{
         margin-bottom: 3rem;
     }
+    .dropdown{
+        width: 50%;
+        ::ng-deep .vtr-ui-dropdown{
+            margin-top: 3rem;
+        }
+        @media screen and (max-width:768px){
+            width: 100%;
+        }
+    }
 }

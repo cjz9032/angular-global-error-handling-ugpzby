@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, HostListener, SecurityContext } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -66,7 +67,8 @@ export class ModalServerSwitchComponent implements OnInit {
   constructor(
     public activeModal: NgbActiveModal,
     public commonService: CommonService,
-    private router: Router 
+    private router: Router,
+    private activRouter: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -80,10 +82,10 @@ export class ModalServerSwitchComponent implements OnInit {
     this.sddConfigSegment.limitTo = this.serverSwitchData.segmentList.length;
 
     this.serverSwitchForm = new FormGroup({
-			country: new FormControl(null, Validators.required),
-			language: new FormControl(null, Validators.required),
-			segment: new FormControl(null, Validators.required)
-		});
+      country: new FormControl(null, Validators.required),
+      language: new FormControl(null, Validators.required),
+      segment: new FormControl(null, Validators.required)
+    });
 
 
   }
@@ -109,21 +111,21 @@ export class ModalServerSwitchComponent implements OnInit {
     //console.log(formData);
 
     //validating 
-    if(isNull(formData.country) || isUndefined(formData.country)){
+    if (isNull(formData.country) || isUndefined(formData.country)) {
       this.sddInvalid.status = true;
       this.sddInvalid.message.push('Country is required.');
     } else {
       this.serverSwitchData.country = formData.country;
     }
 
-    if(isNull(formData.language) || isUndefined(formData.language)){
+    if (isNull(formData.language) || isUndefined(formData.language)) {
       this.sddInvalid.status = true;
       this.sddInvalid.message.push('Language is required.');
     } else {
       this.serverSwitchData.language = formData.language;
     }
 
-    if(isNull(formData.segment) || isUndefined(formData.segment)){
+    if (isNull(formData.segment) || isUndefined(formData.segment)) {
       this.sddInvalid.status = true;
       this.sddInvalid.message.push('Segment is required.');
     } else {
@@ -131,38 +133,74 @@ export class ModalServerSwitchComponent implements OnInit {
     }
 
     //submit success
-    if(!this.sddInvalid.status){
+    if (!this.sddInvalid.status) {
       this.serverSwitchProcess();
     }
 
     return this.sddInvalid.status;
-  } 
+  }
 
   serverSwitchProcess() {
-      let serverSwitchLocalData = {
-        country: this.serverSwitchData.country,
-        language: this.serverSwitchData.language,
-        segment: this.serverSwitchData.segment,
-      };
-      //storing into localStorage
-      this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey,serverSwitchLocalData);
-      
-      this.closeModal();
-      //reload with new serverSwitch Parms
-      this.redirectTo(this.router.url,{ serverswitch: true,d: (new Date).getTime()});
+    let serverSwitchLocalData = {
+      country: this.serverSwitchData.country,
+      language: this.serverSwitchData.language,
+      segment: this.serverSwitchData.segment,
+      forceit: false
+    };
+    //storing into localStorage
+    this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
+
+    this.closeModal();
+
+
+    let urlTree = this.router.parseUrl(this.router.url);
+    if( urlTree.queryParams['serverswitch']  ){
+      urlTree.queryParams['serverswitch'] = true;
+      urlTree.queryParams['d'] = (new Date).getTime();
+    } else {
+      urlTree = this.router.createUrlTree(
+        [this.router.url], { queryParams: { serverswitch: 'true', d: (new Date).getTime() }, queryParamsHandling: "merge", skipLocationChange: false }
+      );
+    }
+    //@todo, check to use refresh or navigateByUrl
+    //window.location.href = urlTree.toString();
+    this.router.navigateByUrl(urlTree);  
+
+    /*
+    let qry: any = window.location.href.split('?');
+    console.log(window.location.search);
+    if (qry.length > 1) {
+      qry = qry[1].toString().replace('') + '&serverswitch=true';
+    } else {
+      //window.location.search = '?serverswitch=true&d='+(new Date).getTime();
+    }
+    console.log(window.location.href);
+    window.location.href = window.location.href + window.location.search;
+    //window.location.reload();
+    */
+    //reload with new serverSwitch Parms
+    //this.redirectTo(this.router.url,{ serverswitch: 'true',d: (new Date).getTime()});
   }
 
-  redirectTo(uri:string,parms:{}) {
+  redirectTo(uri: string, parms: {}) {
     this.router.onSameUrlNavigation = 'reload';
     this.router.navigated = false;
-    this.router.routeReuseStrategy.shouldReuseRoute = function(){
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
     };
-    this.router.navigateByUrl('/', {queryParams: parms ,queryParamsHandling: "merge",skipLocationChange: false})
-    .then(() => 
-      this.router.navigateByUrl(uri,{queryParams: parms,skipLocationChange: false})
+    let urlRootTree = this.router.createUrlTree(
+      ['/'], { queryParams: parms, queryParamsHandling: "merge", skipLocationChange: false }
     );
-  }
+    let urlTree = this.router.createUrlTree(
+      [uri], { queryParams: parms, queryParamsHandling: "merge", skipLocationChange: false }
+    );
 
+    //this.router.navigateByUrl(uri, { queryParams: parms, queryParamsHandling: "merge", skipLocationChange: false });
+    this.router.navigateByUrl(urlRootTree)
+      .then(() => {
+        console.log('@sh navigateByUrl', this.router.parseUrl(this.router.url), parms);
+        this.router.navigateByUrl(urlTree);
+      });
+  }
 
 }

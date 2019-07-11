@@ -28,7 +28,7 @@
 				@media #{$mediaquery_5} {
 					padding-right: 4rem;
 				}
-				@media #{$mediaquery_sm} {
+				@media #{$only-small-screen} {
 					padding-right: 0rem;
 				}
 			}
@@ -37,7 +37,7 @@
 				@media #{$mediaquery_5} {
 					padding-left: 0rem;
 				}
-				@media #{$mediaquery_sm} {
+				@media #{$only-small-screen} {
 					padding-left: 0rem;
 				}
 			}
@@ -91,7 +91,9 @@
 						position: relative;
 					}
 					@media #{$only-small-screen}{
-						height: 16rem;
+						&.onlyOne{
+							height: 13.5rem;
+						}
 					}
 					&.expanded {
 						height: auto;
@@ -494,6 +496,10 @@
 					}
 					&.single {
 						padding: 3rem;
+						@media #{$only-small-screen}{
+							height: 13.5rem;
+							padding: 2rem 3rem;
+						}
 						.hd-item {
 							text-align: center;
 							.gaming-tooltip {

@@ -41,7 +41,8 @@
                         "button": "Install",
                         "link": "cancel",
                         "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective"
+                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
+                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
                     },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
@@ -437,7 +438,8 @@
             "off": "OFF",
             "collapse": "Összecsukás",
             "expand": "Kibontás",
-            "loader": "Fetching <br> Status"
+            "loader": "Állapot <br> lekérése",
+            "loading": "Betöltés..."
         }
     },
     "privacy": {
@@ -660,8 +662,9 @@
                         "title": "The battery is in good condition."
                     },
                     "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
+                        "description": "wear. The battery cannot be charged. Replace the battery.",
+                        "description1": "failed due to normal wear.",
+                        "description2": "The battery cannot be charged. Replace the battery."
                     },
                     "Bad": {
                         "title": "A battery error has occurred.",
@@ -1012,7 +1015,18 @@
                             "A tálcát és a képernyő ritkábban módosított területeit ugyancsak tanácsos elsötétíteni, így ugyanis meghosszabbítható a képernyő élettartama."
                         ],
                         "reset": "Hőmérséklet visszaállítása",
-                        "tooltip": "Ez a funkció elsötétíti a képernyő adott részeit, így csökkentheti az energiafogyasztást és növelheti az akkumulátor élettartamát."
+                        "tooltip": "Ez a funkció elsötétíti a képernyő adott részeit, így csökkentheti az energiafogyasztást és növelheti az akkumulátor élettartamát.",
+                        "dropDown": {
+                            "seconds": "seconds",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "alwaysOn": "Always on",
+                            "never": "never",
+                            "halfTime": "Half time of display off timer"
+                        },
+                        "taskBarDimmer": "TASKBAR DIMMER",
+                        "backgroundDimmer": "BACKGROUND DIMMER",
+                        "displayDimmer": "DISPLAY DIMMER"
                     }
                 },
                 "camera": {
@@ -1052,49 +1066,63 @@
                 }
             },
             "inputAccessories": {
-                "title": "Input & Accessories",
-                "subtitle": "Input & Accessories Settings",
-                "description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+                "title": "Bevitel és kellékek",
+                "subtitle": "Bevitel és kellékek beállításai",
+                "description": "A Lenovo intelligens észlelési funkciója a számítógép különböző érzékelőivel észleli a felhasználói tevékenységeket, és úgy módosítja a beállításokat, hogy az energiagazdálkodás optimális legyen",
                 "inputAccessory": {
-                    "title": "Intelligent Keyboard",
+                    "title": "Intelligens billentyűzet",
                     "hiddenKeyboardFunctions": {
-                        "title": "Hidden keyboard functions",
-                        "description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+                        "title": "Billentyűzet rejtett funkciói",
+                        "description": "A lenti billentyűzettérképen szereplő parancsok alkalmazásához nyomja meg az Fn billentyűt a billentyűzet bal alsó sarkában, majd azzal egyszerre a megadott billentyűket."
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "enable zoom feature on high resolution displays",
+                        "description": "a nagyítási funkció engedélyezése nagy felbontású képernyőkön",
                         "image": ""
                     },
                     "secondKeyObj": {
                         "tittle": "Fn + 4",
-                        "description": "enter sleep mode",
+                        "description": "alvó módra váltás",
                         "image": ""
                     },
                     "thirdKeyObj": {
                         "tittle": "Fn + D",
-                        "description": "turn on and off Privacy Guard",
+                        "description": "az adatvédelmi funkció be- és kikapcsolása",
                         "image": ""
                     },
                     "fourthKeyObj": {
                         "tittle": "Fn + Q",
-                        "description": "change between Performance mode and Quiet mode",
+                        "description": "a teljesítményközpontú mód és a csendes mód közötti váltás",
                         "image": ""
                     },
                     "fifthKeyObj": {
-                        "tittle": "Fn + Space",
-                        "description": "change keyboard backlight states",
+                        "tittle": "Fn + szóköz",
+                        "description": "a billentyűzet háttérvilágítási állapotainak módosítása",
                         "image": ""
                     }
                 },
                 "userDefinedKey": {
-                    "title": "User-defined Key",
-                    "caption": "The key represented by the star icon allows you to set user defined function",
+                    "title": "Felhasználó által megadott billentyű",
+                    "caption": "A csillag ikonnal rendelkező billentyűhöz tetszőleges funkciót rendelhet a felhasználó",
                     "dropDown": {
-                        "title": "Action User Defined key",
-                        "note": "Note: This can be used to enter commonly enterd key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information."
+                        "title": "Felhasználó által megadott billentyűhöz tartozó művelet",
+                        "note": "Megjegyzés: Itt adhat meg általánosan megadott kulcsot, pl. e-mail-címet vagy levelezési címet. A Lenovo azt javasolja, hogy soha ne adjon meg itt jelszavakat vagy bizalmas adatokat.",
+                        "options": {
+                            "option1": "Válasszon",
+                            "option2": "Nyissa meg a webhelyet",
+                            "option3": "Írja be a szöveget"
+                        }
                     },
-                    "tooltip": "Content to be filled"
+                    "tooltip": "Content to be filled",
+                    "apply": {
+                        "title": "APPLY"
+                    },
+                    "website": {
+                        "url": "WEBSITE URL"
+                    },
+                    "enterText": {
+                        "title": "TEXT TO BE ENTERED"
+                    }
                 }
             }
         },
@@ -1257,8 +1285,8 @@
         "recommendedUpdates": "Ajánlott frissítés(ek)",
         "optionalUpdates": "Választható frissítés(ek)",
         "ignoredUpdates": "Figyelmen kívül hagyott frissítés(ek)",
-        "successInstall": "Sikeresen telepítve",
-        "failedInstall": "A telepítés sikertelen",
+        "successInstall": "Sikeresen telepítve: ",
+        "failedInstall": "A telepítés sikertelen: ",
         "at": "Ekkor",
         "readMore": "További információ",
         "popup": {
@@ -1296,8 +1324,8 @@
         "banner": {
             "neverChecked": "Üdvözöljük a System Update szolgáltatásban.",
             "title": "A naprakész rendszer megfelelően működik.",
-            "last": "Utolsó frissítés dátuma",
-            "next": "A frissítések következő ellenőrzésének ideje",
+            "last": "Utolsó frissítés: ",
+            "next": "Következő ütemezett frissítés: ",
             "checkButton": "FRISSÍTÉSEK KERESÉSE",
             "checking": "Frissítések keresése",
             "downloading": "A frissítések letöltve",
@@ -1366,7 +1394,7 @@
             "networkInterruptedException": "A rendszerfrissítési kiszolgáló jelenleg nem érhető el. Kérjük, később próbálja meg újra.",
             "helpCenterInvalidServerException": "A rendszerfrissítési kiszolgáló érvénytelen. Kérjük, később próbálja meg újra.",
             "catalogNotFoundException": "Nem érhetők el frissítések a rendszerhez.",
-            "catalogCrcErrorException": "A rendszer frissítési katalógusa jelenleg frissül a rendszerfrissítési kiszolgálón Kérjük, később próbálja meg újra.",
+            "catalogCrcErrorException": "A rendszerkatalógus jelenleg frissül. Kérjük, később próbálja meg újra.",
             "catalogErrorException": "Hibát találtunk a rendszer frissítési katalógusával a rendszerfrissítési kiszolgálón. Kérjük, később próbálja meg újra.",
             "fileNotFoundException": "A fájl nem található."
         }
@@ -1616,8 +1644,8 @@
             "errorMessage": {
                 "headerText": "Hiba",
                 "bodyText": "Úgy észleltük, hogy a Vantage létfontosságú összetevői hiányoznak. Ezek az összetevők a háttérben töltődnek le. Kérjük, később próbálja meg újra.",
-                "closeText": "close",
-                "offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect"
+                "closeText": "bezárás",
+                "offlineText": "Azt észleltük, hogy nem csatlakozik az internethez. Az oldal egyes részei nem működnek majd megfelelően. Csatlakozzon újra"
             }
         },
         "homeprotection": {

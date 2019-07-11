@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';//VAN-5872, serverSwitch
+import { Router, NavigationEnd, ActivatedRoute, ParamMap } from '@angular/router';//VAN-5872, serverSwitch
 import { DevService } from './services/dev/dev.service';
 import { DisplayService } from './services/display/display.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';//VAN-5872, serverSwitch
@@ -141,7 +141,7 @@ export class AppComponent implements OnInit {
 		// document.getElementById('html-root').classList.add('is-arm');
 
 		const self = this;
-		window.onresize = function() {
+		window.onresize = function () {
 			self.displayService.calcSize(self.displayService);
 		};
 		self.displayService.calcSize(self.displayService);
@@ -181,13 +181,16 @@ export class AppComponent implements OnInit {
 		}
 
 		if (result) {
-				result.then((machineInfo) => {
+			result.then((machineInfo) => {
 				this.machineInfo = machineInfo;
 			});
 		}
 
 		this.checkIsDesktopOrAllInOneMachine();
 		this.settingsService.getPreferenceSettingsValue();
+
+		//VAN-5872, server switch feature
+		this.serverSwitchThis();
 	}
 
 	private sendFirstRunEvent(machineInfo) {
@@ -214,7 +217,7 @@ export class AppComponent implements OnInit {
 				.then((value: any) => {
 					console.log('getMachineInfo.then', value);
 					console.log('########################################## 1', value);
-					if (value && ![ 'zh', 'pt' ].includes(value.locale.substring(0, 2).toLowerCase())) {
+					if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
 						this.translate.use(value.locale.substring(0, 2));
 						this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
 					} else {
@@ -269,7 +272,57 @@ export class AppComponent implements OnInit {
 		}
 	}
 
-	@HostListener('window:keyup', [ '$event' ])
+	//VAN-5872, server switch feature
+	private serverSwitchThis() {
+		this.activRouter.queryParamMap.subscribe((params: ParamMap) => {
+			if (params.has('serverswitch')) {
+				//retrive from localStorage
+				let serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
+				if (serverSwitchLocalData) {
+
+					//force cms service to use this server parms
+					serverSwitchLocalData.forceit = true;
+					this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
+
+					let langCode = (serverSwitchLocalData.language.Value).toLowerCase();
+					let langMap = {
+						'zh-hant': 'zh-Hant',
+						'zh-hans': 'zh-Hans',
+						'pt-br': 'pt-BR',
+					};
+					if (langMap[langCode]) {
+						langCode = langMap[langCode];
+					}
+
+					let allLangs = this.translate.getLangs();
+					if (allLangs.indexOf(langCode) >= 0) {
+						//this.translate.resetLang('ar');
+						this.translate.reloadLang(langCode);
+						this.translate.use(langCode).subscribe(
+							data => console.log('@sahinul trans use NEXT'),
+							error => console.log('@sahinul server switch error ', error),
+							() => {
+								// Evaluate the translations for QA on language Change
+								//this.qaService.setTranslationService(this.translate);
+								//this.qaService.setCurrentLangTranslations();
+								console.log('@sahinul server switch completed');
+								//VAN-6417, language right to left 
+								/*if ((['ar', 'he']).indexOf(langCode) >= 0) {
+									window.document.getElementsByTagName("html")[0].dir = 'rtl';
+									window.document.getElementsByTagName("html")[0].lang = langCode;
+								} else {
+									window.document.getElementsByTagName("html")[0].dir = 'ltr';
+									window.document.getElementsByTagName("html")[0].lang = langCode;
+								}*/
+							}
+						);
+					}
+				}
+			}
+		});
+	}
+
+	@HostListener('window:keyup', ['$event'])
 	onKeyUp(event: KeyboardEvent) {
 		try {
 			if (this.deviceService.isShellAvailable) {
@@ -285,13 +338,13 @@ export class AppComponent implements OnInit {
 			}
 
 			//VAN-5872, server switch feature
-			if(event.ctrlKey && event.shiftKey && event.keyCode==67){
-				const serverSwitchModal : NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
+			if (event.ctrlKey && event.shiftKey && event.keyCode == 67) {
+				const serverSwitchModal: NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
 					backdrop: true,
 					size: 'lg',
 					centered: true,
 					windowClass: 'Server-Switch-Modal',
-					keyboard : false
+					keyboard: false
 				});
 				//serverSwitchModal.componentInstance.articleId = this.item.Id;
 			}
@@ -301,17 +354,32 @@ export class AppComponent implements OnInit {
 		}
 	}
 
-	@HostListener('window:load', [ '$event' ])
+	@HostListener('window:load', ['$event'])
 	onLoad(event) {
 		const scale = 1 / (window.devicePixelRatio || 1);
 		const content = `shrink-to-fit=no, width=device-width, initial-scale=${scale}, minimum-scale=${scale}`;
 		document.querySelector('meta[name="viewport"]').setAttribute('content', content);
 		//console.log('DPI: ', content);
 		//alert('I am at onload');
+
+		//VAN-5872, server switch feature
+		//when app loads for the 1st time then remove ServerSwitch values
+		window.localStorage.removeItem(LocalStorageKey.ServerSwitchKey);
+
+		//VAN-6417, language right to left 
+		/*let currLang = this.translate.currentLang;
+		if ((['ar', 'he']).indexOf(currLang) >= 0) {
+			window.document.getElementsByTagName("html")[0].dir = 'rtl';
+			window.document.getElementsByTagName("html")[0].lang = currLang;
+		} else {
+			window.document.getElementsByTagName("html")[0].dir = 'ltr';
+			window.document.getElementsByTagName("html")[0].lang = currLang;
+		}*/
+
 	}
 
 	// Defect fix VAN-2988
-	@HostListener('window:keydown', [ '$event' ])
+	@HostListener('window:keydown', ['$event'])
 	disbleCtrlACV($event: KeyboardEvent) {
 		//console.log('$event.keyCode ' + $event.keyCode);
 		if (
