@@ -272,10 +272,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		} else  {
 			this.drop.hideDropDown = false;
 		}
-		else
-		{
-			this.drop.hideDropDown = false;
-		}
+
 
 		if (gamingStatus.cpuOCFeature) {
 			this.renderCPUOverClockStatus();
