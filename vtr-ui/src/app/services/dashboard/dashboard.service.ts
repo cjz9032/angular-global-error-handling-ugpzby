@@ -133,8 +133,9 @@ export class DashboardService {
 					observer.next(result);
 					observer.complete();
 					}, (e) => {
-						console.error("get last update info failed:"+e);
+						console.error('get last update info failed:' + JSON.stringify(e));
 						observer.next(result);
+						this.commonService.setLocalStorageValue(LocalStorageKey.LastSystemUpdateStatus, result);
 						observer.complete();
 					});
 				}
