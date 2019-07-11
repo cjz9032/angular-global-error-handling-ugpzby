@@ -212,6 +212,7 @@ export class AppComponent implements OnInit {
 			return this.deviceService
 				.getMachineInfo()
 				.then((value: any) => {
+					this.vantageLaunch(value);
 					console.log('getMachineInfo.then', value);
 					console.log('########################################## 1', value);
 					if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
@@ -368,4 +369,21 @@ export class AppComponent implements OnInit {
 			$event.preventDefault();
 		}
 	}
+	/**
+	 * @param info: The machine info object.
+	 * @summary will launch the application based on the machine info
+	 */
+	public vantageLaunch(info: any) {
+		try {
+			console.log(`INFO of the machine ==>`, info);
+			if (info && info.isGaming) {
+				this.router.navigate(['/device-gaming']);
+			} else {
+				this.router.navigate(['/dashboard']);
+			}
+		} catch (err) {
+			console.log(`ERROR in vantageLaunch() of app.component`, err);
+		}
+	}
+
 }

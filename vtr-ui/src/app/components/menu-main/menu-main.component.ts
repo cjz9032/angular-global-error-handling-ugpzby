@@ -58,7 +58,6 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 		private commonService: CommonService,
 		public userService: UserService,
 		public translationService: TranslationService,
-		private modalService: NgbModal,
 		public deviceService: DeviceService,
 		vantageShellService: VantageShellService,
 		private translate: TranslateService,
@@ -126,6 +125,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 		}
 	}
 	ngOnInit() {
+		this.isHomeGaming();
 		const self = this;
 		this.translate.stream('lenovoId.user').subscribe((value) => {
 			if (!self.userService.auth) {
@@ -377,7 +377,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 	}
 
 	public isHomeGaming() {
-
+		console.log(`CURRENTURL====================<><>`, this.router);
 		if (this.router.url === '/device-gaming' || this.router.url === '/') {
 			this.isGamingHome = true;
 		} else {
