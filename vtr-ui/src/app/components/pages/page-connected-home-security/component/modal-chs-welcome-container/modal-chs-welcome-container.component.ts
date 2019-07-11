@@ -198,9 +198,9 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit,
 
 	startTrial() {
 		this.loading = true;
+		this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
 		this.chs.createAndGetAccount().then((trial: boolean) => {
 			if (!trial) { return; }
-			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
 			this.closeModal();
 		}).catch(() => {
 			this.loading = false;
