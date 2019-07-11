@@ -4,6 +4,9 @@ import { HttpHeaders } from '@angular/common/http';
 import { CommsService } from '../comms/comms.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { RegionService } from '../region/region.service';
+import { CommonService } from '../common/common.service';//VAN-5872, server switch feature
+import { LocalStorageKey } from '../../enums/local-storage-key.enum';//VAN-5872, server switch feature
+
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -18,11 +21,13 @@ const httpOptions = {
 export class CMSService {
 	language: string;
 	region: string;
+	segment: string;//VAN-5872, server switch feature
 
 	constructor(
 		private commsService: CommsService,
 		private vantageShellService: VantageShellService,
-		regionService: RegionService
+		regionService: RegionService,
+		private commonService: CommonService//VAN-5872, server switch feature
 	) {
 		regionService.getRegion().subscribe({
 			next: x => {
@@ -88,10 +93,29 @@ export class CMSService {
 			'Segment': 'SMB',
 			'Brand': 'Lenovo'
 		};
-		Object.assign(defaults, queryParams);
+		//Object.assign(defaults, queryParams);
+
+		//VAN-5872, server switch feature
+		//retrive from localStorage
+		let CMSOption = Object.assign(defaults, queryParams);
+		let serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
+		if (serverSwitchLocalData) {
+			if (serverSwitchLocalData.forceit) {
+				Object.assign(CMSOption, {
+					'Lang': (serverSwitchLocalData.language.Value).toUpperCase(),
+					'GEO': (serverSwitchLocalData.country.Value).toUpperCase(),
+					'Segment': serverSwitchLocalData.segment.Value
+				});
+			}
+		}
+		//console.log('@sahinul cms service',CMSOption); 
+
+
+
 		return new Promise((resolve, reject) => {
 			this.commsService.endpointGetCall(
-				'/api/v1/features', Object.assign(defaults, queryParams), {}
+				/*'/api/v1/features', Object.assign(defaults, queryParams), {}*/
+				'/api/v1/features', CMSOption, httpOptions//VAN-5872, server switch feature
 			).subscribe((response: any) => {
 				this.filterCMSContent(response.Results).then(
 					(result) => {

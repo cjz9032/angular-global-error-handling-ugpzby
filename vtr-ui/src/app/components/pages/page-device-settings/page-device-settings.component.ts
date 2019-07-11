@@ -23,28 +23,28 @@ export class PageDeviceSettingsComponent implements OnInit {
 	public menuItems = [
 		{
 			id: 'power',
-			label: 'Power',
+			label: 'device.deviceSettings.power.title',
 			path: 'device-settings/power',
 			icon: 'power',
 			subitems: [],
 			active: true
 		}, {
 			id: 'audio',
-			label: 'Audio',
+			label: 'device.deviceSettings.audio.title',
 			path: 'device-settings/audio',
 			icon: 'audio',
 			subitems: [],
 			active: false
 		}, {
 			id: 'display-camera',
-			label: 'Display & Camera',
+			label: 'device.deviceSettings.displayCamera.title',
 			path: 'device-settings/display-camera',
 			icon: 'display-camera',
 			subitems: [],
 			active: false
 		}, {
 			id: 'input-accessories',
-			label: 'Input & Accessories',
+			label: 'device.deviceSettings.inputAccessories.title',
 			path: 'device-settings/input-accessories',
 			icon: 'input-accessories',
 			subitems: [],
@@ -53,6 +53,7 @@ export class PageDeviceSettingsComponent implements OnInit {
 	];
 	cardContentPositionA: any = {};
 	isDesktopMachine = true;
+	machineType: number;
 	constructor(
 		private devService: DevService,
 		public qaService: QaService,
@@ -67,11 +68,30 @@ export class PageDeviceSettingsComponent implements OnInit {
 		// Evaluate the translations for QA on language Change
 		this.qaService.setTranslationService(this.translate);
 		this.qaService.setCurrentLangTranslations();
+
+		//translate subheader menus
+		this.menuItems.forEach(m => {
+			m.label = this.translate.instant(m.label);
+			this.translate.stream(m.label).subscribe((value) => {
+				m.label = value;
+			});
+		});
 	}
 
 	ngOnInit() {
 		this.devService.writeLog('DEVICE SETTINGS INIT', this.menuItems);
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		if (this.machineType != 1) {
+			this.menuItems = this.commonService.removeObjFrom(this.menuItems, 'device-settings/input-accessories')
+		}
+		//translate subheader menus
+		this.menuItems.forEach(m => {
+			m.label = this.translate.instant(m.label);
+			this.translate.stream(m.label).subscribe((value) => {
+				m.label = value;
+			});
+		});
 	}
 
 	getMicrophoneSettings() {
