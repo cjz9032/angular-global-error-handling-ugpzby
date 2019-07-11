@@ -738,6 +738,7 @@
 				"jumpto": {
 					"title": "JUMP TO SETTINGS",
 					"battery": "Battery",
+					"smartStandby": "Smart Standby",
 					"power": "Power",
 					"cooling": "Intelligent Cooling",
 					"other": "Other"

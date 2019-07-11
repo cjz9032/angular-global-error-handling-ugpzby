@@ -129,6 +129,9 @@ export class UserService {
 			this.lidStarterHelper.getStarterAccountToken().then((token) => {
 				if (token && self.lidStarterHelper.isStarterToken(token)) {
 					self.starter = true;
+					const accountState = self.hadEverSignIn();
+					const starterStatus = self.getStarterIdStatus();
+					self.sendSigninMetrics('success', starterStatus, accountState, 'AppOpen');
 				}
 				self.commonService.sendNotification(self.starter ? LenovoIdStatus.StarterId : LenovoIdStatus.SignedOut, appFeature);
 			}).catch(function() {
