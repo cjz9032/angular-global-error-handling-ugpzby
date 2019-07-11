@@ -8,7 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
 import {DashboardService} from 'src/app/services/dashboard/dashboard.service';
-import { switchMap, map, mergeMap } from 'rxjs/operators';
+import {map, mergeMap } from 'rxjs/operators';
 @Component({
 	selector: 'vtr-widget-device',
 	templateUrl: './widget-device.component.html',
@@ -187,7 +187,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		});
 
 		// sysupdate
-		this.dashboardServcie.getRecentUpdateInfo().then(data => {
+		this.dashboardServcie.getRecentUpdateInfo().subscribe(data => {
 			if (data) {
 				const systemUpdate = this.deviceStatus[3];
 

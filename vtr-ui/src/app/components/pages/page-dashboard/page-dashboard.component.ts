@@ -1,4 +1,4 @@
-import { Component, OnInit, SecurityContext } from '@angular/core';
+import { Component, OnInit, SecurityContext, DoCheck } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -23,6 +23,7 @@ import { UserService } from '../../../services/user/user.service';
 import { QA } from 'src/app/data-models/qa/qa.model';
 import { AndroidService } from 'src/app/services/android/android.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.service';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -30,13 +31,14 @@ import { SecurityAdvisorMockService } from 'src/app/services/security/securityMo
 	styleUrls: ['./page-dashboard.component.scss'],
 	providers: [NgbModalConfig, NgbModal]
 })
-export class PageDashboardComponent implements OnInit {
+export class PageDashboardComponent implements OnInit, DoCheck {
 	firstName = 'User';
 	submit = this.translate.instant('dashboard.feedback.form.button');
 	feedbackButtonText = this.submit;
 	securityAdvisor: SecurityAdvisor;
 	public systemStatus: Status[] = [];
 	public isOnline = true;
+	private protocalAction: any;
 
 	heroBannerItems = [];
 	cardContentPositionA: any = {};
@@ -69,6 +71,8 @@ export class PageDashboardComponent implements OnInit {
 		public androidService: AndroidService,
 		private sanitizer: DomSanitizer,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
+		private activatedRoute: ActivatedRoute,
+		private lenovoIdDialogService: LenovoIdDialogService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -178,6 +182,16 @@ export class PageDashboardComponent implements OnInit {
 			this.onNotification(notification);
 		});
 
+	}
+
+	ngDoCheck(): void {
+		const lastAction = this.protocalAction;
+		this.protocalAction = this.activatedRoute.snapshot.queryParams['action'];
+		if (lastAction !== this.protocalAction) {
+			if (this.protocalAction.toLowerCase() === 'lenovoid') {
+				this.lenovoIdDialogService.openLenovoIdDialog();
+			}
+		}
 	}
 
 	onFeedbackModal() {
@@ -431,7 +445,7 @@ export class PageDashboardComponent implements OnInit {
 		});
 
 		// system update
-		this.dashboardService.getRecentUpdateInfo().then(value => {
+		this.dashboardService.getRecentUpdateInfo().subscribe(value => {
 			if (value) {
 				const systemUpdate = this.systemStatus[3];
 				const diffInDays = this.systemUpdateService.dateDiffInDays( value.lastupdate);

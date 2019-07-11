@@ -6,7 +6,6 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
-import { SmartStandby } from 'src/app/data-models/device/smart-standby.model';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
@@ -86,6 +85,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		{
 			title: 'device.deviceSettings.power.jumpto.battery',
 			path: 'battery',
+		},
+		{
+			title: 'device.deviceSettings.power.jumpto.smartStandby',
+			path: 'smartStandby'
 		},
 		{
 			title: 'device.deviceSettings.power.jumpto.power',
@@ -282,6 +285,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.stopMonitor();
 		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
 
+	}
+
+	onSetSmartStandbyCapability(event: boolean) {
+		if (!event) {
+			this.headerMenuItems.splice(2, 1);
+		}
 	}
 
 	openContextModal(template: TemplateRef<any>) {
