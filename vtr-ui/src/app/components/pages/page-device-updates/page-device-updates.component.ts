@@ -1,4 +1,4 @@
-import { Component, OnInit, NgZone, OnDestroy } from '@angular/core';
+import { Component, OnInit, NgZone, OnDestroy, DoCheck } from '@angular/core';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs';
@@ -29,7 +29,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 	templateUrl: './page-device-updates.component.html',
 	styleUrls: ['./page-device-updates.component.scss']
 })
-export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
+export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	title = 'systemUpdates.title';
 	back = 'systemUpdates.back';
 	backarrow = '< ';
@@ -57,6 +57,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public updateTitle = '';
 	private isUserCancelledUpdateCheck = false;
 	private timeStartSearch;
+	private protocalAction: string ;
+	private shouldCheckingUpdateByProtocal = false;
 
 	public isInstallationSuccess = false;
 	public isInstallationCompleted = false;
@@ -171,8 +173,19 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.getCashValue();
 	}
 
+	ngDoCheck(): void {
+		const lastAction = this.protocalAction;
+		this.protocalAction = this.activatedRoute.snapshot.queryParams['action'];
+		if (this.protocalAction && lastAction !== this.protocalAction) {
+			if (this.protocalAction.toLowerCase() === 'enable') {
+				this.systemUpdateService.setUpdateSchedule(true, false);
+			} else if (this.protocalAction.toLowerCase() === 'start') {
+				this.shouldCheckingUpdateByProtocal = true;
+			}
+		}
+	}
+
 	ngOnInit() {
-		const action = this.activatedRoute.snapshot.queryParams['action'];
 		this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
 		this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 		this.percentCompleted = this.systemUpdateService.percentCompleted;
@@ -197,13 +210,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.isComponentInitialized = true;
 
 		this.getLastUpdateScanDetail();
-		if (action && action.toLowerCase() === 'enable') {
-			this.systemUpdateService.setUpdateSchedule(true, false);
-		} else if (action && action.toLowerCase() === 'start') {
-			this.onCheckForUpdates();
-		} else {
-			this.systemUpdateService.getUpdateSchedule();
-		}
+		this.systemUpdateService.getUpdateSchedule();
 		this.systemUpdateService.getUpdateHistory();
 		this.setUpdateTitle();
 	}
@@ -765,6 +772,10 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isUpdateCheckInProgress = false;
 					this.isCheckingPluginStatus = false;
 					this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
+					if (this.shouldCheckingUpdateByProtocal) {
+						this.onCheckForUpdates();
+						this.shouldCheckingUpdateByProtocal = false;
+					}
 					break;
 				case UpdateProgress.ScheduleUpdateCheckComplete:
 					this.isCheckingPluginStatus = false;
