@@ -19,6 +19,7 @@ import { VantageShellService } from '../../../services/vantage-shell/vantage-she
 import { UserService } from '../../../services/user/user.service';
 import { TranslateService } from '@ngx-translate/core';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-page-device-gaming',
@@ -79,19 +80,23 @@ export class PageDeviceGamingComponent implements OnInit {
 			this.getSystemInfo();
 			// this.getSecurityStatus();
 		}
-		if (!this.allCapablitiyFlag) {
+		if (localStorage.getItem("AllGamingCapabilities") === null) {
+			console.log(`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  AllGamingCapabilities is null-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-`);
+			this.commonService.setLocalStorageValue(LocalStorageKey.allGamingCapabilities, false);
+		}
+		if (this.commonService.getLocalStorageValue(LocalStorageKey.allGamingCapabilities) === false) {
 			this.gamingAllCapabilitiesService
 				.getCapabilities()
 				.then((response) => {
+					console.log(`-------------------///////////////////////////////  From getCapabilities()----------------`);
 					this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
 				})
 				.catch((err) => {
 					console.log(`ERROR in appComponent getCapabilities()`, err);
 				});
-			this.allCapablitiyFlag = true;
+			this.commonService.setLocalStorageValue(LocalStorageKey.allGamingCapabilities, true);
 		}
 		this.setDefaultCMSContent();
-
 		const queryOptions = {
 			Page: 'dashboard',
 			Lang: 'EN',
