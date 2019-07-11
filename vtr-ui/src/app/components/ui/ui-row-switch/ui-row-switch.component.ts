@@ -21,7 +21,7 @@ import { ModalVoiceComponent } from '../../modal/modal-voice/modal-voice.compone
 	exportAs: 'uiRowSwitch'
 })
 export class UiRowSwitchComponent extends BaseComponent {
-	@ViewChild('childContent', { static: true }) childContent: any;
+	@ViewChild('childContent', { static: false }) childContent: any;
 
 	// Use Fort Awesome Font Awesome Icon Reference Array (library, icon class) ['fas', 'arrow-right']
 	@Input() rightIcon = [];

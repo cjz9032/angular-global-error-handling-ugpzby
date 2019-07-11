@@ -5,6 +5,7 @@
 
 	a.no-link {
 		cursor: default;
+		pointer-events: none;
 	}
 
 	.default-cursor {
@@ -45,7 +46,7 @@
 }
 
 // DEEP SELECTOR REQUIRED FOR NESTED COMPONENT STYLING
-::ng-deep {
+/deep/ {
 	.vtr-widget-carousel {
 		.carousel {
 			&:focus {

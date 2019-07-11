@@ -11,6 +11,7 @@ import { RegionService } from 'src/app/services/region/region.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { GuardService } from '../../../services/guard/security-guardService.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'vtr-page-security-windows-hello',
@@ -35,7 +36,8 @@ export class PageSecurityWindowsHelloComponent implements OnInit, OnDestroy {
 		private guard: GuardService,
 
 		vantageShellService: VantageShellService,
-		private securityAdvisorMockService: SecurityAdvisorMockService
+		private securityAdvisorMockService: SecurityAdvisorMockService,
+		private router: Router
 	) {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
@@ -65,6 +67,11 @@ export class PageSecurityWindowsHelloComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
+		if (this.router.routerState.snapshot.url.indexOf('security') === -1 || this.router.routerState.snapshot.url.indexOf('dashboard') === -1) {
+			if (this.securityAdvisor.wifiSecurity) {
+				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
+			}
+		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}

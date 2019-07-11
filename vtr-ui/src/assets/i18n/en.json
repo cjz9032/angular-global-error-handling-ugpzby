@@ -605,13 +605,7 @@
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
 				"updating": "Updating",
-				"thresholdNote": {
-					"note": "Note: ",
-					"note1": "To extend the battery lifespan, you have set your battery to stop charging at ",
-					"note2": "to stop charging at ",
-					"note3": "battery",
-					"note4": "and "
-				},
+				"thresholdNote": "<b>Note:</b> To extend the battery lifespan, you have set your battery to stop charging at {{value}}%.",
 				"voltageError": "Battery voltage incorrect",
 				"batteryNotDetected": "No battery detected",
 				"details": {
@@ -663,72 +657,20 @@
 					}
 				},
 				"condition": {
-					"Illegal": {
-						"description": "The battery installed is",
-						"description1": "not supported",
-						"description2": "by the system and will not charge. Please replace the battery with the correct Lenovo battery for this system."
-					},
-					"Good": {
-						"title": "The battery is in good condition."
-					},
-					"Exhaustion": {
-						"description": "The battery has",
-						"description1": "failed due to normal wear.",
-						"description2": "The battery cannot be charged. Replace the battery."
-					},
-					"Bad": {
-						"title": "A battery error has occurred.",
-						"description": "The battery cannot be charged/discharged. Replace the battery."
-					},
-					"NotDetected": {
-						"title": "No battery detected or not",
-						"description": "plugged in battery."
-					},
-					"NotGood": {
-						"title": "The battery is not in a good Condition."
-					},
-					"NotSupportACAdapter": {
-						"title": "AC adapter not supported.",
-						"description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
-					},
-					"LimitedACAdapterSupport": {
-						"title": "AC adapter cannot provide enough power",
-						"description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
-					},
-					"MissingDriver": {
-						"title": "The Lenovo Power Manager driver",
-						"description": "is not installed or not working properly. Please run Windows Update to install the latest driver."
-					},
-					"StoreLimitation": {
-						"title": "The battery can only store",
-						"description1": "of",
-						"description2": "it's original full charge capacity."
-					},
-					"HighTemperature": {
-						"title": "Discharging",
-						"description": "has been stopped because the",
-						"description1": "battery temperature is too high."
-					},
-					"TrickleCharge": {
-						"description": "The battery was",
-						"description1": "completely discharged",
-						"description2": "and needs to be recharged. This might take ten hours or more."
-					},
-					"OverheatedBattery": {
-						"description": "The battery is",
-						"description1": "too hot.",
-						"description2": "Remove it from the computer and cool it to room temperature."
-					},
-					"PermanentError": {
-						"description": "The battery has",
-						"description1": "failed due to normal wear.",
-						"description2": "The battery cannot be charged. Replace the battery."
-					},
-					"HardwareAuthenticationError": {
-						"description": "The battery installed is",
-						"description1": "not supported",
-						"description2": "by the system and will not charge. Please replace the battery with the correct Lenovo battery for this system."
-					}
+					"Illegal": "The battery installed is <b>not supported</b> by the system and will not charge. Please replace the battery with the correct Lenovo battery for this system.",
+					"Good": "<b>The battery is in good condition.</b>",
+					"Exhaustion": "The battery has <b>failed due to normal wear.</b> The battery cannot be charged. Replace the battery.",
+					"Bad": "<b>A battery error has occurred.</b> The battery cannot be charged/discharged. Replace the battery.",
+					"NotDetected": "<b>No battery detected or not</b> plugged in battery.",
+					"NotGood": "<b>The battery is not in a good Condition.</b>",
+					"NotSupportACAdapter": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
+					"LimitedACAdapterSupport": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter.",
+					"MissingDriver": "<b>The Lenovo Power Manager driver</b> is not installed or not working properly. Please run Windows Update to install the latest driver.",
+					"StoreLimitation": "<b>The battery can only store {{value}}% of</b> it's original full charge capacity.",
+					"HighTemperature": "<b>Discharging</b> has been stopped because the <b>battery temperature is too high.</b>",
+					"TrickleCharge": "The battery was <b>completely discharged</b> and needs to be recharged. This might take ten hours or more.",
+					"OverheatedBattery": "The battery is <b>too hot</b>. Remove it from the computer and cool it to room temperature.",
+					"PermanentError": "The battery has <b>failed due to normal wear.</b> The battery cannot be charged. Replace the battery."
 				}
 			},
 			"power": {
@@ -738,6 +680,7 @@
 				"jumpto": {
 					"title": "JUMP TO SETTINGS",
 					"battery": "Battery",
+					"smartStandby": "Smart Standby",
 					"power": "Power",
 					"cooling": "Intelligent Cooling",
 					"other": "Other"
@@ -830,7 +773,7 @@
 				"smartStandby": {
 					"title": "Smart Standby",
 					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
 					"timer": {
 						"heading": "Set time when you typically use this computer",
 						"subHeading1": "start",
@@ -842,7 +785,8 @@
 							"unit2": "Minutes",
 							"unit3": "AM/PM"
 						}
-					}
+					},
+					"warningtip": "Please select at least one day."
 				},
 				"batterySettings": {
 					"title": "Battery settings",
@@ -1199,7 +1143,7 @@
 					"title": "Keep My Display",
 					"caption": "Keep my display when I am reading or browsing.",
 					"displaySlider": {
-						"title": "Minutes Before display dims when browsing",
+						"title": "Minutes before display dims when browsing",
 						"startTime": "0 minutes",
 						"endTime": "60 minutes"
 					}

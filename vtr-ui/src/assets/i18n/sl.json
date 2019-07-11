@@ -891,7 +891,8 @@
                             "unit2": "min",
                             "unit3": "dop./pop."
                         }
-                    }
+                    },
+                    "warningtip": "Please select at least one day."
                 }
             },
             "audio": {

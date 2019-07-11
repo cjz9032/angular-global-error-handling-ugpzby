@@ -1,12 +1,11 @@
 import { Component, OnInit, OnDestroy, DoCheck, HostListener, ViewChild, AfterViewInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
 import { UserService } from '../../services/user/user.service';
-import { ModalLenovoIdComponent } from '../modal/modal-lenovo-id/modal-lenovo-id.component';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -20,10 +19,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { RegionService } from 'src/app/services/region/region.service';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { ModalCommonConfirmationComponent } from '../modal/modal-common-confirmation/modal-common-confirmation.component';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
-import { DialogService } from 'src/app/services/dialog/dialog.service';
+import { LenovoIdDialogService } from '../../services/dialog/lenovoIdDialog.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -66,7 +64,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 		private smartAssist: SmartAssistService,
 		private logger: LoggerService,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
-		private dialogService: DialogService
+		private dialogService: LenovoIdDialogService
 	) {
 		this.showVpn();
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
@@ -197,7 +195,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 
 	//  to popup Lenovo ID modal dialog
 	OpenLenovoId(appFeature = null) {
-		this.dialogService.lenovoIdDialog(appFeature);
+		this.dialogService.openLenovoIdDialog(appFeature);
 	}
 
 	onLogout() {

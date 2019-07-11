@@ -271,7 +271,7 @@ export class AppComponent implements OnInit {
 
 	// VAN-5872, server switch feature
 	private serverSwitchThis() {
-		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
+		this.activRouter.queryParamMap.subscribe((params: ParamMap) => {
 			if (params.has('serverswitch')) {
 				// retrive from localStorage
 				const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
@@ -295,7 +295,24 @@ export class AppComponent implements OnInit {
 					if (allLangs.indexOf(langCode) >= 0) {
 						// this.translate.resetLang('ar');
 						this.translate.reloadLang(langCode);
-						this.translate.use(langCode);
+						this.translate.use(langCode).subscribe(
+							data => console.log('@sahinul trans use NEXT'),
+							error => console.log('@sahinul server switch error ', error),
+							() => {
+								// Evaluate the translations for QA on language Change
+								// this.qaService.setTranslationService(this.translate);
+								// this.qaService.setCurrentLangTranslations();
+								console.log('@sahinul server switch completed');
+								// VAN-6417, language right to left
+								/*if ((['ar', 'he']).indexOf(langCode) >= 0) {
+									window.document.getElementsByTagName("html")[0].dir = 'rtl';
+									window.document.getElementsByTagName("html")[0].lang = langCode;
+								} else {
+									window.document.getElementsByTagName("html")[0].dir = 'ltr';
+									window.document.getElementsByTagName("html")[0].lang = langCode;
+								}*/
+							}
+						);
 					}
 				}
 			}
@@ -345,6 +362,17 @@ export class AppComponent implements OnInit {
 		// VAN-5872, server switch feature
 		// when app loads for the 1st time then remove ServerSwitch values
 		window.localStorage.removeItem(LocalStorageKey.ServerSwitchKey);
+
+		// VAN-6417, language right to left
+		/*let currLang = this.translate.currentLang;
+		if ((['ar', 'he']).indexOf(currLang) >= 0) {
+			window.document.getElementsByTagName("html")[0].dir = 'rtl';
+			window.document.getElementsByTagName("html")[0].lang = currLang;
+		} else {
+			window.document.getElementsByTagName("html")[0].dir = 'ltr';
+			window.document.getElementsByTagName("html")[0].lang = currLang;
+		}*/
+
 	}
 
 	// Defect fix VAN-2988

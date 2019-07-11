@@ -891,7 +891,8 @@
                             "unit2": "Minuten",
                             "unit3": "AM/PM"
                         }
-                    }
+                    },
+                    "warningtip": "Please select at least one day."
                 }
             },
             "audio": {
@@ -1105,7 +1106,7 @@
                     "title": "Door gebruiker gedefinieerde toets",
                     "caption": "Met de toets met het sterpictogram kunt u een door de gebruiker gedefinieerde functie instellen",
                     "dropDown": {
-                        "title": "Actie voor de door gebruiker gedefinieerde toets",
+                        "title": "Actie van de door de gebruiker gedefinieerde toets",
                         "note": "Opmerking: dit kan worden gebruikt om veelgebruikte toetsenreeksen in te voeren, zoals een e-mail- of postadres. Lenovo raadt u aan deze functie nooit te gebruiken voor het opslaan en invoeren van wachtwoorden of andere privégegevens.",
                         "options": {
                             "option1": "Maak een keuze",
