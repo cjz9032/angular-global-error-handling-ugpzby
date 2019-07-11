@@ -891,7 +891,8 @@
                             "unit2": "Minuty",
                             "unit3": "rano/wieczorem"
                         }
-                    }
+                    },
+                    "warningtip": "Please select at least one day."
                 }
             },
             "audio": {

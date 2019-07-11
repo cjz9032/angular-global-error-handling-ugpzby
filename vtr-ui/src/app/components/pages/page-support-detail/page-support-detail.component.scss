@@ -115,12 +115,10 @@
     .mn-6 {
       margin-top: $shift_up_small;
     }
-
-	  @media only screen and (max-width: 992px) {
-		  .vtr-page-right-column {
-			  padding: 0 7rem 4rem 7rem;
-		  }
-	  }
-
+    .vtr-page-right-column {
+      @media #{$mediaquery_X8} {
+        padding: 4rem 4rem 4rem 8.5rem !important;
+      }
+    }
   }
 }

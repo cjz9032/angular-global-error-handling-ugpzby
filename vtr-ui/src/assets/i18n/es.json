@@ -891,7 +891,8 @@
                             "unit2": "Minutos",
                             "unit3": "AM/PM"
                         }
-                    }
+                    },
+                    "warningtip": "Please select at least one day."
                 }
             },
             "audio": {
@@ -1105,7 +1106,7 @@
                     "title": "Tecla definida por el usuario",
                     "caption": "La tecla representada por el icono de la estrella le permite establecer la función definida por el usuario",
                     "dropDown": {
-                        "title": "Tecla definida por el usuario para la acción",
+                        "title": "Acción de la tecla definida por el usuario",
                         "note": "Nota: esto se puede utilizar para ingresar la tecla comúnmente ingresada, como direcciones de correo electrónico o postales. Lenovo le recomienda no utilizar nunca esta característica para almacenar e ingresar contraseñas u otra información privada.",
                         "options": {
                             "option1": "Seleccione",

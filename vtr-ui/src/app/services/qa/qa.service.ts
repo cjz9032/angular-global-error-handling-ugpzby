@@ -740,6 +740,15 @@ export class QaService {
 		}
 	];
 
+	//VAN-5872, server switch feature
+	//only preserving those keys that are used in html
+	preserveTransKeys: any = {
+		pageTitle: 'faq.pageTitle',
+		qasTransKeys: {},
+		isPreserved: false,
+		isSubscribed: <any>false
+	}
+
 	constructor(private translate: TranslateService) { }
 
 	setTranslationService(translate: TranslateService) {
@@ -864,5 +873,89 @@ export class QaService {
 			console.log('QA Page title translation : already translated');
 		}
 
+	}
+
+	//VAN-5872, server switch feature
+	getQATranslation(translateQA: TranslateService) {
+		try {
+
+			//preserving translation keys to use every time
+			if (!this.preserveTransKeys.isPreserved) {
+				this.qas.forEach(qa => {
+					this.preserveTransKeys.qasTransKeys[qa.id] = {
+						title: 'faq.question' + qa.id + '.title',
+						description: 'faq.question' + qa.id + '.description'
+					};
+				});
+				this.preserveTransKeys.isPreserved = true;
+			}
+
+			//respond to onLangChange
+			if (!this.preserveTransKeys.isSubscribed) {
+				this.preserveTransKeys.isSubscribed = translateQA.onLangChange.subscribe((event: LangChangeEvent) => {
+
+					//Page Title
+					this.title = this.getObjectValue(event.translations, this.preserveTransKeys.pageTitle); //setting this again 
+					//console.log('@sahinul in getQATranslation onLangChange', event.lang, this.preserveTransKeys.pageTitle, this.title);
+
+					this.qas.forEach(qa => {
+						//segment or list Title
+						let qaTitleKey = this.preserveTransKeys.qasTransKeys[qa.id].title;
+						qa.title = this.getObjectValue(event.translations, qaTitleKey);
+						console.log('@sahinul in getQATranslation onLangChange qa', qaTitleKey, qa.title);
+
+						let qaDescriptionKey = this.preserveTransKeys.qasTransKeys[qa.id].description;
+						qa.description = this.getObjectValue(event.translations, qaDescriptionKey);
+					});
+				});
+			}
+
+			//Stream all the values 
+			translateQA.stream(this.preserveTransKeys.pageTitle).subscribe((value) => {
+				this.title = value;
+			});
+
+			this.qas.forEach(qa => {
+				let qaTitleKey = this.preserveTransKeys.qasTransKeys[qa.id].title;
+				translateQA.stream(qaTitleKey).subscribe((value) => {
+					qa.title = value;
+				});
+				//console.log('@sahinul in getQATranslation', translateQA.currentLang, qa.title);
+
+				let qaDescriptionKey = this.preserveTransKeys.qasTransKeys[qa.id].description;
+				translateQA.stream(qaDescriptionKey).subscribe((value) => {
+					qa.description = value;
+				});
+				/*console.log('@sahinul in getQATranslation keys', translateQA.currentLang, qa.keys);
+				if (isArray(qa.keys)) {
+					translateQA.stream(qa.keys).subscribe((translation: [string]) => {
+						qa.keys = translation;
+					});
+				}*/
+			});
+		} catch (err) {
+			console.log('getQATranslation Error', err);
+		}
+	}
+
+	//key=> faq.question1.title 
+	getObjectValue(sourceValue: object, key: string): any {
+		if (!sourceValue) {
+			return null;
+		}
+
+		let parents = key.split('.');
+		let returnValue = sourceValue;
+		parents.forEach((v) => {
+			returnValue = returnValue[v];
+		});
+		return returnValue;
+	}
+
+	destroyChangeSubscribed() {
+		if (this.preserveTransKeys.isSubscribed) {
+			this.preserveTransKeys.isSubscribed.unsubscribe();
+		}
+		console.log('@destroyChangeSubscribed');
 	}
 }
