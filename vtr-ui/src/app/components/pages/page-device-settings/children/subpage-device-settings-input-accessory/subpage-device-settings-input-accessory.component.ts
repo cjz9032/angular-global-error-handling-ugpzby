@@ -86,81 +86,81 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	}
 	// To display the keyboard map image
 	public getKeyboardMap(layOutName, machineType) {
-		let type = machineType.toLowerCase();
+		const type = machineType.toLowerCase();
 		this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Standered.png';
 		switch (layOutName.toLowerCase()) {
-			case "standered":
-				if (type == 'other') {
+			case 'standered':
+				if (type === 'other') {
 
 					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Standered.png';
-					return this.image
+					return this.image;
 				} else {
 					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/Standered.png';
-					return this.image
+					return this.image;
 				}
 				break;
-			case "belgium":
-				if (type == 'other') {
+			case 'belgium':
+				if (type === 'other') {
 					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Belgium.png';
-					return this.image
+					return this.image;
 				} else {
 					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/Belgium.png';
-					return this.image
+					return this.image;
 				}
 				break;
-			case "french":
-				if (type == 'other') {
+			case 'french':
+				if (type === 'other') {
 
 					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/French.png';
-					return this.image
+					return this.image;
 				} else {
 					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/French.png';
-					return this.image
+					return this.image;
 				}
 				break;
-			case "french_canadian":
-				if (type == 'other') {
+			case 'french_canadian':
+				if (type === 'other') {
 					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/French_Canadian.png';
-					return this.image
+					return this.image;
 				} else {
 					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/French_Canadian.png';
-					return this.image
+					return this.image;
 				}
 				break;
-			case "german":
-				if (type == 'other') {
+			case 'german':
+				if (type === 'other') {
 					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/German.png';
-					return this.image
+					return this.image;
 				} else {
 					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/German.png';
-					return this.image
+					return this.image;
 				}
 				break;
-			case "italian":
-				if (type == 'other') {
+			case 'italian':
+				if (type === 'other') {
 					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Italian.png';
-					return this.image
+					return this.image;
 				} else {
 					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/Italian.png';
-					return this.image
+					return this.image;
 				}
 				break;
-			case "spanish":
-				if (type == 'other') {
+			case 'spanish':
+				if (type === 'other') {
 					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Spanish.png';
-					return this.image
+					return this.image;
 				} else {
 					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/Spanish.png';
-					return this.image
+					return this.image;
 				}
 				break;
-			case "turkish_":
-				if (type == 'other') {
+			case 'turkish_':
+				if (type === 'other') {
 					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Turkish_F.png';
-					return this.image
+					return this.image;
 				} else {
 					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/Turkish_F.png';
-					return this.image
+					return this.image;
 				}
 				break;
 			default:
@@ -179,7 +179,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 					this.keyboardService.GetKbdHiddenKeyBackLightCapability(),
 
 				]).then((response: any[]) => {
-					//console.log('promise all resonse  here -------------.>', response);
+					// console.log('promise all resonse  here -------------.>', response);
 					if (response && response.length) {
 						if (response[0]) {
 							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.firstKeyObj');
@@ -200,7 +200,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 							privacy: response[1],
 							magnifier: response[2],
 							backLight: response[3],
-						}
+						};
 					}
 				});
 			}
