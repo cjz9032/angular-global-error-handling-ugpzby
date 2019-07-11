@@ -5,7 +5,9 @@ import { Injectable } from '@angular/core';
 
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-
+import { Observable, from } from 'rxjs';
+import {CommonService} from 'src/app/services/common/common.service';
+import {LocalStorageKey} from 'src/app/enums/local-storage-key.enum';
 @Injectable({
 	providedIn: 'root'
 })
@@ -15,10 +17,12 @@ export class DashboardService {
 	private sysupdate: any;
 	private warranty: any;
 	public isShellAvailable = false;
+	private commonService: CommonService;
 
-	constructor(shellService: VantageShellService) {
+	constructor(shellService: VantageShellService, commonService: CommonService) {
 		this.dashboard = shellService.getDashboard();
 		this.sysinfo = null;
+		this.commonService = commonService;
 		if (this.dashboard) {
 			this.isShellAvailable = true;
 			this.sysinfo = this.dashboard.sysinfo;
@@ -105,21 +109,36 @@ export class DashboardService {
 		return undefined;
 	}
 
-	public getRecentUpdateInfo(): Promise<any> {
+	public getRecentUpdateInfo(): Observable<any> {
+
 		if (this.sysupdate) {
-			const result = {lastupdate: null, status: 0};
-			return this.sysupdate.getMostRecentUpdateInfo().then((data) => {
-				if (data && data.lastScanTime) {
-					result.lastupdate = data.lastScanTime;
-					result.status = 1;
-				} else {
-					result.lastupdate = null;
-					result.status = 0;
+			return new Observable(observer => {
+				// from loccal storage
+				const cacheSu = this.commonService.getLocalStorageValue(LocalStorageKey.LastSystemUpdateStatus);
+				if(cacheSu) {
+					observer.next(cacheSu);
 				}
-				return Promise.resolve(result);
-				}, () => {
-					return Promise.resolve(result);
-				});
+				// from su plugin
+				const result = {lastupdate: null, status: 0};
+				return this.sysupdate.getMostRecentUpdateInfo().then((data) => {
+					if (data && data.lastScanTime) {
+						result.lastupdate = data.lastScanTime;
+						result.status = 1;
+					} else {
+						result.lastupdate = null;
+						result.status = 0;
+					}
+					// save to localstorage
+					this.commonService.setLocalStorageValue(LocalStorageKey.LastSystemUpdateStatus, result);
+					observer.next(result);
+					observer.complete();
+					}, (e) => {
+						console.error("get last update info failed:"+e);
+						observer.next(result);
+						observer.complete();
+					});
+				}
+			);
 		}
 		return undefined;
 	}
