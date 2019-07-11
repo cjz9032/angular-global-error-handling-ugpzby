@@ -430,7 +430,7 @@ export class PageDashboardComponent implements OnInit {
 		});
 
 		// system update
-		this.dashboardService.getRecentUpdateInfo().then(value => {
+		this.dashboardService.getRecentUpdateInfo().subscribe(value => {
 			if (value) {
 				const systemUpdate = this.systemStatus[3];
 				const diffInDays = this.systemUpdateService.dateDiffInDays( value.lastupdate);
