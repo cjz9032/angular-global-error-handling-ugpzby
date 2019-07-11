@@ -252,11 +252,13 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.legionUpdate[3].isVisible = gamingStatus.networkBoostFeature; // || true;
 		console.log('aparna  driver lack ' + gamingStatus.networkBoostFeature);
 		this.legionUpdate[4].isVisible = gamingStatus.hybridModeFeature;
-		//this.legionUpdate[4].isChecked = gamingStatus.hybridStatus;
+		// this.legionUpdate[4].isChecked = gamingStatus.hybridStatus;
 		this.legionUpdate[5].isVisible = gamingStatus.touchpadLockFeature;
 		this.legionUpdate[5].isChecked = gamingStatus.touchpadLockStatus;
 		if (!gamingStatus.xtuService) {
 			this.drop.hideDropDown = true;
+		} else  {
+			this.drop.hideDropDown = false;
 		}
 
 		if (gamingStatus.cpuOCFeature) {
