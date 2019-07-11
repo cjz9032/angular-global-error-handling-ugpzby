@@ -338,6 +338,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				if (cpuOCStatus !== undefined) {
 					const CpuOCStatusObj = new CPUOCStatus();
 					CpuOCStatusObj.cpuOCStatus = cpuOCStatus;
+						if (cpuOCStatus !== this.drop.curSelected) {
+							this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, cpuOCStatus);
+						}
 					this.drop.curSelected = CpuOCStatusObj.cpuOCStatus;
 				}
 			});
