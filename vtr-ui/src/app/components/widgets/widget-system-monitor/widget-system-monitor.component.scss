@@ -491,8 +491,8 @@
 					padding: 2rem 3rem;
 					padding-bottom: 0;
 					@media #{$mediaquery_6} {
-						padding: 3rem;
-						padding-bottom: 0;
+						padding: 3rem 2rem 0;
+
 					}
 					&.single {
 						padding: 3rem;
