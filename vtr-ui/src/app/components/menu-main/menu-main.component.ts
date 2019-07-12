@@ -22,6 +22,8 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { LenovoIdDialogService } from '../../services/dialog/lenovoIdDialog.service';
+import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
+import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -64,7 +66,8 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 		private smartAssist: SmartAssistService,
 		private logger: LoggerService,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
-		private dialogService: LenovoIdDialogService
+		private dialogService: LenovoIdDialogService,
+		private keyboardService: InputAccessoriesService
 	) {
 		this.showVpn();
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
@@ -135,6 +138,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 		});
 
 		this.isDashboard = true;
+		this.initInputAccessories()
 	}
 	ngAfterViewInit(): void {
 		this.getMenuItems().then((items) => {
@@ -383,4 +387,17 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 		}
 	}
 
+	initInputAccessories() {
+		Promise.all([
+			this.keyboardService.GetUDKCapability(),
+			this.keyboardService.GetKeyboardMapCapability()
+		]).then((responses: any[]) => {
+			const inputAccessoriesCapability = new InputAccessoriesCapability();
+			inputAccessoriesCapability.isUdkAvailable = false;
+			inputAccessoriesCapability.isKeyboardMapAvailable = false;
+			this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, inputAccessoriesCapability);
+		}).catch((error) => {
+			console.error('error in initSmartAssist.Promise.all()', error);
+		});
+	}
 }
