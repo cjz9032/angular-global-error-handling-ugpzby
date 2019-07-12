@@ -1,6 +1,7 @@
 import { PageUserComponent } from 'src/app/components/pages/page-user/page-user.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ArticleItemComponent } from '../components/article-item/article-item.component';
+import { UiFeatureItemComponent } from 'src/app/components/ui/ui-feature-item/ui-feature-item.component';
 import { BaseComponent } from '../components/base/base.component';
 import { CommonModule } from '@angular/common';
 import { CommonService } from '../services/common/common.service';
@@ -34,6 +35,7 @@ import { CommonPipeModule } from './common/common-pipe.module';
 @NgModule({
 	declarations: [
 		ArticleItemComponent,
+		UiFeatureItemComponent,
 		BaseComponent,
 		ContainerArticleComponent,
 		ContainerCardComponent,
@@ -62,6 +64,7 @@ import { CommonPipeModule } from './common/common-pipe.module';
 	exports: [
 		AngularSvgIconModule,
 		ArticleItemComponent,
+		UiFeatureItemComponent,
 		BaseComponent,
 		CommonDirectiveModule,
 		CommonPipeModule,
