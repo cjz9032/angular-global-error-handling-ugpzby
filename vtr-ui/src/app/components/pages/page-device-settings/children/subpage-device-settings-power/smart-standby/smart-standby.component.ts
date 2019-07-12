@@ -60,8 +60,8 @@ export class SmartStandbyComponent implements OnInit {
 				}).catch((error) => {
 					console.log('getSmartStandbyCapability Error', error);
 				});
-			// this.initSmartStandby();
 		}
+		// this.initSmartStandby();
 	}
 
 	initSmartStandby() {

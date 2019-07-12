@@ -784,7 +784,34 @@
 							"unit1": "Hours",
 							"unit2": "Minutes",
 							"unit3": "AM/PM"
+						},
+						"amPms": {
+							"am": "AM",
+							"pm": "PM"
 						}
+					},
+					"days": {
+						"shortName": {
+							"sun": "Sun",
+							"mon": "Mon",
+							"tue": "Tue",
+							"wed": "Wed",
+							"thurs": "Thurs",
+							"fri": "Fri",
+							"sat": "Sat"
+						},
+						"name": {
+							"sun": "Sunday",
+							"mon": "Monday",
+							"tue": "Tuesday",
+							"wed": "Wednesday",
+							"thurs": "Thursday",
+							"fri": "Friday",
+							"sat": "Saturday"
+						},
+						"everyday": "Everyday",
+						"weekdays": "Weekdays",
+						"weekends": "Weekends"
 					},
 					"warningtip": "Please select at least one day."
 				},
