@@ -24,6 +24,8 @@ export class AppComponent implements OnInit {
 	title = 'vtr-ui';
 
 	machineInfo: any;
+	public isMachineInfoLoaded = false;
+	public isGaming: any = false;
 	constructor(
 		private devService: DevService,
 		private displayService: DisplayService,
@@ -126,6 +128,7 @@ export class AppComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		console.log('---------------LOADED')
 		// session storage is not getting clear after vantage is close.
 		// forcefully clearing session storage
 		sessionStorage.clear();
@@ -164,24 +167,24 @@ export class AppComponent implements OnInit {
 				}
 			}
 		});
+		this.getMachineInfo();
+		// const result = this.getMachineInfo();
+		// const hadRunApp: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
+		// const appFirstRun = !hadRunApp;
+		// if (appFirstRun && this.deviceService.isShellAvailable) {
+		// 	this.commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
+		// 	if (result) {
+		// 		result.then((machineInfo) => {
+		// 			this.sendFirstRunEvent(machineInfo);
+		// 		});
+		// 	}
+		// }
 
-		const result = this.getMachineInfo();
-		const hadRunApp: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
-		const appFirstRun = !hadRunApp;
-		if (appFirstRun && this.deviceService.isShellAvailable) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
-			if (result) {
-				result.then((machineInfo) => {
-					this.sendFirstRunEvent(machineInfo);
-				});
-			}
-		}
-
-		if (result) {
-			result.then((machineInfo) => {
-				this.machineInfo = machineInfo;
-			});
-		}
+		// if (result) {
+		// 	result.then((machineInfo) => {
+		// 		this.machineInfo = machineInfo;
+		// 	});
+		// }
 
 		this.checkIsDesktopOrAllInOneMachine();
 		this.settingsService.getPreferenceSettingsValue();
@@ -212,25 +215,11 @@ export class AppComponent implements OnInit {
 			return this.deviceService
 				.getMachineInfo()
 				.then((value: any) => {
+					console.log(`SUCCESSFULLY got the machine info =>`, value);
+					this.machineInfo = value;
+					this.updateLanguageSettings(value);
 					this.vantageLaunch(value);
-					console.log('getMachineInfo.then', value);
-					console.log('########################################## 1', value);
-					if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
-						this.translate.use(value.locale.substring(0, 2));
-						this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
-					} else {
-						if (value && value.locale.substring(0, 2).toLowerCase() === 'pt') {
-							value.locale.toLowerCase() === 'pt-br'
-								? this.translate.use('pt-BR')
-								: this.translate.use('pt');
-						}
-						if (value && value.locale.toLowerCase() === 'zh-hans') {
-							this.translate.use('zh-Hans');
-						}
-						if (value && value.locale.toLowerCase() === 'zh-hant') {
-							this.translate.use('zh-Hant');
-						}
-					}
+					this.isMachineInfoLoaded = true;
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
 					return value;
 				})
@@ -238,10 +227,33 @@ export class AppComponent implements OnInit {
 					console.error('getMachineInfo', error);
 				});
 		}
-
 		return null;
 	}
 
+	private updateLanguageSettings(value: any) {
+		const hadRunApp: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
+		const appFirstRun = !hadRunApp;
+		if (appFirstRun && this.deviceService.isShellAvailable) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
+			this.sendFirstRunEvent(value);
+		}
+		if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
+			this.translate.use(value.locale.substring(0, 2));
+			this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
+		} else {
+			if (value && value.locale.substring(0, 2).toLowerCase() === 'pt') {
+				value.locale.toLowerCase() === 'pt-br'
+					? this.translate.use('pt-BR')
+					: this.translate.use('pt');
+			}
+			if (value && value.locale.toLowerCase() === 'zh-hans') {
+				this.translate.use('zh-Hans');
+			}
+			if (value && value.locale.toLowerCase() === 'zh-hant') {
+				this.translate.use('zh-Hant');
+			}
+		}
+	}
 	private checkIsDesktopOrAllInOneMachine() {
 		try {
 			if (this.deviceService.isShellAvailable) {
@@ -369,6 +381,7 @@ export class AppComponent implements OnInit {
 			$event.preventDefault();
 		}
 	}
+
 	/**
 	 * @param info: The machine info object.
 	 * @summary will launch the application based on the machine info
@@ -376,6 +389,7 @@ export class AppComponent implements OnInit {
 	public vantageLaunch(info: any) {
 		try {
 			console.log(`INFO of the machine ==>`, info);
+			this.isGaming = info.isGaming;
 			if (info && info.isGaming) {
 				this.router.navigate(['/device-gaming']);
 			} else {

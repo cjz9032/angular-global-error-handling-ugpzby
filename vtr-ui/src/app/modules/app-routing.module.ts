@@ -1,9 +1,15 @@
+import { HomeComponent } from './../components/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
 import { PageSupportComponent } from '../components/pages/page-support/page-support.component';
 
 const routes: Routes = [
+	{
+		path: '',
+		component: HomeComponent,
+		pathMatch: 'full'
+	},
 	{
 		path: 'dashboard',
 		loadChildren: './hardware-settings/hardware-dashboard.module#HardwareDashboardModule'
@@ -38,17 +44,11 @@ const routes: Routes = [
 	{
 		path: 'security',
 		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
+	},
+	{
+		path: '**',
+		component: HomeComponent
 	}
-	// {
-	// 	path: '',
-	// 	redirectTo: 'device-gaming',
-	// 	pathMatch: 'full'
-	// },
-	// {
-	// 	path: '',
-	// 	redirectTo: 'dashboard',
-	// 	pathMatch: 'full'
-	// }
 ];
 
 @NgModule({
