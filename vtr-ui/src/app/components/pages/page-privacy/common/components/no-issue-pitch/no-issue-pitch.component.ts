@@ -27,11 +27,11 @@ export class NoIssuePitchComponent implements OnInit, OnDestroy {
 	isShowPitch$ = of(false);
 	currentPath: RoutersName;
 
-	@ViewChild('breachAccount') private breachAccount: ElementRef;
-	@ViewChild('trackers') private trackers: ElementRef;
-	@ViewChild('nonPrivatePassword') private nonPrivatePassword: ElementRef;
+	@ViewChild('breachAccount', { static: true }) private breachAccount: ElementRef;
+	@ViewChild('trackers', { static: true }) private trackers: ElementRef;
+	@ViewChild('nonPrivatePassword', { static: true }) private nonPrivatePassword: ElementRef;
 
-	private templateForPitch: {[path in RoutersName]?: ElementRef};
+	private templateForPitch: { [path in RoutersName]?: ElementRef };
 
 	private textForPitch = {
 		[RoutersName.BREACHES]: {
@@ -77,7 +77,7 @@ export class NoIssuePitchComponent implements OnInit, OnDestroy {
 		this.nonPrivatePasswordWasScanned$
 	);
 
-	private noIssues: {[path in RoutersName]?: Observable<boolean>} = {
+	private noIssues: { [path in RoutersName]?: Observable<boolean> } = {
 		[RoutersName.TRACKERS]: this.trackersNoIssues$,
 		[RoutersName.BREACHES]: this.breachesNoIssues$,
 		[RoutersName.BROWSERACCOUNTS]: this.nonPrivatePasswordNoIssues$,
@@ -110,7 +110,7 @@ export class NoIssuePitchComponent implements OnInit, OnDestroy {
 			);
 	}
 
-	ngOnDestroy() {}
+	ngOnDestroy() { }
 
 	getText() {
 		return this.textForPitch[this.currentPath];

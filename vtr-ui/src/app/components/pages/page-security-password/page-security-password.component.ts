@@ -11,7 +11,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { RegionService } from 'src/app/services/region/region.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { GuardService } from '../../../services/guard/security-guardService.service';
 import { Subscription } from 'rxjs';
 
@@ -40,8 +40,8 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 		public regionService: RegionService,
 		vantageShellService: VantageShellService,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
-		private router: ActivatedRoute,
-		private guard: GuardService
+		private guard: GuardService,
+		private router: Router
 	) {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
@@ -78,6 +78,11 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
+		if (this.router.routerState.snapshot.url.indexOf('security') === -1 || this.router.routerState.snapshot.url.indexOf('dashboard') === -1) {
+			if (this.securityAdvisor.wifiSecurity) {
+				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
+			}
+		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}

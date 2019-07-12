@@ -9,6 +9,7 @@ import { UserDataGetStateService } from '../../common/services/user-data-get-sta
 import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
 import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
 import { SafeStorageService } from '../../common/services/safe-storage.service';
+import { PrivacyModule } from '../../privacy.module';
 
 @Injectable({
 	providedIn: 'root'

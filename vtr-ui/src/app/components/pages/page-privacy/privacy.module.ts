@@ -21,18 +21,10 @@ import { PrivacyRoutingModule } from './privacy-routing.module';
 // Common UI components
 import { FaqComponent } from './main-layout/sidebar/faq/faq.component';
 import { SidebarInstallWidgetComponent } from './main-layout/sidebar/sidebar-benefits-widget/sidebar-install-widget.component';
-import { PRIVACY_BASE_URL, PRIVACY_ENVIRONMENT } from './utils/injection-tokens';
-import { getPrivacyEnvironment } from './environment';
-import { DataKnowledgeService } from './common/services/data-knowledge.service';
-import { BreachedAccountsService } from './common/services/breached-accounts.service';
-import { PrivacyScoreService } from './pages/result/privacy-score/privacy-score.service';
 import { CheckBreachedAccountsModule } from './feature/check-breached-accounts/check-breached-accounts.module';
 import { TrackingMapModule } from './feature/tracking-map/tracking-map.module';
 import { NonPrivatePasswordModule } from './feature/non-private-password/non-private-password.module';
 import { VtrCommonModule } from './common/vtr-common.module';
-import { UserDataGetStateService } from './common/services/user-data-get-state.service';
-import { AnalyticsService } from './common/services/analytics.service';
-import { TaskActionService } from './common/services/task-action.service';
 import { ArticlesComponent } from './pages/articles/articles.component';
 import { ArticleSingleComponent } from './pages/articles/article-single/article-single.component';
 import { ArticlePreviewComponent } from './pages/articles/article-preview/article-preview.component';
@@ -40,11 +32,8 @@ import { ArticleSidebarComponent } from './pages/articles/article-sidebar/articl
 import { OneClickScanModule } from './feature/one-click-scan/one-click-scan.module';
 import { PrivacyScoreComponent } from './pages/result/privacy-score/privacy-score.component';
 import { BrowserAccountHeaderComponent } from './pages/browser-accounts/browser-account-header/browser-account-header.component';
-import { CommunicationWithFigleafService } from './utils/communication-with-figleaf/communication-with-figleaf.service';
 import { ArticleDescriptionComponent } from './pages/articles/article-description/article-description.component';
-import { FigleafOverviewService } from './common/services/figleaf-overview.service';
 import { TrialExpiredWidgetComponent } from './main-layout/sidebar/trial-expired-widget/trial-expired-widget.component';
-import { TaskActionWithTimeoutService } from './common/services/analytics/task-action-with-timeout.service';
 
 library.add(fal);
 
@@ -83,25 +72,6 @@ library.add(fal);
 		BrowserAccountHeaderComponent,
 		ArticleDescriptionComponent,
 		TrialExpiredWidgetComponent,
-	],
-	providers: [
-		{
-			provide: PRIVACY_BASE_URL,
-			useValue: 'privacy'
-		},
-		{
-			provide: PRIVACY_ENVIRONMENT,
-			useValue: getPrivacyEnvironment()
-		},
-		DataKnowledgeService,
-		BreachedAccountsService,
-		PrivacyScoreService,
-		UserDataGetStateService,
-		AnalyticsService,
-		TaskActionService,
-		TaskActionWithTimeoutService,
-		CommunicationWithFigleafService,
-		FigleafOverviewService
 	],
 })
 export class PrivacyModule {

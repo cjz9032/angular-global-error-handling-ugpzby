@@ -1,5 +1,3 @@
-import { ERROR_COLLECTOR_TOKEN } from '@angular/platform-browser-dynamic/src/compiler_factory';
-
 export class BatteryChargeStatus {
 	public static ERROR = { str: 'Error', id: -1 };
 	public static NOT_INSTALLED = { str: 'Not installed', id: -2 };

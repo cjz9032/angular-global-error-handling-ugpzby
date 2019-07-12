@@ -14,7 +14,7 @@ export class OpenSeePlansDirective {
 		private communicationWithFigleafService: CommunicationWithFigleafService
 	) {}
 
-	@HostListener('click', ['$event']) onClick() {
+	@HostListener('click', ['$event']) onClick($event) {
 		this.communicationWithFigleafService.sendMessageToFigleaf({type: 'getFigleafLinks'}).pipe(
 			map((response) => response['payload']),
 			switchMap((response) => this.vantageCommunicationService.openUri(response.seePlansLink)),

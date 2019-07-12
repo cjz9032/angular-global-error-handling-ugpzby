@@ -12,7 +12,7 @@ export class OpenFigleafInstallerDirective {
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService
 	) {	}
 
-	@HostListener('click', ['$event']) onClick() {
+	@HostListener('click', ['$event']) onClick($event) {
 		this.vantageCommunicationService.openInstaller().subscribe(
 			() => {
 				this.taskActionWithTimeoutService.startAction(TasksName.privacyAppInstallationAction);

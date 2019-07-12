@@ -32,7 +32,7 @@
 					id="welcome-body-scroll">
 					<div class="row no-gutters">
 						<div class="col-auto title2"
-							[innerHTML]="'welcometutorial.description'| translate">							
+							[innerHTML]="'welcometutorial.description'| translate">
 						</div>
 					</div>
 					<div class="row no-gutters justify-content-center align-items-center">
@@ -79,7 +79,7 @@
 				<div class="content-page-2"
 					id="welcome-body-scroll">
 					<div class="padding-right-1">
-						<div class="row justify-content-center align-items-center font-14-bold mb-5">
+						<div class="row justify-content-center align-items-center font-14-bold mb-52">
 							<div class="col-auto title2">
 								{{ "welcometutorial.subtitle1" | translate | uppercase }}
 							</div>
@@ -87,7 +87,7 @@
 						<div class="row mb-5"
 							[ngClass]="{'radio-is-selected' : data.page2.radioValue !== null }">
 							<div class="col-4 device-image-content">
-								<div class="device-image"								
+								<div class="device-image"
 									(click)="saveUsageType($event, 'PERSONAL')">
 									<input type="radio"
 										name="radio"
@@ -108,8 +108,8 @@
 										class="centered">{{ "welcometutorial.personal" | translate }}</label>
 								</div>
 							</div>
-							<div class="col-4 device-image-content"> 
-								<div class="device-image"								
+							<div class="col-4 device-image-content">
+								<div class="device-image"
 									(click)="saveUsageType($event, 'BUSINESS')">
 									<input type="radio"
 										name="radio"
@@ -130,7 +130,7 @@
 								</div>
 							</div>
 							<div class="col-4 device-image-content">
-								<div class="device-image"								
+								<div class="device-image"
 									(click)="saveUsageType($event, 'CUSTOM')">
 									<input type="radio"
 										name="radio"
@@ -152,7 +152,7 @@
 							</div>
 						</div>
 
-						<div class="row justify-content-center align-items-center font-14-bold col-12 mb-5">
+						<div class="row justify-content-center align-items-center font-14-bold col-12 mb-52">
 							<div class="col-auto title2">
 								{{ "welcometutorial.subtitle2" | translate | uppercase}}
 							</div>

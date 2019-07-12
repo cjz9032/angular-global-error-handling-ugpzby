@@ -1,6 +1,7 @@
 <section class="browser-accounts-page"
 		 vtrSendAnalytics
-		 [metricsEvent]="'PageView'">
+		 [metricsEvent]="'PageView'"
+		 [attr.data-analyticsName]="(isFigleafReadyForCommunication$ | async) ? 'PrivatelyStoredPasswordsBlock' : 'NonPrivatePasswordsBlock'">
 
 	<div class="browser-accounts-page__header">
 		<vtr-browser-account-header

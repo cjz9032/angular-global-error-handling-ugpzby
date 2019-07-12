@@ -12,7 +12,7 @@ import { RouterChangeHandlerService } from '../../services/router-change-handler
 	styleUrls: ['./common-popup.component.scss'],
 })
 export class CommonPopupComponent implements OnInit, OnDestroy {
-	@ContentChild(TemplateRef) template: TemplateRef<any>;
+	@ContentChild(TemplateRef, { static: true }) template: TemplateRef<any>;
 	@Input() popUpId: string;
 	@Input() size: 'big' | 'large' | 'default' = 'default';
 
@@ -71,7 +71,7 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 			.pipe(
 				takeUntil(instanceDestroyed(this))
 			)
-			.subscribe(({id, isOpenState}: CommonPopupEventType) => {
+			.subscribe(({ id, isOpenState }: CommonPopupEventType) => {
 				this.isOpen = isOpenState;
 			});
 
@@ -98,7 +98,7 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 		const analyticsData = this.analyticsData[this.popUpId];
 
 		if (analyticsData) {
-			const ItemParent = this.getParentForAnalyticsService.getPageName() + '.' +  analyticsData.ItemParent;
+			const ItemParent = this.getParentForAnalyticsService.getPageName() + '.' + analyticsData.ItemParent;
 			this.analyticsService.sendItemClickData({
 				...analyticsData,
 				ItemParent

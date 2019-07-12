@@ -7,8 +7,11 @@ import { BreachedAccount, BreachedAccountsService } from '../../../common/servic
 import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
 import { CountNumberOfIssuesService } from '../../../common/services/count-number-of-issues.service';
 import { FeaturesStatuses } from '../../../userDataStatuses';
+import { PrivacyModule } from '../../../privacy.module';
 
-@Injectable()
+@Injectable({
+	providedIn: 'root'
+})
 export class PrivacyScoreService {
 
 	constructor(

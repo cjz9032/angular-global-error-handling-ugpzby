@@ -11,7 +11,7 @@ import { UserDataGetStateService } from '../../../common/services/user-data-get-
 })
 export class ArticleDescriptionComponent implements AfterViewInit {
 	@Input() article;
-	@ViewChild('innerHTML') articleInner: ElementRef;
+	@ViewChild('innerHTML', { static: false }) articleInner: ElementRef;
 
 	isFigleafTrialSoonExpired$ = this.userDataGetStateService.isFigleafTrialSoonExpired$;
 	isFigleafTrialExpired$ = this.userDataGetStateService.isFigleafTrialExpired$;

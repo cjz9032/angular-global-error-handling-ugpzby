@@ -7,7 +7,7 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { WifiHomeViewModel, SecurityHealthViewModel, } from 'src/app/data-models/security-advisor/wifisecurity.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
@@ -60,8 +60,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	cancelClick = false;
 	isOnline = true;
 	notificationSubscription: Subscription;
-	intervalId: number;
-	interval = 5000;
 
 	constructor(
 		public activeRouter: ActivatedRoute,
@@ -74,7 +72,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		private ngZone: NgZone,
 		public regionService: RegionService,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
-		private guard: GuardService
+		private guard: GuardService,
+		private router: Router
 	) {
 		this.securityAdvisor = shellService.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
@@ -107,23 +106,21 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, true);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, true);
 		if (this.homeProtection) {
-			this.homeProtection.refresh().catch(this.pluginMissingHandler.bind(this));
-			this.pullCHS();
+			this.homeProtection.getDevicePosture().catch((err) => this.handleError(err));
+			this.homeProtection.refresh().catch((err) => this.handleError(err));
 		}
 
 		if (this.wifiSecurity) {
-			this.wifiSecurity.refresh().catch(this.pluginMissingHandler.bind(this));
+			if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+				this.wifiSecurity.refresh().catch((err) => this.handleError(err));
+				this.wifiSecurity.getWifiSecurityState().catch((err) => this.handleError(err));
+			}
 
 			this.wifiSecurity.getWifiState().then((res) => {}, (error) => {
 				this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 			});
 		}
 		this.wifiIsShowMore = this.activeRouter.snapshot.queryParams['isShowMore'];
-
-		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
-			this.wifiSecurity.refresh();
-
-		}
 	}
 
 	ngAfterViewInit() {
@@ -137,30 +134,24 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	@HostListener('window:focus')
 	onFocus(): void {
 		if (this.wifiSecurity) {
-			this.wifiSecurity.refresh().catch(this.pluginMissingHandler.bind(this));
+			this.wifiSecurity.refresh().catch((err) => this.handleError(err));
 		}
-		if (this.homeProtection && !this.intervalId) {
-			this.homeProtection.refresh().catch(this.pluginMissingHandler.bind(this));
-			this.pullCHS();
+		if (this.homeProtection) {
+			this.homeProtection.refresh().catch((err) => this.handleError(err));
 		}
-	}
-
-	@HostListener('window: blur')
-	onBlur(): void {
-		if (this.wifiSecurity) {
-			this.wifiSecurity.cancelRefresh();
-		}
-		clearInterval(this.intervalId);
-		delete this.intervalId;
 	}
 
 	ngOnDestroy() {
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, false);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, false);
-		if (this.wifiSecurity) {
-			this.wifiSecurity.cancelRefresh();
+		if (this.router.routerState.snapshot.url.indexOf('security') === -1 || this.router.routerState.snapshot.url.indexOf('dashboard') === -1) {
+			if (this.securityAdvisor.wifiSecurity) {
+				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
+			}
 		}
-		clearInterval(this.intervalId);
+		if (this.homeProtection) {
+			this.homeProtection.cancelGetDevicePosture();
+		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
@@ -270,25 +261,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		}
 	}
 
-	private pluginMissingHandler(err) {
+	private handleError(err) {
 		if (err && err instanceof PluginMissingError) {
 			this.dialogService.wifiSecurityErrorMessageDialog();
 		}
-	}
-
-	private pullCHS(): void {
-		this.intervalId = window.setInterval(() => {
-			this.homeProtection.refresh().then(() => {
-				if (this.homeProtection.devicePosture && this.homeProtection.devicePosture.length > 0 && this.intervalId) {
-					clearInterval(this.intervalId);
-					const oneMinute = 60000;
-					this.interval = oneMinute;
-					this.intervalId = window.setInterval(() => {
-						this.homeProtection.refresh()
-						.catch(this.pluginMissingHandler.bind(this));
-					}, this.interval);
-				}
-			}).catch(this.pluginMissingHandler.bind(this));
-		}, this.interval);
 	}
 }

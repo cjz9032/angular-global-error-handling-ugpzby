@@ -4,6 +4,7 @@ import { UserDataGetStateService } from '../../common/services/user-data-get-sta
 import { CommsService } from '../../../../../services/comms/comms.service';
 import { map, shareReplay } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { PrivacyModule } from '../../privacy.module';
 
 export interface Article {
 	id: string;

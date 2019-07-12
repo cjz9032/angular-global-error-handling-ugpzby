@@ -6,6 +6,7 @@ import {
 	TaskActionWithTimeoutService,
 	TasksName
 } from '../../common/services/analytics/task-action-with-timeout.service';
+import { PrivacyModule } from '../../privacy.module';
 
 export interface MessageFromFigleaf {
 	type: string;
@@ -13,7 +14,9 @@ export interface MessageFromFigleaf {
 	payload?: string;
 }
 
-@Injectable()
+@Injectable({
+	providedIn: 'root'
+})
 
 export class CommunicationWithFigleafService {
 	isFigleafInstalled$ = new ReplaySubject(1);

@@ -44,13 +44,15 @@ export enum licenseTypes {
 	Unknown,
 	Free,
 	Trial,
-	TrialExpired,
 	Subscription,
+	TrialExpired,
 	SubscriptionExpired,
 	NonInstalled
 }
 
-@Injectable()
+@Injectable({
+	providedIn: 'root'
+})
 export class FigleafOverviewService implements OnDestroy {
 	figleafSettings$ = new ReplaySubject<FigleafSettings>(1);
 	figleafDashboard$ = new ReplaySubject<FigleafDashboard>(1);

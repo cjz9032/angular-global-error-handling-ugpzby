@@ -40,7 +40,9 @@ interface GetBreachedAccountsState {
 	error: string | null;
 }
 
-@Injectable()
+@Injectable({
+	providedIn: 'root'
+})
 export class BreachedAccountsService implements OnDestroy {
 	onGetBreachedAccounts$ = new ReplaySubject<GetBreachedAccountsState>(1);
 

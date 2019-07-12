@@ -18,7 +18,9 @@ export interface UserStatuses {
 
 export const TIME_TO_SHOW_EXPIRED_PITCH_MS = 24 * 60 * 60 * 1000;
 
-@Injectable()
+@Injectable({
+	providedIn: 'root'
+})
 export class UserDataGetStateService {
 	breachedAccountsResult: FeaturesStatuses = FeaturesStatuses.undefined;
 	websiteTrackersResult: FeaturesStatuses = FeaturesStatuses.undefined;
