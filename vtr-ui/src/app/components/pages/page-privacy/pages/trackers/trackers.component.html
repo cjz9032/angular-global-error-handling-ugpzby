@@ -11,6 +11,9 @@
 			<span class="trackers-page__title--red">{{websiteTrackersCount$ | async}}</span> tracking tools found
 		</vtr-feature-header>
 		<button class="trackers-concent__btn"
+				vtrSendAnalytics
+				[metricsEvent]="'ItemClick'"
+				[metricsItem]="'ViewInLenovoPrivacyEssentialsButton'"
 				*ngIf="(isFigleafReadyForCommunication$ | async) && (websiteTrackersCount$ | async) > 0"
 				(click)="openFigleafApp()">
 			Block in Lenovo Privacy Essentials

@@ -1,7 +1,8 @@
 <div class="breached-account"
 	 [ngClass]="{'breached-account_open': i === openId}"
-	 *ngFor="let account of breachedAccountsForShow;  trackBy: trackByBreachedAccount; let i = index">
-	<div class="breached-account__preview">
+	 *ngFor="let account of breachedAccountsForShow;
+	 trackBy: trackByBreachedAccount; let i = index">
+	<div class="breached-account__preview" >
 		<div class="breached-account__image">
 			<ng-template #defaultFavicon>
 				<img class="breached-account__img" src="/assets/images/privacy-tab/Unknown.png" alt="unknown favicon">
