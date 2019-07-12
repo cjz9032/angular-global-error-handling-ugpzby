@@ -202,55 +202,109 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	];
 	async changeBatteryMode(event, mode) {
-		// console.log(event.switchValue);
-		// console.log('initially conservationMode:' + this.batterySettings.status.conservationMode);
-		// console.log('initially expressCharging:' + this.batterySettings.status.expressCharging);
 		// if (mode !== undefined) {
 		// 	if (mode === 'expressCharging') {
-		// 		this.batterySettings.status.expressCharging = event.switchValue;
-		// 		this.batterySettings.status.conservationMode = !this.batterySettings.status.expressCharging;
-		// 	} else {
-		// 		this.batterySettings.status.conservationMode = event.switchValue;
-		// 		this.batterySettings.status.expressCharging = !this.batterySettings.status.conservationMode;
+		// 		this.conservationModeLock = true;
+		// 		this.expressChargingLock = false;
+		// 		if (this.conservationModeStatus.status === true && event.switchValue) {
+		// 			await this.setConservationModeStatusIdeaNoteBook(!event.switchValue);
+		// 			await this.setRapidChargeModeStatusIdeaNoteBook(event.switchValue);
+		// 			this.conservationModeStatus.status = !event.switchValue;
+		// 			this.expressChargingStatus.status = event.switchValue;
+		// 		} else if (this.conservationModeStatus.status !== true && event.switchValue) {
+		// 			await this.setRapidChargeModeStatusIdeaNoteBook(event.switchValue);
+		// 			this.expressChargingStatus.status = event.switchValue;
+		// 		} else if (this.conservationModeStatus.status !== true && !event.switchValue) {
+		// 			await this.setRapidChargeModeStatusIdeaNoteBook(event.switchValue);
+		// 			this.expressChargingStatus.status = !event.switchValue;
+		// 		}
+		// 		this.conservationModeLock = false;
+		// 	} else if (mode === 'conservationMode') {
+		// 		this.conservationModeLock = false;
+		// 		this.expressChargingLock = true;
+		// 		if (this.expressChargingStatus.status === true && event.switchValue) {
+		// 			await this.setRapidChargeModeStatusIdeaNoteBook(!event.switchValue);
+		// 			await this.setConservationModeStatusIdeaNoteBook(event.switchValue);
+		// 			this.expressChargingStatus.status = !event.switchValue;
+		// 			this.conservationModeStatus.status = event.switchValue;
+		// 		} else if (this.expressChargingStatus.status !== true && event.switchValue) {
+		// 			await this.setConservationModeStatusIdeaNoteBook(event.switchValue);
+		// 			this.conservationModeStatus.status = event.switchValue;
+		// 		} else if (this.expressChargingStatus.status !== true && !event.switchValue) {
+		// 			await this.setConservationModeStatusIdeaNoteBook(event.switchValue);
+		// 			this.conservationModeStatus.status = !event.switchValue;
+		// 		}
+		// 		this.expressChargingLock = false;
 		// 	}
 		// }
-		// console.log(event.switchValue);
-		// console.log('after conservationMode :' + this.batterySettings.status.conservationMode);
-		// console.log('after expressCharging :' + this.batterySettings.status.expressCharging);
-		if (mode !== undefined) {
-			if (mode === 'expressCharging') {
-				this.conservationModeLock = true;
-				this.expressChargingLock = false;
-				if (this.conservationModeStatus.status === true && event.switchValue) {
-					await this.setConservationModeStatusIdeaNoteBook(!event.switchValue);
-					await this.setRapidChargeModeStatusIdeaNoteBook(event.switchValue);
-					this.conservationModeStatus.status = !event.switchValue;
-					this.expressChargingStatus.status = event.switchValue;
-				} else if (this.conservationModeStatus.status !== true && event.switchValue) {
-					await this.setRapidChargeModeStatusIdeaNoteBook(event.switchValue);
-					this.expressChargingStatus.status = event.switchValue;
-				} else if (this.conservationModeStatus.status !== true && !event.switchValue) {
-					await this.setRapidChargeModeStatusIdeaNoteBook(event.switchValue);
-					this.expressChargingStatus.status = !event.switchValue;
+
+		// Code suggested fangtian1@lenovo.com, above commented code is the previous one
+		if (mode === 'expressCharging') {
+			this.conservationModeLock = true;
+			this.expressChargingLock = true;
+			if (this.expressChargingStatus.status) { // Close express charge if it's open before
+				try {
+					// close express charging and change UI appearance
+					await this.setRapidChargeModeStatusIdeaNoteBook(false);
+					this.expressChargingStatus.status = false;
+				} catch (e) {
+					// if await failed
+					console.log(e.message);
 				}
-				this.conservationModeLock = false;
-			} else if (mode === 'conservationMode') {
-				this.conservationModeLock = false;
-				this.expressChargingLock = true;
-				if (this.expressChargingStatus.status === true && event.switchValue) {
-					await this.setRapidChargeModeStatusIdeaNoteBook(!event.switchValue);
-					await this.setConservationModeStatusIdeaNoteBook(event.switchValue);
-					this.expressChargingStatus.status = !event.switchValue;
-					this.conservationModeStatus.status = event.switchValue;
-				} else if (this.expressChargingStatus.status !== true && event.switchValue) {
-					await this.setConservationModeStatusIdeaNoteBook(event.switchValue);
-					this.conservationModeStatus.status = event.switchValue;
-				} else if (this.expressChargingStatus.status !== true && !event.switchValue) {
-					await this.setConservationModeStatusIdeaNoteBook(event.switchValue);
-					this.conservationModeStatus.status = !event.switchValue;
+			} else { // Open express charge if it's close before
+				if (this.conservationModeStatus.status) { // When conservation mode is open, close it
+					try {
+						await this.setConservationModeStatusIdeaNoteBook(false);
+						this.conservationModeStatus.status = false;
+					} catch (e) {
+						// return false directly if failed to close conservation mode
+						return false;
+					}
 				}
-				this.expressChargingLock = false;
+				try { // open Express charging if close conservation mode successfully
+					await this.setRapidChargeModeStatusIdeaNoteBook(true);
+					this.expressChargingStatus.status = true;
+				} catch (e) {
+					// Log?
+					console.log(e.message);
+				}
 			}
+
+			this.expressChargingLock = false;
+			this.conservationModeLock = false;
+		} else if (mode === 'conservationMode') {
+			this.conservationModeLock = true;
+			this.expressChargingLock = true;
+			if (this.conservationModeStatus.status) { // Close conservation mode if it's open before
+				try {
+					// close conservation mode and change UI appearance
+					await this.setConservationModeStatusIdeaNoteBook(false);
+					this.conservationModeStatus.status = false;
+				} catch (e) {
+					// if await failed
+					console.log(e.message);
+				}
+			} else { // Open conservation mode if it's close before
+				if (this.expressChargingStatus.status) { // When express charging is open, close it
+					try {
+						await this.setRapidChargeModeStatusIdeaNoteBook(false);
+						this.expressChargingStatus.status = false;
+					} catch (e) {
+						// return false directly if failed to close express charging
+						return false;
+					}
+				}
+				try { // open conservation mode if close express charging successfully
+					await this.setConservationModeStatusIdeaNoteBook(true);
+					this.conservationModeStatus.status = true;
+				} catch (e) {
+					// Log?
+					console.log(e.message);
+				}
+			}
+
+			this.expressChargingLock = false;
+			this.conservationModeLock = false;
 		}
 	}
 	constructor(public powerService: PowerService,
@@ -715,7 +769,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.log('setRapidChargeModeStatusIdeaNoteBook.then', status);
 
 			if (this.powerService.isShellAvailable) {
-				const value = this.powerService
+				const value = await this.powerService
 					.setRapidChargeModeStatusIdeaNoteBook(status);
 				console.log('setRapidChargeModeStatusIdeaNoteBook.then', value);
 				// this.powerService
