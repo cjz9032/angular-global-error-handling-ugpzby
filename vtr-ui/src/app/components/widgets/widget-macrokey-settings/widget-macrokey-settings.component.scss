@@ -123,9 +123,9 @@
 					top: -6rem;
 					left: calc(50% - 42.5%);
 					opacity: 0;
-					transition: all .5s ease-in-out;
+					transition: all 0.5s ease-in-out;
 					&::after {
-						content: '';
+						content: "";
 						position: absolute;
 						width: 0;
 						height: 0;
@@ -178,10 +178,10 @@
 								background-position: 50% 100%;
 								background-repeat: no-repeat;
 								&.gpu {
-									background-image: url('/assets/images/gaming/gaming-gpu-stack.svg');
+									background-image: url("/assets/images/gaming/gaming-gpu-stack.svg");
 								}
 								&.ram {
-									background-image: url('/assets/images/gaming/gaming-ram-stack.svg');
+									background-image: url("/assets/images/gaming/gaming-ram-stack.svg");
 								}
 							}
 							.stack-mask {
@@ -228,7 +228,7 @@
 					}
 					.cpu-ring {
 						// background-color: $highlight;
-						background-image: url('/assets/images/gaming/gaming-cpu-ring.svg');
+						background-image: url("/assets/images/gaming/gaming-cpu-ring.svg");
 						background-size: 100% 100%;
 						background-position: 50% 50%;
 						background-repeat: no-repeat;
@@ -238,7 +238,7 @@
 						top: 1.75rem;
 						left: 1.75rem;
 						border-radius: 50%;
-						border: .75rem solid $gaming_darkest;
+						border: 0.75rem solid $gaming_darkest;
 						@media #{$mediaquery_6} {
 							top: 1rem;
 							left: 1rem;
@@ -326,7 +326,7 @@
 						width: 26rem;
 						height: 26rem;
 						border-radius: 50%;
-						border: .75rem solid $gaming_darkest;
+						border: 0.75rem solid $gaming_darkest;
 						@media #{$mediaquery_6} {
 							top: 4.5rem;
 							left: 4.5rem;
@@ -558,7 +558,7 @@
 	}
 }
 
-/deep/ {
+::ng-deep {
 	.macrokey-status-wrapper {
 		.select-wrapper {
 			min-width: 40rem;

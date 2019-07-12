@@ -8,31 +8,7 @@
   margin-top: 5rem;
 }
 
-.article-recommendations {
-  margin-top: 5rem;
-  &__top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  &__title {
-    color: #34495E;
-    font-size: 3.5rem;
-    line-height: 5rem;
-  }
-  &__read-more {
-    @extend %button-link__text;
-    text-transform: uppercase;
-    color: #4A81FD;
-  }
-}
-
 .article {
   width: calc(50% - 3.5rem);
   margin: 0 0 5rem 0;
-}
-
-.article-single {
-  @extend %common-block-wrapper;
-  margin-top: -10.6rem;
 }

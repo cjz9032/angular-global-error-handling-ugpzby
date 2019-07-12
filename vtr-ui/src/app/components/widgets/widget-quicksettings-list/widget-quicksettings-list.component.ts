@@ -40,8 +40,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			isSwitchVisible: false,
 			isChecked: false,
 			tooltipText: '',
-			id:'quick_settings_thermalmode',
-			ariaLabel:'quick_settings_thermalmode',
+			id: 'quick_settings_thermalmode',
+			ariaLabel: 'quick_settings_thermalmode',
 			type: 'auto-updates'
 		},
 		{
@@ -59,8 +59,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			isSwitchVisible: true,
 			isChecked: false,
 			tooltipText: '',
-			id:'quick_settings_repidcharge',
-			ariaLabel:'quick_settings_repidcharge',
+			id: 'quick_settings_repidcharge',
+			ariaLabel: 'quick_settings_repidcharge',
 			type: 'gaming.dashboard.device.quickSettings.rapidCharge'
 		},
 		{
@@ -78,8 +78,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			isSwitchVisible: true,
 			isChecked: false,
 			tooltipText: '',
-			id:'quick_settings_wifisecurity',
-			ariaLabel:'quick_settings_wifisecurity',
+			id: 'quick_settings_wifisecurity',
+			ariaLabel: 'quick_settings_wifisecurity',
 			type: 'auto-updates'
 		},
 		{
@@ -97,8 +97,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			isSwitchVisible: true,
 			isChecked: false,
 			tooltipText: '',
-			id:'quick_settings_dolby',
-			ariaLabel:'quick_settings_dolby',
+			id: 'quick_settings_dolby',
+			ariaLabel: 'quick_settings_dolby',
 			type: 'gaming.dashboard.device.quickSettings.dolby'
 		}
 	];
@@ -166,7 +166,9 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		this.checkQuickSettingsVisibility();
 		// Initialize Quicksetting;
 		this.quicksettingListInit();
-		this.commonService.notification.subscribe((response) => {
+		// Binding regThermalMode event
+		// this.registerThermalModeEvent();
+		this.commonService.getCapabalitiesNotification().subscribe((response) => {
 			if (response.type === Gaming.GamingCapablities) {
 				this.gamingCapabilities = response.payload;
 				if (this.gamingCapabilities.smartFanFeature) {
@@ -176,8 +178,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			}
 		});
 
-		// Binding regThermalMode event
-		// this.registerThermalModeEvent();
 	}
 
 	ngAfterViewInit() {
@@ -353,7 +353,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	public initialiseDolbyCache() {
 		try {
 			const { available, status } = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyModeCache, { available: false, status: false });
-			console.log(available,'=====================<>DOLBY', status);
+			console.log(available, '=====================<>DOLBY', status);
 			this.quickSettings[3].isVisible = available;
 			this.quickSettings[3].isChecked = status;
 		} catch (err) {

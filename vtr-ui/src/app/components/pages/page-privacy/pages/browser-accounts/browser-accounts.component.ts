@@ -7,6 +7,10 @@ import { BrowserAccountsService } from '../../common/services/browser-accounts.s
 import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
 import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
 import { FigleafOverviewService } from '../../common/services/figleaf-overview.service';
+import {
+	TaskActionWithTimeoutService,
+	TasksName
+} from '../../common/services/analytics/task-action-with-timeout.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -26,26 +30,20 @@ export class BrowserAccountsComponent {
 	dashboardData$ = this.figleafOverviewService.figleafDashboard$;
 	isConsentToGetBrowsersAccountsGiven$ = this.browserAccountsService.isConsentGiven$;
 
-	textForFeatureHeader = {
-		title: 'Check for non-private passwords',
-		figleafInstalled: 'Lenovo Privacy by FigLeaf has blocked trackers on sites within the green bubble below, keeping you private ' +
-			'while you do the things you love online.',
-		figleafUninstalled: 'If you store passwords for your bank accounts or social media profiles in your web browser, ' +
-			'you risk sharing this private information unintentionally with apps and extensions on your PC.',
-	};
-
 	constructor(
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private userDataGetStateService: UserDataGetStateService,
 		private browserAccountsService: BrowserAccountsService,
 		private countNumberOfIssuesService: CountNumberOfIssuesService,
 		private vantageCommunicationService: VantageCommunicationService,
-		private figleafOverviewService: FigleafOverviewService
+		private figleafOverviewService: FigleafOverviewService,
+		private taskActionWithTimeoutService: TaskActionWithTimeoutService
 	) {
 	}
 
 	giveConcentToGetBrowserAccounts() {
 		this.browserAccountsService.giveConcent();
+		this.taskActionWithTimeoutService.startAction(TasksName.getNonPrivateStoragesAction);
 	}
 
 	openFigleafApp() {

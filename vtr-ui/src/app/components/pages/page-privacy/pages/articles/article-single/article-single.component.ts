@@ -1,30 +1,43 @@
-import { Component, Input, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
-import { Article } from '../articles.service';
-import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
+import { Component, OnInit } from '@angular/core';
+import { ArticlesService } from '../articles.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { map, switchMap } from 'rxjs/operators';
+import { RoutersName } from '../../../privacy-routing-name';
+import { SecureMath } from '@lenovo/tan-client-bridge';
+import { combineLatest } from 'rxjs';
 
 @Component({
 	selector: 'vtr-article-single',
 	templateUrl: './article-single.component.html',
 	styleUrls: ['./article-single.component.scss']
 })
-export class ArticleSingleComponent implements OnInit, AfterViewInit {
-	@ViewChild('innerHTML') articleInner: ElementRef;
-	@Input() articleData: Article;
+export class ArticleSingleComponent implements OnInit {
+	article$ = this.route.queryParams.pipe(
+		switchMap((params) => this.articlesService.getArticle(params.articleId)),
+	);
+	otherArticles$ = combineLatest([
+		this.articlesService.getListOfArticles(),
+		this.route.queryParams
+	]).pipe(
+		map(([articles, params]) => articles.filter((article) => article.ActionLink !== params.articleId)),
+		map((articles) => {
+			const randomIndex = Math.floor(SecureMath.random() * (articles.length - 2));
+			return articles.slice(randomIndex, randomIndex + 2);
+		})
+	);
 
-	constructor(private vantageCommunicationService: VantageCommunicationService) {
+	constructor(
+		private route: ActivatedRoute,
+		private articlesService: ArticlesService,
+		private router: Router
+	) {
 	}
 
 	ngOnInit() {
 	}
 
-	ngAfterViewInit() {
-		const thisElement = this.articleInner.nativeElement;
-		thisElement.addEventListener('click', (event) => {
-			if (event.target.tagName.toLowerCase() === 'a') {
-				this.vantageCommunicationService.openUri(event.target.href);
-			}
-			event.preventDefault();
-		});
+	openArticle(articleId) {
+		this.router.navigate([`/${RoutersName.PRIVACY}/${RoutersName.ARTICLEDETAILS}`], {queryParams: {articleId}});
 	}
 
 }

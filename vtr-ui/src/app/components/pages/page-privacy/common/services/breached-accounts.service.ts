@@ -1,8 +1,19 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, EMPTY, merge, ReplaySubject, Subject, Subscription } from 'rxjs';
-import { catchError, distinctUntilChanged, map, switchMap, switchMapTo, take, tap } from 'rxjs/operators';
+import { Injectable, OnDestroy } from '@angular/core';
+import { EMPTY, merge, ReplaySubject, Subject, Subscription, timer } from 'rxjs';
+import {
+	catchError,
+	debounceTime,
+	distinctUntilChanged,
+	map,
+	switchMap,
+	switchMapTo,
+	take,
+	takeUntil, tap
+} from 'rxjs/operators';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { EmailScannerService, ErrorNames } from '../../feature/check-breached-accounts/services/email-scanner.service';
+import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
+import { TaskActionWithTimeoutService, TasksName } from './analytics/task-action-with-timeout.service';
 
 interface GetBreachedAccountsResponse {
 	type: string;
@@ -29,34 +40,41 @@ interface GetBreachedAccountsState {
 	error: string | null;
 }
 
-@Injectable()
-export class BreachedAccountsService {
+@Injectable({
+	providedIn: 'root'
+})
+export class BreachedAccountsService implements OnDestroy {
 	onGetBreachedAccounts$ = new ReplaySubject<GetBreachedAccountsState>(1);
-	onGetBreachedAccountsCompleted$ = new BehaviorSubject(false);
+
+	private getNewBreachedAccounts$ = new Subject<boolean>();
 
 	taskStartedTime = 0;
 	scanBreachesAction$ = new Subject<{ TaskDuration: number }>();
 
 	constructor(
 		private communicationWithFigleafService: CommunicationWithFigleafService,
+		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
 		private emailScannerService: EmailScannerService) {
 		this.getBreachedAccounts();
 	}
 
-	getBreachedAccounts(): Subscription {
+	getNewBreachedAccounts() {
+		this.getNewBreachedAccounts$.next(true);
+	}
+
+	private getBreachedAccounts(): Subscription {
 		return merge(
 			this.emailScannerService.scanNotifier$,
 			this.emailScannerService.validationStatusChanged$,
 			this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(
 				distinctUntilChanged(),
-			)
+			),
+			this.getNewBreachedAccounts$.asObservable(),
+			timer(30000, 30000),
 		).pipe(
+			debounceTime(200),
 			switchMapTo(this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(take(1))),
-			tap(() => {
-				this.onGetBreachedAccountsCompleted$.next(false);
-			}),
 			switchMap((isFigleafInstalled) => {
-				this.taskStartedTime = Date.now();
 				return isFigleafInstalled ? this.getBreachedAccountsFromApp() : this.getBreachedAccountsFromBackend();
 			}),
 			map((breachedAccounts) => {
@@ -64,18 +82,18 @@ export class BreachedAccountsService {
 				const unknownBreaches = breachedAccounts.filter(x => x.domain === 'n/a');
 				return [...breaches, ...unknownBreaches];
 			}),
-			catchError((error) => this.handleError(error))
+			catchError((error) => this.handleError(error)),
+			takeUntil(instanceDestroyed(this))
 		).subscribe((response: BreachedAccount[]) => {
 			this.onGetBreachedAccounts$.next({breaches: response, error: null});
-			this.onGetBreachedAccountsCompleted$.next(true);
 			this.sendTaskAcrion();
-
 		});
 	}
 
+	ngOnDestroy() {	}
+
 	private sendTaskAcrion() {
-		const taskDuration = (Date.now() - this.taskStartedTime) / 1000;
-		this.scanBreachesAction$.next({TaskDuration: taskDuration});
+		this.taskActionWithTimeoutService.finishedAction(TasksName.scanBreachesAction);
 	}
 
 	private getBreachedAccountsFromApp() {
@@ -91,7 +109,6 @@ export class BreachedAccountsService {
 
 	private handleError(error: any) {
 		console.error('onGetBreachedAccounts', error);
-		this.onGetBreachedAccountsCompleted$.next(true);
 		if (error !== ErrorNames.noAccessToken) {
 			this.onGetBreachedAccounts$.next({breaches: null, error: error});
 		}

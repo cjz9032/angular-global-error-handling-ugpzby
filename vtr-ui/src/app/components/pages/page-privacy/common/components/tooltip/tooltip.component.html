@@ -1,0 +1,15 @@
+<div class="tooltip-fg">
+	<div class="tooltip-fg__text"
+		 (mouseenter)="showContext()"
+		 (mouseleave)="hideContext()">
+		<ng-container [ngTemplateOutlet]="tooltipText"></ng-container>
+	</div>
+	<div class="tooltip-fg__context tooltip-fg__context--right-to-left"
+		 [ngClass]="{
+				'tooltip-fg__context--right-to-left': positionContextTo === 'left',
+				'tooltip-fg__context--left-to-right': positionContextTo === 'right'
+			 }"
+		 *ngIf="isShowContext">
+		<ng-container [ngTemplateOutlet]="tooltipContext"></ng-container>
+	</div>
+</div>
