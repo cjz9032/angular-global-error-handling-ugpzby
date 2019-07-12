@@ -34,11 +34,11 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public microphoneStatus = new FeatureStatus(false, true);
 	public eyeCareModeStatus = new FeatureStatus(true, true);
 	private notificationSubscription: Subscription;
-	@ViewChild('camera')
+	@ViewChild('camera', { static: true })
 	camera: WidgetSwitchIconComponent;
-	@ViewChild('microphone')
+	@ViewChild('microphone', { static: true })
 	microphone: WidgetSwitchIconComponent;
-	@ViewChild('eyecare')
+	@ViewChild('eyecare', { static: true })
 	eyecare: WidgetSwitchIconComponent;
 	public quickSettingsWidget = [
 		{
