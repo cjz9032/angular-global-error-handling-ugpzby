@@ -4,6 +4,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { Observable } from 'rxjs/internal/Observable';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { Subject } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
@@ -15,7 +16,8 @@ export class CommonService {
 	public readonly notification: Observable<AppNotification>;
 	private notificationSubject: BehaviorSubject<AppNotification>;
 	public isOnline = true;
-	private RS5Version: Number = 17600;
+	public gamingCapabalities: any = new Subject();
+	private RS5Version = 17600;
 
 	constructor() {
 		this.notificationSubject = new BehaviorSubject<AppNotification>(
@@ -176,5 +178,12 @@ export class CommonService {
 
 	public removeObjFrom(array: any[], path: string) {
 		return array.filter(e => e.path !== path);
+	}
+
+	public getCapabalitiesNotification(): Observable<any> {
+		return this.gamingCapabalities.asObservable();
+	}
+	public sendGamingCapabilitiesNotification(action, payload) {
+		this.gamingCapabalities.next({type: action, payload});
 	}
 }
