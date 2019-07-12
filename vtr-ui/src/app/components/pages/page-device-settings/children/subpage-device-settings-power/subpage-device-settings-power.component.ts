@@ -241,7 +241,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		// Code suggested fangtian1@lenovo.com, above commented code is the previous one
 		if (mode === 'expressCharging') {
 			this.conservationModeLock = true;
-			this.expressChargingLock = true;
+			this.expressChargingLock = false;
 			if (this.expressChargingStatus.status) { // Close express charge if it's open before
 				try {
 					// close express charging and change UI appearance
@@ -273,7 +273,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.expressChargingLock = false;
 			this.conservationModeLock = false;
 		} else if (mode === 'conservationMode') {
-			this.conservationModeLock = true;
+			this.conservationModeLock = false;
 			this.expressChargingLock = true;
 			if (this.conservationModeStatus.status) { // Close conservation mode if it's open before
 				try {
