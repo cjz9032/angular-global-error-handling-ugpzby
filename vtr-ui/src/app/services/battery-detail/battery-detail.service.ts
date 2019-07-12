@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { BaseBatteryDetail } from './base-battery-detail';
-import { Observable } from 'rxjs';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 @Injectable({

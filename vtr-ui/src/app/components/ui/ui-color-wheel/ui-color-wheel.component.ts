@@ -10,7 +10,7 @@ import { isUndefined } from 'util';
 	styleUrls: ['./ui-color-wheel.component.scss']
 })
 export class UiColorWheelComponent implements OnInit, OnChanges {
-	@ViewChild('colorWheel') canvasElement: ElementRef;
+	@ViewChild('colorWheel', { static: true }) canvasElement: ElementRef;
 	color: any = [255, 0, 0];
 	backColor: String = '#ff0000';
 	@Output() colorChanged = new EventEmitter<any>();
