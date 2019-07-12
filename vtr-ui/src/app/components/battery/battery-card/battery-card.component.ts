@@ -135,8 +135,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 					this.param2 = { value: this.percentageLimitation };
 				}
 
-				this.commonService.setLocalStorageValue(LocalStorageKey.BatteryPercentage,
-					this.batteryGauge.percentage);
 				this.isBatteryDetailsBtnDisabled =
 					this.batteryGauge.isPowerDriverMissing || this.batteryInfo.length === 0;
 				this.updateBatteryDetails();

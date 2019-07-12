@@ -135,8 +135,6 @@ export enum LocalStorageKey {
 
 	UserDeterminePrivacy = '[LocalStorageKey] UserDeterminePrivacy',
 
-	BatteriesHealths = '[LocalStorageKey] BatteriesHealths',
-	BatteryPercentage = '[LocalStorageKey] BatteryPercentage',
 	SmartAssistCapability = '[LocalStorageKey] SmartAssistCapability',
 	RemainingPercentages = '[LocalStorageKey] RemainingPercentages',
 	// server switch strorage key
