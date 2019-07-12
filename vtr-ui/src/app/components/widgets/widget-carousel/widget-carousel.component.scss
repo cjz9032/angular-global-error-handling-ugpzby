@@ -46,7 +46,7 @@
 }
 
 // DEEP SELECTOR REQUIRED FOR NESTED COMPONENT STYLING
-/deep/ {
+::ng-deep {
 	.vtr-widget-carousel {
 		.carousel {
 			&:focus {

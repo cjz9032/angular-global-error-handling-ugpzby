@@ -16,6 +16,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fal } from '@fortawesome/pro-light-svg-icons';
+import { PageDashboardAndroidComponent } from '../components/pages/page-dashboard-android/page-dashboard-android.component';
 
 
 library.add(fas);
@@ -25,7 +26,8 @@ library.add(fal);
 
 @NgModule({
 	declarations: [
-		AppComponent
+		AppComponent,
+		PageDashboardAndroidComponent
 	],
 	imports: [
 		BrowserModule,
