@@ -1,13 +1,10 @@
 import { GuardService } from 'src/app/services/guard/security-guardService.service';
 import { NgModule } from '@angular/core';
-import { PageAutocloseComponent } from 'src/app/components/pages/page-autoclose/page-autoclose.component';
 import { PageDeviceComponent } from 'src/app/components/pages/page-device/page-device.component';
 import { PageDeviceSettingsComponent } from 'src/app/components/pages/page-device-settings/page-device-settings.component';
 import { PageDeviceUpdatesComponent } from 'src/app/components/pages/page-device-updates/page-device-updates.component';
 import { PageSmartAssistComponent } from 'src/app/components/pages/page-smart-assist/page-smart-assist.component';
-import { PageSupportComponent } from 'src/app/components/pages/page-support/page-support.component';
 import { PageSupportDetailComponent } from 'src/app/components/pages/page-support-detail/page-support-detail.component';
-import { PageUserComponent } from 'src/app/components/pages/page-user/page-user.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SubpageDeviceSettingsAudioComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
 import { SubpageDeviceSettingsDisplayComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
@@ -106,6 +103,15 @@ const routes: Routes = [
 		data: {
 			pageName: 'Device.SystemUpdate',
 			pageContent: 'My Device Status'
+		}
+	},
+	{
+		path: 'support-detail/:id',
+		component: PageSupportDetailComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
+		data: {
+			pageName: 'Support.Detail'
 		}
 	}
 ];
