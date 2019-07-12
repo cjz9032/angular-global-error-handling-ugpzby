@@ -8,7 +8,8 @@
 				<div class="col">
 					<ul class="system-tool-icons d-flex justify-content-around">
 						<li>
-							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.systemUpdate' | translate"
+							<a id="systemtools_systemupdates" attr.aria-label="systemtools_systemupdates" vtrMetrics
+								[metricsItem]="'gaming.dashboard.device.systemTools.systemUpdate' | translate"
 								metricsEvent="featureClick" routerLink="/device/system-updates">
 								<figure>
 									<div class="system-icon" title="">
@@ -21,7 +22,7 @@
 						</li>
 						<li *ngIf="gamingProperties.macroKeyFeature">
 							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.macroKey' | translate"
-								metricsEvent="featureClick" routerLink="/macrokey">
+								metricsEvent="featureClick" routerLink="/gaming/macrokey">
 								<figure>
 									<div class="system-icon" title="">
 										<i class="icon icon-macrokey"></i>
@@ -33,7 +34,8 @@
 						</li>
 
 						<li>
-							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.power' | translate"
+							<a id="systemtools_power" attr.aria-label="systemtools_power" vtrMetrics
+								[metricsItem]="'gaming.dashboard.device.systemTools.power' | translate"
 								metricsEvent="featureClick" routerLink="/device/device-settings/power">
 								<figure>
 
@@ -46,7 +48,8 @@
 							</a>
 						</li>
 						<li>
-							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.media' | translate"
+							<a id="systemtools_displaycamera" attr.aria-label="systemtools_displaycamera" vtrMetrics
+								[metricsItem]="'gaming.dashboard.device.systemTools.media' | translate"
 								metricsEvent="featureClick" routerLink="/device/device-settings/display-camera">
 								<figure>
 

@@ -11,13 +11,13 @@ import { ArticleSingleComponent } from './pages/articles/article-single/article-
 
 const adminRoutes: Routes = [
 	{
-		path: RoutersName.PRIVACY,
+		path: RoutersName.MAIN,
 		component: MainLayoutComponent,
+		pathMatch: 'prefix',
 		children: [
 			{
 				path: RoutersName.MAIN, // /privacy
 				redirectTo: RoutersName.BREACHES,
-				pathMatch: 'full',
 			}, {
 				path: RoutersName.BREACHES,
 				component: BreachedAccountsComponent

@@ -28,7 +28,7 @@
 	}
 }
 
-/deep/ {
+::ng-deep {
 	.vtr-page-device-gaming {
 		.vtr-page-header {
 			.gaming-header-image {
@@ -37,18 +37,20 @@
 		}
 	}
 }
-.vtr-page-shift-up{
-	@media #{$medium-screen}{
-		.no-gutters{
-			> .col, > [class*="col-"]{
+.vtr-page-shift-up {
+	@media #{$medium-screen} {
+		.no-gutters {
+			> .col,
+			> [class*="col-"] {
 				padding-right: 15px;
 				padding-left: 15px;
 			}
 		}
 	}
-	@media #{$small-screen}{
-		.no-gutters{
-			> .col, > [class*="col-"]{
+	@media #{$small-screen} {
+		.no-gutters {
+			> .col,
+			> [class*="col-"] {
 				padding-right: 15px;
 				padding-left: 15px;
 			}
@@ -62,11 +64,10 @@
 //         }
 //     }
 // }
-.vtr-page-left-column{
-	.vtr-page-shift-up{
-		 @media #{$mediaquery_X38}{
-             margin-bottom: 50rem;
+.vtr-page-left-column {
+	.vtr-page-shift-up {
+		@media #{$mediaquery_X38} {
+			margin-bottom: 50rem;
 		}
-
 	}
 }

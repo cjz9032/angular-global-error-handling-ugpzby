@@ -29,7 +29,7 @@ import { LenovoIdDialogService } from '../../services/dialog/lenovoIdDialog.serv
 	styleUrls: ['./menu-main.component.scss']
 })
 export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewInit {
-	@ViewChild('menuTarget') menuTarget;
+	@ViewChild('menuTarget', { static: true }) menuTarget;
 	@Input() loadMenuItem: any;
 	public deviceModel: string;
 	public country: string;
@@ -56,7 +56,6 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 		private commonService: CommonService,
 		public userService: UserService,
 		public translationService: TranslationService,
-		private modalService: NgbModal,
 		public deviceService: DeviceService,
 		vantageShellService: VantageShellService,
 		private translate: TranslateService,
@@ -124,6 +123,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 		}
 	}
 	ngOnInit() {
+		this.isHomeGaming();
 		const self = this;
 		this.translate.stream('lenovoId.user').subscribe((value) => {
 			if (!self.userService.auth) {
@@ -296,7 +296,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 		});
 	}
 	getMenuItems(): Promise<any> {
-		console.log('########################################## 2', this.deviceService.isGaming);
+		console.log('Getting menu items for the Gaming device?', this.deviceService.isGaming);
 		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
 			this.items = items;
 			return this.items;
@@ -375,7 +375,6 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 	}
 
 	public isHomeGaming() {
-
 		if (this.router.url === '/device-gaming' || this.router.url === '/') {
 			this.isGamingHome = true;
 		} else {

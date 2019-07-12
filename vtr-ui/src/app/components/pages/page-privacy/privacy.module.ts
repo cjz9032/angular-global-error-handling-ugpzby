@@ -98,8 +98,6 @@ library.add(fal);
 		PrivacyScoreService,
 		UserDataGetStateService,
 		AnalyticsService,
-		TaskActionService,
-		TaskActionWithTimeoutService,
 		CommunicationWithFigleafService,
 		FigleafOverviewService
 	],

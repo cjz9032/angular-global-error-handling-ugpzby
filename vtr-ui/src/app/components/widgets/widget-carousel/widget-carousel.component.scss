@@ -5,12 +5,13 @@
 
 	a.no-link {
 		cursor: default;
+		pointer-events: none;
 	}
 
 	.default-cursor {
 		cursor: default;
 	}
-	
+
 	.carousel-caption {
 		position: absolute;
 		top: 5%;
@@ -45,7 +46,7 @@
 }
 
 // DEEP SELECTOR REQUIRED FOR NESTED COMPONENT STYLING
-/deep/ {
+::ng-deep {
 	.vtr-widget-carousel {
 		.carousel {
 			&:focus {

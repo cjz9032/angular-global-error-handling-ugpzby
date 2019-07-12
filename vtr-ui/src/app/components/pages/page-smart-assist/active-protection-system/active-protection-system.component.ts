@@ -125,10 +125,10 @@ export class ActiveProtectionSystemComponent implements OnInit {
 			.all([this.smartAssist.getPenCapability(), this.smartAssist.getTouchCapability(), this.smartAssist.getPSensorCapability()])
 			.then((res: any[]) => {
 				console.log('APS Advanced Status --------------------------------- ', res);
-				(res[0] || res[1] || res[2]) ? this.advanceAvailable = true : this.advanceAvailable = true;
-				res[0] ? this.penCapability = true : this.penCapability = true;
-				res[1] ? this.touchCapability = true : this.touchCapability = true;
-				res[2] ? this.pSensorCapability = true : this.pSensorCapability = true;
+				(res[0] || res[1] || res[2]) ? this.advanceAvailable = true : this.advanceAvailable = false;
+				res[0] ? this.penCapability = true : this.penCapability = false;
+				res[1] ? this.touchCapability = true : this.touchCapability = false;
+				res[2] ? this.pSensorCapability = true : this.pSensorCapability = false;
 			})
 			.catch(error => console.log('APS Advanced ERROR --------------------------------- ', error));
 	}
@@ -194,13 +194,14 @@ export class ActiveProtectionSystemComponent implements OnInit {
 			case 1:
 				timeInSec = '60';
 				break;
-			case 1:
+			case 2:
 				timeInSec = '120';
 				break;
 			case 3:
 				timeInSec = '180';
 				break;
 		}
+		console.log(this.selectedSnoozeTime);
 		this.smartAssist
 			.sendSnoozeCommand(timeInSec)
 			.then(res => console.log('SNOOZE SUSPEND COMMAND --------------------------------- ', timeInSec, res));

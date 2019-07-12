@@ -3,7 +3,7 @@
 		<div class="d-flex justify-content-between">
 			<vtr-ui-lighting-profile-toggle (setLightingProfileId)="setLightingProfileId($event)"
 				[currentProfile]="currentProfile"></vtr-ui-lighting-profile-toggle>
-			<vtr-ui-brightness-slider *ngIf="!isProfileOff && profileBrightness !==0"
+			<vtr-ui-brightness-slider *ngIf="!isProfileOff && this.showBrightnessSlider===true"
 				[lightingData]="profileBrightness"
 				(setLightingBrightness)="setLightingBrightness($event)">
 			</vtr-ui-brightness-slider>
@@ -37,7 +37,7 @@
 								[effectOptionName]="lightEffectRGBOptionName"
 								[enableBrightCondition1] = "enableBrightCondition"
 								[selectedValue]="frontSelectedValue"
-								(change)="optionChangedRGBTop($event,item)"></vtr-ui-lighting-effect>
+								(change)="optionChangedRGBTop($event, null)"></vtr-ui-lighting-effect>
 							<!-- </ng-container> -->
 							<!-- <vtr-ui-lighting-color-wheel></vtr-ui-lighting-color-wheel> -->
 							<vtr-ui-color-wheel *ngIf="profileRGBFeature===255"
@@ -45,8 +45,7 @@
 								[inHEX]="inHex1"
 								[btnStatus]="applyBtnStatus1"
 								(colorEffectChanged)="colorEffectChangedFront($event)"
-								(colorChanged)="colorChangedFront($event)"
-								[showApply]="showHideApply1">
+								(colorChanged)="colorChangedFront($event)">
 							</vtr-ui-color-wheel>
 						</div>
 					</div>
@@ -74,7 +73,7 @@
 							[enableBrightCondition1] = "enableBrightConditionside"
 							[selectedValue]="sideSelectedValue"
 							[effectOptionName]="lightEffectRGBOptionNameSide"
-							(change)="optionChangedRGBSide($event,item)">
+							(change)="optionChangedRGBSide($event,null)">
 						</vtr-ui-lighting-effect>
 						<!-- <h3 class="content-title">Color</h3> -->
 						<!-- <vtr-ui-lighting-color-wheel></vtr-ui-lighting-color-wheel> -->
@@ -83,8 +82,7 @@
 							[inHEX]="inHex2"
 							[btnStatus]="applyBtnStatus2"
 							(colorEffectChanged)="colorEffectChangedSide($event)"
-							(colorChanged)="colorChangedSide($event)"
-							[showApply]="showHideApply2">
+							(colorChanged)="colorChangedSide($event)">
 						</vtr-ui-color-wheel>
 					</div>
 				</div>

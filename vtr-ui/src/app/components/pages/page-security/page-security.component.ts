@@ -55,6 +55,7 @@ import {
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { GuardService } from '../../../services/guard/security-guardService.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -105,7 +106,8 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		private regionService: RegionService,
 		private ngZone: NgZone,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
-		private guard: GuardService
+		private guard: GuardService,
+		private router: Router
 	) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
@@ -127,11 +129,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.refreshAll();
 	}
 
-	@HostListener('window: blur')
-	onBlur(): void {
-		this.wifiSecurity.cancelRefresh();
-	}
-
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
@@ -150,7 +147,11 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		this.wifiSecurity.cancelRefresh();
+		if (this.router.routerState.snapshot.url.indexOf('security') === -1 || this.router.routerState.snapshot.url.indexOf('dashboard') === -1) {
+			if (this.wifiSecurity) {
+				this.wifiSecurity.cancelGetWifiSecurityState();
+			}
+		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
@@ -161,8 +162,10 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			this.getScore();
 		});
 		this.securityAdvisor.wifiSecurity.refresh().then(() => {
-			this.getScore();
 			this.getMaliciousWifi();
+		});
+		this.securityAdvisor.wifiSecurity.getWifiSecurityState().then(() => {
+			this.getScore();
 		});
 		this.securityAdvisor.passwordManager.refresh().then(() => {
 			this.getScore();

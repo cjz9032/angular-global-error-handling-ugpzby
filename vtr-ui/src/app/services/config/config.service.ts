@@ -425,7 +425,8 @@ export class ConfigService {
 		},
 		forArm: true,
 		subitems: []
-	},];
+	}];
+
 	getMenuItems(isGaming) {
 		if (isGaming) {
 			return this.menuItemsGaming;

@@ -1,11 +1,10 @@
 import * as d3 from 'd3';
 
 import { ChartProps } from './index';
+import { Color, ColorUtils } from '../Color';
+import { defaultGlobalTextStyle, TextStyle } from '../Text';
+import { VectorUtils } from '../Transform';
 import { ChartPieLogo, ChartPieLogo_NULL } from './ChartPieLogo';
-import { ColorUtils, Color } from '../Color';
-import { TextStyle, defaultGlobalTextStyle } from '../Text';
-import { VectorUtils, Vector2 } from '../Transform';
-import { copyStyles } from '@angular/animations/browser/src/util';
 
 export interface DotStyle {
 	color: string;
@@ -68,7 +67,7 @@ export const defaultPieLineStyle: PieLineStyle = {
 
 export class ChartPieLine {
 
-	logo: ChartPieLogo;
+	logo: InstanceType<typeof ChartPieLogo>;
 
 	style: PieLineStyle;
 

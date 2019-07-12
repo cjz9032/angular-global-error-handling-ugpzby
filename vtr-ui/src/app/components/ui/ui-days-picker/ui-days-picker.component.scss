@@ -41,6 +41,7 @@
 			border-left: 1px solid $shade_light;
 			border-right: 1px solid $shade_light;
 			padding: 0 5rem;
+
 			@media #{$mediaquery_12} {
 				padding: 0 3rem;
 			}
@@ -52,6 +53,9 @@
 			font-size: 2rem;
 			padding: 0 2.5rem;
 		}
+		color: #f12e2e;
+			font-size: 2rem;
+			padding: 0 2.5rem;
 	}
 	.weekdays-block {
 		border-radius: 0.5rem;
@@ -175,4 +179,7 @@
 	.disabled {
 		opacity: 0.5;
 	}
+	.banner-middle {
+		flex: 1;
+	  }
 }

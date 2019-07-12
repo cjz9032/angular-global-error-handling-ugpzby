@@ -7,8 +7,8 @@ import { Component, ContentChild, ElementRef, Input, TemplateRef } from '@angula
 })
 export class TooltipComponent {
 	@Input() positionContextTo: 'center' | 'right' | 'left' = 'center';
-	@ContentChild('tooltipText') tooltipText: TemplateRef<ElementRef>;
-	@ContentChild('tooltipContext') tooltipContext: TemplateRef<ElementRef>;
+	@ContentChild('tooltipText', { static: false }) tooltipText: TemplateRef<ElementRef>;
+	@ContentChild('tooltipContext', { static: false }) tooltipContext: TemplateRef<ElementRef>;
 
 	isShowContext = false;
 

@@ -86,10 +86,15 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 		/* battery shadow/blur background */
 		.battery-shadow {
 			position: absolute;
-			width: 90%;
-			height: 12rem;
-			border: 0.5rem solid var(--border-color);
+			height: 12.5rem;
 
+			// left: 3.3%; // small
+			// width: 91.3%;
+
+			left: 2%; // big
+			width: 91%;
+			border: 0.8rem solid var(--border-color);
+			opacity: 1;
 			border-radius: 0.5rem;
 			filter: blur(0.3rem);
 
@@ -113,8 +118,13 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 			height: 12rem;
 			border: 0.2rem solid var(--border-color);
 			border-radius: 0.3rem;
-			// left: -1rem;
-
+			left: -1rem;
+			@media #{$medium-screen} {
+				left: -2.2rem;
+			}
+			@media #{$mediaquery_X4} {
+				left: -1.6rem;
+			}
 			/* battery notch */
 			&:after {
 				position: absolute;
@@ -136,7 +146,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 
 				.fill {
 					background: var(--acid-fill-gradient);
-					width: var(--acid-width);
+					width: var(--acid-width);		
 					z-index: 4;
 					position: absolute;
 					height: calc(100% - 0.8rem);

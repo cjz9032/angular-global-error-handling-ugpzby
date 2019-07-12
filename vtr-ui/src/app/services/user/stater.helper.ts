@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
 import { DevService } from '../dev/dev.service';
 import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import * as X2JS from 'x2js';
+import X2JS from 'x2js';
 import { DeviceService } from '../device/device.service';
 import { environment } from '../../../environments/environment';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -91,7 +90,7 @@ class UserSettingsPayload {
 }
 
 export class LIDStarterHelper {
-	private static signinDateFromSSO;
+	private static signinDateFromSSO: any = {};
 	private lid: any;
 
 	constructor(
@@ -127,7 +126,7 @@ export class LIDStarterHelper {
 	generateStarterAccountToken(account: string) {
 		let tokenInfo = null;
 		if (account) {
-			tokenInfo =  STARTER_ACCOUNT_TOKEN;
+			tokenInfo = STARTER_ACCOUNT_TOKEN;
 		}
 		return tokenInfo;
 	}
@@ -185,23 +184,23 @@ export class LIDStarterHelper {
 	async getStaterAccountFromOOBEServer() {
 		const url = 'https://www.lenovoid.com/lps/win10/oobe/2.0/';
 		const languageDic = {
-			'en_us': 'en_us', // 'English',
-			'da_dk': 'da_dk', // 'Dansk',
-			'nl_nl': 'nl_nl', // 'Nederlands',
-			'fi_fi': 'fi_fi', // 'Suomi',  //Finnish
-			'fr_fr': 'fr_fr', // 'Français', //French
-			'de_de': 'de_de', // 'Deutsch',  //German
-			'it_it': 'it_it', // 'Italiano',  //Italian
-			'ja_jp': 'ja_jp', // '日本語',
-			'ko_kr': 'ko_kr', // '한국어',
-			'pt_br': 'pt_br', // 'Português(Brasil)',
-			'pt_pt': 'pt_pt', // 'Português(Portugal)', //no need
-			'es_es': 'es_es', // 'Español',  //Spanish
-			'sv_se': 'sv_se', // 'Svenska',  //Swedish
-			'zh_cn': 'zh_cn', // '中文（简体)',
-			'ru': 'ru', // 'Pусский',
-			'nb': 'no_NO', // 'Norsk',
-			'zh_tw': 'zh_Hant' // '中文（繁體)'
+			en_us: 'en_us', // 'English',
+			da_dk: 'da_dk', // 'Dansk',
+			nl_nl: 'nl_nl', // 'Nederlands',
+			fi_fi: 'fi_fi', // 'Suomi',  //Finnish
+			fr_fr: 'fr_fr', // 'Français', //French
+			de_de: 'de_de', // 'Deutsch',  //German
+			it_it: 'it_it', // 'Italiano',  //Italian
+			ja_jp: 'ja_jp', // '日本語',
+			ko_kr: 'ko_kr', // '한국어',
+			pt_br: 'pt_br', // 'Português(Brasil)',
+			pt_pt: 'pt_pt', // 'Português(Portugal)', //no need
+			es_es: 'es_es', // 'Español',  //Spanish
+			sv_se: 'sv_se', // 'Svenska',  //Swedish
+			zh_cn: 'zh_cn', // '中文（简体)',
+			ru: 'ru', // 'Pусский',
+			nb: 'no_NO', // 'Norsk',
+			zh_tw: 'zh_Hant' // '中文（繁體)'
 		};
 
 		const mathineInfo = await this.deviceService.getMachineInfo();
@@ -212,12 +211,12 @@ export class LIDStarterHelper {
 		const language = mathineInfo.locale.toLowerCase().replace('-', '_');
 		let lanName = languageDic[language];
 		if (!lanName) {
-			lanName = languageDic['en_us'];
+			lanName = languageDic.en_us;
 		}
 
 		const mapData = new Windows.Foundation.Collections.StringMap();
 		try {
-			//payload.insert('oobeversion', 'W10_WW_1.0_A');
+			// payload.insert('oobeversion', 'W10_WW_1.0_A');
 			mapData.insert('optins', '00:00:00:00');
 			mapData.insert('liduid', 'STARTER');
 			mapData.insert('email', '');

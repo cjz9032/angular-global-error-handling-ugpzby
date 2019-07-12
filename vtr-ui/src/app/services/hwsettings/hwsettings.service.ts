@@ -1,6 +1,5 @@
 // import { Injectable } from '@angular/core';
 // import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-// /// <reference path='../../../../node_modules/@lenovo/tan-client-bridge/src/features/hardwaresettings/hws.audio-feature.js' />
 
 // @Injectable({
 // 	providedIn: 'root'
