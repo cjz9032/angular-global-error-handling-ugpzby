@@ -23,7 +23,7 @@
 					<div class="col">
 						<!-- Section Title like Primary Battery -->
 						<h2 class="battery-header">
-							{{ model.heading }}
+							{{ model.heading | translate }}
 						</h2>
 					</div>
 				</div>
@@ -85,7 +85,7 @@
 					<!-- <div class="row"> -->
 					<div *ngIf="isValid(model.remainingTime)"
 						class="col-2 p-0 battery-label-text">
-						{{ model.remainingTimeText == "" ? remainingTimeText : model.remainingTimeText }}
+						{{ model.remainingTimeText | translate }}
 					</div>
 					<div *ngIf="isValid(model.remainingTime)"
 						class="col-2 p-0 battery-value-text">

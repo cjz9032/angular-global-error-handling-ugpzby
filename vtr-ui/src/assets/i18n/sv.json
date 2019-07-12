@@ -891,7 +891,8 @@
                             "unit2": "Minuter",
                             "unit3": "FM/EM"
                         }
-                    }
+                    },
+                    "warningtip": "Please select at least one day."
                 }
             },
             "audio": {

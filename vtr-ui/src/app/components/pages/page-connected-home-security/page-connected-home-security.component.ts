@@ -185,6 +185,13 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		}
 
 		if (this.chs) {
+			if (this.chs.overview && this.chs.overview.devicePostures) {
+				this.chs.overview.devicePostures.getDevicePosture()
+				.then(() => {
+					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
+				})
+				.catch((err: Error) => this.handleResponseError(err));
+			}
 			this.chs.refresh()
 			.then(() => {
 				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
@@ -234,6 +241,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		window.clearInterval(this.intervalId);
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
+		}
+		if (this.chs && this.chs.overview && this.chs.overview.devicePostures) {
+			this.chs.overview.devicePostures.cancelGetDevicePosture();
 		}
 	}
 
