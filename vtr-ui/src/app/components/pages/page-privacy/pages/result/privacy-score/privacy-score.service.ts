@@ -36,8 +36,8 @@ export class PrivacyScoreService {
 					this.getStoragesScore(),
 				]);
 			}),
-			map(val => {
-				const receivedScoreParam = val.reduce((acc, curr) => ({...acc, ...curr}));
+			map((val: any) => {
+				const receivedScoreParam = val.reduce((acc, curr) => ({ ...acc, ...curr }));
 				return {
 					...receivedScoreParam,
 					monitoringEnabled: figleafInstalled,
@@ -111,7 +111,7 @@ export class PrivacyScoreService {
 					unfixedBreaches: allBreaches.length - fixedBreachesAmount,
 				};
 			}),
-			startWith({fixedBreaches: 0, unfixedBreaches: 0})
+			startWith({ fixedBreaches: 0, unfixedBreaches: 0 })
 		);
 	}
 
@@ -128,12 +128,12 @@ export class PrivacyScoreService {
 						fixedStorages: !browsersAccounts[browser] && 1,
 						unfixedStorages: browsersAccounts[browser] && 1,
 					})).reduce((prevVal, currVal) => ({
-							fixedStorages: prevVal.fixedStorages + currVal.fixedStorages,
-							unfixedStorages: prevVal.unfixedStorages + currVal.unfixedStorages,
-						})
+						fixedStorages: prevVal.fixedStorages + currVal.fixedStorages,
+						unfixedStorages: prevVal.unfixedStorages + currVal.unfixedStorages,
+					})
 					);
 			}),
-			startWith({fixedStorages: 0, unfixedStorages: 0})
+			startWith({ fixedStorages: 0, unfixedStorages: 0 })
 		);
 	}
 

@@ -21,9 +21,9 @@ export class RemovePasswordComponent {
 	@Input() popupId: string;
 	@Output() buttonClick = new EventEmitter();
 
-	@ViewChild('chrome') chrome: ElementRef;
-	@ViewChild('edge') edge: ElementRef;
-	@ViewChild('firefox') firefox: ElementRef;
+	@ViewChild('chrome', { static: true }) chrome: ElementRef;
+	@ViewChild('edge', { static: true }) edge: ElementRef;
+	@ViewChild('firefox', { static: true }) firefox: ElementRef;
 
 	getTemplate(browserName: BrowserListType) {
 		let template = this.chrome;

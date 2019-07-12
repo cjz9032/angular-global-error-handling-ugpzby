@@ -1,5 +1,5 @@
 <div class="check-breaches">
-	<div *ngIf="(emailWasScanned | async)"
+	<div *ngIf="(emailWasScanned)"
 		class="check-breaches__text-content">
 		<p class="check-breaches__text">
 			Good news —
@@ -9,7 +9,7 @@
 
 	<vtr-check-breaches-form></vtr-check-breaches-form>
 
-	<div *ngIf="(emailWasScanned | async)"
+	<div *ngIf="(emailWasScanned)"
 		class="check-breaches__description check-breaches__description--next-scan">
 		<div class="check-breaches-risks">
 			<div class="check-breaches-risks__text-col">

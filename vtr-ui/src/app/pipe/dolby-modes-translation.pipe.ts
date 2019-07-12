@@ -2,21 +2,19 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Pipe({
-  name: 'dolbyModesTranslation',
-  pure: false
+	name: 'dolbyModesTranslation',
+	pure: false
 })
 export class DolbyModesTranslationPipe implements PipeTransform {
-  constructor(private translate: TranslateService) {}
+	constructor(private translate: TranslateService) { }
 
-  transform(value: any, args?: any): any {
+	transform(value: any, args?: any): any {
 
-    let val = value.toString().toLowerCase();
+		let val = value.toString().toLowerCase();
 
-    val=val.substr(val.lastIndexOf(".")+1)
+		val = val.substr(val.lastIndexOf('.') + 1);
 
-    console.log('+++++++++++++++++++++++',val);
-    return this.translate.instant('device.deviceSettings.audio.audioSmartsettings.dolby.options.' + val);
-    
-    //return val;
-  }
+		console.log('+++++++++++++++++++++++', val);
+		return this.translate.instant('device.deviceSettings.audio.audioSmartsettings.dolby.options.' + val);
+	}
 }
