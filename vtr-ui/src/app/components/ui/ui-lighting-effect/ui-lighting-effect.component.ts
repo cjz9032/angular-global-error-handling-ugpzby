@@ -16,7 +16,7 @@ export class UiLightingEffectComponent implements OnInit {
 	@Input() lightingData: any;
 	@Output() public change = new EventEmitter<any>();
 	@Input() enableBrightCondition1: boolean;
-	@Input showDescription: boolean;
+	@Input() showDescription: boolean;
 	public showOptions = false;
 	public buttonName: any = 'Show';
 	public selected = false;
