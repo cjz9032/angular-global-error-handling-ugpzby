@@ -18,6 +18,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fal } from '@fortawesome/pro-light-svg-icons';
 import { PageDashboardAndroidComponent } from '../components/pages/page-dashboard-android/page-dashboard-android.component';
+import { CommonService } from '../services/common/common.service';
 
 library.add(fas);
 library.add(fab);
@@ -25,7 +26,7 @@ library.add(far);
 library.add(fal);
 
 @NgModule({
-	declarations: [ AppComponent, HomeComponent, PageDashboardAndroidComponent ],
+	declarations: [AppComponent, HomeComponent, PageDashboardAndroidComponent],
 	imports: [
 		BrowserModule,
 		CommonModalModule,
@@ -35,7 +36,7 @@ library.add(fal);
 			loader: {
 				provide: TranslateLoader,
 				useFactory: HttpLoaderFactory,
-				deps: [ HttpClient ]
+				deps: [HttpClient]
 			},
 			isolate: false
 		}),
@@ -51,8 +52,11 @@ library.add(fal);
 		FontAwesomeModule,
 		PageDashboardAndroidComponent
 	],
-	providers: [ { provide: ErrorHandler, useClass: GlobalErrorHandler } ],
-	bootstrap: [ AppComponent ],
-	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+	providers: [
+		CommonService,
+		{ provide: ErrorHandler, useClass: GlobalErrorHandler }
+	],
+	bootstrap: [AppComponent],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule {}
+export class AppModule { }
