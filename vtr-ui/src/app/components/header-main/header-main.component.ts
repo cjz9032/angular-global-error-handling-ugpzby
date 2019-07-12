@@ -29,6 +29,7 @@ export class HeaderMainComponent implements OnInit {
 			});
 		}
 		console.log('MENU ITEMS UPDATED', this.menuItems);
+		this.router.navigate(['android']);
 	}
 
 	goBack() {
