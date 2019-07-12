@@ -59,7 +59,7 @@ export class UiLightingProfileComponent implements OnInit {
 	public lightEffectRGBOptionName: string;
 	public lightEffectRGBOptionNameSide: string;
 	public simpleOrComplex: number;
-
+	public showHideDescription=false;
 	public lightingEffectData = {
 		drop: [
 			{

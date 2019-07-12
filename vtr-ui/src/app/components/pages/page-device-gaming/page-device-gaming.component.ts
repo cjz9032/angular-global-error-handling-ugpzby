@@ -107,7 +107,6 @@ export class PageDeviceGamingComponent implements OnInit {
 			Segment: 'SMB',
 			Brand: 'Lenovo'
 		};
-
 		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
 				const heroBannerItems = this.cmsService
