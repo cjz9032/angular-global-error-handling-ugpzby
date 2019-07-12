@@ -3,7 +3,6 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ArticleItemComponent } from '../components/article-item/article-item.component';
 import { BaseComponent } from '../components/base/base.component';
 import { CommonModule } from '@angular/common';
-import { CommonService } from '../services/common/common.service';
 import { CommsService } from '../services/comms/comms.service';
 import { ContainerArticleComponent } from '../components/container-article/container-article.component';
 import { ContainerCardComponent } from '../components/container-card/container-card.component';
@@ -84,7 +83,6 @@ import { CommonPipeModule } from './common/common-pipe.module';
 		PageUserComponent
 	],
 	providers: [
-		CommonService,
 		CommsService,
 		CookieService,
 		DevService,
@@ -94,7 +92,7 @@ import { CommonPipeModule } from './common/common-pipe.module';
 		SettingsService,
 		UserService
 	],
-	entryComponents: [ ModalWelcomeComponent, ModalLenovoIdComponent, UiButtonComponent ],
-	schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
+	entryComponents: [ModalWelcomeComponent, ModalLenovoIdComponent, UiButtonComponent],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
-export class SharedModule {}
+export class SharedModule { }
