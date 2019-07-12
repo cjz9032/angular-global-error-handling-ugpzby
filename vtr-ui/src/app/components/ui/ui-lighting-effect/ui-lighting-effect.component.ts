@@ -51,7 +51,10 @@ export class UiLightingEffectComponent implements OnInit {
 
 	public optionSelected(option) {
 		this.selectedOption = option;
-		this.effectOptionName = option.name;
+		if (option.value === 4 || option.value === 8) {
+			this.effectOptionName = option.name;
+		}
+
 		this.showOptions = false;
 		this.change.emit(option);
 	}
@@ -83,5 +86,12 @@ export class UiLightingEffectComponent implements OnInit {
 				}
 			}
 		}
+		// if (!isUndefined(changes.effectOptionName)) {
+		// 	if (changes.effectOptionName.previousValue !== changes.effectOptionName.currentValue) {
+		// 		this.effectOptionName = changes.effectOptionName.currentValue;
+		// 	}
+
+		// }
+
 	}
 }
