@@ -1,85 +1,41 @@
-import { BatteryConditionNote } from './battery-condition-translations.model';
 import { BatteryConditionsEnum } from 'src/app/enums/battery-conditions.enum';
 
 export class BatteryConditionModel {
-	batteryCondition: BatteryConditionNote;
 	constructor(
 		public condition: number,
 		public conditionStatus: number
 	) { }
 
-	getBatteryCondition(condition: number): BatteryConditionNote {
+	getBatteryCondition(condition: number): string {
 		switch (condition) {
 			case BatteryConditionsEnum.Good:
-				return new BatteryConditionNote(
-					'device.deviceSettings.batteryGauge.condition.Good.title',
-					'', '', '');
+				return 'device.deviceSettings.batteryGauge.condition.Good';
 			case BatteryConditionsEnum.Bad:
-				return new BatteryConditionNote(
-					'device.deviceSettings.batteryGauge.condition.Bad.title',
-					'device.deviceSettings.batteryGauge.condition.Bad.description', '', '');
+				return 'device.deviceSettings.batteryGauge.condition.Bad';
 			case BatteryConditionsEnum.Illegal:
-				return new BatteryConditionNote(
-					'',
-					'device.deviceSettings.batteryGauge.condition.Illegal.description',
-					'device.deviceSettings.batteryGauge.condition.Illegal.description1',
-					'device.deviceSettings.batteryGauge.condition.Illegal.description2');
+				return 'device.deviceSettings.batteryGauge.condition.Illegal';
 			case BatteryConditionsEnum.Exhaustion:
-				return new BatteryConditionNote('',
-					'device.deviceSettings.batteryGauge.condition.Exhaustion.description',
-					'device.deviceSettings.batteryGauge.condition.Exhaustion.description1', 'device.deviceSettings.batteryGauge.condition.Exhaustion.description2');
+				return 'device.deviceSettings.batteryGauge.condition.Exhaustion';
 			case BatteryConditionsEnum.NotDetected:
-				return new BatteryConditionNote(
-					'device.deviceSettings.batteryGauge.condition.NotDetected.title',
-					'device.deviceSettings.batteryGauge.condition.NotDetected.description', '', '');
+				return 'device.deviceSettings.batteryGauge.condition.NotDetected';
 			case BatteryConditionsEnum.MissingDriver:
-				return new BatteryConditionNote(
-					'device.deviceSettings.batteryGauge.condition.MissingDriver.title',
-					'device.deviceSettings.batteryGauge.condition.MissingDriver.description', '', '');
+				return 'device.deviceSettings.batteryGauge.condition.MissingDriver';
 			case BatteryConditionsEnum.NotSupportACAdapter:
-				return new BatteryConditionNote(
-					'device.deviceSettings.batteryGauge.condition.NotSupportACAdapter.title',
-					'device.deviceSettings.batteryGauge.condition.NotSupportACAdapter.description', '', '');
+				return 'device.deviceSettings.batteryGauge.condition.NotSupportACAdapter';
 			case BatteryConditionsEnum.LimitedACAdapterSupport:
-				return new BatteryConditionNote(
-					'device.deviceSettings.batteryGauge.condition.LimitedACAdapterSupport.title',
-					'device.deviceSettings.batteryGauge.condition.LimitedACAdapterSupport.description', '', '');
+				return 'device.deviceSettings.batteryGauge.condition.LimitedACAdapterSupport';
 			case BatteryConditionsEnum.StoreLimitation:
-				return new BatteryConditionNote(
-					'device.deviceSettings.batteryGauge.condition.StoreLimitation.title', '',
-					'device.deviceSettings.batteryGauge.condition.StoreLimitation.description1',
-					'device.deviceSettings.batteryGauge.condition.StoreLimitation.description2');
+				return 'device.deviceSettings.batteryGauge.condition.StoreLimitation';
 			case BatteryConditionsEnum.HighTemperature:
-				return new BatteryConditionNote(
-					'device.deviceSettings.batteryGauge.condition.HighTemperature.title',
-					'device.deviceSettings.batteryGauge.condition.HighTemperature.description',
-					'device.deviceSettings.batteryGauge.condition.HighTemperature.description1', ''
-				);
+				return 'device.deviceSettings.batteryGauge.condition.HighTemperature';
 			case BatteryConditionsEnum.OverheatedBattery:
-				return new BatteryConditionNote('',
-					'device.deviceSettings.batteryGauge.condition.OverheatedBattery.description',
-					'device.deviceSettings.batteryGauge.condition.OverheatedBattery.description1',
-					'device.deviceSettings.batteryGauge.condition.OverheatedBattery.description2'
-				);
+				return 'device.deviceSettings.batteryGauge.condition.OverheatedBattery';
 			case BatteryConditionsEnum.TrickleCharge:
-				return new BatteryConditionNote('',
-					'device.deviceSettings.batteryGauge.condition.TrickleCharge.description',
-					'device.deviceSettings.batteryGauge.condition.TrickleCharge.description1',
-					'device.deviceSettings.batteryGauge.condition.TrickleCharge.description2'
-				);
+				return 'device.deviceSettings.batteryGauge.condition.TrickleCharge';
 			case BatteryConditionsEnum.PermanentError:
-				return new BatteryConditionNote('',
-					'device.deviceSettings.batteryGauge.condition.PermanentError.description',
-					'device.deviceSettings.batteryGauge.condition.PermanentError.description1',
-					'device.deviceSettings.batteryGauge.condition.PermanentError.description2'
-				);
+				return 'device.deviceSettings.batteryGauge.condition.PermanentError';
 			case BatteryConditionsEnum.HardwareAuthenticationError:
-				return new BatteryConditionNote('',
-					'device.deviceSettings.batteryGauge.condition.HardwareAuthenticationError.description',
-					'device.deviceSettings.batteryGauge.condition.HardwareAuthenticationError.description1',
-					'device.deviceSettings.batteryGauge.condition.HardwareAuthenticationError.description2'
-				);
-
+				return 'device.deviceSettings.batteryGauge.condition.HardwareAuthenticationError';
 		}
 	}
 }

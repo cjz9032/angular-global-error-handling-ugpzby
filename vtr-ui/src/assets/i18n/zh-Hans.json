@@ -891,7 +891,8 @@
                             "unit2": "分钟",
                             "unit3": "上午/下午"
                         }
-                    }
+                    },
+                    "warningtip": "Please select at least one day."
                 }
             },
             "audio": {

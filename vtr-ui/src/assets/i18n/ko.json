@@ -891,7 +891,8 @@
                             "unit2": "분",
                             "unit3": "오전/오후"
                         }
-                    }
+                    },
+                    "warningtip": "Please select at least one day."
                 }
             },
             "audio": {
