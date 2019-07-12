@@ -11,7 +11,6 @@ import { BreachedAccountComponent } from './breached-account/breached-account.co
 import { BreachedDescriptionComponent } from './breached-description/breached-description.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { BreachedOtherDescriptionComponent } from './breached-other-description/breached-other-description.component';
-import { BreachedAccountService } from './breached-account/breached-account.service';
 
 
 @NgModule({
@@ -41,10 +40,6 @@ import { BreachedAccountService } from './breached-account/breached-account.serv
 		FormsModule,
 		VtrCommonModule
 	],
-	providers: [
-		EmailScannerService,
-		BreachedAccountService
-	]
 })
 export class CheckBreachedAccountsModule {
 }

@@ -1,32 +1,60 @@
 <div class="privacy-score" data-analyticsName="ScoreBlock">
-  <div class="privacy-score__picture score-pic">
-    <div [class]="'score-pic__circle score-pic__circle--'+privacyLevel">
-      <div *ngIf="privacyLevel === 'undefined'" class="score-pic__symbol">
-        <img src="{{defaultScoreImageUrl}}" alt="undefined privacy score">
-      </div>
-      <div *ngIf="privacyLevel !== 'undefined'" class="score-pic__number">
-        {{score}} <span class="score-pic__percent">%</span>
-      </div>
-    </div>
-  </div>
-  <div class="privacy-score__description-col">
-    <div class="privacy-score__text-block score-description">
-      <h4 class="score-description__title">{{title}}</h4>
-      <p class="score-description__text">{{text}}</p>
-    </div>
-    <div class="privacy-score__btn-container" *ngIf="privacyLevel === 'undefined'">
-      <button class="privacy-score__btn"
-              vtrSendAnalytics
-              [metricsEvent]="'ItemClick'"
-              [metricsItem]="clickEventName"
-              (click)="openPopUp('one-click-scan')">
-        {{btn_text}}
-      </button>
-    </div>
-  </div>
+	<div class="privacy-score__picture score-pic">
+		<div [class]="'score-pic__circle score-pic__circle--' + privacyLevel">
+			<div *ngIf="isFirstTimeVisitor$ | async" class="score-pic__symbol">
+				<img src="{{defaultScoreImageUrl}}" alt="undefined privacy score">
+			</div>
+			<div *ngIf="!(isFirstTimeVisitor$ | async)" class="score-pic__number">
+				{{score}} <span class="score-pic__percent">%</span>
+			</div>
+		</div>
+	</div>
+	<div class="privacy-score__description-col">
+		<div class="privacy-score__text-block score-description">
+			<div class="privacy-score__title-wrapper">
+				<h4 class="score-description__title">{{title}}</h4>
+				<vtr-tooltip>
+					<ng-template #tooltipText>
+						<span class="score-description__tooltip-text">i</span>
+					</ng-template>
+					<ng-template #tooltipContext>
+						<div class="score-description__tooltip-context">
+							<p class="score-description__tooltip-context-title">
+								These actions influence your privacy score:
+							</p>
+							<ul class="score-description__tooltip-context-list">
+								<li class="score-description__tooltip-context-list-item">
+									Fix breached accounts if there are any
+								</li>
+								<li class="score-description__tooltip-context-list-item">
+									Use software that blocks tracking tools
+								</li>
+								<li class="score-description__tooltip-context-list-item">
+									Don't store passwords in browsers
+								</li>
+								<li class="score-description__tooltip-context-list-item">
+									Control your privacy with Lenovo Privacy Essentials by Figleaf
+								</li>
+							</ul>
+						</div>
+					</ng-template>
+				</vtr-tooltip>
+			</div>
+			<p class="score-description__text">{{text}}</p>
+		</div>
+		<div class="privacy-score__btn-container" *ngIf="isFirstTimeVisitor$ | async">
+			<button class="privacy-score__btn"
+					vtrSendAnalytics
+					[metricsEvent]="'ItemClick'"
+					[metricsItem]="'DefineMyScoreButton'"
+					(click)="openPopUp('oneClickScan')">
+				{{btnText}}
+			</button>
+		</div>
+	</div>
 </div>
-<vtr-common-popup popUpId="one-click-scan" size="big">
-  <ng-template>
-	<vtr-one-click-scan popupId="one-click-scan"></vtr-one-click-scan>
-  </ng-template>
+<vtr-common-popup popUpId="oneClickScan" size="big">
+	<ng-template>
+		<vtr-one-click-scan popupId="oneClickScan"></vtr-one-click-scan>
+	</ng-template>
 </vtr-common-popup>
