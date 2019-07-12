@@ -4,7 +4,7 @@ import { isUndefined } from 'util';
 @Component({
 	selector: 'vtr-ui-lighting-effect',
 	templateUrl: './ui-lighting-effect.component.html',
-	styleUrls: [ './ui-lighting-effect.component.scss' ],
+	styleUrls: ['./ui-lighting-effect.component.scss'],
 	host: {
 		'(document:click)': 'generalClick($event)'
 	}
@@ -16,6 +16,7 @@ export class UiLightingEffectComponent implements OnInit {
 	@Input() lightingData: any;
 	@Output() public change = new EventEmitter<any>();
 	@Input() enableBrightCondition1: boolean;
+	@Input() showDescription: boolean;
 	public showOptions = false;
 	public buttonName: any = 'Show';
 	public selected = false;
@@ -25,7 +26,7 @@ export class UiLightingEffectComponent implements OnInit {
 	@Input() effectOptionName: string;
 	public selectedOption: any;
 
-	constructor(private elementRef: ElementRef) {}
+	constructor(private elementRef: ElementRef) { }
 
 	ngOnInit() {
 		// console.log('selected value in drop ng on it', this.selectedValue);

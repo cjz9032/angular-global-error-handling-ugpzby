@@ -7,7 +7,6 @@ import { UiCircleRadioComponent } from 'src/app/components/ui/ui-circle-radio/ui
 import { UiCircleRadioWithCheckboxComponent } from 'src/app/components/ui/ui-circle-radio-with-checkbox/ui-circle-radio-with-checkbox.component';
 import { UiDaysPickerComponent } from 'src/app/components/ui/ui-days-picker/ui-days-picker.component';
 import { UiDropDownComponent } from 'src/app/components/ui/ui-dropdown/ui-dropdown.component';
-import { UiFeatureItemComponent } from 'src/app/components/ui/ui-feature-item/ui-feature-item.component';
 import { UiHeaderSubpageComponent } from 'src/app/components/ui/ui-header-subpage/ui-header-subpage.component';
 import { UiListCheckboxComponent } from 'src/app/components/ui/ui-list-checkbox/ui-list-checkbox.component';
 import { UiListChevronComponent } from 'src/app/components/ui/ui-list-chevron/ui-list-chevron.component';
@@ -34,7 +33,6 @@ import { UiPopoverComponent } from 'src/app/components/ui/ui-popover/ui-popover.
 		UiCircleRadioWithCheckboxComponent,
 		UiDaysPickerComponent,
 		UiDropDownComponent,
-		UiFeatureItemComponent,
 		UiHeaderSubpageComponent,
 		UiHeaderSubpageComponent,
 		UiHeaderSubpageComponent,
@@ -64,7 +62,6 @@ import { UiPopoverComponent } from 'src/app/components/ui/ui-popover/ui-popover.
 		UiCircleRadioWithCheckboxComponent,
 		UiDaysPickerComponent,
 		UiDropDownComponent,
-		UiFeatureItemComponent,
 		UiHeaderSubpageComponent,
 		UiHeaderSubpageComponent,
 		UiHeaderSubpageComponent,
