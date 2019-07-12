@@ -51,6 +51,7 @@
 			border-left: 1px solid $shade_light;
 			border-right: 1px solid $shade_light;
 			padding: 0 5rem;
+			margin-left: 20px;
 			@media #{$mediaquery_12} {
 				padding: 0 3rem;
 			}

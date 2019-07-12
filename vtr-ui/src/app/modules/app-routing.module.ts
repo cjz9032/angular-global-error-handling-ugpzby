@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
 import { PageSupportComponent } from '../components/pages/page-support/page-support.component';
+import { GuardService } from '../services/guard/security-guardService.service';
+import { PageSupportDetailComponent } from '../components/pages/page-support-detail/page-support-detail.component';
 
 const routes: Routes = [
 	{
@@ -28,7 +30,21 @@ const routes: Routes = [
 	},
 	{
 		path: 'support',
-		component: PageSupportComponent
+		component: PageSupportComponent,
+		canDeactivate: [ GuardService ],
+		canActivate: [ GuardService ],
+		data: {
+			pageName: 'Page.Support'
+		}
+	},
+	{
+		path: 'support-detail/:id',
+		component: PageSupportDetailComponent,
+		canDeactivate: [ GuardService ],
+		canActivate: [ GuardService ],
+		data: {
+			pageName: 'Support.Detail'
+		}
 	},
 	{
 		path: 'settings',

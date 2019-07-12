@@ -107,42 +107,6 @@ const routes: Routes = [
 			pageName: 'Device.SystemUpdate',
 			pageContent: 'My Device Status'
 		}
-	},
-	{
-		path: 'support',
-		component: PageSupportComponent,
-		canDeactivate: [GuardService],
-		canActivate: [GuardService],
-		data: {
-			pageName: 'Page.Support'
-		}
-	},
-	{
-		path: 'support-detail/:id',
-		component: PageSupportDetailComponent,
-		canDeactivate: [GuardService],
-		canActivate: [GuardService],
-		data: {
-			pageName: 'Support.Detail'
-		}
-	},
-	{
-		path: 'user',
-		component: PageUserComponent,
-		canDeactivate: [GuardService],
-		canActivate: [GuardService],
-		data: {
-			pageName: 'User'
-		}
-	},
-	{
-		path: 'autoclose',
-		component: PageAutocloseComponent,
-		canDeactivate: [GuardService],
-		canActivate: [GuardService],
-		data: {
-			pageName: 'AutoClose'
-		}
 	}
 ];
 

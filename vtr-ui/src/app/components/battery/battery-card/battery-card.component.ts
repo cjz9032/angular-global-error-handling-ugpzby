@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy, OnChanges, ChangeDetectorRef } from '@ang
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
-import { BatteryChargeStatus } from 'src/app/enums/battery-charge-status.enum';
 import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { BatteryInformation, ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
@@ -12,7 +11,6 @@ import { ViewRef } from '@angular/core';
 import BatteryGaugeDetail from 'src/app/data-models/battery/battery-gauge-detail-model';
 import { BatteryConditionsEnum, BatteryQuality } from 'src/app/enums/battery-conditions.enum';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
-import { BatteryConditionNote } from 'src/app/data-models/battery/battery-condition-translations.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { PowerService } from 'src/app/services/power/power.service';
 import { Subscription } from 'rxjs';
@@ -24,14 +22,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 	styleUrls: ['./battery-card.component.scss']
 })
 export class BatteryCardComponent implements OnInit, OnDestroy {
-	constructor(
-		private modalService: NgbModal,
-		private batteryService: BatteryDetailService,
-		private powerService: PowerService,
-		public shellServices: VantageShellService,
-		private commonService: CommonService,
-		private cd: ChangeDetectorRef) {
-	}
+
 	batteryInfo: BatteryDetail[];
 	batteryGauge: BatteryGaugeDetail;
 	batteryCardTimer: any;
@@ -39,7 +30,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	flag = true;
 	batteryConditions: BatteryConditionModel[];
 	batteryConditionsEnum = BatteryConditionsEnum;
-	batteryConditionNotes: BatteryConditionNote[];
+	batteryConditionNotes: string[];
+	thresholdNote: any;
 	batteryQuality = BatteryQuality;
 	isBatteryDetailsBtnDisabled = true;
 	// percentageLimitation: Store Limitation Percentage
@@ -53,8 +45,18 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	private remainingPercentageEventRef: any;
 	private remainingTimeEventRef: any;
 	public isLoading = true;
-
+	public param1: any;
+	public param2: any;
 	notificationSubscription: Subscription;
+
+	constructor(
+		private modalService: NgbModal,
+		private batteryService: BatteryDetailService,
+		private powerService: PowerService,
+		public shellServices: VantageShellService,
+		private commonService: CommonService,
+		private cd: ChangeDetectorRef) {
+	}
 
 	ngOnInit() {
 		this.isLoading = true;
@@ -130,6 +132,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 					&& this.batteryInfo[0].designCapacity !== undefined && this.batteryInfo[0].designCapacity !== null) {
 					const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
 					this.percentageLimitation = parseFloat(percentLimit.toFixed(2));
+					this.param2 = { value: this.percentageLimitation };
 				}
 
 				this.commonService.setLocalStorageValue(LocalStorageKey.BatteryPercentage,
@@ -152,17 +155,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 					this.chargeThresholdInfo = notification.payload[0];
 				}
 			}
-
-			// TODO: uncomment in dual battery implementation story
-
-			// const chargeThresholdBatteries = [];
-			// console.log('Charge Threshold Info: ', this.chargeThresholdInfo);
-			// this.chargeThresholdInfo.forEach((chargeThreshold) => {
-			// 	if (chargeThreshold.isCapable && chargeThreshold.isOn) {
-			// 		chargeThresholdBatteries.push(chargeThreshold.batteryNum);
-			// 	}
-			// });
-			// this.chargeThresholdBatteries = chargeThresholdBatteries;
+			this.param1 = { value: this.chargeThresholdInfo.stopValue };
 		}
 	}
 
@@ -330,5 +323,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.shellServices.unRegisterEvent(EventTypes.pwrPowerSupplyStatusEvent, this.powerSupplyStatusEventRef);
 		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingPercentageEvent, this.remainingPercentageEventRef);
 		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
+		this.notificationSubscription.unsubscribe();
 	}
 }

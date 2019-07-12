@@ -1,6 +1,5 @@
 import {
-	Injectable,
-	EventEmitter
+	Injectable
 } from '@angular/core';
 import {
 	SecurityAdvisor,
@@ -8,7 +7,6 @@ import {
 	HomeProtectionDeviceInfo
 } from '@lenovo/tan-client-bridge';
 import mitt from 'mitt';
-import { resolve } from 'dns';
 
 @Injectable({
 	providedIn: 'root',
@@ -132,7 +130,9 @@ export class SecurityAdvisorMockService {
 				return Promise.resolve(true);
 			},
 			updateWifiSecurityState(): void {},
-			getWifiSecurityState(callback: Function): void {},
+			getWifiSecurityState(): Promise<any> {
+				return Promise.resolve();
+			},
 			getWifiState() {
 				this.mitt.emit(EventTypes.wsIsLocationServiceOnEvent, this.isLocationServiceOn);
 				return Promise.resolve(true);
@@ -148,7 +148,7 @@ export class SecurityAdvisorMockService {
 				let p2 = new Promise((resolve) => {});
 				return Promise.all([p1, p2]);
 			},
-			cancelRefresh() {}
+			cancelGetWifiSecurityState() {}
 		},
 		homeProtection: {
 			mitt: new mitt(),
@@ -183,7 +183,8 @@ export class SecurityAdvisorMockService {
 			},
 			updateActivateDeviceState(res: HomeProtectionDeviceInfo): void {},
 			getActivateDeviceState(callback: Function): void {},
-			getDevicePosture(callback: Function): void {},
+			getDevicePosture(): Promise<any> { return Promise.resolve(); },
+			cancelGetDevicePosture(): void {},
 			on(type, handler) {
 				return this;
 			},

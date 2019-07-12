@@ -891,7 +891,8 @@
                             "unit2": "Minute",
                             "unit3": "AM/PM"
                         }
-                    }
+                    },
+                    "warningtip": "Please select at least one day."
                 }
             },
             "audio": {
@@ -1105,7 +1106,7 @@
                     "title": "Tastă definită de utilizator",
                     "caption": "Tasta marcată cu o stea vă permite să configurați funcții definite de utilizator",
                     "dropDown": {
-                        "title": "Tastă cu acțiune definită de utilizator",
+                        "title": "Acțiunea tastei definite de utilizator",
                         "note": "Notă: aceasta poate fi utilizată pentru introducerea textului obișnuit, cum ar fi e-mailuri sau adrese poștale. Lenovo nu recomandă ca această caracteristică să fie utilizată pentru stocarea şi introducerea parolelor sau a altor informaţii confidenţiale.",
                         "options": {
                             "option1": "Selectaţi",

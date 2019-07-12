@@ -1,0 +1,155 @@
+<div class="vtr-page-dashboard-android vtr-page container-fluid">
+	<!-- <div class="row vtr-page-header">
+		<div class="col vtr-col">
+			<vtr-header-main
+				[title]="deviceService.isArm ? ('lenovoId.welcomeTextWithoutUserName' | translate) : ('lenovoId.welcomeText' | translate:{firstName:firstName})"
+				[forwardLink]=""></vtr-header-main>
+		</div>
+	</div> -->
+	<div class="row vtr-page-content">
+		<div class="col vtr-col">
+			<div class="container-fluid">
+				<div class="row">
+					<div [ngClass]="'col-12'">
+						<div class="mt-20">
+							<div class="container-fluid">
+								<div class="row"
+									*ngIf="!isOnline">
+									<div class="col col-12 px-40 pb-40">
+										<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
+											[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+											[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
+											[isSubtitleVisible]="false"
+											[isButtonVisible]="false"
+											id="dashboard-btn-connectivity"
+											(buttonClick)="onConnectivityClick($event)"></vtr-widget-offline-info>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col col-12 px-40 pb-40">
+
+										<vtr-widget-carousel [data]="heroBannerItems"
+											order="1"
+											source="title"
+											[interval]="2000"
+											cardTitle="title"
+											pauseOnHover="true"
+											image="url"
+											[showNavigationArrows]="true"
+											[showNavigationIndicators]="true"
+											[id]="'dashboard-lnk-hero-banner'"
+											[ariaLabel]="'dashboard-lnk-hero-banner'"
+											link="thumbnailUrl"></vtr-widget-carousel>
+									</div>
+								</div>
+							</div>
+							<!-- <div class="row">
+								<div class="col col-12 p-40">
+									<vtr-container-card order="4"
+										[itemID]="cardContentPositionD.Id"
+										[img]="cardContentPositionD.FeatureImage"
+										[title]="cardContentPositionD.Title"
+										[logoText]="cardContentPositionD.BrandName"
+										[action]="cardContentPositionD.Action"
+										[actionType]="cardContentPositionD.ActionType"
+										[actionLink]="cardContentPositionD.ActionLink"
+										[type]="'highlight'"
+										[ratioX]="8"
+										[ratioY]="2"
+										[id]="'dashboard-lnk-content-d'"
+										[ariaLabel]="'dashboard-lnk-content-d'">
+									</vtr-container-card>
+								</div>
+							</div> -->
+							<div class="row">
+								<div class="col col-3 p-40">
+									<!-- <vtr-container-card order="2"
+										[itemID]="cardContentPositionB.Id"
+										[img]="cardContentPositionB.FeatureImage"
+										[caption]="cardContentPositionB.Description"
+										[title]="cardContentPositionB.Title"
+										[logoText]="cardContentPositionB.BrandName"
+										[action]="cardContentPositionB.Action"
+										[actionType]="cardContentPositionB.ActionType"
+										[actionLink]="cardContentPositionB.ActionLink"
+										[type]="'android'"
+										[ratioX]="4"
+										[ratioY]="2"
+										[cornerShift]="'large'"
+										[id]="'dashboard-lnk-content-b'"
+										[ariaLabel]="'dashboard-lnk-content-b'">
+									</vtr-container-card> -->
+									<vtr-container-card order="2"
+										[itemID]="cardContentPositionB.Id"
+										[img]="cardContentPositionB.FeatureImage"
+										[caption]="'Test caption for Android container card hardcoded, not from CMS.'"
+										[title]="'Test Title for Android'"
+										[logoText]="cardContentPositionB.BrandName"
+										[action]="cardContentPositionB.Action"
+										[actionType]="cardContentPositionB.ActionType"
+										[actionLink]="cardContentPositionB.ActionLink"
+										[type]="'android'"
+										[ratioX]="4"
+										[ratioY]="2"
+										[cornerShift]="'large'"
+										[id]="'dashboard-lnk-content-b'"
+										[ariaLabel]="'dashboard-lnk-content-b'">
+									</vtr-container-card>
+								</div>
+								<div class="col col-3 p-40">
+									<vtr-container-card order="3"
+										[itemID]="cardContentPositionC.Id"
+										[img]="cardContentPositionC.FeatureImage"
+										[caption]="cardContentPositionC.Description"
+										[title]="cardContentPositionC.Title"
+										[logoText]="cardContentPositionC.BrandName"
+										[action]="cardContentPositionC.Action"
+										[actionType]="cardContentPositionC.ActionType"
+										[actionLink]="cardContentPositionC.ActionLink"
+										[type]="'android'"
+										[ratioX]="4"
+										[ratioY]="2"
+										[id]="'dashboard-lnk-content-c'"
+										[ariaLabel]="'dashboard-lnk-content-c'">
+									</vtr-container-card>
+								</div>
+								<div class="col col-3 p-40">
+									<vtr-container-card order="5"
+										[itemID]="cardContentPositionE.Id"
+										[img]="cardContentPositionE.FeatureImage"
+										[title]="cardContentPositionE.Title"
+										[logoText]="cardContentPositionE.BrandName"
+										[action]="cardContentPositionE.Action"
+										[actionType]="cardContentPositionE.ActionType"
+										[actionLink]="cardContentPositionE.ActionLink"
+										[type]="'android'"
+										[ratioX]="4"
+										[ratioY]="2"
+										[id]="'dashboard-lnk-content-e'"
+										[ariaLabel]="'dashboard-lnk-content-e'">
+									</vtr-container-card>
+								</div>
+								<div class="col col-3 p-40">
+									<vtr-container-card order="6"
+										[itemID]="cardContentPositionF.Id"
+										[img]="cardContentPositionF.FeatureImage"
+										[title]="cardContentPositionF.Title"
+										[logoText]="cardContentPositionF.BrandName"
+										[action]="cardContentPositionF.Action"
+										[actionType]="cardContentPositionF.ActionType"
+										[actionLink]="cardContentPositionF.ActionLink"
+										[type]="'android'"
+										[ratioX]="4"
+										[ratioY]="2"
+										[id]="'dashboard-lnk-content-f'"
+										[ariaLabel]="'dashboard-lnk-content-f'">
+									</vtr-container-card>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
