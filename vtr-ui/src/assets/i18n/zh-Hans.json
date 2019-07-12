@@ -1020,7 +1020,7 @@
                         "onSunsetToSunriseScheduleDescription": "设定从日落到日出的护眼模式",
                         "note": {
                             "title": "注",
-                            "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日落日出时间。"
+                            "description": "启用眼护理模式后,此色温不起作用。但是,您可以拖动滑块以获取其预览。要使其有效,请关闭眼部护理模式。"
                         }
                     },
                     "privacyGuard": {
