@@ -38,17 +38,17 @@ const routes: Routes = [
 	{
 		path: 'security',
 		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
-	},
-	{
-		path: '',
-		redirectTo: 'device-gaming',
-		pathMatch: 'full'
-	},
-	{
-		path: '',
-		redirectTo: 'dashboard',
-		pathMatch: 'full'
 	}
+	// {
+	// 	path: '',
+	// 	redirectTo: 'device-gaming',
+	// 	pathMatch: 'full'
+	// },
+	// {
+	// 	path: '',
+	// 	redirectTo: 'dashboard',
+	// 	pathMatch: 'full'
+	// }
 ];
 
 @NgModule({
