@@ -73,12 +73,20 @@ export class AppComponent implements OnInit {
 
 		//#region VAN-2779 this is moved in MVP 2
 
-		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
-		if (tutorial === undefined && navigator.onLine) {
-			this.openWelcomeModal(1);
-		} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
-			this.openWelcomeModal(2);
-		}
+		this.deviceService.getIsARM()
+			.then((status: boolean) => {
+				console.log('getIsARM.then', status);
+				if (!status) {
+					const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+					if (tutorial === undefined && navigator.onLine) {
+						this.openWelcomeModal(1);
+					} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
+						this.openWelcomeModal(2);
+					}
+				}
+			}).catch(error => {
+				console.error('getIsARM', error);
+			});
 
 		//#endregion
 
@@ -271,7 +279,7 @@ export class AppComponent implements OnInit {
 
 	// VAN-5872, server switch feature
 	private serverSwitchThis() {
-		this.activRouter.queryParamMap.subscribe((params: ParamMap) => {
+		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
 			if (params.has('serverswitch')) {
 				// retrive from localStorage
 				const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
@@ -303,6 +311,7 @@ export class AppComponent implements OnInit {
 								// this.qaService.setTranslationService(this.translate);
 								// this.qaService.setCurrentLangTranslations();
 								console.log('@sahinul server switch completed');
+
 								// VAN-6417, language right to left
 								/*if ((['ar', 'he']).indexOf(langCode) >= 0) {
 									window.document.getElementsByTagName("html")[0].dir = 'rtl';
