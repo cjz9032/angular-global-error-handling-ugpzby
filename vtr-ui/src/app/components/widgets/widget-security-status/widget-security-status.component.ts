@@ -36,7 +36,12 @@ export class WidgetSecurityStatusComponent implements OnInit, OnDestroy {
 			this.items.push(new WindowsHelloWidgetItem(this.securityAdvisor.windowsHello, this.commonService, this.translateService));
 		}
 		const windowsHello = this.securityAdvisor.windowsHello;
-		this.securityAdvisor.refresh();
+		if (this.securityAdvisor) {
+			this.securityAdvisor.refresh();
+		}
+		if (!this.securityAdvisor.wifiSecurity.state) {
+			this.securityAdvisor.wifiSecurity.getWifiSecurityState();
+		}
 		if (windowsHello.fingerPrintStatus) {
 			this.showWindowsHello(windowsHello);
 		}
@@ -46,7 +51,7 @@ export class WidgetSecurityStatusComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		this.securityAdvisor.wifiSecurity.cancelRefresh();
+		this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 	}
 
 	showWindowsHello(windowsHello: WindowsHello) {
@@ -93,8 +98,4 @@ export class WidgetSecurityStatusComponent implements OnInit, OnDestroy {
 		this.showVpn();
 	}
 
-	@HostListener('window: blur')
-	onBlur(): void {
-		this.securityAdvisor.wifiSecurity.cancelRefresh();
-	}
 }
