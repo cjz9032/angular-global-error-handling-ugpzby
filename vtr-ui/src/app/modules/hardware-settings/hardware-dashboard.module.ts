@@ -16,8 +16,8 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 @NgModule({
 	declarations: [
 		FeedbackFormComponent,
-		PageUserComponent,
-		PageDashboardComponent,
+		//PageUserComponent,
+		PageDashboardComponent
 	],
 	imports: [
 		CommonModule,
@@ -29,24 +29,14 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 			loader: {
 				provide: TranslateLoader,
 				useFactory: HttpLoaderFactory,
-				deps: [HttpClient]
+				deps: [ HttpClient ]
 			}
 		}),
 		FontAwesomeModule
 	],
-	exports: [
-		TranslateModule,
-		CommonUiModule
-	],
-	providers: [
-		MockService
-	],
-	entryComponents: [
-		FeedbackFormComponent,
-	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA,
-		NO_ERRORS_SCHEMA
-	]
+	exports: [ TranslateModule, CommonUiModule ],
+	providers: [ MockService ],
+	entryComponents: [ FeedbackFormComponent ],
+	schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
 })
-export class HardwareDashboardModule { }
+export class HardwareDashboardModule {}

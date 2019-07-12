@@ -1,3 +1,4 @@
+import { HomeComponent } from './../components/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
@@ -7,8 +8,17 @@ import { PageSupportDetailComponent } from '../components/pages/page-support-det
 
 const routes: Routes = [
 	{
+		path: '',
+		component: HomeComponent,
+		pathMatch: 'full'
+	},
+	{
 		path: 'dashboard',
 		loadChildren: './hardware-settings/hardware-dashboard.module#HardwareDashboardModule'
+	},
+	{
+		path: 'device-gaming',
+		loadChildren: './gaming-dashboard.module#GamingDashboardModule'
 	},
 	{
 		path: 'gaming',
@@ -21,8 +31,8 @@ const routes: Routes = [
 	{
 		path: 'support',
 		component: PageSupportComponent,
-		canDeactivate: [GuardService],
-		canActivate: [GuardService],
+		canDeactivate: [ GuardService ],
+		canActivate: [ GuardService ],
 		data: {
 			pageName: 'Page.Support'
 		}
@@ -30,8 +40,8 @@ const routes: Routes = [
 	{
 		path: 'support-detail/:id',
 		component: PageSupportDetailComponent,
-		canDeactivate: [GuardService],
-		canActivate: [GuardService],
+		canDeactivate: [ GuardService ],
+		canActivate: [ GuardService ],
 		data: {
 			pageName: 'Support.Detail'
 		}
@@ -52,24 +62,19 @@ const routes: Routes = [
 		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
 	},
 	{
-		path: '',
-		redirectTo: 'dashboard',
-		pathMatch: 'full'
-	},
+		path: '**',
+		component: HomeComponent
+	}
 ];
 
 @NgModule({
 	imports: [
-		RouterModule.forRoot(
-			routes,
-			{
-				useHash: true,
-				scrollPositionRestoration: 'enabled',
-				enableTracing: false
-			})
+		RouterModule.forRoot(routes, {
+			useHash: true,
+			scrollPositionRestoration: 'enabled',
+			enableTracing: false
+		})
 	],
-	exports: [
-		RouterModule
-	]
+	exports: [ RouterModule ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

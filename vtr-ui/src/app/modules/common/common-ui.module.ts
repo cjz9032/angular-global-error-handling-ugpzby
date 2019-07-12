@@ -1,3 +1,4 @@
+import { UiGamingDriverPopupComponent } from './../../components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
 import { CommonModule } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { UiApsSliderComponent } from 'src/app/components/ui/ui-aps-slider/ui-aps-slider.component';
@@ -22,6 +23,8 @@ import { UiTimePickerComponent } from 'src/app/components/ui/ui-time-picker/ui-t
 import { UiHeaderWarrantyComponent } from 'src/app/components/ui/ui-header-warranty/ui-header-warranty.component';
 import { SharedModule } from '../shared.module';
 import { RouterModule } from '@angular/router';
+import { UiGamingCollapsibleContainerComponent } from 'src/app/components/ui/ui-gaming-collapsible-container/ui-gaming-collapsible-container.component';
+import { UiPopoverComponent } from 'src/app/components/ui/ui-popover/ui-popover.component';
 
 @NgModule({
 	declarations: [
@@ -48,7 +51,11 @@ import { RouterModule } from '@angular/router';
 		UiSwitchTristateComponent,
 		UiSwitchTristateComponent,
 		UiTimePickerComponent,
-		UiHeaderWarrantyComponent
+		UiHeaderWarrantyComponent,
+
+		UiGamingCollapsibleContainerComponent,
+		UiGamingDriverPopupComponent,
+		UiPopoverComponent
 	],
 	exports: [
 		UiApsSliderComponent,
@@ -74,7 +81,11 @@ import { RouterModule } from '@angular/router';
 		UiSwitchTristateComponent,
 		UiSwitchTristateComponent,
 		UiTimePickerComponent,
-		UiHeaderWarrantyComponent
+		UiHeaderWarrantyComponent,
+
+		UiGamingCollapsibleContainerComponent,
+		UiGamingDriverPopupComponent,
+		UiPopoverComponent
 	],
 	imports: [
 		CommonModule,
