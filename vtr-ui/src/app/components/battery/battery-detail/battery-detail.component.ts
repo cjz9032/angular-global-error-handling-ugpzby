@@ -1,7 +1,5 @@
 import { Component, OnInit, OnDestroy, Input, ChangeDetectorRef } from '@angular/core';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
-import { BatteryDetailMockService } from 'src/app/services/battery-detail/battery-detail.mock.service';
-import { BaseBatteryDetail } from 'src/app/services/battery-detail/base-battery-detail';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { BatteryChargeStatus } from 'src/app/enums/battery-charge-status.enum';
@@ -10,7 +8,7 @@ import { BatteryInformation } from 'src/app/enums/battery-information.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs';
-import { ViewRef_ } from '@angular/core/src/view';
+import { ViewRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import BatteryGaugeDetail from 'src/app/data-models/battery/battery-gauge-detail-model';
 @Component({
@@ -124,7 +122,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		this.dataSourceGauge = response.gauge;
 		if (this.cd !== null &&
 			this.cd !== undefined &&
-			!(this.cd as ViewRef_).destroyed) {
+			!(this.cd as ViewRef).destroyed) {
 			this.cd.detectChanges();
 		}
 	}

@@ -1,37 +1,56 @@
 <div class="vtr-ui-list-chevron">
 	<ul class="chevron-list">
-		<li *ngFor="let item of items" [ngClass]="getItemStatusClass(item)">
+		<li *ngFor="let item of items"
+			[ngClass]="getItemStatusClass(item)">
 			<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false then user routerLink to naviagate within Lenovo Vantage Application -->
 
-			<a routerLink="/{{item.path}}" id="{{item.id}}" attr.aria-label="{{item.id}}" [queryParams]="item.pathParams" vtrMetrics
-			[metricsItem]="item.metricsItemName ? item.metricsItemName : item.title"
-			[metricsEvent]="metricsEvent"
-			[metricsItemID]="item.id"
-			[metricsItemCategory]="item.category"
-			[metricsItemPosition]="blockPosition"
-		[ngClass]="clickable?'':'disabled'"
+			<a routerLink="/{{item.path}}"
+				id="{{item.id}}"
+				attr.aria-label="{{item.id}}"
+				[queryParams]="item.pathParams"
+				vtrMetrics
+				[metricsItem]="item.metricsItemName ? item.metricsItemName : item.title"
+				[metricsEvent]="metricsEvent"
+				[metricsItemID]="item.id"
+				[metricsItemCategory]="item.category"
+				[metricsItemPosition]="blockPosition"
+				[ngClass]="clickable?'':'disabled'"
 				*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false)">
 				<div class="container-fluid">
 					<div class="row align-items-center">
-						<div class="col col-1 text-center" *ngIf="iconPlacement==='left'">
-							<div class="item-icon status" *ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
+						<div class="col col-1 text-center"
+							*ngIf="iconPlacement==='left'">
+							<div class="item-icon status"
+								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
 								<div class="icon-bkg">
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
-							<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-secondary progress-spinner" role="status"></div></div>
-							<fa-icon *ngIf="item.circle === 'questionCircle'" class="question-icon" placement="auto" [icon]="['far', 'question-circle']" container="body"></fa-icon>
-							<div class="item-icon" *ngIf="item.icon">
+							<div *ngIf="item.status === 4"
+								class="spinner-content">
+								<div class="spinner-border text-secondary progress-spinner"
+									role="status"></div>
+							</div>
+							<fa-icon *ngIf="item.circle === 'questionCircle'"
+								class="question-icon"
+								placement="auto"
+								[icon]="['far', 'question-circle']"
+								container="body"></fa-icon>
+							<div class="item-icon"
+								*ngIf="item.icon">
 								<div class="icon-bkg">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
-							<div class="item-icon-image" *ngIf="item.iconPath">
+							<div class="item-icon-image"
+								*ngIf="item.iconPath">
 								<img [src]="item.iconPath|svgInline|async" />
 							</div>
-							<div  class="item-icon-class" *ngIf="item.iconName && item.color">
-									<fa-icon [icon]="['fal', item.iconName]"
-									class="icon" [ngStyle]="{ 'color': item.color}"></fa-icon>
+							<div class="item-icon-class"
+								*ngIf="item.iconName && item.color">
+								<fa-icon [icon]="['fal', item.iconName]"
+									class="icon"
+									[ngStyle]="{ 'color': item.color}"></fa-icon>
 							</div>
 						</div>
 						<div class="col item-text"
@@ -49,31 +68,46 @@
 									[ngClass]="getItemDetailClasses(item)">
 									{{item.detail}}
 								</div>
-								<div *ngIf="item.subText" class="sub-text">
+								<div *ngIf="item.subText"
+									class="sub-text">
 									<span title="{{item.subText}}">{{item.subText | characterLimit:20}}</span>
 									<span class="pl-3">{{item.date}}</span>
 								</div>
 							</div>
 						</div>
-						<div class="col col-1 text-center" *ngIf="iconPlacement==='right'">
-							<div class="item-icon status" *ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
+						<div class="col col-1 text-center"
+							*ngIf="iconPlacement==='right'">
+							<div class="item-icon status"
+								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
 								<div class="icon-bkg">
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
-							<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-secondary progress-spinner" role="status"></div></div>
-							<fa-icon *ngIf="item.circle === 'questionCircle'" class="question-icon" placement="auto" [icon]="['far', 'question-circle']" container="body"></fa-icon>
-							<div class="item-icon" *ngIf="item.icon">
+							<div *ngIf="item.status === 4"
+								class="spinner-content">
+								<div class="spinner-border text-secondary progress-spinner"
+									role="status"></div>
+							</div>
+							<fa-icon *ngIf="item.circle === 'questionCircle'"
+								class="question-icon"
+								placement="auto"
+								[icon]="['far', 'question-circle']"
+								container="body"></fa-icon>
+							<div class="item-icon"
+								*ngIf="item.icon">
 								<div class="icon-bkg">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
-							<div class="item-icon-image" *ngIf="item.iconPath">
+							<div class="item-icon-image"
+								*ngIf="item.iconPath">
 								<img [src]="item.iconPath|svgInline|async" />
 							</div>
 						</div>
-						<div *ngIf="chevronVisibility" class="col col-1 text-center">
-							<div class="arrow" [ngClass]="{'blue-arrow': arrowColor==='blue-arrow'}">
+						<div *ngIf="chevronVisibility"
+							class="col col-1 text-center">
+							<div class="arrow"
+								[ngClass]="{'blue-arrow': arrowColor==='blue-arrow'}">
 								<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
 							</div>
 						</div>
@@ -81,24 +115,43 @@
 				</div>
 			</a>
 			<!--Open Windows Settings /subapges if isSystemLink is not undefined and  true or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
-			<a href="#!" id="{{item.id}}" attr.aria-label="{{item.id}}"  vtrMetrics [metricsItem]="item.metricsItemName ? item.metricsItemName : item.title" [metricsEvent]="metricsEvent" (click)="launchSystemUri(item.path)" [ngClass]="clickable?'':'disabled'"
-				*ngIf="item.isSystemLink!==undefined &&  item.isSystemLink===true">
+			<a href="#!"
+				id="{{item.id}}"
+				attr.aria-label="{{item.id}}"
+				vtrMetrics
+				[metricsItem]="item.metricsItemName ? item.metricsItemName : item.title"
+				[metricsEvent]="metricsEvent"
+				(click)="launchSystemUri(item.path)"
+				[ngClass]="clickable?'':'disabled'"
+				*ngIf="item.isSystemLink!==undefined && item.isSystemLink===true">
 				<div class="container-fluid">
 					<div class="row align-items-center">
-						<div class="col col-1 text-center" *ngIf="iconPlacement==='left'">
-							<div class="item-icon status" *ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
+						<div class="col col-1 text-center"
+							*ngIf="iconPlacement==='left'">
+							<div class="item-icon status"
+								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
 								<div class="icon-bkg">
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
-							<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-secondary progress-spinner" role="status"></div></div>
-							<fa-icon *ngIf="item.circle === 'questionCircle'" class="question-icon" placement="auto" [icon]="['far', 'question-circle']" container="body"></fa-icon>
-							<div class="item-icon" *ngIf="item.icon">
+							<div *ngIf="item.status === 4"
+								class="spinner-content">
+								<div class="spinner-border text-secondary progress-spinner"
+									role="status"></div>
+							</div>
+							<fa-icon *ngIf="item.circle === 'questionCircle'"
+								class="question-icon"
+								placement="auto"
+								[icon]="['far', 'question-circle']"
+								container="body"></fa-icon>
+							<div class="item-icon"
+								*ngIf="item.icon">
 								<div class="icon-bkg">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
-							<div class="item-icon-image" *ngIf="item.iconPath">
+							<div class="item-icon-image"
+								*ngIf="item.iconPath">
 								<img [src]="item.iconPath|svgInline|async" />
 							</div>
 							<!-- <div class="item-icon-image" *ngIf="item.iconIClass">
@@ -122,25 +175,38 @@
 								</div>
 							</div>
 						</div>
-						<div class="col col-1 text-center" *ngIf="iconPlacement==='right'">
-							<div class="item-icon status" *ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
+						<div class="col col-1 text-center"
+							*ngIf="iconPlacement==='right'">
+							<div class="item-icon status"
+								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
 								<div class="icon-bkg">
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 
 							</div>
-							<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-secondary progress-spinner" role="status"></div></div>
-							<fa-icon *ngIf="item.circle === 'questionCircle'" class="question-icon" placement="auto" [icon]="['far', 'question-circle']" container="body"></fa-icon>
-							<div class="item-icon" *ngIf="item.icon">
+							<div *ngIf="item.status === 4"
+								class="spinner-content">
+								<div class="spinner-border text-secondary progress-spinner"
+									role="status"></div>
+							</div>
+							<fa-icon *ngIf="item.circle === 'questionCircle'"
+								class="question-icon"
+								placement="auto"
+								[icon]="['far', 'question-circle']"
+								container="body"></fa-icon>
+							<div class="item-icon"
+								*ngIf="item.icon">
 								<div class="icon-bkg">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
-							<div class="item-icon-image" *ngIf="item.iconPath">
+							<div class="item-icon-image"
+								*ngIf="item.iconPath">
 								<img [src]="item.iconPath|svgInline|async" />
 							</div>
 						</div>
-						<div *ngIf="chevronVisibility" class="col col-1 text-center">
+						<div *ngIf="chevronVisibility"
+							class="col col-1 text-center">
 							<div class="arrow">
 								<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
 							</div>

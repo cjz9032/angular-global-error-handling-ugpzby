@@ -8,7 +8,7 @@ import { VantageCommunicationService } from '../../../common/services/vantage-co
 	styleUrls: ['./article-single.component.scss']
 })
 export class ArticleSingleComponent implements OnInit, AfterViewInit {
-	@ViewChild('innerHTML') articleInner: ElementRef;
+	@ViewChild('innerHTML', { static: true }) articleInner: ElementRef;
 	@Input() articleData: Article;
 
 	constructor(private vantageCommunicationService: VantageCommunicationService) {
