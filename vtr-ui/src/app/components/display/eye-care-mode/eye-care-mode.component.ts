@@ -33,10 +33,14 @@ export class EyeCareModeComponent implements OnInit, OnChanges {
 	ngOnInit() { }
 
 	ngOnChanges(changes: SimpleChanges): void {
-		if (changes['sunsetToSunriseStatus'] && !changes['sunsetToSunriseStatus'].firstChange) {
-			if (this.sunsetToSunriseStatus && this.sunsetToSunriseStatus.sunsettime && this.sunsetToSunriseStatus.sunrisetime) {
-				this.sunriseToSunsetText = `(${this.sunsetToSunriseStatus.sunsettime} - ${this.sunsetToSunriseStatus.sunrisetime})`;
+		try {
+			if (changes['sunsetToSunriseStatus'] && !changes['sunsetToSunriseStatus'].firstChange) {
+				if (this.sunsetToSunriseStatus && this.sunsetToSunriseStatus.sunsettime && this.sunsetToSunriseStatus.sunrisetime) {
+					this.sunriseToSunsetText = `(${this.sunsetToSunriseStatus.sunsettime} - ${this.sunsetToSunriseStatus.sunrisetime})`;
+				}
 			}
+		} catch (error) {
+			throw Error(error.message);
 		}
 	}
 
