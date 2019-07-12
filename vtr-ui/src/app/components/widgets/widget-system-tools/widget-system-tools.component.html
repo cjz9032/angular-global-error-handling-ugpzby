@@ -21,9 +21,8 @@
 							</a>
 						</li>
 						<li *ngIf="gamingProperties.macroKeyFeature">
-							<a id="systemtools_macrokey" attr.aria-label="systemtools_macrokey" vtrMetrics
-								[metricsItem]="'gaming.dashboard.device.systemTools.macroKey' | translate"
-								metricsEvent="featureClick" routerLink="/macrokey">
+							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.macroKey' | translate"
+								metricsEvent="featureClick" routerLink="/gaming/macrokey">
 								<figure>
 									<div class="system-icon" title="">
 										<i class="icon icon-macrokey"></i>

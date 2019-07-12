@@ -1,3 +1,4 @@
+import { PageUserComponent } from 'src/app/components/pages/page-user/page-user.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ArticleItemComponent } from '../components/article-item/article-item.component';
 import { BaseComponent } from '../components/base/base.component';
@@ -41,7 +42,8 @@ import { CommonPipeModule } from './common/common-pipe.module';
 		MenuMainComponent,
 		ModalLenovoIdComponent,
 		ModalWelcomeComponent,
-		UiButtonComponent
+		UiButtonComponent,
+		PageUserComponent
 	],
 	imports: [
 		AngularSvgIconModule,
@@ -78,7 +80,8 @@ import { CommonPipeModule } from './common/common-pipe.module';
 		ReactiveFormsModule,
 		RouterModule,
 		TranslationModule,
-		UiButtonComponent
+		UiButtonComponent,
+		PageUserComponent
 	],
 	providers: [
 		CommonService,
@@ -91,14 +94,7 @@ import { CommonPipeModule } from './common/common-pipe.module';
 		SettingsService,
 		UserService
 	],
-	entryComponents: [
-		ModalWelcomeComponent,
-		ModalLenovoIdComponent,
-		UiButtonComponent
-	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA,
-		NO_ERRORS_SCHEMA
-	]
+	entryComponents: [ ModalWelcomeComponent, ModalLenovoIdComponent, UiButtonComponent ],
+	schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
 })
-export class SharedModule { }
+export class SharedModule {}
