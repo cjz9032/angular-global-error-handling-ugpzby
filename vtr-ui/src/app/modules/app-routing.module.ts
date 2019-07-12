@@ -59,11 +59,11 @@ const routes: Routes = [
 	},
 	{
 		path: 'security',
-		loadChildren: () => import('./security-advisor/security-advisor.module').then(m => m.SecurityAdvisorModule)
+		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
 	},
 	{
 		path: 'privacy',
-		loadChildren: () => import('../components/pages/page-privacy/privacy.module').then(m => m.PrivacyModule)
+		loadChildren: '../components/pages/page-privacy/privacy.module#PrivacyModule'
 	},
 	{
 		path: '**',

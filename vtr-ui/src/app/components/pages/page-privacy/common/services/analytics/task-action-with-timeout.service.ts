@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
 import { catchError, debounceTime, map, switchMap, take, timeout } from 'rxjs/operators';
+import { PrivacyModule } from '../../../privacy.module';
 
 export enum TasksName {
 	scoreScanAction = 'scoreScanAction',
@@ -12,7 +13,9 @@ export enum TasksName {
 
 export const STANDART_TIMEOUT_FOR_TASK = 120000;
 
-@Injectable()
+@Injectable({
+	providedIn: 'root'
+})
 export class TaskActionWithTimeoutService {
 	private taskActionsStart$ = {
 		[TasksName.scoreScanAction]: new Subject<number>(),

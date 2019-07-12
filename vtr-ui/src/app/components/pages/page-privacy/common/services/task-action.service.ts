@@ -7,10 +7,13 @@ import { PrivacyScoreService } from '../../pages/result/privacy-score/privacy-sc
 import { pipe, snake2PascalCase } from '../../utils/helpers';
 import { TaskActionWithTimeoutService, TasksName } from './analytics/task-action-with-timeout.service';
 import { FeaturesStatuses } from '../../userDataStatuses';
+import { PrivacyModule } from '../../privacy.module';
 
 const INSTALLED_TIMEOUT_FOR_TASK = 24 * 60 * 60 * 1000;
 
-@Injectable()
+@Injectable({
+	providedIn: 'root'
+})
 export class TaskActionService {
 	constructor(
 		private analyticsService: AnalyticsService,

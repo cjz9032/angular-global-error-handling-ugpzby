@@ -40,9 +40,6 @@ import { BreachedOtherDescriptionComponent } from './breached-other-description/
 		FormsModule,
 		VtrCommonModule
 	],
-	providers: [
-		EmailScannerService,
-	]
 })
 export class CheckBreachedAccountsModule {
 }
