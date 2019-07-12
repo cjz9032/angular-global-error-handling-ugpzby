@@ -298,7 +298,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 		});
 	}
 	getMenuItems(): Promise<any> {
-		console.log('########################################## 2', this.deviceService.isGaming);
+		console.log('Getting menu items for the Gaming device?', this.deviceService.isGaming);
 		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
 			this.items = items;
 			return this.items;

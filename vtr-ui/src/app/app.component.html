@@ -1,7 +1,5 @@
 <div [ngClass]="{'is-gaming':deviceService.isGaming, 'is-arm':deviceService.isArm}" class="disable-text-selection">
-	<vtr-menu-main [loadMenuItem]="machineInfo"></vtr-menu-main>
-	<vtr-hardware-menu></vtr-hardware-menu>
-	<vtr-gaming-menu></vtr-gaming-menu>
+	<vtr-menu-main  *ngIf="isMachineInfoLoaded" [loadMenuItem]="machineInfo"></vtr-menu-main>
 	<div class="vtr-app container-fluid">
 		<div class="row">
 			<div class="col p-0">
@@ -9,4 +7,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> 
