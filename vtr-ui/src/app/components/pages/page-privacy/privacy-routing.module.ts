@@ -7,16 +7,17 @@ import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { RoutersName } from './privacy-routing-name';
 import { ArticlesComponent } from './pages/articles/articles.component';
+import { ArticleSingleComponent } from './pages/articles/article-single/article-single.component';
 
 const adminRoutes: Routes = [
 	{
-		path: RoutersName.PRIVACY,
+		path: RoutersName.MAIN,
 		component: MainLayoutComponent,
+		pathMatch: 'prefix',
 		children: [
 			{
 				path: RoutersName.MAIN, // /privacy
 				redirectTo: RoutersName.BREACHES,
-				pathMatch: 'full',
 			}, {
 				path: RoutersName.BREACHES,
 				component: BreachedAccountsComponent
@@ -32,6 +33,9 @@ const adminRoutes: Routes = [
 			}, {
 				path: RoutersName.ARTICLES,
 				component: ArticlesComponent
+			}, {
+				path: `${RoutersName.ARTICLEDETAILS}`,
+				component: ArticleSingleComponent
 			}
 		]
 	},

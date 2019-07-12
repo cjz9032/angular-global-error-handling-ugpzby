@@ -28,7 +28,6 @@ import { PageDeviceComponent } from 'src/app/components/pages/page-device/page-d
 import { PageDeviceSettingsComponent } from 'src/app/components/pages/page-device-settings/page-device-settings.component';
 import { PageDeviceUpdatesComponent } from 'src/app/components/pages/page-device-updates/page-device-updates.component';
 import { PageHardwarescanComponent } from 'src/app/components/pages/page-hardwarescan/page-hardwarescan.component';
-import { PagePrivacyComponent } from 'src/app/components/pages/page-privacy/page-privacy.component';
 import { PageQuestionsComponent } from 'src/app/components/pages/page-questions/page-questions.component';
 import { PageSettingsComponent } from 'src/app/components/pages/page-settings/page-settings.component';
 import { PageSmartAssistComponent } from 'src/app/components/pages/page-smart-assist/page-smart-assist.component';
@@ -69,7 +68,6 @@ import { VoiceComponent } from 'src/app/components/pages/page-smart-assist/voice
 		PageDeviceSettingsComponent,
 		PageDeviceUpdatesComponent,
 		PageHardwarescanComponent,
-		PagePrivacyComponent,
 		PageQuestionsComponent,
 		PageSettingsComponent,
 		PageSmartAssistComponent,

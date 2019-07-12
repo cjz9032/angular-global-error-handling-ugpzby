@@ -50,8 +50,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isDriverPopup: false,
 			isChecked: false,
 			tooltipText: '',
-			id:'legion_edge_cpuoverlock',
-			ariaLabel:'legion_edge_cpuoverlock',
+			id: 'legion_edge_cpuoverlock',
+			ariaLabel: 'legion_edge_cpuoverlock',
 			type: 'gaming.dashboard.device.legionEdge.title'
 		},
 		{
@@ -71,8 +71,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isChecked: false,
 			tooltipText: '',
 			readonly: true,
-			id:'legion_edge_ramoverlock',
-			ariaLabel:'legion_edge_ramoverlock',
+			id: 'legion_edge_ramoverlock',
+			ariaLabel: 'legion_edge_ramoverlock',
 			type: 'gaming.dashboard.device.legionEdge.ramOverlock'
 		},
 		{
@@ -91,8 +91,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isDriverPopup: false,
 			isChecked: false,
 			tooltipText: '',
-			id:'legion_edge_autoclose',
-			ariaLabel:'legion_edge_autoclose',
+			id: 'legion_edge_autoclose',
+			ariaLabel: 'legion_edge_autoclose',
 			type: 'gaming.dashboard.device.legionEdge.autoClose',
 			routerLink: '/autoclose'
 		},
@@ -114,8 +114,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isChecked: false,
 			tooltipText: '',
 			readonly: true,
-			id:'legion_edge_networkboost',
-			ariaLabel:'legion_edge_networkboost',
+			id: 'legion_edge_networkboost',
+			ariaLabel: 'legion_edge_networkboost',
 			type: 'gaming.dashboard.device.legionEdge.networkBoost',
 			routerLink: '/networkboost',
 			canNavigate: true
@@ -138,8 +138,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isChecked: false,
 			tooltipText: '',
 			readonly: true,
-			id:'legion_edge_hybridmode',
-			ariaLabel:'legion_edge_hybridmode',
+			id: 'legion_edge_hybridmode',
+			ariaLabel: 'legion_edge_hybridmode',
 			type: 'gaming.dashboard.device.legionEdge.hybridMode'
 		},
 		{
@@ -158,8 +158,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isDriverPopup: false,
 			isChecked: true,
 			tooltipText: '',
-			id:'legion_edge_touchpadlock',
-			ariaLabel:'legion_edge_touchpadlock',
+			id: 'legion_edge_touchpadlock',
+			ariaLabel: 'legion_edge_touchpadlock',
 			type: 'gaming.dashboard.device.legionEdge.touchpadLock'
 		}
 	];
@@ -211,6 +211,14 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		private gamingNetworkBoostService: NetworkBoostService
 	) { }
 	ngOnInit() {
+		this.commonService.getCapabalitiesNotification().subscribe((response) => {
+		   // console.log(response, '--------------==');
+			if (response.type === Gaming.GamingCapablities) {
+				console.log(`GAMINGCAPABLITIES in widget-legion-edge.component`, response);
+				this.gamingCapabilities = response.payload;
+				this.legionEdgeInit();
+			}
+		});
 		this.gamingCapabilities.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.hybridModeFeature
 		);
@@ -246,13 +254,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		// Initialize Legion Edge component from cache
 		this.legionEdgeInit();
 		// console.log('CPU get status', this.GetCPUOverClockCacheStatus());
-		this.commonService.notification.subscribe((response) => {
-			if (response.type === Gaming.GamingCapablities) {
-				console.log(`GAMINGCAPABLITIES in widget-legion-edge.component`, response);
-				this.gamingCapabilities = response.payload;
-				this.legionEdgeInit();
-			}
-		});
 	}
 
 	legionEdgeInit() {
@@ -269,7 +270,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.legionUpdate[5].isChecked = gamingStatus.touchpadLockStatus;
 		if (!gamingStatus.xtuService) {
 			this.drop.hideDropDown = true;
-		} else  {
+		} else {
 			this.drop.hideDropDown = false;
 		}
 
@@ -338,9 +339,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				if (cpuOCStatus !== undefined) {
 					const CpuOCStatusObj = new CPUOCStatus();
 					CpuOCStatusObj.cpuOCStatus = cpuOCStatus;
-						if (cpuOCStatus !== this.drop.curSelected) {
-							this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, cpuOCStatus);
-						}
+					if (cpuOCStatus !== this.drop.curSelected) {
+						this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, cpuOCStatus);
+					}
 					this.drop.curSelected = CpuOCStatusObj.cpuOCStatus;
 				}
 			});

@@ -1,7 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CommonPopupService } from '../../common/services/popups/common-popup.service';
 import { map, tap } from 'rxjs/operators';
-import { UserAllowService } from '../../common/services/user-allow.service';
 import { TrackingMapService } from './services/tracking-map.service';
 import { SingleTrackersInfo, TrackersInfo, typeData } from './services/tracking-map.interface';
 import { AnalyticsService } from '../../common/services/analytics.service';
@@ -32,7 +31,6 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 	constructor(
 		private trackingMapService: TrackingMapService,
 		private commonPopupService: CommonPopupService,
-		private userAllowService: UserAllowService,
 		private analyticsService: AnalyticsService,
 		private getParentForAnalyticsService: GetParentForAnalyticsService,
 	) {

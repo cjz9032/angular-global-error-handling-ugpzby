@@ -1,42 +1,50 @@
 <vtr-common-popup popUpId="support-popup" size="big">
   <ng-template>
-    <div class="support-popup" data-analyticsName="KindOfHelpPopup">
-      <h3 class="support-popup__title">What kind of help do you need?</h3>
-      <!--<p class="support-popup__text">Make sure your question relates to the support you choose.</p>-->
+    <div class="support-popup" data-analyticsName="HelpPopup">
+      <h3 class="support-popup__title">How can we help you?</h3>
+      <p class="support-popup__text">Make sure your question relates to the support you choose.</p>
       <div class="support-popup__row">
-        <!--<div class="support-popup__col support-popup__col&#45;&#45;bottom-indent">-->
-        <!--<figure class="support-popup__image support-popup__image&#45;&#45;green">-->
-        <!--<vtr-inline-svg src="/assets/icons/privacy-tab/icon-support.svg" role="img"></vtr-inline-svg>-->
-        <!--&lt;!&ndash;<img class="support-popup__img" src="/assets/images/privacy-tab/default.svg" width="76" height="68" alt="Privacy Support">&ndash;&gt;-->
-        <!--<figcaption class="support-popup__image-description">Privacy Support</figcaption>-->
-        <!--</figure>-->
-        <!--<ul class="support-popup__list">-->
-        <!--<li class="support-popup__list-item">Ask questions related to privacy</li>-->
-        <!--<li class="support-popup__list-item">Report privacy concerns</li>-->
-        <!--<li class="support-popup__list-item">Get help with Lenovo Privacy</li>-->
-        <!--<li class="support-popup__list-item">Contact us 24/7</li>-->
-        <!--</ul>-->
-        <!--<div class="support-popup__buttons">-->
-        <!--<button class="support-popup__button" (click)="openLenovoSupport()">Get Privacy Support</button>-->
-        <!--</div>-->
-        <!--</div>-->
+		  <div class="support-popup__col support-popup__col--bottom-indent">
+			  <figure class="support-popup__image support-popup__image--green">
+				  <!--<vtr-inline-svg src="/assets/icons/privacy-tab/icon-support.svg" role="img"></vtr-inline-svg>-->
+				  <img class="support-popup__img" src="/assets/icons/privacy-tab/icon-support.svg" width="76" height="68" alt="Privacy Support">
+				  <figcaption class="support-popup__image-description">Privacy Support</figcaption>
+			  </figure>
+			  <ul class="support-popup__list">
+				  <li class="support-popup__list-item">Ask any privacy related questions</li>
+				  <li class="support-popup__list-item">Report privacy related issues</li>
+				  <li class="support-popup__list-item">Get help with Lenovo Privacy Essentials by FigLeaf</li>
+				  <li class="support-popup__list-item">24/7 support</li>
+			  </ul>
+			  <div class="support-popup__buttons">
+				  <button class="support-popup__button"
+						  type="button"
+						  vtrSendAnalytics
+						  [metricsEvent]="'ItemClick'"
+						  [metricsItem]="'GetPrivacySupportButton '"
+						  (click)="openFigleafSupport()">
+					  Get Privacy Support
+				  </button>
+			  </div>
+		  </div>
         <div class="support-popup__col support-popup__col--bottom-indent">
           <figure class="support-popup__image">
-            <vtr-inline-svg src="/assets/icons/privacy-tab/icon-support.svg" role="img"></vtr-inline-svg>
-            <!--<img class="support-popup__img" src="/assets/images/privacy-tab/default.svg" width="76" height="68" alt="PC Technical Support">-->
+            <!--<vtr-inline-svg src="/assets/icons/privacy-tab/icon-support.svg" role="img"></vtr-inline-svg>-->
+            <img class="support-popup__img" src="/assets/icons/privacy-tab/icon-support.svg" width="76" height="68" alt="PC Technical Support">
             <figcaption class="support-popup__image-description">PC Technical Support</figcaption>
           </figure>
           <ul class="support-popup__list">
-            <li class="support-popup__list-item">Ask questions about using your PC</li>
-            <li class="support-popup__list-item">Report issues with your PC</li>
-            <li class="support-popup__list-item">Get help with using your PC</li>
-            <li class="support-popup__list-item">Chat with us live</li>
+            <li class="support-popup__list-item">Ask any PC related questions</li>
+            <li class="support-popup__list-item">Report PC related issues</li>
+            <li class="support-popup__list-item">Get help with PC issues</li>
+            <li class="support-popup__list-item">24/7 support</li>
           </ul>
           <div class="support-popup__buttons">
             <button class="support-popup__button"
+					type="button"
                     vtrSendAnalytics
                     [metricsEvent]="'ItemClick'"
-                    [metricsItem]="'ChatNowGetTechnicalSupportButton'"
+                    [metricsItem]="'GetTechnicalSupportButton'"
                     (click)="openLenovoSupport()">
               Get Technical Support
             </button>

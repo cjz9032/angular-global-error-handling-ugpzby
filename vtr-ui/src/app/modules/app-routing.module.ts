@@ -62,10 +62,15 @@ const routes: Routes = [
 		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
 	},
 	{
+		path: 'privacy',
+		loadChildren: '../components/pages/page-privacy/privacy.module#PrivacyModule'
+	},
+	{
 		path: '**',
 		component: HomeComponent
 	}
 ];
+
 
 @NgModule({
 	imports: [
