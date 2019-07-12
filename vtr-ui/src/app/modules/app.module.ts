@@ -1,3 +1,6 @@
+import { HardwareMenuComponent } from './../components/hardware-menu/hardware-menu.component';
+import { GamingMenuComponent } from './../components/gaming-menu/gaming-menu.component';
+
 import { AppComponent } from '../app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,7 +28,9 @@ library.add(fal);
 
 @NgModule({
 	declarations: [
-		AppComponent
+		AppComponent,
+		HardwareMenuComponent,
+		GamingMenuComponent
 	],
 	imports: [
 		BrowserModule,

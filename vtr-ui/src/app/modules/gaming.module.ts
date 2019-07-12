@@ -1,3 +1,4 @@
+import { GamingCommonModule } from './gaming/gaming.common.module';
 import { UiPopoverComponent } from './../components/ui/ui-popover/ui-popover.component';
 import { UiGamingDriverPopupComponent } from './../components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
 import { UiGamingCollapsibleContainerComponent } from './../components/ui/ui-gaming-collapsible-container/ui-gaming-collapsible-container.component';
@@ -38,26 +39,16 @@ import { GamingRoutingModule } from '../modules/gaming-routing.module';
 
 @NgModule({
 	declarations: [
-		//PageDeviceGamingComponent,
-		//WidgetLegionEdgeComponent,
-		// WidgetSystemToolsComponent,
-		// WidgetSystemMonitorComponent,
-		// WidgetQuicksettingsListComponent,
-		// WidgetLightingComponent,
-		//ModalGamingLegionedgeComponent,
-		//UiGamingCollapsibleContainerComponent,
 		PageMacrokeyComponent,
 		PageLightingcustomizeComponent,
 		PageAutocloseComponent,
 		PageNetworkBoostComponent,
-		//UiPopoverComponent,
 		UiMacrokeyPopupComponent,
 		UiLightingProfileToggleComponent,
 		UiBrightnessSliderComponent,
 		UiLightingEffectComponent,
 		UiLightingSingleColorComponent,
 		UiMacrokeyCollapsibleContainerComponent,
-		//UiGamingDriverPopupComponent,
 		UiColorWheelComponent,
 		UiMacrokeyDetailsComponent,
 		UiLightingProfileComponent,
@@ -68,6 +59,7 @@ import { GamingRoutingModule } from '../modules/gaming-routing.module';
 		CommonModule,
 		CommonUiModule,
 		CommonWidgetModule,
+		GamingCommonModule,
 		SharedModule,
 		GamingRoutingModule,
 		FontAwesomeModule,
