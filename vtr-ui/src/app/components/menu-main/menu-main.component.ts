@@ -392,9 +392,9 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 			this.keyboardService.GetUDKCapability(),
 			this.keyboardService.GetKeyboardMapCapability()
 		]).then((responses: any[]) => {
-			const inputAccessoriesCapability = new InputAccessoriesCapability();
-			inputAccessoriesCapability.isUdkAvailable = false;
-			inputAccessoriesCapability.isKeyboardMapAvailable = false;
+			const inputAccessoriesCapability: InputAccessoriesCapability = new InputAccessoriesCapability();
+			inputAccessoriesCapability.isUdkAvailable = responses[0];
+			inputAccessoriesCapability.isKeyboardMapAvailable = responses[1];
 			this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, inputAccessoriesCapability);
 		}).catch((error) => {
 			console.error('error in initSmartAssist.Promise.all()', error);
