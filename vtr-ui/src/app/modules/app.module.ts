@@ -25,7 +25,7 @@ library.add(far);
 library.add(fal);
 
 @NgModule({
-	declarations: [ AppComponent, HomeComponent ],
+	declarations: [ AppComponent, HomeComponent, PageDashboardAndroidComponent ],
 	imports: [
 		BrowserModule,
 		CommonModalModule,
@@ -43,7 +43,14 @@ library.add(fal);
 		AppRoutingModule,
 		FontAwesomeModule
 	],
-	exports: [ CommonModalModule, CommonWidgetModule, SharedModule, TranslationModule, FontAwesomeModule ],
+	exports: [
+		CommonModalModule,
+		CommonWidgetModule,
+		SharedModule,
+		TranslationModule,
+		FontAwesomeModule,
+		PageDashboardAndroidComponent
+	],
 	providers: [ { provide: ErrorHandler, useClass: GlobalErrorHandler } ],
 	bootstrap: [ AppComponent ],
 	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

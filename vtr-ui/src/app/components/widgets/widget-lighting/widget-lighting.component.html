@@ -66,7 +66,6 @@
 							(driverpopval)="isdriverpopup=$event">
 						</vtr-ui-gaming-driver-popup>
 						<ul class="list-group">
-<<<<<<< HEAD
 							<li class="list-group-item">
 								<a  *ngIf="isPopupVisible"
 								  (click)="isdriverpopup == true">
@@ -76,16 +75,6 @@
 								  [routerLink]="['/gaming/lightingcustomize/'+setprofId]">
 								   <i class="icon icon-gear"></i>
 								  {{'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate}}</a>
-=======
-							<li class="list-group-item"><a id="lighting_customize"
-									attr.aria-label="lighting_customize"
-									vtrMetrics
-									[metricsItem]="'gaming.dashboard.device.lighting.title' | translate"
-									metricsEvent="featureClick"
-									(click)="checkStatus(isPopupVisible)">
-									<i class="icon icon-gear"></i>
-									{{'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate}}</a>
->>>>>>> develop
 							</li>
 
 
