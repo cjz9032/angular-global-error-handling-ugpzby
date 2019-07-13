@@ -42,15 +42,20 @@
 		overflow: hidden;
 
 		.label {
+			@media #{$mediaquery_X4} {
+				padding-right: .5rem;
+				font-size: 1.2rem;
+
+			}
 			position: absolute;
 			top: 1.8rem;
 			left: 6rem;
 			color: $main_darkest;
-			font-size: 1rem;
+			font-size: 1.5rem;
 			font-weight: bold;
 			word-wrap: break-word;
 			word-break: break-all;
-			padding-right: .5rem;
+			padding-right: 1rem;
 		}
 
 		.icon-circle {
