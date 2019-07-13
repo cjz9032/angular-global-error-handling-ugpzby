@@ -72,7 +72,6 @@ export class AppComponent implements OnInit {
 			'zh-Hant'
 		]);
 		this.translate.setDefaultLang('en');
-		translate.use('fr');
 
 		//#region VAN-2779 this is moved in MVP 2
 		this.deviceService.getIsARM()
@@ -136,7 +135,7 @@ export class AppComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		console.log('---------------LOADED')
+		console.log('---------------LOADED');
 		// session storage is not getting clear after vantage is close.
 		// forcefully clearing session storage
 		sessionStorage.clear();
