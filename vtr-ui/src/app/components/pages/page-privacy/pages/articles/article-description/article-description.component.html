@@ -1,0 +1,12 @@
+<div class="article">
+	<h1 class="article__title">{{article?.Title}}</h1>
+	<img class="article__img" src="{{article?.Image}}" alt="{{article?.Title}}">
+	<div #innerHTML [innerHTML]="article?.Body"></div>
+	<div class="article__pitch" *ngIf="!(isFigleafInstalled$ | async)">
+		<vtr-big-pitch
+			[articleId]="article?.ActionLink"
+			[isFigleafTrialExpired]="isFigleafTrialExpired$ | async"
+			[isFigleafTrialSoonExpired]="isFigleafTrialSoonExpired$ | async">
+		</vtr-big-pitch>
+	</div>
+</div>

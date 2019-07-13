@@ -3,7 +3,7 @@
 		<div class="d-flex justify-content-between">
 			<vtr-ui-lighting-profile-toggle (setLightingProfileId)="setLightingProfileId($event)"
 				[currentProfile]="currentProfile"></vtr-ui-lighting-profile-toggle>
-			<vtr-ui-brightness-slider *ngIf="!isProfileOff && this.showBrightnessSlider===true"
+			<vtr-ui-brightness-slider *ngIf="!isProfileOff && showBrightnessSlider===true"
 				[lightingData]="profileBrightness"
 				(setLightingBrightness)="setLightingBrightness($event)">
 			</vtr-ui-brightness-slider>
@@ -36,7 +36,7 @@
 							<vtr-ui-lighting-effect [options]="lightingEffectData.drop[0]"
 								[effectOptionName]="lightEffectRGBOptionName"
 								[enableBrightCondition1] = "enableBrightCondition"
-								[selectedValue]="frontSelectedValue"
+								[selectedValue]="frontSelectedValue" [showDescription]="showHideDescription"
 								(change)="optionChangedRGBTop($event, null)"></vtr-ui-lighting-effect>
 							<!-- </ng-container> -->
 							<!-- <vtr-ui-lighting-color-wheel></vtr-ui-lighting-color-wheel> -->
@@ -55,7 +55,7 @@
 
 		<div class="lighting-area"
 			*ngIf="profileRGBFeature===255 || simpleOrComplex===3">
-			<div class="d-flex">
+			<div class="d-flex justify-content-between">
 				<div class="gaming-device-image d-flex align-items-center">
 					<img src='{{panelImage2}}'
 						class="img-responsive" />
@@ -71,7 +71,7 @@
 						<h3 class="content-title">{{'gaming.lightingProfile.profile.text3.title' | translate}}</h3>
 						<vtr-ui-lighting-effect [options]="lightingEffectData.drop[1]"
 							[enableBrightCondition1] = "enableBrightConditionside"
-							[selectedValue]="sideSelectedValue"
+							[selectedValue]="sideSelectedValue"  [showDescription]="showHideDescription"
 							[effectOptionName]="lightEffectRGBOptionNameSide"
 							(change)="optionChangedRGBSide($event,null)">
 						</vtr-ui-lighting-effect>

@@ -1,20 +1,15 @@
-
-<div class="articles-wrapper">
-    <ng-container *ngIf="openArticleId && articles[openArticleId]">
-        <vtr-article-single class="article-single" [articleData]="articles[openArticleId]"></vtr-article-single>
-        <div class="article-recommendations" *ngIf="recommendationsArticles">
-            <div class="article-recommendations__top">
-                <p class="article-recommendations__title">Related content</p>
-                <a class="article-recommendations__read-more" routerLink="/privacy/articles">see all articles</a>
-            </div>
-            <div class="article" *ngFor="let articleItem of recommendationsArticles">
-                <vtr-article-preview [article]="articleItem"></vtr-article-preview>
-            </div>
-        </div>
-    </ng-container>
-    <ng-container *ngIf="!openArticleId || !articles[openArticleId]">
-        <div class="article" *ngFor="let articleItem of articles | keyvalue">
-            <vtr-article-preview [article]="articleItem.value"></vtr-article-preview>
-        </div>
-    </ng-container>
-</div>
+<ng-container *ngIf="articles$ | async as articles else loader">
+	<div class="articles-wrapper"
+		 vtrSendAnalytics
+		 [metricsEvent]="'PageView'">
+		<div class="article" *ngFor="let articleItem of articles">
+			<vtr-article-preview
+				(openArticle)="openArticle($event)"
+				[article]="articleItem">
+			</vtr-article-preview>
+		</div>
+	</div>
+</ng-container>
+<ng-template #loader>
+	<vtr-spinner></vtr-spinner>
+</ng-template>

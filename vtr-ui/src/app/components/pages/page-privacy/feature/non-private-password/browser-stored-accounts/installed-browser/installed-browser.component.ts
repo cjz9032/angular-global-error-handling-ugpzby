@@ -19,7 +19,7 @@ export class InstalledBrowserComponent {
 
 	tryProductText = {
 		risk: 'People often reuse the same password for many websites. This leads to multiple account breaches if the password exposed.',
-		howToFix: 'Avoid reusing and storing your passwords in your browsers. Create strong, unique passwords for every account with Lenovo Privacy by FigLeaf and store them in encrypted form on your PC.'
+		howToFix: 'Avoid reusing and storing your passwords in your browsers. Create strong, unique passwords for every account with Lenovo Privacy Essentials by FigLeaf and store them in encrypted form on your PC.'
 	};
 
 	trackAccountsById(index) {

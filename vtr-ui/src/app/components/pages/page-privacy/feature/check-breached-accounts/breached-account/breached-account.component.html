@@ -1,5 +1,8 @@
-<div class="breached-account" [ngClass]="{'breached-account_open': i === openId}" *ngFor="let account of breachedAccountsForShow; let i = index">
-	<div class="breached-account__preview">
+<div class="breached-account"
+	 [ngClass]="{'breached-account_open': i === openId}"
+	 *ngFor="let account of breachedAccountsForShow;
+	 trackBy: trackByBreachedAccount; let i = index">
+	<div class="breached-account__preview" >
 		<div class="breached-account__image">
 			<ng-template #defaultFavicon>
 				<img class="breached-account__img" src="/assets/images/privacy-tab/Unknown.png" alt="unknown favicon">
@@ -31,18 +34,18 @@
 			</div>
 
             <div class="breached-account__details">
-				<span class="breached-account__details-text"
-					  *ngIf="!isUserAuthorized && !isFigleafReadyForCommunication">
-					Verify your email for details
-				</span>
-                <button class="breached-account__preview-link"
-                        (click)="verifyClickEmit()"
-                        *ngIf="!isUserAuthorized && !isFigleafReadyForCommunication"
-                        vtrSendAnalytics
-                        [metricsEvent]="'ItemClick'"
-                        [metricsItem]="'BreachedAccountsDetailItem'">
-                    <span>Verify email</span>
-                </button>
+				<ng-container *ngIf="!isUserAuthorized && !isFigleafReadyForCommunication">
+					<span class="breached-account__details-text">
+						Verify your email for details
+					</span>
+					<button class="breached-account__preview-link"
+							(click)="verifyClickEmit()"
+							vtrSendAnalytics
+							[metricsEvent]="'ItemClick'"
+							[metricsItem]="'BreachedAccountsVerifyEmailLink'">
+						<span>Verify email</span>
+					</button>
+				</ng-container>
 
                 <button class="breached-account__accordion-button"
                         *ngIf="isUserAuthorized || isFigleafReadyForCommunication"
@@ -53,7 +56,7 @@
                         	'breached-account__accordion-button--open': openId === i,
                         	'breached-account__accordion-button--to-right': isFigleafReadyForCommunication
                         }"
-                        (click)="isFigleafReadyForCommunication ? openFigleaf(account.link) : openAccordion(i)">
+                        (click)="isFigleafReadyForCommunication ? openFigleafEmit(account.link) : openAccordion(i)">
                     <span>Details</span>
                 </button>
             </div>

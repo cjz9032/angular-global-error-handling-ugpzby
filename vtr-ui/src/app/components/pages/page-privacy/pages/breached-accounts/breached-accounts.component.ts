@@ -1,16 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { distinctUntilChanged, filter, map, startWith, takeUntil, tap } from 'rxjs/operators';
+import { takeUntil } from 'rxjs/operators';
 import { BreachedAccountsService } from '../../common/services/breached-accounts.service';
-import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
 import { CommonPopupService } from '../../common/services/popups/common-popup.service';
-import { AccessTokenService } from '../../common/services/access-token.service';
-import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
-import { SafeStorageService } from '../../common/services/safe-storage.service';
-import { FeaturesStatuses } from '../../userDataStatuses';
-import { UserDataGetStateService } from '../../common/services/user-data-get-state.service';
 import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
+import { BreachedAccountsFacadeService } from './breached-accounts-facade.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -18,66 +13,43 @@ import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-de
 	styleUrls: ['./breached-accounts.component.scss']
 })
 export class BreachedAccountsComponent implements OnInit, OnDestroy {
-	breachedAccounts$ = this.breachedAccountsService.onGetBreachedAccounts$
-		.pipe(
-			filter((breachedAccounts) => breachedAccounts.error === null),
-			map((breachedAccounts) => breachedAccounts.breaches.filter((breach) => {
-					return !(breach.hasOwnProperty('isFixed') && breach.isFixed === true);
-				})
-			)
-		);
-	isFigleafReadyForCommunication$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
-	confirmationPopupName = 'confirmationPopup';
-	isUserAuthorized$ = this.accessTokenService.accessTokenIsExist$;
-	breachedAccountsCount$ = this.countNumberOfIssuesService.breachedAccountsCount;
-	userEmail$ = this.emailScannerService.userEmail$.pipe(
-		startWith(this.safeStorageService.getEmail()),
-		filter(Boolean),
-	);
-	emailWasScanned$ = this.userDataGetStateService.userDataStatus$.pipe(
-		map((userDataStatus) =>
-			userDataStatus.breachedAccountsResult !== FeaturesStatuses.undefined &&
-			userDataStatus.breachedAccountsResult !== FeaturesStatuses.error),
-		distinctUntilChanged(),
-	);
-	isShowEmailScanner = true;
+	breachedAccounts$ = this.breachedAccountsFacadeService.breachedAccounts$;
+	isFigleafReadyForCommunication$ = this.breachedAccountsFacadeService.isFigleafReadyForCommunication$;
+	isUserAuthorized$ = this.breachedAccountsFacadeService.isUserAuthorized$;
+	breachedAccountsCount$ = this.breachedAccountsFacadeService.breachedAccountsCount$;
+	userEmail$ = this.breachedAccountsFacadeService.userEmail$;
+	emailWasScanned$ = this.breachedAccountsFacadeService.emailWasScanned$;
+	isUndefinedWithoutFigleafState$ = this.breachedAccountsFacadeService.isUndefinedWithoutFigleafState$;
+	isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ = this.breachedAccountsFacadeService.isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$;
 
+	confirmationPopupName = 'confirmationPopup';
 	textForFeatureHeader = {
 		title: 'Check email for breaches',
-		figleafTitle: 'Lenovo Privacy monitors your accounts',
+		figleafTitle: 'Lenovo Privacy Essentials monitors your accounts',
 		figleafInstalled: 'If there is a data leak, we will immediately notify you.',
 		figleafUninstalled: 'Find out if your private information is being exposed. We will check the dark web and every known data breach.',
 		noIssuesTitle: 'No breaches found for your email',
 		noIssuesDescription: 'Your private information associated with this email address is safe so far.'
 	};
+	textForTooltip = 'Your private information is not private anymore. You allowed us to do a search, ' +
+		'and we found these tied to your email address among compromised records on the internet and the dark web.';
 
 	constructor(
 		private breachedAccountsService: BreachedAccountsService,
-		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private emailScannerService: EmailScannerService,
 		private commonPopupService: CommonPopupService,
-		private accessTokenService: AccessTokenService,
-		private countNumberOfIssuesService: CountNumberOfIssuesService,
-		private safeStorageService: SafeStorageService,
-		private userDataGetStateService: UserDataGetStateService,
-		private vantageCommunicationService: VantageCommunicationService
+		private vantageCommunicationService: VantageCommunicationService,
+		private breachedAccountsFacadeService: BreachedAccountsFacadeService
 	) {
 	}
 
 	ngOnInit() {
-		this.breachedAccountsService.getBreachedAccounts();
+		this.breachedAccountsService.getNewBreachedAccounts();
 
 		this.userEmail$.pipe(
 			takeUntil(instanceDestroyed(this)),
 		).subscribe((userEmail) => {
 			this.updateTextForHeader(userEmail);
-		});
-
-		this.emailWasScanned$.pipe(
-			filter(Boolean),
-			takeUntil(instanceDestroyed(this)),
-		).subscribe(() => {
-			this.isShowEmailScanner = false;
 		});
 
 	}
@@ -91,11 +63,17 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	}
 
 	openFigleafApp() {
-		this.vantageCommunicationService.openFigleafByUrl('lenovoprivacy:');
+		this.openFigleafByUrl('lenovoprivacy:');
 	}
 
-	showEmailScanner() {
-		this.isShowEmailScanner = true;
+	openFigleafByUrl(link) {
+		this.vantageCommunicationService.openFigleafByUrl(link);
+	}
+
+	getTextForTooltip(numberOfIssues) {
+		const numberOfIssuesText = numberOfIssues === 1 ? 'breached account' : 'breached accounts';
+		return `Your private information is not private anymore. You allowed us to do a search, and we found these ` +
+			`tied to your email address among compromised records on the internet and the dark web.`;
 	}
 
 	private updateTextForHeader(userEmail: string) {
