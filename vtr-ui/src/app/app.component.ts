@@ -72,9 +72,9 @@ export class AppComponent implements OnInit {
 			'zh-Hant'
 		]);
 		this.translate.setDefaultLang('en');
+		translate.use('fr');
 
 		//#region VAN-2779 this is moved in MVP 2
-
 		this.deviceService.getIsARM()
 			.then((status: boolean) => {
 				console.log('getIsARM.then', status);

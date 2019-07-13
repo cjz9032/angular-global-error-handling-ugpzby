@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',
@@ -27,29 +28,14 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	ngOnInit() {
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		if (this.machineType === 1) {
-			this.getKeyboardCompatability();
+			let inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability)
+			this.keyboardCompatability = inputAccessoriesCapability.isKeyboardMapAvailable;
+			if (this.keyboardCompatability) {
+				this.getKBDLayoutName();
+			}
 		}
 	}
 
-	// To Check Keyboard Compatability Status
-	public getKeyboardCompatability() {
-		try {
-			if (this.keyboardService.isShellAvailable) {
-				this.keyboardService.GetKeyboardMapCapability().then((value: any) => {
-					console.log('keyboard compatability here -------------.>', value);
-					if (value) {
-						this.keyboardCompatability = value;
-						this.getKBDLayoutName();
-					}
-				})
-					.catch(error => {
-						console.error('keyboard compatability error here', error);
-					});
-			}
-		} catch (error) {
-			console.error(error.message);
-		}
-	}
 	// To get Keyboard Layout Name
 	public getKBDLayoutName() {
 		try {

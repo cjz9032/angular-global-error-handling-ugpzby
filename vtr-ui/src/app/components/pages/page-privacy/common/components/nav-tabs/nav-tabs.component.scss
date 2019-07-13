@@ -21,6 +21,11 @@
 		padding: 1rem 0 2rem 0;
 		cursor: pointer;
 
+		&:hover {
+			background: linear-gradient(#fff 80%, transparent);
+			border-radius: 20px 20px 0 0;
+		}
+
 		&.active {
 			color: #5671ff;
 			border-radius: 20px 20px 0 0;
@@ -45,7 +50,7 @@
 	}
 
 	&__number {
-		font-size: 1.4rem;
+		font-size: 1.6rem;
 		font-weight: bold;
 		height: 2.2rem;
 		cursor: pointer;
@@ -61,7 +66,7 @@
 
 	&__title {
 		color: #34495E;
-		font-size: 1.4rem;
+		font-size: 1.6rem;
 		font-weight: bold;
 		line-height: 2.2rem;
 		text-transform: uppercase;
