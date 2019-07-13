@@ -36,7 +36,7 @@ export class PageDeviceGamingComponent implements OnInit {
 	public securityStatus: Status[] = [];
 	public isOnline = true;
 	heroBannerItems = [];
-	private allCapablitiyFlag: Boolean = false;
+	public allCapablitiyFlag = false;
 	cardContentPositionB: any = {};
 	cardContentPositionC: any = {};
 	cardContentPositionD: any = {};
@@ -80,21 +80,22 @@ export class PageDeviceGamingComponent implements OnInit {
 			this.getSystemInfo();
 			// this.getSecurityStatus();
 		}
-		if (localStorage.getItem("AllGamingCapabilities") === null) {
-			console.log(`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  AllGamingCapabilities is null-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-`);
-			this.commonService.setLocalStorageValue(LocalStorageKey.allGamingCapabilities, false);
-		}
-		if (this.commonService.getLocalStorageValue(LocalStorageKey.allGamingCapabilities) === false) {
+		// if (localStorage.getItem(LocalStorageKey.allGamingCapabilities) === null) {
+		// 	console.log(`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  AllGamingCapabilities is null-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-`);
+		// 	this.commonService.setLocalStorageValue(LocalStorageKey.allGamingCapabilities, false);
+		// }
+		if ( !this.allCapablitiyFlag) {
 			this.gamingAllCapabilitiesService
 				.getCapabilities()
 				.then((response) => {
 					console.log(`-------------------///////////////////////////////  From getCapabilities()----------------`);
 					this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
+					this.allCapablitiyFlag = true;
 				})
 				.catch((err) => {
 					console.log(`ERROR in appComponent getCapabilities()`, err);
 				});
-			this.commonService.setLocalStorageValue(LocalStorageKey.allGamingCapabilities, true);
+		//	this.commonService.setLocalStorageValue(LocalStorageKey.allGamingCapabilities, true);
 		}
 		this.setDefaultCMSContent();
 		const queryOptions = {
@@ -106,7 +107,6 @@ export class PageDeviceGamingComponent implements OnInit {
 			Segment: 'SMB',
 			Brand: 'Lenovo'
 		};
-
 		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
 				const heroBannerItems = this.cmsService

@@ -53,26 +53,30 @@
 
 	&__title-line { // <br> is evil
 		display: block;
+
+		&--bold {
+			font-weight: bold;
+		}
 	}
 
 	&__text {
 		@extend %text-common;
 		font-size: 1.6rem;
-		line-height: 30px;
+		line-height: 2.4rem;
 		margin: 2rem 0;
 	}
 
 	&__list {
-		padding: 0;
+		padding: 0 0 0 1.7rem;
 		margin: 3rem 0 2.2rem;
-		list-style-position: inside;
+		list-style-position: outside;
 	}
 
 	&__item {
 		@extend %text-common;
-		margin: 1rem 0 0;
+		margin: 3.4rem 0 0;
 		font-size: 1.6rem;
-		line-height: 4.5rem;
+		line-height: 2.4rem;
 
 		&--bold {
 			font-weight: bold;
@@ -84,7 +88,17 @@
 	}
 
 	&__buttons {
-		padding: 2rem 0 0;
+		padding: 2rem 0 0 0;
+		display: flex;
+		flex-flow: row;
+		flex-wrap: wrap;
+		align-content: center;
+		align-items: center;
+
+		@media screen and (max-width: 1600px) {
+			flex-flow: column;
+			justify-content: space-between;
+		}
 	}
 
 	&__button {
@@ -96,6 +110,11 @@
 		font-size: 1.2rem;
 		line-height: 2.3rem;
 		margin-left: 5rem;
+		padding: 1.5rem 0;
+
+		@media screen and (max-width: 1600px) {
+			margin-left: 0;
+		}
 	}
 }
 

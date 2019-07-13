@@ -1,4 +1,5 @@
 <div class="trackers-page"
+	 data-analyticsName="WebsiteTrackersBlock"
 	 vtrSendAnalytics
 	 [metricsEvent]="'PageView'">
 	<div class="trackers-page__header">
@@ -10,10 +11,18 @@
 			<span class="trackers-page__title--red">{{websiteTrackersCount$ | async}}</span> tracking tools found
 		</vtr-feature-header>
 		<button class="trackers-concent__btn"
+				vtrSendAnalytics
+				[metricsEvent]="'ItemClick'"
+				[metricsItem]="'ViewInLenovoPrivacyEssentialsButton'"
 				*ngIf="(isFigleafReadyForCommunication$ | async) && (websiteTrackersCount$ | async) > 0"
 				(click)="openFigleafApp()">
-			Block in lenovo privacy
+			Block in Lenovo Privacy Essentials
 		</button>
+		<vtr-why-seeing-tooltip
+			[contextText]="textForTooltip"
+			*ngIf="!(isFigleafReadyForCommunication$ | async) && (websiteTrackersCount$ | async) > 0">
+		</vtr-why-seeing-tooltip>
+
 	</div>
 	<div class="trackers-concent"
 		 *ngIf="!(isConsentGiven$ | async) && !(isTrackersBlocked$ | async)">
@@ -26,17 +35,20 @@
 			<button class="trackers-concent__btn"
 					vtrSendAnalytics
 					[metricsEvent]="'ItemClick'"
-					[metricsItem]="'WebsiteTrackersPermissionToAccessButton'"
+					[metricsItem]="'WebsiteTrackersAcceptAndScanButton'"
 					(click)="giveConcent()">
 				Accept & scan
 			</button>
 		</div>
 	</div>
 
-	<vtr-tracking-map [animate]="true"></vtr-tracking-map>
-	<vtr-try-product-block
-		*ngIf="(websiteTrackersCount$ | async)"
-		[isFigleafReadyToCommunication]="isFigleafReadyForCommunication$ | async"
-		[texts]="tryProductText">
-	</vtr-try-product-block>
+	<div>
+		<vtr-tracking-map [animate]="true"></vtr-tracking-map>
+		<vtr-try-product-block
+			*ngIf="(websiteTrackersCount$ | async)"
+			[isFigleafReadyToCommunication]="isFigleafReadyForCommunication$ | async"
+			[texts]="tryProductText">
+		</vtr-try-product-block>
+	</div>
+
 </div>

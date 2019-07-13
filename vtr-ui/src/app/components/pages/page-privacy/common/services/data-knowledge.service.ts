@@ -1,8 +1,9 @@
-import { Inject } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, expand, map, reduce, shareReplay, tap } from 'rxjs/operators';
 import { EMPTY, Observable, of } from 'rxjs';
 import { PRIVACY_ENVIRONMENT } from '../../utils/injection-tokens';
+import { PrivacyModule } from '../../privacy.module';
 
 export interface DataKnowledgeItem {
 	id: number;
@@ -26,6 +27,9 @@ export interface DataKnowledge {
 
 const DEFAULT_SITES_FAVICON = '/assets/images/privacy-tab/default.png';
 
+@Injectable({
+	providedIn: 'root'
+})
 export class DataKnowledgeService {
 	private dataKnowledgeCache$: Observable<DataKnowledge>;
 

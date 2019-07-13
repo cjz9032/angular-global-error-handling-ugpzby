@@ -8,17 +8,10 @@
 	// 	padding-left: 8.5rem;
 	// 	padding-top: 12.5rem;
 	// }
-	.background-red {
-		background-image: url(../../../../assets/images/battery/Red--Top.png),
-			url(../../../../assets/images/battery/Red--Bottom.png);
-	}
-	.background-green {
-		background-image: url(../../../../assets/images/battery/Green-Top.png),
-			url(../../../../assets/images/battery/Green-Bottom.png);
-	}
-	.background-orange {
-		background-image: url(../../../../assets/images/battery/Orange--Top.png),
-			url(../../../../assets/images/battery/Orange--Bottom.png);
+
+	.battery-panel-background {
+		background-image: url(../../../../assets/images/battery/TOP.png),
+			url(../../../../assets/images/battery/BOTTOM.png);
 	}
 
 	.container {

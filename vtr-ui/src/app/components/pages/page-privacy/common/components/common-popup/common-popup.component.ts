@@ -4,6 +4,7 @@ import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { AnalyticsService } from '../../services/analytics.service';
 import { GetParentForAnalyticsService } from '../../services/get-parent-for-analytics.service';
+import { RouterChangeHandlerService } from '../../services/router-change-handler.service';
 
 @Component({
 	selector: 'vtr-common-popup',
@@ -18,9 +19,9 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 	isOpen = false;
 
 	analyticsData = {
-		'confirmation-popup': {
+		'confirmationPopup': {
 			ItemName: 'BreachedAccountsClosePopupButton',
-			ItemParent: 'ConfirmYourEmailPopup',
+			ItemParent: 'ConfirmYousrEmailPopup',
 		},
 		'low-privacy-popup': {
 			ItemName: 'ScorePopupCloseButton',
@@ -32,13 +33,27 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 		},
 		'support-popup': {
 			ItemName: 'ChatNowClosePopupButton',
-			ItemParent: 'KindOfHelpPopup',
+			ItemParent: 'HelpPopup',
+		},
+		oneClickScan: {
+			ItemName: 'ScorePopupCloseButton',
+			ItemParent: 'ScorePopup',
+		},
+		trackingMapSingle: {
+			ItemName: 'WebsiteTrackersDetailCloseButton',
+			ItemParent: 'DetailPopup',
+		},
+		removePassword: {
+			ItemName: 'NonPrivatePasswordsClosePopupButton',
+			ItemParent: 'HowToRemoveAccountsPopup',
 		}
+
 	};
 
 	constructor(
 		private commonPopupService: CommonPopupService,
 		private getParentForAnalyticsService: GetParentForAnalyticsService,
+		private routerChangeHandlerService: RouterChangeHandlerService,
 		private analyticsService: AnalyticsService) {
 	}
 
@@ -60,9 +75,13 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 				this.isOpen = isOpenState;
 			});
 
+		this.routerChangeHandlerService.onChange$
+			.pipe(takeUntil(instanceDestroyed(this)))
+			.subscribe(() => this.closePopup());
 	}
 
 	ngOnDestroy() {
+		this.closePopup();
 	}
 
 	openPopup() { // not work now
@@ -70,9 +89,14 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 	}
 
 	closePopup() {
+		if (!this.isOpen) {
+			return;
+		}
+
 		this.commonPopupService.close(this.popUpId);
 
 		const analyticsData = this.analyticsData[this.popUpId];
+
 		if (analyticsData) {
 			const ItemParent = this.getParentForAnalyticsService.getPageName() + '.' + analyticsData.ItemParent;
 			this.analyticsService.sendItemClickData({

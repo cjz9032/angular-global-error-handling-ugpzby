@@ -9,4 +9,8 @@ import { Component, Input } from '@angular/core';
 export class EmailScannerComponent {
 	@Input() userEmail: string;
 	@Input() emailWasScanned = false;
+
+	showEmailScanner() {
+		this.emailWasScanned = false;
+	}
 }

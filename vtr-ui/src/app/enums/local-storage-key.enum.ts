@@ -135,8 +135,6 @@ export enum LocalStorageKey {
 
 	UserDeterminePrivacy = '[LocalStorageKey] UserDeterminePrivacy',
 
-	BatteriesHealths = '[LocalStorageKey] BatteriesHealths',
-	BatteryPercentage = '[LocalStorageKey] BatteryPercentage',
 	SmartAssistCapability = '[LocalStorageKey] SmartAssistCapability',
 	RemainingPercentages = '[LocalStorageKey] RemainingPercentages',
 	// server switch strorage key
@@ -145,5 +143,6 @@ export enum LocalStorageKey {
 	hybridModeFeatureStatus = '[LocalStorageKey] HybridModeFeatureStatus',
 	allGamingCapabilities = '[LocalStorageKey] AllGamingCapabilities',
 
-	LastSystemUpdateStatus = '[LocalStorageKey] SystemUpdateStatus'
+	LastSystemUpdateStatus = '[LocalStorageKey] SystemUpdateStatus',
+	InputAccessoriesCapability = '[LocalStorageKey] InputAccessoriesCapability'
 }

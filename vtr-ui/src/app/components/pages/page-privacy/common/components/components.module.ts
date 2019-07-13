@@ -26,6 +26,10 @@ import { StatComponent } from './privacy-dashboard-list/stat.component';
 import { AccountsStoredComponent } from './accounts-stored/accounts-stored.component';
 import { NoIssuePitchComponent } from './no-issue-pitch/no-issue-pitch.component';
 import { BigPitchComponent } from './big-pitch/big-pitch.component';
+import { SpinnerComponent } from './spinner/spinner.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TooltipComponent } from './tooltip/tooltip.component';
+import { WhySeeingTooltipComponent } from './why-seeing-tooltip/why-seeing-tooltip.component';
 
 @NgModule({
 	declarations: [
@@ -49,7 +53,10 @@ import { BigPitchComponent } from './big-pitch/big-pitch.component';
 		StatComponent,
 		AccountsStoredComponent,
 		NoIssuePitchComponent,
-		BigPitchComponent
+		BigPitchComponent,
+		SpinnerComponent,
+		TooltipComponent,
+		WhySeeingTooltipComponent,
 	],
 	exports: [
 		SimpleLoaderComponent,
@@ -72,7 +79,10 @@ import { BigPitchComponent } from './big-pitch/big-pitch.component';
 		StatComponent,
 		AccountsStoredComponent,
 		NoIssuePitchComponent,
-		BigPitchComponent
+		BigPitchComponent,
+		SpinnerComponent,
+		TooltipComponent,
+		WhySeeingTooltipComponent,
 	],
 	imports: [
 		CommonModule,
@@ -81,7 +91,8 @@ import { BigPitchComponent } from './big-pitch/big-pitch.component';
 		PipesModule,
 		SanitizeModule,
 		RouterModule,
-		DirectivesModule
+		DirectivesModule,
+		FontAwesomeModule
 	]
 })
 export class ComponentsModule {

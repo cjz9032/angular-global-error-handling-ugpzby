@@ -1,7 +1,9 @@
 <section class="no-issue" *ngIf="isShowPitch$ | async">
 	<h2 class="no-issue__title">Did you know?</h2>
 	<ng-container *ngTemplateOutlet="getTemplate()"></ng-container>
-	<vtr-big-pitch [texts]="getText()"></vtr-big-pitch>
+	<div class="no-issue__pitch">
+		<vtr-big-pitch [texts]="getText()"></vtr-big-pitch>
+	</div>
 </section>
 
 <ng-template #breachAccount>

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BreachedAccountsService } from './breached-accounts.service';
 import { BrowserAccountsService } from './browser-accounts.service';
 import { TrackingMapService } from '../../feature/tracking-map/services/tracking-map.service';
-import { filter, map, startWith } from 'rxjs/operators';
+import { filter, map, shareReplay, startWith, tap } from 'rxjs/operators';
 import { typeData } from '../../feature/tracking-map/services/tracking-map.interface';
 
 @Injectable({
@@ -16,7 +16,8 @@ export class CountNumberOfIssuesService {
 			const otherBreaches = breachesState.breaches.filter((breach) => breach.domain === 'n/a');
 			return otherBreaches.length > 0 ? mainBreaches.length + 1 : mainBreaches.length;
 		}),
-		startWith(0)
+		startWith(0),
+		shareReplay(1)
 	);
 	nonPrivatePasswordCount = this.browserAccountsService.installedBrowsersData.pipe(
 		map((installedBrowsersData) => {
@@ -26,14 +27,16 @@ export class CountNumberOfIssuesService {
 				}, 0);
 			}
 		),
-		startWith(0)
+		startWith(0),
+		shareReplay(1)
 	);
 	websiteTrackersCount = this.trackingMapService.trackingData$.pipe(
 		filter((trackingData) => trackingData.typeData === typeData.Users),
 		map((trackingData) => {
 			return Object.keys(trackingData.trackingData.trackers).length;
 		}),
-		startWith(0)
+		startWith(0),
+		shareReplay(1)
 	);
 
 	constructor(

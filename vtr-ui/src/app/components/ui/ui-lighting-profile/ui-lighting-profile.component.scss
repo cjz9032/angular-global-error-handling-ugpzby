@@ -119,6 +119,9 @@
       margin-left: 0;
       width: 100%;
     }
+    @media #{$large-screen}{
+      max-width: 45rem;
+    }
     .light-option {
       //::ng-deep {
         .content-title {
