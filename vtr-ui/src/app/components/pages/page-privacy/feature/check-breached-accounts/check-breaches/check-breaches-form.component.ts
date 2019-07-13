@@ -9,6 +9,10 @@ import { UserService } from '../../../../../../services/user/user.service';
 import { validateEmail } from '../../../utils/helpers';
 import { EMAIL_REGEXP } from '../../../utils/form-validators';
 import { BreachedAccountsService } from '../../../common/services/breached-accounts.service';
+import {
+	TaskActionWithTimeoutService,
+	TasksName
+} from '../../../common/services/analytics/task-action-with-timeout.service';
 
 interface UserProfile {
 	addressList: string[];
@@ -47,7 +51,8 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 		private commonPopupService: CommonPopupService,
 		private userService: UserService,
 		private breachedAccountsService: BreachedAccountsService,
-		private cdr: ChangeDetectorRef
+		private cdr: ChangeDetectorRef,
+		private taskActionWithTimeoutService: TaskActionWithTimeoutService
 	) {
 	}
 
@@ -117,6 +122,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 
 	private setScanBreachedAccounts() {
 		this.emailScannerService.scanNotifierEmit();
+		this.taskActionWithTimeoutService.startAction(TasksName.scanBreachesAction);
 	}
 
 	private listenError() {

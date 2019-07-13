@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
-import { catchError, map, shareReplay, switchMap } from 'rxjs/operators';
+import { catchError, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { EMPTY, from, Observable, throwError } from 'rxjs';
 
 export enum BrowserListType {
@@ -55,6 +55,7 @@ export class VantageCommunicationService {
 		);
 
 		return this.sendContractToPrivacyCore<InstalledBrowsers>(contract).pipe(
+			tap((response) => console.log('sendContractToPrivacyCore', response)),
 			shareReplay(1),
 			catchError((err) => {
 				console.error('InstalledBrowsers err', err);
@@ -74,6 +75,7 @@ export class VantageCommunicationService {
 		);
 
 		return this.sendContractToPrivacyCore<AccessiblePasswords>(contract).pipe(
+			tap((response) => console.log('sendContractToPrivacyCore', response)),
 			catchError((err) => {
 				console.error('AccessiblePasswords err', err);
 				return EMPTY;
@@ -92,6 +94,7 @@ export class VantageCommunicationService {
 		);
 
 		return this.sendContractToPrivacyCore<MaskedPasswords>(contract).pipe(
+			tap((val) => console.log('MaskedPasswords', val)),
 			catchError((err) => {
 				console.error('MaskedPasswords err', err);
 				return EMPTY;
@@ -115,6 +118,7 @@ export class VantageCommunicationService {
 					return throwError('VisitedWebsites err', err);
 				})
 			)),
+			tap((response) => console.log('getVisitedWebsites', response)),
 		);
 	}
 

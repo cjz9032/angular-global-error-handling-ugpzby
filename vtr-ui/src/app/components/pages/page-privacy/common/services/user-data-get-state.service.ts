@@ -3,10 +3,11 @@ import { ReplaySubject } from 'rxjs';
 import { BreachedAccountsService } from './breached-accounts.service';
 import { BrowserAccountsService } from './browser-accounts.service';
 import { TrackingMapService } from '../../feature/tracking-map/services/tracking-map.service';
-import { debounceTime, distinctUntilChanged, filter, shareReplay } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, shareReplay } from 'rxjs/operators';
 import { typeData } from '../../feature/tracking-map/services/tracking-map.interface';
 import { AppStatuses, FeaturesStatuses } from '../../userDataStatuses';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
+import { FigleafOverviewService, FigleafStatus, licenseTypes } from './figleaf-overview.service';
 
 export interface UserStatuses {
 	appState: AppStatuses;
@@ -15,7 +16,11 @@ export interface UserStatuses {
 	nonPrivatePasswordResult: FeaturesStatuses;
 }
 
-@Injectable()
+export const TIME_TO_SHOW_EXPIRED_PITCH_MS = 24 * 60 * 60 * 1000;
+
+@Injectable({
+	providedIn: 'root'
+})
 export class UserDataGetStateService {
 	breachedAccountsResult: FeaturesStatuses = FeaturesStatuses.undefined;
 	websiteTrackersResult: FeaturesStatuses = FeaturesStatuses.undefined;
@@ -28,11 +33,18 @@ export class UserDataGetStateService {
 		shareReplay(1)
 	);
 	isTrackersBlocked = false;
+	figleafStatus: FigleafStatus;
+	licenseTypes = licenseTypes;
+
+	isFigleafTrialSoonExpired$ = this.isAppStatusesEqual(AppStatuses.trialSoonExpired);
+	isFigleafTrialExpired$ = this.isAppStatusesEqual(AppStatuses.trialExpired);
+	isFigleafInstalled$ = this.isAppStatusesEqual(AppStatuses.figLeafInstalled);
 
 	constructor(
 		private breachedAccountsService: BreachedAccountsService,
 		private browserAccountsService: BrowserAccountsService,
 		private trackingMapService: TrackingMapService,
+		private figleafOverviewService: FigleafOverviewService,
 		private communicationWithFigleafService: CommunicationWithFigleafService) {
 
 		this.updateUserDataSubject();
@@ -90,6 +102,11 @@ export class UserDataGetStateService {
 		this.communicationWithFigleafService.isFigleafReadyForCommunication$.subscribe((isFigleafReadyForCommunication) => {
 			this.isFigleafReadyForCommunication = isFigleafReadyForCommunication;
 		});
+
+		this.figleafOverviewService.figleafStatus$.subscribe((figleafStatus) => {
+			this.figleafStatus = figleafStatus;
+			this.updateUserDataSubject();
+		});
 	}
 
 	getUserDataStatus() {
@@ -109,7 +126,7 @@ export class UserDataGetStateService {
 
 	private getGlobalAppStatus() {
 		if (this.isFigleafReadyForCommunication) {
-			return AppStatuses.figLeafInstalled;
+			return this.calculateAppStatuses();
 		}
 		const userDataStatus = this.getFeatureStatus();
 		for (const dataState of Object.keys(userDataStatus)) {
@@ -122,5 +139,30 @@ export class UserDataGetStateService {
 
 	private updateUserDataSubject() {
 		this.userDataStatus.next(this.getUserDataStatus());
+	}
+
+	private calculateAppStatuses() {
+		let appStatus = AppStatuses.figLeafInstalled;
+		const isTrialLicense = this.figleafStatus && this.figleafStatus.licenseType === this.licenseTypes.Trial;
+		const isTrialExpiredSoon = this.figleafStatus && this.figleafStatus.expirationDate <= Math.floor( (Date.now() + TIME_TO_SHOW_EXPIRED_PITCH_MS) / 1000);
+		const isTrialExpired = this.figleafStatus && this.figleafStatus.licenseType === this.licenseTypes.TrialExpired;
+
+		if (isTrialLicense && isTrialExpiredSoon) {
+			appStatus = AppStatuses.trialSoonExpired;
+		}
+
+		if (isTrialExpired) {
+			appStatus = AppStatuses.trialExpired;
+		}
+
+		console.log('calculateAppStatuses', appStatus);
+
+		return appStatus;
+	}
+
+	private isAppStatusesEqual(appStatus: AppStatuses) {
+		return this.userDataStatus$.pipe(
+			map((userDataStatus) => userDataStatus.appState === appStatus)
+		);
 	}
 }

@@ -27,7 +27,11 @@
 	<vtr-progress-bar [progress]="progressTime$ | async"
 					  class="scanning__progress-bar">
 	</vtr-progress-bar>
-	<button class="scanning__button--skip" (click)="disallowEmitter()">
+	<button class="scanning__button--skip"
+			vtrSendAnalytics
+			[metricsEvent]="'ItemClick'"
+			[metricsItem]="'ScoreScanPopupCancelCheckButton'"
+			(click)="disallowEmitter()">
 		Cancel check
 	</button>
 </section>

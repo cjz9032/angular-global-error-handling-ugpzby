@@ -15,7 +15,7 @@
 
 	<div class="enter-email__text-block">
 		<p class="enter-email__text">
-			Lenovo Privacy by FigLeaf will check if your email address is on the dark web or in any known data breach.
+			Lenovo Privacy Essentials by FigLeaf will check if your email address is on the dark web or in any known data breach.
 		</p>
 	</div>
 
@@ -24,7 +24,11 @@
 							 (userEmail)="allowEmitter()">
 	</vtr-check-breaches-form>
 
-	<button class="enter-email__button--skip" (click)="disallowEmitter()">
+	<button class="enter-email__button--skip"
+			vtrSendAnalytics
+			[metricsEvent]="'ItemClick'"
+			[metricsItem]="'ScoreEmailPopupSkipButton'"
+			(click)="disallowEmitter()">
 		Skip
 	</button>
 </section>

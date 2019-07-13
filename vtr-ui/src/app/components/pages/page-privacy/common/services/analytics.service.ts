@@ -4,6 +4,7 @@ import { MetricsData } from '../../../../../directives/metrics.directive';
 import { RoutersName } from '../../privacy-routing-name';
 import { UserDataGetStateService } from './user-data-get-state.service';
 import { RouterChangeHandlerService } from './router-change-handler.service';
+import { PrivacyModule } from '../../privacy.module';
 
 export enum ItemTypes {
 	TaskAction = 'TaskAction',
@@ -36,7 +37,9 @@ interface DataToSendOnTaskAction {
 	TaskDuration: number;
 }
 
-@Injectable()
+@Injectable({
+	providedIn: 'root'
+})
 export class AnalyticsService {
 
 	metrics = this.shellService.getMetrics();
@@ -96,8 +99,12 @@ export class AnalyticsService {
 				return 'VisibleToOnlineTrackers';
 			case RoutersName.BROWSERACCOUNTS:
 				return 'NonPrivatePassword';
-			case  RoutersName.LANDING:
+			case RoutersName.LANDING:
 				return 'LenovoPrivacyLanding';
+			case RoutersName.ARTICLES:
+				return 'ArticleAll';
+			case RoutersName.ARTICLEDETAILS:
+				return 'Article';
 			default:
 				return '';
 		}
