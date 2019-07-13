@@ -32,7 +32,7 @@ export class WidgetLightingComponent implements OnInit {
 	ngOnInit() {
 		this.setprofId = 0;
 		this.getCapabilities();
-		this.commonService.notification.subscribe((response) => {
+		this.commonService.getCapabalitiesNotification().subscribe((response) => {
 			if (response.type === Gaming.GamingCapablities) {
 				this.getCapabilities();
 			}

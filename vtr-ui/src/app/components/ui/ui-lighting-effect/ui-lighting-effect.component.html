@@ -13,7 +13,7 @@
 						<a class="dropdown-item"><i class="icon icon-checkline"></i>{{ option.name  | translate}}</a>
 					</li>
 				</ng-container>
-				<div class="information">
+				<div class="information" *ngIf="showDescription">
 					<p>{{ selectedOption.description | translate }}</p>
 				</div>
 			</div>
