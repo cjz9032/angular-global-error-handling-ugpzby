@@ -49,7 +49,8 @@ export class SmartAssistService {
 	 */
 	public getHPDVisibilityInThinkPad(): Promise<boolean> {
 		// HPD global switch status. true means show, false means hide
-		return this.intelligentSensing.GetHPDGlobalCapability();
+		//return this.intelligentSensing.GetHPDGlobalCapability();
+		return this.intelligentSensing.GetHPDCapability();
 	}
 
 	/**
