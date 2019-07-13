@@ -7,7 +7,7 @@ import { isUndefined } from 'util';
 	styleUrls: ['./ui-lighting-effect.component.scss'],
 	host: {
 		'(document:click)': 'generalClick($event)'
-	},
+	}
 })
 export class UiLightingEffectComponent implements OnInit {
 	@Input() public options;
@@ -16,6 +16,7 @@ export class UiLightingEffectComponent implements OnInit {
 	@Input() lightingData: any;
 	@Output() public change = new EventEmitter<any>();
 	@Input() enableBrightCondition1: boolean;
+	@Input() showDescription: boolean;
 	public showOptions = false;
 	public buttonName: any = 'Show';
 	public selected = false;
@@ -23,8 +24,7 @@ export class UiLightingEffectComponent implements OnInit {
 	public currentDescription: string;
 	public selectedDescription: string;
 	@Input() effectOptionName: string;
-	public selectedOption: string;
-
+	public selectedOption: any;
 
 	constructor(private elementRef: ElementRef) { }
 
@@ -52,7 +52,10 @@ export class UiLightingEffectComponent implements OnInit {
 
 	public optionSelected(option) {
 		this.selectedOption = option;
-		this.effectOptionName = option.name;
+		if (option.value === 4 || option.value === 8) {
+			this.effectOptionName = option.name;
+		}
+
 		this.showOptions = false;
 		this.change.emit(option);
 	}
@@ -84,5 +87,12 @@ export class UiLightingEffectComponent implements OnInit {
 				}
 			}
 		}
+		// if (!isUndefined(changes.effectOptionName)) {
+		// 	if (changes.effectOptionName.previousValue !== changes.effectOptionName.currentValue) {
+		// 		this.effectOptionName = changes.effectOptionName.currentValue;
+		// 	}
+
+		// }
+
 	}
 }

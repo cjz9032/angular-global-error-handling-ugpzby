@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, DoCheck, HostListener, ViewChild, AfterViewInit, Input } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -28,8 +28,8 @@ import { LenovoIdDialogService } from '../../services/dialog/lenovoIdDialog.serv
 	templateUrl: './menu-main.component.html',
 	styleUrls: ['./menu-main.component.scss']
 })
-export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewInit {
-	@ViewChild('menuTarget') menuTarget;
+export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
+	@ViewChild('menuTarget', { static: true }) menuTarget;
 	@Input() loadMenuItem: any;
 	public deviceModel: string;
 	public country: string;
@@ -47,7 +47,8 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 	preloadImages: string[];
 	securityAdvisor: SecurityAdvisor;
 	isRS5OrLater: boolean;
-	public isGamingHome: boolean;
+	isGamingHome: boolean;
+	currentUrl: string;
 
 	constructor(
 		private router: Router,
@@ -56,7 +57,6 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 		private commonService: CommonService,
 		public userService: UserService,
 		public translationService: TranslationService,
-		private modalService: NgbModal,
 		public deviceService: DeviceService,
 		vantageShellService: VantageShellService,
 		private translate: TranslateService,
@@ -108,6 +108,17 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 		if (machineType === 0 || machineType === 1) {
 			this.showSmartAssist();
 		}
+
+		this.router.events.subscribe((ev) => {
+			if (ev instanceof NavigationEnd) { 
+				this.currentUrl = ev.url;
+				if (this.currentUrl === '/device-gaming' || this.currentUrl === '/gaming' || this.currentUrl === '/') {
+					this.isGamingHome = true;
+				} else {
+					this.isGamingHome = false;
+				}
+			 }
+		});
 	}
 
 	@HostListener('window: focus')
@@ -143,16 +154,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 			this.preloadImages = [].concat(chsItem.pre);
 		});
 	}
-	ngDoCheck() {
-		this.isHomeGaming();
-		if (this.router.url !== null) {
-			if (this.router.url.indexOf('dashboard', 0) > 0) {
-				this.isDashboard = true;
-			} else {
-				this.isDashboard = false;
-			}
-		}
-	}
+
 	ngOnDestroy() {
 		if (this.commonMenuSubscription) {
 			this.commonMenuSubscription.unsubscribe();
@@ -296,7 +298,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 		});
 	}
 	getMenuItems(): Promise<any> {
-		console.log('########################################## 2', this.deviceService.isGaming);
+		console.log('Getting menu items for the Gaming device?', this.deviceService.isGaming);
 		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
 			this.items = items;
 			return this.items;
@@ -371,15 +373,6 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy, AfterViewI
 	public openExternalLink(link) {
 		if (link) {
 			window.open(link);
-		}
-	}
-
-	public isHomeGaming() {
-
-		if (this.router.url === '/device-gaming' || this.router.url === '/') {
-			this.isGamingHome = true;
-		} else {
-			this.isGamingHome = false;
 		}
 	}
 

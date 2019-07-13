@@ -1,6 +1,6 @@
 import { BrowserListType } from '../common/services/vantage-communication.service';
 import { createHash } from './createHash';
-import { FeaturesStatuses } from '../userDataStatuses';
+import { AppStatuses, FeaturesStatuses } from '../userDataStatuses';
 
 export function returnUniqueElementsInArray<T>(arr: T[]): T[] {
 	return Array.from(new Set<T>(arr));
@@ -38,3 +38,30 @@ export function getDisplayedCountValueOfIssues(status: FeaturesStatuses, issuesC
 			return '';
 	}
 }
+
+export function getFigleafProtectedStatus(appState: AppStatuses | AppStatuses.figLeafInstalled | AppStatuses.trialSoonExpired | AppStatuses.trialExpired) {
+	const figleafProtectStatuses = [AppStatuses.figLeafInstalled, AppStatuses.trialSoonExpired, AppStatuses.trialExpired];
+	return figleafProtectStatuses.includes(appState);
+}
+
+export function snake2CamelCase(string) {
+	return string
+		.replace(
+			/_(\w)/g,
+			($, $1) => $1.toUpperCase()
+		)
+		;
+}
+
+export function snake2PascalCase(string) {
+	const s = snake2CamelCase(string);
+
+	return `${s.charAt(0).toUpperCase()}${s.substr(1)}`;
+}
+
+// pipe(
+// 	(val) => val.filter(u => u.age >= 18),
+// 	(val) => val.map(u => u.name),
+// )(users) //["Jack", "Milady"]
+
+export const pipe = (...functions) => args => functions.reduce((arg, fn) => fn(arg), args);

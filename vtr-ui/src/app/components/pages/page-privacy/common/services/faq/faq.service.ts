@@ -47,7 +47,7 @@ export class FaqService {
 					title: 'What should I do with this information?',
 					texts: [
 						`You should change your passwords for these accounts right now.
-						 Lenovo Privacy by FigLeaf can help you do that,
+						 Lenovo Privacy Essentials by FigLeaf can help you do that,
 						  and then let you know if any of your stored accounts come up in a future privacy breach.`
 					],
 					icon: 'question-circle',
@@ -63,9 +63,9 @@ export class FaqService {
 				},
 				{
 					id: 'how-fix-breached-accounts',
-					title: 'How will Lenovo Privacy fix my breached accounts?',
+					title: 'How will Lenovo Privacy Essentials fix my breached accounts?',
 					texts: [
-						`Lenovo Privacy by FigLeaf will help you by changing your breached passwords,
+						`Lenovo Privacy Essentials by FigLeaf will help you by changing your breached passwords,
 						 actively monitoring for future breaches, and masking your email address when signing up somewhere new.`
 					],
 					icon: 'tools',
@@ -97,9 +97,11 @@ export class FaqService {
 				},
 				{
 					id: 'how-block-online-trackers',
-					title: 'How does Lenovo Privacy block online tracking tools?',
+					title: 'How does Lenovo Privacy Essentials block online tracking tools?',
 					texts: [
-						`FigLeaf has anti-tracking technology built right in. Simply put, it detects tracking tools and then stops them from starting up, ultimately protecting you from being tracked. `,
+						'Lenovo Privacy Essentials by FigLeaf has anti-tracking technology built right in. ' +
+						'Simply put, it detects tracking tools and then stops them from starting up, ' +
+						'ultimately protecting you from being tracked. ',
 					],
 					icon: 'debug',
 				},
@@ -132,7 +134,7 @@ export class FaqService {
 					id: 'remove-all-accounts',
 					title: 'Should I remove all accounts my my browser?',
 					texts: [
-						`That’s definitely a good start. Ideally, you should store your passwords in a strong password manager or something designed with your privacy in mind, like Lenovo Privacy by FigLeaf.`,
+						`That’s definitely a good start. Ideally, you should store your passwords in a strong password manager or something designed with your privacy in mind, like Lenovo Privacy Essentials by FigLeaf.`,
 					],
 					icon: 'trash',
 				},
@@ -214,7 +216,7 @@ export class FaqService {
 			questions: this.questionCategories.dataBreaches
 		},
 		landing: {
-			visible: false,
+			visible: true,
 			questions: this.questionCategories.dataBreaches
 		},
 		privacy: {
@@ -234,7 +236,11 @@ export class FaqService {
 			questions: this.questionCategories.accesiblePasswords
 		},
 		articles: {
-			visible: false,
+			visible: true,
+			questions: this.questionCategories.dataBreaches
+		},
+		'article-details': {
+			visible: true,
 			questions: this.questionCategories.dataBreaches
 		}
 	};

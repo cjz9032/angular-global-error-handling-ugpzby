@@ -42,7 +42,7 @@ export class ModalArticleDetailComponent implements OnInit {
 				if ('Results' in response) {
 					this.articleTitle = response.Results.Title;
 					this.articleImage = response.Results.Image;
-					this.articleBody = this.sanitizer.sanitize(SecurityContext.HTML , response.Results.Body);
+					this.articleBody = this.sanitizer.sanitize(SecurityContext.HTML, response.Results.Body);
 					if (response.Results.Category && response.Results.Category.length > 0) {
 						this.articleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
 					}
@@ -84,7 +84,7 @@ export class ModalArticleDetailComponent implements OnInit {
 	}
 
 	@HostListener('document:keydown.escape', ['$event'])
-	onClickEscape() {
+	onClickEscape($event) {
 		this.closeModal();
 	}
 }
