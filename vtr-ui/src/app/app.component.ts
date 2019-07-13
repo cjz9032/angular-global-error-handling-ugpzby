@@ -73,11 +73,9 @@ export class AppComponent implements OnInit {
 			'zh-Hant'
 		]);
 		this.translate.setDefaultLang('en');
-
+		translate.use('ro');
 		//#region VAN-2779 this is moved in MVP 2
-
-		this.deviceService.getIsARM()
-		.then((status: boolean) => {
+		this.deviceService.getIsARM().then((status: boolean) => {
 			console.log('getIsARM.then', status);
 			if (!status) {
 				const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
