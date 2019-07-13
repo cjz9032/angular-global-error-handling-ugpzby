@@ -647,89 +647,31 @@
                         "unknown": "Unknown"
                     },
                     "manufacturer": {
-                        "title": "Manufacturer",
+                        "title": "Κατασκευαστής",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     }
                 },
                 "condition": {
-                    "Illegal": {
-                        "description": "you cannot use the attached battery with this computer.",
-                        "description1": "Replace",
-                        "description2": "it with a battery of correct model."
-                    },
-                    "Good": {
-                        "title": "The battery is in good condition."
-                    },
-                    "Exhaustion": {
-                        "description": "wear. The battery cannot be charged. Replace the battery.",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "Bad": {
-                        "title": "A battery error has occurred.",
-                        "description": "The battery cannot be charged/discharged . Replace the battery."
-                    },
-                    "NotDetected": {
-                        "title": "No battery detected or not",
-                        "description": "plugged in battery."
-                    },
-                    "NotGood": {
-                        "title": "The battery is not in a good Condition"
-                    },
-                    "LimitedACAdapterSupport": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
-                    },
-                    "NotSupportACAdapter": {
-                        "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
-                    },
-                    "MissingDriver": {
-                        "title": "The Lenovo Power Manager driver",
-                        "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
-                    },
-                    "StoreLimitation": {
-                        "title": "The battery can only store",
-                        "description1": "of",
-                        "description2": "it's original full charge capacity"
-                    },
-                    "HighTemperature": {
-                        "title": "Discharging",
-                        "description": "has been stopped because the",
-                        "description1": "battery temperature is too high"
-                    },
-                    "TrickleCharge": {
-                        "description": "The battery was",
-                        "description1": "completely discharged",
-                        "description2": "and needs to be recharged. This might take ten hours or more."
-                    },
-                    "OverheatedBattery": {
-                        "description": "The battery is",
-                        "description1": "too hot.",
-                        "description2": "Remove it from the computer and cool it to room temperature."
-                    },
-                    "PermanentError": {
-                        "description": "The battery has",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "HardwareAuthenticationError": {
-                        "description": "The battery installed is",
-                        "description1": "is not supported",
-                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
-                    }
+                    "Illegal": "Η εγκατεστημένη μπαταρία <b>δεν υποστηρίζεται</b> από το σύστημα και δεν θα φορτιστεί. Αντικαταστήστε την μπαταρία με τη σωστή μπαταρία της Lenovo για αυτό το σύστημα.",
+                    "Good": "<b>Η μπαταρία είναι σε καλή κατάσταση.</b>",
+                    "Exhaustion": "Αποτυχία μπαταρίας <b>λόγω φυσιολογικής φθοράς.</b> Δεν είναι δυνατή η φόρτιση της μπαταρίας. Αντικαταστήστε την μπαταρία.",
+                    "Bad": "<b>Παρουσιάστηκε σφάλμα μπαταρίας.</b> Δεν είναι δυνατή η φόρτιση/αποφόρτιση της μπαταρίας. Αντικαταστήστε την μπαταρία.",
+                    "NotDetected": "<b>Δεν εντοπίστηκε μπαταρία ή δεν</b> έχει συνδεθεί μπαταρία.",
+                    "NotGood": "<b>Η μπαταρία δεν είναι σε καλή κατάσταση.</b>",
+                    "NotSupportACAdapter": "<b>Δεν υποστηρίζεται ο μετασχηματιστής εναλλασσόμενου ρεύματος.</b> Ο υπολογιστής Lenovo δεν υποστηρίζει αυτόν τον μετασχηματιστή εναλλασσόμενου ρεύματος. Μπορεί να προκληθεί ξαφνική διακοπή λειτουργίας. Συνδέστε έναν κατάλληλο μετασχηματιστή εναλλασσόμενου ρεύματος.",
+                    "LimitedACAdapterSupport": "<b>Ο μετασχηματιστής εναλλασσόμενου ρεύματος δεν μπορεί να παρέχει αρκετό ρεύμα</b> στον υπολογιστή Lenovo ώστε να επηρεάσει την απόδοση του συστήματος και την ταχύτητα φόρτισης. Συνδέστε ξανά το σωστό μετασχηματιστή εναλλασσόμενου ρεύματος.",
+                    "MissingDriver": "<b>Το πρόγραμμα οδήγησης του Lenovo Power Manager</b> δεν είναι εγκατεστημένο ή δεν λειτουργεί σωστά. Εκτελέστε το Windows Update για να εγκαταστήσετε το πιο πρόσφατο πρόγραμμα οδήγησης.",
+                    "StoreLimitation": "<b>Η μπαταρία μπορεί να αποθηκεύσει μόνο το {{percentageLimitation}}% από</b> την αρχική της χωρητικότητα πλήρους φόρτισης.",
+                    "HighTemperature": "Η <b>αποφόρτιση</b> διακόπηκε, επειδή η <b>θερμοκρασία της μπαταρίας είναι πολύ υψηλή.</b>",
+                    "TrickleCharge": "Η μπαταρία <b>αποφορτίστηκε εντελώς</b> και πρέπει να ξαναφορτιστεί. Η διαδικασία ενδέχεται να διαρκέσει δέκα ώρες ή και περισσότερο.",
+                    "OverheatedBattery": "Η μπαταρία είναι <b>πολύ ζεστή</b>. Αφαιρέστε την από τον υπολογιστή και αφήστε την να επανέλθει σε θερμοκρασία δωματίου.",
+                    "PermanentError": "Αποτυχία μπαταρίας <b>λόγω φυσιολογικής φθοράς.</b> Δεν είναι δυνατή η φόρτιση της μπαταρίας. Αντικαταστήστε την μπαταρία."
                 },
-                "updating": "Updating",
-                "thresholdNote": {
-                    "note1": "To extend the battery lifespan, you have set your ",
-                    "note2": "to stop charging at ",
-                    "note3": "battery",
-                    "note4": "and ",
-                    "note": "Note: "
-                },
-                "voltageError": "Battery voltage incorrect",
-                "batteryNotDetected": "No Battery Detected"
+                "updating": "Ενημέρωση",
+                "voltageError": "Εσφαλμένη τάση μπαταρίας",
+                "batteryNotDetected": "Δεν εντοπίστηκε μπαταρία",
+                "thresholdNote": "<b>Σημείωση:</b> Για να παρατείνετε τη διάρκεια ζωής της μπαταρίας, έχετε ορίσει το {{chargeThresholdInfo.stopValue}}% ως όριο διακοπής φόρτισης της μπαταρίας σας."
             },
             "power": {
                 "title": "Ενέργεια",
@@ -740,7 +682,8 @@
                     "battery": "Μπαταρία",
                     "power": "Ενέργεια",
                     "cooling": "Έξυπνη ψύξη",
-                    "other": "Άλλες χώρες ή περιοχές"
+                    "other": "Άλλες χώρες ή περιοχές",
+                    "smartStandby": "Smart Standby"
                 },
                 "powerSmartSettings": {
                     "title": "Έξυπνες ρυθμίσεις ενέργειας",

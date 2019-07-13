@@ -604,16 +604,9 @@
                 "minute": "分",
                 "charge": "充满电所需的时间",
                 "button": "查看电池详细信息",
-                "updating": "Updating",
-                "thresholdNote": {
-                    "note": "Note: ",
-                    "note1": "To extend the battery lifespan, you have set your battery to stop charging at ",
-                    "note2": "to stop charging at ",
-                    "note3": "battery",
-                    "note4": "and "
-                },
-                "voltageError": "Battery voltage incorrect",
-                "batteryNotDetected": "No battery detected",
+                "updating": "正在更新",
+                "voltageError": "电池电压不正确",
+                "batteryNotDetected": "未检测到电池",
                 "details": {
                     "title": "电池详细信息",
                     "primary": "主电池",
@@ -663,73 +656,22 @@
                     }
                 },
                 "condition": {
-                    "Illegal": {
-                        "description": "不是联想制造或授权的正版。系统将继续启动，但可能不会使用未经授权的电池充电。",
-                        "description1": "注意：",
-                        "description2": "Lenovo对未经授权的电池的性能或安全性不承担任何责任，并且不对因使用而导致的故障或损坏提供任何保证。"
-                    },
-                    "Good": {
-                        "title": "The battery is in good condition."
-                    },
-                    "Exhaustion": {
-                        "description": "穿。电池无法充电。更换电池。",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "Bad": {
-                        "title": "发生电池错误。",
-                        "description": "电池无法充电/放电。更换电池。"
-                    },
-                    "NotDetected": {
-                        "title": "没有检测到电池",
-                        "description": "插上电池。"
-                    },
-                    "NotGood": {
-                        "title": "电池状况不佳"
-                    },
-                    "NotSupportACAdapter": {
-                        "title": "不支持AC适配器",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
-                    },
-                    "LimitedACAdapterSupport": {
-                        "title": "有限支持AC适配器",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
-                    },
-                    "MissingDriver": {
-                        "title": "The Lenovo Power Manager driver",
-                        "description": "未安装或无法正常工作。请运行Windows Update以安装最新的驱动程序"
-                    },
-                    "StoreLimitation": {
-                        "title": "电池只能存放",
-                        "description1": "的",
-                        "description2": "它是原始的完全充电容量"
-                    },
-                    "HighTemperature": {
-                        "title": "Discharging",
-                        "description": "has been stopped because the",
-                        "description1": "battery temperature is too high."
-                    },
-                    "TrickleCharge": {
-                        "description": "The battery was",
-                        "description1": "completely discharged",
-                        "description2": "and needs to be recharged. This might take ten hours or more."
-                    },
-                    "OverheatedBattery": {
-                        "description": "The battery is",
-                        "description1": "too hot.",
-                        "description2": "Remove it from the computer and cool it to room temperature."
-                    },
-                    "PermanentError": {
-                        "description": "The battery has",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "HardwareAuthenticationError": {
-                        "description": "The battery installed is",
-                        "description1": "not supported",
-                        "description2": "by the system and will not charge. Please replace the battery with the correct Lenovo battery for this system."
-                    }
-                }
+                    "Illegal": "系统<b>不支持</b>所安装的电池，电池无法充电。请将该电池更换为用于此系统的正确 Lenovo 电池。",
+                    "Good": "<b>电池状况良好。</b>",
+                    "Exhaustion": "电池<b>因正常损耗而发生故障。</b>电池无法充电。更换电池。",
+                    "Bad": "<b>出现电池错误。</b>电池无法充电/放电。更换电池。",
+                    "NotDetected": "<b>未检测到电池或未</b>插入电池。",
+                    "NotGood": "<b>电池状况不佳。</b>",
+                    "NotSupportACAdapter": "<b>不支持交流电源适配器。</b>Lenovo 计算机不支持此交流电源适配器。它可能会导致突然关机。请连接正确的交流电源适配器。",
+                    "LimitedACAdapterSupport": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。",
+                    "MissingDriver": "未安装 <b>Lenovo Power Manager 驱动程序</b>，或其无法正常工作。请运行 Windows 更新以安装最新的驱动程序。",
+                    "StoreLimitation": "<b>电池仅能存储其原始完全充电电量的 {{percentageLimitation}}%</b>。",
+                    "HighTemperature": "<b>由于电池温度过高</b>，电池已停止<b>放电</b>。",
+                    "TrickleCharge": "电池已<b>完全放电</b>，需要再次充电。此过程可能耗时 10 小时或更长时间。",
+                    "OverheatedBattery": "电池<b>过热</b>。请将其从计算机中卸下并冷却至室温。",
+                    "PermanentError": "电池<b>因正常损耗而发生故障。</b>电池无法充电。更换电池。"
+                },
+                "thresholdNote": "<b>注意：</b>为了延长电池使用寿命，已将电池设置成电池电量处于 {{chargeThresholdInfo.stopValue}}% 时停止充电。"
             },
             "power": {
                 "title": "电源管理",
@@ -740,7 +682,8 @@
                     "battery": "电池",
                     "power": "电源管理",
                     "cooling": "智能冷却",
-                    "other": "其他"
+                    "other": "其他",
+                    "smartStandby": "Smart Standby"
                 },
                 "powerSmartSettings": {
                     "title": "电源智能设置",
@@ -1020,7 +963,7 @@
                         "onSunsetToSunriseScheduleDescription": "设定从日落到日出的护眼模式",
                         "note": {
                             "title": "注",
-                            "description": "启用眼护理模式后,此色温不起作用。但是,您可以拖动滑块以获取其预览。要使其有效,请关闭眼部护理模式。"
+                            "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日落日出时间。"
                         }
                     },
                     "privacyGuard": {
