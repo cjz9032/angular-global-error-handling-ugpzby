@@ -833,9 +833,36 @@
                             "unit1": "Timer",
                             "unit2": "Minutter",
                             "unit3": "AM/PM"
+                        },
+                        "amPms": {
+                            "am": "AM",
+                            "pm": "PM"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "Vennligst velg minst en dag.",
+                    "days": {
+                        "shortName": {
+                            "sun": "søn",
+                            "mon": "man",
+                            "tue": "tir",
+                            "wed": "ons",
+                            "thurs": "Tor",
+                            "fri": "fre",
+                            "sat": "lør"
+                        },
+                        "name": {
+                            "sun": "søndag",
+                            "mon": "mandag",
+                            "tue": "tirsdag",
+                            "wed": "onsdag",
+                            "thurs": "Torsdag",
+                            "fri": "fredag",
+                            "sat": "lørdag"
+                        },
+                        "everyday": "Hver dag",
+                        "weekdays": "Uke dager",
+                        "weekends": "Helger"
+                    }
                 }
             },
             "audio": {

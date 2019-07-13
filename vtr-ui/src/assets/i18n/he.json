@@ -833,9 +833,36 @@
                             "unit1": "שעות",
                             "unit2": "דקות",
                             "unit3": "AM/PM"
+                        },
+                        "amPms": {
+                            "am": "AM",
+                            "pm": "PM"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "בחר לפחות יום אחד.",
+                    "days": {
+                        "shortName": {
+                            "sun": "יום ראשון",
+                            "mon": "יום שני",
+                            "tue": "יום שלישי",
+                            "wed": "יום רביעי",
+                            "thurs": "יום חמישי",
+                            "fri": "יום שישי",
+                            "sat": "יום שבת"
+                        },
+                        "name": {
+                            "sun": "יום ראשון",
+                            "mon": "יום שני",
+                            "tue": "יום שלישי",
+                            "wed": "יום רביעי",
+                            "thurs": "יום חמישי",
+                            "fri": "יום שישי",
+                            "sat": "יום שבת"
+                        },
+                        "everyday": "כל יום",
+                        "weekdays": "ימי חול",
+                        "weekends": "סופי שבוע"
+                    }
                 }
             },
             "audio": {

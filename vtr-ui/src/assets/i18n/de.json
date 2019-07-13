@@ -833,9 +833,36 @@
                             "unit1": "Stunden",
                             "unit2": "Minuten",
                             "unit3": "vormittags/nachmittags"
+                        },
+                        "amPms": {
+                            "am": "vormittags",
+                            "pm": "nachmittags"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "Bitte wählen Sie mindestens einen Tag aus.",
+                    "days": {
+                        "shortName": {
+                            "sun": "Sonntag",
+                            "mon": "Montag",
+                            "tue": "Dienstag",
+                            "wed": "Mittwoch",
+                            "thurs": "Donnerstag",
+                            "fri": "Freitag",
+                            "sat": "Samstag"
+                        },
+                        "name": {
+                            "sun": "Sonntag",
+                            "mon": "Montag",
+                            "tue": "Dienstag",
+                            "wed": "Mittwoch",
+                            "thurs": "Donnerstag",
+                            "fri": "Freitag",
+                            "sat": "Samstag"
+                        },
+                        "everyday": "Jeden Tag",
+                        "weekdays": "Wochentage",
+                        "weekends": "Wochenenden"
+                    }
                 }
             },
             "audio": {

@@ -833,9 +833,36 @@
                             "unit1": "小時",
                             "unit2": "分鐘",
                             "unit3": "上午/下午"
+                        },
+                        "amPms": {
+                            "am": "上午",
+                            "pm": "下午"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "請至少選擇一天。",
+                    "days": {
+                        "shortName": {
+                            "sun": "星期日",
+                            "mon": "星期一",
+                            "tue": "星期二",
+                            "wed": "星期三",
+                            "thurs": "星期四",
+                            "fri": "星期五",
+                            "sat": "星期六"
+                        },
+                        "name": {
+                            "sun": "星期日",
+                            "mon": "星期一",
+                            "tue": "星期二",
+                            "wed": "星期三",
+                            "thurs": "星期四",
+                            "fri": "星期五",
+                            "sat": "星期六"
+                        },
+                        "everyday": "每天",
+                        "weekdays": "平日",
+                        "weekends": "週末"
+                    }
                 }
             },
             "audio": {

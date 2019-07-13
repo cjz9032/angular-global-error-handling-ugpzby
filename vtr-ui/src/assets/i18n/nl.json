@@ -833,9 +833,36 @@
                             "unit1": "Uur",
                             "unit2": "Minuten",
                             "unit3": "AM/PM"
+                        },
+                        "amPms": {
+                            "am": "AM",
+                            "pm": "PM"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "Selecteer minimaal één dag.",
+                    "days": {
+                        "shortName": {
+                            "sun": "zon",
+                            "mon": "maan",
+                            "tue": "dins",
+                            "wed": "woens",
+                            "thurs": "donder",
+                            "fri": "vrij",
+                            "sat": "zater"
+                        },
+                        "name": {
+                            "sun": "zondag",
+                            "mon": "maandag",
+                            "tue": "dinsdag",
+                            "wed": "woensdag",
+                            "thurs": "donderdag",
+                            "fri": "vrijdag",
+                            "sat": "zaterdag"
+                        },
+                        "everyday": "Elke dag",
+                        "weekdays": "Doordeweekse dagen",
+                        "weekends": "Weekends"
+                    }
                 }
             },
             "audio": {

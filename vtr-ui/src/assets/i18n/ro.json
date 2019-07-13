@@ -833,9 +833,36 @@
                             "unit1": "Ore",
                             "unit2": "Minute",
                             "unit3": "AM/PM"
+                        },
+                        "amPms": {
+                            "am": "AM",
+                            "pm": "PM"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "Selectați cel puțin o zi.",
+                    "days": {
+                        "shortName": {
+                            "sun": "duminică",
+                            "mon": "luni",
+                            "tue": "marţi",
+                            "wed": "miercuri",
+                            "thurs": "joi",
+                            "fri": "vineri",
+                            "sat": "sâmbătă"
+                        },
+                        "name": {
+                            "sun": "duminică",
+                            "mon": "luni",
+                            "tue": "marţi",
+                            "wed": "miercuri",
+                            "thurs": "joi",
+                            "fri": "vineri",
+                            "sat": "sâmbătă"
+                        },
+                        "everyday": "In fiecare zi",
+                        "weekdays": "Zilele saptamanii",
+                        "weekends": "Weekend-uri"
+                    }
                 }
             },
             "audio": {

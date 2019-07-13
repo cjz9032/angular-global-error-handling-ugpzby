@@ -833,9 +833,36 @@
                             "unit1": "Óra",
                             "unit2": "Perc",
                             "unit3": "DÉLELŐTT/DÉLUTÁN"
+                        },
+                        "amPms": {
+                            "am": "DÉLE",
+                            "pm": "DÉLU"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "Kérjük, válasszon legalább egy napot.",
+                    "days": {
+                        "shortName": {
+                            "sun": "Vasárnap",
+                            "mon": "Hétfő",
+                            "tue": "Kedd",
+                            "wed": "Szerda",
+                            "thurs": "Csütörtök",
+                            "fri": "Péntek",
+                            "sat": "Szombat"
+                        },
+                        "name": {
+                            "sun": "Vasárnap",
+                            "mon": "Hétfő",
+                            "tue": "Kedd",
+                            "wed": "Szerda",
+                            "thurs": "Csütörtök",
+                            "fri": "Péntek",
+                            "sat": "Szombat"
+                        },
+                        "everyday": "Minden nap",
+                        "weekdays": "Hétköznapok",
+                        "weekends": "Hétvégén"
+                    }
                 }
             },
             "audio": {

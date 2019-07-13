@@ -833,9 +833,36 @@
                             "unit1": "時間",
                             "unit2": "分",
                             "unit3": "午前/午後"
+                        },
+                        "amPms": {
+                            "am": "午前",
+                            "pm": "午後"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "少なくとも1日を選択してください。",
+                    "days": {
+                        "shortName": {
+                            "sun": "日曜日",
+                            "mon": "月曜",
+                            "tue": "火曜日",
+                            "wed": "水曜日",
+                            "thurs": "木曜日",
+                            "fri": "金曜日",
+                            "sat": "土曜日"
+                        },
+                        "name": {
+                            "sun": "日曜日",
+                            "mon": "月曜",
+                            "tue": "火曜日",
+                            "wed": "水曜日",
+                            "thurs": "木曜日",
+                            "fri": "金曜日",
+                            "sat": "土曜日"
+                        },
+                        "everyday": "毎日",
+                        "weekdays": "平日",
+                        "weekends": "週末"
+                    }
                 }
             },
             "audio": {

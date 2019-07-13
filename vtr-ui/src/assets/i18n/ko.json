@@ -833,9 +833,36 @@
                             "unit1": "시간",
                             "unit2": "분",
                             "unit3": "오전/오후"
+                        },
+                        "amPms": {
+                            "am": "오전",
+                            "pm": "오후"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "적어도 하루를 선택하십시오.",
+                    "days": {
+                        "shortName": {
+                            "sun": "일요일",
+                            "mon": "월요일",
+                            "tue": "화요일",
+                            "wed": "수요일",
+                            "thurs": "목요일",
+                            "fri": "금요일",
+                            "sat": "토요일"
+                        },
+                        "name": {
+                            "sun": "일요일",
+                            "mon": "월요일",
+                            "tue": "화요일",
+                            "wed": "수요일",
+                            "thurs": "목요일",
+                            "fri": "금요일",
+                            "sat": "토요일"
+                        },
+                        "everyday": "매일",
+                        "weekdays": "평일",
+                        "weekends": "주말"
+                    }
                 }
             },
             "audio": {

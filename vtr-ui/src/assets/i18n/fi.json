@@ -833,9 +833,36 @@
                             "unit1": "tuntia",
                             "unit2": "minuuttia",
                             "unit3": "aamupäivä/iltapäivä"
+                        },
+                        "amPms": {
+                            "am": "aamupäivä",
+                            "pm": "iltapäivä"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "Valitse vähintään yksi päivä.",
+                    "days": {
+                        "shortName": {
+                            "sun": "Sunnuntai",
+                            "mon": "Maanantai",
+                            "tue": "Tiistai",
+                            "wed": "Weskiviikko",
+                            "thurs": "Torstai",
+                            "fri": "Perjantai",
+                            "sat": "Lauantai"
+                        },
+                        "name": {
+                            "sun": "Sunnuntai",
+                            "mon": "Maanantai",
+                            "tue": "Tiistai",
+                            "wed": "Weskiviikko",
+                            "thurs": "Torstai",
+                            "fri": "Perjantai",
+                            "sat": "Lauantai"
+                        },
+                        "everyday": "Joka päivä",
+                        "weekdays": "Arkisin",
+                        "weekends": "Viikonloppuisin"
+                    }
                 }
             },
             "audio": {
