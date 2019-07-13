@@ -42,11 +42,6 @@
 		overflow: hidden;
 
 		.label {
-			@media #{$mediaquery_X4} {
-				font-size: 1.2rem;
-				padding-right: .5rem;
-
-			}
 			position: absolute;
 			top: 1.8rem;
 			left: 6rem;
