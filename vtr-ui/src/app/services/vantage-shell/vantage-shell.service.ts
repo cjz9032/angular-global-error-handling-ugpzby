@@ -57,7 +57,7 @@ export class VantageShellService {
 
 	public registerEvent(eventType: any, handler: any) {
 		this.phoenix.on(eventType, (val) => {
-		//	console.log('Event fired: ', eventType, val);
+			//	console.log('Event fired: ', eventType, val);
 			handler(val);
 		});
 	}
@@ -560,7 +560,9 @@ export class VantageShellService {
 
 	public macroKeyInitializeEvent(): any {
 		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			if (!Phoenix.Features.Gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			return this.phoenix.gaming.gamingMacroKey.initMacroKey();
 		}
 		return undefined;
@@ -568,7 +570,6 @@ export class VantageShellService {
 
 	public macroKeySetApplyStatus(key): any {
 		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
 			return this.phoenix.gaming.gamingMacroKey.setApplyStatus(key);
 		}
 		return undefined;
@@ -576,7 +577,6 @@ export class VantageShellService {
 
 	public macroKeySetStartRecording(key): any {
 		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
 			return this.phoenix.gaming.gamingMacroKey.setStartRecording(key);
 		}
 		return undefined;
@@ -584,7 +584,6 @@ export class VantageShellService {
 
 	public macroKeySetStopRecording(key, isSuccess, message): any {
 		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
 			return this.phoenix.gaming.gamingMacroKey.setStopRecording(key, isSuccess, message);
 		}
 		return undefined;
@@ -592,7 +591,6 @@ export class VantageShellService {
 
 	public macroKeySetKey(key): any {
 		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
 			return this.phoenix.gaming.gamingMacroKey.setKey(key);
 		}
 		return undefined;
@@ -600,7 +598,6 @@ export class VantageShellService {
 
 	public macroKeyClearKey(key): any {
 		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
 			return this.phoenix.gaming.gamingMacroKey.setClear(key);
 		}
 		return undefined;
@@ -608,7 +605,6 @@ export class VantageShellService {
 
 	public macroKeySetRepeat(key, repeat): any {
 		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
 			return this.phoenix.gaming.gamingMacroKey.setRepeat(key, repeat);
 		}
 		return undefined;
@@ -616,7 +612,6 @@ export class VantageShellService {
 
 	public macroKeySetInterval(key, interval): any {
 		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
 			return this.phoenix.gaming.gamingMacroKey.setInterval(key, interval);
 		}
 		return undefined;
@@ -624,7 +619,6 @@ export class VantageShellService {
 
 	public macroKeySetMacroKey(key, inputs): any {
 		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
 			return this.phoenix.gaming.gamingMacroKey.setMacroKey(key, inputs);
 		}
 		return undefined;
