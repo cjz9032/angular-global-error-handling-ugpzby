@@ -73,7 +73,6 @@ export class AppComponent implements OnInit {
 			'zh-Hant'
 		]);
 		this.translate.setDefaultLang('en');
-		translate.use('ro');
 
 		//#region VAN-2779 this is moved in MVP 2
 
