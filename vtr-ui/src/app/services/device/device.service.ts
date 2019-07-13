@@ -19,6 +19,7 @@ export class DeviceService {
 	private microphone: any;
 	public isShellAvailable = false;
 	public isArm = false;
+	public isAndroid = false;
 	public is64bit = true;
 	public showPrivacy = true;
 	public isGaming = false;
@@ -73,18 +74,32 @@ export class DeviceService {
 	// }
 
 	private initIsArm() {
-		this.isArm = this.androidService.isAndroid;
 		try {
-			if (this.isShellAvailable) {
-				this.getMachineInfo()
-					.then((machineInfo: any) => {
-						this.isArm = this.androidService.isAndroid || machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
-					}).catch(error => {
-						console.error('initArm', error);
-					});
-			}
+			this.getIsARM()
+			.then((status: boolean) => {
+				this.isArm = status;
+			}).catch(error => {
+				console.error('initArm', error);
+			});
 		} catch (error) {
 			console.error('initArm' + error.message);
+		}
+	}
+
+	public async getIsARM(): Promise<boolean> {
+		let isArm = false;
+		this.isAndroid = this.androidService.isAndroid;
+		if (this.isAndroid) {
+			return true;
+		}
+		try {
+			if (this.isShellAvailable) {
+				let machineInfo = await this.getMachineInfo();
+				isArm = this.isAndroid || machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
+				return isArm;
+			}
+		} catch (error) {
+			console.error('getIsARM' + error.message);
 		}
 	}
 
@@ -116,11 +131,11 @@ export class DeviceService {
 			return this.sysInfo.getMachineInfo()
 				.then((info) => {
 					this.machineInfo = info;
-					if (info && info.isGaming) {
-						this.isGaming = info.isGaming;
-						this.loadGamingDashboard();
-					}
-
+					this.isGaming = info.isGaming;
+					// if (info && info.isGaming) {
+					// 	this.isGaming = info.isGaming;
+					// 	this.loadGamingDashboard();
+					// }
 					if (info && info.cpuArchitecture) {
 						if (info.cpuArchitecture.indexOf('64') === -1) {
 							this.is64bit = false;

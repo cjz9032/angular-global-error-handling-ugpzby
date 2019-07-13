@@ -22,18 +22,7 @@
 <body>
 	<vtr-root></vtr-root>
 	<noscript>Please enable JavaScript to continue using this application.</noscript>
-	<script type="text/javascript">
-		if ('serviceWorker' in navigator) {
-			navigator.serviceWorker.register("/ngsw-worker.js").then(registration => {
-				console.log("success!");
-				if (registration.installing) {
-					registration.installing.postMessage("Howdy from your installing page.");
-				}
-			}, err => {
-				console.error("Installing the worker failed!", err);
-			});
-		}
-	</script>
+	<script src="vantage-worker.js"></script>
 </body>
 
 </html>

@@ -1,15 +1,15 @@
 <div class="vtr-page-support vtr-page">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main [title]="title" [backarrow]="backarrow" [back]="'common.ui.back' | translate"></vtr-header-main>
+			<vtr-header-main [title]="'faq.pageTitle' | translate" [backarrow]="backarrow" [back]="'common.ui.back' | translate"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
 		<div class="col vtr-col ">
 			<div class="row">
-				<div class="col-lg-8 vtr-page-left-column">
+				<div class="col-sm-12 col-lg-8 col-xl-8 vtr-page-left-column">
 
-					<div class="row mn-6 card mx-5 mb-5">
+					<div class="row mn-6 card mb-5">
 						<div class="col p-5">
 							<div class="row py-5 description-container">
 								<div class="col" [innerHTML]="qa.description | sanitize : 'html'"> <!-- sahinul25Jun2019 VAN-5719-->
@@ -36,7 +36,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="row card m-5">
+					<div class="row card">
 						<div class="col">
 							<div class="row p-5">
 								<div class="col title smaller">
@@ -92,7 +92,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4  vtr-page-right-column">
+				<div class="col-sm-12 col-lg-4 col-xl-4 vtr-page-right-column">
 					<div class="row mn-6">
 						<div class="col">
 							<vtr-widget-questions componentName="qa"

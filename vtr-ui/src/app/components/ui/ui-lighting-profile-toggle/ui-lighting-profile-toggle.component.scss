@@ -14,6 +14,7 @@
 	box-sizing: border-box;
 	background-clip: padding-box;
 	border: solid 0.2rem transparent;
+	padding: 0.2rem;
 	&::after {
 		content: " ";
 		position: absolute;
@@ -38,7 +39,14 @@
 		background-image: $gaming_lighting_gradient;
 		z-index: -1;
 	}
-
+	.inner-toggle{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
     input {
         opacity: 0;
         position: absolute;
@@ -77,7 +85,7 @@
 		width: 25%;
 		height: 4.2rem;
 		border-radius: 4.2rem;
-		margin: 0.4rem 0.2rem;
+	//	margin: 0.4rem 0.2rem;
 		transition: all 0.3s ease-in-out;
 		left: 0;
 	}
@@ -110,17 +118,17 @@
 			color: $gaming_lightest;
 		}
 		& ~ .toggle {
-			left: 74.5%;
+			left: 75%;
 		}
-		@media #{$mediaquery_X11} {
-			& ~ .toggle {
-				left: 74.3%;
-			}
-		}
-		@media #{$mediaquery_7} {
-			& ~ .toggle {
-				left: 74.1%;
-			}
-		}
+		// @media #{$mediaquery_X11} {
+		// 	& ~ .toggle {
+		// 		left: 74.3%;
+		// 	}
+		// }
+		// @media #{$mediaquery_7} {
+		// 	& ~ .toggle {
+		// 		left: 74.1%;
+		// 	}
+		// }
 	}
 }

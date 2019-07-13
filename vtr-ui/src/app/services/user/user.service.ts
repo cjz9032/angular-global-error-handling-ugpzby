@@ -8,7 +8,7 @@ import { LenovoIdKey, LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DeviceService } from '../../services/device/device.service';
-import {LIDStarterHelper} from './stater.helper';
+import { LIDStarterHelper } from './stater.helper';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 
@@ -17,7 +17,7 @@ declare var Windows;
 @Injectable()
 export class UserService {
 
-	cookies = {};
+	cookies: any = {};
 	public auth = false;
 	public starter = false;
 	token = '';
@@ -69,23 +69,23 @@ export class UserService {
 	checkCookies() {
 		this.cookies = this.cookieService.getAll();
 		this.devService.writeLog('CHECK COOKIES:', this.cookies);
-		if (this.cookies['token']) {
-			this.setToken(this.cookies['token']);
+		if (this.cookies.token) {
+			this.setToken(this.cookies.token);
 		}
 	}
 
 	getLidLanguageSelectionFromCookies(domain: string) {
-		var lang = '';
+		let lang = '';
 		const myFilter = new Windows.Web.Http.Filters.HttpBaseProtocolFilter();
 		const cookieManager = myFilter.cookieManager;
 		const myCookieJar = cookieManager.getCookies(new Windows.Foundation.Uri(domain));
 		if (myCookieJar) {
-			for (let cookie of myCookieJar) {
+			for (const cookie of myCookieJar) {
 				if (cookie.name === 'lang') {
 					lang = cookie.value;
 					break;
 				}
-			};
+			}
 		}
 		return lang;
 	}
@@ -104,7 +104,7 @@ export class UserService {
 		let loginSuccess = false;
 		this.commonService.sendNotification(LenovoIdStatus.Pending, this.auth);
 		const isStarterAccount = await this.lidStarterHelper.isStarterAccountScenario();
-		if (!isStarterAccount) {
+		if (!isStarterAccount && self.lid) {
 			const accountState = this.hadEverSignIn();
 			const starterStatus = this.getStarterIdStatus();
 			self.lid.loginSilently().then(result => {
@@ -117,7 +117,7 @@ export class UserService {
 							self.commonService.sendNotification(LenovoIdStatus.SignedIn, appFeature);
 							self.sendSigninMetrics('success', starterStatus, accountState, 'AppOpen');
 						}
-					})
+					});
 				} else {
 					self.commonService.sendNotification(LenovoIdStatus.SignedOut, appFeature);
 					self.sendSigninMetrics('failure(rc=UserInteractionRequired)', starterStatus, accountState, 'AppOpen');
@@ -129,9 +129,12 @@ export class UserService {
 			this.lidStarterHelper.getStarterAccountToken().then((token) => {
 				if (token && self.lidStarterHelper.isStarterToken(token)) {
 					self.starter = true;
+					const accountState = self.hadEverSignIn();
+					const starterStatus = self.getStarterIdStatus();
+					self.sendSigninMetrics('success', starterStatus, accountState, 'AppOpen');
 				}
 				self.commonService.sendNotification(self.starter ? LenovoIdStatus.StarterId : LenovoIdStatus.SignedOut, appFeature);
-			}).catch(function() {
+			}).catch(() => {
 				self.commonService.sendNotification(self.starter ? LenovoIdStatus.StarterId : LenovoIdStatus.SignedOut, appFeature);
 			});
 		}
@@ -178,7 +181,7 @@ export class UserService {
 		}
 		this.devService.writeLog('SET AUTH');
 		this.devService.writeLog('LOGIN RES', auth);
-		if (this.auth != auth) {
+		if (this.auth !== auth) {
 			this.auth = auth;
 			this.commonService.sendNotification(auth ? LenovoIdStatus.SignedIn : LenovoIdStatus.SignedOut, auth);
 		}
@@ -197,7 +200,7 @@ export class UserService {
 
 		if (this.lid !== undefined) {
 			const lidGuid = this.lid.userGuid;
-			this.lid.logout().then(function (result) {
+			this.lid.logout().then((result) => {
 				let metricsData: any;
 				if (result.success && result.status === 0) {
 					self.translate.stream('lenovoId.user').subscribe((value) => {
@@ -267,7 +270,7 @@ export class UserService {
 			TaskResult: taskResult,
 			TaskParam: {
 				StarterStatus: starterStatusResult,
-				AccountState: everSignInResult ? 'AlreadySignedIn' : 'NeverSignedIn', //{Signin | AlreadySignedIn | NeverSignedIn},
+				AccountState: everSignInResult ? 'AlreadySignedIn' : 'NeverSignedIn', // {Signin | AlreadySignedIn | NeverSignedIn},
 				FeatureRequested: appFeature ? appFeature : 'SignIn' // {AppOpen | SignIn | Vantage feature}
 			}
 		};

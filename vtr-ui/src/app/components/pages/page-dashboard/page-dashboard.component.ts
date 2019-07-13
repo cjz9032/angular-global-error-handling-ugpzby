@@ -1,4 +1,4 @@
-import { Component, OnInit, SecurityContext } from '@angular/core';
+import { Component, OnInit, SecurityContext, DoCheck, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -23,6 +23,7 @@ import { UserService } from '../../../services/user/user.service';
 import { QA } from 'src/app/data-models/qa/qa.model';
 import { AndroidService } from 'src/app/services/android/android.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.service';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -30,13 +31,14 @@ import { SecurityAdvisorMockService } from 'src/app/services/security/securityMo
 	styleUrls: ['./page-dashboard.component.scss'],
 	providers: [NgbModalConfig, NgbModal]
 })
-export class PageDashboardComponent implements OnInit {
+export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	firstName = 'User';
 	submit = this.translate.instant('dashboard.feedback.form.button');
 	feedbackButtonText = this.submit;
 	securityAdvisor: SecurityAdvisor;
 	public systemStatus: Status[] = [];
 	public isOnline = true;
+	private protocalAction: any;
 
 	heroBannerItems = [];
 	cardContentPositionA: any = {};
@@ -69,6 +71,8 @@ export class PageDashboardComponent implements OnInit {
 		public androidService: AndroidService,
 		private sanitizer: DomSanitizer,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
+		private activatedRoute: ActivatedRoute,
+		private lenovoIdDialogService: LenovoIdDialogService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -84,8 +88,9 @@ export class PageDashboardComponent implements OnInit {
 			this.feedbackButtonText = this.submit;
 		});
 		// Evaluate the translations for QA on language Change
-		this.qaService.setTranslationService(this.translate);
-		this.qaService.setCurrentLangTranslations();
+		// this.qaService.setTranslationService(this.translate);
+		// this.qaService.setCurrentLangTranslations();
+		this.qaService.getQATranslation(translate); // VAN-5872, server switch feature
 
 	}
 
@@ -177,6 +182,26 @@ export class PageDashboardComponent implements OnInit {
 			this.onNotification(notification);
 		});
 
+	}
+
+	ngDoCheck(): void {
+		const lastAction = this.protocalAction;
+		this.protocalAction = this.activatedRoute.snapshot.queryParams['action'];
+		if (lastAction !== this.protocalAction) {
+			if (this.protocalAction.toLowerCase() === 'lenovoid') {
+				this.lenovoIdDialogService.openLenovoIdDialog();
+			}
+		}
+	}
+
+	ngOnDestroy() {
+		if (this.router.routerState.snapshot.url.indexOf('security') === -1 || this.router.routerState.snapshot.url.indexOf('dashboard') === -1) {
+			if (this.securityAdvisor.wifiSecurity) {
+				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
+			}
+		}
+
+		this.qaService.destroyChangeSubscribed();
 	}
 
 	onFeedbackModal() {
@@ -390,7 +415,7 @@ export class PageDashboardComponent implements OnInit {
 				}
 				const disk = this.systemStatus[1];
 				const totalDisk = value.disk.total;
-				const usedDisk  = value.disk.used;
+				const usedDisk = value.disk.used;
 				this.translate.stream('dashboard.systemStatus.memory.detail.of').subscribe((re) => {
 					memory.detail = `${this.commonService.formatBytes(usedRam, 1)} ${re} ${this.commonService.formatBytes(totalRam, 1)}`;
 					disk.detail = `${this.commonService.formatBytes(usedDisk, 1)} ${re} ${this.commonService.formatBytes(totalDisk, 1)}`;
@@ -433,7 +458,7 @@ export class PageDashboardComponent implements OnInit {
 		this.dashboardService.getRecentUpdateInfo().subscribe(value => {
 			if (value) {
 				const systemUpdate = this.systemStatus[3];
-				const diffInDays = this.systemUpdateService.dateDiffInDays( value.lastupdate);
+				const diffInDays = this.systemUpdateService.dateDiffInDays(value.lastupdate);
 				if (value.status === 1) {
 					if (diffInDays > 30) {
 						systemUpdate.status = 1;
@@ -462,5 +487,4 @@ export class PageDashboardComponent implements OnInit {
 			}
 		}
 	}
-
 }

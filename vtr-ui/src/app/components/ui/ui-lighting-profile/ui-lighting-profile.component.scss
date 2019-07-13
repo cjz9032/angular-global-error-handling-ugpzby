@@ -77,12 +77,12 @@
       // }
       @media #{$small-screen}{
         justify-content: flex-end;
-        max-width: 100%;
+        width: 100%;
         align-items: flex-end !important;
       }
       @media #{$below-large-screen}{
         justify-content: flex-end;
-        max-width: 100%;
+        width: 100%;
         align-items: flex-end !important;
       }
       .img-responsive {
@@ -118,6 +118,9 @@
     @media #{$below-large-screen}{
       margin-left: 0;
       width: 100%;
+    }
+    @media #{$large-screen}{
+      max-width: 45rem;
     }
     .light-option {
       //::ng-deep {

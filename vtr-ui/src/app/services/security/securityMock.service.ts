@@ -130,7 +130,9 @@ export class SecurityAdvisorMockService {
 				return Promise.resolve(true);
 			},
 			updateWifiSecurityState(): void {},
-			getWifiSecurityState(callback: Function): void {},
+			getWifiSecurityState(): Promise<any> {
+				return Promise.resolve();
+			},
 			getWifiState() {
 				this.mitt.emit(EventTypes.wsIsLocationServiceOnEvent, this.isLocationServiceOn);
 				return Promise.resolve(true);
@@ -146,7 +148,7 @@ export class SecurityAdvisorMockService {
 				let p2 = new Promise((resolve) => {});
 				return Promise.all([p1, p2]);
 			},
-			cancelRefresh() {}
+			cancelGetWifiSecurityState() {}
 		},
 		homeProtection: {
 			mitt: new mitt(),

@@ -8,6 +8,8 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AudioService } from 'src/app/services/audio/audio.service';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
+import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -61,13 +63,16 @@ export class PageDeviceSettingsComponent implements OnInit {
 		private commonService: CommonService,
 		public deviceService: DeviceService,
 		public audioService: AudioService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		private keyboardService: InputAccessoriesService
 	) {
 		this.fetchCMSArticles();
 		this.getMicrophoneSettings();
+
 		// Evaluate the translations for QA on language Change
-		this.qaService.setTranslationService(this.translate);
-		this.qaService.setCurrentLangTranslations();
+		//this.qaService.setTranslationService(this.translate);
+		//this.qaService.setCurrentLangTranslations();
+		this.qaService.getQATranslation(translate);//VAN-5872, server switch feature
 
 		//translate subheader menus
 		this.menuItems.forEach(m => {
@@ -81,10 +86,6 @@ export class PageDeviceSettingsComponent implements OnInit {
 	ngOnInit() {
 		this.devService.writeLog('DEVICE SETTINGS INIT', this.menuItems);
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
-		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
-		if (this.machineType != 1) {
-			this.menuItems = this.commonService.removeObjFrom(this.menuItems, 'device-settings/input-accessories')
-		}
 		//translate subheader menus
 		this.menuItems.forEach(m => {
 			m.label = this.translate.instant(m.label);
@@ -92,6 +93,20 @@ export class PageDeviceSettingsComponent implements OnInit {
 				m.label = value;
 			});
 		});
+		this.initInputAccessories();
+	}
+
+	initInputAccessories() {
+		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		if (this.machineType != 1) {
+			this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
+			return;
+		}
+		const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
+		const isAvailable  = inputAccessoriesCapability.isUdkAvailable || inputAccessoriesCapability.isKeyboardMapAvailable;
+		if (!isAvailable) {
+			this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
+		}
 	}
 
 	getMicrophoneSettings() {
@@ -155,4 +170,10 @@ export class PageDeviceSettingsComponent implements OnInit {
 			Filters: null
 		};
 	}
+
+	//VAN-5872, server switch feature
+	ngOnDestroy() {
+		this.qaService.destroyChangeSubscribed();
+	}
+
 }

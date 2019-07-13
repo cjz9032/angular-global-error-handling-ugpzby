@@ -891,7 +891,8 @@
                             "unit2": "דקות",
                             "unit3": "AM/PM"
                         }
-                    }
+                    },
+                    "warningtip": "Please select at least one day."
                 }
             },
             "audio": {
