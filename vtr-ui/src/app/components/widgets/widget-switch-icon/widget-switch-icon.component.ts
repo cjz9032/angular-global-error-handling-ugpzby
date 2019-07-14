@@ -26,9 +26,8 @@ export class WidgetSwitchIconComponent implements OnInit {
 	@Input() disable = false;
 	@Input() metricsItem = '';
 	@Input() isCamera = false;
+	@Input() isLoading = true;
 	@Output() toggle = new EventEmitter<boolean>();
-
-	isLoading = false;
 
 	constructor(public deviceService: DeviceService, private changeDetectorRef: ChangeDetectorRef) { }
 

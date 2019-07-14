@@ -79,16 +79,16 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	value = 1;
 	headerMenuItems = [
 		{
-			title: 'device.deviceSettings.power.jumpto.cooling',
-			path: 'cooling'
-		},
-		{
-			title: 'device.deviceSettings.power.jumpto.battery',
-			path: 'battery',
+			title: 'device.deviceSettings.power.powerSmartSettings.title',
+			path: 'smartSettings'
 		},
 		{
 			title: 'device.deviceSettings.power.jumpto.smartStandby',
 			path: 'smartStandby'
+		},
+		{
+			title: 'device.deviceSettings.power.jumpto.battery',
+			path: 'battery',
 		},
 		{
 			title: 'device.deviceSettings.power.jumpto.power',
@@ -343,7 +343,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	onSetSmartStandbyCapability(event: boolean) {
 		if (!event) {
-			this.headerMenuItems.splice(2, 1);
+			this.headerMenuItems.splice(1, 1);
 		}
 	}
 
