@@ -435,5 +435,4 @@ export class AppComponent implements OnInit {
 			console.log(`ERROR in vantageLaunch() of app.component`, err);
 		}
 	}
-
-
+}
