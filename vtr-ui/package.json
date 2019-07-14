@@ -5,7 +5,7 @@
 		"ng": "ng",
 		"start": "ng serve",
 		"build-serve": "node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng serve --prod",
-		"build": "node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng build",
+		"build": "node --max_old_space_size=2048 ./node_modules/@angular/cli/bin/ng build",
 		"test": "ng test",
 		"lint": "ng lint",
 		"fix-no-console": "node prebuild/no-console.js",
