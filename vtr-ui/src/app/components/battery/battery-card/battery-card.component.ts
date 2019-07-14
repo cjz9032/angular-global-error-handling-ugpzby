@@ -150,10 +150,12 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.chargeThresholdInfo = chargeThresholdInfo[0];
 			if (chargeThresholdInfo.length > 1) {
 				if (!chargeThresholdInfo[0].isOn && chargeThresholdInfo[1].isOn) {
-					this.chargeThresholdInfo = notification.payload[0];
+					this.chargeThresholdInfo = notification.payload[1];
 				}
 			}
-			this.param1 = { value: this.chargeThresholdInfo.stopValue };
+			if (this.chargeThresholdInfo !== undefined && this.chargeThresholdInfo.isOn) {
+				this.param1 = { value: this.chargeThresholdInfo.stopValue };
+			}
 		}
 	}
 

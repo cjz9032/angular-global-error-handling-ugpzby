@@ -65,7 +65,8 @@
 				<span *ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation"
 					class="battery-conditions-tips"
 					[innerHTML]="batteryConditionNote | translate:param2"></span>
-				<span class="battery-conditions-tips"
+				<span *ngIf="batteryConditions[i].condition!=batteryConditionsEnum.StoreLimitation"
+					class="battery-conditions-tips"
 					[innerHTML]="batteryConditionNote | translate"></span>
 			</div>
 
