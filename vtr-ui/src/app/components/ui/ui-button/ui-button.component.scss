@@ -10,6 +10,9 @@
 		}
 
 		.button {
+			@media #{$mediaquery_X4} {
+				min-width: 10rem;
+			}
 			min-height: 6rem;
 			border-radius: 3rem;
 			min-width: 12rem;

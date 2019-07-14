@@ -42,6 +42,11 @@
 		overflow: hidden;
 
 		.label {
+			@media #{$mediaquery_X4} {
+				padding-right: .5rem;
+				font-size: 1.2rem;
+
+			}
 			position: absolute;
 			top: 1.8rem;
 			left: 6rem;
@@ -56,8 +61,8 @@
 		.icon-circle {
 			font-size: 3rem;
 			color: $main;
-			top: 1.5rem;
-			left: 1.5rem;
+			top: 1.3rem;
+			left: 1.3rem;
 		}
 
 		fa-icon.icon {

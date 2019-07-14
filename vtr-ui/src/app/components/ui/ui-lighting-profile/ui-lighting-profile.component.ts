@@ -240,12 +240,6 @@ export class UiLightingProfileComponent implements OnInit {
 			PanelImage: 'C530Right@2x.png'
 		}
 	];
-	// optionsSingleColor = [
-	// 	new Options(1, 'Always On'),
-	// 	new Options(2, 'Fast Blink'),
-	// 	new Options(3, 'Medium Blink'),
-	// 	new Options(4, 'Slow Blink')
-	// ];
 	optionsSingleColor = [
 		new Options(1, 'gaming.lightingProfile.lightingSingleLightingOption.option1.title'),
 		new Options(2, 'gaming.lightingProfile.lightingSingleLightingOption.option2.title'),
@@ -285,17 +279,6 @@ export class UiLightingProfileComponent implements OnInit {
 			this.isProfileOff = true;
 		}
 	}
-
-	// ngOnChanges(changes) {
-	// 	if (!isUndefined(changes)) {
-	// 		if (!isUndefined(changes.dropDataChanges)) {
-	// 			console.log('sat**********************************', this.dropDataChanges.topdata);
-	// 			this.frontSelectedValue = this.dropDataChanges.topdata;
-	// 			//this.delaySelectedValue = recordsData.interval;
-
-	// 		}
-	// 	}
-	// }
 	public getGamingLightingCapabilities() {
 		try {
 			if (this.gamingLightingService.isShellAvailable) {
@@ -1560,16 +1543,6 @@ export class UiLightingProfileComponent implements OnInit {
 			console.error(error.message);
 		}
 	}
-
-	// public setLightingProfileEffectColor() {
-	// 	if (this.gamingLightingService.isShellAvailable) {
-	// 		this.gamingLightingService
-	// 			.setLightingProfileEffectColor(this.lightingProfileEffectColorNUmber)
-	// 			.then((response: any) => {
-	// 				console.log('setLightingProfileEffectColor ------------------------>', JSON.stringify(response));
-	// 			});
-	// 	}
-	// }
 	colorEffectChangedFront($event) {
 		this.applyBtnStatus1 = 'loading';
 		$event = $event.substring(1);
@@ -1598,18 +1571,7 @@ export class UiLightingProfileComponent implements OnInit {
 						}
 						this.inHex1 = $event;
 						this.applyBtnStatus1 = 'applied';
-
-						// 	this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileEffectColor, response);
-						/*	console.log(
-								'set color pallet color effect front response----------cache---------->',
-								JSON.stringify(
-									this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileEffectColor)
-								)
-							);*/
 					}
-					/* else {
-						response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileEffectColor);
-					}*/
 				});
 		}
 	}
