@@ -761,7 +761,8 @@
                         "title": "Enkel gjenopptakelse",
                         "description": "Aktiver denne funksjonen forbedrer gjenopptakelsestiden hvis du åpner og lukker lokket på datamaskinen ofte.",
                         "tooltip": "Denne funksjonen forbedrer gjenopptakelsestiden hvis du åpner og lukker lokket på datamaskinen ofte. Når den er aktivert, går datamaskinen i en modus med lavt strømforbruk når du lukker lokket, men gjenopptar umiddelbart hvis du åpner lokket innen 15 minutter etter at du lukket det. Denne funksjonen gjør også at den bærbare datamaskinen forsøker å fullføre aktiviteter som venter (som å sende e-post eller laste ned en fil) før systemet går i hvilemodus."
-                    }
+					},
+					"or":"Or"
                 },
                 "otherSettings": {
                     "title": "Andre innstillinger",
