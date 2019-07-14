@@ -1,10 +1,9 @@
 <li class="pt-3 user-defined-key-block"
 	*ngIf="hasUDKCapability">
-	<vtr-ui-row-switch
-		[title]="'device.deviceSettings.inputAccessories.userDefinedKey.title' | translate"
+	<vtr-ui-row-switch [title]="'device.deviceSettings.inputAccessories.userDefinedKey.title' | translate"
 		componentName="User defined key"
 		[caption]="'device.deviceSettings.inputAccessories.userDefinedKey.caption' | translate"
-		[leftIcon]="['fal', 'gem']"
+		[leftIcon]="['icomoon', 'icomoon-star']"
 		[showChildContent]="true"
 		[theme]="'white'"
 		[tooltipText]="'device.deviceSettings.inputAccessories.userDefinedKey.tooltip' | translate">
@@ -66,10 +65,10 @@
 									(ngSubmit)="udkSubmit(2)">
 									<div class="row no-gutters">
 										<div class="input-group mt-3">
-												<label>{{'device.deviceSettings.inputAccessories.userDefinedKey.website.url' | translate}}</label>
-											<textarea class="form-control" [(ngModel)]="url"
+											<label>{{'device.deviceSettings.inputAccessories.userDefinedKey.website.url' | translate}}</label>
+											<textarea class="form-control"
+												[(ngModel)]="url"
 												name="url"
-											
 												required
 												[pattern]="hyperLinkPatterns"></textarea>
 										</div>
@@ -103,11 +102,11 @@
 									(ngSubmit)="udkSubmit(3)">
 									<div class="row no-gutters">
 										<div class="input-group mt-3">
-												<label>{{'device.deviceSettings.inputAccessories.userDefinedKey.enterText.title' | translate}}</label>
-											<textarea class="form-control" [(ngModel)]="description"
+											<label>{{'device.deviceSettings.inputAccessories.userDefinedKey.enterText.title' | translate}}</label>
+											<textarea class="form-control"
+												[(ngModel)]="description"
 												name="description"
 												required
-												
 												[pattern]="enterTextPatterns"></textarea>
 										</div>
 										<div class="col-12">
