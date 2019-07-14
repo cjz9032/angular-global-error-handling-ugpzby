@@ -73,24 +73,23 @@ export class AppComponent implements OnInit {
 			'zh-Hant'
 		]);
 		this.translate.setDefaultLang('en');
-		translate.use('ro');
 
 		//#region VAN-2779 this is moved in MVP 2
 
 		this.deviceService.getIsARM()
-		.then((status: boolean) => {
-			console.log('getIsARM.then', status);
-			if (!status) {
-				const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
-				if (tutorial === undefined && navigator.onLine) {
-					this.openWelcomeModal(1);
-				} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
-					this.openWelcomeModal(2);
+			.then((status: boolean) => {
+				console.log('getIsARM.then', status);
+				if (!status) {
+					const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+					if (tutorial === undefined && navigator.onLine) {
+						this.openWelcomeModal(1);
+					} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
+						this.openWelcomeModal(2);
+					}
 				}
-			}
-		}).catch(error => {
-			console.error('getIsARM', error);
-		});
+			}).catch(error => {
+				console.error('getIsARM', error);
+			});
 
 		//#endregion
 
