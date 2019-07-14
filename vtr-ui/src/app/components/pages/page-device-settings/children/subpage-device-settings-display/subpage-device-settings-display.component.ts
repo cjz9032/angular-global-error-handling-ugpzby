@@ -37,7 +37,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public sunsetToSunriseModeStatus = new SunsetToSunriseStatus(true, false, false, '', '');
 	public enableSunsetToSunrise = false;
 	public enableSlider = false;
-	public isEyeCareMode: boolean;
+	public isEyeCareMode = false;
 	public initEyecare = 0;
 	public showHideAutoExposureSlider = false;
 	private notificationSubscription: Subscription;
@@ -283,25 +283,26 @@ export class SubpageDeviceSettingsDisplayComponent
 		});
 	}
 	public onEyeCareModeStatusToggle(event: any) {
-		this.isEyeCareMode = event.switchValue;
+		this.eyeCareModeStatus.status = event.switchValue;
 		this.enableSlider = false;
-		console.log('onEyeCareModeStatusToggle', this.isEyeCareMode);
+		console.log('onEyeCareModeStatusToggle', this.eyeCareModeStatus.status);
 		try {
 			if (this.displayService.isShellAvailable) {
-				this.displayService.setEyeCareModeState(event.switchValue)
+				this.displayService.setEyeCareModeState(this.eyeCareModeStatus.status)
 					.then((value: any) => {
 						console.log('onEyeCareModeStatusToggle.then', value);
-						this.enableSlider = this.isEyeCareMode;
+						this.enableSlider = this.eyeCareModeStatus.status;
 						this.eyeCareDataSource.current = value.colorTemperature;
 						const eyeCare = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardEyeCareMode);
-						eyeCare.status = this.isEyeCareMode;
+						eyeCare.status = this.eyeCareModeStatus.status;
 						console.log('eycare mode request sent to the dashboard------------->', eyeCare);
 						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, eyeCare);
+
 					}).catch(error => {
 						console.error('onEyeCareModeStatusToggle', error);
 					});
 
-				if (!this.isEyeCareMode) {
+				if (!this.eyeCareModeStatus.status) {
 					this.onSetChangeDisplayColorTemp({ value: this.displayColorTempDataSource.current });
 				}
 
@@ -369,7 +370,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					console.log('getEyeCareModeState.then', featureStatus);
 					this.eyeCareModeStatus = featureStatus;
 					this.enableSlider = featureStatus.status;
-					this.isEyeCareMode = this.eyeCareModeStatus.status;
+					// this.isEyeCareMode = this.eyeCareModeStatus.status;
 					if (this.eyeCareModeStatus.available === true) {
 						console.log('eyeCareModeStatus.available', featureStatus.available);
 					}
@@ -442,7 +443,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						if (response.result === true) {
 							this.eyeCareDataSource.current = response.colorTemperature;
 							this.eyeCareModeStatus.status = response.eyecaremodeState;
-							this.isEyeCareMode = this.eyeCareModeStatus.status;
+							// this.isEyeCareMode = this.eyeCareModeStatus.status;
 							this.enableSlider = response.eyecaremodeState;
 							this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, this.eyeCareModeStatus);
 						}
@@ -497,7 +498,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		}
 	}
 	public setToEyeCareMode() {
-		if (this.isEyeCareMode) {
+		if (this.eyeCareModeStatus.status) {
 			// this.displayColorTempDataSource.current = this.eyeCareDataSource.current;
 			// this.onSetChangeDisplayColorTemp({value: this.eyeCareDataSource.current})
 			this.onEyeCareTemparatureChange({ value: this.eyeCareDataSource.current });
