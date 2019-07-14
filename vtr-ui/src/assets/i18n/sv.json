@@ -761,7 +761,8 @@
                         "title": "Program för smidig återgång",
                         "description": "Aktivera denna funktion för att datorn ska starta snabbare om du ofta öppnar och stänger datorlocket.",
                         "tooltip": "Funktionen förkortar tiden det tar att återgå till arbetsläge om du ofta öppnar eller stänger datorlocket. När den är aktiverad försätts datorn i ett lågenergiläge när du stänger locket, men återgår direkt till arbetsläge om du öppnar locket igen inom 15 minuter. Funktionen gör även att din bärbara dator kan försöka avsluta pågående aktiviteter (som att skicka ett e-postmeddelande eller hämta en fil) innan systemet försätts i vänteläge."
-                    }
+					},
+					"or":"Or"
                 },
                 "otherSettings": {
                     "title": "Andra inställningar",

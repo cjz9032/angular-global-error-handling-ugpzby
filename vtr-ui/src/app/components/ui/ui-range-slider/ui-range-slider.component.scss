@@ -22,7 +22,7 @@ but not to any other element on the page. using ::ng-deep
 				background: $main;
 			}
 			/* slider thumb */
-			.ng5-slider-pointer {  
+			.ng5-slider-pointer {
 				top: calc(100% - 1.5rem);
 				height: $thumb-size;
 				width: $thumb-size;
@@ -35,12 +35,12 @@ but not to any other element on the page. using ::ng-deep
 					background: transparent;
 					height: $thumb-size;
 					width: $thumb-size;
-					top: 2px;
+					top: -1px;
 					left: 0;
-					line-height: calc(2.4rem + 55%);
-					// top: calc(100% - 2.3rem);
-					// left: calc(100% - 2.5rem);
-					content: url("../../../../assets/images/arrow-icon.PNG"); // unicode for font awesome two sided arrow;
+					font-family: "icomoon";
+					font-size: 2rem;
+					color: $light;
+					content: "\e901";
 					@media #{$mediaquery_19} {
 						top: 0 !important;
 					}

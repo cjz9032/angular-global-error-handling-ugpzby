@@ -761,7 +761,8 @@
                         "title": "Lako vraćanje",
                         "description": "Omogućite ovu funkciju da biste poboljšali vreme nastavka rada ako često otvarate i zatvarate poklopac računara.",
                         "tooltip": "Ova funkcija će poboljšati vreme nastavka rada ako često otvarate i zatvarate poklopac računara. Kada je omogućite, računar će ući u režim slabog napajanja kada zatvorite njegov poklopac, ali će nastaviti odmah ako ponovo otvorite poklopac u roku od 15 minuta od zatvaranja. Ova funkcija takođe dozvoljava vašem prenosivom računaru da pokuša za završi aktivnosti na čekanju (kao što je slanje e-poruke ili preuzimanje datoteke) pre nego što sistem pređe u režim privremenog obustavljanja."
-                    }
+					},
+					"or":"Or"
                 },
                 "otherSettings": {
                     "title": "Ostale postavke",

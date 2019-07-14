@@ -761,7 +761,8 @@
                         "title": "Helppo palautus",
                         "description": "Ottamalla tämän toiminnon käyttöön voit nopeuttaa jatkamisaikaa, jos avaat ja suljet tietokoneen kannen toistuvasti.",
                         "tooltip": "Tämä toiminto nopeuttaa jatkamisaikaa, jos avaat ja suljet tietokoneen kannen toistuvasti. Kun asetus on käytössä, tietokone siirtyy virransäästötilaan, kun suljet sen kannen, mutta jatkaa toimintaansa heti, jos avaat kannen 15 minuutin kuluessa kannen sulkemisesta. Kun tämä toiminto on käytössä, kannettava tietokone yrittää myös suorittaa keskeneräiset toiminnot loppuun (kuten sähköpostin lähettämisen tai tiedoston lataamisen), ennen kuin järjestelmä siirtyy keskeytystilaan."
-                    }
+					},
+					"or":"Or"
                 },
                 "otherSettings": {
                     "title": "Muut asetukset",
