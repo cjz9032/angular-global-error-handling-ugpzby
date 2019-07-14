@@ -160,13 +160,18 @@ export class SmartStandbyComponent implements OnInit {
 	}
 
 	isStartEndTimeValid() {
+		let timeDiff;
 		let hourMinutes = this.smartStandbyStartTime.split(':');
 		const startMinutes = parseInt(hourMinutes[0], 10) * 60 + parseInt(hourMinutes[1], 10);
 
 		hourMinutes = this.smartStandbyEndTime.split(':');
 		const endMinutes = parseInt(hourMinutes[0], 10) * 60 + parseInt(hourMinutes[1], 10);
-		const timeDiff = (endMinutes - startMinutes) / 60;
-		if (timeDiff > 20 || timeDiff <= 0) {
+		if (endMinutes <= startMinutes) {
+			timeDiff = (((24 * 60) - startMinutes) + endMinutes) / 60;
+		} else {
+			timeDiff = (endMinutes - startMinutes) / 60;
+		}
+		if (timeDiff > 20) {
 			this.showDiffNote = true;
 		} else {
 			this.showDiffNote = false;
