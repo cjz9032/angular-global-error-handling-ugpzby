@@ -17,13 +17,20 @@ export class WidgetSystemToolsComponent implements OnInit {
 	constructor(private commonService: CommonService, private gamingCapabilityService: GamingAllCapabilitiesService) {}
 
 	ngOnInit() {
+		this.commonService.getCapabalitiesNotification().subscribe((response) => {
+			// console.log(response, '--------------==');
+			 if (response.type === Gaming.GamingCapablities) {
+				 console.log(`GAMINGCAPABLITIES in widget-system-tools.component`, response);
+				 this.gamingProperties = response.payload;
+			 }
+		 });
 		this.gamingProperties.macroKeyFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.macroKeyFeature
 		);
-		this.commonService.notification.subscribe((response) => {
-			if (response.type === Gaming.GamingCapablities) {
-				this.gamingProperties = response.payload;
-			}
-		});
+		// this.commonService.notification.subscribe((response) => {
+		// 	if (response.type === Gaming.GamingCapablities) {
+		// 		this.gamingProperties = response.payload;
+		// 	}
+		// });
 	}
 }
