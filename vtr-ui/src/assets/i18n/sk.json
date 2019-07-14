@@ -833,9 +833,36 @@
                             "unit1": "Hodiny",
                             "unit2": "Minúty",
                             "unit3": "Dop./pop."
+                        },
+                        "amPms": {
+                            "am": "Dop",
+                            "pm": "pop"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "Vyberte aspoň jeden deň.",
+                    "days": {
+                        "shortName": {
+                            "sun": "nedeľa",
+                            "mon": "pondelok",
+                            "tue": "utorok",
+                            "wed": "streda",
+                            "thurs": "štvrtok",
+                            "fri": "piatok",
+                            "sat": "sobota"
+                        },
+                        "name": {
+                            "sun": "nedeľa",
+                            "mon": "pondelok",
+                            "tue": "utorok",
+                            "wed": "streda",
+                            "thurs": "štvrtok",
+                            "fri": "piatok",
+                            "sat": "sobota"
+                        },
+                        "everyday": "Každý deň",
+                        "weekdays": "Dni v týždni",
+                        "weekends": "víkendy"
+                    }
                 }
             },
             "audio": {

@@ -833,9 +833,36 @@
                             "unit1": "Hodin",
                             "unit2": "Minut",
                             "unit3": "dop/odp"
+                        },
+                        "amPms": {
+                            "am": "dop",
+                            "pm": "odp"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "Vyberte prosím alespoň jeden den.",
+                    "days": {
+                        "shortName": {
+                            "sun": "neděle",
+                            "mon": "pondělí",
+                            "tue": "úterý",
+                            "wed": "středa",
+                            "thurs": "Čtvrtek",
+                            "fri": "pátek",
+                            "sat": "sobota"
+                        },
+                        "name": {
+                            "sun": "neděle",
+                            "mon": "pondělí",
+                            "tue": "úterý",
+                            "wed": "středa",
+                            "thurs": "Čtvrtek",
+                            "fri": "pátek",
+                            "sat": "sobota"
+                        },
+                        "everyday": "Každý den",
+                        "weekdays": "Pracovní dny",
+                        "weekends": "Víkendy"
+                    }
                 }
             },
             "audio": {

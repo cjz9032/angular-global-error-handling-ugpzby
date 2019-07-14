@@ -833,9 +833,36 @@
                             "unit1": "Horas",
                             "unit2": "Minutos",
                             "unit3": "AM/PM"
+                        },
+                        "amPms": {
+                            "am": "AM",
+                            "pm": "PM"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "Por favor seleccione al menos un día.",
+                    "days": {
+                        "shortName": {
+                            "sun": "Domingo",
+                            "mon": "Lunes",
+                            "tue": "Martes",
+                            "wed": "Miércoles",
+                            "thurs": "Jueves",
+                            "fri": "Viernes",
+                            "sat": "Sábado"
+                        },
+                        "name": {
+                            "sun": "Domingo",
+                            "mon": "Lunes",
+                            "tue": "Martes",
+                            "wed": "Miércoles",
+                            "thurs": "Jueves",
+                            "fri": "Viernes",
+                            "sat": "Sábado"
+                        },
+                        "everyday": "Todos los días",
+                        "weekdays": "Entre semana",
+                        "weekends": "Fines de semana"
+                    }
                 }
             },
             "audio": {

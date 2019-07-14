@@ -833,9 +833,36 @@
                             "unit1": "Saat",
                             "unit2": "Dakika",
                             "unit3": "AM/PM"
+                        },
+                        "amPms": {
+                            "am": "AM",
+                            "pm": "PM"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "Lütfen en az bir gün seçin.",
+                    "days": {
+                        "shortName": {
+                            "sun": "Pazar",
+                            "mon": "Pazartesi",
+                            "tue": "Salı",
+                            "wed": "Çarşamba",
+                            "thurs": "Perşembe",
+                            "fri": "Cuma",
+                            "sat": "Cumartesi"
+                        },
+                        "name": {
+                            "sun": "Pazar",
+                            "mon": "Pazartesi",
+                            "tue": "Salı",
+                            "wed": "Çarşamba",
+                            "thurs": "Perşembe",
+                            "fri": "Cuma",
+                            "sat": "Cumartesi"
+                        },
+                        "everyday": "Her gün",
+                        "weekdays": "Hafta içi",
+                        "weekends": "Hafta sonları"
+                    }
                 }
             },
             "audio": {

@@ -833,9 +833,36 @@
                             "unit1": "h",
                             "unit2": "min",
                             "unit3": "dop./pop."
+                        },
+                        "amPms": {
+                            "am": "dop",
+                            "pm": "pop"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "Izberite vsaj en dan.",
+                    "days": {
+                        "shortName": {
+                            "sun": "Nedelja",
+                            "mon": "Ponedeljek",
+                            "tue": "Torek",
+                            "wed": "Sreda",
+                            "thurs": "Četrtek",
+                            "fri": "Petek",
+                            "sat": "Sobota"
+                        },
+                        "name": {
+                            "sun": "Nedelja",
+                            "mon": "Ponedeljek",
+                            "tue": "Torek",
+                            "wed": "Sreda",
+                            "thurs": "Četrtek",
+                            "fri": "Petek",
+                            "sat": "Sobota"
+                        },
+                        "everyday": "Vsak dan",
+                        "weekdays": "Med tedni",
+                        "weekends": "Vikendi"
+                    }
                 }
             },
             "audio": {

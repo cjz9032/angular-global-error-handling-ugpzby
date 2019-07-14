@@ -833,9 +833,36 @@
                             "unit1": "Sati",
                             "unit2": "Minuti",
                             "unit3": "Pre podne/po podne"
+                        },
+                        "amPms": {
+                            "am": "Pre podne",
+                            "pm": "po podne"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "Odaberite najmanje jedan dan.",
+                    "days": {
+                        "shortName": {
+                            "sun": "Nedelja",
+                            "mon": "Ponedeljak",
+                            "tue": "Utorak",
+                            "wed": "Sreda",
+                            "thurs": "Četvrtak",
+                            "fri": "Petak",
+                            "sat": "Subota"
+                        },
+                        "name": {
+                            "sun": "Nedelja",
+                            "mon": "Ponedeljak",
+                            "tue": "Utorak",
+                            "wed": "Sreda",
+                            "thurs": "Četvrtak",
+                            "fri": "Petak",
+                            "sat": "Subota"
+                        },
+                        "everyday": "Svaki dan",
+                        "weekdays": "Weekdays",
+                        "weekends": "Vikendom"
+                    }
                 }
             },
             "audio": {
