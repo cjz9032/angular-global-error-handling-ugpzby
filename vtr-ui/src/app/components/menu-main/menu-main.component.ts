@@ -149,7 +149,7 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 		});
 
 		this.isDashboard = true;
-		this.initInputAccessories()
+		this.initInputAccessories();
 	}
 	ngAfterViewInit(): void {
 		this.getMenuItems().then((items) => {
@@ -350,6 +350,7 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 							(responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && (responses[7] > 0));
 						// const isAvailable = true;
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, isAvailable);
+
 						// avoid duplicate entry. if not added earlier then add menu
 						if (isAvailable && !isSmartAssistSupported) {
 							this.addSmartAssistMenu(myDeviceItem);

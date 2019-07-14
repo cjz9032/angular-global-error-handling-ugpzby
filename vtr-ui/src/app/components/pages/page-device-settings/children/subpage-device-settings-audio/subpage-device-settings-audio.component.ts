@@ -152,7 +152,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.getDolbyMode()
 					.then((response: DolbyModeResponse) => {
-						alert(response);
 						this.dolbyModeResponse = response;
 						console.log('getDolbyModesStatus:', response);
 					}).catch(error => {
