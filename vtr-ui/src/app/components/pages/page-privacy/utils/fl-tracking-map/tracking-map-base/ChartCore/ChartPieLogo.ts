@@ -7,10 +7,10 @@ export class ChartPieLogo {
 
 	private _logo: Logo;
 
-	protected _pieLine: ChartPieLine;
+	protected _pieLine: InstanceType<typeof ChartPieLine>;
 	protected _chartProps: ChartProps;
 
-	constructor(pieLine: ChartPieLine, chartProps: ChartProps) {
+	constructor(pieLine: InstanceType<typeof ChartPieLine>, chartProps: ChartProps) {
 		const size = (typeof pieLine !== 'undefined') ? pieLine.pie.data.size : 0;
 
 		const transform: Transform2 = {

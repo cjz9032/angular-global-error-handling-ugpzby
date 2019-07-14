@@ -77,8 +77,7 @@
 	}
 
 	.content-page-2 {
-		overflow-y: auto;
-		overflow-x: hidden;
+		overflow-y: scroll;
 		color: $dark;
 		padding: 0 3.7rem 0 7.2rem;
 		margin-right: 2rem;

@@ -60,8 +60,8 @@ export class SmartStandbyComponent implements OnInit {
 				}).catch((error) => {
 					console.log('getSmartStandbyCapability Error', error);
 				});
-			// this.initSmartStandby();
 		}
+		// this.initSmartStandby();
 	}
 
 	initSmartStandby() {
@@ -104,43 +104,26 @@ export class SmartStandbyComponent implements OnInit {
 			this.smartStandbyStartTime = '00:00';
 			this.smartStandbyEndTime = '00:00';
 		}
-
-		const diff = this.calculateTimeDifference(this.smartStandbyStartTime, this.smartStandbyEndTime);
-		if (diff > 20) {
-			this.showDiffNote = true;
-		} else {
-			this.showDiffNote = false;
-		}
+		this.isStartEndTimeValid();
 	}
 
 	onSetActiveStartEnd(event, isStart) {
-		let diff, unchangedTime;
 		let activeStartEnd;
 		if (isStart) {
 			activeStartEnd = event + '-' + this.smartStandbyEndTime;
-			unchangedTime = this.smartStandbyEndTime;
 		} else {
 			activeStartEnd = this.smartStandbyStartTime + '-' + event;
-			unchangedTime = this.smartStandbyStartTime;
-		}
-		diff = this.calculateTimeDifference(unchangedTime, event);
-		if (diff > 20) {
-			this.showDiffNote = true;
-		} else {
-			this.showDiffNote = false;
 		}
 		this.smartStandby.activeStartEnd = activeStartEnd;
 		this.splitStartEndTime();
-		try {
-			console.log('setSmartStandbyStartEndTime entered', event);
-			if (this.powerService.isShellAvailable) {
-				if (!(diff > 20)) {
+		if (!this.showDiffNote) {
+			try {
+				console.log('setSmartStandbyStartEndTime entered', event);
+				if (this.powerService.isShellAvailable) {
 					this.powerService.setSmartStandbyActiveStartEnd(activeStartEnd)
 						.then((value: number) => {
 							console.log('setSmartStandbyStartEndTime.then', value);
 							if (value === 0) {
-								// this.smartStandby.activeStartEnd = activeStartEnd;
-								// this.splitStartEndTime();
 								console.log('smartStandbyStartEndTime is set successfully');
 							}
 						})
@@ -148,12 +131,10 @@ export class SmartStandbyComponent implements OnInit {
 							console.error('setSmartStandbyStartTime', error);
 						});
 				}
+			} catch (error) {
+				console.error(error.message);
 			}
-		} catch (error) {
-			console.error(error.message);
 		}
-		// this.smartStandby.activeStartEnd = activeStartEnd;
-		// this.splitStartEndTime();
 	}
 
 	onSetDaysOfWeekOff(event) {
@@ -166,7 +147,6 @@ export class SmartStandbyComponent implements OnInit {
 					.then((value: number) => {
 						console.log('setSmartStandbyDaysOfWeekOff.then', value);
 						if (value === 0) {
-							// this.smartStandby.daysOfWeekOff = daysOfWeekOff;
 							console.log('smartStandbyDaysOfWeekOff is set successfully');
 						}
 					})
@@ -177,16 +157,19 @@ export class SmartStandbyComponent implements OnInit {
 		} catch (error) {
 			console.error(error.message);
 		}
-		// this.smartStandby.daysOfWeekOff = daysOfWeekOff;
 	}
 
-	calculateTimeDifference(startTime, endTime) {
-		let hourMinutes = startTime.split(':');
+	isStartEndTimeValid() {
+		let hourMinutes = this.smartStandbyStartTime.split(':');
 		const startMinutes = parseInt(hourMinutes[0], 10) * 60 + parseInt(hourMinutes[1], 10);
 
-		hourMinutes = endTime.split(':');
+		hourMinutes = this.smartStandbyEndTime.split(':');
 		const endMinutes = parseInt(hourMinutes[0], 10) * 60 + parseInt(hourMinutes[1], 10);
-		const diffTime = (Math.abs(endMinutes - startMinutes) / 60);
-		return diffTime;
+		const timeDiff = (endMinutes - startMinutes) / 60;
+		if (timeDiff > 20 || timeDiff <= 0) {
+			this.showDiffNote = true;
+		} else {
+			this.showDiffNote = false;
+		}
 	}
 }

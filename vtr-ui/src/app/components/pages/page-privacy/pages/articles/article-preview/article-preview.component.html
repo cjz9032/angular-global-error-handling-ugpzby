@@ -1,17 +1,13 @@
-<div class="article-preview" (click)="openSingleArticle(article.id)">
-  <img class="article-preview__image" [src]="article.image" alt="{{article.title}}">
+<div class="article-preview">
+  <img class="article-preview__image" [src]="article.FeatureImage" alt="{{article.Title}}">
   <div class="article-preview__description">
-    <h2 class="article-preview__title" vtrCutMultilineTextWithDots [textToAppend]="article.title" title="{{article.title}}"></h2>
-    <div class="article-preview__read-more">Read more</div>
+    <h2 class="article-preview__title" vtrCutMultilineTextWithDots [textToAppend]="article.Title" title="{{article.Title}}"></h2>
+    <div class="article-preview__read-more"
+		 vtrSendAnalytics
+		 [metricsEvent]="'ItemClick'"
+		 [metricsItem]="'ArticlesReadMoreItem'"
+		 [metricsParam]="{'ArticleId': article.ActionLink}"
+		 (click)="openArticle.emit(article.ActionLink)">
+		Read more</div>
   </div>
 </div>
-
-<vtr-common-popup [popUpId]="articlePopupId" size="large">
-  <ng-template>
-    <vtr-article-single [articleData]="article"></vtr-article-single>
-    <vtr-big-pitch (clickMore)="closeArticlePopup()"></vtr-big-pitch>
-
-    <a class="all-articles-link" routerLink="/privacy/articles" (click)="closeArticlePopup()">see all articles</a>
-  </ng-template>
-
-</vtr-common-popup>

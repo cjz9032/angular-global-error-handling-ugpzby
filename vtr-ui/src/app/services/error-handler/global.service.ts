@@ -1,4 +1,4 @@
-import {ErrorHandler, Inject, Injectable} from '@angular/core';
+import { ErrorHandler, Injectable } from '@angular/core';
 
 @Injectable({
 	providedIn: 'root'
@@ -6,6 +6,6 @@ import {ErrorHandler, Inject, Injectable} from '@angular/core';
 export class GlobalErrorHandler implements ErrorHandler {
 
 	handleError(error) {
-		console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ', error);
+		console.error('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ', error);
 	}
 }

@@ -42,18 +42,24 @@ export class SidebarInstallWidgetService {
 		},
 		[RoutersName.TRACKERS]: {
 			visible: true,
-			title: 'Block trackers and stay private with Lenovo Privacy',
+			title: 'Block trackers and stay private with Lenovo Privacy Essentials',
 			text: 'Trial duration 14-day. No credit card required.',
 			image: 'pitch-block/Img_Pith_Trackers',
 		},
 		[RoutersName.BROWSERACCOUNTS]: {
 			visible: true,
-			title: 'Take back control over your data with Lenovo Privacy',
+			title: 'Take back control over your data with Lenovo Privacy Essentials',
 			text: 'Trial duration 14-day. No credit card required.',
 			image: 'pitch-block/Img_Pith_Passwords',
 		},
 		[RoutersName.ARTICLES]: {
-			visible: false,
+			visible: true,
+			title: 'The choice to be private is here',
+			text: 'Trial duration 14-day. No credit card required.',
+			image: 'pitch-block/Img_Pith_Main',
+		},
+		[RoutersName.ARTICLEDETAILS]: {
+			visible: true,
 			title: 'The choice to be private is here',
 			text: 'Trial duration 14-day. No credit card required.',
 			image: 'pitch-block/Img_Pith_Main',

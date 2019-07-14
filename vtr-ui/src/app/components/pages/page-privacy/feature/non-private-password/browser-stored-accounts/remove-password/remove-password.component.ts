@@ -1,13 +1,4 @@
-import {
-	ChangeDetectionStrategy,
-	Component,
-	ElementRef,
-	EventEmitter,
-	Input,
-	OnInit,
-	Output,
-	ViewChild
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { BrowserListType } from '../../../../common/services/vantage-communication.service';
 
 @Component({
@@ -21,9 +12,9 @@ export class RemovePasswordComponent {
 	@Input() popupId: string;
 	@Output() buttonClick = new EventEmitter();
 
-	@ViewChild('chrome') chrome: ElementRef;
-	@ViewChild('edge') edge: ElementRef;
-	@ViewChild('firefox') firefox: ElementRef;
+	@ViewChild('chrome', { static: true }) chrome: ElementRef;
+	@ViewChild('edge', { static: true }) edge: ElementRef;
+	@ViewChild('firefox', { static: true }) firefox: ElementRef;
 
 	getTemplate(browserName: BrowserListType) {
 		let template = this.chrome;

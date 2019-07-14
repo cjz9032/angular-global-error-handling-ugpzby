@@ -9,7 +9,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 export class WidgetWarrantyComponent implements OnInit {
 
 	@Input() item: any;
-	@Input() online: boolean;
+	@Input() isConnected: boolean;
 
 	status = {
 		title: [

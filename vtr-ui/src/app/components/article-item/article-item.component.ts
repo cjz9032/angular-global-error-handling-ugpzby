@@ -13,7 +13,7 @@ export class ArticleItemComponent implements OnInit, AfterViewInit {
 
 	@Input() item: any;
 	@Input() index: any;
-	@ViewChild('articleItemDiv') articleItemDiv;
+	@ViewChild('articleItemDiv', { static: true }) articleItemDiv;
 
 	itemCategory = '';
 	ratioX = 1;
@@ -76,7 +76,7 @@ export class ArticleItemComponent implements OnInit, AfterViewInit {
 			size: 'lg',
 			centered: true,
 			windowClass: 'Article-Detail-Modal',
-			keyboard : false
+			keyboard: false
 		});
 
 		articleDetailModal.componentInstance.articleId = this.item.Id;

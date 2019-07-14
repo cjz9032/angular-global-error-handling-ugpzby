@@ -1,62 +1,62 @@
 @import "../../../app.theme";
 
 .vtr-widget-carousel {
-  box-shadow: $drop_shadow;
+	box-shadow: $drop_shadow;
 
-  a.no-link {
-    cursor: default;
-    pointer-events: none;
-  }
+	a.no-link {
+		cursor: default;
+		pointer-events: none;
+	}
 
-  .default-cursor {
-    cursor: default;
-  }
+	.default-cursor {
+		cursor: default;
+	}
 
-  .carousel-caption {
-    position: absolute;
-    top: 5%;
-    left: 3%;
-    padding: 0;
-    right: 0 !important;
-    text-align: left;
-    z-index: 1;
+	.carousel-caption {
+		position: absolute;
+		top: 5%;
+		left: 3%;
+		padding: 0;
+		right: 0 !important;
+		text-align: left;
+		z-index: 1;
 
-    .title {
-      padding: 0;
-      font-size: 3rem;
-      color: $light;
-      text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-      max-width: 60%;
-    }
+		.title {
+			padding: 0;
+			font-size: 3rem;
+			color: $light;
+			text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+			max-width: 60%;
+		}
 
-    .source {
-      padding: 0;
-      color: $light;
-      text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-      font-size: 1.4rem;
-      font-weight: $weight_medium;
-      text-transform: uppercase;
-    }
-  }
+		.source {
+			padding: 0;
+			color: $light;
+			text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+			font-size: 1.4rem;
+			font-weight: $weight_medium;
+			text-transform: uppercase;
+		}
+	}
 
-  .image {
-    border-radius: $border_radius;
-    width: 100%;
-  }
+	.image {
+		border-radius: $border_radius;
+		width: 100%;
+	}
 }
 
 // DEEP SELECTOR REQUIRED FOR NESTED COMPONENT STYLING
-/deep/ {
-  .vtr-widget-carousel {
-    .carousel {
-      &:focus {
-        outline: none;
-      }
+::ng-deep {
+	.vtr-widget-carousel {
+		.carousel {
+			&:focus {
+				outline: none;
+			}
 
-      .carousel-control-prev,
-      .carousel-control-next {
-        width: 5%;
-      }
-    }
-  }
+			.carousel-control-prev,
+			.carousel-control-next {
+				width: 5%;
+			}
+		}
+	}
 }

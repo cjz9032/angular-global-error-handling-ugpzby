@@ -1,8 +1,6 @@
 <div class="select-box">
 	<div class="dropdown">
-		<a class="dropdown-toggle"
-			id="gaming-drop"
-			(click)="toggleOptions()">
+		<a class="dropdown-toggle" id="gaming-drop" (click)="toggleOptions()">
 			<span *ngIf="selectedOption">{{ selectedOption.name | translate }}</span>
 			<i class="icon icon-arrowdown"></i>
 		</a>
@@ -10,18 +8,18 @@
 			<div class="gaming-dropdown-menu">
 				<ng-container *ngFor="let option of options.dropOptions; index as i">
 					<li [ngClass]="{ 'selected': selectedOption && option.name === selectedOption.name }"
-						(click)="optionSelected(option)"
-						(mouseenter)="changeDescription(option)"
+						(click)="optionSelected(option)" (mouseenter)="changeDescription(option)"
 						(mouseleave)="resetDescription(option)">
 						<a class="dropdown-item"><i class="icon icon-checkline"></i>{{ option.name  | translate}}</a>
 					</li>
 				</ng-container>
-				<div class="information"
-					*ngIf="enableDescription">
+				<div class="information" *ngIf="showDescription">
 					<p>{{ selectedOption.description | translate }}</p>
 				</div>
 			</div>
 		</ng-container>
 	</div>
-	<p class="brightCondition" *ngIf="enableBrightCondition1">{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}} {{'gaming.lightingProfile.brightness.text2.title' | translate}}</p>
+	<p class="brightCondition" *ngIf="enableBrightCondition1">
+		{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}
+		{{'gaming.lightingProfile.brightness.text2.title' | translate}}</p>
 </div>

@@ -28,8 +28,7 @@
 	}
 }
 
-
-/deep/ {
+::ng-deep {
 	.vtr-page-device-gaming {
 		.vtr-page-header {
 			.gaming-header-image {
@@ -43,5 +42,18 @@
 			background-color: $gaming_lightest !important;
 		}
 	}
-
+}
+.vtr-page-right-column{
+	.vtr-page-shift-up{
+		@media #{$medium-screen}{
+			margin-bottom: 16rem;
+		}
+	}
+}
+.vtr-page-left-column{
+	.vtr-page-shift-up{
+		@media #{$mediaquery_X39}{
+			margin-bottom: 74rem;
+		}
+	}
 }

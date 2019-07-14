@@ -5,6 +5,7 @@ import { EnterEmailComponent } from './enter-email/enter-email.component';
 import { ComponentsModule } from '../../common/components/components.module';
 import { CheckBreachedAccountsModule } from '../check-breached-accounts/check-breached-accounts.module';
 import { ScanningComponent } from './scanning/scanning.component';
+import { VtrCommonModule } from '../../common/vtr-common.module';
 
 @NgModule({
 	declarations: [OneClickScanComponent, EnterEmailComponent, ScanningComponent],
@@ -12,6 +13,7 @@ import { ScanningComponent } from './scanning/scanning.component';
 		CommonModule,
 		ComponentsModule,
 		CheckBreachedAccountsModule,
+		VtrCommonModule
 	],
 	exports: [OneClickScanComponent],
 })

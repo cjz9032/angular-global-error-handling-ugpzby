@@ -1,0 +1,102 @@
+import { ActiveProtectionSystemAdvancedComponent } from 'src/app/components/pages/page-smart-assist/active-protection-system-advanced/active-protection-system-advanced.component';
+import { ActiveProtectionSystemComponent } from 'src/app/components/pages/page-smart-assist/active-protection-system/active-protection-system.component';
+import { AutoupdateSettingsComponent } from 'src/app/components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
+import { AvailableUpdatesComponent } from 'src/app/components/pages/page-device-updates/children/available-updates/available-updates.component';
+import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
+import { BatteryCardComponent } from 'src/app/components/battery/battery-card/battery-card.component';
+import { BatteryChargeThresholdSettingsComponent } from 'src/app/components/battery/battery-charge-threshold-settings/battery-charge-threshold-settings.component';
+import { BatteryDetailComponent } from 'src/app/components/battery/battery-detail/battery-detail.component';
+import { BatteryIndicatorComponent } from 'src/app/components/battery/battery-indicator/battery-indicator.component';
+import { CameraBackgroundBlurComponent } from 'src/app/components/camera-background-blur/camera-background-blur.component';
+import { CameraControlComponent } from 'src/app/components/camera-control/camera-control.component';
+import { CameraDetailMockService } from 'src/app/services/camera/camera-detail/camera-detail.mock.service';
+import { ClockComponent } from 'src/app/components/clock/clock.component';
+import { CommonModule } from '@angular/common';
+import { CommonUiModule } from '../common/common-ui.module';
+import { CommonWidgetModule } from '../common/common-widget.module';
+import { ContainerCollapsibleComponent } from 'src/app/components/container-collapsible/container-collapsible.component';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { DisplayColorTempComponent } from 'src/app/components/display/display-color-temp/display-color-temp.component';
+import { DolbyModesTranslationPipe } from 'src/app/pipe/dolby-modes-translation.pipe';
+import { EyeCareModeComponent } from 'src/app/components/display/eye-care-mode/eye-care-mode.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HardwareSettingRoutingModule } from './hardware-settings-routing.module';
+import { InstallationHistoryComponent } from 'src/app/components/pages/page-device-updates/children/installation-history/installation-history.component';
+import { IntelligentMediaComponent } from 'src/app/components/pages/page-smart-assist/intelligent-media/intelligent-media.component';
+import { OledPowerSettingsComponent } from 'src/app/components/display/oled-power-settings/oled-power-settings.component';
+import { PageDeviceComponent } from 'src/app/components/pages/page-device/page-device.component';
+import { PageDeviceSettingsComponent } from 'src/app/components/pages/page-device-settings/page-device-settings.component';
+import { PageDeviceUpdatesComponent } from 'src/app/components/pages/page-device-updates/page-device-updates.component';
+import { PageHardwarescanComponent } from 'src/app/components/pages/page-hardwarescan/page-hardwarescan.component';
+import { PageQuestionsComponent } from 'src/app/components/pages/page-questions/page-questions.component';
+import { PageSettingsComponent } from 'src/app/components/pages/page-settings/page-settings.component';
+import { PageSmartAssistComponent } from 'src/app/components/pages/page-smart-assist/page-smart-assist.component';
+import { PageSupportComponent } from 'src/app/components/pages/page-support/page-support.component';
+import { PageSupportDetailComponent } from 'src/app/components/pages/page-support-detail/page-support-detail.component';
+import { PowerSmartSettingsComponent } from 'src/app/components/widgets/power-smart-settings/power-smart-settings.component';
+import { SharedModule } from '../shared.module';
+import { SmartStandbyComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/smart-standby/smart-standby.component';
+import { SpinnerComponent } from 'src/app/components/common/spinner/spinner.component';
+import { SubpageDeviceSettingsAudioComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
+import { SubpageDeviceSettingsDisplayComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
+import { SubpageDeviceSettingsInputAccessoryComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
+import { SubpageDeviceSettingsPowerComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
+import { UserDefinedKeyComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/user-defined-key/user-defined-key.component';
+import { VoiceComponent } from 'src/app/components/pages/page-smart-assist/voice/voice.component';
+
+@NgModule({
+	declarations: [
+		ActiveProtectionSystemAdvancedComponent,
+		ActiveProtectionSystemComponent,
+		AutoupdateSettingsComponent,
+		AvailableUpdatesComponent,
+		BatteryCardComponent,
+		BatteryChargeThresholdSettingsComponent,
+		BatteryDetailComponent,
+		BatteryIndicatorComponent,
+		CameraBackgroundBlurComponent,
+		CameraControlComponent,
+		ClockComponent,
+		ContainerCollapsibleComponent,
+		DisplayColorTempComponent,
+		DolbyModesTranslationPipe,
+		EyeCareModeComponent,
+		InstallationHistoryComponent,
+		IntelligentMediaComponent,
+		OledPowerSettingsComponent,
+		PageDeviceComponent,
+		PageDeviceSettingsComponent,
+		PageDeviceUpdatesComponent,
+		PageHardwarescanComponent,
+		PageQuestionsComponent,
+		PageSettingsComponent,
+		PageSmartAssistComponent,
+		PageSupportComponent,
+		PageSupportDetailComponent,
+		PowerSmartSettingsComponent,
+		SmartStandbyComponent,
+		SpinnerComponent,
+		SubpageDeviceSettingsAudioComponent,
+		SubpageDeviceSettingsDisplayComponent,
+		SubpageDeviceSettingsInputAccessoryComponent,
+		SubpageDeviceSettingsPowerComponent,
+		UserDefinedKeyComponent,
+		VoiceComponent,
+	],
+	imports: [
+		CommonModule,
+		CommonUiModule,
+		CommonWidgetModule,
+		SharedModule,
+		HardwareSettingRoutingModule,
+		FontAwesomeModule
+	],
+	providers: [
+		{ provide: BaseCameraDetail, useClass: CameraDetailMockService },
+	],
+	schemas: [
+		CUSTOM_ELEMENTS_SCHEMA,
+		NO_ERRORS_SCHEMA
+	]
+})
+export class HardwareSettingsModule { }
