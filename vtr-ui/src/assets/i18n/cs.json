@@ -928,65 +928,65 @@
                 }
             },
             "displayCamera": {
-                "title": "Prikaz i kamera",
-                "subtitle": "Postavke prikaza i kamere",
-                "description": "Ovaj odjeljak omogućava vam da poboljšate vizualni doživljaj i prilagodite svojstva kamere. Istražite više značajki i prilagodite doživljaj prikaza ovdje.",
+                "title": "Displej a kamera",
+                "subtitle": "Nastavení displeje a kamery",
+                "description": "V této části můžete vylepšit vizuální zážitek a nakonfigurovat vlastnosti kamery. Prohlédněte si další funkce a přizpůsobte si možnosti zobrazení.",
                 "jumpTo": {
-                    "title": "SKOČI NA POSTAVKE",
+                    "title": "PŘEJÍT K NASTAVENÍ",
                     "shortcuts": {
                         "display": {
-                            "title": "Prikaz"
+                            "title": "Displej"
                         },
                         "camera": {
-                            "title": "Kamera"
+                            "title": "Fotoaparát"
                         }
                     }
                 },
                 "display": {
-                    "title": "Prikaz",
+                    "title": "Displej",
                     "eyeCareMode": {
-                        "title": "Način rada ugodan za oči",
-                        "checkbox": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",
+                        "title": "Režim Péče o oči",
+                        "checkbox": "Naplánovat režim péče o zrak od západu do východu slunce",
                         "options": {
-                            "warm": "Toplo (bolje za oči)",
-                            "cold": "Hladno"
+                            "warm": "Teplé (lepší pro oči)",
+                            "cold": "Studená"
                         },
-                        "reset": "Ponovno postavite temperaturu",
-                        "tooltip": "Način rada ugodan za oči prilagođava temperaturu boje prikaza kako bi filtrirao plavu svjetlost i smanjio naprezanje očiju.",
-                        "onSunsetToSunriseScheduleDescription": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",
+                        "reset": "Resetovat teplotu",
+                        "tooltip": "Režim Péče o oči upravuje teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí.",
+                        "onSunsetToSunriseScheduleDescription": "Naplánovat režim péče o zrak od západu do východu slunce",
                         "note": {
-                            "title": "Napomena",
-                            "description": "Lenovo Vantage mora pristupiti informacijama o lokaciji kako bi izračunao vrijeme zalaska i izlaska sunca u vašoj regiji."
+                            "title": "Poznámka",
+                            "description": "Program Lenovo Vantage potřebuje získat přístup k informacím o umístění pro výpočet času západu a východu slunce."
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Temperatura boje prikaza",
+                        "title": "Teplota barev displeje",
                         "options": {
-                            "warm": "Toplo (bolje za oči)",
-                            "cold": "Hladno"
+                            "warm": "Teplé (lepší pro oči)",
+                            "cold": "Studená"
                         },
-                        "reset": "Ponovno postavite temperaturu",
-                        "tooltip": "Način rada ugodan za oči prilagođava temperaturu boje prikaza kako bi filtrirao plavu svjetlost i smanjio naprezanje očiju.",
-                        "onSunsetToSunriseScheduleDescription": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",
+                        "reset": "Resetovat teplotu",
+                        "tooltip": "Režim Péče o oči upravuje teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí.",
+                        "onSunsetToSunriseScheduleDescription": "Naplánovat režim péče o zrak od západu do východu slunce",
                         "note": {
-                            "title": "Napomena",
-                            "description": "Lenovo Vantage mora pristupiti informacijama o lokaciji kako bi izračunao vrijeme zalaska i izlaska sunca u vašoj regiji."
+                            "title": "Poznámka",
+                            "description": "Program Lenovo Vantage potřebuje získat přístup k informacím o umístění pro výpočet času západu a východu slunce."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Zaštita privatnosti",
-                        "description": "Tom se značajkom drugim korisnicima onemogućuje prikaz vašeg zaslona. Kada je uključena, mijenja se kut gledanja vašeg prikaza i na taj je način zaštićen od pogleda ljudi oko vas. Načine možete mijenjati i pritiskom na tipke \"Fn+D\".",
-                        "note": "Zaštita privatnosti ne radi u okomitom načinu prikaza zaslona. U ovom je načinu rada zaslon i dalje vidljiv sa strane.",
-                        "labelText": "Omogućivanje značajke prilikom unosa lozinke"
+                        "title": "Ochrana soukromí",
+                        "description": "Tato funkce zabraňuje ostatním osobám sledovat vaši obrazovku. Když je zapnutá, změní zobrazovací úhel obrazovky a uchrání ji tak před zraky osob v okolí. Režimy lze také přepínat stisknutím kombinace kláves „Fn+D“.",
+                        "note": "Ochrana soukromí nefunguje v režimu zobrazení na výšku. V tomto režimu je obrazovka stále viditelná ze stran.",
+                        "labelText": "Povolit tuto funkci při zadávání hesel"
                     },
                     "oledPowerSettings": {
-                        "title": "Postavke napajanja OLED zaslona",
+                        "title": "Nastavení napájení displeje OLED",
                         "description": [
-                            "OLED zaslon računala može smanjiti potrošnju energije i produljiti trajanje baterije selektivnim zatamnjivanjem dijelova zaslona.",
-                            "Da bi se produljio vijek trajanja zaslona, preporučuje se i zatamnjenje programske trake i drugih područja na zaslonu koja se ne mijenjaju često."
+                            "Displej OLED vašeho počítače také umožňuje šetřit energii a prodloužit výdrž baterie selektivním ztmavením některých částí displeje.",
+                            "Také doporučujeme ztmavit hlavní panel a další části displeje, které se příliš často nemění. Prodloužíte tím celkovou životnost displeje."
                         ],
-                        "reset": "Ponovno postavite temperaturu",
-                        "tooltip": "Ova značajka može smanjiti potrošnju energije i produljiti trajanje baterije selektivnim zatamnjivanjem dijelova zaslona.",
+                        "reset": "Resetovat teplotu",
+                        "tooltip": "Tato funkce také umožňuje šetřit energii a prodloužit výdrž baterie selektivním ztmavením některých částí displeje.",
                         "dropDown": {
                             "seconds": "seconds",
                             "minute": "minute",
@@ -1001,32 +1001,32 @@
                     }
                 },
                 "camera": {
-                    "title": "Kamera",
+                    "title": "Fotoaparát",
                     "note": {
-                        "title": "Napomena",
-                        "description": "Lenovo Vantage nema dozvole za pristup kameri. Omogućite aplikaciji Lenovo Vantage pristup kameri."
+                        "title": "Poznámka",
+                        "description": "Program Lenovo Vantage nemá oprávnění k přístupu ke kameře. Povolte tedy programu Lenovo Vantage přístup ke kameře."
                     },
-                    "url": "Idite na postavke privatnosti sustava Windows",
+                    "url": "Přejít na nastavení ochrany soukromí systému Windows",
                     "cameraPrivacy": {
-                        "title": "Način privatnosti kamere",
-                        "tooltip": "Kad je omogućena postavka za zaštitu privatnosti, kamera prestaje slati slike uživo. Tu postavku uključite samo kad ne želite svoju sliku slati drugima tijekom videopoziva."
+                        "title": "Režim soukromí kamery",
+                        "tooltip": "Je-li aktivní nastavení Soukromí, přestane kamera odesílat živý obraz. Tuto volbu tedy zapněte pouze v případě, když během videohovoru nechcete sdílet svůj obraz."
                     },
                     "camera": {
-                        "title": "Kamera",
-                        "tooltip": "Kliknite ovdje kako biste vratili svojstva Kamere na zadane postavke.",
-                        "reset": "Vrati na tvorničke postavke"
+                        "title": "Fotoaparát",
+                        "tooltip": "Kliknutím sem obnovíte výchozí nastavení vlastností kamery.",
+                        "reset": "Obnovit nastavení z výroby"
                     },
-                    "brightness": "Svjetlina",
+                    "brightness": "Jas",
                     "contrast": "Kontrast",
-                    "autoExposure": "Automatska ekspozicija",
-                    "autoFocus": "Automatski fokus",
-                    "notAvailable": "Nije dostupna kamera",
+                    "autoExposure": "Automatická expozice",
+                    "autoFocus": "Automatické ostření",
+                    "notAvailable": "Kamera není dostupná",
                     "camerablur": {
-                        "title": "Zamagljenje pozadine kamere",
-                        "caption": "Ova značajka zamagljuje pozadinu kada se koristite kamerom za videopoziv ili fotografiranje. Možete odabrati različite efekte iz odabira u nastavku.",
-                        "blurMode": "Način zamagljenja",
-                        "comicMode": "Način stripa",
-                        "sketchMode": "Način skice"
+                        "title": "Rozostření pozadí při použití kamery",
+                        "caption": "Tato funkce rozostří pozadí při použití kamery pro libovolný videohovor nebo fotografování. V následujících volbách si můžete vybrat jiný efekt.",
+                        "blurMode": "Režim Rozostření",
+                        "comicMode": "Režim Komiks",
+                        "sketchMode": "Režim Skica"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",
