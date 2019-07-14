@@ -131,11 +131,11 @@ export class DeviceService {
 			return this.sysInfo.getMachineInfo()
 				.then((info) => {
 					this.machineInfo = info;
-					if (info && info.isGaming) {
-						this.isGaming = info.isGaming;
-						this.loadGamingDashboard();
-					}
-
+					this.isGaming = info.isGaming;
+					// if (info && info.isGaming) {
+					// 	this.isGaming = info.isGaming;
+					// 	this.loadGamingDashboard();
+					// }
 					if (info && info.cpuArchitecture) {
 						if (info.cpuArchitecture.indexOf('64') === -1) {
 							this.is64bit = false;

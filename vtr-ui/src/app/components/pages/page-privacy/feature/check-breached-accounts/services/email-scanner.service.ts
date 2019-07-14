@@ -8,6 +8,7 @@ import { PRIVACY_ENVIRONMENT } from '../../../utils/injection-tokens';
 import { INVALID_TOKEN } from '../../../utils/error-codes';
 import { getHashCode } from '../../../utils/helpers';
 import { SafeStorageService } from '../../../common/services/safe-storage.service';
+import { PrivacyModule } from '../../../privacy.module';
 
 interface ConfirmationCodeValidationResponse {
 	status: string;
@@ -47,7 +48,9 @@ export enum ErrorNames {
 
 const USER_EMAIL_HASH = 'privacy-user-email-hash';
 
-@Injectable()
+@Injectable({
+	providedIn: 'root'
+})
 export class EmailScannerService {
 	private _userEmail$ = new BehaviorSubject<string>('');
 	userEmail$ = this._userEmail$.asObservable();

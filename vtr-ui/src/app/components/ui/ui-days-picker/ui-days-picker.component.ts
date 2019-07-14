@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChanges } from '@angular/core';
 import { DaysOfWeek } from 'src/app/enums/days-of-week.enum';
 import { AllDays } from 'src/app/data-models/device/all-days.model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-ui-days-picker',
@@ -15,22 +16,21 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 	checkedLength: any;
 
 	allDays: AllDays[] = [
-		{ 'dayName': 'Sunday', 'shortName': 'sun', 'displayName': 'Sun', 'status': false },
-		{ 'dayName': 'Monday', 'shortName': 'mon', 'displayName': 'Mon', 'status': false },
-		{ 'dayName': 'Tuesday', 'shortName': 'tue', 'displayName': 'Tue', 'status': false },
-		{ 'dayName': 'Wednesday', 'shortName': 'wed', 'displayName': 'Wed', 'status': false },
-		{ 'dayName': 'Thursday', 'shortName': 'thurs', 'displayName': 'Thurs', 'status': false },
-		{ 'dayName': 'Friday', 'shortName': 'fri', 'displayName': 'Fri', 'status': false },
-		{ 'dayName': 'Saturday', 'shortName': 'sat', 'displayName': 'Sat', 'status': false }
+		{ shortName: 'sun', status: false },
+		{ shortName: 'mon', status: false },
+		{ shortName: 'tue', status: false },
+		{ shortName: 'wed', status: false },
+		{ shortName: 'thurs', status: false },
+		{ shortName: 'fri', status: false },
+		{ shortName: 'sat', status: false }
 	];
 	selectedDays: string[] = [];
 	schedule: string;
-	copySchedule: string;
 	daysOfWeek = DaysOfWeek;
 	@Output() setDays = new EventEmitter<string>();
 	showDaysDropDown: boolean;
 
-	constructor() { }
+	constructor(public translate: TranslateService) { }
 
 	ngOnInit() {
 		this.showDaysDropDown = false;
@@ -43,7 +43,6 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 
 	splitDays() {
 		this.selectedDays = this.days.split(',');
-		// this.schedule = this.findSchedule(this.selectedDays);
 		this.checkedLength = this.selectedDays.length;
 		this.setDaysOfWeekOff();
 		this.schedule = this.setSelectedDayText();
@@ -62,14 +61,14 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 	setSelectedDayText(): string {
 		let dayText = '';
 		if (this.checkIsWeekends() && this.checkIsWeekDays()) {
-			dayText = 'Everyday';
+			dayText = this.translate.instant('device.deviceSettings.power.smartStandby.days.everyday');
 		} else if (this.checkIsWeekDays() && !this.checkIsWeekends()) {
-			dayText = 'Weekdays';
+			dayText = this.translate.instant('device.deviceSettings.power.smartStandby.days.weekdays');
 			if (this.getSelectedDays(1).length > 0) {
 				dayText += ',' + this.getSelectedDays(1);
 			}
 		} else if (!this.checkIsWeekDays() && this.checkIsWeekends()) {
-			dayText = 'Weekends';
+			dayText = this.translate.instant('device.deviceSettings.power.smartStandby.days.weekends');
 			if (this.getSelectedDays(2).length > 0) {
 				dayText += ',' + this.getSelectedDays(2);
 			}
@@ -78,7 +77,7 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 		}
 
 		if (dayText === '') {
-			return 'Weekdays';
+			return this.translate.instant('device.deviceSettings.power.smartStandby.days.weekdays');
 		} else {
 			return dayText;
 		}
@@ -106,9 +105,17 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 		let longDayText = '';
 		if (reqType === 1) {  // weekends check
 			if (this.allDays[this.daysOfWeek.Sunday].status) {
-				dayText = this.allDays[this.daysOfWeek.Sunday].displayName;
+
+				dayText = this.translate.instant(
+					'device.deviceSettings.power.smartStandby.days.shortName.'
+					+ this.allDays[this.daysOfWeek.Sunday].shortName);
+
 			} else if (this.allDays[this.daysOfWeek.Saturday].status) {
-				dayText = this.allDays[this.daysOfWeek.Saturday].displayName;
+
+				dayText = this.translate.instant(
+					'device.deviceSettings.power.smartStandby.days.shortName.'
+					+ this.allDays[this.daysOfWeek.Saturday].shortName);
+
 			}
 
 		} else if (reqType === 2) {
@@ -118,24 +125,34 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 					if (dayText.length > 0) {
 						dayText += ', ';
 					}
-					dayText += this.allDays[i].displayName;
+
+					dayText += this.translate.instant(
+						'device.deviceSettings.power.smartStandby.days.shortName.'
+						+ this.allDays[i].shortName);
+
 				}
 			}
 		} else {
 			let cnt = 0;
-			for (let i = 0; i < this.allDays.length; i++) {
-				if (this.allDays[i].status) {
+			this.allDays.forEach((day) => {
+				if (day.status) {
 					if (longDayText === '') {
-						longDayText = this.allDays[i].dayName;
+
+						longDayText = this.translate.instant(
+							'device.deviceSettings.power.smartStandby.days.name.'
+							+ day.shortName);
+
 					}
 
 					if (dayText.length > 0) {
 						dayText += ', ';
 					}
-					dayText += this.allDays[i].displayName;
+					dayText += this.translate.instant(
+						'device.deviceSettings.power.smartStandby.days.shortName.'
+						+ day.shortName);
 					cnt = cnt + 1;
 				}
-			}
+			});
 			if (cnt === 1) {
 				dayText = longDayText;
 			}
@@ -149,7 +166,7 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 		this.showDaysDropDown = false;
 	}
 
-	checkedDays(event) {
+	selectDay(event) {
 		console.log(event);
 		console.log(event.target.checked);
 		console.log(event.target.value);
@@ -163,10 +180,12 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 	}
 
 	clearSettings() {
+		this.splitDays();
 		this.showDaysDropDown = false;
 	}
 
 	onToggleDropDown() {
+		this.splitDays();
 		this.showDaysDropDown = !this.showDaysDropDown;
 	}
 }

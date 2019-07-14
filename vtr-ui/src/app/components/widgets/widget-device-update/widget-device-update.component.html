@@ -32,7 +32,8 @@
 						<div class="col col-3 progress-percent-text">
 							<div class="row progress-right">
 								<span class="progress-value-text">{{percent}}</span>
-								<span class="progress-complete-text">{{'systemUpdates.banner.percent' | translate}}</span>
+								<span
+									class="progress-complete-text">{{'systemUpdates.banner.percent' | translate}}</span>
 							</div>
 						</div>
 					</div>
@@ -52,9 +53,9 @@
 								metricsEvent="ItemClick"
 								metricsParent="Pages.SystemUpdate"
 								metricsItem="'btn.cancel'"
-							class="btn btn-link cancel-check"
-							[disabled]="percent === 0"
-							(click)="cancelUpdates($event)">{{'systemUpdates.banner.cancelCheck' | translate}}</button>
+								class="btn btn-link cancel-check"
+								[disabled]="percent === 0"
+								(click)="cancelUpdates()">{{'systemUpdates.banner.cancelCheck' | translate}}</button>
 						</div>
 					</div>
 				</div>
@@ -76,7 +77,8 @@
 						<div class="col col-3 progress-percent-text">
 							<div class="row progress-right">
 								<span class="progress-value-text">{{downloadingPercent}}</span>
-								<span class="progress-complete-text">{{'systemUpdates.banner.percent' | translate}}</span>
+								<span
+									class="progress-complete-text">{{'systemUpdates.banner.percent' | translate}}</span>
 							</div>
 						</div>
 					</div>
@@ -99,7 +101,8 @@
 						<div class="col col-3 progress-percent-text">
 							<div class="row progress-right">
 								<span class="progress-value-text">{{installingPercent}}</span>
-								<span class="progress-complete-text">{{'systemUpdates.banner.percent' | translate}}</span>
+								<span
+									class="progress-complete-text">{{'systemUpdates.banner.percent' | translate}}</span>
 							</div>
 						</div>
 					</div>
@@ -113,12 +116,12 @@
 					<div class="col col-12 row">
 						<div class="col col-12 cancel-check p-5">
 							<button type="button"
-									id="su_cancel_update_download"
-									attr.aria-label="su_cancel_update_download"
-									vtrMetrics
-									metricsEvent="ItemClick"
-									metricsParent="Pages.SystemUpdate"
-									metricsItem="btn.cancel downloading"
+								id="su_cancel_update_download"
+								attr.aria-label="su_cancel_update_download"
+								vtrMetrics
+								metricsEvent="ItemClick"
+								metricsParent="Pages.SystemUpdate"
+								metricsItem="btn.cancel downloading"
 								class="btn btn-link cancel-check"
 								[disabled]="downloadingPercent === 100 || downloadingPercent === 0"
 								(click)="onCancelUpdateDownload()">{{'systemUpdates.banner.cancelUpdates' | translate}}</button>

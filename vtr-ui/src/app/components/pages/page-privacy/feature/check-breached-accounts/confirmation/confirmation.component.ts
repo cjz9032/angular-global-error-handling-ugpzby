@@ -21,7 +21,7 @@ import { SafeStorageService } from '../../../common/services/safe-storage.servic
 	styleUrls: ['./confirmation.component.scss']
 })
 export class ConfirmationComponent implements OnInit, OnDestroy, AfterViewInit {
-	@ViewChild('confirmationInput') confirmationInput: ElementRef;
+	@ViewChild('confirmationInput', { static: true }) confirmationInput: ElementRef;
 	@Output() confirmationSuccess = new EventEmitter<boolean>();
 
 	userEmail = this.safeStorageService.getEmail();

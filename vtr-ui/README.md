@@ -1,6 +1,6 @@
 # Lenovo Vantage 3.0 Release - UI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
 
 ## Development server
 

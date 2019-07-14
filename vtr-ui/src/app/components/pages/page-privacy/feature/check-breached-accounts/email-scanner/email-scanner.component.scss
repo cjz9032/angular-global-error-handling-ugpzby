@@ -23,6 +23,16 @@
 			margin: 5rem 0 0 0;
 		}
 	}
+
+	&__preview-link {
+		@extend %button-link;
+		padding: 0;
+		border-bottom: 1px solid #2D62D8;
+
+		&:before {
+			display: none;
+		}
+	}
 }
 
 .check-breaches-description {
@@ -31,14 +41,14 @@
 
 	&__text {
 		color: #667481;
-		font-size: 1.4rem;
+		font-size: 1.6rem;
 		font-weight: bold;
 		margin: 0 2rem 0 0;
 	}
 
 	&__link {
 		color: #4A90E2;
-		font-size: 1.4rem;
+		font-size: 1.6rem;
 		font-weight: bold;
 		text-decoration: underline;
 		margin: 0;
@@ -75,14 +85,14 @@
 	&__title {
 		text-transform: uppercase;
 		color: #34495E;
-		font-size: 1.4rem;
+		font-size: 1.6rem;
 		font-weight: bold;
 		line-height: 2.3rem;
 	}
 
 	&__text {
 		color: #667481;
-		font-size: 1.4rem;
+		font-size: 1.6rem;
 		font-weight: 300;
 		line-height: 2.3rem;
 		margin: 1rem 0 0 0;

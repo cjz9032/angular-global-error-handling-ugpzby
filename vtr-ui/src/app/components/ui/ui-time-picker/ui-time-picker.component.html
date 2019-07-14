@@ -31,7 +31,7 @@
 									<p class="mr-5">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit3' | translate }}
 									</p>
-									<span class="mr-5">{{amPms[amPm]}}</span>
+									<span class="mr-5">{{amPms[amPm] | translate}}</span>
 								</div>
 
 								<div class="toggle-icon">
@@ -81,9 +81,6 @@
 
 									</div>
 									<div class="am-pm ml-5 highlight">
-										<div class="toggle-icon">
-											<!-- <fa-icon [icon]="['fal', 'chevron-up']"></fa-icon> -->
-										</div>
 										<span>
 											<label class="inline-block">
 												<input class="label-radio"
@@ -93,21 +90,11 @@
 													value="0"
 													[checked]="copyAmPm==0"
 													(click)="setAmPm(0)" />
-												<p class="label-text">AM</p>
+												<p class="label-text">{{ amPms[0] | translate }}</p>
 											</label>
 										</span><br>
 										<span>
 											<label class="inline-block">
-												<!-- <fa-layers [fixedWidth]="true">
-													<fa-icon [icon]="['far', 'circle']"
-														class="label-radio"></fa-icon>
-													<fa-icon [icon]="['fas', 'circle']"
-														transform="shrink-2"
-														class="label-inner-radio">
-													</fa-icon>
-												</fa-layers> -->
-												<!-- <fa-icon class="label-radio"
-													[icon]="['far', 'circle']"></fa-icon> -->
 												<input class="label-radio"
 													id="radio2"
 													[name]="'ampmradio'+id"
@@ -115,12 +102,9 @@
 													value="1"
 													[checked]="copyAmPm==1"
 													(click)="setAmPm(1)" />
-												<p class="label-text">PM</p>
+												<p class="label-text">{{ amPms[1] | translate }}</p>
 											</label>
 										</span>
-										<div class="toggle-icon">
-											<!-- <fa-icon [icon]="['fal', 'chevron-down']"></fa-icon> -->
-										</div>
 									</div>
 								</div>
 							</div>
