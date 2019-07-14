@@ -15,6 +15,10 @@
 			width: 70%;
 			margin: 0;
 			padding: 0;
+			@media #{$mediaquery_12} {
+
+				width: 80%;
+			}
 		}
 		.hours-block,
 		.minutes-block,
@@ -51,9 +55,10 @@
 			border-left: 1px solid $shade_light;
 			border-right: 1px solid $shade_light;
 			padding: 0 5rem;
-			margin-left: 20px;
+			margin-left: 12px;
 			@media #{$mediaquery_12} {
-				padding: 0 3rem;
+				padding: 0 4rem;
+				margin-left: 0px;
 			}
 		}
 	}
@@ -188,4 +193,9 @@
 		opacity: 0.5;
 		pointer-events: none;
 	}
+}
+
+.ml-52{
+margin-left: 1rem;
+
 }

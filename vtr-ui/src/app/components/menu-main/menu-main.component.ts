@@ -113,14 +113,14 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 		}
 
 		this.router.events.subscribe((ev) => {
-			if (ev instanceof NavigationEnd) { 
+			if (ev instanceof NavigationEnd) {
 				this.currentUrl = ev.url;
 				if (this.currentUrl === '/device-gaming' || this.currentUrl === '/gaming' || this.currentUrl === '/') {
 					this.isGamingHome = true;
 				} else {
 					this.isGamingHome = false;
 				}
-			 }
+			}
 		});
 	}
 
@@ -304,6 +304,8 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 	getMenuItems(): Promise<any> {
 		console.log('Getting menu items for the Gaming device?', this.deviceService.isGaming);
 		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
+			/* Privacy feauture hidden in MVP 2 have to remove below line, if want to show privacy feauture */
+			items = items.filter(item => item.id !== 'privacy'); /* For hidding privacy feauture*/
 			this.items = items;
 			return this.items;
 		});

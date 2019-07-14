@@ -1,7 +1,6 @@
-@import '../../../app.theme.scss';
+@import "../../../app.theme.scss";
 
 .vtr-modal-battery-charge-threshold {
-
 	&.modal-body {
 		padding: 0;
 	}
@@ -36,7 +35,7 @@
 
 	.cancel-link {
 		color: $main;
-		font-size: 2rem;
+		font-size: 1.5rem;
 		text-decoration: underline;
 		vertical-align: middle;
 		padding: 1rem 3rem;
@@ -48,6 +47,4 @@
 			text-decoration: underline;
 		}
 	}
-
-
 }
