@@ -163,7 +163,7 @@ export class DashboardService {
 					}
 					// from su plugin
 					const result = { lastupdate: null, status: 0 };
-					return this.sysupdate.getMostRecentUpdateInfo().then((data) => {
+					this.sysupdate.getMostRecentUpdateInfo().then((data) => {
 						if (data && data.lastScanTime) {
 							result.lastupdate = data.lastScanTime;
 							result.status = 1;
@@ -190,19 +190,32 @@ export class DashboardService {
 		}
 	}
 
-	public getWarrantyInfo(): Promise<any> {
+	public getWarrantyInfo(): Observable<any> {
 		try {
 			if (this.sysinfo && this.warranty) {
-				const result = { expired: null, status: 2 };
-				return this.sysinfo.getMachineInfo().then(
-					data => this.warranty.getWarrantyInformation(data.serialnumber).then((warrantyRep) => {
-						if (warrantyRep && warrantyRep.status !== 2) {
-							result.expired = warrantyRep.endDate;
-							result.status = warrantyRep.status;
-						}
-						return Promise.resolve(result);
-					}, () => Promise.resolve(result))
-				);
+				return new Observable(observer => {
+					// from loccal storage
+					const cacheWarranty = this.commonService.getLocalStorageValue(LocalStorageKey.LastWarrantyStatus);
+					if (cacheWarranty) {
+						observer.next(cacheWarranty);
+					}
+					const result = { expired: null, status: 2 };
+					this.sysinfo.getMachineInfo().then(
+						data => this.warranty.getWarrantyInformation(data.serialnumber).then((warrantyRep) => {
+							if (warrantyRep && warrantyRep.status !== 2) {
+								result.expired = warrantyRep.endDate;
+								result.status = warrantyRep.status;
+							}
+							this.commonService.setLocalStorageValue(LocalStorageKey.LastWarrantyStatus, result);
+							observer.next(result);
+							observer.complete();
+						}, () => {
+							this.commonService.setLocalStorageValue(LocalStorageKey.LastWarrantyStatus, result);
+							observer.next(result);
+							observer.complete();
+						})
+					);
+				});
 			}
 			return undefined;
 		} catch (error) {
