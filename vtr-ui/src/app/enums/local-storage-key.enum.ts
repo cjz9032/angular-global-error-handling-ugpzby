@@ -144,5 +144,6 @@ export enum LocalStorageKey {
 	allGamingCapabilities = '[LocalStorageKey] AllGamingCapabilities',
 
 	LastSystemUpdateStatus = '[LocalStorageKey] SystemUpdateStatus',
+	LastWarrantyStatus = '[LocalStorageKey] LastWarrantyStatus',
 	InputAccessoriesCapability = '[LocalStorageKey] InputAccessoriesCapability'
 }
