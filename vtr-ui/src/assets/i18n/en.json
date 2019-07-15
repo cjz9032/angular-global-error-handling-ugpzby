@@ -493,9 +493,9 @@
 				"tips1": "Please leave any additional comments",
 				"comments": "Comments...",
 				"button": "Submit",
-				"addScreenshot": "Add ScreenShot",
+				"addScreenshot": "Add Screenshot",
 				"sendFeedback": "Send Feedback",
-				"submitScreenShot": "Submit Screen Shot",
+				"submitScreenShot": "Submit Screenshot",
 				"messages": {
 					"feedbackSuccess": "Thank you for your feedback !"
 				}
