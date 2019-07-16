@@ -44,8 +44,8 @@ export enum licenseTypes {
 	Unknown,
 	Free,
 	Trial,
-	TrialExpired,
 	Subscription,
+	TrialExpired,
 	SubscriptionExpired,
 	NonInstalled
 }
