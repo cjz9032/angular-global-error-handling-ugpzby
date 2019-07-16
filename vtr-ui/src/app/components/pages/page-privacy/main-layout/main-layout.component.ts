@@ -7,6 +7,7 @@ import { instanceDestroyed } from '../utils/custom-rxjs-operators/instance-destr
 import { RoutersName } from '../privacy-routing-name';
 import { FigleafOverviewService } from '../common/services/figleaf-overview.service';
 import { TaskActionService } from '../common/services/task-action.service';
+import {WidgetDataService} from '../common/services/widget-data.service';
 
 interface PageSettings {
 	showPrivacyScore: boolean;
@@ -58,7 +59,8 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private routerChangeHandler: RouterChangeHandlerService,
 		private figleafOverviewService: FigleafOverviewService,
-		private taskActionService: TaskActionService
+		private taskActionService: TaskActionService,
+		private widgetDataService: WidgetDataService,
 	) {
 	}
 
