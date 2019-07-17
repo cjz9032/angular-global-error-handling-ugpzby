@@ -156,6 +156,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit,
 			}
 		} else if (switchPage === 3) {
 			this.showPageLenovoId = true;
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
 			this.chs.off(EventTypes.lenovoIdStatusChange, callback);
 			if (isLocationServiceOn) {
 				this.closeModal();
