@@ -9,9 +9,9 @@
 			padding: 0 1rem;
 		}
 		.vtr-row-switch {
-      // padding-right: 3rem;
-      padding-right: 0;
-      display: flex;
+			// padding-right: 3rem;
+			padding-right: 0;
+			display: flex;
 			> div.right-align {
 				float: right;
 				::ng-deep span.switch {
@@ -61,6 +61,7 @@
 
 		.left-icon-block {
 			width: 2rem;
+			color: $icon_color;
 		}
 
 		.right-icon {

@@ -4,6 +4,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { UDKActionInfo, INPUT_TEXT, OPEN_WEB } from './UDKActionInfo';
+import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 
 
 @Component({
@@ -56,8 +57,11 @@ export class UserDefinedKeyComponent implements OnInit {
 		try {
 			this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 			if (this.machineType === 1) {
-				this.getUDKCapability();
-				this.getUDKTypeList();
+				let inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability)
+				this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
+				if (this.hasUDKCapability) {
+					this.getUDKTypeList();
+				}
 			} else {
 				this.hasUDKCapability = false;
 			}
@@ -86,24 +90,6 @@ export class UserDefinedKeyComponent implements OnInit {
 				this.selectedValue = this.userDefinedKeyOptions[this.udkActionInfo.index];
 				this.description = this.udkActionInfo.actionValue;
 				this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions,'1');
-		}
-	}
-
-	public getUDKCapability() {
-		try {
-			if (this.keyboardService.isShellAvailable) {
-				this.keyboardService.GetUDKCapability()
-				.then((value: boolean) => {
-					console.log('keyboard UDKCapability here -------------.>', value);
-					this.hasUDKCapability = value;
-				})
-				.catch(error => {
-					console.error('keyboard UDKCapability error here', error);
-				});
-			}
-		}
-		catch (error) {
-			console.error(error.message);
 		}
 	}
 

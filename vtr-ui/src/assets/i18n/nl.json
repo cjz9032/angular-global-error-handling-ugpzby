@@ -647,89 +647,31 @@
                         "unknown": "Unknown"
                     },
                     "manufacturer": {
-                        "title": "Manufacturer",
+                        "title": "Fabrikant",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     }
                 },
                 "condition": {
-                    "Illegal": {
-                        "description": "you cannot use the attached battery with this computer.",
-                        "description1": "Replace",
-                        "description2": "it with a battery of correct model."
-                    },
-                    "Good": {
-                        "title": "The battery is in good condition."
-                    },
-                    "Exhaustion": {
-                        "description": "wear. The battery cannot be charged. Replace the battery.",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "Bad": {
-                        "title": "A battery error has occurred.",
-                        "description": "The battery cannot be charged/discharged . Replace the battery."
-                    },
-                    "NotDetected": {
-                        "title": "No battery detected or not",
-                        "description": "plugged in battery."
-                    },
-                    "NotGood": {
-                        "title": "The battery is not in a good Condition"
-                    },
-                    "LimitedACAdapterSupport": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
-                    },
-                    "NotSupportACAdapter": {
-                        "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
-                    },
-                    "MissingDriver": {
-                        "title": "The Lenovo Power Manager driver",
-                        "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
-                    },
-                    "StoreLimitation": {
-                        "title": "The battery can only store",
-                        "description1": "of",
-                        "description2": "it's original full charge capacity"
-                    },
-                    "HighTemperature": {
-                        "title": "Discharging",
-                        "description": "has been stopped because the",
-                        "description1": "battery temperature is too high"
-                    },
-                    "TrickleCharge": {
-                        "description": "The battery was",
-                        "description1": "completely discharged",
-                        "description2": "and needs to be recharged. This might take ten hours or more."
-                    },
-                    "OverheatedBattery": {
-                        "description": "The battery is",
-                        "description1": "too hot.",
-                        "description2": "Remove it from the computer and cool it to room temperature."
-                    },
-                    "PermanentError": {
-                        "description": "The battery has",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "HardwareAuthenticationError": {
-                        "description": "The battery installed is",
-                        "description1": "is not supported",
-                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
-                    }
+                    "Illegal": "De geïnstalleerde batterij wordt <b>niet ondersteund</b> door het systeem en kan niet worden opgeladen. Vervang de batterij door een Lenovo-batterij die geschikt is voor dit systeem.",
+                    "Good": "<b>De batterij is in goede staat.</b>",
+                    "Exhaustion": "De batterij is <b>defect als gevolg van normale slijtage.</b> De batterij kan niet worden opgeladen. Vervang de batterij.",
+                    "Bad": "<b>Er is een batterijfout opgetreden.</b> De batterij kan niet worden opgeladen/ontladen. Vervang de batterij.",
+                    "NotDetected": "<b>Er is geen batterij aangetroffen of</b> aangesloten.",
+                    "NotGood": "<b>De batterij is niet in goede staat.</b>",
+                    "NotSupportACAdapter": "<b>De netvoedingsadapter wordt niet ondersteund.</b> De Lenovo-computer biedt geen ondersteuning voor deze netvoedingsadapter. Deze kan onverwachte afsluitingen tot gevolg hebben. Sluit een juiste netvoedingsadapter aan.",
+                    "LimitedACAdapterSupport": "<b>De netvoedingsadapter kan de Lenovo-computer niet voldoende stroom leveren</b>. Dit heeft invloed op de systeemprestaties en de oplaadsnelheid. Sluit de bijbehorende netvoedingsadapter weer aan.",
+                    "MissingDriver": "<b>Het stuurprogramma voor Lenovo-energiebeheer</b> is niet geïnstalleerd of werkt niet goed. Voer Windows Update uit om het meest recente stuurprogramma te installeren.",
+                    "StoreLimitation": "<b>De batterij kan slechts {{percentageLimitation}}% van</b> de oorspronkelijke volledige laadcapaciteit opslaan.",
+                    "HighTemperature": "<b>Het ontladen</b> is gestopt omdat de <b>batterij te heet is geworden.</b>",
+                    "TrickleCharge": "De batterij is <b>volledig ontladen</b> en moet opnieuw worden opgeladen. Dit kan tien uur of langer duren.",
+                    "OverheatedBattery": "De batterij is <b>te heet</b>. Verwijder hem uit de computer en laat hem afkoelen tot kamertemperatuur.",
+                    "PermanentError": "De batterij is <b>defect als gevolg van normale slijtage.</b> De batterij kan niet worden opgeladen. Vervang de batterij."
                 },
-                "updating": "Updating",
-                "thresholdNote": {
-                    "note1": "To extend the battery lifespan, you have set your ",
-                    "note2": "to stop charging at ",
-                    "note3": "battery",
-                    "note4": "and ",
-                    "note": "Note: "
-                },
-                "voltageError": "Battery voltage incorrect",
-                "batteryNotDetected": "No Battery Detected"
+                "updating": "Bezig met updaten",
+                "voltageError": "Batterijspanning onjuist",
+                "batteryNotDetected": "Geen batterij gedetecteerd",
+                "thresholdNote": "<b>Opmerking:</b> om de levensduur van de batterij te verlengen, moet u de oplaaddrempel instellen op {{chargeThresholdInfo.stopValue}}%."
             },
             "power": {
                 "title": "Energiebeheer",
@@ -740,7 +682,8 @@
                     "battery": "Batterij",
                     "power": "Energiebeheer",
                     "cooling": "Intelligent koelen",
-                    "other": "Andere"
+                    "other": "Andere",
+                    "smartStandby": "Smart Standby"
                 },
                 "powerSmartSettings": {
                     "title": "Slimme energiebeheerinstellingen",
@@ -818,7 +761,8 @@
                         "title": "Eenvoudig hervatten",
                         "description": "Schakel deze functie in om de computer sneller te herstellen als u de klep van uw computer vaak opent en sluit.",
                         "tooltip": "Door deze functie herstelt de computer sneller als u de klep van uw computer vaak opent en sluit. Als deze functie is ingeschakeld, wordt de modus voor laag energieverbruik ingeschakeld als u de klep sluit, maar meteen weer hersteld als u de klep binnen 15 minuten nadat u de klep sloot weer opent. Deze functie zorgt er ook voor dat uw notebook lopende activiteiten (zoals het versturen van e-mail of het downloaden van een bestand) probeert af te ronden voordat de slaapstand wordt geactiveerd."
-                    }
+					},
+					"or":"Or"
                 },
                 "otherSettings": {
                     "title": "Overige instellingen",
@@ -890,9 +834,36 @@
                             "unit1": "Uur",
                             "unit2": "Minuten",
                             "unit3": "AM/PM"
+                        },
+                        "amPms": {
+                            "am": "AM",
+                            "pm": "PM"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "Selecteer minimaal één dag.",
+                    "days": {
+                        "shortName": {
+                            "sun": "zon",
+                            "mon": "maan",
+                            "tue": "dins",
+                            "wed": "woens",
+                            "thurs": "donder",
+                            "fri": "vrij",
+                            "sat": "zater"
+                        },
+                        "name": {
+                            "sun": "zondag",
+                            "mon": "maandag",
+                            "tue": "dinsdag",
+                            "wed": "woensdag",
+                            "thurs": "donderdag",
+                            "fri": "vrijdag",
+                            "sat": "zaterdag"
+                        },
+                        "everyday": "Elke dag",
+                        "weekdays": "Doordeweekse dagen",
+                        "weekends": "Weekends"
+                    }
                 }
             },
             "audio": {

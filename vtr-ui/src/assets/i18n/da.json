@@ -647,89 +647,31 @@
                         "unknown": "Unknown"
                     },
                     "manufacturer": {
-                        "title": "Manufacturer",
+                        "title": "Producent",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     }
                 },
                 "condition": {
-                    "Illegal": {
-                        "description": "you cannot use the attached battery with this computer.",
-                        "description1": "Replace",
-                        "description2": "it with a battery of correct model."
-                    },
-                    "Good": {
-                        "title": "The battery is in good condition."
-                    },
-                    "Exhaustion": {
-                        "description": "wear. The battery cannot be charged. Replace the battery.",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "Bad": {
-                        "title": "A battery error has occurred.",
-                        "description": "The battery cannot be charged/discharged . Replace the battery."
-                    },
-                    "NotDetected": {
-                        "title": "No battery detected or not",
-                        "description": "plugged in battery."
-                    },
-                    "NotGood": {
-                        "title": "The battery is not in a good Condition"
-                    },
-                    "LimitedACAdapterSupport": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
-                    },
-                    "NotSupportACAdapter": {
-                        "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
-                    },
-                    "MissingDriver": {
-                        "title": "The Lenovo Power Manager driver",
-                        "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
-                    },
-                    "StoreLimitation": {
-                        "title": "The battery can only store",
-                        "description1": "of",
-                        "description2": "it's original full charge capacity"
-                    },
-                    "HighTemperature": {
-                        "title": "Discharging",
-                        "description": "has been stopped because the",
-                        "description1": "battery temperature is too high"
-                    },
-                    "TrickleCharge": {
-                        "description": "The battery was",
-                        "description1": "completely discharged",
-                        "description2": "and needs to be recharged. This might take ten hours or more."
-                    },
-                    "OverheatedBattery": {
-                        "description": "The battery is",
-                        "description1": "too hot.",
-                        "description2": "Remove it from the computer and cool it to room temperature."
-                    },
-                    "PermanentError": {
-                        "description": "The battery has",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "HardwareAuthenticationError": {
-                        "description": "The battery installed is",
-                        "description1": "is not supported",
-                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
-                    }
+                    "Illegal": "Det batteri, der er installeret, <b>understøttes ikke</b> af dette system og vil ikke blive opladet. Udskift batteriet med det korrekte Lenovo-batteri til systemet.",
+                    "Good": "<b>Batteriets tilstand er god.</b>",
+                    "Exhaustion": "Der er opstået en <b>batterifejl pga. almindelig slid.</b> Batteriet kan ikke oplades. Udskift batteriet.",
+                    "Bad": "<b>Der er opstået en batterifejl.</b> Batteriet kan ikke oplades/aflades. Udskift batteriet.",
+                    "NotDetected": "<b>Der er ikke registreret et batteri</b>, eller der er ikke tilsluttet noget batteri.",
+                    "NotGood": "<b>Batteriets tilstand er ikke god.</b>",
+                    "NotSupportACAdapter": "<b>Vekselstrømsadapter understøttes ikke.</b> Din Lenovo-computer understøtter ikke denne vekselstrømsadapter. Den kan forårsage pludselig nedlukning. Tilslut en korrekt vekselstrømsadapter.",
+                    "LimitedACAdapterSupport": "<b>Vekselstrømsadapteren kan ikke levere nok strøm</b> til din Lenovo-computer. Det vil påvirke systemets ydeevne og opladningshastigheden. Tilslut den korrekte vekselstrømsadapter.",
+                    "MissingDriver": "<b>Lenovo Power Manager-driveren</b> er ikke installeret eller fungerer ikke korrekt. Kør Windows Update for at installere den sidste nye driver.",
+                    "StoreLimitation": "<b>Batteriet kan kun lagre {{percentageLimitation}}% af</b> dets oprindelige kapacitet ved fuld opladning.",
+                    "HighTemperature": "<b>Afladning</b> er stoppet, fordi <b>batteriets temperatur er for høj.</b>",
+                    "TrickleCharge": "Batteriet er blevet <b>fuldstændigt afladet</b> og skal genoplades. Dette kan tage op til ti timer eller mere.",
+                    "OverheatedBattery": "Batteriet er <b>for varmt</b>. Tag det ud af computeren, og lad det køle af til almindelig stuetemperatur.",
+                    "PermanentError": "Der er opstået en <b>batterifejl pga. almindelig slid.</b> Batteriet kan ikke oplades. Udskift batteriet."
                 },
-                "updating": "Updating",
-                "thresholdNote": {
-                    "note1": "To extend the battery lifespan, you have set your ",
-                    "note2": "to stop charging at ",
-                    "note3": "battery",
-                    "note4": "and ",
-                    "note": "Note: "
-                },
-                "voltageError": "Battery voltage incorrect",
-                "batteryNotDetected": "No Battery Detected"
+                "updating": "Opdaterer",
+                "voltageError": "Forkert batterispænding",
+                "batteryNotDetected": "Der blev ikke fundet noget batteri",
+                "thresholdNote": "<b>Bemærk:</b> For at forlænge batteriets levetid har du indstillet batteriet til at stoppe med at oplade ved {{chargeThresholdInfo.stopValue}}%."
             },
             "power": {
                 "title": "Strøm",
@@ -740,7 +682,8 @@
                     "battery": "Batteri",
                     "power": "Strøm",
                     "cooling": "Intelligent køling",
-                    "other": "Andre lande og områder"
+                    "other": "Andre lande og områder",
+                    "smartStandby": "Smart Standby"
                 },
                 "powerSmartSettings": {
                     "title": "Smarte strømindstillinger",
@@ -818,7 +761,8 @@
                         "title": "Nem genoptagelse",
                         "description": "Aktiver denne funktion for at forbedre genoptagelsestiden, hvis du ofte åbner og lukker computerens låg.",
                         "tooltip": "Denne funktion forbedrer genoptagelsestiden, hvis du ofte åbner og lukker computerens låg. Når den er aktiveret, går computeren i en tilstand med lavt strømforbrug, når du lukker dens låg, men den genoptager driften med det samme, hvis du åbner låget inden for 15 minutter efter, du har lukket det. Denne funktion giver din notebook mulighed for at forsøge at udføre ventende aktiviteter (som f.eks. afsendelse af e-mail eller download af en fil), inden systemet går i dvale."
-                    }
+					},
+					"or":"Or"
                 },
                 "otherSettings": {
                     "title": "Andre indstillinger",
@@ -890,9 +834,36 @@
                             "unit1": "Timer",
                             "unit2": "Minutter",
                             "unit3": "AM/PM"
+                        },
+                        "amPms": {
+                            "am": "AM",
+                            "pm": "PM"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "Vælg venligst mindst en dag.",
+                    "days": {
+                        "shortName": {
+                            "sun": "Søndag",
+                            "mon": "Mandag",
+                            "tue": "Tirsdag",
+                            "wed": "Onsdag",
+                            "thurs": "Torsdag",
+                            "fri": "Fredag",
+                            "sat": "Lørdag"
+                        },
+                        "name": {
+                            "sun": "Søndag",
+                            "mon": "Mandag",
+                            "tue": "Tirsdag",
+                            "wed": "Onsdag",
+                            "thurs": "Torsdag",
+                            "fri": "Fredag",
+                            "sat": "Lørdag"
+                        },
+                        "everyday": "Hver dag",
+                        "weekdays": "Hverdage",
+                        "weekends": "Weekender"
+                    }
                 }
             },
             "audio": {

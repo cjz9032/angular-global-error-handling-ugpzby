@@ -647,89 +647,31 @@
                         "unknown": "Unknown"
                     },
                     "manufacturer": {
-                        "title": "Manufacturer",
+                        "title": "Üretici",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     }
                 },
                 "condition": {
-                    "Illegal": {
-                        "description": "you cannot use the attached battery with this computer.",
-                        "description1": "Replace",
-                        "description2": "it with a battery of correct model."
-                    },
-                    "Good": {
-                        "title": "The battery is in good condition."
-                    },
-                    "Exhaustion": {
-                        "description": "wear. The battery cannot be charged. Replace the battery.",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "Bad": {
-                        "title": "A battery error has occurred.",
-                        "description": "The battery cannot be charged/discharged . Replace the battery."
-                    },
-                    "NotDetected": {
-                        "title": "No battery detected or not",
-                        "description": "plugged in battery."
-                    },
-                    "NotGood": {
-                        "title": "The battery is not in a good Condition"
-                    },
-                    "LimitedACAdapterSupport": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
-                    },
-                    "NotSupportACAdapter": {
-                        "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
-                    },
-                    "MissingDriver": {
-                        "title": "The Lenovo Power Manager driver",
-                        "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
-                    },
-                    "StoreLimitation": {
-                        "title": "The battery can only store",
-                        "description1": "of",
-                        "description2": "it's original full charge capacity"
-                    },
-                    "HighTemperature": {
-                        "title": "Discharging",
-                        "description": "has been stopped because the",
-                        "description1": "battery temperature is too high"
-                    },
-                    "TrickleCharge": {
-                        "description": "The battery was",
-                        "description1": "completely discharged",
-                        "description2": "and needs to be recharged. This might take ten hours or more."
-                    },
-                    "OverheatedBattery": {
-                        "description": "The battery is",
-                        "description1": "too hot.",
-                        "description2": "Remove it from the computer and cool it to room temperature."
-                    },
-                    "PermanentError": {
-                        "description": "The battery has",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "HardwareAuthenticationError": {
-                        "description": "The battery installed is",
-                        "description1": "is not supported",
-                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
-                    }
+                    "Illegal": "Takılı pil, sistem tarafından <b>desteklenmiyor</b> ve doldurulmayacak. Lütfen yerine bu sistem için doğru olan Lenovo pilini takın.",
+                    "Good": "<b>Pil iyi durumda.</b>",
+                    "Exhaustion": "Pil <b>normal aşınmaya bağlı olarak arızalandı</b>. Pil doldurulamıyor. Pili değiştirin.",
+                    "Bad": "<b>Bir pil hatası oluştu.</b> Pil doldurulamıyor/boşaltılamıyor. Pili değiştirin.",
+                    "NotDetected": "<b>Pil algılanmadı veya</b> pile takılı değil.",
+                    "NotGood": "<b>Pil iyi durumda değil.</b>",
+                    "NotSupportACAdapter": "<b>AC bağdaştırıcısı desteklenmiyor.</b> Lenovo bilgisayarınız bu AC bağdaştırıcısını desteklemiyor. Aniden kapanmaya neden olabilir. Lütfen doğru AC bağdaştırıcısını bağlayın.",
+                    "LimitedACAdapterSupport": "<b>AC bağdaştırıcısı, Lenovo bilgisayarınıza yeterince güç sağlayamıyor</b>. Bu durum, sistem performansını ve şarj olma hızını etkiler. Lütfen uygun AC güç bağdaştırıcısını bağlayın.",
+                    "MissingDriver": "<b>Lenovo Power Manager sürücüsü</b> yüklü değil veya düzgün çalışmıyor. En son sürücüyü yüklemek için lütfen Windows Update'i çalıştırın.",
+                    "StoreLimitation": "<b>Pil orijinal tam dolum kapasitesinin yalnızca {{percentageLimitation}}% kadarını</b> depolayabilir.",
+                    "HighTemperature": "<b>Pil çok ısındığı için</b> <b>boşaltma</b> işlemi durduruldu.",
+                    "TrickleCharge": "Pil <b>tamamen boşaldı</b> ve yeniden doldurulması gerekiyor. Doldurma işlemi on saat ya da daha fazla sürebilir.",
+                    "OverheatedBattery": "Pilin <b>çok ısındı</b>. Bilgisayardan çıkarın ve oda sıcaklığında soğumasını sağlayın.",
+                    "PermanentError": "Pil <b>normal aşınmaya bağlı olarak arızalandı</b>. Pil doldurulamıyor. Pili değiştirin."
                 },
-                "updating": "Updating",
-                "thresholdNote": {
-                    "note1": "To extend the battery lifespan, you have set your ",
-                    "note2": "to stop charging at ",
-                    "note3": "battery",
-                    "note4": "and ",
-                    "note": "Note: "
-                },
-                "voltageError": "Battery voltage incorrect",
-                "batteryNotDetected": "No Battery Detected"
+                "updating": "Güncelleniyor",
+                "voltageError": "Pil voltajı yanlış",
+                "batteryNotDetected": "Pil algılanmadı",
+                "thresholdNote": "<b>Not:</b> Pilin ömrünü uzatmak için doldurma işleminin {{chargeThresholdInfo.stopValue}}% olduğunda durdurulmasını seçtiniz."
             },
             "power": {
                 "title": "Güç",
@@ -740,7 +682,8 @@
                     "battery": "Pil",
                     "power": "Güç",
                     "cooling": "Akıllı Soğutma",
-                    "other": "Diğer"
+                    "other": "Diğer",
+                    "smartStandby": "Smart Standby"
                 },
                 "powerSmartSettings": {
                     "title": "Güç Akıllı Ayarları",
@@ -818,7 +761,8 @@
                         "title": "Kolay Sürdür",
                         "description": "Bilgisayarınızın kapağını sıklıkla açıp kapatıyorsanız sürdürme süresini iyileştirmek için bu özelliği etkinleştirin.",
                         "tooltip": "Bu özellik, bilgisayarınızın kapağını sıklıkla açıp kapatıyorsanız sürdürme süresini geliştirir. Etkinleştirildiğinde, kapağını kapattığınızda bilgisayarınız düşük güç kipine girer ancak kapattıktan sonraki 15 dakika içerisinde yeniden açmanız durumunda anında sürdürülür. Bu özellik, sistem askıda kipine geçmeden önce bilgisayarınızın bekleyen etkinlikleri (e-posta gönderme veya dosya indirme gibi) tamamlamaya çalışmasına olanak sağlar."
-                    }
+					},
+					"or":"Or"
                 },
                 "otherSettings": {
                     "title": "Diğer Ayarlar",
@@ -890,9 +834,36 @@
                             "unit1": "Saat",
                             "unit2": "Dakika",
                             "unit3": "AM/PM"
+                        },
+                        "amPms": {
+                            "am": "AM",
+                            "pm": "PM"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "Lütfen en az bir gün seçin.",
+                    "days": {
+                        "shortName": {
+                            "sun": "Pazar",
+                            "mon": "Pazartesi",
+                            "tue": "Salı",
+                            "wed": "Çarşamba",
+                            "thurs": "Perşembe",
+                            "fri": "Cuma",
+                            "sat": "Cumartesi"
+                        },
+                        "name": {
+                            "sun": "Pazar",
+                            "mon": "Pazartesi",
+                            "tue": "Salı",
+                            "wed": "Çarşamba",
+                            "thurs": "Perşembe",
+                            "fri": "Cuma",
+                            "sat": "Cumartesi"
+                        },
+                        "everyday": "Her gün",
+                        "weekdays": "Hafta içi",
+                        "weekends": "Hafta sonları"
+                    }
                 }
             },
             "audio": {

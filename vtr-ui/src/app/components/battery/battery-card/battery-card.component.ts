@@ -131,12 +131,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 					&& this.batteryInfo[0].fullChargeCapacity !== null
 					&& this.batteryInfo[0].designCapacity !== undefined && this.batteryInfo[0].designCapacity !== null) {
 					const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
-					this.percentageLimitation = parseFloat(percentLimit.toFixed(2));
+					this.percentageLimitation = parseFloat(percentLimit.toFixed(1));
 					this.param2 = { value: this.percentageLimitation };
 				}
 
-				this.commonService.setLocalStorageValue(LocalStorageKey.BatteryPercentage,
-					this.batteryGauge.percentage);
 				this.isBatteryDetailsBtnDisabled =
 					this.batteryGauge.isPowerDriverMissing || this.batteryInfo.length === 0;
 				this.updateBatteryDetails();
@@ -152,10 +150,12 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.chargeThresholdInfo = chargeThresholdInfo[0];
 			if (chargeThresholdInfo.length > 1) {
 				if (!chargeThresholdInfo[0].isOn && chargeThresholdInfo[1].isOn) {
-					this.chargeThresholdInfo = notification.payload[0];
+					this.chargeThresholdInfo = notification.payload[1];
 				}
 			}
-			this.param1 = { value: this.chargeThresholdInfo.stopValue };
+			if (this.chargeThresholdInfo !== undefined && this.chargeThresholdInfo.isOn) {
+				this.param1 = { value: this.chargeThresholdInfo.stopValue };
+			}
 		}
 	}
 
@@ -165,7 +165,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			const remainingPercentages = [];
 			this.batteryInfo.forEach((info) => {
 				if (info.batteryHealth === undefined || info.batteryHealth === null) {
-					info['batteryHealth'] = 0;
+					info.batteryHealth = 0;
 				}
 				remainingPercentages.push(info.remainingPercent);
 				// if (info.batteryHealth >= this.batteryHealth) {

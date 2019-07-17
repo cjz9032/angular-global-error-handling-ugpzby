@@ -29,7 +29,7 @@
 				[dataGauge]="batteryGauge"> </vtr-battery-detail>
 		</div>
 	</ng-template>
-	<div class="container p-5 background-green">
+	<div class="container p-5 battery-panel-background">
 		<div class="battery-gauge-label text-uppercase">
 			{{'device.deviceSettings.batteryGauge.title' | translate}}
 		</div>
@@ -65,7 +65,8 @@
 				<span *ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation"
 					class="battery-conditions-tips"
 					[innerHTML]="batteryConditionNote | translate:param2"></span>
-				<span class="battery-conditions-tips"
+				<span *ngIf="batteryConditions[i].condition!=batteryConditionsEnum.StoreLimitation"
+					class="battery-conditions-tips"
 					[innerHTML]="batteryConditionNote | translate"></span>
 			</div>
 

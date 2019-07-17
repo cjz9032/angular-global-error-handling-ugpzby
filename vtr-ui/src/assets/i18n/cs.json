@@ -647,89 +647,31 @@
                         "unknown": "Unknown"
                     },
                     "manufacturer": {
-                        "title": "Manufacturer",
+                        "title": "Výrobce",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     }
                 },
                 "condition": {
-                    "Illegal": {
-                        "description": "you cannot use the attached battery with this computer.",
-                        "description1": "Replace",
-                        "description2": "it with a battery of correct model."
-                    },
-                    "Good": {
-                        "title": "The battery is in good condition."
-                    },
-                    "Exhaustion": {
-                        "description": "wear. The battery cannot be charged. Replace the battery.",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "Bad": {
-                        "title": "A battery error has occurred.",
-                        "description": "The battery cannot be charged/discharged . Replace the battery."
-                    },
-                    "NotDetected": {
-                        "title": "No battery detected or not",
-                        "description": "plugged in battery."
-                    },
-                    "NotGood": {
-                        "title": "The battery is not in a good Condition"
-                    },
-                    "LimitedACAdapterSupport": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
-                    },
-                    "NotSupportACAdapter": {
-                        "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
-                    },
-                    "MissingDriver": {
-                        "title": "The Lenovo Power Manager driver",
-                        "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
-                    },
-                    "StoreLimitation": {
-                        "title": "The battery can only store",
-                        "description1": "of",
-                        "description2": "it's original full charge capacity"
-                    },
-                    "HighTemperature": {
-                        "title": "Discharging",
-                        "description": "has been stopped because the",
-                        "description1": "battery temperature is too high"
-                    },
-                    "TrickleCharge": {
-                        "description": "The battery was",
-                        "description1": "completely discharged",
-                        "description2": "and needs to be recharged. This might take ten hours or more."
-                    },
-                    "OverheatedBattery": {
-                        "description": "The battery is",
-                        "description1": "too hot.",
-                        "description2": "Remove it from the computer and cool it to room temperature."
-                    },
-                    "PermanentError": {
-                        "description": "The battery has",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "HardwareAuthenticationError": {
-                        "description": "The battery installed is",
-                        "description1": "is not supported",
-                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
-                    }
+                    "Illegal": "Nainstalovaná baterie <b>není</b> tímto systémem podporována a nebude se dobíjet. Vyměňte baterii za správnou baterii Lenovo určenou pro tento systém.",
+                    "Good": "<b>Stav baterie je dobrý.</b>",
+                    "Exhaustion": "Došlo k <b>selhání baterie z důvodu běžného opotřebení.</b> Baterii nelze nabít. Vyměňte ji.",
+                    "Bad": "<b>Došlo k chybě baterie.</b> Baterii nelze nabít/vybít. Vyměňte ji.",
+                    "NotDetected": "<b>Nebyla zjištěna žádná baterie</b> nebo baterie není připojena.",
+                    "NotGood": "<b>Stav baterie není dobrý.</b>",
+                    "NotSupportACAdapter": "<b>Napájecí adaptér není podporován.</b> Počítač Lenovo tento napájecí adaptér nepodporuje. Může to způsobit náhlé vypnutí. Připojte správný napájecí adaptér.",
+                    "LimitedACAdapterSupport": "<b>Napájecí adaptér nemůže poskytnout počítači Lenovo</b> dostatek energie, což ovlivní výkon systému a rychlost nabíjení. Znovu připojte správný napájecí adaptér.",
+                    "MissingDriver": "<b>Ovladač Lenovo Power Manager</b> není nainstalován nebo nefunguje správně. Spusťte službu Windows Update a nainstalujte nejnovější ovladač.",
+                    "StoreLimitation": "<b>Baterie je schopna se nabít pouze na {{percentageLimitation}}%</b> své původní kapacity.",
+                    "HighTemperature": "<b>Vybíjení</b> bylo zastaveno kvůli <b>přehřátí baterie</b>.",
+                    "TrickleCharge": "Baterie je <b>zcela vybitá</b> a je třeba ji nabít. To může trvat deset i více hodin.",
+                    "OverheatedBattery": "Baterie je <b>přehřátá</b>. Vyjměte ji z počítače a nechte ji vychladnout na pokojovou teplotu.",
+                    "PermanentError": "Došlo k <b>selhání baterie z důvodu běžného opotřebení.</b> Baterii nelze nabít. Vyměňte ji."
                 },
-                "updating": "Updating",
-                "thresholdNote": {
-                    "note1": "To extend the battery lifespan, you have set your ",
-                    "note2": "to stop charging at ",
-                    "note3": "battery",
-                    "note4": "and ",
-                    "note": "Note: "
-                },
-                "voltageError": "Battery voltage incorrect",
-                "batteryNotDetected": "No Battery Detected"
+                "updating": "Aktualizování",
+                "voltageError": "Nesprávné napětí baterie",
+                "batteryNotDetected": "Baterie nebyla nalezena",
+                "thresholdNote": "<b>Poznámka:</b> Abyste prodloužili životnost baterie, nastavili jste ukončení jejího nabíjení při stavu {{chargeThresholdInfo.stopValue}}%."
             },
             "power": {
                 "title": "Napájení",
@@ -740,7 +682,8 @@
                     "battery": "baterie",
                     "power": "Napájení",
                     "cooling": "Inteligentní chlazení",
-                    "other": "Jiná"
+                    "other": "Jiná",
+                    "smartStandby": "Smart Standby"
                 },
                 "powerSmartSettings": {
                     "title": "Inteligentní nastavení napájení",
@@ -818,7 +761,8 @@
                         "title": "Rychlé znovuspuštění",
                         "description": "Aktivujte tuto funkci, zrychlí obnovení provozu počítače v případě, že často otevíráte a zavíráte jeho víko.",
                         "tooltip": "Tato funkce zrychlí obnovení provozu počítače v případě, že často otevíráte a zavíráte jeho víko. Je-li zapnuta, počítač po zavření víka přejde do režimu nízké spotřeby, v případě znovuotevření víka během 15 sekund od jeho zavření se však okamžitě vrátí k běžnému provozu. Kromě toho se díky ní notebook může pokusit dokončit započaté činnosti (například odeslání e-mailu nebo stahování souboru) ještě předtím, než přejde do pohotovostního režimu."
-                    }
+					},
+					"or":"Or"
                 },
                 "otherSettings": {
                     "title": "Další nastavení",
@@ -890,9 +834,36 @@
                             "unit1": "Hodin",
                             "unit2": "Minut",
                             "unit3": "dop/odp"
+                        },
+                        "amPms": {
+                            "am": "dop",
+                            "pm": "odp"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "Vyberte prosím alespoň jeden den.",
+                    "days": {
+                        "shortName": {
+                            "sun": "neděle",
+                            "mon": "pondělí",
+                            "tue": "úterý",
+                            "wed": "středa",
+                            "thurs": "Čtvrtek",
+                            "fri": "pátek",
+                            "sat": "sobota"
+                        },
+                        "name": {
+                            "sun": "neděle",
+                            "mon": "pondělí",
+                            "tue": "úterý",
+                            "wed": "středa",
+                            "thurs": "Čtvrtek",
+                            "fri": "pátek",
+                            "sat": "sobota"
+                        },
+                        "everyday": "Každý den",
+                        "weekdays": "Pracovní dny",
+                        "weekends": "Víkendy"
+                    }
                 }
             },
             "audio": {
@@ -958,65 +929,65 @@
                 }
             },
             "displayCamera": {
-                "title": "Prikaz i kamera",
-                "subtitle": "Postavke prikaza i kamere",
-                "description": "Ovaj odjeljak omogućava vam da poboljšate vizualni doživljaj i prilagodite svojstva kamere. Istražite više značajki i prilagodite doživljaj prikaza ovdje.",
+                "title": "Displej a kamera",
+                "subtitle": "Nastavení displeje a kamery",
+                "description": "V této části můžete vylepšit vizuální zážitek a nakonfigurovat vlastnosti kamery. Prohlédněte si další funkce a přizpůsobte si možnosti zobrazení.",
                 "jumpTo": {
-                    "title": "SKOČI NA POSTAVKE",
+                    "title": "PŘEJÍT K NASTAVENÍ",
                     "shortcuts": {
                         "display": {
-                            "title": "Prikaz"
+                            "title": "Displej"
                         },
                         "camera": {
-                            "title": "Kamera"
+                            "title": "Fotoaparát"
                         }
                     }
                 },
                 "display": {
-                    "title": "Prikaz",
+                    "title": "Displej",
                     "eyeCareMode": {
-                        "title": "Način rada ugodan za oči",
-                        "checkbox": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",
+                        "title": "Režim Péče o oči",
+                        "checkbox": "Naplánovat režim péče o zrak od západu do východu slunce",
                         "options": {
-                            "warm": "Toplo (bolje za oči)",
-                            "cold": "Hladno"
+                            "warm": "Teplé (lepší pro oči)",
+                            "cold": "Studená"
                         },
-                        "reset": "Ponovno postavite temperaturu",
-                        "tooltip": "Način rada ugodan za oči prilagođava temperaturu boje prikaza kako bi filtrirao plavu svjetlost i smanjio naprezanje očiju.",
-                        "onSunsetToSunriseScheduleDescription": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",
+                        "reset": "Resetovat teplotu",
+                        "tooltip": "Režim Péče o oči upravuje teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí.",
+                        "onSunsetToSunriseScheduleDescription": "Naplánovat režim péče o zrak od západu do východu slunce",
                         "note": {
-                            "title": "Napomena",
-                            "description": "Lenovo Vantage mora pristupiti informacijama o lokaciji kako bi izračunao vrijeme zalaska i izlaska sunca u vašoj regiji."
+                            "title": "Poznámka",
+                            "description": "Program Lenovo Vantage potřebuje získat přístup k informacím o umístění pro výpočet času západu a východu slunce."
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Temperatura boje prikaza",
+                        "title": "Teplota barev displeje",
                         "options": {
-                            "warm": "Toplo (bolje za oči)",
-                            "cold": "Hladno"
+                            "warm": "Teplé (lepší pro oči)",
+                            "cold": "Studená"
                         },
-                        "reset": "Ponovno postavite temperaturu",
-                        "tooltip": "Način rada ugodan za oči prilagođava temperaturu boje prikaza kako bi filtrirao plavu svjetlost i smanjio naprezanje očiju.",
-                        "onSunsetToSunriseScheduleDescription": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",
+                        "reset": "Resetovat teplotu",
+                        "tooltip": "Režim Péče o oči upravuje teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí.",
+                        "onSunsetToSunriseScheduleDescription": "Naplánovat režim péče o zrak od západu do východu slunce",
                         "note": {
-                            "title": "Napomena",
-                            "description": "Lenovo Vantage mora pristupiti informacijama o lokaciji kako bi izračunao vrijeme zalaska i izlaska sunca u vašoj regiji."
+                            "title": "Poznámka",
+                            "description": "Program Lenovo Vantage potřebuje získat přístup k informacím o umístění pro výpočet času západu a východu slunce."
                         }
                     },
                     "privacyGuard": {
-                        "title": "Zaštita privatnosti",
-                        "description": "Tom se značajkom drugim korisnicima onemogućuje prikaz vašeg zaslona. Kada je uključena, mijenja se kut gledanja vašeg prikaza i na taj je način zaštićen od pogleda ljudi oko vas. Načine možete mijenjati i pritiskom na tipke \"Fn+D\".",
-                        "note": "Zaštita privatnosti ne radi u okomitom načinu prikaza zaslona. U ovom je načinu rada zaslon i dalje vidljiv sa strane.",
-                        "labelText": "Omogućivanje značajke prilikom unosa lozinke"
+                        "title": "Ochrana soukromí",
+                        "description": "Tato funkce zabraňuje ostatním osobám sledovat vaši obrazovku. Když je zapnutá, změní zobrazovací úhel obrazovky a uchrání ji tak před zraky osob v okolí. Režimy lze také přepínat stisknutím kombinace kláves „Fn+D“.",
+                        "note": "Ochrana soukromí nefunguje v režimu zobrazení na výšku. V tomto režimu je obrazovka stále viditelná ze stran.",
+                        "labelText": "Povolit tuto funkci při zadávání hesel"
                     },
                     "oledPowerSettings": {
-                        "title": "Postavke napajanja OLED zaslona",
+                        "title": "Nastavení napájení displeje OLED",
                         "description": [
-                            "OLED zaslon računala može smanjiti potrošnju energije i produljiti trajanje baterije selektivnim zatamnjivanjem dijelova zaslona.",
-                            "Da bi se produljio vijek trajanja zaslona, preporučuje se i zatamnjenje programske trake i drugih područja na zaslonu koja se ne mijenjaju često."
+                            "Displej OLED vašeho počítače také umožňuje šetřit energii a prodloužit výdrž baterie selektivním ztmavením některých částí displeje.",
+                            "Také doporučujeme ztmavit hlavní panel a další části displeje, které se příliš často nemění. Prodloužíte tím celkovou životnost displeje."
                         ],
-                        "reset": "Ponovno postavite temperaturu",
-                        "tooltip": "Ova značajka može smanjiti potrošnju energije i produljiti trajanje baterije selektivnim zatamnjivanjem dijelova zaslona.",
+                        "reset": "Resetovat teplotu",
+                        "tooltip": "Tato funkce také umožňuje šetřit energii a prodloužit výdrž baterie selektivním ztmavením některých částí displeje.",
                         "dropDown": {
                             "seconds": "seconds",
                             "minute": "minute",
@@ -1031,32 +1002,32 @@
                     }
                 },
                 "camera": {
-                    "title": "Kamera",
+                    "title": "Fotoaparát",
                     "note": {
-                        "title": "Napomena",
-                        "description": "Lenovo Vantage nema dozvole za pristup kameri. Omogućite aplikaciji Lenovo Vantage pristup kameri."
+                        "title": "Poznámka",
+                        "description": "Program Lenovo Vantage nemá oprávnění k přístupu ke kameře. Povolte tedy programu Lenovo Vantage přístup ke kameře."
                     },
-                    "url": "Idite na postavke privatnosti sustava Windows",
+                    "url": "Přejít na nastavení ochrany soukromí systému Windows",
                     "cameraPrivacy": {
-                        "title": "Način privatnosti kamere",
-                        "tooltip": "Kad je omogućena postavka za zaštitu privatnosti, kamera prestaje slati slike uživo. Tu postavku uključite samo kad ne želite svoju sliku slati drugima tijekom videopoziva."
+                        "title": "Režim soukromí kamery",
+                        "tooltip": "Je-li aktivní nastavení Soukromí, přestane kamera odesílat živý obraz. Tuto volbu tedy zapněte pouze v případě, když během videohovoru nechcete sdílet svůj obraz."
                     },
                     "camera": {
-                        "title": "Kamera",
-                        "tooltip": "Kliknite ovdje kako biste vratili svojstva Kamere na zadane postavke.",
-                        "reset": "Vrati na tvorničke postavke"
+                        "title": "Fotoaparát",
+                        "tooltip": "Kliknutím sem obnovíte výchozí nastavení vlastností kamery.",
+                        "reset": "Obnovit nastavení z výroby"
                     },
-                    "brightness": "Svjetlina",
+                    "brightness": "Jas",
                     "contrast": "Kontrast",
-                    "autoExposure": "Automatska ekspozicija",
-                    "autoFocus": "Automatski fokus",
-                    "notAvailable": "Nije dostupna kamera",
+                    "autoExposure": "Automatická expozice",
+                    "autoFocus": "Automatické ostření",
+                    "notAvailable": "Kamera není dostupná",
                     "camerablur": {
-                        "title": "Zamagljenje pozadine kamere",
-                        "caption": "Ova značajka zamagljuje pozadinu kada se koristite kamerom za videopoziv ili fotografiranje. Možete odabrati različite efekte iz odabira u nastavku.",
-                        "blurMode": "Način zamagljenja",
-                        "comicMode": "Način stripa",
-                        "sketchMode": "Način skice"
+                        "title": "Rozostření pozadí při použití kamery",
+                        "caption": "Tato funkce rozostří pozadí při použití kamery pro libovolný videohovor nebo fotografování. V následujících volbách si můžete vybrat jiný efekt.",
+                        "blurMode": "Režim Rozostření",
+                        "comicMode": "Režim Komiks",
+                        "sketchMode": "Režim Skica"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN USE",

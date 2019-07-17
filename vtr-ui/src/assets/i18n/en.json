@@ -493,9 +493,9 @@
 				"tips1": "Please leave any additional comments",
 				"comments": "Comments...",
 				"button": "Submit",
-				"addScreenshot": "Add ScreenShot",
+				"addScreenshot": "Add Screenshot",
 				"sendFeedback": "Send Feedback",
-				"submitScreenShot": "Submit Screen Shot",
+				"submitScreenShot": "Submit Screenshot",
 				"messages": {
 					"feedbackSuccess": "Thank you for your feedback !"
 				}
@@ -682,7 +682,6 @@
 					"battery": "Battery",
 					"smartStandby": "Smart Standby",
 					"power": "Power",
-					"cooling": "Intelligent Cooling",
 					"other": "Other"
 				},
 				"powerSmartSettings": {
@@ -761,7 +760,8 @@
 						"title": "Easy Resume",
 						"description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
 						"tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
-					}
+					},
+					"or":"Or"
 				},
 				"otherSettings": {
 					"title": "Other settings",
@@ -784,7 +784,34 @@
 							"unit1": "Hours",
 							"unit2": "Minutes",
 							"unit3": "AM/PM"
+						},
+						"amPms": {
+							"am": "AM",
+							"pm": "PM"
 						}
+					},
+					"days": {
+						"shortName": {
+							"sun": "Sun",
+							"mon": "Mon",
+							"tue": "Tue",
+							"wed": "Wed",
+							"thurs": "Thurs",
+							"fri": "Fri",
+							"sat": "Sat"
+						},
+						"name": {
+							"sun": "Sunday",
+							"mon": "Monday",
+							"tue": "Tuesday",
+							"wed": "Wednesday",
+							"thurs": "Thursday",
+							"fri": "Friday",
+							"sat": "Saturday"
+						},
+						"everyday": "Everyday",
+						"weekdays": "Weekdays",
+						"weekends": "Weekends"
 					},
 					"warningtip": "Please select at least one day."
 				},
@@ -1062,7 +1089,7 @@
 						"title": "ACTION USER DEFINED KEY",
 						"note": "Note: This can be used to enter commonly entered key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information.",
 						"options": {
-							"option1": "Launch Lenovo Vantage",
+							"option1": "Please select",
 							"option2": "Open website",
 							"option3": "Enter text"
 						}

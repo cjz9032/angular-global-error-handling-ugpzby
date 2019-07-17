@@ -228,7 +228,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		});
 
 		// warranty
-		this.dashboardServcie.getWarrantyInfo().then(data => {
+		this.dashboardServcie.getWarrantyInfo().subscribe(data => {
 			if (data) {
 				const warranty = this.deviceStatus[4];
 				const warrantyDate = this.commonService.formatDate(data.expired);

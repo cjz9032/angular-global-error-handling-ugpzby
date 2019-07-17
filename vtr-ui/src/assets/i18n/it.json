@@ -647,89 +647,31 @@
                         "unknown": "Unknown"
                     },
                     "manufacturer": {
-                        "title": "Manufacturer",
+                        "title": "Produttore",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     }
                 },
                 "condition": {
-                    "Illegal": {
-                        "description": "you cannot use the attached battery with this computer.",
-                        "description1": "Replace",
-                        "description2": "it with a battery of correct model."
-                    },
-                    "Good": {
-                        "title": "The battery is in good condition."
-                    },
-                    "Exhaustion": {
-                        "description": "wear. The battery cannot be charged. Replace the battery.",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "Bad": {
-                        "title": "A battery error has occurred.",
-                        "description": "The battery cannot be charged/discharged . Replace the battery."
-                    },
-                    "NotDetected": {
-                        "title": "No battery detected or not",
-                        "description": "plugged in battery."
-                    },
-                    "NotGood": {
-                        "title": "The battery is not in a good Condition"
-                    },
-                    "LimitedACAdapterSupport": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
-                    },
-                    "NotSupportACAdapter": {
-                        "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
-                    },
-                    "MissingDriver": {
-                        "title": "The Lenovo Power Manager driver",
-                        "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
-                    },
-                    "StoreLimitation": {
-                        "title": "The battery can only store",
-                        "description1": "of",
-                        "description2": "it's original full charge capacity"
-                    },
-                    "HighTemperature": {
-                        "title": "Discharging",
-                        "description": "has been stopped because the",
-                        "description1": "battery temperature is too high"
-                    },
-                    "TrickleCharge": {
-                        "description": "The battery was",
-                        "description1": "completely discharged",
-                        "description2": "and needs to be recharged. This might take ten hours or more."
-                    },
-                    "OverheatedBattery": {
-                        "description": "The battery is",
-                        "description1": "too hot.",
-                        "description2": "Remove it from the computer and cool it to room temperature."
-                    },
-                    "PermanentError": {
-                        "description": "The battery has",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "HardwareAuthenticationError": {
-                        "description": "The battery installed is",
-                        "description1": "is not supported",
-                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
-                    }
+                    "Illegal": "La batteria installata <b>non è supportata</b> dal sistema e non verrà caricata. Sostituire la batteria con la batteria Lenovo corretta per questo sistema.",
+                    "Good": "<b>La batteria è in buone condizioni.</b>",
+                    "Exhaustion": "La batteria si è <b>deteriorata a causa del normale utilizzo.</b> La batteria non può essere caricata. Sostituire la batteria.",
+                    "Bad": "<b>Si è verificato un errore della batteria.</b> La batteria non può essere caricata/scaricata. Sostituire la batteria.",
+                    "NotDetected": "<b>Nessuna batteria rilevata o</b> collegata.",
+                    "NotGood": "<b>La batteria non è in buone condizioni.</b>",
+                    "NotSupportACAdapter": "<b>L'adattatore CA non è supportato.</b> Il computer Lenovo non supporta questo adattatore CA. Potrebbe causare un arresto improvviso. Collegare un adattatore CA corretto.",
+                    "LimitedACAdapterSupport": "<b>L'adattatore CA non è in grado di fornire energia sufficiente</b> al computer Lenovo, incidendo su prestazioni del sistema e velocità di ricarica. Ricollegare l'adattatore CA appropriato.",
+                    "MissingDriver": "<b>Il driver Lenovo Power Manager</b> non è installato o non funziona correttamente. Eseguire Windows Update per installare il driver più recente.",
+                    "StoreLimitation": "<b>La batteria può mantenere solo il {{percentageLimitation}}% della</b> sua capacità di carica completa originale.",
+                    "HighTemperature": "<b>Lo scaricamento</b> è stato interrotto poiché la <b>temperatura della batteria è troppo elevata.</b>",
+                    "TrickleCharge": "La batteria è <b>completamente scarica</b> e deve essere ricaricata. Questa operazione potrebbe richiedere almeno dieci ore.",
+                    "OverheatedBattery": "La batteria è <b>troppo calda</b>. Rimuoverla dal computer e lasciare che si raffreddi fino a temperatura ambiente.",
+                    "PermanentError": "La batteria si è <b>deteriorata a causa del normale utilizzo.</b> La batteria non può essere caricata. Sostituire la batteria."
                 },
-                "updating": "Updating",
-                "thresholdNote": {
-                    "note1": "To extend the battery lifespan, you have set your ",
-                    "note2": "to stop charging at ",
-                    "note3": "battery",
-                    "note4": "and ",
-                    "note": "Note: "
-                },
-                "voltageError": "Battery voltage incorrect",
-                "batteryNotDetected": "No Battery Detected"
+                "updating": "Aggiornamento",
+                "voltageError": "Tensione batteria non corretta",
+                "batteryNotDetected": "Non è stata rilevata alcuna batteria",
+                "thresholdNote": "<b>Nota:</b> per estenderne la durata, la batteria è stata impostata per interromperne la ricarica al {{chargeThresholdInfo.stopValue}}%."
             },
             "power": {
                 "title": "Alimentazione",
@@ -740,7 +682,8 @@
                     "battery": "Batteria",
                     "power": "Alimentazione",
                     "cooling": "Raffreddamento intelligente",
-                    "other": "Altro"
+                    "other": "Altro",
+                    "smartStandby": "Smart Standby"
                 },
                 "powerSmartSettings": {
                     "title": "Impostazioni energetiche intelligenti",
@@ -818,7 +761,8 @@
                         "title": "Ripresa facile",
                         "description": "Abilitare questa funzione per migliorare il tempo di ripresa se si apre e chiude di frequente il coperchio del computer.",
                         "tooltip": "Questa funzione migliorerà il tempo di ripresa se si apre e chiude di frequente il coperchio del computer. Quando abilitata, il computer entrerà in modalità di risparmio energia quando si chiude il coperchio, ma riprenderà immediatamente se si riapre il coperchio entro 15 minuti dalla chiusura. Questa funzione consente anche al notebook di tentare di finire le attività in sospeso (come l'invio di e-mail o il download di un file) prima che il sistema entri in sospensione."
-                    }
+					},
+					"or":"Or"
                 },
                 "otherSettings": {
                     "title": "Altre impostazioni",
@@ -890,9 +834,36 @@
                             "unit1": "Ore",
                             "unit2": "Minuti",
                             "unit3": "AM/PM"
+                        },
+                        "amPms": {
+                            "am": "AM",
+                            "pm": "PM"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "Si prega di selezionare almeno un giorno.",
+                    "days": {
+                        "shortName": {
+                            "sun": "Domenica",
+                            "mon": "Lunedi",
+                            "tue": "martedì",
+                            "wed": "mercoledì",
+                            "thurs": "giovedi",
+                            "fri": "Venerdì",
+                            "sat": "Sabato"
+                        },
+                        "name": {
+                            "sun": "Domenica",
+                            "mon": "Lunedi",
+                            "tue": "martedì",
+                            "wed": "mercoledì",
+                            "thurs": "giovedi",
+                            "fri": "Venerdì",
+                            "sat": "Sabato"
+                        },
+                        "everyday": "Ogni giorno",
+                        "weekdays": "Nei giorni feriali",
+                        "weekends": "Fine settimana"
+                    }
                 }
             },
             "audio": {

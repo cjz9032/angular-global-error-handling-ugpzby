@@ -647,89 +647,31 @@
                         "unknown": "Unknown"
                     },
                     "manufacturer": {
-                        "title": "Manufacturer",
+                        "title": "Proizvođač",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     }
                 },
                 "condition": {
-                    "Illegal": {
-                        "description": "you cannot use the attached battery with this computer.",
-                        "description1": "Replace",
-                        "description2": "it with a battery of correct model."
-                    },
-                    "Good": {
-                        "title": "The battery is in good condition."
-                    },
-                    "Exhaustion": {
-                        "description": "wear. The battery cannot be charged. Replace the battery.",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "Bad": {
-                        "title": "A battery error has occurred.",
-                        "description": "The battery cannot be charged/discharged . Replace the battery."
-                    },
-                    "NotDetected": {
-                        "title": "No battery detected or not",
-                        "description": "plugged in battery."
-                    },
-                    "NotGood": {
-                        "title": "The battery is not in a good Condition"
-                    },
-                    "LimitedACAdapterSupport": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
-                    },
-                    "NotSupportACAdapter": {
-                        "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
-                    },
-                    "MissingDriver": {
-                        "title": "The Lenovo Power Manager driver",
-                        "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
-                    },
-                    "StoreLimitation": {
-                        "title": "The battery can only store",
-                        "description1": "of",
-                        "description2": "it's original full charge capacity"
-                    },
-                    "HighTemperature": {
-                        "title": "Discharging",
-                        "description": "has been stopped because the",
-                        "description1": "battery temperature is too high"
-                    },
-                    "TrickleCharge": {
-                        "description": "The battery was",
-                        "description1": "completely discharged",
-                        "description2": "and needs to be recharged. This might take ten hours or more."
-                    },
-                    "OverheatedBattery": {
-                        "description": "The battery is",
-                        "description1": "too hot.",
-                        "description2": "Remove it from the computer and cool it to room temperature."
-                    },
-                    "PermanentError": {
-                        "description": "The battery has",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "HardwareAuthenticationError": {
-                        "description": "The battery installed is",
-                        "description1": "is not supported",
-                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
-                    }
+                    "Illegal": "Ovaj sistem <b>ne podržava</b> instaliranu bateriju i ona se neće puniti. Zamenite bateriju odgovarajućom Lenovo baterijom za ovaj sistem.",
+                    "Good": "<b>Baterija je u dobrom stanju.</b>",
+                    "Exhaustion": "Baterija je <b>otkazala usled normalnog trošenja.</b> Nije moguće napuniti bateriju. Zamenite bateriju.",
+                    "Bad": "<b>Došlo je do greške sa baterijom.</b> Nije moguće napuniti/isprazniti bateriju. Zamenite bateriju.",
+                    "NotDetected": "<b>Baterija nije otkrivena ili nije</b> priključena.",
+                    "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
+                    "NotSupportACAdapter": "<b>Adapter za naizmeničnu struju nije podržan.</b> Vaš Lenovo računar ne podržava ovaj adapter za naizmeničnu struju. To može izazvati iznenadno isključivanje. Priključite ispravan adapter za naizmeničnu struju.",
+                    "LimitedACAdapterSupport": "<b>Adapter za naizmeničnu struju ne može da obezbedi dovoljno napajanje</b> Lenovo računaru što će uticati na performanse sistema i brzinu punjenja. Ponovo priključite ispravan adapter za naizmeničnu struju.",
+                    "MissingDriver": "<b>Lenovo Power Manager upravljački program</b> nije instaliran ili ne radi ispravno. Pokrenite Windows Update da biste instalirali najnoviji upravljački program.",
+                    "StoreLimitation": "<b>Baterija može da uskladišti samo {{percentageLimitation}}%</b> svog originalnog punog kapaciteta.",
+                    "HighTemperature": "<b>Pražnjenje</b> je zaustavljeno zato što je <b>temperatura baterije previsoka.</b>",
+                    "TrickleCharge": "Baterija je u <b>potpunosti ispražnjena</b> i mora da se napuni. To može potrajati deset sati ili duže.",
+                    "OverheatedBattery": "Baterija je <b>pregrejana</b>. Uklonite je iz računara i ohladite je do sobne temperature.",
+                    "PermanentError": "Baterija je <b>otkazala usled normalnog trošenja.</b> Nije moguće napuniti bateriju. Zamenite bateriju."
                 },
-                "updating": "Updating",
-                "thresholdNote": {
-                    "note1": "To extend the battery lifespan, you have set your ",
-                    "note2": "to stop charging at ",
-                    "note3": "battery",
-                    "note4": "and ",
-                    "note": "Note: "
-                },
-                "voltageError": "Battery voltage incorrect",
-                "batteryNotDetected": "No Battery Detected"
+                "updating": "Ažuriranje",
+                "voltageError": "Netačan napon baterije",
+                "batteryNotDetected": "Nije otkrivena baterija",
+                "thresholdNote": "<b>Napomena:</b> Da biste produžili životni vek baterije, podesili ste da baterija prestane da se puni kada je na {{chargeThresholdInfo.stopValue}}%."
             },
             "power": {
                 "title": "Napajanje",
@@ -740,7 +682,8 @@
                     "battery": "Baterija",
                     "power": "Napajanje",
                     "cooling": "Pametno hlađenje",
-                    "other": "Ostale"
+                    "other": "Ostale",
+                    "smartStandby": "Smart Standby"
                 },
                 "powerSmartSettings": {
                     "title": "Pametne postavke napajanja",
@@ -818,7 +761,8 @@
                         "title": "Lako vraćanje",
                         "description": "Omogućite ovu funkciju da biste poboljšali vreme nastavka rada ako često otvarate i zatvarate poklopac računara.",
                         "tooltip": "Ova funkcija će poboljšati vreme nastavka rada ako često otvarate i zatvarate poklopac računara. Kada je omogućite, računar će ući u režim slabog napajanja kada zatvorite njegov poklopac, ali će nastaviti odmah ako ponovo otvorite poklopac u roku od 15 minuta od zatvaranja. Ova funkcija takođe dozvoljava vašem prenosivom računaru da pokuša za završi aktivnosti na čekanju (kao što je slanje e-poruke ili preuzimanje datoteke) pre nego što sistem pređe u režim privremenog obustavljanja."
-                    }
+					},
+					"or":"Or"
                 },
                 "otherSettings": {
                     "title": "Ostale postavke",
@@ -890,9 +834,36 @@
                             "unit1": "Sati",
                             "unit2": "Minuti",
                             "unit3": "Pre podne/po podne"
+                        },
+                        "amPms": {
+                            "am": "Pre podne",
+                            "pm": "po podne"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "Odaberite najmanje jedan dan.",
+                    "days": {
+                        "shortName": {
+                            "sun": "Nedelja",
+                            "mon": "Ponedeljak",
+                            "tue": "Utorak",
+                            "wed": "Sreda",
+                            "thurs": "Četvrtak",
+                            "fri": "Petak",
+                            "sat": "Subota"
+                        },
+                        "name": {
+                            "sun": "Nedelja",
+                            "mon": "Ponedeljak",
+                            "tue": "Utorak",
+                            "wed": "Sreda",
+                            "thurs": "Četvrtak",
+                            "fri": "Petak",
+                            "sat": "Subota"
+                        },
+                        "everyday": "Svaki dan",
+                        "weekdays": "Weekdays",
+                        "weekends": "Vikendom"
+                    }
                 }
             },
             "audio": {
