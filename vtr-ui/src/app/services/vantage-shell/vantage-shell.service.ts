@@ -38,7 +38,7 @@ export class VantageShellService {
 				Phoenix.Features.SecurityAdvisor,
 				Phoenix.Features.SystemInformation,
 				Phoenix.Features.HwSettings,
-				Phoenix.Features.Gaming,
+				//Phoenix.Features.Gaming,
 				Phoenix.Features.SystemUpdate,
 				Phoenix.Features.Warranty,
 				Phoenix.Features.Permissions,
@@ -57,7 +57,7 @@ export class VantageShellService {
 
 	public registerEvent(eventType: any, handler: any) {
 		this.phoenix.on(eventType, (val) => {
-		//	console.log('Event fired: ', eventType, val);
+			//	console.log('Event fired: ', eventType, val);
 			handler(val);
 		});
 	}
@@ -392,7 +392,16 @@ export class VantageShellService {
 		console.log('In VantageShellService.deviceFilter. returning mock true');
 		return true;
 	}
-
+	public calcDeviceFilter(filter) {
+		if (this.phoenix) {
+				try {
+						return this.phoenix.deviceFilter.calc(filter);
+				} catch (error) {
+						console.log(`VantageShellService.calcDeviceFilter: ${filter}`, error);
+				}
+		}
+		return null;
+	}
 	public getLogger(): any {
 		if (this.shell) {
 			return this.shell.Logger;
@@ -438,39 +447,49 @@ export class VantageShellService {
 	}
 
 	public getCPUOCStatus(): any {
-		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			return this.phoenix.gaming.gamingOverclock.getCpuOCStatus();
 		}
 		return undefined;
 	}
 
 	public setCPUOCStatus(CpuOCStatus: CPUOCStatus): any {
-		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			return this.phoenix.gaming.gamingOverclock.setCpuOCStatus(CpuOCStatus.cpuOCStatus);
 		}
 		return undefined;
 	}
 
 	public getGamingAllCapabilities(): any {
-		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			return this.phoenix.gaming.gamingAllCapabilities;
 		}
 		return undefined;
 	}
 
 	public getGamingLighting(): any {
-		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			return this.phoenix.gaming.gamingLighting;
 		}
 		return undefined;
 	}
 	public getGamingOverClock(): any {
-		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			return this.phoenix.gaming.gamingOverclock;
 		}
 		return undefined;
@@ -490,24 +509,30 @@ export class VantageShellService {
 	}
 
 	public getGamingKeyLock() {
-		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			return this.phoenix.gaming.gamingKeyLock;
 		}
 		return undefined;
 	}
 
 	public getGamingHybridMode() {
-		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			return this.phoenix.gaming.gamingHybridMode;
 		}
 		return undefined;
 	}
 
 	public getGamingHwInfo() {
-		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			return this.phoenix.gaming.gamingHwInfo;
 		}
 		return undefined;
@@ -526,8 +551,10 @@ export class VantageShellService {
 		}
 	}
 	public getNetworkBoost() {
-		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			return this.phoenix.gaming.gamingNetworkBoost;
 		}
 		return undefined;
@@ -536,8 +563,10 @@ export class VantageShellService {
      * returns macroKeyClearInfo object from VantageShellService of JS Bridge
      ***/
 	public setMacroKeyClear(macroKey: string): any {
-		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		if (this.phoenix) {
+			if (!Phoenix.Features.Gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			console.log('Deleting the following macro key ---->', macroKey);
 			return this.phoenix.gaming.gamingMacroKey.setClear(macroKey);
 		}
@@ -545,8 +574,10 @@ export class VantageShellService {
 	}
 
 	public getGamingMacroKey(): any {
-		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		if (this.phoenix) {
+			if (!Phoenix.Features.Gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			return this.phoenix.gaming.gamingMacroKey;
 		}
 	}
@@ -559,80 +590,100 @@ export class VantageShellService {
 	}
 
 	public macroKeyInitializeEvent(): any {
-		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		if (this.phoenix) {
+			if (!Phoenix.Features.Gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			return this.phoenix.gaming.gamingMacroKey.initMacroKey();
 		}
 		return undefined;
 	}
 
 	public macroKeySetApplyStatus(key): any {
-		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		if (this.phoenix) {
+			if (!Phoenix.Features.Gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			return this.phoenix.gaming.gamingMacroKey.setApplyStatus(key);
 		}
 		return undefined;
 	}
 
 	public macroKeySetStartRecording(key): any {
-		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		if (this.phoenix) {
+			if (!Phoenix.Features.Gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			return this.phoenix.gaming.gamingMacroKey.setStartRecording(key);
 		}
 		return undefined;
 	}
 
 	public macroKeySetStopRecording(key, isSuccess, message): any {
-		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		if (this.phoenix) {
+			if (!Phoenix.Features.Gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			return this.phoenix.gaming.gamingMacroKey.setStopRecording(key, isSuccess, message);
 		}
 		return undefined;
 	}
 
 	public macroKeySetKey(key): any {
-		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		if (this.phoenix) {
+			if (!Phoenix.Features.Gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			return this.phoenix.gaming.gamingMacroKey.setKey(key);
 		}
 		return undefined;
 	}
 
 	public macroKeyClearKey(key): any {
-		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		if (this.phoenix) {
+			if (!Phoenix.Features.Gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			return this.phoenix.gaming.gamingMacroKey.setClear(key);
 		}
 		return undefined;
 	}
 
 	public macroKeySetRepeat(key, repeat): any {
-		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		if (this.phoenix) {
+			if (!Phoenix.Features.Gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			return this.phoenix.gaming.gamingMacroKey.setRepeat(key, repeat);
 		}
 		return undefined;
 	}
 
 	public macroKeySetInterval(key, interval): any {
-		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		if (this.phoenix) {
+			if (!Phoenix.Features.Gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			return this.phoenix.gaming.gamingMacroKey.setInterval(key, interval);
 		}
 		return undefined;
 	}
 
 	public macroKeySetMacroKey(key, inputs): any {
-		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		if (this.phoenix) {
+			if (!Phoenix.Features.Gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			return this.phoenix.gaming.gamingMacroKey.setMacroKey(key, inputs);
 		}
 		return undefined;
 	}
 
 	public getGamingThermalMode() {
-		if (this.phoenix && this.phoenix.gaming) {
-			this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		if (this.phoenix) {
+			if (!Phoenix.Features.Gaming) {
+				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+			}
 			return this.phoenix.gaming.gamingThermalmode;
 		}
 	}

@@ -647,89 +647,31 @@
                         "unknown": "Unknown"
                     },
                     "manufacturer": {
-                        "title": "Manufacturer",
+                        "title": "Producent",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     }
                 },
                 "condition": {
-                    "Illegal": {
-                        "description": "you cannot use the attached battery with this computer.",
-                        "description1": "Replace",
-                        "description2": "it with a battery of correct model."
-                    },
-                    "Good": {
-                        "title": "The battery is in good condition."
-                    },
-                    "Exhaustion": {
-                        "description": "wear. The battery cannot be charged. Replace the battery.",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "Bad": {
-                        "title": "A battery error has occurred.",
-                        "description": "The battery cannot be charged/discharged . Replace the battery."
-                    },
-                    "NotDetected": {
-                        "title": "No battery detected or not",
-                        "description": "plugged in battery."
-                    },
-                    "NotGood": {
-                        "title": "The battery is not in a good Condition"
-                    },
-                    "LimitedACAdapterSupport": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
-                    },
-                    "NotSupportACAdapter": {
-                        "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
-                    },
-                    "MissingDriver": {
-                        "title": "The Lenovo Power Manager driver",
-                        "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
-                    },
-                    "StoreLimitation": {
-                        "title": "The battery can only store",
-                        "description1": "of",
-                        "description2": "it's original full charge capacity"
-                    },
-                    "HighTemperature": {
-                        "title": "Discharging",
-                        "description": "has been stopped because the",
-                        "description1": "battery temperature is too high"
-                    },
-                    "TrickleCharge": {
-                        "description": "The battery was",
-                        "description1": "completely discharged",
-                        "description2": "and needs to be recharged. This might take ten hours or more."
-                    },
-                    "OverheatedBattery": {
-                        "description": "The battery is",
-                        "description1": "too hot.",
-                        "description2": "Remove it from the computer and cool it to room temperature."
-                    },
-                    "PermanentError": {
-                        "description": "The battery has",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "HardwareAuthenticationError": {
-                        "description": "The battery installed is",
-                        "description1": "is not supported",
-                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
-                    }
+                    "Illegal": "Zainstalowany akumulator <b>nie jest obsługiwany</b> w tym systemie i nie będzie ładowany. Wymień go na właściwy akumulator Lenovo dla tego systemu.",
+                    "Good": "<b>Akumulator jest w dobrym stanie.</b>",
+                    "Exhaustion": "Akumulator <b>uległ awarii z powodu normalnego zużycia.</b> Nie można naładować akumulatora. Wymień baterię.",
+                    "Bad": "<b>Wystąpił błąd akumulatora.</b> Nie można naładować/rozładować akumulatora. Wymień baterię.",
+                    "NotDetected": "<b>Nie wykryto akumulatora lub</b> akumulator nie jest podłączony do prądu.",
+                    "NotGood": "<b>Akumulator nie jest w dobrym stanie.</b>",
+                    "NotSupportACAdapter": "<b>Zasilacz nie jest obsługiwany.</b> Komputer Lenovo nie obsługuje tego zasilacza. Może on spowodować nagłe zamknięcie. Podłącz odpowiedni zasilacz.",
+                    "LimitedACAdapterSupport": "<b>Zasilacz nie zapewnia wystarczającej mocy</b> komputerowi Lenovo, co ma wpływ na wydajność systemu i szybkość ładowania. Podłącz ponownie odpowiedni zasilacz.",
+                    "MissingDriver": "<b>Sterownik Lenovo Power Manager</b> nie jest zainstalowany lub nie działa poprawnie. Uruchom usługę Windows Update, aby zainstalować najnowszy sterownik.",
+                    "StoreLimitation": "<b>Pojemność akumulatora to tylko {{percentageLimitation}}% pierwotnej pojemności</b> po pełnym naładowaniu.",
+                    "HighTemperature": "<b>Rozładowywanie</b> zostało zatrzymane, ponieważ <b>temperatura akumulatora jest zbyt wysoka.</b>",
+                    "TrickleCharge": "Akumulator <b>całkowicie się rozładował</b> i należy go ponownie naładować. Może to zająć dziesięć godzin lub więcej.",
+                    "OverheatedBattery": "Akumulator jest <b>zbyt gorący</b>. Wyjmij go z komputera i schłodź do temperatury pokojowej.",
+                    "PermanentError": "Akumulator <b>uległ awarii z powodu normalnego zużycia.</b> Nie można naładować akumulatora. Wymień baterię."
                 },
-                "updating": "Updating",
-                "thresholdNote": {
-                    "note1": "To extend the battery lifespan, you have set your ",
-                    "note2": "to stop charging at ",
-                    "note3": "battery",
-                    "note4": "and ",
-                    "note": "Note: "
-                },
-                "voltageError": "Battery voltage incorrect",
-                "batteryNotDetected": "No Battery Detected"
+                "updating": "Aktualizowanie",
+                "voltageError": "Nieprawidłowe napięcie akumulatora",
+                "batteryNotDetected": "Nie wykryto akumulatora",
+                "thresholdNote": "<b>Uwaga</b>: w celu zwiększenia żywotności akumulatora ustawiono go tak, aby przestał ładować się po osiągnięciu {{chargeThresholdInfo.stopValue}}%."
             },
             "power": {
                 "title": "Zasilanie",
@@ -740,7 +682,8 @@
                     "battery": "akumulator",
                     "power": "Zasilanie",
                     "cooling": "Inteligentne chłodzenie",
-                    "other": "Inne"
+                    "other": "Inne",
+                    "smartStandby": "Smart Standby"
                 },
                 "powerSmartSettings": {
                     "title": "Inteligentne ustawienia zasilania",
@@ -818,7 +761,8 @@
                         "title": "Łatwe wznawianie",
                         "description": "Włącz tę funkcję, aby skrócić czas wznawiania, jeśli często otwierasz i zamykasz pokrywę komputera.",
                         "tooltip": "Ta funkcja skraca czas wznawiania, jeśli użytkownik często otwiera i zamyka pokrywę komputera. Gdy ta funkcja jest włączona, na komputerze jest uruchamiany tryb niskiego zużycia energii, jeśli zostanie zamknięta pokrywa, a jego praca jest natychmiast wznawiana po ponownym otwarciu pokrywy w ciągu 15 minut. Dzięki tej funkcji notebook może podjąć próbę dokończenia nieukończonych operacji (na przykład wysłanie wiadomości e-mail lub pobranie pliku) zanim praca systemu zostanie wstrzymana."
-                    }
+					},
+					"or":"Or"
                 },
                 "otherSettings": {
                     "title": "Inne ustawienia",
@@ -890,9 +834,36 @@
                             "unit1": "Godziny",
                             "unit2": "Minuty",
                             "unit3": "rano/wieczorem"
+                        },
+                        "amPms": {
+                            "am": "rano",
+                            "pm": "wieczorem"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "Wybierz co najmniej jeden dzień.",
+                    "days": {
+                        "shortName": {
+                            "sun": "niedziela",
+                            "mon": "poniedziałek",
+                            "tue": "wtorek",
+                            "wed": "środa",
+                            "thurs": "czwartek",
+                            "fri": "piątek",
+                            "sat": "sobota"
+                        },
+                        "name": {
+                            "sun": "niedziela",
+                            "mon": "poniedziałek",
+                            "tue": "wtorek",
+                            "wed": "środa",
+                            "thurs": "czwartek",
+                            "fri": "piątek",
+                            "sat": "sobota"
+                        },
+                        "everyday": "Codzienny",
+                        "weekdays": "Dni powszednie",
+                        "weekends": "Weekendy"
+                    }
                 }
             },
             "audio": {

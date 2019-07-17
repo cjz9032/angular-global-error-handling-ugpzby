@@ -647,89 +647,31 @@
                         "unknown": "Unknown"
                     },
                     "manufacturer": {
-                        "title": "Manufacturer",
+                        "title": "Fabricante",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     }
                 },
                 "condition": {
-                    "Illegal": {
-                        "description": "you cannot use the attached battery with this computer.",
-                        "description1": "Replace",
-                        "description2": "it with a battery of correct model."
-                    },
-                    "Good": {
-                        "title": "The battery is in good condition."
-                    },
-                    "Exhaustion": {
-                        "description": "wear. The battery cannot be charged. Replace the battery.",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "Bad": {
-                        "title": "A battery error has occurred.",
-                        "description": "The battery cannot be charged/discharged . Replace the battery."
-                    },
-                    "NotDetected": {
-                        "title": "No battery detected or not",
-                        "description": "plugged in battery."
-                    },
-                    "NotGood": {
-                        "title": "The battery is not in a good Condition"
-                    },
-                    "LimitedACAdapterSupport": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
-                    },
-                    "NotSupportACAdapter": {
-                        "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
-                    },
-                    "MissingDriver": {
-                        "title": "The Lenovo Power Manager driver",
-                        "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
-                    },
-                    "StoreLimitation": {
-                        "title": "The battery can only store",
-                        "description1": "of",
-                        "description2": "it's original full charge capacity"
-                    },
-                    "HighTemperature": {
-                        "title": "Discharging",
-                        "description": "has been stopped because the",
-                        "description1": "battery temperature is too high"
-                    },
-                    "TrickleCharge": {
-                        "description": "The battery was",
-                        "description1": "completely discharged",
-                        "description2": "and needs to be recharged. This might take ten hours or more."
-                    },
-                    "OverheatedBattery": {
-                        "description": "The battery is",
-                        "description1": "too hot.",
-                        "description2": "Remove it from the computer and cool it to room temperature."
-                    },
-                    "PermanentError": {
-                        "description": "The battery has",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "HardwareAuthenticationError": {
-                        "description": "The battery installed is",
-                        "description1": "is not supported",
-                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
-                    }
+                    "Illegal": "A bateria instalada <b>não é aceita</b> pelo sistema e não será carregada. Substitua a bateria pela bateria correta da Lenovo para esse sistema.",
+                    "Good": "<b>A bateria está em boas condições.</b>",
+                    "Exhaustion": "A bateria <b>falhou devido a desgaste normal.</b> Não é possível carregar a bateria. Substitua a bateria.",
+                    "Bad": "<b>Ocorreu um erro na bateria.</b> Não é possível carregar/descarregar a bateria. Substitua a bateria.",
+                    "NotDetected": "<b>Nenhuma bateria detectada ou nenhuma</b> bateria conectada.",
+                    "NotGood": "<b>A bateria não está em boas condições.</b>",
+                    "NotSupportACAdapter": "<b>O adaptador de energia CA não é suportado.</b> Seu computador Lenovo não suporta este adaptador de energia CA. Ele pode causar um desligamento repentino. Conecte um adaptador de energia CA correto.",
+                    "LimitedACAdapterSupport": "<b>O adaptador de energia CA não pode fornecer energia suficiente</b> para o seu computador Lenovo, isso afetará o desempenho do sistema e a velocidade de carregamento. Reconecte o adaptador de energia CA correto.",
+                    "MissingDriver": "<b>O driver do Lenovo Power Manager</b> não está instalado ou não está funcionando corretamente. Execute o Windows Update para instalar o driver mais recente.",
+                    "StoreLimitation": "<b>A bateria só pode armazenar {{percentageLimitation}}% da</b> capacidade de carga máxima original.",
+                    "HighTemperature": "O <b>descarregamento</b> foi interrompido porque a <b>temperatura da bateria está muito alta.</b>",
+                    "TrickleCharge": "A bateria <b>descarregou completamente</b> e precisa ser recarregada. Isso poderá levar dez horas ou mais.",
+                    "OverheatedBattery": "A bateria está <b>quente demais</b>. Remova-a do computador e aguarde ela esfriar em temperatura ambiente.",
+                    "PermanentError": "A bateria <b>falhou devido a desgaste normal.</b> Não é possível carregar a bateria. Substitua a bateria."
                 },
-                "updating": "Updating",
-                "thresholdNote": {
-                    "note1": "To extend the battery lifespan, you have set your ",
-                    "note2": "to stop charging at ",
-                    "note3": "battery",
-                    "note4": "and ",
-                    "note": "Note: "
-                },
-                "voltageError": "Battery voltage incorrect",
-                "batteryNotDetected": "No Battery Detected"
+                "updating": "Atualizando",
+                "voltageError": "Voltagem da bateria incorreta",
+                "batteryNotDetected": "Nenhuma bateria detectada",
+                "thresholdNote": "<b>Nota:</b> para estender a duração da bateria, você a configurou para parar de carregar em {{chargeThresholdInfo.stopValue}}%."
             },
             "power": {
                 "title": "Energia",
@@ -740,7 +682,8 @@
                     "battery": "Bateria",
                     "power": "Energia",
                     "cooling": "Resfriamento Inteligente",
-                    "other": "Outro"
+                    "other": "Outro",
+                    "smartStandby": "Smart Standby"
                 },
                 "powerSmartSettings": {
                     "title": "Configurações inteligentes de energia",
@@ -818,7 +761,8 @@
                         "title": "Retomada fácil",
                         "description": "Ative este recurso para aprimorar o tempo para retomada se você abre e fecha a tampa do computador com frequência.",
                         "tooltip": "Este recurso aprimorará o tempo para retomada se você abre e fecha a tampa do computador com frequência. Quando ativado, o computador entrará em um modo de potência baixa quando você fechar a tampa, mas retomará imediatamente se você reabrir a tampa dentro de 15 minutos depois de fechá-la. Esse recurso também permite que seu notebook tente concluir atividades pendentes (como envio de email ou download de arquivo) antes que o sistema entre em suspensão."
-                    }
+					},
+					"or":"Or"
                 },
                 "otherSettings": {
                     "title": "Outras configurações",
@@ -890,9 +834,36 @@
                             "unit1": "Horas",
                             "unit2": "Minutos",
                             "unit3": "MANHÃ/TARDE"
+                        },
+                        "amPms": {
+                            "am": "MANHÃ",
+                            "pm": "TARDE"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "Por favor, selecione pelo menos um dia.",
+                    "days": {
+                        "shortName": {
+                            "sun": "domingo",
+                            "mon": "Segunda-feira",
+                            "tue": "terça",
+                            "wed": "Quarta-feira",
+                            "thurs": "Quinta-feira",
+                            "fri": "Sexta-feira",
+                            "sat": "sábado"
+                        },
+                        "name": {
+                            "sun": "domingo",
+                            "mon": "Segunda-feira",
+                            "tue": "terça",
+                            "wed": "Quarta-feira",
+                            "thurs": "Quinta-feira",
+                            "fri": "Sexta-feira",
+                            "sat": "sábado"
+                        },
+                        "everyday": "Todo dia",
+                        "weekdays": "Dias úteis",
+                        "weekends": "Finais de semana"
+                    }
                 }
             },
             "audio": {

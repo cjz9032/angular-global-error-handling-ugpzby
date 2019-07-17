@@ -647,89 +647,31 @@
                         "unknown": "Unknown"
                     },
                     "manufacturer": {
-                        "title": "Manufacturer",
+                        "title": "製造商",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     }
                 },
                 "condition": {
-                    "Illegal": {
-                        "description": "you cannot use the attached battery with this computer.",
-                        "description1": "Replace",
-                        "description2": "it with a battery of correct model."
-                    },
-                    "Good": {
-                        "title": "The battery is in good condition."
-                    },
-                    "Exhaustion": {
-                        "description": "wear. The battery cannot be charged. Replace the battery.",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "Bad": {
-                        "title": "A battery error has occurred.",
-                        "description": "The battery cannot be charged/discharged . Replace the battery."
-                    },
-                    "NotDetected": {
-                        "title": "No battery detected or not",
-                        "description": "plugged in battery."
-                    },
-                    "NotGood": {
-                        "title": "The battery is not in a good Condition"
-                    },
-                    "LimitedACAdapterSupport": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
-                    },
-                    "NotSupportACAdapter": {
-                        "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter."
-                    },
-                    "MissingDriver": {
-                        "title": "The Lenovo Power Manager driver",
-                        "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
-                    },
-                    "StoreLimitation": {
-                        "title": "The battery can only store",
-                        "description1": "of",
-                        "description2": "it's original full charge capacity"
-                    },
-                    "HighTemperature": {
-                        "title": "Discharging",
-                        "description": "has been stopped because the",
-                        "description1": "battery temperature is too high"
-                    },
-                    "TrickleCharge": {
-                        "description": "The battery was",
-                        "description1": "completely discharged",
-                        "description2": "and needs to be recharged. This might take ten hours or more."
-                    },
-                    "OverheatedBattery": {
-                        "description": "The battery is",
-                        "description1": "too hot.",
-                        "description2": "Remove it from the computer and cool it to room temperature."
-                    },
-                    "PermanentError": {
-                        "description": "The battery has",
-                        "description1": "failed due to normal wear.",
-                        "description2": "The battery cannot be charged. Replace the battery."
-                    },
-                    "HardwareAuthenticationError": {
-                        "description": "The battery installed is",
-                        "description1": "is not supported",
-                        "description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
-                    }
+                    "Illegal": "此系統<b>不支援</b>安裝的電池，因此無法充電。請使用此系統適用的正確 Lenovo 電池進行更換。",
+                    "Good": "<b>電池狀況良好。</b>",
+                    "Exhaustion": "電池<b>因正常損耗而發生故障。</b>電池無法充電。更換電池。",
+                    "Bad": "<b>發生電池錯誤。</b>電池無法充電/放電。更換電池。",
+                    "NotDetected": "<b>未偵測到電池或未</b>插入電池。",
+                    "NotGood": "<b>電池狀況不佳。</b>",
+                    "NotSupportACAdapter": "<b>不支援 AC 整流器。</b>您的 Lenovo 電腦不支援此 AC 整流器。這可能會造成突然關機。請連接正確的 AC 整流器。",
+                    "LimitedACAdapterSupport": "<b>AC 整流器無法提供足夠的電力</b>給您的 Lenovo 電腦，因而影響系統效能和充電速度。請重新連接正確的 AC 整流器。",
+                    "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 以安裝最新的驅動程式。",
+                    "StoreLimitation": "<b>電池只能儲存其原始充飽容量的 {{percentageLimitation}}%</b>。",
+                    "HighTemperature": "因為<b>電池溫度過高</b>，已停止<b>放電。</b>",
+                    "TrickleCharge": "電池已<b>完全放電</b>，而且必須重新充電。這可能需要十小時或更長的時間。",
+                    "OverheatedBattery": "電池<b>過熱</b>。請將其從電腦中取出，並使其降至室溫。",
+                    "PermanentError": "電池<b>因正常損耗而發生故障。</b>電池無法充電。更換電池。"
                 },
-                "updating": "Updating",
-                "thresholdNote": {
-                    "note1": "To extend the battery lifespan, you have set your ",
-                    "note2": "to stop charging at ",
-                    "note3": "battery",
-                    "note4": "and ",
-                    "note": "Note: "
-                },
-                "voltageError": "Battery voltage incorrect",
-                "batteryNotDetected": "No Battery Detected"
+                "updating": "正在更新",
+                "voltageError": "電池電壓不正確",
+                "batteryNotDetected": "未偵測到電池",
+                "thresholdNote": "<b>注意：</b>若要延長電池的壽命，您必須將電池設定為達到 {{chargeThresholdInfo.stopValue}}% 時停止充電。"
             },
             "power": {
                 "title": "電源",
@@ -740,7 +682,8 @@
                     "battery": "電池",
                     "power": "電源",
                     "cooling": "智慧型冷卻",
-                    "other": "其他"
+                    "other": "其他",
+                    "smartStandby": "Smart Standby"
                 },
                 "powerSmartSettings": {
                     "title": "智慧型電源設定",
@@ -818,7 +761,8 @@
                         "title": "輕鬆回復",
                         "description": "如果您需要頻繁地打開及闔上電腦機蓋，請啟用此功能以改善電腦恢復作業的時間。",
                         "tooltip": "如果您需要頻繁地打開、闔上電腦機蓋，此功能將改善電腦恢復作業的時間。啟用時，您的電腦將在您闔上其機蓋時進入省電模式，但是如果您在闔上機蓋後的 15 分鐘內打開機蓋，電腦將立即恢復正常作業。此功能也可讓您的筆記型電腦嘗試完成擱置中的活動（例如傳送電子郵件或下載檔案），然後再使系統暫停。"
-                    }
+					},
+					"or":"Or"
                 },
                 "otherSettings": {
                     "title": "其他設定",
@@ -890,9 +834,36 @@
                             "unit1": "小時",
                             "unit2": "分鐘",
                             "unit3": "上午/下午"
+                        },
+                        "amPms": {
+                            "am": "上午",
+                            "pm": "下午"
                         }
                     },
-                    "warningtip": "Please select at least one day."
+                    "warningtip": "請至少選擇一天。",
+                    "days": {
+                        "shortName": {
+                            "sun": "星期日",
+                            "mon": "星期一",
+                            "tue": "星期二",
+                            "wed": "星期三",
+                            "thurs": "星期四",
+                            "fri": "星期五",
+                            "sat": "星期六"
+                        },
+                        "name": {
+                            "sun": "星期日",
+                            "mon": "星期一",
+                            "tue": "星期二",
+                            "wed": "星期三",
+                            "thurs": "星期四",
+                            "fri": "星期五",
+                            "sat": "星期六"
+                        },
+                        "everyday": "每天",
+                        "weekdays": "平日",
+                        "weekends": "週末"
+                    }
                 }
             },
             "audio": {

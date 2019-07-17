@@ -22,6 +22,8 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { LenovoIdDialogService } from '../../services/dialog/lenovoIdDialog.service';
+import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
+import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -64,7 +66,8 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 		private smartAssist: SmartAssistService,
 		private logger: LoggerService,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
-		private dialogService: LenovoIdDialogService
+		private dialogService: LenovoIdDialogService,
+		private keyboardService: InputAccessoriesService
 	) {
 		this.showVpn();
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
@@ -110,14 +113,14 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 		}
 
 		this.router.events.subscribe((ev) => {
-			if (ev instanceof NavigationEnd) { 
+			if (ev instanceof NavigationEnd) {
 				this.currentUrl = ev.url;
 				if (this.currentUrl === '/device-gaming' || this.currentUrl === '/gaming' || this.currentUrl === '/') {
 					this.isGamingHome = true;
 				} else {
 					this.isGamingHome = false;
 				}
-			 }
+			}
 		});
 	}
 
@@ -146,6 +149,7 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 		});
 
 		this.isDashboard = true;
+		this.initInputAccessories();
 	}
 	ngAfterViewInit(): void {
 		this.getMenuItems().then((items) => {
@@ -344,6 +348,7 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 							(responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && (responses[7] > 0));
 						// const isAvailable = true;
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, isAvailable);
+
 						// avoid duplicate entry. if not added earlier then add menu
 						if (isAvailable && !isSmartAssistSupported) {
 							this.addSmartAssistMenu(myDeviceItem);
@@ -376,4 +381,26 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 		}
 	}
 
+	public isHomeGaming() {
+		console.log(`CURRENTURL====================<><>`, this.router);
+		if (this.router.url === '/device-gaming' || this.router.url === '/') {
+			this.isGamingHome = true;
+		} else {
+			this.isGamingHome = false;
+		}
+	}
+
+	initInputAccessories() {
+		Promise.all([
+			this.keyboardService.GetUDKCapability(),
+			this.keyboardService.GetKeyboardMapCapability()
+		]).then((responses: any[]) => {
+			const inputAccessoriesCapability: InputAccessoriesCapability = new InputAccessoriesCapability();
+			inputAccessoriesCapability.isUdkAvailable = responses[0];
+			inputAccessoriesCapability.isKeyboardMapAvailable = responses[1];
+			this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, inputAccessoriesCapability);
+		}).catch((error) => {
+			console.error('error in initSmartAssist.Promise.all()', error);
+		});
+	}
 }

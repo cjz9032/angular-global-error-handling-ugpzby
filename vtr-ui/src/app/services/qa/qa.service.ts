@@ -1042,6 +1042,7 @@ export class QaService {
 						description: 'faq.question' + qa.id + '.description'
 					};
 				});
+				
 				this.preserveTransKeys.isPreserved = true;
 			}
 

@@ -23,7 +23,8 @@ export class UiTimePickerComponent implements OnInit, OnChanges {
 	copyAmPm: number;
 	hours = ['12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'];
 	minutes = ['00', '15', '30', '45'];
-	amPms = ['AM', 'PM'];
+	amPms = ['device.deviceSettings.power.smartStandby.timer.amPms.am',
+		'device.deviceSettings.power.smartStandby.timer.amPms.pm'];
 
 	prevHour: number;
 	nextHour: number;
@@ -86,7 +87,7 @@ export class UiTimePickerComponent implements OnInit, OnChanges {
 		this.initiateBlock();
 	}
 	onToggleDropDown() {
-		// this.initiateBlock();
+		this.initiateBlock();
 		this.showTimerDropDown = !this.showTimerDropDown;
 	}
 
