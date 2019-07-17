@@ -30,7 +30,7 @@ import {
 export class TrackingMapService {
 	isTrackersBlocked$ = this.figleafOverviewService.figleafSettings$
 		.pipe(
-			map((settings) => false),
+			map((settings) => settings.isAntitrackingEnabled),
 			startWith(false)
 		);
 
