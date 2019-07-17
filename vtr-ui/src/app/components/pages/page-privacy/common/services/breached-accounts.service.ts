@@ -14,6 +14,7 @@ import { CommunicationWithFigleafService } from '../../utils/communication-with-
 import { EmailScannerService, ErrorNames } from '../../feature/check-breached-accounts/services/email-scanner.service';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
 import { TaskActionWithTimeoutService, TasksName } from './analytics/task-action-with-timeout.service';
+import {UpdateTriggersService} from './update-triggers.service';
 
 interface GetBreachedAccountsResponse {
 	type: string;
@@ -54,6 +55,7 @@ export class BreachedAccountsService implements OnDestroy {
 	constructor(
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
+		private updateTriggersService: UpdateTriggersService,
 		private emailScannerService: EmailScannerService) {
 		this.getBreachedAccounts();
 	}
@@ -70,7 +72,7 @@ export class BreachedAccountsService implements OnDestroy {
 				distinctUntilChanged(),
 			),
 			this.getNewBreachedAccounts$.asObservable(),
-			timer(30000, 30000),
+			this.updateTriggersService.shouldUpdate$,
 		).pipe(
 			debounceTime(200),
 			switchMapTo(this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(take(1))),
