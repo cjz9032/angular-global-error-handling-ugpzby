@@ -1,7 +1,6 @@
 import { Inject } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { CommonPopupService } from '../services/popups/common-popup.service';
-import { ChoseBrowserService } from '../services/chose-browser.service';
 import { LocationHistoryService } from '../services/location-history.service';
 import { PRIVACY_BASE_URL } from '../../utils/injection-tokens';
 import { UserAllowService } from '../services/user-allow.service';

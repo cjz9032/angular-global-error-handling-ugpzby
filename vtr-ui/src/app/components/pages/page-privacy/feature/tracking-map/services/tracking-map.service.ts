@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { EMPTY, Observable, of, ReplaySubject } from 'rxjs';
 import { catchError, map, shareReplay, startWith, switchMap, take } from 'rxjs/operators';
-import { ChoseBrowserService } from '../../../common/services/chose-browser.service';
 import { UserAllowService } from '../../../common/services/user-allow.service';
 import { HttpClient } from '@angular/common/http';
 import {
@@ -43,7 +42,6 @@ export class TrackingMapService {
 	private trackersCache$: Observable<TrackersInfo>;
 
 	constructor(
-		private choseBrowserService: ChoseBrowserService,
 		private userAllowService: UserAllowService,
 		private http: HttpClient,
 		private vantageCommunicationService: VantageCommunicationService,

@@ -44,7 +44,7 @@ export class BrowserAccountsService {
 			switchMap((browserData) => this.concatPasswords(browserData)),
 			take(1),
 		).subscribe((browserData) => {
-			this.installedBrowsersData$.next({browserData: browserData, error: null});
+			this.installedBrowsersData$.next({browserData, error: null});
 			const isConsentGiven = this.isConsentGiven$.getValue();
 			if (isConsentGiven) {
 				this.sendTaskAcrion();
@@ -71,7 +71,7 @@ export class BrowserAccountsService {
 					),
 					take(1),
 					catchError((error) => {
-						this.installedBrowsersData$.next({browserData: [], error: error});
+						this.installedBrowsersData$.next({browserData: [], error});
 						console.error(error);
 						return EMPTY;
 					})

@@ -62,7 +62,7 @@ export class BreachedAccountsService implements OnDestroy {
 		this.getNewBreachedAccounts$.next(true);
 	}
 
-	private getBreachedAccounts(): Subscription {
+	private getBreachedAccounts() {
 		return merge(
 			this.emailScannerService.scanNotifier$,
 			this.emailScannerService.validationStatusChanged$,
