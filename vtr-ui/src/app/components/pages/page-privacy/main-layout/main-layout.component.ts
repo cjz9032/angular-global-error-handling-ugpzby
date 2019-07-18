@@ -60,7 +60,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private routerChangeHandler: RouterChangeHandlerService,
 		private figleafOverviewService: FigleafOverviewService,
-		private isWindowFocusedService: UpdateTriggersService,
+		private updateTriggersService: UpdateTriggersService,
 		private taskActionService: TaskActionService,
 		private widgetDataService: WidgetDataService,
 	) {
@@ -68,7 +68,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		this.isWindowFocusedService.windowFocused$.next(true);
+		this.updateTriggersService.updateFocusedState(true);
 	}
 
 	ngOnInit() {

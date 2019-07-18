@@ -1,12 +1,18 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {merge, Subject, timer} from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class UpdateTriggersService {
-	windowFocused$ = new Subject<boolean>();
+	private windowFocused = new Subject<boolean>();
+	windowFocused$ = this.windowFocused.asObservable();
 	shouldUpdate$ = merge(this.windowFocused$, timer(0, 30000));
 
-	constructor() { }
+	constructor() {
+	}
+
+	updateFocusedState(param: boolean) {
+		this.windowFocused.next(param);
+	}
 }
