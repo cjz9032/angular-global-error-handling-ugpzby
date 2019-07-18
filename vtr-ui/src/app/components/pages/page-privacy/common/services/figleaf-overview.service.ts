@@ -1,9 +1,9 @@
-import {Injectable, OnDestroy} from '@angular/core';
-import {CommunicationWithFigleafService} from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
-import {merge, ReplaySubject, zip} from 'rxjs';
-import {filter, switchMapTo, take, takeUntil} from 'rxjs/operators';
-import {instanceDestroyed} from '../../utils/custom-rxjs-operators/instance-destroyed';
-import {UpdateTriggersService} from './update-triggers.service';
+import { Injectable, OnDestroy } from '@angular/core';
+import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
+import { ReplaySubject, zip } from 'rxjs';
+import { filter, switchMapTo, take, takeUntil } from 'rxjs/operators';
+import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
+import { UpdateTriggersService } from './update-triggers.service';
 
 interface FigleafSettingsMessageResponse {
 	type: 'getFigleafSettings';

@@ -1,9 +1,9 @@
-import {Injectable} from '@angular/core';
-import {distinctUntilChanged, map} from 'rxjs/operators';
-import {getDisplayedCountValueOfIssues} from '../../utils/helpers';
-import {CountNumberOfIssuesService} from './count-number-of-issues.service';
-import {UserDataGetStateService} from './user-data-get-state.service';
-import {MockWindows} from '../../utils/moked-api';
+import { Injectable } from '@angular/core';
+import { distinctUntilChanged, map } from 'rxjs/operators';
+import { getDisplayedCountValueOfIssues } from '../../utils/helpers';
+import { CountNumberOfIssuesService } from './count-number-of-issues.service';
+import { UserDataGetStateService } from './user-data-get-state.service';
+import { MockWindows } from '../../utils/moked-api';
 
 
 export interface WidgetCounters {
