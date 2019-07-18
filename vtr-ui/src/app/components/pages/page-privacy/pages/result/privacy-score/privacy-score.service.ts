@@ -126,13 +126,13 @@ export class PrivacyScoreService {
 			return {
 				privacyLevel: 'low',
 				title: 'Low privacy score',
-				text: `A lot of your personal info is out there. Take control of your privacy by choosing when to be private and when to share on every site you interact with.`,
+				text: `A lot of your personal information is out there. Take control of your privacy by choosing when to be private and when to share on every site you interact with.`,
 			};
 		} else if (score < 60) {
 			return {
 				privacyLevel: 'medium-low',
 				title: 'Medium privacy score',
-				text: `You’re taking a few steps to be private, but some of your info could easily be exposed. Lenovo Privacy Essentials by FigLeaf can help.`,
+				text: `You’re taking a few steps to be private, but some of your information could easily be exposed. Lenovo Privacy Essentials by FigLeaf can help.`,
 			};
 		} else if (score < 80) {
 			return {

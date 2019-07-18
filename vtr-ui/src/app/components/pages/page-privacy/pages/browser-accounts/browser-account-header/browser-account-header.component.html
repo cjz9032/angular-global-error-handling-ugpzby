@@ -20,7 +20,7 @@
 			[countOfIssue]="nonPrivatePasswordCount"
 			[isFeatureWasScanned]="isNonPrivatePasswordWasScanned"
 			[isFigleafReadyToCommunication]="isFigleafReadyForCommunication">
-			<span class="browser-accounts-header__title--red">{{nonPrivatePasswordCount}}</span> Non-private
+			<span class="browser-accounts-header__title--red">{{nonPrivatePasswordCount}}</span> Vulnerable
 			passwords found
 		</vtr-feature-header>
 		<vtr-why-seeing-tooltip *ngIf="!isFigleafReadyForCommunication && nonPrivatePasswordCount > 0"
