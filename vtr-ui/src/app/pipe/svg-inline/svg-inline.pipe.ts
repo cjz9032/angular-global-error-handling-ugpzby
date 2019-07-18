@@ -1,19 +1,38 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, OnDestroy } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { CommonService } from 'src/app/services/common/common.service';
 
 @Pipe({
-	name: 'svgInline'
+	name: 'svgInline',
+	pure: false
 })
-export class SvgInlinePipe implements PipeTransform {
-	constructor(private sanitizer: DomSanitizer) { }
+export class SvgInlinePipe implements PipeTransform, OnDestroy {
+
+	isOnline = true;
+	notificationSubscription: Subscription;
+
+	constructor(private sanitizer: DomSanitizer, private commonService: CommonService) {
+		this.isOnline = this.commonService.isOnline;
+		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+	}
+
+	ngOnDestroy(): void {
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
+	}
 
 	getContent(url) {
 		return new Promise(resovle => {
 			const request = new XMLHttpRequest();
 			request.open('GET', url, true);
 			request.send(null);
-			request.onreadystatechange = function () {
+			request.onreadystatechange = () => {
 				if (request.readyState === 4 && request.status === 200) {
 					resovle(request.responseText);
 				}
@@ -21,11 +40,25 @@ export class SvgInlinePipe implements PipeTransform {
 		});
 	}
 
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
+		}
+	}
+
 	transform(value: any, args?: any): any {
 		if (typeof (value) !== 'undefined') {
 			return new Observable(observer => {
 				observer.next('');
-				if (value.substring(value.lastIndexOf('.')) === '.svg') {
+				console.log(`this.isOnline: ${this.isOnline}`);
+				if (value.substring(value.lastIndexOf('.')) === '.svg' && !this.isOnline) {
 					this.getContent(value).then(val => {
 						val = `data:image/svg+xml;base64,${btoa(val + '')}`;
 						val = this.sanitizer.bypassSecurityTrustResourceUrl(val + '');
