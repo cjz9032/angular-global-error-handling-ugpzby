@@ -1,8 +1,9 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
-import { ReplaySubject, timer, zip } from 'rxjs';
+import { ReplaySubject, zip } from 'rxjs';
 import { filter, switchMapTo, take, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
+import { UpdateTriggersService } from './update-triggers.service';
 
 interface FigleafSettingsMessageResponse {
 	type: 'getFigleafSettings';
@@ -59,12 +60,13 @@ export class FigleafOverviewService implements OnDestroy {
 	figleafStatus$ = new ReplaySubject<FigleafStatus>(1);
 
 	constructor(
-		private communicationWithFigleafService: CommunicationWithFigleafService
+		private communicationWithFigleafService: CommunicationWithFigleafService,
+		private updateTriggersService: UpdateTriggersService
 	) {
 		this.communicationWithFigleafService.isFigleafReadyForCommunication$
 			.pipe(
 				filter(isFigleafReadyForCommunication => !!isFigleafReadyForCommunication),
-				switchMapTo(timer(0, 30000)),
+				switchMapTo(this.updateTriggersService.shouldUpdate$),
 				switchMapTo(zip(
 					this.getFigleafData<FigleafSettingsMessageResponse>('getFigleafSettings'),
 					this.getFigleafData<FigleafDashboardMessageResponse>('getFigleafDashboard'),
