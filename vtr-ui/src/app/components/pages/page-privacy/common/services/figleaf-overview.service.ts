@@ -63,10 +63,10 @@ export class FigleafOverviewService implements OnDestroy {
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private updateTriggersService: UpdateTriggersService
 	) {
-		merge(this.updateTriggersService.shouldUpdate$, this.communicationWithFigleafService.isFigleafReadyForCommunication$)
+		this.communicationWithFigleafService.isFigleafReadyForCommunication$
 			.pipe(
-				switchMapTo(this.communicationWithFigleafService.isFigleafReadyForCommunication$),
 				filter(isFigleafReadyForCommunication => !!isFigleafReadyForCommunication),
+				switchMapTo(this.updateTriggersService.shouldUpdate$),
 				switchMapTo(zip(
 					this.getFigleafData<FigleafSettingsMessageResponse>('getFigleafSettings'),
 					this.getFigleafData<FigleafDashboardMessageResponse>('getFigleafDashboard'),
