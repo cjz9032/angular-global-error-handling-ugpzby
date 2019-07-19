@@ -120,6 +120,23 @@ export class NoIssuePitchComponent implements OnInit, OnDestroy {
 		return this.templateForPitch[this.currentPath];
 	}
 
+	shouldShowDidYouKnowBlock() {
+		function getShowCondition(wasScannedState: Observable<boolean>, noIssuesState: Observable<boolean>) {
+			return combineLatest(
+				wasScannedState.pipe(map(value => !value)),
+				noIssuesState,
+			).pipe(map((val) => val.includes(true)));
+		}
+
+		const didYouKnowBlockShowConditions = {
+			[RoutersName.BREACHES]: getShowCondition(this.breachedAccountsWasScanned$, this.breachesNoIssues$),
+			[RoutersName.TRACKERS]: getShowCondition(this.trackersWasScanned$, this.trackersNoIssues$),
+			[RoutersName.BROWSERACCOUNTS]: getShowCondition(this.nonPrivatePasswordWasScanned$, this.nonPrivatePasswordNoIssues$),
+		};
+
+		return didYouKnowBlockShowConditions[this.currentPath];
+	}
+
 	private getState(userStatuses: string) {
 		return this.userDataGetStateService.userDataStatus$.pipe(
 			map((userDataStatus) =>
@@ -133,7 +150,7 @@ export class NoIssuePitchComponent implements OnInit, OnDestroy {
 		isFigleafReadyForCommunication$: Observable<boolean>,
 		countOfIssue$: Observable<number>,
 		wasScanned$: Observable<boolean>
-	) {
+	): Observable<boolean> {
 		return combineLatest([
 			isFigleafReadyForCommunication$,
 			countOfIssue$,

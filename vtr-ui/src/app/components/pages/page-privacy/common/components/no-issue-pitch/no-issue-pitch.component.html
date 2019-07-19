@@ -1,7 +1,7 @@
-<section class="no-issue" *ngIf="isShowPitch$ | async">
+<section class="no-issue" *ngIf="shouldShowDidYouKnowBlock() | async">
 	<h2 class="no-issue__title">Did you know?</h2>
 	<ng-container *ngTemplateOutlet="getTemplate()"></ng-container>
-	<div class="no-issue__pitch">
+	<div class="no-issue__pitch" *ngIf="isShowPitch$ | async">
 		<vtr-big-pitch [texts]="getText()"></vtr-big-pitch>
 	</div>
 </section>
