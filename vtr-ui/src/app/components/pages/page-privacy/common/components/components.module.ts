@@ -24,7 +24,7 @@ import { NavTabsComponent } from './nav-tabs/nav-tabs.component';
 import { FeatureHeaderComponent } from './feature-header/feature-header.component';
 import { StatComponent } from './privacy-dashboard-list/stat.component';
 import { AccountsStoredComponent } from './accounts-stored/accounts-stored.component';
-import { NoIssuePitchComponent } from './no-issue-pitch/no-issue-pitch.component';
+import { DidYouKnowComponent } from './no-issue-pitch/did-you-know.component';
 import { BigPitchComponent } from './big-pitch/big-pitch.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -52,7 +52,7 @@ import { WhySeeingTooltipComponent } from './why-seeing-tooltip/why-seeing-toolt
 		FeatureHeaderComponent,
 		StatComponent,
 		AccountsStoredComponent,
-		NoIssuePitchComponent,
+		DidYouKnowComponent,
 		BigPitchComponent,
 		SpinnerComponent,
 		TooltipComponent,
@@ -78,7 +78,7 @@ import { WhySeeingTooltipComponent } from './why-seeing-tooltip/why-seeing-toolt
 		FeatureHeaderComponent,
 		StatComponent,
 		AccountsStoredComponent,
-		NoIssuePitchComponent,
+		DidYouKnowComponent,
 		BigPitchComponent,
 		SpinnerComponent,
 		TooltipComponent,

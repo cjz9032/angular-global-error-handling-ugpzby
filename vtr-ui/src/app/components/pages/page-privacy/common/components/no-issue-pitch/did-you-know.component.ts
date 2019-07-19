@@ -19,11 +19,11 @@ import { UserDataGetStateService } from '../../services/user-data-get-state.serv
 
 @Component({
 	selector: 'vtr-no-issue-pitch',
-	templateUrl: './no-issue-pitch.component.html',
-	styleUrls: ['./no-issue-pitch.component.scss'],
+	templateUrl: './did-you-know.component.html',
+	styleUrls: ['./did-you-know.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NoIssuePitchComponent implements OnInit, OnDestroy {
+export class DidYouKnowComponent implements OnInit, OnDestroy {
 	isShowPitch$ = of(false);
 	currentPath: RoutersName;
 
