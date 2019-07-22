@@ -5,6 +5,7 @@
 		   vtrSendAnalytics
 		   [metricsEvent]="'ItemClick'"
 		   [metricsItem]="'ArticlesSeeAllButton'"
+		   vtrOfflineMode positionContextTo="left"
 		   routerLink="/privacy/articles">See all articles</a>
 	</div>
     <vtr-article-preview
@@ -20,6 +21,7 @@
 			   vtrSendAnalytics
 			   [metricsEvent]="'ItemClick'"
 			   [metricsItem]="'ArticlesSeeAllButton'"
+			   vtrOfflineMode
 			   routerLink="/privacy/articles">see all articles</a>
 		</ng-container>
 		<ng-container *ngIf="!article">

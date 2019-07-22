@@ -30,6 +30,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { WhySeeingTooltipComponent } from './why-seeing-tooltip/why-seeing-tooltip.component';
+import { OfflineModeComponent } from './offline-mode/offline-mode.component';
 
 @NgModule({
 	declarations: [
@@ -57,6 +58,7 @@ import { WhySeeingTooltipComponent } from './why-seeing-tooltip/why-seeing-toolt
 		SpinnerComponent,
 		TooltipComponent,
 		WhySeeingTooltipComponent,
+		OfflineModeComponent
 	],
 	exports: [
 		SimpleLoaderComponent,
@@ -83,6 +85,7 @@ import { WhySeeingTooltipComponent } from './why-seeing-tooltip/why-seeing-toolt
 		SpinnerComponent,
 		TooltipComponent,
 		WhySeeingTooltipComponent,
+		OfflineModeComponent
 	],
 	imports: [
 		CommonModule,
