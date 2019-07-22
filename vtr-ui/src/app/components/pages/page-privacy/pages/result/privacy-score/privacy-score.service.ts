@@ -126,19 +126,19 @@ export class PrivacyScoreService {
 			return {
 				privacyLevel: 'low',
 				title: 'Low privacy score',
-				text: `A lot of your personal information is out there. Take control of your privacy by choosing when to be private and when to share on every site you interact with.`,
+				text: `We found that a lot of your personal information is accessible to others. We recommend Lenovo Privacy Essentials by FigLeaf for better privacy online.`,
 			};
 		} else if (score < 60) {
 			return {
 				privacyLevel: 'medium-low',
 				title: 'Medium privacy score',
-				text: `You’re taking a few steps to be private, but some of your information could easily be exposed. Lenovo Privacy Essentials by FigLeaf can help.`,
+				text: `You're taking a few steps to be private, but some of your information could easily be exposed. We recommend Lenovo Privacy Essentials by FigLeaf to close your privacy gaps`,
 			};
 		} else if (score < 80) {
 			return {
 				privacyLevel: 'medium',
 				title: 'Medium privacy score',
-				text: `You’re taking some steps to be private. But there’s a lot more you can do.`,
+				text: `You're taking some steps to be private. But you could take greater control by choosing when to be private and when to share for each site you visit with Lenovo Privacy Essentials by FigLeaf`,
 			};
 		} else {
 			return {
