@@ -48,7 +48,7 @@ export class SidebarInstallWidgetService {
 		},
 		[RoutersName.BROWSERACCOUNTS]: {
 			visible: true,
-			title: 'Take back control over your data with Lenovo Privacy Essentials',
+			title: 'Make your passwords private',
 			text: 'Start your 14-day trial. No credit card required.',
 			image: 'pitch-block/Img_Pith_Passwords',
 		},
