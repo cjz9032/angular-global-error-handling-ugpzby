@@ -24,7 +24,7 @@ import { NavTabsComponent } from './nav-tabs/nav-tabs.component';
 import { FeatureHeaderComponent } from './feature-header/feature-header.component';
 import { StatComponent } from './privacy-dashboard-list/stat.component';
 import { AccountsStoredComponent } from './accounts-stored/accounts-stored.component';
-import { NoIssuePitchComponent } from './no-issue-pitch/no-issue-pitch.component';
+import { DidYouKnowComponent } from './did-you-know/did-you-know.component';
 import { BigPitchComponent } from './big-pitch/big-pitch.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -53,7 +53,7 @@ import { OfflineModeComponent } from './offline-mode/offline-mode.component';
 		FeatureHeaderComponent,
 		StatComponent,
 		AccountsStoredComponent,
-		NoIssuePitchComponent,
+		DidYouKnowComponent,
 		BigPitchComponent,
 		SpinnerComponent,
 		TooltipComponent,
@@ -80,7 +80,7 @@ import { OfflineModeComponent } from './offline-mode/offline-mode.component';
 		FeatureHeaderComponent,
 		StatComponent,
 		AccountsStoredComponent,
-		NoIssuePitchComponent,
+		DidYouKnowComponent,
 		BigPitchComponent,
 		SpinnerComponent,
 		TooltipComponent,
