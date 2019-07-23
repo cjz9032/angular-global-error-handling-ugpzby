@@ -13,12 +13,21 @@ export class OfflineModeComponent implements OnInit, OnDestroy {
 	@Input() positionContextTo: 'center' | 'right' | 'left' = 'center';
 
 	@HostBinding('attr.disabled') isDisabled = false;
+	@HostBinding('class.offline-active') isOfflineActive = false;
 	@HostBinding('style.background') background = null;
 	@HostBinding('style.color') color = null;
-	@HostBinding('style.pointerEvents') pointerEvents = null;
 	@HostBinding('style.borderColor') borderColor = null;
 
 	isOnline = this.commonService.isOnline;
+
+	@HostListener('click', ['$event']) onClick($event) {
+		if (!this.commonService.isOnline) {
+			console.log($event);
+			$event.preventDefault();
+			$event.stopPropagation();
+			$event.stopImmediatePropagation();
+		}
+	}
 
 	constructor(
 		private commonService: CommonService,
@@ -41,7 +50,6 @@ export class OfflineModeComponent implements OnInit, OnDestroy {
 	ngOnDestroy() {
 	}
 
-
 	private buttonDisabled(isOnline) {
 		this.isDisabled = isOnline ? null : true;
 		this.background = isOnline ? null : 'linear-gradient(270deg, #E2E2E2 0%, #C2C6CF 100%)';
@@ -51,7 +59,10 @@ export class OfflineModeComponent implements OnInit, OnDestroy {
 
 	private linkDisabled(isOnline) {
 		this.color = isOnline ? null : '#D8D8D8';
-		// this.pointerEvents = isOnline ? null : 'none';
+	}
+
+	private addDisabledClass(isOnline) {
+		this.isOfflineActive = isOnline ? null : true;
 	}
 
 	private changeStyles(element: string, isOnline = true) {
@@ -60,6 +71,8 @@ export class OfflineModeComponent implements OnInit, OnDestroy {
 		} else if (element === 'a') {
 			this.linkDisabled(isOnline);
 		}
+
+		this.addDisabledClass(isOnline);
 	}
 
 	private getCurrentElement() {

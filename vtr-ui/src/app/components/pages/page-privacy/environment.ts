@@ -5,7 +5,7 @@ const productionEnvironment = {
 };
 
 const developEnvironment = {
-	backendUrl: 'https://api.sz.figleafapp.com'
+	backendUrl: 'https://api.tz4.figleafapp.com'
 };
 
 export function getPrivacyEnvironment() {

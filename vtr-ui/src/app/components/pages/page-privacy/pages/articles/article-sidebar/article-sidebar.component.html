@@ -15,7 +15,10 @@
 <vtr-common-popup [popUpId]="articlePopupId" size="large">
 	<ng-template>
 		<ng-container *ngIf="article">
-			<vtr-article-description [article]="article" data-analyticsName="ArticlePopup"></vtr-article-description>
+			<vtr-article-description
+				[article]="article"
+				data-analyticsName="ArticlePopup">
+			</vtr-article-description>
 			<a class="all-articles-link"
 			   data-analyticsName="NewsPopup"
 			   vtrSendAnalytics
