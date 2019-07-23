@@ -36,7 +36,7 @@ export class SidebarInstallWidgetService {
 		},
 		[RoutersName.BREACHES]: {
 			visible: true,
-			title: 'Fix breaches and watch for future ones',
+			title: 'Make sure no one gets your private information',
 			text: 'Start your 14-day trial. No credit card required.',
 			image: 'pitch-block/Img_Pith_Breach',
 		},
