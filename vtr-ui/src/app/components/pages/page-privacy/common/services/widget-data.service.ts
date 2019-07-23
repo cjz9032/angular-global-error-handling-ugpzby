@@ -1,15 +1,29 @@
-import {Injectable} from '@angular/core';
-import {distinctUntilChanged, map} from 'rxjs/operators';
-import {getDisplayedCountValueOfIssues} from '../../utils/helpers';
-import {CountNumberOfIssuesService} from './count-number-of-issues.service';
-import {UserDataGetStateService} from './user-data-get-state.service';
-import {MockWindows} from '../../utils/moked-api';
+import { Injectable } from '@angular/core';
+import { distinctUntilChanged, map } from 'rxjs/operators';
+import { CountNumberOfIssuesService } from './count-number-of-issues.service';
+import { UserDataGetStateService } from './user-data-get-state.service';
+import { MockWindows } from '../../utils/moked-api';
+import { FeaturesStatuses } from '../../userDataStatuses';
+import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 
 
 export interface WidgetCounters {
 	breachedAccountsScan: null | number;
 	websiteTrackersScan: null | number;
 	nonPrivatePasswordsScan: null | number;
+}
+
+function getCountOfIssues(status: FeaturesStatuses, issuesCount) {
+	switch (status) {
+		case FeaturesStatuses.exist:
+			return issuesCount;
+		case FeaturesStatuses.none:
+			return 0;
+		case FeaturesStatuses.undefined:
+			return null;
+		default:
+			return null;
+	}
 }
 
 @Injectable({
@@ -27,21 +41,22 @@ export class WidgetDataService {
 	constructor(
 		private countNumberOfIssuesService: CountNumberOfIssuesService,
 		private userDataGetStateService: UserDataGetStateService,
+		private communicationWithFigleafService: CommunicationWithFigleafService,
 	) {
 		countNumberOfIssuesService.websiteTrackersCount.pipe(
-			map((issueCount) => (getDisplayedCountValueOfIssues(this.userDataGetStateService.websiteTrackersResult, issueCount)) || null),
+			map((issueCount) => getCountOfIssues(this.userDataGetStateService.websiteTrackersResult, issueCount)),
 			distinctUntilChanged()
 		).subscribe((count) => {
 			this.updateWidgetCounters({websiteTrackersScan: count});
 		});
 		countNumberOfIssuesService.breachedAccountsCount.pipe(
-			map((issueCount) => (getDisplayedCountValueOfIssues(this.userDataGetStateService.breachedAccountsResult, issueCount)) || null),
+			map((issueCount) => getCountOfIssues(this.userDataGetStateService.breachedAccountsResult, issueCount)),
 			distinctUntilChanged()
 		).subscribe((count) => {
 			this.updateWidgetCounters({breachedAccountsScan: count});
 		});
 		countNumberOfIssuesService.nonPrivatePasswordCount.pipe(
-			map((issueCount) => (getDisplayedCountValueOfIssues(this.userDataGetStateService.nonPrivatePasswordResult, issueCount)) || null),
+			map((issueCount) => getCountOfIssues(this.userDataGetStateService.nonPrivatePasswordResult, issueCount)),
 			distinctUntilChanged()
 		).subscribe((count) => {
 			this.updateWidgetCounters({nonPrivatePasswordsScan: count});
@@ -49,11 +64,13 @@ export class WidgetDataService {
 	}
 
 	updateWidgetCounters(updateData) {
-		this.widgetCounters = {
-			...this.widgetCounters,
-			...updateData,
-		};
-		this.writeWidgetDataFile();
+		if (!this.communicationWithFigleafService.isFigleafInstalled) {
+			this.widgetCounters = {
+				...this.widgetCounters,
+				...updateData,
+			};
+			this.writeWidgetDataFile();
+		}
 	}
 
 	writeWidgetDataFile() {

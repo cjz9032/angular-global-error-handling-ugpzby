@@ -1,12 +1,11 @@
-import { Injectable, NgZone } from '@angular/core';
-import { FigleafConnectorInstance as FigleafConnector, MessageToFigleaf } from './figleaf-connector';
-import { EMPTY, from, Observable, ReplaySubject, Subscription, timer } from 'rxjs';
-import { catchError, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
+import {Injectable, NgZone} from '@angular/core';
+import {FigleafConnectorInstance as FigleafConnector, MessageToFigleaf} from './figleaf-connector';
+import {BehaviorSubject, EMPTY, from, Observable, ReplaySubject, Subscription, timer} from 'rxjs';
+import {catchError, distinctUntilChanged, filter, switchMap} from 'rxjs/operators';
 import {
 	TaskActionWithTimeoutService,
 	TasksName
 } from '../../common/services/analytics/task-action-with-timeout.service';
-import { PrivacyModule } from '../../privacy.module';
 
 export interface MessageFromFigleaf {
 	type: string;
@@ -20,7 +19,7 @@ export interface MessageFromFigleaf {
 
 export class CommunicationWithFigleafService {
 	isFigleafInstalled$ = new ReplaySubject(1);
-	private isFigleafReadyForCommunication = new ReplaySubject<boolean>(1);
+	private isFigleafReadyForCommunication = new BehaviorSubject<boolean>(false);
 	isFigleafReadyForCommunication$ = this.isFigleafReadyForCommunication.pipe(distinctUntilChanged());
 
 	subscription: Subscription[] = [];
@@ -90,12 +89,16 @@ export class CommunicationWithFigleafService {
 		return this.isFigleafReadyForCommunication.pipe(
 			switchMap(isFigleafInstalled => {
 				if (isFigleafInstalled) {
-					return from(FigleafConnector.sendMessageToFigleaf(message)) as Observable<T> ;
+					return from(FigleafConnector.sendMessageToFigleaf(message)) as Observable<T>;
 				} else {
 					console.error('figLeaf not installed');
 					return EMPTY;
 				}
 			})
 		);
+	}
+
+	get isFigleafInstalled() {
+		return this.isFigleafReadyForCommunication.getValue();
 	}
 }

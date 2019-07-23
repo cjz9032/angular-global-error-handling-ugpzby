@@ -5,7 +5,7 @@ import { OpenFigleafInstallerDirective } from './open-figleaf-installer.directiv
 import { SendAnalyticsDirective } from './send-analytics.directive';
 import { CutMultilineTextWithDotsDirective } from './cut-multiline-text-with-dots/cut-multiline-text-with-dots.directive';
 import { OpenSeePlansDirective } from './open-see-plans.directive';
-import { OfflineModeComponent } from '../components/offline-mode/offline-mode.component';
+import { OpenLinkInBrowserDirective } from './open-link-in-browser.directive';
 
 @NgModule({
 	declarations: [
@@ -14,13 +14,15 @@ import { OfflineModeComponent } from '../components/offline-mode/offline-mode.co
 		SendAnalyticsDirective,
 		CutMultilineTextWithDotsDirective,
 		OpenSeePlansDirective,
+		OpenLinkInBrowserDirective
 	],
 	exports: [
 		NumbersOnlyDirective,
 		OpenFigleafInstallerDirective,
+		OpenLinkInBrowserDirective,
 		SendAnalyticsDirective,
 		CutMultilineTextWithDotsDirective,
-		OpenSeePlansDirective,
+		OpenSeePlansDirective
 	],
 	imports: [
 		CommonModule
