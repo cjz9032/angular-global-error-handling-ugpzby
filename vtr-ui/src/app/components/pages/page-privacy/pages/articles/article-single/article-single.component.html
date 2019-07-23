@@ -7,7 +7,9 @@
 		<div class="article-recommendations">
 			<div class="article-recommendations__top">
 				<p class="article-recommendations__title">Related content</p>
-				<a class="article-recommendations__read-more" routerLink="/privacy/articles">see all articles</a>
+				<a class="article-recommendations__read-more"
+				   routerLink="/privacy/articles"
+				   vtrOfflineMode>see all articles</a>
 			</div>
 			<div class="article-recommendations__article-wrapper">
 				<div *ngFor="let articleItem of otherArticles$ | async" class="article-recommendations__article">

@@ -28,6 +28,7 @@
 					[metricsEvent]="'ItemClick'"
 					[metricsItem]="'BreachedAccountsConfirmEmailButton'"
 					[class.confirm__confirm-btn--error]="confirmationForm.touched && confirmationForm.dirty && confirmationForm.invalid || (isError$ | async)"
+					vtrOfflineMode
 					type="submit">
 				Confirm
 			</button>
@@ -36,6 +37,7 @@
 					vtrSendAnalytics
 					[metricsEvent]="'ItemClick'"
 					[metricsItem]="'BreachedAccountsSendCodeAgainLink'"
+					vtrOfflineMode
 					(click)="resendConfirmationCode()">
 				Send the code again
 			</button>

@@ -37,6 +37,7 @@ interface FigleafDashboardMessageResponse {
 export interface FigleafDashboard {
 	totalAccounts: number;
 	maskedAccounts: number;
+	monitoredAccounts: number;
 	blockedTrackers: number;
 	websitesConnectedPrivately: number;
 }
@@ -76,6 +77,7 @@ export class FigleafOverviewService implements OnDestroy {
 				takeUntil(instanceDestroyed(this)),
 			)
 			.subscribe(([settings, dashboard, status]) => {
+				console.log('dashboard', dashboard);
 				this.figleafSettings$.next(settings.payload);
 				this.figleafDashboard$.next(dashboard.payload);
 				this.figleafStatus$.next(this.transformLicenseType(status.payload));

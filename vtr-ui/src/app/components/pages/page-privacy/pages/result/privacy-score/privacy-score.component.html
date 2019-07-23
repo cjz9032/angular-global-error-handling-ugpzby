@@ -29,6 +29,7 @@
 		</div>
 		<div class="privacy-score__btn-container" *ngIf="isFirstTimeVisitor$ | async">
 			<button class="privacy-score__btn"
+					vtrOfflineMode
 					vtrSendAnalytics
 					[metricsEvent]="'ItemClick'"
 					[metricsItem]="'DefineMyScoreButton'"

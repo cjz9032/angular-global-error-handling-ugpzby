@@ -67,6 +67,16 @@
 			}
 		}
 
+		&.offline-active {
+			a {
+				color: #D8D8D8;
+
+				&:before {
+					display: none;
+				}
+			}
+		}
+
 		&:not(:last-child) {
 			margin-right: 4rem;
 		}

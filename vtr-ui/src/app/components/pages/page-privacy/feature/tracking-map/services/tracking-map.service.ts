@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { EMPTY, Observable, of, ReplaySubject } from 'rxjs';
+import { EMPTY, merge, Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { catchError, map, shareReplay, startWith, switchMap, take } from 'rxjs/operators';
 import { UserAllowService } from '../../../common/services/user-allow.service';
 import { HttpClient } from '@angular/common/http';
@@ -36,6 +36,8 @@ export class TrackingMapService {
 	private trackingData = new ReplaySubject<TrackingData>(1);
 	trackingData$ = this.trackingData.asObservable();
 
+	private update$ = new Subject();
+
 	private getTrackingSingleData = new ReplaySubject<SingleTrackersInfo>(1);
 	getTrackingSingleData$ = this.getTrackingSingleData.asObservable();
 
@@ -49,12 +51,21 @@ export class TrackingMapService {
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService
 	) {
 		this.updateTrackingData();
-		this.userAllowService.allowToShow.subscribe(() => {
+
+		merge(
+			this.userAllowService.allowToShow,
+			this.figleafOverviewService.figleafSettings$,
+			this.update$.asObservable()
+		).subscribe(() => {
 			this.updateTrackingData();
 		});
 	}
 
-	updateTrackingData() {
+	update() {
+		this.update$.next(true);
+	}
+
+	private updateTrackingData() {
 		this.getTrackingData().subscribe((val) => {
 			this.trackingData.next(val);
 			if (val.typeData === typeData.Users) {

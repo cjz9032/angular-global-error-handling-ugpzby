@@ -125,11 +125,11 @@ export class DialogService {
 	}
 
 	openCHSPermissionModal() {
-		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, false)
-			&& !this.commonService.getSessionStorageValue(SessionStorageKey.HomeSecurityShowLocationPermisisonDialog, false)) {
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, false)) {
 			if (this.modalService.hasOpenModals()) {
 				return;
 			}
+			this.commonService.setSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, false);
 			const welcomeModal = this.modalService.open(ModalChsWelcomeContainerComponent, {
 				backdrop: 'static',
 				size: 'lg',
@@ -137,11 +137,6 @@ export class DialogService {
 				windowClass: 'Welcome-container-Modal'
 			});
 			welcomeModal.componentInstance.switchPage = 4;
-			welcomeModal.result.then(() => {
-				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowLocationPermisisonDialog, true);
-			}).catch(() => {
-				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowLocationPermisisonDialog, true);
-			});
 		}
 	}
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { distinctUntilChanged, map, startWith } from 'rxjs/operators';
 import { UserAllowService } from '../../common/services/user-allow.service';
 import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
@@ -18,7 +18,7 @@ import {
 	templateUrl: './trackers.component.html',
 	styleUrls: ['./trackers.component.scss']
 })
-export class TrackersComponent {
+export class TrackersComponent implements OnInit {
 	isConsentGiven$ = this.userAllowService.allowToShow.pipe(map((value) => value['trackingMap']));
 	websiteTrackersCount$ = this.countNumberOfIssuesService.websiteTrackersCount.pipe(
 		map((issueCount) => (getDisplayedCountValueOfIssues(this.userDataGetStateService.websiteTrackersResult, issueCount)) || 0),
@@ -69,6 +69,10 @@ export class TrackersComponent {
 		private trackingMapService: TrackingMapService,
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
 	) {	}
+
+	ngOnInit() {
+		this.trackingMapService.update();
+	}
 
 	giveConcent() {
 		this.userAllowService.setShowTrackingMap(true);

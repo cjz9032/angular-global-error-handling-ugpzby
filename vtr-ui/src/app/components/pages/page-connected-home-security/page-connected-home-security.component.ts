@@ -180,6 +180,14 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			}
 		});
 
+		this.chs.on(EventTypes.wsIsLocationServiceOnEvent, (location: boolean) => {
+			if (location) {
+				this.commonService.setSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, true);
+			} else if (!location && this.commonService.getSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, false)) {
+				this.dialogService.openCHSPermissionModal();
+			}
+		});
+
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.WidgetWifiStatus)) {
 			this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
 		}
@@ -345,9 +353,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			}
 		} else {
 			this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-		}
-		if (err instanceof LocationPermissionOffError) {
-			this.dialogService.openCHSPermissionModal();
 		}
 	}
 
