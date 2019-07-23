@@ -40,14 +40,14 @@ export class NavTabsComponent implements OnInit, OnDestroy {
 				issuesCount: getDisplayedCountValueOfIssues(websiteTrackersResult, websiteTrackersCount),
 				state: websiteTrackersResult,
 				routerLink: './trackers',
-				title: 'Tracking tools',
+				title: 'Visible to Tracking tools',
 			};
 			const passwordsConfig = {
 				...this.navTabsService.tabsConfig.passwords[nonPrivatePasswordResult],
 				issuesCount: getDisplayedCountValueOfIssues(nonPrivatePasswordResult, nonPrivatePasswordCount),
 				state: nonPrivatePasswordResult,
 				routerLink: './browser-accounts',
-				title: 'Vulnerable Passwords',
+				title: 'Non-Private Passwords',
 			};
 			this.featurePagesConfig = [breachesConfig, trackersConfig, passwordsConfig];
 		});
