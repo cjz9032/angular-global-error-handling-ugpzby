@@ -378,6 +378,10 @@
 					"title": "Select Profile:"
 				}
 			}
+		},
+		"autoClose": {
+			"title": "Auto Close",
+			"introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE:This will close the app completely,so always make sure you'he saved your work"
 		}
 	},
 	"common": {

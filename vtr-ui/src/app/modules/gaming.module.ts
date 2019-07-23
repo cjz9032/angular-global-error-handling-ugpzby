@@ -36,6 +36,7 @@ import { CommonUiModule } from './common/common-ui.module';
 import { CommonWidgetModule } from './common/common-widget.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { GamingRoutingModule } from '../modules/gaming-routing.module';
+import { WidgetAutocloseComponent } from '../components/widgets/widget-autoclose/widget-autoclose.component';
 
 @NgModule({
 	declarations: [
@@ -53,7 +54,8 @@ import { GamingRoutingModule } from '../modules/gaming-routing.module';
 		UiMacrokeyDetailsComponent,
 		UiLightingProfileComponent,
 		UiMacrokeyRecordedListComponent,
-		WidgetMacrokeySettingsComponent
+		WidgetMacrokeySettingsComponent,
+		WidgetAutocloseComponent
 	],
 	imports: [
 		CommonModule,
