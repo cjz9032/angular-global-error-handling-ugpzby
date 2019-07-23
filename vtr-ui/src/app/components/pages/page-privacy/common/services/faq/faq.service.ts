@@ -126,7 +126,7 @@ export class FaqService {
 					title: 'Why is it unsafe to store my passwords in my browser?',
 					texts: [
 						`While convenient, storing login details for your favorite sites in your browser isn’t a good idea.
-						 This data can be read by any program on your PC without your knowledge, which means that almost anyone can see this info — and you won’t know about it.`,
+						 This data can be read by any program on your PC without your knowledge, which means that almost anyone can see this information — and you won’t know about it.`,
 					],
 					icon: 'lock-open-alt',
 				},

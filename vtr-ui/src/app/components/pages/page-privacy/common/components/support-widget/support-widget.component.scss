@@ -33,12 +33,14 @@
   &__icon {
     max-height: 2.2rem;
     margin-right: 1.5rem;
+    font-weight: 600;
   }
   &__support-time {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: #34495E;
     line-height: 1.6rem;
     display: flex;
+    font-weight: 600;
     align-items: center;
     strong {
       font-weight: bold;

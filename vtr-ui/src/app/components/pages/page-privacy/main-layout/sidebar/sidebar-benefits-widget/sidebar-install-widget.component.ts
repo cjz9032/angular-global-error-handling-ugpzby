@@ -14,7 +14,7 @@ import { getFigleafProtectedStatus } from '../../../utils/helpers';
 	styleUrls: ['./sidebar-install-widget.component.scss']
 })
 export class SidebarInstallWidgetComponent implements OnInit, OnDestroy {
-	primaryButtonText = 'Install Lenovo Privacy Essentials';
+	primaryButtonText = 'Install Now';
 	linkButtonText = 'Learn more';
 
 	installWidgetSettings: InstallWidgetPageSettings = {
