@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { EMPTY, Observable, of, ReplaySubject } from 'rxjs';
+import { EMPTY, merge, Observable, of, ReplaySubject } from 'rxjs';
 import { catchError, map, shareReplay, startWith, switchMap, take } from 'rxjs/operators';
 import { UserAllowService } from '../../../common/services/user-allow.service';
 import { HttpClient } from '@angular/common/http';
@@ -49,7 +49,11 @@ export class TrackingMapService {
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService
 	) {
 		this.updateTrackingData();
-		this.userAllowService.allowToShow.subscribe(() => {
+
+		merge(
+			this.userAllowService.allowToShow,
+			this.figleafOverviewService.figleafSettings$
+		).subscribe(() => {
 			this.updateTrackingData();
 		});
 	}
