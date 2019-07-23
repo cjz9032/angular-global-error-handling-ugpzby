@@ -94,6 +94,10 @@ export class CommunicationWithFigleafService {
 					console.error('figLeaf not installed');
 					return EMPTY;
 				}
+			}),
+			catchError((error) => {
+				console.error('sendMessageToFigleaf error: ', error);
+				return EMPTY;
 			})
 		);
 	}

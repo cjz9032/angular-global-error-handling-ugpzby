@@ -1,7 +1,7 @@
 <ng-container *ngIf="isNoneBreachedAndFigleafReadyState(); else defaultHeader">
 	<p class="browser-accounts-header__title-block">
 			<span class="browser-accounts-header__title">
-				{{dashboardData?.totalAccounts}} accounts stored in Lenovo Privacy Essentials
+				{{dashboardData?.totalAccounts}} accounts stored in Lenovo Privacy Essentials by Figleaf
 			</span>
 		<button class="browser-accounts-header__btn"
 				(click)="openFigleafApp.emit(true)">
@@ -9,8 +9,7 @@
 		</button>
 	</p>
 	<p class="browser-accounts-header__text">
-		You can log in to your favorite websites automatically with your passwords stored in Lenovo Privacy Essentials by
-		Figleaf.
+		Store your passwords in the app and log in to your favorite sites automatically. Everything is encrypted to keep you private.
 	</p>
 </ng-container>
 <ng-template #defaultHeader>

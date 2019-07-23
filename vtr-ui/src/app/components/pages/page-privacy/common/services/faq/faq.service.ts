@@ -236,11 +236,11 @@ export class FaqService {
 			questions: this.questionCategories.accesiblePasswords
 		},
 		articles: {
-			visible: true,
+			visible: false,
 			questions: this.questionCategories.dataBreaches
 		},
 		'article-details': {
-			visible: true,
+			visible: false,
 			questions: this.questionCategories.dataBreaches
 		}
 	};
