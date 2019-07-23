@@ -183,7 +183,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		this.chs.on(EventTypes.wsIsLocationServiceOnEvent, (location: boolean) => {
 			if (location) {
 				this.commonService.setSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, true);
-			} else if (!location && this.commonService.getSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, false)) {
+			} else if (!location
+				&& this.commonService.getSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, false)
+				&& this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, false)) {
 				this.dialogService.openCHSPermissionModal();
 			}
 		});
@@ -271,10 +273,14 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 								this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'notShow');
 								return;
 							}
-							this.openPermissionModal();
+							if (this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, false)) {
+								this.openPermissionModal();
+							}
 						});
 					} else {
-						this.openPermissionModal();
+						if (this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, false)) {
+							this.openPermissionModal();
+						}
 					}
 				});
 			} else {
