@@ -22,7 +22,6 @@ export class OfflineModeComponent implements OnInit, OnDestroy {
 
 	@HostListener('click', ['$event']) onClick($event) {
 		if (!this.commonService.isOnline) {
-			console.log($event);
 			$event.preventDefault();
 			$event.stopPropagation();
 			$event.stopImmediatePropagation();
