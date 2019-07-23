@@ -16,7 +16,7 @@ export class DialogService {
 		public modalService: NgbModal)  { }
 
 	wifiSecurityLocationDialog(wifiSecurity: WifiSecurity) {
-		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage) === true) {
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage)) {
 			if (this.modalService.hasOpenModals()) {
 				return;
 			}
@@ -42,7 +42,7 @@ export class DialogService {
 	}
 
 	wifiSecurityErrorMessageDialog() {
-		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage) === true) {
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage)) {
 			if (this.modalService.hasOpenModals()) {
 				return;
 			}
@@ -63,7 +63,7 @@ export class DialogService {
 	}
 
 	homeProtectionOpenLocationDialog(wifiSecurity: WifiSecurity) {
-		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage) === true) {
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage)) {
 			if (this.modalService.hasOpenModals()) {
 				return;
 			}
@@ -88,7 +88,7 @@ export class DialogService {
 	}
 
 	homeSecurityPluginMissingDialog() {
-		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage) === true) {
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
 			if (this.modalService.hasOpenModals()) {
 				return;
 			}
@@ -108,7 +108,7 @@ export class DialogService {
 	}
 
 	homeSecurityOfflineDialog() {
-		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage) === true) {
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
 			if (this.modalService.hasOpenModals()) {
 				return;
 			}
@@ -124,7 +124,24 @@ export class DialogService {
 		}
 	}
 
-	openCHSPermissionModal() {
+	homeSecurityAccountDialog() {
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
+			if (this.modalService.hasOpenModals()) {
+				return;
+			}
+			const errorMessageModal = this.modalService.open(ModalErrorMessageComponent, {
+				backdrop: 'static',
+				size: 'lg',
+				windowClass: 'wifi-security-error-modal'
+			});
+			errorMessageModal.componentInstance.header = 'security.wifisecurity.errorMessage.headerText';
+			errorMessageModal.componentInstance.description = 'security.wifisecurity.errorMessage.accountText';
+			errorMessageModal.componentInstance.closeButtonId = 'chs-btn-accountDialogClose';
+			errorMessageModal.componentInstance.cancelButtonId = 'chs-btn-accountDialogcancle';
+		}
+	}
+
+	openCHSPermissionModal(): NgbModalRef {
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, false)) {
 			if (this.modalService.hasOpenModals()) {
 				return;
@@ -137,6 +154,7 @@ export class DialogService {
 				windowClass: 'Welcome-container-Modal'
 			});
 			welcomeModal.componentInstance.switchPage = 4;
+			return welcomeModal;
 		}
 	}
 }

@@ -265,6 +265,19 @@ export class ConfigService {
 		forArm: true,
 		subitems: []
 	}, {
+		id: 'privacy',
+		label: 'common.menu.privacy',
+		path: 'privacy/breaches',
+		icon: ['fal', 'user-shield'],
+		metricsEvent: 'itemClick',
+		metricsParent: 'navbar',
+		metricsItem: 'link.privacy',
+		routerLinkActiveOptions: {
+			exact: true
+		},
+		forArm: false,
+		subitems: []
+	}, {
 		id: 'device',
 		label: 'common.menu.device.title',
 		path: 'device',
@@ -368,19 +381,6 @@ export class ConfigService {
 			icon: '',
 			subitems: []
 		}]
-	}, {
-		id: 'privacy',
-		label: 'common.menu.privacy',
-		path: 'privacy/breaches',
-		icon: ['fal', 'user-shield'],
-		metricsEvent: 'itemClick',
-		metricsParent: 'navbar',
-		metricsItem: 'link.privacy',
-		routerLinkActiveOptions: {
-			exact: true
-		},
-		forArm: false,
-		subitems: []
 	}, {
 		id: 'support',
 		label: 'common.menu.support',
