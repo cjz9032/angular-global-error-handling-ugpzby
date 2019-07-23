@@ -6,7 +6,6 @@ import { InstallWidgetPageSettings, SidebarInstallWidgetService } from './sideba
 import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
 import { AppStatuses } from '../../../userDataStatuses';
 import { merge } from 'rxjs';
-import { RoutersName } from '../../../privacy-routing-name';
 import { getFigleafProtectedStatus } from '../../../utils/helpers';
 
 @Component({
