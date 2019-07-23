@@ -36,7 +36,7 @@ export class DidYouKnowComponent implements OnInit, OnDestroy {
 	private textForPitch = {
 		[RoutersName.BREACHES]: {
 			title: 'How do I prevent this?',
-			text: 'Lenovo Privacy Essentials by FigLeaf monitors online accounts in real time and notifies you when your private information is at risk.'
+			text: 'Lenovo Privacy Essentials by FigLeaf will continuously scan the dark web and notify you if find your private information in data breaches.'
 		},
 		[RoutersName.TRACKERS]: {
 			title: 'How do I prevent this?',
