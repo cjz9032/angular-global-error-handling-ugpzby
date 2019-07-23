@@ -12,7 +12,7 @@ import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance
 import { RouterChangeHandlerService } from '../../services/router-change-handler.service';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { CountNumberOfIssuesService } from '../../services/count-number-of-issues.service';
-import { combineLatest, Observable, of } from 'rxjs';
+import { combineLatest, Observable, of, Subject } from 'rxjs';
 import { RoutersName } from '../../../privacy-routing-name';
 import { FeaturesStatuses } from '../../../userDataStatuses';
 import { UserDataGetStateService } from '../../services/user-data-get-state.service';
@@ -52,6 +52,8 @@ export class DidYouKnowComponent implements OnInit, OnDestroy {
 	private isFigleafReadyForCommunication$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
 	private breachedAccountsCount$ = this.countNumberOfIssuesService.breachedAccountsCount;
 	private breachedAccountsWasScanned$ = this.getState('breachedAccountsResult');
+
+	private shouldShowDidYouKnowBlock$ = new Subject();
 
 	private trackersCount$ = this.countNumberOfIssuesService.websiteTrackersCount;
 	private trackersWasScanned$ = this.getState('websiteTrackersResult');
@@ -108,6 +110,8 @@ export class DidYouKnowComponent implements OnInit, OnDestroy {
 					this.cdr.detectChanges();
 				}
 			);
+
+		this.shouldShowDidYouKnowBlock();
 	}
 
 	ngOnDestroy() { }
@@ -120,7 +124,7 @@ export class DidYouKnowComponent implements OnInit, OnDestroy {
 		return this.templateForPitch[this.currentPath];
 	}
 
-	shouldShowDidYouKnowBlock() {
+	private shouldShowDidYouKnowBlock() {
 		function getShowCondition(wasScannedState: Observable<boolean>, noIssuesState: Observable<boolean>) {
 			return combineLatest(
 				wasScannedState.pipe(map(value => !value)),
@@ -134,7 +138,7 @@ export class DidYouKnowComponent implements OnInit, OnDestroy {
 			[RoutersName.BROWSERACCOUNTS]: getShowCondition(this.nonPrivatePasswordWasScanned$, this.nonPrivatePasswordNoIssues$),
 		};
 
-		return didYouKnowBlockShowConditions[this.currentPath];
+		this.shouldShowDidYouKnowBlock$.next(didYouKnowBlockShowConditions[this.currentPath]);
 	}
 
 	private getState(userStatuses: string) {
