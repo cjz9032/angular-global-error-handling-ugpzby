@@ -1616,6 +1616,7 @@
 				"headerText": "Error",
 				"bodyText": "We've detected that you are missing critical pieces of Vantage. These pieces will download in the background. Please try again later.",
 				"offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect",
+				"accountText": "Account creation failed. Please try again later.",
 				"closeText": "close"
 			}
 		},
