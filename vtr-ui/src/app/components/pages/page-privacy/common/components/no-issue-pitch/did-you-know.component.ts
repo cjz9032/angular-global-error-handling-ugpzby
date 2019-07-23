@@ -18,7 +18,7 @@ import { FeaturesStatuses } from '../../../userDataStatuses';
 import { UserDataGetStateService } from '../../services/user-data-get-state.service';
 
 @Component({
-	selector: 'vtr-no-issue-pitch',
+	selector: 'vtr-did-you-know',
 	templateUrl: './did-you-know.component.html',
 	styleUrls: ['./did-you-know.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush

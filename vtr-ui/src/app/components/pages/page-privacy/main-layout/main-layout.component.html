@@ -7,7 +7,7 @@
                 <vtr-nav-tabs *ngIf="showNavigationBlock"></vtr-nav-tabs>
                 <router-outlet></router-outlet>
             </div>
-			<vtr-no-issue-pitch></vtr-no-issue-pitch>
+			<vtr-did-you-know></vtr-did-you-know>
 			<vtr-stat
 				*ngIf="(isFigleafReadyForCommunication$ | async)"
 				[dashboardData]="dashboardData$ | async">
