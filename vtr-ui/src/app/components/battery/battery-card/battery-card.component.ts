@@ -127,6 +127,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryInfo = response.batteryInformation;
 				this.batteryGauge = response.batteryIndicatorInfo;
 
+				this.batteryGauge.acAdapterStatus = 'NotSupported';
+
 				if (this.batteryInfo.length !== 0 && this.batteryInfo[0].fullChargeCapacity !== undefined
 					&& this.batteryInfo[0].fullChargeCapacity !== null
 					&& this.batteryInfo[0].designCapacity !== undefined && this.batteryInfo[0].designCapacity !== null) {
@@ -282,12 +284,12 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryQuality.Poor));
 		}
 
-		// if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
-		// 	batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryQuality.AcError));
-		// }
-		// if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'notsupported') {
-		// 	batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryQuality.AcError));
-		// }
+		if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
+			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryQuality.AcError));
+		}
+		if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'notsupported') {
+			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryQuality.AcError));
+		}
 
 		this.batteryConditions = batteryConditions;
 		console.log('Battery conditions length', this.batteryConditions.length);
