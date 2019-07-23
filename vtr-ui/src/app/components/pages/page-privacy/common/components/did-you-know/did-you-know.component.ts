@@ -53,7 +53,8 @@ export class DidYouKnowComponent implements OnInit, OnDestroy {
 	private breachedAccountsCount$ = this.countNumberOfIssuesService.breachedAccountsCount;
 	private breachedAccountsWasScanned$ = this.getState('breachedAccountsResult');
 
-	private shouldShowDidYouKnowBlock$ = new Subject();
+	private shouldShowDidYouKnowBlockSubj = new Subject();
+	shouldShowDidYouKnowBlock$ = this.shouldShowDidYouKnowBlockSubj.asObservable();
 
 	private trackersCount$ = this.countNumberOfIssuesService.websiteTrackersCount;
 	private trackersWasScanned$ = this.getState('websiteTrackersResult');
@@ -138,7 +139,7 @@ export class DidYouKnowComponent implements OnInit, OnDestroy {
 			[RoutersName.BROWSERACCOUNTS]: getShowCondition(this.nonPrivatePasswordWasScanned$, this.nonPrivatePasswordNoIssues$),
 		};
 
-		this.shouldShowDidYouKnowBlock$.next(didYouKnowBlockShowConditions[this.currentPath]);
+		this.shouldShowDidYouKnowBlockSubj.next(didYouKnowBlockShowConditions[this.currentPath]);
 	}
 
 	private getState(userStatuses: string) {
