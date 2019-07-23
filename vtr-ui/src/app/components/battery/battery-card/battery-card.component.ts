@@ -127,7 +127,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryInfo = response.batteryInformation;
 				this.batteryGauge = response.batteryIndicatorInfo;
 
-				this.batteryGauge.acAdapterStatus = 'NotSupported';
+				// this.batteryGauge.acAdapterStatus = 'NotSupported';
 
 				if (this.batteryInfo.length !== 0 && this.batteryInfo[0].fullChargeCapacity !== undefined
 					&& this.batteryInfo[0].fullChargeCapacity !== null
