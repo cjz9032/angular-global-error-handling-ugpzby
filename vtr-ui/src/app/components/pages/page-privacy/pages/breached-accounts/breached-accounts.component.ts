@@ -25,8 +25,8 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	confirmationPopupName = 'confirmationPopup';
 	textForFeatureHeader = {
 		title: 'Check email for breaches',
-		figleafTitle: 'Lenovo Privacy Essentials monitors your accounts',
-		figleafInstalled: 'If there is a data leak, we will immediately notify you.',
+		figleafTitle: 'Lenovo Privacy Essentials by FigLeaf watches out for breaches',
+		figleafInstalled: 'If your personal information shows up in one, you’ll be notified right away.',
 		figleafUninstalled: 'Find out if your private information is being exposed. We will check the dark web and every known data breach.',
 		noIssuesTitle: 'No breaches found for your email',
 		noIssuesDescription: 'Your private information associated with this email address is safe so far.'
