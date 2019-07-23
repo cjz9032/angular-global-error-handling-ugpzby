@@ -13,6 +13,8 @@ import { SystemUpdateStatusMessage } from 'src/app/data-models/system-update/sys
 import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enum';
 import { WinRT } from '@lenovo/tan-client-bridge';
 import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
+import { TaskAction } from 'src/app/data-models/metrics/events.model';
+import * as metricsConst from 'src/app/enums/metrics.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -24,12 +26,14 @@ export class SystemUpdateService {
 		, private commonService: CommonService) {
 		this.systemUpdateBridge = shellService.getSystemUpdate();
 		this.metricHelper = new MetricHelper(shellService.getMetrics());
+		this.metricClient = shellService.getMetrics();
 		if (this.systemUpdateBridge) {
 			this.isShellAvailable = true;
 		}
 	}
 	private systemUpdateBridge: any;
 	private metricHelper: any;
+	private metricClient: any;
 	public autoUpdateStatus: any;
 	public isShellAvailable = false;
 	public isCheckForUpdateComplete = true;
@@ -94,7 +98,14 @@ export class SystemUpdateService {
 			};
 			this.systemUpdateBridge.setUpdateSchedule(request)
 				.then((response) => {
-					console.log('setUpdateSchedule', response);
+					const taskParam = 'critical-update:' + request.criticalAutoUpdates + ',recommanded-update:' + request.recommendedAutoUpdates;
+					this.metricClient.sendAsync(new TaskAction(
+						metricsConst.MetricString.TaskSetUpdateSchedule,
+						1,
+						taskParam,
+						response,
+						0
+					));
 					this.getUpdateSchedule();
 				}).catch((error) => {
 					// get current status

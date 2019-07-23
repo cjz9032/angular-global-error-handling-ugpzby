@@ -11,5 +11,6 @@ export enum SessionStorageKey {
 	HomeSecurityShowPluginMissingDialog = '[SessionStorageKey] HomeSecurityShowPluginMissingDialog',
 	HomeSecurityShowWelcomeDialog = '[SessionStorageKey] HomeSecurityShowWelcomeDialog',
 	HomeSecurityShowLocationPermisisonDialog = '[SessionStorageKey] HomeSecurityShowLocationPermisisonDialog',
-	WidgetWifiStatus = '[SessionStorageKey] WidgetWifiStatus'
+	WidgetWifiStatus = '[SessionStorageKey] WidgetWifiStatus',
+	ChsLocationDialogNextShowFlag = '[SessionStorageKey] ChsLocationDialogNextShowFlag'
 }
