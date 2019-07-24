@@ -24,6 +24,7 @@ import { SecurityAdvisorMockService } from 'src/app/services/security/securityMo
 import { LenovoIdDialogService } from '../../services/dialog/lenovoIdDialog.service';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
+import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -67,7 +68,8 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 		private logger: LoggerService,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private dialogService: LenovoIdDialogService,
-		private keyboardService: InputAccessoriesService
+		private keyboardService: InputAccessoriesService,
+		private windowsHelloService: WindowsHelloService
 	) {
 		this.showVpn();
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
@@ -95,10 +97,10 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 			if (this.securityAdvisor) {
 				const windowsHello: WindowsHello = this.securityAdvisor.windowsHello;
 				if (windowsHello.fingerPrintStatus) {
-					this.showWindowsHello(windowsHello);
+					this.showWindowsHelloItem(windowsHello);
 				}
 				windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
-					this.showWindowsHello(windowsHello);
+					this.showWindowsHelloItem(windowsHello);
 				});
 			}
 			this.commonMenuSubscription = this.translationService.subscription.subscribe((translation: Translation) => {
@@ -232,16 +234,11 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 		// })
 	}
 
-	showWindowsHello(windowsHello: WindowsHello) {
+	showWindowsHelloItem(windowsHello: WindowsHello) {
 		this.getMenuItems().then((items) => {
 			const securityItem = items.find((item) => item.id === 'security');
-			const version = this.commonService.getWindowsVersion();
-			if (version === 0) {
-				this.isRS5OrLater = true;
-			} else {
-				this.isRS5OrLater = this.commonService.isRS5OrLater();
-			}
-			if (!this.isRS5OrLater || typeof windowsHello.fingerPrintStatus !== 'string') {
+
+			if (!this.windowsHelloService.showWindowsHello()) {
 				securityItem.subitems = securityItem.subitems.filter((subitem) => subitem.id !== 'windows-hello');
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
 			} else {

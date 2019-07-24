@@ -1522,7 +1522,13 @@
 			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
 			"good": "GOOD",
 			"malicious": "MALICIOUS",
-			"suspicious": "SUSPICIOUS"
+			"suspicious": "SUSPICIOUS",
+			"securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+			"antivirus": "Being protected by anti-virus software",
+			"password": "Having strong and complex passwords managed in a safe way",
+			"vpn": "Monitoring your network exposure to attackers",
+			"wifi": "Encrypting your personal data when using public WiFi",
+			"windowsHello": "Protecting your device using safe login options"
 		},
 		"antivirus": {
 			"common": {
