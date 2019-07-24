@@ -663,8 +663,10 @@
 					"Bad": "<b>A battery error has occurred.</b> The battery cannot be charged/discharged. Replace the battery.",
 					"NotDetected": "<b>No battery detected or not</b> plugged in battery.",
 					"NotGood": "<b>The battery is not in a good Condition.</b>",
-					"NotSupportACAdapter": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-					"LimitedACAdapterSupport": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter.",
+					"NotSupportACAdapter": "<b>AC adapter not supported.</b>",
+					"NotSupportACAdaptorDetail": "<b>AC adapter not supported.</b><br> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
+					"LimitedACAdapterSupport": "<b>AC adapter cannot provide enough power</b>",
+					"LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter.",
 					"MissingDriver": "<b>The Lenovo Power Manager driver</b> is not installed or not working properly. Please run Windows Update to install the latest driver.",
 					"StoreLimitation": "<b>The battery can only store {{value}}% of</b> it's original full charge capacity.",
 					"HighTemperature": "<b>Discharging</b> has been stopped because the <b>battery temperature is too high.</b>",
@@ -761,7 +763,7 @@
 						"description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
 						"tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
 					},
-					"or":"Or"
+					"or": "Or"
 				},
 				"otherSettings": {
 					"title": "Other settings",
@@ -825,8 +827,8 @@
 						"readMoreText": "Read more.",
 						"noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
 						"settings": {
-							"title1": "Threshold for Built in battery",
-							"title2": "Threshold for Removable battery"
+							"title1": "Threshold for Primary battery",
+							"title2": "Threshold for Secondary battery"
 						},
 						"popup": {
 							"title": "Enable Battery Charge Threshold",

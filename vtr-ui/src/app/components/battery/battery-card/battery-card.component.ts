@@ -126,19 +126,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryInfo = response;
 				this.batteryInfo = response.batteryInformation;
 				this.batteryGauge = response.batteryIndicatorInfo;
-
-				if (this.batteryInfo.length !== 0 && this.batteryInfo[0].fullChargeCapacity !== undefined
-					&& this.batteryInfo[0].fullChargeCapacity !== null
-					&& this.batteryInfo[0].designCapacity !== undefined && this.batteryInfo[0].designCapacity !== null) {
-					const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
-					this.percentageLimitation = parseFloat(percentLimit.toFixed(1));
-					this.param2 = { value: this.percentageLimitation };
-				}
-
-				this.isBatteryDetailsBtnDisabled =
-					this.batteryGauge.isPowerDriverMissing || this.batteryInfo.length === 0;
+				// this.batteryGauge.acAdapterStatus = 'NotSupported';
+				this.initBatteryInformation();
 				this.updateBatteryDetails();
-				this.getBatteryCondition();
 			}).catch(error => {
 				console.error('getBatteryDetails error', error);
 			});
@@ -159,48 +149,39 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	public initBatteryInformation() {
+		this.batteryGauge.isExpressCharging = this.batteryGauge.isExpressCharging || false;
+		this.batteryGauge.percentage = this.batteryGauge.percentage || 0;
+		this.batteryInfo[0].batteryHealth = this.batteryInfo[0].batteryHealth || 0;
+		this.batteryInfo[0].batteryCondition = this.batteryInfo[0].batteryCondition || ['Normal'];
+		this.batteryInfo[0].fullChargeCapacity = this.batteryInfo[0].fullChargeCapacity || 0;
+		this.batteryInfo[0].designCapacity = this.batteryInfo[0].designCapacity || 0;
+	}
+
 	public updateBatteryDetails() {
-		if (this.batteryInfo !== undefined && this.batteryInfo.length !== 0) {
-			// let batteryIndex = -1;
+		if (this.batteryInfo !== undefined && this.batteryInfo.length > 0) {
+
+			this.isBatteryDetailsBtnDisabled = this.batteryGauge.isPowerDriverMissing;
 			const remainingPercentages = [];
+
 			this.batteryInfo.forEach((info) => {
 				if (info.batteryHealth === undefined || info.batteryHealth === null) {
 					info.batteryHealth = 0;
 				}
 				remainingPercentages.push(info.remainingPercent);
-				// if (info.batteryHealth >= this.batteryHealth) {
-				// 	this.batteryHealth = info.batteryHealth;
-				// 	batteryIndex += 1;
-				// }
 			});
-			this.batteryIndex = 0; // temp set primary battery conditions
+
 			this.commonService.setLocalStorageValue(LocalStorageKey.RemainingPercentages, remainingPercentages);
 			this.batteryHealth = this.batteryInfo[0].batteryHealth;
+			this.batteryIndicator.batteryNotDetected = this.batteryHealth === 4;
 		}
+
 		this.batteryIndicator.percent = this.batteryGauge.percentage;
 		this.batteryIndicator.charging = this.batteryGauge.isAttached;
 		this.batteryIndicator.convertMin(this.batteryGauge.time);
 		this.batteryIndicator.timeText = this.batteryGauge.timeType;
-
-		if (this.batteryGauge.isExpressCharging === undefined || this.batteryGauge.isExpressCharging === null) {
-			this.batteryIndicator.expressCharging = false;
-		} else {
-			this.batteryIndicator.expressCharging = this.batteryGauge.isExpressCharging;
-		}
-
-		// if (this.batteryInfo.length > 0 &&
-		// 	this.batteryInfo[this.batteryIndex].isVoltageError !== undefined) {
-		// 	this.batteryIndicator.voltageError = this.batteryInfo[this.batteryIndex].isVoltageError;
-		// } else {
-		// 	this.batteryIndicator.voltageError = false;
-		// }
-
-		if (this.batteryHealth !== undefined) {
-			this.batteryIndicator.batteryNotDetected = this.batteryHealth === 4;
-		} else {
-			this.batteryIndicator.batteryNotDetected = false;
-		}
-
+		this.batteryIndicator.expressCharging = this.batteryGauge.isExpressCharging;
+		this.getBatteryCondition();
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo, { detail: this.batteryInfo, gauge: this.batteryGauge });
 
 		if (this.cd !== null && this.cd !== undefined &&
@@ -230,64 +211,52 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		const batteryConditions = [];
 		const isThinkpad = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType) === 1;
 
-		this.batteryConditionStatus = this.getBatteryHealth(this.batteryHealth);
-		if (this.batteryInfo.length > 0) {
-			if (this.batteryHealth === undefined) {
-				this.batteryHealth = 0;
-			}
-			if (isThinkpad && (this.batteryHealth === 1 || this.batteryHealth === 2)) {
-				this.batteryHealth = BatteryConditionsEnum.StoreLimitation;
-			}
-			if (this.batteryHealth !== 0) {
-				batteryConditions.push(new BatteryConditionModel(this.batteryHealth,
-					this.batteryQuality[this.batteryConditionStatus]));
-			}
-			if (this.batteryInfo[this.batteryIndex].batteryCondition.length !== 0 &&
-				this.batteryInfo[this.batteryIndex].batteryCondition[0] !== undefined &&
-				this.batteryInfo[this.batteryIndex].batteryCondition[0] !== null) {
-				this.batteryInfo[this.batteryIndex].batteryCondition.forEach((condition) => {
-					if (condition === null || condition === undefined) {
-						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.Good,
-							BatteryQuality.Good));
-					} else {
-						switch (condition.toLocaleLowerCase()) {
-							case 'normal':
-								if (this.batteryHealth === 0) {
-									batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.Good,
-										BatteryQuality.Good));
-								}
-								break;
-							case 'hightemperature':
-								batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.HighTemperature, BatteryQuality.Fair));
-								break;
-							case 'tricklecharge':
-								batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.TrickleCharge, BatteryQuality.Fair));
-								break;
-							case 'overheatedbattery':
-								batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.OverheatedBattery, BatteryQuality.Fair));
-								break;
-							case 'permanenterror':
-								batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.PermanentError, BatteryQuality.Poor));
-								break;
-							case 'hardwareauthenticationerror':
-								batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.HardwareAuthenticationError, BatteryQuality.Fair));
-								break;
-						}
-					}
-				});
-			}
-		}
-
 		if (this.batteryGauge.isPowerDriverMissing) {
 			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryQuality.Poor));
 		}
+		if (!this.batteryIndicator.batteryNotDetected) {
+			if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
+				batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryQuality.AcError));
+			}
 
-		// if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
-		// 	batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryQuality.AcError));
-		// }
-		// if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'notsupported') {
-		// 	batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryQuality.AcError));
-		// }
+			if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'notsupported') {
+				batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryQuality.AcError));
+			}
+		}
+
+		if (this.batteryInfo && this.batteryInfo.length > 0) {
+
+			if (isThinkpad && (this.batteryHealth === 1 || this.batteryHealth === 2)) {
+				this.batteryHealth = BatteryConditionsEnum.StoreLimitation;
+				const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
+				this.param2 = { value: parseFloat(percentLimit.toFixed(1)) };
+			}
+			this.batteryConditionStatus = this.getConditionState(this.batteryHealth);
+
+			this.batteryInfo[this.batteryIndex].batteryCondition.forEach((condition) => {
+				switch (condition.toLocaleLowerCase()) {
+					case 'normal':
+						batteryConditions.push(new BatteryConditionModel(this.batteryHealth,
+							this.batteryQuality[this.batteryConditionStatus]));
+						break;
+					case 'hightemperature':
+						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.HighTemperature, BatteryQuality.Fair));
+						break;
+					case 'tricklecharge':
+						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.TrickleCharge, BatteryQuality.Fair));
+						break;
+					case 'overheatedbattery':
+						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.OverheatedBattery, BatteryQuality.Fair));
+						break;
+					case 'permanenterror':
+						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.PermanentError, BatteryQuality.Poor));
+						break;
+					case 'hardwareauthenticationerror':
+						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.HardwareAuthenticationError, BatteryQuality.Fair));
+						break;
+				}
+			});
+		}
 
 		this.batteryConditions = batteryConditions;
 		console.log('Battery conditions length', this.batteryConditions.length);
@@ -298,19 +267,19 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	getBatteryHealth(batteryHealth: number): string {
-		switch (batteryHealth) {
+	getConditionState(conditionState: number): string {
+		switch (conditionState) {
 			case 3:
-				batteryHealth = 1;
+				conditionState = 1;
 				break;
 			case 4:
-				batteryHealth = 2;
+				conditionState = 2;
 				break;
 			case 5:
-				batteryHealth = 2;
+				conditionState = 2;
 				break;
 		}
-		return BatteryQuality[batteryHealth];
+		return BatteryQuality[conditionState];
 	}
 
 	reInitValue() {
