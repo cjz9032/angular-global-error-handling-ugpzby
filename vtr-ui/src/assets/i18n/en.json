@@ -857,7 +857,8 @@
 					},
 					"airPlanePower": {
 						"title": "Airplane Power Mode",
-						"description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
+						"description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance.",
+						"checkBoxDesc": "Auto detection"
 					}
 				},
 				"energyStar": {

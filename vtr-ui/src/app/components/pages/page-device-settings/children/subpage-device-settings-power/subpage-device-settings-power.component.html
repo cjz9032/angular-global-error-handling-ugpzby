@@ -57,7 +57,28 @@
 							[leftIcon]="batterySettings.items[0].leftImageSource"
 							[tooltipText]="batterySettings.items[0].tooltipText"
 							[isSwitchChecked]="toggleAirplanePowerModeFlag"
+							[showChildContent]=true
 							(toggleOnOff)="onToggleOfAirplanePowerMode($event)">
+							<div class="row">
+								<div class="col-12">
+									<div class="custom-control custom-checkbox always-on-usb-checkbox"
+										*ngIf="usbChargingInBatteryModeStatus">
+										<input id="cb-always-on-usb"
+											type="checkbox"
+											name="always-on-usb-checkbox-id"
+											[disabled]="!toggleAlwaysOnUsbFlag"
+											[(ngModel)]="usbChargingCheckboxFlag"
+											(ngModelChange)='onUsbChargingStatusChange()'
+											class="custom-control-input"
+											checked="" />
+										<!-- [disabled]="!toggleAlwaysOnUsbFlag" -->
+										<label class="custom-control-label "
+											for="cb-always-on-usb">
+											{{ 'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate }}
+										</label>
+									</div>
+								</div>
+							</div>
 						</vtr-ui-row-switch>
 					</li>
 
