@@ -1,4 +1,14 @@
-import { Component, ElementRef, HostBinding, HostListener, Input, OnDestroy, OnInit } from '@angular/core';
+import {
+	ChangeDetectorRef,
+	Component,
+	ElementRef,
+	HostBinding,
+	HostListener,
+	Input,
+	OnDestroy,
+	OnInit,
+	SkipSelf
+} from '@angular/core';
 import { CommonService } from '../../../../../../services/common/common.service';
 import { filter, map, takeUntil } from 'rxjs/operators';
 import { NetworkStatus } from '../../../../../../enums/network-status.enum';
@@ -31,6 +41,7 @@ export class OfflineModeComponent implements OnInit, OnDestroy {
 	constructor(
 		private commonService: CommonService,
 		private el: ElementRef,
+		@SkipSelf() private cdRef: ChangeDetectorRef
 	) {	}
 
 	ngOnInit() {
@@ -72,6 +83,8 @@ export class OfflineModeComponent implements OnInit, OnDestroy {
 		}
 
 		this.addDisabledClass(isOnline);
+
+		this.cdRef.markForCheck();
 	}
 
 	private getCurrentElement() {
