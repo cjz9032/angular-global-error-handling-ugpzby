@@ -17,16 +17,18 @@ export class OpenFigleafInstallerDirective implements OnDestroy {
 	) {	}
 
 	@HostListener('click', ['$event']) onClick($event) {
-		if (this.commonService.isOnline) {
-			this.vantageCommunicationService.openInstaller().pipe(
-					takeUntil(instanceDestroyed(this))
-				).subscribe(
-				() => {
-					this.taskActionWithTimeoutService.startAction(TasksName.privacyAppInstallationAction);
-				},
-				(err) => console.error('openInstaller', err),
-			);
+		if (!this.commonService.isOnline) {
+			return;
 		}
+		this.vantageCommunicationService.openInstaller().pipe(
+			takeUntil(instanceDestroyed(this))
+		).subscribe(
+			() => {
+				this.taskActionWithTimeoutService.startAction(TasksName.privacyAppInstallationAction);
+			},
+			(err) => console.error('openInstaller', err),
+		);
+
 	}
 
 	ngOnDestroy() {
