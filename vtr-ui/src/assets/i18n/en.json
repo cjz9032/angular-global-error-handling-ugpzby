@@ -1481,7 +1481,11 @@
 			"listLenovoCommunity": "Lenovo Community",
 			"listContactCustomerService": "Contact customer service",
 			"listContactUsOnWechat": "Contact us on WeChat",
-			"weChatDescription": "Shoot us a question on WeChat and we’ll be sure to respond quickly"
+			"weChatDescription": "Shoot us a question on WeChat and we’ll be sure to respond quickly",
+			"listFindUs": "Find us on social media",
+			"listContactUsOnFacebook": "Contact us on Facebook",
+			"facebookDescription": "Click to find us on Facebook"
+
 		},
 		"quicklinks": {
 			"title": "Quicklinks",
