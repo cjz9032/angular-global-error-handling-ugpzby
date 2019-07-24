@@ -57,7 +57,6 @@ export class SvgInlinePipe implements PipeTransform, OnDestroy {
 		if (typeof (value) !== 'undefined') {
 			return new Observable(observer => {
 				observer.next('');
-				console.log(`this.isOnline: ${this.isOnline}`);
 				if (value.substring(value.lastIndexOf('.')) === '.svg' && !this.isOnline) {
 					this.getContent(value).then(val => {
 						val = `data:image/svg+xml;base64,${btoa(val + '')}`;

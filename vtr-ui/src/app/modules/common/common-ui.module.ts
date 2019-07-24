@@ -24,6 +24,7 @@ import { SharedModule } from '../shared.module';
 import { RouterModule } from '@angular/router';
 import { UiGamingCollapsibleContainerComponent } from 'src/app/components/ui/ui-gaming-collapsible-container/ui-gaming-collapsible-container.component';
 import { UiPopoverComponent } from 'src/app/components/ui/ui-popover/ui-popover.component';
+import { UiTooltipsComponent } from 'src/app/components/ui/ui-tooltips/ui-tooltips.component';
 
 @NgModule({
 	declarations: [
@@ -53,7 +54,8 @@ import { UiPopoverComponent } from 'src/app/components/ui/ui-popover/ui-popover.
 
 		UiGamingCollapsibleContainerComponent,
 		UiGamingDriverPopupComponent,
-		UiPopoverComponent
+		UiPopoverComponent,
+		UiTooltipsComponent
 	],
 	exports: [
 		UiApsSliderComponent,
@@ -82,7 +84,8 @@ import { UiPopoverComponent } from 'src/app/components/ui/ui-popover/ui-popover.
 
 		UiGamingCollapsibleContainerComponent,
 		UiGamingDriverPopupComponent,
-		UiPopoverComponent
+		UiPopoverComponent,
+		UiTooltipsComponent
 	],
 	imports: [
 		CommonModule,
