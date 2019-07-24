@@ -1,5 +1,4 @@
 @import "../../../app.theme.scss";
-
 .vtr-widget-system-monitor {
 	color: $gaming_lightest;
 	.intro-text {
@@ -81,10 +80,10 @@
 			ul {
 				padding: 2rem;
 				li.add-icon {
-					cursor: pointer;
 					div:nth-child(1) {
 						background: $gaming_grey_lightest;
 						line-height: 4.5rem;
+						cursor: pointer;
 					}
 				}
 				li {
@@ -94,19 +93,17 @@
 					vertical-align: top;
 					padding: 2rem 3rem;
 					position: relative;
-					cursor: pointer;
+					margin-bottom: 3rem;
 					div:nth-child(1) {
 						width: 4.5rem;
 						height: 4.5rem;
 						text-align: center;
 						margin: auto;
-						cursor: pointer;
 					}
 					div:nth-child(2) {
 						font-size: 1.6rem;
 						margin-top: 0.5rem;
 						text-align: center;
-						cursor: pointer;
 					}
 					.remove-app {
 						opacity: 0;

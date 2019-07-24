@@ -18,6 +18,7 @@ import { ModalWifiSecuriryLocationNoticeComponent } from 'src/app/components/mod
 import { ModalWifiSecurityInvitationComponent } from 'src/app/components/modal/modal-wifi-security-invitation/modal-wifi-security-invitation.component';
 import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-server-switch/modal-server-switch.component';// VAN-5872, server switch feature
 import { SharedModule } from '../shared.module';
+import { ModalAutocloseComponent } from 'src/app/components/modal/modal-autoclose/modal-autoclose.component';
 
 @NgModule({
 	declarations: [
@@ -39,6 +40,7 @@ import { SharedModule } from '../shared.module';
 		ModalVoiceComponent,
 		ModalWifiSecuriryLocationNoticeComponent,
 		ModalWifiSecurityInvitationComponent,
+		ModalAutocloseComponent
 	],
 	imports: [
 		CommonModule,
@@ -69,6 +71,8 @@ import { SharedModule } from '../shared.module';
 		ModalVoiceComponent,
 		ModalWifiSecuriryLocationNoticeComponent,
 		ModalWifiSecurityInvitationComponent,
+		ModalAutocloseComponent
+
 	]
 })
 export class CommonModalModule { }

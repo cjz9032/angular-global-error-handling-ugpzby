@@ -381,7 +381,18 @@
 		},
 		"autoClose": {
 			"title": "Auto Close",
-			"introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE:This will close the app completely,so always make sure you'he saved your work"
+			"introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+			"modalTurnAutoClose": {
+				"title": "Turn on Auto Close ?",
+				"body": "Apps you added will be closed when you game, freeing resources for gaming.",
+				"checkedTitle": "Don't ask again",
+				"btnConfirm": "Turn on",
+				"btnCancel": "Not now"
+			},
+			"modalAddApps": {
+				"title": "Add apps to Auto Close",
+				"body": "Only apps currently running will show in the list below."
+			}
 		}
 	},
 	"common": {
@@ -765,7 +776,7 @@
 						"description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
 						"tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
 					},
-					"or":"Or"
+					"or": "Or"
 				},
 				"otherSettings": {
 					"title": "Other settings",

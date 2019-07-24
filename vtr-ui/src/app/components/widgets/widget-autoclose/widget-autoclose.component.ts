@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalAutocloseComponent } from '../../modal/modal-autoclose/modal-autoclose.component';
 
 @Component({
   selector: 'vtr-widget-autoclose',
@@ -8,10 +10,16 @@ import { Component, OnInit, Input } from '@angular/core';
 export class WidgetAutocloseComponent implements OnInit {
   @Input() introTitle: string;
   public title: string;
-  constructor() { }
+  constructor(private modalService: NgbModal, ) { }
 
   ngOnInit() {
     this.title = this.introTitle;
   }
 
+  openModal(event: Event): void {
+    this.modalService.open(ModalAutocloseComponent, {
+      centered: true,
+      windowClass: 'autoClose-Modal'
+    });
+  }
 }
