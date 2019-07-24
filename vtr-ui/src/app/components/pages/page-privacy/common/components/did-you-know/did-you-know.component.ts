@@ -119,7 +119,7 @@ export class DidYouKnowComponent implements OnInit, OnDestroy {
 			);
 
 		this.routerChangeHandlerService.onChange$.pipe(
-			switchMap(() => this.didYouKnowBlockShowConditions[this.currentPath]),
+			switchMap(() => this.didYouKnowBlockShowConditions[this.currentPath] || of(false)),
 			takeUntil(instanceDestroyed(this))
 		).subscribe((val: boolean) => {
 			this.shouldShowDidYouKnowBlockSubj.next(val);
