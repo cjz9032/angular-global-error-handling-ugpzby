@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, EMPTY, of, Subject } from 'rxjs';
+import { BehaviorSubject, EMPTY, merge, of, Subject } from 'rxjs';
 import { catchError, map, switchMap, take } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { StorageService } from './storage.service';
 import { MaskedPasswordsInfo, VantageCommunicationService } from './vantage-communication.service';
 import { convertBrowserNameToBrowserData } from '../../utils/helpers';
 import { TaskActionWithTimeoutService, TasksName } from './analytics/task-action-with-timeout.service';
+import { UpdateTriggersService } from './update-triggers.service';
 
 export interface InstalledBrowser {
 	name: string;
@@ -28,21 +29,31 @@ export class BrowserAccountsService {
 	installedBrowsersData$ = new BehaviorSubject<InstalledBrowserDataState>({browserData: [], error: null});
 	installedBrowsersData = this.installedBrowsersData$.asObservable();
 
+	private updateBrowsersData$ = new Subject();
+
 	constructor(
 		private http: HttpClient,
 		private vantageCommunicationService: VantageCommunicationService,
 		private storageService: StorageService,
-		private taskActionWithTimeoutService: TaskActionWithTimeoutService
+		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
+		private updateTriggersService: UpdateTriggersService
 	) {
 		this.getInstalledBrowsersDefaultData();
 	}
 
 	getInstalledBrowsersDefaultData() {
-		this.vantageCommunicationService.getInstalledBrowsers().pipe(
-			map((response) => convertBrowserNameToBrowserData(response.browsers)),
-			switchMap((browserData) => this.concatPasswordsCount(browserData)),
-			switchMap((browserData) => this.concatPasswords(browserData)),
-			take(1),
+		merge(
+			this.updateTriggersService.shouldUpdate$,
+			this.updateBrowsersData$.asObservable()
+		).pipe(
+			switchMap(() => {
+				return this.vantageCommunicationService.getInstalledBrowsers().pipe(
+					map((response) => convertBrowserNameToBrowserData(response.browsers)),
+					switchMap((browserData) => this.concatPasswordsCount(browserData)),
+					switchMap((browserData) => this.concatPasswords(browserData)),
+					take(1),
+				);
+			})
 		).subscribe((browserData) => {
 			this.installedBrowsersData$.next({browserData, error: null});
 			const isConsentGiven = this.isConsentGiven$.getValue();
@@ -55,7 +66,7 @@ export class BrowserAccountsService {
 	giveConcent() {
 		this.storageService.setItem('isConsentGiven', 'true');
 		this.isConsentGiven$.next(true);
-		this.getInstalledBrowsersDefaultData();
+		this.updateBrowsersData();
 	}
 
 	concatPasswords(browserData: InstalledBrowser[]) {
@@ -79,6 +90,10 @@ export class BrowserAccountsService {
 		} else {
 			return of(browserData.map((browser) => ({...browser, accounts: null})));
 		}
+	}
+
+	updateBrowsersData() {
+		this.updateBrowsersData$.next(true);
 	}
 
 	private concatPasswordsCount(browserData: ReturnType<typeof convertBrowserNameToBrowserData>) {

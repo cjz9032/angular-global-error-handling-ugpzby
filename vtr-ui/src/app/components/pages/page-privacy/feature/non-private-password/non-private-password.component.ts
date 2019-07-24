@@ -73,7 +73,7 @@ export class NonPrivatePasswordComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.browserAccountsService.getInstalledBrowsersDefaultData();
+		this.browserAccountsService.updateBrowsersData();
 	}
 
 	openFigleaf() {
