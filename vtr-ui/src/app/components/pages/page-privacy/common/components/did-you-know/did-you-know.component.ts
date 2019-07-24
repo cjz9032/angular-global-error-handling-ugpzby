@@ -86,6 +86,12 @@ export class DidYouKnowComponent implements OnInit, OnDestroy {
 		[RoutersName.BROWSERACCOUNTS]: this.nonPrivatePasswordNoIssues$,
 	};
 
+	private didYouKnowBlockShowConditions: { [path in RoutersName]?: Observable<boolean> } = {
+		[RoutersName.BREACHES]: this.getShowCondition(this.breachedAccountsWasScanned$, this.breachesNoIssues$),
+		[RoutersName.TRACKERS]: this.getShowCondition(this.trackersWasScanned$, this.trackersNoIssues$),
+		[RoutersName.BROWSERACCOUNTS]: this.getShowCondition(this.nonPrivatePasswordWasScanned$, this.nonPrivatePasswordNoIssues$),
+	};
+
 	constructor(
 		private routerChangeHandlerService: RouterChangeHandlerService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
@@ -112,24 +118,8 @@ export class DidYouKnowComponent implements OnInit, OnDestroy {
 				}
 			);
 
-
-		const getShowCondition = (wasScannedState: Observable<boolean>, noIssuesState: Observable<boolean>): Observable<boolean> => {
-			return combineLatest(
-				wasScannedState.pipe(map(value => !value)),
-				noIssuesState,
-			).pipe(
-				map((val) => val.includes(true))
-			);
-		};
-
-		const didYouKnowBlockShowConditions = {
-			[RoutersName.BREACHES]: getShowCondition(this.breachedAccountsWasScanned$, this.breachesNoIssues$),
-			[RoutersName.TRACKERS]: getShowCondition(this.trackersWasScanned$, this.trackersNoIssues$),
-			[RoutersName.BROWSERACCOUNTS]: getShowCondition(this.nonPrivatePasswordWasScanned$, this.nonPrivatePasswordNoIssues$),
-		};
-
 		this.routerChangeHandlerService.onChange$.pipe(
-			switchMap(() => didYouKnowBlockShowConditions[this.currentPath]),
+			switchMap(() => this.didYouKnowBlockShowConditions[this.currentPath]),
 			takeUntil(instanceDestroyed(this))
 		).subscribe((val: boolean) => {
 			this.shouldShowDidYouKnowBlockSubj.next(val);
@@ -168,6 +158,15 @@ export class DidYouKnowComponent implements OnInit, OnDestroy {
 			map(([isFigleafReadyForCommunication, countOfIssue, wasScanned]) =>
 				!isFigleafReadyForCommunication && countOfIssue === 0 && wasScanned),
 			distinctUntilChanged(),
+		);
+	}
+
+	private getShowCondition(wasScannedState: Observable<boolean>, noIssuesState: Observable<boolean>): Observable<boolean> {
+		return combineLatest(
+			wasScannedState.pipe(map(value => !value)),
+			noIssuesState,
+		).pipe(
+			map((val) => val.includes(true))
 		);
 	}
 }
