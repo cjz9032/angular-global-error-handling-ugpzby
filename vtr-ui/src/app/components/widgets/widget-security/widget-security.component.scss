@@ -1,4 +1,6 @@
 @import "../../../app.theme";
+@import "../../pages/page-privacy/styles/common-blocks.scss";
+
 .vtr-widget-security {
 	.security-background {
 		border-radius: 0.5rem;
@@ -76,6 +78,9 @@
 			@media #{$mediaquery_X4} {
 				padding-left: 7rem;
 			}
+			@media #{$mediaquery_lg} {
+				font-size: 2.8rem;
+			}
 		}
 		.row1 {
 			opacity: 1;
@@ -112,6 +117,62 @@
 					color: $light;
 				}
 			}
+		}
+	}
+
+	.tooltips-description {
+		padding: 0 7rem 0 4rem;
+		color: #FFFFFF;
+
+		&__title {
+			color: #FFFFFF;
+			font-size: 2.5rem;
+			font-weight: 600;
+			line-height: 2.9rem;
+			margin: 0 1rem 0.8rem 0;
+		}
+
+		&__text {
+			@extend %text-common;
+			color: #FFFFFF;
+		}
+
+		&__tooltip-text {
+			font-size: 12px;
+			line-height: 15px;
+			font-weight: 600;
+			color: #FFFFFF;
+			padding: 0 6px;
+			cursor: pointer;
+			border: 2px solid #FFFFFF;
+			border-radius: 50%;
+			box-sizing: border-box;
+
+			&:hover {
+				background-color: #C2C8CE;
+				border-color: #C2C8CE;
+				color: #191C28;
+			}
+		}
+
+		&__tooltip-context {
+			width: 50rem;
+		}
+
+		&__tooltip-context-title {
+			@extend %text-common;
+			color: #191C28;
+			font-weight: bold;
+		}
+
+		&__tooltip-context-list {
+			list-style-position: inside;
+			margin: 2rem 0 0 0;
+			padding: 0;
+		}
+
+		&__tooltip-context-list-item {
+			margin-top: 1rem;
 		}
 	}
 }

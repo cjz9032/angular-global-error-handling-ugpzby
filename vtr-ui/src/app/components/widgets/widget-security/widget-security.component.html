@@ -10,7 +10,26 @@
 				</div>
 			</div>
 			<div class="col-9 col-sm-9 col-md-12 col-lg-9 last-col">
-				<p class="title">{{security.title[percentValue === 100 ? 0 : 1] | translate}}</p>
+				<p class="title d-flex align-items-center">
+					<span>{{security.title[percentValue === 100 ? 0 : 1] | translate}}</span>
+					<vtr-ui-tooltips class="pl-3 pt-2">
+						<ng-template #tooltipText>
+							<span class="tooltips-description__tooltip-text">i</span>
+						</ng-template>
+						<ng-template #tooltipContext>
+							<div class="tooltips-description__tooltip-context">
+								<p class="tooltips-description__tooltip-context-title">
+									{{tooltipsTitle | translate}}
+								</p>
+								<ul class="tooltips-description__tooltip-context-list">
+									<li class="tooltips-description__tooltip-context-list-item" *ngFor="let item of tooltips; let i=index">
+										{{tooltips[i] | translate}}
+									</li>
+								</ul>
+							</div>
+						</ng-template>
+					</vtr-ui-tooltips>
+				</p>
 				<p class="row1">{{security.subTitle[percentValue === 100 ? 0 : 1] | translate}}</p>
 				<p class="row1">{{security.subTitle2[percentValue === 100 ? 0 : 1] | translate}}</p>
 				<div class="button-row">
