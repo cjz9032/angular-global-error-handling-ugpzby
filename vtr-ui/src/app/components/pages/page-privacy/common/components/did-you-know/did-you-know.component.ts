@@ -7,12 +7,12 @@ import {
 	OnInit,
 	ViewChild
 } from '@angular/core';
-import { distinctUntilChanged, map, takeUntil } from 'rxjs/operators';
+import { distinctUntilChanged, map, switchMap, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { RouterChangeHandlerService } from '../../services/router-change-handler.service';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { CountNumberOfIssuesService } from '../../services/count-number-of-issues.service';
-import { combineLatest, Observable, of, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { RoutersName } from '../../../privacy-routing-name';
 import { FeaturesStatuses } from '../../../userDataStatuses';
 import { UserDataGetStateService } from '../../services/user-data-get-state.service';
@@ -51,30 +51,30 @@ export class DidYouKnowComponent implements OnInit, OnDestroy {
 
 	private isFigleafReadyForCommunication$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
 	private breachedAccountsCount$ = this.countNumberOfIssuesService.breachedAccountsCount;
-	private breachedAccountsWasScanned$ = this.getState('breachedAccountsResult');
-
-	private shouldShowDidYouKnowBlockSubj = new Subject();
-	shouldShowDidYouKnowBlock$ = this.shouldShowDidYouKnowBlockSubj.asObservable();
+	private breachedAccountsWasScanned$ = this.getWasScannedState('breachedAccountsResult');
 
 	private trackersCount$ = this.countNumberOfIssuesService.websiteTrackersCount;
-	private trackersWasScanned$ = this.getState('websiteTrackersResult');
+	private trackersWasScanned$ = this.getWasScannedState('websiteTrackersResult');
 
 	private nonPrivatePasswordCount$ = this.countNumberOfIssuesService.nonPrivatePasswordCount;
-	private nonPrivatePasswordWasScanned$ = this.getState('nonPrivatePasswordResult');
+	private nonPrivatePasswordWasScanned$ = this.getWasScannedState('nonPrivatePasswordResult');
 
-	private breachesNoIssues$ = this.generateState(
+	private shouldShowDidYouKnowBlockSubj = new BehaviorSubject(false);
+	shouldShowDidYouKnowBlock$ = this.shouldShowDidYouKnowBlockSubj.asObservable();
+
+	private breachesNoIssues$ = this.generateNoIssueState(
 		this.isFigleafReadyForCommunication$,
 		this.breachedAccountsCount$,
 		this.breachedAccountsWasScanned$
 	);
 
-	private trackersNoIssues$ = this.generateState(
+	private trackersNoIssues$ = this.generateNoIssueState(
 		this.isFigleafReadyForCommunication$,
 		this.trackersCount$,
 		this.trackersWasScanned$
 	);
 
-	private nonPrivatePasswordNoIssues$ = this.generateState(
+	private nonPrivatePasswordNoIssues$ = this.generateNoIssueState(
 		this.isFigleafReadyForCommunication$,
 		this.nonPrivatePasswordCount$,
 		this.nonPrivatePasswordWasScanned$
@@ -84,6 +84,12 @@ export class DidYouKnowComponent implements OnInit, OnDestroy {
 		[RoutersName.TRACKERS]: this.trackersNoIssues$,
 		[RoutersName.BREACHES]: this.breachesNoIssues$,
 		[RoutersName.BROWSERACCOUNTS]: this.nonPrivatePasswordNoIssues$,
+	};
+
+	private didYouKnowBlockShowConditions: { [path in RoutersName]?: Observable<boolean> } = {
+		[RoutersName.BREACHES]: this.getShowCondition(this.breachedAccountsWasScanned$, this.breachesNoIssues$),
+		[RoutersName.TRACKERS]: this.getShowCondition(this.trackersWasScanned$, this.trackersNoIssues$),
+		[RoutersName.BROWSERACCOUNTS]: this.getShowCondition(this.nonPrivatePasswordWasScanned$, this.nonPrivatePasswordNoIssues$),
 	};
 
 	constructor(
@@ -112,10 +118,15 @@ export class DidYouKnowComponent implements OnInit, OnDestroy {
 				}
 			);
 
-		this.shouldShowDidYouKnowBlock();
+		this.routerChangeHandlerService.onChange$.pipe(
+			switchMap(() => this.didYouKnowBlockShowConditions[this.currentPath]),
+			takeUntil(instanceDestroyed(this))
+		).subscribe((val: boolean) => {
+			this.shouldShowDidYouKnowBlockSubj.next(val);
+		});
 	}
 
-	ngOnDestroy() { }
+	ngOnDestroy() {}
 
 	getText() {
 		return this.textForPitch[this.currentPath];
@@ -125,24 +136,7 @@ export class DidYouKnowComponent implements OnInit, OnDestroy {
 		return this.templateForPitch[this.currentPath];
 	}
 
-	private shouldShowDidYouKnowBlock() {
-		function getShowCondition(wasScannedState: Observable<boolean>, noIssuesState: Observable<boolean>) {
-			return combineLatest(
-				wasScannedState.pipe(map(value => !value)),
-				noIssuesState,
-			).pipe(map((val) => val.includes(true)));
-		}
-
-		const didYouKnowBlockShowConditions = {
-			[RoutersName.BREACHES]: getShowCondition(this.breachedAccountsWasScanned$, this.breachesNoIssues$),
-			[RoutersName.TRACKERS]: getShowCondition(this.trackersWasScanned$, this.trackersNoIssues$),
-			[RoutersName.BROWSERACCOUNTS]: getShowCondition(this.nonPrivatePasswordWasScanned$, this.nonPrivatePasswordNoIssues$),
-		};
-
-		this.shouldShowDidYouKnowBlockSubj.next(didYouKnowBlockShowConditions[this.currentPath]);
-	}
-
-	private getState(userStatuses: string) {
+	private getWasScannedState(userStatuses: string) {
 		return this.userDataGetStateService.userDataStatus$.pipe(
 			map((userDataStatus) =>
 				userDataStatus[userStatuses] !== FeaturesStatuses.undefined &&
@@ -151,7 +145,7 @@ export class DidYouKnowComponent implements OnInit, OnDestroy {
 		);
 	}
 
-	private generateState(
+	private generateNoIssueState(
 		isFigleafReadyForCommunication$: Observable<boolean>,
 		countOfIssue$: Observable<number>,
 		wasScanned$: Observable<boolean>
@@ -164,6 +158,15 @@ export class DidYouKnowComponent implements OnInit, OnDestroy {
 			map(([isFigleafReadyForCommunication, countOfIssue, wasScanned]) =>
 				!isFigleafReadyForCommunication && countOfIssue === 0 && wasScanned),
 			distinctUntilChanged(),
+		);
+	}
+
+	private getShowCondition(wasScannedState: Observable<boolean>, noIssuesState: Observable<boolean>): Observable<boolean> {
+		return combineLatest(
+			wasScannedState.pipe(map(value => !value)),
+			noIssuesState,
+		).pipe(
+			map((val) => val.includes(true))
 		);
 	}
 }
