@@ -57,7 +57,9 @@
 												[isSwitchChecked]="intelligentSecurity.isZeroTouchLoginAdjustEnabled"
 												(toggleOnOff)="onDistanceSensitivityAdjustToggle($event)"
 												[theme]="'white'"
-												[disabled]="!intelligentSecurity.isZeroTouchLoginEnabled">
+												[disabled]="!intelligentSecurity.isZeroTouchLoginEnabled"
+												[toolTipStatus]='true'
+												[rightIcon]="['far', 'question-circle']">
 											</vtr-ui-row-switch>
 											<div class="slider-note">
 												<vtr-ui-range-slider [manualRefresh]="manualRefresh"

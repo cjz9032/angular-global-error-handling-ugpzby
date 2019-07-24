@@ -1142,6 +1142,17 @@
 					"options": {
 						"near": "Near",
 						"far": "Far"
+					},
+					"tooltipcontent": {
+						"context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
+						"context2": "When you manually set the detection distance, please pay attention to the following:",
+						"list": {
+							"line1": "Near: 0 – 0.42 meters (17 inches)",
+							"line2": "Middle: 0 – 0.60 meters (24 inches)",
+							"line3": "Far: 0 – 1.20 meters (47 inches)",
+							"line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
+							"line5": "The recommended detection distance is within 0.60 meters."
+						}
 					}
 				},
 				"note": {
