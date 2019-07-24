@@ -126,15 +126,15 @@ export class AppComponent implements OnInit {
 
 	private async sendEnvInfoMetric(isFirstLaunch) {
 		let imcVersion = null;
-		let srvVersion = null;
+		let hsaSrvInfo: any = {};
 		let shellVersion = null;
 
 		if (this.metricsClient.getImcVersion) {
 			imcVersion = await this.metricsClient.getImcVersion();
 		}
 
-		if (this.metricsClient.getHsaSrvVersion) {
-			srvVersion = await this.metricsClient.getHsaSrvVersion();
+		if (this.metricsClient.getHsaSrvInfo) {
+			hsaSrvInfo = await this.metricsClient.getHsaSrvInfo();
 		}
 
 		if (typeof Windows !== 'undefined') {
@@ -148,7 +148,7 @@ export class AppComponent implements OnInit {
 		const displayHeight = window.screen.height;
 		this.metricsClient.sendAsync(new GetEnvInfo({
 			imcVersion,
-			srvVersion,
+			srvVersion: hsaSrvInfo.vantageSvcVersion,
 			shellVersion,
 			windowSize: `${Math.floor(displayWidth / 100) * 100}x${Math.floor(displayHeight / 100) * 100}`,
 			displaySize: `${Math.floor(displayWidth * scale / 100) * 100}x${Math.floor(displayHeight * scale / 100) * 100}`,
