@@ -118,9 +118,7 @@ export class DidYouKnowComponent implements OnInit, OnDestroy {
 				wasScannedState.pipe(map(value => !value)),
 				noIssuesState,
 			).pipe(
-				map((val) => {
-					return val.includes(true);
-				})
+				map((val) => val.includes(true))
 			);
 		};
 
