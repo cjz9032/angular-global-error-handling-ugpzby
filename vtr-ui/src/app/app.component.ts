@@ -13,7 +13,7 @@ import { KeyPress } from './data-models/common/key-press.model';
 import { VantageShellService } from './services/vantage-shell/vantage-shell.service';
 import { SettingsService } from './services/settings.service';
 import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
-import { AppAction } from 'src/app/data-models/metrics/events.model';
+import { AppAction, GetEnvInfo, AppLoaded } from 'src/app/data-models/metrics/events.model';
 import * as MetricsConst from 'src/app/enums/metrics.enum';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { environment } from 'src/environments/environment';
@@ -22,6 +22,7 @@ import { LanguageService } from './services/language/language.service';
 import * as bridgeVersion from '@lenovo/tan-client-bridge/package.json';
 
 
+declare var Windows;
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',
@@ -105,6 +106,60 @@ export class AppComponent implements OnInit {
 			}
 		});
 		this.notifyNetworkState();
+	}
+
+	private sendFirstRunEvent(machineInfo) {
+		let isGaming = null;
+		if (machineInfo) {
+			isGaming = machineInfo.isGaming;
+		}
+		this.metricsClient.sendAsyncEx(
+			{
+				ItemType: 'FirstRun',
+				IsGaming: isGaming
+			},
+			{
+				forced: true
+			}
+		);
+	}
+
+	private async sendEnvInfoMetric(isFirstLaunch) {
+		let imcVersion = null;
+		let srvVersion = null;
+		let shellVersion = null;
+
+		if (this.metricsClient.getImcVersion) {
+			imcVersion = await this.metricsClient.getImcVersion();
+		}
+
+		if (this.metricsClient.getHsaSrvVersion) {
+			srvVersion = await this.metricsClient.getHsaSrvVersion();
+		}
+
+		if (typeof Windows !== 'undefined') {
+			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
+			// packageVersion.major, packageVersion.minor, packageVersion.build, packageVersion.revision
+			shellVersion = `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}`;
+		}
+
+		const scale = window.devicePixelRatio || 1;
+		const displayWidth = window.screen.width;
+		const displayHeight = window.screen.height;
+		this.metricsClient.sendAsync(new GetEnvInfo({
+			imcVersion,
+			srvVersion,
+			shellVersion,
+			windowSize: `${Math.floor(displayWidth / 100) * 100}x${Math.floor(displayHeight / 100) * 100}`,
+			displaySize: `${Math.floor(displayWidth * scale / 100) * 100}x${Math.floor(displayHeight * scale / 100) * 100}`,
+			scalingSize: scale, // this value would is accurate in edge
+			isFirstLaunch
+		}));
+	}
+
+	private sendAppLoadedMetric() {
+		const vanStub = this.vantageShellService.getVantageStub();
+		this.metricsClient.sendAsync(new AppLoaded(Date.now() - vanStub.navigateTime));
 	}
 
 	public sendAppLaunchMetric(lauchType: string) {
@@ -191,22 +246,6 @@ export class AppComponent implements OnInit {
 		this.serverSwitchThis();
 	}
 
-	private sendFirstRunEvent(machineInfo) {
-		let isGaming = null;
-		if (machineInfo) {
-			isGaming = machineInfo.isGaming;
-		}
-		this.metricsClient.sendAsyncEx(
-			{
-				ItemType: 'FirstRun',
-				IsGaming: isGaming
-			},
-			{
-				forced: true
-			}
-		);
-	}
-
 	private getMachineInfo() {
 		if (this.deviceService.isShellAvailable) {
 			return this.deviceService
@@ -255,6 +294,37 @@ export class AppComponent implements OnInit {
 		}
 	}
 
+	private updateLanguageSettings(value: any) {
+		try {
+			const hadRunApp: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
+			const appFirstRun = !hadRunApp;
+			if (this.deviceService.isShellAvailable) {
+				if (appFirstRun) {
+					this.commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
+					this.sendFirstRunEvent(value);
+				}
+
+				this.sendEnvInfoMetric(appFirstRun);
+			}
+
+			if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
+				this.translate.use(value.locale.substring(0, 2));
+				this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
+			} else {
+				if (value && value.locale.substring(0, 2).toLowerCase() === 'pt') {
+					value.locale.toLowerCase() === 'pt-br' ? this.translate.use('pt-BR') : this.translate.use('pt');
+				}
+				if (value && value.locale.toLowerCase() === 'zh-hans') {
+					this.translate.use('zh-Hans');
+				}
+				if (value && value.locale.toLowerCase() === 'zh-hant') {
+					this.translate.use('zh-Hant');
+				}
+			}
+		} catch (e) {
+			this.vantageShellService.getLogger().error(JSON.stringify(e));
+		}
+	}
 	private checkIsDesktopOrAllInOneMachine() {
 		try {
 			if (this.deviceService.isShellAvailable) {
@@ -365,6 +435,7 @@ export class AppComponent implements OnInit {
 
 	@HostListener('window:load', ['$event'])
 	onLoad(event) {
+		this.sendAppLoadedMetric();
 		const scale = 1 / (window.devicePixelRatio || 1);
 		const content = `shrink-to-fit=no, width=device-width, initial-scale=${scale}, minimum-scale=${scale}`;
 		document.querySelector('meta[name="viewport"]').setAttribute('content', content);

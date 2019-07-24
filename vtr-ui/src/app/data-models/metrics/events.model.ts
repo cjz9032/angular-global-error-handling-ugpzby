@@ -36,3 +36,46 @@ export class AppAction extends BaseModel {
 	public Duration: number;
 	public AppSessionID: string;
 }
+
+export class GetEnvInfo extends BaseModel {
+	constructor(source: {
+		imcVersion,
+		srvVersion,
+		shellVersion,
+		windowSize,
+		displaySize,
+		scalingSize,
+		isFirstLaunch
+	}) {
+		super();
+		this.ItemType = metricsConst.MetricEvent.GetEnvInfo;
+		this.ImcVersion = source.imcVersion;
+		this.SrvVersion = source.srvVersion;
+		this.ShellVersion = source.shellVersion;
+		this.WindowSize = source.windowSize;
+		this.DisplaySize = source.displaySize;
+		this.ScalingSize = source.scalingSize;
+		this.IsFirstLaunch = source.isFirstLaunch;
+	}
+
+	public ImcVersion: string;
+	public SrvVersion: string;
+	public ShellVersion: string;
+	public WindowSize: string;
+	public DisplaySize: string;
+	public ScalingSize: string;
+	public IsFirstLaunch: string;
+	public AppSessionID: string;
+}
+
+
+export class AppLoaded extends BaseModel {
+	constructor(durationForWeb) {
+		super();
+		this.ItemType = metricsConst.MetricEvent.AppLoaded;
+		this.DurationForWeb = Math.round(durationForWeb);
+	}
+
+	public DurationForWeb: number;
+	public AppSessionID: string;
+}
