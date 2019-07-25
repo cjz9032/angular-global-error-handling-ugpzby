@@ -1481,7 +1481,11 @@
 			"listLenovoCommunity": "Lenovo Community",
 			"listContactCustomerService": "Contact customer service",
 			"listContactUsOnWechat": "Contact us on WeChat",
-			"weChatDescription": "Shoot us a question on WeChat and we’ll be sure to respond quickly"
+			"weChatDescription": "Shoot us a question on WeChat and we’ll be sure to respond quickly",
+			"listFindUs": "Find us on social media",
+			"listContactUsOnFacebook": "Contact us on Facebook",
+			"facebookDescription": "Click to find us on Facebook"
+
 		},
 		"quicklinks": {
 			"title": "Quicklinks",
@@ -1522,7 +1526,13 @@
 			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
 			"good": "GOOD",
 			"malicious": "MALICIOUS",
-			"suspicious": "SUSPICIOUS"
+			"suspicious": "SUSPICIOUS",
+			"securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+			"antivirus": "Being protected by anti-virus software",
+			"password": "Having strong and complex passwords managed in a safe way",
+			"vpn": "Monitoring your network exposure to attackers",
+			"wifi": "Encrypting your personal data when using public WiFi",
+			"windowsHello": "Protecting your device using safe login options"
 		},
 		"antivirus": {
 			"common": {
@@ -1616,6 +1626,7 @@
 				"headerText": "Error",
 				"bodyText": "We've detected that you are missing critical pieces of Vantage. These pieces will download in the background. Please try again later.",
 				"offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect",
+				"accountText": "Account creation failed. Please try again later.",
 				"closeText": "close"
 			}
 		},

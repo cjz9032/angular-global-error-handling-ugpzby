@@ -38,10 +38,15 @@ export class HomeSecurityCommon {
 			if (this.isOnline) {
 				this.connectedHomeSecurity.createAndGetAccount().then((result) => {
 					this.startTrialDisabled = result ;
+					if (!result) {
+						this.dialogService.homeSecurityAccountDialog();
+					}
 				}).catch((err: Error) => {
 					this.startTrialDisabled = false;
 					if (err instanceof LocationPermissionOffError) {
 						this.dialogService.openCHSPermissionModal();
+					} else {
+						this.dialogService.homeSecurityAccountDialog();
 					}
 				});
 			} else {
