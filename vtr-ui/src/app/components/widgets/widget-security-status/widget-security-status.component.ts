@@ -10,6 +10,7 @@ import { WindowsHelloWidgetItem } from 'src/app/data-models/security-advisor/wid
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { RegionService } from 'src/app/services/region/region.service';
+import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 
 @Component({
 	selector: 'vtr-widget-security-status',
@@ -23,7 +24,12 @@ export class WidgetSecurityStatusComponent implements OnInit, OnDestroy {
 	region: string;
 	isRS5OrLater: boolean;
 
-	constructor(private commonService: CommonService, private translateService: TranslateService, private regionService: RegionService, private ngZone: NgZone) {}
+	constructor(
+		private commonService: CommonService,
+		private translateService: TranslateService,
+		private regionService: RegionService,
+		private ngZone: NgZone,
+		private windowsHelloService: WindowsHelloService) {}
 
 	ngOnInit() {
 		this.items = [];
@@ -43,10 +49,10 @@ export class WidgetSecurityStatusComponent implements OnInit, OnDestroy {
 			this.securityAdvisor.wifiSecurity.getWifiSecurityState();
 		}
 		if (windowsHello.fingerPrintStatus) {
-			this.showWindowsHello(windowsHello);
+			this.showWindowsHelloItem(windowsHello);
 		}
 		windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
-			this.showWindowsHello(windowsHello);
+			this.showWindowsHelloItem(windowsHello);
 		});
 	}
 
@@ -54,16 +60,9 @@ export class WidgetSecurityStatusComponent implements OnInit, OnDestroy {
 		this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 	}
 
-	showWindowsHello(windowsHello: WindowsHello) {
+	showWindowsHelloItem(windowsHello: WindowsHello) {
 		const windowsHelloItem = this.items.find(item => item.id === 'sa-widget-lnk-wh');
-		const version = this.commonService.getWindowsVersion();
-		if (version === 0) {
-			this.isRS5OrLater = true;
-		} else {
-			this.isRS5OrLater = this.commonService.isRS5OrLater();
-		}
-		if (this.isRS5OrLater
-		&& (typeof windowsHello.fingerPrintStatus === 'string')) {
+		if (this.windowsHelloService.showWindowsHello()) {
 			if (!windowsHelloItem) {
 				this.items.push(new WindowsHelloWidgetItem(this.securityAdvisor.windowsHello, this.commonService, this.translateService));
 			}

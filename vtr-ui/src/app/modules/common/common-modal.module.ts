@@ -10,7 +10,7 @@ import { ModalErrorMessageComponent } from 'src/app/components/modal/modal-error
 import { ModalHomeProtectionLocationNoticeComponent } from 'src/app/components/modal/modal-home-protection-location-notice/modal-home-protection-location-notice.component';
 import { ModalIntelligentCoolingModesComponent } from 'src/app/components/modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
 import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
-import { ModalSupportWechatComponent } from 'src/app/components/modal/modal-support-wechat/modal-support-wechat.component';
+import { ModalFindUsComponent } from 'src/app/components/modal/modal-find-us/modal-find-us.component';
 import { ModalThreatLocatorComponent } from 'src/app/components/modal/modal-threat-locator/modal-threat-locator.component';
 import { ModalUpdateChangeLogComponent } from 'src/app/components/modal/modal-update-change-log.component/modal-update-change-log.component';
 import { ModalVoiceComponent } from 'src/app/components/modal/modal-voice/modal-voice.component';
@@ -33,7 +33,7 @@ import { ModalAutocloseComponent } from 'src/app/components/modal/modal-autoclos
 		ModalHomeProtectionLocationNoticeComponent,
 		ModalIntelligentCoolingModesComponent,
 		ModalLicenseComponent,
-		ModalSupportWechatComponent,
+		ModalFindUsComponent,
 		ModalThreatLocatorComponent,
 		ModalUpdateChangeLogComponent,
 		ModalVoiceComponent,
@@ -64,7 +64,7 @@ import { ModalAutocloseComponent } from 'src/app/components/modal/modal-autoclos
 		ModalHomeProtectionLocationNoticeComponent,
 		ModalIntelligentCoolingModesComponent,
 		ModalLicenseComponent,
-		ModalSupportWechatComponent,
+		ModalFindUsComponent,
 		ModalThreatLocatorComponent,
 		ModalUpdateChangeLogComponent,
 		ModalVoiceComponent,
