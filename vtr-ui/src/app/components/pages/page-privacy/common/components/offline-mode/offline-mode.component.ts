@@ -13,6 +13,7 @@ import { CommonService } from '../../../../../../services/common/common.service'
 import { filter, map, takeUntil } from 'rxjs/operators';
 import { NetworkStatus } from '../../../../../../enums/network-status.enum';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
+import { position } from '../tooltip/tooltip.component';
 
 @Component({
 	selector: '[vtrOfflineMode]',
@@ -20,7 +21,7 @@ import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance
 	styleUrls: ['./offline-mode.component.scss'],
 })
 export class OfflineModeComponent implements OnInit, OnDestroy {
-	@Input() positionContextTo: 'center' | 'right' | 'left' = 'center';
+	@Input() positionContextTo: position = 'center';
 
 	@HostBinding('attr.disabled') isDisabled = false;
 	@HostBinding('class.offline-active') isOfflineActive = false;
