@@ -13,43 +13,45 @@ export class HomeSecurityNotifications {
 		this.notificationItem = [];
 		if (!notification || !notification.value) { return; }
 		notification.value.forEach(value => {
+			let iconName: string;
+			let color: string;
 			switch (value.type) {
 				case CHSNotificationType.connectedUnsafeNetwork: {
-					this.iconName = 'wifi';
-					this.color = "red";
+					iconName = 'wifi';
+					color = 'red';
 					break;
 				}
 				case CHSNotificationType.applianceDisconnected: {
-					this.iconName = 'wifi-slash';
-					this.color = "grey";
+					iconName = 'wifi-slash';
+					color = 'grey';
 					break;
 				}
 				case CHSNotificationType.homeNetworkUnsafe: {
-					this.iconName = 'exclamation-circle';
-					this.color = "red";
+					iconName = 'exclamation-circle';
+					color = 'red';
 					break;
 				}
 				case CHSNotificationType.unknownDeviceConnected: {
-					this.iconName = 'question-circle';
-					this.color = "orange";
+					iconName = 'question-circle';
+					color = 'orange';
 					break;
 				}
 				case CHSNotificationType.vulnerableDeviceDetected: {
-					this.iconName = 'laptop';
-					this.color = "blue";
+					iconName = 'laptop';
+					color = 'blue';
 					break;
 				}
-			};
-			this.title = value.content.title;
-			this.subText = value.content.content;
-			this.date = this.getTime(value.time);
-			let item = new NotificationItem({
-				iconName: this.iconName, color: this.color,
-				title: this.title, notificationDetail: this.subText, date: this.date
-			});
-			this.notificationItem.push(item);
+			}
+			this.notificationItem.push(new NotificationItem({
+				iconName,
+				color,
+				title: value.content.title,
+				notificationDetail: value.content.content,
+				date: this.getTime(value.time)
+			}));
 		});
 	}
+
 	getTime(date: Date) {
 		const now = new Date();
 		const year = now.getFullYear();
