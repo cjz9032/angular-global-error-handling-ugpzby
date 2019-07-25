@@ -394,11 +394,11 @@ export class VantageShellService {
 	}
 	public calcDeviceFilter(filter) {
 		if (this.phoenix) {
-				try {
-						return this.phoenix.deviceFilter.calc(filter);
-				} catch (error) {
-						console.log(`VantageShellService.calcDeviceFilter: ${filter}`, error);
-				}
+			try {
+				return this.phoenix.deviceFilter.calc(filter);
+			} catch (error) {
+				console.log(`VantageShellService.calcDeviceFilter: ${filter}`, error);
+			}
 		}
 		return null;
 	}
@@ -449,7 +449,7 @@ export class VantageShellService {
 	public getCPUOCStatus(): any {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingOverclock.getCpuOCStatus();
 		}
@@ -459,7 +459,7 @@ export class VantageShellService {
 	public setCPUOCStatus(CpuOCStatus: CPUOCStatus): any {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingOverclock.setCpuOCStatus(CpuOCStatus.cpuOCStatus);
 		}
@@ -469,7 +469,7 @@ export class VantageShellService {
 	public getGamingAllCapabilities(): any {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingAllCapabilities;
 		}
@@ -479,7 +479,7 @@ export class VantageShellService {
 	public getGamingLighting(): any {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingLighting;
 		}
@@ -488,7 +488,7 @@ export class VantageShellService {
 	public getGamingOverClock(): any {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingOverclock;
 		}
@@ -511,7 +511,7 @@ export class VantageShellService {
 	public getGamingKeyLock() {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingKeyLock;
 		}
@@ -521,7 +521,7 @@ export class VantageShellService {
 	public getGamingHybridMode() {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingHybridMode;
 		}
@@ -531,7 +531,7 @@ export class VantageShellService {
 	public getGamingHwInfo() {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingHwInfo;
 		}
@@ -553,9 +553,19 @@ export class VantageShellService {
 	public getNetworkBoost() {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingNetworkBoost;
+		}
+		return undefined;
+	}
+
+	public getGamingAutoClose() {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.optimizationFeature;
 		}
 		return undefined;
 	}
@@ -565,7 +575,7 @@ export class VantageShellService {
 	public setMacroKeyClear(macroKey: string): any {
 		if (this.phoenix) {
 			if (!Phoenix.Features.Gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			console.log('Deleting the following macro key ---->', macroKey);
 			return this.phoenix.gaming.gamingMacroKey.setClear(macroKey);
@@ -576,7 +586,7 @@ export class VantageShellService {
 	public getGamingMacroKey(): any {
 		if (this.phoenix) {
 			if (!Phoenix.Features.Gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey;
 		}
@@ -592,7 +602,7 @@ export class VantageShellService {
 	public macroKeyInitializeEvent(): any {
 		if (this.phoenix) {
 			if (!Phoenix.Features.Gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.initMacroKey();
 		}
@@ -602,7 +612,7 @@ export class VantageShellService {
 	public macroKeySetApplyStatus(key): any {
 		if (this.phoenix) {
 			if (!Phoenix.Features.Gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setApplyStatus(key);
 		}
@@ -612,7 +622,7 @@ export class VantageShellService {
 	public macroKeySetStartRecording(key): any {
 		if (this.phoenix) {
 			if (!Phoenix.Features.Gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setStartRecording(key);
 		}
@@ -622,7 +632,7 @@ export class VantageShellService {
 	public macroKeySetStopRecording(key, isSuccess, message): any {
 		if (this.phoenix) {
 			if (!Phoenix.Features.Gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setStopRecording(key, isSuccess, message);
 		}
@@ -632,7 +642,7 @@ export class VantageShellService {
 	public macroKeySetKey(key): any {
 		if (this.phoenix) {
 			if (!Phoenix.Features.Gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setKey(key);
 		}
@@ -642,7 +652,7 @@ export class VantageShellService {
 	public macroKeyClearKey(key): any {
 		if (this.phoenix) {
 			if (!Phoenix.Features.Gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setClear(key);
 		}
@@ -652,7 +662,7 @@ export class VantageShellService {
 	public macroKeySetRepeat(key, repeat): any {
 		if (this.phoenix) {
 			if (!Phoenix.Features.Gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setRepeat(key, repeat);
 		}
@@ -662,7 +672,7 @@ export class VantageShellService {
 	public macroKeySetInterval(key, interval): any {
 		if (this.phoenix) {
 			if (!Phoenix.Features.Gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setInterval(key, interval);
 		}
@@ -672,7 +682,7 @@ export class VantageShellService {
 	public macroKeySetMacroKey(key, inputs): any {
 		if (this.phoenix) {
 			if (!Phoenix.Features.Gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setMacroKey(key, inputs);
 		}
@@ -682,7 +692,7 @@ export class VantageShellService {
 	public getGamingThermalMode() {
 		if (this.phoenix) {
 			if (!Phoenix.Features.Gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingThermalmode;
 		}
