@@ -5,7 +5,8 @@
 				<img src="{{defaultScoreImageUrl}}" alt="undefined privacy score">
 			</div>
 			<div *ngIf="!(isFirstTimeVisitor$ | async)" class="score-pic__number">
-				{{score}} <span class="score-pic__percent">%</span>
+				<vtr-spinner *ngIf="!score"></vtr-spinner>
+				<span *ngIf="score">{{score}} <span class="score-pic__percent">%</span></span>
 			</div>
 		</div>
 	</div>
