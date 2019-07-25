@@ -45,13 +45,13 @@ export class TrackersComponent implements OnInit {
 	tryProductText = {
 		risk: 'While some tracking tools are designed to personalize your ' +
 			'experience, many collect your IP address, location, social profile, shopping history, ' +
-			'and interests – and then sell this information to the highest bidder',
+			'and interests – and then sell this information to the highest bidder.',
 		howToFix: 'We recommend a tracking tools blocker, like the one in ' +
 			'Lenovo Privacy Essentials by FigLeaf, because turning on the “Do Not Track” ' +
 			'feature in your browser isn’t enough.',
 		riskAfterInstallFigleaf: 'While some tracking tools are designed to personalize your ' +
 			'experience, many collect your IP address, location, social profile, shopping history, ' +
-			'and interests – and then sell this information to the highest bidder',
+			'and interests – and then sell this information to the highest bidder.',
 		howToFixAfterInstallFigleaf: 'Turn on \'Block trackers\' functionality for websites you choose ' +
 			'in Lenovo Privacy Essentials by Figleaf.'
 	};

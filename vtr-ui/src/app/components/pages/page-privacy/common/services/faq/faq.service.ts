@@ -107,10 +107,9 @@ export class FaqService {
 				},
 				{
 					id: 'what-risk',
-					title: 'What’s the risk?',
+					title: 'What’s the risk of being tracked?',
 					texts: [
-						`Companies collect information about you, completely in the background and without your knowledge.
-						 They later sell this information to others. Sometimes, this information ends up on the dark web.`,
+						`Companies collect information about you, completely in the background and without your knowledge. They later may sell this information to others. Sometimes, this information ends up on the dark web.`,
 					],
 					icon: 'exclamation-circle',
 				},
