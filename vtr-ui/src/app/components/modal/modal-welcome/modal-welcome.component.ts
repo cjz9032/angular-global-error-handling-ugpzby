@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { HttpClient } from '@angular/common/http';
+import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 
 @Component({
 	selector: 'vtr-modal-welcome',
 	templateUrl: './modal-welcome.component.html',
 	styleUrls: ['./modal-welcome.component.scss']
 })
-export class ModalWelcomeComponent implements OnInit {
+export class ModalWelcomeComponent implements OnInit, OnDestroy {
 	progress = 49;
 	isInterestProgressChanged = false;
 	page = 1;
@@ -105,8 +106,9 @@ export class ModalWelcomeComponent implements OnInit {
 			};
 			console.log('PageView Event', JSON.stringify(data));
 			this.metrics.sendAsync(data);
-
 			tutorialData = new WelcomeTutorial(2, this.data.page2.radioValue, this.checkedArray);
+			// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
+			this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true);
 			this.activeModal.close(tutorialData);
 		}
 		this.page = ++page;
@@ -151,5 +153,9 @@ export class ModalWelcomeComponent implements OnInit {
 	moreInterestClicked() {
 		this.interestCopy = this.interests;
 		this.hideMoreInterestBtn = true;
+	}
+	ngOnDestroy() {
+		// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
+		this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true);
 	}
 }
