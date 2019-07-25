@@ -1121,7 +1121,8 @@
 				},
 				"zeroTouchLogin": {
 					"title": "Zero Touch Login",
-					"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
+					"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it.",
+					"tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
 				},
 				"zeroTouchLock": {
 					"title": "Zero Touch Lock",
