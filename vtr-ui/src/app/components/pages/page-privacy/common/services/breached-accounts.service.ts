@@ -1,5 +1,5 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { EMPTY, merge, ReplaySubject, Subject, Subscription, timer } from 'rxjs';
+import { EMPTY, merge, ReplaySubject, Subject } from 'rxjs';
 import {
 	catchError,
 	debounceTime,
@@ -14,7 +14,7 @@ import { CommunicationWithFigleafService } from '../../utils/communication-with-
 import { EmailScannerService, ErrorNames } from '../../feature/check-breached-accounts/services/email-scanner.service';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
 import { TaskActionWithTimeoutService, TasksName } from './analytics/task-action-with-timeout.service';
-import {UpdateTriggersService} from './update-triggers.service';
+import { UpdateTriggersService } from './update-triggers.service';
 
 interface GetBreachedAccountsResponse {
 	type: string;
@@ -49,9 +49,6 @@ export class BreachedAccountsService implements OnDestroy {
 
 	private getNewBreachedAccounts$ = new Subject<boolean>();
 
-	taskStartedTime = 0;
-	scanBreachesAction$ = new Subject<{ TaskDuration: number }>();
-
 	constructor(
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
@@ -66,13 +63,11 @@ export class BreachedAccountsService implements OnDestroy {
 
 	private getBreachedAccounts() {
 		return merge(
-			this.emailScannerService.scanNotifier$,
-			this.emailScannerService.validationStatusChanged$,
-			this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(
-				distinctUntilChanged(),
-			),
-			this.getNewBreachedAccounts$.asObservable(),
-			this.updateTriggersService.shouldUpdate$,
+			this.emailScannerService.scanNotifier$.pipe(distinctUntilChanged()),
+			this.emailScannerService.validationStatusChanged$.pipe(distinctUntilChanged()),
+			this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(distinctUntilChanged()),
+			this.getNewBreachedAccounts$.asObservable().pipe(distinctUntilChanged()),
+			this.updateTriggersService.shouldUpdate$.pipe(distinctUntilChanged()),
 		).pipe(
 			debounceTime(200),
 			switchMapTo(this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(take(1))),
@@ -101,7 +96,6 @@ export class BreachedAccountsService implements OnDestroy {
 	private getBreachedAccountsFromApp() {
 		return this.communicationWithFigleafService.sendMessageToFigleaf({type: 'getFigleafBreachedAccounts'})
 			.pipe(
-				tap((res: GetBreachedAccountsResponse) => console.log('getFigleafBreachedAccounts', res.payload.breaches)),
 				map((response: GetBreachedAccountsResponse) => response.payload.breaches)
 			);
 	}

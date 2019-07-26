@@ -1,6 +1,15 @@
 import { Injectable } from '@angular/core';
-import { debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, switchMapTo } from 'rxjs/operators';
-import { combineLatest } from 'rxjs';
+import {
+	catchError,
+	debounceTime,
+	distinctUntilChanged,
+	filter,
+	map,
+	shareReplay,
+	startWith,
+	switchMapTo
+} from 'rxjs/operators';
+import { combineLatest, of } from 'rxjs';
 import { FigleafOverviewService, FigleafSettings } from '../../../common/services/figleaf-overview.service';
 import { BrowserAccountsService } from '../../../common/services/browser-accounts.service';
 import { BreachedAccount, BreachedAccountsService } from '../../../common/services/breached-accounts.service';
@@ -32,8 +41,6 @@ export class PrivacyScoreService {
 		withoutScan: 1 / 3
 	};
 
-	private breachedAccountsFromKnownWebsites$ = this.getBreachesAccount((x: BreachedAccount) => x.domain !== 'n/a');
-	private breachedAccountsFromUnknownWebsites$ = this.getBreachesAccount((x: BreachedAccount) => x.domain === 'n/a');
 	private ammountPasswordFromBrowser$ = this.userDataGetStateService.userDataStatus$.pipe(
 		map((userDataStatus) =>
 			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.undefined &&
@@ -61,6 +68,9 @@ export class PrivacyScoreService {
 		),
 	);
 
+	private breachedAccountsFromKnownWebsites$ = this.getBreachesAccount((x: BreachedAccount) => x.domain !== 'n/a');
+	private breachedAccountsFromUnknownWebsites$ = this.getBreachesAccount((x: BreachedAccount) => x.domain === 'n/a');
+
 	private scoreFromBreachedAccount$ = combineLatest([
 		this.breachedAccountsFromKnownWebsites$,
 		this.breachedAccountsFromUnknownWebsites$,
@@ -79,22 +89,10 @@ export class PrivacyScoreService {
 	);
 
 	newPrivacyScore$ = combineLatest([
-		this.scoreFromBreachedAccount$.pipe(
-			startWith((this.coefficients.breachedAccounts * this.coefficients.withoutScan) as number)
-		),
-		this.ammountPasswordFromBrowser$.pipe(
-			map((response) => this.getRange(response)),
-			map((range) => Number(range) * this.coefficients.nonPrivatelyStoredPasswords),
-			startWith((this.coefficients.nonPrivatelyStoredPasswords * this.coefficients.withoutScan) as number)
-		),
-		this.monitoringEnable$.pipe(
-			startWith(false),
-			map((isMonitoringEnable) => Number(isMonitoringEnable) * this.coefficients.breachMonitoring)
-		),
-		this.isAntitrackingEnabled$.pipe(
-			map((isAntitrackingEnabled) => Number(isAntitrackingEnabled) * this.coefficients.trackingTools),
-			startWith((this.coefficients.trackingTools * this.coefficients.withoutScan) as number)
-		),
+		this.getScoreFromBreachedAccount(),
+		this.getAmmountPasswordFromBrowser(),
+		this.getMonitoringEnable(),
+		this.getIsAntitrackingEnabled()
 	]).pipe(
 		debounceTime(500),
 		map(([breachedAccountScore, passwordFromBrowserScore, monitoringScore, antitrackingScore]) => {
@@ -178,5 +176,51 @@ export class PrivacyScoreService {
 		}
 
 		return range;
+	}
+
+	private getScoreFromBreachedAccount() {
+		const defaultValue = (this.coefficients.breachedAccounts * this.coefficients.withoutScan) as number;
+
+		return this.scoreFromBreachedAccount$.pipe(
+			startWith(defaultValue),
+			catchError((err) => {
+				return of(defaultValue);
+			}),
+		);
+	}
+
+	private getAmmountPasswordFromBrowser() {
+		const defaultValue = (this.coefficients.nonPrivatelyStoredPasswords * this.coefficients.withoutScan) as number;
+
+		return this.ammountPasswordFromBrowser$.pipe(
+			map((response) => this.getRange(response)),
+			map((range) => Number(range) * this.coefficients.nonPrivatelyStoredPasswords),
+			startWith(defaultValue),
+			catchError((err) => {
+				return of(defaultValue);
+			}),
+		);
+	}
+
+	private getMonitoringEnable() {
+		return this.monitoringEnable$.pipe(
+			startWith(false),
+			map((isMonitoringEnable) => Number(isMonitoringEnable) * this.coefficients.breachMonitoring),
+			catchError((err) => {
+				return of(0);
+			}),
+		);
+	}
+
+	private getIsAntitrackingEnabled() {
+		const defaultValue = (this.coefficients.trackingTools * this.coefficients.withoutScan) as number;
+
+		return this.isAntitrackingEnabled$.pipe(
+			map((isAntitrackingEnabled) => Number(isAntitrackingEnabled) * this.coefficients.trackingTools),
+			startWith(defaultValue),
+			catchError((err) => {
+				return of(defaultValue);
+			}),
+		);
 	}
 }
