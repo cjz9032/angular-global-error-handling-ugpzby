@@ -18,7 +18,7 @@ import { combineLatest } from 'rxjs';
 })
 export class NonPrivatePasswordComponent implements OnInit {
 	@Input() browserStoredAccountsData: { showDetailAction: 'expand' | 'link' } = {showDetailAction: 'link'};
-	installedBrowsers$ = this.browserAccountsService.installedBrowsersData$.pipe(tap((val) => console.log('installedBrowsersData$', val)));
+	installedBrowsers$ = this.browserAccountsService.installedBrowsersData$;
 
 	isFigleafReadyForCommunication$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
 
