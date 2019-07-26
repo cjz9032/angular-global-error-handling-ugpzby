@@ -3,9 +3,8 @@
 <ul class="lighting-list-option">
 	<li *ngFor="let option of options">
 			<label class="gaming-radio">{{option.name | translate}}
-	   <input type="radio" name="price" (click)="getValue(option.id)"
-		 [checked]="isChecked(option.id)"
-		  [value]= option.id>
+	<input type="radio" name="price" vtrMetrics [metricsItem]="option.name | translate" metricsEvent="featureClick"
+		(click)="getValue(option.id)" [checked]="isChecked(option.id)" [value]=option.id>
 		  <span class="checkmark"></span>
 		</label>
 	</li>

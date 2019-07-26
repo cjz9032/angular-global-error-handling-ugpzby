@@ -6,7 +6,7 @@
 				<img class="gaming-header-image"
 					src="./../../../../assets/images/gaming/legionEdge.png" />
 				<div class="help-box">
-					<a (click)="openModal()" id="legion_edge_help" aria-label ="legion_edge_help"><i class="icon icon-question" ></i></a>
+					<a (click)="openModal()" id="legion_edge_help" aria-label ="legion_edge_help" vtrMetrics [metricsItem]="'legionedge help'" metricsEvent="featureClick"><i class="icon icon-question" ></i></a>
 				</div>
 			</div>
 		</div>
@@ -22,8 +22,7 @@
 				(optionSelected)="onOptionSelected($event)"
 				(popupClosed)="onPopupClosed($event)"
 				(iconClick)="onIconClick($event)"
-				(showDropDown)="onShowDropdown($event)"
-				>
+				(showDropDown)="onShowDropdown($event)">
 			</vtr-widget-device-update-settings>
 		</div>
 	</div>
