@@ -11,7 +11,7 @@
 			<div class="gaming-dropdown-menu">
 				<ng-container *ngFor="let option of options.dropOptions; index as i">
 					<li [ngClass]="{ 'selected': option.value===options.curSelected }" (click)="optionSelected(option)"
-						(mouseenter)="changeDescription(option)" (mouseleave)="resetDescription(option)">
+						(mouseenter)="changeDescription(option)" (mouseleave)="resetDescription(option)" vtrMetrics [metricsItem]="option.name | translate" metricsEvent="featureClick">
 						<a class="dropdown-item"><i class="icon icon-checkline"></i>{{ option.name  | translate}}</a>
 					</li>
 				</ng-container>

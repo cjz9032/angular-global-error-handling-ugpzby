@@ -42,9 +42,10 @@ export class WidgetLightingComponent implements OnInit {
 	public getCapabilities() {
 		console.log('capabilities global values -------------lighting widget dashboard');
 
-		this.ledSetFeature = this.commonService.getLocalStorageValue(LocalStorageKey.ledSetFeature);
-		this.ledDriver = this.commonService.getLocalStorageValue(LocalStorageKey.ledDriver);
-
+		//this.ledSetFeature = this.commonService.getLocalStorageValue(LocalStorageKey.ledSetFeature);
+		//this.ledDriver = this.commonService.getLocalStorageValue(LocalStorageKey.ledDriver);
+		this.ledSetFeature =true;
+		this.ledDriver =false;
 
 		// console.log('ledSetFeature-----'+this.ledSetFeature +'--------ledDriver--------'+ this.ledDriver );
 		//console.log(this.ledSetFeature && this.ledDriver);

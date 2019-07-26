@@ -10,7 +10,8 @@
 					<li *ngFor="let option of options; index as i"
 						[ngClass]="{ 'selected': selectedOption && option.name === selectedOption.name }"
 						(click)="optionSelected(option)" (mouseenter)="changeDescription(option)"
-						(mouseleave)="resetDescription(option)">
+						(mouseleave)="resetDescription(option)" vtrMetrics [metricsItem]="option.name | translate "
+						metricsEvent="featureClick">
 						<a class="dropdown-item"><i class="icon icon-checkline"></i>{{ option.name  | translate}}</a>
 					</li>
 				</ul>
