@@ -18,7 +18,7 @@ export class GamingAutoCloseService {
   getAutoCloseStatus(): Promise<boolean> {
     try {
       if (this.isShellAvailable) {
-        return this.gamingAutoClose.getAutoCloseStatus();
+        return this.gamingAutoClose.getStatus();
       }
       return undefined;
     } catch (error) {
@@ -29,7 +29,7 @@ export class GamingAutoCloseService {
   setAutoCloseStatus(value: boolean): Promise<boolean> {
     try {
       if (this.isShellAvailable) {
-        return this.gamingAutoClose.setAutoCloseStatus(value);
+        return this.gamingAutoClose.setStatus(value);
       }
       return undefined;
     } catch (error) {

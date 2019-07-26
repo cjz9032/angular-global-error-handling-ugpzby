@@ -565,7 +565,8 @@ export class VantageShellService {
 			if (!this.phoenix.gaming) {
 				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
-			return this.phoenix.gaming.optimizationFeature;
+			console.log('getGamingAuto========>>>>>>>', this.phoenix.gaming);
+			return this.phoenix.gaming.gamingAutoClose;
 		}
 		return undefined;
 	}
