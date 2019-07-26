@@ -90,7 +90,8 @@
 		</div>
 		<div *ngIf="!isProfileOff && profileRGBFeature===255"
 			class="footer-part d-flex flex-row-reverse">
-			<a href="javascript:void(0);"
+			<a vtrMetrics [metricsItem]="'gaming.lightingProfile.button.default.title' | translate"
+			metricsEvent="featureClick" href="javascript:void(0);"
 				class="link"
 				(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
 		</div>

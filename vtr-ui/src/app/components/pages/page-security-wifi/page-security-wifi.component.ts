@@ -2,7 +2,7 @@ import { Component, OnInit, HostListener, AfterViewInit, OnDestroy, NgZone } fro
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import * as phoenix from '@lenovo/tan-client-bridge';
-import { DeviceInfo, PluginMissingError } from '@lenovo/tan-client-bridge';
+import { DeviceInfo, PluginMissingError, EventTypes } from '@lenovo/tan-client-bridge';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
@@ -106,7 +106,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, true);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, true);
 		if (this.homeProtection) {
-			this.homeProtection.getDevicePosture().catch((err) => this.handleError(err));
 			this.homeProtection.refresh().catch((err) => this.handleError(err));
 		}
 
@@ -114,6 +113,21 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
 				this.wifiSecurity.refresh().catch((err) => this.handleError(err));
 				this.wifiSecurity.getWifiSecurityState().catch((err) => this.handleError(err));
+			}
+			if (this.wifiSecurity.isLocationServiceOn) {
+				if (this.homeProtection) {
+					this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityIsGetDevicePosture, true);
+					this.homeProtection.getDevicePosture().catch((err) => this.handleError(err));
+				}
+			} else {
+				this.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (isLocationServiceOn) => {
+					if (!this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityIsGetDevicePosture)) {
+						if (isLocationServiceOn) {
+							this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityIsGetDevicePosture, true);
+							this.homeProtection.getDevicePosture().catch((err) => this.handleError(err));
+						}
+					}
+				});
 			}
 
 			this.wifiSecurity.getWifiState().then((res) => {}, (error) => {
@@ -144,13 +158,16 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	ngOnDestroy() {
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, false);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, false);
-		if (this.router.routerState.snapshot.url.indexOf('security') === -1 || this.router.routerState.snapshot.url.indexOf('dashboard') === -1) {
+		if (this.router.routerState.snapshot.url.indexOf('security') === -1 && this.router.routerState.snapshot.url.indexOf('dashboard') === -1) {
 			if (this.securityAdvisor.wifiSecurity) {
 				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 			}
 		}
 		if (this.homeProtection) {
-			this.homeProtection.cancelGetDevicePosture();
+			if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityIsGetDevicePosture)) {
+				this.homeProtection.cancelGetDevicePosture();
+				this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityIsGetDevicePosture, false);
+			}
 		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
