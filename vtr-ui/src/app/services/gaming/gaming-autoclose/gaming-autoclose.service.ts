@@ -37,4 +37,15 @@ export class GamingAutoCloseService {
     }
   }
 
+  getAutoCloseList(): Promise<boolean> {
+    try {
+      if (this.isShellAvailable) {
+        return this.gamingAutoClose.getAutoCloseList();
+      }
+      return undefined;
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
 }

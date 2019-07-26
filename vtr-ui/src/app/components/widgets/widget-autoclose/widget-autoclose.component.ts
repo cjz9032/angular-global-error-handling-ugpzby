@@ -25,17 +25,34 @@ export class WidgetAutocloseComponent implements OnInit {
     this.gamingProperties.optimizationFeature = this.gamingCapabilityService.getCapabilityFromCache(
       LocalStorageKey.optimizationFeature
     );
+    this.initAutoCloseStatus();
+    this.displayAutoCloseList();
 
+  }
+
+  // Get Gaming AutoClose Lists
+
+  public initAutoCloseStatus() {
     if (this.gamingAutoCloseService.isShellAvailable) {
       this.gamingAutoCloseService
         .getAutoCloseStatus()
         .then((status) => {
-          console.log('getAuto-==========================>jkffkj', status);
+          console.log('getAuto Close status-==========================>', status);
           this.gamingAutoCloseService.setAutoCloseStatus(status);
         })
         .catch((err) => {
           console.log(`ERROR in appComponent getCapabilities()`, err);
         });
+    }
+  }
+
+  public displayAutoCloseList() {
+    try {
+      this.gamingAutoCloseService.getAutoCloseList().then((list: any) => {
+        console.log('get autoclose list from js bridge ------------------------>', JSON.stringify(list));
+      });
+    } catch (error) {
+      console.error(error.message);
     }
   }
 
