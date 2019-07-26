@@ -24,9 +24,9 @@
 			</button>
 		</div>
 		<div class="modal-body">
-			<vtr-battery-detail [data]="batteryInfo"
-				[batteryConditionStatus]="batteryConditionStatus"
-				[dataGauge]="batteryGauge"> </vtr-battery-detail>
+			<vtr-battery-detail [dataInfo]="batteryInfo"
+				[dataIndicator]="batteryIndicator"
+				[dataConditions]="batteryConditions"> </vtr-battery-detail>
 		</div>
 	</ng-template>
 	<div class="container p-5 battery-panel-background">
@@ -68,6 +68,7 @@
 				<span *ngIf="batteryConditions[i].condition!=batteryConditionsEnum.StoreLimitation"
 					class="battery-conditions-tips"
 					[innerHTML]="batteryConditionNote | translate"></span>
+				<!-- <a *ngIf="batteryConditions[i].conditionStatus===batteryQuality.AcError">See Details</a> -->
 			</div>
 
 		</div>
