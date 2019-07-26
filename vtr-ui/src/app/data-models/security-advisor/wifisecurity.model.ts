@@ -127,24 +127,24 @@ export class WifiHomeViewModel {
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, wifiSecurity.wifiHistory);
 				this.allHistorys = wifiSecurity.wifiHistory;
 				this.allHistorys = this.mappingHistory(this.allHistorys);
-					if (this.allHistorys.length > 4) {
+				if (this.allHistorys.length > 4) {
 						this.hasMore = true;
-					} else {
-						this.hasMore = false;
-					}
-					this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
-					commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
+				} else {
+					this.hasMore = false;
+				}
+				this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
+				commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
 				this.historys = this.mappingHistory(this.historys);
 			} else if (cacheWifiSecurityHistory) {
 				this.allHistorys = cacheWifiSecurityHistory;
 				this.allHistorys = this.mappingHistory(this.allHistorys);
-					if (this.allHistorys.length > 4) {
-						this.hasMore = true;
-					} else {
-						this.hasMore = false;
-					}
-					this.historys = cacheWifiSecurityHistory.slice(0, 4); // 显示4个history
-					commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
+				if (this.allHistorys.length > 4) {
+					this.hasMore = true;
+				} else {
+					this.hasMore = false;
+				}
+				this.historys = cacheWifiSecurityHistory.slice(0, 4); // 显示4个history
+				commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
 				this.historys = this.mappingHistory(this.historys);
 			}
 			if (homeProtection.chsConsoleUrl && homeProtection.chsConsoleUrl !== '') {

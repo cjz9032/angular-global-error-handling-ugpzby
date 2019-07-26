@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { ModalSupportWechatComponent } from '../../components/modal/modal-support-wechat/modal-support-wechat.component';
+import { ModalFindUsComponent } from '../../components/modal/modal-find-us/modal-find-us.component';
 import { ModalAboutComponent } from 'src/app/components/modal/modal-about/modal-about.component';
 
 @Injectable({
@@ -99,8 +99,8 @@ export class SupportService {
 
 	widgetItemClick(clickItem: string) {
 		switch (clickItem) {
-			case 'qrCode':
-				this.showQRCodePop();
+			case 'findUs':
+				this.showFindUsPop();
 				break;
 			case 'about':
 				this.showAboutPop();
@@ -113,16 +113,16 @@ export class SupportService {
 		}
 	}
 
-	showQRCodePop() {
-		const weChatModal: NgbModalRef = this.modalService.open(ModalSupportWechatComponent, {
+	showFindUsPop() {
+		const findUsModal: NgbModalRef = this.modalService.open(ModalFindUsComponent, {
 			centered: true,
-			windowClass: 'weChat-Modal'
+			windowClass: 'About-Modal'
 		});
 	}
 	showAboutPop() {
 		const aboutModal: NgbModalRef = this.modalService.open(ModalAboutComponent, {
 			centered: true,
-			windowClass: 'weChat-Modal'
+			windowClass: 'About-Modal'
 		});
 	}
 

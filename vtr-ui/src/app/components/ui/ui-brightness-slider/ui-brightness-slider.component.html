@@ -1,12 +1,8 @@
 <div class="vtr-ui-brightness-slider">
-	<ng5-slider
-		[options]="options"
-		(valueChange)="onValueChange($event)"
-		(userChange)="onChange($event)"
-		[manualRefresh]="manualRefresh" [(value)]="lightingData"></ng5-slider>
+	<ng5-slider [options]="options" (valueChange)="onValueChange($event)" (userChange)="onChange($event)"
+		[manualRefresh]="manualRefresh" [(value)]="lightingData" vtrMetrics [metricsItem]="'Lighting Brightness' | translate" metricsEvent="featureClick"></ng5-slider>
 
-	<div class="row label"
-		*ngIf="minValueLegend.length > 0 || maxValueLegend.length > 0">
+	<div class="row label" *ngIf="minValueLegend.length > 0 || maxValueLegend.length > 0">
 		<div class="col">{{ minValueLegend }}</div>
 		<div class="col text-right">{{ maxValueLegend }}</div>
 	</div>

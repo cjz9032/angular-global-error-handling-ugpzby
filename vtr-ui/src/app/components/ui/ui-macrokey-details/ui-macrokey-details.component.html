@@ -63,12 +63,12 @@
 	</div>
 	<div class="footer-component text-center" *ngIf="number && !number.status">
 		<div class="start-button">
-			<vtr-ui-button metricsParent="WelcomePage" metricsEvent="featureClick" [metricsItem]="'START RECORDING'"
+			<vtr-ui-button metricsEvent="featureClick" [metricsItem]="'START RECORDING'"
 				[label]="'START RECORDING'" [btnHeight]=true [isGradient]=true (onClick)="onStartClicked($event)">
 			</vtr-ui-button>
 		</div>
 		<div class="stop-button">
-			<vtr-ui-button metricsParent="WelcomePage" metricsEvent="featureClick" [metricsItem]="'STOP RECORDING'"
+			<vtr-ui-button  metricsEvent="featureClick" [metricsItem]="'STOP RECORDING'"
 				[label]="'STOP RECORDING'" [btnHeight]=true [isGradient]=true (onClick)="onStopClicked($event)">
 			</vtr-ui-button>
 		</div>

@@ -4,14 +4,13 @@ export class NotificationItem {
 	title: string;
 	subText: string;
 	date: string;
-	path: string="#";
+	path = 'home-security';
 
-	constructor(arg: any={}) {
+	constructor(arg: any = {}) {
 		this.iconName = arg.iconName;
 		this.color = arg.color;
 		this.title = arg.title;
 		this.subText = arg.notificationDetail;
 		this.date = arg.date;
-
 	}
 }
