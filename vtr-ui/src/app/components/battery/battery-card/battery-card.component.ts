@@ -46,7 +46,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	public param1: any;
 	public param2: any;
 	notificationSubscription: Subscription;
-	// shortAcErrNote = true;
+	shortAcErrNote = true;
 
 	constructor(
 		private modalService: NgbModal,
@@ -158,10 +158,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	public updateBatteryDetails() {
 		if (this.batteryInfo && this.batteryInfo.length > 0) {
-
 			this.isBatteryDetailsBtnDisabled = this.batteryGauge.isPowerDriverMissing;
 			const remainingPercentages = [];
-
 			this.batteryInfo.forEach((info) => {
 				remainingPercentages.push(info.remainingPercent);
 			});
@@ -203,7 +201,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		if (this.batteryGauge.isPowerDriverMissing) {
 			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryQuality.Poor));
 		}
-		if (!this.batteryIndicator.batteryNotDetected) {
+		if (!(this.batteryIndicator.batteryNotDetected && this.batteryGauge.isPowerDriverMissing)) {
 			if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
 				batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryQuality.AcError));
 			}
@@ -254,7 +252,12 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		console.log('Battery conditions length', this.batteryConditions.length);
 		this.batteryConditionNotes = [];
 		this.batteryConditions.forEach((batteryCondition) => {
-			const translation = batteryCondition.getBatteryCondition(batteryCondition.condition);
+			let translation = batteryCondition.getBatteryConditionTip(batteryCondition.condition);
+
+			if (batteryCondition.conditionStatus === this.batteryQuality.AcError && !this.shortAcErrNote) {
+				translation += 'Detail';
+			}
+
 			this.batteryConditionNotes.push(translation);
 		});
 
@@ -262,6 +265,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			!(this.cd as ViewRef).destroyed) {
 			this.cd.detectChanges();
 		}
+	}
+
+	showDetailTip(index: number) {
+		this.shortAcErrNote = false;
+		this.batteryConditionNotes[index] = this.batteryConditionNotes[index] + 'Detail';
 	}
 
 	getConditionState(conditionState: number): string {

@@ -68,7 +68,9 @@
 				<span *ngIf="batteryConditions[i].condition!=batteryConditionsEnum.StoreLimitation"
 					class="battery-conditions-tips"
 					[innerHTML]="batteryConditionNote | translate"></span>
-				<!-- <a *ngIf="batteryConditions[i].conditionStatus===batteryQuality.AcError">See Details</a> -->
+				<a *ngIf="batteryConditions[i].conditionStatus===batteryQuality.AcError&&shortAcErrNote"
+					class="link-label"
+					(click)="showDetailTip(i)"><br>{{'device.deviceSettings.batteryGauge.seeDetailsLink' | translate}}</a>
 			</div>
 
 		</div>

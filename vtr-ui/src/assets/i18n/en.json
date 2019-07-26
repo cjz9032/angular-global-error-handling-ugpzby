@@ -608,6 +608,7 @@
 				"thresholdNote": "<b>Note:</b> To extend the battery lifespan, you have set your battery to stop charging at {{value}}%.",
 				"voltageError": "Battery voltage incorrect",
 				"batteryNotDetected": "No battery detected",
+				"seeDetailsLink": "See Details",
 				"details": {
 					"title": "Battery Details",
 					"primary": "Primary Battery",
@@ -664,8 +665,8 @@
 					"NotDetected": "<b>No battery detected or not</b> plugged in battery.",
 					"NotGood": "<b>The battery is not in a good Condition.</b>",
 					"NotSupportACAdapter": "<b>AC adapter not supported.</b>",
-					"NotSupportACAdaptorDetail": "<b>AC adapter not supported.</b><br> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-					"LimitedACAdapterSupport": "<b>AC adapter cannot provide enough power</b>",
+					"NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
+					"LimitedACAdapterSupport": "<b>AC adapter cannot provide enough power.</b>",
 					"LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter.",
 					"MissingDriver": "<b>The Lenovo Power Manager driver</b> is not installed or not working properly. Please run Windows Update to install the latest driver.",
 					"StoreLimitation": "<b>The battery can only store {{value}}% of</b> it's original full charge capacity.",
@@ -1487,7 +1488,6 @@
 			"listFindUs": "Find us on social media",
 			"listContactUsOnFacebook": "Contact us on Facebook",
 			"facebookDescription": "Click to find us on Facebook"
-
 		},
 		"quicklinks": {
 			"title": "Quicklinks",
