@@ -56,6 +56,40 @@
 							</div>
 						</vtr-ui-row-switch>
 					</li>
+					<li class="pt-3">
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.inputAccessories.fnCtrlKey.title' | translate"
+							componentName="Fn key and Ctrl key swap "
+							[caption]="'device.deviceSettings.inputAccessories.fnCtrlKey.description' | translate"
+							[leftIcon]="['fal','sync']"
+							[showChildContent]="true"
+							[theme]="'white'"
+							[isSwitchVisible]="true"
+							[isSwitchChecked]="switchValue"
+							(toggleOnOff)="fnCtrlKey($event)"
+							>
+							<div class="fn-ctrl-block" *ngIf="switchValue">
+								<div class="row">
+									<div class="col-auto pt-3">
+										<img src="../../../../../../assets/images/Fn-Ctrl-key.PNG">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-auto pt-5">
+										<p>{{'device.deviceSettings.inputAccessories.fnCtrlKey.more' | translate}}</p>
+									</div>
+								</div>
+								<div class="row controls">
+									<div class="col-auto">
+										<a><span>{{'device.deviceSettings.inputAccessories.fnCtrlKey.control1' | translate}}</span></a>
+									</div>
+									<div class="col-auto">
+										<a><span>{{'device.deviceSettings.inputAccessories.fnCtrlKey.control2' | translate}}</span></a>
+									</div>
+								</div>
+							</div>
+						</vtr-ui-row-switch>
+					</li>
 
 					<vtr-user-defined-key></vtr-user-defined-key>
 				</ul>

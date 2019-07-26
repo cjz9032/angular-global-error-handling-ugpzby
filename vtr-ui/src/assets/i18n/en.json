@@ -1094,6 +1094,13 @@
 							"option3": "Enter text"
 						}
 					}
+				},
+				"fnCtrlKey": {
+					"title": "FN key and Ctrl key swap",
+					"description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+					"more": "MORE",
+					"control1": "TOUCHPAD CONTROLS",
+					"control2": "MOUSE CONTROLS"
 				}
 			}
 		},
