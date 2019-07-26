@@ -54,15 +54,14 @@
 						</vtr-ui-gaming-driver-popup>
 						<ul class="list-group">
 							<li class="list-group-item">
-								<a  vtrMetrics
-									[metricsItem]="'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate"
-									metricsEvent="featureClick" *ngIf="isPopupVisible" (click)="isdriverpopup == true">
+								<a  *ngIf="isPopupVisible" (click)="isdriverpopup == true" vtrMetrics
+								[metricsItem]="'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate"
+								metricsEvent="featureClick">
 									   <i class="icon icon-gear"></i>
 									   {{'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate}}</a>
-								<a vtrMetrics
-									[metricsItem]="'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate"
-									metricsEvent="featureClick" *ngIf="!isPopupVisible"
-									  [routerLink]="['/gaming/lightingcustomize/'+setprofId]">
+								<a  *ngIf="!isPopupVisible" [routerLink]="['/gaming/lightingcustomize/'+setprofId]" vtrMetrics
+								[metricsItem]="'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate"
+								metricsEvent="featureClick">
 									   <i class="icon icon-gear"></i>
 									  {{'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate}}</a>
 							</li>
