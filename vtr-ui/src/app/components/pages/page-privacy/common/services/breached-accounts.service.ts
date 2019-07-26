@@ -1,5 +1,5 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { EMPTY, merge, ReplaySubject, Subject } from 'rxjs';
+import { EMPTY, merge, of, ReplaySubject, Subject } from 'rxjs';
 import {
 	catchError,
 	debounceTime,
@@ -72,6 +72,7 @@ export class BreachedAccountsService implements OnDestroy {
 			debounceTime(200),
 			switchMapTo(this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(take(1))),
 			switchMap((isFigleafInstalled) => {
+				console.log('isFigleafInstalled', isFigleafInstalled);
 				return isFigleafInstalled ? this.getBreachedAccountsFromApp() : this.getBreachedAccountsFromBackend();
 			}),
 			map((breachedAccounts) => {
@@ -96,7 +97,8 @@ export class BreachedAccountsService implements OnDestroy {
 	private getBreachedAccountsFromApp() {
 		return this.communicationWithFigleafService.sendMessageToFigleaf({type: 'getFigleafBreachedAccounts'})
 			.pipe(
-				map((response: GetBreachedAccountsResponse) => response.payload.breaches)
+				map((response: GetBreachedAccountsResponse) => response.payload.breaches),
+				catchError((err) => EMPTY)
 			);
 	}
 
