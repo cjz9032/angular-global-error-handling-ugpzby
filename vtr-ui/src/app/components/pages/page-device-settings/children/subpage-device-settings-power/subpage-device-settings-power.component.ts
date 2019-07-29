@@ -962,9 +962,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						});
 				} else {
 					if (inputString === 'autoChecked') {
-						// console.log('auto checked values here------------>');
 						this.powerService.setCtAutoCheckbox(batteryInfo);
-						// this.getBatteryThresholdInformation();
+						const notification = {
+							isOn: true,
+							stopValue1: this.selectedStopAtChargeVal, stopValue2: this.selectedStopAtChargeVal1
+						};
+						this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, notification);
 					}
 				}
 			}
