@@ -12,6 +12,20 @@ import { SharedModule } from '../shared.module';
 import { CommonUiModule } from '../common/common-ui.module';
 import { CommonWidgetModule } from '../common/common-widget.module';
 import { CommonModalModule } from '../common/common-modal.module';
+import { DialogService } from '../../services/dialog/dialog.service';
+import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faWifi } from '@fortawesome/pro-light-svg-icons/faWifi';
+import { faWifiSlash } from '@fortawesome/pro-light-svg-icons/faWifiSlash';
+import { faExclamationCircle } from '@fortawesome/pro-light-svg-icons/faExclamationCircle';
+import { faQuestionCircle } from '@fortawesome/pro-light-svg-icons/faQuestionCircle';
+import { faLaptop } from '@fortawesome/pro-light-svg-icons/faLaptop';
+
+library.add(faWifi);
+library.add(faWifiSlash);
+library.add(faExclamationCircle);
+library.add(faQuestionCircle);
+library.add(faLaptop);
 
 @NgModule({
 	declarations: [
@@ -29,7 +43,11 @@ import { CommonModalModule } from '../common/common-modal.module';
 		CommonUiModule,
 		CommonWidgetModule,
 		SharedModule,
-		CommonModalModule
+		CommonModalModule,
+		WidgetSecurityStatusModule
+	],
+	providers: [
+		DialogService
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
