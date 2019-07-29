@@ -3,6 +3,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { SettingsService } from 'src/app/services/settings.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-page-settings',
@@ -49,7 +50,8 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	constructor(
 		private shellService: VantageShellService,
 		private settingsService: SettingsService,
-		private commonService: CommonService
+		private commonService: CommonService,
+		public deviceService: DeviceService
 	) {
 		this.preferenceSettings = this.shellService.getPreferenceSettings();
 		this.metrics = shellService.getMetrics();

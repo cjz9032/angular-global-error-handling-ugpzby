@@ -112,24 +112,18 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 					header: 'gaming.dashboard.device.quickSettings.status.performance',
 					name: 'gaming.dashboard.device.quickSettings.status.performance',
 					description: 'gaming.dashboard.device.quickSettings.statusText.perText',
-					//selectedOption: false,
-					//defaultOption: false,
 					value: 3
 				},
 				{
 					header: 'gaming.dashboard.device.quickSettings.status.balance',
 					name: 'gaming.dashboard.device.quickSettings.status.balance',
 					description: 'gaming.dashboard.device.quickSettings.statusText.balText',
-					//selectedOption: false,
-					//defaultOption: true,
 					value: 2
 				},
 				{
 					header: 'gaming.dashboard.device.quickSettings.status.quiet',
 					name: 'gaming.dashboard.device.quickSettings.status.quiet',
 					description: 'gaming.dashboard.device.quickSettings.statusText.quietText',
-					//selectedOption: false,
-					//defaultOption: false,
 					value: 1
 				}
 			]
@@ -167,7 +161,9 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		// Initialize Quicksetting;
 		this.quicksettingListInit();
 		// Binding regThermalMode event
-		// this.registerThermalModeEvent();
+		if (this.gamingCapabilities.smartFanFeature) {
+			this.registerThermalModeEvent();
+		}
 		this.commonService.getCapabalitiesNotification().subscribe((response) => {
 			if (response.type === Gaming.GamingCapablities) {
 				this.gamingCapabilities = response.payload;
@@ -200,7 +196,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		console.log('onRegThermalModeEvent callback event, ============><', status);
 		if (status !== undefined) {
 			const regThermalModeStatusObj = new ThermalModeStatus();
-			// setting previous value to localstorage 
+			// setting previous value to localstorage
 			const regThermalModePreValue = this.GetThermalModeCacheStatus();
 			this.commonService.setLocalStorageValue(
 				LocalStorageKey.PrevThermalModeStatus,
@@ -218,7 +214,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 
 		} else {
 			const regThermalModeObj = new ThermalModeStatus();
-			// getting previous value from localstorage 
+			// getting previous value from localstorage
 			const thermalModePreValue = this.GetThermalModePrevCacheStatus();
 			// updating model with previous value
 			regThermalModeObj.thermalModeStatus = thermalModePreValue;
@@ -239,7 +235,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	public quicksettingListInit() {
 		const gamingStatus = this.gamingCapabilities;
 		this.quickSettings[0].isVisible = gamingStatus.smartFanFeature;
-		// console.log('thermal mode smart feature', gamingStatus.smartFanFeature);
 		if (gamingStatus.smartFanFeature) {
 			this.renderThermalModeStatus();
 		}
@@ -281,7 +276,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			this.gamingThermalModeService
 				.setThermalModeStatus(this.setThermalModeStatus.thermalModeStatus)
 				.then((statusValue: boolean) => {
-					// console.log('value for setThermalModeStatus value then', value);
 					if (!statusValue) {
 						this.drop.curSelected = this.GetThermalModeCacheStatus();
 

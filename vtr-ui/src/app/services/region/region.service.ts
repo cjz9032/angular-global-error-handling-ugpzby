@@ -1,7 +1,8 @@
 import {
 	Injectable
 } from '@angular/core';
-import { Observable, Observer } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
+import { Observer } from 'rxjs/internal/types';
 
 declare var Windows;
 
@@ -28,7 +29,8 @@ export class RegionService {
 				const language = Windows.System.UserProfile.GlobalizationPreferences.languages[0].toLowerCase();
 				observer.next(
 					language.lastIndexOf('-') > 0 ?
-						language.substring(0, language.lastIndexOf('-')) : language
+						language.substring(0, language.lastIndexOf('-')) === 'sr-latn' ?
+							'sr' : language.substring(0, language.lastIndexOf('-')) : language
 				);
 			} else {
 				observer.error('Windows is undefined');

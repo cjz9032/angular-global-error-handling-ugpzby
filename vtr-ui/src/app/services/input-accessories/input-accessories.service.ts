@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { promise } from 'protractor';
 
 @Injectable({
 	providedIn: 'root'
@@ -32,7 +31,8 @@ export class InputAccessoriesService {
 	public GetUDKCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
-				return this.keyboardManager.GetUDKCapability();
+				const value = this.keyboardManager.GetUDKCapability();
+				return value;
 			}
 			return undefined;
 		} catch (error) {
@@ -59,7 +59,8 @@ export class InputAccessoriesService {
 	public GetKeyboardMapCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
-				return this.keyboardManager.GetKeyboardMapCapability();
+				const response = this.keyboardManager.GetKeyboardMapCapability();
+				return response;
 			}
 			return undefined;
 		} catch (error) {

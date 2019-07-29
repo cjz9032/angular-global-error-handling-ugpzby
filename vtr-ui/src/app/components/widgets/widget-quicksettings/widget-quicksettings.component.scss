@@ -6,16 +6,18 @@
 	margin-bottom: 5rem;
 	font-weight: $weight-medium;
 }
-.widget-icon {
+.widget-icon-3 {
 	display: flex;
 	justify-content: space-between;
-	// @media #{$mediaquery_21} {
-	// 	justify-content: flex-start;
-	// }
-	// div {
-	// 	margin-right: 5rem;
-	// 	@media #{$mediaquery_20} {
-	// 		margin-right: 15rem;
-	// 	}
-	// }
+	>div{
+		width: 33%;
+	}
+}
+
+.widget-icon-2 {
+	display: flex;
+	justify-content: flex-start;
+	>div{
+		width: 33%;
+	}
 }

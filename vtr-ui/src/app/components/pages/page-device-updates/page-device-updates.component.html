@@ -33,6 +33,7 @@
 												[subTitle2]="getNextUpdatedScanText()"
 												[buttonText]="'systemUpdates.banner.checkButton' | translate"
 												[percent]="percentCompleted"
+												[isCheckingStatus]="isCheckingStatus"
 												[showProgress]="isUpdateCheckInProgress"
 												[isUpdateDownloading]="isUpdateDownloading"
 												[isCheckingPluginStatus]="isCheckingPluginStatus"
@@ -60,113 +61,6 @@
 
 									<div class="row">
 										<div class="col col-12 installation-history-container p-5">
-											<!-- Installation timeline is scope of MVP-2 -->
-											<!-- <div class="row">
-											<div class="col installation-history">
-												{{ installationHistory }}
-											</div>
-										</div>
-										<div class="row installation-history-div">
-											<div class="col col-1 installation-history-ellipses">
-												---
-											</div>
-											<div class="col col-1 installation-history-dash">
-												<hr>
-											</div>
-											<div class="col col-9 installation-history-text">
-												<div class="row">
-													<div class="col">
-														<ul class="status-list">
-															<div class="row">
-																<li *ngFor="let item of installationHistoryList"
-																	[ngClass]="[item.status]">
-																	<a routerLink="/{{item.path}}">
-																		<div class="container-fluid">
-																			<div class="row">
-																				<div class="col col-2 text-right">
-																					<div class="status-icon">
-																						<div class="icon-bkg">
-																							<fa-icon
-																								[icon]="['fas', item.icon]">
-																							</fa-icon>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="col col-10 status-text">
-																					<div class="title">
-																						{{item.installationDate}}
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</a>
-																</li>
-															</div>
-															<hr>
-														</ul>
-													</div>
-													<div class="col col-1 installation-history-dash status-now">
-														Now
-													</div>
-												</div>
-											</div>
-										</div> -->
-
-											<!-- <div class="row">
-											<div class="col row1 full-history">
-												<a (click)="onToggleFullHistory()"
-													class="pointer">Full History</a>
-											</div>
-										</div>
-
-										<vtr-installation-history *ngIf="showFullHistory"
-											(reinstallUpdate)="onReinstallUpdate($event)"></vtr-installation-history> -->
-
-
-											<!-- <ng-template #tipContent>
-											<div>
-												<a href="#"
-													class="reboot-text">
-													<div class="row">
-														<div class="col-auto pl-0 pr-0">
-															<fa-icon [icon]="['fas', 'undo']"></fa-icon>
-														</div>
-														<div class="col">Reboot required</div>
-													</div>
-												</a>
-												<ul>
-													<li>Manufacturer: <span>{{ updateDetails.manufacturer }}</span></li>
-													<li>Version: <span>{{ updateDetails.version }}</span></li>
-													<li>Installed version:
-														<span>{{ updateDetails.installedVersion }}</span></li>
-													<li>Download size: <span>{{ updateDetails.downloadSize }}</span>
-													</li>
-													<li>Disc space needed:
-														<span>{{ updateDetails.diskSpaceNeeded }}</span></li>
-												</ul>
-												<div class="row">
-													<div class="col-auto pl-0">
-														<a href="#"
-															class="read">Read more</a>
-													</div>
-													<div class="col-auto pl-0">
-														<a href="#"
-															class="ignore">Ignore update</a>
-													</div>
-												</div>
-											</div>
-										</ng-template>
-										<div class="row justify-content-center">
-											<fa-icon class="question-icon"
-												placement="auto"
-												[ngbTooltip]="tipContent"
-												[icon]="['far', 'question-circle']"
-												container="body"
-												tooltipClass="tooltip-click"
-												triggers="click:blur">
-											</fa-icon>
-										</div> -->
-
 											<vtr-container-collapsible
 												name="SystemUpdateHistory"
 												[cardTitle]="'systemUpdates.history' | translate"

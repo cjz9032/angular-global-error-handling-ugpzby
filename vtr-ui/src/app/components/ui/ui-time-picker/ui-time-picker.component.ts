@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChanges } from '@angular/core';
+import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
 	selector: 'vtr-ui-time-picker',
@@ -10,14 +11,13 @@ export class UiTimePickerComponent implements OnInit, OnChanges {
 	@Input() time: string;
 	@Input() subHeadingText: string;
 	@Input() id: string;
-
+	@Input() showDropDown: boolean;
 	@Output() setTime = new EventEmitter<string>();
 
-	// @Output() setTime = new EventEmitter<string>();
 	hour: number;
 	minute: number;
 	amPm: number;
-	showTimerDropDown: boolean;
+
 	copyHour: number;
 	copyMinute: number;
 	copyAmPm: number;
@@ -31,10 +31,9 @@ export class UiTimePickerComponent implements OnInit, OnChanges {
 	prevMinute: number;
 	nextMinute: number;
 
-	constructor() { }
+	constructor(public commonService: CommonService) { }
 
 	ngOnInit() {
-		this.showTimerDropDown = false;
 		this.splitTime();
 	}
 
@@ -79,16 +78,25 @@ export class UiTimePickerComponent implements OnInit, OnChanges {
 		}
 		const time = hourString + ':' + this.minutes[this.copyMinute];
 		this.setTime.emit(time);
-		this.showTimerDropDown = false;
+		this.sendToggleNotification(false);
 	}
 
 	clearSettings() {
-		this.showTimerDropDown = false;
+		this.sendToggleNotification(false);
 		this.initiateBlock();
 	}
 	onToggleDropDown() {
 		this.initiateBlock();
-		this.showTimerDropDown = !this.showTimerDropDown;
+		this.sendToggleNotification(!this.showDropDown);
+
+	}
+
+	sendToggleNotification(dropDown: boolean) {
+		if (this.id === 'dropcheck1') {
+			this.commonService.sendNotification('smartStandbyToggles', { id: 0, value: dropDown });
+		} else {
+			this.commonService.sendNotification('smartStandbyToggles', { id: 1, value: dropDown });
+		}
 	}
 
 	setTimerBlock() {

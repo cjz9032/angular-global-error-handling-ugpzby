@@ -10,43 +10,50 @@
 				[metricsEvent]="items[0].metricsEvent"
 				[metricsParent]="items[0].metricsParent"
 				[metricsItem]="items[0].metricsItem"
-				routerLink="/dashboard/{{items.path}}">
+				routerLink="/dashboard">
 				<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4wLjIsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTYgMjU2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojMjdBREQ3O30NCgkuc3Qxe2ZpbGw6IzIxMzA2NDt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxyZWN0IHk9IjAiIGNsYXNzPSJzdDAiIHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2Ii8+DQoJPGc+DQoJCTxwb2x5Z29uIGNsYXNzPSJzdDEiIHBvaW50cz0iNTguMiwyMTEuNiA4OC41LDE5Mi42IDE5NC44LDE5Mi42IDE5NC44LDE5NS41IAkJIi8+DQoJCTxwb2x5Z29uIGNsYXNzPSJzdDEiIHBvaW50cz0iNTguMiwyMTEuNiA4OC41LDE5Mi42IDg4LjUsMzkuNiA4Ni4zLDM5LjYgCQkiLz4NCgkJPHBvbHlnb24gY2xhc3M9InN0MiIgcG9pbnRzPSIxOTQuOCwxNjIuOSAxMjEuMywxNjIuOSAxMjEuMywzOS42IDg4LjUsMzkuNiA4OC41LDE5Mi42IDE5NC44LDE5Mi42IAkJIi8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo="
 					alt="L" />
 			</a>
 		</div>
-		<div *ngIf="deviceService.isGaming"
+		<div *ngIf="deviceService.isGaming || loadMenuItem.hideMenus"
 			class="navbar-brand pt-0">
 
-			<img *ngIf="isGamingHome" src="../../../assets/images/gaming/gaming-logo-small.png" alt="L" />
+			<img *ngIf="isGamingHome"
+				src="../../../assets/images/gaming/gaming-logo-small.png"
+				alt="L" />
 
-			<a
-			 id="menu-main-lnk-gaming-logo"
-			 attr.aria-label="menu-main-lnk-gaming-logo"
-			 *ngIf="!isGamingHome" vtrMetrics routerLinkActive="link-active" [routerLinkActiveOptions]="items[0].routerLinkActiveOptions"
-				[metricsEvent]="items[0].metricsEvent" [metricsParent]="items[0].metricsParent" [metricsItem]="items[0].metricsItem"
-				routerLink="/gaming/{{items.path}}">
-				<img  src="../../../assets/images/gaming/gaming-logo-small.png" alt="L" />
+			<a id="menu-main-lnk-gaming-logo"
+				attr.aria-label="menu-main-lnk-gaming-logo"
+				*ngIf="!isGamingHome"
+				vtrMetrics
+				routerLinkActive="link-active"
+				[routerLinkActiveOptions]="items[0].routerLinkActiveOptions"
+				[metricsEvent]="items[0].metricsEvent"
+				[metricsParent]="items[0].metricsParent"
+				[metricsItem]="items[0].metricsItem"
+				routerLink="/{{items[0].path}}">
+				<img src="../../../assets/images/gaming/gaming-logo-small.png"
+					alt="L" />
 			</a>
+
 		</div>
 		<div class="navbar-text clearfix">
-			<span *ngIf="appVersion && configService.appBrand && configService.appName">
+			<span *ngIf="configService.appBrand && configService.appName">
 				<div class="app-title">{{configService.appBrand}}
 					<span class="app-name">{{configService.appName}}</span>
-					<span class="app-version">{{'(v'+appVersion+')'}}</span>
 				</div>
 			</span>
-			<vtr-spinner *ngIf="!(appVersion || deviceModel)"> </vtr-spinner>
-			<span *ngIf="deviceModel">
+			<span>
 				<div class="device-type">
-					<span>{{deviceModel}}</span>
-					<vtr-ui-header-warranty [pageParent]="items[0].metricsParent"></vtr-ui-header-warranty>
+					<span *ngIf="!machineFamilyName">&nbsp;</span>
+					<span *ngIf="machineFamilyName">{{machineFamilyName}}</span>
+					<vtr-ui-header-warranty *ngIf="machineFamilyName"
+						[pageParent]="items[0].metricsParent"></vtr-ui-header-warranty>
 				</div>
 			</span>
 
 		</div>
-		<button
-			id="menu-main-btn-navbar-toggler"
+		<button id="menu-main-btn-navbar-toggler"
 			aria-label="menu-main-btn-navbar-toggler"
 			class="navbar-toggler"
 			type="button"
@@ -58,9 +65,11 @@
 			</fa-icon> -->
 		</button>
 		<div class="collapse navbar-collapse"
+			*ngIf="!loadMenuItem.hideMenus"
 			#menuTarget
 			[ngClass]="{'show':showMenu}">
-			<ul class="navbar-nav ml-auto" *ngIf="loadMenuItem?.firstRunDate?.length || !deviceService.isShellAvailable">
+			<ul class="navbar-nav ml-auto"
+				*ngIf="loadMenuItem?.firstRunDate?.length || !deviceService.isShellAvailable">
 				<ng-container *ngFor="let item of items; let i=index">
 					<li *ngIf="item.subitems.length===0&&item.id!=='user'&&showItem(item)"
 						class="nav-item">
@@ -77,10 +86,10 @@
 							*ngIf="item.label | translate">
 							<div class="icon">
 								<fa-icon *ngIf="item.icon[0]!=='icomoon'"
-										 [icon]="item.icon"
-										 class="fa-icon"></fa-icon>
+									[icon]="item.icon"
+									class="fa-icon"></fa-icon>
 								<span *ngIf="item.icon[0]==='icomoon'"
-									  [ngClass]="['navbar-icon',item.icon[0],item.icon[1]]"></span>
+									[ngClass]="['navbar-icon',item.icon[0],item.icon[1]]"></span>
 							</div>
 
 							{{item.label | translate}}
@@ -107,7 +116,7 @@
 							*ngIf="item.label | translate">
 							<div class="icon">
 								<fa-icon [icon]="item.icon"
-										 class="fa-icon"></fa-icon>
+									class="fa-icon"></fa-icon>
 							</div>
 							{{item.label | translate}}
 						</a>
@@ -127,6 +136,7 @@
 									[metricsItem]="subitem.metricsItem"
 									class="dropdown-item link"
 									target="_blank"
+									rel="noopener"
 									href="javascript:void(0)"
 									(click)="showMenu = false; openExternalLink(subitem.path)">{{subitem.label | translate}}</a>
 								<a *ngIf="!subitem.externallink && subitem.path==='support'"
@@ -183,14 +193,15 @@
 							aria-expanded="false"
 							(click)="showMenu = false">
 							<div class="user-initials">
-								{{deviceService.isArm || userService.starter ? 'L' : userService.initials }}
+								{{deviceService.isArm || userService.starter || !commonService.isOnline ? 'L' : userService.initials }}
 							</div>
 						</a>
 						<div class="dropdown-menu {{item.id}} dropdown-menu-id"
 							id="navbarDropdownMenu"
 							aria-labelledby="navbarDropdown">
 							<div class="dropdown-item"
-								*ngIf="!deviceService.isArm">{{'lenovoId.helloUser' | translate:{firstName:firstName} }}
+								*ngIf="!deviceService.isArm && commonService.isOnline && userService.isLenovoIdSupported()">
+								{{'lenovoId.helloUser' | translate:{firstName:userService.firstName} }}
 							</div>
 							<a vtrMetrics
 								id="menu-main-lnk-open-preference"
@@ -202,7 +213,7 @@
 								href="javascript:void(0)"
 								routerLink="settings"
 								(click)="showMenu = false">{{ 'settings.preferenceSettings' | translate }}</a>
-							<a *ngIf="!deviceService.isArm && !userService.auth && !userService.starter"
+							<a *ngIf="!deviceService.isArm && !userService.auth && !userService.starter && commonService.isOnline && userService.isLenovoIdSupported()"
 								vtrMetrics
 								id="menu-main-lnk-open-lenovoid-login"
 								attr.aria-label="menu-main-lnk-open-lenovoid-login"
@@ -212,7 +223,7 @@
 								class="dropdown-item link"
 								href="javascript:void(0)"
 								(click)="OpenLenovoId('NavigationLenovoAccount.Submenu'); showMenu = false">{{'lenovoId.login' | translate}}</a>
-							<a *ngIf="!deviceService.isArm && !userService.auth && userService.starter"
+							<a *ngIf="!deviceService.isArm && !userService.auth && userService.starter && commonService.isOnline && userService.isLenovoIdSupported()"
 								vtrMetrics
 								id="menu-main-lnk-open-lenovoid-unlock"
 								attr.aria-label="menu-main-lnk-open-lenovoid-unlock"
@@ -222,7 +233,7 @@
 								class="dropdown-item link"
 								href="javascript:void(0)"
 								(click)="OpenLenovoId('NavigationLenovoAccount.Submenu'); showMenu = false">{{'lenovoId.unlockExclusives' | translate}}</a>
-							<a *ngIf="!deviceService.isArm && userService.auth"
+							<a *ngIf="!deviceService.isArm && userService.auth && commonService.isOnline && userService.isLenovoIdSupported()"
 								vtrMetrics
 								id="menu-main-lnk-user-logout"
 								attr.aria-label="menu-main-lnk-user-logout"
@@ -234,8 +245,11 @@
 								(click)="onLogout(); showMenu = false">{{'lenovoId.logout' | translate}}</a>
 						</div>
 					</li>
-					<div *ngIf="item.id==='home-security'" class="d-none">
-						<img *ngFor="let i of preloadImages" [src]="i" alt="">
+					<div *ngIf="item.id==='home-security'"
+						class="d-none">
+						<img *ngFor="let i of preloadImages"
+							[src]="i"
+							alt="">
 					</div>
 				</ng-container>
 			</ul>

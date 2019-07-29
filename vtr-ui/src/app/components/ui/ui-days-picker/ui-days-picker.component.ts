@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChange
 import { DaysOfWeek } from 'src/app/enums/days-of-week.enum';
 import { AllDays } from 'src/app/data-models/device/all-days.model';
 import { TranslateService } from '@ngx-translate/core';
+import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
 	selector: 'vtr-ui-days-picker',
@@ -12,6 +13,7 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 	@Input() days: string;
 	@Input() subHeadingText: string;
 	@Input() daysId: string;
+	@Input() showDropDown: boolean;
 	isSelectedSingleDay: any;
 	checkedLength: any;
 
@@ -28,12 +30,10 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 	schedule: string;
 	daysOfWeek = DaysOfWeek;
 	@Output() setDays = new EventEmitter<string>();
-	showDaysDropDown: boolean;
 
-	constructor(public translate: TranslateService) { }
+	constructor(public translate: TranslateService, public commonService: CommonService) { }
 
 	ngOnInit() {
-		this.showDaysDropDown = false;
 		this.splitDays();
 	}
 
@@ -163,7 +163,7 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 	setOffDays() {
 		const setSelectedDays = this.selectedDays.join();
 		this.setDays.emit(setSelectedDays);
-		this.showDaysDropDown = false;
+		this.sendToggleNotification(false);
 	}
 
 	selectDay(event) {
@@ -181,11 +181,15 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 
 	clearSettings() {
 		this.splitDays();
-		this.showDaysDropDown = false;
+		this.sendToggleNotification(false);
 	}
 
 	onToggleDropDown() {
 		this.splitDays();
-		this.showDaysDropDown = !this.showDaysDropDown;
+		this.sendToggleNotification(!this.showDropDown);
+	}
+
+	sendToggleNotification(dropDown: boolean) {
+		this.commonService.sendNotification('smartStandbyToggles', { id: 2, value: dropDown });
 	}
 }

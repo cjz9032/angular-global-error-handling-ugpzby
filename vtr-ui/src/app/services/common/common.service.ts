@@ -4,7 +4,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { Observable } from 'rxjs/internal/Observable';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
-import { Subject } from 'rxjs';
+import { Subject } from 'rxjs/internal/Subject';
 
 @Injectable({
 	providedIn: 'root'

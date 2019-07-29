@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,12 +18,15 @@ export class HeaderMainComponent implements OnInit {
 	@Input() menuItems: any[];
 	@Input() parentPath: string;
 	@Input() backId: string;
+	@Input() isInnerBack = false;
+	@Output() innerBack = new EventEmitter();
+
 	constructor(private router: Router) { }
 
 	ngOnInit() {
 		const self = this;
 		if (this.parentPath !== '' && this.parentPath !== undefined) {
-			this.menuItems.forEach(function (d, i) {
+			this.menuItems.forEach((d, i) => {
 				d.path = self.parentPath + '/' + d.path;
 				console.log('UPDATED PATH', d.path);
 			});
@@ -31,8 +34,16 @@ export class HeaderMainComponent implements OnInit {
 		console.log('MENU ITEMS UPDATED', this.menuItems);
 	}
 
+	onInnerBack() {
+		this.innerBack.emit();
+	}
+
 	goBack() {
-		if (window.history.length > 1) { return window.history.back(); }
-		this.router.navigate(['dashboard']);
+		if (this.isInnerBack) {
+			this.onInnerBack();
+		} else {
+			if (window.history.length > 1) { return window.history.back(); }
+			this.router.navigate(['dashboard']);
+		}
 	}
 }
