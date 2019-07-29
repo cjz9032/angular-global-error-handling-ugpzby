@@ -387,7 +387,7 @@
                 "title": "Dispozitiv",
                 "sub1": "Dispozitivul meu",
                 "sub2": "Setările dispozitivului",
-                "sub3": "System Updates",
+                "sub3": "Actualizare sistem",
                 "sub4": "Asistent inteligent"
             },
             "security": {
@@ -444,31 +444,31 @@
     },
     "privacy": {
         "headerMain": {
-            "title": "Privacy"
+            "title": "Confidenţialitate"
         }
     },
     "tutorial": {
-        "almostThere": "Almost there!",
-        "para1": "Just a few more buttons to press before we can have liftoff.",
-        "para2": "Before we can give you the most optimal experience there are still a few things to setup.",
-        "personalise": "START PERSONALIZING",
-        "howIsitUsed": "How will you use it?",
-        "howMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "business": "BUSINESS",
+        "almostThere": "Aproape aţi terminat!",
+        "para1": "Mai aveți de apăsat pe câteva butoane până sunteți gata.",
+        "para2": "Înainte de a vă putea oferi cea mai optimă experiență, mai sunt câteva lucruri de configurat.",
+        "personalise": "ÎNCEPEȚI PERSONALIZAREA",
+        "howIsitUsed": "Cum îl veți folosi?",
+        "howMachinUsed": "Dați clic pe una dintre aceste utilizai pentru a ne spune cum veți folosi acest dispozitiv.",
+        "business": "AFACERI",
         "personal": "PERSONAL",
-        "custom": "CUSTOM",
-        "skip": "SKIP",
+        "custom": "PERSONALIZAT",
+        "skip": "IGNORARE",
         "next": "URMĂTORUL",
-        "interests": "What are your interests?",
-        "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "games": "GAMES",
-        "news": "NEWS",
-        "entertainment": "ENTERTAINMENT",
-        "arts": "ARTS",
-        "politics": "POLITICS",
-        "sports": "SPORTS",
-        "regionalNews": "REGIONAL NEWS",
-        "technology": "TECHNOLOGY"
+        "interests": "Care sunt interesele dvs.?",
+        "howOnesMachinUsed": "Dați clic pe una dintre aceste utilizai pentru a ne spune cum veți folosi acest dispozitiv.",
+        "games": "JOCURI",
+        "news": "ȘTIRI",
+        "entertainment": "DIVERTISMENT",
+        "arts": "ARTĂ",
+        "politics": "POLITICĂ",
+        "sports": "SPORTURI",
+        "regionalNews": "ȘTIRI REGIONALE",
+        "technology": "TEHNOLOGIE"
     },
     "dashboard": {
         "headerMain": {
@@ -534,7 +534,7 @@
                 }
             },
             "systemUpdate": {
-                "title": "System Update",
+                "title": "Actualizare sistem",
                 "detail": {
                     "update": "Actualizare"
                 }
@@ -636,15 +636,15 @@
                         "acdischarging": "Se descarcă (cu acumulator)"
                     },
                     "deviceChemistry": {
-                        "li-polymer": "Li-Polymer",
+                        "li-polymer": "Li-polimer",
                         "li-ion": "Li-Ion",
-                        "li_polymer": "Li-Polymer",
+                        "li_polymer": "Li-polimer",
                         "li_ion": "Li-Ion",
-                        "silver-zinc": "Silver-Zinc",
-                        "silver_zinc": "Silver-Zinc",
+                        "silver-zinc": "Argint-Zinc",
+                        "silver_zinc": "Argint-Zinc",
                         "nicd": "NiCd",
                         "nimh": "NiMH",
-                        "unknown": "Unknown"
+                        "unknown": "Necunoscut"
                     },
                     "manufacturer": {
                         "title": "Producător",
@@ -662,7 +662,7 @@
                     "NotSupportACAdapter": "<b>Adaptorul c.a. nu este acceptat.</b> Calculatorul dvs. Lenovo nu acceptă acest adaptor c.a. Aceasta poate provoca oprirea bruscă. Conectați un adaptor c.a. corect.",
                     "LimitedACAdapterSupport": "<b>Adaptorul c.a. nu poate furniza suficientă energie</b> calculatorului dvs. Lenovo, lucru care va afecta performanța sistemului și viteza de încărcare. Reconectaţi adaptorul c.a. potrivit.",
                     "MissingDriver": "<b>Driverul Lenovo Power Manager</b> nu este instalat sau nu funcționează corect. Rulaţi Windows Update pentru a instala cel mai recent driver.",
-                    "StoreLimitation": "<b>Bateria poate stoca doar {{percentageLimitation}}% din</b> capacitatea iniţială completă de încărcare.",
+                    "StoreLimitation": "<b>Bateria poate stoca doar {{value}}% din</b> capacitatea iniţială completă de încărcare.",
                     "HighTemperature": "<b>Descărcarea</b> a fost oprită, deoarece <b>temperatura bateriei este prea mare.</b>",
                     "TrickleCharge": "Bateria a fost <b>descărcată complet</b> şi trebuie reîncărcată. Această operaţiune poate dura zece ore sau mai mult.",
                     "OverheatedBattery": "Bateria este <b>prea fierbinte</b>. Scoateţi-o din calculator şi lăsaţi-o să se răcească la temperatura camerei.",
@@ -671,7 +671,7 @@
                 "updating": "Actualizare",
                 "voltageError": "Tensiunea bateriei este incorectă",
                 "batteryNotDetected": "Nu se detectează nicio baterie",
-                "thresholdNote": "<b>Notă:</b> Pentru a prelungi durata de viaţă a bateriei, aţi setat ca bateria să oprească încărcarea la {{chargeThresholdInfo.stopValue}}%."
+                "thresholdNote": "<b>Notă:</b> Pentru a prelungi durata de viaţă a bateriei, aţi setat ca bateria să oprească încărcarea la {{value}}%."
             },
             "power": {
                 "title": "Alimentare",
@@ -681,42 +681,41 @@
                     "title": "ACCESAȚI SETĂRILE",
                     "battery": "Baterie",
                     "power": "Alimentare",
-                    "cooling": "Răcire inteligentă",
                     "other": "Altele",
-                    "smartStandby": "Smart Standby"
+                    "smartStandby": "Stare de veghe inteligentă"
                 },
                 "powerSmartSettings": {
                     "title": "Setări inteligente de alimentare",
                     "subtitle": "RĂCIRE INTELIGENTĂ",
                     "subtitle1": "Modul baterie și silențios",
-                    "description1": "Această caracteristică adaptează dinamic setările termice nevoilor dumneavoastră.Când este activată, ajustează setările pentru a menține dispozitivul rece și silențios, când acesta este asupra dvs. sau inactiv. În caz contrar, optimizează performanța în timp ce dispozitivul se află pe o suprafață stabilă. Când este dezactivat, puteți să setați în mod manual prioritatea termală.",
+                    "description1": "Când este activată, această caracteristică adaptează într-un mod dinamic setările termice nevoilor dvs. Ajustează setările pentru a menţine dispozitivul rece şi silențios, când acesta este ţinut în mână sau inactiv. Optimizează performanţa atunci când dispozitivul se află pe o suprafaţă stabilă. Când caracteristica este oprită, puteţi seta manual priorităţile termice.",
                     "description2": "Răcirea inteligentă ajustează viteza ventilatorului, temperatura maximă a suprafeței și performanța.Această caracteristică are modurile de mai jos și poate fi accesată acum prin glisorul pentru performanța de alimentare Windows.",
                     "description3": "Funcţia Răcire inteligentă adaptează automat performanţa termică nevoilor dumneavoastră.Caracteristica Răcire inteligentă ajustează setările performanței pentru a oferi o suprafață mai rece pentru confort când notebookul este asupra dvs. Când dispozitivul este pe un birou, această caracteristică optimizează performanța sistemului.",
-                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "description13": "Când este activată, această caracteristică adaptează într-un mod dinamic setările termice nevoilor dvs. Ajustează setările pentru a menţine dispozitivul rece şi silențios, când acesta este ţinut în mână sau inactiv. Optimizează performanţa atunci când dispozitivul se află pe o suprafaţă stabilă. Când caracteristica este oprită, puteţi seta manual priorităţile termice.",
+                    "description14": "Această caracteristică vă permite să ajustați viteza ventilatorului, să maximizați performanța sistemului sau sa extindeți durata de viață a bateriei dacă este necesar. Are cele trei moduri de mai jos. Puteți comuta modurile folosind tastele rapide (Fn+Q) sau din bara de instrumente Lenovo Vantage.",
                     "readMore": "Citiți mai multe.",
                     "gotoWindows": {
                         "title": "Accesați setările Windows",
                         "modalBodyText1": "Dați clic pe pictograma bateriei Windows din bara de sistem pentru a accesa glisorul pentru performanța de alimentare Windows"
                     },
                     "intelligentCooling": {
-                        "title": "Răcire inteligentă",
+                        "title": "Răcire Inteligentă",
                         "description": "",
                         "tooltip": "",
                         "optimize": "optimizare sistem pentru",
                         "apsHint": "Pentru a activa Răcirea inteligentă, trebuie să instalaţi şi să activaţi Lenovo Active Protection System.",
                         "options": {
-                            "quiteCool3": "Mod răcire",
-                            "performance3": "Performanţă ridicată",
-                            "quiteCool4": "Modul rece și silențios",
+                            "quiteCool3": "Modul Rece şi silenţios ",
+                            "performance3": "Performanţă",
+                            "quiteCool4": "Modul Rece şi silenţios ",
                             "performance4": "Performanţă",
-                            "quiteCool5": "Modul rece și silențios",
+                            "quiteCool5": "Modul Rece şi silenţios ",
                             "performance5": "Performanţă",
-                            "batterySaving": "Battery Saving",
-                            "performance13": "Performance",
-                            "quiteCool13": "Quiet & Cool",
-                            "performance14": "Extreme Performance",
-                            "quiteCool14": "Intelligent Cooling"
+                            "batterySaving": "Economisirea bateriei",
+                            "performance13": "Performanţă",
+                            "quiteCool13": "Modul Rece şi silenţios ",
+                            "performance14": "Performanţă extremă",
+                            "quiteCool14": "Răcire inteligentă"
                         },
                         "readMore": {
                             "mode1": "Mod silențios",
@@ -725,19 +724,19 @@
                             "line1": "Glisorul este în stânga.Viteza și performanța ventilatorului sunt mai reduse pentru un computer mai silențios, cu o răcire mai bună și cu cea mai bună durată de viață a bateriei.",
                             "line2": "Cursorul este în centru.Viteza și performanța ventilatorului sunt echilibrate dinamic pentru cea mai bună experiență.",
                             "line3": "Glisorul este în dreapta. Viteza ventilatorului și temperatura permisă a suprafeței sunt mai ridicate pentru cea mai mare performanță.",
-                            "line4": "More info"
+                            "line4": "Mai multe informații"
                         },
                         "selectedModeText": {
-                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
-                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
-                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                            "quiteCool": "Acest mod permite cea mai bună experiență cu un echilibru între viteza ventilatorului și performanța sistemului. De exemplu, în jocuri, optimizează performanța. În aplicații office, reduce zgomotul.",
+                            "batterySaving": "Acest mod permite maximizarea duratei de viață a bateriei prin ajustarea automată a luminozității, modificarea setărilor de alimentare, dezactivarea caracteristicilor la procesarea avansată de imagine etc.",
+                            "performance": "Acest mod permite performanța maximă a sistemului. În acest mod, viteza rapidă a ventilatorului poate genera un zgomot mare."
                         },
                         "intelligentCoolingModesModal": {
-                            "title": "Change intelligent cooling modes",
-                            "close": "close",
+                            "title": "Modificați modurile inteligente de răcire",
+                            "close": "închidere",
                             "coolingModesList": {
-                                "list1": "Click on the windows battery-icon in the toolbar",
-                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                                "list1": "Dați clic pe pictograma baterie din bara de instrumente Windows",
+                                "list2": "Va apărea indicatorul de baterie Windows; mutați glisorul pentru a alege între durată optimă sau performanță optimă."
                             }
                         }
                     },
@@ -748,7 +747,7 @@
                             "battery&Quite": "MODUL BATERIE ȘI SILENȚIOS"
                         }
                     },
-                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
+                    "description5": "Răcirea inteligentă ajustează viteza ventilatorului, performanța maximă și gestionează durata de viață a bateriei. Această caracteristică are 3 moduri (modul silențios, modul echilibrat și modul performanță) și este acum accesibilă prin intermediul glisorului pentru performanța de alimentare Windows"
                 },
                 "powerSettings": {
                     "title": "Setări alimentare",
@@ -761,8 +760,8 @@
                         "title": "Reluare simplă",
                         "description": "Activați această caracteristica pentru a îmbunătăți timpul de reluare dacă deschideți și închideți frecvent capacul calculatorului.",
                         "tooltip": "Această caracteristică va îmbunătăţi timpul de reluare dacă deschideţi şi închideţi frecvent capacul calculatorului. Când este activată, calculatorul va trece în modul de alimentare redusă când închideţi capacul, dar va reveni imediat dacă redeschideţi capacul în decurs de 15 minute după ce l-aţi închis. Această caracteristică permite, de asemenea, notebookului să încerce să termine activităţile în aşteptare (cum ar fi, trimiterea e-mailului sau descărcarea unui fişier) înainte ca sistemul să se oprească."
-					},
-					"or":"Or"
+                    },
+                    "or": "Sau"
                 },
                 "otherSettings": {
                     "title": "Alte setări",
@@ -971,7 +970,7 @@
                         "onSunsetToSunriseScheduleDescription": "Programați modul de protejare a ochilor de la apus până la răsărit",
                         "note": {
                             "title": "Notă",
-                            "description": "Lenovo Vantage trebuie să vă acceseze informațiile privind locația pentru determinarea orei de apus și răsărit din regiunea dvs."
+                            "description": "La activarea modului de îngrijire a ochilor, această temperatură de culoare nu se aplică. Cu toate acestea, puteți deplasa glisorul pentru a obține o previzualizare a acesteia. Pentru aplicarea acesteia, dezactivați modul de îngrijire a ochilor."
                         }
                     },
                     "privacyGuard": {
@@ -989,16 +988,16 @@
                         "reset": "Resetați temperatura",
                         "tooltip": "Această caracteristică poate reduce consumul de energie și poate crește durata de viață a bateriei prin estomparea selectivă a unor părți de afișaj.",
                         "dropDown": {
-                            "seconds": "seconds",
-                            "minute": "minute",
-                            "minutes": "minutes",
-                            "alwaysOn": "Always on",
-                            "never": "never",
-                            "halfTime": "Half time of display off timer"
+                            "seconds": "secunde",
+                            "minute": "minut",
+                            "minutes": "minute",
+                            "alwaysOn": "Mereu pornit",
+                            "never": "niciodată",
+                            "halfTime": "Jumătate din timpul pentru dezactivarea afișajului"
                         },
-                        "taskBarDimmer": "TASKBAR DIMMER",
-                        "backgroundDimmer": "BACKGROUND DIMMER",
-                        "displayDimmer": "DISPLAY DIMMER"
+                        "taskBarDimmer": "ESTOMPAREA BAREI DE ACTIVITĂȚI",
+                        "backgroundDimmer": "ESTOMPAREA FUNDALULUI",
+                        "displayDimmer": "ESTOMPAREA AFIȘAJULUI"
                     }
                 },
                 "camera": {
@@ -1030,10 +1029,10 @@
                         "sketchMode": "Mod schiță"
                     },
                     "cameraLoadingFailed": {
-                        "inUseTitle": "CAMERA IS IN USE",
-                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
-                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
-                        "loadingFailedDescription": "Close the app and try again."
+                        "inUseTitle": "CAMERA ESTE ÎN CURS DE UTILIZARE",
+                        "inUseDescription": "O altă aplicaţie utilizează camera. Închideţi aplicaţia şi încercaţi din nou.",
+                        "loadingFailedTitle": "CAMERA ESTE ÎN CURS DE UTILIZARE SAU ÎNCĂRCAREA A EȘUAT",
+                        "loadingFailedDescription": "Închideţi aplicaţia şi încercaţi din nou."
                     }
                 }
             },
@@ -1085,15 +1084,15 @@
                             "option3": "Introduceți text"
                         }
                     },
-                    "tooltip": "Content to be filled",
+                    "tooltip": "Conținut de completat",
                     "apply": {
-                        "title": "APPLY"
+                        "title": "APLICARE"
                     },
                     "website": {
-                        "url": "WEBSITE URL"
+                        "url": "ADRESĂ URL SITE"
                     },
                     "enterText": {
-                        "title": "TEXT TO BE ENTERED"
+                        "title": "TEXT DE INTRODUS"
                     }
                 }
             }
@@ -1204,7 +1203,18 @@
                     "hand": {
                         "title": "Sesizarea apropierii mâinii de marginile calculatorului",
                         "description": "Când modul tabletă este activat, activați APS atunci când mâna nu este detectată"
-                    }
+                    },
+                    "more": "MAI MULTE",
+                    "advanced-settings": "SETĂRI AVANSATE",
+                    "hide": "ASCUNDEȚI SETĂRILE AVANSATE"
+                },
+                "APS": {
+                    "more": "MAI MULTE",
+                    "advancedSettings": "SETĂRI AVANSATE",
+                    "hideAdvancedSettings": "ASCUNDEȚI SETĂRILE AVANSATE",
+                    "lowSensitivity": "Sensibilitate scăzută",
+                    "mediumSensitivity": "Sensibilitate medie",
+                    "highSensitivity": "Sensibilitate crescută"
                 }
             },
             "intelligentMedia": {
@@ -1240,15 +1250,15 @@
                     "closeText": "închidere"
                 },
                 "modalInstallationFailed": {
-                    "btnText": "ok",
-                    "title": "Install Failed",
-                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                    "btnText": "OK",
+                    "title": "Instalare nereuşită",
+                    "desc": "Încercați din nou mai târziu pentru folosi Lenovo Voice."
                 }
             }
         }
     },
     "systemUpdates": {
-        "title": "Actualizări sistem",
+        "title": "Actualizare sistem",
         "back": "ÎNAPOI",
         "history": "ISTORIC COMPLET",
         "notAvailable": "Nedisponibil",
@@ -1294,7 +1304,7 @@
             "title": "Site-ul Web de asistență Lenovo"
         },
         "banner": {
-            "neverChecked": "Bun venit la utilizarea System Update.",
+            "neverChecked": "Începeţi utilizarea Actualizare sistem.",
             "title": "Un sistem actualizat este un sistem sănătos.",
             "last": "Ultima actualizare: ",
             "next": "Următoarea actualizare programată: ",
@@ -1398,7 +1408,7 @@
             "overviewBlockTitle": "Prezentarea generală a securității ecosistemului",
             "allDevices": "Toate dispozitivele",
             "myDevice": "Dispozitivul meu",
-            "thisComputer": "This computer",
+            "thisComputer": "Acest computer",
             "secure": "SIGUR",
             "needAttention": "ARE NEVOIE DE ATENȚIE",
             "manageAccount": "Gestionare cont",
@@ -1672,14 +1682,14 @@
             "title": "Securitate VPN",
             "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN criptează informațiile pe care le trimiteți și le primiți, astfel încât să vă puteți utiliza în siguranță și privat PC-ul, Mac®-ul, telefonul inteligent sau tableta pe orice conexiune la internet, fără griji.",
-            "whatCanSufEasy1": "A virtual private network provider that protects you while you are online. Without a VPN, your computer may be more vulnerable to attackers and identity theft. The VPN runs silently in the background and provides security and privacy protection.",
-            "startUseSufEasy4": "SurfEasy users can enjoy 250 MB of free traffic every 30 days! Follow the steps on the &quot;Rewards&quot; tab of the SurfEasy app to get more traffic.",
-            "howToGetData": "How to get free traffic:",
-            "howToGetData1": "Confirm email to win +250 MB traffic",
-            "howToGetData2": "Add a second device to win +250 MB of traffic",
-            "howToGetData3": "Refer a friend and win +500 MB of traffic",
-            "howToGetData4": "Like SurfEasy on Facebook, earn +100 MB of traffic,",
-            "howToGetData5": "Follow SurfEasy on Twitter and win +100 MB of traffic",
+            "whatCanSufEasy1": "Un furnizor de rețea privată virtuală care vă protejează în timp ce sunteți online. Fără un VPN, computerul poate fi mai vulnerabil la atacatori și la hoți de identitate. VPN-ul rulează silențios în fundal și vă oferă protecție și confidențialitate.",
+            "startUseSufEasy4": "Utilizatorii SurfEasy beneficiază de 250 MB de trafic gratuit la fiecare 30 de zile! Urmai pașii din fila &quot;Rewards&quot; (Recompense) a aplicației SurfEasy pentru a obține mai mult trafic.",
+            "howToGetData": "Cum obțineți trafic gratuit:",
+            "howToGetData1": "Confirmați-vă e-mailul pentru a câștiga +250 MB de trafic",
+            "howToGetData2": "Adăugați un dispozitiv secundar pentru a câștiga +250 MB de trafic",
+            "howToGetData3": "Invitați un prieten și câștigați +500 MB de trafic",
+            "howToGetData4": "Apreciați SurfEasy pe Facebook și câștigați +100 MB de trafic",
+            "howToGetData5": "Urmăriți SurfEasy pe Twitter și câștigați +100 MB de trafic",
             "helpKeep": "Ajutați păstrarea, în siguranță și privată, a activității dvs. online, cu ajutorul SurfEasy VPN.",
             "getSufEasy": "Obțineți SurfEasy",
             "openSufEasy": "Deschideți SurfEasy",

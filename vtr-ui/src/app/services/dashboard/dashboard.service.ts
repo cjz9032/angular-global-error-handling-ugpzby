@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { Observable, from } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 @Injectable({
@@ -28,7 +28,7 @@ export class DashboardService {
 			this.sysupdate = this.dashboard.sysupdate;
 			this.warranty = this.dashboard.warranty;
 		}
-		if(this.eyeCareMode) {
+		if (this.eyeCareMode) {
 			this.isShellAvailable = true;
 		}
 	}

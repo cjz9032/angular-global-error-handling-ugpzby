@@ -8,7 +8,7 @@
 				<input id="daysId"
 					class="dropcheck"
 					type="checkbox"
-					[checked]="showDaysDropDown"
+					[checked]="showDropDown"
 					(click)="onToggleDropDown()">
 				<label for="daysId"
 					class="dropbtn">
@@ -23,7 +23,7 @@
 				</label>
 
 				<div class="dropdown-content"
-					*ngIf="showDaysDropDown">
+					*ngIf="showDropDown">
 					<section class="weekdays-block">
 						<div class="row">
 							<div class="col">

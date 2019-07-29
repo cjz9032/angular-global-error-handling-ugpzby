@@ -35,7 +35,7 @@ export class ConnectedHomeComponent implements OnInit {
 		this.regionService.getRegion().subscribe({
 			next: x => {
 				this.isChsExist = false;
-				if (x.toUpperCase() === 'US') { this.isChsExist = true; }
+				if (x === 'us') { this.isChsExist = true; }
 			},
 			error: err => {
 				this.isChsExist = false;

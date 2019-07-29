@@ -127,24 +127,24 @@ export class WifiHomeViewModel {
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, wifiSecurity.wifiHistory);
 				this.allHistorys = wifiSecurity.wifiHistory;
 				this.allHistorys = this.mappingHistory(this.allHistorys);
-					if (this.allHistorys.length > 4) {
+				if (this.allHistorys.length > 4) {
 						this.hasMore = true;
-					} else {
-						this.hasMore = false;
-					}
-					this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
-					commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
+				} else {
+					this.hasMore = false;
+				}
+				this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
+				commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
 				this.historys = this.mappingHistory(this.historys);
 			} else if (cacheWifiSecurityHistory) {
 				this.allHistorys = cacheWifiSecurityHistory;
 				this.allHistorys = this.mappingHistory(this.allHistorys);
-					if (this.allHistorys.length > 4) {
-						this.hasMore = true;
-					} else {
-						this.hasMore = false;
-					}
-					this.historys = cacheWifiSecurityHistory.slice(0, 4); // 显示4个history
-					commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
+				if (this.allHistorys.length > 4) {
+					this.hasMore = true;
+				} else {
+					this.hasMore = false;
+				}
+				this.historys = cacheWifiSecurityHistory.slice(0, 4); // 显示4个history
+				commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
 				this.historys = this.mappingHistory(this.historys);
 			}
 			if (homeProtection.chsConsoleUrl && homeProtection.chsConsoleUrl !== '') {
@@ -253,21 +253,19 @@ export class SecurityHealthViewModel {
 				type: 'security'
 			};
 			it.status = item.vulnerable === 'true' ? 1 : 6;
-			it.title = this.mappingDevicePosture(item.config);
 			it.detail = item.vulnerable === 'true' ? 'security.homeprotection.securityhealth.fail' : 'security.homeprotection.securityhealth.pass';
 			this.translate.stream(it.detail).subscribe((res) => {
 				it.detail = res;
 			});
+			this.mappingDevicePosture(it, item.config);
 			if (it.title !== 'other') {
 				this.homeDevicePosture.push(it);
 			}
 		});
 	}
 
-	mappingDevicePosture(config: string): string {
-		let titles: Array<string>;
-		let title: string;
-		titles = [
+	mappingDevicePosture(detail: DevicePostureDetail, config: string) {
+		const titles = [
 			'security.homeprotection.securityhealth.deviceName1',
 			'security.homeprotection.securityhealth.deviceName2',
 			'security.homeprotection.securityhealth.deviceName3',
@@ -279,6 +277,7 @@ export class SecurityHealthViewModel {
 			'security.homeprotection.securityhealth.deviceName9',
 			'security.homeprotection.securityhealth.deviceName10'
 		];
+		let title: string;
 		config = config.toLowerCase();
 		if (config.indexOf('apps') !== -1) {
 			title = titles[0];
@@ -301,11 +300,11 @@ export class SecurityHealthViewModel {
 		} else if ((config.indexOf('automatic') !== -1)) {
 			title = titles[9];
 		} else {
-			title = 'other';
+			detail.title = 'other';
+			return;
 		}
 		this.translate.stream(title).subscribe((res) => {
-			title = res;
+			detail.title = res;
 		});
-		return title;
 	}
 }

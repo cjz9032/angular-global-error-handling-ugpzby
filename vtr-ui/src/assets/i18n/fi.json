@@ -387,7 +387,7 @@
                 "title": "Laite",
                 "sub1": "Oma laite",
                 "sub2": "Omat laiteasetukset",
-                "sub3": "System Updates",
+                "sub3": "Järjestelmäpäivitys",
                 "sub4": "Älykäs apu"
             },
             "security": {
@@ -444,31 +444,31 @@
     },
     "privacy": {
         "headerMain": {
-            "title": "Privacy"
+            "title": "Yksityisyys"
         }
     },
     "tutorial": {
-        "almostThere": "Almost there!",
-        "para1": "Just a few more buttons to press before we can have liftoff.",
-        "para2": "Before we can give you the most optimal experience there are still a few things to setup.",
-        "personalise": "START PERSONALIZING",
-        "howIsitUsed": "How will you use it?",
-        "howMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "business": "BUSINESS",
-        "personal": "PERSONAL",
-        "custom": "CUSTOM",
-        "skip": "SKIP",
+        "almostThere": "Olet melkein valmis!",
+        "para1": "Vain muutamaa painiketta painamalla tulee valmista.",
+        "para2": "Ennen kuin voimme antaa sinulle parhaan mahdollisen kokemuksen, on vielä muutamia määritettäviä asioita.",
+        "personalise": "ALOITA MUKAUTUS",
+        "howIsitUsed": "Miten käytät sitä?",
+        "howMachinUsed": "Kerro, miten käytät tätä konetta valitsemalla jokin näistä käyttötavoista.",
+        "business": "YRITYSKÄYTTÖ",
+        "personal": "YKSITYINEN KÄYTTÖ",
+        "custom": "MUKAUTETTU",
+        "skip": "OHITA",
         "next": "SEURAAVA",
-        "interests": "What are your interests?",
-        "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "games": "GAMES",
-        "news": "NEWS",
-        "entertainment": "ENTERTAINMENT",
-        "arts": "ARTS",
-        "politics": "POLITICS",
-        "sports": "SPORTS",
-        "regionalNews": "REGIONAL NEWS",
-        "technology": "TECHNOLOGY"
+        "interests": "Mitkä ovat kiinnostuksen kohteesi?",
+        "howOnesMachinUsed": "Kerro, miten käytät tätä konetta valitsemalla jokin näistä käyttötavoista.",
+        "games": "PELIT",
+        "news": "UUTISET",
+        "entertainment": "VIIHDE",
+        "arts": "TAIDE",
+        "politics": "POLITIIKKA",
+        "sports": "URHEILU",
+        "regionalNews": "ALUEELLISET UUTISET",
+        "technology": "TEKNOLOGIA"
     },
     "dashboard": {
         "headerMain": {
@@ -534,7 +534,7 @@
                 }
             },
             "systemUpdate": {
-                "title": "System Update",
+                "title": "Järjestelmäpäivitys",
                 "detail": {
                     "update": "Päivitä"
                 }
@@ -551,7 +551,7 @@
             "learnMore": "Lisätietoja",
             "freeMemory": "Vapaa muisti",
             "systemUpdate": {
-                "title": "Järjestelmän päivitys",
+                "title": "Järjestelmäpäivitys",
                 "notFound": "Järjestelmän päivitystä ei löydy",
                 "detail": {
                     "uptoDate": "Ohjelmisto ajan tasalla",
@@ -636,15 +636,15 @@
                         "acdischarging": "Tyhjennetään (verkkovirralla)"
                     },
                     "deviceChemistry": {
-                        "li-polymer": "Li-Polymer",
-                        "li-ion": "Li-Ion",
-                        "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion",
-                        "silver-zinc": "Silver-Zinc",
-                        "silver_zinc": "Silver-Zinc",
+                        "li-polymer": "Litiumpolymeeri",
+                        "li-ion": "Litiumioni",
+                        "li_polymer": "Litiumpolymeeri",
+                        "li_ion": "Litiumioni",
+                        "silver-zinc": "Hopea-sinkki",
+                        "silver_zinc": "Hopea-sinkki",
                         "nicd": "NiCd",
                         "nimh": "NiMH",
-                        "unknown": "Unknown"
+                        "unknown": "Tuntematon"
                     },
                     "manufacturer": {
                         "title": "Valmistaja",
@@ -662,7 +662,7 @@
                     "NotSupportACAdapter": "<b>Verkkolaite ei ole tuettu.</b> Lenovo-tietokoneesi ei tue tätä verkkolaitetta. Se voi aiheuttaa äkillisen sammumisen. Liitä tietokoneeseen oikea verkkolaite.",
                     "LimitedACAdapterSupport": "<b>Verkkolaite ei voi syöttää riittävästi virtaa</b> Lenovo-tietokoneeseesi, mikä vaikuttaa järjestelmän suorituskykyyn ja latausnopeuteen. Kytke oikea verkkolaite uudelleen.",
                     "MissingDriver": "<b>Lenovo Power Manager -ajuria</b> ei ole asennettu, tai se ei toimi oikein. Suorita Windows Update ja asenna uusin ajuri.",
-                    "StoreLimitation": "<b>Akku voi tallentaa vain {{percentageLimitation}}%</b> sen alkuperäisestä täydestä varauskapasiteetista.",
+                    "StoreLimitation": "<b>Akku voi tallentaa vain {{value}}%</b> sen alkuperäisestä täydestä varauskapasiteetista.",
                     "HighTemperature": "<b>Latauksen purkaminen</b> on keskeytetty <b>akun korkean lämpötilan vuoksi.</b>",
                     "TrickleCharge": "Akun lataus on <b>purettu kokonaan</b>, ja akku on ladattava uudelleen. Tämä saattaa kestää yli kymmenen tuntia.",
                     "OverheatedBattery": "Akun lämpötila on <b>liian korkea</b>. Poista akku tietokoneesta ja jäähdytä se huoneenlämpöiseksi.",
@@ -671,7 +671,7 @@
                 "updating": "Päivitetään",
                 "voltageError": "Akun jännite on virheellinen",
                 "batteryNotDetected": "Akkua ei havaittu",
-                "thresholdNote": "<b>Huomautus:</b> Voit pidentää akun käyttöikää määrittämällä akun lopettamaan latauksen, kun lataustaso on {{chargeThresholdInfo.stopValue}}%."
+                "thresholdNote": "<b>Huomautus:</b> Voit pidentää akun käyttöikää määrittämällä akun lopettamaan latauksen, kun lataustaso on {{value}}%."
             },
             "power": {
                 "title": "Virta",
@@ -681,19 +681,18 @@
                     "title": "SIIRRY ASETUKSIIN",
                     "battery": "Akku",
                     "power": "Virta",
-                    "cooling": "Älykäs jäähdytys",
                     "other": "Muu",
-                    "smartStandby": "Smart Standby"
+                    "smartStandby": "Älykäs valmiustila"
                 },
                 "powerSmartSettings": {
                     "title": "Virrankulutuksen älykkäät asetukset",
                     "subtitle": "ÄLYKÄS JÄÄHDYTYS",
                     "subtitle1": "Akku ja hiljainen",
-                    "description1": "Tämä ominaisuus muuttaa lämpöasetuksia dynaamisesti käyttäjän tarpeisiin sopiviksi.Kun ominaisuus on käytössä, laite pysyy viileänä esimerkiksi käyttäjän pidellessä sitä tai laitteen ollessa joutoajalla. Muulloin se optimoi suorituskyvyn, kun laite on vakaalla alustalla. Kun ominaisuus ei ole käytössä, käyttäjä voi määrittää lämpöprioriteetin itse.",
+                    "description1": "Kun ominaisuus on käytössä, se muuttaa lämpöasetuksia dynaamisesti käyttäjän tarpeisiin sopiviksi. Ominaisuus muuttaa asetuksia siten, että laite pysyy viileänä ja on hiljainen, kun käyttäjä pitelee laitetta tai laite on joutoajalla. Kun laite on vakaalla alustalla, ominaisuus optimoi laitteen suorituskyvyn. Kun ominaisuus ei ole käytössä, käyttäjä voi määrittää lämpöprioriteetin itse.",
                     "description2": "Älykäs jäähdytys säätää tuulettimen kierrosnopeutta, tietokoneen pinnan enimmäislämpötilaa ja suorituskykyä.Tämän ominaisuuden kolme toimintatilaa on lueteltu jäljempänä. Sitä käytetään Windowsissa näkyvällä liukusäätimellä, jolla ohjataan suorituskykyä.",
                     "description3": "Älykäs jäähdytys tasapainottaa automaattisesti lämpösuorituskyvyn käyttäjän tarpeisiin sopivaksi.Älykäs jäähdytys viilentää kannettavan tietokoneen pintaa muuttamalla suorituskyvyn asetuksia, jotta käyttäjän on miellyttävä pidellä laitetta. Kun laite on asetettu työpöydälle, toiminto optimoi suorituskyvyn.",
-                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "description13": "Kun ominaisuus on käytössä, se muuttaa lämpöasetuksia dynaamisesti käyttäjän tarpeisiin sopiviksi. Ominaisuus muuttaa asetuksia siten, että laite pysyy viileänä ja on hiljainen, kun käyttäjä pitelee laitetta tai laite on joutoajalla. Kun laite on vakaalla alustalla, ominaisuus optimoi laitteen suorituskyvyn. Kun ominaisuus ei ole käytössä, käyttäjä voi määrittää lämpöprioriteetin itse.",
+                    "description14": "Tämän ominaisuuden avulla voit tarvittaessa muuttaa tuulettimen nopeutta, maksimoida järjestelmän suorituskyvyn ja pidentää akun käyttöikää. Siinä on kolme alla olevaa tilaa. Voit myös vaihtaa tilaa käyttämällä pikanäppäimiä (Fn+Q) tai Lenovo Vantage -työkalurivin avulla.",
                     "readMore": "Lue lisää.",
                     "gotoWindows": {
                         "title": "Siirry Windowsin asetuksiin",
@@ -706,17 +705,17 @@
                         "optimize": "optimoi järjestelmä",
                         "apsHint": "Jotta voit ottaa älykkään jäähdytyksen käyttöön, sinun on asennettava ja otettava käyttöön Lenovo Active Protection System -ohjelma.",
                         "options": {
-                            "quiteCool3": "Jäähdytystila",
-                            "performance3": "Tehokas näytönohjain",
+                            "quiteCool3": "Hiljainen ja viileä",
+                            "performance3": "Suorituskyky",
                             "quiteCool4": "Hiljainen ja viileä",
                             "performance4": "Suorituskyky",
                             "quiteCool5": "Hiljainen ja viileä",
                             "performance5": "Suorituskyky",
-                            "batterySaving": "Battery Saving",
-                            "performance13": "Performance",
-                            "quiteCool13": "Quiet & Cool",
-                            "performance14": "Extreme Performance",
-                            "quiteCool14": "Intelligent Cooling"
+                            "batterySaving": "Akun säästö",
+                            "performance13": "Suorituskyky",
+                            "quiteCool13": "Hiljainen ja viileä",
+                            "performance14": "Erinomainen suorituskyky",
+                            "quiteCool14": "Älykäs jäähdytys"
                         },
                         "readMore": {
                             "mode1": "Hiljainen tila",
@@ -725,19 +724,19 @@
                             "line1": "Liukusäädin on ääriasennossa vasemmalla.Tuulettimen kierrosnopeutta hidastetaan ja tietokoneen suorituskykyä vähennetään, joten se pysyy viileämpänä ja toimii hiljaisemmin. Samalla akku kestää pidempään.",
                             "line2": "Liukusäädin on keskellä.Tuulettimen kierrosnopeus ja tietokoneen suorituskyky tasapainotetaan dynaamisesti parhaan käyttökokemuksen varmistamiseksi.",
                             "line3": "Liukusäädin on ääriasennossa oikealla. Tuulettimen kierrosnopeus ja sallittu pinnan lämpötila ovat suurempia parhaan suorituskyvyn turvaamiseksi.",
-                            "line4": "More info"
+                            "line4": "Lisätietoja"
                         },
                         "selectedModeText": {
-                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
-                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
-                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                            "quiteCool": "Tämä tila mahdollistaa parhaan käyttökokemuksen ja tasapainottaa tuulettimen nopeuden ja järjestelmän suorituskyvyn. Esimerkiksi pelatessa se optimoi suorituskyvyn. Toimistotyöskentelyssä se vähentää melua.",
+                            "batterySaving": "Tämä tila mahdollistaa akun enimmäiskeston säätämällä automaattisesti kirkkautta, muuttamalla virrankäyttöasetuksia, poistamalla toimintoja käytöstä edistyneessä kuvankäsittelyssä jne.",
+                            "performance": "Tämä tila mahdollistaa järjestelmän maksimaalisen suorituskyvyn. Tässä toimintatilassa nopea tuulettimen nopeus saattaa aiheuttaa paljon melua."
                         },
                         "intelligentCoolingModesModal": {
-                            "title": "Change intelligent cooling modes",
-                            "close": "close",
+                            "title": "Älykkäiden jäähdytystilojen vaihto",
+                            "close": "sulje",
                             "coolingModesList": {
-                                "list1": "Click on the windows battery-icon in the toolbar",
-                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                                "list1": "Napsauta Windowsin työkalurivillä näkyvää akun kuvaketta",
+                                "list2": "Windowsin akkumittari tulee näkyviin, ja voit valita optimaalisen ajankohdan tai optimaalisen suorituskyvyn liukusäätimen avulla."
                             }
                         }
                     },
@@ -748,7 +747,7 @@
                             "battery&Quite": "AKKU JA HILJAINEN"
                         }
                     },
-                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
+                    "description5": "Älykäs jäähdytys säätää tuulettimen kierrosnopeutta, maksimaalista suorituskykyä ja hallitsee akun kestoaikaa. Tämä ominaisuus sisältää kolme tilaa (hiljainen tila, tasapainotettu tila ja suorituskykytila), ja se on nyt käytettävissä Windowsissa näkyvällä suorituskyvyn ohjauksen liukusäätimellä"
                 },
                 "powerSettings": {
                     "title": "Virta-asetukset",
@@ -761,8 +760,8 @@
                         "title": "Helppo palautus",
                         "description": "Ottamalla tämän toiminnon käyttöön voit nopeuttaa jatkamisaikaa, jos avaat ja suljet tietokoneen kannen toistuvasti.",
                         "tooltip": "Tämä toiminto nopeuttaa jatkamisaikaa, jos avaat ja suljet tietokoneen kannen toistuvasti. Kun asetus on käytössä, tietokone siirtyy virransäästötilaan, kun suljet sen kannen, mutta jatkaa toimintaansa heti, jos avaat kannen 15 minuutin kuluessa kannen sulkemisesta. Kun tämä toiminto on käytössä, kannettava tietokone yrittää myös suorittaa keskeneräiset toiminnot loppuun (kuten sähköpostin lähettämisen tai tiedoston lataamisen), ennen kuin järjestelmä siirtyy keskeytystilaan."
-					},
-					"or":"Or"
+                    },
+                    "or": "Tai"
                 },
                 "otherSettings": {
                     "title": "Muut asetukset",
@@ -971,7 +970,7 @@
                         "onSunsetToSunriseScheduleDescription": "Ajoita silmien hoitotila auringonlaskusta auringonnousuun",
                         "note": {
                             "title": "Huomautus",
-                            "description": "Lenovo Vantage -ohjelman on käytettävä sijaintitietojasi oman alueesi auringon lasku- ja nousuajan laskemiseen."
+                            "description": "Kun silmien hoitotila on käytössä, tämä värilämpötila ei tule voimaan. Voit kuitenkin liukusäädintä vetämällä katsoa, miltä se näyttää. Jos haluat käyttää värilämpötilaa, poista silmien hoitotila käytöstä."
                         }
                     },
                     "privacyGuard": {
@@ -989,16 +988,16 @@
                         "reset": "Lämpötilan uudelleenasetus",
                         "tooltip": "Ominaisuus voi pienentää virrankulutusta ja lisätä akun käyttöikää himmentämällä näytön osia valikoivasti.",
                         "dropDown": {
-                            "seconds": "seconds",
-                            "minute": "minute",
-                            "minutes": "minutes",
-                            "alwaysOn": "Always on",
-                            "never": "never",
-                            "halfTime": "Half time of display off timer"
+                            "seconds": "sekuntia",
+                            "minute": "minuutti",
+                            "minutes": "minuuttia",
+                            "alwaysOn": "Jatkuva",
+                            "never": "ei koskaan",
+                            "halfTime": "Näytön käytöstä poistamisen ajastimen puoliaika"
                         },
-                        "taskBarDimmer": "TASKBAR DIMMER",
-                        "backgroundDimmer": "BACKGROUND DIMMER",
-                        "displayDimmer": "DISPLAY DIMMER"
+                        "taskBarDimmer": "TEHTÄVÄPALKIN HIMMENNYSTOIMINTO",
+                        "backgroundDimmer": "TAUSTAN HIMMENNYSTOIMINTO",
+                        "displayDimmer": "NÄYTÖN HIMMENNYS"
                     }
                 },
                 "camera": {
@@ -1030,10 +1029,10 @@
                         "sketchMode": "Luonnostila"
                     },
                     "cameraLoadingFailed": {
-                        "inUseTitle": "CAMERA IS IN USE",
-                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
-                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
-                        "loadingFailedDescription": "Close the app and try again."
+                        "inUseTitle": "KAMERA ON KÄYTÖSSÄ",
+                        "inUseDescription": "Toinen sovellus käyttää kameraa. Sulje sovellus ja yritä uudelleen.",
+                        "loadingFailedTitle": "KAMERA ON KÄYTÖSSÄ TAI LATAUS ON EPÄONNISTUNUT",
+                        "loadingFailedDescription": "Sulje sovellus ja yritä uudelleen."
                     }
                 }
             },
@@ -1085,15 +1084,15 @@
                             "option3": "Kirjoita teksti"
                         }
                     },
-                    "tooltip": "Content to be filled",
+                    "tooltip": "Täytettävä sisältö",
                     "apply": {
-                        "title": "APPLY"
+                        "title": "KÄYTÄ"
                     },
                     "website": {
-                        "url": "WEBSITE URL"
+                        "url": "VERKKOSIVUSTON URL-OSOITE"
                     },
                     "enterText": {
-                        "title": "TEXT TO BE ENTERED"
+                        "title": "KIRJOITETTAVA TEKSTI"
                     }
                 }
             }
@@ -1204,7 +1203,18 @@
                     "hand": {
                         "title": "Käden läheisyyden tunnistus tietokoneen reunoilla",
                         "description": "Ota APS käyttöön, kun muistiotila on käytössä ja järjestelmä ei havaitse kättä"
-                    }
+                    },
+                    "more": "ENEMMÄN",
+                    "advanced-settings": "LISÄASETUKSET",
+                    "hide": "PIILOTA LISÄASETUKSET"
+                },
+                "APS": {
+                    "more": "ENEMMÄN",
+                    "advancedSettings": "LISÄASETUKSET",
+                    "hideAdvancedSettings": "PIILOTA LISÄASETUKSET",
+                    "lowSensitivity": "Alhainen herkkyys",
+                    "mediumSensitivity": "Keskitason herkkyys",
+                    "highSensitivity": "Korkea herkkyys"
                 }
             },
             "intelligentMedia": {
@@ -1241,14 +1251,14 @@
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
-                    "title": "Install Failed",
-                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                    "title": "Asennus epäonnistui",
+                    "desc": "Yritä Lenovo Voice -toiminnon käyttöä myöhemmin uudelleen."
                 }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Update",
+        "title": "Järjestelmäpäivitys",
         "back": "EDELLINEN",
         "history": "KOKO HISTORIA",
         "notAvailable": "Ei käytettävissä",
@@ -1294,7 +1304,7 @@
             "title": "Lenovon tukisivusto"
         },
         "banner": {
-            "neverChecked": "Tervetuloa käyttämään System Update -ohjelmaa.",
+            "neverChecked": "Tervetuloa käyttämään Järjestelmäpäivitystä.",
             "title": "Ajan tasalla oleva järjestelmä on terve järjestelmä.",
             "last": "Viimeksi päivitetty: ",
             "next": "Seuraava ajoitettu päivitys: ",
@@ -1398,7 +1408,7 @@
             "overviewBlockTitle": "Yleistä ekosysteemin suojauksesta",
             "allDevices": "Kaikki laitteet",
             "myDevice": "Oma laite",
-            "thisComputer": "This computer",
+            "thisComputer": "Tämä tietokone",
             "secure": "TURVALLINEN",
             "needAttention": "TOIMENPITEITÄ TARVITAAN",
             "manageAccount": "Hallitse tiliä",
@@ -1672,14 +1682,14 @@
             "title": "VPN-suojaus",
             "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN salaa lähettämäsi ja vastaanottamasi tiedot niin, että voit käyttää PC- tai Mac®-tietokonettasi, älypuhelintasi tai tablettiasi millä tahansa Internet-yhteydellä tarvitsematta huolehtia.",
-            "whatCanSufEasy1": "A virtual private network provider that protects you while you are online. Without a VPN, your computer may be more vulnerable to attackers and identity theft. The VPN runs silently in the background and provides security and privacy protection.",
-            "startUseSufEasy4": "SurfEasy users can enjoy 250 MB of free traffic every 30 days! Follow the steps on the &quot;Rewards&quot; tab of the SurfEasy app to get more traffic.",
-            "howToGetData": "How to get free traffic:",
-            "howToGetData1": "Confirm email to win +250 MB traffic",
-            "howToGetData2": "Add a second device to win +250 MB of traffic",
-            "howToGetData3": "Refer a friend and win +500 MB of traffic",
-            "howToGetData4": "Like SurfEasy on Facebook, earn +100 MB of traffic,",
-            "howToGetData5": "Follow SurfEasy on Twitter and win +100 MB of traffic",
+            "whatCanSufEasy1": "Yksityisen näennäisverkkopalvelun tarjoaja, joka suojelee sinua ollessasi verkossa. Ilman VPN:ää tietosi voivat olla haavoittuvaisia hyökkäyksille ja identiteettivarkauksille. VPN-yhteys toimii huomaamattomasti taustalla suojaten tietosi ja yksityisyytesi.",
+            "startUseSufEasy4": "SurfEasy-käyttäjät saavat 250 Mt maksutonta liikennettä 30 päivän ajaksi! Saat lisää liikennettä noudattamalla SurfEasy-sovelluksen &quot;Palkinnot&quot;-välilehden ohjeita.",
+            "howToGetData": "Näin saat ilmaista liikennettä:",
+            "howToGetData1": "Voita +250 Mt ilmaista liikennettä vahvistamalla sähköpostiosoitteesi",
+            "howToGetData2": "Lisää toinen laite, jonka avulla voitat +250 Mt liikennettä",
+            "howToGetData3": "Suosittele ystävää ja voita +500 Mt liikennettä",
+            "howToGetData4": "Tykkää SurfEasystä Facebookissa ja ansaitse +100 Mt liikennettä",
+            "howToGetData5": "Seuraa SurfEasyä Twitterissä ja voita +100 Mt liikennettä",
             "helpKeep": "Pidä toimintasi verkossa turvallisena ja yksityisenä SurfEasy VPN:n avulla.",
             "getSufEasy": "Hanki SurfEasy",
             "openSufEasy": "Avaa SurfEasy",

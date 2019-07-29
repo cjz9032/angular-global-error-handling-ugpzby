@@ -1,7 +1,7 @@
 import { Component, OnInit, NgZone, OnDestroy, DoCheck } from '@angular/core';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { CommonService } from 'src/app/services/common/common.service';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/internal/Subscription';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute } from '@angular/router';
@@ -41,6 +41,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	private nextScanText = 'systemUpdates.banner.next';
 	private neverCheckedText = 'systemUpdates.banner.neverChecked';
 	private metricHelper: MetricHelper;
+	private metrics: any;
 	private lastInstallTime: string;
 	// private lastScanTime = new Date('1970-01-01T01:00:00');
 	private nextScheduleScanTime: string;
@@ -57,18 +58,20 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	public updateTitle = '';
 	private isUserCancelledUpdateCheck = false;
 	private timeStartSearch;
-	private protocalAction: string ;
+	private protocalAction: string;
 	private shouldCheckingUpdateByProtocal = false;
 
 	public isInstallationSuccess = false;
 	public isInstallationCompleted = false;
 	public percentCompleted = 0;
+	public isCheckingStatus = false;
 	public isUpdatesAvailable = false;
 	public isUpdateDownloading = false;
 	public isCheckingPluginStatus = true;
 	public installationPercent = 0;
 	public downloadingPercent = 0;
 	public isInstallingAllUpdates = true;
+	public isInstallFailedMessageToasted = false;
 
 	public isOnline = true;
 	public offlineSubtitle: string;
@@ -166,7 +169,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	) {
 		this.isOnline = this.commonService.isOnline;
 		this.metricHelper = new MetricHelper(shellService.getMetrics());
-
+		this.metrics = shellService.getMetrics();
 		this.fetchCMSArticles();
 		this.getSpecificSupportLink();
 		this.translateStrings();
@@ -175,10 +178,17 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	ngDoCheck(): void {
 		const lastAction = this.protocalAction;
-		this.protocalAction = this.activatedRoute.snapshot.queryParams['action'];
+		this.protocalAction = this.activatedRoute.snapshot.queryParams.action;
 		if (this.protocalAction && lastAction !== this.protocalAction) {
 			if (this.protocalAction.toLowerCase() === 'enable') {
 				this.systemUpdateService.setUpdateSchedule(true, false);
+				const metricData = {
+					ItemType: 'featureClick',
+					ItemName: 'chk.critical-updates',
+					ItemValue: 'True',
+					ItemParent: 'Device.SystemUpdate'
+				};
+				this.metrics.sendAsync(metricData);
 			} else if (this.protocalAction.toLowerCase() === 'start') {
 				this.shouldCheckingUpdateByProtocal = true;
 			}
@@ -217,12 +227,12 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	getCashValue() {
 		let cashData = this.commonService.getLocalStorageValue(LocalStorageKey.SystemUpdateCriticalUpdateStatus);
-		if (typeof(cashData) !== 'undefined') {
+		if (typeof (cashData) !== 'undefined') {
 			this.autoUpdateOptions[0].isChecked = cashData;
 			this.isScheduleScanEnabled = cashData;
 		}
 		cashData = this.commonService.getLocalStorageValue(LocalStorageKey.SystemUpdateRecommendUpdateStatus);
-		if (typeof(cashData) !== 'undefined') {
+		if (typeof (cashData) !== 'undefined') {
 			this.autoUpdateOptions[1].isChecked = cashData;
 			if (!this.autoUpdateOptions[0].isChecked) {
 				this.autoUpdateOptions[1].isDisabled = true;
@@ -240,16 +250,10 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'system-updates',
-			'Lang': 'EN',
-			'GEO': 'US',
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			Page: 'system-updates'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
 				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {
@@ -272,8 +276,16 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	private getSpecificSupportLink() {
-		const machineInfo = this.deviceService.getMachineInfoSync();
-		if (machineInfo && machineInfo.serialnumber && machineInfo.mtm && machineInfo.mtm.toLowerCase() !== 'invalid') {
+		let machineInfo = this.deviceService.getMachineInfoSync();
+		if (!machineInfo) {
+			this.deviceService.getMachineInfo().then((info) => {
+				machineInfo = info;
+				if (machineInfo && machineInfo.serialnumber && machineInfo.mtm && machineInfo.mtm.toLowerCase() !== 'invalid') {
+					const specificSupportLink = `${this.supportLink}qrcode?sn=${machineInfo.serialnumber}&mtm=${machineInfo.mtm}`;
+					this.supportLink = specificSupportLink;
+				}
+			});
+		} else if (machineInfo.serialnumber && machineInfo.mtm && machineInfo.mtm.toLowerCase() !== 'invalid') {
 			const specificSupportLink = `${this.supportLink}qrcode?sn=${machineInfo.serialnumber}&mtm=${machineInfo.mtm}`;
 			this.supportLink = specificSupportLink;
 		}
@@ -346,6 +358,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			this.isInstallingAllUpdates = false;
 			this.systemUpdateService.isInstallingAllUpdates = true;
 			this.resetState();
+			this.isCheckingStatus = false;
 			this.systemUpdateService.checkForUpdates();
 			this.timeStartSearch = new Date();
 		}
@@ -448,7 +461,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	public onDismissClick($event) {
-		this.isRebootRequested = false;
 	}
 
 	public showInstallConfirmation(source: string) {
@@ -499,6 +511,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	private installUpdateBySource(source: string, removeDelayedUpdates: boolean) {
+		this.isInstallFailedMessageToasted = false;
+		this.isRebootRequested = false;
 		if (source === 'selected') {
 			this.installSelectedUpdate(removeDelayedUpdates);
 		} else {
@@ -545,8 +559,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			return (update.installationStatus === UpdateActionResult.DownloadFailed
 				|| update.installationStatus === UpdateActionResult.InstallFailed);
 		});
-		if (failedUpdates) {
+		if (failedUpdates && !this.isInstallFailedMessageToasted) {
 			this.systemUpdateService.queueToastMessage(UpdateFailToastMessage.MessageID, '', '');
+			this.isInstallFailedMessageToasted = true;
 		}
 	}
 
@@ -667,11 +682,14 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.setUpdateByCategory(payload.updateList);
 					this.systemUpdateService.getIgnoredUpdates();
-					this.metricHelper.sendSystemUpdateMetric(
-						payload.updateList.length,
-						this.mapPackageListToIdString(payload.updateList),
-						'success',
-						MetricHelper.timeSpan(new Date(), this.timeStartSearch));
+					if (payload.updateList && this.timeStartSearch) {
+						this.metricHelper.sendSystemUpdateMetric(
+							payload.updateList.length,
+							this.mapPackageListToIdString(payload.updateList),
+							'success',
+							MetricHelper.timeSpan(new Date(), this.timeStartSearch));
+					}
+
 					break;
 				case UpdateProgress.InstallationStarted:
 					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
@@ -689,7 +707,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
 					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
-					//using this check to avoid displaying more than on reboot confimation dialogs.
 					if (!this.isRebootRequested) {
 						this.checkRebootRequested();
 					}
@@ -749,6 +766,26 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				case UpdateProgress.ScheduleUpdateChecking:
 					this.isUpdateCheckInProgress = true;
 					this.isCheckingPluginStatus = false;
+					this.percentCompleted = this.systemUpdateService.percentCompleted;
+					this.isCheckingStatus = true;
+					break;
+				case UpdateProgress.ScheduleUpdateCheckComplete:
+					this.isUpdateCheckInProgress = false;
+					this.isCheckingPluginStatus = false;
+					this.percentCompleted = this.systemUpdateService.percentCompleted;
+					this.isCheckingStatus = false;
+					let message;
+					message = this.mapStatusToMessage(payload);
+					this.setUpdateTitle(message);
+					break;
+				case UpdateProgress.ScheduleUpdatesAvailable:
+					this.isUpdateCheckInProgress = false;
+					this.isCheckingPluginStatus = false;
+					this.percentCompleted = this.systemUpdateService.percentCompleted;
+					this.isUpdatesAvailable = this.systemUpdateService.isUpdatesAvailable;
+					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
+					this.setUpdateByCategory(payload.updateList);
+					this.systemUpdateService.getIgnoredUpdates();
 					break;
 				case UpdateProgress.ScheduleUpdateDownloading:
 					this.ngZone.run(() => {
@@ -777,16 +814,17 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 						this.shouldCheckingUpdateByProtocal = false;
 					}
 					break;
-				case UpdateProgress.ScheduleUpdateCheckComplete:
+				case UpdateProgress.ScheduleUpdateInstallationComplete:
 					this.isCheckingPluginStatus = false;
 					this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
 					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
+					this.showToastMessage(payload.updateList);
 					this.setUpdateByCategory(payload.updateList);
 					this.systemUpdateService.getUpdateHistory();
 					// using this check to avoid displaying more than on reboot confimation dialogs.
 					if (!this.isRebootRequested) {
-					this.checkRebootRequested();
+						this.checkRebootRequested();
 					}
 					break;
 				default:
@@ -803,6 +841,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	private getScheduleUpdateStatus(reportProgress: boolean) {
+		this.isInstallFailedMessageToasted = false;
+		this.isRebootRequested = false;
 		this.systemUpdateService.getScheduleUpdateStatus(reportProgress);
 	}
 
@@ -829,7 +869,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					if (result) {
 						this.systemUpdateService.restartWindows();
 					} else {
-						this.isRebootRequested = false;
 						modalRef.close();
 					}
 				}

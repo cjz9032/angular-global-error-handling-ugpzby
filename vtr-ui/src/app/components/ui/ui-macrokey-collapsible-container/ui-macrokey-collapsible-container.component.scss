@@ -30,7 +30,7 @@
 		.icon {
 			position: relative;
 			font-size: 2.2rem;
-			top: -0.8rem;
+			top: -0.5rem!important;
 		}
 		&::after {
 			display: none;
@@ -78,6 +78,7 @@
 				.dropdown-item {
 					.icon {
 						opacity: 1;
+						color: $good_dark;
 					}
 				}
 			}

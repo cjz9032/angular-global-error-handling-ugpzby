@@ -2,9 +2,11 @@
 	<div class="row top-fix">
 		<div class="col-sm-12" *ngIf="!recordingStatus">
 			<div class="title-main">
-				{{ 'gaming.macroKey.details.recorded.title' | translate }}<span><span
-						*ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>
-					{{ number.key | translate }}</span>
+				{{ 'gaming.macroKey.details.recorded.title' | translate }}
+				<span>
+					<span *ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>
+					{{ number.key | translate }}
+				</span>
 			</div>
 		</div>
 		<div class="col-6" *ngIf="!recordingStatus">
@@ -98,7 +100,8 @@
 	</div>
 	<div class="bottom-fix" *ngIf="!recordingStatus">
 		<div class="text-right">
-			<div class="delete-btn" (click)="clearRecords()">
+			<div class="delete-btn" (click)="clearRecords()"  vtrMetrics [metricsItem]="'Clear Records'"
+			metricsEvent="featureClick">
 				<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink">
 					<title>6.20pxIcon/bin</title>

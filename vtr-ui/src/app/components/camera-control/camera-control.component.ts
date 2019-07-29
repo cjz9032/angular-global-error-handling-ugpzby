@@ -16,13 +16,13 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	@Input() cameraSettings: ICameraSettingsResponse;
 	@Input() cameraFeatureAccess: CameraFeatureAccess;
 	@Input() manualRefresh: any;
-	@Input() disabledAll: boolean;
+	@Input() disabledAll = false;
 	@Output() brightnessChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() contrastChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() exposureChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() exposureToggle: EventEmitter<any> = new EventEmitter();
 	@Output() cameraAvailable: EventEmitter<boolean> = new EventEmitter();
-	@Output() cameraDisable:EventEmitter<boolean> = new EventEmitter();
+	@Output() cameraDisable: EventEmitter<boolean> = new EventEmitter();
 	public cameraDetail = new CameraDetail();
 	private cameraPreview: ElementRef;
 	private videoElement: HTMLVideoElement;
@@ -135,22 +135,19 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 					self.oMediaCapture.addEventListener('failed', (error) => {
 						console.log('failed to capture camera', error);
 						self.cleanupCameraAsync();
-						
+
 						this.ngZone.run(() => {
-							
 							// Camera is in Use
 							if (error.code === 3222091524) {
 								this.isCameraInErrorState = true;
 								this.cameraErrorTitle = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.inUseTitle';
 								this.cameraErrorDescription = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.inUseDescription';
-								}
+							} else if (error.code === 2147942405) {
 								// disable camera access from system setting
-								else if(error.code === 2147942405){
-									this.cameraDisable.emit(true);
-			
-								}
-								else {
-									this.isCameraInErrorState = true;
+								this.cameraDisable.emit(true);
+
+							} else {
+								this.isCameraInErrorState = true;
 								this.cameraErrorTitle = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.loadingFailedTitle';
 								this.cameraErrorDescription = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.loadingFailedDescription';
 							}
