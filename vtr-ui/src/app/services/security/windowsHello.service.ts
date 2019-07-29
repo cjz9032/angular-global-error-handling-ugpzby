@@ -10,18 +10,22 @@ export class WindowsHelloService {
 	isRS5OrLater: boolean;
 	constructor(
 		private vantageShell: VantageShellService,
-		private commonService: CommonService) {}
+		private commonService: CommonService) { }
 
 	showWindowsHello(): boolean {
-		const windowsHello: phoenix.WindowsHello = this.vantageShell.getSecurityAdvisor().windowsHello;
-		const version = this.commonService.getWindowsVersion();
-		if (version === 0) {
-			this.isRS5OrLater = true;
-		} else {
-			this.isRS5OrLater = this.commonService.isRS5OrLater();
-		}
-		if (this.isRS5OrLater && windowsHello.fingerPrintStatus) {
-			return true;
+
+		const securityAdvisor = this.vantageShell.getSecurityAdvisor();
+		if (securityAdvisor) {
+			const windowsHello: phoenix.WindowsHello = securityAdvisor.windowsHello;
+			const version = this.commonService.getWindowsVersion();
+			if (version === 0) {
+				this.isRS5OrLater = true;
+			} else {
+				this.isRS5OrLater = this.commonService.isRS5OrLater();
+			}
+			if (this.isRS5OrLater && windowsHello.fingerPrintStatus) {
+				return true;
+			}
 		}
 		return false;
 	}
