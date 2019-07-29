@@ -1,7 +1,6 @@
-import { Component, OnInit, OnDestroy, DoCheck, HostListener, ViewChild, AfterViewInit, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, DoCheck, HostListener, ViewChild, AfterViewInit, Input, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
@@ -11,7 +10,6 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { TranslationService } from 'src/app/services/translation/translation.service';
 import Translation from 'src/app/data-models/translation/translation';
-import { environment } from '../../../environments/environment';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
 import { WindowsHello, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
@@ -32,13 +30,12 @@ import { WindowsHelloService } from 'src/app/services/security/windowsHello.serv
 	styleUrls: ['./menu-main.component.scss']
 })
 export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
-	@ViewChild('menuTarget', { static: true }) menuTarget;
-	@Input() loadMenuItem: any;
-	public deviceModel: string;
+	@ViewChild('menuTarget', { static: false }) menuTarget: ElementRef;
+	@Input() loadMenuItem: any = {};
+	public machineFamilyName: string;
 	public country: string;
 	public firstName: 'User';
 	commonMenuSubscription: Subscription;
-	public appVersion: string = environment.appVersion;
 	constantDevice = 'device';
 	constantDeviceSettings = 'device-settings';
 	region: string;
@@ -53,15 +50,16 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 	isGamingHome: boolean;
 	currentUrl: string;
 
+
 	constructor(
 		private router: Router,
 		public route: ActivatedRoute,
 		public configService: ConfigService,
-		private commonService: CommonService,
+		public commonService: CommonService,
 		public userService: UserService,
 		public translationService: TranslationService,
 		public deviceService: DeviceService,
-		vantageShellService: VantageShellService,
+		private vantageShellService: VantageShellService,
 		private translate: TranslateService,
 		private regionService: RegionService,
 		private smartAssist: SmartAssistService,
@@ -108,16 +106,10 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 			});
 		});
 
-		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
-		// if IdeaPad or ThinkPad then call below function
-		if (machineType === 0 || machineType === 1) {
-			this.showSmartAssist();
-		}
-
 		this.router.events.subscribe((ev) => {
 			if (ev instanceof NavigationEnd) {
 				this.currentUrl = ev.url;
-				if (this.currentUrl === '/device-gaming' || this.currentUrl === '/gaming' || this.currentUrl === '/') {
+				if (this.currentUrl === '/device-gaming' || this.currentUrl === '/gaming') {
 					this.isGamingHome = true;
 				} else {
 					this.isGamingHome = false;
@@ -132,13 +124,16 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 	}
 	@HostListener('document:click', ['$event.target'])
 	onClick(targetElement) {
-		const clickedInside = this.menuTarget.nativeElement.contains(targetElement);
-		const toggleMenuButton =
-			targetElement.classList.contains('navbar-toggler-icon ') || targetElement.classList.contains('fa-bars') || targetElement.parentElement.classList.contains('fa-bars') || targetElement.localName === 'path';
-		if (!clickedInside && !toggleMenuButton) {
-			this.showMenu = false;
+		if (this.menuTarget) {
+			const clickedInside = this.menuTarget.nativeElement.contains(targetElement);
+			const toggleMenuButton =
+				targetElement.classList.contains('navbar-toggler-icon ') || targetElement.classList.contains('fa-bars') || targetElement.parentElement.classList.contains('fa-bars') || targetElement.localName === 'path';
+			if (!clickedInside && !toggleMenuButton) {
+				this.showMenu = false;
+			}
 		}
 	}
+
 	ngOnInit() {
 		const self = this;
 		this.translate.stream('lenovoId.user').subscribe((value) => {
@@ -151,8 +146,40 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 		});
 
 		this.isDashboard = true;
-		this.initInputAccessories();
+
+		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, undefined);
+		if (machineType) {
+			this.loadMenuOptions(machineType);
+		} else if (this.deviceService.isShellAvailable) {
+			this.deviceService
+				.getMachineType()
+				.then((value: number) => {
+					this.loadMenuOptions(value);
+				})
+				.catch((error) => {
+					console.error('checkIsDesktopMachine', error);
+				});
+		}
+
+		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
+			LocalStorageKey.MachineFamilyName,
+			undefined
+		);
+		if (cacheMachineFamilyName) {
+			this.machineFamilyName = cacheMachineFamilyName;
+		}
 	}
+
+	private loadMenuOptions(machineType: number) {
+		// if IdeaPad or ThinkPad then call below function
+		if (machineType === 0 || machineType === 1) {
+			this.showSmartAssist();
+		}
+		if (machineType === 1) {
+			this.initInputAccessories();
+		}
+	}
+
 	ngAfterViewInit(): void {
 		this.getMenuItems().then((items) => {
 			const chsItem = items.find(item => item.id === 'home-security');
@@ -217,8 +244,12 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 					this.firstName = notification.payload;
 					break;
 				case 'MachineInfo':
-					this.deviceModel = notification.payload.family;
+					this.machineFamilyName = notification.payload.family;
+					this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, notification.payload.family);
 					this.country = notification.payload.country;
+					break;
+				case LocalStorageKey.MachineFamilyName:
+					this.machineFamilyName = notification.payload;
 					break;
 				default:
 					break;
@@ -267,14 +298,14 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 				this.region = x;
 			},
 			error: (err) => {
-				this.region = 'US';
+				this.region = 'us';
 			}
 		});
 		this.getMenuItems().then((items) => {
 			const securityItemForVpn = items.find((item) => item.id === 'security');
 			if (securityItemForVpn !== undefined) {
 				const vpnItem = securityItemForVpn.subitems.find((item) => item.id === 'internet-protection');
-				if (this.region !== 'CN') {
+				if (this.region !== 'cn') {
 					if (!vpnItem) {
 						securityItemForVpn.subitems.splice(4, 0, {
 							id: 'internet-protection',
@@ -307,17 +338,21 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 	}
 
 	private showSmartAssist() {
+		this.logger.error('inside showSmartAssist');
 		this.getMenuItems().then((items) => {
 			const myDeviceItem = items.find((item) => item.id === this.constantDevice);
 			if (myDeviceItem !== undefined) {
 				const smartAssistItem = myDeviceItem.subitems.find((item) => item.id === 'smart-assist');
 				if (!smartAssistItem) {
+					this.logger.error('get IsSmartAssistSupported');
+
 					// if cache has value true for IsSmartAssistSupported, add menu item
 					const isSmartAssistSupported = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, false);
 
 					if (isSmartAssistSupported) {
 						this.addSmartAssistMenu(myDeviceItem);
 					}
+					this.logger.error('before Promise.all JS Bridge call');
 
 					// still check if any of the feature supported. if yes then add menu
 					Promise.all([
@@ -330,6 +365,8 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 						this.smartAssist.getSensorStatus(),
 						this.smartAssist.getHDDStatus()
 					]).then((responses: any[]) => {
+						this.logger.error('inside Promise.all THEN JS Bridge call', responses);
+
 						console.log('showSmartAssist.Promise.all()', responses);
 						console.log('Smart Assist Expressions', responses[0] || responses[1] || responses[2] || responses[3].available || responses[4] || (responses[5] && responses[6] && (responses[7] > 0)));
 						// cache smart assist capability
@@ -340,6 +377,7 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 						smartAssistCapability.isIntelligentScreenSupported = responses[4];
 						smartAssistCapability.isAPSSupported = (responses[5] && responses[6] && (responses[7] > 0));
 						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+						this.logger.error('inside Promise.all THEN JS Bridge call', smartAssistCapability);
 
 						const isAvailable =
 							(responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && (responses[7] > 0));
@@ -375,15 +413,6 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 	public openExternalLink(link) {
 		if (link) {
 			window.open(link);
-		}
-	}
-
-	public isHomeGaming() {
-		console.log(`CURRENTURL====================<><>`, this.router);
-		if (this.router.url === '/device-gaming' || this.router.url === '/') {
-			this.isGamingHome = true;
-		} else {
-			this.isGamingHome = false;
 		}
 	}
 

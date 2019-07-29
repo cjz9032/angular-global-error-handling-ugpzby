@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input, HostListener, NgZone } from '@angular/core';
+import { Component, OnInit, Input, HostListener, NgZone } from '@angular/core';
 import { SecurityAdvisor, WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { WidgetItem } from 'src/app/data-models/security-advisor/widget-security-status/widget-item.model';
@@ -17,7 +17,7 @@ import { WindowsHelloService } from 'src/app/services/security/windowsHello.serv
 	templateUrl: './widget-security-status.component.html',
 	styleUrls: ['./widget-security-status.component.scss']
 })
-export class WidgetSecurityStatusComponent implements OnInit, OnDestroy {
+export class WidgetSecurityStatusComponent implements OnInit {
 
 	@Input() securityAdvisor: SecurityAdvisor;
 	items: Array<WidgetItem>;
@@ -77,10 +77,10 @@ export class WidgetSecurityStatusComponent implements OnInit, OnDestroy {
 	showVpn() {
 		this.regionService.getRegion().subscribe({
 			next: x => { this.region = x; },
-			error: () => { this.region = 'US'; }
+			error: () => { this.region = 'us'; }
 		});
 		const vpnItem = this.items.find(item => item.id === 'sa-widget-lnk-vpn');
-		if (this.region !== 'CN') {
+		if (this.region !== 'cn') {
 			if (!vpnItem) {
 				this.items.splice(3, 0, new VPNWidgetItem(this.securityAdvisor.vpn, this.commonService, this.translateService));
 			}

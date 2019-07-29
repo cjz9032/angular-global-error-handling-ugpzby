@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { QaService } from '../../../services/qa/qa.service';
 import { DevService } from '../../../services/dev/dev.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
@@ -7,8 +7,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AudioService } from 'src/app/services/audio/audio.service';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
+import { TranslateService } from '@ngx-translate/core';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 
 @Component({
@@ -16,7 +15,7 @@ import { InputAccessoriesCapability } from 'src/app/data-models/input-accessorie
 	templateUrl: './page-device-settings.component.html',
 	styleUrls: ['./page-device-settings.component.scss']
 })
-export class PageDeviceSettingsComponent implements OnInit {
+export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 
 	title = 'Device Settings';
 	back = 'BACK';
@@ -63,20 +62,19 @@ export class PageDeviceSettingsComponent implements OnInit {
 		private commonService: CommonService,
 		public deviceService: DeviceService,
 		public audioService: AudioService,
-		private translate: TranslateService,
-		private keyboardService: InputAccessoriesService
+		private translate: TranslateService
 	) {
 		this.fetchCMSArticles();
 		this.getMicrophoneSettings();
 
 		// Evaluate the translations for QA on language Change
-		//this.qaService.setTranslationService(this.translate);
-		//this.qaService.setCurrentLangTranslations();
-		this.qaService.getQATranslation(translate);//VAN-5872, server switch feature
+		// this.qaService.setTranslationService(this.translate);
+		// this.qaService.setCurrentLangTranslations();
+		this.qaService.getQATranslation(translate); // VAN-5872, server switch feature
 
-		//translate subheader menus
+		// translate subheader menus
 		this.menuItems.forEach(m => {
-			m.label = this.translate.instant(m.label);
+			// m.label = this.translate.instant(m.label);//VAN-5872, server switch feature
 			this.translate.stream(m.label).subscribe((value) => {
 				m.label = value;
 			});
@@ -86,24 +84,24 @@ export class PageDeviceSettingsComponent implements OnInit {
 	ngOnInit() {
 		this.devService.writeLog('DEVICE SETTINGS INIT', this.menuItems);
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
-		//translate subheader menus
-		this.menuItems.forEach(m => {
-			m.label = this.translate.instant(m.label);
+		// translate subheader menus
+		/*this.menuItems.forEach(m => {
+			//m.label = this.translate.instant(m.label);
 			this.translate.stream(m.label).subscribe((value) => {
 				m.label = value;
 			});
-		});
+		});*/  // VAN-5872, server switch feature
 		this.initInputAccessories();
 	}
 
 	initInputAccessories() {
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
-		if (this.machineType != 1) {
+		if (this.machineType !== 1) {
 			this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
 			return;
 		}
 		const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
-		const isAvailable  = inputAccessoriesCapability.isUdkAvailable || inputAccessoriesCapability.isKeyboardMapAvailable;
+		const isAvailable = inputAccessoriesCapability.isUdkAvailable || inputAccessoriesCapability.isKeyboardMapAvailable;
 		if (!isAvailable) {
 			this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
 		}
@@ -129,16 +127,10 @@ export class PageDeviceSettingsComponent implements OnInit {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'device-settings',
-			'Lang': 'EN',
-			'GEO': 'US',
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			Page: 'device-settings'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
 				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {
@@ -171,7 +163,7 @@ export class PageDeviceSettingsComponent implements OnInit {
 		};
 	}
 
-	//VAN-5872, server switch feature
+	// VAN-5872, server switch feature
 	ngOnDestroy() {
 		this.qaService.destroyChangeSubscribed();
 	}

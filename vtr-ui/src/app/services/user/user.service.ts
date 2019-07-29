@@ -6,7 +6,6 @@ import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { LenovoIdKey, LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DeviceService } from '../../services/device/device.service';
 import { LIDStarterHelper } from './stater.helper';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -14,7 +13,9 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 declare var Windows;
 
-@Injectable()
+@Injectable({
+	providedIn: 'root'
+})
 export class UserService {
 
 	cookies: any = {};
@@ -29,6 +30,7 @@ export class UserService {
 	private lid: any;
 	private metrics: any;
 	private lidStarterHelper: LIDStarterHelper;
+	private lidSupported = true;
 
 	constructor(
 		private cookieService: CookieService,
@@ -39,8 +41,11 @@ export class UserService {
 		private translate: TranslateService,
 		public deviceService: DeviceService
 	) {
-		// DUMMY
-		this.setName(this.firstName, this.lastName);
+		this.translate.stream('lenovoId.user').subscribe((firstName) => {
+			if (!this.auth) {
+				this.setName(firstName, this.lastName);
+			}
+		});
 		this.lid = vantageShellService.getLenovoId();
 		this.metrics = vantageShellService.getMetrics();
 		if (!this.metrics) {
@@ -54,6 +59,13 @@ export class UserService {
 			this.devService.writeLog('UserService constructor: lid object is undefined');
 		}
 
+		if (typeof Windows !== 'undefined') {
+			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
+			if (packageVersion.minor < 1908) {
+				this.lidSupported = false;
+			}
+		}
+
 		this.lidStarterHelper = new LIDStarterHelper(devService, commonService, deviceService, vantageShellService);
 	}
 
@@ -64,14 +76,6 @@ export class UserService {
 		}
 
 		return 'none';
-	}
-
-	checkCookies() {
-		this.cookies = this.cookieService.getAll();
-		this.devService.writeLog('CHECK COOKIES:', this.cookies);
-		if (this.cookies.token) {
-			this.setToken(this.cookies.token);
-		}
 	}
 
 	getLidLanguageSelectionFromCookies(domain: string) {
@@ -233,13 +237,6 @@ export class UserService {
 		}
 	}
 
-	setToken(token: any) {
-		this.devService.writeLog('SET TOKEN', token);
-		this.token = token;
-		this.commsService.token = token;
-		this.cookieService.set('token', token, 99999999999999999, '/');
-	}
-
 	setName(firstName: string, lastName: string) {
 		if (!firstName && !lastName) {
 			this.translate.stream('lenovoId.user').subscribe((value) => {
@@ -281,8 +278,8 @@ export class UserService {
 	}
 
 	isLenovoIdSupported() {
-		// VAN-5280 Enable LID feature after fix design change impact
-		return true;
+		// VAN-7119 add version check, if client version below 1908, hide the LID function
+		return this.lidSupported;
 	}
 
 }

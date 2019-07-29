@@ -29,7 +29,7 @@ export class ModalArticleDetailComponent implements OnInit {
 		private element: ElementRef
 	) {
 		this.metricClient = vantageShellService.getMetrics();
-		this.metricsParent = this.activatedRoute.firstChild.snapshot.data.pageName + '.Article';
+		this.metricsParent = this.getPageName(activatedRoute) + '.Article';
 	}
 
 	ngOnInit() {
@@ -44,7 +44,7 @@ export class ModalArticleDetailComponent implements OnInit {
 					this.articleImage = response.Results.Image;
 					this.articleBody = this.sanitizer.sanitize(SecurityContext.HTML, response.Results.Body);
 					if (response.Results.Category && response.Results.Category.length > 0) {
-						this.articleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
+						this.articleCategory = response.Results.Category.map((category: any) => category.Id).join(' ');
 					}
 				} else {
 					this.articleTitle = response.title;
@@ -56,6 +56,18 @@ export class ModalArticleDetailComponent implements OnInit {
 				console.log('fetchCMSContent error', error);
 			}
 		);
+	}
+
+	private getPageName(activatedRoute: ActivatedRoute) {
+		try {
+			return activatedRoute.children[0].firstChild.routeConfig.data.pageName;
+		} catch (ex) {}
+
+		try {
+			return activatedRoute.firstChild.snapshot.data.pageName;
+		} catch (ex) {}
+
+		return undefined;
 	}
 
 	enableBatteryChargeThreshold() {

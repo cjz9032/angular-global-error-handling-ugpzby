@@ -5,7 +5,6 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { LightingCapabilities } from 'src/app/data-models/gaming/lighting-capabilities';
 import { LightingProfile } from 'src/app/data-models/gaming/lighting-profile';
-import { Color } from '../../pages/page-privacy/utils/fl-tracking-map/tracking-map-base/Color';
 import {
 	LightingProfileEffectColorNUmber,
 	LightingProfileEffectColorString
@@ -13,6 +12,7 @@ import {
 import { isUndefined } from 'util';
 import { Options } from 'src/app/data-models/gaming/lighting-options';
 import { LightEffectComplexType } from 'src/app/enums/light-effect-complex-type';
+import { LightEffectRGBFeature, LightEffectSingleOrComplex } from 'src/app/enums/light-effect-rgbfeature';
 
 @Component({
 	selector: 'vtr-ui-lighting-profile',
@@ -44,7 +44,8 @@ export class UiLightingProfileComponent implements OnInit {
 	public lightingProfileEffectColorString: LightingProfileEffectColorString;
 	public frontSelectedValue: any;
 	public sideSelectedValue: any;
-
+	public enumLightingRGBFeature = LightEffectRGBFeature;
+	public enumLightEffectSingleOrComplex = LightEffectSingleOrComplex;
 	public inHex1: any;
 	public inHex2: any;
 	public applyBtnStatus1: String = 'apply';
@@ -293,157 +294,165 @@ export class UiLightingProfileComponent implements OnInit {
 		}
 	}
 	public getCacheLightingCapabilities(response) {
-		if (response.LightPanelType.length > 0) {
-			this.profileRGBFeature = response.RGBfeature;
-			this.lightingCapabilities = response;
-			if (response.BrightAdjustLevel === 0) {
-				this.showBrightnessSlider = false;
-			}
-			else {
-				this.showBrightnessSlider = true;
-			}
-			console.log(
-				'gaming Lighting Capabilities js bridge cache------------------------>',
-				JSON.stringify(this.lightingCapabilities)
-			);
-			console.log(
-				'led panel type  cache------------------------------------------',
-				this.lightingCapabilities.RGBfeature
-			);
-			if (response.LedType_Complex.length > 1) {
-				this.simpleOrComplex = 2;
-			} else if (response.LedType_simple.length > 1) {
-				this.simpleOrComplex = 1;
-			}
-			if (response.RGBfeature === 1 && this.simpleOrComplex === 1) {
-				this.dropOptions = response.LedType_simple;
+		try {
 
-				this.optionsSingleColor = this.optionsSingleColor.filter((obj) =>
-					this.dropOptions.includes(obj.id)
+			if (response.LightPanelType.length > 0) {
+				this.profileRGBFeature = response.RGBfeature;
+				this.lightingCapabilities = response;
+				if (response.BrightAdjustLevel === 0) {
+					this.showBrightnessSlider = false;
+				}
+				else {
+					this.showBrightnessSlider = true;
+				}
+				console.log(
+					'gaming Lighting Capabilities js bridge cache------------------------>',
+					JSON.stringify(this.lightingCapabilities)
 				);
 				console.log(
-					'single color options filtered  cache------------------------------------------',
-					JSON.stringify(this.optionsSingleColor)
+					'led panel type  cache------------------------------------------',
+					this.lightingCapabilities.RGBfeature
 				);
-			} else if (response.RGBfeature === 255 || this.simpleOrComplex === 2) {
-				this.dropOptions = response.LedType_Complex;
+				if (response.LedType_Complex.length > 1) {
+					this.simpleOrComplex = this.enumLightEffectSingleOrComplex.Complex;
+				} else if (response.LedType_simple.length > 1) {
+					this.simpleOrComplex = this.enumLightEffectSingleOrComplex.Simple;
+				}
+				if (response.RGBfeature === this.enumLightingRGBFeature.Simple && this.simpleOrComplex === this.enumLightEffectSingleOrComplex.Simple) {
+					this.dropOptions = response.LedType_simple;
+
+					this.optionsSingleColor = this.optionsSingleColor.filter((obj) =>
+						this.dropOptions.includes(obj.id)
+					);
+					console.log(
+						'single color options filtered  cache------------------------------------------',
+						JSON.stringify(this.optionsSingleColor)
+					);
+				} else if (response.RGBfeature === this.enumLightingRGBFeature.Complex || this.simpleOrComplex === this.enumLightEffectSingleOrComplex.Complex) {
+					this.dropOptions = response.LedType_Complex;
+					if (this.lightingCapabilities.LightPanelType.length > 0) {
+						this.lightingEffectData.drop[0].dropOptions = this.lightingEffectData.drop[0].dropOptions.filter(
+							(i) => this.dropOptions.includes(i.value)
+						);
+					}
+					if (this.lightingCapabilities.LightPanelType.length > 1) {
+						this.lightingEffectData.drop[1].dropOptions = this.lightingEffectData.drop[1].dropOptions.filter(
+							(i) => this.dropOptions.includes(i.value)
+						);
+					}
+					if (this.lightingCapabilities.LightPanelType.length === 1 && this.simpleOrComplex === this.enumLightEffectSingleOrComplex.Complex) {
+						this.simpleOrComplex = this.enumLightEffectSingleOrComplex.Complex;
+					} else if (this.lightingCapabilities.LightPanelType.length > 1 && this.simpleOrComplex === this.enumLightEffectSingleOrComplex.Complex) {
+						this.simpleOrComplex = 3;
+					}
+					console.log(
+						'after drop options filter cahe--------------------------------------------------------------------' +
+						JSON.stringify(this.lightingEffectData.drop[0].dropOptions)
+					);
+				}
+				const ledRGB = this.lightingCapabilities.RGBfeature;
 				if (this.lightingCapabilities.LightPanelType.length > 0) {
-					this.lightingEffectData.drop[0].dropOptions = this.lightingEffectData.drop[0].dropOptions.filter(
-						(i) => this.dropOptions.includes(i.value)
-					);
-				}
-				if (this.lightingCapabilities.LightPanelType.length > 1) {
-					this.lightingEffectData.drop[1].dropOptions = this.lightingEffectData.drop[1].dropOptions.filter(
-						(i) => this.dropOptions.includes(i.value)
-					);
-				}
-				if (this.lightingCapabilities.LightPanelType.length === 1 && this.simpleOrComplex === 2) {
-					this.simpleOrComplex = 2;
-				} else if (this.lightingCapabilities.LightPanelType.length > 1 && this.simpleOrComplex === 2) {
-					this.simpleOrComplex = 3;
-				}
-				console.log(
-					'after drop options filter cahe--------------------------------------------------------------------' +
-					JSON.stringify(this.lightingEffectData.drop[0].dropOptions)
-				);
-			}
-			const ledRGB = this.lightingCapabilities.RGBfeature;
-			if (this.lightingCapabilities.LightPanelType.length > 0) {
-				const ledPanel = this.lightingCapabilities.LightPanelType[0];
-				const resultImg = this.panelImageData.filter(function (v, i) {
-					return v.PanelType === ledPanel && v.RGB === ledRGB;
-				});
-				if (resultImg.length > 0) {
-					this.panelImage1 = this.imagePath + '/' + resultImg[0].PanelImage;
-					console.log('image path 1 cache...............................................', this.panelImage1);
-				}
-
-				if (this.lightingCapabilities.LightPanelType.length > 1) {
-					const ledPanel2 = this.lightingCapabilities.LightPanelType[1];
-					const resultImg2 = this.panelImageData.filter(function (v, i) {
-						return v.PanelType === ledPanel2 && v.RGB === ledRGB;
+					const ledPanel = this.lightingCapabilities.LightPanelType[0];
+					const resultImg = this.panelImageData.filter(function (v, i) {
+						return v.PanelType === ledPanel && v.RGB === ledRGB;
 					});
-					if (resultImg2.length > 0) {
-						this.panelImage2 = this.imagePath + '/' + resultImg2[0].PanelImage;
+					if (resultImg.length > 0) {
+						this.panelImage1 = this.imagePath + '/' + resultImg[0].PanelImage;
+						console.log('image path 1 cache...............................................', this.panelImage1);
+					}
+
+					if (this.lightingCapabilities.LightPanelType.length > 1) {
+						const ledPanel2 = this.lightingCapabilities.LightPanelType[1];
+						const resultImg2 = this.panelImageData.filter(function (v, i) {
+							return v.PanelType === ledPanel2 && v.RGB === ledRGB;
+						});
+						if (resultImg2.length > 0) {
+							this.panelImage2 = this.imagePath + '/' + resultImg2[0].PanelImage;
+						}
 					}
 				}
+
+
 			}
-
-
+		} catch (error) {
+			console.error('Error in getCacheLightingCapabilities', error.message);
 		}
-
 	}
 	public getLightingProfileByIdFromcache(response: any) {
-		console.log("获取getlightprifilebyid-------------------", 2222222222222222, response)
-		if (response !== undefined) {
-			console.log("获取getlightprifilebyid-------------------", 3333333333333)
-			// this.currentProfileId = response.profileId;
-			this.currentProfile = this.currentProfileId;
-			this.profileBrightness = response.brightness;
-			if (response.lightInfo !== null && response.lightInfo.length > 0) {
-				if (this.lightingCapabilities.RGBfeature === 1) {
-					console.log(
-						'selectedSingleColorOptionId------------single color---------------->',
-						JSON.stringify(response.lightInfo[0].lightEffectType)
-					);
-
-					if (this.lightingCapabilities.LedType_Complex.length > 1) {
-
-						this.frontSelectedValue = response.lightInfo[0].lightEffectType;
-						this.sideSelectedValue = response.lightInfo[1].lightEffectType;
-					} else if (this.lightingCapabilities.LedType_simple.length > 1) {
-						this.selectedSingleColorOptionId = response.lightInfo[0].lightEffectType;
-					}
-
-				} else {
-					//  this.dropDataChanges.topdata = response.lightInfo[0].lightEffectType;
-					this.frontSelectedValue = response.lightInfo[0].lightEffectType;
-
-					if (this.frontSelectedValue === LightEffectComplexType.Wave || this.frontSelectedValue === LightEffectComplexType.Smooth || this.frontSelectedValue === LightEffectComplexType.CPU_thermal || this.frontSelectedValue === LightEffectComplexType.CPU_frequency) {
-						this.showHideOverlay = true;
-					} else {
-						this.showHideOverlay = false;
-					}
-					if (this.frontSelectedValue === LightEffectComplexType.Breath || this.frontSelectedValue === LightEffectComplexType.Wave) {
-						this.enableBrightCondition = true;
-					} else {
-						this.enableBrightCondition = false;
-					}
-
-					const lightEffectRGBOptionNameA = this.getLightEffectOptionName(
-						response.lightInfo[0].lightEffectType
-					);
-					this.lightEffectRGBOptionName = lightEffectRGBOptionNameA[0].name;
-
-					console.log(
-						'sateesh------------------------------------------- ---------------->',
-						JSON.stringify(lightEffectRGBOptionNameA)
-					);
-					this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
-					this.inHex1 = response.lightInfo[0].lightColor;
-
-					if (response.lightInfo.length > 1) {
-						this.sideSelectedValue = response.lightInfo[1].lightEffectType;
-						const lightEffectRGBOptionNameB = this.getLightEffectOptionName(
-							response.lightInfo[1].lightEffectType
+		try {
+			console.log("获取getlightprifilebyid-------------------", 2222222222222222, response)
+			if (response !== undefined) {
+				console.log("获取getlightprifilebyid-------------------", 3333333333333)
+				// this.currentProfileId = response.profileId;
+				this.currentProfile = this.currentProfileId;
+				this.profileBrightness = response.brightness;
+				if (response.lightInfo !== null && response.lightInfo.length > 0) {
+					if (this.lightingCapabilities.RGBfeature === this.enumLightingRGBFeature.Simple) {
+						console.log(
+							'selectedSingleColorOptionId------------single color---------------->',
+							JSON.stringify(response.lightInfo[0].lightEffectType)
 						);
-						this.lightEffectRGBOptionNameSide = lightEffectRGBOptionNameB[0].name;
-						if (this.sideSelectedValue === LightEffectComplexType.Wave || this.sideSelectedValue === LightEffectComplexType.Smooth || this.sideSelectedValue === LightEffectComplexType.CPU_thermal || this.sideSelectedValue === LightEffectComplexType.CPU_frequency) {
-							this.showHideOverlaySide = true;
-						} else {
-							this.showHideOverlaySide = false;
+
+						if (this.lightingCapabilities.LedType_Complex.length > 1) {
+
+							this.frontSelectedValue = response.lightInfo[0].lightEffectType;
+							this.sideSelectedValue = response.lightInfo[1].lightEffectType;
+						} else if (this.lightingCapabilities.LedType_simple.length > 1) {
+							this.selectedSingleColorOptionId = response.lightInfo[0].lightEffectType;
 						}
-						if (this.sideSelectedValue === LightEffectComplexType.Breath || this.sideSelectedValue === LightEffectComplexType.Wave) {
-							this.enableBrightConditionside = true;
+
+					} else {
+						//  this.dropDataChanges.topdata = response.lightInfo[0].lightEffectType;
+						this.frontSelectedValue = response.lightInfo[0].lightEffectType;
+
+						if (this.frontSelectedValue === LightEffectComplexType.Wave || this.frontSelectedValue === LightEffectComplexType.Smooth || this.frontSelectedValue === LightEffectComplexType.CPU_thermal || this.frontSelectedValue === LightEffectComplexType.CPU_frequency) {
+							this.showHideOverlay = true;
 						} else {
-							this.enableBrightConditionside = false;
+							this.showHideOverlay = false;
 						}
-						this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
-						this.inHex2 = response.lightInfo[1].lightColor;
-						console.log('in hex2-------------------------------------', this.inHex2);
+						if (this.frontSelectedValue === LightEffectComplexType.Breath || this.frontSelectedValue === LightEffectComplexType.Wave) {
+							this.enableBrightCondition = true;
+						} else {
+							this.enableBrightCondition = false;
+						}
+
+						const lightEffectRGBOptionNameA = this.getLightEffectOptionName(
+							response.lightInfo[0].lightEffectType
+						);
+						this.lightEffectRGBOptionName = lightEffectRGBOptionNameA[0].name;
+
+						console.log(
+							'sateesh------------------------------------------- ---------------->',
+							JSON.stringify(lightEffectRGBOptionNameA)
+						);
+						this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
+						this.inHex1 = response.lightInfo[0].lightColor;
+
+						if (response.lightInfo.length > 1) {
+							this.sideSelectedValue = response.lightInfo[1].lightEffectType;
+							const lightEffectRGBOptionNameB = this.getLightEffectOptionName(
+								response.lightInfo[1].lightEffectType
+							);
+							this.lightEffectRGBOptionNameSide = lightEffectRGBOptionNameB[0].name;
+							if (this.sideSelectedValue === LightEffectComplexType.Wave || this.sideSelectedValue === LightEffectComplexType.Smooth || this.sideSelectedValue === LightEffectComplexType.CPU_thermal || this.sideSelectedValue === LightEffectComplexType.CPU_frequency) {
+								this.showHideOverlaySide = true;
+							} else {
+								this.showHideOverlaySide = false;
+							}
+							if (this.sideSelectedValue === LightEffectComplexType.Breath || this.sideSelectedValue === LightEffectComplexType.Wave) {
+								this.enableBrightConditionside = true;
+							} else {
+								this.enableBrightConditionside = false;
+							}
+							this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
+							this.inHex2 = response.lightInfo[1].lightColor;
+							console.log('in hex2-------------------------------------', this.inHex2);
+						}
 					}
 				}
 			}
+		} catch (err) {
+			console.log(`ERROR in getLightingProfileByIdFromcache()`, err);
 		}
 	}
 	public updateGetGamingLightingCapabilities(response: any) {
@@ -464,8 +473,13 @@ export class UiLightingProfileComponent implements OnInit {
 
 				// }
 				// if (response.LightPanelType.length > 0) {
-				if (LocalStorageKey.LightingCapabilities !== undefined) {
-					this.commonService.setLocalStorageValue(LocalStorageKey.LightingCapabilities, response);
+
+				if (response.LightPanelType.length !== 0 || response.LedType_Complex.length !== 0 ||
+					response.LedType_simple.length !== 0 || response.BrightAdjustLevel !== undefined ||
+					response.RGBfeature !== null || response.RGBfeature !== undefined || response.BrightAdjustLevel !== null) {
+					if (LocalStorageKey.LightingCapabilities !== undefined) {
+						this.commonService.setLocalStorageValue(LocalStorageKey.LightingCapabilities, response);
+					}
 				}
 
 				console.log(
@@ -477,11 +491,11 @@ export class UiLightingProfileComponent implements OnInit {
 					this.lightingCapabilities.RGBfeature
 				);
 				if (response.LedType_Complex.length > 1) {
-					this.simpleOrComplex = 2;
+					this.simpleOrComplex = this.enumLightEffectSingleOrComplex.Complex;
 				} else if (response.LedType_simple.length > 1) {
-					this.simpleOrComplex = 1;
+					this.simpleOrComplex = this.enumLightEffectSingleOrComplex.Simple;
 				}
-				if (response.RGBfeature === 1 && this.simpleOrComplex === 1) {
+				if (response.RGBfeature === this.enumLightingRGBFeature.Simple && this.simpleOrComplex === this.enumLightEffectSingleOrComplex.Simple) {
 					this.dropOptions = response.LedType_simple;
 
 					this.optionsSingleColor = this.optionsSingleColor.filter((obj) =>
@@ -491,7 +505,7 @@ export class UiLightingProfileComponent implements OnInit {
 						'single color options filtered  ------------------------------------------',
 						JSON.stringify(this.optionsSingleColor)
 					);
-				} else if (response.RGBfeature === 255 || this.simpleOrComplex === 2) {
+				} else if (response.RGBfeature === this.enumLightingRGBFeature.Complex || this.simpleOrComplex === this.enumLightEffectSingleOrComplex.Complex) {
 					this.dropOptions = response.LedType_Complex;
 					if (this.lightingCapabilities.LightPanelType.length > 0) {
 						this.lightingEffectData.drop[0].dropOptions = this.lightingEffectData.drop[0].dropOptions.filter(
@@ -503,9 +517,9 @@ export class UiLightingProfileComponent implements OnInit {
 							(i) => this.dropOptions.includes(i.value)
 						);
 					}
-					if (this.lightingCapabilities.LightPanelType.length === 1 && this.simpleOrComplex === 2) {
-						this.simpleOrComplex = 2;
-					} else if (this.lightingCapabilities.LightPanelType.length > 1 && this.simpleOrComplex === 2) {
+					if (this.lightingCapabilities.LightPanelType.length === 1 && this.simpleOrComplex === this.enumLightEffectSingleOrComplex.Complex) {
+						this.simpleOrComplex = this.enumLightEffectSingleOrComplex.Complex;
+					} else if (this.lightingCapabilities.LightPanelType.length > 1 && this.simpleOrComplex === this.enumLightEffectSingleOrComplex.Complex) {
 						this.simpleOrComplex = 3;
 					}
 					console.log(
@@ -554,11 +568,11 @@ export class UiLightingProfileComponent implements OnInit {
 						this.lightingCapabilities.RGBfeature
 					);
 					if (response.LedType_Complex.length > 1) {
-						this.simpleOrComplex = 2;
+						this.simpleOrComplex = this.enumLightEffectSingleOrComplex.Complex;
 					} else if (response.LedType_simple.length > 1) {
 						this.simpleOrComplex = 1;
 					}
-					if (response.RGBfeature === 1 && this.simpleOrComplex === 1) {
+					if (response.RGBfeature === this.enumLightingRGBFeature.Simple && this.simpleOrComplex === this.enumLightEffectSingleOrComplex.Simple) {
 						this.dropOptions = response.LedType_simple;
 
 						this.optionsSingleColor = this.optionsSingleColor.filter((obj) =>
@@ -568,7 +582,7 @@ export class UiLightingProfileComponent implements OnInit {
 							'single color options filtered  cache------------------------------------------',
 							JSON.stringify(this.optionsSingleColor)
 						);
-					} else if (response.RGBfeature === 255 || this.simpleOrComplex === 2) {
+					} else if (response.RGBfeature === this.enumLightingRGBFeature.Complex || this.simpleOrComplex === this.enumLightEffectSingleOrComplex.Complex) {
 						this.dropOptions = response.LedType_Complex;
 						if (this.lightingCapabilities.LightPanelType.length > 0) {
 							this.lightingEffectData.drop[0].dropOptions = this.lightingEffectData.drop[0].dropOptions.filter(
@@ -580,9 +594,9 @@ export class UiLightingProfileComponent implements OnInit {
 								(i) => this.dropOptions.includes(i.value)
 							);
 						}
-						if (this.lightingCapabilities.LightPanelType.length === 1 && this.simpleOrComplex === 2) {
-							this.simpleOrComplex = 2;
-						} else if (this.lightingCapabilities.LightPanelType.length > 1 && this.simpleOrComplex === 2) {
+						if (this.lightingCapabilities.LightPanelType.length === 1 && this.simpleOrComplex === this.enumLightEffectSingleOrComplex.Complex) {
+							this.simpleOrComplex = this.enumLightEffectSingleOrComplex.Complex;
+						} else if (this.lightingCapabilities.LightPanelType.length > 1 && this.simpleOrComplex === this.enumLightEffectSingleOrComplex.Complex) {
 							this.simpleOrComplex = 3;
 						}
 						console.log(
@@ -624,7 +638,7 @@ export class UiLightingProfileComponent implements OnInit {
 		if (this.lightingProfileEffectColorNUmber === undefined) {
 			this.lightingProfileEffectColorNUmber = new LightingProfileEffectColorNUmber();
 		}
-		if (this.lightingCapabilities.RGBfeature === 255) {
+		if (this.lightingCapabilities.RGBfeature === this.enumLightingRGBFeature.Complex) {
 			if (
 				$event.value === LightEffectComplexType.Wave ||
 				$event.value === LightEffectComplexType.Smooth ||
@@ -670,7 +684,7 @@ export class UiLightingProfileComponent implements OnInit {
 								this.sideSelectedValue = response.lightInfo[1].lightEffectType;
 								this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
 								this.inHex2 = response.lightInfo[1].lightColor;
-								if (this.lightingCapabilities.RGBfeature === 255) {
+								if (this.lightingCapabilities.RGBfeature === this.enumLightingRGBFeature.Complex) {
 									if ($event.value === LightEffectComplexType.Wave || $event.value === LightEffectComplexType.Smooth || $event.value === LightEffectComplexType.CPU_thermal || $event.value === LightEffectComplexType.CPU_frequency) {
 										this.showHideOverlaySide = true;
 									} else {
@@ -705,7 +719,7 @@ export class UiLightingProfileComponent implements OnInit {
 							response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById);
 						}
 						if (response.lightInfo.length > 0) {
-							if (this.lightingCapabilities.LedType_Complex.length > 0 && this.simpleOrComplex == 2) {
+							if (this.lightingCapabilities.LedType_Complex.length > 0 && this.simpleOrComplex == this.enumLightEffectSingleOrComplex.Complex) {
 								this.frontSelectedValue = response.lightInfo[0].lightEffectType;
 								this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
 								// this.inHex1 = response.lightInfo[0].lightColor;
@@ -713,7 +727,7 @@ export class UiLightingProfileComponent implements OnInit {
 									this.sideSelectedValue = response.lightInfo[1].lightEffectType;
 									this.lightingEffectData.drop[1].curSelected = response.lightInfo[1].lightEffectType;
 									this.inHex2 = response.lightInfo[1].lightColor;
-									if (this.lightingCapabilities.RGBfeature === 255) {
+									if (this.lightingCapabilities.RGBfeature ===this.enumLightingRGBFeature.Complex) {
 										if (
 											$event.value === LightEffectComplexType.Wave ||
 											$event.value === LightEffectComplexType.Smooth ||
@@ -754,7 +768,7 @@ export class UiLightingProfileComponent implements OnInit {
 		if (this.lightingProfileEffectColorNUmber === undefined) {
 			this.lightingProfileEffectColorNUmber = new LightingProfileEffectColorNUmber();
 		}
-		if (this.lightingCapabilities.RGBfeature === 255) {
+		if (this.lightingCapabilities.RGBfeature === this.enumLightingRGBFeature.Complex) {
 			if (
 				$event.value === LightEffectComplexType.Wave ||
 				$event.value === LightEffectComplexType.Smooth ||
@@ -793,7 +807,7 @@ export class UiLightingProfileComponent implements OnInit {
 						if (response.lightInfo.length > 0) {
 							this.frontSelectedValue = response.lightInfo[0].lightEffectType;
 							this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
-							if (this.lightingCapabilities.RGBfeature === 255) {
+							if (this.lightingCapabilities.RGBfeature === this.enumLightingRGBFeature.Complex) {
 								if (
 									$event.value === LightEffectComplexType.Wave ||
 									$event.value === LightEffectComplexType.Smooth ||
@@ -843,7 +857,7 @@ export class UiLightingProfileComponent implements OnInit {
 						if (response.lightInfo.length > 0) {
 							this.frontSelectedValue = response.lightInfo[0].lightEffectType;
 							this.lightingEffectData.drop[0].curSelected = response.lightInfo[0].lightEffectType;
-							if (this.lightingCapabilities.RGBfeature === 255) {
+							if (this.lightingCapabilities.RGBfeature === this.enumLightingRGBFeature.Complex) {
 								if (
 									$event.value === LightEffectComplexType.Wave ||
 									$event.value === LightEffectComplexType.Smooth ||
@@ -962,16 +976,16 @@ export class UiLightingProfileComponent implements OnInit {
 											);
 											this.frontSelectedValue = response.lightInfo[0].lightEffectType;
 											if (
-												this.frontSelectedValue === 8 ||
-												this.frontSelectedValue === 32 ||
-												this.frontSelectedValue === 64 ||
-												this.frontSelectedValue === 128
+												this.frontSelectedValue === LightEffectComplexType.Wave ||
+												this.frontSelectedValue === LightEffectComplexType.Smooth ||
+												this.frontSelectedValue === LightEffectComplexType.CPU_thermal ||
+												this.frontSelectedValue === LightEffectComplexType.CPU_frequency
 											) {
 												this.showHideOverlay = true;
 											} else {
 												this.showHideOverlay = false;
 											}
-											if (this.frontSelectedValue === 4 || this.frontSelectedValue === 8) {
+											if (this.frontSelectedValue === LightEffectComplexType.Breath || this.frontSelectedValue === LightEffectComplexType.Wave) {
 												this.enableBrightCondition = true;
 											} else {
 												this.enableBrightCondition = false;
@@ -986,16 +1000,16 @@ export class UiLightingProfileComponent implements OnInit {
 											if (response.lightInfo.length > 1) {
 												this.sideSelectedValue = response.lightInfo[1].lightEffectType;
 												if (
-													this.sideSelectedValue === 8 ||
-													this.sideSelectedValue === 32 ||
-													this.sideSelectedValue === 64 ||
-													this.sideSelectedValue === 128
+													this.sideSelectedValue === LightEffectComplexType.Wave ||
+													this.sideSelectedValue === LightEffectComplexType.Smooth ||
+													this.sideSelectedValue === LightEffectComplexType.CPU_thermal ||
+													this.sideSelectedValue === LightEffectComplexType.CPU_frequency
 												) {
 													this.showHideOverlaySide = true;
 												} else {
 													this.showHideOverlaySide = false;
 												}
-												if (this.sideSelectedValue === 4 || this.sideSelectedValue === 8) {
+												if (this.sideSelectedValue === LightEffectComplexType.Breath || this.sideSelectedValue === LightEffectComplexType.Wave) {
 													this.enableBrightConditionside = true;
 												} else {
 													this.enableBrightConditionside = false;
@@ -1043,16 +1057,16 @@ export class UiLightingProfileComponent implements OnInit {
 											);
 											this.frontSelectedValue = response.lightInfo[0].lightEffectType;
 											if (
-												this.frontSelectedValue === 8 ||
-												this.frontSelectedValue === 32 ||
-												this.frontSelectedValue === 64 ||
-												this.frontSelectedValue === 128
+												this.frontSelectedValue === LightEffectComplexType.Wave ||
+												this.frontSelectedValue === LightEffectComplexType.Smooth ||
+												this.frontSelectedValue === LightEffectComplexType.CPU_thermal ||
+												this.frontSelectedValue === LightEffectComplexType.CPU_frequency
 											) {
 												this.showHideOverlay = true;
 											} else {
 												this.showHideOverlay = false;
 											}
-											if (this.frontSelectedValue === 4 || this.frontSelectedValue === 8) {
+											if (this.frontSelectedValue === LightEffectComplexType.Breath || this.frontSelectedValue === LightEffectComplexType.Wave) {
 												this.enableBrightCondition = true;
 											} else {
 												this.enableBrightCondition = false;
@@ -1067,16 +1081,16 @@ export class UiLightingProfileComponent implements OnInit {
 											if (response.lightInfo.length > 1) {
 												this.sideSelectedValue = response.lightInfo[1].lightEffectType;
 												if (
-													this.sideSelectedValue === 8 ||
-													this.sideSelectedValue === 32 ||
-													this.sideSelectedValue === 64 ||
-													this.sideSelectedValue === 128
+													this.sideSelectedValue === LightEffectComplexType.Wave ||
+													this.sideSelectedValue === LightEffectComplexType.Smooth ||
+													this.sideSelectedValue === LightEffectComplexType.CPU_thermal ||
+													this.sideSelectedValue === LightEffectComplexType.CPU_frequency
 												) {
 													this.showHideOverlaySide = true;
 												} else {
 													this.showHideOverlaySide = false;
 												}
-												if (this.sideSelectedValue === 4 || this.sideSelectedValue === 8) {
+												if (this.sideSelectedValue === LightEffectComplexType.Breath || this.sideSelectedValue === LightEffectComplexType.Wave) {
 													this.enableBrightConditionside = true;
 												} else {
 													this.enableBrightConditionside = false;
@@ -1107,35 +1121,36 @@ export class UiLightingProfileComponent implements OnInit {
 		try {
 			// event = event + 1;
 			console.log('in eventval--------------------------------' + event);
-			if (
-				this.frontSelectedValue !== 8 ||
-				this.frontSelectedValue !== 4 ||
-				this.sideSelectedValue !== null ||
-				this.sideSelectedValue !== 8 ||
-				this.sideSelectedValue !== 4
-			) {
-				if (this.gamingLightingService.isShellAvailable) {
-					this.gamingLightingService.setLightingProfileBrightness(event).then((response: any) => {
-						this.didSuccess = response.didSuccess;
-						this.brightness = response.brightness;
-						// this.didSuccess = false;
-						console.log(
-							'setLightingProfileBrightness---------------------------->',
-							JSON.stringify(response)
-						);
+			if (this.sideSelectedValue !== null) {
+				if (
+					this.frontSelectedValue !== LightEffectComplexType.Wave ||
+					this.frontSelectedValue !== LightEffectComplexType.Breath ||
+					this.sideSelectedValue !== LightEffectComplexType.Wave ||
+					this.sideSelectedValue !== LightEffectComplexType.Breath
+				) {
+					if (this.gamingLightingService.isShellAvailable) {
+						this.gamingLightingService.setLightingProfileBrightness(event).then((response: any) => {
+							this.didSuccess = response.didSuccess;
+							this.brightness = response.brightness;
+							// this.didSuccess = false;
+							console.log(
+								'setLightingProfileBrightness---------------------------->',
+								JSON.stringify(response)
+							);
 
-						if (!this.didSuccess) {
-							this.getLightingBrightness();
-						} else {
-							if (LocalStorageKey.ProfileBrightness !== undefined) {
-								this.commonService.setLocalStorageValue(
-									LocalStorageKey.ProfileBrightness,
-									this.brightness
-								);
+							if (!this.didSuccess) {
+								this.getLightingBrightness();
+							} else {
+								if (LocalStorageKey.ProfileBrightness !== undefined) {
+									this.commonService.setLocalStorageValue(
+										LocalStorageKey.ProfileBrightness,
+										this.brightness
+									);
+								}
+								this.getLightingBrightness();
 							}
-							this.getLightingBrightness();
-						}
-					});
+						});
+					}
 				}
 			}
 		} catch (error) {
@@ -1174,7 +1189,7 @@ export class UiLightingProfileComponent implements OnInit {
 						this.currentProfile = response.profileId;
 						this.profileBrightness = response.brightness;
 						if (response.lightInfo.length > 0) {
-							if (this.lightingCapabilities.RGBfeature === 1) {
+							if (this.lightingCapabilities.RGBfeature === this.enumLightingRGBFeature.Simple) {
 								console.log(
 									'selectedSingleColorOptionId------------single color---------------->',
 									JSON.stringify(response.lightInfo[0].lightEffectType)
@@ -1263,7 +1278,7 @@ export class UiLightingProfileComponent implements OnInit {
 							this.currentProfile = response.profileId;
 							this.profileBrightness = response.brightness;
 							if (response.lightInfo.length > 0) {
-								if (this.lightingCapabilities.RGBfeature === 1) {
+								if (this.lightingCapabilities.RGBfeature === this.enumLightingRGBFeature.Simple) {
 									console.log(
 										'selectedSingleColorOptionId------------single color---------------->',
 										JSON.stringify(response.lightInfo[0].lightEffectType)
@@ -1276,7 +1291,7 @@ export class UiLightingProfileComponent implements OnInit {
 										this.sideSelectedValue = response.lightInfo[1].lightEffectType;
 									} else if (this.lightingCapabilities.LightPanelType.length === 1) {
 
-										this.simpleOrComplex = 2;
+										this.simpleOrComplex = this.enumLightEffectSingleOrComplex.Complex;
 										this.frontSelectedValue = response.lightInfo[0].lightEffectType;
 										// this.sideSelectedValue = response.lightInfo[1].lightEffectType;
 									} else if (this.lightingCapabilities.LedType_simple.length > 1) {
@@ -1348,8 +1363,6 @@ export class UiLightingProfileComponent implements OnInit {
 									}
 								}
 							}
-						} else {
-							this.isProfileOff = false;
 						}
 					}
 				});
@@ -1387,14 +1400,14 @@ export class UiLightingProfileComponent implements OnInit {
 						}
 
 						if (response.profileId > 0) {
-							if (this.lightingCapabilities.RGBfeature === 1) {
+							if (this.lightingCapabilities.RGBfeature === this.enumLightingRGBFeature.Simple) {
 								console.log(
 									'selectedSingleColorOptionId------------single color---------------->',
 									JSON.stringify(response.lightInfo[0].lightEffectType)
 								);
 								// 	this.selectedSingleColorOptionId = response.lightInfo[0].lightEffectType;
 								if (this.lightingCapabilities.LedType_Complex.length > 1) {
-									this.simpleOrComplex = 2;
+									this.simpleOrComplex = this.enumLightEffectSingleOrComplex.Complex;
 									this.frontSelectedValue = response.lightInfo[0].lightEffectType;
 									if (this.lightingCapabilities.LightPanelType.length > 1) {
 										this.simpleOrComplex = 3;
@@ -1417,7 +1430,7 @@ export class UiLightingProfileComponent implements OnInit {
 									} else {
 										this.showHideOverlay = false;
 									}
-									if (this.frontSelectedValue === 4 || this.frontSelectedValue === 8) {
+									if (this.frontSelectedValue === LightEffectComplexType.Breath || this.frontSelectedValue === LightEffectComplexType.Wave) {
 										this.enableBrightCondition = true;
 									} else {
 										this.enableBrightCondition = false;
@@ -1443,7 +1456,7 @@ export class UiLightingProfileComponent implements OnInit {
 										} else {
 											this.showHideOverlaySide = false;
 										}
-										if (this.sideSelectedValue === 4 || this.sideSelectedValue === 8) {
+										if (this.sideSelectedValue === LightEffectComplexType.Breath || this.sideSelectedValue === LightEffectComplexType.Wave) {
 											this.enableBrightConditionside = true;
 										} else {
 											this.enableBrightConditionside = false;
@@ -1467,14 +1480,14 @@ export class UiLightingProfileComponent implements OnInit {
 						}
 						if (response !== undefined) {
 							if (response.profileId > 0) {
-								if (this.lightingCapabilities.RGBfeature === 1) {
+								if (this.lightingCapabilities.RGBfeature === this.enumLightingRGBFeature.Simple) {
 									console.log(
 										'selectedSingleColorOptionId------------single color---------------->',
 										JSON.stringify(response.lightInfo[0].lightEffectType)
 									);
 									// 	this.selectedSingleColorOptionId = response.lightInfo[0].lightEffectType;
 									if (this.lightingCapabilities.LedType_Complex.length > 1) {
-										this.simpleOrComplex = 2;
+										this.simpleOrComplex = this.enumLightEffectSingleOrComplex.Complex;
 										this.frontSelectedValue = response.lightInfo[0].lightEffectType;
 										this.sideSelectedValue = response.lightInfo[1].lightEffectType;
 									} else if (this.lightingCapabilities.LedType_simple.length > 1) {
@@ -1495,7 +1508,7 @@ export class UiLightingProfileComponent implements OnInit {
 										} else {
 											this.showHideOverlay = false;
 										}
-										if (this.frontSelectedValue === 4 || this.frontSelectedValue === 8) {
+										if (this.frontSelectedValue === LightEffectComplexType.Breath || this.frontSelectedValue === LightEffectComplexType.Wave) {
 											this.enableBrightCondition = true;
 										} else {
 											this.enableBrightCondition = false;
@@ -1521,7 +1534,7 @@ export class UiLightingProfileComponent implements OnInit {
 											} else {
 												this.showHideOverlaySide = false;
 											}
-											if (this.sideSelectedValue === 4 || this.sideSelectedValue === 8) {
+											if (this.sideSelectedValue === LightEffectComplexType.Breath || this.sideSelectedValue === LightEffectComplexType.Wave) {
 												this.enableBrightConditionside = true;
 											} else {
 												this.enableBrightConditionside = false;

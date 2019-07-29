@@ -23,6 +23,30 @@ import { WidgetSystemToolsComponent } from '../components/widgets/widget-system-
 import { WidgetSystemMonitorComponent } from '../components/widgets/widget-system-monitor/widget-system-monitor.component';
 import { WidgetQuicksettingsListComponent } from '../components/widgets/widget-quicksettings-list/widget-quicksettings-list.component';
 import { WidgetLightingComponent } from '../components/widgets/widget-lighting/widget-lighting.component';
+import { ContainerCardModule } from '../components/container-card/container-card.module';
+import { MetricsModule } from '../directives/metrics.module';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faQuestionCircle } from '@fortawesome/pro-light-svg-icons/faQuestionCircle';
+import { faKeyboard } from '@fortawesome/pro-light-svg-icons/faKeyboard';
+import { faWindows } from '@fortawesome/free-brands-svg-icons';
+import { faCheck } from '@fortawesome/pro-light-svg-icons/faCheck';
+import { faDesktopAlt } from '@fortawesome/pro-light-svg-icons/faDesktopAlt';
+import { faBatteryBolt } from '@fortawesome/pro-light-svg-icons/faBatteryBolt';
+import { faArrowAltToTop } from '@fortawesome/pro-light-svg-icons/faArrowAltToTop';
+import { faCog } from '@fortawesome/pro-light-svg-icons/faCog';
+import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
+import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
+
+library.add(faKeyboard);
+library.add(faQuestionCircle);
+library.add(faWindows);
+library.add(faChevronDown);
+library.add(faDesktopAlt);
+library.add(faBatteryBolt);
+library.add(faArrowAltToTop);
+library.add(faCog);
+library.add(faCheck);
+
 @NgModule({
 	declarations: [
 		PageDeviceGamingComponent,
@@ -31,8 +55,7 @@ import { WidgetLightingComponent } from '../components/widgets/widget-lighting/w
 		WidgetSystemToolsComponent,
 		WidgetSystemMonitorComponent,
 		WidgetQuicksettingsListComponent,
-		WidgetLightingComponent,
-
+		WidgetLightingComponent
 	],
 	imports: [
 		CommonModule,
@@ -48,9 +71,12 @@ import { WidgetLightingComponent } from '../components/widgets/widget-lighting/w
 				deps: [ HttpClient ]
 			}
 		}),
-		FontAwesomeModule
+		FontAwesomeModule,
+		ContainerCardModule,
+		MetricsModule,
+		WidgetOfflineModule
 	],
-	exports: [TranslateModule],
+	exports: [ TranslateModule, ContainerCardModule, MetricsModule, WidgetOfflineModule ],
 	providers: [ MockService ],
 	entryComponents: [
 		WidgetLegionEdgeComponent,

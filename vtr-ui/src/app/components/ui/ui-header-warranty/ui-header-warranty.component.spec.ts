@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UiHeaderWarrantyComponent } from './ui-header-warranty.component';
 
-describe('UiHeaderWarrantyComponent', () => {
+xdescribe('UiHeaderWarrantyComponent', () => {
 	let component: UiHeaderWarrantyComponent;
 	let fixture: ComponentFixture<UiHeaderWarrantyComponent>;
 

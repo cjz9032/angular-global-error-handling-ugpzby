@@ -21,7 +21,7 @@ export class MenuHeaderComponent implements OnInit {
 
 	getActiveTab() {
 		let activeTab = {};
-		this.menuItems.forEach(function (d, i) {
+		this.menuItems.forEach((d, i) => {
 			if (d.active) {
 				activeTab = d;
 			}

@@ -11,6 +11,7 @@ import {
 import {
 	SmartAssistService
 } from 'src/app/services/smart-assist/smart-assist.service';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -34,41 +35,41 @@ export class ActiveProtectionSystemComponent implements OnInit {
 	// public taskBarDimmerValue: number;
 
 	private populateIntervals() {
-		const seconds = 'seconds';
-		const minute = 'minute';
-		const minutes = 'minutes';
+		const seconds = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.seconds'); //'seconds';
+		const minute = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.minute'); //'minute';
+		const minutes = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.minutes');  //'minutes';
 
 		this.intervals = [{
-				name: '30',
-				value: 0.5,
-				placeholder: seconds,
-				text: `30 ${seconds}`
-			},
-			{
-				name: '1',
-				value: 1,
-				placeholder: minute,
-				text: `1 ${minute}`
-			},
-			{
-				name: '2',
-				value: 2,
-				placeholder: minutes,
-				text: `2 ${minutes}`
-			},
-			{
-				name: '3',
-				value: 3,
-				placeholder: minutes,
-				text: `3 ${minutes}`
-			}
+			name: '30',
+			value: 0.5,
+			placeholder: seconds,
+			text: `30 ${seconds}`
+		},
+		{
+			name: '1',
+			value: 1,
+			placeholder: minute,
+			text: `1 ${minute}`
+		},
+		{
+			name: '2',
+			value: 2,
+			placeholder: minutes,
+			text: `2 ${minutes}`
+		},
+		{
+			name: '3',
+			value: 3,
+			placeholder: minutes,
+			text: `3 ${minutes}`
+		}
 		];
 	}
 
 	toggleAdvanced() {
 		this.advancedToggle = !this.advancedToggle;
 	}
-	constructor(private smartAssist: SmartAssistService) {}
+	constructor(private smartAssist: SmartAssistService, private translate: TranslateService) { }
 
 	ngOnInit() {
 		this.advancedToggle = false;
@@ -81,7 +82,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 		this.smartAssist
 			.getAPSMode()
 			.then(res => {
-				res ? this.apsStatus = true : this.apsStatus = false; 
+				res ? this.apsStatus = true : this.apsStatus = false;
 				console.log('APS IS SET---------------------------------', res);
 				this.smartAssist
 					.getAPSSensitivityLevel()
@@ -104,11 +105,11 @@ export class ActiveProtectionSystemComponent implements OnInit {
 					});
 				this.smartAssist
 					.getAutoDisableSetting()
-					.then(res => {this.repeatShock = res; console.log('APS Auto Disable Checkbox---------------------------------', res); });
+					.then(res => { this.repeatShock = res; console.log('APS Auto Disable Checkbox---------------------------------', res); });
 				this.smartAssist
 					.getSnoozeSetting()
 					.then(res => {
-						this.manualSnooze = res; 
+						this.manualSnooze = res;
 						console.log('Manual Sooze Status---------------------------------', res);
 						this.smartAssist
 							.getSnoozeTime()
@@ -164,10 +165,11 @@ export class ActiveProtectionSystemComponent implements OnInit {
 	}
 
 	setAutoDisableSetting(event) {
-		const value = !this.repeatShock;
+		console.log('Event value from checkbox', event);
+		const value = event;
 		this.smartAssist
 			.setAutoDisableSetting(value)
-			.then(res => console.log('AUTO DISABLE CHECKBOX SET ---------------------------------', res));
+			.then(res => console.log('AUTO DISABLE CHECKBOX SET ---------------------------------', value, res));
 	}
 
 	setSnoozeSetting(event) {

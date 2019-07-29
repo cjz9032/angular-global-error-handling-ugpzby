@@ -387,7 +387,7 @@
                 "title": "Пристрій",
                 "sub1": "Мій пристрій",
                 "sub2": "Настройки мого пристрою",
-                "sub3": "System Updates",
+                "sub3": "Оновлення системи",
                 "sub4": "Розумний помічник"
             },
             "security": {
@@ -444,31 +444,31 @@
     },
     "privacy": {
         "headerMain": {
-            "title": "Privacy"
+            "title": "Конфіденційність"
         }
     },
     "tutorial": {
-        "almostThere": "Almost there!",
-        "para1": "Just a few more buttons to press before we can have liftoff.",
-        "para2": "Before we can give you the most optimal experience there are still a few things to setup.",
-        "personalise": "START PERSONALIZING",
-        "howIsitUsed": "How will you use it?",
-        "howMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "business": "BUSINESS",
-        "personal": "PERSONAL",
-        "custom": "CUSTOM",
-        "skip": "SKIP",
+        "almostThere": "Майже готово!",
+        "para1": "Залишилося натиснути всього кілька кнопок.",
+        "para2": "Перш ніж ми запропонуємо вам першокласний сервіс, залишилося всього кілька налаштувань.",
+        "personalise": "РОЗПОЧАТИ ПЕРСОНАЛІЗАЦІЮ",
+        "howIsitUsed": "Як ви будете його використовувати?",
+        "howMachinUsed": "Виберіть, для чого ви будете використовувати цей комп’ютер?",
+        "business": "РОБОЧИЙ",
+        "personal": "ОСОБИСТИЙ",
+        "custom": "ІНШЕ",
+        "skip": "ПРОПУСТИТИ",
         "next": "ДАЛІ",
-        "interests": "What are your interests?",
-        "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "games": "GAMES",
-        "news": "NEWS",
-        "entertainment": "ENTERTAINMENT",
-        "arts": "ARTS",
-        "politics": "POLITICS",
-        "sports": "SPORTS",
-        "regionalNews": "REGIONAL NEWS",
-        "technology": "TECHNOLOGY"
+        "interests": "Чим ви цікавитеся?",
+        "howOnesMachinUsed": "Виберіть, для чого ви будете використовувати цей комп’ютер?",
+        "games": "ІГРИ",
+        "news": "НОВИНИ",
+        "entertainment": "РОЗВАГИ",
+        "arts": "МИСТЕЦТВО",
+        "politics": "ПОЛІТИКА",
+        "sports": "СПОРТ",
+        "regionalNews": "РЕГІОНАЛЬНІ НОВИНИ",
+        "technology": "ТЕХНОЛОГІЇ"
     },
     "dashboard": {
         "headerMain": {
@@ -534,7 +534,7 @@
                 }
             },
             "systemUpdate": {
-                "title": "System Update",
+                "title": "Оновлення системи",
                 "detail": {
                     "update": "Оновлення"
                 }
@@ -636,15 +636,15 @@
                         "acdischarging": "Розряджання (підключено до джерела живлення)"
                     },
                     "deviceChemistry": {
-                        "li-polymer": "Li-Polymer",
-                        "li-ion": "Li-Ion",
-                        "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion",
-                        "silver-zinc": "Silver-Zinc",
-                        "silver_zinc": "Silver-Zinc",
-                        "nicd": "NiCd",
-                        "nimh": "NiMH",
-                        "unknown": "Unknown"
+                        "li-polymer": "Літій-полімерна",
+                        "li-ion": "Літій-іонна",
+                        "li_polymer": "Літій-полімерна",
+                        "li_ion": "Літій-іонна",
+                        "silver-zinc": "Срібно-цинкова",
+                        "silver_zinc": "Срібно-цинкова",
+                        "nicd": "Нікель-кадмієва",
+                        "nimh": "Нікель-марганцева",
+                        "unknown": "Невідома"
                     },
                     "manufacturer": {
                         "title": "Виробник",
@@ -662,7 +662,7 @@
                     "NotSupportACAdapter": "<b>Адаптер змінного струму не підтримується.</b> Ваш комп’ютер Lenovo не підтримує цей адаптер змінного струму. Він може викликати раптове вимикання. Підключіть правильний адаптер змінного струму.",
                     "LimitedACAdapterSupport": "<b>Адаптер змінного струму недостатньо потужний</b> для вашого комп’ютера Lenovo. Це вплине на продуктивність системи та швидкість заряджання. Підключіть придатний адаптер змінного струму.",
                     "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не інстальовано, або він працює неправильно. Запустіть Windows Update, щоб інсталювати останній драйвер.",
-                    "StoreLimitation": "<b>Акумулятор може заряджатися лише на {{percentageLimitation}}%</b> від своєї початкової повної ємності.",
+                    "StoreLimitation": "<b>Акумулятор може заряджатися лише на {{value}}%</b> від своєї початкової повної ємності.",
                     "HighTemperature": "<b>Розряджання</b> зупинено <b>через зависоку температуру акумулятора.</b>",
                     "TrickleCharge": "Акумулятор <b>повністю розряджено</b>, його потрібно зарядити. Це може зайняти десять або більше годин.",
                     "OverheatedBattery": "Акумулятор <b>сильно нагрівся</b>. Вийміть його з комп’ютера та охолодіть до кімнатної температури.",
@@ -671,7 +671,7 @@
                 "updating": "Оновлення",
                 "voltageError": "Неправильна напруга акумулятора",
                 "batteryNotDetected": "Акумулятор не знайдено",
-                "thresholdNote": "<b>Примітка.</b> Щоб подовжити строк служби акумулятора, налаштуйте його так, щоб він припиняв заряджатися на рівні {{chargeThresholdInfo.stopValue}}%."
+                "thresholdNote": "<b>Примітка.</b> Щоб подовжити строк служби акумулятора, налаштуйте його так, щоб він припиняв заряджатися на рівні {{value}}%."
             },
             "power": {
                 "title": "Живлення",
@@ -681,19 +681,18 @@
                     "title": "ПЕРЕЙТИ ДО НАСТРОЙОК",
                     "battery": "Акумулятор",
                     "power": "Живлення",
-                    "cooling": "Інтелектуальне охолодження",
                     "other": "Інші",
-                    "smartStandby": "Smart Standby"
+                    "smartStandby": "Розумне очікування"
                 },
                 "powerSmartSettings": {
                     "title": "Настройки інтелектуального живлення",
                     "subtitle": "ІНТЕЛЕКТУАЛЬНЕ ОХОЛОДЖЕННЯ",
                     "subtitle1": "Акумулятор і тиша",
-                    "description1": "Ця функція динамічно регулює настройки тепловиділення відповідно до ваших потреб.Якщо ввімкнути цю функцію, вона відрегулює настройки, щоб посилити охолодження пристрою або перевести його до тихого режиму під час автономної роботи чи бездіяльності. В іншому випадку вона оптимізує швидкодію, коли пристрій перебуває на стійкій поверхні. Якщо цю функцію вимкнуто, пріоритет охолодження можна задати вручну.",
+                    "description1": "Якщо ввімкнена, ця функція динамічно регулює настройки тепловиділення відповідно до ваших потреб. Вона відрегулює настройки, щоб посилити охолодження пристрою або перевести його до тихого режиму під час автономної роботи чи бездіяльності. Коли пристрій перебуває на стійкій поверхні, вона оптимізує швидкодію. Якщо цю функцію вимкнуто, пріоритет охолодження можна задати вручну.",
                     "description2": "Функція інтелектуального охолодження регулює швидкість вентилятора, максимальну температуру поверхні комп'ютера та швидкодію.Ця функція має наведені нижче режими, тепер доступні за допомогою повзунка швидкодії Windows.",
                     "description3": "Функція інтелектуального охолодження автоматично оптимізує теплові характеристики з урахуванням потреб користувача.Функція інтелектуального охолодження коригує настройки швидкодії, щоб забезпечити охолодження поверхні ноутбука для зручної роботи з ним у руках. Якщо пристрій розташований на поверхні стола, ця функція оптимізує його характеристики.",
-                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "description13": "Якщо ввімкнена, ця функція динамічно регулює настройки тепловиділення відповідно до ваших потреб. Вона відрегулює настройки, щоб посилити охолодження пристрою або перевести його до тихого режиму під час автономної роботи чи бездіяльності. Коли пристрій перебуває на стійкій поверхні, вона оптимізує швидкодію. Якщо цю функцію вимкнуто, пріоритет охолодження можна задати вручну.",
+                    "description14": "Ця функція дає змогу за потреби регулювати швидкість вентилятора, збільшувати продуктивність системи або час роботи від акумулятора. Доступні три наведених нижче режими. Ви також можете переключати режими за допомогою гарячих клавіш (Fn+Q) або з панелі інструментів Lenovo Vantage.",
                     "readMore": "Розгорніть.",
                     "gotoWindows": {
                         "title": "Перейти до настройок Windows",
@@ -706,17 +705,17 @@
                         "optimize": "оптимізація системи для",
                         "apsHint": "Щоб увімкнути інтелектуальне охолодження, потрібно інсталювати та ввімкнути програму Lenovo Active Protection System.",
                         "options": {
-                            "quiteCool3": "Режим охолодження",
-                            "performance3": "Висока продуктивність",
+                            "quiteCool3": "Холод і тиша",
+                            "performance3": "Потужність",
                             "quiteCool4": "Холод і тиша",
                             "performance4": "Потужність",
                             "quiteCool5": "Холод і тиша",
                             "performance5": "Потужність",
-                            "batterySaving": "Battery Saving",
-                            "performance13": "Performance",
-                            "quiteCool13": "Quiet & Cool",
-                            "performance14": "Extreme Performance",
-                            "quiteCool14": "Intelligent Cooling"
+                            "batterySaving": "Заощадження заряду",
+                            "performance13": "Потужність",
+                            "quiteCool13": "Холод і тиша",
+                            "performance14": "Найвища продуктивність",
+                            "quiteCool14": "Інтелектуальне охолодження"
                         },
                         "readMore": {
                             "mode1": "Тихий режим",
@@ -725,19 +724,19 @@
                             "line1": "Повзунок у крайньому лівому положенні.Швидкість вентилятора та швидкодія нижчі, ніж в інших режимах. Комп'ютер менше нагрівається, працює тихіше, час роботи від акумулятора максимальний.",
                             "line2": "Повзунок по центру.Швидкість вентилятора та швидкодія динамічно збалансовані для найкращої роботи.",
                             "line3": "Повзунок у крайньому правому положенні. Швидкість вентилятора та припустима температура поверхні вищі, ніж в інших режимах. Комп'ютер має найвищу швидкодію.",
-                            "line4": "More info"
+                            "line4": "Більше"
                         },
                         "selectedModeText": {
-                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
-                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
-                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                            "quiteCool": "Цей режим забезпечує найкращий баланс швидкості вентилятора та швидкодії системи. Наприклад, в іграх вона оптимізує швидкодію. А в офісі вона зменшує шум.",
+                            "batterySaving": "Цей режим забезпечує максимальний термін служби батареї: автоматично регулює яскравість, змінює параметри живлення, вимикає функції розширеної обробки зображень тощо.",
+                            "performance": "Цей режим забезпечує максимальну швидкодію системи. У цьому режимі висока швидкість вентилятора може викликати великий шум."
                         },
                         "intelligentCoolingModesModal": {
-                            "title": "Change intelligent cooling modes",
-                            "close": "close",
+                            "title": "Зміна інтелектуальних режимів охолодження",
+                            "close": "закрити",
                             "coolingModesList": {
-                                "list1": "Click on the windows battery-icon in the toolbar",
-                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                                "list1": "Натисніть піктограму акумулятора Windows на панелі інструментів",
+                                "list2": "З’явиться індикатор акумулятора Windows, перетягніть повзунок, щоб вибрати між оптимальною тривалістю автономної роботи та швидкодією."
                             }
                         }
                     },
@@ -748,7 +747,7 @@
                             "battery&Quite": "АКУМУЛЯТОР І ТИША"
                         }
                     },
-                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
+                    "description5": "Функція інтелектуального охолодження регулює швидкість вентилятора, максимальну швидкодію та тривалість автономної роботи. Ця функція має 3 режими (тихий, збалансований і швидкісний) і тепер доступна з повзунка швидкодії Windows"
                 },
                 "powerSettings": {
                     "title": "Настройки живлення",
@@ -761,8 +760,8 @@
                         "title": "Швидке відновлення",
                         "description": "Використання цієї функції зменшить час відновлення роботи, якщо ви часто відкриваєте та закриваєте кришку комп'ютера.",
                         "tooltip": "Використання цієї функції зменшить час відновлення роботи, якщо ви часто відкриваєте і закриваєте кришку комп'ютера. Якщо функція ввімкнена, комп'ютер перейде в режим низького споживання електроенергії після закриття кришки і миттєво відновить звичний робочий стан у разі відкриття кришки протягом 15 хвилин після її закриття. Ця функція також дозволяє ноутбуку завершити активні задачі (наприклад, відправку електронного листа або завантаження файлу), перш ніж система призупинить роботу."
-					},
-					"or":"Or"
+                    },
+                    "or": "Або"
                 },
                 "otherSettings": {
                     "title": "Інші настройки",
@@ -971,7 +970,7 @@
                         "onSunsetToSunriseScheduleDescription": "Заплануйте режим захисту зору від заходу до сходу сонця",
                         "note": {
                             "title": "Примітка",
-                            "description": "Lenovo Vantage потребує інформацію про ваше місцезнаходження, щоб розрахувати час заходу та сходу сонця у вашому регіоні."
+                            "description": "Якщо ввімкнуто режим захисту зору, ця температура кольору не застосовується. Утім, ви можете отримати її попередній перегляд, перетягнувши повзунок. Щоб застосувати її, вимкніть режим захисту зору."
                         }
                     },
                     "privacyGuard": {
@@ -989,16 +988,16 @@
                         "reset": "Скинути значення температури",
                         "tooltip": "Ця функція може зменшувати рівень споживання електроенергії та подовжити час роботи від акумулятора шляхом затінення окремих областей екрана.",
                         "dropDown": {
-                            "seconds": "seconds",
-                            "minute": "minute",
-                            "minutes": "minutes",
-                            "alwaysOn": "Always on",
-                            "never": "never",
-                            "halfTime": "Half time of display off timer"
+                            "seconds": "сек.",
+                            "minute": "хвилина",
+                            "minutes": "хв.",
+                            "alwaysOn": "Завжди увімк.",
+                            "never": "ніколи",
+                            "halfTime": "Половина часу до вимкнення дисплея"
                         },
-                        "taskBarDimmer": "TASKBAR DIMMER",
-                        "backgroundDimmer": "BACKGROUND DIMMER",
-                        "displayDimmer": "DISPLAY DIMMER"
+                        "taskBarDimmer": "ЗАТІНЕННЯ ПАНЕЛІ ЗАВДАНЬ",
+                        "backgroundDimmer": "ЗАТІНЕННЯ ФОНОВИХ ВІКОН",
+                        "displayDimmer": "ЗАТІНЕННЯ ЕКРАНА"
                     }
                 },
                 "camera": {
@@ -1030,10 +1029,10 @@
                         "sketchMode": "Режим \"Ескіз\""
                     },
                     "cameraLoadingFailed": {
-                        "inUseTitle": "CAMERA IS IN USE",
-                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
-                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
-                        "loadingFailedDescription": "Close the app and try again."
+                        "inUseTitle": "КАМЕРА ВЖЕ ВИКОРИСТОВУЄТЬСЯ",
+                        "inUseDescription": "Інша програма вже використовує камеру. Закрийте програму та повторіть спробу.",
+                        "loadingFailedTitle": "КАМЕРА ВЖЕ ВИКОРИСТОВУЄТЬСЯ, АБО НЕ ВДАЛОСЯ ЗАВАНТАЖИТИ",
+                        "loadingFailedDescription": "Закрийте програму та повторіть спробу."
                     }
                 }
             },
@@ -1085,15 +1084,15 @@
                             "option3": "Введіть текст"
                         }
                     },
-                    "tooltip": "Content to be filled",
+                    "tooltip": "Вміст, який необхідно заповнити",
                     "apply": {
-                        "title": "APPLY"
+                        "title": "ЗАСТОСУВАТИ"
                     },
                     "website": {
-                        "url": "WEBSITE URL"
+                        "url": "URL-АДРЕСА ВЕБСАЙТУ"
                     },
                     "enterText": {
-                        "title": "TEXT TO BE ENTERED"
+                        "title": "ТЕКСТ ДЛЯ ВВЕДЕННЯ"
                     }
                 }
             }
@@ -1204,7 +1203,18 @@
                     "hand": {
                         "title": "Розпізнавання близкості рук по краям комп'ютера",
                         "description": "У разі роботи в режимі планшета включати APS, коли не виявлено дотик"
-                    }
+                    },
+                    "more": "ДОКЛАДНІШЕ",
+                    "advanced-settings": "ДОДАТКОВІ НАСТРОЙКИ",
+                    "hide": "ПРИХОВАТИ ДОДАТКОВІ НАСТРОЙКИ"
+                },
+                "APS": {
+                    "more": "ДОКЛАДНІШЕ",
+                    "advancedSettings": "ДОДАТКОВІ НАСТРОЙКИ",
+                    "hideAdvancedSettings": "ПРИХОВАТИ ДОДАТКОВІ НАСТРОЙКИ",
+                    "lowSensitivity": "Низька чутливість",
+                    "mediumSensitivity": "Середня чутливість",
+                    "highSensitivity": "Висока чутливість"
                 }
             },
             "intelligentMedia": {
@@ -1240,9 +1250,9 @@
                     "closeText": "Закрити"
                 },
                 "modalInstallationFailed": {
-                    "btnText": "ok",
-                    "title": "Install Failed",
-                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                    "btnText": "OK",
+                    "title": "Помилка встановлення",
+                    "desc": "Повторіть спробу пізніше, щоб використовувати Lenovo Voice."
                 }
             }
         }
@@ -1262,7 +1272,7 @@
         "at": "в",
         "readMore": "Розгорнути",
         "popup": {
-            "reboot": "Перезавантажити",
+            "reboot": "Перезавантаження",
             "shutdown": "Завершити роботу",
             "rebootForceMsg": "Якщо інсталювати вибрані оновлення,це автоматично перезавантажить систему або завершить її роботу.",
             "shutdownForceMsg": "Якщо інсталювати вибрані оновлення,це автоматично завершить роботу системи.",
@@ -1294,7 +1304,7 @@
             "title": "Веб-сайт служби підтримки Lenovo"
         },
         "banner": {
-            "neverChecked": "Запрошуємо скористатися функцією System Update.",
+            "neverChecked": "Запрошуємо скористатися функцією \"Оновлення системи\".",
             "title": "Оновлена система — це справна система.",
             "last": "Останнє оновлення: ",
             "next": "Наступне планове оновлення: ",
@@ -1398,7 +1408,7 @@
             "overviewBlockTitle": "Огляд безпеки вашої екосистеми",
             "allDevices": "Усі пристрої",
             "myDevice": "Мій пристрій",
-            "thisComputer": "This computer",
+            "thisComputer": "Цей комп'ютер",
             "secure": "У БЕЗПЕЦІ",
             "needAttention": "ПОТРЕБУЄ УВАГИ",
             "manageAccount": "Керування обліковим записом",
@@ -1672,14 +1682,14 @@
             "title": "Безпека VPN",
             "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN шифрує інформацію, яка надходить і надсилається. Завдяки цьому можна безпечно й конфіденційно використовувати свій комп'ютер, пристрій Mac®, смартфон або планшет із будь-яким підключенням до Інтернету.",
-            "whatCanSufEasy1": "A virtual private network provider that protects you while you are online. Without a VPN, your computer may be more vulnerable to attackers and identity theft. The VPN runs silently in the background and provides security and privacy protection.",
-            "startUseSufEasy4": "SurfEasy users can enjoy 250 MB of free traffic every 30 days! Follow the steps on the &quot;Rewards&quot; tab of the SurfEasy app to get more traffic.",
-            "howToGetData": "How to get free traffic:",
-            "howToGetData1": "Confirm email to win +250 MB traffic",
-            "howToGetData2": "Add a second device to win +250 MB of traffic",
-            "howToGetData3": "Refer a friend and win +500 MB of traffic",
-            "howToGetData4": "Like SurfEasy on Facebook, earn +100 MB of traffic,",
-            "howToGetData5": "Follow SurfEasy on Twitter and win +100 MB of traffic",
+            "whatCanSufEasy1": "Провайдер віртуальної приватної мережі, який захищає вас онлайн. Без VPN ваш комп'ютер може бути вразливішим до зламу й викрадення ідентичності. VPN непомітно працює у фоновому режимі та забезпечує захист і конфіденційність.",
+            "startUseSufEasy4": "Користувачі SurfEasy кожні 30 днів отримують 250 МБ трафіку безкоштовно! Дотримуйтеся вказівок на вкладці &quot;Винагороди&quot; в програмі SurfEasy, щоб отримати більше трафіку.",
+            "howToGetData": "Як отримати безкоштовний трафік:",
+            "howToGetData1": "Підтвердьте електронну пошту, щоб отримати ще 250 МБ трафіку",
+            "howToGetData2": "Додайте другий пристрій, щоб отримати ще 250 МБ трафіку",
+            "howToGetData3": "Приведіть друга та отримайте 500 МБ трафіку",
+            "howToGetData4": "Вподобайте SurfEasy на Facebook і отримайте 100 МБ трафіку",
+            "howToGetData5": "Підпишіться на SurfEasy в Twitter і отримайте 100 МБ трафіку",
             "helpKeep": "SurfEasy VPN забезпечує вашу безпеку й конфіденційність в Інтернеті.",
             "getSufEasy": "Отримати SurfEasy",
             "openSufEasy": "Відкрити SurfEasy",

@@ -5,8 +5,6 @@ import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { CommonService } from '../common/common.service';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Router } from '@angular/router';
 import { AndroidService } from '../android/android.service';
 
@@ -21,16 +19,16 @@ export class DeviceService {
 	public isArm = false;
 	public isAndroid = false;
 	public is64bit = true;
-	public showPrivacy = true;
+	public showPrivacy = false;
 	public isGaming = false;
 	private isGamingDashboardLoaded = false;
 	private machineInfo: any;
 
 	constructor(
-		shellService: VantageShellService
-		, private commonService: CommonService,
-		public androidService: AndroidService
-		, private router: Router) {
+		private shellService: VantageShellService,
+		private commonService: CommonService,
+		public androidService: AndroidService,
+		private router: Router) {
 		this.device = shellService.getDevice();
 		this.sysInfo = shellService.getSysinfo();
 		this.microphone = shellService.getMicrophoneSettings();
@@ -42,6 +40,7 @@ export class DeviceService {
 		// 	this.startDeviceMonitor();
 		// }
 		this.initIsArm();
+		this.initshowPrivacy();
 	}
 
 	private loadGamingDashboard() {
@@ -76,11 +75,11 @@ export class DeviceService {
 	private initIsArm() {
 		try {
 			this.getIsARM()
-			.then((status: boolean) => {
-				this.isArm = status;
-			}).catch(error => {
-				console.error('initArm', error);
-			});
+				.then((status: boolean) => {
+					this.isArm = status;
+				}).catch(error => {
+					console.error('initArm', error);
+				});
 		} catch (error) {
 			console.error('initArm' + error.message);
 		}
@@ -94,7 +93,7 @@ export class DeviceService {
 		}
 		try {
 			if (this.isShellAvailable) {
-				let machineInfo = await this.getMachineInfo();
+				const machineInfo = await this.getMachineInfo();
 				isArm = this.isAndroid || machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
 				return isArm;
 			}
@@ -103,21 +102,18 @@ export class DeviceService {
 		}
 	}
 
-	// private initshowPrivacy() {
-	// 	// set this.showPrivacy appropriately based on machineInfo data
-	// 	try {
-	// 		if (this.isShellAvailable) {
-	// 			this.getMachineInfo()
-	// 				.then((machineInfo: any) => {
-	// 					this.showPrivacy = machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
-	// 				}).catch(error => {
-	// 					console.error('initprivacy', error);
-	// 				});
-	// 		}
-	// 	} catch (error) {
-	// 		console.error('initPrivacy' + error.message);
-	// 	}
-	// }
+	private initshowPrivacy() {
+		// set this.showPrivacy appropriately based on machineInfo data
+		try {
+			if (this.isShellAvailable) {
+				this.shellService.calcDeviceFilter('{"var":"HypothesisGroups.PrivacyTab"}').then((privacy) => {
+					this.showPrivacy = (privacy === 'enabled');
+				});
+			}
+		} catch (error) {
+			console.error('initPrivacy' + error.message);
+		}
+	}
 
 	public getDeviceInfo(): Promise<MyDevice> {
 		if (this.device) {
@@ -126,16 +122,13 @@ export class DeviceService {
 		return undefined;
 	}
 
+	// this API doesn't have performance issue, can be always called at any time.
 	getMachineInfo(): Promise<any> {
 		if (this.sysInfo) {
 			return this.sysInfo.getMachineInfo()
 				.then((info) => {
 					this.machineInfo = info;
 					this.isGaming = info.isGaming;
-					// if (info && info.isGaming) {
-					// 	this.isGaming = info.isGaming;
-					// 	this.loadGamingDashboard();
-					// }
 					if (info && info.cpuArchitecture) {
 						if (info.cpuArchitecture.indexOf('64') === -1) {
 							this.is64bit = false;

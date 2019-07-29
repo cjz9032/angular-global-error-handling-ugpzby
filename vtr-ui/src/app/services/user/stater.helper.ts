@@ -90,7 +90,7 @@ class UserSettingsPayload {
 }
 
 export class LIDStarterHelper {
-	private static signinDateFromSSO: any = {};
+	private static signinDateFromSSO: any = undefined;
 	private lid: any;
 
 	constructor(

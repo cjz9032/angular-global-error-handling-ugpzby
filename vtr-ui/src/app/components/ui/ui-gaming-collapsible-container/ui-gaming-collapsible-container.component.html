@@ -1,18 +1,24 @@
 <div class="select-box">
 	<div class="dropdown">
 		<a class="dropdown-toggle" id="gaming-drop" (click)="toggleOptions(options)">
-			<span *ngFor="let option of options.dropOptions" 
-			[ngStyle]="{display: option.value != options.curSelected? 'none':''}">
+			<span *ngFor="let option of options.dropOptions"
+				[ngStyle]="{display: option.value != options.curSelected? 'none':''}">
 				{{option.name  | translate}}
 			</span>
-			<i class="icon icon-arrowdown"></i>
+			<!-- <i class="icon icon-arrowdown"></i> -->
+			<fa-icon class="icon" [icon]="['fal', 'chevron-down']"></fa-icon>
 		</a>
 		<ng-container *ngIf="showOptions">
 			<div class="gaming-dropdown-menu">
 				<ng-container *ngFor="let option of options.dropOptions; index as i">
 					<li [ngClass]="{ 'selected': option.value===options.curSelected }" (click)="optionSelected(option)"
-						(mouseenter)="changeDescription(option)" (mouseleave)="resetDescription(option)" vtrMetrics [metricsItem]="option.name | translate" metricsEvent="featureClick">
-						<a class="dropdown-item"><i class="icon icon-checkline"></i>{{ option.name  | translate}}</a>
+						(mouseenter)="changeDescription(option)" (mouseleave)="resetDescription(option)" vtrMetrics
+						[metricsItem]="option.name | translate" metricsEvent="featureClick">
+						<a class="dropdown-item">
+							<!-- <i class="icon icon-checkline"></i> -->
+							<fa-icon class="icon" [icon]="['fal', 'check']"></fa-icon>
+							{{ option.name  | translate}}
+						</a>
 					</li>
 				</ng-container>
 				<div class="information">

@@ -2,9 +2,11 @@
 	<div class="row top-fix">
 		<div class="col-sm-12" *ngIf="!recordingStatus">
 			<div class="title-main">
-				{{ 'gaming.macroKey.details.recorded.title' | translate }}<span><span
-						*ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>
-					{{ number.key | translate }}</span>
+				{{ 'gaming.macroKey.details.recorded.title' | translate }}
+				<span>
+					<span *ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>
+					{{ number.key | translate }}
+				</span>
 			</div>
 		</div>
 		<div class="col-6" *ngIf="!recordingStatus">

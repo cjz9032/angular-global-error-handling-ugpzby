@@ -1,14 +1,9 @@
 import { Injectable } from '@angular/core';
-import * as inversify from 'inversify';
+import { Container } from 'inversify';
 import * as Phoenix from '@lenovo/tan-client-bridge';
 import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
-import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
-import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
-import { HybridModeStatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
-import { TouchpadLockStatus } from 'src/app/data-models/gaming/touchpad-lock-status.model';
-import { SystemStatus } from 'src/app/data-models/gaming/system-status.model';
 import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -24,7 +19,7 @@ export class VantageShellService {
 		if (this.shell) {
 			const metricClient = this.shell.MetricsClient ? new this.shell.MetricsClient() : null;
 			const powerClient = this.shell.PowerClient ? this.shell.PowerClient() : null;
-			this.phoenix = Phoenix.default(new inversify.Container(), {
+			this.phoenix = Phoenix.default(new Container(), {
 				metricsBroker: metricClient,
 				hsaPowerBroker: powerClient,
 				hsaDolbyBroker: this.shell.DolbyRpcClient ? this.shell.DolbyRpcClient.instance : null,
@@ -38,7 +33,7 @@ export class VantageShellService {
 				Phoenix.Features.SecurityAdvisor,
 				Phoenix.Features.SystemInformation,
 				Phoenix.Features.HwSettings,
-				//Phoenix.Features.Gaming,
+				// Phoenix.Features.Gaming,
 				Phoenix.Features.SystemUpdate,
 				Phoenix.Features.Warranty,
 				Phoenix.Features.Permissions,
@@ -56,14 +51,18 @@ export class VantageShellService {
 	}
 
 	public registerEvent(eventType: any, handler: any) {
-		this.phoenix.on(eventType, (val) => {
-			//	console.log('Event fired: ', eventType, val);
-			handler(val);
-		});
+		if (this.phoenix) {
+			this.phoenix.on(eventType, (val) => {
+				// 	console.log('Event fired: ', eventType, val);
+				handler(val);
+			});
+		}
 	}
 
 	public unRegisterEvent(eventType: any, handler: any) {
-		this.phoenix.off(eventType, handler);
+		if (this.phoenix) {
+			this.phoenix.off(eventType, handler);
+		}
 	}
 	private getVantageShell(): any {
 		const win: any = window;
@@ -219,6 +218,7 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
 	/**
 	 * returns hardware settings object from VantageShellService of JS Bridge
 	 */
@@ -575,7 +575,7 @@ export class VantageShellService {
      ***/
 	public setMacroKeyClear(macroKey: string): any {
 		if (this.phoenix) {
-			if (!Phoenix.Features.Gaming) {
+			if (!this.phoenix.gaming) {
 				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			console.log('Deleting the following macro key ---->', macroKey);
@@ -586,7 +586,7 @@ export class VantageShellService {
 
 	public getGamingMacroKey(): any {
 		if (this.phoenix) {
-			if (!Phoenix.Features.Gaming) {
+			if (!this.phoenix.gaming) {
 				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey;
@@ -602,7 +602,7 @@ export class VantageShellService {
 
 	public macroKeyInitializeEvent(): any {
 		if (this.phoenix) {
-			if (!Phoenix.Features.Gaming) {
+			if (!this.phoenix.gaming) {
 				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.initMacroKey();
@@ -612,7 +612,7 @@ export class VantageShellService {
 
 	public macroKeySetApplyStatus(key): any {
 		if (this.phoenix) {
-			if (!Phoenix.Features.Gaming) {
+			if (!this.phoenix.gaming) {
 				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setApplyStatus(key);
@@ -622,7 +622,7 @@ export class VantageShellService {
 
 	public macroKeySetStartRecording(key): any {
 		if (this.phoenix) {
-			if (!Phoenix.Features.Gaming) {
+			if (!this.phoenix.gaming) {
 				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setStartRecording(key);
@@ -632,7 +632,7 @@ export class VantageShellService {
 
 	public macroKeySetStopRecording(key, isSuccess, message): any {
 		if (this.phoenix) {
-			if (!Phoenix.Features.Gaming) {
+			if (!this.phoenix.gaming) {
 				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setStopRecording(key, isSuccess, message);
@@ -642,7 +642,7 @@ export class VantageShellService {
 
 	public macroKeySetKey(key): any {
 		if (this.phoenix) {
-			if (!Phoenix.Features.Gaming) {
+			if (!this.phoenix.gaming) {
 				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setKey(key);
@@ -652,7 +652,7 @@ export class VantageShellService {
 
 	public macroKeyClearKey(key): any {
 		if (this.phoenix) {
-			if (!Phoenix.Features.Gaming) {
+			if (!this.phoenix.gaming) {
 				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setClear(key);
@@ -662,7 +662,7 @@ export class VantageShellService {
 
 	public macroKeySetRepeat(key, repeat): any {
 		if (this.phoenix) {
-			if (!Phoenix.Features.Gaming) {
+			if (!this.phoenix.gaming) {
 				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setRepeat(key, repeat);
@@ -672,7 +672,7 @@ export class VantageShellService {
 
 	public macroKeySetInterval(key, interval): any {
 		if (this.phoenix) {
-			if (!Phoenix.Features.Gaming) {
+			if (!this.phoenix.gaming) {
 				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setInterval(key, interval);
@@ -682,7 +682,7 @@ export class VantageShellService {
 
 	public macroKeySetMacroKey(key, inputs): any {
 		if (this.phoenix) {
-			if (!Phoenix.Features.Gaming) {
+			if (!this.phoenix.gaming) {
 				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setMacroKey(key, inputs);
@@ -692,7 +692,7 @@ export class VantageShellService {
 
 	public getGamingThermalMode() {
 		if (this.phoenix) {
-			if (!Phoenix.Features.Gaming) {
+			if (!this.phoenix.gaming) {
 				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingThermalmode;
@@ -709,10 +709,8 @@ export class VantageShellService {
 	// Active Protection System
 	public getActiveProtectionSystem(): any {
 		if (this.phoenix) {
-			console.log('PHOENIX AVAILABLE - vantage shell');
 			return this.phoenix.hwsettings.aps.ActiveProtectionSystem; // returning APS Object with methods
 		}
-		console.log('NO PHOENIX AVAILABLE - vantage shell');
 		return undefined;
 	}
 
@@ -728,10 +726,8 @@ export class VantageShellService {
 	// =================== Start Lenovo Voice
 	public getLenovoVoice(): any {
 		if (this.phoenix) {
-			console.log('PHOENIX AVAILABLE - vantage shell');
 			return this.phoenix.lenovovoice;
 		}
-		console.log('NO PHOENIX AVAILABLE - vantage shell');
 		return undefined;
 	}
 	// ==================== End Lenovo Voice
@@ -740,6 +736,13 @@ export class VantageShellService {
 	public getOledSettings(): any {
 		if (this.getHwSettings()) {
 			return this.getHwSettings().display.OLEDSettings;
+		}
+		return undefined;
+	}
+
+	public getVersion(): any {
+		if (this.phoenix && this.phoenix.version) {
+			return this.phoenix.version;
 		}
 		return undefined;
 	}

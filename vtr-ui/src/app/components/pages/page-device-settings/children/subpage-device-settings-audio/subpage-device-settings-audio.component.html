@@ -192,7 +192,8 @@
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[disabled]="microphoneProperties.disableEffect"
-							[theme]="'white'">
+							[theme]="'white'"
+							[isLastChild]="true">
 							<div class="row no-gutters">
 								<vtr-ui-circle-radio *ngFor="let optimizeMode of microOptimizeModeResponse.modes"
 									[radioId]="'radio'| uniqueId"

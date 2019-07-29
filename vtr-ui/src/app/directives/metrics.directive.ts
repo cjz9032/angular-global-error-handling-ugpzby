@@ -1,9 +1,9 @@
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { Directive, HostListener, Input } from '@angular/core';
 import { VantageShellService } from '../services/vantage-shell/vantage-shell.service';
 import { ActivatedRoute } from '@angular/router';
 import { VieworderService } from '../services/view-order/vieworder.service';
-import { DeviceService } from '../services/device/device.service';
 import { DevService } from '../services/dev/dev.service';
+import { MetricsTranslateService } from '../services/mertics-traslate/metrics-translate.service';
 
 export interface MetricsData {
 	ItemType: string;
@@ -31,13 +31,13 @@ declare var window;
 export class MetricsDirective {
 	private metrics: any;
 
-	constructor(private deviceService: DeviceService,
-		private el: ElementRef,
+	constructor(
 		shellService: VantageShellService,
 		private activatedRoute: ActivatedRoute,
 		private viewOrderService: VieworderService,
 		private devService: DevService,
-		) {
+		private metricsTranslateService: MetricsTranslateService
+	) {
 		this.metrics = shellService.getMetrics();
 
 	}
@@ -66,7 +66,7 @@ export class MetricsDirective {
 			case 'featureclick':
 			case 'itemclick': {
 				data.ItemType = 'FeatureClick';
-				data.ItemName = this.metricsItem;
+				data.ItemName = this.metricsTranslateService.translate(this.metricsItem);
 				data.ItemParent = this.metricsParent;
 				if (this.metricsParam) {
 					data.ItemParm = this.metricsParam;
@@ -106,7 +106,7 @@ export class MetricsDirective {
 	@HostListener('click', ['$event.target'])
 	async onclick(target) {
 		if (!this.metricsParent) {
-			this.metricsParent = this.activatedRoute.snapshot.data['pageName'];
+			this.metricsParent = this.activatedRoute.snapshot.data.pageName;
 		}
 
 		if (!this.metricsEvent || !this.metricsParent) {
@@ -118,7 +118,7 @@ export class MetricsDirective {
 
 		if (this.metrics && this.metrics.sendAsync) {
 			try {
-				console.log('metrics data ::',JSON.stringify(data));
+				console.log('metrics data ::', JSON.stringify(data));
 				await this.metrics.sendAsync(data);
 			} catch (ex) {
 				this.devService.writeLog('sending metric breaks with exception:' + ex);

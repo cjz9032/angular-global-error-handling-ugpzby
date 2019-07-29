@@ -1,12 +1,4 @@
 @import "../../../app.theme.scss";
-.one-panel{
-	@media #{$mediaquery_X35} {
-		margin-bottom: 80rem;
-	  }
-	  @media #{$mediaquery_X36} {
-		margin-bottom: 30rem;
-	  }
-}
 
 .ui-lighting-profile {
   border-radius: $border_radius;
@@ -58,23 +50,6 @@
     }
     .gaming-device-image {
       width: 40%;
-      //max-width: 40%;
-      // @media #{$mediaquery_X29} {
-      //   max-width: 35%;
-      // }
-
-      // @media #{$mediaquery_17} {
-      //   max-width: 30%;
-      // }
-      // @media #{$mediaquery_X7} {
-      //   max-width: 25%;
-      // }
-      // @media #{$mediaquery_10} {
-      //   min-width: 20%;
-      // }
-      // @media #{$mediaquery_X9} {
-      //   width: 30%;
-      // }
       @media #{$small-screen}{
         justify-content: flex-end;
         width: 100%;
@@ -97,20 +72,7 @@
   }
 
   .gaming-light-options {
-    margin-left: 5%;
-    width: 55%;
-    // @media #{$mediaquery_X9} {
-    //   width: 60%;
-    // }
-    // @media #{$mediaquery_17} {
-    //   width: 70%;
-    // }
-    // @media #{$mediaquery_X7} {
-    //   max-width: 75%;
-    // }
-    // @media #{$mediaquery_10} {
-    //   min-width: 75%;
-    // }
+    width: 60%;
     @media #{$small-screen}{
       margin-left: 0;
       width: 100%;
@@ -123,7 +85,6 @@
       max-width: 45rem;
     }
     .light-option {
-      //::ng-deep {
         .content-title {
           color: $gaming_lightest;
           font-weight: $weight_medium;

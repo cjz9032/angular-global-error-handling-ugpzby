@@ -9,7 +9,7 @@
 					*ngIf="disabledAll && !isCameraInErrorState"
 					src="../../../assets/images/camera-disable.png"
 					title="{{'device.deviceSettings.displayCamera.camera.notAvailable' | translate}}" />
-					<div class="error"
+				<div class="error"
 					*ngIf="isCameraInErrorState">
 					<div class="error-title">
 						{{ cameraErrorTitle | translate }}
@@ -65,7 +65,7 @@
 								(toggle)="onAutoExposureChange($event)"></vtr-ui-switch-onoff>
 						</div>
 					</div>
-					<vtr-ui-range-slider *ngIf="cameraFeatureAccess.showAutoExposureSlider"
+					<vtr-ui-range-slider [hidden]="!cameraFeatureAccess.showAutoExposureSlider"
 						[step]="cameraSettings.exposure.step"
 						[minValue]="cameraSettings.exposure.min"
 						[maxValue]="cameraSettings.exposure.max"
