@@ -2,7 +2,7 @@ import { Component, OnInit, SecurityContext, DoCheck, OnDestroy } from '@angular
 import { Router, ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 
 import { MockService } from '../../../services/mock/mock.service';
@@ -19,11 +19,11 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
-import { UserService } from '../../../services/user/user.service';
-import { QA } from 'src/app/data-models/qa/qa.model';
+import { UserService } from 'src/app/services/user/user.service';
 import { AndroidService } from 'src/app/services/android/android.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -60,7 +60,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		public qaService: QaService,
 		private modalService: NgbModal,
 		config: NgbModalConfig,
-		private commonService: CommonService,
+		public commonService: CommonService,
 		private configService: ConfigService,
 		public deviceService: DeviceService,
 		private cmsService: CMSService,
@@ -72,7 +72,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		private sanitizer: DomSanitizer,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private activatedRoute: ActivatedRoute,
-		private lenovoIdDialogService: LenovoIdDialogService
+		private lenovoIdDialogService: LenovoIdDialogService,
+		private loggerService: LoggerService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -95,10 +96,9 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	ngOnInit() {
-		// reroute default application's default URL if gaming device
-		if (this.deviceService.isGaming) {
-			this.router.navigateByUrl(this.configService.getMenuItems(this.deviceService.isGaming)[0].path);
-		}
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
 
 		const self = this;
 		this.translate.stream('lenovoId.user').subscribe((value) => {
@@ -115,78 +115,12 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		}
 
 		this.setDefaultCMSContent();
-
-		const queryOptions = {
-			'Page': 'dashboard',
-			'Lang': 'EN',
-			'GEO': 'US',
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
-		};
-
-		this.cmsService.fetchCMSContent(queryOptions).then(
-			(response: any) => {
-				const heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
-					return {
-						'albumId': 1,
-						'id': record.Id,
-						'source': this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
-						'title': this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
-						'url': record.FeatureImage,
-						'ActionLink': record.ActionLink
-					};
-				});
-				if (heroBannerItems && heroBannerItems.length) {
-					this.heroBannerItems = heroBannerItems;
-				}
-
-				const cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
-				if (cardContentPositionB) {
-					this.cardContentPositionB = cardContentPositionB;
-					if (this.cardContentPositionB.BrandName) {
-						this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
-					}
-				}
-
-				const cardContentPositionC = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
-				if (cardContentPositionC) {
-					this.cardContentPositionC = cardContentPositionC;
-					if (this.cardContentPositionC.BrandName) {
-						this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
-					}
-				}
-
-				const cardContentPositionD = this.cmsService.getOneCMSContent(response, 'full-width-title-image-background', 'position-D')[0];
-				if (cardContentPositionD) {
-					this.cardContentPositionD = cardContentPositionD;
-				}
-
-				const cardContentPositionE = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-E')[0];
-				if (cardContentPositionE) {
-					this.cardContentPositionE = cardContentPositionE;
-				}
-
-				const cardContentPositionF = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-F')[0];
-				if (cardContentPositionF) {
-					this.cardContentPositionF = cardContentPositionF;
-				}
-			},
-			error => {
-				console.log('fetchCMSContent error', error);
-			}
-		);
-
-		this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
-
+		this.fetchCmsContents();
 	}
 
 	ngDoCheck(): void {
 		const lastAction = this.protocalAction;
-		this.protocalAction = this.activatedRoute.snapshot.queryParams['action'];
+		this.protocalAction = this.activatedRoute.snapshot.queryParams.action;
 		if (lastAction !== this.protocalAction) {
 			if (this.protocalAction.toLowerCase() === 'lenovoid') {
 				this.lenovoIdDialogService.openLenovoIdDialog();
@@ -202,6 +136,80 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		}
 
 		this.qaService.destroyChangeSubscribed();
+	}
+
+	fetchCmsContents(lang?: string) {
+		const callCmsStartTime: any = new Date();
+		let queryOptions: any = {
+			Page: 'dashboard'
+		};
+		if (lang) {
+			queryOptions = {
+				Page: 'dashboard',
+				Lang: lang,
+				GEO: 'US',
+			};
+		}
+		this.cmsService.fetchCMSContent(queryOptions).subscribe(
+			(response: any) => {
+				const callCmsEndTime: any = new Date();
+				const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
+				if (response && response.length > 0) {
+					this.loggerService.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
+					const heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
+						return {
+							albumId: 1,
+							id: record.Id,
+							source: record.Title,
+							title: record.Description,
+							url: record.FeatureImage,
+							ActionLink: record.ActionLink
+						};
+					});
+					if (heroBannerItems && heroBannerItems.length) {
+						this.heroBannerItems = heroBannerItems;
+					}
+
+					const cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
+					if (cardContentPositionB) {
+						this.cardContentPositionB = cardContentPositionB;
+						if (this.cardContentPositionB.BrandName) {
+							this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+						}
+					}
+
+					const cardContentPositionC = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
+					if (cardContentPositionC) {
+						this.cardContentPositionC = cardContentPositionC;
+						if (this.cardContentPositionC.BrandName) {
+							this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
+						}
+					}
+
+					const cardContentPositionD = this.cmsService.getOneCMSContent(response, 'full-width-title-image-background', 'position-D')[0];
+					if (cardContentPositionD) {
+						this.cardContentPositionD = cardContentPositionD;
+					}
+
+					const cardContentPositionE = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-E')[0];
+					if (cardContentPositionE) {
+						this.cardContentPositionE = cardContentPositionE;
+					}
+
+					const cardContentPositionF = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-F')[0];
+					if (cardContentPositionF) {
+						this.cardContentPositionF = cardContentPositionF;
+					}
+				} else {
+					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
+					this.loggerService.info(msg);
+					this.fetchCmsContents('en');
+				}
+			},
+			error => {
+				console.log('fetchCMSContent error', error);
+			}
+		);
 	}
 
 	onFeedbackModal() {
@@ -220,9 +228,9 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		this.heroBannerItems = [{
 			albumId: 1,
 			id: 1,
-			source: 'Vantage Beta',
+			source: 'Vantage',
 			title: 'Welcome to the next generation of Lenovo Vantage!',
-			url: './../../../../assets/cms-cache/Vantage3Hero-zone0.jpg',
+			url: '/assets/cms-cache/Vantage3Hero-zone0.jpg',
 			ActionLink: null
 		}];
 
@@ -230,7 +238,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			Title: '',
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: './../../../../assets/cms-cache/Alexa4x3-zone1.jpg',
+			FeatureImage: '/assets/cms-cache/Alexa4x3-zone1.jpg',
 			Action: '',
 			ActionType: 'External',
 			ActionLink: null,
@@ -248,7 +256,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			Title: '',
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg',
+			FeatureImage: '/assets/cms-cache/Security4x3-zone2.jpg',
 			Action: '',
 			ActionType: 'External',
 			ActionLink: null,
@@ -266,7 +274,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			Title: '',
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: './../../../../assets/cms-cache/Gamestore8x3-zone3.jpg',
+			FeatureImage: '/assets/cms-cache/Gamestore8x3-zone3.jpg',
 			Action: '',
 			ActionType: 'External',
 			ActionLink: null,
@@ -284,7 +292,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			Title: '',
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg',
+			FeatureImage: '/assets/cms-cache/content-card-4x4-support.jpg',
 			Action: '',
 			ActionType: 'External',
 			ActionLink: null,
@@ -302,7 +310,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			Title: '',
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: './../../../../assets/cms-cache/content-card-4x4-award.jpg',
+			FeatureImage: '/assets/cms-cache/content-card-4x4-award.jpg',
 			Action: '',
 			ActionType: 'External',
 			ActionLink: null,

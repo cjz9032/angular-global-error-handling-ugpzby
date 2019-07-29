@@ -7,30 +7,39 @@
 		</div>
 	</div>
 
-	<div class="row py-5 smartsettings-card" id="Input & Accessories">
+	<div class="row py-5 smartsettings-card"
+		id="Input & Accessories">
 		<div class="col-10 mx-auto ">
 			<!-- Input & Accessories -->
 			<vtr-container-collapsible
 				[cardTitle]="'device.deviceSettings.inputAccessories.inputAccessory.title' | translate"
-				componentName="Input & Accessories" [isCollapsed]="false" [allowCollapse]="true" [theme]="'white'">
+				componentName="Input & Accessories"
+				[isCollapsed]="false"
+				[allowCollapse]="true"
+				[theme]="'white'">
 				<ul class="list-group list-group-flush">
-					<li class="pt-3" *ngIf="machineType == 1 && keyboardCompatability">
+					<li class="pt-3"
+						*ngIf="machineType == 1 && keyboardCompatability">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.title' | translate"
 							componentName="Input Accessories"
 							[caption]="'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.description' | translate"
-							[leftIcon]="['svg', 'Hiddenkeyboardfunctions']" [showChildContent]="true" [theme]="'white'">
+							[leftIcon]="['fal', 'keyboard']"
+							[showChildContent]="true"
+							[theme]="'white'">
 							<div class="row">
 								<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 									<!-- <img src="../../../../../../assets/icons/Hidden keyboard functions.svg" alt="">-->
-									<div class="img-preview" [ngStyle]="{ 'background-image': 'url(' + image + ')'}">
+									<div class="img-preview"
+										[ngStyle]="{ 'background-image': 'url(' + image + ')'}">
 										<div class="img-preview"
 											[style.background-image]="additionalCapabilitiesObj.privacy ? 'url(' + privacyIcon + ')': ''">
 											<div class="img-preview"
 												[style.background-image]="additionalCapabilitiesObj.backLight ? 'url(' + kbdBlIcon + ')': ''">
 												<div class="img-preview"
 													[style.background-image]="additionalCapabilitiesObj.magnifier ? 'url(' + merlynIcon + ')': ''">
-													<img *ngIf="additionalCapabilitiesObj.performane" [src]="zoomIcon"
+													<img *ngIf="additionalCapabilitiesObj.performane"
+														[src]="zoomIcon"
 														class="image" />
 												</div>
 											</div>

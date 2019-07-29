@@ -8,7 +8,7 @@
 					<input [id]="id"
 						class="dropcheck"
 						type="checkbox"
-						[checked]="showTimerDropDown"
+						[checked]="showDropDown"
 						(click)="onToggleDropDown()">
 					<label [for]="id"
 						class="dropbtn">
@@ -41,12 +41,13 @@
 						</div>
 					</label>
 
-					<div class="dropdown-content">
+					<div *ngIf="showDropDown"
+						class="dropdown-content">
 
 						<div class="main-block">
 							<div class="timer-block">
 								<div class="row align-items-center d-flex justify-content-between">
-									<div class="hours-block pl-5 ml-4 mx-5">
+									<div class="hours-block pl-5 ml-5">
 
 										<div class="toggle-icon"
 											(click)="updateHours(false)">

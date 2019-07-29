@@ -21,18 +21,15 @@
 		padding-top: 16rem;
 		box-sizing: border-box;
 		@media #{$mediaquery_X7} {
-			//min-width: 320px;
 		}
 		@media #{$mediaquery_10} {
-			//min-width: 47rem;
+
 		}
 		@media #{$mediaquery_X29} {
-			//min-width: 50rem;
+
 		}
 	}
-	// display: flex;
-	// justify-content: space-between;
-	// align-items: flex-end;
+
 	.rgb-header {
 		width: 100%;
 		justify-content: space-between;
@@ -44,12 +41,15 @@
 			font-size: 2rem;
 			line-height: 2rem;
 		}
+		.fa-icon {
+			font-size: 3rem;
+		}
 	}
 	.wheel-container {
 		display: flex;
 		align-items: flex-end;
+		//padding-bottom: 1.6rem;
 		@media #{$large-screen-1} {
-			//margin-right: -3rem;
 		}
 	}
 	.color-display {
@@ -61,6 +61,9 @@
 		margin-left: 0.9rem;
 		.form-group {
 			margin-left: 0.5rem;
+			&:nth-last-child(1){
+				margin-bottom: 0 !important;
+			}
 			label {
 				width: 2.4rem;
 				font-size: 1.6rem;
@@ -100,6 +103,7 @@
 		min-width: 14rem;
 		text-align: center;
 		font-weight: $weight_bold;
+		height: 4.88rem;
 		span {
 			display: inline-block;
 			padding: 0.6rem 0rem;
@@ -150,7 +154,6 @@
 				bottom: 0;
 				margin: auto;
 				clip-path: circle(50% at 50% 50%);
-				//border-radius: 50%;
 			}
 
 			.reinvented-color-wheel--hue-handle,

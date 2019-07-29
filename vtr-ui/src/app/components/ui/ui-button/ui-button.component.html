@@ -16,8 +16,11 @@
 			[metricsItemID]="metricsItemID"
 			[metricsItemCategory]="metricsItemCategory"
 			[metricsParent]="metricsParent"
-			[ngClass]="{'fullWidth': isFullWidth === true,'text-upper-case': upperCaseLabel,
-						'regular-width': isRegular, 'min-height': btnHeight, 
+			[ngClass]="{'fullWidth': isFullWidth === true,
+						'halfWidth': isHalfWidth,
+						'text-upper-case': upperCaseLabel,
+						'regular-width': isRegular,
+						'min-height': btnHeight, 
 						'btn-gradient': isGradient}"
 			(click)="onClickButton($event)">{{label}} </button>
 		<button *ngIf="alreadyJoinGroup === 'joined'"

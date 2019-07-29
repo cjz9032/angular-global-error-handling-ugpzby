@@ -82,8 +82,8 @@ export class MetricsTranslateService {
 	loadBaseAndTargetFile() {
 		    this.http.get('./assets/i18n/en.json').subscribe((baseLanguage) => {
 				return this.http.get('./assets/i18n/' + this.translateService.currentLang + '.json').subscribe((targetLanguage) => {
-					 console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!',baseLanguage);
-					console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!',targetLanguage);
+					console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!',this.translateService.currentLang,baseLanguage);
+					console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!',this.translateService.currentLang,targetLanguage);
 					this.setTargetLanguage(targetLanguage);
 					this.setBaseLanguage(baseLanguage);
 				})

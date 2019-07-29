@@ -19,14 +19,19 @@ export class UiCheckboxComponent implements OnInit {
 	@Input() disabled: boolean;
 	@Input() value: any;
 
-	@Output() change: EventEmitter < any > = new EventEmitter();
+	@Output() toggle: EventEmitter < any > = new EventEmitter();
 
 	constructor() {}
 
 	ngOnInit() {}
 
 	onChange(event) {
-		this.change.emit(event);
+		console.log(event.target.checked);
+		if(event.target.checked) {
+			this.toggle.emit(true);
+		} else {
+			this.toggle.emit(false);
+		}
 	}
 
 }

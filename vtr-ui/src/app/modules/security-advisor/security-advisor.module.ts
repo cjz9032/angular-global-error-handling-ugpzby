@@ -28,6 +28,34 @@ import { IconNamePipe } from 'src/app/pipe/ui-security-statusbar/icon-name.pipe'
 import { SharedModule } from '../shared.module';
 import { CommonUiModule } from '../common/common-ui.module';
 import { CommonWidgetModule } from '../common/common-widget.module';
+import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
+import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module';
+import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
+import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
+import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
+import { UiListChevronModule } from 'src/app/components/ui/ui-list-chevron/ui-list-chevron.module';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
+import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
+import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
+import { faWifi } from '@fortawesome/free-solid-svg-icons/faWifi';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons/faChevronUp';
+import { faWifi as falWifi } from '@fortawesome/pro-light-svg-icons/faWifi';
+import { faCheck as falCheck } from '@fortawesome/pro-light-svg-icons/faCheck';
+import { faTimes as falTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
+import { CommonModalModule } from '../common/common-modal.module';
+import { DialogService } from 'src/app/services/dialog/dialog.service';
+
+library.add(faCircle);
+library.add(faCheck);
+library.add(faTimes);
+library.add(faWifi);
+library.add(falWifi);
+library.add(falCheck);
+library.add(falTimes);
+library.add(faChevronDown);
+library.add(faChevronUp);
 
 @NgModule({
 	declarations: [
@@ -61,7 +89,17 @@ import { CommonWidgetModule } from '../common/common-widget.module';
 		SecurityAdvisorRoutingModule,
 		CommonUiModule,
 		CommonWidgetModule,
-		SharedModule
+		SharedModule,
+		ContainerCardModule,
+		UiButtonModule,
+		WidgetSecurityStatusModule,
+		HeaderMainModule,
+		WidgetOfflineModule,
+		UiListChevronModule,
+		CommonModalModule
+	],
+	providers: [
+		DialogService
 	]
 })
 export class SecurityAdvisorModule { }

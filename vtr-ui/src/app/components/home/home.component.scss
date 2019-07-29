@@ -1,0 +1,11 @@
+@import "../../app.theme.scss";
+
+.vtr-home {
+	width: 100%;
+	min-height: 80vh;
+	height: 100%;
+	.spinner {
+		font-size: 10rem;
+		color: $main;
+	}
+}

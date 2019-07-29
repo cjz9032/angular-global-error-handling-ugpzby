@@ -47,27 +47,27 @@ export class PageSmartAssistComponent implements OnInit {
 
 	headerMenuItems: PageAnchorLink[] = [
 		{
-			title: 'device.smartAssist.jumpTo.security',
+			title: 'device.smartAssist.intelligentSecurity.title',
 			path: 'security',
 			sortOrder: 1
 		},
 		{
-			title: 'device.smartAssist.jumpTo.screen',
+			title: 'device.smartAssist.intelligentScreen.title',
 			path: 'screen',
 			sortOrder: 2
 		},
 		{
-			title: 'device.smartAssist.jumpTo.media',
+			title: 'device.smartAssist.intelligentMedia.heading',
 			path: 'media',
 			sortOrder: 3
 		},
 		{
-			title: 'device.smartAssist.jumpTo.APS',
+			title: 'device.smartAssist.activeProtectionSystem.title',
 			path: 'aps',
 			sortOrder: 4
 		},
 		{
-			title: 'device.smartAssist.jumpTo.voice',
+			title: 'device.smartAssist.voice.title',
 			path: 'voice',
 			sortOrder: 5
 		},
@@ -181,9 +181,9 @@ export class PageSmartAssistComponent implements OnInit {
 			.all([this.smartAssist.getAPSCapability(), this.smartAssist.getSensorStatus(), this.smartAssist.getHDDStatus()])
 			.then((response: any[]) => {
 				console.log(
-				'APS Capability ---------------------------------', response[0],
-				'APS SENSOR ---------------------------------', response[1],
-				'HDD STATUS ---------------------------------', response[2]);
+					'APS Capability ---------------------------------', response[0],
+					'APS SENSOR ---------------------------------', response[1],
+					'HDD STATUS ---------------------------------', response[2]);
 				(response[0] && response[1] && response[2] > 0) ? this.isAPSAvailable = true : this.isAPSAvailable = false;
 
 				if (!this.isAPSAvailable) {
@@ -386,16 +386,10 @@ export class PageSmartAssistComponent implements OnInit {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'device-settings',
-			'Lang': 'EN',
-			'GEO': 'US',
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			Page: 'device-settings'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
 				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {

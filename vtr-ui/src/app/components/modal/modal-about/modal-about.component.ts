@@ -18,6 +18,7 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 
 	buildVersion = environment.appVersion;
 	shellVersion: string;
+	bridgeVersion: string;
 	userGuide: any;
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -39,6 +40,8 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 			// packageVersion.major, packageVersion.minor, packageVersion.build, packageVersion.revision
 			this.shellVersion = `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}`;
 		}
+		const jsBridgeVersion = this.shellService.getVersion();
+		this.bridgeVersion = (jsBridgeVersion) ? jsBridgeVersion : '';
 	}
 
 	ngAfterViewInit() {
