@@ -160,7 +160,7 @@
 		padding-right: 1.4rem;
 	}
 
-	::ng-deep .vtr-ui-button .button-box {
+	::ng-deep .vtr-ui-button .button-box .button {
 		@media #{$mediaquery_12} {
 			width: 85%;
 		}
