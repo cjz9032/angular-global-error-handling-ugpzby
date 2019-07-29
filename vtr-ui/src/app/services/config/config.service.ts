@@ -226,6 +226,20 @@ export class ConfigService {
 		subitems: []
 	},
 	{
+		id: 'home-security',
+		label: 'common.menu.homeSecurity',
+		path: 'home-security',
+		metricsEvent: 'itemClick',
+		metricsParent: 'navbar',
+		metricsItem: 'link.homesecurity',
+		routerLinkActiveOptions: {
+			exact: true
+		},
+		icon: ['fal', 'home-lg-alt'],
+		forArm: false,
+		subitems: []
+	},
+	{
 		id: 'user',
 		label: 'User',
 		path: 'user',
@@ -382,6 +396,25 @@ export class ConfigService {
 		},
 		forArm: false,
 		subitems: []
+	},
+	{
+		id: 'home-security',
+		label: 'common.menu.homeSecurity',
+		path: 'home-security',
+		metricsEvent: 'itemClick',
+		metricsParent: 'navbar',
+		metricsItem: 'link.homesecurity',
+		routerLinkActiveOptions: {
+			exact: true
+		},
+		icon: ['fal', 'home-lg-alt'],
+		forArm: false,
+		subitems: [],
+		pre: [
+			'assets/images/connected-home-security/welcome-page-one.png',
+			'assets/images/connected-home-security/welcome-page-two.png',
+			'assets/images/connected-home-security/welcome-chs-logo.png'
+		]
 	},
 	{
 		id: 'user',

@@ -6,8 +6,6 @@ import { ModalCommonConfirmationComponent } from 'src/app/components/modal/modal
 import { ModalErrorMessageComponent } from 'src/app/components/modal/modal-error-message/modal-error-message.component';
 import { ModalHomeProtectionLocationNoticeComponent } from 'src/app/components/modal/modal-home-protection-location-notice/modal-home-protection-location-notice.component';
 import { ModalIntelligentCoolingModesComponent } from 'src/app/components/modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
-import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
-import { ModalFindUsComponent } from 'src/app/components/modal/modal-find-us/modal-find-us.component';
 import { ModalThreatLocatorComponent } from 'src/app/components/modal/modal-threat-locator/modal-threat-locator.component';
 import { ModalUpdateChangeLogComponent } from 'src/app/components/modal/modal-update-change-log.component/modal-update-change-log.component';
 import { ModalVoiceComponent } from 'src/app/components/modal/modal-voice/modal-voice.component';
@@ -18,6 +16,7 @@ import { SharedModule } from '../shared.module';
 import { MetricsModule } from 'src/app/directives/metrics.module';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
+import { ModalAutocloseComponent } from 'src/app/components/modal/modal-autoclose/modal-autoclose.component';
 
 @NgModule({
 	declarations: [
@@ -28,8 +27,6 @@ import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page
 		ModalErrorMessageComponent,
 		ModalHomeProtectionLocationNoticeComponent,
 		ModalIntelligentCoolingModesComponent,
-		ModalLicenseComponent,
-		ModalFindUsComponent,
 		ModalThreatLocatorComponent,
 		ModalUpdateChangeLogComponent,
 		ModalVoiceComponent,
@@ -37,6 +34,7 @@ import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page
 		ModalWifiSecuriryLocationNoticeComponent,
 		ModalWifiSecurityInvitationComponent,
 		ModalChsWelcomeContainerComponent
+
 	],
 	imports: [
 		CommonModule,
@@ -60,8 +58,6 @@ import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page
 		ModalErrorMessageComponent,
 		ModalHomeProtectionLocationNoticeComponent,
 		ModalIntelligentCoolingModesComponent,
-		ModalLicenseComponent,
-		ModalFindUsComponent,
 		ModalThreatLocatorComponent,
 		ModalUpdateChangeLogComponent,
 		ModalVoiceComponent,
@@ -69,6 +65,7 @@ import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page
 		ModalWifiSecuriryLocationNoticeComponent,
 		ModalWifiSecurityInvitationComponent,
 		ModalChsWelcomeContainerComponent
+
 	]
 })
 export class CommonModalModule { }

@@ -26,11 +26,14 @@ import { CommonUiModule } from './common/common-ui.module';
 import { CommonWidgetModule } from './common/common-widget.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { GamingRoutingModule } from '../modules/gaming-routing.module';
+import { WidgetAutocloseComponent } from '../components/widgets/widget-autoclose/widget-autoclose.component';
 import { ContainerCardModule } from '../components/container-card/container-card.module';
 import { MetricsModule } from '../directives/metrics.module';
 import { faCheck } from '@fortawesome/pro-light-svg-icons/faCheck';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { WidgetOfflineModule } from '../components/widgets/widget-offline-info/widget-offline.module';
+import { ModalAutocloseComponent } from '../components/modal/modal-autoclose/modal-autoclose.component';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 library.add(faCheck);
 
@@ -50,7 +53,9 @@ library.add(faCheck);
 		UiMacrokeyDetailsComponent,
 		UiLightingProfileComponent,
 		UiMacrokeyRecordedListComponent,
-		WidgetMacrokeySettingsComponent
+		WidgetMacrokeySettingsComponent,
+		WidgetAutocloseComponent,
+		ModalAutocloseComponent
 	],
 	imports: [
 		CommonModule,
@@ -63,10 +68,11 @@ library.add(faCheck);
 		ColorPickerModule,
 		ContainerCardModule,
 		MetricsModule,
-		WidgetOfflineModule
+		WidgetOfflineModule,
+		NgbModalModule
 	],
-	exports: [ ContainerCardModule, MetricsModule, WidgetOfflineModule ],
-	schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-	entryComponents: []
+	exports: [ContainerCardModule, MetricsModule, WidgetOfflineModule],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
+	entryComponents: [ModalAutocloseComponent]
 })
-export class GamingModule {}
+export class GamingModule { }

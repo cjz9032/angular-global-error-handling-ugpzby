@@ -6,6 +6,7 @@ import { GuardService } from '../services/guard/security-guardService.service';
 import { PageMacrokeyComponent } from '../components/pages/page-macrokey/page-macrokey.component';
 import { PageLightingcustomizeComponent } from '../components/pages/page-lightingcustomize/page-lightingcustomize.component';
 import { PageNetworkBoostComponent } from '../components/pages/page-network-boost/page-network-boost.component';
+import { PageAutocloseComponent } from './../components/pages/page-autoclose/page-autoclose.component';
 import { PageUserComponent } from '../components/pages/page-user/page-user.component';
 
 const routes: Routes = [
@@ -64,6 +65,15 @@ const routes: Routes = [
 		canActivate: [ GuardService ],
 		data: {
 			pageName: 'NetworkBoost'
+		}
+	},
+	{
+		path: 'autoclose',
+		component: PageAutocloseComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
+		data: {
+			pageName: 'AutoClose'
 		}
 	},
 	{

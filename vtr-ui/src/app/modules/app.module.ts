@@ -34,12 +34,15 @@ import { faMinusCircle } from '@fortawesome/free-solid-svg-icons/faMinusCircle';
 import { faChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
 import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { faCircleNotch } from '@fortawesome/pro-light-svg-icons/faCircleNotch';
+import { faHeart as falHeart } from '@fortawesome/pro-light-svg-icons/faHeart';
 import { RouterModule } from '@angular/router';
 import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
 import { ModalAboutComponent } from '../components/modal/modal-about/modal-about.component';
+import { ModalFindUsComponent } from 'src/app/components/modal/modal-find-us/modal-find-us.component';
 import { CommonPipeModule } from './common/common-pipe.module';
 import { ModalArticleDetailComponent } from '../components/modal/modal-article-detail/modal-article-detail.component';
 import { SharedModule } from './shared.module';
+import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
 
 library.add(faCheck);
 library.add(faExclamation);
@@ -58,6 +61,7 @@ library.add(faMinusCircle);
 library.add(faChevronUp);
 library.add(faChevronDown);
 library.add(faCircleNotch);
+library.add(falHeart);
 
 @NgModule({
 	declarations: [
@@ -65,7 +69,9 @@ library.add(faCircleNotch);
 		HomeComponent,
 		ModalWelcomeComponent,
 		ModalAboutComponent,
+		ModalFindUsComponent,
 		ModalArticleDetailComponent,
+		ModalLicenseComponent
 	],
 	imports: [
 		BrowserModule,
@@ -104,7 +110,9 @@ library.add(faCircleNotch);
 	entryComponents: [
 		ModalWelcomeComponent,
 		ModalAboutComponent,
-		ModalArticleDetailComponent
+		ModalFindUsComponent,
+		ModalArticleDetailComponent,
+		ModalLicenseComponent
 	],
 	bootstrap: [AppComponent],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
