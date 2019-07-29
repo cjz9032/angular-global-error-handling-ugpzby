@@ -305,7 +305,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryConditionNotes[index] = this.batteryConditionNotes[index] + 'Detail';
 	}
 
-<<<<<<< HEAD
+	/**
+	 * maps batteryHealth to a condition status Icon(i.e. good, poor,bad, AcError)
+	 * @param conditionStatus: batteryHealth
+	 * @returns BatteryQuality[conditionStatus]: status of battery for condition icon
+	 */
 	getConditionState(conditionState: number): string {
 		switch (conditionState) {
 			case 3:
@@ -319,26 +323,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				break;
 		}
 		return BatteryQuality[conditionState];
-=======
-	/**
-	 * maps batteryHealth to a condition status Icon(i.e. good, poor,bad, AcError)
-	 * @param conditionStatus: batteryHealth
-	 * @returns BatteryQuality[conditionStatus]: status of battery for condition icon
-	 */
-	getBatteryConditionStatus(conditionStatus: number): string {
-		switch (conditionStatus) {
-			case 3:
-				conditionStatus = 1;
-				break;
-			case 4:
-				conditionStatus = 2;
-				break;
-			case 5:
-				conditionStatus = 2;
-				break;
-		}
-		return BatteryQuality[conditionStatus];
->>>>>>> fb8391b8158cec27a8bf671edd1c433befd3afea
 	}
 
 	reInitValue() {
