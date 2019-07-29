@@ -3,7 +3,6 @@
 		{{'gaming.dashboard.device.legionEdge.lightingColorMessage.text' | translate}}
 	</div>
 
-	
 	<div class="row">
 		<div class="d-flex rgb-header">
 			<h3 class="content-title">{{'gaming.lightingProfile.colourwheel.text7.title' | translate}}</h3>
@@ -12,11 +11,15 @@
 				(click)="onApplyColorEffect(backColor)">
 				<span *ngIf="btnStatus === 'apply'">{{'gaming.lightingProfile.colourwheel.text2.title' | translate}}</span>
 				<span *ngIf="btnStatus === 'applied'">{{'gaming.lightingProfile.colourwheel.text3.title' | translate}}</span>
-				<vtr-spinner *ngIf="btnStatus === 'loading'"></vtr-spinner>
+				<span *ngIf="btnStatus === 'loading'">
+					<fa-icon [icon]="['fal', 'circle-notch']"
+					 [spin]="true"></fa-icon>
+				</span>
+				<!-- <vtr-spinner *ngIf="btnStatus === 'loading'"></vtr-spinner> -->
 			</button>
 		</div>
 	</div>
-	
+
 	<div class="row no-gutters">
 		<div class="col-8 wheel-container">
 			<div id="color-wheel" #colorWheel></div>
@@ -25,7 +28,7 @@
 			<div class="rgb-values">
 				<div class="color-codes">
 					<div class="form-group d-flex justify-content-end">
-						<!-- <div id="rgb-rgb" class="backColorDpiv"  [ngStyle]="{'background-color':  backColor }"></div> -->
+
 						<input id="rgb-rgb" type="text" min="0" max="255" class="input-color"
 							[ngStyle]="{'background-color':  backColor }" readonly>
 					</div>

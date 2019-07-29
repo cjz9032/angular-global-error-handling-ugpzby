@@ -7,7 +7,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { RegionService } from 'src/app/services/region/region.service';
 
 @Component({
 	selector: 'vtr-page-support',
@@ -19,17 +21,18 @@ export class PageSupportComponent implements OnInit {
 	title = 'support.common.getSupport';
 	searchWords = '';
 	searchCount = 1;
+	backupContentArticles: any = [];
 	articles: any = [];
 	/** content | articles */
 	articlesType = 'loading';
 	articleCategories: any = [];
+	isCategoryArticlesShow = false;
 	warrantyData: { info: any, cache: boolean };
 	isOnline: boolean;
 	notificationSubscription: Subscription;
-	langText = 'en';
-	// langText = 'zh-hans';
-	backId = 'support-page-btn-back';
+	language: string;
 	region: string;
+	backId = 'support-page-btn-back';
 	supportDatas = {
 		documentation: [
 			{
@@ -101,6 +104,9 @@ export class PageSupportComponent implements OnInit {
 		'assets/images/support/support-offline-4.jpg',
 	];
 
+	cateStartTime: any;
+	contentStartTime: any;
+
 	constructor(
 		public mockService: MockService,
 		public supportService: SupportService,
@@ -108,19 +114,36 @@ export class PageSupportComponent implements OnInit {
 		private translate: TranslateService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
+		private loggerService: LoggerService,
+		private regionService: RegionService,
 	) {
 		this.isOnline = this.commonService.isOnline;
 		this.warrantyData = this.supportService.warrantyData;
 	}
 
 	ngOnInit() {
-		if (this.translate.currentLang) { this.langText = this.translate.currentLang; }
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
 		this.getWarrantyInfo(this.isOnline);
-		this.fetchCMSContents(this.langText);
-		this.fetchCMSArticleCategory(this.langText);
+		this.regionService.getRegion().subscribe({
+			next: x => {
+				this.region = x;
+			},
+			error: err => {
+				this.region = 'us';
+			}
+		});
+		this.regionService.getLanguage().subscribe({
+			next: x => {
+				this.language = x;
+			},
+			error: err => {
+				this.language = 'en';
+			}
+		});
+		this.fetchCMSArticleCategory(this.language);
+		this.fetchCMSContents();
 	}
 
 	onNotification(notification: AppNotification) {
@@ -129,28 +152,29 @@ export class PageSupportComponent implements OnInit {
 			switch (type) {
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
-					this.isOnline = notification.payload.isOnline;
-					if (this.isOnline) {
-						this.supportService.warrantyData.cache = false;
-						sessionStorage.removeItem('warrantyCache');
-						const retryInterval = setInterval(() => {
-							if (this.articleCategories.length > 0 &&
-								this.articles.length > 0 &&
-								this.supportService.warrantyData.cache
-							) {
-								clearInterval(retryInterval);
-								return;
-							}
-							if (this.articleCategories.length === 0) {
-								this.fetchCMSArticleCategory(this.langText);
-							}
-							if (this.articles.length === 0) {
-								this.fetchCMSContents(this.langText);
-							}
-							if (!this.supportService.warrantyData.cache) {
-								this.getWarrantyInfo(this.isOnline);
-							}
-						}, 2500);
+					if (notification.payload.isOnline !== this.isOnline) {
+						this.isOnline = notification.payload.isOnline;
+						if (this.isOnline) {
+							sessionStorage.removeItem('warrantyCache');
+							const retryInterval = setInterval(() => {
+								const cacheWarranty = sessionStorage.getItem('warrantyCache');
+								if (this.articleCategories.length > 0 &&
+									this.articles.length > 0 &&
+									cacheWarranty) {
+									clearInterval(retryInterval);
+									return;
+								}
+								if (this.articleCategories.length === 0) {
+									this.fetchCMSArticleCategory(this.language);
+								}
+								if (this.articles.length === 0) {
+									this.fetchCMSContents();
+								}
+								if (!cacheWarranty) {
+									this.getWarrantyInfo(this.isOnline);
+								}
+							}, 2500);
+						}
 					}
 					break;
 				default:
@@ -163,41 +187,53 @@ export class PageSupportComponent implements OnInit {
 		this.supportService.getWarrantyInfo(online);
 	}
 
-	fetchCMSContents(lang: string) {
+	fetchCMSContents(lang?: string) {
+		this.contentStartTime = new Date();
 		this.articlesType = 'loading';
-		const queryOptions = {
-			Page: 'support',
-			Lang: lang.toLowerCase(),
-			GEO: 'US',
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'SMB',
-			Brand: 'idea',
+		let queryOptions: any = {
+			Page: 'support'
 		};
+		if (lang) {
+			queryOptions = {
+				Page: 'support',
+				Lang: lang,
+				GEO: 'US',
+			};
+		}
 
-		this.cmsService.fetchCMSContent(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
+				const contentEnd: any = new Date();
+				const contentUseTime = contentEnd - this.contentStartTime;
 				if (response && response.length > 0) {
+					response.forEach(article => {
+						if (article.FeatureImage) {
+							article.FeatureImage = article.FeatureImage.replace('(', '%28').replace( ')', '%29');
+						}
+					});
 					this.articles = response.slice(0, 8);
+					this.backupContentArticles = response.slice(0, 8);
 					// console.log(this.articles);
 					this.articlesType = 'content';
+					const msg = `Performance: Support page get content articles, ${contentUseTime}ms`;
+					this.loggerService.info(msg);
 				} else {
+					const msg = `Performance: Support page not have "${lang}" content articles, ${contentUseTime}ms`;
+					this.loggerService.info(msg);
 					this.fetchCMSContents('en');
 				}
 			},
 			error => {
 				console.log('fetchCMSContent error', error);
-				if (lang !== 'en') {
-					this.fetchCMSContents('en');
-				}
 			}
 		);
 	}
 
 	fetchCMSArticleCategory(lang: string) {
+		this.cateStartTime = new Date();
 		const queryOptions = {
-			Lang: lang.toLowerCase(),
-			GEO: 'US',
+			Lang: this.language,
+			GEO: this.region,
 			OEM: 'Lenovo',
 			OS: 'Windows',
 			Segment: 'SMB',
@@ -206,16 +242,21 @@ export class PageSupportComponent implements OnInit {
 
 		this.cmsService.fetchCMSArticleCategories(queryOptions).then(
 			(response: any) => {
-				// console.log(response);
+				const cateEnd: any = new Date();
+				const cateUseTime = cateEnd - this.cateStartTime;
 				if (response && response.length > 0) {
 					this.articleCategories = response.slice(0, 4);
+					const msg = `Performance: Support page get article category, ${cateUseTime}ms`;
+					this.loggerService.info(msg);
 				} else {
+					const msg = `Performance: Support page not have "${lang}" article category, ${cateUseTime}ms`;
+					this.loggerService.info(msg);
 					this.fetchCMSArticleCategory('en');
 				}
 			},
 			error => {
 				console.log('fetchCMSArticleCategories error', error);
-				if (lang !== 'en') {
+				if (lang.toLowerCase() !== 'en') {
 					this.fetchCMSArticleCategory('en');
 				}
 			}
@@ -223,14 +264,25 @@ export class PageSupportComponent implements OnInit {
 	}
 
 	clickCategory(categoryId: string) {
-		this.fetchCMSArticles(categoryId, this.langText);
+		this.isCategoryArticlesShow = true;
+		this.fetchCMSArticles(categoryId, this.language);
+	}
+
+	onInnerBack() {
+		this.isCategoryArticlesShow = false;
+		if (this.backupContentArticles.length > 0) {
+			this.articlesType = 'content';
+			this.articles = this.backupContentArticles.slice();
+		} else {
+			this.fetchCMSContents();
+		}
 	}
 
 	fetchCMSArticles(categoryId: string, lang: string) {
 		this.articlesType = 'loading';
 		const queryOptions = {
-			Lang: lang.toLowerCase(),
-			GEO: 'US',
+			Lang: this.language,
+			GEO: this.region,
 			OEM: 'Lenovo',
 			OS: 'Windows',
 			Segment: 'SMB',
@@ -241,6 +293,11 @@ export class PageSupportComponent implements OnInit {
 		this.cmsService.fetchCMSArticles(queryOptions, true).then(
 			(response: any) => {
 				if (response && response.length > 0) {
+					response.forEach(article => {
+						if (article.Thumbnail) {
+							article.Thumbnail = article.Thumbnail.replace('(', '%28').replace( ')', '%29');
+						}
+					});
 					this.articles = response;
 					this.articlesType = 'articles';
 				} else {
@@ -249,7 +306,7 @@ export class PageSupportComponent implements OnInit {
 			},
 			error => {
 				console.log('fetchCMSArticles error', error);
-				if (lang !== 'en') {
+				if (lang.toLowerCase() !== 'en') {
 					this.fetchCMSArticles(categoryId, 'en');
 				}
 			}

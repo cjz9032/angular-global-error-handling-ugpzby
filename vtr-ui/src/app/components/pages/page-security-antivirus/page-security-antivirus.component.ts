@@ -13,7 +13,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { RegionService } from 'src/app/services/region/region.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { GuardService } from '../../../services/guard/security-guardService.service';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/internal/Subscription';
 import { Router } from '@angular/router';
 
 @Component({
@@ -27,7 +27,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	viewModel: any;
 	urlPrivacyPolicy = 'https://www.mcafee.com/consumer/en-us/policy/global/legal.html';
 	urlTermsOfService = 'https://www.mcafee.com/consumer/en-us/policy/global/legal.html';
-	urlGetMcAfee = '25CAD7D97D59483381EA39A87685A3C7';
+	mcafeeArticleId: string;
 	cardContentPositionA: any = {};
 	securityAdvisor: SecurityAdvisor;
 	virusScan = 'security.antivirus.common.virusScan';
@@ -53,7 +53,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
 		private router: Router
-		) {
+	) {
 		this.securityAdvisor = this.VantageShell.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
@@ -116,7 +116,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 					title: this.virusScan,
 				}];
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersAntiStatusList, this.viewModel.othersAntistatusList);
-			} else {this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersAntiStatusList, null); }
+			} else { this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersAntiStatusList, null); }
 		}
 		if (this.antiVirus.mcafee || this.antiVirus.others || this.antiVirus.windowsDefender) {
 			this.viewModel.antiVirusPage(this.antiVirus);
@@ -181,7 +181,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			}
 			this.viewModel.antiVirusPage(this.antiVirus);
 		}).on(EventTypes.avWindowsDefenderAntivirusStatusEvent, (data) => {
-			this.viewModel.windowsDefender.status = data ;
+			this.viewModel.windowsDefender.status = data;
 			this.viewModel.windowsDefenderstatusList = [{
 				status: this.viewModel.windowsDefender.status,
 				title: this.virusScan,
@@ -228,10 +228,11 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'anti-virus'
+			Page: 'anti-virus',
+			Template: 'inner-page-right-side-article-image-background'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
 				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {
@@ -239,18 +240,18 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 					if (this.cardContentPositionA.BrandName) {
 						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
 					}
+					this.mcafeeArticleId = this.cardContentPositionA.ActionLink;
+					this.cmsService.fetchCMSArticle(this.mcafeeArticleId).then((r: any) => {
+						if (r && r.Results && r.Results.Category) {
+							this.mcafeeArticleCategory = r.Results.Category.map((category: any) => category.Title).join(' ');
+						}
+					});
 				}
 			},
 			error => {
 				console.log('fetchCMSContent error', error);
 			}
 		);
-
-		this.cmsService.fetchCMSArticle(this.urlGetMcAfee).then((response: any) => {
-			if (response && response.Results && response.Results.Category) {
-				this.mcafeeArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
-			}
-		});
 	}
 
 	openArticle() {
@@ -259,10 +260,10 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			size: 'lg',
 			centered: true,
 			windowClass: 'Article-Detail-Modal',
-			keyboard : false
+			keyboard: false
 		});
 
-		articleDetailModal.componentInstance.articleId = this.urlGetMcAfee;
+		articleDetailModal.componentInstance.articleId = this.mcafeeArticleId;
 	}
 
 	private onNotification(notification: AppNotification) {

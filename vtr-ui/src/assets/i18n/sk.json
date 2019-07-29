@@ -387,7 +387,7 @@
                 "title": "Zariadenie",
                 "sub1": "Moje zariadenie",
                 "sub2": "Nastavenia môjho zariadenia",
-                "sub3": "System Updates",
+                "sub3": "Aktualizácia systému",
                 "sub4": "Inteligentný asistent"
             },
             "security": {
@@ -444,31 +444,31 @@
     },
     "privacy": {
         "headerMain": {
-            "title": "Privacy"
+            "title": "Ochrana osobných údajov"
         }
     },
     "tutorial": {
-        "almostThere": "Almost there!",
-        "para1": "Just a few more buttons to press before we can have liftoff.",
-        "para2": "Before we can give you the most optimal experience there are still a few things to setup.",
-        "personalise": "START PERSONALIZING",
-        "howIsitUsed": "How will you use it?",
-        "howMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "business": "BUSINESS",
-        "personal": "PERSONAL",
-        "custom": "CUSTOM",
-        "skip": "SKIP",
+        "almostThere": "Takmer hotovo!",
+        "para1": "Už stačí stlačiť len niekoľko tlačidiel a môžeme vyštartovať.",
+        "para2": "Skôr než vám budeme môcť poskytnúť tú najoptimálnejšiu prevádzku, treba nastaviť ešte niekoľko vecí.",
+        "personalise": "ZAČAŤ PRISPÔSOBOVANIE",
+        "howIsitUsed": "Ako budete zariadenie používať?",
+        "howMachinUsed": "Kliknite na jeden z týchto spôsobov použitia a uveďte, ako budete používať toto zariadenie?",
+        "business": "PRÁCA",
+        "personal": "OSOBNÉ",
+        "custom": "VLASTNÉ",
+        "skip": "PRESKOČIŤ",
         "next": "ĎALEJ",
-        "interests": "What are your interests?",
-        "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "games": "GAMES",
-        "news": "NEWS",
-        "entertainment": "ENTERTAINMENT",
-        "arts": "ARTS",
-        "politics": "POLITICS",
-        "sports": "SPORTS",
-        "regionalNews": "REGIONAL NEWS",
-        "technology": "TECHNOLOGY"
+        "interests": "Aké sú vaše záujmy?",
+        "howOnesMachinUsed": "Kliknite na jeden z týchto spôsobov použitia a uveďte, ako budete používať toto zariadenie?",
+        "games": "HRY",
+        "news": "SPRÁVY",
+        "entertainment": "ZÁBAVA",
+        "arts": "UMENIE",
+        "politics": "POLITIKA",
+        "sports": "ŠPORT",
+        "regionalNews": "REGIONÁLNE SPRÁVY",
+        "technology": "TECHNOLÓGIA"
     },
     "dashboard": {
         "headerMain": {
@@ -534,7 +534,7 @@
                 }
             },
             "systemUpdate": {
-                "title": "System Update",
+                "title": "Aktualizácia systému",
                 "detail": {
                     "update": "Aktualizovať"
                 }
@@ -636,15 +636,15 @@
                         "acdischarging": "Vybíja sa (s napájacím adaptérom)"
                     },
                     "deviceChemistry": {
-                        "li-polymer": "Li-Polymer",
-                        "li-ion": "Li-Ion",
-                        "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion",
-                        "silver-zinc": "Silver-Zinc",
-                        "silver_zinc": "Silver-Zinc",
-                        "nicd": "NiCd",
-                        "nimh": "NiMH",
-                        "unknown": "Unknown"
+                        "li-polymer": "Lítium-polymérová",
+                        "li-ion": "Lítium-iónová",
+                        "li_polymer": "Lítium-polymérová",
+                        "li_ion": "Lítium-iónová",
+                        "silver-zinc": "Strieborno-zinková",
+                        "silver_zinc": "Strieborno-zinková",
+                        "nicd": "Nikel-kadmiová",
+                        "nimh": "Nikel-metal hydridová",
+                        "unknown": "Neznáma"
                     },
                     "manufacturer": {
                         "title": "Výrobca",
@@ -662,7 +662,7 @@
                     "NotSupportACAdapter": "<b>Napájací adaptér nie je podporovaný.</b> Počítač Lenovo nepodporuje tento napájací adaptér. Môže to spôsobiť náhle vypnutie. Pripojte správny napájací adaptér.",
                     "LimitedACAdapterSupport": "<b>Napájací adaptér nedokáže poskytnúť dostatok energie</b> pre počítač Lenovo, čo ovplyvní výkon systému a rýchlosť nabíjania. Znova pripojte správny napájací adaptér.",
                     "MissingDriver": "<b>Ovládač Lenovo Power Manager</b> nie je nainštalovaný alebo nefunguje správne. Spustite službu Windows Update a nainštalujte najnovší ovládač.",
-                    "StoreLimitation": "<b>Batéria má kapacitu len {{percentageLimitation}}%</b> zo svojej pôvodnej kapacity pri úplnom nabití.",
+                    "StoreLimitation": "<b>Batéria má kapacitu len {{value}}%</b> zo svojej pôvodnej kapacity pri úplnom nabití.",
                     "HighTemperature": "<b>Vybíjanie</b> sa zastavilo, pretože <b>teplota batérie je príliš vysoká.</b>",
                     "TrickleCharge": "Batéria je <b>úplne vybitá</b> a musí sa nabiť. Môže to trvať desať hodín alebo dlhšie.",
                     "OverheatedBattery": "Batéria je <b>príliš horúca</b>. Vyberte ju z počítača a ochlaďte ju na izbovú teplotu.",
@@ -671,7 +671,7 @@
                 "updating": "Aktualizácia",
                 "voltageError": "Nesprávne napätie batérie",
                 "batteryNotDetected": "Nebola zistená žiadna batéria",
-                "thresholdNote": "<b>Poznámka:</b> Ak chcete predĺžiť životnosť batérie, musíte ju nastaviť na zastavenie nabíjania pri kapacite {{chargeThresholdInfo.stopValue}}%."
+                "thresholdNote": "<b>Poznámka:</b> Ak chcete predĺžiť životnosť batérie, musíte ju nastaviť na zastavenie nabíjania pri kapacite {{value}}%."
             },
             "power": {
                 "title": "Napájanie",
@@ -681,42 +681,41 @@
                     "title": "PREJSŤ NA NASTAVENIA",
                     "battery": "Batéria",
                     "power": "Napájanie",
-                    "cooling": "Inteligentné chladenie",
                     "other": "Ostatné",
-                    "smartStandby": "Smart Standby"
+                    "smartStandby": "Inteligentný pohotovostný režim"
                 },
                 "powerSmartSettings": {
                     "title": "Inteligentné nastavenia napájania",
                     "subtitle": "INTELIGENTNÉ CHLADENIE",
                     "subtitle1": "Batéria a tichý",
-                    "description1": "Táto funkcia dynamicky prispôsobuje tepelné nastavenia vašim potrebám.Keď je zapnutá, upravuje nastavenia tak, aby bolo zariadenie chladnejšie, keď ho držíte, alebo tiché, keď je nečinné. V opačnom prípade optimalizuje výkon, keď je zariadenie umiestnené na stabilnom povrchu. Keď je vypnutá, tepelnú prioritu možno nastaviť manuálne.",
+                    "description1": "Keď je táto funkcia zapnutá, dynamicky prispôsobuje tepelné nastavenia vašim potrebám. Upravuje nastavenia tak, aby bolo zariadenie chladné a tiché, keď ho držíte alebo keď je nečinné. Funkcia optimalizuje výkon, keď je zariadenie položené na stabilnom povrchu. Keď je vypnutá, tepelnú prioritu možno nastaviť manuálne.",
                     "description2": "Inteligentné chladenie upravuje otáčky ventilátora, maximálnu teplotu povrchu a výkon.Táto funkcia obsahuje režimy uvedené nižšie, ktoré sú prístupné prostredníctvom jazdca nastavenia výkonu systému Windows.",
                     "description3": "Inteligentné chladenie automaticky prispôsobuje tepelný výkon vašim potrebám.Keď prenosný počítač držíte, funkcia inteligentného chladenia upraví nastavenia výkonu tak, aby bol povrch tabletu chladnejší, čím sa zvýši pohodlie. Keď je zariadenie na povrchu stola, táto funkcia optimalizuje výkon.",
-                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "description13": "Keď je táto funkcia zapnutá, dynamicky prispôsobuje tepelné nastavenia vašim potrebám. Upravuje nastavenia tak, aby bolo zariadenie chladné a tiché, keď ho držíte alebo keď je nečinné. Funkcia optimalizuje výkon, keď je zariadenie položené na stabilnom povrchu. Keď je vypnutá, tepelnú prioritu možno nastaviť manuálne.",
+                    "description14": "Táto funkcia umožňuje nastaviť rýchlosť ventilátora, maximalizovať výkon systému alebo v prípade potreby predĺžiť životnosť batérie. Má tri režimy uvedené ďalej. Medzi režimami môžete prepínať aj pomocou klávesovej skratky (Fn + Q) alebo pomocou panela nástrojov aplikácie Lenovo Vantage.",
                     "readMore": "Prečítajte si ďalšie informácie.",
                     "gotoWindows": {
                         "title": "Prejsť na nastavenia systému Windows",
                         "modalBodyText1": "Jazdec nastavenia výkonu systému Windows zobrazíte kliknutím na ikonu batérie systému Windows v oblasti oznámení systému"
                     },
                     "intelligentCooling": {
-                        "title": "Inteligentné chladenie",
+                        "title": "Inteligentné Chladenie",
                         "description": "",
                         "tooltip": "",
                         "optimize": "optimalizovať systém pre",
                         "apsHint": "Ak chcete povoliť inteligentné chladenie, musíte nainštalovať a povoliť program Lenovo Active Protection System.",
                         "options": {
-                            "quiteCool3": "Režim chladenia",
-                            "performance3": "Vysoký výkon",
+                            "quiteCool3": "Tichý a chladný",
+                            "performance3": "Výkon",
                             "quiteCool4": "Tichý a chladný",
                             "performance4": "Výkon",
                             "quiteCool5": "Tichý a chladný",
                             "performance5": "Výkon",
-                            "batterySaving": "Battery Saving",
-                            "performance13": "Performance",
-                            "quiteCool13": "Quiet & Cool",
-                            "performance14": "Extreme Performance",
-                            "quiteCool14": "Intelligent Cooling"
+                            "batterySaving": "Šetrenie batérie",
+                            "performance13": "Výkon",
+                            "quiteCool13": "Tichý a chladný",
+                            "performance14": "Najvyšší výkon",
+                            "quiteCool14": "Inteligentné chladenie"
                         },
                         "readMore": {
                             "mode1": "Tichý režim",
@@ -725,19 +724,19 @@
                             "line1": "Jazdec sa nachádza úplne vľavo.Otáčky ventilátora a výkon sa znížia, aby sa zaistilo lepšie chladenie, tichší počítač a tá najlepšia výdrž batérie.",
                             "line2": "Jazdec sa nachádza v strede.Otáčky ventilátora a výkon sú dynamicky vyvážené s cieľom zaistiť ten najlepší používateľský zážitok.",
                             "line3": "Jazdec sa nachádza úplne vpravo. Otáčky ventilátora a povolená teplota povrchu počítača sú vyššie s cieľom zaistiť maximálny výkon.",
-                            "line4": "More info"
+                            "line4": "Ďalšie informácie"
                         },
                         "selectedModeText": {
-                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
-                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
-                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                            "quiteCool": "Tento režim umožňuje zažiť ten najlepší zážitok vďaka vyváženiu otáčok ventilátora a výkonu systému. Napríklad pri hraní hier optimalizuje výkon. Zatiaľ čo v kancelárii znižuje hluk.",
+                            "batterySaving": "Tento režim umožňuje dosiahnuť maximálnu výdrž batérie automatickým nastavením jasu, zmenou nastavení napájania, vypnutím rozšírených funkcií spracovania obrazu atď.",
+                            "performance": "Tento režim umožňuje dosiahnuť maximálny výkon systému. V tomto režime môžu vysoké otáčky ventilátora spôsobovať veľký hluk."
                         },
                         "intelligentCoolingModesModal": {
-                            "title": "Change intelligent cooling modes",
-                            "close": "close",
+                            "title": "Zmena inteligentných režimov chladenia",
+                            "close": "zatvoriť",
                             "coolingModesList": {
-                                "list1": "Click on the windows battery-icon in the toolbar",
-                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                                "list1": "Kliknite na ikonu batérie v systéme Windows na paneli s nástrojmi",
+                                "list2": "Zobrazí sa ukazovateľ batérie systému Windows, posunutím jazdca vyberte optimálny čas alebo optimálny výkon."
                             }
                         }
                     },
@@ -748,7 +747,7 @@
                             "battery&Quite": "BATÉRIA A TICHÝ"
                         }
                     },
-                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
+                    "description5": "Inteligentné chladenie upravuje otáčky ventilátora, maximálny výkon a riadi výdrž batérie. Táto funkcia má 3 režimy (tichý režim, vyvážený režim a režim vysokého výkonu) a teraz je dostupná prostredníctvom jazdca na nastavenie výkonu systému Windows"
                 },
                 "powerSettings": {
                     "title": "Nastavenia napájania",
@@ -761,8 +760,8 @@
                         "title": "Jednoduché obnovenie",
                         "description": "Zapnutím tejto funkcie skrátite čas obnovenia prevádzky pri častom zatváraní a otváraní obrazovky počítača.",
                         "tooltip": "Táto funkcia skracuje čas obnovenia prevádzky pri častom zatváraní a otváraní obrazovky počítača. Ak je zapnutá, počítač prejde do úsporného režimu po zatvorení obrazovky. Po otvorení obrazovky do 15 minút od zatvorenia sa však prevádzka obnoví okamžite. Táto funkcia umožňuje prenosnému počítaču pokúsiť sa dokončiť prebiehajúce aktivity (napríklad odosielanie e-mailu alebo preberanie súboru), skôr ako počítač prejde do režimu odstavenia."
-					},
-					"or":"Or"
+                    },
+                    "or": "Alebo"
                 },
                 "otherSettings": {
                     "title": "Ďalšie nastavenia",
@@ -971,7 +970,7 @@
                         "onSunsetToSunriseScheduleDescription": "Naplánovať režim na ochranu zraku medzi západom a východom slnka",
                         "note": {
                             "title": "Poznámka",
-                            "description": "Aplikácia Lenovo Vantage potrebuje prístup k lokálnym informáciám na výpočet času západu a východu slnka vo vašej oblasti."
+                            "description": "Ak je aktivovaný režim na ochranu zraku, táto teplota farby sa neprejaví. Posunutím jazdca však môžete zobraziť náhľad. Aby sa to prejavilo, vypnite režim na ochranu zraku."
                         }
                     },
                     "privacyGuard": {
@@ -989,16 +988,16 @@
                         "reset": "Vynulovať teplotu farieb",
                         "tooltip": "Táto funkcia môže znížiť spotrebu energie a predĺžiť výdrž batérie selektívnym stmavovaním častí obrazovky.",
                         "dropDown": {
-                            "seconds": "seconds",
-                            "minute": "minute",
-                            "minutes": "minutes",
-                            "alwaysOn": "Always on",
-                            "never": "never",
-                            "halfTime": "Half time of display off timer"
+                            "seconds": "sekundy",
+                            "minute": "minúta",
+                            "minutes": "minúty",
+                            "alwaysOn": "Vždy zapnutý",
+                            "never": "nikdy",
+                            "halfTime": "Polovica času, po ktorom sa vypne obrazovka"
                         },
-                        "taskBarDimmer": "TASKBAR DIMMER",
-                        "backgroundDimmer": "BACKGROUND DIMMER",
-                        "displayDimmer": "DISPLAY DIMMER"
+                        "taskBarDimmer": "ZNÍŽENIE JASU PANELA ÚLOH",
+                        "backgroundDimmer": "ZNÍŽENIE JASU POZADIA",
+                        "displayDimmer": "ZNÍŽENIE JASU OBRAZOVKY"
                     }
                 },
                 "camera": {
@@ -1030,10 +1029,10 @@
                         "sketchMode": "Režim náčrtu"
                     },
                     "cameraLoadingFailed": {
-                        "inUseTitle": "CAMERA IS IN USE",
-                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
-                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
-                        "loadingFailedDescription": "Close the app and try again."
+                        "inUseTitle": "FOTOAPARÁT SA POUŽÍVA",
+                        "inUseDescription": "Fotoaparát používa iná aplikácia. Zatvorte aplikáciu a skúste to znova.",
+                        "loadingFailedTitle": "FOTOAPARÁT SA POUŽÍVA ALEBO NAČÍTANIE ZLYHALO",
+                        "loadingFailedDescription": "Zatvorte aplikáciu a skúste to znova."
                     }
                 }
             },
@@ -1085,15 +1084,15 @@
                             "option3": "Zadajte text"
                         }
                     },
-                    "tooltip": "Content to be filled",
+                    "tooltip": "Obsah, ktorý sa má vyplniť",
                     "apply": {
-                        "title": "APPLY"
+                        "title": "POUŽIŤ"
                     },
                     "website": {
-                        "url": "WEBSITE URL"
+                        "url": "ADRESA URL WEBOVEJ LOKALITY"
                     },
                     "enterText": {
-                        "title": "TEXT TO BE ENTERED"
+                        "title": "TEXT, KTORÝ SA MÁ ZADAŤ"
                     }
                 }
             }
@@ -1204,7 +1203,18 @@
                     "hand": {
                         "title": "Zisťovanie blízkosti ruky na okrajoch počítača",
                         "description": "Keď je zapnutý režim tabletu, zapnúť systém APS, keď nebola zistená ruka"
-                    }
+                    },
+                    "more": "VIAC",
+                    "advanced-settings": "ROZŠÍRENÉ NASTAVENIA",
+                    "hide": "SKRYŤ ROZŠÍRENÉ NASTAVENIA"
+                },
+                "APS": {
+                    "more": "VIAC",
+                    "advancedSettings": "ROZŠÍRENÉ NASTAVENIA",
+                    "hideAdvancedSettings": "SKRYŤ ROZŠÍRENÉ NASTAVENIA",
+                    "lowSensitivity": "Nízka citlivosť",
+                    "mediumSensitivity": "Stredná citlivosť",
+                    "highSensitivity": "Vysoká citlivosť"
                 }
             },
             "intelligentMedia": {
@@ -1241,14 +1251,14 @@
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
-                    "title": "Install Failed",
-                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                    "title": "Inštalácia zlyhala",
+                    "desc": "Skúste to znova neskôr, aby ste mohli používať službu Lenovo Voice."
                 }
             }
         }
     },
     "systemUpdates": {
-        "title": "Aktualizácie systému",
+        "title": "Aktualizácia systému",
         "back": "SPÄŤ",
         "history": "ÚPLNÁ HISTÓRIA",
         "notAvailable": "Nie je k dispozícii",
@@ -1294,7 +1304,7 @@
             "title": "Webová lokalita podpory spoločnosti Lenovo"
         },
         "banner": {
-            "neverChecked": "Vitajte v službe System Update.",
+            "neverChecked": "Vitajte v službe aktualizácie systému.",
             "title": "Aktuálny systém je zdravý systém.",
             "last": "Posledná aktualizácia: ",
             "next": "Ďalšia plánovaná aktualizácia: ",
@@ -1398,7 +1408,7 @@
             "overviewBlockTitle": "Zabezpečenie vášho ekosystému: prehľad",
             "allDevices": "Všetky zariadenia",
             "myDevice": "Moje zariadenie",
-            "thisComputer": "This computer",
+            "thisComputer": "Tento počítač",
             "secure": "ZABEZPEČENÉ",
             "needAttention": "VYŽADUJE POZORNOSŤ",
             "manageAccount": "Spravovať konto",
@@ -1672,14 +1682,14 @@
             "title": "Zabezpečenie VPN",
             "header": "SurfEasy VPN",
             "whatIsSufEasy": "Služba SurfEasy VPN šifruje informácie, ktoré odosielate a prijímate, aby ste mohli bezpečne a súkromne používať PC, Mac®, smartfón alebo tablet v prípade akéhokoľvek pripojenia k internetu bez obáv.",
-            "whatCanSufEasy1": "A virtual private network provider that protects you while you are online. Without a VPN, your computer may be more vulnerable to attackers and identity theft. The VPN runs silently in the background and provides security and privacy protection.",
-            "startUseSufEasy4": "SurfEasy users can enjoy 250 MB of free traffic every 30 days! Follow the steps on the &quot;Rewards&quot; tab of the SurfEasy app to get more traffic.",
-            "howToGetData": "How to get free traffic:",
-            "howToGetData1": "Confirm email to win +250 MB traffic",
-            "howToGetData2": "Add a second device to win +250 MB of traffic",
-            "howToGetData3": "Refer a friend and win +500 MB of traffic",
-            "howToGetData4": "Like SurfEasy on Facebook, earn +100 MB of traffic,",
-            "howToGetData5": "Follow SurfEasy on Twitter and win +100 MB of traffic",
+            "whatCanSufEasy1": "Poskytovateľ pripojenia VPN, ktoré vás chráni, keď ste online. Bez pripojenia VPN môže byť váš počítač zraniteľnejší voči útočníkom a krádeži totožnosti. Služba VPN beží ticho na pozadí a poskytuje zabezpečenie a ochranu súkromia.",
+            "startUseSufEasy4": "Používatelia aplikácie SurfEasy získajú zdarma 250 MB voľných dát každých 30 dní! Postupujte podľa krokov na karte &quot;Odmeny&quot; aplikácie SurfEasy a získajte viac dát.",
+            "howToGetData": "Ako získať bezplatné dáta:",
+            "howToGetData1": "Potvrďte svoj e-mail a získajte o 250 MB dát viac",
+            "howToGetData2": "Pridajte druhé zariadenie a získajte o 250 MB dát viac",
+            "howToGetData3": "Doporučte priateľa a získajte o 500 MB dát viac",
+            "howToGetData4": "Potvrďte, že sa vám aplikácia SurfEasy páči v službe Facebook a získajte o 100 MB dát viac",
+            "howToGetData5": "Sledujte SurfEasy v službe Twitter a získajte o 100 MB dát viac",
             "helpKeep": "Služba SurfEasy VPN vám pomôže zaistiť zabezpečenie a súkromný charakter online aktivity.",
             "getSufEasy": "Získať aplikáciu SurfEasy",
             "openSufEasy": "Otvoriť aplikáciu SurfEasy",

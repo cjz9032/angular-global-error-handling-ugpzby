@@ -251,7 +251,6 @@
 					width: 2rem;
 					border-radius: 2rem;
 					border: 0.1rem solid $go_dark;
-					text-align: center;
 					line-height: 0.9rem;
 					display: inline-block;
 					position: absolute;
@@ -261,12 +260,19 @@
 					fa-icon {
 						font-size: 1.5rem;
 						color: $shade_extralight;
+						position: absolute;
+						left: 0.2rem;
+						top: 0.2rem;
 					}
 
 					&.red {
 						background-color: $stop;
 						background-image: linear-gradient(315deg, $stop_light 25%, $stop 100%);
 						border: 0.1rem solid $stop_dark;
+						fa-icon {
+							left: 0.4rem;
+							top: 0.2rem;
+						}
 					}
 				}
 			}

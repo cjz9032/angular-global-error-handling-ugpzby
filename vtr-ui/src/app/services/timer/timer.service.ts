@@ -23,6 +23,7 @@ export class TimerService {
 	public stop(): number {
 		if (this.timer) {
 			clearInterval(this.timer);
+			this.timer = null;
 		}
 		return this.counter;
 	}

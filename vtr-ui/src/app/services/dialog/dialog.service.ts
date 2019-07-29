@@ -8,6 +8,7 @@ import { EventTypes, WifiSecurity } from '@lenovo/tan-client-bridge';
 import { ModalErrorMessageComponent } from 'src/app/components/modal/modal-error-message/modal-error-message.component';
 import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
 
+
 @Injectable({
 	providedIn: 'root'
 })

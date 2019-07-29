@@ -54,7 +54,7 @@ import {
 } from 'src/app/enums/network-status.enum';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { GuardService } from '../../../services/guard/security-guardService.service';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/internal/Subscription';
 import { Router } from '@angular/router';
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 
@@ -72,7 +72,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	windowsHelloLandingViewModel: WindowsHelloLandingViewModel;
 	wifiSecurityLandingViewModel: WifiSecurityLandingViewModel;
 	homeProtectionLandingViewModel: HomeProtectionLandingViewModel;
-	wifiHistory: Array < phoenix.WifiDetail > ;
+	wifiHistory: Array<phoenix.WifiDetail>;
 	securityAdvisor: phoenix.SecurityAdvisor;
 	antivirus: phoenix.Antivirus;
 	wifiSecurity: phoenix.WifiSecurity;
@@ -85,7 +85,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	cardContentPositionA: any = {};
 	isOnline: boolean;
 	notificationSubscription: Subscription;
-	region: string;
+	showVpn: boolean;
 	backId = 'sa-ov-btn-back';
 	isRS5OrLater: boolean;
 	itemStatusClass = {
@@ -136,15 +136,23 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
-			this.refreshAll();
-		}
 		this.regionService.getRegion().subscribe({
-			next: x => { this.region = x; },
+			next: x => {
+				this.showVpn = true;
+				if (x === 'cn') {
+					this.showVpn = false;
+				}
+			},
 			error: () => {
-				this.region = 'US';
+				this.showVpn = true;
 			}
 		});
+		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+			this.refreshAll();
+		} else {
+			this.getScore();
+			this.getMaliciousWifi();
+		}
 		this.fetchCMSArticles();
 	}
 
@@ -237,6 +245,9 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 				const connected = new Date(wifi.info);
 				const monthFirst = new Date();
 				monthFirst.setDate(1);
+				monthFirst.setHours(0);
+				monthFirst.setMinutes(0);
+				monthFirst.setSeconds(0);
 				return wifi.good !== '0' && connected > monthFirst;
 			}).length;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingMaliciousWifi, this.maliciousWifi);
@@ -247,7 +258,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		const antivirusScoreInit = [
 			this.antivirusLandingViewModel.subject.status,
 			this.passwordManagerLandingViewModel.subject.status,
-			this.region !== 'CN' ? this.vpnLandingViewModel.subject.status : null,
+			this.showVpn ? this.vpnLandingViewModel.subject.status : null,
 			this.wifiSecurityLandingViewModel.subject.status,
 			this.windowsHelloLandingViewModel ? this.windowsHelloLandingViewModel.subject.status : null
 		];
@@ -262,10 +273,10 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'security'
+			Page: 'security'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
 				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {

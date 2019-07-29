@@ -1,17 +1,6 @@
 import { Validators } from '@angular/forms';
-import {
-	Component,
-	OnInit,
-	Input,
-	Output,
-	EventEmitter,
-	OnChanges,
-	DoCheck,
-	ViewChild,
-	ViewChildren
-} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, DoCheck } from '@angular/core';
 import { isUndefined } from 'util';
-import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { MacrokeyService } from 'src/app/services/gaming/macrokey/macrokey.service';
 import { MacroKeyRepeat } from 'src/app/enums/macrokey-repeat.enum';
 import { MacroKeyInterval } from 'src/app/enums/macrokey-interval.enum.1';
@@ -141,6 +130,9 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 		this.macrokeyService.setMacroKey(this.number.key, remainingInputs).then((responseStatus) => {
 			if (responseStatus) {
 				this.recordsData.inputs = remainingInputs;
+				if (this.number.key === '0' || this.number.key === 'M1') {
+					this.macrokeyService.updateMacrokeyInitialKeyDataCache(this.recordsData.inputs);
+				}
 			}
 		});
 	}
@@ -153,6 +145,16 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 	deleteAllMacros(canDelete) {
 		if (canDelete) {
 			this.macrokeyService.clearKey(this.number.key);
+			if (this.number.key === '0' || this.number.key === 'M1') {
+				this.macrokeyService.updateMacrokeyInitialKeyDataCache([]);
+				this.recordsData.repeat = MacroKeyRepeat.Repeat1;
+				this.recordsData.interval = MacroKeyInterval.KeepInterval;
+				this.ignoreInterval = false;
+				this.repeatSelectedValue = this.recordsData.repeat;
+				this.delaySelectedValue = this.recordsData.interval;
+				this.macrokeyService.updateMacrokeyInitialKeyIntervalDataCache(MacroKeyInterval.KeepInterval);
+				this.macrokeyService.updateMacrokeyInitialKeyRepeatDataCache(MacroKeyRepeat.Repeat1);
+			}
 		}
 	}
 
@@ -188,22 +190,18 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 
 	onRepeatChanged(repeatOption) {
 		this.macrokeyService.setRepeat(this.number.key, repeatOption.value).then((responseStatus) => {
-			console.log('########################## Set repeat status: ', responseStatus);
-			console.log('########################## Set repeat option: ', repeatOption.value);
 			if (responseStatus) {
 				this.recordsData.repeat = repeatOption.value;
-				this.macrokeyService.setOnRepeatStatusCache(repeatOption.value);
+				this.macrokeyService.setOnRepeatStatusCache(repeatOption.value, this.number.key);
 			}
 		});
 	}
 
 	onIntervalChanged(intervalOption) {
 		this.macrokeyService.setInterval(this.number.key, intervalOption.value).then((responseStatus) => {
-			console.log('########################## Set interval status: ', responseStatus);
-			console.log('########################## Set interval option: ', intervalOption.value);
 			if (responseStatus) {
 				this.recordsData.interval = intervalOption.value;
-				this.macrokeyService.setOnIntervalStatusCache(intervalOption.value);
+				this.macrokeyService.setOnIntervalStatusCache(intervalOption.value, this.number.key);
 			}
 		});
 

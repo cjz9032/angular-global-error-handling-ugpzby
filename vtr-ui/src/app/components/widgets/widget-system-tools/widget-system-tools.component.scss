@@ -71,7 +71,7 @@
 							left: 0;
 							bottom: 0;
 							right: 0;
-							margin: -0.4rem;
+							margin: -3px;
 							background-image: $gaming_icon_gradient;
 							z-index: -1;
 						}
@@ -88,15 +88,16 @@
 							z-index: 0;
 							transition: all .3s ease-in-out;
 						}
-						.icon {
+						.icon{
 							position: relative;
 							z-index: 2;
-							font-size: 4rem;
+							font-size: 3.5rem;
 							background: $gaming_icon_gradient;
 							-webkit-background-clip: text;
 							-webkit-text-fill-color: transparent;
 							background-clip: text;
-							padding-top: 0.8rem;
+							color: $gaming_light_blue;
+							// padding-top: 0.8rem;
 						}
 					}
 					figcaption {

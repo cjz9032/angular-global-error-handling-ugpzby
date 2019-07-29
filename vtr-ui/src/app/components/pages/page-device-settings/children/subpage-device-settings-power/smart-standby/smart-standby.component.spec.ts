@@ -2,24 +2,24 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SmartStandbyComponent } from './smart-standby.component';
 
-describe('SmartStandbyComponent', () => {
-//   let component: SmartStandbyComponent;
-//   let fixture: ComponentFixture<SmartStandbyComponent>;
+xdescribe('SmartStandbyComponent', () => {
+	let component: SmartStandbyComponent;
+	  let fixture: ComponentFixture<SmartStandbyComponent>;
 
-  beforeEach(async(() => {
-    // TestBed.configureTestingModule({
-    //   declarations: [ SmartStandbyComponent ]
-    // })
-    // .compileComponents();
-  }));
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [SmartStandbyComponent]
+		})
+			.compileComponents();
+	}));
 
-  beforeEach(() => {
-    // fixture = TestBed.createComponent(SmartStandbyComponent);
-    // component = fixture.componentInstance;
-    // fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(SmartStandbyComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-   // expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });
