@@ -1,3 +1,4 @@
+import { Status } from './../../../data-models/widgets/status.model';
 import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { GamingCollapsableContainerEvent } from 'src/app/data-models/gaming/gaming-collapsable-container-event';
 import { MacrokeyService } from 'src/app/services/gaming/macrokey/macrokey.service';
@@ -17,7 +18,7 @@ import { MacroKeyInputChange } from 'src/app/data-models/gaming/macrokey/macroke
 @Component({
 	selector: 'vtr-widget-macrokey-settings',
 	templateUrl: './widget-macrokey-settings.component.html',
-	styleUrls: ['./widget-macrokey-settings.component.scss']
+	styleUrls: [ './widget-macrokey-settings.component.scss' ]
 })
 export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	macroKeyOptions: any = [
@@ -56,7 +57,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		private router: Router,
 		private commonService: CommonService,
 		private gamingCapabilityService: GamingAllCapabilitiesService
-	) { }
+	) {}
 
 	ngOnInit() {
 		this.gamingProperties.macroKeyFeature = this.gamingCapabilityService.getCapabilityFromCache(
@@ -73,6 +74,17 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		this.macroKeyTypeStatus = this.macroKeyService.getMacrokeyTypeStatusCache();
 		this.macroKeyRecordedStatus = this.macroKeyService.getMacrokeyRecordedStatusCache();
 		this.macroKeyInputData = this.macroKeyService.getMacrokeyInputChangeCache();
+		if (this.macroKeyTypeStatus.MacroKeyType !== undefined) {
+			if (this.macroKeyTypeStatus.MacroKeyType === 1) {
+				this.isNumpad = false;
+			} else {
+				this.isNumpad = true;
+			}
+		}
+		this.macroKeyInputData = this.macroKeyService.getMacrokeyInitialKeyDataCache();
+		this.numberSelected = this.macroKeyRecordedStatus.filter(
+			(number) => number.key === this.macroKeyInputData.key
+		)[0];
 	}
 
 	initMacroKeySubpage() {
@@ -125,7 +137,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	}
 
 	redirectBack() {
-		this.router.navigate(['dashboard']);
+		this.router.navigate([ '/device-gaming' ]);
 	}
 
 	onGamingMacroKeyInitializeEvent(macroKeyTypeEventResponse: any) {
@@ -171,11 +183,14 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	updateMacroKeyKeyChangeDetails(macroKeyKeyChangeEventData) {
 		if (macroKeyKeyChangeEventData) {
 			this.macroKeyInputData = macroKeyKeyChangeEventData;
-			// Setting the value from cache
 			this.macroKeyService.setMacrokeyInputChangeCache(this.macroKeyInputData);
 			this.numberSelected = this.macroKeyRecordedStatus.filter(
 				(number) => number.key === macroKeyKeyChangeEventData.key
 			)[0];
+
+			if (macroKeyKeyChangeEventData.key === '0' || macroKeyKeyChangeEventData.key === 'M1') {
+				this.macroKeyService.setMacrokeyInitialKeyDataCache(this.macroKeyInputData);
+			}
 		}
 	}
 
@@ -190,7 +205,6 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	}
 
 	onNumberSelected(number) {
-		console.log('########################### key selected', number.key);
 		this.macroKeyService.setKey(number.key);
 		this.numberSelected = number;
 	}
@@ -234,8 +248,6 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 
 	updateMacroKeyInputDetails(macroKeyInputChangeData) {
 		if (macroKeyInputChangeData) {
-			console.log(macroKeyInputChangeData);
-			// TODO: Update cache for macrokey type
 			this.macroKeyService.setMacrokeyInputChangeCache(this.macroKeyInputData);
 			this.macroKeyInputData.macro.inputs = macroKeyInputChangeData;
 		}

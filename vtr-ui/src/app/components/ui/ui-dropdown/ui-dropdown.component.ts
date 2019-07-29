@@ -22,6 +22,7 @@ import {
 export class UiDropDownComponent implements OnInit, OnChanges {
 	@Input() list: DropDownInterval[];
 	@Input() value: number;
+	@Input() disabled = false;
 	@Output() change: EventEmitter < any > = new EventEmitter < any > ();
 	public isDropDownOpen = false;
 	public name = 'Select';
@@ -56,7 +57,9 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 	}
 
 	public toggle() {
-		this.isDropDownOpen = !this.isDropDownOpen;
+		if (!this.disabled) {
+			this.isDropDownOpen = !this.isDropDownOpen;
+		}
 	}
 
 	public select(event: DropDownInterval) {

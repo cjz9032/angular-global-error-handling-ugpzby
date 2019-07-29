@@ -37,10 +37,10 @@
 												<div class="col">
 													<span class="title"
 														[ngClass]="{'light-title':item.lightTitle}">
-														<fa-icon class="success"
+														<fa-icon class="success" id="{{item.packageID +':success'}}" attr.aria-label="{{item.packageID +':success'}}"
 															*ngIf="item.status.toLocaleLowerCase() === 'installed'"
 															[icon]="['fas', 'check-circle']"></fa-icon>
-														<fa-icon class="failure"
+														<fa-icon class="failure" id="{{item.packageID +':failure'" attr.aria-label="{{item.packageID +':failure'}}"
 															*ngIf="item.status.toLocaleLowerCase() === 'failed'"
 															[icon]="['fas', 'times-circle']"></fa-icon>
 														{{item.packageDesc}} - {{item.version}}

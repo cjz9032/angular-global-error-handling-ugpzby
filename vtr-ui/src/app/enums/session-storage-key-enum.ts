@@ -7,10 +7,12 @@ export enum SessionStorageKey {
 	SecurityWifiSecurityInWifiPage = '[SessionStorageKey] SecurityWifiSecurityInWifiPage',
 	SecurityWifiSecurityShowPluginMissingDialog = '[SessionStorageKey] SecurityWifiSecurityShowPluginMissingDialog',
 	SecurityWifiSecurityShowHistoryNum = '[SessionStorageKey] SecurityWifiSecurityShowHistoryNum',
+	SecurityWifiSecurityIsGetDevicePosture = '[SessionStorageKey] SecurityWifiSecurityIsGetDevicePosture',
 	HomeProtectionInCHSPage = '[SessionStorageKey] HomeProtectionInCHSPage',
 	HomeSecurityShowPluginMissingDialog = '[SessionStorageKey] HomeSecurityShowPluginMissingDialog',
 	HomeSecurityShowWelcomeDialog = '[SessionStorageKey] HomeSecurityShowWelcomeDialog',
 	HomeSecurityShowLocationPermisisonDialog = '[SessionStorageKey] HomeSecurityShowLocationPermisisonDialog',
 	WidgetWifiStatus = '[SessionStorageKey] WidgetWifiStatus',
-	ChsLocationDialogNextShowFlag = '[SessionStorageKey] ChsLocationDialogNextShowFlag'
+	ChsLocationDialogNextShowFlag = '[SessionStorageKey] ChsLocationDialogNextShowFlag',
+	ChsIsGetDevicePosture = '[SessionStorageKey] ChsIsGetDevicePosture'
 }

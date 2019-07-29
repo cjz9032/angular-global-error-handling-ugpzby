@@ -2,7 +2,6 @@
  * this enum is for local storage keys. new keys can be added here. please give meaningful names to key.
  */
 export enum LocalStorageKey {
-	MachineInfo = '[LocalStorageKey] MachineInfo',
 	WelcomeTutorial = '[LocalStorageKey] WelcomeTutorial',
 	SecurityVPNStatus = '[LocalStorageKey] SecurityVPNStatus',
 	SecurityPasswordManagerStatus = '[LocalStorageKey] SecurityPasswordManagerStatus',
@@ -47,6 +46,7 @@ export enum LocalStorageKey {
 	ConnectedHomeSecurityMyDevice = '[LocalStorageKey] ConnectedHomeSecurityMyDevice',
 	ConnectedHomeSecurityNotifications = '[LocalStorageKey] ConnectedHomeSecurityNotifications',
 	NetworkBoostStatus = '[LocalStorageKey] NetworkBoostStatus',
+	AutoCloseStatus = '[LocalStorageKey] AutoCloseStatus',
 	ConnectedHomeSecurityWelcomeComplete = '[LocalStorageKey] ConnectedHomeSecurityWelcomeComplete',
 	/**
 	 * 0  means "ideaPad",
@@ -55,6 +55,7 @@ export enum LocalStorageKey {
 	 * 3 means "thinkCenter"
 	 */
 	MachineType = '[LocalStorageKey] MachineType',
+	MachineFamilyName = '[LocalStorageKey] MachineFamilyName',
 	TouchpadLockStatus = '[LocalStorageKey] TouchpadLockStatus',
 	DolbyModeCache = '[LocalStorageKey] DolbyModeCache',
 	RapidChargeCache = '[LocalStorageKey] RapidChargeCache',
@@ -129,6 +130,7 @@ export enum LocalStorageKey {
 	PrevMacroKey = '[LocalStorageKey] PrevMacroKey',
 	PrevMacroKeyRepeat = '[LocalStorageKey] PrevMacroKeyRepeat',
 	PrevMacroKeyInterval = '[LocalStorageKey] PrevMacroKeyInterval',
+	InitialKeyMacroKeyData = '[LocalStorageKey] InitialKeyMacroKeyData',
 	CurrentMacroKeyRepeat = '[LocalStorageKey] CurrentMacroKeyRepeat',
 	CurrentMacroKeyInterval = '[LocalStorageKey] CurrentMacroKeyInterval',
 	SubBrand = '[LocalStorageKey] SubBrand',
@@ -136,7 +138,6 @@ export enum LocalStorageKey {
 	UserDeterminePrivacy = '[LocalStorageKey] UserDeterminePrivacy',
 
 	SmartAssistCapability = '[LocalStorageKey] SmartAssistCapability',
-	RemainingPercentages = '[LocalStorageKey] RemainingPercentages',
 	// server switch strorage key
 	ServerSwitchKey = '[LocalStorageKey] ServerSwitch',
 	memOCFeatureStatus = '[LocalStorageKey] MemOCFeatureStatus',

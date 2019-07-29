@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
@@ -11,11 +11,11 @@ import { HttpClient } from '@angular/common/http';
 	templateUrl: './modal-welcome.component.html',
 	styleUrls: ['./modal-welcome.component.scss']
 })
-export class ModalWelcomeComponent implements OnInit {
+export class ModalWelcomeComponent implements OnInit, AfterViewInit {
 	progress = 49;
 	isInterestProgressChanged = false;
 	page = 1;
-	privacyPolicy: boolean = true;
+	privacyPolicy = true;
 	checkedArray: string[] = [];
 	startTime: number;
 	endTime: number;
@@ -35,36 +35,43 @@ export class ModalWelcomeComponent implements OnInit {
 	// to show small list. on click of More Interest show all.
 	interestCopy = this.interests.slice(0, 8);
 	hideMoreInterestBtn = false;
-	constructor(public activeModal: NgbActiveModal,
+	welcomeStart: any = new Date();
+	constructor(
+		public activeModal: NgbActiveModal,
 		shellService: VantageShellService,
-		private http:HttpClient,
+		private http: HttpClient,
 		public commonService: CommonService) {
 		this.startTime = new Date().getTime();
 		this.metrics = shellService.getMetrics();
 		this.privacyPolicy = this.metrics.metricsEnabled;
 		const self = this;
-		shellService.getMetricsPolicy((result)=>{
+		shellService.getMetricsPolicy((result) => {
 			self.privacyPolicy = result;
-			self.metrics.metricsEnabled =  (self.privacyPolicy === true);
 		});
 	}
 
 	ngOnInit() {
 	}
 
+	ngAfterViewInit() {
+		const welcomeEnd: any = new Date();
+		const welcomeUseTime = welcomeEnd - this.welcomeStart;
+		console.log(`Performance: TutorialPage after view init. ${welcomeUseTime}ms`);
+	}
+
 	next(page) {
 		this.metrics.metricsEnabled = (this.privacyPolicy === true);
 		let tutorialData;
 		if (page < 2) {
-			this.endTime=new Date().getTime();
+			this.endTime = new Date().getTime();
 			const data = {
 				ItemType: 'PageView',
 				PageName: 'WelcomePage',
-				PageDuration: Math.floor((this.endTime - this.startTime)/1000)
+				PageDuration: Math.floor((this.endTime - this.startTime) / 1000)
 			};
 			console.log('PageView Event', JSON.stringify(data));
 			this.metrics.sendAsync(data);
-			this.startTime=new Date().getTime();
+			this.startTime = new Date().getTime();
 			this.page = page;
 			this.progress = 49;
 			tutorialData = new WelcomeTutorial(1, null, null);
@@ -101,7 +108,7 @@ export class ModalWelcomeComponent implements OnInit {
 			const data = {
 				ItemType: 'PageView',
 				PageName: 'WelcomePage',
-				PageDuration: Math.floor((this.endTime - this.startTime)/1000)
+				PageDuration: Math.floor((this.endTime - this.startTime) / 1000)
 			};
 			console.log('PageView Event', JSON.stringify(data));
 			this.metrics.sendAsync(data);

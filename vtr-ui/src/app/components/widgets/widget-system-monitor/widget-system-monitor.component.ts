@@ -14,12 +14,9 @@ import { SystemStatus } from 'src/app/data-models/gaming/system-status.model'
 export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public cpuUseFrequency: string;
 	public cpuBaseFrequence: string;
-	//public cpuUsage: number = 0;
 	public gpuMemorySize: string;
 	public memorySize: string;
 	public gpuUsedMemory: string;
-	//public gpuUsage:string;
-	//public memoryUsed: string;
 	public type: string;
 	public isSystemDisk: boolean;
 	public capacity: number;
@@ -42,17 +39,12 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public loop: any;
 	public gamingCapabilities: any = new GamingAllCapabilities();
 	public SystemStatusObj: any = new SystemStatus();
-
 	@Input() cpuCurrent = .4;
 	@Input() cpuMax = 2.2;
-
 	@Input() gpuCurrent = 1.8;
 	@Input() gpuMax = 3.3;
-
 	@Input() ramCurrent = 15.7;
 	@Input() ramMax = 32;
-	//@Input() cpuover = 'Intel';
-
 	public hds: any = [];
 	public defaultHds = [{
 		capacity: 476,
@@ -62,60 +54,6 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		type: 'SSD',
 		usedDisk: 71
 	}];
-
-	// @Input() hds = [
-	// 	{
-	// 		capacity: 476,
-	// 		diskUsage: "84",
-	// 		hddName: "LENSE30512GMSP34MEAT3TA",
-	// 		isSystemDisk: "true",
-	// 		type: "SSD",
-	// 		usedDisk: "400"
-	// 	}
-	// ];
-
-	//  hds = [
-	// 	{
-	// 		capacity: 476,
-	// 		diskUsage: "14",
-	// 		hddName: "LENSE30512GMSP34MEAT3TA",
-	// 		isSystemDisk: "true",
-	// 		type: "SSD",
-	// 		usedDisk: "71"
-	// 	},
-	// 	{
-	// 		capacity: 2000,
-	// 		diskUsage: "75",
-	// 		hddName: "LENSE30512GMSP34MEAT3TB",
-	// 		isSystemDisk: "false",
-	// 		type: "HDD",
-	// 		usedDisk: "1500"
-	// 	},
-	// 	{
-	// 		capacity: 4000,
-	// 		diskUsage: "25",
-	// 		hddName: "LENSE30512GMSP34MEAT3TC",
-	// 		isSystemDisk: "false",
-	// 		type: "HDD",
-	// 		usedDisk: "1000"
-	// 	},
-	// 	{
-	// 		capacity: 2000,
-	// 		diskUsage: "75",
-	// 		hddName: "LENSE30512GMSP34MEAT3TD",
-	// 		isSystemDisk: "false",
-	// 		type: "HDD",
-	// 		usedDisk: "1500"
-	// 	},
-	// 	{
-	// 		capacity: 4000,
-	// 		diskUsage: "25",
-	// 		hddName: "LENSE30512GMSP34MEAT3TE",
-	// 		isSystemDisk: "false",
-	// 		type: "HDD",
-	// 		usedDisk: "1000"
-	// 	}
-	// ];
 
 	constructor(
 		private hwInfoService: HwInfoService,
@@ -244,10 +182,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	}
 
 
-
-
 	public getLocalSystemCache() {
-
 		if (this.GetcpuBaseFrequencyCache() !== undefined) {
 			this.cpuCurrent = this.GetcpuBaseFrequencyCache();
 		}
@@ -327,23 +262,20 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			}
 			if (hwInfo.cpuUseFrequency !== '') {
 				this.cpuCurrent = hwInfo.cpuUseFrequency.split('GHz')[0];
-				// this.cpuUseFrequency = hwInfo.cpuUseFrequency.split('GHz')[0];
+
 			}
-			// this.cpuCurrent = parseFloat(this.cpuUseFrequency);
+
 			this.SystemStatusObj.cpuBaseFrequency = this.cpuCurrent;
 			this.SystemStatusObj.cpuUsage = hwInfo.cpuUsage;
 			if (hwInfo.gpuUsedMemory !== '') {
 				this.gpuCurrent = hwInfo.gpuUsedMemory.split('GB')[0];
-				// this.gpuUsedMemory = hwInfo.gpuUsedMemory.split('GB')[0];
 			}
-			// this.gpuCurrent = parseFloat(this.gpuUsedMemory);
+
 			this.SystemStatusObj.gpuCapacity = this.gpuCurrent;
 			this.SystemStatusObj.gpuUsage = hwInfo.gpuUsage;
 			if (hwInfo.memoryUsed !== '') {
 				this.ramCurrent = hwInfo.memoryUsed.split('GB')[0];
-				// this.memoryUsed = hwInfo.memoryUsed.split('GB')[0];
 			}
-			// this.ramCurrent = parseFloat(this.memoryUsed);
 			this.SystemStatusObj.memorySize = this.ramCurrent;
 			this.SystemStatusObj.ramUsage = hwInfo.memoryUsage;
 			this.initialiseDisksList(hwInfo.diskList);
@@ -392,23 +324,17 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				console.log('getMachineInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
 				if (hwInfo.cpuBaseFrequence !== '') {
 					this.cpuMax = hwInfo.cpuBaseFrequence;
-					// this.cpuBaseFrequence = hwInfo.cpuBaseFrequence.split('GHz')[0];
 				}
-				// this.cpuMax = parseFloat(this.cpuBaseFrequence);
 				this.SystemStatusObj.cpuCapacity = this.cpuMax;
 				this.commonService.setLocalStorageValue(LocalStorageKey.cpuCapacity, this.cpuMax);
 				if (hwInfo.gpuMemorySize !== '') {
 					this.gpuMax = hwInfo.gpuMemorySize;
-					// this.gpuMemorySize = hwInfo.gpuMemorySize.split('GB')[0];
 				}
-				// this.gpuMax = parseFloat(this.gpuMemorySize);
 				this.SystemStatusObj.gpuMaxFrequency = this.gpuMax;
 				this.commonService.setLocalStorageValue(LocalStorageKey.gpuMaxFrequency, this.gpuMax);
 				if (hwInfo.memorySize !== '') {
 					this.ramMax = hwInfo.memorySize;
-					// this.memorySize = hwInfo.memorySize.split('GB')[0];
 				}
-				// this.ramMax = parseFloat(this.memorySize);
 				this.SystemStatusObj.ramCapacity = this.ramMax;
 				this.commonService.setLocalStorageValue(LocalStorageKey.ramCapacity, this.ramMax);
 				this.cpuModuleName = hwInfo.cpuModuleName;
@@ -429,7 +355,6 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		}
 	}
 
-
 	convertToBoolean(input: string): boolean | undefined {
 		try {
 			return JSON.parse(input);
@@ -437,8 +362,6 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			return undefined;
 		}
 	}
-
-
 
 	ngOnInit() {
 		this.gamingCapabilities.cpuInfoFeature = this.gamingCapabilityService.getCapabilityFromCache(
@@ -476,8 +399,6 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	}
 
 	getLeftDeg(pct) {
-		// let pct = (current / max);
-		// console.log('LEFT DEG', current, max, pct);
 		if (pct > 1) {
 			pct = 1;
 		}
@@ -490,8 +411,6 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	}
 
 	getRightDeg(pct) {
-		// let pct = (current / max);
-		// console.log('RIGHT DEG', current, max, pct);
 		if (pct > 1) {
 			pct = 1;
 		}
@@ -522,5 +441,4 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		const pct = Math.floor((current / max) * 100);
 		return pct;
 	}
-
 }

@@ -21,6 +21,7 @@ export class AvailableUpdateDetail {
 	public isSelected = true;
 	public isInstalled = false;
 	public isDependency = false;
+	public dependedByPackages = '';
 	public isIgnored = false;
 	public isACAttached = true;
 	public installationStatus: UpdateActionResult = UpdateActionResult.Unknown;

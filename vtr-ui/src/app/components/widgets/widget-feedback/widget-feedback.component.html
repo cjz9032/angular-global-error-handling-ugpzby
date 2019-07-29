@@ -9,12 +9,21 @@
 					{{ description }}
 				</div>
 				<div *ngIf="actionName"
-					class="button-box">
+					class="button-box d-none d-lg-block">
 					<vtr-ui-button (onClick)="feedback($event)"
 						id="widget-btn-feedback"
 						aria-label="widget-btn-feedback"
 						metricsItem="btn.givefeedback"
 						[isFullWidth]="true"
+						[label]="actionName"></vtr-ui-button>
+				</div>
+				<div *ngIf="actionName"
+					class="button-box d-lg-none">
+					<vtr-ui-button (onClick)="feedback($event)"
+						id="widget-btn-feedback"
+						aria-label="widget-btn-feedback"
+						metricsItem="btn.givefeedback"
+						[isHalfWidth]="true"
 						[label]="actionName"></vtr-ui-button>
 				</div>
 			</div>

@@ -76,7 +76,7 @@
 
 	<div *ngIf="showIC===5">
 		<div class="row py-5 smartsettings-card"
-			id="cooling">
+			id="smartSettings">
 			<div class="col-10 mx-auto ">
 				<vtr-container-collapsible
 					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
@@ -92,7 +92,7 @@
 							<p>{{'device.deviceSettings.power.powerSmartSettings.description5' | translate}}
 								<a class="read-more-link"
 									*ngIf="!onReadMoreClick"
-									(click)="readMore()">Read more.</a>
+									(click)="readMore()">{{'device.deviceSettings.power.powerSmartSettings.readMore' | translate}}</a>
 							</p>
 							<div *ngIf="onReadMoreClick">
 								<p> <span
