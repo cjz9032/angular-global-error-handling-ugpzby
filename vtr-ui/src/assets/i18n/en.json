@@ -506,7 +506,13 @@
 			"title": "Your Quick Settings",
 			"microphone": "Microphone",
 			"cameraPrivacy": "Camera",
-			"eyeCareMode": "Eye Care Mode"
+			"eyeCareMode": "Eye Care Mode",
+			"note": {
+				"accessNote": "doesn't have access to Lenovo Vantage",
+				"microphoneAndcameraPrivacyNotes": "Camera and Microphone",
+				"accessUrl" : "Go to Windows settings to give access"
+				
+			}
 		},
 		"systemStatus": {
 			"title": "System Status",
@@ -609,6 +615,7 @@
 				"thresholdNote": "<b>Note:</b> To extend the battery lifespan, you have set your battery to stop charging at {{value}}%.",
 				"voltageError": "Battery voltage incorrect",
 				"batteryNotDetected": "No battery detected",
+				"seeDetailsLink": "See Details",
 				"details": {
 					"title": "Battery Details",
 					"primary": "Primary Battery",
@@ -664,8 +671,10 @@
 					"Bad": "<b>A battery error has occurred.</b> The battery cannot be charged/discharged. Replace the battery.",
 					"NotDetected": "<b>No battery detected or not</b> plugged in battery.",
 					"NotGood": "<b>The battery is not in a good Condition.</b>",
-					"NotSupportACAdapter": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-					"LimitedACAdapterSupport": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter.",
+					"NotSupportACAdapter": "<b>AC adapter not supported.</b>",
+					"NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
+					"LimitedACAdapterSupport": "<b>AC adapter cannot provide enough power.</b>",
+					"LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter.",
 					"MissingDriver": "<b>The Lenovo Power Manager driver</b> is not installed or not working properly. Please run Windows Update to install the latest driver.",
 					"StoreLimitation": "<b>The battery can only store {{value}}% of</b> it's original full charge capacity.",
 					"HighTemperature": "<b>Discharging</b> has been stopped because the <b>battery temperature is too high.</b>",
@@ -825,8 +834,8 @@
 						"readMoreText": "Read more.",
 						"noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
 						"settings": {
-							"title1": "Threshold for Built in battery",
-							"title2": "Threshold for Removable battery"
+							"title1": "Threshold for Primary battery",
+							"title2": "Threshold for Secondary battery"
 						},
 						"popup": {
 							"title": "Enable Battery Charge Threshold",
@@ -857,7 +866,8 @@
 					},
 					"airPlanePower": {
 						"title": "Airplane Power Mode",
-						"description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
+						"description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance.",
+						"checkBoxDesc": "Auto detection"
 					}
 				},
 				"energyStar": {
@@ -1094,6 +1104,13 @@
 							"option3": "Enter text"
 						}
 					}
+				},
+				"fnCtrlKey": {
+					"title": "FN key and Ctrl key swap",
+					"description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+					"more": "MORE",
+					"control1": "TOUCHPAD CONTROLS",
+					"control2": "MOUSE CONTROLS"
 				}
 			}
 		},
@@ -1121,7 +1138,8 @@
 				},
 				"zeroTouchLogin": {
 					"title": "Zero Touch Login",
-					"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
+					"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it.",
+					"tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
 				},
 				"zeroTouchLock": {
 					"title": "Zero Touch Lock",
@@ -1142,6 +1160,17 @@
 					"options": {
 						"near": "Near",
 						"far": "Far"
+					},
+					"tooltipcontent": {
+						"context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
+						"context2": "When you manually set the detection distance, please pay attention to the following:",
+						"list": {
+							"line1": "Near: 0 – 0.42 meters (17 inches)",
+							"line2": "Middle: 0 – 0.60 meters (24 inches)",
+							"line3": "Far: 0 – 1.20 meters (47 inches)",
+							"line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
+							"line5": "The recommended detection distance is within 0.60 meters."
+						}
 					}
 				},
 				"note": {
@@ -1496,7 +1525,6 @@
 			"listFindUs": "Find us on social media",
 			"listContactUsOnFacebook": "Contact us on Facebook",
 			"facebookDescription": "Click to find us on Facebook"
-
 		},
 		"quicklinks": {
 			"title": "Quicklinks",

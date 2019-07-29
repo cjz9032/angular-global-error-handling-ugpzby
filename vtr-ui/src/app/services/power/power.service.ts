@@ -186,6 +186,24 @@ export class PowerService {
 			throw new Error(error.message);
 		}
 	}
+
+	public setAirplaneModeAutoDetectionOnThinkPad(value: boolean): Promise<boolean> {
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionAirplaneMode.setAirplaneModeAutoDetection(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getAirplaneModeAutoDetectionOnThinkPad(): Promise<boolean> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionAirplaneMode.getAirplaneModeAutoDetection();
+		}
+		return undefined;
+	}
 	// End Airplane Power mode thinkpad
 	// Start Vantage ToolBar
 	public getVantageToolBarStatus(): Promise<FeatureStatus> {
