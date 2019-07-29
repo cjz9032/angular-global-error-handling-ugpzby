@@ -1,5 +1,6 @@
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
 
 @Component({
   selector: 'vtr-modal-autoclose',
@@ -10,9 +11,24 @@ export class ModalAutocloseComponent implements OnInit {
 
   @Input() modalContent: any;
   @Output() action = new EventEmitter<boolean>();
-  constructor(private activeModal: NgbActiveModal, private modalService: NgbModal) { }
+  runningList: any;
+  constructor(private activeModal: NgbActiveModal, private modalService: NgbModal, private gamingAutoCloseService: GamingAutoCloseService) { }
 
   ngOnInit() {
+    this.displayRunningList();
+  }
+
+
+  public displayRunningList() {
+    try {
+      this.gamingAutoCloseService.getAppsAutoCloseRunningList().then((list: any) => {
+        console.log('get Running list from js bridge ------------------------>', list);
+
+        this.runningList = list.processList;
+      });
+    } catch (error) {
+      console.error(error.message);
+    }
   }
 
   showAddAppsModal(content: any): void {
@@ -22,7 +38,7 @@ export class ModalAutocloseComponent implements OnInit {
         backdrop: 'static',
         size: 'lg',
         windowClass: 'apps-modal-container'
-      })
+      });
   }
 
   closeModal() {
