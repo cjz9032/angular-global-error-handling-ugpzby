@@ -28,7 +28,7 @@ export class WidgetSwitchIconComponent implements OnInit {
 	@Input() isCamera = false;
 	@Input() isLoading = true;
 	@Output() toggle = new EventEmitter<boolean>();
-
+	@Input() ariaLabel:string;
 	constructor(public deviceService: DeviceService, private changeDetectorRef: ChangeDetectorRef) { }
 
 	ngOnInit() {

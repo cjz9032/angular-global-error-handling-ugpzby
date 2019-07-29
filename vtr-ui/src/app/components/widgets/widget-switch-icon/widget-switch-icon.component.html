@@ -3,6 +3,8 @@
 	[ngClass]="{'disable-state': disable}"
 	(click)="onChange($event)"
 	[title]="tooltipText"
+	[id]="ariaLabel"
+	[attr.aria-label]="ariaLabel"
 	vtrMetrics
 	metricsEvent="featureClick"
 	[metricsValue]="!value"
