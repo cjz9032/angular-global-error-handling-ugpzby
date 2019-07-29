@@ -3,341 +3,327 @@
         "dashboard": {
             "device": {
                 "quickSettings": {
-                    "title": "Thermal Mode",
+                    "title": "熱模式",
                     "status": {
-                        "performance": "Performance",
-                        "balance": "Balance",
-                        "quiet": "Quiet"
+                        "performance": "效能",
+                        "balance": "平衡",
+                        "quiet": "安靜"
                     },
                     "statusText": {
-                        "perText": "Higher CPU usage, Higher fan speed",
-                        "balText": "Normal CPU and fan speed",
-                        "quietText": "Lower CPU usage, Lower fan speed"
+                        "perText": "CPU 使用量越高，風扇速度越快",
+                        "balText": "正常 CPU 和風扇速度",
+                        "quietText": "CPU 使用量越低，風扇速度越慢"
                     },
-                    "wifiSecurity": "Wifi Security",
+                    "wifiSecurity": "Wifi 安全性",
                     "dolby": "Dolby",
-                    "rapidCharge": "Rapid Charge"
+                    "rapidCharge": "快速充電"
                 },
                 "legionEdge": {
-                    "title": "CPU Overclock",
+                    "title": "CPU 超頻",
                     "status": {
-                        "alwayson": "On",
-                        "whenGaming": "When Gaming",
-                        "off": "Off"
+                        "alwayson": "開啟",
+                        "whenGaming": "遊戲時",
+                        "off": "關閉"
                     },
                     "statusText": {
-                        "onText": "CPU Overclocking will be activated",
-                        "gamingText": "CPU Overclocking will be activated automatically while game launches",
-                        "offText": "CPU Overclocking will be disabled"
+                        "onText": "CPU 超頻將會啟動",
+                        "gamingText": "CPU 超頻將於遊戲啟動時自動啟動",
+                        "offText": "CPU 超頻將會停用"
                     },
-                    "ramOverlock": "RAM Overclock",
+                    "ramOverlock": "RAM 超頻",
                     "popup": {
-                        "text": "Change will be effective after restarting computer.",
-                        "button": "ok"
+                        "text": "變更將於電腦重新開機後生效。",
+                        "button": "確定"
                     },
                     "driverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "You need install driver for RAM Overclock to  make it effective",
-                        "button": "Install",
-                        "link": "cancel",
-                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
-                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
+                        "headerText": "需要安裝驅動程式",
+                        "text": "安裝驅動程式以啟動 RAM 超頻（需要重新開機）",
+                        "button": "安裝",
+                        "link": "取消",
+                        "networkBoostText": "您必須為網路加速安裝驅動程式以使其生效",
+                        "hybridModeText": "您必須為混合模式安裝驅動程式以使其生效",
+                        "cpuOverclockText": "安裝驅動程式以啟動 CPU 超頻（需要重新開機）"
                     },
-                    "autoClose": "Auto Close",
-                    "networkBoost": "Network Boost",
-                    "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock",
+                    "autoClose": "自動關閉",
+                    "networkBoost": "網路加速",
+                    "hybridMode": "混合模式",
+                    "touchpadLock": "觸控板鎖定",
                     "lightingDriverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "Please install driver",
-                        "button": "Install",
-                        "link": "cancel"
+                        "headerText": "需要安裝驅動程式",
+                        "text": "安裝驅動程式以啟動照明（需要重新開機）",
+                        "button": "安裝",
+                        "link": "取消"
                     },
                     "lightingColorMessage": {
-                        "text": "Selecting color not available to this effect."
+                        "text": "選取的色彩不具備這個效果。"
                     }
                 },
                 "systemTools": {
-                    "power": "Power",
-                    "media": "Media",
-                    "macroKey": "Marco Key",
-                    "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update",
-                    "header": "System Tools"
+                    "power": "電源",
+                    "media": "媒體",
+                    "macroKey": "巨集鍵",
+                    "hardwareScan": "硬體掃描",
+                    "systemUpdate": "系統更新",
+                    "header": "系統工具"
                 },
                 "lighting": {
-                    "title": "Lighting Customize",
-                    "header": "Lighting"
+                    "title": "自訂照明",
+                    "header": "照明"
                 },
                 "legionEdgeModal": {
-                    "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
-                    "line2": "<b>Feature Management Overview</b> <br> Some features not available on all devices",
-                    "line3": "<b>CPU Overclocking </b><br> Boost the maximum speed for your processor",
-                    "line4": "<b>RAM Overclocking </b><br> Boost the maximum speed for your memory",
-                    "line5": "<b>Network Boost </b><br> Prioritize network traffic for the game you're playing",
-                    "line6": "<b>Dolby </b><br> Tune your audio specifically for gaming with Dolby technology",
-                    "line7": "<b>Hybrid Mode </b><br> Disable advanced GPU settings when not gaming to boost battery performance",
-                    "line8": "<b>Rapid Charge </b><br> Game on the go longer with quicker battery charging",
-                    "line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
-                    "line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
-                    "line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control"
+                    "line1": "透過 Vantage Edge，您的設定將根據使用情形自動調整。\n 最大化遊戲時的效能，非遊戲時則提供較長的電池續航力。",
+                    "line2": "<b>功能管理概觀</b><br> 某些功能並非在所有裝置上都可使用",
+                    "line3": "<b>CPU 超頻 </b><br> 提升處理器的最高速度",
+                    "line4": "<b>RAM 超頻 </b><br> 提升記憶體的最高速度",
+                    "line5": "<b>網路加速 </b><br> 為您正在玩的遊戲設定最高的網路流量優先順序",
+                    "line6": "<b>Dolby </b><br> 透過 Dolby 技術，特別針對遊戲調整音訊",
+                    "line7": "<b>混合模式 </b><br> 不玩遊戲時停用進階 GPU 設定，以提升電池效能",
+                    "line8": "<b>快速充電 </b><br> 電池充電速度提高，有更多時間隨時隨地暢玩遊戲",
+                    "line9": "<b>觸控板鎖定 </b><br> 在遊戲時停用觸控板，防止錯誤的輸入",
+                    "line10": "<b>自動關閉 </b><br> 在您開始暢玩遊戲之前先清除與遊戲無關的處理程序，盡可能地利用所有可用的系統資源",
+                    "line11": "<b>熱模式 </b><br> 設定您偏好的裝置設定檔中的風扇速度和冷卻控制"
                 },
                 "systemInfo": {
-                    "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                    "systenTooltip": "將游標移至 CPU/GPU/RAM 和不同的驅動程式之上以查看其個別描述，包括製造與機型資訊"
                 },
                 "systemStatus": {
-                    "info": "INFO"
+                    "info": "資訊"
                 }
             }
         },
         "common": {
             "menu": {
                 "support": {
-                    "title": "Support",
-                    "sub1": "Support",
+                    "title": "支援",
+                    "sub1": "支援",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
             }
         },
         "macroKey": {
-            "title": "Macro Key",
-            "introLine": "You can record a series of key input, and use them in gaming or other operations.",
+            "title": "巨集鍵",
+            "introLine": "您可以錄製連續的輸入按鍵，並在遊戲或其他作業進行時使用。",
             "status": {
                 "on": {
-                    "title": "On",
-                    "description": "Always Enabled"
+                    "title": "開啟",
+                    "description": "一律啟用"
                 },
                 "whileGaming": {
-                    "title": "Macro Key enabled only when gaming",
-                    "description": "It will be enabled when you game and remain as num key when you don't."
+                    "title": "巨集鍵僅在遊戲時啟用",
+                    "description": "它會在您遊戲時啟用，而在非遊戲時維持為數字鍵。"
                 },
                 "off": {
-                    "title": "Off",
-                    "description": "Always Off"
+                    "title": "關閉",
+                    "description": "一律停用"
                 }
             },
             "details": {
                 "intro": {
-                    "noNumber": "SELECT A MACRO KEY",
-                    "title": "CREATE A MACRO KEY FOR",
-                    "line1": "click the start recording button below",
-                    "line2": "type in macro key",
-                    "line3": "stop recording when finishing typing"
+                    "noNumber": "選取巨集鍵",
+                    "title": "建立的巨集鍵用於",
+                    "line1": "在下方按一下開始錄製按鈕",
+                    "line2": "鍵入巨集鍵",
+                    "line3": "在完成鍵入時停止錄製"
                 },
                 "buttons": {
-                    "start": "START RECORDING",
-                    "stop": "STOP RECORDING",
+                    "start": "開始錄製",
+                    "stop": "停止錄製",
                     "numberPrefix": "NUM"
                 },
                 "recording": {
-                    "title": "START TYPING",
-                    "description": "20 inputs within 20 seconds can be recorded."
+                    "title": "開始鍵入",
+                    "description": "可在 20 秒內錄製 20 個輸入。"
                 },
                 "recorded": {
-                    "title": "MACRO KEY FOR ",
-                    "deleteKey": "Delete Key",
-                    "clear": "Clear",
+                    "title": "巨集鍵用於",
+                    "deleteKey": "刪除按鍵",
+                    "clear": "清除",
                     "intervalStatus": {
                         "keep": {
-                            "title": "Keep Delay",
-                            "description": "Intervals of key actions will be kept and applied when using this macro key."
+                            "title": "保留延遲",
+                            "description": "按鍵動作的間隔將予以保留，並在這個巨集鍵使用時套用。"
                         },
                         "ignore": {
-                            "title": "Ignore Delay",
-                            "description": "Intervals of key actions will be ignored."
+                            "title": "忽略延遲",
+                            "description": "按鍵動作間隔將遭忽略。"
                         }
                     },
                     "repeatStatus": {
                         "repeat1": {
-                            "title": "No Repeat",
-                            "description": "No Repeat"
+                            "title": "無重複",
+                            "description": "無重複"
                         },
                         "repeat2": {
-                            "title": "Repeat 2 Times",
-                            "description": "Repeats 2 times"
+                            "title": "重複 2 次",
+                            "description": "重複 2 次"
                         },
                         "repeat3": {
-                            "title": "Repeat 3 Times",
-                            "description": "Repeats 3 times"
+                            "title": "重複 3 次",
+                            "description": "重複 3 次"
                         },
                         "repeat4": {
-                            "title": "Repeat 4 Times",
-                            "description": "Repeats 4 times"
+                            "title": "重複 4 次",
+                            "description": "重複 4 次"
                         },
                         "repeat5": {
-                            "title": "Repeat 5 Times",
-                            "description": "Repeats 5 times"
+                            "title": "重複 5 次",
+                            "description": "重複 5 次"
                         },
                         "repeat6": {
-                            "title": "Repeat 6 Times",
-                            "description": "Repeats 6 times"
+                            "title": "重複 6 次",
+                            "description": "重複 6 次"
                         },
                         "repeat7": {
-                            "title": "Repeat 7 Times",
-                            "description": "Repeats 7 times"
+                            "title": "重複 7 次",
+                            "description": "重複 7 次"
                         },
                         "repeat8": {
-                            "title": "Repeat 8 Times",
-                            "description": "Repeats 8 times"
+                            "title": "重複 8 次",
+                            "description": "重複 8 次"
                         },
                         "repeat9": {
-                            "title": "Repeat 9 Times",
-                            "description": "Repeats 9 times"
+                            "title": "重複 9 次",
+                            "description": "重複 9 次"
                         },
                         "repeat10": {
-                            "title": "Repeat 10 Times",
-                            "description": "Repeats 10 times"
+                            "title": "重複 10 次",
+                            "description": "重複 10 次"
                         }
                     },
                     "list": {
                         "header": {
-                            "col1": "Key Action",
-                            "col2": "Interval"
+                            "col1": "按鍵動作",
+                            "col2": "間隔"
                         },
                         "footer": {
-                            "title": "Next input.."
+                            "title": "下一個輸入.."
                         }
                     }
                 }
             },
-            "numberpad": {
-                "number": {
-                    "zero": "Num 0",
-                    "one": "Num 1",
-                    "two": "Num 2",
-                    "three": "Num 3",
-                    "four": "Num 4",
-                    "five": "Num 5",
-                    "six": "Num 6",
-                    "seven": "Num 7",
-                    "eight": "Num 8",
-                    "nine": "Num 9"
-                },
-                "macro": {
-                    "m1": "M1",
-                    "m2": "M2"
-                }
-            },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure you want to clear this macro key?"
+                    "title": "您確定要刪除此巨集鍵嗎？"
                 },
                 "timeoutRecording": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if no input for 20 seconds."
+                    "title": "錄製逾時。",
+                    "body": "錄製將在連續 20 秒無任何輸入時逾時。"
                 },
                 "maximumInput": {
-                    "title": "Maximum Input Reached.",
-                    "body": "Macro key can only store inputs less than 20."
+                    "title": "已達最大限制。",
+                    "body": "巨集鍵限存輸入數目不得超過 20 個。"
                 },
                 "inputStopped": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if the input stopped for more than 10 seconds."
+                    "title": "錄製逾時。",
+                    "body": "錄製將在輸入停止超過 10 秒時逾時。"
                 },
                 "confirmButton": {
-                    "btnClear": "Clear",
-                    "btnCancel": "Cancel"
+                    "btnClear": "清除",
+                    "btnCancel": "取消"
                 },
-                "btnOk": "OK"
+                "btnOk": "確定"
             },
             "recording": {
-                "title": "Recording Macro Key For"
+                "title": "錄製的巨集鍵用於"
+            },
+            "initalKey": {
+                "zero": 0,
+                "m1": "M1"
             }
         },
         "lightingProfile": {
-            "title": "Lighting",
+            "title": "照明",
             "effect": {
                 "option1": {
-                    "title": "On"
+                    "title": "開啟"
                 },
                 "option2": {
-                    "title": "Flicker"
+                    "title": "閃爍"
                 },
                 "option3": {
-                    "title": "Breath"
+                    "title": "呼吸"
                 },
                 "option4": {
-                    "title": "Wave"
+                    "title": "波浪"
                 },
                 "option5": {
-                    "title": "Smooth"
+                    "title": "平滑"
                 },
                 "option6": {
-                    "title": "CPU Temperature"
+                    "title": "CPU 溫度"
                 },
                 "option7": {
-                    "title": "CPU Utilization"
+                    "title": "CPU 使用率"
                 },
                 "option8": {
-                    "title": "Off"
+                    "title": "關閉"
                 },
                 "apply": {
-                    "title": "APPLY"
+                    "title": "套用"
                 },
                 "applied": {
-                    "title": "APPLIED"
+                    "title": "已套用"
                 }
             },
             "brightness": {
                 "text1": {
-                    "title": "*Brightness setting doesn't apply on "
+                    "title": "*亮度設定不會套用於"
                 },
                 "text2": {
-                    "title": " effect"
+                    "title": " 效果"
                 }
             },
             "lightingSingleLightingOption": {
                 "option1": {
-                    "title": "Always On"
+                    "title": "一律開啟"
                 },
                 "option2": {
-                    "title": "Fast Blink"
+                    "title": "快速閃爍"
                 },
                 "option3": {
-                    "title": "Medium Blink"
+                    "title": "中速閃爍"
                 },
                 "option4": {
-                    "title": "Slow Blink"
+                    "title": "慢速閃爍"
                 },
                 "option5": {
-                    "title": "Blink Level"
+                    "title": "閃爍等級"
                 }
             },
             "profile": {
                 "text1": {
-                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                    "title": "照明目前已關閉。選取上面的設定檔標籤並將其開啟，接著進行自訂。"
                 },
                 "text2": {
-                    "title": "effect"
+                    "title": "效果"
                 },
                 "text3": {
-                    "title": "Effect"
+                    "title": "效果"
                 }
             },
             "button": {
                 "default": {
-                    "title": "Set to default"
+                    "title": "設定為預設值"
                 }
             },
             "profileheading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "關閉"
                 },
                 "text2": {
-                    "title": "Profile 1"
+                    "title": "設定檔 1"
                 },
                 "text3": {
-                    "title": "Profile 2"
+                    "title": "設定檔 2"
                 },
                 "text4": {
-                    "title": "Profile 3"
+                    "title": "設定檔 3"
                 }
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "關閉"
                 },
                 "text2": {
                     "title": 1
@@ -349,34 +335,49 @@
                     "title": 3
                 },
                 "Customize": {
-                    "title": "Customize"
+                    "title": "自訂"
                 },
                 "heading": {
-                    "title": "Select Profile:"
+                    "title": "選取設定檔："
                 }
             },
             "colourwheel": {
                 "text1": {
-                    "title": "Selecting colour not available to this effect."
+                    "title": "選取的色彩不具備這個效果。"
                 },
                 "text2": {
-                    "title": "APPLY"
+                    "title": "套用"
                 },
                 "text3": {
-                    "title": "APPLIED"
+                    "title": "已套用"
                 },
                 "text4": {
-                    "title": "R:"
+                    "title": "R："
                 },
                 "text5": {
-                    "title": "G:"
+                    "title": "G："
                 },
                 "text6": {
-                    "title": "B:"
+                    "title": "B："
                 },
                 "text7": {
-                    "title": "Color"
+                    "title": "顏色"
                 }
+            }
+        },
+        "autoClose": {
+            "title": "Auto Close",
+            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "modalTurnAutoClose": {
+                "title": "Turn on Auto Close ?",
+                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Auto Close",
+                "body": "Only apps currently running will show in the list below."
             }
         }
     },
@@ -681,8 +682,7 @@
                     "title": "移至設定",
                     "battery": "電池",
                     "power": "電源",
-                    "other": "其他",
-                    "smartStandby": "智慧型待命"
+                    "other": "其他"
                 },
                 "powerSmartSettings": {
                     "title": "智慧型電源設定",
@@ -1492,7 +1492,10 @@
             "listLenovoCommunity": "Lenovo 社群",
             "listContactCustomerService": "聯絡客戶服務",
             "listContactUsOnWechat": "透過 WeChat 聯絡我們",
-            "weChatDescription": "透過 WeChat 向我們提問，我們一定會盡快回覆"
+            "weChatDescription": "透過 WeChat 向我們提問，我們一定會盡快回覆",
+            "listFindUs": "Find us on social media",
+            "listContactUsOnFacebook": "Contact us on Facebook",
+            "facebookDescription": "Click to find us on Facebook"
         },
         "quicklinks": {
             "title": "快速鏈結",
@@ -1533,7 +1536,13 @@
             "maliciousNetwork": "本月已阻止您的電腦加入 {{maliciousWifi}} 個惡意網路。",
             "good": "良好",
             "malicious": "惡意",
-            "suspicious": "可疑"
+            "suspicious": "可疑",
+            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+            "antivirus": "Being protected by anti-virus software",
+            "password": "Having strong and complex passwords managed in a safe way",
+            "vpn": "Monitoring your network exposure to attackers",
+            "wifi": "Encrypting your personal data when using public WiFi",
+            "windowsHello": "Protecting your device using safe login options"
         },
         "antivirus": {
             "common": {
@@ -1627,7 +1636,8 @@
                 "headerText": "錯誤",
                 "bodyText": "我們發現您缺少 Vantage 的關鍵組件。這些組件將在背景進行下載。請稍後重試。",
                 "closeText": "關閉",
-                "offlineText": "我們發現您沒有連線到網際網路。此頁面的某些部分將無法正確運作。請重新連線"
+                "offlineText": "我們發現您沒有連線到網際網路。此頁面的某些部分將無法正確運作。請重新連線",
+                "accountText": "Account creation failed. Please try again later."
             }
         },
         "homeprotection": {
