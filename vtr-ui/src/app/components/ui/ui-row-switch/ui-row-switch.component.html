@@ -85,11 +85,23 @@
 
 					<div class="p-0"
 						[ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}"
-						*ngIf="rightIcon.length > 0 && !voice">
+						*ngIf="rightIcon.length > 0 && !voice && !toolTipStatus">
 						<fa-icon class="right-icon"
 							triggers="click:blur"
 							placement="auto"
 							[ngbTooltip]="tooltipRef"
+							[icon]="rightIcon"
+							container="body"
+							tooltipClass="vtr-tooltip"
+							(click)="onRightIconClick($event)"></fa-icon>
+					</div>
+					<div class="p-0"
+						[ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}"
+						*ngIf="rightIcon.length > 0 && toolTipStatus">
+						<fa-icon class="right-icon"
+							triggers="click:blur"
+							placement="auto"
+							[ngbTooltip]="smartTooltipRef"
 							[icon]="rightIcon"
 							container="body"
 							tooltipClass="vtr-tooltip"
@@ -152,4 +164,68 @@
 </div>
 <ng-template #tooltipRef>
 	<div [innerHTML]='tooltipText'></div>
+</ng-template>
+
+<!-- Intelligent-security distance sensitivity adjusting tooltip content -->
+<ng-template #smartTooltipRef>
+	<div>
+		{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.tooltipcontent.context1' | translate}}
+	</div>
+	<ul class="smart-tooltip-list">
+		<li>
+			<div class="row">
+				<div class="col-auto pl-0">
+					<fa-icon [icon]="['fas', 'circle']"></fa-icon>
+				</div>
+				<div class="col">
+					{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.tooltipcontent.list.line1' | translate}}
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="row">
+				<div class="col-auto pl-0">
+					<fa-icon [icon]="['fas', 'circle']"></fa-icon>
+				</div>
+				<div class="col">
+					{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.tooltipcontent.list.line2' | translate}}
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="row">
+				<div class="col-auto pl-0">
+					<fa-icon [icon]="['fas', 'circle']"></fa-icon>
+				</div>
+				<div class="col">
+					{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.tooltipcontent.list.line3' | translate}}
+				</div>
+			</div>
+		</li>
+	</ul>
+	<div>
+		{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.tooltipcontent.context2' | translate}}
+	</div>
+	<ul class="smart-tooltip-list">
+		<li>
+			<div class="row">
+				<div class="col-auto pl-0">
+					<fa-icon [icon]="['fas', 'circle']"></fa-icon>
+				</div>
+				<div class="col">
+					{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.tooltipcontent.list.line3' | translate}}{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.tooltipcontent.list.line4' | translate}}
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="row">
+				<div class="col-auto pl-0">
+					<fa-icon [icon]="['fas', 'circle']"></fa-icon>
+				</div>
+				<div class="col">
+					{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.tooltipcontent.list.line5' | translate}}
+				</div>
+			</div>
+		</li>
+	</ul>
 </ng-template>
