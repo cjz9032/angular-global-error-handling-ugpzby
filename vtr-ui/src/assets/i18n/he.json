@@ -387,7 +387,7 @@
                 "title": "התקן",
                 "sub1": "ההתקן שלי",
                 "sub2": "הגדרות המכשיר שלי",
-                "sub3": "‏System Updates",
+                "sub3": "‏‫עדכון המערכת‬",
                 "sub4": "עזרה חכמה"
             },
             "security": {
@@ -444,31 +444,31 @@
     },
     "privacy": {
         "headerMain": {
-            "title": "Privacy"
+            "title": "פרטיות"
         }
     },
     "tutorial": {
-        "almostThere": "Almost there!",
-        "para1": "Just a few more buttons to press before we can have liftoff.",
-        "para2": "Before we can give you the most optimal experience there are still a few things to setup.",
-        "personalise": "START PERSONALIZING",
-        "howIsitUsed": "How will you use it?",
-        "howMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "business": "BUSINESS",
-        "personal": "PERSONAL",
-        "custom": "CUSTOM",
-        "skip": "SKIP",
+        "almostThere": "כמעט סיימת!",
+        "para1": "נשאר ללחוץ רק על עוד כמה לחצנים לפני שנוכל להמריא.",
+        "para2": "לפני שנוכל לתת לך את החוויה המושלמת, עדיין צריך להגדיר כמה דברים.",
+        "personalise": "התחלת התאמה אישית",
+        "howIsitUsed": "איך תשתמש בו?",
+        "howMachinUsed": "לחץ על אחד מהשימושים הבאים כדי לספר איך תשתמש במכשיר:",
+        "business": "עסקים",
+        "personal": "פרטי",
+        "custom": "מותאם אישית",
+        "skip": "דילוג",
         "next": "הבא",
-        "interests": "What are your interests?",
-        "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "games": "GAMES",
-        "news": "NEWS",
-        "entertainment": "ENTERTAINMENT",
-        "arts": "ARTS",
-        "politics": "POLITICS",
-        "sports": "SPORTS",
-        "regionalNews": "REGIONAL NEWS",
-        "technology": "TECHNOLOGY"
+        "interests": "מה תחומי העניין שלך?",
+        "howOnesMachinUsed": "לחץ על אחד מהשימושים הבאים כדי לספר איך תשתמש במכשיר:",
+        "games": "משחקים",
+        "news": "חדשות",
+        "entertainment": "בידור",
+        "arts": "אומנות",
+        "politics": "פוליטיקה",
+        "sports": "ספורט",
+        "regionalNews": "חדשות אזוריות",
+        "technology": "טכנולוגיה"
     },
     "dashboard": {
         "headerMain": {
@@ -534,7 +534,7 @@
                 }
             },
             "systemUpdate": {
-                "title": "System Update",
+                "title": "‏‫עדכון המערכת‬",
                 "detail": {
                     "update": "עדכון"
                 }
@@ -551,7 +551,7 @@
             "learnMore": "למדו עוד",
             "freeMemory": "זיכרון פנוי",
             "systemUpdate": {
-                "title": "עדכון מערכת",
+                "title": "‏‫עדכון המערכת‬",
                 "notFound": "לא נמצא עדכון מערכת",
                 "detail": {
                     "uptoDate": "התוכנה מעודכנת",
@@ -636,15 +636,15 @@
                         "acdischarging": "פריקה (עם AC)"
                     },
                     "deviceChemistry": {
-                        "li-polymer": "Li-Polymer",
-                        "li-ion": "Li-Ion",
-                        "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion",
-                        "silver-zinc": "Silver-Zinc",
-                        "silver_zinc": "Silver-Zinc",
+                        "li-polymer": "ליתיום-פולימר",
+                        "li-ion": "ליתיום-יון",
+                        "li_polymer": "ליתיום-פולימר",
+                        "li_ion": "ליתיום-יון",
+                        "silver-zinc": "כסף-אבץ",
+                        "silver_zinc": "כסף-אבץ",
                         "nicd": "NiCd",
                         "nimh": "NiMH",
-                        "unknown": "Unknown"
+                        "unknown": "לא ידוע"
                     },
                     "manufacturer": {
                         "title": "יצרן",
@@ -662,7 +662,7 @@
                     "NotSupportACAdapter": "<b>מתאם ה-AC אינו נתמך.</b> מחשב Lenovo שברשותכם אינו תומך במתאם AC זה. הוא עלול לגרום לכיבוי פתאומי. חברו מתאם AC מתאים.",
                     "LimitedACAdapterSupport": "<b>מתאם ה-AC אינו יכול לספק מספיק כוח</b> למחשב Lenovo שברשותכם מה שמשפיע על ביצועי המערכת ועל מהירות הטעינה. חברו את מתאם ה-AC הנכון.",
                     "MissingDriver": "<b>מנהל התקן Lenovo Power Manager</b> אינו מותקן או שאינו פועל כראוי. הפעילו את Windows Update כדי להתקין את מנהל ההתקן העדכני ביותר.",
-                    "StoreLimitation": "<b>הסוללה יכולה לאחסן רק {{percentageLimitation}}% מתוך</b> קיבולת הטעינה המקורית שלה.",
+                    "StoreLimitation": "<b>הסוללה יכולה לאחסן רק {{value}}% מתוך</b> קיבולת הטעינה המקורית שלה.",
                     "HighTemperature": "<b>הפריקה</b> נעצרה מכיוון <b>שטמפרטורת הסוללה גבוהה מדי.</b>",
                     "TrickleCharge": "הסוללה <b>התרוקנה לחלוטין</b> ויש לטעון אותה מחדש. התהליך עשוי לארוך עשר שעות או יותר.",
                     "OverheatedBattery": "הסוללה <b>חמה מדי</b>. הסירו אותה מהמחשב והניחו לה להתקרר לטמפרטורת החדר.",
@@ -671,7 +671,7 @@
                 "updating": "עדכון",
                 "voltageError": "מתח הסוללה שגוי",
                 "batteryNotDetected": "לא זוהתה סוללה",
-                "thresholdNote": "<b>הערה:</b> להארכת משך חיי הסוללה, הגדרתם את הסוללה לעצור את הטעינה כשהיא ברמה של {{chargeThresholdInfo.stopValue}}%."
+                "thresholdNote": "<b>הערה:</b> להארכת משך חיי הסוללה, הגדרתם את הסוללה לעצור את הטעינה כשהיא ברמה של {{value}}%."
             },
             "power": {
                 "title": "צריכת חשמל",
@@ -681,19 +681,18 @@
                     "title": "מעבר להגדרות",
                     "battery": "סוללה",
                     "power": "צריכת חשמל",
-                    "cooling": "קירור חכם",
                     "other": "שונות",
-                    "smartStandby": "Smart Standby"
+                    "smartStandby": "המתנה חכמה"
                 },
                 "powerSmartSettings": {
                     "title": "הגדרות חכמות של צריכת חשמל",
                     "subtitle": "קירור חכם",
                     "subtitle1": "סוללה ושקט",
-                    "description1": "תכונה זו מכווננת את ההגדרות התרמיות באופן דינמי בהתאם לצורך.כאשר מופעלת, היא מתאימה את ההגדרות כך שההתקן יהיה קריר או שקט יותר, במצב המתנה או במצב של חוסר פעילות. אחרת, היא משפרת ביצועים בזמן שההתקן נמצא על משטח יציב. כשהיא כבויה, ניתן להגדיר באופן ידני עדיפות מבחינה תרמית.",
+                    "description1": "כאשר היא פועלת, תכונה זו מכווננת את ההגדרות התרמיות באופן דינמי בהתאם לצורך. היא מתאימה את ההגדרות כך שהמכשיר יהיה קריר ושקט, במצב המתנה או במצב של חוסר פעילות. היא משפרת את הביצועים בזמן שהמכשיר נמצא על משטח יציב. כשהיא כבויה, ניתן להגדיר את העדיפות מבחינה תרמית באופן ידני.",
                     "description2": "הקירור החכם מתאים את מהירות המאוורר, את טמפרטורת המשטח המרבית ואת הביצועים.תכונה זו כוללת את המצבים הבאים, והם נגישים כעת דרך מחוון צריכת החשמל של ביצועי Windows.",
                     "description3": "הקירור החכם מאזן באופן אוטומטי את ביצועי החום ומתאים אותם לצרכים שלכם.תכונת הקירור החכם מכווננת את הגדרות הביצועים כדי לספק לכם משטח קריר ונעים יותר למגע, כשאתם מחזיקים את המחשב הנייד. כשההתקן מונח על משטח עבודה, תכונה זו ממטבת את הביצועים.",
-                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "description13": "כאשר היא פועלת, תכונה זו מכווננת את ההגדרות התרמיות באופן דינמי בהתאם לצורך. היא מתאימה את ההגדרות כך שהמכשיר יהיה קריר ושקט, במצב המתנה או במצב של חוסר פעילות. היא משפרת את הביצועים בזמן שהמכשיר נמצא על משטח יציב. כשהיא כבויה, ניתן להגדיר את העדיפות מבחינה תרמית באופן ידני.",
+                    "description14": "תכונה זו מאפשרת לשנות את מהירות המאוורר, למקסם את ביצועי המערכת או להאריך את חיי הסוללה במידת הצורך. יש לו שלושה מצבים להלן. בנוסף, ניתן להחליף בין המצבים באמצעות מקשים חמים (Fn+Q) או דרך סרגל הכלים של Lenovo Vantage.",
                     "readMore": "פרטים נוספים.",
                     "gotoWindows": {
                         "title": "מעבר אל הגדרות Windows",
@@ -706,17 +705,17 @@
                         "optimize": "מיטוב המערכת עבור",
                         "apsHint": "כדי להשתמש בקירור החכם, עליכם להתקין ולהפעיל תחילה את Lenovo Active Protection System.",
                         "options": {
-                            "quiteCool3": "מצב קירור",
-                            "performance3": "ביצועים גבוהים",
-                            "quiteCool4": "קריר ושקט",
+                            "quiteCool3": "שקט וקריר",
+                            "performance3": "ביצועים",
+                            "quiteCool4": "שקט וקריר",
                             "performance4": "ביצועים",
-                            "quiteCool5": "קריר ושקט",
+                            "quiteCool5": "שקט וקריר",
                             "performance5": "ביצועים",
-                            "batterySaving": "Battery Saving",
-                            "performance13": "Performance",
-                            "quiteCool13": "Quiet & Cool",
-                            "performance14": "Extreme Performance",
-                            "quiteCool14": "Intelligent Cooling"
+                            "batterySaving": "חיסכון בסוללה",
+                            "performance13": "ביצועים",
+                            "quiteCool13": "שקט וקריר",
+                            "performance14": "ביצועים מעולים",
+                            "quiteCool14": "קירור חכם"
                         },
                         "readMore": {
                             "mode1": "מצב שקט",
@@ -725,19 +724,19 @@
                             "line1": "המחוון נמצא בצד שמאל.מהירות המאוורר והביצועים הופחתו כדי שהמחשב יהיה קריר ושקט יותר וחיי הסוללה ארוכים יותר.",
                             "line2": "המחוון נמצא במרכז.מהירות המאוורר והביצועים מאוזנים באופן דינמי כדי להשיג את החוויה הטובה ביותר.",
                             "line3": "המחוון נמצא בצד ימין. מהירות המאוורר וטמפרטורת המשטח המותרת גבוהות יותר כדי להשיג את הביצועים הטובים ביותר.",
-                            "line4": "More info"
+                            "line4": "מידע נוסף"
                         },
                         "selectedModeText": {
-                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
-                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
-                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                            "quiteCool": "מצב זה מאפשר את החוויה הטובה ביותר כשמהירות המאוורר וביצועי המערכת מאוזנים. לדוגמה, בזמן משחקים, הוא ממטב את הביצועים. במשרד, הוא מפחית את הרעש.",
+                            "batterySaving": "מצב זה מאפשר חיי סוללה מרביים על-ידי התאמה אוטומטית של הבהירות, שינוי הגדרות צריכת החשמל, השבתת תכונות בעיבוד תמונות מתקדם ועוד.",
+                            "performance": "מצב זה מאפשר את ביצועי המערכת המיטביים. במצב זה, המהירות הגבוהה של המאוורר עלולה לגרום לרעש רב."
                         },
                         "intelligentCoolingModesModal": {
-                            "title": "Change intelligent cooling modes",
-                            "close": "close",
+                            "title": "שינוי מצבי קירור חכמים",
+                            "close": "סגירה",
                             "coolingModesList": {
-                                "list1": "Click on the windows battery-icon in the toolbar",
-                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                                "list1": "לחץ על סמל הסוללה של Windows בסרגל הכלים",
+                                "list2": "מד הסוללה של Windows יופיע, החלק את המחוון כדי לבחור בין זמן אופטימלי לבין ביצועים מיטביים."
                             }
                         }
                     },
@@ -748,7 +747,7 @@
                             "battery&Quite": "סוללה ושקט"
                         }
                     },
-                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
+                    "description5": "הקירור החכם מתאים את מהירות המאוורר ואת הביצועים המיטביים ומנהל את חיי הסוללה. תכונה זו כוללת שלושה מצבים (מצב שקט, מצב מאוזן ומצב ביצועים) והיא נגישה כעת דרך מחוון צריכת החשמל של ביצועי Windows"
                 },
                 "powerSettings": {
                     "title": "הגדרות צריכת חשמל",
@@ -761,8 +760,8 @@
                         "title": "חזרה לפעולה בקלות",
                         "description": "הפעילו תכונה זו כדי לשפר את זמן החזרה לפעולה, אם אתם סוגרים ופותחים את מכסה המחשב לעתים קרובות.",
                         "tooltip": "תכונה זו תשפר את זמן החזרה לפעולה, אם אתם סוגרים ופותחים את מכסה המחשב לעתים קרובות. כשהיא מופעלת, המחשב יעבור למצב צריכת חשמל נמוכה כשתסגרו את המכסה, אך יחזור לפעולה באופן מיידי אם תפתחו בחזרה את המכסה תוך 15 דקות מסגירתו. תכונה זו גם מאפשרת למחשב הנייד לנסות להשלים פעילויות שהחלו (כגון שליחת דואר אלקטרוני או הורדת קובץ) לפני שהמערכת תעבור להשהייה."
-					},
-					"or":"Or"
+                    },
+                    "or": "או"
                 },
                 "otherSettings": {
                     "title": "הגדרות נוספות",
@@ -971,7 +970,7 @@
                         "onSunsetToSunriseScheduleDescription": "תזמון מצב שמירה על העיניים מהשקיעה עד הזריחה",
                         "note": {
                             "title": "הערה",
-                            "description": "Lenovo Vantage צריך לגשת לפרטי המיקום שלכם לחישוב זמן השקיעה והזריחה באזורכם."
+                            "description": "כאשר מצב השמירה על העיניים מופעל, טמפרטורת הצבע הזו לא תוחל. עם זאת, ניתן לגרור את המחוון כדי להציג אותה בתצוגה מקדימה. כדי להחיל אותה יש לכבות את מצב השמירה על העיניים."
                         }
                     },
                     "privacyGuard": {
@@ -989,16 +988,16 @@
                         "reset": "איפוס הטמפרטורה",
                         "tooltip": "תכונה זו יכולה להפחית את צריכת החשמל ולהאריך את חיי הסוללה על ידי עמעום סלקטיבי של חלקים מהתצוגה.",
                         "dropDown": {
-                            "seconds": "seconds",
-                            "minute": "minute",
-                            "minutes": "minutes",
-                            "alwaysOn": "Always on",
-                            "never": "never",
-                            "halfTime": "Half time of display off timer"
+                            "seconds": "שניות",
+                            "minute": "דקה",
+                            "minutes": "דקות",
+                            "alwaysOn": "פועל תמיד",
+                            "never": "לעולם לא",
+                            "halfTime": "חצי מהזמן לטיימר כיבוי הצג"
                         },
-                        "taskBarDimmer": "TASKBAR DIMMER",
-                        "backgroundDimmer": "BACKGROUND DIMMER",
-                        "displayDimmer": "DISPLAY DIMMER"
+                        "taskBarDimmer": "עמעם שורת המשימות",
+                        "backgroundDimmer": "עמעם רקע",
+                        "displayDimmer": "עמעם תצוגה"
                     }
                 },
                 "camera": {
@@ -1030,10 +1029,10 @@
                         "sketchMode": "מצב ציור"
                     },
                     "cameraLoadingFailed": {
-                        "inUseTitle": "CAMERA IS IN USE",
-                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
-                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
-                        "loadingFailedDescription": "Close the app and try again."
+                        "inUseTitle": "המצלמה בשימוש",
+                        "inUseDescription": "יישום אחר משתמש במצלמה. סגרו את היישום ונסו שוב.",
+                        "loadingFailedTitle": "המצלמה בשימוש או שההעלאה נכשלה",
+                        "loadingFailedDescription": "סגרו את היישום ונסו שוב."
                     }
                 }
             },
@@ -1085,15 +1084,15 @@
                             "option3": "הזן טקסט"
                         }
                     },
-                    "tooltip": "Content to be filled",
+                    "tooltip": "תוכן למילוי",
                     "apply": {
-                        "title": "APPLY"
+                        "title": "החל"
                     },
                     "website": {
-                        "url": "WEBSITE URL"
+                        "url": "URL של אתר האינטרנט"
                     },
                     "enterText": {
-                        "title": "TEXT TO BE ENTERED"
+                        "title": "טקסט להזנה"
                     }
                 }
             }
@@ -1204,7 +1203,18 @@
                     "hand": {
                         "title": "חישת קרבת יד בקצוות המחשב",
                         "description": "כאשר מצב מחשב לוח מופעל, הפעילו APS כשהיד לא מזוהה"
-                    }
+                    },
+                    "more": "עוד",
+                    "advanced-settings": "הגדרות מתקדמות",
+                    "hide": "הסתרת הגדרות מתקדמות"
+                },
+                "APS": {
+                    "more": "עוד",
+                    "advancedSettings": "הגדרות מתקדמות",
+                    "hideAdvancedSettings": "הסתרת הגדרות מתקדמות",
+                    "lowSensitivity": "רגישות נמוכה",
+                    "mediumSensitivity": "רגישות בינונית",
+                    "highSensitivity": "רגישות גבוהה"
                 }
             },
             "intelligentMedia": {
@@ -1240,15 +1250,15 @@
                     "closeText": "סגירה"
                 },
                 "modalInstallationFailed": {
-                    "btnText": "ok",
-                    "title": "Install Failed",
-                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                    "btnText": "אישור",
+                    "title": "ההתקנה נכשלה",
+                    "desc": "נסה שוב מאוחר יותר כדי להשתמש ב-Lenovo Voice."
                 }
             }
         }
     },
     "systemUpdates": {
-        "title": "‏System Updates",
+        "title": "‏‫עדכון המערכת‬",
         "back": "חזרה",
         "history": "ההיסטוריה המלאה",
         "notAvailable": "לא זמין",
@@ -1294,7 +1304,7 @@
             "title": "אתר התמיכה של Lenovo"
         },
         "banner": {
-            "neverChecked": "ברוכים הבאים לשימוש ב-System Update.",
+            "neverChecked": "ברוכים הבאים לשימוש ב'עדכון המערכת'.",
             "title": "מערכת עדכנית היא מערכת תקינה.",
             "last": "עודכן לאחרונה: ",
             "next": "העדכון המתוכנן הבא: ",
@@ -1398,7 +1408,7 @@
             "overviewBlockTitle": "סקירה של אבטחת המערכת האקולוגית",
             "allDevices": "כל המכשירים",
             "myDevice": "ההתקן שלי",
-            "thisComputer": "This computer",
+            "thisComputer": "מחשב זה",
             "secure": "מאובטח",
             "needAttention": "נדרשת תשומת לב",
             "manageAccount": "ניהול חשבון",
@@ -1672,14 +1682,14 @@
             "title": "אבטחת VPN",
             "header": "SurfEasy VPN",
             "whatIsSufEasy": "רשת SurfEasy VPN מצפינה את המידע שאתם שולחים ומקבלים, כך שתוכלו להשתמש באופן בטוח ופרטי במחשב האישי, במחשב Mac®, בטלפון החכם או במחשב הלוח שלכם בכל חיבור לאינטרנט ללא חששות.",
-            "whatCanSufEasy1": "A virtual private network provider that protects you while you are online. Without a VPN, your computer may be more vulnerable to attackers and identity theft. The VPN runs silently in the background and provides security and privacy protection.",
-            "startUseSufEasy4": "SurfEasy users can enjoy 250 MB of free traffic every 30 days! Follow the steps on the &quot;Rewards&quot; tab of the SurfEasy app to get more traffic.",
-            "howToGetData": "How to get free traffic:",
-            "howToGetData1": "Confirm email to win +250 MB traffic",
-            "howToGetData2": "Add a second device to win +250 MB of traffic",
-            "howToGetData3": "Refer a friend and win +500 MB of traffic",
-            "howToGetData4": "Like SurfEasy on Facebook, earn +100 MB of traffic,",
-            "howToGetData5": "Follow SurfEasy on Twitter and win +100 MB of traffic",
+            "whatCanSufEasy1": "ספק רשת וירטואלית פרטית שמגינה עליך בזמן שאתה מחובר. ללא VPN המחשב עלול להיות פגיע יותר לתוקפים ולגניבת זהות. ה-VPN פועל בשקט ברקע ומספק אבטחה והגנת פרטיות.",
+            "startUseSufEasy4": "משתמשי SurfEasy יכולים ליהנות מ-250MB של תעבורה בחינם כל 30 ימים! בצע את השלבים המופיעים בכרטיסייה &quot;פרסים&quot; של אפליקציית SurfEasy כדי לקבל עוד תעבורה.",
+            "howToGetData": "כיצד להשיג תעבורה בחינם:",
+            "howToGetData1": "אשר את הדואר האלקטרוני כדי לזכות ב-250MB+ תעבורה",
+            "howToGetData2": "הוסף מכשיר שני כדי לזכות ב-250MB+ תעבורה",
+            "howToGetData3": "הפנה חבר וזכה ב-500MB+ תעבורה",
+            "howToGetData4": "סמן לייק ל-SurfEasy ב-Facebook וזכה ב-100MB+ תעבורה",
+            "howToGetData5": "עקוב אחר SurfEasy ב-Twitter וזכה ב-100MB+ תעבורה",
             "helpKeep": "שמרו על האבטחה והפרטיות של פעילותכם באינטרנט באמצעות SurfEasy VPN.",
             "getSufEasy": "רכישת SurfEasy",
             "openSufEasy": "פתיחת SurfEasy",

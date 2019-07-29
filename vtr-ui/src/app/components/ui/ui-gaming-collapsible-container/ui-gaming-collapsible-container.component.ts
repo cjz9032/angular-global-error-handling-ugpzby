@@ -56,7 +56,6 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 
 	public optionSelected(option) {
 		this.currentOption = option.name;
-		// this.options.curSelected = option.value;
 		this.selectedDescription = option.description;
 		this.currentDescription = this.selectedDescription;
 		this.showOptions = false;

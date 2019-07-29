@@ -387,7 +387,7 @@
                 "title": "Устройство",
                 "sub1": "Мое устройство",
                 "sub2": "Параметры моего устройства",
-                "sub3": "System Updates",
+                "sub3": "Обновление системы",
                 "sub4": "Интеллектуальный помощник"
             },
             "security": {
@@ -444,31 +444,31 @@
     },
     "privacy": {
         "headerMain": {
-            "title": "Privacy"
+            "title": "Конфиденциальность"
         }
     },
     "tutorial": {
-        "almostThere": "Almost there!",
-        "para1": "Just a few more buttons to press before we can have liftoff.",
-        "para2": "Before we can give you the most optimal experience there are still a few things to setup.",
-        "personalise": "START PERSONALIZING",
-        "howIsitUsed": "How will you use it?",
-        "howMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "business": "BUSINESS",
-        "personal": "PERSONAL",
-        "custom": "CUSTOM",
-        "skip": "SKIP",
+        "almostThere": "Почти готово!",
+        "para1": "Всего несколько нажатий — и все готово!",
+        "para2": "Еще пара настроек — и мы сможем обеспечить для вас идеальный пользовательский опыт.",
+        "personalise": "НАЧАТЬ ПЕРСОНАЛИЗАЦИЮ",
+        "howIsitUsed": "Как вы планируете использовать устройство?",
+        "howMachinUsed": "Выберите свой вариант использования устройства.",
+        "business": "ДЛЯ РАБОТЫ",
+        "personal": "В ЛИЧНЫХ ЦЕЛЯХ",
+        "custom": "ДРУГОЕ",
+        "skip": "ПРОПУСТИТЬ",
         "next": "ДАЛЕЕ",
-        "interests": "What are your interests?",
-        "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "games": "GAMES",
-        "news": "NEWS",
-        "entertainment": "ENTERTAINMENT",
-        "arts": "ARTS",
-        "politics": "POLITICS",
-        "sports": "SPORTS",
-        "regionalNews": "REGIONAL NEWS",
-        "technology": "TECHNOLOGY"
+        "interests": "Что вас интересует?",
+        "howOnesMachinUsed": "Выберите свой вариант использования устройства.",
+        "games": "ИГРЫ",
+        "news": "НОВОСТИ",
+        "entertainment": "РАЗВЛЕЧЕНИЯ",
+        "arts": "ИСКУССТВО",
+        "politics": "ПОЛИТИКА",
+        "sports": "СПОРТ",
+        "regionalNews": "РЕГИОНАЛЬНЫЕ НОВОСТИ",
+        "technology": "ТЕХНОЛОГИИ"
     },
     "dashboard": {
         "headerMain": {
@@ -534,7 +534,7 @@
                 }
             },
             "systemUpdate": {
-                "title": "System Update",
+                "title": "Обновление системы",
                 "detail": {
                     "update": "Обновление"
                 }
@@ -636,15 +636,15 @@
                         "acdischarging": "Идет разрядка (перем. ток)"
                     },
                     "deviceChemistry": {
-                        "li-polymer": "Li-Polymer",
-                        "li-ion": "Li-Ion",
-                        "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion",
-                        "silver-zinc": "Silver-Zinc",
-                        "silver_zinc": "Silver-Zinc",
-                        "nicd": "NiCd",
-                        "nimh": "NiMH",
-                        "unknown": "Unknown"
+                        "li-polymer": "Литий-полимерный",
+                        "li-ion": "Литий-ионный",
+                        "li_polymer": "Литий-полимерный",
+                        "li_ion": "Литий-ионный",
+                        "silver-zinc": "Серебряно-цинковый",
+                        "silver_zinc": "Серебряно-цинковый",
+                        "nicd": "Никель-кадмиевый",
+                        "nimh": "Никель-металл-гидридный",
+                        "unknown": "Неизвестно"
                     },
                     "manufacturer": {
                         "title": "Производитель",
@@ -662,7 +662,7 @@
                     "NotSupportACAdapter": "<b>Адаптер электропитания не поддерживается.</b> Ваш компьютер Lenovo не поддерживает этот адаптер электропитания. Он может вызвать внезапное отключение. Подключите правильный адаптер электропитания.",
                     "LimitedACAdapterSupport": "<b>Адаптер электропитания не может обеспечить достаточное питание</b> вашему компьютеру Lenovo, что отразится на производительности системы и скорости зарядки. Подключите правильный адаптер электропитания.",
                     "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не установлен или работает неправильно. Запустите Центр обновления Windows, чтобы установить последнюю версию драйвера.",
-                    "StoreLimitation": "<b>Аккумулятор может хранить только {{percentageLimitation}}% от</b> своей исходной емкости полного заряда.",
+                    "StoreLimitation": "<b>Аккумулятор может хранить только {{value}}% от</b> своей исходной емкости полного заряда.",
                     "HighTemperature": "<b>Разрядка</b> остановлена из-за <b>слишком высокой температуры аккумулятора.</b>",
                     "TrickleCharge": "Аккумулятор <b>полностью разряжен,</b> требуется повторная зарядка. Для этого может потребоваться более десяти часов.",
                     "OverheatedBattery": "Аккумулятор <b>слишком горячий</b>. Извлеките его из компьютера и охладите до комнатной температуры.",
@@ -671,7 +671,7 @@
                 "updating": "Обновление",
                 "voltageError": "Неправильное напряжение аккумулятора",
                 "batteryNotDetected": "Аккумулятор не найден",
-                "thresholdNote": "<b>Примечание.</b> Для увеличения срока службы аккумулятора вы установили прекращение зарядки аккумулятора при заряде {{chargeThresholdInfo.stopValue}}%."
+                "thresholdNote": "<b>Примечание.</b> Для увеличения срока службы аккумулятора вы установили прекращение зарядки аккумулятора при заряде {{value}}%."
             },
             "power": {
                 "title": "Питание",
@@ -681,19 +681,18 @@
                     "title": "ПЕРЕЙТИ К ПАРАМЕТРАМ",
                     "battery": "Аккумулятор",
                     "power": "Питание",
-                    "cooling": "Интеллектуальное охлаждение",
                     "other": "Прочее",
-                    "smartStandby": "Smart Standby"
+                    "smartStandby": "Интеллектуальный режим ожидания"
                 },
                 "powerSmartSettings": {
                     "title": "Интеллектуальные параметры питания",
                     "subtitle": "ИНТЕЛЛЕКТУАЛЬНОЕ ОХЛАЖДЕНИЕ",
                     "subtitle1": "Тихая работа от аккумулятора",
-                    "description1": "Эта функция динамически корректирует температурные параметры в соответствии с вашими потребностями.Если этот параметр включен, устройство работает тише и с меньшим нагревом, когда оно удерживается на руках или находится в режиме ожидания. Если устройство расположено на устойчивой поверхности, параметры настраиваются соответствующим образом. Если этот параметр отключен, температурный режим можно установить вручную.",
+                    "description1": "Эта функция динамически корректирует температурные параметры в соответствии с вашими потребностями. При этом устройство работает тише и с меньшим нагревом, когда оно удерживается на руках или находится в режиме ожидания. Если устройство расположено на устойчивой поверхности, параметры настраиваются соответствующим образом. Если эта функция отключена, температурный режим можно установить вручную.",
                     "description2": "Технология интеллектуального охлаждения оптимизирует скорость вращения вентиляторов, максимальную температуру поверхности и производительность.Эта функция предоставляет следующие режимы, которые теперь можно настроить с помощью ползунка выбора режима питания Windows.",
                     "description3": "Функция интеллектуального охлаждения автоматически обеспечивает баланс между тепловой мощностью и вашими потребностями.Функция интеллектуального охлаждения регулирует параметры работы таким образом, чтобы обеспечить охлаждение поверхности для создания комфортных условий, когда ноутбук удерживается на руках. Когда устройство находится на поверхности рабочего стола, данная функция оптимизирует производительность.",
-                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "description13": "Эта функция динамически корректирует температурные параметры в соответствии с вашими потребностями. При этом устройство работает тише и с меньшим нагревом, когда оно удерживается на руках или находится в режиме ожидания. Если устройство расположено на устойчивой поверхности, параметры настраиваются соответствующим образом. Если эта функция отключена, температурный режим можно установить вручную.",
+                    "description14": "Эта функция позволяет регулировать скорость вращения вентилятора, максимально увеличить производительность системы или продлить срок службы аккумулятора, если это необходимо. У нее есть три указанных ниже режима. Кроме того, переключать режимы можно с помощью горячих клавиш (Fn+Q) или с панели инструментов Lenovo Vantage.",
                     "readMore": "Подробнее.",
                     "gotoWindows": {
                         "title": "Перейдите в раздел параметров Windows",
@@ -706,17 +705,17 @@
                         "optimize": "оптимизировать систему для",
                         "apsHint": "Чтобы включить интеллектуальное охлаждение, необходимо установить и включить Lenovo Active Protection System.",
                         "options": {
-                            "quiteCool3": "Режим охлаждения",
-                            "performance3": "Высокое быстродействие",
+                            "quiteCool3": "Тихий режим",
+                            "performance3": "Производ-ть",
                             "quiteCool4": "Тихий режим",
                             "performance4": "Производ-ть",
                             "quiteCool5": "Тихий режим",
                             "performance5": "Производ-ть",
-                            "batterySaving": "Battery Saving",
-                            "performance13": "Performance",
-                            "quiteCool13": "Quiet & Cool",
-                            "performance14": "Extreme Performance",
-                            "quiteCool14": "Intelligent Cooling"
+                            "batterySaving": "Экономия заряда аккум.",
+                            "performance13": "Производ-ть",
+                            "quiteCool13": "Тихий режим",
+                            "performance14": "Макс. производительность",
+                            "quiteCool14": "Интеллектуал. охлаждение"
                         },
                         "readMore": {
                             "mode1": "Тихий режим",
@@ -725,19 +724,19 @@
                             "line1": "Ползунок в крайнем левом положении.Скорость вращения вентиляторов и производительность снижены, чтобы сократить уровень нагрева и шума компьютера, а также увеличить время работы аккумулятора.",
                             "line2": "Ползунок в центре.Скорость вращения вентиляторов и производительность динамически оптимизируются для максимального комфорта использования.",
                             "line3": "Ползунок в крайнем правом положении. Скорость вращения вентиляторов и допустимая температура поверхности увеличены для максимальной производительности.",
-                            "line4": "More info"
+                            "line4": "Больше информации"
                         },
                         "selectedModeText": {
-                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
-                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
-                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                            "quiteCool": "Этот режим обеспечивает оптимальную работу устройства, скорость вентилятора и производительность системы сбалансированы. Например, в играх эта функция оптимизирует производительность. При работе в офисе она снижает уровень шума.",
+                            "batterySaving": "Этот режим обеспечивает максимальное время автономной работы благодаря автоматической регулировке яркости, изменению параметров питания, отключению функций расширенной обработки изображений и т. д.",
+                            "performance": "Этот режим обеспечивает максимальную производительность системы. Быстрая работа вентилятора в этом режиме может создавать сильный шум."
                         },
                         "intelligentCoolingModesModal": {
-                            "title": "Change intelligent cooling modes",
-                            "close": "close",
+                            "title": "Изменение режимов интеллектуального охлаждения",
+                            "close": "закрыть",
                             "coolingModesList": {
-                                "list1": "Click on the windows battery-icon in the toolbar",
-                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                                "list1": "Нажмите на значок аккумулятора Windows на панели задач",
+                                "list2": "Появится индикатор аккумулятора Windows. Перемещайте ползунок, чтобы выбрать оптимальное время работы от аккумулятора или оптимальную производительность."
                             }
                         }
                     },
@@ -748,7 +747,7 @@
                             "battery&Quite": "ТИХАЯ РАБОТА ОТ АККУМУЛЯТОРА"
                         }
                     },
-                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
+                    "description5": "Функция интеллектуального охлаждения регулирует скорость вращения вентилятора, максимальную производительность и управляет временем работы устройства от аккумулятора. Эта функция может работать в трех режимах: тихий режим, сбалансированный режим и режим производительности. Сейчас управлять этой функцией можно с помощью ползунка выбора режима питания Windows"
                 },
                 "powerSettings": {
                     "title": "Параметры питания",
@@ -761,8 +760,8 @@
                         "title": "Простое восстановление",
                         "description": "Включите эту функцию, чтобы сократить время возобновления работы при частом открытии и закрытии крышки компьютера.",
                         "tooltip": "Эта функция сокращает время возобновления работы при частом открытии и закрытии крышки компьютера. Когда эта функция включена, компьютер переходит в режим низкого энергопотребления при закрытии крышки, но мгновенно возвращается в обычный режим, если открыть крышку в течение 15 минут после ее закрытия. Кроме того, данная функция предоставляет ноутбуку возможность завершить текущие операции (например, отправку сообщения электронной почты или загрузку файла) перед переходом системы в режим ожидания."
-					},
-					"or":"Or"
+                    },
+                    "or": "Или"
                 },
                 "otherSettings": {
                     "title": "Другие параметры",
@@ -971,7 +970,7 @@
                         "onSunsetToSunriseScheduleDescription": "Установите график режима защиты глаз в темное время суток",
                         "note": {
                             "title": "Примечание",
-                            "description": "Lenovo Vantage требуется доступ к информации о вашем местоположении, чтобы рассчитать время заката и восхода в вашем регионе."
+                            "description": "Если режим защиты глаз включен, цветовая температура не изменяется. Однако можно переместить ползунок, чтобы получить представление о возможных изменениях. Чтобы изменения вступили в силу, отключите режим защиты глаз."
                         }
                     },
                     "privacyGuard": {
@@ -989,16 +988,16 @@
                         "reset": "Сбросить температуру",
                         "tooltip": "Эта функция позволяет снизить энергопотребление и увеличить время работы аккумулятора путем выборочного затемнения участков экрана.",
                         "dropDown": {
-                            "seconds": "seconds",
-                            "minute": "minute",
-                            "minutes": "minutes",
-                            "alwaysOn": "Always on",
-                            "never": "never",
-                            "halfTime": "Half time of display off timer"
+                            "seconds": "сек",
+                            "minute": "минута",
+                            "minutes": "мин",
+                            "alwaysOn": "Всегда включен",
+                            "never": "никогда",
+                            "halfTime": "Половина времени таймера выключения"
                         },
-                        "taskBarDimmer": "TASKBAR DIMMER",
-                        "backgroundDimmer": "BACKGROUND DIMMER",
-                        "displayDimmer": "DISPLAY DIMMER"
+                        "taskBarDimmer": "РЕГУЛЯТОР ЯРКОСТИ ПАНЕЛИ ЗАДАЧ",
+                        "backgroundDimmer": "РЕГУЛЯТОР ЯРКОСТИ ФОНА",
+                        "displayDimmer": "РЕГУЛЯТОР ЯРКОСТИ ЭКРАНА"
                     }
                 },
                 "camera": {
@@ -1030,10 +1029,10 @@
                         "sketchMode": "Режим эскиза"
                     },
                     "cameraLoadingFailed": {
-                        "inUseTitle": "CAMERA IS IN USE",
-                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
-                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
-                        "loadingFailedDescription": "Close the app and try again."
+                        "inUseTitle": "КАМЕРА ИСПОЛЬЗУЕТСЯ",
+                        "inUseDescription": "Камера используется другим приложением. Закройте это приложение и повторите попытку.",
+                        "loadingFailedTitle": "КАМЕРА ИСПОЛЬЗУЕТСЯ, ЛИБО ПРОИЗОШЕЛ СБОЙ ЗАГРУЗКИ",
+                        "loadingFailedDescription": "Закройте это приложение и повторите попытку."
                     }
                 }
             },
@@ -1085,15 +1084,15 @@
                             "option3": "Введите текст"
                         }
                     },
-                    "tooltip": "Content to be filled",
+                    "tooltip": "Заполняемое содержимое",
                     "apply": {
-                        "title": "APPLY"
+                        "title": "ПРИМЕНИТЬ"
                     },
                     "website": {
-                        "url": "WEBSITE URL"
+                        "url": "URL-АДРЕС ВЕБ-САЙТА"
                     },
                     "enterText": {
-                        "title": "TEXT TO BE ENTERED"
+                        "title": "ВВОДИМЫЙ ТЕКСТ"
                     }
                 }
             }
@@ -1204,7 +1203,18 @@
                     "hand": {
                         "title": "Обнаружение приближения рук на краях компьютера",
                         "description": "При включенном режиме планшета включать APS, если рука не обнаружена"
-                    }
+                    },
+                    "more": "ДОПОЛНИТЕЛЬНО",
+                    "advanced-settings": "ДОПОЛНИТЕЛЬНЫЕ НАСТРОЙКИ",
+                    "hide": "СКРЫТЬ ДОПОЛНИТЕЛЬНЫЕ НАСТРОЙКИ"
+                },
+                "APS": {
+                    "more": "ДОПОЛНИТЕЛЬНО",
+                    "advancedSettings": "ДОПОЛНИТЕЛЬНЫЕ НАСТРОЙКИ",
+                    "hideAdvancedSettings": "СКРЫТЬ ДОПОЛНИТЕЛЬНЫЕ НАСТРОЙКИ",
+                    "lowSensitivity": "Низкая чувствительность",
+                    "mediumSensitivity": "Средняя чувствительность",
+                    "highSensitivity": "Высокая чувствительность"
                 }
             },
             "intelligentMedia": {
@@ -1240,15 +1250,15 @@
                     "closeText": "закрыть"
                 },
                 "modalInstallationFailed": {
-                    "btnText": "ok",
-                    "title": "Install Failed",
-                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                    "btnText": "ОК",
+                    "title": "Сбой установки",
+                    "desc": "Повторите попытку позже, чтобы воспользоваться Lenovo Voice."
                 }
             }
         }
     },
     "systemUpdates": {
-        "title": "Обновления системы",
+        "title": "Обновление системы",
         "back": "НАЗАД",
         "history": "ПОЛНЫЙ ЖУРНАЛ",
         "notAvailable": "Недоступно",
@@ -1262,7 +1272,7 @@
         "at": "в",
         "readMore": "Подробнее",
         "popup": {
-            "reboot": "П/загр",
+            "reboot": "Перезагрузить",
             "shutdown": "Завершение работы",
             "rebootForceMsg": "Выбранные обновления после установки приведут к автоматическойперезагрузке системы.",
             "shutdownForceMsg": "Выбранные обновления после установки приведут к автоматическомузавершению работы системы.",
@@ -1294,7 +1304,7 @@
             "title": "Веб-сайт поддержки Lenovo"
         },
         "banner": {
-            "neverChecked": "Вас приветствует программа System Update.",
+            "neverChecked": "Вас приветствует программа \"Обновление системы\".",
             "title": "Регулярное обновление системы обеспечивает ее исправную работу.",
             "last": "Последнее обновление: ",
             "next": "Следующее запланированное обновление: ",
@@ -1398,7 +1408,7 @@
             "overviewBlockTitle": "Обзор безопасности экосистемы",
             "allDevices": "Все устройства",
             "myDevice": "Мое устройство",
-            "thisComputer": "This computer",
+            "thisComputer": "Этот компьютер",
             "secure": "БЕЗОПАСНО",
             "needAttention": "ТРЕБУЕТ ВНИМАНИЯ",
             "manageAccount": "Управление учетной записью",
@@ -1672,14 +1682,14 @@
             "title": "Безопасность VPN",
             "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN шифрует данные, которые вы отправляете и получаете, чтобы вы могли безопасно и конфиденциально использовать ваш ПК, Mac®, смартфон или планшет с любым подключением к Интернету без лишних переживаний.",
-            "whatCanSufEasy1": "A virtual private network provider that protects you while you are online. Without a VPN, your computer may be more vulnerable to attackers and identity theft. The VPN runs silently in the background and provides security and privacy protection.",
-            "startUseSufEasy4": "SurfEasy users can enjoy 250 MB of free traffic every 30 days! Follow the steps on the &quot;Rewards&quot; tab of the SurfEasy app to get more traffic.",
-            "howToGetData": "How to get free traffic:",
-            "howToGetData1": "Confirm email to win +250 MB traffic",
-            "howToGetData2": "Add a second device to win +250 MB of traffic",
-            "howToGetData3": "Refer a friend and win +500 MB of traffic",
-            "howToGetData4": "Like SurfEasy on Facebook, earn +100 MB of traffic,",
-            "howToGetData5": "Follow SurfEasy on Twitter and win +100 MB of traffic",
+            "whatCanSufEasy1": "Поставщик VPN, который обеспечивает вашу безопасность в сети. Без VPN ваш компьютер более уязвим для злоумышленников и похитителей идентификационных данных. VPN работает в фоновом режиме, обеспечивая безопасность и защиту конфиденциальности.",
+            "startUseSufEasy4": "Пользователи SurfEasy получают 250 МБ бесплатного трафика каждые 30 дней! Выполните действия на вкладке &quot;Вознаграждения&quot; приложения SurfEasy, чтобы получить больше трафика.",
+            "howToGetData": "Как получить бесплатный трафик:",
+            "howToGetData1": "Подтвердите свой адрес электронной почты, чтобы получить 250 МБ дополнительного трафика",
+            "howToGetData2": "Добавьте второе устройство, чтобы получить 250 МБ трафика",
+            "howToGetData3": "Порекомендуйте сервис другу и получите 500 МБ трафика",
+            "howToGetData4": "Поставьте SurfEasy лайк на Facebook и получите еще 100 МБ трафика",
+            "howToGetData5": "Подпишитесь на SurfEasy в Твиттере и получите 100 МБ трафика",
             "helpKeep": "Обеспечьте безопасность и конфиденциальность ваших действий в Интернете с помощью SurfEasy VPN.",
             "getSufEasy": "Получить SurfEasy",
             "openSufEasy": "Открыть SurfEasy",

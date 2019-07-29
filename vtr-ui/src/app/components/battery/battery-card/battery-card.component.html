@@ -17,10 +17,12 @@
 				{{'device.deviceSettings.batteryGauge.details.title' | translate }}
 			</h4>
 			<button type="button"
-				class="close"
+				class="close-button bg-white"
 				aria-label="Close"
 				(click)="modal.dismiss('Cross click')">
-				<img [src]=" 'assets/icons/Close.svg' | svgInline | async" />
+				<!-- <img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="X" /> -->
+				<fa-icon [icon]="['fal', 'times']"></fa-icon>
+
 			</button>
 		</div>
 		<div class="modal-body">
@@ -50,12 +52,12 @@
 
 		<div class="p-3 row"
 			*ngFor="let batteryConditionNote of batteryConditionNotes; let i = index">
-			<div class="p-0 pr-3 col-auto battery-conditions-icon battery-conditions">
+			<div class="p-0 pr-3 col-auto battery-conditions">
 				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Good"
 					[src]=" '/assets/icons/battery-conditions/good.svg'" />
 				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Fair"
 					[src]=" '/assets/icons/battery-conditions/fair.svg'" />
-				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Poor"
+				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Poor && batteryConditions[i].condition!=batteryConditionsEnum.Error"
 					[src]=" '/assets/icons/battery-conditions/poor.svg'" />
 
 				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.AcError"
@@ -65,7 +67,8 @@
 				<span *ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation"
 					class="battery-conditions-tips"
 					[innerHTML]="batteryConditionNote | translate:param2"></span>
-				<span *ngIf="batteryConditions[i].condition!=batteryConditionsEnum.StoreLimitation"
+				<span
+					*ngIf="batteryConditions[i].condition!=batteryConditionsEnum.StoreLimitation && batteryConditions[i].condition!=batteryConditionsEnum.Error"
 					class="battery-conditions-tips"
 					[innerHTML]="batteryConditionNote | translate"></span>
 				<a *ngIf="batteryConditions[i].conditionStatus===batteryQuality.AcError&&shortAcErrNote"

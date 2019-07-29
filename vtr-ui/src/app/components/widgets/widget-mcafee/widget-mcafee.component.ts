@@ -57,10 +57,10 @@ export class WidgetMcafeeComponent implements OnInit {
 				this.country = x;
 			},
 			error: err => {
-				this.country = 'US';
+				this.country = 'us';
 			},
 		});
-		if (language === 'en' && this.country === 'GB') {
+		if (language === 'en' && this.country === 'gb') {
 			return this.nls.get('gb');
 		}
 		if (this.nls.has(language)) {

@@ -387,7 +387,7 @@
                 "title": "Apparaat",
                 "sub1": "Mijn apparaat",
                 "sub2": "Mijn apparaatinstellingen",
-                "sub3": "System Updates",
+                "sub3": "Systeemupdate",
                 "sub4": "Slimme hulp"
             },
             "security": {
@@ -448,27 +448,27 @@
         }
     },
     "tutorial": {
-        "almostThere": "Almost there!",
-        "para1": "Just a few more buttons to press before we can have liftoff.",
-        "para2": "Before we can give you the most optimal experience there are still a few things to setup.",
-        "personalise": "START PERSONALIZING",
-        "howIsitUsed": "How will you use it?",
-        "howMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "business": "BUSINESS",
-        "personal": "PERSONAL",
-        "custom": "CUSTOM",
-        "skip": "SKIP",
+        "almostThere": "U bent er bijna!",
+        "para1": "Nog enkele knoppen die u moet indrukken, en u kunt aan de slag.",
+        "para2": "Voordat we u de beste ervaring kunnen bieden, zijn er nog enkele zaken die u moet instellen.",
+        "personalise": "PERSONALISERING STARTEN",
+        "howIsitUsed": "Hoe gaat u het gebruiken?",
+        "howMachinUsed": "Klik op een van deze opties om aan te geven hoe u deze computer gaat gebruiken.",
+        "business": "ZAKELIJK",
+        "personal": "PERSOONLIJK",
+        "custom": "AANGEPAST",
+        "skip": "OVERSLAAN",
         "next": "VOLGENDE",
-        "interests": "What are your interests?",
-        "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
+        "interests": "Wat zijn uw interesses?",
+        "howOnesMachinUsed": "Klik op een van deze opties om aan te geven hoe u deze computer gaat gebruiken.",
         "games": "GAMES",
-        "news": "NEWS",
-        "entertainment": "ENTERTAINMENT",
-        "arts": "ARTS",
-        "politics": "POLITICS",
-        "sports": "SPORTS",
-        "regionalNews": "REGIONAL NEWS",
-        "technology": "TECHNOLOGY"
+        "news": "NIEUWS",
+        "entertainment": "ONTSPANNING",
+        "arts": "KUNST",
+        "politics": "POLITIEK",
+        "sports": "SPORT",
+        "regionalNews": "REGIONAAL NIEUWS",
+        "technology": "TECHNOLOGIE"
     },
     "dashboard": {
         "headerMain": {
@@ -534,7 +534,7 @@
                 }
             },
             "systemUpdate": {
-                "title": "System Update",
+                "title": "Systeemupdate",
                 "detail": {
                     "update": "Updaten"
                 }
@@ -636,15 +636,15 @@
                         "acdischarging": "Bezig met ontladen (op netvoeding)"
                     },
                     "deviceChemistry": {
-                        "li-polymer": "Li-Polymer",
-                        "li-ion": "Li-Ion",
-                        "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion",
-                        "silver-zinc": "Silver-Zinc",
-                        "silver_zinc": "Silver-Zinc",
+                        "li-polymer": "Lithium-polymeer",
+                        "li-ion": "Lithium-ion",
+                        "li_polymer": "Lithium-polymeer",
+                        "li_ion": "Lithium-ion",
+                        "silver-zinc": "Zilver-zink",
+                        "silver_zinc": "Zilver-zink",
                         "nicd": "NiCd",
                         "nimh": "NiMH",
-                        "unknown": "Unknown"
+                        "unknown": "Onbekend"
                     },
                     "manufacturer": {
                         "title": "Fabrikant",
@@ -662,7 +662,7 @@
                     "NotSupportACAdapter": "<b>De netvoedingsadapter wordt niet ondersteund.</b> De Lenovo-computer biedt geen ondersteuning voor deze netvoedingsadapter. Deze kan onverwachte afsluitingen tot gevolg hebben. Sluit een juiste netvoedingsadapter aan.",
                     "LimitedACAdapterSupport": "<b>De netvoedingsadapter kan de Lenovo-computer niet voldoende stroom leveren</b>. Dit heeft invloed op de systeemprestaties en de oplaadsnelheid. Sluit de bijbehorende netvoedingsadapter weer aan.",
                     "MissingDriver": "<b>Het stuurprogramma voor Lenovo-energiebeheer</b> is niet geïnstalleerd of werkt niet goed. Voer Windows Update uit om het meest recente stuurprogramma te installeren.",
-                    "StoreLimitation": "<b>De batterij kan slechts {{percentageLimitation}}% van</b> de oorspronkelijke volledige laadcapaciteit opslaan.",
+                    "StoreLimitation": "<b>De batterij kan slechts {{value}}% van</b> de oorspronkelijke volledige laadcapaciteit opslaan.",
                     "HighTemperature": "<b>Het ontladen</b> is gestopt omdat de <b>batterij te heet is geworden.</b>",
                     "TrickleCharge": "De batterij is <b>volledig ontladen</b> en moet opnieuw worden opgeladen. Dit kan tien uur of langer duren.",
                     "OverheatedBattery": "De batterij is <b>te heet</b>. Verwijder hem uit de computer en laat hem afkoelen tot kamertemperatuur.",
@@ -671,7 +671,7 @@
                 "updating": "Bezig met updaten",
                 "voltageError": "Batterijspanning onjuist",
                 "batteryNotDetected": "Geen batterij gedetecteerd",
-                "thresholdNote": "<b>Opmerking:</b> om de levensduur van de batterij te verlengen, moet u de oplaaddrempel instellen op {{chargeThresholdInfo.stopValue}}%."
+                "thresholdNote": "<b>Opmerking:</b> om de levensduur van de batterij te verlengen, moet u de oplaaddrempel instellen op {{value}}%."
             },
             "power": {
                 "title": "Energiebeheer",
@@ -681,42 +681,41 @@
                     "title": "NAAR INSTELLINGEN GAAN",
                     "battery": "Batterij",
                     "power": "Energiebeheer",
-                    "cooling": "Intelligent koelen",
                     "other": "Andere",
-                    "smartStandby": "Smart Standby"
+                    "smartStandby": "Slim stand-by"
                 },
                 "powerSmartSettings": {
                     "title": "Slimme energiebeheerinstellingen",
                     "subtitle": "INTELLIGENT KOELEN",
                     "subtitle1": "Batterij en stille modus",
-                    "description1": "Deze functie past de thermische instellingen dynamisch aan uw behoeften aan.Als u deze functie inschakelt, worden de instellingen aangepast zodat het apparaat koeler of stil blijft, als u het in de hand houdt of als het inactief is. Anders worden de prestaties geoptimaliseerd wanneer het apparaat op een stabiel oppervlak staat. Als de functie is uitgeschakeld, kunt u de thermische prioriteit handmatig instellen.",
+                    "description1": "Wanneer deze functie is ingeschakeld, past hij de thermische instellingen dynamisch aan uw behoeften aan. De instellingen worden aangepast zodat het apparaat koel en stil blijft, als u het in de hand houdt of als het inactief is. Wanneer het apparaat op een stabiel oppervlak staat, worden de prestaties geoptimaliseerd. U kunt de thermische prioriteit ook handmatig instellen als de functie is uitgeschakeld.",
                     "description2": "Intelligent koelen regelt de ventilatorsnelheid, maximale temperatuur van de buitenkant van de computer en de prestaties.Deze functie biedt onderstaande modi en is nu toegankelijk via de prestatieschuif in Windows.",
                     "description3": "Met Intelligent koelen worden de thermische prestaties automatisch afgestemd op uw behoeften.De functie Intelligent koelen past de prestatie-instellingen zodanig aan dat de notebookcomputer een koeler oppervlak krijgt wanneer u deze vasthoudt. Dit verhoogt uw comfort. Als het apparaat op een bureau staat, optimaliseert deze functie de prestaties.",
-                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "description13": "Wanneer deze functie is ingeschakeld, past hij de thermische instellingen dynamisch aan uw behoeften aan. De instellingen worden aangepast zodat het apparaat koel en stil blijft, als u het in de hand houdt of als het inactief is. Wanneer het apparaat op een stabiel oppervlak staat, worden de prestaties geoptimaliseerd. U kunt de thermische prioriteit ook handmatig instellen als de functie is uitgeschakeld.",
+                    "description14": "Met deze functie kunt u de snelheid van de ventilator aanpassen, de systeemprestaties maximaliseren en zo nodig de levensduur van de accu verlengen. Deze heeft de drie onderstaande modi. U kunt ook tussen werkstanden schakelen met sneltoetsen (FN+Q) of vanaf de Lenovo Vantage-werkbalk.",
                     "readMore": "Meer weergeven.",
                     "gotoWindows": {
                         "title": "Ga naar Windows-instellingen",
                         "modalBodyText1": "Klik op het Windows-batterijpictogram in het systeemvak voor toegang tot de prestatieschuif in Windows"
                     },
                     "intelligentCooling": {
-                        "title": "Intelligent koelen",
+                        "title": "Intelligent Koelen",
                         "description": "",
                         "tooltip": "",
                         "optimize": "systeem optimaliseren voor",
                         "apsHint": "Als u Intelligent koelen wilt inschakelen, moet u het Lenovo Active Protection System installeren en inschakelen.",
                         "options": {
-                            "quiteCool3": "Koelmodus",
-                            "performance3": "High Performance",
+                            "quiteCool3": "Stil en koel",
+                            "performance3": "Prestaties",
                             "quiteCool4": "Stil en koel",
                             "performance4": "Prestaties",
                             "quiteCool5": "Stil en koel",
                             "performance5": "Prestaties",
-                            "batterySaving": "Battery Saving",
-                            "performance13": "Performance",
-                            "quiteCool13": "Quiet & Cool",
-                            "performance14": "Extreme Performance",
-                            "quiteCool14": "Intelligent Cooling"
+                            "batterySaving": "Batterij besparen",
+                            "performance13": "Prestaties",
+                            "quiteCool13": "Stil en koel",
+                            "performance14": "Extreme prestaties",
+                            "quiteCool14": "Intelligente koeling"
                         },
                         "readMore": {
                             "mode1": "Stille modus",
@@ -725,19 +724,19 @@
                             "line1": "De schuifregelaar is uiterst links.Ventilatorsnelheid en prestaties worden verlaagd voor een koelere, stillere computer en een langere batterijduur.",
                             "line2": "De schuifregelaar is in het midden.De ventilatorsnelheid en prestaties worden dynamisch gebalanceerd voor een optimale beleving.",
                             "line3": "De schuifregelaar is uiterst rechts. Er worden een hogere ventilatorsnelheid en een hogere temperatuur van de buitenkant van de computer toegelaten voor maximale prestaties.",
-                            "line4": "More info"
+                            "line4": "Meer info"
                         },
                         "selectedModeText": {
-                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
-                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
-                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                            "quiteCool": "In deze werkstand zijn ventilatorsnelheid en systeemprestaties uitgebalanceerd, wat de beste ervaring geeft. Tijdens het gamen bijvoorbeeld, worden de prestaties geoptimaliseerd. Op kantoor wordt ruis geminimaliseerd.",
+                            "batterySaving": "Deze werkstand levert een maximale levensduur van de batterij door de helderheid automatisch aan te passen, de energie-instellingen te wijzigen, functies voor geavanceerde beeldverwerking uit te schakelen, enzovoort.",
+                            "performance": "Deze werkstand biedt maximale systeemprestaties. In deze werkstand is het mogelijk dat de hoge ventilatorsnelheid veel ruis veroorzaakt."
                         },
                         "intelligentCoolingModesModal": {
-                            "title": "Change intelligent cooling modes",
-                            "close": "close",
+                            "title": "Intelligente koelingswerkstanden wijzigen",
+                            "close": "sluiten",
                             "coolingModesList": {
-                                "list1": "Click on the windows battery-icon in the toolbar",
-                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                                "list1": "Klik op het batterijpictogram van Windows op de werkbalk",
+                                "list2": "De batterijmeter van Windows wordt weergegeven. Schuif de schuifregelaar om te kiezen tussen optimale tijd of optimale prestaties."
                             }
                         }
                     },
@@ -748,7 +747,7 @@
                             "battery&Quite": "BATTERIJ EN STILLE MODUS"
                         }
                     },
-                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
+                    "description5": "Met Intelligente koeling worden de ventilatorsnelheid en maximale prestaties aangepast en de levensduur van de batterij beheerd. Deze functie heeft drie modi (Stille modus, Gebalanceerde modus en Prestatiemodus) en is nu toegankelijk via de prestatieschuif in Windows"
                 },
                 "powerSettings": {
                     "title": "Energie-instellingen",
@@ -761,8 +760,8 @@
                         "title": "Eenvoudig hervatten",
                         "description": "Schakel deze functie in om de computer sneller te herstellen als u de klep van uw computer vaak opent en sluit.",
                         "tooltip": "Door deze functie herstelt de computer sneller als u de klep van uw computer vaak opent en sluit. Als deze functie is ingeschakeld, wordt de modus voor laag energieverbruik ingeschakeld als u de klep sluit, maar meteen weer hersteld als u de klep binnen 15 minuten nadat u de klep sloot weer opent. Deze functie zorgt er ook voor dat uw notebook lopende activiteiten (zoals het versturen van e-mail of het downloaden van een bestand) probeert af te ronden voordat de slaapstand wordt geactiveerd."
-					},
-					"or":"Or"
+                    },
+                    "or": "Of"
                 },
                 "otherSettings": {
                     "title": "Overige instellingen",
@@ -971,7 +970,7 @@
                         "onSunsetToSunriseScheduleDescription": "Oogzorg-modus voor zonsondergang tot zonsopgang plannen",
                         "note": {
                             "title": "Opmerking",
-                            "description": "Lenovo Vantage heeft toegang nodig tot uw locatiegegevens voor het berekenen van de tijd voor zonsondergang en zonsopgang van uw regio."
+                            "description": "Als de modus voor oogverzorging is ingeschakeld, wordt deze kleurtemperatuur niet geactiveerd. U kunt de schuifregelaar echter verslepen om een voorbeeld te krijgen. Schakel de modus voor oogverzorging uit om deze te activeren."
                         }
                     },
                     "privacyGuard": {
@@ -989,16 +988,16 @@
                         "reset": "Temperatuur opnieuw instellen",
                         "tooltip": "Deze functie kan het stroomverbruik verminderen en de levensduur van de batterij verlengen door delen van het display op selectieve wijze te dimmen.",
                         "dropDown": {
-                            "seconds": "seconds",
-                            "minute": "minute",
-                            "minutes": "minutes",
-                            "alwaysOn": "Always on",
-                            "never": "never",
-                            "halfTime": "Half time of display off timer"
+                            "seconds": "seconden",
+                            "minute": "minuut",
+                            "minutes": "minuten",
+                            "alwaysOn": "Altijd aan",
+                            "never": "nooit",
+                            "halfTime": "Timer Helft van de tijd voordat beeldscherm wordt uitgeschakeld"
                         },
-                        "taskBarDimmer": "TASKBAR DIMMER",
-                        "backgroundDimmer": "BACKGROUND DIMMER",
-                        "displayDimmer": "DISPLAY DIMMER"
+                        "taskBarDimmer": "TAAKBALKDIMMER",
+                        "backgroundDimmer": "ACHTERGRONDDIMMER",
+                        "displayDimmer": "BEELDSCHERMDIMMER"
                     }
                 },
                 "camera": {
@@ -1030,10 +1029,10 @@
                         "sketchMode": "Schetsmodus"
                     },
                     "cameraLoadingFailed": {
-                        "inUseTitle": "CAMERA IS IN USE",
-                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
-                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
-                        "loadingFailedDescription": "Close the app and try again."
+                        "inUseTitle": "CAMERA IS IN GEBRUIK",
+                        "inUseDescription": "Een andere app maakt gebruik van de camera. Sluit de app en probeer het opnieuw.",
+                        "loadingFailedTitle": "CAMERA IS IN GEBRUIK OF LADEN IS MISLUKT",
+                        "loadingFailedDescription": "Sluit de app en probeer het opnieuw."
                     }
                 }
             },
@@ -1085,15 +1084,15 @@
                             "option3": "Tekst invoeren"
                         }
                     },
-                    "tooltip": "Content to be filled",
+                    "tooltip": "In te vullen inhoud",
                     "apply": {
-                        "title": "APPLY"
+                        "title": "TOEPASSEN"
                     },
                     "website": {
-                        "url": "WEBSITE URL"
+                        "url": "WEBSITE-URL"
                     },
                     "enterText": {
-                        "title": "TEXT TO BE ENTERED"
+                        "title": "IN TE VOEREN TEKST"
                     }
                 }
             }
@@ -1204,7 +1203,18 @@
                     "hand": {
                         "title": "Sensors voor handnabijheid aan de randen van de computer",
                         "description": "Als de Tablet werkstand is ingeschakeld, moet u APS inschakelen als de hand niet wordt gedetecteerd"
-                    }
+                    },
+                    "more": "MEER",
+                    "advanced-settings": "GEAVANCEERDE INSTELLINGEN",
+                    "hide": "GEAVANCEERDE INSTELLINGEN VERBERGEN"
+                },
+                "APS": {
+                    "more": "MEER",
+                    "advancedSettings": "GEAVANCEERDE INSTELLINGEN",
+                    "hideAdvancedSettings": "GEAVANCEERDE INSTELLINGEN VERBERGEN",
+                    "lowSensitivity": "Lage gevoeligheid",
+                    "mediumSensitivity": "Gemiddelde gevoeligheid",
+                    "highSensitivity": "Hoge gevoeligheid"
                 }
             },
             "intelligentMedia": {
@@ -1241,14 +1251,14 @@
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
-                    "title": "Install Failed",
-                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                    "title": "Installatie mislukt",
+                    "desc": "Probeer het later nog eens om Lenovo Voice te gebruiken."
                 }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Update",
+        "title": "Systeemupdate",
         "back": "TERUG",
         "history": "VOLLEDIGE GESCHIEDENIS",
         "notAvailable": "Niet beschikbaar",
@@ -1294,7 +1304,7 @@
             "title": "Ondersteuningswebsite van Lenovo"
         },
         "banner": {
-            "neverChecked": "Welkom bij het gebruik van System Update.",
+            "neverChecked": "Welkom bij het gebruik van Systeemupdate.",
             "title": "Een bijgewerkt systeem is een gezond systeem.",
             "last": "Laatst bijgewerkt: ",
             "next": "Volgende geplande update: ",
@@ -1398,7 +1408,7 @@
             "overviewBlockTitle": "Uw ecosysteem beveiligingsoverzicht",
             "allDevices": "Alle apparaten",
             "myDevice": "Mijn apparaat",
-            "thisComputer": "This computer",
+            "thisComputer": "Deze computer",
             "secure": "Beveiligen",
             "needAttention": "HEEFT AANDACHT NODIG",
             "manageAccount": "Account beheren",
@@ -1672,14 +1682,14 @@
             "title": "VPN-beveiliging",
             "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN versleutelt de informatie die u verzendt en ontvangt, zodat u uw pc, Mac®, smartphone of tablet zorgeloos veilig en privé kunt gebruiken met elke internetverbinding.",
-            "whatCanSufEasy1": "A virtual private network provider that protects you while you are online. Without a VPN, your computer may be more vulnerable to attackers and identity theft. The VPN runs silently in the background and provides security and privacy protection.",
-            "startUseSufEasy4": "SurfEasy users can enjoy 250 MB of free traffic every 30 days! Follow the steps on the &quot;Rewards&quot; tab of the SurfEasy app to get more traffic.",
-            "howToGetData": "How to get free traffic:",
-            "howToGetData1": "Confirm email to win +250 MB traffic",
-            "howToGetData2": "Add a second device to win +250 MB of traffic",
-            "howToGetData3": "Refer a friend and win +500 MB of traffic",
-            "howToGetData4": "Like SurfEasy on Facebook, earn +100 MB of traffic,",
-            "howToGetData5": "Follow SurfEasy on Twitter and win +100 MB of traffic",
+            "whatCanSufEasy1": "Een VPN-provider die u beschermt terwijl u online bent. Zonder VPN is uw computer mogelijk kwetsbaarder voor hackers en identiteitsdiefstal. Het VPN wordt op de achtergrond uitgevoerd en biedt beveiliging en bescherming van uw privacy.",
+            "startUseSufEasy4": "SurfEasy-gebruikers kunnen elke 30 dagen genieten van 250 MB gratis dataverkeer. Volg de stappen op het tabblad &quot;Beloningen&quot; van de SurfEasy-app als u meer dataverkeer wilt.",
+            "howToGetData": "Meer dataverkeer krijgen:",
+            "howToGetData1": "Bevestig het e-mailbericht om +250 MB aan dataverkeer te winnen",
+            "howToGetData2": "Voeg een tweede apparaat toe om +250 MB aan dataverkeer te winnen",
+            "howToGetData3": "Verwijs een vriend door en win +500 MB aan dataverkeer",
+            "howToGetData4": "Vind SurfEasy leuk op Facebook en verdien +100 MB aan dataverkeer",
+            "howToGetData5": "Volg SurfEasy op Twitter en win +100 MB aan dataverkeer",
             "helpKeep": "Help uw online activiteiten veilig en privé te houden met SurfEasy VPN.",
             "getSufEasy": "SurfEasy downloaden",
             "openSufEasy": "SurfEasy openen",

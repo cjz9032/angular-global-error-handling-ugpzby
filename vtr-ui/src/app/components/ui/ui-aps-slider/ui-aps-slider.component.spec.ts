@@ -2,24 +2,24 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UiApsSliderComponent } from './ui-aps-slider.component';
 
-describe('UiApsSliderComponent', () => {
-//   let component: UiApsSliderComponent;
-//   let fixture: ComponentFixture<UiApsSliderComponent>;
+xdescribe('UiApsSliderComponent', () => {
+	let component: UiApsSliderComponent;
+	let fixture: ComponentFixture<UiApsSliderComponent>;
 
-  beforeEach(async(() => {
-    // TestBed.configureTestingModule({
-    //   declarations: [ UiApsSliderComponent ]
-    // })
-    // .compileComponents();
-  }));
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [UiApsSliderComponent]
+		})
+			.compileComponents();
+	}));
 
-  beforeEach(() => {
-    // fixture = TestBed.createComponent(UiApsSliderComponent);
-    // component = fixture.componentInstance;
-    // fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(UiApsSliderComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-   // expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });

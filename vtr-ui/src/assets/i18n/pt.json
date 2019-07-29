@@ -387,7 +387,7 @@
                 "title": "Dispositivo",
                 "sub1": "O Meu Dispositivo",
                 "sub2": "Definições do meu dispositivo",
-                "sub3": "System Updates",
+                "sub3": "Atualização do Sistema",
                 "sub4": "Assistente Inteligente"
             },
             "security": {
@@ -444,31 +444,31 @@
     },
     "privacy": {
         "headerMain": {
-            "title": "Privacy"
+            "title": "Privacidade"
         }
     },
     "tutorial": {
-        "almostThere": "Almost there!",
-        "para1": "Just a few more buttons to press before we can have liftoff.",
-        "para2": "Before we can give you the most optimal experience there are still a few things to setup.",
-        "personalise": "START PERSONALIZING",
-        "howIsitUsed": "How will you use it?",
-        "howMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "business": "BUSINESS",
-        "personal": "PERSONAL",
-        "custom": "CUSTOM",
-        "skip": "SKIP",
+        "almostThere": "Está quase!",
+        "para1": "Só mais uns botões para premir antes de podermos descolar.",
+        "para2": "Antes de lhe podermos dar a melhor experiência possível, ainda há algumas coisas para configurar.",
+        "personalise": "COMEÇAR A PERSONALIZAR",
+        "howIsitUsed": "Como é que o vai utilizar?",
+        "howMachinUsed": "Clique numa destas utilizações para nos dizer como vai utilizar esta máquina.",
+        "business": "NEGÓCIOS",
+        "personal": "PESSOAL",
+        "custom": "PERSONALIZADO",
+        "skip": "IGNORAR",
         "next": "SEGUINTE",
-        "interests": "What are your interests?",
-        "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "games": "GAMES",
-        "news": "NEWS",
-        "entertainment": "ENTERTAINMENT",
-        "arts": "ARTS",
-        "politics": "POLITICS",
-        "sports": "SPORTS",
-        "regionalNews": "REGIONAL NEWS",
-        "technology": "TECHNOLOGY"
+        "interests": "Quais são os seus interesses?",
+        "howOnesMachinUsed": "Clique numa destas utilizações para nos dizer como vai utilizar esta máquina.",
+        "games": "JOGOS",
+        "news": "NOTÍCIAS",
+        "entertainment": "ENTRETENIMENTO",
+        "arts": "ARTES",
+        "politics": "POLÍTICA",
+        "sports": "DESPORTO",
+        "regionalNews": "NOTÍCIAS REGIONAIS",
+        "technology": "TECNOLOGIA"
     },
     "dashboard": {
         "headerMain": {
@@ -534,7 +534,7 @@
                 }
             },
             "systemUpdate": {
-                "title": "System Update",
+                "title": "Atualização do Sistema",
                 "detail": {
                     "update": "Atualizar"
                 }
@@ -551,7 +551,7 @@
             "learnMore": "Saber mais",
             "freeMemory": "Memória livre",
             "systemUpdate": {
-                "title": "Atualização do sistema",
+                "title": "Atualização do Sistema",
                 "notFound": "Atualização do sistema não encontrada",
                 "detail": {
                     "uptoDate": "Software atualizado",
@@ -636,15 +636,15 @@
                         "acdischarging": "A descarregar (com CA)"
                     },
                     "deviceChemistry": {
-                        "li-polymer": "Li-Polymer",
-                        "li-ion": "Li-Ion",
-                        "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion",
-                        "silver-zinc": "Silver-Zinc",
-                        "silver_zinc": "Silver-Zinc",
+                        "li-polymer": "Polímeros de lítio",
+                        "li-ion": "Iões de lítio",
+                        "li_polymer": "Polímeros de lítio",
+                        "li_ion": "Iões de lítio",
+                        "silver-zinc": "Zinco de prata",
+                        "silver_zinc": "Zinco de prata",
                         "nicd": "NiCd",
                         "nimh": "NiMH",
-                        "unknown": "Unknown"
+                        "unknown": "Desconhecido"
                     },
                     "manufacturer": {
                         "title": "Fabricante",
@@ -662,7 +662,7 @@
                     "NotSupportACAdapter": "<b>O transformador CA não é suportado.</b> O seu computador Lenovo não suporta este transformador CA. Poderá causar um encerramento súbito. Ligue um transformador CA correto.",
                     "LimitedACAdapterSupport": "<b>O transformador CA não pode fornecer energia suficiente</b> ao seu computador Lenovo, o que terá impacto no desempenho do sistema e na velocidade de carregamento. Volte a ligar o transformador CA correto.",
                     "MissingDriver": "<b>O controlador do Lenovo Power Manager</b> não está instalado ou não está a funcionar corretamente. Execute o Windows Update para instalar o controlador mais recente.",
-                    "StoreLimitation": "<b>A bateria apenas pode armazenar {{percentageLimitation}}% da</b> respetiva capacidade original de carga total.",
+                    "StoreLimitation": "<b>A bateria apenas pode armazenar {{value}}% da</b> respetiva capacidade original de carga total.",
                     "HighTemperature": "<b>A descarga</b> parou porque a <b>temperatura da bateria é demasiado elevada.</b>",
                     "TrickleCharge": "A bateria foi <b>totalmente descarregada</b> e necessita de ser recarregada. Esta operação pode demorar dez horas ou mais.",
                     "OverheatedBattery": "A bateria está <b>demasiado quente</b>. Remova-a do computador e arrefeça-a à temperatura ambiente.",
@@ -671,7 +671,7 @@
                 "updating": "Atualizar",
                 "voltageError": "Tensão da bateria incorreta",
                 "batteryNotDetected": "Nenhuma bateria detetada",
-                "thresholdNote": "<b>Nota:</b> para aumentar a vida útil da bateria, definiu a bateria para parar o carregamento aos {{chargeThresholdInfo.stopValue}}%."
+                "thresholdNote": "<b>Nota:</b> para aumentar a vida útil da bateria, definiu a bateria para parar o carregamento aos {{value}}%."
             },
             "power": {
                 "title": "Alimentação",
@@ -681,19 +681,18 @@
                     "title": "IR PARA AS DEFINIÇÕES",
                     "battery": "Bateria",
                     "power": "Alimentação",
-                    "cooling": "Arrefecimento Inteligente",
                     "other": "Outro",
-                    "smartStandby": "Smart Standby"
+                    "smartStandby": "Modo de Suspensão Inteligente"
                 },
                 "powerSmartSettings": {
                     "title": "Definições de energia Smart",
                     "subtitle": "ARREFECIMENTO INTELIGENTE",
                     "subtitle1": "Bateria e Silêncio",
-                    "description1": "Esta funcionalidade ajusta dinamicamente as definições térmicas às suas necessidades.Quando ligado, ajusta as definições para manter o dispositivo mais fresco ou silencioso, enquanto estiver em espera ou inativo. Caso contrário, otimiza o desempenho enquanto o dispositivo está em uma superfície estável. Quando desativado, o utilizador pode definir manualmente a prioridade térmica.",
+                    "description1": "Quando ativada, esta funcionalidade ajusta dinamicamente as definições térmicas às suas necessidades. Ajusta as definições para manter o dispositivo fresco e silencioso, enquanto está a ser segurado ou inativo. Quando o dispositivo está numa superfície estável, otimiza o respetivo desempenho. Quando está desativada, o utilizador pode definir manualmente a prioridade térmica.",
                     "description2": "O Arrefecimento Inteligente ajusta a velocidade da ventoinha, a temperatura superficial máxima do computador e o desempenho.Este recurso tem os modos abaixo e agora está acessível pelo controlo de deslize de energia de desempenho do Windows.",
                     "description3": "O Arrefecimento Inteligente equilibra automaticamente o desempenho térmico em função das suas necessidades.A função Arrefecimento Inteligente ajusta as definições de desempenho para fornecer uma superfície refrigerada para conforto, quando o computador portátil está a ser segurado. Quando o dispositivo está sobre uma superfície de secretária, esta função otimiza o desempenho.",
-                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "description13": "Quando ativada, esta funcionalidade ajusta dinamicamente as definições térmicas às suas necessidades. Ajusta as definições para manter o dispositivo fresco e silencioso, enquanto está a ser segurado ou inativo. Quando o dispositivo está numa superfície estável, otimiza o respetivo desempenho. Quando está desativada, o utilizador pode definir manualmente a prioridade térmica.",
+                    "description14": "Esta funcionalidade permite ajustar a velocidade da ventoinha, maximizar o desempenho do sistema ou alargar a duração da bateria, caso seja necessário. Tem os três modos abaixo indicados. Também pode alternar entre modos usando as teclas de atalho (Fn+Q) ou a partir da Barra de ferramentas do Lenovo Vantage.",
                     "readMore": "Ler mais.",
                     "gotoWindows": {
                         "title": "Vá para a janela de definições",
@@ -706,17 +705,17 @@
                         "optimize": "otimiza o sistema para",
                         "apsHint": "Para ativar o Arrefecimento Inteligente, é necessário instalar e ativar o Lenovo Active Protection System.",
                         "options": {
-                            "quiteCool3": "Modo de Arrefecimento",
-                            "performance3": "Desempenho elevado",
-                            "quiteCool4": "Fresco e silencioso",
+                            "quiteCool3": "Silencioso e fresco",
+                            "performance3": "Desempenho",
+                            "quiteCool4": "Silencioso e fresco",
                             "performance4": "Desempenho",
-                            "quiteCool5": "Fresco e silencioso",
+                            "quiteCool5": "Silencioso e fresco",
                             "performance5": "Desempenho",
-                            "batterySaving": "Battery Saving",
-                            "performance13": "Performance",
-                            "quiteCool13": "Quiet & Cool",
-                            "performance14": "Extreme Performance",
-                            "quiteCool14": "Intelligent Cooling"
+                            "batterySaving": "Poupança de Bateria",
+                            "performance13": "Desempenho",
+                            "quiteCool13": "Silencioso e fresco",
+                            "performance14": "Desempenho Extremo",
+                            "quiteCool14": "Arrefecimento Inteligente"
                         },
                         "readMore": {
                             "mode1": "Modo silencioso",
@@ -725,19 +724,19 @@
                             "line1": "O controlo de deslize está à esquerda.O desempenho e a velocidade da ventoinha são reduzidos para arrefecer e diminuir o ruído do computador, e para uma maior duração da bateria.",
                             "line2": "O controlo de deslize está ao centro.O desempenho e a velocidade da ventoinha são equilibrados de forma dinâmica para obter a melhor experiência.",
                             "line3": "O controlo de deslize está à direita. A velocidade da ventoinha e a temperatura superficial permitida são superiores para obter o máximo desempenho.",
-                            "line4": "More info"
+                            "line4": "Mais informações"
                         },
                         "selectedModeText": {
-                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
-                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
-                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                            "quiteCool": "Este modo permite a melhor experiência com a velocidade da ventoinha e o desempenho do sistema equilibrado. Por exemplo, quando em jogos, otimiza o desempenho. No escritório, reduz o ruído.",
+                            "batterySaving": "Este modo permite uma vida útil máxima da bateria, ajustando automaticamente a luminosidade, alterando as definições de energia, desativando funcionalidades no processamento avançado de imagens, etc.",
+                            "performance": "Este modo permite o máximo desempenho do sistema. Neste modo, a velocidade rápida da ventoinha pode causar um grande ruído."
                         },
                         "intelligentCoolingModesModal": {
-                            "title": "Change intelligent cooling modes",
-                            "close": "close",
+                            "title": "Alterar os modos de arrefecimento inteligente",
+                            "close": "fechar",
                             "coolingModesList": {
-                                "list1": "Click on the windows battery-icon in the toolbar",
-                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                                "list1": "Clique no ícone da bateria do Windows na barra de ferramentas",
+                                "list2": "Aparecerá o indicador de bateria do Windows, deslize o controle deslizante para escolher entre tempo ideal ou desempenho ideal."
                             }
                         }
                     },
@@ -748,7 +747,7 @@
                             "battery&Quite": "BATERIA E SILÊNCIO"
                         }
                     },
-                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
+                    "description5": "O Arrefecimento Inteligente ajusta a velocidade da ventoinha, o desempenho máximo e administra a vida útil da bateria. Este recurso tem 3 modos (Modo silencioso, Modo Equilibrado e Modo de desempenho) e agora é acessível pelo controle deslizante de desempenho do Windows"
                 },
                 "powerSettings": {
                     "title": "Definições de Alimentação",
@@ -761,8 +760,8 @@
                         "title": "Retomar Rápido",
                         "description": "Se abrir e fechar a tampa do computador com frequência, ative esta função para melhorar o tempo para retomar o funcionamento normal.",
                         "tooltip": "Esta função melhorará o tempo para retomar o funcionamento normal, se abrir e fechar a tampa do computador com frequência. Quando esta opção está ativada, o computador entra num modo de baixo consumo de energia ao fechar a respetiva tampa, mas retomará de imediato se voltar a abrir a tampa até 15 minutos depois de fechá-la. Esta função também permite que o seu portátil tente terminar as atividades pendentes (como o envio de correio eletrónico ou a transferência de um ficheiro) antes de o sistema entrar em suspensão."
-					},
-					"or":"Or"
+                    },
+                    "or": "Ou"
                 },
                 "otherSettings": {
                     "title": "Outras definições",
@@ -971,7 +970,7 @@
                         "onSunsetToSunriseScheduleDescription": "Programe o Modo de Cuidados com a Visão do pôr ao nascer do sol",
                         "note": {
                             "title": "Nota",
-                            "description": "A Lenovo Vantage precisa de aceder às suas informações de localização para calcular o horário do pôr e do nascer do sol na sua região."
+                            "description": "Quando o Modo de Cuidados com a Visão está ativado, esta temperatura de cor não será utilizada. No entanto, é possível arrastar o cursor de deslocamento para obter uma pré-visualização da mesma. Para a tornar efetiva, desative o Modo de Cuidados com a Visão."
                         }
                     },
                     "privacyGuard": {
@@ -989,16 +988,16 @@
                         "reset": "Redefinir temperatura",
                         "tooltip": "Esta funcionalidade pode reduzir o consumo de energia e aumentar a duração da bateria através da diminuição seletiva de partes do ecrã.",
                         "dropDown": {
-                            "seconds": "seconds",
-                            "minute": "minute",
-                            "minutes": "minutes",
-                            "alwaysOn": "Always on",
-                            "never": "never",
-                            "halfTime": "Half time of display off timer"
+                            "seconds": "segundos",
+                            "minute": "minuto",
+                            "minutes": "minutos",
+                            "alwaysOn": "Sempre ligado",
+                            "never": "nunca",
+                            "halfTime": "Intervalo de tempo de exibição do temporizador"
                         },
-                        "taskBarDimmer": "TASKBAR DIMMER",
-                        "backgroundDimmer": "BACKGROUND DIMMER",
-                        "displayDimmer": "DISPLAY DIMMER"
+                        "taskBarDimmer": "DIMINUIÇÃO DE LUMINOSIDADE DA BARRA DE TAREFAS",
+                        "backgroundDimmer": "DIMINUIÇÃO DE LUMINOSIDADE DE SEGUNDO PLANO",
+                        "displayDimmer": "DIMINUIÇÃO DE LUMINOSIDADE DO ECRÃ"
                     }
                 },
                 "camera": {
@@ -1030,10 +1029,10 @@
                         "sketchMode": "Modo esboço"
                     },
                     "cameraLoadingFailed": {
-                        "inUseTitle": "CAMERA IS IN USE",
-                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
-                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
-                        "loadingFailedDescription": "Close the app and try again."
+                        "inUseTitle": "A CÂMARA ESTÁ A SER UTILIZADA",
+                        "inUseDescription": "Outra aplicação está a utilizar a câmara. Feche a aplicação e tente novamente.",
+                        "loadingFailedTitle": "A CÂMARA ESTÁ A SER UTILIZADA OU FALHA AO CARREGAR",
+                        "loadingFailedDescription": "Feche a aplicação e tente novamente."
                     }
                 }
             },
@@ -1085,15 +1084,15 @@
                             "option3": "Digite o texto"
                         }
                     },
-                    "tooltip": "Content to be filled",
+                    "tooltip": "Conteúdo a ser preenchido",
                     "apply": {
-                        "title": "APPLY"
+                        "title": "APLICAR"
                     },
                     "website": {
-                        "url": "WEBSITE URL"
+                        "url": "URL DO SÍTIO WEB"
                     },
                     "enterText": {
-                        "title": "TEXT TO BE ENTERED"
+                        "title": "TEXTO A INSERIR"
                     }
                 }
             }
@@ -1204,7 +1203,18 @@
                     "hand": {
                         "title": "Deteção da proximidade das mãos nas extremidades do computador",
                         "description": "Quando o modo tablet estiver ativado, ativar o sistema APS quando não for detetada a mão"
-                    }
+                    },
+                    "more": "MAIS",
+                    "advanced-settings": "DEFINIÇÕES AVANÇADAS",
+                    "hide": "OCULTAR DEFINIÇÕES AVANÇADAS"
+                },
+                "APS": {
+                    "more": "MAIS",
+                    "advancedSettings": "DEFINIÇÕES AVANÇADAS",
+                    "hideAdvancedSettings": "OCULTAR DEFINIÇÕES AVANÇADAS",
+                    "lowSensitivity": "Baixa sensibilidade",
+                    "mediumSensitivity": "Média sensibilidade",
+                    "highSensitivity": "Alta sensibilidade"
                 }
             },
             "intelligentMedia": {
@@ -1241,14 +1251,14 @@
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
-                    "title": "Install Failed",
-                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                    "title": "Falha na Instalação",
+                    "desc": "Por favor, tente novamente mais tarde para usar o Lenovo Voice."
                 }
             }
         }
     },
     "systemUpdates": {
-        "title": "Atualizações do Sistema",
+        "title": "Atualização do Sistema",
         "back": "RETROCEDER",
         "history": "HISTÓRICO COMPLETO",
         "notAvailable": "Não Disponível",
@@ -1262,7 +1272,7 @@
         "at": "às",
         "readMore": "Ler mais",
         "popup": {
-            "reboot": "Reini.",
+            "reboot": "Reiniciar",
             "shutdown": "Encerrar",
             "rebootForceMsg": "A(s) atualização(ões) selecionada(s) farão com que o sistema reinicie automaticamenteapós a instalação.",
             "shutdownForceMsg": "A(s) atualização(ões) selecionada(s) farão com que o sistema encerreautomaticamente após a instalação.",
@@ -1294,7 +1304,7 @@
             "title": "Sítio de suporte na Web da Lenovo"
         },
         "banner": {
-            "neverChecked": "Bem-vindo ao System Update.",
+            "neverChecked": "Bem-vindo à Atualização do Sistema.",
             "title": "Um sistema atualizado é um sistema em estado de funcionamento ideal.",
             "last": "Última atualização: ",
             "next": "Próxima atualização agendada: ",
@@ -1398,7 +1408,7 @@
             "overviewBlockTitle": "Descrição geral da segurança do ecossistema",
             "allDevices": "Todos os dispositivos",
             "myDevice": "O Meu Dispositivo",
-            "thisComputer": "This computer",
+            "thisComputer": "Este computador",
             "secure": "SEGURO",
             "needAttention": "PRECISA DE ATENÇÃO",
             "manageAccount": "Gerir Conta",
@@ -1670,16 +1680,16 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "Segurança de VPN",
-            "header": "SurfEasy VPN",
+            "header": "VPN SurfEasy",
             "whatIsSufEasy": "A SurfEasy VPN encripta as informações enviadas e recebidas, de modo a que possa utilizar sem preocupações o seu PC, Mac®, smartphone ou tablet de forma segura e privada em qualquer ligação à Internet.",
-            "whatCanSufEasy1": "A virtual private network provider that protects you while you are online. Without a VPN, your computer may be more vulnerable to attackers and identity theft. The VPN runs silently in the background and provides security and privacy protection.",
-            "startUseSufEasy4": "SurfEasy users can enjoy 250 MB of free traffic every 30 days! Follow the steps on the &quot;Rewards&quot; tab of the SurfEasy app to get more traffic.",
-            "howToGetData": "How to get free traffic:",
-            "howToGetData1": "Confirm email to win +250 MB traffic",
-            "howToGetData2": "Add a second device to win +250 MB of traffic",
-            "howToGetData3": "Refer a friend and win +500 MB of traffic",
-            "howToGetData4": "Like SurfEasy on Facebook, earn +100 MB of traffic,",
-            "howToGetData5": "Follow SurfEasy on Twitter and win +100 MB of traffic",
+            "whatCanSufEasy1": "Um fornecedor de rede privada virtual que o protege enquanto está online. Sem uma VPN, o seu computador poderá estar mais vulnerável aos hackers e aos furtos de identidade. A VPN é executada silenciosamente em segundo plano e oferece segurança e proteção de privacidade.",
+            "startUseSufEasy4": "Como utilizador do SurfEasy, desfrute de 250 MB de tráfego gratuito cada 30 dias! Siga os passos no separador &quot;Recompensas&quot; da aplicação SurfEasy para obter mais tráfego.",
+            "howToGetData": "Como obter tráfego livre:",
+            "howToGetData1": "Confirme o email para ganhar +250 MB de tráfego",
+            "howToGetData2": "Adicione um segundo dispositivo para ganhar +250 MB de tráfego",
+            "howToGetData3": "Refira um amigo e ganhe +500 MB de tráfego",
+            "howToGetData4": "Goste do SurfEasy no Facebook, e ganhe +100 MB de tráfego",
+            "howToGetData5": "Siga o SurfEasy no Twitter e ganhe +100 MB de tráfego",
             "helpKeep": "Ajude a manter as suas atividades online seguras e privadas com a SurfEasy VPN.",
             "getSufEasy": "Obter SurfEasy",
             "openSufEasy": "Abrir SurfEasy",

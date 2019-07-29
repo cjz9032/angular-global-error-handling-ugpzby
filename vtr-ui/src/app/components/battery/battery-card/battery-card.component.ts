@@ -13,7 +13,7 @@ import { BatteryConditionsEnum, BatteryQuality } from 'src/app/enums/battery-con
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { PowerService } from 'src/app/services/power/power.service';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/internal/Subscription';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 
 @Component({
@@ -45,6 +45,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	public isLoading = true;
 	public param1: any;
 	public param2: any;
+	remainingPercentages: number[];
 	notificationSubscription: Subscription;
 	shortAcErrNote = true;
 
@@ -117,6 +118,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	/**
+	 * gets battery details from js bridge
+	 */
 	private getBatteryDetails() {
 		this.batteryService.getBatteryDetail()
 			.then((response: any) => {
@@ -132,18 +136,17 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			});
 	}
 
+	/**
+	 * gets changed values at charge threshold section
+	 * @param notification: AppNotification for change in chargeThreshold
+	 */
 	onNotification(notification: AppNotification) {
 		if (notification && notification.type === ChargeThresholdInformation.ChargeThresholdInfo) {
-			const chargeThresholdInfo = notification.payload;
-			this.chargeThresholdInfo = chargeThresholdInfo[0];
-			if (chargeThresholdInfo.length > 1) {
-				if (!chargeThresholdInfo[0].isOn && chargeThresholdInfo[1].isOn) {
-					this.chargeThresholdInfo = notification.payload[1];
-				}
+			this.chargeThresholdInfo = notification.payload;
+			if (this.chargeThresholdInfo !== undefined && this.chargeThresholdInfo.isOn) {
+				this.param1 = { value: this.chargeThresholdInfo.stopValue1 };
 			}
-			if (this.chargeThresholdInfo && this.chargeThresholdInfo.isOn) {
-				this.param1 = { value: this.chargeThresholdInfo.stopValue };
-			}
+			this.sendThresholdWarning();
 		}
 	}
 
@@ -164,7 +167,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				remainingPercentages.push(info.remainingPercent);
 			});
 
-			this.commonService.setLocalStorageValue(LocalStorageKey.RemainingPercentages, remainingPercentages);
+			this.sendThresholdWarning();
 			this.batteryHealth = this.batteryInfo[0].batteryHealth;
 			this.batteryIndicator.batteryNotDetected = this.batteryHealth === 4;
 		}
@@ -177,6 +180,33 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.getBatteryCondition();
 	}
 
+	/**
+	 * sends notification to threshold section in case of update in remaining percentages & thresholdInfo
+	 * for displaying warning note
+	 */
+	private sendThresholdWarning() {
+		if (this.chargeThresholdInfo !== undefined && this.remainingPercentages !== undefined
+			&& this.remainingPercentages.length > 0) {
+			if (this.chargeThresholdInfo.isOn) {
+				if (this.chargeThresholdInfo.stopValue1 &&
+					this.remainingPercentages[0] &&
+					this.remainingPercentages[0] > this.chargeThresholdInfo.stopValue1) {
+					this.commonService.sendNotification('ThresholdWarningNote', true);
+				} else if (this.chargeThresholdInfo.stopValue2 &&
+					this.remainingPercentages[1] &&
+					this.remainingPercentages[1] > this.chargeThresholdInfo.stopValue2) {
+					this.commonService.sendNotification('ThresholdWarningNote', true);
+				} else {
+					this.commonService.sendNotification('ThresholdWarningNote', false);
+				}
+			}
+		}
+	}
+
+	/**
+	 * shows a battery details modal
+	 * @param content: battery Information
+	 */
 	public showDetailModal(content: any): void {
 		this.modalService
 			.open(content, {
@@ -194,6 +224,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			);
 	}
 
+	/**
+	 * sets a battery condition tip & icon from battery health & battery condition
+	 */
 	public getBatteryCondition() {
 		const batteryConditions = [];
 		const isThinkpad = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType) === 1;
@@ -272,6 +305,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryConditionNotes[index] = this.batteryConditionNotes[index] + 'Detail';
 	}
 
+<<<<<<< HEAD
 	getConditionState(conditionState: number): string {
 		switch (conditionState) {
 			case 3:
@@ -285,6 +319,26 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				break;
 		}
 		return BatteryQuality[conditionState];
+=======
+	/**
+	 * maps batteryHealth to a condition status Icon(i.e. good, poor,bad, AcError)
+	 * @param conditionStatus: batteryHealth
+	 * @returns BatteryQuality[conditionStatus]: status of battery for condition icon
+	 */
+	getBatteryConditionStatus(conditionStatus: number): string {
+		switch (conditionStatus) {
+			case 3:
+				conditionStatus = 1;
+				break;
+			case 4:
+				conditionStatus = 2;
+				break;
+			case 5:
+				conditionStatus = 2;
+				break;
+		}
+		return BatteryQuality[conditionStatus];
+>>>>>>> fb8391b8158cec27a8bf671edd1c433befd3afea
 	}
 
 	reInitValue() {

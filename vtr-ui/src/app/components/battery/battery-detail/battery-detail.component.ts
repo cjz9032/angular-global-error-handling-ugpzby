@@ -7,7 +7,7 @@ import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.mode
 import { BatteryInformation } from 'src/app/enums/battery-information.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { CommonService } from 'src/app/services/common/common.service';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/internal/Subscription';
 import { ViewRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';

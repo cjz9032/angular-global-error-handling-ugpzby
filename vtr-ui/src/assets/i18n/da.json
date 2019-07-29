@@ -387,7 +387,7 @@
                 "title": "Enhed",
                 "sub1": "Min enhed",
                 "sub2": "Mine enhedsindstillinger",
-                "sub3": "System Updates",
+                "sub3": "Systemopdatering",
                 "sub4": "Smart hjælp"
             },
             "security": {
@@ -444,31 +444,31 @@
     },
     "privacy": {
         "headerMain": {
-            "title": "Privacy"
+            "title": "Anonymitet"
         }
     },
     "tutorial": {
-        "almostThere": "Almost there!",
-        "para1": "Just a few more buttons to press before we can have liftoff.",
-        "para2": "Before we can give you the most optimal experience there are still a few things to setup.",
-        "personalise": "START PERSONALIZING",
-        "howIsitUsed": "How will you use it?",
-        "howMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "business": "BUSINESS",
-        "personal": "PERSONAL",
-        "custom": "CUSTOM",
-        "skip": "SKIP",
+        "almostThere": "Du er næsten klar!",
+        "para1": "Der skal bare trykkes på et par knapper mere, før vi kan komme i gang.",
+        "para2": "Før vi kan give dig den bedste oplevelse, er der stadig et par ting, der skal konfigureres.",
+        "personalise": "START TILPASNING",
+        "howIsitUsed": "Hvordan skal du bruge den?",
+        "howMachinUsed": "Klik på en af disse anvendelsesmuligheder for at fortælle os, hvordan du vil bruge denne maskine?",
+        "business": "ARBEJDE",
+        "personal": "PRIVAT",
+        "custom": "BRUGERDEFINERET",
+        "skip": "IGNORER",
         "next": "NÆSTE",
-        "interests": "What are your interests?",
-        "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "games": "GAMES",
-        "news": "NEWS",
-        "entertainment": "ENTERTAINMENT",
-        "arts": "ARTS",
-        "politics": "POLITICS",
-        "sports": "SPORTS",
-        "regionalNews": "REGIONAL NEWS",
-        "technology": "TECHNOLOGY"
+        "interests": "Hvad er dine interesser?",
+        "howOnesMachinUsed": "Klik på en af disse anvendelsesmuligheder for at fortælle os, hvordan du vil bruge denne maskine?",
+        "games": "SPIL",
+        "news": "NYT",
+        "entertainment": "UNDERHOLDNING",
+        "arts": "KUNST",
+        "politics": "POLITIK",
+        "sports": "SPORT",
+        "regionalNews": "REGIONALE NYHEDER",
+        "technology": "TEKNOLOGI"
     },
     "dashboard": {
         "headerMain": {
@@ -534,7 +534,7 @@
                 }
             },
             "systemUpdate": {
-                "title": "System Update",
+                "title": "Systemopdatering",
                 "detail": {
                     "update": "Opdatér"
                 }
@@ -640,11 +640,11 @@
                         "li-ion": "Li-Ion",
                         "li_polymer": "Li-Polymer",
                         "li_ion": "Li-Ion",
-                        "silver-zinc": "Silver-Zinc",
-                        "silver_zinc": "Silver-Zinc",
+                        "silver-zinc": "Sølv-zink",
+                        "silver_zinc": "Sølv-zink",
                         "nicd": "NiCd",
                         "nimh": "NiMH",
-                        "unknown": "Unknown"
+                        "unknown": "Ukendt"
                     },
                     "manufacturer": {
                         "title": "Producent",
@@ -662,7 +662,7 @@
                     "NotSupportACAdapter": "<b>Vekselstrømsadapter understøttes ikke.</b> Din Lenovo-computer understøtter ikke denne vekselstrømsadapter. Den kan forårsage pludselig nedlukning. Tilslut en korrekt vekselstrømsadapter.",
                     "LimitedACAdapterSupport": "<b>Vekselstrømsadapteren kan ikke levere nok strøm</b> til din Lenovo-computer. Det vil påvirke systemets ydeevne og opladningshastigheden. Tilslut den korrekte vekselstrømsadapter.",
                     "MissingDriver": "<b>Lenovo Power Manager-driveren</b> er ikke installeret eller fungerer ikke korrekt. Kør Windows Update for at installere den sidste nye driver.",
-                    "StoreLimitation": "<b>Batteriet kan kun lagre {{percentageLimitation}}% af</b> dets oprindelige kapacitet ved fuld opladning.",
+                    "StoreLimitation": "<b>Batteriet kan kun lagre {{value}}% af</b> dets oprindelige kapacitet ved fuld opladning.",
                     "HighTemperature": "<b>Afladning</b> er stoppet, fordi <b>batteriets temperatur er for høj.</b>",
                     "TrickleCharge": "Batteriet er blevet <b>fuldstændigt afladet</b> og skal genoplades. Dette kan tage op til ti timer eller mere.",
                     "OverheatedBattery": "Batteriet er <b>for varmt</b>. Tag det ud af computeren, og lad det køle af til almindelig stuetemperatur.",
@@ -671,7 +671,7 @@
                 "updating": "Opdaterer",
                 "voltageError": "Forkert batterispænding",
                 "batteryNotDetected": "Der blev ikke fundet noget batteri",
-                "thresholdNote": "<b>Bemærk:</b> For at forlænge batteriets levetid har du indstillet batteriet til at stoppe med at oplade ved {{chargeThresholdInfo.stopValue}}%."
+                "thresholdNote": "<b>Bemærk:</b> For at forlænge batteriets levetid har du indstillet batteriet til at stoppe med at oplade ved {{value}}%."
             },
             "power": {
                 "title": "Strøm",
@@ -681,42 +681,41 @@
                     "title": "HOP TIL INDSTILLINGER",
                     "battery": "Batteri",
                     "power": "Strøm",
-                    "cooling": "Intelligent køling",
                     "other": "Andre lande og områder",
-                    "smartStandby": "Smart Standby"
+                    "smartStandby": "Smart-standby"
                 },
                 "powerSmartSettings": {
                     "title": "Smarte strømindstillinger",
                     "subtitle": "INTELLIGENT KØLING",
                     "subtitle1": "Batteri og stille",
-                    "description1": "Denne funktion justerer dynamisk termoindstillingerne efter dine behov.Når den er aktiveret, justerer den indstillingerne, så den holder enheden køligere eller stille, mens den holdes eller er inaktiv.Ellers optimerer den ydeevnen, når enheden står på en stabil flade.Når den er slået fra, kan du angive en termisk prioritet manuelt.",
+                    "description1": "Når denne funktion er slået til, justerer den dynamisk termoindstillingerne efter dine behov. Den justerer indstillingerne, så enheden er kølig og stille, mens den holdes eller er inaktiv. Når enheden står på en stabil flade, optimerer den ydeevnen. Når den er slået fra, kan du angive den termiske prioritet manuelt.",
                     "description2": "Intelligent køling justerer blæserens hastighed, den maksimale temperatur på overfladen og ydeevnen.Denne funktion har undertilstande og er nu tilgængelig via skyderen til ydeevnebaseret strømstyring i Windows.",
                     "description3": "Intelligent køling afbalancerer automatisk den termiske ydeevne, så den tilpasses til dine behov.Funktionen Intelligent køling justerer indstillingerne for ydeevne, så du får en køligere og mere behagelig overflade, når den bærbare computer holdes.Når enheden er på en skrivebordsoverflade, optimerer denne funktion ydeevnen.",
-                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "description13": "Når denne funktion er slået til, justerer den dynamisk termoindstillingerne efter dine behov. Den justerer indstillingerne, så enheden er kølig og stille, mens den holdes eller er inaktiv. Når enheden står på en stabil flade, optimerer den ydeevnen. Når den er slået fra, kan du angive den termiske prioritet manuelt.",
+                    "description14": "Med denne funktion kan du justere blæserhastigheden, maksimere systemets ydeevne eller forlænge batteriets levetid, hvis det er nødvendigt. Den har de tre tilstande nedenfor. Du kan også skifte tilstand ved hjælp af hurtigtaster (FN+Q) eller fra Lenovo Vantage-værktøjslinjen.",
                     "readMore": "Læs mere.",
                     "gotoWindows": {
                         "title": "Gå til Windows-indstillinger",
                         "modalBodyText1": "Klik på Windows-batteriikonet på proceslinjen for at få adgang til skyderen til ydeevnebaseret strømstyring i Windows"
                     },
                     "intelligentCooling": {
-                        "title": "Intelligent køling",
+                        "title": "Intelligent Køling",
                         "description": "",
                         "tooltip": "",
                         "optimize": "optimer systemet til",
                         "apsHint": "For at kunne aktivere Intelligent køling skal du installere og aktivere Lenovo Active Protection System.",
                         "options": {
-                            "quiteCool3": "Kølig-tilstand",
-                            "performance3": "Høj ydeevne",
+                            "quiteCool3": "Stille og kølig",
+                            "performance3": "Ydeevne",
                             "quiteCool4": "Stille og kølig",
                             "performance4": "Ydeevne",
                             "quiteCool5": "Stille og kølig",
                             "performance5": "Ydeevne",
-                            "batterySaving": "Battery Saving",
-                            "performance13": "Performance",
-                            "quiteCool13": "Quiet & Cool",
-                            "performance14": "Extreme Performance",
-                            "quiteCool14": "Intelligent Cooling"
+                            "batterySaving": "Strømbesparelse",
+                            "performance13": "Ydeevne",
+                            "quiteCool13": "Stille og kølig",
+                            "performance14": "Ekstrem ydeevne",
+                            "quiteCool14": "Intelligent køling"
                         },
                         "readMore": {
                             "mode1": "Stille tilstand",
@@ -725,19 +724,19 @@
                             "line1": "Skyderen er helt til venstre.Blæserens hastighed og ydeevnen er sænket for at få en køligere, mere lydsvag computer og den bedste batterilevetid.",
                             "line2": "Skyderen er i midten.Blæserens hastighed og ydeevnen afbalanceres dynamisk for at få den bedste brugeroplevelse.",
                             "line3": "Skyderen er helt til højre.Blæserens hastighed og den tilladte overfladetemperatur er højere for at få den optimale ydeevne.",
-                            "line4": "More info"
+                            "line4": "Flere oplysninger"
                         },
                         "selectedModeText": {
-                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
-                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
-                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                            "quiteCool": "I denne tilstand kan du få den bedste oplevelse med balance mellem blæserhastighed og systemets ydeevne. Når du spiller, optimerer den f.eks. ydeevnen. Når du er på kontoret, reduceres støjen.",
+                            "batterySaving": "I denne tilstand får du automatisk den maksimale batterilevetid, idet lysstyrken justeres, strømindstillingerne ændres, funktioner til avanceret billedbehandling deaktiveres osv.",
+                            "performance": "I denne tilstand kan du få den maksimale systemydeevne. I denne tilstand kan den hurtige blæserhastighed medføre støj."
                         },
                         "intelligentCoolingModesModal": {
-                            "title": "Change intelligent cooling modes",
-                            "close": "close",
+                            "title": "Skift intelligente tilstande for køling",
+                            "close": "luk",
                             "coolingModesList": {
-                                "list1": "Click on the windows battery-icon in the toolbar",
-                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                                "list1": "Klik på Windows-batteriikonet på værktøjslinjen",
+                                "list2": "Windows-batterimåleren vises. Skub skyderen for at vælge mellem optimal tid eller optimal ydeevne."
                             }
                         }
                     },
@@ -748,7 +747,7 @@
                             "battery&Quite": "BATTERI OG STILLE"
                         }
                     },
-                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
+                    "description5": "Intelligent køling justerer blæserens hastighed, den maksimale ydeevne og administrerer batterilevetiden. Denne funktion har tre tilstande (stille tilstand, balanceret tilstand og ydeevnetilstand), og den er nu tilgængelig via skyderen til ydeevnebaseret strømstyring i Windows"
                 },
                 "powerSettings": {
                     "title": "Strømindstillinger",
@@ -761,8 +760,8 @@
                         "title": "Nem genoptagelse",
                         "description": "Aktiver denne funktion for at forbedre genoptagelsestiden, hvis du ofte åbner og lukker computerens låg.",
                         "tooltip": "Denne funktion forbedrer genoptagelsestiden, hvis du ofte åbner og lukker computerens låg. Når den er aktiveret, går computeren i en tilstand med lavt strømforbrug, når du lukker dens låg, men den genoptager driften med det samme, hvis du åbner låget inden for 15 minutter efter, du har lukket det. Denne funktion giver din notebook mulighed for at forsøge at udføre ventende aktiviteter (som f.eks. afsendelse af e-mail eller download af en fil), inden systemet går i dvale."
-					},
-					"or":"Or"
+                    },
+                    "or": "Eller"
                 },
                 "otherSettings": {
                     "title": "Andre indstillinger",
@@ -971,7 +970,7 @@
                         "onSunsetToSunriseScheduleDescription": "Planlæg øjenbeskyttelsestilstand fra solnedgang til solopgang",
                         "note": {
                             "title": "Bemærk",
-                            "description": "Lenovo Vantage skal have adgang til dine placeringsoplysninger for at beregne tiden for solnedgang og solopgang i dit område."
+                            "description": "Når øjenbeskyttelsestilstanden er aktiveret, har denne farvetemperatur ingen effekt. Men du kan trække skyderen for at få vist et eksempel af den. Hvis den skal have en effekt, skal du slå øjenbeskyttelsestilstanden fra."
                         }
                     },
                     "privacyGuard": {
@@ -989,16 +988,16 @@
                         "reset": "Nulstil temperatur",
                         "tooltip": "Denne funktion kan også reducere strømforbruget og øge batteriets levetid ved at vælge at dæmpe dele af skærmen.",
                         "dropDown": {
-                            "seconds": "seconds",
-                            "minute": "minute",
-                            "minutes": "minutes",
-                            "alwaysOn": "Always on",
-                            "never": "never",
-                            "halfTime": "Half time of display off timer"
+                            "seconds": "sekunder",
+                            "minute": "minut",
+                            "minutes": "minutter",
+                            "alwaysOn": "Altid tændt",
+                            "never": "aldrig",
+                            "halfTime": "Halv tid for tidsindstilling for slukket skærm"
                         },
-                        "taskBarDimmer": "TASKBAR DIMMER",
-                        "backgroundDimmer": "BACKGROUND DIMMER",
-                        "displayDimmer": "DISPLAY DIMMER"
+                        "taskBarDimmer": "PROCESLINJEDÆMPER",
+                        "backgroundDimmer": "BAGGRUNDSDÆMPER",
+                        "displayDimmer": "SKÆRMDÆMPER"
                     }
                 },
                 "camera": {
@@ -1030,10 +1029,10 @@
                         "sketchMode": "Skitsetilstand"
                     },
                     "cameraLoadingFailed": {
-                        "inUseTitle": "CAMERA IS IN USE",
-                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
-                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
-                        "loadingFailedDescription": "Close the app and try again."
+                        "inUseTitle": "KAMERAET ER I BRUG",
+                        "inUseDescription": "En anden app bruger kameraet. Luk appen, og forsøg igen.",
+                        "loadingFailedTitle": "KAMERAER ER I BRUG, ELLER INDLÆSNING BLEV IKKE UDFØRT",
+                        "loadingFailedDescription": "Luk appen, og forsøg igen."
                     }
                 }
             },
@@ -1085,15 +1084,15 @@
                             "option3": "Indtast tekst"
                         }
                     },
-                    "tooltip": "Content to be filled",
+                    "tooltip": "Indhold, der skal udfyldes",
                     "apply": {
-                        "title": "APPLY"
+                        "title": "ANVEND"
                     },
                     "website": {
-                        "url": "WEBSITE URL"
+                        "url": "URL TIL WEBSTED"
                     },
                     "enterText": {
-                        "title": "TEXT TO BE ENTERED"
+                        "title": "TEKST, DER SKAL SKRIVES"
                     }
                 }
             }
@@ -1204,7 +1203,18 @@
                     "hand": {
                         "title": "Registrering af, hvor langt hånden er fra computerens kanter",
                         "description": "Når tablet-tilstand er aktiveret, skal APS aktiveres, når hånden ikke registreres"
-                    }
+                    },
+                    "more": "FLERE",
+                    "advanced-settings": "UDVIDEDE INDSTILLINGER",
+                    "hide": "SKJUL UDVIDEDE INDSTILLINGER"
+                },
+                "APS": {
+                    "more": "FLERE",
+                    "advancedSettings": "UDVIDEDE INDSTILLINGER",
+                    "hideAdvancedSettings": "SKJUL UDVIDEDE INDSTILLINGER",
+                    "lowSensitivity": "Lav følsomhed",
+                    "mediumSensitivity": "Mellem følsomhed",
+                    "highSensitivity": "Høj følsomhed"
                 }
             },
             "intelligentMedia": {
@@ -1241,14 +1251,14 @@
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
-                    "title": "Install Failed",
-                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                    "title": "Installation mislykkedes",
+                    "desc": "Prøv igen senere for at bruge Lenovo Voice."
                 }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Update",
+        "title": "Systemopdatering",
         "back": "TILBAGE",
         "history": "FULD HISTORIK",
         "notAvailable": "Ikke tilgængelig",
@@ -1262,7 +1272,7 @@
         "at": "kl.",
         "readMore": "Læs mere",
         "popup": {
-            "reboot": "Start igen",
+            "reboot": "Genstart",
             "shutdown": "Luk",
             "rebootForceMsg": "Den eller de valgte opdateringer vil få systemet til at genstarte automatiskefter installationen.",
             "shutdownForceMsg": "Den eller de valgte opdateringer vil få systemet til at lukkeautomatisk efter installationen.",
@@ -1294,7 +1304,7 @@
             "title": "Websted for Lenovo Support"
         },
         "banner": {
-            "neverChecked": "Velkommen til brug af System Update.",
+            "neverChecked": "Velkommen til brug af systemopdatering",
             "title": "Et opdateret system er et velfungerende system.",
             "last": "Senest opdateret: ",
             "next": "Næste planlagte opdatering: ",
@@ -1398,7 +1408,7 @@
             "overviewBlockTitle": "Oversigt over dit økosystems sikkerhed",
             "allDevices": "Alle enheder",
             "myDevice": "Min enhed",
-            "thisComputer": "This computer",
+            "thisComputer": "Denne computer",
             "secure": "SIKKER",
             "needAttention": "KRÆVER OPMÆRKSOMHED",
             "manageAccount": "Administrer konto",
@@ -1670,16 +1680,16 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "VPN-sikkerhed",
-            "header": "SurfEasy VPN",
+            "header": "SurfEasy-VPN",
             "whatIsSufEasy": "SurfEasy VPN krypterer de oplysninger, som du sender og modtager, så du trygt kan bruge din pc, Mac®, smartphone eller tablet på en hvilken som helst internetforbindelse uden at skulle bekymre dig.",
-            "whatCanSufEasy1": "A virtual private network provider that protects you while you are online. Without a VPN, your computer may be more vulnerable to attackers and identity theft. The VPN runs silently in the background and provides security and privacy protection.",
-            "startUseSufEasy4": "SurfEasy users can enjoy 250 MB of free traffic every 30 days! Follow the steps on the &quot;Rewards&quot; tab of the SurfEasy app to get more traffic.",
-            "howToGetData": "How to get free traffic:",
-            "howToGetData1": "Confirm email to win +250 MB traffic",
-            "howToGetData2": "Add a second device to win +250 MB of traffic",
-            "howToGetData3": "Refer a friend and win +500 MB of traffic",
-            "howToGetData4": "Like SurfEasy on Facebook, earn +100 MB of traffic,",
-            "howToGetData5": "Follow SurfEasy on Twitter and win +100 MB of traffic",
+            "whatCanSufEasy1": "En udbyder af virtuelt privat netværk, der beskytter dig, mens du er online. Uden et VPN kan din computer være mere sårbar over for hackere og identitetstyveri. VPN-forbindelsen kører uovervåget i baggrunden og giver sikkerhed og beskyttelse af personlige oplysninger.",
+            "startUseSufEasy4": "Brugere af SurfEasy får 250 MB gratis trafik hver 30. dag! Følg trinnene under fanen &quot;Belønninger&quot; i appen SurfEasy for at få mere trafik.",
+            "howToGetData": "Sådan får du gratis trafik:",
+            "howToGetData1": "Bekræft e-mail, og vind mere end 250 MB trafik",
+            "howToGetData2": "Tilføj endnu en enhed, og vind mere end 250 MB trafik",
+            "howToGetData3": "Henvis en ven, og vind mere end 500 MB trafik",
+            "howToGetData4": "Synes godt om SurfEasy på Facebook, og vind mere end 100 MB trafik",
+            "howToGetData5": "Følg SurfEasy på Twitter, og vind mere end 100 MB trafik",
             "helpKeep": "Sørg for, at dine onlineaktiviteter er beskyttede og private med SurfEasy VPN.",
             "getSufEasy": "Hent SurfEasy",
             "openSufEasy": "Åbn SurfEasy",

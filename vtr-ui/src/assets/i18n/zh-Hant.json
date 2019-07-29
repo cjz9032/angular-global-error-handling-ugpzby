@@ -387,7 +387,7 @@
                 "title": "裝置",
                 "sub1": "我的裝置",
                 "sub2": "我的裝置設定",
-                "sub3": "System Updates",
+                "sub3": "系統更新",
                 "sub4": "智慧助理"
             },
             "security": {
@@ -444,31 +444,31 @@
     },
     "privacy": {
         "headerMain": {
-            "title": "Privacy"
+            "title": "隱私權"
         }
     },
     "tutorial": {
-        "almostThere": "Almost there!",
-        "para1": "Just a few more buttons to press before we can have liftoff.",
-        "para2": "Before we can give you the most optimal experience there are still a few things to setup.",
-        "personalise": "START PERSONALIZING",
-        "howIsitUsed": "How will you use it?",
-        "howMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "business": "BUSINESS",
-        "personal": "PERSONAL",
-        "custom": "CUSTOM",
-        "skip": "SKIP",
+        "almostThere": "快完成了！",
+        "para1": "再按幾個按鈕就大功告成了。",
+        "para2": "在我們為您提供最佳體驗之前，還需要設定幾項內容。",
+        "personalise": "開始個人化",
+        "howIsitUsed": "您要如何使用它？",
+        "howMachinUsed": "按一下符合此電腦用途的描述",
+        "business": "商務",
+        "personal": "個人",
+        "custom": "自訂",
+        "skip": "跳過",
         "next": "下一步",
-        "interests": "What are your interests?",
-        "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "games": "GAMES",
-        "news": "NEWS",
-        "entertainment": "ENTERTAINMENT",
-        "arts": "ARTS",
-        "politics": "POLITICS",
-        "sports": "SPORTS",
-        "regionalNews": "REGIONAL NEWS",
-        "technology": "TECHNOLOGY"
+        "interests": "您的興趣是什麼？",
+        "howOnesMachinUsed": "按一下符合此電腦用途的描述",
+        "games": "遊戲",
+        "news": "新聞",
+        "entertainment": "娛樂",
+        "arts": "藝文",
+        "politics": "政治",
+        "sports": "體育",
+        "regionalNews": "地方新聞",
+        "technology": "技術"
     },
     "dashboard": {
         "headerMain": {
@@ -534,7 +534,7 @@
                 }
             },
             "systemUpdate": {
-                "title": "System Update",
+                "title": "系統更新",
                 "detail": {
                     "update": "更新"
                 }
@@ -636,15 +636,15 @@
                         "acdischarging": "正在放電（使用交流電）"
                     },
                     "deviceChemistry": {
-                        "li-polymer": "Li-Polymer",
-                        "li-ion": "Li-Ion",
-                        "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion",
-                        "silver-zinc": "Silver-Zinc",
-                        "silver_zinc": "Silver-Zinc",
-                        "nicd": "NiCd",
-                        "nimh": "NiMH",
-                        "unknown": "Unknown"
+                        "li-polymer": "鋰聚合物",
+                        "li-ion": "鋰離子",
+                        "li_polymer": "鋰聚合物",
+                        "li_ion": "鋰離子",
+                        "silver-zinc": "銀鋅",
+                        "silver_zinc": "銀鋅",
+                        "nicd": "鎳鎘",
+                        "nimh": "鎳氫",
+                        "unknown": "不明"
                     },
                     "manufacturer": {
                         "title": "製造商",
@@ -662,7 +662,7 @@
                     "NotSupportACAdapter": "<b>不支援 AC 整流器。</b>您的 Lenovo 電腦不支援此 AC 整流器。這可能會造成突然關機。請連接正確的 AC 整流器。",
                     "LimitedACAdapterSupport": "<b>AC 整流器無法提供足夠的電力</b>給您的 Lenovo 電腦，因而影響系統效能和充電速度。請重新連接正確的 AC 整流器。",
                     "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 以安裝最新的驅動程式。",
-                    "StoreLimitation": "<b>電池只能儲存其原始充飽容量的 {{percentageLimitation}}%</b>。",
+                    "StoreLimitation": "<b>電池只能儲存其原始充飽容量的 {{value}}%</b>。",
                     "HighTemperature": "因為<b>電池溫度過高</b>，已停止<b>放電。</b>",
                     "TrickleCharge": "電池已<b>完全放電</b>，而且必須重新充電。這可能需要十小時或更長的時間。",
                     "OverheatedBattery": "電池<b>過熱</b>。請將其從電腦中取出，並使其降至室溫。",
@@ -671,7 +671,7 @@
                 "updating": "正在更新",
                 "voltageError": "電池電壓不正確",
                 "batteryNotDetected": "未偵測到電池",
-                "thresholdNote": "<b>注意：</b>若要延長電池的壽命，您必須將電池設定為達到 {{chargeThresholdInfo.stopValue}}% 時停止充電。"
+                "thresholdNote": "<b>注意：</b>若要延長電池的壽命，您必須將電池設定為達到 {{value}}% 時停止充電。"
             },
             "power": {
                 "title": "電源",
@@ -681,19 +681,18 @@
                     "title": "移至設定",
                     "battery": "電池",
                     "power": "電源",
-                    "cooling": "智慧型冷卻",
                     "other": "其他",
-                    "smartStandby": "Smart Standby"
+                    "smartStandby": "智慧型待命"
                 },
                 "powerSmartSettings": {
                     "title": "智慧型電源設定",
                     "subtitle": "智慧型冷卻",
                     "subtitle1": "電池與安靜",
-                    "description1": "此功能會動態調整散熱設定以符合您的需求。啟用時，它會調整可使裝置維持冷卻或安靜，並同時達到手持狀態或閒置的設定，或者，它會在裝置停放在穩定表面時，將性能調整到最佳情況。關閉此設定時，您可以手動設定散熱的優先順序。",
+                    "description1": "開啟後，此功能會動態調整散熱設定以符合您的需求。它會調整可使裝置維持冷卻和安靜，並同時達到手持狀態或閒置的設定。 當裝置停放在穩定表面時，它會將效能調整到最佳情況。關閉後，您可以手動設定散熱優先順序。",
                     "description2": "智慧型冷卻會調整風扇速度，表面溫度和效能達到最佳化。此功能具有以下模式，而且現在可透過 Windows 效能電源滑桿進行操作。",
                     "description3": "智慧型冷卻會自動平衡散熱效能以符合您的需求。當筆記型電腦處於手持狀態時，智慧型冷卻功能會調整效能設定，使裝置表面的溫度較低，進而維持使用上的舒適度。當裝置放置在桌面上時，此功能會調整效能達到最佳化。",
-                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "description13": "開啟後，此功能會動態調整散熱設定以符合您的需求。它會調整可使裝置維持冷卻和安靜，並同時達到手持狀態或閒置的設定。 當裝置停放在穩定表面時，它會將效能調整到最佳情況。關閉後，您可以手動設定散熱優先順序。",
+                    "description14": "此功能可讓您視需要調整風扇速度、最大化系統效能或延長電池壽命。它有以下三種模式。您也可以使用快速鍵 (Fn+Q) 或 Lenovo Vantage 工具列切換模式。",
                     "readMore": "較多內容。",
                     "gotoWindows": {
                         "title": "跳至 Windows 設定",
@@ -706,17 +705,17 @@
                         "optimize": "最佳化系統",
                         "apsHint": "若要啟用智慧型冷卻，您必須安裝並啟用 Lenovo Active Protection System。",
                         "options": {
-                            "quiteCool3": "冷卻模式",
-                            "performance3": "高效能",
-                            "quiteCool4": "安靜與冷卻",
+                            "quiteCool3": "安靜與低溫",
+                            "performance3": "效能",
+                            "quiteCool4": "安靜與低溫",
                             "performance4": "效能",
-                            "quiteCool5": "安靜與冷卻",
+                            "quiteCool5": "安靜與低溫",
                             "performance5": "效能",
-                            "batterySaving": "Battery Saving",
-                            "performance13": "Performance",
-                            "quiteCool13": "Quiet & Cool",
-                            "performance14": "Extreme Performance",
-                            "quiteCool14": "Intelligent Cooling"
+                            "batterySaving": "省電",
+                            "performance13": "效能",
+                            "quiteCool13": "安靜與低溫",
+                            "performance14": "極致效能",
+                            "quiteCool14": "智慧型冷卻"
                         },
                         "readMore": {
                             "mode1": "安靜模式",
@@ -725,19 +724,19 @@
                             "line1": "滑桿在最左邊。降低風扇速度和效能以獲得更涼爽、更安靜的電腦和最佳的電池續航力。",
                             "line2": "滑桿在中央。風扇速度和效能能以動態方式平衡，以達最佳體驗。",
                             "line3": "滑桿在最右邊。風扇速度和允許的表面溫度可以提高，以達最佳效能。",
-                            "line4": "More info"
+                            "line4": "更多資訊"
                         },
                         "selectedModeText": {
-                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
-                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
-                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                            "quiteCool": "此模式可實現風扇速度和系統效能平衡的最佳體驗。例如，在遊戲中，它可以最佳化效能。在辦公室裡，它可以減少噪音。",
+                            "batterySaving": "此模式透過自動調整亮度、變更電源設定、停用進階影像處理功能等來實現最長電池壽命。",
+                            "performance": "此模式可實現最高系統效能。在此模式中，風扇高速轉動可能會產生很大的噪音。"
                         },
                         "intelligentCoolingModesModal": {
-                            "title": "Change intelligent cooling modes",
-                            "close": "close",
+                            "title": "變更智慧型冷卻模式",
+                            "close": "關閉",
                             "coolingModesList": {
-                                "list1": "Click on the windows battery-icon in the toolbar",
-                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                                "list1": "按一下工具列中的 Windows 電池圖示",
+                                "list2": "Windows 電池計量器隨即顯示，滑動滑桿即可在最佳時間或最佳效能之間選擇。"
                             }
                         }
                     },
@@ -748,7 +747,7 @@
                             "battery&Quite": "電池與安靜"
                         }
                     },
-                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
+                    "description5": "智慧型冷卻會調整風扇速度、使效能達到最佳化，以及管理電池壽命。此功能有 3 種模式（安靜模式、平衡模式和效能模式），而且現在可以透過 Windows 效能電源滑桿進行操作"
                 },
                 "powerSettings": {
                     "title": "電源設定",
@@ -761,8 +760,8 @@
                         "title": "輕鬆回復",
                         "description": "如果您需要頻繁地打開及闔上電腦機蓋，請啟用此功能以改善電腦恢復作業的時間。",
                         "tooltip": "如果您需要頻繁地打開、闔上電腦機蓋，此功能將改善電腦恢復作業的時間。啟用時，您的電腦將在您闔上其機蓋時進入省電模式，但是如果您在闔上機蓋後的 15 分鐘內打開機蓋，電腦將立即恢復正常作業。此功能也可讓您的筆記型電腦嘗試完成擱置中的活動（例如傳送電子郵件或下載檔案），然後再使系統暫停。"
-					},
-					"or":"Or"
+                    },
+                    "or": "或"
                 },
                 "otherSettings": {
                     "title": "其他設定",
@@ -861,7 +860,7 @@
                             "sat": "星期六"
                         },
                         "everyday": "每天",
-                        "weekdays": "平日",
+                        "weekdays": "週間日",
                         "weekends": "週末"
                     }
                 }
@@ -971,7 +970,7 @@
                         "onSunsetToSunriseScheduleDescription": "安排從日落到日出的護眼模式",
                         "note": {
                             "title": "備注",
-                            "description": "Lenovo Vantage 需要存取您的位置資訊，才能計算您所在當地的日出和日落時間。"
+                            "description": "啟用護眼模式後，此色溫不會生效。不過，您可以拖曳滑桿來加以預覽。如果要使它生效，請關閉護眼模式。"
                         }
                     },
                     "privacyGuard": {
@@ -989,16 +988,16 @@
                         "reset": "重設溫度",
                         "tooltip": "此功能可以選擇性地降低顯示畫面不同部分的亮度，藉此降低耗電量並延長電池壽命。",
                         "dropDown": {
-                            "seconds": "seconds",
-                            "minute": "minute",
-                            "minutes": "minutes",
-                            "alwaysOn": "Always on",
-                            "never": "never",
-                            "halfTime": "Half time of display off timer"
+                            "seconds": "秒",
+                            "minute": "分鐘",
+                            "minutes": "分",
+                            "alwaysOn": "保持開啟",
+                            "never": "永不",
+                            "halfTime": "顯示器關閉計時器的一半時間"
                         },
-                        "taskBarDimmer": "TASKBAR DIMMER",
-                        "backgroundDimmer": "BACKGROUND DIMMER",
-                        "displayDimmer": "DISPLAY DIMMER"
+                        "taskBarDimmer": "工作列調光器",
+                        "backgroundDimmer": "背景調光器",
+                        "displayDimmer": "顯示器調光器"
                     }
                 },
                 "camera": {
@@ -1030,10 +1029,10 @@
                         "sketchMode": "素描模式"
                     },
                     "cameraLoadingFailed": {
-                        "inUseTitle": "CAMERA IS IN USE",
-                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
-                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
-                        "loadingFailedDescription": "Close the app and try again."
+                        "inUseTitle": "攝影機正在使用中",
+                        "inUseDescription": "另一個應用程式正在使用攝影機。關閉應用程式，然後重試一次。",
+                        "loadingFailedTitle": "攝影機正在使用中或載入失敗",
+                        "loadingFailedDescription": "關閉應用程式，然後重試一次。"
                     }
                 }
             },
@@ -1085,15 +1084,15 @@
                             "option3": "輸入文字"
                         }
                     },
-                    "tooltip": "Content to be filled",
+                    "tooltip": "要填入的內容",
                     "apply": {
-                        "title": "APPLY"
+                        "title": "套用"
                     },
                     "website": {
-                        "url": "WEBSITE URL"
+                        "url": "網站 URL"
                     },
                     "enterText": {
-                        "title": "TEXT TO BE ENTERED"
+                        "title": "要輸入的文字"
                     }
                 }
             }
@@ -1121,11 +1120,11 @@
                     "tooltip": "用滑鼠按一下此處，可重設人員在場偵測設定。"
                 },
                 "zeroTouchLogin": {
-                    "title": "零接觸登入",
+                    "title": "紅外線攝影機自動登入",
                     "caption": "當您坐在電腦前面或接近電腦時，此功能會自動解除鎖定或喚醒電腦。"
                 },
                 "zeroTouchLock": {
-                    "title": "零接觸鎖定",
+                    "title": "自動鎖定螢幕",
                     "caption": "偵測不到使用者在場時，此功能將使顯示器變暗並鎖定電腦。當您在無人看管且未鎖定的情況下離開電腦時，它可降低未經授權存取電腦的機會。它也會在偵測不到您在場時，讓系統進入新式待命模式，以降低耗電量。",
                     "autoScreenLockTimer": {
                         "title": "自動螢幕鎖定計時器",
@@ -1204,12 +1203,23 @@
                     "hand": {
                         "title": "電腦邊緣感應到手接近",
                         "description": "啟用平板電腦模式時，在未偵測到手部時啟用 APS"
-                    }
+                    },
+                    "more": "其他資訊",
+                    "advanced-settings": "進階設定",
+                    "hide": "隱藏進階設定"
+                },
+                "APS": {
+                    "more": "其他資訊",
+                    "advancedSettings": "進階設定",
+                    "hideAdvancedSettings": "隱藏進階設定",
+                    "lowSensitivity": "低敏感度",
+                    "mediumSensitivity": "中敏感度",
+                    "highSensitivity": "高敏感度"
                 }
             },
             "intelligentMedia": {
                 "heading": "智慧型媒體",
-                "title": "零接觸視訊播放",
+                "title": "視頻播放智慧控制",
                 "desc": "此功能將在您離開電腦時暫停視訊，並在您回來時繼續播放視訊。",
                 "tooltip": "此功能不適用於 Web 視訊播放程式。受歡迎的本端視訊播放程式（例如 Windows Media Player、5KPlayer 等）都支援此功能。"
             },
@@ -1240,15 +1250,15 @@
                     "closeText": "關閉"
                 },
                 "modalInstallationFailed": {
-                    "btnText": "ok",
-                    "title": "Install Failed",
-                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                    "btnText": "確定",
+                    "title": "安裝失敗",
+                    "desc": "若要使用 Lenovo Voice，請稍後重試。"
                 }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Update",
+        "title": "系統更新",
         "back": "上一步",
         "history": "完整歷程記錄",
         "notAvailable": "無法使用",
@@ -1262,7 +1272,7 @@
         "at": "時間：",
         "readMore": "較多內容",
         "popup": {
-            "reboot": "重新開機",
+            "reboot": "重新啟動",
             "shutdown": "關機",
             "rebootForceMsg": "您選取的更新將在安裝後使系統自動重新開機。",
             "shutdownForceMsg": "您選取的更新將在安裝後使系統自動關機。",
@@ -1294,7 +1304,7 @@
             "title": "Lenovo 支援網站"
         },
         "banner": {
-            "neverChecked": "歡迎使用 System Update。",
+            "neverChecked": "歡迎使用系統更新。",
             "title": "保持最新狀態的系統才是健康的系統。",
             "last": "上次更新：",
             "next": "下次的排定更新：",
@@ -1398,7 +1408,7 @@
             "overviewBlockTitle": "您的生態系統安全概要",
             "allDevices": "全部裝置",
             "myDevice": "我的裝置",
-            "thisComputer": "This computer",
+            "thisComputer": "這台電腦",
             "secure": "安全",
             "needAttention": "需要關注",
             "manageAccount": "管理帳戶",
@@ -1672,14 +1682,14 @@
             "title": "VPN 安全性",
             "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN 會加密您傳送和接收的資訊，讓您可以放心透過任何網際網路連線安全地私下使用 PC、Mac®、智慧型手機或平板電腦。",
-            "whatCanSufEasy1": "A virtual private network provider that protects you while you are online. Without a VPN, your computer may be more vulnerable to attackers and identity theft. The VPN runs silently in the background and provides security and privacy protection.",
-            "startUseSufEasy4": "SurfEasy users can enjoy 250 MB of free traffic every 30 days! Follow the steps on the &quot;Rewards&quot; tab of the SurfEasy app to get more traffic.",
-            "howToGetData": "How to get free traffic:",
-            "howToGetData1": "Confirm email to win +250 MB traffic",
-            "howToGetData2": "Add a second device to win +250 MB of traffic",
-            "howToGetData3": "Refer a friend and win +500 MB of traffic",
-            "howToGetData4": "Like SurfEasy on Facebook, earn +100 MB of traffic,",
-            "howToGetData5": "Follow SurfEasy on Twitter and win +100 MB of traffic",
+            "whatCanSufEasy1": "在您上網時為您提供保護的虛擬私人網路提供者。在不使用 VPN 的情況下，您的電腦可能較容易遭受攻擊者和身分竊盜者的攻擊。VPN 無聲地在背景執行，並提供安全性和隱私保護。",
+            "startUseSufEasy4": "SurfEasy 使用者可以享用每 30 天 250 MB 的免費流量！依照 SurfEasy 應用程式的&quot;獎勵&quot;標籤上的步驟進行操作，以獲得更多流量。",
+            "howToGetData": "如何獲得免費流量：",
+            "howToGetData1": "確認電子郵件，贏得 +250 MB 流量",
+            "howToGetData2": "加入第二個裝置，贏得 +250 MB 流量",
+            "howToGetData3": "推薦朋友，贏得 +500 MB 流量",
+            "howToGetData4": "在 Facebook 上為 SurfEasy 按讚，贏得 +100 MB 流量",
+            "howToGetData5": "在 Twitter 上跟隨 SurfEasy，贏得 +100 MB 流量",
             "helpKeep": "透過 SurfEasy VPN 協助您保持線上活動的安全性和隱私。",
             "getSufEasy": "取得 SurfEasy",
             "openSufEasy": "開啟 SurfEasy",
@@ -2135,8 +2145,8 @@
         "subtitle2": "告訴我們您的興趣",
         "personal": "個人使用",
         "business": "業務使用",
-        "custom": "自訂體驗",
-        "experience": "經驗",
+        "custom": "自訂",
+        "experience": "體驗",
         "privacytitle": "透過允許匿名收集使用方式統計資料，協助我們改善應用程式的品質。",
         "moreInterest": "+ 更多興趣",
         "title1": "歡迎使用",

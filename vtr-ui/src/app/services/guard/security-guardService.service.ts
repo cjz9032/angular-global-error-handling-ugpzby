@@ -26,6 +26,10 @@ export class GuardService {
 
 	canDeactivate(component: Object, activatedRouteSnapshot: ActivatedRouteSnapshot, routerStateSnapshot: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 		this.pageContext = activatedRouteSnapshot.data.pageContent;
+		if (this.pageContext && this.pageContext.indexOf('[LocalStorageKey]') !== -1) {
+			this.pageContext = this.commonService.getLocalStorageValue(this.pageContext);
+		}
+
 		const data = {
 			ItemType: 'PageView',
 			PageName: activatedRouteSnapshot.data.pageName,

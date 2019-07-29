@@ -2,24 +2,24 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WidgetFeedbackComponent } from './widget-feedback.component';
 
-describe('WidgetFeedbackComponent', () => {
-	// let component: WidgetFeedbackComponent;
-	// let fixture: ComponentFixture<WidgetFeedbackComponent>;
+xdescribe('WidgetFeedbackComponent', () => {
+	let component: WidgetFeedbackComponent;
+	let fixture: ComponentFixture<WidgetFeedbackComponent>;
 
 	beforeEach(async(() => {
-		// TestBed.configureTestingModule({
-		// 	declarations: [WidgetFeedbackComponent]
-		// })
-		// 	.compileComponents();
+		TestBed.configureTestingModule({
+			declarations: [WidgetFeedbackComponent]
+		})
+			.compileComponents();
 	}));
 
 	beforeEach(() => {
-		// fixture = TestBed.createComponent(WidgetFeedbackComponent);
-		// component = fixture.componentInstance;
-		// fixture.detectChanges();
+		fixture = TestBed.createComponent(WidgetFeedbackComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
 	});
 
 	it('should create', () => {
-		// expect(component).toBeTruthy();
+		expect(component).toBeTruthy();
 	});
 });

@@ -17,7 +17,7 @@ import { SecurityAdvisorMockService } from 'src/app/services/security/securityMo
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { GuardService } from '../../../services/guard/security-guardService.service';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 interface DevicePostureDetail {
 	status: number; // 1,2
@@ -130,15 +130,15 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 				});
 			}
 
-			this.wifiSecurity.getWifiState().then((res) => {}, (error) => {
+			this.wifiSecurity.getWifiState().then((res) => { }, (error) => {
 				this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 			});
 		}
-		this.wifiIsShowMore = this.activeRouter.snapshot.queryParams['isShowMore'];
+		this.wifiIsShowMore = this.activeRouter.snapshot.queryParams.isShowMore;
 	}
 
 	ngAfterViewInit() {
-		const fragment = this.activeRouter.snapshot.queryParams['fragment'];
+		const fragment = this.activeRouter.snapshot.queryParams.fragment;
 		if (fragment) {
 			document.getElementById(fragment).scrollIntoView();
 			window.scrollBy(0, -100);
@@ -209,10 +209,10 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'wifi-security'
+			Page: 'wifi-security'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
 				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {
@@ -227,7 +227,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			}
 		);
 
-		this.cmsService.fetchCMSArticle(this.securityHealthArticleId, {'Lang': 'EN'}).then((response: any) => {
+		this.cmsService.fetchCMSArticle(this.securityHealthArticleId, { Lang: 'EN' }).then((response: any) => {
 			if (response && response.Results && response.Results.Category) {
 				this.securityHealthArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
 			}
@@ -238,15 +238,15 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		try {
 			if (this.wifiSecurity) {
 				this.wifiSecurity.enableWifiSecurity().then((res) => {
-					if ( res === true) {
+					if (res === true) {
 						this.wifiHomeViewModel.isLWSEnabled = true;
 					} else {
 						this.wifiHomeViewModel.isLWSEnabled = false;
 					}
 				}
-				, (error) => {
-					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
-				});
+					, (error) => {
+						this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
+					});
 			}
 		} catch (err) {
 			throw new Error('wifiSecurity is null');
@@ -258,7 +258,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			size: 'lg',
 			centered: true,
 			windowClass: 'Article-Detail-Modal',
-			keyboard : false,
+			keyboard: false,
 			backdrop: true
 		});
 

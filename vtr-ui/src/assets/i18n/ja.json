@@ -387,7 +387,7 @@
                 "title": "デバイス",
                 "sub1": "デバイス",
                 "sub2": "デバイス設定",
-                "sub3": "System Updates",
+                "sub3": "システム アップデート",
                 "sub4": "スマート・アシスト"
             },
             "security": {
@@ -444,31 +444,31 @@
     },
     "privacy": {
         "headerMain": {
-            "title": "Privacy"
+            "title": "プライバシー"
         }
     },
     "tutorial": {
-        "almostThere": "Almost there!",
-        "para1": "Just a few more buttons to press before we can have liftoff.",
-        "para2": "Before we can give you the most optimal experience there are still a few things to setup.",
-        "personalise": "START PERSONALIZING",
-        "howIsitUsed": "How will you use it?",
-        "howMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "business": "BUSINESS",
-        "personal": "PERSONAL",
-        "custom": "CUSTOM",
-        "skip": "SKIP",
+        "almostThere": "手間はかかりません!",
+        "para1": "リフトオフする前にもう少しボタンを押してください。",
+        "para2": "最適なエクスペリエンスを提供するには、まだいくつかセットアップする必要があります。",
+        "personalise": "パーソナライズを開始",
+        "howIsitUsed": "用途は何ですか?",
+        "howMachinUsed": "以下の用途のいずれかをクリックして、このマシンの用途を指定してください。",
+        "business": "ビジネス",
+        "personal": "パーソナル",
+        "custom": "カスタム",
+        "skip": "スキップ",
         "next": "次へ",
-        "interests": "What are your interests?",
-        "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "games": "GAMES",
-        "news": "NEWS",
-        "entertainment": "ENTERTAINMENT",
-        "arts": "ARTS",
-        "politics": "POLITICS",
-        "sports": "SPORTS",
-        "regionalNews": "REGIONAL NEWS",
-        "technology": "TECHNOLOGY"
+        "interests": "興味があることは何ですか?",
+        "howOnesMachinUsed": "以下の用途のいずれかをクリックして、このマシンの用途を指定してください。",
+        "games": "ゲーム",
+        "news": "ニュース",
+        "entertainment": "エンターテイメント",
+        "arts": "アート",
+        "politics": "政治",
+        "sports": "スポーツ",
+        "regionalNews": "地域ニュース",
+        "technology": "テクノロジー"
     },
     "dashboard": {
         "headerMain": {
@@ -534,7 +534,7 @@
                 }
             },
             "systemUpdate": {
-                "title": "System Update",
+                "title": "システム アップデート",
                 "detail": {
                     "update": "更新"
                 }
@@ -551,7 +551,7 @@
             "learnMore": "さらに詳しい説明を見る",
             "freeMemory": "空きメモリー",
             "systemUpdate": {
-                "title": "システム更新",
+                "title": "システム アップデート",
                 "notFound": "システム更新が見つかりません",
                 "detail": {
                     "uptoDate": "ソフトウェアは最新です",
@@ -636,15 +636,15 @@
                         "acdischarging": "放電中 (AC 電源接続)"
                     },
                     "deviceChemistry": {
-                        "li-polymer": "Li-Polymer",
-                        "li-ion": "Li-Ion",
-                        "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion",
-                        "silver-zinc": "Silver-Zinc",
-                        "silver_zinc": "Silver-Zinc",
-                        "nicd": "NiCd",
-                        "nimh": "NiMH",
-                        "unknown": "Unknown"
+                        "li-polymer": "リチウム・ポリマー",
+                        "li-ion": "リチウム・イオン",
+                        "li_polymer": "リチウム・ポリマー",
+                        "li_ion": "リチウム・イオン",
+                        "silver-zinc": "銀亜鉛",
+                        "silver_zinc": "銀亜鉛",
+                        "nicd": "ニッケル・カドミウム",
+                        "nimh": "ニッケル水素",
+                        "unknown": "不明"
                     },
                     "manufacturer": {
                         "title": "製造元",
@@ -662,7 +662,7 @@
                     "NotSupportACAdapter": "<b>AC アダプターがサポートされていません。</b>お使いの Lenovo コンピューターはこの AC アダプタをサポートしていません。突然シャットダウンする可能性があります。正しい AC アダプターを接続してください。",
                     "LimitedACAdapterSupport": "<b>AC アダプターは、システムのパフォーマンスと充電速度に影響を与えるほどの十分な電力</b>を Lenovo コンピューターに供給することができません。適切な AC アダプターを再接続してください。",
                     "MissingDriver": "<b>Lenovo Power Managerドライバー</b>がインストールされていないか、正しく機能していません。Windows Update を実行して。最新のドライバーをインストールしてください。",
-                    "StoreLimitation": "<b>バッテリーはフル充電容量の {{percentageLimitation}}%</b> しか充電できません。",
+                    "StoreLimitation": "<b>バッテリーはフル充電容量の {{value}}%</b> しか充電できません。",
                     "HighTemperature": "<b>バッテリー温度が高温になりすぎた</b>ので、<b>放電</b>を中止しました。",
                     "TrickleCharge": "バッテリーは<b>完全に放電</b>しています。再充電してください。再充電には 10 時間以上かかる場合があります。",
                     "OverheatedBattery": "バッテリーが<b>熱くなって</b>います。コンピューターから取り外して、室温まで冷ましてください。",
@@ -671,7 +671,7 @@
                 "updating": "更新中",
                 "voltageError": "誤ったバッテリー電圧",
                 "batteryNotDetected": "バッテリーが検出されませんでした",
-                "thresholdNote": "<b>注:</b> バッテリーの寿命を延ばすため、バッテリーの充電を {{chargeThresholdInfo.stopValue}}% で止めるように設定しています。"
+                "thresholdNote": "<b>注:</b> バッテリーの寿命を延ばすため、バッテリーの充電を {{value}}% で止めるように設定しています。"
             },
             "power": {
                 "title": "電源",
@@ -681,19 +681,18 @@
                     "title": "設定に移動",
                     "battery": "バッテリー",
                     "power": "電源",
-                    "cooling": "インテリジェント・クーリング",
                     "other": "その他",
-                    "smartStandby": "Smart Standby"
+                    "smartStandby": "スマート・スタンバイ"
                 },
                 "powerSmartSettings": {
                     "title": "電源スマート設定",
                     "subtitle": "インテリジェント・クーリング",
                     "subtitle1": "バッテリー & 静音",
-                    "description1": "この機能は必要に応じて熱設定を動的に調整します。オンにすると、デバイスを手に持っているときやアイドル状態のときはデバイスの温度を低めに、または静かに保ちます。それ以外の場合は、デバイスが安定した場所にあるときにパフォーマンスが最適化されます。オフにすると、熱の優先度を手動で設定できます。",
+                    "description1": "オンにすると、この機能は必要に応じて熱設定を動的に調整します。デバイスを手に持っているときやアイドル状態のときはデバイスの温度を低めに、静かに保ちます。 デバイスが安定した場所にあると、パフォーマンスが最適化されます。オフにすると、熱の優先度を手動で設定できます。",
                     "description2": "インテリジェント・クーリングは、ファンの速度、最大表面温度、およびパフォーマンスを調整します。この機能には以下のモードがあり、Windows パフォーマンスの電源スライダーからアクセスできるようになりました。",
                     "description3": "インテリジェント・クーリングは熱性能のバランスを必要に応じて自動的に調整します。ノートブックを手で持っている場合、インテリジェントクーリング機能はパフォーマンス設定を調整して表面の熱を軽減させ、使いやすくします。デバイスが机上に置かれると、この機能はパフォーマンスを最適化します。",
-                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "description13": "オンにすると、この機能は必要に応じて熱設定を動的に調整します。デバイスを手に持っているときやアイドル状態のときはデバイスの温度を低めに、静かに保ちます。 デバイスが安定した場所にあると、パフォーマンスが最適化されます。オフにすると、熱の優先度を手動で設定できます。",
+                    "description14": "この機能により、必要に応じて、ファン速度を調整したり、システムパフォーマンスを最大化したり、バッテリ寿命を延ばしたりすことができます。以下の 3 つのモードがあります。また、ホットキー (Fn+Q) を使うか Lenovo Vantage ツールバーからモードを切り替えることもできます。",
                     "readMore": "表示を多くする。",
                     "gotoWindows": {
                         "title": "Windows 設定に移動",
@@ -706,17 +705,17 @@
                         "optimize": "システムを最適化する",
                         "apsHint": "インテリジェント・クーリングを有効にするには、Lenovo Active Protection System をインストールして有効にする必要があります。",
                         "options": {
-                            "quiteCool3": "クール・モード",
-                            "performance3": "高パフォーマンス",
+                            "quiteCool3": "静音 & クール",
+                            "performance3": "性能",
                             "quiteCool4": "静音 & クール",
                             "performance4": "性能",
                             "quiteCool5": "静音 & クール",
                             "performance5": "性能",
-                            "batterySaving": "Battery Saving",
-                            "performance13": "Performance",
-                            "quiteCool13": "Quiet & Cool",
-                            "performance14": "Extreme Performance",
-                            "quiteCool14": "Intelligent Cooling"
+                            "batterySaving": "バッテリー省電力",
+                            "performance13": "性能",
+                            "quiteCool13": "静音 & クール",
+                            "performance14": "エクストリーム・パフォーマンス",
+                            "quiteCool14": "インテリジェント・クーリング"
                         },
                         "readMore": {
                             "mode1": "静音モード",
@@ -725,19 +724,19 @@
                             "line1": "スライダーが左端。コンピューターの冷却と静音、およびバッテリー寿命を最長にするために、ファンの速度とパフォーマンスは低下します。",
                             "line2": "スライダーが中央。最適なエクスペリエンスのために、ファンの速度とパフォーマンスが動的にバランスされます。",
                             "line3": "スライダーが右端。最高のパフォーマンスを得るために、ファン速度と許容表面温度が高くなります。",
-                            "line4": "More info"
+                            "line4": "詳細情報"
                         },
                         "selectedModeText": {
-                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
-                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
-                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                            "quiteCool": "このモードでは、ファン速度とシステム・パフォーマンスのバランスが取れた状態で最高のエクスペリエンスを実現できます。たとえば、ゲーム中にはパフォーマンスが最適化されます。オフィスにいる間は、騒音が軽減されます。",
+                            "batterySaving": "このモードでは、明るさの自動調整、電源設定の変更、高度な画像処理機能の無効化などにより、最大のバッテリー寿命を実現します。",
+                            "performance": "このモードでは、システム・パフォーマンスを最大化できます。このモードでは、ファンの回転速度が速いと大きな騒音が発生する可能性があります。"
                         },
                         "intelligentCoolingModesModal": {
-                            "title": "Change intelligent cooling modes",
-                            "close": "close",
+                            "title": "インテリジェント・クーリング・モードを変更する",
+                            "close": "閉じる",
                             "coolingModesList": {
-                                "list1": "Click on the windows battery-icon in the toolbar",
-                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                                "list1": "ツールバーの Windows バッテリー・アイコンをクリック",
+                                "list2": "Windows のバッテリー・ゲージが表示されるので、スライダーをスライドさせて最適な時間と最適なパフォーマンスのどちらかを選択してください。"
                             }
                         }
                     },
@@ -748,7 +747,7 @@
                             "battery&Quite": "バッテリー & 静音"
                         }
                     },
-                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
+                    "description5": "インテリジェント・クーリングは、ファンの速度、最大パフォーマンスを調整し、バッテリー寿命を管理します。この機能には 3 つのモード (静音モード、バランス・モード、パフォーマンス・モード) があり、Windows パフォーマンスの電源のスライダーからアクセスできるようになっています"
                 },
                 "powerSettings": {
                     "title": "電源設定",
@@ -761,8 +760,8 @@
                         "title": "イージー・レジューム",
                         "description": "この機能を有効にして、コンピュータのふたを頻繁に開閉する場合に再開までの時間を改善します。",
                         "tooltip": "この機能はコンピュータのふたを頻繁に開閉する場合に再開までの時間を改善します。有効にすると、ふたを閉めたときコンピューターは低電力モードになりますが、15 分以内に再度ふたを開けるとすぐに再開します。また、この機能により、ノートブックはシステムが一時停止になる前に保留中の操作 (メールの送信やファイルのダウンロードなど) を完了させることができます。"
-					},
-					"or":"Or"
+                    },
+                    "or": "または"
                 },
                 "otherSettings": {
                     "title": "他の設定",
@@ -844,7 +843,7 @@
                     "days": {
                         "shortName": {
                             "sun": "日曜日",
-                            "mon": "月曜",
+                            "mon": "月曜日",
                             "tue": "火曜日",
                             "wed": "水曜日",
                             "thurs": "木曜日",
@@ -853,7 +852,7 @@
                         },
                         "name": {
                             "sun": "日曜日",
-                            "mon": "月曜",
+                            "mon": "月曜日",
                             "tue": "火曜日",
                             "wed": "水曜日",
                             "thurs": "木曜日",
@@ -950,7 +949,7 @@
                         "checkbox": "日没から日の出までのアイ・ケア・モードのスケジュール",
                         "options": {
                             "warm": "暖色 (目に優しい)",
-                            "cold": "停止"
+                            "cold": "寒色"
                         },
                         "reset": "温度をリセット",
                         "tooltip": "アイ・ケア・モードでは、ディスプレイの色温度が調整されてブルーライトがフィルターで除去され、目の負担が軽減されます。",
@@ -964,14 +963,14 @@
                         "title": "ディスプレイの色温度",
                         "options": {
                             "warm": "暖色 (目に優しい)",
-                            "cold": "停止"
+                            "cold": "寒色"
                         },
                         "reset": "温度をリセット",
                         "tooltip": "アイ・ケア・モードでは、ディスプレイの色温度が調整されてブルーライトがフィルターで除去され、目の負担が軽減されます。",
                         "onSunsetToSunriseScheduleDescription": "日没から日の出までのアイ・ケア・モードのスケジュール",
                         "note": {
                             "title": "お願い",
-                            "description": "Lenovo Vantage はその地域の日没と日の出の時刻を計算するために、位置情報にアクセスする必要があります。"
+                            "description": "アイ・ケア・モードが有効になっていると、この色温度は有効になりません。ただし、スライダーをドラッグするとプレビューできます。有効にするには、アイ・ケア・モードをオフにします。"
                         }
                     },
                     "privacyGuard": {
@@ -989,16 +988,16 @@
                         "reset": "温度をリセット",
                         "tooltip": "この機能は、ディスプレイの一部を選択して暗くすることで、電力消費を削減しバッテリー駆動時間を延ばすことができます。",
                         "dropDown": {
-                            "seconds": "seconds",
-                            "minute": "minute",
-                            "minutes": "minutes",
-                            "alwaysOn": "Always on",
-                            "never": "never",
-                            "halfTime": "Half time of display off timer"
+                            "seconds": "秒",
+                            "minute": "分",
+                            "minutes": "分",
+                            "alwaysOn": "常にオン",
+                            "never": "なし",
+                            "halfTime": "ディスプレイ・オフ・タイマーの半分の時間"
                         },
-                        "taskBarDimmer": "TASKBAR DIMMER",
-                        "backgroundDimmer": "BACKGROUND DIMMER",
-                        "displayDimmer": "DISPLAY DIMMER"
+                        "taskBarDimmer": "タスクバーを暗くする",
+                        "backgroundDimmer": "バックグラウンドを暗くする",
+                        "displayDimmer": "ディスプレイを暗くする"
                     }
                 },
                 "camera": {
@@ -1030,10 +1029,10 @@
                         "sketchMode": "スケッチ モード"
                     },
                     "cameraLoadingFailed": {
-                        "inUseTitle": "CAMERA IS IN USE",
-                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
-                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
-                        "loadingFailedDescription": "Close the app and try again."
+                        "inUseTitle": "カメラは使用中です",
+                        "inUseDescription": "他のアプリでカメラを使用中です。アプリを閉じてから再試行してください。",
+                        "loadingFailedTitle": "カメラが使用中またはロードに失敗しました",
+                        "loadingFailedDescription": "アプリを閉じてから再試行してください。"
                     }
                 }
             },
@@ -1085,15 +1084,15 @@
                             "option3": "テキストを入力"
                         }
                     },
-                    "tooltip": "Content to be filled",
+                    "tooltip": "記入する内容",
                     "apply": {
-                        "title": "APPLY"
+                        "title": "適用"
                     },
                     "website": {
-                        "url": "WEBSITE URL"
+                        "url": "Web サイトの URL"
                     },
                     "enterText": {
-                        "title": "TEXT TO BE ENTERED"
+                        "title": "入力するテキスト"
                     }
                 }
             }
@@ -1121,14 +1120,14 @@
                     "tooltip": "人物存在検知設定をリセットするには、ここをクリックしてください。"
                 },
                 "zeroTouchLogin": {
-                    "title": "ゼロ・タッチ・ログイン",
+                    "title": "タッチレスログイン",
                     "caption": "この機能は、コンピューターの前にいたり近づいているときにコンピューターのロック解除またはウェイクアップを自動的に行います。"
                 },
                 "zeroTouchLock": {
-                    "title": "ゼロ・タッチ・ロック",
+                    "title": "オートロック",
                     "caption": "この機能は、ユーザーの存在を検出できない場合、画面を暗くし、コンピューターをロックします。これによって、ユーザーがコンピューターをロック解除したまま離れて放置したときに、コンピューターへの不正アクセスの可能性が減少します。さらに、ユーザーの存在を検出できない場合、システムをモダン・スタンバイの状態に置くことで、消費電力を削減します。",
                     "autoScreenLockTimer": {
-                        "title": "自動スクリーン・ロック・タイマー",
+                        "title": "ロックまでの時間",
                         "radioButton": {
                             "fast": "速く",
                             "medium": "普通",
@@ -1149,7 +1148,7 @@
                     "description1": "この機能は Windows Hello に依存しています。Windows の設定で顔認識がオンになっていることを確認してください。",
                     "description2": "この機能はセンサーとカメラを使ってユーザーの存在を検出します。ただし、この機能が個人のデータを収集することはありません。",
                     "description3": "1. コンピューターがテント・モード、タブレット・モード、またはスタンド・モードの場合、この機能が適切に動作しないことがあります。",
-                    "description4": "2. コンピューターが休止状態またはオフである。自動 IR カメラ・ログインは機能しません。",
+                    "description4": "2. コンピューターが休止状態またはオフであるとき、タッチレスログインは機能しません。",
                     "description5": "3. 自動ログインのために IR カメラが顔を認識できるように、コンピューター画面を適切な角度に調整してください。"
                 },
                 "WindowsLink": {
@@ -1204,12 +1203,23 @@
                     "hand": {
                         "title": "コンピューターの端の手元近接センサーによる感知",
                         "description": "タブレットモードが有効な場合、手が検出されないと APS を有効にします"
-                    }
+                    },
+                    "more": "詳細",
+                    "advanced-settings": "詳細設定",
+                    "hide": "詳細設定を非表示にする"
+                },
+                "APS": {
+                    "more": "詳細",
+                    "advancedSettings": "詳細設定",
+                    "hideAdvancedSettings": "詳細設定を非表示にする",
+                    "lowSensitivity": "低感度",
+                    "mediumSensitivity": "中感度",
+                    "highSensitivity": "高感度"
                 }
             },
             "intelligentMedia": {
                 "heading": "インテリジェント・メディア",
-                "title": "ゼロ・タッチ・ビデオ再生",
+                "title": "ビデオの自動再生",
                 "desc": "この機能では、コンピューターを離れるときにビデオを一時停止し、戻ったときにビデオを再開します。",
                 "tooltip": "この機能は Web ビデオ・プレイヤーに適用できません。Windows Media Player、5KPlayer など、人気のあるローカル・ビデオ・プレイヤーは、この機能をサポートしています。"
             },
@@ -1241,14 +1251,14 @@
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
-                    "title": "Install Failed",
-                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                    "title": "インストール失敗",
+                    "desc": "Lenovo Voice を使用するために後で再試行してください。"
                 }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Update",
+        "title": "システム アップデート",
         "back": "戻る",
         "history": "全履歴",
         "notAvailable": "利用できません",
@@ -1262,7 +1272,7 @@
         "at": "の",
         "readMore": "表示を多くする",
         "popup": {
-            "reboot": "リブート",
+            "reboot": "再起動",
             "shutdown": "シャットダウン",
             "rebootForceMsg": "選択した更新は、インストール後にシステムを自動的に再起動します。",
             "shutdownForceMsg": "選択した更新は、インストール後にシステムを自動的にシャットダウンします。",
@@ -1294,7 +1304,7 @@
             "title": "Lenovo サポート Web サイト"
         },
         "banner": {
-            "neverChecked": "System Update へようこそ。",
+            "neverChecked": "システム アップデートへようこそ。",
             "title": "最新のシステムは健全なシステムです。",
             "last": "最終更新日:",
             "next": "次回の更新スケジュール:",
@@ -1398,7 +1408,7 @@
             "overviewBlockTitle": "エコシステム・セキュリティーの概要",
             "allDevices": "すべてのデバイス",
             "myDevice": "デバイス",
-            "thisComputer": "This computer",
+            "thisComputer": "このコンピューター",
             "secure": "安全",
             "needAttention": "注意が必要",
             "manageAccount": "アカウントの管理",
@@ -1672,14 +1682,14 @@
             "title": "VPN セキュリティー",
             "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPNは、懸念なく安全かつ個人的に任意のインターネット接続で PC、Mac®、スマートフォン、タブレットを使用できるように、送受信する情報を暗号化します。",
-            "whatCanSufEasy1": "A virtual private network provider that protects you while you are online. Without a VPN, your computer may be more vulnerable to attackers and identity theft. The VPN runs silently in the background and provides security and privacy protection.",
-            "startUseSufEasy4": "SurfEasy users can enjoy 250 MB of free traffic every 30 days! Follow the steps on the &quot;Rewards&quot; tab of the SurfEasy app to get more traffic.",
-            "howToGetData": "How to get free traffic:",
-            "howToGetData1": "Confirm email to win +250 MB traffic",
-            "howToGetData2": "Add a second device to win +250 MB of traffic",
-            "howToGetData3": "Refer a friend and win +500 MB of traffic",
-            "howToGetData4": "Like SurfEasy on Facebook, earn +100 MB of traffic,",
-            "howToGetData5": "Follow SurfEasy on Twitter and win +100 MB of traffic",
+            "whatCanSufEasy1": "オンライン中にお客様を保護する仮想プライベート・ネットワーク・プロバイダー。VPN がなければ、お使いのコンピューターは攻撃者やアイデンティティの盗難に対してより脆弱になる可能性があります。VPN はバックグラウンドでサイレントに動作し、セキュリティとプライバシー保護を提供します。",
+            "startUseSufEasy4": "SurfEasy ユーザーは、30 日ごとに 250 MB の無料トラフィックをご利用いただけます。より多くのトラフィックを取得するには、SurfEasy アプリの &quot;賞金&quot; タブの手順に従ってください。",
+            "howToGetData": "無料トラフィックを取得する方法:",
+            "howToGetData1": "メールを確認して 250 MB の追加トラフィックを獲得",
+            "howToGetData2": "2 台目のデバイスを追加して 250 MB の追加トラフィックを獲得",
+            "howToGetData3": "友人を紹介して 500 MB の追加トラフィックを獲得",
+            "howToGetData4": "Facebook で SurfEasy にいいねを押して 100 MB の追加トラフィックを獲得",
+            "howToGetData5": "Twitter で SurfEasy をフォローして 100 MB の追加トラフィックを獲得",
             "helpKeep": "SurfEasy VPN を使用することで、オンライン・アクティビティを安全かつプライベートに維持できます。",
             "getSufEasy": "SurfEasy を入手",
             "openSufEasy": "SurfEasy を開く",

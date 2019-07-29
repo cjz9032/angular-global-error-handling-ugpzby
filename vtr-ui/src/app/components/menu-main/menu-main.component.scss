@@ -6,7 +6,7 @@
 	z-index: 100;
 	width: 100%;
 	@media #{$mediaquery_xl} {
-		position: fixed;
+		position: absolute;
 		left: 0%;
 		right: 0%;
 	}
@@ -44,18 +44,17 @@
 			margin-right: auto;
 			@media #{$mediaquery_xl} {
 				text-align: center;
-
 			}
 			.app-title {
-				text-transform: uppercase;
 				font-size: 2rem;
 
 				.app-name {
+					text-transform: uppercase;
 					font-weight: $weight_black;
 				}
 
 				.app-version {
-					text-transform: lowercase;
+					// text-transform: lowercase;
 					font-size: 1.4rem;
 					padding-left: 1rem;
 					font-weight: $weight_light;
@@ -71,6 +70,7 @@
 		.navbar-collapse {
 			&.show {
 				display: block;
+				// overflow-y: auto;
 			}
 			.navbar-nav {
 				.nav-item {
@@ -83,9 +83,21 @@
 						font-weight: 400;
 						line-height: calc(#{$menu_height} - 0.65rem);
 						color: $light;
+						padding: 0 1.5rem;
+						@media #{mediaquery_7} {
+							padding: 0 1.5rem;
+						}
 						padding: 0 1rem;
 						border-bottom: transparent solid 0.5rem;
 
+						/*@media #{$mediaquery_7} {
+							font-weight: 300;
+							font-size: 1.5rem;
+							padding-right:0;
+							padding-left: 0;
+
+						}
+*/
 						@media #{$mediaquery_4} {
 							line-height: calc(#{$menu_height} - 0.5rem);
 						}
@@ -105,7 +117,7 @@
 								color: $main;
 							}
 						}
-						.icon{
+						.icon {
 							display: inline-block;
 							vertical-align: middle;
 						}
@@ -175,7 +187,7 @@
 							position: relative;
 							z-index: 1;
 							color: $main_shade;
-							padding:0.25rem 0.9rem;
+							padding: 0.25rem 0.9rem;
 							font-size: 1.5rem;
 							line-height: 2.2rem;
 							font-weight: $weight_medium;
@@ -252,7 +264,7 @@
 				background: $main_darker;
 				.navbar-nav {
 					.nav-item {
-						padding: 0 0 2.5rem 0;
+						padding: 0 0 0.5rem 0;
 						.nav-link {
 							line-height: 4rem;
 							border-bottom: none;
@@ -289,12 +301,11 @@
 							}
 							.dropdown-item {
 								color: $light;
-								line-height: 4rem;
-								padding:0.25rem 0.9rem;
+								line-height: 3rem;
+								padding: 0.25rem 0.9rem;
 								text-decoration: none;
 								&.link {
 									background: transparent;
-
 								}
 							}
 							fa-icon {
@@ -312,9 +323,8 @@
 			//display: none;
 			font-size: 5rem;
 			color: $shade_light;
-			@media #{$mediaquery_xl}{
+			@media #{$mediaquery_xl} {
 				display: block;
-
 			}
 			&:hover {
 				color: $shade_extralight;
@@ -339,10 +349,10 @@
 	}
 }
 
-@media  #{$mediaquery_xl}{
-	.dropdown-menu{
-		top:0 !important;
-		position:relative;
+@media #{$mediaquery_xl} {
+	.dropdown-menu {
+		top: 0 !important;
+		position: relative;
 	}
 }
 /*

@@ -10,6 +10,11 @@
 		content: $icomoon-arrows-h;
 	}
 }
+.icomoon-auto-screen-off {
+	&:before {
+		content: $icomoon-auto-screen-off;
+	}
+}
 .icomoon-dynamic {
 	&:before {
 		content: $icomoon-dynamic;
@@ -40,9 +45,9 @@
 		content: $icomoon-FA-Camera2x;
 	}
 }
-.icomoon-FACE-RECOGNITION {
+.icomoon-face-recognition {
 	&:before {
-		content: $icomoon-FACE-RECOGNITION;
+		content: $icomoon-face-recognition;
 	}
 }
 .icomoon-FA-Child2x {
@@ -128,7 +133,6 @@
 .icomoon-FA-Plug2x {
 	&:before {
 		content: $icomoon-FA-Plug2x;
-		color: #4a81fd;
 	}
 }
 .icomoon-FA-Question-circle2x {
@@ -170,7 +174,6 @@
 .icomoon-FA-Unplugged2x {
 	&:before {
 		content: $icomoon-FA-Unplugged2x;
-		color: #4a81fd;
 	}
 }
 .icomoon-FA-User-headset2x {
@@ -197,10 +200,9 @@
 		color: #4a81fd;
 	}
 }
-.icomoon-Keep-my-display {
+.icomoon-keep-my-display {
 	&:before {
-		content: $icomoon-Keep-my-display;
-		color: #4a81fd;
+		content: $icomoon-keep-my-display;
 	}
 }
 .icomoon-LE-Acoustic-echo-cancellation2x {
@@ -518,10 +520,20 @@
 		content: $icomoon-star;
 	}
 }
+.icomoon-translation {
+	&:before {
+		content: $icomoon-translation;
+	}
+}
 .icomoon-voicerecognition {
 	&:before {
 		content: $icomoon-voicerecognition;
 		color: #4a81fd;
+	}
+}
+.icomoon-voice-to-text {
+	&:before {
+		content: $icomoon-voice-to-text;
 	}
 }
 .icomoon-voip {

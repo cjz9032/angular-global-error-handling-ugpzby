@@ -12,6 +12,8 @@ export enum UpdateProgress {
 	AutoUpdateStatus = '[SystemUpdate] AutoUpdateStatus',
 	FullHistory = '[SystemUpdate] FullHistory',
 	ScheduleUpdateCheckComplete = '[SystemUpdate] ScheduleUpdateCheckComplete',
+	ScheduleUpdateInstallationComplete = '[SystemUpdate] ScheduleUpdateInstallationComplete',
+	ScheduleUpdatesAvailable = '[SystemUpdate] ScheduleUpdatesAvailable',
 	ScheduleUpdateInstalling = '[SystemUpdate] ScheduleUpdateInstalling',
 	ScheduleUpdateDownloading = '[SystemUpdate] ScheduleUpdateDownloading',
 	ScheduleUpdateChecking = '[SystemUpdate] ScheduleUpdateChecking',

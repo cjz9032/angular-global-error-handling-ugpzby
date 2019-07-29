@@ -37,16 +37,16 @@
 					},
 					"driverPopup": {
 						"headerText": "Driver Install Required",
-						"text": "Install driver to activate RAM Overclock",
+						"text": "Install driver to activate RAM Overclock (Reboot Required)",
 						"networkBoostText": "You need install driver for Network Boost to  make it effective",
 						"hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
-						"cpuOverclockText": "Install driver to activate CPU Overclock ",
+						"cpuOverclockText": "Install driver to activate CPU Overclock (Reboot Required)",
 						"button": "Install",
 						"link": "cancel"
 					},
 					"lightingDriverPopup": {
 						"headerText": "Driver Install Required",
-						"text": "Install driver to activate lighting",
+						"text": "Install driver to activate lighting (Reboot Required)",
 						"button": "Install",
 						"link": "cancel"
 					},
@@ -63,7 +63,7 @@
 					"media": "Media",
 					"macroKey": "Marco Key",
 					"hardwareScan": "Hardware Scan",
-					"systemUpdate": "System Updates",
+					"systemUpdate": "System Update",
 					"header": "System Tools"
 				},
 				"systemStatus": {
@@ -202,23 +202,9 @@
 					}
 				}
 			},
-			"numberpad": {
-				"number": {
-					"zero": "Num 0",
-					"one": "Num 1",
-					"two": "Num 2",
-					"three": "Num 3",
-					"four": "Num 4",
-					"five": "Num 5",
-					"six": "Num 6",
-					"seven": "Num 7",
-					"eight": "Num 8",
-					"nine": "Num 9"
-				},
-				"macro": {
-					"m1": "M1",
-					"m2": "M2"
-				}
+			"initalKey": {
+				"zero": "0",
+				"m1": "M1"
 			},
 			"popupContent": {
 				"clearMacrokey": {
@@ -378,6 +364,21 @@
 					"title": "Select Profile:"
 				}
 			}
+		},
+		"autoClose": {
+			"title": "Auto Close",
+			"introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+			"modalTurnAutoClose": {
+				"title": "Turn on Auto Close ?",
+				"body": "Apps you added will be closed when you game, freeing resources for gaming.",
+				"checkedTitle": "Don't ask again",
+				"btnConfirm": "Turn on",
+				"btnCancel": "Not now"
+			},
+			"modalAddApps": {
+				"title": "Add apps to Auto Close",
+				"body": "Only apps currently running will show in the list below."
+			}
 		}
 	},
 	"common": {
@@ -387,7 +388,7 @@
 				"title": "Device",
 				"sub1": "My Device",
 				"sub2": "My Device Settings",
-				"sub3": "System Updates",
+				"sub3": "System Update",
 				"sub4": "Smart Assist"
 			},
 			"security": {
@@ -513,14 +514,14 @@
 			"memory": {
 				"title": "Memory",
 				"detail": {
-					"notFound": "Memory not found",
+					"notFound": "Loading Memory information",
 					"of": "of"
 				}
 			},
 			"diskSpace": {
 				"title": "Disk Space",
 				"detail": {
-					"notFound": "Disk not found",
+					"notFound": "Loading Disk information",
 					"of": "of"
 				}
 			},
@@ -551,8 +552,8 @@
 			"learnMore": "Learn more",
 			"freeMemory": "Free memory",
 			"systemUpdate": {
-				"title": "System update",
-				"notFound": "System update not found",
+				"title": "System Update",
+				"notFound": "System Update not found",
 				"detail": {
 					"uptoDate": "Software up to date ",
 					"updatedOn": "updated on ",
@@ -563,16 +564,16 @@
 			"extendedWarranty": "Extend warranty",
 			"processor": {
 				"title": "Processor",
-				"notFound": "Processor not found"
+				"notFound": "Loading Processor information"
 			},
 			"memory": {
 				"title": "Memory",
-				"notFound": "Memory not found",
+				"notFound": "Loading Memory information",
 				"ram": "RAM"
 			},
 			"diskspace": {
 				"title": "Disk Space",
-				"notFound": "Disk not found"
+				"notFound": "Loading Disk information"
 			},
 			"software": "Software up to date",
 			"updated": "Updated",
@@ -683,7 +684,6 @@
 				"jumpto": {
 					"title": "JUMP TO SETTINGS",
 					"battery": "Battery",
-					"smartStandby": "Smart Standby",
 					"power": "Power",
 					"other": "Other"
 				},
@@ -691,10 +691,10 @@
 					"title": "Power Smart settings",
 					"subtitle": "Intelligent Cooling",
 					"subtitle1": "Battery & Quiet",
-					"description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
+					"description1": "When on, this feature dynamically adjusts thermal settings to your needs. It adjusts settings to keep the device cool and quiet while being held or idle. While the device is on a stable surface, it optimizes the performance. When off, you can manually set the thermal priority.",
 					"description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
 					"description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
-					"description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
+					"description13": "When on, this feature dynamically adjusts thermal settings to your needs. It adjusts settings to keep the device cool and quiet while being held or idle. While the device is on a stable surface, it optimizes the performance. When off, you can manually set the thermal priority.",
 					"description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
 					"description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider",
 					"readMore": "Read more.",
@@ -1194,6 +1194,9 @@
 					"button": "Suspend Now"
 				},
 				"advanced": {
+					"more": "MORE",
+					"advanced-settings": "ADVANCED SETTINGS",
+					"hide": "HIDE ADVANCED SETTINGS",
 					"description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
 					"pen": {
 						"title": "Pen Input",
@@ -1207,6 +1210,14 @@
 						"title": "Hand Proximity Sensing on Computer Edges",
 						"description": "When tablet mode is enabled, Enable APS when hand is not detected"
 					}
+				},
+				"APS": {
+					"more": "MORE",
+					"advancedSettings": "ADVANCED SETTINGS",
+					"hideAdvancedSettings": "HIDE ADVANCED SETTINGS",
+					"lowSensitivity": "Low Sensitivity",
+					"mediumSensitivity": "Medium Sensitivity",
+					"highSensitivity": "High Sensitivity"
 				}
 			},
 			"intelligentMedia": {
@@ -1230,7 +1241,7 @@
 				},
 				"modalPopUp": {
 					"heading": "Getting started:",
-					"point1": "Make sure that the Lenovo Voice icons is displayed in the Windows system tray.",
+					"point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
 					"point2": "Open the file where you want to record the converted text.",
 					"point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
 					"point4": "Select your desired language and click the microphone icon to start.",
@@ -1250,7 +1261,7 @@
 		}
 	},
 	"systemUpdates": {
-		"title": "System Updates",
+		"title": "System Update",
 		"back": "BACK",
 		"history": "FULL HISTORY",
 		"notAvailable": "Not Available",
@@ -2172,7 +2183,7 @@
 	"settings": {
 		"preferenceSettings": "Preference settings",
 		"settings": "Settings",
-		"settingsDescription": "In preference setting page, you can choose to turn on/off your message notification based on the categories of Vantage's message, please be noted that even if all the message categories are disabled, you may still occasionally receive System Critical message from Vantage when necessary.",
+		"settingsDescription": "In preference settings page, you can choose to turn on/off your message notification based on the categories of Vantage's message, please be noted that even if all the message categories are disabled, you may still occasionally receive System Critical message from Vantage when necessary.",
 		"messagesInLenovoVantage": "Messages in Lenovo Vantage",
 		"appFeatures": "App Features",
 		"appFeaturesDescription": "Messages pertaining System Update, articles and other noteworthy features.",
