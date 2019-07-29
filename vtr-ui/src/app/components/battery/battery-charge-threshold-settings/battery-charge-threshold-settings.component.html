@@ -2,30 +2,31 @@
 	<div class="container-fluid">
 		<!--start of display title in row-->
 		<div class="row"
-		 *ngIf="title && !displayNoteOnly">
+			*ngIf="title && !displayNoteOnly">
 			<div class="col px-20 pb-4">
 				<div class="threshold-for-built-in-battery">
 					{{ title }}
 				</div>
 			</div>
 		</div>
-	
+
 		<!--end of display title in row-->
 		<!--start of display inputs for action in row-->
 		<div class="row"
-		 *ngIf="!displayNoteOnly">
+			*ngIf="!displayNoteOnly">
 			<div class="col">
 				<div class="inputSection">
 					<div class="row">
 						<!--start of left dropdown box for action in row-->
-						<div class="col-sm-12 col-md-6 col-lg-6 px-20 pb-4">
+						<div class="col-8 px-20 pb-4">
 							<div class="btn-group btn-block dropdown-left"
-							 ngbDropdown
-							 [ngClass]="['disabled',isCheckedAuto === true ?'disabled':'']" placement="bottom-right">
+								ngbDropdown
+								[ngClass]="['disabled',isCheckedAuto === true ?'disabled':'']"
+								placement="bottom-right">
 								<button [ngClass]="['btn','btn-outline-shadow',isCheckedAuto?'disabled':'']"
-								 ngbDropdownToggle
-								 [disabled]="isCheckedAuto?true:false"
-								 type="button">
+									ngbDropdownToggle
+									[disabled]="isCheckedAuto?true:false"
+									type="button">
 									<div class="row d-flex justify-content-between">
 										<div class="col-auto pl-1 pr-1">
 											<div class="select-title">
@@ -44,23 +45,24 @@
 									</div>
 								</button>
 								<div ngbDropdownMenu
-								 aria-labelledby="">
+									aria-labelledby="">
 									<a [ngClass]="['dropdown-item',item >= selectedStopAtCharge?'disabled':'']"
-									 *ngFor="let item of startAtChargeOptions"
-									 (click)="onChargeChange('startAtCharge', item , $event);$event.preventDefault();"
-									 href="#">{{item}}%</a>
+										*ngFor="let item of startAtChargeOptions"
+										(click)="onChargeChange('startAtCharge', item , $event);$event.preventDefault();">{{item}}%</a>
 								</div>
 							</div>
 						</div>
 						<!--end of left dropdown box for action in row-->
-
+					</div>
+					<div class="row">
 						<!--start of right dropdown box for action in row-->
-						<div class="col-sm-12 col-md-6 col-lg-6 px-20 pb-4">
+						<div class="col-8 px-20 pb-4">
 							<div class="btn-group btn-block dropdown-right"
-							 ngbDropdown placement="bottom-right">
+								ngbDropdown
+								placement="bottom-right">
 								<button [ngClass]="['btn','btn-outline-shadow']"
-								 ngbDropdownToggle
-								 type="button">
+									ngbDropdownToggle
+									type="button">
 									<div class="row d-flex justify-content-between">
 										<div class="col-auto pl-1 pr-1">
 											<div class="select-title">
@@ -78,28 +80,26 @@
 									</div>
 								</button>
 								<div ngbDropdownMenu
-								 aria-labelledby="">
+									aria-labelledby="">
 									<a [ngClass]="['dropdown-item',isCheckedAuto ===false && (item <= selectedStartAtCharge) ?'disabled':'']"
-									 *ngFor="let item of stopAtChargeOptions"
-									 (click)="onChargeChange('stopAtCharge', item , $event);$event.preventDefault();"
-									 href="#">{{item}}%</a>
+										*ngFor="let item of stopAtChargeOptions"
+										(click)="onChargeChange('stopAtCharge', item , $event);$event.preventDefault();">{{item}}%</a>
 								</div>
 							</div>
 						</div>
 						<!--end of right dropdown box for action in row-->
 					</div>
 					<div class="row"
-					 *ngIf="!displayNoteOnly">
+						*ngIf="!displayNoteOnly">
 						<div class="col px-20">
 							<div class="auto-set-checkbox">
 								<input type="checkbox"
-								 [id]="isCheckedAutoInput + randomNumber"
-								 [name]="isCheckedAutoInput + randomNumber"
-								 [(ngModel)]="isCheckedAuto"
-								 (ngModelChange)='toggleAutoChargeSettings($event)'>
+									[id]="isCheckedAutoInput + randomNumber"
+									[name]="isCheckedAutoInput + randomNumber"
+									[(ngModel)]="isCheckedAuto"
+									(ngModelChange)='toggleAutoChargeSettings($event)'>
 
-								<label
-								 [for]="isCheckedAutoInput + randomNumber">{{checkboxText}}</label>
+								<label [for]="isCheckedAutoInput + randomNumber">{{checkboxText}}</label>
 							</div>
 						</div>
 					</div>
@@ -109,7 +109,7 @@
 		</div>
 		<!--start of row seperator-->
 		<div class="row"
-		 *ngIf="!displayNoteOnly">
+			*ngIf="!displayNoteOnly">
 			<div class="col px-20">
 				<div class="row-seperator">&nbsp;</div>
 			</div>
@@ -117,11 +117,12 @@
 		<!--end of row seperator-->
 
 		<!--start of Note -->
-		<div class="row" *ngIf= "showWarningMsg">
+		<div class="row"
+			*ngIf="showWarningMsg">
 			<div class="col px-20">
 				<div class="note-box">
 					<div class="note">
-					<b>{{'device.deviceSettings.power.batterySettings.batteryThreshold.note' | translate}} :</b>
+						<b>{{'device.deviceSettings.power.batterySettings.batteryThreshold.note' | translate}} :</b>
 						{{'device.deviceSettings.power.batterySettings.batteryThreshold.noteInfo' | translate}}
 					</div>
 				</div>

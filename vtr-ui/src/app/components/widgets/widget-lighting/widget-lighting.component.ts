@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 @Component({
 	selector: 'vtr-widget-lighting',
 	templateUrl: './widget-lighting.component.html',
-	styleUrls: [ './widget-lighting.component.scss' ]
+	styleUrls: ['./widget-lighting.component.scss']
 })
 export class WidgetLightingComponent implements OnInit {
 	public response: any;
@@ -27,7 +27,7 @@ export class WidgetLightingComponent implements OnInit {
 		private commonService: CommonService,
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private router: Router
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.setprofId = 0;
@@ -46,8 +46,6 @@ export class WidgetLightingComponent implements OnInit {
 		this.ledDriver = this.commonService.getLocalStorageValue(LocalStorageKey.ledDriver);
 
 
-		// console.log('ledSetFeature-----'+this.ledSetFeature +'--------ledDriver--------'+ this.ledDriver );
-		//console.log(this.ledSetFeature && this.ledDriver);
 		if (this.ledSetFeature) {
 			if (LocalStorageKey.ProfileId !== undefined) {
 				this.setprofId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId) || 0;
@@ -56,10 +54,8 @@ export class WidgetLightingComponent implements OnInit {
 		}
 
 		if (this.ledSetFeature && this.ledDriver) {
-			//console.log('popup check');
 			this.isLightingVisible = true;
 			this.isPopupVisible = false;
-			//console.log('popup check' + this.isPopupVisible);
 		} else if (!this.ledSetFeature && this.ledDriver) {
 			this.isLightingVisible = false;
 		} else if (this.ledSetFeature && !this.ledDriver) {
@@ -102,7 +98,6 @@ export class WidgetLightingComponent implements OnInit {
 	public SetProfile(event) {
 		try {
 			const eventval: number = event.target.value;
-			//console.log('--------------home page lighting event-----' + this.isPopupVisible);
 			let prevSetprofId;
 			if (this.gamingLightingService.isShellAvailable) {
 				if (this.isPopupVisible) {
@@ -111,22 +106,22 @@ export class WidgetLightingComponent implements OnInit {
 					prevSetprofId = this.setprofId;
 					this.setprofId = eventval;
 				}
-				if(!this.isPopupVisible){
-				this.gamingLightingService.setLightingProfileId(0, eventval).then((response: any) => {
-					//console.log('setLightingProfileId------------response---------------->', JSON.stringify(response));
-					this.didSuccess = response.didSuccess;
-					if (this.didSuccess) {
-						if (LocalStorageKey.ProfileId !== undefined) {
-							this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, response.profileId);
+				if (!this.isPopupVisible) {
+					this.gamingLightingService.setLightingProfileId(0, eventval).then((response: any) => {
+
+						this.didSuccess = response.didSuccess;
+						if (this.didSuccess) {
+							if (LocalStorageKey.ProfileId !== undefined) {
+								this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, response.profileId);
+							}
+							if (!this.isPopupVisible) {
+								this.setprofId = response.profileId;
+							}
+						} else {
+							this.setprofId = prevSetprofId;
 						}
-						if (!this.isPopupVisible) {
-							this.setprofId = response.profileId;
-						}
-					} else {
-						this.setprofId = prevSetprofId;
-					}
-				});
-			}
+					});
+				}
 			}
 		} catch (error) {
 			console.error('setLightingProfileId: ' + error.message);
@@ -137,11 +132,6 @@ export class WidgetLightingComponent implements OnInit {
 		console.log('check status', id + ' ' + this.setprofId);
 		if (id) {
 			this.isdriverpopup = true;
-			//console.log('checkstatus resp in if--------', this.isdriverpopup);
-		} else {
-			console.log('checkstatus resp ', this.setprofId);
-			//this.router.navigateByUrl('gaming/lightingcustomize/:' + this.setprofId);
-			this.router.navigate([ 'lightingcustomize/', this.setprofId ]);
 		}
 	}
 }

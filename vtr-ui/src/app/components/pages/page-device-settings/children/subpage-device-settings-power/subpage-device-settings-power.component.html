@@ -38,13 +38,14 @@
 	</div>
 	<vtr-power-smart-settings (isPowerSmartSettingHidden)="hidePowerSmartSetting(false)"
 		*ngIf="!isDesktopMachine"></vtr-power-smart-settings>
-	<vtr-smart-standby (smartStandbyCapability)="onSetSmartStandbyCapability($event)"></vtr-smart-standby>
-	<div class="row py-5"
+	<vtr-smart-standby *ngIf="!isDesktopMachine"
+		(smartStandbyCapability)="onSetSmartStandbyCapability($event)">
+	</vtr-smart-standby>
+	<div *ngIf="showAirplanePowerModeSection || conservationModeStatus?.available || expressChargingStatus?.available || isChargeThresholdAvailable"
+		class="row py-5"
 		id="battery">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible
-				[cardTitle]="'device.deviceSettings.power.batterySettings.title' | translate"
-				*ngIf="showAirplanePowerModeSection || conservationModeStatus.available || expressChargingStatus.available "
+			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.batterySettings.title' | translate"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class=""
@@ -63,7 +64,7 @@
 
 					<!-- MVP 2 feature -->
 					<li class=""
-						*ngIf="machineType == 1 && responseData[0]?.isCapable">
+						*ngIf="machineType == 1 && isChargeThresholdAvailable">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.batteryThreshold.description' | translate "
@@ -163,8 +164,7 @@
 		id="power"
 		*ngIf="showPowerSettings()">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible
-				[cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
+			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class=""
@@ -244,10 +244,10 @@
 	</div>
 
 	<div class="row py-5"
-		id="other">
+		id="other"
+		*ngIf="vantageToolbarStatus.available">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible
-				componentName="'device.deviceSettings.power.otherSettings.title' | translate"
+			<vtr-container-collapsible componentName="'device.deviceSettings.power.otherSettings.title' | translate"
 				[cardTitle]="'device.deviceSettings.power.otherSettings.title' | translate"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
@@ -273,8 +273,7 @@
 	<div class="row py-5"
 		*ngIf="machineType === 1 && isEnergyStarProduct">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible
-				componentName="'device.deviceSettings.power.energyStar.title' | translate"
+			<vtr-container-collapsible componentName="'device.deviceSettings.power.energyStar.title' | translate"
 				[cardTitle]="'device.deviceSettings.power.energyStar.title' | translate"
 				[isCollapsed]="false">
 				<div class="row energystar-container">

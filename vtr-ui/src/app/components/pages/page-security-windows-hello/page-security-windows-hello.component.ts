@@ -10,7 +10,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { RegionService } from 'src/app/services/region/region.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { GuardService } from '../../../services/guard/security-guardService.service';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/internal/Subscription';
 import { Router } from '@angular/router';
 
 @Component({
@@ -67,7 +67,7 @@ export class PageSecurityWindowsHelloComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		if (this.router.routerState.snapshot.url.indexOf('security') === -1 || this.router.routerState.snapshot.url.indexOf('dashboard') === -1) {
+		if (this.router.routerState.snapshot.url.indexOf('security') === -1 && this.router.routerState.snapshot.url.indexOf('dashboard') === -1) {
 			if (this.securityAdvisor.wifiSecurity) {
 				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 			}
@@ -103,10 +103,10 @@ export class PageSecurityWindowsHelloComponent implements OnInit, OnDestroy {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'windows-hello'
+			Page: 'windows-hello'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
 				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {

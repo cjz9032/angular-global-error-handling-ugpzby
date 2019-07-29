@@ -2,24 +2,24 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UiListChevronComponent } from './ui-list-chevron.component';
 
-describe('UiListChevronComponent', () => {
-//   let component: UiListChevronComponent;
-//   let fixture: ComponentFixture<UiListChevronComponent>;
+xdescribe('UiListChevronComponent', () => {
+  let component: UiListChevronComponent;
+  let fixture: ComponentFixture<UiListChevronComponent>;
 
   beforeEach(async(() => {
-    // TestBed.configureTestingModule({
-    //   declarations: [ UiListChevronComponent ]
-    // })
-    // .compileComponents();
+    TestBed.configureTestingModule({
+      declarations: [ UiListChevronComponent ]
+    })
+    .compileComponents();
   }));
 
   beforeEach(() => {
-    // fixture = TestBed.createComponent(UiListChevronComponent);
-    // component = fixture.componentInstance;
-    // fixture.detectChanges();
+    fixture = TestBed.createComponent(UiListChevronComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('should create', () => {
-   // expect(component).toBeTruthy();
+   expect(component).toBeTruthy();
   });
 });

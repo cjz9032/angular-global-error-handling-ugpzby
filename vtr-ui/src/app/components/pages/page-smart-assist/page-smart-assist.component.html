@@ -98,9 +98,9 @@
 									<li>
 										<vtr-ui-row-switch
 											[title]="'device.smartAssist.intelligentSecurity.humanPresenceDetection.title' | translate"
-											componentName="HumanPresenceDetection"
+											[componentName]="'HumanPresenceDetection'"
 											[isSwitchVisible]="true"
-											[leftIcon]="['fal', 'gem']"
+											[leftIcon]="['icomoon', 'icomoon-face-recognition']"
 											[showChildContent]="true"
 											[isSwitchChecked]="intelligentSecurity.isHPDEnabled"
 											(toggleOnOff)="onHumanPresenceDetectStatusToggle($event)"
@@ -290,7 +290,7 @@
 											[title]="'device.smartAssist.intelligentScreen.autoScreenOff.title' | translate"
 											[caption]=" 'device.smartAssist.intelligentScreen.autoScreenOff.caption' | translate"
 											[isSwitchVisible]="true"
-											[leftIcon]="['fal', 'gem']"
+											[leftIcon]="['icomoon', 'icomoon-auto-screen-off']"
 											[theme]="'white'"
 											(toggleOnOff)="onAutoScreenOffToggle($event)"
 											[isSwitchChecked]="intelligentScreen.isAutoScreenOffEnabled">
@@ -310,7 +310,7 @@
 										<vtr-ui-row-switch
 											[title]="'device.smartAssist.intelligentScreen.keepMyDisplay.title' | translate"
 											[caption]="'device.smartAssist.intelligentScreen.keepMyDisplay.caption' | translate"
-											[leftIcon]="['fal', 'gem']"
+											[leftIcon]="['icomoon', 'icomoon-keep-my-display']"
 											[theme]="'white'"
 											[isSwitchVisible]="true"
 											[showChildContent]="true"

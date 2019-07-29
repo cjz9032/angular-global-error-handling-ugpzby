@@ -23,7 +23,7 @@
 								(toggleOnOff)="setAPSMode($event)">
 								<div class="slider">
 									<vtr-ui-aps-slider
-										[legends]="['Low Sensitivity', 'Medium Sensitivity', 'High Sensitivity']"
+										[legends]="['device.smartAssist.activeProtectionSystem.APS.lowSensitivity' | translate,'device.smartAssist.activeProtectionSystem.APS.mediumSensitivity' | translate, 'device.smartAssist.activeProtectionSystem.APS.highSensitivity' | translate]"
 										[minValue]="0"
 										[maxValue]="100"
 										[enableSlider]="!apsStatus"
@@ -37,7 +37,7 @@
 									<vtr-ui-checkbox
 										[label]="'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate"
 										[checked]="repeatShock"
-										(change)="setAutoDisableSetting($event)"
+										(toggle)="setAutoDisableSetting($event)"
 										[disabled]="!apsStatus">
 									</vtr-ui-checkbox>
 								</div>
@@ -63,9 +63,11 @@
 									<p class="text-uppercase">
 										{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.dropdown-title' | translate }}
 									</p>
-									<vtr-ui-dropdown [list]="intervals"
-										[value]="manualSnoozeTime"
-										(change)="setSnoozeTime($event)">
+									<vtr-ui-dropdown
+											[list]="intervals"
+											[value]="manualSnoozeTime"
+											(change)="setSnoozeTime($event)"
+											[disabled]="!apsStatus">
 									</vtr-ui-dropdown>
 								</section>
 								<section class="col-sm-5">
@@ -85,20 +87,20 @@
 					<!-- Advanced section -->
 					<li *ngIf="advanceAvailable && apsStatus"
 						class="advanced pt-3 keep-my-display-block auto-screen-off-block">
-						<h4 *ngIf="!advancedToggle">MORE</h4>
+						<h4 *ngIf="!advancedToggle">{{ 'device.smartAssist.activeProtectionSystem.advanced.more' | translate }}</h4>
 						<a *ngIf="!advancedToggle"
 							(click)="toggleAdvanced()">
-							<p>ADVANCED SETTINGS</p>
+							<p>{{ 'device.smartAssist.activeProtectionSystem.advanced.advanced-settings' | translate }}</p>
 						</a>
 
 						<section *ngIf="advancedToggle">
-							<h4>ADVANCED SETTINGS</h4>
+							<h4>{{ 'device.smartAssist.activeProtectionSystem.advanced.advanced-settings' | translate }}</h4>
 							<vtr-active-protection-system-advanced [penCapability]="penCapability"
 								[touchCapability]="touchCapability"
 								[pSensorCapability]="pSensorCapability">
 							</vtr-active-protection-system-advanced>
 							<a (click)="toggleAdvanced()">
-								<p>HIDE ADVANCED SETTINGS</p>
+								<p>{{ 'device.smartAssist.activeProtectionSystem.advanced.hide' | translate }}</p>
 							</a>
 						</section>
 					</li>

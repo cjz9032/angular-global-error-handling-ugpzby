@@ -9,6 +9,7 @@ import {
 import {
 	SmartAssistService
 } from 'src/app/services/smart-assist/smart-assist.service';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
 	selector: 'vtr-active-protection-system-advanced',
 	templateUrl: './active-protection-system-advanced.component.html',
@@ -27,35 +28,37 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 	public intervals: DropDownInterval[];
 
 	private populateIntervals() {
-		const seconds = 'seconds';
+
+		const seconds = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.seconds'); //'seconds';
+
 
 		this.intervals = [{
-				name: '0',
-				value: 0,
-				placeholder: seconds,
-				text: `0 ${seconds}`
-			},
-			{
-				name: '5',
-				value: 5,
-				placeholder: seconds,
-				text: `5 ${seconds}`
-			},
-			{
-				name: '10',
-				value: 10,
-				placeholder: seconds,
-				text: `10 ${seconds}`
-			},
-			{
-				name: '15',
-				value: 15,
-				placeholder: seconds,
-				text: `15 ${seconds}`
-			},
+			name: '0',
+			value: 0,
+			placeholder: seconds,
+			text: `0 ${seconds}`
+		},
+		{
+			name: '5',
+			value: 5,
+			placeholder: seconds,
+			text: `5 ${seconds}`
+		},
+		{
+			name: '10',
+			value: 10,
+			placeholder: seconds,
+			text: `10 ${seconds}`
+		},
+		{
+			name: '15',
+			value: 15,
+			placeholder: seconds,
+			text: `15 ${seconds}`
+		},
 		];
 	}
-	constructor(private smartAssist: SmartAssistService) {}
+	constructor(private smartAssist: SmartAssistService, private translate: TranslateService) { }
 
 	ngOnInit() {
 		this.populateIntervals();

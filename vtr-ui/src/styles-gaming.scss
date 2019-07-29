@@ -123,6 +123,9 @@
 	}
 
 .is-gaming {
+	width: 100%;
+	height: 100%;
+	background-color: $gaming_darkest;
 	.vtr-page {
 		.vtr-page-content {
 			.vtr-page-left-column {
@@ -170,7 +173,7 @@
 									}
 								}
 								.icon-check {
-									.icon-bg {						
+									.icon-bg {
 										fa-icon {
 											color: $gaming-Darkslate-blue;
 										}
@@ -214,7 +217,7 @@
 										}
 									}
 								}
-								
+
 							}
 							&.white-theme{
 								.card{
@@ -394,18 +397,23 @@
 				}
 			}
 			.vtr-page-right-column {
-				background-color: $gaming_darker;
+				background-image: url('./assets/images/gaming/GradientLine@1x.png');
+				background-repeat: repeat;
+				background-size: 100% 100%;
+				//background-color: $gaming_darker;
 				//padding-left: 2.2rem;
 				padding: 0 8.5rem 4rem 4rem;
 				@media #{$small-screen} {
 					margin-top: -0.1rem;
 					padding: 6rem 3rem 1.5rem 3rem;
 					background-color: $gaming_darkest;
+					background-image: none;
 				}
 				@media #{$medium-screen} {
 					margin-top: -0.1rem;
 					padding: 6rem 6.5rem 4rem 6.5rem;
 					background-color: $gaming_darkest;
+					background-image: none;
 				}
 				vtr-autoupdate-settings{
 					.vtr-autoupdate-settings{
@@ -500,14 +508,14 @@
 }
 .gaming-help-modal {
 	.modal-dialog {
-		top: 16rem;	
+		top: 16rem;
 		width: 80rem;
 		max-width: 100%;
 		@media #{$medium-screen} {
 			max-width: 70rem;
 			position: relative;
 	   }
-   
+
 	   @media #{$small-screen} {
 		   max-width: 50rem;
 		   position: relative;

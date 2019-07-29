@@ -250,6 +250,13 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					this.intelligentCoolingModes = IntelligentCoolingHardware.Legacy;
 					console.log('DYTC 3.0 supported');
 					this.apsStatus = await this.getAPSState();
+
+					// Start of fix for VAN-6839, changing appStatus true , to fix for VAN-6839.
+					if (this.tIOCapability) {
+						this.apsStatus = true;
+					}
+					// end of fix for VAN-6839, changing appStatus true , to fix for VAN-6839.
+
 					if ((this.cQLCapability || this.tIOCapability) && this.apsStatus) {
 						this.showIntelligentCoolingToggle = true;
 						this.enableIntelligentCoolingToggle = await this.getLegacyAutoModeState();

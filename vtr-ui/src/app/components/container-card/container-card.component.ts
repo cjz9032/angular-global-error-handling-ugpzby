@@ -1,5 +1,4 @@
-import { Component, Self, ElementRef, OnInit, AfterViewInit, Input, ChangeDetectorRef, OnChanges } from '@angular/core';
-import { DisplayService } from '../../services/display/display.service';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from '../modal/modal-article-detail/modal-article-detail.component';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -11,7 +10,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 	templateUrl: './container-card.component.html',
 	styleUrls: [ './container-card.component.scss', './container-card.component.gaming.scss' ]
 })
-export class ContainerCardComponent implements OnInit, AfterViewInit, OnChanges {
+export class ContainerCardComponent implements OnInit, OnChanges {
 	@Input() img = '';
 	@Input() caption = '';
 	@Input() title = '';
@@ -23,7 +22,7 @@ export class ContainerCardComponent implements OnInit, AfterViewInit, OnChanges 
 	@Input() type = '';
 	@Input() ratioX = 1;
 	@Input() ratioY = 1;
-	@Input() cornerShift: String = '';
+	@Input() cornerShift = '';
 	@Input() order: number;
 	@Input() itemID: string;
 	@Input() sideFlag = '';
@@ -39,24 +38,14 @@ export class ContainerCardComponent implements OnInit, AfterViewInit, OnChanges 
 	resizeListener;
 
 	constructor(
-		@Self() private element: ElementRef,
-		private displayService: DisplayService,
 		private commonService: CommonService,
 		public modalService: NgbModal,
-		private changeDetectorRef: ChangeDetectorRef
 	) {}
 
 	ngOnInit() {
 		this.handleLoading();
-
 		this.ratio = this.ratioY / this.ratioX;
-		const self = this;
-		this.resizeListener = this.displayService.windowResizeListener().subscribe((event) => {
-			self.calcHeight(self.element);
-		});
-
 		this.isOnline = this.commonService.isOnline;
-
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -72,20 +61,6 @@ export class ContainerCardComponent implements OnInit, AfterViewInit, OnChanges 
 				this.isLoading = false;
 			};
 			image.src = this.img;
-		}
-	}
-
-	ngAfterViewInit() {
-		const self = this;
-		const delay = setTimeout(() => {
-			self.calcHeight(self.element);
-		}, 0);
-	}
-
-	calcHeight(containerCard) {
-		if (containerCard) {
-			this.containerHeight = containerCard.nativeElement.firstElementChild.clientWidth * this.ratio;
-			// console.log('RESIZE CONTAINER CARD', this.title, this.ratio, containerCard, this.containerHeight);
 		}
 	}
 

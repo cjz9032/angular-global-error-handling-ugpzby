@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PageDashboardAndroidComponent } from './page-dashboard-android.component';
 
-describe('PageDashboardAndroidComponent', () => {
+xdescribe('PageDashboardAndroidComponent', () => {
 	let component: PageDashboardAndroidComponent;
 	let fixture: ComponentFixture<PageDashboardAndroidComponent>;
 

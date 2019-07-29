@@ -2,24 +2,24 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContainerCollapsibleComponent } from './container-collapsible.component';
 
-describe('ContainerCollapsibleComponent', () => {
-//   let component: ContainerCollapsibleComponent;
-//   let fixture: ComponentFixture<ContainerCollapsibleComponent>;
+xdescribe('ContainerCollapsibleComponent', () => {
+	let component: ContainerCollapsibleComponent;
+	let fixture: ComponentFixture<ContainerCollapsibleComponent>;
 
-  beforeEach(async(() => {
-    // TestBed.configureTestingModule({
-    //   declarations: [ ContainerCollapsibleComponent ]
-    // })
-    // .compileComponents();
-  }));
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [ContainerCollapsibleComponent]
+		})
+			.compileComponents();
+	}));
 
-  beforeEach(() => {
-    // fixture = TestBed.createComponent(ContainerCollapsibleComponent);
-    // component = fixture.componentInstance;
-    // fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(ContainerCollapsibleComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-    // expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });

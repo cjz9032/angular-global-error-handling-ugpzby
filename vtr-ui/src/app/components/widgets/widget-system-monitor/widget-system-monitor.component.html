@@ -6,9 +6,10 @@
 					<div class="row">
 						<div class="col-sm-12 monitor-col link-wrapper">
 							<div class="link-container">
-								<a id="systemstatus_info"  attr.aria-label="systemstatus_info" vtrMetrics [metricsItem]="'System Status'" metricsEvent="featureClick"
+								<a id="gaming_systemstatus_info"  attr.aria-label="gaming_systemstatus_info" vtrMetrics [metricsItem]="'System Status'" metricsEvent="featureClick"
 									routerLink="/device" class="info-link">{{'gaming.dashboard.device.systemStatus.info' | translate}}</a>
-								<div class="icon icon-backarrow"></div>
+								<!-- <div class="icon icon-backarrow"></div> -->
+								<fa-icon class="icon" [icon]="['fas', 'arrow-left']"></fa-icon>
 							</div>
 						</div>
 						<div class="col-sm-8 monitor-col left">
@@ -21,8 +22,7 @@
 										<div class="stack-container">
 											<div class="stack-border">
 												<div class="stack-content gpu"></div>
-												<div class="stack-mask"
-													[ngStyle]="{'height':gpuUsage+'%'}"></div>
+												<div class="stack-mask" [ngStyle]="{'height':gpuUsage+'%'}"></div>
 											</div>
 										</div>
 										<div class="stack-label">
@@ -75,8 +75,7 @@
 										<div class="stack-container">
 											<div class="stack-border">
 												<div class="stack-content ram"></div>
-												<div class="stack-mask"
-													[ngStyle]="{'height':memoryUsage+'%'}"></div>
+												<div class="stack-mask" [ngStyle]="{'height':memoryUsage+'%'}"></div>
 											</div>
 										</div>
 										<div class="stack-label">
@@ -92,9 +91,9 @@
 
 							</div>
 						</div>
-						<div class="col-sm-4 monitor-col right" vtrOutsideClick (clickOutside)= "toggleHDs(true)">
-							<div class="monitor-section hds" [ngClass]="{'expanded':showAllHDs,'onlyOne':hds.length===1}"
-								(click)="toggleHDs()">
+						<div class="col-sm-4 monitor-col right" vtrOutsideClick (clickOutside)="toggleHDs(true)">
+							<div class="monitor-section hds"
+								[ngClass]="{'expanded':showAllHDs,'onlyOne':hds.length===1}" (click)="toggleHDs()">
 								<div class="hd-list" [ngClass]="{'single':hds.length===1}">
 									<div class="hd-item" [ngClass]="{'danger':hd.diskUsage/100>.75}"
 										*ngFor="let hd of hds; let i=index;" [hidden]="i>=2 && !showAllHDs">
@@ -109,8 +108,7 @@
 													<div class="mask-ring"></div>
 												</div>
 											</div>
-											<div class="hd-mask right"
-												[ngClass]="{'hidden':hd.diskUsage/100>.5}">
+											<div class="hd-mask right" [ngClass]="{'hidden':hd.diskUsage/100>.5}">
 												<div class="mask-obj"
 													[ngStyle]="{'transform':'rotate('+getRightDeg(hd.diskUsage/100)+'deg)'}">
 													<div class="mask-ring"></div>
@@ -142,8 +140,10 @@
 									</div>
 								</div>
 								<div class="expand-icon">
-									<fa-icon [icon]="['fas', 'chevron-down']" [hidden]="showAllHDs || hds.length<=2"></fa-icon>
-									<fa-icon [icon]="['fas', 'chevron-up']" [hidden]="!showAllHDs || hds.length<=2"></fa-icon>
+									<fa-icon [icon]="['fas', 'chevron-down']" [hidden]="showAllHDs || hds.length<=2">
+									</fa-icon>
+									<fa-icon [icon]="['fas', 'chevron-up']" [hidden]="!showAllHDs || hds.length<=2">
+									</fa-icon>
 								</div>
 							</div>
 						</div>

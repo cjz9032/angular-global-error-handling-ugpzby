@@ -6,7 +6,8 @@
 			</h2>
 		</div>
 	</div>
-	<div class="row" [ngClass]="{'no-title': title==undefined}">
+	<div class="row" [ngClass]="{'no-title': title==undefined}"
+	*ngIf="caption || menuTitle || items">
 		<div class="col left-border header-subpage-content">
 			<div class="col px-20">
 				<div class="row">

@@ -14,6 +14,7 @@ export class WidgetDeviceUpdateComponent implements OnInit, OnChanges {
 	@Input() buttonText = '';
 	@Input() installationHistory: any[];
 	@Input() percent = 0;
+	@Input() isCheckingStatus = false;
 	@Input() showProgress = false;
 	@Input() isUpdateDownloading = false;
 	@Input() isCheckingPluginStatus = true;

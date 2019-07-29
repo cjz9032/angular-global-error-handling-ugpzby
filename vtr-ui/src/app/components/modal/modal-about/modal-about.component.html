@@ -7,9 +7,10 @@
 				alt="Lenovo Vantage Logo" />
 		</div>
 		<div class="text-center title mb-2">Lenovo Vantage</div>
-		<div class="text-center description">{{ 'support.about.version' | translate}}: <span
-				*ngIf="shellVersion">{{ shellVersion }}
-				Build </span>{{ buildVersion }}</div>
+		<div class="text-center description">
+			{{ 'support.about.version' | translate}}: {{ shellVersion }} <br>
+			( Web: {{ buildVersion }}&nbsp;&nbsp;Bridge: {{ bridgeVersion }} )
+		</div>
 	</div>
 	<div class="line"></div>
 	<div class="about-links mb-4 text-center">
