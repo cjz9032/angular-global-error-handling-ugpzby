@@ -42,6 +42,7 @@ import { ModalFindUsComponent } from 'src/app/components/modal/modal-find-us/mod
 import { CommonPipeModule } from './common/common-pipe.module';
 import { ModalArticleDetailComponent } from '../components/modal/modal-article-detail/modal-article-detail.component';
 import { SharedModule } from './shared.module';
+import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
 
 library.add(faCheck);
 library.add(faExclamation);
@@ -70,6 +71,7 @@ library.add(falHeart);
 		ModalAboutComponent,
 		ModalFindUsComponent,
 		ModalArticleDetailComponent,
+		ModalLicenseComponent
 	],
 	imports: [
 		BrowserModule,
@@ -109,7 +111,8 @@ library.add(falHeart);
 		ModalWelcomeComponent,
 		ModalAboutComponent,
 		ModalFindUsComponent,
-		ModalArticleDetailComponent
+		ModalArticleDetailComponent,
+		ModalLicenseComponent
 	],
 	bootstrap: [AppComponent],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
