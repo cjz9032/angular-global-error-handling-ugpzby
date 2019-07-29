@@ -3,88 +3,88 @@
         "dashboard": {
             "device": {
                 "quickSettings": {
-                    "title": "Thermal Mode",
+                    "title": "Termički način rada",
                     "status": {
-                        "performance": "Performance",
-                        "balance": "Balance",
-                        "quiet": "Quiet"
+                        "performance": "Performanse",
+                        "balance": "Balans",
+                        "quiet": "Tiho"
                     },
                     "statusText": {
-                        "perText": "Higher CPU usage, Higher fan speed",
-                        "balText": "Normal CPU and fan speed",
-                        "quietText": "Lower CPU usage, Lower fan speed"
+                        "perText": "Veća uporaba procesora i brzina ventilatora",
+                        "balText": "Normalna brzina procesora i ventilatora",
+                        "quietText": "Niža potrošnja procesora, niža brzina ventilatora"
                     },
-                    "wifiSecurity": "Wifi Security",
+                    "wifiSecurity": "Wi-Fi sigurnost",
                     "dolby": "Dolby",
-                    "rapidCharge": "Rapid Charge"
+                    "rapidCharge": "Brzo punjenje"
                 },
                 "legionEdge": {
-                    "title": "CPU Overclock",
+                    "title": "Overclock CPU-a",
                     "status": {
-                        "alwayson": "On",
-                        "whenGaming": "When Gaming",
-                        "off": "Off"
+                        "alwayson": "Uključeno",
+                        "whenGaming": "Kada igrate",
+                        "off": "Isključeno"
                     },
                     "statusText": {
-                        "onText": "CPU Overclocking will be activated",
-                        "gamingText": "CPU Overclocking will be activated automatically while game launches",
-                        "offText": "CPU Overclocking will be disabled"
+                        "onText": "Aktivirat će se CPU Overclocking",
+                        "gamingText": "CPU Overclocking će se automatski aktivirati tijekom pokretanja igre",
+                        "offText": "CPU Overclocking će biti onemogućen"
                     },
-                    "ramOverlock": "RAM Overclock",
+                    "ramOverlock": "Overclock RAM-a",
                     "popup": {
-                        "text": "Change will be effective after restarting computer.",
-                        "button": "ok"
+                        "text": "Izmjena će se primijeniti nakon ponovnog pokretanja računala.",
+                        "button": "u redu"
                     },
                     "driverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "You need install driver for RAM Overclock to  make it effective",
-                        "button": "Install",
-                        "link": "cancel",
-                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
-                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
+                        "headerText": "Potrebna je instalacija upravljačkog programa",
+                        "text": "Instalirajte upravljački program da biste aktivirali RAM Overclock (potrebno je ponovno pokretanje)",
+                        "button": "Instaliranje",
+                        "link": "odustani",
+                        "networkBoostText": "Morate instalirati upravljački program za Network Boost kako bi bio učinkovit",
+                        "hybridModeText": "Morate instalirati upravljački program za Hibridni način kako bi bio učinkovit",
+                        "cpuOverclockText": "Instalirajte upravljački program da biste aktivirali CPU Overclock (potrebno je ponovno pokretanje)"
                     },
-                    "autoClose": "Auto Close",
-                    "networkBoost": "Network Boost",
-                    "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock",
+                    "autoClose": "Automatsko zatvaranje",
+                    "networkBoost": "Ubrzanje mreže",
+                    "hybridMode": "Hibridni način",
+                    "touchpadLock": "Zaključavanje dodirne pločice",
                     "lightingDriverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "Please install driver",
-                        "button": "Install",
-                        "link": "cancel"
+                        "headerText": "Potrebna je instalacija upravljačkog programa",
+                        "text": "Instalirajte upravljački program da biste aktivirali rasvjetu (potrebno je ponovno pokretanje)",
+                        "button": "Instaliranje",
+                        "link": "odustani"
                     },
                     "lightingColorMessage": {
-                        "text": "Selecting color not available to this effect."
+                        "text": "Odabir boje nije dostupan za ovaj efekt."
                     }
                 },
                 "systemTools": {
-                    "power": "Power",
-                    "media": "Media",
-                    "macroKey": "Marco Key",
-                    "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update",
-                    "header": "System Tools"
+                    "power": "Napajanje",
+                    "media": "Mediji",
+                    "macroKey": "Makro tipka",
+                    "hardwareScan": "Skeniranje hardvera",
+                    "systemUpdate": "Ažuriranje sustava",
+                    "header": "Alati sustava"
                 },
                 "lighting": {
-                    "title": "Lighting Customize",
-                    "header": "Lighting"
+                    "title": "Prilagodba rasvjete",
+                    "header": "Rasvjeta"
                 },
                 "legionEdgeModal": {
-                    "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
-                    "line2": "<b>Feature Management Overview</b> <br> Some features not available on all devices",
-                    "line3": "<b>CPU Overclocking </b><br> Boost the maximum speed for your processor",
-                    "line4": "<b>RAM Overclocking </b><br> Boost the maximum speed for your memory",
-                    "line5": "<b>Network Boost </b><br> Prioritize network traffic for the game you're playing",
-                    "line6": "<b>Dolby </b><br> Tune your audio specifically for gaming with Dolby technology",
-                    "line7": "<b>Hybrid Mode </b><br> Disable advanced GPU settings when not gaming to boost battery performance",
-                    "line8": "<b>Rapid Charge </b><br> Game on the go longer with quicker battery charging",
-                    "line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
-                    "line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
-                    "line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control"
+                    "line1": "Postavke se uz Vantage Edge automatski prilagođavaju upotrebi. \n Maksimalne performanse tijekom igranja, dulje trajanje baterije tijekom drugih aktivnosti.",
+                    "line2": "<b>Pregled upravljanja značajkama</b> <br> Neke značajke nisu dostupne na svim uređajima",
+                    "line3": "<b>Overclocking CPU-a </b><br> Povećajte maksimalnu brzinu procesora",
+                    "line4": "<b>Overclocking RAM-a </b><br> Povećajte maksimalnu brzinu memorije",
+                    "line5": "<b>Ubrzanje mreže </b><br> Dodijelite viši prioritet mrežnom prometu za igru koju igrate",
+                    "line6": "<b>Dolby </b><br> Prilagodite zvuk igranju pomoću tehnologije Dolby",
+                    "line7": "<b>Hibridni način </b><br> Onemogućite napredne GPU postavke kada ne igrate da produžite trajanje baterije",
+                    "line8": "<b>Brzo punjenje </b><br> Igrajte u pokretu uz brže punjenje baterije",
+                    "line9": "<b>Zaključavanje dodirne pločice </b><br> Onemogućite dodirnu pločicu tijekom igranja da biste spriječili slučajne unose",
+                    "line10": "<b>Automatsko zatvaranje </b><br> Prije igranja očistite procese koji nisu nužni za igranje da biste maksimizirali upotrebu dostupnih resursa sustava",
+                    "line11": "<b>Termički način rada </b><br> Postavite željeni profil uređaja za brzinu ventilatora i kontrolu hlađenja"
                 },
                 "systemInfo": {
-                    "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                    "systenTooltip": "Zadržite pokazivač na CPU/GPU/RAM i različitim pogonima da biste prikazali njihove opise, uključujući podatke o proizvodnji i modelu"
                 },
                 "systemStatus": {
                     "info": "INFO"
@@ -94,250 +94,236 @@
         "common": {
             "menu": {
                 "support": {
-                    "title": "Support",
-                    "sub1": "Support",
+                    "title": "Podrška",
+                    "sub1": "Podrška",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
             }
         },
         "macroKey": {
-            "title": "Macro Key",
-            "introLine": "You can record a series of key input, and use them in gaming or other operations.",
+            "title": "Makro tipka",
+            "introLine": "Možete snimiti niz pritisaka tipki i koristiti ih u igrama ili pri drugim radnjama.",
             "status": {
                 "on": {
-                    "title": "On",
-                    "description": "Always Enabled"
+                    "title": "Uključeno",
+                    "description": "Uvijek omogućeno"
                 },
                 "whileGaming": {
-                    "title": "Macro Key enabled only when gaming",
-                    "description": "It will be enabled when you game and remain as num key when you don't."
+                    "title": "Makro tipka je omogućena samo tijekom igranja",
+                    "description": "Bit će omogućena kada igrate i koristiti se kao numerička tipka dok ne igrate."
                 },
                 "off": {
-                    "title": "Off",
-                    "description": "Always Off"
+                    "title": "Isključeno",
+                    "description": "Uvijek isključeno"
                 }
             },
             "details": {
                 "intro": {
-                    "noNumber": "SELECT A MACRO KEY",
-                    "title": "CREATE A MACRO KEY FOR",
-                    "line1": "click the start recording button below",
-                    "line2": "type in macro key",
-                    "line3": "stop recording when finishing typing"
+                    "noNumber": "ODABERITE MAKRO TIPKU",
+                    "title": "STVORITE MAKRO TIPKU ZA",
+                    "line1": "kliknite gumb za početak snimanja u nastavku",
+                    "line2": "upišite makro tipku",
+                    "line3": "zaustavite snimanje kada završite s tipkanjem"
                 },
                 "buttons": {
-                    "start": "START RECORDING",
-                    "stop": "STOP RECORDING",
+                    "start": "ZAPOČNI SNIMANJE",
+                    "stop": "ZAUSTAVI SNIMANJE",
                     "numberPrefix": "NUM"
                 },
                 "recording": {
-                    "title": "START TYPING",
-                    "description": "20 inputs within 20 seconds can be recorded."
+                    "title": "ZAPOČNI TIPKATI",
+                    "description": "Može se snimiti 20 unosa unutar 20 sekundi."
                 },
                 "recorded": {
-                    "title": "MACRO KEY FOR ",
-                    "deleteKey": "Delete Key",
-                    "clear": "Clear",
+                    "title": "MAKRO TIPKA ZA ",
+                    "deleteKey": "Tipka brisanja",
+                    "clear": "Obriši",
                     "intervalStatus": {
                         "keep": {
-                            "title": "Keep Delay",
-                            "description": "Intervals of key actions will be kept and applied when using this macro key."
+                            "title": "Zadrži odgodu",
+                            "description": "Intervali pritisaka tipaka čuvaju se i primjenjuju kada se koristi ova makro tipka."
                         },
                         "ignore": {
-                            "title": "Ignore Delay",
-                            "description": "Intervals of key actions will be ignored."
+                            "title": "Zanemari odgodu",
+                            "description": "Intervali pritisaka tipaka bit će zanemareni."
                         }
                     },
                     "repeatStatus": {
                         "repeat1": {
-                            "title": "No Repeat",
-                            "description": "No Repeat"
+                            "title": "Nema ponavljanja",
+                            "description": "Nema ponavljanja"
                         },
                         "repeat2": {
-                            "title": "Repeat 2 Times",
-                            "description": "Repeats 2 times"
+                            "title": "Ponovi 2 puta",
+                            "description": "Ponavlja 2 puta"
                         },
                         "repeat3": {
-                            "title": "Repeat 3 Times",
-                            "description": "Repeats 3 times"
+                            "title": "Ponovi 3 puta",
+                            "description": "Ponavlja 3 puta"
                         },
                         "repeat4": {
-                            "title": "Repeat 4 Times",
-                            "description": "Repeats 4 times"
+                            "title": "Ponovi 4 puta",
+                            "description": "Ponavlja 4 puta"
                         },
                         "repeat5": {
-                            "title": "Repeat 5 Times",
-                            "description": "Repeats 5 times"
+                            "title": "Ponovi 5 puta",
+                            "description": "Ponavlja 5 puta"
                         },
                         "repeat6": {
-                            "title": "Repeat 6 Times",
-                            "description": "Repeats 6 times"
+                            "title": "Ponovi 6 puta",
+                            "description": "Ponavlja 6 puta"
                         },
                         "repeat7": {
-                            "title": "Repeat 7 Times",
-                            "description": "Repeats 7 times"
+                            "title": "Ponovi 7 puta",
+                            "description": "Ponavlja 7 puta"
                         },
                         "repeat8": {
-                            "title": "Repeat 8 Times",
-                            "description": "Repeats 8 times"
+                            "title": "Ponovi 8 puta",
+                            "description": "Ponavlja 8 puta"
                         },
                         "repeat9": {
-                            "title": "Repeat 9 Times",
-                            "description": "Repeats 9 times"
+                            "title": "Ponovi 9 puta",
+                            "description": "Ponavlja 9 puta"
                         },
                         "repeat10": {
-                            "title": "Repeat 10 Times",
-                            "description": "Repeats 10 times"
+                            "title": "Ponovi 10 puta",
+                            "description": "Ponavlja 10 puta"
                         }
                     },
                     "list": {
                         "header": {
-                            "col1": "Key Action",
+                            "col1": "Radnja tipke",
                             "col2": "Interval"
                         },
                         "footer": {
-                            "title": "Next input.."
+                            "title": "Sljedeći unos.."
                         }
                     }
                 }
             },
-            "numberpad": {
-                "number": {
-                    "zero": "Num 0",
-                    "one": "Num 1",
-                    "two": "Num 2",
-                    "three": "Num 3",
-                    "four": "Num 4",
-                    "five": "Num 5",
-                    "six": "Num 6",
-                    "seven": "Num 7",
-                    "eight": "Num 8",
-                    "nine": "Num 9"
-                },
-                "macro": {
-                    "m1": "M1",
-                    "m2": "M2"
-                }
-            },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure you want to clear this macro key?"
+                    "title": "Jeste li sigurni da želite izbrisati ovu makro tipku?"
                 },
                 "timeoutRecording": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if no input for 20 seconds."
+                    "title": "Čekanje za snimanje.",
+                    "body": "Snimanje će se prekinuti ako nema unosa tijekom 20 sekundi."
                 },
                 "maximumInput": {
-                    "title": "Maximum Input Reached.",
-                    "body": "Macro key can only store inputs less than 20."
+                    "title": "Dosegnut je maksimalni unos.",
+                    "body": "Makro tipka može pohraniti najviše 20 unosa."
                 },
                 "inputStopped": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if the input stopped for more than 10 seconds."
+                    "title": "Čekanje za snimanje.",
+                    "body": "Snimanje će se prekinuti ako nema unosa dulje od 10 sekundi."
                 },
                 "confirmButton": {
-                    "btnClear": "Clear",
-                    "btnCancel": "Cancel"
+                    "btnClear": "Obriši",
+                    "btnCancel": "Odustani"
                 },
-                "btnOk": "OK"
+                "btnOk": "U redu"
             },
             "recording": {
-                "title": "Recording Macro Key For"
+                "title": "Snimanje makro tipke za"
+            },
+            "initalKey": {
+                "zero": 0,
+                "m1": "M1"
             }
         },
         "lightingProfile": {
-            "title": "Lighting",
+            "title": "Rasvjeta",
             "effect": {
                 "option1": {
-                    "title": "On"
+                    "title": "Uključeno"
                 },
                 "option2": {
-                    "title": "Flicker"
+                    "title": "Treperenje"
                 },
                 "option3": {
-                    "title": "Breath"
+                    "title": "Dah"
                 },
                 "option4": {
-                    "title": "Wave"
+                    "title": "Val"
                 },
                 "option5": {
-                    "title": "Smooth"
+                    "title": "Glatka"
                 },
                 "option6": {
-                    "title": "CPU Temperature"
+                    "title": "Temperatura procesora"
                 },
                 "option7": {
-                    "title": "CPU Utilization"
+                    "title": "Korištenje CPU-a"
                 },
                 "option8": {
-                    "title": "Off"
+                    "title": "Isključeno"
                 },
                 "apply": {
-                    "title": "APPLY"
+                    "title": "PRIMIJENI"
                 },
                 "applied": {
-                    "title": "APPLIED"
+                    "title": "PRIMIJENJENO"
                 }
             },
             "brightness": {
                 "text1": {
-                    "title": "*Brightness setting doesn't apply on "
+                    "title": "*Postavka svjetline ne primjenjuje se na "
                 },
                 "text2": {
-                    "title": " effect"
+                    "title": " efekt"
                 }
             },
             "lightingSingleLightingOption": {
                 "option1": {
-                    "title": "Always On"
+                    "title": "Uvijek uključeno"
                 },
                 "option2": {
-                    "title": "Fast Blink"
+                    "title": "Brzo treptanje"
                 },
                 "option3": {
-                    "title": "Medium Blink"
+                    "title": "Srednje brzo treptanje"
                 },
                 "option4": {
-                    "title": "Slow Blink"
+                    "title": "Sporo treptanje"
                 },
                 "option5": {
-                    "title": "Blink Level"
+                    "title": "Razina treptanja"
                 }
             },
             "profile": {
                 "text1": {
-                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                    "title": "Rasvjeta je trenutno isključena. Odaberite gornju karticu profila da biste je uključili i prilagodili."
                 },
                 "text2": {
-                    "title": "effect"
+                    "title": "efekt"
                 },
                 "text3": {
-                    "title": "Effect"
+                    "title": "Efekt"
                 }
             },
             "button": {
                 "default": {
-                    "title": "Set to default"
+                    "title": "Postavi na zadano"
                 }
             },
             "profileheading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "Isključeno"
                 },
                 "text2": {
-                    "title": "Profile 1"
+                    "title": "Profil 1"
                 },
                 "text3": {
-                    "title": "Profile 2"
+                    "title": "Profil 2"
                 },
                 "text4": {
-                    "title": "Profile 3"
+                    "title": "Profil 3"
                 }
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "Isključeno"
                 },
                 "text2": {
                     "title": 1
@@ -349,21 +335,21 @@
                     "title": 3
                 },
                 "Customize": {
-                    "title": "Customize"
+                    "title": "Prilagodba"
                 },
                 "heading": {
-                    "title": "Select Profile:"
+                    "title": "Odaberi profil:"
                 }
             },
             "colourwheel": {
                 "text1": {
-                    "title": "Selecting colour not available to this effect."
+                    "title": "Odabir boje nije dostupan za ovaj efekt."
                 },
                 "text2": {
-                    "title": "APPLY"
+                    "title": "PRIMIJENI"
                 },
                 "text3": {
-                    "title": "APPLIED"
+                    "title": "PRIMIJENJENO"
                 },
                 "text4": {
                     "title": "R:"
@@ -375,7 +361,7 @@
                     "title": "B:"
                 },
                 "text7": {
-                    "title": "Color"
+                    "title": "Boja"
                 }
             }
         }
@@ -681,8 +667,7 @@
                     "title": "SKOČI NA POSTAVKE",
                     "battery": "Baterija",
                     "power": "Napajanje",
-                    "other": "Ostalo",
-                    "smartStandby": "Pametno stanje mirovanja"
+                    "other": "Ostalo"
                 },
                 "powerSmartSettings": {
                     "title": "Pametne postavke napajanja",
@@ -1492,7 +1477,10 @@
             "listLenovoCommunity": "Zajednica oko tvrtke Lenovo",
             "listContactCustomerService": "Kontaktirajte službu za korisnike",
             "listContactUsOnWechat": "Kontaktirajte nas na WeChat",
-            "weChatDescription": "Pošaljite nam pitanje na WeChat i svakako ćemo brzo odgovoriti"
+            "weChatDescription": "Pošaljite nam pitanje na WeChat i svakako ćemo brzo odgovoriti",
+            "listFindUs": "Find us on social media",
+            "listContactUsOnFacebook": "Contact us on Facebook",
+            "facebookDescription": "Click to find us on Facebook"
         },
         "quicklinks": {
             "title": "Brze veze",
@@ -1533,7 +1521,13 @@
             "maliciousNetwork": "Vaše računalo ovaj je mjesec spriječeno pri priključivanju {{maliciousWifi}} zlonamjernim mrežama.",
             "good": "DOBRO",
             "malicious": "ZLONAMJERNO",
-            "suspicious": "SUMNJIVO"
+            "suspicious": "SUMNJIVO",
+            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+            "antivirus": "Being protected by anti-virus software",
+            "password": "Having strong and complex passwords managed in a safe way",
+            "vpn": "Monitoring your network exposure to attackers",
+            "wifi": "Encrypting your personal data when using public WiFi",
+            "windowsHello": "Protecting your device using safe login options"
         },
         "antivirus": {
             "common": {
@@ -1627,7 +1621,8 @@
                 "headerText": "Pogreška",
                 "bodyText": "Utvrdili smo da vam nedostaju važni dijelovi usluge Vantage. Ti će se dijelovi preuzeti u pozadini. Pokušajte ponovno kasnije.",
                 "closeText": "zatvori",
-                "offlineText": "Utvrdili smo da niste povezani s internetom. Neki dijelovi ove stranice neće ispravno funkcionirati. Povežite se iznova"
+                "offlineText": "Utvrdili smo da niste povezani s internetom. Neki dijelovi ove stranice neće ispravno funkcionirati. Povežite se iznova",
+                "accountText": "Account creation failed. Please try again later."
             }
         },
         "homeprotection": {

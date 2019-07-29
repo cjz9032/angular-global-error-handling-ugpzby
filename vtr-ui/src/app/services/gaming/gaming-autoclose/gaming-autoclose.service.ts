@@ -48,6 +48,16 @@ export class GamingAutoCloseService {
     }
   }
 
+  getAppsAutoCloseRunningList(): Promise<boolean> {
+    try {
+      if (this.isShellAvailable) {
+        return this.gamingAutoClose.getRunningList();
+      }
+      return undefined;
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
 
   addAppsAutoCloseList(value: any): Promise<boolean> {
     try {

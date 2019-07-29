@@ -196,17 +196,19 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			} else if (!location
 				&& this.commonService.getSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, false)
 				&& this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, false)) {
-				this.dialogService.openCHSPermissionModal().result.then((reason) => {
-					if (reason === 'startTrailError') {
-						this.dialogService.homeSecurityAccountDialog();
-					}
-					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
-				}).catch((reason) => {
-					if (reason === 'startTrailError') {
-						this.dialogService.homeSecurityAccountDialog();
-					}
-					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
-				});
+				setTimeout(() => {
+					this.dialogService.openCHSPermissionModal().result.then((reason) => {
+						if (reason === 'startTrailError') {
+							this.dialogService.homeSecurityAccountDialog();
+						}
+						this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
+					}).catch((reason) => {
+						if (reason === 'startTrailError') {
+							this.dialogService.homeSecurityAccountDialog();
+						}
+						this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
+					});
+				}, 0);
 			}
 		});
 
