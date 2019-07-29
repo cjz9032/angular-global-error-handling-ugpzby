@@ -31,7 +31,7 @@
 							"src/assets",
 							"src/mock-api",
 							"src/manifest.webmanifest",
-							"src/vantage-worker.js"
+							"src/vantage-worker.min.js"
 						],
 						"styles": [
 							"src/styles.scss"
@@ -50,10 +50,6 @@
 									"with": "src/app/services/mock/mock.service.prod.ts"
 								},
 								{
-									"replace": "src/app/services/home-security/home-security-mock.service.ts",
-									"with": "src/app/services/home-security/home-security-mock.service.prod.ts"
-								},
-								{
 									"replace": "src/app/services/security/securityMock.service.ts",
 									"with": "src/app/services/security/securityMock.service.prod.ts"
 								}
@@ -62,10 +58,10 @@
 							"outputHashing": "all",
 							"sourceMap": false,
 							"extractCss": true,
-							"namedChunks": false,
+							"namedChunks": true,
 							"aot": true,
-							"extractLicenses": true,
-							"vendorChunk": false,
+							"extractLicenses": false,
+							"vendorChunk": true,
 							"buildOptimizer": true,
 							"budgets": [
 								{

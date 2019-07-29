@@ -1,7 +1,9 @@
 <div class="vtr-page-support vtr-page">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main [title]="'faq.pageTitle' | translate" [backarrow]="backarrow" [back]="'common.ui.back' | translate"></vtr-header-main>
+			<vtr-header-main [title]="'faq.pageTitle' | translate"
+				[backarrow]="backarrow"
+				[back]="'common.ui.back' | translate"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -12,7 +14,8 @@
 					<div class="row mn-6 card mb-5">
 						<div class="col p-5">
 							<div class="row py-5 description-container">
-								<div class="col" [innerHTML]="qa.description | sanitize : 'html'"> <!-- sahinul25Jun2019 VAN-5719-->
+								<div class="col"
+									[innerHTML]="getSafeDescription(qa.description)">
 								</div>
 							</div>
 							<div class="row inset-content align-items-center justify-content-center py-3 invisible"
@@ -45,7 +48,7 @@
 								</div>
 								<div class="w-100"></div>
 								<div class="col subtitle">
-									 <!-- Need additional support? Don’t hesitate to contact us via: -->
+									<!-- Need additional support? Don’t hesitate to contact us via: -->
 									{{'faq.footer.description' | translate}}
 								</div>
 								<div class="w-100"></div>
@@ -54,7 +57,7 @@
 										<!-- <div class="col inset-content invisible">
 											<div class="row align-items-center">
 												<div class="col-auto">
-													<fa-icon [icon]="['fas','briefcase']"></fa-icon>
+													<fa-icon [icon]="['fal','briefcase']"></fa-icon>
 												</div>
 												<div class="col-auto px-2 mr-auto sub-title">
 													24X7 - Live Chat
@@ -68,7 +71,7 @@
 										<div class="col inset-content">
 											<div class="row align-items-center">
 												<div class="col-auto">
-													<fa-icon [icon]="['fas','briefcase']"></fa-icon>
+													<fa-icon [icon]="['fal','briefcase']"></fa-icon>
 												</div>
 												<div class="col-auto px-2 mr-auto sub-title">
 													<!-- Lenovo Community -->
@@ -76,8 +79,12 @@
 												</div>
 												<div class="col-auto ">
 													<!-- <button class="btn btn-label">Go To Forum</button> -->
-													<button class="btn btn-label"><a href="https://forums.lenovo.com/"
-															target="_blank"><!-- Go To Forum --> {{'faq.footer.button' | translate}}</a></button>
+													<!-- <button class="btn btn-label"><a href="https://forums.lenovo.com/"
+															target="_blank">{{'faq.footer.button' | translate}}</a>
+														</button> -->
+													<button class="btn btn-label"
+														(click)="onNavigate()">{{'faq.footer.button' | translate}}
+													</button>
 													<!-- <button class="btn btn-label"
 														onclick="window.open('https://forums.lenovo.com/', '_blank')">Go
 														To Forum

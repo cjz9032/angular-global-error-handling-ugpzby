@@ -4,14 +4,16 @@ import { HttpHeaders } from '@angular/common/http';
 import { CommsService } from '../comms/comms.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { RegionService } from '../region/region.service';
-import { CommonService } from '../common/common.service';//VAN-5872, server switch feature
-import { LocalStorageKey } from '../../enums/local-storage-key.enum';//VAN-5872, server switch feature
-
+import { CommonService } from '../common/common.service'; // VAN-5872, server switch feature
+import { LocalStorageKey } from '../../enums/local-storage-key.enum'; // VAN-5872, server switch feature
+import { Observable } from 'rxjs/internal/Observable';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 
 const httpOptions = {
 	headers: new HttpHeaders({
 		'Content-Type': 'application/json',
-		'Authorization': 'Access-Control-Allow-Origin'
+		Authorization: 'Access-Control-Allow-Origin'
 	})
 };
 
@@ -21,13 +23,13 @@ const httpOptions = {
 export class CMSService {
 	language: string;
 	region: string;
-	segment: string;//VAN-5872, server switch feature
+	segment: string; // VAN-5872, server switch feature
 
 	constructor(
 		private commsService: CommsService,
 		private vantageShellService: VantageShellService,
 		regionService: RegionService,
-		private commonService: CommonService//VAN-5872, server switch feature
+		private commonService: CommonService// VAN-5872, server switch feature
 	) {
 		regionService.getRegion().subscribe({
 			next: x => {
@@ -68,14 +70,14 @@ export class CMSService {
 
 	filterCMSContent(results) {
 		return new Promise((resolve, reject) => {
-			let promises = [];
+			const promises = [];
 
 			results.forEach((result) => {
 				promises.push(this.deviceFilter(result.Filters));
 			});
 
 			Promise.all(promises).then((deviceFilterValues) => {
-				let filteredResults = results.filter((result, index) => {
+				const filteredResults = results.filter((result, index) => {
 					return deviceFilterValues[index];
 				});
 
@@ -86,53 +88,65 @@ export class CMSService {
 
 	fetchCMSContent(queryParams) {
 		const defaults = {
-			'Lang': this.language,
-			'GEO': this.region,
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			Lang: this.language,
+			GEO: this.region,
+			OEM: 'Lenovo',
+			OS: 'Windows',
+			Segment: 'SMB',
+			Brand: 'Lenovo'
 		};
-		//Object.assign(defaults, queryParams);
+		// Object.assign(defaults, queryParams);
 
-		//VAN-5872, server switch feature
-		//retrive from localStorage
-		let CMSOption = Object.assign(defaults, queryParams);
-		let serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
+		// VAN-5872, server switch feature
+		// retrive from localStorage
+		const CMSOption = Object.assign(defaults, queryParams);
+		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
 		if (serverSwitchLocalData) {
 			if (serverSwitchLocalData.forceit) {
 				Object.assign(CMSOption, {
-					'Lang': (serverSwitchLocalData.language.Value).toUpperCase(),
-					'GEO': (serverSwitchLocalData.country.Value).toUpperCase(),
-					'Segment': serverSwitchLocalData.segment.Value
+					Lang: (serverSwitchLocalData.language.Value).toUpperCase(),
+					GEO: (serverSwitchLocalData.country.Value).toUpperCase(),
+					Segment: serverSwitchLocalData.segment.Value
 				});
 			}
 		}
-		//console.log('@sahinul cms service',CMSOption); 
+		// console.log('@sahinul cms service',CMSOption);
 
-
-
-		return new Promise((resolve, reject) => {
-			this.commsService.endpointGetCall(
-				/*'/api/v1/features', Object.assign(defaults, queryParams), {}*/
-				'/api/v1/features', CMSOption, httpOptions//VAN-5872, server switch feature
-			).subscribe((response: any) => {
-				this.filterCMSContent(response.Results).then(
-					(result) => {
-						resolve(result);
-					},
-					(reason) => {
-						console.log('fetchCMSContent error', reason);
-						reject('fetchCMSContent error');
+		return new Observable(subscriber => {
+			if (this.commonService.isOnline) {
+				this.getCMSContent(CMSOption, subscriber);
+			} else {
+				this.commonService.notification.subscribe((notification: AppNotification) => {
+					if (notification && notification.type === NetworkStatus.Online) {
+						this.getCMSContent(CMSOption, subscriber);
 					}
+				}
 				);
-			},
-				error => {
-					console.log('fetchCMSContent error', error);
-					reject('fetchCMSContent error');
+			}
+		});
+	}
+
+	getCMSContent(CMSOption: any, subscriber: any) {
+		this.commsService.endpointGetCall(
+			/*'/api/v1/features', Object.assign(defaults, queryParams), {}*/
+			'/api/v1/features', CMSOption, httpOptions// VAN-5872, server switch feature
+		).subscribe((response: any) => {
+			this.filterCMSContent(response.Results).then(
+				(result) => {
+					subscriber.next(result);
+					subscriber.complete();
+				},
+				(reason) => {
+					console.log('fetchCMSContent error', reason);
+					subscriber.error(reason);
 				}
 			);
-		});
+		},
+			error => {
+				console.log('fetchCMSContent error', error);
+				subscriber.error(error);
+			}
+		);
 	}
 
 	fetchCMSArticleCategories(queryParams) {

@@ -14,15 +14,19 @@ import { ClockComponent } from 'src/app/components/clock/clock.component';
 import { CommonModule } from '@angular/common';
 import { CommonUiModule } from '../common/common-ui.module';
 import { CommonWidgetModule } from '../common/common-widget.module';
+import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
 import { ContainerCollapsibleComponent } from 'src/app/components/container-collapsible/container-collapsible.component';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { DisplayColorTempComponent } from 'src/app/components/display/display-color-temp/display-color-temp.component';
 import { DolbyModesTranslationPipe } from 'src/app/pipe/dolby-modes-translation.pipe';
 import { EyeCareModeComponent } from 'src/app/components/display/eye-care-mode/eye-care-mode.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { HardwareSettingRoutingModule } from './hardware-settings-routing.module';
+import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
 import { InstallationHistoryComponent } from 'src/app/components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { IntelligentMediaComponent } from 'src/app/components/pages/page-smart-assist/intelligent-media/intelligent-media.component';
+import { MetricsModule } from 'src/app/directives/metrics.module';
+import { NgbDropdownModule, NgbTooltipModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { OledPowerSettingsComponent } from 'src/app/components/display/oled-power-settings/oled-power-settings.component';
 import { PageDeviceComponent } from 'src/app/components/pages/page-device/page-device.component';
 import { PageDeviceSettingsComponent } from 'src/app/components/pages/page-device-settings/page-device-settings.component';
@@ -34,6 +38,7 @@ import { PageSmartAssistComponent } from 'src/app/components/pages/page-smart-as
 import { PageSupportComponent } from 'src/app/components/pages/page-support/page-support.component';
 import { PageSupportDetailComponent } from 'src/app/components/pages/page-support-detail/page-support-detail.component';
 import { PowerSmartSettingsComponent } from 'src/app/components/widgets/power-smart-settings/power-smart-settings.component';
+import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared.module';
 import { SmartStandbyComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/smart-standby/smart-standby.component';
 import { SpinnerComponent } from 'src/app/components/common/spinner/spinner.component';
@@ -43,6 +48,74 @@ import { SubpageDeviceSettingsInputAccessoryComponent } from 'src/app/components
 import { SubpageDeviceSettingsPowerComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
 import { UserDefinedKeyComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/user-defined-key/user-defined-key.component';
 import { VoiceComponent } from 'src/app/components/pages/page-smart-assist/voice/voice.component';
+import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
+import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
+import { CommonModalModule } from '../common/common-modal.module';
+
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faUsb } from '@fortawesome/free-brands-svg-icons/faUsb';
+import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
+import { faBatteryThreeQuarters } from '@fortawesome/free-solid-svg-icons/faBatteryThreeQuarters';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons/faCheckCircle';
+import { faChevronCircleUp } from '@fortawesome/pro-light-svg-icons/faChevronCircleUp';
+import { faPlane } from '@fortawesome/pro-light-svg-icons/faPlane';
+import { faThumbtack } from '@fortawesome/pro-light-svg-icons/faThumbtack';
+import { faBatteryHalf } from '@fortawesome/pro-light-svg-icons/faBatteryHalf';
+import { faBatteryBolt } from '@fortawesome/pro-light-svg-icons/faBatteryBolt';
+import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
+import { faBatteryQuarter } from '@fortawesome/pro-light-svg-icons/faBatteryQuarter';
+import { faTachometerFast } from '@fortawesome/pro-light-svg-icons/faTachometerFast';
+import { faMicrophone } from '@fortawesome/pro-light-svg-icons/faMicrophone';
+import { faKeyboard } from '@fortawesome/pro-light-svg-icons/faKeyboard';
+import { faEye } from '@fortawesome/pro-light-svg-icons/faEye';
+import { faTv } from '@fortawesome/pro-light-svg-icons/faTv';
+import { faCamera } from '@fortawesome/pro-light-svg-icons/faCamera';
+import { faGem } from '@fortawesome/pro-light-svg-icons/faGem';
+import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
+import { faChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
+import { faCaretUp } from '@fortawesome/free-solid-svg-icons/faCaretUp';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons/faCaretDown';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons/faPlusCircle';
+import { faMinusCircle } from '@fortawesome/free-solid-svg-icons/faMinusCircle';
+import { faCheck as falCheck } from '@fortawesome/pro-light-svg-icons/faCheck';
+import { faTimes as falTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
+import { faCircle as faCircle } from '@fortawesome/pro-light-svg-icons/faCircle';
+import { faCircle as falCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
+
+
+library.add(faCheck);
+library.add(faCheckCircle);
+library.add(faChevronCircleUp);
+library.add(faPlane);
+library.add(faThumbtack);
+library.add(faQuestionCircle);
+library.add(faBatteryHalf);
+library.add(faBatteryBolt);
+library.add(faBatteryQuarter);
+library.add(faUsb);
+library.add(faTachometerFast);
+library.add(faMicrophone);
+library.add(faKeyboard);
+library.add(faEye);
+library.add(faTv);
+library.add(faCamera);
+library.add(faGem);
+library.add(faBatteryThreeQuarters);
+library.add(faChevronDown);
+library.add(faChevronUp);
+library.add(faCaretUp);
+library.add(faCaretDown);
+library.add(faTimesCircle);
+library.add(faPlusCircle);
+library.add(faMinusCircle);
+library.add(falCheck);
+library.add(falTimes);
+library.add(faCircle);
+library.add(falCircle);
+
 
 @NgModule({
 	declarations: [
@@ -81,15 +154,31 @@ import { VoiceComponent } from 'src/app/components/pages/page-smart-assist/voice
 		SubpageDeviceSettingsInputAccessoryComponent,
 		SubpageDeviceSettingsPowerComponent,
 		UserDefinedKeyComponent,
-		VoiceComponent,
+		VoiceComponent
 	],
 	imports: [
 		CommonModule,
 		CommonUiModule,
 		CommonWidgetModule,
+		CommonModalModule,
 		SharedModule,
 		HardwareSettingRoutingModule,
-		FontAwesomeModule
+		FontAwesomeModule,
+		ContainerCardModule,
+		MetricsModule,
+		NgbTooltipModule,
+		HeaderMainModule,
+		WidgetOfflineModule,
+		WidgetSecurityStatusModule,
+		NgbDropdownModule,
+		RouterModule,
+		NgbCollapseModule
+	],
+	exports: [
+		CommonModule,
+		CommonUiModule,
+		CommonWidgetModule,
+		CommonModalModule,
 	],
 	providers: [
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService },

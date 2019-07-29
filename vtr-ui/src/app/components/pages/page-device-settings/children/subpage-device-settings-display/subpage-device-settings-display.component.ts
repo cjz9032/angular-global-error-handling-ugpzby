@@ -157,7 +157,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.getCameraPrivacyModeStatus();
 		this.getCameraDetails();
 		this.displayService.startMonitorForCameraPermission();
-		this.startMonitorForCamera();
+		this.startCameraPrivacyMonitor();
 	}
 	private onNotification(notification: AppNotification) {
 		if (notification) {
@@ -170,7 +170,7 @@ export class SubpageDeviceSettingsDisplayComponent
 
 					if (payload) {
 						this.shouldCameraSectionDisabled = false;
-						this.cameraFeatureAccess.showAutoExposureSlider = false;
+						// this.cameraFeatureAccess.showAutoExposureSlider = false;
 						if (this.dataSource.exposure.autoValue === true) {
 							this.cameraFeatureAccess.exposureAutoValue = true;
 						} else {
@@ -564,20 +564,20 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
 	}
 
-	startMonitorForCamera() {
-		console.log('startMonitorForCamera');
+	startCameraPrivacyMonitor() {
+		console.log('startCameraPrivacyMonitor');
 		try {
 			if (this.displayService.isShellAvailable) {
 				this.displayService.startCameraPrivacyMonitor(this.startMonitorHandlerForCamera.bind(this))
 					.then((val) => {
-						console.log('startMonitorForCamera.then', val);
+						console.log('startCameraPrivacyMonitor.then', val);
 
 					}).catch(error => {
-						console.error('startMonitorForCamera', error);
+						console.error('startCameraPrivacyMonitor', error);
 					});
 			}
 		} catch (error) {
-			console.log('startMonitorForCamera', error);
+			console.log('startCameraPrivacyMonitor', error);
 		}
 	}
 
@@ -612,6 +612,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 	public onCameraAutoExposureToggle($event: any) {
 		console.log('setCameraAutoExposure.then', $event);
+		this.dataSource.exposure.autoValue = $event.switchValue;
 		this.cameraFeatureAccess.showAutoExposureSlider = !$event.switchValue;
 		this.cameraFeatureAccess.exposureAutoValue = $event.switchValue;
 		if (this.displayService.isShellAvailable) {

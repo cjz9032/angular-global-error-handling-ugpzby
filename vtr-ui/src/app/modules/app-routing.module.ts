@@ -6,11 +6,7 @@ import { PageSupportComponent } from '../components/pages/page-support/page-supp
 import { GuardService } from '../services/guard/security-guardService.service';
 
 const routes: Routes = [
-	{
-		path: '',
-		component: HomeComponent,
-		pathMatch: 'full'
-	},
+
 	{
 		path: 'dashboard',
 		loadChildren: './hardware-settings/hardware-dashboard.module#HardwareDashboardModule'
@@ -44,16 +40,17 @@ const routes: Routes = [
 		}
 	},
 	{
-		path: 'home-security',
-		loadChildren: './connected-home-security/connected-home-security.module#ConnectedHomeSecurityModule'
-	},
-	{
 		path: 'security',
 		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
 	},
 	{
-		path: 'privacy',
-		loadChildren: '../components/pages/page-privacy/privacy.module#PrivacyModule'
+		path: 'android',
+		loadChildren: './android/android-dashboard.module#AndroidDashboardModule'
+	},
+	{
+		path: '',
+		component: HomeComponent,
+		pathMatch: 'full'
 	},
 	{
 		path: '**',
@@ -67,7 +64,8 @@ const routes: Routes = [
 		RouterModule.forRoot(routes, {
 			useHash: true,
 			scrollPositionRestoration: 'enabled',
-			enableTracing: false
+			enableTracing: false,
+			// preloadingStrategy: PreloadAllModules
 		})
 	],
 	exports: [RouterModule]

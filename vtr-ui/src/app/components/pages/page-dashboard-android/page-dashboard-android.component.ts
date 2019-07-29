@@ -31,7 +31,7 @@ export class PageDashboardAndroidComponent implements OnInit {
 	/* submit = this.translate.instant('dashboard.feedback.form.button');
 	feedbackButtonText = this.submit; */
 	securityAdvisor: SecurityAdvisor;
-	//public systemStatus: Status[] = [];
+	// public systemStatus: Status[] = [];
 	public isOnline = true;
 
 	heroBannerItems = [];
@@ -68,8 +68,8 @@ export class PageDashboardAndroidComponent implements OnInit {
 		config.backdrop = 'static';
 		config.keyboard = false;
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
-
-		//this.setDefaultSystemStatus();
+		deviceService.isAndroid = true;
+		// this.setDefaultSystemStatus();
 
 		/* translate.stream('dashboard.feedback.form.button').subscribe((value) => {
 			this.submit = value;
@@ -98,31 +98,25 @@ export class PageDashboardAndroidComponent implements OnInit {
 		this.isOnline = this.commonService.isOnline;
 		if (this.dashboardService.isShellAvailable) {
 			console.log('PageDashboardComponent.getSystemInfo');
-			//this.getSystemInfo();
+			// this.getSystemInfo();
 		}
 
 		this.setDefaultCMSContent();
 
 		const queryOptions = {
-			'Page': 'dashboard',
-			'Lang': 'EN',
-			'GEO': 'US',
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			Page: 'dashboard'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
 				const heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
 					return {
-						'albumId': 1,
-						'id': record.Id,
-						'source': this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
-						'title': this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
-						'url': record.FeatureImage,
-						'ActionLink': record.ActionLink
+						albumId: 1,
+						id: record.Id,
+						source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
+						title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
+						url: record.FeatureImage,
+						ActionLink: record.ActionLink
 					};
 				});
 				if (heroBannerItems && heroBannerItems.length) {
@@ -187,7 +181,7 @@ export class PageDashboardAndroidComponent implements OnInit {
 		this.heroBannerItems = [{
 			albumId: 1,
 			id: 1,
-			source: 'Vantage Beta',
+			source: 'Vantage',
 			title: 'Welcome to the next generation of Lenovo Vantage!',
 			url: './../../../../assets/cms-cache/Vantage3Hero-zone0.jpg',
 			ActionLink: null

@@ -186,15 +186,15 @@ export class SystemUpdateService {
 
 			this.systemUpdateBridge.getStatus(canReportProgress, (response: any) => {
 				console.log('getScheduleUpdateStatus callback', response);
-				this.processScheduleUpdate(response.payload);
+				this.processScheduleUpdate(response.payload, true);
 			}).then((response: ScheduleUpdateStatus) => {
 				console.log('getScheduleUpdateStatus response', response);
-				this.processScheduleUpdate(response);
+				this.processScheduleUpdate(response, false);
 			});
 		}
 	}
 
-	private processScheduleUpdate(response: any) {
+	private processScheduleUpdate(response: any, isInProgress: boolean) {
 		const status = response.status.toLowerCase();
 		if (status === 'installing' || status === 'checking' || status === 'downloading') {
 			if (status === 'installing') {
@@ -209,6 +209,9 @@ export class SystemUpdateService {
 					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateInstalling, response);
 				}
 			} else if (status === 'checking') {
+				if (response && response.searchProgress) {
+					this.percentCompleted = response.searchProgress.progressinPercentage;
+				}
 				if (response.updateTaskList === null) {
 					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateChecking);
 				} else {
@@ -226,15 +229,50 @@ export class SystemUpdateService {
 					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateDownloading, response);
 				}
 			}
-			this.getScheduleUpdateStatus(true);
-		} else if (status === 'idle') {
+			if (!isInProgress) {
+				this.getScheduleUpdateStatus(true);
+			}
+		} else if (status === 'idle' && isInProgress) {
+			if (response && response.installProgress) {
+				this.isUpdateDownloading = true;
+				this.downloadingPercent = 100;
+				this.installationPercent = response.installProgress.progressinPercentage;
+
+				if (response.updateTaskList === null) {
+					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateInstalling);
+				} else {
+					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateInstalling, response);
+				}
+			} else if (response && response.checkForUpdatesResult) {
+				this.percentCompleted = 100;
+				if (response.updateTaskList === null) {
+					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateChecking);
+				} else {
+					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateChecking, response);
+				}
+			}
+		} else if (status === 'idle' && !isInProgress) {
 			this.isUpdateDownloading = false;
 			if (response.updateTaskList && response.updateTaskList.length > 0) {
 				if (!this.isDownloadingCancel) {
 					this.isInstallationCompleted = true;
 					this.updateInfo = this.mapScheduleInstallResponse(response.updateTaskList);
 					this.isInstallationSuccess = this.updateInfo.status === SystemUpdateStatusMessage.SUCCESS.code;
-					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateCheckComplete, this.updateInfo);
+					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateInstallationComplete, this.updateInfo);
+				}
+			} else if (response.checkForUpdatesResult) {
+				this.isCheckForUpdateComplete = true;
+				const status = parseInt(response.checkForUpdatesResult.status, 10);
+				this.isUpdatesAvailable = (response.checkForUpdatesResult.updateList && response.checkForUpdatesResult.updateList.length > 0);
+
+				if (status === SystemUpdateStatusMessage.SUCCESS.code) {
+					this.percentCompleted = 0;
+					this.isUpdatesAvailable = true;
+					this.updateInfo = { status: status, updateList: this.mapAvailableUpdateResponse(response.checkForUpdatesResult.updateList) };
+					this.commonService.sendNotification(UpdateProgress.ScheduleUpdatesAvailable, this.updateInfo);
+				} else {
+					this.percentCompleted = 0;
+					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateCheckComplete, status);
 				}
 			} else {
 				this.commonService.sendNotification(UpdateProgress.ScheduleUpdateIdle, response);
@@ -340,7 +378,7 @@ export class SystemUpdateService {
 			}
 			if (update.coreqPackageID) {
 				const coreqPackages = update.coreqPackageID.split(',');
-				this.selectCoreqUpdate(this.updateInfo.updateList, coreqPackages, isSelected);
+				this.selectCoreqUpdate(this.updateInfo.updateList, coreqPackages, isSelected, update.packageID);
 			}
 		}
 	}
@@ -348,31 +386,43 @@ export class SystemUpdateService {
 	private selectCoreqUpdateForInstallAll() {
 		if (this.updateInfo.updateList && this.updateInfo.updateList.length > 0) {
 			this.updateInfo.updateList.forEach((update) => {
-				if(update.coreqPackageID && !update.isIgnored) {
+				if (update.coreqPackageID && !update.isIgnored) {
 					const coreqPackages = update.coreqPackageID.split(',');
-					this.selectCoreqUpdate(this.updateInfo.updateList, coreqPackages, true);
+					this.selectCoreqUpdate(this.updateInfo.updateList, coreqPackages, true, update.packageID);
 				}
-			})
+			});
 
 		}
 	}
 
-	private selectCoreqUpdate(updateList: AvailableUpdateDetail[], coreqPackages: string[], isSelected: boolean) {
+	private selectCoreqUpdate(updateList: AvailableUpdateDetail[], coreqPackages: string[], isSelected: boolean, dependedByPackage: string) {
 		coreqPackages.forEach((coreqPackage) => {
 			const coreqUpdate = updateList.find((value) => {
 				return value.packageID === coreqPackage;
 			});
-			coreqUpdate.isSelected = isSelected;
-			if(isSelected) {
-				coreqUpdate.isDependency = true;
-			} else {
-				coreqUpdate.isDependency = false;
+			if (coreqUpdate) {
+				coreqUpdate.dependedByPackages = coreqUpdate.dependedByPackages +  ',' + dependedByPackage;
+				coreqUpdate.isSelected = isSelected;
+				if (isSelected) {
+					coreqUpdate.isDependency = true;
+				} else {
+					const dependedPacks = coreqUpdate.dependedByPackages.split(',');
+					coreqUpdate.isDependency = false;
+					dependedPacks.forEach((packID) => {
+						const dependPack = updateList.find((value) => {
+							return value.packageID === packID;
+						});
+						if (dependPack && dependPack.isSelected) {
+							coreqUpdate.isSelected = true;
+							coreqUpdate.isDependency = true;
+						}
+					});
+				}
+				if (coreqUpdate.coreqPackageID) {
+					const packages = coreqUpdate.coreqPackageID.split(',');
+					this.selectCoreqUpdate(updateList, packages, isSelected, coreqUpdate.packageID);
+				}
 			}
-			if (coreqUpdate.coreqPackageID) {
-				const packages = coreqUpdate.coreqPackageID.split(',');
-				this.selectCoreqUpdate(updateList, packages, isSelected);
-			}
-
 		});
 	}
 
@@ -528,7 +578,9 @@ export class SystemUpdateService {
 			}
 		}).catch((error) => {
 			console.log(error);
-			if (error && error.description && error.description.includes('errorcode: 606')) {
+			if (error &&
+				((error.description && error.description.includes('errorcode: 606'))
+				|| (error.errorcode && error.errorcode === 606))) {
 				this.getScheduleUpdateStatus(true);
 			}
 		});
@@ -588,7 +640,7 @@ export class SystemUpdateService {
 			updates.forEach((update) => {
 				if (update.isSelected && update.coreqPackageID != '') {
 					const coreqPackages = update.coreqPackageID.split(',');
-					this.selectCoreqUpdate(updates, coreqPackages, true);
+					this.selectCoreqUpdate(updates, coreqPackages, true, update.packageID);
 				}
 			});
 		}

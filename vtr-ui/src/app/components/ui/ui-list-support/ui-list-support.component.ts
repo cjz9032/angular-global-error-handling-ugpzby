@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
 import { SupportService } from 'src/app/services/support/support.service';
 
 @Component({
@@ -12,7 +11,6 @@ export class UiListSupportComponent implements OnInit {
 	@Input() items: any[];
 
 	constructor(
-		private router: Router,
 		private supportService: SupportService,
 	) { }
 

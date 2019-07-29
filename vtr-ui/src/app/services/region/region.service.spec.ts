@@ -7,10 +7,10 @@ import {
 } from './region.service';
 
 describe('RegionService', () => {
-	//beforeEach(() => TestBed.configureTestingModule({}));
+	beforeEach(() => TestBed.configureTestingModule({}));
 
 	it('should be created', () => {
-		// const service: RegionService = TestBed.get(RegionService);
-		// expect(service).toBeTruthy();
+		const service: RegionService = TestBed.get(RegionService);
+		expect(service).toBeTruthy();
 	});
 });

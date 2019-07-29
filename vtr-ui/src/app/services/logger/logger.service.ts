@@ -42,6 +42,12 @@ export class LoggerService {
 		}
 	}
 
+	public info(message: string, data: any = {}): void {
+		if (this.isShellAvailable) {
+			this.logger.info(this.getMessage(message, data));
+		}
+	}
+
 	/**
 	 * add console log with ISO date time stamp
 	 * @param message message to log

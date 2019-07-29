@@ -2,15 +2,18 @@
 	<div class="dropdown">
 		<a class="dropdown-toggle" id="gaming-drop" (click)="toggleOptions()">
 			<span *ngIf="selectedOption">{{ selectedOption.name | translate }}</span>
-			<i class="icon icon-arrowdown"></i>
+			<fa-icon class="icon" [icon]="['fal', 'chevron-down']"></fa-icon>
 		</a>
 		<ng-container *ngIf="showOptions">
 			<div class="gaming-dropdown-menu">
 				<ng-container *ngFor="let option of options.dropOptions; index as i">
 					<li [ngClass]="{ 'selected': selectedOption && option.name === selectedOption.name }"
 						(click)="optionSelected(option)" (mouseenter)="changeDescription(option)"
-						(mouseleave)="resetDescription(option)" vtrMetrics [metricsItem]="option.name | translate" metricsEvent="featureClick">
-						<a class="dropdown-item"><i class="icon icon-checkline" ></i>{{ option.name  | translate}}</a>
+						(mouseleave)="resetDescription(option)" vtrMetrics [metricsItem]="option.name | translate"
+						metricsEvent="featureClick">
+						<a class="dropdown-item">
+							<fa-icon class="icon" [icon]="['fal', 'check']"></fa-icon>{{ option.name  | translate}}
+						</a>
 					</li>
 				</ng-container>
 				<div class="information" *ngIf="showDescription">

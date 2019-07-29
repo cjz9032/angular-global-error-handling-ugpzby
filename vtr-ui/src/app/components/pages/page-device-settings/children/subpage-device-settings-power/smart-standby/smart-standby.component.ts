@@ -1,25 +1,35 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { PowerService } from 'src/app/services/power/power.service';
 import { SmartStandby } from 'src/app/data-models/device/smart-standby.model';
+import { CommonService } from 'src/app/services/common/common.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
 	selector: 'vtr-smart-standby',
 	templateUrl: './smart-standby.component.html',
 	styleUrls: ['./smart-standby.component.scss']
 })
-export class SmartStandbyComponent implements OnInit {
+export class SmartStandbyComponent implements OnInit, OnDestroy {
 
 	public smartStandby = new SmartStandby();
 	public smartStandbyStartTime: string;
 	public smartStandbyEndTime: string;
 	isSmartStandbyVisible: boolean;
 	showDiffNote: boolean;
+	showDropDown: boolean[];
+	toggleSubscription: Subscription;
+
 	@Output() smartStandbyCapability = new EventEmitter<boolean>();
 
-	constructor(public powerService: PowerService) { }
+	constructor(public powerService: PowerService, public commonService: CommonService) { }
 
 	ngOnInit() {
 		this.showSmartStandby();
+		this.showDropDown = [false, false, false];
+		this.toggleSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onSmartStandbyNotification(notification);
+		});
 	}
 
 	public showSmartStandby() {
@@ -177,4 +187,26 @@ export class SmartStandbyComponent implements OnInit {
 			this.showDiffNote = false;
 		}
 	}
+
+	onSmartStandbyNotification(notification: AppNotification) {
+		if (notification && notification.type === 'smartStandbyToggles') {
+			const toggle = notification.payload;
+			if (!toggle.value) {
+				this.showDropDown[toggle.id] = false;
+			} else {
+				for (let i = 0; i < this.showDropDown.length; i++) {
+					if (i !== toggle.id) {
+						this.showDropDown[i] = false;
+					} else {
+						this.showDropDown[i] = true;
+					}
+				}
+			}
+		}
+	}
+
+	ngOnDestroy() {
+		this.toggleSubscription.unsubscribe();
+	}
+
 }
