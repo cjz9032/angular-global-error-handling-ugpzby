@@ -26,6 +26,7 @@ import { CommonUiModule } from './common/common-ui.module';
 import { CommonWidgetModule } from './common/common-widget.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { GamingRoutingModule } from '../modules/gaming-routing.module';
+import { WidgetAutocloseComponent } from '../components/widgets/widget-autoclose/widget-autoclose.component';
 import { ContainerCardModule } from '../components/container-card/container-card.module';
 import { MetricsModule } from '../directives/metrics.module';
 import { faCheck } from '@fortawesome/pro-light-svg-icons/faCheck';
@@ -50,7 +51,8 @@ library.add(faCheck);
 		UiMacrokeyDetailsComponent,
 		UiLightingProfileComponent,
 		UiMacrokeyRecordedListComponent,
-		WidgetMacrokeySettingsComponent
+		WidgetMacrokeySettingsComponent,
+		WidgetAutocloseComponent
 	],
 	imports: [
 		CommonModule,
@@ -65,8 +67,8 @@ library.add(faCheck);
 		MetricsModule,
 		WidgetOfflineModule
 	],
-	exports: [ ContainerCardModule, MetricsModule, WidgetOfflineModule ],
-	schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+	exports: [ContainerCardModule, MetricsModule, WidgetOfflineModule],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	entryComponents: []
 })
-export class GamingModule {}
+export class GamingModule { }
