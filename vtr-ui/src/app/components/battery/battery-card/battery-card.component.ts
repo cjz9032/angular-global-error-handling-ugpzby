@@ -13,7 +13,7 @@ import { BatteryConditionsEnum, BatteryQuality } from 'src/app/enums/battery-con
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { PowerService } from 'src/app/services/power/power.service';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/internal/Subscription';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 
 @Component({
@@ -47,6 +47,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	public isLoading = true;
 	public param1: any;
 	public param2: any;
+	remainingPercentages: number[];
 	notificationSubscription: Subscription;
 
 	constructor(
@@ -118,6 +119,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	/**
+	 * gets battery details from js bridge
+	 */
 	private getBatteryDetails() {
 		this.batteryService.getBatteryDetail()
 			.then((response: any) => {
@@ -126,17 +130,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryInfo = response;
 				this.batteryInfo = response.batteryInformation;
 				this.batteryGauge = response.batteryIndicatorInfo;
-
-				if (this.batteryInfo.length !== 0 && this.batteryInfo[0].fullChargeCapacity !== undefined
-					&& this.batteryInfo[0].fullChargeCapacity !== null
-					&& this.batteryInfo[0].designCapacity !== undefined && this.batteryInfo[0].designCapacity !== null) {
-					const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
-					this.percentageLimitation = parseFloat(percentLimit.toFixed(1));
-					this.param2 = { value: this.percentageLimitation };
-				}
-
-				this.isBatteryDetailsBtnDisabled =
-					this.batteryGauge.isPowerDriverMissing || this.batteryInfo.length === 0;
 				this.updateBatteryDetails();
 				this.getBatteryCondition();
 			}).catch(error => {
@@ -144,61 +137,58 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			});
 	}
 
+	/**
+	 * gets changed values at charge threshold section
+	 * @param notification: AppNotification for change in chargeThreshold
+	 */
 	onNotification(notification: AppNotification) {
 		if (notification && notification.type === ChargeThresholdInformation.ChargeThresholdInfo) {
-			const chargeThresholdInfo = notification.payload;
-			this.chargeThresholdInfo = chargeThresholdInfo[0];
-			if (chargeThresholdInfo.length > 1) {
-				if (!chargeThresholdInfo[0].isOn && chargeThresholdInfo[1].isOn) {
-					this.chargeThresholdInfo = notification.payload[1];
-				}
-			}
+			this.chargeThresholdInfo = notification.payload;
 			if (this.chargeThresholdInfo !== undefined && this.chargeThresholdInfo.isOn) {
-				this.param1 = { value: this.chargeThresholdInfo.stopValue };
+				this.param1 = { value: this.chargeThresholdInfo.stopValue1 };
 			}
+			this.sendThresholdWarning();
 		}
 	}
 
+	/**
+	 * initializes a batteryIndicator object for showing battery from batteryInfo
+	 */
 	public updateBatteryDetails() {
-		if (this.batteryInfo !== undefined && this.batteryInfo.length !== 0) {
-			// let batteryIndex = -1;
-			const remainingPercentages = [];
-			this.batteryInfo.forEach((info) => {
-				if (info.batteryHealth === undefined || info.batteryHealth === null) {
-					info.batteryHealth = 0;
-				}
-				remainingPercentages.push(info.remainingPercent);
-				// if (info.batteryHealth >= this.batteryHealth) {
-				// 	this.batteryHealth = info.batteryHealth;
-				// 	batteryIndex += 1;
-				// }
-			});
-			this.batteryIndex = 0; // temp set primary battery conditions
-			this.commonService.setLocalStorageValue(LocalStorageKey.RemainingPercentages, remainingPercentages);
-			this.batteryHealth = this.batteryInfo[0].batteryHealth;
-		}
+
 		this.batteryIndicator.percent = this.batteryGauge.percentage;
 		this.batteryIndicator.charging = this.batteryGauge.isAttached;
 		this.batteryIndicator.convertMin(this.batteryGauge.time);
 		this.batteryIndicator.timeText = this.batteryGauge.timeType;
 
+		this.isBatteryDetailsBtnDisabled = this.batteryGauge.isPowerDriverMissing;
 		if (this.batteryGauge.isExpressCharging === undefined || this.batteryGauge.isExpressCharging === null) {
 			this.batteryIndicator.expressCharging = false;
 		} else {
 			this.batteryIndicator.expressCharging = this.batteryGauge.isExpressCharging;
 		}
 
-		// if (this.batteryInfo.length > 0 &&
-		// 	this.batteryInfo[this.batteryIndex].isVoltageError !== undefined) {
-		// 	this.batteryIndicator.voltageError = this.batteryInfo[this.batteryIndex].isVoltageError;
-		// } else {
-		// 	this.batteryIndicator.voltageError = false;
-		// }
+		if (this.batteryInfo !== undefined && this.batteryInfo.length > 0) {
+			const remainingPercentages = [];
+			this.batteryInfo.forEach((info) => {
+				if (info.batteryHealth === undefined || info.batteryHealth === null) {
+					info.batteryHealth = 0;
+				}
+				if (info.remainingPercent !== undefined || info.remainingPercent !== null) {
+					remainingPercentages.push(info.remainingPercent);
+				}
+			});
+			this.batteryIndex = 0; // temp set primary battery conditions
+			if (remainingPercentages.length > 0) {
+				this.remainingPercentages = remainingPercentages;
+				this.sendThresholdWarning();
+			}
+			this.batteryHealth = this.batteryInfo[0].batteryHealth;
 
-		if (this.batteryHealth !== undefined) {
 			this.batteryIndicator.batteryNotDetected = this.batteryHealth === 4;
+
 		} else {
-			this.batteryIndicator.batteryNotDetected = false;
+			this.isBatteryDetailsBtnDisabled = true;
 		}
 
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo, { detail: this.batteryInfo, gauge: this.batteryGauge });
@@ -209,6 +199,33 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	/**
+	 * sends notification to threshold section in case of update in remaining percentages & thresholdInfo
+	 * for displaying warning note
+	 */
+	private sendThresholdWarning() {
+		if (this.chargeThresholdInfo !== undefined && this.remainingPercentages !== undefined
+			&& this.remainingPercentages.length > 0) {
+			if (this.chargeThresholdInfo.isOn) {
+				if (this.chargeThresholdInfo.stopValue1 !== undefined &&
+					this.remainingPercentages[0] !== undefined &&
+					this.remainingPercentages[0] > this.chargeThresholdInfo.stopValue1) {
+					this.commonService.sendNotification('ThresholdWarningNote', true);
+				} else if (this.chargeThresholdInfo.stopValue2 !== undefined &&
+					this.remainingPercentages[1] !== undefined &&
+					this.remainingPercentages[1] > this.chargeThresholdInfo.stopValue2) {
+					this.commonService.sendNotification('ThresholdWarningNote', true);
+				} else {
+					this.commonService.sendNotification('ThresholdWarningNote', false);
+				}
+			}
+		}
+	}
+
+	/**
+	 * shows a battery details modal
+	 * @param content: battery Information
+	 */
 	public showDetailModal(content: any): void {
 		this.modalService
 			.open(content, {
@@ -226,17 +243,29 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			);
 	}
 
+	/**
+	 * sets a battery condition tip & icon from battery health & battery condition
+	 */
 	public getBatteryCondition() {
 		const batteryConditions = [];
 		const isThinkpad = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType) === 1;
 
-		this.batteryConditionStatus = this.getBatteryHealth(this.batteryHealth);
-		if (this.batteryInfo.length > 0) {
+		if (this.batteryInfo && this.batteryInfo.length > 0) {
 			if (this.batteryHealth === undefined) {
 				this.batteryHealth = 0;
 			}
+			this.batteryConditionStatus = this.getBatteryConditionStatus(this.batteryHealth);
 			if (isThinkpad && (this.batteryHealth === 1 || this.batteryHealth === 2)) {
 				this.batteryHealth = BatteryConditionsEnum.StoreLimitation;
+				if (this.batteryInfo[0].fullChargeCapacity !== undefined
+					&& this.batteryInfo[0].fullChargeCapacity !== null
+					&& this.batteryInfo[0].designCapacity !== undefined
+					&& this.batteryInfo[0].designCapacity !== null) {
+
+					const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
+					this.percentageLimitation = parseFloat(percentLimit.toFixed(1));
+					this.param2 = { value: this.percentageLimitation };
+				}
 			}
 			if (this.batteryHealth !== 0) {
 				batteryConditions.push(new BatteryConditionModel(this.batteryHealth,
@@ -298,19 +327,24 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	getBatteryHealth(batteryHealth: number): string {
-		switch (batteryHealth) {
+	/**
+	 * maps batteryHealth to a condition status Icon(i.e. good, poor,bad, AcError)
+	 * @param conditionStatus: batteryHealth
+	 * @returns BatteryQuality[conditionStatus]: status of battery for condition icon
+	 */
+	getBatteryConditionStatus(conditionStatus: number): string {
+		switch (conditionStatus) {
 			case 3:
-				batteryHealth = 1;
+				conditionStatus = 1;
 				break;
 			case 4:
-				batteryHealth = 2;
+				conditionStatus = 2;
 				break;
 			case 5:
-				batteryHealth = 2;
+				conditionStatus = 2;
 				break;
 		}
-		return BatteryQuality[batteryHealth];
+		return BatteryQuality[conditionStatus];
 	}
 
 	reInitValue() {

@@ -2,7 +2,8 @@
 	<div class="modal-body vtr-ui-gaming-driver-popup">
 		<div class="row justify-content-end">
 			<div class="btn-close">
-				<button type="button" class="close" aria-hidden="true" (click)="close()">
+				<button type="button" class="close" aria-hidden="true" (click)="close()" vtrMetrics [metricsItem]="'close' | translate"
+					metricsEvent="featureClick">
 					<fa-icon [icon]="['fal', 'times']"></fa-icon>
 				</button>
 			</div>
@@ -14,9 +15,13 @@
 		</div>
 		<hr>
 		<div class="row">
-			<button class="btn enable-button"
+			<button class="btn enable-button" vtrMetrics
+				[metricsItem]="'gaming.dashboard.device.legionEdge.driverPopup.button' | translate"
+				metricsEvent="featureClick"
 				(click)="systemUpdatePage()">{{'gaming.dashboard.device.legionEdge.driverPopup.button' | translate}}</button>
-			<a (click)="close()"
+			<a (click)="close()" vtrMetrics
+				[metricsItem]="'gaming.dashboard.device.legionEdge.driverPopup.link' | translate"
+				metricsEvent="featureClick"
 				class="cancel-link active">{{'gaming.dashboard.device.legionEdge.driverPopup.link' | translate}}</a>
 		</div>
 	</div>

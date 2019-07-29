@@ -20,16 +20,10 @@ export class PageMacrokeyComponent implements OnInit {
 	ngOnInit() {
 		// TODO: Change the query params for macrokey subpage
 		const queryOptions = {
-			Page: 'dashboard',
-			Lang: 'EN',
-			GEO: 'US',
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'SMB',
-			Brand: 'Lenovo'
+			Page: 'dashboard'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).then((response: any) => {
+		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
 			const cardContentPositionA = this.cmsService.getOneCMSContent(
 				response,
 				'half-width-top-image-title-link',

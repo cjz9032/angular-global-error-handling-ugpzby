@@ -387,7 +387,7 @@
                 "title": "Eszköz",
                 "sub1": "Saját készülékem",
                 "sub2": "Saját eszközbeállítások",
-                "sub3": "System Updates",
+                "sub3": "Rendszerfrissítés",
                 "sub4": "Intelligens segítség"
             },
             "security": {
@@ -444,31 +444,31 @@
     },
     "privacy": {
         "headerMain": {
-            "title": "Privacy"
+            "title": "Adatvédelem"
         }
     },
     "tutorial": {
-        "almostThere": "Almost there!",
-        "para1": "Just a few more buttons to press before we can have liftoff.",
-        "para2": "Before we can give you the most optimal experience there are still a few things to setup.",
-        "personalise": "START PERSONALIZING",
-        "howIsitUsed": "How will you use it?",
-        "howMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "business": "BUSINESS",
-        "personal": "PERSONAL",
-        "custom": "CUSTOM",
-        "skip": "SKIP",
+        "almostThere": "Már majdnem kész!",
+        "para1": "Már csak néhány gombot kell megnyomni.",
+        "para2": "Ahhoz, hogy optimalizálni tudjuk a rendszert és a környezetet, még be kell állítani néhány dolgot.",
+        "personalise": "SZEMÉLYRE SZABÁS MEGKEZDÉSE",
+        "howIsitUsed": "Mire fogja használni?",
+        "howMachinUsed": "Az alábbi felhasználási módok egyikére kattintva adja meg, milyen célra használja majd ezt a gépet.",
+        "business": "ÜZLETI TEVÉKENYSÉG",
+        "personal": "SZEMÉLYES HASZNÁLAT",
+        "custom": "EGYÉNI",
+        "skip": "KIHAGY",
         "next": "TOVÁBB",
-        "interests": "What are your interests?",
-        "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "games": "GAMES",
-        "news": "NEWS",
-        "entertainment": "ENTERTAINMENT",
-        "arts": "ARTS",
-        "politics": "POLITICS",
-        "sports": "SPORTS",
-        "regionalNews": "REGIONAL NEWS",
-        "technology": "TECHNOLOGY"
+        "interests": "Adja meg az érdeklődési köreit.",
+        "howOnesMachinUsed": "Az alábbi válaszok egyikére kattintva adja meg, hogyan használja majd ezt a gépet.",
+        "games": "JÁTÉKOK",
+        "news": "HÍREK",
+        "entertainment": "SZÓRAKOZÁS",
+        "arts": "MŰVÉSZET",
+        "politics": "POLITIKA",
+        "sports": "SPORT",
+        "regionalNews": "REGIONÁLIS HÍREK",
+        "technology": "TECHNOLÓGIA"
     },
     "dashboard": {
         "headerMain": {
@@ -534,7 +534,7 @@
                 }
             },
             "systemUpdate": {
-                "title": "System Update",
+                "title": "Rendszerfrissítés",
                 "detail": {
                     "update": "Frissítés"
                 }
@@ -636,15 +636,15 @@
                         "acdischarging": "Kisütés (hálózatról)"
                     },
                     "deviceChemistry": {
-                        "li-polymer": "Li-Polymer",
-                        "li-ion": "Li-Ion",
-                        "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion",
-                        "silver-zinc": "Silver-Zinc",
-                        "silver_zinc": "Silver-Zinc",
+                        "li-polymer": "Li-polimer",
+                        "li-ion": "Li-ion",
+                        "li_polymer": "Li-polimer",
+                        "li_ion": "Li-ion",
+                        "silver-zinc": "Ezüst-cink",
+                        "silver_zinc": "Ezüst-cink",
                         "nicd": "NiCd",
                         "nimh": "NiMH",
-                        "unknown": "Unknown"
+                        "unknown": "Ismeretlen"
                     },
                     "manufacturer": {
                         "title": "Gyártó",
@@ -662,7 +662,7 @@
                     "NotSupportACAdapter": "<b>A hálózati adapter nem támogatott.</b> Lenovo számítógépe nem támogatja ezt a hálózati adaptert. Ez hirtelen leállást okozhat. Csatlakoztasson egy megfelelő hálózati adaptert.",
                     "LimitedACAdapterSupport": "<b>A hálózati adapter nem tud elegendő energiát biztosítani</b> a Lenovo számítógép számára, ez pedig kihat a rendszer teljesítményére és a töltési sebességre. Csatlakoztassa újra a megfelelő hálózati adaptert.",
                     "MissingDriver": "<b>A Lenovo Power Manager illesztőprogramja</b> nincs telepítve, vagy nem működik megfelelően. Futtassa a Windows Update programot a legújabb illesztőprogram telepítéséhez.",
-                    "StoreLimitation": "<b>Az akkumulátor csak az eredeti teljes töltési kapacitás {{percentageLimitation}}%-át</b> tudja tárolni.",
+                    "StoreLimitation": "<b>Az akkumulátor csak az eredeti teljes töltési kapacitás {{value}}%-át</b> tudja tárolni.",
                     "HighTemperature": "A <b>lemerítés</b> leállt, mert az <b>akkumulátor túl meleg.</b>",
                     "TrickleCharge": "Az akkumulátor <b>teljesen lemerült</b>, fel kell tölteni. Ez akár 10 órán át vagy tovább is eltarthat.",
                     "OverheatedBattery": "Az akkumulátor <b>túl meleg</b>. Vegye ki a számítógépből, és hagyja lehűlni szobahőmérsékletre.",
@@ -671,7 +671,7 @@
                 "updating": "Frissítés",
                 "voltageError": "Helytelen akkumulátorfeszültség",
                 "batteryNotDetected": "A rendszer nem észlel akkumulátort",
-                "thresholdNote": "<b>Megjegyzés:</b> Megadta, hogy – az akkumulátor élettartamának megnövelésének érdekében – az akkumulátor töltése álljon le {{chargeThresholdInfo.stopValue}}%-nál."
+                "thresholdNote": "<b>Megjegyzés:</b> Megadta, hogy – az akkumulátor élettartamának megnövelésének érdekében – az akkumulátor töltése álljon le {{value}}%-nál."
             },
             "power": {
                 "title": "Tápellátás",
@@ -681,19 +681,18 @@
                     "title": "UGRÁS A BEÁLLÍTÁSOKHOZ",
                     "battery": "Akkumulátor",
                     "power": "Tápellátás",
-                    "cooling": "Intelligens hűtés",
                     "other": "Egyéb",
-                    "smartStandby": "Smart Standby"
+                    "smartStandby": "Intelligens készenlét"
                 },
                 "powerSmartSettings": {
                     "title": "Intelligens energiagazdálkodási beállítások",
                     "subtitle": "INTELLIGENS HŰTÉS",
                     "subtitle1": "Akkumulátor és csendes működés",
-                    "description1": "Ez a funkció dinamikusan az Ön igényeihez igazítja a hőbeállításokat.Ha be van kapcsolva, úgy módosítja a rendszer a beállításokat, hogy a készülék hűvösebb vagy csendesebb legyen, miközben tétlen vagy Ön kézben tartja. Ellenkező esetben, ha a készülék stabil felületen van, a teljesítményt optimalizálja a rendszer. Ha kikapcsolja a funkciót, manuálisan állíthatja be a kívánt hőmérsékletet.",
+                    "description1": "Ha be van kapcsolva, ez a funkció dinamikusan az Ön igényeihez igazítja a hőbeállításokat. Úgy módosítja a beállításokat, hogy a készülék hűvösebb vagy csendesebb legyen, miközben tétlen vagy Ön kézben tartja. Amikor a készülék stabil felületen van, a teljesítményt optimalizálja a rendszer. Ha kikapcsolja a funkciót, manuálisan állíthatja be a kívánt hőmérsékletet.",
                     "description2": "Az Intelligens hűtés korrigálja a ventilátor sebességét, a számítógép maximális hőmérsékletét és teljesítményét.A funkció az alábbi módokban használható, és már a Windows teljesítmény beállítására szolgáló csúszkájával is elérhető.",
                     "description3": "Az Intelligens hűtés automatikusan, az Ön igényeinek megfelelően igazítja a hőteljesítményt.Az Intelligens hűtés a kényelmes használat érdekében módosítja a teljesítménnyel kapcsolatos beállításokat, amikor a notebook az Ön kezében van. Ha az eszköz asztalon van, a szolgáltatás a teljesítményt optimalizálja.",
-                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "description13": "Ha be van kapcsolva, ez a funkció dinamikusan az Ön igényeihez igazítja a hőbeállításokat. Úgy módosítja a beállításokat, hogy a készülék hűvösebb vagy csendesebb legyen, miközben tétlen vagy Ön kézben tartja. Amikor a készülék stabil felületen van, a teljesítményt optimalizálja a rendszer. Ha kikapcsolja a funkciót, manuálisan állíthatja be a kívánt hőmérsékletet.",
+                    "description14": "Ezzel a funkcióval beállíthatja a ventilátor sebességét, maximalizálhatja a rendszer teljesítményét, vagy szükség esetén meghosszabbíthatja az akkumulátor élettartamát. A három lenti móddal rendelkezik. A módok között billentyűkombinációval (Fn+Q) vagy a Lenovo Vantage eszköztár használatával is válthat.",
                     "readMore": "További információ.",
                     "gotoWindows": {
                         "title": "Ugrás a Windows beállításaihoz",
@@ -706,17 +705,17 @@
                         "optimize": "rendszer optimalizálása a következőhöz",
                         "apsHint": "Az Intelligens hűtés engedélyezéséhez először telepítenie és engedélyezni kell a Lenovo Active Protection System rendszert.",
                         "options": {
-                            "quiteCool3": "Hűtési mód",
-                            "performance3": "Nagy teljesítmény",
+                            "quiteCool3": "Csendes hűtés",
+                            "performance3": "Teljesítmény",
                             "quiteCool4": "Csendes hűtés",
                             "performance4": "Teljesítmény",
                             "quiteCool5": "Csendes hűtés",
                             "performance5": "Teljesítmény",
-                            "batterySaving": "Battery Saving",
-                            "performance13": "Performance",
-                            "quiteCool13": "Quiet & Cool",
-                            "performance14": "Extreme Performance",
-                            "quiteCool14": "Intelligent Cooling"
+                            "batterySaving": "Akkumulátorkímélő",
+                            "performance13": "Teljesítmény",
+                            "quiteCool13": "Csendes hűtés",
+                            "performance14": "Különleges Teljesítmény",
+                            "quiteCool14": "Intelligens hűtés"
                         },
                         "readMore": {
                             "mode1": "Csendes mód",
@@ -725,19 +724,19 @@
                             "line1": "A csúszka a bal oldalon van.A ventilátor sebessége és a teljesítmény kisebb, így a számítógép kevésbé melegszik és csendesebb. Az akkumulátor élettartama ilyenkor a leghosszabb.",
                             "line2": "A csúszka középen van.A ventilátor sebességét és a teljesítményt a rendszer dinamikusan kiegyensúlyozza, hogy a felhasználói élmény a legjobb legyen.",
                             "line3": "A csúszka a jobb oldalon van. A ventilátor sebessége és a gép hőmérséklete a megengedett legnagyobb, hogy a gép a legjobb teljesítményt nyújtsa.",
-                            "line4": "More info"
+                            "line4": "További információk"
                         },
                         "selectedModeText": {
-                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
-                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
-                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                            "quiteCool": "Ez a mód kiegyensúlyozott ventilátorsebességet és rendszerteljesítményt biztosít, így ezzel érhető el a legjobb felhasználói élmény. Ha például játszik, a funkció optimalizálja a teljesítményt. Az irodában viszont csökkenti a gép zaját.",
+                            "batterySaving": "Ez az üzemmód maximális élettartamot biztosít az akkumulátor számára pl. a fényerő automatikus beállításával, az energiagazdálkodási beállítások megfelelő módosításával vagy a speciális képfeldolgozási funkciók letiltásával.",
+                            "performance": "Ezzel a móddal maximális rendszerteljesítmény biztosítható. Ebben a módban a gyors ventilátor hangos lehet."
                         },
                         "intelligentCoolingModesModal": {
-                            "title": "Change intelligent cooling modes",
-                            "close": "close",
+                            "title": "Az intelligens hűtési módok módosítása",
+                            "close": "bezárás",
                             "coolingModesList": {
-                                "list1": "Click on the windows battery-icon in the toolbar",
-                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                                "list1": "Kattintson az eszköztáron a Windows akkumulátorikonjára",
+                                "list2": "Megjelenik a Windows akkumulátormérője; a csúszka mozgatásával válthat az optimális idő és az optimális teljesítmény között."
                             }
                         }
                     },
@@ -748,7 +747,7 @@
                             "battery&Quite": "AKKUMULÁTOR ÉS CSENDES MŰKÖDÉS"
                         }
                     },
-                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
+                    "description5": "Az Intelligens hűtés korrigálja a ventilátor sebességét, maximalizálja a teljesítményt és optimalizálja az akkumulátor élettartamát. A funkció három üzemmóddal rendelkezik (Csendes, Kiegyensúlyozott és Teljesítményközpontú mód). A módok között a Windows teljesítmény beállítására szolgáló csúszkájával lehet váltani"
                 },
                 "powerSettings": {
                     "title": "Energiagazdálkodási beállítások",
@@ -761,8 +760,8 @@
                         "title": "Egyszerű visszatérés",
                         "description": "Ha gyakran nyitja fel és csukja le a számítógép képernyőjét, akkor a funkció engedélyezésével gyorsabbá tehető a visszatérés.",
                         "tooltip": "Ha gyakran nyitja fel és csukja le a számítógép képernyőjét, akkor ezzel a funkcióval gyorsabbá tehető a visszatérés. Ha engedélyezi a funkciót, akkor a számítógép a képernyő lehajtásakor alacsony energiafogyasztási állapotba lép, de azonnal visszatér, ha a képernyő lecsukásától számított 15 percen belül nyitja fel a képernyőt. A funkció használata esetén a notebook megpróbálja befejezni a függőben lévő tevékenységeket (például az e-mailek küldését vagy a fájlok letöltését) a rendszer működésének felfüggesztése előtt."
-					},
-					"or":"Or"
+                    },
+                    "or": "Vagy"
                 },
                 "otherSettings": {
                     "title": "Egyéb beállítások",
@@ -971,7 +970,7 @@
                         "onSunsetToSunriseScheduleDescription": "Ütemezze a naplemente és napkelte közötti időszakra a szemvédő módot",
                         "note": {
                             "title": "Megjegyzés",
-                            "description": "A napnyugta és a napkelte idejének kiszámításához a Lenovo Vantage-nek hozzá kell férnie a helyadatokhoz."
+                            "description": "Ha a Szemvédő mód engedélyezve van, ez a színhőmérséklet nem lép érvénybe. A csúszkát azonban elhúzhatja az előnézet megtekintéséhez. Ahhoz, hogy ez érvénybe lépjen, kapcsolja ki a Szemvédő módot."
                         }
                     },
                     "privacyGuard": {
@@ -989,16 +988,16 @@
                         "reset": "Hőmérséklet visszaállítása",
                         "tooltip": "Ez a funkció elsötétíti a képernyő adott részeit, így csökkentheti az energiafogyasztást és növelheti az akkumulátor élettartamát.",
                         "dropDown": {
-                            "seconds": "seconds",
-                            "minute": "minute",
-                            "minutes": "minutes",
-                            "alwaysOn": "Always on",
-                            "never": "never",
-                            "halfTime": "Half time of display off timer"
+                            "seconds": "másodperc",
+                            "minute": "perc",
+                            "minutes": "perc",
+                            "alwaysOn": "Mindig bekapcsolva",
+                            "never": "soha",
+                            "halfTime": "Képernyő kikapcsolási időzítésének felénél"
                         },
-                        "taskBarDimmer": "TASKBAR DIMMER",
-                        "backgroundDimmer": "BACKGROUND DIMMER",
-                        "displayDimmer": "DISPLAY DIMMER"
+                        "taskBarDimmer": "TÁLCA ELSÖTÉTÍTÉSE",
+                        "backgroundDimmer": "HÁTTÉR ELSÖTÉTÍTÉSE",
+                        "displayDimmer": "KÉPERNYŐ ELSÖTÉTÍTÉSE"
                     }
                 },
                 "camera": {
@@ -1030,10 +1029,10 @@
                         "sketchMode": "Skicc mód"
                     },
                     "cameraLoadingFailed": {
-                        "inUseTitle": "CAMERA IS IN USE",
-                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
-                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
-                        "loadingFailedDescription": "Close the app and try again."
+                        "inUseTitle": "A KAMERA HASZNÁLATBAN VAN",
+                        "inUseDescription": "A kamerát egy másik alkalmazás használja. Zárja be az alkalmazást, és próbálkozzon újra!",
+                        "loadingFailedTitle": "A KAMERA HASZNÁLATBAN VAN VAGY A BETÖLTÉS SIKERTELEN",
+                        "loadingFailedDescription": "Zárja be az alkalmazást, és próbálkozzon újra!"
                     }
                 }
             },
@@ -1085,15 +1084,15 @@
                             "option3": "Írja be a szöveget"
                         }
                     },
-                    "tooltip": "Content to be filled",
+                    "tooltip": "Kitöltendő tartalom",
                     "apply": {
-                        "title": "APPLY"
+                        "title": "ALKALMAZÁS"
                     },
                     "website": {
-                        "url": "WEBSITE URL"
+                        "url": "WEBHELY URL-JE"
                     },
                     "enterText": {
-                        "title": "TEXT TO BE ENTERED"
+                        "title": "MEGADANDÓ SZÖVEG"
                     }
                 }
             }
@@ -1204,7 +1203,18 @@
                     "hand": {
                         "title": "A kezek közelségének észlelése a számítógép széleinél",
                         "description": "Táblagép módban engedélyezze az ASP-t, ha nem észlelhető kézzel való használat"
-                    }
+                    },
+                    "more": "TOVÁBBIAK",
+                    "advanced-settings": "SPECIÁLIS BEÁLLÍTÁSOK",
+                    "hide": "SPECIÁLIS BEÁLLÍTÁSOK ELREJTÉSE"
+                },
+                "APS": {
+                    "more": "TOVÁBBIAK",
+                    "advancedSettings": "SPECIÁLIS BEÁLLÍTÁSOK",
+                    "hideAdvancedSettings": "SPECIÁLIS BEÁLLÍTÁSOK ELREJTÉSE",
+                    "lowSensitivity": "Alacsony érzékenység",
+                    "mediumSensitivity": "Közepes érzékenység",
+                    "highSensitivity": "Magas érzékenység"
                 }
             },
             "intelligentMedia": {
@@ -1241,14 +1251,14 @@
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
-                    "title": "Install Failed",
-                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                    "title": "A telepítés sikertelen",
+                    "desc": "A Lenovo Voice használatához próbálkozzon később."
                 }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Update",
+        "title": "Rendszerfrissítés",
         "back": "VISSZA",
         "history": "ÖSSZES ELŐZMÉNY",
         "notAvailable": "Nem érhető el.",
@@ -1294,7 +1304,7 @@
             "title": "A Lenovo támogatási weboldala"
         },
         "banner": {
-            "neverChecked": "Üdvözöljük a System Update szolgáltatásban.",
+            "neverChecked": "Üdvözöljük a Rendszerfrissítés szolgáltatásban!",
             "title": "A naprakész rendszer megfelelően működik.",
             "last": "Utolsó frissítés: ",
             "next": "Következő ütemezett frissítés: ",
@@ -1398,7 +1408,7 @@
             "overviewBlockTitle": "Az ökoszisztéma biztonságának áttekintése",
             "allDevices": "Minden eszköz",
             "myDevice": "Saját készülékem",
-            "thisComputer": "This computer",
+            "thisComputer": "Ez a számítógép",
             "secure": "BIZTONSÁGOS",
             "needAttention": "ELLENŐRIZNI KELL",
             "manageAccount": "Fiók kezelése",
@@ -1672,14 +1682,14 @@
             "title": "VPN-biztonság",
             "header": "SurfEasy VPN",
             "whatIsSufEasy": "A SurfEasy VPN titkosítja a küldött és fogadott adatokat, így Ön bármilyen internetkapcsolattal biztonságosan használhatja a számítógépet, a Mac® rendszert, az okostelefont vagy a táblagépet.",
-            "whatCanSufEasy1": "A virtual private network provider that protects you while you are online. Without a VPN, your computer may be more vulnerable to attackers and identity theft. The VPN runs silently in the background and provides security and privacy protection.",
-            "startUseSufEasy4": "SurfEasy users can enjoy 250 MB of free traffic every 30 days! Follow the steps on the &quot;Rewards&quot; tab of the SurfEasy app to get more traffic.",
-            "howToGetData": "How to get free traffic:",
-            "howToGetData1": "Confirm email to win +250 MB traffic",
-            "howToGetData2": "Add a second device to win +250 MB of traffic",
-            "howToGetData3": "Refer a friend and win +500 MB of traffic",
-            "howToGetData4": "Like SurfEasy on Facebook, earn +100 MB of traffic,",
-            "howToGetData5": "Follow SurfEasy on Twitter and win +100 MB of traffic",
+            "whatCanSufEasy1": "Olyan virtuális magánhálózati szolgáltató, amely online védelmet nyújt Önnek. VPN nélkül a számítógép sebezhetőbb lehet a támadásokkal és a személyazonosság-tolvajokkal szemben. A VPN a háttérben, csendben fut, és biztonsági és adatvédelmi tevékenységet végez.",
+            "startUseSufEasy4": "A SurfEasy-felhasználók 30 naponként 250 MB ingyenes adatforgalmat kapnak! Ha nagyobb forgalomhoz szeretne jutni, hajtsa végre a SurfEasy &quot;Jutalmak&quot; lapján lévő lépéseket.",
+            "howToGetData": "Hogyan kaphat ingyenes forgalmat:",
+            "howToGetData1": "További 250 MB forgalomhoz erősítse meg az e-mail-címét",
+            "howToGetData2": "További 250 MB forgalomhoz adjon hozzá még egy eszközt",
+            "howToGetData3": "További 500 MB forgalomhoz ajánlja a szolgáltatást a barátjának",
+            "howToGetData4": "A kedveli a SurfEasy szolgáltatást a Facebookon, 100 MB forgalmat kap",
+            "howToGetData5": "Ha követi a SurfEasy szolgáltatást a Twitteren 100 MB forgalmat kap",
             "helpKeep": "Biztonságos és privát online tevékenység a SurfEasy VPN használatával.",
             "getSufEasy": "A SurfEasy beszerzése",
             "openSufEasy": "A SurfEasy megnyitása",

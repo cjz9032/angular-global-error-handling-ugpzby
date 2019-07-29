@@ -41,7 +41,7 @@ import {
 export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	@Input() data: WifiHomeViewModel;
 	@Input() wifiIsShowMore: string;
-	isShowMore = true; // less info, more info
+	isShowMore = false; // less info, more info
 	isShowMoreLink = true; // show more link
 	region: string;
 	isWifiSecurityEnabled = true;

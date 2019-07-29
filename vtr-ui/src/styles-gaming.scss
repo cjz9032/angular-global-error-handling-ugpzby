@@ -123,6 +123,9 @@
 	}
 
 .is-gaming {
+	width: 100%;
+	height: 100%;
+	background-color: $gaming_darkest;
 	.vtr-page {
 		.vtr-page-content {
 			.vtr-page-left-column {
@@ -170,7 +173,7 @@
 									}
 								}
 								.icon-check {
-									.icon-bg {						
+									.icon-bg {
 										fa-icon {
 											color: $gaming-Darkslate-blue;
 										}
@@ -214,7 +217,7 @@
 										}
 									}
 								}
-								
+
 							}
 							&.white-theme{
 								.card{
@@ -244,20 +247,173 @@
 						}
 					}
 				}
+				.vtr-subpage {
+					.vtr-ui-header-subpage {
+						.title {
+							color: $gaming_lightest;
+						}
+						.caption {
+							color: $gaming_lightest;
+						}
+						.left-border{
+							.menu-title{
+								color: $gaming_lightest;
+							}
+							.menu-item {
+								border-bottom-style: dotted;
+								&:hover{
+									border-bottom-style: none;
+								}
+							}
+						}
+					}
+				}
+				.vtr-container-collapsible.white-theme {
+					background: $dark_cell !important;
+					.card{
+						.card-header {
+							.header{
+								color: $gaming_lightest !important;
+							}
+							.collapse-control {
+								.collapse-text, fa-icon{
+									color: $gaming_grey_lightest !important;
+								}
+							}
+						}
+						.card-body {
+							vtr-ui-row-switch {
+								.vtr-ui-switch-row.white-theme{
+									.right-icon{
+										font-size: 2.2rem !important;
+									}
+									.title {
+										color: $gaming_lightest;
+									}
+									.caption {
+										color: $gaming_grey_lightest;
+									}
+								}
+							}
+						}
+					}
+					.custom-control-label, .seperator{
+						color: $gaming_grey_lightest !important;
+					}
+					.vtr-camera-control{
+						.list-group-flush {
+							.list-group-item {
+								background-color: transparent;
+							}
+							.border-top {
+								border-top: 1px solid $screen_dark_10 !important;
+							}
+							&:first-child.list-group-item {
+								border-top-right-radius: 0 !important;
+								border-top-left-radius: 0 !important;
+							}
+							.slider-item-text {
+								color: $gaming_lightest;
+								font-size: 1.4rem;
+								font-weight: $weight_bold;
+							}
+							vtr-ui-range-slider {
+								.vtr-ui-range-slider {
+									.ng5-slider {
+										margin-top: 1.2rem;
+										margin-bottom: 3rem;
+									}
+									.label {
+										color: $gaming_grey_lightest !important;
+									}
+								}
+							}
+						}
+					}
+				}
+				.vtr-camera-control{
+					.camera-preview{
+						.feed, .base-preview, .error{
+							background-color: transparent !important;
+							border: none !important;
+						}
+					}
+				}
+				vtr-ui-switch-onoff{
+					.checkbox{
+						input {
+							&+ .switch{
+								background: $gaming_switch_light;
+								height: 2.4rem;
+								width: 5.4rem;
+								transition: all .2s ease-in;
+								small {
+									background: $gaming_switch_dark;
+									height: 1.8rem;
+									width: 1.8rem;
+									margin-top: 0.1rem;
+									transition: all .2s ease-in;
+								}
+							}
+							&.wifi-checked + .switch {
+								background: $gaming_green_gradient;
+								transition: all .2s ease-in;
+								small{
+									background: $gaming_lightest;
+									transition: all .2s ease-in;
+									left: 3.2rem;
+								}
+							}
+						}
+						.switch-label.on-label{
+							color: $gaming_lightest;
+							font-weight: bold;
+							font-size: 1.2rem;
+							padding-top: 0.1rem;
+							text-indent: -0.4rem;
+							transition: all .2s ease-in;
+							@media #{$medium-screen}{
+								padding-top: 0.3rem;
+							}
+							@media #{$small-screen}{
+								padding-top: 0.3rem;
+							}
+						}
+						.switch-label.off-label{
+							color: $gaming_switch_dark;
+							font-weight: bold;
+							font-size: 1.2rem;
+							padding-top: 0.1rem;
+							text-indent: 0;
+							transition: all .2s ease-in;
+							@media #{$medium-screen}{
+								padding-top: 0.3rem;
+							}
+							@media #{$small-screen}{
+								padding-top: 0.3rem;
+							}
+						}
+					}
+				}
 			}
 			.vtr-page-right-column {
-				background-color: $gaming_darker;
+				background-image: url('./assets/images/gaming/GradientLine@1x.png');
+				background-repeat: repeat;
+				background-size: 100% 100%;
+				//background-color: $gaming_darker;
 				//padding-left: 2.2rem;
 				padding: 0 8.5rem 4rem 4rem;
 				@media #{$small-screen} {
 					margin-top: -0.1rem;
 					padding: 6rem 3rem 1.5rem 3rem;
 					background-color: $gaming_darkest;
+					background-image: none;
 				}
 				@media #{$medium-screen} {
 					margin-top: -0.1rem;
 					padding: 6rem 6.5rem 4rem 6.5rem;
 					background-color: $gaming_darkest;
+					background-image: none;
 				}
 				vtr-autoupdate-settings{
 					.vtr-autoupdate-settings{
@@ -280,6 +436,43 @@
 						}
 					}
 				}
+				vtr-widget-questions{
+					.vtr-widget-questions{
+						background-color: auto;
+						background: $dark_cell;
+						.title {
+							color: $gaming_lightest;
+						}
+						.description {
+							color: $gaming_grey_lightest;
+							font-size: 1.2rem;
+						}
+						.vtr-ui-list-chevron {
+							.chevron-list{
+								background-color: $gaming-Darkslate-blue;
+								border: none;
+								overflow: hidden;
+								.good {
+									color: $gaming_lightest;
+									border-bottom: 1px solid $screen_dark_15;
+								}
+							}
+						}
+					}
+				}
+				.vtr-page-shift-up-medium {
+					.vtr-battery-card {
+						.container {
+							background-color: $gaming_dark !important;
+							.battery-gauge-label, .battery-conditions-tips {
+								color: $gaming_grey_lightest;
+							}
+							.battery-health {
+								color: $gaming_lightest;
+							}
+						}
+					}
+				}
 			}
 			.tooltip-click.tooltip{
 				ul {
@@ -290,6 +483,16 @@
 				.tooltip-inner {
 					.read{
 						font-family: "Segoe UI",Sans-serif;
+					}
+				}
+			}
+		}
+		.vtr-menu-header {
+			.menu-header-tab {
+				opacity: 0.7;
+				fa-icon {
+					&.menu-pointer {
+						color: $gaming_darkest !important;
 					}
 				}
 			}
@@ -305,14 +508,14 @@
 }
 .gaming-help-modal {
 	.modal-dialog {
-		top: 16rem;	
+		top: 16rem;
 		width: 80rem;
 		max-width: 100%;
 		@media #{$medium-screen} {
 			max-width: 70rem;
 			position: relative;
 	   }
-   
+
 	   @media #{$small-screen} {
 		   max-width: 50rem;
 		   position: relative;

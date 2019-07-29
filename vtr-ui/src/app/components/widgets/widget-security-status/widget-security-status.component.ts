@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input, HostListener, NgZone } from '@angular/core';
+import { Component, OnInit, Input, HostListener, NgZone } from '@angular/core';
 import { SecurityAdvisor, WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { WidgetItem } from 'src/app/data-models/security-advisor/widget-security-status/widget-item.model';
@@ -10,20 +10,26 @@ import { WindowsHelloWidgetItem } from 'src/app/data-models/security-advisor/wid
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { RegionService } from 'src/app/services/region/region.service';
+import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 
 @Component({
 	selector: 'vtr-widget-security-status',
 	templateUrl: './widget-security-status.component.html',
 	styleUrls: ['./widget-security-status.component.scss']
 })
-export class WidgetSecurityStatusComponent implements OnInit, OnDestroy {
+export class WidgetSecurityStatusComponent implements OnInit {
 
 	@Input() securityAdvisor: SecurityAdvisor;
 	items: Array<WidgetItem>;
 	region: string;
 	isRS5OrLater: boolean;
 
-	constructor(private commonService: CommonService, private translateService: TranslateService, private regionService: RegionService, private ngZone: NgZone) {}
+	constructor(
+		private commonService: CommonService,
+		private translateService: TranslateService,
+		private regionService: RegionService,
+		private ngZone: NgZone,
+		private windowsHelloService: WindowsHelloService) {}
 
 	ngOnInit() {
 		this.items = [];
@@ -43,10 +49,10 @@ export class WidgetSecurityStatusComponent implements OnInit, OnDestroy {
 			this.securityAdvisor.wifiSecurity.getWifiSecurityState();
 		}
 		if (windowsHello.fingerPrintStatus) {
-			this.showWindowsHello(windowsHello);
+			this.showWindowsHelloItem(windowsHello);
 		}
 		windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
-			this.showWindowsHello(windowsHello);
+			this.showWindowsHelloItem(windowsHello);
 		});
 	}
 
@@ -54,16 +60,9 @@ export class WidgetSecurityStatusComponent implements OnInit, OnDestroy {
 		this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 	}
 
-	showWindowsHello(windowsHello: WindowsHello) {
+	showWindowsHelloItem(windowsHello: WindowsHello) {
 		const windowsHelloItem = this.items.find(item => item.id === 'sa-widget-lnk-wh');
-		const version = this.commonService.getWindowsVersion();
-		if (version === 0) {
-			this.isRS5OrLater = true;
-		} else {
-			this.isRS5OrLater = this.commonService.isRS5OrLater();
-		}
-		if (this.isRS5OrLater
-		&& (typeof windowsHello.fingerPrintStatus === 'string')) {
+		if (this.windowsHelloService.showWindowsHello()) {
 			if (!windowsHelloItem) {
 				this.items.push(new WindowsHelloWidgetItem(this.securityAdvisor.windowsHello, this.commonService, this.translateService));
 			}
@@ -78,10 +77,10 @@ export class WidgetSecurityStatusComponent implements OnInit, OnDestroy {
 	showVpn() {
 		this.regionService.getRegion().subscribe({
 			next: x => { this.region = x; },
-			error: () => { this.region = 'US'; }
+			error: () => { this.region = 'us'; }
 		});
 		const vpnItem = this.items.find(item => item.id === 'sa-widget-lnk-vpn');
-		if (this.region !== 'CN') {
+		if (this.region !== 'cn') {
 			if (!vpnItem) {
 				this.items.splice(3, 0, new VPNWidgetItem(this.securityAdvisor.vpn, this.commonService, this.translateService));
 			}

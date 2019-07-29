@@ -93,7 +93,7 @@
 		}
 	}
 	::ng-deep .vtr-ui-rounded-rectangle-radio {
-		width: 16.5rem;
+		width: 25.5rem;
 		@media #{$mediaquery_X22} {
 			width: 25.5rem;
 		}
@@ -160,6 +160,12 @@
 		margin: 0 0 0 1.7rem;
 		padding-right: 1.4rem;
 	}
+
+	::ng-deep .vtr-ui-button .button-box {
+		@media #{$mediaquery_12} {
+			width: 85%;
+		}
+	}
 }
 
 .vtr-page-shift-up-medium {
@@ -171,3 +177,4 @@
 		margin-top: -6rem;
 	}
 }
+

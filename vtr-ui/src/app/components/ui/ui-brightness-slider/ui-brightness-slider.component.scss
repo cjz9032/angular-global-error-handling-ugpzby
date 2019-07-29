@@ -12,26 +12,16 @@
                 background: $gaming_lighting_gradient;
             }
             &.ng5-slider-pointer {
-                background: $gaming_lighting_gradient;
+                background-image: url('../../../../assets/gaming-icons/Brightness@2x.png');
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: 100%;
                 height: 3rem;
                 width: 3rem;
                 top: -1.3rem;
-            }
-            &.ng5-slider-pointer{
+                border-radius: 50%;
                 &::after{
-                    content: "\42";
-                    font-family: "gaming-icon" !important;
-                    font-style: normal !important;
-                    font-weight: normal !important;
-                    font-variant: normal !important;
-                    text-transform: none !important;
-                    speak: none;
-                    line-height: 1;
-                    color: $gaming_lightest;
-                    font-size: 2rem;
-                    background: none;
-                    top: calc(50% - 1rem);
-                    left:  calc(50% - 1rem);
+                    background:none;
                 }
             }
         }

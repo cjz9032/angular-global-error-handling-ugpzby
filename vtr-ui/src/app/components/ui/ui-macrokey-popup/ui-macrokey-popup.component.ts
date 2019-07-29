@@ -15,7 +15,6 @@ export class UiMacrokeyPopupComponent implements OnInit {
 	}
 
 	submitAction(isConfirm: boolean = false) {
-		//this.showModal = false;
 		this.action.emit(isConfirm);
 	}
 }

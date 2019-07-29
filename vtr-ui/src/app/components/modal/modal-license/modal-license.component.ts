@@ -34,7 +34,7 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 				const openSource = results.replace(/\< /g, '<').replace(/ \>/g, '>').replace(/\</g, '< ').replace(/\>/g, ' >');
 				this.articleBody = `<pre>${openSource}</pre>`;
 			} else {
-				this.articleBody = this.sanitizer.sanitize(SecurityContext.HTML, results);
+				this.setIframeUrl();
 			}
 		});
 		this.pageDuration = 0;
@@ -53,6 +53,11 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 		};
 		this.sendMetricsAsync(pageViewMetrics);
 		console.log(pageViewMetrics);
+	}
+
+	setIframeUrl() {
+			const licenseAgreementIframe: any = document.getElementById('license-agreement-iframe');
+			licenseAgreementIframe.src = this.url;
 	}
 
 	sendMetricsAsync(data: any) {

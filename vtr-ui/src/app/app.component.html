@@ -1,6 +1,10 @@
 <div [ngClass]="{'is-gaming':deviceService.isGaming, 'is-arm':deviceService.isArm}" class="disable-text-selection">
-	<vtr-menu-main  *ngIf="isMachineInfoLoaded" [loadMenuItem]="machineInfo"></vtr-menu-main>
-	<div class="vtr-app container-fluid">
+	<vtr-menu-main
+		*ngIf="isMachineInfoLoaded && !deviceService.isAndroid"
+		[loadMenuItem]="machineInfo"
+		>
+	</vtr-menu-main>
+	<div class="vtr-app container-fluid" [ngClass]="{'is-android': deviceService.isAndroid}">
 		<div class="row">
 			<div class="col p-0">
 				<router-outlet></router-outlet>

@@ -13,12 +13,7 @@ export class UiLightingSingleColorComponent implements OnInit, OnChanges {
 	selectedOption: Options = new Options(1, 'Always On');
 	@Output() public changeSingleColorOption = new EventEmitter<any>();
 	@Input() options: any;
-	// options = [
-	// 	new Options(1, 'Always On'),
-	// 	new Options(2, 'Fast Blink'),
-	// 	new Options(3, 'Medium Blink'),
-	// 	new Options(4, 'Slow Blink')
-	// ];
+
 
 	getValue(optionId) {
 		this.selectedOption = this.options.filter((item) => item.id === optionId)[0];
@@ -28,12 +23,7 @@ export class UiLightingSingleColorComponent implements OnInit, OnChanges {
 	public singleColorOpt: any = LightEffectSimpleType;
 	constructor() { }
 
-	ngOnInit() {
-		// const colorKeys = Object.keys(LightEffectSimpleType).filter(String);
-		// colorKeys.map(colorKey => {
-		// 	console.log(`color key = ${colorKey}, value = ${LightEffectSimpleType[colorKey]}`);
-		// });
-	}
+	ngOnInit() {}
 	ngOnChanges(changes) {
 		if (!isUndefined(changes.selectedOptionId)) {
 			if (changes.selectedOptionId.previousValue !== changes.selectedOptionId.currentValue) {

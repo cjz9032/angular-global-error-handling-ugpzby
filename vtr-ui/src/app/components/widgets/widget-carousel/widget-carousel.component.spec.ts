@@ -2,24 +2,24 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {WidgetCarouselComponent} from './widget-carousel.component';
 
-describe('WidgetCarouselComponent', () => {
-  // let component: WidgetCarouselComponent;
-  // let fixture: ComponentFixture<WidgetCarouselComponent>;
+xdescribe('WidgetCarouselComponent', () => {
+  let component: WidgetCarouselComponent;
+  let fixture: ComponentFixture<WidgetCarouselComponent>;
 
   beforeEach(async(() => {
-    // TestBed.configureTestingModule({
-    //   declarations: [WidgetCarouselComponent]
-    // })
-    //   .compileComponents();
+    TestBed.configureTestingModule({
+      declarations: [WidgetCarouselComponent]
+    })
+      .compileComponents();
   }));
 
   beforeEach(() => {
-    // fixture = TestBed.createComponent(WidgetCarouselComponent);
-    // component = fixture.componentInstance;
-    // fixture.detectChanges();
+    fixture = TestBed.createComponent(WidgetCarouselComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('should create', () => {
-    // expect(component).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 });
