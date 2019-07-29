@@ -48,7 +48,7 @@ export class WidgetAutocloseComponent implements OnInit {
 
   public displayAutoCloseList() {
     try {
-      this.gamingAutoCloseService.getAutoCloseList().then((list: any) => {
+      this.gamingAutoCloseService.getAppsAutoCloseList().then((list: any) => {
         console.log('get autoclose list from js bridge ------------------------>', JSON.stringify(list));
       });
     } catch (error) {

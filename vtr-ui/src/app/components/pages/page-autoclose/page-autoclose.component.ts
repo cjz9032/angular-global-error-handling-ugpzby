@@ -27,7 +27,7 @@ export class PageAutocloseComponent implements OnInit {
       Brand: 'Lenovo'
     };
 
-    this.cmsService.fetchCMSContent(queryOptions).then((response: any) => {
+    this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
       const cardContentPositionA = this.cmsService.getOneCMSContent(
         response,
         'half-width-top-image-title-link',
@@ -50,4 +50,4 @@ export class PageAutocloseComponent implements OnInit {
       }
     });
   }
-  }
+}

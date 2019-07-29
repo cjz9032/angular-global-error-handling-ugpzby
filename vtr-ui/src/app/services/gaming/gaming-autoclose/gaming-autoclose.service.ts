@@ -37,10 +37,33 @@ export class GamingAutoCloseService {
     }
   }
 
-  getAutoCloseList(): Promise<boolean> {
+  getAppsAutoCloseList(): Promise<boolean> {
     try {
       if (this.isShellAvailable) {
         return this.gamingAutoClose.getAutoCloseList();
+      }
+      return undefined;
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
+
+  addAppsAutoCloseList(value: any): Promise<boolean> {
+    try {
+      if (this.isShellAvailable) {
+        return this.gamingAutoClose.addAutoCloseList(value);
+      }
+      return undefined;
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
+  delAppsAutoCloseList(value: any): Promise<boolean> {
+    try {
+      if (this.isShellAvailable) {
+        return this.gamingAutoClose.delAutoCloseList(value);
       }
       return undefined;
     } catch (error) {
