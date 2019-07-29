@@ -3,6 +3,7 @@ import { QaService } from "../../../services/qa/qa.service";
 import { QA } from "../../../data-models/qa/qa.model";
 import { ActivatedRoute } from "@angular/router";
 import { TranslateService } from '@ngx-translate/core';
+import {DomSanitizer} from '@angular/platform-browser' //VAN-6426, Sanitization Exception 
 
 @Component({
 	selector: 'vtr-page-support-detail',
@@ -30,7 +31,8 @@ export class PageSupportDetailComponent implements OnInit {
 
 	constructor(public qaService: QaService,
 		private translate: TranslateService,
-		private activateRoute: ActivatedRoute) {
+		private activateRoute: ActivatedRoute,
+		private sanitizer: DomSanitizer) {
 		
 		/*		
 		qaService.setTranslationService(this.translate);
@@ -72,12 +74,20 @@ export class PageSupportDetailComponent implements OnInit {
 	}
 
 
-	ngOnInit() {
+	ngOnInit() {}
+
+	//VAN-6426, Sanitization Exception, internal content
+	getSafeDescription(html:any) {
+        return this.sanitizer.bypassSecurityTrustHtml(html);
 	}
+
 
 	//VAN-5872, server switch feature
 	ngOnDestroy() {
 		this.qaService.destroyChangeSubscribed();
 	}
 
+	onNavigate() {
+		window.open('https://forums.lenovo.com/', '_blank');
+	}
 }

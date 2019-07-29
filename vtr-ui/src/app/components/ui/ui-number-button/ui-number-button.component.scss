@@ -36,7 +36,7 @@
 		svg {
 			margin-right: 1rem;
 		}
-		@media #{$mediaquery_X3} {
+		@media #{$mediaquery_12} {
 			display: inline-block;
 		}
 	}
@@ -44,7 +44,7 @@
 	ul {
 		padding: 0;
 		&.numberpad-popup {
-			@media #{$mediaquery_X3} {
+			@media #{$mediaquery_12} {
 				display: none;
 				padding: 1.4rem;
 				background-color: $gaming_shade;

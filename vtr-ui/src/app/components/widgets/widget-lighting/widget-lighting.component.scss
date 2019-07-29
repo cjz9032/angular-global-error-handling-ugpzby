@@ -25,9 +25,6 @@
 			margin-bottom: 3rem;
 		}
 		.multi-state-toggle {
-			// display: flex;
-			// align-items: center;
-			// justify-content: space-between;
 			height: 5rem;
 			width: 100%;
 			border-radius: 5rem;
@@ -84,7 +81,7 @@
 					width: 25%;
 					height: 4.2rem;
 					border-radius: 4.2rem;
-					margin: 0.4rem 0.2rem;
+					margin: 0.4rem 0rem;
 					display: flex;
 					align-items: center;
 					justify-content: center;
@@ -110,51 +107,28 @@
 				width: 25%;
 				height: 4.2rem;
 				border-radius: 4.2rem;
-				//margin: 0.4rem 0.2rem;
 				transition: all 0.3s ease-in-out;
 				left: 0;
 				color: white !important;
 			}
 			#off_radio:checked {
-				// & ~ #off {
-				// 	color: $gaming_lightest;
-				// }
 				& ~ .toggle {
 					left: 0%;
 				}
 			}
 			#first_radio:checked {
-				// & ~ #first_lbl {
-				// 	color: $gaming_lightest;
-				// }
 				& ~ .toggle {
 					left: 25%;
 				}
 			}
 			#second_radio:checked {
-				// & ~ #second_lbl {
-				// 	color: $gaming_lightest;
-				// }
 				& ~ .toggle {
 					left: 50%;
 				}
 			}
 			#third_radio:checked {
-				// & ~ #third_lbl {
-				// 	color: $gaming_lightest;
-				// }
 				& ~ .toggle {
 					left: 75%;
-
-					// @media #{$mediaquery_X5} {
-					// 	left: 74.6%;
-					//   }
-					//   @media #{$mediaquery_X6} {
-					// 	left: 74.25%;
-					//   }
-					//   @media #{$mediaquery_X34} {
-					// 	left: 73%;
-					//   }
 				}
 			}
 		}

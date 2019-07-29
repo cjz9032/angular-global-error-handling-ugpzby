@@ -224,7 +224,8 @@ export class ConfigService {
 		},
 		forArm: false,
 		subitems: []
-	}, {
+	},
+	{
 		id: 'home-security',
 		label: 'common.menu.homeSecurity',
 		path: 'home-security',
@@ -237,7 +238,8 @@ export class ConfigService {
 		icon: ['fal', 'home-lg-alt'],
 		forArm: false,
 		subitems: []
-	}, {
+	},
+	{
 		id: 'user',
 		label: 'User',
 		path: 'user',
@@ -263,6 +265,19 @@ export class ConfigService {
 			exact: true
 		},
 		forArm: true,
+		subitems: []
+	}, {
+		id: 'privacy',
+		label: 'common.menu.privacy',
+		path: 'privacy/breaches',
+		icon: ['fal', 'user-shield'],
+		metricsEvent: 'itemClick',
+		metricsParent: 'navbar',
+		metricsItem: 'link.privacy',
+		routerLinkActiveOptions: {
+			exact: true
+		},
+		forArm: false,
 		subitems: []
 	}, {
 		id: 'device',
@@ -369,19 +384,6 @@ export class ConfigService {
 			subitems: []
 		}]
 	}, {
-		id: 'privacy',
-		label: 'common.menu.privacy',
-		path: 'privacy/breaches',
-		icon: ['fal', 'user-shield'],
-		metricsEvent: 'itemClick',
-		metricsParent: 'navbar',
-		metricsItem: 'link.privacy',
-		routerLinkActiveOptions: {
-			exact: true
-		},
-		forArm: false,
-		subitems: []
-	}, {
 		id: 'support',
 		label: 'common.menu.support',
 		path: 'support',
@@ -394,7 +396,8 @@ export class ConfigService {
 		},
 		forArm: false,
 		subitems: []
-	}, {
+	},
+	{
 		id: 'home-security',
 		label: 'common.menu.homeSecurity',
 		path: 'home-security',
@@ -412,7 +415,8 @@ export class ConfigService {
 			'assets/images/connected-home-security/welcome-page-two.png',
 			'assets/images/connected-home-security/welcome-chs-logo.png'
 		]
-	}, {
+	},
+	{
 		id: 'user',
 		label: 'User',
 		path: 'user',
@@ -435,27 +439,24 @@ export class ConfigService {
 		}
 	}
 
-	getMenuItemsAsync(isGaming) {
-		return this.deviceService.getMachineInfo().then((machineInfo) => {
+	getMenuItemsAsync(isGaming): Promise<any> {
+		return new Promise((resolve, reject) => {
+			const machineInfo = this.deviceService.getMachineInfoSync();
 			let resultMenu = Object.assign([], this.menuItemsGaming);
-
 			if (isGaming) {
-				return resultMenu;
+				resolve(resultMenu);
 			}
-
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
-
 			if (this.countryCodes.indexOf(country.toLowerCase()) !== -1) {
 				resultMenu = Object.assign([], this.menuItemsPrivacy);
 			} else {
 				resultMenu = Object.assign([], this.menuItems);
 			}
-
 			if (country.toLowerCase() !== 'us') {
 				resultMenu = resultMenu.filter(item => item.id !== 'home-security');
 			}
-
-			return resultMenu;
+			resolve(resultMenu);
 		});
 	}
+
 }

@@ -4,25 +4,19 @@
 			<div class="col col-12 offline-info-background">
 				<div class="d-flex align-items-center w-100">
 					<div class="offline-icon">
-						<fa-icon [icon]="['fal', 'wifi-slash']"
-							class="icon"></fa-icon>
+						<fa-icon [icon]="['fal', 'wifi-slash']" class="icon"></fa-icon>
 					</div>
 					<div class="w-100 offline-content">
 						<div class="row">
 							<div class="col title">{{title}}</div>
 						</div>
 						<div class="row" *ngIf="isSubtitleVisible">
-							<div class="col subtitle"
-								[innerHTML]="subtitle"></div>
+							<div class="col subtitle" [innerHTML]="subtitle"></div>
 						</div>
-						<div class="row"
-							*ngIf="isButtonVisible">
+						<div class="row" *ngIf="isButtonVisible">
 							<div class="col button-row">
-								<button class="action-button"
-									vtrMetrics
-									metricsEvent="FeatureClick"
-									metricsParent="update-to-date"
-									metricsItem="check-for-updates"
+								<button class="action-button" vtrMetrics metricsEvent="FeatureClick"
+									metricsParent="update-to-date" metricsItem="check-for-updates"
 									(click)="onConnectivityClick($event)">{{buttonText}}</button>
 							</div>
 						</div>

@@ -35,7 +35,7 @@ but not to any other element on the page. using ::ng-deep
 					background: transparent;
 					height: $thumb-size;
 					width: $thumb-size;
-					top: -1px;
+					top: 0;
 					left: 0;
 					font-family: "icomoon";
 					font-size: 2rem;

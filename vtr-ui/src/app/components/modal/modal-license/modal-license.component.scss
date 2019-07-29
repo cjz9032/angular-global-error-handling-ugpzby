@@ -1,7 +1,6 @@
 @import '../../../app.theme.scss';
 
 .vtr-modal-license {
-
 	padding: 1rem 0 0;
 	display: flex;
 	flex-flow: column;
@@ -19,6 +18,17 @@
 		padding-bottom: 4rem;
 	}
 
+	.iframe-content{
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+	.article-frame{
+		width: 100% !important;
+		height: 100% !important;
+		border: none;
+	}
+
 	fa-icon {
 		font-size: 2rem;
 		color: $main;
@@ -31,11 +41,6 @@
 		margin-bottom: 3rem;
 	}
 
-	img,
-	iframe {
-		max-width: 100%;
-		margin-bottom: 3rem;
-	}
 }
 
 .close-btn {

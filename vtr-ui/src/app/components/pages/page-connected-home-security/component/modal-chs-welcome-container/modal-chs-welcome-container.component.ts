@@ -118,17 +118,17 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit,
 		this.isLenovoIdLogin = this.chs.account.lenovoId.loggedIn;
 	}
 
-	closeModal() {
-		this.activeModal.close('close');
+	closeModal(reason) {
+		this.activeModal.close(reason);
 	}
 
 	next(switchPage, isLenovoIdLogin, isLocationServiceOn) {
-		const callback = () => {
+		const callback = (lenovoIdStatus) => {
 			if (isLocationServiceOn) {
-				if (isLenovoIdLogin && this.chs.account.state === CHSAccountState.local && this.isOnline) {
+				if (lenovoIdStatus && this.chs.account.state === CHSAccountState.local && this.isOnline) {
 					this.startTrial();
 				} else {
-					this.closeModal();
+					this.closeModal('success');
 				}
 			} else {
 				this.switchPage = 4;
@@ -143,7 +143,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit,
 					if (this.chs.account.state === CHSAccountState.local && this.isOnline) {
 						this.startTrial();
 					} else {
-						this.closeModal();
+						this.closeModal('success');
 					}
 				} else {
 					this.switchPage = 4;
@@ -159,7 +159,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit,
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
 			this.chs.off(EventTypes.lenovoIdStatusChange, callback);
 			if (isLocationServiceOn) {
-				this.closeModal();
+				this.closeModal('success');
 			} else {
 				this.switchPage = 4;
 				this.showPageLocation = true;
@@ -168,7 +168,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit,
 			if (isLenovoIdLogin && this.chs.account.state === CHSAccountState.local && this.isOnline) {
 				this.startTrial();
 			} else {
-				this.closeModal();
+				this.closeModal('success');
 			}
 		}
 	}
@@ -201,10 +201,13 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit,
 		this.loading = true;
 		this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
 		this.chs.createAndGetAccount().then((trial: boolean) => {
-			if (!trial) { return; }
-			this.closeModal();
+			if (!trial) {
+				this.closeModal('startTrailError');
+			} else {
+				this.closeModal('success');
+			}
 		}).catch(() => {
-			this.loading = false;
+			this.closeModal('startTrailError');
 		});
 	}
 

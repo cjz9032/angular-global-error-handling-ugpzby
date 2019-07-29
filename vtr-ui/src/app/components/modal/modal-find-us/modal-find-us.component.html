@@ -1,0 +1,48 @@
+<div class="About-Modal"
+	id="findUs-dialog">
+	<a role="button"
+		type="button"
+		href="javascript:;"
+		class="close-btn"
+		id="find-us-close-button"
+		aria-label="find-us-close-button"
+		vtrMetrics
+		metricsItem="FindUsModalCloseButton"
+		metricsEvent="FeatureClick"
+		metricsParent="Page.Support.FindUs"
+		(click)="onCancelClick()">
+		<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
+			alt=""
+			srcset="">
+	</a>
+	<div class="content py-40"
+		*ngIf="region === 'cn'">
+		<div class="img-con pt-4 pb-40">
+			<img class="qr-img"
+				src="/assets/images/wechat-qrcode.png"
+				alt="{{ 'support.needHelp.listContactUsOnWechat' | translate}}" />
+		</div>
+		<div class="text-center title mb-2">{{ 'support.needHelp.listContactUsOnWechat' | translate}}</div>
+		<div class="text-center description">{{ 'support.needHelp.weChatDescription' | translate}}</div>
+	</div>
+	<div class="content py-40"
+		*ngIf="region !== 'cn'">
+		<a href="https://www.facebook.com/LenovoSupport"
+			target="_blank"
+			class="goto-facebook"
+			id="find-us-goto-facebook"
+			aria-label="find-us-goto-facebook"
+			vtrMetrics
+			metricsItem="GotoLenovoSupportFacebook"
+			metricsEvent="FeatureClick"
+			metricsParent="Page.Support.FindUs">
+			<div class="img-con pt-4 pb-40">
+				<img class="fb-img"
+					src="/assets/images/logo-facebook.png"
+					alt="{{ 'support.needHelp.listContactUsOnFacebook' | translate}}" />
+			</div>
+			<div class="text-center title mb-2">{{ 'support.needHelp.listContactUsOnFacebook' | translate}}</div>
+			<div class="text-center description">{{ 'support.needHelp.facebookDescription' | translate}}</div>
+		</a>
+	</div>
+</div>

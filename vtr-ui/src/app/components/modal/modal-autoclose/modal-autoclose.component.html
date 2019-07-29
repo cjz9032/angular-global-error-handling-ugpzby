@@ -1,0 +1,121 @@
+<div class="modal-main-wrapper">
+  <div class="modal-body">
+    <div class="row justify-content-end">
+      <div class="btn-close">
+        <button type="button" class="close" aria-hidden="true" (click)="closeModal()">
+          <fa-icon [icon]="['fal', 'times']"></fa-icon>
+        </button>
+      </div>
+    </div>
+    <div class="content-body">
+      <h1>{{ 'gaming.autoClose.modalTurnAutoClose.title' | translate }}</h1>
+      <p>{{ 'gaming.autoClose.modalTurnAutoClose.body' | translate }}</p>
+    </div>
+    <div class="check-asked">
+      <div for="asked">
+        <input type="checkbox" id="asked">
+        <div class="status-check"></div>
+        <div class="status-text">Don't ask again.</div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div>
+        <button class="btn enable-button"
+          (click)="showAddAppsModal(addAppsPopup)">{{ 'gaming.autoClose.modalTurnAutoClose.btnConfirm' | translate}}</button>
+        <a (click)="closeModal()"
+          class="cancel-link active">{{ 'gaming.autoClose.modalTurnAutoClose.btnCancel' | translate}}</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #addAppsPopup let-modal>
+  <div class="modal-header">
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <svg width="16px" height="16px" viewBox="0 0 12 11" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <!-- Generator: sketchtool 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+        <title>7601BE32-D46C-4CCD-85BB-EC869A0B24A8</title>
+        <desc>Created with sketchtool.</desc>
+        <g id="Workspace" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Design-Device/Search" transform="translate(-1001.000000, -210.000000)" fill="#fff" fill-rule="nonzero">
+            <g id="AT/ICO/Close" transform="translate(1000.000000, 208.000000)">
+              <path
+                d="M7.67575806,7.24585291 L12.023514,11.5115905 C12.24428,11.7281919 12.2476561,12.0827482 12.0310548,12.3035143 C11.8144534,12.5242803 11.4598971,12.5276564 11.2391311,12.311055 L6.89134258,8.04528542 L2.54355406,12.311055 C2.32278805,12.5276564 1.96823175,12.5242803 1.7516304,12.3035143 C1.53502904,12.0827482 1.53840516,11.7281919 1.75917117,11.5115905 L6.09851455,7.25410678 L1.86189595,3.09740993 C1.64112994,2.88080856 1.63775382,2.52625224 1.85435517,2.30548622 C2.07095653,2.0847202 2.42551283,2.08134408 2.64627884,2.29794545 L6.88294588,6.45468982 L11.0412369,2.21644637 C11.2578383,1.99568036 11.6123946,1.99230424 11.8331606,2.2089056 C12.0539267,2.42550695 12.0573028,2.78006325 11.8407014,3.00082926 L7.67575806,7.24585291 Z"
+                id="Combined-Shape-Copy"
+                transform="translate(6.891343, 7.259980) scale(1, -1) rotate(-90.000000) translate(-6.891343, -7.259980) ">
+              </path>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="title-content">
+      <h3>
+        {{'gaming.autoClose.modalAddApps.title' | translate }}
+      </h3>
+      <p>{{ 'gaming.autoClose.modalAddApps.body' | translate }}</p>
+    </div>
+    <div class="app-add-container">
+      <ul class="app-list">
+        <li>
+          <div>
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px" y="0px" viewBox="0 0 512.003 512.003" style="enable-background:new 0 0 512.003 512.003;"
+              xml:space="preserve">
+              <path style="fill:#F44336;"
+                d="M61.818,89.204c119.008-138.496,339.68-111.168,422.144,50.624c-58.08,0.032-148.992-0.032-198.24,0
+                              	c-35.712,0-58.784-0.8-83.744,12.352c-29.344,15.456-51.52,44.096-59.232,77.76L61.818,89.204z" />
+              <path style="fill:#2196F3;" d="M170.842,256.02c0,46.944,38.176,85.12,85.088,85.12s85.088-38.176,85.088-85.12
+                              	s-38.176-85.12-85.088-85.12C208.986,170.868,170.842,209.076,170.842,256.02z" />
+              <path style="fill:#4CAF50;"
+                d="M288.922,367.444c-47.744,14.176-103.648-1.536-134.24-54.4
+                              	c-23.36-40.32-85.12-147.872-113.152-196.8C-56.774,266.9,27.93,472.18,206.362,507.22L288.922,367.444z" />
+              <path style="fill:#FFC107;"
+                d="M334.938,170.868c39.776,36.992,48.448,96.896,21.504,143.328
+                              	c-20.288,35.008-85.088,144.352-116.48,197.28c183.84,11.328,317.856-168.832,257.312-340.64L334.938,170.868z" />
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+            </svg>
+          </div>
+          <div>Chrome</div>
+          <div class="btn-add-app">
+            <input type="checkbox">
+            <div class="action"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-template>
