@@ -18,7 +18,10 @@
 				*ngIf="!isBlocked"></i>
 			<i [class]="offIconDefinition"
 				[ngClass]="{'disabled' : isBlocked}"
-				*ngIf="isBlocked"></i>
+				*ngIf="isBlocked && !disable"></i>
+				<i [class]="iconDefinition"
+				[ngClass]="{'disable-container' : disable}"
+				*ngIf="isBlocked && disable"></i>
 		</div>
 		<div class="row">
 			<div class="col">

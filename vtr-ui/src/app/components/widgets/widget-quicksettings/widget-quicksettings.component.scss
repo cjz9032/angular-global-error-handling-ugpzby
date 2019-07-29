@@ -21,3 +21,21 @@
 		width: 33%;
 	}
 }
+.permission-note {
+	width: 100%;
+	background-color: $shade_lightest;
+	font-size: 1.3rem;
+	border: 1px solid $shade_lighter;
+	justify-content: space-between;
+	.note-icon{
+	//font-size: 20px;
+	position:relative;
+	height: 20px;
+	width: 20px;
+    top: calc(50% - 10px);
+	}
+	.privacy-button {
+		font-size: 1.3rem;
+		letter-spacing: 0.76px;
+	}
+}

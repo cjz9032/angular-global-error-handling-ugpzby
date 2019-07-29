@@ -17,6 +17,7 @@ import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { DisplayService } from 'src/app/services/display/display.service';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-widget-quicksettings',
@@ -28,6 +29,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public microphoneStatus = new FeatureStatus(false, true);
 	public eyeCareModeStatus = new FeatureStatus(true, true);
 	private notificationSubscription: Subscription;
+	// public modalStatus;
+	public test: any;
 	public quickSettingsWidget = [
 		{
 			tooltipText: 'MICROPHONE',
@@ -90,13 +93,25 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				default:
 					break;
 			}
+			if (notification.type === DeviceMonitorStatus.OOBEStatus) {
+				this.test = notification.payload;
+				if (notification.payload) {
+				this.getMicrophoneStatus();
+				this.displayService.startMonitorForCameraPermission();
+				this.getCameraPrivacyStatus();
+				}
+			}
 		}
 	}
 
 	private getQuickSettingStatus() {
-		this.getMicrophoneStatus();
-		this.displayService.startMonitorForCameraPermission();
-		this.getCameraPrivacyStatus();
+		const modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial) || {page : 1};
+		if (modalStatus.page === 2) {
+			this.getMicrophoneStatus();
+			this.displayService.startMonitorForCameraPermission();
+			this.getCameraPrivacyStatus();
+			
+		}		
 		this.initEyecaremodeSettings();
 		this.startEyeCareMonitor();
 	}
@@ -360,5 +375,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			this.displayService
 				.stopEyeCareMonitor();
 		}
+	}
+	onClick(path) {
+		this.deviceService.launchUri(path);
 	}
 }

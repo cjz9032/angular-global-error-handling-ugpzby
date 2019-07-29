@@ -3,7 +3,6 @@
 .vtr-widget-switch-icon {
 	display: inline-block;
 	cursor: pointer;
-
 	.loader {
 		position: absolute;
 		top: 50%;
@@ -137,4 +136,8 @@
 }
 .disable-state {
 	opacity: 0.65;
+}
+.disable-container {
+	cursor: not-allowed !important;
+	color: lightgray;
 }

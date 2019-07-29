@@ -559,6 +559,17 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	public getGamingAutoClose() {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			console.log('getGamingAuto========>>>>>>>', this.phoenix.gaming);
+			return this.phoenix.gaming.gamingAutoClose;
+		}
+		return undefined;
+	}
 	/***
      * returns macroKeyClearInfo object from VantageShellService of JS Bridge
      ***/
