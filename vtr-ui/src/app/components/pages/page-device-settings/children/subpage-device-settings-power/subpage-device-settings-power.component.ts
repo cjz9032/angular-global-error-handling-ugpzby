@@ -70,6 +70,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	toggleEasyResumeStatus = false;
 	showAirplanePowerModeSection = false;
 	toggleAirplanePowerModeFlag = false;
+	airplaneAutoDetection = false;
 	usbChargingInBatteryModeStatus = true;
 	headerCaption =
 		'This section enables you to dynamically adjust thermal performance and maximize the battery life.' +
@@ -291,6 +292,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.getMachineInfo();
 		this.startMonitor();
 		this.getVantageToolBarStatus();
+		this.getAirplaneModeAutoDetectionOnThinkPad();
 		if (this.machineType === 1) {
 			this.batteryCountStatusEventRef = this.getBatterStatusEvent.bind(this);
 			this.getBatteryThresholdInformation();
@@ -601,6 +603,46 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		} catch (error) {
 			console.error(error.message);
 		}
+	}
+
+	private getAirplaneModeAutoDetectionOnThinkPad() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.getAirplaneModeAutoDetectionOnThinkPad()
+					.then((status: boolean) => {
+						console.log('getAirplaneModeAutoDetectionOnThinkPad.then', status);
+						this.airplaneAutoDetection = status;
+					})
+					.catch(error => {
+						console.error('getAirplaneModeAutoDetectionOnThinkPad', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	private setAirplaneModeAutoDetectionOnThinkPad(status: boolean) {
+		try {
+			console.log('setAirplaneModeAutoDetectionOnThinkPad entered', status);
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.setAirplaneModeAutoDetectionOnThinkPad(status)
+					.then((value: boolean) => {
+						console.log('setAirplaneModeAutoDetectionOnThinkPad.then', value);
+					})
+					.catch(error => {
+						console.error('setAirplaneModeAutoDetectionOnThinkPad', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+
+	onAirplaneAutoModeStatusChange() {
+		console.log('onAirplaneAutoModeStatusChange', this.airplaneAutoDetection);
+		this.setAirplaneModeAutoDetectionOnThinkPad(this.airplaneAutoDetection)
 	}
 	// End ThinkPad
 
