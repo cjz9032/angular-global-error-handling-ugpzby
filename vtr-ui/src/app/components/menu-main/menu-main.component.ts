@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, DoCheck, HostListener, ViewChild, AfterViewInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, ViewChild, AfterViewInit, Input, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 
@@ -53,7 +53,6 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 
 	constructor(
 		private router: Router,
-		public route: ActivatedRoute,
 		public configService: ConfigService,
 		public commonService: CommonService,
 		public userService: UserService,
