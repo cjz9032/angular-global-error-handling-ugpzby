@@ -23,8 +23,8 @@ import { environment } from 'src/environments/environment';
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.scss'],
-	providers: [TimerService]
+	styleUrls: [ './app.component.scss' ],
+	providers: [ TimerService ]
 })
 export class AppComponent implements OnInit {
 	title = 'vtr-ui';
@@ -141,7 +141,7 @@ export class AppComponent implements OnInit {
 	}
 
 	public sendAppResumeMetric() {
-		this.timerServcie.start();	// restart timer
+		this.timerServcie.start(); // restart timer
 		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionResume, null, null, 0));
 	}
 
@@ -268,14 +268,8 @@ export class AppComponent implements OnInit {
 					this.isMachineInfoLoaded = true;
 					this.machineInfo = value;
 					this.isGaming = value.isGaming;
-					// MVP2 - Gaming don't need multi-language support in MVP2
-					if (!this.isGaming) {
-						this.updateLanguageSettings(value);
-					} else {
-						this.translate.use('en');
-					}
-
-					// if first launch, send a firstrun metric
+					this.updateLanguageSettings(value);
+					// if first launch, send a first run metric
 					const hadRunApp: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
 					const appFirstRun = !hadRunApp;
 					if (appFirstRun && this.deviceService.isShellAvailable) {
@@ -294,13 +288,13 @@ export class AppComponent implements OnInit {
 		} else {
 			this.isMachineInfoLoaded = true;
 			this.machineInfo = { hideMenus: false };
-			this.router.navigate(['/dashboard']);
+			this.router.navigate([ '/dashboard' ]);
 		}
 	}
 
 	private updateLanguageSettings(value: any) {
 		try {
-			if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
+			if (value && ![ 'zh', 'pt' ].includes(value.locale.substring(0, 2).toLowerCase())) {
 				this.translate.use(value.locale.substring(0, 2));
 				this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
 			} else {
@@ -396,7 +390,7 @@ export class AppComponent implements OnInit {
 		});
 	}
 
-	@HostListener('window:keyup', ['$event'])
+	@HostListener('window:keyup', [ '$event' ])
 	onKeyUp(event: KeyboardEvent) {
 		try {
 			if (this.deviceService.isShellAvailable) {
@@ -426,7 +420,7 @@ export class AppComponent implements OnInit {
 		}
 	}
 
-	@HostListener('window:load', ['$event'])
+	@HostListener('window:load', [ '$event' ])
 	onLoad(event) {
 		const scale = 1 / (window.devicePixelRatio || 1);
 		const content = `shrink-to-fit=no, width=device-width, initial-scale=${scale}, minimum-scale=${scale}`;
@@ -450,7 +444,7 @@ export class AppComponent implements OnInit {
 	}
 
 	// Defect fix VAN-2988
-	@HostListener('window:keydown', ['$event'])
+	@HostListener('window:keydown', [ '$event' ])
 	disbleCtrlACV($event: KeyboardEvent) {
 		// console.log('$event.keyCode ' + $event.keyCode);
 		if (
