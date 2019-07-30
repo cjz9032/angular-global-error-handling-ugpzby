@@ -33,12 +33,21 @@
 			<vtr-ui-header-subpage [items]="headerMenuItems"
 				[title]="'device.deviceSettings.power.title' | translate"
 				[caption]="'device.deviceSettings.power.description' | translate"
-				[menuTitle]="'device.deviceSettings.power.jumpto.title' | translate"></vtr-ui-header-subpage>
-		</div>
+				[menuTitle]="'device.deviceSettings.power.jumpto.title' | translate"
+				[ariaLabel]="'deviceSettings-power'"
+				id="device-settings-power-jumpoTo"
+				aria-label="device-settings-power-jumpoTo"></vtr-ui-header-subpage>
 	</div>
-	<vtr-power-smart-settings (isPowerSmartSettingHidden)="hidePowerSmartSetting(false)"
+	</div>
+	<vtr-power-smart-settings
+	id="device-settings-power-smart-settings"
+	aria-label="device-settings-power-smart-settings"
+	(isPowerSmartSettingHidden)="hidePowerSmartSetting(false)"
 		*ngIf="!isDesktopMachine"></vtr-power-smart-settings>
-	<vtr-smart-standby *ngIf="!isDesktopMachine"
+	<vtr-smart-standby
+	id="device-settings-power-smartStandby"
+	aria-label="device-settings-power-smartStandby"
+	*ngIf="!isDesktopMachine"
 		(smartStandbyCapability)="onSetSmartStandbyCapability($event)">
 	</vtr-smart-standby>
 	<div *ngIf="showAirplanePowerModeSection || conservationModeStatus?.available || expressChargingStatus?.available || isChargeThresholdAvailable"
@@ -46,7 +55,9 @@
 		id="battery">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.batterySettings.title' | translate"
-				[isCollapsed]="false">
+				[isCollapsed]="false"
+				id="device-settings-power-batterySettings"
+				aria-label="device-settings-power-batterySettings">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngIf="showAirplanePowerModeSection">
@@ -59,11 +70,14 @@
 							[tooltipText]="batterySettings.items[0].tooltipText"
 							[isSwitchChecked]="toggleAirplanePowerModeFlag"
 							[showChildContent]=true
-							(toggleOnOff)="onToggleOfAirplanePowerMode($event)">
+							(toggleOnOff)="onToggleOfAirplanePowerMode($event)"
+							id="device-settings-power-batterySettings-airPlanePower"
+							aria-label="device-settings-power-batterySettings-airPlanePower">
 							<div class="row">
 								<div class="col-12">
 									<div class="custom-control custom-checkbox always-on-usb-checkbox">
 										<input id="cb-airplane-mode"
+											attr.aria-label="cb-airplane-mode"
 											type="checkbox"
 											name="airplane-mode-checkbox-id"
 											[disabled]="!toggleAirplanePowerModeFlag"
@@ -95,7 +109,9 @@
 							[showChildContent]="true"
 							[isSwitchChecked]="showBatteryThreshold"
 							(toggleOnOff)="showBatteryThresholdsettings($event.switchValue);"
-							[tooltipText]="'device.deviceSettings.power.batterySettings.batteryThreshold.tooltip' | translate">
+							[tooltipText]="'device.deviceSettings.power.batterySettings.batteryThreshold.tooltip' | translate"
+							id="device-settings-power-batterySettings-batteryThreshold"
+							aria-label="device-settings-power-batterySettings-batteryThreshold">
 							<div *ngIf="showBatteryThreshold">
 								<vtr-battery-charge-threshold-settings
 									[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.settings.title1' | translate"
@@ -110,7 +126,9 @@
 									[selectedStartAtCharge]="selectedStartAtChargeVal"
 									[isCheckedAuto]="primaryCheckBox"
 									(sendBatteryDetails)="setChargeThresholdValues($event, 1, 'changedValues')"
-									(autoChecked)="setChargeThresholdValues($event, 1, 'autoChecked')">
+									(autoChecked)="setChargeThresholdValues($event, 1, 'autoChecked')"
+									id="device-settings-power-batterySettings-batteryThresholdSettings1"
+									aria-label="device-settings-power-batterySettings-batteryThresholdSettings1">
 								</vtr-battery-charge-threshold-settings>
 
 								<vtr-battery-charge-threshold-settings *ngIf="responseData && responseData.length > 1"
@@ -125,11 +143,15 @@
 									[selectedStartAtCharge]="selectedStartAtChargeVal1"
 									[isCheckedAuto]="secondaryCheckBox"
 									(sendBatteryDetails)="setChargeThresholdValues($event, 2, 'changedValues')"
-									(autoChecked)="setChargeThresholdValues($event, 2, 'autoChecked')">
+									(autoChecked)="setChargeThresholdValues($event, 2, 'autoChecked')"
+									id="device-settings-power-batterySettings-batteryThresholdSettings2"
+									aria-label="device-settings-power-batterySettings-batteryThresholdSettings2">
 								</vtr-battery-charge-threshold-settings>
 								<vtr-battery-charge-threshold-settings *ngIf="showWarningMsg"
 									[displayNoteOnly]="true"
-									[showWarningMsg]="showWarningMsg">
+									[showWarningMsg]="showWarningMsg"
+									id="device-settings-power-batterySettings-batteryThresholdSettings3"
+									aria-label="device-settings-power-batterySettings-batteryThresholdSettings3">
 
 								</vtr-battery-charge-threshold-settings>
 							</div>
@@ -152,7 +174,9 @@
 							[isSwitchChecked]="expressChargingStatus.status"
 							[disabled]="expressChargingLock"
 							[showLoaderState]="conservationModeLock"
-							(toggleOnOff)="changeBatteryMode($event,'expressCharging')">
+							(toggleOnOff)="changeBatteryMode($event,'expressCharging')"
+							id="device-settings-power-batterySettings-expressCharging"
+							aria-label="device-settings-power-batterySettings-expressCharging">
 						</vtr-ui-row-switch>
 					</li>
 					<li class=""
@@ -169,7 +193,9 @@
 							[isSwitchChecked]="conservationModeStatus.status"
 							[disabled]="conservationModeLock"
 							[showLoaderState]="expressChargingLock"
-							(toggleOnOff)="changeBatteryMode($event,'conservationMode')">
+							(toggleOnOff)="changeBatteryMode($event,'conservationMode')"
+							id="device-settings-power-batterySettings-conservationMode"
+							aria-label="device-settings-power-batterySettings-conservationMode">
 						</vtr-ui-row-switch>
 					</li>
 
@@ -185,7 +211,9 @@
 		*ngIf="showPowerSettings()">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
-				[isCollapsed]="false">
+				[isCollapsed]="false"
+				id="device-settings-power-powerSettings"
+				aria-label="device-settings-power-powerSettings">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngIf="!isDesktopMachine">
@@ -200,7 +228,9 @@
 							[rightIcon]="powerSettings[0].rightImageSource"
 							[showChildContent]="true"
 							[tooltipText]="powerSettings[0].tooltipText"
-							(toggleOnOff)="onToggleOfAlwaysOnUsb($event)">
+							(toggleOnOff)="onToggleOfAlwaysOnUsb($event)"
+							id="device-settings-power-powerSettings-alwaysUSB"
+							aria-label="device-settings-power-powerSettings-alwaysUSB">
 							<!-- <div class="auto-set-checkbox left-margin"
 								[ngClass]="{'disable': toggleAlwaysOnUsbFlag === false}">
 								<input type="checkbox"
@@ -226,6 +256,7 @@
 									<div class="custom-control custom-checkbox always-on-usb-checkbox"
 										*ngIf="usbChargingInBatteryModeStatus">
 										<input id="cb-always-on-usb"
+											attr.aria-label="cb-always-on-usb	"
 											type="checkbox"
 											name="always-on-usb-checkbox-id"
 											[disabled]="!toggleAlwaysOnUsbFlag"
@@ -255,7 +286,9 @@
 							[leftIcon]="['icomoon','icomoon-LE-Easy-resume2x']"
 							[rightIcon]="powerSettings[1].rightImageSource"
 							[tooltipText]="'device.deviceSettings.power.powerSettings.easyResume.tooltip' | translate"
-							(toggleOnOff)="onToggleOfEasyResume($event)">
+							(toggleOnOff)="onToggleOfEasyResume($event)"
+							id="device-settings-power-powerSettings-easyResume"
+							aria-label="device-settings-power-powerSettings-easyResume">
 						</vtr-ui-row-switch>
 					</li>
 				</ul>
@@ -269,7 +302,9 @@
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible componentName="'device.deviceSettings.power.otherSettings.title' | translate"
 				[cardTitle]="'device.deviceSettings.power.otherSettings.title' | translate"
-				[isCollapsed]="false">
+				[isCollapsed]="false"
+				id="device-settings-power-otherSettings"
+				aria-label="device-settings-power-otherSettings">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngFor="let item of otherSettings">
@@ -282,7 +317,9 @@
 							[isLastChild]=true
 							[leftIcon]="item.leftImageSource"
 							[isSwitchChecked]="vantageToolbarStatus.status"
-							(toggleOnOff)="onVantageToolBarStatusToggle($event)">
+							(toggleOnOff)="onVantageToolBarStatusToggle($event)"
+							id="device-settings-power-otherSettings-toolBar"
+							aria-label="device-settings-power-otherSettings-toolBar">
 						</vtr-ui-row-switch>
 					</li>
 				</ul>
@@ -295,7 +332,9 @@
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible componentName="'device.deviceSettings.power.energyStar.title' | translate"
 				[cardTitle]="'device.deviceSettings.power.energyStar.title' | translate"
-				[isCollapsed]="false">
+				[isCollapsed]="false"
+				id="device-settings-power-energyStar"
+				aria-label="device-settings-power-energyStar">
 				<div class="row energystar-container">
 					<div class="col-lg-2 col-md-2 col-sm-12">
 						<img class="img-fluid mx-auto d-block"
