@@ -14,6 +14,7 @@ export class SendAnalyticsDirective implements OnInit, OnDestroy {
 	@Input() metricsParam?: string | object; // ItemParm
 	@Input() pageContext?: string; // PageContext
 	@Input() metricsParent?: string; // ItemParent
+	@Input() customPageName?: string;
 
 	pageDuration: number;
 
@@ -60,7 +61,7 @@ export class SendAnalyticsDirective implements OnInit, OnDestroy {
 				PageDuration: this.pageDuration,
 			};
 
-			this.analyticsService.sendPageViewData(dataToSendOnPageView);
+			this.analyticsService.sendPageViewData(dataToSendOnPageView, this.customPageName);
 		}
 	}
 }

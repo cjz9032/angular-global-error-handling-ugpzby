@@ -57,10 +57,10 @@ export class AnalyticsService {
 		}
 	}
 
-	sendPageViewData(data: DataToSendOnPageView) {
+	sendPageViewData(data: DataToSendOnPageView, customPageName: string) {
 		const dataToSend = {
 			...data,
-			PageName: this.getPageName(),
+			PageName: customPageName || this.getPageName(),
 			ItemType: ItemTypes.PageView,
 		};
 		this.send(dataToSend);
