@@ -50,7 +50,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 	@Output() readMoreClick = new EventEmitter<boolean>();
 	@Output() tooltipClick = new EventEmitter<boolean>();
 	@Output() resetClick = new EventEmitter<Event>();
-
+	@Input() toolTipStatus = false;
 	public contentExpand = false;
 
 

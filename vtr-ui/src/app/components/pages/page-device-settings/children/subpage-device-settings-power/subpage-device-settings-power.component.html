@@ -58,7 +58,27 @@
 							[leftIcon]="batterySettings.items[0].leftImageSource"
 							[tooltipText]="batterySettings.items[0].tooltipText"
 							[isSwitchChecked]="toggleAirplanePowerModeFlag"
+							[showChildContent]=true
 							(toggleOnOff)="onToggleOfAirplanePowerMode($event)">
+							<div class="row">
+								<div class="col-12">
+									<div class="custom-control custom-checkbox always-on-usb-checkbox">
+										<input id="cb-airplane-mode"
+											type="checkbox"
+											name="airplane-mode-checkbox-id"
+											[disabled]="!toggleAirplanePowerModeFlag"
+											[(ngModel)]="airplaneAutoDetection"
+											(ngModelChange)='onAirplaneAutoModeStatusChange()'
+											class="custom-control-input"
+											checked="" />
+										<!-- [disabled]="!toggleAlwaysOnUsbFlag" -->
+										<label class="custom-control-label "
+											for="cb-airplane-mode">
+											{{ 'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate }}
+										</label>
+									</div>
+								</div>
+							</div>
 						</vtr-ui-row-switch>
 					</li>
 

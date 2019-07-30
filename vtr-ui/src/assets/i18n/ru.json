@@ -3,341 +3,327 @@
         "dashboard": {
             "device": {
                 "quickSettings": {
-                    "title": "Thermal Mode",
+                    "title": "Темп. режим",
                     "status": {
-                        "performance": "Performance",
-                        "balance": "Balance",
-                        "quiet": "Quiet"
+                        "performance": "Производ-ть",
+                        "balance": "Баланс",
+                        "quiet": "Тихий"
                     },
                     "statusText": {
-                        "perText": "Higher CPU usage, Higher fan speed",
-                        "balText": "Normal CPU and fan speed",
-                        "quietText": "Lower CPU usage, Lower fan speed"
+                        "perText": "Выше загрузка ЦП и скорость вент.",
+                        "balText": "Обычн. загрузка ЦП и скорость вент.",
+                        "quietText": "Ниже загрузка ЦП и скорость вент."
                     },
-                    "wifiSecurity": "Wifi Security",
+                    "wifiSecurity": "Безопасность WiFi",
                     "dolby": "Dolby",
-                    "rapidCharge": "Rapid Charge"
+                    "rapidCharge": "Быстрая зарядка"
                 },
                 "legionEdge": {
-                    "title": "CPU Overclock",
+                    "title": "Разгон ЦП",
                     "status": {
-                        "alwayson": "On",
-                        "whenGaming": "When Gaming",
-                        "off": "Off"
+                        "alwayson": "Вкл.",
+                        "whenGaming": "Во время игры",
+                        "off": "Выкл."
                     },
                     "statusText": {
-                        "onText": "CPU Overclocking will be activated",
-                        "gamingText": "CPU Overclocking will be activated automatically while game launches",
-                        "offText": "CPU Overclocking will be disabled"
+                        "onText": "Разгон ЦП будет активирован",
+                        "gamingText": "Разгон ЦП будет активирован автоматически при запуске игры",
+                        "offText": "Разгон ЦП будет отключен"
                     },
-                    "ramOverlock": "RAM Overclock",
+                    "ramOverlock": "Разгон ОЗУ",
                     "popup": {
-                        "text": "Change will be effective after restarting computer.",
-                        "button": "ok"
+                        "text": "Изменение вступит в силу после перезапуска компьютера.",
+                        "button": "ОК"
                     },
                     "driverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "You need install driver for RAM Overclock to  make it effective",
-                        "button": "Install",
-                        "link": "cancel",
-                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
-                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
+                        "headerText": "Требуется установка драйвера",
+                        "text": "Установите драйвер, чтобы активировать разгон ОЗУ (требуется перезагрузка)",
+                        "button": "Установить",
+                        "link": "отмена",
+                        "networkBoostText": "Для ускорения сети необходимо установить соответствующий драйвер",
+                        "hybridModeText": "Для гибридного режима необходимо установить соответствующий драйвер",
+                        "cpuOverclockText": "Установите драйвер, чтобы активировать разгон ЦП (требуется перезагрузка)"
                     },
-                    "autoClose": "Auto Close",
-                    "networkBoost": "Network Boost",
-                    "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock",
+                    "autoClose": "Автозакрытие",
+                    "networkBoost": "Ускорение сети",
+                    "hybridMode": "Гибридный режим",
+                    "touchpadLock": "Блокировка сенсорной панели",
                     "lightingDriverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "Please install driver",
-                        "button": "Install",
-                        "link": "cancel"
+                        "headerText": "Требуется установка драйвера",
+                        "text": "Установите драйвер, чтобы активировать подсветку (требуется перезагрузка)",
+                        "button": "Установить",
+                        "link": "отмена"
                     },
                     "lightingColorMessage": {
-                        "text": "Selecting color not available to this effect."
+                        "text": "Выбор цвета для этого эффекта недоступен."
                     }
                 },
                 "systemTools": {
-                    "power": "Power",
-                    "media": "Media",
-                    "macroKey": "Marco Key",
-                    "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update",
-                    "header": "System Tools"
+                    "power": "Питание",
+                    "media": "Мультимедиа",
+                    "macroKey": "Клавиша макроса",
+                    "hardwareScan": "Сканирование оборудования",
+                    "systemUpdate": "Обновление системы",
+                    "header": "Служебные средства"
                 },
                 "lighting": {
-                    "title": "Lighting Customize",
-                    "header": "Lighting"
+                    "title": "Настройка подсветки",
+                    "header": "Гроза"
                 },
                 "legionEdgeModal": {
-                    "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
-                    "line2": "<b>Feature Management Overview</b> <br> Some features not available on all devices",
-                    "line3": "<b>CPU Overclocking </b><br> Boost the maximum speed for your processor",
-                    "line4": "<b>RAM Overclocking </b><br> Boost the maximum speed for your memory",
-                    "line5": "<b>Network Boost </b><br> Prioritize network traffic for the game you're playing",
-                    "line6": "<b>Dolby </b><br> Tune your audio specifically for gaming with Dolby technology",
-                    "line7": "<b>Hybrid Mode </b><br> Disable advanced GPU settings when not gaming to boost battery performance",
-                    "line8": "<b>Rapid Charge </b><br> Game on the go longer with quicker battery charging",
-                    "line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
-                    "line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
-                    "line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control"
+                    "line1": "Vantage Edge автоматически настраивает параметры с учетом характера использования. \n Максимальная производительность в играх, сниженный расход заряда аккумулятора вне игры.",
+                    "line2": "<b>Обзор управления функциями</b> <br> Некоторые функции доступны не на всех устройствах",
+                    "line3": "<b>Разгон ЦП </b><br> Повышение максимальной частоты процессора",
+                    "line4": "<b>Разгон ОЗУ </b><br> Повышение максимальной частоты памяти",
+                    "line5": "<b>Ускорение сети </b><br> Повышение приоритета сетевого трафика для текущей игры",
+                    "line6": "<b>Dolby </b><br> Специальная настройка аудиосистемы для игры с помощью технологии Dolby",
+                    "line7": "<b>Гибридный режим </b><br> Отключить доп. настройки ГП вне игры для снижения расхода заряда аккумулятора",
+                    "line8": "<b>Быстрая зарядка </b><br> Увеличение длительности игры в дороге благодаря ускоренной зарядке аккумулятора",
+                    "line9": "<b>Блокировка сенсорной панели </b><br> Предотвращение ошибочного ввода за счет отключения сенсорной панели во время игры",
+                    "line10": "<b>Автозакрытие </b><br> Отключение ненужных процессов перед началом игры для высвобождения максимального объема ресурсов системы",
+                    "line11": "<b>Темп. режим </b><br> Настройте скорость вент. и контроль охлаждения в профиле устройства"
                 },
                 "systemInfo": {
-                    "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                    "systenTooltip": "Наведите указатель мыши на ЦП/графический процессор/ОЗУ и разные накопители для просмотра их описания, включая сведения о производителе и модели"
                 },
                 "systemStatus": {
-                    "info": "INFO"
+                    "info": "ИНФОРМАЦИЯ"
                 }
             }
         },
         "common": {
             "menu": {
                 "support": {
-                    "title": "Support",
-                    "sub1": "Support",
+                    "title": "Поддержка",
+                    "sub1": "Поддержка",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
             }
         },
         "macroKey": {
-            "title": "Macro Key",
-            "introLine": "You can record a series of key input, and use them in gaming or other operations.",
+            "title": "Клавиша макроса",
+            "introLine": "Вы можете записать последовательность нажатий клавиш и использовать их в играх или других задачах.",
             "status": {
                 "on": {
-                    "title": "On",
-                    "description": "Always Enabled"
+                    "title": "Вкл.",
+                    "description": "Всегда включена"
                 },
                 "whileGaming": {
-                    "title": "Macro Key enabled only when gaming",
-                    "description": "It will be enabled when you game and remain as num key when you don't."
+                    "title": "Клавиша макроса включена только в играх",
+                    "description": "Она будет включена во время игр, а вне игры будет выполнять функцию клавиши Num."
                 },
                 "off": {
-                    "title": "Off",
-                    "description": "Always Off"
+                    "title": "Выкл.",
+                    "description": "Всегда выключена"
                 }
             },
             "details": {
                 "intro": {
-                    "noNumber": "SELECT A MACRO KEY",
-                    "title": "CREATE A MACRO KEY FOR",
-                    "line1": "click the start recording button below",
-                    "line2": "type in macro key",
-                    "line3": "stop recording when finishing typing"
+                    "noNumber": "ВЫБРАТЬ КЛАВИШУ МАКРОСА",
+                    "title": "СОЗДАТЬ КЛАВИШУ МАКРОСА ДЛЯ",
+                    "line1": "нажмите кнопку начала записи ниже",
+                    "line2": "введите клавишу макроса",
+                    "line3": "остановите запись после окончания ввода"
                 },
                 "buttons": {
-                    "start": "START RECORDING",
-                    "stop": "STOP RECORDING",
+                    "start": "НАЧАТЬ ЗАПИСЬ",
+                    "stop": "ОСТАНОВИТЬ ЗАПИСЬ",
                     "numberPrefix": "NUM"
                 },
                 "recording": {
-                    "title": "START TYPING",
-                    "description": "20 inputs within 20 seconds can be recorded."
+                    "title": "НАЧАТЬ ВВОД",
+                    "description": "В течение 20 секунд можно записать 20 нажатий."
                 },
                 "recorded": {
-                    "title": "MACRO KEY FOR ",
-                    "deleteKey": "Delete Key",
-                    "clear": "Clear",
+                    "title": "КЛАВИША МАКРОСА ДЛЯ ",
+                    "deleteKey": "Удалить клавишу",
+                    "clear": "Очистить",
                     "intervalStatus": {
                         "keep": {
-                            "title": "Keep Delay",
-                            "description": "Intervals of key actions will be kept and applied when using this macro key."
+                            "title": "Сохранить задержку",
+                            "description": "Интервалы между действиями клавиш будут сохранены и применены при использовании этой клавиши макроса."
                         },
                         "ignore": {
-                            "title": "Ignore Delay",
-                            "description": "Intervals of key actions will be ignored."
+                            "title": "Игнорировать задержку",
+                            "description": "Интервалы между действиями клавиш будут игнорироваться."
                         }
                     },
                     "repeatStatus": {
                         "repeat1": {
-                            "title": "No Repeat",
-                            "description": "No Repeat"
+                            "title": "Не повторять",
+                            "description": "Не повторять"
                         },
                         "repeat2": {
-                            "title": "Repeat 2 Times",
-                            "description": "Repeats 2 times"
+                            "title": "Повторить 2 раза",
+                            "description": "Повторяется 2 раза"
                         },
                         "repeat3": {
-                            "title": "Repeat 3 Times",
-                            "description": "Repeats 3 times"
+                            "title": "Повторить 3 раза",
+                            "description": "Повторяется 3 раза"
                         },
                         "repeat4": {
-                            "title": "Repeat 4 Times",
-                            "description": "Repeats 4 times"
+                            "title": "Повторить 4 раза",
+                            "description": "Повторяется 4 раза"
                         },
                         "repeat5": {
-                            "title": "Repeat 5 Times",
-                            "description": "Repeats 5 times"
+                            "title": "Повторить 5 раз",
+                            "description": "Повторяется 5 раз"
                         },
                         "repeat6": {
-                            "title": "Repeat 6 Times",
-                            "description": "Repeats 6 times"
+                            "title": "Повторить 6 раз",
+                            "description": "Повторяется 6 раз"
                         },
                         "repeat7": {
-                            "title": "Repeat 7 Times",
-                            "description": "Repeats 7 times"
+                            "title": "Повторить 7 раз",
+                            "description": "Повторяется 7 раз"
                         },
                         "repeat8": {
-                            "title": "Repeat 8 Times",
-                            "description": "Repeats 8 times"
+                            "title": "Повторить 8 раз",
+                            "description": "Повторяется 8 раз"
                         },
                         "repeat9": {
-                            "title": "Repeat 9 Times",
-                            "description": "Repeats 9 times"
+                            "title": "Повторить 9 раз",
+                            "description": "Повторяется 9 раз"
                         },
                         "repeat10": {
-                            "title": "Repeat 10 Times",
-                            "description": "Repeats 10 times"
+                            "title": "Повторить 10 раз",
+                            "description": "Повторяется 10 раз"
                         }
                     },
                     "list": {
                         "header": {
-                            "col1": "Key Action",
-                            "col2": "Interval"
+                            "col1": "Действие клавиши",
+                            "col2": "Интервал"
                         },
                         "footer": {
-                            "title": "Next input.."
+                            "title": "Следующее нажатие.."
                         }
                     }
                 }
             },
-            "numberpad": {
-                "number": {
-                    "zero": "Num 0",
-                    "one": "Num 1",
-                    "two": "Num 2",
-                    "three": "Num 3",
-                    "four": "Num 4",
-                    "five": "Num 5",
-                    "six": "Num 6",
-                    "seven": "Num 7",
-                    "eight": "Num 8",
-                    "nine": "Num 9"
-                },
-                "macro": {
-                    "m1": "M1",
-                    "m2": "M2"
-                }
-            },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure you want to clear this macro key?"
+                    "title": "Вы действительно хотите стереть эту клавишу макроса?"
                 },
                 "timeoutRecording": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if no input for 20 seconds."
+                    "title": "Время ожидания записи истекло.",
+                    "body": "При отсутствии ввода в течение 20 секунд время ожидания записи истечет."
                 },
                 "maximumInput": {
-                    "title": "Maximum Input Reached.",
-                    "body": "Macro key can only store inputs less than 20."
+                    "title": "Достигнуто максимальное количество нажатий.",
+                    "body": "Клавиша макроса может хранить не более 20 нажатий."
                 },
                 "inputStopped": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if the input stopped for more than 10 seconds."
+                    "title": "Время ожидания записи истекло.",
+                    "body": "Если ввод прекратится более чем на 10 секунд, время ожидания записи истечет."
                 },
                 "confirmButton": {
-                    "btnClear": "Clear",
-                    "btnCancel": "Cancel"
+                    "btnClear": "Очистить",
+                    "btnCancel": "Отмена"
                 },
-                "btnOk": "OK"
+                "btnOk": "ОК"
             },
             "recording": {
-                "title": "Recording Macro Key For"
+                "title": "Запись клавиши макроса для"
+            },
+            "initalKey": {
+                "zero": 0,
+                "m1": "M1"
             }
         },
         "lightingProfile": {
-            "title": "Lighting",
+            "title": "Гроза",
             "effect": {
                 "option1": {
-                    "title": "On"
+                    "title": "Вкл."
                 },
                 "option2": {
-                    "title": "Flicker"
+                    "title": "Мерцание"
                 },
                 "option3": {
-                    "title": "Breath"
+                    "title": "Дыхание"
                 },
                 "option4": {
-                    "title": "Wave"
+                    "title": "Волна"
                 },
                 "option5": {
-                    "title": "Smooth"
+                    "title": "Плавно"
                 },
                 "option6": {
-                    "title": "CPU Temperature"
+                    "title": "Температура ЦП"
                 },
                 "option7": {
-                    "title": "CPU Utilization"
+                    "title": "Использование ЦП"
                 },
                 "option8": {
-                    "title": "Off"
+                    "title": "Выкл."
                 },
                 "apply": {
-                    "title": "APPLY"
+                    "title": "ПРИМЕНИТЬ"
                 },
                 "applied": {
-                    "title": "APPLIED"
+                    "title": "ПРИМЕНЕНО"
                 }
             },
             "brightness": {
                 "text1": {
-                    "title": "*Brightness setting doesn't apply on "
+                    "title": "*Параметр яркости не применяется при "
                 },
                 "text2": {
-                    "title": " effect"
+                    "title": " эффект"
                 }
             },
             "lightingSingleLightingOption": {
                 "option1": {
-                    "title": "Always On"
+                    "title": "Всегда включено"
                 },
                 "option2": {
-                    "title": "Fast Blink"
+                    "title": "Быстрое мигание"
                 },
                 "option3": {
-                    "title": "Medium Blink"
+                    "title": "Умеренное мигание"
                 },
                 "option4": {
-                    "title": "Slow Blink"
+                    "title": "Медленное мигание"
                 },
                 "option5": {
-                    "title": "Blink Level"
+                    "title": "Скорость мигания"
                 }
             },
             "profile": {
                 "text1": {
-                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                    "title": "Подсветка отключена. Выберите вкладку профиля выше, чтобы включить и настроить его."
                 },
                 "text2": {
-                    "title": "effect"
+                    "title": "эффект"
                 },
                 "text3": {
-                    "title": "Effect"
+                    "title": "Эффект"
                 }
             },
             "button": {
                 "default": {
-                    "title": "Set to default"
+                    "title": "Установить значения по умолчанию"
                 }
             },
             "profileheading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "Выкл."
                 },
                 "text2": {
-                    "title": "Profile 1"
+                    "title": "Профиль 1"
                 },
                 "text3": {
-                    "title": "Profile 2"
+                    "title": "Профиль 2"
                 },
                 "text4": {
-                    "title": "Profile 3"
+                    "title": "Профиль 3"
                 }
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "Выкл."
                 },
                 "text2": {
                     "title": 1
@@ -349,21 +335,21 @@
                     "title": 3
                 },
                 "Customize": {
-                    "title": "Customize"
+                    "title": "Настройка"
                 },
                 "heading": {
-                    "title": "Select Profile:"
+                    "title": "Выберите профиль:"
                 }
             },
             "colourwheel": {
                 "text1": {
-                    "title": "Selecting colour not available to this effect."
+                    "title": "Выбор цвета для этого эффекта недоступен."
                 },
                 "text2": {
-                    "title": "APPLY"
+                    "title": "ПРИМЕНИТЬ"
                 },
                 "text3": {
-                    "title": "APPLIED"
+                    "title": "ПРИМЕНЕНО"
                 },
                 "text4": {
                     "title": "R:"
@@ -375,7 +361,7 @@
                     "title": "B:"
                 },
                 "text7": {
-                    "title": "Color"
+                    "title": "Цвет"
                 }
             }
         }
@@ -681,8 +667,7 @@
                     "title": "ПЕРЕЙТИ К ПАРАМЕТРАМ",
                     "battery": "Аккумулятор",
                     "power": "Питание",
-                    "other": "Прочее",
-                    "smartStandby": "Интеллектуальный режим ожидания"
+                    "other": "Прочее"
                 },
                 "powerSmartSettings": {
                     "title": "Интеллектуальные параметры питания",
@@ -1492,7 +1477,10 @@
             "listLenovoCommunity": "Сообщество Lenovo",
             "listContactCustomerService": "Обратиться в службу поддержки клиентов",
             "listContactUsOnWechat": "Свяжитесь с нами в WeChat",
-            "weChatDescription": "Отправьте нам вопрос в WeChat, и мы быстро ответим на него"
+            "weChatDescription": "Отправьте нам вопрос в WeChat, и мы быстро ответим на него",
+            "listFindUs": "Find us on social media",
+            "listContactUsOnFacebook": "Contact us on Facebook",
+            "facebookDescription": "Click to find us on Facebook"
         },
         "quicklinks": {
             "title": "Быстрые ссылки",
@@ -1533,7 +1521,13 @@
             "maliciousNetwork": "В этом месяце ваш компьютер был защищен от подключения к вредоносным сетям в количестве {{maliciousWifi}}.",
             "good": "БЕЗОПАСНАЯ",
             "malicious": "ВРЕДОНОСНАЯ",
-            "suspicious": "ПОДОЗРИТЕЛЬНАЯ"
+            "suspicious": "ПОДОЗРИТЕЛЬНАЯ",
+            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+            "antivirus": "Being protected by anti-virus software",
+            "password": "Having strong and complex passwords managed in a safe way",
+            "vpn": "Monitoring your network exposure to attackers",
+            "wifi": "Encrypting your personal data when using public WiFi",
+            "windowsHello": "Protecting your device using safe login options"
         },
         "antivirus": {
             "common": {
@@ -1627,7 +1621,8 @@
                 "headerText": "Ошибка",
                 "bodyText": "Мы обнаружили, что вам не хватает критических компонентов Vantage. Эти компоненты будут загружены в фоновом режиме. Повторите попытку позже.",
                 "closeText": "закрыть",
-                "offlineText": "Мы обнаружили, что вы не подключены к Интернету. Некоторые части этой страницы будут функционировать некорректно. Подключитесь к Интернету повторно"
+                "offlineText": "Мы обнаружили, что вы не подключены к Интернету. Некоторые части этой страницы будут функционировать некорректно. Подключитесь к Интернету повторно",
+                "accountText": "Account creation failed. Please try again later."
             }
         },
         "homeprotection": {

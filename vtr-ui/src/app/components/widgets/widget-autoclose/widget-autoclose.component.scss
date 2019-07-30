@@ -84,6 +84,7 @@
 						background: $gaming_grey_lightest;
 						line-height: 4.5rem;
 						cursor: pointer;
+						text-align: center;
 					}
 				}
 				li {
@@ -94,6 +95,7 @@
 					padding: 2rem 3rem;
 					position: relative;
 					margin-bottom: 3rem;
+					width: 14.28%;
 					div:nth-child(1) {
 						width: 4.5rem;
 						height: 4.5rem;
@@ -104,6 +106,8 @@
 						font-size: 1.6rem;
 						margin-top: 0.5rem;
 						text-align: center;
+						height: 5rem;
+						overflow: hidden;
 					}
 					.remove-app {
 						opacity: 0;
