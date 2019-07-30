@@ -1,7 +1,7 @@
 <div class="landing"
 	 vtrSendAnalytics
 	 [metricsEvent]="'PageView'">
-	<div class="landing-pitch">
+	<div class="landing-pitch" data-analyticsName="TopBlock">
 		<div class="landing-pitch__row">
 			<div class="landing-pitch__img">
 				<img src="/assets/images/privacy-tab/landing/img-up.jpg"
@@ -24,6 +24,9 @@
 				</ul>
 				<div class="landing-pitch__buttons">
 					<button class="landing-pitch__button"
+							vtrSendAnalytics
+							[metricsEvent]="'ItemClick'"
+							[metricsItem]="'InstallButton'"
 							vtrOfflineMode
 							vtrOpenFigleafInstaller>Install Now</button>
 					<span class="landing-pitch__button--disable">Also available for Android</span>
@@ -109,7 +112,7 @@
 		</ul>
 	</div><!-- landing-privacy-benefits -->
 
-	<div class="landing-pitch landing-pitch--bottom">
+	<div class="landing-pitch landing-pitch--bottom" data-analyticsName="BottomBlock">
 		<div class="landing-pitch__row">
 			<div class="landing-pitch__img landing-pitch__img--bottom">
 				<img src="/assets/images/privacy-tab/landing/img-down.jpg"
@@ -129,6 +132,9 @@
 				</ul>
 				<div class="landing-pitch__buttons">
 					<button class="landing-pitch__button"
+							vtrSendAnalytics
+							[metricsEvent]="'ItemClick'"
+							[metricsItem]="'InstallButton'"
 							vtrOfflineMode
 							vtrOpenFigleafInstaller>
 						Install Now

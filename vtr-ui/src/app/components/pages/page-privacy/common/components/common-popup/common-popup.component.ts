@@ -5,6 +5,7 @@ import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance
 import { AnalyticsService } from '../../services/analytics.service';
 import { GetParentForAnalyticsService } from '../../services/get-parent-for-analytics.service';
 import { RouterChangeHandlerService } from '../../services/router-change-handler.service';
+import { VIDEO_POPUP_ID } from '../../../main-layout/sidebar/video-widget/video-widget.component';
 
 @Component({
 	selector: 'vtr-common-popup',
@@ -32,7 +33,7 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 			ItemParent: 'WebsiteTrackersPopup',
 		},
 		'support-popup': {
-			ItemName: 'ChatNowClosePopupButton',
+			ItemName: 'HelpPopupCloseButton',
 			ItemParent: 'HelpPopup',
 		},
 		oneClickScan: {
@@ -46,8 +47,11 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 		removePassword: {
 			ItemName: 'NonPrivatePasswordsClosePopupButton',
 			ItemParent: 'HowToRemoveAccountsPopup',
+		},
+		[VIDEO_POPUP_ID]: {
+			ItemName: 'VideoCloseButton',
+			ItemParent: 'VideoPopup',
 		}
-
 	};
 
 	constructor(

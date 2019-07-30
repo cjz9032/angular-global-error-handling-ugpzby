@@ -4,13 +4,15 @@ import { CommonPopupService } from '../../../common/services/popups/common-popup
 import { filter, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 
+export const VIDEO_POPUP_ID = 'videoPopupId';
+
 @Component({
 	selector: 'vtr-video-widget',
 	templateUrl: './video-widget.component.html',
 	styleUrls: ['./video-widget.component.scss']
 })
 export class VideoWidgetComponent implements OnInit, OnDestroy {
-	videoPopupId = 'videoPopupId';
+	videoPopupId = VIDEO_POPUP_ID;
 	@Input() margin: 'top' | 'bottom' = 'top';
 	@Output() videoWatched$ = new EventEmitter<boolean>();
 

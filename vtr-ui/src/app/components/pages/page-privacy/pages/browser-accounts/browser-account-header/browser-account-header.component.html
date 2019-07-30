@@ -4,6 +4,9 @@
 				{{dashboardData?.totalAccounts}} accounts stored in Lenovo Privacy Essentials by Figleaf
 			</span>
 		<button class="browser-accounts-header__btn"
+				vtrSendAnalytics
+				[metricsEvent]="'ItemClick'"
+				[metricsItem]="'ViewInLenovoPrivacyEssentialsButton'"
 				(click)="openFigleafApp.emit(true)">
 			View now
 		</button>
