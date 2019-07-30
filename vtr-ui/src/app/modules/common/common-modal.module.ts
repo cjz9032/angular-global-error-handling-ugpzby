@@ -11,7 +11,7 @@ import { ModalUpdateChangeLogComponent } from 'src/app/components/modal/modal-up
 import { ModalVoiceComponent } from 'src/app/components/modal/modal-voice/modal-voice.component';
 import { ModalWifiSecuriryLocationNoticeComponent } from 'src/app/components/modal/modal-wifi-securiry-location-notice/modal-wifi-securiry-location-notice.component';
 import { ModalWifiSecurityInvitationComponent } from 'src/app/components/modal/modal-wifi-security-invitation/modal-wifi-security-invitation.component';
-import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
+//import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
 import { SharedModule } from '../shared.module';
 import { MetricsModule } from 'src/app/directives/metrics.module';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
@@ -20,7 +20,7 @@ import { ModalAutocloseComponent } from 'src/app/components/modal/modal-autoclos
 
 @NgModule({
 	declarations: [
-		ModalServerSwitchComponent,
+		/*ModalServerSwitchComponent,*/
 		DownloadFailedModalComponent,
 		ModalBatteryChargeThresholdComponent,
 		ModalCommonConfirmationComponent,
@@ -51,7 +51,7 @@ import { ModalAutocloseComponent } from 'src/app/components/modal/modal-autoclos
 		CUSTOM_ELEMENTS_SCHEMA
 	],
 	entryComponents: [
-		ModalServerSwitchComponent,
+		/*ModalServerSwitchComponent,*/
 		DownloadFailedModalComponent,
 		ModalBatteryChargeThresholdComponent,
 		ModalCommonConfirmationComponent,

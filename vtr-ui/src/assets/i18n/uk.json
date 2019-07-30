@@ -202,24 +202,6 @@
                     }
                 }
             },
-            "numberpad": {
-                "number": {
-                    "zero": "Num 0",
-                    "one": "Num 1",
-                    "two": "Num 2",
-                    "three": "Num 3",
-                    "four": "Num 4",
-                    "five": "Num 5",
-                    "six": "Num 6",
-                    "seven": "Num 7",
-                    "eight": "Num 8",
-                    "nine": "Num 9"
-                },
-                "macro": {
-                    "m1": "M1",
-                    "m2": "M2"
-                }
-            },
             "popupContent": {
                 "clearMacrokey": {
                     "title": "Are you sure you want to clear this macro key?"
@@ -244,6 +226,10 @@
             },
             "recording": {
                 "title": "Recording Macro Key For"
+            },
+            "initalKey": {
+                "zero": 0,
+                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -378,6 +364,21 @@
                     "title": "Color"
                 }
             }
+        },
+        "autoClose": {
+            "title": "Auto Close",
+            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "modalTurnAutoClose": {
+                "title": "Turn on Auto Close ?",
+                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Auto Close",
+                "body": "Only apps currently running will show in the list below."
+            }
         }
     },
     "common": {
@@ -505,7 +506,12 @@
             "title": "Ваші швидкі настройки",
             "microphone": "Мікрофон",
             "cameraPrivacy": "Камера",
-            "eyeCareMode": "Режим захисту зору"
+            "eyeCareMode": "Захист зору",
+            "note": {
+                "accessNote": "doesn't have access to Lenovo Vantage",
+                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
+                "accessUrl": "Go to Windows settings to give access"
+            }
         },
         "systemStatus": {
             "title": "Стан системи",
@@ -666,12 +672,15 @@
                     "HighTemperature": "<b>Розряджання</b> зупинено <b>через зависоку температуру акумулятора.</b>",
                     "TrickleCharge": "Акумулятор <b>повністю розряджено</b>, його потрібно зарядити. Це може зайняти десять або більше годин.",
                     "OverheatedBattery": "Акумулятор <b>сильно нагрівся</b>. Вийміть його з комп’ютера та охолодіть до кімнатної температури.",
-                    "PermanentError": "Акумулятор <b>вийшов із ладу через нормальне зношування.</b> Не вдається зарядити акумулятор. Замініть акумулятор."
+                    "PermanentError": "Акумулятор <b>вийшов із ладу через нормальне зношування.</b> Не вдається зарядити акумулятор. Замініть акумулятор.",
+                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
+                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                 },
                 "updating": "Оновлення",
                 "voltageError": "Неправильна напруга акумулятора",
                 "batteryNotDetected": "Акумулятор не знайдено",
-                "thresholdNote": "<b>Примітка.</b> Щоб подовжити строк служби акумулятора, налаштуйте його так, щоб він припиняв заряджатися на рівні {{value}}%."
+                "thresholdNote": "<b>Примітка.</b> Щоб подовжити строк служби акумулятора, налаштуйте його так, щоб він припиняв заряджатися на рівні {{value}}%.",
+                "seeDetailsLink": "See Details"
             },
             "power": {
                 "title": "Живлення",
@@ -681,8 +690,7 @@
                     "title": "ПЕРЕЙТИ ДО НАСТРОЙОК",
                     "battery": "Акумулятор",
                     "power": "Живлення",
-                    "other": "Інші",
-                    "smartStandby": "Розумне очікування"
+                    "other": "Інші"
                 },
                 "powerSmartSettings": {
                     "title": "Настройки інтелектуального живлення",
@@ -812,7 +820,8 @@
                     },
                     "airPlanePower": {
                         "title": "Режим живлення \"У літаку\"",
-                        "description": "Захистіть розетку живлення змінного струму в літаку, збалансувавши споживання електроенергії в системі.У режимі У літаку комп'ютер споживає менше електроенергії, обмежуючи швидкість заряду акумулятора та швидкодію системи."
+                        "description": "Захистіть розетку живлення змінного струму в літаку, збалансувавши споживання електроенергії в системі.У режимі У літаку комп'ютер споживає менше електроенергії, обмежуючи швидкість заряду акумулятора та швидкодію системи.",
+                        "checkBoxDesc": "Auto detection"
                     }
                 },
                 "energyStar": {
@@ -1094,6 +1103,13 @@
                     "enterText": {
                         "title": "ТЕКСТ ДЛЯ ВВЕДЕННЯ"
                     }
+                },
+                "fnCtrlKey": {
+                    "title": "FN key and Ctrl key swap",
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "more": "MORE",
+                    "control1": "TOUCHPAD CONTROLS",
+                    "control2": "MOUSE CONTROLS"
                 }
             }
         },
@@ -1121,7 +1137,8 @@
                 },
                 "zeroTouchLogin": {
                     "title": "Автоматичний вхід",
-                    "caption": "Ця функція автоматично розблоковує комп'ютер або виводить його з режиму сну, коли ви сідаєте перед ним або підходите до нього."
+                    "caption": "Ця функція автоматично розблоковує комп'ютер або виводить його з режиму сну, коли ви сідаєте перед ним або підходите до нього.",
+                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
                 },
                 "zeroTouchLock": {
                     "title": "Автоматичне блокування",
@@ -1142,6 +1159,17 @@
                     "options": {
                         "near": "Поблизу",
                         "far": "Далеко"
+                    },
+                    "tooltipcontent": {
+                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
+                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "list": {
+                            "line1": "Near: 0 – 0.42 meters (17 inches)",
+                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
+                            "line3": "Far: 0 – 1.20 meters (47 inches)",
+                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
+                            "line5": "The recommended detection distance is within 0.60 meters."
+                        }
                     }
                 },
                 "note": {
@@ -1492,7 +1520,10 @@
             "listLenovoCommunity": "Спільнота Lenovo",
             "listContactCustomerService": "Зв'язатися зі службою підтримки",
             "listContactUsOnWechat": "Зв'язатися з нами через WeChat",
-            "weChatDescription": "Напишіть нам запитання у WeChat, і ми оперативно відповімо"
+            "weChatDescription": "Напишіть нам запитання у WeChat, і ми оперативно відповімо",
+            "listFindUs": "Find us on social media",
+            "listContactUsOnFacebook": "Contact us on Facebook",
+            "facebookDescription": "Click to find us on Facebook"
         },
         "quicklinks": {
             "title": "Швидкі посилання",
@@ -1533,7 +1564,13 @@
             "maliciousNetwork": "Цього місяця попереджено підключень комп'ютера до потенційно шкідливих мереж: {{maliciousWifi}}.",
             "good": "НАДІЙНА",
             "malicious": "ШКІДЛИВА",
-            "suspicious": "ПІДОЗРІЛА"
+            "suspicious": "ПІДОЗРІЛА",
+            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+            "antivirus": "Being protected by anti-virus software",
+            "password": "Having strong and complex passwords managed in a safe way",
+            "vpn": "Monitoring your network exposure to attackers",
+            "wifi": "Encrypting your personal data when using public WiFi",
+            "windowsHello": "Protecting your device using safe login options"
         },
         "antivirus": {
             "common": {
@@ -1627,7 +1664,8 @@
                 "headerText": "Помилка",
                 "bodyText": "Ми виявили, що вам бракує критично важливих компонентів Vantage. Ці компоненти буде завантажено у фоновому режимі. Спробуйте пізніше.",
                 "closeText": "закрити",
-                "offlineText": "Немає підключення до Інтернету. Певні частини цієї сторінки не працюватимуть. Підключіться заново"
+                "offlineText": "Немає підключення до Інтернету. Певні частини цієї сторінки не працюватимуть. Підключіться заново",
+                "accountText": "Account creation failed. Please try again later."
             }
         },
         "homeprotection": {
