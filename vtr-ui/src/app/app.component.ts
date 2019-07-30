@@ -165,8 +165,6 @@ export class AppComponent implements OnInit {
 		};
 		self.displayService.calcSize(self.displayService);
 
-		// const urlParams = new URLSearchParams(window.location.search);
-
 		// When startup try to login Lenovo ID silently (in background),
 		//  if user has already logged in before, this call will login automatically and update UI
 		if (!this.deviceService.isArm && this.userService.isLenovoIdSupported()) {
@@ -185,28 +183,10 @@ export class AppComponent implements OnInit {
 				}
 			}
 		});
+
 		this.getMachineInfo();
-		// const result = this.getMachineInfo();
-		// const hadRunApp: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
-		// const appFirstRun = !hadRunApp;
-		// if (appFirstRun && this.deviceService.isShellAvailable) {
-		// 	this.commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
-		// 	if (result) {
-		// 		result.then((machineInfo) => {
-		// 			this.sendFirstRunEvent(machineInfo);
-		// 		});
-		// 	}
-		// }
-
-		// if (result) {
-		// 	result.then((machineInfo) => {
-		// 		this.machineInfo = machineInfo;
-		// 	});
-		// }
-
 		this.checkIsDesktopOrAllInOneMachine();
 		this.settingsService.getPreferenceSettingsValue();
-
 		// VAN-5872, server switch feature
 		this.serverSwitchThis();
 	}
@@ -271,6 +251,7 @@ export class AppComponent implements OnInit {
 		} else {
 			this.isMachineInfoLoaded = true;
 			this.machineInfo = { hideMenus: false };
+			this.languageService.useEnglish();
 		}
 	}
 
