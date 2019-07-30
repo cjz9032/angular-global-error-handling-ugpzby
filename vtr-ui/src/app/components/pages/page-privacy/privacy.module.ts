@@ -35,6 +35,7 @@ import { BrowserAccountHeaderComponent } from './pages/browser-accounts/browser-
 import { ArticleDescriptionComponent } from './pages/articles/article-description/article-description.component';
 import { TrialExpiredWidgetComponent } from './main-layout/sidebar/trial-expired-widget/trial-expired-widget.component';
 import { OfflineWidgetComponent } from './main-layout/sidebar/offline-widget/offline-widget.component';
+import { VideoWidgetComponent } from './main-layout/sidebar/video-widget/video-widget.component';
 
 library.add(fal);
 
@@ -74,6 +75,7 @@ library.add(fal);
 		ArticleDescriptionComponent,
 		TrialExpiredWidgetComponent,
 		OfflineWidgetComponent,
+		VideoWidgetComponent,
 	],
 })
 export class PrivacyModule {

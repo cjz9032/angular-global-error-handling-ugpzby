@@ -30,7 +30,8 @@ export class TrackingMapService {
 	isTrackersBlocked$ = this.figleafOverviewService.figleafSettings$
 		.pipe(
 			map((settings) => settings.isAntitrackingEnabled),
-			startWith(false)
+			startWith(false),
+			catchError((err) => of(false))
 		);
 
 	private trackingData = new ReplaySubject<TrackingData>(1);

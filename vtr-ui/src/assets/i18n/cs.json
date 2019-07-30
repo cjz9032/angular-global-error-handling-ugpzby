@@ -3,367 +3,333 @@
         "dashboard": {
             "device": {
                 "quickSettings": {
-                    "title": "Thermal Mode",
+                    "title": "Režim tepl",
                     "status": {
-                        "performance": "Performance",
-                        "balance": "Balance",
-                        "quiet": "Quiet"
+                        "performance": "Výkon",
+                        "balance": "Vyvážení",
+                        "quiet": "Tichý"
                     },
                     "statusText": {
-                        "perText": "Higher CPU usage, Higher fan speed",
-                        "balText": "Normal CPU and fan speed",
-                        "quietText": "Lower CPU usage, Lower fan speed"
+                        "perText": "Vyšší zátěž CPU a otáčky ventilátoru",
+                        "balText": "Normální CPU a otáčky ventilátoru",
+                        "quietText": "Nižší zátěž CPU a otáčky ventilátoru"
                     },
-                    "wifiSecurity": "Wifi Security",
+                    "wifiSecurity": "Zabezpečení Wi-Fi",
                     "dolby": "Dolby",
-                    "rapidCharge": "Rapid Charge"
+                    "rapidCharge": "Rych-lé nabíjení"
                 },
                 "legionEdge": {
-                    "title": "CPU Overclock",
+                    "title": "Přetaktování CPU",
                     "status": {
-                        "alwayson": "On",
-                        "whenGaming": "When Gaming",
-                        "off": "Off"
+                        "alwayson": "Zapnuto",
+                        "whenGaming": "Při hraní",
+                        "off": "Vypnuto"
                     },
                     "statusText": {
-                        "onText": "CPU Overclocking will be activated",
-                        "gamingText": "CPU Overclocking will be activated automatically while game launches",
-                        "offText": "CPU Overclocking will be disabled"
+                        "onText": "Přetaktování CPU se aktivuje",
+                        "gamingText": "Při spuštění hry se automaticky aktivuje přetaktování CPU",
+                        "offText": "Přetaktování CPU se deaktivuje"
                     },
-                    "ramOverlock": "RAM Overclock",
+                    "ramOverlock": "Přetaktování RAM",
                     "popup": {
-                        "text": "Change will be effective after restarting computer.",
+                        "text": "Změny se projeví po restartování počítače.",
                         "button": "ok"
                     },
                     "driverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "You need install driver for RAM Overclock to  make it effective",
-                        "button": "Install",
-                        "link": "cancel",
-                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
-                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
+                        "headerText": "Je vyžadována instalace ovladače",
+                        "text": "Chcete-li aktivovat přetaktování RAM, nainstalujte ovladač (vyžaduje restartování)",
+                        "networkBoostText": "Aby bylo možné použít posílení sítě, je třeba nainstalovat ovladač",
+                        "hybridModeText": "Aby bylo možné použít hybridní režim, je třeba nainstalovat ovladač",
+                        "cpuOverclockText": "Chcete-li aktivovat přetaktování CPU, nainstalujte ovladač (vyžaduje restartování)",
+                        "button": "Nainstalujte si",
+                        "link": "storno"
                     },
-                    "autoClose": "Auto Close",
-                    "networkBoost": "Network Boost",
-                    "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock",
                     "lightingDriverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "Please install driver",
-                        "button": "Install",
-                        "link": "cancel"
+                        "headerText": "Je vyžadována instalace ovladače",
+                        "text": "Chcete-li aktivovat osvětlení, nainstalujte ovladač (vyžaduje restartování)",
+                        "button": "Nainstalujte si",
+                        "link": "storno"
                     },
                     "lightingColorMessage": {
-                        "text": "Selecting color not available to this effect."
-                    }
+                        "text": "Výběr barvy není u tohoto efektu k dispozici."
+                    },
+                    "autoClose": "Automaticky zavřít",
+                    "networkBoost": "Zvýšení vý-konu sítě",
+                    "hybridMode": "Hybridní re-žim",
+                    "touchpadLock": "Zámek doty-kové plošky"
                 },
                 "systemTools": {
-                    "power": "Power",
-                    "media": "Media",
-                    "macroKey": "Marco Key",
-                    "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update",
-                    "header": "System Tools"
-                },
-                "lighting": {
-                    "title": "Lighting Customize",
-                    "header": "Lighting"
-                },
-                "legionEdgeModal": {
-                    "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
-                    "line2": "<b>Feature Management Overview</b> <br> Some features not available on all devices",
-                    "line3": "<b>CPU Overclocking </b><br> Boost the maximum speed for your processor",
-                    "line4": "<b>RAM Overclocking </b><br> Boost the maximum speed for your memory",
-                    "line5": "<b>Network Boost </b><br> Prioritize network traffic for the game you're playing",
-                    "line6": "<b>Dolby </b><br> Tune your audio specifically for gaming with Dolby technology",
-                    "line7": "<b>Hybrid Mode </b><br> Disable advanced GPU settings when not gaming to boost battery performance",
-                    "line8": "<b>Rapid Charge </b><br> Game on the go longer with quicker battery charging",
-                    "line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
-                    "line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
-                    "line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control"
-                },
-                "systemInfo": {
-                    "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                    "power": "Napájení",
+                    "media": "Média",
+                    "macroKey": "Klávesa maker",
+                    "hardwareScan": "Kontrola hardwaru",
+                    "systemUpdate": "Aktualizace systému",
+                    "header": "Systémové nástroje"
                 },
                 "systemStatus": {
                     "info": "INFO"
+                },
+                "lighting": {
+                    "title": "Přizpůsobení osvětlení",
+                    "header": "Osvětlení"
+                },
+                "legionEdgeModal": {
+                    "line1": "S Vantage Edge bude vaše nastavení automaticky vyladěno na základě využití. \n Maximální výkon při hraní her a delší výdrž baterie, když hrát nebudete.",
+                    "line2": "<b>Přehled správy funkcí</b> <br> Některé funkce nejsou k dispozici na všech zařízeních",
+                    "line3": "<b>Přetaktování CPU </b><br> Zvyšte maximální rychlost procesoru",
+                    "line4": "<b>Přetaktování RAM </b><br> Zvyšte maximální rychlost paměti",
+                    "line5": "<b>Zvýšení výkonu sítě </b><br> Upřednostněte v síťovém provozu hru, kterou hrajete",
+                    "line6": "<b>Dolby </b><br> Vylaďte zvuk přímo pro hraní her pomocí technologie Dolby",
+                    "line7": "<b>Hybridní režim </b><br> Zvyšte výdrž baterie deaktivací Upřesnit nastavení GPU, když nebudete hrát",
+                    "line8": "<b>Rychlé nabíjení </b><br> Užijte si při hraní na cestách delší výdrž baterie díky rychlejšímu nabíjení",
+                    "line9": "<b>Zámek dotykové plošky </b><br> Vyhněte se neúmyslným kliknutím vypnutím dotykové plošky",
+                    "line10": "<b>Automaticky zavřít </b><br> Před hraním her ukončete procesy, které nepotřebuje, abyste měli k dispozici co nejvíce systémových prostředků",
+                    "line11": "<b>Režim tepl </b><br> Nastavte svůj profil zařízení pro otáčky ventilátoru a řízení chlazení"
+                },
+                "systemInfo": {
+                    "systenTooltip": "Umístěním kurzoru na CPU/GPU/RAM a různé jednotky zobrazíte jejich popisy, včetně informací o výrobci a modelu"
                 }
             }
         },
         "common": {
             "menu": {
                 "support": {
-                    "title": "Support",
-                    "sub1": "Support",
+                    "title": "Podpora",
+                    "sub1": "Podpora",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
             }
         },
         "macroKey": {
-            "title": "Macro Key",
-            "introLine": "You can record a series of key input, and use them in gaming or other operations.",
+            "title": "Klávesa maker",
+            "introLine": "Můžete nahrát sérii vstupů kláves a použít je při hraní her nebo jiných operacích.",
             "status": {
                 "on": {
-                    "title": "On",
-                    "description": "Always Enabled"
+                    "title": "Zapnuto",
+                    "description": "Trvale povoleno"
                 },
                 "whileGaming": {
-                    "title": "Macro Key enabled only when gaming",
-                    "description": "It will be enabled when you game and remain as num key when you don't."
+                    "title": "Klávesa makra povolena pouze při hraní her",
+                    "description": "Bude povoleno, když hrajete, a mimo hry zůstane jako číselná klávesa."
                 },
                 "off": {
-                    "title": "Off",
-                    "description": "Always Off"
+                    "title": "Vypnuto",
+                    "description": "Trvale vypnuté"
                 }
             },
             "details": {
                 "intro": {
-                    "noNumber": "SELECT A MACRO KEY",
-                    "title": "CREATE A MACRO KEY FOR",
-                    "line1": "click the start recording button below",
-                    "line2": "type in macro key",
-                    "line3": "stop recording when finishing typing"
+                    "noNumber": "VYBRAT KLÁVESU MAKRA",
+                    "title": "VYTVOŘIT KLÁVESU MAKRA PRO",
+                    "line1": "klikněte níže na tlačítko pro spuštění nahrávání",
+                    "line2": "zadejte klávesu makra",
+                    "line3": "po dokončení psaní zastavte nahrávání"
                 },
                 "buttons": {
-                    "start": "START RECORDING",
-                    "stop": "STOP RECORDING",
+                    "start": "SPUSIT NAHRÁVÁNÍ",
+                    "stop": "ZASTAVIT NAHRÁVÁNÍ",
                     "numberPrefix": "NUM"
                 },
                 "recording": {
-                    "title": "START TYPING",
-                    "description": "20 inputs within 20 seconds can be recorded."
+                    "title": "ZAČÍT PSÁT",
+                    "description": "Lze nahrát 20 vstupů v délce trvání 20 sekund."
                 },
                 "recorded": {
-                    "title": "MACRO KEY FOR ",
-                    "deleteKey": "Delete Key",
-                    "clear": "Clear",
+                    "title": "KLÁVESA MAKRA PRO ",
+                    "deleteKey": "Klávesa Delete",
+                    "clear": "Vymazat",
                     "intervalStatus": {
                         "keep": {
-                            "title": "Keep Delay",
-                            "description": "Intervals of key actions will be kept and applied when using this macro key."
+                            "title": "Udržet zpoždění",
+                            "description": "Při použití této klávesy makra budou zachovány a použity intervaly akcí kláves."
                         },
                         "ignore": {
-                            "title": "Ignore Delay",
-                            "description": "Intervals of key actions will be ignored."
+                            "title": "Ignorovat zpoždění",
+                            "description": "Intervaly akcí kláves budou ignorovány."
                         }
                     },
                     "repeatStatus": {
                         "repeat1": {
-                            "title": "No Repeat",
-                            "description": "No Repeat"
+                            "title": "Neopakovat",
+                            "description": "Neopakovat"
                         },
                         "repeat2": {
-                            "title": "Repeat 2 Times",
-                            "description": "Repeats 2 times"
+                            "title": "Zopakovat 2krát",
+                            "description": "Zopakovat 2krát"
                         },
                         "repeat3": {
-                            "title": "Repeat 3 Times",
-                            "description": "Repeats 3 times"
+                            "title": "Zopakovat 3krát",
+                            "description": "Zopakovat 3krát"
                         },
                         "repeat4": {
-                            "title": "Repeat 4 Times",
-                            "description": "Repeats 4 times"
+                            "title": "Zopakovat 4krát",
+                            "description": "Zopakovat 4krát"
                         },
                         "repeat5": {
-                            "title": "Repeat 5 Times",
-                            "description": "Repeats 5 times"
+                            "title": "Zopakovat 5krát",
+                            "description": "Zopakovat 5krát"
                         },
                         "repeat6": {
-                            "title": "Repeat 6 Times",
-                            "description": "Repeats 6 times"
+                            "title": "Zopakovat 6krát",
+                            "description": "Zopakovat 6krát"
                         },
                         "repeat7": {
-                            "title": "Repeat 7 Times",
-                            "description": "Repeats 7 times"
+                            "title": "Zopakovat 7krát",
+                            "description": "Zopakovat 7krát"
                         },
                         "repeat8": {
-                            "title": "Repeat 8 Times",
-                            "description": "Repeats 8 times"
+                            "title": "Zopakovat 8krát",
+                            "description": "Zopakovat 8krát"
                         },
                         "repeat9": {
-                            "title": "Repeat 9 Times",
-                            "description": "Repeats 9 times"
+                            "title": "Zopakovat 9krát",
+                            "description": "Zopakovat 9krát"
                         },
                         "repeat10": {
-                            "title": "Repeat 10 Times",
-                            "description": "Repeats 10 times"
+                            "title": "Zopakovat 10krát",
+                            "description": "Zopakovat 10krát"
                         }
                     },
                     "list": {
                         "header": {
-                            "col1": "Key Action",
+                            "col1": "Akce klávesy",
                             "col2": "Interval"
                         },
                         "footer": {
-                            "title": "Next input.."
+                            "title": "Další vstup.."
                         }
                     }
                 }
             },
-            "numberpad": {
-                "number": {
-                    "zero": "Num 0",
-                    "one": "Num 1",
-                    "two": "Num 2",
-                    "three": "Num 3",
-                    "four": "Num 4",
-                    "five": "Num 5",
-                    "six": "Num 6",
-                    "seven": "Num 7",
-                    "eight": "Num 8",
-                    "nine": "Num 9"
-                },
-                "macro": {
-                    "m1": "M1",
-                    "m2": "M2"
-                }
+            "initalKey": {
+                "zero": 0,
+                "m1": "M1"
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure you want to clear this macro key?"
+                    "title": "Opravdu chcete tuto klávesu makra vymazat?"
                 },
                 "timeoutRecording": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if no input for 20 seconds."
+                    "title": "Vypršel čas záznamu.",
+                    "body": "Čas záznamu vyprší, pokud se po dobu 20 sekund neobjeví žádný vstup."
                 },
                 "maximumInput": {
-                    "title": "Maximum Input Reached.",
-                    "body": "Macro key can only store inputs less than 20."
+                    "title": "Dosaženo maximálního počtu vstupů.",
+                    "body": "Na klávesu makra se může uložit pouze méně než 20 vstupů."
                 },
                 "inputStopped": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if the input stopped for more than 10 seconds."
+                    "title": "Vypršel čas záznamu.",
+                    "body": "Čas záznamu vyprší, pokud se vstup na více než 10 sekund zastaví."
                 },
                 "confirmButton": {
-                    "btnClear": "Clear",
-                    "btnCancel": "Cancel"
+                    "btnClear": "Vymazat",
+                    "btnCancel": "Storno"
                 },
                 "btnOk": "OK"
             },
             "recording": {
-                "title": "Recording Macro Key For"
+                "title": "Záznam klávesy makra pro"
             }
         },
         "lightingProfile": {
-            "title": "Lighting",
+            "title": "Osvětlení",
             "effect": {
                 "option1": {
-                    "title": "On"
+                    "title": "Zapnuto"
                 },
                 "option2": {
-                    "title": "Flicker"
+                    "title": "Blikání"
                 },
                 "option3": {
-                    "title": "Breath"
+                    "title": "Dech"
                 },
                 "option4": {
-                    "title": "Wave"
+                    "title": "Vlna"
                 },
                 "option5": {
-                    "title": "Smooth"
+                    "title": "Hladký"
                 },
                 "option6": {
-                    "title": "CPU Temperature"
+                    "title": "Teplota procesoru"
                 },
                 "option7": {
-                    "title": "CPU Utilization"
+                    "title": "Využití CPU"
                 },
                 "option8": {
-                    "title": "Off"
+                    "title": "Vypnuto"
                 },
                 "apply": {
-                    "title": "APPLY"
+                    "title": "POUŽÍT"
                 },
                 "applied": {
-                    "title": "APPLIED"
+                    "title": "POUŽITO"
                 }
             },
             "brightness": {
                 "text1": {
-                    "title": "*Brightness setting doesn't apply on "
+                    "title": "*Nastavení jasu neplatí na "
                 },
                 "text2": {
-                    "title": " effect"
+                    "title": " efekt"
                 }
             },
             "lightingSingleLightingOption": {
                 "option1": {
-                    "title": "Always On"
+                    "title": "Trvale zapnuto"
                 },
                 "option2": {
-                    "title": "Fast Blink"
+                    "title": "Rychlé blikání"
                 },
                 "option3": {
-                    "title": "Medium Blink"
+                    "title": "Střední blikání"
                 },
                 "option4": {
-                    "title": "Slow Blink"
+                    "title": "Pomalé blikání"
                 },
                 "option5": {
-                    "title": "Blink Level"
+                    "title": "Úroveň blikání"
                 }
             },
             "profile": {
                 "text1": {
-                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                    "title": "Osvětlení je aktuálně vypnuté. Vyberte výše zobrazenou kartu profilu a přizpůsobte si ji."
                 },
                 "text2": {
-                    "title": "effect"
+                    "title": "efekt"
                 },
                 "text3": {
-                    "title": "Effect"
+                    "title": "Efekt"
                 }
             },
             "button": {
                 "default": {
-                    "title": "Set to default"
+                    "title": "Nastavit na výchozí nastavení"
                 }
             },
             "profileheading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "Vypnuto"
                 },
                 "text2": {
-                    "title": "Profile 1"
+                    "title": "Profil 1"
                 },
                 "text3": {
-                    "title": "Profile 2"
+                    "title": "Profil 2"
                 },
                 "text4": {
-                    "title": "Profile 3"
-                }
-            },
-            "lightingProfileHeading": {
-                "text1": {
-                    "title": "Off"
-                },
-                "text2": {
-                    "title": 1
-                },
-                "text3": {
-                    "title": 2
-                },
-                "text4": {
-                    "title": 3
-                },
-                "Customize": {
-                    "title": "Customize"
-                },
-                "heading": {
-                    "title": "Select Profile:"
+                    "title": "Profil 3"
                 }
             },
             "colourwheel": {
                 "text1": {
-                    "title": "Selecting colour not available to this effect."
+                    "title": "Výběr barvy není u tohoto efektu k dispozici."
                 },
                 "text2": {
-                    "title": "APPLY"
+                    "title": "POUŽÍT"
                 },
                 "text3": {
-                    "title": "APPLIED"
+                    "title": "POUŽITO"
                 },
                 "text4": {
                     "title": "R:"
@@ -375,7 +341,27 @@
                     "title": "B:"
                 },
                 "text7": {
-                    "title": "Color"
+                    "title": "Barva"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Vypnuto"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Přizpůsobit"
+                },
+                "heading": {
+                    "title": "Vyberte profil:"
                 }
             }
         }
@@ -387,7 +373,7 @@
                 "title": "Zařízení",
                 "sub1": "Mé zařízení",
                 "sub2": "Nastavení mých zařízení",
-                "sub3": "System Updates",
+                "sub3": "Aktualizace systému",
                 "sub4": "Inteligentní pomoc"
             },
             "security": {
@@ -444,31 +430,31 @@
     },
     "privacy": {
         "headerMain": {
-            "title": "Privacy"
+            "title": "Soukromí"
         }
     },
     "tutorial": {
-        "almostThere": "Almost there!",
-        "para1": "Just a few more buttons to press before we can have liftoff.",
-        "para2": "Before we can give you the most optimal experience there are still a few things to setup.",
-        "personalise": "START PERSONALIZING",
-        "howIsitUsed": "How will you use it?",
-        "howMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "business": "BUSINESS",
-        "personal": "PERSONAL",
-        "custom": "CUSTOM",
-        "skip": "SKIP",
+        "almostThere": "Jste téměř hotovi.",
+        "para1": "Od startu vás dělí jen stisknutí pár dalších tlačítek.",
+        "para2": "Než vám budeme moct poskytnout optimální zážitek, je ještě třeba nastavit pár věcí.",
+        "personalise": "ZAČÍT PŘIZPŮSOBENÍ",
+        "howIsitUsed": "Jak ho budete používat?",
+        "howMachinUsed": "Klikněte na jedno z těchto použití a sdělte nám, jak budete tento počítač používat.",
+        "business": "PRO FIRMU",
+        "personal": "SOUKROMĚ",
+        "custom": "VLASTNÍ POUŽITÍ",
+        "skip": "PŘESKOČIT",
         "next": "DALŠÍ",
-        "interests": "What are your interests?",
-        "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "games": "GAMES",
-        "news": "NEWS",
-        "entertainment": "ENTERTAINMENT",
-        "arts": "ARTS",
-        "politics": "POLITICS",
-        "sports": "SPORTS",
-        "regionalNews": "REGIONAL NEWS",
-        "technology": "TECHNOLOGY"
+        "interests": "Jaké máte zájmy?",
+        "howOnesMachinUsed": "Klikněte na jedno z těchto použití a sdělte nám, jak budete tento počítač používat.",
+        "games": "HRY",
+        "news": "ZPRÁVY",
+        "entertainment": "ZÁBAVA",
+        "arts": "UMĚNÍ",
+        "politics": "POLITIKA",
+        "sports": "SPORT",
+        "regionalNews": "REGIONÁLNÍ ZPRÁVY",
+        "technology": "TECHNOLOGIE"
     },
     "dashboard": {
         "headerMain": {
@@ -534,7 +520,7 @@
                 }
             },
             "systemUpdate": {
-                "title": "System Update",
+                "title": "Aktualizace systému",
                 "detail": {
                     "update": "Aktualizace"
                 }
@@ -640,11 +626,11 @@
                         "li-ion": "Li-Ion",
                         "li_polymer": "Li-Polymer",
                         "li_ion": "Li-Ion",
-                        "silver-zinc": "Silver-Zinc",
-                        "silver_zinc": "Silver-Zinc",
+                        "silver-zinc": "Stříbro-Zinek",
+                        "silver_zinc": "Stříbro-Zinek",
                         "nicd": "NiCd",
                         "nimh": "NiMH",
-                        "unknown": "Unknown"
+                        "unknown": "Neznámé"
                     },
                     "manufacturer": {
                         "title": "Výrobce",
@@ -662,7 +648,7 @@
                     "NotSupportACAdapter": "<b>Napájecí adaptér není podporován.</b> Počítač Lenovo tento napájecí adaptér nepodporuje. Může to způsobit náhlé vypnutí. Připojte správný napájecí adaptér.",
                     "LimitedACAdapterSupport": "<b>Napájecí adaptér nemůže poskytnout počítači Lenovo</b> dostatek energie, což ovlivní výkon systému a rychlost nabíjení. Znovu připojte správný napájecí adaptér.",
                     "MissingDriver": "<b>Ovladač Lenovo Power Manager</b> není nainstalován nebo nefunguje správně. Spusťte službu Windows Update a nainstalujte nejnovější ovladač.",
-                    "StoreLimitation": "<b>Baterie je schopna se nabít pouze na {{percentageLimitation}}%</b> své původní kapacity.",
+                    "StoreLimitation": "<b>Baterie je schopna se nabít pouze na {{value}}%</b> své původní kapacity.",
                     "HighTemperature": "<b>Vybíjení</b> bylo zastaveno kvůli <b>přehřátí baterie</b>.",
                     "TrickleCharge": "Baterie je <b>zcela vybitá</b> a je třeba ji nabít. To může trvat deset i více hodin.",
                     "OverheatedBattery": "Baterie je <b>přehřátá</b>. Vyjměte ji z počítače a nechte ji vychladnout na pokojovou teplotu.",
@@ -671,7 +657,7 @@
                 "updating": "Aktualizování",
                 "voltageError": "Nesprávné napětí baterie",
                 "batteryNotDetected": "Baterie nebyla nalezena",
-                "thresholdNote": "<b>Poznámka:</b> Abyste prodloužili životnost baterie, nastavili jste ukončení jejího nabíjení při stavu {{chargeThresholdInfo.stopValue}}%."
+                "thresholdNote": "<b>Poznámka:</b> Abyste prodloužili životnost baterie, nastavili jste ukončení jejího nabíjení při stavu {{value}}%."
             },
             "power": {
                 "title": "Napájení",
@@ -681,19 +667,17 @@
                     "title": "PŘEJÍT K NASTAVENÍ",
                     "battery": "baterie",
                     "power": "Napájení",
-                    "cooling": "Inteligentní chlazení",
-                    "other": "Jiná",
-                    "smartStandby": "Smart Standby"
+                    "other": "Jiná"
                 },
                 "powerSmartSettings": {
                     "title": "Inteligentní nastavení napájení",
                     "subtitle": "INTELIGENTNÍ CHLAZENÍ",
                     "subtitle1": "Baterie a ticho",
-                    "description1": "Tato funkce dynamicky upraví tepelná nastavení dle vašich potřeb.Když je tato funkce zapnutá, upravuje nastavení tak, aby zařízení při držení v rukou nebo při nečinnosti bylo co nejchladnější a nejtišší.V opačném případě optimalizuje výkon v době, kdy je zařízení zapnuté a na stabilním povrchu.Když je vypnutá, tepelnou prioritu můžete nastavit ručně.",
+                    "description1": "Když je tato funkce zapnutá, tepelná nastavení se dynamicky přizpůsobují vaši potřebám. Zařízení tak při držení v rukou nebo při nečinnosti zůstává chladné a tiché. Je-li zařízení na stabilním povrchu, optimalizuje svůj výkon. Když je funkce vypnutá, tepelnou prioritu můžete nastavit ručně.",
                     "description2": "Funkce Inteligentní chlazení upravuje rychlost ventilátoru, maximální teplotu povrchu a výkon.Tato funkce má následující režimy a nyní je přístupná pomocí posuvníku výkonu systému Windows.",
                     "description3": "Inteligentní chlazení automaticky přizpůsobuje množství tepla produkované počítačem vašim potřebám.Funkce Inteligentní chlazení přizpůsobuje nastavení výkonu počítače tak, aby byl jeho povrch chladnější, pokud ho držíte v rukou.Leží-li zařízení na stole, přizpůsobí funkce jeho nastavení tak, aby mělo co největší výkon.",
-                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "description13": "Když je tato funkce zapnutá, tepelná nastavení se dynamicky přizpůsobují vaši potřebám. Zařízení tak při držení v rukou nebo při nečinnosti zůstává chladné a tiché. Je-li zařízení na stabilním povrchu, optimalizuje svůj výkon. Když je funkce vypnutá, tepelnou prioritu můžete nastavit ručně.",
+                    "description14": "Tato funkce umožňuje nastavit rychlost ventilátoru, maximalizovat výkon systému nebo v případě potřeby prodloužit životnost baterie. Má tři dále uvedené režimy. Můžete také přepínat režimy pomocí klávesových zkratek (Fn+Q) nebo z panelu nástrojů Lenovo Vantage Toolbar.",
                     "readMore": "Další informace.",
                     "gotoWindows": {
                         "title": "Přejít k nastavení systému Windows",
@@ -706,17 +690,17 @@
                         "optimize": "optimalizuje systém pro",
                         "apsHint": "Aktivace chytrého chlazení je možná až po instalaci a aktivaci systém Lenovo Active Protection System.",
                         "options": {
-                            "quiteCool3": "Chladný režim",
-                            "performance3": "Vysoký výkon",
-                            "quiteCool4": "Klidný a chladný",
+                            "quiteCool3": "Tichý a chladný",
+                            "performance3": "Výkon",
+                            "quiteCool4": "Tichý a chladný",
                             "performance4": "Výkon",
-                            "quiteCool5": "Klidný a chladný",
+                            "quiteCool5": "Tichý a chladný",
                             "performance5": "Výkon",
-                            "batterySaving": "Battery Saving",
-                            "performance13": "Performance",
-                            "quiteCool13": "Quiet & Cool",
-                            "performance14": "Extreme Performance",
-                            "quiteCool14": "Intelligent Cooling"
+                            "batterySaving": "Úspora energie baterie",
+                            "performance13": "Výkon",
+                            "quiteCool13": "Tichý a chladný",
+                            "performance14": "Extrémní výkon",
+                            "quiteCool14": "Inteligentní chlazení"
                         },
                         "readMore": {
                             "mode1": "Tichý režim",
@@ -725,30 +709,30 @@
                             "line1": "Posuvník je v levé části.Rychlost a výkon ventilátoru jsou nižší, takže je počítač chladnější a tišší a baterie má nejdelší výdrž.",
                             "line2": "Posuvník je uprostřed.Dynamická vyváženost rychlosti a výkonu ventilátoru zajišťuje nejvyrovnanější výkon.",
                             "line3": "Posuvník je v pravé části.Rychlost ventilátoru a přípustná teplota povrchu jsou vyšší a počítač pracuje na maximální výkon.",
-                            "line4": "More info"
+                            "line4": "Více informací"
                         },
                         "selectedModeText": {
-                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
-                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
-                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                            "quiteCool": "Tento režim umožňuje nejlepší zážitek s vyváženými rychlostmi ventilátoru a výkonem systému. Například při hraní her optimalizuje výkon. V kanceláři snižuje hluk.",
+                            "batterySaving": "Tento režim umožňuje maximální životnost baterie automatickým nastavením jasu, změnou nastavení napájení, vypnutím funkcí pokročilého zpracování obrazu atd.",
+                            "performance": "Tento režim umožňuje maximální výkon systému. V tomto režimu může vysoká rychlost ventilátoru způsobit velký hluk."
                         },
                         "intelligentCoolingModesModal": {
-                            "title": "Change intelligent cooling modes",
-                            "close": "close",
+                            "title": "Změňte inteligentní režimy chlazení",
+                            "close": "Zavřít",
                             "coolingModesList": {
-                                "list1": "Click on the windows battery-icon in the toolbar",
-                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                                "list1": "V panelu nástrojů klikněte na ikonu baterie systému Windows",
+                                "list2": "Ve Windows se zobrazí ukazatel stavu baterie, posunutím jezdce vyberte optimální čas nebo optimální výkon."
                             }
                         }
                     },
                     "nonintelligentCooling": {
                         "options": {
-                            "intelligentCooling": "INTELIGENTNÍ CHLAZENÍ",
+                            "intelligentCooling": "Inteligentní chlazení",
                             "extremeCooling": "EXTRÉMNÍ VÝKON",
                             "battery&Quite": "BATERIE A TICHO"
                         }
                     },
-                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
+                    "description5": "Funkce Inteligentní chlazení upravuje rychlost ventilátoru, maximální výkon a spravuje životnost baterie. Tato funkce má 3 režimy (tichý režim, vyvážený režim a režim výkonu) a je nyní přístupná posuvníkem výkonu systému Windows"
                 },
                 "powerSettings": {
                     "title": "Nastavení napájení",
@@ -761,8 +745,8 @@
                         "title": "Rychlé znovuspuštění",
                         "description": "Aktivujte tuto funkci, zrychlí obnovení provozu počítače v případě, že často otevíráte a zavíráte jeho víko.",
                         "tooltip": "Tato funkce zrychlí obnovení provozu počítače v případě, že často otevíráte a zavíráte jeho víko. Je-li zapnuta, počítač po zavření víka přejde do režimu nízké spotřeby, v případě znovuotevření víka během 15 sekund od jeho zavření se však okamžitě vrátí k běžnému provozu. Kromě toho se díky ní notebook může pokusit dokončit započaté činnosti (například odeslání e-mailu nebo stahování souboru) ještě předtím, než přejde do pohotovostního režimu."
-					},
-					"or":"Or"
+                    },
+                    "or": "Nebo"
                 },
                 "otherSettings": {
                     "title": "Další nastavení",
@@ -971,7 +955,7 @@
                         "onSunsetToSunriseScheduleDescription": "Naplánovat režim péče o zrak od západu do východu slunce",
                         "note": {
                             "title": "Poznámka",
-                            "description": "Program Lenovo Vantage potřebuje získat přístup k informacím o umístění pro výpočet času západu a východu slunce."
+                            "description": "Pokud je aktivován režim péče o oči, tato teplota barev se neprojeví. Můžete však přetáhnout jezdec a zobrazit její náhled. Chcete-li ji využít, vypněte režim péče o oči."
                         }
                     },
                     "privacyGuard": {
@@ -989,16 +973,16 @@
                         "reset": "Resetovat teplotu",
                         "tooltip": "Tato funkce také umožňuje šetřit energii a prodloužit výdrž baterie selektivním ztmavením některých částí displeje.",
                         "dropDown": {
-                            "seconds": "seconds",
-                            "minute": "minute",
-                            "minutes": "minutes",
-                            "alwaysOn": "Always on",
-                            "never": "never",
-                            "halfTime": "Half time of display off timer"
+                            "seconds": "sekundy",
+                            "minute": "minuta",
+                            "minutes": "minuty",
+                            "alwaysOn": "Vždy zapnuto",
+                            "never": "nikdy",
+                            "halfTime": "Poloviční čas časovače vypnutí displeje"
                         },
-                        "taskBarDimmer": "TASKBAR DIMMER",
-                        "backgroundDimmer": "BACKGROUND DIMMER",
-                        "displayDimmer": "DISPLAY DIMMER"
+                        "taskBarDimmer": "ZTMAVOVÁNÍ HLAVNÍHO PANELU",
+                        "backgroundDimmer": "ZTMAVOVÁNÍ POZADÍ",
+                        "displayDimmer": "ZTMAVOVÁNÍ DISPLEJE"
                     }
                 },
                 "camera": {
@@ -1030,10 +1014,10 @@
                         "sketchMode": "Režim Skica"
                     },
                     "cameraLoadingFailed": {
-                        "inUseTitle": "CAMERA IS IN USE",
-                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
-                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
-                        "loadingFailedDescription": "Close the app and try again."
+                        "inUseTitle": "KAMERA SE POUŽÍVÁ",
+                        "inUseDescription": "Kameru právě používá jiná aplikace. Zavřete tuto aplikaci a zkuste to znovu.",
+                        "loadingFailedTitle": "KAMERA SE POUŽÍVÁ NEBO SELHALO NAHRÁVÁNÍ",
+                        "loadingFailedDescription": "Zavřete tuto aplikaci a zkuste to znovu."
                     }
                 }
             },
@@ -1085,15 +1069,15 @@
                             "option3": "Zadejte text"
                         }
                     },
-                    "tooltip": "Content to be filled",
+                    "tooltip": "Obsah, který má být vyplněn",
                     "apply": {
-                        "title": "APPLY"
+                        "title": "POUŽÍT"
                     },
                     "website": {
-                        "url": "WEBSITE URL"
+                        "url": "URL STRÁNKY"
                     },
                     "enterText": {
-                        "title": "TEXT TO BE ENTERED"
+                        "title": "TEXT K ZADÁNÍ"
                     }
                 }
             }
@@ -1204,7 +1188,18 @@
                     "hand": {
                         "title": "Zjištění ruky v blízkosti okrajů počítače",
                         "description": "Je-li povolen režim tabletu, aktivujte systém APS, pokud není detekována ruka"
-                    }
+                    },
+                    "more": "DALŠÍ",
+                    "advanced-settings": "ROZŠÍŘENÁ NASTAVENÍ",
+                    "hide": "SKRÝT ROZŠÍŘENÁ NASTAVENÍ"
+                },
+                "APS": {
+                    "more": "DALŠÍ",
+                    "advancedSettings": "ROZŠÍŘENÁ NASTAVENÍ",
+                    "hideAdvancedSettings": "SKRÝT ROZŠÍŘENÁ NASTAVENÍ",
+                    "lowSensitivity": "Nízká citlivost",
+                    "mediumSensitivity": "Střední citlivost",
+                    "highSensitivity": "Vysoká citlivost"
                 }
             },
             "intelligentMedia": {
@@ -1241,8 +1236,8 @@
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
-                    "title": "Install Failed",
-                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                    "title": "Instalace se nezdařila",
+                    "desc": "Chcete-li použít funkci Lenovo Voice, zkuste to znovu později."
                 }
             }
         }
@@ -1262,7 +1257,7 @@
         "at": "v",
         "readMore": "Další informace",
         "popup": {
-            "reboot": "Restart",
+            "reboot": "Restartovat",
             "shutdown": "Vypnout",
             "rebootForceMsg": "Po instalaci vybraných aktualizací bude systém automatickyrestartován.",
             "shutdownForceMsg": "Po instalaci vybraných aktualizací se systém automatickyvypne.",
@@ -1294,7 +1289,7 @@
             "title": "Webová stránka podpory Lenovo"
         },
         "banner": {
-            "neverChecked": "Vítejte při použití programu System Update.",
+            "neverChecked": "Vítejte při použití Aktualizace systému.",
             "title": "Aktualizovaný systém je zdravým systémem.",
             "last": "Poslední aktualizace: ",
             "next": "Příští plánovaná aktualizace: ",
@@ -1398,7 +1393,7 @@
             "overviewBlockTitle": "Přehled zabezpečení ekosystému",
             "allDevices": "Všechna zařízení",
             "myDevice": "Mé zařízení",
-            "thisComputer": "This computer",
+            "thisComputer": "Tento počítač",
             "secure": "ZABEZPEČIT",
             "needAttention": "VYŽADUJE POZORNOST",
             "manageAccount": "Správa účtu",
@@ -1482,7 +1477,10 @@
             "listLenovoCommunity": "Komunita Lenovo",
             "listContactCustomerService": "Kontaktovat servisní středisko",
             "listContactUsOnWechat": "Kontaktujte nás ve službě WeChat",
-            "weChatDescription": "Pošlete nám otázku přes WeChat, určitě vám rychle odpovíme"
+            "weChatDescription": "Pošlete nám otázku přes WeChat, určitě vám rychle odpovíme",
+            "listFindUs": "Find us on social media",
+            "listContactUsOnFacebook": "Contact us on Facebook",
+            "facebookDescription": "Click to find us on Facebook"
         },
         "quicklinks": {
             "title": "Rychlé odkazy",
@@ -1523,7 +1521,13 @@
             "maliciousNetwork": "Tento měsíc byl váš počítač ochráněn před {{maliciousWifi}} škodlivými sítěmi.",
             "good": "V POŘÁDKU",
             "malicious": "ŠKODLIVÝ KÓD",
-            "suspicious": "PODEZŘELÝ KÓD"
+            "suspicious": "PODEZŘELÝ KÓD",
+            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+            "antivirus": "Being protected by anti-virus software",
+            "password": "Having strong and complex passwords managed in a safe way",
+            "vpn": "Monitoring your network exposure to attackers",
+            "wifi": "Encrypting your personal data when using public WiFi",
+            "windowsHello": "Protecting your device using safe login options"
         },
         "antivirus": {
             "common": {
@@ -1617,7 +1621,8 @@
                 "headerText": "Chyba",
                 "bodyText": "Zjistili jsme, že aplikace Vantage postrádá důležité součásti. Tyto součásti se stáhnou na pozadí. Zkuste to prosím později.",
                 "closeText": "Zavřít",
-                "offlineText": "Zjistili jsme, že nejste připojeni k internetu. Některé části této stránky nebudou správně fungovat. Znovu se prosím připojte"
+                "offlineText": "Zjistili jsme, že nejste připojeni k internetu. Některé části této stránky nebudou správně fungovat. Znovu se prosím připojte",
+                "accountText": "Account creation failed. Please try again later."
             }
         },
         "homeprotection": {
@@ -1672,14 +1677,14 @@
             "title": "Zabezpečení VPN",
             "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN šifruje informace, které odesíláte a přijímáte, takže můžete bez obav bezpečně a soukromě používat svůj počítač PC, Mac®, chytrý telefon nebo tablet s libovolným internetovým připojením.",
-            "whatCanSufEasy1": "A virtual private network provider that protects you while you are online. Without a VPN, your computer may be more vulnerable to attackers and identity theft. The VPN runs silently in the background and provides security and privacy protection.",
-            "startUseSufEasy4": "SurfEasy users can enjoy 250 MB of free traffic every 30 days! Follow the steps on the &quot;Rewards&quot; tab of the SurfEasy app to get more traffic.",
-            "howToGetData": "How to get free traffic:",
-            "howToGetData1": "Confirm email to win +250 MB traffic",
-            "howToGetData2": "Add a second device to win +250 MB of traffic",
-            "howToGetData3": "Refer a friend and win +500 MB of traffic",
-            "howToGetData4": "Like SurfEasy on Facebook, earn +100 MB of traffic,",
-            "howToGetData5": "Follow SurfEasy on Twitter and win +100 MB of traffic",
+            "whatCanSufEasy1": "Virtuální soukromý poskytovatel sítě, který vás chrání, když jste online. Bez VPN může být váš počítač zranitelnější vůči útočníkům a krádežím identity. VPN běží tiše na pozadí a poskytuje zabezpečení a ochranu soukromí.",
+            "startUseSufEasy4": "Uživatelé SurfEasy mohou každých 30 dní využít provoz o objemu 250 MB dat zdarma! Chcete-li zvýšit provoz, postupujte podle kroků na kartě &quot;Odměny&quot; aplikace SurfEasy.",
+            "howToGetData": "Jak získat bezplatný provoz:",
+            "howToGetData1": "Potvrďte e-mail a vyhrajte provoz o objemu +250 MB",
+            "howToGetData2": "Přidejte druhé zařízení a vyhrajte provoz o objemu +250 MB",
+            "howToGetData3": "Svěřte se příteli a vyhrajte provoz o objemu +500 MB",
+            "howToGetData4": "Dejte aplikaci SurfEasy na Facebooku lajk a získejte provoz o objemu +100 MB",
+            "howToGetData5": "Sledujte aplikaci SurfEasy na Twitteru a vyhrajte provoz o objemu +100 MB",
             "helpKeep": "SurfEasy VPN pomáhá zajišťovat bezpečí a soukromí vašich online aktivit.",
             "getSufEasy": "Získat SurfEasy",
             "openSufEasy": "Otevřít SurfEasy",

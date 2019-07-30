@@ -387,7 +387,7 @@
                 "title": "Naprava",
                 "sub1": "Moja naprava",
                 "sub2": "Nastavitve mojih naprav",
-                "sub3": "System Updates",
+                "sub3": "Posodobitev sistema",
                 "sub4": "Pametna pomoč"
             },
             "security": {
@@ -444,31 +444,31 @@
     },
     "privacy": {
         "headerMain": {
-            "title": "Privacy"
+            "title": "Zasebnost"
         }
     },
     "tutorial": {
-        "almostThere": "Almost there!",
-        "para1": "Just a few more buttons to press before we can have liftoff.",
-        "para2": "Before we can give you the most optimal experience there are still a few things to setup.",
-        "personalise": "START PERSONALIZING",
-        "howIsitUsed": "How will you use it?",
-        "howMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "business": "BUSINESS",
-        "personal": "PERSONAL",
-        "custom": "CUSTOM",
-        "skip": "SKIP",
+        "almostThere": "Ste skoraj na koncu!",
+        "para1": "Samo še nekaj gumbov, ki jih morate pritisniti, preden lahko začnete.",
+        "para2": "Preden vam lahko zagotovimo najbolj optimalno izkušnjo, morate nastaviti še nekaj stvari.",
+        "personalise": "ZAČETEK PRILAGAJANJA",
+        "howIsitUsed": "Kako boste uporabili?",
+        "howMachinUsed": "Kliknite eno od teh uporab, da izveste, kako boste uporabljali ta računalnik?",
+        "business": "POSLOVNO",
+        "personal": "OSEBNO",
+        "custom": "PO MERI",
+        "skip": "PRESKOČI",
         "next": "NAPREJ",
-        "interests": "What are your interests?",
-        "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "games": "GAMES",
-        "news": "NEWS",
-        "entertainment": "ENTERTAINMENT",
-        "arts": "ARTS",
-        "politics": "POLITICS",
-        "sports": "SPORTS",
-        "regionalNews": "REGIONAL NEWS",
-        "technology": "TECHNOLOGY"
+        "interests": "Katera so vaša zanimanja?",
+        "howOnesMachinUsed": "Kliknite eno od teh uporab, da izveste, kako boste uporabljali ta računalnik?",
+        "games": "IGRE",
+        "news": "NOVICE",
+        "entertainment": "ZABAVA",
+        "arts": "UMETNOST",
+        "politics": "POLITIKA",
+        "sports": "ŠPORT",
+        "regionalNews": "REGIONALNE NOVICE",
+        "technology": "TEHNOLOGIJA"
     },
     "dashboard": {
         "headerMain": {
@@ -534,7 +534,7 @@
                 }
             },
             "systemUpdate": {
-                "title": "System Update",
+                "title": "Posodobitev sistema",
                 "detail": {
                     "update": "Posodobitev"
                 }
@@ -636,15 +636,15 @@
                         "acdischarging": "Praznjenje (z izmeničnim tokom)"
                     },
                     "deviceChemistry": {
-                        "li-polymer": "Li-Polymer",
-                        "li-ion": "Li-Ion",
-                        "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion",
-                        "silver-zinc": "Silver-Zinc",
-                        "silver_zinc": "Silver-Zinc",
+                        "li-polymer": "Litijeva polimerna",
+                        "li-ion": "Litijeva ionska",
+                        "li_polymer": "Litijeva polimerna",
+                        "li_ion": "Litijeva ionska",
+                        "silver-zinc": "srebrocinkova",
+                        "silver_zinc": "srebrocinkova",
                         "nicd": "NiCd",
                         "nimh": "NiMH",
-                        "unknown": "Unknown"
+                        "unknown": "Neznan"
                     },
                     "manufacturer": {
                         "title": "Proizvajalec",
@@ -662,7 +662,7 @@
                     "NotSupportACAdapter": "<b>Napajalnik ni podprt.</b> Vaš računalnik Lenovo ne podpira tega napajalnika. Povzroči lahko nenaden izklop. Priključite pravilen napajalnik.",
                     "LimitedACAdapterSupport": "<b>Napajalnik računalniku Lenovo ne more zagotoviti dovolj energije</b>, kar bo vplivalo na učinkovitost delovanja sistema in hitrost polnjenja. Znova priključite ustrezen napajalnik.",
                     "MissingDriver": "<b>Gonilnik za Lenovo Power Manager driver</b> ni nameščen ali ne deluje pravilno. Zaženite Windows Update, da namestite najnovejši gonilnik.",
-                    "StoreLimitation": "<b>Baterija lahko shrani samo do {{percentageLimitation}}%</b> svoje prvotne polne zmogljivosti polnjenja.",
+                    "StoreLimitation": "<b>Baterija lahko shrani samo do {{value}}%</b> svoje prvotne polne zmogljivosti polnjenja.",
                     "HighTemperature": "<b>Praznjenje</b> je ustavljeno, ker je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je <b>popolnoma izpraznjena</b> in jo je treba znova napolniti. To lahko traja deset ali več ur.",
                     "OverheatedBattery": "Baterija je <b>prevroča</b>. Odstranite jo iz računalnika in jo ohladite na sobno temperaturo.",
@@ -671,7 +671,7 @@
                 "updating": "Posodabljanje",
                 "voltageError": "Napačna napetost baterije",
                 "batteryNotDetected": "Baterija ni zaznana",
-                "thresholdNote": "<b>Opomba:</b> zaradi podaljšanja življenjske dobe baterije ste polnjenje nastavili tako, da se ustavi, ko baterija doseže {{chargeThresholdInfo.stopValue}}% napolnjenosti."
+                "thresholdNote": "<b>Opomba:</b> zaradi podaljšanja življenjske dobe baterije ste polnjenje nastavili tako, da se ustavi, ko baterija doseže {{value}}% napolnjenosti."
             },
             "power": {
                 "title": "Napajanje",
@@ -681,42 +681,41 @@
                     "title": "SKOK NA NASTAVITVE",
                     "battery": "Baterija",
                     "power": "Napajanje",
-                    "cooling": "Pametno hlajenje",
                     "other": "Drugo",
-                    "smartStandby": "Smart Standby"
+                    "smartStandby": "Pametno stanje pripravljenosti"
                 },
                 "powerSmartSettings": {
                     "title": "Pametne nastavitve napajanja",
                     "subtitle": "PAMETNO HLAJENJE",
                     "subtitle1": "Baterija in tišina",
-                    "description1": "Ta funkcija toplotne nastavitve dinamično prilagaja vašim potrebam.Ko je funkcija vklopljena, prilagodi nastavitve, da ohranja napravo hladnejšo ali tiho, medtem ko jo držite ali je v mirovanju. V nasprotnem primeru optimizira delovanje, ko je naprava na stabilni površini. Ko je izklopljena, lahko ročno nastavite toplotno prednost.",
+                    "description1": "Ko je ta funkcija vklopljena, dinamično prilagaja toplotne nastavitve vašim potrebam. Nastavitve prilagodi tako, da napravo ohrani hladno in tiho, ko jo držite v rokah ali je nedejavna. Ko je naprava na stabilni površini, optimizira učinkovitost delovanja. Ko je izklopljena, lahko ročno nastavite toplotno prednost.",
                     "description2": "Pametno hlajenje prilagodi hitrost ventilatorja, najvišjo površinsko temperaturo in učinkovitost delovanja.Ta funkcija ima načine, navedene spodaj, do katerih lahko zdaj dostopate prek drsnika za učinkovitosti delovanja/porabo sistema Windows.",
                     "description3": "Pametno hlajenje samodejno prilagaja toplotno učinkovitost ustrezno vašim potrebam.Pametno hlajenje prilagodi nastavitve učinkovitosti delovanja, tako da je površina prenosnega računalnika hladnejša in zato udobnejša za uporabo, ko ga držite v roki. Ko je naprava na mizi, ta funkcija optimizira učinkovitost delovanja.",
-                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "description13": "Ko je ta funkcija vklopljena, dinamično prilagaja toplotne nastavitve vašim potrebam. Nastavitve prilagodi tako, da napravo ohrani hladno in tiho, ko jo držite v rokah ali je nedejavna. Ko je naprava na stabilni površini, optimizira učinkovitost delovanja. Ko je izklopljena, lahko ročno nastavite toplotno prednost.",
+                    "description14": "S to funkcijo lahko prilagodite hitrost ventilatorja, povečate učinkovitost delovanja sistema ali po potrebi podaljšate življenjsko dobo baterije. Ima tri načine, ki so opisani spodaj. Med načini lahko preklopite tudi z bližnjičnimi tipkami (Fn+Q) ali prek orodne vrstice Lenovo Vantage.",
                     "readMore": "Preberite več.",
                     "gotoWindows": {
                         "title": "Odprite nastavitve sistema Windows",
                         "modalBodyText1": "Kliknite ikono baterije Windows na sistemskem pladnju, da dostopite do drsnika za učinkovitosti delovanja/porabo sistema Windows"
                     },
                     "intelligentCooling": {
-                        "title": "Pametno hlajenje",
+                        "title": "Pametno Hlajenje",
                         "description": "",
                         "tooltip": "",
                         "optimize": "optimiziranje sistema za",
                         "apsHint": "Če želite omogočiti pametno hlajenje, morate namestiti in omogočiti Lenovo Active Protection System.",
                         "options": {
-                            "quiteCool3": "Hladen način",
-                            "performance3": "Velika učinkovitost delovanja",
+                            "quiteCool3": "Tiho in hladno",
+                            "performance3": "Zmogljivost",
                             "quiteCool4": "Tiho in hladno",
                             "performance4": "Zmogljivost",
                             "quiteCool5": "Tiho in hladno",
                             "performance5": "Zmogljivost",
-                            "batterySaving": "Battery Saving",
-                            "performance13": "Performance",
-                            "quiteCool13": "Quiet & Cool",
-                            "performance14": "Extreme Performance",
-                            "quiteCool14": "Intelligent Cooling"
+                            "batterySaving": "Varčevanje z baterijo",
+                            "performance13": "Zmogljivost",
+                            "quiteCool13": "Tiho in hladno",
+                            "performance14": "Izjemna zmogljivost",
+                            "quiteCool14": "Pametno hlajenje"
                         },
                         "readMore": {
                             "mode1": "Tihi način",
@@ -725,19 +724,19 @@
                             "line1": "Drsnik je skrajno levo.Hitrost ventilatorja in učinkovitost delovanja se zmanjšata, tako da računalnik deluje hladneje in tišje ter ga lahko dalj časa uporabljate pri akumulatorskem napajanju.",
                             "line2": "Drsnik je na sredini.Hitrost ventilatorja in učinkovitost delovanja se dinamično uravnotežita za najboljšo izkušnjo.",
                             "line3": "Drsnik je skrajno desno. Hitrost ventilatorja in dopustna površinska temperatura sta višja za največjo učinkovitost delovanja.",
-                            "line4": "More info"
+                            "line4": "Več informacij"
                         },
                         "selectedModeText": {
-                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
-                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
-                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                            "quiteCool": "Ta način omogoča najboljšo izkušnjo z uravnoteženo hitrostjo ventilatorja in delovanjem sistema. Med uporabo iger na primer optimizira delovanje. Ko ste v pisarni zmanjša hrup.",
+                            "batterySaving": "Ta način omogoča najdaljšo življenjsko dobo baterije tako, da samodejno prilagodi svetlost, spremeni nastavitve napajanja, onemogoči funkcije napredne obdelave slik itd.",
+                            "performance": "Ta način omogoča največjo zmogljivost sistema. V tem načinu lahko hitra hitrost ventilatorja povzroči veliko hrupa."
                         },
                         "intelligentCoolingModesModal": {
-                            "title": "Change intelligent cooling modes",
-                            "close": "close",
+                            "title": "Spremenite inteligentne načine hlajenja",
+                            "close": "zapri",
                             "coolingModesList": {
-                                "list1": "Click on the windows battery-icon in the toolbar",
-                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                                "list1": "Kliknite ikono baterije v sistemu Windows v orodni vrstici",
+                                "list2": "Ko se prikaže merilnik baterije v sistemu Windows, premaknite drsnik in izberite med optimalnim časom ali optimalno zmogljivostjo."
                             }
                         }
                     },
@@ -748,7 +747,7 @@
                             "battery&Quite": "BATERIJA IN TIŠINA"
                         }
                     },
-                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
+                    "description5": "Pametno hlajenje prilagodi hitrost ventilatorja, največjo zmogljivost in upravlja življenjsko dobo baterije. Ta funkcija ima 3 načine (tihi način, uravnotežen način in način učinkovitosti delovanja) in je zdaj dostopna z drsnikom za zmogljivost sistema Windows"
                 },
                 "powerSettings": {
                     "title": "Nastavitve napajanja",
@@ -761,8 +760,8 @@
                         "title": "Hiter vklop",
                         "description": "Omogočite to funkcijo in skrajšajte čas, potreben za preklop iz stanja pripravljenosti, če pogosto odpirate in zapirate pokrov računalnika.",
                         "tooltip": "Ta funkcija skrajša čas, potreben za preklop iz stanja pripravljenosti, če pogosto odpirate in zapirate pokrov računalnika. Ko je omogočena, bo računalnik preklopil v način majhne porabe, ko zaprete pokrov, vendar bo takoj spet na voljo, če pokrov spet odprete največ 15 minut potem, ko ste ga zaprli. S to funkcijo lahko prenosni računalnik konča dejavnosti, ki potekajo (na primer pošiljanje e-pošte in prenos datotek), preden sistem preklopi v stanje mirovanja."
-					},
-					"or":"Or"
+                    },
+                    "or": "Ali"
                 },
                 "otherSettings": {
                     "title": "Druge nastavitve",
@@ -971,7 +970,7 @@
                         "onSunsetToSunriseScheduleDescription": "Načrtujte očem prijazen način od sončnega zahoda do sončnega vzhoda",
                         "note": {
                             "title": "Opomba",
-                            "description": "Lenovo Vantage potrebuje dostop do informacij o vaši lokaciji za izračun časa sončnega zahoda in vzhoda v vaši regiji."
+                            "description": "Ko je omogočen očem prijazen način, ta barvna temperatura ni uveljavljena. Če si želite ogledati predogled, pa lahko povlečete drsnik. Če želite, da učinkuje, izklopite očem prijazen način."
                         }
                     },
                     "privacyGuard": {
@@ -989,16 +988,16 @@
                         "reset": "Ponastavitev temperature",
                         "tooltip": "Ta funkcija lahko s selektivnim zatemnjevanjem delov zaslona zmanjša porabo energije in podaljša življenjsko dobo baterije.",
                         "dropDown": {
-                            "seconds": "seconds",
-                            "minute": "minute",
-                            "minutes": "minutes",
-                            "alwaysOn": "Always on",
-                            "never": "never",
-                            "halfTime": "Half time of display off timer"
+                            "seconds": "sekund",
+                            "minute": "minuta",
+                            "minutes": "minut",
+                            "alwaysOn": "Vedno vklopljeno",
+                            "never": "nikoli",
+                            "halfTime": "Polovica časa časovnika za izklop zaslona"
                         },
-                        "taskBarDimmer": "TASKBAR DIMMER",
-                        "backgroundDimmer": "BACKGROUND DIMMER",
-                        "displayDimmer": "DISPLAY DIMMER"
+                        "taskBarDimmer": "ZATEMNJEVALNIK OPRAVILNE VRSTICE",
+                        "backgroundDimmer": "ZATEMNJEVALNIK OZADJA",
+                        "displayDimmer": "ZATEMNJEVANJE ZASLONA"
                     }
                 },
                 "camera": {
@@ -1030,10 +1029,10 @@
                         "sketchMode": "Način skice"
                     },
                     "cameraLoadingFailed": {
-                        "inUseTitle": "CAMERA IS IN USE",
-                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
-                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
-                        "loadingFailedDescription": "Close the app and try again."
+                        "inUseTitle": "KAMERA JE V UPORABI",
+                        "inUseDescription": "Kamero uporablja drug program. Zaprite programi in poskusite znova.",
+                        "loadingFailedTitle": "KAMERA JE V UPORABI ALI NALAGANJE NI USPELO",
+                        "loadingFailedDescription": "Zaprite programi in poskusite znova."
                     }
                 }
             },
@@ -1085,15 +1084,15 @@
                             "option3": "Vnesite besedilo"
                         }
                     },
-                    "tooltip": "Content to be filled",
+                    "tooltip": "Vsebina bo dodana",
                     "apply": {
-                        "title": "APPLY"
+                        "title": "UPORABI"
                     },
                     "website": {
-                        "url": "WEBSITE URL"
+                        "url": "URL SPLETNEGA MESTA"
                     },
                     "enterText": {
-                        "title": "TEXT TO BE ENTERED"
+                        "title": "BESEDILO BO DODANO"
                     }
                 }
             }
@@ -1204,7 +1203,18 @@
                     "hand": {
                         "title": "Zaznavanje bližine rok na robovih računalnika",
                         "description": "Ko je omogočen način tabličnega računalnika, omogoči APS, ko roka ni zaznana"
-                    }
+                    },
+                    "more": "VEČ",
+                    "advanced-settings": "DODATNE NASTAVITVE",
+                    "hide": "SKRIJ DODATNE NASTAVITVE"
+                },
+                "APS": {
+                    "more": "VEČ",
+                    "advancedSettings": "DODATNE NASTAVITVE",
+                    "hideAdvancedSettings": "SKRIJ DODATNE NASTAVITVE",
+                    "lowSensitivity": "Nizka občutljivost",
+                    "mediumSensitivity": "Srednja občutljivost",
+                    "highSensitivity": "Visoka občutljivost"
                 }
             },
             "intelligentMedia": {
@@ -1240,15 +1250,15 @@
                     "closeText": "zapri"
                 },
                 "modalInstallationFailed": {
-                    "btnText": "ok",
-                    "title": "Install Failed",
-                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                    "btnText": "V redu",
+                    "title": "Namestitev ni uspela",
+                    "desc": "Poskusite znova pozneje, da boste lahko uporabljali storitev Lenovo Voice."
                 }
             }
         }
     },
     "systemUpdates": {
-        "title": "Posodobitve sistema",
+        "title": "Posodobitev sistema",
         "back": "NAZAJ",
         "history": "CELOTNA ZGODOVINA",
         "notAvailable": "Ni na voljo.",
@@ -1262,7 +1272,7 @@
         "at": "ob",
         "readMore": "Preberite več",
         "popup": {
-            "reboot": "Znova zaženi",
+            "reboot": "Vnovični zagon",
             "shutdown": "Zaustavitev",
             "rebootForceMsg": "Posodobitve, ki ste jih izbrali, bodo povzročile samodejni ponovni zagon sistemapo namestitvi.",
             "shutdownForceMsg": "Posodobitve, ki ste jih izbrali, bodo povzročilesamodejno zaustavitev sistema po namestitvi.",
@@ -1294,7 +1304,7 @@
             "title": "Spletno mesto za podporo Lenovo"
         },
         "banner": {
-            "neverChecked": "Uporabite funkcijo System Update.",
+            "neverChecked": "Uporabite posodobitev sistema.",
             "title": "Posodobljen sistem je zdrav sistem.",
             "last": "Zadnja posodobitev: ",
             "next": "Naslednja načrtovana posodobitev: ",
@@ -1398,7 +1408,7 @@
             "overviewBlockTitle": "Pregled varnosti ekosistema",
             "allDevices": "Vse naprave",
             "myDevice": "Moja naprava",
-            "thisComputer": "This computer",
+            "thisComputer": "Ta računalnik",
             "secure": "VARNO",
             "needAttention": "POTREBEN JE UKREP",
             "manageAccount": "Upravljanje računa",
@@ -1672,14 +1682,14 @@
             "title": "VPN Varnost",
             "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN šifrira podatke, ki jih pošiljate in prejemate, tako da lahko varno in zasebno uporabo računalnika, Mac®, pametni telefon ali tablični računalnik na kateri koli internetni povezavi brez skrbi.",
-            "whatCanSufEasy1": "A virtual private network provider that protects you while you are online. Without a VPN, your computer may be more vulnerable to attackers and identity theft. The VPN runs silently in the background and provides security and privacy protection.",
-            "startUseSufEasy4": "SurfEasy users can enjoy 250 MB of free traffic every 30 days! Follow the steps on the &quot;Rewards&quot; tab of the SurfEasy app to get more traffic.",
-            "howToGetData": "How to get free traffic:",
-            "howToGetData1": "Confirm email to win +250 MB traffic",
-            "howToGetData2": "Add a second device to win +250 MB of traffic",
-            "howToGetData3": "Refer a friend and win +500 MB of traffic",
-            "howToGetData4": "Like SurfEasy on Facebook, earn +100 MB of traffic,",
-            "howToGetData5": "Follow SurfEasy on Twitter and win +100 MB of traffic",
+            "whatCanSufEasy1": "Ponudnik navideznega zasebnega omrežja, ki vas varuje, ko ste v spletu. Brez VPN-ja je računalnik bolj izpostavljen napadalcem in kraji identitete. VPN se tiho izvaja v ozadju in zagotavlja varnost in zaščito zasebnosti.",
+            "startUseSufEasy4": "Kot uporabniku storitve SurfEasy vam bo vsakih 30 dni brezplačno na voljo 250 MB prenosa podatkov! Upoštevajte napotke na zavihku &quot;Rewards&quot; (Nagrade) v aplikacij iSurfEasy, da si zagotovite več prenosa podatkov.",
+            "howToGetData": "Kako do brezplačnega prenosa podatkov:",
+            "howToGetData1": "Potrdite e-poštno sporočilo in osvojite +250 MB prenosa podatkov",
+            "howToGetData2": "Dodajte drugo napravo in osvojite +250 MB prenosa podatkov",
+            "howToGetData3": "Priporočite prijatelja in osvojite +500 MB prenosa podatkov",
+            "howToGetData4": "Všečkajte aplikacijo SurfEasy na Facebooku in si prislužite +100 MB prenosa podatkov",
+            "howToGetData5": "Spremljajte aplikacijo SurfEasy na Twitterju in osvojite +100 MB prenosa podatkov",
             "helpKeep": "Pomoč vztrajati vaš online marljivost zanesljiv ter zaseben s SurfEasy VPN.",
             "getSufEasy": "Pridobijte SurfEasy",
             "openSufEasy": "Odpri SurfEasy",

@@ -66,6 +66,7 @@ export class PrivacyScoreService {
 		switchMapTo(
 			this.getFigleafSetting((settings: FigleafSettings) => settings.isAntitrackingEnabled)
 		),
+		catchError((err) => of(false))
 	);
 
 	private breachedAccountsFromKnownWebsites$ = this.getBreachesAccount((x: BreachedAccount) => x.domain !== 'n/a');

@@ -54,7 +54,7 @@
 								metricsParent="Pages.SystemUpdate"
 								metricsItem="'btn.cancel'"
 								class="btn btn-link cancel-check"
-								[disabled]="percent === 0"
+								[disabled]="percent === 0 || isCheckingStatus"
 								(click)="cancelUpdates()">{{'systemUpdates.banner.cancelCheck' | translate}}</button>
 						</div>
 					</div>

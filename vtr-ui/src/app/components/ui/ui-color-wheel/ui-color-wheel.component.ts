@@ -55,7 +55,6 @@ export class UiColorWheelComponent implements OnInit, OnChanges {
 				this.inHEX = changes.inHEX.currentValue;
 				if (!isUndefined(this.colorWheel)) {
 					this.colorWheel.hex = '#' + this.inHEX;
-					// this.colorWheel.rgb = this.color;
 					this.colorWheel.redraw();
 				}
 			}

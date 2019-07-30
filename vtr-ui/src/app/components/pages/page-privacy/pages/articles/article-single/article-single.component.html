@@ -1,7 +1,7 @@
 <ng-container *ngIf="article$ | async as article else loader">
 	<div class="article"
 		 vtrSendAnalytics
-		 [metricsEvent]="'PageView'"
+		 [metricsEvent]="'ArticleView'"
 		 [metricsParam]="{'ArticleId': article.ActionLink}">
 		<vtr-article-description [article]="article"></vtr-article-description>
 		<div class="article-recommendations">

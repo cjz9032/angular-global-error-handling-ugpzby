@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="40" height="40" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="AUTO_SCREEN_OFF" data-name="AUTO SCREEN OFF" clip-path="url(#clip-path)">
+    <g id="组_1164" data-name="组 1164" transform="translate(-1537 -16479.926)">
+      <g id="组_1163" data-name="组 1163" transform="translate(1544 16485.926)">
+        <path id="路径_120" data-name="路径 120" d="M41.563,59.238a6.016,6.016,0,1,0,6.015,6.015A6.015,6.015,0,0,0,41.563,59.238Zm0,10.4a4.382,4.382,0,1,1,4.382-4.383A4.383,4.383,0,0,1,41.563,69.636Z" transform="translate(-28.649 -50.812)"/>
+        <rect id="矩形_1310" data-name="矩形 1310" width="1.859" height="5.983" rx="0.93" transform="translate(11.988 0)"/>
+        <rect id="矩形_1311" data-name="矩形 1311" width="1.859" height="5.983" rx="0.93" transform="translate(0 8.049) rotate(-60)"/>
+        <rect id="矩形_1312" data-name="矩形 1312" width="1.859" height="5.983" rx="0.93" transform="translate(1.006 22.459) rotate(-120)"/>
+        <rect id="矩形_1313" data-name="矩形 1313" width="1.859" height="5.983" rx="0.93" transform="translate(13.979 28.863) rotate(180)"/>
+        <rect id="矩形_1314" data-name="矩形 1314" width="1.859" height="5.983" rx="0.93" transform="translate(25.915 20.966) rotate(120)"/>
+        <rect id="矩形_1315" data-name="矩形 1315" width="1.859" height="5.983" rx="0.93" transform="translate(25.07 6.642) rotate(60)"/>
+      </g>
+    </g>
+    <g id="组_37" data-name="组 37">
+      <g id="组_25" data-name="组 25">
+        <path id="Combined-Shape" d="M48.851,14.238a.772.772,0,0,1-.769-.769v-5.9c0-.426.511-.771.93-.771h5.822a.78.78,0,0,1,0,1.559H49.621v5.11A.772.772,0,0,1,48.851,14.238Zm38.461,0a.772.772,0,0,1-.769-.769V8.36H82.17a.78.78,0,0,1,0-1.559h5.315c.419,0,.6.345.6.771v5.9A.772.772,0,0,1,87.313,14.238ZM54.834,46.8H49.012c-.419,0-.93-.344-.93-.769v-5.9a.769.769,0,0,1,1.539,0v5.108h5.214a.78.78,0,0,1,0,1.559Zm32.651,0H82.17a.78.78,0,0,1,0-1.559h4.373V40.134a.769.769,0,0,1,1.539,0v5.9C88.082,46.457,87.905,46.8,87.486,46.8Z" transform="translate(-48.082 -6.801)"/>
+      </g>
+    </g>
+    <rect id="矩形_1316" data-name="矩形 1316" width="2" height="36" rx="1" transform="translate(33.87 32.455) rotate(135)"/>
+  </g>
+</svg>

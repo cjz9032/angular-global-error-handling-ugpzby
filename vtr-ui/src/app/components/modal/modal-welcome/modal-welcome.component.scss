@@ -9,28 +9,31 @@
 
 .vtr-modal-welcome {
 	border-radius: $border_radius;
-	background-size: cover;
 	color: $main_dark;
 	box-shadow: $drop_shadow;
 	padding: 0;
 	position: relative;
 	width: 60rem;
 	max-width: 60rem !important;
-	height: auto;
-	//height: 60rem;
+	// height: auto;
+	height: 60rem;
 	background: $shade_lightest;
 	overflow: hidden;
 
-	.banner {
-		// border-top-left-radius:1rem;
-		// border-top-right-radius:1rem;
-		background: url("./../../../../assets/images/welcome/header-1.jpg") no-repeat;
-		//background-size:100% 16rem;
-		margin-left:6%;
-		margin-right:6%;
-		height: 24rem;
-		width: 88%;
+	.card-body {
+		display: flex;
+		flex-flow: column;
+		width: 60rem;
+		height: 60rem;
+	}
+
+	.banner-page-1 {
+		background: url("/assets/images/welcome/header-1.jpg") no-repeat;
+		background-size: cover;
 		background-position: center;
+		width: 100%;
+		height: 22rem;
+		flex-shrink: 0;
 
 		.title-alignment {
 			align-self: flex-end;
@@ -49,11 +52,12 @@
 	}
 
 	.banner-page-2 {
-		background: url("./../../../../assets/images/welcome/header-2.jpg") no-repeat;
+		background: url("/assets/images/welcome/header-2.jpg") no-repeat;
+		background-size: cover;
 		height: 10rem;
 		width: 100%;
+		flex-shrink: 0;
 		background-position: center;
-		margin-bottom: 2rem;
 	}
 
 	.font-14-semi {
@@ -71,17 +75,14 @@
 		font-weight: 600;
 	}
 
-	.font-12-bold {
-		font-size: 1.6rem;
-		font-weight: 600;
-	}
-
 	.content-page-2 {
-		overflow-y: scroll;
+		overflow-y: auto;
 		color: $dark;
-		padding: 0 3.7rem 0 7.2rem;
-		margin-right: 2rem;
-		height: 47rem;
+		padding: 3rem 4rem 0;
+		height: 100%;
+		font-size: 1.5rem;
+		font-weight: $weight_regular;
+		letter-spacing: 0.05rem;
 
 		img {
 			width: 100%;
@@ -95,7 +96,8 @@
 		.device-image {
 			cursor: pointer;
 			/*width: 100%;*/
-			width: 14.4rem;/*sahinul: VAN-5367*/
+			width: 14.4rem;
+			/*sahinul: VAN-5367*/
 			height: 100%;
 			position: relative;
 			border-radius: $border_radius_sm;
@@ -115,7 +117,8 @@
 			label {
 				/*font-size: 1.8rem;*/
 				font-family: "Segoe UI Bold", Sans-serif;
-				font-size: 1.4rem;/*sahinul: VAN-5367*/
+				font-size: 1.4rem;
+				/*sahinul: VAN-5367*/
 				width: 100%;
 				height: 100%;
 				line-height: 2rem;
@@ -171,9 +174,9 @@
 		}
 
 		.custom-control-label {
-			padding-left: 2.2rem;
+			padding-left: 2rem;
 			line-height: 1.8rem;
-			font-size: 1.2rem;
+			font-size: 1.4rem;
 			margin-bottom: 1rem;
 			font-weight: $weight_regular;
 
@@ -181,11 +184,12 @@
 			&::before {
 				width: 1.8rem;
 				height: 1.8rem;
+				top: 0.1rem;
 			}
 
 			// tick mark
 			&::after {
-				top: 0.1rem;
+				top: 0;
 				width: 2rem;
 				height: 2rem;
 				left: -1.6rem;
@@ -193,15 +197,14 @@
 		}
 	}
 
-	.content {
+	.content-page-1 {
 		overflow-y: auto;
 		color: $dark;
-		padding: 0 3.7rem 0 5.7rem;
-		margin-top: 3rem;
-		margin-right: 2rem;
-		height: 24rem;
+		padding: 3rem 4rem 0;
+		height: 100%;
 		font-size: 1.5rem;
 		font-weight: $weight_regular;
+		letter-spacing: 0.05rem;
 
 		ul li {
 			margin-bottom: 1.2rem;
@@ -213,8 +216,8 @@
 	}
 
 	.next-btn {
-		//height: 5rem;
-		padding-bottom: 10px;
+		padding: 0.5rem 0 1.5rem;
+		flex-shrink: 0;
 	}
 
 	.vtr-progress-bar {
@@ -229,6 +232,10 @@
 	.card {
 		border-radius: 1rem;
 		border: none;
+	}
+
+	.uppercase {
+		text-transform: uppercase;
 	}
 
 	/************** common *************/
@@ -309,6 +316,7 @@
 		border: 2pt solid $go_dark;
 		//opacity: 0.7 !important;
 	}
+
 	div.radio-is-selected input[type="radio"]:not(:checked) + img {
 		opacity: 0.5 !important;
 	}
@@ -386,6 +394,10 @@
 		height: 12rem;
 		width: 50rem;
 		border-radius: 1rem;
+	}
+
+	.mb-20 {
+		margin-bottom: 2rem;
 	}
 
 	.padding1 {
@@ -531,12 +543,5 @@
 		100% {
 			width: 90%;
 		}
-	}
-}
-
-
-.padding-right-1{
-	.mb-52{
-		margin-bottom: 2rem  ;
 	}
 }

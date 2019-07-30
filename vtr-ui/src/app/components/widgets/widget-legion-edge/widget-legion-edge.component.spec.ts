@@ -73,28 +73,7 @@ describe('WidgetLegionEdgeComponent', () => {
     expect(cacheCPUOverClockStatusValue).toEqual(cpuOCStatusPromisedData);
   }));
 
-  it('should able to mock RAM Overclock service data ', fakeAsync((done: any) => {
-    let ramOverclockStatusPromisedData: boolean;
-    //Mocking True
-    gamingSystemUpdateServiceMock.getRamOCStatus.and.returnValue(Promise.resolve(true));
-    gamingSystemUpdateServiceMock.getRamOCStatus().then((response: any) => {
-      ramOverclockStatusPromisedData = response;
-    });
-    tick(10);
-    fixture.detectChanges();
-    expect(ramOverclockStatusPromisedData).toEqual(true);
-
-    //Mocking false
-    gamingSystemUpdateServiceMock.getRamOCStatus.and.returnValue(Promise.resolve(false));
-    gamingSystemUpdateServiceMock.getRamOCStatus().then((response: any) => {
-      ramOverclockStatusPromisedData = response;
-    });
-    tick(10);
-    fixture.detectChanges();
-    expect(ramOverclockStatusPromisedData).toEqual(false);
-  }));
-
-  it('should able to mock Hybrid Mode service data ', fakeAsync((done: any) => {
+  it('should able to mock Hybrid Mode service data ',  fakeAsync((done: any) => {
     let hybridModeStatusPromisedData: boolean;
     //Mocking True
     gamingHybridModeServiceMock.getHybridModeStatus.and.returnValue(Promise.resolve(true));
@@ -113,6 +92,29 @@ describe('WidgetLegionEdgeComponent', () => {
     tick(10);
     fixture.detectChanges();
     expect(hybridModeStatusPromisedData).toEqual(false);
+
+  }));
+
+  it('should able to mock RAM Overclock service data ',  fakeAsync((done: any) => {
+    let ramOverclockStatusPromisedData: boolean;
+    //Mocking True
+    gamingSystemUpdateServiceMock.getRamOCStatus.and.returnValue(Promise.resolve(true));
+    gamingSystemUpdateServiceMock.getRamOCStatus().then((response: any) => {
+      ramOverclockStatusPromisedData = response;
+    });
+    tick(10);
+    fixture.detectChanges();
+    expect(ramOverclockStatusPromisedData).toEqual(true);
+
+    //Mocking false
+    gamingSystemUpdateServiceMock.getRamOCStatus.and.returnValue(Promise.resolve(false));
+    gamingSystemUpdateServiceMock.getRamOCStatus().then((response: any) => {
+      ramOverclockStatusPromisedData = response;
+    });
+    tick(10);
+    fixture.detectChanges();
+    expect(ramOverclockStatusPromisedData).toEqual(false);
+
   }));
 
   it('should update or have same Touchpad Lock value on service and in Local storage and UI', fakeAsync((done: any) => {

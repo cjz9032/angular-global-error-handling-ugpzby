@@ -114,5 +114,8 @@
 ::ng-deep {
 	.button {
 		padding: 1.2rem 8rem !important;
+		@media #{$mediaquery_sm} {
+		padding: 1.2rem 6.5rem !important;
+		}
 	}
 }

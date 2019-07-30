@@ -1,7 +1,7 @@
 <div class='cover' *ngIf='isDropDownOpen' (click)="toggle()">
 </div>
 <section class="vtr-ui-dropdown">
-	<div class="list" *ngIf="isDropDownOpen">
+	<div class="list" *ngIf="isDropDownOpen && !disabled">
 		<ul>
 			<li (click)="select(i)"
 				*ngFor="let i of list">
@@ -13,7 +13,7 @@
 		<div class="time">
 			<span>{{name}} {{placeholder | uppercase }} </span>
 		</div>
-		<p class="chevron">
+		<p class="chevron" >
 			<fa-icon *ngIf="!isDropDownOpen"
 				[icon]="['fal', 'chevron-down']">
 			</fa-icon>

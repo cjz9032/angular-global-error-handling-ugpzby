@@ -1,5 +1,16 @@
 @import "./../../../app.theme.scss";
 
+
+.close-button{
+	color: rgba(73, 106, 253, 1);
+	font-weight: 400;
+	font-size: 2.4rem;
+	line-height: 1;
+	border: none;
+	&:hover {
+		opacity: 0.7;
+	}
+}
 .vtr-battery-card {
 	@media #{$mediaquery_11} {
 		padding-top: 8.5rem;
@@ -13,6 +24,7 @@
 		background-image: url(../../../../assets/images/battery/TOP.png),
 			url(../../../../assets/images/battery/BOTTOM.png);
 	}
+
 
 	.container {
 		border-radius: 1rem;
@@ -105,6 +117,13 @@
 		.battery-conditions {
 			vertical-align: middle;
 			font-size: 14pt;
+		}
+		.link-label {
+			margin-left: 1rem;
+			color: #4a81fd;
+			text-decoration: underline;
+			cursor: pointer;
+			font-size: 1.8rem;
 		}
 	}
 }

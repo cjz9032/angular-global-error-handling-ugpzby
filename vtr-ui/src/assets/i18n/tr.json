@@ -387,7 +387,7 @@
                 "title": "Cihaz",
                 "sub1": "Cihazım",
                 "sub2": "Cihaz Ayarlarım",
-                "sub3": "System Updates",
+                "sub3": "Sistem Güncellemesi",
                 "sub4": "Akıllı Yardım"
             },
             "security": {
@@ -444,31 +444,31 @@
     },
     "privacy": {
         "headerMain": {
-            "title": "Privacy"
+            "title": "Gizlilik"
         }
     },
     "tutorial": {
-        "almostThere": "Almost there!",
-        "para1": "Just a few more buttons to press before we can have liftoff.",
-        "para2": "Before we can give you the most optimal experience there are still a few things to setup.",
-        "personalise": "START PERSONALIZING",
-        "howIsitUsed": "How will you use it?",
-        "howMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "business": "BUSINESS",
-        "personal": "PERSONAL",
-        "custom": "CUSTOM",
-        "skip": "SKIP",
+        "almostThere": "Neredeyse bitti!",
+        "para1": "Yalnızca birkaç düğmeye daha basıp başlayabilirsiniz.",
+        "para2": "Size en ideal deneyimi sunabilmemiz için yapmamız gereken birkaç ayar var.",
+        "personalise": "KİŞİSELLEŞTİRMEYE BAŞLA",
+        "howIsitUsed": "Hangi amaçla kullanacaksınız?",
+        "howMachinUsed": "Bu makineyi hangi amaçla kullanacağınızı bildirmek için aşağıdaki kullanımlardan birine tıklayın.",
+        "business": "İŞ",
+        "personal": "KİŞİSEL",
+        "custom": "ÖZEL",
+        "skip": "ATLA",
         "next": "İLERİ",
-        "interests": "What are your interests?",
-        "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
-        "games": "GAMES",
-        "news": "NEWS",
-        "entertainment": "ENTERTAINMENT",
-        "arts": "ARTS",
-        "politics": "POLITICS",
-        "sports": "SPORTS",
-        "regionalNews": "REGIONAL NEWS",
-        "technology": "TECHNOLOGY"
+        "interests": "İlgi alanlarınız neler?",
+        "howOnesMachinUsed": "Bu makineyi hangi amaçla kullanacağınızı bildirmek için aşağıdaki kullanımlardan birine tıklayın.",
+        "games": "OYUN",
+        "news": "HABER",
+        "entertainment": "EĞLENCE",
+        "arts": "SANAT",
+        "politics": "SİYASET",
+        "sports": "SPOR",
+        "regionalNews": "YEREL HABER",
+        "technology": "TEKNOLOJİ"
     },
     "dashboard": {
         "headerMain": {
@@ -534,7 +534,7 @@
                 }
             },
             "systemUpdate": {
-                "title": "System Update",
+                "title": "Sistem Güncellemesi",
                 "detail": {
                     "update": "Güncelle"
                 }
@@ -551,7 +551,7 @@
             "learnMore": "Ek bilgi",
             "freeMemory": "Boş bellek",
             "systemUpdate": {
-                "title": "Sistem güncellemesi",
+                "title": "Sistem Güncellemesi",
                 "notFound": "Sistem güncellemesi bulunamadı",
                 "detail": {
                     "uptoDate": "Yazılım güncel",
@@ -636,15 +636,15 @@
                         "acdischarging": "Boşaltılıyor (AC ile)"
                     },
                     "deviceChemistry": {
-                        "li-polymer": "Li-Polymer",
-                        "li-ion": "Li-Ion",
-                        "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion",
-                        "silver-zinc": "Silver-Zinc",
-                        "silver_zinc": "Silver-Zinc",
+                        "li-polymer": "Li-Polimer",
+                        "li-ion": "Lityum iyon",
+                        "li_polymer": "Li-Polimer",
+                        "li_ion": "Lityum iyon",
+                        "silver-zinc": "Gümüş Çinko",
+                        "silver_zinc": "Gümüş Çinko",
                         "nicd": "NiCd",
                         "nimh": "NiMH",
-                        "unknown": "Unknown"
+                        "unknown": "Bilinmiyor"
                     },
                     "manufacturer": {
                         "title": "Üretici",
@@ -662,7 +662,7 @@
                     "NotSupportACAdapter": "<b>AC bağdaştırıcısı desteklenmiyor.</b> Lenovo bilgisayarınız bu AC bağdaştırıcısını desteklemiyor. Aniden kapanmaya neden olabilir. Lütfen doğru AC bağdaştırıcısını bağlayın.",
                     "LimitedACAdapterSupport": "<b>AC bağdaştırıcısı, Lenovo bilgisayarınıza yeterince güç sağlayamıyor</b>. Bu durum, sistem performansını ve şarj olma hızını etkiler. Lütfen uygun AC güç bağdaştırıcısını bağlayın.",
                     "MissingDriver": "<b>Lenovo Power Manager sürücüsü</b> yüklü değil veya düzgün çalışmıyor. En son sürücüyü yüklemek için lütfen Windows Update'i çalıştırın.",
-                    "StoreLimitation": "<b>Pil orijinal tam dolum kapasitesinin yalnızca {{percentageLimitation}}% kadarını</b> depolayabilir.",
+                    "StoreLimitation": "<b>Pil orijinal tam dolum kapasitesinin yalnızca {{value}}% kadarını</b> depolayabilir.",
                     "HighTemperature": "<b>Pil çok ısındığı için</b> <b>boşaltma</b> işlemi durduruldu.",
                     "TrickleCharge": "Pil <b>tamamen boşaldı</b> ve yeniden doldurulması gerekiyor. Doldurma işlemi on saat ya da daha fazla sürebilir.",
                     "OverheatedBattery": "Pilin <b>çok ısındı</b>. Bilgisayardan çıkarın ve oda sıcaklığında soğumasını sağlayın.",
@@ -671,7 +671,7 @@
                 "updating": "Güncelleniyor",
                 "voltageError": "Pil voltajı yanlış",
                 "batteryNotDetected": "Pil algılanmadı",
-                "thresholdNote": "<b>Not:</b> Pilin ömrünü uzatmak için doldurma işleminin {{chargeThresholdInfo.stopValue}}% olduğunda durdurulmasını seçtiniz."
+                "thresholdNote": "<b>Not:</b> Pilin ömrünü uzatmak için doldurma işleminin {{value}}% olduğunda durdurulmasını seçtiniz."
             },
             "power": {
                 "title": "Güç",
@@ -681,42 +681,41 @@
                     "title": "AYARLARA GİT",
                     "battery": "Pil",
                     "power": "Güç",
-                    "cooling": "Akıllı Soğutma",
                     "other": "Diğer",
-                    "smartStandby": "Smart Standby"
+                    "smartStandby": "Akıllı Bekleme"
                 },
                 "powerSmartSettings": {
                     "title": "Güç Akıllı Ayarları",
                     "subtitle": "AKILLI SOĞUTMA",
                     "subtitle1": "Pil ve Sessiz",
-                    "description1": "Bu özellik, termal ayarları ihtiyaçlarınıza göre dinamik olarak belirler.Açık olduğunda ayarları, elde tutulurken veya boşta çalışırken cihazın daha soğuk veya sessiz olmasını sağlayacak şekilde düzenler. Aksi takdirde, cihaz sabit bir yüzeydeyken performansı en iyi duruma getirir. Bu seçenek kapalı olduğunda, termal önceliği manuel olarak ayarlayabilirsiniz.",
+                    "description1": "Bu özellik açık olduğunda termal ayarları ihtiyaçlarınıza göre dinamik olarak belirler. Elde tutulurken veya boşta çalışırken cihazın soğuk veya sessiz olmasını sağlayacak şekilde ayarları düzenler. Cihaz sabit bir yüzeydeyken performansı en iyi duruma getirir. Bu seçenek kapalı olduğunda, termal önceliği manuel olarak ayarlayabilirsiniz.",
                     "description2": "Akıllı Soğutma fan hızını, maksimum yüzey sıcaklığını ve performansı ayarlar.Bu özellik aşağıdaki kiplere sahiptir ve bu özelliğe artık Windows performans güç kaydırıcısından erişilebilmektedir.",
                     "description3": "Akıllı Soğutma termal performansı ihtiyaçlarınıza göre ayarlamak üzere otomatik olarak dengeler.Akıllı Soğutma özelliği performans ayarlarını yaparak dizüstü bilgisayarınız elinizde olduğunda daha az ısınan bir yüzey sunar. Cihazınız bir masanın üstündeyken bu özellik performansı en iyi düzeye getirir.",
-                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
+                    "description13": "Bu özellik açık olduğunda termal ayarları ihtiyaçlarınıza göre dinamik olarak belirler. Elde tutulurken veya boşta çalışırken cihazın soğuk veya sessiz olmasını sağlayacak şekilde ayarları düzenler. Cihaz sabit bir yüzeydeyken performansı en iyi duruma getirir. Bu seçenek kapalı olduğunda, termal önceliği manuel olarak ayarlayabilirsiniz.",
+                    "description14": "Bu özellik, fan hızınızı ayarlamanıza, sistem performansını en üst düzeye çıkarmanıza veya gerekirse pil ömrünüzü uzatmanıza olanak sağlar. Aşağıdaki üç kipi vardır. Ayrıca kısayol tuşlarını (Fn+Q) kullanarak veya Lenovo Vantage Araç Çubuğu'ndan kipler arasında geçiş yapabilirsiniz.",
                     "readMore": "Okumaya devam edin.",
                     "gotoWindows": {
                         "title": "Windows ayarlarına git",
                         "modalBodyText1": "Windows performans güç kaydırıcısına erişmek için Sistem tepsisinde Windows pil simgesine tıklayın"
                     },
                     "intelligentCooling": {
-                        "title": "Akıllı soğutma",
+                        "title": "Akıllı Soğutma",
                         "description": "",
                         "tooltip": "",
                         "optimize": "sistemi şunun için en iyi duruma getir",
                         "apsHint": "Akıllı Soğutmayı etkinleştirmek için Lenovo Active Protection System'ı indirip etkinleştirmelisiniz.",
                         "options": {
-                            "quiteCool3": "Soğutma Kipi",
-                            "performance3": "Yüksek Performans",
-                            "quiteCool4": "Sessiz ve Soğuk",
+                            "quiteCool3": "Hızlı ve soğuk",
+                            "performance3": "Performans",
+                            "quiteCool4": "Hızlı ve soğuk",
                             "performance4": "Performans",
-                            "quiteCool5": "Sessiz ve Soğuk",
+                            "quiteCool5": "Hızlı ve soğuk",
                             "performance5": "Performans",
-                            "batterySaving": "Battery Saving",
-                            "performance13": "Performance",
-                            "quiteCool13": "Quiet & Cool",
-                            "performance14": "Extreme Performance",
-                            "quiteCool14": "Intelligent Cooling"
+                            "batterySaving": "Pil Tasarrufu",
+                            "performance13": "Performans",
+                            "quiteCool13": "Hızlı ve soğuk",
+                            "performance14": "Yüksek Performans",
+                            "quiteCool14": "Akıllı Soğutma"
                         },
                         "readMore": {
                             "mode1": "Sessiz kipi",
@@ -725,19 +724,19 @@
                             "line1": "Kaydırıcı en solda.Daha serin, daha sessiz bir bilgisayar ve en iyi pil ömrü için fan hızı ve performans düşürülür.",
                             "line2": "Kaydırıcı ortada.En iyi deneyim için fan hızı ve performans dinamik olarak dengelenir.",
                             "line3": "Kaydırıcı en sağda. Maksimum performans için fan hızı ve izin verilen yüzey sıcaklığı daha yüksektir.",
-                            "line4": "More info"
+                            "line4": "Daha fazla bilgi"
                         },
                         "selectedModeText": {
-                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
-                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
-                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                            "quiteCool": "Bu kip, fan hızını ve sistem performansını dengeleyerek en iyi deneyimi sağlar. Örneğin oyun oynarken performansı iyileştirir. Ofiste çalışırken gürültüyü azaltır.",
+                            "batterySaving": "Bu kip, parlaklığı otomatik olarak ayarlama, güç ayarlarını değiştirme, gelişmiş görüntü işleme özelliklerini devre dışı bırakma gibi seçeneklerle maksimum pil ömrü sağlar.",
+                            "performance": "Bu kip, maksimum sistem performansı sağlar. Bu kipte, fanın hızlı çalışması gürültüye neden olabilir."
                         },
                         "intelligentCoolingModesModal": {
-                            "title": "Change intelligent cooling modes",
-                            "close": "close",
+                            "title": "Akıllı soğutma kiplerinin değiştirilmesi",
+                            "close": "kapat",
                             "coolingModesList": {
-                                "list1": "Click on the windows battery-icon in the toolbar",
-                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                                "list1": "Araç çubuğundaki Windows pil simgesine tıklayın",
+                                "list2": "Windows pil göstergesi göründüğünde en iyi süre veya en iyi performans arasında seçim yapmak için kaydırıcıyı kullanın."
                             }
                         }
                     },
@@ -748,7 +747,7 @@
                             "battery&Quite": "PİL VE SESSİZ"
                         }
                     },
-                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider"
+                    "description5": "Akıllı Soğutma fan hızını ve maksimum performansı ayarlar, ayrıca pilinizin ömrünü yönetir. Bu özelliğin 3 kipi (Sessiz kip, Dengeli kip ve Performans kipi) vardır ve bu özelliğe artık Windows performans güç kaydırıcısından erişilebilmektedir"
                 },
                 "powerSettings": {
                     "title": "Güç Ayarları",
@@ -761,8 +760,8 @@
                         "title": "Kolay Sürdür",
                         "description": "Bilgisayarınızın kapağını sıklıkla açıp kapatıyorsanız sürdürme süresini iyileştirmek için bu özelliği etkinleştirin.",
                         "tooltip": "Bu özellik, bilgisayarınızın kapağını sıklıkla açıp kapatıyorsanız sürdürme süresini geliştirir. Etkinleştirildiğinde, kapağını kapattığınızda bilgisayarınız düşük güç kipine girer ancak kapattıktan sonraki 15 dakika içerisinde yeniden açmanız durumunda anında sürdürülür. Bu özellik, sistem askıda kipine geçmeden önce bilgisayarınızın bekleyen etkinlikleri (e-posta gönderme veya dosya indirme gibi) tamamlamaya çalışmasına olanak sağlar."
-					},
-					"or":"Or"
+                    },
+                    "or": "Ya da"
                 },
                 "otherSettings": {
                     "title": "Diğer Ayarlar",
@@ -971,7 +970,7 @@
                         "onSunsetToSunriseScheduleDescription": "Göz koruması kipini gün batımından gün doğumuna kadar sürecek şekilde ayarlayın",
                         "note": {
                             "title": "Not",
-                            "description": "Lenovo Vantage'ın, bölgenizdeki gün batımı ve gün doğumu saatlerini hesaplamak için konum bilgilerinize erişmesi gerekir."
+                            "description": "Göz Bakımı Modu etkinleştirildiğinde, bu renk sıcaklığı etkili olmaz. Ancak önizlemesini almak için kaydırıcıyı sürükleyebilirsiniz. Etkinleştirmek için Göz Bakımı Modunu kapatın."
                         }
                     },
                     "privacyGuard": {
@@ -989,16 +988,16 @@
                         "reset": "Sıcaklığı sıfırla",
                         "tooltip": "Bu özellik, aynı zamanda isteğe bağlı olarak ekranın bazı bölümleri karartılarak güç tüketimini azaltabilir ve pil ömrünü uzatabilir.",
                         "dropDown": {
-                            "seconds": "seconds",
-                            "minute": "minute",
-                            "minutes": "minutes",
-                            "alwaysOn": "Always on",
-                            "never": "never",
-                            "halfTime": "Half time of display off timer"
+                            "seconds": "saniye",
+                            "minute": "dakika",
+                            "minutes": "dakika",
+                            "alwaysOn": "Her zaman açık",
+                            "never": "hiçbir zaman",
+                            "halfTime": "Ekran kapatma zamanlayıcısının yarısı"
                         },
-                        "taskBarDimmer": "TASKBAR DIMMER",
-                        "backgroundDimmer": "BACKGROUND DIMMER",
-                        "displayDimmer": "DISPLAY DIMMER"
+                        "taskBarDimmer": "GÖREV ÇUBUĞU KARARTICI",
+                        "backgroundDimmer": "ARKA PLAN KARARTICI",
+                        "displayDimmer": "EKRAN KARARTICI"
                     }
                 },
                 "camera": {
@@ -1030,10 +1029,10 @@
                         "sketchMode": "Eskiz kipi"
                     },
                     "cameraLoadingFailed": {
-                        "inUseTitle": "CAMERA IS IN USE",
-                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
-                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
-                        "loadingFailedDescription": "Close the app and try again."
+                        "inUseTitle": "KAMERA KULLANIMDA",
+                        "inUseDescription": "Kamerayı şu anda başka bir uygulama kullanıyor. Uygulamayı kapatın ve yeniden deneyin.",
+                        "loadingFailedTitle": "KAMERA KULLANIMDA VEYA YÜKLENEMEDİ",
+                        "loadingFailedDescription": "Uygulamayı kapatın ve yeniden deneyin."
                     }
                 }
             },
@@ -1085,15 +1084,15 @@
                             "option3": "Metin gir"
                         }
                     },
-                    "tooltip": "Content to be filled",
+                    "tooltip": "Doldurulacak içerik",
                     "apply": {
-                        "title": "APPLY"
+                        "title": "UYGULA"
                     },
                     "website": {
-                        "url": "WEBSITE URL"
+                        "url": "WEB SİTESİ URL'Sİ"
                     },
                     "enterText": {
-                        "title": "TEXT TO BE ENTERED"
+                        "title": "GİRİLECEK METİN"
                     }
                 }
             }
@@ -1204,7 +1203,18 @@
                     "hand": {
                         "title": "Bilgisayarın kenarlarında el yakınlığı algılayıcılar",
                         "description": "Tablet modu etkin durumdayken el algılanmadığında APS'yi etkinleştir"
-                    }
+                    },
+                    "more": "DAHA FAZLA",
+                    "advanced-settings": "GELİŞMİŞ AYARLAR",
+                    "hide": "GELİŞMİŞ AYARLARI GİZLE"
+                },
+                "APS": {
+                    "more": "DAHA FAZLA",
+                    "advancedSettings": "GELİŞMİŞ AYARLAR",
+                    "hideAdvancedSettings": "GELİŞMİŞ AYARLARI GİZLE",
+                    "lowSensitivity": "Düşük Hassasiyet",
+                    "mediumSensitivity": "Orta Hassasiyet",
+                    "highSensitivity": "Yüksek Hassasiyet"
                 }
             },
             "intelligentMedia": {
@@ -1240,15 +1250,15 @@
                     "closeText": "kapat"
                 },
                 "modalInstallationFailed": {
-                    "btnText": "ok",
-                    "title": "Install Failed",
-                    "desc": "Install failed, please try again later in order to use Lenovo Voice."
+                    "btnText": "tamam",
+                    "title": "Yükleme Başarısız Oldu",
+                    "desc": "Lenovo Voice özelliğini kullanmak için lütfen daha sonra tekrar deneyin."
                 }
             }
         }
     },
     "systemUpdates": {
-        "title": "Sistem Güncellemeleri",
+        "title": "Sistem Güncellemesi",
         "back": "GERİ",
         "history": "TAM GEÇMİŞ",
         "notAvailable": "Kullanılamaz",
@@ -1262,7 +1272,7 @@
         "at": "saat",
         "readMore": "Okumaya devam edin",
         "popup": {
-            "reboot": "Yn Ykl",
+            "reboot": "Yeniden Başlat",
             "shutdown": "Kapat",
             "rebootForceMsg": "Seçtiğiniz güncellemelerin kurulumundan sonra sistem otomatik olarak yenidenyüklenecektir.",
             "shutdownForceMsg": "Seçtiğiniz güncellemelerin kurulumundan sonra sistem otomatikolarak kapanacaktır.",
@@ -1294,7 +1304,7 @@
             "title": "Lenovo Destek web sitesi"
         },
         "banner": {
-            "neverChecked": "System Update'i kullanmaya hoş geldiniz.",
+            "neverChecked": "Sistem Güncellemesi'ne hoş geldiniz.",
             "title": "Güncel bir sistem, sağlıklı sistemdir.",
             "last": "Son güncelleme: ",
             "next": "Sonraki zamanlanmış güncelleme: ",
@@ -1398,7 +1408,7 @@
             "overviewBlockTitle": "Ekosisteminizin Güvenliğine Genel Bakış",
             "allDevices": "Tüm Cihazlar",
             "myDevice": "Cihazım",
-            "thisComputer": "This computer",
+            "thisComputer": "Bu bilgisayar",
             "secure": "GÜVENLİ",
             "needAttention": "İLGİLENMENİZ GEREKİYOR",
             "manageAccount": "Hesabı Yönet",
@@ -1672,14 +1682,14 @@
             "title": "VPN Güvenliği",
             "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN, gönderdiğiniz ve aldığınız bilgileri şifreleyerek bilgisayar, Mac®, akıllı telefon veya tabletinizi herhangi bir İnternet bağlantısında endişe duymadan, güvenli ve özel bir şekilde kullanabilmenizi sağlar.",
-            "whatCanSufEasy1": "A virtual private network provider that protects you while you are online. Without a VPN, your computer may be more vulnerable to attackers and identity theft. The VPN runs silently in the background and provides security and privacy protection.",
-            "startUseSufEasy4": "SurfEasy users can enjoy 250 MB of free traffic every 30 days! Follow the steps on the &quot;Rewards&quot; tab of the SurfEasy app to get more traffic.",
-            "howToGetData": "How to get free traffic:",
-            "howToGetData1": "Confirm email to win +250 MB traffic",
-            "howToGetData2": "Add a second device to win +250 MB of traffic",
-            "howToGetData3": "Refer a friend and win +500 MB of traffic",
-            "howToGetData4": "Like SurfEasy on Facebook, earn +100 MB of traffic,",
-            "howToGetData5": "Follow SurfEasy on Twitter and win +100 MB of traffic",
+            "whatCanSufEasy1": "Çevrimiçi olduğunuzda sizi koruyan sanal özel ağ sağlayıcısıdır. VPN olmadan, bilgisayarınız saldırganlara ve kimlik hırsızlığına karşı daha savunmasız hale gelebilir. VPN, arka planda sessizce çalışarak güvenlik ve gizlilik koruması sağlar.",
+            "startUseSufEasy4": "SurfEasy kullanıcıları her 30 günde bir ücretsiz 250 MB trafiğin keyfini çıkarabilir! Daha fazla trafik için SurfEasy uygulamasının &quot;Rewards&quot; (Ödüller) sekmesinde verilen adımları izleyin.",
+            "howToGetData": "Ücretsiz trafik almak için:",
+            "howToGetData1": "En az 250 MB trafik kazanmak için e-posta adresini onaylayın",
+            "howToGetData2": "En az 250 MB trafik kazanmak için ikinci cihazı ekleyin",
+            "howToGetData3": "Bir arkadaşınıza tavsiye edin ve en az 500 MB trafik kazanın",
+            "howToGetData4": "SurfEasy'yi Facebook'ta beğenin ve en az 100 MB trafik kazanın",
+            "howToGetData5": "SurfEasy'yi Twitter'da takip edin ve en az 100 MB trafik kazanın",
             "helpKeep": "SurfEasy VPN ile çevrimiçi etkinliğinizi güvenli ve özel tutmaya yardımcı olun.",
             "getSufEasy": "SurfEasy'yi Edinin",
             "openSufEasy": "SurfEasy'yi Açın",

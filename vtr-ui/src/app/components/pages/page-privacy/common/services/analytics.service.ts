@@ -4,7 +4,6 @@ import { MetricsData } from '../../../../../directives/metrics.directive';
 import { RoutersName } from '../../privacy-routing-name';
 import { UserDataGetStateService } from './user-data-get-state.service';
 import { RouterChangeHandlerService } from './router-change-handler.service';
-import { PrivacyModule } from '../../privacy.module';
 
 export enum ItemTypes {
 	TaskAction = 'TaskAction',
@@ -94,17 +93,17 @@ export class AnalyticsService {
 			case RoutersName.PRIVACY:
 				return 'Privacy';
 			case RoutersName.BREACHES:
-				return 'BreachedAccounts';
+				return 'Privacy.BreachedAccounts';
 			case RoutersName.TRACKERS:
-				return 'VisibleToOnlineTrackers';
+				return 'Privacy.VisibleToOnlineTrackers';
 			case RoutersName.BROWSERACCOUNTS:
-				return 'NonPrivatePassword';
+				return 'Privacy.NonPrivatePassword';
 			case RoutersName.LANDING:
-				return 'LenovoPrivacyLanding';
+				return 'Privacy.Landing';
 			case RoutersName.ARTICLES:
-				return 'ArticleAll';
+				return 'Privacy.ArticleAll';
 			case RoutersName.ARTICLEDETAILS:
-				return 'Article';
+				return 'Privacy.Article';
 			default:
 				return '';
 		}

@@ -3,7 +3,6 @@
 .vtr-widget-switch-icon {
 	display: inline-block;
 	cursor: pointer;
-
 	.loader {
 		position: absolute;
 		top: 50%;
@@ -26,9 +25,9 @@
 			width: 11rem;
 		}
 
-		@media #{$mediaquery_9} {
-			height: 10rem;
-			width: 10rem;
+		@media #{$mediaquery_lg} {
+			height: 13rem;
+			width: 13rem;
 		}
 
 		&.checked {
@@ -71,8 +70,8 @@
 			@media #{$mediaquery_8} {
 				margin: 0.8rem 0rem;
 			}
-			@media #{$mediaquery_9} {
-				margin: 0.5rem 0rem 0.8rem 0;
+			@media #{$mediaquery_lg} {
+				margin: 1rem 0rem 0.6rem;
 			}
 		}
 
@@ -94,9 +93,9 @@
 				width: 4.5rem;
 				margin: 0.8rem auto;
 			}
-			@media #{$mediaquery_9} {
-				height: 4rem;
-				width: 4rem;
+			@media #{$mediaquery_lg} {
+				width: 6rem;
+				height: 6rem;
 			}
 
 			.icomoon {
@@ -107,8 +106,8 @@
 				@media #{$mediaquery_8} {
 					font-size: 3rem;
 				}
-				@media #{$mediaquery_9} {
-					font-size: 2.7rem;
+				@media #{$mediaquery_lg} {
+					font-size: 4rem;
 				}
 			}
 
@@ -137,4 +136,8 @@
 }
 .disable-state {
 	opacity: 0.65;
+}
+.disable-container {
+	cursor: not-allowed !important;
+	color: lightgray;
 }

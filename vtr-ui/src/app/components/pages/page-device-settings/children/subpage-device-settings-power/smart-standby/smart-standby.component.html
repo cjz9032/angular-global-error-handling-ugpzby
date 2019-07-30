@@ -23,11 +23,13 @@
 							<vtr-ui-time-picker [time]="smartStandbyStartTime"
 								[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading1'"
 								[id]="'dropcheck1'"
+								[showDropDown]="showDropDown[0]"
 								(setTime)="onSetActiveStartEnd($event, true)">
 							</vtr-ui-time-picker>
 							<vtr-ui-time-picker [time]="smartStandbyEndTime"
 								[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading2'"
 								[id]="'dropcheck2'"
+								[showDropDown]="showDropDown[1]"
 								(setTime)="onSetActiveStartEnd($event, false)">
 							</vtr-ui-time-picker>
 							<div *ngIf="showDiffNote"
@@ -41,6 +43,7 @@
 							<vtr-ui-days-picker [days]="smartStandby.daysOfWeekOff"
 								[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading3'"
 								[daysId]="'dropcheck3'"
+								[showDropDown]="showDropDown[2]"
 								(setDays)="onSetDaysOfWeekOff($event)"></vtr-ui-days-picker>
 						</div>
 					</section>

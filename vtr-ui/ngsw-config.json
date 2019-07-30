@@ -4,18 +4,19 @@
 		{
 			"name": "app",
 			"installMode": "prefetch",
+			"updateMode": "prefetch",
 			"resources": {
 				"files": [
-					"/favicon.ico",
 					"/index.html",
+					"/assets/cms-cache/**",
 					"/*.css"
 				]
 			}
 		},
 		{
 			"name": "assets",
-			"installMode": "prefetch",
-			"updateMode": "prefetch",
+			"installMode": "lazy",
+			"updateMode": "lazy",
 			"resources": {
 				"files": [
 					"/assets/**"
@@ -34,7 +35,8 @@
 			"name": "cms",
 			"urls": [
 				"https://vantage-qa.csw.lenovo.com/**",
-				"https://vantage.csw.lenovo.com/**"
+				"https://vantage.csw.lenovo.com/**",
+				"https://cms.csw.lenovo.com/**"
 			],
 			"cacheConfig": {
 				"maxSize": 10,

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeSecurityAccountStatusComponent } from '../../components/pages/page-connected-home-security/component/home-security-account-status/home-security-account-status.component';
 import { HomeSecurityMyDeviceComponent } from '../../components/pages/page-connected-home-security/component/home-security-my-device/home-security-my-device.component';
@@ -11,6 +11,21 @@ import { UiChsStatusbarComponent } from 'src/app/components/ui/ui-chs-statusbar/
 import { SharedModule } from '../shared.module';
 import { CommonUiModule } from '../common/common-ui.module';
 import { CommonWidgetModule } from '../common/common-widget.module';
+import { CommonModalModule } from '../common/common-modal.module';
+import { DialogService } from '../../services/dialog/dialog.service';
+import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faWifi } from '@fortawesome/pro-light-svg-icons/faWifi';
+import { faWifiSlash } from '@fortawesome/pro-light-svg-icons/faWifiSlash';
+import { faExclamationCircle } from '@fortawesome/pro-light-svg-icons/faExclamationCircle';
+import { faQuestionCircle } from '@fortawesome/pro-light-svg-icons/faQuestionCircle';
+import { faLaptop } from '@fortawesome/pro-light-svg-icons/faLaptop';
+
+library.add(faWifi);
+library.add(faWifiSlash);
+library.add(faExclamationCircle);
+library.add(faQuestionCircle);
+library.add(faLaptop);
 
 @NgModule({
 	declarations: [
@@ -27,7 +42,15 @@ import { CommonWidgetModule } from '../common/common-widget.module';
 		ConnectedHomeSecurityRoutingModule,
 		CommonUiModule,
 		CommonWidgetModule,
-		SharedModule
+		SharedModule,
+		CommonModalModule,
+		WidgetSecurityStatusModule
+	],
+	providers: [
+		DialogService
+	],
+	schemas: [
+		CUSTOM_ELEMENTS_SCHEMA
 	]
 })
 export class ConnectedHomeSecurityModule { }

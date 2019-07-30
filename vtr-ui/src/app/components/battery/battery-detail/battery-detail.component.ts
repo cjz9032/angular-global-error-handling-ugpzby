@@ -7,10 +7,10 @@ import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.mode
 import { BatteryInformation } from 'src/app/enums/battery-information.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { CommonService } from 'src/app/services/common/common.service';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/internal/Subscription';
 import { ViewRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import BatteryGaugeDetail from 'src/app/data-models/battery/battery-gauge-detail-model';
+import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
 @Component({
 	selector: 'vtr-battery-detail',
 	templateUrl: './battery-detail.component.html',
@@ -18,14 +18,15 @@ import BatteryGaugeDetail from 'src/app/data-models/battery/battery-gauge-detail
 })
 export class BatteryDetailComponent implements OnInit, OnDestroy {
 	public dataSource: BatteryDetail[];
-	public dataSourceGauge: BatteryGaugeDetail; // BI Update
-	@Input() data: BatteryDetail[];
-	@Input() dataGauge: BatteryGaugeDetail; // BI Update
-	@Input() batteryConditionStatus: string;
+	@Input() dataInfo: BatteryDetail[];
+	@Input() dataIndicator: BatteryIndicator; // BI Update
+	@Input() dataConditions: BatteryConditionModel[];
+
 	remainingTimeText: string;
-	batteryIndicators = new BatteryIndicator();
+	batteryIndicator = new BatteryIndicator();
 	private notificationSubscription: Subscription;
 	public deviceChemistry = [];
+	batteryConditions: BatteryConditionModel[];
 	batteryChargeStatus = BatteryChargeStatus;
 
 	constructor(
@@ -54,74 +55,44 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 			'device.deviceSettings.batteryGauge.details.primary',
 			'device.deviceSettings.batteryGauge.details.secondary',
 			'device.deviceSettings.batteryGauge.details.tertiary'];
-		if (response !== null && response !== undefined) {
-			if (response.gauge !== undefined && response.gauge !== null) {
-				this.batteryIndicators.percent = response.gauge.percentage;
-				this.batteryIndicators.charging = response.gauge.isAttached;
-				this.batteryIndicators.expressCharging = response.gauge.isExpressCharging;
-				this.batteryIndicators.convertMin(response.gauge.time);
 
-				this.batteryIndicators.timeText = response.gauge.timeType;
-
-				// this.batteryIndicators.voltageError = response.detail[0].isVoltageError;
-
-				// let batteryIndex = -1;
-				// let batteryHealth = 0;
-				// if (response.detail !== undefined && response.detail.length !== 0) {
-				// 	response.detail.forEach((info) => {
-				// 		if (info.batteryHealth >= batteryHealth) {
-				// 			batteryHealth = info.batteryHealth;
-				// 			batteryIndex += 1;
-				// 		}
-				// 	});
-				// }
-				if (response.gauge.isExpressCharging === undefined ||
-					response.gauge.isExpressCharging === null) {
-					this.batteryIndicators.expressCharging = false;
-				} else {
-					this.batteryIndicators.expressCharging = response.gauge.isExpressCharging;
+		if (response) {
+			if (response.detail) {
+				for (let i = 0; i < response.detail.length; i++) {
+					if (response.detail[i] && response.detail[i] !== null) {
+						response.detail[i].remainingCapacity = Math.round(response.detail[i].remainingCapacity * 100) / 100;
+						response.detail[i].fullChargeCapacity = Math.round(response.detail[i].fullChargeCapacity * 100) / 100;
+						response.detail[i].voltage = Math.round(response.detail[i].voltage * 100) / 100;
+						response.detail[i].wattage = Math.round(response.detail[i].wattage * 100) / 100;
+						response.detail[i].heading = response.detail.length > 1 ? headings[i] : '';
+						const id = response.detail[i].chargeStatus;
+						response.detail[i].chargeStatusString = this.translate.instant(this.batteryChargeStatus.getBatteryChargeStatus(id));
+						if (response.detail[i].chargeStatus === this.batteryChargeStatus.NO_ACTIVITY.id
+							|| response.detail[i].chargeStatus === this.batteryChargeStatus.ERROR.id
+							|| response.detail[i].chargeStatus === this.batteryChargeStatus.NOT_INSTALLED.id) {
+							/// if chargeStatus is 'No activity' | 'Error' | 'Not installed'
+							// remaining time will not be displayed
+							response.detail[i].remainingTime = undefined;
+						}
+						// response[i].chargeStatus == this.batteryChargeStatus.CHARGING.id;
+						if (response.indicator.timeText === 'timeCompletion') {
+							response.detail[i].remainingTimeText = 'device.deviceSettings.batteryGauge.details.chargeCompletionTime';
+						} else {
+							response.detail[i].remainingTimeText = 'device.deviceSettings.batteryGauge.details.remainingTime';
+						}
+						const chemistry: string = response.detail[i].deviceChemistry;
+						this.deviceChemistry[i] = this.translate.instant(
+							'device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase());
+					}
 				}
 			}
-
-			if (response.detail.length > 0 && response.detail[0].batteryHealth !== null &&
-				response.detail[0].batteryHealth !== undefined) {
-				this.batteryIndicators.batteryNotDetected = response.detail[0].batteryHealth === 4;
-			} else {
-				this.batteryIndicators.batteryNotDetected = false;
-			}
-
-			for (let i = 0; i < response.detail.length; i++) {
-				if (response.detail[i] !== undefined && response.detail[i] !== null) {
-					response.detail[i].remainingCapacity = Math.round(response.detail[i].remainingCapacity * 100) / 100;
-					response.detail[i].fullChargeCapacity = Math.round(response.detail[i].fullChargeCapacity * 100) / 100;
-					response.detail[i].voltage = Math.round(response.detail[i].voltage * 100) / 100;
-					response.detail[i].wattage = Math.round(response.detail[i].wattage * 100) / 100;
-					response.detail[i].heading = response.detail.length > 1 ? headings[i] : '';
-					const id = response.detail[i].chargeStatus;
-					response.detail[i].chargeStatusString = this.translate.instant(this.batteryChargeStatus.getBatteryChargeStatus(id));
-					if (response.detail[i].chargeStatus === this.batteryChargeStatus.NO_ACTIVITY.id
-						|| response.detail[i].chargeStatus === this.batteryChargeStatus.ERROR.id
-						|| response.detail[i].chargeStatus === this.batteryChargeStatus.NOT_INSTALLED.id) {
-						/// if chargeStatus is 'No activity' | 'Error' | 'Not installed'
-						// remaining time will not be displayed
-						response.detail[i].remainingTime = undefined;
-					}
-					// response[i].chargeStatus == this.batteryChargeStatus.CHARGING.id;
-					if (response.gauge.timeType === 'timeCompletion') {
-						response.detail[i].remainingTimeText = 'device.deviceSettings.batteryGauge.details.chargeCompletionTime';
-					} else {
-						response.detail[i].remainingTimeText = 'device.deviceSettings.batteryGauge.details.remainingTime';
-					}
-					const chemistry: string = response.detail[i].deviceChemistry;
-					this.deviceChemistry[i] = this.translate.instant(
-						'device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase());
-				}
-			}
+			this.dataSource = response.detail;
+			this.batteryIndicator = response.indicator;
+			this.batteryConditions = response.conditions;
 		}
-		this.dataSource = response.detail;
-		this.dataSourceGauge = response.gauge;
-		if (this.cd !== null &&
-			this.cd !== undefined &&
+
+		if (this.cd &&
+			this.cd !== null &&
 			!(this.cd as ViewRef).destroyed) {
 			this.cd.detectChanges();
 		}
@@ -129,16 +100,18 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		console.log('In ngOnInit');
-		this.dataSource = this.data;
-		this.dataSourceGauge = this.dataGauge;
-		this.preProcessBatteryDetailResponse({ detail: this.dataSource, gauge: this.dataSourceGauge });
+		this.dataSource = this.dataInfo;
+		this.batteryIndicator = this.dataIndicator;
+		this.batteryConditions = this.dataConditions;
+
+		this.preProcessBatteryDetailResponse({ detail: this.dataSource, indicator: this.dataIndicator, conditions: this.dataConditions });
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 	}
 
 	isValid(val: any) {
-		if (val === undefined || val === null) {
+		if (!val || val === null) {
 			return false;
 		}
 		if (typeof val === 'number' && val === 0) {

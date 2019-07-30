@@ -6,7 +6,7 @@ export class BatteryConditionModel {
 		public conditionStatus: number
 	) { }
 
-	getBatteryCondition(condition: number): string {
+	getBatteryConditionTip(condition: number): string {
 		switch (condition) {
 			case BatteryConditionsEnum.Good:
 				return 'device.deviceSettings.batteryGauge.condition.Good';

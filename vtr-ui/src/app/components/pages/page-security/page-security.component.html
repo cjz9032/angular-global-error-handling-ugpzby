@@ -34,7 +34,7 @@
 											[feature]='passwordManagerLandingViewModel'>
 										</vtr-ui-landing-feature>
 
-										<vtr-ui-landing-feature *ngIf="vpnLandingViewModel.subject.status !== undefined && vpnLandingViewModel.subject.status !== null && region !== 'CN'"
+										<vtr-ui-landing-feature *ngIf="vpnLandingViewModel.subject.status !== undefined && vpnLandingViewModel.subject.status !== null && showVpn"
 											[feature]='vpnLandingViewModel'>
 										</vtr-ui-landing-feature>
 									</div>

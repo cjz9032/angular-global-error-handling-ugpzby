@@ -3,364 +3,350 @@
         "dashboard": {
             "device": {
                 "quickSettings": {
-                    "title": "热模式",
+                    "title": "散热模式",
                     "status": {
                         "performance": "性能",
                         "balance": "平衡",
                         "quiet": "安静"
                     },
                     "statusText": {
-                        "perText": "Higher CPU usage, Higher fan speed",
-                        "balText": "Normal CPU and fan speed",
-                        "quietText": "Lower CPU usage, Lower fan speed"
+                        "perText": "CPU 使用率越高，风扇速度越快",
+                        "balText": "正常 CPU 和风扇速度",
+                        "quietText": "CPU 使用率越低，风扇速度越慢"
                     },
-                    "wifiSecurity": "Wifi安全",
-                    "dolby": "杜比",
+                    "wifiSecurity": "WiFi 安全",
+                    "dolby": "Dolby",
                     "rapidCharge": "快速充电"
                 },
                 "legionEdge": {
-                    "title": "CPU重叠",
+                    "title": "CPU 超频",
                     "status": {
-                        "alwayson": "上",
-                        "whenGaming": "当游戏",
-                        "off": "离"
+                        "alwayson": "开启",
+                        "whenGaming": "游戏时",
+                        "off": "关闭"
                     },
                     "statusText": {
-                        "onText": "CPU Overclocking will be activated",
-                        "gamingText": "CPU Overclocking will be activated automatically while game launches",
-                        "offText": "CPU Overclocking will be disabled"
+                        "onText": "将激活 CPU 超频",
+                        "gamingText": "游戏启动时，将自动激活 CPU 超频",
+                        "offText": "将禁用 CPU 超频"
                     },
-                    "ramOverlock": "Ram超频",
+                    "ramOverlock": "RAM 超频",
                     "popup": {
                         "text": "重新启动计算机后更改将生效。",
-                        "button": "好"
+                        "button": "确定"
                     },
                     "driverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "Install driver to activate RAM Overclock",
-                        "button": "Install",
-                        "link": "cancel",
-                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
-                        "cpuOverclockText": "Install driver to activate CPU Overclock "
+                        "headerText": "需要安装驱动程序",
+                        "text": "安装驱动程序以激活 RAM 超频（需要重新引导）",
+                        "networkBoostText": "您需要安装用于网络增强的驱动程序才能使其生效",
+                        "hybridModeText": "您需要安装混合模式的驱动程序才能使其生效",
+                        "cpuOverclockText": "安装驱动程序以激活 CPU 超频（需要重新引导）",
+                        "button": "安装",
+                        "link": "取消"
                     },
-                    "autoClose": "自动关闭",
-                    "networkBoost": "网络提升",
-                    "hybridMode": "混合模式",
-                    "touchpadLock": "触摸板锁定",
                     "lightingDriverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "Install driver to activate lighting",
-                        "button": "Install",
-                        "link": "cancel"
+                        "headerText": "需要安装驱动程序",
+                        "text": "安装驱动程序以激活灯光（需要重新引导）",
+                        "button": "安装",
+                        "link": "取消"
                     },
                     "lightingColorMessage": {
-                        "text": "Selecting color not available to this effect."
-                    }
+                        "text": "选择此效果不可用的颜色。"
+                    },
+                    "autoClose": "自动关闭",
+                    "networkBoost": "网络增强",
+                    "hybridMode": "混合模式",
+                    "touchpadLock": "触摸板锁定"
                 },
                 "systemTools": {
-                    "power": "功率",
+                    "power": "电源管理",
                     "media": "媒体",
-                    "macroKey": "Marco Key",
+                    "macroKey": "宏键",
                     "hardwareScan": "硬件扫描",
                     "systemUpdate": "系统更新",
-                    "header": "System Tools"
-                },
-                "lighting": {
-                    "title": "照明定制",
-                    "header": "Lighting"
-                },
-                "legionEdgeModal": {
-                    "line1": "使用Vantage Edge，您的设置将根据使用情况自动调整。游戏时的最佳性能，更长的电池续航时间。",
-                    "line2": "功能管理概述<br>某些功能并非在所有设备上都可用",
-                    "line3": "CPU超频<br>提高处理器的最大速度",
-                    "line4": "RAM超频<br>提高内存的最大速度",
-                    "line5": "网络提升<br>优先考虑您正在玩的游戏的网络流量",
-                    "line6": "杜比技术 - 使用杜比技术专门为游戏调整音频",
-                    "line7": "混合模式<br>在不进行游戏时禁用高级GPU设置以提高电池性能",
-                    "line8": "快速充电 - 游戏随时随着电池充电速度的提高而增加",
-                    "line9": "触摸板锁定<br>通过在游戏时禁用触摸板来防止错误输入",
-                    "line10": "自动关闭<br>在开始播放之前清除游戏不需要的进程以最大化可用的系统资源",
-                    "line11": "散热模式<br>为风扇速度和冷却控制设置首选设备配置文件 "
-                },
-                "systemInfo": {
-                    "systenTooltip": "将鼠标悬停在CPU / GPU / RAM和不同驱动器上以显示其描述，包括制造和型号信息"
+                    "header": "系统工具"
                 },
                 "systemStatus": {
-                    "info": "INFO"
+                    "info": "信息"
+                },
+                "lighting": {
+                    "title": "灯光自定义",
+                    "header": "灯光"
+                },
+                "legionEdgeModal": {
+                    "line1": "借助 Vantage Edge，您的设置将根据使用情况自动调整。\n 在游戏时获得最佳性能，在其余时间获得更长的电池使用时间。",
+                    "line2": "<b>功能管理概述</b><br> 某些功能仅在部分设备上提供",
+                    "line3": "<b>CPU 超频 </b><br> 提升处理器的最快速度",
+                    "line4": "<b>RAM 超频 </b><br> 提升内存的最快速度",
+                    "line5": "<b>网络增强 </b><br> 将网络流量优先分配给正在畅玩的游戏",
+                    "line6": "<b>Dolby </b><br> 借助 Dolby 技术，您可以特别针对游戏调整音频",
+                    "line7": "<b>混合模式 </b><br> 不玩游戏时禁用高级 GPU 设置，以提高电池性能",
+                    "line8": "<b>快速充电 </b><br> 电池充电速度提高，随时随地畅玩游戏的时间随之增多",
+                    "line9": "<b>触摸板锁定 </b><br> 在游戏时禁用触摸板，防止错误输入",
+                    "line10": "<b>自动关闭 </b><br> 在畅玩游戏之前清理与游戏无关的进程，从而最大限度地利用可用的系统资源",
+                    "line11": "<b>散热模式 </b><br> 设置风扇速度和冷却控制的首选设备配置文件"
+                },
+                "systemInfo": {
+                    "systenTooltip": "将鼠标悬停在 CPU/GPU/RAM 和不同的驱动器上以显示其描述（包括制造和型号信息）"
                 }
             }
         },
         "common": {
             "menu": {
                 "support": {
-                    "title": "支持",
-                    "sub1": "支持",
-                    "sub2": "Facebook的",
-                    "sub3": "Instagram的"
+                    "title": "支持服务",
+                    "sub1": "支持服务",
+                    "sub2": "Facebook",
+                    "sub3": "Instagram"
                 }
             }
         },
         "macroKey": {
-            "title": "Macro Key",
-            "introLine": "You can record a series of key inputs, and use them in gaming or other operations.",
+            "title": "宏键",
+            "introLine": "您可以录制一系列键输入，在游戏或其他操作中使用。",
             "status": {
                 "on": {
-                    "title": "On",
-                    "description": "Always Enabled"
+                    "title": "开启",
+                    "description": "始终启用"
                 },
                 "whileGaming": {
-                    "title": "Macro Key enabled only when gaming",
-                    "description": "It will be enabled when you game and remain as num key when you don't."
+                    "title": "仅在游戏时启用宏键",
+                    "description": "在游戏时启用宏键，在其余时间继续作为数字键。"
                 },
                 "off": {
-                    "title": "Off",
-                    "description": "Always Off"
+                    "title": "关闭",
+                    "description": "始终关闭"
                 }
             },
             "details": {
                 "intro": {
-                    "noNumber": "SELECT A MACRO KEY",
-                    "title": "CREATE A MACRO KEY FOR",
-                    "line1": "click the start recording button below",
-                    "line2": "type in macro key",
-                    "line3": "stop recording when finishing typing"
+                    "noNumber": "选择一个宏键",
+                    "title": "创建一个宏键，用于",
+                    "line1": "单击下方的开始录制按钮",
+                    "line2": "输入宏键",
+                    "line3": "完成输入时停止录制"
                 },
                 "buttons": {
-                    "start": "START RECORDING",
-                    "stop": "STOP RECORDING",
+                    "start": "开始录制",
+                    "stop": "停止录制",
                     "numberPrefix": "NUM"
                 },
                 "recording": {
-                    "title": "START TYPING",
-                    "description": "20 inputs within 20 seconds can be recorded."
+                    "title": "开始输入",
+                    "description": "可在 20 秒内录制 20 次输入。"
                 },
                 "recorded": {
-                    "title": "MACRO KEY FOR ",
-                    "deleteKey": "Delete Key",
-                    "clear": "Clear",
+                    "title": "宏键",
+                    "deleteKey": "Delete 键",
+                    "clear": "清除",
                     "intervalStatus": {
                         "keep": {
-                            "title": "Keep Delay",
-                            "description": "Intervals of key actions will be kept and applied when using this macro key."
+                            "title": "保留延迟",
+                            "description": "使用此宏键时，将保留并应用键操作之间的间隔。"
                         },
                         "ignore": {
-                            "title": "Ignore Delay",
-                            "description": "Intervals of key actions will be ignored."
+                            "title": "忽略延迟",
+                            "description": "忽略键操作之间的间隔。"
                         }
                     },
                     "repeatStatus": {
                         "repeat1": {
-                            "title": "No Repeat",
-                            "description": "No Repeat"
+                            "title": "不重复",
+                            "description": "不重复"
                         },
                         "repeat2": {
-                            "title": "Repeat 2 Times",
-                            "description": "Repeats 2 times"
+                            "title": "重复 2 次",
+                            "description": "重复 2 次"
                         },
                         "repeat3": {
-                            "title": "Repeat 3 Times",
-                            "description": "Repeats 3 times"
+                            "title": "重复 3 次",
+                            "description": "重复 3 次"
                         },
                         "repeat4": {
-                            "title": "Repeat 4 Times",
-                            "description": "Repeats 4 times"
+                            "title": "重复 4 次",
+                            "description": "重复 4 次"
                         },
                         "repeat5": {
-                            "title": "Repeat 5 Times",
-                            "description": "Repeats 5 times"
+                            "title": "重复 5 次",
+                            "description": "重复 5 次"
                         },
                         "repeat6": {
-                            "title": "Repeat 6 Times",
-                            "description": "Repeats 6 times"
+                            "title": "重复 6 次",
+                            "description": "重复 6 次"
                         },
                         "repeat7": {
-                            "title": "Repeat 7 Times",
-                            "description": "Repeats 7 times"
+                            "title": "重复 7 次",
+                            "description": "重复 7 次"
                         },
                         "repeat8": {
-                            "title": "Repeat 8 Times",
-                            "description": "Repeats 8 times"
+                            "title": "重复 8 次",
+                            "description": "重复 8 次"
                         },
                         "repeat9": {
-                            "title": "Repeat 9 Times",
-                            "description": "Repeats 9 times"
+                            "title": "重复 9 次",
+                            "description": "重复 9 次"
                         },
                         "repeat10": {
-                            "title": "Repeat 10 Times",
-                            "description": "Repeats 10 times"
+                            "title": "重复 10 次",
+                            "description": "重复 10 次"
                         }
                     },
                     "list": {
                         "header": {
-                            "col1": "Key Action",
-                            "col2": "Interval"
+                            "col1": "键操作",
+                            "col2": "间隔"
                         },
                         "footer": {
-                            "title": "Next input.."
+                            "title": "下一次输入.."
                         }
                     }
                 }
             },
-            "numberpad": {
-                "number": {
-                    "zero": "Num 0",
-                    "one": "Num 1",
-                    "two": "Num 2",
-                    "three": "Num 3",
-                    "four": "Num 4",
-                    "five": "Num 5",
-                    "six": "Num 6",
-                    "seven": "Num 7",
-                    "eight": "Num 8",
-                    "nine": "Num 9"
-                },
-                "macro": {
-                    "m1": "M1",
-                    "m2": "M2"
-                }
+            "initalKey": {
+                "zero": 0,
+                "m1": "M1"
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure you want to clear this macro key?"
+                    "title": "是否确实要清除此宏键？"
                 },
                 "timeoutRecording": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if no input for 20 seconds."
+                    "title": "录制超时。",
+                    "body": "如果 20 秒内没有输入，录制将超时。"
                 },
                 "maximumInput": {
-                    "title": "Maximum Input Reached.",
-                    "body": "Macro key can only store inputs less than 20."
+                    "title": "已达到最大输入。",
+                    "body": "宏键只能存储不超过 20 次的输入。"
                 },
                 "inputStopped": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if the input stopped for more than 10 seconds."
+                    "title": "录制超时。",
+                    "body": "如果输入停止超过 10 秒，录制将超时。"
                 },
                 "confirmButton": {
-                    "btnClear": "Clear",
-                    "btnCancel": "Cancel"
+                    "btnClear": "清除",
+                    "btnCancel": "取消"
                 },
-                "btnOk": "OK"
+                "btnOk": "确定"
             },
             "recording": {
-                "title": "Recording Macro Key For"
+                "title": "录制宏键，用于"
             }
         },
         "lightingProfile": {
-            "title": "Lighting",
+            "title": "灯光",
             "effect": {
                 "option1": {
-                    "title": "On"
+                    "title": "开启"
                 },
                 "option2": {
-                    "title": "Flicker"
+                    "title": "闪烁"
                 },
                 "option3": {
-                    "title": "Breath"
+                    "title": "呼吸"
                 },
                 "option4": {
-                    "title": "Wave"
+                    "title": "波形"
                 },
                 "option5": {
-                    "title": "Smooth"
+                    "title": "平滑"
                 },
                 "option6": {
-                    "title": "CPU Temperature"
+                    "title": "CPU 温度"
                 },
                 "option7": {
-                    "title": "CPU Utilization"
+                    "title": "CPU 利用率"
                 },
                 "option8": {
-                    "title": "Off"
+                    "title": "关闭"
                 },
                 "apply": {
-                    "title": "APPLY"
+                    "title": "应用"
                 },
                 "applied": {
-                    "title": "APPLIED"
+                    "title": "已应用"
                 }
             },
             "brightness": {
                 "text1": {
-                    "title": "*Brightness setting doesn't apply on "
+                    "title": "*亮度设置未应用"
                 },
                 "text2": {
-                    "title": " effect"
+                    "title": " 效果"
                 }
             },
             "lightingSingleLightingOption": {
                 "option1": {
-                    "title": "Always On"
+                    "title": "始终开启"
                 },
                 "option2": {
-                    "title": "Fast Blink"
+                    "title": "快速闪烁"
                 },
                 "option3": {
-                    "title": "Medium Blink"
+                    "title": "中速闪烁"
                 },
                 "option4": {
-                    "title": "Slow Blink"
+                    "title": "缓慢闪烁"
                 },
                 "option5": {
-                    "title": "Blink Level"
+                    "title": "闪烁级别"
                 }
             },
             "profile": {
                 "text1": {
-                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                    "title": "灯光当前已关闭。选择上方的概要文件选项卡，将其打开并自定义。"
                 },
                 "text2": {
-                    "title": "effect"
+                    "title": "效果"
                 },
                 "text3": {
-                    "title": "Effect"
+                    "title": "效果"
                 }
             },
             "button": {
                 "default": {
-                    "title": "Set to default"
+                    "title": "设为缺省设置"
                 }
             },
             "profileheading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "关闭"
                 },
                 "text2": {
-                    "title": "Profile 1"
+                    "title": "概要文件 1"
                 },
                 "text3": {
-                    "title": "Profile 2"
+                    "title": "概要文件 2"
                 },
                 "text4": {
-                    "title": "Profile 3"
+                    "title": "概要文件 3"
                 }
             },
             "colourwheel": {
                 "text1": {
-                    "title": "Selecting colour not available to this effect."
+                    "title": "选择此效果不可用的颜色。"
                 },
                 "text2": {
-                    "title": "APPLY"
+                    "title": "应用"
                 },
                 "text3": {
-                    "title": "APPLIED"
+                    "title": "已应用"
                 },
                 "text4": {
-                    "title": "R:"
+                    "title": "R："
                 },
                 "text5": {
-                    "title": "G:"
+                    "title": "G："
                 },
                 "text6": {
-                    "title": "B:"
+                    "title": "B："
                 },
                 "text7": {
-                    "title": "Color"
+                    "title": "颜色"
                 }
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "关闭"
                 },
                 "text2": {
                     "title": 1
@@ -372,11 +358,26 @@
                     "title": 3
                 },
                 "Customize": {
-                    "title": "Customize"
+                    "title": "定制"
                 },
                 "heading": {
-                    "title": "Select Profile:"
+                    "title": "选择概要文件："
                 }
+            }
+        },
+        "autoClose": {
+            "title": "Auto Close",
+            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "modalTurnAutoClose": {
+                "title": "Turn on Auto Close ?",
+                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Auto Close",
+                "body": "Only apps currently running will show in the list below."
             }
         }
     },
@@ -388,7 +389,7 @@
                 "sub1": "我的设备",
                 "sub2": "我的设备设置",
                 "sub3": "系统更新",
-                "sub4": "智能帮助"
+                "sub4": "智能助手"
             },
             "security": {
                 "title": "安全性",
@@ -408,7 +409,7 @@
             "subtitle": "检查设备是否受安全保护",
             "antiVirus": "病毒防护",
             "wifi": "WiFi 安全",
-            "pswdMgr": "Password Manager",
+            "pswdMgr": "密码管理器",
             "vpn": "VPN",
             "windowsHello": "Windows Hello",
             "enabled": "已启用",
@@ -502,7 +503,7 @@
             }
         },
         "quickSettings": {
-            "title": "您的设置",
+            "title": "您的快速设置",
             "microphone": "麦克风",
             "cameraPrivacy": "相机",
             "eyeCareMode": "护眼模式"
@@ -643,11 +644,11 @@
                         "li-ion": "锂离子电池",
                         "li_polymer": "锂聚合物",
                         "li_ion": "锂离子电池",
-                        "silver-zinc": "Silver-Zinc",
-                        "silver_zinc": "Silver-Zinc",
-                        "nicd": "NiCd",
-                        "nimh": "NiMH",
-                        "unknown": "Unknown"
+                        "silver-zinc": "银锌",
+                        "silver_zinc": "银锌",
+                        "nicd": "镍镉",
+                        "nimh": "镍氢",
+                        "unknown": "未知"
                     },
                     "manufacturer": {
                         "title": "制造商",
@@ -665,43 +666,41 @@
                     "NotSupportACAdapter": "<b>不支持交流电源适配器。</b>Lenovo 计算机不支持此交流电源适配器。它可能会导致突然关机。请连接正确的交流电源适配器。",
                     "LimitedACAdapterSupport": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。",
                     "MissingDriver": "未安装 <b>Lenovo Power Manager 驱动程序</b>，或其无法正常工作。请运行 Windows 更新以安装最新的驱动程序。",
-                    "StoreLimitation": "<b>电池仅能存储其原始完全充电电量的 {{percentageLimitation}}%</b>。",
+                    "StoreLimitation": "<b>电池仅能存储其原始完全充电电量的 {{value}}%</b>。",
                     "HighTemperature": "<b>由于电池温度过高</b>，电池已停止<b>放电</b>。",
                     "TrickleCharge": "电池已<b>完全放电</b>，需要再次充电。此过程可能耗时 10 小时或更长时间。",
                     "OverheatedBattery": "电池<b>过热</b>。请将其从计算机中卸下并冷却至室温。",
                     "PermanentError": "电池<b>因正常损耗而发生故障。</b>电池无法充电。更换电池。"
                 },
-                "thresholdNote": "<b>注意：</b>为了延长电池使用寿命，已将电池设置成电池电量处于 {{chargeThresholdInfo.stopValue}}% 时停止充电。"
+                "thresholdNote": "<b>注意：</b>为了延长电池使用寿命，已将电池设置成电池电量处于 {{value}}% 时停止充电。"
             },
             "power": {
                 "title": "电源管理",
                 "subtitle": "电源设置",
                 "description": "在此部分中可动态调节散热性能并最大限度提升电池寿命。它还具有其他常用的电源相关功能。您可以检查此部分中的缺省设置，并根据需要自定义您的系统。",
                 "jumpto": {
-                    "title": "跳到设置",
-                    "battery": "电池",
+                    "title": "跳转到",
+                    "battery": "电池设置",
                     "power": "电源管理",
-                    "cooling": "智能冷却",
-                    "other": "其他",
-                    "smartStandby": "Smart Standby"
+                    "other": "其他设置"
                 },
                 "powerSmartSettings": {
                     "title": "电源智能设置",
-                    "subtitle": "智能散热",
+                    "subtitle": "智能冷却",
                     "subtitle1": "电池和安静状态",
-                    "description1": "此功能动态调节散热设置以满足您的需求。此功能开启时，在手持或空闲状态下可调节设置使设备保持较低温度或较低噪声。而设备放置在稳定平面上时，此功能可优化性能。此功能关闭时，您可以手动设置散热优先级。",
+                    "description1": "此功能开启时，可动态调节散热设置以满足您的需求。在手持或空闲状态下可调节设置使设备处于低温和安静状态。而当设备放置在稳定平面上时，此功能可优化性能。此功能关闭时，您可以手动设置散热优先级。",
                     "description2": "智能散热可调节风扇速度、最高表面温度和性能。此功能具有以下模式，且现在支持通过 Windows 性能电源滑块访问。",
                     "description3": "智能冷却功能自动平衡散热性能以满足您的需求。当笔记本电脑处于手持状态时，智能冷却功能可调整性能设置，提供一个温度较低的表面，从而使握持者感到舒适。当该设备放置在桌面上时，此功能可优化性能。",
-                    "description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
-                    "description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider",
+                    "description13": "此功能开启时，可动态调节散热设置以满足您的需求。在手持或空闲状态下可调节设置使设备处于低温和安静状态。而当设备放置在稳定平面上时，此功能可优化性能。此功能关闭时，您可以手动设置散热优先级。",
+                    "description14": "此功能可以让您根据需要调节风扇速度、最大化系统性能或延长电池使用寿命。它有以下三种模式。您也可以使用热键（Fn+Q）或 Lenovo Vantage 工具栏切换模式。",
+                    "description5": "智能冷却可调节风扇速度、最佳性能，并管理您的电池使用时间。此功能拥有 3 种模式（安静模式，平衡模式和性能模式），现在可通过 Windows 性能电源滑块进行操作",
                     "readMore": "阅读更多信息。",
                     "gotoWindows": {
                         "title": "转到 Windows 设置",
                         "modalBodyText1": "单击系统托盘上的 Windows 电池图标以访问 Windows 性能电源滑块"
                     },
                     "intelligentCooling": {
-                        "title": "智能散热",
+                        "title": "智能冷却",
                         "description": "",
                         "tooltip": "",
                         "optimize": "优化系统以",
@@ -713,11 +712,11 @@
                             "performance4": "性能",
                             "quiteCool5": "安静和低温模式",
                             "performance5": "性能",
-                            "batterySaving": "Battery Saving",
-                            "performance13": "Performance",
-                            "quiteCool13": "Cool & Quiet",
-                            "performance14": "Extreme Performance",
-                            "quiteCool14": "Intelligent Cooling"
+                            "batterySaving": "电池省电",
+                            "performance13": "性能",
+                            "quiteCool13": "安静和低温模式",
+                            "performance14": "极致性能",
+                            "quiteCool14": "智能冷却"
                         },
                         "readMore": {
                             "mode1": "安静模式",
@@ -726,25 +725,25 @@
                             "line1": "滑块位于最左边。降低风扇速度和性能以使计算机温度更低、更安静，并且可获得最佳的电池寿命。",
                             "line2": "滑块位于中央。以动态方式平衡风扇速度和性能以获得最佳体验。",
                             "line3": "滑块位于最右边。提高风扇速度和允许的表面温度以获得最大性能。",
-                            "line4": "More info"
+                            "line4": "更多信息"
                         },
                         "selectedModeText": {
-                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
-                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
-                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+                            "quiteCool": "此模式可提供使风扇速度和系统性能达到平衡的最佳体验。例如，玩游戏时，此模式可以优化性能。在办公室里，此模式可以减少噪音。",
+                            "batterySaving": "通过自动调节亮度、更改电源设置、禁用高级图像处理上的功能等方式，此模式可实现最长的电池使用时间。",
+                            "performance": "此模式可实现最佳系统性能。在此模式下，风扇高速转动可能会产生很大的噪音。"
                         },
                         "intelligentCoolingModesModal": {
-                            "title": "Change intelligent cooling modes",
-                            "close": "close",
+                            "title": "更改智能冷却模式",
+                            "close": "关闭",
                             "coolingModesList": {
-                                "list1": "Click on the windows battery-icon in the toolbar",
-                                "list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+                                "list1": "单击工具栏中的 Windows 电池图标",
+                                "list2": "将显示 Windows 电池量表，滑动滑块以在最佳时间或最佳性能之间进行选择。"
                             }
                         }
                     },
                     "nonintelligentCooling": {
                         "options": {
-                            "intelligentCooling": "智能散热",
+                            "intelligentCooling": "智能冷却",
                             "extremeCooling": "极致性能",
                             "battery&Quite": "电池和安静状态"
                         }
@@ -761,8 +760,8 @@
                         "title": "轻松恢复",
                         "description": "如果频繁开合计算机外盖，则启用此功能可缩短恢复时间。",
                         "tooltip": "如果频繁开合计算机外盖，则此功能将改善恢复时间。启用后，在合上计算机外盖时，它将进入低功耗模式，但如果在合上外盖后 15 分钟内重新打开外盖，则它将立即恢复。此功能还使笔记本电脑可在系统挂起之前尝试完成暂挂活动（如发送电子邮件或下载文件）。"
-					},
-					"or":"Or"
+                    },
+                    "or": "或"
                 },
                 "otherSettings": {
                     "title": "其他设置",
@@ -861,7 +860,7 @@
                             "sat": "星期六"
                         },
                         "everyday": "每天",
-                        "weekdays": "平日",
+                        "weekdays": "工作日",
                         "weekends": "周末"
                     }
                 }
@@ -933,7 +932,7 @@
                 "subtitle": "显示和摄像头设置",
                 "description": "在此部分中可提升视觉体验及配置摄像头属性。在这里探索更多功能，并自定义个性化的显示体验。",
                 "jumpTo": {
-                    "title": "跳到设置",
+                    "title": "跳转到",
                     "shortcuts": {
                         "display": {
                             "title": "显示"
@@ -969,16 +968,16 @@
                         "reset": "重置温度",
                         "tooltip": "此功能可以有选择地使显示屏的部分区域变暗，从而降低功耗并延长电池使用时间。",
                         "dropDown": {
-                            "seconds": "seconds",
-                            "minute": "minute",
-                            "minutes": "minutes",
-                            "alwaysOn": "Always on",
-                            "never": "never",
-                            "halfTime": "Half time of display off timer"
+                            "seconds": "秒",
+                            "minute": "分",
+                            "minutes": "分钟",
+                            "alwaysOn": "始终开启",
+                            "never": "永不",
+                            "halfTime": "显示屏关闭计时器的一半时间"
                         },
-                        "taskBarDimmer": "TASKBAR DIMMER",
-                        "backgroundDimmer": "BACKGROUND DIMMER",
-                        "displayDimmer": "DISPLAY DIMMER"
+                        "taskBarDimmer": "任务栏调光器",
+                        "backgroundDimmer": "背景调光器",
+                        "displayDimmer": "显示屏调光器"
                     },
                     "dispColorTemp": {
                         "title": "白天色温",
@@ -991,7 +990,7 @@
                         "onSunsetToSunriseScheduleDescription": "设定从日落到日出的护眼模式",
                         "note": {
                             "title": "注",
-                            "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日落日出时间。"
+                            "description": "启用护眼模式时，此色温不会生效。但是，您可以拖动滑块进行预览。要使其生效，请关闭护眼模式。"
                         }
                     },
                     "privacyGuard": {
@@ -1030,10 +1029,10 @@
                         "sketchMode": "素描模式"
                     },
                     "cameraLoadingFailed": {
-                        "inUseTitle": "CAMERA IS IN USE",
-                        "inUseDescription": "Another app is using the camera. Close the app and try again.",
-                        "loadingFailedTitle": "CAMERA IS IN USE OR LOADING FAILED",
-                        "loadingFailedDescription": "Close the app and try again."
+                        "inUseTitle": "摄像头正在使用中",
+                        "inUseDescription": "其他应用程序正在使用摄像头。关闭该应用程序并重试。",
+                        "loadingFailedTitle": "摄像头正在使用中或加载失败",
+                        "loadingFailedDescription": "关闭该应用程序并重试。"
                     }
                 }
             },
@@ -1087,25 +1086,25 @@
                         }
                     },
                     "apply": {
-                        "title": "APPLY"
+                        "title": "应用"
                     },
                     "website": {
-                        "url": "WEBSITE URL"
+                        "url": "Web 站点 URL"
                     },
                     "enterText": {
-                        "title": "TEXT TO BE ENTERED"
+                        "title": "要输入的文本"
                     }
                 }
             }
         },
         "smartAssist": {
-            "title": "智能帮助",
+            "title": "智能助手",
             "description": "Lenovo 智能感知结合计算机上的各种传感器来检测您的活动，调整设置以实现最优电源管理并保护您的隐私。",
             "jumpTo": {
-                "title": "跳到设置",
-                "security": "安全性",
-                "screen": "屏幕",
-                "media": "媒体",
+                "title": "跳转到",
+                "security": "智能安全",
+                "screen": "智能屏幕",
+                "media": "智能媒体",
                 "voice": "语音",
                 "APS": "APS"
             },
@@ -1121,11 +1120,11 @@
                     "tooltip": "单击此处以重置人类存在检测设置。"
                 },
                 "zeroTouchLogin": {
-                    "title": "零触摸登录",
+                    "title": "红外摄像头自动登录",
                     "caption": "当您坐在计算机面前或接近计算机时，此功能会自动解锁或唤醒计算机。"
                 },
                 "zeroTouchLock": {
-                    "title": "零触摸锁定",
+                    "title": "自动锁定屏幕",
                     "caption": "此功能将使显示变暗并在未检测到用户存在时锁定计算机。当您在无人看管且未锁定的状态离开计算机时，它可以降低未经授权访问计算机的机会。它还可以在未检测到您的存在时让系统进入现代待机状态，从而减少耗电量。",
                     "autoScreenLockTimer": {
                         "title": "自动屏幕锁定计时器",
@@ -1141,7 +1140,7 @@
                     "title": "距离灵敏度调整",
                     "caption": "自动距离调整将会通过人工智能引擎自动更新检测距离。",
                     "options": {
-                        "near": "附近",
+                        "near": "较近",
                         "far": "较远"
                     }
                 },
@@ -1149,14 +1148,14 @@
                     "description1": "此功能依赖于 Windows Hello。确保在 Windows 设置中已开启面部识别。",
                     "description2": "该功能使用传感器和摄像头来检测您的存在。然而，该功能不会收集任何个人数据。",
                     "description3": "1. 如果您的计算机处于帐篷模式、平板电脑模式或站立模式，则这些功能可能无法正常工作。",
-                    "description4": "2. 如果您的计算机处于休眠模式或已关机。自动红外摄像头登录将无法工作。",
+                    "description4": "2. 如果您的计算机处于休眠模式或已关机，自动红外摄像头登录将无法工作。",
                     "description5": "3. 请将计算机屏幕调整至适当的角度，以便红外摄像头能够识别您的面部，进行自动登录。"
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "转到 Windows Hello 设置",
                     "screenTimeoutSettings": "转至屏幕超时设置"
                 },
-                "resetToDefault": "重置为缺省设置"
+                "resetToDefault": "恢复默认设置"
             },
             "intelligentScreen": {
                 "title": "智能屏幕",
@@ -1204,12 +1203,23 @@
                     "hand": {
                         "title": "手接近计算机边缘",
                         "description": "启用平板电脑模式时，如果未检测到手动输入，则启用 APS"
-                    }
+                    },
+                    "more": "更多",
+                    "advanced-settings": "高级设置",
+                    "hide": "隐藏高级设置"
+                },
+                "APS": {
+                    "more": "更多",
+                    "advancedSettings": "高级设置",
+                    "hideAdvancedSettings": "隐藏高级设置",
+                    "lowSensitivity": "低灵敏度",
+                    "mediumSensitivity": "中等灵敏度",
+                    "highSensitivity": "高灵敏度"
                 }
             },
             "intelligentMedia": {
                 "heading": "智能媒体",
-                "title": "零触摸视频播放",
+                "title": "视频播放智能控制",
                 "desc": "此功能将在离开计算机时暂停视频，并在您回来时重新播放视频。",
                 "tooltip": "此功能不适用于 Web 视频播放器。流行的本地视频播放器（例如 Windows Media Player、5KPlayer 等）均支持此功能。"
             },
@@ -1240,9 +1250,9 @@
                     "closeText": "关闭"
                 },
                 "modalInstallationFailed": {
-                    "btnText": "ok",
-                    "title": "Install Failed",
-                    "desc": "Please try again later in order to use Lenovo Voice."
+                    "btnText": "确定",
+                    "title": "安装失败",
+                    "desc": "若要使用联想语音，请稍后重试。"
                 }
             }
         }
@@ -1398,7 +1408,7 @@
             "overviewBlockTitle": "您的生态系统安全概述",
             "allDevices": "所有设备",
             "myDevice": "我的设备",
-            "thisComputer": "This computer",
+            "thisComputer": "此计算机",
             "secure": "安全",
             "needAttention": "需要注意",
             "manageAccount": "管理帐户",
@@ -1482,7 +1492,10 @@
             "listLenovoCommunity": "Lenovo 社区",
             "listContactCustomerService": "联系客户服务部门",
             "listContactUsOnWechat": "通过微信联系我们",
-            "weChatDescription": "在微信上向我们提问，我们定会迅速回复"
+            "weChatDescription": "在微信上向我们提问，我们定会迅速回复",
+            "listFindUs": "Find us on social media",
+            "listContactUsOnFacebook": "Contact us on Facebook",
+            "facebookDescription": "Click to find us on Facebook"
         },
         "quicklinks": {
             "title": "直通车",
@@ -1523,7 +1536,13 @@
             "maliciousNetwork": "本月阻止了您的计算机加入 {{maliciousWifi}} 个恶意网络。",
             "good": "良好",
             "malicious": "恶意",
-            "suspicious": "可疑"
+            "suspicious": "可疑",
+            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+            "antivirus": "Being protected by anti-virus software",
+            "password": "Having strong and complex passwords managed in a safe way",
+            "vpn": "Monitoring your network exposure to attackers",
+            "wifi": "Encrypting your personal data when using public WiFi",
+            "windowsHello": "Protecting your device using safe login options"
         },
         "antivirus": {
             "common": {
@@ -1617,7 +1636,8 @@
                 "headerText": "错误",
                 "bodyText": "我们检测到您丢失了 Vantage 的关键部分。这些部分将在后台下载。请稍后重试。",
                 "closeText": "关闭",
-                "offlineText": "我们检测到您没有连接到互联网。此页面的某些部分将无法正常运行。请重新连接"
+                "offlineText": "我们检测到您没有连接到互联网。此页面的某些部分将无法正常运行。请重新连接",
+                "accountText": "Account creation failed. Please try again later."
             }
         },
         "homeprotection": {
@@ -2135,8 +2155,8 @@
         "subtitle2": "告诉我们您的兴趣",
         "personal": "个人使用",
         "business": "商业用途",
-        "custom": "习惯",
-        "experience": "经验",
+        "custom": "自定义",
+        "experience": "体验",
         "privacytitle": "通过匿名收集使用统计信息，帮助我们提高应用程序的质量。",
         "moreInterest": "+更多的兴趣",
         "title1": "欢迎来到",

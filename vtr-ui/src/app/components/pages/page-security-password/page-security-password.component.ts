@@ -13,7 +13,7 @@ import { RegionService } from 'src/app/services/region/region.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { GuardService } from '../../../services/guard/security-guardService.service';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
 	selector: 'vtr-page-security-password',
@@ -103,10 +103,10 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'password-protection'
+			Page: 'password-protection'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
 				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {
@@ -121,7 +121,7 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 			}
 		);
 
-		this.cmsService.fetchCMSArticle(this.dashlaneArticleId, { 'Lang': 'EN' }).then((response: any) => {
+		this.cmsService.fetchCMSArticle(this.dashlaneArticleId, { Lang: 'EN' }).then((response: any) => {
 			if (response && response.Results && response.Results.Category) {
 				this.dashlaneArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
 			}
