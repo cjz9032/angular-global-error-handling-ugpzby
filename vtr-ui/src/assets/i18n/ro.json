@@ -3,341 +3,327 @@
         "dashboard": {
             "device": {
                 "quickSettings": {
-                    "title": "Thermal Mode",
+                    "title": "Mod termic",
                     "status": {
-                        "performance": "Performance",
-                        "balance": "Balance",
-                        "quiet": "Quiet"
+                        "performance": "Performanţă",
+                        "balance": "Echilibru",
+                        "quiet": "Silențios"
                     },
                     "statusText": {
-                        "perText": "Higher CPU usage, Higher fan speed",
-                        "balText": "Normal CPU and fan speed",
-                        "quietText": "Lower CPU usage, Lower fan speed"
+                        "perText": "Utilizare CPU și viteză vent. mari",
+                        "balText": "Utilizare CPU și viteză vent normale",
+                        "quietText": "Utilizare CPU și viteză vent. mici"
                     },
-                    "wifiSecurity": "Wifi Security",
+                    "wifiSecurity": "Securitate WiFi",
                     "dolby": "Dolby",
-                    "rapidCharge": "Rapid Charge"
+                    "rapidCharge": "Încărcare rapidă"
                 },
                 "legionEdge": {
-                    "title": "CPU Overclock",
+                    "title": "Suprasolicitare CPU",
                     "status": {
-                        "alwayson": "On",
-                        "whenGaming": "When Gaming",
-                        "off": "Off"
+                        "alwayson": "Act.",
+                        "whenGaming": "În jocuri",
+                        "off": "Dez."
                     },
                     "statusText": {
-                        "onText": "CPU Overclocking will be activated",
-                        "gamingText": "CPU Overclocking will be activated automatically while game launches",
-                        "offText": "CPU Overclocking will be disabled"
+                        "onText": "Suprasolicitarea CPU va fi activată",
+                        "gamingText": "Suprasolicitarea CPU se va activa automat la lansarea unui joc",
+                        "offText": "Suprasolicitarea CPU va fi dezactivată"
                     },
-                    "ramOverlock": "RAM Overclock",
+                    "ramOverlock": "Suprasolicitare RAM",
                     "popup": {
-                        "text": "Change will be effective after restarting computer.",
-                        "button": "ok"
+                        "text": "Modificările vor avea loc după repornirea computerului.",
+                        "button": "OK"
                     },
                     "driverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "You need install driver for RAM Overclock to  make it effective",
-                        "button": "Install",
-                        "link": "cancel",
-                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
-                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
+                        "headerText": "Instalarea driverului este obligatorie",
+                        "text": "Instalați driverul pentru a activa suprasolicitarea RAM (este necesară repornirea)",
+                        "button": "Instalare",
+                        "link": "anulare",
+                        "networkBoostText": "Trebuie să instalați driverul pentru stimularea rețelei, pentru ca aceasta să fie mai eficientă",
+                        "hybridModeText": "Trebuie să instalați driverul pentru modul hibrid, pentru ca acesta să fie mai eficient",
+                        "cpuOverclockText": "Instalați driverul pentru a activa suprasolicitarea CPU (este necesară repornirea)"
                     },
-                    "autoClose": "Auto Close",
-                    "networkBoost": "Network Boost",
-                    "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock",
+                    "autoClose": "Închidere automată",
+                    "networkBoost": "Stimulare rețea",
+                    "hybridMode": "Mod hibrid",
+                    "touchpadLock": "Blocare touchpad",
                     "lightingDriverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "Please install driver",
-                        "button": "Install",
-                        "link": "cancel"
+                        "headerText": "Instalarea driverului este obligatorie",
+                        "text": "Instalați driverul pentru a activa funcția de iluminat (este necesară repornirea)",
+                        "button": "Instalare",
+                        "link": "anulare"
                     },
                     "lightingColorMessage": {
-                        "text": "Selecting color not available to this effect."
+                        "text": "Selectarea culorii nu este disponibilă pentru acest efect."
                     }
                 },
                 "systemTools": {
-                    "power": "Power",
+                    "power": "Alimentare",
                     "media": "Media",
-                    "macroKey": "Marco Key",
-                    "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update",
-                    "header": "System Tools"
+                    "macroKey": "Tastă macro",
+                    "hardwareScan": "Scanare hardware",
+                    "systemUpdate": "Actualizare sistem",
+                    "header": "Instrumente sistem"
                 },
                 "lighting": {
-                    "title": "Lighting Customize",
-                    "header": "Lighting"
+                    "title": "Personalizarea iluminării",
+                    "header": "Fulgere"
                 },
                 "legionEdgeModal": {
-                    "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
-                    "line2": "<b>Feature Management Overview</b> <br> Some features not available on all devices",
-                    "line3": "<b>CPU Overclocking </b><br> Boost the maximum speed for your processor",
-                    "line4": "<b>RAM Overclocking </b><br> Boost the maximum speed for your memory",
-                    "line5": "<b>Network Boost </b><br> Prioritize network traffic for the game you're playing",
-                    "line6": "<b>Dolby </b><br> Tune your audio specifically for gaming with Dolby technology",
-                    "line7": "<b>Hybrid Mode </b><br> Disable advanced GPU settings when not gaming to boost battery performance",
-                    "line8": "<b>Rapid Charge </b><br> Game on the go longer with quicker battery charging",
-                    "line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
-                    "line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
-                    "line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control"
+                    "line1": "Cu ajutorul Vantage Edge, setările dvs. vor fi reglate automat pe baza utilizării. \n Performanță maximă atunci când jucați jocuri, durată mai lungă de viață a bateriei atunci când nu jucați.",
+                    "line2": "<b>Rezumat administrare funcții</b> <br> Unele funcții nu sunt disponibile pe toate dispozitivele",
+                    "line3": "<b>Suprasolicitare CPU </b><br> Stimulați-vă procesorul să atingă viteza maximă",
+                    "line4": "<b>Suprasolicitare RAM </b><br> Stimulați memoria ca să atingă viteza maximă",
+                    "line5": "<b>Stimulare rețea </b><br> Dați prioritate asupra traficului rețelei pentru jocul pe care-l jucați",
+                    "line6": "<b>Dolby </b><br> Reglați-vă sunetul, special pentru jocuri, cu ajutorul tehnologiei Dolby",
+                    "line7": "<b>Mod hibrid </b><br> Dezactivați setările GPU avansate atunci când nu jucați jocuri pentru a îmbunătăți performanța bateriei",
+                    "line8": "<b>Încărcare rapidă </b><br> Jucați jocuri la drum, cu ajutorul încărcării mai rapide a bateriei",
+                    "line9": "<b>Blocare touchpad </b><br> Preveniți introducerile eronate, dezactivând panoul tactil în timp ce jucați jocuri",
+                    "line10": "<b>Închidere automată </b><br> Eliminați procesele care sunt inutile pentru jocuri, înainte de a începe să jucați, pentru a amplifica la maximum resursele de sistem disponibile",
+                    "line11": "<b>Mod termic </b><br> Setați profilul dispozitivului favorit pentru viteza ventilatorului și pentru controlul răcirii"
                 },
                 "systemInfo": {
-                    "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                    "systenTooltip": "Plasați cursorul pe CPU/GPU/RAM și pe alte drivere pentru a afișa descrierile acestora, inclusiv informațiile de fabricare și modelul"
                 },
                 "systemStatus": {
-                    "info": "INFO"
+                    "info": "INFORMAȚII"
                 }
             }
         },
         "common": {
             "menu": {
                 "support": {
-                    "title": "Support",
-                    "sub1": "Support",
+                    "title": "Asistenţă",
+                    "sub1": "Asistenţă",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
             }
         },
         "macroKey": {
-            "title": "Macro Key",
-            "introLine": "You can record a series of key input, and use them in gaming or other operations.",
+            "title": "Tastă macro",
+            "introLine": "Puteți înregistra o combinație de taste și să le folosiți în joc sau în alte operații.",
             "status": {
                 "on": {
-                    "title": "On",
-                    "description": "Always Enabled"
+                    "title": "Act.",
+                    "description": "Mereu activată"
                 },
                 "whileGaming": {
-                    "title": "Macro Key enabled only when gaming",
-                    "description": "It will be enabled when you game and remain as num key when you don't."
+                    "title": "Tasta macro este activată doar în timpul unui joc",
+                    "description": "Va fi activată în timpul jocului și este folosită ca tastă numerică în afara jocului."
                 },
                 "off": {
-                    "title": "Off",
-                    "description": "Always Off"
+                    "title": "Dez.",
+                    "description": "Întotdeauna dezactivată"
                 }
             },
             "details": {
                 "intro": {
-                    "noNumber": "SELECT A MACRO KEY",
-                    "title": "CREATE A MACRO KEY FOR",
-                    "line1": "click the start recording button below",
-                    "line2": "type in macro key",
-                    "line3": "stop recording when finishing typing"
+                    "noNumber": "SELECTAȚI O TASTĂ MACRO",
+                    "title": "CREAȚI O TASTĂ MACRO PENTRU",
+                    "line1": "dați clic pe butonul de start pentru înregistrare de mai jos",
+                    "line2": "introduceți tasta macro",
+                    "line3": "opriți înregistrarea după ce terminați de scris"
                 },
                 "buttons": {
-                    "start": "START RECORDING",
-                    "stop": "STOP RECORDING",
+                    "start": "PORNIȚI ÎNRREGISTRAREA",
+                    "stop": "OPRIȚI ÎNREGISTRAREA",
                     "numberPrefix": "NUM"
                 },
                 "recording": {
-                    "title": "START TYPING",
-                    "description": "20 inputs within 20 seconds can be recorded."
+                    "title": "ÎNCEPEȚI SĂ SCRIEȚI",
+                    "description": "Pot fi înregistrare 20 de intrări în 20 de secunde."
                 },
                 "recorded": {
-                    "title": "MACRO KEY FOR ",
-                    "deleteKey": "Delete Key",
-                    "clear": "Clear",
+                    "title": "TASTĂ MACRO PENTRU ",
+                    "deleteKey": "Ștergeți tasta",
+                    "clear": "Ştergere",
                     "intervalStatus": {
                         "keep": {
-                            "title": "Keep Delay",
-                            "description": "Intervals of key actions will be kept and applied when using this macro key."
+                            "title": "Păstrați întârzierea",
+                            "description": "Se vor păstra intervalele apăsare a tastelor și vor fi aplicate la folosirea acestei taste macro."
                         },
                         "ignore": {
-                            "title": "Ignore Delay",
-                            "description": "Intervals of key actions will be ignored."
+                            "title": "Ignorați întârzierea",
+                            "description": "Intervalele de apăsare a tastelor vor fi ignorate."
                         }
                     },
                     "repeatStatus": {
                         "repeat1": {
-                            "title": "No Repeat",
-                            "description": "No Repeat"
+                            "title": "Nu repetați",
+                            "description": "Nu repetați"
                         },
                         "repeat2": {
-                            "title": "Repeat 2 Times",
-                            "description": "Repeats 2 times"
+                            "title": "Repetați de 2 ori",
+                            "description": "Se repetă de 2 ori"
                         },
                         "repeat3": {
-                            "title": "Repeat 3 Times",
-                            "description": "Repeats 3 times"
+                            "title": "Repetați de 3 ori",
+                            "description": "Se repetă de 3 ori"
                         },
                         "repeat4": {
-                            "title": "Repeat 4 Times",
-                            "description": "Repeats 4 times"
+                            "title": "Repetați de 4 ori",
+                            "description": "Se repetă de 4 ori"
                         },
                         "repeat5": {
-                            "title": "Repeat 5 Times",
-                            "description": "Repeats 5 times"
+                            "title": "Repetați de 5 ori",
+                            "description": "Se repetă de 5 ori"
                         },
                         "repeat6": {
-                            "title": "Repeat 6 Times",
-                            "description": "Repeats 6 times"
+                            "title": "Repetați de 6 ori",
+                            "description": "Se repetă de 6 ori"
                         },
                         "repeat7": {
-                            "title": "Repeat 7 Times",
-                            "description": "Repeats 7 times"
+                            "title": "Repetați de 7 ori",
+                            "description": "Se repetă de 7 ori"
                         },
                         "repeat8": {
-                            "title": "Repeat 8 Times",
-                            "description": "Repeats 8 times"
+                            "title": "Repetați de 8 ori",
+                            "description": "Se repetă de 8 ori"
                         },
                         "repeat9": {
-                            "title": "Repeat 9 Times",
-                            "description": "Repeats 9 times"
+                            "title": "Repetați de 9 ori",
+                            "description": "Se repetă de 9 ori"
                         },
                         "repeat10": {
-                            "title": "Repeat 10 Times",
-                            "description": "Repeats 10 times"
+                            "title": "Repetați de 10 ori",
+                            "description": "Se repetă de 10 ori"
                         }
                     },
                     "list": {
                         "header": {
-                            "col1": "Key Action",
+                            "col1": "Acțiune tastă",
                             "col2": "Interval"
                         },
                         "footer": {
-                            "title": "Next input.."
+                            "title": "Următoarea intrare.."
                         }
                     }
                 }
             },
-            "numberpad": {
-                "number": {
-                    "zero": "Num 0",
-                    "one": "Num 1",
-                    "two": "Num 2",
-                    "three": "Num 3",
-                    "four": "Num 4",
-                    "five": "Num 5",
-                    "six": "Num 6",
-                    "seven": "Num 7",
-                    "eight": "Num 8",
-                    "nine": "Num 9"
-                },
-                "macro": {
-                    "m1": "M1",
-                    "m2": "M2"
-                }
-            },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure you want to clear this macro key?"
+                    "title": "Sigur ștergeți această tastă macro?"
                 },
                 "timeoutRecording": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if no input for 20 seconds."
+                    "title": "Sesiunea de înregistrare a expirat.",
+                    "body": "Înregistrarea va expira dacă nu există nicio intrare timp de 20 de secunde."
                 },
                 "maximumInput": {
-                    "title": "Maximum Input Reached.",
-                    "body": "Macro key can only store inputs less than 20."
+                    "title": "S-a atins maximul de intrări.",
+                    "body": "Tastele macro pot stoca doar mai puțin de 20 de intrări."
                 },
                 "inputStopped": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if the input stopped for more than 10 seconds."
+                    "title": "Sesiunea de înregistrare a expirat.",
+                    "body": "Înregistrarea va expira dacă au trecut mai mult de 10 secunde de la ultima intrare."
                 },
                 "confirmButton": {
-                    "btnClear": "Clear",
-                    "btnCancel": "Cancel"
+                    "btnClear": "Ştergere",
+                    "btnCancel": "Anulare"
                 },
                 "btnOk": "OK"
             },
             "recording": {
-                "title": "Recording Macro Key For"
+                "title": "Înregistrarea tastei macro pentru"
+            },
+            "initalKey": {
+                "zero": 0,
+                "m1": "M1"
             }
         },
         "lightingProfile": {
-            "title": "Lighting",
+            "title": "Fulgere",
             "effect": {
                 "option1": {
-                    "title": "On"
+                    "title": "Act."
                 },
                 "option2": {
-                    "title": "Flicker"
+                    "title": "Clipire"
                 },
                 "option3": {
-                    "title": "Breath"
+                    "title": "Respiraţie"
                 },
                 "option4": {
-                    "title": "Wave"
+                    "title": "Gest"
                 },
                 "option5": {
-                    "title": "Smooth"
+                    "title": "Neted"
                 },
                 "option6": {
-                    "title": "CPU Temperature"
+                    "title": "Temperatură procesor"
                 },
                 "option7": {
-                    "title": "CPU Utilization"
+                    "title": "Utilizare CPU"
                 },
                 "option8": {
-                    "title": "Off"
+                    "title": "Dez."
                 },
                 "apply": {
-                    "title": "APPLY"
+                    "title": "APLICARE"
                 },
                 "applied": {
-                    "title": "APPLIED"
+                    "title": "APLICAT"
                 }
             },
             "brightness": {
                 "text1": {
-                    "title": "*Brightness setting doesn't apply on "
+                    "title": "*Setarea luminozității nu se aplică pentru "
                 },
                 "text2": {
-                    "title": " effect"
+                    "title": " efect"
                 }
             },
             "lightingSingleLightingOption": {
                 "option1": {
-                    "title": "Always On"
+                    "title": "Mereu pornit"
                 },
                 "option2": {
-                    "title": "Fast Blink"
+                    "title": "Clipire rapidă"
                 },
                 "option3": {
-                    "title": "Medium Blink"
+                    "title": "Clipire medie"
                 },
                 "option4": {
-                    "title": "Slow Blink"
+                    "title": "Clipire lentă"
                 },
                 "option5": {
-                    "title": "Blink Level"
+                    "title": "Nivel clipire"
                 }
             },
             "profile": {
                 "text1": {
-                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                    "title": "Iluminarea este dezactivată. Selectați fila profilului de mai sus pentru a o activa și personaliza."
                 },
                 "text2": {
-                    "title": "effect"
+                    "title": "efect"
                 },
                 "text3": {
-                    "title": "Effect"
+                    "title": "Efect"
                 }
             },
             "button": {
                 "default": {
-                    "title": "Set to default"
+                    "title": "Setați la valorile implicite"
                 }
             },
             "profileheading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "Dez."
                 },
                 "text2": {
-                    "title": "Profile 1"
+                    "title": "Profil 1"
                 },
                 "text3": {
-                    "title": "Profile 2"
+                    "title": "Profil 2"
                 },
                 "text4": {
-                    "title": "Profile 3"
+                    "title": "Profil 3"
                 }
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "Dez."
                 },
                 "text2": {
                     "title": 1
@@ -349,21 +335,21 @@
                     "title": 3
                 },
                 "Customize": {
-                    "title": "Customize"
+                    "title": "Personalizare"
                 },
                 "heading": {
-                    "title": "Select Profile:"
+                    "title": "Selectați profilul:"
                 }
             },
             "colourwheel": {
                 "text1": {
-                    "title": "Selecting colour not available to this effect."
+                    "title": "Selectarea culorii nu este disponibilă pentru acest efect."
                 },
                 "text2": {
-                    "title": "APPLY"
+                    "title": "APLICARE"
                 },
                 "text3": {
-                    "title": "APPLIED"
+                    "title": "APLICAT"
                 },
                 "text4": {
                     "title": "R:"
@@ -375,7 +361,7 @@
                     "title": "B:"
                 },
                 "text7": {
-                    "title": "Color"
+                    "title": "Culoare"
                 }
             }
         }
@@ -681,8 +667,7 @@
                     "title": "ACCESAȚI SETĂRILE",
                     "battery": "Baterie",
                     "power": "Alimentare",
-                    "other": "Altele",
-                    "smartStandby": "Stare de veghe inteligentă"
+                    "other": "Altele"
                 },
                 "powerSmartSettings": {
                     "title": "Setări inteligente de alimentare",
@@ -1492,7 +1477,10 @@
             "listLenovoCommunity": "Comunitatea Lenovo",
             "listContactCustomerService": "Contactați serviciul pentru clienți",
             "listContactUsOnWechat": "Contactați-ne pe WeChat",
-            "weChatDescription": "Puneți-ne o întrebare pe WeChat și vă vom răspunde rapid"
+            "weChatDescription": "Puneți-ne o întrebare pe WeChat și vă vom răspunde rapid",
+            "listFindUs": "Find us on social media",
+            "listContactUsOnFacebook": "Contact us on Facebook",
+            "facebookDescription": "Click to find us on Facebook"
         },
         "quicklinks": {
             "title": "Linkuri rapide",
@@ -1533,7 +1521,13 @@
             "maliciousNetwork": "Computerul dvs. a fost împiedicat să se alăture {{maliciousWifi}} rețele rău-intenționate, în această lună.",
             "good": "BUN",
             "malicious": "RĂU-INTENȚIONAT",
-            "suspicious": "SUSPECTED"
+            "suspicious": "SUSPECTED",
+            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+            "antivirus": "Being protected by anti-virus software",
+            "password": "Having strong and complex passwords managed in a safe way",
+            "vpn": "Monitoring your network exposure to attackers",
+            "wifi": "Encrypting your personal data when using public WiFi",
+            "windowsHello": "Protecting your device using safe login options"
         },
         "antivirus": {
             "common": {
@@ -1627,7 +1621,8 @@
                 "headerText": "Eroare",
                 "bodyText": "Am detectat că vă lipesc câteva elemente critice ale Vantage. Aceste elemente vor fi descărcate în fundal. Încercaţi din nou mai târziu.",
                 "closeText": "închidere",
-                "offlineText": "Nu sunteți conectat(ă) la internet. Unele părți ale acestei pagini nu funcționează corect. Conectați-vă din nou"
+                "offlineText": "Nu sunteți conectat(ă) la internet. Unele părți ale acestei pagini nu funcționează corect. Conectați-vă din nou",
+                "accountText": "Account creation failed. Please try again later."
             }
         },
         "homeprotection": {
