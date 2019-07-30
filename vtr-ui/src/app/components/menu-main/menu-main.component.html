@@ -3,6 +3,7 @@
 		<div *ngIf="!deviceService.isGaming && !isGamingHome"
 			class="navbar-brand pt-0">
 			<a vtrMetrics
+				*ngIf="items.length>0"
 				id="menu-main-lnk-l-logo"
 				attr.aria-label="menu-main-lnk-l-logo"
 				routerLinkActive="link-active"
