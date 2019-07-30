@@ -57,7 +57,8 @@
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.batterySettings.title' | translate"
 				[isCollapsed]="false"
 				id="device-settings-power-batterySettings"
-				aria-label="device-settings-power-batterySettings">
+				aria-label="device-settings-power-batterySettings"
+				[ariaLabel]="'device-settings-power-batterySettings-collapsible'">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngIf="showAirplanePowerModeSection">
@@ -72,7 +73,8 @@
 							[showChildContent]=true
 							(toggleOnOff)="onToggleOfAirplanePowerMode($event)"
 							id="device-settings-power-batterySettings-airPlanePower"
-							aria-label="device-settings-power-batterySettings-airPlanePower">
+							aria-label="device-settings-power-batterySettings-airPlanePower"
+							[araiLabel]="power-batterySettings-airPlanePower-toggle">
 							<div class="row">
 								<div class="col-12">
 									<div class="custom-control custom-checkbox always-on-usb-checkbox">
@@ -213,7 +215,8 @@
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
 				[isCollapsed]="false"
 				id="device-settings-power-powerSettings"
-				aria-label="device-settings-power-powerSettings">
+				aria-label="device-settings-power-powerSettings"
+				[ariaLabel]="'device-settings-power-powerSettings-collapsible'">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngIf="!isDesktopMachine">
@@ -304,7 +307,8 @@
 				[cardTitle]="'device.deviceSettings.power.otherSettings.title' | translate"
 				[isCollapsed]="false"
 				id="device-settings-power-otherSettings"
-				aria-label="device-settings-power-otherSettings">
+				aria-label="device-settings-power-otherSettings"
+				[ariaLabel]="'device-settings-power-otherSettings-collapsible'">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngFor="let item of otherSettings">
@@ -334,7 +338,8 @@
 				[cardTitle]="'device.deviceSettings.power.energyStar.title' | translate"
 				[isCollapsed]="false"
 				id="device-settings-power-energyStar"
-				aria-label="device-settings-power-energyStar">
+				aria-label="device-settings-power-energyStar"
+				[ariaLabel]="'device-settings-power-energyStar-collapsible'">
 				<div class="row energystar-container">
 					<div class="col-lg-2 col-md-2 col-sm-12">
 						<img class="img-fluid mx-auto d-block"
