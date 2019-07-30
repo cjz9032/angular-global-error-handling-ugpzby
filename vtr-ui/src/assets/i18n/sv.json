@@ -3,91 +3,91 @@
         "dashboard": {
             "device": {
                 "quickSettings": {
-                    "title": "Thermal Mode",
+                    "title": "Temperaturläge",
                     "status": {
-                        "performance": "Performance",
-                        "balance": "Balance",
-                        "quiet": "Quiet"
+                        "performance": "Prestanda",
+                        "balance": "Balans",
+                        "quiet": "Tyst"
                     },
                     "statusText": {
-                        "perText": "Higher CPU usage, Higher fan speed",
-                        "balText": "Normal CPU and fan speed",
-                        "quietText": "Lower CPU usage, Lower fan speed"
+                        "perText": "Högre CPU-anv. och fläkthast.",
+                        "balText": "Normal CPU-anv. och fläkthast.",
+                        "quietText": "Lägre CPU-anv. och fläkthast."
                     },
-                    "wifiSecurity": "Wifi Security",
+                    "wifiSecurity": "WiFi-säkerhet",
                     "dolby": "Dolby",
-                    "rapidCharge": "Rapid Charge"
+                    "rapidCharge": "Snabbladdning"
                 },
                 "legionEdge": {
-                    "title": "CPU Overclock",
+                    "title": "CPU-överklockning",
                     "status": {
-                        "alwayson": "On",
-                        "whenGaming": "When Gaming",
-                        "off": "Off"
+                        "alwayson": "På",
+                        "whenGaming": "Under spel",
+                        "off": "Av"
                     },
                     "statusText": {
-                        "onText": "CPU Overclocking will be activated",
-                        "gamingText": "CPU Overclocking will be activated automatically while game launches",
-                        "offText": "CPU Overclocking will be disabled"
+                        "onText": "CPU-överklockning aktiveras",
+                        "gamingText": "CPU-överklockning aktiveras automatiskt när spelet startar",
+                        "offText": "CPU-överklockning inaktiveras"
                     },
-                    "ramOverlock": "RAM Overclock",
+                    "ramOverlock": "RAM-överklockning",
                     "popup": {
-                        "text": "Change will be effective after restarting computer.",
+                        "text": "Ändringen får effekt när datorn startas om.",
                         "button": "ok"
                     },
                     "driverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "You need install driver for RAM Overclock to  make it effective",
-                        "button": "Install",
-                        "link": "cancel",
-                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
-                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
+                        "headerText": "Drivrutinsinstallation krävs",
+                        "text": "Installera drivrutin för att aktivera RAM-överklockning (omstart krävs)",
+                        "button": "Installera",
+                        "link": "avbryt",
+                        "networkBoostText": "Du måste installera en drivrutin för att använda Nätverksprestanda",
+                        "hybridModeText": "Du måste installera en drivrutin för att använda Hybridläge",
+                        "cpuOverclockText": "Installera drivrutin för att aktivera CPU-överklockning (omstart krävs)"
                     },
-                    "autoClose": "Auto Close",
-                    "networkBoost": "Network Boost",
-                    "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock",
+                    "autoClose": "Stäng automatiskt",
+                    "networkBoost": "Nätverksprestanda",
+                    "hybridMode": "Hybridläge",
+                    "touchpadLock": "Styrplattelås",
                     "lightingDriverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "Please install driver",
-                        "button": "Install",
-                        "link": "cancel"
+                        "headerText": "Drivrutinsinstallation krävs",
+                        "text": "Installera drivrutin för att aktivera belysning (omstart krävs)",
+                        "button": "Installera",
+                        "link": "avbryt"
                     },
                     "lightingColorMessage": {
-                        "text": "Selecting color not available to this effect."
+                        "text": "Det går inte att välja färg med denna effekt."
                     }
                 },
                 "systemTools": {
-                    "power": "Power",
-                    "media": "Media",
-                    "macroKey": "Marco Key",
-                    "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update",
-                    "header": "System Tools"
+                    "power": "Ström",
+                    "media": "Medier",
+                    "macroKey": "Makrotangent",
+                    "hardwareScan": "Maskinvarugenomsökning",
+                    "systemUpdate": "Systemuppdatering",
+                    "header": "Systemverktyg"
                 },
                 "lighting": {
-                    "title": "Lighting Customize",
-                    "header": "Lighting"
+                    "title": "Anpassa belysning",
+                    "header": "Ljus"
                 },
                 "legionEdgeModal": {
-                    "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
-                    "line2": "<b>Feature Management Overview</b> <br> Some features not available on all devices",
-                    "line3": "<b>CPU Overclocking </b><br> Boost the maximum speed for your processor",
-                    "line4": "<b>RAM Overclocking </b><br> Boost the maximum speed for your memory",
-                    "line5": "<b>Network Boost </b><br> Prioritize network traffic for the game you're playing",
-                    "line6": "<b>Dolby </b><br> Tune your audio specifically for gaming with Dolby technology",
-                    "line7": "<b>Hybrid Mode </b><br> Disable advanced GPU settings when not gaming to boost battery performance",
-                    "line8": "<b>Rapid Charge </b><br> Game on the go longer with quicker battery charging",
-                    "line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
-                    "line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
-                    "line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control"
+                    "line1": "Med Vantage Edge justeras inställningarna automatiskt baserat på din användning. \n Maximal prestanda när du spelar, längre batteritid när du inte gör det.",
+                    "line2": "<b>Översikt över funktionshantering</b> <br> Vissa funktioner är inte tillgängliga på alla enheter",
+                    "line3": "<b>CPU-överklockning </b><br> Öka maxhastigheten för processorn",
+                    "line4": "<b>RAM-överklockning </b><br> Öka maxhastigheten för minnet",
+                    "line5": "<b>Nätverksprestanda </b><br> Prioritera nätverkstrafik för det aktuella spelet",
+                    "line6": "<b>Dolby </b><br> Specialanpassa ljudet för spel med Dolby-teknik",
+                    "line7": "<b>Hybridläge </b><br> Inaktivera avancerade GPU-inställningar när du inte spelar för att förlänga batteritiden",
+                    "line8": "<b>Snabbladdning </b><br> Spela längre på språng med snabbare batteriladdning",
+                    "line9": "<b>Styrplattelås </b><br> Förhindra oavsiktlig inmatning genom att inaktivera styrplattan medan du spelar",
+                    "line10": "<b>Stäng automatiskt </b><br> Rensa onödiga processer innan du börjar spela för att maximera tillgängliga systemresurser",
+                    "line11": "<b>Temperaturläge </b><br> Ange önskad enhetsprofil för fläkthastighet och kylningskontroll"
                 },
                 "systemInfo": {
-                    "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                    "systenTooltip": "Håll muspekaren över CPU/GPU/RAM och olika enheter för att se beskrivningar, bland annat information om tillverkare och modell"
                 },
                 "systemStatus": {
-                    "info": "INFO"
+                    "info": "INFORMATION"
                 }
             }
         },
@@ -102,242 +102,228 @@
             }
         },
         "macroKey": {
-            "title": "Macro Key",
-            "introLine": "You can record a series of key input, and use them in gaming or other operations.",
+            "title": "Makrotangent",
+            "introLine": "Du kan spela in en serie tangenttryckningar och använda dem i spel eller andra funktioner.",
             "status": {
                 "on": {
-                    "title": "On",
-                    "description": "Always Enabled"
+                    "title": "På",
+                    "description": "Alltid aktiverad"
                 },
                 "whileGaming": {
-                    "title": "Macro Key enabled only when gaming",
-                    "description": "It will be enabled when you game and remain as num key when you don't."
+                    "title": "Makrotangenten aktiveras endast vid spel",
+                    "description": "Den aktiveras när du spelar och fungerar annars som NUM-tangent."
                 },
                 "off": {
-                    "title": "Off",
-                    "description": "Always Off"
+                    "title": "Av",
+                    "description": "Alltid av"
                 }
             },
             "details": {
                 "intro": {
-                    "noNumber": "SELECT A MACRO KEY",
-                    "title": "CREATE A MACRO KEY FOR",
-                    "line1": "click the start recording button below",
-                    "line2": "type in macro key",
-                    "line3": "stop recording when finishing typing"
+                    "noNumber": "VÄLJ EN MAKROTANGENT",
+                    "title": "SKAPA EN MAKROTANGENT FÖR",
+                    "line1": "klicka för att aktivera inspelningsknappen nedan",
+                    "line2": "skriv det som ska lagras i makrotangenten",
+                    "line3": "stoppa inspelningen när du är klar"
                 },
                 "buttons": {
-                    "start": "START RECORDING",
-                    "stop": "STOP RECORDING",
+                    "start": "STARTA INSPELNING",
+                    "stop": "STOPPA INSPELNING",
                     "numberPrefix": "NUM"
                 },
                 "recording": {
-                    "title": "START TYPING",
-                    "description": "20 inputs within 20 seconds can be recorded."
+                    "title": "BÖRJA SKRIVA",
+                    "description": "Du kan spela in 20 tangenttryckningar inom 20 sekunder."
                 },
                 "recorded": {
-                    "title": "MACRO KEY FOR ",
-                    "deleteKey": "Delete Key",
-                    "clear": "Clear",
+                    "title": "MAKROTANGENT FÖR ",
+                    "deleteKey": "Delete-tangent",
+                    "clear": "Radera",
                     "intervalStatus": {
                         "keep": {
-                            "title": "Keep Delay",
-                            "description": "Intervals of key actions will be kept and applied when using this macro key."
+                            "title": "Behåll fördröjning",
+                            "description": "Intervall med tangenttryckningar behålls och används när du trycker på makrotangenten."
                         },
                         "ignore": {
-                            "title": "Ignore Delay",
-                            "description": "Intervals of key actions will be ignored."
+                            "title": "Ignorera fördröjning",
+                            "description": "Intervall med tangenttryckningar ignoreras."
                         }
                     },
                     "repeatStatus": {
                         "repeat1": {
-                            "title": "No Repeat",
-                            "description": "No Repeat"
+                            "title": "Ingen upprepning",
+                            "description": "Ingen upprepning"
                         },
                         "repeat2": {
-                            "title": "Repeat 2 Times",
-                            "description": "Repeats 2 times"
+                            "title": "Upprepa 2 gånger",
+                            "description": "Upprepa 2 gånger"
                         },
                         "repeat3": {
-                            "title": "Repeat 3 Times",
-                            "description": "Repeats 3 times"
+                            "title": "Upprepa 3 gånger",
+                            "description": "Upprepa 3 gånger"
                         },
                         "repeat4": {
-                            "title": "Repeat 4 Times",
-                            "description": "Repeats 4 times"
+                            "title": "Upprepa 4 gånger",
+                            "description": "Upprepa 4 gånger"
                         },
                         "repeat5": {
-                            "title": "Repeat 5 Times",
-                            "description": "Repeats 5 times"
+                            "title": "Upprepa 5 gånger",
+                            "description": "Upprepa 5 gånger"
                         },
                         "repeat6": {
-                            "title": "Repeat 6 Times",
-                            "description": "Repeats 6 times"
+                            "title": "Upprepa 6 gånger",
+                            "description": "Upprepa 6 gånger"
                         },
                         "repeat7": {
-                            "title": "Repeat 7 Times",
-                            "description": "Repeats 7 times"
+                            "title": "Upprepa 7 gånger",
+                            "description": "Upprepa 7 gånger"
                         },
                         "repeat8": {
-                            "title": "Repeat 8 Times",
-                            "description": "Repeats 8 times"
+                            "title": "Upprepa 8 gånger",
+                            "description": "Upprepa 8 gånger"
                         },
                         "repeat9": {
-                            "title": "Repeat 9 Times",
-                            "description": "Repeats 9 times"
+                            "title": "Upprepa 9 gånger",
+                            "description": "Upprepa 9 gånger"
                         },
                         "repeat10": {
-                            "title": "Repeat 10 Times",
-                            "description": "Repeats 10 times"
+                            "title": "Upprepa 10 gånger",
+                            "description": "Upprepa 10 gånger"
                         }
                     },
                     "list": {
                         "header": {
-                            "col1": "Key Action",
-                            "col2": "Interval"
+                            "col1": "Tangentåtgärd",
+                            "col2": "Intervall"
                         },
                         "footer": {
-                            "title": "Next input.."
+                            "title": "Nästa tangenttryckning.."
                         }
                     }
                 }
             },
-            "numberpad": {
-                "number": {
-                    "zero": "Num 0",
-                    "one": "Num 1",
-                    "two": "Num 2",
-                    "three": "Num 3",
-                    "four": "Num 4",
-                    "five": "Num 5",
-                    "six": "Num 6",
-                    "seven": "Num 7",
-                    "eight": "Num 8",
-                    "nine": "Num 9"
-                },
-                "macro": {
-                    "m1": "M1",
-                    "m2": "M2"
-                }
-            },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure you want to clear this macro key?"
+                    "title": "Vill du rensa denna makrotangent?"
                 },
                 "timeoutRecording": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if no input for 20 seconds."
+                    "title": "Tidsgräns för inspelning.",
+                    "body": "Inspelningen stoppas efter 20 sekunders inaktivitet."
                 },
                 "maximumInput": {
-                    "title": "Maximum Input Reached.",
-                    "body": "Macro key can only store inputs less than 20."
+                    "title": "Högsta tillåtna antal tangenttryckningar har skett.",
+                    "body": "Makrotangenten kan endast lagra högst 20 tangenttryckningar."
                 },
                 "inputStopped": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if the input stopped for more than 10 seconds."
+                    "title": "Tidsgräns för inspelning.",
+                    "body": "Inspelningen stoppas efter 10 sekunders inaktivitet."
                 },
                 "confirmButton": {
-                    "btnClear": "Clear",
-                    "btnCancel": "Cancel"
+                    "btnClear": "Radera",
+                    "btnCancel": "Avbryt"
                 },
                 "btnOk": "OK"
             },
             "recording": {
-                "title": "Recording Macro Key For"
+                "title": "Spelar in makrotangent för"
+            },
+            "initalKey": {
+                "zero": 0,
+                "m1": "M1"
             }
         },
         "lightingProfile": {
-            "title": "Lighting",
+            "title": "Ljus",
             "effect": {
                 "option1": {
-                    "title": "On"
+                    "title": "På"
                 },
                 "option2": {
-                    "title": "Flicker"
+                    "title": "Flimmer"
                 },
                 "option3": {
-                    "title": "Breath"
+                    "title": "Andetag"
                 },
                 "option4": {
-                    "title": "Wave"
+                    "title": "Våg"
                 },
                 "option5": {
-                    "title": "Smooth"
+                    "title": "Jämn"
                 },
                 "option6": {
-                    "title": "CPU Temperature"
+                    "title": "Processortemperatur"
                 },
                 "option7": {
-                    "title": "CPU Utilization"
+                    "title": "Processoranvändning"
                 },
                 "option8": {
-                    "title": "Off"
+                    "title": "Av"
                 },
                 "apply": {
-                    "title": "APPLY"
+                    "title": "VERKSTÄLL"
                 },
                 "applied": {
-                    "title": "APPLIED"
+                    "title": "ANVÄNDS"
                 }
             },
             "brightness": {
                 "text1": {
-                    "title": "*Brightness setting doesn't apply on "
+                    "title": "*Inställningen av ljusstyrka gäller inte "
                 },
                 "text2": {
-                    "title": " effect"
+                    "title": " effekt"
                 }
             },
             "lightingSingleLightingOption": {
                 "option1": {
-                    "title": "Always On"
+                    "title": "Alltid på"
                 },
                 "option2": {
-                    "title": "Fast Blink"
+                    "title": "Snabb blinkning"
                 },
                 "option3": {
-                    "title": "Medium Blink"
+                    "title": "Medelsnabb blinkning"
                 },
                 "option4": {
-                    "title": "Slow Blink"
+                    "title": "Långsam blinkning"
                 },
                 "option5": {
-                    "title": "Blink Level"
+                    "title": "Blinkningshastighet"
                 }
             },
             "profile": {
                 "text1": {
-                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                    "title": "Belysningen är inaktiverad. Välj fliken Profil ovan för att aktivera och anpassa den."
                 },
                 "text2": {
-                    "title": "effect"
+                    "title": "effekt"
                 },
                 "text3": {
-                    "title": "Effect"
+                    "title": "Effekt"
                 }
             },
             "button": {
                 "default": {
-                    "title": "Set to default"
+                    "title": "Ange som standard"
                 }
             },
             "profileheading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "Av"
                 },
                 "text2": {
-                    "title": "Profile 1"
+                    "title": "Profil 1"
                 },
                 "text3": {
-                    "title": "Profile 2"
+                    "title": "Profil 2"
                 },
                 "text4": {
-                    "title": "Profile 3"
+                    "title": "Profil 3"
                 }
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "Av"
                 },
                 "text2": {
                     "title": 1
@@ -349,21 +335,21 @@
                     "title": 3
                 },
                 "Customize": {
-                    "title": "Customize"
+                    "title": "Anpassa"
                 },
                 "heading": {
-                    "title": "Select Profile:"
+                    "title": "Välj profil:"
                 }
             },
             "colourwheel": {
                 "text1": {
-                    "title": "Selecting colour not available to this effect."
+                    "title": "Det går inte att välja färg med denna effekt."
                 },
                 "text2": {
-                    "title": "APPLY"
+                    "title": "VERKSTÄLL"
                 },
                 "text3": {
-                    "title": "APPLIED"
+                    "title": "ANVÄNDS"
                 },
                 "text4": {
                     "title": "R:"
@@ -375,8 +361,23 @@
                     "title": "B:"
                 },
                 "text7": {
-                    "title": "Color"
+                    "title": "Färg"
                 }
+            }
+        },
+        "autoClose": {
+            "title": "Auto Close",
+            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "modalTurnAutoClose": {
+                "title": "Turn on Auto Close ?",
+                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Auto Close",
+                "body": "Only apps currently running will show in the list below."
             }
         }
     },
@@ -505,7 +506,12 @@
             "title": "Dina snabbinställningar",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
-            "eyeCareMode": "Ögonskyddsläge"
+            "eyeCareMode": "Ögonskydd",
+            "note": {
+                "accessNote": "doesn't have access to Lenovo Vantage",
+                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
+                "accessUrl": "Go to Windows settings to give access"
+            }
         },
         "systemStatus": {
             "title": "Systemstatus",
@@ -666,12 +672,15 @@
                     "HighTemperature": "<b>Urladdning</b> har stoppats på grund av att <b>batteritemperaturen är för hög.</b>",
                     "TrickleCharge": "Batteriet var <b>helt urladdat</b> och måste laddas. Det kan ta tio timmer eller mer.",
                     "OverheatedBattery": "Batteriet är <b>för varmt</b>. Ta ut batteriet ur datorn och låt batteriet svalna i rumstemperatur.",
-                    "PermanentError": "Batteriet har <b>försämrats till följd av vanlig användning.</b> Batteriet går inte att ladda. Byt ut batteriet."
+                    "PermanentError": "Batteriet har <b>försämrats till följd av vanlig användning.</b> Batteriet går inte att ladda. Byt ut batteriet.",
+                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
+                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                 },
                 "updating": "Uppdaterar",
                 "voltageError": "Felaktig batterispänning",
                 "batteryNotDetected": "Inget batteri upptäcktes",
-                "thresholdNote": "<b>Obs!</b> Du har ställt in att batteriladdningen ska avbrytas vid {{value}}%, vilket förlänger batteriets livslängd."
+                "thresholdNote": "<b>Obs!</b> Du har ställt in att batteriladdningen ska avbrytas vid {{value}}%, vilket förlänger batteriets livslängd.",
+                "seeDetailsLink": "See Details"
             },
             "power": {
                 "title": "Ström",
@@ -681,8 +690,7 @@
                     "title": "ÖPPNA INSTÄLLNINGAR",
                     "battery": "Batteri",
                     "power": "Ström",
-                    "other": "Annat",
-                    "smartStandby": "Smart vänteläge"
+                    "other": "Annat"
                 },
                 "powerSmartSettings": {
                     "title": "Smarta energiinställningar",
@@ -812,7 +820,8 @@
                     },
                     "airPlanePower": {
                         "title": "Flygenergiläge",
-                        "description": "Skydda flygplanets eluttag genom att kontrollera systemets strömförbrukning.När Flygenergiläge är aktiverat minskas strömförbrukningen genom att batteriladdningstakten och systemprestanda begränsas."
+                        "description": "Skydda flygplanets eluttag genom att kontrollera systemets strömförbrukning.När Flygenergiläge är aktiverat minskas strömförbrukningen genom att batteriladdningstakten och systemprestanda begränsas.",
+                        "checkBoxDesc": "Auto detection"
                     }
                 },
                 "energyStar": {
@@ -1094,6 +1103,13 @@
                     "enterText": {
                         "title": "PLATSHÅLLARE FÖR TEXT"
                     }
+                },
+                "fnCtrlKey": {
+                    "title": "FN key and Ctrl key swap",
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "more": "MORE",
+                    "control1": "TOUCHPAD CONTROLS",
+                    "control2": "MOUSE CONTROLS"
                 }
             }
         },
@@ -1121,7 +1137,8 @@
                 },
                 "zeroTouchLogin": {
                     "title": "Beröringsfri inloggning",
-                    "caption": "Denna funktion låser automatiskt upp eller aktiverar datorn när du närmar dig den eller sitter framför den."
+                    "caption": "Denna funktion låser automatiskt upp eller aktiverar datorn när du närmar dig den eller sitter framför den.",
+                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
                 },
                 "zeroTouchLock": {
                     "title": "Beröringsfritt lås",
@@ -1142,6 +1159,17 @@
                     "options": {
                         "near": "Nära",
                         "far": "Långt bort"
+                    },
+                    "tooltipcontent": {
+                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
+                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "list": {
+                            "line1": "Near: 0 – 0.42 meters (17 inches)",
+                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
+                            "line3": "Far: 0 – 1.20 meters (47 inches)",
+                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
+                            "line5": "The recommended detection distance is within 0.60 meters."
+                        }
                     }
                 },
                 "note": {
@@ -1492,7 +1520,10 @@
             "listLenovoCommunity": "Lenovo-forum",
             "listContactCustomerService": "Kontakta kundtjänst",
             "listContactUsOnWechat": "Kontakta oss via WeChat",
-            "weChatDescription": "Skicka en fråga till oss via WeChat så försöker vi svara så snabbt vi kan"
+            "weChatDescription": "Skicka en fråga till oss via WeChat så försöker vi svara så snabbt vi kan",
+            "listFindUs": "Find us on social media",
+            "listContactUsOnFacebook": "Contact us on Facebook",
+            "facebookDescription": "Click to find us on Facebook"
         },
         "quicklinks": {
             "title": "Snabblänkar",
@@ -1533,7 +1564,13 @@
             "maliciousNetwork": "Förhindrade att datorn gick med i {{maliciousWifi}} skadliga nätverk denna månad.",
             "good": "BRA",
             "malicious": "SKADLIGT",
-            "suspicious": "MISSTÄNKT"
+            "suspicious": "MISSTÄNKT",
+            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+            "antivirus": "Being protected by anti-virus software",
+            "password": "Having strong and complex passwords managed in a safe way",
+            "vpn": "Monitoring your network exposure to attackers",
+            "wifi": "Encrypting your personal data when using public WiFi",
+            "windowsHello": "Protecting your device using safe login options"
         },
         "antivirus": {
             "common": {
@@ -1627,7 +1664,8 @@
                 "headerText": "Fel",
                 "bodyText": "Vi har sett att du saknar viktiga komponenter i Vantage. Komponenterna hämtas i bakgrunden. Försök igen litet senare.",
                 "closeText": "stäng",
-                "offlineText": "Datorn ser inte ut att vara ansluten till internet. Vissa avsnitt på denna sida kommer inte att fungera korrekt. Anslut på nytt"
+                "offlineText": "Datorn ser inte ut att vara ansluten till internet. Vissa avsnitt på denna sida kommer inte att fungera korrekt. Anslut på nytt",
+                "accountText": "Account creation failed. Please try again later."
             }
         },
         "homeprotection": {

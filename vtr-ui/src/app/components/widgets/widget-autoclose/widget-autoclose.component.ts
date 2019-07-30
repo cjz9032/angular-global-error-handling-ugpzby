@@ -15,6 +15,7 @@ import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose
 export class WidgetAutocloseComponent implements OnInit {
   @Input() introTitle: string;
   public title: string;
+  public autoCloseAppList: any;
   gamingProperties: GamingAllCapabilities = new GamingAllCapabilities();
   AutoCloseStatusObj: AutoCloseStatus = new AutoCloseStatus();
   constructor(private modalService: NgbModal, private gamingCapabilityService: GamingAllCapabilitiesService, private gamingAutoCloseService: GamingAutoCloseService) { }
@@ -48,8 +49,9 @@ export class WidgetAutocloseComponent implements OnInit {
 
   public displayAutoCloseList() {
     try {
-      this.gamingAutoCloseService.getAppsAutoCloseList().then((list: any) => {
-        console.log('get autoclose list from js bridge ------------------------>', JSON.stringify(list));
+      this.gamingAutoCloseService.getAppsAutoCloseList().then((appList: any) => {
+        console.log('get autoclose list from js bridge ------------------------>', JSON.stringify(appList));
+        this.autoCloseAppList = appList.processList;
       });
     } catch (error) {
       console.error(error.message);

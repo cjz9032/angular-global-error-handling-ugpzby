@@ -3,6 +3,8 @@
 	[ngClass]="{'disable-state': disable}"
 	(click)="onChange($event)"
 	[title]="tooltipText"
+	[id]="switchId"
+	[attr.aria-label]="switchId"
 	vtrMetrics
 	metricsEvent="featureClick"
 	[metricsValue]="!value"
@@ -17,7 +19,7 @@
 			<i [class]="offIconDefinition"
 				[ngClass]="{'disabled' : isBlocked}"
 				*ngIf="isBlocked && !disable"></i>
-				<i [class]="iconDefinition"
+			<i [class]="iconDefinition"
 				[ngClass]="{'disable-container' : disable}"
 				*ngIf="isBlocked && disable"></i>
 		</div>

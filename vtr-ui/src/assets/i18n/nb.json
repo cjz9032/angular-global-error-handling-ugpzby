@@ -202,24 +202,6 @@
                     }
                 }
             },
-            "numberpad": {
-                "number": {
-                    "zero": "Num 0",
-                    "one": "Num 1",
-                    "two": "Num 2",
-                    "three": "Num 3",
-                    "four": "Num 4",
-                    "five": "Num 5",
-                    "six": "Num 6",
-                    "seven": "Num 7",
-                    "eight": "Num 8",
-                    "nine": "Num 9"
-                },
-                "macro": {
-                    "m1": "M1",
-                    "m2": "M2"
-                }
-            },
             "popupContent": {
                 "clearMacrokey": {
                     "title": "Are you sure you want to clear this macro key?"
@@ -244,6 +226,10 @@
             },
             "recording": {
                 "title": "Recording Macro Key For"
+            },
+            "initalKey": {
+                "zero": 0,
+                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -378,6 +364,21 @@
                     "title": "Color"
                 }
             }
+        },
+        "autoClose": {
+            "title": "Auto Close",
+            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "modalTurnAutoClose": {
+                "title": "Turn on Auto Close ?",
+                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Auto Close",
+                "body": "Only apps currently running will show in the list below."
+            }
         }
     },
     "common": {
@@ -505,7 +506,12 @@
             "title": "Hurtiginnstillingene dine",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
-            "eyeCareMode": "Øyebeskyttelsesmodus"
+            "eyeCareMode": "Øyebeskyttelse",
+            "note": {
+                "accessNote": "doesn't have access to Lenovo Vantage",
+                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
+                "accessUrl": "Go to Windows settings to give access"
+            }
         },
         "systemStatus": {
             "title": "Systemstatus",
@@ -666,12 +672,15 @@
                     "HighTemperature": "<b>Utladingen</b> har stoppet fordi <b>batteritemperaturen er for høy.</b>",
                     "TrickleCharge": "Batteriet ble <b>helt utladet</b> og må lades opp på nytt. Dette kan ta ti timer eller mer.",
                     "OverheatedBattery": "Batteriet er <b>for varmt</b>. Ta det ut av maskinen og avkjøl det til romtemperatur.",
-                    "PermanentError": "Batteriet er <b>utslitt på grunn av normal slitasje.</b> Batteriet kan ikke lades. Bytt batteri."
+                    "PermanentError": "Batteriet er <b>utslitt på grunn av normal slitasje.</b> Batteriet kan ikke lades. Bytt batteri.",
+                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
+                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                 },
                 "updating": "Oppdatering",
                 "voltageError": "Feil batterispenning",
                 "batteryNotDetected": "Kan ikke gjenkjenne batteri",
-                "thresholdNote": "<b>Merk:</b> For å øke batteriets levetid, har du angitt at batteriet skal stoppe ladingen ved {{value}}%."
+                "thresholdNote": "<b>Merk:</b> For å øke batteriets levetid, har du angitt at batteriet skal stoppe ladingen ved {{value}}%.",
+                "seeDetailsLink": "See Details"
             },
             "power": {
                 "title": "Strøm",
@@ -681,8 +690,7 @@
                     "title": "GÅ TIL INNSTILLINGER",
                     "battery": "Batteri",
                     "power": "Strøm",
-                    "other": "Annen",
-                    "smartStandby": "Smart hvilemodus"
+                    "other": "Annen"
                 },
                 "powerSmartSettings": {
                     "title": "Innstillinger for smart strømforbruk",
@@ -812,7 +820,8 @@
                     },
                     "airPlanePower": {
                         "title": "Strømmodus for fly",
-                        "description": "Beskytt flyets strømuttak ved å kontrollere systemets strømforbruk.Når Strømmodus for fly er aktivert, reduserer datamaskinen strømforbruket ved å begrense batteriladehastigheten og systemytelsen."
+                        "description": "Beskytt flyets strømuttak ved å kontrollere systemets strømforbruk.Når Strømmodus for fly er aktivert, reduserer datamaskinen strømforbruket ved å begrense batteriladehastigheten og systemytelsen.",
+                        "checkBoxDesc": "Auto detection"
                     }
                 },
                 "energyStar": {
@@ -1094,6 +1103,13 @@
                     "enterText": {
                         "title": "TEKST SOM SKAL SKRIVES INN"
                     }
+                },
+                "fnCtrlKey": {
+                    "title": "FN key and Ctrl key swap",
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "more": "MORE",
+                    "control1": "TOUCHPAD CONTROLS",
+                    "control2": "MOUSE CONTROLS"
                 }
             }
         },
@@ -1121,7 +1137,8 @@
                 },
                 "zeroTouchLogin": {
                     "title": "Pålogging uten berøring",
-                    "caption": "Denne funksjonen låser opp eller aktiverer datamaskinen automatisk når du befinner deg foran den eller nærmer deg den."
+                    "caption": "Denne funksjonen låser opp eller aktiverer datamaskinen automatisk når du befinner deg foran den eller nærmer deg den.",
+                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
                 },
                 "zeroTouchLock": {
                     "title": "Berøringsfri lås",
@@ -1142,6 +1159,17 @@
                     "options": {
                         "near": "Kort avstand",
                         "far": "Lang avstand"
+                    },
+                    "tooltipcontent": {
+                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
+                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "list": {
+                            "line1": "Near: 0 – 0.42 meters (17 inches)",
+                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
+                            "line3": "Far: 0 – 1.20 meters (47 inches)",
+                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
+                            "line5": "The recommended detection distance is within 0.60 meters."
+                        }
                     }
                 },
                 "note": {
@@ -1492,7 +1520,10 @@
             "listLenovoCommunity": "Lenovo-samfunnet",
             "listContactCustomerService": "Kontakt kundeservice",
             "listContactUsOnWechat": "Kontakt oss på WeChat",
-            "weChatDescription": "Still oss et spørsmål på WeChat, så skal vi svare så fort vi kan"
+            "weChatDescription": "Still oss et spørsmål på WeChat, så skal vi svare så fort vi kan",
+            "listFindUs": "Find us on social media",
+            "listContactUsOnFacebook": "Contact us on Facebook",
+            "facebookDescription": "Click to find us on Facebook"
         },
         "quicklinks": {
             "title": "Hurtigkoblinger",
@@ -1533,7 +1564,13 @@
             "maliciousNetwork": "Hindret at datamaskinen ble med i {{maliciousWifi}}skadelig nettverk denne måneden.",
             "good": "GOD",
             "malicious": "SKADELIG",
-            "suspicious": "MISTENKELIG"
+            "suspicious": "MISTENKELIG",
+            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+            "antivirus": "Being protected by anti-virus software",
+            "password": "Having strong and complex passwords managed in a safe way",
+            "vpn": "Monitoring your network exposure to attackers",
+            "wifi": "Encrypting your personal data when using public WiFi",
+            "windowsHello": "Protecting your device using safe login options"
         },
         "antivirus": {
             "common": {
@@ -1627,7 +1664,8 @@
                 "headerText": "Feil",
                 "bodyText": "Vi har oppdaget at du mangler viktige deler av Vantage. Disse delene lastes ned i bakgrunnen. Prøv igjen senere.",
                 "closeText": "Lukk",
-                "offlineText": "Vi har oppdaget at du ikke er koblet til internett. Deler av denne siden vil ikke fungere på riktig måte. Koble til igjen"
+                "offlineText": "Vi har oppdaget at du ikke er koblet til internett. Deler av denne siden vil ikke fungere på riktig måte. Koble til igjen",
+                "accountText": "Account creation failed. Please try again later."
             }
         },
         "homeprotection": {

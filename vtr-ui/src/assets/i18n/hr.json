@@ -364,6 +364,21 @@
                     "title": "Boja"
                 }
             }
+        },
+        "autoClose": {
+            "title": "Auto Close",
+            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "modalTurnAutoClose": {
+                "title": "Turn on Auto Close ?",
+                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Auto Close",
+                "body": "Only apps currently running will show in the list below."
+            }
         }
     },
     "common": {
@@ -491,7 +506,12 @@
             "title": "Vaše Brze postavke",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
-            "eyeCareMode": "Način rada ugodan za oči"
+            "eyeCareMode": "Ugodnost za oči",
+            "note": {
+                "accessNote": "doesn't have access to Lenovo Vantage",
+                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
+                "accessUrl": "Go to Windows settings to give access"
+            }
         },
         "systemStatus": {
             "title": "Status sustava",
@@ -652,12 +672,15 @@
                     "HighTemperature": "<b>Pražnjenje</b> je zaustavljeno jer je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je <b>potpuno ispražnjena</b> i mora se napuniti. To možete potrajati više od deset sati.",
                     "OverheatedBattery": "Baterija je <b>prevruća</b>. Izvadite je iz računala i ohladite na sobnu temperaturu.",
-                    "PermanentError": "Baterija je <b>prestala raditi kao posljedica istrošenosti uslijed redovne uporabe.</b> Bateriju nije moguće puniti. Zamijenite bateriju."
+                    "PermanentError": "Baterija je <b>prestala raditi kao posljedica istrošenosti uslijed redovne uporabe.</b> Bateriju nije moguće puniti. Zamijenite bateriju.",
+                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
+                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                 },
                 "updating": "Ažuriranje",
                 "voltageError": "Netočan napon baterije",
                 "batteryNotDetected": "Baterija nije pronađena",
-                "thresholdNote": "<b>Napomena:</b> da biste produljili vijek baterije, postavili ste zaustavljanje punjenja baterije na {{value}}%."
+                "thresholdNote": "<b>Napomena:</b> da biste produljili vijek baterije, postavili ste zaustavljanje punjenja baterije na {{value}}%.",
+                "seeDetailsLink": "See Details"
             },
             "power": {
                 "title": "Napajanje",
@@ -797,7 +820,8 @@
                     },
                     "airPlanePower": {
                         "title": "Način napajanja u zrakoplovu",
-                        "description": "Kontrolom utroška energije sustava štitite naponsku utičnicu u zrakoplovu.Kada je omogućen način napajanja u zrakoplovu, računalo smanjuje potrošnju energije tako da ograničava brzinu punjenja baterije i performanse sustava."
+                        "description": "Kontrolom utroška energije sustava štitite naponsku utičnicu u zrakoplovu.Kada je omogućen način napajanja u zrakoplovu, računalo smanjuje potrošnju energije tako da ograničava brzinu punjenja baterije i performanse sustava.",
+                        "checkBoxDesc": "Auto detection"
                     }
                 },
                 "energyStar": {
@@ -1079,6 +1103,13 @@
                     "enterText": {
                         "title": "TEKST ZA UNOS"
                     }
+                },
+                "fnCtrlKey": {
+                    "title": "FN key and Ctrl key swap",
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "more": "MORE",
+                    "control1": "TOUCHPAD CONTROLS",
+                    "control2": "MOUSE CONTROLS"
                 }
             }
         },
@@ -1106,7 +1137,8 @@
                 },
                 "zeroTouchLogin": {
                     "title": "Prijava Zero Touch",
-                    "caption": "Ta značajka automatski otključava računalo ili ga vraća iz stanja mirovanja kada dođete ispred njega ili mu se približite."
+                    "caption": "Ta značajka automatski otključava računalo ili ga vraća iz stanja mirovanja kada dođete ispred njega ili mu se približite.",
+                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
                 },
                 "zeroTouchLock": {
                     "title": "Zaključavanje Zero Touch",
@@ -1127,6 +1159,17 @@
                     "options": {
                         "near": "Blizu",
                         "far": "Daleko"
+                    },
+                    "tooltipcontent": {
+                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
+                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "list": {
+                            "line1": "Near: 0 – 0.42 meters (17 inches)",
+                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
+                            "line3": "Far: 0 – 1.20 meters (47 inches)",
+                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
+                            "line5": "The recommended detection distance is within 0.60 meters."
+                        }
                     }
                 },
                 "note": {

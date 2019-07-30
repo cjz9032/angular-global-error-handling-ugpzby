@@ -506,7 +506,12 @@
             "title": "Suas configurações rápidas",
             "microphone": "Microfone",
             "cameraPrivacy": "Câmera",
-            "eyeCareMode": "Modo Proteção Ocular"
+            "eyeCareMode": "Proteção Ocular",
+            "note": {
+                "accessNote": "doesn't have access to Lenovo Vantage",
+                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
+                "accessUrl": "Go to Windows settings to give access"
+            }
         },
         "systemStatus": {
             "title": "Status do sistema",
@@ -667,12 +672,15 @@
                     "HighTemperature": "O <b>descarregamento</b> foi interrompido porque a <b>temperatura da bateria está muito alta.</b>",
                     "TrickleCharge": "A bateria <b>descarregou completamente</b> e precisa ser recarregada. Isso poderá levar dez horas ou mais.",
                     "OverheatedBattery": "A bateria está <b>quente demais</b>. Remova-a do computador e aguarde ela esfriar em temperatura ambiente.",
-                    "PermanentError": "A bateria <b>falhou devido a desgaste normal.</b> Não é possível carregar a bateria. Substitua a bateria."
+                    "PermanentError": "A bateria <b>falhou devido a desgaste normal.</b> Não é possível carregar a bateria. Substitua a bateria.",
+                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
+                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                 },
                 "updating": "Atualizando",
                 "voltageError": "Voltagem da bateria incorreta",
                 "batteryNotDetected": "Nenhuma bateria detectada",
-                "thresholdNote": "<b>Nota:</b> para estender a duração da bateria, você a configurou para parar de carregar em {{value}}%."
+                "thresholdNote": "<b>Nota:</b> para estender a duração da bateria, você a configurou para parar de carregar em {{value}}%.",
+                "seeDetailsLink": "See Details"
             },
             "power": {
                 "title": "Energia",
@@ -812,7 +820,8 @@
                     },
                     "airPlanePower": {
                         "title": "Modo de Energia de Avião",
-                        "description": "Proteja a tomada elétrica CA dos aviões ao controlar o consumo de energia do seu sistema.Quando o Modo de Energia de Voo estiver ativado, o computador reduzirá o consumo de energia ao limitar a taxa de carregamento da bateria e o desempenho do sistema."
+                        "description": "Proteja a tomada elétrica CA dos aviões ao controlar o consumo de energia do seu sistema.Quando o Modo de Energia de Voo estiver ativado, o computador reduzirá o consumo de energia ao limitar a taxa de carregamento da bateria e o desempenho do sistema.",
+                        "checkBoxDesc": "Auto detection"
                     }
                 },
                 "energyStar": {
@@ -1094,6 +1103,13 @@
                     "enterText": {
                         "title": "TEXTO A SER INSERIDO"
                     }
+                },
+                "fnCtrlKey": {
+                    "title": "FN key and Ctrl key swap",
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "more": "MORE",
+                    "control1": "TOUCHPAD CONTROLS",
+                    "control2": "MOUSE CONTROLS"
                 }
             }
         },
@@ -1121,7 +1137,8 @@
                 },
                 "zeroTouchLogin": {
                     "title": "Login sem toques",
-                    "caption": "Este recurso desbloqueia ou ativa o computador automaticamente quando você está na frente dele ou se aproximando."
+                    "caption": "Este recurso desbloqueia ou ativa o computador automaticamente quando você está na frente dele ou se aproximando.",
+                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
                 },
                 "zeroTouchLock": {
                     "title": "Bloqueio sem toques",
@@ -1142,6 +1159,17 @@
                     "options": {
                         "near": "Perto",
                         "far": "Distante"
+                    },
+                    "tooltipcontent": {
+                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
+                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "list": {
+                            "line1": "Near: 0 – 0.42 meters (17 inches)",
+                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
+                            "line3": "Far: 0 – 1.20 meters (47 inches)",
+                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
+                            "line5": "The recommended detection distance is within 0.60 meters."
+                        }
                     }
                 },
                 "note": {

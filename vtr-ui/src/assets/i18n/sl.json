@@ -202,24 +202,6 @@
                     }
                 }
             },
-            "numberpad": {
-                "number": {
-                    "zero": "Num 0",
-                    "one": "Num 1",
-                    "two": "Num 2",
-                    "three": "Num 3",
-                    "four": "Num 4",
-                    "five": "Num 5",
-                    "six": "Num 6",
-                    "seven": "Num 7",
-                    "eight": "Num 8",
-                    "nine": "Num 9"
-                },
-                "macro": {
-                    "m1": "M1",
-                    "m2": "M2"
-                }
-            },
             "popupContent": {
                 "clearMacrokey": {
                     "title": "Are you sure you want to clear this macro key?"
@@ -244,6 +226,10 @@
             },
             "recording": {
                 "title": "Recording Macro Key For"
+            },
+            "initalKey": {
+                "zero": 0,
+                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -378,6 +364,21 @@
                     "title": "Color"
                 }
             }
+        },
+        "autoClose": {
+            "title": "Auto Close",
+            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "modalTurnAutoClose": {
+                "title": "Turn on Auto Close ?",
+                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Auto Close",
+                "body": "Only apps currently running will show in the list below."
+            }
         }
     },
     "common": {
@@ -505,7 +506,12 @@
             "title": "Vaše hitre nastavitve",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
-            "eyeCareMode": "Očem prijazen način"
+            "eyeCareMode": "Očem prijazno",
+            "note": {
+                "accessNote": "doesn't have access to Lenovo Vantage",
+                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
+                "accessUrl": "Go to Windows settings to give access"
+            }
         },
         "systemStatus": {
             "title": "Stanje sistema",
@@ -666,12 +672,15 @@
                     "HighTemperature": "<b>Praznjenje</b> je ustavljeno, ker je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je <b>popolnoma izpraznjena</b> in jo je treba znova napolniti. To lahko traja deset ali več ur.",
                     "OverheatedBattery": "Baterija je <b>prevroča</b>. Odstranite jo iz računalnika in jo ohladite na sobno temperaturo.",
-                    "PermanentError": "Baterija <b>ne deluje več zaradi običajne obrabe.</b> Baterije ni mogoče polniti. Zamenjajte baterijo."
+                    "PermanentError": "Baterija <b>ne deluje več zaradi običajne obrabe.</b> Baterije ni mogoče polniti. Zamenjajte baterijo.",
+                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
+                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                 },
                 "updating": "Posodabljanje",
                 "voltageError": "Napačna napetost baterije",
                 "batteryNotDetected": "Baterija ni zaznana",
-                "thresholdNote": "<b>Opomba:</b> zaradi podaljšanja življenjske dobe baterije ste polnjenje nastavili tako, da se ustavi, ko baterija doseže {{value}}% napolnjenosti."
+                "thresholdNote": "<b>Opomba:</b> zaradi podaljšanja življenjske dobe baterije ste polnjenje nastavili tako, da se ustavi, ko baterija doseže {{value}}% napolnjenosti.",
+                "seeDetailsLink": "See Details"
             },
             "power": {
                 "title": "Napajanje",
@@ -681,8 +690,7 @@
                     "title": "SKOK NA NASTAVITVE",
                     "battery": "Baterija",
                     "power": "Napajanje",
-                    "other": "Drugo",
-                    "smartStandby": "Pametno stanje pripravljenosti"
+                    "other": "Drugo"
                 },
                 "powerSmartSettings": {
                     "title": "Pametne nastavitve napajanja",
@@ -812,7 +820,8 @@
                     },
                     "airPlanePower": {
                         "title": "Način porabe za letalo",
-                        "description": "Zaščitite letalski napajalni priključek za izmenični tok z nadzorom porabe sistema.Če je omogočen način porabe za letalo, računalnik zmanjša porabo energije z omejevanjem hitrosti polnjenja baterije in učinkovitosti delovanja sistema."
+                        "description": "Zaščitite letalski napajalni priključek za izmenični tok z nadzorom porabe sistema.Če je omogočen način porabe za letalo, računalnik zmanjša porabo energije z omejevanjem hitrosti polnjenja baterije in učinkovitosti delovanja sistema.",
+                        "checkBoxDesc": "Auto detection"
                     }
                 },
                 "energyStar": {
@@ -1094,6 +1103,13 @@
                     "enterText": {
                         "title": "BESEDILO BO DODANO"
                     }
+                },
+                "fnCtrlKey": {
+                    "title": "FN key and Ctrl key swap",
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "more": "MORE",
+                    "control1": "TOUCHPAD CONTROLS",
+                    "control2": "MOUSE CONTROLS"
                 }
             }
         },
@@ -1121,7 +1137,8 @@
                 },
                 "zeroTouchLogin": {
                     "title": "Prijava brez dotika",
-                    "caption": "Ta funkcija samodejno odklene ali prebudi računalnik, ko ste pred njim ali se mu približujete."
+                    "caption": "Ta funkcija samodejno odklene ali prebudi računalnik, ko ste pred njim ali se mu približujete.",
+                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
                 },
                 "zeroTouchLock": {
                     "title": "Zaklepanje brez dotika",
@@ -1142,6 +1159,17 @@
                     "options": {
                         "near": "Blizu",
                         "far": "Daleč"
+                    },
+                    "tooltipcontent": {
+                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
+                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "list": {
+                            "line1": "Near: 0 – 0.42 meters (17 inches)",
+                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
+                            "line3": "Far: 0 – 1.20 meters (47 inches)",
+                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
+                            "line5": "The recommended detection distance is within 0.60 meters."
+                        }
                     }
                 },
                 "note": {
@@ -1492,7 +1520,10 @@
             "listLenovoCommunity": "Skupnost Lenovo",
             "listContactCustomerService": "Obrnite se na storitve za stranke",
             "listContactUsOnWechat": "Pišite nam WeChat",
-            "weChatDescription": "Vprašanje nam pošljite na WeChat in poskrbeli bomo za hiter odgovor"
+            "weChatDescription": "Vprašanje nam pošljite na WeChat in poskrbeli bomo za hiter odgovor",
+            "listFindUs": "Find us on social media",
+            "listContactUsOnFacebook": "Contact us on Facebook",
+            "facebookDescription": "Click to find us on Facebook"
         },
         "quicklinks": {
             "title": "Hitre povezave",
@@ -1533,7 +1564,13 @@
             "maliciousNetwork": "Preprečiti, da bi se {{maliciousWifi}}računalnik pridružil zlonamernim omrežjem ta mesec.",
             "good": "DOBRA",
             "malicious": "ZLONAMERNA",
-            "suspicious": "SUMLJIVA"
+            "suspicious": "SUMLJIVA",
+            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+            "antivirus": "Being protected by anti-virus software",
+            "password": "Having strong and complex passwords managed in a safe way",
+            "vpn": "Monitoring your network exposure to attackers",
+            "wifi": "Encrypting your personal data when using public WiFi",
+            "windowsHello": "Protecting your device using safe login options"
         },
         "antivirus": {
             "common": {
@@ -1627,7 +1664,8 @@
                 "headerText": "Napaka",
                 "bodyText": "Zaznali smo, da vam manjkajo ključni deli programa Vantage. Ti deli se bodo prenesli v ozadju. Poskusite znova pozneje.",
                 "closeText": "zapri",
-                "offlineText": "Zaznali smo, da niste povezani z internetom. Nekateri deli te strani ne bodo delovali pravilno. Znova vzpostavite povezavo"
+                "offlineText": "Zaznali smo, da niste povezani z internetom. Nekateri deli te strani ne bodo delovali pravilno. Znova vzpostavite povezavo",
+                "accountText": "Account creation failed. Please try again later."
             }
         },
         "homeprotection": {
