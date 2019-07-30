@@ -8,10 +8,8 @@ import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose
   styleUrls: ['./modal-autoclose.component.scss']
 })
 export class ModalAutocloseComponent implements OnInit {
-
-  @Input() modalContent: any;
-  @Output() action = new EventEmitter<boolean>();
   runningList: any;
+  public addAppsList: string;
   constructor(private activeModal: NgbActiveModal, private modalService: NgbModal, private gamingAutoCloseService: GamingAutoCloseService) { }
 
   ngOnInit() {
@@ -43,5 +41,21 @@ export class ModalAutocloseComponent implements OnInit {
 
   closeModal() {
     this.activeModal.close('close');
+  }
+
+  toggleAddAppsToList(event: any) {
+    console.log(event.target.checked);
+    console.log(event.target.value);
+    if (event.target.checked) {
+      this.addAppsList = event.target.value;
+      try {
+        console.log('Here  ------------------------>', this.addAppsList);
+        this.gamingAutoCloseService.addAppsAutoCloseList(this.addAppsList).then((success: any) => {
+          console.log('Added successfully ------------------------>', success);
+        });
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
   }
 }

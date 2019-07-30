@@ -150,8 +150,34 @@ export class CMSService {
 	}
 
 	fetchCMSArticleCategories(queryParams) {
+
+		// VAN-5872, server switch feature
+		// retrive from localStorage
+		const defaults = {
+			Lang: this.language,
+			GEO: this.region,
+			OEM: 'Lenovo',
+			OS: 'Windows',
+			Segment: 'SMB',
+			Brand: 'Lenovo'
+		};
+		const CMSOption = Object.assign(defaults, queryParams);
+		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
+		if (serverSwitchLocalData) {
+			if (serverSwitchLocalData.forceit) {
+				Object.assign(CMSOption, {
+					Lang: (serverSwitchLocalData.language.Value).toUpperCase(),
+					GEO: (serverSwitchLocalData.country.Value).toUpperCase(),
+					Segment: serverSwitchLocalData.segment.Value
+				});
+			}
+		}
+
 		return new Promise((resolve, reject) => {
-			this.commsService.endpointGetCall('/api/v1/articlecategories', queryParams, {}).subscribe(
+			this.commsService.endpointGetCall('/api/v1/articlecategories',
+				/*queryParams*/
+				CMSOption, // VAN-5872, server switch feature
+				{}).subscribe(
 				(response: any) => {
 					this.filterCMSContent(response.Results).then(
 						(result) => {
@@ -172,8 +198,33 @@ export class CMSService {
 	}
 
 	fetchCMSArticles(queryParams, returnAll = false) {
+		// VAN-5872, server switch feature
+		// retrive from localStorage
+		const defaults = {
+			Lang: this.language,
+			GEO: this.region,
+			OEM: 'Lenovo',
+			OS: 'Windows',
+			Segment: 'SMB',
+			Brand: 'Lenovo'
+		};
+		const CMSOption = Object.assign(defaults, queryParams);
+		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
+		if (serverSwitchLocalData) {
+			if (serverSwitchLocalData.forceit) {
+				Object.assign(CMSOption, {
+					Lang: (serverSwitchLocalData.language.Value).toUpperCase(),
+					GEO: (serverSwitchLocalData.country.Value).toUpperCase(),
+					Segment: serverSwitchLocalData.segment.Value
+				});
+			}
+		}
+
 		return new Promise((resolve, reject) => {
-			this.commsService.endpointGetCall('/api/v1/articles', queryParams, {}).subscribe(
+			this.commsService.endpointGetCall('/api/v1/articles',
+				/*queryParams*/
+				CMSOption, // VAN-5872, server switch feature
+				{}).subscribe(
 				(response: any) => {
 					this.filterCMSContent(response.Results).then(
 						(result) => {
@@ -194,11 +245,36 @@ export class CMSService {
 	}
 
 	fetchCMSArticle(articleId, queryParams?) {
-		const that = this;
+		//const that = this;
+
+		// VAN-5872, server switch feature
+		// retrive from localStorage
+		const defaults = {
+			Lang: this.language,
+			GEO: this.region,
+			OEM: 'Lenovo',
+			OS: 'Windows',
+			Segment: 'SMB',
+			Brand: 'Lenovo'
+		};
+		const CMSOption = Object.assign(defaults, queryParams);
+		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
+		if (serverSwitchLocalData) {
+			if (serverSwitchLocalData.forceit) {
+				Object.assign(CMSOption, {
+					Lang: (serverSwitchLocalData.language.Value).toUpperCase(),
+					GEO: (serverSwitchLocalData.country.Value).toUpperCase(),
+					Segment: serverSwitchLocalData.segment.Value
+				});
+			}
+		}
+
 		return new Promise((resolve, reject) => {
 			this.commsService.endpointGetCall(
 				'/api/v1/articles/' + articleId,
-				Object.assign({ Lang: that.language }, queryParams))
+				/*Object.assign({ Lang: that.language }, queryParams)*/
+				CMSOption // VAN-5872, server switch feature
+				)
 				.subscribe(
 					(response: any) => {
 						resolve(response);

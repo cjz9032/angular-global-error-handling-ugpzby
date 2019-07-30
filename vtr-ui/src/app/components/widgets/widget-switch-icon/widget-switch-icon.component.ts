@@ -3,12 +3,8 @@ import {
 	OnInit,
 	Input,
 	Output,
-	EventEmitter,
-	OnChanges,
-	SimpleChanges,
-	ChangeDetectorRef
+	EventEmitter
 } from '@angular/core';
-import { DeviceService } from '../../../services/device/device.service';
 
 // @ts-ignore
 @Component({
@@ -28,8 +24,8 @@ export class WidgetSwitchIconComponent implements OnInit {
 	@Input() isCamera = false;
 	@Input() isLoading = true;
 	@Output() toggle = new EventEmitter<boolean>();
-
-	constructor(public deviceService: DeviceService, private changeDetectorRef: ChangeDetectorRef) { }
+	@Input() switchId: string;
+	constructor() { }
 
 	ngOnInit() {
 		console.log(this.title, this.iconDefinition);

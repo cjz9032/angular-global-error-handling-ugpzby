@@ -7,6 +7,8 @@
 			type="button"
 			class="btn button"
 			vtrMetrics
+			[id]="automationId"
+			[attr.aria-label]="automationId"
 			[metricsItem]="metricsItem"
 			[metricsEvent]="metricsEvent"
 			[metricsParam]="metricsParam"
@@ -28,6 +30,8 @@
 			type="button"
 			class="button disable"
 			[disabled]="false"
+			[id]="automationId"
+			[attr.aria-label]="automationId"	
 			vtrMetrics
 			[metricsItem]="metricsItem"
 			[metricsEvent]="metricsEvent"

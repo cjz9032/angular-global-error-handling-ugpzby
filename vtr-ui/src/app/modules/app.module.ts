@@ -43,6 +43,8 @@ import { CommonPipeModule } from './common/common-pipe.module';
 import { ModalArticleDetailComponent } from '../components/modal/modal-article-detail/modal-article-detail.component';
 import { SharedModule } from './shared.module';
 import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
+import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
+
 
 library.add(faCheck);
 library.add(faExclamation);
@@ -71,7 +73,8 @@ library.add(falHeart);
 		ModalAboutComponent,
 		ModalFindUsComponent,
 		ModalArticleDetailComponent,
-		ModalLicenseComponent
+		ModalLicenseComponent,
+		ModalServerSwitchComponent
 	],
 	imports: [
 		BrowserModule,
@@ -112,7 +115,8 @@ library.add(falHeart);
 		ModalAboutComponent,
 		ModalFindUsComponent,
 		ModalArticleDetailComponent,
-		ModalLicenseComponent
+		ModalLicenseComponent,
+		ModalServerSwitchComponent
 	],
 	bootstrap: [AppComponent],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]

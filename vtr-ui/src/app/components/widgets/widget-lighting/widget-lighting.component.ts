@@ -103,6 +103,9 @@ export class WidgetLightingComponent implements OnInit {
 				if (this.isPopupVisible) {
 					this.isdriverpopup = true;
 				} else {
+					if (Number(eventval) === this.setprofId) {
+						return;
+					}
 					prevSetprofId = this.setprofId;
 					this.setprofId = eventval;
 				}
