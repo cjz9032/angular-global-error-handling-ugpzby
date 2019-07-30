@@ -21,7 +21,8 @@ export class UiApsSliderComponent implements OnInit, AfterContentChecked {
 
 	public options: Options;
 
-	@Input() enableSlider;
+	@Input() enableSlider: boolean;
+	@Input() name: string;
 
 	@Input() onHoverSliderIcon: boolean; // on hover eyecare mode
 
@@ -31,15 +32,15 @@ export class UiApsSliderComponent implements OnInit, AfterContentChecked {
 	@Input() step = 1; // ticks or steps to change on each slide
 	@Input() legends: string[]; // label to display at the start of slider
 	@Input() legendPositionFunction: ValueToPositionFunction; // function to handle legend position for Eye Care
-	@Input() stepsArray: Array < any > ; // array with legend value for Eye care
-	@Input() manualRefresh = new EventEmitter < void > ();
+	@Input() stepsArray: Array<any>; // array with legend value for Eye care
+	@Input() manualRefresh = new EventEmitter<void>();
 
-	@Output() change: EventEmitter < ChangeContext > = new EventEmitter();
-	@Output() valueChange: EventEmitter < ChangeContext > = new EventEmitter();
-	@Output() valueChangeEnd: EventEmitter < ChangeContext > = new EventEmitter();
+	@Output() change: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() valueChange: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() valueChangeEnd: EventEmitter<ChangeContext> = new EventEmitter();
 
 
-	constructor() {}
+	constructor() { }
 
 	ngAfterContentChecked() {
 		this.options = Object.assign({}, this.options, {

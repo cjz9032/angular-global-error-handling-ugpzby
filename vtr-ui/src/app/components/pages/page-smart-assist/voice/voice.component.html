@@ -4,8 +4,8 @@
 			<div class="col-12">
 				<div class="d-flex justify-content-between">
 					<p class="context">{{'device.smartAssist.voice.description' | translate}}</p>
-					<button id="smart-assist-voice-install-btn"
-						aria-label="smart-assist-voice-install-btn"
+					<button id="voice-install-btn"
+						attr.aria-label="voice-install-btn"
 						*ngIf="!showLoader"
 						vtrMetrics
 						metricsEvent="featureClick"
@@ -24,8 +24,7 @@
 		</div>
 		<ul class="list-group list-group-flush">
 			<li class="">
-				<vtr-ui-row-switch id="smart-assist-voiceToText-switch"
-					aria-label="smart-assist-voiceToText-switch"
+				<vtr-ui-row-switch [name]="'voiceToText'"
 					[title]="'device.smartAssist.voice.voiceToText.title' | translate"
 					[caption]="'device.smartAssist.voice.voiceToText.caption' | translate"
 					[leftIcon]="['icomoon', 'icomoon-voice-to-text']"
@@ -36,8 +35,7 @@
 				</vtr-ui-row-switch>
 			</li>
 			<li class="">
-				<vtr-ui-row-switch id="smart-assist-voice-translation-switch"
-					aria-label="smart-assist-voice-translation-switch"
+				<vtr-ui-row-switch [name]="'voiceTranslation'"
 					[isLastChild]="true"
 					[title]="'device.smartAssist.voice.translation.title' | translate"
 					[caption]="'device.smartAssist.voice.translation.caption' | translate"
