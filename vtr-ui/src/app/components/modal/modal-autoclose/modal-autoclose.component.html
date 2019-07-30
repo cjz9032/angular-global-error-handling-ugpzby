@@ -71,7 +71,7 @@
           </div>
           <div class="text-break">{{item.processDescription}}</div>
           <div class="btn-add-app mx-auto">
-            <input type="checkbox">
+            <input type="checkbox" value="{{item.processDescription}}" (change)="toggleAddAppsToList($event)">
             <div class="action"></div>
           </div>
         </li>
