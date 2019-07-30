@@ -9,6 +9,7 @@ export enum ItemTypes {
 	TaskAction = 'TaskAction',
 	PageView = 'PageView',
 	ItemClick = 'ItemClick',
+	ArticleClick = 'ArticleClick'
 }
 
 interface ExtendedMetricsData extends MetricsData {
