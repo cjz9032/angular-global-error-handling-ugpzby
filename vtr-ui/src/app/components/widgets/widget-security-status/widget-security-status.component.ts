@@ -57,7 +57,9 @@ export class WidgetSecurityStatusComponent implements OnInit {
 	}
 
 	ngOnDestroy() {
-		this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
+		if (this.securityAdvisor.wifiSecurity) {
+			this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
+		}
 	}
 
 	showWindowsHelloItem(windowsHello: WindowsHello) {

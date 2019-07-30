@@ -9,15 +9,15 @@
 					<div class="d-flex justify-content-between align-items-center w-100">
 						<div class="custom-control custom-checkbox update-checkbox">
 							<input type="checkbox"
-							id="{{ 'updateCheckbox' + randomNumber + i }}"
-							attr.aria-label="{{ 'updateCheckbox' + randomNumber + i }}"
+								id="{{ 'updateCheckbox_'  + item.packageID + '_' + randomNumber + i}}"
+								attr.aria-label="{{ 'updateCheckbox_'  + item.packageID + '_' + randomNumber + i}}"
 								[disabled]="item.isDependency"
 								class="custom-control-input"
 								[checked]="item.isSelected"
 								[name]="item.packageName"
 								(change)="onCheckChange($event)" />
 							<label class="custom-control-label "
-								for="{{ 'updateCheckbox' + randomNumber + i }}">
+								for="{{ 'updateCheckbox_'  + item.packageID + '_' + randomNumber + i}}">
 								<span class="update-title">
 									{{item.packageDesc}}</span>
 							</label>
