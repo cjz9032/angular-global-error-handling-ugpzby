@@ -1,13 +1,11 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router, NavigationEnd, ParamMap, ActivatedRoute } from '@angular/router';
-import { DevService } from './services/dev/dev.service';
 import { DisplayService } from './services/display/display.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 import { DeviceService } from './services/device/device.service';
 import { CommonService } from './services/common/common.service';
 import { LocalStorageKey } from './enums/local-storage-key.enum';
-import { TranslateService } from '@ngx-translate/core';
 import { UserService } from './services/user/user.service';
 import { WelcomeTutorial } from './data-models/common/welcome-tutorial.model';
 import { NetworkStatus } from './enums/network-status.enum';
@@ -19,6 +17,10 @@ import { AppAction } from 'src/app/data-models/metrics/events.model';
 import * as MetricsConst from 'src/app/enums/metrics.enum';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { environment } from 'src/environments/environment';
+import { TranslateService } from '@ngx-translate/core';
+import { LanguageService } from './services/language/language.service';
+import * as bridgeVersion from '@lenovo/tan-client-bridge/package.json';
+
 
 @Component({
 	selector: 'vtr-root',
@@ -34,7 +36,6 @@ export class AppComponent implements OnInit {
 	public isGaming: any = false;
 	private metricsClient: any;
 	constructor(
-		private devService: DevService,
 		private displayService: DisplayService,
 		private router: Router,
 		private modalService: NgbModal,
@@ -45,52 +46,23 @@ export class AppComponent implements OnInit {
 		private settingsService: SettingsService,
 		private vantageShellService: VantageShellService,
 		private activatedRoute: ActivatedRoute,
-		private timerServcie: TimerService
+		private timerService: TimerService,
+		private languageService: LanguageService
 	) {
 		// to check web version in browser
 		const win: any = window;
-		win.webAppVersion = environment.appVersion;
+		win.webAppVersion = {
+			web: environment.appVersion,
+			bridge: bridgeVersion.version
+		};
 
-		translate.addLangs([
-			'en',
-			'zh-Hans',
-			'ar',
-			'cs',
-			'da',
-			'de',
-			'el',
-			'es',
-			'fi',
-			'fr',
-			'he',
-			'hr',
-			'hu',
-			'it',
-			'ja',
-			'ko',
-			'nb',
-			'nl',
-			'pl',
-			'pt-BR',
-			'pt',
-			'ro',
-			'ru',
-			'sk',
-			'sl',
-			'sr-Latn',
-			'sv',
-			'tr',
-			'uk',
-			'zh-Hant'
-		]);
-		this.translate.setDefaultLang('en');
 		this.metricsClient = this.vantageShellService.getMetrics();
 		//#region VAN-2779 this is moved in MVP 2
 		this.deviceService
 			.getIsARM()
 			.then((status: boolean) => {
 				console.log('getIsARM.then', status);
-				if (!status) {
+				if (!status || !deviceService.isAndroid) {
 					const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(
 						LocalStorageKey.WelcomeTutorial
 					);
@@ -136,17 +108,17 @@ export class AppComponent implements OnInit {
 	}
 
 	public sendAppLaunchMetric(lauchType: string) {
-		this.timerServcie.start();
+		this.timerService.start();
 		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionOpen, lauchType, null, 0));
 	}
 
 	public sendAppResumeMetric() {
-		this.timerServcie.start();	// restart timer
+		this.timerService.start();	// restart timer
 		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionResume, null, null, 0));
 	}
 
 	public sendAppSuspendMetric() {
-		const duration = this.timerServcie.stop();
+		const duration = this.timerService.stop();
 		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionSuspend, null, null, duration));
 	}
 
@@ -182,7 +154,6 @@ export class AppComponent implements OnInit {
 		sessionStorage.clear();
 
 		this.sendAppLaunchMetric('launch');
-		this.devService.writeLog('APP INIT', window.location.href, window.devicePixelRatio);
 
 		// use when deviceService.isArm is set to true
 		// todo: enable below line when integrating ARM feature
@@ -194,8 +165,7 @@ export class AppComponent implements OnInit {
 		};
 		self.displayService.calcSize(self.displayService);
 
-		const urlParams = new URLSearchParams(window.location.search);
-		this.devService.writeLog('GOT PARAMS', urlParams.toString());
+		// const urlParams = new URLSearchParams(window.location.search);
 
 		// When startup try to login Lenovo ID silently (in background),
 		//  if user has already logged in before, this call will login automatically and update UI
@@ -265,15 +235,22 @@ export class AppComponent implements OnInit {
 					console.log(`SUCCESSFULLY got the machine info =>`, value);
 					this.commonService.sendNotification('MachineInfo', this.machineInfo);
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, value.family);
+					this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
+
 					this.isMachineInfoLoaded = true;
 					this.machineInfo = value;
 					this.isGaming = value.isGaming;
-					// MVP2 - Gaming don't need multi-language support in MVP2
-					if (!this.isGaming) {
-						this.updateLanguageSettings(value);
-					} else {
-						this.translate.use('en');
+
+					if (!this.languageService.isLanguageLoaded) {
+						this.languageService.useLanguage(value);
 					}
+
+					// // MVP2 - Gaming don't need multi-language support in MVP2
+					// if (!this.isGaming) {
+					// 	this.updateLanguageSettings(value);
+					// } else {
+					// 	this.translate.use('en');
+					// }
 
 					// if first launch, send a firstrun metric
 					const hadRunApp: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
@@ -294,30 +271,9 @@ export class AppComponent implements OnInit {
 		} else {
 			this.isMachineInfoLoaded = true;
 			this.machineInfo = { hideMenus: false };
-			this.router.navigate(['/dashboard']);
 		}
 	}
 
-	private updateLanguageSettings(value: any) {
-		try {
-			if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
-				this.translate.use(value.locale.substring(0, 2));
-				this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
-			} else {
-				if (value && value.locale.substring(0, 2).toLowerCase() === 'pt') {
-					value.locale.toLowerCase() === 'pt-br' ? this.translate.use('pt-BR') : this.translate.use('pt');
-				}
-				if (value && value.locale.toLowerCase() === 'zh-hans') {
-					this.translate.use('zh-Hans');
-				}
-				if (value && value.locale.toLowerCase() === 'zh-hant') {
-					this.translate.use('zh-Hant');
-				}
-			}
-		} catch (e) {
-			this.vantageShellService.getLogger().error(JSON.stringify(e));
-		}
-	}
 	private checkIsDesktopOrAllInOneMachine() {
 		try {
 			if (this.deviceService.isShellAvailable) {
@@ -431,41 +387,18 @@ export class AppComponent implements OnInit {
 		const scale = 1 / (window.devicePixelRatio || 1);
 		const content = `shrink-to-fit=no, width=device-width, initial-scale=${scale}, minimum-scale=${scale}`;
 		document.querySelector('meta[name="viewport"]').setAttribute('content', content);
-		// console.log('DPI: ', content);
-		// alert('I am at onload');
-
 		// VAN-5872, server switch feature
 		// when app loads for the 1st time then remove ServerSwitch values
 		window.localStorage.removeItem(LocalStorageKey.ServerSwitchKey);
-
-		// VAN-6417, language right to left
-		/*let currLang = this.translate.currentLang;
-		if ((['ar', 'he']).indexOf(currLang) >= 0) {
-			window.document.getElementsByTagName("html")[0].dir = 'rtl';
-			window.document.getElementsByTagName("html")[0].lang = currLang;
-		} else {
-			window.document.getElementsByTagName("html")[0].dir = 'ltr';
-			window.document.getElementsByTagName("html")[0].lang = currLang;
-		}*/
 	}
 
 	// Defect fix VAN-2988
 	@HostListener('window:keydown', ['$event'])
-	disbleCtrlACV($event: KeyboardEvent) {
-		// console.log('$event.keyCode ' + $event.keyCode);
+	disableCtrlACV($event: KeyboardEvent) {
 		if (
 			($event.ctrlKey || $event.metaKey) &&
 			($event.keyCode === 65 || $event.keyCode === 67 || $event.keyCode === 86)
 		) {
-			// if ($event.keyCode === 65) {
-			// 	console.log('Disable CTRL + A');
-			// }
-			// if ($event.keyCode === 67) {
-			// 	console.log('Disable CTRL + C');
-			// }
-			// if ($event.keyCode === 86) {
-			// 	console.log('Disable CTRL +  V');
-			// }
 			$event.stopPropagation();
 			$event.preventDefault();
 		}

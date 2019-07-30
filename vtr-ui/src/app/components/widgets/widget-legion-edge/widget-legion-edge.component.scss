@@ -1,4 +1,4 @@
-@import '../../../app.theme.scss';
+@import "../../../app.theme.scss";
 
 .vtr-widget-legion-edge {
 	border-radius: $border_radius;
@@ -29,7 +29,7 @@
 			padding: 0;
 			box-shadow: none;
 			border: none;
-			.settings-container{
+			.settings-container {
 				.off-state {
 					position: absolute;
 					z-index: 9;
@@ -38,17 +38,17 @@
 					top: 0.5rem;
 					display: inline-block;
 				}
-				.list-group-item{
+				.list-group-item {
 					background: transparent;
 					color: white;
 					padding: 1.8rem 0rem;
 					font-size: 1.8rem;
 					border: none;
 					border-bottom: 1px solid $screen_dark_15;
-					&:last-child{
+					&:last-child {
 						border-bottom: none;
 					}
-					&:first-child{
+					&:first-child {
 						.media-body {
 							> div.collapsible {
 								display: block !important;
@@ -57,7 +57,7 @@
 					}
 					.media {
 						padding-left: 0 !important;
-						fa-icon{
+						fa-icon {
 							display: none;
 						}
 						.media-body {
@@ -75,23 +75,23 @@
 								height: 3.2rem;
 								width: 3.2rem;
 								border-radius: 3.2rem;
-								margin-top: 0.3rem;
-								position:absolute;
-								right:6rem;
+								margin-top: 0.5rem;
+								position: absolute;
+								right: 6rem;
 								.icon {
 									text-align: center;
 									font-size: 2.2rem;
 									color: $gaming_grey_lightest;
-									line-height: 3.2rem;
-									position: relative;
-									&::after{
-										content: '';
+									line-height: 2.4rem;
+									margin-left: 1.1rem;
+									&::after {
+										content: "";
 										position: absolute;
 										height: 3.2rem;
 										width: 3.2rem;
 										border-radius: 3.2rem;
 										background: $screen_dark_20;
-										transition: all .3s ease-in;
+										transition: all 0.3s ease-in;
 										right: -0.6rem;
 										top: -0.4rem;
 										opacity: 0;
@@ -103,61 +103,61 @@
 							}
 						}
 					}
-					.update-title{
+					.update-title {
 						color: white;
 					}
 				}
-				&::ng-deep vtr-ui-switch-onoff{
-					.checkbox{
+				&::ng-deep vtr-ui-switch-onoff {
+					.checkbox {
 						input {
-							&+ .switch{
+							& + .switch {
 								background: $gaming_switch_light;
 								height: 2.4rem;
 								width: 5.4rem;
-								transition: all .2s ease-in;
+								transition: all 0.2s ease-in;
 								small {
 									background: $gaming_switch_dark;
 									height: 1.8rem;
 									width: 1.8rem;
 									margin-top: 0.1rem;
-									transition: all .2s ease-in;
+									transition: all 0.2s ease-in;
 								}
 							}
 							&.wifi-checked + .switch {
 								background: $gaming_green_gradient;
-								transition: all .2s ease-in;
-								small{
+								transition: all 0.2s ease-in;
+								small {
 									background: $gaming_lightest;
-									transition: all .2s ease-in;
+									transition: all 0.2s ease-in;
 									left: 3.2rem;
 								}
 							}
 						}
-						.switch-label.on-label{
+						.switch-label.on-label {
 							color: $gaming_lightest;
 							font-weight: bold;
 							font-size: 1.2rem;
 							padding-top: 0.1rem;
 							text-indent: -0.4rem;
-							transition: all .2s ease-in;
-							@media #{$medium-screen}{
+							transition: all 0.2s ease-in;
+							@media #{$medium-screen} {
 								padding-top: 0.3rem;
 							}
-							@media #{$small-screen}{
+							@media #{$small-screen} {
 								padding-top: 0.3rem;
 							}
 						}
-						.switch-label.off-label{
+						.switch-label.off-label {
 							color: $gaming_switch_dark;
 							font-weight: bold;
 							font-size: 1.2rem;
 							padding-top: 0.1rem;
 							text-indent: 0;
-							transition: all .2s ease-in;
-							@media #{$medium-screen}{
+							transition: all 0.2s ease-in;
+							@media #{$medium-screen} {
 								padding-top: 0.3rem;
 							}
-							@media #{$small-screen}{
+							@media #{$small-screen} {
 								padding-top: 0.3rem;
 							}
 						}
@@ -167,8 +167,8 @@
 		}
 	}
 }
-::ng-deep{
-	.fade{
+::ng-deep {
+	.fade {
 		transition: opacity 0s linear !important;
 	}
 }

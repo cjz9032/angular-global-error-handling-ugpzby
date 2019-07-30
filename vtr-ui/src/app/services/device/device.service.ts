@@ -43,16 +43,16 @@ export class DeviceService {
 		this.initshowPrivacy();
 	}
 
-	private loadGamingDashboard() {
-		if (!this.isGamingDashboardLoaded) {
-			this.isGamingDashboardLoaded = true;
-			if (this.isGaming) {
-				this.router.navigateByUrl('/device-gaming');
-			} else {
-				this.router.navigateByUrl('/dashboard');
-			}
-		}
-	}
+	// private loadGamingDashboard() {
+	// 	if (!this.isGamingDashboardLoaded) {
+	// 		this.isGamingDashboardLoaded = true;
+	// 		if (this.isGaming) {
+	// 			this.router.navigateByUrl('/device-gaming');
+	// 		} else {
+	// 			this.router.navigateByUrl('/dashboard');
+	// 		}
+	// 	}
+	// }
 
 	// private initIsGaming() {
 	// 	try {
@@ -124,7 +124,7 @@ export class DeviceService {
 
 	// this API doesn't have performance issue, can be always called at any time.
 	getMachineInfo(): Promise<any> {
-		if (this.sysInfo) {
+		if (this.isShellAvailable && this.sysInfo) {
 			return this.sysInfo.getMachineInfo()
 				.then((info) => {
 					this.machineInfo = info;
