@@ -130,6 +130,9 @@
 		font-size: 4.5rem;
 	}
 	.custom-control-label {
+		font-size: $caption;
+		font-weight: $weight_bold;
+		text-transform: uppercase;
 		padding-left: 0.5rem;
 		line-height: 1.15;
 

@@ -19,8 +19,8 @@
 	}
 	.title {
 		color: $light;
-		font-size: 5rem;
-		font-weight: $weight_medium;
+		font-size: $page_header;
+		font-weight: $weight_light;
 		display: inline-block;
 		margin: 0;
 		position: relative;
@@ -28,8 +28,8 @@
 	}
 	.back {
 		color: $light;
-		font-size: 1.5rem;
-		font-weight: $weight_medium;
+		font-size: $base;
+		font-weight: $weight_bold;
 		margin: 0;
 		display: table;
 		position: relative;
