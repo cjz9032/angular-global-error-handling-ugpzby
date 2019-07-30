@@ -202,24 +202,6 @@
                     }
                 }
             },
-            "numberpad": {
-                "number": {
-                    "zero": "Num 0",
-                    "one": "Num 1",
-                    "two": "Num 2",
-                    "three": "Num 3",
-                    "four": "Num 4",
-                    "five": "Num 5",
-                    "six": "Num 6",
-                    "seven": "Num 7",
-                    "eight": "Num 8",
-                    "nine": "Num 9"
-                },
-                "macro": {
-                    "m1": "M1",
-                    "m2": "M2"
-                }
-            },
             "popupContent": {
                 "clearMacrokey": {
                     "title": "Are you sure you want to clear this macro key?"
@@ -244,6 +226,10 @@
             },
             "recording": {
                 "title": "Recording Macro Key For"
+            },
+            "initalKey": {
+                "zero": 0,
+                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -378,6 +364,21 @@
                     "title": "Color"
                 }
             }
+        },
+        "autoClose": {
+            "title": "Auto Close",
+            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "modalTurnAutoClose": {
+                "title": "Turn on Auto Close ?",
+                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Auto Close",
+                "body": "Only apps currently running will show in the list below."
+            }
         }
     },
     "common": {
@@ -505,7 +506,12 @@
             "title": "Vaše rýchle nastavenia",
             "microphone": "Mikrofón",
             "cameraPrivacy": "Kamera",
-            "eyeCareMode": "Režim na ochranu zraku"
+            "eyeCareMode": "Ochrana zraku",
+            "note": {
+                "accessNote": "doesn't have access to Lenovo Vantage",
+                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
+                "accessUrl": "Go to Windows settings to give access"
+            }
         },
         "systemStatus": {
             "title": "Stav systému",
@@ -666,12 +672,15 @@
                     "HighTemperature": "<b>Vybíjanie</b> sa zastavilo, pretože <b>teplota batérie je príliš vysoká.</b>",
                     "TrickleCharge": "Batéria je <b>úplne vybitá</b> a musí sa nabiť. Môže to trvať desať hodín alebo dlhšie.",
                     "OverheatedBattery": "Batéria je <b>príliš horúca</b>. Vyberte ju z počítača a ochlaďte ju na izbovú teplotu.",
-                    "PermanentError": "Batéria <b>zlyhala z dôvodu normálneho opotrebovania.</b> Batériu nemožno nabiť. Vymeňte batériu."
+                    "PermanentError": "Batéria <b>zlyhala z dôvodu normálneho opotrebovania.</b> Batériu nemožno nabiť. Vymeňte batériu.",
+                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
+                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                 },
                 "updating": "Aktualizácia",
                 "voltageError": "Nesprávne napätie batérie",
                 "batteryNotDetected": "Nebola zistená žiadna batéria",
-                "thresholdNote": "<b>Poznámka:</b> Ak chcete predĺžiť životnosť batérie, musíte ju nastaviť na zastavenie nabíjania pri kapacite {{value}}%."
+                "thresholdNote": "<b>Poznámka:</b> Ak chcete predĺžiť životnosť batérie, musíte ju nastaviť na zastavenie nabíjania pri kapacite {{value}}%.",
+                "seeDetailsLink": "See Details"
             },
             "power": {
                 "title": "Napájanie",
@@ -681,8 +690,7 @@
                     "title": "PREJSŤ NA NASTAVENIA",
                     "battery": "Batéria",
                     "power": "Napájanie",
-                    "other": "Ostatné",
-                    "smartStandby": "Inteligentný pohotovostný režim"
+                    "other": "Ostatné"
                 },
                 "powerSmartSettings": {
                     "title": "Inteligentné nastavenia napájania",
@@ -812,7 +820,8 @@
                     },
                     "airPlanePower": {
                         "title": "Režim napájania Lietadlo",
-                        "description": "Ochrana elektrickej zásuvky lietadla ovládaním spotreby energie systémom.Keď je režim napájania Lietadlo zapnutý, počítač zníži spotrebu energie obmedzením intenzity nabíjania batérie a výkonu systému."
+                        "description": "Ochrana elektrickej zásuvky lietadla ovládaním spotreby energie systémom.Keď je režim napájania Lietadlo zapnutý, počítač zníži spotrebu energie obmedzením intenzity nabíjania batérie a výkonu systému.",
+                        "checkBoxDesc": "Auto detection"
                     }
                 },
                 "energyStar": {
@@ -1094,6 +1103,13 @@
                     "enterText": {
                         "title": "TEXT, KTORÝ SA MÁ ZADAŤ"
                     }
+                },
+                "fnCtrlKey": {
+                    "title": "FN key and Ctrl key swap",
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "more": "MORE",
+                    "control1": "TOUCHPAD CONTROLS",
+                    "control2": "MOUSE CONTROLS"
                 }
             }
         },
@@ -1121,7 +1137,8 @@
                 },
                 "zeroTouchLogin": {
                     "title": "Bezdotykové prihlásenie",
-                    "caption": "Táto funkcia odomkne alebo prebudí počítač automaticky, keď ste pred ním alebo sa k nemu priblížite."
+                    "caption": "Táto funkcia odomkne alebo prebudí počítač automaticky, keď ste pred ním alebo sa k nemu priblížite.",
+                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
                 },
                 "zeroTouchLock": {
                     "title": "Bezdotykové uzamknutie",
@@ -1142,6 +1159,17 @@
                     "options": {
                         "near": "Blízko",
                         "far": "Ďaleko"
+                    },
+                    "tooltipcontent": {
+                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
+                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "list": {
+                            "line1": "Near: 0 – 0.42 meters (17 inches)",
+                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
+                            "line3": "Far: 0 – 1.20 meters (47 inches)",
+                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
+                            "line5": "The recommended detection distance is within 0.60 meters."
+                        }
                     }
                 },
                 "note": {
@@ -1492,7 +1520,10 @@
             "listLenovoCommunity": "Komunita Lenovo",
             "listContactCustomerService": "Kontaktujte služby zákazníkom",
             "listContactUsOnWechat": "Kontaktujte nás cez WeChat",
-            "weChatDescription": "Položte nám otázku cez WeChat a my vám rýchlo odpovieme"
+            "weChatDescription": "Položte nám otázku cez WeChat a my vám rýchlo odpovieme",
+            "listFindUs": "Find us on social media",
+            "listContactUsOnFacebook": "Contact us on Facebook",
+            "facebookDescription": "Click to find us on Facebook"
         },
         "quicklinks": {
             "title": "Rýchle prepojenia",
@@ -1533,7 +1564,13 @@
             "maliciousNetwork": "Tento mesiac sa zabránilo počítaču pripojiť k {{maliciousWifi}} škodlivým sieťam.",
             "good": "DOBRÉ",
             "malicious": "ŠKODLIVÉ",
-            "suspicious": "PODOZRIVÉ"
+            "suspicious": "PODOZRIVÉ",
+            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+            "antivirus": "Being protected by anti-virus software",
+            "password": "Having strong and complex passwords managed in a safe way",
+            "vpn": "Monitoring your network exposure to attackers",
+            "wifi": "Encrypting your personal data when using public WiFi",
+            "windowsHello": "Protecting your device using safe login options"
         },
         "antivirus": {
             "common": {
@@ -1627,7 +1664,8 @@
                 "headerText": "Chyba",
                 "bodyText": "Zistili sme, že vám chýbajú dôležité časti aplikácie Vantage. Tieto časti sa prevezmú v pozadí. Skúste to znova neskôr.",
                 "closeText": "zatvoriť",
-                "offlineText": "Zistili sme, že nie ste pripojení k internetu. Niektoré časti tejto stránky nebudú fungovať správne. Pripojte sa znova"
+                "offlineText": "Zistili sme, že nie ste pripojení k internetu. Niektoré časti tejto stránky nebudú fungovať správne. Pripojte sa znova",
+                "accountText": "Account creation failed. Please try again later."
             }
         },
         "homeprotection": {

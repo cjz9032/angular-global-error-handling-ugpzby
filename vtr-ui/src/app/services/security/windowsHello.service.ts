@@ -14,7 +14,7 @@ export class WindowsHelloService {
 		private vantageShell: VantageShellService,
 		private commonService: CommonService,
 		private securityAdvisorMockService: SecurityAdvisorMockService
-		) {}
+	) { }
 
 	showWindowsHello(): boolean {
 		this.securityAdvisor = this.vantageShell.getSecurityAdvisor();

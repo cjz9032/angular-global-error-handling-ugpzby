@@ -153,7 +153,7 @@
 						.list-group{
 							.list-group-item{
 								background-color: $gaming-Darkslate-blue;
-								.update-title{
+								.update-title,.fail-reason {
 									color: $gaming_lightest;
 								}
 								.custom-control {
@@ -172,7 +172,7 @@
 										}
 									}
 								}
-								.icon-check {
+								.icon-check,.icon-times {
 									.icon-bg {
 										fa-icon {
 											color: $gaming-Darkslate-blue;

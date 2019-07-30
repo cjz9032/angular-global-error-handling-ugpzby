@@ -161,17 +161,17 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	public updateBatteryDetails() {
 		if (this.batteryInfo && this.batteryInfo.length > 0) {
-			this.isBatteryDetailsBtnDisabled = this.batteryGauge.isPowerDriverMissing;
 			const remainingPercentages = [];
 			this.batteryInfo.forEach((info) => {
 				remainingPercentages.push(info.remainingPercent);
 			});
-
+			this.remainingPercentages = remainingPercentages;
 			this.sendThresholdWarning();
 			this.batteryHealth = this.batteryInfo[0].batteryHealth;
 			this.batteryIndicator.batteryNotDetected = this.batteryHealth === 4;
 		}
 
+		this.isBatteryDetailsBtnDisabled = this.batteryGauge.isPowerDriverMissing;
 		this.batteryIndicator.percent = this.batteryGauge.percentage;
 		this.batteryIndicator.charging = this.batteryGauge.isAttached;
 		this.batteryIndicator.convertMin(this.batteryGauge.time);
@@ -185,7 +185,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	 * for displaying warning note
 	 */
 	private sendThresholdWarning() {
-		if (this.chargeThresholdInfo !== undefined && this.remainingPercentages !== undefined
+		if (this.chargeThresholdInfo && this.remainingPercentages
 			&& this.remainingPercentages.length > 0) {
 			if (this.chargeThresholdInfo.isOn) {
 				if (this.chargeThresholdInfo.stopValue1 &&
