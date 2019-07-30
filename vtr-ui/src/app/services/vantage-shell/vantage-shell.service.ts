@@ -71,23 +71,31 @@ export class VantageShellService {
 	}
 
 	private setConsoleLogProxy() {
-		const cp = Object.assign({}, console);
-		console.log = (log) => {
-			cp.log(log);
-			log = JSON.stringify(log);
-			this.getLogger().info(log);
+		const consoleProxy = Object.assign({}, console);
+		const logger = this.getLogger();
+		console.log = (msg) => {	
+			consoleProxy.log(msg);
+			if(logger){
+				msg = JSON.stringify(msg);
+				logger.info(msg);
+			}
 		};
-		console.error = (err) => {
-			cp.error(err);
-			err = JSON.stringify(err);
-			this.getLogger().error(err);
+		
+		console.error = (err) => {		
+			consoleProxy.error(err);
+			if(logger){
+				err = JSON.stringify(err);
+				logger.error(err);
+			}
 		};
 
-		console.warn = (msg) => {
-			cp.warn(msg);
-			msg = JSON.stringify(msg);
-			this.getLogger().warn(msg);
-		};
+		console.warn = (msg) => {		
+			consoleProxy.warn(msg);
+			if(logger){
+				msg = JSON.stringify(msg);
+				logger.warn(msg);
+			}
+		};		
 	}
 
 	public getLenovoId(): any {
