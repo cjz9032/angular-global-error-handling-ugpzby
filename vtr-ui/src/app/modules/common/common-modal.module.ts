@@ -16,7 +16,6 @@ import { SharedModule } from '../shared.module';
 import { MetricsModule } from 'src/app/directives/metrics.module';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
-import { ModalAutocloseComponent } from 'src/app/components/modal/modal-autoclose/modal-autoclose.component';
 
 @NgModule({
 	declarations: [

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalAutocloseComponent } from './modal-autoclose.component';
+import { ModalAddAppsComponent } from './modal-add-apps.component';
 
-describe('ModalAutocloseComponent', () => {
-  let component: ModalAutocloseComponent;
-  let fixture: ComponentFixture<ModalAutocloseComponent>;
+describe('ModalAddAppsComponent', () => {
+  let component: ModalAddAppsComponent;
+  let fixture: ComponentFixture<ModalAddAppsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalAutocloseComponent ]
+      declarations: [ ModalAddAppsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ModalAutocloseComponent);
+    fixture = TestBed.createComponent(ModalAddAppsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
