@@ -8,7 +8,6 @@ import { UserService } from '../../services/user/user.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { TranslationService } from 'src/app/services/translation/translation.service';
 import Translation from 'src/app/data-models/translation/translation';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
 import { WindowsHello, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
@@ -23,6 +22,7 @@ import { LenovoIdDialogService } from '../../services/dialog/lenovoIdDialog.serv
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
+import { LanguageService } from 'src/app/services/language/language.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -42,7 +42,7 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 	public isDashboard = false;
 	public countryCode: string;
 	public locale: string;
-	public items: any;
+	public items: any = [];
 	showMenu = false;
 	preloadImages: string[];
 	securityAdvisor: SecurityAdvisor;
@@ -57,7 +57,7 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 		public configService: ConfigService,
 		public commonService: CommonService,
 		public userService: UserService,
-		public translationService: TranslationService,
+		public languageService: LanguageService,
 		public deviceService: DeviceService,
 		private vantageShellService: VantageShellService,
 		private translate: TranslateService,
@@ -101,7 +101,7 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 					this.showWindowsHelloItem(windowsHello);
 				});
 			}
-			this.commonMenuSubscription = this.translationService.subscription.subscribe((translation: Translation) => {
+			this.commonMenuSubscription = this.languageService.subscription.subscribe((translation: Translation) => {
 				this.onLanguageChange(translation);
 			});
 		});
