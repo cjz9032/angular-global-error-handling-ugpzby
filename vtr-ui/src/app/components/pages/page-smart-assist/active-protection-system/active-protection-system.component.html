@@ -12,7 +12,8 @@
 					<!-- APS Slider -->
 					<li class="auto-screen-off-block">
 						<div class="switch">
-							<vtr-ui-row-switch
+							<vtr-ui-row-switch id="smart-assist-activeProtectionSystem-activeProtection-switch"
+								aria-label="smart-assist-activeProtectionSystem-activeProtection-switch"
 								[title]="'device.smartAssist.activeProtectionSystem.activeProtection.title' | translate"
 								[caption]=" 'device.smartAssist.activeProtectionSystem.activeProtection.caption' | translate"
 								[isSwitchVisible]="true"
@@ -22,7 +23,8 @@
 								[showChildContent]='true'
 								(toggleOnOff)="setAPSMode($event)">
 								<div class="slider">
-									<vtr-ui-aps-slider
+									<vtr-ui-aps-slider id="smart-assist-activeProtectionSystem-APS-slider"
+										aria-label="smart-assist-activeProtectionSystem-APS-slider"
 										[legends]="['device.smartAssist.activeProtectionSystem.APS.lowSensitivity' | translate,'device.smartAssist.activeProtectionSystem.APS.mediumSensitivity' | translate, 'device.smartAssist.activeProtectionSystem.APS.highSensitivity' | translate]"
 										[minValue]="0"
 										[maxValue]="100"
@@ -34,7 +36,8 @@
 									</vtr-ui-aps-slider>
 								</div>
 								<div class="checkbox">
-									<vtr-ui-checkbox
+									<vtr-ui-checkbox id="smart-assist-activeProtectionSystem-activeProtection-checkbox"
+										aria-label="smart-assist-activeProtectionSystem-activeProtection-checkbox"
 										[label]="'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate"
 										[checked]="repeatShock"
 										(toggle)="setAutoDisableSetting($event)"
@@ -48,6 +51,8 @@
 					<!-- Manual Overide -->
 					<li class="pt-3 keep-my-display-block auto-screen-off-block">
 						<vtr-ui-row-switch
+							id="smart-assist-activeProtectionSystem-manualActiveProtectionSuspension-switch"
+							aria-label="smart-assist-activeProtectionSystem-manualActiveProtectionSuspension-switch"
 							[title]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.title' | translate"
 							[caption]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.caption' | translate"
 							[leftIcon]="['icomoon', 'icomoon-Active-protection']"
@@ -63,16 +68,19 @@
 									<p class="text-uppercase">
 										{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.dropdown-title' | translate }}
 									</p>
-									<vtr-ui-dropdown
-											[list]="intervals"
-											[value]="manualSnoozeTime"
-											(change)="setSnoozeTime($event)"
-											[disabled]="!apsStatus">
+									<vtr-ui-dropdown id="manualSnoozeTime-dropdown"
+										aria-label="manualSnoozeTime-dropdown"
+										[list]="intervals"
+										[value]="manualSnoozeTime"
+										(change)="setSnoozeTime($event)"
+										[disabled]="!apsStatus">
 									</vtr-ui-dropdown>
 								</section>
 								<section class="col-sm-5">
 									<div class="pt-4 text-center">
 										<button type="button"
+											id="manualActiveProtectionSuspension-btn"
+											aria-label="manualActiveProtectionSuspension-btn"
 											[disabled]="!apsStatus"
 											class="btn btn-primary btn-block btn-lg battery-detail-button text-uppercase"
 											(click)="suspendNow()">
@@ -87,19 +95,28 @@
 					<!-- Advanced section -->
 					<li *ngIf="advanceAvailable && apsStatus"
 						class="advanced pt-3 keep-my-display-block auto-screen-off-block">
-						<h4 *ngIf="!advancedToggle">{{ 'device.smartAssist.activeProtectionSystem.advanced.more' | translate }}</h4>
+						<h4 *ngIf="!advancedToggle">
+							{{ 'device.smartAssist.activeProtectionSystem.advanced.more' | translate }}</h4>
 						<a *ngIf="!advancedToggle"
+							id="activeProtectionSystem-advanced-settings-toggle"
+							aria-label="activeProtectionSystem-advanced-settings-toggle"
 							(click)="toggleAdvanced()">
-							<p>{{ 'device.smartAssist.activeProtectionSystem.advanced.advanced-settings' | translate }}</p>
+							<p>{{ 'device.smartAssist.activeProtectionSystem.advanced.advanced-settings' | translate }}
+							</p>
 						</a>
 
 						<section *ngIf="advancedToggle">
-							<h4>{{ 'device.smartAssist.activeProtectionSystem.advanced.advanced-settings' | translate }}</h4>
-							<vtr-active-protection-system-advanced [penCapability]="penCapability"
+							<h4>{{ 'device.smartAssist.activeProtectionSystem.advanced.advanced-settings' | translate }}
+							</h4>
+							<vtr-active-protection-system-advanced id="advanced-active-protection-system"
+								aria-label="advanced-active-protection-system"
+								[penCapability]="penCapability"
 								[touchCapability]="touchCapability"
 								[pSensorCapability]="pSensorCapability">
 							</vtr-active-protection-system-advanced>
-							<a (click)="toggleAdvanced()">
+							<a (click)="toggleAdvanced()"
+								id="advanced-activeProtectionSystem-toggle"
+								aria-label="advanced-activeProtectionSystem-toggle">
 								<p>{{ 'device.smartAssist.activeProtectionSystem.advanced.hide' | translate }}</p>
 							</a>
 						</section>

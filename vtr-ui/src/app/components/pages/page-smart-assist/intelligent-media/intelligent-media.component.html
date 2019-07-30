@@ -2,14 +2,18 @@
 	id="intelligentMedia">
 	<div class="col-10 mx-auto"
 		id="media">
-		<vtr-container-collapsible [cardTitle]="'device.smartAssist.intelligentMedia.heading' | translate"
+		<vtr-container-collapsible id="smart-assist-intelligentMedia-collapse-container"
+			aria-label="smart-assist-intelligentMedia-collapse-container"
+			[cardTitle]="'device.smartAssist.intelligentMedia.heading' | translate"
 			componentName="intelligentMediaCollapsible"
 			[isCollapsed]="false"
 			[allowCollapse]="true"
 			[theme]="'white'">
 			<ul class="list-group list-group-flush">
 				<li>
-					<vtr-ui-row-switch [title]="'device.smartAssist.intelligentMedia.title' | translate"
+					<vtr-ui-row-switch id="smart-assist-intelligentMedia-switch"
+						aria-label="smart-assist-intelligentMedia-switch"
+						[title]="'device.smartAssist.intelligentMedia.title' | translate"
 						componentName="intelligentMediaSwitch"
 						[isLastChild]="true"
 						[isSwitchVisible]="true"
