@@ -17,6 +17,7 @@ export class VantageShellService {
 	constructor(private commonService: CommonService, private http: HttpClient) {
 		this.shell = this.getVantageShell();
 		if (this.shell) {
+			this.setConsoleLogProxy();
 			const metricClient = this.shell.MetricsClient ? new this.shell.MetricsClient() : null;
 			const powerClient = this.shell.PowerClient ? this.shell.PowerClient() : null;
 			this.phoenix = Phoenix.default(new Container(), {
@@ -53,7 +54,7 @@ export class VantageShellService {
 	public registerEvent(eventType: any, handler: any) {
 		if (this.phoenix) {
 			this.phoenix.on(eventType, (val) => {
-				// 	console.log('Event fired: ', eventType, val);
+			// 	console.log('Event fired: ', eventType, val);
 				handler(val);
 			});
 		}
@@ -67,6 +68,26 @@ export class VantageShellService {
 	private getVantageShell(): any {
 		const win: any = window;
 		return win.VantageShellExtension;
+	}
+
+	private setConsoleLogProxy() {
+		const cp = Object.assign({}, console);
+		console.log = (log) => {
+			cp.log(log);
+			log = JSON.stringify(log);
+			this.getLogger().info(log);
+		};
+		console.error = (err) => {
+			cp.error(err);
+			err = JSON.stringify(err);
+			this.getLogger().error(err);
+		};
+
+		console.warn = (msg) => {
+			cp.warn(msg);
+			msg = JSON.stringify(msg);
+			this.getLogger().warn(msg);
+		};
 	}
 
 	public getLenovoId(): any {
