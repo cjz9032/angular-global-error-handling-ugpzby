@@ -86,5 +86,16 @@
 				}
 			}
 		}
+		.no-running-app {
+			.text-content {
+				h3 {
+					font-size: 3.5rem;
+					font-weight: $weight_light;
+				}
+				p {
+					font-size: 1.6rem;
+				}
+			}
+		}
 	}
 }

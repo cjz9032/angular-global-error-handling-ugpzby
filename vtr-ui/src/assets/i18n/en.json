@@ -378,6 +378,10 @@
 			"modalAddApps": {
 				"title": "Add apps to Auto Close",
 				"body": "Only apps currently running will show in the list below."
+			},
+			"noRunningApps": {
+				"title": "No Running Apps To Add",
+				"body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
 			}
 		}
 	},
@@ -510,8 +514,7 @@
 			"note": {
 				"accessNote": "doesn't have access to Lenovo Vantage",
 				"microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-				"accessUrl" : "Go to Windows settings to give access"
-				
+				"accessUrl": "Go to Windows settings to give access"
 			}
 		},
 		"systemStatus": {
