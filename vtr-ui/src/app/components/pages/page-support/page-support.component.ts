@@ -37,8 +37,6 @@ export class PageSupportComponent implements OnInit {
 	warrantyData: { info: any, cache: boolean };
 	isOnline: boolean;
 	notificationSubscription: Subscription;
-	language: string;
-	region: string;
 	backId = 'support-page-btn-back';
 	supportDatas = {
 		documentation: [
@@ -133,23 +131,7 @@ export class PageSupportComponent implements OnInit {
 			this.onNotification(response);
 		});
 		this.getWarrantyInfo(this.isOnline);
-		this.regionService.getRegion().subscribe({
-			next: x => {
-				this.region = x;
-			},
-			error: err => {
-				this.region = 'us';
-			}
-		});
-		this.regionService.getLanguage().subscribe({
-			next: x => {
-				this.language = x;
-			},
-			error: err => {
-				this.language = 'en';
-			}
-		});
-		this.fetchCMSArticleCategory(this.language);
+		this.fetchCMSArticleCategory(this.cmsService.language);
 		this.fetchCMSContents();
 	}
 
@@ -172,7 +154,7 @@ export class PageSupportComponent implements OnInit {
 									return;
 								}
 								if (this.articleCategories.length === 0) {
-									this.fetchCMSArticleCategory(this.language);
+									this.fetchCMSArticleCategory(this.cmsService.cmsQueryParams.language);
 								}
 								if (this.articles.leftTop.length === 0) {
 									this.fetchCMSContents();
@@ -204,7 +186,7 @@ export class PageSupportComponent implements OnInit {
 			queryOptions = {
 				Page: 'support',
 				Lang: lang,
-				GEO: 'US',
+				GEO: this.cmsService.cmsQueryParams.region,
 			};
 		}
 
@@ -227,7 +209,7 @@ export class PageSupportComponent implements OnInit {
 				} else {
 					const msg = `Performance: Support page not have this Language content articles, ${contentUseTime}ms`;
 					this.loggerService.info(msg);
-					this.fetchCMSContents('en');
+					this.fetchCMSContents(this.cmsService.cmsQueryParams.language);
 				}
 			},
 			error => {
@@ -239,11 +221,11 @@ export class PageSupportComponent implements OnInit {
 	fetchCMSArticleCategory(lang: string) {
 		this.cateStartTime = new Date();
 		const queryOptions = {
-			Lang: lang ? lang : this.language,
-			GEO: this.region,
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'SMB',
+			Lang: lang ? lang : this.cmsService.language,
+			GEO: this.cmsService.cmsQueryParams.region,
+			OEM: this.cmsService.cmsQueryParams.OEM,
+			OS: this.cmsService.cmsQueryParams.OS,
+			Segment: this.cmsService.cmsQueryParams.segment,
 			Brand: 'idea',
 		};
 
@@ -272,7 +254,7 @@ export class PageSupportComponent implements OnInit {
 
 	clickCategory(categoryId: string) {
 		this.isCategoryArticlesShow = true;
-		this.fetchCMSArticles(categoryId, this.language);
+		this.fetchCMSArticles(categoryId, this.cmsService.cmsQueryParams.language);
 	}
 
 	onInnerBack() {
@@ -288,11 +270,11 @@ export class PageSupportComponent implements OnInit {
 	fetchCMSArticles(categoryId: string, lang: string) {
 		this.articlesType = 'loading';
 		const queryOptions = {
-			Lang: this.language,
-			GEO: this.region,
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'SMB',
+			Lang: this.cmsService.cmsQueryParams.language,
+			GEO: this.cmsService.cmsQueryParams.region,
+			OEM: this.cmsService.cmsQueryParams.OEM,
+			OS: this.cmsService.cmsQueryParams.OS,
+			Segment: this.cmsService.cmsQueryParams.segment,
 			Brand: 'idea',
 			category: categoryId,
 		};

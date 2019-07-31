@@ -5,6 +5,7 @@ import { CommsService } from '../../../../../services/comms/comms.service';
 import { map, shareReplay } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { PrivacyModule } from '../../privacy.module';
+import { CMSService } from 'src/app/services/cms/cms.service';
 
 export interface Article {
 	id: string;
@@ -32,6 +33,7 @@ export class ArticlesService {
 	constructor(
 		private userDataGetStateService: UserDataGetStateService,
 		private commsService: CommsService,
+		private cmsService: CMSService
 	) {}
 
 	pagesSettings: {
@@ -84,11 +86,11 @@ export class ArticlesService {
 	private getOptions() {
 		return {
 			'Page': 'privacy',
-			'Lang': 'en',
-			'GEO': 'US',
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
+			'Lang': this.cmsService.cmsQueryParams.language,
+			'GEO': this.cmsService.cmsQueryParams.region,
+			'OEM': this.cmsService.cmsQueryParams.OEM,
+			'OS': this.cmsService.cmsQueryParams.OS,
+			'Segment': this.cmsService.cmsQueryParams.segment,
 			'Brand': 'idea',
 		};
 	}

@@ -147,7 +147,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			queryOptions = {
 				Page: 'dashboard',
 				Lang: lang,
-				GEO: 'US',
+				GEO: this.cmsService.cmsQueryParams.region,
 			};
 		}
 		this.cmsService.fetchCMSContent(queryOptions).subscribe(
@@ -203,7 +203,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				} else {
 					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
 					this.loggerService.info(msg);
-					this.fetchCmsContents('en');
+					this.fetchCmsContents(this.cmsService.cmsQueryParams.language);
 				}
 			},
 			error => {

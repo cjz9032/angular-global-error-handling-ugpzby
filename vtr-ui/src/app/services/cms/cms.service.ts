@@ -9,6 +9,7 @@ import { LocalStorageKey } from '../../enums/local-storage-key.enum'; // VAN-587
 import { Observable } from 'rxjs/internal/Observable';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { CMSQueryParams } from 'src/app/data-models/common/cms-query-params.model';
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -24,7 +25,7 @@ export class CMSService {
 	language: string;
 	region: string;
 	segment: string; // VAN-5872, server switch feature
-
+	public cmsQueryParams: CMSQueryParams = new CMSQueryParams();
 	constructor(
 		private commsService: CommsService,
 		private vantageShellService: VantageShellService,
@@ -34,17 +35,21 @@ export class CMSService {
 		regionService.getRegion().subscribe({
 			next: x => {
 				this.region = x;
+				this.cmsQueryParams.region = x;
 			},
 			error: err => {
 				this.region = 'us';
+				this.cmsQueryParams.region = 'us';
 			}
 		});
 		regionService.getLanguage().subscribe({
 			next: x => {
 				this.language = x;
+				this.cmsQueryParams.language = x;
 			},
 			error: err => {
 				this.language = 'en';
+				this.cmsQueryParams.language = 'en';
 			}
 		});
 	}
@@ -88,12 +93,12 @@ export class CMSService {
 
 	fetchCMSContent(queryParams) {
 		const defaults = {
-			Lang: this.language,
-			GEO: this.region,
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'SMB',
-			Brand: 'Lenovo'
+			Lang: this.cmsQueryParams.language,
+			GEO: this.cmsQueryParams.region,
+			OEM: this.cmsQueryParams.OEM,
+			OS: this.cmsQueryParams.OS,
+			Segment: this.cmsQueryParams.segment,
+			Brand: this.cmsQueryParams.brand
 		};
 		// Object.assign(defaults, queryParams);
 
@@ -154,12 +159,12 @@ export class CMSService {
 		// VAN-5872, server switch feature
 		// retrive from localStorage
 		const defaults = {
-			Lang: this.language,
-			GEO: this.region,
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'SMB',
-			Brand: 'Lenovo'
+			Lang: this.cmsQueryParams.language,
+			GEO: this.cmsQueryParams.region,
+			OEM: this.cmsQueryParams.OEM,
+			OS: this.cmsQueryParams.OS,
+			Segment: this.cmsQueryParams.segment,
+			Brand: this.cmsQueryParams.brand
 		};
 		const CMSOption = Object.assign(defaults, queryParams);
 		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
@@ -201,12 +206,12 @@ export class CMSService {
 		// VAN-5872, server switch feature
 		// retrive from localStorage
 		const defaults = {
-			Lang: this.language,
-			GEO: this.region,
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'SMB',
-			Brand: 'Lenovo'
+			Lang: this.cmsQueryParams.language,
+			GEO: this.cmsQueryParams.region,
+			OEM: this.cmsQueryParams.OEM,
+			OS: this.cmsQueryParams.OS,
+			Segment: this.cmsQueryParams.segment,
+			Brand: this.cmsQueryParams.brand
 		};
 		const CMSOption = Object.assign(defaults, queryParams);
 		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
@@ -250,12 +255,12 @@ export class CMSService {
 		// VAN-5872, server switch feature
 		// retrive from localStorage
 		const defaults = {
-			Lang: this.language,
-			GEO: this.region,
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'SMB',
-			Brand: 'Lenovo'
+			Lang: this.cmsQueryParams.language,
+			GEO: this.cmsQueryParams.region,
+			OEM: this.cmsQueryParams.OEM,
+			OS: this.cmsQueryParams.OS,
+			Segment: this.cmsQueryParams.segment,
+			Brand: this.cmsQueryParams.brand
 		};
 		const CMSOption = Object.assign(defaults, queryParams);
 		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
