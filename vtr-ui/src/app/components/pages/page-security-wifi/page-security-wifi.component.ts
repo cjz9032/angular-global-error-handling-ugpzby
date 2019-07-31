@@ -259,7 +259,13 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			centered: true,
 			windowClass: 'Article-Detail-Modal',
 			keyboard: false,
-			backdrop: true
+			backdrop: true,
+			beforeDismiss: () => {
+				if (articleDetailModal.componentInstance.onBeforeDismiss) {
+					articleDetailModal.componentInstance.onBeforeDismiss();
+				}
+				return true;
+			}
 		});
 
 		articleDetailModal.componentInstance.articleId = this.securityHealthArticleId;
