@@ -39,15 +39,24 @@ export class ModalServerSwitchComponent implements OnInit {
 		this.serverSwitchData = new ServerSwitch();
 
 		this.serverSwitchForm = new FormGroup({
-			country: new FormControl(null, Validators.required),
-			language: new FormControl(null, Validators.required),
-			segment: new FormControl(null, Validators.required),
-			cmsserver: new FormControl(null, Validators.required)
+			country: new FormControl(this.serverSwitchData.countryList[0].ItemID, Validators.required),
+			language: new FormControl(this.serverSwitchData.languageList[0].Value, Validators.required),
+			segment: new FormControl(this.serverSwitchData.segmentList[0].Value, Validators.required),
+			cmsserver: new FormControl(this.serverSwitchData.serverList[0], Validators.required)
 		});
 
 
-	}
 
+
+
+		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
+		if (serverSwitchLocalData && serverSwitchLocalData.forceit && serverSwitchLocalData.forceit === true) {
+			this.serverSwitchForm.controls.country.setValue(serverSwitchLocalData.country.Value);
+			this.serverSwitchForm.controls.language.setValue(serverSwitchLocalData.language.Value);
+			this.serverSwitchForm.controls.segment.setValue(serverSwitchLocalData.segment.Value);
+			this.serverSwitchForm.controls.cmsserver.setValue(serverSwitchLocalData.cmsserver);
+		}
+	}
 	closeModal() {
 		this.activeModal.close('close');
 	}
