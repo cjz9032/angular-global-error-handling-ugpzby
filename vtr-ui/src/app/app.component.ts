@@ -358,7 +358,6 @@ export class AppComponent implements OnInit {
 					keyboard: false
 				});
 
-				serverSwitchModal.componentInstance.serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
 			}
 		} catch (error) {
 			console.error('AppComponent.onKeyUp', error);
