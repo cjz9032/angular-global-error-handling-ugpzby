@@ -34,6 +34,7 @@ import { HomeSecurityNotifications } from 'src/app/data-models/home-security/hom
 import { HomeSecurityCommon } from 'src/app/data-models/home-security/home-security-common.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { Subscription } from 'rxjs';
+import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 
 
 @Component({
@@ -62,6 +63,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	constructor(
 		vantageShellService: VantageShellService,
 		public homeSecurityMockService: HomeSecurityMockService,
+		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private translateService: TranslateService,
 		private modalService: NgbModal,
 		private commonService: CommonService,
@@ -69,7 +71,11 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		private lenovoIdDialogService: LenovoIdDialogService
 	) {
 		this.chs = vantageShellService.getConnectedHomeSecurity();
-		this.wifiSecurity = vantageShellService.getSecurityAdvisor().wifiSecurity;
+		if (vantageShellService.getSecurityAdvisor()) {
+			this.wifiSecurity = vantageShellService.getSecurityAdvisor().wifiSecurity;
+		} else {
+			this.wifiSecurity = securityAdvisorMockService.getSecurityAdvisor().wifiSecurity;
+		}
 		if (!this.chs) {
 			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
 		}

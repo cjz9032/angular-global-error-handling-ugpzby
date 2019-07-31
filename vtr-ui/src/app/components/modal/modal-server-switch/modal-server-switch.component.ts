@@ -26,39 +26,6 @@ export class ModalServerSwitchComponent implements OnInit {
     message: []
   };
 
-  //SelectDropDownModule, config
-  sddConfigCountry: any = {
-    displayKey: "Value", //if objects array passed which key to be displayed defaults to description
-    search: true, //true/false for the search functionlity defaults to false,
-    height: '15rem', //height of the list so that if there are more no of items it can show a scroll defaults to auto. With auto height scroll will never appear
-    placeholder: 'Select', // text to be displayed when no item is selected defaults to Select,
-    limitTo: 5, // a number thats limits the no of options displayed in the UI similar to angular's limitTo pipe
-    noResultsFound: 'No results found!', // text to be displayed when no items are found while searching
-    searchPlaceholder: 'Search', // label thats displayed in search input,
-    searchOnKey: 'Value' // key on which search should be performed this will be selective search. if undefined this will be extensive search on all keys
-  };
-
-  sddConfigLanguage: any = {
-    displayKey: "Value", //if objects array passed which key to be displayed defaults to description
-    search: true, //true/false for the search functionlity defaults to false,
-    height: '15rem', //height of the list so that if there are more no of items it can show a scroll defaults to auto. With auto height scroll will never appear
-    placeholder: 'Select', // text to be displayed when no item is selected defaults to Select,
-    limitTo: 5, // a number thats limits the no of options displayed in the UI similar to angular's limitTo pipe
-    noResultsFound: 'No results found!', // text to be displayed when no items are found while searching
-    searchPlaceholder: 'Search', // label thats displayed in search input,
-    searchOnKey: 'Value' // key on which search should be performed this will be selective search. if undefined this will be extensive search on all keys
-  };
-
-  sddConfigSegment: any = {
-    displayKey: "Value", //if objects array passed which key to be displayed defaults to description
-    search: true, //true/false for the search functionlity defaults to false,
-    height: '15rem', //height of the list so that if there are more no of items it can show a scroll defaults to auto. With auto height scroll will never appear
-    placeholder: 'Select', // text to be displayed when no item is selected defaults to Select,
-    limitTo: 5, // a number thats limits the no of options displayed in the UI similar to angular's limitTo pipe
-    noResultsFound: 'No results found!', // text to be displayed when no items are found while searching
-    searchPlaceholder: 'Search', // label thats displayed in search input,
-    searchOnKey: 'Value' // key on which search should be performed this will be selective search. if undefined this will be extensive search on all keys
-  };
 
 
   constructor(
@@ -71,17 +38,11 @@ export class ModalServerSwitchComponent implements OnInit {
   ngOnInit() {
     this.serverSwitchData = new ServerSwitch();
 
-    //SelectDropDownModule configuration
-    //this.sddConfigCountry.limitTo = this.serverSwitchData.countryList.length;
-
-    //this.sddConfigLanguage.limitTo = this.serverSwitchData.languageList.length;
-
-    //this.sddConfigSegment.limitTo = this.serverSwitchData.segmentList.length;
-
     this.serverSwitchForm = new FormGroup({
       country: new FormControl(null, Validators.required),
       language: new FormControl(null, Validators.required),
-      segment: new FormControl(null, Validators.required)
+      segment: new FormControl(null, Validators.required),
+      cmsserver: new FormControl(null, Validators.required)
     });
 
 
@@ -105,9 +66,16 @@ export class ModalServerSwitchComponent implements OnInit {
       status: false,
       message: []
     };
-    console.log(formData);
+    //console.log(formData);
 
     //validating 
+    if (isNull(formData.cmsserver) || isUndefined(formData.cmsserver)) {
+      this.sddInvalid.status = true;
+      this.sddInvalid.message.push('CMS API is required.');
+    } else {
+      this.serverSwitchData.cmsserver = formData.cmsserver;
+    }
+
     if (isNull(formData.country) || isUndefined(formData.country)) {
       this.sddInvalid.status = true;
       this.sddInvalid.message.push('Country is required.');
@@ -129,6 +97,7 @@ export class ModalServerSwitchComponent implements OnInit {
       this.serverSwitchData.segment = formData.segment;
     }
 
+    
     //submit success
     if (!this.sddInvalid.status) {
       this.serverSwitchProcess();
@@ -142,6 +111,7 @@ export class ModalServerSwitchComponent implements OnInit {
       country: this.serverSwitchData.country,
       language: this.serverSwitchData.language,
       segment: this.serverSwitchData.segment,
+      cmsserver: this.serverSwitchData.cmsserver,
       forceit: false
     };
 
@@ -160,7 +130,7 @@ export class ModalServerSwitchComponent implements OnInit {
         [this.router.url], { queryParams: { serverswitch: 'true', d: (new Date).getTime() }, queryParamsHandling: "merge", skipLocationChange: false }
       );
     }
-    //@todo, check to use refresh or navigateByUrl
+
     //window.location.href = urlTree.toString();
     this.router.navigateByUrl(urlTree);  
 

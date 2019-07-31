@@ -9,6 +9,9 @@ import { SupportService } from '../../services/support/support.service';
 export class ContainerArticleComponent implements OnInit {
 	@Input() items: any;
 	@Input() type: string;
+	@Input() indexPreText = '';
+	@Input() startIndex: number;
+	@Input() indexTimes: number;
 
 	metricsDatas: {
 		viewOrder: number

@@ -5,8 +5,8 @@
 			<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false then user routerLink to naviagate within Lenovo Vantage Application -->
 
 			<a routerLink="/{{item.path}}"
-				id="{{item.id}}"
-				attr.aria-label="{{item.id}}"
+				id="{{ariaLabel}}-helpfulContent-qa-{{item.id}}"
+				attr.aria-label="{{ariaLabel}}-helpfulContent-qa-{{item.id}}"
 				[queryParams]="item.pathParams"
 				vtrMetrics
 				[metricsItem]="item.metricsItemName ? item.metricsItemName : item.title"
@@ -116,8 +116,8 @@
 			</a>
 			<!--Open Windows Settings /subapges if isSystemLink is not undefined and  true or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
 			<a href="javascript:void(0);"
-				id="{{item.id}}"
-				attr.aria-label="{{item.id}}"
+				id="{{ariaLabel}}-helpfulContent-qa-{{item.id}}"
+				attr.aria-label="{{ariaLabel}}-helpfulContent-qa-{{item.id}}"
 				vtrMetrics
 				[metricsItem]="item.metricsItemName ? item.metricsItemName : item.title"
 				[metricsEvent]="metricsEvent"

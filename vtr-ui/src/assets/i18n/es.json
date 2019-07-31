@@ -3,341 +3,327 @@
         "dashboard": {
             "device": {
                 "quickSettings": {
-                    "title": "Thermal Mode",
+                    "title": "Modo térmico",
                     "status": {
-                        "performance": "Performance",
-                        "balance": "Balance",
-                        "quiet": "Quiet"
+                        "performance": "Rendimiento",
+                        "balance": "Equilibrio",
+                        "quiet": "Silencioso"
                     },
                     "statusText": {
-                        "perText": "Higher CPU usage, Higher fan speed",
-                        "balText": "Normal CPU and fan speed",
-                        "quietText": "Lower CPU usage, Lower fan speed"
+                        "perText": "Mayor uso de CPU, mayor velocidad de ventilador",
+                        "balText": "Uso normal de CPU y velocidad normal de ventilador",
+                        "quietText": "Uso menor de CPU, velocidad menor de ventilador"
                     },
-                    "wifiSecurity": "Wifi Security",
+                    "wifiSecurity": "Seguridad de WiFi",
                     "dolby": "Dolby",
-                    "rapidCharge": "Rapid Charge"
+                    "rapidCharge": "Carga rápida"
                 },
                 "legionEdge": {
-                    "title": "CPU Overclock",
+                    "title": "Aceleración de CPU",
                     "status": {
-                        "alwayson": "On",
-                        "whenGaming": "When Gaming",
-                        "off": "Off"
+                        "alwayson": "Encendido",
+                        "whenGaming": "Cuando juega",
+                        "off": "Apagado"
                     },
                     "statusText": {
-                        "onText": "CPU Overclocking will be activated",
-                        "gamingText": "CPU Overclocking will be activated automatically while game launches",
-                        "offText": "CPU Overclocking will be disabled"
+                        "onText": "Se activará la aceleración de CPU",
+                        "gamingText": "La aceleración de CPU se activará automáticamente durante la generación del juego",
+                        "offText": "Se deshabilitará la aceleración de CPU"
                     },
-                    "ramOverlock": "RAM Overclock",
+                    "ramOverlock": "Aceleración de RAM",
                     "popup": {
-                        "text": "Change will be effective after restarting computer.",
-                        "button": "ok"
+                        "text": "El cambio surtirá efecto después de reiniciar el sistema.",
+                        "button": "aceptar"
                     },
                     "driverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "You need install driver for RAM Overclock to  make it effective",
-                        "button": "Install",
-                        "link": "cancel",
-                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
-                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
+                        "headerText": "Se requiere instalar el controlador",
+                        "text": "Instale el controlador para activar la aceleración de memoria RAM (es necesario reiniciar)",
+                        "button": "Instalar",
+                        "link": "cancelar",
+                        "networkBoostText": "Necesita instalar un controlador para que la Mejora de red sea eficaz",
+                        "hybridModeText": "Necesita instalar un controlador para que el Modo híbrido sea eficaz",
+                        "cpuOverclockText": "Instale el controlador para activar la aceleración de memoria CPU (es necesario reiniciar)"
                     },
-                    "autoClose": "Auto Close",
-                    "networkBoost": "Network Boost",
-                    "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock",
+                    "autoClose": "Cerrado automático",
+                    "networkBoost": "Mejora de red",
+                    "hybridMode": "Modo híbrido",
+                    "touchpadLock": "Bloqueo de área táctil",
                     "lightingDriverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "Please install driver",
-                        "button": "Install",
-                        "link": "cancel"
+                        "headerText": "Se requiere instalar el controlador",
+                        "text": "Instale el controlador para activar la iluminación (es necesario reiniciar)",
+                        "button": "Instalar",
+                        "link": "cancelar"
                     },
                     "lightingColorMessage": {
-                        "text": "Selecting color not available to this effect."
+                        "text": "Selección de color no disponible para este efecto."
                     }
                 },
                 "systemTools": {
-                    "power": "Power",
-                    "media": "Media",
-                    "macroKey": "Marco Key",
-                    "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update",
-                    "header": "System Tools"
+                    "power": "Energía",
+                    "media": "Multimedia",
+                    "macroKey": "Touche de macro",
+                    "hardwareScan": "Exploración de hardware",
+                    "systemUpdate": "Actualización de sistema",
+                    "header": "Herram. sistema"
                 },
                 "lighting": {
-                    "title": "Lighting Customize",
-                    "header": "Lighting"
+                    "title": "Personalizar iluminación",
+                    "header": "Iluminación"
                 },
                 "legionEdgeModal": {
-                    "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
-                    "line2": "<b>Feature Management Overview</b> <br> Some features not available on all devices",
-                    "line3": "<b>CPU Overclocking </b><br> Boost the maximum speed for your processor",
-                    "line4": "<b>RAM Overclocking </b><br> Boost the maximum speed for your memory",
-                    "line5": "<b>Network Boost </b><br> Prioritize network traffic for the game you're playing",
-                    "line6": "<b>Dolby </b><br> Tune your audio specifically for gaming with Dolby technology",
-                    "line7": "<b>Hybrid Mode </b><br> Disable advanced GPU settings when not gaming to boost battery performance",
-                    "line8": "<b>Rapid Charge </b><br> Game on the go longer with quicker battery charging",
-                    "line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
-                    "line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
-                    "line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control"
+                    "line1": "Con Vantage Edge, la configuración se ajusta automáticamente según el uso. \n Máximo rendimiento al jugar, mayor duración de la batería cuando no está jugando.",
+                    "line2": "<b>Intro a la gestión de característica</b> <br> Algunas características no están disponibles en todos los dispositivos",
+                    "line3": "<b>Aceleración de CPU </b><br> Mejore la velocidad máxima del procesador",
+                    "line4": "<b>Aceleración de RAM </b><br> Mejore la velocidad máxima de la memoria",
+                    "line5": "<b>Mejora de red </b><br> Priorice el tráfico de red del juego que está disfrutando",
+                    "line6": "<b>Dolby </b><br> Ajuste específicamente el audio y juegue con tecnología Dolby",
+                    "line7": "<b>Modo híbrido </b><br> Deshabilitar valores avanzados de GPU cuando no esté jugando para mejorar el rendimiento de la batería",
+                    "line8": "<b>Carga rápida </b><br> Juegue más tiempo con la carga rápida de batería",
+                    "line9": "<b>Bloqueo de área táctil </b><br> Evite realizar entradas erróneas desactivando el área táctil mientras juega",
+                    "line10": "<b>Cerrado automático </b><br> Cierre los procesos que no sean necesarios para jugar antes de comenzar a hacerlo, para así maximizar los recursos disponibles del sistema",
+                    "line11": "<b>Modo térmico </b><br> Especifique el perfil de dispositivo preferido para la velocidad de ventilador y control de refrigeración"
                 },
                 "systemInfo": {
-                    "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                    "systenTooltip": "Mantenga el mouse sobre CPU/GPU/RAM y diferentes unidades para mostrar sus descripciones, incluyendo el fabricante y la información del modelo"
                 },
                 "systemStatus": {
-                    "info": "INFO"
+                    "info": "INFORMACIÓN"
                 }
             }
         },
         "common": {
             "menu": {
                 "support": {
-                    "title": "Support",
-                    "sub1": "Support",
+                    "title": "Soporte",
+                    "sub1": "Soporte",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
             }
         },
         "macroKey": {
-            "title": "Macro Key",
-            "introLine": "You can record a series of key input, and use them in gaming or other operations.",
+            "title": "Tecla de macro",
+            "introLine": "Puede grabar una serie de pulsaciones de teclas y utilizarlas en juegos u otras operaciones.",
             "status": {
                 "on": {
-                    "title": "On",
-                    "description": "Always Enabled"
+                    "title": "Encendido",
+                    "description": "Siempre activo"
                 },
                 "whileGaming": {
-                    "title": "Macro Key enabled only when gaming",
-                    "description": "It will be enabled when you game and remain as num key when you don't."
+                    "title": "La tecla de macro solo está habilitada cuando se juega",
+                    "description": "Se habilitará cuando juegue y permanece como la tecla num cuando no lo haga."
                 },
                 "off": {
-                    "title": "Off",
-                    "description": "Always Off"
+                    "title": "Apagado",
+                    "description": "Siempre inactivo"
                 }
             },
             "details": {
                 "intro": {
-                    "noNumber": "SELECT A MACRO KEY",
-                    "title": "CREATE A MACRO KEY FOR",
-                    "line1": "click the start recording button below",
-                    "line2": "type in macro key",
-                    "line3": "stop recording when finishing typing"
+                    "noNumber": "SELECCIONE UNA TECLA DE MACRO",
+                    "title": "CREAR UNA TECLA DE MACRO PARA",
+                    "line1": "haga clic en el botón iniciar grabación a continuación",
+                    "line2": "ingrese la tecla de macro",
+                    "line3": "detenga la grabación al terminar de escribir"
                 },
                 "buttons": {
-                    "start": "START RECORDING",
-                    "stop": "STOP RECORDING",
-                    "numberPrefix": "NUM"
+                    "start": "COMENZAR A GRABAR",
+                    "stop": "DETENER LA GRABACIÓN",
+                    "numberPrefix": "NÚM"
                 },
                 "recording": {
-                    "title": "START TYPING",
-                    "description": "20 inputs within 20 seconds can be recorded."
+                    "title": "COMENZAR A ESCRIBIR",
+                    "description": "Se pueden grabar 20 entradas en 20 segundos."
                 },
                 "recorded": {
-                    "title": "MACRO KEY FOR ",
-                    "deleteKey": "Delete Key",
-                    "clear": "Clear",
+                    "title": "TECLA DE MACRO PARA ",
+                    "deleteKey": "Tecla Eliminar",
+                    "clear": "Borrar",
                     "intervalStatus": {
                         "keep": {
-                            "title": "Keep Delay",
-                            "description": "Intervals of key actions will be kept and applied when using this macro key."
+                            "title": "Conservar retraso",
+                            "description": "Los intervalos de acciones clave se mantendrán y aplicarán cuando se utilice esta clave de macro."
                         },
                         "ignore": {
-                            "title": "Ignore Delay",
-                            "description": "Intervals of key actions will be ignored."
+                            "title": "Ignorar retraso",
+                            "description": "Se ignorarán los intervalos de acciones clave."
                         }
                     },
                     "repeatStatus": {
                         "repeat1": {
-                            "title": "No Repeat",
-                            "description": "No Repeat"
+                            "title": "No repetir",
+                            "description": "No repetir"
                         },
                         "repeat2": {
-                            "title": "Repeat 2 Times",
-                            "description": "Repeats 2 times"
+                            "title": "Repetir 2 veces",
+                            "description": "Se repite 2 veces"
                         },
                         "repeat3": {
-                            "title": "Repeat 3 Times",
-                            "description": "Repeats 3 times"
+                            "title": "Repetir 3 veces",
+                            "description": "Se repite 3 veces"
                         },
                         "repeat4": {
-                            "title": "Repeat 4 Times",
-                            "description": "Repeats 4 times"
+                            "title": "Repetir 4 veces",
+                            "description": "Se repite 4 veces"
                         },
                         "repeat5": {
-                            "title": "Repeat 5 Times",
-                            "description": "Repeats 5 times"
+                            "title": "Repetir 5 veces",
+                            "description": "Se repite 5 veces"
                         },
                         "repeat6": {
-                            "title": "Repeat 6 Times",
-                            "description": "Repeats 6 times"
+                            "title": "Repetir 6 veces",
+                            "description": "Se repite 6 veces"
                         },
                         "repeat7": {
-                            "title": "Repeat 7 Times",
-                            "description": "Repeats 7 times"
+                            "title": "Repetir 7 veces",
+                            "description": "Se repite 7 veces"
                         },
                         "repeat8": {
-                            "title": "Repeat 8 Times",
-                            "description": "Repeats 8 times"
+                            "title": "Repetir 8 veces",
+                            "description": "Se repite 8 veces"
                         },
                         "repeat9": {
-                            "title": "Repeat 9 Times",
-                            "description": "Repeats 9 times"
+                            "title": "Repetir 9 veces",
+                            "description": "Se repite 9 veces"
                         },
                         "repeat10": {
-                            "title": "Repeat 10 Times",
-                            "description": "Repeats 10 times"
+                            "title": "Repetir 10 veces",
+                            "description": "Se repite 10 veces"
                         }
                     },
                     "list": {
                         "header": {
-                            "col1": "Key Action",
-                            "col2": "Interval"
+                            "col1": "Tecla de acción",
+                            "col2": "Intervalo"
                         },
                         "footer": {
-                            "title": "Next input.."
+                            "title": "Siguiente entrada.."
                         }
                     }
                 }
             },
-            "numberpad": {
-                "number": {
-                    "zero": "Num 0",
-                    "one": "Num 1",
-                    "two": "Num 2",
-                    "three": "Num 3",
-                    "four": "Num 4",
-                    "five": "Num 5",
-                    "six": "Num 6",
-                    "seven": "Num 7",
-                    "eight": "Num 8",
-                    "nine": "Num 9"
-                },
-                "macro": {
-                    "m1": "M1",
-                    "m2": "M2"
-                }
-            },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure you want to clear this macro key?"
+                    "title": "¿Está seguro de que desea borrar esta tecla de macro?"
                 },
                 "timeoutRecording": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if no input for 20 seconds."
+                    "title": "Tiempo de espera de grabación.",
+                    "body": "La grabación agotará el tiempo de espera si no hay ninguna entrada durante 20 segundos."
                 },
                 "maximumInput": {
-                    "title": "Maximum Input Reached.",
-                    "body": "Macro key can only store inputs less than 20."
+                    "title": "Entradas máximas alcanzadas.",
+                    "body": "La clave de la macro solo puede almacenar entradas menores de 20."
                 },
                 "inputStopped": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if the input stopped for more than 10 seconds."
+                    "title": "Tiempo de espera de grabación.",
+                    "body": "La grabación excederá el tiempo de espera si la entrada se detiene durante más de 10 segundos."
                 },
                 "confirmButton": {
-                    "btnClear": "Clear",
-                    "btnCancel": "Cancel"
+                    "btnClear": "Borrar",
+                    "btnCancel": "Cancelar"
                 },
-                "btnOk": "OK"
+                "btnOk": "Aceptar"
             },
             "recording": {
-                "title": "Recording Macro Key For"
+                "title": "Grabación de la tecla de macro"
+            },
+            "initalKey": {
+                "zero": 0,
+                "m1": "M1"
             }
         },
         "lightingProfile": {
-            "title": "Lighting",
+            "title": "Iluminación",
             "effect": {
                 "option1": {
-                    "title": "On"
+                    "title": "Encendido"
                 },
                 "option2": {
-                    "title": "Flicker"
+                    "title": "Parpadeo"
                 },
                 "option3": {
-                    "title": "Breath"
+                    "title": "Intermitencia"
                 },
                 "option4": {
-                    "title": "Wave"
+                    "title": "Onda"
                 },
                 "option5": {
-                    "title": "Smooth"
+                    "title": "Suave"
                 },
                 "option6": {
-                    "title": "CPU Temperature"
+                    "title": "Temperatura de CPU"
                 },
                 "option7": {
-                    "title": "CPU Utilization"
+                    "title": "Utilización de CPU"
                 },
                 "option8": {
-                    "title": "Off"
+                    "title": "Apagado"
                 },
                 "apply": {
-                    "title": "APPLY"
+                    "title": "APLICAR"
                 },
                 "applied": {
-                    "title": "APPLIED"
+                    "title": "APLICADO"
                 }
             },
             "brightness": {
                 "text1": {
-                    "title": "*Brightness setting doesn't apply on "
+                    "title": "*El valor de brillo no se aplica en "
                 },
                 "text2": {
-                    "title": " effect"
+                    "title": " efecto"
                 }
             },
             "lightingSingleLightingOption": {
                 "option1": {
-                    "title": "Always On"
+                    "title": "Siempre activo"
                 },
                 "option2": {
-                    "title": "Fast Blink"
+                    "title": "Parpadeo rápido"
                 },
                 "option3": {
-                    "title": "Medium Blink"
+                    "title": "Parpadeo medio"
                 },
                 "option4": {
-                    "title": "Slow Blink"
+                    "title": "Parpadeo lento"
                 },
                 "option5": {
-                    "title": "Blink Level"
+                    "title": "Nivel de parpadeo"
                 }
             },
             "profile": {
                 "text1": {
-                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                    "title": "La iluminación actualmente está desactivada. Seleccione la pestaña de perfil anterior para activarla y personalizarla."
                 },
                 "text2": {
-                    "title": "effect"
+                    "title": "efecto"
                 },
                 "text3": {
-                    "title": "Effect"
+                    "title": "Efecto"
                 }
             },
             "button": {
                 "default": {
-                    "title": "Set to default"
+                    "title": "Establecer en valores predeterminados"
                 }
             },
             "profileheading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "Apagado"
                 },
                 "text2": {
-                    "title": "Profile 1"
+                    "title": "Perfil 1"
                 },
                 "text3": {
-                    "title": "Profile 2"
+                    "title": "Perfil 2"
                 },
                 "text4": {
-                    "title": "Profile 3"
+                    "title": "Perfil 3"
                 }
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "Apagado"
                 },
                 "text2": {
                     "title": 1
@@ -349,21 +335,21 @@
                     "title": 3
                 },
                 "Customize": {
-                    "title": "Customize"
+                    "title": "Personalizar"
                 },
                 "heading": {
-                    "title": "Select Profile:"
+                    "title": "Seleccionar perfil:"
                 }
             },
             "colourwheel": {
                 "text1": {
-                    "title": "Selecting colour not available to this effect."
+                    "title": "Selección de color no disponible para este efecto."
                 },
                 "text2": {
-                    "title": "APPLY"
+                    "title": "APLICAR"
                 },
                 "text3": {
-                    "title": "APPLIED"
+                    "title": "APLICADO"
                 },
                 "text4": {
                     "title": "R:"
@@ -377,6 +363,21 @@
                 "text7": {
                     "title": "Color"
                 }
+            }
+        },
+        "autoClose": {
+            "title": "Auto Close",
+            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "modalTurnAutoClose": {
+                "title": "Turn on Auto Close ?",
+                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Auto Close",
+                "body": "Only apps currently running will show in the list below."
             }
         }
     },
@@ -505,7 +506,12 @@
             "title": "Su configuración rápida",
             "microphone": "Micrófono",
             "cameraPrivacy": "Cámara",
-            "eyeCareMode": "Modalidad cuidado visión"
+            "eyeCareMode": "Cuidado visión",
+            "note": {
+                "accessNote": "doesn't have access to Lenovo Vantage",
+                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
+                "accessUrl": "Go to Windows settings to give access"
+            }
         },
         "systemStatus": {
             "title": "Estado del sistema",
@@ -666,12 +672,15 @@
                     "HighTemperature": "Se interrumpió la <b>descarga</b> debido a que la <b>temperatura de la batería es demasiado alta.</b>",
                     "TrickleCharge": "La batería se <b>descargó completamente</b> y se debe volver a cargar. El proceso podría tomar diez horas o más.",
                     "OverheatedBattery": "La batería tiene una <b>temperatura demasiado alta</b>. Retírela del sistema y deje que se enfríe a temperatura ambiente.",
-                    "PermanentError": "La batería ha <b>fallado debido al desgaste normal.</b> No se puede cargar la batería. Sustituya la batería."
+                    "PermanentError": "La batería ha <b>fallado debido al desgaste normal.</b> No se puede cargar la batería. Sustituya la batería.",
+                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
+                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                 },
                 "updating": "Actualizando",
                 "voltageError": "Voltaje de batería incorrecto",
                 "batteryNotDetected": "No se detectó ninguna batería",
-                "thresholdNote": "<b>Note:</b> para ampliar la duración de la batería, debe configurarla para que deje de cargar en {{value}}%."
+                "thresholdNote": "<b>Note:</b> para ampliar la duración de la batería, debe configurarla para que deje de cargar en {{value}}%.",
+                "seeDetailsLink": "See Details"
             },
             "power": {
                 "title": "Energía",
@@ -681,8 +690,7 @@
                     "title": "IR A CONFIGURACIÓN",
                     "battery": "Batería",
                     "power": "Energía",
-                    "other": "Otros",
-                    "smartStandby": "Suspensión inteligente"
+                    "other": "Otros"
                 },
                 "powerSmartSettings": {
                     "title": "Valores de energía inteligente",
@@ -812,7 +820,8 @@
                     },
                     "airPlanePower": {
                         "title": "Modo de energía avión",
-                        "description": "Proteja la toma de aliment. de CA del avión controlando el consumo de energía de su sist.Cuando está habilitada la modalidad de energía Avión, el sistema reduce el consumo de energía limitando la frecuencia de carga de la batería y el rendimiento del sistema."
+                        "description": "Proteja la toma de aliment. de CA del avión controlando el consumo de energía de su sist.Cuando está habilitada la modalidad de energía Avión, el sistema reduce el consumo de energía limitando la frecuencia de carga de la batería y el rendimiento del sistema.",
+                        "checkBoxDesc": "Auto detection"
                     }
                 },
                 "energyStar": {
@@ -1094,6 +1103,13 @@
                     "enterText": {
                         "title": "TEXTO QUE SE INGRESARÁ"
                     }
+                },
+                "fnCtrlKey": {
+                    "title": "FN key and Ctrl key swap",
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "more": "MORE",
+                    "control1": "TOUCHPAD CONTROLS",
+                    "control2": "MOUSE CONTROLS"
                 }
             }
         },
@@ -1121,7 +1137,8 @@
                 },
                 "zeroTouchLogin": {
                     "title": "Inicio de sesión sin interacción",
-                    "caption": "Esta característica desbloquea o activa automáticamente el equipo cuando se encuentra frente o se acerca a este."
+                    "caption": "Esta característica desbloquea o activa automáticamente el equipo cuando se encuentra frente o se acerca a este.",
+                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
                 },
                 "zeroTouchLock": {
                     "title": "Bloqueo sin interacción",
@@ -1142,6 +1159,17 @@
                     "options": {
                         "near": "Cerca",
                         "far": "Lejos"
+                    },
+                    "tooltipcontent": {
+                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
+                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "list": {
+                            "line1": "Near: 0 – 0.42 meters (17 inches)",
+                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
+                            "line3": "Far: 0 – 1.20 meters (47 inches)",
+                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
+                            "line5": "The recommended detection distance is within 0.60 meters."
+                        }
                     }
                 },
                 "note": {
@@ -1492,7 +1520,10 @@
             "listLenovoCommunity": "Comunidad de Lenovo",
             "listContactCustomerService": "Póngase en contacto con servicio al cliente",
             "listContactUsOnWechat": "Póngase en contacto con nosotros en WeChat",
-            "weChatDescription": "Háganos una pregunta en WeChat y nos aseguraremos de responder rápidamente"
+            "weChatDescription": "Háganos una pregunta en WeChat y nos aseguraremos de responder rápidamente",
+            "listFindUs": "Find us on social media",
+            "listContactUsOnFacebook": "Contact us on Facebook",
+            "facebookDescription": "Click to find us on Facebook"
         },
         "quicklinks": {
             "title": "Enlaces rápidos",
@@ -1533,7 +1564,13 @@
             "maliciousNetwork": "Impidió que su equipo se uniera a {{maliciousWifi}} redes malintencionadas este mes.",
             "good": "BIEN",
             "malicious": "MALINTENCIONADO",
-            "suspicious": "SOSPECHOSO"
+            "suspicious": "SOSPECHOSO",
+            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+            "antivirus": "Being protected by anti-virus software",
+            "password": "Having strong and complex passwords managed in a safe way",
+            "vpn": "Monitoring your network exposure to attackers",
+            "wifi": "Encrypting your personal data when using public WiFi",
+            "windowsHello": "Protecting your device using safe login options"
         },
         "antivirus": {
             "common": {
@@ -1627,7 +1664,8 @@
                 "headerText": "Error",
                 "bodyText": "Hemos detectado que faltan piezas críticas de Vantage. Estas piezas se descargarán en segundo plano. Vuelva a intentarlo más tarde.",
                 "closeText": "cerrar",
-                "offlineText": "Detectamos que no está conectado a Internet. Algunas partes de esta página no funcionarán correctamente. Vuelva a conectar"
+                "offlineText": "Detectamos que no está conectado a Internet. Algunas partes de esta página no funcionarán correctamente. Vuelva a conectar",
+                "accountText": "Account creation failed. Please try again later."
             }
         },
         "homeprotection": {

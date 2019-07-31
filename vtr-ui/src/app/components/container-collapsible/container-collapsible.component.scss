@@ -16,10 +16,9 @@
 
 				.header {
 					color: $color;
-					font-size: 2rem;
-					font-weight: 300;
+					font-size: $sub_title;
 					line-height: 3rem;
-					font-weight: $weight_regular;
+					font-weight: $weight_light;
 					text-transform: none;
 				}
 
@@ -29,7 +28,8 @@
 					.collapse-text {
 						display: inline-block;
 						color: $shade_blue;
-						font-size: 1.4rem;
+						font-size: $body;
+						font-weight: $weight_light;
 						margin-right: 0.6rem;
 						vertical-align: middle;
 						text-decoration: underline;

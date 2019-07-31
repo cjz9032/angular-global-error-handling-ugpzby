@@ -72,7 +72,13 @@ export class WidgetSecurityComponent implements OnInit {
 			centered: true,
 			windowClass: 'Article-Detail-Modal',
 			keyboard : false,
-			backdrop: true
+			backdrop: true,
+			beforeDismiss: () => {
+				if (articleDetailModal.componentInstance.onBeforeDismiss) {
+					articleDetailModal.componentInstance.onBeforeDismiss();
+				}
+				return true;
+			}
 		});
 
 		articleDetailModal.componentInstance.articleId = this.articleId;
