@@ -202,24 +202,6 @@
                     }
                 }
             },
-            "numberpad": {
-                "number": {
-                    "zero": "Num 0",
-                    "one": "Num 1",
-                    "two": "Num 2",
-                    "three": "Num 3",
-                    "four": "Num 4",
-                    "five": "Num 5",
-                    "six": "Num 6",
-                    "seven": "Num 7",
-                    "eight": "Num 8",
-                    "nine": "Num 9"
-                },
-                "macro": {
-                    "m1": "M1",
-                    "m2": "M2"
-                }
-            },
             "popupContent": {
                 "clearMacrokey": {
                     "title": "Are you sure you want to clear this macro key?"
@@ -244,6 +226,10 @@
             },
             "recording": {
                 "title": "Recording Macro Key For"
+            },
+            "initalKey": {
+                "zero": 0,
+                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -378,6 +364,21 @@
                     "title": "Color"
                 }
             }
+        },
+        "autoClose": {
+            "title": "Auto Close",
+            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "modalTurnAutoClose": {
+                "title": "Turn on Auto Close ?",
+                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Auto Close",
+                "body": "Only apps currently running will show in the list below."
+            }
         }
     },
     "common": {
@@ -505,7 +506,12 @@
             "title": "Οι γρήγορες ρυθμίσεις σας",
             "microphone": "Μικρόφωνο",
             "cameraPrivacy": "Κάμερα",
-            "eyeCareMode": "Λειτ. Φροντίδας ματιών"
+            "eyeCareMode": "Φροντίδα ματιών",
+            "note": {
+                "accessNote": "doesn't have access to Lenovo Vantage",
+                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
+                "accessUrl": "Go to Windows settings to give access"
+            }
         },
         "systemStatus": {
             "title": "Κατάσταση συστήματος",
@@ -666,12 +672,15 @@
                     "HighTemperature": "Η <b>αποφόρτιση</b> διακόπηκε, επειδή η <b>θερμοκρασία της μπαταρίας είναι πολύ υψηλή.</b>",
                     "TrickleCharge": "Η μπαταρία <b>αποφορτίστηκε εντελώς</b> και πρέπει να ξαναφορτιστεί. Η διαδικασία ενδέχεται να διαρκέσει δέκα ώρες ή και περισσότερο.",
                     "OverheatedBattery": "Η μπαταρία είναι <b>πολύ ζεστή</b>. Αφαιρέστε την από τον υπολογιστή και αφήστε την να επανέλθει σε θερμοκρασία δωματίου.",
-                    "PermanentError": "Αποτυχία μπαταρίας <b>λόγω φυσιολογικής φθοράς.</b> Δεν είναι δυνατή η φόρτιση της μπαταρίας. Αντικαταστήστε την μπαταρία."
+                    "PermanentError": "Αποτυχία μπαταρίας <b>λόγω φυσιολογικής φθοράς.</b> Δεν είναι δυνατή η φόρτιση της μπαταρίας. Αντικαταστήστε την μπαταρία.",
+                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
+                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                 },
                 "updating": "Ενημέρωση",
                 "voltageError": "Εσφαλμένη τάση μπαταρίας",
                 "batteryNotDetected": "Δεν εντοπίστηκε μπαταρία",
-                "thresholdNote": "<b>Σημείωση:</b> Για να παρατείνετε τη διάρκεια ζωής της μπαταρίας, έχετε ορίσει το {{value}}% ως όριο διακοπής φόρτισης της μπαταρίας σας."
+                "thresholdNote": "<b>Σημείωση:</b> Για να παρατείνετε τη διάρκεια ζωής της μπαταρίας, έχετε ορίσει το {{value}}% ως όριο διακοπής φόρτισης της μπαταρίας σας.",
+                "seeDetailsLink": "See Details"
             },
             "power": {
                 "title": "Ενέργεια",
@@ -681,8 +690,7 @@
                     "title": "ΜΕΤΑΒΑΣΗ ΣΤΙΣ ΡΥΘΜΙΣΕΙΣ",
                     "battery": "Μπαταρία",
                     "power": "Ενέργεια",
-                    "other": "Άλλες χώρες ή περιοχές",
-                    "smartStandby": "Έξυπνη αναμονή"
+                    "other": "Άλλες χώρες ή περιοχές"
                 },
                 "powerSmartSettings": {
                     "title": "Έξυπνες ρυθμίσεις ενέργειας",
@@ -812,7 +820,8 @@
                     },
                     "airPlanePower": {
                         "title": "Λειτουργία ενέργειας πτήσης",
-                        "description": "Προστατεύστε την πρίζα AC του αεροπλάνου ελέγχοντας την κατανάλωση του συστήματός σας.Όταν είναι ενεργοποιημένη η Λειτουργία ενέργειας πτήσης, ο υπολογιστής μειώνει την κατανάλωση ενέργειας περιορίζοντας το ρυθμό φόρτισης της μπαταρίας και την απόδοση του συστήματος."
+                        "description": "Προστατεύστε την πρίζα AC του αεροπλάνου ελέγχοντας την κατανάλωση του συστήματός σας.Όταν είναι ενεργοποιημένη η Λειτουργία ενέργειας πτήσης, ο υπολογιστής μειώνει την κατανάλωση ενέργειας περιορίζοντας το ρυθμό φόρτισης της μπαταρίας και την απόδοση του συστήματος.",
+                        "checkBoxDesc": "Auto detection"
                     }
                 },
                 "energyStar": {
@@ -1094,6 +1103,13 @@
                     "enterText": {
                         "title": "ΚΕΙΜΕΝΟ ΠΡΟΣ ΕΙΣΑΓΩΓΗ"
                     }
+                },
+                "fnCtrlKey": {
+                    "title": "FN key and Ctrl key swap",
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "more": "MORE",
+                    "control1": "TOUCHPAD CONTROLS",
+                    "control2": "MOUSE CONTROLS"
                 }
             }
         },
@@ -1121,7 +1137,8 @@
                 },
                 "zeroTouchLogin": {
                     "title": "Είσοδος χωρίς αφή",
-                    "caption": "Η δυνατότητα αυτή ξεκλειδώνει τον υπολογιστή ή τον επαναφέρει σε λειτουργία αυτόματα, όταν καθίσετε μπροστά του ή πλησιάσετε σε αυτόν."
+                    "caption": "Η δυνατότητα αυτή ξεκλειδώνει τον υπολογιστή ή τον επαναφέρει σε λειτουργία αυτόματα, όταν καθίσετε μπροστά του ή πλησιάσετε σε αυτόν.",
+                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
                 },
                 "zeroTouchLock": {
                     "title": "Κλείδωμα χωρίς αφή",
@@ -1142,6 +1159,17 @@
                     "options": {
                         "near": "Κοντά",
                         "far": "Μακριά"
+                    },
+                    "tooltipcontent": {
+                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
+                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "list": {
+                            "line1": "Near: 0 – 0.42 meters (17 inches)",
+                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
+                            "line3": "Far: 0 – 1.20 meters (47 inches)",
+                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
+                            "line5": "The recommended detection distance is within 0.60 meters."
+                        }
                     }
                 },
                 "note": {
@@ -1492,7 +1520,10 @@
             "listLenovoCommunity": "Κοινότητα Lenovo",
             "listContactCustomerService": "Επικοινωνήστε με την εξυπηρέτηση πελατών",
             "listContactUsOnWechat": "Επικοινωνήστε μαζί μας στο WeChat",
-            "weChatDescription": "Ρωτήστε μας μια ερώτηση στο WeChat και να είστε σίγουροι ότι θα ανταποκριθούμε γρήγορα"
+            "weChatDescription": "Ρωτήστε μας μια ερώτηση στο WeChat και να είστε σίγουροι ότι θα ανταποκριθούμε γρήγορα",
+            "listFindUs": "Find us on social media",
+            "listContactUsOnFacebook": "Contact us on Facebook",
+            "facebookDescription": "Click to find us on Facebook"
         },
         "quicklinks": {
             "title": "Γρήγοροι σύνδεσμοι",
@@ -1533,7 +1564,13 @@
             "maliciousNetwork": "Εμπόδισε τον υπολογιστή σας να συνδεθεί σε {{maliciousWifi}} κακόβουλα δίκτυα αυτόν το μήνα.",
             "good": "ΚΑΛΟ",
             "malicious": "ΚΑΚΟΒΟΥΛΟ",
-            "suspicious": "ΥΠΟΠΤΟ"
+            "suspicious": "ΥΠΟΠΤΟ",
+            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+            "antivirus": "Being protected by anti-virus software",
+            "password": "Having strong and complex passwords managed in a safe way",
+            "vpn": "Monitoring your network exposure to attackers",
+            "wifi": "Encrypting your personal data when using public WiFi",
+            "windowsHello": "Protecting your device using safe login options"
         },
         "antivirus": {
             "common": {
@@ -1627,7 +1664,8 @@
                 "headerText": "Σφάλμα",
                 "bodyText": "Διαπιστώσαμε ότι σας λείπουν κρίσιμα τμήματα του Vantage. Η λήψη αυτών των τμημάτων γίνεται στο παρασκήνιο. Προσπαθήστε ξανά αργότερα.",
                 "closeText": "κλείσιμο",
-                "offlineText": "Εντοπίσαμε ότι δεν είστε συνδεδεμένοι στο Internet. Ορισμένα μέρη αυτής της σελίδας δεν θα λειτουργούν σωστά. Συνδεθείτε ξανά"
+                "offlineText": "Εντοπίσαμε ότι δεν είστε συνδεδεμένοι στο Internet. Ορισμένα μέρη αυτής της σελίδας δεν θα λειτουργούν σωστά. Συνδεθείτε ξανά",
+                "accountText": "Account creation failed. Please try again later."
             }
         },
         "homeprotection": {

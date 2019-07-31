@@ -13,7 +13,8 @@
 				<div class="col-sm-12 col-lg-8 col-xl-8 vtr-page-left-column">
 					<div class="vtr-subpage">
 						<div class="vtr-page-shift-up">
-							<vtr-widget-device></vtr-widget-device>
+							<vtr-widget-device id="device-mydevice-card" 
+							aria-label="device-mydevice-card" ></vtr-widget-device>
 						</div>
 					</div>
 				</div>
@@ -35,7 +36,11 @@
 										[type]="'corner-article'"
 										[ratioX]="4"
 										[ratioY]="2"
-										[cornerShift]="'large'">
+										[cornerShift]="'large'"
+										id="device-upgradePcMemory-card" 
+										aria-label="device-upgradePcMemory-card"
+										[id]="'myDevice-upgradePcMemory-card'"
+										[ariaLabel]="'myDevice-upgradePcMemory-card'">
 									</vtr-container-card>
 								</div>
 							</div>
@@ -46,7 +51,10 @@
 									<vtr-widget-questions [title]="'common.qAndA.title' | translate"
 														  [itemid]="'common.QAndA.itemid'|translate"
 										[description]="'common.qAndA.subtitle' | translate"
-										[items]="qaService.qas" blockPosition="r2"></vtr-widget-questions>
+										[items]="qaService.qas" blockPosition="r2"
+										id="device-qa-widget" 
+										aria-label="device-qa-widget"
+										[ariaLabel]="'myDevice'"></vtr-widget-questions>
 								</div>
 							</div>
 						</div>

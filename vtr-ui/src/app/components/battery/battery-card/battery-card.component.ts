@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, OnChanges, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef, ElementRef, ViewChild } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
@@ -15,6 +15,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { PowerService } from 'src/app/services/power/power.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { ActivatedRoute, ParamMap} from '@angular/router';
 
 @Component({
 	selector: 'vtr-battery-card',
@@ -23,6 +24,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 })
 export class BatteryCardComponent implements OnInit, OnDestroy {
 
+	@ViewChild('batteryDetail', {static:false}) batteryModal: ElementRef<HTMLElement>;
 	batteryInfo: BatteryDetail[];
 	batteryGauge: BatteryGaugeDetail;
 	batteryCardTimer: any;
@@ -48,6 +50,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	remainingPercentages: number[];
 	notificationSubscription: Subscription;
 	shortAcErrNote = true;
+	isModalShown: boolean;
 
 	constructor(
 		private modalService: NgbModal,
@@ -55,12 +58,19 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		private powerService: PowerService,
 		public shellServices: VantageShellService,
 		private commonService: CommonService,
-		private cd: ChangeDetectorRef) {
+		private cd: ChangeDetectorRef,
+		private activatedRoute: ActivatedRoute) {
 	}
 
 	ngOnInit() {
 		this.isLoading = true;
-
+		this.activatedRoute.queryParamMap.subscribe((params: ParamMap)=>{
+			console.log(params);
+			if (params.has('batterydetail') && this.isModalShown) {
+				this.isModalShown = false;
+				this.getBatteryDetails();
+			}
+		});
 		this.getBatteryDetailOnCard();
 
 		this.powerSupplyStatusEventRef = this.onPowerSupplyStatusEvent.bind(this);
@@ -131,6 +141,12 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryGauge = response.batteryIndicatorInfo;
 				this.initBatteryInformation();
 				this.updateBatteryDetails();
+
+				let showBatteryDetail = this.activatedRoute.snapshot.queryParams.batterydetail;
+				if (showBatteryDetail && !this.isModalShown) {
+					this.showDetailModal(this.batteryModal);
+					this.isModalShown = true;
+				}
 			}).catch(error => {
 				console.error('getBatteryDetails error', error);
 			});
@@ -161,17 +177,17 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	public updateBatteryDetails() {
 		if (this.batteryInfo && this.batteryInfo.length > 0) {
-			this.isBatteryDetailsBtnDisabled = this.batteryGauge.isPowerDriverMissing;
 			const remainingPercentages = [];
 			this.batteryInfo.forEach((info) => {
 				remainingPercentages.push(info.remainingPercent);
 			});
-
+			this.remainingPercentages = remainingPercentages;
 			this.sendThresholdWarning();
 			this.batteryHealth = this.batteryInfo[0].batteryHealth;
 			this.batteryIndicator.batteryNotDetected = this.batteryHealth === 4;
 		}
 
+		this.isBatteryDetailsBtnDisabled = this.batteryGauge.isPowerDriverMissing;
 		this.batteryIndicator.percent = this.batteryGauge.percentage;
 		this.batteryIndicator.charging = this.batteryGauge.isAttached;
 		this.batteryIndicator.convertMin(this.batteryGauge.time);
@@ -185,7 +201,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	 * for displaying warning note
 	 */
 	private sendThresholdWarning() {
-		if (this.chargeThresholdInfo !== undefined && this.remainingPercentages !== undefined
+		if (this.chargeThresholdInfo && this.remainingPercentages
 			&& this.remainingPercentages.length > 0) {
 			if (this.chargeThresholdInfo.isOn) {
 				if (this.chargeThresholdInfo.stopValue1 &&

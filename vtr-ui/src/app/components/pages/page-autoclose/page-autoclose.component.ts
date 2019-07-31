@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'vtr-page-autoclose',

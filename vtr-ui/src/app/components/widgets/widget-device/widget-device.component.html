@@ -39,7 +39,7 @@
 		<div class="row">
 			<div class="col">
 				<ul class="status-list">
-					<li *ngFor="let item of deviceStatus"
+					<li *ngFor="let item of deviceStatus; let i=index"
 						[ngClass]="[!item.status?'good':'bad']">
 						<div class="container-fluid">
 							<div class="row align-items-center">
@@ -70,6 +70,8 @@
 										[metricsItem]="item.title"
 										metricsEvent="itemClick"
 										[metricsValue]="'link.'+item.id"
+										id="myDevice-status-learn-more-{{i}}"
+										attr.aria-label="myDevice-status-learn-more-{{i}}"
 										*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false && item.status !== 4)">
 										<div class="detail"
 											[ngClass]="{'highlight':item.asLink}">
@@ -83,6 +85,8 @@
 										metricsEvent="itemClick"
 										[metricsValue]="'link.'+item.id"
 										href="javascript:void(0);"
+										id="myDevice-status-learn-more-{{i}}"
+										attr.aria-label="myDevice-status-learn-more-{{i}}"
 										(click)="deviceService.launchUri(item.path)">
 										<div class="detail"
 											[ngClass]="{'highlight':item.asLink}">

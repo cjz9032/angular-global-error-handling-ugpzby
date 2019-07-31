@@ -1,11 +1,9 @@
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { ArticleItemComponent } from '../components/article-item/article-item.component';
 import { BaseComponent } from '../components/base/base.component';
 import { CommonDirectiveModule } from './common/common-directive.module';
 import { CommonModule } from '@angular/common';
 import { CommonPipeModule } from './common/common-pipe.module';
 import { CommsService } from '../services/comms/comms.service';
-import { ContainerArticleComponent } from '../components/container-article/container-article.component';
 import { CookieService } from 'ngx-cookie-service';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { DeviceService } from '../services/device/device.service';
@@ -27,17 +25,13 @@ import { RouterModule } from '@angular/router';
 import { SettingsService } from '../services/settings.service';
 import { TranslationModule } from './translation.module';
 import { UiButtonModule } from '../components/ui/ui-button/ui-button.module';
-import { UiFeatureItemComponent } from 'src/app/components/ui/ui-feature-item/ui-feature-item.component';
 // import { UiHeaderWarrantyComponent } from 'src/app/components/ui/ui-header-warranty/ui-header-warranty.component';
 import { MetricsModule } from '../directives/metrics.module';
 import { HeaderMainModule } from '../components/header-main/header-main.module';
 
 @NgModule({
 	declarations: [
-		ArticleItemComponent,
-		UiFeatureItemComponent,
 		BaseComponent,
-		ContainerArticleComponent,
 		// HeaderMainComponent,
 		// MenuHeaderComponent,
 		// UiHeaderWarrantyComponent,
@@ -65,12 +59,9 @@ import { HeaderMainModule } from '../components/header-main/header-main.module';
 	],
 	exports: [
 		AngularSvgIconModule,
-		ArticleItemComponent,
-		UiFeatureItemComponent,
 		BaseComponent,
 		CommonDirectiveModule,
 		CommonPipeModule,
-		ContainerArticleComponent,
 		FontAwesomeModule,
 		FormsModule,
 		// HeaderMainComponent,

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UiFeatureItemComponent } from './ui-feature-item.component';
+import { ModalTurnOnComponent } from './modal-turn-on.component';
 
-xdescribe('UiFeatureItemComponent', () => {
-  let component: UiFeatureItemComponent;
-  let fixture: ComponentFixture<UiFeatureItemComponent>;
+describe('ModalTurnOnComponent', () => {
+  let component: ModalTurnOnComponent;
+  let fixture: ComponentFixture<ModalTurnOnComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UiFeatureItemComponent ]
+      declarations: [ ModalTurnOnComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UiFeatureItemComponent);
+    fixture = TestBed.createComponent(ModalTurnOnComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

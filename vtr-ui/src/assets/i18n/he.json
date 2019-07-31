@@ -202,24 +202,6 @@
                     }
                 }
             },
-            "numberpad": {
-                "number": {
-                    "zero": "Num 0",
-                    "one": "Num 1",
-                    "two": "Num 2",
-                    "three": "Num 3",
-                    "four": "Num 4",
-                    "five": "Num 5",
-                    "six": "Num 6",
-                    "seven": "Num 7",
-                    "eight": "Num 8",
-                    "nine": "Num 9"
-                },
-                "macro": {
-                    "m1": "M1",
-                    "m2": "M2"
-                }
-            },
             "popupContent": {
                 "clearMacrokey": {
                     "title": "Are you sure you want to clear this macro key?"
@@ -244,6 +226,10 @@
             },
             "recording": {
                 "title": "Recording Macro Key For"
+            },
+            "initalKey": {
+                "zero": 0,
+                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -378,6 +364,21 @@
                     "title": "Color"
                 }
             }
+        },
+        "autoClose": {
+            "title": "Auto Close",
+            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "modalTurnAutoClose": {
+                "title": "Turn on Auto Close ?",
+                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Auto Close",
+                "body": "Only apps currently running will show in the list below."
+            }
         }
     },
     "common": {
@@ -505,7 +506,12 @@
             "title": "הגדרות מהירות",
             "microphone": "מיקרופון",
             "cameraPrivacy": "מצלמה",
-            "eyeCareMode": "מצב שמירה על העיניים"
+            "eyeCareMode": "שמירה על העיניים",
+            "note": {
+                "accessNote": "doesn't have access to Lenovo Vantage",
+                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
+                "accessUrl": "Go to Windows settings to give access"
+            }
         },
         "systemStatus": {
             "title": "מצב המערכת",
@@ -666,12 +672,15 @@
                     "HighTemperature": "<b>הפריקה</b> נעצרה מכיוון <b>שטמפרטורת הסוללה גבוהה מדי.</b>",
                     "TrickleCharge": "הסוללה <b>התרוקנה לחלוטין</b> ויש לטעון אותה מחדש. התהליך עשוי לארוך עשר שעות או יותר.",
                     "OverheatedBattery": "הסוללה <b>חמה מדי</b>. הסירו אותה מהמחשב והניחו לה להתקרר לטמפרטורת החדר.",
-                    "PermanentError": "הסוללה <b>נכשלה בגלל בלאי רגיל.</b> לא ניתן לטעון את הסוללה. החליפו את הסוללה."
+                    "PermanentError": "הסוללה <b>נכשלה בגלל בלאי רגיל.</b> לא ניתן לטעון את הסוללה. החליפו את הסוללה.",
+                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
+                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                 },
                 "updating": "עדכון",
                 "voltageError": "מתח הסוללה שגוי",
                 "batteryNotDetected": "לא זוהתה סוללה",
-                "thresholdNote": "<b>הערה:</b> להארכת משך חיי הסוללה, הגדרתם את הסוללה לעצור את הטעינה כשהיא ברמה של {{value}}%."
+                "thresholdNote": "<b>הערה:</b> להארכת משך חיי הסוללה, הגדרתם את הסוללה לעצור את הטעינה כשהיא ברמה של {{value}}%.",
+                "seeDetailsLink": "See Details"
             },
             "power": {
                 "title": "צריכת חשמל",
@@ -681,8 +690,7 @@
                     "title": "מעבר להגדרות",
                     "battery": "סוללה",
                     "power": "צריכת חשמל",
-                    "other": "שונות",
-                    "smartStandby": "המתנה חכמה"
+                    "other": "שונות"
                 },
                 "powerSmartSettings": {
                     "title": "הגדרות חכמות של צריכת חשמל",
@@ -812,7 +820,8 @@
                     },
                     "airPlanePower": {
                         "title": "מצב צריכת חשמל בטיסה",
-                        "description": "הגנה על שקע החשמל לשימוש במטוס באמצעות שליטה בצריכת החשמל של המערכת שלכם.כאשר מצב צריכת החשמל בטיסה מופעל, המחשב מצמצם את צריכת החשמל על-ידי הגבלת קצב טעינת הסוללה וביצועי המערכת."
+                        "description": "הגנה על שקע החשמל לשימוש במטוס באמצעות שליטה בצריכת החשמל של המערכת שלכם.כאשר מצב צריכת החשמל בטיסה מופעל, המחשב מצמצם את צריכת החשמל על-ידי הגבלת קצב טעינת הסוללה וביצועי המערכת.",
+                        "checkBoxDesc": "Auto detection"
                     }
                 },
                 "energyStar": {
@@ -1094,6 +1103,13 @@
                     "enterText": {
                         "title": "טקסט להזנה"
                     }
+                },
+                "fnCtrlKey": {
+                    "title": "FN key and Ctrl key swap",
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "more": "MORE",
+                    "control1": "TOUCHPAD CONTROLS",
+                    "control2": "MOUSE CONTROLS"
                 }
             }
         },
@@ -1121,7 +1137,8 @@
                 },
                 "zeroTouchLogin": {
                     "title": "כניסה באפס מגע",
-                    "caption": "תכונה זו מעוררת או מבטלת את נעילת המחשב באופן אוטומטי כשאתם יושבים מולו או מתקרבים אליו."
+                    "caption": "תכונה זו מעוררת או מבטלת את נעילת המחשב באופן אוטומטי כשאתם יושבים מולו או מתקרבים אליו.",
+                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
                 },
                 "zeroTouchLock": {
                     "title": "נעילה ללא מגע",
@@ -1142,6 +1159,17 @@
                     "options": {
                         "near": "קרוב",
                         "far": "רחוק"
+                    },
+                    "tooltipcontent": {
+                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
+                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "list": {
+                            "line1": "Near: 0 – 0.42 meters (17 inches)",
+                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
+                            "line3": "Far: 0 – 1.20 meters (47 inches)",
+                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
+                            "line5": "The recommended detection distance is within 0.60 meters."
+                        }
                     }
                 },
                 "note": {
@@ -1492,7 +1520,10 @@
             "listLenovoCommunity": "קהילת Lenovo",
             "listContactCustomerService": "צרו קשר עם שירות לקוחות",
             "listContactUsOnWechat": "צרו קשר ב-WeChat",
-            "weChatDescription": "שאלו שאלה ב-WeChat ואנחנו נענה במהירות"
+            "weChatDescription": "שאלו שאלה ב-WeChat ואנחנו נענה במהירות",
+            "listFindUs": "Find us on social media",
+            "listContactUsOnFacebook": "Contact us on Facebook",
+            "facebookDescription": "Click to find us on Facebook"
         },
         "quicklinks": {
             "title": "קישורים מהירים",
@@ -1533,7 +1564,13 @@
             "maliciousNetwork": "מנעו מהמחשב שלכם מלהצטרף אל {{maliciousWifi}} רשתות זדוניות החודש.",
             "good": "טוב",
             "malicious": "זדוני",
-            "suspicious": "חשוד"
+            "suspicious": "חשוד",
+            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+            "antivirus": "Being protected by anti-virus software",
+            "password": "Having strong and complex passwords managed in a safe way",
+            "vpn": "Monitoring your network exposure to attackers",
+            "wifi": "Encrypting your personal data when using public WiFi",
+            "windowsHello": "Protecting your device using safe login options"
         },
         "antivirus": {
             "common": {
@@ -1627,7 +1664,8 @@
                 "headerText": "שגיאה",
                 "bodyText": "גילינו שחסרים לכם חלקים קריטיים של Vantage. הורדה של חלקים אלה תתבצע ברקע. נסו שוב מאוחר יותר.",
                 "closeText": "סגירה",
-                "offlineText": "זיהינו שאינכם מחוברים לאינטרנט. חלקים מסוימים בדף זה לא יפעלו כראוי. התחברו מחדש"
+                "offlineText": "זיהינו שאינכם מחוברים לאינטרנט. חלקים מסוימים בדף זה לא יפעלו כראוי. התחברו מחדש",
+                "accountText": "Account creation failed. Please try again later."
             }
         },
         "homeprotection": {
