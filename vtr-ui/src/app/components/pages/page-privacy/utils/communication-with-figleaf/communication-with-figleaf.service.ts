@@ -1,7 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import { FigleafConnectorInstance as FigleafConnector, MessageToFigleaf } from './figleaf-connector';
 import { BehaviorSubject, EMPTY, from, Observable, ReplaySubject, Subscription, timer } from 'rxjs';
-import { catchError, distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, map, switchMap, takeUntil } from 'rxjs/operators';
 import {
 	TaskActionWithTimeoutService,
 	TasksName
@@ -60,7 +60,10 @@ export class CommunicationWithFigleafService {
 				);
 			}),
 			map((figleafStatus: MessageFromFigleaf) => figleafStatus.status === 0),
-			distinctUntilChanged()
+			distinctUntilChanged(),
+			takeUntil(this.isFigleafInstalled$.pipe(
+				filter((isFigleafInstalled) => !isFigleafInstalled),
+			))
 		).subscribe((isFigleafReady) => {
 			this.isFigleafReadyForCommunication.next(isFigleafReady);
 			if (isFigleafReady) {
