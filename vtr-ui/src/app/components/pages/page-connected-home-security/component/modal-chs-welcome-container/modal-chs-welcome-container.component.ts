@@ -38,6 +38,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit,
 	isOnline = true;
 	notificationSubscription: Subscription;
 	metricsParent = 'ConnectedHomeSecurity';
+	lenovoIdCallback;
 	constructor(
 		public activeModal: NgbActiveModal,
 		public homeSecurityMockService: HomeSecurityMockService,
@@ -120,11 +121,12 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit,
 
 	closeModal(reason) {
 		this.activeModal.close(reason);
+		this.chs.off(EventTypes.lenovoIdStatusChange, this.lenovoIdCallback);
 	}
 
 	next(switchPage, isLenovoIdLogin, isLocationServiceOn) {
-		const callback = (lenovoIdStatus) => {
-			if (isLocationServiceOn) {
+		this.lenovoIdCallback = (lenovoIdStatus) => {
+			if (this.isLocationServiceOn) {
 				if (lenovoIdStatus && this.chs.account.state === CHSAccountState.local && this.isOnline) {
 					this.startTrial();
 				} else {
@@ -134,6 +136,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit,
 				this.switchPage = 4;
 				this.showPageLocation = true;
 			}
+			this.chs.off(EventTypes.lenovoIdStatusChange, this.lenovoIdCallback);
 		};
 		if (switchPage === 1) {
 			this.switchPage = 2;
@@ -152,12 +155,12 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit,
 			} else {
 				this.switchPage = 3;
 				this.showPageLenovoId = true;
-				this.chs.on(EventTypes.lenovoIdStatusChange, callback);
+				this.chs.on(EventTypes.lenovoIdStatusChange, this.lenovoIdCallback);
 			}
 		} else if (switchPage === 3) {
 			this.showPageLenovoId = true;
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
-			this.chs.off(EventTypes.lenovoIdStatusChange, callback);
+			this.chs.off(EventTypes.lenovoIdStatusChange, this.lenovoIdCallback);
 			if (isLocationServiceOn) {
 				this.closeModal('success');
 			} else {
@@ -176,6 +179,9 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit,
 	prev(switchPage) {
 		if (switchPage > 0) {
 			this.switchPage = switchPage - 1;
+		}
+		if (switchPage === 3) {
+			this.chs.off(EventTypes.lenovoIdStatusChange, this.lenovoIdCallback);
 		}
 	}
 
