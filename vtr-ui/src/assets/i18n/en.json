@@ -504,8 +504,8 @@
 			"cameraPrivacy": "Camera",
 			"eyeCareMode": "Eye Care Mode",
 			"note": {
-				"accessNote": "doesn't have access to Lenovo Vantage",
-				"microphoneAndcameraPrivacyNotes": "Camera and Microphone",
+				"accessNote": "Lenovo Vantage doesn't have access to",
+				"microphoneAndcameraPrivacyNotes": "Camera and Microphone.",
 				"accessUrl": "Go to Windows settings to give access"
 			}
 		},
