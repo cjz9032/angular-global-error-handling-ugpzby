@@ -9,7 +9,7 @@ export class CommsService {
 	env = environment;
 	appId = '';
 	token = '';
-	serverSwitchLocalData = {};
+	private serverSwitchLocalData: any;
 
 	constructor(
 		private http: HttpClient,
