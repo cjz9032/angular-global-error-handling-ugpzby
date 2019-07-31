@@ -62,7 +62,10 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 			windowClass: 'Article-Detail-Modal',
 			keyboard: false
 		});
-
-		articleDetailModal.componentInstance.articleId = this.item.Id;
+		if (this.articleType === 'content') {
+			articleDetailModal.componentInstance.articleId = this.item.ActionLink;
+		} else {
+			articleDetailModal.componentInstance.articleId = this.item.Id;
+		}
 	}
 }
