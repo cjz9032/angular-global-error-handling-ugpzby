@@ -7,7 +7,11 @@
 					"status": {
 						"performance": "Performance",
 						"balance": "Balance",
-						"quiet": "Quiet"
+						"quiet": "Quiet",
+						"performanceUid": "thermal_mode_performance",
+						"balanceUid": "thermal_mode_balance",
+						"quietUid": "thermal_mode_quiet"
+
 					},
 					"statusText": {
 						"perText": "Higher CPU usage, Higher fan speed",
@@ -23,7 +27,11 @@
 					"status": {
 						"alwayson": "On",
 						"whenGaming": "When Gaming",
-						"off": "Off"
+						"off": "Off",
+						"alwaysonUid":"cpu_overclock_on",
+						"whenGamingUid": "cpu_overclock_when_gaming",
+						"offUid": "cpu_overclock_off"
+
 					},
 					"statusText": {
 						"onText": "CPU Overclocking will be activated",
