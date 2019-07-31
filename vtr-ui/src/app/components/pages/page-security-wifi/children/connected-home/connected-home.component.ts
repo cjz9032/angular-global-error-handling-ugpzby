@@ -56,7 +56,14 @@ export class ConnectedHomeComponent implements OnInit {
 			backdrop: true,
 			size: 'lg',
 			centered: true,
-			windowClass: 'Article-Detail-Modal'
+			windowClass: 'Article-Detail-Modal',
+			keyboard: false,
+			beforeDismiss: () => {
+				if (articleDetailModal.componentInstance.onBeforeDismiss) {
+					articleDetailModal.componentInstance.onBeforeDismiss();
+				}
+				return true;
+			}
 		});
 
 		articleDetailModal.componentInstance.articleId = this.peaceOfMindArticleId;
