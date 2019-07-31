@@ -291,6 +291,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			this.renderHybridModeStatus();
 		}
 
+		if (gamingStatus.optimizationFeature) {
+			this.renderAutoCloseStatus();
+		}
+
 		if (gamingStatus.networkBoostFeature) {
 			this.renderNetworkBoostStatus();
 		}

@@ -1,12 +1,13 @@
+import { AutoCloseStatus } from 'src/app/data-models/gaming/autoclose/autoclose-status.model';
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { AutoCloseStatus } from 'src/app/data-models/gaming/autoclose/autoclose-status.model';
 import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
 import { ModalTurnOnComponent } from '../../modal/modal-autoclose/modal-turn-on/modal-turn-on.component';
 import { ModalAddAppsComponent } from '../../modal/modal-autoclose/modal-add-apps/modal-add-apps.component';
+import { AutoCloseNeedToAsk } from 'src/app/data-models/gaming/autoclose/autoclose-need-to-ask.model';
 
 @Component({
   selector: 'vtr-widget-autoclose',
@@ -20,7 +21,8 @@ export class WidgetAutocloseComponent implements OnInit {
   public autoCloseAppList: any;
   setAutoClose: any;
   gamingProperties: GamingAllCapabilities = new GamingAllCapabilities();
-  AutoCloseStatusObj: AutoCloseStatus = new AutoCloseStatus();
+  autoCloseStatusObj: AutoCloseStatus = new AutoCloseStatus();
+  needToAskStatusObj: AutoCloseNeedToAsk = new AutoCloseNeedToAsk();
   constructor(private modalService: NgbModal, private gamingCapabilityService: GamingAllCapabilitiesService, private gamingAutoCloseService: GamingAutoCloseService) { }
 
   ngOnInit() {
@@ -29,10 +31,12 @@ export class WidgetAutocloseComponent implements OnInit {
     this.gamingProperties.optimizationFeature = this.gamingCapabilityService.getCapabilityFromCache(
       LocalStorageKey.optimizationFeature
     );
-    this.initAutoCloseStatus();
     this.displayAutoCloseList();
-    this.initAutoCloseStatus();
-
+    this.setAutoClose = this.gamingAutoCloseService.getAutoCloseStatusCache();
+    this.gamingAutoCloseService.getNeedToAskStatusCache();
+    this.gamingAutoCloseService.getAutoCloseStatus().then((status: any) => {
+      this.setAutoClose = status;
+    });
   }
 
   // Get Gaming AutoClose Lists
@@ -49,11 +53,7 @@ export class WidgetAutocloseComponent implements OnInit {
   }
 
   openTurnOnModal(event: Event): void {
-    const status = this.getAskAgain();
-    console.log("function call=============================>", this.getAskAgain());
-    console.log("Second wala popup=============================>", status);
-    if (status) {
-      console.log("Second wala popup=============================>")
+    if (this.setAutoClose) {
       this.modalService
         .open(ModalAddAppsComponent, {
           backdrop: 'static',
@@ -68,31 +68,25 @@ export class WidgetAutocloseComponent implements OnInit {
     }
   }
 
-  getAskAgain() {
+  initGetAsk() {
     return this.gamingAutoCloseService.getNeedToAsk().then((status: any) => {
-      console.log('Get successfully ------------------------>', status);
       return status;
     });
   }
 
-  removeApp(appName: string) {
+  removeApp(appName: string, index: number) {
     this.gamingAutoCloseService.delAppsAutoCloseList(appName).then((response: any) => {
       console.log('Deleted successfully ------------------------>', response);
+      this.autoCloseAppList.splice(index, 1);
     });
   }
 
   toggleAutoClose(event: any) {
-    console.log("Here=================================================>", event)
     console.log(event.switchValue);
     this.setAutoClose = event.switchValue;
     this.gamingAutoCloseService.setAutoCloseStatus(event.switchValue).then((response: any) => {
-      console.log('set auto close ------------------------>', response);
-    });
-  }
-
-  initAutoCloseStatus() {
-    this.gamingAutoCloseService.getAutoCloseStatus().then((response: any) => {
-      console.log('get auto close ------------------------>', response);
+      this.gamingAutoCloseService.setAutoCloseStatusCache(event.switchValue);
+      this.setAutoClose = event.switchValue;
     });
   }
 }

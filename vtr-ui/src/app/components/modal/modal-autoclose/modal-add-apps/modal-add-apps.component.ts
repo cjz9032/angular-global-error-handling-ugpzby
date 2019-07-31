@@ -33,7 +33,7 @@ export class ModalAddAppsComponent implements OnInit {
     this.activeModal.dismiss();
   }
 
-  toggleAddAppsToList(event: any) {
+  toggleAddAppsToList(event: any, index: number) {
     console.log(event.target.checked);
     console.log(event.target.value);
     if (event.target.checked) {
@@ -41,6 +41,7 @@ export class ModalAddAppsComponent implements OnInit {
       try {
         this.gamingAutoCloseService.addAppsAutoCloseList(this.addAppsList).then((success: any) => {
           console.log('Added successfully ------------------------>', success);
+          this.runningList.splice(index, 1);
         });
       } catch (error) {
         console.error(error.message);

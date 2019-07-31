@@ -19,6 +19,9 @@ export class ModalTurnOnComponent implements OnInit {
 
   showAddAppsModal(event: Event): void {
     this.activeModal.close('close');
+    this.gamingAutoCloseService.setAutoCloseStatus(true).then((status: any) => {
+      this.gamingAutoCloseService.setAutoCloseStatusCache(status);
+    });
     this.modalService
       .open(ModalAddAppsComponent, {
         backdrop: 'static',
@@ -32,11 +35,10 @@ export class ModalTurnOnComponent implements OnInit {
   }
 
   setAksAgain(event: any) {
-    console.log(event.target.checked);
-    this.statusAskAgain = event.target.checked;
     try {
-      this.gamingAutoCloseService.setNeedToAsk(this.statusAskAgain).then((response: any) => {
+      this.gamingAutoCloseService.setNeedToAsk(event.target.checked).then((response: any) => {
         console.log('Set successfully ------------------------>', response);
+        this.gamingAutoCloseService.setNeedToAskStatusCache(event.target.checked);
       });
     } catch (error) {
       console.error(error.message);
