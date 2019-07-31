@@ -102,5 +102,9 @@ export class LanguageService {
 			this.logger.error('exception in updateLanguageSettings', JSON.stringify(e));
 		}
 	}
+
+	public useEnglish() {
+		this.translate.use('en');
+	}
 }
 

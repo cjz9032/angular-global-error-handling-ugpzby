@@ -46,11 +46,11 @@
 				text-align: left;
 			}
 			.app-title {
-				font-size: 2rem;
+				font-size: $sub_title;
 
 				.app-name {
 					text-transform: uppercase;
-					font-weight: $weight_black;
+					font-weight: $weight_bold;
 				}
 
 				.app-version {
@@ -62,7 +62,7 @@
 			}
 
 			.device-type {
-				font-size: 1.6rem;
+				font-size: $body;
 				text-align: left;
 			}
 		}

@@ -1,6 +1,6 @@
 @import "../../../app.theme";
 
-.article-item {
+.vtr-ui-article-item {
 	box-shadow: $drop_shadow;
 	border-radius: $border_radius;
 	background-color: $light;
@@ -16,6 +16,10 @@
 		}
 	}
 
+	a {
+		cursor: pointer;
+	}
+
 	.content {
 		position: relative;
 		z-index: 1;
@@ -23,16 +27,11 @@
 		padding: 32 / 420 * 100% 40 / 430 * 100% 0;
 		height: 40%;
 
-		a {
-			cursor: pointer;
-		}
-
 		.title {
 			color: $main_dark;
 			font-size: 2.3rem;
 			height: 7rem;
 			width: 100%;
-			overflow: hidden;
 			display: block;
 			font-weight: $weight_light;
 			@media #{$mediaquery_10} {
@@ -76,7 +75,7 @@
 			top: 116 / 182 * 100%;
 			left: 40 / 430 * 100%;
 			font-size: 1.3rem;
-			font-weight: $weight_bold;
+			font-weight: $weight_medium;
 			cursor: pointer;
 			text-transform: uppercase;
 
@@ -87,8 +86,7 @@
 					text-decoration: none;
 
 					.link-label {
-						padding-bottom: .2rem;
-						border-bottom: .2rem solid $main;
+						border-bottom: .2rem solid transparent;
 					}
 				}
 
@@ -113,7 +111,6 @@
 		background-position: 50% 50%;
 		background-repeat: no-repeat;
 		display: block;
-		cursor: pointer;
 
 		.bottomright {
 

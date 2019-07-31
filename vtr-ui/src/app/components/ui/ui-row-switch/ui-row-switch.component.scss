@@ -75,15 +75,16 @@
 		}
 
 		.title {
-			font-size: 1.8rem;
+			font-size: $section_header;
 			color: $color;
-			font-weight: $weight_600;
+			font-weight: $weight_light;
 			letter-spacing: 0.05rem;
 			text-transform: none;
 		}
 
 		.caption {
-			font-size: 1.5rem;
+			font-size: $body;
+			font-weight: $weight_light;
 			color: $color;
 			max-width: 60rem;
 		}

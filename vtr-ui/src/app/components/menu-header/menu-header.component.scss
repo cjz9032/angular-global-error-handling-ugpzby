@@ -22,9 +22,13 @@
 			outline: none;
 		}
 		.tab-label {
-			font-size: 2rem;
+			font-size: $title;
+			font-weight: $weight_600;
 			padding-bottom: 2rem;
 			cursor: pointer;
+			@media #{$mediaquery_X28} {
+				font-size: 2rem;
+			}
 		}
 		fa-icon {
 			&.menu-pointer {

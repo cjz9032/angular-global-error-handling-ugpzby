@@ -19,7 +19,7 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 	@Input() clickable = true;
 	@Input() metricsEvent: string;
 	@Input() blockPosition: string;
-
+	@Input() ariaLabel:string;
 	/** object having item class list*/
 	itemStatusClass = {
 		0: 'good',
