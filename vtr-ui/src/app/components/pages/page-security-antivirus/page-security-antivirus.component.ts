@@ -260,7 +260,13 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			size: 'lg',
 			centered: true,
 			windowClass: 'Article-Detail-Modal',
-			keyboard: false
+			keyboard: false,
+			beforeDismiss: () => {
+				if (articleDetailModal.componentInstance.onBeforeDismiss) {
+					articleDetailModal.componentInstance.onBeforeDismiss();
+				}
+				return true;
+			}
 		});
 
 		articleDetailModal.componentInstance.articleId = this.mcafeeArticleId;

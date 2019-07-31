@@ -21,8 +21,15 @@ export class PageSupportComponent implements OnInit {
 	title = 'support.common.getSupport';
 	searchWords = '';
 	searchCount = 1;
-	backupContentArticles: any = [];
-	articles: any = [];
+	emptyArticles = {
+		leftTop: [],
+		middleTop: [],
+		leftBottom: [],
+		middleBottom: [],
+		right: [],
+	};
+	backupContentArticles = this.copyObjectArray(this.emptyArticles);
+	articles = this.copyObjectArray(this.emptyArticles);
 	/** content | articles */
 	articlesType = 'loading';
 	articleCategories: any = [];
@@ -159,7 +166,7 @@ export class PageSupportComponent implements OnInit {
 							const retryInterval = setInterval(() => {
 								const cacheWarranty = sessionStorage.getItem('warrantyCache');
 								if (this.articleCategories.length > 0 &&
-									this.articles.length > 0 &&
+									this.articles.leftTop.length > 0 &&
 									cacheWarranty) {
 									clearInterval(retryInterval);
 									return;
@@ -167,7 +174,7 @@ export class PageSupportComponent implements OnInit {
 								if (this.articleCategories.length === 0) {
 									this.fetchCMSArticleCategory(this.language);
 								}
-								if (this.articles.length === 0) {
+								if (this.articles.leftTop.length === 0) {
 									this.fetchCMSContents();
 								}
 								if (!cacheWarranty) {
@@ -208,17 +215,17 @@ export class PageSupportComponent implements OnInit {
 				if (response && response.length > 0) {
 					response.forEach(article => {
 						if (article.FeatureImage) {
-							article.FeatureImage = article.FeatureImage.replace('(', '%28').replace( ')', '%29');
+							article.FeatureImage = article.FeatureImage.replace('(', '%28').replace(')', '%29');
 						}
 					});
-					this.articles = response.slice(0, 8);
-					this.backupContentArticles = response.slice(0, 8);
+					this.sliceArticles(response);
+					this.backupContentArticles = this.copyObjectArray(this.articles);
 					// console.log(this.articles);
 					this.articlesType = 'content';
 					const msg = `Performance: Support page get content articles, ${contentUseTime}ms`;
 					this.loggerService.info(msg);
 				} else {
-					const msg = `Performance: Support page not have "${lang}" content articles, ${contentUseTime}ms`;
+					const msg = `Performance: Support page not have this Language content articles, ${contentUseTime}ms`;
 					this.loggerService.info(msg);
 					this.fetchCMSContents('en');
 				}
@@ -232,7 +239,7 @@ export class PageSupportComponent implements OnInit {
 	fetchCMSArticleCategory(lang: string) {
 		this.cateStartTime = new Date();
 		const queryOptions = {
-			Lang: this.language,
+			Lang: lang ? lang : this.language,
 			GEO: this.region,
 			OEM: 'Lenovo',
 			OS: 'Windows',
@@ -249,7 +256,7 @@ export class PageSupportComponent implements OnInit {
 					const msg = `Performance: Support page get article category, ${cateUseTime}ms`;
 					this.loggerService.info(msg);
 				} else {
-					const msg = `Performance: Support page not have "${lang}" article category, ${cateUseTime}ms`;
+					const msg = `Performance: Support page not have this Language article category, ${cateUseTime}ms`;
 					this.loggerService.info(msg);
 					this.fetchCMSArticleCategory('en');
 				}
@@ -270,9 +277,9 @@ export class PageSupportComponent implements OnInit {
 
 	onInnerBack() {
 		this.isCategoryArticlesShow = false;
-		if (this.backupContentArticles.length > 0) {
+		if (this.backupContentArticles.leftTop.length > 0) {
 			this.articlesType = 'content';
-			this.articles = this.backupContentArticles.slice();
+			this.articles = this.copyObjectArray(this.backupContentArticles);
 		} else {
 			this.fetchCMSContents();
 		}
@@ -295,10 +302,10 @@ export class PageSupportComponent implements OnInit {
 				if (response && response.length > 0) {
 					response.forEach(article => {
 						if (article.Thumbnail) {
-							article.Thumbnail = article.Thumbnail.replace('(', '%28').replace( ')', '%29');
+							article.Thumbnail = article.Thumbnail.replace('(', '%28').replace(')', '%29');
 						}
 					});
-					this.articles = response;
+					this.sliceArticles(response);
 					this.articlesType = 'articles';
 				} else {
 					this.fetchCMSArticles(categoryId, 'en');
@@ -311,6 +318,31 @@ export class PageSupportComponent implements OnInit {
 				}
 			}
 		);
+	}
+
+	sliceArticles(allArticles: any) {
+		this.articles = this.copyObjectArray(this.emptyArticles);
+		allArticles.forEach((article, index) => {
+			if (index < 4) {
+				if (index % 2 === 0) {
+					this.articles.leftTop.push(article);
+				} else {
+					this.articles.middleTop.push(article);
+				}
+			} else {
+				if (index % 3 === 1) {
+					this.articles.leftBottom.push(article);
+				} else if (index % 3 === 2) {
+					this.articles.middleBottom.push(article);
+				} else {
+					this.articles.right.push(article);
+				}
+			}
+		});
+	}
+
+	copyObjectArray(obj: any) {
+		return JSON.parse(JSON.stringify(obj));
 	}
 
 	search(value: string) {

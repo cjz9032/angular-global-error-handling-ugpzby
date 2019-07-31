@@ -3,16 +3,16 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-12">
-          <vtr-ui-switch-onoff>
+          <vtr-ui-switch-onoff [value]="setAutoClose" (toggle)="toggleAutoClose($event)" vtrMetrics
+            metricsEvent="featureClick">
           </vtr-ui-switch-onoff>
           <p class="intro-text">{{title}}</p>
           <div class="autoclose-wrapper">
             <ul class="d-flex flex-wrap">
               <li class="add-icon">
-                <div (click)="openModal($event)">
+                <div (click)="openTurnOnModal($event)">
                   <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
                     <title>6.20pxIcon/add</title>
                     <desc>Created with Sketch.</desc>
                     <g id="6.20pxIcon/add" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -29,10 +29,9 @@
                   <img [src]="app.iconName | sanitize : 'resourceUrl'">
                 </div>
                 <div>{{app.processDescription}}</div>
-                <div class="remove-app">
+                <div class="remove-app" (click)="removeApp(app.processDescription)">
                   <svg width="16px" height="16px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
                     <title>6.20pxIcon/Close</title>
                     <desc>Created with Sketch.</desc>
                     <g id="6.20pxIcon/Close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

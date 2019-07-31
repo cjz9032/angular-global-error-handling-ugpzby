@@ -74,7 +74,13 @@ export class ModalArticleDetailComponent implements OnInit {
 		this.activeModal.close('enable');
 	}
 
-	closeModal() {
+	// this function would only be fired when the modal backdrop was clicked,
+	// and the modal would be closed automatically in this scenario
+	onBeforeDismiss() {
+		this.sendArticleViewMetric();
+	}
+
+	sendArticleViewMetric() {
 		if (this.metricClient) {
 			const modalElement = this.element.nativeElement.closest('ngb-modal-window');
 			const metricsData = {
@@ -86,12 +92,12 @@ export class ModalArticleDetailComponent implements OnInit {
 				DocReadPosition: Math.round(((modalElement.scrollTop + window.innerHeight) / modalElement.scrollHeight) * 20),
 				MediaReadPosition: 0
 			};
-			console.log(window.innerHeight, 'hellokanchan');
-			console.log(modalElement.scrollTop);
-			console.log(modalElement.scrollHeight, 'helloneha');
-			console.log('------reporting metrics------\n'.concat(JSON.stringify(metricsData)));
 			this.metricClient.sendAsync(metricsData);
 		}
+	}
+
+	closeModal() {
+		this.sendArticleViewMetric();
 		this.activeModal.close('close');
 	}
 
