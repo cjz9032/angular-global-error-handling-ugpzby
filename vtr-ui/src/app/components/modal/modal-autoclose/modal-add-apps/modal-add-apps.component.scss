@@ -3,6 +3,7 @@
 ::ng-deep .apps-modal-container {
 	.modal-dialog {
 		top: 20%;
+		max-width: 110rem;
 	}
 	.top-header {
 		border: 0;
@@ -44,6 +45,7 @@
 					display: inline-block;
 					position: relative;
 					padding-bottom: 35px;
+					margin-bottom: 5rem;
 					div:nth-child(1) {
 						width: 5rem;
 						height: 5rem;

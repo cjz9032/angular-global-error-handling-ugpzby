@@ -109,26 +109,30 @@ export class GamingAutoCloseService {
   }
 
   // Auto close  status changes
-  setAutoCloseStatusCache(autoCloseStatusChanges: AutoCloseStatus) {
-    this.commonService.setLocalStorageValue(LocalStorageKey.AutoCloseStatus, autoCloseStatusChanges);
+  setAutoCloseStatusCache(status: any) {
+    this.commonService.setLocalStorageValue(LocalStorageKey.AutoCloseStatus, status);
   }
 
-  getAutoCloseStatusCache(): AutoCloseStatus {
-    const autoCloseChangeStatus = new AutoCloseStatus();
-    autoCloseChangeStatus.autoCloseStatus = this.commonService.getLocalStorageValue(LocalStorageKey.AutoCloseStatus);
-    return autoCloseChangeStatus;
+  getAutoCloseStatusCache() {
+    return this.commonService.getLocalStorageValue(LocalStorageKey.AutoCloseStatus);
   }
 
   // Need to ask status changes
 
-  setNeedToAskStatusCache(askStatusChanges: AutoCloseNeedToAsk) {
-    this.commonService.setLocalStorageValue(LocalStorageKey.NeedToAsk, askStatusChanges.needToAsk);
+  setNeedToAskStatusCache(askStatusChanges: any) {
+    this.commonService.setLocalStorageValue(LocalStorageKey.NeedToAsk, askStatusChanges);
   }
 
-  getNeedToAskStatusCache(): AutoCloseNeedToAsk {
-    const askChangeStatus = new AutoCloseNeedToAsk();
-    askChangeStatus.needToAsk = this.commonService.getLocalStorageValue(LocalStorageKey.NeedToAsk);
-    return askChangeStatus;
+  getNeedToAskStatusCache() {
+    return this.commonService.getLocalStorageValue(LocalStorageKey.NeedToAsk);
+  }
+
+  setAutoCloseListCache(processList: any) {
+    this.commonService.setLocalStorageValue(LocalStorageKey.AutoCloseList, processList);
+  }
+
+  getAutoCloseListCache() {
+    return this.commonService.getLocalStorageValue(LocalStorageKey.AutoCloseList);
   }
 
 }
