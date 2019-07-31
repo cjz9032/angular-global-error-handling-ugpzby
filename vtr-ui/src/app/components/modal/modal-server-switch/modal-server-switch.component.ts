@@ -45,12 +45,15 @@ export class ModalServerSwitchComponent implements OnInit {
 			cmsserver: new FormControl(this.serverSwitchData.serverList[0], Validators.required)
 		});
 
-
+		// VAN-5872, server switch feature
 		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
 		if (serverSwitchLocalData && serverSwitchLocalData.forceit && serverSwitchLocalData.forceit === true) {
-			this.serverSwitchForm.controls.country.setValue(serverSwitchLocalData.country.Value);
-			this.serverSwitchForm.controls.language.setValue(serverSwitchLocalData.language.Value);
-			this.serverSwitchForm.controls.segment.setValue(serverSwitchLocalData.segment.Value);
+			this.serverSwitchForm.controls.country.setValue(
+				this.getSelectedObject(this.serverSwitchData.countryList, serverSwitchLocalData.country.Value));
+			this.serverSwitchForm.controls.language.setValue(
+				this.getSelectedObject(this.serverSwitchData.languageList, serverSwitchLocalData.language.Value));
+			this.serverSwitchForm.controls.segment.setValue(
+				this.getSelectedObject(this.serverSwitchData.segmentList, serverSwitchLocalData.segment.Value));
 			this.serverSwitchForm.controls.cmsserver.setValue(serverSwitchLocalData.cmsserver);
 		}
 	}
@@ -177,4 +180,9 @@ export class ModalServerSwitchComponent implements OnInit {
 			});
 	}
 
+	private getSelectedObject(array: any[], value: string) {
+		return array.find(o => o.Value === value);
+		// array.filter(e => e.Value === value);
+
+	}
 }
