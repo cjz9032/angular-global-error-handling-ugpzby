@@ -46,9 +46,6 @@ export class ModalServerSwitchComponent implements OnInit {
 		});
 
 
-
-
-
 		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
 		if (serverSwitchLocalData && serverSwitchLocalData.forceit && serverSwitchLocalData.forceit === true) {
 			this.serverSwitchForm.controls.country.setValue(serverSwitchLocalData.country.Value);
