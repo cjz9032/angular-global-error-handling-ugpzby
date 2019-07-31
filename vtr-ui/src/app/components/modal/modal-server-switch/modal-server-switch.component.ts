@@ -39,9 +39,9 @@ export class ModalServerSwitchComponent implements OnInit {
 		this.serverSwitchData = new ServerSwitch();
 
 		this.serverSwitchForm = new FormGroup({
-			country: new FormControl(this.serverSwitchData.countryList[0].ItemID, Validators.required),
-			language: new FormControl(this.serverSwitchData.languageList[0].Value, Validators.required),
-			segment: new FormControl(this.serverSwitchData.segmentList[0].Value, Validators.required),
+			country: new FormControl(this.serverSwitchData.countryList[0], Validators.required),
+			language: new FormControl(this.serverSwitchData.languageList[7], Validators.required),
+			segment: new FormControl(this.serverSwitchData.segmentList[3], Validators.required),
 			cmsserver: new FormControl(this.serverSwitchData.serverList[0], Validators.required)
 		});
 
