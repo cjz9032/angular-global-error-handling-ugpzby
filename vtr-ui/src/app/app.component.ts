@@ -350,13 +350,15 @@ export class AppComponent implements OnInit {
 
 			// VAN-5872, server switch feature
 			if (event.ctrlKey && event.shiftKey && event.keyCode === 67) {
-				const serverSwitchModal: NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
+				let serverSwitchModal: NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
 					backdrop: true,
 					size: 'lg',
 					centered: true,
 					windowClass: 'Server-Switch-Modal',
 					keyboard: false
 				});
+
+				serverSwitchModal.componentInstance.serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
 			}
 		} catch (error) {
 			console.error('AppComponent.onKeyUp', error);

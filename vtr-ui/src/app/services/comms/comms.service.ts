@@ -9,6 +9,7 @@ export class CommsService {
 	env = environment;
 	appId = '';
 	token = '';
+	serverSwitchLocalData = {};
 
 	constructor(
 		private http: HttpClient,
@@ -20,7 +21,9 @@ export class CommsService {
 	}
 
 	endpointGetCall(endpoint, queryParams: any = {}, httpOptions: any = {}) {
-		const url = this.env.cmsApiRoot + endpoint;
+		const url = (this.serverSwitchLocalData && this.serverSwitchLocalData.forceit && this.serverSwitchLocalData.forceit === true ?
+			this.serverSwitchLocalData.cmsserver : this.env.cmsApiRoot) + endpoint;
+
 		const httpQueryParams = new HttpParams({
 			fromObject: queryParams
 		});
@@ -35,5 +38,9 @@ export class CommsService {
 		const self = this;
 		this.devService.writeLog('FLAT GET ENDPOINT: ', url);
 		return this.http.get(url);
+	}
+
+	setServerSwitchLocalData(serverSwitchLocalData) {
+		this.serverSwitchLocalData = serverSwitchLocalData;
 	}
 }
