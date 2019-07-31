@@ -52,8 +52,14 @@
 
 .vtr-page-shift-up-medium {
 	@media #{$mediaquery_X5} {
-		margin-top: 0;
-		padding-left: 9rem;
+		margin-top: 2rem;
+		margin-left: 9rem;
 	}
 
+}
+
+.vtr-page-right-column {
+	@media #{$mediaquery_X4} {
+		margin-top: 0 !important;
+	}
 }

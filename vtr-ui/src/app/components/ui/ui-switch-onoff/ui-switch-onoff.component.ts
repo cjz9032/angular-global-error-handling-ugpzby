@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
-import { TranslationService } from 'src/app/services/translation/translation.service';
 import Translation from 'src/app/data-models/translation/translation';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { TranslationSection } from 'src/app/enums/translation-section.enum';
 import { CommonService } from '../../../services/common/common.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { LanguageService } from 'src/app/services/language/language.service';
 
 @Component({
 	selector: 'vtr-ui-switch-onoff',
@@ -28,11 +28,11 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	size = 'switch-xs';
 
 	constructor(
-		public translationService: TranslationService,
+		public languageService: LanguageService,
 		public commonService: CommonService,
 		public modalService: NgbModal
 	) {
-		this.uiSubscription = this.translationService.subscription.subscribe((translation: Translation) => {
+		this.uiSubscription = this.languageService.subscription.subscribe((translation: Translation) => {
 			this.onLanguageChange(translation);
 		});
 	}
@@ -53,12 +53,12 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param $event the toggle button info.
 	 * this function is to send the change event for readonly = false types.
 	 */
 	onChange($event) {
-		setTimeout(()=>{
+		setTimeout(() => {
 			if (!this.readonly) {
 				this.disabled = true;
 				if (this.name === 'recommended-updates') {
@@ -71,12 +71,12 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 				$event.switchValue = this.value;
 				this.toggle.emit($event);
 			}
-		},0);
+		}, 0);
 
 	}
 
 	/**
-	 * 
+	 *
 	 * @param $event the toggle button info.
 	 * this function is to send the change event for the readonly = true types.
 	 */

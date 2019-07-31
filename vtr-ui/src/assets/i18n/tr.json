@@ -3,341 +3,327 @@
         "dashboard": {
             "device": {
                 "quickSettings": {
-                    "title": "Thermal Mode",
+                    "title": "Isı Kipi",
                     "status": {
-                        "performance": "Performance",
-                        "balance": "Balance",
-                        "quiet": "Quiet"
+                        "performance": "Performans",
+                        "balance": "Denge",
+                        "quiet": "Sessiz"
                     },
                     "statusText": {
-                        "perText": "Higher CPU usage, Higher fan speed",
-                        "balText": "Normal CPU and fan speed",
-                        "quietText": "Lower CPU usage, Lower fan speed"
+                        "perText": "Yüksek CPU kullanımı Yüksek fan hızı",
+                        "balText": "Normal CPU ve fan hızı",
+                        "quietText": "Düşük CPU kullanımı Düşük fan hızı"
                     },
-                    "wifiSecurity": "Wifi Security",
+                    "wifiSecurity": "Wifi Güvenliği",
                     "dolby": "Dolby",
-                    "rapidCharge": "Rapid Charge"
+                    "rapidCharge": "Hızlı Şarj"
                 },
                 "legionEdge": {
-                    "title": "CPU Overclock",
+                    "title": "CPU Hız Aşırtma",
                     "status": {
-                        "alwayson": "On",
-                        "whenGaming": "When Gaming",
-                        "off": "Off"
+                        "alwayson": "Açık",
+                        "whenGaming": "Oyun Oynarken",
+                        "off": "Kapalı"
                     },
                     "statusText": {
-                        "onText": "CPU Overclocking will be activated",
-                        "gamingText": "CPU Overclocking will be activated automatically while game launches",
-                        "offText": "CPU Overclocking will be disabled"
+                        "onText": "CPU Hız Aşırtma etkinleştirilecek",
+                        "gamingText": "CPU Hız Aşırtma, oyun başlarken otomatik olarak etkinleştirilecektir",
+                        "offText": "CPU Hız Aşırtma devre dışı bırakılacak"
                     },
-                    "ramOverlock": "RAM Overclock",
+                    "ramOverlock": "RAM Hız Aşırtma",
                     "popup": {
-                        "text": "Change will be effective after restarting computer.",
-                        "button": "ok"
+                        "text": "Değişiklik, bilgisayar yeniden başlatıldıktan sonra etkili olacaktır.",
+                        "button": "tamam"
                     },
                     "driverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "You need install driver for RAM Overclock to  make it effective",
-                        "button": "Install",
-                        "link": "cancel",
-                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
-                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
+                        "headerText": "Sürücü Kurulumu Gerekli",
+                        "text": "RAM Hız Aşırtmayı etkinleştirmek için sürücüyü yükleyin (Yeniden Yükleme Gerekir)",
+                        "button": "Kur",
+                        "link": "iptal",
+                        "networkBoostText": "Etkili hale getirmek için Ağ Yükseltme sürücüsünü yüklemeniz gerekir",
+                        "hybridModeText": "Etkili hale getirmek için Hibrit Kipi sürücüsünü yüklemeniz gerekir",
+                        "cpuOverclockText": "CPU Hız Aşırtmayı etkinleştirmek için sürücüyü yükleyin (Yeniden Yükleme Gerekir)"
                     },
-                    "autoClose": "Auto Close",
-                    "networkBoost": "Network Boost",
-                    "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock",
+                    "autoClose": "Oto. Kapat",
+                    "networkBoost": "Ağ Yükseltme",
+                    "hybridMode": "Hibrit Kipi",
+                    "touchpadLock": "Touchpad Kilidi",
                     "lightingDriverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "Please install driver",
-                        "button": "Install",
-                        "link": "cancel"
+                        "headerText": "Sürücü Kurulumu Gerekli",
+                        "text": "Aydınlatmayı etkinleştirmek için sürücüyü yükleyin (Yeniden Yükleme Gerekir)",
+                        "button": "Kur",
+                        "link": "iptal"
                     },
                     "lightingColorMessage": {
-                        "text": "Selecting color not available to this effect."
+                        "text": "Bu efekt için renk seçimi yapılamıyor."
                     }
                 },
                 "systemTools": {
-                    "power": "Power",
-                    "media": "Media",
-                    "macroKey": "Marco Key",
-                    "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update",
-                    "header": "System Tools"
+                    "power": "Güç",
+                    "media": "Ortam",
+                    "macroKey": "Makro Tuşu",
+                    "hardwareScan": "Donanım Taraması",
+                    "systemUpdate": "Sistem Güncellemesi",
+                    "header": "Sistem Araçları"
                 },
                 "lighting": {
-                    "title": "Lighting Customize",
-                    "header": "Lighting"
+                    "title": "Aydınlatmayı Özelleştirme",
+                    "header": "Aydınlatma"
                 },
                 "legionEdgeModal": {
-                    "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
-                    "line2": "<b>Feature Management Overview</b> <br> Some features not available on all devices",
-                    "line3": "<b>CPU Overclocking </b><br> Boost the maximum speed for your processor",
-                    "line4": "<b>RAM Overclocking </b><br> Boost the maximum speed for your memory",
-                    "line5": "<b>Network Boost </b><br> Prioritize network traffic for the game you're playing",
-                    "line6": "<b>Dolby </b><br> Tune your audio specifically for gaming with Dolby technology",
-                    "line7": "<b>Hybrid Mode </b><br> Disable advanced GPU settings when not gaming to boost battery performance",
-                    "line8": "<b>Rapid Charge </b><br> Game on the go longer with quicker battery charging",
-                    "line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
-                    "line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
-                    "line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control"
+                    "line1": "Vantage Edge ile ayarlarınız kullanıma göre otomatik olarak ayarlanır. \n Oyun oynarken maksimum performans, oyun oynamadığınızda daha uzun pil ömrü sağlanır.",
+                    "line2": "<b>Özellik Yönetimine Genel Bakış</b> <br> Bazı özellikler tüm cihazlarda kullanılamaz",
+                    "line3": "<b>CPU Hız Aşırtma </b><br> İşlemcinizi maksimum hızla çalıştırın",
+                    "line4": "<b>RAM Hız Aşırtma </b><br> Belleğinizi maksimum hızla çalıştırın",
+                    "line5": "<b>Ağ Yükseltme </b><br> Oynadığınız oyunun ağ trafiğine öncelik verin",
+                    "line6": "<b>Dolby </b><br> Dolby teknolojisiyle sesinizi oyun oynamak için özel olarak ayarlayın",
+                    "line7": "<b>Hibrit Kipi </b><br> Pil performansını artırmak için oyun oynamadığınızda gelişmiş GPU ayarlarını devre dışı bırakın",
+                    "line8": "<b>Hızlı Şarj </b><br> Daha hızlı pil şarjıyla hareket halindeyken daha uzun süre oyun oynayın",
+                    "line9": "<b>Touchpad Kilidi </b><br> Oyun oynarken dokunmaya duyarlı tableti devre dışı bırakarak hatalı girişleri önleyin",
+                    "line10": "<b>Oto. Kapat </b><br> Kullanılabilir sistem kaynaklarını en üst düzeye çıkarmak için oyuna başlamadan önce gerekli olmayan işlemleri temizleyin",
+                    "line11": "<b>Isı Kipi </b><br> Fan hızı ve soğutma kontrolü için tercih ettiğiniz cihaz profilini ayarlayın"
                 },
                 "systemInfo": {
-                    "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                    "systenTooltip": "Üretim ve model bilgilerini de içeren açıklamaları göstermek için CPU/GPU/RAM ve farklı sürücülerin üzerine gelin"
                 },
                 "systemStatus": {
-                    "info": "INFO"
+                    "info": "BİLGİ"
                 }
             }
         },
         "common": {
             "menu": {
                 "support": {
-                    "title": "Support",
-                    "sub1": "Support",
+                    "title": "Destek",
+                    "sub1": "Destek",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
             }
         },
         "macroKey": {
-            "title": "Macro Key",
-            "introLine": "You can record a series of key input, and use them in gaming or other operations.",
+            "title": "Makro Tuşu",
+            "introLine": "Bir dizi tuş girişini kaydedebilir ve bunları, oyunlarda veya diğer işlemlerde kullanabilirsiniz.",
             "status": {
                 "on": {
-                    "title": "On",
-                    "description": "Always Enabled"
+                    "title": "Açık",
+                    "description": "Her Zaman Etkin"
                 },
                 "whileGaming": {
-                    "title": "Macro Key enabled only when gaming",
-                    "description": "It will be enabled when you game and remain as num key when you don't."
+                    "title": "Makro Tuşu yalnızca oyun oynarken etkindir",
+                    "description": "Oyun oynadığınız sırada etkinleşir ve oynamadığınız zamanlarda sayı tuşu olarak kalır."
                 },
                 "off": {
-                    "title": "Off",
-                    "description": "Always Off"
+                    "title": "Kapalı",
+                    "description": "Her Zaman Kapalı"
                 }
             },
             "details": {
                 "intro": {
-                    "noNumber": "SELECT A MACRO KEY",
-                    "title": "CREATE A MACRO KEY FOR",
-                    "line1": "click the start recording button below",
-                    "line2": "type in macro key",
-                    "line3": "stop recording when finishing typing"
+                    "noNumber": "BİR MAKRO TUŞU SEÇİN",
+                    "title": "ŞUNUN İÇİN BİR MAKRO TUŞU OLUŞTUR",
+                    "line1": "aşağıdaki kaydı başlatma düğmesine tıklayın",
+                    "line2": "makro tuşuna basın",
+                    "line3": "yazmayı bitirirken kaydı durdurun"
                 },
                 "buttons": {
-                    "start": "START RECORDING",
-                    "stop": "STOP RECORDING",
-                    "numberPrefix": "NUM"
+                    "start": "KAYDI BAŞLAT",
+                    "stop": "KAYDI DURDUR",
+                    "numberPrefix": "SAYI"
                 },
                 "recording": {
-                    "title": "START TYPING",
-                    "description": "20 inputs within 20 seconds can be recorded."
+                    "title": "YAZMAYA BAŞLAYIN",
+                    "description": "20 saniye içindeki 20 giriş kaydedilebilir."
                 },
                 "recorded": {
-                    "title": "MACRO KEY FOR ",
-                    "deleteKey": "Delete Key",
-                    "clear": "Clear",
+                    "title": "ŞUNUN MAKRO TUŞU ",
+                    "deleteKey": "Tuşu Sil",
+                    "clear": "Temizle",
                     "intervalStatus": {
                         "keep": {
-                            "title": "Keep Delay",
-                            "description": "Intervals of key actions will be kept and applied when using this macro key."
+                            "title": "Gecikmeyi Koru",
+                            "description": "Tuş eylemlerinin aralıkları korunacak ve bu makro tuşu kullanılırken uygulanacaktır."
                         },
                         "ignore": {
-                            "title": "Ignore Delay",
-                            "description": "Intervals of key actions will be ignored."
+                            "title": "Gecikmeyi Yoksay",
+                            "description": "Tuş eylemlerinin aralıkları yoksayılacaktır."
                         }
                     },
                     "repeatStatus": {
                         "repeat1": {
-                            "title": "No Repeat",
-                            "description": "No Repeat"
+                            "title": "Tekrar Yok",
+                            "description": "Tekrar Yok"
                         },
                         "repeat2": {
-                            "title": "Repeat 2 Times",
-                            "description": "Repeats 2 times"
+                            "title": "2 Kez Tekrarla",
+                            "description": "2 kez tekrarlar"
                         },
                         "repeat3": {
-                            "title": "Repeat 3 Times",
-                            "description": "Repeats 3 times"
+                            "title": "3 Kez Tekrarla",
+                            "description": "3 kez tekrarlar"
                         },
                         "repeat4": {
-                            "title": "Repeat 4 Times",
-                            "description": "Repeats 4 times"
+                            "title": "4 Kez Tekrarla",
+                            "description": "4 kez tekrarlar"
                         },
                         "repeat5": {
-                            "title": "Repeat 5 Times",
-                            "description": "Repeats 5 times"
+                            "title": "5 Kez Tekrarla",
+                            "description": "5 kez tekrarlar"
                         },
                         "repeat6": {
-                            "title": "Repeat 6 Times",
-                            "description": "Repeats 6 times"
+                            "title": "6 Kez Tekrarla",
+                            "description": "6 kez tekrarlar"
                         },
                         "repeat7": {
-                            "title": "Repeat 7 Times",
-                            "description": "Repeats 7 times"
+                            "title": "7 Kez Tekrarla",
+                            "description": "7 kez tekrarlar"
                         },
                         "repeat8": {
-                            "title": "Repeat 8 Times",
-                            "description": "Repeats 8 times"
+                            "title": "8 Kez Tekrarla",
+                            "description": "8 kez tekrarlar"
                         },
                         "repeat9": {
-                            "title": "Repeat 9 Times",
-                            "description": "Repeats 9 times"
+                            "title": "9 Kez Tekrarla",
+                            "description": "9 kez tekrarlar"
                         },
                         "repeat10": {
-                            "title": "Repeat 10 Times",
-                            "description": "Repeats 10 times"
+                            "title": "10 Kez Tekrarla",
+                            "description": "10 kez tekrarlar"
                         }
                     },
                     "list": {
                         "header": {
-                            "col1": "Key Action",
-                            "col2": "Interval"
+                            "col1": "Tuş Eylemi",
+                            "col2": "Aralık"
                         },
                         "footer": {
-                            "title": "Next input.."
+                            "title": "Sonraki giriş.."
                         }
                     }
                 }
             },
-            "numberpad": {
-                "number": {
-                    "zero": "Num 0",
-                    "one": "Num 1",
-                    "two": "Num 2",
-                    "three": "Num 3",
-                    "four": "Num 4",
-                    "five": "Num 5",
-                    "six": "Num 6",
-                    "seven": "Num 7",
-                    "eight": "Num 8",
-                    "nine": "Num 9"
-                },
-                "macro": {
-                    "m1": "M1",
-                    "m2": "M2"
-                }
-            },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure you want to clear this macro key?"
+                    "title": "Bu makro tuşunu temizlemek istediğinizden emin misiniz?"
                 },
                 "timeoutRecording": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if no input for 20 seconds."
+                    "title": "Kayıt Zaman Aşımı.",
+                    "body": "20 saniye boyunca giriş yapılmazsa kayıt zaman aşımına uğrar."
                 },
                 "maximumInput": {
-                    "title": "Maximum Input Reached.",
-                    "body": "Macro key can only store inputs less than 20."
+                    "title": "Maksimum Girişe Ulaşıldı.",
+                    "body": "Makro tuşu en fazla 20 girişi kaydedebilir."
                 },
                 "inputStopped": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if the input stopped for more than 10 seconds."
+                    "title": "Kayıt Zaman Aşımı.",
+                    "body": "Giriş 10 saniyeden uzun süre durursa kayıt zaman aşımına uğrar."
                 },
                 "confirmButton": {
-                    "btnClear": "Clear",
-                    "btnCancel": "Cancel"
+                    "btnClear": "Temizle",
+                    "btnCancel": "İptal"
                 },
-                "btnOk": "OK"
+                "btnOk": "TAMAM"
             },
             "recording": {
-                "title": "Recording Macro Key For"
+                "title": "Şunun için Makro Tuşu Kaydediliyor"
+            },
+            "initalKey": {
+                "zero": 0,
+                "m1": "M1"
             }
         },
         "lightingProfile": {
-            "title": "Lighting",
+            "title": "Aydınlatma",
             "effect": {
                 "option1": {
-                    "title": "On"
+                    "title": "Açık"
                 },
                 "option2": {
-                    "title": "Flicker"
+                    "title": "Titreme"
                 },
                 "option3": {
-                    "title": "Breath"
+                    "title": "Nefes"
                 },
                 "option4": {
-                    "title": "Wave"
+                    "title": "Dalga"
                 },
                 "option5": {
-                    "title": "Smooth"
+                    "title": "Pürüzsüz"
                 },
                 "option6": {
-                    "title": "CPU Temperature"
+                    "title": "CPU Sıcaklığı"
                 },
                 "option7": {
-                    "title": "CPU Utilization"
+                    "title": "CPU Kullanımı"
                 },
                 "option8": {
-                    "title": "Off"
+                    "title": "Kapalı"
                 },
                 "apply": {
-                    "title": "APPLY"
+                    "title": "UYGULA"
                 },
                 "applied": {
-                    "title": "APPLIED"
+                    "title": "UYGULANDI"
                 }
             },
             "brightness": {
                 "text1": {
-                    "title": "*Brightness setting doesn't apply on "
+                    "title": "*Parlaklık ayarı uygulanmaz "
                 },
                 "text2": {
-                    "title": " effect"
+                    "title": " efekt"
                 }
             },
             "lightingSingleLightingOption": {
                 "option1": {
-                    "title": "Always On"
+                    "title": "Her Zaman Açık"
                 },
                 "option2": {
-                    "title": "Fast Blink"
+                    "title": "Hızlı Yanıp Sönme"
                 },
                 "option3": {
-                    "title": "Medium Blink"
+                    "title": "Orta Hızda Yanıp Sönme"
                 },
                 "option4": {
-                    "title": "Slow Blink"
+                    "title": "Yavaş Yanıp Sönme"
                 },
                 "option5": {
-                    "title": "Blink Level"
+                    "title": "Yanıp Sönme Düzeyi"
                 }
             },
             "profile": {
                 "text1": {
-                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                    "title": "Aydınlatma şu an kapalı. Açmak ve özelleştirmek için yukarıdaki profil sekmesini seçin."
                 },
                 "text2": {
-                    "title": "effect"
+                    "title": "efekt"
                 },
                 "text3": {
-                    "title": "Effect"
+                    "title": "Efekt"
                 }
             },
             "button": {
                 "default": {
-                    "title": "Set to default"
+                    "title": "Varsayılana ayarla"
                 }
             },
             "profileheading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "Kapalı"
                 },
                 "text2": {
-                    "title": "Profile 1"
+                    "title": "Profil 1"
                 },
                 "text3": {
-                    "title": "Profile 2"
+                    "title": "Profil 2"
                 },
                 "text4": {
-                    "title": "Profile 3"
+                    "title": "Profil 3"
                 }
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "Kapalı"
                 },
                 "text2": {
                     "title": 1
@@ -349,21 +335,21 @@
                     "title": 3
                 },
                 "Customize": {
-                    "title": "Customize"
+                    "title": "Özelleştir"
                 },
                 "heading": {
-                    "title": "Select Profile:"
+                    "title": "Profil Seç:"
                 }
             },
             "colourwheel": {
                 "text1": {
-                    "title": "Selecting colour not available to this effect."
+                    "title": "Bu efekt için renk seçimi yapılamıyor."
                 },
                 "text2": {
-                    "title": "APPLY"
+                    "title": "UYGULA"
                 },
                 "text3": {
-                    "title": "APPLIED"
+                    "title": "UYGULANDI"
                 },
                 "text4": {
                     "title": "R:"
@@ -375,8 +361,23 @@
                     "title": "B:"
                 },
                 "text7": {
-                    "title": "Color"
+                    "title": "Renk"
                 }
+            }
+        },
+        "autoClose": {
+            "title": "Auto Close",
+            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "modalTurnAutoClose": {
+                "title": "Turn on Auto Close ?",
+                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Auto Close",
+                "body": "Only apps currently running will show in the list below."
             }
         }
     },
@@ -505,7 +506,12 @@
             "title": "Hızlı Ayarlarınız",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
-            "eyeCareMode": "Göz Koruması Kipi"
+            "eyeCareMode": "Göz Koruması",
+            "note": {
+                "accessNote": "doesn't have access to Lenovo Vantage",
+                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
+                "accessUrl": "Go to Windows settings to give access"
+            }
         },
         "systemStatus": {
             "title": "Sistem Durumu",
@@ -666,12 +672,15 @@
                     "HighTemperature": "<b>Pil çok ısındığı için</b> <b>boşaltma</b> işlemi durduruldu.",
                     "TrickleCharge": "Pil <b>tamamen boşaldı</b> ve yeniden doldurulması gerekiyor. Doldurma işlemi on saat ya da daha fazla sürebilir.",
                     "OverheatedBattery": "Pilin <b>çok ısındı</b>. Bilgisayardan çıkarın ve oda sıcaklığında soğumasını sağlayın.",
-                    "PermanentError": "Pil <b>normal aşınmaya bağlı olarak arızalandı</b>. Pil doldurulamıyor. Pili değiştirin."
+                    "PermanentError": "Pil <b>normal aşınmaya bağlı olarak arızalandı</b>. Pil doldurulamıyor. Pili değiştirin.",
+                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
+                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                 },
                 "updating": "Güncelleniyor",
                 "voltageError": "Pil voltajı yanlış",
                 "batteryNotDetected": "Pil algılanmadı",
-                "thresholdNote": "<b>Not:</b> Pilin ömrünü uzatmak için doldurma işleminin {{value}}% olduğunda durdurulmasını seçtiniz."
+                "thresholdNote": "<b>Not:</b> Pilin ömrünü uzatmak için doldurma işleminin {{value}}% olduğunda durdurulmasını seçtiniz.",
+                "seeDetailsLink": "See Details"
             },
             "power": {
                 "title": "Güç",
@@ -681,8 +690,7 @@
                     "title": "AYARLARA GİT",
                     "battery": "Pil",
                     "power": "Güç",
-                    "other": "Diğer",
-                    "smartStandby": "Akıllı Bekleme"
+                    "other": "Diğer"
                 },
                 "powerSmartSettings": {
                     "title": "Güç Akıllı Ayarları",
@@ -812,7 +820,8 @@
                     },
                     "airPlanePower": {
                         "title": "Uçak Güç Kipi",
-                        "description": "Sisteminizin güç tüketimini denetleyerek uçak AC güç çıkışını koruyun.Uçak Güç Kipi etkinleştirildiğinde bilgisayar, pil şarj oranını ve sistem performansını sınırlayarak güç tüketimini azaltır."
+                        "description": "Sisteminizin güç tüketimini denetleyerek uçak AC güç çıkışını koruyun.Uçak Güç Kipi etkinleştirildiğinde bilgisayar, pil şarj oranını ve sistem performansını sınırlayarak güç tüketimini azaltır.",
+                        "checkBoxDesc": "Auto detection"
                     }
                 },
                 "energyStar": {
@@ -1094,6 +1103,13 @@
                     "enterText": {
                         "title": "GİRİLECEK METİN"
                     }
+                },
+                "fnCtrlKey": {
+                    "title": "FN key and Ctrl key swap",
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "more": "MORE",
+                    "control1": "TOUCHPAD CONTROLS",
+                    "control2": "MOUSE CONTROLS"
                 }
             }
         },
@@ -1121,7 +1137,8 @@
                 },
                 "zeroTouchLogin": {
                     "title": "Sıfır Dokunma ile Oturum Açma",
-                    "caption": "Bu özellik, bilgisayarın karşısında olduğunuzda veya bilgisayara yaklaştığınızda bilgisayar kilidini otomatik olarak açar ya da bilgisayarı uyandırır."
+                    "caption": "Bu özellik, bilgisayarın karşısında olduğunuzda veya bilgisayara yaklaştığınızda bilgisayar kilidini otomatik olarak açar ya da bilgisayarı uyandırır.",
+                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
                 },
                 "zeroTouchLock": {
                     "title": "Sıfır Dokunma ile Kilitleme",
@@ -1142,6 +1159,17 @@
                     "options": {
                         "near": "Yakın",
                         "far": "Uzak"
+                    },
+                    "tooltipcontent": {
+                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
+                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "list": {
+                            "line1": "Near: 0 – 0.42 meters (17 inches)",
+                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
+                            "line3": "Far: 0 – 1.20 meters (47 inches)",
+                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
+                            "line5": "The recommended detection distance is within 0.60 meters."
+                        }
                     }
                 },
                 "note": {
@@ -1492,7 +1520,10 @@
             "listLenovoCommunity": "Lenovo Topluluğu",
             "listContactCustomerService": "Müşteri Hizmetleri ile iletişim kurun",
             "listContactUsOnWechat": "WeChat'te bize ulaşın",
-            "weChatDescription": "WeChat'te sorunuzu bizimle paylaşırsanız hızlı bir şekilde yanıt alabilirsiniz"
+            "weChatDescription": "WeChat'te sorunuzu bizimle paylaşırsanız hızlı bir şekilde yanıt alabilirsiniz",
+            "listFindUs": "Find us on social media",
+            "listContactUsOnFacebook": "Contact us on Facebook",
+            "facebookDescription": "Click to find us on Facebook"
         },
         "quicklinks": {
             "title": "Hızlı Bağlantılar",
@@ -1533,7 +1564,13 @@
             "maliciousNetwork": "Bu ay bilgisayarınızın {{maliciousWifi}} kötü amaçlı ağa katılması önlendi.",
             "good": "İYİ",
             "malicious": "KÖTÜ AMAÇLI",
-            "suspicious": "ŞÜPHELİ"
+            "suspicious": "ŞÜPHELİ",
+            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+            "antivirus": "Being protected by anti-virus software",
+            "password": "Having strong and complex passwords managed in a safe way",
+            "vpn": "Monitoring your network exposure to attackers",
+            "wifi": "Encrypting your personal data when using public WiFi",
+            "windowsHello": "Protecting your device using safe login options"
         },
         "antivirus": {
             "common": {
@@ -1627,7 +1664,8 @@
                 "headerText": "Hata",
                 "bodyText": "Vantage'ın kritik parçalarının sizde olmadığını tespit ettik. Bu parçalar arka planda indirilecek. Lütfen daha sonra yeniden deneyin.",
                 "closeText": "kapat",
-                "offlineText": "İnternet'e bağlı olmadığınızı tespit ettik. Bu sayfanın bazı kısımları düzgün çalışmayacak. Lütfen yeniden bağlanın"
+                "offlineText": "İnternet'e bağlı olmadığınızı tespit ettik. Bu sayfanın bazı kısımları düzgün çalışmayacak. Lütfen yeniden bağlanın",
+                "accountText": "Account creation failed. Please try again later."
             }
         },
         "homeprotection": {

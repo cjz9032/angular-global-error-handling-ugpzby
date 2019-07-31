@@ -1,27 +1,5 @@
-<div class="row container-article" *ngIf="type === 'content'">
-	<div class="col-6 p-40 article-item">
-		<div *ngFor="let item of items, let i = index">
-			<vtr-ui-feature-item [item]="item" [index]="i" *ngIf="i%2 == 0"></vtr-ui-feature-item>
-		</div>
-	</div>
-	<div class="col-6 p-40 article-item">
-		<div *ngFor="let item of items, let i = index">
-			<vtr-ui-feature-item [item]="item" [index]="i" *ngIf="i%2 == 1"></vtr-ui-feature-item>
-		</div>
-	</div>
-</div>
-<div class="row container-article" *ngIf="type === 'articles'">
-	<div class="col-6 p-40 article-item">
-		<div *ngFor="let item of items, let i = index">
-			<vtr-article-item [item]="item" [index]="i" *ngIf="i%2 == 0"></vtr-article-item>
-		</div>
-	</div>
-	<div class="col-6 p-40 article-item">
-		<div *ngFor="let item of items, let i = index">
-			<vtr-article-item [item]="item" [index]="i" *ngIf="i%2 == 1"></vtr-article-item>
-		</div>
-	</div>
-</div>
-<div class="spinner-content w-100 text-center" *ngIf="type === 'loading'">
-	<div class="spinner-border text-primary progress-spinner" role="status"></div>
+<div *ngFor="let item of items, let i = index">
+	<vtr-ui-article-item [item]="item"
+		[articleType]="type"
+		[index]="indexPreText + '' + (i*indexTimes+startIndex)"></vtr-ui-article-item>
 </div>
