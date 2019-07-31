@@ -29,7 +29,7 @@ export class UiButtonComponent implements OnInit {
 	@Input() btnHeight = false;
 	@Input() isGradient = false;
 	@Input() title: string;
-	@Input() automationId:any;
+	@Input() linkId:any;
 	constructor() { }
 
 	onClickButton(event) {
