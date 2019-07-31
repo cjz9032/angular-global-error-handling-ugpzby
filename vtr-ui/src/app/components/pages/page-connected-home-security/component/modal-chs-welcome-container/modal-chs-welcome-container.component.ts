@@ -186,16 +186,22 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit,
 	}
 
 	public openLocation($event: any) {
-		this.permission.getIsDevicePermissionOn().then((response) => {
-			if (response) {
-				this.permission.getSystemPermissionShowed().then((res) => {
-					this.hasSystemPermissionShowed = res;
-					if (res) {
+		this.permission.isComputerPermissionOn().then((result) => {
+			if (result) {
+				this.permission.getIsDevicePermissionOn().then((response) => {
+					if (response) {
+						this.permission.getSystemPermissionShowed().then((res) => {
+							this.hasSystemPermissionShowed = res;
+							if (res) {
+								WinRT.launchUri(this.url);
+							}
+							this.permission.requestPermission('geoLocatorStatus').then((status) => {
+								this.isLocationServiceOn = status;
+							});
+						});
+					} else {
 						WinRT.launchUri(this.url);
 					}
-					this.permission.requestPermission('geoLocatorStatus').then((status) => {
-						this.isLocationServiceOn = status;
-					});
 				});
 			} else {
 				WinRT.launchUri(this.url);
