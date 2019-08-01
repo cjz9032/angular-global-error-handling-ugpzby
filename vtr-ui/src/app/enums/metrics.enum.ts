@@ -1,6 +1,8 @@
 export enum MetricEvent {
 	TaskAction = 'TaskAction',
-	AppAction = 'AppAction'
+	AppAction = 'AppAction',
+	GetEnvInfo = 'GetEnvInfo',
+	AppLoaded = 'AppLoaded'
 }
 
 export enum MetricString {

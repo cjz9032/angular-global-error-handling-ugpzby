@@ -7,6 +7,7 @@ import { RouterChangeHandlerService } from '../../../common/services/router-chan
 import { Article, ArticlesService } from '../articles.service';
 import { combineLatest } from 'rxjs';
 import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
+import { CommonService } from '../../../../../../services/common/common.service';
 
 @Component({
 	selector: 'vtr-article-sidebar',
@@ -21,7 +22,8 @@ export class ArticleSidebarComponent implements OnInit, OnDestroy {
 	constructor(
 		private articlesService: ArticlesService,
 		private routerChangeHandler: RouterChangeHandlerService,
-		private commonPopupService: CommonPopupService
+		private commonPopupService: CommonPopupService,
+		private commonService: CommonService
 	) {	}
 
 	ngOnInit() {
@@ -41,6 +43,10 @@ export class ArticleSidebarComponent implements OnInit, OnDestroy {
 	}
 
 	openArticle(articleId) {
+		if (!this.commonService.isOnline) {
+			return;
+		}
+
 		this.articlesService.getArticle(articleId).subscribe((article) => {
 			this.article = article;
 		});

@@ -2,7 +2,7 @@ import { Component, OnInit, SecurityContext, DoCheck, OnDestroy } from '@angular
 import { Router, ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 
 import { MockService } from '../../../services/mock/mock.service';
@@ -92,6 +92,9 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		// this.qaService.setTranslationService(this.translate);
 		// this.qaService.setCurrentLangTranslations();
 		this.qaService.getQATranslation(translate); // VAN-5872, server switch feature
+		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.fetchCmsContents();
+		});
 
 	}
 
@@ -116,6 +119,10 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 
 		this.setDefaultCMSContent();
 		this.fetchCmsContents();
+		// VAN-5872, server switch feature on language change
+		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.fetchCmsContents();
+		});
 	}
 
 	ngDoCheck(): void {
