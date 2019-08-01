@@ -49,7 +49,7 @@
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.batterySettings.title' | translate"
 				[isCollapsed]="false"
-				[ariaLabel]="'device-settings-power-batterySettings-collapsible'">
+				[collapseLinkId]="'device-settings-power-batterySettings-collapsible'">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngIf="showAirplanePowerModeSection">
@@ -189,7 +189,7 @@
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
 				[isCollapsed]="false"
-				[ariaLabel]="'device-settings-power-powerSettings-collapsible'">
+				[collapseLinkId]="'device-settings-power-powerSettings-collapsible'">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngIf="!isDesktopMachine">
@@ -275,7 +275,7 @@
 			<vtr-container-collapsible componentName="'device.deviceSettings.power.otherSettings.title' | translate"
 				[cardTitle]="'device.deviceSettings.power.otherSettings.title' | translate"
 				[isCollapsed]="false"
-				[ariaLabel]="'device-settings-power-otherSettings-collapsible'">
+				[collapseLinkId]="'device-settings-power-otherSettings-collapsible'">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngFor="let item of otherSettings">

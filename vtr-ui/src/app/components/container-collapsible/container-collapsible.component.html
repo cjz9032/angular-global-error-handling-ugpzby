@@ -11,8 +11,8 @@
 							<div class="col-auto px-3" *ngIf="allowCollapse">
 								<div class="collapse-control" vtrMetrics metricsEvent="itemClick"
 									[metricsValue]="isCollapsed" [metricsItem]="'btn.collapse'"
-									[metricsParent]="cardTitle" (click)="onToggle()" id="{{ariaLabel}}"
-									attr.aria-label="{{ariaLabel}}">
+									[metricsParent]="cardTitle" (click)="onToggle()" id="{{collapseLinkId}}"
+									attr.aria-label="{{collapseLinkId}}">
 									<div *ngIf="isCollapsed" class="collapse-text">
 										<!-- Expand -->
 										{{'common.ui.expand' | translate}}

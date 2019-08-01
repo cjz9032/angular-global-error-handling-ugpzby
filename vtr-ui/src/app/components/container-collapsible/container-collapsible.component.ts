@@ -13,7 +13,7 @@ export class ContainerCollapsibleComponent extends BaseComponent {
 	@Input() allowCollapse = true;
 	@Input() theme = 'white';
 	@Input() name: string;
-	@Input() ariaLabel: string;
+	@Input() collapseLinkId: string;
 	@Output() toggle = new EventEmitter();
 
 	constructor() {
