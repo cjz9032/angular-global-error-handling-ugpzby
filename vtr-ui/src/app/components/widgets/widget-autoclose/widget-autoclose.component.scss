@@ -92,10 +92,16 @@
 					display: inline-block;
 					text-align: center;
 					vertical-align: top;
-					padding: 2rem 3rem;
+					padding: 2rem 2rem;
 					position: relative;
 					margin-bottom: 3rem;
-					width: 14.28%;
+					width: 20%;
+					@media #{$mediaquery_X22} {
+						width: 25%;
+					}
+					@media #{$mediaquery_X3} {
+						width: 33.3%;
+					}
 					div:nth-child(1) {
 						width: 4.5rem;
 						height: 4.5rem;
@@ -107,7 +113,7 @@
 						margin-top: 0.5rem;
 						text-align: center;
 						height: 5rem;
-						overflow: hidden;
+						word-break: break-all;
 					}
 					.remove-app {
 						opacity: 0;
