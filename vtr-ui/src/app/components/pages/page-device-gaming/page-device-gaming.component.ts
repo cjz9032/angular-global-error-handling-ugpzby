@@ -112,7 +112,7 @@ export class PageDeviceGamingComponent implements OnInit {
 			queryOptions = {
 				Page: 'dashboard',
 				Lang: lang,
-				GEO: this.cmsService.cmsQueryParams.region,
+				GEO: 'US',
 			};
 		}
 		this.cmsService.fetchCMSContent(queryOptions).subscribe(
@@ -189,7 +189,7 @@ export class PageDeviceGamingComponent implements OnInit {
 				} else {
 					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
 					this.loggerService.info(msg);
-					this.fetchCmsContents(this.cmsService.cmsQueryParams.language);
+					this.fetchCmsContents('en');
 				}
 			},
 			error => {

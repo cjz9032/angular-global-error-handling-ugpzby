@@ -20,12 +20,12 @@ export class PageAutocloseComponent implements OnInit {
   ngOnInit() {
     const queryOptions = {
       Page: 'dashboard',
-	  Lang: this.cmsService.cmsQueryParams.language,
-	  GEO: this.cmsService.cmsQueryParams.region,
-	  OEM: this.cmsService.cmsQueryParams.OEM,
-	  OS: this.cmsService.cmsQueryParams.OS,
-	  Segment: this.cmsService.cmsQueryParams.segment,
-	  Brand: this.cmsService.cmsQueryParams.brand
+      Lang: 'EN',
+      GEO: 'US',
+      OEM: 'Lenovo',
+      OS: 'Windows',
+      Segment: 'SMB',
+      Brand: 'Lenovo'
     };
 
     this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
