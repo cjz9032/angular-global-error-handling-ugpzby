@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { RegionService } from 'src/app/services/region/region.service';
+import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 
 @Component({
 	selector: 'vtr-modal-find-us',
@@ -13,11 +13,12 @@ export class ModalFindUsComponent implements OnInit, AfterViewInit {
 
 	constructor(
 		public activeModal: NgbActiveModal,
-		private regionService: RegionService
+		private localInfoService: LocalInfoService
 	) {
-		regionService.getRegion().subscribe({
-			next: x => this.region = x,
-			error: err => this.region = 'us'
+		localInfoService.getLocalInfo().then(result => {
+			this.region = result.Lang;
+		}).catch(e => {
+			this.region = 'us';
 		});
 	}
 

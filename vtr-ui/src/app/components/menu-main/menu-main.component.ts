@@ -13,7 +13,6 @@ import { VantageShellService } from '../../services/vantage-shell/vantage-shell.
 import { WindowsHello, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
 import { TranslateService } from '@ngx-translate/core';
-import { RegionService } from 'src/app/services/region/region.service';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
@@ -23,6 +22,7 @@ import { InputAccessoriesService } from 'src/app/services/input-accessories/inpu
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 import { LanguageService } from 'src/app/services/language/language.service';
+import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -61,7 +61,7 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 		public deviceService: DeviceService,
 		private vantageShellService: VantageShellService,
 		private translate: TranslateService,
-		private regionService: RegionService,
+		private localInfoService: LocalInfoService,
 		private smartAssist: SmartAssistService,
 		private logger: LoggerService,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
@@ -69,7 +69,13 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 		private keyboardService: InputAccessoriesService,
 		private windowsHelloService: WindowsHelloService
 	) {
-		this.showVpn();
+		localInfoService.getLocalInfo().then(result => {
+			this.region = result.GEO;
+			this.showVpn();
+		}).catch(e => {
+			this.region = 'us';
+			this.showVpn();
+		});
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
@@ -293,14 +299,6 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 	}
 	showPrivacy() { }
 	showVpn() {
-		this.regionService.getRegion().subscribe({
-			next: (x) => {
-				this.region = x;
-			},
-			error: (err) => {
-				this.region = 'us';
-			}
-		});
 		this.getMenuItems().then((items) => {
 			const securityItemForVpn = items.find((item) => item.id === 'security');
 			if (securityItemForVpn !== undefined) {

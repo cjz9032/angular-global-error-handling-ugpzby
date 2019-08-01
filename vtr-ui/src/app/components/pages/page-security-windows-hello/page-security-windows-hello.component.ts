@@ -7,7 +7,6 @@ import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { RegionService } from 'src/app/services/region/region.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { GuardService } from '../../../services/guard/security-guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
@@ -32,7 +31,6 @@ export class PageSecurityWindowsHelloComponent implements OnInit, OnDestroy {
 		public mockService: MockService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
-		public regionService: RegionService,
 		private guard: GuardService,
 
 		vantageShellService: VantageShellService,
