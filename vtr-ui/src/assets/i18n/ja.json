@@ -1515,15 +1515,15 @@
             "listUserGuide": "ユーザー・ガイド"
         },
         "needHelp": {
-            "title": "Need Help? (ヒント集)",
+            "title": "お問い合わせ",
             "description": "ご不明な点については、当社までお問い合わせください。",
             "listLenovoCommunity": "Lenovo コミュニティー",
             "listContactCustomerService": "カスタマー・サービスへのお問い合わせ",
             "listContactUsOnWechat": "WeChat でのお問い合わせ",
             "weChatDescription": "WeChat からご質問をお送りください。すぐに対応いたします",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "ソーシャル・メディアのアカウント",
+            "listContactUsOnFacebook": "Facebook でのお問い合わせ",
+            "facebookDescription": "Facebook のアカウントはここをクリック"
         },
         "quicklinks": {
             "title": "クイックリンク",
@@ -1565,12 +1565,12 @@
             "good": "良好",
             "malicious": "悪意",
             "suspicious": "疑わしい",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "セキュリティー・スコアによって、お客様がオンライン時にどれほど安全かがわかります。以下の項目を実行しているかどうかで結果が変わります。",
+            "antivirus": "ウイルス対策ソフトウェアで保護されている",
+            "password": "強力で複雑なパスワードを安全な方法で管理している",
+            "vpn": "攻撃者に対してネットワークが露出しているかどうかを監視している",
+            "wifi": "公共の WiFi を使用するときは個人データを暗号化している",
+            "windowsHello": "安全なログイン・オプションを使用してデバイスを保護している"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1665,7 @@
                 "bodyText": "Vantage の重要なピースを見逃していることがわかりました。これらのピースはバックグラウンドでダウンロードされます。後から再試行してください。",
                 "closeText": "閉じる",
                 "offlineText": "インターネットに接続されていないことがわかりました。このページの一部がが正しく動作しません。再接続してください",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "アカウント作成に失敗しました。後から再試行してください。"
             }
         },
         "homeprotection": {

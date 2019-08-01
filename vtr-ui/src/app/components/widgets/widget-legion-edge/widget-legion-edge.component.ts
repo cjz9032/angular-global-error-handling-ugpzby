@@ -177,18 +177,21 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				header: 'gaming.dashboard.device.legionEdge.status.alwayson',
 				name: 'gaming.dashboard.device.legionEdge.status.alwayson',
 				description: 'gaming.dashboard.device.legionEdge.statusText.onText',
+				ariaLabels: 'gaming.dashboard.device.legionEdge.status.alwaysonUid',
 				value: 1
 			},
 			{
 				header: 'gaming.dashboard.device.legionEdge.status.whenGaming',
 				name: 'gaming.dashboard.device.legionEdge.status.whenGaming',
 				description: 'gaming.dashboard.device.legionEdge.statusText.gamingText',
+				ariaLabels: 'gaming.dashboard.device.legionEdge.status.whenGamingUid',
 				value: 2
 			},
 			{
 				header: 'gaming.dashboard.device.legionEdge.status.off',
 				name: 'gaming.dashboard.device.legionEdge.status.off',
 				description: 'gaming.dashboard.device.legionEdge.statusText.offText',
+				ariaLabels: 'gaming.dashboard.device.legionEdge.status.offUid',
 				value: 3
 			}
 		]
@@ -197,6 +200,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public setCpuOCStatus: any;
 	public cacheMemOCFeature: boolean = false;
 	public cacheHybridModeFeature: boolean = false;
+	public cacheAutoCloseFeature: boolean = false;
 	constructor(
 		private modalService: NgbModal,
 		private ngZone: NgZone,
@@ -253,6 +257,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 		this.cacheHybridModeFeature = this.commonService.getLocalStorageValue(LocalStorageKey.hybridModeFeatureStatus);
 		this.legionUpdate[4].isChecked = this.cacheHybridModeFeature;
+
+		this.cacheAutoCloseFeature = this.commonService.getLocalStorageValue(LocalStorageKey.AutoCloseStatus);
+		this.legionUpdate[2].isChecked = this.cacheAutoCloseFeature;
 		// Initialize Legion Edge component from cache
 		this.legionEdgeInit();
 	}
@@ -289,6 +296,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 		if (gamingStatus.hybridModeFeature) {
 			this.renderHybridModeStatus();
+		}
+
+		if (gamingStatus.optimizationFeature) {
+			this.renderAutoCloseStatus();
 		}
 
 		if (gamingStatus.networkBoostFeature) {

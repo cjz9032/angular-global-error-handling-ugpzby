@@ -3,7 +3,7 @@ import { SystemUpdateService } from 'src/app/services/system-update/system-updat
 import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -171,6 +171,12 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		this.metricHelper = new MetricHelper(shellService.getMetrics());
 		this.metrics = shellService.getMetrics();
 		this.fetchCMSArticles();
+
+		// VAN-5872, server switch feature on language change
+		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.fetchCMSArticles();
+		});
+
 		this.getSpecificSupportLink();
 		this.translateStrings();
 		this.getCashValue();

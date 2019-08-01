@@ -1,5 +1,9 @@
+import { AutoCloseNeedToAsk } from './../../../data-models/gaming/autoclose/autoclose-need-to-ask.model';
 import { VantageShellService } from './../../vantage-shell/vantage-shell.service';
 import { Injectable } from '@angular/core';
+import { CommonService } from '../../common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { AutoCloseStatus } from 'src/app/data-models/gaming/autoclose/autoclose-status.model';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +12,7 @@ export class GamingAutoCloseService {
   private gamingAutoClose: any;
   public isShellAvailable = false;
 
-  constructor(private shellService: VantageShellService) {
+  constructor(private shellService: VantageShellService, private commonService: CommonService) {
     this.gamingAutoClose = shellService.getGamingAutoClose();
     if (this.gamingAutoClose) {
       this.isShellAvailable = true;
@@ -102,6 +106,33 @@ export class GamingAutoCloseService {
     } catch (error) {
       throw new Error(error);
     }
+  }
+
+  // Auto close  status changes
+  setAutoCloseStatusCache(status: any) {
+    this.commonService.setLocalStorageValue(LocalStorageKey.AutoCloseStatus, status);
+  }
+
+  getAutoCloseStatusCache() {
+    return this.commonService.getLocalStorageValue(LocalStorageKey.AutoCloseStatus);
+  }
+
+  // Need to ask status changes
+
+  setNeedToAskStatusCache(askStatusChanges: any) {
+    this.commonService.setLocalStorageValue(LocalStorageKey.NeedToAsk, askStatusChanges);
+  }
+
+  getNeedToAskStatusCache() {
+    return this.commonService.getLocalStorageValue(LocalStorageKey.NeedToAsk);
+  }
+
+  setAutoCloseListCache(processList: any) {
+    this.commonService.setLocalStorageValue(LocalStorageKey.AutoCloseList, processList);
+  }
+
+  getAutoCloseListCache() {
+    return this.commonService.getLocalStorageValue(LocalStorageKey.AutoCloseList);
   }
 
 }

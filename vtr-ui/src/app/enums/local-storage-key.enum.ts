@@ -46,7 +46,6 @@ export enum LocalStorageKey {
 	ConnectedHomeSecurityMyDevice = '[LocalStorageKey] ConnectedHomeSecurityMyDevice',
 	ConnectedHomeSecurityNotifications = '[LocalStorageKey] ConnectedHomeSecurityNotifications',
 	NetworkBoostStatus = '[LocalStorageKey] NetworkBoostStatus',
-	AutoCloseStatus = '[LocalStorageKey] AutoCloseStatus',
 	ConnectedHomeSecurityWelcomeComplete = '[LocalStorageKey] ConnectedHomeSecurityWelcomeComplete',
 	/**
 	 * 0  means "ideaPad",
@@ -146,5 +145,11 @@ export enum LocalStorageKey {
 
 	LastSystemUpdateStatus = '[LocalStorageKey] SystemUpdateStatus',
 	LastWarrantyStatus = '[LocalStorageKey] LastWarrantyStatus',
-	InputAccessoriesCapability = '[LocalStorageKey] InputAccessoriesCapability'
+	InputAccessoriesCapability = '[LocalStorageKey] InputAccessoriesCapability',
+
+	// Auto close storage key
+	AutoCloseStatus = '[LocalStorageKey] AutoCloseStatus',
+	AutoCloseList = '[LocalStorageKey] AutoCloseList',
+	NeedToAsk = '[LocalStorageKey] NeedToAsk',
+
 }

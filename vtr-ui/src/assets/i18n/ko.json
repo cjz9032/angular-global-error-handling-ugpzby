@@ -1521,9 +1521,9 @@
             "listContactCustomerService": "고객 서비스에 문의하기",
             "listContactUsOnWechat": "WeChat에 문의하기",
             "weChatDescription": "WeChat서 질문하면, 신속하게 응답할 수 있습니다.",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "소셜 미디어에서 찾으십시오.",
+            "listContactUsOnFacebook": "Facebook에 문의하기",
+            "facebookDescription": "Facebook에서 찾으려면 클릭"
         },
         "quicklinks": {
             "title": "퀵링크",
@@ -1565,12 +1565,12 @@
             "good": "좋음",
             "malicious": "악성",
             "suspicious": "의심스러움",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "사용자의 보안 점수를 보면 온라인에서 안전한 정도를 알 수 있으며, 결과는 다음과 같은 경우에 따라 달라집니다.",
+            "antivirus": "바이러스 백신 소프트웨어로 보호",
+            "password": "강력하고 복잡한 암호를 안전하게 관리",
+            "vpn": "공격자에 대한 네트워크의 노출 여부 모니터링",
+            "wifi": "공용 WiFi를 사용할 때 개인 데이터 암호화",
+            "windowsHello": "안전한 로그인 옵션을 사용하여 장치 보호"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1665,7 @@
                 "bodyText": "Vantage의 중요한 부분이 누락된 것을 발견했습니다. 이 파일은 백그라운드에서 다운로드됩니다. 나중에 다시 시도하십시오.",
                 "closeText": "닫기",
                 "offlineText": "인터넷에 연결되어 있지 않습니다. 이 페이지의 일부가 정상적으로 작동하지 않을 것입니다. 다시 연결하십시오",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "계정 생성에 실패했습니다. 나중에 다시 시도하십시오."
             }
         },
         "homeprotection": {

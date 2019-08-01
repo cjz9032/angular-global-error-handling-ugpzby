@@ -1521,9 +1521,9 @@
             "listContactCustomerService": "Ota asiakaspalveluun yhteyttä",
             "listContactUsOnWechat": "Ota meihin yhteyttä WeChat-palvelussa",
             "weChatDescription": "Lähetä meille kysymys WeChat-palvelussa, niin vastaamme taatusti pian",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Löydä meidät sosiaalisesta mediasta",
+            "listContactUsOnFacebook": "Ota meihin yhteyttä Facebookissa",
+            "facebookDescription": "Napsauta tätä, jos haluat löytää meidät Facebookista"
         },
         "quicklinks": {
             "title": "Pikalinkit",
@@ -1565,12 +1565,12 @@
             "good": "HYVÄ",
             "malicious": "HAITALLINEN",
             "suspicious": "EPÄILYTTÄVIÄ",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "Turvapisteet antavat käsityksen siitä, kuinka turvallista toimintasi verkossa on. Tulos riippuu vastauksista seuraaviin:",
+            "antivirus": "Onko laitteesi suojattu virusten torjuntaohjelmalla",
+            "password": "Onko sinulla vahvat ja monimutkaiset salasanat, joita hallitaan turvallisella tavalla",
+            "vpn": "Valvotaanko altistumistasi hyökkääjille verkossa",
+            "wifi": "Salataanko henkilökohtaiset tietosi käyttäessäsi julkista WiFi-yhteyttä",
+            "windowsHello": "Suojataanko laitteesi turvallisten sisäänkirjausvalintojen avulla"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1665,7 @@
                 "bodyText": "Olemme havainneet, että sinulta puuttuu tärkeitä Vantagen osia. Nämä osat ladataan taustalla. Yritä myöhemmin uudelleen.",
                 "closeText": "sulje",
                 "offlineText": "Internet-yhteyttä ei ole muodostettu. Jotkin tämän sivun osat eivät toimi oikein. Muodosta yhteys uudelleen",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "Tilin luonti on epäonnistunut. Yritä myöhemmin uudelleen."
             }
         },
         "homeprotection": {

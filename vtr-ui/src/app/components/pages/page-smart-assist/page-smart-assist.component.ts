@@ -14,6 +14,7 @@ import { IntelligentScreen } from 'src/app/data-models/smart-assist/intelligent-
 import { parse } from 'querystring';
 import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -84,8 +85,14 @@ export class PageSmartAssistComponent implements OnInit {
 		public qaService: QaService,
 		private cmsService: CMSService,
 		private logger: LoggerService,
-		private commonService: CommonService
+		private commonService: CommonService,
+		private translate: TranslateService,
 	) {
+		// VAN-5872, server switch feature on language change
+		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.fetchCMSArticles();
+		});
+
 		this.fetchCMSArticles();
 	}
 

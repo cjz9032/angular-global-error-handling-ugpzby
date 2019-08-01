@@ -1521,9 +1521,9 @@
             "listContactCustomerService": "Kontaktirajte službu za korisnike",
             "listContactUsOnWechat": "Kontaktirajte nas na WeChat",
             "weChatDescription": "Pošaljite nam pitanje na WeChat i svakako ćemo brzo odgovoriti",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Pronađite nas na društvenim medijima",
+            "listContactUsOnFacebook": "Kontaktirajte nas na Facebooku",
+            "facebookDescription": "Kliknite da biste nas pronašli na Facebooku"
         },
         "quicklinks": {
             "title": "Brze veze",
@@ -1565,12 +1565,12 @@
             "good": "DOBRO",
             "malicious": "ZLONAMJERNO",
             "suspicious": "SUMNJIVO",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "Vaš sigurnosni rezultat pruža vam predodžbu o tome koliko ste sigurni na mreži, rezultat ovisi o sljedećem:",
+            "antivirus": "Zaštita antivirusnim softverom",
+            "password": "Snažne i složene lozinke kojima se upravlja na siguran način",
+            "vpn": "Praćenje izloženosti vaše mreže napadačima",
+            "wifi": "Šifriranje vaših osobnih podataka kada koristite javni WiFi",
+            "windowsHello": "Zaštita uređaja pomoću opcija sigurnog prijavljivanja"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1665,7 @@
                 "bodyText": "Utvrdili smo da vam nedostaju važni dijelovi usluge Vantage. Ti će se dijelovi preuzeti u pozadini. Pokušajte ponovno kasnije.",
                 "closeText": "zatvori",
                 "offlineText": "Utvrdili smo da niste povezani s internetom. Neki dijelovi ove stranice neće ispravno funkcionirati. Povežite se iznova",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "Izrada računa nije uspjela. Pokušajte ponovno kasnije."
             }
         },
         "homeprotection": {

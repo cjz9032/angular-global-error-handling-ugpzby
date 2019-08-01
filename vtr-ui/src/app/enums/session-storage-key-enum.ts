@@ -2,6 +2,7 @@ export enum SessionStorageKey {
 	DashboardCameraPrivacy = '[SessionStorageKey] DashboardCameraPrivacy',
 	DashboardEyeCareMode = '[SessionStorageKey] DashboardEyeCareMode',
 	DashboardMicrophone = '[SessionStorageKey] DashboardMicrophone',
+	DashboardInDashboardPage = '[SessionStorageKey] DashboardInDashboardPage',
 	AvailableUpdates = '[SessionStorageKey] AvailableUpdates',
 	SecurityWifiSecurityLocationFlag = '[SessionStorageKey] SecurityWifiSecurityLocationFlag',
 	SecurityWifiSecurityInWifiPage = '[SessionStorageKey] SecurityWifiSecurityInWifiPage',

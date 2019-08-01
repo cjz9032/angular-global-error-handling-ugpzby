@@ -75,6 +75,6 @@ library.add(faCheck);
 	],
 	exports: [ContainerCardModule, MetricsModule, WidgetOfflineModule],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
-	entryComponents: [ModalTurnOnComponent, ModalAddAppsComponent]
+	entryComponents: []
 })
 export class GamingModule { }

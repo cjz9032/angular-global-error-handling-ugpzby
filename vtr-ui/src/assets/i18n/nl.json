@@ -1521,9 +1521,9 @@
             "listContactCustomerService": "Neem contact op met de klantenservice",
             "listContactUsOnWechat": "Neem contact op met ons op WeChat",
             "weChatDescription": "Vuur een vraag op ons af op WeChat en we zullen snel antwoorden",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Vind ons op social media",
+            "listContactUsOnFacebook": "Neem contact met ons op via Facebook",
+            "facebookDescription": "Klik om ons te zoeken op Facebook"
         },
         "quicklinks": {
             "title": "Snelle links",
@@ -1565,12 +1565,12 @@
             "good": "GOED",
             "malicious": "SCHADELIJK",
             "suspicious": "VERDACHT",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "Uw beveiligingsscore geeft u een idee hoe veilig u online bent, het resultaat is afhankelijk van het volgende:",
+            "antivirus": "Beveiligd door antivirussoftware",
+            "password": "Sterke en complexe wachtwoorden op een veilige manier beheren",
+            "vpn": "Monitoring van uw netwerkblootstelling aan aanvallers",
+            "wifi": "Uw persoonlijke gegevens coderen als u openbare WiFi gebruikt",
+            "windowsHello": "Uw apparaat beschermen met behulp van veilige aanmeldingsopties"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1665,7 @@
                 "bodyText": "We hebben vastgesteld dat er essentiële stukjes Vantage missen. Deze onderdelen worden op de achtergrond gedownload. Probeer het later alstublieft opnieuw.",
                 "closeText": "sluiten",
                 "offlineText": "We hebben geconstateerd dat u geen verbinding met internet heeft. Bepaalde onderdelen van deze pagina werken niet correct. Maak opnieuw verbinding",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "Het maken van het account is mislukt. Probeer het later alstublieft opnieuw."
             }
         },
         "homeprotection": {
