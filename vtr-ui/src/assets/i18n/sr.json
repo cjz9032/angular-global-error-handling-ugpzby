@@ -7,7 +7,10 @@
                     "status": {
                         "performance": "Performanse",
                         "balance": "Ujednačeno",
-                        "quiet": "Tiho"
+                        "quiet": "Tiho",
+                        "performanceUid": "thermal_mode_performance",
+                        "balanceUid": "thermal_mode_balance",
+                        "quietUid": "thermal_mode_quiet"
                     },
                     "statusText": {
                         "perText": "Veća iskoriš. CPU, veća brzina vent.",
@@ -23,7 +26,10 @@
                     "status": {
                         "alwayson": "Uključeno",
                         "whenGaming": "Kada igrate",
-                        "off": "Isključeno"
+                        "off": "Isključeno",
+                        "alwaysonUid": "cpu_overclock_on",
+                        "whenGamingUid": "cpu_overclock_when_gaming",
+                        "offUid": "cpu_overclock_off"
                     },
                     "statusText": {
                         "onText": "Overkloking procesora će biti aktiviran",
@@ -226,10 +232,6 @@
             },
             "recording": {
                 "title": "Snimanje tastera makroa za"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -364,6 +366,26 @@
                     "title": "Boja"
                 }
             }
+        },
+        "autoClose": {
+            "title": "Auto Close",
+            "addAppsButton": "Add",
+            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "modalTurnAutoClose": {
+                "title": "Turn on Auto Close ?",
+                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Auto Close",
+                "body": "Only apps currently running will show in the list below."
+            },
+            "noRunningApps": {
+                "title": "No Running Apps To Add",
+                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+            }
         }
     },
     "common": {
@@ -491,7 +513,12 @@
             "title": "Vaše brze postavke",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
-            "eyeCareMode": "Režim za zaštitu vida"
+            "eyeCareMode": "Režim za zaštitu vida",
+            "note": {
+                "accessNote": "Lenovo Vantage doesn't have access to",
+                "microphoneAndcameraPrivacyNotes": "Camera and Microphone.",
+                "accessUrl": "Go to Windows settings to give access"
+            }
         },
         "systemStatus": {
             "title": "Status sistema",
@@ -549,16 +576,16 @@
             "extendedWarranty": "Proširenje garancije",
             "processor": {
                 "title": "Procesor",
-                "notFound": "Procesor nije pronađen"
+                "notFound": "Učitavanje informacija o procesoru"
             },
             "memory": {
                 "title": "Memorija",
-                "notFound": "Memorija nije pronađena",
+                "notFound": "Učitavanje informacija o memoriji",
                 "ram": "RAM"
             },
             "diskspace": {
                 "title": "Prostor na disku",
-                "notFound": "Disk nije pronađen"
+                "notFound": "Učitavanje informacija o disku"
             },
             "software": "Softver je ažuran",
             "updated": "Ažurirano",
@@ -652,12 +679,15 @@
                     "HighTemperature": "<b>Pražnjenje</b> je zaustavljeno zato što je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je u <b>potpunosti ispražnjena</b> i mora da se napuni. To može potrajati deset sati ili duže.",
                     "OverheatedBattery": "Baterija je <b>pregrejana</b>. Uklonite je iz računara i ohladite je do sobne temperature.",
-                    "PermanentError": "Baterija je <b>otkazala usled normalnog trošenja.</b> Nije moguće napuniti bateriju. Zamenite bateriju."
+                    "PermanentError": "Baterija je <b>otkazala usled normalnog trošenja.</b> Nije moguće napuniti bateriju. Zamenite bateriju.",
+                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
+                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
                 },
                 "updating": "Ažuriranje",
                 "voltageError": "Netačan napon baterije",
                 "batteryNotDetected": "Nije otkrivena baterija",
-                "thresholdNote": "<b>Napomena:</b> Da biste produžili životni vek baterije, podesili ste da baterija prestane da se puni kada je na {{value}}%."
+                "thresholdNote": "<b>Napomena:</b> Da biste produžili životni vek baterije, podesili ste da baterija prestane da se puni kada je na {{value}}%.",
+                "seeDetailsLink": "See details"
             },
             "power": {
                 "title": "Napajanje",
@@ -797,7 +827,9 @@
                     },
                     "airPlanePower": {
                         "title": "Režim korišćenja u avionu",
-                        "description": "Zaštitite utičnicu za napajanje naizmeničnom strujom u avionu kontrolom potrošnje vašeg sistema.Kada je omogućen režim korišćenja u avionu, računar smanjuje potrošnju napajanja ograničavanjem brzine punjenja i performansi sistema."
+                        "description": "Zaštitite utičnicu za napajanje naizmeničnom strujom u avionu kontrolom potrošnje vašeg sistema.Kada je omogućen režim korišćenja u avionu, računar smanjuje potrošnju napajanja ograničavanjem brzine punjenja i performansi sistema.",
+                        "checkBoxDesc": "Automatska detekcija",
+                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
                 },
                 "energyStar": {
@@ -1079,6 +1111,13 @@
                     "enterText": {
                         "title": "TEKST KOJI TREBA UNETI"
                     }
+                },
+                "fnCtrlKey": {
+                    "title": "FN key and Ctrl key swap",
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "more": "MORE",
+                    "control1": "TOUCHPAD CONTROLS",
+                    "control2": "MOUSE CONTROLS"
                 }
             }
         },
@@ -1106,7 +1145,8 @@
                 },
                 "zeroTouchLogin": {
                     "title": "Zero Touch prijavljivanje",
-                    "caption": "Ova funkcija automatski otključava ili budi računar kada ste ispred njega ili mu prilazite."
+                    "caption": "Ova funkcija automatski otključava ili budi računar kada ste ispred njega ili mu prilazite.",
+                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
                 },
                 "zeroTouchLock": {
                     "title": "Zero Touch zaključavanje",
@@ -1127,6 +1167,17 @@
                     "options": {
                         "near": "Blizu",
                         "far": "Daleko"
+                    },
+                    "tooltipcontent": {
+                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
+                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "list": {
+                            "line1": "Near: 0 – 0.42 meters (17 inches)",
+                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
+                            "line3": "Far: 0 – 1.20 meters (47 inches)",
+                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
+                            "line5": "The recommended detection distance is within 0.60 meters."
+                        }
                     }
                 },
                 "note": {

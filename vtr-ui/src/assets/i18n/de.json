@@ -7,7 +7,10 @@
                     "status": {
                         "performance": "Performance",
                         "balance": "Balance",
-                        "quiet": "Quiet"
+                        "quiet": "Quiet",
+                        "performanceUid": "thermal_mode_performance",
+                        "balanceUid": "thermal_mode_balance",
+                        "quietUid": "thermal_mode_quiet"
                     },
                     "statusText": {
                         "perText": "Higher CPU usage, Higher fan speed",
@@ -23,7 +26,10 @@
                     "status": {
                         "alwayson": "On",
                         "whenGaming": "When Gaming",
-                        "off": "Off"
+                        "off": "Off",
+                        "alwaysonUid": "cpu_overclock_on",
+                        "whenGamingUid": "cpu_overclock_when_gaming",
+                        "offUid": "cpu_overclock_off"
                     },
                     "statusText": {
                         "onText": "CPU Overclocking will be activated",
@@ -226,10 +232,6 @@
             },
             "recording": {
                 "title": "Recording Macro Key For"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -378,6 +380,11 @@
             "modalAddApps": {
                 "title": "Add apps to Auto Close",
                 "body": "Only apps currently running will show in the list below."
+            },
+            "addAppsButton": "Add",
+            "noRunningApps": {
+                "title": "No Running Apps To Add",
+                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
         }
     },
@@ -569,16 +576,16 @@
             "extendedWarranty": "Garantieverlängerung",
             "processor": {
                 "title": "Prozessor",
-                "notFound": "Prozessor nicht gefunden"
+                "notFound": "Prozessorinformationen werden geladen"
             },
             "memory": {
                 "title": "Hauptspeicher",
-                "notFound": "Hauptspeicher nicht gefunden",
+                "notFound": "Speicherinformationen werden geladen",
                 "ram": "RAM"
             },
             "diskspace": {
                 "title": "Festplattenspeicher",
-                "notFound": "Festplatte nicht gefunden"
+                "notFound": "Datenträgerinformationen werden geladen"
             },
             "software": "Die Software ist aktuell",
             "updated": "Aktualisiert",
@@ -821,7 +828,8 @@
                     "airPlanePower": {
                         "title": "Flugzeug-Energiemodus",
                         "description": "Schützen Sie das Netzteil im Flugzeug, indem Sie den Stromverbrauch des Systems steuern.Wenn die Funktion Flugzeug-Energiemodus aktiviert ist, verringert der Computer den Stromverbrauch durch Beschränkung der Akkuladerate und der Systemleistung.",
-                        "checkBoxDesc": "Auto detection"
+                        "checkBoxDesc": "Automatische Erkennung",
+                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
                 },
                 "energyStar": {
