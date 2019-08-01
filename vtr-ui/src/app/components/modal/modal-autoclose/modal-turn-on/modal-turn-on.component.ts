@@ -9,9 +9,10 @@ import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose
   styleUrls: ['./modal-turn-on.component.scss']
 })
 export class ModalTurnOnComponent implements OnInit {
-  runningList: any;
+  runningList: any = {};
   addAppsList: string;
   statusAskAgain: boolean;
+  setAutoClose: any;
   constructor(private activeModal: NgbActiveModal, private modalService: NgbModal, private gamingAutoCloseService: GamingAutoCloseService) { }
 
   ngOnInit() {
@@ -19,15 +20,15 @@ export class ModalTurnOnComponent implements OnInit {
 
   showAddAppsModal(event: Event): void {
     this.activeModal.close('close');
-    this.gamingAutoCloseService.setAutoCloseStatus(true).then((status: any) => {
-      this.gamingAutoCloseService.setAutoCloseStatusCache(status);
-    });
     this.modalService
       .open(ModalAddAppsComponent, {
         backdrop: 'static',
         size: 'lg',
         windowClass: 'apps-modal-container'
       });
+    this.gamingAutoCloseService.setAutoCloseStatus(true).then((status: any) => {
+      this.gamingAutoCloseService.setAutoCloseStatusCache(status);
+    });
   }
 
   closeModal() {

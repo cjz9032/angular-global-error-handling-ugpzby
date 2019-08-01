@@ -197,6 +197,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public setCpuOCStatus: any;
 	public cacheMemOCFeature: boolean = false;
 	public cacheHybridModeFeature: boolean = false;
+	public cacheAutoCloseFeature: boolean = false;
 	constructor(
 		private modalService: NgbModal,
 		private ngZone: NgZone,
@@ -253,6 +254,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 		this.cacheHybridModeFeature = this.commonService.getLocalStorageValue(LocalStorageKey.hybridModeFeatureStatus);
 		this.legionUpdate[4].isChecked = this.cacheHybridModeFeature;
+
+		this.cacheAutoCloseFeature = this.commonService.getLocalStorageValue(LocalStorageKey.AutoCloseStatus);
+		this.legionUpdate[2].isChecked = this.cacheAutoCloseFeature;
 		// Initialize Legion Edge component from cache
 		this.legionEdgeInit();
 	}
