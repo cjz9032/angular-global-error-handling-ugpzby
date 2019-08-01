@@ -1521,9 +1521,9 @@
             "listContactCustomerService": "Skontaktuj się z działem obsługi klienta",
             "listContactUsOnWechat": "Skontaktuj się z nami za pomocą aplikacji WeChat",
             "weChatDescription": "Zadaj nam pytanie za pomocą aplikacji WeChat, aby szybko otrzymać odpowiedź",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Znajdź nas w mediach społecznościowych",
+            "listContactUsOnFacebook": "Skontaktuj się z nami na Facebooku",
+            "facebookDescription": "Kliknij, aby znaleźć nas na Facebooku"
         },
         "quicklinks": {
             "title": "Szybkie odsyłacze",
@@ -1565,12 +1565,12 @@
             "good": "DOBRY",
             "malicious": "ZŁOŚLIWY",
             "suspicious": "PODEJRZANY",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "Wynik bezpieczeństwa odzwierciedla Twój stopień bezpieczeństwa w sieci i jest zależny od tego, czy:",
+            "antivirus": "Używasz oprogramowania antywirusowego",
+            "password": "Używasz silnych i skomplikowanych haseł i zarządzasz nimi w bezpieczny sposób",
+            "vpn": "Monitorujesz narażenie sieci na ataki",
+            "wifi": "Szyfrujesz dane osobowe podczas korzystania z publicznej sieci WiFi",
+            "windowsHello": "Chronisz urządzenie, korzystając z opcji bezpiecznego logowania"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1665,7 @@
                 "bodyText": "Wykryliśmy, że brakuje ważnych elementów aplikacji Vantage. Te elementy zostaną pobrane w tle. Spróbuj ponownie później.",
                 "closeText": "zamknij",
                 "offlineText": "Wykryliśmy, że nie masz połączenia z Internetem. Niektóre części tej strony nie będą działać poprawnie. Połącz się ponownie",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "Utworzenie konta nie powiodło się. Spróbuj ponownie później."
             }
         },
         "homeprotection": {
