@@ -24,14 +24,12 @@ import {
 	CommonService
 } from 'src/app/services/common/common.service';
 import {
-	RegionService
-} from 'src/app/services/region/region.service';
-import {
 	SessionStorageKey
 } from 'src/app/enums/session-storage-key-enum';
 import {
 	DialogService
 } from 'src/app/services/dialog/dialog.service';
+import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 
 @Component({
 	selector: 'wifi-security',
@@ -55,7 +53,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	constructor(
 		public modalService: NgbModal,
 		private commonService: CommonService,
-		public regionService: RegionService,
+		private localInfoService: LocalInfoService,
 		private dialogService: DialogService,
 		private ngZone: NgZone
 	) {
@@ -63,13 +61,10 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.regionService.getRegion().subscribe({
-			next: x => {
-				this.region = x;
-			},
-			error: err => {
-				this.region = 'us';
-			}
+		this.localInfoService.getLocalInfo().then(result => {
+			this.region = result.GEO;
+		}).catch(e => {
+			this.region = 'us';
 		});
 		if (this.wifiIsShowMore === 'false') {
 			this.isShowMore = false;

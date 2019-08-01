@@ -22,8 +22,11 @@
 
 		<button class="breaches-page__button"
 				*ngIf="(isFigleafReadyForCommunication$ | async) && !(breachedAccounts$ | async)?.length"
+				vtrSendAnalytics
+				[metricsEvent]="'ItemClick'"
+				[metricsItem]="'ViewInLenovoPrivacyEssentialsButton'"
 				(click)="openFigleafApp()">
-			View in Lenovo Privacy Essentials
+			View now
 		</button>
 
 		<button class="breaches-page__button"

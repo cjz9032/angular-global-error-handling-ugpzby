@@ -49,47 +49,48 @@ describe('SmartStandbyComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-	it('#showSmartStandby should initialize smart standby section', () => {
+	it('#showSmartStandby should initialize smart standby section', async () => {
 		component.powerService.isShellAvailable = false;
 		spyOn(component, 'initSmartStandby');
 		spyOn(powerService, 'getSmartStandbyCapability').and.returnValue(Promise.resolve(false));
-		component.showSmartStandby();
+		await component.showSmartStandby();
 		expect(component.initSmartStandby).toHaveBeenCalled();
 		expect(powerService.getSmartStandbyCapability).not.toHaveBeenCalled();
 	});
 
-	it('#showSmartStandby should call initSmartStandby & set smartStandby capability to true', () => {
+	it('#showSmartStandby should call initSmartStandby & set smartStandby capability to true', async () => {
 		component.powerService.isShellAvailable = true;
 		spyOn(component, 'initSmartStandby');
 		spyOn(powerService, 'getSmartStandbyCapability').and.returnValue(Promise.resolve(true));
-		component.showSmartStandby();
+		await component.showSmartStandby();
 		expect(component.initSmartStandby).toHaveBeenCalled();
 		expect(powerService.getSmartStandbyCapability).toHaveBeenCalled();
 		expect(component.smartStandby.isCapable).toBeTruthy();
 	});
 
-	// it('#showSmartStandby should call initSmartStandby & set smartStandby capability to false', () => {
-	// 	component.powerService.isShellAvailable = true;
-	// 	spyOn(component, 'initSmartStandby');
-	// 	spyOn(powerService, 'getSmartStandbyCapability').and.returnValue(Promise.resolve(false));
-	// 	component.showSmartStandby();
-	// 	expect(component.initSmartStandby).toHaveBeenCalled();
-	// 	expect(powerService.getSmartStandbyCapability).toHaveBeenCalled();
-	// 	expect(component.smartStandby.isCapable).toBeFalsy();
-	// });
+	it('#showSmartStandby should call initSmartStandby & set smartStandby capability to false', async () => {
+		component.powerService.isShellAvailable = true;
+		spyOn(component, 'initSmartStandby');
+		spyOn(powerService, 'getSmartStandbyCapability').and.returnValue(Promise.resolve(false));
+		await component.showSmartStandby();
+		expect(component.initSmartStandby).toHaveBeenCalled();
+		expect(powerService.getSmartStandbyCapability).toHaveBeenCalled();
+		expect(component.smartStandby.isCapable).toBeFalsy();
+	});
 
-	it('#setSmartStandbySection should call getSmartStandbyEnabled and enable smart standby', () => {
+	it('#setSmartStandbySection should call getSmartStandbyEnabled and enable smart standby', async () => {
 		component.powerService.isShellAvailable = true;
 		spyOn(powerService, 'getSmartStandbyEnabled').and.returnValue(Promise.resolve(true));
-		component.setSmartStandbySection();
+		await component.setSmartStandbySection();
 		expect(powerService.getSmartStandbyEnabled).toHaveBeenCalled();
 		expect(component.smartStandby.isEnabled).toBeTruthy();
 	});
-	// it('#setSmartStandbySection should call getSmartStandbyEnabled and disable smart standby', () => {
-	// 	component.powerService.isShellAvailable = true;
-	// 	spyOn(powerService, 'getSmartStandbyEnabled').and.returnValue(Promise.resolve(false));
-	// 	component.setSmartStandbySection();
-	// 	expect(powerService.getSmartStandbyEnabled).toHaveBeenCalled();
-	// 	expect(component.smartStandby.isEnabled).toBeFalsy();
-	// });
+
+	it('#setSmartStandbySection should call getSmartStandbyEnabled and disable smart standby', async () => {
+		component.powerService.isShellAvailable = true;
+		spyOn(powerService, 'getSmartStandbyEnabled').and.returnValue(Promise.resolve(false));
+		await component.setSmartStandbySection();
+		expect(powerService.getSmartStandbyEnabled).toHaveBeenCalled();
+		expect(component.smartStandby.isEnabled).toBeFalsy();
+	});
 });

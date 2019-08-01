@@ -775,4 +775,17 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	public getVantageStub(): any {
+		let vanStub = {
+			appStartTime: 0,
+			navigateTime: 0,
+			domloadedTime: 0
+		};
+
+		if (this.shell && this.shell.VantageStub.instance) {
+			vanStub = this.shell.VantageStub.instance;
+		}
+		return vanStub;
+	}
 }

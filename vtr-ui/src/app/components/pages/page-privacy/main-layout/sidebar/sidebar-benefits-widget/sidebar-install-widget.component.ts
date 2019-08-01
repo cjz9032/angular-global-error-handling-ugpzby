@@ -6,7 +6,6 @@ import { InstallWidgetPageSettings, SidebarInstallWidgetService } from './sideba
 import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
 import { AppStatuses } from '../../../userDataStatuses';
 import { merge } from 'rxjs';
-import { RoutersName } from '../../../privacy-routing-name';
 import { getFigleafProtectedStatus } from '../../../utils/helpers';
 
 @Component({
@@ -15,7 +14,7 @@ import { getFigleafProtectedStatus } from '../../../utils/helpers';
 	styleUrls: ['./sidebar-install-widget.component.scss']
 })
 export class SidebarInstallWidgetComponent implements OnInit, OnDestroy {
-	primaryButtonText = 'Install Lenovo Privacy Essentials';
+	primaryButtonText = 'Install Now';
 	linkButtonText = 'Learn more';
 
 	installWidgetSettings: InstallWidgetPageSettings = {
