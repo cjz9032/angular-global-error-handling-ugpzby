@@ -146,7 +146,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 
 				.fill {
 					background: var(--acid-fill-gradient);
-					width: var(--acid-width);		
+					width: var(--acid-width);
 					z-index: 4;
 					position: absolute;
 					height: calc(100% - 0.8rem);
@@ -160,7 +160,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 					z-index: 5;
 					text-align: center;
 					width: calc(100% - 0.8rem);
-					font-size: 6rem;
+					font-size: $page_header;
 					font-weight: bold;
 				}
 
@@ -188,7 +188,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 
 					.percentage-symbol {
 						position: relative;
-						font-size: 2rem;
+						font-size: $section_header;
 						left: -1.2rem;
 					}
 				}
@@ -196,7 +196,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 
 			.base-remaining-text {
 				position: absolute;
-				font-size: 1.1rem;
+				font-size: $caption;
 				z-index: 5;
 				font-weight: $weight_bold;
 				width: 100%;
@@ -206,7 +206,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 
 			.remaining-time {
 				@extend .base-remaining-text;
-				bottom: 16%;
+				bottom: 19%;
 				color: $main_dark;
 			}
 
@@ -214,8 +214,8 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 				@extend .base-remaining-text;
 				color: $main_dark;
 				bottom: 5%;
-				font-size: 1rem;
-				font-weight: 500;
+				font-size: $caption;
+				font-weight: $weight_medium;
 			}
 		}
 

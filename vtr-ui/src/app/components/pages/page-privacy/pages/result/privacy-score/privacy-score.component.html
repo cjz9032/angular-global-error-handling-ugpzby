@@ -5,7 +5,8 @@
 				<img src="{{defaultScoreImageUrl}}" alt="undefined privacy score">
 			</div>
 			<div *ngIf="!(isFirstTimeVisitor$ | async)" class="score-pic__number">
-				{{score}} <span class="score-pic__percent">%</span>
+				<vtr-spinner *ngIf="!score"></vtr-spinner>
+				<span *ngIf="score">{{score}} <span class="score-pic__percent">%</span></span>
 			</div>
 		</div>
 	</div>
@@ -19,23 +20,8 @@
 					</ng-template>
 					<ng-template #tooltipContext>
 						<div class="score-description__tooltip-context">
-							<p class="score-description__tooltip-context-title">
-								These actions influence your privacy score:
+							<p>Your privacy score gives you an idea of how private you are online, based on the number of breached accounts found, detection of tracking tools on websites you visit, and if your passwords can be accessed by third-party apps
 							</p>
-							<ul class="score-description__tooltip-context-list">
-								<li class="score-description__tooltip-context-list-item">
-									Fix breached accounts if there are any
-								</li>
-								<li class="score-description__tooltip-context-list-item">
-									Use software that blocks tracking tools
-								</li>
-								<li class="score-description__tooltip-context-list-item">
-									Don't store passwords in browsers
-								</li>
-								<li class="score-description__tooltip-context-list-item">
-									Control your privacy with Lenovo Privacy Essentials by Figleaf
-								</li>
-							</ul>
 						</div>
 					</ng-template>
 				</vtr-tooltip>
@@ -44,6 +30,7 @@
 		</div>
 		<div class="privacy-score__btn-container" *ngIf="isFirstTimeVisitor$ | async">
 			<button class="privacy-score__btn"
+					vtrOfflineMode
 					vtrSendAnalytics
 					[metricsEvent]="'ItemClick'"
 					[metricsItem]="'DefineMyScoreButton'"

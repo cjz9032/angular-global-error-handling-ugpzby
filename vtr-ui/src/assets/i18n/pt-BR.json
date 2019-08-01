@@ -1521,9 +1521,9 @@
             "listContactCustomerService": "Entrar em contato com o atendimento ao cliente",
             "listContactUsOnWechat": "Entre em contato pelo WeChat",
             "weChatDescription": "Faça uma pergunta pelo WeChat e nos certificaremos de responder rapidamente",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Encontre-nos nas mídias sociais",
+            "listContactUsOnFacebook": "Entre em contato pelo Facebook",
+            "facebookDescription": "Clique para nos encontrar no Facebook"
         },
         "quicklinks": {
             "title": "Links rápidos",
@@ -1565,12 +1565,12 @@
             "good": "BOA",
             "malicious": "PERIGOSA",
             "suspicious": "SUSPEITA",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "Sua pontuação de segurança dá uma ideia de como você está seguro on-line, o resultado depende se você:",
+            "antivirus": "É protegido por um software antivírus",
+            "password": "Tem senhas fortes e complexas gerenciadas de maneira segura",
+            "vpn": "Monitora sua exposição de rede aos invasores",
+            "wifi": "Criptografa seus dados pessoais ao usar WiFi público",
+            "windowsHello": "Protege seu dispositivo usando opções de login seguras"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1665,7 @@
                 "bodyText": "Detectamos que você não possui partes essenciais do Vantage. Essas partes serão baixadas em segundo plano. Tente novamente mais tarde.",
                 "closeText": "fechar",
                 "offlineText": "Detectamos que você não está conectado à Internet. Algumas partes desta página não funcionarão corretamente. Reconecte-se",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "Falha na criação da conta. Tente novamente mais tarde."
             }
         },
         "homeprotection": {

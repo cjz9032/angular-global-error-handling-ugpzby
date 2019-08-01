@@ -34,6 +34,8 @@ import { PrivacyScoreComponent } from './pages/result/privacy-score/privacy-scor
 import { BrowserAccountHeaderComponent } from './pages/browser-accounts/browser-account-header/browser-account-header.component';
 import { ArticleDescriptionComponent } from './pages/articles/article-description/article-description.component';
 import { TrialExpiredWidgetComponent } from './main-layout/sidebar/trial-expired-widget/trial-expired-widget.component';
+import { OfflineWidgetComponent } from './main-layout/sidebar/offline-widget/offline-widget.component';
+import { VideoWidgetComponent } from './main-layout/sidebar/video-widget/video-widget.component';
 
 library.add(fal);
 
@@ -72,6 +74,8 @@ library.add(fal);
 		BrowserAccountHeaderComponent,
 		ArticleDescriptionComponent,
 		TrialExpiredWidgetComponent,
+		OfflineWidgetComponent,
+		VideoWidgetComponent,
 	],
 })
 export class PrivacyModule {

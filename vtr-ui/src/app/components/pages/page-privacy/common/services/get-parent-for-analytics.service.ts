@@ -42,6 +42,10 @@ export class GetParentForAnalyticsService {
 				return 'Privacy.NonPrivatePassword';
 			case  RoutersName.LANDING:
 				return 'Privacy.Landing';
+			case RoutersName.ARTICLES:
+				return 'Privacy.ArticleAll';
+			case RoutersName.ARTICLEDETAILS:
+				return 'Privacy.Article';
 			default:
 				return '';
 		}

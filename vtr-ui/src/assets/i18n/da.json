@@ -1521,9 +1521,9 @@
             "listContactCustomerService": "Kontakt kundeservice",
             "listContactUsOnWechat": "Kontakt os på WeChat",
             "weChatDescription": "Stil os et spørgsmål på WeChat. Vi vender hurtigt tilbage med svar",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Find os på sociale medier",
+            "listContactUsOnFacebook": "Kontakt os på Facebook",
+            "facebookDescription": "Klik for at finde os på Facebook"
         },
         "quicklinks": {
             "title": "Kviklinks",
@@ -1565,12 +1565,12 @@
             "good": "GODT",
             "malicious": "SKADELIGT",
             "suspicious": "MISTÆNKELIGT",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "Dit sikkerhedsresultat giver dig et indtryk af, hvor sikker du er online. Resultatet afhænger af, om du:",
+            "antivirus": "Er beskyttet af antivirussoftware",
+            "password": "Har stærke og komplekse adgangskoder, der administreres på en sikker måde",
+            "vpn": "Overvåger om dit netværk udsættes for hackerangreb",
+            "wifi": "Krypterer dine personlige data, når du bruger offentligt WiFi",
+            "windowsHello": "Beskytter din enhed med indstillinger til sikker login"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1665,7 @@
                 "bodyText": "Vi har opdaget, at du mangler vigtige dele af Vantage. Disse dele downloades i baggrunden. Prøv igen senere.",
                 "closeText": "luk",
                 "offlineText": "Vi har registreret, at du ikke har forbindelse til internettet. Visse dele af denne side fungerer ikke korrekt. Opret forbindelse igen",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "Kontoen blev ikke oprettet. Prøv igen senere."
             }
         },
         "homeprotection": {

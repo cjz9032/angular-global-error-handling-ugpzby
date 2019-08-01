@@ -1521,9 +1521,9 @@
             "listContactCustomerService": "Contatta il servizio clienti",
             "listContactUsOnWechat": "Contattaci su WeChat",
             "weChatDescription": "Fai una domanda su WeChat e ti risponderemo rapidamente",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Seguici sui social media",
+            "listContactUsOnFacebook": "Contattaci su Facebook",
+            "facebookDescription": "Fai clic per seguirci su Facebook"
         },
         "quicklinks": {
             "title": "Collegamenti rapidi",
@@ -1565,12 +1565,12 @@
             "good": "BUONA",
             "malicious": "DANNOSA",
             "suspicious": "SOSPETTA",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "Il tuo punteggio di sicurezza ti dà un'idea del livello di protezione del tuo ambiente; il risultato dipende da:",
+            "antivirus": "La protezione con software antivirus",
+            "password": "Password sicure e complesse che garantiscono la massima protezione",
+            "vpn": "Monitoraggio dell'esposizione della rete contro i malintenzionati",
+            "wifi": "Crittografia dei dati personali quando si utilizzano le reti WiFi pubbliche",
+            "windowsHello": "Protezione del dispositivo con opzioni di accesso sicure"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1665,7 @@
                 "bodyText": "Sono stati rilevati errori di perdita di pacchetti Vantage. Questi pacchetti verranno scaricati in background. Si prega di riprovare più tardi.",
                 "closeText": "chiudi",
                 "offlineText": "È stato rilevato che non si è connessi a Internet. Alcune parti di questa pagina non funzioneranno correttamente. Riconnettersi",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "Creazione account non riuscita. Si prega di riprovare più tardi."
             }
         },
         "homeprotection": {
