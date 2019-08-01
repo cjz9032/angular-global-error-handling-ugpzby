@@ -1,6 +1,6 @@
 <div class="privacy-dashboard">
 	<p class="privacy-dashboard__title">
-		Your privacy statistics for now
+		My privacy statistics
 	</p>
 	<ul class="privacy-dashboard-list">
 		<li class="privacy-dashboard-list__item">
@@ -8,7 +8,8 @@
 				<div class="privacy-dashboard-list__icon-holder privacy-dashboard-list__icon-holder--man"
 					 rel="icon" role="img" aria-label="icon green man">
 				</div>
-				<p class="privacy-dashboard-list__value">{{dashboardData?.totalAccounts}}</p>
+				<p class="privacy-dashboard-list__value">{{dashboardData?.monitoredAccounts}}
+					<span class="privacy-dashboard-list__value--grey">of {{dashboardData?.totalAccounts}}</span></p>
 			</div>
 			<p class="privacy-dashboard-list__text">
 				Accounts monitored for breaches

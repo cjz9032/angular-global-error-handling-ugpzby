@@ -10,7 +10,6 @@ import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/mo
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { RegionService } from 'src/app/services/region/region.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { GuardService } from '../../../services/guard/security-guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
@@ -44,12 +43,12 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		this.antiVirus.refresh();
 	}
 
-	constructor(public mockService: MockService,
+	constructor(
+		public mockService: MockService,
 		public VantageShell: VantageShellService,
 		public cmsService: CMSService,
 		public commonService: CommonService,
 		public modalService: NgbModal,
-		public regionService: RegionService,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
 		private router: Router
@@ -260,7 +259,13 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			size: 'lg',
 			centered: true,
 			windowClass: 'Article-Detail-Modal',
-			keyboard: false
+			keyboard: false,
+			beforeDismiss: () => {
+				if (articleDetailModal.componentInstance.onBeforeDismiss) {
+					articleDetailModal.componentInstance.onBeforeDismiss();
+				}
+				return true;
+			}
 		});
 
 		articleDetailModal.componentInstance.articleId = this.mcafeeArticleId;

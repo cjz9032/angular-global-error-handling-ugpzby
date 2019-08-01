@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import isString from 'lodash/isString';
-import { RegionService } from 'src/app/services/region/region.service';
+import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 
 @Component({
 	selector: 'vtr-widget-mcafee',
@@ -43,23 +43,22 @@ export class WidgetMcafeeComponent implements OnInit {
 		title: 'security.antivirus.common.firewall',
 	}];
 
-	constructor(public translate: TranslateService,
-		public regionService: RegionService) { }
+	constructor(
+		public translate: TranslateService,
+		private localInfoService: LocalInfoService
+		) { }
 
 	ngOnInit() {
+		this.localInfoService.getLocalInfo().then(result => {
+			this.country = result.GEO;
+		}).catch(e => {
+			this.country = 'us';
+		});
 		this.urlGetMcAfee = `https://home.mcafee.com/root/campaign.aspx?cid=233426&affid=714&culture=${this.getLanguageIdentifier()}`;
 	}
 
 	getLanguageIdentifier() {
 		const language = isString(this.translate.currentLang) ? this.translate.currentLang.substring(0, 2) : '*';
-		this.regionService.getRegion().subscribe({
-			next: x => {
-				this.country = x;
-			},
-			error: err => {
-				this.country = 'us';
-			},
-		});
 		if (language === 'en' && this.country === 'gb') {
 			return this.nls.get('gb');
 		}

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { FigleafDashboard } from '../../services/figleaf-overview.service';
 
 @Component({
 	selector: 'vtr-stat',
@@ -6,5 +7,5 @@ import { Component, Input } from '@angular/core';
 	styleUrls: ['./stat.component.scss']
 })
 export class StatComponent {
-	@Input() dashboardData;
+	@Input() dashboardData: FigleafDashboard;
 }

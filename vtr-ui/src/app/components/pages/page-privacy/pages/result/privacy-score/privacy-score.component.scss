@@ -143,19 +143,4 @@
 		width: 50rem;
 	}
 
-	&__tooltip-context-title {
-		@extend %text-common;
-		color: #191C28;
-		font-weight: bold;
-	}
-
-	&__tooltip-context-list {
-		list-style-position: inside;
-		margin: 2rem 0 0 0;
-		padding: 0;
-	}
-
-	&__tooltip-context-list-item {
-		margin-top: 1rem;
-	}
 }

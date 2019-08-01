@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { distinctUntilChanged, map, startWith } from 'rxjs/operators';
 import { UserAllowService } from '../../common/services/user-allow.service';
 import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
@@ -18,7 +18,7 @@ import {
 	templateUrl: './trackers.component.html',
 	styleUrls: ['./trackers.component.scss']
 })
-export class TrackersComponent {
+export class TrackersComponent implements OnInit {
 	isConsentGiven$ = this.userAllowService.allowToShow.pipe(map((value) => value['trackingMap']));
 	websiteTrackersCount$ = this.countNumberOfIssuesService.websiteTrackersCount.pipe(
 		map((issueCount) => (getDisplayedCountValueOfIssues(this.userDataGetStateService.websiteTrackersResult, issueCount)) || 0),
@@ -43,15 +43,15 @@ export class TrackersComponent {
 	};
 
 	tryProductText = {
-		risk: 'Most websites collect your IP address, location, social profile information, ' +
-			'and even shopping history to personalize your experience, show targeted ads, ' +
-			'or suggest things based on your interests.',
-		howToFix: 'You can block some tracking tools by turning on the ‘Do Not Track’ feature in your browser. ' +
-			'Or install Lenovo Privacy Essentials by FigLeaf and block them ' +
-			'completely from collecting your personal information.',
-		riskAfterInstallFigleaf: 'Most websites collect your IP address, location, social profile information,' +
-			' and even shopping history to personalize your experience, show targeted ads, ' +
-			'or suggest things based on your interests.',
+		risk: 'While some tracking tools are designed to personalize your ' +
+			'experience, many collect your IP address, location, social profile, shopping history, ' +
+			'and interests – and then sell this information to the highest bidder.',
+		howToFix: 'We recommend a tracking tools blocker, like the one in ' +
+			'Lenovo Privacy Essentials by FigLeaf, because turning on the “Do Not Track” ' +
+			'feature in your browser isn’t enough.',
+		riskAfterInstallFigleaf: 'While some tracking tools are designed to personalize your ' +
+			'experience, many collect your IP address, location, social profile, shopping history, ' +
+			'and interests – and then sell this information to the highest bidder.',
 		howToFixAfterInstallFigleaf: 'Turn on \'Block trackers\' functionality for websites you choose ' +
 			'in Lenovo Privacy Essentials by Figleaf.'
 	};
@@ -69,6 +69,10 @@ export class TrackersComponent {
 		private trackingMapService: TrackingMapService,
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
 	) {	}
+
+	ngOnInit() {
+		this.trackingMapService.update();
+	}
 
 	giveConcent() {
 		this.userAllowService.setShowTrackingMap(true);
