@@ -202,10 +202,6 @@
 					}
 				}
 			},
-			"initalKey": {
-				"zero": "0",
-				"m1": "M1"
-			},
 			"popupContent": {
 				"clearMacrokey": {
 					"title": "Are you sure you want to clear this macro key?"
@@ -510,8 +506,7 @@
 			"note": {
 				"accessNote": "doesn't have access to Lenovo Vantage",
 				"microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-				"accessUrl" : "Go to Windows settings to give access"
-				
+				"accessUrl": "Go to Windows settings to give access"
 			}
 		},
 		"systemStatus": {

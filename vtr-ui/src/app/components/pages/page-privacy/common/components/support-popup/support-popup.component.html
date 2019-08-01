@@ -20,6 +20,7 @@
 				  <button class="support-popup__button"
 						  type="button"
 						  vtrSendAnalytics
+						  vtrOfflineMode
 						  [metricsEvent]="'ItemClick'"
 						  [metricsItem]="'GetPrivacySupportButton '"
 						  (click)="openFigleafSupport()">
@@ -37,12 +38,13 @@
             <li class="support-popup__list-item">Ask any PC related questions</li>
             <li class="support-popup__list-item">Report PC related issues</li>
             <li class="support-popup__list-item">Get help with PC issues</li>
-            <li class="support-popup__list-item">24/7 support</li>
+            <li class="support-popup__list-item">Online support</li>
           </ul>
           <div class="support-popup__buttons">
             <button class="support-popup__button"
 					type="button"
                     vtrSendAnalytics
+					vtrOfflineMode
                     [metricsEvent]="'ItemClick'"
                     [metricsItem]="'GetTechnicalSupportButton'"
                     (click)="openLenovoSupport()">

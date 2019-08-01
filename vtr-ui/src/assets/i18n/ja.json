@@ -3,229 +3,229 @@
         "dashboard": {
             "device": {
                 "quickSettings": {
-                    "title": "Thermal Mode",
+                    "title": "サーマル・モード",
                     "status": {
-                        "performance": "Performance",
-                        "balance": "Balance",
-                        "quiet": "Quiet"
+                        "performance": "性能",
+                        "balance": "バランス",
+                        "quiet": "静音"
                     },
                     "statusText": {
-                        "perText": "Higher CPU usage, Higher fan speed",
-                        "balText": "Normal CPU and fan speed",
-                        "quietText": "Lower CPU usage, Lower fan speed"
+                        "perText": "高い CPU 使用率、高速なファン",
+                        "balText": "通常の CPU/ファン速度",
+                        "quietText": "低い CPU 使用率、低速なファン"
                     },
-                    "wifiSecurity": "Wifi Security",
+                    "wifiSecurity": "WiFi セキュリティ",
                     "dolby": "Dolby",
-                    "rapidCharge": "Rapid Charge"
+                    "rapidCharge": "急速充電"
                 },
                 "legionEdge": {
-                    "title": "CPU Overclock",
+                    "title": "CPU クロックアップ",
                     "status": {
-                        "alwayson": "On",
-                        "whenGaming": "When Gaming",
-                        "off": "Off"
+                        "alwayson": "オン",
+                        "whenGaming": "ゲーム時",
+                        "off": "オフ"
                     },
                     "statusText": {
-                        "onText": "CPU Overclocking will be activated",
-                        "gamingText": "CPU Overclocking will be activated automatically while game launches",
-                        "offText": "CPU Overclocking will be disabled"
+                        "onText": "CPU クロックアップが有効になります",
+                        "gamingText": "ゲーム起動時に CPU クロックアップが自動的に有効になります",
+                        "offText": "CPU クロックアップが無効になります"
                     },
-                    "ramOverlock": "RAM Overclock",
+                    "ramOverlock": "RAM クロックアップ",
                     "popup": {
-                        "text": "Change will be effective after restarting computer.",
+                        "text": "コンピューターを再起動すると、変更内容が有効になります。",
                         "button": "ok"
                     },
                     "driverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "You need install driver for RAM Overclock to  make it effective",
-                        "button": "Install",
-                        "link": "cancel",
-                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
-                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
+                        "headerText": "ドライバーのインストールが必要です",
+                        "text": "RAM クロックアップを有効にするためにドライバーをインストールします (再起動が必要です)",
+                        "button": "インストール",
+                        "link": "キャンセル",
+                        "networkBoostText": "有効にするにはネットワーク・ブーストのドライバーをインストールする必要があります",
+                        "hybridModeText": "有効にするにはハイブリッド・モードのドライバーをインストールする必要があります",
+                        "cpuOverclockText": "CPU クロックアップを有効にするためにドライバーをインストールします (再起動が必要です)"
                     },
-                    "autoClose": "Auto Close",
-                    "networkBoost": "Network Boost",
-                    "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock",
+                    "autoClose": "自動クローズ",
+                    "networkBoost": "ネットワーク・ブースト",
+                    "hybridMode": "ハイブリッド・モード",
+                    "touchpadLock": "タッチパッド・ロック",
                     "lightingDriverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "Please install driver",
-                        "button": "Install",
-                        "link": "cancel"
+                        "headerText": "ドライバーのインストールが必要です",
+                        "text": "照明を有効にするためにドライバーをインストールします (再起動が必要です)",
+                        "button": "インストール",
+                        "link": "キャンセル"
                     },
                     "lightingColorMessage": {
-                        "text": "Selecting color not available to this effect."
+                        "text": "選択中の色はこの効果に使用できません。"
                     }
                 },
                 "systemTools": {
-                    "power": "Power",
-                    "media": "Media",
-                    "macroKey": "Marco Key",
-                    "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update",
-                    "header": "System Tools"
+                    "power": "電源",
+                    "media": "メディア",
+                    "macroKey": "マクロ・キー",
+                    "hardwareScan": "ハードウェア・スキャン",
+                    "systemUpdate": "システム アップデート",
+                    "header": "システム・ツール"
                 },
                 "lighting": {
-                    "title": "Lighting Customize",
-                    "header": "Lighting"
+                    "title": "照明カスタマイズ",
+                    "header": "照明"
                 },
                 "legionEdgeModal": {
-                    "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
-                    "line2": "<b>Feature Management Overview</b> <br> Some features not available on all devices",
-                    "line3": "<b>CPU Overclocking </b><br> Boost the maximum speed for your processor",
-                    "line4": "<b>RAM Overclocking </b><br> Boost the maximum speed for your memory",
-                    "line5": "<b>Network Boost </b><br> Prioritize network traffic for the game you're playing",
-                    "line6": "<b>Dolby </b><br> Tune your audio specifically for gaming with Dolby technology",
-                    "line7": "<b>Hybrid Mode </b><br> Disable advanced GPU settings when not gaming to boost battery performance",
-                    "line8": "<b>Rapid Charge </b><br> Game on the go longer with quicker battery charging",
-                    "line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
-                    "line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
-                    "line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control"
+                    "line1": "Vantage Edgeを使用すると、設定は使用状況に基づいて自動的に調整されます。\n ゲーム中は最大パフォーマンス、不在時はバッテリーを節約。",
+                    "line2": "<b>機能管理の概要</b><br> 一部の機能を使用できないデバイスもあります",
+                    "line3": "<b>CPU クロックアップ </b><br> プロセッサーの最大速度を上げます",
+                    "line4": "<b>RAM クロックアップ </b><br> メモリーの最大速度を上げます",
+                    "line5": "<b>ネットワーク・ブースト </b><br> プレイしているゲームのネットワーク・トラフィックを優先します",
+                    "line6": "<b>Dolby </b><br> Dolbyテクノロジーを使用してオーディオをゲームに特化してチューニングします",
+                    "line7": "<b>ハイブリッド・モード </b><br> バッテリー性能を高めるためにゲーム以外のときは詳細 GPU 設定を無効にします",
+                    "line8": "<b>急速充電 </b><br> 急速充電で外出時により長くゲームをプレイできます",
+                    "line9": "<b>タッチパッド・ロック </b><br> ゲーム中はタッチパッドを無効にして誤入力を防ぎます",
+                    "line10": "<b>自動クローズ </b><br> プレイ開始前にゲームに不要な処理をクリアして利用可能なシステム・リソースを最大化します",
+                    "line11": "<b>サーマル・モード </b><br> ファン速度と冷却制御のために優先デバイス・プロファイルを設定する"
                 },
                 "systemInfo": {
-                    "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                    "systenTooltip": "CPU/GPU/RAM およびさまざまなドライブの上にマウスを移動すると、製造元やモデル情報などの説明が表示されます"
                 },
                 "systemStatus": {
-                    "info": "INFO"
+                    "info": "情報"
                 }
             }
         },
         "common": {
             "menu": {
                 "support": {
-                    "title": "Support",
-                    "sub1": "Support",
+                    "title": "サポート",
+                    "sub1": "サポート",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
             }
         },
         "macroKey": {
-            "title": "Macro Key",
-            "introLine": "You can record a series of key input, and use them in gaming or other operations.",
+            "title": "マクロ・キー",
+            "introLine": "一連のキー入力を記録して、ゲームやその他の操作に使用できます。",
             "status": {
                 "on": {
-                    "title": "On",
-                    "description": "Always Enabled"
+                    "title": "オン",
+                    "description": "常に有効"
                 },
                 "whileGaming": {
-                    "title": "Macro Key enabled only when gaming",
-                    "description": "It will be enabled when you game and remain as num key when you don't."
+                    "title": "ゲーム時のみマクロ・キーを有効",
+                    "description": "ゲーム時には有効になり、ゲームをしない時は数字キーのままになります。"
                 },
                 "off": {
-                    "title": "Off",
-                    "description": "Always Off"
+                    "title": "オフ",
+                    "description": "常にオフ"
                 }
             },
             "details": {
                 "intro": {
-                    "noNumber": "SELECT A MACRO KEY",
-                    "title": "CREATE A MACRO KEY FOR",
-                    "line1": "click the start recording button below",
-                    "line2": "type in macro key",
-                    "line3": "stop recording when finishing typing"
+                    "noNumber": "マクロ・キーを選択",
+                    "title": "マクロ・キーを作成",
+                    "line1": "下の記録開始ボタンをクリックしてください",
+                    "line2": "マクロ・キーを入力してください",
+                    "line3": "入力が終了したら記録を停止してください"
                 },
                 "buttons": {
-                    "start": "START RECORDING",
-                    "stop": "STOP RECORDING",
+                    "start": "記録を開始",
+                    "stop": "記録を停止",
                     "numberPrefix": "NUM"
                 },
                 "recording": {
-                    "title": "START TYPING",
-                    "description": "20 inputs within 20 seconds can be recorded."
+                    "title": "入力を開始",
+                    "description": "20 秒間に 20 回の入力を記録できます。"
                 },
                 "recorded": {
-                    "title": "MACRO KEY FOR ",
-                    "deleteKey": "Delete Key",
-                    "clear": "Clear",
+                    "title": "マクロ・キー",
+                    "deleteKey": "キーを削除",
+                    "clear": "クリア",
                     "intervalStatus": {
                         "keep": {
-                            "title": "Keep Delay",
-                            "description": "Intervals of key actions will be kept and applied when using this macro key."
+                            "title": "ディレイ保持",
+                            "description": "キー動作の間隔を保持して、このマクロ・キーの使用時に適用します。"
                         },
                         "ignore": {
-                            "title": "Ignore Delay",
-                            "description": "Intervals of key actions will be ignored."
+                            "title": "ディレイ無視",
+                            "description": "キー動作の間隔を無視します。"
                         }
                     },
                     "repeatStatus": {
                         "repeat1": {
-                            "title": "No Repeat",
-                            "description": "No Repeat"
+                            "title": "繰り返しなし",
+                            "description": "繰り返しなし"
                         },
                         "repeat2": {
-                            "title": "Repeat 2 Times",
-                            "description": "Repeats 2 times"
+                            "title": "2 回繰り返す",
+                            "description": "2 回繰り返す"
                         },
                         "repeat3": {
-                            "title": "Repeat 3 Times",
-                            "description": "Repeats 3 times"
+                            "title": "3 回繰り返す",
+                            "description": "3 回繰り返す"
                         },
                         "repeat4": {
-                            "title": "Repeat 4 Times",
-                            "description": "Repeats 4 times"
+                            "title": "4 回繰り返す",
+                            "description": "4 回繰り返す"
                         },
                         "repeat5": {
-                            "title": "Repeat 5 Times",
-                            "description": "Repeats 5 times"
+                            "title": "5 回繰り返す",
+                            "description": "5 回繰り返す"
                         },
                         "repeat6": {
-                            "title": "Repeat 6 Times",
-                            "description": "Repeats 6 times"
+                            "title": "6 回繰り返す",
+                            "description": "6 回繰り返す"
                         },
                         "repeat7": {
-                            "title": "Repeat 7 Times",
-                            "description": "Repeats 7 times"
+                            "title": "7 回繰り返す",
+                            "description": "7 回繰り返す"
                         },
                         "repeat8": {
-                            "title": "Repeat 8 Times",
-                            "description": "Repeats 8 times"
+                            "title": "8 回繰り返す",
+                            "description": "8 回繰り返す"
                         },
                         "repeat9": {
-                            "title": "Repeat 9 Times",
-                            "description": "Repeats 9 times"
+                            "title": "9 回繰り返す",
+                            "description": "9 回繰り返す"
                         },
                         "repeat10": {
-                            "title": "Repeat 10 Times",
-                            "description": "Repeats 10 times"
+                            "title": "10 回繰り返す",
+                            "description": "10 回繰り返す"
                         }
                     },
                     "list": {
                         "header": {
-                            "col1": "Key Action",
-                            "col2": "Interval"
+                            "col1": "キー動作",
+                            "col2": "間隔"
                         },
                         "footer": {
-                            "title": "Next input.."
+                            "title": "次の入力.."
                         }
                     }
                 }
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure you want to clear this macro key?"
+                    "title": "このマクロ・キーをクリアしてもよろしいですか?"
                 },
                 "timeoutRecording": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if no input for 20 seconds."
+                    "title": "記録のタイムアウト。",
+                    "body": "20 秒間入力がない場合、記録はタイムアウトします。"
                 },
                 "maximumInput": {
-                    "title": "Maximum Input Reached.",
-                    "body": "Macro key can only store inputs less than 20."
+                    "title": "最大入力数に達しました。",
+                    "body": "マクロ・キーは 20 回までの入力しか保存できません。"
                 },
                 "inputStopped": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if the input stopped for more than 10 seconds."
+                    "title": "記録のタイムアウト。",
+                    "body": "入力が 10 秒以上停止すると、記録はタイムアウトします。"
                 },
                 "confirmButton": {
-                    "btnClear": "Clear",
-                    "btnCancel": "Cancel"
+                    "btnClear": "クリア",
+                    "btnCancel": "キャンセル"
                 },
                 "btnOk": "OK"
             },
             "recording": {
-                "title": "Recording Macro Key For"
+                "title": "マクロ・キーを記録"
             },
             "initalKey": {
                 "zero": 0,
@@ -233,97 +233,97 @@
             }
         },
         "lightingProfile": {
-            "title": "Lighting",
+            "title": "照明",
             "effect": {
                 "option1": {
-                    "title": "On"
+                    "title": "オン"
                 },
                 "option2": {
-                    "title": "Flicker"
+                    "title": "フリッカー"
                 },
                 "option3": {
-                    "title": "Breath"
+                    "title": "ブレス"
                 },
                 "option4": {
-                    "title": "Wave"
+                    "title": "ウェーブ"
                 },
                 "option5": {
-                    "title": "Smooth"
+                    "title": "スムーズ"
                 },
                 "option6": {
-                    "title": "CPU Temperature"
+                    "title": "CPU 温度"
                 },
                 "option7": {
-                    "title": "CPU Utilization"
+                    "title": "CPU 使用率"
                 },
                 "option8": {
-                    "title": "Off"
+                    "title": "オフ"
                 },
                 "apply": {
-                    "title": "APPLY"
+                    "title": "適用"
                 },
                 "applied": {
-                    "title": "APPLIED"
+                    "title": "適用済み"
                 }
             },
             "brightness": {
                 "text1": {
-                    "title": "*Brightness setting doesn't apply on "
+                    "title": "*明るさ設定は次のものに適用されません"
                 },
                 "text2": {
-                    "title": " effect"
+                    "title": " 効果"
                 }
             },
             "lightingSingleLightingOption": {
                 "option1": {
-                    "title": "Always On"
+                    "title": "常にオン"
                 },
                 "option2": {
-                    "title": "Fast Blink"
+                    "title": "高速点滅"
                 },
                 "option3": {
-                    "title": "Medium Blink"
+                    "title": "中速点滅"
                 },
                 "option4": {
-                    "title": "Slow Blink"
+                    "title": "低速点滅"
                 },
                 "option5": {
-                    "title": "Blink Level"
+                    "title": "点滅レベル"
                 }
             },
             "profile": {
                 "text1": {
-                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                    "title": "照明はオフになっています。オンにしてカスタマイズするには、上のプロファイル・タブを選択します。"
                 },
                 "text2": {
-                    "title": "effect"
+                    "title": "効果"
                 },
                 "text3": {
-                    "title": "Effect"
+                    "title": "効果"
                 }
             },
             "button": {
                 "default": {
-                    "title": "Set to default"
+                    "title": "デフォルトに設定"
                 }
             },
             "profileheading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "オフ"
                 },
                 "text2": {
-                    "title": "Profile 1"
+                    "title": "プロファイル 1"
                 },
                 "text3": {
-                    "title": "Profile 2"
+                    "title": "プロファイル 2"
                 },
                 "text4": {
-                    "title": "Profile 3"
+                    "title": "プロファイル 3"
                 }
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "オフ"
                 },
                 "text2": {
                     "title": 1
@@ -335,33 +335,33 @@
                     "title": 3
                 },
                 "Customize": {
-                    "title": "Customize"
+                    "title": "カスタマイズ"
                 },
                 "heading": {
-                    "title": "Select Profile:"
+                    "title": "プロファイルを選択:"
                 }
             },
             "colourwheel": {
                 "text1": {
-                    "title": "Selecting colour not available to this effect."
+                    "title": "選択中の色はこの効果に使用できません。"
                 },
                 "text2": {
-                    "title": "APPLY"
+                    "title": "適用"
                 },
                 "text3": {
-                    "title": "APPLIED"
+                    "title": "適用済み"
                 },
                 "text4": {
-                    "title": "R:"
+                    "title": "赤:"
                 },
                 "text5": {
-                    "title": "G:"
+                    "title": "緑:"
                 },
                 "text6": {
-                    "title": "B:"
+                    "title": "黒:"
                 },
                 "text7": {
-                    "title": "Color"
+                    "title": "色"
                 }
             }
         },
