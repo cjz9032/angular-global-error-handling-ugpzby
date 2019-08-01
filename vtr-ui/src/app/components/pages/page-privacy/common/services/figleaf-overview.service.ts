@@ -1,19 +1,26 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
-import { ReplaySubject, timer, zip } from 'rxjs';
+import { merge, ReplaySubject, zip } from 'rxjs';
 import { filter, switchMapTo, take, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
+import { UpdateTriggersService } from './update-triggers.service';
 
-interface FigleafSettingsMessageResponse {
-	type: 'getFigleafSettings';
+interface MessageResponse<T> {
+	type: string;
 	status: number;
-	payload: FigleafSettings;
+	payload: T;
 }
 
-interface FigleafStatusResponse {
+interface FigleafSettingsMessageResponse extends MessageResponse<FigleafSettings> {
+	type: 'getFigleafSettings';
+}
+
+interface FigleafStatusResponse extends MessageResponse<FigleafStatus> {
 	type: 'getFigleafStatus';
-	status: number;
-	payload: FigleafStatus;
+}
+
+interface FigleafDashboardMessageResponse extends MessageResponse<FigleafDashboard> {
+	type: 'getFigleafDashboard';
 }
 
 export interface FigleafStatus {
@@ -27,15 +34,10 @@ export interface FigleafSettings {
 	isBreachMonitoringEnabled: boolean;
 }
 
-interface FigleafDashboardMessageResponse {
-	type: 'getFigleafDashboard';
-	status: number;
-	payload: FigleafDashboard;
-}
-
 export interface FigleafDashboard {
 	totalAccounts: number;
 	maskedAccounts: number;
+	monitoredAccounts: number;
 	blockedTrackers: number;
 	websitesConnectedPrivately: number;
 }
@@ -59,25 +61,11 @@ export class FigleafOverviewService implements OnDestroy {
 	figleafStatus$ = new ReplaySubject<FigleafStatus>(1);
 
 	constructor(
-		private communicationWithFigleafService: CommunicationWithFigleafService
+		private communicationWithFigleafService: CommunicationWithFigleafService,
+		private updateTriggersService: UpdateTriggersService
 	) {
-		this.communicationWithFigleafService.isFigleafReadyForCommunication$
-			.pipe(
-				filter(isFigleafReadyForCommunication => !!isFigleafReadyForCommunication),
-				switchMapTo(timer(0, 30000)),
-				switchMapTo(zip(
-					this.getFigleafData<FigleafSettingsMessageResponse>('getFigleafSettings'),
-					this.getFigleafData<FigleafDashboardMessageResponse>('getFigleafDashboard'),
-					this.getFigleafData<FigleafStatusResponse>('getFigleafStatus'),
-					)
-				),
-				takeUntil(instanceDestroyed(this)),
-			)
-			.subscribe(([settings, dashboard, status]) => {
-				this.figleafSettings$.next(settings.payload);
-				this.figleafDashboard$.next(dashboard.payload);
-				this.figleafStatus$.next(this.transformLicenseType(status.payload));
-			});
+		this.isFigleafClosed();
+		this.isFigleafReady();
 	}
 
 	ngOnDestroy() {
@@ -104,5 +92,38 @@ export class FigleafOverviewService implements OnDestroy {
 		}
 
 		return {...payload, licenseType};
+	}
+
+	private isFigleafClosed() {
+		this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(
+			filter(isFigleafReadyForCommunication => !isFigleafReadyForCommunication),
+			takeUntil(instanceDestroyed(this)),
+		).subscribe(() => {
+			this.figleafSettings$.next({
+				isAntitrackingEnabled: false,
+				isBreachMonitoringEnabled: false
+			});
+		});
+	}
+
+	private isFigleafReady() {
+		merge(
+			this.communicationWithFigleafService.isFigleafReadyForCommunication$,
+			this.updateTriggersService.shouldUpdate$
+		).pipe(
+			switchMapTo(this.communicationWithFigleafService.isFigleafReadyForCommunication$),
+			filter(isFigleafReadyForCommunication => !!isFigleafReadyForCommunication),
+			switchMapTo(zip(
+				this.getFigleafData<FigleafSettingsMessageResponse>('getFigleafSettings'),
+				this.getFigleafData<FigleafDashboardMessageResponse>('getFigleafDashboard'),
+				this.getFigleafData<FigleafStatusResponse>('getFigleafStatus'),
+				)
+			),
+			takeUntil(instanceDestroyed(this)),
+		).subscribe(([settings, dashboard, status]) => {
+			this.figleafSettings$.next(settings.payload);
+			this.figleafDashboard$.next(dashboard.payload);
+			this.figleafStatus$.next(this.transformLicenseType(status.payload));
+		});
 	}
 }

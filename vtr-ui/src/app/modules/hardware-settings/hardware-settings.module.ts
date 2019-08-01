@@ -35,7 +35,6 @@ import { PageHardwarescanComponent } from 'src/app/components/pages/page-hardwar
 import { PageQuestionsComponent } from 'src/app/components/pages/page-questions/page-questions.component';
 import { PageSettingsComponent } from 'src/app/components/pages/page-settings/page-settings.component';
 import { PageSmartAssistComponent } from 'src/app/components/pages/page-smart-assist/page-smart-assist.component';
-import { PageSupportComponent } from 'src/app/components/pages/page-support/page-support.component';
 import { PageSupportDetailComponent } from 'src/app/components/pages/page-support-detail/page-support-detail.component';
 import { PowerSmartSettingsComponent } from 'src/app/components/widgets/power-smart-settings/power-smart-settings.component';
 import { RouterModule } from '@angular/router';
@@ -144,7 +143,6 @@ library.add(falCircle);
 		PageQuestionsComponent,
 		PageSettingsComponent,
 		PageSmartAssistComponent,
-		PageSupportComponent,
 		PageSupportDetailComponent,
 		PowerSmartSettingsComponent,
 		SmartStandbyComponent,

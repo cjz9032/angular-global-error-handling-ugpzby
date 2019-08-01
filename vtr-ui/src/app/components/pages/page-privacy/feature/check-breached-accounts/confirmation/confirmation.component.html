@@ -6,8 +6,8 @@
 		<div class="confirm-content">
 			<div class="confirm-content__container-top" [class.confirm-content__container-top--error]="isError$ | async">
 				<div class="confirm-content__inner-wrapper">
-					<p class="confirm-content__title">Email with a verification code has been sent to
-					<span class="confirm-content__title--bold">{{userEmail}}</span>. Enter the code below to continue.</p>
+					<p class="confirm-content__title">Check
+					<span class="confirm-content__title--bold">{{userEmail}}</span> for a verification code and enter it below.</p>
 					<div class="verification-input">
 						<input #confirmationInput class="verification-input__input" [class.verification-input__input--error]="isError$ | async"
 							   type="text" maxlength="6" vtrNumbersOnly
@@ -28,6 +28,7 @@
 					[metricsEvent]="'ItemClick'"
 					[metricsItem]="'BreachedAccountsConfirmEmailButton'"
 					[class.confirm__confirm-btn--error]="confirmationForm.touched && confirmationForm.dirty && confirmationForm.invalid || (isError$ | async)"
+					vtrOfflineMode
 					type="submit">
 				Confirm
 			</button>
@@ -36,6 +37,7 @@
 					vtrSendAnalytics
 					[metricsEvent]="'ItemClick'"
 					[metricsItem]="'BreachedAccountsSendCodeAgainLink'"
+					vtrOfflineMode
 					(click)="resendConfirmationCode()">
 				Send the code again
 			</button>

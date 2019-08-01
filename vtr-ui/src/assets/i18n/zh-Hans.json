@@ -1521,9 +1521,9 @@
             "listContactCustomerService": "联系客户服务部门",
             "listContactUsOnWechat": "通过微信联系我们",
             "weChatDescription": "在微信上向我们提问，我们定会迅速回复",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "在社交媒体上找到我们",
+            "listContactUsOnFacebook": "通过 Facebook 联系我们",
+            "facebookDescription": "点击以便在 Facebook 上找到我们"
         },
         "quicklinks": {
             "title": "直通车",
@@ -1565,12 +1565,12 @@
             "good": "良好",
             "malicious": "恶意",
             "suspicious": "可疑",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "您的安全分数可以让您了解您的在线安全情况，其结果取决于您是否：",
+            "antivirus": "受到反病毒软件的保护",
+            "password": "以安全的方式管理安全程度强且复杂的密码",
+            "vpn": "监控您的网络以防暴露给攻击者",
+            "wifi": "使用公共 WiFi 时加密您的个人数据",
+            "windowsHello": "使用安全登录选项保护您的设备"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1665,7 @@
                 "bodyText": "我们检测到您丢失了 Vantage 的关键部分。这些部分将在后台下载。请稍后重试。",
                 "closeText": "关闭",
                 "offlineText": "我们检测到您没有连接到互联网。此页面的某些部分将无法正常运行。请重新连接",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "帐户创建失败。请稍后重试。"
             }
         },
         "homeprotection": {

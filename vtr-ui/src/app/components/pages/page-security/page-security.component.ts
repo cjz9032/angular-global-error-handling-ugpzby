@@ -43,10 +43,6 @@ import {
 	LocalStorageKey
 } from '../../../enums/local-storage-key.enum';
 import {
-	RegionService
-} from 'src/app/services/region/region.service';
-
-import {
 	AppNotification
 } from 'src/app/data-models/common/app-notification.model';
 import {
@@ -57,6 +53,7 @@ import { GuardService } from '../../../services/guard/security-guardService.serv
 import { Subscription } from 'rxjs/internal/Subscription';
 import { Router } from '@angular/router';
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
+import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 
 
 @Component({
@@ -104,7 +101,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		private translate: TranslateService,
-		private regionService: RegionService,
+		private localInfoService: LocalInfoService,
 		private ngZone: NgZone,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
@@ -136,16 +133,13 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-		this.regionService.getRegion().subscribe({
-			next: x => {
-				this.showVpn = true;
-				if (x === 'cn') {
-					this.showVpn = false;
-				}
-			},
-			error: () => {
-				this.showVpn = true;
+		this.localInfoService.getLocalInfo().then(result => {
+			this.showVpn = true;
+			if (result.GEO === 'cn') {
+				this.showVpn = false;
 			}
+		}).catch(e => {
+			this.showVpn = true;
 		});
 		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
 			this.refreshAll();

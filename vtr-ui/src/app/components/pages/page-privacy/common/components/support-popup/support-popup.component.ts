@@ -3,7 +3,8 @@ import { VantageCommunicationService } from '../../services/vantage-communicatio
 import { FigleafOverviewService, licenseTypes } from '../../services/figleaf-overview.service';
 import { switchMap, take } from 'rxjs/operators';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
-import { of } from 'rxjs';
+import { from, of } from 'rxjs';
+import { DeviceService } from '../../../../../../services/device/device.service';
 
 @Component({
 	selector: 'vtr-support-popup',
@@ -16,7 +17,8 @@ export class SupportPopupComponent implements OnInit {
 	constructor(
 		private vantageCommunicationService: VantageCommunicationService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
-		private figleafOverviewService: FigleafOverviewService
+		private figleafOverviewService: FigleafOverviewService,
+		private deviceService: DeviceService
 	) {
 	}
 
@@ -24,7 +26,10 @@ export class SupportPopupComponent implements OnInit {
 	}
 
 	openLenovoSupport() {
-		this.vantageCommunicationService.openUri('https://support.lenovo.com');
+		from(this.deviceService.getMachineInfo()).subscribe((info) => {
+			const link = `https://support.lenovo.com/contactus?serialnumber=${info.serialnumber}`;
+			this.vantageCommunicationService.openUri(link);
+		});
 	}
 
 	openFigleafSupport() {

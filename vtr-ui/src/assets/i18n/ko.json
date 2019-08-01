@@ -3,229 +3,229 @@
         "dashboard": {
             "device": {
                 "quickSettings": {
-                    "title": "Thermal Mode",
+                    "title": "열 모드",
                     "status": {
-                        "performance": "Performance",
-                        "balance": "Balance",
-                        "quiet": "Quiet"
+                        "performance": "성능",
+                        "balance": "밸런스",
+                        "quiet": "저소음"
                     },
                     "statusText": {
-                        "perText": "Higher CPU usage, Higher fan speed",
-                        "balText": "Normal CPU and fan speed",
-                        "quietText": "Lower CPU usage, Lower fan speed"
+                        "perText": "CPU사용량 높을수록 팬속도 높음",
+                        "balText": "일반 CPU 및 팬 속도",
+                        "quietText": "CPU사용량 낮을수록 팬속도 낮음"
                     },
-                    "wifiSecurity": "Wifi Security",
+                    "wifiSecurity": "Wifi 보안",
                     "dolby": "Dolby",
-                    "rapidCharge": "Rapid Charge"
+                    "rapidCharge": "급속 충전"
                 },
                 "legionEdge": {
-                    "title": "CPU Overclock",
+                    "title": "CPU 오버클럭",
                     "status": {
-                        "alwayson": "On",
-                        "whenGaming": "When Gaming",
-                        "off": "Off"
+                        "alwayson": "켜기",
+                        "whenGaming": "게임하는 경우",
+                        "off": "끄기"
                     },
                     "statusText": {
-                        "onText": "CPU Overclocking will be activated",
-                        "gamingText": "CPU Overclocking will be activated automatically while game launches",
-                        "offText": "CPU Overclocking will be disabled"
+                        "onText": "CPU 오버클럭이 활성화됨",
+                        "gamingText": "게임이 시작되는 동안, CPU 오버클럭 자동으로 활성화됨",
+                        "offText": "CPU 오버클럭이 비활성화됨"
                     },
-                    "ramOverlock": "RAM Overclock",
+                    "ramOverlock": "RAM 오버클럭",
                     "popup": {
-                        "text": "Change will be effective after restarting computer.",
-                        "button": "ok"
+                        "text": "컴퓨터를 다시 시작하면, 변경 사항이 적용됩니다.",
+                        "button": "확인"
                     },
                     "driverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "You need install driver for RAM Overclock to  make it effective",
-                        "button": "Install",
-                        "link": "cancel",
-                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
-                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
+                        "headerText": "드라이버 설치 필요",
+                        "text": "오버클럭 RAM을 활성화하기 위한 드라이버 설치(재부팅 필요)",
+                        "button": "설치",
+                        "link": "취소",
+                        "networkBoostText": "효율성을 위해 네트워크 향상용 드라이버 설치 필요",
+                        "hybridModeText": "효율성을 위해 하이브리드 모드용 드라이버 설치 필요",
+                        "cpuOverclockText": "CPU 오버클럭을 활성화하기 위한 드라이버 설치(재부팅 필요)"
                     },
-                    "autoClose": "Auto Close",
-                    "networkBoost": "Network Boost",
-                    "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock",
+                    "autoClose": "자동 닫기",
+                    "networkBoost": "네트워크 향상",
+                    "hybridMode": "하이브리드 모드",
+                    "touchpadLock": "터치 패드 잠금",
                     "lightingDriverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "Please install driver",
-                        "button": "Install",
-                        "link": "cancel"
+                        "headerText": "드라이버 설치 필요",
+                        "text": "조명을 활성화하기 위한 드라이버 설치(재부팅 필요)",
+                        "button": "설치",
+                        "link": "취소"
                     },
                     "lightingColorMessage": {
-                        "text": "Selecting color not available to this effect."
+                        "text": "이 효과에 사용할 수 없는 색상 선택."
                     }
                 },
                 "systemTools": {
-                    "power": "Power",
-                    "media": "Media",
-                    "macroKey": "Marco Key",
-                    "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update",
-                    "header": "System Tools"
+                    "power": "전원",
+                    "media": "미디어",
+                    "macroKey": "매크로 키",
+                    "hardwareScan": "하드웨어 검사",
+                    "systemUpdate": "시스템 업데이트",
+                    "header": "시스템 도구"
                 },
                 "lighting": {
-                    "title": "Lighting Customize",
-                    "header": "Lighting"
+                    "title": "조명 사용자 정의",
+                    "header": "조명"
                 },
                 "legionEdgeModal": {
-                    "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
-                    "line2": "<b>Feature Management Overview</b> <br> Some features not available on all devices",
-                    "line3": "<b>CPU Overclocking </b><br> Boost the maximum speed for your processor",
-                    "line4": "<b>RAM Overclocking </b><br> Boost the maximum speed for your memory",
-                    "line5": "<b>Network Boost </b><br> Prioritize network traffic for the game you're playing",
-                    "line6": "<b>Dolby </b><br> Tune your audio specifically for gaming with Dolby technology",
-                    "line7": "<b>Hybrid Mode </b><br> Disable advanced GPU settings when not gaming to boost battery performance",
-                    "line8": "<b>Rapid Charge </b><br> Game on the go longer with quicker battery charging",
-                    "line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
-                    "line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
-                    "line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control"
+                    "line1": "Vantage Edge를 사용하면 사용량에 따라 설정이 자동으로 조정됩니다. \n 게임 중 최대 성능, 게임을 하지 않을 때는 배터리 수명이 연장됩니다.",
+                    "line2": "<b>기능 관리 개요</b> <br> 일부 기능은 모든 장치에서 사용하지 못할 수 있음",
+                    "line3": "<b>CPU 오버클럭킹 </b><br> 프로세서의 최대 속도 향상",
+                    "line4": "<b>RAM 오버클럭킹 </b><br> 메모리의 최대 속도 향상",
+                    "line5": "<b>네트워크 향상 </b><br> 재생 중인 게임의 네트워크 트래픽 우선 순위 지정",
+                    "line6": "<b>Dolby </b><br> Dolby 기술을 이용한 게임 전용 오디오 조정",
+                    "line7": "<b>하이브리드 모드 </b><br> 배터리 성능을 높이기 위해 게임을 하지 않을 때 고급 GPU 설정 사용 안 함",
+                    "line8": "<b>급속 충전 </b><br> 더 빠른 배터리 충전으로 이동 중 게임 시간 연장",
+                    "line9": "<b>터치 패드 잠금 </b><br> 게임 중 터치패드를 비활성화하여 잘못된 입력 방지",
+                    "line10": "<b>자동 닫기 </b><br> 게임을 시작하기 전에 사용 가능한 시스템 리소스를 극대화하기 위해 필요하지 않은 프로세스 지우기",
+                    "line11": "<b>열 모드 </b><br> 팬 속도 및 냉각 제어를 위해 선호하는 장치 프로파일 설정"
                 },
                 "systemInfo": {
-                    "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                    "systenTooltip": "제조 및 모델 정보를 포함한 설명이 표시되도록 CPU/GPU/RAM 및 다른 드라이브를 가리킴"
                 },
                 "systemStatus": {
-                    "info": "INFO"
+                    "info": "정보"
                 }
             }
         },
         "common": {
             "menu": {
                 "support": {
-                    "title": "Support",
-                    "sub1": "Support",
+                    "title": "지원",
+                    "sub1": "지원",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
             }
         },
         "macroKey": {
-            "title": "Macro Key",
-            "introLine": "You can record a series of key input, and use them in gaming or other operations.",
+            "title": "매크로 키",
+            "introLine": "일련의 키 입력 정보를 기록하고, 게임 또는 기타 작업에 사용할 수 있습니다.",
             "status": {
                 "on": {
-                    "title": "On",
-                    "description": "Always Enabled"
+                    "title": "켜기",
+                    "description": "항시 사용"
                 },
                 "whileGaming": {
-                    "title": "Macro Key enabled only when gaming",
-                    "description": "It will be enabled when you game and remain as num key when you don't."
+                    "title": "게임을 할 때만 매크로 키 사용",
+                    "description": "게임을 할 때 사용 가능하게 되며, 그렇지 않은 경우에는 키를 계속 사용할 수 있습니다."
                 },
                 "off": {
-                    "title": "Off",
-                    "description": "Always Off"
+                    "title": "끄기",
+                    "description": "항시 끄기"
                 }
             },
             "details": {
                 "intro": {
-                    "noNumber": "SELECT A MACRO KEY",
-                    "title": "CREATE A MACRO KEY FOR",
-                    "line1": "click the start recording button below",
-                    "line2": "type in macro key",
-                    "line3": "stop recording when finishing typing"
+                    "noNumber": "매크로 키 선택",
+                    "title": "매크로 키 작성",
+                    "line1": "아래에서 기록 시작 버튼 클릭",
+                    "line2": "매크로 키 입력",
+                    "line3": "입력 완료 시 기록 중지"
                 },
                 "buttons": {
-                    "start": "START RECORDING",
-                    "stop": "STOP RECORDING",
+                    "start": "기록 시작",
+                    "stop": "기록 중지",
                     "numberPrefix": "NUM"
                 },
                 "recording": {
-                    "title": "START TYPING",
-                    "description": "20 inputs within 20 seconds can be recorded."
+                    "title": "입력 시작",
+                    "description": "20초 이내에 20개의 입력을 기록할 수 있습니다."
                 },
                 "recorded": {
-                    "title": "MACRO KEY FOR ",
-                    "deleteKey": "Delete Key",
-                    "clear": "Clear",
+                    "title": "매크로 키 ",
+                    "deleteKey": "Delete 키",
+                    "clear": "지우기",
                     "intervalStatus": {
                         "keep": {
-                            "title": "Keep Delay",
-                            "description": "Intervals of key actions will be kept and applied when using this macro key."
+                            "title": "지연 유지",
+                            "description": "이 매크로 키를 사용하는 경우, 키 동작 간격이 유지 및 적용됩니다."
                         },
                         "ignore": {
-                            "title": "Ignore Delay",
-                            "description": "Intervals of key actions will be ignored."
+                            "title": "지연 무시",
+                            "description": "키 동작 간격이 무시됩니다."
                         }
                     },
                     "repeatStatus": {
                         "repeat1": {
-                            "title": "No Repeat",
-                            "description": "No Repeat"
+                            "title": "반복 없음",
+                            "description": "반복 없음"
                         },
                         "repeat2": {
-                            "title": "Repeat 2 Times",
-                            "description": "Repeats 2 times"
+                            "title": "2회 반복",
+                            "description": "2회 반복"
                         },
                         "repeat3": {
-                            "title": "Repeat 3 Times",
-                            "description": "Repeats 3 times"
+                            "title": "3회 반복",
+                            "description": "3회 반복"
                         },
                         "repeat4": {
-                            "title": "Repeat 4 Times",
-                            "description": "Repeats 4 times"
+                            "title": "4회 반복",
+                            "description": "4회 반복"
                         },
                         "repeat5": {
-                            "title": "Repeat 5 Times",
-                            "description": "Repeats 5 times"
+                            "title": "5회 반복",
+                            "description": "5회 반복"
                         },
                         "repeat6": {
-                            "title": "Repeat 6 Times",
-                            "description": "Repeats 6 times"
+                            "title": "6회 반복",
+                            "description": "6회 반복"
                         },
                         "repeat7": {
-                            "title": "Repeat 7 Times",
-                            "description": "Repeats 7 times"
+                            "title": "7회 반복",
+                            "description": "7회 반복"
                         },
                         "repeat8": {
-                            "title": "Repeat 8 Times",
-                            "description": "Repeats 8 times"
+                            "title": "8회 반복",
+                            "description": "8회 반복"
                         },
                         "repeat9": {
-                            "title": "Repeat 9 Times",
-                            "description": "Repeats 9 times"
+                            "title": "9회 반복",
+                            "description": "9회 반복"
                         },
                         "repeat10": {
-                            "title": "Repeat 10 Times",
-                            "description": "Repeats 10 times"
+                            "title": "10회 반복",
+                            "description": "10회 반복"
                         }
                     },
                     "list": {
                         "header": {
-                            "col1": "Key Action",
-                            "col2": "Interval"
+                            "col1": "키 동작",
+                            "col2": "간격"
                         },
                         "footer": {
-                            "title": "Next input.."
+                            "title": "다음 입력.."
                         }
                     }
                 }
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure you want to clear this macro key?"
+                    "title": "매크로 키를 지우시겠습니까?"
                 },
                 "timeoutRecording": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if no input for 20 seconds."
+                    "title": "기록 시간 초과.",
+                    "body": "20초 동안 입력이 없으면, 기록 시간이 초과됩니다."
                 },
                 "maximumInput": {
-                    "title": "Maximum Input Reached.",
-                    "body": "Macro key can only store inputs less than 20."
+                    "title": "최대 입력에 도달했습니다.",
+                    "body": "매크로 키는 20보다 작은 입력만 저장할 수 있습니다."
                 },
                 "inputStopped": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if the input stopped for more than 10 seconds."
+                    "title": "기록 시간 초과.",
+                    "body": "10초 이상 동안 입력이 중지되면, 기록 시간이 초과됩니다."
                 },
                 "confirmButton": {
-                    "btnClear": "Clear",
-                    "btnCancel": "Cancel"
+                    "btnClear": "지우기",
+                    "btnCancel": "취소"
                 },
-                "btnOk": "OK"
+                "btnOk": "확인"
             },
             "recording": {
-                "title": "Recording Macro Key For"
+                "title": "매크로 키 기록 중"
             },
             "initalKey": {
                 "zero": 0,
@@ -233,97 +233,97 @@
             }
         },
         "lightingProfile": {
-            "title": "Lighting",
+            "title": "조명",
             "effect": {
                 "option1": {
-                    "title": "On"
+                    "title": "켜기"
                 },
                 "option2": {
-                    "title": "Flicker"
+                    "title": "깜빡임"
                 },
                 "option3": {
-                    "title": "Breath"
+                    "title": "호흡"
                 },
                 "option4": {
-                    "title": "Wave"
+                    "title": "움직임"
                 },
                 "option5": {
-                    "title": "Smooth"
+                    "title": "부드럽게"
                 },
                 "option6": {
-                    "title": "CPU Temperature"
+                    "title": "CPU 온도"
                 },
                 "option7": {
-                    "title": "CPU Utilization"
+                    "title": "CPU 이용"
                 },
                 "option8": {
-                    "title": "Off"
+                    "title": "끄기"
                 },
                 "apply": {
-                    "title": "APPLY"
+                    "title": "적용"
                 },
                 "applied": {
-                    "title": "APPLIED"
+                    "title": "적용됨"
                 }
             },
             "brightness": {
                 "text1": {
-                    "title": "*Brightness setting doesn't apply on "
+                    "title": "*밝기 설정이 적용되지 않음 "
                 },
                 "text2": {
-                    "title": " effect"
+                    "title": " 효과"
                 }
             },
             "lightingSingleLightingOption": {
                 "option1": {
-                    "title": "Always On"
+                    "title": "항상 켜짐"
                 },
                 "option2": {
-                    "title": "Fast Blink"
+                    "title": "빠르게 깜빡임"
                 },
                 "option3": {
-                    "title": "Medium Blink"
+                    "title": "보통 깜빡임"
                 },
                 "option4": {
-                    "title": "Slow Blink"
+                    "title": "느리게 깜빡임"
                 },
                 "option5": {
-                    "title": "Blink Level"
+                    "title": "깜빡이는 수준"
                 }
             },
             "profile": {
                 "text1": {
-                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                    "title": "현재 조명이 꺼져 있습니다. 프로파일 탭을 선택하여 켜거나 사용자 정의하십시오."
                 },
                 "text2": {
-                    "title": "effect"
+                    "title": "효과"
                 },
                 "text3": {
-                    "title": "Effect"
+                    "title": "효과"
                 }
             },
             "button": {
                 "default": {
-                    "title": "Set to default"
+                    "title": "기본값으로 설정"
                 }
             },
             "profileheading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "끄기"
                 },
                 "text2": {
-                    "title": "Profile 1"
+                    "title": "프로파일 1"
                 },
                 "text3": {
-                    "title": "Profile 2"
+                    "title": "프로파일 2"
                 },
                 "text4": {
-                    "title": "Profile 3"
+                    "title": "프로파일 3"
                 }
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "끄기"
                 },
                 "text2": {
                     "title": 1
@@ -335,21 +335,21 @@
                     "title": 3
                 },
                 "Customize": {
-                    "title": "Customize"
+                    "title": "사용자 정의"
                 },
                 "heading": {
-                    "title": "Select Profile:"
+                    "title": "프로파일 선택:"
                 }
             },
             "colourwheel": {
                 "text1": {
-                    "title": "Selecting colour not available to this effect."
+                    "title": "이 효과에 사용할 수 없는 색상 선택."
                 },
                 "text2": {
-                    "title": "APPLY"
+                    "title": "적용"
                 },
                 "text3": {
-                    "title": "APPLIED"
+                    "title": "적용됨"
                 },
                 "text4": {
                     "title": "R:"
@@ -361,7 +361,7 @@
                     "title": "B:"
                 },
                 "text7": {
-                    "title": "Color"
+                    "title": "색상"
                 }
             }
         },
@@ -1521,9 +1521,9 @@
             "listContactCustomerService": "고객 서비스에 문의하기",
             "listContactUsOnWechat": "WeChat에 문의하기",
             "weChatDescription": "WeChat서 질문하면, 신속하게 응답할 수 있습니다.",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "소셜 미디어에서 찾으십시오.",
+            "listContactUsOnFacebook": "Facebook에 문의하기",
+            "facebookDescription": "Facebook에서 찾으려면 클릭"
         },
         "quicklinks": {
             "title": "퀵링크",
@@ -1565,12 +1565,12 @@
             "good": "좋음",
             "malicious": "악성",
             "suspicious": "의심스러움",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "사용자의 보안 점수를 보면 온라인에서 안전한 정도를 알 수 있으며, 결과는 다음과 같은 경우에 따라 달라집니다.",
+            "antivirus": "바이러스 백신 소프트웨어로 보호",
+            "password": "강력하고 복잡한 암호를 안전하게 관리",
+            "vpn": "공격자에 대한 네트워크의 노출 여부 모니터링",
+            "wifi": "공용 WiFi를 사용할 때 개인 데이터 암호화",
+            "windowsHello": "안전한 로그인 옵션을 사용하여 장치 보호"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1665,7 @@
                 "bodyText": "Vantage의 중요한 부분이 누락된 것을 발견했습니다. 이 파일은 백그라운드에서 다운로드됩니다. 나중에 다시 시도하십시오.",
                 "closeText": "닫기",
                 "offlineText": "인터넷에 연결되어 있지 않습니다. 이 페이지의 일부가 정상적으로 작동하지 않을 것입니다. 다시 연결하십시오",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "계정 생성에 실패했습니다. 나중에 다시 시도하십시오."
             }
         },
         "homeprotection": {

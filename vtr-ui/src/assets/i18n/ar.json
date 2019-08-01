@@ -1521,9 +1521,9 @@
             "listContactCustomerService": "اتصل بخدمة العملاء",
             "listContactUsOnWechat": "اتصل بنا علي WeChat",
             "weChatDescription": "أرسل لنا سؤال علي WeChat وسنرد بسرعة",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "اعثر علينا على وسائل التواصل الاجتماعي",
+            "listContactUsOnFacebook": "<span dir=\"rtl\">اتصل بنا علي Facebook</span>",
+            "facebookDescription": "<span dir=\"rtl\">انقر للعثور علينا على Facebook</span>"
         },
         "quicklinks": {
             "title": "روابط سريعة",
@@ -1565,12 +1565,12 @@
             "good": "جيد",
             "malicious": "ضار",
             "suspicious": "مشبوه",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "تمنحك درجة الأمان لديك فكرة عن مدى أمانك على الإنترنت، وتتوقف النتيجة على ما إذا كنت:",
+            "antivirus": "محميًا بواسطة برنامج مكافحة الفيروسات",
+            "password": "تستخدم كلمات مرور قوية ومعقدة تدار بطريقة آمنة",
+            "vpn": "تراقب تعرض الشبكة للمهاجمين",
+            "wifi": "تشفر بياناتك الشخصية عند استخدام شبكة WiFi عامة",
+            "windowsHello": "تحمي جهازك باستخدام خيارات تسجيل الدخول الآمنة"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1665,7 @@
                 "bodyText": "لقد اكتشفنا أنك تفتقد إلى أجزاء ضرورية من Vantage. سيتم تنزيل هذه الأجزاء في الخلفية. يُرجى إعادة المحاولة لاحقًا.",
                 "closeText": "إغلاق",
                 "offlineText": "اكتشفنا أنك غير متصل بالإنترنت. لن تعمل بعض أجزاء هذه الصفحة بشكل صحيح. يُرجى معاودة الاتصال",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "فشل إنشاء الحساب. يُرجى إعادة المحاولة لاحقًا."
             }
         },
         "homeprotection": {

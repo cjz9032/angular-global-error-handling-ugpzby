@@ -24,12 +24,13 @@ import { NavTabsComponent } from './nav-tabs/nav-tabs.component';
 import { FeatureHeaderComponent } from './feature-header/feature-header.component';
 import { StatComponent } from './privacy-dashboard-list/stat.component';
 import { AccountsStoredComponent } from './accounts-stored/accounts-stored.component';
-import { NoIssuePitchComponent } from './no-issue-pitch/no-issue-pitch.component';
+import { DidYouKnowComponent } from './did-you-know/did-you-know.component';
 import { BigPitchComponent } from './big-pitch/big-pitch.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { WhySeeingTooltipComponent } from './why-seeing-tooltip/why-seeing-tooltip.component';
+import { OfflineModeComponent } from './offline-mode/offline-mode.component';
 
 @NgModule({
 	declarations: [
@@ -52,11 +53,12 @@ import { WhySeeingTooltipComponent } from './why-seeing-tooltip/why-seeing-toolt
 		FeatureHeaderComponent,
 		StatComponent,
 		AccountsStoredComponent,
-		NoIssuePitchComponent,
+		DidYouKnowComponent,
 		BigPitchComponent,
 		SpinnerComponent,
 		TooltipComponent,
 		WhySeeingTooltipComponent,
+		OfflineModeComponent
 	],
 	exports: [
 		SimpleLoaderComponent,
@@ -78,11 +80,12 @@ import { WhySeeingTooltipComponent } from './why-seeing-tooltip/why-seeing-toolt
 		FeatureHeaderComponent,
 		StatComponent,
 		AccountsStoredComponent,
-		NoIssuePitchComponent,
+		DidYouKnowComponent,
 		BigPitchComponent,
 		SpinnerComponent,
 		TooltipComponent,
 		WhySeeingTooltipComponent,
+		OfflineModeComponent
 	],
 	imports: [
 		CommonModule,

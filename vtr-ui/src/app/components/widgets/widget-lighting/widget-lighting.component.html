@@ -56,12 +56,12 @@
 							<li class="list-group-item">
 								<a  *ngIf="isPopupVisible" (click)="isdriverpopup == true" vtrMetrics
 								[metricsItem]="'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate"
-								metricsEvent="featureClick">
+								metricsEvent="featureClick" id="lighting_customize_settings" attr.aria-label="lighting_customize_settings">
 									   <i class="icon icon-gear"></i>
 									   {{'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate}}</a>
 								<a  *ngIf="!isPopupVisible" [routerLink]="['/gaming/lightingcustomize/'+setprofId]" vtrMetrics
 								[metricsItem]="'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate"
-								metricsEvent="featureClick">
+								metricsEvent="featureClick" id="lighting_customize" attr.aria-label="lighting_customize">
 									   <i class="icon icon-gear"></i>
 									  {{'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate}}</a>
 							</li>

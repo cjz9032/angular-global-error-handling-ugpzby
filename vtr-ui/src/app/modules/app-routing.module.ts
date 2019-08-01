@@ -24,15 +24,6 @@ const routes: Routes = [
 		loadChildren: './hardware-settings/hardware-settings.module#HardwareSettingsModule'
 	},
 	{
-		path: 'support',
-		component: PageSupportComponent,
-		canDeactivate: [GuardService],
-		canActivate: [GuardService],
-		data: {
-			pageName: 'Page.Support'
-		}
-	},
-	{
 		path: 'settings',
 		component: PageSettingsComponent,
 		data: {
@@ -50,6 +41,10 @@ const routes: Routes = [
 	{
 		path: 'security',
 		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
+	},
+	{
+		path: 'support',
+		loadChildren: './support/support.module#SupportModule'
 	},
 	{
 		path: 'android',

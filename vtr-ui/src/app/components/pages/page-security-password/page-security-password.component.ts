@@ -9,7 +9,6 @@ import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { RegionService } from 'src/app/services/region/region.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { GuardService } from '../../../services/guard/security-guardService.service';
@@ -37,7 +36,6 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private cmsService: CMSService,
 		private modalService: NgbModal,
-		public regionService: RegionService,
 		vantageShellService: VantageShellService,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
@@ -134,7 +132,13 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 			size: 'lg',
 			centered: true,
 			windowClass: 'Article-Detail-Modal',
-			keyboard: false
+			keyboard: false,
+			beforeDismiss: () => {
+				if (articleDetailModal.componentInstance.onBeforeDismiss) {
+					articleDetailModal.componentInstance.onBeforeDismiss();
+				}
+				return true;
+			}
 		});
 		articleDetailModal.componentInstance.articleId = this.dashlaneArticleId;
 	}

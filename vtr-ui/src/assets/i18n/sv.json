@@ -1521,9 +1521,9 @@
             "listContactCustomerService": "Kontakta kundtjänst",
             "listContactUsOnWechat": "Kontakta oss via WeChat",
             "weChatDescription": "Skicka en fråga till oss via WeChat så försöker vi svara så snabbt vi kan",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Hitta oss på sociala medier",
+            "listContactUsOnFacebook": "Kontakta oss via Facebook",
+            "facebookDescription": "Klicka för att hitta oss på Facebook"
         },
         "quicklinks": {
             "title": "Snabblänkar",
@@ -1565,12 +1565,12 @@
             "good": "BRA",
             "malicious": "SKADLIGT",
             "suspicious": "MISSTÄNKT",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "Din säkerhetspoäng ger dig en uppfattning om hur säker du är online. Resultatet beror på om du",
+            "antivirus": "Skyddas av ett antivirusprogram",
+            "password": "Har starka och komplexa lösenord som hanteras på ett säkert sätt",
+            "vpn": "Övervakar nätverkets exponering för angripare",
+            "wifi": "Krypterar dina personliga data när du använder offentlig WiFi",
+            "windowsHello": "Skyddar din enhet med alternativ för säker inloggning."
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1665,7 @@
                 "bodyText": "Vi har sett att du saknar viktiga komponenter i Vantage. Komponenterna hämtas i bakgrunden. Försök igen litet senare.",
                 "closeText": "stäng",
                 "offlineText": "Datorn ser inte ut att vara ansluten till internet. Vissa avsnitt på denna sida kommer inte att fungera korrekt. Anslut på nytt",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "Det gick inte att skapa kontot. Försök igen litet senare."
             }
         },
         "homeprotection": {
