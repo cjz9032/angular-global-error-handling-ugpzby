@@ -36,7 +36,7 @@
 							<div *ngIf="title"
 								class="title">{{title}}</div>
 							<div *ngIf="caption"
-								class="caption">{{caption | stripTags}}</div>
+								class="caption" [innerHtml]="caption"></div>
 							<div *ngIf="logo || logoText"
 								class="logo">
 								<span class="logo-img">
@@ -53,7 +53,7 @@
 							<div *ngIf="title"
 								class="title default-cursor">{{title}}</div>
 							<div *ngIf="caption"
-								class="caption default-cursor">{{caption | stripTags}}</div>
+								class="caption default-cursor" [innerHtml]="caption"></div>
 							<div *ngIf="logo || logoText"
 								class="logo default-cursor">
 								<span class="logo-img default-cursor">
@@ -92,9 +92,9 @@
 						</a>
 						<div class="inner-content">
 							<div *ngIf="title"
-								class="title">{{title | stripTags}}</div>
+								class="title" [innerHtml]="title"></div>
 							<div *ngIf="caption"
-								class="caption">{{caption | stripTags}}</div>
+								class="caption" [innerHtml]="caption"></div>
 							<div *ngIf="logo || logoText"
 								class="logo">
 								<span class="logo-img">
@@ -110,9 +110,9 @@
 						</div>
 						<div class="inner-content">
 							<div *ngIf="title"
-								class="title default-cursor">{{title | stripTags}}</div>
+								class="title default-cursor" [innerHtml]="title"></div>
 							<div *ngIf="caption"
-								class="caption default-cursor">{{caption | stripTags}}</div>
+								class="caption default-cursor" [innerHtml]="caption"></div>
 							<div *ngIf="logo || logoText"
 								class="logo default-cursor">
 								<span class="logo-img default-cursor">
@@ -151,10 +151,10 @@
 						[style.background-image]="'url(' + img + ')'">
 						<div class="inner-content">
 							<div *ngIf="title"
-								class="title">{{title | stripTags}}</div>
+								class="title" [innerHtml]="title"></div>
 							<div *ngIf="caption"
 								class="caption">
-								<div>{{caption | stripTags}}</div>
+								<div [innerHtml]="caption"></div>
 							</div>
 							<div *ngIf="logo || logoText"
 								class="logo">
@@ -170,10 +170,10 @@
 						[style.background-image]="'url(' + img + ')'">
 						<div class="inner-content">
 							<div *ngIf="title"
-								class="title">{{title | stripTags}}</div>
+								class="title" [innerHtml]="title"></div>
 							<div *ngIf="caption"
 								class="caption">
-								<div>{{caption | stripTags}}</div>
+								<div [innerHtml]="caption"></div>
 							</div>
 							<div *ngIf="logo || logoText"
 								class="logo">
@@ -216,7 +216,7 @@
 						[style.background-image]="'url(' + img + ')'">
 						<div class="inner-content">
 							<div *ngIf="title"
-								class="title">{{title | stripTags}}</div>
+								class="title" [innerHtml]="title"></div>
 						</div>
 					</a>
 					<div *ngIf="!isOnline"
@@ -224,7 +224,7 @@
 						[style.background-image]="'url(' + img + ')'">
 						<div class="inner-content">
 							<div *ngIf="title"
-								class="title">{{title | stripTags}}</div>
+								class="title" [innerHtml]="title"></div>
 						</div>
 					</div>
 				</div>
@@ -269,7 +269,7 @@
 					<div class="row">
 						<div class="col col-12 content">
 							<div *ngIf="title"
-								class="title">{{title | stripTags}}</div>
+								class="title" [innerHtml]="title"></div>
 							<div *ngIf="actionLink"
 								class="read-more">
 								<a [attr.href]="!actionLink ? null : actionLink"
@@ -334,7 +334,7 @@
 							metricsItemCategory="partnerarticle">
 							<div class="col col-12 content">
 								<div *ngIf="title"
-									class="title">{{title | stripTags}}</div>
+									class="title" [innerHtml]="title"></div>
 								<div *ngIf="actionLink"
 									class="read-more">
 								</div>
@@ -344,7 +344,7 @@
 							class="default-cursor">
 							<div class="col col-12 content">
 								<div *ngIf="title"
-									class="title">{{title | stripTags}}</div>
+									class="title" [innerHtml]="title"></div>
 								<div *ngIf="actionLink"
 									class="read-more">
 								</div>

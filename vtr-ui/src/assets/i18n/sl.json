@@ -1478,9 +1478,9 @@
             "listContactCustomerService": "Obrnite se na storitve za stranke",
             "listContactUsOnWechat": "Pišite nam WeChat",
             "weChatDescription": "Vprašanje nam pošljite na WeChat in poskrbeli bomo za hiter odgovor",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Poiščite nas na družabnih medijih",
+            "listContactUsOnFacebook": "Pišite nam na Facebooku",
+            "facebookDescription": "Kliknite, da nas najdete na Facebooku"
         },
         "quicklinks": {
             "title": "Hitre povezave",
@@ -1522,12 +1522,12 @@
             "good": "DOBRA",
             "malicious": "ZLONAMERNA",
             "suspicious": "SUMLJIVA",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "Vaša varnostna ocena vam pokaže, kako varni ste v spletu, rezultat pa je odvisen od tega, ali:",
+            "antivirus": "Imate zaščito s protivirusno programsko opremo",
+            "password": "Upravljate z močnimi in kompleksnimi gesli na varen način",
+            "vpn": "Spremljate izpostavljenost napadalcem v omrežju",
+            "wifi": "Šifrirate osebne podatke pri uporabi javnega omrežja WiFi",
+            "windowsHello": "Zaščitite napravo z možnostmi za varno prijavo"
         },
         "antivirus": {
             "common": {
@@ -1622,7 +1622,7 @@
                 "bodyText": "Zaznali smo, da vam manjkajo ključni deli programa Vantage. Ti deli se bodo prenesli v ozadju. Poskusite znova pozneje.",
                 "closeText": "zapri",
                 "offlineText": "Zaznali smo, da niste povezani z internetom. Nekateri deli te strani ne bodo delovali pravilno. Znova vzpostavite povezavo",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "Ustvarjanje računa ni uspelo. Poskusite znova pozneje."
             }
         },
         "homeprotection": {

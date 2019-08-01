@@ -64,7 +64,8 @@
 											<vtr-container-collapsible
 												name="SystemUpdateHistory"
 												[cardTitle]="'systemUpdates.history' | translate"
-												[isCollapsed]="false">
+												[isCollapsed]="false"
+												[linkId]="'su-history'">
 												<vtr-installation-history (reinstallUpdate)="onReinstallUpdate($event)">
 												</vtr-installation-history>
 											</vtr-container-collapsible>

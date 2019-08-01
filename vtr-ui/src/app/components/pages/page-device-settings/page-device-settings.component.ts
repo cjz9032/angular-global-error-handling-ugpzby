@@ -7,7 +7,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AudioService } from 'src/app/services/audio/audio.service';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 
 @Component({
@@ -65,6 +65,11 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		private translate: TranslateService
 	) {
 		this.fetchCMSArticles();
+		// VAN-5872, server switch feature on language change
+		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.fetchCMSArticles();
+		});
+
 		this.getMicrophoneSettings();
 
 		// Evaluate the translations for QA on language Change

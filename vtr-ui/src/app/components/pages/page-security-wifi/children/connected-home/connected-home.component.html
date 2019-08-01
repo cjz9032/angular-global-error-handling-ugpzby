@@ -121,5 +121,18 @@
 				</div>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-sm-6" routerLink="/home-security" *ngIf="isChsExist">
+				<div class="button-box shift-left">
+					<vtr-ui-button id="sa-ws-btn-trynow"
+						aria-label="sa-ws-btn-trynow"
+						metricsItem="tryNow"
+						[label]="'security.homeprotection.homesecurity.tryNow' | translate"
+						[title]="'security.homeprotection.homesecurity.tryNow' | translate"
+						[isDisabled]="!data.tryNowEnable">
+					</vtr-ui-button>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

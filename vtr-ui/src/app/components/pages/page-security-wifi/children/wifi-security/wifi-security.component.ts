@@ -39,7 +39,7 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	@Input() data: WifiHomeViewModel;
 	@Input() wifiIsShowMore: string;
-	isShowMore = false; // less info, more info
+	isShowMore = true; // less info, more info
 	isShowMoreLink = true; // show more link
 	region: string;
 	isWifiSecurityEnabled = true;
