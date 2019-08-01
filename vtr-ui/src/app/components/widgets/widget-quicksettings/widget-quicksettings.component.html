@@ -21,7 +21,7 @@
 						</vtr-widget-switch-icon>
 					</div>
 					<div class="text-center"
-						*ngIf="cameraStatus.available">
+						[disabled]="!cameraStatus.available">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Camera2x'"
 							[offIconDefinition]="'icomoon icomoon-LE-Camera-privacy-mode2x'"
 							#camera
@@ -57,17 +57,13 @@
 			</div>
 		</div>
 		
-		<div *ngIf="!microphoneStatus.isLoading && !cameraStatus.isLoading">
+		<div *ngIf="!microphoneStatus.isLoading || !cameraStatus.isLoading">
 			<div *ngIf="!microphoneStatus.permission || !cameraStatus.permission"
 				class="row permission-note mt-5">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
-						<!-- <fa-icon [icon]="['fal', 'exclamation-circle']" class="note-icon">
-					</fa-icon> -->
-						<img src="../../../../assets/icons/exclamation-circle-solid.svg"
-							class="note-icon mt-auto"
-							alt="">
-
+						<fa-icon [icon]="['fas', 'exclamation-circle']" class="note-icon">
+					</fa-icon>	
 					</div>
 					<div class="col-11 pr-0 pl-2">
 						<div *ngIf="!microphoneStatus.permission && cameraStatus.permission">

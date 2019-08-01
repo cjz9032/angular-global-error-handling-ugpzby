@@ -20,6 +20,7 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	@Input() theme = 'white';
 	@Input() readonly = false;
 	@Input() isSwitchDisable = false;
+	
 
 	uiSubscription: Subscription;
 
