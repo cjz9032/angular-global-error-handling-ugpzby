@@ -371,6 +371,7 @@
 		},
 		"autoClose": {
 			"title": "Auto Close",
+			"addAppsButton": "Add",
 			"introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
 			"modalTurnAutoClose": {
 				"title": "Turn on Auto Close ?",
@@ -382,6 +383,10 @@
 			"modalAddApps": {
 				"title": "Add apps to Auto Close",
 				"body": "Only apps currently running will show in the list below."
+			},
+			"noRunningApps": {
+				"title": "No Running Apps To Add",
+				"body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
 			}
 		}
 	},
