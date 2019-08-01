@@ -96,6 +96,12 @@
 					position: relative;
 					margin-bottom: 3rem;
 					width: 20%;
+					@media #{$mediaquery_X22} {
+						width: 25%;
+					}
+					@media #{$mediaquery_X3} {
+						width: 33.3%;
+					}
 					div:nth-child(1) {
 						width: 4.5rem;
 						height: 4.5rem;

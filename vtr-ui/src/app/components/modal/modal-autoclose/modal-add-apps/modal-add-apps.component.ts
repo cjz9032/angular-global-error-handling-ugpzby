@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
 import { isUndefined } from 'util';
 
@@ -14,12 +13,13 @@ export class ModalAddAppsComponent implements OnInit {
   noAppsRunning = false;
   addAppsList: string;
   statusAskAgain: boolean;
-  constructor(private activeModal: NgbActiveModal, private gamingAutoCloseService: GamingAutoCloseService) { }
+  @Input() showAppsModal: boolean;
+  @Output() closeAddAppsModal = new EventEmitter<boolean>();
+  constructor(private gamingAutoCloseService: GamingAutoCloseService) { }
 
   ngOnInit() {
     this.refreshRunningList();
   }
-
 
   refreshRunningList() {
     try {
@@ -34,9 +34,6 @@ export class ModalAddAppsComponent implements OnInit {
     }
   }
 
-  closeAddAppsModal() {
-    this.activeModal.dismiss();
-  }
 
   AddAppsToList(event: any, index: number) {
     console.log(event.target.checked);
@@ -64,5 +61,9 @@ export class ModalAddAppsComponent implements OnInit {
     } catch (error) {
       console.error(error.message);
     }
+  }
+
+  closeModal(action: boolean) {
+    this.closeAddAppsModal.emit(action);
   }
 }

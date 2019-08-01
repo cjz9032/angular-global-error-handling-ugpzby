@@ -1,6 +1,8 @@
+import { GamingAutoCloseService } from './../../../services/gaming/gaming-autoclose/gaming-autoclose.service';
 import { Component, OnInit } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { isUndefined } from 'util';
 
 @Component({
   selector: 'vtr-page-autoclose',
@@ -8,6 +10,9 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./page-autoclose.component.scss']
 })
 export class PageAutocloseComponent implements OnInit {
+  public showTurnOnModal: boolean = false;
+  public showAppsModal: boolean = false;
+  toggleStatus: boolean;
   cardContentPositionA: any = {
     FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
   };
@@ -15,7 +20,7 @@ export class PageAutocloseComponent implements OnInit {
     FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
   };
   backId = 'vtr-gaming-macrokey-btn-back';
-  constructor(private cmsService: CMSService) { }
+  constructor(private cmsService: CMSService, private gamingAutoCloseService: GamingAutoCloseService) { }
 
   ngOnInit() {
     const queryOptions = {
@@ -50,5 +55,40 @@ export class PageAutocloseComponent implements OnInit {
         }
       }
     });
+  }
+
+  openTargetModal(modalOpenType: any) {
+    if ((modalOpenType.toggleStatus && modalOpenType.needToAsk)) {
+      this.showAppsModal = true;
+    } else {
+      this.showTurnOnModal = true;
+    }
+  }
+
+  doNotShowAction(event: any) {
+    try {
+      this.gamingAutoCloseService.setNeedToAsk(event).then((response: any) => {
+        console.log('Set successfully ------------------------>', response);
+        this.gamingAutoCloseService.setNeedToAskStatusCache(event.target.checked);
+      });
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+
+  initTurnOnAction(turnBtnAction: boolean) {
+    this.toggleStatus = turnBtnAction;
+    this.gamingAutoCloseService.setAutoCloseStatus(true).then((status: any) => {
+      this.gamingAutoCloseService.setAutoCloseStatusCache(status);
+    });
+    this.showAppsModal = true;
+  }
+
+  modalCloseTurnOn(action: boolean) {
+    this.showTurnOnModal = action;
+  }
+
+  modalCloseAddApps(action: boolean) {
+    this.showAppsModal = action;
   }
 }

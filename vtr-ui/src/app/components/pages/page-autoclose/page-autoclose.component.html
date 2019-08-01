@@ -15,7 +15,8 @@
               <div class="container-fluid">
                 <div class="row mb-60">
                   <div class="col col-12 px-40">
-                    <vtr-widget-autoclose [introTitle]="'gaming.autoClose.introLine' | translate">
+                    <vtr-widget-autoclose [switchToggle]="toggleStatus" (actionModal)="openTargetModal($event)"
+                      [introTitle]="'gaming.autoClose.introLine' | translate">
                     </vtr-widget-autoclose>
                   </div>
                 </div>
@@ -53,3 +54,10 @@
     </div>
   </div>
 </div>
+
+<vtr-modal-turn-on *ngIf="showTurnOnModal" (actionNeedAsk)="doNotShowAction($event)"
+  (closeTurnOnModal)="modalCloseTurnOn($event)" (actionTurnOn)="showTurnOnModal=false;initTurnOnAction($event)">
+</vtr-modal-turn-on>
+
+<vtr-modal-add-apps *ngIf="showAppsModal" (closeAddAppsModal)="modalCloseAddApps($event)">
+</vtr-modal-add-apps>

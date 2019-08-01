@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ModalAddAppsComponent } from '../modal-add-apps/modal-add-apps.component';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
 
 @Component({
@@ -13,37 +11,38 @@ export class ModalTurnOnComponent implements OnInit {
   addAppsList: string;
   statusAskAgain: boolean;
   setAutoClose: any;
-  constructor(private activeModal: NgbActiveModal, private modalService: NgbModal, private gamingAutoCloseService: GamingAutoCloseService) { }
+  constructor(private gamingAutoCloseService: GamingAutoCloseService) { }
 
+  @Input() showTurnOnModal: boolean;
+  @Output() actionTurnOn = new EventEmitter<boolean>();
+  @Output() closeTurnOnModal = new EventEmitter<boolean>();
+  @Output() actionNeedAsk = new EventEmitter<any>();
   ngOnInit() {
   }
 
-  showAddAppsModal(event: Event): void {
-    this.activeModal.close('close');
-    this.modalService
-      .open(ModalAddAppsComponent, {
-        backdrop: 'static',
-        size: 'lg',
-        windowClass: 'apps-modal-container'
-      });
-    this.gamingAutoCloseService.setAutoCloseStatus(true).then((status: any) => {
-      this.gamingAutoCloseService.setAutoCloseStatusCache(status);
-    });
-  }
-
-  closeModal() {
-    this.activeModal.close('close');
-  }
+  // showAddAppsModal(event: Event): void {
+  //   // this.activeModal.close('close');
+  //   // this.modalService
+  //   //   .open(ModalAddAppsComponent, {
+  //   //     backdrop: 'static',
+  //   //     size: 'lg',
+  //   //     windowClass: 'apps-modal-container'
+  //   //   });
+  //   this.gamingAutoCloseService.setAutoCloseStatus(true).then((status: any) => {
+  //     this.gamingAutoCloseService.setAutoCloseStatusCache(status);
+  //   });
+  // }
 
   setAksAgain(event: any) {
-    try {
-      this.gamingAutoCloseService.setNeedToAsk(event.target.checked).then((response: any) => {
-        console.log('Set successfully ------------------------>', response);
-        this.gamingAutoCloseService.setNeedToAskStatusCache(event.target.checked);
-      });
-    } catch (error) {
-      console.error(error.message);
-    }
+    this.actionNeedAsk.emit(event.target.checked);
+  }
+
+  turnOnAction(isConfirm: boolean = false) {
+    this.actionTurnOn.emit(isConfirm);
+  }
+
+  closeModal(action: boolean) {
+    this.closeTurnOnModal.emit(action);
   }
 
 }
