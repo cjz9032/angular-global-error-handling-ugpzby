@@ -1521,9 +1521,9 @@
             "listContactCustomerService": "Зв'язатися зі службою підтримки",
             "listContactUsOnWechat": "Зв'язатися з нами через WeChat",
             "weChatDescription": "Напишіть нам запитання у WeChat, і ми оперативно відповімо",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Знайдіть нас у соціальних мережах",
+            "listContactUsOnFacebook": "Зв'яжіться з нами на Facebook",
+            "facebookDescription": "Натисніть, щоб знайти нас на Facebook"
         },
         "quicklinks": {
             "title": "Швидкі посилання",
@@ -1565,12 +1565,12 @@
             "good": "НАДІЙНА",
             "malicious": "ШКІДЛИВА",
             "suspicious": "ПІДОЗРІЛА",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "Ваша оцінка безпеки показує рівень вашої безпеки в мережі. Результат залежить від того, чи:",
+            "antivirus": "Захищені ви антивірусом;",
+            "password": "Маєте складні паролі та безпечно керуєте ними;",
+            "vpn": "Відстежуєте вразливість мережі до нападів;",
+            "wifi": "Шифруєте персональні дані у відкритих мережах WiFi;",
+            "windowsHello": "Захищаєте пристрій безпечними способами входу."
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1665,7 @@
                 "bodyText": "Ми виявили, що вам бракує критично важливих компонентів Vantage. Ці компоненти буде завантажено у фоновому режимі. Спробуйте пізніше.",
                 "closeText": "закрити",
                 "offlineText": "Немає підключення до Інтернету. Певні частини цієї сторінки не працюватимуть. Підключіться заново",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "Не вдалося створити обліковий запис. Спробуйте пізніше."
             }
         },
         "homeprotection": {

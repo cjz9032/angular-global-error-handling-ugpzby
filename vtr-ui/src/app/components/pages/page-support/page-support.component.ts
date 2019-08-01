@@ -3,13 +3,11 @@ import { MockService } from '../../../services/mock/mock.service';
 import { SupportService } from '../../../services/support/support.service';
 import { DeviceService } from '../../../services/device/device.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
-import { TranslateService } from '@ngx-translate/core';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { RegionService } from 'src/app/services/region/region.service';
 
 @Component({
 	selector: 'vtr-page-support',
@@ -37,8 +35,6 @@ export class PageSupportComponent implements OnInit {
 	warrantyData: { info: any, cache: boolean };
 	isOnline: boolean;
 	notificationSubscription: Subscription;
-	language: string;
-	region: string;
 	backId = 'support-page-btn-back';
 	supportDatas = {
 		documentation: [
@@ -118,11 +114,9 @@ export class PageSupportComponent implements OnInit {
 		public mockService: MockService,
 		public supportService: SupportService,
 		public deviceService: DeviceService,
-		private translate: TranslateService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		private loggerService: LoggerService,
-		private regionService: RegionService,
 	) {
 		this.isOnline = this.commonService.isOnline;
 		this.warrantyData = this.supportService.warrantyData;
@@ -133,23 +127,8 @@ export class PageSupportComponent implements OnInit {
 			this.onNotification(response);
 		});
 		this.getWarrantyInfo(this.isOnline);
-		this.regionService.getRegion().subscribe({
-			next: x => {
-				this.region = x;
-			},
-			error: err => {
-				this.region = 'us';
-			}
-		});
-		this.regionService.getLanguage().subscribe({
-			next: x => {
-				this.language = x;
-			},
-			error: err => {
-				this.language = 'en';
-			}
-		});
-		this.fetchCMSArticleCategory(this.language);
+
+		this.fetchCMSArticleCategory();
 		this.fetchCMSContents();
 	}
 
@@ -172,7 +151,7 @@ export class PageSupportComponent implements OnInit {
 									return;
 								}
 								if (this.articleCategories.length === 0) {
-									this.fetchCMSArticleCategory(this.language);
+									this.fetchCMSArticleCategory();
 								}
 								if (this.articles.leftTop.length === 0) {
 									this.fetchCMSContents();
@@ -197,15 +176,12 @@ export class PageSupportComponent implements OnInit {
 	fetchCMSContents(lang?: string) {
 		this.contentStartTime = new Date();
 		this.articlesType = 'loading';
-		let queryOptions: any = {
+
+		const queryOptions = {
 			Page: 'support'
 		};
 		if (lang) {
-			queryOptions = {
-				Page: 'support',
-				Lang: lang,
-				GEO: 'US',
-			};
+			Object.assign(queryOptions, {Lang: lang, GEO: 'US'});
 		}
 
 		this.cmsService.fetchCMSContent(queryOptions).subscribe(
@@ -236,16 +212,13 @@ export class PageSupportComponent implements OnInit {
 		);
 	}
 
-	fetchCMSArticleCategory(lang: string) {
+	fetchCMSArticleCategory(lang?: string) {
 		this.cateStartTime = new Date();
-		const queryOptions = {
-			Lang: lang ? lang : this.language,
-			GEO: this.region,
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'SMB',
-			Brand: 'idea',
-		};
+
+		const queryOptions = {};
+		if (lang) {
+			Object.assign(queryOptions, {Lang: lang});
+		}
 
 		this.cmsService.fetchCMSArticleCategories(queryOptions).then(
 			(response: any) => {
@@ -272,7 +245,7 @@ export class PageSupportComponent implements OnInit {
 
 	clickCategory(categoryId: string) {
 		this.isCategoryArticlesShow = true;
-		this.fetchCMSArticles(categoryId, this.language);
+		this.fetchCMSArticles(categoryId);
 	}
 
 	onInnerBack() {
@@ -285,17 +258,14 @@ export class PageSupportComponent implements OnInit {
 		}
 	}
 
-	fetchCMSArticles(categoryId: string, lang: string) {
+	fetchCMSArticles(categoryId: string, lang?: string) {
 		this.articlesType = 'loading';
 		const queryOptions = {
-			Lang: this.language,
-			GEO: this.region,
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'SMB',
-			Brand: 'idea',
 			category: categoryId,
 		};
+		if (lang) {
+			Object.assign(queryOptions, {Lang: lang});
+		}
 
 		this.cmsService.fetchCMSArticles(queryOptions, true).then(
 			(response: any) => {

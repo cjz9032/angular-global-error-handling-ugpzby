@@ -1521,9 +1521,9 @@
             "listContactCustomerService": "Обратиться в службу поддержки клиентов",
             "listContactUsOnWechat": "Свяжитесь с нами в WeChat",
             "weChatDescription": "Отправьте нам вопрос в WeChat, и мы быстро ответим на него",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Наши страницы в социальных сетях",
+            "listContactUsOnFacebook": "Свяжитесь с нами в Facebook",
+            "facebookDescription": "Нажмите здесь, чтобы перейти на нашу страницу в Facebook"
         },
         "quicklinks": {
             "title": "Быстрые ссылки",
@@ -1565,12 +1565,12 @@
             "good": "БЕЗОПАСНАЯ",
             "malicious": "ВРЕДОНОСНАЯ",
             "suspicious": "ПОДОЗРИТЕЛЬНАЯ",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "Ваша оценка безопасности дает вам представление о степени вашей безопасности в Интернете, и результат зависит от следующих факторов:",
+            "antivirus": "Использование антивирусных программ",
+            "password": "Использование надежных и сложных паролей с безопасной системой управления паролями",
+            "vpn": "Мониторинг уязвимости сети к атакам",
+            "wifi": "Шифрование личных данных при использовании общедоступных сетей WiFi",
+            "windowsHello": "Защита устройства с помощью параметров безопасного входа"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1665,7 @@
                 "bodyText": "Мы обнаружили, что вам не хватает критических компонентов Vantage. Эти компоненты будут загружены в фоновом режиме. Повторите попытку позже.",
                 "closeText": "закрыть",
                 "offlineText": "Мы обнаружили, что вы не подключены к Интернету. Некоторые части этой страницы будут функционировать некорректно. Подключитесь к Интернету повторно",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "Ошибка создания учетной записи. Повторите попытку позже."
             }
         },
         "homeprotection": {

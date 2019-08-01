@@ -1478,9 +1478,9 @@
             "listContactCustomerService": "Kontaktujte služby zákazníkom",
             "listContactUsOnWechat": "Kontaktujte nás cez WeChat",
             "weChatDescription": "Položte nám otázku cez WeChat a my vám rýchlo odpovieme",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Vyhľadajte nás v sociálnych médiách",
+            "listContactUsOnFacebook": "Kontaktujte nás na Facebooku",
+            "facebookDescription": "Kliknutím nás vyhľadajte na Facebooku"
         },
         "quicklinks": {
             "title": "Rýchle prepojenia",
@@ -1522,12 +1522,12 @@
             "good": "DOBRÉ",
             "malicious": "ŠKODLIVÉ",
             "suspicious": "PODOZRIVÉ",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "Vaše skóre zabezpečenia poskytuje predstavu o vašom zabezpečení online. Výsledok závisí od toho, či:",
+            "antivirus": "Ste chránení antivírusovým softvérom;",
+            "password": "Máte silné a zložité heslá, ktoré spravujete bezpečným spôsobom;",
+            "vpn": "Monitorujete vystavenie svojej siete útočníkom;",
+            "wifi": "Šifrujete svoje osobné údaje pri používaní verejných sietí WiFi;",
+            "windowsHello": "Chránite svoje zariadenie pomocou možností bezpečného prihlásenia."
         },
         "antivirus": {
             "common": {
@@ -1622,7 +1622,7 @@
                 "bodyText": "Zistili sme, že vám chýbajú dôležité časti aplikácie Vantage. Tieto časti sa prevezmú v pozadí. Skúste to znova neskôr.",
                 "closeText": "zatvoriť",
                 "offlineText": "Zistili sme, že nie ste pripojení k internetu. Niektoré časti tejto stránky nebudú fungovať správne. Pripojte sa znova",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "Účet sa nepodarilo vytvoriť. Skúste to znova neskôr."
             }
         },
         "homeprotection": {

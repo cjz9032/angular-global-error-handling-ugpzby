@@ -1,16 +1,18 @@
 <ng-container *ngIf="isNoneBreachedAndFigleafReadyState(); else defaultHeader">
 	<p class="browser-accounts-header__title-block">
 			<span class="browser-accounts-header__title">
-				{{dashboardData?.totalAccounts}} accounts stored in Lenovo Privacy Essentials
+				{{dashboardData?.totalAccounts}} accounts stored in Lenovo Privacy Essentials by Figleaf
 			</span>
 		<button class="browser-accounts-header__btn"
+				vtrSendAnalytics
+				[metricsEvent]="'ItemClick'"
+				[metricsItem]="'ViewInLenovoPrivacyEssentialsButton'"
 				(click)="openFigleafApp.emit(true)">
-			View in Lenovo Privacy Essentials
+			View now
 		</button>
 	</p>
 	<p class="browser-accounts-header__text">
-		You can log in to your favorite websites automatically with your passwords stored in Lenovo Privacy Essentials by
-		Figleaf.
+		Store your passwords in the app and log in to your favorite sites automatically. Everything is encrypted to keep you private.
 	</p>
 </ng-container>
 <ng-template #defaultHeader>
@@ -20,7 +22,7 @@
 			[countOfIssue]="nonPrivatePasswordCount"
 			[isFeatureWasScanned]="isNonPrivatePasswordWasScanned"
 			[isFigleafReadyToCommunication]="isFigleafReadyForCommunication">
-			<span class="browser-accounts-header__title--red">{{nonPrivatePasswordCount}}</span> Non-private
+			<span class="browser-accounts-header__title--red">{{nonPrivatePasswordCount}}</span> Vulnerable
 			passwords found
 		</vtr-feature-header>
 		<vtr-why-seeing-tooltip *ngIf="!isFigleafReadyForCommunication && nonPrivatePasswordCount > 0"

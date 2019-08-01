@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import { ReplaySubject } from 'rxjs';
+import { combineLatest, of, ReplaySubject } from 'rxjs';
 import { BreachedAccountsService } from './breached-accounts.service';
 import { BrowserAccountsService } from './browser-accounts.service';
 import { TrackingMapService } from '../../feature/tracking-map/services/tracking-map.service';
-import { debounceTime, distinctUntilChanged, filter, map, shareReplay } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, filter, map, shareReplay } from 'rxjs/operators';
 import { typeData } from '../../feature/tracking-map/services/tracking-map.interface';
 import { AppStatuses, FeaturesStatuses } from '../../userDataStatuses';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { FigleafOverviewService, FigleafStatus, licenseTypes } from './figleaf-overview.service';
+import { UpdateTriggersService } from './update-triggers.service';
 
 export interface UserStatuses {
 	appState: AppStatuses;
@@ -32,7 +33,6 @@ export class UserDataGetStateService {
 		distinctUntilChanged(),
 		shareReplay(1)
 	);
-	isTrackersBlocked = false;
 	figleafStatus: FigleafStatus;
 	licenseTypes = licenseTypes;
 
@@ -45,6 +45,7 @@ export class UserDataGetStateService {
 		private browserAccountsService: BrowserAccountsService,
 		private trackingMapService: TrackingMapService,
 		private figleafOverviewService: FigleafOverviewService,
+		private updateTriggersService: UpdateTriggersService,
 		private communicationWithFigleafService: CommunicationWithFigleafService) {
 
 		this.updateUserDataSubject();
@@ -76,27 +77,25 @@ export class UserDataGetStateService {
 			this.updateUserDataSubject();
 		});
 
-		this.trackingMapService.trackingData$.pipe(
-			filter((trackingData) => trackingData.typeData === typeData.Users),
-		).subscribe((trackingData) => {
+		combineLatest([
+			this.trackingMapService.trackingData$,
+			this.figleafOverviewService.figleafSettings$.pipe(
+				map((settings) => settings.isAntitrackingEnabled),
+				catchError((err) => of(false))
+			)
+		]).pipe(
+			filter(([trackingData, isTrackersBlocked]) => trackingData.typeData === typeData.Users),
+		).subscribe(([trackingData, isTrackersBlocked]) => {
 			const trackersCount = Object.keys(trackingData.trackingData.trackers).length;
 			let status = trackersCount ? FeaturesStatuses.exist : FeaturesStatuses.none;
 			if (trackingData.error) {
 				status = FeaturesStatuses.error;
 			}
-			if (this.isTrackersBlocked) {
+			if (isTrackersBlocked) {
 				status = FeaturesStatuses.none;
 			}
 			this.websiteTrackersResult = status;
 			this.updateUserDataSubject();
-		});
-
-		this.trackingMapService.isTrackersBlocked$.subscribe((isTrackersBlocked) => {
-			this.isTrackersBlocked = isTrackersBlocked;
-			if (isTrackersBlocked) {
-				this.websiteTrackersResult = FeaturesStatuses.none;
-				this.updateUserDataSubject();
-			}
 		});
 
 		this.communicationWithFigleafService.isFigleafReadyForCommunication$.subscribe((isFigleafReadyForCommunication) => {

@@ -1,13 +1,21 @@
 import { Injectable } from '@angular/core';
-import { debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, switchMapTo } from 'rxjs/operators';
-import { combineLatest } from 'rxjs';
+import {
+	catchError,
+	debounceTime,
+	distinctUntilChanged,
+	filter,
+	map,
+	shareReplay,
+	startWith,
+	switchMapTo
+} from 'rxjs/operators';
+import { combineLatest, of } from 'rxjs';
 import { FigleafOverviewService, FigleafSettings } from '../../../common/services/figleaf-overview.service';
 import { BrowserAccountsService } from '../../../common/services/browser-accounts.service';
 import { BreachedAccount, BreachedAccountsService } from '../../../common/services/breached-accounts.service';
 import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
 import { CountNumberOfIssuesService } from '../../../common/services/count-number-of-issues.service';
 import { FeaturesStatuses } from '../../../userDataStatuses';
-import { PrivacyModule } from '../../../privacy.module';
 
 @Injectable({
 	providedIn: 'root'
@@ -33,8 +41,6 @@ export class PrivacyScoreService {
 		withoutScan: 1 / 3
 	};
 
-	private breachedAccountsFromKnownWebsites$ = this.getBreachesAccount((x: BreachedAccount) => x.domain !== 'n/a');
-	private breachedAccountsFromUnknownWebsites$ = this.getBreachesAccount((x: BreachedAccount) => x.domain === 'n/a');
 	private ammountPasswordFromBrowser$ = this.userDataGetStateService.userDataStatus$.pipe(
 		map((userDataStatus) =>
 			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.undefined &&
@@ -60,7 +66,11 @@ export class PrivacyScoreService {
 		switchMapTo(
 			this.getFigleafSetting((settings: FigleafSettings) => settings.isAntitrackingEnabled)
 		),
+		catchError((err) => of(false))
 	);
+
+	private breachedAccountsFromKnownWebsites$ = this.getBreachesAccount((x: BreachedAccount) => x.domain !== 'n/a');
+	private breachedAccountsFromUnknownWebsites$ = this.getBreachesAccount((x: BreachedAccount) => x.domain === 'n/a');
 
 	private scoreFromBreachedAccount$ = combineLatest([
 		this.breachedAccountsFromKnownWebsites$,
@@ -80,22 +90,10 @@ export class PrivacyScoreService {
 	);
 
 	newPrivacyScore$ = combineLatest([
-		this.scoreFromBreachedAccount$.pipe(
-			startWith((this.coefficients.breachedAccounts * this.coefficients.withoutScan) as number)
-		),
-		this.ammountPasswordFromBrowser$.pipe(
-			map((response) => this.getRange(response)),
-			map((range) => Number(range) * this.coefficients.nonPrivatelyStoredPasswords),
-			startWith((this.coefficients.nonPrivatelyStoredPasswords * this.coefficients.withoutScan) as number)
-		),
-		this.monitoringEnable$.pipe(
-			startWith(false),
-			map((isMonitoringEnable) => Number(isMonitoringEnable) * this.coefficients.breachMonitoring)
-		),
-		this.isAntitrackingEnabled$.pipe(
-			map((isAntitrackingEnabled) => Number(isAntitrackingEnabled) * this.coefficients.trackingTools),
-			startWith((this.coefficients.trackingTools * this.coefficients.withoutScan) as number)
-		),
+		this.getScoreFromBreachedAccount(),
+		this.getAmmountPasswordFromBrowser(),
+		this.getMonitoringEnable(),
+		this.getIsAntitrackingEnabled()
 	]).pipe(
 		debounceTime(500),
 		map(([breachedAccountScore, passwordFromBrowserScore, monitoringScore, antitrackingScore]) => {
@@ -126,19 +124,19 @@ export class PrivacyScoreService {
 			return {
 				privacyLevel: 'low',
 				title: 'Low privacy score',
-				text: `A lot of your personal info is out there. Take control of your privacy by choosing when to be private and when to share on every site you interact with.`,
+				text: `We found that a lot of your personal information is accessible to others. We recommend Lenovo Privacy Essentials by FigLeaf for better privacy online.`,
 			};
 		} else if (score < 60) {
 			return {
 				privacyLevel: 'medium-low',
 				title: 'Medium privacy score',
-				text: `You’re taking a few steps to be private, but some of your info could easily be exposed. Lenovo Privacy Essentials by FigLeaf can help.`,
+				text: `You're taking a few steps to be private, but some of your information could easily be exposed. We recommend Lenovo Privacy Essentials by FigLeaf to close your privacy gaps.`,
 			};
 		} else if (score < 80) {
 			return {
 				privacyLevel: 'medium',
 				title: 'Medium privacy score',
-				text: `You’re taking some steps to be private. But there’s a lot more you can do.`,
+				text: `You're taking some steps to be private. But you could take greater control by choosing when to be private and when to share for each site you visit with Lenovo Privacy Essentials by FigLeaf.`,
 			};
 		} else {
 			return {
@@ -179,5 +177,51 @@ export class PrivacyScoreService {
 		}
 
 		return range;
+	}
+
+	private getScoreFromBreachedAccount() {
+		const defaultValue = (this.coefficients.breachedAccounts * this.coefficients.withoutScan) as number;
+
+		return this.scoreFromBreachedAccount$.pipe(
+			startWith(defaultValue),
+			catchError((err) => {
+				return of(defaultValue);
+			}),
+		);
+	}
+
+	private getAmmountPasswordFromBrowser() {
+		const defaultValue = (this.coefficients.nonPrivatelyStoredPasswords * this.coefficients.withoutScan) as number;
+
+		return this.ammountPasswordFromBrowser$.pipe(
+			map((response) => this.getRange(response)),
+			map((range) => Number(range) * this.coefficients.nonPrivatelyStoredPasswords),
+			startWith(defaultValue),
+			catchError((err) => {
+				return of(defaultValue);
+			}),
+		);
+	}
+
+	private getMonitoringEnable() {
+		return this.monitoringEnable$.pipe(
+			startWith(false),
+			map((isMonitoringEnable) => Number(isMonitoringEnable) * this.coefficients.breachMonitoring),
+			catchError((err) => {
+				return of(0);
+			}),
+		);
+	}
+
+	private getIsAntitrackingEnabled() {
+		const defaultValue = (this.coefficients.trackingTools * this.coefficients.withoutScan) as number;
+
+		return this.isAntitrackingEnabled$.pipe(
+			map((isAntitrackingEnabled) => Number(isAntitrackingEnabled) * this.coefficients.trackingTools),
+			startWith(defaultValue),
+			catchError((err) => {
+				return of(defaultValue);
+			}),
+		);
 	}
 }

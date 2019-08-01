@@ -1521,9 +1521,9 @@
             "listContactCustomerService": "Contacter le service client",
             "listContactUsOnWechat": "Nous contacter sur WeChat",
             "weChatDescription": "Posez-nous une question sur WeChat et nous y répondrons rapidement",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Nous trouver sur les médias sociaux",
+            "listContactUsOnFacebook": "Nous contacter sur Facebook",
+            "facebookDescription": "Cliquez pour nous trouver sur Facebook"
         },
         "quicklinks": {
             "title": "Liens d'accès rapide",
@@ -1565,12 +1565,12 @@
             "good": "BON",
             "malicious": "MALVEILLANT",
             "suspicious": "SUSPECT",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "Votre score de sécurité vous donne une idée de la manière dont votre navigation en ligne est sécurisée, le résultat dépend des éléments suivants :",
+            "antivirus": "Protection par un logiciel anti-virus",
+            "password": "Utilisation de mots de passe complexes et sûrs gérés de manière sécurisée",
+            "vpn": "Surveillance de l'exposition de votre réseau aux attaquants",
+            "wifi": "Chiffrement de vos données personnelles lors de l'utilisation de WiFi public",
+            "windowsHello": "Protection de votre périphérique à l'aide des options de connexion sécurisée"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1665,7 @@
                 "bodyText": "Nous avons détecté une absence critique ce certaines pièces de Vantage. Ces pièces sont téléchargées en arrière-plan. Réessayez plus tard.",
                 "closeText": "fermer",
                 "offlineText": "Nous avons détecté que vous n'êtes pas connecté à Internet. Certaines parties de cette page ne fonctionneront pas correctement. Veuillez vous reconnecter",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "La création du compte a échoué. Réessayez plus tard."
             }
         },
         "homeprotection": {

@@ -40,7 +40,7 @@
 					</div>
 				</div>
 
-				<div class="tracker__stop-wrapper">
+				<div class="tracker__stop-wrapper" *ngIf="!(isFigleafReadyForCommunication$ | async)">
 					<div class="tracker__stop">
 						<h3 class="tracker__stop-title">
 							Choose to block tracking tools completely
@@ -53,8 +53,9 @@
 									vtrSendAnalytics
 									[metricsEvent]="'ItemClick'"
 									[metricsItem]="'InstallButton'"
+									vtrOfflineMode
 									vtrOpenFigleafInstaller>
-								Install Lenovo Privacy Essentials
+								Install Now
 							</button>
 							<a class="tracker__link"
 							   routerLink="/privacy/landing"

@@ -10,7 +10,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { UserService } from 'src/app/services/user/user.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { AndroidService } from 'src/app/services/android/android.service';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -103,6 +103,19 @@ export class PageDashboardAndroidComponent implements OnInit {
 
 		this.setDefaultCMSContent();
 
+		// VAN-5872, server switch feature on language change
+		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.fetchCmsContents();
+		});
+
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+
+	}
+
+
+	private fetchCmsContents() {
 		const queryOptions = {
 			Page: 'dashboard'
 		};
@@ -158,11 +171,6 @@ export class PageDashboardAndroidComponent implements OnInit {
 				console.log('fetchCMSContent error', error);
 			}
 		);
-
-		this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
-
 	}
 
 	onFeedbackModal() {

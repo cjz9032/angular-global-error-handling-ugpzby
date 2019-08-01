@@ -1521,9 +1521,9 @@
             "listContactCustomerService": "Müşteri Hizmetleri ile iletişim kurun",
             "listContactUsOnWechat": "WeChat'te bize ulaşın",
             "weChatDescription": "WeChat'te sorunuzu bizimle paylaşırsanız hızlı bir şekilde yanıt alabilirsiniz",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Sosyal medyada bizi bulun",
+            "listContactUsOnFacebook": "Facebook'ta bize ulaşın",
+            "facebookDescription": "Facebook'ta bizi bulmak için tıklayın"
         },
         "quicklinks": {
             "title": "Hızlı Bağlantılar",
@@ -1565,12 +1565,12 @@
             "good": "İYİ",
             "malicious": "KÖTÜ AMAÇLI",
             "suspicious": "ŞÜPHELİ",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "Güvenlik puanınız çevrimiçinde ne kadar güvende olduğunuza dair bir fikir verir; sonuç, aşağıdakilere bağlıdır:",
+            "antivirus": "Antivirüs yazılımı tarafından korunup korunmadığınız",
+            "password": "Güvenli bir şekilde yönetilen, güçlü ve karmaşık parolalarınızın olup olmaması",
+            "vpn": "Ağınızın saldırganlara ne kadar açık olduğunu izleyip izlemediğiniz",
+            "wifi": "Genel WiFi kullanırken kişisel verilerinizi şifreleyip şifrelemediğiniz",
+            "windowsHello": "Güvenli oturum seçenekleri kullanarak cihazınızı koruyup korumadığınız"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1665,7 @@
                 "bodyText": "Vantage'ın kritik parçalarının sizde olmadığını tespit ettik. Bu parçalar arka planda indirilecek. Lütfen daha sonra yeniden deneyin.",
                 "closeText": "kapat",
                 "offlineText": "İnternet'e bağlı olmadığınızı tespit ettik. Bu sayfanın bazı kısımları düzgün çalışmayacak. Lütfen yeniden bağlanın",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "Hesap oluşturma işlemi başarısız oldu. Lütfen daha sonra yeniden deneyin."
             }
         },
         "homeprotection": {

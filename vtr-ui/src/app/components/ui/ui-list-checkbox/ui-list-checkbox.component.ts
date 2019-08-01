@@ -87,6 +87,11 @@ export class UiListCheckboxComponent implements OnInit {
 	public onReadMoreClick($event) {
 		this.readMore.emit($event);
 		// const readMeUrl = 'https://download.lenovo.com/consumer/desktop/lnvusbss.txt';
+		const updateModalMetrics = {
+			pageName: 'Page.Device.SystemUpdate',
+			pageContext: 'Read More',
+			closeButton: 'ReadMoreCloseButton',
+		};
 		const modalRef = this.modalService.open(ModalUpdateChangeLogComponent,
 			{
 				backdrop: true,
@@ -95,6 +100,7 @@ export class UiListCheckboxComponent implements OnInit {
 				centered: true
 			});
 		modalRef.componentInstance.url = this.readMeUrl;
+		modalRef.componentInstance.updateModalMetrics = updateModalMetrics;
 	}
 
 	public onIgnoreUpdateClick(packageName: string, isIgnored: boolean) {
