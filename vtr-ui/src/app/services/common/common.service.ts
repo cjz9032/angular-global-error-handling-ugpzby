@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { Subject } from 'rxjs/internal/Subject';
+import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -62,7 +63,7 @@ export class CommonService {
 	 */
 	public formatLocalTime(dateString: string): string {
 		const date = new Date(dateString);
-		const option = {hour: 'numeric', minute:'numeric'};
+		const option = { hour: 'numeric', minute: 'numeric' };
 		return date.toLocaleTimeString(navigator.language, option);
 	}
 
@@ -106,7 +107,7 @@ export class CommonService {
 	 * @param key key for local storage. Must define it in LocalStorageKey enum
 	 * @param value value to store in local storage
 	 */
-	public setLocalStorageValue(key: LocalStorageKey, value: any) {
+	public setLocalStorageValue(key: LocalStorageKey | DashboardLocalStorageKey, value: any) {
 		// console.log(`Setting the value for ${key}, Value => ${value}`);
 		window.localStorage.setItem(key, JSON.stringify(value));
 		// notify component that local storage value updated.
@@ -117,7 +118,7 @@ export class CommonService {
 	 * Returns parsed json object if key is found else returns undefined
 	 * @param key key use to store value in local storage
 	 */
-	public getLocalStorageValue(key: LocalStorageKey, defaultValue?: any): any {
+	public getLocalStorageValue(key: LocalStorageKey | DashboardLocalStorageKey, defaultValue?: any): any {
 		const value = window.localStorage.getItem(key);
 		if (value) {
 			try {
@@ -184,6 +185,6 @@ export class CommonService {
 		return this.gamingCapabalities.asObservable();
 	}
 	public sendGamingCapabilitiesNotification(action, payload) {
-		this.gamingCapabalities.next({type: action, payload});
+		this.gamingCapabalities.next({ type: action, payload });
 	}
 }
