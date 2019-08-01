@@ -202,10 +202,6 @@
 					}
 				}
 			},
-			"initalKey": {
-				"zero": "0",
-				"m1": "M1"
-			},
 			"popupContent": {
 				"clearMacrokey": {
 					"title": "Are you sure you want to clear this macro key?"
