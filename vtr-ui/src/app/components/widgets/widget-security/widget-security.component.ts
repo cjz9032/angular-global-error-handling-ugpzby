@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { CMSService } from '../../../services/cms/cms.service';
-import { RegionService } from 'src/app/services/region/region.service';
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
+import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 
 @Component({
 	selector: 'vtr-widget-security',
@@ -35,18 +35,17 @@ export class WidgetSecurityComponent implements OnInit {
 	constructor(
 		public modalService: NgbModal,
 		private cmsService: CMSService,
-		private regionService: RegionService,
+		private localInfoService: LocalInfoService,
 		private windowsHelloService: WindowsHelloService
 	) {
 		this.fetchCMSArticleCategory();
 	}
 
 	ngOnInit() {
-		this.regionService.getRegion().subscribe({
-			next: x => { this.region = x; },
-			error: () => {
-				this.region = 'US';
-			}
+		this.localInfoService.getLocalInfo().then(result => {
+			this.region = result.GEO;
+		}).catch(e => {
+			this.region = 'us';
 		});
 		const tooltipsInit = [
 			'security.landing.antivirus',
