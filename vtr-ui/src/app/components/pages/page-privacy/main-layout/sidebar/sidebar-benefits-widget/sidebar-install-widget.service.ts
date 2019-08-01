@@ -25,7 +25,7 @@ export class SidebarInstallWidgetService {
 		[RoutersName.LANDING]: {
 			visible: false,
 			title: 'The choice to be private is here',
-			text: 'Trial duration 14-day. No credit card required.',
+			text: 'Start your 14-day trial. No credit card required.',
 			image: 'pitch-block/Img_Pith_Main',
 		},
 		[RoutersName.PRIVACY]: {
@@ -36,32 +36,32 @@ export class SidebarInstallWidgetService {
 		},
 		[RoutersName.BREACHES]: {
 			visible: true,
-			title: 'Fix breaches and watch for future ones',
-			text: 'Trial duration 14-day. No credit card required.',
+			title: 'Make sure no one gets your private information',
+			text: 'Start your 14-day trial. No credit card required.',
 			image: 'pitch-block/Img_Pith_Breach',
 		},
 		[RoutersName.TRACKERS]: {
 			visible: true,
-			title: 'Block trackers and stay private with Lenovo Privacy Essentials',
-			text: 'Trial duration 14-day. No credit card required.',
+			title: 'Block tracking tools with Lenovo Privacy Essentials',
+			text: 'Start your 14-day trial. No credit card required.',
 			image: 'pitch-block/Img_Pith_Trackers',
 		},
 		[RoutersName.BROWSERACCOUNTS]: {
 			visible: true,
-			title: 'Take back control over your data with Lenovo Privacy Essentials',
-			text: 'Trial duration 14-day. No credit card required.',
+			title: 'Make your passwords private',
+			text: 'Start your 14-day trial. No credit card required.',
 			image: 'pitch-block/Img_Pith_Passwords',
 		},
 		[RoutersName.ARTICLES]: {
 			visible: true,
 			title: 'The choice to be private is here',
-			text: 'Trial duration 14-day. No credit card required.',
+			text: 'Start your 14-day trial. No credit card required.',
 			image: 'pitch-block/Img_Pith_Main',
 		},
 		[RoutersName.ARTICLEDETAILS]: {
 			visible: true,
 			title: 'The choice to be private is here',
-			text: 'Trial duration 14-day. No credit card required.',
+			text: 'Start your 14-day trial. No credit card required.',
 			image: 'pitch-block/Img_Pith_Main',
 		}
 	};

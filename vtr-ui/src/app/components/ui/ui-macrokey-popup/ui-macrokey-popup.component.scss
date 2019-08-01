@@ -1,90 +1,90 @@
 @import "../../../app.theme.scss";
 .modal-main-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1040;
-  width: 100vw;
-  height: 100vh;
-  background-color: $screen_dark_50;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1040;
+	width: 100vw;
+	height: 100vh;
+	background-color: $screen_dark_50;
 }
 ui-popover {
-  position: absolute;
-  max-width: 35%;
-  padding: 3rem 5rem;
-  background: #fbfdff;
-  z-index: 9;
-  border-radius: 1rem;
-  box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
-  right: 0;
-  top: 25%;
-  left: 0;
-  margin: auto;
-  @media #{$small-screen} {
-    width: 45rem;
-  }
-  @media #{$medium-screen} {
-    width: 50rem;
-  }
+	position: absolute;
+	max-width: 35%;
+	padding: 3rem 5rem;
+	background: #fbfdff;
+	z-index: 9;
+	border-radius: 1rem;
+	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
+	right: 0;
+	top: 25%;
+	left: 0;
+	margin: auto;
+	@media #{$small-screen} {
+		max-width: 45rem;
+	}
+	@media #{$medium-screen} {
+		max-width: 50rem;
+	}
 }
 
 .vtr-ui-macrokey-popup {
-  &.modal-body {
-    padding: 0;
-  }
+	&.modal-body {
+		padding: 0;
+	}
 
-  .content-body {
-    min-height: 10rem;
-  }
+	.content-body {
+		min-height: 10rem;
+	}
 
-  fa-icon {
-    font-size: 3rem;
-    color: $main;
-  }
+	fa-icon {
+		font-size: 3rem;
+		color: $main;
+	}
 
-  h1 {
-    font-size: 2.5rem;
-    font-weight: normal;
-    color: $blue-dark;
-  }
+	h1 {
+		font-size: 2.5rem;
+		font-weight: normal;
+		color: $blue-dark;
+	}
 
-  p {
-    font-size: 1.6rem;
-    color: $light-grey;
-    padding: 0.5rem 0;
-  }
+	p {
+		font-size: 1.6rem;
+		color: $light-grey;
+		padding: 0.5rem 0;
+	}
 
-  .btn-close {
-    button.close {
-      &:hover {
-        opacity: 0.75;
-      }
-    }
-  }
-  .enable-button {
-    background: $gradient_main;
-    border-radius: 3rem;
-    color: $light;
-    font-size: 2rem;
-    padding: 1rem 3rem;
-    margin-top: 1rem;
-    font-weight: $weight_bold;
-    text-transform: uppercase;
-  }
+	.btn-close {
+		button.close {
+			&:hover {
+				opacity: 0.75;
+			}
+		}
+	}
+	.enable-button {
+		background: $gradient_main;
+		border-radius: 3rem;
+		color: $light;
+		font-size: 2rem;
+		padding: 1rem 3rem;
+		margin-top: 1rem;
+		font-weight: $weight_bold;
+		text-transform: uppercase;
+	}
 
-  .cancel-link {
-    color: $main;
-    font-size: 2rem;
-    text-decoration: underline;
-    vertical-align: middle;
-    padding: 1rem 3rem;
-    font-weight: $weight_bold;
-    margin-top: 1rem;
-    cursor: pointer;
-    text-transform: uppercase;
+	.cancel-link {
+		color: $main;
+		font-size: 2rem;
+		text-decoration: underline;
+		vertical-align: middle;
+		padding: 1rem 3rem;
+		font-weight: $weight_bold;
+		margin-top: 1rem;
+		cursor: pointer;
+		text-transform: uppercase;
 
-    &:hover {
-      text-decoration: underline;
-    }
-  }
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }
