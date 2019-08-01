@@ -42,7 +42,8 @@
 													[title]="'security.antivirus.windowsDefender.learnMore' | translate"
 													(onClick)="openArticle()"
 													[isDisabled]="!isOnline"
-													[upperCaseLabel]=false></vtr-ui-button>
+													[upperCaseLabel]=false
+													[linkId]="'av-learnmore-McAfee-btn'"></vtr-ui-button>
 											</div>
 										</div>
 									</div>
@@ -238,7 +239,8 @@
 												(onClick)=" viewModel.mcafee?.launch()"
 												[label]="'security.antivirus.mcafee.launch' | translate"
 												[title]="'security.antivirus.mcafee.launch' | translate"
-												[upperCaseLabel]=false></vtr-ui-button>
+												[upperCaseLabel]=false
+												[linkId]="sa-launchmcafee-btn"></vtr-ui-button>
 										</div>
 									</div>
 
@@ -565,7 +567,8 @@
 											type="corner-article"
 											cornerShift="large"
 											order="1"
-											sideFlag="r" >
+											sideFlag="r" 
+											[cardId]="'av-mcafeearticle-card'">
 										</vtr-container-card>
 									</div>
 								</div>

@@ -22,8 +22,8 @@
 						[attr.href]="!actionLink ? null : actionLink"
 						(click)="linkClicked(actionType, actionLink)"
 						vtrMetrics
-						id="{{id}}"
-						attr.aria-label="{{ariaLabel}}"
+						id="{{cardId}}"
+						attr.aria-label="{{cardId}}"
 						metricsItemCategory="corner"
 						metricsEvent="docClick"
 						[metricsItemPosition]="sideFlag + order"
@@ -79,8 +79,8 @@
 						<a [attr.href]="!actionLink ? null : actionLink"
 							(click)="linkClicked(actionType, actionLink)"
 							vtrMetrics
-							id="{{id}}"
-							attr.aria-label="{{ariaLabel}}"
+							id="{{cardId}}"
+							attr.aria-label="{{cardId}}"
 							metricsItemCategory="corner"
 							metricsEvent="docClick"
 							[metricsItemPosition]="sideFlag + order"
@@ -142,8 +142,8 @@
 						rel="noopener"
 						class="card-image"
 						vtrMetrics
-						id="{{id}}"
-						attr.aria-label="{{ariaLabel}}"
+						id="{{cardId}}"
+						attr.aria-label="{{cardId}}"
 						metricsEvent="ArticleClick"
 						metricsItemCategory="corner-article"
 						[metricsItemPosition]="sideFlag + order"
@@ -205,8 +205,8 @@
 						[attr.href]="!actionLink ? null : actionLink"
 						metricsItemCategory="highlight"
 						vtrMetrics
-						id="{{id}}"
-						attr.aria-label="{{ariaLabel}}"
+						id="{{cardId}}"
+						attr.aria-label="{{cardId}}"
 						metricsEvent="docClick"
 						[metricsItemPosition]="sideFlag + order"
 						[metricsItemID]="itemID"
@@ -241,8 +241,8 @@
 				[attr.href]="!actionLink ? null : actionLink"
 				metricsItemCategory="article"
 				vtrMetrics
-				id="{{id}}"
-				attr.aria-label="{{ariaLabel}}"
+				id="{{cardId}}"
+				attr.aria-label="{{cardId}}"
 				metricsEvent="docClick"
 				[metricsItemPosition]="sideFlag + order"
 				[metricsItemID]="itemID"
@@ -253,8 +253,8 @@
 						<a [attr.href]="!actionLink ? null : actionLink"
 							target="_blank"
 							rel="noopener"
-							id="{{id}}-card-image"
-							attr.aria-label="{{ariaLabel}}-card-image"
+							id="{{cardId}}-card-image"
+							attr.aria-label="{{cardId}}-card-image"
 							class="card-image"
 							[style.background-image]="'url(' + img + ')'">
 							<div *ngIf="logo || logoText"
@@ -273,8 +273,8 @@
 							<div *ngIf="actionLink"
 								class="read-more">
 								<a [attr.href]="!actionLink ? null : actionLink"
-									id="{{id}}-read-more"
-									attr.aria-label="{{ariaLabel}}-read-more"
+									id="{{cardId}}-read-more"
+									attr.aria-label="{{cardId}}-read-more"
 									target="_blank"
 									rel="noopener">
 									<span class="link-label">{{action}}</span>
@@ -326,8 +326,8 @@
 							target="_blank"
 							rel="noopener"
 							vtrMetrics
-							id="{{id}}"
-							attr.aria-label="{{ariaLabel}}"
+							id="{{cardId}}"
+							attr.aria-label="{{cardId}}"
 							metricsEvent="docClick"
 							[metricsItemID]="itemID"
 							[metricsItemPosition]="sideFlag + order"

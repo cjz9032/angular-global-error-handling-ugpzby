@@ -23,7 +23,9 @@
 				[disabled]="disabled"
 				[readonly]="readonly"
 				(change)="onChange($event)"
-				(click)="sendChangeEvent($event)"/>
+				(click)="sendChangeEvent($event)"
+				[id]="switchId"
+				[attr.aria-label]="switchId"/>
 
 			<span class="switch {{ size }}"
 				(click)="stopPropagation($event);"> <small></small> </span>

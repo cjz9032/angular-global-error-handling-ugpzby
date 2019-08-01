@@ -27,7 +27,8 @@
 									<div class="col-sm-12 col-md-12 col-lg-6 security-widgets-container left">
 
 										<vtr-ui-landing-feature *ngIf="antivirusLandingViewModel.subject.status !== undefined && antivirusLandingViewModel.subject.status !== null"
-											[feature]='antivirusLandingViewModel'>
+											[feature]='antivirusLandingViewModel'
+											>
 										</vtr-ui-landing-feature>
 
 										<vtr-ui-landing-feature *ngIf="passwordManagerLandingViewModel.subject.status !== undefined && passwordManagerLandingViewModel.subject.status !== null"
@@ -122,7 +123,8 @@
 										type="corner-article"
 										order="1"
 										sideFlag="r"
-										cornerShift="large">
+										cornerShift="large"
+										[cardId]="'security-tips-card'">
 									</vtr-container-card>
 								</div>
 							</div>

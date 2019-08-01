@@ -7,8 +7,8 @@
 			<a *ngIf="isOnline"
 				[href]="model.link"
 				vtrMetrics
-				[id]="id+''+cIndex"
-				[attr.aria-label]="ariaLabel+''+cIndex"
+				[id]="carouselId+''+cIndex"
+				[attr.aria-label]="carouselId+''+cIndex"
 				metricsEvent="articleclick"
 				[metricsItemID]="model.id"
 				[metricsItemPosition]="order"

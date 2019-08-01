@@ -24,7 +24,8 @@
 				[label]="'security.antivirus.mcafee.launch' | translate"
 				[title]="'security.antivirus.mcafee.launch' | translate"
 				[upperCaseLabel]="false"
-				*ngIf="install"></vtr-ui-button>
+				*ngIf="install"
+				[linkId]="'security-av-mcafee-launch-btn'"></vtr-ui-button>
 			<a	id="sa-av-link-visitmcafee"
 				aria-label="sa-av-link-visitmcafee"
 				class="d-block"
@@ -38,7 +39,8 @@
 					[title]="'security.antivirus.mcafee.getMacfee' | translate"
 					[upperCaseLabel]="false"
 					[isDisabled]="!isOnline"
-					*ngIf="!install"></vtr-ui-button>
+					*ngIf="!install"
+					[linkId]="'security-av-get-mcafee-btn'"></vtr-ui-button>
 			</a>
 		</div>
 	</div>

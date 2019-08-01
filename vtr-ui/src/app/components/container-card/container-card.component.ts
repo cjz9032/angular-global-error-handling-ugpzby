@@ -26,8 +26,8 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 	@Input() order: number;
 	@Input() itemID: string;
 	@Input() sideFlag = '';
-	@Input() id = '';
-	@Input() ariaLabel = '';
+	@Input() cardId = '';
+
 
 	isLoading = true;
 

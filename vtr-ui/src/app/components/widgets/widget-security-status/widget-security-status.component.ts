@@ -23,7 +23,7 @@ export class WidgetSecurityStatusComponent implements OnInit, OnDestroy {
 	items: Array<WidgetItem>;
 	region: string;
 	isRS5OrLater: boolean;
-
+	@Input() linkId: string;
 	constructor(
 		private commonService: CommonService,
 		private translateService: TranslateService,

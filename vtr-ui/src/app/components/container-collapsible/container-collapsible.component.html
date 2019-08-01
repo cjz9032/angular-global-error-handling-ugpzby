@@ -9,10 +9,10 @@
 								{{cardTitle}}
 							</div>
 							<div class="col-auto px-3" *ngIf="allowCollapse">
-								<div class="collapse-control" vtrMetrics id="{{ariaLabel}}"
-									attr.aria-label="{{ariaLabel}}" metricsEvent="itemClick"
+								<div class="collapse-control" vtrMetrics metricsEvent="itemClick"
 									[metricsValue]="isCollapsed" [metricsItem]="'btn.collapse'"
-									[metricsParent]="cardTitle" (click)="onToggle()">
+									[metricsParent]="cardTitle" (click)="onToggle()" id="{{ariaLabel}}"
+									attr.aria-label="{{ariaLabel}}">
 									<div *ngIf="isCollapsed" class="collapse-text">
 										<!-- Expand -->
 										{{'common.ui.expand' | translate}}

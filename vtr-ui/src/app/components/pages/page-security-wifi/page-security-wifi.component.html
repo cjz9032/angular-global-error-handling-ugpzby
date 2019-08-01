@@ -34,7 +34,8 @@
 								<!--Start of Security Card Advisor-->
 								<div class="row mb-40">
 									<div class="col col-12">
-										<vtr-widget-security-status [securityAdvisor]="securityAdvisor">
+										<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
+										[linkId]="'wifi-security'">
 										</vtr-widget-security-status>
 									</div>
 								</div>
@@ -101,7 +102,8 @@
 																		(onClick)="enableWiFiSecurity($event)"
 																		[isDisabled]="cancelClick"
 																		[label]="'security.homeprotection.securityhealth.button' | translate"
-																		[title]="'security.homeprotection.securityhealth.button' | translate">
+																		[title]="'security.homeprotection.securityhealth.button' | translate"
+																		[linkId]="'wifi-security-enableWifiSecurity-btn'">
 																	</vtr-ui-button>
 																</div>
 															</div>
@@ -149,7 +151,8 @@
 											type="corner-article"
 											cornerShift="large"
 											order="1"
-											sideFlag="r">
+											sideFlag="r"
+											[cardId]="'wifisecurity-card'">
 										</vtr-container-card>
 									</div>
 								</div>
