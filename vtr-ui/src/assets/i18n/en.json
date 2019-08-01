@@ -610,7 +610,7 @@
 				"thresholdNote": "<b>Note:</b> To extend the battery lifespan, you have set your battery to stop charging at {{value}}%.",
 				"voltageError": "Battery voltage incorrect",
 				"batteryNotDetected": "No battery detected",
-				"seeDetailsLink": "See Details",
+				"seeDetailsLink": "See details",
 				"details": {
 					"title": "Battery Details",
 					"primary": "Primary Battery",
