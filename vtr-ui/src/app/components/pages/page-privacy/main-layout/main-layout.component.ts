@@ -13,6 +13,7 @@ interface PageSettings {
 	showNavigationBlock: boolean;
 	showSupportBanner: boolean;
 	moveBlockToTop: boolean;
+	isShowStat: boolean;
 }
 
 const defaultPageSettings: PageSettings = {
@@ -20,12 +21,14 @@ const defaultPageSettings: PageSettings = {
 	showNavigationBlock: false,
 	showSupportBanner: false,
 	moveBlockToTop: false,
+	isShowStat: false,
 };
 const featurePageSettings: PageSettings = {
 	showPrivacyScore: true,
 	showNavigationBlock: true,
 	showSupportBanner: true,
 	moveBlockToTop: true,
+	isShowStat: true,
 };
 
 @Component({
@@ -34,12 +37,9 @@ const featurePageSettings: PageSettings = {
 	styleUrls: ['./main-layout.component.scss']
 })
 export class MainLayoutComponent implements OnInit, OnDestroy {
-	showPrivacyScore = false;
-	showNavigationBlock = false;
-	showSupportBanner = false;
-	moveBlockToTop = false;
+	currentPageSettings: PageSettings;
 
-	pagesSettings: { [path in RoutersName]: PageSettings } = {
+	private pagesSettings: { [path in RoutersName]: PageSettings } = {
 		[RoutersName.LANDING]: defaultPageSettings,
 		[RoutersName.ARTICLES]: defaultPageSettings,
 		[RoutersName.ARTICLEDETAILS]: defaultPageSettings,
@@ -82,10 +82,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 		this.communicationWithFigleafService.disconnect();
 	}
 
-	setCurrentRouterPage(routerPage: string) {
-		this.showPrivacyScore = this.pagesSettings[routerPage].showPrivacyScore;
-		this.showNavigationBlock = this.pagesSettings[routerPage].showNavigationBlock;
-		this.showSupportBanner = this.pagesSettings[routerPage].showSupportBanner;
-		this.moveBlockToTop = this.pagesSettings[routerPage].moveBlockToTop;
+	private setCurrentRouterPage(routerPage: string) {
+		this.currentPageSettings = this.pagesSettings[routerPage];
 	}
 }
