@@ -16,7 +16,7 @@ export class BrowserAccountHeaderComponent {
 	@Output() openFigleafApp = new EventEmitter();
 
 	textForFeatureHeader = {
-		title: 'Check for non-private passwords',
+		title: 'Check for vulnerable passwords',
 		figleafInstalled: 'Lenovo Privacy Essentials by FigLeaf has blocked trackers on sites within the green bubble below, keeping you private ' +
 			'while you do the things you love online.',
 		figleafUninstalled: 'If you store passwords for your bank accounts or social media profiles in your web browser, ' +

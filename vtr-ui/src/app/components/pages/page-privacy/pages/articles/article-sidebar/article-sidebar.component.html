@@ -5,6 +5,7 @@
 		   vtrSendAnalytics
 		   [metricsEvent]="'ItemClick'"
 		   [metricsItem]="'ArticlesSeeAllButton'"
+		   vtrOfflineMode positionContextTo="left"
 		   routerLink="/privacy/articles">See all articles</a>
 	</div>
     <vtr-article-preview
@@ -14,12 +15,16 @@
 <vtr-common-popup [popUpId]="articlePopupId" size="large">
 	<ng-template>
 		<ng-container *ngIf="article">
-			<vtr-article-description [article]="article" data-analyticsName="ArticlePopup"></vtr-article-description>
+			<vtr-article-description
+				[article]="article"
+				data-analyticsName="ArticlePopup">
+			</vtr-article-description>
 			<a class="all-articles-link"
 			   data-analyticsName="NewsPopup"
 			   vtrSendAnalytics
 			   [metricsEvent]="'ItemClick'"
 			   [metricsItem]="'ArticlesSeeAllButton'"
+			   vtrOfflineMode
 			   routerLink="/privacy/articles">see all articles</a>
 		</ng-container>
 		<ng-container *ngIf="!article">

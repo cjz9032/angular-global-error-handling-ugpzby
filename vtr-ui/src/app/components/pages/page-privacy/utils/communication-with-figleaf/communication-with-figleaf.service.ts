@@ -1,12 +1,11 @@
 import { Injectable, NgZone } from '@angular/core';
 import { FigleafConnectorInstance as FigleafConnector, MessageToFigleaf } from './figleaf-connector';
-import { EMPTY, from, Observable, ReplaySubject, Subscription, timer } from 'rxjs';
-import { catchError, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
+import { BehaviorSubject, EMPTY, from, Observable, ReplaySubject, Subscription, timer } from 'rxjs';
+import { catchError, distinctUntilChanged, filter, map, switchMap, takeUntil } from 'rxjs/operators';
 import {
 	TaskActionWithTimeoutService,
 	TasksName
 } from '../../common/services/analytics/task-action-with-timeout.service';
-import { PrivacyModule } from '../../privacy.module';
 
 export interface MessageFromFigleaf {
 	type: string;
@@ -20,7 +19,7 @@ export interface MessageFromFigleaf {
 
 export class CommunicationWithFigleafService {
 	isFigleafInstalled$ = new ReplaySubject(1);
-	private isFigleafReadyForCommunication = new ReplaySubject<boolean>(1);
+	private isFigleafReadyForCommunication = new BehaviorSubject<boolean>(false);
 	isFigleafReadyForCommunication$ = this.isFigleafReadyForCommunication.pipe(distinctUntilChanged());
 
 	subscription: Subscription[] = [];
@@ -55,19 +54,24 @@ export class CommunicationWithFigleafService {
 				return this.sendTestMessage().pipe(
 					catchError((err) => {
 						console.error('send test message error: ', err);
+						this.isFigleafReadyForCommunication.next(false);
 						return EMPTY;
 					}),
 				);
 			}),
-		).subscribe((figleafStatus: MessageFromFigleaf) => {
-			const figleafReadyForCommunicationState = figleafStatus.status === 0;
-			this.isFigleafReadyForCommunication.next(figleafReadyForCommunicationState);
-			if (figleafReadyForCommunicationState) {
+			map((figleafStatus: MessageFromFigleaf) => figleafStatus.status === 0),
+			distinctUntilChanged(),
+			takeUntil(this.isFigleafInstalled$.pipe(
+				filter((isFigleafInstalled) => !isFigleafInstalled),
+			))
+		).subscribe((isFigleafReady) => {
+			this.isFigleafReadyForCommunication.next(isFigleafReady);
+			if (isFigleafReady) {
 				this.taskActionWithTimeoutService.finishedAction(TasksName.privacyAppInstallationAction);
-				figleafConnectSubscription.unsubscribe();
 			}
 		}, (error) => {
-			console.error('error', error);
+			console.error('send test message error: ', error);
+			this.isFigleafReadyForCommunication.next(false);
 		});
 
 		this.subscription.push(figleafConnectSubscription);
@@ -90,12 +94,20 @@ export class CommunicationWithFigleafService {
 		return this.isFigleafReadyForCommunication.pipe(
 			switchMap(isFigleafInstalled => {
 				if (isFigleafInstalled) {
-					return from(FigleafConnector.sendMessageToFigleaf(message)) as Observable<T> ;
+					return from(FigleafConnector.sendMessageToFigleaf(message)) as Observable<T>;
 				} else {
 					console.error('figLeaf not installed');
 					return EMPTY;
 				}
+			}),
+			catchError((error) => {
+				console.error('sendMessageToFigleaf error: ', error);
+				return EMPTY;
 			})
 		);
+	}
+
+	get isFigleafInstalled() {
+		return this.isFigleafReadyForCommunication.getValue();
 	}
 }
