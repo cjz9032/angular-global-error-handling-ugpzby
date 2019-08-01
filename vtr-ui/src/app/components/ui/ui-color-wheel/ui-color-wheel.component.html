@@ -8,7 +8,7 @@
 			<h3 class="content-title">{{'gaming.lightingProfile.colourwheel.text7.title' | translate}}</h3>
 			<button vtrMetrics [metricsItem]="'Lighting Color Apply'" metricsEvent="featureClick" class="btn enable-button"
 				[ngClass]="{'disable-button': btnStatus !== 'apply'}" [disabled]="btnStatus !== 'apply'"
-				(click)="onApplyColorEffect(backColor)">
+				(click)="onApplyColorEffect(backColor)" id="lighting_color_apply" attr.aria-label="lighting_color_apply">
 				<span *ngIf="btnStatus === 'apply'">{{'gaming.lightingProfile.colourwheel.text2.title' | translate}}</span>
 				<span *ngIf="btnStatus === 'applied'">{{'gaming.lightingProfile.colourwheel.text3.title' | translate}}</span>
 				<span *ngIf="btnStatus === 'loading'">

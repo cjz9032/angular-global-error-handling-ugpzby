@@ -1,11 +1,42 @@
 @import "../../../../app.theme.scss";
 
+.modal-main-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1040;
+	width: 100vw;
+	height: 100vh;
+	background-color: $screen_dark_50;
+}
+ui-popover-turn-on {
+	position: absolute;
+	max-width: 35%;
+	padding: 3rem 5rem;
+	background: #fbfdff;
+	z-index: 9;
+	border-radius: 1rem;
+	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
+	right: 0;
+	left: 0;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	height: 35rem;
+	@media #{$small-screen} {
+		max-width: 45rem;
+	}
+	@media #{$medium-screen} {
+		width: 50rem;
+	}
+}
+
 ::ng-deep .turn-on-modal-container {
 	.modal-content {
 		border-radius: 1rem;
 	}
 }
-.modal-main-wrapper {
+.vtr-modal-turn-on {
 	padding: 3rem;
 	&.modal-body {
 		padding: 0;

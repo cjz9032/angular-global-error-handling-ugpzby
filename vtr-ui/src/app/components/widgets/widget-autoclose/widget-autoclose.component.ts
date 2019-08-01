@@ -1,98 +1,85 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AutoCloseStatus } from 'src/app/data-models/gaming/autoclose/autoclose-status.model';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
-import { ModalTurnOnComponent } from '../../modal/modal-autoclose/modal-turn-on/modal-turn-on.component';
-import { ModalAddAppsComponent } from '../../modal/modal-autoclose/modal-add-apps/modal-add-apps.component';
+import { AutoCloseNeedToAsk } from 'src/app/data-models/gaming/autoclose/autoclose-need-to-ask.model';
+import { isUndefined } from 'util';
 
 @Component({
   selector: 'vtr-widget-autoclose',
   templateUrl: './widget-autoclose.component.html',
   styleUrls: ['./widget-autoclose.component.scss']
 })
-export class WidgetAutocloseComponent implements OnInit {
+export class WidgetAutocloseComponent implements OnInit, OnChanges {
+  @Output() actionModal = new EventEmitter<any>();
   @Input() introTitle: string;
+  @Input() switchToggle: boolean;
   modalReference: any;
-  public title: string;
   public autoCloseAppList: any;
-  setAutoClose: any;
+  setAutoCloseObj: any = {};
   gamingProperties: GamingAllCapabilities = new GamingAllCapabilities();
-  AutoCloseStatusObj: AutoCloseStatus = new AutoCloseStatus();
-  constructor(private modalService: NgbModal, private gamingCapabilityService: GamingAllCapabilitiesService, private gamingAutoCloseService: GamingAutoCloseService) { }
+  autoCloseStatusObj: AutoCloseStatus = new AutoCloseStatus();
+  needToAskStatusObj: AutoCloseNeedToAsk = new AutoCloseNeedToAsk();
+  constructor(private gamingCapabilityService: GamingAllCapabilitiesService, private gamingAutoCloseService: GamingAutoCloseService) { }
 
   ngOnInit() {
-    this.title = this.introTitle;
-
     this.gamingProperties.optimizationFeature = this.gamingCapabilityService.getCapabilityFromCache(
       LocalStorageKey.optimizationFeature
     );
-    this.initAutoCloseStatus();
-    this.displayAutoCloseList();
-    this.initAutoCloseStatus();
-
+    this.refreshAutoCloseList();
+    this.setAutoCloseObj.toggleStatus = this.gamingAutoCloseService.getAutoCloseStatusCache();
+    this.setAutoCloseObj.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
+    this.gamingAutoCloseService.setNeedToAskStatusCache(this.setAutoCloseObj.needToAsk);
   }
 
   // Get Gaming AutoClose Lists
 
-  public displayAutoCloseList() {
+  public refreshAutoCloseList() {
+    this.autoCloseAppList = this.gamingAutoCloseService.getAutoCloseListCache();
     try {
       this.gamingAutoCloseService.getAppsAutoCloseList().then((appList: any) => {
-        console.log('get autoclose list from js bridge ------------------------>', JSON.stringify(appList));
-        this.autoCloseAppList = appList.processList;
+        if (!isUndefined(appList.processList)) {
+          this.autoCloseAppList = appList.processList;
+          this.gamingAutoCloseService.setAutoCloseListCache(appList.processList);
+        }
       });
     } catch (error) {
       console.error(error.message);
     }
   }
 
-  openTurnOnModal(event: Event): void {
-    const status = this.getAskAgain();
-    console.log("function call=============================>", this.getAskAgain());
-    console.log("Second wala popup=============================>", status);
-    if (status) {
-      console.log("Second wala popup=============================>")
-      this.modalService
-        .open(ModalAddAppsComponent, {
-          backdrop: 'static',
-          size: 'lg',
-          windowClass: 'apps-modal-container'
-        });
-    } else {
-      this.modalService.open(ModalTurnOnComponent, {
-        centered: true,
-        windowClass: 'turn-on-modal-container'
-      });
-    }
+  public openAutoCloseModal($event) {
+    this.actionModal.emit(this.setAutoCloseObj);
   }
 
-  getAskAgain() {
+  initGetAsk() {
     return this.gamingAutoCloseService.getNeedToAsk().then((status: any) => {
-      console.log('Get successfully ------------------------>', status);
       return status;
     });
   }
 
-  removeApp(appName: string) {
+  removeApp(appName: string, index: number) {
     this.gamingAutoCloseService.delAppsAutoCloseList(appName).then((response: any) => {
       console.log('Deleted successfully ------------------------>', response);
+      this.autoCloseAppList.splice(index, 1);
+      this.refreshAutoCloseList();
     });
   }
 
   toggleAutoClose(event: any) {
-    console.log("Here=================================================>", event)
     console.log(event.switchValue);
-    this.setAutoClose = event.switchValue;
+    this.setAutoCloseObj.toggleStatus = event.switchValue;
     this.gamingAutoCloseService.setAutoCloseStatus(event.switchValue).then((response: any) => {
-      console.log('set auto close ------------------------>', response);
+      this.gamingAutoCloseService.setAutoCloseStatusCache(event.switchValue);
+      this.setAutoCloseObj.toggleStatus = event.switchValue;
     });
   }
 
-  initAutoCloseStatus() {
-    this.gamingAutoCloseService.getAutoCloseStatus().then((response: any) => {
-      console.log('get auto close ------------------------>', response);
-    });
+  ngOnChanges() {
+    if (!isUndefined(this.switchToggle)) {
+      this.setAutoCloseObj.toggleStatus = this.switchToggle;
+    }
   }
 }

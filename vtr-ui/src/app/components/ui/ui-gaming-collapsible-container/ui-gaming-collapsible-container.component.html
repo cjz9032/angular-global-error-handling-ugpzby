@@ -1,6 +1,6 @@
 <div class="select-box">
 	<div class="dropdown">
-		<a class="dropdown-toggle" id="gaming-drop" (click)="toggleOptions(options)">
+		<a class="dropdown-toggle" id="gaming-drop" attr.aria-label="gaming-drop" (click)="toggleOptions(options)">
 			<span *ngFor="let option of options.dropOptions"
 				[ngStyle]="{display: option.value != options.curSelected? 'none':''}">
 				{{option.name  | translate}}
@@ -14,7 +14,7 @@
 					<li [ngClass]="{ 'selected': option.value===options.curSelected }" (click)="optionSelected(option)"
 						(mouseenter)="changeDescription(option)" (mouseleave)="resetDescription(option)" vtrMetrics
 						[metricsItem]="option.name | translate" metricsEvent="featureClick">
-						<a class="dropdown-item">
+						<a class="dropdown-item" [id]="option.ariaLabels | translate" [attr.aria-label]="option.ariaLabels | translate">
 							<!-- <i class="icon icon-checkline"></i> -->
 							<fa-icon class="icon" [icon]="['fal', 'check']"></fa-icon>
 							{{ option.name  | translate}}
