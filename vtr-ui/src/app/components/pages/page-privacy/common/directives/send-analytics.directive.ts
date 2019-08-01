@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Input, OnInit, OnDestroy } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, OnDestroy, OnInit } from '@angular/core';
 import { GetParentForAnalyticsService } from '../services/get-parent-for-analytics.service';
 import { AnalyticsService, ItemTypes } from '../services/analytics.service';
 
@@ -14,6 +14,7 @@ export class SendAnalyticsDirective implements OnInit, OnDestroy {
 	@Input() metricsParam?: string | object; // ItemParm
 	@Input() pageContext?: string; // PageContext
 	@Input() metricsParent?: string; // ItemParent
+	@Input() customPageName?: string;
 
 	pageDuration: number;
 
@@ -28,7 +29,7 @@ export class SendAnalyticsDirective implements OnInit, OnDestroy {
 	}
 
 	@HostListener('click', ['$event']) onClick($event) {
-		if (this.metricsEvent !== ItemTypes.ItemClick) {
+		if (this.metricsEvent !== ItemTypes.ItemClick && this.metricsEvent !== ItemTypes.ArticleClick) {
 			return;
 		}
 
@@ -60,7 +61,7 @@ export class SendAnalyticsDirective implements OnInit, OnDestroy {
 				PageDuration: this.pageDuration,
 			};
 
-			this.analyticsService.sendPageViewData(dataToSendOnPageView);
+			this.analyticsService.sendPageViewData(dataToSendOnPageView, this.customPageName);
 		}
 	}
 }

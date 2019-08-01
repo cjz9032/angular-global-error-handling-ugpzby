@@ -3,12 +3,12 @@ import { HttpHeaders } from '@angular/common/http';
 
 import { CommsService } from '../comms/comms.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { RegionService } from '../region/region.service';
 import { CommonService } from '../common/common.service'; // VAN-5872, server switch feature
 import { LocalStorageKey } from '../../enums/local-storage-key.enum'; // VAN-5872, server switch feature
 import { Observable } from 'rxjs/internal/Observable';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { LocalInfoService } from '../local-info/local-info.service';
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -24,28 +24,26 @@ export class CMSService {
 	language: string;
 	region: string;
 	segment: string; // VAN-5872, server switch feature
+	localInfo: any;
 
 	constructor(
 		private commsService: CommsService,
 		private vantageShellService: VantageShellService,
-		regionService: RegionService,
+		localInfoService: LocalInfoService,
 		private commonService: CommonService// VAN-5872, server switch feature
 	) {
-		regionService.getRegion().subscribe({
-			next: x => {
-				this.region = x;
-			},
-			error: err => {
-				this.region = 'us';
-			}
-		});
-		regionService.getLanguage().subscribe({
-			next: x => {
-				this.language = x;
-			},
-			error: err => {
-				this.language = 'en';
-			}
+		localInfoService.getLocalInfo().then(result => {
+			this.localInfo = result;
+		}).catch(e => {
+			this.localInfo = {
+				Lang: 'en',
+				GEO: 'us',
+				OEM: 'Lenovo',
+				OS: 'Windows',
+				Segment: 'SMB',
+				Brand: 'Lenovo'
+			};
+			console.log(e);
 		});
 	}
 
@@ -88,12 +86,12 @@ export class CMSService {
 
 	fetchCMSContent(queryParams) {
 		const defaults = {
-			Lang: this.language,
-			GEO: this.region,
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'SMB',
-			Brand: 'Lenovo'
+			Lang: this.localInfo.Lang,
+			GEO: this.localInfo.GEO,
+			OEM: this.localInfo.OEM,
+			OS: this.localInfo.OS,
+			Segment: this.localInfo.Segment,
+			Brand: this.localInfo.Brand
 		};
 		// Object.assign(defaults, queryParams);
 
@@ -154,12 +152,12 @@ export class CMSService {
 		// VAN-5872, server switch feature
 		// retrive from localStorage
 		const defaults = {
-			Lang: this.language,
-			GEO: this.region,
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'SMB',
-			Brand: 'Lenovo'
+			Lang: this.localInfo.Lang,
+			GEO: this.localInfo.GEO,
+			OEM: this.localInfo.OEM,
+			OS: this.localInfo.OS,
+			Segment: this.localInfo.Segment,
+			Brand: this.localInfo.Brand
 		};
 		const CMSOption = Object.assign(defaults, queryParams);
 		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
@@ -178,22 +176,22 @@ export class CMSService {
 				/*queryParams*/
 				CMSOption, // VAN-5872, server switch feature
 				{}).subscribe(
-				(response: any) => {
-					this.filterCMSContent(response.Results).then(
-						(result) => {
-							resolve(result);
-						},
-						(reason) => {
-							console.log('fetchCMSContent error', reason);
-							reject('fetchCMSContent error');
-						}
-					);
-				},
-				error => {
-					console.log('fetchCMSContent error', error);
-					reject('fetchCMSContent error');
-				}
-			);
+					(response: any) => {
+						this.filterCMSContent(response.Results).then(
+							(result) => {
+								resolve(result);
+							},
+							(reason) => {
+								console.log('fetchCMSContent error', reason);
+								reject('fetchCMSContent error');
+							}
+						);
+					},
+					error => {
+						console.log('fetchCMSContent error', error);
+						reject('fetchCMSContent error');
+					}
+				);
 		});
 	}
 
@@ -201,12 +199,12 @@ export class CMSService {
 		// VAN-5872, server switch feature
 		// retrive from localStorage
 		const defaults = {
-			Lang: this.language,
-			GEO: this.region,
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'SMB',
-			Brand: 'Lenovo'
+			Lang: this.localInfo.Lang,
+			GEO: this.localInfo.GEO,
+			OEM: this.localInfo.OEM,
+			OS: this.localInfo.OS,
+			Segment: this.localInfo.Segment,
+			Brand: this.localInfo.Brand
 		};
 		const CMSOption = Object.assign(defaults, queryParams);
 		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
@@ -225,37 +223,36 @@ export class CMSService {
 				/*queryParams*/
 				CMSOption, // VAN-5872, server switch feature
 				{}).subscribe(
-				(response: any) => {
-					this.filterCMSContent(response.Results).then(
-						(result) => {
-							resolve(result);
-						},
-						(reason) => {
-							console.log('fetchCMSContent error', reason);
-							reject('fetchCMSContent error');
-						}
-					);
-				},
-				error => {
-					console.log('fetchCMSArticles error', error);
-					reject('fetchCMSArticles error');
-				}
-			);
+					(response: any) => {
+						this.filterCMSContent(response.Results).then(
+							(result) => {
+								resolve(result);
+							},
+							(reason) => {
+								console.log('fetchCMSContent error', reason);
+								reject('fetchCMSContent error');
+							}
+						);
+					},
+					error => {
+						console.log('fetchCMSArticles error', error);
+						reject('fetchCMSArticles error');
+					}
+				);
 		});
 	}
 
 	fetchCMSArticle(articleId, queryParams?) {
-		//const that = this;
 
 		// VAN-5872, server switch feature
 		// retrive from localStorage
 		const defaults = {
-			Lang: this.language,
-			GEO: this.region,
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'SMB',
-			Brand: 'Lenovo'
+			Lang: this.localInfo.Lang,
+			GEO: this.localInfo.GEO,
+			OEM: this.localInfo.OEM,
+			OS: this.localInfo.OS,
+			Segment: this.localInfo.Segment,
+			Brand: this.localInfo.Brand
 		};
 		const CMSOption = Object.assign(defaults, queryParams);
 		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
@@ -274,7 +271,7 @@ export class CMSService {
 				'/api/v1/articles/' + articleId,
 				/*Object.assign({ Lang: that.language }, queryParams)*/
 				CMSOption // VAN-5872, server switch feature
-				)
+			)
 				.subscribe(
 					(response: any) => {
 						resolve(response);

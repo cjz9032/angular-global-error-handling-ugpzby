@@ -22,9 +22,9 @@ export class BreachedAccountComponent implements AfterViewInit {
 	otherBreaches: BreachedAccount[] = [];
 
 	tryProductText = {
-		risk: 'When your accounts are breached, people you don’t know can access and use your private information.',
-		howToFix: 'You should change the passwords for your breached accounts. Try Lenovo Privacy Essentials by FigLeaf to fix breaches and help prevent them in the future.',
-		riskAfterInstallFigleaf: 'When your accounts are breached, people you don’t know can access and use your private information.',
+		risk: 'With your email and passwords exposed, others have access to your personal information, which could lead to identity theft and financial fraud.',
+		howToFix: 'We recommend you change your passwords for these accounts and make each one unique. Lenovo Privacy Essentials by FigLeaf can do it all for you.',
+		riskAfterInstallFigleaf: 'With your email and passwords exposed, others have access to your personal information, which could lead to identity theft and financial fraud.',
 		howToFixAfterInstallFigleaf: 'You should change passwords for breached accounts. Open Lenovo Privacy Essentials by FigLeaf and follow the recommendations.'
 	};
 
