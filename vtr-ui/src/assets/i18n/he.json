@@ -1521,9 +1521,9 @@
             "listContactCustomerService": "צרו קשר עם שירות לקוחות",
             "listContactUsOnWechat": "צרו קשר ב-WeChat",
             "weChatDescription": "שאלו שאלה ב-WeChat ואנחנו נענה במהירות",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "מצאו אותנו במדיה החברתית",
+            "listContactUsOnFacebook": "צרו קשר ב-Facebook",
+            "facebookDescription": "לחצו כדי למצוא אותנו ב-Facebook"
         },
         "quicklinks": {
             "title": "קישורים מהירים",
@@ -1565,12 +1565,12 @@
             "good": "טוב",
             "malicious": "זדוני",
             "suspicious": "חשוד",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "ציון האבטחה שלכם נותן לכם מושג לגבי רמת האבטחה שלכם ברשת. התוצאה תלויה בנתונים הבאים:",
+            "antivirus": "האם אתם מוגנים על-ידי תוכנת אנטי-וירוס",
+            "password": "האם אתם מנהלים סיסמאות חזקות ומורכבות באופן בטוח",
+            "vpn": "האם אתם מנטרים את החשיפה שלכם לתוקפים ברשת",
+            "wifi": "האם אתם מצפינים את המידע האישי שלהם כשאתם משתמשים ב-WiFi ציבורי",
+            "windowsHello": "האם אתם מגינים על המכשיר שלכם באמצעות אפשרויות כניסה בטוחות"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1665,7 @@
                 "bodyText": "גילינו שחסרים לכם חלקים קריטיים של Vantage. הורדה של חלקים אלה תתבצע ברקע. נסו שוב מאוחר יותר.",
                 "closeText": "סגירה",
                 "offlineText": "זיהינו שאינכם מחוברים לאינטרנט. חלקים מסוימים בדף זה לא יפעלו כראוי. התחברו מחדש",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "יצירת החשבון נכשלה. נסו שוב מאוחר יותר."
             }
         },
         "homeprotection": {

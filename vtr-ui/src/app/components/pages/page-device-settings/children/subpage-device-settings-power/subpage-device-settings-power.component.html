@@ -76,22 +76,23 @@
 							aria-label="device-settings-power-batterySettings-airPlanePower"
 							[araiLabel]="'power-batterySettings-airPlanePower-toggle'">
 							<div class="row">
-								<div class="col-12">
-									<div class="custom-control custom-checkbox always-on-usb-checkbox">
+								<div class="col px-20">
+									<div class="auto-set-checkbox">
 										<input id="cb-airplane-mode"
 											attr.aria-label="cb-airplane-mode"
 											type="checkbox"
 											name="airplane-mode-checkbox-id"
 											[(ngModel)]="airplaneAutoDetection"
 											(ngModelChange)='onAirplaneAutoModeStatusChange()'
-											class="custom-control-input"
 											checked="" />
-										<!-- [disabled]="!toggleAlwaysOnUsbFlag" -->
-										<label class="custom-control-label "
+										<label
 											for="cb-airplane-mode">
 											{{ 'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate }}
 										</label>
 									</div>
+									<label *ngIf="airplaneAutoDetection" class="auto-detection-note">
+										{{ 	'device.deviceSettings.power.batterySettings.airPlanePower.note' | translate }}
+									</label>
 								</div>
 							</div>
 						</vtr-ui-row-switch>

@@ -1521,9 +1521,9 @@
             "listContactCustomerService": "Contactați serviciul pentru clienți",
             "listContactUsOnWechat": "Contactați-ne pe WeChat",
             "weChatDescription": "Puneți-ne o întrebare pe WeChat și vă vom răspunde rapid",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Găsiți-ne pe rețelele sociale",
+            "listContactUsOnFacebook": "Contactați-ne pe Facebook",
+            "facebookDescription": "Faceți clic pentru a ne găsi pe Facebook"
         },
         "quicklinks": {
             "title": "Linkuri rapide",
@@ -1565,12 +1565,12 @@
             "good": "BUN",
             "malicious": "RĂU-INTENȚIONAT",
             "suspicious": "SUSPECTED",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "Scorul dvs. de securitate vă oferă o idee despre cât de sigur sunteți online, iar rezultatul depinde de următoarele:",
+            "antivirus": "Dacă sunteți protejat de software antivirus",
+            "password": "Dacă aveți parole puternice și complexe gestionate într-un mod sigur",
+            "vpn": "Dacă rețeaua dvs. este monitorizată împotriva expunerii la atacatori",
+            "wifi": "Dacă vă criptați datele personale atunci când utilizați rețele WiFi publice",
+            "windowsHello": "Dacă vă protejați dispozitivul utilizând opțiuni de conectare sigure"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1665,7 @@
                 "bodyText": "Am detectat că vă lipesc câteva elemente critice ale Vantage. Aceste elemente vor fi descărcate în fundal. Încercaţi din nou mai târziu.",
                 "closeText": "închidere",
                 "offlineText": "Nu sunteți conectat(ă) la internet. Unele părți ale acestei pagini nu funcționează corect. Conectați-vă din nou",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "Crearea de cont a eșuat. Încercaţi din nou mai târziu."
             }
         },
         "homeprotection": {

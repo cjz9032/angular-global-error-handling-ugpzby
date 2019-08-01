@@ -57,7 +57,8 @@
 							[label]="'tutorial.next' | translate"
 							[btnHeight]=true
 							[isGradient]=true
-							(onClick)="next(1)">
+							(onClick)="next(1)"
+							[linkId]="'tutorial_next_btn'">
 						</vtr-ui-button>
 					</div>
 				</div>
@@ -90,6 +91,8 @@
 						[ngClass]="{'radio-is-selected' : data.page2.radioValue !== null }">
 						<div class="col-4 device-image-content">
 							<div class="device-image"
+								id="tutorial_personalUse"
+								attr.aria-label="tutorial_personalUse"
 								(click)="saveUsageType($event, 'PERSONAL')">
 								<input type="radio"
 									name="radio"
@@ -112,6 +115,8 @@
 						</div>
 						<div class="col-4 device-image-content">
 							<div class="device-image"
+								id="tutorial_businessUse"
+								attr.aria-label="tutorial_businessUse"
 								(click)="saveUsageType($event, 'BUSINESS')">
 								<input type="radio"
 									name="radio"
@@ -133,6 +138,8 @@
 						</div>
 						<div class="col-4 device-image-content">
 							<div class="device-image"
+								id="tutorial_customExp"
+								attr.aria-label="tutorial_customExp"
 								(click)="saveUsageType($event, 'CUSTOM')">
 								<input type="radio"
 									name="radio"
@@ -178,6 +185,8 @@
 					<div *ngIf="!hideMoreInterestBtn"
 						class="row justify-content-center align-items-center font-12-semi mb-4 col-12">
 						<div class="col-auto title2"
+							id="tutorial_hide_moreInterest"
+							attr.aria-label="tutorial_hide_moreInterest"
 							(click)="moreInterestClicked()">
 							<span
 								class="more-interests">{{ "welcometutorial.moreInterest" | translate | lowercase }}</span>
@@ -189,7 +198,8 @@
 								(click)="savePrivacy($event, 'PRIVACYPOLICY')"
 								[checked]="privacyPolicy"
 								class="custom-control-input"
-								id="defaultUnchecked">
+								id="defaultUnchecked"
+								attr.aria-label="defaultUnchecked">
 							<label class="custom-control-label"
 								for="defaultUnchecked">
 								{{ "welcometutorial.privacytitle" | translate }}
@@ -215,7 +225,8 @@
 							[label]="'welcometutorial.done' | translate"
 							[btnHeight]=true
 							[isGradient]=true
-							(onClick)="next(2)">
+							(onClick)="next(2)"
+							[linkId]="'tutorial_done_btn'">
 						</vtr-ui-button>
 					</div>
 				</div>

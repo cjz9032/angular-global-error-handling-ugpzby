@@ -12,7 +12,7 @@ export class WidgetStatusComponent extends BaseComponent implements OnInit {
 	@Input() title: string = this.title || '';
 	@Input() description: string = this.description || '';
 	@Input() items = [];
-
+	@Input() linkId:string;
 	constructor() {
 		super();
 	}
