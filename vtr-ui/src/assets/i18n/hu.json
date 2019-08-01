@@ -1521,9 +1521,9 @@
             "listContactCustomerService": "Kapcsolatfelvétel az ügyfélszolgálattal",
             "listContactUsOnWechat": "Kapcsolatfelvétel WeChaten",
             "weChatDescription": "Küldje át kérdését WeChaten, és gyorsan megválaszoljuk",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Találjon meg minket a közösségi médiában",
+            "listContactUsOnFacebook": "Kapcsolatfelvétel a Facebookon",
+            "facebookDescription": "Ha kapcsolatba szeretne lépni velünk a Facebookon, kattintson ide"
         },
         "quicklinks": {
             "title": "Gyorslinkek",
@@ -1565,12 +1565,12 @@
             "good": "JÓ",
             "malicious": "ROSSZINDULATÚ",
             "suspicious": "GYANÚS",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "A biztonsági pontszám azt jelzi, hogy mennyire van biztonságban a rendszere az interneten. Az eredményt a következők befolyásolják:",
+            "antivirus": "Vírusirtó szoftver használata",
+            "password": "Erős, összetett, biztonságos módon kezelt jelszavak használata",
+            "vpn": "A hálózat támadóknak való kitettségének mérése",
+            "wifi": "A személyes adatok titkosítása nyilvános WiFi használata esetén",
+            "windowsHello": "Az eszköz védelme biztonságos bejelentkezési megoldásokkal"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1665,7 @@
                 "bodyText": "Úgy észleltük, hogy a Vantage létfontosságú összetevői hiányoznak. Ezek az összetevők a háttérben töltődnek le. Kérjük, később próbálja meg újra.",
                 "closeText": "bezárás",
                 "offlineText": "Azt észleltük, hogy nem csatlakozik az internethez. Az oldal egyes részei nem működnek majd megfelelően. Csatlakozzon újra",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "Nem sikerült létrehozni a fiókot. Kérjük, később próbálja meg újra."
             }
         },
         "homeprotection": {

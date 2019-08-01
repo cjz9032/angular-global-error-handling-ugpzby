@@ -18,8 +18,8 @@
 	}
 
 	.select-title {
-		font-size: 1.2rem;
-		font-weight: $weight_medium;
+		font-size: $caption;
+		font-weight: $weight_bold;
 		text-transform: uppercase;
 		text-align: left;
 		color: $shade;
@@ -29,7 +29,7 @@
 
 	.select-text {
 		color: $shade_darker;
-		font-size: 1.6rem;
+		font-size: $body;
 		font-weight: $weight_light;
 	}
 
@@ -140,7 +140,7 @@
 	.dropdown dropdown-menu.show {
 		display: block;
 	}
-	
+
     .input-group{
 		border: none;
 		border-image: none;
@@ -162,12 +162,12 @@
 	  .form-control{
 		padding: 0px;
 		outline: invert;
-		border: medium; 
+		border: medium;
 		border-image: none;
 	  }
 
 	textarea {
-		margin-top: 1rem;		
+		margin-top: 1rem;
 		background-color: transparent;
 		box-shadow: none;
 		font-size: 1.2rem;

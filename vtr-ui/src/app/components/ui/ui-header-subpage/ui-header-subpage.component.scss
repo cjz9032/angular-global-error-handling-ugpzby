@@ -5,14 +5,15 @@
 	h2 {
 		&.title {
 			color: $main_shade;
-			font-size: 4.8rem;
-			font-weight: $weight_medium;
+			font-size: $page_header;
+			font-weight: $weight_light;
 			margin-bottom: 3rem;
 		}
 	}
 	.caption {
 		color: $main_shade;
-		font-size: 1.8rem;
+		font-size: $body;
+		font-weight: $weight_light;
 		line-height: 1.8em;
 		margin-bottom: 2rem;
 	}
@@ -20,13 +21,14 @@
 		border-left: 0.7rem solid $main;
 		.menu-title {
 			color: $main_dark;
-			font-size: 1.8rem;
+			font-size: $base;
 			font-weight: $weight_bold;
 			margin: 1rem 0;
 			text-transform: uppercase;
 		}
 		.menu-item {
-			font-size: 1.8rem;
+			font-size: $body;
+			font-weight: $weight_light;
 			color: $main;
 			cursor: pointer;
 			padding-bottom: .2rem;

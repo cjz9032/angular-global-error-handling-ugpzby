@@ -13,7 +13,7 @@ import {
 })
 export class UiCheckboxComponent implements OnInit {
 
-	@Input() name: string;
+	@Input() checkboxId: string;
 	@Input() label: string;
 	@Input() tooltip: string;
 	@Input() checked: boolean;

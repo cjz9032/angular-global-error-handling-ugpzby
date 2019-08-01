@@ -50,10 +50,13 @@
 	}
 }
 
-.vtr-page-shift-up-medium {
-	@media #{$mediaquery_X5} {
-		margin-top: 0;
-		padding-left: 9rem;
-	}
 
+.vtr-page-right-column {
+	@media #{$mediaquery_X40} {
+		padding-left: 12rem !important;
+		padding-top: 12rem !important;
+	}
+	@media #{$mediaquery_X4} {
+		margin-top: 0 !important;
+	}
 }

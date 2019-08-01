@@ -3,11 +3,12 @@
   <div class="article-preview__description">
     <h2 class="article-preview__title" vtrCutMultilineTextWithDots [textToAppend]="article.Title" title="{{article.Title}}"></h2>
     <div class="article-preview__read-more"
+		 (click)="openArticle.emit(article.ActionLink)"
+		 vtrOfflineMode
 		 vtrSendAnalytics
-		 [metricsEvent]="'ItemClick'"
+		 [metricsEvent]="'ArticleClick'"
 		 [metricsItem]="'ArticlesReadMoreItem'"
-		 [metricsParam]="{'ArticleId': article.ActionLink}"
-		 (click)="openArticle.emit(article.ActionLink)">
+		 [metricsParam]="{'ArticleId': article.ActionLink}">
 		Read more</div>
   </div>
 </div>

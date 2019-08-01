@@ -22,7 +22,7 @@ export class UiApsSliderComponent implements OnInit, AfterContentChecked {
 	public options: Options;
 
 	@Input() enableSlider: boolean;
-	@Input() name: string;
+	@Input() apsSliderId: string;
 
 	@Input() onHoverSliderIcon: boolean; // on hover eyecare mode
 

@@ -19,10 +19,8 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 	@Input() clickable = true;
 	@Input() metricsEvent: string;
 	@Input() blockPosition: string;
-
-	/**
-	 * object having item class list
-	 */
+	@Input() linkId: string;
+	/** object having item class list*/
 	itemStatusClass = {
 		0: 'good',
 		1: 'bad',

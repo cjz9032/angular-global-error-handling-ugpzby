@@ -14,6 +14,7 @@ import { IntelligentScreen } from 'src/app/data-models/smart-assist/intelligent-
 import { parse } from 'querystring';
 import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -84,8 +85,14 @@ export class PageSmartAssistComponent implements OnInit {
 		public qaService: QaService,
 		private cmsService: CMSService,
 		private logger: LoggerService,
-		private commonService: CommonService
+		private commonService: CommonService,
+		private translate: TranslateService,
 	) {
+		// VAN-5872, server switch feature on language change
+		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.fetchCMSArticles();
+		});
+
 		this.fetchCMSArticles();
 	}
 
@@ -165,7 +172,7 @@ export class PageSmartAssistComponent implements OnInit {
 				this.initZeroTouchLock(isFirstTimeLoad);
 				this.initZeroTouchLogin();
 			}
-			if (this.smartAssistCapability.isIntelligentMediaSupported) {
+			if (this.smartAssistCapability.isIntelligentMediaSupported && isFirstTimeLoad) {
 				this.intelligentMedia = this.smartAssistCapability.isIntelligentMediaSupported;
 				this.getVideoPauseResumeStatus();
 			}
@@ -213,7 +220,7 @@ export class PageSmartAssistComponent implements OnInit {
 			console.log('PageSmartAssistComponent.Promise.IntelligentScreen()', responses, this.intelligentScreen);
 			if (!(this.intelligentScreen.isIntelligentScreenVisible &&
 				this.smartAssistCapability.isIntelligentScreenSupported)) {
-				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'screen')
+				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'screen');
 			}
 		}).catch(error => {
 			this.logger.error('error in PageSmartAssistComponent.Promise.IntelligentScreen()', error);
@@ -261,7 +268,7 @@ export class PageSmartAssistComponent implements OnInit {
 			}
 
 			if (!(this.intelligentSecurity.isIntelligentSecuritySupported && isFirstTimeLoad)) {
-				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'security')
+				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'security');
 			}
 			console.log('PageSmartAssistComponent.Promise.initZeroTouchLock()', responses, this.intelligentSecurity);
 		}).catch(error => {
@@ -410,12 +417,12 @@ export class PageSmartAssistComponent implements OnInit {
 			.then((isSuccess: boolean) => {
 				if (this.smartAssist.isShellAvailable) {
 					this.initSmartAssist(false);
-				}
+		 		}
 				console.log('onResetDefaultSettings.resetHPDSetting', isSuccess);
 			});
 	}
 
-	private getVideoPauseResumeStatus() {
+	private  getVideoPauseResumeStatus() {
 		console.log('getVideoPauseResumeStatus');
 		try {
 			if (this.smartAssist.isShellAvailable) {
@@ -426,7 +433,7 @@ export class PageSmartAssistComponent implements OnInit {
 						console.log('getVideoPauseResumeStatus.then:', response);
 
 						if (!response.available) {
-							this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media')
+							this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
 						}
 					}).catch(error => {
 						console.error('getVideoPauseResumeStatus.error', error);

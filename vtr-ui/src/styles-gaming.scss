@@ -1,172 +1,210 @@
 @import "app/app.theme";
 
-	@font-face {
-		font-family: "gaming-icon";
-		src:url("./assets/gaming-icons/gaming-icons.eot");
-		src:url("./assets/gaming-icons/gaming-icons.eot?#iefix") format("embedded-opentype"),
-			url("./assets/gaming-icons/gaming-icons.woff") format("woff"),
-			url("./assets/gaming-icons/gaming-icons.ttf") format("truetype"),
-			url("./assets/gaming-icons/gaming-icons.svg#gaming-icons") format("svg");
-		font-weight: normal;
-		font-style: normal;
-	}
+@font-face {
+	font-family: "gaming-icon";
+	src: url("./assets/gaming-icons/gaming-icons.eot");
+	src: url("./assets/gaming-icons/gaming-icons.eot?#iefix") format("embedded-opentype"),
+		url("./assets/gaming-icons/gaming-icons.woff") format("woff"),
+		url("./assets/gaming-icons/gaming-icons.ttf") format("truetype"),
+		url("./assets/gaming-icons/gaming-icons.svg#gaming-icons") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
 
-	[data-icon]:before {
-		font-family: "gaming-icon" !important;
-		content: attr(data-icon);
-		font-style: normal !important;
-		font-weight: normal !important;
-		font-variant: normal !important;
-		text-transform: none !important;
-		speak: none;
-		line-height: 1;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-	}
+[data-icon]:before {
+	font-family: "gaming-icon" !important;
+	content: attr(data-icon);
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
 
-	[class^="icon-"]:before,
-	[class*=" icon-"]:before {
-		font-family: "gaming-icon" !important;
-		font-style: normal !important;
-		font-weight: normal !important;
-		font-variant: normal !important;
-		text-transform: none !important;
-		speak: none;
-		line-height: 1;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-	}
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+	font-family: "gaming-icon" !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
 
-	.icon-add:before {
-		content: "\61";
-	}
-	.icon-arrowdown:before {
-		content: "\62";
-	}
-	.icon-media:before {
-		content: "\63";
-	}
-	.icon-menu:before {
-		content: "\64";
-	}
-	.icon-power:before {
-		content: "\65";
-	}
-	.icon-backarrow:before {
-		content: "\66";
-	}
-	.icon-bin:before {
-		content: "\67";
-	}
-	.icon-press:before {
-		content: "\68";
-	}
-	.icon-question:before {
-		content: "\69";
-	}
-	.icon-check:before {
-		content: "\6a";
-	}
-	.icon-checkicon:before {
-		content: "\6b";
-	}
-	.icon-radio:before {
-		content: "\6c";
-	}
-	.icon-refresh:before {
-		content: "\6d";
-	}
-	.icon-checkline:before {
-		content: "\6e";
-	}
-	.icon-close:before {
-		content: "\6f";
-	}
-	.icon-release:before {
-		content: "\70";
-	}
-	.icon-store:before {
-		content: "\71";
-	}
-	.icon-content:before {
-		content: "\72";
-	}
-	.icon-device:before {
-		content: "\73";
-	}
-	.icon-support:before {
-		content: "\74";
-	}
-	.icon-systemupdate:before {
-		content: "\75";
-	}
-	.icon-dots:before {
-		content: "\76";
-	}
-	.icon-gear:before {
-		content: "\77";
-	}
-	.icon-wifisecurity:before {
-		content: "\78";
-	}
-	.icon-windows:before {
-		content: "\79";
-	}
-	.icon-macrokey:before {
-		content: "\7a";
-	}
-	.icon-hardwarescan:before {
-        content: "\41";
-    }
-	.icon-sunny:before {
-		content: "\42";
-	}
+.icon-add:before {
+	content: "\61";
+}
+
+.icon-arrowdown:before {
+	content: "\62";
+}
+
+.icon-media:before {
+	content: "\63";
+}
+
+.icon-menu:before {
+	content: "\64";
+}
+
+.icon-power:before {
+	content: "\65";
+}
+
+.icon-backarrow:before {
+	content: "\66";
+}
+
+.icon-bin:before {
+	content: "\67";
+}
+
+.icon-press:before {
+	content: "\68";
+}
+
+.icon-question:before {
+	content: "\69";
+}
+
+.icon-check:before {
+	content: "\6a";
+}
+
+.icon-checkicon:before {
+	content: "\6b";
+}
+
+.icon-radio:before {
+	content: "\6c";
+}
+
+.icon-refresh:before {
+	content: "\6d";
+}
+
+.icon-checkline:before {
+	content: "\6e";
+}
+
+.icon-close:before {
+	content: "\6f";
+}
+
+.icon-release:before {
+	content: "\70";
+}
+
+.icon-store:before {
+	content: "\71";
+}
+
+.icon-content:before {
+	content: "\72";
+}
+
+.icon-device:before {
+	content: "\73";
+}
+
+.icon-support:before {
+	content: "\74";
+}
+
+.icon-systemupdate:before {
+	content: "\75";
+}
+
+.icon-dots:before {
+	content: "\76";
+}
+
+.icon-gear:before {
+	content: "\77";
+}
+
+.icon-wifisecurity:before {
+	content: "\78";
+}
+
+.icon-windows:before {
+	content: "\79";
+}
+
+.icon-macrokey:before {
+	content: "\7a";
+}
+
+.icon-hardwarescan:before {
+	content: "\41";
+}
+
+.icon-sunny:before {
+	content: "\42";
+}
 
 .is-gaming {
 	width: 100%;
 	height: 100%;
 	background-color: $gaming_darkest;
+
 	.vtr-page {
 		.vtr-page-content {
 			.vtr-page-left-column {
 				background-color: $gaming_darkest;
-				@media #{$between-small-medium-screen}{
+
+				@media #{$between-small-medium-screen} {
 					padding: 0rem 5rem 4rem 5rem;
 				}
-				@media #{$medium-screen}{
+
+				@media #{$medium-screen} {
 					padding: 0 8.5rem 4rem 8.5rem;
 				}
-				.installation-history-container{
+
+				.installation-history-container {
 					background: $dark_cell;
 				}
+
 				.vtr-available-updates {
 					background: $dark_cell;
-					.header{
+
+					.header {
 						.heading {
 							color: $gaming_lightest;
 						}
 					}
+
 					.text-regular {
 						color: $gaming_lightest;
 					}
-					.vtr-ui-list-checkbox{
-						.list-group{
-							.list-group-item{
+
+					.vtr-ui-list-checkbox {
+						.list-group {
+							.list-group-item {
 								background-color: $gaming-Darkslate-blue;
 								.update-title,.fail-reason {
 									color: $gaming_lightest;
 								}
+
 								.custom-control {
-									&.custom-checkbox{
-										.custom-control-input:disabled ~ .custom-control-label::before {
+									&.custom-checkbox {
+										.custom-control-input:disabled~.custom-control-label::before {
 											background-color: $gaming-Darkslate-blue;
 										}
-										.custom-control-input:disabled:checked ~ .custom-control-label::before {
+
+										.custom-control-input:disabled:checked~.custom-control-label::before {
 											border-color: $gaming-Darkslate-blue;
 										}
 									}
-									.button-box{
-										.btn-round-sm{
+
+									.button-box {
+										.btn-round-sm {
 											background: $gaming_orange_grad;
 											color: $gaming_lightest;
 										}
@@ -183,35 +221,44 @@
 						}
 					}
 				}
-				.installation-history-container{
-					vtr-container-collapsible{
-						.vtr-container-collapsible{
+
+				.installation-history-container {
+					vtr-container-collapsible {
+						.vtr-container-collapsible {
 							background: none;
 							box-shadow: none;
 							border: none;
-							.vtr-installation-history{
+
+							.vtr-installation-history {
 								background-color: transparent;
-								.heading{
+
+								.heading {
 									color: $gaming_lightest;
 								}
-								.installation-list{
+
+								.installation-list {
 									background-color: transparent;
 									border: none;
-									.list-heading{
+
+									.list-heading {
 										color: $gaming_lightest;
 										border-color: $screen_dark_20;
+
 										.sort-order {
 											a {
 												text-decoration: none;
 											}
 										}
-										.item-text{
+
+										.item-text {
 											padding-left: 0;
 										}
 									}
+
 									li {
 										border-color: $screen_dark_20;
-										.item-text{
+
+										.item-text {
 											color: $gaming_lightest;
 											padding-left: 0;
 										}
@@ -219,13 +266,15 @@
 								}
 
 							}
-							&.white-theme{
-								.card{
-									.card-header{
-										.header{
+
+							&.white-theme {
+								.card {
+									.card-header {
+										.header {
 											text-transform: uppercase;
 											font-weight: $weight_black;
 											position: relative;
+
 											&::after {
 												content: '';
 												position: absolute;
@@ -236,8 +285,9 @@
 												background: $gaming_info_link;
 											}
 										}
+
 										.collapse-control {
-											.collapse-text{
+											.collapse-text {
 												color: $gaming_lightest;
 											}
 										}
@@ -247,49 +297,62 @@
 						}
 					}
 				}
+
 				.vtr-subpage {
 					.vtr-ui-header-subpage {
 						.title {
 							color: $gaming_lightest;
 						}
+
 						.caption {
 							color: $gaming_lightest;
 						}
-						.left-border{
-							.menu-title{
+
+						.left-border {
+							.menu-title {
 								color: $gaming_lightest;
 							}
+
 							.menu-item {
 								border-bottom-style: dotted;
-								&:hover{
+
+								&:hover {
 									border-bottom-style: none;
 								}
 							}
 						}
 					}
 				}
+
 				.vtr-container-collapsible.white-theme {
 					background: $dark_cell !important;
-					.card{
+
+					.card {
 						.card-header {
-							.header{
+							.header {
 								color: $gaming_lightest !important;
 							}
+
 							.collapse-control {
-								.collapse-text, fa-icon{
+
+								.collapse-text,
+								fa-icon {
 									color: $gaming_grey_lightest !important;
 								}
 							}
 						}
+
 						.card-body {
 							vtr-ui-row-switch {
-								.vtr-ui-switch-row.white-theme{
-									.right-icon{
+								.vtr-ui-switch-row.white-theme {
+									.right-icon {
 										font-size: 2.2rem !important;
 									}
+
 									.title {
 										color: $gaming_lightest;
 									}
+
 									.caption {
 										color: $gaming_grey_lightest;
 									}
@@ -297,32 +360,40 @@
 							}
 						}
 					}
-					.custom-control-label, .seperator{
+
+					.custom-control-label,
+					.seperator {
 						color: $gaming_grey_lightest !important;
 					}
-					.vtr-camera-control{
+
+					.vtr-camera-control {
 						.list-group-flush {
 							.list-group-item {
 								background-color: transparent;
 							}
+
 							.border-top {
 								border-top: 1px solid $screen_dark_10 !important;
 							}
+
 							&:first-child.list-group-item {
 								border-top-right-radius: 0 !important;
 								border-top-left-radius: 0 !important;
 							}
+
 							.slider-item-text {
 								color: $gaming_lightest;
 								font-size: 1.4rem;
 								font-weight: $weight_bold;
 							}
+
 							vtr-ui-range-slider {
 								.vtr-ui-range-slider {
 									.ng5-slider {
 										margin-top: 1.2rem;
 										margin-bottom: 3rem;
 									}
+
 									.label {
 										color: $gaming_grey_lightest !important;
 									}
@@ -331,22 +402,28 @@
 						}
 					}
 				}
-				.vtr-camera-control{
-					.camera-preview{
-						.feed, .base-preview, .error{
+
+				.vtr-camera-control {
+					.camera-preview {
+
+						.feed,
+						.base-preview,
+						.error {
 							background-color: transparent !important;
 							border: none !important;
 						}
 					}
 				}
-				vtr-ui-switch-onoff{
-					.checkbox{
+
+				vtr-ui-switch-onoff {
+					.checkbox {
 						input {
-							&+ .switch{
+							&+.switch {
 								background: $gaming_switch_light;
 								height: 2.4rem;
 								width: 5.4rem;
 								transition: all .2s ease-in;
+
 								small {
 									background: $gaming_switch_dark;
 									height: 1.8rem;
@@ -355,47 +432,56 @@
 									transition: all .2s ease-in;
 								}
 							}
-							&.wifi-checked + .switch {
+
+							&.wifi-checked+.switch {
 								background: $gaming_green_gradient;
 								transition: all .2s ease-in;
-								small{
+
+								small {
 									background: $gaming_lightest;
 									transition: all .2s ease-in;
 									left: 3.2rem;
 								}
 							}
 						}
-						.switch-label.on-label{
+
+						.switch-label.on-label {
 							color: $gaming_lightest;
 							font-weight: bold;
 							font-size: 1.2rem;
 							padding-top: 0.1rem;
 							text-indent: -0.4rem;
 							transition: all .2s ease-in;
-							@media #{$medium-screen}{
+
+							@media #{$medium-screen} {
 								padding-top: 0.3rem;
 							}
-							@media #{$small-screen}{
+
+							@media #{$small-screen} {
 								padding-top: 0.3rem;
 							}
 						}
-						.switch-label.off-label{
+
+						.switch-label.off-label {
 							color: $gaming_switch_dark;
 							font-weight: bold;
 							font-size: 1.2rem;
 							padding-top: 0.1rem;
 							text-indent: 0;
 							transition: all .2s ease-in;
-							@media #{$medium-screen}{
+
+							@media #{$medium-screen} {
 								padding-top: 0.3rem;
 							}
-							@media #{$small-screen}{
+
+							@media #{$small-screen} {
 								padding-top: 0.3rem;
 							}
 						}
 					}
 				}
 			}
+
 			.vtr-page-right-column {
 				background-image: url('./assets/images/gaming/GradientLine@1x.png');
 				background-repeat: repeat;
@@ -403,32 +489,39 @@
 				//background-color: $gaming_darker;
 				//padding-left: 2.2rem;
 				padding: 0 8.5rem 4rem 4rem;
+
 				@media #{$small-screen} {
 					margin-top: -0.1rem;
 					padding: 6rem 3rem 1.5rem 3rem;
 					background-color: $gaming_darkest;
 					background-image: none;
 				}
+
 				@media #{$medium-screen} {
 					margin-top: -0.1rem;
 					padding: 6rem 6.5rem 4rem 6.5rem;
 					background-color: $gaming_darkest;
 					background-image: none;
 				}
-				vtr-autoupdate-settings{
-					.vtr-autoupdate-settings{
+
+				vtr-autoupdate-settings {
+					.vtr-autoupdate-settings {
 						background-color: auto;
 						background: $dark_cell;
+
 						.title {
 							color: $gaming_lightest;
 						}
+
 						.description {
 							color: $gaming_grey_lightest;
 							font-size: 1.2rem;
 						}
+
 						.settings-container {
-							.list-group-item{
+							.list-group-item {
 								background-color: $gaming-Darkslate-blue;
+
 								.update-title {
 									color: $gaming_lightest;
 								}
@@ -436,22 +529,27 @@
 						}
 					}
 				}
-				vtr-widget-questions{
-					.vtr-widget-questions{
+
+				vtr-widget-questions {
+					.vtr-widget-questions {
 						background-color: auto;
 						background: $dark_cell;
+
 						.title {
 							color: $gaming_lightest;
 						}
+
 						.description {
 							color: $gaming_grey_lightest;
 							font-size: 1.2rem;
 						}
+
 						.vtr-ui-list-chevron {
-							.chevron-list{
+							.chevron-list {
 								background-color: $gaming-Darkslate-blue;
 								border: none;
 								overflow: hidden;
+
 								.good {
 									color: $gaming_lightest;
 									border-bottom: 1px solid $screen_dark_15;
@@ -460,13 +558,17 @@
 						}
 					}
 				}
+
 				.vtr-page-shift-up-medium {
 					.vtr-battery-card {
 						.container {
 							background-color: $gaming_dark !important;
-							.battery-gauge-label, .battery-conditions-tips {
+
+							.battery-gauge-label,
+							.battery-conditions-tips {
 								color: $gaming_grey_lightest;
 							}
+
 							.battery-health {
 								color: $gaming_lightest;
 							}
@@ -474,22 +576,26 @@
 					}
 				}
 			}
-			.tooltip-click.tooltip{
+
+			.tooltip-click.tooltip {
 				ul {
 					li {
-						font-family: "Segoe UI",Sans-serif;
+						font-family: "Segoe UI", Sans-serif;
 					}
 				}
+
 				.tooltip-inner {
-					.read{
-						font-family: "Segoe UI",Sans-serif;
+					.read {
+						font-family: "Segoe UI", Sans-serif;
 					}
 				}
 			}
 		}
+
 		.vtr-menu-header {
 			.menu-header-tab {
 				opacity: 0.7;
+
 				fa-icon {
 					&.menu-pointer {
 						color: $gaming_darkest !important;
@@ -498,7 +604,8 @@
 			}
 		}
 	}
-	.dark-dashline{
+
+	.dark-dashline {
 		height: 1px;
 		background: $gaming_darkest;
 		width: 100%;
@@ -506,25 +613,30 @@
 		margin-top: 2.2rem;
 	}
 }
+
 .gaming-help-modal {
 	.modal-dialog {
 		top: 16rem;
 		width: 80rem;
 		max-width: 100%;
+
 		@media #{$medium-screen} {
 			max-width: 70rem;
 			position: relative;
-	   }
+		}
 
-	   @media #{$small-screen} {
-		   max-width: 50rem;
-		   position: relative;
-	   }
-	   @media #{$mediaquery_12} {
-		   left: 9rem;
-	   }
+		@media #{$small-screen} {
+			max-width: 50rem;
+			position: relative;
+		}
+
+		@media #{$mediaquery_12} {
+			left: 9rem;
+		}
 	}
 }
-button:focus, *:focus{
-	outline:0;
+
+button:focus,
+*:focus {
+	outline: 0;
 }

@@ -12,13 +12,13 @@
 		[ngClass]="{'switch-disable': isSwitchDisable}">
 		<label>
 			<input type="checkbox"
-				id="{{name+'_checkbox'}}"
-				attr.aria-label="{{name+'_checkbox'}}"
+				id="{{onOffSwitchId+'_checkbox'}}"
+				attr.aria-label="{{onOffSwitchId+'_checkbox'}}"
 				vtrMetrics
 				metricsEvent="featureClick"
-				[metricsItem]="'chk.'+name"
+				[metricsItem]="'chk.'+onOffSwitchId"
 				[metricsValue]="value"
-				[name]="name"
+				[name]="onOffSwitchId"
 				class="switch"
 				[ngClass]="{'wifi-checked': value===true}"
 				[value]="value"
@@ -29,17 +29,17 @@
 				(click)="sendChangeEvent($event)" />
 
 			<span class="switch {{ size }}"
-				id="{{name+'_sizeStopProp'}}"
-				attr.aria-label="{{name+'_sizeStopProp'}}"
+				id="{{onOffSwitchId+'_sizeStopProp'}}"
+				attr.aria-label="{{onOffSwitchId+'_sizeStopProp'}}"
 				(click)="stopPropagation($event);"> <small></small> </span>
 			<div *ngIf="!value"
-				id="{{name+'_off_sizeStopProp'}}"
-				attr.aria-label="{{name+'_off_sizeStopProp'}}"
+				id="{{onOffSwitchId+'_off_sizeStopProp'}}"
+				attr.aria-label="{{onOffSwitchId+'_off_sizeStopProp'}}"
 				(click)="stopPropagation($event);"
 				class="switch-label off-label">{{'common.ui.off' | translate}}</div>
 			<div *ngIf="value"
-				id="{{name+'_on_sizeStopProp'}}"
-				attr.aria-label="{{name+'_on_sizeStopProp'}}"
+				id="{{onOffSwitchId+'_on_sizeStopProp'}}"
+				attr.aria-label="{{onOffSwitchId+'_on_sizeStopProp'}}"
 				(click)="stopPropagation($event);"
 				class="switch-label on-label">{{'common.ui.on' | translate}}</div>
 		</label>

@@ -40,6 +40,7 @@ export class GamingAutoCloseService {
   getAppsAutoCloseList(): Promise<boolean> {
     try {
       if (this.isShellAvailable) {
+        console.log('Here============>', this.gamingAutoClose);
         return this.gamingAutoClose.getAutoCloseList();
       }
       return undefined;
@@ -74,6 +75,28 @@ export class GamingAutoCloseService {
     try {
       if (this.isShellAvailable) {
         return this.gamingAutoClose.delAutoCloseList(value);
+      }
+      return undefined;
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
+  getNeedToAsk(): Promise<boolean> {
+    try {
+      if (this.isShellAvailable) {
+        return this.gamingAutoClose.getNeedToAsk();
+      }
+      return undefined;
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
+  setNeedToAsk(value: any): Promise<boolean> {
+    try {
+      if (this.isShellAvailable) {
+        return this.gamingAutoClose.setNeedToAsk(value);
       }
       return undefined;
     } catch (error) {

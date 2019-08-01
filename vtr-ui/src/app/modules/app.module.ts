@@ -21,11 +21,6 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
 import { faExclamation } from '@fortawesome/free-solid-svg-icons/faExclamation';
 import { faBolt } from '@fortawesome/pro-light-svg-icons/faBolt';
-import { faBook } from '@fortawesome/pro-light-svg-icons/faBook';
-import { faCommentAlt } from '@fortawesome/pro-light-svg-icons/faCommentAlt';
-import { faShareAlt } from '@fortawesome/pro-light-svg-icons/faShareAlt';
-import { faTicketAlt } from '@fortawesome/pro-light-svg-icons/faTicketAlt';
-import { faBriefcase } from '@fortawesome/pro-light-svg-icons/faBriefcase';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons/faCaretUp';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons/faCaretDown';
@@ -34,7 +29,6 @@ import { faMinusCircle } from '@fortawesome/free-solid-svg-icons/faMinusCircle';
 import { faChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
 import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { faCircleNotch } from '@fortawesome/pro-light-svg-icons/faCircleNotch';
-import { faHeart as falHeart } from '@fortawesome/pro-light-svg-icons/faHeart';
 import { RouterModule } from '@angular/router';
 import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
 import { ModalAboutComponent } from '../components/modal/modal-about/modal-about.component';
@@ -49,11 +43,6 @@ import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-serve
 library.add(faCheck);
 library.add(faExclamation);
 library.add(faBolt);
-library.add(faBook);
-library.add(faCommentAlt);
-library.add(faShareAlt);
-library.add(faTicketAlt);
-library.add(faBriefcase);
 library.add(faChevronRight);
 library.add(faTimesCircle);
 library.add(faCaretUp);
@@ -63,7 +52,6 @@ library.add(faMinusCircle);
 library.add(faChevronUp);
 library.add(faChevronDown);
 library.add(faCircleNotch);
-library.add(falHeart);
 
 @NgModule({
 	declarations: [

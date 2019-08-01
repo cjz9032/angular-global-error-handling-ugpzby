@@ -35,8 +35,8 @@
 								</div>
 							</span>
 							<!-- {{ caption }} -->
-							<span id="{{'read_more_'+ name}}"
-								attr.aria-label="{{'read_more_'+ name}}"
+							<span id="{{'read_more_'+ switchId}}"
+								attr.aria-label="{{'read_more_'+ switchId}}"
 								class="read-more"
 								*ngIf="!contentExpand"
 								(click)="onReadMoreClick($event)">
@@ -53,8 +53,8 @@
 				<div class="p-0"
 					[ngClass]="{'ml-auto': type!=='Camera'}"
 					*ngIf="resetText.length > 0">
-					<button id="{{name+ '_reset_btn'}}"
-						attr.aria-label="{{name+ '_reset_btn'}}"
+					<button id="{{switchId+ '_reset_btn'}}"
+						attr.aria-label="{{switchId+ '_reset_btn'}}"
 						type="button"
 						[disabled]="disabledAll"
 						class="btn"
@@ -66,9 +66,7 @@
 				</div>
 				<div class=""
 					*ngIf="isSwitchVisible">
-					<vtr-ui-switch-onoff [name]="name"
-						id="{{'row-switch-onoff-'+name}}"
-						attr.aria-label="{{'row-switch-onoff-'+name}}"
+					<vtr-ui-switch-onoff [onOffSwitchId]="switchId"
 						[value]="isSwitchChecked"
 						[disabled]="disabled"
 						(toggle)="onOnOffChange($event)"
@@ -78,8 +76,8 @@
 				<div *ngIf="!isSwitchVisible && linkText"
 					class="p-0 link-text">
 					<a *ngIf="linkPath.startsWith('ms-settings:'); else elseBlock"
-						id="{{name+ '_click_link'}}"
-						attr.aria-label="{{name+ '_click_link'}}"
+						id="{{switchId+ '_click_link'}}"
+						attr.aria-label="{{switchId+ '_click_link'}}"
 						href="javascript:void(0)"
 						(click)="onLinkClick(linkPath)"
 						class="link-text">
@@ -97,8 +95,8 @@
 				<div class="p-0"
 					[ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}"
 					*ngIf="rightIcon.length > 0 && !voice && !toolTipStatus">
-					<fa-icon id="{{name+ '_tooltip_right_icon'}}"
-						attr.aria-label="{{name+ '_tooltip_right_icon'}}"
+					<fa-icon id="{{switchId+ '_tooltip_right_icon'}}"
+						attr.aria-label="{{switchId+ '_tooltip_right_icon'}}"
 						class="right-icon"
 						triggers="click:blur"
 						placement="auto"
@@ -111,8 +109,8 @@
 				<div class="p-0"
 					[ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}"
 					*ngIf="rightIcon.length > 0 && toolTipStatus">
-					<fa-icon id="{{name+ '_smartTooltip_right_icon'}}"
-						attr.aria-label="{{name+ '_smartTooltip_right_icon'}}"
+					<fa-icon id="{{switchId+ '_smartTooltip_right_icon'}}"
+						attr.aria-label="{{switchId+ '_smartTooltip_right_icon'}}"
 						class="right-icon"
 						triggers="click:blur"
 						placement="auto"
@@ -125,8 +123,8 @@
 
 				<div class="p-0"
 					*ngIf="rightIcon.length > 0 && voice">
-					<fa-icon id="{{name+ '_voice_right_icon'}}"
-						attr.aria-label="{{name+ '_voice_right_icon'}}"
+					<fa-icon id="{{switchId+ '_voice_right_icon'}}"
+						attr.aria-label="{{switchId+ '_voice_right_icon'}}"
 						class="right-icon"
 						[icon]="rightIcon"
 						(click)="voicePopUp()"></fa-icon>

@@ -1,21 +1,14 @@
-<div class="vtr-modal-update-change-log">
-	<div class="card bg-light">
-		<div class="card-header"> {{'systemUpdates.readMore' | translate}}
-			<button type="button"
-				class="close"
-				aria-label="Close"
-				(click)="activeModal.dismiss('Cross click')">
-				<span aria-hidden="true">&times;</span>
-			</button>
-		</div>
-		<div class="card-body">
-			<!-- <h4 class="card-title"></h4>
-			<p class="card-text"></p> -->
-			<!-- 4:3 aspect ratio -->
-			<div class="embed-responsive embed-responsive-4by3">
-				<iframe class="embed-responsive-item"
-					[src]="url | sanitize : 'resourceUrl'"></iframe>
-			</div>
-		</div>
+<div class="modal-body vtr-modal-update-change-log">
+	<div role="button" class="close-btn" aria-hidden="true"
+				vtrMetrics
+				metricsItem="{{updateModalMetrics.closeButton}}"
+				metricsEvent="FeatureClick"
+				metricsParent="{{updateModalMetrics.pageName}}"
+				(click)="closeModal()">
+		<img [src]=" '/assets/icons/Close.svg' | svgInline | async" alt="" srcset=""/>
 	</div>
+	<h1>{{'systemUpdates.readMore' | translate}}</h1>
+	<div class="iframe-content">
+			<iframe class="article-frame" [src]="url | sanitize : 'resourceUrl'" width="100%" height="100%" ></iframe>
+		</div>
 </div>

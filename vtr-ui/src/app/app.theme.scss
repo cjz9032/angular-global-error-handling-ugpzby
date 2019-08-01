@@ -1,3 +1,4 @@
+@import "../app/font-styles.scss";
 $main_darkest: #1c2238;
 $main_darker: #2f3447;
 $main_dark: #194a65;
@@ -196,6 +197,7 @@ $mediaquery_X36: "only screen and (min-width: 1880px) and (max-width : 2360px)";
 $mediaquery_X37: "only screen and (min-width: 750px) and (max-width : 1000px)";
 $mediaquery_X38: "only screen and (min-width: 992px) and (max-width : 1600px)";
 $mediaquery_X39: "only screen and (min-width: 992px) and (max-width : 2600px)";
+$mediaquery_X40: "only screen and (min-width: 770px) and (max-width : 991px)";
 
 $dpiquery_0: "max-resolution: 350dpi";
 $dpiquery_1: "max-resolution: 275dpi";

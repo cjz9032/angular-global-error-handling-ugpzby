@@ -6,11 +6,12 @@
 			<button class="pitch__button"
 					vtrOpenFigleafInstaller
 					vtrSendAnalytics
+					vtrOfflineMode
 					[metricsEvent]="'ItemClick'"
 					[metricsItem]="'InstallButton'"
 					[metricsParam]="articleId ? {ArticleId: articleId} : ''"
 			>
-				Install Lenovo Privacy Essentials
+				Install Now
 			</button>
 			<a class="pitch__link"
 			   routerLink="/privacy/landing"
@@ -35,7 +36,7 @@
 		<p class="pitch__title">Trial expired</p>
 		<p class="pitch__text">Get a subscription and stay in control of your privacy.</p>
 		<div class="pitch__group-button">
-			<button class="pitch__button" vtrOpenSeePlans>
+			<button class="pitch__button" vtrOpenSeePlans vtrOfflineMode>
 				See plans
 			</button>
 		</div>
@@ -56,7 +57,7 @@
 		</p>
 		<p class="pitch__text">Get a subscription and stay in control of your privacy.</p>
 		<div class="pitch__group-button">
-			<button class="pitch__button" vtrOpenSeePlans>
+			<button class="pitch__button" vtrOpenSeePlans vtrOfflineMode>
 				See plans
 			</button>
 		</div>
