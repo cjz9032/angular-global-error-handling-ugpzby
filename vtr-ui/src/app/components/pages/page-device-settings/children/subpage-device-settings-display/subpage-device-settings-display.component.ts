@@ -150,7 +150,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	initCameraSection() {
-		this.isDTmachine = true; // this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+		this.isDTmachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		if (this.isDTmachine) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'camera');
 		} else {
