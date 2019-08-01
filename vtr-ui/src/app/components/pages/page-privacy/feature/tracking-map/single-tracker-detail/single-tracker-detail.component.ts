@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { TrackingMapService } from '../services/tracking-map.service';
 import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
 import { DEFAULT_ICON } from '../tracking-map.component';
+import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
 
 @Component({
 	selector: 'vtr-single-tracker-detail',
@@ -13,11 +14,13 @@ export class SingleTrackerDetailComponent implements OnInit {
 	@Input() popUpId: string;
 	trackingMapSingleData$ = this.trackingMapService.getTrackingSingleData$;
 	isTrackersBlocked$ = this.trackingMapService.isTrackersBlocked$;
+	isFigleafReadyForCommunication$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
 	defaultIcon = DEFAULT_ICON;
 
 	constructor(
 		private trackingMapService: TrackingMapService,
-		private commonPopupService: CommonPopupService
+		private commonPopupService: CommonPopupService,
+		private communicationWithFigleafService: CommunicationWithFigleafService
 	) {
 	}
 

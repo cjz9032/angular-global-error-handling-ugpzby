@@ -9,7 +9,7 @@ $triangleSize: 10px;
 		width: 100%;
 		height: 100%;
 		position: relative;
-		z-index: 2;
+		z-index: 1;
 		cursor: pointer;
 	}
 
@@ -17,7 +17,7 @@ $triangleSize: 10px;
 		@extend %text-common;
 		display: flex;
 		position: absolute;
-		z-index: 1;
+		z-index: 2;
 		margin-top: $triangleSize + 3px;
 		padding: 2rem;
 		top: 100%;
@@ -63,6 +63,24 @@ $triangleSize: 10px;
 				border-width: $triangleSize / 2;
 				border-color: transparent white white transparent;
 				left: calc(100% - #{$triangleSize / 2});
+			}
+		}
+
+		&--top-left-to-right {
+			transform: translateX(0%);
+			top: unset;
+			bottom: 250%;
+			border-radius: 14px 14px 14px 0;
+			margin-top: $triangleSize;
+
+			&:after {
+				margin-left: -($triangleSize / 2);
+				border-width: $triangleSize / 2;
+				left: $triangleSize / 2;
+				top: 99%;
+				filter: drop-shadow(0 3px 2px rgba(0,0,0,.2));
+				border-color: white transparent transparent white;
+
 			}
 		}
 	}

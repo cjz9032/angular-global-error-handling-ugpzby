@@ -1,0 +1,31 @@
+<div class="video-widget" data-analyticsName="VideoBlock">
+	<div class="video-widget__inner"
+		 vtrSendAnalytics
+		 [metricsEvent]="'ItemClick'"
+		 [metricsItem]="'ViewVideoButton'"
+		 [ngClass]="{'video-widget--bottom': margin === 'bottom'}"
+		 (click)="openVideo()">
+		<div>
+			<img class="video-widget__main-image"
+				 [src]="'/assets/images/privacy-tab/video-widget/video-widget.png'"
+				 [srcset]="'/assets/images/privacy-tab/video-widget/video-widget@2x.png 2x'"
+				 alt="Why Online Privacy Matters video">
+		</div>
+		<div class="video-widget__text-block">
+			<h3 class="video-widget__title">Why Online Privacy Matters</h3>
+		</div>
+	</div>
+</div>
+<vtr-common-popup [popUpId]="videoPopupId" size="big">
+	<ng-template>
+		<h2 class="video__title">Why Online Privacy Matters</h2>
+		<div class="video__wrapper">
+			<iframe width="720" height="405"
+					src="https://www.youtube-nocookie.com/embed/_YR2mwbYPW4?autoplay=1&controls=2&modestbranding=1&rel=0"
+					frameborder="0"
+					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen>
+			</iframe>
+		</div>
+	</ng-template>
+</vtr-common-popup>
