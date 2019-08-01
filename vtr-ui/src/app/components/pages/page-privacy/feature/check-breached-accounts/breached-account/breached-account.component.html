@@ -22,7 +22,7 @@
                     <h4 class="breached-account__title">{{transformDomain(account.domain)}}</h4>
                     <p class="breached-account__date"
 					   *ngIf="openId !== i && account.domain !== 'n/a'"
-                       title="{{account.date}}">Breached on {{(account.date | date:'MMM d, y') || account.date}}</p>
+                       title="{{account.date}}">Breached on {{isFigleafReadyForCommunication ? account.date : (account.date | date:'MMM d, y')}}</p>
                 </div>
             </div>
 

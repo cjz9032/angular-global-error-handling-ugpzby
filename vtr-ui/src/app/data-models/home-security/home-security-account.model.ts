@@ -120,7 +120,7 @@ export class HomeSecurityAccount {
 							status: 'enabled',
 							text: 'homeSecurity.ecosystem.inTrial',
 							onClick: this.purchase,
-							id: 'chs-ecosystem-btn-upgradeAccount',
+							id: 'chs-ecosystem-btn-inTrialAccount',
 							metricsItem: 'upgradeAccount',
 						}
 					],
@@ -167,7 +167,7 @@ export class HomeSecurityAccount {
 							status: 'disabled',
 							text: 'homeSecurity.ecosystem.trialExpired',
 							onClick: this.purchase,
-							id: 'chs-ecosystem-btn-upgradeAccount',
+							id: 'chs-ecosystem-btn-trialExpiredAccount',
 							metricsItem: 'upgradeAccount',
 						}
 					],
@@ -312,7 +312,7 @@ export class HomeSecurityAccount {
 								status: 'disabled',
 								text: 'homeSecurity.ecosystem.addEcosystem',
 								onClick: this.launchLenovoId.bind(this),
-								id: 'chs-ecosystem-btn-loginLenovoId',
+								id: 'chs-ecosystem-btn-addToEcosystem',
 								metricsItem: 'loginLenovoId',
 							},
 							{
@@ -333,7 +333,7 @@ export class HomeSecurityAccount {
 								status: 'disabled',
 								text: 'homeSecurity.ecosystem.enableEcosystem',
 								onClick: this.launchLenovoId.bind(this),
-								id: 'chs-ecosystem-btn-loginLenovoId',
+								id: 'chs-ecosystem-btn-enableEcosystem',
 								metricsItem: 'loginLenovoId',
 							},
 							{

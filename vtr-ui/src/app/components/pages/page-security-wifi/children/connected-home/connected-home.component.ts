@@ -4,7 +4,7 @@ import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-article-detail/modal-article-detail.component';
 import { CMSService } from 'src/app/services/cms/cms.service';
-import { RegionService } from 'src/app/services/region/region.service';
+import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 
 @Component({
 	selector: 'vtr-connected-home',
@@ -26,25 +26,22 @@ export class ConnectedHomeComponent implements OnInit {
 		public dialogService: DialogService,
 		public modalService: NgbModal,
 		private cmsService: CMSService,
-		public regionService: RegionService,
+		private localInfoService: LocalInfoService
 	) {
 		this.fetchCMSArticles();
 	}
 
 	ngOnInit() {
-		this.regionService.getRegion().subscribe({
-			next: x => {
-				this.isChsExist = false;
-				if (x === 'us') { this.isChsExist = true; }
-			},
-			error: err => {
-				this.isChsExist = false;
-			}
+		this.localInfoService.getLocalInfo().then(result => {
+			this.isChsExist = false;
+			if (result.GEO === 'us') { this.isChsExist = true; }
+		}).catch(e => {
+			this.isChsExist = false;
 		});
 	}
 
 	fetchCMSArticles() {
-		this.cmsService.fetchCMSArticle(this.peaceOfMindArticleId, {'Lang': 'EN', 'GEO': 'US'}).then((response: any) => {
+		this.cmsService.fetchCMSArticle(this.peaceOfMindArticleId, { Lang: 'EN', GEO: 'US' }).then((response: any) => {
 			if (response && response.Results && response.Results.Category) {
 				this.peaceOfMindArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
 			}
