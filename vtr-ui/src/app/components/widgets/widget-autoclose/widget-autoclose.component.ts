@@ -1,5 +1,5 @@
 import { AutoCloseStatus } from 'src/app/data-models/gaming/autoclose/autoclose-status.model';
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
@@ -12,16 +12,11 @@ import { isUndefined } from 'util';
   templateUrl: './widget-autoclose.component.html',
   styleUrls: ['./widget-autoclose.component.scss']
 })
-export class WidgetAutocloseComponent implements OnInit, OnChanges {
+export class WidgetAutocloseComponent implements OnInit {
   @Output() actionModal = new EventEmitter<any>();
-  @Input() introTitle: string;
-  @Input() switchToggle: boolean;
-  modalReference: any;
+  @Input() turnOnACStatus: boolean;
   public autoCloseAppList: any;
-  setAutoCloseObj: any = {};
   gamingProperties: GamingAllCapabilities = new GamingAllCapabilities();
-  autoCloseStatusObj: AutoCloseStatus = new AutoCloseStatus();
-  needToAskStatusObj: AutoCloseNeedToAsk = new AutoCloseNeedToAsk();
   constructor(private gamingCapabilityService: GamingAllCapabilitiesService, private gamingAutoCloseService: GamingAutoCloseService) { }
 
   ngOnInit() {
@@ -29,9 +24,6 @@ export class WidgetAutocloseComponent implements OnInit, OnChanges {
       LocalStorageKey.optimizationFeature
     );
     this.refreshAutoCloseList();
-    this.setAutoCloseObj.toggleStatus = this.gamingAutoCloseService.getAutoCloseStatusCache();
-    this.setAutoCloseObj.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
-    this.gamingAutoCloseService.setNeedToAskStatusCache(this.setAutoCloseObj.needToAsk);
   }
 
   // Get Gaming AutoClose Lists
@@ -50,14 +42,8 @@ export class WidgetAutocloseComponent implements OnInit, OnChanges {
     }
   }
 
-  public openAutoCloseModal($event) {
-    this.actionModal.emit(this.setAutoCloseObj);
-  }
-
-  initGetAsk() {
-    return this.gamingAutoCloseService.getNeedToAsk().then((status: any) => {
-      return status;
-    });
+  public openAutoCloseModal() {
+    this.actionModal.emit();
   }
 
   removeApp(appName: string, index: number) {
@@ -66,20 +52,5 @@ export class WidgetAutocloseComponent implements OnInit, OnChanges {
       this.autoCloseAppList.splice(index, 1);
       this.refreshAutoCloseList();
     });
-  }
-
-  toggleAutoClose(event: any) {
-    console.log(event.switchValue);
-    this.setAutoCloseObj.toggleStatus = event.switchValue;
-    this.gamingAutoCloseService.setAutoCloseStatus(event.switchValue).then((response: any) => {
-      this.gamingAutoCloseService.setAutoCloseStatusCache(event.switchValue);
-      this.setAutoCloseObj.toggleStatus = event.switchValue;
-    });
-  }
-
-  ngOnChanges() {
-    if (!isUndefined(this.switchToggle)) {
-      this.setAutoCloseObj.toggleStatus = this.switchToggle;
-    }
   }
 }
