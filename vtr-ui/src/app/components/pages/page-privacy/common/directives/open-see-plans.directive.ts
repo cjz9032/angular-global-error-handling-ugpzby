@@ -1,6 +1,5 @@
 import { Directive, HostListener } from '@angular/core';
 import { VantageCommunicationService } from '../services/vantage-communication.service';
-import { TrialExpiredWidgetService } from '../../main-layout/sidebar/trial-expired-widget/trial-expired-widget.service';
 import { map, switchMap, take } from 'rxjs/operators';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 

@@ -1,12 +1,14 @@
 import { Component, ContentChild, ElementRef, Input, TemplateRef } from '@angular/core';
 
+export type position = 'center' | 'right' | 'left' | 'top-right';
+
 @Component({
 	selector: 'vtr-tooltip',
 	templateUrl: './tooltip.component.html',
 	styleUrls: ['./tooltip.component.scss']
 })
 export class TooltipComponent {
-	@Input() positionContextTo: 'center' | 'right' | 'left' = 'center';
+	@Input() positionContextTo: position = 'center';
 	@ContentChild('tooltipText', { static: false }) tooltipText: TemplateRef<ElementRef>;
 	@ContentChild('tooltipContext', { static: false }) tooltipContext: TemplateRef<ElementRef>;
 
