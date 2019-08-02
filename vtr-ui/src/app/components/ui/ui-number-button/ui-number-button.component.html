@@ -17,8 +17,9 @@
 		</div>
 	</div>
 	<ul [ngClass]="{'show': isShowingPopup, 'numberpad-popup': isNumberpad, 'recording': recordingStatus}">
-		<ng-container *ngFor="let number of numbers;">
-			<li [ngClass]="{'selected': selectedNumber && number.key === selectedNumber.key, 'macro-exists': number.status}" (click)="numberClicked(number)">
+		<ng-container *ngFor="let number of numbers; index as i">
+			<li [ngClass]="{'selected': selectedNumber && number.key === selectedNumber.key, 'macro-exists': number.status}" id="macrokey_numpad-{{i}}" attr.aria-label="macrokey_numpad-{{i}}"  (click)="numberClicked(number)" vtrMetrics
+			[metricsItem]="'macrokey_numpad-'+number.key" metricsEvent="featureClick">
 				<div>
 					{{ number.key | translate }}
 				</div>

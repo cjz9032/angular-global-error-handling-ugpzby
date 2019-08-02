@@ -45,7 +45,6 @@ export class WidgetLightingComponent implements OnInit {
 		this.ledSetFeature = this.commonService.getLocalStorageValue(LocalStorageKey.ledSetFeature);
 		this.ledDriver = this.commonService.getLocalStorageValue(LocalStorageKey.ledDriver);
 
-
 		if (this.ledSetFeature) {
 			if (LocalStorageKey.ProfileId !== undefined) {
 				this.setprofId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId) || 0;

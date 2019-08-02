@@ -13,8 +13,8 @@
 				<ng-container *ngFor="let option of options.dropOptions; index as i">
 					<li [ngClass]="{ 'selected': option.value===options.curSelected }" (click)="optionSelected(option)"
 						(mouseenter)="changeDescription(option)" (mouseleave)="resetDescription(option)" vtrMetrics
-						[metricsItem]="option.name | translate" metricsEvent="featureClick">
-						<a class="dropdown-item" [id]="option.ariaLabels | translate" [attr.aria-label]="option.ariaLabels | translate">
+						[metricsItem]="option.id" metricsEvent="featureClick">
+						<a class="dropdown-item" id="{{option.id}}" attr.aria-label = "{{option.id}}">
 							<!-- <i class="icon icon-checkline"></i> -->
 							<fa-icon class="icon" [icon]="['fal', 'check']"></fa-icon>
 							{{ option.name  | translate}}
