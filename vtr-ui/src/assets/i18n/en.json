@@ -22,6 +22,9 @@
 					"dolby": "Dolby",
 					"rapidCharge": "Rapid Charge"
 				},
+				"quickSettingstitle": {
+					"title": "Quick Settings"
+						},
 				"legionEdge": {
 					"title": "CPU Overclock",
 					"status": {

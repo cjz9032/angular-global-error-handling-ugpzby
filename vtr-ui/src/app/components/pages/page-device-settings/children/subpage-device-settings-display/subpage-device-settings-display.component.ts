@@ -844,4 +844,7 @@ export class SubpageDeviceSettingsDisplayComponent
 
 		}
 	}
+	onClick(path) {
+		this.deviceService.launchUri(path);
+	}
 }
