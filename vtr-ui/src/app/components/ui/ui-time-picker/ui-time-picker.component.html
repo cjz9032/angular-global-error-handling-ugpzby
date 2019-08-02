@@ -1,11 +1,15 @@
 <div class="vtr-ui-time-picker">
 	<p class="sub-heading">
 		{{ subHeadingText | translate | uppercase }}</p>
+
+
+
 	<div class="row">
 		<div class="col-md-10 col-sm-12 pl-0">
 			<div class="row">
 				<div class="dropdown">
 					<input [id]="id"
+					attr.aria-label="{{id}}"
 						class="dropcheck"
 						type="checkbox"
 						[checked]="showDropDown"
@@ -86,6 +90,7 @@
 											<label class="inline-block">
 												<input class="label-radio"
 													id="radio1"
+													attr.aria-label="radio1"
 													[name]="'ampmradio'+id"
 													type="radio"
 													value="0"
@@ -98,6 +103,7 @@
 											<label class="inline-block">
 												<input class="label-radio"
 													id="radio2"
+													attr.aria-label="radio2"
 													[name]="'ampmradio'+id"
 													type="radio"
 													value="1"
@@ -113,8 +119,12 @@
 						<div class="d-flex justify-content-end py-3">
 							<div class="select-close">
 								<fa-icon [icon]="['fal', 'check']"
-									(click)="setTimer()"></fa-icon>
+									(click)="setTimer()"
+									id="'timePickerDone'"
+											attr.aria-label="'timePickerDone'"></fa-icon>
 								<fa-icon [icon]="['fal', 'times']"
+								id="'timePickerClear'"
+								attr.aria-label="'timePickerClear'"
 									(click)="clearSettings()"></fa-icon>
 							</div>
 						</div>
