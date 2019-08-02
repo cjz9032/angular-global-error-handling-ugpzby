@@ -16,28 +16,15 @@ export class ModalTurnOnComponent implements OnInit {
   @Input() showTurnOnModal: boolean;
   @Output() actionTurnOn = new EventEmitter<boolean>();
   @Output() closeTurnOnModal = new EventEmitter<boolean>();
-  @Output() actionNeedAsk = new EventEmitter<any>();
+  @Output() actionNeedAsk = new EventEmitter<boolean>();
   ngOnInit() {
   }
-
-  // showAddAppsModal(event: Event): void {
-  //   // this.activeModal.close('close');
-  //   // this.modalService
-  //   //   .open(ModalAddAppsComponent, {
-  //   //     backdrop: 'static',
-  //   //     size: 'lg',
-  //   //     windowClass: 'apps-modal-container'
-  //   //   });
-  //   this.gamingAutoCloseService.setAutoCloseStatus(true).then((status: any) => {
-  //     this.gamingAutoCloseService.setAutoCloseStatusCache(status);
-  //   });
-  // }
 
   setAksAgain(event: any) {
     this.actionNeedAsk.emit(event.target.checked);
   }
 
-  turnOnAction(isConfirm: boolean = false) {
+  turnOnAction(isConfirm) {
     this.actionTurnOn.emit(isConfirm);
   }
 
