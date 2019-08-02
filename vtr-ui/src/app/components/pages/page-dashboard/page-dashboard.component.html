@@ -59,7 +59,7 @@
 											[ratioX]="4"
 											[ratioY]="2"
 											[cornerShift]="'large'"
-											[cardId]="'dashboard-lnk-content-b'"
+											[containerCardId]="'dashboard-lnk-content-b'"
 											id="dashboard-card-b"
 											aria-label="dashboard-card-b">
 										</vtr-container-card>
@@ -77,7 +77,7 @@
 											[type]="'corner'"
 											[ratioX]="4"
 											[ratioY]="2"
-											[cardId]="'dashboard-lnk-content-c'"
+											[containerCardId]="'dashboard-lnk-content-c'"
 											id="dashboard-card-c"
 											aria-label="dashboard-card-c">
 										</vtr-container-card>
@@ -97,7 +97,7 @@
 										[type]="'highlight'"
 										[ratioX]="8"
 										[ratioY]="2"
-										[cardId]="'dashboard-lnk-content-d'"
+										[containerCardId]="'dashboard-lnk-content-d'"
 										id="dashboard-card-d"
 										aria-label="dashboard-card-d">
 									</vtr-container-card>
@@ -116,7 +116,7 @@
 										[type]="'article'"
 										[ratioX]="4"
 										[ratioY]="4"
-										[cardId]="'dashboard-lnk-content-e'"
+										[containerCardId]="'dashboard-lnk-content-e'"
 										id="dashboard-card-e"
 										aria-label="dashboard-card-e">
 									</vtr-container-card>
@@ -133,7 +133,7 @@
 										[type]="'article'"
 										[ratioX]="4"
 										[ratioY]="4"
-										[cardId]="'dashboard-lnk-content-f'"
+										[containerCardId]="'dashboard-lnk-content-f'"
 										id="dashboard-card-f"
 										aria-label="dashboard-card-f">
 									</vtr-container-card>
@@ -184,7 +184,7 @@
 										<vtr-widget-questions [title]="'common.qAndA.title' | translate"
 											[description]="'common.qAndA.subtitle' | translate"
 											[items]="qaService.qas"
-											blockPosition="r4" ></vtr-widget-questions>
+											blockPosition="r4"></vtr-widget-questions>
 									</div>
 								</div>
 
@@ -192,7 +192,7 @@
 									*ngIf="!deviceService.isArm">
 									<div class="col-sm-12 py-40">
 										<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
-										[linkId]="'dashboard'">
+											[linkId]="'dashboard'">
 										</vtr-widget-security-status>
 									</div>
 								</div>

@@ -17,7 +17,7 @@
 
 	.family {
 		color: $main_dark;
-		font-size: 3.8rem;
+		font-size: $sub_header;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
@@ -28,9 +28,9 @@
 	}
 	.device-sub-header {
 		color: $shade_darkest;
-		font-size: 1.4rem;
+		font-size: $body;
 		@media #{$mediaquery_X1} {
-			font-size: 1.25rem;
+			font-size: 1.4rem;
 		}
 	}
 
@@ -46,7 +46,7 @@
 
 	.subheader {
 		color: $main_dark;
-		font-size: 3rem;
+		font-size: $title;
 		margin-top: 4rem;
 		font-weight: $weight_bold;
 	}
@@ -120,13 +120,13 @@
 				}
 			}
 			.title {
-				font-size: 1.5rem;
+				font-size: $body;
 				font-weight: $weight_medium;
 				margin-bottom: 0.5rem;
 				color: $main_darker;
 
 				.systemDetails {
-					font-size: 1.4rem;
+					font-size: $caption;
 					font-weight: $weight_light;
 					color: $shade_darkest;
 				}
@@ -136,7 +136,7 @@
 				color: $shade;
 			}
 			.detail {
-				font-size: 1.4rem;
+				font-size: $body;
 				text-decoration: underline;
 				margin-right: -3rem;
 				&.highlight {

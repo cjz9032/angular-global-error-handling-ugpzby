@@ -1,16 +1,12 @@
-import { Component, OnInit, SecurityContext, DoCheck, OnDestroy } from '@angular/core';
+import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DomSanitizer } from '@angular/platform-browser';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
-
-import { MockService } from '../../../services/mock/mock.service';
 import { QaService } from '../../../services/qa/qa.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { Status } from 'src/app/data-models/widgets/status.model';
 import { CommonService } from 'src/app/services/common/common.service';
-import { ConfigService } from 'src/app/services/config/config.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -30,7 +26,6 @@ import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
 	styleUrls: ['./page-dashboard.component.scss'],
-	providers: [NgbModalConfig, NgbModal]
 })
 export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	firstName = 'User';
@@ -57,12 +52,10 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	constructor(
 		private router: Router,
 		public dashboardService: DashboardService,
-		public mockService: MockService,
 		public qaService: QaService,
 		private modalService: NgbModal,
 		config: NgbModalConfig,
 		public commonService: CommonService,
-		private configService: ConfigService,
 		public deviceService: DeviceService,
 		private cmsService: CMSService,
 		private systemUpdateService: SystemUpdateService,
@@ -70,7 +63,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		private translate: TranslateService,
 		vantageShellService: VantageShellService,
 		public androidService: AndroidService,
-		private sanitizer: DomSanitizer,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private activatedRoute: ActivatedRoute,
 		private lenovoIdDialogService: LenovoIdDialogService,

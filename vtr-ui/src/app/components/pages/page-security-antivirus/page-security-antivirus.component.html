@@ -1,8 +1,7 @@
 <div class="vtr-page-security-antivirus vtr-page">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main
-				[backarrow]="backarrow"
+			<vtr-header-main [backarrow]="backarrow"
 				[back]="'common.ui.back' | translate"
 				[title]="'security.antivirus.common.title' | translate"
 				[backId]="backId"></vtr-header-main>
@@ -14,7 +13,8 @@
 				<div class="row">
 					<div class="col-12 col-sm-12 col-lg-8 vtr-page-left-column">
 						<div *ngIf="viewModel?.currentPage ==='windows'">
-							<div *ngIf="isOnline" class="header mt-minus">
+							<div *ngIf="isOnline"
+								class="header mt-minus">
 								<div class="rounded-card-with-shadow p-5">
 									<div class="row">
 										<div class="col-auto align-self-center">
@@ -49,7 +49,8 @@
 									</div>
 								</div>
 							</div>
-							<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
+							<vtr-widget-offline-info *ngIf="!isOnline"
+								[title]="'dashboard.offlineInfo.title' | translate"
 								[isSubtitleVisible]="false"
 								[isButtonVisible]="false"></vtr-widget-offline-info>
 							<div class="subheader antivirus-block">
@@ -70,11 +71,13 @@
 										<div class="subtitle pb-5">
 											{{'security.antivirus.windowsDefender.windowsSubtitle' | translate}}</div>
 
-										<vtr-ui-security-statusbar [statusList]=" viewModel.windowsDefenderstatusList | statusTransform">
+										<vtr-ui-security-statusbar
+											[statusList]=" viewModel.windowsDefenderstatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 									</div>
-									<vtr-widget-mcafee [install]="false" [isOnline]="isOnline"
+									<vtr-widget-mcafee [install]="false"
+										[isOnline]="isOnline"
 										[name]="'Windows Defender'"></vtr-widget-mcafee>
 								</div>
 							</div>
@@ -156,21 +159,19 @@
 										<p class="text-regular mt-10"
 											*vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
 
-											<a	id="sa-av-link-privacypolicy"
+											<a id="sa-av-link-privacypolicy"
 												aria-label="sa-av-link-privacypolicy"
 												vtrMetrics
 												metricsEvent="featureClick"
-
 												metricsItem="privacyPolicy"
 												metricsParent="security.antivirus"
 												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
 												target="_blank"></a>
 
-											<a	id="sa-av-link-termsofservices"
+											<a id="sa-av-link-termsofservices"
 												aria-label="sa-av-link-termsofservices"
 												vtrMetrics
 												metricsEvent="featureClick"
-
 												metricsItem="termsOfServices"
 												metricsParent="security.antivirus"
 												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
@@ -186,10 +187,12 @@
 						</div>
 
 						<div *ngIf="viewModel?.currentPage ==='mcafee'">
-							<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
+							<vtr-widget-offline-info *ngIf="!isOnline"
+								[title]="'dashboard.offlineInfo.title' | translate"
 								[isSubtitleVisible]="false"
 								[isButtonVisible]="false"></vtr-widget-offline-info>
-							<div class="subheader" [ngClass]="{'mt-minus': isOnline}">
+							<div class="subheader"
+								[ngClass]="{'mt-minus': isOnline}">
 								<div class="rounded-card-with-shadow p-5 bg-white">
 									<div class="row">
 										<div class="col-auto px-0 mr-auto">
@@ -204,7 +207,8 @@
 									<div class="subtitle pb-5">{{'security.antivirus.mcafee.subtitle' | translate}}
 									</div>
 
-									<vtr-ui-security-statusbar [statusList]="viewModel.mcafeestatusList | statusTransform"
+									<vtr-ui-security-statusbar
+										[statusList]="viewModel.mcafeestatusList | statusTransform"
 										[regular]=true>
 									</vtr-ui-security-statusbar>
 
@@ -361,7 +365,7 @@
 										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
 										<p class="text-regular mt-10"
 											*vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
-											<a	id="sa-av-link-privacypolicy"
+											<a id="sa-av-link-privacypolicy"
 												aria-label="sa-av-link-privacypolicy"
 												vtrMetrics
 												metricsEvent="itemClick"
@@ -369,7 +373,7 @@
 												metricsParent="security.antivirus"
 												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
 												target="_blank"></a>
-											<a 	id="sa-av-link-termsofservices"
+											<a id="sa-av-link-termsofservices"
 												aria-label="sa-av-link-termsofservices"
 												vtrMetrics
 												metricsEvent="itemClick"
@@ -388,10 +392,12 @@
 						</div>
 
 						<div *ngIf="viewModel?.currentPage ==='others'">
-							<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
+							<vtr-widget-offline-info *ngIf="!isOnline"
+								[title]="'dashboard.offlineInfo.title' | translate"
 								[isSubtitleVisible]="false"
 								[isButtonVisible]="false"></vtr-widget-offline-info>
-							<div class="subheader" [ngClass]="{'mt-minus': isOnline}">
+							<div class="subheader"
+								[ngClass]="{'mt-minus': isOnline}">
 								<div class="rounded-card-with-shadow p-5 bg-white">
 									<div *ngIf="viewModel.otherAntiVirus && viewModel.otherAntiVirus.name">
 										<div class="row">
@@ -407,7 +413,8 @@
 											{{'security.antivirus.others.othersProtection' | translate}}
 										</div>
 
-										<vtr-ui-security-statusbar [statusList]="viewModel.othersAntistatusList | statusTransform">
+										<vtr-ui-security-statusbar
+											[statusList]="viewModel.othersAntistatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 									</div>
@@ -426,7 +433,8 @@
 											{{'security.antivirus.others.othersProtection' | translate}}
 										</div>
 
-										<vtr-ui-security-statusbar [statusList]="viewModel.othersFirewallstatusList | statusTransform">
+										<vtr-ui-security-statusbar
+											[statusList]="viewModel.othersFirewallstatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 									</div>
@@ -512,7 +520,7 @@
 										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
 										<p class="text-regular mt-10"
 											*vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
-											<a	id="sa-av-link-privacypolicy"
+											<a id="sa-av-link-privacypolicy"
 												aria-label="sa-av-link-privacypolicy"
 												vtrMetrics
 												metricsEvent="itemClick"
@@ -520,7 +528,7 @@
 												metricsParent="security.antivirus"
 												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
 												target="_blank"></a>
-											<a	id="sa-av-link-termsofservices"
+											<a id="sa-av-link-termsofservices"
 												aria-label="sa-av-link-termsofservices"
 												vtrMetrics
 												metricsEvent="itemClick"
@@ -567,8 +575,8 @@
 											type="corner-article"
 											cornerShift="large"
 											order="1"
-											sideFlag="r" 
-											[cardId]="'av-mcafeearticle-card'">
+											sideFlag="r"
+											[containerCardId]="'av-mcafeearticle-card'">
 										</vtr-container-card>
 									</div>
 								</div>

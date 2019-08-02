@@ -16,8 +16,10 @@
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col col-12">
-										<vtr-widget-security *ngIf="isOnline" [percentValue]="score"></vtr-widget-security>
-										<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
+										<vtr-widget-security *ngIf="isOnline"
+											[percentValue]="score"></vtr-widget-security>
+										<vtr-widget-offline-info *ngIf="!isOnline"
+											[title]="'dashboard.offlineInfo.title' | translate"
 											[isSubtitleVisible]="false"
 											[isButtonVisible]="false"></vtr-widget-offline-info>
 									</div>
@@ -26,15 +28,18 @@
 								<div class="row">
 									<div class="col-sm-12 col-md-12 col-lg-6 security-widgets-container left">
 
-										<vtr-ui-landing-feature *ngIf="antivirusLandingViewModel.subject.status !== undefined && antivirusLandingViewModel.subject.status !== null"
+										<vtr-ui-landing-feature
+											*ngIf="antivirusLandingViewModel.subject.status !== undefined && antivirusLandingViewModel.subject.status !== null"
 											[feature]='antivirusLandingViewModel'>
 										</vtr-ui-landing-feature>
 
-										<vtr-ui-landing-feature *ngIf="passwordManagerLandingViewModel.subject.status !== undefined && passwordManagerLandingViewModel.subject.status !== null"
+										<vtr-ui-landing-feature
+											*ngIf="passwordManagerLandingViewModel.subject.status !== undefined && passwordManagerLandingViewModel.subject.status !== null"
 											[feature]='passwordManagerLandingViewModel'>
 										</vtr-ui-landing-feature>
 
-										<vtr-ui-landing-feature *ngIf="vpnLandingViewModel.subject.status !== undefined && vpnLandingViewModel.subject.status !== null && showVpn"
+										<vtr-ui-landing-feature
+											*ngIf="vpnLandingViewModel.subject.status !== undefined && vpnLandingViewModel.subject.status !== null && showVpn"
 											[feature]='vpnLandingViewModel'>
 										</vtr-ui-landing-feature>
 									</div>
@@ -44,9 +49,12 @@
 											*ngIf="wifiSecurityLandingViewModel.subject.status !== undefined && wifiSecurityLandingViewModel.subject.status !== null">
 											<div class="security-widget-inner">
 												<div class="security-widget-wifi">
-													<vtr-ui-object-title [objects]="wifiSecurityLandingViewModel.subject">
+													<vtr-ui-object-title
+														[objects]="wifiSecurityLandingViewModel.subject">
 													</vtr-ui-object-title>
-													<vtr-ui-list-chevron [items]="wifiSecurityLandingViewModel.statusList" metricsEvent="featureClick">
+													<vtr-ui-list-chevron
+														[items]="wifiSecurityLandingViewModel.statusList"
+														metricsEvent="featureClick">
 													</vtr-ui-list-chevron>
 													<div class="wifi-history"
 														*ngIf="wifiHistory && wifiSecurityLandingViewModel.subject.status === 0 && wifiHistory.length !== 0">
@@ -55,12 +63,15 @@
 																<fa-icon class="wifi-font-icon"
 																	[icon]="['fas', 'wifi']"></fa-icon>
 															</div>
-															<div class="col-10">{{'security.landing.maliciousNetwork' | translate: { maliciousWifi: maliciousWifi } }}</div>
+															<div class="col-10">
+																{{'security.landing.maliciousNetwork' | translate: { maliciousWifi: maliciousWifi } }}
+															</div>
 														</div>
 														<ul class="chevron-list">
 															<li *ngFor="let wifi of wifiHistory.slice(0, 2);"
 																class="row no-gutters">
-																<div class="col-2 d-flex justify-content-center align-items-center">
+																<div
+																	class="col-2 d-flex justify-content-center align-items-center">
 																	<div class="icon-bkg">
 																		<fa-icon [icon]="['fas', 'wifi']"></fa-icon>
 																	</div>
@@ -69,9 +80,10 @@
 																	title="{{wifi.ssid}}">{{wifi.ssid}}</div>
 																<div class="wifi-bg col-4 pl-0 pr-3 ellipsis">
 																	<div class="wifi-good pt-1 pb-1 pr-2 pl-2 "
-																		[ngClass]="getWifiStatus(wifi.good)" title="{{getWifiDetail(wifi.good) | translate}}">
+																		[ngClass]="getWifiStatus(wifi.good)"
+																		title="{{getWifiDetail(wifi.good) | translate}}">
 																		{{getWifiDetail(wifi.good) | translate}}
-																</div>
+																	</div>
 																</div>
 															</li>
 															<li class="wifi-link">
@@ -107,7 +119,9 @@
 				<div class="col-12 col-sm-12 col-md-6 col-lg-4 vtr-page-right-column">
 					<div class="vtr-page-shift-up">
 						<div class="container-fluid">
-							<div class="row" id="sa-ov-modal-article" aria-label="sa-ov-modal-article">
+							<div class="row"
+								id="sa-ov-modal-article"
+								aria-label="sa-ov-modal-article">
 								<div class="col col-12">
 									<vtr-container-card [img]="cardContentPositionA.FeatureImage"
 										[caption]="cardContentPositionA.Description"
@@ -123,7 +137,7 @@
 										order="1"
 										sideFlag="r"
 										cornerShift="large"
-										[cardId]="'security-tips-card'">
+										[containerCardId]="'security-tips-card'">
 									</vtr-container-card>
 								</div>
 							</div>
