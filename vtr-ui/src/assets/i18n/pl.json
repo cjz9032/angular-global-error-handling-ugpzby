@@ -94,6 +94,9 @@
                 },
                 "systemStatus": {
                     "info": "INFORMACJE"
+                },
+                "quickSettingstitle": {
+                    "title": "Quick Settings"
                 }
             }
         },
@@ -232,6 +235,10 @@
             },
             "recording": {
                 "title": "Nagrywanie klawisza makr dla"
+            },
+            "initalKey": {
+                "zero": 0,
+                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -515,9 +522,10 @@
             "cameraPrivacy": "Aparat",
             "eyeCareMode": "Ochrona oczu",
             "note": {
-                "accessNote": "doesn't have access to Lenovo Vantage",
                 "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access"
+                "accessUrl": "Go to Windows settings to give access",
+                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
+                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
             }
         },
         "systemStatus": {

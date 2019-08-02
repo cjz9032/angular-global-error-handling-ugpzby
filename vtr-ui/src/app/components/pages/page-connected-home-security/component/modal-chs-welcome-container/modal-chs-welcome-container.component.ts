@@ -39,6 +39,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit,
 	notificationSubscription: Subscription;
 	metricsParent = 'ConnectedHomeSecurity';
 	lenovoIdCallback;
+	welcomeFlag: boolean;
 	constructor(
 		public activeModal: NgbActiveModal,
 		public homeSecurityMockService: HomeSecurityMockService,
@@ -168,7 +169,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit,
 				this.showPageLocation = true;
 			}
 		} else if (switchPage === 4) {
-			if (isLenovoIdLogin && this.chs.account.state === CHSAccountState.local && this.isOnline) {
+			if (isLenovoIdLogin && this.chs.account.state === CHSAccountState.local && this.isOnline && this.welcomeFlag) {
 				this.startTrial();
 			} else {
 				this.closeModal('success');
