@@ -1,14 +1,11 @@
-import { Component, OnInit, OnDestroy, DoCheck, HostListener, ViewChild, AfterViewInit, Input, ElementRef } from '@angular/core';
-import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
-import { Subscription } from 'rxjs/internal/Subscription';
-
+import { Component, OnInit, HostListener, ViewChild, AfterViewInit, Input, ElementRef } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
 import { UserService } from '../../services/user/user.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import Translation from 'src/app/data-models/translation/translation';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
 import { WindowsHello, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
@@ -29,13 +26,13 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 	templateUrl: './menu-main.component.html',
 	styleUrls: ['./menu-main.component.scss']
 })
-export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
+export class MenuMainComponent implements OnInit, AfterViewInit {
 	@ViewChild('menuTarget', { static: false }) menuTarget: ElementRef;
 	@Input() loadMenuItem: any = {};
 	public machineFamilyName: string;
 	public country: string;
 	public firstName: 'User';
-	commonMenuSubscription: Subscription;
+	// commonMenuSubscription: Subscription;
 	constantDevice = 'device';
 	constantDeviceSettings = 'device-settings';
 	region: string;
@@ -53,15 +50,14 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 
 	constructor(
 		private router: Router,
-		public route: ActivatedRoute,
 		public configService: ConfigService,
 		public commonService: CommonService,
 		public userService: UserService,
 		public languageService: LanguageService,
 		public deviceService: DeviceService,
-		private vantageShellService: VantageShellService,
+		vantageShellService: VantageShellService,
 		private translate: TranslateService,
-		private localInfoService: LocalInfoService,
+		localInfoService: LocalInfoService,
 		private smartAssist: SmartAssistService,
 		private logger: LoggerService,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
@@ -107,9 +103,9 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 					this.showWindowsHelloItem(windowsHello);
 				});
 			}
-			this.commonMenuSubscription = this.languageService.subscription.subscribe((translation: Translation) => {
-				this.onLanguageChange(translation);
-			});
+			// this.commonMenuSubscription = this.languageService.subscription.subscribe((translation: Translation) => {
+			// 	this.onLanguageChange(translation);
+			// });
 		});
 
 		this.router.events.subscribe((ev) => {
@@ -194,11 +190,11 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 		});
 	}
 
-	ngOnDestroy() {
-		if (this.commonMenuSubscription) {
-			this.commonMenuSubscription.unsubscribe();
-		}
-	}
+	// ngOnDestroy() {
+	// 	if (this.commonMenuSubscription) {
+	// 		this.commonMenuSubscription.unsubscribe();
+	// 	}
+	// }
 
 	toggleMenu(event) {
 		this.showMenu = !this.showMenu;
@@ -263,13 +259,13 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 		}
 	}
 
-	onLanguageChange(translation: Translation) {
-		// this.getMenuItems().then((items)=>{
-		// 	if (translation && translation.type === TranslationSection.CommonMenu && !this.deviceService.isGaming) {
-		// 		items[0].label = translation.payload.dashboard;
-		// 	}
-		// })
-	}
+	// onLanguageChange(translation: Translation) {
+	// 	// this.getMenuItems().then((items)=>{
+	// 	// 	if (translation && translation.type === TranslationSection.CommonMenu && !this.deviceService.isGaming) {
+	// 	// 		items[0].label = translation.payload.dashboard;
+	// 	// 	}
+	// 	// })
+	// }
 
 	showWindowsHelloItem(windowsHello: WindowsHello) {
 		this.getMenuItems().then((items) => {
@@ -297,7 +293,7 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 			}
 		});
 	}
-	showPrivacy() { }
+
 	showVpn() {
 		this.getMenuItems().then((items) => {
 			const securityItemForVpn = items.find((item) => item.id === 'security');
@@ -327,6 +323,7 @@ export class MenuMainComponent implements OnInit, OnDestroy, AfterViewInit {
 			}
 		});
 	}
+
 	getMenuItems(): Promise<any> {
 		console.log('Getting menu items for the Gaming device?', this.deviceService.isGaming);
 		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
