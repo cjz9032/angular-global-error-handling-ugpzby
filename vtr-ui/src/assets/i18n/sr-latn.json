@@ -94,6 +94,9 @@
                 },
                 "systemStatus": {
                     "info": "INFORMACIJE"
+                },
+                "quickSettingstitle": {
+                    "title": "Quick Settings"
                 }
             }
         },
@@ -515,9 +518,10 @@
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Režim za zaštitu vida",
             "note": {
-                "accessNote": "Lenovo Vantage doesn't have access to",
                 "microphoneAndcameraPrivacyNotes": "Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access"
+                "accessUrl": "Go to Windows settings to give access",
+                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
+                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
             }
         },
         "systemStatus": {
