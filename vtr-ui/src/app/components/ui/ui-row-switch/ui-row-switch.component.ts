@@ -51,6 +51,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 	@Output() tooltipClick = new EventEmitter<boolean>();
 	@Output() resetClick = new EventEmitter<Event>();
 	@Input() toolTipStatus = false;
+	@Input() isDisabled = false;
 	public contentExpand = false;
 
 

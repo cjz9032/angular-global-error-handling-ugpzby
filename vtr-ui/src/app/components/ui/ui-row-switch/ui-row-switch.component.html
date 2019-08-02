@@ -68,10 +68,12 @@
 					*ngIf="isSwitchVisible">
 					<vtr-ui-switch-onoff [onOffSwitchId]="switchId"
 						[value]="isSwitchChecked"
-						[disabled]="disabled"
+						[disabled]="disabled || isDisabled"
 						(toggle)="onOnOffChange($event)"
 						[showLoader]="showLoaderState"
-						[theme]="theme"></vtr-ui-switch-onoff>
+						[theme]="theme"
+						[isSwitchDisable] ="isDisabled"						
+						></vtr-ui-switch-onoff>
 				</div>
 				<div *ngIf="!isSwitchVisible && linkText"
 					class="p-0 link-text">
