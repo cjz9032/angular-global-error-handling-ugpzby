@@ -349,7 +349,9 @@ export class AppComponent implements OnInit {
 					}
 
 					const allLangs = this.translate.getLangs();
-					if (allLangs.indexOf(langCode) >= 0) {
+					const currentLang = this.translate.currentLang ? this.translate.currentLang.toLowerCase() : this.translate.defaultLang.toLowerCase();
+
+					if (allLangs.indexOf(langCode) >= 0 && currentLang !== langCode.toLowerCase()) {
 						// this.translate.resetLang('ar');
 						this.translate.reloadLang(langCode);
 						this.translate.use(langCode).subscribe(
