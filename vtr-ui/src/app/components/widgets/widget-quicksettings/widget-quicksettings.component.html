@@ -72,8 +72,7 @@
 					<div class="col-11 pr-0 pl-2">
 						<div *ngIf="!microphoneStatus.permission && cameraStatus.permission">
 							<p class="mb-0 mt-auto">
-								{{'dashboard.quickSettings.note.accessNote' | translate}}
-								{{'dashboard.quickSettings.microphone' | translate}}.
+								{{'dashboard.quickSettings.note.microphoneNote' | translate}}
 							</p>
 							<button type="button"
 								class="btn btn-link privacy-button pl-0"
@@ -83,8 +82,7 @@
 						</div>
 						<div *ngIf="!cameraStatus.permission && microphoneStatus.permission">
 							<p class="mb-0 mt-auto">
-								{{'dashboard.quickSettings.note.accessNote' | translate}}
-								{{'dashboard.quickSettings.cameraPrivacy' | translate}}.								
+								{{'dashboard.quickSettings.note.cameraPrivacyNote' | translate}}
 							</p>
 							<button type="button"
 								class="btn btn-link privacy-button pl-0"
@@ -94,9 +92,7 @@
 						</div>
 						<div *ngIf="!microphoneStatus.permission && !cameraStatus.permission">
 							<p class="mb-0 mt-auto">
-								{{'dashboard.quickSettings.note.accessNote' | translate}}
-								{{'dashboard.quickSettings.note.microphoneAndcameraPrivacyNotes' | translate}}
-								
+								{{'dashboard.quickSettings.note.microphoneAndcameraPrivacyNotes' | translate}}								
 							</p>
 							<button type="button"
 								class="btn btn-link privacy-button pl-0"
