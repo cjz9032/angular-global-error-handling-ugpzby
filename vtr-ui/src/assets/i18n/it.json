@@ -7,7 +7,10 @@
                     "status": {
                         "performance": "Performance",
                         "balance": "Balance",
-                        "quiet": "Quiet"
+                        "quiet": "Quiet",
+                        "performanceUid": "thermal_mode_performance",
+                        "balanceUid": "thermal_mode_balance",
+                        "quietUid": "thermal_mode_quiet"
                     },
                     "statusText": {
                         "perText": "Higher CPU usage, Higher fan speed",
@@ -23,7 +26,10 @@
                     "status": {
                         "alwayson": "On",
                         "whenGaming": "When Gaming",
-                        "off": "Off"
+                        "off": "Off",
+                        "alwaysonUid": "cpu_overclock_on",
+                        "whenGamingUid": "cpu_overclock_when_gaming",
+                        "offUid": "cpu_overclock_off"
                     },
                     "statusText": {
                         "onText": "CPU Overclocking will be activated",
@@ -226,10 +232,6 @@
             },
             "recording": {
                 "title": "Recording Macro Key For"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -378,6 +380,11 @@
             "modalAddApps": {
                 "title": "Add apps to Auto Close",
                 "body": "Only apps currently running will show in the list below."
+            },
+            "addAppsButton": "Add",
+            "noRunningApps": {
+                "title": "No Running Apps To Add",
+                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
         }
     },
@@ -569,16 +576,16 @@
             "extendedWarranty": "Garanzia estesa",
             "processor": {
                 "title": "Processore",
-                "notFound": "Processore non trovato"
+                "notFound": "Caricamento informazioni processore"
             },
             "memory": {
                 "title": "Memoria",
-                "notFound": "Memoria non trovata",
+                "notFound": "Caricamento informazioni memoria",
                 "ram": "RAM"
             },
             "diskspace": {
                 "title": "Spazio su disco",
-                "notFound": "Disco non trovato"
+                "notFound": "Caricamento informazioni disco"
             },
             "software": "Software aggiornato",
             "updated": "Aggiornato",
@@ -821,7 +828,8 @@
                     "airPlanePower": {
                         "title": "Modalità alimentazione in aereo",
                         "description": "Proteggere la presa elettrica CA aereo controllando il consumo di energia del sistema.Quando è abilitata la funzione Modalità alimentazione in aereo, il computer riduce il consumo di energia limitando la velocità di ricarica della batteria e le prestazioni del sistema.",
-                        "checkBoxDesc": "Auto detection"
+                        "checkBoxDesc": "Rilevamento automatico",
+                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
                 },
                 "energyStar": {

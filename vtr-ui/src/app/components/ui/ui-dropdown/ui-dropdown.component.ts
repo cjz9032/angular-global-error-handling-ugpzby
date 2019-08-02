@@ -20,15 +20,16 @@ import {
 	styleUrls: ['./ui-dropdown.component.scss']
 })
 export class UiDropDownComponent implements OnInit, OnChanges {
+	@Input() dropDownId;
 	@Input() list: DropDownInterval[];
 	@Input() value: number;
 	@Input() disabled = false;
-	@Output() change: EventEmitter < any > = new EventEmitter < any > ();
+	@Output() change: EventEmitter<any> = new EventEmitter<any>();
 	public isDropDownOpen = false;
 	public name = 'Select';
 	public placeholder = 'Time';
 
-	constructor() {}
+	constructor() { }
 
 	ngOnInit() {
 		console.log('Setting Dropdown  Value', this.value);

@@ -7,7 +7,10 @@
                     "status": {
                         "performance": "Performance",
                         "balance": "Balance",
-                        "quiet": "Quiet"
+                        "quiet": "Quiet",
+                        "performanceUid": "thermal_mode_performance",
+                        "balanceUid": "thermal_mode_balance",
+                        "quietUid": "thermal_mode_quiet"
                     },
                     "statusText": {
                         "perText": "Higher CPU usage, Higher fan speed",
@@ -23,7 +26,10 @@
                     "status": {
                         "alwayson": "On",
                         "whenGaming": "When Gaming",
-                        "off": "Off"
+                        "off": "Off",
+                        "alwaysonUid": "cpu_overclock_on",
+                        "whenGamingUid": "cpu_overclock_when_gaming",
+                        "offUid": "cpu_overclock_off"
                     },
                     "statusText": {
                         "onText": "CPU Overclocking will be activated",
@@ -226,10 +232,6 @@
             },
             "recording": {
                 "title": "Recording Macro Key For"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -378,6 +380,11 @@
             "modalAddApps": {
                 "title": "Add apps to Auto Close",
                 "body": "Only apps currently running will show in the list below."
+            },
+            "addAppsButton": "Add",
+            "noRunningApps": {
+                "title": "No Running Apps To Add",
+                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
         }
     },
@@ -569,16 +576,16 @@
             "extendedWarranty": "הרחבת האחריות",
             "processor": {
                 "title": "מעבד",
-                "notFound": "המעבד לא נמצא"
+                "notFound": "טוען את פרטי המעבד"
             },
             "memory": {
                 "title": "זיכרון",
-                "notFound": "הזיכרון לא נמצא",
+                "notFound": "טוען את פרטי הזיכרון",
                 "ram": "‏RAM"
             },
             "diskspace": {
                 "title": "שטח בדיסק",
-                "notFound": "הדיסק לא נמצא"
+                "notFound": "טוען את פרטי הדיסק"
             },
             "software": "התוכנה מעודכנת",
             "updated": "עודכן",
@@ -821,7 +828,8 @@
                     "airPlanePower": {
                         "title": "מצב צריכת חשמל בטיסה",
                         "description": "הגנה על שקע החשמל לשימוש במטוס באמצעות שליטה בצריכת החשמל של המערכת שלכם.כאשר מצב צריכת החשמל בטיסה מופעל, המחשב מצמצם את צריכת החשמל על-ידי הגבלת קצב טעינת הסוללה וביצועי המערכת.",
-                        "checkBoxDesc": "Auto detection"
+                        "checkBoxDesc": "זיהוי אוטומטי",
+                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
                 },
                 "energyStar": {
