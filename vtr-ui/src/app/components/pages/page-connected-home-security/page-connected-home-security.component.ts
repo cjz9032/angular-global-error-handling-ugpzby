@@ -370,6 +370,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				centered: true,
 				windowClass: 'Welcome-container-Modal'
 			});
+			welcomeModal.componentInstance.welcomeFlag = true;
 			return welcomeModal;
 		}
 	}
