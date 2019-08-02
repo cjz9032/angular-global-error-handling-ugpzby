@@ -16,10 +16,12 @@
 							id="wifiSecurity">
 							<div class="row no-gutters">
 								<div class="col-sm-6 subHeading align-items-center">
-									<span class="circle green" *ngIf="data.isLWSEnabled">
+									<span class="circle green"
+										*ngIf="data.isLWSEnabled">
 										<fa-icon [icon]="['fas', 'check']"></fa-icon>
 									</span>
-									<span class="circle red" *ngIf="data.isLWSEnabled===false">
+									<span class="circle red"
+										*ngIf="data.isLWSEnabled===false">
 										<fa-icon [icon]="['fas', 'times']"></fa-icon>
 									</span>
 									<div *ngIf="data.isLWSEnabled===undefined"
@@ -27,14 +29,17 @@
 										<div class="spinner-border text-primary progress-spinner"
 											role="status"></div>
 									</div>
-									<h3 class="mb-0 wifisecurity-container-name" title="{{'security.wifisecurity.container.name' | translate}}" >{{'security.wifisecurity.container.name' | translate}}
+									<h3 class="mb-0 wifisecurity-container-name"
+										title="{{'security.wifisecurity.container.name' | translate}}">
+										{{'security.wifisecurity.container.name' | translate}}
 									</h3>
-									<h3 class="wifisecurity-container-enable"><span class="badge badge-pill badge-success line-height-2-5 p-0 pl-3 pr-3"
-										title="{{'security.wifisecurity.container.enable' | translate}}"
-										*ngIf="data.isLWSEnabled">{{'security.wifisecurity.container.enable' | translate}}</span>
+									<h3 class="wifisecurity-container-enable"><span
+											class="badge badge-pill badge-success line-height-2-5 p-0 pl-3 pr-3"
+											title="{{'security.wifisecurity.container.enable' | translate}}"
+											*ngIf="data.isLWSEnabled">{{'security.wifisecurity.container.enable' | translate}}</span>
 										<span class="badge badge-pill badge-danger line-height-2-5 p-0 pl-3 pr-3"
-										title="{{'security.wifisecurity.container.disable' | translate}}"
-										*ngIf="data.isLWSEnabled===false">{{'security.wifisecurity.container.disable' | translate}}</span>
+											title="{{'security.wifisecurity.container.disable' | translate}}"
+											*ngIf="data.isLWSEnabled===false">{{'security.wifisecurity.container.disable' | translate}}</span>
 									</h3>
 								</div>
 								<div class="col-sm-6 align-items-center text-right sm-device-responsive">
@@ -44,7 +49,7 @@
 										*ngIf="data.wifiSecurity.state !== 'never-used'"
 										name="wifisecurity"
 										[value]="data.isLWSEnabled"
-										[name]="'wifiSecurity'"
+										[onOffSwitchId]="'wifiSecurity'"
 										[disabled]="data.isLWSEnabled === undefined || switchDisabled || cancelClick"
 										(toggle)="onToggleChange($event)"></vtr-ui-switch-onoff>
 									<div class="collapse-control"
@@ -52,7 +57,8 @@
 										aria-label="sa-ws-lnk-collapsecontrol"
 										(click)="$event.preventDefault();"
 										[hidden]="!data.isLWSEnabled">
-										<div class="d-flex" vtrMetrics
+										<div class="d-flex"
+											vtrMetrics
 											metricsItem="collapseWiFiHistory"
 											metricsEvent="featureClick"
 											data-toggle="collapse"
@@ -67,12 +73,12 @@
 												type="button"
 												title="{{'security.wifisecurity.container.less' | translate}}">
 												{{'security.wifisecurity.container.less' | translate}} </button>
-											<fa-icon
-												[icon]="['fas', 'chevron-up']"
+											<fa-icon [icon]="['fas', 'chevron-up']"
 												class="pl-3">
 											</fa-icon>
 										</div>
-										<div class="d-flex" vtrMetrics
+										<div class="d-flex"
+											vtrMetrics
 											metricsItem="expandWiFiHistory"
 											metricsEvent="featureClick"
 											data-toggle="collapse"
@@ -87,10 +93,9 @@
 												type="button"
 												title="{{'security.wifisecurity.container.more' | translate}}">
 												{{'security.wifisecurity.container.more' | translate}} </button>
-												<fa-icon
-													[icon]="['fas', 'chevron-down']"
-													class="pl-3">
-												</fa-icon>
+											<fa-icon [icon]="['fas', 'chevron-down']"
+												class="pl-3">
+											</fa-icon>
 										</div>
 									</div>
 								</div>
@@ -191,10 +196,12 @@
 		</div>
 		<div class="row mt-40"
 			*ngIf="!data.isLWSEnabled">
-			<div class="col-12" [ngClass]="{'col-lg-7':data.wifiSecurity.state==='never-used'}">
+			<div class="col-12"
+				[ngClass]="{'col-lg-7':data.wifiSecurity.state==='never-used'}">
 				<div class="text-regular">{{ 'security.wifisecurity.container.disableDecribe' | translate }}</div>
 			</div>
-			<div class="col-sm-12 col-md-12 col-lg-5 text-right col-check-use-state" *ngIf="data.wifiSecurity.state==='never-used'">
+			<div class="col-sm-12 col-md-12 col-lg-5 text-right col-check-use-state"
+				*ngIf="data.wifiSecurity.state==='never-used'">
 				<vtr-ui-button id="sa-ws-btn-enablewifisecurity"
 					aria-label="sa-ws-btn-enablewifisecurity"
 					metricsItem="enableWifiSecurity"
