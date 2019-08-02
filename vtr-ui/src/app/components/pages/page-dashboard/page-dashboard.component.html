@@ -41,8 +41,7 @@
 											image="url"
 											[showNavigationArrows]="true"
 											[showNavigationIndicators]="true"
-											[id]="'dashboard-lnk-hero-banner'"
-											[ariaLabel]="'dashboard-lnk-hero-banner'"
+											[carouselId]="'dashboard-lnk-hero-banner'"
 											link="thumbnailUrl"></vtr-widget-carousel>
 									</div>
 
@@ -60,8 +59,7 @@
 											[ratioX]="4"
 											[ratioY]="2"
 											[cornerShift]="'large'"
-											[id]="'dashboard-lnk-content-b'"
-											[ariaLabel]="'dashboard-lnk-content-b'"
+											[containerCardId]="'dashboard-lnk-content-b'"
 											id="dashboard-card-b"
 											aria-label="dashboard-card-b">
 										</vtr-container-card>
@@ -79,8 +77,7 @@
 											[type]="'corner'"
 											[ratioX]="4"
 											[ratioY]="2"
-											[id]="'dashboard-lnk-content-c'"
-											[ariaLabel]="'dashboard-lnk-content-c'"
+											[containerCardId]="'dashboard-lnk-content-c'"
 											id="dashboard-card-c"
 											aria-label="dashboard-card-c">
 										</vtr-container-card>
@@ -100,8 +97,7 @@
 										[type]="'highlight'"
 										[ratioX]="8"
 										[ratioY]="2"
-										[id]="'dashboard-lnk-content-d'"
-										[ariaLabel]="'dashboard-lnk-content-d'"
+										[containerCardId]="'dashboard-lnk-content-d'"
 										id="dashboard-card-d"
 										aria-label="dashboard-card-d">
 									</vtr-container-card>
@@ -120,8 +116,7 @@
 										[type]="'article'"
 										[ratioX]="4"
 										[ratioY]="4"
-										[id]="'dashboard-lnk-content-e'"
-										[ariaLabel]="'dashboard-lnk-content-e'"
+										[containerCardId]="'dashboard-lnk-content-e'"
 										id="dashboard-card-e"
 										aria-label="dashboard-card-e">
 									</vtr-container-card>
@@ -138,8 +133,7 @@
 										[type]="'article'"
 										[ratioX]="4"
 										[ratioY]="4"
-										[id]="'dashboard-lnk-content-f'"
-										[ariaLabel]="'dashboard-lnk-content-f'"
+										[containerCardId]="'dashboard-lnk-content-f'"
 										id="dashboard-card-f"
 										aria-label="dashboard-card-f">
 									</vtr-container-card>
@@ -156,9 +150,7 @@
 											[description]="'dashboard.feedback.subtitle' | translate"
 											[actionName]="'dashboard.feedback.button' | translate"
 											[action]="'feedback'"
-											(feedBackClick)="onFeedbackModal()"
-											id="dashboard-feedback-widget"
-											aria-label="dashboard-feedback-widget">
+											(feedBackClick)="onFeedbackModal()">
 										</vtr-widget-feedback>
 										<!-- </div> -->
 										<!-- </div> -->
@@ -168,9 +160,7 @@
 										<!-- <div class="col-sm-12"> -->
 										<div class="pt-6"
 											*ngIf="!deviceService.isArm">
-											<vtr-widget-quicksettings
-											id="dashboard-qs-widget"
-											aria-label="dashboard-qs-widget"></vtr-widget-quicksettings>
+											<vtr-widget-quicksettings></vtr-widget-quicksettings>
 										</div>
 									</div>
 									<!-- </div> -->
@@ -183,8 +173,6 @@
 											[title]="'dashboard.systemStatus.title' | translate"
 											[description]="'dashboard.systemStatus.subtitle' | translate"
 											[items]="systemStatus"
-											id="dashboard-ss-widget"
-											aria-label="dashboard-ss-widget"
 											[linkId]="'dashboard-ss'">
 										</vtr-widget-status>
 									</div>
@@ -196,9 +184,7 @@
 										<vtr-widget-questions [title]="'common.qAndA.title' | translate"
 											[description]="'common.qAndA.subtitle' | translate"
 											[items]="qaService.qas"
-											blockPosition="r4" 
-											id="dashboard-questions-widget"
-											aria-label="dashboard-questions-widget"></vtr-widget-questions>
+											blockPosition="r4"></vtr-widget-questions>
 									</div>
 								</div>
 
@@ -206,8 +192,7 @@
 									*ngIf="!deviceService.isArm">
 									<div class="col-sm-12 py-40">
 										<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
-										id="dashboard-sa-widget"
-										aria-label="dashboard-sa-widget">
+											[linkId]="'dashboard'">
 										</vtr-widget-security-status>
 									</div>
 								</div>

@@ -1,6 +1,7 @@
 <div class="vtr-ui-rounded-rectangle-radio"
 	[ngClass]="{'border-blue':checked, 'border-grey':!checked}">
 	<input id="{{radioId}}"
+		attr.aria-label="{{radioId}}"
 		name="{{group}}"
 		type="radio"
 		[value]="value"
@@ -8,7 +9,11 @@
 		[disabled]="disabled"
 		#radio
 		(click)="onChange(value)" />
-	<label for="{{radioId}}" vtrMetrics metricsEvent="featureClick" [metricsItem]="name" [metricsValue]="value">
+	<label for="{{radioId}}"
+		vtrMetrics
+		metricsEvent="featureClick"
+		[metricsItem]="name"
+		[metricsValue]="value">
 		<fa-layers [fixedWidth]="true"
 			class="icon-circle">
 			<fa-icon [icon]="['fal', 'circle']"></fa-icon>

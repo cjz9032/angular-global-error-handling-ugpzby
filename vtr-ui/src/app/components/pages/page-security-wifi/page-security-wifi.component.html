@@ -1,8 +1,7 @@
 <div class="vtr-page-security-wifi vtr-page">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main
-				[backarrow]="backarrow"
+			<vtr-header-main [backarrow]="backarrow"
 				[back]="'common.ui.back'| translate"
 				[title]="'common.securityAdvisor.wifi' | translate"
 				[backId]="backId"></vtr-header-main>
@@ -15,7 +14,8 @@
 					<div class="col-sm-12 col-lg-8 col-xl-8 vtr-page-left-column">
 						<div class="vtr-subpage">
 							<div class="vtr-page-shift-up">
-								<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
+								<vtr-widget-offline-info *ngIf="!isOnline"
+									[title]="'dashboard.offlineInfo.title' | translate"
 									[isSubtitleVisible]="false"
 									[isButtonVisible]="false"></vtr-widget-offline-info>
 								<wifi-security [data]="wifiHomeViewModel"
@@ -34,7 +34,8 @@
 								<!--Start of Security Card Advisor-->
 								<div class="row mb-40">
 									<div class="col col-12">
-										<vtr-widget-security-status [securityAdvisor]="securityAdvisor">
+										<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
+											[linkId]="'wifi-security'">
 										</vtr-widget-security-status>
 									</div>
 								</div>
@@ -47,13 +48,17 @@
 											<div class="container-fluid">
 												<div class="row">
 													<div class="col">
-														<div class="title">{{'security.homeprotection.securityhealth.title' | translate}}</div>
+														<div class="title">
+															{{'security.homeprotection.securityhealth.title' | translate}}
+														</div>
 														<div class="description"
 															*ngIf="securityHealthViewModel.isLWSEnabled">
-															<span *vtrTranslate="'security.homeprotection.securityhealth.learnMoreAboutSecurityHealth' | translate">
+															<span
+																*vtrTranslate="'security.homeprotection.securityhealth.learnMoreAboutSecurityHealth' | translate">
 
-																<a vtrMetrics  id="sa-ws-lnk-sh-learnmore"
-																    aria-label="sa-ws-lnk-sh-learnmore"
+																<a vtrMetrics
+																	id="sa-ws-lnk-sh-learnmore"
+																	aria-label="sa-ws-lnk-sh-learnmore"
 																	metricsEvent="ArticleClick"
 																	metricsItem="learnMoreAboutSecurityHealth"
 																	metricsItemPosition="3"
@@ -77,7 +82,8 @@
 															<div class="spinner-border text-primary progress-spinner"
 																role="status"></div>
 														</div>
-														<vtr-ui-list-chevron [items]="securityHealthViewModel.homeDevicePosture"
+														<vtr-ui-list-chevron
+															[items]="securityHealthViewModel.homeDevicePosture"
 															metricsEvent="featureClick"
 															[chevronVisibility]='false'
 															[clickable]="false"
@@ -101,7 +107,8 @@
 																		(onClick)="enableWiFiSecurity($event)"
 																		[isDisabled]="cancelClick"
 																		[label]="'security.homeprotection.securityhealth.button' | translate"
-																		[title]="'security.homeprotection.securityhealth.button' | translate">
+																		[title]="'security.homeprotection.securityhealth.button' | translate"
+																		[linkId]="'wifi-security-enableWifiSecurity-btn'">
 																	</vtr-ui-button>
 																</div>
 															</div>
@@ -149,7 +156,8 @@
 											type="corner-article"
 											cornerShift="large"
 											order="1"
-											sideFlag="r">
+											sideFlag="r"
+											[containerCardId]="'wifisecurity-card'">
 										</vtr-container-card>
 									</div>
 								</div>
