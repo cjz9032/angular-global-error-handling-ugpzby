@@ -83,7 +83,7 @@ import { faCheck as falCheck } from '@fortawesome/pro-light-svg-icons/faCheck';
 import { faTimes as falTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
 import { faCircle as faCircle } from '@fortawesome/pro-light-svg-icons/faCircle';
 import { faCircle as falCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
-import { faSync } from '@fortawesome/pro-light-svg-icons';
+import { faSync } from '@fortawesome/pro-light-svg-icons/faSync';
 
 
 library.add(faCheck);
