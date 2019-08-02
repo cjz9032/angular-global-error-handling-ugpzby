@@ -15,7 +15,7 @@ export class PageAutocloseComponent implements OnInit {
   public showTurnOnModal: boolean = false;
   public showAppsModal: boolean = false;
   toggleStatus: boolean;
-  needToAsk: boolean;
+  needToAsk: any;
   autoCloseStatusObj: AutoCloseStatus = new AutoCloseStatus();
   needToAskStatusObj: AutoCloseNeedToAsk = new AutoCloseNeedToAsk();
 
@@ -65,36 +65,43 @@ export class PageAutocloseComponent implements OnInit {
     });
 
     // AutoClose Init
-    this.initGetAsk();
     this.toggleStatus = this.gamingAutoCloseService.getAutoCloseStatusCache();
-    this.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
   }
 
   openTargetModal() {
-    if (this.toggleStatus) {
-      this.showAppsModal = true;
-    } else if ((!this.toggleStatus)) {
-      this.showTurnOnModal = true;
-    }
-  }
-
-  doNotShowAction(event: boolean) {
     try {
-      this.gamingAutoCloseService.setNeedToAsk(event).then((response: any) => {
-        console.log('Set successfully ------------------------>', response);
-        this.gamingAutoCloseService.setNeedToAskStatusCache(event);
+      this.gamingAutoCloseService.getNeedToAsk().then((response: any) => {
+        this.gamingAutoCloseService.getNeedToAskStatusCache();
+        console.log("fist need status", response);
+        this.needToAsk = response;
+        if (this.toggleStatus) {
+          this.showAppsModal = true;
+        } else if (!this.toggleStatus && this.needToAsk) {
+          this.showTurnOnModal = true;
+        } else if (!this.toggleStatus && !this.needToAsk) {
+          this.showAppsModal = true;
+        }
       });
     } catch (error) {
       console.error(error.message);
     }
   }
 
+  doNotShowAction(status: boolean) {
+    this.needToAsk = status;
+    console.log("status================Need", this.needToAsk);
+
+  }
+
   initTurnOnAction(turnBtnAction: boolean) {
-    console.log("turnBtnAction=====================>", turnBtnAction);
     this.toggleStatus = turnBtnAction;
     this.gamingAutoCloseService.setAutoCloseStatus(true).then((status: any) => {
       this.gamingAutoCloseService.setAutoCloseStatusCache(status);
     });
+    this.showAppsModal = true;
+  }
+
+  initNotNowAction(notNowStatus: boolean) {
     this.showAppsModal = true;
   }
 
@@ -106,20 +113,10 @@ export class PageAutocloseComponent implements OnInit {
     this.showAppsModal = action;
   }
 
-  async initGetAsk() {
-    return this.gamingAutoCloseService.getNeedToAsk().then((status: any) => {
-      console.log("Need Ask Status============>", status);
-      this.gamingAutoCloseService.setNeedToAskStatusCache(status);
-      return this.needToAsk = status;
-    });
-  }
-
   toggleAutoClose(event: any) {
     console.log(event.switchValue);
     this.toggleStatus = event.switchValue;
     this.gamingAutoCloseService.setAutoCloseStatus(event.switchValue).then((response: any) => {
-      console.log("response==================>", response);
-      console.log("event.switchValue==================>", event.switchValue);
       this.gamingAutoCloseService.setAutoCloseStatusCache(event.switchValue);
       this.toggleStatus = event.switchValue;
     });
