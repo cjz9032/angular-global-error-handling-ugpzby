@@ -26,8 +26,8 @@ export class WidgetCarouselComponent implements OnInit {
 	@Input() showNavigationIndicators: boolean;
 	@Input() wrap: boolean;
 	@Input() order: number;
-	@Input() id: string;
-	@Input() ariaLabel: string;
+	@Input() carouselId: string;
+
 
 	isOnline = true;
 

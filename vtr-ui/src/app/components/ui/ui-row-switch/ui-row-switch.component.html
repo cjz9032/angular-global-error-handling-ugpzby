@@ -7,7 +7,8 @@
 	<div class="container-fluid p-0"
 		[ngClass]="{'vtr-disabled': disabled}">
 		<div class="row m-0">
-			<div class="vtr-col-pad" [ngClass]="{'col-md-10 col-9': (isSwitchVisible && !resetTextAsButton),'col-md-11 col-11':(!resetTextAsButton && !isSwitchVisible),'col-md-7': (resetTextAsButton && !isSwitchVisible)}"
+			<div class="vtr-col-pad"
+				[ngClass]="{'col-md-10 col-9': (isSwitchVisible && !resetTextAsButton),'col-md-11 col-11':(!resetTextAsButton && !isSwitchVisible),'col-md-7': (resetTextAsButton && !isSwitchVisible)}"
 				[ngClass]="{'col-md-8': (type==='auto-updates' || type==='Camera'), 'col-md-10':type===undefined}">
 				<div class="container-fluid p-0">
 					<div class="row m-0">
@@ -29,9 +30,14 @@
 						<div class="col">
 							<div class="title">{{ title }}</div>
 							<span>
-								<div class="caption" [innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption"></div>
-						</span>
-								<!-- {{ caption }} -->														<span class="read-more"
+								<div class="caption"
+									[innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption">
+								</div>
+							</span>
+							<!-- {{ caption }} -->
+							<span id="{{'read_more_'+ switchId}}"
+								attr.aria-label="{{'read_more_'+ switchId}}"
+								class="read-more"
 								*ngIf="!contentExpand"
 								(click)="onReadMoreClick($event)">
 								{{ readMoreText }}
@@ -41,82 +47,90 @@
 				</div>
 			</div>
 
-			<div class="vtr-row-switch" [ngClass]="{'col-md-2 d-flex col-3 justify-content-end': (isSwitchVisible && !resetTextAsButton),'col-md-1 col-1 d-flex justify-content-end':(!resetTextAsButton && !isSwitchVisible),'col-md-5 d-flex justify-content-end': (resetTextAsButton && !isSwitchVisible)}" >
+			<div class="vtr-row-switch"
+				[ngClass]="{'col-md-2 d-flex col-3 justify-content-end': (isSwitchVisible && !resetTextAsButton),'col-md-1 col-1 d-flex justify-content-end':(!resetTextAsButton && !isSwitchVisible),'col-md-5 d-flex justify-content-end': (resetTextAsButton && !isSwitchVisible)}">
 				<!-- <div class="row"> -->
-					<div class="p-0"
-						[ngClass]="{'ml-auto': type!=='Camera'}"
-						*ngIf="resetText.length > 0">
-						<button type="button"
-							[disabled]="disabledAll"
-							class="btn"
-							[ngClass]="{'btn-link text':!resetTextAsButton ,'btn-label':resetTextAsButton}"
-							(click)="onResetClick($event)">
-							{{ resetText }}
-						</button>
+				<div class="p-0"
+					[ngClass]="{'ml-auto': type!=='Camera'}"
+					*ngIf="resetText.length > 0">
+					<button id="{{switchId+ '_reset_btn'}}"
+						attr.aria-label="{{switchId+ '_reset_btn'}}"
+						type="button"
+						[disabled]="disabledAll"
+						class="btn"
+						[ngClass]="{'btn-link text':!resetTextAsButton ,'btn-label':resetTextAsButton}"
+						(click)="onResetClick($event)">
+						{{ resetText }}
+					</button>
 
-					</div>
-					<div class=""
-						*ngIf="isSwitchVisible">
-						<vtr-ui-switch-onoff [name]="name"
-							id="{{'row-switch-onoff-'+name}}"
-							attr.aria-label="{{'row-switch-onoff-'+name}}"
-							[value]="isSwitchChecked"
-							[disabled]="disabled || isDisabled"
-							(toggle)="onOnOffChange($event)"
-							[showLoader]="showLoaderState"
-							[theme]="theme"
-							[isSwitchDisable] ="isDisabled"
-							>
-						</vtr-ui-switch-onoff>
-					</div>
-					<div *ngIf="!isSwitchVisible && linkText"
-						class="p-0 link-text">
-						<a *ngIf="linkPath.startsWith('ms-settings:'); else elseBlock"
-							href="javascript:void(0)"
-							(click)="onLinkClick(linkPath)"
+				</div>
+				<div class=""
+					*ngIf="isSwitchVisible">
+					<vtr-ui-switch-onoff [onOffSwitchId]="switchId"
+						[value]="isSwitchChecked"
+						[disabled]="disabled || isDisabled"
+						(toggle)="onOnOffChange($event)"
+						[showLoader]="showLoaderState"
+						[theme]="theme"
+						[isSwitchDisable] ="isDisabled"						
+						></vtr-ui-switch-onoff>
+				</div>
+				<div *ngIf="!isSwitchVisible && linkText"
+					class="p-0 link-text">
+					<a *ngIf="linkPath.startsWith('ms-settings:'); else elseBlock"
+						id="{{switchId+ '_click_link'}}"
+						attr.aria-label="{{switchId+ '_click_link'}}"
+						href="javascript:void(0)"
+						(click)="onLinkClick(linkPath)"
+						class="link-text">
+						{{linkText}}
+					</a>
+					<ng-template #elseBlock>
+						<a routerLink="/{{linkPath}}"
 							class="link-text">
 							{{linkText}}
 						</a>
-						<ng-template #elseBlock>
-							<a routerLink="/{{linkPath}}"
-								class="link-text">
-								{{linkText}}
-							</a>
-						</ng-template>
+					</ng-template>
 
-					</div>
+				</div>
 
-					<div class="p-0"
-						[ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}"
-						*ngIf="rightIcon.length > 0 && !voice && !toolTipStatus">
-						<fa-icon class="right-icon"
-							triggers="click:blur"
-							placement="auto"
-							[ngbTooltip]="tooltipRef"
-							[icon]="rightIcon"
-							container="body"
-							tooltipClass="vtr-tooltip"
-							(click)="onRightIconClick($event)"></fa-icon>
-					</div>
-					<div class="p-0"
-						[ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}"
-						*ngIf="rightIcon.length > 0 && toolTipStatus">
-						<fa-icon class="right-icon"
-							triggers="click:blur"
-							placement="auto"
-							[ngbTooltip]="smartTooltipRef"
-							[icon]="rightIcon"
-							container="body"
-							tooltipClass="vtr-tooltip"
-							(click)="onRightIconClick($event)"></fa-icon>
-					</div>
+				<div class="p-0"
+					[ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}"
+					*ngIf="rightIcon.length > 0 && !voice && !toolTipStatus">
+					<fa-icon id="{{switchId+ '_tooltip_right_icon'}}"
+						attr.aria-label="{{switchId+ '_tooltip_right_icon'}}"
+						class="right-icon"
+						triggers="click:blur"
+						placement="auto"
+						[ngbTooltip]="tooltipRef"
+						[icon]="rightIcon"
+						container="body"
+						tooltipClass="vtr-tooltip"
+						(click)="onRightIconClick($event)"></fa-icon>
+				</div>
+				<div class="p-0"
+					[ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}"
+					*ngIf="rightIcon.length > 0 && toolTipStatus">
+					<fa-icon id="{{switchId+ '_smartTooltip_right_icon'}}"
+						attr.aria-label="{{switchId+ '_smartTooltip_right_icon'}}"
+						class="right-icon"
+						triggers="click:blur"
+						placement="auto"
+						[ngbTooltip]="smartTooltipRef"
+						[icon]="rightIcon"
+						container="body"
+						tooltipClass="vtr-tooltip"
+						(click)="onRightIconClick($event)"></fa-icon>
+				</div>
 
-					<div class="p-0"
-						*ngIf="rightIcon.length > 0 && voice">
-						<fa-icon class="right-icon"
-							[icon]="rightIcon"
-							(click)="voicePopUp()"></fa-icon>
-					</div>
+				<div class="p-0"
+					*ngIf="rightIcon.length > 0 && voice">
+					<fa-icon id="{{switchId+ '_voice_right_icon'}}"
+						attr.aria-label="{{switchId+ '_voice_right_icon'}}"
+						class="right-icon"
+						[icon]="rightIcon"
+						(click)="voicePopUp()"></fa-icon>
+				</div>
 				<!-- </div> -->
 			</div>
 			<!-- <div class="ml-auto p-0"

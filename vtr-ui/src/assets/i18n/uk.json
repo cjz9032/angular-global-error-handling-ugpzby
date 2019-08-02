@@ -7,7 +7,10 @@
                     "status": {
                         "performance": "Потужність",
                         "balance": "Баланс",
-                        "quiet": "Тихий"
+                        "quiet": "Тихий",
+                        "performanceUid": "thermal_mode_performance",
+                        "balanceUid": "thermal_mode_balance",
+                        "quietUid": "thermal_mode_quiet"
                     },
                     "statusText": {
                         "perText": "Інтенсивна робота ЦП й вентилятора",
@@ -23,7 +26,10 @@
                     "status": {
                         "alwayson": "Увімк.",
                         "whenGaming": "Під час гри",
-                        "off": "Вимк."
+                        "off": "Вимк.",
+                        "alwaysonUid": "cpu_overclock_on",
+                        "whenGamingUid": "cpu_overclock_when_gaming",
+                        "offUid": "cpu_overclock_off"
                     },
                     "statusText": {
                         "onText": "Розгін процесора буде активовано",
@@ -88,6 +94,9 @@
                 },
                 "systemStatus": {
                     "info": "ІНФО"
+                },
+                "quickSettingstitle": {
+                    "title": "Quick Settings"
                 }
             }
         },
@@ -378,6 +387,11 @@
             "modalAddApps": {
                 "title": "Add apps to Auto Close",
                 "body": "Only apps currently running will show in the list below."
+            },
+            "addAppsButton": "Add",
+            "noRunningApps": {
+                "title": "No Running Apps To Add",
+                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
         }
     },
@@ -508,9 +522,10 @@
             "cameraPrivacy": "Камера",
             "eyeCareMode": "Захист зору",
             "note": {
-                "accessNote": "doesn't have access to Lenovo Vantage",
                 "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access"
+                "accessUrl": "Go to Windows settings to give access",
+                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
+                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
             }
         },
         "systemStatus": {
@@ -569,16 +584,16 @@
             "extendedWarranty": "Подовжити гарантію",
             "processor": {
                 "title": "Процесор",
-                "notFound": "Процесор не знайдено"
+                "notFound": "Завантаження інформації про процесор"
             },
             "memory": {
                 "title": "Пам’ять",
-                "notFound": "Пам’ять не знайдено",
+                "notFound": "Завантаження інформації про пам'ять",
                 "ram": "ОЗП"
             },
             "diskspace": {
                 "title": "Дисковий простір",
-                "notFound": "Диск не знайдено"
+                "notFound": "Завантаження інформації про диск"
             },
             "software": "Програмне забезпечення не потребує оновлень",
             "updated": "Оновлено",
@@ -821,7 +836,8 @@
                     "airPlanePower": {
                         "title": "Режим живлення \"У літаку\"",
                         "description": "Захистіть розетку живлення змінного струму в літаку, збалансувавши споживання електроенергії в системі.У режимі У літаку комп'ютер споживає менше електроенергії, обмежуючи швидкість заряду акумулятора та швидкодію системи.",
-                        "checkBoxDesc": "Auto detection"
+                        "checkBoxDesc": "Автовизначення",
+                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
                 },
                 "energyStar": {

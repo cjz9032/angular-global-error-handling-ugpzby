@@ -7,7 +7,10 @@
                     "status": {
                         "performance": "Performanţă",
                         "balance": "Echilibru",
-                        "quiet": "Silențios"
+                        "quiet": "Silențios",
+                        "performanceUid": "thermal_mode_performance",
+                        "balanceUid": "thermal_mode_balance",
+                        "quietUid": "thermal_mode_quiet"
                     },
                     "statusText": {
                         "perText": "Utilizare CPU și viteză vent. mari",
@@ -23,7 +26,10 @@
                     "status": {
                         "alwayson": "Act.",
                         "whenGaming": "În jocuri",
-                        "off": "Dez."
+                        "off": "Dez.",
+                        "alwaysonUid": "cpu_overclock_on",
+                        "whenGamingUid": "cpu_overclock_when_gaming",
+                        "offUid": "cpu_overclock_off"
                     },
                     "statusText": {
                         "onText": "Suprasolicitarea CPU va fi activată",
@@ -88,6 +94,9 @@
                 },
                 "systemStatus": {
                     "info": "INFORMAȚII"
+                },
+                "quickSettingstitle": {
+                    "title": "Quick Settings"
                 }
             }
         },
@@ -378,6 +387,11 @@
             "modalAddApps": {
                 "title": "Add apps to Auto Close",
                 "body": "Only apps currently running will show in the list below."
+            },
+            "addAppsButton": "Add",
+            "noRunningApps": {
+                "title": "No Running Apps To Add",
+                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
         }
     },
@@ -508,9 +522,10 @@
             "cameraPrivacy": "Cameră",
             "eyeCareMode": "Îngrijire ochi",
             "note": {
-                "accessNote": "doesn't have access to Lenovo Vantage",
                 "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access"
+                "accessUrl": "Go to Windows settings to give access",
+                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
+                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
             }
         },
         "systemStatus": {
@@ -569,16 +584,16 @@
             "extendedWarranty": "Extindere garanție",
             "processor": {
                 "title": "Procesor",
-                "notFound": "Procesorul nu a fost găsit"
+                "notFound": "Încărcarea informațiilor despre procesor"
             },
             "memory": {
                 "title": "Memorie",
-                "notFound": "Memoria nu a fost găsită",
+                "notFound": "Încărcarea informațiilor despre memorie",
                 "ram": "RAM"
             },
             "diskspace": {
                 "title": "Spațiu pe disc",
-                "notFound": "Discul nu a fost găsit"
+                "notFound": "Încărcarea informațiilor despre disc"
             },
             "software": "Software actualizat",
             "updated": "Actualizat",
@@ -821,7 +836,8 @@
                     "airPlanePower": {
                         "title": "Mod alimentare avion",
                         "description": "Protejaţi priza de c.a. din avion controlând consumul de energie al sistemului.Când modul de alimentare avion este activat, calculatorul reduce consumul de energie prin limitarea ratei de încărcare a bateriei și a performanței sistemului.",
-                        "checkBoxDesc": "Auto detection"
+                        "checkBoxDesc": "Autodetecție",
+                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
                 },
                 "energyStar": {

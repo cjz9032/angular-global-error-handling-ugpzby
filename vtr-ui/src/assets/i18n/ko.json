@@ -7,7 +7,10 @@
                     "status": {
                         "performance": "성능",
                         "balance": "밸런스",
-                        "quiet": "저소음"
+                        "quiet": "저소음",
+                        "performanceUid": "thermal_mode_performance",
+                        "balanceUid": "thermal_mode_balance",
+                        "quietUid": "thermal_mode_quiet"
                     },
                     "statusText": {
                         "perText": "CPU사용량 높을수록 팬속도 높음",
@@ -23,7 +26,10 @@
                     "status": {
                         "alwayson": "켜기",
                         "whenGaming": "게임하는 경우",
-                        "off": "끄기"
+                        "off": "끄기",
+                        "alwaysonUid": "cpu_overclock_on",
+                        "whenGamingUid": "cpu_overclock_when_gaming",
+                        "offUid": "cpu_overclock_off"
                     },
                     "statusText": {
                         "onText": "CPU 오버클럭이 활성화됨",
@@ -88,6 +94,9 @@
                 },
                 "systemStatus": {
                     "info": "정보"
+                },
+                "quickSettingstitle": {
+                    "title": "Quick Settings"
                 }
             }
         },
@@ -378,6 +387,11 @@
             "modalAddApps": {
                 "title": "Add apps to Auto Close",
                 "body": "Only apps currently running will show in the list below."
+            },
+            "addAppsButton": "Add",
+            "noRunningApps": {
+                "title": "No Running Apps To Add",
+                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
         }
     },
@@ -508,9 +522,10 @@
             "cameraPrivacy": "카메라",
             "eyeCareMode": "아이 케어",
             "note": {
-                "accessNote": "doesn't have access to Lenovo Vantage",
                 "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access"
+                "accessUrl": "Go to Windows settings to give access",
+                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
+                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
             }
         },
         "systemStatus": {
@@ -569,16 +584,16 @@
             "extendedWarranty": "연장 보증",
             "processor": {
                 "title": "프로세서",
-                "notFound": "프로세서를 찾을 수 없음"
+                "notFound": "프로세서 정보 로드"
             },
             "memory": {
                 "title": "메모리",
-                "notFound": "파일을 찾을 수 없음",
+                "notFound": "메모리 정보 로드",
                 "ram": "RAM"
             },
             "diskspace": {
                 "title": "디스크 공간",
-                "notFound": "디스크를 찾을 수 없음"
+                "notFound": "디스크 정보 로드"
             },
             "software": "소프트웨어가 최신임",
             "updated": "업데이트됨",
@@ -821,7 +836,8 @@
                     "airPlanePower": {
                         "title": "비행기 전원 모드",
                         "description": "시스템의 전력 소모를 제어하여 비행기의 AC 전원 콘센트를 보호하십시오.비행기 전원 모드를 사용하면, 컴퓨터가 배터리 충전율과 시스템 성능을 제한하여 전력 소모를 줄입니다.",
-                        "checkBoxDesc": "Auto detection"
+                        "checkBoxDesc": "자동 검색",
+                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
                 },
                 "energyStar": {

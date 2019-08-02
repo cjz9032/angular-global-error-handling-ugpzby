@@ -8,7 +8,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 @Component({
 	selector: 'vtr-container-card',
 	templateUrl: './container-card.component.html',
-	styleUrls: [ './container-card.component.scss', './container-card.component.gaming.scss' ]
+	styleUrls: ['./container-card.component.scss', './container-card.component.gaming.scss']
 })
 export class ContainerCardComponent implements OnInit, OnChanges {
 	@Input() img = '';
@@ -26,8 +26,7 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 	@Input() order: number;
 	@Input() itemID: string;
 	@Input() sideFlag = '';
-	@Input() id = '';
-	@Input() ariaLabel = '';
+	@Input() containerCardId = '';
 
 	isLoading = true;
 
@@ -40,7 +39,7 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 	constructor(
 		private commonService: CommonService,
 		public modalService: NgbModal,
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.handleLoading();
@@ -79,7 +78,7 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 			size: 'lg',
 			centered: true,
 			windowClass: 'Article-Detail-Modal',
-			keyboard : false,
+			keyboard: false,
 			beforeDismiss: () => {
 				if (articleDetailModal.componentInstance.onBeforeDismiss) {
 					articleDetailModal.componentInstance.onBeforeDismiss();
